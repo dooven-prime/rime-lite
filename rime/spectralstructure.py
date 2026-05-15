@@ -57,7 +57,7 @@ BLOCK_STRUCTURE = {
 # is recovered without any domain assumptions.
 
 
-def support_pattern(mat, tol=1e-8):
+def support_pattern(mat: np.ndarray, tol: float = 1e-8) -> frozenset[int]:
     """Return frozenset of indices whose diagonal differs from 1.
 
     An index is "affected" (moved) by a generator iff its diagonal entry ≠ 1.
@@ -68,7 +68,7 @@ def support_pattern(mat, tol=1e-8):
     return frozenset(np.where(np.abs(diag - 1) > tol)[0])
 
 
-def phase_pattern(mat):
+def phase_pattern(mat: np.ndarray) -> tuple[complex, ...]:
     """Return tuple of diagonal entries as complex numbers.
 
     Each index's diagonal phase encodes how the generator acts on it:
@@ -78,7 +78,7 @@ def phase_pattern(mat):
     return tuple(complex(x) for x in np.diag(mat))
 
 
-def build_generator_classes(rho_dict, block_slice):
+def build_generator_classes(rho_dict: dict, block_slice: tuple[int, int]) -> list[list]:
     """Group generators by support pattern within a block.
 
     Two generators are equivalent iff they act on the same set of indices.
@@ -101,7 +101,7 @@ def build_generator_classes(rho_dict, block_slice):
     return list(groups.values())
 
 
-def classify_indices(rho_dict, block_slice, mode="support"):
+def classify_indices(rho_dict: dict, block_slice: tuple[int, int], mode: str = "support") -> list[set]:
     """For each index in a block, record which generator classes affect it
     or what phase values it experiences.
 
@@ -137,7 +137,7 @@ def classify_indices(rho_dict, block_slice, mode="support"):
     return result
 
 
-def partition_by_signature(signatures):
+def partition_by_signature(signatures: list[set]) -> list[list[int]]:
     """Group indices that have the same signature.
 
     Args:
@@ -166,7 +166,7 @@ def partition_by_signature(signatures):
 # ═══════════════════════════════════════════════════════════════════════════════
 
 
-def classify_by_generator_action(rho_moves, block_slice, mode="support"):
+def classify_by_generator_action(rho_moves: dict, block_slice: tuple[int, int], mode: str = "support") -> dict[int, set]:
     """Backward-compatible wrapper around classify_indices.
 
     Accepts the legacy rho_moves format: {(axis, side, dir): (CubieMove, rho, matrix)}.
@@ -402,7 +402,7 @@ class SpectralStructure:
 
         return {"cp": cp, "ep": ep}
 
-    def class_sum_operator(self, block):
+    def class_sum_operator(self, block: str) -> np.ndarray:
         """Return the class-sum operator in the algebra basis for `block`.
 
         Unified interface: every block's class-sum is expressed in its
@@ -958,7 +958,7 @@ class SpectralStructure:
         return {k: dict(v) for k, v in BLOCK_STRUCTURE.items()}
 
     @staticmethod
-    def block_projector(block_name):
+    def block_projector(block_name: str) -> np.ndarray:
         """Diagonal projector onto a structural block (cp/ep/co/eo).
 
         The 228-dim representation ρ = block_diag(cp[64], ep[144], co[8], eo[12]).
@@ -980,11 +980,11 @@ class SpectralStructure:
     # 2. Association schemes
     # ═══════════════════════════════════════════════════════════════════════════
 
-    def scheme_cp(self):
+    def scheme_cp(self) -> dict:
         """Q3 hypercube association scheme (built from Cube geometry)."""
         return self._q3
 
-    def scheme_ep(self):
+    def scheme_ep(self) -> dict:
         """Support-incidence scheme (built from Cube geometry)."""
         return self._support_inc
 
@@ -992,20 +992,20 @@ class SpectralStructure:
     # 3. Z2 / Z3 phase structures
     # ═══════════════════════════════════════════════════════════════════════════
 
-    def co_eigenvalues(self):
+    def co_eigenvalues(self) -> set[float]:
         """λ_co values via first-principles formula (post-ρ-fix: 3 eigenvalues)."""
         return {1 - k / self.m for k in self.k_set_co()}
 
-    def co_k_values(self):
+    def co_k_values(self) -> set[int]:
         """k-values for the co block (post-ρ-fix: typically {3, 4, 6} for 18-full)."""
         return self.k_set_co()
 
-    def eo_partition(self):
+    def eo_partition(self) -> dict:
         return {k: v for k, v in self._z2_phase.items() if k in ("phase_active", "phase_trivial",
                                                                  "phase_active_count", "phase_trivial_count",
                                                                  "eigenvalues", "derived_from")}
 
-    def eo_k_values(self):
+    def eo_k_values(self) -> set[int]:
         """k-values for the eo block (post-ρ-fix: typically {1, 2, 4} for 18-full)."""
         return self.k_set_eo()
 
@@ -1013,22 +1013,22 @@ class SpectralStructure:
     # 4. k-set computation
     # ═══════════════════════════════════════════════════════════════════════════
 
-    def k_set_cp(self):
+    def k_set_cp(self) -> set[int]:
         return self._k_sets.get("cp", set())
 
-    def k_set_ep(self):
+    def k_set_ep(self) -> set[int]:
         return self._k_sets.get("ep", set())
 
-    def k_set_co(self):
+    def k_set_co(self) -> set[int]:
         return self._k_sets.get("co", set())
 
-    def k_set_eo(self):
+    def k_set_eo(self) -> set[int]:
         return self._k_sets.get("eo", set())
 
-    def k_set_total(self):
+    def k_set_total(self) -> set[int]:
         return self._k_sets.get("total", set())
 
-    def k_by_block(self):
+    def k_by_block(self) -> dict[int, list[str]]:
         result = defaultdict(list)
         for block in ["cp", "ep", "co", "eo"]:
             for k in self._k_sets.get(block, set()):
@@ -1039,10 +1039,10 @@ class SpectralStructure:
     # 5. Eigenvalue prediction
     # ═══════════════════════════════════════════════════════════════════════════
 
-    def eigenvalues(self):
+    def eigenvalues(self) -> dict[int, float]:
         return dict(self._eigenvalues)
 
-    def eigenvalue_layers(self):
+    def eigenvalue_layers(self) -> list[tuple[float, int, list[str], str]]:
         """Predicted spectral layers with multiplicities.
 
         Uses cached block-level eigenvalue data from _derive_k_sets.
@@ -1107,11 +1107,11 @@ class SpectralStructure:
     # 6. Partition integrality (Lemma 9.1)
     # ═══════════════════════════════════════════════════════════════════════════
 
-    def class_partition(self):
+    def class_partition(self) -> dict:
         """Return the generator classes as subsets of generator keys."""
         return self.class_generators
 
-    def class_sum_decomposition(self, block):
+    def class_sum_decomposition(self, block: str) -> list:
         """Decompose class-sum in the Bose-Mesner algebra basis."""
         coeffs = self._class_coeffs
         if coeffs is None:
@@ -1133,7 +1133,7 @@ class SpectralStructure:
         else:
             raise ValueError(f"Block '{block}' is not an association scheme")
 
-    def verify_integrality(self):
+    def verify_integrality(self) -> dict:
         """Verify Tr(E_k M_class) in Z via Lemma 9.1 (Bose-Mesner trace pairing)."""
         results = {}
 
@@ -1198,15 +1198,15 @@ class SpectralStructure:
     # 7. Structural predictions
     # ═══════════════════════════════════════════════════════════════════════════
 
-    def predict_spectral_field(self):
+    def predict_spectral_field(self) -> str:
         if self.class_symmetric:
             return "rational"
         return "unknown"
 
-    def predict_n_eigenvalues(self):
+    def predict_n_eigenvalues(self) -> int:
         return len(self.k_set_total())
 
-    def predict_slow_dimension(self, threshold=2 / 3):
+    def predict_slow_dimension(self, threshold: float = 2 / 3) -> int:
         total = 0
         k_by_block = self.k_by_block()
 
@@ -1230,7 +1230,7 @@ class SpectralStructure:
     # ═══════════════════════════════════════════════════════════════════════════
 
     @classmethod
-    def from_rho_moves(cls, rho_moves_dict):
+    def from_rho_moves(cls, rho_moves_dict: dict) -> "SpectralStructure":
         """Construct SpectralStructure from a CubieSpectralOperator.rho_moves(n) dict.
 
         rho_moves_dict values are (CubieMove, rho_matrix, matrix) tuples.
@@ -1244,7 +1244,7 @@ class SpectralStructure:
 
         return cls(generators=generators, rho_moves=rho_moves_dict)
 
-    def validate_with_numerics(self, cso=None, tol=1e-6):
+    def validate_with_numerics(self, cso=None, tol: float = 1e-6) -> dict:
         """Validate structural predictions against numerical CubieSpectralOperator.
 
         Args:
@@ -1308,7 +1308,7 @@ class SpectralStructure:
 
     # ── Gap 1: Diophantine feasibility solver (C1-C5) ──
 
-    def diophantine_feasibility(self):
+    def diophantine_feasibility(self) -> dict:
         """Solve the C1-C5 constrained Diophantine system for admissible k-sets.
 
         The admissible k-set K is the set of k ∈ {0,…,m} for which there exists
@@ -1404,7 +1404,7 @@ class SpectralStructure:
 
     # ── Gap 2: co/eo first-principles spectrum ──
 
-    def derive_perm_phase_co_spectrum(self):
+    def derive_perm_phase_co_spectrum(self) -> dict[float, int]:
         """First-principles co spectrum from the structurally-built 8×8 class-sum matrix.
 
         Uses cached eigenvalue data from _derive_k_sets — no redundant diagonalization.
@@ -1415,7 +1415,7 @@ class SpectralStructure:
             spectrum[float(lam)] = mult
         return spectrum
 
-    def derive_perm_phase_eo_spectrum(self):
+    def derive_perm_phase_eo_spectrum(self) -> dict[float, int]:
         """First-principles eo spectrum from the structurally-built 12×12 class-sum matrix.
 
         Uses cached eigenvalue data from _derive_k_sets — no redundant diagonalization.
@@ -1428,7 +1428,7 @@ class SpectralStructure:
 
     # ── Gap 3: Krawtchouk eigenvalue prediction for arbitrary families ──
 
-    def predict_q3_krawtchouk(self):
+    def predict_q3_krawtchouk(self) -> dict:
         """Predict Q3 eigenvalues via Krawtchouk polynomials for arbitrary families.
 
         For class-symmetric families: the Q3 Bose-Mesner algebra is commutative,
@@ -1487,7 +1487,7 @@ class SpectralStructure:
 
     # ── Gap 4: Partition integrality verifier (Theorem 6.1) ──
 
-    def verify_partition_integrality(self):
+    def verify_partition_integrality(self) -> dict:
         """Verify Theorem 6.1: per-face trace integrality using block-level data.
 
         Uses eigenvectors from the block-level class-sum operators (cached during
@@ -1690,7 +1690,7 @@ class SpectralStructure:
 
     # ── Gap 5: Galois stability tester (Theorem 3.2) ──
 
-    def verify_galois_stability(self, tol=1e-8):
+    def verify_galois_stability(self, tol: float = 1e-8) -> dict:
         """Verify Galois stability using block-level eigensystems.
 
         Detects the spectral field from block-level eigenvalues (cached).
@@ -1798,7 +1798,7 @@ class SpectralStructure:
     # 9. Summary
     # ═══════════════════════════════════════════════════════════════════════════
 
-    def summary(self):
+    def summary(self) -> str:
         lines = []
         lines.append("=" * 60)
         lines.append(f"SpectralStructure: {self.family_tag}")
@@ -1884,7 +1884,7 @@ class SpectralStructure:
 # Convenience functions
 # ═══════════════════════════════════════════════════════════════════════════════
 
-def block_projectors():
+def block_projectors() -> dict[str, np.ndarray]:
     """Return the four (228, 228) diagonal block projectors."""
     projs = {}
     for name, (start, end) in BLOCK_RANGES.items():
@@ -1894,7 +1894,7 @@ def block_projectors():
     return projs
 
 
-def block_of_index(i):
+def block_of_index(i: int) -> str:
     """Return which block a given 228-dim index belongs to."""
     for name, (start, end) in BLOCK_RANGES.items():
         if start <= i < end:
@@ -1905,7 +1905,7 @@ def block_of_index(i):
 _ss_cache = {}
 
 
-def get_spectral_structure(generators=None):
+def get_spectral_structure(generators=None) -> "SpectralStructure":
     """Cached access to SpectralStructure for a given generator set."""
     key = id(generators) if generators is not None else None
     if key not in _ss_cache:

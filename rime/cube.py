@@ -98,7 +98,7 @@ class CubeGeometry:
         return {f: i for i, f in enumerate(cls.FACES)}
 
     @classmethod
-    def face_of(cls, axis, side):
+    def face_of(cls, axis: int, side: int) -> str:
         """(axis, side_sign) → face name. side=+1→POS, side=-1→NEG."""
         return cls.AXIS_FACE[axis][0 if side == 1 else 1]
 
@@ -220,7 +220,7 @@ class CubeGeometry:
         return mapping
 
     @classmethod
-    def face_basis(cls, face: str):
+    def face_basis(cls, face: str) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
         """Normalised (normal, u_dir, v_dir) basis for a face. u=row, v=col.
         确定局部行列方向,纯几何面内坐标系
         约定：
@@ -325,27 +325,27 @@ class CubeGeometry:
         return sign[axis] != 0 and sign[axis] == expected_sign
 
     @classmethod
-    def faces_of_corner(cls, corner_idx: int) -> list:
+    def faces_of_corner(cls, corner_idx: int) -> list[str]:
         """The 3 face names meeting at corner i."""
         return [f for f in cls.FACES if cls.corner_on_face(corner_idx, f)]
 
     @classmethod
-    def faces_of_edge(cls, edge_idx: int) -> list:
+    def faces_of_edge(cls, edge_idx: int) -> list[str]:
         """The 2 face names meeting at edge i."""
         return [f for f in cls.FACES if cls.edge_on_face(edge_idx, f)]
 
     @classmethod
-    def corners_affected_by_face(cls, face: str) -> list:
+    def corners_affected_by_face(cls, face: str) -> list[int]:
         """Corner indices lying on a given face (always 4)."""
         return [c for c in range(8) if cls.corner_on_face(c, face)]
 
     @classmethod
-    def edges_affected_by_face(cls, face: str) -> list:
+    def edges_affected_by_face(cls, face: str) -> list[int]:
         """Edge indices lying on a given face (always 4)."""
         return [e for e in range(12) if cls.edge_on_face(e, face)]
 
     @classmethod
-    def corner_orientation_axes(cls, corner_idx: int):
+    def corner_orientation_axes(cls, corner_idx: int) -> tuple[list[str], list[np.ndarray]]:
         """The 3 face normals at a corner (for orientation computation).
 
         Used to determine how a face turn affects corner orientation.

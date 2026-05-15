@@ -22,7 +22,7 @@ class CubieSpectralOperator:
         field = cso.classify_field()
     """
 
-    def __init__(self, n=N_GENERATORS, generators=None, tol=1e-6):
+    def __init__(self, n: int = N_GENERATORS, generators: dict | None = None, tol: float = 1e-6):
         self.n = n
         self.tol = tol
         self.rho_moves = generators or self.__class__.rho_moves(n)
@@ -37,7 +37,7 @@ class CubieSpectralOperator:
         self._ss = None  # lazy SpectralStructure
         self._transport_tensor_cache = None  # lazy, computed on first access
 
-    def _compute_spectral_layers(self):
+    def _compute_spectral_layers(self) -> None:
         """Compute {lam: {dim, projector}} for each distinct eigenvalue."""
         w_rounded = np.round(self.w, decimals=int(-np.log10(max(self.tol, 1e-10))))
         unique_w = np.unique(w_rounded)
@@ -90,7 +90,7 @@ class CubieSpectralOperator:
                 for k, mv in CubieMove.prim_moves.items() if match(k)}
 
     @classmethod
-    def lite(cls):
+    def lite(cls) -> "CubieSpectralOperator":
         """Return lightweight instance without running full eigenspace decomposition.
 
         Use this when you only need rho_moves() or other classmethods,
@@ -100,7 +100,7 @@ class CubieSpectralOperator:
         return cls.__new__(cls)
 
     @classmethod
-    def from_generators(cls, generators, tol=1e-6):
+    def from_generators(cls, generators: dict, tol: float = 1e-6) -> "CubieSpectralOperator":
         """Construct from an explicit rho_moves dict (internal format).
 
         Args:
@@ -110,7 +110,7 @@ class CubieSpectralOperator:
         return cls(n=len(generators), generators=generators, tol=tol)
 
     @classmethod
-    def from_gens_dict(cls, gens_dict, tol=1e-6):
+    def from_gens_dict(cls, gens_dict: dict, tol: float = 1e-6) -> "CubieSpectralOperator":
         """Construct from a plain {move_key: CubieMove} dictionary.
 
         This is the common pattern in experiment files: filter prim_moves(),
@@ -128,7 +128,7 @@ class CubieSpectralOperator:
             generators[k] = (mv, mv.rho().astype(np.complex128))
         return cls(n=len(generators), generators=generators, tol=tol)
 
-    def spectral_evolve(self, x, T):
+    def spectral_evolve(self, x: np.ndarray, T: int) -> np.ndarray:
         """T-step spectral diffusion: x ↦ A^T x = Σ λ_i^T P_i x.
 
         Uses the eigendecomposition of A = Σ λ_i P_i, so
@@ -143,7 +143,7 @@ class CubieSpectralOperator:
             y += (lam ** T) * (V @ coeff)
         return y
 
-    def random_walk(self, length: int = 10, p=None) -> CubieMove:
+    def random_walk(self, length: int = 10, p: np.ndarray | None = None) -> "CubieMove":
         """Sample a random length-L word from the generator set.
 
         Args:
@@ -165,11 +165,11 @@ class CubieSpectralOperator:
 
     # -- Spectral accessors --
 
-    def spectral_layers(self):
+    def spectral_layers(self) -> dict[float, dict]:
         """Return {lam: {dim, projector}} for each distinct eigenvalue."""
         return self._layers
 
-    def projector(self, lam: float = 7 / 9):
+    def projector(self, lam: float = 7 / 9) -> np.ndarray:
         """Spectral projector P_λ = Σ_{v∈E_λ} v v† for a single eigenvalue.
 
         Args:
@@ -185,21 +185,21 @@ class CubieSpectralOperator:
             raise ValueError(f"Eigenvalue {lam} not found")
         return self.V[:, idx] @ self.V[:, idx].T.conj()
 
-    def eigenspace_basis(self, lam):
+    def eigenspace_basis(self, lam: float) -> np.ndarray:
         """Eigenvectors spanning the lambda-eigenspace."""
         mask = np.abs(self.w - lam) < self.tol
         return self.V[:, mask]
 
     # -- h_i operators --
 
-    def build_h_operators(self):
+    def build_h_operators(self) -> tuple[list[np.ndarray], list[str]]:
         """Build symmetric h_i = (rho(g) + rho(g^{-1}))/2.
         Returns (h_ops, h_labels).
         """
         gens_dict = {k: mv for k, (mv, _, _) in self.rho_moves.items()}
         return build_h_operators(gens_dict)
 
-    def classify_field(self):
+    def classify_field(self) -> str:
         """Classify spectral field: rational, sqrt5, or higher."""
         m_eff = self.n // 2 if self.n % 2 == 0 else self.n
         name = f"n={self.n}"
@@ -208,12 +208,12 @@ class CubieSpectralOperator:
     # -- Projector algebra / transport --
 
     @property
-    def projectors(self):
+    def projectors(self) -> np.ndarray:
         """Ordered list of spectral projectors P_i (one per distinct eigenvalue)."""
         return np.array([info['projector'] for _, info in sorted(self._layers.items(), reverse=True)])
 
     @property
-    def layer_dim(self):
+    def layer_dim(self) -> np.ndarray:
         """Array of spectral multiplicities (dimensions) for each eigenvalue layer."""
         return np.array([info['dim'] for _, info in sorted(self._layers.items(), reverse=True)])
 
@@ -222,7 +222,7 @@ class CubieSpectralOperator:
         for lam in sorted(self._layers, reverse=True):
             yield lam, self._layers[lam]['projector']
 
-    def commutant_residual(self, P):
+    def commutant_residual(self, P: np.ndarray) -> dict:
         """‖[P, ρ(g)]‖_F for every generator — measures how far P is from central.
 
         Returns {move_key: Frobenius_norm_of_commutator}.
@@ -232,7 +232,7 @@ class CubieSpectralOperator:
             residuals[k] = float(np.linalg.norm(P @ rho - rho @ P, 'fro'))
         return residuals
 
-    def transport_tensor(self, force_recompute=False):
+    def transport_tensor(self, force_recompute: bool = False) -> dict:
         """Full P_i ρ(g) P_j coupling structure across all generator–projector triples.
 
         Returns a nested dict keyed by (lam_i, lam_j):
@@ -258,7 +258,7 @@ class CubieSpectralOperator:
         self._transport_tensor_cache = T
         return T
 
-    def transport_between(self, lam_i, lam_j):
+    def transport_between(self, lam_i: float, lam_j: float) -> dict | None:
         """Transport coupling between two spectral sectors, using closest layer matching.
 
         Unlike direct dict access `T[(lam_i, lam_j)]` which requires exact float keys,
@@ -272,7 +272,7 @@ class CubieSpectralOperator:
         kj = self._closest_layer(lam_j)
         return T.get((ki, kj))
 
-    def transport_graph(self, threshold=None):
+    def transport_graph(self, threshold: float | None = None) -> dict:
         """Build the transport graph from the transport tensor.
 
         Nodes are spectral sectors (λ values). Edges connect sectors with nonzero
@@ -341,7 +341,7 @@ class CubieSpectralOperator:
             'laplacian': laplacian,
         }
 
-    def raising_lowering(self, g_key=None):
+    def raising_lowering(self, g_key=None) -> dict:
         """Raising/lowering operators for a given generator.
 
         For adjacent sector pairs (i, i+1) with nonzero transport, define:
@@ -407,7 +407,7 @@ class CubieSpectralOperator:
 
     # -- Irreducible decomposition (Artin-Wedderburn within each eigenspace) --
 
-    def _projected_gens_for_layer(self, lam):
+    def _projected_gens_for_layer(self, lam: float) -> tuple[list[np.ndarray], int]:
         """Build projected generators G_k = V_λ† ρ(g_k) V_λ within one eigenspace.
 
         Used by both irrep_decomposition() and commutant_algebra() — avoids
@@ -426,7 +426,7 @@ class CubieSpectralOperator:
         return projected_gens, d
 
     @staticmethod
-    def project_commutant(X, projected_gens, gen_inv=None, n_iter=30):
+    def project_commutant(X: np.ndarray, projected_gens: list[np.ndarray], gen_inv: list[np.ndarray] | None = None, n_iter: int = 30) -> np.ndarray:
         """Project a d×d matrix X onto the commutant via group averaging.
 
         Uses Reynolds operator: R(X) = 1/n Σ_k G_k^H X G_k.
@@ -451,7 +451,7 @@ class CubieSpectralOperator:
         return X
 
     @staticmethod
-    def project_commutant_exact(X, projected_gens, n_iter=10):
+    def project_commutant_exact(X: np.ndarray, projected_gens: list[np.ndarray], n_iter: int = 10) -> np.ndarray:
         """Project onto commutant using exact per-generator centralizer projectors.
 
         For generator G of order 4 (Rubik's cube face turns):
@@ -478,7 +478,7 @@ class CubieSpectralOperator:
                 X = 0.25 * (X + GH @ X @ G + G2H @ X @ G2 + G3H @ X @ G3)
         return X
 
-    def _commutant_basis_within_block(self, projected_gens, d):
+    def _commutant_basis_within_block(self, projected_gens: list[np.ndarray], d: int) -> tuple[list[np.ndarray], int]:
         """Build orthonormal basis for the commutant within one eigenspace block.
 
         Args:
@@ -522,7 +522,7 @@ class CubieSpectralOperator:
 
         return basis, comm_dim
 
-    def _commutant_basis_randomized(self, projected_gens, gen_inv, d, n_samples=None):
+    def _commutant_basis_randomized(self, projected_gens: list[np.ndarray], gen_inv: list[np.ndarray], d: int, n_samples: int | None = None) -> tuple[list[np.ndarray], int]:
         """Enhanced random sampling: Reynolds projection + Gram-Schmidt.
 
         For d > 50 (where exact SVD is blocked by memory), this is the primary method.
@@ -560,7 +560,7 @@ class CubieSpectralOperator:
                 basis.append(X / nrm)
         return basis, len(basis)
 
-    def _commutant_center_lightweight(self, comm_basis, d):
+    def _commutant_center_lightweight(self, comm_basis: list[np.ndarray], d: int) -> tuple[int, list[tuple[int, int, int]]]:
         """Lightweight center detection: diagonalize a random commutant element.
 
         Avoids the O(r²·d²) memory of the full center computation.
@@ -645,7 +645,7 @@ class CubieSpectralOperator:
         center_dim = len(final_components)
         return center_dim, result
 
-    def _full_commutant_combinatorial(self):
+    def _full_commutant_combinatorial(self) -> tuple[list[np.ndarray], int]:
         """Compute commutant basis in the FULL 228-dim space via combinatorial orbits.
 
         For monomial ρ(g) = D_g Π_g (Π_g=perm, D_g=diagonal phases):
@@ -775,7 +775,7 @@ class CubieSpectralOperator:
 
         return basis, len(basis)
 
-    def _center_idempotents(self, comm_basis, d):
+    def _center_idempotents(self, comm_basis: list[np.ndarray], d: int) -> tuple[int, list[np.ndarray], list[np.ndarray], list[tuple[int, int]]]:
         """Central primitive idempotents from commutant basis (F1).
 
         Given commutant basis {C_i} of Comm_G(V_λ), finds center ℨ = Z(Comm_G(V_λ))
@@ -870,7 +870,7 @@ class CubieSpectralOperator:
 
         return len(isotypic_info), idempotents, isotypic_projectors, isotypic_info
 
-    def irrep_decomposition(self):
+    def irrep_decomposition(self) -> dict:
         """Full Artin-Wedderburn decomposition within each spectral eigenspace.
 
         For each eigenspace V_λ:
@@ -949,7 +949,7 @@ class CubieSpectralOperator:
             'dim_total': sum(b['commutant_dim'] for b in result_blocks.values()),
         }
 
-    def commutant_algebra(self):
+    def commutant_algebra(self) -> dict:
         """Compute the commutant algebra C = {X : [X, ρ(g)] = 0 for all generators g}.
 
         Since [X, A] = 0, X is block-diagonal in the eigenbasis of A:
@@ -1002,7 +1002,7 @@ class CubieSpectralOperator:
     # -- Slow/fast classification ------------------------------------------
     # (dim_const, dim_slow, rho_fast are set in _compute_spectral_layers)
 
-    def slow_fast_split(self, threshold=2 / 3):
+    def slow_fast_split(self, threshold: float = 2 / 3) -> tuple[np.ndarray, np.ndarray]:
         """Split eigenvalue indices into slow (λ ≥ threshold) and fast masks.
 
         Returns:
@@ -1011,13 +1011,13 @@ class CubieSpectralOperator:
         mask_slow = self.w >= threshold - self.tol
         return mask_slow, ~mask_slow
 
-    def slow_projector(self, threshold=2 / 3):
+    def slow_projector(self, threshold: float = 2 / 3) -> np.ndarray:
         """Projector onto the slow subspace (eigenvalues ≥ threshold)."""
         mask_slow, _ = self.slow_fast_split(threshold)
         V_slow = self.V[:, mask_slow]
         return V_slow @ V_slow.T.conj()
 
-    def slow_basis(self, threshold=2 / 3):
+    def slow_basis(self, threshold: float = 2 / 3) -> np.ndarray:
         """Basis vectors (columns) spanning the slow subspace."""
         mask_slow, _ = self.slow_fast_split(threshold)
         return self.V[:, mask_slow]
@@ -1025,7 +1025,7 @@ class CubieSpectralOperator:
     # -- SpectralStructure integration --
 
     @property
-    def spectral_structure(self):
+    def spectral_structure(self) -> "SpectralStructure":
         """Lazy SpectralStructure for theoretical comparison."""
         if self._ss is None:
             from rime.spectralstructure import SpectralStructure
@@ -1033,7 +1033,7 @@ class CubieSpectralOperator:
             self._ss = SpectralStructure(generators=gen_dict)
         return self._ss
 
-    def validate_with_structure(self, ss=None):
+    def validate_with_structure(self, ss: "SpectralStructure | None" = None) -> dict:
         """Compare numerical spectrum against SpectralStructure predictions."""
         if ss is None:
             ss = self.spectral_structure
@@ -1041,7 +1041,7 @@ class CubieSpectralOperator:
 
     # -- Lie Algebra --
 
-    def compute_lie_generators(self):
+    def compute_lie_generators(self) -> list[np.ndarray]:
         """Compute A_g = log(ρ(g)) for all generators via scipy.linalg.logm.
 
         This is the principal matrix logarithm. For permutation matrices,
@@ -1070,7 +1070,7 @@ class CubieSpectralOperator:
 
         return A_gens
 
-    def _closest_layer(self, lam):
+    def _closest_layer(self, lam: float) -> float:
         """Return the actual float key in self._layers closest to a canonical eigenvalue.
 
         self._layers stores eigenvalues as rounded floats (e.g., 0.666667 not 2/3),
@@ -1078,7 +1078,7 @@ class CubieSpectralOperator:
         """
         return min(self._layers.keys(), key=lambda k: abs(k - lam))
 
-    def infinitesimal_transport(self):
+    def infinitesimal_transport(self) -> dict:
         """Compute kappa_ij = max_g ||P_i A_g P_j||_F — infinitesimal transport.
 
         Continuous analogue of transport_tensor(). Uses scipy.linalg.logm to
@@ -1114,7 +1114,7 @@ class CubieSpectralOperator:
 
     # -- Primary Object 1: Per-Axis Averaging Operators --
 
-    def build_per_axis_ops(self):
+    def build_per_axis_ops(self) -> tuple[dict, list]:
         """Build per-axis QT and HT averaging operators.
 
         Primary Object 1: A_S for axis-restricted generator subsets.
@@ -1206,7 +1206,7 @@ class CubieSpectralOperator:
 
     # -- Primary Object 6: Lie Closure Hierarchy --
 
-    def kappa_depth(self, depth=1, max_commutator_samples=200):
+    def kappa_depth(self, depth: int = 1, max_commutator_samples: int = 200) -> dict:
         """Compute kappa_d(i,j) at Lie depth d.
 
         Primary Object 6: Lie closure accessibility hierarchy.
@@ -1264,7 +1264,7 @@ class CubieSpectralOperator:
 
     # -- Primary Object 4: Primitive Sectors (Center Decomposition) --
 
-    def center_decomposition(self):
+    def center_decomposition(self) -> dict:
         """Joint diagonalization of {A_18, QT_all, HT_all} → 9 primitive sectors.
 
         Primary Object 4: The minimal simultaneous eigenspaces of the
@@ -1327,7 +1327,7 @@ class CubieSpectralOperator:
 
     # -- Display --
 
-    def summary(self):
+    def summary(self) -> str:
         """Print spectral summary with basic statistics."""
         lines = []
         lines.append("=" * 60)
@@ -1351,7 +1351,7 @@ class CubieSpectralOperator:
         lines.append("=" * 60)
         return "\n".join(lines)
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return (f"CubieSpectralOperator(n={self.n}, "
                 f"n_eigs={len(self.lambda_layers)}, "
                 f"slow_dim={self.dim_slow})")
@@ -1360,7 +1360,7 @@ class CubieSpectralOperator:
 # Shared spectral utilities (used by _exp_*.py test files)
 # ============================================================
 
-def eigenspaces(A, tol=1e-6):
+def eigenspaces(A: np.ndarray, tol: float = 1e-6) -> dict[float, dict]:
     """Eigenspace decomposition: {eigenvalue: {'dim': int, 'projector': ndarray}}.
 
     Handles both Hermitian (eigh) and non-Hermitian (eig) matrices.
@@ -1383,13 +1383,13 @@ def eigenspaces(A, tol=1e-6):
     return result
 
 
-def build_A(gens_dict):
+def build_A(gens_dict: dict) -> np.ndarray:
     """Build averaging operator A = (1/|S|) Σ_{s∈S} ρ(s)."""
     rhos = [m.rho() for m in gens_dict.values()]
     return sum(rhos) / len(rhos)
 
 
-def build_h_operators(gens_dict):
+def build_h_operators(gens_dict: dict) -> tuple[list[np.ndarray], list[str]]:
     """Build symmetric h_i = (ρ(g) + ρ(g⁻¹))/2 operators from generator dict.
 
     Returns (h_ops, h_labels) where h_ops are (228,228) arrays.
@@ -1415,7 +1415,7 @@ def build_h_operators(gens_dict):
     return h_ops, h_labels
 
 
-def classify_spectral_field(eigs, m_eff, name=None):
+def classify_spectral_field(eigs: list[float], m_eff: int, name: str | None = None) -> str:
     """Classify spectral field as 'rational', 'sqrt5', or 'higher'.
 
     Uses theoretical classification: n=8/n=16 → sqrt5, otherwise based on m_eff check.
@@ -1432,7 +1432,7 @@ def classify_spectral_field(eigs, m_eff, name=None):
     return 'higher'
 
 
-def spectral_field_label(set_class):
+def spectral_field_label(set_class: str) -> str:
     """Return LaTeX field notation for a set class."""
     return {
         'rational': r'$\mathbb{Q}$',

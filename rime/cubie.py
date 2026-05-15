@@ -476,18 +476,19 @@ class CubieMove:
 
         for _ in range(turns):
             # Update corner ori deltas if not U/D axis
-            if axis != 1:  # U/D 不变,不 twist,F/R/L/ B：正好 4 个角 ±1 / ±2
+            if axis != 1:  # U/D 不变,不 twist, 角块朝向以 U/D 为基准
                 a = (axis + 1) % 3
                 b = (axis + 2) % 3
                 for i in range(8):
                     if affected_corners[i]:
-                        sign_a = np.sign(current_corner_pos[i, a])  # np.sign(corner_positions[i, a])
+                        sign_a = np.sign(current_corner_pos[i, a]) 
                         sign_b = np.sign(current_corner_pos[i, b])
-                        # sign_axis = np.sign(corner_positions[i, axis])  # U / D 层的左右手系不一致
-                        # corner 的朝向变化 = 局部右手系在旋转下的 twist,右手规则 + sign_dir 翻转 ccw 加负号是为了让顺时针90°对应 +2 或 -1
-                        twist = (-sign_a * sign_b * sign_dir) % 3
+                        if turns == 1:
+                            # single turn: twist depends on axis & face, not direction
+                            twist = (sign_a * sign_b * side) % 3 if axis == 0 else (-sign_a * sign_b * side) % 3
+                        else:
+                            twist = (-sign_a * sign_b * sign_dir) % 3
                         corners_ori_delta[i] = (corners_ori_delta[i] + twist) % 3
-                        # print(i, sign_a, sign_b, sign_dir, twist, sign_axis,side)
 
             # Update edge ori deltas if F/B axis
             if axis == 2:  # F/B 变,翻转
@@ -518,15 +519,6 @@ class CubieMove:
         for i in range(12):
             dst = np.where(np.all(edge_positions == current_edge_pos[i], axis=1))[0][0]
             edges_perm[i] = dst
-
-        # key = (axis, side, direction)
-        # if key in [(0, -1, -1), (0, 1, 1), (2, 1, -1), (2, -1, 1)]:
-        if axis != 1 and turns == 1:
-            flip = (side == sign_dir) ^ (axis == 2)
-            if flip:  # X 轴（R/L）和 Z 轴（F/B）的"朝向约定"不一致
-                corners_ori_delta = (-corners_ori_delta) % 3
-                # print('key',key,side*sign_dir,'flip')
-                # then mv.inverse().is_primitive()
 
         return cls(
             corners_perm=corners_perm,
