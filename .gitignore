@@ -1,0 +1,11 @@
+.venv/
+.idea/
+__pycache__/
+*.pyc
+*.pyo
+.claude/
+docs/
+notebooks/
+experiments/
+examples/
+CLAUDE.md

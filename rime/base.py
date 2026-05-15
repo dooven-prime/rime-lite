@@ -1,6 +1,6 @@
 from collections.abc import Mapping
 from functools import wraps
-import os, joblib
+import os,io,sys,joblib
 
 import time
 from contextlib import contextmanager
@@ -17,6 +17,13 @@ def timer(name):
     yield
     t1 = time.perf_counter()
     print(f"[TIME] {name}: {t1 - t0:.4f}s")
+
+def setup_utf8_stdout():
+    if not isinstance(sys.stdout, io.TextIOWrapper) or sys.stdout.encoding != 'utf-8':
+        try:
+            sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+        except (ValueError, AttributeError):
+            pass  # stdout already configured or not wrappable
 
 class IndexProxy(Mapping):
     """
@@ -158,12 +165,12 @@ class class_property:
 
         for cache_name in getattr(cls, '_class_cache_names', []):
             if not isinstance(cache_name, str):
-                print(f"警告：跳过非字符串缓存名 {cache_name!r}（类型 {type(cache_name).__name__}）")
+                print(f"Warning: skipping non-string cache name {cache_name!r} (type {type(cache_name).__name__})")
                 continue
             if hasattr(cls, cache_name):
                 value = getattr(cls, cache_name)
                 joblib.dump(value, f'{prop_dir}/{cls.__name__}_{cache_name}.pkl')
-        print(f"类 {cls.__name__} 的属性已保存至 {prop_dir}")
+        print(f"Class {cls.__name__} properties saved to {prop_dir}")
 
     @staticmethod
     def load(cls, prop_dir=None):
@@ -178,7 +185,7 @@ class class_property:
             if os.path.exists(prop_path):
                 value = joblib.load(prop_path)
                 setattr(cls, cache_name, value)
-        print(f"类 {cls.__name__} 的属性已从 {prop_dir} 加载")
+        print(f"Class {cls.__name__} properties loaded from {prop_dir}")
 
 
 # lru_cache
@@ -230,12 +237,12 @@ class class_cache:
 
         for cache_name in getattr(cls, '_class_cache_names', []):
             if not isinstance(cache_name, str):
-                print(f"警告：跳过非字符串缓存名 {cache_name!r}（类型 {type(cache_name).__name__}）")
+                print(f"Warning: skipping non-string cache name {cache_name!r} (type {type(cache_name).__name__})")
                 continue
             if hasattr(cls, cache_name):
                 cache = getattr(cls, cache_name)
                 joblib.dump(cache, f'{cache_dir}/{cls.__name__}_{cache_name}.pkl')
-        print(f"类 {cls.__name__} 的缓存已保存至 {cache_dir}")
+        print(f"Class {cls.__name__} cache saved to {cache_dir}")
 
     @staticmethod
     def load(cls, cache_dir=None):
@@ -250,7 +257,7 @@ class class_cache:
             if os.path.exists(cache_path):
                 cache = joblib.load(cache_path)
                 setattr(cls, cache_name, cache)
-        print(f"类 {cls.__name__} 的缓存已从 {cache_dir} 加载")
+        print(f"Class {cls.__name__} cache loaded from {cache_dir}")
 
 
 def chainable_method(func):

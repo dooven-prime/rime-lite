@@ -497,17 +497,6 @@ class CubeBase(CubeGeometry):
     def is_solved(self, state: np.ndarray) -> bool:
         return bool(np.array_equal(state, self.solved))  # not (state ^ self.solved).any()
 
-    def diff_coords(self, state: np.ndarray) -> np.ndarray:
-        diff_mask = state != self.solved
-        return np.argwhere(diff_mask)  # nonzero
-
-    def heuristic(self, state: np.ndarray):
-        """
-        估价函数：错误块的数量（简单启发）,对 BFS/IDA*/Beam search 可用,小魔方适用
-        """
-        errors = np.count_nonzero(state != self.solved)
-        return errors // max(1, self.n)  # 每个错误影响多个面
-
     @staticmethod
     def encode(state: np.ndarray) -> bytes:
         return np.ascontiguousarray(state, dtype=np.uint8).tobytes()
@@ -713,14 +702,6 @@ class CubeBase(CubeGeometry):
                     moves.append((axis, layer, direction))
         return moves
 
-    def generate_moves(self, length: int = 20):
-        """生成打乱序列"""
-        for _ in range(length):
-            axis = random.choice(range(3))
-            layer = random.choice(self.center_layers)
-            direction = random.choice((-1, 1, 2))  # 1, 2, 3
-            yield axis, layer, direction  # -> act/apply
-
     @classmethod
     def act_moves(cls, state: np.ndarray, moves: list | tuple):
         """
@@ -843,59 +824,6 @@ class CubeBase(CubeGeometry):
                 r -= 1
         return bits
 
-    def dfs(self, state: np.ndarray, depth: int, bound, visited, path, max_depth: int = 25):
-        key = self.encode_state(state)
-        if key in visited:
-            return math.inf, None
-        visited.add(key)  # 对象状态快照
-
-        h = self.heuristic(state)
-        f = depth + h
-        if f > bound:
-            visited.remove(key)
-            return f, None
-
-        if h == 0:
-            return True, path.copy()
-
-        if depth >= max_depth:
-            visited.remove(key)
-            return math.inf, None
-
-        best = math.inf
-        for move in self.basic_generators():
-            if self.is_inverse(path, *move):
-                continue
-
-            next_state = self.rotate_state(state, *move)
-            path.append(move)
-
-            t, sol = self.dfs(next_state, depth + 1, bound, visited, path, max_depth)
-
-            path.pop()
-            if t is True:
-                return True, sol
-            best = min(best, t)
-
-        visited.remove(key)
-        return best, None
-
-    def heuristic_center(self, state: np.ndarray, r: int = 1) -> int:
-        """
-        计算中心错误数量，默认中心启发：统计以 mid 为中心的 (2k+1)x(2k+1) 区域中不等于 center color 的数目。
-        r 控制区域大小 (2r+1)x(2r+1) 这里默认取 k= (n//2)//2 令中心区域足够大；可以改成只统计 (mid,mid) 周围 3x3。
-        越小越接近目标（可用于 IDA*）
-        """
-        mid = self.mid
-        k = max(1, r)  # 可调整为 1 (3x3) 或更大，跳过十字、边缘、角落，只取 3x3 / 5x5 / ... 中心块
-        wrong = 0
-        for f in range(6):
-            face = state[f]
-            target = self.solved[f, mid, mid]  # face[mid, mid]
-
-            region = face[mid - k:mid + k + 1, mid - k:mid + k + 1]
-            wrong += np.count_nonzero(region != target)
-        return int(wrong)
 
     @classmethod
     def get_vars(cls):
@@ -976,13 +904,6 @@ class CubeBase(CubeGeometry):
     def pos_to_face_rc(cls, pos: tuple, n: int) -> tuple:
         """lookup 直接查表  xyz → (face, r, c)"""
 
-        # stickers = cls.get_face_stickers(n=n)
-        # coord_map = {
-        #     tuple(xyz.astype(int)): (cls.face_idx[f], r, c)
-        #     for f, lst in stickers.items()
-        #     for r, c, xyz in lst
-        # }
-        # return coord_map[pos]
         best_face = None
         best_dot = -float('inf')
 
@@ -1052,10 +973,7 @@ class CubeBase(CubeGeometry):
 
             fidx = cls.face_idx[face]
             normal, u_dir, v_dir = cls.face_basis(face)
-            # if np.dot(normal, axis_vec) < 0:  # 负侧面
-            #     v_dir = -v_dir  # 只翻转向右方向,让所有 face 的 strip 方向在旋转轴视角下保持一致
-            #     print('axis', axis, 'face', face, '负侧面统一翻转!')
-            # u_dir = -u_dir
+ 
             strip_dir = np.cross(axis_vec, normal)
             strip_dir /= np.linalg.norm(strip_dir)  # 该面对应的旋转条带方向或法向量
             # 确定沿哪个方向 (v 或 u)，并计算 align
@@ -1075,67 +993,6 @@ class CubeBase(CubeGeometry):
 
         return strips
 
-    @classmethod
-    @class_status('参考方法')
-    def strip_coords_from_axis_old(cls, axis: int, layer: int, n: int) -> list:
-        face_normal = cls.face_normal()
-        axis_vec = cls.AXIS_VEC[axis]
-        strips = []
-        # prev_strip_dir = None  # 用于检查连续性
-        # prev_v_dir=None
-        for idx, face in enumerate(cls.AXIS_STRIP[axis]):
-            fidx = cls.face_idx[face]  # self.FACES.index(face)
-            normal = face_normal[face]
-            # 相邻面之间"向右"和"向上"的递进方向不连续,选择一致的参考系
-            reverse = (axis == 2 and idx % 2 == 1)  # 第1、3个面（R 和 L 对于 Z 轴）,每隔一个面（奇数位）需要翻转 u_dir，使"向右"方向在环路上连续
-            # 收集该 face 上属于 layer 的所有贴纸
-            coords = []
-            for r in range(n):
-                for c in range(n):
-                    xyz = cls.face_rc_to_xyz(face, r, c, n)
-                    if np.isclose(xyz[axis], layer):
-                        if reverse:
-                            coords.append((c, r, xyz))  # Z₂ flip 对整个面内平面做一次 180° 旋转
-                        else:
-                            coords.append((r, c, xyz))
-
-            if not coords:
-                continue
-
-            # center = np.mean([p for *_, p in coords], axis=0)
-            # proj = center - dot(center, axis_vec) * axis_vec  # 投影到旋转平面（垂直于 axis）
-            # 条带内部顺序,判断是水平行还是垂直列
-            rs = {s[0] for s in coords}
-            cs = {s[1] for s in coords}
-            if len(rs) == 1:  # 水平行,按列排
-                r = rs.pop()
-                strip = [(fidx, r, c) for _, c, _ in sorted(coords, key=lambda x: x[1])]
-            elif len(cs) == 1:  # 竖直列,按行排
-                c = cs.pop()
-                strip = [(fidx, r, c) for r, _, _ in sorted(coords, key=lambda x: x[0])]
-            else:
-                # 整个 face（最外层），按行排
-                for r in sorted(rs):
-                    strip = [(fidx, r, c) for rr, c, _ in coords if rr == r]
-                    strips.append(strip)
-                continue
-
-            strip_dir = np.cross(axis_vec, normal)  # 该面对应的旋转条带方向或法向量
-            # 检查与前一面的连续性: 如果 prev_strip_dir 存在, dot(strip_dir, prev_u_or_v) <0 则翻转
-            # if prev_strip_dir is not None:
-            #     if np.dot(strip_dir, prev_v_dir) < 0:  # 如果与前面的 v_dir 反向, 翻转本面基
-            #         u_dir, v_dir = -u_dir, -v_dir  # 180° 旋转, 保持正交
-            #         strip_dir = -strip_dir  # 相应翻转 strip_dir 以匹配
-            #
-            # # 更新 prev for next
-            # prev_strip_dir = strip_dir
-            # prev_v_dir = v_dir  # 或 u_dir, 取决于环是否沿col 方向绕,由于约定 v_dir=向右 (col), 用 v_dir 作为"前进"代理
-            # dir_idx = np.argmax(np.abs(strip_dir))
-            inc_dir = coords[-1][2] - coords[0][2]  # last - first
-            if np.dot(inc_dir, strip_dir) < 0:  # 世界坐标方向向量，用整个条带判断是否需要反转
-                strip.reverse()  # SO(3) 群, 逆向轴方向进场，需要 reverse
-            strips.append(strip)
-        return strips
 
     @classmethod
     def rotate_slice(cls, state: np.ndarray, axis: int, layer: int, shift: int, n: int = None):
@@ -1490,7 +1347,7 @@ class CubeBase(CubeGeometry):
             [0, 0, 1]
         ])
         if np.abs(np.abs(ay) - np.pi / 2) < 1e-6:
-            print(f"接近万向节锁! ay={ay} 接近 ±90°")
+            print(f"Near gimbal lock! ay={ay} near ±90°")
         return Rz @ Ry @ Rx  # 从右向左执行，实际顺序是 X -> Y -> Z
 
     @class_property('ROTATION_MATRICES')
@@ -1595,7 +1452,7 @@ class CubeBase(CubeGeometry):
                     visited.add(state_key)
                     q.append((new_state, move_list + [move]))
 
-        raise ValueError("无法对齐 U/F 面")
+        raise ValueError("Cannot align U/F faces")
 
     @class_property('SYMMETRY_INVERSE_ID')
     def symmetry_inverse_id(cls) -> np.ndarray:
@@ -1645,99 +1502,6 @@ class CubeBase(CubeGeometry):
                     if 0 <= r_new < n and 0 <= c_new < n:
                         new_state[new_fidx, r_new, c_new] = state[old_fidx, r, col]
         return new_state
-
-    @class_cache(key=lambda face, n: (face, n))
-    @classmethod
-    def face_quads(cls, face: str, n: int) -> list:
-        """
-        生成某一面上的所有小方块的四边形坐标->get_face_stickers
-        返回给定面 U/D/F/B/L/R 上 n×n 个小方块的 3D quad 数组
-        """
-        normal, dx, dy = cls.face_def[face]
-        origin = normal * (n / 2)
-
-        result = []
-        for i in range(n):
-            for j in range(n):
-                # 当前小贴纸左上角中心点
-                p = origin + dx * (j - n / 2 + 0.5) + dy * (i - n / 2 + 0.5)
-                # 小方块 4 个角
-                quad = [
-                    p + (-dx - dy) * 0.5,
-                    p + (dx - dy) * 0.5,
-                    p + (dx + dy) * 0.5,
-                    p + (-dx + dy) * 0.5,
-                ]
-                result.append(quad)
-        return result
-
-    @classmethod
-    def rotate_around_layer(cls, quad: np.ndarray, axis: int, layer_geom: float, ang: float) -> np.ndarray:
-        """
-        根据给定的旋转轴和角度生成旋转矩阵,任意层的局部轴
-        计算旋转层的中心点（该层相对于立方体中心的位置）
-        对该层的每个点进行旋转，保证旋转发生在该层平面上
-        R = I + (sinθ) * K + (1 - cosθ) * K^2 罗德里格斯公式推导
-        """
-
-        # rotate points around the plane of the layer (centered at layer plane)
-        # compute layer plane center
-        def axis_rot_matrix(axis_vec: np.ndarray, theta: float):
-            # Rodrigues' rotation formula
-            k = axis_vec / np.linalg.norm(axis_vec)
-            K = np.array([[0, -k[2], k[1]], [k[2], 0, -k[0]], [-k[1], k[0], 0]])
-            I = np.eye(3)
-            return I + math.sin(theta) * K + (1 - math.cos(theta)) * (K @ K)
-
-        rot = axis_rot_matrix(cls.AXIS_VEC[axis], ang)
-        center = np.zeros(3)
-        center[axis] = layer_geom  # translation to layer center:layer - n / 2 + 0.5
-        return np.array([rot @ (v - center) + center for v in quad])
-
-    @class_cache(key=lambda axis, layer, n: (axis, layer, n))
-    @classmethod
-    def layer_sticker_set(cls, axis: int, layer: int, n: int):
-        stickers = cls.get_layer_stickers(axis, layer, n)
-        return {
-            (f, r, c)
-            for f, lst in stickers.items()
-            for r, c, _ in lst
-        }
-
-    @classmethod
-    def should_rotate_by_sticker(cls, face: str, r: int, c: int, axis: int, layer: int, n: int):
-        return (face, r, c) in cls.layer_sticker_set(axis, layer, n)
-
-    @classmethod
-    @class_status('待完成')
-    def rotated_coord(cls, quad: np.ndarray, axis: int, layer: int, n: int, ang: float):
-        """
-        返回动画阶段的临时颜色
-        quad: 4 个角的世界坐标 4x3 的 3D 点 → 只是渲染,贴纸的可视外壳
-        axis/layer/ang: 当前旋转信息
-        """
-        # 找到该 quad 对应的逻辑位置
-        # coords = quad[:, axis]
-        # min_c, max_c = coords.min(), coords.max()
-        stickers = cls.get_layer_stickers(axis, layer, n)  # dict[face] = [(r,c,pos), ...]
-        for face, lst in stickers.items():
-            for r, c, pos in lst:
-                center = np.mean(quad, axis=0)
-                # 如果该 quad 的中心接近任何一个贴纸的 pos，就认为它属于旋转层
-                if np.allclose(center, pos, atol=0.5):  # 判断 quad 是否接近 pos
-                    #  根据旋转角度计算新逻辑位置
-                    layer_coord = pos[axis]
-                    if abs(ang - np.pi / 2) < 1e-6:  # 顺时针 90°
-                        new_r, new_c = c, n - 1 - r
-                    elif abs(ang + np.pi / 2) < 1e-6:  # 逆时针 90°
-                        new_r, new_c = n - 1 - c, r
-                    elif abs(abs(ang) - np.pi) < 1e-6:  # 180°
-                        new_r, new_c = n - 1 - r, n - 1 - c
-                    else:  # 0°
-                        new_r, new_c = r, c
-
-                    return face, new_r, new_c
-        return None
 
 
 @dataclass(frozen=True)
@@ -1827,7 +1591,7 @@ class ActionToken:
             1 → 负轴面 (layer < 0)
         """
         if not move:
-            raise ValueError("动作不能为空")
+            raise ValueError("Move string cannot be empty")
 
         mid, c = divmod(n, 2)
         move_tmp = move
@@ -1853,17 +1617,17 @@ class ActionToken:
             # --- 正则解析宽度（前缀数字）---
             m = re.match(r"(\d*)([URFDLB])(w?)$", move_tmp)
             if not m:
-                raise ValueError(f"无法解析动作: {move}")
+                raise ValueError(f"Cannot parse move: {move}")
 
             width_txt, face, wide_flag = m.groups()
             if face not in CubeGeometry.FACES:
-                raise ValueError(f"未知面: {face}")
+                raise ValueError(f"Unknown face: {face}")
 
             # 宽度：无数字 → 默认 1；如果有 'w' 则默认 = 2
             if width_txt:
                 width = int(width_txt)
                 if width < 1 or width > n:
-                    raise ValueError(f"宽度 {width} 超出魔方阶数 {n}")
+                    raise ValueError(f"Width {width} exceeds cube order {n}")
             else:
                 width = 2 if wide_flag else 1
 
@@ -1978,159 +1742,6 @@ class ActionToken:
         """move 的逆 将 moves 转成可还原的逆操作序列（反向 + 方向反）"""
         return [m.invert() for m in reversed(moves)]
 
-    @staticmethod
-    def commutator(A: list, B: list) -> list['ActionToken']:
-        """
-        交换子,制造局部扰动,奇偶性不变
-        A, B: move list
-        return: [A, B] = A B A⁻¹ B⁻¹
-        """
-        return A + B + ActionToken.invert_moves(A) + ActionToken.invert_moves(B)
-
-    @staticmethod
-    def conjugate(A: list, B: list) -> list['ActionToken']:
-        """
-        共轭 A B A⁻¹ 改变作用位置,保持结构不变 or A⁻¹ B A
-        """
-        return A + B + ActionToken.invert_moves(A)
-
-    @staticmethod
-    def cycle3(A: list, B: list, P: list) -> list['ActionToken']:
-        """
-        experimental
-        在 P(A,B) 定义的位置制造一个 3-cycle
-        A, B: 产生 3-cycle 的基元
-        P: 定位用的 conjugate position_moves
-        P · [A, B] · P⁻¹
-        """
-        base = ActionToken.commutator(A, B)
-        return ActionToken.conjugate(P, base)
-
-    @staticmethod
-    def at(position_moves: list, base_cycle: list) -> list['ActionToken']:
-        """
-        在指定位置制造一个贴纸 3-cycle
-        position_moves: 把目标贴纸搬到工作区的 moves
-        base_cycle: 已知在固定工作区的 cycle
-        cycle_at = P · base · P⁻¹
-        """
-        return ActionToken.conjugate(position_moves, base_cycle)
-
-
-class StickerCube(CubeBase):
-    """贴纸态"""
-
-    def __init__(self, state: np.ndarray | dict = None, n: int = 3):
-        super().__init__(n)
-
-        if state is None:  # 初始化已解决状态
-            self.cube = self.solved.copy()
-            # for face, color in zip(self.FACES, self.COLORS):
-            #     self.cube[face] = [[color] * n for _ in range(n)]
-        elif isinstance(state, np.ndarray):
-            # state 应当是 (6,n,n) 的数值
-            self.cube = state.astype(np.uint8)
-            self.n = self.cube.shape[1]
-        elif isinstance(state, dict):
-            self.cube = self.from_color(state)
-            self.n = self.cube.shape[1]
-            # 假定传入的 state 是面->二维列表的映射，复制一份以免外部修改
-            # self.cube = {f: [row.copy() for row in state[f]] for f in self.FACES}
-            # self.n = len(self.cube)
-        else:
-            raise ValueError('wrong state')
-        if self.n != n:
-            super().__init__(n)
-
-        # total_stickers = 6 * n ^ 2
-        # per_face_outer = 4 * n - 4
-        # per_face_inner = (n - 2) ^ 2
-        # edge_wings = 12 * (n - 2)  # 边翼, 角块（corners）恒为 8
-
-        # self.__class__.axis_face_idx = {axis: (self.FACES.index(pos), self.FACES.index(neg))
-        #                                 for axis, (pos, neg) in enumerate(self.AXIS_FACE)}
-        assert list(range(6)) == [self.FACES.index(f) for f in self.FACES]
-        random.seed(47)
-
-    def clone(self):
-        """深拷贝当前魔方并返回新的实例"""
-        return StickerCube(state=self.cube.copy(), n=self.n)
-
-    def reset(self):
-        self.cube = self.solved.copy()
-
-    def get_state(self) -> np.ndarray:
-        """返回当前魔方状态（用于序列化）"""
-        return self.cube.copy()
-
-    def is_solved(self, state: np.ndarray = None) -> bool:
-        if state is None:
-            state = self.cube
-        return super().is_solved(state)
-
-    def __eq__(self, other):
-        if not isinstance(other, self.__class__):
-            return False
-        if self.n != other.n:
-            return False
-        return bool(np.array_equal(self.cube, other.cube))  # np.all(self.cube == other.cube)
-
-    def __hash__(self):
-        return hash(super().encode(self.cube))
-
-    @property
-    def key(self) -> tuple:
-        """把 cube 转成 tuple"""
-        return tuple(self.cube.flatten())
-
-    @property
-    def faces_colors(self) -> dict:
-        return self.get_colors(self.cube)
-
-    @class_status('参考方法')
-    def rotate_face(self, face: str, direction: int = 1):
-        """旋转一个面，direction=1顺时针，-1逆时针,axis 与 face.normal 必然平行"""
-        fidx = self.face_idx[face]
-        axis, side = self.face_axis[face]
-        axis_vec = self.AXIS_VEC[axis]
-        normal = self.face_normal[face]
-        sign = np.dot(normal, axis_vec)
-        assert (side == 0 and sign > 0) or (side == 1 and sign < 0)
-        layer = self.mid if side == 0 else -self.mid
-
-        d = direction % 4
-        dd = d if side == 0 else -d
-        self.rotate_inplace(self.cube[fidx], dd)  # np.rot90(arr, -direction)
-        self.rotate_slice(self.cube, axis, layer, shift=d, n=self.n)
-
-    @chainable_method
-    def rotate(self, axis: int, layer: int, direction: int = 1):
-        """
-        统一旋转入口,AXIS-SLICE 旋转
-        axis: 'x' | 'y' | 'z':0,1,2
-        layer: 0 ~ n-1
-        direction: 1 = 顺时针, -1 = 逆时针
-        """
-        # print('rotate:', axis, layer, direction)
-        assert 0 <= axis <= 2, f"unknown axis: {axis}"
-        assert -self.mid <= layer <= self.mid, f"layer out of range: {layer}"
-        self.rotate_core(self.cube, axis, layer, direction)
-
-    def normalize(self) -> list[tuple]:
-        # self.cube = self.normalize_sticker(self.cube)
-        self.cube, path = self.normalize_align(self.cube)
-        return path
-
-    @chainable_method
-    def apply(self, moves: list | tuple):
-        self.act_moves(self.cube, moves)
-
-    def apply_move(self, move: str):
-        token = ActionToken.transform(move, self.n)
-        self.act_moves(self.cube, [token.key])
-        return [token.key]
-
 
 if __name__ == "__main__":
-    # 测试已迁移到 test/test_cube.py
     pass

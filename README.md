@@ -27,7 +27,7 @@ A = \frac{1}{|S|}\sum_{s \in S} \rho(s), \qquad
 \mathrm{Spec}(A) = \left\{1,\;\frac{8}{9},\;\frac{7}{9},\;\frac{2}{3},\;\frac{5}{9},\;\frac{1}{3}\right\}
 $$
 
-The averaging operator $A$ decomposes the representation into six spectral layers $V_\lambda = \operatorname{im}(P_\lambda)$. Further refinement by the center $\mathrm{Center}\{A, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\mathrm{all}}\}$ yields nine primitive sectors. The full commutant $\mathrm{Comm}_G(V_\lambda)$ resolves 51 isotypic components — of which 50 are multiplicity-free. The single exception, $V_{5/9}^{(3,11)}$, is the *multiplicity reservoir* where all fibre-level transport concentrates.
+The averaging operator $A$ decomposes the representation into six spectral layers $V_\lambda = \mathrm{im}(P_\lambda)$. Further refinement by the center $\mathrm{Center}\{A, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\mathrm{all}}\}$ yields nine primitive sectors. The full commutant $\mathrm{Comm}_G(V_\lambda)$ resolves 51 isotypic components — of which 50 are multiplicity-free. The single exception, $V_{5/9}^{(3,11)}$, is the *multiplicity reservoir* where all fibre-level transport concentrates.
 
 ---
 
@@ -47,7 +47,7 @@ The averaging operator $A$ decomposes the representation into six spectral layer
 
 ```bash
 pip install -e .
-python experiments/t7_minimal.py
+python experiments/paper3/t7_minimal.py
 ```
 
 Requires Python ≥ 3.10, numpy, scipy, matplotlib. All experiments are self-contained — no data files, no precomputed caches.
@@ -55,7 +55,7 @@ Requires Python ≥ 3.10, numpy, scipy, matplotlib. All experiments are self-con
 | Script | Supports |
 |--------|----------|
 | `t7_minimal.py` | T7 Theorem — $S_3$ prototype (Paper III) |
-| `n2_negative_control.py` | $N=2$ pocket cube — T7 absent without edge block |
+| `n2_control.py` | $N=2$ pocket cube — T7 absent without edge block |
 | `transport_closure.py` | 84-check Lie accessibility hierarchy |
 | `primitive_sectors.py` | 9 primitive sectors from joint diagonalization |
 | `ep_algebra.py` | EP algebra $\cong M_2(\mathbb{C})^4 \oplus M_1(\mathbb{C})^4$ |
@@ -65,6 +65,17 @@ Requires Python ≥ 3.10, numpy, scipy, matplotlib. All experiments are self-con
 
 ## Papers
 
-**[Paper I](paper/Paper%20I.md)** — Spectral origin. *Why is the spectrum rational?*
-**[Paper II](paper/Paper%20II.md)** — Transport topology. *Why does the transport graph have its observed structure?*
-**[Paper III](paper/Paper%20III.md)** — Lie accessibility. *Why can discrete composition beat the continuous limit?*
+**Paper I** — Spectral origin. *Why is the spectrum rational?*
+**Paper II** — Transport topology. *Why does the transport graph have its observed structure?*
+**Paper III** — Lie accessibility. *Why can discrete composition beat the continuous limit?*
+
+---
+
+---
+
+Geometric and move conventions are documented in the project repository.
+
+---
+
+*Maintained by Rime (WuJun Chen)*
+*Email: dooven@outlook.com*

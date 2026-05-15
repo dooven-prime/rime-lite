@@ -1,17 +1,9 @@
-import sys
-import io
-
-if not isinstance(sys.stdout, io.TextIOWrapper) or sys.stdout.encoding != 'utf-8':
-    try:
-        sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
-    except (ValueError, AttributeError):
-        pass  # stdout already configured or not wrappable
-
-from rime.cubie import CubieState, CubieMove, N_GENERATORS, TOTAL_DIM
-from rime.base import class_cache
+from rime.cubie import CubieMove, N_GENERATORS, TOTAL_DIM
+from rime.base import class_cache,setup_utf8_stdout
 from rime.helpers import is_in_qsqrt5, is_rational_form
 import numpy as np
 
+setup_utf8_stdout()
 
 class CubieSpectralOperator:
     """Numerical spectral operator - the numerical utility layer.
