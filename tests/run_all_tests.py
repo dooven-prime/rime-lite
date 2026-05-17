@@ -5,11 +5,12 @@ No pytest. No test framework. Just plain assert-based verification.
 Each test runs with stdout/stderr inherited so output streams directly.
 
 Slow tests (require CubieSpectralOperator ~2-5 min each):
+  test_cubieoperator.py  — canonical engine: spectral theorem, Bose-Mesner, k-set recon
   test_commutant_gap.py  — Δ_comm, transport invariants
   test_transport.py      — K symmetry, T7 pairs, N=2 control
   test_f3.py             — isotypic decomposition, multiplicity reservoir
 
-Run them individually: python tests/test_commutant_gap.py
+Run them with: python tests/run_slow_tests.py
 """
 import subprocess
 import sys
@@ -19,8 +20,9 @@ from pathlib import Path
 TESTS = [
     "test_action_token.py",
     "test_cubie.py",
-    "test_representation.py",
+    "test_cubieoperator.py",
     "test_spectralstructure.py",
+    "test_representation.py",
     "test_spectrum.py",
     "test_sectors.py",
     "test_commutant.py",
@@ -34,7 +36,9 @@ SLOW_TESTS = [
 ]
 
 ROOT = Path(__file__).resolve().parent
+PROJECT_ROOT = ROOT.parent  # rime-lite root, where rime/ package lives
 N = len(TESTS)
+env = {**__import__('os').environ, 'PYTHONPATH': str(PROJECT_ROOT)}
 passed = 0
 failed = []
 
@@ -44,9 +48,11 @@ for name in TESTS:
     print(f"\n{'=' * 60}")
     print(f"{header:=^60}")
     print(f"{'=' * 60}")
+
     result = subprocess.run(
         [sys.executable, str(path)],
-        cwd=str(ROOT),
+        cwd=str(PROJECT_ROOT),
+        env=env,
     )
     if result.returncode == 0:
         passed += 1

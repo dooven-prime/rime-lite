@@ -24,6 +24,7 @@ Level-0 and level-1 claims hold for **any** symmetric generator set. Level-2 cla
 | `test_cubie.py` | Group axioms, inverse, build, compose-act consistency | Paper I, Sec 2 |
 | `test_representation.py` | Group homomorphism, unitary, block decomposition | Paper I, Sec 2 |
 | `test_spectralstructure.py` | k-set prediction, integrality, Galois stability, rational field | Paper I, Sec 3 |
+| `test_cubieoperator.py` | Canonical engine: spectral theorem, Bose-Mesner closure, k-set recon | Paper I, Sec 3 |
 | `test_spectrum.py` | Rational spectral law, k=5 absent, multiplicities | Paper I, Sec 3 |
 | `test_sectors.py` | 9 primitive sectors, layer splitting, S6 hub, S1 isolation | Paper II, Sec 4 |
 | `test_commutant.py` | Center commutativity, Supp_nc localization | Paper II, Sec 5 |
@@ -41,6 +42,7 @@ Level-0 and level-1 claims hold for **any** symmetric generator set. Level-2 cla
 - **Run slow tests**: `python tests/run_slow_tests.py` (~5-10 min, requires CubieSpectralOperator)
 
 Slow tests (each constructs a full CubieSpectralOperator):
+  `test_cubieoperator.py` — canonical engine: spectral theorem, Bose-Mesner closure, k-set recon
   `test_commutant_gap.py` — Δ_comm, transport invariants (Paper II §8.3)
   `test_transport.py` — K symmetry, T7 pairs, N=2 control (Paper II §6 / Paper III)
   `test_f3.py` — isotypic decomposition, multiplicity reservoir (Paper I App B / Paper II)

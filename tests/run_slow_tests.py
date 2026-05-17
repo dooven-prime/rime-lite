@@ -11,12 +11,14 @@ import sys
 from pathlib import Path
 
 SLOW_TESTS = [
+    "test_cubieoperator.py",
     "test_commutant_gap.py",
     "test_transport.py",
     "test_f3.py",
 ]
 
 ROOT = Path(__file__).resolve().parent
+PROJECT_ROOT = ROOT.parent  # rime-lite root, where rime/ package lives
 N = len(SLOW_TESTS)
 passed = 0
 failed = []
@@ -29,7 +31,7 @@ for name in SLOW_TESTS:
     print(f"{'=' * 60}")
     result = subprocess.run(
         [sys.executable, str(path)],
-        cwd=str(ROOT),
+        cwd=str(PROJECT_ROOT),
     )
     if result.returncode == 0:
         passed += 1

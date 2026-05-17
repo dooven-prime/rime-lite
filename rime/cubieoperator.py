@@ -47,6 +47,7 @@ class CubieSpectralOperator:
         # All caches are permanent — no invalidation, no force_recompute.
         self._pg_cache = {}       # lam → (projected_gens, d)
         self._cb_cache = {}       # lam → (comm_basis, comm_dim)
+        self._full_comm_cache: tuple[list[np.ndarray], int] | None = None
         self._lie_gens_cache = None
         self._frozen = True       # spectral identity is now immutable
 
@@ -568,15 +569,26 @@ class CubieSpectralOperator:
                                       d: int) -> tuple[list[np.ndarray], int]:
         """Build orthonormal basis for the commutant within one eigenspace block.
 
-        Uses exact SVD for d ≤ 50, randomized sampling + Reynolds projection for d > 50.
+        d ≤ 50: reduce generators to independent set, build full constraint
+                matrix, one-shot SVD (stable for clustered singular spectra).
+        d > 50: randomized sampling + Reynolds projection.
         """
         if d <= 50:
+            # Reduce to independent generators first.
+            gen_vecs = np.array([G.ravel() for G in projected_gens])  # (n_gen, d²)
+            _, s_gen, Vh_gen = np.linalg.svd(gen_vecs, full_matrices=False)
+            rank = int(np.sum(s_gen > self.tol * s_gen[0]))
+            indep_gens = [Vh_gen[i, :].reshape(d, d) for i in range(rank)]
+
+            # Build full constraint matrix from independent generators, then
+            # one-shot SVD — avoids progressive numerical drift from sequential
+            # null-space intersection.
             constraints = []
-            for G_k in projected_gens:
+            for G_k in indep_gens:
                 M_k = np.kron(G_k.T, np.eye(d)) - np.kron(np.eye(d), G_k)
                 constraints.append(M_k)
             C = np.vstack(constraints)
-            _, s, Vh = np.linalg.svd(C, full_matrices=True)
+            _, s, Vh = np.linalg.svd(C, full_matrices=False)
             sv_thresh = self.tol * max(1.0, s[0]) * max(C.shape)
             null_mask = s < sv_thresh
             comm_dim = int(np.sum(null_mask))
@@ -590,6 +602,7 @@ class CubieSpectralOperator:
                 nrm = np.linalg.norm(B, 'fro')
                 if nrm > gs_tol:
                     basis.append(B / nrm)
+            comm_dim = len(basis)
         else:
             gen_inv = [G.T.conj() for G in projected_gens]
             basis, comm_dim = self._commutant_basis_randomized(projected_gens, gen_inv, d)
@@ -599,19 +612,17 @@ class CubieSpectralOperator:
                                     gen_inv: list[np.ndarray], d: int,
                                     n_samples: int | None = None
                                     ) -> tuple[list[np.ndarray], int]:
-        """Random sampling + Reynolds projection + Gram-Schmidt for large blocks (d > 50)."""
+        """Random sampling + Reynolds projection + Gram-Schmidt for d > 50.
+
+        Uses exact order-4 per-generator projectors.
+        """
         if n_samples is None:
-            n_samples = min(d * 8, 800) if d > 50 else min(d * 5, 400)
+            n_samples = min(d * 6, 250)
         basis = []
         gs_tol = self.tol * d * 10
-        _project = (self.project_commutant_exact if d > 50
-                    else self.project_commutant)
         for _ in range(n_samples):
             X = np.random.randn(d, d) + 1j * np.random.randn(d, d)
-            if d > 50:
-                X = _project(X, projected_gens)
-            else:
-                X = _project(X, projected_gens, gen_inv)
+            X = self.project_commutant_exact(X, projected_gens, n_iter=8)
             for B in basis:
                 X -= np.tensordot(B.conj(), X) * B
             nrm = np.linalg.norm(X, 'fro')
@@ -673,6 +684,8 @@ class CubieSpectralOperator:
 
         Returns (basis, comm_dim) where comm_dim is the exact total commutant dimension.
         """
+        if self._full_comm_cache is not None:
+            return self._full_comm_cache
         d_full = 228
         perms = []
         phases = []
@@ -755,6 +768,7 @@ class CubieSpectralOperator:
                     B[i, j] = phase_val / norm_factor
                 basis.append(B)
 
+        self._full_comm_cache = (basis, len(basis))
         return basis, len(basis)
 
     # -- Center & irrep decomposition (F1-F3) --------------------------

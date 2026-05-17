@@ -1,16 +1,18 @@
-"""Theorem verification:
-  - SpectralStructure construction from 18 generators
-  - k-set prediction matches Spec(A) = {1 - k/9 | k ∈ {0,1,2,3,4,6}}
-  - Eigenvalue count prediction (6 distinct)
-  - Block structure: cp/ep/co/eo dimensions
-  - Integrality: class-sum coefficients rational
-  - Partition integrality: block-level trace structure
-  - Galois stability: spectral field is Q (rational)
-  - Block projectors / block_of_index consistency
-
-Paper: Paper I, Sec 3 (Spectral decomposition via Bose-Mesner)
-Invariant level: 1 (group algebra)
 """
+Theorem verification: 
+    - SpectralStructure construction from 18 generators 
+    - k-set prediction matches Spec(A) = {1 - k/9 | k ∈ {0,1,2,3,4,6}} 
+    - Eigenvalue count prediction (6 distinct) 
+    - Block structure: cp/ep/co/eo dimensions 
+    - Integrality: class-sum coefficients rational 
+    - Partition integrality: block-level trace structure 
+    - Galois stability: spectral field is Q (rational)
+    - Block projectors / block_of_index consistency 
+
+Paper: Paper I, Sec 3 (Spectral decomposition via Bose-Mesner) 
+Invariant level: 1 (group algebra) 
+"""
+
 
 import numpy as np
 from rime.cubie import CubieMove, TOTAL_DIM, BLOCK_RANGES, BLOCK_DIMS
@@ -18,6 +20,7 @@ from rime.spectralstructure import SpectralStructure, block_projectors, block_of
 
 TOL = 1e-10
 ss = SpectralStructure(CubieMove.prim_moves)
+m = ss.m  # denominator: λ_k = 1 − k/m
 
 
 def test_construction():

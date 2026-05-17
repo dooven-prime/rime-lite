@@ -20,10 +20,20 @@ CANONICAL = {
     "delta": 194,
 }
 
+# Shared operator — expensive to construct, reuse across all tests.
+_op: CubieSpectralOperator | None = None
+
+
+def _get_op() -> CubieSpectralOperator:
+    global _op
+    if _op is None:
+        _op = CubieSpectralOperator()
+    return _op
+
 
 def test_commutant_gap_invariant():
     """Level-1: Δ_comm = dim(Comm(A)) − dim(Comm(ρ)) ≥ 0."""
-    op = CubieSpectralOperator()
+    op = _get_op()
 
     ca = op.commutant_algebra()
     dim_comm_A = ca['dim_total']
@@ -41,7 +51,7 @@ def test_commutant_gap_invariant():
 
 def test_commutant_per_layer_invariant():
     """Level-1: each layer's commutant satisfies 0 ≤ comm_dim ≤ d²."""
-    op = CubieSpectralOperator()
+    op = _get_op()
     ca = op.commutant_algebra()
     layers = op.layer_keys()
 
@@ -56,7 +66,7 @@ def test_commutant_per_layer_invariant():
 
 def test_commutant_gap_snapshot():
     """Level-2: canonical snapshot regression check."""
-    op = CubieSpectralOperator()
+    op = _get_op()
 
     ca = op.commutant_algebra()
     dim_comm_A = ca['dim_total']
@@ -80,7 +90,7 @@ def test_transport_commutant_relation():
     Transport sums are not frozen — they depend on projector normalization,
     generator weighting, and basis conventions. Assert only invariants.
     """
-    op = CubieSpectralOperator()
+    op = _get_op()
     tol = 1e-6
 
     ca = op.commutant_algebra()
