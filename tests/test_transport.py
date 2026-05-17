@@ -33,9 +33,8 @@ sec = op.center_decomposition()
 n = sec['n_sectors']
 Ps = sec['projectors']
 
-rho_list = []
-for _, (_, rho, *_) in op.rho_moves.items():
-    rho_list.append(rho.toarray() if hasattr(rho, 'toarray') else np.array(rho))
+rho_list = [m.toarray() if hasattr(m, 'toarray') else np.array(m)
+            for m in op.rho_matrices()]
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # Test 1: K_ij symmetry
@@ -96,7 +95,7 @@ for i in range(n):
     print(f"  S{i+1}: V({k}/9), {sector_block[i]}, dim={sec['sectors'][i]['dim']}")
 
 # Compute kappa (returns K, kappa0, kappa1)
-K_kappa, kappa0_arr, kappa1_arr = compute_transport_kappa(rho_list, Ps, compute_kappa1=True)
+K_kappa, kappa0_arr, kappa1_arr = compute_transport_kappa(rho_list, Ps, compute_kappa1=True, cso=op)
 K_arr = np.array(K)
 
 # Manual T7 detection: different predominant blocks, K=kappa0=kappa1=0,

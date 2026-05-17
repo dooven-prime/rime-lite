@@ -79,7 +79,7 @@ print(f"  OK — all {n} sectors idempotent with correct trace")
 
 print("Test 5: Spectral layer splitting ...")
 # Group sectors by A_18 eigenvalue (match to closest layer)
-layer_keys = sorted(op._layers.keys(), reverse=True)
+layer_keys = op.layer_keys()
 layer_sectors = {lam: [] for lam in layer_keys}
 for i, s in enumerate(sec['sectors']):
     lam_s = s['lam_18']
@@ -92,7 +92,7 @@ v59_count = 0
 v13_count = 0
 for lam_key, indices in sorted(layer_sectors.items(), reverse=True):
     sector_dim_sum = sum(sec['sectors'][i-1]['dim'] for i in indices)
-    layer_dim = op._layers[lam_key]['dim']
+    layer_dim = op.layer_dimension(lam_key)
     check(sector_dim_sum == layer_dim,
           f"Layer lam={lam_key:.6f}: sector dim sum {sector_dim_sum} != layer dim {layer_dim}")
     k = round((1 - lam_key) * 9)
@@ -117,9 +117,8 @@ print(f"  OK — 6 spectral layers correctly split into 9 sectors")
 
 print("Test 6: S6 hub connectivity ...")
 # Compute K matrix at sector resolution
-rho_list = []
-for _, (_, rho, *_) in op.rho_moves.items():
-    rho_list.append(rho.toarray() if hasattr(rho, 'toarray') else np.array(rho))
+rho_list = [m.toarray() if hasattr(m, 'toarray') else np.array(m)
+            for m in op.rho_matrices()]
 
 K_sec = np.zeros((n, n))
 for rho_m in rho_list:

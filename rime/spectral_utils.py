@@ -133,27 +133,39 @@ def classify_sectors(sectors, dim_a, dim_b=None, dim_total=None, tol=1e-10):
 # 2. Transport & Lie curvature
 # ============================================================
 
-def compute_transport_kappa(rhos, projectors, compute_kappa1=True):
+def compute_transport_kappa(rhos, projectors, compute_kappa1=True, cso=None):
     """Compute transport tensor K, kappa_0, and optionally kappa_1.
+
+    DEPRECATED: prefer CubieSpectralOperator.transport_kappa(projectors) which
+    uses cached generators and Lie generators.  This standalone function is
+    retained only for S₃ prototypes and exploratory scripts that have no CSO.
+
+    If a CSO instance is passed via ``cso=``, this function DELEGATES to
+    cso.transport_kappa(projectors, compute_kappa1) — the canonical path.
 
     Args:
         rhos: list of (n,n) unitary representation matrices ρ(g).
-        projectors: list of (n,n) projector matrices (from build_projectors).
+        projectors: list of (n,n) projector matrices.
         compute_kappa1: if True, also compute κ₁ (commutator-based).
+        cso: optional CubieSpectralOperator for cached delegation.
 
     Returns:
         (K, kappa0, kappa1) — three (n_sec, n_sec) arrays.
-        K[a,b] = max_g ||P_a ρ(g) P_b||_F
-        kappa0[a,b] = max_g ||P_a log(ρ(g)) P_b||_F
-        kappa1[a,b] = max_{g,h} ||P_a [log ρ(g), log ρ(h)] P_b||_F
-        If compute_kappa1=False, kappa1 is None.
     """
+    import warnings
+    if cso is not None:
+        return cso.transport_kappa(projectors, compute_kappa1=compute_kappa1)
+
+    warnings.warn(
+        "compute_transport_kappa() without cso= is deprecated. "
+        "Use cso.transport_kappa(projectors) for the canonical cached path.",
+        DeprecationWarning, stacklevel=2)
+
     n_sec = len(projectors)
     K = np.zeros((n_sec, n_sec))
     kappa0 = np.zeros((n_sec, n_sec))
     kappa1 = np.zeros((n_sec, n_sec)) if compute_kappa1 else None
 
-    # Compute Lie generators
     A_gs = [logm(rho_g) for rho_g in rhos]
 
     for a in range(n_sec):

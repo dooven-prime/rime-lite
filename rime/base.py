@@ -1,6 +1,6 @@
 from collections.abc import Mapping
 from functools import wraps
-import os,io,sys,joblib
+import os, io, sys, pickle
 
 import time
 from contextlib import contextmanager
@@ -11,6 +11,13 @@ DATA_DIR = os.path.join(_PROJECT_ROOT, 'data')
 DATA_CACHE_DIR = os.path.join(DATA_DIR, 'cache')
 DATA_PROPS_DIR = os.path.join(DATA_DIR, 'props')
 
+try:
+    import joblib
+    _HAS_JOBLIB = True
+except ImportError:
+    joblib = None
+    _HAS_JOBLIB = False
+    
 @contextmanager
 def timer(name):
     t0 = time.perf_counter()
@@ -25,6 +32,22 @@ def setup_utf8_stdout():
         except (ValueError, AttributeError):
             pass  # stdout already configured or not wrappable
 
+def _save_obj(obj, filepath: str) -> None:
+    """Save object to file — joblib if available, else pickle."""
+    if _HAS_JOBLIB:
+        joblib.dump(obj, filepath)
+    else:
+        with open(filepath, 'wb') as f:
+            pickle.dump(obj, f)
+
+
+def _load_obj(filepath: str):
+    """Load object from file — joblib if available, else pickle."""
+    if _HAS_JOBLIB:
+        return joblib.load(filepath)
+    with open(filepath, 'rb') as f:
+        return pickle.load(f)
+    
 class IndexProxy(Mapping):
     """
     兼容：
@@ -169,7 +192,7 @@ class class_property:
                 continue
             if hasattr(cls, cache_name):
                 value = getattr(cls, cache_name)
-                joblib.dump(value, f'{prop_dir}/{cls.__name__}_{cache_name}.pkl')
+                _save_obj(value, f'{prop_dir}/{cls.__name__}_{cache_name}.pkl')
         print(f"Class {cls.__name__} properties saved to {prop_dir}")
 
     @staticmethod
@@ -183,7 +206,7 @@ class class_property:
         for cache_name in getattr(cls, '_class_cache_names', []):
             prop_path = f'{prop_dir}/{cls.__name__}_{cache_name}.pkl'
             if os.path.exists(prop_path):
-                value = joblib.load(prop_path)
+                value = _load_obj(prop_path)
                 setattr(cls, cache_name, value)
         print(f"Class {cls.__name__} properties loaded from {prop_dir}")
 
@@ -241,7 +264,7 @@ class class_cache:
                 continue
             if hasattr(cls, cache_name):
                 cache = getattr(cls, cache_name)
-                joblib.dump(cache, f'{cache_dir}/{cls.__name__}_{cache_name}.pkl')
+                _save_obj(cache, f'{cache_dir}/{cls.__name__}_{cache_name}.pkl')
         print(f"Class {cls.__name__} cache saved to {cache_dir}")
 
     @staticmethod
@@ -255,7 +278,7 @@ class class_cache:
         for cache_name in getattr(cls, '_class_cache_names', []):
             cache_path = f'{cache_dir}/{cls.__name__}_{cache_name}.pkl'
             if os.path.exists(cache_path):
-                cache = joblib.load(cache_path)
+                cache = _load_obj(cache_path)
                 setattr(cls, cache_name, cache)
         print(f"Class {cls.__name__} cache loaded from {cache_dir}")
 

@@ -27,6 +27,7 @@ Level-0 and level-1 claims hold for **any** symmetric generator set. Level-2 cla
 | `test_spectrum.py` | Rational spectral law, k=5 absent, multiplicities | Paper I, Sec 3 |
 | `test_sectors.py` | 9 primitive sectors, layer splitting, S6 hub, S1 isolation | Paper II, Sec 4 |
 | `test_commutant.py` | Center commutativity, Supp_nc localization | Paper II, Sec 5 |
+| `test_commutant_gap.py` | Δ_comm = dim(Comm(A)) − dim(Comm(ρ)), transport-commutant relation | Paper II, Sec 8.3 |
 | `test_transport.py` | K symmetry, S6 transport hub, T7 theorem, N=2 control | Paper II Sec 6 / Paper III |
 | `test_f3.py` | Isotypic decomposition, Schur's lemma, multiplicity reservoir | Paper I App B / Paper II |
 
@@ -36,7 +37,13 @@ Level-0 and level-1 claims hold for **any** symmetric generator set. Level-2 cla
 - **No randomness in results**: center decomposition, irrep detection, and transport computation are deterministic after seed.
 - **Assert-only style**: Plain Python `assert` via a local `check()` helper. No pytest, no unittest, no test framework.
 - **Run individually**: `python tests/test_spectrum.py`
-- **Run all**: `python tests/run_all_tests.py`
+- **Run fast tests**: `python tests/run_all_tests.py` (~10s)
+- **Run slow tests**: `python tests/run_slow_tests.py` (~5-10 min, requires CubieSpectralOperator)
+
+Slow tests (each constructs a full CubieSpectralOperator):
+  `test_commutant_gap.py` — Δ_comm, transport invariants (Paper II §8.3)
+  `test_transport.py` — K symmetry, T7 pairs, N=2 control (Paper II §6 / Paper III)
+  `test_f3.py` — isotypic decomposition, multiplicity reservoir (Paper I App B / Paper II)
 
 ## Tolerances
 

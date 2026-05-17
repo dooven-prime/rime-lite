@@ -24,9 +24,8 @@ sec = op.center_decomposition()
 n = sec['n_sectors']
 Ps = sec['projectors']
 
-rho_list = []
-for _, (_, rho, *_) in op.rho_moves.items():
-    rho_list.append(rho.toarray() if hasattr(rho, 'toarray') else np.array(rho))
+rho_list = [m.toarray() if hasattr(m, 'toarray') else np.array(m)
+            for m in op.rho_matrices()]
 
 def check(condition, msg):
     assert condition, msg

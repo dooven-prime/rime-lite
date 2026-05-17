@@ -1,13 +1,21 @@
 #!/usr/bin/env python
-"""Run all mathematical invariant tests sequentially.
+"""Run all fast mathematical invariant tests sequentially.
 
 No pytest. No test framework. Just plain assert-based verification.
 Each test runs with stdout/stderr inherited so output streams directly.
+
+Slow tests (require CubieSpectralOperator ~2-5 min each):
+  test_commutant_gap.py  — Δ_comm, transport invariants
+  test_transport.py      — K symmetry, T7 pairs, N=2 control
+  test_f3.py             — isotypic decomposition, multiplicity reservoir
+
+Run them individually: python tests/test_commutant_gap.py
 """
 import subprocess
 import sys
 from pathlib import Path
 
+# Fast tests — no CubieSpectralOperator construction (<<1s each)
 TESTS = [
     "test_action_token.py",
     "test_cubie.py",
@@ -16,6 +24,11 @@ TESTS = [
     "test_spectrum.py",
     "test_sectors.py",
     "test_commutant.py",
+]
+
+# Slow tests — each constructs CubieSpectralOperator (~2-5 min)
+SLOW_TESTS = [
+    "test_commutant_gap.py",
     "test_transport.py",
     "test_f3.py",
 ]
@@ -46,6 +59,12 @@ if failed:
     for f in failed:
         print(f"    - {f}")
 else:
-    print(f"  ALL TESTS PASSED  ({passed}/{N})")
+    print(f"  ALL FAST TESTS PASSED  ({passed}/{N})")
 print(f"{'=' * 60}")
+
+if SLOW_TESTS:
+    print(f"\nSlow tests (require CubieSpectralOperator, ~2-5 min each):")
+    for name in SLOW_TESTS:
+        print(f"  python tests/{name}")
+    print(f"Run: python tests/run_slow_tests.py")
 sys.exit(1 if failed else 0)

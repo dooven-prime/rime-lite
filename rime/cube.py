@@ -58,15 +58,6 @@ class CubeGeometry:
     }
 
     # ═══════════════════════════════════════════════════════════════════════════
-    # Rotation strips — canonical CCW ordering of faces around each axis
-    # ═══════════════════════════════════════════════════════════════════════════
-    AXIS_STRIP = (
-        ['U', 'F', 'D', 'B'],  # X: from +X, CCW, reference +Y
-        ['F', 'R', 'B', 'L'],  # Y: from +Y, CCW, reference +Z
-        ['U', 'L', 'D', 'R'],  # Z: from +Z, CW,  reference +X
-    )  # CCW 视角,从 +axis 方向看过去,4 元环路,trip 顺序
-
-    # ═══════════════════════════════════════════════════════════════════════════
     # Face → axis/side mappings
     # ═══════════════════════════════════════════════════════════════════════════
 
@@ -101,6 +92,38 @@ class CubeGeometry:
     def face_of(cls, axis: int, side: int) -> str:
         """(axis, side_sign) → face name. side=+1→POS, side=-1→NEG."""
         return cls.AXIS_FACE[axis][0 if side == 1 else 1]
+    
+    @class_property('AXIS_STRIP')
+    def axis_strip(cls) -> tuple:
+        """Rotation strips — CCW ordering of faces around each axis, viewed from +axis.
+        Derived: for axis a, sort the 4 perpendicular faces by atan2(n[c], n[b])
+        where b=(a+1)%3, c=(a+2)%3 (right-hand rule CCW). Angles normalized to [0,2π).
+        Uses _AXIS_FACE_MAP + AXIS_VEC directly.
+        AXIS_STRIP = (
+            ['U', 'F', 'D', 'B'],  # X: from +X, CCW, reference +Y
+            ['F', 'R', 'B', 'L'],  # Y: from +Y, CCW, reference +Z
+            ['R', 'U', 'L', 'D']  # same CCW cycle, but from +Z, reference +X ( for better corner orientation handling)
+        )  # CCW 视角,从 +axis 方向看过去,4 元环路,trip 顺序
+            ['U', 'L', 'D', 'R'],  # Z: from +Z, CW,  reference +X
+    """
+        strips = []
+        for a in range(3):
+            b = (a + 1) % 3
+            c = (a + 2) % 3
+            axis_vec = cls.AXIS_VEC[a]
+            perp = []
+            for axis_idx in range(3):
+                for side in (0, 1):
+                    face = cls._AXIS_FACE_MAP[(axis_idx, side)]
+                    normal = cls.AXIS_VEC[axis_idx].copy() if side == 0 else -cls.AXIS_VEC[axis_idx].copy()
+                    if abs(np.dot(normal, axis_vec)) < 1e-6:
+                        angle = np.arctan2(float(normal[c]), float(normal[b]))
+                        if angle < 0:
+                            angle += 2 * np.pi
+                        perp.append((angle, face))
+            perp.sort()
+            strips.append([name for _, name in perp])
+        return tuple(strips)
 
     # ═══════════════════════════════════════════════════════════════════════════
     # Position vectors (derived from coordinate rules + canonical cycles)
@@ -985,7 +1008,6 @@ class CubeBase(CubeGeometry):
             else:
                 key_dir = v_dir  # key = lambda x: x[1]  # c
                 reverse = align_v < 0
-            # print('axis', axis, 'face', face, 'u', align_u, 'v', align_v, reverse)
             # coords_sorted = sorted(coords, key=lambda x: np.dot(x[2], strip_dir))
             coords_sorted = sorted(coords, key=lambda x: np.dot(x[2], key_dir), reverse=reverse)  # 世界坐标投影排序
             strip = [(fidx, r, c) for r, c, _ in coords_sorted]

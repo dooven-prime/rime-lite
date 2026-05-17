@@ -27,9 +27,8 @@ def check(condition, msg):
 
 from rime.spectral_utils import detect_irrep_blocks, verify_schur_on_irreps
 
-rho_list = []
-for _, (_, rho, *_) in op.rho_moves.items():
-    rho_list.append(rho.toarray() if hasattr(rho, 'toarray') else np.array(rho))
+rho_list = [m.toarray() if hasattr(m, 'toarray') else np.array(m)
+            for m in op.rho_matrices()]
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # Test 1: Irrep block detection covers full space
