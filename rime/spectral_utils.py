@@ -413,6 +413,31 @@ def build_s3_natural_rep(g_perm):
     """S_3 natural permutation representation: 3×3 permutation matrix."""
     return perm_matrix(g_perm, 3)
 
+# S3 generators: transpositions (12), (13), (23)
+# Build 9-dim nat+reg representation
+# nat: standard 2D irrep + trivial (but natural is 3D permutation)
+# reg: regular representation = 6D
+def build_s3_generators():
+    """Build S3 generators: 3 transpositions in nat+reg."""
+    # Natural rep: permutation matrices on 3 elements
+    s12_nat = np.array([[0, 1, 0], [1, 0, 0], [0, 0, 1]])
+    s13_nat = np.array([[0, 0, 1], [0, 1, 0], [1, 0, 0]])
+    s23_nat = np.array([[1, 0, 0], [0, 0, 1], [0, 1, 0]])
+
+    # Regular rep: permutation on 6 group elements
+    # S3 elements: {e, (12), (13), (23), (123), (132)}
+    # Left-multiplication by each generator
+    # (12).{e, (12), (13), (23), (123), (132)} = {(12), e, (132), (123), (23), (13)}
+    s12_reg = perm_matrix([1, 0, 5, 4, 3, 2], 6)
+    # (13).{e, (12), (13), (23), (123), (132)} = {(13), (123), e, (132), (12), (23)}
+    s13_reg = perm_matrix([2, 4, 0, 5, 1, 3], 6)
+    # (23).{e, (12), (13), (23), (123), (132)} = {(23), (132), (123), e, (13), (12)}
+    s23_reg = perm_matrix([3, 5, 4, 0, 2, 1], 6)
+
+    s12 = np.block([[s12_nat, np.zeros((3, 6))], [np.zeros((6, 3)), s12_reg]])
+    s13 = np.block([[s13_nat, np.zeros((3, 6))], [np.zeros((6, 3)), s13_reg]])
+    s23 = np.block([[s23_nat, np.zeros((3, 6))], [np.zeros((6, 3)), s23_reg]])
+    return [s12, s13, s23]
 
 def build_block_diag_rho(rhos_a, rhos_b):
     """Build list of block-diagonal ρ(g) = ρ_A(g) ⊕ ρ_B(g).

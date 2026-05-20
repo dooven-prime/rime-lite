@@ -15,7 +15,7 @@ Invariant levels:
 """
 
 import numpy as np
-from rime.cubie import CubieMove,TOTAL_DIM
+from rime.cubie import CubieMove, CubieState, TOTAL_DIM
 from rime.cubieoperator import CubieSpectralOperator
 
 TOL = 1e-10
@@ -267,6 +267,59 @@ def test_generator_symmetry():
         f'max|Spec(shuffled) − Spec(canonical)| = {np.max(np.abs(w1 - w2)):.1e}'
 
     print(f'test_generator_symmetry: OK  (Spec invariant under shuffle)')
+
+
+def test_gap_phase_basin():
+    """Gap vector phase basin dominance: V5/9 is natural attractor, V7/9 inactive.
+
+    Random scrambled gap vectors concentrate overwhelmingly in V5/9 (k=4)
+    despite it only occupying 46.5% of the total dimension. V7/9 (k=2,
+    dim=39, 17.1%) never appears as the dominant phase basin.
+
+    CCS §13.1 — Gap vector phase basin distribution.
+    """
+    import random
+    random.seed(42)
+    np.random.seed(42)
+
+    op = CubieSpectralOperator()
+    prim = list(CubieMove.prim_moves().values())
+    x_solved = CubieState.solved().vector.astype(np.complex128)
+    lams = op.layer_keys
+
+    N = 800
+    counts = {lam: 0 for lam in lams}
+    for _ in range(N):
+        s = CubieState.solved()
+        for _ in range(random.randint(1, 20)):
+            s = random.choice(prim).act(s)
+        delta = s.vector.astype(np.complex128) - x_solved
+        best_lam = max(lams, key=lambda lam: np.linalg.norm(op.layer_projector(lam) @ delta))
+        counts[best_lam] += 1
+
+    def k_of(lam):
+        return round(9 * (1 - lam))
+
+    # V5/9 (k=4) must dominate
+    v59 = next(lam for lam in lams if k_of(lam) == 4)
+    v59_pct = 100.0 * counts[v59] / N
+    print(f'  V5/9 (k=4, dim=106): {counts[v59]}/{N} = {v59_pct:.1f}%')
+    assert v59_pct > 80.0, \
+        f'V5/9 should dominate gap phase basin, got {v59_pct:.1f}%'
+
+    # V7/9 (k=2) must be near-zero
+    v79 = next(lam for lam in lams if k_of(lam) == 2)
+    v79_pct = 100.0 * counts[v79] / N
+    print(f'  V7/9 (k=2, dim=39): {counts[v79]}/{N} = {v79_pct:.1f}%')
+    assert v79_pct < 5.0, \
+        f'V7/9 should be inactive, got {v79_pct:.1f}%'
+
+    # Dimension sanity check
+    d59 = op.layer_dimension(v59)
+    assert d59 == 106, f'V5/9 dim should be 106, got {d59}'
+
+    print(f'test_gap_phase_basin: OK  '
+          f'(V5/9={v59_pct:.1f}%, V7/9={v79_pct:.1f}%)')
 
 
 if __name__ == "__main__":

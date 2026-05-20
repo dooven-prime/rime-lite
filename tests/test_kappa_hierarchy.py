@@ -31,7 +31,7 @@ def check(condition, msg):
 def dominant_phase_at(op, x):
     """Return the layer λ with maximum ‖P_λ x‖."""
     best_lam, best_nrm = None, -1.0
-    for lam in op.layer_keys():
+    for lam in op.layer_keys:
         nrm = np.linalg.norm(op.layer_projector(lam) @ x)
         if nrm > best_nrm:
             best_nrm, best_lam = nrm, lam
@@ -41,7 +41,7 @@ def dominant_phase_at(op, x):
 def phase_profile_at(op, x):
     """Return {λ: ‖P_λ x‖} for all layers."""
     return {lam: float(np.linalg.norm(op.layer_projector(lam) @ x))
-            for lam in sorted(op.layer_keys(), reverse=True)}
+            for lam in sorted(op.layer_keys, reverse=True)}
 
 
 def move_distance(op, key, x, x_goal):
@@ -369,7 +369,7 @@ op = CubieSpectralOperator.from_gens_dict(CubieMove.prim_moves)
 solved = CubieState.solved()
 
 print("Setup: CubieSpectralOperator (18 generators, 228-dim)")
-print(f"  Layers: {[round(lam, 4) for lam in op.layer_keys()]}")
+print(f"  Layers: {[round(lam, 4) for lam in op.layer_keys]}")
 print(f"  Dimensions: {op.layer_dim.tolist()}")
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -450,7 +450,7 @@ print("\nTest 2: κ₁ barrier — 2-step hub-routed beam → 3-cycle ...")
 # First verify transport pre-filtering
 hub = round(5/9, 6)
 print("  Transport pre-filter (phase ↔ V₅/₉ hub):")
-for lam in sorted(op.layer_keys(), reverse=True):
+for lam in sorted(op.layer_keys, reverse=True):
     if abs(lam - hub) < 1e-6:
         continue
     moves = phase_crossing_moves(op, lam, hub)
@@ -556,7 +556,7 @@ for name in ['cp', 'ep', 'co', 'eo']:
 print("  Spectral layer block support (‖P_block P_layer‖_F / d_layer):")
 print(f"  {'Layer':>8s}  {'cp':>6s}  {'ep':>6s}  {'co':>6s}  {'eo':>6s}  {'type':>10s}")
 layer_blocks = {}
-for lam in sorted(op.layer_keys(), reverse=True):
+for lam in sorted(op.layer_keys, reverse=True):
     P_lam = op.layer_projector(lam)
     d_lam = np.trace(P_lam).real
     shares = {}
@@ -576,8 +576,8 @@ for lam in sorted(op.layer_keys(), reverse=True):
 # Identify cross-block layer pairs (disjoint block support)
 print("\n  Cross-block layer pairs (disjoint block support → T7 candidate):")
 cross_block_pairs = []
-for i, lam1 in enumerate(sorted(op.layer_keys(), reverse=True)):
-    for lam2 in sorted(op.layer_keys(), reverse=True)[i+1:]:
+for i, lam1 in enumerate(sorted(op.layer_keys, reverse=True)):
+    for lam2 in sorted(op.layer_keys, reverse=True)[i+1:]:
         blk1, blk2 = set(layer_blocks[lam1][0]), set(layer_blocks[lam2][0])
         if blk1 and blk2 and blk1.isdisjoint(blk2):
             # Check K and κ₀, κ₁ for this pair
