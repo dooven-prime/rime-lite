@@ -79,7 +79,7 @@ print(f"  OK — all {n} sectors idempotent with correct trace")
 
 print("Test 5: Spectral layer splitting ...")
 # Group sectors by A_18 eigenvalue (match to closest layer)
-layer_keys = op.layer_keys()
+layer_keys = op.layer_keys
 layer_sectors = {lam: [] for lam in layer_keys}
 for i, s in enumerate(sec['sectors']):
     lam_s = s['lam_18']

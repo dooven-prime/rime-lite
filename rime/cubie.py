@@ -1,5 +1,5 @@
 from rime.base import class_property, class_cache, class_status, DATA_DIR
-from rime.cube import CubeBase,ActionToken
+from rime.cube import CubeBase, ActionToken
 from dataclasses import dataclass
 import numpy as np
 from scipy.linalg import block_diag
@@ -162,16 +162,15 @@ class CubieState:
         # 理论上不会出现恰好为0的情况，若出现可视为1或根据容差处理
         edges_ori = (np.sign(eo) < 0).astype(np.int8)  # 负则为1，正则为0
         s = cls(corners_perm=corners_perm, corners_ori=corners_ori, edges_perm=edges_perm, edges_ori=edges_ori)
-        #assert s.is_solvable(), f'from_vector is not solvable:{s}'
+        # assert s.is_solvable(), f'from_vector is not solvable:{s}'
         return s
-    
+
     def is_solvable(self) -> bool:
         """Parity and orientation sum invariants."""
         return (self.corners_ori.sum() % 3 == 0 and
                 self.edges_ori.sum() % 2 == 0 and
                 CubeBase.permutation_parity(self.corners_perm) ==
                 CubeBase.permutation_parity(self.edges_perm))
-    
 
     def to_sticker(self, n: int = 3) -> np.ndarray:
         stickers = np.arange(6 * n * n, dtype=np.uint32).reshape(6, n, n)
@@ -371,6 +370,7 @@ class CubieMove:
         右作用: v @ ρ(g) = ρ(g).T @ v.
         v' = v @ ρ(g)，等价于 ρ(g)^T @ v
         """
+
         def _perm_mat(perm):
             n = len(perm)
             M = np.zeros((n, n), dtype=np.float32)
@@ -391,7 +391,6 @@ class CubieMove:
             Eo[self.edges_perm[i], i] = -1.0 if self.edges_ori_delta[i] % 2 else 1.0
 
         return block_diag(Cp, Ep, Co, Eo)
-
 
     @property
     def matrix(self) -> np.ndarray:
@@ -481,7 +480,7 @@ class CubieMove:
                 b = (axis + 2) % 3
                 for i in range(8):
                     if affected_corners[i]:
-                        sign_a = np.sign(current_corner_pos[i, a]) 
+                        sign_a = np.sign(current_corner_pos[i, a])
                         sign_b = np.sign(current_corner_pos[i, b])
                         if turns == 1:
                             # single turn: twist depends on axis & face, not direction
@@ -558,7 +557,7 @@ class CubieMove:
             # for direction in (-1, +1, +2):
             slice_moves[(axis, 0, 2)] = cls.from_rotation(axis, 0, 2)
         return slice_moves
-    
+
     def to_sticker_move(self, n: int) -> ActionToken | None:
         """
         把 CubieMove 转换为 实际 act 供 StickerMove(生成元在几何空间的表示)。
@@ -570,7 +569,6 @@ class CubieMove:
         if k is None:
             return None
         return ActionToken.from_cubie_move(*k, n=n)
-    
 
     @staticmethod
     def is_redundant(last, cur) -> bool:
@@ -634,4 +632,3 @@ class CubieMove:
             edges_perm=σe,
             edges_ori_delta=Δe,
         )
-

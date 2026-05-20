@@ -10,6 +10,7 @@ setup_utf8_stdout()
 SPECTRAL_DECIMALS = 6
 CENTER_CLUSTER_TOL = 1e-8
 
+
 class CubieSpectralOperator:
     """Numerical spectral operator — the numerical utility layer.
 
@@ -45,11 +46,11 @@ class CubieSpectralOperator:
         self._transport_tensor_cache = None
         # Caches: eliminate duplicate computation across Paper II/III methods.
         # All caches are permanent — no invalidation, no force_recompute.
-        self._pg_cache = {}       # lam → (projected_gens, d)
-        self._cb_cache = {}       # lam → (comm_basis, comm_dim)
+        self._pg_cache = {}  # lam → (projected_gens, d)
+        self._cb_cache = {}  # lam → (comm_basis, comm_dim)
         self._full_comm_cache: tuple[list[np.ndarray], int] | None = None
         self._lie_gens_cache = None
-        self._frozen = True       # spectral identity is now immutable
+        self._frozen = True  # spectral identity is now immutable
 
     def _compute_spectral_layers(self) -> None:
         """Compute {lam: {dim, projector}} for each distinct eigenvalue.
@@ -159,14 +160,15 @@ class CubieSpectralOperator:
         """Array of spectral multiplicities (dimensions) for each eigenvalue layer."""
         return np.array([info['dim'] for _, info in sorted(self._layers.items(), reverse=True)])
 
+    @property
+    def layer_keys(self) -> list[float]:
+        """Canonical layer eigenvalues, sorted descending."""
+        return sorted(self._layers, reverse=True)
+
     def labelled_projectors(self):
         """Return [(lambda, projector), ...] sorted by eigenvalue descending."""
         for lam in sorted(self._layers, reverse=True):
             yield lam, self._layers[lam]['projector']
-
-    def layer_keys(self) -> list[float]:
-        """Canonical layer eigenvalues, sorted descending."""
-        return sorted(self._layers, reverse=True)
 
     def layer_dimension(self, lam: float) -> int:
         """Dimension (multiplicity) of a spectral layer.
@@ -675,7 +677,7 @@ class CubieSpectralOperator:
             'central_idempotents': central,
         }
 
-    def _full_commutant_combinatorial(self) -> tuple[list[np.ndarray], int]:
+    def full_commutant_combinatorial(self) -> tuple[list[np.ndarray], int]:
         """Compute commutant basis in the FULL 228-dim space via combinatorial orbits.
 
         For monomial ρ(g) = D_g Π_g: entries of X are constant on orbits of
@@ -773,8 +775,7 @@ class CubieSpectralOperator:
 
     # -- Center & irrep decomposition (F1-F3) --------------------------
 
-    def _commutant_center_lightweight(self, comm_basis: list[np.ndarray],
-                                      d: int) -> tuple[int, list[tuple[int, int, int]]]:
+    def _commutant_center_lightweight(self, comm_basis: list[np.ndarray], d: int) -> tuple[int, list[tuple]]:
         """Lightweight center detection: diagonalize a random commutant element.
 
         Returns (center_dim, components) where each component is (comp_dim, multiplicity, d_irrep).
@@ -793,7 +794,7 @@ class CubieSpectralOperator:
         eigvals, U = np.linalg.eigh(C_rand)
         eigvals_rounded = np.round(eigvals, decimals=max(3, -int(np.log10(tol))))
         unique_eigvals, inverse, counts = np.unique(eigvals_rounded, return_inverse=True,
-                                                     return_counts=True)
+                                                    return_counts=True)
 
         C_rand2 = np.zeros((d, d), dtype=complex)
         for i in range(r):
@@ -836,9 +837,7 @@ class CubieSpectralOperator:
         center_dim = len(final_components)
         return center_dim, result
 
-    def _center_idempotents(self, comm_basis: list[np.ndarray], d: int
-                            ) -> tuple[int, list[np.ndarray], list[np.ndarray],
-                                       list[tuple[int, int]]]:
+    def _center_idempotents(self, comm_basis: list[np.ndarray], d: int) -> tuple:
         """Central primitive idempotents from commutant basis (F1).
 
         Returns (center_dim, idempotents, isotypic_projectors, isotypic_info).
@@ -907,7 +906,8 @@ class CubieSpectralOperator:
             w2_rounded = np.round(w2, decimals=decimals)
             unique_w2, w2_counts = np.unique(w2_rounded, return_counts=True)
             d_alphas = np.unique(w2_counts)
-            d_alpha = d_alphas[np.argmax([np.sum(w2_counts == d) for d in d_alphas])] if len(d_alphas) > 1 else d_alphas[0]
+            d_alpha = d_alphas[np.argmax([np.sum(w2_counts == d) for d in d_alphas])] if len(d_alphas) > 1 else \
+            d_alphas[0]
             m_alpha = comp_dim // d_alpha
             isotypic_info.append((d_alpha, m_alpha))
 
@@ -1048,13 +1048,12 @@ class CubieSpectralOperator:
         if self._lie_gens_cache is not None:
             return self._lie_gens_cache
 
-        from scipy.linalg import logm
+        from scipy.linalg import logm, expm
         rhos = [v[1] for v in self.rho_moves.values()]
         A_gens = [logm(rho) for rho in rhos]
 
-        from scipy.linalg import expm
         max_err = max(np.max(np.abs(expm(Ag) - rho))
-                     for Ag, rho in zip(A_gens, rhos))
+                      for Ag, rho in zip(A_gens, rhos))
         if max_err > 1e-10:
             import warnings
             warnings.warn(f"logm fidelity: max|expm(A_g)-rho| = {max_err:.2e}")
@@ -1086,7 +1085,7 @@ class CubieSpectralOperator:
                 Pj = self._layers[lam_j]['projector']
                 norms = [np.linalg.norm(Pi @ A_g @ Pj, 'fro') for A_g in A_gens]
                 kappa[(lam_i, lam_j)] = {'mean': float(np.mean(norms)),
-                                          'max': float(np.max(norms))}
+                                         'max': float(np.max(norms))}
                 kappa_matrix[i, j] = max(norms)
 
         return {
@@ -1147,7 +1146,8 @@ class CubieSpectralOperator:
         lam_labels = ['V1', 'V7/9', 'V2/3', 'V5/9', 'V1/3'][:n_layers]
         return {'kappa_matrix': kappa, 'layers': layers, 'lam_labels': lam_labels}
 
-    def transport_kappa(self, projectors: list[np.ndarray], compute_kappa1: bool = True) -> tuple[np.ndarray, np.ndarray, np.ndarray | None]:
+    def transport_kappa(self, projectors: list[np.ndarray], compute_kappa1: bool = True) -> tuple[
+        np.ndarray, np.ndarray, np.ndarray | None]:
         """K, κ₀, κ₁ on arbitrary projectors using cached generators + Lie generators.
 
         This is the CANONICAL path for Paper II/III transport computations.

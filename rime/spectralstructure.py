@@ -166,7 +166,8 @@ def partition_by_signature(signatures: list[set]) -> list[list[int]]:
 # ═══════════════════════════════════════════════════════════════════════════════
 
 
-def classify_by_generator_action(rho_moves: dict, block_slice: tuple[int, int], mode: str = "support") -> dict[int, set]:
+def classify_by_generator_action(rho_moves: dict, block_slice: tuple[int, int], mode: str = "support") -> dict[
+    int, set]:
     """Backward-compatible wrapper around classify_indices.
 
     Accepts the legacy rho_moves format: {(axis, side, dir): (CubieMove, rho, matrix)}.
@@ -241,7 +242,8 @@ class SpectralStructure:
 
         # ── Built-in self-validation ──
         assert self.m > 0 and self.n > 0, f"Invalid dimensions: n={self.n}, m={self.m}"
-        assert self._k_sets["total"] == self._k_sets["cp"] | self._k_sets["ep"] | self._k_sets["co"] | self._k_sets["eo"], \
+        assert self._k_sets["total"] == self._k_sets["cp"] | self._k_sets["ep"] | self._k_sets["co"] | self._k_sets[
+            "eo"], \
             "k-set total must be union of block k-sets"
         assert all(0 <= k <= self.m for k in self._k_sets["total"]), f"k values out of range [0, m={self.m}]"
         assert len(self._eigenvalues) == len(self._k_sets["total"]), "eigenvalue/k-set count mismatch"
@@ -952,7 +954,7 @@ class SpectralStructure:
     @property
     def block_ranges(self):
         return dict(BLOCK_RANGES)
-    
+
     @staticmethod
     def block_structure():
         return {k: dict(v) for k, v in BLOCK_STRUCTURE.items()}
@@ -1460,7 +1462,7 @@ class SpectralStructure:
             lam = face_sum / (2 * m)
             k = int(round(m * (1 - lam)))
             eigenvalues[k] = {"k_idx": k_idx, "face_sum": face_sum,
-                            "lambda": lam, "dim": self._q3["dims"][k_idx]}
+                              "lambda": lam, "dim": self._q3["dims"][k_idx]}
             k_values.add(k)
 
         # Detect √5 extension: if any eigenvalue is not exactly rational
@@ -1516,7 +1518,7 @@ class SpectralStructure:
         # EO: from cached 12×12 eigenvectors
 
         # Group block eigenvectors by A_18 eigenvalue λ = eigenvalue/n
-        block_eigs = {}   # block → {k: (indices, eigenvectors)}
+        block_eigs = {}  # block → {k: (indices, eigenvectors)}
         tensor = {"cp": 8, "ep": 12, "co": 1, "eo": 1}
 
         # CP: use Q3 Krawtchouk eigenspaces (no eigh)

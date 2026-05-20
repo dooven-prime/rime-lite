@@ -28,7 +28,7 @@ TESTS = [
     "test_commutant.py",
 ]
 
-# Slow tests — each constructs CubieSpectralOperator (~2-5 min)
+# Slow tests — each constructs CubieSpectralOperator (~1-2 min)
 SLOW_TESTS = [
     "test_commutant_gap.py",
     "test_transport.py",

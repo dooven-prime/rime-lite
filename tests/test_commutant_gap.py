@@ -53,7 +53,7 @@ def test_commutant_per_layer_invariant():
     """Level-1: each layer's commutant satisfies 0 ≤ comm_dim ≤ d²."""
     op = _get_op()
     ca = op.commutant_algebra()
-    layers = op.layer_keys()
+    layers = op.layer_keys
 
     for lam in layers:
         b = ca['blocks'][lam]
@@ -100,7 +100,7 @@ def test_transport_commutant_relation():
 
     # Layer-level transport sum
     T = op.transport_tensor()
-    layers = op.layer_keys()
+    layers = op.layer_keys
     n = len(layers)
     T_sum_sq = 0.0
     for i in range(n):

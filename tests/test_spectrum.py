@@ -23,7 +23,7 @@ EXPECTED_DIMS = [20, 2, 39, 26, 106, 35]  # in decreasing λ order
 K_ABSENT = 5  # k=5 MUST be absent
 
 op = CubieSpectralOperator.from_gens_dict(CubieMove.prim_moves)
-layers = op.layer_keys()  # decreasing λ
+layers = op.layer_keys  # decreasing λ
 n_layers = len(layers)
 
 def check(condition, msg):

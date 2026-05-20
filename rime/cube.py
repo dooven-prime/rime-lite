@@ -92,7 +92,7 @@ class CubeGeometry:
     def face_of(cls, axis: int, side: int) -> str:
         """(axis, side_sign) → face name. side=+1→POS, side=-1→NEG."""
         return cls.AXIS_FACE[axis][0 if side == 1 else 1]
-    
+
     @class_property('AXIS_STRIP')
     def axis_strip(cls) -> tuple:
         """Rotation strips — CCW ordering of faces around each axis, viewed from +axis.
@@ -847,7 +847,6 @@ class CubeBase(CubeGeometry):
                 r -= 1
         return bits
 
-
     @classmethod
     def get_vars(cls):
         """获取类中的变量名"""
@@ -996,7 +995,7 @@ class CubeBase(CubeGeometry):
 
             fidx = cls.face_idx[face]
             normal, u_dir, v_dir = cls.face_basis(face)
- 
+
             strip_dir = np.cross(axis_vec, normal)
             strip_dir /= np.linalg.norm(strip_dir)  # 该面对应的旋转条带方向或法向量
             # 确定沿哪个方向 (v 或 u)，并计算 align
@@ -1014,7 +1013,6 @@ class CubeBase(CubeGeometry):
             strips.append(strip)
 
         return strips
-
 
     @classmethod
     def rotate_slice(cls, state: np.ndarray, axis: int, layer: int, shift: int, n: int = None):

@@ -32,11 +32,9 @@ def test_minimal_polynomial():
     """
     op = CubieSpectralOperator()
     A = op.A
-    layers = op.layer_keys()
-
     # Build p(x) = ∏ (x − λ_i)
     p_A = np.eye(TOTAL_DIM, dtype=complex)
-    for lam in layers:
+    for lam in op.layer_keys:
         p_A = p_A @ (A - lam * np.eye(TOTAL_DIM))
     residual = float(np.linalg.norm(p_A, 'fro'))
 
@@ -52,13 +50,13 @@ def test_multiplicity_consistency():
     op = CubieSpectralOperator()
 
     # Sum of dimensions
-    total_dim = sum(op.layer_dimension(lam) for lam in op.layer_keys())
+    total_dim = sum(op.layer_dimension(lam) for lam in op.layer_keys)
     assert total_dim == 228, f'Σ dim = {total_dim}, expected 228'
 
     # Trace identity: Tr(A) = Σ λ_i · dim_i
     trace_A = float(np.trace(op.A).real)
     trace_sum = sum(
-        lam * op.layer_dimension(lam) for lam in op.layer_keys()
+        lam * op.layer_dimension(lam) for lam in op.layer_keys
     )
     assert abs(trace_A - trace_sum) < 1e-3, \
         f'Tr(A) = {trace_A:.6f}, Σ λ·dim = {trace_sum:.6f}'
@@ -72,7 +70,7 @@ def test_spectral_projector_theorem():
     This is the full spectral theorem — stronger than eigenvalue count alone.
     """
     op = CubieSpectralOperator()
-    layers = op.layer_keys()
+    layers = op.layer_keys
     n = len(layers)
 
     # Idempotence: P_i² = P_i
@@ -115,7 +113,7 @@ def test_bose_mesner_dimension():
     """
     op = CubieSpectralOperator()
     A = op.A
-    n_eigs = len(op.layer_keys())
+    n_eigs = len(op.layer_keys)
 
     # Build Krylov sequence {I, A, A², …, A^(n_eigs)}
     powers = [np.eye(TOTAL_DIM, dtype=complex)]
@@ -142,7 +140,7 @@ def test_rational_projector_reconstruction():
     """
     op = CubieSpectralOperator()
     A = op.A
-    layers = op.layer_keys()
+    layers = op.layer_keys
 
     for i, lam_i in enumerate(layers):
         Pi_numerical = op.layer_projector(lam_i)
@@ -178,7 +176,7 @@ def test_k_set_reconstruction():
     predicted = {1 - k / m: k for k in k_set}
 
     # Numerical: eigenvalues with multiplicities
-    for lam_float in op.layer_keys():
+    for lam_float in op.layer_keys:
         # Match to nearest predicted lambda
         best_k = None
         best_diff = float('inf')

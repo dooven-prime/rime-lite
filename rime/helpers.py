@@ -2,6 +2,7 @@ import numpy as np
 from scipy.linalg import sqrtm, logm, expm
 from collections import Counter
 
+
 # from sklearn.metrics.pairwise import cosine_similarity
 def cosine_similarity(ndarr1, ndarr2):
     ndarr1 = np.atleast_2d(ndarr1)
@@ -156,7 +157,6 @@ def rho_sigreg(rho, num_projections=32, lambda_reg=0.08):
         total += (proj - 0.5) ** 2 + 0.1 * (proj ** 2 - 1.0) ** 2
 
     return lambda_reg * (total / num_projections)
-
 
 
 def is_rational_form(lam, denom, tol=1e-5):
