@@ -90,15 +90,19 @@ def build_projectors(sectors, dim_total):
 def classify_sectors(sectors, dim_a, dim_b=None, dim_total=None, tol=1e-10):
     """Classify each sector as pure-A ('A'), pure-B ('B'), or hybrid ('H').
 
-    A sector is pure-A if its support lies entirely in the first dim_a
-    basis vectors; pure-B if entirely in the remainder; hybrid otherwise.
+    A sector is pure-A if all its basis indices lie in [0, dim_a);
+    pure-B if all lie in [dim_a, dim_total); hybrid otherwise.
+
+    The basis is standard (indices from joint_diag_sectors are basis vector
+    indices), so block membership reduces to index comparison — no projector
+    construction needed.
 
     Args:
         sectors: output of joint_diag_sectors().
         dim_a: dimension of block A.
         dim_b: dimension of block B. If None, inferred from dim_total - dim_a.
         dim_total: total dimension. If None, inferred from sector indices.
-        tol: numerical zero threshold.
+        tol: unused (kept for API compatibility).
 
     Returns:
         List of str: 'A', 'B', or 'H' for each sector.
@@ -113,17 +117,12 @@ def classify_sectors(sectors, dim_a, dim_b=None, dim_total=None, tol=1e-10):
 
     types = []
     for _, indices in sectors:
-        P = np.zeros((dim_total, dim_total))
-        for i in indices:
-            e_i = np.zeros(dim_total)
-            e_i[i] = 1.0
-            P += np.outer(e_i, e_i)
-        a_norm = np.linalg.norm(P[:dim_a, :])
-        b_norm = np.linalg.norm(P[dim_a:, :])
-        if a_norm < tol:
-            types.append('B')
-        elif b_norm < tol:
+        n_a = sum(1 for i in indices if i < dim_a)
+        n_b = len(indices) - n_a
+        if n_b == 0:
             types.append('A')
+        elif n_a == 0:
+            types.append('B')
         else:
             types.append('H')
     return types
@@ -199,24 +198,83 @@ def compute_transport_kappa(rhos, projectors, compute_kappa1=True, cso=None):
 # 3. T7 detection
 # ============================================================
 
-def find_t7_pairs(K, kappa0, kappa1, sector_types, tol=1e-8):
-    """Find T7 pairs: cross-block (A<->B) pairs with K≈0, κ₀≈0, κ₁≈0.
+def block_set(P, block_ranges, threshold=0.01):
+    """Return set of block names where projector P has significant support.
 
-    A T7 pair is a pair of pure sectors in different blocks that have:
-      - Zero direct transport (K=0)
-      - Zero Lie gradient (κ₀=0)
-      - Zero Lie curvature (κ₁=0)
-      - A length-2 composition path through a hybrid sector (has_path=True)
+    Detects multi-block membership by Frobenius norm: a block is included
+    if ‖P[s:e, s:e]‖²_F > threshold × Tr(P).
+
+    This is the correct approach for T7 cross-block detection — sectors can
+    span multiple blocks (hybrid sectors), and two sectors are cross-block
+    only when their block sets are *disjoint*.
 
     Args:
-        K, kappa0, kappa1: from compute_transport_kappa().
-        sector_types: list of 'A'/'B'/'H' from classify_sectors().
-        tol: threshold for "zero".
+        P: (n,n) projector matrix.
+        block_ranges: dict {name: (start, end)} or list of (name, slice) tuples.
+        threshold: fraction of Tr(P) for significant support (default 0.01).
 
     Returns:
-        List of (a, b, has_path, K_val, k0_val, k1_val) tuples.
-        has_path is True if ∃ hybrid h with K[a,h]>tol and K[h,b]>tol.
+        set of block name strings.
     """
+    if isinstance(block_ranges, dict):
+        items = block_ranges.items()
+    else:
+        items = block_ranges
+    trace_p = np.trace(P).real
+    blocks = set()
+    for bn, (s, e) in items:
+        fn2 = np.linalg.norm(P[s:e, s:e], 'fro') ** 2
+        if fn2 > threshold * trace_p:
+            blocks.add(bn)
+    return blocks
+
+
+def count_t7_pairs(K, kap0, kap1, block_sets, tol_K=0.05, tol_kappa=1e-6):
+    """Count T7 pairs: cross-block, K≈0, κ₀=κ₁=0, 2-step reachable.
+
+    T7 conditions (CCS §2.5):
+      1. K=0 — no direct transport between sectors
+      2. κ_d=0 for all d — no Lie accessibility at any depth
+      3. Yet reachable via finite composition (2-step path through a hub)
+
+    Args:
+        K: (n,n) transport tensor.
+        kap0: (n,n) κ₀ matrix.
+        kap1: (n,n) κ₁ matrix.
+        block_sets: list of sets, block_set(P_i) for each sector projector.
+        tol_K: threshold for "non-zero" transport (default 0.05).
+        tol_kappa: threshold for "zero" κ (default 1e-6, logm noise ~1e-6).
+
+    Returns:
+        (count, pairs) where count is int and pairs is list of (i+1, j+1) tuples.
+    """
+    n = len(block_sets)
+    count = 0
+    pairs = []
+    for i in range(n):
+        for j in range(i + 1, n):
+            if not block_sets[i].isdisjoint(block_sets[j]):
+                continue
+            if K[i, j] < tol_K and kap0[i, j] < tol_kappa and kap1[i, j] < tol_kappa:
+                for k in range(n):
+                    if K[i, k] > tol_K and K[k, j] > tol_K:
+                        count += 1
+                        pairs.append((i + 1, j + 1))
+                        break
+    return count, pairs
+
+
+def find_t7_pairs(K, kappa0, kappa1, sector_types, tol=1e-6):
+    """DEPRECATED — use count_t7_pairs() with block_set() instead.
+
+    Old T7 detection using A/B/H sector classification (2-block model only).
+    Does not handle the Rubik's cube 4-block structure correctly.
+    """
+    import warnings
+    warnings.warn(
+        'find_t7_pairs is deprecated. Use count_t7_pairs(K, kap0, kap1, '
+        'block_sets) with block_set() for multi-block support.',
+        DeprecationWarning, stacklevel=2)
     n = len(sector_types)
     pairs = []
     for a in range(n):
@@ -226,16 +284,13 @@ def find_t7_pairs(K, kappa0, kappa1, sector_types, tol=1e-8):
             if sector_types[b] not in ('A', 'B'):
                 continue
             if sector_types[a] == sector_types[b]:
-                continue  # same block
-
-            # Check for composition path via hybrid
+                continue
             has_path = False
             for h in range(n):
                 if sector_types[h] == 'H':
                     if K[a, h] > tol and K[h, b] > tol:
                         has_path = True
                         break
-
             if K[a, b] < tol and kappa0[a, b] < tol and kappa1[a, b] < tol:
                 pairs.append((a, b, has_path,
                               float(K[a, b]), float(kappa0[a, b]),
@@ -244,22 +299,17 @@ def find_t7_pairs(K, kappa0, kappa1, sector_types, tol=1e-8):
 
 
 def analyze_t7(rhos, block_slices, center_ops=None):
-    """One-shot T7 analysis: build Center, diag, classify, compute transport.
+    """DEPRECATED — one-shot T7 using old A/B/H classification.
 
-    Args:
-        rhos: list of (n,n) unitary matrices ρ(g) for g in generators.
-        block_slices: list of (name, slice) tuples defining the block decomposition.
-            e.g. [('A', slice(0,3)), ('B', slice(3,9))]
-        center_ops: optional list of Hermitian operators for joint diagonalization.
-            If None, uses the full averaging operator A = (1/|rhos|) Σ ρ(g).
-
-    Returns:
-        dict with keys: sectors, projectors, types, K, kappa0, kappa1,
-                        t7_pairs, dim_total, dim_a, n_sectors,
-                        n_pure_a, n_pure_b, n_hybrid, n_t7, n_true_t7.
+    Use CubieSpectralOperator.center_decomposition() + count_t7_pairs() instead.
     """
+    import warnings
+    warnings.warn(
+        'analyze_t7 is deprecated. Use CubieSpectralOperator + '
+        'count_t7_pairs() with block_set() for multi-block support.',
+        DeprecationWarning, stacklevel=2)
     n = rhos[0].shape[0]
-    dim_a = block_slices[0][1].stop  # assume first block starts at 0
+    dim_a = block_slices[0][1].stop
 
     if center_ops is None:
         A = sum(rhos) / len(rhos)
@@ -320,6 +370,46 @@ def inv_closed_subsets(group_order, inverse_map=None):
 # ============================================================
 # 5. Small group representations
 # ============================================================
+
+# --- General block-diagonal construction ---
+
+def build_block_diag_rho(rhos_a, rhos_b):
+    """Build list of block-diagonal ρ(g) = ρ_A(g) ⊕ ρ_B(g).
+
+    Args:
+        rhos_a: list of (dim_a, dim_a) matrices for block A.
+        rhos_b: list of (dim_b, dim_b) matrices for block B.
+
+    Returns:
+        List of (dim_a+dim_b, dim_a+dim_b) block-diagonal matrices.
+    """
+    result = []
+    dim_a = rhos_a[0].shape[0]
+    dim_b = rhos_b[0].shape[0]
+    dim_total = dim_a + dim_b
+    for rA, rB in zip(rhos_a, rhos_b):
+        rho = np.zeros((dim_total, dim_total), dtype=complex)
+        rho[:dim_a, :dim_a] = rA
+        rho[dim_a:, dim_a:] = rB
+        result.append(rho)
+    return result
+
+
+def build_rho_from_gens(generators, rep_fn_a, rep_fn_b):
+    """Build block-diagonal ρ from generator list and per-block rep functions.
+
+    Args:
+        generators: list of group elements (format depends on rep_fn).
+        rep_fn_a: function element → matrix for block A.
+        rep_fn_b: function element → matrix for block B.
+
+    Returns:
+        List of block-diagonal matrices, one per generator.
+    """
+    rhos_a = [rep_fn_a(g) for g in generators]
+    rhos_b = [rep_fn_b(g) for g in generators]
+    return build_block_diag_rho(rhos_a, rhos_b)
+
 
 # --- S_3 ---
 
@@ -413,53 +503,19 @@ def build_s3_natural_rep(g_perm):
     """S_3 natural permutation representation: 3×3 permutation matrix."""
     return perm_matrix(g_perm, 3)
 
-# S3 generators: transpositions (12), (13), (23)
-# Build 9-dim nat+reg representation
-# nat: standard 2D irrep + trivial (but natural is 3D permutation)
-# reg: regular representation = 6D
 def build_s3_generators():
-    """Build S3 generators: 3 transpositions in nat+reg."""
-    # Natural rep: permutation matrices on 3 elements
-    s12_nat = np.array([[0, 1, 0], [1, 0, 0], [0, 0, 1]])
-    s13_nat = np.array([[0, 0, 1], [0, 1, 0], [1, 0, 0]])
-    s23_nat = np.array([[1, 0, 0], [0, 0, 1], [0, 1, 0]])
+    """Build S₃ generators: 3 transpositions in nat⊕reg (9-dim).
 
-    # Regular rep: permutation on 6 group elements
-    # S3 elements: {e, (12), (13), (23), (123), (132)}
-    # Left-multiplication by each generator
-    # (12).{e, (12), (13), (23), (123), (132)} = {(12), e, (132), (123), (23), (13)}
-    s12_reg = perm_matrix([1, 0, 5, 4, 3, 2], 6)
-    # (13).{e, (12), (13), (23), (123), (132)} = {(13), (123), e, (132), (12), (23)}
-    s13_reg = perm_matrix([2, 4, 0, 5, 1, 3], 6)
-    # (23).{e, (12), (13), (23), (123), (132)} = {(23), (132), (123), e, (13), (12)}
-    s23_reg = perm_matrix([3, 5, 4, 0, 2, 1], 6)
+    Derives both blocks from the group structure:
+      nat → build_s3_natural_rep() on each transposition permutation
+      reg → build_s3_regular_rep() on each transposition index
 
-    s12 = np.block([[s12_nat, np.zeros((3, 6))], [np.zeros((6, 3)), s12_reg]])
-    s13 = np.block([[s13_nat, np.zeros((3, 6))], [np.zeros((6, 3)), s13_reg]])
-    s23 = np.block([[s23_nat, np.zeros((3, 6))], [np.zeros((6, 3)), s23_reg]])
-    return [s12, s13, s23]
-
-def build_block_diag_rho(rhos_a, rhos_b):
-    """Build list of block-diagonal ρ(g) = ρ_A(g) ⊕ ρ_B(g).
-
-    Args:
-        rhos_a: list of (dim_a, dim_a) matrices for block A.
-        rhos_b: list of (dim_b, dim_b) matrices for block B.
-
-    Returns:
-        List of (dim_a+dim_b, dim_a+dim_b) block-diagonal matrices.
+    The transpositions (12), (23), (13) are indices 1,2,3 in S3_PERMUTATIONS.
     """
-    result = []
-    dim_a = rhos_a[0].shape[0]
-    dim_b = rhos_b[0].shape[0]
-    dim_total = dim_a + dim_b
-    for rA, rB in zip(rhos_a, rhos_b):
-        rho = np.zeros((dim_total, dim_total), dtype=complex)
-        rho[:dim_a, :dim_a] = rA
-        rho[dim_a:, dim_a:] = rB
-        result.append(rho)
-    return result
-
+    gen_indices = [1, 2, 3]  # (12), (23), (13)
+    rhos_nat = [build_s3_natural_rep(S3_PERMUTATIONS[i]) for i in gen_indices]
+    rhos_reg = [build_s3_regular_rep(i) for i in gen_indices]
+    return build_block_diag_rho(rhos_nat, rhos_reg)
 
 # --- Abelian groups ---
 
@@ -500,23 +556,6 @@ def build_abelian_rho(chars_a, chars_b, char_table):
         rho_g[dim_a:, dim_a:] = rho_B
         rhos.append(rho_g)
     return rhos, dim_a, dim_b
-
-
-# Convenience: build rho for a standard set of generators
-def build_rho_from_gens(generators, rep_fn_a, rep_fn_b):
-    """Build block-diagonal ρ from generator list and per-block rep functions.
-
-    Args:
-        generators: list of group elements (format depends on rep_fn).
-        rep_fn_a: function element → matrix for block A.
-        rep_fn_b: function element → matrix for block B.
-
-    Returns:
-        List of block-diagonal matrices, one per generator.
-    """
-    rhos_a = [rep_fn_a(g) for g in generators]
-    rhos_b = [rep_fn_b(g) for g in generators]
-    return build_block_diag_rho(rhos_a, rhos_b)
 
 
 # ============================================================

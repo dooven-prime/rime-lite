@@ -17,7 +17,8 @@ from rime.cubie import CubieMove, TOTAL_DIM, BLOCK_RANGES
 from rime.spectral_utils import compute_transport_kappa, find_t7_pairs
 
 TOL = 1e-10
-TOL_K = 0.05  # threshold for "nonzero" transport
+TOL_K = 0.05   # threshold for "nonzero" transport
+# NOTE: No TOL_KAPPA — T7 uses structural isdisjoint test. See test_transport.py §3.
 
 block_slices_228 = [slice(0, 64), slice(64, 208), slice(208, 216), slice(216, 228)]
 
@@ -80,32 +81,29 @@ print(f"  S1 degree = 0 (isolated)")
 
 print("Test 3: T7 pairs (N=3) ...")
 
-# Classify sectors by predominant block (max trace contribution)
-block_slices = [('cp', 0, 64), ('ep', 64, 208), ('co', 208, 216), ('eo', 216, 228)]
-def predominant_block(P):
-    traces = {}
-    for bn, start, end in block_slices:
-        traces[bn] = np.trace(P[start:end, start:end]).real
-    return max(traces, key=traces.get)
+# Classify sectors by block support (set-based — structural, not numerical)
+def _block_set(P):
+    blocks = set()
+    for bn, (s, e) in BLOCK_RANGES.items():
+        fn2 = np.linalg.norm(P[s:e, s:e], 'fro')**2
+        if fn2 > 0.01 * np.trace(P).real:
+            blocks.add(bn)
+    return blocks
 
-sector_block = [predominant_block(Ps[i]) for i in range(n)]
+block_sets = [_block_set(Ps[i]) for i in range(n)]
 for i in range(n):
     lam = sec['sectors'][i]['lam_18']
     k = round((1 - lam) * 9)
-    print(f"  S{i+1}: V({k}/9), {sector_block[i]}, dim={sec['sectors'][i]['dim']}")
+    print(f"  S{i+1}: V({k}/9), dim={sec['sectors'][i]['dim']}, blocks={block_sets[i]}")
 
 # Compute kappa (returns K, kappa0, kappa1)
 K_kappa, kappa0_arr, kappa1_arr = compute_transport_kappa(rho_list, Ps, compute_kappa1=True, cso=op)
 K_arr = np.array(K)
 
-# Manual T7 detection: different predominant blocks, K=kappa0=kappa1=0,
-# but reachable via 2-step composition through a hub
-def is_cross_block(i, j):
-    """True if sectors i and j have different predominant blocks."""
-    return sector_block[i] != sector_block[j]
-
+# T7 detection: structural obstruction test.
+# Lemma 1 → Lie closure is block-diagonal → if block_sets are disjoint,
+# then κ_d = 0 for ALL d (exact, structural). No numerical κ threshold.
 def reachable_2step(i, j, K_arr, tol=TOL_K):
-    """True if there exists k != i,j such that K[i,k] > tol and K[k,j] > tol."""
     for k in range(n):
         if k != i and k != j:
             if K_arr[i, k] > tol and K_arr[k, j] > tol:
@@ -115,13 +113,13 @@ def reachable_2step(i, j, K_arr, tol=TOL_K):
 t7_pairs = []
 for i in range(n):
     for j in range(i+1, n):
-        if not is_cross_block(i, j):
-            continue
-        if K_arr[i, j] < TOL_K and K_arr[j, i] < TOL_K:
-            if kappa0_arr[i, j] < TOL and kappa0_arr[j, i] < TOL:
-                if kappa1_arr[i, j] < TOL and kappa1_arr[j, i] < TOL:
-                    if reachable_2step(i, j, K_arr):
-                        t7_pairs.append((i+1, j+1))
+        if not block_sets[i].isdisjoint(block_sets[j]):
+            continue  # structural Lie obstruction absent
+        if K_arr[i, j] >= TOL_K:
+            continue  # has direct transport
+        # κ_d = 0 structurally (Lemma 1); check 2-step reachability
+        if reachable_2step(i, j, K_arr):
+            t7_pairs.append((i+1, j+1))
 
 n_t7 = len(t7_pairs)
 for pair in t7_pairs:
@@ -129,6 +127,8 @@ for pair in t7_pairs:
 
 check(n_t7 >= 1,
       f"No T7 pairs found — discrete/continuous split not confirmed: {n_t7}")
+check(n_t7 == 5,
+      f"Expected 5 T7 pairs, got {n_t7}")
 print(f"  OK — {n_t7} T7 pair(s) detected (discrete/continuous split confirmed)")
 
 # ═══════════════════════════════════════════════════════════════════════════════

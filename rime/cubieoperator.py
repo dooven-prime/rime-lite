@@ -9,7 +9,7 @@ setup_utf8_stdout()
 # self.tol — layer identity is a topological invariant, not a tolerance knob.
 SPECTRAL_DECIMALS = 6
 CENTER_CLUSTER_TOL = 1e-8
-
+TOL_KAPPA = 1e-6  # kappa checks need looser tolerance: logm noise ~1e-6
 
 class CubieSpectralOperator:
     """Numerical spectral operator — the numerical utility layer.
@@ -987,6 +987,16 @@ class CubieSpectralOperator:
 
         Primary Object 4: minimal simultaneous eigenspaces of the commutative
         center of the averaging algebra.
+        Returns sectors in CCS canonical order (k ascending, dim ascending):
+        S1: V₁   dim=20  [cp=8 + ep=12]          — Isolated (deg=0)
+        S2: V₈/₉ dim= 2  [eo=2]                   — Connective (deg=2)
+        S3: V₇/₉ dim=39  [ep=36 + eo=3]           — Metastable (deg=2)
+        S4: V₂/₃ dim=26  [ep=24 + co=2]           — Intermediate (deg=2)
+        S5: V₅/₉ dim= 1  [eo=1]                   — Tiny EO leaf (deg=2)
+        S6: V₅/₉ dim=39  [ep=36 + eo=3]           — PRIMARY HUB (deg=5)
+        S7: V₅/₉ dim=66  [cp+ep+co+eo]            — Secondary hub (deg=3)
+        S8: V₁/₃ dim= 8  [cp=8]                   — Pure CP (deg=1)
+        S9: V₁/₃ dim=27  [cp=24 + co=3]           — CP+CO (deg=3)
         """
         ops, _ = self.build_per_axis_ops()
         A_18 = ops['A_18']
@@ -1032,7 +1042,12 @@ class CubieSpectralOperator:
             lam_HT = float(ev[nz][0]) if np.any(nz) else 0.0
             sectors.append({'dim': dim, 'lam_18': lam_18, 'lam_QT': lam_QT, 'lam_HT': lam_HT})
             projectors.append(P)
-
+            
+        # Reorder to CCS canonical order: k ascending, dim ascending within k
+        ccs_order = sorted(range(len(sectors)),key=lambda i: (round(9 * (1 - sectors[i]['lam_18'])),
+                                         sectors[i]['dim']))
+        sectors = [sectors[i] for i in ccs_order]
+        projectors = [projectors[i] for i in ccs_order]
         return {'sectors': sectors, 'projectors': projectors, 'n_sectors': len(sectors)}
 
     # ═══════════════════════════════════════════════════════════════
