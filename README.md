@@ -120,7 +120,6 @@ rime-lite/
 |   |-- paper1/           Paper I markdown source
 |   |-- paper2/           Paper II markdown source
 |   |-- paper3/           Paper III markdown source
-|   `-- tex/              generated TeX/PDF artifacts
 |-- ccs/                  Computational Canonical Specification source
 |-- figures/              frozen generated figures used by papers
 `-- docs/                 project overview, invariants, scope, conventions
