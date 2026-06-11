@@ -190,6 +190,17 @@ def is_in_qsqrt5(lam, tol=1e-5):
                     return True, (p, q, r)
     return False, None
 
+def find_qsqrt5_form(lam, tol= 1e-4):
+    """Find (a + b√5)/c representation for λ, if one exists.
+    Searches small integer ranges. Returns (a, b, c) or None."""
+    sqrt5 = np.sqrt(5)
+    for c in range(2, 41):
+        for a in range(-c, 2 * c + 1):
+            for b in [-2, -1, 1, 2]:
+                target = (a + b * sqrt5) / c
+                if abs(lam - target) < tol:
+                    return a, b, c
+    return None
 
 def krawtchouk(k, x, n=3):
     """Krawtchouk polynomial K_k(x; n, q=2).

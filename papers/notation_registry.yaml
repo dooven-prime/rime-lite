@@ -1,0 +1,295 @@
+# notation_registry.yaml — canonical mathematical notation for the RIME trilogy
+#
+# All four documents (Paper I/II/III + CCS) SHALL use exactly these forms.
+# validate_registry.py checks for forbidden variants.
+#
+# Typesetting rule:
+#   \operatorname{} — multi-letter mathematical operators (Comm, End, Tr, Spec, …)
+#   \mathrm{}       — invariant label abbreviations (cp, ep, QT, HT, nc, …)
+#   \text{}         — English words inside math mode (rare; only when meaning matters)
+
+version: "1.0.0"
+date: 2026-06-01
+
+# ── Typesetting Rules ──────────────────────────────────────────────────
+typesetting:
+  operator: "\operatorname{...}"
+  operator_rule: "All multi-letter mathematical operators use \\operatorname (Comm, End, Tr, Spec, Supp, coker, ker, dim, Hom, im, rank, Lie)"
+  label: "\mathrm{...}"
+  label_rule: "Invariant label abbreviations use \\mathrm (cp, ep, co, eo, QT, HT, nc, all, T7 in math mode)"
+  text: "\text{...}"
+  text_rule: "\\text only for English words whose meaning matters in the math expression"
+
+# ── Core Objects ───────────────────────────────────────────────────────
+core:
+  representation:
+    symbol: "\rho"
+    description: "Unitary representation G → GL(V)"
+    forbidden: []
+
+  group:
+    symbol: "G"
+    description: "Finite group (Rubik cube group)"
+    forbidden: []
+
+  space:
+    symbol: "V"
+    description: "Representation space V = ℂ²²⁸"
+    forbidden: []
+
+  generating_set:
+    symbol: "S"
+    description: "Symmetric generating set S = S⁻¹"
+    forbidden: []
+
+# ── Averaging Operator ─────────────────────────────────────────────────
+averaging_operator:
+  symbol: "A"
+  definition: "A = (1/|S|) Σ_{s∈S} ρ(s)"
+  disambiguation:
+    A_18: "When generator count matters, use A_{18} (canonical 18-generator)"
+    A_S: "For non-canonical generator sets"
+    A_block: "Block restriction: A_{cp}, A_{ep}, A_{co}, A_{eo}"
+  math_mode: "A"
+  forbidden:
+    - "lam18"
+    - "lam_{18}"
+    - "A_18 as default (use A unless generator count is essential)"
+
+# ── Spectrum ───────────────────────────────────────────────────────────
+spectrum:
+  eigenvalue:
+    symbol: "\lambda"
+    formula: "\lambda = 1 - k/9"
+    math_mode: "\lambda"
+    forbidden:
+      - "lam18"
+      - "lam_{18}"
+
+  eigenspace:
+    symbol: "V_{\lambda}"
+    description: "Spectral layer (eigenspace of A)"
+    math_mode: "V_{\\lambda}"
+
+  projector:
+    symbol: "P_{\lambda}"
+    description: "Spectral projector onto V_λ"
+    math_mode: "P_{\\lambda}"
+
+  dimension:
+    symbol: "d_{\lambda}"
+    description: "dim V_λ"
+    math_mode: "d_{\\lambda} = \\dim V_{\\lambda}"
+
+  k_set:
+    symbol: "\mathcal{K}"
+    description: "Set of admissible k-values"
+    math_mode: "\\mathcal{K}(A)"
+
+  spectrum_operator:
+    symbol: "\operatorname{Spec}"
+    math_mode: "\\operatorname{Spec}(A)"
+    forbidden:
+      - "\\mathrm{Spec}"
+      - "\\text{Spec}"
+
+# ── Blocks ─────────────────────────────────────────────────────────────
+blocks:
+  labels:
+    canonical: ["cp", "ep", "co", "eo"]
+    description:
+      cp: "corner permutation (64-dim)"
+      ep: "edge permutation (144-dim)"
+      co: "corner orientation (8-dim, Z₃ phase)"
+      eo: "edge orientation (12-dim, Z₂ phase)"
+
+  math_mode:
+    subscript: "\mathrm{cp}, \mathrm{ep}, \mathrm{co}, \mathrm{eo}"
+    block_space: "V_{\mathrm{cp}} \\oplus V_{\mathrm{ep}} \\oplus V_{\mathrm{co}} \\oplus V_{\mathrm{eo}}"
+    block_operator: "A_{\mathrm{cp}}, A_{\mathrm{ep}}, A_{\mathrm{co}}, A_{\mathrm{eo}}"
+    block_representation: "\rho_{\mathrm{cp}}, \rho_{\mathrm{ep}}, \rho_{\mathrm{co}}, \rho_{\mathrm{eo}}"
+    block_character: "\chi_{\mathrm{cp}}, \chi_{\mathrm{ep}}, \chi_{\mathrm{co}}, \chi_{\mathrm{eo}}"
+
+  text_mode:
+    uppercase: "CP, EP, CO, EO — for plain text, tables, figure labels"
+    lowercase: "cp, ep, co, eo — for inline code-style references"
+
+  forbidden:
+    - "E_P"
+    - "E_O"
+    - "C_P"
+    - "C_O"
+    - "even permutation block"
+    - "edge-permutation block"  # use "EP block" or "edge permutation block" (no hyphen)            
+    - "CP-block"               # use "CP block"
+    - "\\text{cp}"             # use \\mathrm{cp} in math mode
+    - "\\text{ep}"
+    - "\\text{co}"
+    - "\\text{eo}"
+  warning:
+    - EP-block  # use "EP block"
+
+# ── Sectors ────────────────────────────────────────────────────────────
+sectors:
+  count: 9
+  labels: ["S1", "S2", "S3", "S4", "S5", "S6", "S7", "S8", "S9"]
+  generic:
+    symbol: "S_{\\alpha}"
+    description: "Primitive sector (joint eigenspace of Center{A, QT_all, HT_all})"
+  projector:
+    symbol: "P_{\\alpha}"
+    description: "Sector projector"
+  hub:
+    primary: "S6"
+    secondary: "S7"
+    isolated: "S1"
+  forbidden:
+    - "\\text{S1}"  # use plain S1 in text, no \text wrapper
+    - "\\mathrm{S}_k"  # sector labels are plain, not \mathrm
+
+# ── Transport ──────────────────────────────────────────────────────────
+transport:
+  tensor:
+    symbol: "K"
+    definition: "K_{\\alpha\\beta} = \\max_g \\|P_\\alpha \\rho(g) P_\\beta\\|_F"
+    math_mode: "K_{\\alpha\\beta}"
+
+  kappa:
+    symbol: "\kappa_d"
+    kappa_0: "\kappa_0"  # Lie gradient (depth 0)
+    kappa_1: "\kappa_1"  # Lie curvature (depth 1)
+    kappa_d: "\kappa_d"  # general depth d
+    description: "Lie accessibility hierarchy"
+
+  t7:
+    symbol: "T7"
+    description: "Compositional accessibility (composition-only transport pairs)"
+    math_mode: "\\mathrm{T7}"  # only when in math mode; usually plain text
+
+  accessibility:
+    lie: "\mathcal{L}"           # Lie algebra span
+    compositional: "\overline{\mathcal{T}}"  # compositional closure
+    math_mode: "\\mathcal{L} \\subsetneq \\overline{\\mathcal{T}}"
+
+  forbidden:
+    - "lam18"         # use λ
+    - "T_7"           # use T7
+    - "T7 morphism"   # OK in text
+
+# ── Commutant ──────────────────────────────────────────────────────────
+commutant:
+  symbol: "\operatorname{Comm}"
+  comm_rho: "\operatorname{Comm}(\rho)"
+  comm_A: "\operatorname{Comm}(A)"
+  comm_gap: "\Delta_{\operatorname{comm}} = 194"
+  description: "Commutant algebra (centralizer of representation/image)"
+
+  endomorphism:
+    symbol: "\operatorname{End}_G(V)"
+    description: "G-equivariant endomorphisms (= commutant)"
+
+  forbidden:
+    - "\\text{Comm}"          # use \operatorname{Comm}
+    - "\\mathrm{Comm}"        # use \operatorname{Comm}
+    - "\\text{End}"           # use \operatorname{End}
+    - "\\mathrm{End}"         # use \operatorname{End}
+    - "C(\\rho)"              # use Comm(ρ) — reserve C for center subalgebra
+    - "\\text{Comm}(\\rho(G))"  # use \operatorname{Comm}(\rho)
+
+# ── Center ─────────────────────────────────────────────────────────────
+center:
+  symbol: "\operatorname{Center}"
+  canonical: "\operatorname{Center}\{A, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\mathrm{all}}\}"
+  description: "Joint center of A, QT_all, HT_all — yields 9 primitive sectors"
+
+  forbidden:
+    - "\\text{Center}"     # use \operatorname{Center}
+    - "\\mathrm{Center}"   # use \operatorname{Center}
+
+# ── Operators ──────────────────────────────────────────────────────────
+operators:
+  QT:
+    symbol: "\mathrm{QT}^a"
+    all: "\mathrm{QT}_{\mathrm{all}}"
+    description: "Quarter-turn averaging operator on axis a"
+
+  HT:
+    symbol: "\mathrm{HT}^a"
+    all: "\mathrm{HT}_{\mathrm{all}}"
+    description: "Half-turn averaging operator on axis a"
+
+  lie_generator:
+    symbol: "A_g"
+    definition: "A_g = \log \rho(g)"
+    description: "Lie algebra generator (matrix logarithm of group element)"
+
+  lie_algebra:
+    symbol: "\mathcal{L}"
+    definition: "\mathcal{L} = \operatorname{Lie}\{A_g\}"
+    description: "Lie algebra spanned by log-generators"
+
+  forbidden:
+    - "\\text{QT}"          # use \mathrm{QT}
+    - "\\text{HT}"          # use \mathrm{HT}
+    - "\\text{QT}_{\\text{all}}"  # use \mathrm{QT}_{\mathrm{all}}
+    - "\\text{HT}_{\\text{all}}"  # use \mathrm{HT}_{\mathrm{all}}
+    - "\\text{Lie}"         # use \operatorname{Lie}
+
+# ── Support ────────────────────────────────────────────────────────────
+support:
+  noncommutative:
+    symbol: "\operatorname{Supp}_{\mathrm{nc}}(\alpha)"
+    description: "Set of blocks where sector α has noncommutative support"
+
+  isotypic:
+    symbol: "\operatorname{Supp}(E_\alpha)"
+    description: "Set of irreps appearing in sector E_α"
+
+  forbidden:
+    - "\\text{Supp}"            # use \operatorname{Supp}
+    - "\\text{Supp}_{\\text{nc}}"  # use \operatorname{Supp}_{\mathrm{nc}}
+    - "\\mathrm{Supp}_{\\mathrm{nc}}"  # use \operatorname{Supp}_{\mathrm{nc}}
+    - "\\mathrm{Supp}"          # use \operatorname{Supp}
+
+# ── Trace / Dim / Common Operators ─────────────────────────────────────
+common_operators:
+  trace:
+    symbol: "\operatorname{Tr}"
+    math_mode: "\\operatorname{Tr}(X)"
+
+  dimension:
+    symbol: "\dim"
+    math_mode: "\\dim V"
+
+  kernel:
+    symbol: "\ker"
+    math_mode: "\\ker(A - \\lambda I)"
+
+  cokernel:
+    symbol: "\operatorname{coker}"
+    math_mode: "\\operatorname{coker} \\pi"
+
+  image:
+    symbol: "\operatorname{im}"
+    math_mode: "\\operatorname{im}(P)"
+
+  forbidden:
+    - "\\mathrm{Tr}"        # use \operatorname{Tr}
+    - "\\text{Tr}"          # use \operatorname{Tr}
+    - "\\mathrm{coker}"     # use \operatorname{coker}
+
+# ── S₃ Prototypes ─────────────────────────────────────────────────────
+s3_prototypes:
+  nat_reg: "S_3 \\; \\mathrm{nat} \\oplus \\mathrm{reg}"
+  reg_reg: "S_3 \\; \\mathrm{reg} \\oplus \\mathrm{reg}"
+  irreps: ["\mathrm{triv}", "\mathrm{sign}", "\mathrm{std}"]
+  forbidden: []
+
+# ── Structural Laws ────────────────────────────────────────────────────
+structural_laws:
+  S1: "Spectral Rigidity — 6 layers G-determined"
+  S2: "Transport Locality — all K, κ within-block (proven, Lemma 1)"
+  S3: "T7 Separation — all T7 cross-block"
+  S4: "M₂ Principle — noncommutative simple components sole carriers"
+  S5: "S1 Isolation — V₁ unique G-invariant proper subrepresentation (proven)"
+  S6: "Curvature Confinement — κ₁ > 0 exclusively within-block (proven, Lemma 1)"

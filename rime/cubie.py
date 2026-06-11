@@ -557,6 +557,13 @@ class CubieMove:
             # for direction in (-1, +1, +2):
             slice_moves[(axis, 0, 2)] = cls.from_rotation(axis, 0, 2)
         return slice_moves
+    
+    @class_property('PRIM_RHO_MOVES')
+    def rho_moves(cls) -> dict[tuple, tuple['CubieMove', np.ndarray]]:
+        """rho representation dict for generator set.
+        Return {move_key: (CubieMove, rho_matrix)}.
+        """
+        return {k: (m, m.rho().astype(np.complex128)) for k, m in cls.prim_moves.items()}
 
     def to_sticker_move(self, n: int) -> ActionToken | None:
         """

@@ -23,41 +23,47 @@ from itertools import combinations
 def joint_diag_sectors(ops, tol=1e-10):
     """Find simultaneous eigenspaces of commuting Hermitian operators.
 
-    Uses iterative subspace restriction: for each operator, diagonalize
-    within each previously-found sector, splitting by eigenvalue.
+    Uses iterative subspace restriction with proper eigenvector tracking:
+    for each operator, diagonalize within each previously-found sector,
+    split by eigenvalue, and transform eigenvectors back to the original basis.
 
     Args:
         ops: list of (n,n) Hermitian matrices that mutually commute.
         tol: eigenvalue grouping tolerance.
 
     Returns:
-        List of (eigenvalue_tuple, indices) where eigenvalue_tuple is a tuple
-        of eigenvalues (one per op, None if unresolved) and indices is a list
-        of basis vector indices spanning the joint eigenspace.
+        List of (eigenvalue_tuple, V) where eigenvalue_tuple is a tuple
+        of eigenvalues (one per op, None if unresolved) and V is an (n, d)
+        matrix whose columns form an orthonormal basis for the joint eigenspace.
         Sorted by first op's eigenvalue descending, then second, etc.
     """
     n = ops[0].shape[0]
-    sectors = [(tuple([None] * len(ops)), list(range(n)))]
+    # Each sector is (evals_tuple, V) where V columns span the subspace
+    sectors = [(tuple([None] * len(ops)), np.eye(n))]
 
     for op_idx, op in enumerate(ops):
         new_sectors = []
-        for evals_tuple, indices in sectors:
-            if len(indices) <= 1:
-                new_sectors.append((evals_tuple, indices))
+        for evals_tuple, V in sectors:
+            dim = V.shape[1]
+            if dim <= 1:
+                new_sectors.append((evals_tuple, V))
                 continue
-            sub_op = op[np.ix_(indices, indices)]
+            # Restrict operator to subspace spanned by V
+            sub_op = V.conj().T @ op @ V
             sub_evals, sub_evecs = np.linalg.eigh(sub_op)
+            # Group by eigenvalue proximity
             used = set()
-            for i in range(len(indices)):
+            for i in range(dim):
                 if i in used:
                     continue
-                group = [j for j in range(len(indices))
+                group = [j for j in range(dim)
                          if abs(sub_evals[j] - sub_evals[i]) < tol]
                 used.update(group)
                 new_evals = list(evals_tuple)
                 new_evals[op_idx] = round(sub_evals[i].real, 10)
-                new_indices = [indices[j] for j in group]
-                new_sectors.append((tuple(new_evals), new_indices))
+                # Transform eigenvectors back to original basis
+                V_group = V @ sub_evecs[:, group]
+                new_sectors.append((tuple(new_evals), V_group))
         sectors = new_sectors
 
     sectors.sort(key=lambda x: tuple(
@@ -67,22 +73,18 @@ def joint_diag_sectors(ops, tol=1e-10):
 
 
 def build_projectors(sectors, dim_total):
-    """Build projector matrices from sector (evals_tuple, indices) list.
+    """Build projector matrices from sector (evals_tuple, V) list.
 
     Args:
         sectors: output of joint_diag_sectors().
-        dim_total: total dimension of the Hilbert space.
+        dim_total: total dimension of the Hilbert space (ignored, from V.shape).
 
     Returns:
         List of (n,n) projector matrices, one per sector.
     """
     projectors = []
-    for _, indices in sectors:
-        P = np.zeros((dim_total, dim_total), dtype=complex)
-        for i in indices:
-            e_i = np.zeros(dim_total)
-            e_i[i] = 1.0
-            P += np.outer(e_i, e_i)
+    for _, V in sectors:
+        P = V @ V.conj().T
         projectors.append(P)
     return projectors
 
@@ -90,39 +92,34 @@ def build_projectors(sectors, dim_total):
 def classify_sectors(sectors, dim_a, dim_b=None, dim_total=None, tol=1e-10):
     """Classify each sector as pure-A ('A'), pure-B ('B'), or hybrid ('H').
 
-    A sector is pure-A if all its basis indices lie in [0, dim_a);
-    pure-B if all lie in [dim_a, dim_total); hybrid otherwise.
-
-    The basis is standard (indices from joint_diag_sectors are basis vector
-    indices), so block membership reduces to index comparison — no projector
-    construction needed.
+    A sector is pure-A if its projector has (near)zero weight in block B;
+    pure-B if (near)zero weight in block A; hybrid otherwise.
 
     Args:
-        sectors: output of joint_diag_sectors().
+        sectors: output of joint_diag_sectors() — list of (evals_tuple, V).
         dim_a: dimension of block A.
         dim_b: dimension of block B. If None, inferred from dim_total - dim_a.
-        dim_total: total dimension. If None, inferred from sector indices.
-        tol: unused (kept for API compatibility).
+        dim_total: total dimension. If None, inferred from V.shape[0].
+        tol: threshold for considering a block weight as zero.
 
     Returns:
         List of str: 'A', 'B', or 'H' for each sector.
     """
     if dim_total is None:
-        all_indices = []
-        for _, indices in sectors:
-            all_indices.extend(indices)
-        dim_total = max(all_indices) + 1 if all_indices else dim_a
+        dim_total = sectors[0][1].shape[0]
     if dim_b is None:
         dim_b = dim_total - dim_a
 
     types = []
-    for _, indices in sectors:
-        n_a = sum(1 for i in indices if i < dim_a)
-        n_b = len(indices) - n_a
-        if n_b == 0:
-            types.append('A')
-        elif n_a == 0:
+    for _, V in sectors:
+        d = V.shape[1]
+        # Frobenius norm squared of V projected onto block A
+        w_a = np.linalg.norm(V[:dim_a, :], 'fro')**2
+        # Total norm squared = d (columns are orthonormal)
+        if w_a < tol * d:
             types.append('B')
+        elif abs(w_a - d) < tol * d:
+            types.append('A')
         else:
             types.append('H')
     return types
@@ -229,21 +226,58 @@ def block_set(P, block_ranges, threshold=0.01):
     return blocks
 
 
-def count_t7_pairs(K, kap0, kap1, block_sets, tol_K=0.05, tol_kappa=1e-6):
-    """Count T7 pairs: cross-block, K≈0, κ₀=κ₁=0, 2-step reachable.
+def select_canonical_intermediate(candidates, K, tol_K=0.05):
+    """Select the canonical intermediate sector from a list of candidates.
 
-    T7 conditions (CCS §2.5):
-      1. K=0 — no direct transport between sectors
-      2. κ_d=0 for all d — no Lie accessibility at any depth
-      3. Yet reachable via finite composition (2-step path through a hub)
+    Score: transport_degree(γ) = out-degree + in-degree in K.
+    When multiple length-2 witnesses exist, the highest-transport-degree
+    intermediate is taken as the canonical witness.  This is a principled
+    tie-breaker (preferring hub sectors over leaf sectors), not a
+    hardcoded per-pair rule.
+
+    Args:
+        candidates: list of intermediate sector indices (0-based).
+        K: (n,n) transport tensor.
+        tol_K: threshold for "non-zero" transport edge.
+
+    Returns:
+        The candidate index with the highest transport degree.
+    """
+    n = K.shape[0]
+    degree = np.array([sum(K[i, :] > tol_K) + sum(K[:, i] > tol_K)
+                       for i in range(n)], dtype=float)
+    return max(candidates, key=lambda k: degree[k])
+
+
+def count_t7_pairs(K, kap0, kap1, block_sets, tol_K=0.05, tol_kappa=1e-6):
+    """Count T7 pairs: cross-block, K=0, kappa_0=kappa_1=0, 2-step reachable.
+
+    Detection pipeline (CCS §2.5):
+      1. Cross-block: block_sets[i].isdisjoint(block_sets[j]) — structural,
+         exact. This is the load-bearing step.
+      2. K=0 and kappa_0=kappa_1=0 — numerical check on depths 0 and 1
+         (logm noise ~1e-6).
+      3. 2-step reachable: at least one intermediate sector γ exists with
+         K[i,γ] > tol_K and K[γ,j] > tol_K.
+
+    kappa_d=0 for all d >= 2 is NOT checked numerically. It follows from
+    Lemma 1 (block-diagonal Lie closure): if block sets are disjoint, the
+    Lie algebra generated by {A_g} is block-diagonal, so all nested
+    commutators vanish structurally across blocks. The numerical pipeline
+    establishes cross-blockness (step 1) and depth-0/1 vanishing (step 2);
+    Lemma 1 then lifts depth-0/1 to all-depth vanishing.
+
+    This function answers "does a T7 pair exist?" (Level 1: identification).
+    For canonical witness selection (Level 2: which intermediate?), use the
+    separate function select_canonical_intermediate().
 
     Args:
         K: (n,n) transport tensor.
-        kap0: (n,n) κ₀ matrix.
-        kap1: (n,n) κ₁ matrix.
+        kap0: (n,n) kappa_0 matrix.
+        kap1: (n,n) kappa_1 matrix.
         block_sets: list of sets, block_set(P_i) for each sector projector.
         tol_K: threshold for "non-zero" transport (default 0.05).
-        tol_kappa: threshold for "zero" κ (default 1e-6, logm noise ~1e-6).
+        tol_kappa: threshold for "zero" kappa (default 1e-6, logm noise ~1e-6).
 
     Returns:
         (count, pairs) where count is int and pairs is list of (i+1, j+1) tuples.
@@ -256,11 +290,12 @@ def count_t7_pairs(K, kap0, kap1, block_sets, tol_K=0.05, tol_kappa=1e-6):
             if not block_sets[i].isdisjoint(block_sets[j]):
                 continue
             if K[i, j] < tol_K and kap0[i, j] < tol_kappa and kap1[i, j] < tol_kappa:
-                for k in range(n):
-                    if K[i, k] > tol_K and K[k, j] > tol_K:
-                        count += 1
-                        pairs.append((i + 1, j + 1))
-                        break
+                candidates = [k for k in range(n)
+                              if k != i and k != j
+                              and K[i, k] > tol_K and K[k, j] > tol_K]
+                if candidates:
+                    count += 1
+                    pairs.append((i + 1, j + 1))
     return count, pairs
 
 

@@ -1,6 +1,12 @@
 # RIME
 
-**Representation-theoretic Investigation of Mathematical Emergence** — a trilogy proving that discrete group composition is structurally richer than the continuous Lie limit.
+**Representation-Theoretic Investigation of Mathematical Emergence**
+
+This repository contains three companion papers and a Computational Canonical Specification (CCS).
+
+The project studies spectral, transport, and Lie-accessibility structures arising from finite-group representations, using the 228-dimensional Rubik's Cube cubie representation as a canonical finite testbed.
+
+The Rubik's Cube group is not used here as a solving problem. It is used as an explicit, highly noncommutative finite representation with rich internal block structure, making it a useful laboratory for studying how spectra, sector decompositions, transport tensors, and Lie-generated closures interact.
 
 ---
 
@@ -9,177 +15,225 @@
 </p>
 
 <p align="center">
-  <em>The RIME cascade: rational spectrum → transport topology → composition-only transport (T7)</em>
+  <em>The RIME cascade: spectral layers, transport topology, and composition-only accessibility.</em>
 </p>
 
 ---
 
-## What Is This?
+## Start Here
 
-The 228-dimensional representation of the Rubik's Cube group has a spectral structure that no one predicted and no one has explained — until now.
+| If you want to... | Start with |
+|-------------------|------------|
+| get the one-page project summary | [`docs/overview.md`](docs/overview.md) |
+| read the papers in order | [`Paper I`](papers/paper1/Paper%20I.md) -> [`Paper II`](papers/paper2/Paper%20II.md) -> [`Paper III`](papers/paper3/Paper%20III.md) |
+| check the canonical numerical data | [`ccs/canonical_specification.md`](ccs/canonical_specification.md) |
+| understand what belongs in each paper | [`docs/PAPER_SCOPE.md`](docs/PAPER_SCOPE.md) |
+| inspect the core mathematical invariants | [`docs/CORE_INVARIANTS.md`](docs/CORE_INVARIANTS.md) |
+| reproduce the main computations | [`tests/run_all_tests.py`](tests/run_all_tests.py), [`experiments/`](experiments/) |
 
-The averaging operator $A = \frac{1}{|S|}\sum \rho(s)$ over 18 face-turn generators has exactly **six rational eigenvalues** despite the generators failing to commute. The representation decomposes into **nine primitive sectors** connected by **ten transport edges**, all block-preserving. And there exist **five sector pairs** that no depth of Lie commutator can reach — yet a single discrete composition step can.
+## Reading Path
 
-This trilogy explains why.
+1. [`docs/overview.md`](docs/overview.md) - a one-page external-facing summary.
+2. [`papers/paper1/Paper I.md`](papers/paper1/Paper%20I.md) - spectral decomposition and rationality.
+3. [`papers/paper2/Paper II.md`](papers/paper2/Paper%20II.md) - transport topology between primitive sectors.
+4. [`papers/paper3/Paper III.md`](papers/paper3/Paper%20III.md) - Lie-generated accessibility versus discrete composition.
+5. [`ccs/canonical_specification.md`](ccs/canonical_specification.md) - canonical data, controls, figures, and verification details.
 
-## The Three Papers
+## Papers
 
-| Paper | Object | Question | Answer |
-|-------|--------|----------|--------|
-| **I. Spectral Rationality** | $A = \frac{1}{\|S\|}\sum\rho(s)$ | Why is the spectrum rational? | Partition integrality: face completeness forces integer traces via $\omega + \omega^2 + 1 = 0$ |
-| **II. Transport Topology** | $K_{\alpha\beta} = \max_g \|P_\alpha\rho(g)P_\beta\|$ | Why does the transport graph have its observed structure? | The $M_2(\mathbb{C})^4$ components of $A_{\text{EP}}$ drive hub formation and cap refinement at 9 sectors |
-| **III. Lie Accessibility** | $\kappa_d = \max\|P_\alpha C_d P_\beta\|$ | Why can discrete composition beat the continuous limit? | All Lie monomials are block-diagonal (Lemma 1); composition through hybrid sectors bridges blocks (T7 Theorem) |
+| Component | Source | Main question |
+|-----------|--------|---------------|
+| Paper I | [`papers/paper1/Paper I.md`](papers/paper1/Paper%20I.md) | Why does the averaging operator have a rational six-layer spectrum? |
+| Paper II | [`papers/paper2/Paper II.md`](papers/paper2/Paper%20II.md) | Why does the nine-sector transport graph have its observed sparse structure? |
+| Paper III | [`papers/paper3/Paper III.md`](papers/paper3/Paper%20III.md) | Why can discrete composition create channels invisible to Lie-generated accessibility? |
+| CCS | [`ccs/canonical_specification.md`](ccs/canonical_specification.md) | Which numerical objects, figures, stability checks, and claim dependencies are canonical? |
 
-The three papers form a logical chain: **spectral origin → transport topology → Lie accessibility**. Each paper's conclusions are the next paper's starting point. No circular dependency.
+The three papers form a dependency chain:
 
-## Main Structural Picture
-
-### The 228-dimensional Rubik cube representation
-
+```text
+spectral projector geometry
+        -> transport topology
+        -> Lie-generated vs compositional accessibility
 ```
-V = V_cp (64) ⊕ V_ep (144) ⊕ V_co (8) ⊕ V_eo (12)
-          │              │           │          │
-      Q₃ Hamming    face-incidence  Z₃ phase   Z₂ phase
-          │              │           │          │
-          └──────────────┴───────────┴──────────┘
-                         │
-              A = (1/18) Σ ρ(s)  →  6 rational layers
-                         │
-              Center{A, QT, HT}   →  9 primitive sectors
+
+The unified structural theme is that projector-mediated composition can create accessibility structures that are not captured by the Lie algebra generated from the same representation.
+
+Papers I-III study this phenomenon at the spectral, transport, and accessibility levels respectively.
+
+## Main Objects
+
+The central operator in Paper I is the generator average
+
+```text
+A = (1 / |S|) sum_{s in S} rho(s),
 ```
 
-### The key numbers
+where `S` is the standard 18 face-turn generator set and `rho` is the unitary cubie representation. In the canonical computation,
 
-| Quantity | Value | Why it matters |
-|----------|-------|----------------|
-| Spectral layers | 6 (not 10) | 10 block idempotents collapse via eigenvalue coincidence |
-| Absent eigenvalue | $k=5$ ($\lambda=4/9$) | No block produces it — structural vacancy |
-| Transport edges | 10 | All block-preserving; zero cross-block direct edges |
-| Primary hub | S6 (degree 5) | Unique sector intersecting all three active $M_2$ components |
-| T7 pairs | 5 (cross-block) | Zero Lie transport at any depth; 2-step composition reaches them |
-| $N=2$ control | 0 T7, 0 hybrid | Edge-permutation block ($M_2$) is necessary for both phenomena |
+```text
+Spec(A) = {1, 8/9, 7/9, 2/3, 5/9, 1/3}.
+```
 
-### The governing principles
+The representation decomposes into four physical blocks:
 
-- **M₂ Principle** — Noncommutative simple components ($n_i \geq 2$) are observed to be the sole carriers of refinement obstruction, transport mediation, and Lie curvature
-- **T7 Principle** — In the Rubik and $S_3$ prototype systems, discrete composition is strictly more powerful than Lie accessibility
+| Block | Dimension | Meaning |
+|-------|-----------|---------|
+| `cp` | 64 | corner permutation |
+| `ep` | 144 | edge permutation |
+| `co` | 8 | corner orientation |
+| `eo` | 12 | edge orientation |
+
+The canonical center decomposition yields nine primitive sectors. Paper II studies transport between these sectors via
+
+```text
+K_{alpha,beta} = max_g || P_alpha rho(g) P_beta ||.
+```
+
+Paper III compares discrete composition with the Lie algebra generated by
+
+```text
+A_g = log rho(g).
+```
+
+The key observation is that discrete composition can create accessibility channels that remain invisible to the Lie-generated closure. In the Rubik representation, the canonical computation identifies five T7 morphisms: cross-block compositional channels with no direct transport and no Lie-generated accessibility at depth 0 or 1, with higher-depth obstruction following from block support.
+
+## What This Repository Is Not
+
+This is not a cube-solving repository. It does not implement or study:
+
+- Kociemba's algorithm,
+- pruning tables,
+- search heuristics for solving scrambles,
+- sticker rendering,
+- neural-network solvers.
+
+The cube is used as a finite representation-theoretic testbed.
 
 ## Repository Structure
 
-```
+```text
 rime-lite/
-├── rime/                          # Core computation
-│   ├── cubieoperator.py           # CubieSpectralOperator — eigendecomposition, projectors, transport, commutant
-│   ├── cubie.py                   # CubieState, CubieMove, BLOCK_RANGES
-│   ├── spectralstructure.py       # Pre-spectral prediction: k-sets, eigenvalues
-│   ├── spectral_utils.py          # joint_diag_sectors, find_t7_pairs
-│   └── helpers.py                 # poly_rank, is_rational_form
-│
-├── experiments/                   # Verification + figures
-│   ├── paper1/                    # Paper I experiments (spectral ladder, k-absence, block composition)
-│   ├── paper2/                    # Paper II experiments (sectors, transport, supp_nc, EP algebra)
-│   ├── paper3/                    # Paper III experiments (T7 detection, N=2 control, κ hierarchy)
-│   ├── paper1_figures.py          # → figures/paper1/ (6 figures)
-│   ├── paper2_figures.py          # → figures/paper2/ (11 figures)
-│   ├── paper3_figures.py          # → figures/paper3/ (13 figures)
-│   ├── ccs_figures.py             # → figures/ccs/ (12 figures)
-│   ├── trilogy_overview.py        # → figures/trilogy_overview.png (this README's figure)
-│   └── trilogy_style/             # Shared visual language for all figures
-│
-├── examples/
-│   ├── paper1/Paper I - 260522.md # Paper I manuscript (canonical)
-│   ├── paper2/Paper II - 260522.md
-│   ├── paper3/Paper III - 260522.md
-│   └── canonical_specification.md # CCS — unified numerical constitution
-│
-├── tests/                         # Invariant verification (no pytest)
-│   ├── run_all_tests.py           # Fast tests (~5s, 8 suites)
-│   └── run_slow_tests.py          # Slow tests (~5-10 min, 5 suites)
-│
-├── docs/
-│   ├── CORE_INVARIANTS.md         # The 6 invariants
-│   ├── PAPER_SCOPE.md             # What each paper studies
-│   └── logs/                      # Audit and repair logs
-│
-└── figures/                       # Frozen output — never recomputed by paper build
-    ├── paper1/
-    ├── paper2/
-    ├── paper3/
-    ├── ccs/
-    └── trilogy_overview.png
+|-- rime/                 core representation and spectral computation
+|-- experiments/          reproducibility scripts and figure generation
+|-- tests/                invariant checks, plain Python assertions
+|-- papers/
+|   |-- paper1/           Paper I markdown source
+|   |-- paper2/           Paper II markdown source
+|   |-- paper3/           Paper III markdown source
+|   `-- tex/              generated TeX/PDF artifacts
+|-- ccs/                  Computational Canonical Specification source
+|-- figures/              frozen generated figures used by papers
+`-- docs/                 project overview, invariants, scope, conventions
 ```
+
+Important documents:
+
+- `docs/overview.md` - one-page project overview.
+- `docs/CORE_INVARIANTS.md` - six core structural invariants.
+- `docs/PAPER_SCOPE.md` - what belongs in each paper.
+- `ccs/canonical_specification.md` - canonical numerical and methodological supplement.
+
+## Navigation by Task
+
+| Task | File or directory |
+|------|-------------------|
+| construct the representation | [`rime/cubie.py`](rime/cubie.py), [`rime/cubieoperator.py`](rime/cubieoperator.py) |
+| compute spectral layers and projectors | [`rime/cubieoperator.py`](rime/cubieoperator.py), [`experiments/paper1/spectral_ladder.py`](experiments/paper1/spectral_ladder.py) |
+| inspect primitive sectors | [`experiments/paper2/primitive_sectors.py`](experiments/paper2/primitive_sectors.py) |
+| inspect transport topology | [`experiments/paper2/transport_graph.py`](experiments/paper2/transport_graph.py) |
+| inspect noncommutative support | [`experiments/paper2/supp_nc.py`](experiments/paper2/supp_nc.py) |
+| inspect T7 morphisms | [`experiments/paper3/t7_detection.py`](experiments/paper3/t7_detection.py) |
+| run fast invariant checks | [`tests/run_all_tests.py`](tests/run_all_tests.py) |
+| run slow verification checks | [`tests/run_slow_tests.py`](tests/run_slow_tests.py) |
+| find generated figures | [`figures/`](figures/) |
 
 ## Reproducibility
 
-Every numerical claim in the trilogy is verified by code. No data files, no precomputed caches — all values are recomputed from first principles.
+Install the package in editable mode:
 
 ```bash
 pip install -e .
-python tests/run_all_tests.py            # Fast invariant tests (~5s)
-python tests/run_slow_tests.py           # Full verification (~5-10 min)
-python experiments/paper1_figures.py     # Paper I figures
-python experiments/ccs_figures.py        # CCS figures
-python experiments/trilogy_overview.py   # This README's figure
 ```
 
-The test suite directly asserts the structural invariants:
-
-| Test suite | Verifies |
-|------------|----------|
-| `test_spectrum.py` | 6 layers, rational λ, projector algebra |
-| `test_sectors.py` | 9 sectors, S6 hub, S1 isolation |
-| `test_transport.py` | K symmetry, 10 edges, 5 T7 pairs |
-| `test_commutant_gap.py` | Comm(ρ)=610, Δ_comm=194 |
-| `test_f3.py` | 51 isotypic components, multiplicity reservoir |
-| `test_kappa_hierarchy.py` | κ₀ → 2-cycle, κ₁ → 3-cycle, T7 → breaks Lie sheet |
-
-All experiments use `np.random.seed(42)`. All numerical assertions use `TOL = 1e-10`; transport detection uses `TOL_K = 0.05`.
-
-## Quick Start
+Run the fast invariant test suite:
 
 ```bash
-# The smallest self-contained T7 demonstration (Paper III core result)
-python experiments/paper3/t7_minimal.py
-
-# Why the spectrum has exactly 6 rational layers
-python experiments/paper1/spectral_ladder.py
-
-# The 9-sector transport topology
-python experiments/paper2/primitive_sectors.py
+python tests/run_all_tests.py
 ```
 
-Requires Python ≥ 3.10, numpy, scipy, matplotlib. Joblib optional (pickle fallback).
+Run the slower verification suite:
+
+```bash
+python tests/run_slow_tests.py
+```
+
+Validate notation and canonical numerical registry entries:
+
+```bash
+python papers/validate_registry.py
+```
+
+Representative experiment scripts:
+
+```bash
+python experiments/paper1/spectral_ladder.py
+python experiments/paper2/primitive_sectors.py
+python experiments/paper3/t7_detection.py
+```
+
+All numerical claims in the papers are intended to be traceable to explicit tests, experiment scripts, or CCS tables.
+
+## Current Canonical Values
+
+| Quantity | Canonical value |
+|----------|-----------------|
+| representation dimension | 228 |
+| physical blocks | `cp`, `ep`, `co`, `eo` |
+| spectral layers | 6 |
+| primitive sectors | 9 |
+| direct transport edges (undirected) | 10 |
+| T7 morphisms, Rubik `N=3` | 5 |
+| T7 morphisms, pocket cube `N=2` | 0 |
+| isotypic components | 51 |
+| multiplicity reservoir | one component |
+
+## Claim-Status Discipline
+
+The papers distinguish:
+
+- proved structural statements,
+- computationally verified canonical numerical statements,
+- observed patterns across tested systems,
+- exploratory evidence and open generalizations.
+
+The broader goal is to understand which observed structures are representation-specific and which reflect more general phenomena in finite-dimensional noncommutative representations.
+
+## Requirements
+
+Python 3.10 or newer is recommended.
+
+Core Python dependencies:
+
+- `numpy`
+- `scipy`
+- `matplotlib`
+- `joblib` (optional cache acceleration; pickle fallback exists)
+
+## License
+
+Code: MIT License. See [`LICENSE`](LICENSE).
+
+Papers and manuscript sources: Creative Commons Attribution 4.0 International (CC BY 4.0). See [`LICENSE-PAPERS`](LICENSE-PAPERS).
 
 ## Citation
 
 ```bibtex
 @article{rime-trilogy,
-  title   = {The {RIME} Trilogy: Spectral Rationality, Transport Topology,
-             and Composition-Only Transport in the {Rubik}'s Cube Representation},
-  author  = {Chen, WuJun},
-  year    = {2026},
-  note    = {Three-paper series with unified computational supplement}
+  title  = {The RIME Trilogy: Spectral Sector Decomposition,
+            Noncommutative Transport Topology, and Accessibility Structure
+            in the Rubik's Cube Representation},
+  author = {Chen, WuJun},
+  year   = {2026},
+  note   = {Three-paper series with unified computational supplement}
 }
 ```
-
-Paper I: *Spectral Sector Decomposition in the Rubik's Cube Representation: Rational Spectral Collapse, Primitive Idempotents, and Block Spectral Factorization.*
-
-Paper II: *Noncommutative Transport Topology in the Rubik's Cube Representation: Hybrid Sectors, Permutation Channels, and Refinement Obstructions.*
-
-Paper III: *Accessibility Beyond Lie Closure in Finite Group Representations: Hybrid Projector Geometry and Composition-Only Transport.*
-
-## Status
-
-| Component | Status |
-|-----------|--------|
-| Core computation | Stable — all 8 fast tests + 5 slow tests pass |
-| Paper I manuscript | Draft complete, Phase 0–5 repairs applied |
-| Paper II manuscript | Draft complete, Phase 0–5 repairs applied |
-| Paper III manuscript | Draft complete, Phase 0–5 repairs applied |
-| CCS (computational supplement) | Frozen — canonical numerical constitution |
-| Specification theorems | S2, S5, S6 proven; S1, S3, S4 verified (open) |
-| Semantic label migration | Deferred to pre-submission |
-
----
-
-*Maintained by Rime (WuJun Chen)*

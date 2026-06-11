@@ -1,0 +1,246 @@
+# Structural Registry — non-theorem objects with permanent cross-reference labels.
+#
+# Three types: appendix, figure, table.  Each entry maps a stable label to its
+# canonical location (display name in PDF) and a short title.
+#
+# Usage:
+#   - In MD papers:  \ref{app:ccs-tolerance-regime}  (resolves via xr)
+#   - Auto-export:   python _registry.py structural   →  structural_map.json
+
+appendix:
+  # -- CCS Appendices --
+  app:ccs-computational-stability:
+    location: "CCS Appendix A"
+    title: "Computational Stability"
+  app:ccs-tolerance-regime:
+    location: "CCS A.1"
+    title: "Tolerance Regime"
+
+  app:ccs-provenance:
+    location: "CCS Appendix B"
+    title: "Provenance"
+
+  app:ccs-figure-directory:
+    location: "CCS Appendix C"
+    title: "CCS Figure Directory"
+
+  app:ccs-implementation-notes:
+    location: "CCS Appendix D"
+    title: "Implementation Notes"
+
+  app:ccs-claim-status:
+    location: "CCS Appendix E"
+    title: "Claim Status Register"
+
+  app:ccs-kappa-hierarchy-search:
+    location: "CCS Appendix F"
+    title: "Empirical Validation: κ Hierarchy Search Diagnostics"
+  app:ccs-kappa0-barrier:
+    location: "CCS F.2"
+    title: "κ₀ Barrier: 1-Step Greedy → Hub Swirl (2-Cycle)"
+
+  app:ccs-s3-prototypes:
+    location: "CCS Appendix G"
+    title: "S₃ Prototypes"
+
+  app:ccs-spectral-triple:
+    location: "CCS Appendix H"
+    title: "Spectral-Triple Interpretation and D-Stability of T7"
+
+  app:ccs-future-directions:
+    location: "CCS Appendix I"
+    title: "Future Directions and Verification Scope"
+  app:ccs-algebraic-extensions:
+    location: "CCS I.3"
+    title: "Algebraic Extensions"
+
+  # -- Paper II Appendices --
+  app:p2-noncommutative-support-construction:
+    location: "Paper II Appendix A"
+    title: "Noncommutative Support Construction"
+
+  app:p2-cp-permutation-channel:
+    location: "Paper II Appendix B"
+    title: "The CP Permutation Channel (Type II)"
+
+  app:p2-t7-edge-tables:
+    location: "Paper II Appendix C"
+    title: "T7 Edge Tables"
+
+  app:p2-canonical-transport-summary:
+    location: "Paper II Appendix D"
+    title: "Canonical Transport Summary"
+
+  app:p2-generator-family-universality:
+    location: "Paper II Appendix E"
+    title: "Generator-Family Universality"
+
+  app:p2-numerical-methods-s3:
+    location: "Paper II Appendix F"
+    title: "Numerical Methods and S₃ Verification"
+
+  # -- Paper III Appendices --
+  app:p3-compact-data-reference:
+    location: "Paper III Appendix A"
+    title: "Compact Data Reference"
+
+  app:p3-s3-prototypes-negative:
+    location: "Paper III Appendix B"
+    title: "S₃ Prototypes (Negative Results)"
+
+  app:p3-inert-hybrid-counterexample:
+    location: "Paper III Appendix C"
+    title: "Inert Hybrid Counterexample"
+
+  app:p3-lie-accessibility-diagnostics:
+    location: "Paper III Appendix D"
+    title: "Lie Accessibility Diagnostics"
+
+figure:
+  fig:c0-structural-pipeline:
+    location: "CCS Figure C0"
+    title: "Structural Pipeline — Trilogy Weld"
+
+  fig:c1-canonical-spectrum:
+    location: "CCS Figure C1"
+    title: "Canonical Spectrum — 6-layer + 9-sector decomposition"
+
+  fig:c2-transport-heatmap:
+    location: "CCS Figure C2"
+    title: "Transport Heatmap — full 9×9 K matrix"
+
+  fig:c4-commutant-svd:
+    location: "CCS Figure C4"
+    title: "Commutant SVD Gap — Δ_comm = 194"
+
+  fig:c5-nullspace-drift:
+    location: "CCS Figure C5"
+    title: "Null-Space Drift Diagnostics"
+
+  fig:c7-s3-prototype-comparison:
+    location: "CCS Figure C7"
+    title: "S₃ Prototype Comparison — nat⊕reg negative control"
+
+  fig:c9-resonance-merging:
+    location: "CCS Figure C9"
+    title: "Resonance Merging — 10 block-level → 6 global layers"
+
+  fig:c10-phase-cancellation:
+    location: "CCS Figure C10"
+    title: "Phase Cancellation — Z₃ Arithmetic Filter"
+
+  fig:c11-kappa-hierarchy:
+    location: "CCS Figure C11"
+    title: "κ Hierarchy — Gradient vs Curvature"
+
+  fig:c12-phase-transition:
+    location: "CCS Figure C12"
+    title: "Phase Transition — Generator-Family Continuum 18→6"
+
+  fig:c12b-generator-defect-taxonomy:
+    location: "CCS Figure C12b"
+    title: "Generator Defect Taxonomy — geneology tree"
+
+  fig:c14-supp-nc-overlap:
+    location: "CCS Figure C14"
+    title: "Noncommutative Support Overlap — 9 sector × 4 block grid"
+
+  fig:c16-transport-skeleton:
+    location: "CCS Figure C16"
+    title: "Transport Skeleton — 9-sector connectivity graph"
+
+  fig:c17-block-sector-alluvial:
+    location: "CCS Figure C17"
+    title: "Block-Sector Alluvial — algebraic origin of transport topology"
+
+  fig:c18-generator-defect-taxonomy:
+    location: "CCS Figure C18"
+    title: "Generator Defect Taxonomy — branching tree"
+table:
+  tab:c1-block-decomposition:
+    location: "CCS Table C1"
+    title: "Block Decomposition"
+
+  tab:c2-six-canonical-layers:
+    location: "CCS Table C2"
+    title: "Six Canonical Layers"
+
+  tab:c3-nine-primitive-sectors:
+    location: "CCS Table C3"
+    title: "Nine Primitive Sectors"
+
+  tab:c4-block-spectra-generator-families:
+    location: "CCS Table C4"
+    title: "Block Spectra Across Generator Families"
+
+  tab:c5-resonance-merging:
+    location: "CCS Table C5"
+    title: "Resonance Merging"
+
+  tab:c6-block-noncommutativity:
+    location: "CCS Table C6"
+    title: "Block Noncommutativity"
+
+  tab:c7-transport-matrix:
+    location: "CCS Table C7"
+    title: "Transport Matrix K (9-Sector)"
+
+  tab:c8-direct-transport-edges:
+    location: "CCS Table C8"
+    title: "Direct Transport Edges"
+
+  tab:c9-hub-degrees:
+    location: "CCS Table C9"
+    title: "Hub Degrees"
+
+  tab:c10-gradient-transport-6-layer:
+    location: "CCS Table C10"
+    title: "Gradient Transport kappa_0 (6-Layer)"
+
+  tab:c11-curvature-transport-6-layer:
+    location: "CCS Table C11"
+    title: "Curvature Transport kappa_1 (6-Layer)"
+
+  tab:c12-key-kappa-values:
+    location: "CCS Table C12"
+    title: "Key kappa Values (6-Layer)"
+
+  tab:c13-gradient-transport-9-sector:
+    location: "CCS Table C13"
+    title: "Gradient Transport kappa_0 (9-Sector)"
+
+  tab:c14-curvature-transport-9-sector:
+    location: "CCS Table C14"
+    title: "Curvature Transport kappa_1 (9-Sector)"
+
+  tab:c15-block-support-transport:
+    location: "CCS Table C15"
+    title: "Block-Support Transport"
+
+  tab:c16-t7-morphisms:
+    location: "CCS Table C16"
+    title: "T7 Morphisms"
+
+  tab:c17-accessibility-classes:
+    location: "CCS Table C17"
+    title: "Accessibility Classes"
+
+  tab:c18-ep-algebra-structure:
+    location: "CCS Table C18"
+    title: "EP Algebra Structure"
+
+  tab:c19-commutant-dimensions:
+    location: "CCS Table C19"
+    title: "Commutant Dimensions"
+
+  tab:c20-per-layer-commutant-dimensions:
+    location: "CCS Table C20"
+    title: "Per-Layer Commutant Dimensions"
+
+  tab:c21-commutant-restriction-map:
+    location: "CCS Table C21"
+    title: "Commutant Restriction Map pi"
+
+  tab:c22-fundamental-identities:
+    location: "CCS Table C22"
+    title: "Fundamental Identities"

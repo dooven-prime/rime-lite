@@ -230,12 +230,19 @@ class class_cache:
             cache = {}
             setattr(cls, self.cache_name, cache)
 
-        bound = self.func.__get__(obj, cls)  # self.func.__func__/self.func(cls,...
+        _raw = self.func
+        if isinstance(_raw, (staticmethod, classmethod)):
+            _callee = _raw.__get__(obj, cls)
+        else:
+            _callee = _raw  # call as _callee(cls, *args, **kwargs)
 
         def wrapper(*args, **kwargs):
             key = self.key_func(*args, **kwargs) if self.key_func else (args, tuple(sorted(kwargs.items())))
             if key not in cache:
-                cache[key] = bound(*args, **kwargs)
+                if isinstance(_raw, (staticmethod, classmethod)):
+                    cache[key] = _callee(*args, **kwargs)
+                else:
+                    cache[key] = _callee(cls, *args, **kwargs)
             return cache[key]
 
         wrapper.cache = cache

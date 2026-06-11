@@ -37,7 +37,7 @@ def test_commutant_gap_invariant():
 
     ca = op.commutant_algebra()
     dim_comm_A = ca['dim_total']
-    full_basis, dim_comm_rho = op._full_commutant_combinatorial()
+    full_basis, dim_comm_rho = op.full_commutant_combinatorial()
 
     assert dim_comm_A > 0
     assert dim_comm_rho > 0
@@ -70,7 +70,7 @@ def test_commutant_gap_snapshot():
 
     ca = op.commutant_algebra()
     dim_comm_A = ca['dim_total']
-    full_basis, dim_comm_rho = op._full_commutant_combinatorial()
+    full_basis, dim_comm_rho = op.full_commutant_combinatorial()
     delta = dim_comm_A - dim_comm_rho
 
     assert dim_comm_A == CANONICAL["comm_A"], \
@@ -95,7 +95,7 @@ def test_transport_commutant_relation():
 
     ca = op.commutant_algebra()
     dim_comm_A = ca['dim_total']
-    full_basis, dim_comm_rho = op._full_commutant_combinatorial()
+    full_basis, dim_comm_rho = op.full_commutant_combinatorial()
     delta = dim_comm_A - dim_comm_rho
 
     # Layer-level transport sum

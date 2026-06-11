@@ -1,26 +1,47 @@
-from rime.cubie import CubieMove, N_GENERATORS, TOTAL_DIM
-from rime.base import class_cache, setup_utf8_stdout
+"""CubieSpectralOperator — numerical spectral engine for the RIME trilogy.
+
+Architecture:
+  SpectralStructure (theory) → CubieSpectralOperator (numerics) → SlowDynamics (dynamics)
+
+Trilogy decomposition A → K_αβ → κ_d:
+  Paper I  — A:       spectral origin (layers, projectors, field)
+  Paper II — K_αβ:    transport topology (transport tensor, commutant, sectors)
+  Paper III — κ_d:    Lie accessibility (infinitesimal transport, kappa depth)
+
+Core invariants (CCS-frozen):
+  6 spectral layers, λ = 1 − k/9, k ∈ {0,1,2,3,4,6}
+  9 primitive sectors from Center{A, QT_all, HT_all}
+  10 transport edges (undirected), S6 is the main hub
+  5 T7 pairs (all cross-block), Comm(ρ) = 610
+
+Usage:
+    cso = CubieSpectralOperator.from_gens_dict(CubieMove.prim_moves())
+    P = cso.layer_projector(0.777778)
+    K, k0, k1 = cso.transport_kappa(projectors)
+    sec = cso.center_decomposition()   # 9 sectors
+"""
+
+from rime.cubie import CubieMove, N_GENERATORS, TOTAL_DIM, BLOCK_RANGES
+from rime.base import setup_utf8_stdout
 from rime.helpers import is_in_qsqrt5, is_rational_form
+from rime.spectral_utils import block_set
 import numpy as np
 
 setup_utf8_stdout()
 
-# Canonical precision for spectral layer keys.  These are NOT derived from
-# self.tol — layer identity is a topological invariant, not a tolerance knob.
-SPECTRAL_DECIMALS = 6
-CENTER_CLUSTER_TOL = 1e-8
-TOL_KAPPA = 1e-6  # kappa checks need looser tolerance: logm noise ~1e-6
+# ═══════════════════════════════════════════════════════════════════════════════
+# Numerical precision constants — layer identity is a topological invariant, not a tolerance knob
+# ═══════════════════════════════════════════════════════════════════════════════
+SPECTRAL_DECIMALS = 6  # rounding precision for spectral layer keys (canonical, fixed)
+CENTER_CLUSTER_TOL = 1e-8  # center diagonalization clustering tolerance
+TOL_KAPPA = 1e-6  # κ zero-threshold: logm numerical noise ~1e-6
+
 
 class CubieSpectralOperator:
-    """Numerical spectral operator — the numerical utility layer.
+    """Numerical spectral operator for the Rubik representation.
 
-    Architecture:
-      SpectralStructure (theory) → CubieSpectralOperator (numerics) → SlowDynamics (dynamics)
-
-    Three-paper decomposition (A → K_αβ → κ_d):
-      Paper I  — A:       spectral origin (layers, projectors, field classification)
-      Paper II — K_αβ:    transport topology (transport tensor, commutant, sectors)
-      Paper III — κ_d:    Lie accessibility (infinitesimal transport, kappa depth)
+    After construction, _frozen=True — spectral identity is immutable.
+    All heavy computations (logm, commutant) are cached.
 
     Usage:
         cso = CubieSpectralOperator(n=18)
@@ -30,33 +51,39 @@ class CubieSpectralOperator:
         field = cso.classify_field()
     """
 
-    def __init__(self, n: int = N_GENERATORS, generators: dict | None = None, tol: float = 1e-6):
+    def __init__(self, n: int = N_GENERATORS, generators: dict | None = None, tol: float = 1e-6, seed: int = 42):
         self.n = n
         self.tol = tol
+        self.seed = seed
         self.rho_moves = generators or self.__class__.rho_moves(n)
         rho_gen = [rho for _, rho, *_ in self.rho_moves.values()]
-        self.A = np.array(sum(rho_gen) / len(rho_gen), dtype=np.complex128)
+        self.A = np.array(sum(rho_gen) / len(rho_gen), dtype=np.complex128)  # A = (1/|S|) Σ ρ(s) 平均算子
         assert np.allclose(self.A, self.A.T.conj(), rtol=tol, atol=tol), "A is not Hermitian"
-        self.w, self.V = np.linalg.eigh(self.A)
-        idx = np.argsort(-self.w)
+        self.w, self.V = np.linalg.eigh(self.A)  # 谱分解: A = Σ λ_i P_i
+        idx = np.argsort(-self.w)  # 降序: λ₁ > λ₂ > ...
         self.w = self.w[idx]
         self.V = self.V[:, idx]
         self._compute_spectral_layers()
+
+        # Lazy init
         self._ss = None
         self._transport_tensor_cache = None
-        # Caches: eliminate duplicate computation across Paper II/III methods.
-        # All caches are permanent — no invalidation, no force_recompute.
+
+        # All caches are permanent — no invalidation, no force_recompute. — 全永久，不失效
         self._pg_cache = {}  # lam → (projected_gens, d)
         self._cb_cache = {}  # lam → (comm_basis, comm_dim)
-        self._full_comm_cache: tuple[list[np.ndarray], int] | None = None
-        self._lie_gens_cache = None
-        self._frozen = True  # spectral identity is now immutable
+        self._full_comm_cache = None  # full 228-dim commutant
+        self._lie_gens_cache = None  # A_g = log ρ(g)
+        self._frozen = True  # spectral identity is now immutable 谱身份锁定
+
+    # ═══════════════════════════════════════════════════════════════
+    # Spectral layer construction
+    # ═══════════════════════════════════════════════════════════════
 
     def _compute_spectral_layers(self) -> None:
-        """Compute {lam: {dim, projector}} for each distinct eigenvalue.
+        """Cluster eigenvalues by SPECTRAL_DECIMALS → {lam: {dim, projector}}.
 
-        Uses SPECTRAL_DECIMALS (canonical, fixed) — NOT derived from self.tol.
-        Layer keys are topological invariants; tolerance only gates comparisons.
+        SPECTRAL_DECIMALS is a canonical fixed value, not affected by self.tol.
         """
         w_rounded = np.round(self.w, decimals=SPECTRAL_DECIMALS)
         unique_w = np.unique(w_rounded)
@@ -66,79 +93,85 @@ class CubieSpectralOperator:
             mask = np.abs(self.w - lam) < self.tol
             dim = int(np.sum(mask))
             V_lam = self.V[:, mask]
-            P_lam = V_lam @ V_lam.T.conj()
+            P_lam = V_lam @ V_lam.T.conj()  # 谱投影算子
             self._layers[float(lam)] = {'dim': dim, 'projector': P_lam, 'eigenvalue': float(np.mean(self.w[mask]))}
+
+        # 慢/快分裂 — 数值实验用
         self.dim_const = int(np.sum(np.abs(self.w - 1.0) < self.tol))
         self.dim_slow = int(np.sum((self.w >= 2 / 3 - self.tol) & (np.abs(self.w - 1.0) >= self.tol)))
         mask_fast = self.w < 2 / 3 - self.tol
         self.rho_fast = float(np.max(np.abs(self.w[mask_fast]))) if np.any(mask_fast) else 0.0
 
     # ═══════════════════════════════════════════════════════════════
-    # Paper I: A — Spectral Origin
+    # Constructors
     # ═══════════════════════════════════════════════════════════════
 
-    # -- Constructors --------------------------------------------------
-
-    @class_cache('PRIM_RHO_MOVES', key=lambda n: n)
+    @classmethod
     def rho_moves(cls, n=N_GENERATORS):
-        """Filter and cache rho representation dict for generator set size n.
+        """Filter ρ representation dict by generator count n.
 
-        Supported n: 18 (all face turns), 16, 12 (QT only), 10, 9, 8, 6, 4, 3, 2.
-        n=21 includes slice moves.
-        Return {move_key: (CubieMove, rho_matrix)} for given n.
+        Supports n: 18 (full), 16, 12 (QT only), 10, 9, 8, 6 (HT only), 4, 3, 2.
+        n=21 additionally includes slice moves.
+        Returns {move_key: (CubieMove, rho_matrix)}.
         """
         if n > 18:
             all_moves = CubieMove.prim_moves().copy()
             if n == 21:
                 all_moves.update(CubieMove.slice_moves())
-                return {k: (mv, mv.rho()) for k, mv in all_moves.items()}
+                return {k: (mv, mv.rho().astype(np.complex128))
+                        for k, mv in all_moves.items()}
+
+        # move_key = (axis, side, direction): axis∈{0,1,2}, side∈{±1}, dir∈{-1,1,2}
         f = {18: lambda k: True,
-             16: lambda k: not (k[0] == 0 and k[2] == 2),
-             12: lambda k: k[2] != 2,
-             10: lambda k: k[0] == 1 or k[2] == 2,
-             9: lambda k: k[1] == 1,
-             8: lambda k: k[0] != 1 and k[2] != 2,
-             6: lambda k: k[2] == 2,
-             4: lambda k: k[0] == 0 and k[2] != 2,
-             3: lambda k: k[0] == 0 and k[1] == 1,
-             2: lambda k: k[0] == 0 and k[2] == 2}
+             16: lambda k: not (k[0] == 0 and k[2] == 2),  # 去 axis-0 HT,Sector Shielding
+             15: lambda k: k[1] == 1 or k[2] != 2,  # 去3 个负面 HT,Transport Resolution Amplification
+             14: lambda k: k[0] != 1 or k[2] == 2,  # 去axis-1 QT,Field Defect Localization
+             12: lambda k: k[2] != 2,  # 仅 quarter-turn
+             10: lambda k: k[0] == 1 or k[2] == 2,  # axis-1 全 + 所有 HT
+             9: lambda k: k[1] == 1,  # 仅 +face (R/U/F)
+             8: lambda k: k[0] != 1 and k[2] != 2,  # 去 axis-1 + 去 HT
+             6: lambda k: k[2] == 2,  # 仅 half-turn
+             4: lambda k: k[0] == 0 and k[2] != 2,  # axis-0 QT only
+             3: lambda k: k[0] == 0 and k[1] == 1,  # axis-0 +face QT
+             2: lambda k: k[0] == 0 and k[2] == 2}  # axis-0 HT only
         match = f.get(n, lambda k: False)
-        return {k: (mv, mv.rho().astype(np.complex128))
-                for k, mv in CubieMove.prim_moves.items() if match(k)}
+        return {k: v for k, v in CubieMove.rho_moves.items() if match(k)}
 
     @classmethod
     def lite(cls) -> "CubieSpectralOperator":
-        """Return lightweight instance without running full eigenspace decomposition."""
+        """Lightweight instance — skips spectral decomposition. For class-method access only."""
         return cls.__new__(cls)
 
     @classmethod
     def from_generators(cls, generators: dict, tol: float = 1e-6) -> "CubieSpectralOperator":
-        """Construct from an explicit rho_moves dict (internal format)."""
+        """Construct from internal-format rho_moves dict."""
         return cls(n=len(generators), generators=generators, tol=tol)
 
     @classmethod
     def from_gens_dict(cls, gens_dict: dict, tol: float = 1e-6) -> "CubieSpectralOperator":
-        """Construct from a plain {move_key: CubieMove} dictionary."""
+        """Construct from {move_key: CubieMove} dict — the most common entry point."""
         generators = {}
         for k, mv in gens_dict.items():
             generators[k] = (mv, mv.rho().astype(np.complex128))
         return cls(n=len(generators), generators=generators, tol=tol)
 
-    # -- Spectral accessors --------------------------------------------
+    # ═══════════════════════════════════════════════════════════════
+    # Paper I: A — spectral origin
+    # ═══════════════════════════════════════════════════════════════
+
+    # -- Spectral accessors --
 
     def spectral_layers(self) -> dict[float, dict]:
-        """Return {lam: {dim, projector}} for each distinct eigenvalue."""
+        """{lam: {dim, projector}} — one layer per distinct eigenvalue."""
         return self._layers
 
-    def projector(self, lam: float = 7 / 9) -> np.ndarray:
-        """Spectral projector P_λ for a single eigenvalue.
-
-        Canonical path: returns cached projector from self._layers.
-        Fallback: tolerance-based search in self.w (for canonical fractions like 7/9).
+    def projector(self, lam: float) -> np.ndarray:
+        """Spectral projector P_λ. Prefer _layers cache (closest-key match).
         """
         closest = min(self._layers.keys(), key=lambda k: abs(k - lam))
         if abs(closest - lam) < self.tol:
             return self._layers[closest]['projector']
+        # fallback
         mask = np.abs(self.w - lam) < self.tol
         idx = np.where(mask)[0]
         if len(idx) == 0:
@@ -146,23 +179,27 @@ class CubieSpectralOperator:
         return self.V[:, idx] @ self.V[:, idx].T.conj()
 
     def eigenspace_basis(self, lam: float) -> np.ndarray:
-        """Eigenvectors spanning the lambda-eigenspace."""
+        """Basis of the λ-eigenspace (column vectors)."""
         mask = np.abs(self.w - lam) < self.tol
         return self.V[:, mask]
 
     @property
     def projectors(self) -> np.ndarray:
-        """Ordered list of spectral projectors P_i (one per distinct eigenvalue)."""
+        """Ordered list of spectral projectors P_i (one per distinct eigenvalue).
+        谱投影算子列表 P_i, 按 λ 降序"""
         return np.array([info['projector'] for _, info in sorted(self._layers.items(), reverse=True)])
 
     @property
     def layer_dim(self) -> np.ndarray:
-        """Array of spectral multiplicities (dimensions) for each eigenvalue layer."""
+        """Array of spectral multiplicities (dimensions) for each eigenvalue layer.
+        各层维数数组, 按 λ 降序"""
         return np.array([info['dim'] for _, info in sorted(self._layers.items(), reverse=True)])
 
     @property
     def layer_keys(self) -> list[float]:
-        """Canonical layer eigenvalues, sorted descending."""
+        """Canonical layer eigenvalues, sorted descending.
+        Canonical 层特征值, 降序 [1.0, 0.888889, 0.777778, 0.666667, 0.555556, 0.333333]
+        """
         return sorted(self._layers, reverse=True)
 
     def labelled_projectors(self):
@@ -174,6 +211,7 @@ class CubieSpectralOperator:
         """Dimension (multiplicity) of a spectral layer.
 
         Accepts canonical fractions (7/9, 2/3, etc.) via closest-key matching.
+        某层的维数 (重数)
         """
         closest = min(self._layers.keys(), key=lambda k: abs(k - lam))
         if abs(closest - lam) < self.tol:
@@ -181,13 +219,15 @@ class CubieSpectralOperator:
         raise ValueError(f"Eigenvalue {lam} not found")
 
     def layer_projector(self, lam: float) -> np.ndarray:
-        """Projector for a spectral layer — delegates to cached projector()."""
+        """Projector for a spectral layer — delegates to cached projector().
+        谱层投影算子"""
         return self.projector(lam)
 
     def closest_layer(self, lam: float) -> float:
-        """Return the canonical layer key (from _layers) closest to ``lam``.
+        """Return the actual float key in self._layers closest to a canonical eigenvalue.
 
-        Canonical fractions like 7/9 resolve to the stored float key (e.g. 0.777778).
+        Canonical fractions like 7/9 resolve to the stored float key (e.g. 0.777778). 
+        返回 _layers 中最接近 lam 的 canonical key 7/9 → 0.777778, 2/3 → 0.666667, etc.
         """
         return min(self._layers.keys(), key=lambda k: abs(k - lam))
 
@@ -196,45 +236,74 @@ class CubieSpectralOperator:
 
         Abstracts away the internal (CubieMove, rho_matrix, ...) tuple format
         so experiments don't need to unpack it.
+        所有生成元的 dense ρ(g) 矩阵, 按 rho_moves 顺序 屏蔽内部 tuple
         """
         return [v[1] for v in self.rho_moves.values()]
 
-    # -- Slow/fast classification --------------------------------------
+    @staticmethod
+    def lam_to_k(lam: float) -> int:
+        """λ → k where λ = 1 − k/9."""
+        return round(9 * (1 - lam))
+
+    @staticmethod
+    def k_to_lam(k: int) -> float:
+        """k → λ where λ = 1 − k/9."""
+        return 1.0 - k / 9.0
+
+    @staticmethod
+    def layer_label(lam: float) -> str:
+        """λ → human-readable label: 1.0 → V₁, 0.777778 → V(2)"""
+        k = round(9 * (1 - lam))
+        if abs(lam - 1.0) < 1e-5:
+            return 'V₁'
+        return f'V({k})'
+
+    @staticmethod
+    def block_slice(block_name: str) -> slice:
+        """Return slice for block: 'cp'→slice(0,64), 'ep'→slice(64,208), etc."""
+        start, end = BLOCK_RANGES[block_name]
+        return slice(start, end)
+
+    # -- Slow/fast split (for numerical experiments) --
 
     def slow_fast_split(self, threshold: float = 2 / 3) -> tuple[np.ndarray, np.ndarray]:
-        """Split eigenvalue indices into slow (λ ≥ threshold) and fast masks."""
+        """Split eigenvalue indices into slow (λ ≥ threshold) and fast masks.
+        特征值按 threshold 分慢/快两个 mask"""
         mask_slow = self.w >= threshold - self.tol
         return mask_slow, ~mask_slow
 
     def slow_projector(self, threshold: float = 2 / 3) -> np.ndarray:
-        """Projector onto the slow subspace (eigenvalues ≥ threshold)."""
+        """Projector onto the slow subspace (eigenvalues ≥ threshold).
+        慢子空间 (λ ≥ threshold) 的投影算子"""
         mask_slow, _ = self.slow_fast_split(threshold)
         V_slow = self.V[:, mask_slow]
         return V_slow @ V_slow.T.conj()
 
     def slow_basis(self, threshold: float = 2 / 3) -> np.ndarray:
-        """Basis vectors (columns) spanning the slow subspace."""
+        """Basis vectors (columns) spanning the slow subspace.
+        慢子空间的基 (列向量)"""
         mask_slow, _ = self.slow_fast_split(threshold)
         return self.V[:, mask_slow]
 
-    # -- h_i operators & field classification --------------------------
+    # -- h_i operators & spectral field classification --
 
     def build_h_operators(self) -> tuple[list[np.ndarray], list[str]]:
-        """Build symmetric h_i = (rho(g) + rho(g^{-1}))/2."""
+        """Build symmetric h_i = (rho(g) + rho(g^{-1}))/2.
+        对称算子, 全部 12 对"""
         gens_dict = {k: mv for k, (mv, _, _) in self.rho_moves.items()}
         return build_h_operators(gens_dict)
 
     def classify_field(self) -> str:
-        """Classify spectral field: rational, sqrt5, or higher."""
+        """Classify spectral field: rational, sqrt5, or higher.
+        谱域分类: m_eff = n_gen // 2 (偶数时), = n_gen (奇数时).
+        """
         m_eff = self.n // 2 if self.n % 2 == 0 else self.n
-        name = f"n={self.n}"
-        return classify_spectral_field(list(self._layers.keys()), m_eff, name=name)
+        return classify_spectral_field(list(self._layers.keys()), m_eff, name=f"n={self.n}")
 
-    # -- SpectralStructure integration ---------------------------------
+    # -- SpectralStructure bridge --
 
     @property
     def spectral_structure(self) -> "SpectralStructure":
-        """Lazy SpectralStructure for theoretical comparison."""
         if self._ss is None:
             from rime.spectralstructure import SpectralStructure
             gen_dict = {k: mv for k, (mv, *_) in self.rho_moves.items()}
@@ -247,10 +316,11 @@ class CubieSpectralOperator:
             ss = self.spectral_structure
         return ss.validate_with_numerics(cso=self, tol=self.tol)
 
-    # -- Spectral dynamics ---------------------------------------------
+    # -- Spectral dynamics (toy) --
 
     def spectral_evolve(self, x: np.ndarray, T: int) -> np.ndarray:
-        """T-step spectral diffusion: x ↦ A^T x = Σ λ_i^T P_i x."""
+        """T-step spectral diffusion: x ↦ A^T x = Σ λ_i^T P_i x.
+        T 步谱扩散: x ↦ A^T x = Σ λ_i^T P_i x"""
         y = np.zeros_like(x, dtype=complex)
         for lam in self._layers:
             V = self.eigenspace_basis(lam)
@@ -259,7 +329,8 @@ class CubieSpectralOperator:
         return y
 
     def random_walk(self, length: int = 10, p: np.ndarray | None = None) -> "CubieMove":
-        """Sample a random length-L word from the generator set."""
+        """Sample a random length-L word from the generator set.
+        从生成元集随机采 length 步 word"""
         gen = [m for m, *_ in self.rho_moves.values()]
         if length == 1:
             idx = np.random.choice(len(gen), p=p)
@@ -271,10 +342,10 @@ class CubieSpectralOperator:
         return g
 
     # ═══════════════════════════════════════════════════════════════
-    # Paper II: K_αβ — Transport Topology & Commutant Algebra
+    # Paper II: K_αβ — transport topology & commutant algebra
     # ═══════════════════════════════════════════════════════════════
 
-    # -- Transport tensor & graph --------------------------------------
+    # -- Transport tensor & graph --
 
     def transport_tensor(self, force_recompute: bool = False) -> dict:
         """Full P_i ρ(g) P_j coupling structure across all generator–projector triples.
@@ -284,6 +355,7 @@ class CubieSpectralOperator:
         where mean/max aggregate ‖P_i ρ(g) P_j‖_F over all generators.
 
         Result is cached after first computation.
+        全 P_i ρ(g) P_j 耦合结构
         """
         if self._transport_tensor_cache is not None and not force_recompute:
             return self._transport_tensor_cache
@@ -291,6 +363,7 @@ class CubieSpectralOperator:
             raise RuntimeError(
                 "transport_tensor is frozen after __init__; "
                 "force_recompute=True is not allowed for a frozen operator")
+
         layers = sorted(self._layers, reverse=True)
         T = {}
         for lam_i in layers:
@@ -300,22 +373,23 @@ class CubieSpectralOperator:
                 norms = []
                 for _k, (_mv, rho) in self.rho_moves.items():
                     norms.append(float(np.linalg.norm(Pi @ rho @ Pj, 'fro')))
-                T[(lam_i, lam_j)] = {'mean': float(np.mean(norms)),
-                                     'max': float(np.max(norms))}
+                T[(lam_i, lam_j)] = {'mean': float(np.mean(norms)), 'max': float(np.max(norms))}
         self._transport_tensor_cache = T
         return T
 
     def transport_between(self, lam_i: float, lam_j: float) -> dict | None:
-        """Transport coupling between two spectral sectors, using closest layer matching."""
+        """Transport coupling between two spectral sectors, using closest layer matching.
+        两谱扇区间的传输耦合, closest-layer match"""
         T = self.transport_tensor()
-        ki = self._closest_layer(lam_i)
-        kj = self._closest_layer(lam_j)
+        ki = self.closest_layer(lam_i)
+        kj = self.closest_layer(lam_j)
         return T.get((ki, kj))
 
     def transport_graph(self, threshold: float | None = None) -> dict:
         """Build the transport graph from the transport tensor.
-
         Returns dict with nodes, edges, adjacency, is_star, hub, isolated, laplacian.
+
+        从传输张量建图 → {nodes, edges, adjacency, is_star, hub, ...} threshold 默认 tol * 10。
         """
         layers = sorted(self._layers, reverse=True)
         n = len(layers)
@@ -323,6 +397,7 @@ class CubieSpectralOperator:
         if threshold is None:
             threshold = self.tol * 10
 
+        # 邻接矩阵
         adj = np.zeros((n, n))
         for i, lam_i in enumerate(layers):
             for j, lam_j in enumerate(layers):
@@ -330,6 +405,7 @@ class CubieSpectralOperator:
                     adj[i, j] = T[(lam_i, lam_j)]['max']
         adj[np.abs(adj) < threshold] = 0.0
 
+        # 边列表 (无向, 取 max)
         edges = []
         for i in range(n):
             for j in range(i + 1, n):
@@ -337,6 +413,7 @@ class CubieSpectralOperator:
                 if w > threshold:
                     edges.append((layers[i], layers[j], float(w)))
 
+        # 度 & hub 检测
         degrees = np.array([np.count_nonzero(adj[i]) + np.count_nonzero(adj[:, i])
                             for i in range(n)])
         isolated = [layers[i] for i in range(n) if degrees[i] == 0]
@@ -345,12 +422,12 @@ class CubieSpectralOperator:
         is_star = False
         hub = None
         if len(non_isolated) >= 2:
-            max_deg_idx = max(non_isolated, key=lambda i: degrees[i])
             hub_candidates = [i for i in non_isolated if degrees[i] >= len(non_isolated) - 1]
             if len(hub_candidates) == 1:
                 is_star = True
                 hub = layers[hub_candidates[0]]
 
+        # 拉普拉斯
         A_undirected = np.maximum(adj, adj.T)
         D = np.diag(np.sum(A_undirected, axis=1))
         laplacian = D - A_undirected
@@ -369,7 +446,9 @@ class CubieSpectralOperator:
         """Raising/lowering operators for a given generator.
 
         For adjacent sector pairs (i, i+1) with nonzero transport, define:
-            R_{k} = P_{k+1} · ρ(g) · P_k,  L_{k} = P_{k-1} · ρ(g) · P_k
+            R_k = P_{k+1}·ρ(g)·P_k, L_k = P_{k-1}·ρ(g)·P_k
+
+        升降算子:对相邻 (有传输边) 的扇区对定义, 含闭包关系 [L,R] 和正交性检查
         """
         layers = sorted(self._layers, reverse=True)
         graph = self.transport_graph()
@@ -379,9 +458,7 @@ class CubieSpectralOperator:
             g_key = list(self.rho_moves.keys())[0]
         _mv, rho_g = self.rho_moves[g_key]
 
-        R = {}
-        L = {}
-        norms = {}
+        R, L, norms = {}, {}, {}
         for lam_i, lam_j, _w in edges:
             Pi = self._layers[lam_i]['projector']
             Pj = self._layers[lam_j]['projector']
@@ -392,6 +469,7 @@ class CubieSpectralOperator:
                 'L': float(np.linalg.norm(L[(lam_j, lam_i)], 'fro')),
             }
 
+        # 闭包: 7/9 ↔ 5/9 是 canonical 升降对
         closure = {}
         lam_79 = 7 / 9
         lam_59 = 5 / 9
@@ -403,10 +481,8 @@ class CubieSpectralOperator:
                     R_op.T.conj() @ R_op, 'fro'))
                 closure['RR†'] = float(np.linalg.norm(
                     R_op @ R_op.T.conj(), 'fro'))
-                closure['LR'] = float(np.linalg.norm(
-                    L_op @ R_op, 'fro'))
-                closure['RL'] = float(np.linalg.norm(
-                    R_op @ L_op, 'fro'))
+                closure['LR'] = float(np.linalg.norm(L_op @ R_op, 'fro'))
+                closure['RL'] = float(np.linalg.norm(R_op @ L_op, 'fro'))
                 comm_LR = L_op @ R_op - R_op @ L_op
                 closure['‖[L,R]‖'] = float(np.linalg.norm(comm_LR, 'fro'))
 
@@ -419,13 +495,14 @@ class CubieSpectralOperator:
             'closure': closure,
         }
 
-    # -- Per-axis averaging operators (Object 1) -----------------------
+    # -- Per-axis averaged operators (Object 1) --
 
     def build_per_axis_ops(self) -> tuple[dict, list]:
         """Build per-axis QT and HT averaging operators.
 
         Primary Object 1: A_S for axis-restricted generator subsets.
         Returns ops dict with QT0-2, HT0-2, QT_all, HT_all, A_18.
+        分轴 QT/HT 平均算子
         """
         if hasattr(self, '_per_axis_ops_cache'):
             return self._per_axis_ops_cache, self._per_axis_move_keys
@@ -436,24 +513,27 @@ class CubieSpectralOperator:
 
         ops['A_18'] = sum(rhos) / 18
 
+        # QT = quarter-turn (dir ≠ 2), HT = half-turn (dir = 2)
+        d = rhos[0].shape[0]
         qt_idx = [i for i, k in enumerate(move_keys) if k[2] != 2]
-        ops['QT_all'] = sum(rhos[i] for i in qt_idx) / len(qt_idx)
+        ops['QT_all'] = sum(rhos[i] for i in qt_idx) / len(qt_idx) if qt_idx else np.zeros((d, d))
 
         ht_idx = [i for i, k in enumerate(move_keys) if k[2] == 2]
-        ops['HT_all'] = sum(rhos[i] for i in ht_idx) / len(ht_idx)
+        ops['HT_all'] = sum(rhos[i] for i in ht_idx) / len(ht_idx) if ht_idx else np.zeros((d, d))
 
         for axis in range(3):
             qt_ax = [i for i, k in enumerate(move_keys) if k[0] == axis and k[2] != 2]
-            ops[f'QT{axis}'] = sum(rhos[i] for i in qt_ax) / len(qt_ax)
+            ops[f'QT{axis}'] = sum(rhos[i] for i in qt_ax) / len(qt_ax) if qt_ax else np.zeros((d, d))
 
         for axis in range(3):
             ht_ax = [i for i, k in enumerate(move_keys) if k[0] == axis and k[2] == 2]
-            ops[f'HT{axis}'] = sum(rhos[i] for i in ht_ax) / len(ht_ax)
+            ops[f'HT{axis}'] = sum(rhos[i] for i in ht_ax) / len(ht_ax) if ht_ax else np.zeros((d, d))
 
         self._per_axis_ops_cache = ops
         self._per_axis_move_keys = move_keys
         return ops, move_keys
 
+    # Quick-access properties
     @property
     def QT_all(self):
         ops, _ = self.build_per_axis_ops()
@@ -498,13 +578,18 @@ class CubieSpectralOperator:
         ops, _ = self.build_per_axis_ops()
         return ops['HT2']
 
-    # -- Commutant shared infrastructure (cached) ----------------------
+    # ═══════════════════════════════════════════════════════════════
+    # Commutant algebra — commutant & irrep decomposition
+    # ═══════════════════════════════════════════════════════════════
+
+    # -- Shared cache: projected_gens & commutant basis --
 
     def _projected_gens_for_layer(self, lam: float) -> tuple[list[np.ndarray], int]:
         """Build projected generators G_k = V_λ† ρ(g_k) V_λ within one eigenspace.
 
         Result is cached — commutant_algebra() and irrep_decomposition()
         share the same projected generators, eliminating duplicate computation.
+        G_k — 投影到 λ-特征空间的生成元
         """
         if lam in self._pg_cache:
             return self._pg_cache[lam]
@@ -522,6 +607,7 @@ class CubieSpectralOperator:
         Single computation shared by commutant_algebra() and irrep_decomposition().
         First call freezes the result — eliminates randomized-method drift between
         independent calls and cuts duplicate SVD/projection work.
+        λ-层的交换子基 & 维数 首次调用冻结结果，消除随机方法的漂移
         """
         if lam in self._cb_cache:
             return self._cb_cache[lam]
@@ -530,14 +616,17 @@ class CubieSpectralOperator:
         self._cb_cache[lam] = (basis, comm_dim)
         return basis, comm_dim
 
+    # -- Reynolds projection (commutant projection) --
+
     @staticmethod
-    def project_commutant(X: np.ndarray, projected_gens: list[np.ndarray],
-                          gen_inv: list[np.ndarray] | None = None,
+    def project_commutant(X: np.ndarray, projected_gens: list[np.ndarray], gen_inv: list[np.ndarray] | None = None,
                           n_iter: int = 30) -> np.ndarray:
         """Project a d×d matrix X onto the commutant via group averaging (Reynolds operator).
 
         For best convergence, use project_commutant_exact() which uses the
         order-4 exact projector. This method is kept as a faster, lower-precision alternative.
+        群平均 (Reynolds operator) 投影到交换子
+        X ↦ (1/|G|) Σ_g G^H X G, 迭代 n_iter 次。对大规模 d 用 project_commutant_exact() 更稳
         """
         if gen_inv is None:
             gen_inv = [G.T.conj() for G in projected_gens]
@@ -550,12 +639,12 @@ class CubieSpectralOperator:
         return X
 
     @staticmethod
-    def project_commutant_exact(X: np.ndarray, projected_gens: list[np.ndarray],
-                                n_iter: int = 10) -> np.ndarray:
+    def project_commutant_exact(X: np.ndarray, projected_gens: list[np.ndarray], n_iter: int = 10) -> np.ndarray:
         """Project onto commutant using exact per-generator centralizer projectors.
 
         For generator G of order 4: P_G(X) = 1/4 Σ_{t=0}^3 (G^H)^t X G^t.
         Each per-generator projection maps to ker[G, ·] in one step.
+        精确中心化投影: 用 G 的 4 阶性质一步到 ker[G, ·] Rubik 生成元都是 4 阶 → 每步精确投影。
         """
         for _ in range(n_iter):
             for G in projected_gens:
@@ -567,24 +656,24 @@ class CubieSpectralOperator:
                 X = 0.25 * (X + GH @ X @ G + G2H @ X @ G2 + G3H @ X @ G3)
         return X
 
-    def _commutant_basis_within_block(self, projected_gens: list[np.ndarray],
-                                      d: int) -> tuple[list[np.ndarray], int]:
+    # -- Commutant basis computation --
+
+    def _commutant_basis_within_block(self, projected_gens: list[np.ndarray], d: int) -> tuple[list[np.ndarray], int]:
         """Build orthonormal basis for the commutant within one eigenspace block.
 
         d ≤ 50: reduce generators to independent set, build full constraint
                 matrix, one-shot SVD (stable for clustered singular spectra).
         d > 50: randomized sampling + Reynolds projection.
+        块内交换子正交基
         """
-        if d <= 50:
-            # Reduce to independent generators first.
-            gen_vecs = np.array([G.ravel() for G in projected_gens])  # (n_gen, d²)
+        if d <= 50:  # 先生成元独立化
+            gen_vecs = np.array([G.ravel() for G in projected_gens])
             _, s_gen, Vh_gen = np.linalg.svd(gen_vecs, full_matrices=False)
             rank = int(np.sum(s_gen > self.tol * s_gen[0]))
             indep_gens = [Vh_gen[i, :].reshape(d, d) for i in range(rank)]
 
-            # Build full constraint matrix from independent generators, then
-            # one-shot SVD — avoids progressive numerical drift from sequential
-            # null-space intersection.
+            # 建完整约束矩阵 → 一次 SVD
+            # M_k = kron(G_k^T, I) - kron(I, G_k)
             constraints = []
             for G_k in indep_gens:
                 M_k = np.kron(G_k.T, np.eye(d)) - np.kron(np.eye(d), G_k)
@@ -594,6 +683,8 @@ class CubieSpectralOperator:
             sv_thresh = self.tol * max(1.0, s[0]) * max(C.shape)
             null_mask = s < sv_thresh
             comm_dim = int(np.sum(null_mask))
+
+            # Gram-Schmidt 正交化
             basis_vecs = Vh[-comm_dim:, :] if comm_dim > 0 else Vh[-1:, :] * 0
             basis = []
             gs_tol = self.tol * d * 10
@@ -605,18 +696,17 @@ class CubieSpectralOperator:
                 if nrm > gs_tol:
                     basis.append(B / nrm)
             comm_dim = len(basis)
-        else:
+        else:  # 随机采样 + Reynolds 投影
             gen_inv = [G.T.conj() for G in projected_gens]
             basis, comm_dim = self._commutant_basis_randomized(projected_gens, gen_inv, d)
         return basis, comm_dim
 
-    def _commutant_basis_randomized(self, projected_gens: list[np.ndarray],
-                                    gen_inv: list[np.ndarray], d: int,
-                                    n_samples: int | None = None
-                                    ) -> tuple[list[np.ndarray], int]:
+    def _commutant_basis_randomized(self, projected_gens: list[np.ndarray], gen_inv: list[np.ndarray],
+                                    d: int, n_samples: int | None = None) -> tuple[list[np.ndarray], int]:
         """Random sampling + Reynolds projection + Gram-Schmidt for d > 50.
 
         Uses exact order-4 per-generator projectors.
+        随机 + Reynolds 投影 + GS 正交化,使用精确 4 阶投影算子
         """
         if n_samples is None:
             n_samples = min(d * 6, 250)
@@ -632,10 +722,11 @@ class CubieSpectralOperator:
                 basis.append(X / nrm)
         return basis, len(basis)
 
-    # -- Commutant algebra analysis ------------------------------------
+    # -- Commutant algebra analysis --
 
     def commutant_residual(self, P: np.ndarray) -> dict:
-        """‖[P, ρ(g)]‖_F for every generator — measures how far P is from central."""
+        """‖[P, ρ(g)]‖_F for every generator — measures how far P is from central.
+        P 离中心的距离, 每个生成元一个值"""
         residuals = {}
         for k, (_, rho, *_) in self.rho_moves.items():
             residuals[k] = float(np.linalg.norm(P @ rho - rho @ P, 'fro'))
@@ -646,6 +737,8 @@ class CubieSpectralOperator:
 
         Uses shared _commutant_for_layer() cache — first caller pays the cost,
         subsequent callers (e.g. irrep_decomposition) get cached results.
+
+        交换子代数  分 λ 层计算 — 共用 cache
         """
         layers = sorted(self._layers, reverse=True)
         comm_blocks = {}
@@ -664,6 +757,7 @@ class CubieSpectralOperator:
             }
             dim_total += comm_dim
 
+        # 中心幂等元: 与所有生成元对易的投影算子
         central = []
         for lam in layers:
             residuals = self.commutant_residual(self._layers[lam]['projector'])
@@ -677,6 +771,8 @@ class CubieSpectralOperator:
             'central_idempotents': central,
         }
 
+    # -- Full-space commutant (combinatorial orbit method) --
+
     def full_commutant_combinatorial(self) -> tuple[list[np.ndarray], int]:
         """Compute commutant basis in the FULL 228-dim space via combinatorial orbits.
 
@@ -685,12 +781,20 @@ class CubieSpectralOperator:
         commutant degree of freedom iff phase consistency holds.
 
         Returns (basis, comm_dim) where comm_dim is the exact total commutant dimension.
+
+        228 维全空间交换子基 — 组合轨道法。
+
+        ρ(g) = D_g Π_g 是单项矩阵: 每个 (i,j) 对落在置换-相位轨道上
+        一条轨道 ⇔ 一个交换子自由度 (当相位一致性成立)
+
+        返回 (basis, comm_dim), comm_dim = 610 (CCS canonical).
         """
         if self._full_comm_cache is not None:
             return self._full_comm_cache
+
         d_full = 228
-        perms = []
-        phases = []
+        # 提取置换和相位 (每列一个非零元)
+        perms, phases = [], []
         for _k, (_mv, rho) in self.rho_moves.items():
             rho_dense = rho.toarray() if hasattr(rho, 'toarray') else np.array(rho)
             perm = [0] * d_full
@@ -704,9 +808,12 @@ class CubieSpectralOperator:
             perms.append(perm)
             phases.append(diag)
 
+        # BFS 找轨道
         n_pairs = d_full * d_full
         visited = np.zeros(n_pairs, dtype=bool)
         orbits = []
+
+        # 预计算逆置换
         g_inv = [[0] * d_full for _ in perms]
         for g_idx, perm in enumerate(perms):
             for i in range(d_full):
@@ -723,28 +830,25 @@ class CubieSpectralOperator:
                 orbit.append(pair_idx)
                 i, j = divmod(pair_idx, d_full)
                 for g_idx in range(len(perms)):
-                    ni = perms[g_idx][i]
-                    nj = perms[g_idx][j]
+                    ni, nj = perms[g_idx][i], perms[g_idx][j]
                     nidx = ni * d_full + nj
                     if not visited[nidx]:
                         visited[nidx] = True
                         stack.append(nidx)
             orbits.append(orbit)
 
+        # 相位一致性检查 → 构造基元素
         basis = []
         for orb in orbits:
-            pair_to_phase = {}
-            ref_pair = orb[0]
-            pair_to_phase[ref_pair] = 1.0 + 0j
-            queue = [ref_pair]
+            pair_to_phase = {orb[0]: 1.0 + 0j}
+            queue = [orb[0]]
             consistent = True
             while queue and consistent:
                 pair_idx = queue.pop(0)
                 i, j = divmod(pair_idx, d_full)
                 val = pair_to_phase[pair_idx]
                 for g_idx in range(len(perms)):
-                    pi = perms[g_idx][i]
-                    pj = perms[g_idx][j]
+                    pi, pj = perms[g_idx][i], perms[g_idx][j]
                     next_idx = pi * d_full + pj
                     if next_idx not in pair_to_phase:
                         d_pi = phases[g_idx][pi]
@@ -773,29 +877,30 @@ class CubieSpectralOperator:
         self._full_comm_cache = (basis, len(basis))
         return basis, len(basis)
 
-    # -- Center & irrep decomposition (F1-F3) --------------------------
+    # -- Center & irrep decomposition (F1-F3) --
 
     def _commutant_center_lightweight(self, comm_basis: list[np.ndarray], d: int) -> tuple[int, list[tuple]]:
         """Lightweight center detection: diagonalize a random commutant element.
 
         Returns (center_dim, components) where each component is (comp_dim, multiplicity, d_irrep).
+    
+        轻型中心检测， 对角化一个随机交换子元素
         """
         r = len(comm_basis)
         if r == 0:
             return 0, []
 
         tol = self.tol * d * 10
-        C_rand = np.zeros((d, d), dtype=complex)
+        C_rand = np.zeros((d, d), dtype=complex)  # 随机组合 → 期望可对角化
         for i in range(r):
-            coeff = np.random.randn()
-            C_rand += coeff * comm_basis[i]
+            C_rand += np.random.randn() * comm_basis[i]
         C_rand = (C_rand + C_rand.T.conj()) / 2
 
         eigvals, U = np.linalg.eigh(C_rand)
         eigvals_rounded = np.round(eigvals, decimals=max(3, -int(np.log10(tol))))
-        unique_eigvals, inverse, counts = np.unique(eigvals_rounded, return_inverse=True,
-                                                    return_counts=True)
+        unique_eigvals, inverse, counts = np.unique(eigvals_rounded, return_inverse=True, return_counts=True)
 
+        # 第二个随机组合 → 拆分可能合并的分量
         C_rand2 = np.zeros((d, d), dtype=complex)
         for i in range(r):
             C_rand2 += np.random.randn() * comm_basis[i]
@@ -812,7 +917,7 @@ class CubieSpectralOperator:
             w2 = np.linalg.eigvalsh(C2_sub)
             w2_rounded = np.round(w2, decimals=max(3, -int(np.log10(tol))))
             n_sub = len(np.unique(w2_rounded))
-            if n_sub > 1:
+            if n_sub > 1:  # 进一步拆分
                 eigvals2, U2 = np.linalg.eigh(C2_sub)
                 eigvals2_rounded = np.round(eigvals2, decimals=max(3, -int(np.log10(tol))))
                 for mu2 in np.unique(eigvals2_rounded):
@@ -826,6 +931,7 @@ class CubieSpectralOperator:
 
         result = []
         for comp_dim in final_components:
+            # 分解为 d_irrep × multiplicity
             m_est = 1
             for m_cand in range(int(np.sqrt(comp_dim)), 0, -1):
                 if comp_dim % m_cand == 0:
@@ -834,13 +940,13 @@ class CubieSpectralOperator:
             d_irrep = comp_dim // m_est
             result.append((comp_dim, m_est, d_irrep))
 
-        center_dim = len(final_components)
-        return center_dim, result
+        return len(final_components), result
 
     def _center_idempotents(self, comm_basis: list[np.ndarray], d: int) -> tuple:
         """Central primitive idempotents from commutant basis (F1).
 
         Returns (center_dim, idempotents, isotypic_projectors, isotypic_info).
+        中心本原幂等元 from 交换子基 (F1)
         """
         r = len(comm_basis)
         if r == 0:
@@ -849,6 +955,7 @@ class CubieSpectralOperator:
             P = np.eye(d, dtype=complex)
             return 1, [P], [P], [(d, 1)]
 
+        # MHM: 可对易性矩阵 → 零空间 = 中心元素
         C_stack = np.array(comm_basis)
         MHM = np.zeros((r, r))
         d2 = d * d
@@ -879,6 +986,7 @@ class CubieSpectralOperator:
             P = np.eye(d, dtype=complex)
             return 1, [P], [P], [(d_irrep, mult)]
 
+        # 两个随机组合 → 同时对角化 → 分解
         C_rand = sum(np.random.randn() * Z for Z in center_elems)
         C_rand = (C_rand + C_rand.conj().T) / 2
         evals_C, U = np.linalg.eigh(C_rand)
@@ -907,7 +1015,7 @@ class CubieSpectralOperator:
             unique_w2, w2_counts = np.unique(w2_rounded, return_counts=True)
             d_alphas = np.unique(w2_counts)
             d_alpha = d_alphas[np.argmax([np.sum(w2_counts == d) for d in d_alphas])] if len(d_alphas) > 1 else \
-            d_alphas[0]
+                d_alphas[0]
             m_alpha = comp_dim // d_alpha
             isotypic_info.append((d_alpha, m_alpha))
 
@@ -916,7 +1024,7 @@ class CubieSpectralOperator:
                 n_sub = int(np.sum(w_mask))
                 if n_sub == 0:
                     continue
-                P = (U_sub @ np.eye(comp_dim)[:, w_mask]) @ (U_sub @ np.eye(comp_dim)[:, w_mask]).T.conj()
+                P = (U_sub @ np.eye(comp_dim)[:, w_mask] @ (U_sub @ np.eye(comp_dim)[:, w_mask]).T.conj())
                 idempotents.append((P + P.conj().T) / 2)
 
         return len(isotypic_info), idempotents, isotypic_projectors, isotypic_info
@@ -927,6 +1035,8 @@ class CubieSpectralOperator:
         Uses shared _commutant_for_layer() cache — commutant_algebra() and
         irrep_decomposition() share the same commutant basis, guaranteeing
         consistent commutant dimensions and eliminating duplicate SVD work.
+
+        Artin-Wedderburn 分解 — 每层内的不可约表示结构
         """
         layers = sorted(self._layers, reverse=True)
         result_blocks = {}
@@ -939,7 +1049,7 @@ class CubieSpectralOperator:
             comm_basis, comm_dim = self._commutant_for_layer(lam)
             center_dim, isotypic_raw = self._commutant_center_lightweight(comm_basis, d)
 
-            isotypic = [(d_irr, mult) for _, mult, d_irr in isotypic_raw] if isotypic_raw else []
+            isotypic = ([(d_irr, mult) for _, mult, d_irr in isotypic_raw] if isotypic_raw else [])
 
             if comm_dim == d * d and not isotypic:
                 isotypic = [(1, d)]
@@ -980,14 +1090,17 @@ class CubieSpectralOperator:
             'dim_total': sum(b['commutant_dim'] for b in result_blocks.values()),
         }
 
-    # -- Primitive sectors (Object 4) ----------------------------------
+    # ═══════════════════════════════════════════════════════════════
+    # 9 Primitive Sectors — Center joint diagonalization (Object 4)
+    # ═══════════════════════════════════════════════════════════════
 
     def center_decomposition(self) -> dict:
         """Joint diagonalization of {A_18, QT_all, HT_all} → 9 primitive sectors.
-
         Primary Object 4: minimal simultaneous eigenspaces of the commutative
-        center of the averaging algebra.
-        Returns sectors in CCS canonical order (k ascending, dim ascending):
+        center of the averaging algebra. order (k ascending, dim ascending)
+
+        Center{A_18, QT_all, HT_all} 联合对角化 → 9 primitive sectors
+        CCS canonical order (k 升序, dim 升序):
         S1: V₁   dim=20  [cp=8 + ep=12]          — Isolated (deg=0)
         S2: V₈/₉ dim= 2  [eo=2]                   — Connective (deg=2)
         S3: V₇/₉ dim=39  [ep=36 + eo=3]           — Metastable (deg=2)
@@ -1003,62 +1116,78 @@ class CubieSpectralOperator:
         A_qt = ops['QT_all']
         A_ht = ops['HT_all']
 
-        rng = np.random.RandomState(42)
+        # 随机线性组合 → 几乎必然同时对角化
+        rng = np.random.RandomState(self.seed)
         M = A_18 + rng.randn() * A_qt + rng.randn() * A_ht
         M = (M + M.conj().T) / 2
         evals, evecs = np.linalg.eigh(M)
 
+        # 按 CENTER_CLUSTER_TOL 聚类
         order = np.argsort(evals)[::-1]
-        groups = []
-        cur = [order[0]]
-        cv = evals[order[0]]
+        groups, cur, cv = [], [order[0]], evals[order[0]]
         for idx in range(1, len(order)):
             oi = order[idx]
             if abs(evals[oi] - cv) < CENTER_CLUSTER_TOL:
                 cur.append(oi)
             else:
                 groups.append(cur)
-                cur = [oi]
-                cv = evals[oi]
+                cur, cv = [oi], evals[oi]
         groups.append(cur)
 
-        sectors = []
-        projectors = []
+        sectors, projectors = [], []
         for indices in groups:
             V = evecs[:, indices]
-            P = V @ V.conj().T
+            P = V @ V.T.conj()
             dim = int(round(np.trace(P).real))
+
+            # 在每个扇区内取 A_18/A_qt/A_ht 的特征值
             r_18 = P @ A_18 @ P
             ev = np.linalg.eigvalsh(r_18)
             nz = np.abs(ev) > 1e-10
             lam_18 = float(ev[nz][0]) if np.any(nz) else 0.0
+
             r_qt = P @ A_qt @ P
             ev = np.linalg.eigvalsh(r_qt)
             nz = np.abs(ev) > 1e-10
             lam_QT = float(ev[nz][0]) if np.any(nz) else 0.0
+
             r_ht = P @ A_ht @ P
             ev = np.linalg.eigvalsh(r_ht)
             nz = np.abs(ev) > 1e-10
             lam_HT = float(ev[nz][0]) if np.any(nz) else 0.0
+
             sectors.append({'dim': dim, 'lam_18': lam_18, 'lam_QT': lam_QT, 'lam_HT': lam_HT})
             projectors.append(P)
-            
-        # Reorder to CCS canonical order: k ascending, dim ascending within k
-        ccs_order = sorted(range(len(sectors)),key=lambda i: (round(9 * (1 - sectors[i]['lam_18'])),
-                                         sectors[i]['dim']))
+
+        # CCS canonical order: k = 9*(1-λ) 升序, 同 k 内 dim 升序
+        ccs_order = sorted(range(len(sectors)),
+                           key=lambda i: (round(9 * (1 - sectors[i]['lam_18'])), sectors[i]['dim']))
         sectors = [sectors[i] for i in ccs_order]
         projectors = [projectors[i] for i in ccs_order]
         return {'sectors': sectors, 'projectors': projectors, 'n_sectors': len(sectors)}
 
+    def sector_block_support(self, projectors: list[np.ndarray] | None = None) -> list[set[str]]:
+        """Return [{block_names}, ...] for each sector projector.
+
+        If projectors is None, uses center_decomposition()['projectors'].
+        Detects multi-block membership via Frobenius norm (block_set).
+        """
+        if projectors is None:
+            projectors = self.center_decomposition()['projectors']
+        return [block_set(P, BLOCK_RANGES) for P in projectors]
+
     # ═══════════════════════════════════════════════════════════════
-    # Paper III: κ_d — Lie Accessibility Hierarchy
+    # Paper III: κ_d — Lie accessibility hierarchy
     # ═══════════════════════════════════════════════════════════════
 
     def compute_lie_generators(self) -> list[np.ndarray]:
         """Compute A_g = log(ρ(g)) for all generators via scipy.linalg.logm.
-
         Result is cached after first computation — 18 logm calls are expensive.
+
         Verification: expm(A_g) ≈ ρ(g) to ~1e-15 for all generators.
+
+        A_g = log(ρ(g)) — Lie 生成元, scipy.logm
+        首次调用后缓存 — 18 次 logm 很贵。验证: expm(A_g) ≈ ρ(g) 到 ~1e-15
         """
         if self._lie_gens_cache is not None:
             return self._lie_gens_cache
@@ -1076,16 +1205,14 @@ class CubieSpectralOperator:
         self._lie_gens_cache = A_gens
         return A_gens
 
-    def _closest_layer(self, lam: float) -> float:
-        """Return the actual float key in self._layers closest to a canonical eigenvalue."""
-        return min(self._layers.keys(), key=lambda k: abs(k - lam))
-
     def infinitesimal_transport(self) -> dict:
         """Compute κ_ij = max_g ‖P_i A_g P_j‖_F — infinitesimal transport.
 
         Continuous analogue of transport_tensor(). Uses logm for Lie generators
         A_g = log(ρ(g)). Pairs with κ_ij > 0 indicate sectors connected in the
         continuous (Lie) dynamics.
+
+        无穷小传输 (κ₀) 连续 Lie 动力学的传输矩阵 κ_ij > 0 ⇔ Lie 可达。
         """
         A_gens = self.compute_lie_generators()
         layers = sorted(self._layers, reverse=True)
@@ -1099,15 +1226,10 @@ class CubieSpectralOperator:
             for j, lam_j in enumerate(layers):
                 Pj = self._layers[lam_j]['projector']
                 norms = [np.linalg.norm(Pi @ A_g @ Pj, 'fro') for A_g in A_gens]
-                kappa[(lam_i, lam_j)] = {'mean': float(np.mean(norms)),
-                                         'max': float(np.max(norms))}
+                kappa[(lam_i, lam_j)] = {'mean': float(np.mean(norms)), 'max': float(np.max(norms)), }
                 kappa_matrix[i, j] = max(norms)
 
-        return {
-            'kappa': kappa,
-            'kappa_matrix': kappa_matrix,
-            'layers': layers,
-        }
+        return {'kappa': kappa, 'kappa_matrix': kappa_matrix, 'layers': layers}
 
     def kappa_depth(self, depth: int = 1, max_commutator_samples: int = 200) -> dict:
         """Compute κ_d(i,j) at Lie depth d.
@@ -1116,6 +1238,11 @@ class CubieSpectralOperator:
         depth=0: delegates to infinitesimal_transport() (κ₀)
         depth=1: [A_g, A_h] commutators (κ₁)
         depth=2: [[A_g, A_h], A_k] nested commutators (κ₂)
+
+        κ_d(i,j) — Lie 深度 d 的可达性
+        depth=0: κ₀ (梯度)
+        depth=1: κ₁ (曲率, commutator)
+        depth=2: κ₂ (嵌套 commutator)
         """
         import itertools
         layers = sorted(self._layers, reverse=True)
@@ -1123,7 +1250,7 @@ class CubieSpectralOperator:
 
         if depth == 0:
             result = self.infinitesimal_transport()
-            lam_labels = ['V1', 'V7/9', 'V2/3', 'V5/9', 'V1/3'][:n_layers]
+            lam_labels = ['V1', 'V8/9', 'V7/9', 'V2/3', 'V5/9', 'V1/3'][:n_layers]
             return {'kappa_matrix': result['kappa_matrix'],
                     'layers': result['layers'],
                     'lam_labels': lam_labels}
@@ -1145,7 +1272,7 @@ class CubieSpectralOperator:
             kappa = np.zeros((n_layers, n_layers))
             triples = list(itertools.combinations(range(n_gen), 3))
             if len(triples) > max_commutator_samples:
-                rng = np.random.RandomState(42)
+                rng = np.random.RandomState(self.seed)
                 triples = [triples[i] for i in
                            rng.choice(len(triples), max_commutator_samples, replace=False)]
             for g, h, k in triples:
@@ -1158,11 +1285,14 @@ class CubieSpectralOperator:
         else:
             raise ValueError(f"depth={depth} not supported (use 0, 1, or 2)")
 
-        lam_labels = ['V1', 'V7/9', 'V2/3', 'V5/9', 'V1/3'][:n_layers]
+        lam_labels = ['V1', 'V8/9', 'V7/9', 'V2/3', 'V5/9', 'V1/3'][:n_layers]
         return {'kappa_matrix': kappa, 'layers': layers, 'lam_labels': lam_labels}
 
-    def transport_kappa(self, projectors: list[np.ndarray], compute_kappa1: bool = True) -> tuple[
-        np.ndarray, np.ndarray, np.ndarray | None]:
+    # ═══════════════════════════════════════════════════════════════
+    # transport_kappa — Paper II/III 的 canonical 入口
+    # ═══════════════════════════════════════════════════════════════
+
+    def transport_kappa(self, projectors: list[np.ndarray], compute_kappa1: bool = True) -> tuple:
         """K, κ₀, κ₁ on arbitrary projectors using cached generators + Lie generators.
 
         This is the CANONICAL path for Paper II/III transport computations.
@@ -1176,6 +1306,9 @@ class CubieSpectralOperator:
 
         Returns:
             (K, kappa0, kappa1) — three (n_sec, n_sec) arrays.
+            
+        使用缓存的 self.rho_moves (K) 和 self.compute_lie_generators() (κ₀, κ₁)
+        不调用 standalone compute_transport_kappa() —— 那个会重复计算一切
         """
         n_sec = len(projectors)
         K = np.zeros((n_sec, n_sec))
@@ -1185,18 +1318,19 @@ class CubieSpectralOperator:
         rhos = [v[1] for v in self.rho_moves.values()]
         A_gs = self.compute_lie_generators()
 
+        # K & κ₀ — 单遍遍历
         for a in range(n_sec):
             Pa = projectors[a]
             for b in range(n_sec):
                 Pb = projectors[b]
-                max_K = 0.0
-                max_k0 = 0.0
+                max_K, max_k0 = 0.0, 0.0
                 for i, rho_g in enumerate(rhos):
                     max_K = max(max_K, float(np.linalg.norm(Pa @ rho_g @ Pb, 'fro')))
                     max_k0 = max(max_k0, float(np.linalg.norm(Pa @ A_gs[i] @ Pb, 'fro')))
                 K[a, b] = max_K
                 kappa0[a, b] = max_k0
 
+        # κ₁ — 所有 commutator 对
         if compute_kappa1:
             for a in range(n_sec):
                 Pa = projectors[a]
@@ -1206,7 +1340,8 @@ class CubieSpectralOperator:
                     for Ag in A_gs:
                         for Ah in A_gs:
                             comm = Ag @ Ah - Ah @ Ag
-                            max_k1 = max(max_k1, float(np.linalg.norm(Pa @ comm @ Pb, 'fro')))
+                            max_k1 = max(max_k1,
+                                         float(np.linalg.norm(Pa @ comm @ Pb, 'fro')))
                     kappa1[a, b] = max_k1
 
         return K, kappa0, kappa1
@@ -1216,24 +1351,37 @@ class CubieSpectralOperator:
     # ═══════════════════════════════════════════════════════════════
 
     def summary(self) -> str:
-        """Print spectral summary with basic statistics."""
+        """One-shot spectral summary — layers, k-values, transport, field."""
         lines = []
         lines.append("=" * 60)
-        lines.append(f"CubieSpectralOperator  n={self.n}  tol={self.tol}")
+        lines.append(
+            f"CubieSpectralOperator  n={self.n}  tol={self.tol}  dim={TOTAL_DIM}  n_layers={len(self._layers)}")
         lines.append(f"  Hermitian: {np.allclose(self.A, self.A.T.conj(), atol=self.tol)}")
-        lines.append(f"  Eigenvalues: {len(self.lambda_layers)} distinct")
         lines.append("=" * 60)
-        lines.append("\n  Spectral layers:")
-        for lam, info in sorted(self._layers.items(), reverse=True):
-            lines.append(f"    lambda={lam:12.8f}  dim={info['dim']:3d}")
-        lines.append(f"\n  Subspaces:")
-        lines.append(f"    Const (lambda=1):   {self.dim_const:3d}")
-        lines.append(f"    Slow  (lambda>=2/3): {self.dim_slow:3d}")
-        lines.append(f"    Fast  (lambda<2/3):  {TOTAL_DIM - self.dim_const - self.dim_slow:3d}")
+
+        lines.append("\n  Spectral layers (λ = 1 − k/9):")
+        for lam in sorted(self._layers, reverse=True):
+            info = self._layers[lam]
+            k = round(9 * (1 - lam))
+            lines.append(f"    λ={lam:12.8f}  k={k:2d}  dim={info['dim']:4d}")
+
+        lines.append("\n  Slow/fast split:")
+        fast_dim = TOTAL_DIM - self.dim_const - self.dim_slow
+        lines.append(f"    Const (λ=1):    {self.dim_const:4d}")
+        lines.append(f"    Slow  (λ≥2/3):  {self.dim_slow:4d}")
+        lines.append(f"    Fast  (λ<2/3):  {fast_dim:4d}")
         rf = self.rho_fast
         lines.append(f"    Fast spectral radius: {rf:.6f}")
-        if rf > 0 and rf < 1:
-            lines.append(f"    Mixing time (eps=1e-6): {np.log(1e6) / (-np.log(rf)):.1f}")
+        if 0 < rf < 1:
+            lines.append(f"    Mixing time (eps=1e-6): {np.log(1e6) / (-np.log(rf)):.1f} steps")
+
+        try:  # 传输图 — transport_tensor 首次调用后缓存
+            tg = self.transport_graph()
+            lines.append(
+                f"\n  Transport: {len(tg['edges'])} edges, hub={'S' + str(round(9 * (1 - tg['hub']))) if tg['hub'] else 'none'}, isolated={len(tg['isolated'])}")
+        except Exception:
+            pass
+
         field = self.classify_field()
         lines.append(f"\n  Spectral field: {field}  {spectral_field_label(field)}")
         lines.append("=" * 60)
@@ -1245,17 +1393,21 @@ class CubieSpectralOperator:
                 f"slow_dim={self.dim_slow})")
 
 
-# ═══════════════════════════════════════════════════════════════
+# ═══════════════════════════════════════════════════════════════════
 # Module-level utilities (called by class methods above)
-# ═══════════════════════════════════════════════════════════════
+# ═══════════════════════════════════════════════════════════════════
 
 def build_h_operators(gens_dict: dict) -> tuple[list[np.ndarray], list[str]]:
     """Build symmetric h_i = (ρ(g) + ρ(g⁻¹))/2 operators from generator dict.
 
     Returns (h_ops, h_labels) where h_ops are (228,228) arrays.
+
+    对称配对 (axis, ±face, dir) 从 CubieMove dict 自动配对 CW/CCW 和 180° 对面
     """
     from rime.cube import ActionToken
     h_ops, h_labels = [], []
+
+    # CW + CCW 配对: (axis, +1, -1) ↔ (axis, -1, +1)
     for axis in range(3):
         for side in [-1, 1]:
             cw_key = (axis, side, -1)
@@ -1265,6 +1417,8 @@ def build_h_operators(gens_dict: dict) -> tuple[list[np.ndarray], list[str]]:
                 at_cw = str(ActionToken.from_cubie_move(*cw_key, n=3))
                 at_ccw = str(ActionToken.from_cubie_move(*ccw_key, n=3))
                 h_labels.append(f"({at_cw}+{at_ccw})/2")
+
+    # 180° 对面配对: (axis, +1, 2) ↔ (axis, -1, 2)
     for axis in range(3):
         keys_180 = [(axis, side, 2) for side in [-1, 1] if (axis, side, 2) in gens_dict]
         if len(keys_180) == 2:
@@ -1272,11 +1426,15 @@ def build_h_operators(gens_dict: dict) -> tuple[list[np.ndarray], list[str]]:
             at_a = str(ActionToken.from_cubie_move(*keys_180[0], n=3))
             at_b = str(ActionToken.from_cubie_move(*keys_180[1], n=3))
             h_labels.append(f"({at_a}+{at_b})/2")
+
     return h_ops, h_labels
 
 
 def classify_spectral_field(eigs: list[float], m_eff: int, name: str | None = None) -> str:
-    """Classify spectral field as 'rational', 'sqrt5', or 'higher'."""
+    """Classify spectral field as 'rational', 'sqrt5', or 'higher'.
+    谱域分类:  m_eff = 有效分母 (= n_gen // 2 偶数时).
+    n=8 和 n=16 硬编码为 sqrt5 已知结果
+    """
     all_rational = all(is_rational_form(lam, m_eff) for lam in eigs)
     if all_rational:
         return 'rational'
@@ -1289,7 +1447,8 @@ def classify_spectral_field(eigs: list[float], m_eff: int, name: str | None = No
 
 
 def spectral_field_label(set_class: str) -> str:
-    """Return LaTeX field notation for a set class."""
+    """Return LaTeX field notation for a set class.
+    域分类 → LaTeX 标记"""
     return {
         'rational': r'$\mathbb{Q}$',
         'sqrt5': r'$\mathbb{Q}(\sqrt{5})$',

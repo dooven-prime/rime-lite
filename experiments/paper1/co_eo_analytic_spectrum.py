@@ -23,12 +23,12 @@ TOL_WEAK = 1e-7   # √3 in float64 → |1+ω| error ~1.5e-8
 op = CubieSpectralOperator.from_gens_dict(CubieMove.prim_moves)
 rho_list = op.rho_matrices()  # always dense ndarrays
 
-co_s, co_e = BLOCK_RANGES['co']
-eo_s, eo_e = BLOCK_RANGES['eo']
+co_slice = op.block_slice('co')
+eo_slice = op.block_slice('eo')
 
 # Build averaging operators
-A_co = sum(rho[co_s:co_e, co_s:co_e] for rho in rho_list) / 18
-A_eo = sum(rho[eo_s:eo_e, eo_s:eo_e] for rho in rho_list) / 18
+A_co = sum(rho[co_slice, co_slice] for rho in rho_list) / 18
+A_eo = sum(rho[eo_slice, eo_slice] for rho in rho_list) / 18
 
 assert np.allclose(A_co, A_co.T.conj()), "A_co must be Hermitian for eigvalsh"
 assert np.allclose(A_eo, A_eo.T.conj()), "A_eo must be Hermitian for eigvalsh"
@@ -65,7 +65,7 @@ check(abs(np.trace(A_co).real / 8 - 0.5) < TOL, "Average eigenvalue = 0.5")
 
 # Verify Tr(ρ_co(g)) = 4 for each generator
 for i, rho in enumerate(rho_list):
-    tr = np.trace(rho[co_s:co_e, co_s:co_e]).real
+    tr = np.trace(rho[co_slice, co_slice]).real
     if abs(tr - 4) > TOL:
         print(f"  FAIL  Generator {i}: Tr(ρ_co) = {tr} != 4")
         break
@@ -190,7 +190,7 @@ check(abs(np.trace(A_eo).real / 12 - 2 / 3) < TOL, "Average eigenvalue = 2/3")
 
 # Verify Tr(ρ_eo(g)) = 8 for each generator
 for i, rho in enumerate(rho_list):
-    tr = np.trace(rho[eo_s:eo_e, eo_s:eo_e]).real
+    tr = np.trace(rho[eo_slice, eo_slice]).real
     if abs(tr - 8) > TOL:
         print(f"  FAIL  Generator {i}: Tr(ρ_eo) = {tr} != 8")
         break
@@ -285,7 +285,7 @@ for fam_name, moves in families.items():
     cso = CubieSpectralOperator.from_gens_dict(gens)
     rhos_fam = cso.rho_matrices()
     A_fam = sum(rhos_fam) / len(gens)
-    A_eo_fam = A_fam[eo_s:eo_e, eo_s:eo_e]
+    A_eo_fam = A_fam[eo_slice, eo_slice]
     w_fam = np.linalg.eigvalsh(A_eo_fam)
     w_fam_u = np.unique(np.round(w_fam, 6))
     eo_spectra[fam_name] = w_fam_u
@@ -293,7 +293,7 @@ for fam_name, moves in families.items():
     print(f"  {fam_name}: eigenvalues = {[f'{l:.6f}' for l in w_fam_u]}, k-set = {k_set}")
 
 # 18-full has k-set {1,2,4}
-k18 = set(round((1 - lam) * 9) for lam in eo_spectra['18-full'])
+k18 = set(CubieSpectralOperator.lam_to_k(lam) for lam in eo_spectra['18-full'])
 check(k18 == {1, 2, 4},
       f"18-full k-set = {k18} (expected {{1,2,4}})")
 

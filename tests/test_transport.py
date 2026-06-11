@@ -14,7 +14,8 @@ Invariant level: 2 (generator-conditioned)
 import numpy as np
 from rime.cubieoperator import CubieSpectralOperator
 from rime.cubie import CubieMove, TOTAL_DIM, BLOCK_RANGES
-from rime.spectral_utils import compute_transport_kappa, find_t7_pairs
+from rime.spectral_utils import compute_transport_kappa, find_t7_pairs, select_canonical_intermediate
+from collections import Counter
 
 TOL = 1e-10
 TOL_K = 0.05   # threshold for "nonzero" transport
@@ -130,6 +131,25 @@ check(n_t7 >= 1,
 check(n_t7 == 5,
       f"Expected 5 T7 pairs, got {n_t7}")
 print(f"  OK — {n_t7} T7 pair(s) detected (discrete/continuous split confirmed)")
+
+# Verify canonical witness selection (S6↔S9 should pick S7 over S4)
+candidates_69 = [k for k in range(n) if k != 5 and k != 8
+                 and K_arr[5, k] > TOL_K and K_arr[k, 8] > TOL_K]
+witness_69 = select_canonical_intermediate(candidates_69, K_arr, TOL_K)
+check(witness_69 == 6,
+      f"S6↔S9 canonical witness should be S7 (hub, degree 8), got S{witness_69 + 1}")
+print(f"  OK — S6↔S9 canonical witness: S{witness_69 + 1} (degree {len([k for k in range(n) if K_arr[6, k] > TOL_K]) + len([k for k in range(n) if K_arr[k, 6] > TOL_K])})")
+
+# Verify canonical mediation statistics
+hub_counts = Counter()
+for a, b in t7_pairs:
+    candidates = [k for k in range(n) if k != a - 1 and k != b - 1
+                  and K_arr[a - 1, k] > TOL_K and K_arr[k, b - 1] > TOL_K]
+    hub = select_canonical_intermediate(candidates, K_arr, TOL_K)
+    hub_counts[hub + 1] += 1
+check(hub_counts == Counter({6: 2, 7: 2, 9: 1}),
+      f"Canonical mediation statistics should be {{S6:2, S7:2, S9:1}}, got {dict(hub_counts)}")
+print(f"  OK — canonical mediation statistics: {dict(sorted(hub_counts.items()))}")
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # Test 4: N=2 negative control

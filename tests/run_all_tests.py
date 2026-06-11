@@ -7,8 +7,6 @@ Each test runs with stdout/stderr inherited so output streams directly.
 Slow tests (require CubieSpectralOperator ~2-5 min each):
   test_cubieoperator.py  — canonical engine: spectral theorem, Bose-Mesner, k-set recon
   test_commutant_gap.py  — Δ_comm, transport invariants
-  test_transport.py      — K symmetry, T7 pairs, N=2 control
-  test_f3.py             — isotypic decomposition, multiplicity reservoir
 
 Run them with: python tests/run_slow_tests.py
 """
@@ -26,13 +24,14 @@ TESTS = [
     "test_spectrum.py",
     "test_sectors.py",
     "test_commutant.py",
+    "test_transport.py",
 ]
 
 # Slow tests — each constructs CubieSpectralOperator (~1-2 min)
 SLOW_TESTS = [
     "test_commutant_gap.py",
-    "test_transport.py",
     "test_f3.py",
+    "test_generator_families.py",
 ]
 
 ROOT = Path(__file__).resolve().parent
