@@ -15,7 +15,7 @@ $$
 where $S$ is the standard 18 face-turn generator set and $\rho$ is the unitary cubie representation. Although the generators do not commute, the spectrum of $A$ collapses to six rational layers:
 
 $$
-\mathrm{Spec}(A)=\left\{1,\frac{8}{9},\frac{7}{9},\frac{2}{3},\frac{5}{9},\frac{1}{3}\right\}.
+\mathrm{Spec}(A)=\{1,\frac{8}{9},\frac{7}{9},\frac{2}{3},\frac{5}{9},\frac{1}{3}\}.
 $$
 
 The trilogy asks what structure lies behind this collapse, how the resulting spectral sectors exchange amplitude under generators, and why discrete composition can create accessibility channels that are absent from the associated Lie-generated closure.
