@@ -124,11 +124,15 @@ The canonical center decomposition yields 9 primitive sectors, understood as min
 Terminology:
 
 - primitive sector: minimal center-joint eigenspace;
-- hybrid sector: primitive sector with support on more than one physical block;
+- QT/HT joint-spectral sector: minimal joint eigenspace of the canonical QT/HT commutative algebra;
+- primitive sector: legacy shorthand for the same object in the trilogy;
+- hybrid sector: QT/HT joint-spectral sector with support on more than one physical block;
 - transport-active hybrid: hybrid sector that actually mediates transport in the canonical geometry.
 
 Primary checks:
 
+- `experiments/paper2/joint_spectral_geometry.py`
+- `experiments/paper2/collision_geometry.py`
 - `experiments/paper2/primitive_sectors.py`
 - `tests/test_sectors.py`
 - CCS Part I, Section 1.4

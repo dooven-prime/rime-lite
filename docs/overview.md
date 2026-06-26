@@ -2,6 +2,10 @@
 
 ## One-Page Project Overview
 
+**Public release scope.** This overview refers to the public three-paper RIME
+trilogy and its Computational Canonical Specification. Later research notes are
+development material and are not part of the current public paper release.
+
 This project studies the 228-dimensional cubie representation of the Rubik's Cube group as a finite, reproducible test case for spectral decomposition, generator-resolved transport, and Lie-closure phenomena in finite-group representations.
 
 The Rubik's Cube group provides a finite but highly noncommutative representation with rich internal block structure, making it a useful laboratory for studying how spectra, sector decompositions, and accessibility relations interact in an explicit finite system.

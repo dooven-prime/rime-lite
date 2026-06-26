@@ -6,7 +6,7 @@
 
 Independent Researcher · RIME Project · 2026
 
-*This paper is Part I of the RIME trilogy. It establishes the spectral decomposition and primitive sector structure. Paper II studies transport topology and the M₂ Principle. Paper III develops Lie accessibility and proves the T7 Theorem.*
+*This paper is Part I of the RIME trilogy. It establishes the spectral decomposition of the canonical averaging operator. Paper II studies transport topology on the resolved QT/HT joint-spectral sectors. Paper III develops Lie accessibility and proves the T7 Theorem.*
 
 ***
 
@@ -37,20 +37,20 @@ Independent Researcher · RIME Project · 2026
 | $P_{\lambda}$ | Spectral projector onto eigenspace $E_{\lambda}$ |
 | **layer** $V_{\lambda} = \mathrm{im}(P_{\lambda})$ | An eigenspace of the averaging operator $A$ — 6 canonical layers |
 | $V_1, V_{8/9}, V_{7/9}, V_{2/3}, V_{5/9}, V_{1/3}$ | Canonical layers ($\lambda = 1 - k/9$, $k \in \{0,1,2,3,4,6\}$) |
-| **primitive sector** | Minimal joint eigenspace of Center$\{A, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\mathrm{all}}\}$ — indivisible spectral unit | 
-| **S1–S9** | 9 primitive sectors: S1(V₁, isolated), S2(V₈/₉), S3(V₇/₉), S4(V₂/₃), S5–S7(V₅/₉), S8–S9(V₁/₃) |
-| **hybrid sector** | Primitive sector supported across multiple cubie-type blocks (e.g., ep+eo) |
+| **QT/HT joint-spectral sector** | Minimal joint eigenspace of Center$\{A, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\mathrm{all}}\}$ — equivalently, in the canonical system, a joint eigenspace of the commuting QT/HT algebra |
+| **S1–S9** | 9 QT/HT joint-spectral sectors: S1(V₁, isolated), S2(V₈/₉), S3(V₇/₉), S4(V₂/₃), S5–S7(V₅/₉), S8–S9(V₁/₃) |
+| **hybrid sector** | QT/HT joint-spectral sector supported across multiple cubie-type blocks (e.g., ep+eo) |
 | $\mathrm{QT}^a$ | Quarter-turn averaging operator $\frac{1}{2}(\rho(+a) + \rho(-a))$ on axis $a \in \{0,1,2\}$ |
 | $\mathrm{HT}^a$ | Half-turn averaging operator $\rho(2a)$ on axis $a \in \{0,1,2\}$ |
 | $\mathrm{QT}_{\mathrm{all}} = \sum_a \mathrm{QT}^a$, $\mathrm{HT}_{\mathrm{all}} = \sum_a \mathrm{HT}^a$ | Total quarter-turn / half-turn averaging |
-| Center$\{A, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\mathrm{all}}\}$ | Commutative center — joint diagonalization yields 9 primitive sectors |
+| Center$\{A, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\mathrm{all}}\}$ | Commutative center — joint diagonalization yields 9 QT/HT joint-spectral sectors |
 | $\chi_{\lambda}(s) = \operatorname{Tr}(P_{\lambda} \rho(s))$ | Eigenspace trace — key quantity in partition integrality |
 | **Bose-Mesner algebra** | Commuting algebra of a permutation association scheme — spectral engine for cp/co blocks |
 | $J$ | Face-incidence matrix — adjacency matrix connecting each position to the positions on the same face |
 
 > **Definition (Spectral Layer).** \label{def:spectral-layer} An eigenspace $V_{\lambda} = \operatorname{im}(P_{\lambda})$ of the averaging operator $A$. The 228-dimensional Rubik's cube representation has 6 canonical layers: $V_1$, $V_{8/9}$, $V_{7/9}$, $V_{2/3}$, $V_{5/9}$, $V_{1/3}$, corresponding to $\lambda = 1 - k/9$ with $k \in \{0,1,2,3,4,6\}$.
 
-> **Definition (Primitive Sector).** \label{def:primitive-sector} A minimal joint eigenspace of the commutative center $\operatorname{Center}\{A, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\mathrm{all}}\}$. The 9 primitive sectors $\mathrm{S}1$–$\mathrm{S}9$ are the indivisible spectral units from which all derived structures (transport graph, Lie accessibility, T7 morphisms) are built.
+> **Definition (QT/HT Joint-Spectral Sector).** \label{def:primitive-sector} A minimal joint eigenspace of the commutative center $\operatorname{Center}\{A, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\mathrm{all}}\}$. In the canonical Rubik system, $A = (2/3)\mathrm{QT}_{\mathrm{all}} + (1/3)\mathrm{HT}_{\mathrm{all}}$, so these are equivalently the joint eigenspaces of the commuting QT/HT algebra. The 9 sectors $\mathrm{S}1$–$\mathrm{S}9$ are the resolved spectral units from which all derived structures (transport graph, Lie accessibility, T7 morphisms) are built. We retain "primitive sector" as a legacy shorthand.
 
 ## Introduction
 
@@ -259,7 +259,7 @@ $$
 
 ![Resonance merging from 10 block-level primitive idempotents to 6 global spectral layers under $\lambda = 1 - k/9$. Different blocks with identical $k$-values collapse into the same eigenspace; $k = 5$ is structurally absent across all blocks. The 6-layer spectrum is the cardinality of the union of block-level $k$-sets, determined block-by-block rather than by global constraints.](../../figures/paper1/fig2_resonance_merging.png)
 
-**Remark (Transport graph consequence).** The six spectral layers result from 10 block-level primitive idempotents collapsing to 6 under the global eigenvalue coincidence $\lambda = 1 - k/m$. The number 6 is the cardinality of the union $\bigcup_B \mathcal{K}_B$; the content of Theorem~\ref{thm:spectral-collapse} is the identification of each $K_B$ with the primitive idempotent spectrum of the corresponding blockwise Bose–Mesner algebra. \cite{paper2} studies the transport topology between the primitive sectors identified here; \cite{paper3} studies the Lie accessibility hierarchy and the role of discrete composition. Figure~\ref{fig:fig1-spectral-collapse} shows the six canonical spectral layers and their block support.
+**Remark (Transport graph consequence).** The six spectral layers result from 10 block-level primitive idempotents collapsing to 6 under the global eigenvalue coincidence $\lambda = 1 - k/m$. The number 6 is the cardinality of the union $\bigcup_B \mathcal{K}_B$; the content of Theorem~\ref{thm:spectral-collapse} is the identification of each $K_B$ with the primitive idempotent spectrum of the corresponding blockwise Bose–Mesner algebra. \cite{paper2} studies the transport topology between the QT/HT joint-spectral sectors identified here; \cite{paper3} studies the Lie accessibility hierarchy and the role of discrete composition. Figure~\ref{fig:fig1-spectral-collapse} shows the six canonical spectral layers and their block support.
 
 ![The six canonical spectral layers of the averaging operator, showing eigenvalue $\lambda = 1 - k/9$, $k$-value, dimension, and block support for each layer. The $V_{5/9}$ layer ($k=4$) dominates at 106/228 (46%) and carries the primary transport hub for Papers II and III. This spectral decomposition is the structural foundation for the transport topology and Lie accessibility hierarchy.](../../figures/paper1/fig1_spectral_collapse.png)
 
@@ -751,7 +751,17 @@ The combination of these two mechanisms yields the observed six-layer rational s
 
 **Position of this paper.** Paper I identifies the spectral objects and explains why their eigenvalues are rational — it establishes a complete arithmetic mechanism whose structural scope is delineated below. The Structure Theorem and Main Theorem are proven unconditionally for the Rubik's cube representation. The proven-vs-observed status of each claim is detailed in the Computational Supplement [10, Appendix E].
 
-**Relation to Papers II and III.** \cite{paper2} studies the transport topology between the primitive sectors identified here — *how* the spectral objects communicate under the generator action. \cite{paper3} proves that compositional accessibility strictly exceeds Lie-generated accessibility — a structural theorem (T7) whose proof relies on shared isotypic support (C1), transport-active hybrid projectors (C2), and block-diagonal dynamics (C3). The three papers together form three layers of one structure — finite representation transport geometry — each a complete theorem in its own right.
+**Resolved-sector perspective.** The six $A_{18}$-layers are the canonical object of this paper, because they are the eigenspaces whose rationality is proved here. The finer 9-sector decomposition used in \cite{paper2} has a sharper interpretation: it is the joint eigenspace decomposition of the commuting QT/HT averaging algebra. In that resolved picture, $A_{18} = (2/3)\mathrm{QT}_{\mathrm{all}} + (1/3)\mathrm{HT}_{\mathrm{all}}$ is a linear projection of the nine QT/HT joint-spectral sectors, and the six layers arise as its collision quotient at the canonical weight. This collision-quotient viewpoint refines the geometry of the decomposition, but does not replace the arithmetic rationality mechanism proved in this paper.
+
+This resolved-sector language is adjacent to quotient theory for commutative
+association-scheme algebras, where equitable partitions and simple cells lead
+to quotient Bose-Mesner structures \cite{godsilMartin1995quotients}. In the
+present paper this is used only as formal ancestry: the six layers are
+eigenspaces of the averaging operator, while the nine QT/HT sectors are joint
+eigenspaces of the commuting QT/HT algebra. The association-scheme comparison
+does not replace the blockwise rationality proof.
+
+**Relation to Papers II and III.** \cite{paper2} studies the transport topology between the QT/HT joint-spectral sectors identified here — *how* the resolved spectral objects communicate under the generator action. \cite{paper3} proves that compositional accessibility strictly exceeds Lie-generated accessibility — a structural theorem (T7) whose proof relies on shared isotypic support (C1), transport-active hybrid projectors (C2), and block-diagonal dynamics (C3). The three papers together form three layers of one structure — finite representation transport geometry — each a complete theorem in its own right.
 
 ## Structural Scope and Boundary
 
@@ -856,7 +866,7 @@ The spectral field is $\mathbb{Q}$ when the generator set is a union of complete
 
 ## Appendix B: Isotypic Structure of the Spectral Layers
 
-The main text decomposes the averaging operator $A$ into six spectral layers $V_{\lambda}$ and further refines each layer into primitive sectors via the commutative center. This appendix reports the finer isotypic decomposition within each layer, obtained from the full commutant algebra.
+The main text decomposes the averaging operator $A$ into six spectral layers $V_{\lambda}$ and further resolves those layers into QT/HT joint-spectral sectors via the commutative center. This appendix reports the finer isotypic decomposition within each layer, obtained from the full commutant algebra.
 
 ### B.1 Isotypic Decomposition
 
@@ -877,38 +887,36 @@ The commutant $\operatorname{Comm}_G(V_{\lambda}) = \{X \in \operatorname{End}(V
 
 ## References
 
-**Mathematical lineage.** This paper belongs to the tradition of **association schemes and spectral decomposition of finite group representations** — the algebraic combinatorics of Bose-Mesner algebras, harmonic analysis on finite groups, and the representation theory of finite groups. The core question — "what is the spectral object, and why is the spectrum rational?" — is answered through the combinatorial structure of the permutation action (Q₃ Hamming scheme, face-incidence graph) and the arithmetic of the $\mathbb{Z}_3$ phase representation, not through commutativity-based spectral theorems of operator algebras. The lineage runs: representation theory of finite groups (Serre 1977) → association schemes and Bose-Mesner algebras (Bannai-Ito 1984, Godsil 1993) → harmonic analysis and random walks on finite groups (Diaconis 1988) → the present paper.
+**Mathematical lineage.** This paper belongs to the spectral side of the RIME
+program: association schemes and Bose--Mesner algebras for the permutation
+blocks, finite-group representation theory for the cubie representation, and
+harmonic analysis on finite groups for averaging operators. The core question
+is not a general commutative-operator theorem, but the concrete arithmetic
+problem of why the Rubik averaging spectrum is rational.
 
-### Association schemes, Krawtchouk polynomials, and Bose-Mesner algebra
+The association-scheme background is supplied by the standard texts of
+Bannai--Ito and Godsil \cite{bannaiIto1984,godsil1993}. The CP block is the
+binary Hamming scheme $H(3,2)$, whose Krawtchouk eigenvalues account for the
+CP block's integer spectral contribution. The EP face-incidence algebra sits
+near the coherent-configuration side of the same algebraic-combinatorial
+framework. Godsil--Martin quotient theory is cited only as formal ancestry for
+the later resolved-sector and collision-quotient viewpoint
+\cite{godsilMartin1995quotients}; it is not used to prove the rationality
+criterion in this paper.
 
-[1] E. Bannai and T. Ito, *Algebraic Combinatorics I: Association Schemes*. Benjamin/Cummings, 1984.
-  — Foundational text on association schemes, Bose-Mesner algebras, and Krawtchouk-polynomial eigenvalues of the Hamming scheme. The Q₃ hypercube (cp block) is the binary Hamming scheme $H(3,2)$; its block spectrum is exactly the set of Krawtchouk numbers $K_k(j; 3, 2)$ for $k \in \{0,1,2,3\}$, which are integers — this is the arithmetic source of CP-block rationality.
+The representation-theoretic background is finite semisimple representation
+theory \cite{serre1977,curtisReiner1962}. The averaging operator is also the
+representation-theoretic form of a random walk operator on a finite group, in
+the sense of Diaconis \cite{diaconis1988}. The Rubik group and cubie-state
+conventions follow the standard cube-group literature \cite{joyner2008}; the
+standard computational setting is the same 18-generator face-turn framework
+used in Kociemba's two-phase algorithm and in the diameter computation of
+Rokicki--Kociemba--Davidson--Dethridge
+\cite{kociemba1992,rokicki2013diameter}.
 
-[2] C.D. Godsil, *Algebraic Combinatorics*. Chapman & Hall, 1993.
-  — Association schemes, coherent configurations, and the commuting-algebra framework for permutation actions. The face-incidence adjacency algebra on the 12 edge positions (ep block) is a coherent configuration whose eigenmatrices supply the EP block $k$-set.
-
-### Representation theory and harmonic analysis on finite groups
-
-[3] J.-P. Serre, *Linear Representations of Finite Groups*. Graduate Texts in Mathematics 42, Springer, 1977.
-  — Canonical reference. Schur's Lemma, character theory, isotypic decomposition — the toolkit decomposing $V$ into irreducibles. The block-diagonal structure $V = V_{\mathrm{cp}} \oplus V_{\mathrm{ep}} \oplus V_{\mathrm{co}} \oplus V_{\mathrm{eo}}$ is the isotypic-type stratification of the cubie representation.
-
-[4] P. Diaconis, *Group Representations in Probability and Statistics*. IMS Lecture Notes, 1988.
-  — Spectral analysis of group-valued random walks. The averaging operator $A = (1/|S|)\sum_s \rho(s)$ is the transition matrix of the simple random walk on the Cayley graph of $(G, S)$; its spectrum governs mixing times. The rationality phenomenon studied here gives the eigenvalue lattice for the Rubik random walk in closed form.
-
-[5] C.W. Curtis and I. Reiner, *Representation Theory of Finite Groups and Associative Algebras*. Interscience, New York, 1962. (Reprinted: AMS Chelsea, 2006.)
-  — Semisimple algebras, the Artin-Wedderburn theorem, and commutant structure. The block-diagonal decomposition of $A$ is a consequence of the semisimple structure of the cubie representation under the group algebra $\mathbb{C}[G]$.
-
-### Rubik's cube group and its representations
-
-[6] D. Joyner, *Adventures in Group Theory: Rubik's Cube, Merlin's Machine, and Other Mathematical Toys*, 2nd ed. Johns Hopkins University Press, 2008.
-  — Standard reference for the Rubik's cube group $(\mathbb{Z}_3^7 \rtimes S_8) \times (\mathbb{Z}_2^{11} \rtimes S_{12})/\mathbb{Z}_2$, its 18 face-turn generators, and the cubie-state decomposition. The 228-dimensional representation studied here is the natural cubie representation in this presentation.
-
-[7] H. Kociemba, "Two-Phase Algorithm." `http://kociemba.org/cube.htm`, 1992. See also: T. Rokicki, H. Kociemba, M. Davidson, J. Dethridge, "The Diameter of the Rubik's Cube Group Is Twenty." *SIAM Journal on Discrete Mathematics* 27(2):1082–1105, 2013.
-  — The computational substrate. The cubie-state framework and the standard 18-generator set used here coincide with those of the Kociemba two-phase solver; the diameter result fixes God's-number = 20 in the same generator set.
-
-### Trilogy cross-references
-
-\cite{paper2}, \cite{paper3}, and \cite{ccs} are defined in `papers/tex/trilogy.bib`.
+Papers II and III are cited internally as the transport and accessibility
+continuations of the spectral decomposition \cite{paper2,paper3}; the CCS
+records the numerical constitution and reproducibility data \cite{ccs}.
 
 ### Code Availability
 

@@ -169,7 +169,7 @@ def verify_primitive_sectors():
     check("R2", "V2/3 is the unique primitive 18-gen layer (λ_QT=1/2, λ_HT=1)",
           primitive_23 == 1, f"found {primitive_23} sectors with (1/2, 1)")
 
-    # 2d. Sector dimensions and signatures match STRUCTURE.md table
+    # 2d. Sector dimensions and signatures match the archived STRUCTURE.md table
     expected_sectors = [
         (20, 1.0, 1.0, 1.0, 'S1'),
         (2, 5/6, 1.0, 8/9, 'S2'),

@@ -576,6 +576,10 @@ class CubieMove:
         if k is None:
             return None
         return ActionToken.from_cubie_move(*k, n=n)
+    
+    @staticmethod
+    def move_label(key: tuple[int, int, int]) -> str:
+        return str(ActionToken.from_cubie_move(*key, n=3))
 
     @staticmethod
     def is_redundant(last, cur) -> bool:

@@ -135,7 +135,7 @@ sectors:
   labels: ["S1", "S2", "S3", "S4", "S5", "S6", "S7", "S8", "S9"]
   generic:
     symbol: "S_{\\alpha}"
-    description: "Primitive sector (joint eigenspace of Center{A, QT_all, HT_all})"
+    description: "QT/HT joint-spectral sector (legacy: primitive sector; joint eigenspace of Center{A, QT_all, HT_all})"
   projector:
     symbol: "P_{\\alpha}"
     description: "Sector projector"
@@ -200,7 +200,7 @@ commutant:
 center:
   symbol: "\operatorname{Center}"
   canonical: "\operatorname{Center}\{A, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\mathrm{all}}\}"
-  description: "Joint center of A, QT_all, HT_all — yields 9 primitive sectors"
+  description: "Joint center of A, QT_all, HT_all — yields 9 QT/HT joint-spectral sectors"
 
   forbidden:
     - "\\text{Center}"     # use \operatorname{Center}

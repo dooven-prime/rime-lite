@@ -6,19 +6,19 @@
 
 Independent Researcher · RIME Project · 2026
 
-*This paper is Part II of the RIME trilogy. Paper I established the spectral decomposition and primitive sector structure. The present paper studies transport topology and the M₂ Principle. Paper III develops Lie accessibility and proves the T7 Theorem.*
+*This paper is Part II of the RIME trilogy. Paper I established the canonical six-layer spectrum. The present paper resolves that spectrum into QT/HT joint-spectral sectors and studies their transport topology and M₂ Principle. Paper III develops Lie accessibility and proves the T7 Theorem.*
 
 ***
 
 ## Abstract
 
-**Problem.** Previous work established that the averaging operator $A$ decomposes the 228-dimensional Rubik's cube representation into nine primitive sectors (minimal center-joint eigenspaces, not primitive idempotents or irreducible components). However, the resulting spectral decomposition is static: it identifies the sectors but does not characterize which sectors can exchange amplitude under a single generator. This paper studies the resulting transport topology.
+**Problem.** Paper I established the six rational eigenspaces of the canonical averaging operator $A_{18}$. For transport, however, the primitive object is finer: the commuting quarter-turn and half-turn averages $\mathrm{QT}_{\mathrm{all}}$ and $\mathrm{HT}_{\mathrm{all}}$ define nine joint-spectral sectors, and $A_{18} = (2/3)\mathrm{QT}_{\mathrm{all}} + (1/3)\mathrm{HT}_{\mathrm{all}}$ is their six-layer collision quotient. This paper studies which of those resolved sectors can exchange amplitude under a single generator.
 
 **Approach.** Direct transport between sectors is governed by **noncommutative support** — the set of representation blocks on which a sector projects and on which the per-axis quarter-turns fail to commute. The intersection of noncommutative supports of two sectors is observed as an exact criterion for noncommutative (Type I) direct transport across all verified Rubik sectors. A single commutative-permutation (Type II) channel arises separately from CP block adjacency.
 
 **Results.** All 10 direct edges of the transport graph are block-preserving: 9 noncommutative edges driven by the M₂ components of $A_{\mathrm{EP}} \cong M_2(\mathbb{C})^4 \oplus M_1(\mathbb{C})^4$, and one commutative-permutation edge S8↔S9. Cross-block transport in the Rubik system requires length-2 composition (T7 morphisms), satisfying neither Type I nor Type II criterion at depth 1.
 
-**Implications.** The transport topology is not automatic — it requires center incompleteness ($Z \subsetneq C(\rho)$). The M₂ algebra of $A_{\mathrm{EP}}$ forces hub formation (S6), caps refinement at 9 sectors, and explains the absence of direct cross-block edges. \cite{paper3} develops the Lie-accessibility consequences of this transport topology and proves that cross-block compositional accessibility strictly exceeds Lie-generated accessibility: $\mathcal{L} \subsetneq \overline{\mathcal{T}}$.
+**Implications.** The transport topology is not automatic — it requires center incompleteness ($Z_{\mathrm{QH}} \subsetneq C(\rho)$). The M₂ algebra of $A_{\mathrm{EP}}$ forces hub formation (S6), caps the QT/HT joint-spectral resolution at 9 sectors, and explains the absence of direct cross-block edges. \cite{paper3} develops the Lie-accessibility consequences of this transport topology and proves that cross-block compositional accessibility strictly exceeds Lie-generated accessibility: $\mathcal{L} \subsetneq \overline{\mathcal{T}}$.
 
 ***
 
@@ -29,10 +29,10 @@ Independent Researcher · RIME Project · 2026
 | $A = \frac{1}{\|S\|}\sum_{s} \rho(s)$ | Averaging operator — Hermitian, rational spectrum | Paper I |
 | **layer** $V_\lambda$ | An eigenspace of $A$; 6 canonical layers ($\lambda = 1 - k/9$) | Paper I |
 | **block** | Cubie-type invariant component: cp (corner perm, 64-dim), ep (edge perm, 144-dim), co (corner ori, 8-dim), eo (edge ori, 12-dim) | Paper I |
-| **primitive sector** $S_\alpha$ | Minimal joint eigenspace of Center$\{A, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\mathrm{all}}\}$ (9 total) | Paper I |
-| $P_\alpha$ | Projector onto primitive sector $\alpha$ | Paper I |
-| **hybrid sector** | A primitive sector with support spanning multiple cubie-type blocks (e.g., ep+eo) | Paper I |
-| **S1–S9** | 9 primitive sectors: S1(V₁, isolated), S2(V₈/₉), S3(V₇/₉), S4(V₂/₃), S5–S7(V₅/₉; S6 primary hub), S8–S9(V₁/₃) | Paper I |
+| **QT/HT joint-spectral sector** $S_\alpha$ | Minimal joint eigenspace of Center$\{A, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\mathrm{all}}\}$; equivalently a joint eigenspace of the commuting QT/HT algebra in the canonical system (9 total) | Paper I/II |
+| $P_\alpha$ | Projector onto joint-spectral sector $\alpha$ | Paper I/II |
+| **hybrid sector** | A QT/HT joint-spectral sector with support spanning multiple cubie-type blocks (e.g., ep+eo) | Paper I/II |
+| **S1–S9** | 9 QT/HT joint-spectral sectors: S1(V₁, isolated), S2(V₈/₉), S3(V₇/₉), S4(V₂/₃), S5–S7(V₅/₉; S6 primary hub), S8–S9(V₁/₃) | Paper I/II |
 | $T_{\alpha\beta}(g) = P_\alpha \rho(g) P_\beta$ | Transport tensor — amplitude moved by single generator $g$ from $\beta$ to $\alpha$ | **this paper** |
 | $K_{\alpha\beta} = \max_g \lVert P_\alpha \rho(g) P_\beta\rVert_F$ | Direct transport norm — aggregate transport strength under optimal single generator | **this paper** |
 | $\operatorname{Supp}_{\mathrm{nc}}(\alpha)$ | Noncommutative support — $\{b : P_\alpha\vert_b \neq 0 \text{ and } \lVert[\mathrm{QT}^0, \mathrm{QT}^1]\rVert_b > 0\}$ | **this paper** |
@@ -41,10 +41,10 @@ Independent Researcher · RIME Project · 2026
 | $\mathrm{M}_2$ Principle | $A_{\mathrm{EP}} \cong M_2(\mathbb{C})^4 \oplus M_1(\mathbb{C})^4$ (20-dim semisimple) — algebraic origin of Type I transport | **this paper** |
 | $\mathrm{QT}^a$, $\mathrm{HT}^a$ | Quarter-turn / half-turn averaging operators on axis $a \in \{0,1,2\}$ | Paper I |
 | $\mathrm{QT}_{\mathrm{all}} = \sum_a \mathrm{QT}^a$, $\mathrm{HT}_{\mathrm{all}} = \sum_a \mathrm{HT}^a$ | Total quarter-turn / half-turn averaging | Paper I |
-| $Z = \langle A, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\mathrm{all}} \rangle$ | Transport center — the commuting algebra that jointly diagonalizes to yield 9 primitive sectors | Paper I |
+| $Z_{\mathrm{QH}} = \langle A, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\mathrm{all}} \rangle$ | QT/HT transport center — the commuting algebra that jointly diagonalizes to yield 9 joint-spectral sectors | Paper I/II |
 | $C(\rho)$ | Full commutant of the representation — $\{X : [X, \rho(g)] = 0 \; \forall g \in G\}$ | — |
 | $\operatorname{Comm}(\cdot)$ | Commutant algebra — $\{X : [X,Y] = 0 \; \forall Y \in (\cdot)\}$ | — |
-| **C0** (Center Incompleteness) | $Z \subsetneq C(\rho)$ — the structural precondition for off-diagonal transport; when equality holds, $K$ is purely diagonal | **this paper** |
+| **C0** (Center Incompleteness) | $Z_{\mathrm{QH}} \subsetneq C(\rho)$ — the structural precondition for off-diagonal transport; when equality holds, $K$ is purely diagonal | **this paper** |
 | **T7 morphism** | Cross-block morphism outside Lie-generated accessibility — $K_{\alpha\beta}=0$ yet reachable via length-2 composition through a hybrid sector | Paper III |
 
 Full notation glossary: `docs/conventions.md` and (CCS Part 0).
@@ -55,11 +55,45 @@ Full notation glossary: `docs/conventions.md` and (CCS Part 0).
 
 **Conventions.** We use a right-handed Cartesian coordinate system ($+X \to R$, $+Y \to U$, $+Z \to F$). The representation space $V = \mathbb{C}^{228}$ decomposes as $V = V_{\mathrm{cp}} \oplus V_{\mathrm{ep}} \oplus V_{\mathrm{co}} \oplus V_{\mathrm{eo}}$ ($64 + 144 + 8 + 12$) in cp $\to$ ep $\to$ co $\to$ eo order. The generator set $S$ is the 18 standard face-turn generators ($S = S^{-1}$), partitioned naturally by coordinate axis: $\mathrm{QT}^a = \frac{1}{2}(\rho(+a) + \rho(-a))$ for $a \in \{0,1,2\}$. Full conventions: `docs/conventions.md`. All numerical values: (CCS-I §2).
 
-### What Paper I Left Open
+### From Paper I to Resolved Sectors
 
-\cite{paper1} established the spectral ontology of the averaging operator $A = \frac{1}{|S|} \sum_{g \in S} \rho(g)$. Its central deliverables: (i) the rational 6-layer spectrum $\lambda = 1 - k/9$, $k \in \{0, 1, 2, 3, 4, 6\}$; (ii) the block origin of each layer via Bose–Mesner algebras on four cubie-type blocks; (iii) the refinement to 9 primitive sectors under Center$\{A, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\mathrm{all}}\}$.
+\cite{paper1} established the spectral ontology of the averaging operator $A_{18} = \frac{1}{|S|} \sum_{g \in S} \rho(g)$. Its central deliverables are the rational 6-layer spectrum $\lambda = 1 - k/9$, $k \in \{0, 1, 2, 3, 4, 6\}$, and the block origin of each layer via Bose–Mesner algebras on four cubie-type blocks.
 
-\cite{paper1} answers: *what is the spectral object?* But the spectral decomposition of $A$ is a static object — it tells us nothing about which sectors can exchange amplitude under individual generators.
+For transport, the six $A_{18}$-layers are too coarse. The natural resolved object is the joint spectral decomposition of the commuting QT/HT averaging algebra:
+
+$$
+Z_{\mathrm{QH}}=\langle A_{18},\mathrm{QT}_{\mathrm{all}},\mathrm{HT}_{\mathrm{all}}\rangle
+      = \langle \mathrm{QT}_{\mathrm{all}},\mathrm{HT}_{\mathrm{all}}\rangle,
+$$
+
+where
+
+$$
+A_{18}=(2/3)\mathrm{QT}_{\mathrm{all}}+(1/3)\mathrm{HT}_{\mathrm{all}}.
+$$
+
+Its nine joint eigenspaces are the QT/HT joint-spectral sectors S1–S9. Thus the direction of explanation in this paper is not
+
+$$A_{18}\to\text{sectors}\to\text{transport},$$
+
+but rather
+
+$$
+\mathrm{QT}_{\mathrm{all}},\mathrm{HT}_{\mathrm{all}}
+   \to \text{joint-spectral sectors}
+   \to \text{transport graph}
+   \to A_{18}\text{ as collision quotient}.
+$$
+
+\cite{paper1} answers: *why is the canonical spectrum rational?* This paper asks: *once the spectrum is resolved into QT/HT sectors, which sectors can exchange amplitude under individual generators?*
+
+This is the point where the present paper is closest to association-scheme
+quotient language. Godsil--Martin quotient theory organizes equitable
+partitions and simple cells inside commutative Bose-Mesner structures
+\cite{godsilMartin1995quotients}. Our sectors are instead defined spectrally:
+they are joint eigenspaces of the commuting QT/HT algebra. The comparison is
+useful for naming the quotient/fine-structure boundary, but the transport
+tensor studied below is additional data not present in quotient theory alone.
 
 That is the question of this paper.
 
@@ -73,11 +107,11 @@ measures how much generator $g$ transports amplitude from sector $\beta$ to sect
 
 $$K_{\alpha\beta} = \max_{g \in S} \|T_{\alpha\beta}(g)\|_F$$
 
-defines a weighted undirected graph on the 9 primitive sectors. The paper addresses three structural questions:
+defines a weighted undirected graph on the 9 QT/HT joint-spectral sectors. The paper addresses three structural questions:
 
 > **Q1. Why does the transport topology emerge?** Why are some pairs coupled ($K > 0$) and others not ($K = 0$)? The answer is not eigenvalue proximity, and not block support overlap alone — it requires identifying a structural invariant.
 >
-> **Q2. Why does refinement stop at 9?** The 9 primitive sectors are the finest decomposition achievable within the commutative center. What algebraic obstruction blocks further refinement?
+> **Q2. Why does the QT/HT resolution stop at 9?** The 9 joint-spectral sectors are the finest decomposition achievable within the commutative QT/HT center. What algebraic obstruction blocks further commutative refinement?
 >
 > **Q3. Why do two transport types exist?** The S8$\leftrightarrow$S9 edge is fundamentally different from all others — it reveals that averaging commutativity $\neq$ generator commutativity.
 
@@ -104,7 +138,7 @@ The four blocks have sharply different noncommutativity: cp is exactly commutati
 
 Type II reveals a structural fact: **averaging commutativity $\neq$ generator commutativity**. The CP block's QT algebra is exactly commutative, yet individual generators are non-trivial permutation matrices that mix spectral projectors. Transport can exist without QT noncommutativity — a second, qualitatively distinct mechanism.
 
-Both types are block-preserving. Cross-block transport requires length-2 composition. The five such pairs (T7) satisfy neither Type I nor Type II criterion (CCS-I §2.5). The Type I/II taxonomy is verified on the Rubik's cube (228-dim). The S₃ negative controls (CCS-I §2.11, Appendix G) confirm: their transport center coincides with the full commutant (Z = C(ρ)), forcing purely diagonal K and zero cross-block transport — demonstrating that hybrid sectors alone are insufficient for nontrivial transport topology.
+Both types are block-preserving. Cross-block transport requires length-2 composition. The five such pairs (T7) satisfy neither Type I nor Type II criterion (CCS-I §2.5). The Type I/II taxonomy is verified on the Rubik's cube (228-dim). The S₃ negative controls (CCS-I §2.11, Appendix G) confirm the general center-completeness mechanism: their S₃ transport centers coincide with the full commutant, forcing purely diagonal K and zero cross-block transport — demonstrating that hybrid sectors alone are insufficient for nontrivial transport topology.
 
 **Theorem (M₂ Principle).** The edge-permutation block algebra $A_{\text{EP}} = \langle Q_0, Q_1, Q_2 \rangle \cong M_2(\mathbb{C})^4 \oplus M_1(\mathbb{C})^4$ (20-dim semisimple) is the algebraic origin of the transport architecture. Its consequences form four structural observations:
 
@@ -129,7 +163,7 @@ This paper studies **static transport topology** — which edges exist, and why.
 
 ## Part I — Transport Category {-}
 
-## Primitive Sectors and Block Structure
+## QT/HT Joint-Spectral Sectors and Block Structure
 
 ### Representation Space
 
@@ -150,9 +184,21 @@ Total dimension: $64 + 144 + 8 + 12 = 228$.
 
 The generator set $S$ consists of the 18 standard face-turn generators (6 faces $\times$ 3 turns). $S$ is closed under inversion.
 
+### The QT/HT Center
+
+The total quarter-turn and half-turn averages commute in the canonical Rubik representation:
+
+$$[\mathrm{QT}_{\mathrm{all}},\mathrm{HT}_{\mathrm{all}}]=0.$$
+
+Their joint eigenspaces define the nine canonical sectors S1–S9 used throughout this paper. Since
+
+$$A_{18}=(2/3)\mathrm{QT}_{\mathrm{all}}+(1/3)\mathrm{HT}_{\mathrm{all}},$$
+
+the six $A_{18}$-eigenspaces are coarser collision quotients of these nine joint-spectral sectors. Thus the transport graph is not built on the coarse $A_{18}$ layers alone; it is built on the resolved QT/HT sector decomposition.
+
 ### Six Canonical Layers (A-Eigenspaces)
 
-The averaging operator $A = \frac{1}{18} \sum_{g \in S} \rho(g)$ has 6 distinct eigenvalues. Each eigenspace $E_\lambda = \text{im}(P_\lambda)$ is characterized by its block-support profile:
+The averaging operator $A_{18} = \frac{1}{18} \sum_{g \in S} \rho(g)$ has 6 distinct eigenvalues. Each eigenspace $E_\lambda = \text{im}(P_\lambda)$ is characterized by its block-support profile:
 
 | $k$ | $\lambda = 1 - k/9$ | Dim | Label | Block composition |
 |-----|---------------------|-----|-------|-------------------|
@@ -163,11 +209,11 @@ The averaging operator $A = \frac{1}{18} \sum_{g \in S} \rho(g)$ has 6 distinct 
 | 4 | 5/9 | 106 | V₅/₉ | cp(24) + ep(72) + co(3) + eo(7) |
 | 6 | 1/3 | 35 | V₁/₃ | cp(32) + co(3) |
 
-$k = 5$ ($\lambda = 4/9$) is genuinely absent — no blockwise primitive idempotent produces it. The 10 block-level primitive idempotents collapse to exactly 6 global spectral layers via eigenvalue coincidence $\lambda = 1 - k/m$ across different blocks (Paper I, Theorem~\ref{thm:block-compatibility-lemma}).
+$k = 5$ ($\lambda = 4/9$) is genuinely absent — no blockwise primitive idempotent produces it. The 10 block-level primitive idempotents collapse to exactly 6 global spectral layers via eigenvalue coincidence $\lambda = 1 - k/m$ across different blocks (Paper I, Theorem~\ref{thm:block-compatibility-lemma}). From the QT/HT viewpoint, these six layers are also the collision quotient of the nine joint-spectral sectors under the linear functional $L_{2/3}(q,h)=(2q+h)/3$.
 
-### Nine Primitive Sectors
+### Nine QT/HT Joint-Spectral Sectors
 
-Joint diagonalization of Center$\{A, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\mathrm{all}}\}$ refines the 6 layers into **9 primitive sectors** — the finest decomposition achievable within the commutative center:
+Joint diagonalization of Center$\{A, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\mathrm{all}}\}$, equivalently of the commuting QT/HT algebra, gives **9 QT/HT joint-spectral sectors** — the finest decomposition achievable within the commutative center:
 
 | Sector | Dim | $k$ | $\lambda_A$ | $\lambda_{\mathrm{QT}}$ | $\lambda_{\mathrm{HT}}$ | Block support | Layer |
 |--------|-----|-----|-------------|------------------------|------------------------|---------------|-------|
@@ -181,7 +227,7 @@ Joint diagonalization of Center$\{A, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\m
 | S8 | 8 | 6 | 1/3 | 0 | 1 | cp(8) | V₁/₃(A) |
 | S9 | 27 | 6 | 1/3 | 1/3 | 1/3 | cp(24)+co(3) | V₁/₃(B) |
 
-These 9 sectors are the vertices of the transport graph. All transport analysis in this paper operates at this 9-sector resolution.
+These 9 sectors are the vertices of the transport graph. All transport analysis in this paper operates at this 9-sector resolution. We retain "primitive sector" as a legacy shorthand, but the structural object is the QT/HT joint-spectral sector.
 
 ### The Noncommutative Support of Each Sector
 
@@ -209,7 +255,7 @@ The Block→Sector→Transport alluvial diagram (three panels: block algebra →
 
 ### Definition
 
-**Definition 3.1** (Transport Tensor). For primitive sectors $\alpha, \beta$ with orthogonal projectors $P_\alpha, P_\beta$, the *transport block* for generator $g \in S$ is
+**Definition 3.1** (Transport Tensor). For QT/HT joint-spectral sectors $\alpha, \beta$ with orthogonal projectors $P_\alpha, P_\beta$, the *transport block* for generator $g \in S$ is
 
 $$T_{\alpha\beta}(g) = P_\alpha \rho(g) P_\beta.$$
 
@@ -219,7 +265,7 @@ This is a $(\dim \alpha) \times (\dim \beta)$ matrix encoding how generator $g$ 
 
 $$K_{\alpha\beta} = \max_{g \in S} \|T_{\alpha\beta}(g)\|_F.$$
 
-$K$ defines a weighted graph on the 9 primitive sectors. $K_{\alpha\beta} = \max_g \|P_\alpha \rho(g) P_\beta\|_F$ is symmetric ($K_{\alpha\beta} = K_{\beta\alpha}$ to $10^{-15}$) because $\|X\|_F = \| X^T\|_F$ and $P_\beta \rho(g)^T P_\alpha = P_\beta \rho(g^{-1}) P_\alpha$, with $g^{-1} \in S$ (the generator set is inverse-closed). The transport graph is therefore undirected.
+$K$ defines a weighted graph on the 9 QT/HT joint-spectral sectors. $K_{\alpha\beta} = \max_g \|P_\alpha \rho(g) P_\beta\|_F$ is symmetric ($K_{\alpha\beta} = K_{\beta\alpha}$ to $10^{-15}$) because $\|X\|_F = \| X^T\|_F$ and $P_\beta \rho(g)^T P_\alpha = P_\beta \rho(g^{-1}) P_\alpha$, with $g^{-1} \in S$ (the generator set is inverse-closed). The transport graph is therefore undirected.
 
 ### The K Matrix at 9-Sector Resolution
 
@@ -296,7 +342,7 @@ The K matrix makes visible a fundamental fact: eigenvalue ordering and transport
 
 ## Noncommutative Support Determines Transport
 
-**Why the Rubik transport topology is nontrivial.** The transport graph acquires off-diagonal edges only because the sector-decomposing center $Z = \langle A, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\mathrm{all}}\rangle$ is a proper subalgebra of the full commutant $C(\rho)$. When $Z = C(\rho)$ — center completeness — sectors equal isotypic components, $P_i\rho(g)P_j = 0$ for all $i \neq j$, and $K$ is purely diagonal. The S₃ negative controls (CCS Appendix G) provide negative control: both have $Z = C(\rho)$ and purely diagonal $K$, despite carrying noncommutative support. The Rubik cube satisfies $Z \subsetneq C(\rho)$ massively: 9 sectors aggregate 51 isotypic components, creating non-invariant sectors whose off-diagonal transport is structurally possible. Center incompleteness (C0) is the structural precondition for the transport topology studied in this Part.
+**Why the Rubik transport topology is nontrivial.** The transport graph acquires off-diagonal edges only because the sector-decomposing QT/HT center $Z_{\mathrm{QH}} = \langle A, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\mathrm{all}}\rangle$ is a proper subalgebra of the full commutant $C(\rho)$. When the sector-decomposing center equals $C(\rho)$ — center completeness — sectors equal isotypic components, $P_i\rho(g)P_j = 0$ for all $i \neq j$, and $K$ is purely diagonal. The S₃ negative controls (CCS Appendix G) provide this comparison: their S₃ transport centers are center-complete and have purely diagonal $K$, despite carrying noncommutative support. The Rubik cube satisfies $Z_{\mathrm{QH}} \subsetneq C(\rho)$ massively: 9 sectors aggregate 51 isotypic components, creating non-invariant sectors whose off-diagonal transport is structurally possible. Center incompleteness (C0) is the structural precondition for the transport topology studied in this Part.
 
 ### Why Block Support Overlap Is Not Sufficient
 
@@ -335,7 +381,7 @@ The EP block carries 93.9% of the total noncommutativity (by Frobenius-norm rati
 
 ### Supp_nc Definition and Computation
 
-**Definition 4.1** (Noncommutative Support). For a primitive sector $\alpha$,
+**Definition 4.1** (Noncommutative Support). For a QT/HT joint-spectral sector $\alpha$,
 
 $$\operatorname{Supp}_{\mathrm{nc}}(\alpha) = \{b \in \{\mathrm{cp}, \mathrm{ep}, \mathrm{co}, \mathrm{eo}\} : P_\alpha|_b \neq 0 \text{ and } \|[\mathrm{QT}^0, \mathrm{QT}^1]\|_b > 0\}.$$
 
@@ -361,7 +407,7 @@ Equivalently: the set of blocks on which the sector has non-zero projection AND 
 
 ### Transport Mechanism Classification
 
-**Proposition (Two-Type Transport Mechanisms).** For any two distinct primitive sectors $\alpha \neq \beta$, direct transport arises from exactly one of two independent mechanisms:
+**Proposition (Two-Type Transport Mechanisms).** For any two distinct QT/HT joint-spectral sectors $\alpha \neq \beta$, direct transport arises from exactly one of two independent mechanisms:
 
 **Type I — Noncommutative mixing.** For all 9 non-CP transport edges, $\operatorname{Supp}_{\mathrm{nc}}(\alpha) \cap \operatorname{Supp}_{\mathrm{nc}}(\beta) \neq \emptyset$ is observed as an exact criterion for direct transport: $K_{\alpha\beta} > 0$.
 The M₂ components of $A_{\text{EP}}$ (and weak CO/EO sidebands) create generator mixing that couples sectors sharing noncommutative block support.
@@ -502,17 +548,17 @@ Cross-block transport (e.g., S3(ep+eo) $\to$ S9(cp+co)) is impossible at the sin
 
 ### Refinement POSET (from \cite{paper1})
 
-\cite{paper1} established that the family of spectral decompositions $\{D(A_S)\}$ across inverse-closed generator sets $S$ forms a refinement POSET $\mathcal{L}$ under $D_1 \leq D_2 \iff A_{D_2} \in \langle A_{D_1} \rangle$. The commutative core $\mathcal{C} = \{\operatorname{Center}, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\mathrm{all}}, 18\text{-gen}\}$ is a $\wedge$-semilattice. The 9 primitive sectors are the atoms of $\mathcal{C}$ — the finest decomposition achievable within the commutative core.
+\cite{paper1} established that the family of spectral decompositions $\{D(A_S)\}$ across inverse-closed generator sets $S$ forms a refinement POSET $\mathcal{L}$ under $D_1 \leq D_2 \iff A_{D_2} \in \langle A_{D_1} \rangle$. The canonical QT/HT core $\mathcal{C}_{\mathrm{QH}} = \langle A_{18}, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\mathrm{all}}\rangle$ is a commutative semisimple algebra. The 9 QT/HT joint-spectral sectors are its atoms — the finest decomposition achievable within this commutative core.
 
 ### Refinement Stops at the Noncommutative Obstruction
 
-**Proposition (M₂ Overlap Obstruction Caps Refinement).** The refinement chain terminates at 9 primitive sectors — not as a numerical artifact, but as an algebraic consequence of the representation structure. Further refinement is blocked by the M₂ overlap obstruction: the noncommuting QT operators on EP cannot be simultaneously diagonalized, and any operator that would split an M₂-coupled sector must fail to commute with the Center.
+**Proposition (M₂ Overlap Obstruction Caps Refinement).** The QT/HT refinement chain terminates at 9 joint-spectral sectors — not as a numerical artifact, but as an algebraic consequence of the representation structure. Further commutative refinement is blocked by the M₂ overlap obstruction: the noncommuting QT operators on EP cannot be simultaneously diagonalized, and any operator that would split an M₂-coupled sector must fail to commute with the QT/HT center.
 
 **Explanation.** The Center$\{A, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\mathrm{all}}\}$ is exactly commutative ($\|[\cdot, \cdot]\| < 10^{-15}$). Any operator that would split, say, S6 into finer sectors must live in $A_{\text{EP}}$ — the only algebra with non-trivial action on EP. But the only operators in $A_{\text{EP}}$ that commute with both QT_all and HT_all are in the center $Z(A_{\text{EP}})$, which is already diagonalized by the 9-sector decomposition (its 8 eigenvalues are resolved into the 8 non-S1 sectors). Adding a non-central element of $A_{\text{EP}}$ would break commutativity — the new operator would not commute with QT_all or HT_all, so the "joint diagonalization" would not be a true simultaneous diagonalization and the decomposition would not consist of orthogonal projectors.
 
-The 9 sectors are therefore the **finest commutative decomposition** — the unique maximal refinement achievable while maintaining pairwise commuting diagonalizing operators and orthogonal projectors. The obstruction is the M₂ components: their noncommutativity ($[Q_i, Q_j] \neq 0$ on 3 of 4 components) is the primary algebraic obstruction that blocks further refinement. Figure~\ref{fig:fig3-refinement-obstruction} shows the refinement obstruction: the commutative center chain saturates at exactly 9 primitive sectors.
+The 9 sectors are therefore the **finest QT/HT commutative decomposition** — the unique maximal refinement achievable while maintaining pairwise commuting diagonalizing operators and orthogonal projectors inside the canonical QT/HT algebra. The obstruction is the M₂ components: their noncommutativity ($[Q_i, Q_j] \neq 0$ on 3 of 4 components) is the primary algebraic obstruction that blocks further commutative refinement. Figure~\ref{fig:fig3-refinement-obstruction} shows the refinement obstruction: the commutative center chain saturates at exactly 9 joint-spectral sectors.
 
-![Refinement obstruction: the commutative center chain ($A_{18} \to A_{18} + \mathrm{QT}_{\mathrm{all}} \to A_{18} + \mathrm{QT}_{\mathrm{all}} + \mathrm{HT}_{\mathrm{all}}$) resolves to a maximum of 9 primitive sectors. The M$_2$ components in $A_{\mathrm{EP}}$ prevent further commutative splitting; any further refinement would require operators outside the commutative center. The 9-sector decomposition is a ceiling imposed by algebraic noncommutativity, not an arbitrary choice.](../../figures/paper2/fig3_refinement_obstruction.png)
+![Refinement obstruction: the commutative center chain ($A_{18} \to A_{18} + \mathrm{QT}_{\mathrm{all}} \to A_{18} + \mathrm{QT}_{\mathrm{all}} + \mathrm{HT}_{\mathrm{all}}$) resolves to a maximum of 9 QT/HT joint-spectral sectors. The M$_2$ components in $A_{\mathrm{EP}}$ prevent further commutative splitting; any further refinement would require operators outside the commutative center. The 9-sector decomposition is a ceiling imposed by algebraic noncommutativity, not an arbitrary choice.](../../figures/paper2/fig3_refinement_obstruction.png)
 
 ### The Obstruction POSET
 
@@ -532,7 +578,7 @@ The refinement story has two regimes:
 
 | Regime | Algebra | Finest decomposition | Blocked by |
 |--------|---------|---------------------|------------|
-| Commutative | Center$\{A, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\mathrm{all}}\}$ | 9 primitive sectors | — (complete within commutative core) |
+| Commutative | Center$\{A, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\mathrm{all}}\}$ | 9 QT/HT joint-spectral sectors | — (complete within commutative core) |
 | Noncommutative | $A_{\text{EP}}$ full algebra | Would split each M₂ into 2 sectors (11+ total) | M₂ obstruction — $[Q_i, Q_j] \neq 0$ on active M₂ |
 
 The 9-sector decomposition is the finest **commutative** decomposition. Further refinement is possible only if we accept non-orthogonal, non-commuting "sectors" — which would not be sectors in the spectral sense (no longer eigenspaces of a commuting family).
@@ -666,7 +712,9 @@ The deformation is in the *density* of edges: $n = 8$ has 28 edges (hyper-connec
 
 The structural notions developed here — noncommutative support $\operatorname{Supp}_{\mathrm{nc}}$, the transport norm $K_{\alpha\beta}$, the M₂ mechanism, and the Type I/II classification — are general diagnostic tools for finite representation transport geometry. The specific transport topology reported in this paper (10 direct edges, S6 primary hub, Type I/II split) is the Rubik realization at 9-sector resolution. The transport topology described here should therefore be understood as a verified realization of the general transport framework, rather than a universal finite-group classification.
 
-The transport topology on 9 primitive sectors is driven by the M₂ principle: noncommutative simple components of the block algebras determine the Type I transport graph (9 of 10 direct edges via Supp_nc intersection). The single Type II exception (S8↔S9) reveals that averaging commutativity does not imply generator commutativity. The 18 face-turn generators are distinguished by complete-face arithmetic closure — the only generator family observed in the Rubik representation for which all four blocks participate in a cyclotomic phase cancellation that forces eigenvalue rationality.
+The transport topology on 9 QT/HT joint-spectral sectors is driven by the M₂ principle: noncommutative simple components of the block algebras determine the Type I transport graph (9 of 10 direct edges via Supp_nc intersection). The single Type II exception (S8↔S9) reveals that averaging commutativity does not imply generator commutativity. The 18 face-turn generators are distinguished by complete-face arithmetic closure — the only generator family observed in the Rubik representation for which all four blocks participate in a cyclotomic phase cancellation that forces eigenvalue rationality.
+
+The role of $A_{18}$ is therefore different in the spectral and transport stories. In \cite{paper1}, $A_{18}$ is the canonical averaging operator whose rational six-layer spectrum is the object to be explained. In the present paper, $A_{18}$ is a coarse projection of the QT/HT joint spectrum: the transport graph lives on the 9 resolved sectors, while the six $A_{18}$ layers are their collision quotient at the canonical weight $2:1$. This distinction is essential: transport topology is a property of the resolved joint-spectral sector geometry, not of the coarse layer count alone.
 
 This paper establishes that noncommutative curvature exists within projector geometry: the M₂-driven transport topology, the 9-sector refinement boundary, and the G-determined/Center-determined/S-conditioned invariance hierarchy. All open problems are recorded in (CCS Appendix I).
 
@@ -676,9 +724,9 @@ The one structural question left open is whether alternative transport mechanism
 
 ## Appendix A: Noncommutative Support Construction
 
-The noncommutative support $\operatorname{Supp}_{\mathrm{nc}}(\alpha)$ (Definition~\ref{def:noncommutative-support}) is the dominant structural invariant for Type I transport. This appendix details its construction, the structural choices it depends on, and the algebraic reason for its effectiveness. Figure~\ref{fig:figa1-pipeline} provides the full structural pipeline from generators to transport and commutant analysis.
+The noncommutative support $\operatorname{Supp}_{\mathrm{nc}}(\alpha)$ (Definition~\ref{def:noncommutative-support}) is the dominant structural invariant for Type I transport. This appendix details its construction, the structural choices it depends on, and the algebraic reason for its effectiveness. Figure~\ref{fig:figa1-pipeline} provides the full structural pipeline from generators to QT/HT sectorization, transport, and commutant analysis.
 
-![The structural pipeline from generators $\rho(g)$ to the averaging operator $A$ to spectral layers $\{E_\lambda\}$, forking into transport (left: $K_{\alpha\beta}$, Type I/II classification, T7 detection) and commutant (right: $\operatorname{Comm}(\rho) = 610$, $\operatorname{Comm}(A) = 804$, $\Delta_{\mathrm{comm}} = 194$). The two branches are structurally independent in general but linked only through the EP block's M$_2$ structure in this system. This cascade contextualizes the full structural relationship between spectral decomposition, transport topology, and commutant structure.](../../figures/paper2/figa1_pipeline.png)
+![The structural pipeline from generators $\rho(g)$ to the commuting QT/HT averages, their 9 joint-spectral sectors $\{S_\alpha\}$, and the $A_{18}$ collision quotient $\{E_\lambda\}$. The resolved sector projectors define transport (left: $K_{\alpha\beta}$, Type I/II classification, T7 detection), while the same representation data define the commutant comparison (right: $\operatorname{Comm}(\rho) = 610$, $\operatorname{Comm}(A) = 804$, $\Delta_{\mathrm{comm}} = 194$). The two branches are structurally independent in general but linked through the EP block's M$_2$ structure in this system.](../../figures/paper2/figa1_pipeline.png)
 
 ### A.1 Per-Axis QT Operators
 
@@ -866,7 +914,7 @@ The transport topology deformation across generator families is tabulated in §8
 
 ### F.1 Computational Methods
 
-All computations use `CubieSpectralOperator` (`rime/cubieoperator.py`). The 9 primitive sector projectors are obtained via joint diagonalization of Center$\{A, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\mathrm{all}}\}$. The K matrix and Supp_nc are computed directly from these projectors and the 18 generator matrices. Key parameters: tolerance $10^{-10}$ for transport and SVD; 18 face-turn generators; 228-dimensional representation.
+All computations use `CubieSpectralOperator` (`rime/cubieoperator.py`). The 9 QT/HT joint-spectral sector projectors are obtained via joint diagonalization of Center$\{A, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\mathrm{all}}\}$. The K matrix and Supp_nc are computed directly from these projectors and the 18 generator matrices. Key parameters: tolerance $10^{-10}$ for transport and SVD; 18 face-turn generators; 228-dimensional representation.
 
 A previously observed empirical correlation between commutant dimension differences and aggregate transport energy did not remain stable under the post-$\rho$-fix canonical representation revision, and is therefore omitted from the invariant hierarchy.
 
@@ -888,38 +936,34 @@ The transport graph developed here identifies the static compositional architect
 
 ## References
 
-**Mathematical lineage.** This paper belongs to the tradition of **structure theory of finite-dimensional semisimple algebras and their commutants** — the Artin-Wedderburn decomposition of $\mathbb{C}[G]$-modules, the double commutant theorem, and the resulting block / isotypic stratification of intertwiners. The transport tensor $T_{\alpha\beta}(g) = P_\alpha \rho(g) P_\beta$ is a matrix coefficient of $\rho$ projected onto primitive idempotents in the commutant of the averaging operator; its sparsity pattern is governed by the noncommutative simple components of $A_{\mathrm{EP}}$. The lineage runs: representation theory of finite groups (Serre 1977) → semisimple algebras and Artin-Wedderburn (Curtis-Reiner 1962, Lam 2001) → double commutant theory for finite-dimensional $\mathbb{C}$-algebras (Goodman-de la Harpe-Jones 1989) → the present structural analysis. Association-scheme references shared with \cite{paper1} are repeated below for self-containedness.
+**Mathematical lineage.** This paper sits between finite-dimensional
+semisimple algebra and projected transport geometry. The transport tensor
+$T_{\alpha\beta}(g)=P_\alpha\rho(g)P_\beta$ is a matrix coefficient of the
+representation projected onto QT/HT joint-spectral sectors. Its sparsity
+pattern is governed by the noncommutative simple components of
+$A_{\mathrm{EP}}$.
 
-### Semisimple algebras, double commutant, and Artin-Wedderburn
+The algebraic background is the Artin--Wedderburn and double-commutant theory
+of finite-dimensional semisimple algebras
+\cite{curtisReiner1962,lam2001,goodmanHarpeJones1989}. Finite-group
+representation theory supplies the block and isotypic decomposition
+\cite{serre1977}. The random-walk viewpoint on the averaging operator follows
+the standard harmonic-analysis framework for finite groups \cite{diaconis1988}.
 
-[1] C.W. Curtis and I. Reiner, *Representation Theory of Finite Groups and Associative Algebras*. Interscience, New York, 1962. (Reprinted: AMS Chelsea, 2006.)
-  — Semisimple algebras, the Artin-Wedderburn structure theorem ($\mathbb{C}[G] \cong \bigoplus_i M_{n_i}(\mathbb{C})$), and the double commutant theorem $\operatorname{End}_{\operatorname{Comm}(A)}(V) = A$ for semisimple $A$. The decomposition $A_{\mathrm{EP}} \cong M_2(\mathbb{C})^4 \oplus M_1(\mathbb{C})^4$ and the double-commutant identity (verified in the Double Commutant section) are direct applications.
+The association-scheme background is shared with Paper I
+\cite{paper1}: Bose--Mesner algebras and coherent configurations provide the
+commutative spectral language for the CP block and the permutation-side
+comparison class \cite{bannaiIto1984,godsil1993}. Godsil--Martin quotient
+theory is the closest association-scheme predecessor for the quotient side:
+it explains how commutative scheme algebras behave under
+simple-cell/equitable-partition quotients \cite{godsilMartin1995quotients}.
+The present work begins from a spectral joint-eigenspace sectorization and
+then studies generator-resolved transport between sectors, which is additional
+data beyond quotient theory alone.
 
-[2] T.Y. Lam, *A First Course in Noncommutative Rings*, 2nd ed. Graduate Texts in Mathematics 131, Springer, 2001.
-  — Semisimple rings, the Jacobson density theorem, and the structure of finite-dimensional simple algebras over $\mathbb{C}$. The $M_2(\mathbb{C})$ components of $A_{\mathrm{EP}}$ are the minimal noncommutative simple ideals; their overlap geometry under the primitive sector projectors drives the hub-necessity argument (see Hub Necessity).
-
-[3] F. Goodman, P. de la Harpe, and V.F.R. Jones, *Coxeter Graphs and Towers of Algebras*. Mathematical Sciences Research Institute Publications 14, Springer, 1989.
-  — Towers of finite-dimensional $\mathbb{C}$-algebras and their commutants. The refinement POSET of commuting subalgebras and the obstruction to further refinement by noncommuting elements — the algebraic mechanism behind the 9-sector cap (see the Obstruction Lattice section) — is the finite-dimensional analogue of the inclusion-lattice structure developed here.
-
-### Representation theory of finite groups
-
-[4] J.-P. Serre, *Linear Representations of Finite Groups*. Graduate Texts in Mathematics 42, Springer, 1977.
-  — Canonical reference. Schur's Lemma and isotypic decomposition supply the block-diagonal structure of $\rho$; the vanishing of $T_{\alpha\beta}(g)$ on disjoint isotypic components (Paper~III, Lemma~\ref{lem:pure-sector-obstruction}) is a direct corollary.
-
-[5] P. Diaconis, *Group Representations in Probability and Statistics*. IMS Lecture Notes, 1988.
-  — Spectral analysis of group-valued random walks. The averaging operator $A$ governs equilibrium; this paper studies the per-generator transport before averaging — the matrix coefficients $T_{\alpha\beta}(g)$ whose spectral pattern $A$ averages out.
-
-### Association schemes (shared foundation with \cite{paper1})
-
-[6] E. Bannai and T. Ito, *Algebraic Combinatorics I: Association Schemes*. Benjamin/Cummings, 1984.
-  — Bose-Mesner algebra of the underlying permutation association scheme. The block-level spectral structure and primitive-idempotent decomposition — the input to this paper's transport analysis — are established in \cite{paper1} within this framework.
-
-[7] C.D. Godsil, *Algebraic Combinatorics*. Chapman & Hall, 1993.
-  — Coherent configurations and their commuting algebras. The Type II CP-permutation channel arises from the Bose-Mesner algebra of the Q₃ Hamming scheme acting on the corner-permutation block — the simplest example of commutative-permutation transport disjoint from the noncommutative Type I mechanism.
-
-### Trilogy cross-references
-
-\cite{paper1}, \cite{paper3}, and \cite{ccs} are defined in `papers/tex/trilogy.bib`.
+Papers I and III are cited internally as the spectral input and accessibility
+output of the transport topology \cite{paper1,paper3}; the CCS records the
+canonical numerical data \cite{ccs}.
 
 ### Code Availability
 

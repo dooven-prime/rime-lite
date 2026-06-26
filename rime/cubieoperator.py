@@ -298,7 +298,7 @@ class CubieSpectralOperator:
         谱域分类: m_eff = n_gen // 2 (偶数时), = n_gen (奇数时).
         """
         m_eff = self.n // 2 if self.n % 2 == 0 else self.n
-        return classify_spectral_field(list(self._layers.keys()), m_eff, name=f"n={self.n}")
+        return classify_spectral_field(list(self._layers.keys()), m_eff)
 
     # -- SpectralStructure bridge --
 
@@ -1037,6 +1037,18 @@ class CubieSpectralOperator:
         consistent commutant dimensions and eliminating duplicate SVD work.
 
         Artin-Wedderburn 分解 — 每层内的不可约表示结构
+
+        .. warning::
+           **LIMITATION:** This method operates within spectral
+           layers of A_18, but A_18 layers are NOT invariant under individual
+           ρ(g) ([A_18, ρ(g)] ~ 0.1). Layer-projected generators V†ρ(g)V are
+           non-unitary, so isotypic detection within layers reports incorrect
+           irrep dimensions (2D/3D instead of true 7/8/11/12).
+
+           For correct irrep decomposition, use full 228D commutant
+           (full_commutant_combinatorial) + Center(Comm) idempotents.
+           See experiments/exploratory/_exp_lie_saturation_ratio.py for the
+           working implementation.
         """
         layers = sorted(self._layers, reverse=True)
         result_blocks = {}
@@ -1296,9 +1308,9 @@ class CubieSpectralOperator:
         """K, κ₀, κ₁ on arbitrary projectors using cached generators + Lie generators.
 
         This is the CANONICAL path for Paper II/III transport computations.
-        Delegates to cached self.rho_moves (for K) and self.compute_lie_generators()
-        (for κ₀, κ₁) — NOT to the standalone compute_transport_kappa() which
-        redundantly recomputes everything.
+        Uses cached self.rho_moves and self.compute_lie_generators() — the
+        computation itself is delegated to the standalone
+        compute_transport_kappa_from_Xs() to avoid duplicating the loop logic.
 
         Args:
             projectors: list of (n,n) projector matrices (e.g. from center_decomposition).
@@ -1306,45 +1318,11 @@ class CubieSpectralOperator:
 
         Returns:
             (K, kappa0, kappa1) — three (n_sec, n_sec) arrays.
-            
-        使用缓存的 self.rho_moves (K) 和 self.compute_lie_generators() (κ₀, κ₁)
-        不调用 standalone compute_transport_kappa() —— 那个会重复计算一切
         """
-        n_sec = len(projectors)
-        K = np.zeros((n_sec, n_sec))
-        kappa0 = np.zeros((n_sec, n_sec))
-        kappa1 = np.zeros((n_sec, n_sec)) if compute_kappa1 else None
-
+        from rime.spectral_utils import compute_transport_kappa_from_Xs
         rhos = [v[1] for v in self.rho_moves.values()]
-        A_gs = self.compute_lie_generators()
-
-        # K & κ₀ — 单遍遍历
-        for a in range(n_sec):
-            Pa = projectors[a]
-            for b in range(n_sec):
-                Pb = projectors[b]
-                max_K, max_k0 = 0.0, 0.0
-                for i, rho_g in enumerate(rhos):
-                    max_K = max(max_K, float(np.linalg.norm(Pa @ rho_g @ Pb, 'fro')))
-                    max_k0 = max(max_k0, float(np.linalg.norm(Pa @ A_gs[i] @ Pb, 'fro')))
-                K[a, b] = max_K
-                kappa0[a, b] = max_k0
-
-        # κ₁ — 所有 commutator 对
-        if compute_kappa1:
-            for a in range(n_sec):
-                Pa = projectors[a]
-                for b in range(n_sec):
-                    Pb = projectors[b]
-                    max_k1 = 0.0
-                    for Ag in A_gs:
-                        for Ah in A_gs:
-                            comm = Ag @ Ah - Ah @ Ag
-                            max_k1 = max(max_k1,
-                                         float(np.linalg.norm(Pa @ comm @ Pb, 'fro')))
-                    kappa1[a, b] = max_k1
-
-        return K, kappa0, kappa1
+        Xs = self.compute_lie_generators()
+        return compute_transport_kappa_from_Xs(rhos, Xs, projectors, compute_kappa1=compute_kappa1)
 
     # ═══════════════════════════════════════════════════════════════
     # Display
@@ -1430,16 +1408,13 @@ def build_h_operators(gens_dict: dict) -> tuple[list[np.ndarray], list[str]]:
     return h_ops, h_labels
 
 
-def classify_spectral_field(eigs: list[float], m_eff: int, name: str | None = None) -> str:
+def classify_spectral_field(eigs: list[float], m_eff: int) -> str:
     """Classify spectral field as 'rational', 'sqrt5', or 'higher'.
     谱域分类:  m_eff = 有效分母 (= n_gen // 2 偶数时).
-    n=8 和 n=16 硬编码为 sqrt5 已知结果
     """
     all_rational = all(is_rational_form(lam, m_eff) for lam in eigs)
     if all_rational:
         return 'rational'
-    if name in ('n=8', 'n=16'):
-        return 'sqrt5'
     non_rat = [lam for lam in eigs if not is_rational_form(lam, m_eff)]
     if non_rat and all(is_in_qsqrt5(lam)[0] for lam in non_rat):
         return 'sqrt5'

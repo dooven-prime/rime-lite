@@ -49,7 +49,7 @@ The main papers argue. CCS certifies. Raw archive remembers.
 
 **Tables and figures.** `(CCS Table C3)`, `(CCS Fig. C0)` — the CCS figure directory (Appendix C) lists all canonical figures.
 
-The Terminology Convention at the end of Part 0 defines the four canonical terms: primitive sector, hybrid sector, transport-active, canonical sectorization.
+The Terminology Convention at the end of Part 0 defines the four canonical terms: QT/HT joint-spectral sector, hybrid sector, transport-active, canonical sectorization.
 
 ***
 ### Stability Layers
@@ -82,7 +82,9 @@ Four callout box types are used consistently throughout this specification to vi
 
 **How to use.** For any symbol or concept name, find its canonical definition location (column 3) and usage scope (column 4). All objects trace to a single authoritative first definition. Internal CCS sections (§X.Y) and paper sections are both listed.
 
-**Canonical policy.** Unless otherwise stated, all sector decompositions in this trilogy are defined with respect to the transport-generated commutative algebra $Z = \langle A_{\text{full}}, A_{\text{trans}} \rangle$. Sectorizations involving auxiliary block projectors (e.g. $P_{\text{nat}}$) are treated as externally refined decompositions and are not considered canonical.
+**Canonical policy.** Unless otherwise stated, all sector decompositions in this trilogy are defined with respect to the QT/HT commutative algebra
+$$Z_{\mathrm{QH}}=\langle A_{18},\mathrm{QT}_{\mathrm{all}},\mathrm{HT}_{\mathrm{all}}\rangle=\langle\mathrm{QT}_{\mathrm{all}},\mathrm{HT}_{\mathrm{all}}\rangle,$$
+where $A_{18}=(2/3)\mathrm{QT}_{\mathrm{all}}+(1/3)\mathrm{HT}_{\mathrm{all}}$. Sectorizations involving auxiliary block projectors (e.g. $P_{\text{nat}}$) are treated as externally refined decompositions and are not considered canonical.
 
 ### Layer A — Static Spectral Structure (Paper I)
 
@@ -112,10 +114,10 @@ Core object: $K_{\alpha\beta} = \max_g \|P_\alpha \rho(g) P_\beta\|_F$
 
 | Symbol | Concept | First Defined | Used In |
 |--------|---------|--------------|---------|
-| $S1$–$S9$ | 9 primitive sectors | Paper I §3; Paper II §2 | I, II, III |
-| $\operatorname{Center}\{A, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\mathrm{all}}\}$ | Commutative center (joint diagonalization) | Paper II §2 | II, III |
+| $S1$–$S9$ | 9 QT/HT joint-spectral sectors (legacy: primitive sectors) | Paper I §3; Paper II §2 | I, II, III |
+| $Z_{\mathrm{QH}}=\operatorname{Center}\{A, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\mathrm{all}}\}$ | QT/HT commutative center (joint diagonalization) | Paper II §2 | II, III |
 | $\mathrm{QT}_{\mathrm{all}}$, $\mathrm{HT}_{\mathrm{all}}$ | Quarter-turn / half-turn total averages | Paper II §2 | II, III |
-| $P_\alpha$ | Primitive sector projector | Paper II §2 | II, III |
+| $P_\alpha$ | QT/HT joint-spectral sector projector | Paper II §2 | II, III |
 | $K_{\alpha\beta} = \max_g \|P_\alpha \rho(g) P_\beta\|_F$ | Transport norm | Paper II §3.1 | II, III |
 | $\operatorname{Supp}_{\mathrm{nc}}(\alpha)$ | Noncommutative support | Paper II §4.3 | II, III |
 | $\|[\mathrm{QT}^0, \mathrm{QT}^1]\|_b$ | Per-block QT commutator norm | Paper II §4.2 | II, III |
@@ -148,7 +150,7 @@ Core object: $\kappa_1(P_\alpha,P_\beta) = \max_{g,h} \|P_\alpha [A_g, A_h] P_\b
 | **T7 morphism** | $K=\kappa_d=0$ for all $d$, yet reachable via compositional accessibility | Paper III §5.1 | II, III |
 | T7 Theorem | Compositional accessibility $\supsetneq$ Lie-generated accessibility (under C1–C3) | Paper III §5.2 | III |
 | C1 / C2 / C3 | T7 sufficient conditions | Paper III §5.2 | III |
-| Hybrid sector | Primitive sector spanning $\geq 2$ blocks | Paper III §2.5 | II, III |
+| Hybrid sector | QT/HT joint-spectral sector spanning $\geq 2$ blocks | Paper III §2.5 | II, III |
 | Transport-active hybrid | Hybrid sector sharing irrep support with sectors in both blocks | Paper III §2.5 | III |
 | Inert hybrid | Spectrally hybrid but transport-inactive (no shared irrep) | Paper III §2.5, App B | III |
 | $\mathcal{T}$, $\overline{\mathcal{T}}$ | Transport category, compositional accessibility | Paper III §4.4, §7 | III |
@@ -173,10 +175,10 @@ Core object: $\kappa_1(P_\alpha,P_\beta) = \max_{g,h} \|P_\alpha [A_g, A_h] P_\b
 
 | Term | Definition |
 |------|------------|
-| **primitive sector** | An indecomposable joint eigenspace of the maximal commutative subalgebra $\langle A, \mathrm{QT}, \mathrm{HT} \rangle$. There are 9 primitive sectors, labelled S1–S9. |
-| **hybrid sector** | A primitive sector whose projector has nonzero support on more than one block. There are 6 hybrid sectors: S1 (cp+ep), S3 (ep+eo), S4 (ep+co), S6 (ep+eo), S7 (cp+ep+co+eo), S9 (cp+co). S7 is the unique all-block hybrid spanning all four blocks. |
+| **QT/HT joint-spectral sector** | An indecomposable joint eigenspace of the canonical QT/HT commutative algebra $Z_{\mathrm{QH}}=\langle A_{18}, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\mathrm{all}}\rangle$. There are 9 sectors, labelled S1–S9. The legacy term "primitive sector" refers to the same object in the trilogy. |
+| **hybrid sector** | A QT/HT joint-spectral sector whose projector has nonzero support on more than one block. There are 6 hybrid sectors: S1 (cp+ep), S3 (ep+eo), S4 (ep+co), S6 (ep+eo), S7 (cp+ep+co+eo), S9 (cp+co). S7 is the unique all-block hybrid spanning all four blocks. |
 | **transport-active** | A sector pair $(\alpha, \beta)$ is transport-active if $K_{\alpha\beta} > 0$ (non-zero one-step transport). All 10 direct edges are block-preserving. |
-| **canonical sectorization** | The 9-sector decomposition defined by Center$\{A, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\mathrm{all}}\}$ without auxiliary block projectors. Sectorizations involving additional projectors (e.g. $P_{\text{nat}}$) are externally refined and non-canonical. |
+| **canonical sectorization** | The 9-sector decomposition defined by $Z_{\mathrm{QH}}=\operatorname{Center}\{A, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\mathrm{all}}\}$ without auxiliary block projectors. Sectorizations involving additional projectors (e.g. $P_{\text{nat}}$) are externally refined and non-canonical. |
 
 **Geometric & move conventions** (coordinate system, cubie ordering, generator encoding, action direction, block decomposition, numerical tolerances) are maintained in `docs/conventions.md`.
 
@@ -257,7 +259,7 @@ Core object: $\kappa_1(P_\alpha,P_\beta) = \max_{g,h} \|P_\alpha [A_g, A_h] P_\b
 
 **Outputs.** All objects and numerical values referenced by Parts II–III and the papers.
 
-![(CCS Fig. C0) Structural pipeline: trilogy weld — ρ(g)→A→{Vλ}→{Sα}→K→κ₀/κ₁→T7.](../figures/ccs/fig_c0_structural_pipeline.png)
+![(CCS Fig. C0) Structural pipeline: trilogy weld — ρ(g)→(QT_all,HT_all)→{Sα}→A18 collision quotient {Vλ}→K→κ₀/κ₁→T7.](../figures/ccs/fig_c0_structural_pipeline.png)
 
 
 ### 1.1 Representation Space
@@ -291,9 +293,21 @@ $$\mathrm{QT}^a = \tfrac{1}{2}(\rho(+a) + \rho(-a)),\qquad \mathrm{HT}^a = \rho(
 
 $A$ is Hermitian (since $\rho$ is orthogonal and $S = S^{-1}$, Proposition 2.1 of \cite{paper1}).
 
+The canonical sectorization is governed by the commuting QT/HT algebra:
+
+$$[\mathrm{QT}_{\mathrm{all}},\mathrm{HT}_{\mathrm{all}}]=0,\qquad
+Z_{\mathrm{QH}}=\langle A_{18},\mathrm{QT}_{\mathrm{all}},\mathrm{HT}_{\mathrm{all}}\rangle
+       =\langle \mathrm{QT}_{\mathrm{all}},\mathrm{HT}_{\mathrm{all}}\rangle.$$
+
+The nine sectors in §1.4 are the joint eigenspaces of this algebra. The six
+canonical layers in §1.3 are the collision quotient obtained by the linear
+projection
+
+$$L_{2/3}(q,h)=(2q+h)/3.$$
+
 ### 1.3 Six Canonical Layers
 
-Eigenspaces of $A_{18}$. Eigenvalues take the rational form $\lambda = 1 - k/9$.
+Eigenspaces of $A_{18}$. Eigenvalues take the rational form $\lambda = 1 - k/9$. Equivalently, these are the collision quotients of the nine QT/HT joint-spectral sectors under $L_{2/3}$.
 
 **Table C2 — Six Canonical Layers.**
 
@@ -310,11 +324,11 @@ $k = 5$ ($\lambda = 4/9$) is structurally absent; see §1.7 for the block-by-blo
 
 Canonical layer keys: $[1, 8/9, 7/9, 2/3, 5/9, 1/3]$ ($\lambda = 1 - k/9$, $k \in \{0,1,2,3,4,6\}$).
 
-### 1.4 Nine Primitive Sectors
+### 1.4 Nine QT/HT Joint-Spectral Sectors
 
-Minimal joint eigenspaces of $\operatorname{Center}\{A_{18}, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\mathrm{all}}\}$. Sectors are the finest spectral resolution achievable within the commutative center.
+Minimal joint eigenspaces of $\operatorname{Center}\{A_{18}, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\mathrm{all}}\}$, equivalently of the commuting QT/HT algebra $Z_{\mathrm{QH}}$. Sectors are the finest spectral resolution achievable within the canonical commutative center.
 
-**Table C3 — Nine Primitive Sectors.**
+**Table C3 — Nine QT/HT Joint-Spectral Sectors.**
 
 | Sector | $\dim$ | $k$ | $\lambda_{18}$ | $\lambda_{\mathrm{QT}}$ | $\lambda_{\mathrm{HT}}$ | Block support | Layer | Role |
 |--------|--------|-----|----------------|--------------------------|--------------------------|---------------|-------|------|
@@ -330,7 +344,7 @@ Minimal joint eigenspaces of $\operatorname{Center}\{A_{18}, \mathrm{QT}_{\mathr
 
 Sector ordering: CCS canonical — sort by $k = 9(1-\lambda_{18})$ ascending, then by dimension ascending within fixed $k$. Labels S1–S9 frozen by this table. Raw joint diagonalization yields 11 sectors; S4+S5 and S9+S10 are merged based on coincident eigenvalue triples (gap > $10^{-3}$ between genuinely distinct triples).
 
-$V_{5/9}$ splits into 3 sectors (S5, S6, S7). $V_{1/3}$ splits into 2 sectors (S8, S9).
+$V_{5/9}$ splits into 3 sectors (S5, S6, S7). $V_{1/3}$ splits into 2 sectors (S8, S9). Thus the six-layer $A_{18}$ decomposition is a coarse collision quotient of the nine-sector QT/HT joint spectrum.
 
 ![(CCS Fig. C1) Canonical 18-full spectrum: eigenvalue ladder with multiplicities (left) and 9-sector decomposition within each layer (right).](../figures/ccs/fig_c1_canonical_spectrum.png)
 
@@ -581,7 +595,7 @@ $$V_{5/9} = \underbrace{V_{5/9,\mathrm{cp}}}_{24} \oplus \underbrace{V_{5/9,\mat
 
 This is the principal resonance locus: four distinct block-level primitive idempotents from four different commuting algebras coincide at the same global eigenvalue. No other layer receives contributions from all four blocks.
 
-The $V_{5/9}$ layer splits into 3 primitive sectors under the commutative center (S5, S6, S7; §1.4). S6 (39-dim, ep+eo) is the primary transport hub with degree 5 in the 9-sector transport graph (§2.2).
+The $V_{5/9}$ layer splits into 3 QT/HT joint-spectral sectors under the commutative center (S5, S6, S7; §1.4). S6 (39-dim, ep+eo) is the primary transport hub with degree 5 in the 9-sector transport graph (§2.2).
 
 **Part I — Core Numerical Structures (cont.)**
 
@@ -912,7 +926,7 @@ The 356-dimensional cokernel encodes cross-layer linear constraints: each zero-t
 
 ### 2.11 S₃ Prototypes (C0 Negative Control)
 
-**Canonical declaration.** Unless explicitly stated otherwise, all sector decompositions in this trilogy are defined with respect to the transport-generated commutative algebra $Z = \langle A_{\text{full}}, A_{\text{trans}} \rangle$. Additional projectors such as $P_{\text{nat}}$ are treated as external refinement operators and are not part of the canonical transport geometry. The P_nat-refined decomposition is provided in Appendix~\ref{sec:s-nat3-reg6-externally-refined-pnat} as a robustness check only.
+**S₃ prototype declaration.** Unless explicitly stated otherwise within the S₃ prototype sections, the S₃ sector decompositions are defined with respect to the transport-generated commutative algebra $Z = \langle A_{\text{full}}, A_{\text{trans}} \rangle$. This is the S₃ analogue of the Rubik QT/HT sectorization; the canonical Rubik trilogy center is $Z_{\mathrm{QH}}$. Additional projectors such as $P_{\text{nat}}$ are treated as external refinement operators and are not part of the S₃ canonical transport geometry. The P_nat-refined decomposition is provided in Appendix~\ref{sec:s-nat3-reg6-externally-refined-pnat} as a robustness check only.
 
 **C0 diagnostic.** Both S₃ negative controls fail C0 (Center Incompleteness): Z's joint diagonalization coincides with the isotypic decomposition — all sector projectors are G-invariant (max‖[P_i, ρ(g)]‖ ≈ 10⁻¹⁵). K is purely diagonal. Without non-invariant sectors, off-diagonal transport is structurally impossible regardless of C1–C3 status. See Appendix~\ref{sec:c0-comparison-s-vs-rubik} for the C0 comparison table.
 
@@ -983,7 +997,7 @@ most enriched in EP block content, are the most fragile.
 
 #### II.1.2 Transport Persistence K_αβ(t)
 
-**Setup.** Evolve the 9 primitive sector projectors under e^{−itA_18} and recompute
+**Setup.** Evolve the 9 QT/HT joint-spectral sector projectors under e^{−itA_18} and recompute
 K_αβ(t), κ₀(t), κ₁(t), and T7 morphism count at each time.
 
 **Result.** Transport is structurally invariant under A_18 flow:
@@ -1043,7 +1057,9 @@ is **structurally protected** by a large spectral gap.
 
 ### II.2 Structural Bridge: Cross-Paper Data Pipeline
 
-**Purpose.** Weld the three papers into a single mathematical cascade: $\rho(g) \to A \to \{V_\lambda\} \to \{S_\alpha\} \to K_{\alpha\beta} \to \kappa_0/\kappa_1 \to \mathrm{T7}$. This section is the **cross-paper stitching layer** — it references authoritative definitions and emphasizes only the structural points that bind the papers together. Full canonical data live in the sections cited below; do not duplicate them here.
+**Purpose.** Weld the three papers into a single mathematical cascade:
+$$\rho(g)\to(\mathrm{QT}_{\mathrm{all}},\mathrm{HT}_{\mathrm{all}})\to\{S_\alpha\}\to A_{18}\text{ collision quotient }\{V_\lambda\}\to K_{\alpha\beta}\to \kappa_0/\kappa_1\to \mathrm{T7}.$$
+This section is the **cross-paper stitching layer** — it references authoritative definitions and emphasizes only the structural points that bind the papers together. Full canonical data live in the sections cited below; do not duplicate them here.
 
 **Dependencies.** `CubieSpectralOperator`, `center_decomposition`, `transport_kappa`, `BLOCK_RANGES`.
 
@@ -1054,15 +1070,15 @@ is **structurally protected** by a large spectral gap.
 The pipeline is a single mathematical cascade. Each level is defined authoritatively elsewhere; this section states the key structural invariant at each level and points to the canonical data.
 
 **Level 1 — \cite{paper1}: Spectral Origin.**
-Canonical spectral decomposition — 6 rational layers, k-set $\{0,1,2,3,4,6\}$ with the $k=5$ structural vacancy. Full data: (CCS §1.3, Table C2).
+Canonical spectral decomposition — 6 rational $A_{18}$ layers, k-set $\{0,1,2,3,4,6\}$ with the $k=5$ structural vacancy. These layers are the $L_{2/3}$ collision quotient of the QT/HT joint spectrum. Full data: (CCS §1.3, Table C2).
 
 **Level 2 — \cite{paper2}: Transport Topology.**
-9 primitive sectors from Center$\{A, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\mathrm{all}}\}$ joint diagonalization. Full data: (CCS Table C3, CCS §1.4, CCS Fig. C2).
+9 QT/HT joint-spectral sectors from Center$\{A, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\mathrm{all}}\}$ joint diagonalization. Full data: (CCS Table C3, CCS §1.4, CCS Fig. C2).
 
 **Level 3 — \cite{paper3}: Lie Accessibility.**
 $\kappa_0$ (gradient), $\kappa_1$ (curvature), T7 (discrete-only) hierarchy. Full data: (CCS §2.3–§2.5, Tables C10–C16).
 
-The pipeline is **fully closed**: every structural feature at \cite{paper3} (T7, $\kappa$ hierarchy, cross-block obstruction) is determined by the spectral decomposition at \cite{paper1} and the transport topology at \cite{paper2}. No new numerical parameters enter at \cite{paper3} — $\kappa_d$ is derived from $A_g = \log\rho(g)$, which are functions of the same $\rho(g)$ that define $A$ and $K_{\alpha\beta}$. The pipeline is **non-redundant**: $A$ captures spectral rationality (commutative, static), $K_{\alpha\beta}$ captures discrete transport topology (noncommutative, static), $\kappa_d$ captures the discrete/continuous gap (dynamical, obstruction-theoretic).
+The pipeline is **fully closed for the trilogy**: every structural feature at \cite{paper3} (T7, $\kappa$ hierarchy, cross-block obstruction) is determined by the QT/HT sectorization, the $A_{18}$ collision quotient, and the transport topology at \cite{paper2}. No new numerical parameters enter at \cite{paper3} — $\kappa_d$ is derived from $A_g = \log\rho(g)$, which are functions of the same $\rho(g)$ that define $A$ and $K_{\alpha\beta}$. The pipeline is **non-redundant**: $A_{18}$ captures spectral rationality (commutative, static), the QT/HT sectors provide the resolved transport vertices, $K_{\alpha\beta}$ captures discrete transport topology (noncommutative, static), and $\kappa_d$ captures the discrete/continuous gap (dynamical, obstruction-theoretic).
 
 #### II.2.2 Cross-Paper Invariant Verification
 
@@ -1073,7 +1089,8 @@ Every numerical quantity is consistent across all three papers. The values below
 | Total dimension | 228 | §1.1, Table C1 |
 | 6 eigenvalues ($A_{18}$) | 1, 8/9, 7/9, 2/3, 5/9, 1/3 | §1.3, Table C2 |
 | Block dimensions | cp=64, ep=144, co=8, eo=12 | §1.1, Table C1 |
-| 9 primitive sectors | S1–S9 (Table C3 ordering) | §1.4, Table C3 |
+| 9 QT/HT joint-spectral sectors | S1–S9 (Table C3 ordering) | §1.4, Table C3 |
+| $A_{18}$ collision quotient | $V_{5/9}=S5+S6+S7$, $V_{1/3}=S8+S9$ | §1.3–§1.4 |
 | $\|[\mathrm{QT}^0, \mathrm{QT}^1]\|_\mathrm{ep}$ | 2.74 (93.9% of total) | §2.1 |
 | $A_\mathrm{EP} \cong M_2(\mathbb{C})^4 \oplus M_1(\mathbb{C})^4$ | dim=20 | §2.8 |
 | $\dim \operatorname{Comm}(A_{18})$ | 804 | §2.8 |
@@ -1091,6 +1108,23 @@ Every numerical quantity is consistent across all three papers. The values below
 **S₃ negative controls.** Verified: 0 T7 morphisms under canonical Center{A_full, A_trans}. Z sectors = isotypic components → K diagonal → C0 fails. C2 also fails (no transport-active hybrid). Both negative controls demonstrate that C0–C3 are non-trivial: neither satisfies the full condition set. Full data: (CCS Appendix G).
 
 **N=2 pocket cube.** 4 sectors, 0 T7 morphisms — negative control. Hybrid sector presence alone does NOT guarantee T7. Full data: (CCS Appendix H).
+
+#### II.2.4 Bridges to Papers IV and V
+
+**Paper IV bridge.** The CCS certifies the data needed for the collision-geometry sequel: the nine QT/HT joint-spectral sectors, the $L_{2/3}$ collision quotient giving the six $A_{18}$ layers, and the nontrivial quotient components
+$$
+V_{5/9}=S5\oplus S6\oplus S7,\qquad
+V_{1/3}=S8\oplus S9.
+$$
+Paper IV develops the exact finite-point collision arithmetic from these certified values. The CCS records the canonical table and quotient; it does not duplicate the full affine-branch classification.
+
+**Paper V bridge.** Paper III's T7 result is the first certified separation between Lie-generated visibility and finite compositional visibility. This motivates, but does not prove, the later minimal-data problem for general sectorized operator systems:
+$$
+R_1(i,j;g)=1 \iff Q_iX_gQ_j\ne0,
+\qquad
+R_2(i,j;g,h)=1 \iff Q_i[X_g,X_h]Q_j\ne0.
+$$
+The CCS does not import the post-trilogy weighted Hall path program as a certified theorem. In particular, it makes no claim that $(R_1,R_2)$ universally determines first accessibility depth. The certified trilogy claim remains the Rubik T7 separation recorded in CCS §II.5 and Paper III.
 
 ### II.3 Generator-Family Structural Invariants
 
@@ -1557,7 +1591,7 @@ The increase from 5 to 6 spectral layers (relative to an 18-turn subset) reflect
 
 ### 9.1 The Transport Tensor: Definition and Properties
 
-The transport tensor $T_{\alpha\beta}(g) = P_\alpha \rho(g) P_\beta$ encodes how individual generators move amplitude between primitive sectors. Its aggregate norm defines the K matrix:
+The transport tensor $T_{\alpha\beta}(g) = P_\alpha \rho(g) P_\beta$ encodes how individual generators move amplitude between QT/HT joint-spectral sectors. Its aggregate norm defines the K matrix:
 
 $$K_{\alpha\beta} = \max_{g \in S} \|P_\alpha \rho(g) P_\beta\|_F$$
 
@@ -1573,7 +1607,7 @@ The edge detection threshold is $K > 0.01$. This threshold cleanly separates the
 
 ### 9.2 Noncommutative Support: The Transport–Commutator Identity
 
-> **Definition (Noncommutative Support).** \label{def:noncommutative-support} For a primitive sector $\alpha$ with projector $P_\alpha$, its noncommutative support is:
+> **Definition (Noncommutative Support).** \label{def:noncommutative-support} For a QT/HT joint-spectral sector $\alpha$ with projector $P_\alpha$, its noncommutative support is:
 >
 > $$\operatorname{Supp}_{\mathrm{nc}}(\alpha) = \{b \in \{\mathrm{cp}, \mathrm{ep}, \mathrm{co}, \mathrm{eo}\} : P_\alpha|_b \neq 0 \text{ and } \|[\mathrm{QT}^0, \mathrm{QT}^1]\|_b > 0\}$$
 >
@@ -1587,7 +1621,7 @@ Concretely: let $b$ be a block in $\operatorname{Supp}_{\mathrm{nc}}(\alpha) \ca
 
 ### 9.3 Transport Mechanism Classification
 
-**Structural Observation A (Two-Type Transport Mechanisms).** For any two distinct primitive sectors $\alpha \neq \beta$, direct transport arises from exactly one of two independent mechanisms:
+**Structural Observation A (Two-Type Transport Mechanisms).** For any two distinct QT/HT joint-spectral sectors $\alpha \neq \beta$, direct transport arises from exactly one of two independent mechanisms:
 
 **Type I (Noncommutative Mixing):** $K_{\alpha\beta} > 0$ precisely when $\operatorname{Supp}_{\mathrm{nc}}(\alpha) \cap \operatorname{Supp}_{\mathrm{nc}}(\beta) \neq \emptyset$. This detects 9 of 10 direct edges. The intersection of noncommutative supports is empirically necessary and sufficient for Type I transport.
 
@@ -1629,7 +1663,7 @@ S6 is the unique sector whose EP-restricted projector has nonzero overlap with a
 
 ### 9.6 Refinement Obstruction
 
-**Structural Observation C (M₂ Overlap Obstruction Caps Refinement).** The refinement chain terminates at 9 primitive sectors. Any operator $H$ that would split an M₂-coupled sector must satisfy $[H, Q_a] = 0$ for all per-axis QT operators (to lie in the commutative center). But a sector spanning two $M_2$ components cannot be split by any operator in the center — center elements act as scalars on each $M_2$ component and therefore cannot distinguish within-component subspaces. Hence any $H$ that splits an M₂-overlapping sector must fail to commute with some $Q_a$, placing it outside the commutative regime.
+**Structural Observation C (M₂ Overlap Obstruction Caps Refinement).** The QT/HT refinement chain terminates at 9 joint-spectral sectors. Any operator $H$ that would split an M₂-coupled sector must satisfy $[H, Q_a] = 0$ for all per-axis QT operators (to lie in the commutative center). But a sector spanning two $M_2$ components cannot be split by any operator in the center — center elements act as scalars on each $M_2$ component and therefore cannot distinguish within-component subspaces. Hence any $H$ that splits an M₂-overlapping sector must fail to commute with some $Q_a$, placing it outside the commutative regime.
 
 The obstruction is structural: the 4 $M_2(\mathbb{C})$ components in $A_{\mathrm{EP}}$ are the **atoms of the noncommutative obstruction lattice**. A decomposition can resolve finer than 9 sectors only by simultaneously diagonalizing noncommuting operators. The 9-sector decomposition is the **finest decomposition achievable within the commutative center** — any further refinement enters the noncommutative regime.
 
@@ -1679,7 +1713,7 @@ S8 (8-dim, pure CP, $k=6$) is the $|u| \in \{2,3\}$ eigenspace of the Q₃ hyper
 
 ### 10.1 Lemma 0 — Isotypic Support Necessity
 
-> **Lemma 0 (Isotypic Support Necessity).** \label{lem:isotypic-support-necessity} For a primitive sector $E_\alpha$ with projector $P_\alpha$, define its isotypic support $\operatorname{Supp}(E_\alpha) = \{\tau \in \hat{G} : \operatorname{Tr}(P_\alpha \Pi_\tau) > 0\}$, where $\Pi_\tau$ is the projector onto the $\tau$-isotypic component of $V$. If $\operatorname{Supp}(E_\alpha) \cap \operatorname{Supp}(E_\beta) = \emptyset$, then $T_{\alpha\beta}(g) = P_\alpha \rho(g) P_\beta = 0$ for all $g \in G$.
+> **Lemma 0 (Isotypic Support Necessity).** \label{lem:isotypic-support-necessity} For a joint-spectral sector $E_\alpha$ with projector $P_\alpha$, define its isotypic support $\operatorname{Supp}(E_\alpha) = \{\tau \in \hat{G} : \operatorname{Tr}(P_\alpha \Pi_\tau) > 0\}$, where $\Pi_\tau$ is the projector onto the $\tau$-isotypic component of $V$. If $\operatorname{Supp}(E_\alpha) \cap \operatorname{Supp}(E_\beta) = \emptyset$, then $T_{\alpha\beta}(g) = P_\alpha \rho(g) P_\beta = 0$ for all $g \in G$.
 >
 > *Proof.* Take $v \in E_\beta$. Decompose by isotypic components: $v = \sum_{\tau \in \operatorname{Supp}(E_\beta)} v_\tau$ where $v_\tau = \Pi_\tau v$. By Schur's lemma, $\rho(g)$ preserves each isotypic component: $\rho(g) v_\tau \in \text{Im}(\Pi_\tau)$. Hence $\rho(g) v = \sum_\tau \rho(g) v_\tau$ where each term lies in the $\tau$-isotypic component. $P_\alpha$ annihilates all $\tau \notin \operatorname{Supp}(E_\alpha)$ because $P_\alpha \Pi_\tau = 0$ when $\tau \notin \operatorname{Supp}(E_\alpha)$. Since $\operatorname{Supp}(E_\alpha) \cap \operatorname{Supp}(E_\beta) = \emptyset$, every isotypic component appearing in the decomposition of $\rho(g) v$ is outside $\operatorname{Supp}(E_\alpha)$. Therefore $P_\alpha \rho(g) v = 0$ for all $v \in E_\beta$, $g \in G$.
 >
@@ -1727,7 +1761,7 @@ The largest pure curvature enhancement is $V_{7/9} \leftrightarrow V_{2/3}$ (S3�
 
 ### 10.4 The T7 Theorem: Compositional Accessibility ⊋ Lie-Generated Accessibility
 
-> **Definition (T7 Morphism).** \label{def:t7-morphism} An ordered pair of distinct primitive sectors $(\alpha, \beta)$ with $\alpha \neq \beta$ is a T7 morphism if:
+> **Definition (T7 Morphism).** \label{def:t7-morphism} An ordered pair of distinct QT/HT joint-spectral sectors $(\alpha, \beta)$ with $\alpha \neq \beta$ is a T7 morphism if:
 >
 > 1. $K_{\alpha\beta} = 0$ — no single-generator transport
 > 2. $\kappa_d(\alpha,\beta) = 0$ for all $d \ge 0$ — no Lie-algebraic transport at any depth
@@ -1778,7 +1812,7 @@ The 2×2×2 pocket cube ($N=2$) has a 24-dimensional representation with 3 block
 **Results ($N=2$):**
 
 - 0 T7 morphisms
-- 0 hybrid sectors (every primitive sector is single-block)
+- 0 hybrid sectors (every joint-spectral sector is single-block)
 - C2 (transport-active hybrid projector) is unsatisfiable because there are no hybrid sectors
 
 **The C1–C3 diagnostic chain.** C2 requires at least one $M_2$-active block. Noncommutativity confined to a single block, even if non-zero, cannot satisfy C2. The $N=2$ case demonstrates that T7 is not an automatic consequence of having a multi-block representation — it requires the specific algebraic structure (noncommutative blocks + hybrid sectors) present in $N=3$ but absent in $N=2$.
@@ -2065,7 +2099,7 @@ Experiment scripts compute → `paper_data.md` freezes → this supplement publi
 | 6-layer spectrum, dims, block support | `experiments/paper1/spectral_ladder.py` |
 | $k=5$ genuinely absent | `experiments/paper1/k_absence.py` |
 | Projector algebra ($P_iP_j = \delta_{ij}P_i$) | `experiments/paper1/projector_algebra.py` |
-| 9 primitive sectors | `experiments/paper2/primitive_sectors.py` |
+| 9 QT/HT joint-spectral sectors | `experiments/paper2/primitive_sectors.py` |
 | $K$ matrix, transport graph | `experiments/paper2/transport_graph.py` |
 | Block noncommutativity | `experiments/paper2/supp_nc.py` |
 | EP algebra ≅ $M_2(\mathbb{C})^4 \oplus M_1(\mathbb{C})^4$ | `experiments/paper2/ep_algebra.py` |
@@ -2141,13 +2175,13 @@ the frozen canonical source data. For full definitions see
 
 `figures/ccs/fig_c0_structural_pipeline.png`
 
-Master "trilogy weld" diagram showing the single data pipeline: $\rho(g)$ → $A = \frac{1}{|S|}\sum\rho(s)$ → $\{V_\lambda\}$ (6 spectral layers) → $\{S_\alpha\}$ (9 primitive sectors) → $K_{\alpha\beta} = \max_g\|P_\alpha\rho(g)P_\beta\|_F$ → $\kappa_0, \kappa_1$ (Lie accessibility hierarchy) → T7 (Composition Escape). Seven stages flow downward with Paper I (blue), Paper II (purple), and Paper III (orange) color regions. Right-side annotations mark the mathematical operation at each stage.
+Master "trilogy weld" diagram showing the updated data pipeline: $\rho(g)$ → $(\mathrm{QT}_{\mathrm{all}},\mathrm{HT}_{\mathrm{all}})$ → $\{S_\alpha\}$ (9 QT/HT joint-spectral sectors) → $A_{18}$ collision quotient $\{V_\lambda\}$ (6 spectral layers) → $K_{\alpha\beta} = \max_g\|P_\alpha\rho(g)P_\beta\|_F$ → $\kappa_0, \kappa_1$ (Lie accessibility hierarchy) → T7 (Composition Escape). Seven stages flow downward with Paper I (blue), Paper II (purple), and Paper III (orange) color regions. Right-side annotations mark the mathematical operation at each stage.
 
 ### CCS Fig. C1 — Canonical Spectrum (§1.4)
 
 `figures/ccs/fig_c1_canonical_spectrum.png`
 
-Dual panel: eigenvalue ladder ($\lambda = 1 - k/9$, $k \in \{0,1,2,3,4,6\}$) with dimensional multiplicities; and the nine primitive sector decomposition (S1–S9) from joint diagonalization of $\operatorname{Center}\{A_{18}, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\mathrm{all}}\}$. The $V_{5/9}$ giant layer splits into three sectors; the structural $k=5$ gap is visible.
+Dual panel: eigenvalue ladder ($\lambda = 1 - k/9$, $k \in \{0,1,2,3,4,6\}$) with dimensional multiplicities; and the nine QT/HT joint-spectral sector decomposition (S1–S9) from joint diagonalization of $\operatorname{Center}\{A_{18}, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\mathrm{all}}\}$. The $V_{5/9}$ giant layer splits into three sectors; the structural $k=5$ gap is visible.
 
 ### CCS Fig. C2 — Transport Heatmap (§2.2)
 
@@ -2219,7 +2253,7 @@ Nine sector × four block binary grid showing Supp_nc presence per sector–bloc
 
 `figures/ccs/fig_c17_block_sector_alluvial.png`
 
-Three-panel diagram tracing the algebraic origin of transport topology: (left) 4 blocks with qualitative noncommutativity labels (strongly/weakly/commutative) → (center) 6 layers → (right) 9 sectors. Alluvial flows show how block support propagates through spectral layers into primitive sectors, explaining why S6 emerges as the primary hub and why cross-block transport requires composition.
+Three-panel diagram tracing the algebraic origin of transport topology: (left) 4 blocks with qualitative noncommutativity labels (strongly/weakly/commutative) → (center) 6 layers → (right) 9 sectors. Alluvial flows show how block support propagates through spectral layers into QT/HT joint-spectral sectors, explaining why S6 emerges as the primary hub and why cross-block transport requires composition.
 
 ### CCS Fig. C18 — Generator Defect Taxonomy (§I.3)
 
@@ -2346,7 +2380,7 @@ Total wall time for full canonical recomputation: ~5–10 minutes on commodity h
 | O1 | $\lambda = 1 - k/m$ for all face-symmetric families | B | 18-full, 12-quarter, 6-half, 10-partial, 21-full+slice |
 | O2 | $K_S = \mathbb{Q}$ for all face-symmetric families | B | All 5 face-symmetric families |
 | O3 | $K_S = \mathbb{Q}(\sqrt{5})$ for $n=8, 16$ | B | 2 symmetry-broken families |
-| O4 | 9 primitive sectors from Center$\{A, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\mathrm{all}}\}$ | A | Invariant under recomputation |
+| O4 | 9 QT/HT joint-spectral sectors from Center$\{A, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\mathrm{all}}\}$ | A | Invariant under recomputation |
 | O5 | 10 direct transport edges, all block-preserving | B | Threshold $K > 0.01$ |
 | O6 | S6 is the primary hub (degree 5), S1 isolated | A | Invariant under generator permutation |
 | O7 | 5 T7 morphisms ($N=3$), 0 T7 morphisms ($N=2$ control) | B | Binary detection; $K=0$ threshold sharp |
@@ -2356,6 +2390,9 @@ Total wall time for full canonical recomputation: ~5–10 minutes on commodity h
 | O11 | $\pi$: $\ker = 0$, $\operatorname{coker} = 356$ | A | SVD gap $> 10^{-8}$ |
 | O12 | 51 isotypic components, 1 multiplicity reservoir ($V_{5/9}^{(3,11)}$) | C | Not yet integrated into main data sections |
 | O13 | eo spectrum from $\mathbb{Z}_2$ phase classes (numerical-representation observation, see §1.5.4) | B | $2T_2$ multiplicity blocks analytic derivation; observed-rigid across all canonical computations |
+| O14 | Six canonical layers are the $L_{2/3}$ collision quotient of the 9 QT/HT joint-spectral sectors | A | Exact QT/HT eigenvalue table, §1.3–§1.4 |
+| O15 | $V_{5/9}=S5\oplus S6\oplus S7$ and $V_{1/3}=S8\oplus S9$ are the nontrivial canonical collision components | A | Exact joint eigenvalue signatures, §1.4 |
+| O16 | $\alpha=2/3$ is the canonical maximal interior collision parameter in the QT/HT interpolation | B | Verified in `docs/joint_spectral_geometry.md`; future Paper IV bridge |
 
 ### E.3 Problem Status Register
 
@@ -2581,7 +2618,7 @@ Individual search traces and move sequences are omitted. The purpose of the sear
 
 **Eigenvalues.** $A_{\text{full}}$: {1.0, 0.0}. $A_{\text{trans}}$: {1.0, 0.0, −1.0}.
 
-**Spectral decomposition.** 3 primitive sectors from Center{$A_{\text{full}}$, $A_{\text{trans}}$}.
+**Spectral decomposition.** 3 joint-spectral sectors from Center{$A_{\text{full}}$, $A_{\text{trans}}$}.
 
 | Sector | λ(A_full) | λ(A_trans) | dim | nat | reg | Block support | Type |
 |--------|-----------|------------|-----|-----|-----|--------------|------|
@@ -2754,7 +2791,7 @@ The purpose of this appendix is therefore not to reinterpret the Rubik cube as a
 
 **Broader finite-group representations.** The trilogy is verified on three systems: Rubik cube (228-dim), S₃ nat⊕reg (9-dim), S₃ reg⊕reg (12-dim). All have block-diagonal $\rho$ and symmetric generator sets. Whether the transport/accessibility architecture generalizes to non-block-diagonal representations, non-symmetric generator families, or infinite discrete groups is open. The structural question: which features are G-determined (universal) vs. S-conditioned (generator-specific)? Whether the noncommutative-support framework $\operatorname{Supp}_{\mathrm{nc}}$ extends canonically to non-permutation or non-semisimple transport geometries is unknown.
 
-**Alternative transport centers.** The canonical center $Z = \langle A_{\text{full}}, A_{\text{trans}} \rangle$ produces 9 sectors with rich transport topology. What alternative commutative subalgebras yield structurally distinct transport graphs? The S₃ externally refined decomposition (§G.2) demonstrates that expanding the center changes the sector count and transport pattern — but the compositional-accessibility gap persists under refinement. Whether the gap is invariant under all center choices is open.
+**Alternative transport centers.** The canonical Rubik center $Z_{\mathrm{QH}}=\langle A_{18},\mathrm{QT}_{\mathrm{all}},\mathrm{HT}_{\mathrm{all}}\rangle$ produces 9 sectors with rich transport topology. What alternative commutative subalgebras yield structurally distinct transport graphs? The S₃ externally refined decomposition (§G.2) demonstrates that expanding a center changes the sector count and transport pattern — but the compositional-accessibility gap persists under that refinement. Whether the gap is invariant under all center choices is open.
 
 **Continuous–Discrete Accessibility Separation.** The Rubik transport geometry establishes $\mathcal{L} \subsetneq \overline{\mathcal{T}}$: Lie-generated directions preserve sector support (Condition C3), while discrete finite compositions produce cross-sector accessibility through transport-active hybrid structures. This suggests a possible general paradigm — continuous/infinitesimal generators $\to$ local sector preservation, discrete/finite compositions $\to$ global cross-sector accessibility. Potential structural analogies include large gauge transformations in Yang–Mills theory, topological sector transitions, and compositional holonomy phenomena. These analogies are structural only and are not claimed as mathematical equivalences. Further spectral-triple interpretations and Dirac-operator robustness experiments are recorded in Appendix H.
 
@@ -2806,7 +2843,7 @@ The purpose of this appendix is therefore not to reinterpret the Rubik cube as a
 
 **Scalable commutant extraction.** The current commutant computation uses generator reduction + one-shot SVD ($d \leq 50$) or randomized Reynolds ($d > 50$). For representations beyond ~1000 dimensions, both methods become impractical. A scalable commutant algorithm — perhaps exploiting sparse generator structure or block-diagonal preconditioning — is open.
 
-**Automated transport decomposition.** The transport graph, Type I/II classification, and κ-hierarchy are currently computed through explicit projector construction and per-pair optimization. An automated pipeline that takes $\rho(G)$ and outputs the full transport/accessibility decomposition (layers → sectors → K → κ₀ → κ₁ → T7) without manual threshold tuning is a computational engineering goal.
+**Automated transport decomposition.** The transport graph, Type I/II classification, and κ-hierarchy are currently computed through explicit projector construction and per-pair optimization. An automated pipeline that takes $\rho(G)$ and outputs the full transport/accessibility decomposition (QT/HT sectors → $A_{18}$ collision layers → K → κ₀ → κ₁ → T7) without manual threshold tuning is a computational engineering goal.
 
 **Symbolic center reconstruction.** The canonical center $Z = \langle A, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\mathrm{all}} \rangle$ is constructed from numerically computed operators. A symbolic reconstruction — deriving the center generators directly from the group algebra structure without numerical diagonalization — would transform the CCS from a numerical constitution into an algebraic derivation. The Bose-Mesner framework for CP and the $M_2$ characterization for EP (§5) are partial steps in this direction.
 

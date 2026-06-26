@@ -129,40 +129,37 @@ def classify_sectors(sectors, dim_a, dim_b=None, dim_total=None, tol=1e-10):
 # 2. Transport & Lie curvature
 # ============================================================
 
-def compute_transport_kappa(rhos, projectors, compute_kappa1=True, cso=None):
+def compute_transport_kappa(rhos, projectors, compute_kappa1=True):
     """Compute transport tensor K, kappa_0, and optionally kappa_1.
 
-    DEPRECATED: prefer CubieSpectralOperator.transport_kappa(projectors) which
-    uses cached generators and Lie generators.  This standalone function is
-    retained only for S₃ prototypes and exploratory scripts that have no CSO.
+    Standalone computation — no CubieSpectralOperator dependency.
+    Used by Papers I/II/III for transport topology and Lie curvature.
 
-    If a CSO instance is passed via ``cso=``, this function DELEGATES to
-    cso.transport_kappa(projectors, compute_kappa1) — the canonical path.
+    K[a,b]     = max_g ‖P_a ρ(g) P_b‖_F        (transport tensor, Paper II eq.1)
+    kappa0[a,b] = max_g ‖P_a A_g P_b‖_F         (Lie depth 0, Paper III eq.2)
+    kappa1[a,b] = max_{g,h} ‖P_a [A_g,A_h] P_b‖_F  (Lie depth 1, Paper III eq.3)
+
+    where A_g = (log ρ(g) − log ρ(g)^H) / 2 are the skew-Hermitian generators.
 
     Args:
         rhos: list of (n,n) unitary representation matrices ρ(g).
-        projectors: list of (n,n) projector matrices.
-        compute_kappa1: if True, also compute κ₁ (commutator-based).
-        cso: optional CubieSpectralOperator for cached delegation.
+        projectors: list of (n,n) projector matrices P_α.
+        compute_kappa1: if True, also compute κ₁.
 
     Returns:
         (K, kappa0, kappa1) — three (n_sec, n_sec) arrays.
+        kappa1 is None if compute_kappa1=False.
     """
-    import warnings
-    if cso is not None:
-        return cso.transport_kappa(projectors, compute_kappa1=compute_kappa1)
-
-    warnings.warn(
-        "compute_transport_kappa() without cso= is deprecated. "
-        "Use cso.transport_kappa(projectors) for the canonical cached path.",
-        DeprecationWarning, stacklevel=2)
-
     n_sec = len(projectors)
     K = np.zeros((n_sec, n_sec))
     kappa0 = np.zeros((n_sec, n_sec))
-    kappa1 = np.zeros((n_sec, n_sec)) if compute_kappa1 else None
 
-    A_gs = [logm(rho_g) for rho_g in rhos]
+    # Compute skew-Hermitian Lie generators from unitary representations
+    A_gs = []
+    for rho_g in rhos:
+        X = logm(rho_g)
+        X = (X - X.conj().T) / 2
+        A_gs.append(X)
 
     for a in range(n_sec):
         Pa = projectors[a]
@@ -177,16 +174,73 @@ def compute_transport_kappa(rhos, projectors, compute_kappa1=True, cso=None):
             kappa0[a, b] = max_k0
 
     if compute_kappa1:
+        kappa1 = np.zeros((n_sec, n_sec))
         for a in range(n_sec):
             Pa = projectors[a]
             for b in range(n_sec):
                 Pb = projectors[b]
                 max_k1 = 0.0
-                for Ag in A_gs:
-                    for Ah in A_gs:
-                        comm = Ag @ Ah - Ah @ Ag
+                for g in range(len(A_gs)):
+                    for h in range(len(A_gs)):
+                        if g == h:
+                            continue
+                        comm = A_gs[g] @ A_gs[h] - A_gs[h] @ A_gs[g]
                         max_k1 = max(max_k1, np.linalg.norm(Pa @ comm @ Pb, 'fro'))
                 kappa1[a, b] = max_k1
+    else:
+        kappa1 = None
+
+    return K, kappa0, kappa1
+
+
+def compute_transport_kappa_from_Xs(rhos, Xs, projectors, compute_kappa1=True):
+    """Compute K, kappa_0, kappa_1 using pre-computed Lie generators Xs.
+
+    Like compute_transport_kappa() but accepts Xs directly — avoids
+    recomputing logm when Xs are already available (e.g., from
+    rep_utils.skew_log_generators).
+
+    Args:
+        rhos: list of unitary ρ(g) matrices (for K only).
+        Xs: list of skew-Hermitian Lie generators A_g.
+        projectors: list of projector matrices.
+        compute_kappa1: if True, also compute κ₁.
+
+    Returns:
+        (K, kappa0, kappa1)
+    """
+    n_sec = len(projectors)
+    K = np.zeros((n_sec, n_sec))
+    kappa0 = np.zeros((n_sec, n_sec))
+
+    for a in range(n_sec):
+        Pa = projectors[a]
+        for b in range(n_sec):
+            Pb = projectors[b]
+            max_K = 0.0
+            max_k0 = 0.0
+            for i, rho_g in enumerate(rhos):
+                max_K = max(max_K, np.linalg.norm(Pa @ rho_g @ Pb, 'fro'))
+                max_k0 = max(max_k0, np.linalg.norm(Pa @ Xs[i] @ Pb, 'fro'))
+            K[a, b] = max_K
+            kappa0[a, b] = max_k0
+
+    if compute_kappa1:
+        kappa1 = np.zeros((n_sec, n_sec))
+        for a in range(n_sec):
+            Pa = projectors[a]
+            for b in range(n_sec):
+                Pb = projectors[b]
+                max_k1 = 0.0
+                for g in range(len(Xs)):
+                    for h in range(len(Xs)):
+                        if g == h:
+                            continue
+                        comm = Xs[g] @ Xs[h] - Xs[h] @ Xs[g]
+                        max_k1 = max(max_k1, np.linalg.norm(Pa @ comm @ Pb, 'fro'))
+                kappa1[a, b] = max_k1
+    else:
+        kappa1 = None
 
     return K, kappa0, kappa1
 

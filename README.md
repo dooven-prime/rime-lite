@@ -2,11 +2,25 @@
 
 **Representation-Theoretic Investigation of Mathematical Emergence**
 
-This repository contains three companion papers and a Computational Canonical Specification (CCS).
+This repository currently publishes the three-paper RIME trilogy and its
+Computational Canonical Specification (CCS).
 
 The project studies spectral, transport, and Lie-accessibility structures arising from finite-group representations, using the 228-dimensional Rubik's Cube cubie representation as a canonical finite testbed.
 
 The Rubik's Cube group is not used here as a solving problem. It is used as an explicit, highly noncommutative finite representation with rich internal block structure, making it a useful laboratory for studying how spectra, sector decompositions, transport tensors, and Lie-generated closures interact.
+
+## Public Release Scope
+
+The current public release contains:
+
+- **Paper I**: spectral sector decomposition and rationality;
+- **Paper II**: noncommutative transport topology;
+- **Paper III**: Lie-generated versus compositional accessibility;
+- **CCS**: the computational specification supporting the trilogy.
+
+Later research directions, including joint-spectral collision geometry,
+minimal accessibility repair, and generator-set deformation, are active
+development notes. They are not part of the current public paper release.
 
 ---
 
@@ -27,7 +41,7 @@ The Rubik's Cube group is not used here as a solving problem. It is used as an e
 | get the one-page project summary | [`docs/overview.md`](docs/overview.md) |
 | read the papers in order | [`Paper I`](papers/paper1/Paper%20I.md) -> [`Paper II`](papers/paper2/Paper%20II.md) -> [`Paper III`](papers/paper3/Paper%20III.md) |
 | check the canonical numerical data | [`ccs/canonical_specification.md`](ccs/canonical_specification.md) |
-| understand what belongs in each paper | [`docs/PAPER_SCOPE.md`](docs/PAPER_SCOPE.md) |
+| understand the public trilogy scope | [`docs/PAPER_SCOPE.md`](docs/PAPER_SCOPE.md) |
 | inspect the core mathematical invariants | [`docs/CORE_INVARIANTS.md`](docs/CORE_INVARIANTS.md) |
 | reproduce the main computations | [`tests/run_all_tests.py`](tests/run_all_tests.py), [`experiments/`](experiments/) |
 
@@ -131,6 +145,9 @@ Important documents:
 - `docs/CORE_INVARIANTS.md` - six core structural invariants.
 - `docs/PAPER_SCOPE.md` - what belongs in each paper.
 - `ccs/canonical_specification.md` - canonical numerical and methodological supplement.
+
+Development roadmap documents may exist under `docs/`, but the public release
+entry point is the trilogy plus CCS listed above.
 
 ## Navigation by Task
 

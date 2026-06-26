@@ -58,8 +58,11 @@ K_{alpha,beta} = max_g || P_alpha rho(g) P_beta ||.
 
 **In scope.**
 
-- Nine primitive sectors from `Center{A_18, QT_all, HT_all}`.
-- Primitive sector terminology: minimal center-joint eigenspaces, not irreducible components.
+- Nine QT/HT joint-spectral sectors from `Center{A_18, QT_all, HT_all}`.
+- Sector terminology: minimal QT/HT joint eigenspaces, not irreducible components.
+- QT/HT joint spectrum: 9 rational `(q,h)` points.
+- Collision quotient: `A_18 = (2/3)QT_all + (1/3)HT_all`, so the six canonical layers are the `alpha=2/3` quotient of the 9 sectors.
+- Collision geometry: exact affine branch crossings, no shadow collisions, and `alpha=2/3` as the unique maximal interior collapse.
 - Transport tensor and `K` matrix between sectors.
 - 10 undirected direct transport edges.
 - Transport-active noncommutative block support `Supp_nc`.
@@ -78,6 +81,8 @@ A_EP ~= M_2(C)^4 + M_1(C)^4.
 **Primary files.**
 
 - `papers/paper2/Paper II.md`
+- `experiments/paper2/joint_spectral_geometry.py`
+- `experiments/paper2/collision_geometry.py`
 - `experiments/paper2/primitive_sectors.py`
 - `experiments/paper2/transport_graph.py`
 - `experiments/paper2/supp_nc.py`
