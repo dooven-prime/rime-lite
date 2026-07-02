@@ -14,11 +14,11 @@ Independent Researcher · RIME Project · 2026
 
 **Problem.** Paper I established the six rational eigenspaces of the canonical averaging operator $A_{18}$. For transport, however, the primitive object is finer: the commuting quarter-turn and half-turn averages $\mathrm{QT}_{\mathrm{all}}$ and $\mathrm{HT}_{\mathrm{all}}$ define nine joint-spectral sectors, and $A_{18} = (2/3)\mathrm{QT}_{\mathrm{all}} + (1/3)\mathrm{HT}_{\mathrm{all}}$ is their six-layer collision quotient. This paper studies which of those resolved sectors can exchange amplitude under a single generator.
 
-**Approach.** Direct transport between sectors is governed by **noncommutative support** — the set of representation blocks on which a sector projects and on which the per-axis quarter-turns fail to commute. The intersection of noncommutative supports of two sectors is observed as an exact criterion for noncommutative (Type I) direct transport across all verified Rubik sectors. A single commutative-permutation (Type II) channel arises separately from CP block adjacency.
+**Approach.** Direct transport between sectors is organized by **noncommutative support** — the set of representation blocks on which a sector projects and on which the per-axis quarter-turns fail to commute. In the verified Rubik 9-sector system, intersection of noncommutative supports is the observed criterion for noncommutative (Type I) direct transport. A single commutative-permutation (Type II) channel arises separately from CP block adjacency.
 
 **Results.** All 10 direct edges of the transport graph are block-preserving: 9 noncommutative edges driven by the M₂ components of $A_{\mathrm{EP}} \cong M_2(\mathbb{C})^4 \oplus M_1(\mathbb{C})^4$, and one commutative-permutation edge S8↔S9. Cross-block transport in the Rubik system requires length-2 composition (T7 morphisms), satisfying neither Type I nor Type II criterion at depth 1.
 
-**Implications.** The transport topology is not automatic — it requires center incompleteness ($Z_{\mathrm{QH}} \subsetneq C(\rho)$). The M₂ algebra of $A_{\mathrm{EP}}$ forces hub formation (S6), caps the QT/HT joint-spectral resolution at 9 sectors, and explains the absence of direct cross-block edges. \cite{paper3} develops the Lie-accessibility consequences of this transport topology and proves that cross-block compositional accessibility strictly exceeds Lie-generated accessibility: $\mathcal{L} \subsetneq \overline{\mathcal{T}}$.
+**Implications.** The transport topology is not automatic — it requires center incompleteness ($Z_{\mathrm{QH}} \subsetneq C(\rho)$). In the Rubik realization, the M₂ algebra of $A_{\mathrm{EP}}$ organizes hub formation (S6), caps the QT/HT joint-spectral resolution at 9 sectors, and explains the absence of direct cross-block edges. \cite{paper3} develops the Lie-accessibility consequences of this transport topology and proves that cross-block compositional accessibility strictly exceeds Lie-generated accessibility: $\mathcal{L} \subsetneq \overline{\mathcal{T}}$.
 
 ***
 
@@ -121,7 +121,7 @@ This paper is built from four mathematical objects. The transport tensor $T_{\al
 
 $$\boxed{A_{\text{EP}} \cong M_2(\mathbb{C})^4 \oplus M_1(\mathbb{C})^4 \;\Rightarrow\; \operatorname{Supp}_{\mathrm{nc}} \;\Rightarrow\; K_{\alpha\beta} \;\Rightarrow\; \text{Transport graph}}$$
 
-The chain is structural: the M₂ components of $A_{\text{EP}}$ create noncommutative supports on sectors; $\operatorname{Supp}_{\mathrm{nc}}$ (the set of transport-active noncommutative blocks) determines which pairs have Type I transport (9 of 10 edges); the K matrix records the resulting transport strengths; the transport graph is the shadow of Supp_nc geometry cast onto the 9-sector decomposition.
+The chain is structural in the Rubik computation: the M₂ components of $A_{\text{EP}}$ create noncommutative supports on sectors; $\operatorname{Supp}_{\mathrm{nc}}$ (the set of transport-active noncommutative blocks) organizes the Type I transport pairs (9 of 10 edges); the K matrix records the resulting transport strengths; the transport graph is the shadow of Supp_nc geometry cast onto the 9-sector decomposition.
 
 **Noncommutative support** (Definition~\ref{def:noncommutative-support}) is the dominant structural invariant for Type I transport:
 
@@ -140,7 +140,7 @@ Type II reveals a structural fact: **averaging commutativity $\neq$ generator co
 
 Both types are block-preserving. Cross-block transport requires length-2 composition. The five such pairs (T7) satisfy neither Type I nor Type II criterion (CCS-I §2.5). The Type I/II taxonomy is verified on the Rubik's cube (228-dim). The S₃ negative controls (CCS-I §2.11, Appendix G) confirm the general center-completeness mechanism: their S₃ transport centers coincide with the full commutant, forcing purely diagonal K and zero cross-block transport — demonstrating that hybrid sectors alone are insufficient for nontrivial transport topology.
 
-**Theorem (M₂ Principle).** The edge-permutation block algebra $A_{\text{EP}} = \langle Q_0, Q_1, Q_2 \rangle \cong M_2(\mathbb{C})^4 \oplus M_1(\mathbb{C})^4$ (20-dim semisimple) is the algebraic origin of the transport architecture. Its consequences form four structural observations:
+**Observation (M₂ Principle).** The edge-permutation block algebra $A_{\text{EP}} = \langle Q_0, Q_1, Q_2 \rangle \cong M_2(\mathbb{C})^4 \oplus M_1(\mathbb{C})^4$ (20-dim semisimple) is the observed algebraic origin of the Rubik transport architecture. Its consequences form four structural observations:
 
 1. **Observation A (Two-Type Transport)** — Type I via Supp_nc intersection; Type II via CP permutation adjacency
 2. **Observation B (Hub Necessity)** — the three active M₂ components force a unique hub sector (S6) intersecting all of them
@@ -271,7 +271,7 @@ $K$ defines a weighted graph on the 9 QT/HT joint-spectral sectors. $K_{\alpha\b
 
 The complete $K_{\alpha\beta}$ matrix at 9-sector resolution is tabulated in (CCS-I §2.2). The matrix is symmetric to $10^{-15}$, has 10 off-diagonal entries with $K > 0.01$, and exhibits the sparsity pattern shown in Fig.~\ref{fig:fig1-k-heatmap}. The diagonal entries $K_{\alpha\alpha} = \max_g \|P_\alpha \rho(g) P_\alpha\|_F$ measure intra-sector transport strength.
 
-![The $9 \times 9$ transport matrix heatmap at 9-sector resolution: color encodes $K_{\alpha\beta}$, circle markers mark 9 Type I noncommutative edges, and the purple border marks the lone Type II CP permutation channel S8$\leftrightarrow$S9. Of 36 sector pairs, exactly 10 have $K_{\alpha\beta} > 0$; all remaining pairs are disconnected. The transport topology is the shadow of the M$_2$ components in $A_{\mathrm{EP}}$, not an empirical observation.](../../figures/paper2/fig1_k_heatmap.png)
+![The $9 \times 9$ transport matrix heatmap at 9-sector resolution: color encodes $K_{\alpha\beta}$, circle markers mark 9 Type I noncommutative edges, and the purple border marks the lone Type II CP permutation channel S8$\leftrightarrow$S9. Of 36 sector pairs, exactly 10 have $K_{\alpha\beta} > 0$; all remaining pairs are disconnected. This is the verified Rubik transport classification at QT/HT 9-sector resolution.](../../figures/paper2/fig1_k_heatmap.png)
 
 ### Direct Edges (K > 0.01)
 
@@ -312,21 +312,23 @@ The sole Type II edge is S8$\leftrightarrow$S9 ($K = 2.83$, CP permutation chann
 
 The Transport Skeleton diagram (pure connectivity geometry with S6 primary hub, noncommutative core cluster, S8–S9 CP channel, and S1 isolation) is in the Unified Computational Supplement (CCS Fig. C16; formerly Fig. C3).
 
-### Transport Topology as Consequence of Supp_nc Geometry
+### Transport Preservation and Rubik Classification
 
-**Theorem (Transport Topology).** The transport graph at 9-sector resolution has the following properties, all of which follow from Supp_nc geometry (Observation A) and the M₂ obstruction (Observations B, C):
+**Theorem (Transport Preservation).** Direct transport is block-preserving in the Rubik cubie representation: if two sectors have disjoint physical block support, then $P_\alpha\rho(g)P_\beta=0$ for every generator $g$, hence $K_{\alpha\beta}=0$. In particular, all direct edges in the QT/HT 9-sector transport graph are block-preserving. This theorem does not classify which block-overlapping pairs transport; that is the Rubik computation recorded next.
+
+**Computational Proposition (Rubik Transport Graph Classification).** At QT/HT 9-sector resolution, the computed Rubik transport graph has the following properties:
 
 1. **All direct edges are block-preserving** — every $K_{\alpha\beta} > 0$ pair shares $\geq 1$ block. Zero cross-block direct edges. (Direct corollary of Paper~III, Lemma~\ref{lem:pure-sector-obstruction}, applying Schur's lemma to the block-diagonal $\rho$: $T_{\alpha\beta}(g) = 0$ whenever $\alpha, \beta$ share no block. Type I Supp_nc intersection and Type II CP adjacency both respect this block-locality.)
 2. **S1 is fully isolated** — $K_{1,\beta} = 0$ for all $\beta \neq 1$. S1 is a $G$-invariant subrepresentation. (Supp_nc(S1) = $\emptyset$ and no Type II CP adjacency)
-3. **S6 is the primary hub** — degree 5, the unique sector whose Supp_nc = {ep, eo} intersects 5 other sectors' noncommutative supports. (Observation B: M₂ overlap forces hub formation)
+3. **S6 is the primary hub** — degree 5, the unique sector whose Supp_nc = {ep, eo} intersects 5 other sectors' noncommutative supports. (Observation B: M₂ overlap organizes hub formation)
 4. **S7 is the secondary hub** — degree 3, Supp_nc = {ep, co, eo} bridges EP, CO, and EO blocks. (Corollary of Observation B)
-5. **Cross-block T7 morphisms** — 5 sector pairs with disjoint Supp_nc have $K = 0$ but are reachable via length-2 paths through the S6–S7–S9 hub complex. (Observation A: neither Type I nor Type II criterion met $\implies K = 0$)
+5. **Cross-block T7 morphisms** — 5 sector pairs with disjoint Supp_nc have $K = 0$ but are reachable via length-2 paths through the S6–S7–S9 hub complex. (verified Rubik classification: neither Type I nor Type II criterion is met, and $K = 0$)
 
 Figure~\ref{fig:fig5-s6-hub-signature} shows the full transport graph with hub structure, Type I/II edges, and T7 cross-block pairs.
 
-![The 9-sector transport graph with Type I edges (noncommutative, 9), Type II edge (CP permutation, S8--S9), and T7 cross-block pairs (dashed, 5), weighted by transport strength. S6 is the primary hub (degree 5) with noncommutative support {ep, eo} intersecting 5 other sectors; S7 is the secondary hub (degree 3) bridging EP, CO, and EO blocks; S1 is fully isolated. The hub structure is forced by the M$_2$ algebra of $A_{\mathrm{EP}}$, not by parameter tuning.](../../figures/paper2/fig5_s6_hub_signature.png)
+![The 9-sector transport graph with Type I edges (noncommutative, 9), Type II edge (CP permutation, S8--S9), and T7 cross-block pairs (dashed, 5), weighted by transport strength. S6 is the primary hub (degree 5) with noncommutative support {ep, eo} intersecting 5 other sectors; S7 is the secondary hub (degree 3) bridging EP, CO, and EO blocks; S1 is fully isolated. The hub structure is explained by the M$_2$ algebra of $A_{\mathrm{EP}}$, not by parameter tuning.](../../figures/paper2/fig5_s6_hub_signature.png)
 
-The transport graph is not an empirical observation — it is the **shadow of Supp_nc geometry**, cast onto the 9-sector decomposition by the M₂ components of $A_{\text{EP}}$.
+The transport graph is a **Rubik computation** organized by Supp_nc geometry: the Type I/II split, hub degrees, and T7 complement are verified at QT/HT 9-sector resolution. The general algebraic necessity of Supp_nc intersection is not claimed here.
 
 ### S1 Isolation
 
@@ -403,13 +405,13 @@ Equivalently: the set of blocks on which the sector has non-zero projection AND 
 
 **S8 has Supp_nc = $\emptyset$** because it has only CP support, and CP is exactly commutative. Figure~\ref{fig:fig2-supp-nc-mechanism} classifies all 36 sector pairs by transport mechanism.
 
-![Transport mechanism classification for all 36 sector pairs: Type I (noncommutative overlap, 9 edges, $K = 0.47$--$4.06$), Type II (CP permutation adjacency, 1 edge, S8$\leftrightarrow$S9 $K = 2.83$), T7 (cross-block composition-only, 5 pairs, $K = 0$), and Inert (21 pairs, no transport). Three criteria — block overlap, noncommutative support intersection, and CP adjacency — classify all 36 pairs without ambiguity. Supp$_{\mathrm{nc}}$ intersection is the exact criterion for Type I transport across all verified Rubik sectors.](../../figures/paper2/fig2_supp_nc_mechanism.png)
+![Transport mechanism classification for all 36 sector pairs: Type I (noncommutative overlap, 9 edges, $K = 0.47$--$4.06$), Type II (CP permutation adjacency, 1 edge, S8$\leftrightarrow$S9 $K = 2.83$), T7 (cross-block composition-only, 5 pairs, $K = 0$), and Inert (21 pairs, no transport). Three criteria — block overlap, noncommutative support intersection, and CP adjacency — classify all 36 pairs without ambiguity. Supp$_{\mathrm{nc}}$ intersection is the verified criterion for Type I transport across the Rubik 9-sector system.](../../figures/paper2/fig2_supp_nc_mechanism.png)
 
 ### Transport Mechanism Classification
 
-**Proposition (Two-Type Transport Mechanisms).** For any two distinct QT/HT joint-spectral sectors $\alpha \neq \beta$, direct transport arises from exactly one of two independent mechanisms:
+**Computational Proposition (Rubik Two-Type Mechanism Classification).** For any two distinct QT/HT joint-spectral sectors $\alpha \neq \beta$ in the verified Rubik 9-sector system, every direct transport edge arises from exactly one of two independent mechanisms:
 
-**Type I — Noncommutative mixing.** For all 9 non-CP transport edges, $\operatorname{Supp}_{\mathrm{nc}}(\alpha) \cap \operatorname{Supp}_{\mathrm{nc}}(\beta) \neq \emptyset$ is observed as an exact criterion for direct transport: $K_{\alpha\beta} > 0$.
+**Type I — Noncommutative mixing.** For all 9 non-CP transport edges in the verified Rubik 9-sector system, $\operatorname{Supp}_{\mathrm{nc}}(\alpha) \cap \operatorname{Supp}_{\mathrm{nc}}(\beta) \neq \emptyset$ is the observed criterion for direct transport: $K_{\alpha\beta} > 0$.
 The M₂ components of $A_{\text{EP}}$ (and weak CO/EO sidebands) create generator mixing that couples sectors sharing noncommutative block support.
 Within the Rubik's cube representation, no sector pair with overlapping noncommutative support has zero transport, and no sector pair (outside the CP channel) with non-zero transport has disjoint noncommutative support.
 This accounts for 9 of 10 direct edges.
@@ -585,7 +587,7 @@ The 9-sector decomposition is the finest **commutative** decomposition. Further 
 
 The obstruction lattice is characterized for the Rubik cube; a general theory of refinement obstruction for semisimple block algebras is open (future work).
 
-## Part V — Generator-Family Universality {-}
+## Part V — Generator-Family Comparison {-}
 
 ## The G-Determined / S-Conditioned Boundary
 
@@ -598,7 +600,7 @@ To answer this, we systematically vary the generator set $S$ while holding the r
 | Level | Determined by | Examples | Mechanism |
 |-------|--------------|----------|-----------|
 | **G-determined** | The representation $\rho(G)$ | $\dim \operatorname{Comm}(\rho) = 610$, block decomposition $V = \mathrm{cp} \oplus \mathrm{ep} \oplus \mathrm{co} \oplus \mathrm{eo}$, $\dim \mathrm{EP} = 144$, $A_{\mathrm{EP}} \cong M_2(\mathbb{C})^4 \oplus M_1(\mathbb{C})^4$, cross-block $K = 0$ | These are properties of $\rho$ as a $G$-module — independent of which $S \subset G$ generates the averaging operator |
-| **Center-determined** | The commutative subalgebra $\langle A_S, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\mathrm{all}} \rangle$ | Primitive sector count, hub identity, star topology presence, Supp_nc profiles | Stable across large generator families that preserve the per-axis QT/HT structure |
+| **Center-determined** | The commutative subalgebra $\langle A_S, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\mathrm{all}} \rangle$ | QT/HT joint-spectral sector count, hub identity, star topology presence, Supp_nc profiles | Stable across large generator families that preserve the per-axis QT/HT structure |
 | **S-conditioned** | The specific generator subset $S$ | Layer count, rationality of eigenvalues, layer dimensions, noncommutativity magnitude | Vary with generator coverage — the detailed spectral architecture depends on which symmetries are present |
 
 ### G-Determined Invariants
@@ -684,7 +686,7 @@ The 18 face-turn generators are the unique set (up to the $S_6 \times \mathbb{Z}
 
 Any deviation from these conditions — removing a face, dropping half-turns, restricting to a subset of axes — either preserves rationality through a different mechanism (e.g., $n = 6$ half-turns are fully commutative) or breaks it (e.g., $n = 8$ incomplete coverage yields $\mathbb{Q}(\sqrt{5})$). The 18-generator set is the **maximal inverse-closed generator family with complete face coverage** — and it is the completeness, not the maximality, that guarantees the rational spectrum.
 
-This result transforms \cite{paper1}'s central observation ("the spectrum is rational") from an empirical fact about one specific generator set into a **structural theorem about face-complete generator families**: rationality is observed to coincide with complete-face arithmetic closure across all verified families (the converse proof remains open).
+This comparison refines \cite{paper1}'s central observation ("the spectrum is rational") from one specific generator set to a verified face-family pattern: rationality is observed to coincide with complete-face arithmetic closure across all verified families, while the converse proof remains open.
 
 ### Transport Topology Under Symmetry Breaking
 
@@ -704,7 +706,7 @@ Three structural invariances are observed:
 
 3. **Star topology.** When a hub exists, the transport graph organizes as a star centered on that hub. The star topology is a robust organizational principle, not a fragile coincidence of the 18-generator family.
 
-The deformation is in the *density* of edges: $n = 8$ has 28 edges (hyper-connected, due to irrational eigenvalue splitting creating more sectors and denser Supp_nc overlaps), while $n = 6$ has only 3 (the commutative limit, where transport reduces to diagonal coupling). The architecture deforms but does not collapse — the underlying Supp_nc logic governs all cases.
+The deformation is in the *density* of edges: $n = 8$ has 28 edges (hyper-connected, due to irrational eigenvalue splitting creating more sectors and denser Supp_nc overlaps), while $n = 6$ has only 3 (the commutative limit, where transport reduces to diagonal coupling). The architecture deforms but does not collapse in the verified families — the same Supp_nc logic remains visible wherever the QT/HT partition is preserved.
 
 ***
 
@@ -712,7 +714,7 @@ The deformation is in the *density* of edges: $n = 8$ has 28 edges (hyper-connec
 
 The structural notions developed here — noncommutative support $\operatorname{Supp}_{\mathrm{nc}}$, the transport norm $K_{\alpha\beta}$, the M₂ mechanism, and the Type I/II classification — are general diagnostic tools for finite representation transport geometry. The specific transport topology reported in this paper (10 direct edges, S6 primary hub, Type I/II split) is the Rubik realization at 9-sector resolution. The transport topology described here should therefore be understood as a verified realization of the general transport framework, rather than a universal finite-group classification.
 
-The transport topology on 9 QT/HT joint-spectral sectors is driven by the M₂ principle: noncommutative simple components of the block algebras determine the Type I transport graph (9 of 10 direct edges via Supp_nc intersection). The single Type II exception (S8↔S9) reveals that averaging commutativity does not imply generator commutativity. The 18 face-turn generators are distinguished by complete-face arithmetic closure — the only generator family observed in the Rubik representation for which all four blocks participate in a cyclotomic phase cancellation that forces eigenvalue rationality.
+The transport topology on 9 QT/HT joint-spectral sectors is driven by the M₂ principle in the Rubik realization: noncommutative simple components of the block algebras account for the Type I transport graph (9 of 10 direct edges via Supp_nc intersection). The single Type II exception (S8↔S9) reveals that averaging commutativity does not imply generator commutativity. The 18 face-turn generators are distinguished by complete-face arithmetic closure — the only generator family observed in the Rubik representation for which all four blocks participate in a cyclotomic phase cancellation that forces eigenvalue rationality.
 
 The role of $A_{18}$ is therefore different in the spectral and transport stories. In \cite{paper1}, $A_{18}$ is the canonical averaging operator whose rational six-layer spectrum is the object to be explained. In the present paper, $A_{18}$ is a coarse projection of the QT/HT joint spectrum: the transport graph lives on the 9 resolved sectors, while the six $A_{18}$ layers are their collision quotient at the canonical weight $2:1$. This distinction is essential: transport topology is a property of the resolved joint-spectral sector geometry, not of the coarse layer count alone.
 
@@ -766,7 +768,7 @@ On a block $b$ where $[\mathrm{QT}^0, \mathrm{QT}^1]|_b = 0$, the per-axis QT op
 
 On a block $b$ where $[\mathrm{QT}^0, \mathrm{QT}^1]|_b > 0$, simultaneous diagonalization is impossible. The spectral projectors restricted to $b$ live in different eigenbases for different QT axes, creating a geometric obstruction to commutativity. When two sectors $\alpha, \beta$ both have non-zero projection on such a block, their projectors $P_\alpha|_b$ and $P_\beta|_b$ cannot both commute with all $\mathrm{QT}^a$ — the noncommutativity leaks into cross-sector coupling, producing $T_{\alpha\beta}(g) \neq 0$ for at least one generator $g$.
 
-This is the algebraic content of Observation A: Supp_nc intersection is the condition that two sectors' projectors live in overlapping noncommutative regions of the representation space, and the overlap forces generator-mediated mixing between them.
+This is the algebraic content of Observation A in the Rubik 9-sector system: Supp_nc intersection is the condition that two sectors' projectors live in overlapping noncommutative regions of the representation space, and the observed overlap produces generator-mediated mixing between them.
 
 ***
 
@@ -888,9 +890,9 @@ Block noncommutativity values are tabulated in the Noncommutativity Hierarchy se
 
 ***
 
-## Appendix E: Generator-Family Universality
+## Appendix E: Generator-Family Comparison
 
-Which transport properties survive generator-set variation? Compact comparison across the six families studied in Part V (Generator-Family Universality). Full atlas in (CCS-II §II.4).
+Which transport properties survive generator-set variation? Compact comparison across the six families studied in Part V. Full atlas in (CCS-II §II.4).
 
 ### E.1 Invariance Hierarchy
 
@@ -940,7 +942,7 @@ The transport graph developed here identifies the static compositional architect
 semisimple algebra and projected transport geometry. The transport tensor
 $T_{\alpha\beta}(g)=P_\alpha\rho(g)P_\beta$ is a matrix coefficient of the
 representation projected onto QT/HT joint-spectral sectors. Its sparsity
-pattern is governed by the noncommutative simple components of
+pattern is organized by the noncommutative simple components of
 $A_{\mathrm{EP}}$.
 
 The algebraic background is the Artin--Wedderburn and double-commutant theory

@@ -2,8 +2,17 @@
 
 **Representation-Theoretic Investigation of Mathematical Emergence**
 
-This repository currently publishes the three-paper RIME trilogy and its
-Computational Canonical Specification (CCS).
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21108197.svg)](https://doi.org/10.5281/zenodo.21108197)
+[![Paper IV DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21127271.svg)](https://doi.org/10.5281/zenodo.21127271)
+
+This repository currently publishes the three-paper RIME trilogy, its
+Computational Canonical Specification (CCS), and Paper IV of the RIME program.
+
+The public trilogy release is archived on Zenodo as
+[*The RIME Trilogy: Spectral, Transport, and Accessibility Structures in
+Finite Group Representations*](https://doi.org/10.5281/zenodo.21108197).
+Paper IV is archived separately as
+[*Collision Geometry of Joint Spectra*](https://doi.org/10.5281/zenodo.21127271).
 
 The project studies spectral, transport, and Lie-accessibility structures arising from finite-group representations, using the 228-dimensional Rubik's Cube cubie representation as a canonical finite testbed.
 
@@ -16,10 +25,11 @@ The current public release contains:
 - **Paper I**: spectral sector decomposition and rationality;
 - **Paper II**: noncommutative transport topology;
 - **Paper III**: Lie-generated versus compositional accessibility;
+- **Paper IV**: fixed joint-spectral collision geometry;
 - **CCS**: the computational specification supporting the trilogy.
 
-Later research directions, including joint-spectral collision geometry,
-minimal accessibility repair, and generator-set deformation, are active
+Later research directions, including minimal accessibility repair,
+generator-set deformation, and generic accessibility completion, are active
 development notes. They are not part of the current public paper release.
 
 ---
@@ -39,7 +49,7 @@ development notes. They are not part of the current public paper release.
 | If you want to... | Start with |
 |-------------------|------------|
 | get the one-page project summary | [`docs/overview.md`](docs/overview.md) |
-| read the papers in order | [`Paper I`](papers/paper1/Paper%20I.md) -> [`Paper II`](papers/paper2/Paper%20II.md) -> [`Paper III`](papers/paper3/Paper%20III.md) |
+| read the papers in order | [`Paper I`](papers/paper1/Paper%20I.md) -> [`Paper II`](papers/paper2/Paper%20II.md) -> [`Paper III`](papers/paper3/Paper%20III.md) -> [`Paper IV`](papers/paper4/Paper%20IV.md) |
 | check the canonical numerical data | [`ccs/canonical_specification.md`](ccs/canonical_specification.md) |
 | understand the public trilogy scope | [`docs/PAPER_SCOPE.md`](docs/PAPER_SCOPE.md) |
 | inspect the core mathematical invariants | [`docs/CORE_INVARIANTS.md`](docs/CORE_INVARIANTS.md) |
@@ -51,7 +61,8 @@ development notes. They are not part of the current public paper release.
 2. [`papers/paper1/Paper I.md`](papers/paper1/Paper%20I.md) - spectral decomposition and rationality.
 3. [`papers/paper2/Paper II.md`](papers/paper2/Paper%20II.md) - transport topology between primitive sectors.
 4. [`papers/paper3/Paper III.md`](papers/paper3/Paper%20III.md) - Lie-generated accessibility versus discrete composition.
-5. [`ccs/canonical_specification.md`](ccs/canonical_specification.md) - canonical data, controls, figures, and verification details.
+5. [`papers/paper4/Paper IV.md`](papers/paper4/Paper%20IV.md) - collision geometry of the QT/HT joint spectrum.
+6. [`ccs/canonical_specification.md`](ccs/canonical_specification.md) - canonical data, controls, figures, and verification details.
 
 ## Papers
 
@@ -60,19 +71,24 @@ development notes. They are not part of the current public paper release.
 | Paper I | [`papers/paper1/Paper I.md`](papers/paper1/Paper%20I.md) | Why does the averaging operator have a rational six-layer spectrum? |
 | Paper II | [`papers/paper2/Paper II.md`](papers/paper2/Paper%20II.md) | Why does the nine-sector transport graph have its observed sparse structure? |
 | Paper III | [`papers/paper3/Paper III.md`](papers/paper3/Paper%20III.md) | Why can discrete composition create channels invisible to Lie-generated accessibility? |
+| Paper IV | [`papers/paper4/Paper IV.md`](papers/paper4/Paper%20IV.md) | Why are the six spectral layers a collision quotient of a nine-point joint spectrum? |
 | CCS | [`ccs/canonical_specification.md`](ccs/canonical_specification.md) | Which numerical objects, figures, stability checks, and claim dependencies are canonical? |
 
-The three papers form a dependency chain:
+The public papers form a dependency chain:
 
 ```text
 spectral projector geometry
         -> transport topology
         -> Lie-generated vs compositional accessibility
+        -> joint-spectral collision geometry
 ```
 
 The unified structural theme is that projector-mediated composition can create accessibility structures that are not captured by the Lie algebra generated from the same representation.
 
-Papers I-III study this phenomenon at the spectral, transport, and accessibility levels respectively.
+Papers I-III study this phenomenon at the spectral, transport, and
+accessibility levels respectively. Paper IV begins the post-trilogy geometric
+line by showing that the six spectral layers are the collision quotient of a
+nine-point QT/HT joint spectrum.
 
 ## Main Objects
 

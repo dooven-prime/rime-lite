@@ -1,4 +1,4 @@
-# Spectral Sector Decomposition in the Rubik's Cube Representation
+﻿# Spectral Sector Decomposition in the Rubik's Cube Representation
 
 ### Rational Spectral Collapse, Primitive Idempotents, and Block Spectral Factorization
 
@@ -80,9 +80,9 @@ $$
 \omega^k + \omega^{-k} + \omega^{2k} \in \{3, 0\} \subset \mathbb{Z}, \qquad k \in \{0,1,2\}.
 $$
 
-When every face in the generator set is complete, this per-face cancellation forces $A$ to have rational entries, and the spectrum collapses into $\mathbb{Q}$ — all non-rational cyclotomic phases cancel. The spectrum is an interference pattern: rational eigenvalues correspond to complete destructive interference of $\omega$-phases across all faces. When face completeness is broken (as in the $n = 8$ and $n = 16$ families), rationality is lost and the spectral field extends to $\mathbb{Q}(\sqrt{5})$ — demonstrating that rationality is **not** generic but is forced by the arithmetic closure of the face-complete partition.
+When face completeness is broken in the verified $n = 8$ and $n = 16$ families, rationality is lost and the spectral field extends to $\mathbb{Q}(\sqrt{5})$ — demonstrating that rationality is **not** generic but is forced by the arithmetic closure of the face-complete partition.
 
-**Paper structure.** Setting and Notation sets up the representation and averaging operator. Main Results establishes the structural backbone — block compatibility, the spectral union theorem, and blockwise commutative algebras. Per-Block Projector Field Analysis analyzes the four block operators and derives the six spectral layers via eigenvalue coincidence. Generator Character Integrality establishes generator-level character integrality. The Arithmetic Engine proves the partition integrality criterion (Main Theorem) and closes the converse direction. Structural Consequences presents the numerical evidence and structural consequences: the $k = 5$ vacancy, the dominant $V_{5/9}$ layer, the layer asymmetry, and the irrationality transition under symmetry breaking. Discussion covers generality and open problems.
+**Paper structure.** Setting and Notation sets up the representation and averaging operator. Main Results establishes the structural backbone — block compatibility, the spectral union theorem, and blockwise commutative algebras. Per-Block Projector Field Analysis analyzes the four block operators and derives the six spectral layers via eigenvalue coincidence. Generator Character Integrality establishes generator-level character integrality. The Arithmetic Engine proves the partition integrality criterion (Main Theorem) and establishes the conditional converse within the verified face-symmetric setting. Structural Consequences presents the numerical evidence and structural consequences: the $k = 5$ vacancy, the dominant $V_{5/9}$ layer, the layer asymmetry, and the irrationality transition under symmetry breaking. Discussion covers generality and open problems.
 
 ## Setting and notation
 
@@ -554,7 +554,7 @@ $$
 
 ### Proof.
 
-This is a standard linear algebra fact: kernels of rational matrices admit rational bases, and the orthogonal projector constructed from a rational basis has rational entries. Since $X \in M_{n \times d}(\mathbb{Q})$, the Gram matrix $X^\top X \in M_d(\mathbb{Q})$ is invertible with rational determinant, and by Cramer's rule its inverse is also rational: $(X^\top X)^{-1} \in M_d(\mathbb{Q})$. Therefore $P_{\lambda} = X(X^\top X)^{-1} X^\top \in M_n(\mathbb{Q})$. The theorem calls this fact into the service of the arithmetic criterion — it is not a new claim, but a precise identification of the classical mechanism that closes the converse direction.
+This is a standard linear algebra fact: kernels of rational matrices admit rational bases, and the orthogonal projector constructed from a rational basis has rational entries. Since $X \in M_{n \times d}(\mathbb{Q})$, the Gram matrix $X^\top X \in M_d(\mathbb{Q})$ is invertible with rational determinant, and by Cramer's rule its inverse is also rational: $(X^\top X)^{-1} \in M_d(\mathbb{Q})$. Therefore $P_{\lambda} = X(X^\top X)^{-1} X^\top \in M_n(\mathbb{Q})$. The theorem calls this fact into the service of the arithmetic criterion — it is not a new claim, but a precise identification of the classical mechanism behind the conditional converse within the verified face-symmetric setting.
 
 **$\lambda \in \mathbb{Q} \Rightarrow P_{\lambda} \in M_n(\mathbb{Q})$.** Since $A \in M_n(\mathbb{Q})$ and $\lambda \in \mathbb{Q}$, the matrix $A - \lambda I \in M_n(\mathbb{Q})$. The eigenspace $E_{\lambda} = \ker(A - \lambda I)$ is the nullspace of a rational matrix — a homogeneous linear system with rational coefficients. Gaussian elimination over $\mathbb{Q}$ produces a basis of vectors in $\mathbb{Q}^n$. Let $X \in M_{n \times d}(\mathbb{Q})$ be the matrix whose columns form such a basis (where $d = \dim E_{\lambda}$).
 
@@ -633,7 +633,7 @@ Averaging a random set of 18 matrices in $\mathrm{GL}(228, \mathbb{C})$ almost n
 
 **2. Partition integrality (Structural Rationality Criterion).** The face partition forces the per-face eigenspace trace sums to be integers (verified for the Rubik face-complete family). A finite sum of integers divided by integer dimensions is rational. This is the arithmetic closure step — it requires both the partition and the integrality hypothesis. Without the partition, the trace sum is an unconstrained real number; rationality is not forced.
 
-**3. Phase cancellation ($\mathbb{Z}_3 \to \mathbb{Q}$).** The corner-orientation block is the only source of irrational entries in the representation (all other blocks have generators over $\mathbb{Z}$). On a complete face, the three moves contribute $\omega^k + \omega^{-k} + \omega^{2k} \in \{3, 0\} \subset \mathbb{Z}$ — the $\omega$ and $\omega^2$ terms cancel exactly (CCS-III §7.2, Lemma~\ref{lem:co-block-face-sum-integrality}). This eliminates the only non-rational component. When face completeness is broken ($n=8$, $n=16$ families), the $\omega$ terms survive and the spectrum acquires irrational components in $\mathbb{Q}(\sqrt{5})$ (§7.4).
+**3. Phase cancellation ($\mathbb{Z}_3 \to \mathbb{Q}$).** The corner-orientation block is the only source of irrational entries in the representation (all other blocks have generators over $\mathbb{Z}$). On a complete face, the three moves contribute $\omega^k + \omega^{-k} + \omega^{2k} \in \{3, 0\} \subset \mathbb{Z}$ — the $\omega$ and $\omega^2$ terms cancel exactly (CCS-III §7.2, Lemma~\ref{lem:co-block-face-sum-integrality}). This eliminates the only non-rational component. In the verified broken-face families $n=8$ and $n=16$, the $\omega$ terms survive and the spectrum acquires irrational components in $\mathbb{Q}(\sqrt{5})$ (§7.4).
 
 **4. Blockwise compatibility.** The four blocks carry independent but mutually compatible spectral structures: cp and ep have Bose–Mesner algebras over $\mathbb{Q}$ (CCS-III §7.4); co and eo carry abelian phase constraints defined over $\mathbb{Q}$ for face-symmetric $S$. The block-diagonal structure (Theorem~\ref{thm:block-compatibility-lemma}) ensures that the global spectrum is the union of four $\mathbb{Q}$-rational block spectra.
 
@@ -706,9 +706,12 @@ The spectrum of $A$ is therefore not a property of the full Rubik's cube group �
 
 ### Why Irrationality Appears After Symmetry Breaking
 
-The rational mechanism described above is sharp: it operates when face completeness holds and breaks when it does not. Two symmetry-broken families test this boundary directly.
+The rational mechanism described above is sharp in the verified broken-face
+families. Two symmetry-broken families test this boundary directly.
 
-**Theorem 7.1 (Irrationality under broken face symmetry).** Let $S$ be a generator set that is not a union of complete faces. The spectral field of $A_S$ extends beyond $\mathbb{Q}$:
+**Theorem 7.1 (Verified Broken-Face Families).** For the verified
+symmetry-broken generator families $n=8$ and $n=16$, the spectral field of
+$A_S$ extends beyond $\mathbb{Q}$:
 
 $$\lambda_{\pm} = \begin{cases}
 \dfrac{5 \pm \sqrt{5}}{8} \approx 0.9045,\; 0.3455, & n = 8 \text{ (8 of 12 quarter-turns)} \\[10pt]
@@ -727,9 +730,28 @@ The spectral field is $\mathbb{Q}(\sqrt{5})$ — the maximal real subfield of th
 | $n=8$ (asym.) | 4 | 5 | 2 | $\mathbb{Q}(\sqrt{5})$ |
 | $n=16$ (asym.) | 8 | 6 | 2 | $\mathbb{Q}(\sqrt{5})$ |
 
-**Mechanism.** When face completeness is broken, the adjacency algebras on cp/ep fail to close over $\mathbb{Q}$ — their minimal polynomials acquire an irreducible quadratic factor. The $\omega$ and $\omega^2$ terms that cancel on complete faces via $\omega + \omega^2 + 1 = 0$ survive when faces are incomplete, concentrating in a $C_5$-type spectral block. The residual un-cancelled cyclotomic contribution produces a 2-dimensional real subspace whose structure constants lie in $\mathbb{Q}(\sqrt{5})$.
+**Mechanism.** In the verified broken-face families, the adjacency algebras on
+cp/ep fail to close over $\mathbb{Q}$; their minimal polynomials acquire an
+irreducible quadratic factor. The $\omega$ and $\omega^2$ terms that cancel on
+complete faces via $\omega + \omega^2 + 1 = 0$ survive in these incomplete
+families, concentrating in a $C_5$-type spectral block. The residual
+un-cancelled cyclotomic contribution produces a 2-dimensional real subspace
+whose structure constants lie in $\mathbb{Q}(\sqrt{5})$.
 
-The key structural fact is that the boundary is observed to be sharp: **mechanism present $\Rightarrow$ rationality; mechanism absent $\Rightarrow$ irrationality**, across all verified families. There is no intermediate regime, no continuous degradation. The same group, the same representation, the same block structure, the same eigenvalue form $\lambda = 1 - k/m$ — the only variable is whether the generator set is a union of complete faces. This negative control is the strongest single piece of evidence for the partition integrality mechanism: it rules out explanations based on the specific generator count (18), the dimension (228), or the group (Rubik's cube). The rational spectrum is not an artefact of these parameters — it is a direct consequence of face completeness, and it collapses the moment face completeness is removed. Figure~\ref{fig:fig4-symmetry-breaking} shows this sharp rationality/irrationality boundary across the 18-full and $n=8$ families. The full field-extension analysis is in (CCS-III §7.5); the $n=21$ full+slice family confirming that face-symmetry extends naturally beyond 18 generators is in (CCS-III §7.6).
+The key structural fact is that the boundary is observed to be sharp across the
+verified continuum: the face-complete and closed families remain rational,
+while the two tested broken-face families $n=8$ and $n=16$ acquire
+$\mathbb{Q}(\sqrt{5})$ eigenvalues. There is no observed intermediate regime in
+this census. This negative control is the strongest single piece of evidence
+for the partition integrality mechanism: it rules out explanations based only
+on the specific generator count (18), the dimension (228), or the group
+(Rubik's cube). We conjecture that the field-extension phenomenon extends to
+arbitrary non-face-symmetric generator families, but this necessity statement
+is not proved here. Figure~\ref{fig:fig4-symmetry-breaking} shows the
+rational/irrational contrast across the 18-full and $n=8$ families. The full
+field-extension analysis is in (CCS-III §7.5); the $n=21$ full+slice family
+confirming that face-symmetry extends naturally beyond 18 generators is in
+(CCS-III §7.6).
 
 ![Symmetry breaking at the rationality boundary: 18-full generators (rational spectrum, 6 eigenvalues, field $\mathbb{Q}$) vs $n=8$ asymmetric generators ($\mathbb{Q}(\sqrt{5})$ spectrum, 7 eigenvalues, 2 irrational). The same group, representation, and block structure produce rationality under face-complete generators and irrationality under incomplete faces. Rationality is not generic — it is a direct consequence of partition integrality, not the group or the dimension.](../../figures/paper1/fig4_symmetry_breaking.png)
 
@@ -747,7 +769,7 @@ Two independent mechanisms determine the Rubik cube spectrum: block spectral fac
 
 The combination of these two mechanisms yields the observed six-layer rational spectrum. The Structure Theorem determines *which* eigenvalues can appear; the Main Theorem forces those eigenvalues to be rational.
 
-**Structural Consequences.** The spectral collapse is non-generic — it requires face completeness, partition integrality, $\mathbb{Z}_3$ phase cancellation, and blockwise compatibility, which jointly produce the rational collapse in the Rubik cube family. Commutativity of the generators is not the mechanism: the blockwise algebras are commutative even though the full generator algebra is not, and $A$ only sees the commutative core (§7.2). The spectral sparsity is structural: $\mathcal{K}(A) = \bigcup_B \mathcal{K}_B$ with each block's $k$-set determined by a low-dimensional algebraic object, the co block acting as an arithmetic filter, and resonance merging collapsing 10 primitive idempotents to 6 global layers (§7.3). Rationality is not generic: under symmetry breaking ($n=8$, $n=16$), the spectral field extends to $\mathbb{Q}(\sqrt{5})$, confirming that face completeness marks an observed sharp rationality boundary across all verified families — mechanism present $\Rightarrow$ rationality, mechanism absent $\Rightarrow$ irrationality (§7.4).
+**Structural Consequences.** The spectral collapse is non-generic: it requires face completeness, partition integrality, $\mathbb{Z}_3$ phase cancellation, and blockwise compatibility, which jointly produce the rational collapse in the Rubik cube family. Commutativity of the generators is not the mechanism: the blockwise algebras are commutative even though the full generator algebra is not, and $A$ only sees the commutative core (§7.2). The spectral sparsity is structural: $\mathcal{K}(A) = \bigcup_B \mathcal{K}_B$ with each block's $k$-set determined by a low-dimensional algebraic object, the co block acting as an arithmetic filter, and resonance merging collapsing 10 primitive idempotents to 6 global layers (§7.3). Rationality is not generic: in the verified broken-face families $n=8$ and $n=16$, the spectral field extends to $\mathbb{Q}(\sqrt{5})$, giving the tested rational/irrational boundary discussed in §7.4.
 
 **Position of this paper.** Paper I identifies the spectral objects and explains why their eigenvalues are rational — it establishes a complete arithmetic mechanism whose structural scope is delineated below. The Structure Theorem and Main Theorem are proven unconditionally for the Rubik's cube representation. The proven-vs-observed status of each claim is detailed in the Computational Supplement [10, Appendix E].
 
@@ -775,7 +797,7 @@ The following are established unconditionally for the Rubik cube representation:
 - **Resonance collapse**: 10 block-level primitive idempotents merge to exactly 6 global layers via eigenvalue coincidence $\lambda = 1 - k/m$.
 - **Partition integrality** (Structural Rationality Criterion): Face-complete generator partitions force rational eigenvalues (verified sufficient mechanism).
 - **Rationality mechanism**: Phase cancellation $\omega + \omega^2 + 1 = 0$ on the $\mathbb{Z}_3$ corner-orientation block, together with Bose–Mesner integral trace pairing on the permutation blocks, provides the arithmetic closure (full derivation: CCS-III §7.4).
-- **Sharp symmetry-breaking boundary** (Theorem~\ref{thm:irrationality-under-broken-face-symmetry}): When face completeness is broken, the spectral field extends from $\mathbb{Q}$ to $\mathbb{Q}(\sqrt{5})$. The boundary is sharp across all verified families — mechanism present $\Rightarrow$ rationality, mechanism absent $\Rightarrow$ irrationality.
+- **Verified broken-face field extension** (Theorem 7.1): In the verified broken-face families $n=8$ and $n=16$, the spectral field extends from $\mathbb{Q}$ to $\mathbb{Q}(\sqrt{5})$. The general extension to arbitrary non-face-symmetric generator families is conjectural.
 
 ### Structural Scope
 
@@ -860,7 +882,7 @@ Compact comparison of generator families. Full symmetry-breaking atlas and eigen
 
 #### Rational/Irrational Boundary
 
-The spectral field is $\mathbb{Q}$ when the generator set is a union of complete faces (partition integrality, Structural Rationality Criterion). It extends to $\mathbb{Q}(\sqrt{5})$ when face completeness is broken. The boundary is observed to be sharp — no intermediate regime has been found in any tested family. The CP block is protected by the Q₃ Hamming scheme (integer Krawtchouk eigenvalues) and stays rational regardless of generator coverage; only noncommutative blocks (EP, EO) develop irrational eigenvalues under symmetry breaking.
+The spectral field is $\mathbb{Q}$ for the verified face-complete and closed generator families in this census. It extends to $\mathbb{Q}(\sqrt{5})$ for the verified broken-face families $n=8$ and $n=16$. We conjecture that this rational/irrational boundary extends to arbitrary non-face-symmetric generator families, but the general necessity statement is open. The CP block is protected by the $Q_3$ Hamming scheme (integer Krawtchouk eigenvalues) and stays rational regardless of generator coverage in the tested families; the observed irrational eigenvalues localize in noncommutative blocks (EP, EO).
 
 ***
 

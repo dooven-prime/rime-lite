@@ -1,4 +1,4 @@
-# Accessibility Structure in the Rubik's Cube Representation
+﻿# Accessibility Structure in the Rubik's Cube Representation
 
 ### Lie-Generated Accessibility, Hybrid Sectors, and T7 Morphisms
 
@@ -470,7 +470,7 @@ Lie-generated accessibility has zero cross-block morphisms; compositional access
 
 **N1 (C1 necessity — why the general proof is hard).** Without shared noncommutative support, C1 asserts that no T7 morphism exists. In the abelian case, all irreps are 1-dimensional; the center $Z$ acts as simultaneous eigenvalues on each irrep, making the sector partition a refinement of the irrep decomposition. Disjoint irreps yield sectors with disjoint isotypic support — Lemma~\ref{lem:pure-sector-obstruction} then forces K=0, blocking the composition path. For the isotypic case (both blocks carry only one irrep type), the shared support is automatic.
 
-The difficulty in the general non-abelian case is that the center $Z$ can mix distinct irreps within the same eigenspace (eigenvalue coincidence), producing spectral hybrids that carry disjoint irreps — a "not shared" scenario that could, in principle, circumvent C1. The question is whether such a spectral hybrid can ever be transport-active. All small-group systems tested to date — S₃ (all representation pairs: nat⊕reg, reg⊕reg, nat⊕nat, std⊕sign, etc.), Q₃ (quaternion, 8 elements), S₄ (24 elements), and Z₂×Z₂ — satisfy C1 necessity: no T7 morphism arises without a shared irrep. The S₃ "false T7" (standard vs. trivial⊕sign) confirms the mechanism: eigenvalue coincidence creates a hybrid projector spanning both blocks, but without a shared irrep the hybrid fails the computable C2 criterion (Tr(P_α Π_τ) = 0 for all τ common to α and β).
+The difficulty in the general non-abelian case is that the center $Z$ can mix distinct irreps within the same eigenspace (eigenvalue coincidence), producing spectral hybrids that carry disjoint irreps — a "not shared" scenario that could, in principle, circumvent C1. The question is whether such a spectral hybrid can ever be transport-active. All small-group systems tested to date — S₃ (all representation pairs: nat⊕reg, reg⊕reg, nat⊕nat, std⊕sign, etc.), Q₃ (quaternion, 8 elements), S₄ (24 elements), and Z₂×Z₂ — provide evidence for C1 necessity: no T7 morphism was found without a shared irrep. The S₃ "false T7" (standard vs. trivial⊕sign) confirms the mechanism: eigenvalue coincidence creates a hybrid projector spanning both blocks, but without a shared irrep the hybrid fails the computable C2 criterion (Tr(P_α Π_τ) = 0 for all τ common to α and β).
 
 **N2 (C2 necessity).** If no transport-active hybrid sector exists between $\alpha$ and $\beta$, no length-2 composition path through any mediating sector $\gamma$ can carry amplitude between the two blocks. The contrapositive is built into the definition of C2: a hybrid $P_\gamma$ is transport-active iff $K_{\alpha\gamma} > 0$ and $K_{\gamma\beta} > 0$ — exactly the third T7 condition. C2 necessity is therefore a definitional restatement of the composition-path requirement and does not require separate proof.
 
@@ -610,7 +610,7 @@ The T7 phenomenon is the gap between the two accessibility structures. It is not
 
 $$\boxed{\;\mathcal{L} \;\subsetneq\; \overline{\mathcal{T}}\;}$$
 
-T7 morphisms are precisely the cross-block morphisms outside Lie-generated accessibility. Concretely: S2(eo) can reach S4(ep+co) through S6 in compositional accessibility, but no element of $\mathcal{U}(\mathcal{L})$ — no Lie polynomial, no iterated commutator, no finite linear combination of products of $A_g$ — can couple them. The structural gap decomposes cleanly by block structure: within each block, Lie-generated accessibility equals compositional accessibility. The entire gap is cross-block.
+T7 morphisms are precisely the cross-block morphisms outside Lie-generated accessibility. Concretely: S2(eo) can reach S4(ep+co) through S6 in compositional accessibility, but no element of $\mathcal{U}(\mathcal{L})$ — no Lie polynomial, no iterated commutator, no finite linear combination of products of $A_g$ — can couple them. The proved obstruction is cross-block: Lie-generated accessibility is block-preserving, while projector-mediated composition can cross the block boundary. In the verified Rubik T7 experiments, no within-block discrepancy between Lie-generated and compositional accessibility has been observed.
 
 ### Connection to Classical Accessibility Theory
 
@@ -782,7 +782,7 @@ No single irreducible $\tau$ appears in the isotypic supports of $E_\alpha$, $E_
 | Transport-active? | **Yes** | **No** (inert) |
 | T7 morphisms | 0 | 0 |
 
-This counterexample proves that C1 (shared noncommutative support) is a necessary condition: eigenvalue coincidence can produce a hybrid projector spanning both blocks without shared irrep geometry, but such an inert hybrid provides no composition path. The distinction between spectral hybrids and transport-active hybrids (see definition above) is not a definitional nuance — it is the operational boundary between T7 existence and T7 absence.
+This counterexample supports the C1 necessity mechanism in this inert-hybrid class: eigenvalue coincidence can produce a hybrid projector spanning both blocks without shared irrep geometry, but such an inert hybrid provides no composition path. The distinction between spectral hybrids and transport-active hybrids (see definition above) is not a definitional nuance — it is the operational boundary between T7 existence and T7 absence.
 
 ***
 
