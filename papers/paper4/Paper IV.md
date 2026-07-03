@@ -39,8 +39,6 @@ Independent Researcher · RIME Project · 2026
 | $\alpha_{ij}$ | collision parameter for branches $i,j$ |
 | $\Gamma_{\mathrm{int}}(P)$ | interior collision graph of $P$ |
 | $\Delta(\alpha)$ | layer-count drop at $\alpha$: $|P|-|\{L_\alpha(p):p\in P\}|$ |
-| $\operatorname{conv}(P)$ | convex hull of the finite joint spectrum |
-| $\varphi_P$ | support function of $\operatorname{conv}(P)$ |
 | $\mathrm{QT}_{\mathrm{all}}$ | average over the 12 quarter-turn generators |
 | $\mathrm{HT}_{\mathrm{all}}$ | average over the 6 half-turn generators |
 | $A_{18}$ | canonical Rubik average $(2/3)\mathrm{QT}_{\mathrm{all}}+(1/3)\mathrm{HT}_{\mathrm{all}}$ |
@@ -565,111 +563,6 @@ For commuting Hermitian $Q,H$, the eigenspaces of $A(\alpha)=\alpha Q+(1-\alpha)
 
 This proposition is the abstract finite-point form of the Rubik
 six-layer/nine-sector relation.
-
-***
-
-## Convex Envelope Reformulation
-
-The collision quotient has an equivalent geometric reading in terms of linear
-projections of a finite point arrangement. There is also a useful convex
-envelope shadow of the same construction.
-
-Let
-
-$$
-K=\operatorname{conv}(P)\subset\mathbb{R}^2.
-$$
-
-For a covector $u\in(\mathbb{R}^2)^*$, define the support function
-
-$$
-\varphi_P(u)
-  =
-  \sup_{p\in P}\langle u,p\rangle
-  =
-  \sup_{x\in K}\langle u,x\rangle .
-$$
-
-For the projection direction
-
-$$
-u_\alpha=(\alpha,1-\alpha),
-$$
-
-the upper envelope of the affine branch arrangement is
-
-$$
-\varphi_P(u_\alpha)
-  =
-  \max_i \lambda_i(\alpha).
-$$
-
-Thus the affine branch arrangement determines a piecewise-linear convex
-support function. When the maximizing set
-
-$$
-F_\alpha
-  =
-  \{p\in P:\langle u_\alpha,p\rangle=\varphi_P(u_\alpha)\}
-$$
-
-has more than one point, the support envelope has a degeneracy: the projection
-direction exposes a positive-dimensional face or a multiple-point supporting
-class. In this boundary sense, branch collision appears as non-unique support.
-
-This reformulation should be kept separate from the full collision quotient.
-The quotient $P/\!\sim_\alpha$ records every fiber of the projection
-$L_\alpha$, including collisions among non-maximal or interior points. The
-support function records only the exposed envelope.
-
-By contrast, the collision quotient records the full finite-fiber projection
-data, including exposed and non-exposed collisions.
-
-The convex-envelope picture is not a replacement for Theorem 1. It is a dual
-boundary projection of the same finite arrangement.
-
-### Legendre-Dual Coordinates
-
-On the open interval $0<\alpha<1$, one may pass from normalized interpolation
-coordinates to an affine dual coordinate. For example, set
-
-$$
-t=\frac{\alpha}{1-\alpha}.
-$$
-
-Then
-
-$$
-L_\alpha(q,h)
-  =
-  (1-\alpha)(tq+h).
-$$
-
-After removing the positive scalar $(1-\alpha)$, the upper envelope is
-
-$$
-\Phi(t)
-  =
-  \sup_{(q,h)\in P}(tq+h).
-$$
-
-This is the Legendre-Fenchel support function of the finite polytope
-$\operatorname{conv}(P)$ in the one-parameter family of directions $(t,1)$.
-It is a piecewise-linear convex function of $t$. Breakpoints of $\Phi$ mark
-changes in the exposed maximizer. Multiple exposed maximizers are envelope
-degeneracies.
-
-The full spectral quotient remains finer than this convex dual picture: two
-non-maximal branches may collide without changing the upper envelope. For that
-reason, the primary object of Paper IV remains the finite branch arrangement
-and its collision quotient, while the convex support function gives a compact
-dual language for the exposed geometry of the arrangement.
-
-In this language, Paper IV can be reinterpreted as studying the envelope
-geometry of the joint spectral polytope $P$ under the linear projections
-$L_\alpha$. Collision quotients record projection degeneracies of the finite
-point set; the Legendre-dual support function records the exposed convex
-envelope as a piecewise-linear object.
 
 ***
 

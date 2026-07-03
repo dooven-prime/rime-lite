@@ -4,15 +4,22 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21108197.svg)](https://doi.org/10.5281/zenodo.21108197)
 [![Paper IV DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21127271.svg)](https://doi.org/10.5281/zenodo.21127271)
+[![Paper V DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21152972.svg)](https://doi.org/10.5281/zenodo.21152972)
+[![Paper VI DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21154656.svg)](https://doi.org/10.5281/zenodo.21154656)
 
 This repository currently publishes the three-paper RIME trilogy, its
-Computational Canonical Specification (CCS), and Paper IV of the RIME program.
+Computational Canonical Specification (CCS), and Papers IV--VI of the RIME
+program.
 
 The public trilogy release is archived on Zenodo as
 [*The RIME Trilogy: Spectral, Transport, and Accessibility Structures in
 Finite Group Representations*](https://doi.org/10.5281/zenodo.21108197).
 Paper IV is archived separately as
 [*Collision Geometry of Joint Spectra*](https://doi.org/10.5281/zenodo.21127271).
+Paper V is archived separately as
+[*Accessibility Repair Calculus*](https://doi.org/10.5281/zenodo.21152972).
+Paper VI is archived separately as
+[*Phase Transition Geometry on the Generator-Set Moduli Space*](https://doi.org/10.5281/zenodo.21154656).
 
 The project studies spectral, transport, and Lie-accessibility structures arising from finite-group representations, using the 228-dimensional Rubik's Cube cubie representation as a canonical finite testbed.
 
@@ -26,11 +33,13 @@ The current public release contains:
 - **Paper II**: noncommutative transport topology;
 - **Paper III**: Lie-generated versus compositional accessibility;
 - **Paper IV**: fixed joint-spectral collision geometry;
+- **Paper V**: local accessibility repair calculus for length-2 witnesses;
+- **Paper VI**: generator-set deformation and accessibility-wall geometry;
 - **CCS**: the computational specification supporting the trilogy.
 
-Later research directions, including minimal accessibility repair,
-generator-set deformation, and generic accessibility completion, are active
-development notes. They are not part of the current public paper release.
+Later research directions, including generic accessibility completion, are
+active development notes. They are not part of the current public paper
+release.
 
 ---
 
@@ -49,7 +58,7 @@ development notes. They are not part of the current public paper release.
 | If you want to... | Start with |
 |-------------------|------------|
 | get the one-page project summary | [`docs/overview.md`](docs/overview.md) |
-| read the papers in order | [`Paper I`](papers/paper1/Paper%20I.md) -> [`Paper II`](papers/paper2/Paper%20II.md) -> [`Paper III`](papers/paper3/Paper%20III.md) -> [`Paper IV`](papers/paper4/Paper%20IV.md) |
+| read the papers in order | [`Paper I`](papers/paper1/Paper%20I.md) -> [`Paper II`](papers/paper2/Paper%20II.md) -> [`Paper III`](papers/paper3/Paper%20III.md) -> [`Paper IV`](papers/paper4/Paper%20IV.md) -> [`Paper V`](papers/paper5/Paper%20V.md) -> [`Paper VI`](papers/paper6/Paper%20VI.md) |
 | check the canonical numerical data | [`ccs/canonical_specification.md`](ccs/canonical_specification.md) |
 | understand the public trilogy scope | [`docs/PAPER_SCOPE.md`](docs/PAPER_SCOPE.md) |
 | inspect the core mathematical invariants | [`docs/CORE_INVARIANTS.md`](docs/CORE_INVARIANTS.md) |
@@ -62,7 +71,9 @@ development notes. They are not part of the current public paper release.
 3. [`papers/paper2/Paper II.md`](papers/paper2/Paper%20II.md) - transport topology between primitive sectors.
 4. [`papers/paper3/Paper III.md`](papers/paper3/Paper%20III.md) - Lie-generated accessibility versus discrete composition.
 5. [`papers/paper4/Paper IV.md`](papers/paper4/Paper%20IV.md) - collision geometry of the QT/HT joint spectrum.
-6. [`ccs/canonical_specification.md`](ccs/canonical_specification.md) - canonical data, controls, figures, and verification details.
+6. [`papers/paper5/Paper V.md`](papers/paper5/Paper%20V.md) - accessibility repair calculus for length-2 witnesses.
+7. [`papers/paper6/Paper VI.md`](papers/paper6/Paper%20VI.md) - generator-set deformation and accessibility walls.
+8. [`ccs/canonical_specification.md`](ccs/canonical_specification.md) - canonical data, controls, figures, and verification details.
 
 ## Papers
 
@@ -72,6 +83,8 @@ development notes. They are not part of the current public paper release.
 | Paper II | [`papers/paper2/Paper II.md`](papers/paper2/Paper%20II.md) | Why does the nine-sector transport graph have its observed sparse structure? |
 | Paper III | [`papers/paper3/Paper III.md`](papers/paper3/Paper%20III.md) | Why can discrete composition create channels invisible to Lie-generated accessibility? |
 | Paper IV | [`papers/paper4/Paper IV.md`](papers/paper4/Paper%20IV.md) | Why are the six spectral layers a collision quotient of a nine-point joint spectrum? |
+| Paper V | [`papers/paper5/Paper V.md`](papers/paper5/Paper%20V.md) | What repairs binary support after path-commutator cancellation? |
+| Paper VI | [`papers/paper6/Paper VI.md`](papers/paper6/Paper%20VI.md) | How do spectral phases and accessibility data bifurcate under generator variation? |
 | CCS | [`ccs/canonical_specification.md`](ccs/canonical_specification.md) | Which numerical objects, figures, stability checks, and claim dependencies are canonical? |
 
 The public papers form a dependency chain:
@@ -144,12 +157,26 @@ The cube is used as a finite representation-theoretic testbed.
 ```text
 rime-lite/
 |-- rime/                 core representation and spectral computation
-|-- experiments/          reproducibility scripts and figure generation
+|-- experiments/          reproducibility scripts, diagnostics, and figures
+|   |-- paper1/           Paper I support scripts
+|   |-- paper2/           Paper II / Paper IV joint-spectral support scripts
+|   |-- paper3/           Paper III support scripts
+|   |-- paper4/           Paper IV collision-geometry support scripts
+|   |-- paper5/           Paper V accessibility-repair support scripts
+|   |-- paper6/           Paper VI active support scripts
+|   |   `-- archive/      historical Paper VI exploratory scripts only
+|   |-- paper7/           active development scripts for generic completion
+|   `-- cross_ref/        related-work diagnostics, not theorem sources
 |-- tests/                invariant checks, plain Python assertions
 |-- papers/
 |   |-- paper1/           Paper I markdown source
 |   |-- paper2/           Paper II markdown source
 |   |-- paper3/           Paper III markdown source
+|   |-- paper4/           Paper IV markdown source
+|   |-- paper5/           Paper V markdown source
+|   |-- paper6/           Paper VI markdown source
+|   |-- paper7/           active development draft
+|   `-- tex/              PDF build pipeline and shared bibliography
 |-- ccs/                  Computational Canonical Specification source
 |-- figures/              frozen generated figures used by papers
 `-- docs/                 project overview, invariants, scope, conventions
@@ -159,11 +186,15 @@ Important documents:
 
 - `docs/overview.md` - one-page project overview.
 - `docs/CORE_INVARIANTS.md` - six core structural invariants.
-- `docs/PAPER_SCOPE.md` - what belongs in each paper.
+- `experiments/README.md` - experiment map and support-script guide.
 - `ccs/canonical_specification.md` - canonical numerical and methodological supplement.
 
-Development roadmap documents may exist under `docs/`, but the public release
-entry point is the trilogy plus CCS listed above.
+Additional program notes may exist under `docs/`, but the public release entry
+point is Papers I--VI plus CCS listed above.
+
+Paper-specific support scripts live under `experiments/paperN/`.
+`experiments/paper6/archive/` is provenance only, not part of the canonical
+Paper VI reproducibility suite.
 
 ## Navigation by Task
 
@@ -175,6 +206,9 @@ entry point is the trilogy plus CCS listed above.
 | inspect transport topology | [`experiments/paper2/transport_graph.py`](experiments/paper2/transport_graph.py) |
 | inspect noncommutative support | [`experiments/paper2/supp_nc.py`](experiments/paper2/supp_nc.py) |
 | inspect T7 morphisms | [`experiments/paper3/t7_detection.py`](experiments/paper3/t7_detection.py) |
+| reproduce Paper IV collision geometry | [`experiments/paper4/`](experiments/paper4/) |
+| reproduce Paper V accessibility repair | [`experiments/paper5/`](experiments/paper5/) |
+| reproduce Paper VI deformation tables | [`experiments/paper6/`](experiments/paper6/) |
 | run fast invariant checks | [`tests/run_all_tests.py`](tests/run_all_tests.py) |
 | run slow verification checks | [`tests/run_slow_tests.py`](tests/run_slow_tests.py) |
 | find generated figures | [`figures/`](figures/) |
@@ -211,6 +245,9 @@ Representative experiment scripts:
 python experiments/paper1/spectral_ladder.py
 python experiments/paper2/primitive_sectors.py
 python experiments/paper3/t7_detection.py
+python experiments/paper4/rubik_collision_quotient.py
+python experiments/paper5/matrix_nondegeneracy.py
+python experiments/paper6/tangent_commutator_map.py
 ```
 
 All numerical claims in the papers are intended to be traceable to explicit tests, experiment scripts, or CCS tables.

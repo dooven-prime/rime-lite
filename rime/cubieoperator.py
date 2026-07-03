@@ -1146,10 +1146,11 @@ class CubieSpectralOperator:
                 cur, cv = [oi], evals[oi]
         groups.append(cur)
 
-        sectors, projectors = [], []
+        sectors, projectors, sector_bases = [], [], []
         for indices in groups:
             V = evecs[:, indices]
-            P = V @ V.T.conj()
+            V_orth, _ = np.linalg.qr(V)        # orthonormal sector basis
+            P = V_orth @ V_orth.T.conj()        # projector from orthonormal basis
             dim = int(round(np.trace(P).real))
 
             # 在每个扇区内取 A_18/A_qt/A_ht 的特征值
@@ -1170,13 +1171,63 @@ class CubieSpectralOperator:
 
             sectors.append({'dim': dim, 'lam_18': lam_18, 'lam_QT': lam_QT, 'lam_HT': lam_HT})
             projectors.append(P)
+            sector_bases.append(V_orth)
 
         # CCS canonical order: k = 9*(1-λ) 升序, 同 k 内 dim 升序
         ccs_order = sorted(range(len(sectors)),
                            key=lambda i: (round(9 * (1 - sectors[i]['lam_18'])), sectors[i]['dim']))
         sectors = [sectors[i] for i in ccs_order]
         projectors = [projectors[i] for i in ccs_order]
-        return {'sectors': sectors, 'projectors': projectors, 'n_sectors': len(sectors)}
+        sector_bases = [sector_bases[i] for i in ccs_order]
+
+        # MorphoSymm-style change-of-basis: Q = [V_0 | V_1 | ... | V_{s-1}]
+        Q = np.hstack(sector_bases) if sector_bases else np.zeros((0, 0), dtype=complex)
+
+        return {
+            'sectors': sectors,
+            'projectors': projectors,
+            'sector_bases': sector_bases,
+            'Q': Q,
+            'n_sectors': len(sectors),
+        }
+    
+    def decompose_signal(self, vec: np.ndarray) -> list[np.ndarray]:
+        """MorphoSymm-style signal decomposition into sector components.
+
+        Transforms vec to isotypic basis via Q†, splits by sector dimension,
+        and returns per-sector components in the original basis.
+
+        Args:
+            vec: state vector of shape (n,) or (n, k).
+
+        Returns:
+            list of per-sector component vectors, each same shape as vec.
+            Sum of components = vec (up to numerical error).
+        """
+        decomp = self.center_decomposition()
+        Q = decomp['Q']
+        sector_dims = [s['dim'] for s in decomp['sectors']]
+        vec = np.asarray(vec, dtype=complex)
+        scalar_input = (vec.ndim == 1)
+        if scalar_input:
+            vec = vec.reshape(-1, 1)
+
+        # Transform to isotypic basis
+        vec_iso = Q.conj().T @ vec
+
+        # Split by sector
+        components = []
+        pos = 0
+        for dk in sector_dims:
+            comp_iso = np.zeros_like(vec_iso)
+            comp_iso[pos:pos + dk] = vec_iso[pos:pos + dk]
+            comp_orig = Q @ comp_iso
+            components.append(comp_orig)
+            pos += dk
+
+        if scalar_input:
+            components = [c.ravel() for c in components]
+        return components
 
     def sector_block_support(self, projectors: list[np.ndarray] | None = None) -> list[set[str]]:
         """Return [{block_names}, ...] for each sector projector.
