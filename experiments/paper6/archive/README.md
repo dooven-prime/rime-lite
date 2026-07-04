@@ -23,7 +23,6 @@ Archived here:
 
 Moved out:
 
-- `search_type4_*.py` moved to
-  `experiments/paper7/archive/represented_incidence_search/`, because those
+- `search_type4_*.py` moved to `experiments/paper7/archive/`, because those
   scripts explore whether Type IV incidence appears in represented systems,
   which is now part of the Paper VII completion/incidence boundary line.

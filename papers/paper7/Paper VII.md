@@ -801,8 +801,9 @@ SOF examples, not as a theorem.  To promote it, one would need a precise
 definition of sufficient noncommutative transport richness and a proof that it
 is necessary or generic for $D$-repair.
 
-The scripts supporting this appendix are the quantum SOF audit and the
-Markov/graph SOF audit in `experiments/quantum/`.
+The scripts supporting this appendix are the quantum SOF audit in
+`experiments/quantum/` and the Markov/graph SOF audit in
+`experiments/paper7/`.
 
 ***
 

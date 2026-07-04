@@ -4,7 +4,7 @@ This directory contains deterministic support scripts and diagnostics for the
 RIME program. The public-facing directory has four separate responsibilities:
 
 1. `experiments/paperN/` contains paper-facing computations and claim support.
-2. `experiments/quantum/` contains cross-species SOF portability diagnostics.
+2. `experiments/quantum/` contains quantum-gate SOF portability diagnostics.
 3. `experiments/cross_ref/` contains related-work positioning diagnostics.
 4. Top-level figure scripts are local figure-production tools; manuscripts use
    frozen figure artifacts under `figures/`.
@@ -111,20 +111,20 @@ explicitly says so.
 | `experiments/paper7/atlas_r2_boundary.py` | completion-boundary atlas and exact `(R1,R2)->D` hash audit |
 | `experiments/paper7/incidence_variety_codim.py` | incidence-variety codimension computation |
 | `experiments/paper7/rank_protected_bridge_audit.py` | rank-protected bridge audit for generic completion evidence |
+| `experiments/paper7/markov_graph_sof.py` | Markov and graph SOF portability diagnostic for Appendix C |
 
 Paper VII scripts support the published generic-completion and incidence
 boundary paper. Exploratory or historical variants live under
 `experiments/paper7/archive/`.
 
-## Non-Rubik SOF Diagnostics
+## Quantum SOF Diagnostics
 
 | Script | Status |
 |--------|--------|
 | `experiments/quantum/quantum_accessibility_universality.py` | Pauli/Clifford/Universal gate-set R1/R2/D sanity check |
-| `experiments/quantum/markov_graph_sof.py` | Markov and graph operator-species portability diagnostic |
 
-These scripts support the Sectorized Observable Framework draft language. They are
-cross-species diagnostics and appendix-level sanity checks, not theorem sources
+This script supports the Sectorized Observable Framework draft language. It is a
+cross-species diagnostic and appendix-level sanity check, not a theorem source
 for Papers I--VII.
 
 ## Cross-Reference Diagnostics
@@ -153,13 +153,13 @@ Run single support scripts from the repository root:
 python experiments/paper4/rubik_collision_quotient.py
 python experiments/paper6/tangent_commutator_map.py
 python experiments/paper7/rank_protected_bridge_audit.py
+python experiments/paper7/markov_graph_sof.py
 ```
 
-Run cross-species SOF diagnostics from the repository root:
+Run the quantum SOF diagnostic from the repository root:
 
 ```bash
 python experiments/quantum/quantum_accessibility_universality.py
-python experiments/quantum/markov_graph_sof.py
 ```
 
 Run package invariants:
