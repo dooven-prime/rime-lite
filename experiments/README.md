@@ -1,85 +1,177 @@
-# Experiments — One-Click Paper Reproduction
+# Experiments - Reproducibility Map
 
-Each file is a self-contained experiment producing one result that directly supports a claim in the trilogy. All experiments are deterministic (`np.random.seed(42)`).
+This directory contains deterministic support scripts and diagnostics for the
+RIME program. The public-facing directory has four separate responsibilities:
+
+1. `experiments/paperN/` contains paper-facing computations and claim support.
+2. `experiments/quantum/` contains cross-species SOF portability diagnostics.
+3. `experiments/cross_ref/` contains related-work positioning diagnostics.
+4. Top-level figure scripts are local figure-production tools; manuscripts use
+   frozen figure artifacts under `figures/`.
+
+Tests under `tests/` verify package invariants and are not part of this
+directory.
+
+Public release scope: Papers I--VII plus CCS.
+
+All public support scripts use fixed seeds where randomness is present
+(`np.random.seed(42)` unless otherwise stated).
 
 ## Directory Map
 
-```
+```text
 experiments/
-├── README.md                     ← this file
-│
-├── paper1/                       ← Paper I: Spectral Origin (A)
-│   ├── spectral_ladder.py        ← 6-layer spectrum: λ=1−k/9, dims, block support
-│   ├── k_absence.py              ← k=5 genuinely absent (not numerical)
-│   ├── block_composition.py      ← Per-layer block support breakdown
-│   └── projector_algebra.py      ← P_i·P_j=δ_ij P_i, ΣP_i=I, Tr(P_i)=dim_i
-│
-├── paper2/                       ← Paper II: Transport Topology (K_αβ)
-│   ├── primitive_sectors.py      ← 9 sectors from Center{A, QT_all, HT_all}
-│   ├── transport_graph.py        ← K matrix, symmetry, graph edges
-│   ├── supp_nc.py                ← Noncommutativity per block (cp=0, ep=93.9%)
-│   └── ep_algebra.py             ← EP block: M₂⁴ ⊕ M₁⁴ (semisimple, center, Killing)
-│
-├── paper3/                       ← Paper III: Lie Accessibility (κ_d)
-│   ├── t7_detection.py           ← T7 pairs: 5 cross-block, K=κ₀=κ₁=0, 2-step reachable
-│   ├── kappa_depth.py            ← κ₀ (gradient) + κ₁ (curvature) hierarchy
-│   ├── t7_refined.py             ← S₃ nat⊕reg: canonical + refined, C0 negative control, 0 T7
-│   ├── t7_reg_reg.py             ← S₃ reg⊕reg: canonical, C0 negative control, 0 T7
-│   └── t7_necessity.py           ← C1 necessity: shared irrep test (abelian + S₃ disjoint)
-│
-├── paper2_figures.py             ← Paper II figure generation batch
-├── paper3_figures.py             ← Paper III figure generation batch
-├── ccs_figures.py                ← CCS canonical figures (→ figures/ccs/)
-├── persistence_bridge.py         ← CCS-r2 Parts II.12-II.15: spectral persistence, transition atlas
-├── trilogy_overview.py           ← Trilogy cascade overview (→ figures/trilogy_overview.png)
-└── trilogy_master_figure.py      ← Unified trilogy master figure
+|-- paper1/                 Paper I: spectral origin
+|-- paper2/                 Paper II: transport topology and QT/HT sectors
+|-- paper3/                 Paper III: Lie/composition accessibility
+|-- paper4/                 Paper IV: fixed collision geometry
+|-- paper5/                 Paper V: static accessibility repair calculus
+|-- paper6/                 Paper VI: generator-set moduli and wall structure
+|   `-- archive/            historical provenance scripts only
+|-- paper7/                 Paper VII: generic completion support
+|-- quantum/                cross-species SOF diagnostics
+|-- cross_ref/              related-work diagnostics, not theorem sources
+`-- trilogy_style/          shared styling utilities used by local figure scripts
 ```
 
-## Invariant Level
+The tables below keep these roles separate. A script listed under one role
+should not be treated as evidence for another role unless the manuscript
+explicitly says so.
 
-## Paper II v2 additions
+## Paper I - Spectral Origin
 
-- `experiments/paper2/joint_spectral_geometry.py` verifies the 9 rational QT/HT joint-spectrum points and the `A_18` collision quotient.
-- `experiments/paper2/collision_geometry.py` verifies the exact affine-branch collision classification, no shadow collisions, and the unique maximal collapse at `alpha=2/3`.
+| Script | Verifies |
+|--------|----------|
+| `experiments/paper1/spectral_ladder.py` | six-layer spectrum, dimensions, block support |
+| `experiments/paper1/k_absence.py` | absence of the `k=5` spectral layer |
+| `experiments/paper1/block_composition.py` | per-layer block support |
+| `experiments/paper1/projector_algebra.py` | projector idempotence, orthogonality, trace dimensions |
+| `experiments/paper1/co_eo_analytic_spectrum.py` | CO/EO analytic spectrum and face-symmetric block law |
+| `experiments/paper1/isotypic_decomposition.py` | 51 isotypic components and the multiplicity reservoir |
+| `experiments/paper1/symmetry_breaking.py` | verified broken-face irrational families |
 
-## Paper IV support scripts
+## Paper II - Transport Topology
 
-- `experiments/paper4/rubik_collision_quotient.py` verifies the exact finite-point collision quotient: `36 = 2 + 10 + 15 + 9`, no shadow collisions, and unique maximal collapse at `alpha=2/3`.
-- `experiments/paper4/v59_collision_vs_transport.py` verifies that the `V_5/9` collision component is a triangle while direct transport is the chain `S5-S6-S7`.
+| Script | Verifies |
+|--------|----------|
+| `experiments/paper2/joint_spectral_geometry.py` | nine rational QT/HT joint-spectrum points and the `A_18` collision quotient |
+| `experiments/paper2/collision_geometry.py` | affine-branch collision classification, no shadow collisions, unique maximal collapse |
+| `experiments/paper2/primitive_sectors.py` | nine sectors from `Center{A, QT_all, HT_all}` |
+| `experiments/paper2/transport_graph.py` | transport matrix, symmetry, and graph edges |
+| `experiments/paper2/supp_nc.py` | per-block noncommutativity localization |
+| `experiments/paper2/ep_algebra.py` | EP block algebra structure |
+| `experiments/paper2/commutant_pi_map.py` | commutant restriction map audit |
+| `experiments/paper2/generator_universality.py` | generator-family transport-topology comparison |
 
-## Paper V support scripts
+## Paper III - Lie Accessibility
 
-- `experiments/paper5/s4_r1_r2_depth.py` verifies the S4-3gen-B `R1`/`R2`/depth example with signature `(10,2,2,76)`.
-- `experiments/paper5/path_commutator_cancellation.py` verifies the S4-3gen-B binary-support counterexample: two length-2 `R1` candidates cancel at projected commutator depth and first appear at depth `2`.
-- `experiments/paper5/complement_explosion.py` records the support/scalar complement obstruction model and its nonzero `R2` bridge repair.
-- `experiments/paper5/noncomplement_obstruction_enumeration.py` enumerates finite support-level obstruction patterns and records non-complement families.
-- `experiments/paper5/matrix_nondegeneracy.py` verifies the S4-3gen-B single-term bridge matrix audit: `48/48` products nonzero and rank-protected.
+| Script | Verifies |
+|--------|----------|
+| `experiments/paper3/t7_detection.py` | T7 morphisms and two-step compositional reachability |
+| `experiments/paper3/kappa_depth.py` | gradient/curvature accessibility hierarchy |
+| `experiments/paper3/transport_9sector.py` | nine-sector transport tensor and accessibility hierarchy |
+| `experiments/paper3/t7_refined.py` | `S3 nat+reg` prototype comparison |
+| `experiments/paper3/t7_necessity.py` | shared-irrep necessity check |
+| `experiments/paper3/transport_closure.py` | Lie accessibility hierarchy audit |
+| `experiments/paper3/kappa_hierarchy_search.py` | kappa hierarchy as a search diagnostic |
+| `experiments/paper3/t7_reg_reg.py` | `S3 reg+reg` structural contrast |
 
-## Cross-reference support scripts
+## Paper IV - Collision Geometry
 
-- `experiments/cross_ref/emlp_morphosymm_character_diagnostic.py` cleans the old EMLP/W33/MorphoSymm cross-reference prototypes into a claim-status-gated diagnostic: exact S3 commutant and character-idempotent checks, Rubik `A_18` spectral coordinates, QT/HT sector-basis `Q`, `decompose_signal()`, and sampled sector trace fingerprints. This is related-work support, not a theorem source.
+| Script | Verifies |
+|--------|----------|
+| `experiments/paper4/rubik_collision_quotient.py` | exact finite-point collision quotient, no shadow collisions, unique maximal collapse at `alpha=2/3` |
+| `experiments/paper4/v59_collision_vs_transport.py` | `V_5/9` collision triangle versus direct transport chain `S5-S6-S7` |
 
-| Level | Meaning | Papers |
-|-------|---------|--------|
-| 0 | Categorical | Block structure exists |
-| 1 | Group-algebraic | Spectral law, isotypic decomposition |
-| 2 | Generator-conditioned | Transport strengths, T7 count |
+## Paper V - Minimal Accessibility Data
 
-Paper I: levels 1-2. Paper II: level 2. Paper III: level 2.
+| Script | Verifies |
+|--------|----------|
+| `experiments/paper5/s4_r1_r2_depth.py` | S4-3gen-B `R1`/`R2`/depth example |
+| `experiments/paper5/path_commutator_cancellation.py` | binary-support counterexample with path-commutator cancellation |
+| `experiments/paper5/complement_explosion.py` | support/scalar complement obstruction model and `R2` bridge repair |
+| `experiments/paper5/noncomplement_obstruction_enumeration.py` | finite support-level non-complement obstruction families |
+| `experiments/paper5/matrix_nondegeneracy.py` | single-term bridge matrix audit and rank-protection check |
+
+## Paper VI - Commutativity Walls and Spectral Phase Transitions
+
+| Script | Verifies |
+|--------|----------|
+| `experiments/paper6/tangent_commutator_map.py` | computational local tangent model at the canonical point |
+| `experiments/paper6/fragmentation_walls.py` | fragmentation, gauge direction, `R1` jumps, Wall Origin Principle |
+| `experiments/paper6/generator_moduli_space.py` | global generator-set moduli tables and bifurcation snapshots |
+| `experiments/paper6/phase_utils.py` | shared utilities for Paper VI phase tables |
+| `experiments/paper6/wall_crossing_summary.py` | compact theorem-support table for accessibility wall crossings |
+| `experiments/paper6/archive/` | historical provenance scripts; not part of canonical reproducibility |
+
+## Paper VII - Generic Accessibility Completion
+
+| Script | Status |
+|--------|--------|
+| `experiments/paper7/atlas_r2_boundary.py` | completion-boundary atlas and exact `(R1,R2)->D` hash audit |
+| `experiments/paper7/incidence_variety_codim.py` | incidence-variety codimension computation |
+| `experiments/paper7/rank_protected_bridge_audit.py` | rank-protected bridge audit for generic completion evidence |
+
+Paper VII scripts support the published generic-completion and incidence
+boundary paper. Exploratory or historical variants live under
+`experiments/paper7/archive/`.
+
+## Non-Rubik SOF Diagnostics
+
+| Script | Status |
+|--------|--------|
+| `experiments/quantum/quantum_accessibility_universality.py` | Pauli/Clifford/Universal gate-set R1/R2/D sanity check |
+| `experiments/quantum/markov_graph_sof.py` | Markov and graph operator-species portability diagnostic |
+
+These scripts support the Sectorized Observable Framework draft language. They are
+cross-species diagnostics and appendix-level sanity checks, not theorem sources
+for Papers I--VII.
+
+## Cross-Reference Diagnostics
+
+| Script | Status |
+|--------|--------|
+| `experiments/cross_ref/emlp_morphosymm_character_diagnostic.py` | related-work diagnostic for commutant, character-idempotent, and symmetry-adapted coordinate comparisons |
+
+These scripts support related-work positioning. They are not theorem sources
+for Papers I--VII.
+
+## Figure Production Scripts
+
+Top-level scripts such as `experiments/paper*_figures.py`,
+`experiments/ccs_figures.py`, and `experiments/trilogy_overview.py` are local
+production tools for figure assets. They are not part of the public
+reproducibility index unless a paper explicitly cites them as support scripts.
+Manuscripts reference frozen figures under `figures/`; public support scripts
+do not regenerate them.
 
 ## Usage
 
+Run single support scripts from the repository root:
+
 ```bash
-# Single experiment
-python experiments/paper1/spectral_ladder.py
-
-# All Paper I experiments
-for f in experiments/paper1/*.py; do python "$f"; done
-
-# Run everything
-python tests/run_all_tests.py          # invariant verification (assert-style)
+python experiments/paper4/rubik_collision_quotient.py
+python experiments/paper6/tangent_commutator_map.py
+python experiments/paper7/rank_protected_bridge_audit.py
 ```
 
-## Seed & Reproducibility
+Run cross-species SOF diagnostics from the repository root:
 
-All experiments use `np.random.seed(42)`. Center decomposition uses fixed seed internally. Figures are auto-saved to `experiments/paperN/figures/`.
+```bash
+python experiments/quantum/quantum_accessibility_universality.py
+python experiments/quantum/markov_graph_sof.py
+```
+
+Run package invariants:
+
+```bash
+python tests/run_all_tests.py
+```
+
+## Reproducibility Notes
+
+- Experiments are deterministic unless explicitly documented otherwise.
+- Manuscripts consume frozen figure files under `figures/`; support scripts do
+  not regenerate figures.
+- Historical scripts in `archive/` directories are provenance records, not
+  canonical claim support.

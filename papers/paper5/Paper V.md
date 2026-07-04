@@ -156,11 +156,11 @@ spectral charts inside the commutative moduli wall.
 
 ***
 
-## Sectorized Operator Systems
+## Sectorized Observable Framework
 
-### Definition 1 (Sectorized Operator System)
+### Definition 1 (Sectorized Observable Framework)
 
-A sectorized operator system consists of:
+A sectorized observable framework consists of:
 
 1. a finite-dimensional complex Hilbert space $V$;
 2. a finite orthogonal projector decomposition
@@ -815,7 +815,7 @@ The two are related but not identical:
 
 | Paper III | Paper V |
 |-----------|---------|
-| Rubik-centered separation example | general sectorized operator framework |
+| Rubik-centered separation example | general sectorized observable framework |
 | Lie vs composition | first Lie-depth inside the Lie filtration |
 | T7 morphisms | $R_1$, $R_2$, weighted Hall paths |
 | cross-block composition gap | projected commutator survival and cancellation |

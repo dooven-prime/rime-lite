@@ -1118,7 +1118,7 @@ V_{1/3}=S8\oplus S9.
 $$
 Paper IV develops the exact finite-point collision arithmetic from these certified values. The CCS records the canonical table and quotient; it does not duplicate the full affine-branch classification.
 
-**Paper V bridge.** Paper III's T7 result is the first certified separation between Lie-generated visibility and finite compositional visibility. This motivates, but does not prove, the later minimal-data problem for general sectorized operator systems:
+**Paper V bridge.** Paper III's T7 result is the first certified separation between Lie-generated visibility and finite compositional visibility. This motivates, but does not prove, the later minimal-data problem for general sectorized observable frameworks:
 $$
 R_1(i,j;g)=1 \iff Q_iX_gQ_j\ne0,
 \qquad

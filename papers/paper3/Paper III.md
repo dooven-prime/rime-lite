@@ -1,4 +1,4 @@
-﻿# Accessibility Structure in the Rubik's Cube Representation
+# Accessibility Structure in the Rubik's Cube Representation
 
 ### Lie-Generated Accessibility, Hybrid Sectors, and T7 Morphisms
 
@@ -699,7 +699,7 @@ is the structural signature of this incompleteness — the central result of thi
 
 This result is also the starting point for a broader accessibility theory. The present paper proves a separation example: T7 morphisms are composition-visible but Lie-invisible in the canonical Rubik sector geometry. It does not attempt to classify all possible first-depth phenomena.
 
-The natural next abstraction is a general sectorized operator system with projectors $Q_i$ and skew-Hermitian generators $X_g$. In that language, the first binary layer records generator support,
+The natural next abstraction is a general sectorized observable framework with projectors $Q_i$ and skew-Hermitian generators $X_g$. In that language, the first binary layer records generator support,
 
 $$
 R_1(i,j;g)=1

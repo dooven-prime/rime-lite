@@ -26,7 +26,7 @@ Rubik
   ->
 finite represented systems
   ->
-sectorized operator systems
+sectorized observable frameworks
   ->
 joint spectral geometry
   ->
@@ -41,7 +41,7 @@ Each paper removes one layer of Rubik-specific structure while preserving the
 mathematical object introduced in the previous stage.
 
 The long-term goal is therefore not a theory of Rubik, but a theory of
-spectral accessibility for represented operator systems.
+spectral accessibility for represented sectorized observables.
 
 This also fixes the relation to adjacent representation-rigidity projects.  A
 project such as W33 may be viewed as a parallel world in which a concrete finite

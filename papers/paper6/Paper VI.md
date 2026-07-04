@@ -108,7 +108,7 @@ observable shadows of the moving sectorized system.](../../figures/paper6/fig1_p
 | $\Sigma_{\mathrm{field}}$ | field-extension wall inside $\Sigma_{\mathrm{spec}}$ |
 | $\mathrm{SPLIT},\mathrm{MERGE},\mathrm{FIELD}$ | internal bifurcation events on normal spectral charts |
 | $X_g$ | skew-Hermitian accessibility generator, usually $X_g=\log\rho(g)$ as in Paper V |
-| $\mathcal S(w)$ | sectorized operator system $(V,\{Q_i(w)\},\{X_g\}_{g\in S})$ |
+| $\mathcal S(w)$ | sectorized observable framework $(V,\{Q_i(w)\},\{X_g\}_{g\in S})$ |
 | $Q_i(w)$ | orthogonal joint-sector projector on $\Sigma_{\mathrm{spec}}$ |
 | $B^g_{ij}(w)$ | block map $Q_i(w)X_gQ_j(w)$ |
 | $\mathcal{J}_{\mathrm{acc}}(w)$ | accessibility jet: first-order data of block, commutator, and Hall projection fields |
@@ -1394,15 +1394,15 @@ accessibility walls describe when that motion changes the gap between
 Lie-generated and composition-generated accessibility.
 
 This gives a common language for the later papers. A point of
-$\Sigma_{\mathrm{spec}}$ determines a sectorized operator system
+$\Sigma_{\mathrm{spec}}$ determines a sectorized observable framework
 
 $$
 \mathcal S(w)=\bigl(V,\{Q_i(w)\},\{X_g\}_{g\in S}\bigr),
 $$
 
 and $R_1(w)$, $R_2(w)$, $D(w)$, and
-$\mathcal J_{\mathrm{acc}}(w)$ are derived fields of this block-operator
-geometry. Paper V studies these fields for a fixed sectorized system. Paper VI
+$\mathcal J_{\mathrm{acc}}(w)$ are derived fields of this sectorized block
+geometry. Paper V studies these fields for a fixed sectorized framework. Paper VI
 studies their variation over the commutative deformation base. Paper VII
 \cite{paper7} studies generic completion away from the incidence strata where
 the block geometry becomes nongeneric.

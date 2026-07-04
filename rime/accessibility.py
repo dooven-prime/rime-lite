@@ -556,3 +556,169 @@ def accessibility_signature(Vs, Xs, max_depth=4, tol=1e-8):
         'n_sec': len(Vs),
         'n_gens': len(Xs),
     }
+
+
+# ============================================================
+# AccessibilityEngine — unified audit wrapper (2026-07-04)
+# ============================================================
+
+class AccessibilityEngine:
+    """Unified wrapper for R1/R2/D computation on a sectorized observable framework.
+
+    Inspired by Yang 2026's InvariantEngine pattern: a single object that
+    holds the system (Vs, Xs) and provides scoped audit methods.
+
+    Usage:
+        engine = AccessibilityEngine(Vs, Xs)
+        summary = engine.audit()           # full audit
+        d_matrix = engine.depth()           # D matrix only
+        r1, r2 = engine.support()           # R1, R2 only
+        frozen = engine.frozen_pairs()      # frozen pair counts
+    """
+
+    def __init__(self, Vs, Xs, tol=1e-8, max_depth=4, seed=42):
+        """Initialize engine with sectorized observable framework.
+
+        Args:
+            Vs: list of sector bases, each (dim, d_k).
+            Xs: list of (dim, dim) skew-Hermitian generator matrices.
+            tol: Frobenius norm threshold for "nonzero".
+            max_depth: maximum Lie depth to probe.
+            seed: for reproducible random linear combinations in Lie filtration.
+        """
+        self.Vs = Vs
+        self.Xs = Xs
+        self.tol = tol
+        self.max_depth = max_depth
+        self.seed = seed
+        self._cache = {}
+
+    @property
+    def n_sec(self):
+        return len(self.Vs)
+
+    @property
+    def n_gen(self):
+        return len(self.Xs)
+
+    @property
+    def sector_dims(self):
+        return [V.shape[1] for V in self.Vs]
+
+    # ---- cached computations ----
+
+    def _get_R1(self):
+        if 'R1' not in self._cache:
+            self._cache['R1'] = compute_R1(self.Vs, self.Xs, tol=self.tol)
+        return self._cache['R1']
+
+    def _get_R2(self):
+        if 'R2_arr' not in self._cache:
+            R2_arr, R2_pairs = compute_R2(self.Vs, self.Xs, tol=self.tol)
+            self._cache['R2_arr'] = R2_arr
+            self._cache['R2_pairs'] = R2_pairs
+        return self._cache['R2_arr'], self._cache['R2_pairs']
+
+    def _get_D(self):
+        if 'D' not in self._cache:
+            D, per_depth, cum_bases = compute_lie_depth_matrix(
+                self.Vs, self.Xs, max_depth=self.max_depth, tol=self.tol)
+            self._cache['D'] = D
+            self._cache['per_depth'] = per_depth
+            self._cache['cum_bases'] = cum_bases
+        return self._cache['D'], self._cache['per_depth'], self._cache['cum_bases']
+
+    # ---- scoped queries ----
+
+    def support(self):
+        """Return (R1, R2_arr, R2_pairs)."""
+        return self._get_R1(), *self._get_R2()
+
+    def depth(self):
+        """Return (D, per_depth)."""
+        D, per_depth, _ = self._get_D()
+        return D, per_depth
+
+    def frozen_pairs(self):
+        """Return counts of R1-frozen, D-frozen, and D-repaired pairs."""
+        R1 = self._get_R1()
+        D, _, _ = self._get_D()
+        ns = self.n_sec
+        offdiag = ~np.eye(ns, dtype=bool)
+        R1_graph = np.zeros((ns, ns), dtype=bool)
+        for g in range(self.n_gen):
+            R1_graph |= R1[g]
+        frozen_R1 = ns * (ns - 1) - int(np.sum(R1_graph & offdiag))
+        frozen_D = sum(1 for i in range(ns) for j in range(ns)
+                       if i != j and D[i, j] >= self.max_depth)
+        repaired = sum(1 for i in range(ns) for j in range(ns)
+                       if i != j and not R1_graph[i, j] and D[i, j] < self.max_depth)
+        return {'frozen_R1': frozen_R1, 'frozen_D': frozen_D, 'D_repaired': repaired}
+
+    def per_sector_depth(self):
+        """Return per-sector D matrix rows as dict."""
+        D, _, _ = self._get_D()
+        rows = {}
+        for i in range(self.n_sec):
+            rows[i] = [int(D[i, j]) for j in range(self.n_sec) if i != j]
+        return rows
+
+    def audit(self):
+        """Full audit returning all metrics.
+
+        Convention:
+            R1_pct/R2_pct are off-diagonal accessibility densities. Diagonal
+            block support is still reported separately as
+            R1_tensor_pct/R2_tensor_pct. Frozen-pair counts are always
+            off-diagonal sector-pair counts.
+        """
+        R1 = self._get_R1()
+        R2_arr, R2_pairs = self._get_R2()
+        D, per_depth, _ = self._get_D()
+        frozen = self.frozen_pairs()
+        ns, ng = self.n_sec, self.n_gen
+        offdiag = ~np.eye(ns, dtype=bool)
+
+        r1_tensor_possible = ng * ns * ns
+        r2_tensor_possible = len(R2_pairs) * ns * ns
+        r1_offdiag_possible = ng * ns * (ns - 1)
+        r2_offdiag_possible = len(R2_pairs) * ns * (ns - 1)
+        r1_tensor_count = int(np.sum(R1))
+        r2_tensor_count = int(np.sum(R2_arr))
+        r1_offdiag_count = int(np.sum(R1[:, offdiag]))
+        r2_offdiag_count = int(np.sum(R2_arr[:, offdiag]))
+        d_vals = [D[i, j] for i in range(ns) for j in range(ns) if i != j]
+
+        return {
+            'n_sec': ns, 'n_gen': ng,
+            'sector_dims': self.sector_dims,
+            'R1_count': r1_offdiag_count,
+            'R2_count': r2_offdiag_count,
+            'R1_tensor_count': r1_tensor_count,
+            'R2_tensor_count': r2_tensor_count,
+            'R1_pct': 100 * r1_offdiag_count / r1_offdiag_possible if r1_offdiag_possible else 0,
+            'R2_pct': 100 * r2_offdiag_count / r2_offdiag_possible if r2_offdiag_possible else 0,
+            'R1_offdiag_pct': 100 * r1_offdiag_count / r1_offdiag_possible if r1_offdiag_possible else 0,
+            'R2_offdiag_pct': 100 * r2_offdiag_count / r2_offdiag_possible if r2_offdiag_possible else 0,
+            'R1_tensor_pct': 100 * r1_tensor_count / r1_tensor_possible if r1_tensor_possible else 0,
+            'R2_tensor_pct': 100 * r2_tensor_count / r2_tensor_possible if r2_tensor_possible else 0,
+            'D_max': int(max(d_vals)) if d_vals else -1,
+            'D_mean': float(np.mean(d_vals)) if d_vals else -1,
+            'per_depth_sizes': [len(pd) for pd in per_depth],
+            **frozen,
+        }
+
+    def __repr__(self):
+        return (f"AccessibilityEngine({self.n_sec} sectors, {self.n_gen} gens, "
+                f"dims={self.sector_dims})")
+
+
+# Also expose at module level
+__all__ = [
+    'compute_R1', 'compute_R2', 'compute_R2_per_generator',
+    'compute_lie_filtration', 'compute_lie_depth_matrix',
+    'single_term_bridge_audit',
+    'compute_kappa_depth_matrix',
+    'accessibility_signature',
+    'AccessibilityEngine',
+]
