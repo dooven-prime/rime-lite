@@ -28,8 +28,8 @@ experiments/
 |-- paper5/                 Paper V: static accessibility repair calculus
 |-- paper6/                 Paper VI: generator-set moduli and wall structure
 |   `-- archive/            historical provenance scripts only
-|-- paper7/                 Paper VII: generic completion support
-|-- quantum/                cross-species SOF diagnostics
+|-- paper7/                 Paper VII: generic completion and SOF diagnostics
+|-- quantum/                quantum-gate SOF diagnostics
 |-- cross_ref/              related-work diagnostics, not theorem sources
 `-- trilogy_style/          shared styling utilities used by local figure scripts
 ```
