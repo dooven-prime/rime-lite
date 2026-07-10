@@ -32,6 +32,24 @@ def sigmoid(x):
     return 1.0 / (1 + np.exp(-x))
 
 
+def zero_crossings(values, center=True):
+    """Count sign changes in a one-dimensional sequence.
+
+    Args:
+        values: sequence or ndarray.
+        center: if True, subtract the mean before counting crossings.
+
+    Returns:
+        Number of adjacent sign changes, treating zeros as crossings.
+    """
+    x = np.asarray(values, dtype=float)
+    if x.size <= 1:
+        return 0
+    if center:
+        x = x - np.mean(x)
+    return int(sum(1 for i in range(1, len(x)) if x[i - 1] * x[i] <= 0))
+
+
 def von_neumann_entropy(rho):
     """
     S = -Tr(ρ ln ρ) 冯纽曼熵 在纯态下取值为零,

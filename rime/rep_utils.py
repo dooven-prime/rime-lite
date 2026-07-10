@@ -322,6 +322,36 @@ def sector_bases_from_projectors(projectors, tol=1e-8):
     return Vs
 
 
+def basis_from_indices(dim, indices, dtype=complex):
+    """Build an orthonormal coordinate-sector basis from selected indices.
+
+    Args:
+        dim: ambient dimension.
+        indices: iterable of coordinate indices.
+        dtype: dtype of the returned basis.
+
+    Returns:
+        (dim, len(indices)) matrix with coordinate basis columns.
+    """
+    eye = np.eye(dim, dtype=dtype)
+    return eye[:, list(indices)]
+
+
+def computational_basis_sectors(dim, dtype=complex):
+    """Return one-dimensional computational-basis sector bases."""
+    return [basis_from_indices(dim, [i], dtype=dtype) for i in range(dim)]
+
+
+def orthonormal_columns(mat, tol=1e-8):
+    """Return an orthonormal basis for the column span of mat."""
+    q, r = np.linalg.qr(mat)
+    if r.size == 0:
+        return q[:, :0]
+    diag = np.abs(np.diag(r))
+    keep = diag > tol
+    return q[:, keep]
+
+
 def block_matrix_in_sector_basis(X, Vs, i, j):
     """Extract Q_i X Q_j as a dense (d_i, d_j) matrix.
 

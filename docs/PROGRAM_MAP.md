@@ -1,7 +1,8 @@
 # RIME Program Map
 
-**Date**: 2026-07-04  
-**Status**: public narrative architecture map for Papers I--VII.
+**Date**: 2026-07-10  
+**Status**: public narrative architecture map for Papers I--X, with a
+Paper XI--XII horizon.
 
 This document summarizes the program-level organization. It is not a proof
 document and does not replace the manuscripts. Its purpose is to make the
@@ -10,6 +11,9 @@ readers of the paper series.
 
 For the guiding philosophy behind the Rubik-to-general-theory transition, see
 `docs/PROGRAM_PHILOSOPHY.md`.
+
+For the post-Paper VII SOF arc, see
+`docs/PROGRAM_ARCHITECTURE_AFTER_VII.md`.
 
 ---
 
@@ -23,12 +27,17 @@ Paper IV:      projection geometry of spectral layers
 Paper V:       static repair calculus for accessibility on fixed sectors
 Paper VI:      deformation geometry of spectral and accessibility walls
 Paper VII:     generic completeness away from high-codimension incidence
+Paper VIII:    SOF object layer and strict morphisms
+Paper IX:      SOF deformation geometry and observable trajectories
+Paper X:       Universal Observable Pipeline and registry evidence
 ```
 
 Program invariant / slogan:
 
 ```text
 Spectral geometry determines the objects.
+Compatible sectorization is the interface.
+Observable geometry is the invariant.
 Accessibility geometry determines their behavior.
 Genericity determines why the behavior is stable.
 ```
@@ -52,7 +61,7 @@ Both use the words `R_1` and `R_2`, but they answer different questions.
 
 ---
 
-## 2. Seven-Paper Arc
+## 2. Public Paper Arc
 
 | Paper | Role | Core object | Main question |
 |-------|------|-------------|---------------|
@@ -63,6 +72,9 @@ Both use the words `R_1` and `R_2`, but they answer different questions.
 | V | Static repair calculus | length-2 witnesses, `R_1`, `R_2`, weighted Hall paths | What repairs binary support after path-commutator cancellation? |
 | VI | Deformation theory | generator-set moduli space, `Sigma_comm`, accessibility jets | How do spectral phases and accessibility data bifurcate under generator variation? |
 | VII | Completion theory | incidence variety, rank-protected bridges, generic completion | Why is accessibility generically stable? |
+| VIII | SOF object theory | finite SOF data, strict morphisms, naturality | What is the sectorized observable object? |
+| IX | Observable dynamics | SOF deformations, trajectories, wall pullbacks, rate separation | How do SOF observables evolve under deformation? |
+| X | Observable pipeline | source systems, sectorization origins, registry evidence | Why do different species share one observable pipeline? |
 
 Short form:
 
@@ -71,6 +83,9 @@ Paper IV:  How spectral layers are geometrically formed.
 Paper V:   How accessibility is computed on fixed sectors.
 Paper VI:  How sectors and observables deform.
 Paper VII: Why the geometry is generically complete.
+Paper VIII: What the SOF object is.
+Paper IX:  How SOF observables evolve under deformation.
+Paper X:   Why cross-species diagnostics share one observable pipeline.
 ```
 
 Representation-to-accessibility route:
@@ -82,6 +97,9 @@ Finite Representation
   -> Transport / Accessibility             -> Paper V
   -> Generator deformation / Wall hierarchy -> Paper VI
   -> Generic completion                    -> Paper VII
+  -> SOF objects and morphisms             -> Paper VIII
+  -> SOF observable dynamics               -> Paper IX
+  -> Universal observable pipeline         -> Paper X
 ```
 
 This map uses only the stable interface: finite sectors, projected blocks,
@@ -94,14 +112,47 @@ Paper IV:  Why do spectral layers appear as projections?
 Paper V:   How is accessibility computed once sectors exist?
 Paper VI:  Why do sectors move and walls appear?
 Paper VII: Why is the resulting geometry generically complete?
+Paper VIII: What is the sectorized observable object?
+Paper IX:  How do observable shadows evolve?
+Paper X:   Which diagnostics persist across species?
 ```
 
 Papers I--III are the Rubik laboratory. Papers IV--VII extract the general
 theory: projection geometry, weighted Hall accessibility, deformation
 geometry, and generic completion away from incidence.
+Papers VIII--X then package the sectorized observable object, deformation
+dynamics, and cross-species observable pipeline.
 
-The common finite-dimensional object behind Papers V--VII is the
-sectorized-observable data
+Papers IV--VII close the first post-trilogy accessibility cycle:
+
+```text
+Paper IV    fixed spectral geometry
+Paper V     accessibility calculus
+Paper VI    accessibility deformation
+Paper VII   generic completion
+```
+
+The next cycle is SOF-oriented:
+
+```text
+Paper VIII  SOF object layer, strict morphisms, and naturality
+Paper IX    SOF deformation geometry and wall dynamics
+Paper X     Universal Observable Pipeline and registry evidence
+Paper XI    Observable Wall Taxonomy
+Paper XII   SOF diagnostics and observable analysis tooling
+```
+
+Paper VIII asks what the object is and proves that the RIME observables are
+natural constructions on strict SOF data. Paper IX asks how SOF objects deform
+and why different deformation spaces generate different wall geometries. Paper
+X asks why broad external species can enter one observable pipeline. Paper XI
+asks whether registered wall records can be classified. Paper XII asks what
+SOF can diagnose in practice, especially through automatic sector audits,
+observable reports, explainability-facing neural examples, and control /
+robotics diagnostics.
+
+The common observable architecture behind Papers V--VII is the
+SOF data package
 
 $$
 (V,\{Q_i\},\mathcal X).
@@ -480,7 +531,7 @@ The Type I--IV names are a mechanism taxonomy:
 | Type III | cancellation mechanism: signed products cancel |
 | Type IV | incidence mechanism: image-kernel coincidence makes products vanish |
 
-This mechanism taxonomy is distinct from the Paper VI wall taxonomy.
+This mechanism taxonomy is distinct from the Paper VI moduli-wall hierarchy.
 
 Claim-status discipline:
 
@@ -858,7 +909,7 @@ weighted Hall path algebra
 ```
 
 Paper V's Type I--IV taxonomy is a local mechanism classification. It is not
-the Paper VI moduli-wall taxonomy.
+the Paper VI moduli-wall hierarchy.
 
 ### Paper VI Boundary
 

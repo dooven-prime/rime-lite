@@ -34,24 +34,37 @@ assert np.allclose(A_co, A_co.T.conj()), "A_co must be Hermitian for eigvalsh"
 assert np.allclose(A_eo, A_eo.T.conj()), "A_eo must be Hermitian for eigvalsh"
 
 omega = np.exp(2j * np.pi / 3)
-n_passed = 0
-n_total = 0
+
+# Claim-status tracking
+# CO block: Theorem-grade (O_h + Schur derivation)
+# EO block: Numerical-Representation Observation (2T₂ multiplicity blocks Schur closure)
+status_co = {"passed": 0, "total": 0, "label": "THEOREM"}
+status_eo = {"passed": 0, "total": 0, "label": "OBSERVATION"}
+_current_block = None
+
+
+def start_block(block_name):
+    global _current_block
+    _current_block = block_name
 
 
 def check(condition, msg):
-    global n_passed, n_total
-    n_total += 1
+    global _current_block
+    status = status_co if _current_block == "CO" else status_eo
+    status["total"] += 1
+    tag = status["label"]
     if condition:
-        n_passed += 1
-        print(f"  PASS  {msg}")
+        status["passed"] += 1
+        print(f"  [{tag:>11s}]  {msg}")
     else:
-        print(f"  FAIL  {msg}")
+        print(f"  [FAIL]  {msg}")
 
 
 # ═══════════════════════════════════════════════════════════════
 # 1. CO Block — Analytic Derivation
 # ═══════════════════════════════════════════════════════════════
 
+start_block("CO")
 print("=" * 65)
 print("1. CO BLOCK (8-dim) — Analytic Spectrum")
 print("=" * 65)
@@ -177,6 +190,7 @@ check(len(set(row_patterns)) == 1,
 # 2. EO Block — Symmetry-Guided Numerical Structure
 # ═══════════════════════════════════════════════════════════════
 
+start_block("EO")
 print(f"\n{'=' * 65}")
 print("2. EO BLOCK (12-dim) — Symmetry-Guided Numerical Structure")
 print(f"{'=' * 65}")
@@ -325,11 +339,26 @@ check(m89 + m79 + m59 == 12, f"Total dim = 12")
 # Summary
 # ═══════════════════════════════════════════════════════════════
 
+n_total_all = status_co["total"] + status_eo["total"]
+n_passed_all = status_co["passed"] + status_eo["passed"]
+
 print(f"\n{'=' * 65}")
-print(f"  RESULT: {n_passed}/{n_total} PASSED")
+print(f"  RESULT: {n_passed_all}/{n_total_all} assertions passed")
 print(f"{'=' * 65}")
-print(f"\n  CO block: analytic via O_h + Schur (A₁⊕A₂⊕T₁⊕T₂)")
+print(f"\n  CO block ({status_co['passed']}/{status_co['total']} [{status_co['label']}]):")
+print(f"    analytic via O_h + Schur (A₁⊕A₂⊕T₁⊕T₂)")
 print(f"    λ = {{2/3×2, 5/9×3, 1/3×3}} — A₁/A₂ accidental degeneracy")
-print(f"  EO block: symmetry-guided numerical structure")
+print(f"\n  EO block ({status_eo['passed']}/{status_eo['total']} [{status_eo['label']}]):")
+print(f"    symmetry-guided numerical structure")
 print(f"    λ = {{8/9×2, 7/9×3, 5/9×7}} — structural invariant of 18-full")
 print(f"    k-set = {{1,2,4}} for face-turn averaging (differs for other families)")
+print(f"    (2T₂ multiplicity prevents Schur closure — not theorem-grade)")
+print(f"\n  Open / acknowledged gaps:")
+print(f"    - cp block: Hamming k (Bose-Mesner internal) != global k (A eigenvalues).")
+print(f"      Paper text sometimes conflates the two — wording gap, not code bug.")
+print(f"    - Galois-stable projector -> rationality: admits it does not close the gap.")
+print(f"    - Rationality Criterion generator-to-eigenspace step: numerical only.")
+print(f"    - CO A1/A2 accidental degeneracy: numerical, no analytic proof yet.")
+print(f"    - Converse & necessity: remain open.")
+print(f"    - T1/T2 irrep assignment for 5/9 vs 1/3: ambiguous (which is T1, which is T2).")
+print(f"  These are explicitly acknowledged limitations, not hidden bugs.")

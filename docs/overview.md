@@ -3,9 +3,9 @@
 ## One-Page Project Summary
 
 **Public release scope.** This overview refers to the current public RIME
-release: Papers I--VII plus the Computational Canonical Specification (CCS).
+release: Papers I--X plus the Computational Canonical Specification (CCS).
 The original three-paper trilogy remains the Rubik-centered foundation; Papers
-IV--VII extend it into the broader RIME program.
+IV--X extend it into the broader RIME program.
 
 RIME studies how spectral, transport, accessibility, and deformation structures
 arise from finite-dimensional represented systems. The Rubik cube is used as a
@@ -20,7 +20,7 @@ Accessibility geometry determines their behavior.
 Genericity determines why the behavior is stable.
 ```
 
-## Seven-Paper Arc
+## Ten-Paper Arc
 
 | Paper | Role | Main question |
 |-------|------|---------------|
@@ -31,6 +31,9 @@ Genericity determines why the behavior is stable.
 | Paper V | repair calculus | What repairs binary support after path-commutator cancellation? |
 | Paper VI | deformation geometry | Why do sectors and accessibility walls move under generator variation? |
 | Paper VII | generic completion | Why is accessibility generically stable? |
+| Paper VIII | SOF object theory | What is the sectorized observable object? |
+| Paper IX | observable dynamics | How do SOF observables evolve under deformation? |
+| Paper X | observable pipeline | Why do different species share one observable pipeline? |
 
 The dependency chain is:
 
@@ -42,6 +45,9 @@ Arithmetic
   -> Accessibility repair
   -> Generator-set deformation
   -> Generic completion
+  -> SOF object theory
+  -> Observable dynamics
+  -> Universal observable pipeline
 ```
 
 ## Main Objects
@@ -70,9 +76,9 @@ moving sector/wall geometry    -> Paper VI
 generic completion theory      -> Paper VII
 ```
 
-## Sectorized Observable Language
+## Sectorized Observable Architecture
 
-The common organizational language after Paper V is the Sectorized Observable
+The common organizational architecture after Paper V is the Sectorized Observable
 Framework (SOF). In the current papers this is used only as neutral terminology
 for data of the form
 
@@ -85,16 +91,28 @@ projector family, and `X` is a chosen observable family. The observables
 `R_1`, `R_2`, and `D` are defined relative to this data, not to the Rubik
 representation alone.
 
-A full SOF registry and axiomatization is future work. The current theorem
-layers remain paper-specific and claim-status gated.
+SOF is a sectorized observable architecture. It does not prescribe a universal wall
+theory; deformation geometry is chosen separately in each branch.
+
+The lightweight registry lives in `docs/SOF_REGISTRY.md`. The post-VII SOF
+material is split by role:
+
+- `docs/SOF_OBJECTS.md` for the static object layer;
+- `docs/SOF_DEFORMATIONS.md` for observable dynamics and walls;
+- `docs/SOF_APPLICATIONS.md` for cross-species applications;
+- `docs/SOF_RELATED_WORK.md` for external framework precedents.
+
+Further SOF theorem upgrades remain future work. The current theorem layers
+remain paper-specific and claim-status gated.
 
 ## Repository Entry Points
 
-- `papers/paper1/`--`papers/paper7/` contain the manuscript sources.
+- `papers/paper1/`--`papers/paper10/` contain the manuscript sources.
 - `ccs/canonical_specification.md` records the canonical computational data for
   the trilogy and bridge notes.
-- `docs/PROGRAM_MAP.md` gives the detailed Papers I--VII architecture.
+- `docs/PROGRAM_MAP.md` gives the detailed Papers I--X architecture.
 - `docs/PROGRAM_PHILOSOPHY.md` records the Rubik-as-laboratory philosophy.
+- `docs/FUTURE_RELATED_WORK.md` routes post-VII SOF horizon notes.
 - `docs/TRILOGY_OVERVIEW.md` preserves the original trilogy-focused overview.
 - `experiments/README.md` maps support scripts to paper claims.
 

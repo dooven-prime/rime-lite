@@ -112,7 +112,8 @@ observable shadows of the moving sectorized system.](../../figures/paper6/fig1_p
 | $Q_i(w)$ | orthogonal joint-sector projector on $\Sigma_{\mathrm{spec}}$ |
 | $B^g_{ij}(w)$ | block map $Q_i(w)X_gQ_j(w)$ |
 | $\mathcal{J}_{\mathrm{acc}}(w)$ | accessibility jet: first-order data of block, commutator, and Hall projection fields |
-| $\Sigma_{\mathrm{access}}$ | accessibility wall: rank/support discriminant of the accessibility jet |
+| $\Delta_{\mathrm{access}}$ | accessibility discriminant read from the rank/support profile of the accessibility jet |
+| $\Sigma_{\mathrm{access}}$ | accessibility wall locus when $\Delta_{\mathrm{access}}$ is taken as the exact accessibility discriminant |
 | $R_1(w)$ | generator-labelled directed support graph computed from block-field support |
 | $R_2(w)$ | repair graph computed from projected commutator survival |
 | $D(w)$ | minimal accessibility depth data |
@@ -1027,7 +1028,16 @@ They are not accessibility walls by definition.
 ### Definition 15 (Accessibility Wall)
 
 An accessibility wall is a locus inside a normal spectral chart
-$\Sigma_{\mathrm{spec}}\subseteq\Sigma_{\mathrm{comm}}$ such that
+$\Sigma_{\mathrm{spec}}\subseteq\Sigma_{\mathrm{comm}}$ where the
+accessibility discriminant
+
+$$
+\Delta_{\mathrm{access}}(w)
+$$
+
+detects a failure of local continuation of the rank/support profile of
+$\mathcal{J}_{\mathrm{acc}}(w)$. When $\Delta_{\mathrm{access}}$ is taken as
+the exact accessibility discriminant, one has
 
 $$
 w\in\Sigma_{\mathrm{access}}
@@ -1045,9 +1055,9 @@ $$
 \{w\in\Sigma_{\mathrm{spec}}:(R_1,R_2,D)\ \text{is not locally constant}\}.
 $$
 
-Equivalently, $\Sigma_{\mathrm{access}}$ is the union of the rank/support
-discriminants for the block, projected-commutator, and Hall projection fields.
-The three visible components are
+Under this exact-discriminant convention, $\Sigma_{\mathrm{access}}$ is the
+union of the rank/support discriminants for the block, projected-commutator,
+and Hall projection fields. The three visible components are
 
 $$
 \Sigma_{R_1}
@@ -1069,7 +1079,7 @@ $$
 \{w\in\Sigma_{\mathrm{spec}}:D(w)\ \text{is not locally constant}\}.
 $$
 
-At the support level,
+At the support level, again under the exact-discriminant convention,
 
 $$
 \Sigma_{\mathrm{access}}
@@ -1393,7 +1403,7 @@ changes in $R_1$. Spectral walls describe how the arrangement moves;
 accessibility walls describe when that motion changes the gap between
 Lie-generated and composition-generated accessibility.
 
-This gives a common language for the later papers. A point of
+This gives a common observable architecture for the later papers. A point of
 $\Sigma_{\mathrm{spec}}$ determines a sectorized observable framework
 
 $$

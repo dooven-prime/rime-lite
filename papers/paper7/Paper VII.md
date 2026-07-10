@@ -82,7 +82,7 @@ lie outside it; perturbation at $\varepsilon=10^{-6}$ destroys Type IV in
 $100/100$ trials for the tested incidence models; $0/400000$ random matrix
 pairs satisfy $AB=0$ with $A,B\ne0$; and exact-hash audits on $80$ diverse
 random systems found zero disagreements among systems with identical
-$(R_1,R_2)$. A claim-status-gated rank-protected bridge audit further separates
+$(R_1,R_2)$. A claim-status-metadata bridge audit further separates
 the generic and structured regimes: five fixed-seed random systems give
 $1080/1080$ safe bridge products and zero incidence candidates, while the Rubik
 system has $528$ bridge-level incidence candidates concentrated in a small
@@ -459,8 +459,9 @@ $$
 \Sigma_{R_2}^{\circ}\cup\Sigma_D^{\circ}.
 $$
 
-Type III and Type IV are not Paper VI wall categories. They are local
-mechanisms that can occur inside the static fibers over those walls. Paper VI
+Type III and Type IV are not Paper VI wall-hierarchy labels, and they should
+not be read as wall classification labels. They are local mechanisms that can occur inside
+the static fibers over those walls. Paper VI
 answers where the observables jump in moduli space; Paper VII asks when the
 accessibility jet has enough information to complete the depth calculation in
 one fixed sectorized system.
@@ -486,7 +487,7 @@ The corresponding repository scripts are `atlas_r2_boundary.py`,
 `incidence_variety_codim.py`, and `rank_protected_bridge_audit.py` in
 `experiments/paper7/`.
 
-The stable support table is organized by claim-status gates:
+The stable support table is organized by claim-status metadata:
 
 | Claim supported | Source | Observed result | Status |
 |-----------------|--------|-----------------|--------|
@@ -522,7 +523,7 @@ there were $4$ exact-hash equivalence classes with identical $R_1$ and $R_2$
 arrays. All $4$ classes had identical $D_{\max}$ and identical per-depth
 structure. No $D$ disagreement was found.
 
-**(v) Claim-status-gated bridge audit.** The rank-protected bridge audit is
+**(v) Claim-status-metadata bridge audit.** The rank-protected bridge audit is
 split into five gates. Gate A is theorem-support: Corollary 3 was checked on
 constructed rank-protected blocks in dimensions $2,3,4$, with no violation. Gate B
 checks the Type III/IV boundary: the synthetic Type III model has $4/4$
@@ -648,14 +649,14 @@ The Type IV boundary is perturbatively unstable in the tested models.
 ![Type IV perturbation instability. In the synthetic incidence families, every
 tested perturbation amplitude breaks the constructed $AB=0$ relation.](../../figures/paper7/figA1_type_iv_perturbation_instability.png)
 
-## Appendix B --- Claim-Status Gates
+## Appendix B --- Claim-Status Metadata
 
 The support suite is intentionally tiered: theorem support, computational
 evidence, diagnostics, and exploratory scans are kept distinct.
 
-![Paper VII claim-status gates. The codimension and rank-protection statements
+![Paper VII claim-status metadata. The codimension and rank-protection statements
 are theorem-level; random-family audits are computational evidence; the
-completion principle remains conjectural.](../../figures/paper7/figA2_claim_status_gates.png)
+completion principle remains conjectural.](../../figures/paper7/figA2_claim_status_metadata.png)
 
 ## Appendix C --- Cross-Species SOF Diagnostics
 
@@ -680,21 +681,21 @@ observable family, typically generators, transfer operators, or related
 observables.
 
 Throughout this appendix we use the term "Sectorized Observable Framework
-(SOF)" as a neutral organizational language for the sectorized systems
-appearing in the RIME program. It is intended as terminology only; no
-additional mathematical structure beyond $(V,\{Q_i\},\mathcal X)$ is assumed
-here.
+(SOF)" as a neutral observable architecture for the sectorized systems
+appearing in the RIME program. It is intended as static object terminology
+only; no deformation theory, registry theorem, or universal wall theory beyond
+$(V,\{Q_i\},\mathcal X)$ is assumed here.
 
 The quantities $R_1$, $R_2$, and $D$ are defined relative to this triple rather
 than to any particular Rubik representation. The Rubik cube, quantum gate
 systems, Markov systems, and graph systems considered below are therefore
-interpreted as different realizations of the same framework.
+interpreted as different realizations of the same observable architecture.
 
 The unifying object is not a particular wall theory, but the sectorization.
-Different systems may share the same sectorized observable language while
+Different systems may pass through the same observable architecture while
 exhibiting different deformation geometries.
 
-A systematic development of the SOF language lies beyond the scope of the
+A systematic development of the SOF architecture lies beyond the scope of the
 present paper and is left for future work.
 
 ### C.1 Quantum Gate Systems
@@ -823,7 +824,7 @@ geometry, repair calculus, and wall geometry have been separated.
 experiment, the VII-B incidence codimension experiment, and the VII-C
 rank-protected bridge audit. The manuscript-level reproducibility notes remain
 attached to the support scripts in `experiments/paper7/`, while the repository
-stores the full logs and tables used to check the claim-status gates.
+stores the full logs and tables used to check the claim-status metadata.
 
 ***
 

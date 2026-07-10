@@ -1,12 +1,12 @@
 """Quantum SOF R1/R2/D audit on small gate systems.
 
-This is a non-Rubik sanity check for the Sectorized Observable Framework language.
+This is a non-Rubik sanity check for the Sectorized Observable Framework
+architecture.
 It uses computational-basis projectors as sectors and logarithmic/skew
 generators derived from small gate sets.
 
 Status:
-    Exploratory support for SOF universality language, not theorem support for
-    Papers I--VII.
+    Exploratory support for SOF portability, not a standalone theorem source.
 """
 
 from __future__ import annotations

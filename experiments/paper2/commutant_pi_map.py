@@ -11,8 +11,12 @@ Decomposition:
     Δcomm = dim(coker π) - dim(ker π) = 356
 """
 import numpy as np
+import sys
 from rime.cubieoperator import CubieSpectralOperator
 from rime.cubie import CubieMove
+
+# Force unbuffered output (commutant projection takes ~10 min, avoid silent hang)
+sys.stdout.reconfigure(line_buffering=True) if hasattr(sys.stdout, 'reconfigure') else None
 
 
 def project_commutant_to_layer(op, full_basis, lam):

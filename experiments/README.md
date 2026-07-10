@@ -12,7 +12,9 @@ RIME program. The public-facing directory has four separate responsibilities:
 Tests under `tests/` verify package invariants and are not part of this
 directory.
 
-Public release scope: Papers I--VII plus CCS.
+Public release scope: Papers I--X plus CCS. Paper XI--XII scripts, when
+present, are horizon diagnostics and are not part of the current public release
+claim set.
 
 All public support scripts use fixed seeds where randomness is present
 (`np.random.seed(42)` unless otherwise stated).
@@ -29,6 +31,8 @@ experiments/
 |-- paper6/                 Paper VI: generator-set moduli and wall structure
 |   `-- archive/            historical provenance scripts only
 |-- paper7/                 Paper VII: generic completion and SOF diagnostics
+|-- paper9/                 Paper IX: observable dynamics diagnostics
+|-- paper10/                Paper X: registry evidence and SOF portability
 |-- quantum/                quantum-gate SOF diagnostics
 |-- cross_ref/              related-work diagnostics, not theorem sources
 `-- trilogy_style/          shared styling utilities used by local figure scripts
@@ -123,18 +127,55 @@ boundary paper. Exploratory or historical variants live under
 |--------|--------|
 | `experiments/quantum/quantum_accessibility_universality.py` | Pauli/Clifford/Universal gate-set R1/R2/D sanity check |
 
-This script supports the Sectorized Observable Framework draft language. It is a
-cross-species diagnostic and appendix-level sanity check, not a theorem source
-for Papers I--VII.
+This script supports Sectorized Observable Framework portability checks. It is a
+cross-species diagnostic and appendix-level sanity check, not a standalone
+theorem source.
 
 ## Cross-Reference Diagnostics
 
 | Script | Status |
 |--------|--------|
 | `experiments/cross_ref/emlp_morphosymm_character_diagnostic.py` | related-work diagnostic for commutant, character-idempotent, and symmetry-adapted coordinate comparisons |
+| `experiments/cross_ref/grokking_rate_separation.py` | related-work diagnostic for ridge-regression row/null-space rate separation and Paper IX deformation dynamics |
 
 These scripts support related-work positioning. They are not theorem sources
-for Papers I--VII.
+unless a manuscript explicitly cites them as claim support.
+
+## Paper VIII - Sectorized Observable Framework
+
+Paper VIII is primarily object-theoretic. Its public reproducibility layer is
+the manuscript proof layer plus figure assets. The top-level
+`experiments/paper8_figures.py` script regenerates the schematic figures, but
+it is a figure-production tool rather than numerical theorem support.
+
+## Paper IX - Observable Dynamics
+
+| Script | Status |
+|--------|--------|
+| `experiments/paper9/nn_activation_sof.py` | activation-induced sectorization and fixed-weight R1/R2/frozen diagnostic |
+| `experiments/paper9/nn_training_sof_tau.py` | training-coupled K0/K1/K2 time-scale diagnostic |
+| `experiments/paper9/rate_hierarchy.py` | rate hierarchy, rate collapse, and sectorization-sensitivity diagnostic |
+| `experiments/paper9/state_mixing_fft.py` | state-mixing, oscillation, and cross-domain rate-separation summary |
+| `experiments/paper9/plateau_under_qt_perturbation.py` | QT generator-weight plateau diagnostic; default mode postprocesses cached data |
+
+Paper IX scripts are diagnostics for observable dynamics. They are the current
+home for rate hierarchy, wall dynamics, and deformation-species experiments;
+claim status is recorded script by script.
+
+## Paper X - Universal Observable Pipeline and SOF Registry
+
+| Script | Status |
+|--------|--------|
+| `experiments/paper10/mechanism_separation_theorem.py` | constructive H3 positive control: mechanism separation gives proxy-rate separation, `30 << 1380` |
+| `experiments/paper10/control_pde_combinatorial_sof.py` | control/PDE/combinatorial SOF portability probe: Kalman ranks, Laplacian subdomain transport, and graph-coloring diagnostics |
+| `experiments/paper10/ncg_spectral_triple_sof.py` | finite NCG-inspired spectral-triple SOF probe: central Connes-distance obstruction and two ordered T7-style bridges |
+| `experiments/paper10/rubik_wild_type34_audit.py` | Rubik QT/HT wild Type III/IV audit: `288` Type III cancellations and `528` Type IV bridge-level incidence products |
+| `experiments/paper10/registry_evidence.py` | registry evidence summary: mechanism-separated control, Xu/RIME/NN rates, Yang/RIME plateau contrast, and quantum Clifford non-Rubik D-repair |
+| `experiments/paper10/tau_quantum_graph_yang.py` | negative/boundary tau probes for quantum interpolation, graph rewiring, and Yang-like state mixing |
+
+Paper X scripts are registry evidence. They support the SOF Registry as a
+cross-species comparison object. Mechanism separation is constructive
+proxy-layer support; proxy-to-shadow and `tau(D)` bridges remain open.
 
 ## Figure Production Scripts
 
@@ -154,6 +195,8 @@ python experiments/paper4/rubik_collision_quotient.py
 python experiments/paper6/tangent_commutator_map.py
 python experiments/paper7/rank_protected_bridge_audit.py
 python experiments/paper7/markov_graph_sof.py
+python experiments/paper9/rate_hierarchy.py
+python experiments/paper10/registry_evidence.py
 ```
 
 Run the quantum SOF diagnostic from the repository root:

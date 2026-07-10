@@ -21,6 +21,17 @@ from itertools import combinations
 from rime.spectral_utils import *
 
 
+def _block_ranges(dim_a, dim_b):
+    """Return block ranges for 2-block model (A: 0..dim_a, B: dim_a..dim_a+dim_b)."""
+    return {'A': (0, dim_a), 'B': (dim_a, dim_a + dim_b)}
+
+
+def _block_sets(projectors, dim_a, dim_b):
+    """Compute block sets for each projector using 2-block ranges."""
+    br = _block_ranges(dim_a, dim_b)
+    return [block_set(P, br) for P in projectors]
+
+
 # ============================================================
 # Part 1: Abelian Groups
 # ============================================================
@@ -56,11 +67,9 @@ for i, s1 in enumerate(inv_subsets_z2z2):
             found_hybrid = True
             projectors = build_projectors(sectors, dim_a + dim_b)
             K, k0, k1 = compute_transport_kappa(rhos, projectors)
-            t7 = find_t7_pairs(K, k0, k1, types)
-            print(f"  Z=({set(s1)},{set(s2)}): {n_a}A+{n_b}B+{n_h}H, T7_pairs={len(t7)}")
-            if t7:
-                for a, b, has_path, _, _, _ in t7:
-                    print(f"    T7: S{a}({types[a]})<->S{b}({types[b]}), path={has_path}")
+            block_sets = _block_sets(projectors, dim_a, dim_b)
+            t7_count, _ = count_t7_pairs(K, k0, k1, block_sets)
+            print(f"  Z=({set(s1)},{set(s2)}): {n_a}A+{n_b}B+{n_h}H, T7_count={t7_count}")
 
 if not found_hybrid:
     print("  NO hybrid sectors found in any Center configuration")
@@ -145,10 +154,11 @@ for i, s1 in enumerate(key_subsets):
             print(f"  Z=({set(s1)},{set(s2)}): {n_a}A+{n_b}B+{n_h}H")
             projectors = build_projectors(sectors, 3)
             K, k0, k1 = compute_transport_kappa(rhos_s3_std_sign, projectors)
-            t7 = find_t7_pairs(K, k0, k1, types)
+            block_sets = _block_sets(projectors, dim_a, dim_b)
+            t7_count, _ = count_t7_pairs(K, k0, k1, block_sets)
             print(f"    K matrix:\n    {np.array2string(K, precision=3, suppress_small=True)}")
-            if t7:
-                print(f"    T7 pairs: {t7}")
+            if t7_count > 0:
+                print(f"    T7 count: {t7_count}")
 
 if not found_hybrid:
     print("  No hybrid sectors found in key subsets")
@@ -167,10 +177,11 @@ if not found_hybrid:
                 found_hybrid = True
                 projectors = build_projectors(sectors, 3)
                 K, k0, k1 = compute_transport_kappa(rhos_s3_std_sign, projectors)
-                t7 = find_t7_pairs(K, k0, k1, types)
+                block_sets = _block_sets(projectors, dim_a, dim_b)
+                t7_count, _ = count_t7_pairs(K, k0, k1, block_sets)
                 n_a = sum(1 for t in types if t == 'A')
                 n_b = sum(1 for t in types if t == 'B')
-                print(f"  Z=({set(s1)},{set(s2)}): {n_a}A+{n_b}B+{n_h}H, T7={len(t7)}")
+                print(f"  Z=({set(s1)},{set(s2)}): {n_a}A+{n_b}B+{n_h}H, T7={t7_count}")
                 count += 1
                 if count >= 5:
                     break
@@ -210,10 +221,11 @@ for i, s1 in enumerate(key_subsets):
             n_b = sum(1 for t in types if t == 'B')
             projectors = build_projectors(sectors, 4)
             K, k0, k1 = compute_transport_kappa(rhos_s3_std_trivsign, projectors)
-            t7 = find_t7_pairs(K, k0, k1, types)
-            print(f"  Z=({set(s1)},{set(s2)}): {n_a}A+{n_b}B+{n_h}H, T7={len(t7)}")
-            if t7:
-                print(f"    T7 pairs: {t7}")
+            block_sets = _block_sets(projectors, dim_a, dim_b)
+            t7_count, _ = count_t7_pairs(K, k0, k1, block_sets)
+            print(f"  Z=({set(s1)},{set(s2)}): {n_a}A+{n_b}B+{n_h}H, T7={t7_count}")
+            if t7_count > 0:
+                print(f"    T7 count: {t7_count}")
 
 if not found_hybrid:
     print("  No hybrid sectors found")
@@ -257,11 +269,12 @@ for s1 in inv_subsets_z2z2:
             print(f"  FOUND! Z=({set(s1)},{set(s2)}): {n_a}A+{n_b}B+{n_h}H")
             projectors = build_projectors(sectors, 2)
             K, k0, k1 = compute_transport_kappa(rhos_test, projectors)
-            t7 = find_t7_pairs(K, k0, k1, types)
+            block_sets = _block_sets(projectors, dim_a, dim_b)
+            t7_count, _ = count_t7_pairs(K, k0, k1, block_sets)
             print(f"    Types: {types}")
             print(f"    K matrix:\n    {np.array2string(K, precision=3, suppress_small=True)}")
-            if t7:
-                print(f"    T7 pairs: {t7}")
+            if t7_count > 0:
+                print(f"    T7 count: {t7_count}")
             else:
                 print(f"    No T7 pairs")
 

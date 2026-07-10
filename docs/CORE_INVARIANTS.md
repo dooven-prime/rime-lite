@@ -1,6 +1,15 @@
 # Core Invariants
 
-This file is the current reference for the canonical RIME computation. It records the stable objects, numerical values, and claim-status boundaries used by the three papers and the Computational Canonical Specification (CCS).
+This file is the reference for the canonical Rubik computation behind the
+RIME trilogy and the Computational Canonical Specification (CCS). It records
+stable objects, numerical values, and claim-status boundaries for the
+foundational Rubik laboratory.
+
+Scope note: this is not the full Papers I--X program map. For Papers IV--X,
+SOF, observable dynamics, and registry evidence, use `docs/PROGRAM_MAP.md`,
+`docs/overview.md`, and the paper manuscripts. This file remains public because
+the later program depends on these canonical Rubik invariants as calibration
+data.
 
 The canonical system is the 228-dimensional Rubik's Cube cubie representation with the standard 18 face-turn generator set. Unless stated otherwise, sectors are defined by the commutative center generated from
 
@@ -20,7 +29,7 @@ Use the following language consistently:
 | Computationally verified | Recomputed by tests or experiment scripts in the canonical system |
 | Observed | Stable pattern across stated tested systems |
 | Exploratory | Heuristic, partial, or broader generalization evidence |
-| Open | Not established by the current trilogy |
+| Open | Not established by the current paper series |
 
 ## Governing Picture
 

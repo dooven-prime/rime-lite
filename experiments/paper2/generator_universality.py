@@ -26,6 +26,7 @@ Key question: do κ_ij = 0 pairs persist across all symmetric generator sets?
 Run: python experiments/paper2/generator_universality.py
 """
 import sys
+sys.stdout.reconfigure(line_buffering=True) if hasattr(sys.stdout, 'reconfigure') else None
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt

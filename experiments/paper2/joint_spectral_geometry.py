@@ -102,7 +102,7 @@ def main() -> None:
     for layer in sorted(layer_map, reverse=True):
         members = layer_map[layer]
         dim = sum(sectors[i - 1]["dim"] for i in members)
-        print(f"  A18={layer:>4}: {members} (dim={dim})")
+        print(f"  A18={str(layer):>4s}: {members} (dim={dim})")
 
     assert layer_map[Fraction(5, 9)] == [5, 6, 7]
     assert sum(sectors[i - 1]["dim"] for i in [5, 6, 7]) == 106

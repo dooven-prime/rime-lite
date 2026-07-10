@@ -1,8 +1,38 @@
 # Paper Scope
 
-This file defines the current scope of the RIME trilogy. It is a navigation and boundary document: what each paper studies, which files support it, and which claims should not be moved across paper boundaries.
+This file defines the public scope of the RIME paper series. It is a navigation
+and boundary document: what each paper studies, which files support it, and
+which claims should not be moved across paper boundaries.
 
-The trilogy is built around one pipeline:
+Current public release: Papers I--X plus the Computational Canonical
+Specification (CCS). Papers XI--XII remain horizon material.
+
+For the full narrative architecture, see `docs/PROGRAM_MAP.md`. For the
+canonical Rubik numerical invariants behind Papers I--III and CCS, see
+`docs/CORE_INVARIANTS.md`.
+
+## Public Scope Matrix
+
+| Paper | Object | Question |
+|-------|--------|----------|
+| Paper I | `A_18` and its spectral layers | Why does the canonical Rubik spectrum have six rational layers? |
+| Paper II | QT/HT sectors and transport tensor `K` | Why does the resolved sector graph have its observed structure? |
+| Paper III | Lie-generated versus compositional accessibility | Why can composition see channels Lie generation misses? |
+| Paper IV | finite QT/HT joint spectrum and collision quotient | Why are the six spectral layers a collision quotient? |
+| Paper V | minimal accessibility data `(R_1,R_2)->D` | What repairs binary support after path-commutator cancellation? |
+| Paper VI | generator-set moduli, `Sigma_comm`, and accessibility walls | How do spectral phases and accessibility data bifurcate under generator variation? |
+| Paper VII | incidence varieties and rank-protected bridges | Why is accessibility generically stable? |
+| Paper VIII | finite SOF data, strict morphisms, and naturality | What is the sectorized observable object? |
+| Paper IX | SOF deformations and observable trajectories | How do SOF observables evolve under deformation? |
+| Paper X | Universal Observable Pipeline and SOF Registry evidence | Why do different species share one observable pipeline? |
+| Paper XI | observable wall records | Horizon: which wall records admit taxonomy or local models? |
+| Paper XII | SOF diagnostic workflow | Horizon: what does SOF diagnose in practice? |
+
+The expanded sections below preserve the original trilogy and CCS boundaries
+because those papers define the canonical Rubik data used throughout the
+program.
+
+The trilogy foundation is built around one pipeline:
 
 ```text
 rho(g) -> A_18 -> spectral layers -> primitive sectors -> transport -> Lie/composition gap
@@ -138,7 +168,8 @@ A_g = log rho(g).
 
 ## CCS: Computational Canonical Specification
 
-**Object.** The CCS is the canonical numerical and methodological supplement for all three papers.
+**Object.** The CCS is the canonical numerical and methodological supplement
+for the RIME trilogy and its bridge notes.
 
 **In scope.**
 

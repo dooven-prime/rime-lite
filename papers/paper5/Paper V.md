@@ -156,11 +156,11 @@ spectral charts inside the commutative moduli wall.
 
 ***
 
-## Sectorized Observable Framework
+## Static Sectorized Observable Framework
 
 ### Definition 1 (Sectorized Observable Framework)
 
-A sectorized observable framework consists of:
+A static sectorized observable framework consists of:
 
 1. a finite-dimensional complex Hilbert space $V$;
 2. a finite orthogonal projector decomposition
@@ -637,9 +637,11 @@ least $3$.
 The proposition is the static mechanism layer beneath the later wall-crossing
 question. In deformation language, Type III records signed commutator
 cancellation and Type IV records product incidence. These are not additional
-names for the Paper VI wall categories $\Sigma_{R_1}$, $\Sigma_{R_2}^{\circ}$,
-or $\Sigma_D^{\circ}$. Rather, they are local mechanisms that may realize
-pieces of the residual $R_2$ wall after $R_1$ has been held fixed.
+names for the Paper VI wall-hierarchy loci $\Sigma_{R_1}$,
+$\Sigma_{R_2}^{\circ}$, or $\Sigma_D^{\circ}$, and they are not a wall
+classification scheme. Rather, they are
+local mechanism strata that may realize pieces of the residual $R_2$ wall after
+$R_1$ has been held fixed.
 
 ### Remark 4 (Algebraic Accessibility Structures)
 
@@ -893,11 +895,13 @@ sectorizations and is controlled by rank/nondegeneracy conditions in the S4
 bridge audit.
 
 This is the point where Paper V feeds Paper VI. Type III and Type IV are not
-Paper VI wall categories. They are mechanism-level strata inside the static
-fiber of the deformation problem: Type III is the cancellation component of
-residual $R_2$ failure, and Type IV is the incidence component. The
-observable-level walls $\Sigma_{R_1}$, $\Sigma_{R_2}^{\circ}$, and
-$\Sigma_D^{\circ}$ remain the Paper VI classification axis.
+Paper VI wall-hierarchy labels, and they should not be read as wall
+classification labels.
+They are mechanism-level strata inside the static fiber of the deformation
+problem: Type III is the cancellation component of residual $R_2$ failure, and
+Type IV is the incidence component. The observable-level walls
+$\Sigma_{R_1}$, $\Sigma_{R_2}^{\circ}$, and $\Sigma_D^{\circ}$ remain the
+Paper VI classification axis.
 
 ### Conditional Accessibility Completeness
 

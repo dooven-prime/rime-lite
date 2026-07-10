@@ -60,6 +60,111 @@ def _rank_real_blocks(blocks, tol=1e-8):
     return int(np.sum(s > tol * max(1.0, s[0])))
 
 
+def sector_block_norm(Vs, X, i, j):
+    """Frobenius norm of the projected block Q_i X Q_j.
+
+    Args:
+        Vs: list of sector bases, Vs[k] = (n, d_k).
+        X: (n,n) observable matrix.
+        i, j: sector indices.
+
+    Returns:
+        float Frobenius norm of Vs[i]^H X Vs[j].
+    """
+    return float(np.linalg.norm(Vs[i].conj().T @ X @ Vs[j], 'fro'))
+
+
+def projector_block_norm(Qs, X, i, j):
+    """Frobenius norm of the projector-cut block Q_i X Q_j.
+
+    Args:
+        Qs: list of projector matrices.
+        X: (n,n) observable matrix.
+        i, j: sector indices.
+
+    Returns:
+        float Frobenius norm of Qs[i] @ X @ Qs[j].
+    """
+    return float(np.linalg.norm(Qs[i] @ X @ Qs[j], 'fro'))
+
+
+def offdiag_count(mat):
+    """Count truthy off-diagonal entries in a square matrix."""
+    n = mat.shape[0]
+    return int(sum(bool(mat[i, j]) for i in range(n) for j in range(n) if i != j))
+
+
+def compute_direct_support(Vs, Xs, tol=1e-8):
+    """Aggregate direct sector support over an observable family.
+
+    support[i,j] is True iff some X in Xs has ||Q_i X Q_j||_F > tol.
+    Diagonal entries are left False.
+    """
+    n_sec = len(Vs)
+    support = np.zeros((n_sec, n_sec), dtype=bool)
+    for X in Xs:
+        for i in range(n_sec):
+            for j in range(n_sec):
+                if i != j and sector_block_norm(Vs, X, i, j) > tol:
+                    support[i, j] = True
+    return support
+
+
+def compute_length_two_support(Vs, Xs, tol=1e-8):
+    """Aggregate length-two word support over an observable family.
+
+    support[i,j] is True iff some product XY has ||Q_i XY Q_j||_F > tol.
+    This is a word/transport diagnostic, not the commutator R2 invariant.
+    """
+    n_sec = len(Vs)
+    support = np.zeros((n_sec, n_sec), dtype=bool)
+    for X in Xs:
+        for Y in Xs:
+            XY = X @ Y
+            for i in range(n_sec):
+                for j in range(n_sec):
+                    if i != j and sector_block_norm(Vs, XY, i, j) > tol:
+                        support[i, j] = True
+    return support
+
+
+def compute_word_depth_matrix(Vs, Xs, max_depth=4, tol=1e-8, frozen=999):
+    """Compute first accessibility depth using words in the observables.
+
+    Depth 1 uses generators, depth 2 uses products of two generators, etc.
+    This is useful for transport/PDE/control diagnostics. It is distinct from
+    compute_lie_depth_matrix, which uses the Lie filtration.
+    """
+    n_sec = len(Vs)
+    dim = Xs[0].shape[0]
+    D = np.full((n_sec, n_sec), frozen, dtype=int)
+    np.fill_diagonal(D, 0)
+
+    words = [np.eye(dim, dtype=Xs[0].dtype)]
+    for depth in range(1, max_depth + 1):
+        words = [X @ W for X in Xs for W in words]
+        for i in range(n_sec):
+            for j in range(n_sec):
+                if i == j or D[i, j] != frozen:
+                    continue
+                if any(sector_block_norm(Vs, W, i, j) > tol for W in words):
+                    D[i, j] = depth
+    return D
+
+
+def plateau_fraction(D, depth, frozen=999):
+    """Fraction of off-diagonal sector pairs reachable by a given depth."""
+    n_sec = D.shape[0]
+    total = n_sec * (n_sec - 1)
+    if total == 0:
+        return 0.0
+    reached = sum(
+        1 for i in range(n_sec) for j in range(n_sec)
+        if i != j and D[i, j] != frozen and D[i, j] <= depth
+    )
+    return reached / total
+
+
 # ============================================================
 # R1 / R2 computation
 # ============================================================
@@ -715,6 +820,9 @@ class AccessibilityEngine:
 
 # Also expose at module level
 __all__ = [
+    'sector_block_norm', 'projector_block_norm', 'offdiag_count',
+    'compute_direct_support', 'compute_length_two_support',
+    'compute_word_depth_matrix', 'plateau_fraction',
     'compute_R1', 'compute_R2', 'compute_R2_per_generator',
     'compute_lie_filtration', 'compute_lie_depth_matrix',
     'single_term_bridge_audit',

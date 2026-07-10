@@ -1,7 +1,7 @@
 """Isotypic decomposition and transport from combinatorial commutant (F1/F2/F3/F4).
 
 Uses CubieSpectralOperator.full_commutant_combinatorial() for exact 228-dim
-commutant (610 basis matrices, 0.7s), then projects to each eigenspace layer,
+commutant (610 basis matrices, ~2s), then projects to each eigenspace layer,
 finds central idempotents (12 isotypic components total), and computes
 isotypic-level transport tensor (12×12×18).
 
@@ -140,13 +140,28 @@ def isotypic_transport_tensor(op):
                 for m in op.rho_matrices()]
     n_gens = len(rho_mats)
 
-    T = np.zeros((n_iso, n_iso, n_gens))
+    # Precompute sector bases V_a from projectors (P_a = V_a @ V_a^T)
+    # Then ||P_a rho P_b||_F = ||V_a^T rho V_b||_F — avoids full projector matmuls
+    sector_bases = []
     for a in range(n_iso):
-        P_a = full_projectors[a]
+        P = full_projectors[a]
+        evals, evecs = np.linalg.eigh(P)
+        mask = np.abs(evals - 1.0) < 1e-8
+        V = evecs[:, mask]; V, _ = np.linalg.qr(V)
+        sector_bases.append(V)
+
+    T = np.zeros((n_iso, n_iso, n_gens))
+    # Precompute rho_mats[g] @ V_b for all (g,b)
+    rho_V = {}
+    for g in range(n_gens):
         for b in range(n_iso):
-            P_b = full_projectors[b]
+            rho_V[(g, b)] = rho_mats[g] @ sector_bases[b]
+
+    for a in range(n_iso):
+        Va = sector_bases[a]
+        for b in range(n_iso):
             for g in range(n_gens):
-                transport = P_a @ rho_mats[g] @ P_b
+                transport = Va.T.conj() @ rho_V[(g, b)]
                 T[a, b, g] = np.linalg.norm(transport, 'fro')
 
     K = np.max(T, axis=2)

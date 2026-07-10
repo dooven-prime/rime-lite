@@ -7,6 +7,9 @@
 [![Paper V DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21152972.svg)](https://doi.org/10.5281/zenodo.21152972)
 [![Paper VI DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21154656.svg)](https://doi.org/10.5281/zenodo.21154656)
 [![Paper VII DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21193940.svg)](https://doi.org/10.5281/zenodo.21193940)
+[![Paper VIII DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21287278.svg)](https://doi.org/10.5281/zenodo.21287278)
+[![Paper IX DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21287695.svg)](https://doi.org/10.5281/zenodo.21287695)
+[![Paper X DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21288036.svg)](https://doi.org/10.5281/zenodo.21288036)
 
 RIME studies spectral, transport, accessibility, and deformation structures in
 finite-dimensional represented systems. The Rubik cube is used as a concrete
@@ -14,7 +17,7 @@ finite representation laboratory, not as a puzzle-solving problem.
 
 ## Public Release
 
-The current public release contains Papers I--VII plus the Computational
+The current public release contains Papers I--X plus the Computational
 Canonical Specification (CCS).
 
 | Component | Topic | DOI / source |
@@ -24,6 +27,9 @@ Canonical Specification (CCS).
 | Paper V | accessibility repair calculus | [10.5281/zenodo.21152972](https://doi.org/10.5281/zenodo.21152972) |
 | Paper VI | generator-set deformation and accessibility walls | [10.5281/zenodo.21154656](https://doi.org/10.5281/zenodo.21154656) |
 | Paper VII | generic accessibility completion | [10.5281/zenodo.21193940](https://doi.org/10.5281/zenodo.21193940) |
+| Paper VIII | sectorized observable framework | [10.5281/zenodo.21287278](https://doi.org/10.5281/zenodo.21287278) |
+| Paper IX | observable dynamics of sectorized observable frameworks | [10.5281/zenodo.21287695](https://doi.org/10.5281/zenodo.21287695) |
+| Paper X | universal observable pipeline and SOF registry evidence | [10.5281/zenodo.21288036](https://doi.org/10.5281/zenodo.21288036) |
 
 ## Start Here
 
@@ -31,6 +37,10 @@ Canonical Specification (CCS).
 |-------------------|------------|
 | get the program overview | [`docs/overview.md`](docs/overview.md) |
 | understand the paper architecture | [`docs/PROGRAM_MAP.md`](docs/PROGRAM_MAP.md) |
+| understand the Rubik-as-laboratory philosophy | [`docs/PROGRAM_PHILOSOPHY.md`](docs/PROGRAM_PHILOSOPHY.md) |
+| check paper boundaries | [`docs/PAPER_SCOPE.md`](docs/PAPER_SCOPE.md) |
+| inspect canonical Rubik invariants | [`docs/CORE_INVARIANTS.md`](docs/CORE_INVARIANTS.md) |
+| check geometry and move conventions | [`docs/conventions.md`](docs/conventions.md) |
 | read the trilogy overview | [`docs/TRILOGY_OVERVIEW.md`](docs/TRILOGY_OVERVIEW.md) |
 | inspect reproducibility scripts | [`experiments/README.md`](experiments/README.md) |
 | check canonical computation notes | [`ccs/canonical_specification.md`](ccs/canonical_specification.md) |
@@ -46,6 +56,9 @@ Canonical Specification (CCS).
 | V | [`paper5_arxiv.pdf`](papers/paper5/paper5_arxiv.pdf) | [`Paper V.md`](papers/paper5/Paper%20V.md) | What repairs binary support after path-commutator cancellation? |
 | VI | [`paper6_arxiv.pdf`](papers/paper6/paper6_arxiv.pdf) | [`Paper VI.md`](papers/paper6/Paper%20VI.md) | How do spectral phases and accessibility data bifurcate under generator variation? |
 | VII | [`paper7_arxiv.pdf`](papers/paper7/paper7_arxiv.pdf) | [`Paper VII.md`](papers/paper7/Paper%20VII.md) | Why is accessibility generically stable? |
+| VIII | [`paper8_arxiv.pdf`](papers/paper8/paper8_arxiv.pdf) | [`Paper VIII.md`](papers/paper8/Paper%20VIII.md) | What is the sectorized observable object? |
+| IX | [`paper9_arxiv.pdf`](papers/paper9/paper9_arxiv.pdf) | [`Paper IX.md`](papers/paper9/Paper%20IX.md) | How do SOF observables evolve under deformation? |
+| X | [`paper10_arxiv.pdf`](papers/paper10/paper10_arxiv.pdf) | [`Paper X.md`](papers/paper10/Paper%20X.md) | Why do different species share one observable pipeline? |
 | CCS | [`ccs_arxiv.pdf`](ccs/ccs_arxiv.pdf) | [`canonical_specification.md`](ccs/canonical_specification.md) | Which numerical objects, figures, stability checks, and claim dependencies are canonical? |
 
 Program arc:
@@ -58,6 +71,9 @@ Arithmetic
   -> Accessibility repair
   -> Generator-set deformation
   -> Generic completion
+  -> SOF object theory
+  -> Observable dynamics
+  -> Universal observable pipeline
 ```
 
 ## Repository Structure
@@ -97,6 +113,9 @@ python experiments/paper4/rubik_collision_quotient.py
 python experiments/paper5/matrix_nondegeneracy.py
 python experiments/paper6/tangent_commutator_map.py
 python experiments/paper7/rank_protected_bridge_audit.py
+python experiments/paper8_figures.py
+python experiments/paper9/rate_hierarchy.py
+python experiments/paper10/registry_evidence.py
 ```
 
 For the full experiment map, see [`experiments/README.md`](experiments/README.md).
@@ -130,4 +149,7 @@ Paper IV   10.5281/zenodo.21127271
 Paper V    10.5281/zenodo.21152972
 Paper VI   10.5281/zenodo.21154656
 Paper VII  10.5281/zenodo.21193940
+Paper VIII 10.5281/zenodo.21287278
+Paper IX   10.5281/zenodo.21287695
+Paper X    10.5281/zenodo.21288036
 ```

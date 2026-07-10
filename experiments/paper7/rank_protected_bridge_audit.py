@@ -1,7 +1,7 @@
 # ============================================================
 # Rank-Protected Bridge Audit (v2 - scoped, reproducible)
 # ============================================================
-"""Claim-status-gated audit of bridge products A=Q_i X_g Q_k, B=Q_k X_h Q_j.
+"""Claim-status-metadata audit of bridge products A=Q_i X_g Q_k, B=Q_k X_h Q_j.
 
 Each bridge with A,B != 0 is classified as:
   - rank-protected:       A or B has full rank (AB=0 => B=0 or A=0)
@@ -412,7 +412,7 @@ def section_E_ablation():
 log("=" * 72)
 log("  Rank-Protected Bridge Audit v2")
 log("=" * 72)
-log("  Claim-status-gated, reproducible (fixed seeds), 3-way classification.")
+log("  Claim-status metadata, reproducible (fixed seeds), 3-way classification.")
 log("")
 
 section_A_theorem_support()
