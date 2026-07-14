@@ -211,8 +211,8 @@ R_1,\qquad R_2,\qquad D,\qquad
 \operatorname{plateau}(O)
 $$
 
-are defined by the same observable syntax, independent of the native species
-coordinates.
+are defined within the same observable architecture, independent of the native
+species coordinates.
 
 ### Proof
 
@@ -222,7 +222,7 @@ blocks, commutators, depth witnesses, jets, rank/support shadows, wall loci,
 rate diagnostics, repairs, and plateaus are then obtained by applying the same
 finite operations to $(V,\{Q_i\},\mathcal X)$ and, where needed, to a specified
 deformation or filtration.  The original species determines the realization,
-but after realization the observable syntax is the same.
+but after realization the observable architecture is common.
 
 This is the precise sense in which Paper X uses "universal": universality is
 the existence of a common observable pipeline, not a claim that all registered
@@ -402,8 +402,10 @@ from; it is registry metadata, not an additional SOF axiom.
 The complete registry is intentionally larger than the main argument. To keep
 Paper X centered on the pipeline rather than on a catalogue, the main text uses
 a compressed registry view. The full five-layer registry is maintained in
-`docs/SOF_REGISTRY.md`; a reader-facing version can place the full table in an
-appendix.
+`docs/SOF_REGISTRY.md`; the frozen release snapshot is
+`registry/paper10-release-v1.0.registry.json` and validates against
+`schemas/registry/v1.0.schema.json`. A reader-facing version can place the full
+table in an appendix.
 
 | Registry role | Representative species | Sectorization origin | Diagnostic status |
 |---------------|------------------------|----------------------|-------------------|

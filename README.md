@@ -10,6 +10,7 @@
 [![Paper VIII DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21287278.svg)](https://doi.org/10.5281/zenodo.21287278)
 [![Paper IX DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21287695.svg)](https://doi.org/10.5281/zenodo.21287695)
 [![Paper X DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21288036.svg)](https://doi.org/10.5281/zenodo.21288036)
+[![Paper XI DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21350768.svg)](https://doi.org/10.5281/zenodo.21350768)
 
 RIME studies spectral, transport, accessibility, and deformation structures in
 finite-dimensional represented systems. The Rubik cube is used as a concrete
@@ -17,7 +18,7 @@ finite representation laboratory, not as a puzzle-solving problem.
 
 ## Public Release
 
-The current public release contains Papers I--X plus the Computational
+The current public release contains Papers I--XI plus the Computational
 Canonical Specification (CCS).
 
 | Component | Topic | DOI / source |
@@ -30,6 +31,7 @@ Canonical Specification (CCS).
 | Paper VIII | sectorized observable framework | [10.5281/zenodo.21287278](https://doi.org/10.5281/zenodo.21287278) |
 | Paper IX | observable dynamics of sectorized observable frameworks | [10.5281/zenodo.21287695](https://doi.org/10.5281/zenodo.21287695) |
 | Paper X | universal observable pipeline and SOF registry evidence | [10.5281/zenodo.21288036](https://doi.org/10.5281/zenodo.21288036) |
+| Paper XI | observable classification theory for SOF wall records | [10.5281/zenodo.21350768](https://doi.org/10.5281/zenodo.21350768) |
 
 ## Start Here
 
@@ -86,6 +88,8 @@ rime-lite/
 |-- papers/               manuscript sources
 |-- ccs/                  Computational Canonical Specification source
 |-- docs/                 public overview, program map, and research notes
+|-- schemas/              versioned SOFRS and SOF Registry data contracts
+|-- registry/             frozen machine-readable Registry snapshots
 `-- figures/              frozen generated figures used by papers
 ```
 
@@ -101,6 +105,13 @@ Run fast invariant checks:
 
 ```bash
 python tests/run_all_tests.py
+```
+
+Validate the versioned SOF data artifacts:
+
+```bash
+python experiments/paper12/validate_sofreport.py
+python registry/validate_snapshot.py
 ```
 
 Representative support scripts:
@@ -152,4 +163,5 @@ Paper VII  10.5281/zenodo.21193940
 Paper VIII 10.5281/zenodo.21287278
 Paper IX   10.5281/zenodo.21287695
 Paper X    10.5281/zenodo.21288036
+Paper XI   10.5281/zenodo.21350768
 ```

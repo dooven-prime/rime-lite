@@ -97,8 +97,8 @@ for i in range(n):
     k = round((1 - lam) * 9)
     print(f"  S{i+1}: V({k}/9), dim={sec['sectors'][i]['dim']}, blocks={block_sets[i]}")
 
-# Compute kappa (returns K, kappa0, kappa1)
-K_kappa, kappa0_arr, kappa1_arr = compute_transport_kappa(rho_list, Ps, compute_kappa1=True, cso=op)
+# Compute kappa through the canonical cached CSO path.
+K_kappa, kappa0_arr, kappa1_arr = op.transport_kappa(Ps, compute_kappa1=True)
 K_arr = np.array(K)
 
 # T7 detection: structural obstruction test.

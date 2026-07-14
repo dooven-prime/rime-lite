@@ -4,8 +4,9 @@ This file defines the public scope of the RIME paper series. It is a navigation
 and boundary document: what each paper studies, which files support it, and
 which claims should not be moved across paper boundaries.
 
-Current public release: Papers I--X plus the Computational Canonical
-Specification (CCS). Papers XI--XII remain horizon material.
+Current public release: Papers I--XI plus the Computational Canonical
+Specification (CCS). Paper XII and later papers remain active development
+material.
 
 For the full narrative architecture, see `docs/PROGRAM_MAP.md`. For the
 canonical Rubik numerical invariants behind Papers I--III and CCS, see
@@ -25,8 +26,9 @@ canonical Rubik numerical invariants behind Papers I--III and CCS, see
 | Paper VIII | finite SOF data, strict morphisms, and naturality | What is the sectorized observable object? |
 | Paper IX | SOF deformations and observable trajectories | How do SOF observables evolve under deformation? |
 | Paper X | Universal Observable Pipeline and SOF Registry evidence | Why do different species share one observable pipeline? |
-| Paper XI | observable wall records | Horizon: which wall records admit taxonomy or local models? |
-| Paper XII | SOF diagnostic workflow | Horizon: what does SOF diagnose in practice? |
+| Paper XI | observable wall records, signatures, wall spectra, and taxonomy | Which SOF wall records can be classified, and by what local or global theory? |
+| Paper XII | SOF diagnostic protocol and report standard | Draft: how does SOF produce fixed-format, reusable SOF Diagnostic Reports? |
+| Paper XIII | aligned SOF Audit Objects $\Delta_{\mathrm{audit}}$ | Draft: how can two SOF Reports be aligned, compared, and used for deployment decisions? |
 
 The expanded sections below preserve the original trilogy and CCS boundaries
 because those papers define the canonical Rubik data used throughout the

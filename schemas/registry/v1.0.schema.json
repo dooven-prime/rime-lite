@@ -1,0 +1,188 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rime-project.local/schemas/registry/v1.0.schema.json",
+  "title": "SOF Registry Schema v1.0",
+  "description": "Versioned five-layer contract for a frozen SOF Registry snapshot.",
+  "type": "object",
+  "required": ["registry_schema_version", "snapshot", "entries"],
+  "properties": {
+    "registry_schema_version": {"const": "1.0"},
+    "snapshot": {
+      "type": "object",
+      "required": [
+        "id",
+        "title",
+        "release_date",
+        "source",
+        "entry_count",
+        "scope_note"
+      ],
+      "properties": {
+        "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]*$"},
+        "title": {"type": "string", "minLength": 1},
+        "release_date": {"type": "string", "format": "date"},
+        "source": {"type": "string", "minLength": 1},
+        "entry_count": {"type": "integer", "minimum": 1},
+        "scope_note": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": true
+    },
+    "entries": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/entry"}
+    }
+  },
+  "$defs": {
+    "claim_status": {
+      "enum": [
+        "theorem",
+        "evidence",
+        "diagnostic",
+        "proxy_only",
+        "boundary",
+        "failure",
+        "negative_control"
+      ]
+    },
+    "entry": {
+      "type": "object",
+      "required": [
+        "id",
+        "species",
+        "sof_object",
+        "observable_ladder",
+        "dynamics",
+        "diagnostics",
+        "metadata"
+      ],
+      "properties": {
+        "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]*$"},
+        "species": {
+          "type": "object",
+          "required": ["name", "category", "description"],
+          "properties": {
+            "name": {"type": "string", "minLength": 1},
+            "category": {"type": "string", "minLength": 1},
+            "description": {"type": "string", "minLength": 1}
+          },
+          "additionalProperties": true
+        },
+        "sof_object": {
+          "type": "object",
+          "required": [
+            "realization_status",
+            "finite_space",
+            "sectorization",
+            "observable_family"
+          ],
+          "properties": {
+            "realization_status": {
+              "enum": [
+                "strict",
+                "represented",
+                "constructed",
+                "external_analogue",
+                "proxy"
+              ]
+            },
+            "finite_space": {"type": "string", "minLength": 1},
+            "sectorization": {
+              "type": "object",
+              "required": ["origin", "description"],
+              "properties": {
+                "origin": {"type": "string", "minLength": 1},
+                "description": {"type": "string", "minLength": 1}
+              },
+              "additionalProperties": true
+            },
+            "observable_family": {
+              "type": "array",
+              "minItems": 1,
+              "items": {"type": "string", "minLength": 1},
+              "uniqueItems": true
+            }
+          },
+          "additionalProperties": true
+        },
+        "observable_ladder": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["name", "level", "description"],
+            "properties": {
+              "name": {"type": "string", "minLength": 1},
+              "level": {
+                "enum": ["intrinsic", "derived", "diagnostic", "proxy"]
+              },
+              "description": {"type": "string", "minLength": 1}
+            },
+            "additionalProperties": true
+          }
+        },
+        "dynamics": {
+          "type": "object",
+          "required": ["status", "variables", "description"],
+          "properties": {
+            "status": {"enum": ["static", "deformation", "external"]},
+            "variables": {
+              "type": "array",
+              "items": {"type": "string", "minLength": 1},
+              "uniqueItems": true
+            },
+            "description": {"type": "string", "minLength": 1}
+          },
+          "additionalProperties": true
+        },
+        "diagnostics": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["name", "value", "claim_status"],
+            "properties": {
+              "name": {"type": "string", "minLength": 1},
+              "value": {"type": ["string", "number", "integer", "boolean", "null"]},
+              "claim_status": {"$ref": "#/$defs/claim_status"},
+              "source": {"type": "string"}
+            },
+            "additionalProperties": true
+          }
+        },
+        "metadata": {
+          "type": "object",
+          "required": [
+            "claim_status",
+            "paper",
+            "evidence_scripts",
+            "reports",
+            "notes"
+          ],
+          "properties": {
+            "claim_status": {"$ref": "#/$defs/claim_status"},
+            "paper": {"type": "string", "minLength": 1},
+            "evidence_scripts": {
+              "type": "array",
+              "items": {"type": "string", "minLength": 1},
+              "uniqueItems": true
+            },
+            "reports": {
+              "type": "array",
+              "items": {"type": "string", "minLength": 1},
+              "uniqueItems": true
+            },
+            "notes": {
+              "type": "array",
+              "items": {"type": "string", "minLength": 1},
+              "uniqueItems": true
+            }
+          },
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

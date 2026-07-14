@@ -12,9 +12,9 @@ RIME program. The public-facing directory has four separate responsibilities:
 Tests under `tests/` verify package invariants and are not part of this
 directory.
 
-Public release scope: Papers I--X plus CCS. Paper XI--XII scripts, when
-present, are horizon diagnostics and are not part of the current public release
-claim set.
+Public release scope: Papers I--XI plus CCS. Paper XII scripts, when present,
+are methodology diagnostics and report-specification prototypes rather than
+part of the Paper XI claim set.
 
 All public support scripts use fixed seeds where randomness is present
 (`np.random.seed(42)` unless otherwise stated).
@@ -33,6 +33,9 @@ experiments/
 |-- paper7/                 Paper VII: generic completion and SOF diagnostics
 |-- paper9/                 Paper IX: observable dynamics diagnostics
 |-- paper10/                Paper X: registry evidence and SOF portability
+|-- paper11/                Paper XI: observable wall records and taxonomy
+|-- paper12/                Paper XII horizon: SOF diagnostics/tooling
+|-- paper13/                Paper XIII aligned SOF Audit Objects
 |-- quantum/                quantum-gate SOF diagnostics
 |-- cross_ref/              related-work diagnostics, not theorem sources
 `-- trilogy_style/          shared styling utilities used by local figure scripts
@@ -176,6 +179,78 @@ claim status is recorded script by script.
 Paper X scripts are registry evidence. They support the SOF Registry as a
 cross-species comparison object. Mechanism separation is constructive
 proxy-layer support; proxy-to-shadow and `tau(D)` bridges remain open.
+
+
+## Paper XI - Observable Classification Theory
+
+| Script | Status |
+|--------|--------|
+| `experiments/paper11/cross_species_wall_audit.py` | cross-species wall diagnostics for the observable taxonomy; no ADE classification theorem is claimed |
+| `experiments/paper11/spectral_ade_collision.py` | Rubik smooth spectral local-model audit: 16 pairwise A1-type closures plus sampling-dependent simultaneous pair-gap responses |
+| `experiments/paper11/discriminant_bifurcation_map.py` | auxiliary 2D commutativity-discriminant slice; one hit on the chosen `20 x 20` evaluation grid |
+| `experiments/paper11/wall_density_registry.py` | wall-density table for the 15-entry Paper XI taxonomy sample |
+| `experiments/paper11/wall_record_census.py` | 24-record multi-label coverage audit separating species prevalence from eligible wall-record diversity; Class A remains the sampling gap |
+| `experiments/paper11/invariant_redundancy.py` | definition-compatible 166-configuration redundancy audit; three PCA components explain both 90% and 95% for the tested ensemble, without claiming an invariant basis |
+| `experiments/paper11/an_adjacency.py` | Appendix A boundary audit: block-restricted eigenbranch continuation finds no A2-to-two-A1 split candidate on the tested slices |
+| `experiments/paper11/wall_trajectory.py` | Appendix B boundary audit: sampled observable-status trajectories for GridWorld, SIR, and weighted graph controls; counts status changes rather than static frozen pairs |
+| `experiments/paper11/repair_persistence_quantum.py` | CNOT-strength interpolation audit: repair threshold `0.55`, persistence `p_W=0.45`, and post-activation stability |
+| `experiments/paper11/piecewise_smooth_activation_wall.py` | activation-wall boundary audit: ReLU kink, GeLU control, and top-k rank-selection diagnostic |
+| `experiments/paper11_figures.py` | generates Figure 1 wall-record pipeline, Figure 2 six-class taxonomy, and Figure 3 wall-density/repair-persistence evidence |
+
+Paper XI scripts are taxonomy evidence and boundary audits. They support
+observable wall records, wall signatures, wall spectra, and the six-class
+Observable Wall Taxonomy. ADE remains only a candidate local model for smooth
+discriminant branches; graph, Markov, activation, and degenerate rate probes
+require non-ADE, stratified, or species-specific wall languages.
+
+## Horizon: Paper XII - SOF Diagnostic Protocol
+
+| Script | Status |
+|--------|--------|
+| `schemas/sofrs/v1.0.schema.json` | canonical JSON Schema for the versioned eight-field SOF Report Specification (SOFRS) v1.0 |
+| `experiments/paper12/validate_sofreport.py` | validator for saved `.sofreport` artifacts |
+| `experiments/paper12/transformer_activation_sof.py` | transformer-style activation SOF diagnostic and reproducible report |
+| `experiments/paper12_figures.py` | generates the diagnostic-protocol and four-level applicability-hierarchy figures |
+| `experiments/paper12/qwen_attention_sof.py` | real Qwen attention-head SOF diagnostic; Head 6 gives four natural sectors and head diversity spans global, coarse, and dispersed partitions |
+| `experiments/paper12/transformer_batch_sweep.py` | transformer token-partition sweep; canonical `5 x 50` row has `frozen_R1=14`, `D_repaired=6`, and one permanently frozen sector |
+| `experiments/paper12/moe_expert_sof.py` | MoE routing SOF Report: all six expert-pair sectors, `80%` direct support, six two-step repairs, and no terminally frozen pair |
+| `experiments/paper12/moe_bias_repair_sof.py` | DeepSeek-style MoE routing-repair control: `10/12` initially frozen private experts reactivate under load-bias updates; shared baseline is excluded from private freeze counts |
+| `experiments/paper12/diffusion_denoising_sof.py` | diffusion-time SOF deformation diagnostic; forward noise creates a sector split at `t=11`, reverse denoising is the repair direction |
+| `experiments/paper12/maze_wall_crossing.py` | dynamic connectivity wall demo: `24` split crossings and `24` reverse merge/repair crossings on a `5 x 5` maze |
+| `experiments/paper12/blackbox_llm_sof.py` | API-level SOF Report for an API-only LLM / black-box language model: protocol/task probe sectors, Structural/Behavioral/Failure observables, and repair transitions; weak comparison only |
+| `experiments/paper12/results/nvidia_llama31_8b_20260711.sofreport` | first versioned real API-level report: NVIDIA NIM `meta/llama-3.1-8b-instruct`, `18/18` successful protocol--task requests |
+| `experiments/paper12/results/transformer.sofreport` | SOFRS v1.0 transformer activation report |
+| `experiments/paper12/results/diffusion.sofreport` | SOFRS v1.0 diffusion-time wall and reverse-repair report |
+| `experiments/paper12/results/maze.sofreport` | SOFRS v1.0 connectivity split/merge wall record |
+| `experiments/paper12/results/moe.sofreport` | SOFRS v1.0 expert-routing support and two-step repair report |
+| `experiments/paper12/results/qwen.sofreport` | SOFRS v1.0 real pretrained-Qwen attention-head report on the strict 40-token retained subspace |
+| `experiments/paper12/results/recommender.sofreport` | SOFRS v1.0 recommender coverage and targeted dead-zone repair report |
+| `experiments/paper12/results/moe_bias_repair.sofreport` | SOFRS v1.0 private-expert load and bias-driven routing-repair trajectory |
+| `experiments/paper12/results/transformer_batch.sofreport` | SOFRS v1.0 token-bin sector-count robustness sweep |
+| `experiments/paper12/results/failure_cases.sofreport` | SOFRS v1.0 boundary report covering five failure and degeneracy controls |
+| `experiments/paper12/recommender_sof.py` | recommender structural-coverage report: `12/16` user/item cluster pairs are unreachable in the default disconnected benchmark; not an A/B-test replacement |
+| `experiments/paper12/failure_cases.py` | boundary audit for SOF diagnostics: single-sector, all-to-all, over-refined, commuting, and sector-observable mismatch cases |
+
+Paper XII scripts are tooling and diagnostic-workflow prototypes. They are not
+part of the Papers I--XI release claim set.
+
+## Paper XIII - SOF Audit Objects
+
+| Script | Status |
+|--------|--------|
+| `schemas/sofaudit/v1.0.schema.json` | companion schema for aligned reference/candidate `.sofaudit` artifacts; not an SOFRS version |
+| `experiments/paper13/gridworld_reference_sof.py` | absorbing-obstacle GridWorld reference plus five controlled variants; emits 6 reports and 5 audits |
+| `experiments/paper13/sir_compartment_sof.py` | three-sector SIR-chain transfer control with five variants and an 11-step beta wall path |
+| `experiments/paper13/report_contract.py` | shared builders for the single-report and paired-audit contracts |
+| `experiments/paper13/validate_sofaudit.py` | validates the Appendix example, all paired audits, and their linked `.sofreport` files |
+| `experiments/paper13/regenerate_tables.py` | regenerates `results/signature_tables.md` from the ten paired audits |
+
+Paper XIII separates direct, word-depth, and Lie-depth freezing. GridWorld and
+SIR are Regime A controlled-reference validations. They do not establish a
+universal bridge-sensitivity ordering or practical World Model performance.
+The mathematical audit output is $\Delta_{\mathrm{audit}}$; the `.sofaudit`
+artifact stores its reports, alignment, normalization, signature, and optional
+downstream decision metadata.
 
 ## Figure Production Scripts
 

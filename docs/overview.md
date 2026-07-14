@@ -3,9 +3,9 @@
 ## One-Page Project Summary
 
 **Public release scope.** This overview refers to the current public RIME
-release: Papers I--X plus the Computational Canonical Specification (CCS).
+release: Papers I--XI plus the Computational Canonical Specification (CCS).
 The original three-paper trilogy remains the Rubik-centered foundation; Papers
-IV--X extend it into the broader RIME program.
+IV--XI extend it into the broader RIME program.
 
 RIME studies how spectral, transport, accessibility, and deformation structures
 arise from finite-dimensional represented systems. The Rubik cube is used as a
@@ -20,7 +20,7 @@ Accessibility geometry determines their behavior.
 Genericity determines why the behavior is stable.
 ```
 
-## Ten-Paper Arc
+## Eleven-Paper Arc
 
 | Paper | Role | Main question |
 |-------|------|---------------|
@@ -34,6 +34,7 @@ Genericity determines why the behavior is stable.
 | Paper VIII | SOF object theory | What is the sectorized observable object? |
 | Paper IX | observable dynamics | How do SOF observables evolve under deformation? |
 | Paper X | observable pipeline | Why do different species share one observable pipeline? |
+| Paper XI | observable classification | Which wall records and signatures belong to common observable classes? |
 
 The dependency chain is:
 
@@ -48,6 +49,7 @@ Arithmetic
   -> SOF object theory
   -> Observable dynamics
   -> Universal observable pipeline
+  -> Observable wall classification
 ```
 
 ## Main Objects
@@ -107,10 +109,10 @@ remain paper-specific and claim-status gated.
 
 ## Repository Entry Points
 
-- `papers/paper1/`--`papers/paper10/` contain the manuscript sources.
+- `papers/paper1/`--`papers/paper11/` contain the manuscript sources.
 - `ccs/canonical_specification.md` records the canonical computational data for
   the trilogy and bridge notes.
-- `docs/PROGRAM_MAP.md` gives the detailed Papers I--X architecture.
+- `docs/PROGRAM_MAP.md` gives the detailed Papers I--XI architecture.
 - `docs/PROGRAM_PHILOSOPHY.md` records the Rubik-as-laboratory philosophy.
 - `docs/FUTURE_RELATED_WORK.md` routes post-VII SOF horizon notes.
 - `docs/TRILOGY_OVERVIEW.md` preserves the original trilogy-focused overview.

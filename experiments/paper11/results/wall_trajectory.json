@@ -1,0 +1,2830 @@
+{
+  "GridWorld obstacle path": {
+    "parameters": [
+      "obstacle=(2, 2)",
+      "obstacle=(1, 1)",
+      "obstacle=(0, 0)"
+    ],
+    "summary": {
+      "n_steps": 3,
+      "n_transitions": 2,
+      "n_sectors": 25,
+      "total_pairs": 600,
+      "n_events": 190,
+      "n_changed_pairs": 140,
+      "n_stable_pairs": 460,
+      "event_counts_by_step": [
+        100,
+        90
+      ],
+      "event_density_by_step": [
+        0.16666666666666666,
+        0.15
+      ],
+      "event_kind_counts": {
+        "repair": 92,
+        "terminalization": 86,
+        "support_gain": 0,
+        "support_loss": 0,
+        "layer_change": 12
+      }
+    },
+    "status_counts": [
+      {
+        "direct": 72,
+        "word_bridge": 104,
+        "lie_bridge": 0,
+        "deeper": 356,
+        "terminal": 68
+      },
+      {
+        "direct": 72,
+        "word_bridge": 108,
+        "lie_bridge": 0,
+        "deeper": 352,
+        "terminal": 68
+      },
+      {
+        "direct": 76,
+        "word_bridge": 118,
+        "lie_bridge": 0,
+        "deeper": 344,
+        "terminal": 62
+      }
+    ],
+    "events": [
+      {
+        "pair": [
+          0,
+          6
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "word_bridge",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          0,
+          12
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "terminal",
+        "status_after": "deeper",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          1,
+          6
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "direct",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          1,
+          11
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "word_bridge",
+        "status_after": "deeper",
+        "kind": "layer_change"
+      },
+      {
+        "pair": [
+          1,
+          12
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "terminal",
+        "status_after": "deeper",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          2,
+          6
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "word_bridge",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          2,
+          12
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "terminal",
+        "status_after": "word_bridge",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          3,
+          6
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          3,
+          12
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "terminal",
+        "status_after": "deeper",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          4,
+          6
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          4,
+          12
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "terminal",
+        "status_after": "deeper",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          5,
+          6
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "direct",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          5,
+          7
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "word_bridge",
+        "status_after": "deeper",
+        "kind": "layer_change"
+      },
+      {
+        "pair": [
+          5,
+          12
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "terminal",
+        "status_after": "deeper",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          6,
+          0
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "word_bridge",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          6,
+          1
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "direct",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          6,
+          2
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "word_bridge",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          6,
+          3
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          6,
+          4
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          6,
+          5
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "direct",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          6,
+          7
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "direct",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          6,
+          8
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "word_bridge",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          6,
+          9
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          6,
+          10
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "word_bridge",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          6,
+          11
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "direct",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          6,
+          13
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          6,
+          14
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          6,
+          15
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          6,
+          16
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "word_bridge",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          6,
+          17
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          6,
+          18
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          6,
+          19
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          6,
+          20
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          6,
+          21
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          6,
+          22
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          6,
+          23
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          6,
+          24
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          7,
+          5
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "word_bridge",
+        "status_after": "deeper",
+        "kind": "layer_change"
+      },
+      {
+        "pair": [
+          7,
+          6
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "direct",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          7,
+          12
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "terminal",
+        "status_after": "direct",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          7,
+          17
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "deeper",
+        "status_after": "word_bridge",
+        "kind": "layer_change"
+      },
+      {
+        "pair": [
+          8,
+          6
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "word_bridge",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          8,
+          12
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "terminal",
+        "status_after": "word_bridge",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          9,
+          6
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          9,
+          12
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "terminal",
+        "status_after": "deeper",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          10,
+          6
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "word_bridge",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          10,
+          12
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "terminal",
+        "status_after": "word_bridge",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          11,
+          1
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "word_bridge",
+        "status_after": "deeper",
+        "kind": "layer_change"
+      },
+      {
+        "pair": [
+          11,
+          6
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "direct",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          11,
+          12
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "terminal",
+        "status_after": "direct",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          11,
+          13
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "deeper",
+        "status_after": "word_bridge",
+        "kind": "layer_change"
+      },
+      {
+        "pair": [
+          12,
+          0
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "terminal",
+        "status_after": "deeper",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          12,
+          1
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "terminal",
+        "status_after": "deeper",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          12,
+          2
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "terminal",
+        "status_after": "word_bridge",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          12,
+          3
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "terminal",
+        "status_after": "deeper",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          12,
+          4
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "terminal",
+        "status_after": "deeper",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          12,
+          5
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "terminal",
+        "status_after": "deeper",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          12,
+          7
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "terminal",
+        "status_after": "direct",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          12,
+          8
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "terminal",
+        "status_after": "word_bridge",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          12,
+          9
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "terminal",
+        "status_after": "deeper",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          12,
+          10
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "terminal",
+        "status_after": "word_bridge",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          12,
+          11
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "terminal",
+        "status_after": "direct",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          12,
+          13
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "terminal",
+        "status_after": "direct",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          12,
+          14
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "terminal",
+        "status_after": "word_bridge",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          12,
+          15
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "terminal",
+        "status_after": "deeper",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          12,
+          16
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "terminal",
+        "status_after": "word_bridge",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          12,
+          17
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "terminal",
+        "status_after": "direct",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          12,
+          18
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "terminal",
+        "status_after": "word_bridge",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          12,
+          19
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "terminal",
+        "status_after": "deeper",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          12,
+          20
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "terminal",
+        "status_after": "deeper",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          12,
+          21
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "terminal",
+        "status_after": "deeper",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          12,
+          22
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "terminal",
+        "status_after": "word_bridge",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          12,
+          23
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "terminal",
+        "status_after": "deeper",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          12,
+          24
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "terminal",
+        "status_after": "deeper",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          13,
+          6
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          13,
+          11
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "deeper",
+        "status_after": "word_bridge",
+        "kind": "layer_change"
+      },
+      {
+        "pair": [
+          13,
+          12
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "terminal",
+        "status_after": "direct",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          14,
+          6
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          14,
+          12
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "terminal",
+        "status_after": "word_bridge",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          15,
+          6
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          15,
+          12
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "terminal",
+        "status_after": "deeper",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          16,
+          6
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "word_bridge",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          16,
+          12
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "terminal",
+        "status_after": "word_bridge",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          17,
+          6
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          17,
+          7
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "deeper",
+        "status_after": "word_bridge",
+        "kind": "layer_change"
+      },
+      {
+        "pair": [
+          17,
+          12
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "terminal",
+        "status_after": "direct",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          18,
+          6
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          18,
+          12
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "terminal",
+        "status_after": "word_bridge",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          19,
+          6
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          19,
+          12
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "terminal",
+        "status_after": "deeper",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          20,
+          6
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          20,
+          12
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "terminal",
+        "status_after": "deeper",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          21,
+          6
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          21,
+          12
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "terminal",
+        "status_after": "deeper",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          22,
+          6
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          22,
+          12
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "terminal",
+        "status_after": "word_bridge",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          23,
+          6
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          23,
+          12
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "terminal",
+        "status_after": "deeper",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          24,
+          6
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          24,
+          12
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "status_before": "terminal",
+        "status_after": "deeper",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          0,
+          1
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "direct",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          0,
+          2
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "word_bridge",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          0,
+          3
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          0,
+          4
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          0,
+          5
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "direct",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          0,
+          7
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          0,
+          8
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          0,
+          9
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          0,
+          10
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "word_bridge",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          0,
+          11
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          0,
+          12
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          0,
+          13
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          0,
+          14
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          0,
+          15
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          0,
+          16
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          0,
+          17
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          0,
+          18
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          0,
+          20
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          0,
+          21
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          0,
+          22
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          1,
+          0
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "direct",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          1,
+          6
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "terminal",
+        "status_after": "direct",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          1,
+          11
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "deeper",
+        "status_after": "word_bridge",
+        "kind": "layer_change"
+      },
+      {
+        "pair": [
+          2,
+          0
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "word_bridge",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          2,
+          6
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "terminal",
+        "status_after": "word_bridge",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          3,
+          0
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          3,
+          6
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "terminal",
+        "status_after": "deeper",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          4,
+          0
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          4,
+          6
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "terminal",
+        "status_after": "deeper",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          5,
+          0
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "direct",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          5,
+          6
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "terminal",
+        "status_after": "direct",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          5,
+          7
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "deeper",
+        "status_after": "word_bridge",
+        "kind": "layer_change"
+      },
+      {
+        "pair": [
+          6,
+          1
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "terminal",
+        "status_after": "direct",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          6,
+          2
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "terminal",
+        "status_after": "word_bridge",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          6,
+          3
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "terminal",
+        "status_after": "deeper",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          6,
+          4
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "terminal",
+        "status_after": "deeper",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          6,
+          5
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "terminal",
+        "status_after": "direct",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          6,
+          7
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "terminal",
+        "status_after": "direct",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          6,
+          8
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "terminal",
+        "status_after": "word_bridge",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          6,
+          9
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "terminal",
+        "status_after": "deeper",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          6,
+          10
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "terminal",
+        "status_after": "word_bridge",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          6,
+          11
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "terminal",
+        "status_after": "direct",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          6,
+          12
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "terminal",
+        "status_after": "word_bridge",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          6,
+          13
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "terminal",
+        "status_after": "deeper",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          6,
+          14
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "terminal",
+        "status_after": "deeper",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          6,
+          15
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "terminal",
+        "status_after": "deeper",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          6,
+          16
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "terminal",
+        "status_after": "word_bridge",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          6,
+          17
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "terminal",
+        "status_after": "deeper",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          6,
+          18
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "terminal",
+        "status_after": "deeper",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          6,
+          19
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "terminal",
+        "status_after": "deeper",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          6,
+          20
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "terminal",
+        "status_after": "deeper",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          6,
+          21
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "terminal",
+        "status_after": "deeper",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          6,
+          22
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "terminal",
+        "status_after": "deeper",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          6,
+          23
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "terminal",
+        "status_after": "deeper",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          6,
+          24
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "terminal",
+        "status_after": "deeper",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          7,
+          0
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          7,
+          5
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "deeper",
+        "status_after": "word_bridge",
+        "kind": "layer_change"
+      },
+      {
+        "pair": [
+          7,
+          6
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "terminal",
+        "status_after": "direct",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          8,
+          0
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          8,
+          6
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "terminal",
+        "status_after": "word_bridge",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          9,
+          0
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          9,
+          6
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "terminal",
+        "status_after": "deeper",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          10,
+          0
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "word_bridge",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          10,
+          6
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "terminal",
+        "status_after": "word_bridge",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          11,
+          0
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          11,
+          1
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "deeper",
+        "status_after": "word_bridge",
+        "kind": "layer_change"
+      },
+      {
+        "pair": [
+          11,
+          6
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "terminal",
+        "status_after": "direct",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          12,
+          0
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          12,
+          6
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "terminal",
+        "status_after": "word_bridge",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          13,
+          0
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          13,
+          6
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "terminal",
+        "status_after": "deeper",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          14,
+          0
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          14,
+          6
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "terminal",
+        "status_after": "deeper",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          15,
+          0
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          15,
+          6
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "terminal",
+        "status_after": "deeper",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          16,
+          0
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          16,
+          6
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "terminal",
+        "status_after": "word_bridge",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          17,
+          0
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          17,
+          6
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "terminal",
+        "status_after": "deeper",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          18,
+          0
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          18,
+          6
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "terminal",
+        "status_after": "deeper",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          19,
+          6
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "terminal",
+        "status_after": "deeper",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          20,
+          0
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          20,
+          6
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "terminal",
+        "status_after": "deeper",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          21,
+          0
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          21,
+          6
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "terminal",
+        "status_after": "deeper",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          22,
+          0
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "deeper",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          22,
+          6
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "terminal",
+        "status_after": "deeper",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          23,
+          6
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "terminal",
+        "status_after": "deeper",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          24,
+          6
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "status_before": "terminal",
+        "status_after": "deeper",
+        "kind": "repair"
+      }
+    ]
+  },
+  "SIR beta sweep": {
+    "parameters": [
+      0.0,
+      0.025,
+      0.05,
+      0.075,
+      0.1,
+      0.125,
+      0.15,
+      0.175,
+      0.2,
+      0.225,
+      0.25,
+      0.275,
+      0.3,
+      0.325,
+      0.35,
+      0.375,
+      0.4,
+      0.425,
+      0.45,
+      0.475,
+      0.5
+    ],
+    "summary": {
+      "n_steps": 21,
+      "n_transitions": 20,
+      "n_sectors": 3,
+      "total_pairs": 6,
+      "n_events": 4,
+      "n_changed_pairs": 4,
+      "n_stable_pairs": 2,
+      "event_counts_by_step": [
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "event_density_by_step": [
+        0.6666666666666666,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "event_kind_counts": {
+        "repair": 4,
+        "terminalization": 0,
+        "support_gain": 0,
+        "support_loss": 0,
+        "layer_change": 0
+      }
+    },
+    "status_counts": [
+      {
+        "direct": 2,
+        "word_bridge": 0,
+        "lie_bridge": 0,
+        "deeper": 0,
+        "terminal": 4
+      },
+      {
+        "direct": 4,
+        "word_bridge": 2,
+        "lie_bridge": 0,
+        "deeper": 0,
+        "terminal": 0
+      },
+      {
+        "direct": 4,
+        "word_bridge": 2,
+        "lie_bridge": 0,
+        "deeper": 0,
+        "terminal": 0
+      },
+      {
+        "direct": 4,
+        "word_bridge": 2,
+        "lie_bridge": 0,
+        "deeper": 0,
+        "terminal": 0
+      },
+      {
+        "direct": 4,
+        "word_bridge": 2,
+        "lie_bridge": 0,
+        "deeper": 0,
+        "terminal": 0
+      },
+      {
+        "direct": 4,
+        "word_bridge": 2,
+        "lie_bridge": 0,
+        "deeper": 0,
+        "terminal": 0
+      },
+      {
+        "direct": 4,
+        "word_bridge": 2,
+        "lie_bridge": 0,
+        "deeper": 0,
+        "terminal": 0
+      },
+      {
+        "direct": 4,
+        "word_bridge": 2,
+        "lie_bridge": 0,
+        "deeper": 0,
+        "terminal": 0
+      },
+      {
+        "direct": 4,
+        "word_bridge": 2,
+        "lie_bridge": 0,
+        "deeper": 0,
+        "terminal": 0
+      },
+      {
+        "direct": 4,
+        "word_bridge": 2,
+        "lie_bridge": 0,
+        "deeper": 0,
+        "terminal": 0
+      },
+      {
+        "direct": 4,
+        "word_bridge": 2,
+        "lie_bridge": 0,
+        "deeper": 0,
+        "terminal": 0
+      },
+      {
+        "direct": 4,
+        "word_bridge": 2,
+        "lie_bridge": 0,
+        "deeper": 0,
+        "terminal": 0
+      },
+      {
+        "direct": 4,
+        "word_bridge": 2,
+        "lie_bridge": 0,
+        "deeper": 0,
+        "terminal": 0
+      },
+      {
+        "direct": 4,
+        "word_bridge": 2,
+        "lie_bridge": 0,
+        "deeper": 0,
+        "terminal": 0
+      },
+      {
+        "direct": 4,
+        "word_bridge": 2,
+        "lie_bridge": 0,
+        "deeper": 0,
+        "terminal": 0
+      },
+      {
+        "direct": 4,
+        "word_bridge": 2,
+        "lie_bridge": 0,
+        "deeper": 0,
+        "terminal": 0
+      },
+      {
+        "direct": 4,
+        "word_bridge": 2,
+        "lie_bridge": 0,
+        "deeper": 0,
+        "terminal": 0
+      },
+      {
+        "direct": 4,
+        "word_bridge": 2,
+        "lie_bridge": 0,
+        "deeper": 0,
+        "terminal": 0
+      },
+      {
+        "direct": 4,
+        "word_bridge": 2,
+        "lie_bridge": 0,
+        "deeper": 0,
+        "terminal": 0
+      },
+      {
+        "direct": 4,
+        "word_bridge": 2,
+        "lie_bridge": 0,
+        "deeper": 0,
+        "terminal": 0
+      },
+      {
+        "direct": 4,
+        "word_bridge": 2,
+        "lie_bridge": 0,
+        "deeper": 0,
+        "terminal": 0
+      }
+    ],
+    "events": [
+      {
+        "pair": [
+          0,
+          1
+        ],
+        "step": 1,
+        "param_before": 0.0,
+        "param_after": 0.025,
+        "status_before": "terminal",
+        "status_after": "direct",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          0,
+          2
+        ],
+        "step": 1,
+        "param_before": 0.0,
+        "param_after": 0.025,
+        "status_before": "terminal",
+        "status_after": "word_bridge",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          1,
+          0
+        ],
+        "step": 1,
+        "param_before": 0.0,
+        "param_after": 0.025,
+        "status_before": "terminal",
+        "status_after": "direct",
+        "kind": "repair"
+      },
+      {
+        "pair": [
+          2,
+          0
+        ],
+        "step": 1,
+        "param_before": 0.0,
+        "param_after": 0.025,
+        "status_before": "terminal",
+        "status_after": "word_bridge",
+        "kind": "repair"
+      }
+    ]
+  },
+  "Graph edge-weight endpoint": {
+    "parameters": [
+      0.0,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      1.0
+    ],
+    "summary": {
+      "n_steps": 11,
+      "n_transitions": 10,
+      "n_sectors": 4,
+      "total_pairs": 12,
+      "n_events": 6,
+      "n_changed_pairs": 6,
+      "n_stable_pairs": 6,
+      "event_counts_by_step": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        6
+      ],
+      "event_density_by_step": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.5
+      ],
+      "event_kind_counts": {
+        "repair": 0,
+        "terminalization": 6,
+        "support_gain": 0,
+        "support_loss": 0,
+        "layer_change": 0
+      }
+    },
+    "status_counts": [
+      {
+        "direct": 8,
+        "word_bridge": 4,
+        "lie_bridge": 0,
+        "deeper": 0,
+        "terminal": 0
+      },
+      {
+        "direct": 8,
+        "word_bridge": 4,
+        "lie_bridge": 0,
+        "deeper": 0,
+        "terminal": 0
+      },
+      {
+        "direct": 8,
+        "word_bridge": 4,
+        "lie_bridge": 0,
+        "deeper": 0,
+        "terminal": 0
+      },
+      {
+        "direct": 8,
+        "word_bridge": 4,
+        "lie_bridge": 0,
+        "deeper": 0,
+        "terminal": 0
+      },
+      {
+        "direct": 8,
+        "word_bridge": 4,
+        "lie_bridge": 0,
+        "deeper": 0,
+        "terminal": 0
+      },
+      {
+        "direct": 8,
+        "word_bridge": 4,
+        "lie_bridge": 0,
+        "deeper": 0,
+        "terminal": 0
+      },
+      {
+        "direct": 8,
+        "word_bridge": 4,
+        "lie_bridge": 0,
+        "deeper": 0,
+        "terminal": 0
+      },
+      {
+        "direct": 8,
+        "word_bridge": 4,
+        "lie_bridge": 0,
+        "deeper": 0,
+        "terminal": 0
+      },
+      {
+        "direct": 8,
+        "word_bridge": 4,
+        "lie_bridge": 0,
+        "deeper": 0,
+        "terminal": 0
+      },
+      {
+        "direct": 8,
+        "word_bridge": 4,
+        "lie_bridge": 0,
+        "deeper": 0,
+        "terminal": 0
+      },
+      {
+        "direct": 4,
+        "word_bridge": 2,
+        "lie_bridge": 0,
+        "deeper": 0,
+        "terminal": 6
+      }
+    ],
+    "events": [
+      {
+        "pair": [
+          0,
+          3
+        ],
+        "step": 10,
+        "param_before": 0.9,
+        "param_after": 1.0,
+        "status_before": "direct",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          1,
+          3
+        ],
+        "step": 10,
+        "param_before": 0.9,
+        "param_after": 1.0,
+        "status_before": "word_bridge",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          2,
+          3
+        ],
+        "step": 10,
+        "param_before": 0.9,
+        "param_after": 1.0,
+        "status_before": "direct",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          3,
+          0
+        ],
+        "step": 10,
+        "param_before": 0.9,
+        "param_after": 1.0,
+        "status_before": "direct",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          3,
+          1
+        ],
+        "step": 10,
+        "param_before": 0.9,
+        "param_after": 1.0,
+        "status_before": "word_bridge",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      },
+      {
+        "pair": [
+          3,
+          2
+        ],
+        "step": 10,
+        "param_before": 0.9,
+        "param_after": 1.0,
+        "status_before": "direct",
+        "status_after": "terminal",
+        "kind": "terminalization"
+      }
+    ]
+  }
+}

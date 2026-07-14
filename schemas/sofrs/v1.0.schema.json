@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rime-project.local/schemas/sofrs/v1.0.schema.json",
+  "title": "SOF Report Specification (SOFRS) v1.0",
+  "description": "Versioned machine-readable contract for reports emitted by the Paper XII SOF Diagnostic Protocol.",
+  "type": "object",
+  "required": [
+    "sofrs_version",
+    "sectorization",
+    "observable_family",
+    "support_matrix",
+    "bridge_matrix",
+    "repair_matrix",
+    "wall_record",
+    "claim_status",
+    "failure_modes"
+  ],
+  "properties": {
+    "sofrs_version": {
+      "description": "SOF Report Specification version used by this artifact.",
+      "const": "1.0"
+    },
+    "sectorization": {
+      "description": "Sector origin, construction rule, dimensions or probe classes, and realization status.",
+      "type": "object",
+      "minProperties": 1
+    },
+    "observable_family": {
+      "description": "Named structural, behavioral, failure, operator, kernel, transition, or registered analogue observables.",
+      "type": "object",
+      "minProperties": 1
+    },
+    "support_matrix": {
+      "description": "Direct cross-sector support or a clearly labeled behavioral support analogue.",
+      "type": ["object", "array", "null"]
+    },
+    "bridge_matrix": {
+      "description": "Length-two, commutator, word-depth, routing, or protocol bridge data.",
+      "type": ["object", "array", "null"]
+    },
+    "repair_matrix": {
+      "description": "Frozen-to-active pairs or registered repair transitions with layer or step metadata.",
+      "type": ["object", "array", "null"]
+    },
+    "wall_record": {
+      "description": "Wall events and any trajectory summary associated with a supplied deformation path.",
+      "type": ["object", "array", "null"]
+    },
+    "claim_status": {
+      "description": "Controlled claim class for the report as a whole.",
+      "enum": [
+        "theorem",
+        "evidence",
+        "diagnostic",
+        "proxy_only",
+        "boundary",
+        "failure",
+        "negative_control"
+      ]
+    },
+    "claim_note": {
+      "description": "Optional human-readable qualification of the controlled claim status.",
+      "type": "string"
+    },
+    "failure_modes": {
+      "description": "Applicability warnings and known interpretation boundaries. Use an empty array only when none are known.",
+      "type": "array",
+      "items": {"type": ["object", "string"]},
+      "uniqueItems": true
+    }
+  },
+  "not": {
+    "anyOf": [
+      {"required": ["schema_version"]},
+      {"required": ["repair_candidates"]},
+      {"required": ["wall_records"]},
+      {"required": ["trajectory_summary"]}
+    ]
+  },
+  "additionalProperties": true
+}

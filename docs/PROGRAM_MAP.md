@@ -1,8 +1,8 @@
 # RIME Program Map
 
-**Date**: 2026-07-10  
-**Status**: public narrative architecture map for Papers I--X, with a
-Paper XI--XII horizon.
+**Date**: 2026-07-14
+**Status**: public narrative architecture map for Papers I--XI, with a
+Paper XII--XIII horizon.
 
 This document summarizes the program-level organization. It is not a proof
 document and does not replace the manuscripts. Its purpose is to make the
@@ -139,17 +139,43 @@ Paper VIII  SOF object layer, strict morphisms, and naturality
 Paper IX    SOF deformation geometry and wall dynamics
 Paper X     Universal Observable Pipeline and registry evidence
 Paper XI    Observable Wall Taxonomy
-Paper XII   SOF diagnostics and observable analysis tooling
+Paper XII   SOF Diagnostic Protocol and SOF Report Specification
+Paper XIII  SOF Audit Objects and aligned report comparison
 ```
 
 Paper VIII asks what the object is and proves that the RIME observables are
 natural constructions on strict SOF data. Paper IX asks how SOF objects deform
 and why different deformation spaces generate different wall geometries. Paper
 X asks why broad external species can enter one observable pipeline. Paper XI
-asks whether registered wall records can be classified. Paper XII asks what
-SOF can diagnose in practice, especially through automatic sector audits,
-observable reports, explainability-facing neural examples, and control /
-robotics diagnostics.
+classifies observable wall records, signatures, spectra, and taxonomy while
+keeping ADE as a smooth-branch local model only. Paper XII asks how SOF
+is deployed in practice: diagnostics become SOF Reports, with automatic sector
+audits and application sections organized as AI Systems, Dynamic Systems, and
+Industrial Diagnostics. Paper XII separates white-box reports, whose internal
+finite realization is visible, from API-level Behavioral SOF Reports, whose
+probe sectors and observables come from externally visible interfaces. Its Black-Box SOF
+Diagnostic Principle states that a white-box realization is sufficient but not
+necessary: compatible sectors or stable probe sectors plus measurable outputs
+can support a claim-status-aware report without internal access. This is why
+SOF is an observable framework rather than a weight framework. Stable slogan:
+No weights required. Only observables.
+
+Paper XI keeps three computational boundaries explicit. Its trajectory
+audit counts only adjacent observable-status changes, so a static frozen pair
+is not a wall event. Its 166-configuration redundancy audit excludes
+codimension, cross-species density, and trajectory-only quantities from the
+snapshot PCA; the resulting three-component 95% summary is empirical, not an
+orthogonal invariant-basis theorem. Its invariant-block eigenbranch audit finds
+no $A_2\to A_1+A_1$ split candidate on the tested Rubik slices, so sorted
+pair-gap responses are not promoted to $A_n$ adjacency evidence.
+
+Paper XIII begins only after two single-system reports exist. It introduces the
+aligned audit input consisting of a reference report, a candidate report,
+sector and observable alignment maps, and normalization data. Its mathematical
+output is the eight-dimensional signature $\Delta_{\mathrm{audit}}$, serialized
+inside a `.sofaudit` artifact. GridWorld and SIR are controlled-reference protocol validations;
+latent and black-box World Model audits remain deployment roadmaps rather than
+current evidence.
 
 The common observable architecture behind Papers V--VII is the
 SOF data package

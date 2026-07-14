@@ -1,0 +1,660 @@
+{
+  "record_count": 24,
+  "eligible_record_count": 15,
+  "class_membership_count": 32,
+  "targets": {
+    "eligible_records_per_class": 3,
+    "unique_species_per_class": 2,
+    "deformation_origins_per_class": 2
+  },
+  "class_coverage": {
+    "A": {
+      "name": "Collision/spectral",
+      "registered_records": 3,
+      "membership_share": 0.09375,
+      "eligible_records": 2,
+      "unique_eligible_species": 1,
+      "unique_eligible_deformations": 2,
+      "eligible_species": [
+        "Rubik QT/HT"
+      ],
+      "eligible_deformations": [
+        "affine projection parameter",
+        "single QT generator weight"
+      ],
+      "target_checks": {
+        "records": false,
+        "species": false,
+        "deformations": true
+      },
+      "coverage_status": "gap"
+    },
+    "B": {
+      "name": "Repair",
+      "registered_records": 9,
+      "membership_share": 0.28125,
+      "eligible_records": 5,
+      "unique_eligible_species": 5,
+      "unique_eligible_deformations": 5,
+      "eligible_species": [
+        "Diffusion / denoising",
+        "Dynamic maze connectivity",
+        "Mixture-of-Experts routing",
+        "Quantum Clifford+CNOT",
+        "Recommender structural coverage"
+      ],
+      "eligible_deformations": [
+        "CNOT-strength matrix interpolation",
+        "discrete door closure/reopening path",
+        "forward diffusion and reverse denoising time",
+        "load-bias update trajectory",
+        "targeted interaction intervention"
+      ],
+      "target_checks": {
+        "records": true,
+        "species": true,
+        "deformations": true
+      },
+      "coverage_status": "pass"
+    },
+    "C": {
+      "name": "Terminal-side/absorbing",
+      "registered_records": 4,
+      "membership_share": 0.125,
+      "eligible_records": 3,
+      "unique_eligible_species": 3,
+      "unique_eligible_deformations": 3,
+      "eligible_species": [
+        "Barrier option GBM",
+        "Mixture-of-Experts routing",
+        "Quantum Clifford+CNOT"
+      ],
+      "eligible_deformations": [
+        "CNOT-strength matrix interpolation",
+        "load-bias update trajectory",
+        "log-price diffusion"
+      ],
+      "target_checks": {
+        "records": true,
+        "species": true,
+        "deformations": true
+      },
+      "coverage_status": "pass"
+    },
+    "D": {
+      "name": "Plateau/rate",
+      "registered_records": 4,
+      "membership_share": 0.125,
+      "eligible_records": 4,
+      "unique_eligible_species": 4,
+      "unique_eligible_deformations": 4,
+      "eligible_species": [
+        "Mechanism-separated SOF",
+        "Rubik deformation probes",
+        "Xu ridge model",
+        "Yang-like photonic"
+      ],
+      "eligible_deformations": [
+        "QT generator-weight deformation",
+        "gradient/regularization response time",
+        "optimization time",
+        "state-mixing parameter"
+      ],
+      "target_checks": {
+        "records": true,
+        "species": true,
+        "deformations": true
+      },
+      "coverage_status": "pass"
+    },
+    "E": {
+      "name": "Nonsmooth/discrete",
+      "registered_records": 4,
+      "membership_share": 0.125,
+      "eligible_records": 3,
+      "unique_eligible_species": 3,
+      "unique_eligible_deformations": 3,
+      "eligible_species": [
+        "Dynamic maze connectivity",
+        "Graph P3/C4",
+        "NN Transformer activation"
+      ],
+      "eligible_deformations": [
+        "activation bias",
+        "discrete door closure/reopening path",
+        "discrete edge removal"
+      ],
+      "target_checks": {
+        "records": true,
+        "species": true,
+        "deformations": true
+      },
+      "coverage_status": "pass"
+    },
+    "F": {
+      "name": "Bridge/incidence",
+      "registered_records": 8,
+      "membership_share": 0.25,
+      "eligible_records": 3,
+      "unique_eligible_species": 3,
+      "unique_eligible_deformations": 3,
+      "eligible_species": [
+        "Quantum Clifford+CNOT",
+        "Recommender structural coverage",
+        "Rubik Type III/IV wild"
+      ],
+      "eligible_deformations": [
+        "CNOT-strength matrix interpolation",
+        "algebraic bridge perturbation",
+        "targeted interaction intervention"
+      ],
+      "target_checks": {
+        "records": true,
+        "species": true,
+        "deformations": true
+      },
+      "coverage_status": "pass"
+    }
+  },
+  "species_prevalence": {
+    "A": {
+      "name": "Collision/spectral",
+      "count": 1,
+      "density": 0.06666666666666667,
+      "examples": [
+        "Rubik QT/HT"
+      ]
+    },
+    "B": {
+      "name": "Repair",
+      "count": 5,
+      "density": 0.3333333333333333,
+      "examples": [
+        "Rubik QT/HT",
+        "Engineered near-threshold",
+        "Control Kalman",
+        "Quantum Clifford+CNOT",
+        "NN Transformer activation"
+      ]
+    },
+    "C": {
+      "name": "Terminal-side/absorbing",
+      "count": 2,
+      "density": 0.13333333333333333,
+      "examples": [
+        "Barrier option GBM",
+        "Markov absorbing"
+      ]
+    },
+    "D": {
+      "name": "Plateau/rate",
+      "count": 2,
+      "density": 0.13333333333333333,
+      "examples": [
+        "Xu ridge model",
+        "Mechanism-separated SOF"
+      ]
+    },
+    "E": {
+      "name": "Nonsmooth/discrete",
+      "count": 2,
+      "density": 0.13333333333333333,
+      "examples": [
+        "Graph P3/C4",
+        "NN Transformer activation"
+      ]
+    },
+    "F": {
+      "name": "Bridge/incidence",
+      "count": 3,
+      "density": 0.2,
+      "examples": [
+        "Rubik QT/HT",
+        "Rubik Type III/IV wild",
+        "Synthetic Type III/IV"
+      ]
+    }
+  },
+  "records": [
+    {
+      "record_id": "A-rubik-collision-quotient",
+      "species": "Rubik QT/HT",
+      "classes": [
+        "A"
+      ],
+      "observable": "finite QT/HT joint spectrum",
+      "deformation_origin": "affine projection parameter",
+      "change_locus": "unique maximal collision at alpha=2/3",
+      "evidence": "experiments/paper4/rubik_collision_quotient.py",
+      "claim_status": "theorem",
+      "explicit_deformation": true,
+      "explicit_locus": true,
+      "measured_signature": true,
+      "note": "",
+      "evidence_exists": true,
+      "eligible": true
+    },
+    {
+      "record_id": "A-rubik-endpoint-pair-closures",
+      "species": "Rubik QT/HT",
+      "classes": [
+        "A"
+      ],
+      "observable": "Hermitian spectral probe eigenvalue gaps",
+      "deformation_origin": "single QT generator weight",
+      "change_locus": "16 pairwise closures at the canonical endpoint",
+      "evidence": "experiments/paper11/spectral_ade_collision.py",
+      "claim_status": "evidence",
+      "explicit_deformation": true,
+      "explicit_locus": true,
+      "measured_signature": true,
+      "note": "",
+      "evidence_exists": true,
+      "eligible": true
+    },
+    {
+      "record_id": "A-rubik-simultaneous-pair-gap-response",
+      "species": "Rubik QT/HT",
+      "classes": [
+        "A"
+      ],
+      "observable": "two independently indexed spectral gaps",
+      "deformation_origin": "two-weight diagonal QT path",
+      "change_locus": "one to three common half-closure responses across tested sampling resolutions",
+      "evidence": "experiments/paper11/spectral_ade_collision.py",
+      "claim_status": "diagnostic",
+      "explicit_deformation": true,
+      "explicit_locus": false,
+      "measured_signature": true,
+      "note": "Pair-gap response only; count is sampling-resolution dependent; no eigenbranch continuation or A2 identification.",
+      "evidence_exists": true,
+      "eligible": false
+    },
+    {
+      "record_id": "BF-rubik-r2-repair",
+      "species": "Rubik accessibility",
+      "classes": [
+        "B",
+        "F"
+      ],
+      "observable": "R1/R2 accessibility support",
+      "deformation_origin": "fixed generator family",
+      "change_locus": "path-commutator cancellation repaired at R2",
+      "evidence": "experiments/paper5/path_commutator_cancellation.py",
+      "claim_status": "evidence",
+      "explicit_deformation": false,
+      "explicit_locus": false,
+      "measured_signature": true,
+      "note": "Static repair mechanism, not yet a deformation wall record.",
+      "evidence_exists": true,
+      "eligible": false
+    },
+    {
+      "record_id": "F-rubik-type-iii-cancellation",
+      "species": "Rubik Type III/IV wild",
+      "classes": [
+        "F"
+      ],
+      "observable": "projected bridge products",
+      "deformation_origin": "static natural-sector audit",
+      "change_locus": "Type III cancellation instances",
+      "evidence": "experiments/paper10/rubik_wild_type34_audit.py",
+      "claim_status": "evidence",
+      "explicit_deformation": false,
+      "explicit_locus": false,
+      "measured_signature": true,
+      "note": "",
+      "evidence_exists": true,
+      "eligible": false
+    },
+    {
+      "record_id": "F-rubik-type-iv-incidence",
+      "species": "Rubik Type III/IV wild",
+      "classes": [
+        "F"
+      ],
+      "observable": "bridge-product incidence",
+      "deformation_origin": "algebraic bridge perturbation",
+      "change_locus": "rank/incidence variety for AB=0",
+      "evidence": "experiments/paper7/incidence_variety_codim.py",
+      "claim_status": "evidence",
+      "explicit_deformation": true,
+      "explicit_locus": true,
+      "measured_signature": true,
+      "note": "Bridge-level incidence evidence, not a universal Type IV theorem.",
+      "evidence_exists": true,
+      "eligible": true
+    },
+    {
+      "record_id": "BF-synthetic-complement-repair",
+      "species": "Synthetic Type III/IV",
+      "classes": [
+        "B",
+        "F"
+      ],
+      "observable": "support/scalar complement bridge",
+      "deformation_origin": "constructed obstruction control",
+      "change_locus": "nonzero R2 bridge across an R1 obstruction",
+      "evidence": "experiments/paper5/complement_explosion.py",
+      "claim_status": "evidence",
+      "explicit_deformation": false,
+      "explicit_locus": false,
+      "measured_signature": true,
+      "note": "",
+      "evidence_exists": true,
+      "eligible": false
+    },
+    {
+      "record_id": "BCF-quantum-cnot-threshold",
+      "species": "Quantum Clifford+CNOT",
+      "classes": [
+        "B",
+        "C",
+        "F"
+      ],
+      "observable": "computational-basis accessibility",
+      "deformation_origin": "CNOT-strength matrix interpolation",
+      "change_locus": "repair threshold at strength 0.55",
+      "evidence": "experiments/paper11/repair_persistence_quantum.py",
+      "claim_status": "evidence",
+      "explicit_deformation": true,
+      "explicit_locus": true,
+      "measured_signature": true,
+      "note": "Terminal pre-threshold side, bridge repair, and persistent repaired side.",
+      "evidence_exists": true,
+      "eligible": true
+    },
+    {
+      "record_id": "BF-control-kalman-chain",
+      "species": "Control Kalman",
+      "classes": [
+        "B",
+        "F"
+      ],
+      "observable": "controllability-flag word depth",
+      "deformation_origin": "static chain realization",
+      "change_locus": "terminal sector reached at word depth 2",
+      "evidence": "experiments/paper10/control_pde_combinatorial_sof.py",
+      "claim_status": "diagnostic",
+      "explicit_deformation": false,
+      "explicit_locus": false,
+      "measured_signature": true,
+      "note": "",
+      "evidence_exists": true,
+      "eligible": false
+    },
+    {
+      "record_id": "B-transformer-lie-depth-repair",
+      "species": "NN Transformer activation",
+      "classes": [
+        "B"
+      ],
+      "observable": "activation-sector accessibility",
+      "deformation_origin": "single synthetic transformer realization",
+      "change_locus": "2 frozen-R1 pairs repaired at Lie depth",
+      "evidence": "experiments/paper12/transformer_activation_sof.py",
+      "claim_status": "diagnostic",
+      "explicit_deformation": false,
+      "explicit_locus": false,
+      "measured_signature": true,
+      "note": "",
+      "evidence_exists": true,
+      "eligible": false
+    },
+    {
+      "record_id": "BC-moe-bias-repair",
+      "species": "Mixture-of-Experts routing",
+      "classes": [
+        "B",
+        "C"
+      ],
+      "observable": "private-expert activity",
+      "deformation_origin": "load-bias update trajectory",
+      "change_locus": "10 dead experts repair from step 18",
+      "evidence": "experiments/paper12/moe_bias_repair_sof.py",
+      "claim_status": "evidence",
+      "explicit_deformation": true,
+      "explicit_locus": true,
+      "measured_signature": true,
+      "note": "Routing repair, not Lie-depth D-repair.",
+      "evidence_exists": true,
+      "eligible": true
+    },
+    {
+      "record_id": "B-diffusion-denoising-repair",
+      "species": "Diffusion / denoising",
+      "classes": [
+        "B"
+      ],
+      "observable": "PCA-sign sector count and support",
+      "deformation_origin": "forward diffusion and reverse denoising time",
+      "change_locus": "sector split at t=11 and reverse repair",
+      "evidence": "experiments/paper12/diffusion_denoising_sof.py",
+      "claim_status": "diagnostic",
+      "explicit_deformation": true,
+      "explicit_locus": true,
+      "measured_signature": true,
+      "note": "",
+      "evidence_exists": true,
+      "eligible": true
+    },
+    {
+      "record_id": "BE-maze-door-wall",
+      "species": "Dynamic maze connectivity",
+      "classes": [
+        "B",
+        "E"
+      ],
+      "observable": "component and frozen-pair counts",
+      "deformation_origin": "discrete door closure/reopening path",
+      "change_locus": "24 splits followed by 24 reverse merges",
+      "evidence": "experiments/paper12/maze_wall_crossing.py",
+      "claim_status": "evidence",
+      "explicit_deformation": true,
+      "explicit_locus": true,
+      "measured_signature": true,
+      "note": "Connectivity repair, not fixed-sector D-repair.",
+      "evidence_exists": true,
+      "eligible": true
+    },
+    {
+      "record_id": "BF-recommender-targeted-bridge",
+      "species": "Recommender structural coverage",
+      "classes": [
+        "B",
+        "F"
+      ],
+      "observable": "user-item cluster coverage",
+      "deformation_origin": "targeted interaction intervention",
+      "change_locus": "unreachable pairs reduced from 12/16 to 10/16",
+      "evidence": "experiments/paper12/recommender_sof.py",
+      "claim_status": "diagnostic",
+      "explicit_deformation": true,
+      "explicit_locus": true,
+      "measured_signature": true,
+      "note": "",
+      "evidence_exists": true,
+      "eligible": true
+    },
+    {
+      "record_id": "C-markov-absorbing-endpoint",
+      "species": "Markov absorbing",
+      "classes": [
+        "C"
+      ],
+      "observable": "communicating/frozen-pair accessibility",
+      "deformation_origin": "endpoint contrast across transition systems",
+      "change_locus": "absorbing example has 2 terminal frozen pairs",
+      "evidence": "experiments/paper11/cross_species_wall_audit.py",
+      "claim_status": "diagnostic",
+      "explicit_deformation": false,
+      "explicit_locus": true,
+      "measured_signature": true,
+      "note": "Endpoint contrast; a parameterized absorbing-limit path remains to be added.",
+      "evidence_exists": true,
+      "eligible": false
+    },
+    {
+      "record_id": "C-barrier-stopping-boundary",
+      "species": "Barrier option GBM",
+      "classes": [
+        "C"
+      ],
+      "observable": "cross-barrier support and first-hit time",
+      "deformation_origin": "log-price diffusion",
+      "change_locus": "absorbing barrier/stopping boundary",
+      "evidence": "experiments/paper10/barrier_option_sof.py",
+      "claim_status": "diagnostic",
+      "explicit_deformation": true,
+      "explicit_locus": true,
+      "measured_signature": true,
+      "note": "First hitting is not identified with SOF depth.",
+      "evidence_exists": true,
+      "eligible": true
+    },
+    {
+      "record_id": "D-xu-ridge-rate-hierarchy",
+      "species": "Xu ridge model",
+      "classes": [
+        "D"
+      ],
+      "observable": "parallel/null parameter rates",
+      "deformation_origin": "optimization time",
+      "change_locus": "slow/fast rate ratio about 68553x",
+      "evidence": "experiments/paper9/state_mixing_fft.py",
+      "claim_status": "proxy_only",
+      "explicit_deformation": true,
+      "explicit_locus": true,
+      "measured_signature": true,
+      "note": "",
+      "evidence_exists": true,
+      "eligible": true
+    },
+    {
+      "record_id": "D-mechanism-separated-rates",
+      "species": "Mechanism-separated SOF",
+      "classes": [
+        "D"
+      ],
+      "observable": "K0 growth and K1 decay proxies",
+      "deformation_origin": "gradient/regularization response time",
+      "change_locus": "tau(K0)=30 and tau(K1)=1380",
+      "evidence": "experiments/paper10/mechanism_separation_theorem.py",
+      "claim_status": "evidence",
+      "explicit_deformation": true,
+      "explicit_locus": true,
+      "measured_signature": true,
+      "note": "Proxy-rate evidence; no K-to-R/D bridge.",
+      "evidence_exists": true,
+      "eligible": true
+    },
+    {
+      "record_id": "D-yang-state-mixing-plateau",
+      "species": "Yang-like photonic",
+      "classes": [
+        "D"
+      ],
+      "observable": "filtration plateau profile",
+      "deformation_origin": "state-mixing parameter",
+      "change_locus": "monotone/flat plateau degeneration with 1/5 zero crossings",
+      "evidence": "experiments/paper9/state_mixing_fft.py",
+      "claim_status": "diagnostic",
+      "explicit_deformation": true,
+      "explicit_locus": true,
+      "measured_signature": true,
+      "note": "",
+      "evidence_exists": true,
+      "eligible": true
+    },
+    {
+      "record_id": "D-rubik-generator-weight-plateau",
+      "species": "Rubik deformation probes",
+      "classes": [
+        "D"
+      ],
+      "observable": "depth plateau P3",
+      "deformation_origin": "QT generator-weight deformation",
+      "change_locus": "oscillatory plateau profile with 3/8 zero crossings",
+      "evidence": "experiments/paper9/state_mixing_fft.py",
+      "claim_status": "diagnostic",
+      "explicit_deformation": true,
+      "explicit_locus": true,
+      "measured_signature": true,
+      "note": "",
+      "evidence_exists": true,
+      "eligible": true
+    },
+    {
+      "record_id": "E-graph-edge-removal",
+      "species": "Graph P3/C4",
+      "classes": [
+        "E"
+      ],
+      "observable": "Laplacian spectral gap",
+      "deformation_origin": "discrete edge removal",
+      "change_locus": "nonzero gap jump after rewiring",
+      "evidence": "experiments/paper11/cross_species_wall_audit.py",
+      "claim_status": "diagnostic",
+      "explicit_deformation": true,
+      "explicit_locus": true,
+      "measured_signature": true,
+      "note": "",
+      "evidence_exists": true,
+      "eligible": true
+    },
+    {
+      "record_id": "E-relu-kink",
+      "species": "NN Transformer activation",
+      "classes": [
+        "E"
+      ],
+      "observable": "mean absolute activation response",
+      "deformation_origin": "activation bias",
+      "change_locus": "slope jump at ReLU bias 0",
+      "evidence": "experiments/paper11/piecewise_smooth_activation_wall.py",
+      "claim_status": "evidence",
+      "explicit_deformation": true,
+      "explicit_locus": true,
+      "measured_signature": true,
+      "note": "",
+      "evidence_exists": true,
+      "eligible": true
+    },
+    {
+      "record_id": "E-topk-rank-selection",
+      "species": "NN Transformer activation",
+      "classes": [
+        "E"
+      ],
+      "observable": "top-k active-entry count",
+      "deformation_origin": "activation bias samples",
+      "change_locus": "rank-selection boundary not crossed on the tested grid",
+      "evidence": "experiments/paper11/piecewise_smooth_activation_wall.py",
+      "claim_status": "boundary",
+      "explicit_deformation": true,
+      "explicit_locus": false,
+      "measured_signature": true,
+      "note": "Negative boundary record; no top-k wall event observed.",
+      "evidence_exists": true,
+      "eligible": false
+    },
+    {
+      "record_id": "F-ncg-t7-bridge",
+      "species": "Finite spectral triple",
+      "classes": [
+        "F"
+      ],
+      "observable": "Dirac-block and one-form bridge support",
+      "deformation_origin": "static finite spectral-triple realization",
+      "change_locus": "2 ordered T7-style bridges",
+      "evidence": "experiments/paper10/ncg_spectral_triple_sof.py",
+      "claim_status": "diagnostic",
+      "explicit_deformation": false,
+      "explicit_locus": false,
+      "measured_signature": true,
+      "note": "",
+      "evidence_exists": true,
+      "eligible": false
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rime-project.local/schemas/sofaudit/v1.0.schema.json",
+  "title": "SOF Audit Object Specification v1.0",
+  "description": "Machine-readable contract for aligned comparison of a reference SOF Report and a candidate SOF Report.",
+  "type": "object",
+  "required": [
+    "sofaudit_version",
+    "report_type",
+    "audit_object",
+    "audit_id",
+    "system",
+    "claim_status",
+    "claim_note",
+    "regime",
+    "failure_mode",
+    "reference",
+    "candidate",
+    "alignment",
+    "normalization",
+    "signature",
+    "failure_modes"
+  ],
+  "properties": {
+    "sofaudit_version": {"const": "1.0"},
+    "report_type": {"const": "sofaudit"},
+    "audit_object": {"const": "Delta_audit"},
+    "audit_id": {"type": "string", "minLength": 1},
+    "system": {"type": "string", "minLength": 1},
+    "claim_status": {
+      "enum": ["theorem", "evidence", "diagnostic", "proxy_only", "boundary", "failure", "negative_control"]
+    },
+    "claim_note": {"type": "string", "minLength": 1},
+    "regime": {"enum": ["A", "B", "C"]},
+    "failure_mode": {"type": "string", "minLength": 1},
+    "reference": {"$ref": "#/$defs/reportReference"},
+    "candidate": {"$ref": "#/$defs/reportReference"},
+    "alignment": {
+      "type": "object",
+      "required": ["sector_alignment", "observable_alignment"],
+      "properties": {
+        "sector_alignment": {"type": "object", "minProperties": 1},
+        "observable_alignment": {"type": "object", "minProperties": 1}
+      },
+      "additionalProperties": true
+    },
+    "normalization": {
+      "description": "Thresholds, scaling, depth semantics, aggregation rules, and path synchronization used by the audit.",
+      "type": "object",
+      "minProperties": 1
+    },
+    "signature": {
+      "description": "Machine-readable serialization of the mathematical output Delta_audit.",
+      "type": "object",
+      "required": [
+        "support_mismatch",
+        "bridge_word_mismatch",
+        "bridge_lie_mismatch",
+        "depth_distortion",
+        "frozen_disagreement",
+        "constraint_violations",
+        "action_response_failure",
+        "wall_record_mismatch"
+      ],
+      "properties": {
+        "support_mismatch": {"type": ["object", "null"]},
+        "bridge_word_mismatch": {"type": ["object", "null"]},
+        "bridge_lie_mismatch": {"type": ["object", "null"]},
+        "depth_distortion": {"type": ["object", "null"]},
+        "frozen_disagreement": {"type": ["object", "null"]},
+        "constraint_violations": {"type": ["object", "null"]},
+        "action_response_failure": {"type": ["object", "null"]},
+        "wall_record_mismatch": {"type": ["object", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "failure_modes": {
+      "type": "array",
+      "items": {"type": ["string", "object"]},
+      "uniqueItems": true
+    },
+    "decision": {
+      "description": "Optional downstream deployment decision. It is not part of the intrinsic audit signature.",
+      "type": "object",
+      "minProperties": 1
+    }
+  },
+  "$defs": {
+    "reportReference": {
+      "type": "object",
+      "required": ["report_id", "artifact", "label"],
+      "properties": {
+        "report_id": {"type": "string", "minLength": 1},
+        "artifact": {"type": "string", "pattern": "^[^/\\\\]+\\.sofreport$"},
+        "label": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": true
+    }
+  },
+  "not": {"required": ["sofrs_version"]},
+  "additionalProperties": true
+}

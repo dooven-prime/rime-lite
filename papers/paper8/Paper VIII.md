@@ -126,6 +126,28 @@ sectorized systems can be compared. The categorical language used below is
 standard \cite{macLane1998}; the new point is the SOF-specific choice of
 objects, morphisms, and accessibility observables.
 
+### Applicability Boundary
+
+Paper VIII distinguishes two applicability levels at the formal object layer.
+**Definitional applicability** means that an explicit finite triple
+$\mathcal F=(V,\{Q_i\},\mathcal X)$ satisfying the SOF axioms has been supplied.
+**Realizational applicability** means that a source system has been mapped to
+such a triple by an explicit and reproducible choice of finite space,
+sectorization, and observable family. The second level must state whether the
+realization is canonical, constructed, truncated, or non-unique.
+Different realizations of the same source system need not be equivalent as
+SOF objects, and any equivalence claim requires a separate morphism-level
+argument.
+
+These levels describe proximity to the formal SOF core; they do not determine
+the strength of a claim. A definitionally valid SOF may still support only a
+computational diagnostic, while a realization theorem requires a separate
+proof. Report-level and heuristic uses lie outside the theorem layer of Paper
+VIII. Paper XII extends this boundary to diagnostic applicability, where
+stable probe sectors and measurable outputs can support a qualified report
+without a strict projector realization, and to analogical applicability,
+where only heuristic language is permitted.
+
 ***
 
 ## Sectorized Observable Framework
