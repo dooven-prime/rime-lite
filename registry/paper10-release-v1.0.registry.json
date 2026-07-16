@@ -1,0 +1,487 @@
+{
+  "registry_schema_version": "1.0",
+  "snapshot": {
+    "id": "paper10-release-v1.0",
+    "title": "Paper X SOF Registry Release Snapshot",
+    "release_date": "2026-07-10",
+    "source": "papers/paper10/Paper X.md",
+    "doi": "10.5281/zenodo.21288036",
+    "entry_count": 16,
+    "scope_note": "Frozen release-boundary evidence snapshot. Paper XI and Paper XII species are excluded and require a later registry version."
+  },
+  "entries": [
+    {
+      "id": "rubik-qt-ht",
+      "species": {
+        "name": "Rubik QT/HT",
+        "category": "represented finite system",
+        "description": "Core RIME laboratory with nine QT/HT joint-spectral sectors."
+      },
+      "sof_object": {
+        "realization_status": "represented",
+        "finite_space": "finite cube representation space",
+        "sectorization": {
+          "origin": "representation and joint spectral geometry",
+          "description": "Nine orthogonal sectors from the center of the QT/HT observable algebra."
+        },
+        "observable_family": ["face-turn generators", "QT average", "HT average"]
+      },
+      "observable_ladder": [
+        {"name": "joint spectrum", "level": "intrinsic", "description": "QT/HT joint-spectral points and collision quotient"},
+        {"name": "R1/R2/D", "level": "derived", "description": "direct support, commutator survival, and first Lie depth"},
+        {"name": "accessibility diagnostics", "level": "diagnostic", "description": "transport, repair, plateau, and wall-facing summaries"}
+      ],
+      "dynamics": {
+        "status": "deformation",
+        "variables": ["affine projection", "generator weights", "normal spectral chart"],
+        "description": "Spectral and generator-family deformations of the represented system."
+      },
+      "diagnostics": [
+        {"name": "near-threshold rate ratio", "value": "tau(R2)/tau(R1) about 10.8", "claim_status": "diagnostic", "source": "experiments/paper9/rate_hierarchy.py"},
+        {"name": "plateau oscillation", "value": "3/8 detrended zero crossings", "claim_status": "diagnostic", "source": "experiments/paper9/state_mixing_fft.py"}
+      ],
+      "metadata": {
+        "claim_status": "evidence",
+        "paper": "Paper X",
+        "evidence_scripts": ["experiments/paper9/rate_hierarchy.py", "experiments/paper9/state_mixing_fft.py"],
+        "reports": [],
+        "notes": ["Core laboratory, not a claim that all species share Rubik dynamics."]
+      }
+    },
+    {
+      "id": "rubik-wild-type-iii-iv",
+      "species": {
+        "name": "Rubik Type III/IV wild mechanisms",
+        "category": "natural mechanism evidence",
+        "description": "Naturally occurring cancellation and incidence mechanisms on QT/HT sectors."
+      },
+      "sof_object": {
+        "realization_status": "represented",
+        "finite_space": "finite cube representation space",
+        "sectorization": {"origin": "QT/HT joint spectral geometry", "description": "Natural Rubik sectors used for bridge-product audits."},
+        "observable_family": ["projected generators", "commutator terms", "bridge products"]
+      },
+      "observable_ladder": [
+        {"name": "cancellation audit", "level": "derived", "description": "Type III path-commutator cancellation counts"},
+        {"name": "incidence audit", "level": "derived", "description": "Type IV bridge-level incidence candidates"}
+      ],
+      "dynamics": {"status": "static", "variables": [], "description": "Static bridge-product audit on natural sectors."},
+      "diagnostics": [
+        {"name": "Type III cancellations", "value": 288, "claim_status": "evidence", "source": "experiments/paper10/rubik_wild_type34_audit.py"},
+        {"name": "Type IV incidence candidates", "value": 528, "claim_status": "evidence", "source": "experiments/paper10/rubik_wild_type34_audit.py"}
+      ],
+      "metadata": {
+        "claim_status": "evidence",
+        "paper": "Paper X",
+        "evidence_scripts": ["experiments/paper10/rubik_wild_type34_audit.py"],
+        "reports": [],
+        "notes": ["Type IV values are bridge-level candidate evidence, not a universal wall theorem."]
+      }
+    },
+    {
+      "id": "synthetic-type-iii-iv",
+      "species": {
+        "name": "Synthetic Type III/IV",
+        "category": "constructed mechanism control",
+        "description": "Finite block-sector controls for cancellation, repair, incidence, and completion boundaries."
+      },
+      "sof_object": {
+        "realization_status": "constructed",
+        "finite_space": "constructed finite block spaces",
+        "sectorization": {"origin": "constructed sector model", "description": "Externally specified orthogonal block sectors."},
+        "observable_family": ["block generators", "commutators", "bridge products"]
+      },
+      "observable_ladder": [
+        {"name": "R1 obstruction", "level": "derived", "description": "binary support cancellation and complement controls"},
+        {"name": "R2 repair", "level": "derived", "description": "commutator-level repair and incidence boundaries"}
+      ],
+      "dynamics": {"status": "deformation", "variables": ["constructed perturbation"], "description": "Static and perturbative mechanism controls."},
+      "diagnostics": [
+        {"name": "mechanism boundary", "value": "constructed positive and negative controls", "claim_status": "negative_control", "source": "experiments/paper5/path_commutator_cancellation.py"}
+      ],
+      "metadata": {
+        "claim_status": "negative_control",
+        "paper": "Paper X",
+        "evidence_scripts": ["experiments/paper5/path_commutator_cancellation.py", "experiments/paper7/incidence_variety_codim.py"],
+        "reports": [],
+        "notes": ["Constructed boundary references, not naturally occurring species evidence."]
+      }
+    },
+    {
+      "id": "xu-ridge",
+      "species": {
+        "name": "Xu ridge model",
+        "category": "external rate precedent",
+        "description": "External row/null parameter decomposition used as a mechanism-separated rate precedent."
+      },
+      "sof_object": {
+        "realization_status": "external_analogue",
+        "finite_space": "finite parameter space",
+        "sectorization": {"origin": "row/null decomposition", "description": "Data-visible row space and weight-decay-controlled null space."},
+        "observable_family": ["row-space norm", "null-space norm"]
+      },
+      "observable_ladder": [
+        {"name": "fast/slow channels", "level": "proxy", "description": "Parameter-space response channels used as external precedent"}
+      ],
+      "dynamics": {"status": "external", "variables": ["gradient descent time", "weight decay"], "description": "Gradient-driven row-space evolution and regularization-only null-space evolution."},
+      "diagnostics": [
+        {"name": "rate ratio", "value": "about 68553x", "claim_status": "theorem", "source": "experiments/cross_ref/grokking_rate_separation.py"}
+      ],
+      "metadata": {
+        "claim_status": "theorem",
+        "paper": "Paper X",
+        "evidence_scripts": ["experiments/cross_ref/grokking_rate_separation.py"],
+        "reports": [],
+        "notes": ["External parameter-space theorem precedent; not an SOF proxy-to-shadow theorem."]
+      }
+    },
+    {
+      "id": "mechanism-separated-control",
+      "species": {
+        "name": "Mechanism-separated SOF control",
+        "category": "constructed rate control",
+        "description": "Constructed three-sector SOF with separately driven observable proxy channels."
+      },
+      "sof_object": {
+        "realization_status": "constructed",
+        "finite_space": "constructed three-sector finite space",
+        "sectorization": {"origin": "constructed sector model", "description": "Three fixed orthogonal sectors."},
+        "observable_family": ["gradient-driven growth channel", "regularization-only decay channel"]
+      },
+      "observable_ladder": [
+        {"name": "K0_grow", "level": "proxy", "description": "fast direct-support proxy channel"},
+        {"name": "K1_decay", "level": "proxy", "description": "slow relation-survival proxy channel"}
+      ],
+      "dynamics": {"status": "deformation", "variables": ["discrete response time"], "description": "Mechanism-separated deformation with ordered response constants."},
+      "diagnostics": [
+        {"name": "ordered mechanism times", "value": "30 << 1380", "claim_status": "evidence", "source": "experiments/paper10/mechanism_separation_theorem.py"}
+      ],
+      "metadata": {
+        "claim_status": "evidence",
+        "paper": "Paper X",
+        "evidence_scripts": ["experiments/paper10/mechanism_separation_theorem.py"],
+        "reports": [],
+        "notes": ["Proxy-level positive control for structured dynamics; no K-to-R/D bridge is claimed."]
+      }
+    },
+    {
+      "id": "engineered-near-threshold",
+      "species": {
+        "name": "Engineered near-threshold accessibility",
+        "category": "constructed accessibility diagnostic",
+        "description": "Synthetic near-threshold sector model exhibiting ordered R1/R2 response times."
+      },
+      "sof_object": {
+        "realization_status": "constructed",
+        "finite_space": "synthetic finite sector space",
+        "sectorization": {"origin": "constructed near-threshold sectors", "description": "Fixed sectors with support values near the audit threshold."},
+        "observable_family": ["perturbed finite generators"]
+      },
+      "observable_ladder": [
+        {"name": "R1", "level": "derived", "description": "thresholded direct support"},
+        {"name": "R2", "level": "derived", "description": "thresholded commutator survival"}
+      ],
+      "dynamics": {"status": "deformation", "variables": ["near-threshold perturbation"], "description": "Engineered perturbation across binary accessibility thresholds."},
+      "diagnostics": [
+        {"name": "rate ordering", "value": "tau(R1) < tau(R2), ratio about 10.8", "claim_status": "diagnostic", "source": "experiments/paper9/rate_hierarchy.py"}
+      ],
+      "metadata": {
+        "claim_status": "diagnostic",
+        "paper": "Paper X",
+        "evidence_scripts": ["experiments/paper9/rate_hierarchy.py"],
+        "reports": [],
+        "notes": ["Engineered evidence with an additive-noise caveat."]
+      }
+    },
+    {
+      "id": "finite-spectral-triple",
+      "species": {
+        "name": "Finite spectral triple",
+        "category": "non-representation sectorization",
+        "description": "Finite NCG-inspired system with Dirac-block sectors and algebra/one-form observables."
+      },
+      "sof_object": {
+        "realization_status": "strict",
+        "finite_space": "finite Hilbert space",
+        "sectorization": {"origin": "Dirac block geometry", "description": "Orthogonal sectors induced by a block-diagonal finite Dirac operator."},
+        "observable_family": ["finite algebra action", "Dirac operator", "one-form bridge observables"]
+      },
+      "observable_ladder": [
+        {"name": "central distance", "level": "diagnostic", "description": "central Connes-distance obstruction"},
+        {"name": "bridge shadow", "level": "derived", "description": "T7-style cross-block bridge support"}
+      ],
+      "dynamics": {"status": "static", "variables": [], "description": "Static finite spectral-triple registry probe."},
+      "diagnostics": [
+        {"name": "Dirac-projector commutator", "value": "max norm zero", "claim_status": "evidence", "source": "experiments/paper10/ncg_spectral_triple_sof.py"},
+        {"name": "ordered T7-style bridges", "value": 2, "claim_status": "diagnostic", "source": "experiments/paper10/ncg_spectral_triple_sof.py"}
+      ],
+      "metadata": {
+        "claim_status": "evidence",
+        "paper": "Paper X",
+        "evidence_scripts": ["experiments/paper10/ncg_spectral_triple_sof.py"],
+        "reports": [],
+        "notes": ["Portability example, not an NCG classification theorem."]
+      }
+    },
+    {
+      "id": "control-kalman",
+      "species": {
+        "name": "Control systems",
+        "category": "sector-origin portability",
+        "description": "Finite Kalman-chain control diagnostic."
+      },
+      "sof_object": {
+        "realization_status": "strict",
+        "finite_space": "finite state space",
+        "sectorization": {"origin": "controllability flag", "description": "Sectors from successive controllability-flag increments."},
+        "observable_family": ["state transition", "control injection"]
+      },
+      "observable_ladder": [
+        {"name": "word support", "level": "derived", "description": "direct, length-two, and first word-depth accessibility"}
+      ],
+      "dynamics": {"status": "static", "variables": [], "description": "Static controllability audit."},
+      "diagnostics": [
+        {"name": "Kalman ranks", "value": "1,2,3", "claim_status": "diagnostic", "source": "experiments/paper10/control_pde_combinatorial_sof.py"},
+        {"name": "terminal word depth", "value": 2, "claim_status": "diagnostic", "source": "experiments/paper10/control_pde_combinatorial_sof.py"}
+      ],
+      "metadata": {
+        "claim_status": "diagnostic",
+        "paper": "Paper X",
+        "evidence_scripts": ["experiments/paper10/control_pde_combinatorial_sof.py"],
+        "reports": [],
+        "notes": ["Word-depth control analogue, not automatically Lie-depth D."]
+      }
+    },
+    {
+      "id": "pde-subdomain",
+      "species": {
+        "name": "PDE discretization",
+        "category": "sector-origin portability",
+        "description": "Finite-difference mesh transport diagnostic."
+      },
+      "sof_object": {
+        "realization_status": "strict",
+        "finite_space": "finite mesh state space",
+        "sectorization": {"origin": "mesh geometry", "description": "Left, interface, and right subdomain sectors."},
+        "observable_family": ["finite-difference Laplacian", "interface coupling"]
+      },
+      "observable_ladder": [
+        {"name": "mesh word depth", "level": "derived", "description": "direct coupling, length-two support, and first word depth"}
+      ],
+      "dynamics": {"status": "static", "variables": [], "description": "Static discretized transport audit."},
+      "diagnostics": [
+        {"name": "left-to-right depth", "value": 2, "claim_status": "diagnostic", "source": "experiments/paper10/control_pde_combinatorial_sof.py"}
+      ],
+      "metadata": {
+        "claim_status": "diagnostic",
+        "paper": "Paper X",
+        "evidence_scripts": ["experiments/paper10/control_pde_combinatorial_sof.py"],
+        "reports": [],
+        "notes": ["Interface-mediated word-depth diagnostic."]
+      }
+    },
+    {
+      "id": "combinatorial-coloring",
+      "species": {
+        "name": "Combinatorial optimization",
+        "category": "sector-origin portability",
+        "description": "Graph-coloring sector diagnostic."
+      },
+      "sof_object": {
+        "realization_status": "strict",
+        "finite_space": "finite vertex space",
+        "sectorization": {"origin": "constraint and color partition", "description": "Orthogonal sectors from color classes."},
+        "observable_family": ["graph adjacency", "color-class projectors"]
+      },
+      "observable_ladder": [
+        {"name": "color support", "level": "derived", "description": "inter-color support and same-color conflict shadows"}
+      ],
+      "dynamics": {"status": "static", "variables": [], "description": "Static coloring audit."},
+      "diagnostics": [
+        {"name": "inter-color directed edges", "value": 4, "claim_status": "diagnostic", "source": "experiments/paper10/control_pde_combinatorial_sof.py"},
+        {"name": "same-color conflicts", "value": 2, "claim_status": "diagnostic", "source": "experiments/paper10/control_pde_combinatorial_sof.py"}
+      ],
+      "metadata": {
+        "claim_status": "diagnostic",
+        "paper": "Paper X",
+        "evidence_scripts": ["experiments/paper10/control_pde_combinatorial_sof.py"],
+        "reports": [],
+        "notes": ["Constraint diagnostic, not an optimization theorem."]
+      }
+    },
+    {
+      "id": "barrier-option",
+      "species": {
+        "name": "Barrier-option stochastic finance",
+        "category": "stochastic-process portability",
+        "description": "Finite log-price diffusion with below/above barrier sectors."
+      },
+      "sof_object": {
+        "realization_status": "strict",
+        "finite_space": "finite log-price grid",
+        "sectorization": {"origin": "stopping and barrier region", "description": "Below-barrier and above-barrier projectors."},
+        "observable_family": ["GBM finite-difference generator", "barrier crossing operator"]
+      },
+      "observable_ladder": [
+        {"name": "cross-barrier support", "level": "derived", "description": "R1/R2 accessibility shadows"},
+        {"name": "first hitting time", "level": "diagnostic", "description": "stochastic barrier-hitting diagnostic"}
+      ],
+      "dynamics": {"status": "deformation", "variables": ["log-price diffusion time"], "description": "Finite diffusion with barrier hitting."},
+      "diagnostics": [
+        {"name": "accessibility", "value": "R1=75.0%, R2=0.0%, D_repaired=0", "claim_status": "diagnostic", "source": "experiments/paper10/barrier_option_sof.py"},
+        {"name": "mean first-hit time", "value": 6.5915, "claim_status": "diagnostic", "source": "experiments/paper10/barrier_option_sof.py"}
+      ],
+      "metadata": {
+        "claim_status": "diagnostic",
+        "paper": "Paper X",
+        "evidence_scripts": ["experiments/paper10/barrier_option_sof.py"],
+        "reports": [],
+        "notes": ["First hitting is not identified with Lie-depth repair or option-pricing theory."]
+      }
+    },
+    {
+      "id": "quantum-gates",
+      "species": {
+        "name": "Quantum gates",
+        "category": "non-Rubik accessibility",
+        "description": "Small quantum gate systems in computational-basis sectors."
+      },
+      "sof_object": {
+        "realization_status": "strict",
+        "finite_space": "two-qubit Hilbert space",
+        "sectorization": {"origin": "computational basis", "description": "One-dimensional computational-basis sectors."},
+        "observable_family": ["gate logarithms", "skew-Hermitian gate generators"]
+      },
+      "observable_ladder": [
+        {"name": "R1/R2/D", "level": "derived", "description": "quantum accessibility ladder"}
+      ],
+      "dynamics": {"status": "deformation", "variables": ["gate-set expansion", "gate interpolation"], "description": "Gate-family and generator-set variation."},
+      "diagnostics": [
+        {"name": "Pauli repair", "value": 0, "claim_status": "diagnostic", "source": "experiments/quantum/quantum_accessibility_universality.py"},
+        {"name": "Clifford+CNOT repair", "value": 6, "claim_status": "evidence", "source": "experiments/quantum/quantum_accessibility_universality.py"}
+      ],
+      "metadata": {
+        "claim_status": "evidence",
+        "paper": "Paper X",
+        "evidence_scripts": ["experiments/quantum/quantum_accessibility_universality.py"],
+        "reports": [],
+        "notes": ["Non-Rubik D-repair evidence; no claim that quantum systems obey Rubik wall theory."]
+      }
+    },
+    {
+      "id": "markov-systems",
+      "species": {
+        "name": "Markov and absorbing Markov systems",
+        "category": "boundary and contrast species",
+        "description": "Finite transition systems with state or absorbing-class sectors."
+      },
+      "sof_object": {
+        "realization_status": "strict",
+        "finite_space": "finite state space",
+        "sectorization": {"origin": "state and absorbing-class partition", "description": "State sectors or communicating/absorbing classes."},
+        "observable_family": ["transition matrix", "rate operator"]
+      },
+      "observable_ladder": [
+        {"name": "R1/R2/D", "level": "derived", "description": "transition accessibility and frozen-pair audit"}
+      ],
+      "dynamics": {"status": "deformation", "variables": ["transition perturbation", "absorbing boundary"], "description": "Transition-family variation and absorbing limits."},
+      "diagnostics": [
+        {"name": "connected/frozen contrast", "value": "registered boundary controls", "claim_status": "boundary", "source": "experiments/paper7/markov_graph_sof.py"}
+      ],
+      "metadata": {
+        "claim_status": "boundary",
+        "paper": "Paper X",
+        "evidence_scripts": ["experiments/paper7/markov_graph_sof.py"],
+        "reports": [],
+        "notes": ["One-generator and absorbing cases expose limits of commutator and repair diagnostics."]
+      }
+    },
+    {
+      "id": "graph-systems",
+      "species": {
+        "name": "Graph systems",
+        "category": "boundary and contrast species",
+        "description": "Finite vertex or spectral graph sectorizations."
+      },
+      "sof_object": {
+        "realization_status": "strict",
+        "finite_space": "finite vertex space",
+        "sectorization": {"origin": "vertex or graph-spectral partition", "description": "Vertex blocks or spectral graph sectors."},
+        "observable_family": ["adjacency", "Laplacian", "walk operator"]
+      },
+      "observable_ladder": [
+        {"name": "graph transport", "level": "derived", "description": "support, word-depth, and frozen-pair shadows"}
+      ],
+      "dynamics": {"status": "deformation", "variables": ["edge rewiring", "edge weighting", "spectral perturbation"], "description": "Discrete and weighted graph variation."},
+      "diagnostics": [
+        {"name": "connected/frozen contrast", "value": "registered controls and degeneracies", "claim_status": "boundary", "source": "experiments/paper7/markov_graph_sof.py"},
+        {"name": "rate hierarchy boundary", "value": "rewiring fails or degenerates", "claim_status": "negative_control", "source": "experiments/paper10/tau_quantum_graph_yang.py"}
+      ],
+      "metadata": {
+        "claim_status": "boundary",
+        "paper": "Paper X",
+        "evidence_scripts": ["experiments/paper7/markov_graph_sof.py", "experiments/paper10/tau_quantum_graph_yang.py"],
+        "reports": [],
+        "notes": ["Discrete rewiring is not automatically a smooth rate-separation deformation."]
+      }
+    },
+    {
+      "id": "yang-like-filtration",
+      "species": {
+        "name": "Yang-like photonic systems",
+        "category": "boundary and contrast species",
+        "description": "State/coherence mixing used as a filtration-degeneration contrast."
+      },
+      "sof_object": {
+        "realization_status": "proxy",
+        "finite_space": "finite state/coherence probe space",
+        "sectorization": {"origin": "state and filtration sectors", "description": "Filtration-oriented sector proposal under state mixing."},
+        "observable_family": ["state-filtered generators", "plateau functions"]
+      },
+      "observable_ladder": [
+        {"name": "plateau profile", "level": "diagnostic", "description": "filtration-depth plateau sequence"}
+      ],
+      "dynamics": {"status": "deformation", "variables": ["state mixing parameter"], "description": "Monotone state/coherence degeneration."},
+      "diagnostics": [
+        {"name": "plateau zero crossings", "value": "1/5", "claim_status": "diagnostic", "source": "experiments/paper9/state_mixing_fft.py"},
+        {"name": "rate hierarchy boundary", "value": "fails or degenerates", "claim_status": "negative_control", "source": "experiments/paper10/tau_quantum_graph_yang.py"}
+      ],
+      "metadata": {
+        "claim_status": "boundary",
+        "paper": "Paper X",
+        "evidence_scripts": ["experiments/paper9/state_mixing_fft.py", "experiments/paper10/tau_quantum_graph_yang.py"],
+        "reports": [],
+        "notes": ["Comparison branch; not a claim about a universal Yang wall law."]
+      }
+    },
+    {
+      "id": "neural-network-sof",
+      "species": {
+        "name": "Neural-network SOFs",
+        "category": "proxy dynamics species",
+        "description": "Activation-induced sectors and training-coupled observable proxies."
+      },
+      "sof_object": {
+        "realization_status": "proxy",
+        "finite_space": "finite activation or token probe space",
+        "sectorization": {"origin": "activation-induced regions", "description": "Sectors from activation patterns or training-state partitions."},
+        "observable_family": ["activation operators", "training-coupled K0/K1/K2 proxies"]
+      },
+      "observable_ladder": [
+        {"name": "K0/K1/K2", "level": "proxy", "description": "continuous norm proxies for direct, relation, and depth behavior"},
+        {"name": "auxiliary accessibility audit", "level": "diagnostic", "description": "R1/R2/frozen summaries when an explicit finite realization is supplied"}
+      ],
+      "dynamics": {"status": "deformation", "variables": ["training step", "activation choice"], "description": "Training-coupled observable trajectories and activation variation."},
+      "diagnostics": [
+        {"name": "ordered proxy times", "value": "60 < 80 < 120", "claim_status": "proxy_only", "source": "experiments/paper9/nn_training_sof_tau.py"}
+      ],
+      "metadata": {
+        "claim_status": "proxy_only",
+        "paper": "Paper X",
+        "evidence_scripts": ["experiments/paper9/nn_activation_sof.py", "experiments/paper9/nn_training_sof_tau.py"],
+        "reports": [],
+        "notes": ["K0/K1/K2 are proxies; no binary D repair or tau(D) follows without a bridge theorem."]
+      }
+    }
+  ]
+}

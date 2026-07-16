@@ -2,19 +2,22 @@
 
 ### Spectral Decomposition, Transport Topology, Lie Accessibility, and Structural Verification in the Rubik's Cube Representation
 
-**Alias**: CCS-r2
-**Date**: 2026-05-22
-**Status**: DEFINITIVE. All numerical values correspond to the post-ρ-fix canonical representation (revision r2).
+**Alias**: CCS-r3
+**Date**: 2026-07-16
+**Status**: DEFINITIVE. All numerical values correspond to the post-ρ-fix canonical representation. Revision r3 corrects figure indexing, freezes the transport-symmetry audit, and consolidates claim-status upgrades.
 
 **WuJun Chen**<sup>∗</sup>
 
 Independent Researcher, China
 Email: dooven@outlook.com
 
-<sup>∗</sup> Code, computational supplement (CCS-r2), and experiment scripts:
+<sup>∗</sup> Code, computational supplement (CCS-r3), and experiment scripts:
 https://github.com/dooven-prime/rime-lite
 
 ***
+
+> **Revision r3 (2026-07-16).** This revision corrects the CCS figure index, freezes the inverse-closed transport-symmetry audit, and consolidates scoped claim-status upgrades for the M₂ Principle, collision-quotient wall nesting, and T7 D-stability.
+
 ### Three-Layer Architecture
 
 The trilogy is organized into three strictly separated layers:
@@ -23,7 +26,7 @@ The trilogy is organized into three strictly separated layers:
 |-------|------|-------|------|------|
 | **1** | Papers | `papers/paper*/` | Convince | Readable. Theorems, narrative, key figures. No hardcoded numbers. |
 | **2** | CCS | `ccs/canonical_specification.md` | Freeze | Authoritative but curated. Only what papers cite. Numerical constitution. |
-| **3** | Raw Archive | `docs/paper_data.md` | Record | Giant matrices, old revisions, failed experiments, pre-ρ-fix, exploratory. Everything. |
+| **3** | Private Raw Archive | not distributed | Record | Giant matrices, old revisions, failed experiments, pre-ρ-fix, and exploratory provenance. |
 
 Layer 2 (CCS) is NOT a copy of Layer 3 — it is a curated subset, selected and formatted for citation. Layer 3 contains the full computational history, including dead ends.
 
@@ -32,7 +35,7 @@ The main papers argue. CCS certifies. Raw archive remembers.
 ***
 ### Citation Convention
 
-> All numerical values and computational invariants are defined in the Unified Computational Supplement (CCS-r2).
+> All numerical values and computational invariants are defined in the Unified Computational Supplement (CCS-r3).
 
 **Part-level references.** Papers cite CCS parts with Roman numeral prefixes:
 
@@ -124,8 +127,8 @@ Core object: $K_{\alpha\beta} = \max_g \|P_\alpha \rho(g) P_\beta\|_F$
 | $\mathrm{QT}^a$ ($a \in \{0,1,2\}$) | Per-axis quarter-turn averaging operators | Paper II App A | II, III |
 | Type I / Type II transport | Noncommutative mixing / Commutative permutation | Paper II §4.4 | II, III |
 | $\mathrm{CP}$ permutation channel | S8$\leftrightarrow$S9 Type II ($K=2.83$) | Paper II §4.4, App B | II |
-| $A_{\mathrm{EP}} \cong M_2(\mathbb{C})^4 \oplus M_1(\mathbb{C})^4$ | EP block algebra (20-dim, 3 active M₂) | Paper II §5.1 | II, III |
-| M₂ Principle | Noncommutative simple components ($n_i \geq 2$) are observed to be the sole carriers of refinement obstruction, transport mediation, and Lie curvature across all verified systems (Rubik + S₃ negative controls); first-principles proof open | Paper II §5 | II, III |
+| $A_{\mathrm{EP}} \cong M_2(\mathbb{C})^4 \oplus M_1(\mathbb{C})^4$ | EP block algebra (20-dim, 3 transport-active $M_2$ components) | Paper II §5.1 | II, III |
+| M₂ Principle | In the canonical Rubik realization, noncommutative simple components carry Type I transport and Lie curvature, while the $M_2$ summands of $A_{\mathrm{EP}}$ impose the compatible-refinement obstruction; the unique Type II CP permutation edge is recorded separately | Paper II §5; CCS Spec Theorem S4 | II, III |
 | Refinement obstruction lattice | M₂ overlap caps refinement at 9 sectors | Paper II §6 | II |
 | Hub / Star topology | S6 primary hub (deg 5), S7 secondary (deg 3) | Paper II §3.4 | II, III |
 | S1 isolation | $V_1$ is the unique $G$-invariant proper subrepresentation | Paper II §3.6 | II, III |
@@ -244,7 +247,7 @@ Core object: $\kappa_1(P_\alpha,P_\beta) = \max_{g,h} \|P_\alpha [A_g, A_h] P_\b
 
 **Stability key**: **A** = invariant under recomputation, generator permutation, gauge freedom. **B** = stable with fixed parameters (±tolerance). **C** = exploratory, not frozen.
 
-**Rule.** No experiment script, figure script, or paper SHALL compute any of the above quantities through a code path that bypasses the canonical API listed here. `docs/paper_data.md` is the archive of values produced by these APIs; this section defines which APIs are authoritative.
+**Rule.** No experiment script, figure script, or paper SHALL compute any of the above quantities through a code path that bypasses the canonical API listed here. This section defines which APIs are authoritative; private raw archives retain provenance but do not override CCS values.
 
 **Part I — Core Numerical Structures**
 
@@ -633,6 +636,16 @@ Block-level noncommutativity propagates through spectral layers into the sector 
 
 $K_{\alpha\beta} = \max_g \|P_\alpha \rho(g) P_\beta\|_F$ over 18 face-turn generators. Edge threshold: $K > 0.01$.
 
+Because the canonical generator family is inverse-closed and $\rho(g)^{\dagger}=\rho(g^{-1})$,
+$$
+K_{\alpha\beta}=K_{\beta\alpha}.
+$$
+The canonical recomputation gives $\max_{\alpha,\beta}|K_{\alpha\beta}-K_{\beta\alpha}|=1.11\times10^{-16}$. In particular,
+$$
+K_{49}=K_{94}=1.000,
+$$
+so the S4--S9 channel is undirected at the transport-matrix level.
+
 **Full K matrix (9×9, canonical S1–S9 order, Layer B):**
 
 **Table C7 — Transport Matrix K (9-Sector).**
@@ -649,7 +662,7 @@ $K_{\alpha\beta} = \max_g \|P_\alpha \rho(g) P_\beta\|_F$ over 18 face-turn gene
 | S8(8) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2.83 | 2.83 |
 | S9(27) | 0 | 0 | 0 | 1.00 | 0 | 0 | 4.06 | 2.83 | 3.24 |
 
-Symmetric to $<10^{-14}$. Diagonal entries are intra-sector transport (irrelevant for topology).
+Symmetric to $1.11\times10^{-16}$. Diagonal entries are intra-sector transport (irrelevant for topology).
 
 **Direct edges (10, $K > 0.01$):**
 
@@ -1273,9 +1286,9 @@ is stable under generator variation.
 
 #### II.4.4 Generator Genealogy
 
-![(CCS Fig. C12b) Generator Defect Taxonomy — generator genealogy: canonical 18-family QT/HT breakdown, three defect-family branches (n=14/15/16), and coverage continuum with field labels.](../figures/ccs/fig_generator_defect_taxonomy.png)
+![(CCS Fig. C13) Generator-Family Genealogy — canonical 18-family QT/HT breakdown, three defect-family branches (n=14/15/16), and coverage continuum with field labels.](../figures/ccs/fig_c13_generator_family_genealogy.png)
 
-**Observed pattern.** The rational domain contains generator families that form a closed algebraic structure (all faces represented with a single turn type, or all turn types represented across all faces). The irrational domain appears when an entire symmetry axis is missing while noncommutative elements are present. For the structural generalization of this pattern, see `docs/CONJECTURES.md` C.7.
+**Observed pattern.** The rational domain contains generator families that form a closed algebraic structure (all faces represented with a single turn type, or all turn types represented across all faces). The irrational domain appears when an entire symmetry axis is missing while noncommutative elements are present. A broader structural generalization remains outside the CCS claim set.
 
 #### II.4.5 Computational Details
 
@@ -1341,14 +1354,15 @@ Every structural consequence in this specification — and every transport and a
 ***
 
 
-**Status.** Six structural laws verified across all canonical computations. Their proof status varies:
+**Status.** Six structural laws are frozen across the canonical computations. Their proof status varies:
 
 - **S2 (Transport Locality):** Proven — direct consequence of ρ(g) block-diagonal structure + Lemma 1 (Paper III §4.1).
 - **S3 (T7 Separation):** Verified for the Rubik cube and all verified systems (S₃ nat⊕reg, S₃ reg⊕reg); general proof remains open.
+- **S4 (M₂ Principle):** Proven for the canonical Rubik realization. Commutative simple summands have zero commutator curvature; the $M_2$ summands are the noncommutative carriers, and the center acts scalarly on each $M_2$ summand, producing the compatible-refinement obstruction. The unique Type II CP permutation edge is outside the Type I clause. Cross-system universality remains a Layer B principle.
 - **S5 (S1 Isolation):** Proven — V₁ is the unique G-invariant proper subrepresentation, determined by the irreducible decomposition.
 - **S6 (Curvature Confinement):** Proven — direct consequence of Lemma 1 (Paper III §4.1): [A_g, A_h] preserves block structure identically.
 
-S1 and S4 remain computational structural laws — observed without exception in every recomputation, NOT yet proven from first principles.
+S1 remains a computational structural law — observed without exception in every recomputation, but not yet proven for all inverse-closed generator families.
 
 **Spec Theorems use an independent numbering system (S1–S6), distinct from paper theorem numbers.** Cross-references from papers SHALL cite "CCS Spec Theorem S$n$", never by number alone.
 
@@ -1357,7 +1371,7 @@ S1 and S4 remain computational structural laws — observed without exception in
 | **S1** | Spectral Rigidity | The 6-layer decomposition is $G$-determined (invariant under all tested inverse-closed $S$). |
 | **S2** | Transport Locality | All direct transport and pure curvature are block-preserving. Zero cross-block direct edges or curvature channels. |
 | **S3** | T7 Separation | All T7 morphisms are cross-block. Zero within-block T7 morphisms. |
-| **S4** | M₂ Principle | Noncommutative simple components ($n_i \geq 2$) are the sole carriers of refinement obstruction, transport mediation, and Lie curvature. |
+| **S4** | M₂ Principle | In the canonical Rubik realization, noncommutative simple components ($n_i \geq 2$) carry all Type I transport and Lie curvature, and the $M_2$ summands of $A_{\mathrm{EP}}$ obstruct further compatible commutative refinement. The Type II CP permutation channel is excluded from the Type I statement. |
 | **S5** | S1 Isolation | $V_1$ is the unique $G$-invariant proper subrepresentation. $K = \kappa_d = 0$ at all depths. |
 | **S6** | Curvature Confinement | $\kappa_1 > 0$ exclusively within blocks. The commutator $[A_g, A_h]$ preserves block structure identically. |
 
@@ -1965,7 +1979,7 @@ The canonical random seed SHALL be `np.random.seed(42)`. Tests are deterministic
 
 ### A.3 Stability Classification
 
-**Layer A — Canonical (9 items)**
+**Layer A — Canonical (11 items)**
 
 | Claim | Why exact |
 |-------|-----------|
@@ -1978,8 +1992,10 @@ The canonical random seed SHALL be `np.random.seed(42)`. Tests are deterministic
 | $\|\rho(g)\rho(h) - \rho(gh)\| < 3 \times 10^{-8}$ | Homomorphism property |
 | $\max\|\exp(A_g) - \rho(g)\| \approx 10^{-15}$ | Lie embedding |
 | $\kappa$ symmetry | Hermiticity consequence |
+| $A_{\mathrm{EP}} \cong M_2(\mathbb{C})^4 \oplus M_1(\mathbb{C})^4$ | Finite-dimensional $*$-algebra decomposition; center and simple-component dimensions certified |
+| M₂ Principle (canonical Rubik scope) | Commutative summands have zero commutator curvature; $M_2$ summands carry Type I transport and compatible-refinement obstruction |
 
-**Layer B — Robust Empirical (10 items)**
+**Layer B — Robust Empirical (11 items)**
 
 | Claim | Why robust |
 |-------|------------|
@@ -1989,12 +2005,13 @@ The canonical random seed SHALL be `np.random.seed(42)`. Tests are deterministic
 | 5 T7 morphisms | Binary detection; $K=0$ threshold sharp ($<10^{-14}$ vs $>0.01$) |
 | 7 pure curvature channels | $\kappa_0/K$ ratio $> 10^8$ |
 | $\kappa$ values | Stable to $10^{-12}$ |
-| EP algebra structure | SVD rank tolerance-stable |
 | $\pi$ map: $\ker=0$, $\operatorname{coker}=356$ | SVD gap $>10^{-8}$ |
 | $\Delta_{\operatorname{comm}} = 194$ | Exact combinatorial count |
 | S1 isolation | $G$-invariant subrepresentation |
+| Collision-quotient wall nesting on tested charts | Every observed field-extension event lies on a layer-count wall; $\Sigma_{\mathrm{field}}\subseteq\Sigma_L\subseteq\Sigma_{\mathrm{spec}}\subseteq\Sigma_{\mathrm{comm}}$ on the registered Paper VI charts |
+| T7 D-stability on tested block-diagonal constructions | Five Rubik T7 pairs and zero S₃-control pairs persist across all registered scalar and Casimir Dirac constructions |
 
-**Layer C — Exploratory (5 items)**
+**Layer C — Exploratory (7 items)**
 
 | Claim | Status |
 |-------|--------|
@@ -2003,6 +2020,8 @@ The canonical random seed SHALL be `np.random.seed(42)`. Tests are deterministic
 | Isotypic decomposition (51 components) | Not yet integrated into main data sections |
 | T7 necessity (shared irrep conjecture) | Strong evidence, not fully proven |
 | S₃ reg⊕reg full hierarchy | Prototype; general proof pending |
+| Universal collision-quotient wall nesting | Extension beyond the tested normal spectral charts remains conjectural |
+| Universal T7 D-stability | Invariance for arbitrary admissible block-diagonal Dirac operators remains conjectural |
 
 ### A.4 Failure Modes
 
@@ -2023,7 +2042,7 @@ The single most consequential failure in the project's history. An inconsistent 
 
 #### A.4.2 Legacy Error Catalog (Categories 1, 2, 4)
 
-See Appendix B of `docs/paper_data.md` for full documentation:
+The private raw archive retains the full historical logs; the public error catalog is:
 
 - E.1 Eigensolver accidental splitting (→ 11 raw sectors merged to 9)
 - E.2 SVD rank threshold instability (→ scale-invariant threshold + one-shot SVD)
@@ -2086,11 +2105,12 @@ All gauge-invariant observables — projectors $P_\lambda$, transport strengths 
 ### B.1 Data Flow
 
 ```
-experiments/*.py  ──→  docs/paper_data.md  ──→  figures/*.py
-                       CCS-r2 (this doc)    ──→  papers/*.tex
+experiments/*.py  ->  CCS-r3 (this document)  ->  figures/*.py
+                                               ->  papers/*.tex
+private raw archive  ->  provenance only
 ```
 
-Experiment scripts compute → `paper_data.md` freezes → this supplement publishes → figures/papers reference. Figures are frozen artifacts; they do not recompute.
+Experiment scripts compute, CCS freezes the public numerical constitution, and figures and papers reference the frozen values. The private raw archive retains failed experiments and older revisions but is not an authoritative public layer.
 
 ### B.2 Experiment → Claim Mapping
 
@@ -2148,8 +2168,8 @@ the frozen canonical source data. For full definitions see
 - CCS Fig. C0 --- Structural Pipeline (Preamble)
 - CCS Fig. C7 --- S₃ Prototype Comparison (§2.11)
 - CCS Fig. C11 --- κ Hierarchy: Gradient vs Curvature (§2.3)
+- CCS Fig. C13 --- Generator-Family Genealogy (§II.4.4)
 - CCS Fig. C18 --- Generator Defect Taxonomy (§I.3)
-- CCS Fig. C12b --- Generator Defect Taxonomy (§II.4.4)
 
 **Cross-paper:**
 
@@ -2163,7 +2183,7 @@ the frozen canonical source data. For full definitions see
 
 **Purpose.** Index all canonical verification figures (C0–C14, C16–C18) with their locations, citation format, and the CCS sections they accompany. All CCS figures are frozen artifacts generated by `experiments/ccs_figures.py`.
 
-**Scope.** Eighteen CCS figures provide visual verification of canonical data: structural pipeline, spectrum, transport, commutant, symmetry breaking, S₃ negative controls, failure mode diagnostics, block decomposition, resonance merging, phase cancellation, κ hierarchy, noncommutative support overlap, transport skeleton, block-sector alluvial diagram, and generator defect taxonomy.
+**Scope.** Fifteen CCS figures provide visual verification of canonical data: structural pipeline, spectrum, transport, commutant, symmetry breaking, S₃ negative controls, failure mode diagnostics, block decomposition, resonance merging, phase cancellation, κ hierarchy, generator-family genealogy, noncommutative support overlap, transport skeleton, block-sector alluvial diagram, and generator defect taxonomy.
 
 **Dependencies.** Part I (core numerical structures), Part III (formal derivations); `CubieSpectralOperator` public API.
 
@@ -2231,11 +2251,11 @@ Side-by-side comparison of κ₀ (gradient, depth-0 Lie monomials) and κ₁ (cu
 
 Generator-family continuum 18→16→12→10→8→6 showing the spectral field $\mathbb{Q}$ (blue) → $\mathbb{Q}(\sqrt{5})$ (red) phase transition. Top panel: timeline strip with per-family field label, layer count, missing axes, and EP irrationality markers; symmetry-breaking brackets at the 18→16 and 10→8 boundaries. Bottom 3×2 grid: eigenvalue bar charts colored by rationality, with block composition (CP/EP/CO/EO in grayscale). Red-bordered panels mark irrational families (n=16, n=8). This is the single-figure proof that the 18-generator family is the unique complete-face arithmetic closure. See (CCS §II.4) for the full transition atlas.
 
-### CCS Fig. C12b — Generator Defect Taxonomy (§II.4.4)
+### CCS Fig. C13 — Generator-Family Genealogy (§II.4.4)
 
-`figures/ccs/fig_generator_defect_taxonomy.png`
+`figures/ccs/fig_c13_generator_family_genealogy.png`
 
-Minimalist genealogy tree: canonical 18-generator family (QT + HT) at root, three defect-family branches (n=14 Field Defect Localization, n=15 Transport Resolution Amplifier, n=16 Sector Shielding) with removal operations labeled, and coverage continuum (18→16→12→10→8→6) annotated with $\mathbb{Q}$/$\mathbb{Q}(\sqrt{5})$ field labels. Complements C12 (results) and C18 (detailed defect data) by showing generator-type provenance.
+Minimalist genealogy tree: canonical 18-generator family (QT + HT) at root, three defect-family branches (n=14 Field Defect Localization, n=15 Transport Resolution Amplifier, n=16 Sector Shielding) with removal operations labeled, and coverage continuum (18→16→12→10→8→6) annotated with $\mathbb{Q}$/$\mathbb{Q}(\sqrt{5})$ field labels. Complements C12 (phase-transition results) and C18 (detailed defect data) by showing generator-type provenance.
 
 ### CCS Fig. C14 — Noncommutative Support Overlap (§2.1)
 
@@ -2339,7 +2359,7 @@ Total wall time for full canonical recomputation: ~5–10 minutes on commodity h
 
 **Purpose.** Provide the definitive register of what is proven, what is numerically observed, and what remains open across the entire trilogy. This Part is the single-source-of-truth for claim status — every "proven" or "observed" assertion in any paper SHALL be traceable to an entry in this register.
 
-**Scope.** All major claims of Papers I–III, classified by proof status and stability layer.
+**Scope.** All major claims of Papers I–III, plus explicitly registered computational extensions from Papers IV–VII and Appendix H, classified by proof status and stability layer.
 
 **Dependencies.** Part I (canonical objects and numerical data), Part III (complete proofs), Paper I–III theorem numbering.
 
@@ -2392,7 +2412,9 @@ Total wall time for full canonical recomputation: ~5–10 minutes on commodity h
 | O13 | eo spectrum from $\mathbb{Z}_2$ phase classes (numerical-representation observation, see §1.5.4) | B | $2T_2$ multiplicity blocks analytic derivation; observed-rigid across all canonical computations |
 | O14 | Six canonical layers are the $L_{2/3}$ collision quotient of the 9 QT/HT joint-spectral sectors | A | Exact QT/HT eigenvalue table, §1.3–§1.4 |
 | O15 | $V_{5/9}=S5\oplus S6\oplus S7$ and $V_{1/3}=S8\oplus S9$ are the nontrivial canonical collision components | A | Exact joint eigenvalue signatures, §1.4 |
-| O16 | $\alpha=2/3$ is the canonical maximal interior collision parameter in the QT/HT interpolation | B | Verified in `docs/joint_spectral_geometry.md`; future Paper IV bridge |
+| O16 | $\alpha=2/3$ is the canonical maximal interior collision parameter in the QT/HT interpolation | B | Verified in Paper IV and its supporting QT/HT joint-spectrum computations |
+| O17 | $\Sigma_{\mathrm{field}}\subseteq\Sigma_L\subseteq\Sigma_{\mathrm{spec}}\subseteq\Sigma_{\mathrm{comm}}$ on the registered collision-quotient charts | B | Paper VI normal-chart scans; every observed field-extension event coincides with a layer-count bifurcation |
+| O18 | T7 pair counts are stable across the registered block-diagonal Dirac constructions | B | Rubik: 5 for all scalar/Casimir constructions; S₃ controls: 0 for all registered constructions |
 
 ### E.3 Problem Status Register
 
@@ -2747,11 +2769,11 @@ The 2-mass degeneracy reveals that T7 operates at two distinct layers:
 **T7 resolves both through compositional hybrid transport.** Whether the obstruction is metric or group-theoretic, composition through a transport-active hybrid sector provides a finite morphism where no single generator can. T7 is not a metric artifact — it depends only on which subrepresentations $D$ commutes with, not on the numerical mass values.
 
 
-### H.4 D-Stable of T7
+### H.4 D-Stability of T7
 
 **This is the central result of the spectral-triple analysis.** For a large class of block-diagonal Dirac operators — those that respect the $G$-orbit block decomposition — the T7 count is invariant. T7 is not a metric artifact; it is a representation-topological phenomenon.
 
-**Observation H.1 (T7 D-stability).** For all tested block-diagonal Dirac operators — including arbitrary scalar-weighted constructions with up to 4 distinct mass scales and all Casimir-induced operators from the group Laplacian — the set of T7 pairs is unchanged:
+> **Canonical (Layer B): Observation H.1 (T7 D-stability on the registered family).** For all tested block-diagonal Dirac operators — including arbitrary scalar-weighted constructions with up to 4 distinct mass scales and all Casimir-induced operators from the group Laplacian — the set of T7 pairs is unchanged.
 
 | Construction | $m_{\mathrm{cp}}$ | $m_{\mathrm{ep}}$ | $m_{\mathrm{co}}$ | $m_{\mathrm{eo}}$ | Distinct masses | T7 |
 |-------------|:---:|:---:|:---:|:---:|:-:|:-:|
@@ -2761,10 +2783,27 @@ The 2-mass degeneracy reveals that T7 operates at two distinct layers:
 
 Only the proportion of metric vs. group-theoretic obstruction varies with the mass spectrum; the T7 count (5) is invariant. T7 depends on the block-support structure of the representation — which sectors share which blocks, which irreps bridge which blocks — not on the numerical mass values assigned to those blocks.
 
-**D-stability conjecture.** For any block-diagonal $D = \bigoplus_b \lambda_b I_b$ with $\lambda_b > 0$, the T7 pair count is invariant under $D \mapsto \alpha D + \beta I$ ($\alpha > 0$, $\beta \in \mathbb{R}$). The current evidence suggests that T7 depends primarily on which invariant blocks are distinguished by $D$, rather than on the precise numerical mass values. Verified on the Rubik cube (5 T7, all $D$ constructions) and both $S_3$ negative controls (0 T7, all $D$ constructions).
+**D-stability conjecture (Layer C universal extension).** For any block-diagonal $D = \bigoplus_b \lambda_b I_b$ with $\lambda_b > 0$, the T7 pair count is invariant under $D \mapsto \alpha D + \beta I$ ($\alpha > 0$, $\beta \in \mathbb{R}$). The Layer B result above concerns only the registered scalar and Casimir constructions. The unrestricted statement remains conjectural.
 
 
-### H.5 Structural Analogies
+### H.5 Collision-Quotient Wall Stratification
+
+> **Canonical (Layer B): Observation H.2 (registered wall nesting).** On the normal spectral charts tested in Paper VI, every observed collision-quotient field-extension event occurs on a layer-count wall. The registered hierarchy is
+> $$
+> \Sigma_{\mathrm{field}}
+> \subseteq
+> \Sigma_L
+> \subseteq
+> \Sigma_{\mathrm{spec}}
+> \subseteq
+> \Sigma_{\mathrm{comm}}.
+> $$
+
+The inclusions $\Sigma_L\subseteq\Sigma_{\mathrm{spec}}\subseteq\Sigma_{\mathrm{comm}}$ follow from the declared domains: layer-count walls are defined on normal commutative spectral charts. The nontrivial empirical content is $\Sigma_{\mathrm{field}}\subseteq\Sigma_L$ on the registered scans, where every observed arithmetic field change coincides with a joint-spectrum bifurcation. No counterexample was found in the tested generator-family slices.
+
+This is a Layer B collision-quotient statement, not a universal wall theorem. Spectral walls $\Sigma_L$ and $\Sigma_{\mathrm{field}}$ are not accessibility walls by definition, and extension of the nesting beyond the tested normal charts remains Layer C.
+
+### H.6 Structural Analogies
 
 Several structural analogies may help contextualize the two-layer obstruction picture:
 
@@ -2822,7 +2861,7 @@ The purpose of this appendix is therefore not to reinterpret the Rubik cube as a
 
 **Summary Table**
 
-| Family | $n$ | Removed | Layers | Field | Comm($\rho$) | Sectors | Non-k/9 | Edges | T7 |
+| Family | $n$ | Removed | Layers | Field | Comm | Sect. | Non-k/9 | Edges | T7 |
 |--------|-----|---------|--------|-------|-------------|---------|---------|-------|----|
 | Canonical | 18 | — | 6 | $\mathbb{Q}$ | 610 | 9 | 0 | 10 | 5 |
 | Sector Shielding | 16 | 2 axis-0 HT (R², L²) | 9 | $\mathbb{Q}(\sqrt{5})$ | 610 | 13 | 2 | 32 | 11 |
@@ -2866,7 +2905,7 @@ What the trilogy does NOT claim:
 ***
 
 
-*End of CCS-r2. All numerical values sourced from `docs/paper_data.md` (internal canonical specification). Discrepancies between this supplement and any other document are resolved in favor of this supplement.*
+*End of CCS-r3. All numerical values are recomputed through the canonical APIs and frozen in this supplement. Discrepancies between this supplement and any other document are resolved in favor of this supplement.*
 
 ***
 
@@ -2877,5 +2916,5 @@ and figure-generation scripts are available at:
 
 https://github.com/dooven-prime/rime-lite
 
-The repository also contains this Computational Supplement (CCS-r2),
+The repository also contains this Computational Supplement (CCS-r3),
 canonical datasets, and reproducibility notebooks corresponding to the trilogy.

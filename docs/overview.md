@@ -3,9 +3,9 @@
 ## One-Page Project Summary
 
 **Public release scope.** This overview refers to the current public RIME
-release: Papers I--XI plus the Computational Canonical Specification (CCS).
+release: Papers I--XII plus the Computational Canonical Specification (CCS).
 The original three-paper trilogy remains the Rubik-centered foundation; Papers
-IV--XI extend it into the broader RIME program.
+IV--XII extend it into the broader RIME program.
 
 RIME studies how spectral, transport, accessibility, and deformation structures
 arise from finite-dimensional represented systems. The Rubik cube is used as a
@@ -16,11 +16,13 @@ The program invariant is:
 
 ```text
 Spectral geometry determines the objects.
+Compatible sectorization is the interface.
+Observable geometry is the invariant.
 Accessibility geometry determines their behavior.
 Genericity determines why the behavior is stable.
 ```
 
-## Eleven-Paper Arc
+## Twelve-Paper Arc
 
 | Paper | Role | Main question |
 |-------|------|---------------|
@@ -35,6 +37,7 @@ Genericity determines why the behavior is stable.
 | Paper IX | observable dynamics | How do SOF observables evolve under deformation? |
 | Paper X | observable pipeline | Why do different species share one observable pipeline? |
 | Paper XI | observable classification | Which wall records and signatures belong to common observable classes? |
+| Paper XII | diagnostic protocol | How does SOF produce reusable, claim-status-aware SOF Reports? |
 
 The dependency chain is:
 
@@ -50,6 +53,7 @@ Arithmetic
   -> Observable dynamics
   -> Universal observable pipeline
   -> Observable wall classification
+  -> SOF diagnostic reporting
 ```
 
 ## Main Objects
@@ -96,27 +100,37 @@ representation alone.
 SOF is a sectorized observable architecture. It does not prescribe a universal wall
 theory; deformation geometry is chosen separately in each branch.
 
-The lightweight registry lives in `docs/SOF_REGISTRY.md`. The post-VII SOF
+The lightweight registry lives in [SOF_REGISTRY.md](SOF_REGISTRY.md). The post-VII SOF
 material is split by role:
 
-- `docs/SOF_OBJECTS.md` for the static object layer;
-- `docs/SOF_DEFORMATIONS.md` for observable dynamics and walls;
-- `docs/SOF_APPLICATIONS.md` for cross-species applications;
-- `docs/SOF_RELATED_WORK.md` for external framework precedents.
+- [SOF_OBJECTS.md](SOF_OBJECTS.md) for the static object layer;
+- [SOF_DEFORMATIONS.md](SOF_DEFORMATIONS.md) for observable dynamics and walls;
+- [SOF_REGISTRY.md](SOF_REGISTRY.md) for cross-species evidence, application routing, and
+  claim-status boundaries.
+
+Detailed applications and external precedents are documented in Papers X--XII
+and their References sections. Internal research-routing notes are intentionally
+not part of the public documentation contract.
 
 Further SOF theorem upgrades remain future work. The current theorem layers
 remain paper-specific and claim-status gated.
 
 ## Repository Entry Points
 
-- `papers/paper1/`--`papers/paper11/` contain the manuscript sources.
-- `ccs/canonical_specification.md` records the canonical computational data for
-  the trilogy and bridge notes.
-- `docs/PROGRAM_MAP.md` gives the detailed Papers I--XI architecture.
-- `docs/PROGRAM_PHILOSOPHY.md` records the Rubik-as-laboratory philosophy.
-- `docs/FUTURE_RELATED_WORK.md` routes post-VII SOF horizon notes.
-- `docs/TRILOGY_OVERVIEW.md` preserves the original trilogy-focused overview.
-- `experiments/README.md` maps support scripts to paper claims.
+| Resource | Public role |
+|----------|-------------|
+| `papers/paper1/`--`papers/paper12/` | canonical public manuscript sources |
+| `ccs/canonical_specification.md` | canonical trilogy computation and claim dependencies |
+| [PROGRAM_MAP.md](PROGRAM_MAP.md) | program architecture, layer vocabulary, and Rubik/general boundary |
+| [PAPER_SCOPE.md](PAPER_SCOPE.md) | per-paper ownership and source-of-truth order |
+| [PROGRAM_PHILOSOPHY.md](PROGRAM_PHILOSOPHY.md) | Rubik-as-laboratory rationale |
+| [CORE_INVARIANTS.md](CORE_INVARIANTS.md) | stable Rubik calibration data |
+| [conventions.md](conventions.md) | coordinates, move encoding, composition, and tolerances |
+| [SOF_OBJECTS.md](SOF_OBJECTS.md) | Paper VIII object-layer companion |
+| [SOF_DEFORMATIONS.md](SOF_DEFORMATIONS.md) | Paper IX dynamic-layer companion |
+| [SOF_REGISTRY.md](SOF_REGISTRY.md) | Paper X Registry companion and evidence map |
+| [TRILOGY_OVERVIEW.md](TRILOGY_OVERVIEW.md) | trilogy-only introduction |
+| `experiments/README.md` | support-script and claim map |
 
 ## Scope
 

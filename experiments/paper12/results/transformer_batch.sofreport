@@ -1,0 +1,470 @@
+{
+  "sofrs_version": "1.0",
+  "report_id": "transformer_batch_sweep",
+  "system": "synthetic token-bin transformer sector sweep",
+  "claim_status": "diagnostic",
+  "claim_note": "sector-count robustness diagnostic",
+  "sectorization": {
+    "origin": "equal-size token bins",
+    "configurations": [
+      {
+        "sector_count": 4,
+        "tokens_per_sector": 50,
+        "ambient_dim": 240,
+        "isolated_sector": 3
+      },
+      {
+        "sector_count": 5,
+        "tokens_per_sector": 50,
+        "ambient_dim": 300,
+        "isolated_sector": 4
+      },
+      {
+        "sector_count": 6,
+        "tokens_per_sector": 50,
+        "ambient_dim": 360,
+        "isolated_sector": 5
+      }
+    ],
+    "realization_status": "constructed finite realization"
+  },
+  "observable_family": {
+    "chain_generators": "nearest-neighbor sparse skew generators over active token sectors"
+  },
+  "support_matrix": {
+    "kind": "aggregated_R1_by_configuration",
+    "configurations": [
+      {
+        "sector_count": 4,
+        "matrix": [
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "offdiag_density_pct": 16.666666666666668,
+        "frozen_R1": 8
+      },
+      {
+        "sector_count": 5,
+        "matrix": [
+          [
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "offdiag_density_pct": 10.0,
+        "frozen_R1": 14
+      },
+      {
+        "sector_count": 6,
+        "matrix": [
+          [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "offdiag_density_pct": 6.666666666666667,
+        "frozen_R1": 22
+      }
+    ]
+  },
+  "bridge_matrix": {
+    "kind": "aggregated_R2_by_configuration",
+    "configurations": [
+      {
+        "sector_count": 4,
+        "matrix": [
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "offdiag_density_pct": 16.666666666666668
+      },
+      {
+        "sector_count": 5,
+        "matrix": [
+          [
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "offdiag_density_pct": 6.666666666666667
+      },
+      {
+        "sector_count": 6,
+        "matrix": [
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "offdiag_density_pct": 3.3333333333333335
+      }
+    ]
+  },
+  "repair_matrix": {
+    "kind": "Lie-depth repair by configuration",
+    "configurations": [
+      {
+        "sector_count": 4,
+        "depth_matrix": [
+          [
+            0,
+            0,
+            1,
+            999
+          ],
+          [
+            0,
+            0,
+            0,
+            999
+          ],
+          [
+            1,
+            0,
+            0,
+            999
+          ],
+          [
+            999,
+            999,
+            999,
+            0
+          ]
+        ],
+        "D_repaired": 2,
+        "frozen_D": 6,
+        "D_max": 999
+      },
+      {
+        "sector_count": 5,
+        "depth_matrix": [
+          [
+            0,
+            0,
+            1,
+            2,
+            999
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            999
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            999
+          ],
+          [
+            2,
+            1,
+            0,
+            0,
+            999
+          ],
+          [
+            999,
+            999,
+            999,
+            999,
+            0
+          ]
+        ],
+        "D_repaired": 6,
+        "frozen_D": 8,
+        "D_max": 999
+      },
+      {
+        "sector_count": 6,
+        "depth_matrix": [
+          [
+            0,
+            0,
+            1,
+            2,
+            3,
+            999
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            2,
+            999
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            1,
+            999
+          ],
+          [
+            2,
+            1,
+            0,
+            0,
+            0,
+            999
+          ],
+          [
+            3,
+            2,
+            1,
+            0,
+            0,
+            999
+          ],
+          [
+            999,
+            999,
+            999,
+            999,
+            999,
+            0
+          ]
+        ],
+        "D_repaired": 12,
+        "frozen_D": 10,
+        "D_max": 999
+      }
+    ],
+    "canonical_five_sector_row": {
+      "frozen_R1": 14,
+      "D_repaired": 6,
+      "frozen_D": 8,
+      "isolated_sector": 4
+    }
+  },
+  "wall_record": {
+    "status": "not_computed",
+    "reason": "discrete sector-count robustness sweep, not a parameterized wall map",
+    "trajectory_summary": {
+      "sector_counts": [
+        4,
+        5,
+        6
+      ],
+      "frozen_R1": [
+        8,
+        14,
+        22
+      ],
+      "D_repaired": [
+        2,
+        6,
+        12
+      ],
+      "frozen_D": [
+        6,
+        8,
+        10
+      ]
+    }
+  },
+  "failure_modes": [
+    "synthetic token-bin model rather than a trained language model",
+    "the isolated final sector is constructed by design",
+    "changing sector count is a robustness sweep, not a continuous deformation"
+  ]
+}

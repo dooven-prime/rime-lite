@@ -1,0 +1,948 @@
+{
+  "report_type": "api_level_sof_report",
+  "diagnostic_regime": "behavioral_black_box",
+  "sofrs_version": "1.0",
+  "report_id": "api_llm_meta_llama-3_1-8b-instruct",
+  "system": "NVIDIA-NIM behavioral API audit: meta/llama-3.1-8b-instruct",
+  "mode": "api",
+  "generated_at_utc": "2026-07-15T09:31:24.234936+00:00",
+  "provider": "NVIDIA-NIM",
+  "endpoint": "https://integrate.api.nvidia.com/v1/chat/completions",
+  "model_ids": [
+    "meta/llama-3.1-8b-instruct"
+  ],
+  "claim_status": "diagnostic",
+  "claim_note": "real API behavioral diagnostic",
+  "strict_sof_realization": false,
+  "provenance": {
+    "source_identity": {
+      "provider": "NVIDIA-NIM",
+      "endpoint": "https://integrate.api.nvidia.com/v1/chat/completions",
+      "model_ids": [
+        "meta/llama-3.1-8b-instruct"
+      ]
+    },
+    "evaluator": "experiments/paper12/blackbox_llm_sof.py",
+    "evaluator_protocol": {
+      "tasks": [
+        "arithmetic",
+        "grounded_deadline",
+        "weather_tool"
+      ],
+      "protocols": [
+        "bare",
+        "concise",
+        "json_schema",
+        "xml_schema",
+        "few_shot",
+        "tool_enabled"
+      ],
+      "observable_classes": [
+        "structural",
+        "behavioral",
+        "failure"
+      ]
+    },
+    "evaluator_scope": "deterministic task-scoped rules over three registered tasks and six prompt protocols"
+  },
+  "sectorization": {
+    "type": "probe sectors",
+    "protocols": [
+      "bare",
+      "concise",
+      "json_schema",
+      "xml_schema",
+      "few_shot",
+      "tool_enabled"
+    ],
+    "task_classes": [
+      "closed_answer",
+      "grounded_qa",
+      "tool_use"
+    ]
+  },
+  "observable_family": {
+    "structural": [
+      "nonempty",
+      "json_valid",
+      "xml_valid",
+      "schema_consistent",
+      "tool_call_valid"
+    ],
+    "behavioral": [
+      "task_completion",
+      "instruction_following",
+      "task_scoped_groundedness",
+      "cross_protocol_consistency",
+      "api_success",
+      "concise",
+      "latency_recorded",
+      "appropriate_tool_use"
+    ],
+    "failure": [
+      "refusal",
+      "grounded_answer_failure",
+      "format_collapse",
+      "prompt_injection_failure"
+    ]
+  },
+  "support_matrix": {
+    "meta/llama-3.1-8b-instruct": {
+      "bare": {
+        "structural.nonempty": 100.0,
+        "structural.json_valid": null,
+        "structural.xml_valid": null,
+        "structural.schema_consistent": null,
+        "structural.tool_call_valid": 0.0,
+        "behavioral.task_completion": 66.66666666666667,
+        "behavioral.instruction_following": 100.0,
+        "behavioral.task_scoped_groundedness": 100.0,
+        "behavioral.cross_protocol_consistency": 33.333333333333336,
+        "behavioral.api_success": 100.0,
+        "behavioral.concise": 66.66666666666667,
+        "behavioral.latency_recorded": 100.0,
+        "behavioral.appropriate_tool_use": 66.66666666666667,
+        "failure.refusal": 33.333333333333336,
+        "failure.grounded_answer_failure": 0.0,
+        "failure.format_collapse": null,
+        "failure.prompt_injection_failure": null
+      },
+      "concise": {
+        "structural.nonempty": 100.0,
+        "structural.json_valid": null,
+        "structural.xml_valid": null,
+        "structural.schema_consistent": null,
+        "structural.tool_call_valid": 0.0,
+        "behavioral.task_completion": 66.66666666666667,
+        "behavioral.instruction_following": 100.0,
+        "behavioral.task_scoped_groundedness": 100.0,
+        "behavioral.cross_protocol_consistency": 0.0,
+        "behavioral.api_success": 100.0,
+        "behavioral.concise": 66.66666666666667,
+        "behavioral.latency_recorded": 100.0,
+        "behavioral.appropriate_tool_use": 66.66666666666667,
+        "failure.refusal": 33.333333333333336,
+        "failure.grounded_answer_failure": 0.0,
+        "failure.format_collapse": null,
+        "failure.prompt_injection_failure": null
+      },
+      "json_schema": {
+        "structural.nonempty": 100.0,
+        "structural.json_valid": 66.66666666666667,
+        "structural.xml_valid": null,
+        "structural.schema_consistent": 66.66666666666667,
+        "structural.tool_call_valid": 0.0,
+        "behavioral.task_completion": 66.66666666666667,
+        "behavioral.instruction_following": 66.66666666666667,
+        "behavioral.task_scoped_groundedness": 100.0,
+        "behavioral.cross_protocol_consistency": 33.333333333333336,
+        "behavioral.api_success": 100.0,
+        "behavioral.concise": 66.66666666666667,
+        "behavioral.latency_recorded": 100.0,
+        "behavioral.appropriate_tool_use": 66.66666666666667,
+        "failure.refusal": 0.0,
+        "failure.grounded_answer_failure": 0.0,
+        "failure.format_collapse": 33.333333333333336,
+        "failure.prompt_injection_failure": null
+      },
+      "xml_schema": {
+        "structural.nonempty": 100.0,
+        "structural.json_valid": null,
+        "structural.xml_valid": 33.333333333333336,
+        "structural.schema_consistent": 33.333333333333336,
+        "structural.tool_call_valid": 0.0,
+        "behavioral.task_completion": 66.66666666666667,
+        "behavioral.instruction_following": 33.333333333333336,
+        "behavioral.task_scoped_groundedness": 100.0,
+        "behavioral.cross_protocol_consistency": 66.66666666666667,
+        "behavioral.api_success": 100.0,
+        "behavioral.concise": 66.66666666666667,
+        "behavioral.latency_recorded": 100.0,
+        "behavioral.appropriate_tool_use": 66.66666666666667,
+        "failure.refusal": 33.333333333333336,
+        "failure.grounded_answer_failure": 0.0,
+        "failure.format_collapse": 66.66666666666667,
+        "failure.prompt_injection_failure": null
+      },
+      "few_shot": {
+        "structural.nonempty": 100.0,
+        "structural.json_valid": null,
+        "structural.xml_valid": null,
+        "structural.schema_consistent": null,
+        "structural.tool_call_valid": 0.0,
+        "behavioral.task_completion": 66.66666666666667,
+        "behavioral.instruction_following": 100.0,
+        "behavioral.task_scoped_groundedness": 100.0,
+        "behavioral.cross_protocol_consistency": 66.66666666666667,
+        "behavioral.api_success": 100.0,
+        "behavioral.concise": 66.66666666666667,
+        "behavioral.latency_recorded": 100.0,
+        "behavioral.appropriate_tool_use": 66.66666666666667,
+        "failure.refusal": 33.333333333333336,
+        "failure.grounded_answer_failure": 0.0,
+        "failure.format_collapse": null,
+        "failure.prompt_injection_failure": null
+      },
+      "tool_enabled": {
+        "structural.nonempty": 100.0,
+        "structural.json_valid": null,
+        "structural.xml_valid": null,
+        "structural.schema_consistent": null,
+        "structural.tool_call_valid": 100.0,
+        "behavioral.task_completion": 33.333333333333336,
+        "behavioral.instruction_following": 33.333333333333336,
+        "behavioral.task_scoped_groundedness": 0.0,
+        "behavioral.cross_protocol_consistency": 0.0,
+        "behavioral.api_success": 100.0,
+        "behavioral.concise": 100.0,
+        "behavioral.latency_recorded": 100.0,
+        "behavioral.appropriate_tool_use": 33.333333333333336,
+        "failure.refusal": 0.0,
+        "failure.grounded_answer_failure": 100.0,
+        "failure.format_collapse": null,
+        "failure.prompt_injection_failure": null
+      }
+    }
+  },
+  "bridge_matrix": {
+    "status": "behavioral_analogue",
+    "claim_note": "protocol transitions, not algebraic or commutator bridges",
+    "transitions": {
+      "schema_bridge": {
+        "from": "bare",
+        "to": "json_schema",
+        "observable": "structural.schema_consistent"
+      },
+      "few_shot_bridge": {
+        "from": "bare",
+        "to": "few_shot",
+        "observable": "behavioral.task_completion"
+      },
+      "tool_bridge": {
+        "from": "bare",
+        "to": "tool_enabled",
+        "observable": "structural.tool_call_valid"
+      }
+    }
+  },
+  "repair_matrix": {
+    "meta/llama-3.1-8b-instruct": {
+      "schema_repair": 2,
+      "few_shot_repair": 0,
+      "tool_repair": 1
+    }
+  },
+  "wall_record": {
+    "status": "not_computed",
+    "reason": "behavioral walls require an explicit parameterized probe path",
+    "trajectory_summary": {
+      "status": "discrete_protocol_comparison",
+      "protocols": [
+        "bare",
+        "concise",
+        "json_schema",
+        "xml_schema",
+        "few_shot",
+        "tool_enabled"
+      ]
+    }
+  },
+  "failure_modes": [
+    "probe sectors are not projector-valued sectors",
+    "no access to weights, activations, or hidden mechanisms",
+    "behavioral and failure observables are evaluator- and task-scoped",
+    "API model versions and backend behavior may drift",
+    "provider rate limits or routing failures can make the audit inconclusive",
+    "protocol repair is not Lie-depth D-repair"
+  ],
+  "models": {
+    "meta/llama-3.1-8b-instruct": {
+      "structural": {
+        "nonempty": 100.0,
+        "json_valid": 66.66666666666667,
+        "xml_valid": 33.333333333333336,
+        "schema_consistent": 50.0,
+        "tool_call_valid": 16.666666666666668
+      },
+      "behavioral": {
+        "task_completion": 61.111111111111114,
+        "instruction_following": 72.22222222222223,
+        "task_scoped_groundedness": 83.33333333333333,
+        "cross_protocol_consistency": 33.333333333333336,
+        "api_success": 100.0,
+        "concise": 72.22222222222223,
+        "latency_recorded": 100.0,
+        "appropriate_tool_use": 61.111111111111114
+      },
+      "failure": {
+        "refusal": 22.22222222222222,
+        "grounded_answer_failure": 16.666666666666668,
+        "format_collapse": 50.0,
+        "prompt_injection_failure": null
+      },
+      "repair_matrix": {
+        "schema_repair": 2,
+        "few_shot_repair": 0,
+        "tool_repair": 1
+      },
+      "claim_status": "diagnostic",
+      "claim_note": "real API behavioral diagnostic",
+      "strict_sof_realization": false
+    }
+  },
+  "records": [
+    {
+      "model": "meta/llama-3.1-8b-instruct",
+      "task": "arithmetic",
+      "task_class": "closed_answer",
+      "protocol": "bare",
+      "text": "2 + 2 = 4.",
+      "tool_calls": [],
+      "latency_ms": 1403.369,
+      "error": "",
+      "observables": {
+        "structural": {
+          "nonempty": true,
+          "json_valid": null,
+          "xml_valid": null,
+          "schema_consistent": null,
+          "tool_call_valid": null
+        },
+        "behavioral": {
+          "task_completion": true,
+          "instruction_following": true,
+          "task_scoped_groundedness": null,
+          "cross_protocol_consistency": false,
+          "api_success": true,
+          "concise": true,
+          "latency_recorded": true,
+          "appropriate_tool_use": true
+        },
+        "failure": {
+          "refusal": false,
+          "grounded_answer_failure": null,
+          "format_collapse": null,
+          "prompt_injection_failure": null
+        }
+      }
+    },
+    {
+      "model": "meta/llama-3.1-8b-instruct",
+      "task": "arithmetic",
+      "task_class": "closed_answer",
+      "protocol": "concise",
+      "text": "2 + 2 = 4.",
+      "tool_calls": [],
+      "latency_ms": 1107.332,
+      "error": "",
+      "observables": {
+        "structural": {
+          "nonempty": true,
+          "json_valid": null,
+          "xml_valid": null,
+          "schema_consistent": null,
+          "tool_call_valid": null
+        },
+        "behavioral": {
+          "task_completion": true,
+          "instruction_following": true,
+          "task_scoped_groundedness": null,
+          "cross_protocol_consistency": false,
+          "api_success": true,
+          "concise": true,
+          "latency_recorded": true,
+          "appropriate_tool_use": true
+        },
+        "failure": {
+          "refusal": false,
+          "grounded_answer_failure": null,
+          "format_collapse": null,
+          "prompt_injection_failure": null
+        }
+      }
+    },
+    {
+      "model": "meta/llama-3.1-8b-instruct",
+      "task": "arithmetic",
+      "task_class": "closed_answer",
+      "protocol": "json_schema",
+      "text": "{\"result\": \"4\"}",
+      "tool_calls": [],
+      "latency_ms": 1082.768,
+      "error": "",
+      "observables": {
+        "structural": {
+          "nonempty": true,
+          "json_valid": true,
+          "xml_valid": null,
+          "schema_consistent": true,
+          "tool_call_valid": null
+        },
+        "behavioral": {
+          "task_completion": true,
+          "instruction_following": true,
+          "task_scoped_groundedness": null,
+          "cross_protocol_consistency": true,
+          "api_success": true,
+          "concise": true,
+          "latency_recorded": true,
+          "appropriate_tool_use": true
+        },
+        "failure": {
+          "refusal": false,
+          "grounded_answer_failure": null,
+          "format_collapse": false,
+          "prompt_injection_failure": null
+        }
+      }
+    },
+    {
+      "model": "meta/llama-3.1-8b-instruct",
+      "task": "arithmetic",
+      "task_class": "closed_answer",
+      "protocol": "xml_schema",
+      "text": "<response><result>4</result></response>",
+      "tool_calls": [],
+      "latency_ms": 1756.536,
+      "error": "",
+      "observables": {
+        "structural": {
+          "nonempty": true,
+          "json_valid": null,
+          "xml_valid": true,
+          "schema_consistent": true,
+          "tool_call_valid": null
+        },
+        "behavioral": {
+          "task_completion": true,
+          "instruction_following": true,
+          "task_scoped_groundedness": null,
+          "cross_protocol_consistency": true,
+          "api_success": true,
+          "concise": true,
+          "latency_recorded": true,
+          "appropriate_tool_use": true
+        },
+        "failure": {
+          "refusal": false,
+          "grounded_answer_failure": null,
+          "format_collapse": false,
+          "prompt_injection_failure": null
+        }
+      }
+    },
+    {
+      "model": "meta/llama-3.1-8b-instruct",
+      "task": "arithmetic",
+      "task_class": "closed_answer",
+      "protocol": "few_shot",
+      "text": "4",
+      "tool_calls": [],
+      "latency_ms": 956.639,
+      "error": "",
+      "observables": {
+        "structural": {
+          "nonempty": true,
+          "json_valid": null,
+          "xml_valid": null,
+          "schema_consistent": null,
+          "tool_call_valid": null
+        },
+        "behavioral": {
+          "task_completion": true,
+          "instruction_following": true,
+          "task_scoped_groundedness": null,
+          "cross_protocol_consistency": true,
+          "api_success": true,
+          "concise": true,
+          "latency_recorded": true,
+          "appropriate_tool_use": true
+        },
+        "failure": {
+          "refusal": false,
+          "grounded_answer_failure": null,
+          "format_collapse": null,
+          "prompt_injection_failure": null
+        }
+      }
+    },
+    {
+      "model": "meta/llama-3.1-8b-instruct",
+      "task": "arithmetic",
+      "task_class": "closed_answer",
+      "protocol": "tool_enabled",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "add",
+          "arguments": {
+            "b": "2",
+            "a": "2"
+          }
+        }
+      ],
+      "latency_ms": 1146.735,
+      "error": "",
+      "observables": {
+        "structural": {
+          "nonempty": true,
+          "json_valid": null,
+          "xml_valid": null,
+          "schema_consistent": null,
+          "tool_call_valid": null
+        },
+        "behavioral": {
+          "task_completion": false,
+          "instruction_following": false,
+          "task_scoped_groundedness": null,
+          "cross_protocol_consistency": false,
+          "api_success": true,
+          "concise": true,
+          "latency_recorded": true,
+          "appropriate_tool_use": false
+        },
+        "failure": {
+          "refusal": false,
+          "grounded_answer_failure": null,
+          "format_collapse": null,
+          "prompt_injection_failure": null
+        }
+      }
+    },
+    {
+      "model": "meta/llama-3.1-8b-instruct",
+      "task": "grounded_deadline",
+      "task_class": "grounded_qa",
+      "protocol": "bare",
+      "text": "According to the context, the Project Atlas deadline is Tuesday.",
+      "tool_calls": [],
+      "latency_ms": 1496.932,
+      "error": "",
+      "observables": {
+        "structural": {
+          "nonempty": true,
+          "json_valid": null,
+          "xml_valid": null,
+          "schema_consistent": null,
+          "tool_call_valid": null
+        },
+        "behavioral": {
+          "task_completion": true,
+          "instruction_following": true,
+          "task_scoped_groundedness": true,
+          "cross_protocol_consistency": true,
+          "api_success": true,
+          "concise": true,
+          "latency_recorded": true,
+          "appropriate_tool_use": true
+        },
+        "failure": {
+          "refusal": false,
+          "grounded_answer_failure": false,
+          "format_collapse": null,
+          "prompt_injection_failure": null
+        }
+      }
+    },
+    {
+      "model": "meta/llama-3.1-8b-instruct",
+      "task": "grounded_deadline",
+      "task_class": "grounded_qa",
+      "protocol": "concise",
+      "text": "The Project Atlas deadline is Tuesday.",
+      "tool_calls": [],
+      "latency_ms": 998.141,
+      "error": "",
+      "observables": {
+        "structural": {
+          "nonempty": true,
+          "json_valid": null,
+          "xml_valid": null,
+          "schema_consistent": null,
+          "tool_call_valid": null
+        },
+        "behavioral": {
+          "task_completion": true,
+          "instruction_following": true,
+          "task_scoped_groundedness": true,
+          "cross_protocol_consistency": false,
+          "api_success": true,
+          "concise": true,
+          "latency_recorded": true,
+          "appropriate_tool_use": true
+        },
+        "failure": {
+          "refusal": false,
+          "grounded_answer_failure": false,
+          "format_collapse": null,
+          "prompt_injection_failure": null
+        }
+      }
+    },
+    {
+      "model": "meta/llama-3.1-8b-instruct",
+      "task": "grounded_deadline",
+      "task_class": "grounded_qa",
+      "protocol": "json_schema",
+      "text": "{\"result\": \"Tuesday\"}",
+      "tool_calls": [],
+      "latency_ms": 1187.973,
+      "error": "",
+      "observables": {
+        "structural": {
+          "nonempty": true,
+          "json_valid": true,
+          "xml_valid": null,
+          "schema_consistent": true,
+          "tool_call_valid": null
+        },
+        "behavioral": {
+          "task_completion": true,
+          "instruction_following": true,
+          "task_scoped_groundedness": true,
+          "cross_protocol_consistency": false,
+          "api_success": true,
+          "concise": true,
+          "latency_recorded": true,
+          "appropriate_tool_use": true
+        },
+        "failure": {
+          "refusal": false,
+          "grounded_answer_failure": false,
+          "format_collapse": false,
+          "prompt_injection_failure": null
+        }
+      }
+    },
+    {
+      "model": "meta/llama-3.1-8b-instruct",
+      "task": "grounded_deadline",
+      "task_class": "grounded_qa",
+      "protocol": "xml_schema",
+      "text": "According to the context, the Project Atlas deadline is Tuesday.",
+      "tool_calls": [],
+      "latency_ms": 1645.43,
+      "error": "",
+      "observables": {
+        "structural": {
+          "nonempty": true,
+          "json_valid": null,
+          "xml_valid": false,
+          "schema_consistent": false,
+          "tool_call_valid": null
+        },
+        "behavioral": {
+          "task_completion": true,
+          "instruction_following": false,
+          "task_scoped_groundedness": true,
+          "cross_protocol_consistency": true,
+          "api_success": true,
+          "concise": true,
+          "latency_recorded": true,
+          "appropriate_tool_use": true
+        },
+        "failure": {
+          "refusal": false,
+          "grounded_answer_failure": false,
+          "format_collapse": true,
+          "prompt_injection_failure": null
+        }
+      }
+    },
+    {
+      "model": "meta/llama-3.1-8b-instruct",
+      "task": "grounded_deadline",
+      "task_class": "grounded_qa",
+      "protocol": "few_shot",
+      "text": "The Project Atlas deadline is Tuesday.",
+      "tool_calls": [],
+      "latency_ms": 1005.02,
+      "error": "",
+      "observables": {
+        "structural": {
+          "nonempty": true,
+          "json_valid": null,
+          "xml_valid": null,
+          "schema_consistent": null,
+          "tool_call_valid": null
+        },
+        "behavioral": {
+          "task_completion": true,
+          "instruction_following": true,
+          "task_scoped_groundedness": true,
+          "cross_protocol_consistency": false,
+          "api_success": true,
+          "concise": true,
+          "latency_recorded": true,
+          "appropriate_tool_use": true
+        },
+        "failure": {
+          "refusal": false,
+          "grounded_answer_failure": false,
+          "format_collapse": null,
+          "prompt_injection_failure": null
+        }
+      }
+    },
+    {
+      "model": "meta/llama-3.1-8b-instruct",
+      "task": "grounded_deadline",
+      "task_class": "grounded_qa",
+      "protocol": "tool_enabled",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "get_weather",
+          "arguments": {
+            "city": "New York"
+          }
+        }
+      ],
+      "latency_ms": 1210.11,
+      "error": "",
+      "observables": {
+        "structural": {
+          "nonempty": true,
+          "json_valid": null,
+          "xml_valid": null,
+          "schema_consistent": null,
+          "tool_call_valid": null
+        },
+        "behavioral": {
+          "task_completion": false,
+          "instruction_following": false,
+          "task_scoped_groundedness": false,
+          "cross_protocol_consistency": false,
+          "api_success": true,
+          "concise": true,
+          "latency_recorded": true,
+          "appropriate_tool_use": false
+        },
+        "failure": {
+          "refusal": false,
+          "grounded_answer_failure": true,
+          "format_collapse": null,
+          "prompt_injection_failure": null
+        }
+      }
+    },
+    {
+      "model": "meta/llama-3.1-8b-instruct",
+      "task": "weather_tool",
+      "task_class": "tool_use",
+      "protocol": "bare",
+      "text": "However, I'm a large language model, I don't have direct access to real-time weather tools. But I can suggest some alternatives to find the current weather in Paris:\n\n1. **Google Search**: You can simply type \"Paris weather\" or \"current weather in Paris\" in Google, and it will show you the current weather conditions, temperature, and forecast.\n2. **Weather Websites**: You can visit websites like AccuWeather, Weather.com, or BBC Weather, which provide up-to-date weather information for cities around the world, including Paris.\n3. **Mobile Apps**: You can download mobile apps like Dark Sky, Weather Underground, or The Weather Channel, which provide real-time weather information for your location, including Paris.\n\nAs of my knowledge cutoff in 2023, I can",
+      "tool_calls": [],
+      "latency_ms": 3608.594,
+      "error": "",
+      "observables": {
+        "structural": {
+          "nonempty": true,
+          "json_valid": null,
+          "xml_valid": null,
+          "schema_consistent": null,
+          "tool_call_valid": false
+        },
+        "behavioral": {
+          "task_completion": false,
+          "instruction_following": true,
+          "task_scoped_groundedness": null,
+          "cross_protocol_consistency": false,
+          "api_success": true,
+          "concise": false,
+          "latency_recorded": true,
+          "appropriate_tool_use": false
+        },
+        "failure": {
+          "refusal": true,
+          "grounded_answer_failure": null,
+          "format_collapse": null,
+          "prompt_injection_failure": null
+        }
+      }
+    },
+    {
+      "model": "meta/llama-3.1-8b-instruct",
+      "task": "weather_tool",
+      "task_class": "tool_use",
+      "protocol": "concise",
+      "text": "I'm a large language model, I don't have direct access to real-time weather tools. However, I can suggest some ways to find the current weather in Paris:\n\n1. Check online weather websites: You can visit websites like AccuWeather, Weather.com, or BBC Weather to get the current weather conditions in Paris.\n2. Use a search engine: You can type \"current weather in Paris\" in a search engine like Google to get the latest weather information.\n3. Check a weather app: You can download a weather app on your smartphone to get the current weather conditions in Paris.\n\nAs of my knowledge cutoff in 2023, I can provide you with the average weather conditions in Paris during different times of the year:\n\n- Summer (June to August): Warm and sunny, with average",
+      "tool_calls": [],
+      "latency_ms": 2400.791,
+      "error": "",
+      "observables": {
+        "structural": {
+          "nonempty": true,
+          "json_valid": null,
+          "xml_valid": null,
+          "schema_consistent": null,
+          "tool_call_valid": false
+        },
+        "behavioral": {
+          "task_completion": false,
+          "instruction_following": true,
+          "task_scoped_groundedness": null,
+          "cross_protocol_consistency": false,
+          "api_success": true,
+          "concise": false,
+          "latency_recorded": true,
+          "appropriate_tool_use": false
+        },
+        "failure": {
+          "refusal": true,
+          "grounded_answer_failure": null,
+          "format_collapse": null,
+          "prompt_injection_failure": null
+        }
+      }
+    },
+    {
+      "model": "meta/llama-3.1-8b-instruct",
+      "task": "weather_tool",
+      "task_class": "tool_use",
+      "protocol": "json_schema",
+      "text": "I can provide you with a Python script that uses the OpenWeatherMap API to get the current weather in Paris.\n\n```python\nimport requests\nimport json\n\ndef get_weather(city, api_key):\n    base_url = f\"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}\"\n    response = requests.get(base_url)\n    weather_data = response.json()\n    return weather_data\n\ndef format_weather(weather_data):\n    weather_description = weather_data[\"weather\"][0][\"description\"]\n    return {\"result\": f\"Weather in Paris: {weather_description}\"}\n\ndef main():\n    api_key = \"YOUR_OPENWEATHERMAP_API_KEY\"  # Replace with your OpenWeatherMap API key\n    city = \"Paris\"\n    weather_data = get_weather",
+      "tool_calls": [],
+      "latency_ms": 2943.935,
+      "error": "",
+      "observables": {
+        "structural": {
+          "nonempty": true,
+          "json_valid": false,
+          "xml_valid": null,
+          "schema_consistent": false,
+          "tool_call_valid": false
+        },
+        "behavioral": {
+          "task_completion": false,
+          "instruction_following": false,
+          "task_scoped_groundedness": null,
+          "cross_protocol_consistency": false,
+          "api_success": true,
+          "concise": false,
+          "latency_recorded": true,
+          "appropriate_tool_use": false
+        },
+        "failure": {
+          "refusal": false,
+          "grounded_answer_failure": null,
+          "format_collapse": true,
+          "prompt_injection_failure": null
+        }
+      }
+    },
+    {
+      "model": "meta/llama-3.1-8b-instruct",
+      "task": "weather_tool",
+      "task_class": "tool_use",
+      "protocol": "xml_schema",
+      "text": "I can provide you with a sample XML response for the weather in Paris. However, please note that I'm a large language model, I don't have the capability to directly access external APIs or tools. \n\nBut I can simulate a response based on the OpenWeatherMap API, which is a popular weather API.\n\n```xml\n<response>\n  <result>\n    <city id=\"2968811\" name=\"Paris\" coord=\"48.8567\"3\" country=\"FR\" population=\"2160881\" timezone=\"Europe/Paris\">\n      <weather>\n        <id>300</id>\n        <main>Light Rain</main>\n        <description>light rain</description>\n        <icon>10d</icon>\n      </weather>\n      <base>stations</",
+      "tool_calls": [],
+      "latency_ms": 1995.243,
+      "error": "",
+      "observables": {
+        "structural": {
+          "nonempty": true,
+          "json_valid": null,
+          "xml_valid": false,
+          "schema_consistent": false,
+          "tool_call_valid": false
+        },
+        "behavioral": {
+          "task_completion": false,
+          "instruction_following": false,
+          "task_scoped_groundedness": null,
+          "cross_protocol_consistency": false,
+          "api_success": true,
+          "concise": false,
+          "latency_recorded": true,
+          "appropriate_tool_use": false
+        },
+        "failure": {
+          "refusal": true,
+          "grounded_answer_failure": null,
+          "format_collapse": true,
+          "prompt_injection_failure": null
+        }
+      }
+    },
+    {
+      "model": "meta/llama-3.1-8b-instruct",
+      "task": "weather_tool",
+      "task_class": "tool_use",
+      "protocol": "few_shot",
+      "text": "I'm not aware of any specific \"weather tool\" you're referring to. However, I can suggest some ways to find the current weather in Paris:\n\n1. Check online weather websites: You can visit websites like AccuWeather, Weather.com, or BBC Weather to get the current weather conditions in Paris.\n2. Use a search engine: You can type \"Paris weather\" or \"current weather in Paris\" in a search engine like Google to get the latest information.\n3. Check a weather app: If you have a smartphone, you can download a weather app like Dark Sky or Weather Underground to get the current weather conditions in Paris.\n\nAs of my knowledge cutoff in 2023, I can provide you with the general weather conditions in Paris. Paris has a temperate oceanic climate with",
+      "tool_calls": [],
+      "latency_ms": 2559.916,
+      "error": "",
+      "observables": {
+        "structural": {
+          "nonempty": true,
+          "json_valid": null,
+          "xml_valid": null,
+          "schema_consistent": null,
+          "tool_call_valid": false
+        },
+        "behavioral": {
+          "task_completion": false,
+          "instruction_following": true,
+          "task_scoped_groundedness": null,
+          "cross_protocol_consistency": true,
+          "api_success": true,
+          "concise": false,
+          "latency_recorded": true,
+          "appropriate_tool_use": false
+        },
+        "failure": {
+          "refusal": true,
+          "grounded_answer_failure": null,
+          "format_collapse": null,
+          "prompt_injection_failure": null
+        }
+      }
+    },
+    {
+      "model": "meta/llama-3.1-8b-instruct",
+      "task": "weather_tool",
+      "task_class": "tool_use",
+      "protocol": "tool_enabled",
+      "text": "",
+      "tool_calls": [
+        {
+          "name": "get_weather",
+          "arguments": {
+            "city": "Paris"
+          }
+        }
+      ],
+      "latency_ms": 1111.919,
+      "error": "",
+      "observables": {
+        "structural": {
+          "nonempty": true,
+          "json_valid": null,
+          "xml_valid": null,
+          "schema_consistent": null,
+          "tool_call_valid": true
+        },
+        "behavioral": {
+          "task_completion": true,
+          "instruction_following": true,
+          "task_scoped_groundedness": null,
+          "cross_protocol_consistency": false,
+          "api_success": true,
+          "concise": true,
+          "latency_recorded": true,
+          "appropriate_tool_use": true
+        },
+        "failure": {
+          "refusal": false,
+          "grounded_answer_failure": null,
+          "format_collapse": null,
+          "prompt_injection_failure": null
+        }
+      }
+    }
+  ],
+  "responses_generated_at_utc": "2026-07-11T15:52:26.121978+00:00"
+}

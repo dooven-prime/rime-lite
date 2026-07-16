@@ -1,10 +1,11 @@
 # SOF Deformations
 
-**Status:** dynamic-layer routing note for Paper IX. This file records
-deformation geometry, observable dynamics, rate separation, and wall behavior.
-It preserves claim boundaries and does not replace the Paper IX manuscript.
+**Status:** public dynamic-layer companion to Paper IX, published as
+DOI [10.5281/zenodo.21287695](https://doi.org/10.5281/zenodo.21287695). This
+summary records deformation geometry, observable dynamics, rate separation,
+and wall boundaries; Paper IX remains the canonical claim source.
 
-Paper IX should be framed around:
+Paper IX is organized around:
 
 ```text
 Observable Dynamics
@@ -156,7 +157,7 @@ also shows that `tau(D)` requires a perturbation model that separates
 first-order support, commutator survival, and higher Lie-depth effects.
 Xu--Vardi--Safran's gradient-descent plus weight-decay model is the right kind
 of precedent: one channel is gradient-driven while the hidden channel is driven
-only by regularization. Paper IX should therefore treat observable rate
+only by regularization. Paper IX therefore treats observable rate
 hierarchy as a property of **dynamical deformation models**, not of arbitrary
 static additive noise.
 
@@ -193,7 +194,7 @@ not yet observed:
 Here `K2` is a continuous nested-commutator proxy, not the discrete
 first-depth observable `D`.  A valid `tau(D)` audit needs a species with
 initial frozen pairs that become accessible during a structured deformation.
-The NN audit should remain proxy-only; the natural `tau(D)` targets are
+The NN audit remains proxy-only; natural `tau(D)` targets include
 structured quantum gate deformations or Rubik continuous deformations.
 
 Open bridge:
@@ -262,8 +263,8 @@ theorem-level joint-sector constructions.
 
 ## Wall Pullback
 
-The current Paper IX statement should be a principle, not a theorem, unless the
-admissibility hypotheses and the target discriminant are fully specified:
+Paper IX states this as a principle rather than a theorem because the
+admissibility hypotheses and target discriminant are not universally fixed:
 
 ```text
 Sigma_O subset J^{-1}(Delta_O)
@@ -508,20 +509,3 @@ The support script is:
 ```text
 experiments/paper9/state_mixing_fft.py
 ```
-
-## Accessibility Transfer Operators
-
-This is linked to the horizon direction in `docs/RESEARCH_DIRECTIONS.md`.
-The disciplined sequence is:
-
-```text
-SOF class
-  -> canonical accessibility transfer operator T_A
-  -> determinant zeta Z_A(s)=det(I-sT_A)^(-1)
-  -> trace identity
-  -> possible primitive-cycle expansion
-```
-
-Do not promote zeta, trace-formula, Selberg, or RH-like language into current
-papers until `T_A` is a canonical construction with nontrivial examples and
-clear failure modes.

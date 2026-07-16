@@ -1,8 +1,8 @@
 # RIME Program Map
 
-**Date**: 2026-07-14
-**Status**: public narrative architecture map for Papers I--XI, with a
-Paper XII--XIII horizon.
+**Date**: 2026-07-16
+**Status**: public narrative architecture map for Papers I--XII, with a
+Paper XIII--XIV horizon.
 
 This document summarizes the program-level organization. It is not a proof
 document and does not replace the manuscripts. Its purpose is to make the
@@ -10,10 +10,11 @@ language, layers, claim status, and Rubik/general-theory boundary visible to
 readers of the paper series.
 
 For the guiding philosophy behind the Rubik-to-general-theory transition, see
-`docs/PROGRAM_PHILOSOPHY.md`.
+[PROGRAM_PHILOSOPHY.md](PROGRAM_PHILOSOPHY.md).
 
-For the post-Paper VII SOF arc, see
-`docs/PROGRAM_ARCHITECTURE_AFTER_VII.md`.
+For the public post-Paper VII SOF arc, see [SOF_OBJECTS.md](SOF_OBJECTS.md),
+[SOF_DEFORMATIONS.md](SOF_DEFORMATIONS.md), and
+[SOF_REGISTRY.md](SOF_REGISTRY.md).
 
 ---
 
@@ -140,7 +141,8 @@ Paper IX    SOF deformation geometry and wall dynamics
 Paper X     Universal Observable Pipeline and registry evidence
 Paper XI    Observable Wall Taxonomy
 Paper XII   SOF Diagnostic Protocol and SOF Report Specification
-Paper XIII  SOF Audit Objects and aligned report comparison
+Paper XIII  SOF Report Alignment and induced comparison signatures
+Paper XIV   SOF Action Semantics and candidate intervention sets
 ```
 
 Paper VIII asks what the object is and proves that the RIME observables are
@@ -160,6 +162,13 @@ can support a claim-status-aware report without internal access. This is why
 SOF is an observable framework rather than a weight framework. Stable slogan:
 No weights required. Only observables.
 
+The protocol boundary is explicit: Paper XII is the single-system report
+language, Paper XIII is the aligned comparison language, and Paper XIV is the
+context-indexed action-semantics language. A `Repair Matrix` in SOFRS records
+observed repair; it is not an intervention instruction. Common report syntax
+does not itself supply sector alignment, observable alignment, normalization,
+or a cross-report difference.
+
 Paper XI keeps three computational boundaries explicit. Its trajectory
 audit counts only adjacent observable-status changes, so a static frozen pair
 is not a wall event. Its 166-configuration redundancy audit excludes
@@ -169,13 +178,36 @@ orthogonal invariant-basis theorem. Its invariant-block eigenbranch audit finds
 no $A_2\to A_1+A_1$ split candidate on the tested Rubik slices, so sorted
 pair-gap responses are not promoted to $A_n$ adjacency evidence.
 
-Paper XIII begins only after two single-system reports exist. It introduces the
-aligned audit input consisting of a reference report, a candidate report,
-sector and observable alignment maps, and normalization data. Its mathematical
-output is the eight-dimensional signature $\Delta_{\mathrm{audit}}$, serialized
-inside a `.sofaudit` artifact. GridWorld and SIR are controlled-reference protocol validations;
-latent and black-box World Model audits remain deployment roadmaps rather than
-current evidence.
+Paper XIII begins only after two single-system reports exist. Its primary object
+is the alignment $(\mathcal R^\star,\widehat{\mathcal R},
+\Phi_{\mathrm{sec}},\Phi_{\mathrm{obs}})$ consisting of a reference report, a
+target report, and explicit sector and observable alignments. The comparison
+specification $\Theta$ records normalization, metric, depth semantics, thresholds,
+parameter synchronization, and aggregation. For fixed $\Theta$, the typed operator
+$\operatorname{Compare}_{\Theta}:\mathsf{SOFReportAlign}\to\mathsf{AuditSignature}$
+maps the alignment to the eight-dimensional comparison signature
+$\Delta_{\mathrm{audit}}$, serialized inside a `.sofaudit` artifact. GridWorld,
+SIR, Traffic, and Compiler IR are controlled-reference protocol validations;
+latent and black-box World Model alignments remain potential deployment regimes,
+not Paper XIII contributions or current evidence. The regimes describe increasing
+uncertainty in constructing the alignment object, not increasingly powerful
+algorithms. Three additional Compiler, Traffic, and GridWorld
+before/after controls show that a nonzero alignment signature records change, not
+failure: their raw signatures are retained while a declared transformation
+contract produces a separate zero-residual evaluation.
+
+Paper XIV defines context-indexed signature semantics
+$\operatorname{Sem}_{\Gamma,i}:\Delta_i\to\mathcal I_i$. A nonzero coordinate
+records difference, not defect; legitimate-transformation controls map active
+coordinates to `licensed_change`. The candidate Action Set is the derived union
+of coordinate-level consequences under
+$\operatorname{GenerateActions}_{\Gamma}:\mathsf{AuditSignature}\to
+\mathsf{ActionSet}$. Repair, observation, containment, and validation candidates
+follow from these interpretations. A downstream policy
+$\pi:\mathsf{ActionSet}\times\mathsf{PolicyContext}\to
+\mathsf{SelectedActionPlan}$ may select from that set, but policy selection is
+not the Paper XIV mathematical contribution. The legacy `.sofdecision` rule
+engine remains a compatibility control.
 
 The common observable architecture behind Papers V--VII is the
 SOF data package

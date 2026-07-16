@@ -1,8 +1,9 @@
 # SOF Objects
 
-**Status:** object-layer routing note for Paper VIII and later SOF work. This
-file records what belongs to the static object theory and preserves claim
-boundaries; it does not replace the Paper VIII manuscript proofs.
+**Status:** public object-layer companion to Paper VIII, published as
+DOI [10.5281/zenodo.21287278](https://doi.org/10.5281/zenodo.21287278). This
+summary preserves the static-theory boundary; Paper VIII remains the canonical
+definition and proof source.
 
 SOF means **Sectorized Observable Framework**. The purpose of SOF is to provide
 a sectorization-based observable architecture for cross-species comparison of
@@ -93,8 +94,8 @@ theorems by themselves.
 
 ## Claim-Status Boundary
 
-Paper VIII may use examples, but it should not use them as new numerical
-evidence. Its theorem layer is definitional and structural:
+Examples in Paper VIII are illustrative rather than new numerical evidence.
+Its theorem layer is definitional and structural:
 
 ```text
 SOF data -> natural observable constructions.
@@ -126,7 +127,7 @@ of the strict category.
 
 ## Paper VIII Boundary
 
-Paper VIII should own:
+Paper VIII owns:
 
 - SOF definition;
 - compatible-sectorization realization / Sectorized Realization Theorem;
@@ -135,11 +136,13 @@ Paper VIII should own:
 - natural constructions on SOF data;
 - naturality of accessibility observables under strict equivalence.
 
-Paper VIII should not own:
+Paper VIII does not own:
 
 - deformation geometry;
 - observable dynamics and wall behavior;
 - universal comparison between unrelated SOFs;
 - unconditional `(R_1,R_2) -> D` completeness.
 
-Those belong to Papers IX and X.
+The later deformation, Registry, wall-classification, diagnostic-reporting,
+and aligned-comparison layers are assigned in
+[PROGRAM_MAP.md](PROGRAM_MAP.md) rather than duplicated here.

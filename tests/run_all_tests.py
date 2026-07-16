@@ -27,6 +27,8 @@ TESTS = [
     "test_transport.py",
     "test_accessibility_engine.py",
     "test_wall_trajectory.py",
+    "test_sof_action.py",
+    "test_sof_decision.py",
 ]
 
 # Slow tests — each constructs CubieSpectralOperator (~1-2 min)

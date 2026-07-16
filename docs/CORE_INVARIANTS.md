@@ -5,7 +5,7 @@ RIME trilogy and the Computational Canonical Specification (CCS). It records
 stable objects, numerical values, and claim-status boundaries for the
 foundational Rubik laboratory.
 
-Scope note: this is not the full Papers I--XI program map. For Papers IV--XI,
+Scope note: this is not the full Papers I--XII program map. For Papers IV--XII,
 SOF, observable dynamics, and registry evidence, use `docs/PROGRAM_MAP.md`,
 `docs/overview.md`, and the paper manuscripts. This file remains public because
 the later program depends on these canonical Rubik invariants as calibration
@@ -271,5 +271,4 @@ Recommended checks:
 ```bash
 python tests/run_all_tests.py
 python tests/run_slow_tests.py
-python papers/validate_registry.py
 ```

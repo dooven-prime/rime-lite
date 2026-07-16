@@ -12,9 +12,9 @@ RIME program. The public-facing directory has four separate responsibilities:
 Tests under `tests/` verify package invariants and are not part of this
 directory.
 
-Public release scope: Papers I--XI plus CCS. Paper XII scripts, when present,
-are methodology diagnostics and report-specification prototypes rather than
-part of the Paper XI claim set.
+Public release scope: Papers I--XII plus CCS. Unreleased paper-stage
+experiments are intentionally omitted from this public reproducibility map
+until their manuscripts and artifact contracts are frozen.
 
 All public support scripts use fixed seeds where randomness is present
 (`np.random.seed(42)` unless otherwise stated).
@@ -34,8 +34,7 @@ experiments/
 |-- paper9/                 Paper IX: observable dynamics diagnostics
 |-- paper10/                Paper X: registry evidence and SOF portability
 |-- paper11/                Paper XI: observable wall records and taxonomy
-|-- paper12/                Paper XII horizon: SOF diagnostics/tooling
-|-- paper13/                Paper XIII aligned SOF Audit Objects
+|-- paper12/                Paper XII: SOF diagnostic protocol and reports
 |-- quantum/                quantum-gate SOF diagnostics
 |-- cross_ref/              related-work diagnostics, not theorem sources
 `-- trilogy_style/          shared styling utilities used by local figure scripts
@@ -129,6 +128,8 @@ boundary paper. Exploratory or historical variants live under
 | Script | Status |
 |--------|--------|
 | `experiments/quantum/quantum_accessibility_universality.py` | Pauli/Clifford/Universal gate-set R1/R2/D sanity check |
+| `experiments/quantum/quantum_gateset_t_blind_control.py` | computational-basis gate-log negative control: Clifford and Universal T/S variants have identical support, bridge, and depth shadows |
+| `experiments/quantum/quantum_state_trajectory_sof.py` | trajectory-induced STAB/MAGIC coarse graining: T-sensitive transition observable changes from absent to complete two-state off-diagonal support |
 
 This script supports Sectorized Observable Framework portability checks. It is a
 cross-species diagnostic and appendix-level sanity check, not a standalone
@@ -203,15 +204,17 @@ Observable Wall Taxonomy. ADE remains only a candidate local model for smooth
 discriminant branches; graph, Markov, activation, and degenerate rate probes
 require non-ADE, stratified, or species-specific wall languages.
 
-## Horizon: Paper XII - SOF Diagnostic Protocol
+## Paper XII - SOF Diagnostic Protocol
 
 | Script | Status |
 |--------|--------|
 | `schemas/sofrs/v1.0.schema.json` | canonical JSON Schema for the versioned eight-field SOF Report Specification (SOFRS) v1.0 |
-| `experiments/paper12/validate_sofreport.py` | validator for saved `.sofreport` artifacts |
+| `schemas/sofrs/paper12-protocol-profile-v1.0.json` | independent admission profile layered over the frozen envelope schema |
+| `experiments/paper12/validate_sofreport.py` | frozen SOFRS v1.0 envelope and Appendix schema-drift validator |
+| `experiments/paper12/validate_protocol_admission.py` | stronger Paper XII admission-profile validator for named-system and Level III provenance requirements |
 | `experiments/paper12/transformer_activation_sof.py` | transformer-style activation SOF diagnostic and reproducible report |
 | `experiments/paper12_figures.py` | generates the diagnostic-protocol and four-level applicability-hierarchy figures |
-| `experiments/paper12/qwen_attention_sof.py` | real Qwen attention-head SOF diagnostic; Head 6 gives four natural sectors and head diversity spans global, coarse, and dispersed partitions |
+| `experiments/paper12/qwen_attention_sof.py` | revision-pinned Qwen attention-head SOF diagnostic with parameterized cache/device/dtype and recorded runtime provenance; Head 6 gives four natural sectors |
 | `experiments/paper12/transformer_batch_sweep.py` | transformer token-partition sweep; canonical `5 x 50` row has `frozen_R1=14`, `D_repaired=6`, and one permanently frozen sector |
 | `experiments/paper12/moe_expert_sof.py` | MoE routing SOF Report: all six expert-pair sectors, `80%` direct support, six two-step repairs, and no terminally frozen pair |
 | `experiments/paper12/moe_bias_repair_sof.py` | DeepSeek-style MoE routing-repair control: `10/12` initially frozen private experts reactivate under load-bias updates; shared baseline is excluded from private freeze counts |
@@ -227,30 +230,14 @@ require non-ADE, stratified, or species-specific wall languages.
 | `experiments/paper12/results/recommender.sofreport` | SOFRS v1.0 recommender coverage and targeted dead-zone repair report |
 | `experiments/paper12/results/moe_bias_repair.sofreport` | SOFRS v1.0 private-expert load and bias-driven routing-repair trajectory |
 | `experiments/paper12/results/transformer_batch.sofreport` | SOFRS v1.0 token-bin sector-count robustness sweep |
-| `experiments/paper12/results/failure_cases.sofreport` | SOFRS v1.0 boundary report covering five failure and degeneracy controls |
+| `experiments/paper12/results/failure_cases.fixture.json` | envelope-valid multi-system validator fixture; intentionally excluded from ordinary protocol admission |
 | `experiments/paper12/recommender_sof.py` | recommender structural-coverage report: `12/16` user/item cluster pairs are unreachable in the default disconnected benchmark; not an A/B-test replacement |
-| `experiments/paper12/failure_cases.py` | boundary audit for SOF diagnostics: single-sector, all-to-all, over-refined, commuting, and sector-observable mismatch cases |
+| `experiments/paper12/failure_cases.py` | generates the multi-system validator fixture for single-sector, all-to-all, over-refined, commuting, and sector-observable mismatch cases |
 
-Paper XII scripts are tooling and diagnostic-workflow prototypes. They are not
-part of the Papers I--XI release claim set.
-
-## Paper XIII - SOF Audit Objects
-
-| Script | Status |
-|--------|--------|
-| `schemas/sofaudit/v1.0.schema.json` | companion schema for aligned reference/candidate `.sofaudit` artifacts; not an SOFRS version |
-| `experiments/paper13/gridworld_reference_sof.py` | absorbing-obstacle GridWorld reference plus five controlled variants; emits 6 reports and 5 audits |
-| `experiments/paper13/sir_compartment_sof.py` | three-sector SIR-chain transfer control with five variants and an 11-step beta wall path |
-| `experiments/paper13/report_contract.py` | shared builders for the single-report and paired-audit contracts |
-| `experiments/paper13/validate_sofaudit.py` | validates the Appendix example, all paired audits, and their linked `.sofreport` files |
-| `experiments/paper13/regenerate_tables.py` | regenerates `results/signature_tables.md` from the ten paired audits |
-
-Paper XIII separates direct, word-depth, and Lie-depth freezing. GridWorld and
-SIR are Regime A controlled-reference validations. They do not establish a
-universal bridge-sensitivity ordering or practical World Model performance.
-The mathematical audit output is $\Delta_{\mathrm{audit}}$; the `.sofaudit`
-artifact stores its reports, alignment, normalization, signature, and optional
-downstream decision metadata.
+Paper XII scripts support the published diagnostic methodology and its
+reference SOFRS artifacts. They do not retroactively enlarge the claim sets of
+Papers I--XI. Later comparison and action-semantics stages remain outside this
+public experiment index until their release boundaries are fixed.
 
 ## Figure Production Scripts
 

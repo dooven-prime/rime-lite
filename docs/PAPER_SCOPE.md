@@ -4,9 +4,8 @@ This file defines the public scope of the RIME paper series. It is a navigation
 and boundary document: what each paper studies, which files support it, and
 which claims should not be moved across paper boundaries.
 
-Current public release: Papers I--XI plus the Computational Canonical
-Specification (CCS). Paper XII and later papers remain active development
-material.
+Current public release: Papers I--XII plus the Computational Canonical
+Specification (CCS). Papers XIII--XIV remain active development material.
 
 For the full narrative architecture, see `docs/PROGRAM_MAP.md`. For the
 canonical Rubik numerical invariants behind Papers I--III and CCS, see
@@ -27,8 +26,14 @@ canonical Rubik numerical invariants behind Papers I--III and CCS, see
 | Paper IX | SOF deformations and observable trajectories | How do SOF observables evolve under deformation? |
 | Paper X | Universal Observable Pipeline and SOF Registry evidence | Why do different species share one observable pipeline? |
 | Paper XI | observable wall records, signatures, wall spectra, and taxonomy | Which SOF wall records can be classified, and by what local or global theory? |
-| Paper XII | SOF diagnostic protocol and report standard | Draft: how does SOF produce fixed-format, reusable SOF Diagnostic Reports? |
-| Paper XIII | aligned SOF Audit Objects $\Delta_{\mathrm{audit}}$ | Draft: how can two SOF Reports be aligned, compared, and used for deployment decisions? |
+| Paper XII | SOF Diagnostic Protocol and SOFRS v1.0 | How does SOF produce fixed-format, reusable SOF Diagnostic Reports? |
+
+Development horizon:
+
+| Paper | Object | Question |
+|-------|--------|----------|
+| Paper XIII | SOF Report Alignment $(\mathcal R^\star,\widehat{\mathcal R},\Phi_{\mathrm{sec}},\Phi_{\mathrm{obs}})$ | How can two SOF Reports be aligned and compared in a domain-independent way? |
+| Paper XIV | context-indexed signature semantics $\operatorname{Sem}_{\Gamma,i}:\Delta_i\to\mathcal I_i$ | What does each alignment-signature difference mean before candidate actions and policy selection? |
 
 The expanded sections below preserve the original trilogy and CCS boundaries
 because those papers define the canonical Rubik data used throughout the
@@ -215,8 +220,8 @@ Avoid Phase-1 subgroup explanations for the spectral boundary. The corrected int
 
 When documents disagree, use this order:
 
-1. current paper markdown in `papers/paper*/`;
-2. `ccs/canonical_specification.md`;
-3. `papers/canonical_registry.json` and `papers/notation_registry.yaml`;
-4. tests and experiment scripts;
+1. frozen Zenodo releases for published Papers I--XII;
+2. current paper markdown for unreleased papers or explicit new-version work;
+3. `ccs/canonical_specification.md` for canonical trilogy computations;
+4. versioned schemas, Registry snapshots, tests, and experiment scripts;
 5. overview and navigation documents such as this file.

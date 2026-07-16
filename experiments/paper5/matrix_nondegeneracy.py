@@ -10,7 +10,7 @@ itself imply A B != 0. This script checks the S4-3gen-B example used in Paper V:
     48/48 satisfy the implemented rank-protection predicate.
 
 This is an example-level verification and a regression guard for
-docs/MATRIX_NONDEGENERACY.md, not a universal nondegeneracy theorem.
+Paper V's rank/nondegeneracy discussion, not a universal nondegeneracy theorem.
 """
 
 from __future__ import annotations

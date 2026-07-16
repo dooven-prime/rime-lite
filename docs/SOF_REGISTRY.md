@@ -1,9 +1,12 @@
 # SOF Registry
 
-**Status:** lightweight registry and routing map. This is not a classification
-theorem and not a replacement for `docs/Sectorized Observable Framework.md`.
+**Status:** public explanatory companion to Paper X, published as
+DOI [10.5281/zenodo.21288036](https://doi.org/10.5281/zenodo.21288036). The
+Registry is evidence architecture, not a classification theorem or a
+replacement for Paper VIII and [SOF_OBJECTS.md](SOF_OBJECTS.md).
 
-SOF means **sectorized observable architecture** and analysis paradigm. Paper X
+SOF means **Sectorized Observable Framework** and supplies a sectorized
+observable architecture and analysis paradigm. Paper X
 uses the Universal Observable Pipeline as the theorem-level structure:
 
 ```text
@@ -28,8 +31,8 @@ The frozen Paper X release snapshot is
 the Paper X publication boundary and validates against
 `schemas/registry/v1.0.schema.json`.
 
-This document remains the active explanatory and routing layer. The JSON file
-is immutable release data. Species introduced by Papers XI--XII are not
+This document is the public explanatory layer. The JSON file is immutable
+release data. Species introduced by Papers XI--XII are not
 backfilled into that snapshot; they require a later version. Validate it with:
 
 ```bash

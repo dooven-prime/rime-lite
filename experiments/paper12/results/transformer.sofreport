@@ -1,0 +1,111 @@
+{
+  "sofrs_version": "1.0",
+  "report_id": "transformer_activation",
+  "system": "tiny transformer-like block",
+  "claim_status": "diagnostic",
+  "claim_note": "synthetic transformer activation-sector case study",
+  "sectorization": {
+    "origin": "FFN activation-count quantiles",
+    "space": "token space",
+    "sector_count": 3,
+    "sector_dimensions": [
+      4,
+      1,
+      3
+    ],
+    "labels": [
+      "low activation count, tokens=[0, 3, 5, 6]",
+      "middle activation count, tokens=[4]",
+      "high activation count, tokens=[1, 2, 7]"
+    ],
+    "strict_sof_realization": true
+  },
+  "observable_family": {
+    "attention": "row-top-2 token attention operator",
+    "activation": "row-top-2 FFN activation-similarity operator"
+  },
+  "support_matrix": {
+    "kind": "aggregated_R1",
+    "matrix": [
+      [
+        1,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        1
+      ]
+    ],
+    "offdiag_density_pct": 58.333333333333336
+  },
+  "bridge_matrix": {
+    "kind": "aggregated_R2",
+    "matrix": [
+      [
+        1,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        1
+      ]
+    ],
+    "offdiag_density_pct": 66.66666666666667
+  },
+  "repair_matrix": {
+    "kind": "Lie-depth repair in the finite synthetic realization",
+    "depth_matrix": [
+      [
+        0,
+        2,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    "repaired_pairs": [
+      {
+        "source": 0,
+        "target": 1,
+        "depth": 2
+      },
+      {
+        "source": 1,
+        "target": 2,
+        "depth": 1
+      }
+    ],
+    "repaired_count": 2
+  },
+  "wall_record": {
+    "status": "not_applicable",
+    "reason": "no deformation path supplied"
+  },
+  "failure_modes": [
+    "synthetic untrained block",
+    "activation-count sectors are diagnostic rather than canonical",
+    "not a theorem about trained transformers or language models"
+  ]
+}

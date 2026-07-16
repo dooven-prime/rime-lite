@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://rime-project.local/schemas/sofaudit/v1.0.schema.json",
-  "title": "SOF Audit Object Specification v1.0",
-  "description": "Machine-readable contract for aligned comparison of a reference SOF Report and a candidate SOF Report.",
+  "title": "SOF Report Alignment Artifact Specification v1.0",
+  "description": "Machine-readable contract for aligned comparison of a reference SOF Report and a target SOF Report. The v1.0 field name candidate is retained for compatibility.",
   "type": "object",
   "required": [
     "sofaudit_version",
@@ -33,6 +33,10 @@
     "claim_note": {"type": "string", "minLength": 1},
     "regime": {"enum": ["A", "B", "C"]},
     "failure_mode": {"type": "string", "minLength": 1},
+    "comparison_role": {
+      "description": "Optional semantic role for the comparison. The legacy failure_mode field remains required in v1.0.",
+      "enum": ["failure_mode_control", "legitimate_transformation_control", "model_comparison", "behavioral_comparison"]
+    },
     "reference": {"$ref": "#/$defs/reportReference"},
     "candidate": {"$ref": "#/$defs/reportReference"},
     "alignment": {
@@ -45,7 +49,7 @@
       "additionalProperties": true
     },
     "normalization": {
-      "description": "Thresholds, scaling, depth semantics, aggregation rules, and path synchronization used by the audit.",
+      "description": "Artifact-level comparison specification: normalization, metric, thresholds, depth semantics, aggregation rules, and parameter-path synchronization.",
       "type": "object",
       "minProperties": 1
     },
@@ -79,8 +83,34 @@
       "items": {"type": ["string", "object"]},
       "uniqueItems": true
     },
+    "transformation_contract": {
+      "description": "Optional declared contract for a legitimate before/after transformation.",
+      "type": "object",
+      "required": ["contract_id", "intent", "allowed_changes", "preserved_invariants", "required_postconditions"],
+      "properties": {
+        "contract_id": {"type": "string", "minLength": 1},
+        "intent": {"type": "string", "minLength": 1},
+        "allowed_changes": {"type": ["array", "object"]},
+        "preserved_invariants": {"type": "array", "items": {"type": "string"}},
+        "required_postconditions": {"type": "array", "items": {"type": "string"}},
+        "boundary": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "contract_evaluation": {
+      "description": "Optional residual evaluation against a declared transformation contract; it does not overwrite the raw signature.",
+      "type": "object",
+      "required": ["status", "residual_violation_count", "residual_violations", "raw_change_summary"],
+      "properties": {
+        "status": {"enum": ["conforming", "nonconforming", "inconclusive"]},
+        "residual_violation_count": {"type": "integer", "minimum": 0},
+        "residual_violations": {"type": "array"},
+        "raw_change_summary": {"type": "object", "minProperties": 1}
+      },
+      "additionalProperties": true
+    },
     "decision": {
-      "description": "Optional downstream deployment decision. It is not part of the intrinsic audit signature.",
+      "description": "Optional downstream deployment decision. It is not part of the alignment-induced comparison signature.",
       "type": "object",
       "minProperties": 1
     }

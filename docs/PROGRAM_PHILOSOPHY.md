@@ -2,8 +2,8 @@
 
 **Status:** public philosophy note for the RIME program. This file explains the
 Rubik-as-laboratory stance and the sectorization bridge from the trilogy to
-Papers VIII--X. It is not a proof source; paper manuscripts and
-`docs/PROGRAM_MAP.md` control theorem boundaries.
+Papers VIII--XII. It is not a proof source; paper manuscripts and
+[PROGRAM_MAP.md](PROGRAM_MAP.md) control theorem boundaries.
 
 Program invariant:
 
@@ -47,6 +47,8 @@ observable dynamics
 universal observable pipeline
   ->
 observable wall taxonomy
+  ->
+SOF diagnostic reporting
 ```
 
 Each paper removes or abstracts one layer of problem-specific structure while
@@ -119,6 +121,7 @@ This is the current clean separation:
 | Sectorization | interface | converts representation data into SOF data |
 | Transport Unity | RIME contribution | studies projected support, commutators, depth, jets, walls, and completion |
 | Observable Pipeline | Paper X contribution | compares source systems through finite space, sectorization, observables, shadows, and diagnostics |
+| Diagnostic Protocol | Paper XII contribution | serializes one declared realization as a versioned, claim-status-aware SOF Report |
 
 The novelty of RIME is not the existence of a semisimple block decomposition.
 That is the classical input for representation-derived examples. The novelty

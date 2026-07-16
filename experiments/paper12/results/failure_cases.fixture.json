@@ -1,0 +1,258 @@
+{
+  "sofrs_version": "1.0",
+  "artifact_role": "validator_fixture",
+  "protocol_admissible": false,
+  "fixture_scope": "five distinct constructed boundary systems",
+  "report_id": "failure_cases",
+  "system": "SOF diagnostic applicability boundary suite",
+  "claim_status": "boundary",
+  "claim_note": "five non-exhaustive failure and degeneracy controls",
+  "sectorization": {
+    "origin": "case-specific constructed finite sectors",
+    "cases": [
+      "single_sector",
+      "random_all_to_all",
+      "dim_one_sectors",
+      "commuting_observables",
+      "sector_observable_mismatch"
+    ],
+    "realization_status": "constructed boundary controls"
+  },
+  "observable_family": {
+    "case_specific": "random, commuting, aligned, or deliberately mismatched finite observables"
+  },
+  "support_matrix": {
+    "kind": "case-level R1 summaries",
+    "cases": [
+      {
+        "case": "single_sector",
+        "case_interpretation": "not_applicable",
+        "variants": {
+          "primary": {
+            "R1_pct": 0,
+            "R1_count": 0,
+            "frozen_R1": 0
+          }
+        }
+      },
+      {
+        "case": "random_all_to_all",
+        "case_interpretation": "uninformative",
+        "variants": {
+          "primary": {
+            "R1_pct": 100.0,
+            "R1_count": 36,
+            "frozen_R1": 0
+          }
+        }
+      },
+      {
+        "case": "dim_one_sectors",
+        "case_interpretation": "degenerate",
+        "variants": {
+          "primary": {
+            "R1_pct": 100.0,
+            "R1_count": 60,
+            "frozen_R1": 0
+          }
+        }
+      },
+      {
+        "case": "commuting_observables",
+        "case_interpretation": "degenerate",
+        "variants": {
+          "commuting": {
+            "R1_pct": 0.0,
+            "R1_count": 0,
+            "frozen_R1": 2
+          },
+          "reference": {
+            "R1_pct": 100.0,
+            "R1_count": 4,
+            "frozen_R1": 0
+          }
+        }
+      },
+      {
+        "case": "sector_observable_mismatch",
+        "case_interpretation": "not_useful",
+        "variants": {
+          "mismatched": {
+            "R1_pct": 0.0,
+            "R1_count": 0,
+            "frozen_R1": 2
+          },
+          "aligned_reference": {
+            "R1_pct": 100.0,
+            "R1_count": 4,
+            "frozen_R1": 0
+          }
+        }
+      }
+    ]
+  },
+  "bridge_matrix": {
+    "kind": "case-level R2 summaries",
+    "cases": [
+      {
+        "case": "single_sector",
+        "case_interpretation": "not_applicable",
+        "variants": {
+          "primary": {
+            "R2_pct": 0,
+            "R2_count": 0
+          }
+        }
+      },
+      {
+        "case": "random_all_to_all",
+        "case_interpretation": "uninformative",
+        "variants": {
+          "primary": {
+            "R2_pct": 100.0,
+            "R2_count": 36
+          }
+        }
+      },
+      {
+        "case": "dim_one_sectors",
+        "case_interpretation": "degenerate",
+        "variants": {
+          "primary": {
+            "R2_pct": 100.0,
+            "R2_count": 30
+          }
+        }
+      },
+      {
+        "case": "commuting_observables",
+        "case_interpretation": "degenerate",
+        "variants": {
+          "commuting": {
+            "R2_pct": 0.0,
+            "R2_count": 0
+          },
+          "reference": {
+            "R2_pct": 100.0,
+            "R2_count": 2
+          }
+        }
+      },
+      {
+        "case": "sector_observable_mismatch",
+        "case_interpretation": "not_useful",
+        "variants": {
+          "mismatched": {
+            "R2_pct": 0,
+            "R2_count": 0
+          },
+          "aligned_reference": {
+            "R2_pct": 100.0,
+            "R2_count": 2
+          }
+        }
+      }
+    ]
+  },
+  "repair_matrix": {
+    "kind": "case-level depth summaries",
+    "cases": [
+      {
+        "case": "single_sector",
+        "case_interpretation": "not_applicable",
+        "variants": {
+          "primary": {
+            "D_max": -1,
+            "D_repaired": 0,
+            "frozen_D": 0
+          }
+        }
+      },
+      {
+        "case": "random_all_to_all",
+        "case_interpretation": "uninformative",
+        "variants": {
+          "primary": {
+            "D_max": 0,
+            "D_repaired": 0,
+            "frozen_D": 0
+          }
+        }
+      },
+      {
+        "case": "dim_one_sectors",
+        "case_interpretation": "degenerate",
+        "variants": {
+          "primary": {
+            "D_max": 0,
+            "D_repaired": 0,
+            "frozen_D": 0
+          }
+        }
+      },
+      {
+        "case": "commuting_observables",
+        "case_interpretation": "degenerate",
+        "variants": {
+          "commuting": {
+            "D_max": 999,
+            "D_repaired": 0,
+            "frozen_D": 2
+          },
+          "reference": {
+            "D_max": 0,
+            "D_repaired": 0,
+            "frozen_D": 0
+          }
+        }
+      },
+      {
+        "case": "sector_observable_mismatch",
+        "case_interpretation": "not_useful",
+        "variants": {
+          "mismatched": {
+            "D_max": 999,
+            "D_repaired": 0,
+            "frozen_D": 2
+          },
+          "aligned_reference": {
+            "D_max": 0,
+            "D_repaired": 0,
+            "frozen_D": 0
+          }
+        }
+      }
+    ]
+  },
+  "wall_record": {
+    "status": "not_applicable",
+    "reason": "the suite audits static applicability boundaries rather than deformation paths"
+  },
+  "failure_modes": [
+    {
+      "case": "single_sector",
+      "case_interpretation": "not_applicable",
+      "reason": "no cross-sector pair exists"
+    },
+    {
+      "case": "random_all_to_all",
+      "case_interpretation": "uninformative",
+      "reason": "all pairs connect immediately, so no structure remains"
+    },
+    {
+      "case": "dim_one_sectors",
+      "case_interpretation": "degenerate",
+      "reason": "one-dimensional sectors erase internal subspace structure"
+    },
+    {
+      "case": "commuting_observables",
+      "case_interpretation": "degenerate",
+      "reason": "the commutator-driven R2 layer is absent"
+    },
+    {
+      "case": "sector_observable_mismatch",
+      "case_interpretation": "not_useful",
+      "reason": "the observables do not see the proposed sector interface"
+    }
+  ]
+}

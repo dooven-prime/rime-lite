@@ -1,0 +1,42 @@
+{
+  "profile_id": "paper12-protocol-admission-v1.0",
+  "description": "Admission profile for Paper XII protocol-admissible SOFRS v1.0 artifacts. This profile supplements, but does not mutate, the frozen SOFRS v1.0 envelope schema.",
+  "envelope_schema": "schemas/sofrs/v1.0.schema.json",
+  "artifact_unit": "one named system, run, snapshot, or parameterized trajectory",
+  "required_metadata": [
+    "report_id",
+    "system",
+    "claim_note"
+  ],
+  "required_nonempty_fields": [
+    "sectorization",
+    "observable_family",
+    "failure_modes"
+  ],
+  "all_null_shadow_policy": {
+    "allowed_claim_status": [
+      "boundary",
+      "failure"
+    ],
+    "required_metadata_field": "protocol_boundary",
+    "required_metadata_keys": [
+      "reason",
+      "unavailable_diagnostics"
+    ]
+  },
+  "level_iii_triggers": {
+    "diagnostic_regime": [
+      "behavioral_black_box"
+    ],
+    "strict_sof_realization": false
+  },
+  "level_iii_required_provenance": [
+    "source_identity",
+    "evaluator",
+    "evaluator_protocol",
+    "evaluator_scope"
+  ],
+  "excluded_artifact_roles": [
+    "validator_fixture"
+  ]
+}

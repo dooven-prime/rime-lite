@@ -7,7 +7,7 @@ Level-1 (mathematical invariants — must never break):
 Level-2 (canonical snapshot — regression detection):
   Frozen at post-ρ-fix revision r2. Update when representation changes.
 
-See docs/paper_data.md §8.3.
+See CCS Appendix A.4 and the canonical snapshot below.
 """
 import numpy as np
 from rime.cubieoperator import CubieSpectralOperator

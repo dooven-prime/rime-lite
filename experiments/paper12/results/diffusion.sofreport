@@ -1,0 +1,253 @@
+{
+  "sofrs_version": "1.0",
+  "report_id": "diffusion_denoising",
+  "system": "finite latent diffusion probe",
+  "claim_status": "diagnostic",
+  "claim_note": "diffusion-time wall and reverse-denoising repair case study",
+  "sectorization": {
+    "origin": "PCA-sign partition on a fixed probe window",
+    "space": "finite feature coordinates",
+    "time_dependent": true,
+    "strict_sof_realization": true
+  },
+  "observable_family": {
+    "data_noise_commutator": "feature-space Gram commutator",
+    "fixed_skew_probe": "seeded skew-symmetric feature operator"
+  },
+  "support_matrix": {
+    "kind": "R1 edge-count trajectory",
+    "samples": [
+      {
+        "t": 0,
+        "R1_edges": 0
+      },
+      {
+        "t": 1,
+        "R1_edges": 0
+      },
+      {
+        "t": 2,
+        "R1_edges": 0
+      },
+      {
+        "t": 3,
+        "R1_edges": 0
+      },
+      {
+        "t": 4,
+        "R1_edges": 0
+      },
+      {
+        "t": 5,
+        "R1_edges": 0
+      },
+      {
+        "t": 6,
+        "R1_edges": 0
+      },
+      {
+        "t": 7,
+        "R1_edges": 0
+      },
+      {
+        "t": 8,
+        "R1_edges": 0
+      },
+      {
+        "t": 9,
+        "R1_edges": 0
+      },
+      {
+        "t": 10,
+        "R1_edges": 0
+      },
+      {
+        "t": 11,
+        "R1_edges": 6
+      },
+      {
+        "t": 12,
+        "R1_edges": 8
+      },
+      {
+        "t": 13,
+        "R1_edges": 6
+      },
+      {
+        "t": 14,
+        "R1_edges": 8
+      },
+      {
+        "t": 15,
+        "R1_edges": 8
+      },
+      {
+        "t": 16,
+        "R1_edges": 8
+      },
+      {
+        "t": 17,
+        "R1_edges": 8
+      },
+      {
+        "t": 18,
+        "R1_edges": 8
+      },
+      {
+        "t": 19,
+        "R1_edges": 8
+      }
+    ]
+  },
+  "bridge_matrix": null,
+  "repair_matrix": {
+    "kind": "reverse-time restoration of the clean observable signature",
+    "event": {
+      "direction": "reverse_denoising",
+      "from_step": 11,
+      "to_step": 10,
+      "restored_sector_count": 1
+    },
+    "claim_note": "registered denoising repair, not fixed-sector Lie-depth D-repair"
+  },
+  "wall_record": {
+    "wall_type": "noise-induced sector creation",
+    "first_wall": {
+      "direction": "forward_noise",
+      "step": 11,
+      "sector_count_before": 1,
+      "sector_count_after": 2,
+      "alpha_bar": 0.1296357522650524
+    },
+    "trajectory_summary": {
+      "parameter": "diffusion time",
+      "rows": [
+        {
+          "t": 0,
+          "alpha_bar": 0.99,
+          "sectors": 1,
+          "R1_edges": 0
+        },
+        {
+          "t": 1,
+          "alpha_bar": 0.9545684210526316,
+          "sectors": 1,
+          "R1_edges": 0
+        },
+        {
+          "t": 2,
+          "alpha_bar": 0.8957871024930748,
+          "sectors": 1,
+          "R1_edges": 0
+        },
+        {
+          "t": 3,
+          "alpha_bar": 0.817523597748943,
+          "sectors": 1,
+          "R1_edges": 0
+        },
+        {
+          "t": 4,
+          "alpha_bar": 0.7250143485299837,
+          "sectors": 1,
+          "R1_edges": 0
+        },
+        {
+          "t": 5,
+          "alpha_bar": 0.6242755127342386,
+          "sectors": 1,
+          "R1_edges": 0
+        },
+        {
+          "t": 6,
+          "alpha_bar": 0.5214343361627561,
+          "sectors": 1,
+          "R1_edges": 0
+        },
+        {
+          "t": 7,
+          "alpha_bar": 0.4220873731675363,
+          "sectors": 1,
+          "R1_edges": 0
+        },
+        {
+          "t": 8,
+          "alpha_bar": 0.3307832098139271,
+          "sectors": 1,
+          "R1_edges": 0
+        },
+        {
+          "t": 9,
+          "alpha_bar": 0.2506988537537132,
+          "sectors": 1,
+          "R1_edges": 0
+        },
+        {
+          "t": 10,
+          "alpha_bar": 0.1835379503007448,
+          "sectors": 1,
+          "R1_edges": 0
+        },
+        {
+          "t": 11,
+          "alpha_bar": 0.1296357522650524,
+          "sectors": 2,
+          "R1_edges": 6
+        },
+        {
+          "t": 12,
+          "alpha_bar": 0.08822054088353301,
+          "sectors": 2,
+          "R1_edges": 8
+        },
+        {
+          "t": 13,
+          "alpha_bar": 0.057761238346902666,
+          "sectors": 2,
+          "R1_edges": 6
+        },
+        {
+          "t": 14,
+          "alpha_bar": 0.036328778855025626,
+          "sectors": 2,
+          "R1_edges": 8
+        },
+        {
+          "t": 15,
+          "alpha_bar": 0.021911989772557563,
+          "sectors": 2,
+          "R1_edges": 8
+        },
+        {
+          "t": 16,
+          "alpha_bar": 0.01265129093710297,
+          "sectors": 2,
+          "R1_edges": 8
+        },
+        {
+          "t": 17,
+          "alpha_bar": 0.006978185737938901,
+          "sectors": 2,
+          "R1_edges": 8
+        },
+        {
+          "t": 18,
+          "alpha_bar": 0.0036690566064215596,
+          "sectors": 2,
+          "R1_edges": 8
+        },
+        {
+          "t": 19,
+          "alpha_bar": 0.0018345283032107798,
+          "sectors": 2,
+          "R1_edges": 8
+        }
+      ]
+    }
+  },
+  "failure_modes": [
+    "toy finite probe rather than a trained diffusion model",
+    "PCA-sign sectors depend on the chosen probe chart",
+    "reverse denoising repair is not identified with Lie-depth D-repair"
+  ]
+}
