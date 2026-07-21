@@ -3,9 +3,14 @@
 ## One-Page Project Summary
 
 **Public release scope.** This overview refers to the current public RIME
-release: Papers I--XII plus the Computational Canonical Specification (CCS).
+release: Papers I--XIII plus the Computational Canonical Specification (CCS).
 The original three-paper trilogy remains the Rubik-centered foundation; Papers
-IV--XII extend it into the broader RIME program.
+IV--XIII extend it into the broader RIME program.
+
+Published DOI records are immutable release snapshots. The repository may
+carry explicitly labeled later manuscript candidates; the current Paper XII
+repository copy is such a candidate and does not alter the published SOFRS
+v1.0 contract.
 
 RIME studies how spectral, transport, accessibility, and deformation structures
 arise from finite-dimensional represented systems. The Rubik cube is used as a
@@ -22,7 +27,7 @@ Accessibility geometry determines their behavior.
 Genericity determines why the behavior is stable.
 ```
 
-## Twelve-Paper Arc
+## Thirteen-Paper Arc
 
 | Paper | Role | Main question |
 |-------|------|---------------|
@@ -38,6 +43,7 @@ Genericity determines why the behavior is stable.
 | Paper X | observable pipeline | Why do different species share one observable pipeline? |
 | Paper XI | observable classification | Which wall records and signatures belong to common observable classes? |
 | Paper XII | diagnostic protocol | How does SOF produce reusable, claim-status-aware SOF Reports? |
+| Paper XIII | comparison geometry | How can two SOF Reports be aligned and compared without conflating difference with defect? |
 
 The dependency chain is:
 
@@ -54,6 +60,7 @@ Arithmetic
   -> Universal observable pipeline
   -> Observable wall classification
   -> SOF diagnostic reporting
+  -> SOF Report Alignment and comparison geometry
 ```
 
 ## Main Objects
@@ -92,7 +99,7 @@ for data of the form
 (V, {Q_i}, X),
 ```
 
-where `V` is a finite-dimensional representation space, `{Q_i}` is a sector
+where `V` is a finite-dimensional space, `{Q_i}` is a sector
 projector family, and `X` is a chosen observable family. The observables
 `R_1`, `R_2`, and `D` are defined relative to this data, not to the Rubik
 representation alone.
@@ -108,9 +115,10 @@ material is split by role:
 - [SOF_REGISTRY.md](SOF_REGISTRY.md) for cross-species evidence, application routing, and
   claim-status boundaries.
 
-Detailed applications and external precedents are documented in Papers X--XII
-and their References sections. Internal research-routing notes are intentionally
-not part of the public documentation contract.
+Detailed applications, comparison controls, and external precedents are
+documented in Papers X--XIII and their References sections. Internal
+research-routing notes are intentionally not part of the public documentation
+contract.
 
 Further SOF theorem upgrades remain future work. The current theorem layers
 remain paper-specific and claim-status gated.
@@ -119,7 +127,7 @@ remain paper-specific and claim-status gated.
 
 | Resource | Public role |
 |----------|-------------|
-| `papers/paper1/`--`papers/paper12/` | canonical public manuscript sources |
+| `papers/paper1/`--`papers/paper13/` | canonical public manuscript sources and explicit revision candidates |
 | `ccs/canonical_specification.md` | canonical trilogy computation and claim dependencies |
 | [PROGRAM_MAP.md](PROGRAM_MAP.md) | program architecture, layer vocabulary, and Rubik/general boundary |
 | [PAPER_SCOPE.md](PAPER_SCOPE.md) | per-paper ownership and source-of-truth order |
@@ -131,6 +139,7 @@ remain paper-specific and claim-status gated.
 | [SOF_REGISTRY.md](SOF_REGISTRY.md) | Paper X Registry companion and evidence map |
 | [TRILOGY_OVERVIEW.md](TRILOGY_OVERVIEW.md) | trilogy-only introduction |
 | `experiments/README.md` | support-script and claim map |
+| `schemas/README.md` | published SOFRS, SOFAudit, and Registry contract map |
 
 ## Scope
 

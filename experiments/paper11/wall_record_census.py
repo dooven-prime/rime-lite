@@ -27,7 +27,7 @@ from wall_density_registry import SPECIES, WALL_TYPES, compute_density
 
 ROOT = Path(__file__).resolve().parents[2]
 RESULTS_DIR = Path(__file__).resolve().parent / "results"
-PAPER_PATH = ROOT / "papers" / "paper11" / "Paper XI.md"
+PAPER_PATH = ROOT / "papers" / "paper11" / "Paper XI - v1.md"
 TARGET_RECORDS = 3
 TARGET_SPECIES = 2
 TARGET_DEFORMATIONS = 2

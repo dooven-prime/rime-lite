@@ -20,20 +20,18 @@ SOF Report for a concrete system?*
 **Problem.** Papers VIII--XI develop the SOF object language, deformation
 geometry, registry evidence, and wall-record taxonomy. These layers answer
 what an SOF is, why different species can share one observable pipeline, and
-when observable walls or signatures appear. What remains is the methodological
-question: how does one actually use SOF on a new system? A useful answer
-cannot be another abstract theorem alone. It must produce an artifact that a
-reader can run, inspect, and adapt. A shared report grammar also prepares
-artifacts for later aligned comparison without defining that comparison here.
+when observable walls or signatures appear. The remaining methodological
+question is how a new system can be analyzed through a reproducible,
+claim-qualified SOF report without treating one realization as canonical.
 
 **Approach.** We formulate the **SOF Diagnostic Protocol** as a deployable
-workflow whose standard output is a **SOF Diagnostic Report**. The protocol's
-report standard is: SOF diagnostics = sectorized observable reports. Its
-deployment slogan is:
-**No weights required. Only observables.** A SOF Report records
-sectorization, observable family, support matrix, bridge matrix, repair
-matrix, wall record, claim status, and failure modes.
-The diagnostic pipeline is:
+workflow whose standard output is a **SOF Report** governed by the versioned
+**SOF Report Specification (SOFRS) v1.0**. A report records sectorization,
+observable family, support matrix, bridge matrix, repair matrix, wall record,
+claim status, and failure modes. The deployment slogan is **No weights
+required. Only observables.** Internal weights may support white-box
+realizations, but they are not a protocol-level requirement for a conforming
+report. The diagnostic pipeline is:
 
 $$
 \begin{aligned}
@@ -46,44 +44,31 @@ $$
 \end{aligned}
 $$
 
-**Results.** The paper gives a first report schema and a set of reproducible
-case studies. In a transformer-like activation SOF, token sectors induced by
-FFN activation counts yield nontrivial cross-sector accessibility. In a real
-pretrained Qwen audit, attention heads themselves induce information
-sectorizations: one head collapses all tokens into a global sector, another
-produces a coarse three-group partition, another supplies four natural SOF
-sectors, and another yields a dispersed thirteen-group partition. This is a
-white-box SOF diagnostic because internal attention matrices are available. A
-second, behavioral regime treats prompt protocols and task classes as probe
-sectors for API-only models and records Structural, Behavioral, and Failure
-observables without claiming access to internal mechanisms. A
-Mixture-of-Experts audit shows that top-2 routing naturally induces six
-expert-pair sectors. In a synthetic transformer batch sweep, increasing token
-count increases the number of sector pairs under analysis while preserving the
-qualitative repair/freeze pattern. In a diffusion toy audit, diffusion time is
-a natural deformation parameter: forward noise creates a sector split, while reverse denoising is
-the repair direction. A dynamic maze gives 24 split crossings and 24 reverse
-merge/repair crossings. A recommender audit detects 12 of 16
-user-cluster/item-cluster pairs as structural coverage dead zones. A black-box
-LLM audit adds an API-only behavioral report with Structural, Behavioral, and
-Failure observable families while marking prompt protocols as probe sectors
-and assigning `claim_status: diagnostic` with a weak behavioral qualification
-rather than claiming a strict SOF realization. Schema, few-shot, and tool repair are
-recorded separately as protocol transitions. Finally, five constructed failure
-cases show when the SOF Report is not applicable, uninformative, degenerate, or
-not useful, while a separate API-infrastructure boundary distinguishes provider
-failure from model behavior.
+**Results.** SOFRS v1.0 is accompanied by nine admitted reference reports
+covering white-box, trajectory-based, and API-level behavioral diagnostics.
+Representative controls include a revision-pinned Qwen attention realization,
+a dynamic-maze wall record, and an API-only language-model report. Additional
+activation, expert-routing, diffusion, and recommender audits test portability
+of the same eight-field grammar. Five constructed failure controls distinguish
+meaningful reports from degenerate sectorizations, invisible interfaces,
+all-to-all noise, and unavailable diagnostics. Envelope validity is separated
+from stronger scientific-protocol admission, and provider failure is separated
+from model behavior.
 
-**Implications.** Paper XII positions SOF as a methodology rather than a new
-universal theory. SOF is deployable when it produces a claim-status-aware SOF
-Report. Such a report can be positive, negative, or degenerate; the ability to
-return failure modes is part of the method. A report is not an absolute image
-of its source system: it is derived from a declared SOF realization and
-reporting specification. White-box and behavioral reports show that SOF is an
-observable framework, not a weight framework. The report format also supplies
-a stable contract for future diagnostic tooling. It standardizes the artifact,
-not the scientific adequacy of a domain realization, which still requires
-domain-specific justification.
+**Implications.** SOFRS standardizes disclosure and serialization, not the
+choice of realization, the scientific adequacy of domain observables, or
+cross-report comparability. A report may be positive, negative, degenerate, or
+explicitly inapplicable. This makes SOF a claim-status-aware observable
+methodology while preserving the boundary between single-system reporting,
+aligned comparison, and downstream interpretation.
+
+**Revision note.** Relative to the initial release, this version separates
+SOFRS envelope validity from scientific-protocol admission, sharpens report
+relativity and applicability levels, adds an evaluator-qualified API-level
+diagnostic, and fixes the boundary between single-report description,
+cross-report comparison, and downstream interpretation. The nine admitted
+reference reports and five constructed boundary controls use the unchanged
+SOFRS v1.0 envelope contract.
 
 ***
 
@@ -117,8 +102,9 @@ reporting \cite{mitchell2019modelcards,raji2020accountability}.
 This is why Paper XII is a methods paper. SOF becomes deployable only when the
 abstract object language can be converted into a reproducible report.
 
-The sharpest deployment statement is: **SOF diagnostics do not require access
-to internal mechanisms; they require observable structure.**
+A conforming SOF Report need not require access to internal mechanisms; it
+requires a declared observable structure, evaluator provenance where relevant,
+and an explicit claim boundary.
 
 ***
 
@@ -128,8 +114,7 @@ to internal mechanisms; they require observable structure.**
 (SOFRS) v1.0** is the versioned machine-readable contract for the fixed-format
 output of the SOF Diagnostic Protocol. A conforming report describes one named
 system, sectorization, observable family, and claim status. Its eight required
-diagnostic fields are:
-Each field has a specific role.
+diagnostic fields, each with a distinct reporting role, are listed below.
 
 | Field | Meaning |
 |-------|---------|
@@ -160,13 +145,13 @@ $$
 
 It does not align two independent reports, compute a cross-report difference,
 interpret that difference as an action consequence, or select a policy. Those
-operations belong to later layers:
+operations belong to subsequent protocol layers:
 
 | Paper | Input and operation | Artifact |
 |-------|---------------------|----------|
 | XII | describe one system, run, snapshot, or internal trajectory | `.sofreport` |
 | XIII | align two reports and compute an Audit Signature | `.sofaudit` |
-| XIV | interpret signature coordinates and derive candidate actions | `.sofaction` |
+| XIV (downstream) | interpret signature coordinates and derive candidate actions | `.sofaction` |
 
 A `Wall Record` may contain before/after values or a trajectory internal to one
 report when a deformation path is part of the audited system. This is not the
@@ -176,7 +161,7 @@ Likewise, `Repair Matrix` records repair that was observed in the audited data.
 It does not prescribe `repair`, `monitor`, `preserve`, `contain`, or `validate`
 actions. Those are downstream Action Semantics.
 
-### Observable Family Registry
+### Observable-Family Typing
 
 For deployable diagnostics, the observable family should be classified by
 what it measures rather than stored as an undifferentiated list. Paper XII
@@ -184,17 +169,17 @@ uses three primary families:
 
 | Family | Typical observables | Role in the report |
 |--------|---------------------|--------------------|
-| Structural observables | JSON validity, XML validity, schema consistency, valid tool-call emission | measure whether an output satisfies an externally specified structure or protocol |
+| Structural observables | operator-block support, graph or routing incidence, transition or kernel entries; at an external interface, JSON/XML validity, schema consistency, or valid tool-call emission | measure realized cross-sector structure or conformance to an externally specified interface structure |
 | Behavioral observables | instruction following, task completion, task-scoped groundedness, preference or protocol alignment | measure whether the response preserves the requested task and behavioral constraint |
 | Failure observables | refusal, grounded-answer failure, format collapse, prompt-injection failure | record named externally visible system events under a specified evaluator |
 
 Repair is not a fourth observable family. It is a transition recorded in the
 **Repair Matrix**, for example schema repair, few-shot repair, tool repair, or
-private-expert reactivation. These classes are report fields, not universal invariants. In
-particular, task-scoped groundedness is not a general hallucination detector,
-and protocol-level repair is not identified with Lie-depth $D$-repair. The
-report must name the evaluator, task scope, and probe/evaluation protocol for every
-behavioral or failure observable.
+private-expert reactivation. These labels type observable entries; they are not
+universal invariants. In particular, task-scoped groundedness is not a general
+hallucination detector, and protocol-level repair is not identified with
+Lie-depth $D$-repair. The report must name the evaluator, task scope, and
+probe/evaluation protocol for every behavioral or failure observable.
 
 Failure observables and the top-level `Failure Modes` field are distinct.
 Failure observables are measured outputs of the audited system. `Failure Modes`
@@ -219,8 +204,8 @@ Implementations should additionally provide stable metadata such as
 `report_id`, `system`, applicability or realization status, and provenance for
 data, model, evaluator, thresholds, and code version. These are metadata around
 the eight diagnostic fields, not a ninth diagnostic layer. They are recommended
-for reproducibility and become essential when Paper XIII later references and
-aligns reports.
+for reproducibility and become essential when a report is referenced by the
+Paper XIII alignment layer.
 
 ### Envelope Validity and Protocol Admission
 
@@ -236,9 +221,7 @@ failure boundary, and a wall result or explanation. A Level III behavioral
 report must also identify its source interface, evaluator, evaluator protocol,
 and evaluator scope. If Support, Bridge, and Repair are all unavailable, a
 boundary or failure report must explicitly name the unavailable diagnostics and
-the reason. Thus:
-
-Formally,
+the reason. Formally,
 
 $$
 \text{SOFRS envelope-valid}
@@ -246,8 +229,8 @@ $$
 \text{Paper XII protocol-admissible}.
 $$
 
-The frozen schema, independent admission profile, and stronger validator are
-listed as Artifacts B1--B4 in Appendix B.
+The canonical envelope schema, independent admission profile, and executable
+validation checks are specified by Artifacts B1--B4 in Appendix B.
 
 ***
 
@@ -728,7 +711,7 @@ it does not mean that the report failed.
 Figure 4 visualizes the versioned `qwen.sofreport` artifact and shows how the
 eight required fields coexist in one reader-facing specimen.
 
-![Concrete SOF Diagnostic Report specimen generated from the real pretrained-Qwen
+![Concrete SOF Diagnostic Report specimen generated from the revision-pinned pretrained-Qwen
 artifact. The eight panels instantiate the fixed SOFRS v1.0 fields: retained
 attention-head sectors, attention observables, support and bridge matrices,
 repair data, a static wall record, controlled claim status, and explicit failure
@@ -794,16 +777,16 @@ does not imply the same mechanism.**
 SOFRS standardizes what must be disclosed. Claim Status and Failure Modes
 control how far each disclosed result may be interpreted. Cross-case rows remain
 reader-facing contrasts; a machine-generated pairwise difference requires the
-Paper XIII alignment object.
+Paper XIII comparison object.
 
 ***
 
-## AI Systems
+## Cross-Domain Validation
 
-AI systems provide several distinct sector origins: activations, attention
-targets, expert routes, and diffusion-time feature partitions. The shared SOF
-Report does not erase those differences; it makes their observable consequences
-available in one syntax for later qualified comparison.
+The three representative reports above establish the reading protocol. The
+remaining audits test whether the same eight-field grammar remains usable under
+different sector origins and native observables. They are portability controls,
+not evidence that the underlying mechanisms are equivalent.
 
 ### Transformer Activation SOF
 
@@ -821,71 +804,22 @@ sector. This is a robustness audit, not a theorem about all transformers.
 
 ### Qwen Attention-Head SOF
 
-The Qwen case supplies the white-box language-model instance in this domain.
-Its head diversity and realization construction are described in Section 6,
-while Case Study A and Figure 4 give the complete report. Its application-level
-role is to show that an internally visible model can supply multiple admissible
-sector granularities without making any one head partition canonical.
+The Qwen white-box realization is reported in Case Study A. Its role here is to
+show that one internally visible model can supply multiple admissible sector
+granularities without making any one head partition canonical.
 
 ### Mixture-of-Experts Routing SOF
 
-MoE asks a different question: **why do experts specialize?** In the routing
-audit (Artifact B8), tokens sharing the same top-2 expert pair form a sector,
-and a routing-overlap kernel measures whether route sectors share an expert.
-
-| MoE diagnostic | Value |
-|----------------|-------|
-| Natural routing sectors | $6/6$ |
-| Direct support | $24/30$ ordered pairs ($80.0\%$) |
-| Two-step routing repairs | 6 |
-| Frozen routing-sector pairs | 0 |
-| Maximum finite word depth | 2 |
-
-The diagnostic mapping runs from expert specialization to expert-route sectors
-and then to routing support and repair. The four-expert audit is a dense control;
-sparse specialization boundaries require larger expert pools, top-1 routing,
-capacity limits, fewer tokens, or expert dropout. Routing-word repair is not
-Lie-depth $D$-repair.
-
-A second control (Artifact B9) models the load-balancing architecture associated
-with DeepSeekMoE and DeepSeek-V3 more closely
-\cite{dai2024deepseekmoe,deepseekai2024v3}. It separates fine-grained
-**private routed experts** from an
-always-active **shared baseline**. This separation is essential: putting the
-shared channel directly into private routing support would mask a dead private
-expert by making every token appear connected.
-
-The private routing logits are deliberately imbalanced at the initial step.
-An auxiliary-loss-free routing bias is then updated by load: overloaded experts
-lose routing preference while underloaded experts gain it for the next top-$k$
-selection. In the finite control:
-
-| Bias-repair diagnostic | Value |
-|------------------------|-------|
-| Private experts / top-$k$ / tokens | $12/2/384$ |
-| Initially active private experts | $2/12$ |
-| Initially frozen private experts | $10/12$ |
-| First routing repair step | 18 |
-| Repaired private experts | $10/10$ |
-| Routing repair index | $100.0\%$ |
-| Shared baseline | active for $384/384$ tokens |
-
-This control gives a direct instance of **bias-driven routing repair**: a
-private expert is initially inactive and later crosses the routing
-threshold after a specified bias deformation. It is not Lie-depth $D$-repair.
-The correct relation is:
-
-$$
-\text{load bias}
-\longrightarrow
-\text{private-routing repair trajectory}
-\longrightarrow
-\text{observable repair candidate and wall record}.
-$$
-
-The control is inspired by the published architecture, not an audit of
-DeepSeek weights. In particular, the routing bias is a load-updated selection
-mechanism rather than an ordinary gradient-learned parameter in this report.
+Artifacts B8--B9 test two routing realizations. In the first, tokens sharing a
+top-2 expert pair form one of six route sectors; routing overlap gives
+$24/30$ directly supported ordered pairs, six two-step word repairs, and no
+remaining frozen pair. In the second, 12 private experts are separated from an
+always-active shared baseline. Ten initially inactive private experts become
+active at routing step 18 under a declared load-bias update, giving a
+$100.0\%$ private-expert repair index. This is bias-driven routing repair, not
+Lie-depth $D$-repair. The control is inspired by published MoE routing
+architectures and is not an audit of DeepSeek weights
+\cite{dai2024deepseekmoe,deepseekai2024v3}.
 
 ### Diffusion Denoising SOF
 
@@ -905,13 +839,13 @@ create an intermediate sectorization.
 
 ***
 
-## Dynamic Systems
+### Dynamic and Propagation Controls
 
 Dynamic systems make wall and propagation semantics explicit. Here the main
 question is not expert specialization but **how topology or reachability
 changes**.
 
-### Dynamic Maze Wall Crossing
+#### Dynamic Maze Wall Crossing
 
 The maze audit (Artifact B11) is the topology-changing instance detailed in
 Case Study B. Its methodological role is to distinguish wall events from static
@@ -919,7 +853,7 @@ frozen pairs: the initial connected component is already present, so the number
 of split events is one less than the final component count. Reverse door opening
 records connectivity repair rather than fixed-sector Lie-depth $D$-repair.
 
-### Kalman Reachability SOF
+#### Kalman Reachability SOF
 
 The control/PDE probe (Artifact B19) uses increments of the Kalman
 controllability flag as sectors. For the
@@ -930,7 +864,7 @@ This report asks where control influence appears immediately and where it
 requires delayed propagation. The depth is a finite word/reachability depth,
 not automatically the commutator depth of Paper V.
 
-### PDE Interface Propagation SOF
+#### PDE Interface Propagation SOF
 
 The same computational control partitions a seven-point finite-difference grid into
 left, interface, and right sectors. The left-to-right block is not directly
@@ -942,13 +876,13 @@ bridge, and propagation depth without claiming a general PDE theorem.
 
 ***
 
-## Industrial Diagnostics
+### External and Industrial Controls
 
 Industrial reports emphasize actionable coverage, first-passage, and external
 behavior. Their value lies in identifying where a system cannot currently
 reach, comply, or recover before a more expensive evaluation is run.
 
-### Recommender Coverage SOF
+#### Recommender Coverage SOF
 
 Recommendation asks: **why do some items never appear?** In the recommender
 audit (Artifact B12), user clusters and item clusters are sectors and the
@@ -962,7 +896,7 @@ coverage signal. It identifies where an online experiment has no structural
 path to work with, but it does not replace ranking metrics, causal evaluation,
 or A/B testing.
 
-### Barrier-Finance SOF
+#### Barrier-Finance SOF
 
 The barrier-finance audit (Artifact B20) sectorizes a finite log-price grid into
 below-barrier and above-barrier regions. Drift and diffusion operators
@@ -974,43 +908,15 @@ first-hit time $6.5915$. First-hitting time is a native stochastic diagnostic;
 it is not identified with SOF depth $D$, and the case is not an option-pricing
 theorem.
 
-### API-Only LLM: API-Level SOF Report
+#### API-Only LLM: API-Level SOF Report
 
-The black-box LLM case asks the deployment question: **can SOF
-be used when weights and hidden states are unavailable?** The answer supplied
-by the Black-Box SOF Diagnostic Principle is yes at the report level, provided
-that stable probe sectors and measurable output observables are specified.
-
-The black-box audit (Artifact B13) uses prompt protocols and task classes as
-probe sectors and emits an **API-level SOF Report**, a behavioral report subtype for a
-black-box language model. Its observable family is:
-
-| Family | Registered examples |
-|--------|---------------------|
-| Structural observables | JSON/XML validity, schema consistency, valid tool-call emission |
-| Behavioral observables | instruction following, task completion, task-scoped groundedness, protocol consistency |
-| Failure observables | refusal, grounded-answer failure, format collapse, prompt-injection failure when probed |
-
-Repair remains a report transition:
-
-| Repair candidate | Failure state | Protocol bridge | Success state |
-|------------------|---------------|-----------------|---------------|
-| Schema repair | bare response violates the requested structure | explicit schema protocol | structurally valid response |
-| Few-shot repair | bare response fails a closed task | demonstrated answer pattern | task completion |
-| Tool repair | bare response omits the required call | tool-enabled protocol | valid tool call |
-
-The emitted report uses prompt protocols crossed with task classes as probe
-sectors, and it records schema, few-shot, and tool changes as behavioral bridge
-and repair analogues. With no parameterized prompt path, the Wall Record is not
-computed. Its controlled status is `diagnostic`, qualified by the claim note
-that this is a weak behavioral report rather than a strict SOF realization.
-
-The deterministic fixture validates the evaluator and SOFRS envelope
-serialization.
-It is not evidence about any deployed API-only LLM until a real API audit is
-run and versioned. Black-box diagnostics expose observable behavior, not
-hidden mechanisms, and task-scoped groundedness is not a universal
-hallucination detector.
+The API-level realization is reported in Case Study C. Artifact B13 uses prompt
+protocols crossed with task classes as probe sectors and records
+interface-structural, behavioral, and failure observables. Schema, few-shot,
+and tool changes are protocol-level bridge and repair analogues. With no
+parameterized prompt path, no Wall Record is computed. The controlled status is
+`diagnostic`, with an explicit qualification that the report does not recover a
+strict projector-valued SOF realization or hidden mechanism.
 
 The recorded API-level report uses NVIDIA NIM with the model ID
 `meta/llama-3.1-8b-instruct` on 2026-07-11. All `18/18` protocol--task requests
@@ -1027,27 +933,14 @@ These percentages describe this model/version, provider endpoint, evaluator,
 and prompt matrix only. They are not a ranking claim about language models.
 The versioned API artifact is included in the report collection (Artifact B15).
 
-The response-level examples make the report more informative than a single
-accuracy number:
+Only normalized events and aggregate diagnostics enter the report; long raw
+model responses and provider payloads are excluded.
 
-| Task / protocol | Observed response event | SOF Report interpretation |
-|-----------------|-------------------------|---------------------------|
-| arithmetic / JSON schema | `{"result": "4"}` | structural and behavioral success |
-| grounded deadline / XML schema | correct plain-text answer rather than XML | semantic success with format collapse |
-| weather / bare | explicit lack-of-tool-access response | externally visible refusal / no tool bridge |
-| weather / tool enabled | `get_weather(city="Paris")` | valid tool repair |
-| arithmetic / tool enabled | unsupported `add` function call | tool misuse on a non-tool task |
-| grounded deadline / tool enabled | irrelevant weather call for New York | cross-sector protocol failure |
+### Cross-Domain Validation Summary
 
-These examples expose structural, behavioral, and failure observables
-separately. Only short normalized events are reported; long raw model prose and
-tool-call payloads are excluded.
-
-### Unified Deployment Table
-
-| System | Sector origin | Primary observable | Wall | Repair |
-|--------|---------------|--------------------|------|--------|
-| Trans\-former model | activation clusters | attention / activation support | training path available | observed |
+| System | Sector origin | Primary observable | Deformation or wall record | Repair semantics |
+|--------|---------------|--------------------|----------------------------|------------------|
+| Trans\-former model | activation clusters | attention / activation support | no path supplied in the static reference | word/depth diagnostic |
 | Qwen | attention-target groups | attention support | not computed | none in the reference audit |
 | MoE | expert routes | routing overlap / private loads | load-imbalance control | routing-word and bias-driven repair |
 | Diffusion | time-indexed feature sectors | denoising trajectory | present | present |
@@ -1055,18 +948,18 @@ tool-call payloads are excluded.
 | Kalman | controllability-flag increments | control propagation | optional path | word depth |
 | PDE | mesh/interface partition | Laplacian propagation | optional path | interface bridge |
 | RecSys | user--item graph clusters | structural coverage | intervention path | partial |
-| Finance | barrier regions | cross-barrier support / first hit | candidate barrier path | none in the reference audit |
-| API-only LLM | prompt/task probe sectors | response observables | candidate protocol path | protocol-level |
+| Finance | barrier regions | cross-barrier support / first hit | barrier parameter not swept in the reference audit | none in the reference audit |
+| API-only LLM | prompt/task probe sectors | response observables | no parameterized prompt path supplied | protocol-level |
 
-The table is deliberately heterogeneous in native meaning. Its point is not
+The validation table is deliberately heterogeneous in native meaning. Its point is not
 that every repair is the same invariant. Its point is that every entry can be
 reported through the same sectorization--observable--wall--repair grammar with
 an explicit claim status. Every row emits the same SOFRS output grammar; the
 API-only audit is marked as an API-level SOF Report, with all `18/18` NVIDIA NIM
 requests successful in the reported audit.
 
-Figure 5 summarizes the methodological distinction behind that deployment
-table.
+Figure 5 summarizes the methodological distinction behind this validation
+summary.
 White-box and realizational analyses may use internal operators, kernels,
 routes, or explicit graph structure, whereas behavioral analyses use stable
 probe sectors and measurable outputs. They meet at the SOFRS contract, not at
@@ -1135,10 +1028,8 @@ single report operation.
 
 Claim status is preserved across transformer activation, Qwen attention,
 diffusion deformation, and boundary reports even when their mathematical
-origins differ.
-
-The accompanying SOFRS v1.0 report collection and separate validator fixture
-are listed as Artifacts B15--B16.
+origins differ. The corresponding report collection and boundary fixture are
+indexed in Appendix B.
 
 ***
 
@@ -1146,64 +1037,41 @@ are listed as Artifacts B15--B16.
 
 Paper XII claims:
 
-1. SOF diagnostics provide a reproducible workflow for turning compatible
-   sectorizations and observable families into SOF Reports.
-2. Attention heads, activation patterns, expert-routing pairs, diffusion
-   schedules, connectivity components, user/item clusters, control flags,
-   Markov partitions, and other information decompositions can support
-   white-box SOF diagnostics when the finite realization is explicit.
-3. In selected case studies, SOF Reports expose cross-sector support,
-   repair/freeze structure, trajectory direction, or failure status not
-   visible from raw native coordinates alone.
-4. SOF is deployable as a methodology because it can produce positive,
-   negative, and degenerate reports with explicit claim status.
-5. Under the Black-Box SOF Diagnostic Principle, API-only systems can support
-   Behavioral SOF Reports using prompt protocols and task classes as probe
-   sectors, provided measurable outputs exist and the report is labeled as a
-   weak input--output diagnostic rather than a strict internal realization.
-6. Under the Report Relativity Principle, a report is derived from a declared
-   realization and reporting specification rather than directly from the source
-   system; same-source reports need explicit alignment before comparison.
+1. SOFRS v1.0 supplies a reproducible, eight-field contract for reporting one
+   declared sectorization and observable family.
+2. Under the Report Relativity Principle, a report is derived from a declared
+   realization and reporting specification rather than directly or uniquely
+   from its source system.
+3. Explicit finite realizations support white-box reports, while stable probe
+   sectors and measurable outputs can support Level III behavioral reports
+   with evaluator provenance and weaker claim status.
+4. The controlled examples show that the same report grammar can record
+   positive, negative, degenerate, and inapplicable outcomes across distinct
+   sector origins without identifying their native mechanisms.
 
 Paper XII does not claim:
 
-1. a universal explainability theory;
-2. that every system has a meaningful sectorization;
-3. that SOF diagnostics are always better than native diagnostics;
-4. that proxy observables determine $R_1/R_2/D$ without an additional bridge
-   theorem;
-5. that the reference implementations constitute a complete production software package;
-6. that attention-head sectorization is unique or canonical for all
-   transformers;
-7. that black-box prompt protocols define projector-valued sectors or reveal
-   internal LLM mechanisms;
-8. that task-scoped groundedness is a universal hallucination detector, or
-   that protocol repair is equivalent to Lie-depth $D$-repair;
-9. that the candidate Behavioral Wall vocabulary is a universal wall taxonomy
-   or a claim about hidden model mechanisms;
-10. that recommender dead-zone reports replace online A/B testing or causal
-    evaluation;
-11. that dynamic-maze connectivity repair is fixed-sector Lie-depth
-    $D$-repair;
-12. that the dense four-expert top-2 MoE control implies that larger or
-    production MoE routers have no frozen expert pairs.
-13. a canonical alignment or difference operator between two SOF Reports;
-14. that a recorded repair event is an instruction to modify the system;
-15. an action policy, Action Set, or Action Algebra;
-16. that envelope validity or protocol admission certifies the scientific
-    adequacy of a domain-specific sectorization or observable family.
+1. universal existence, uniqueness, or superiority of a sectorization or SOF
+   diagnostic over native domain methods;
+2. that proxy and protocol-level observables determine strict $R_1/R_2/D$,
+   Lie-depth repair, or hidden mechanisms without an additional realization or
+   bridge theorem;
+3. that task-scoped behavioral evaluators provide universal hallucination,
+   explainability, or behavioral-wall theories;
+4. that finite transformer, MoE, maze, recommender, finance, or API controls
+   generalize to production systems or replace domain-specific causal and
+   performance evaluation;
+5. that schema validity or protocol admission establishes scientific adequacy,
+   cross-report alignment, semantic interpretation, or an action policy.
 
 ***
 
 ## Conclusion
 
-Paper XII turns SOF from an abstract observable language into a deployable
-diagnostic methodology. The unit of deployment is the SOF Report. Its job is
-to record how sectors were chosen, how observables were extracted, what
-support or repair structure was found, which wall or trajectory features
-appeared, and what claim-status boundary applies.
-
-The unit of deployment is not the source system itself. The governing chain is
+Paper XII introduces SOFRS v1.0 as the reporting layer of the SOF program. Its
+unit is a versioned SOF Report that records a declared sectorization,
+observable family, support and bridge structure, observed repair, wall data,
+claim status, and failure boundaries. The governing chain is
 
 $$
 S
@@ -1213,81 +1081,34 @@ S
 \mathcal R_{\eta,\Theta_{\mathrm{rep}}}.
 $$
 
-The source is realized before it is reported. The resulting report is a real,
-versioned protocol object, but it remains relative to the chosen sectors,
-observables, and reporting semantics.
+The source is realized before it is reported. Consequently, the report is a
+protocol object rather than an absolute image of the source: changing sectors,
+observables, evaluators, thresholds, or reporting semantics may change every
+reported shadow. SOFRS standardizes disclosure and serialization. It does not
+standardize realization choice, establish scientific adequacy, or make two
+reports comparable before explicit alignment.
 
-The real pretrained Qwen audit illustrates why this matters. Attention heads
-already produce information sectorizations at multiple granularities. SOF does
-not need to invent those sectors; it needs to report them, audit them, and
-make their observable consequences comparable.
+The controlled white-box, trajectory-based, and API-level reports demonstrate
+the intended range. Internal operators or weights may be used when available,
+but they are not required at the protocol level. Behavioral reports instead
+require stable probe sectors, measurable outputs, evaluator provenance, and a
+claim status that does not imply access to hidden mechanisms. In both regimes,
+the report grammar remains fixed while the native meaning of its fields remains
+domain-dependent.
 
-Here comparable means that the reports share a machine-readable diagnostic
-grammar. It does not mean that sectors, observables, normalizations, or bridge
-semantics are already aligned. That additional object is supplied only by the
-Paper XIII comparison language.
+This establishes the descriptive layer of the protocol stack. Paper XII
+describes one system or run; Paper XIII aligns two reports and computes a
+comparison signature; the downstream action-semantics layer interprets that
+signature before any policy selection. A Report describes, an Audit compares,
+and interpretation supplies context. None of these operations is silently
+performed by the preceding layer.
 
-The black-box audit illustrates the complementary point. A system need not
-expose weights in order to support an observable report. Prompt protocols,
-task classes, response formats, and repair transitions can define a behavioral
-diagnostic layer, provided the report does not confuse interface behavior with
-internal mechanism. SOF is therefore an observable framework rather than a
-weight framework.
-
-The MoE, maze, and recommender reports broaden the same methodology. Expert
-routing supplies natural sectors, a changing door topology supplies an
-immediately visible wall record, and a user--item propagation graph supplies a
-structural coverage report. Their native meanings differ, but the SOF Report
-grammar remains stable.
-
-This also fixes the extension model for later applications. The SOF program
-maintains the versioned object and report language; each domain application is
-responsible for the scientific justification of its realization. New fields of
-application should therefore enter through declared sectorizations, observable
-families, native constraints, and failure boundaries rather than through
-unsupported analogies. The protocol can make such analyses inspectable and
-interoperable, but it cannot replace the domain knowledge required to construct
-them.
-
-At the program level, Paper VIII defines the sectorized observable object,
-Paper IX supplies its deformation geometry, Paper X organizes the observable
-pipeline and Registry, Paper XI classifies its wall records and signatures,
-and Paper XII turns those structures into a versioned diagnostic artifact.
-The result is not a claim that the registered systems share one mechanism, but
-that they can be examined through one explicit report grammar that prepares
-artifacts for later aligned comparison.
-
-This fixes the first layer of a three-part protocol stack:
-
-| Language | Paper | Operation |
-|----------|-------|-----------|
-| Report | XII | describe one system or run |
-| Comparison | XIII | align two reports and compute $\Delta_{\mathrm{audit}}$ |
-| Action | XIV | interpret $\Delta_i$ before deriving candidate actions |
-
-The boundaries matter. A Report describes; an Audit compares; Action Semantics
-interprets the comparison before policy selection.
-
-The methodological promise is therefore concise: **no weights required, only
-observables.**
-
-Paper XII does not propose a new theory of neural networks, quantum systems,
-control, or stochastic processes. It proposes a common, versioned diagnostic
-reporting protocol for systems admitting compatible sectorizations or stable
-diagnostic probe partitions.
-
-The present protocol is strongest at the discrete accessibility layer: it
-records support, bridges, frozen pairs, repairs, and observable wall events.
-Continuous response constants, word and Lie depths, and trajectory variation
-already provide quantitative seeds for a possible future **SOF Geometry**.
-Such a program could study strength, depth, transversality, persistence, and
-distance to observable walls. Paper XII neither defines that geometry nor
-claims a wall-stiffness invariant; it only establishes the reporting layer on
-which those quantities could later be declared and compared.
-
-The VIII--XII sequence therefore begins with sectorized observable objects and
-ends with a deployable report: no common internal mechanism is required, only
-observable structure and an explicit claim boundary.
+Each new application therefore remains responsible for justifying its
+sectorization, observable family, evaluator, and failure boundary. The protocol
+makes those commitments inspectable and reproducible without replacing native
+domain analysis. Its contribution is a stable reporting object for sectorized
+observable diagnostics: **no weights are required at the protocol level, but
+observable structure and an explicit claim boundary are required.**
 
 ***
 
@@ -1413,8 +1234,8 @@ version rather than silently changing the meaning of v1.0.
 
 ## Appendix B: Computational Artifacts
 
-The main text refers to audit roles rather than repository paths. This appendix
-records the exact reproducibility layer using short paths.
+This appendix indexes the executable artifacts used for contract validation and
+the reported controls. Paths are relative to the directories stated below.
 
 ### Contracts and Validators
 
@@ -1469,9 +1290,12 @@ and wall-spectrum features \cite{paper8,paper9,paper10,paper11}. Paper XII uses
 these layers as report fields.
 
 **Downstream protocol lineage.** Paper XIII consumes two SOF Reports only after
-explicit sector and observable alignment and emits a `.sofaudit` comparison
-artifact. Paper XIV interprets the resulting signature coordinates before
-deriving a `.sofaction` candidate set. These later layers clarify the boundary
+explicit sector and observable alignment, forms the comparison object
+$\mathfrak C_{\mathrm{cmp}}=(\mathcal R^\star,\widehat{\mathcal R},
+\Phi;\Theta)$, and emits a `.sofaudit` record containing that factual object and
+its induced signature only. Paper XIV
+interprets the resulting signature coordinates before
+deriving a `.sofaction` candidate set. These downstream layers clarify the boundary
 of SOFRS; they are not operations performed by a single SOF Report.
 
 **Diagnostic precedents.** The report orientation is analogous in spirit to

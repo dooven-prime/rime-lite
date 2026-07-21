@@ -2,7 +2,7 @@
 
 **Status:** public philosophy note for the RIME program. This file explains the
 Rubik-as-laboratory stance and the sectorization bridge from the trilogy to
-Papers VIII--XII. It is not a proof source; paper manuscripts and
+Papers VIII--XIII. It is not a proof source; paper manuscripts and
 [PROGRAM_MAP.md](PROGRAM_MAP.md) control theorem boundaries.
 
 Program invariant:

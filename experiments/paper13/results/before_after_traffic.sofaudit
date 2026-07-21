@@ -1,0 +1,247 @@
+{
+  "sofaudit_version": "1.0",
+  "report_type": "sofaudit",
+  "comparison_object": "SOFReportComparison",
+  "audit_id": "before_after_traffic_retiming",
+  "system": "Traffic legitimate retiming alignment",
+  "claim_status": "evidence",
+  "claim_note": "controlled legitimate retiming; response change with invariant topology",
+  "regime": "A",
+  "failure_mode": "legitimate_transformation_control",
+  "reference": {
+    "report_id": "traffic_rho05_before",
+    "artifact": "traffic_rho05_before.sofreport",
+    "label": "rho=0.5 before retiming"
+  },
+  "target": {
+    "report_id": "traffic_rho20_after",
+    "artifact": "traffic_rho20_after.sofreport",
+    "label": "rho=2.0 transformed target"
+  },
+  "alignment": {
+    "sector_alignment": {
+      "kind": "identity",
+      "labels": [
+        "NW",
+        "NE",
+        "SW",
+        "SE"
+      ]
+    },
+    "observable_alignment": {
+      "kind": "identity_by_semantic_label",
+      "mapping": {
+        "phase_A": "phase_A",
+        "phase_B": "phase_B"
+      }
+    }
+  },
+  "comparison_specification": {
+    "specification_id": "paper13-coordinatewise-v1",
+    "normalization": {
+      "ordered_pairs": 12,
+      "action_opportunities": 24,
+      "constraint_opportunities": 4,
+      "path_samples": 0
+    },
+    "metric": {
+      "signature": "coordinatewise mismatch records and counts",
+      "fixed_fiber_structural": "weighted Hamming when explicitly invoked"
+    },
+    "depth_semantics": "inherited from linked SOF Reports",
+    "thresholds": {
+      "source": "linked SOF Reports or coordinate defaults"
+    },
+    "parameter_synchronization": {
+      "mode": "index_aligned",
+      "path_samples": 0
+    },
+    "aggregation": {
+      "mode": "coordinatewise",
+      "scalarization": "none"
+    }
+  },
+  "signature": {
+    "support_mismatch": {
+      "extra": [],
+      "extra_count": 0,
+      "missing": [],
+      "missing_count": 0,
+      "total_mismatch": 0,
+      "ref_offdiag": 8,
+      "candidate_offdiag": 8
+    },
+    "bridge_word_mismatch": {
+      "extra": [],
+      "extra_count": 0,
+      "missing": [],
+      "missing_count": 0,
+      "total_mismatch": 0,
+      "ref_offdiag": 4,
+      "candidate_offdiag": 4
+    },
+    "bridge_lie_mismatch": {
+      "extra": [],
+      "extra_count": 0,
+      "missing": [],
+      "missing_count": 0,
+      "total_mismatch": 0,
+      "ref_offdiag": 0,
+      "candidate_offdiag": 0
+    },
+    "depth_distortion": {
+      "total_mismatch": 0,
+      "depth_distortions": [],
+      "distortion_count": 0,
+      "ref_frozen_candidate_not": [],
+      "ref_frozen_candidate_not_count": 0,
+      "candidate_frozen_ref_not": [],
+      "candidate_frozen_ref_not_count": 0
+    },
+    "frozen_disagreement": {
+      "frozen_R1": {
+        "ref": 4,
+        "candidate": 4,
+        "delta": 0
+      },
+      "frozen_D_word": {
+        "ref": 0,
+        "candidate": 0,
+        "delta": 0
+      },
+      "frozen_D_lie": {
+        "ref": 4,
+        "candidate": 4,
+        "delta": 0
+      }
+    },
+    "constraint_violations": {
+      "violations": [],
+      "count": 0
+    },
+    "action_response_failure": {
+      "per_action_deltas": {
+        "phase_A": [
+          {
+            "pair": [
+              "NW",
+              "SW"
+            ],
+            "ref": 0.166667,
+            "candidate": 0.333333,
+            "delta": 0.166667
+          },
+          {
+            "pair": [
+              "NE",
+              "SE"
+            ],
+            "ref": 0.166667,
+            "candidate": 0.333333,
+            "delta": 0.166667
+          },
+          {
+            "pair": [
+              "SW",
+              "NW"
+            ],
+            "ref": 0.166667,
+            "candidate": 0.333333,
+            "delta": 0.166667
+          },
+          {
+            "pair": [
+              "SE",
+              "NE"
+            ],
+            "ref": 0.166667,
+            "candidate": 0.333333,
+            "delta": 0.166667
+          }
+        ],
+        "phase_B": [
+          {
+            "pair": [
+              "NW",
+              "NE"
+            ],
+            "ref": 0.333333,
+            "candidate": 0.166667,
+            "delta": 0.166667
+          },
+          {
+            "pair": [
+              "NE",
+              "NW"
+            ],
+            "ref": 0.333333,
+            "candidate": 0.166667,
+            "delta": 0.166667
+          },
+          {
+            "pair": [
+              "SW",
+              "SE"
+            ],
+            "ref": 0.333333,
+            "candidate": 0.166667,
+            "delta": 0.166667
+          },
+          {
+            "pair": [
+              "SE",
+              "SW"
+            ],
+            "ref": 0.333333,
+            "candidate": 0.166667,
+            "delta": 0.166667
+          }
+        ]
+      },
+      "total_large_deltas": 8,
+      "action_aliasing": [],
+      "response_sep": {
+        "ref": 0.745356,
+        "candidate": 0.745356
+      }
+    },
+    "wall_record_mismatch": null
+  },
+  "failure_modes": [
+    "legitimacy is relative to the declared transformation contract",
+    "finite rho values do not sample the rho->0 or rho->infinity limit walls"
+  ],
+  "comparison_role": "legitimate_transformation_control",
+  "transformation_contract": {
+    "contract_id": "traffic-phase-retiming-v1",
+    "intent": "change the phase-weight ratio from rho=0.5 to rho=2.0",
+    "allowed_changes": [
+      "phase_A and phase_B response magnitudes"
+    ],
+    "preserved_invariants": [
+      "intersection sectors",
+      "phase labels",
+      "direct support, bridges, and finite-depth accessibility"
+    ],
+    "required_postconditions": [
+      "phase_A response exceeds phase_B response after retiming"
+    ],
+    "boundary": "controlled signal model, not a traffic-engineering recommendation"
+  },
+  "contract_evaluation": {
+    "status": "conforming",
+    "residual_violation_count": 0,
+    "residual_violations": [],
+    "raw_change_summary": {
+      "support_mismatch": 0,
+      "bridge_word_mismatch": 0,
+      "bridge_lie_mismatch": 0,
+      "depth_distortion": 0,
+      "action_response_changes": 8
+    },
+    "parameter_change": {
+      "rho_before": 0.5,
+      "rho_after": 2.0
+    }
+  }
+}

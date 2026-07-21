@@ -1,0 +1,411 @@
+{
+  "sofaudit_version": "1.0",
+  "report_type": "sofaudit",
+  "comparison_object": "SOFReportComparison",
+  "audit_id": "before_after_compiler_o0_o2",
+  "system": "Compiler IR legitimate transformation alignment",
+  "claim_status": "evidence",
+  "claim_note": "controlled legitimate-transformation alignment; nonzero change is not a failure",
+  "regime": "A",
+  "failure_mode": "legitimate_transformation_control",
+  "reference": {
+    "report_id": "compiler_o0_before",
+    "artifact": "compiler_o0_before.sofreport",
+    "label": "O0-like before transformation"
+  },
+  "target": {
+    "report_id": "compiler_o2_after",
+    "artifact": "compiler_o2_after.sofreport",
+    "label": "O2-like transformed target"
+  },
+  "alignment": {
+    "sector_alignment": {
+      "kind": "common_ambient_with_retired_target_sector",
+      "mapping": {
+        "B0(entry)": "B0(entry)",
+        "B1": "B1",
+        "B2": "B2",
+        "B3(side)": "B3(side)",
+        "B4(exit)": "B4(exit)"
+      },
+      "retired_target_sectors": [
+        "B3(side)"
+      ]
+    },
+    "observable_alignment": {
+      "kind": "identity_by_semantic_label",
+      "mapping": {
+        "X_cfg": "X_cfg",
+        "X_defuse": "X_defuse"
+      }
+    }
+  },
+  "comparison_specification": {
+    "specification_id": "paper13-coordinatewise-v1",
+    "normalization": {
+      "ordered_pairs": 20,
+      "action_opportunities": 40,
+      "constraint_opportunities": 4,
+      "path_samples": 0
+    },
+    "metric": {
+      "signature": "coordinatewise mismatch records and counts",
+      "fixed_fiber_structural": "weighted Hamming when explicitly invoked"
+    },
+    "depth_semantics": "inherited from linked SOF Reports",
+    "thresholds": {
+      "source": "linked SOF Reports or coordinate defaults"
+    },
+    "parameter_synchronization": {
+      "mode": "index_aligned",
+      "path_samples": 0
+    },
+    "aggregation": {
+      "mode": "coordinatewise",
+      "scalarization": "none"
+    }
+  },
+  "signature": {
+    "support_mismatch": {
+      "extra": [],
+      "extra_count": 0,
+      "missing": [
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          3
+        ]
+      ],
+      "missing_count": 4,
+      "total_mismatch": 4,
+      "ref_offdiag": 12,
+      "candidate_offdiag": 8
+    },
+    "bridge_word_mismatch": {
+      "extra": [],
+      "extra_count": 0,
+      "missing": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          3
+        ]
+      ],
+      "missing_count": 8,
+      "total_mismatch": 8,
+      "ref_offdiag": 18,
+      "candidate_offdiag": 10
+    },
+    "bridge_lie_mismatch": {
+      "extra": [],
+      "extra_count": 0,
+      "missing": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          3
+        ]
+      ],
+      "missing_count": 6,
+      "total_mismatch": 6,
+      "ref_offdiag": 12,
+      "candidate_offdiag": 6
+    },
+    "depth_distortion": {
+      "total_mismatch": 8,
+      "depth_distortions": [],
+      "distortion_count": 0,
+      "ref_frozen_candidate_not": [],
+      "ref_frozen_candidate_not_count": 0,
+      "candidate_frozen_ref_not": [
+        [
+          0,
+          3,
+          2
+        ],
+        [
+          1,
+          3,
+          1
+        ],
+        [
+          2,
+          3,
+          2
+        ],
+        [
+          3,
+          0,
+          2
+        ],
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          3,
+          2,
+          2
+        ],
+        [
+          3,
+          4,
+          1
+        ],
+        [
+          4,
+          3,
+          1
+        ]
+      ],
+      "candidate_frozen_ref_not_count": 8
+    },
+    "frozen_disagreement": {
+      "frozen_R1": {
+        "ref": 8,
+        "candidate": 12,
+        "delta": 4
+      },
+      "frozen_D_word": {
+        "ref": 0,
+        "candidate": 8,
+        "delta": 8
+      },
+      "frozen_D_lie": {
+        "ref": 0,
+        "candidate": 8,
+        "delta": 8
+      }
+    },
+    "constraint_violations": {
+      "violations": [],
+      "count": 0
+    },
+    "action_response_failure": {
+      "per_action_deltas": {
+        "X_cfg": [
+          {
+            "pair": [
+              "B1",
+              "B3(side)"
+            ],
+            "ref": 0.5,
+            "candidate": 0.0,
+            "delta": 0.5
+          },
+          {
+            "pair": [
+              "B3(side)",
+              "B1"
+            ],
+            "ref": 0.5,
+            "candidate": 0.0,
+            "delta": 0.5
+          },
+          {
+            "pair": [
+              "B3(side)",
+              "B4(exit)"
+            ],
+            "ref": 0.5,
+            "candidate": 0.0,
+            "delta": 0.5
+          },
+          {
+            "pair": [
+              "B4(exit)",
+              "B3(side)"
+            ],
+            "ref": 0.5,
+            "candidate": 0.0,
+            "delta": 0.5
+          }
+        ],
+        "X_defuse": [
+          {
+            "pair": [
+              "B2",
+              "B4(exit)"
+            ],
+            "ref": 0.0,
+            "candidate": 0.5,
+            "delta": 0.5
+          },
+          {
+            "pair": [
+              "B3(side)",
+              "B4(exit)"
+            ],
+            "ref": 0.5,
+            "candidate": 0.0,
+            "delta": 0.5
+          },
+          {
+            "pair": [
+              "B4(exit)",
+              "B2"
+            ],
+            "ref": 0.0,
+            "candidate": 0.5,
+            "delta": 0.5
+          },
+          {
+            "pair": [
+              "B4(exit)",
+              "B3(side)"
+            ],
+            "ref": 0.5,
+            "candidate": 0.0,
+            "delta": 0.5
+          }
+        ]
+      },
+      "total_large_deltas": 8,
+      "action_aliasing": [],
+      "response_sep": {
+        "ref": 1.224745,
+        "candidate": 0.707107
+      }
+    },
+    "wall_record_mismatch": null
+  },
+  "failure_modes": [
+    "legitimacy is relative to the declared transformation contract",
+    "the controlled IR does not establish semantic compiler correctness"
+  ],
+  "comparison_role": "legitimate_transformation_control",
+  "transformation_contract": {
+    "contract_id": "compiler-dead-branch-elimination-v1",
+    "intent": "remove the declared dead side block while preserving the main path",
+    "allowed_changes": {
+      "added_edges": [
+        {
+          "observable": "X_defuse",
+          "source": "B2",
+          "target": "B4(exit)"
+        }
+      ],
+      "removed_edges": [
+        {
+          "observable": "X_cfg",
+          "source": "B1",
+          "target": "B3(side)"
+        },
+        {
+          "observable": "X_cfg",
+          "source": "B3(side)",
+          "target": "B4(exit)"
+        },
+        {
+          "observable": "X_defuse",
+          "source": "B3(side)",
+          "target": "B4(exit)"
+        }
+      ]
+    },
+    "preserved_invariants": [
+      "observable labels X_cfg and X_defuse",
+      "entry and exit block identity",
+      "main CFG path B0->B1->B2->B4"
+    ],
+    "required_postconditions": [
+      "B3 has no off-diagonal CFG or def-use incidence",
+      "B2->B4 carries the replacement def-use path"
+    ],
+    "boundary": "controlled structural contract, not a compiler semantic-equivalence proof"
+  },
+  "contract_evaluation": {
+    "status": "conforming",
+    "residual_violation_count": 0,
+    "residual_violations": [],
+    "observed_added_edges": [
+      {
+        "observable": "X_defuse",
+        "source": "B2",
+        "target": "B4(exit)"
+      }
+    ],
+    "observed_removed_edges": [
+      {
+        "observable": "X_cfg",
+        "source": "B1",
+        "target": "B3(side)"
+      },
+      {
+        "observable": "X_cfg",
+        "source": "B3(side)",
+        "target": "B4(exit)"
+      },
+      {
+        "observable": "X_defuse",
+        "source": "B3(side)",
+        "target": "B4(exit)"
+      }
+    ],
+    "raw_change_summary": {
+      "support_mismatch": 4,
+      "bridge_word_mismatch": 8,
+      "bridge_lie_mismatch": 6,
+      "depth_distortion": 8,
+      "action_response_changes": 8
+    }
+  }
+}

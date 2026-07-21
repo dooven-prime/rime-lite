@@ -1,13 +1,13 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://rime-project.local/schemas/sofaudit/v1.0.schema.json",
-  "title": "SOF Report Alignment Artifact Specification v1.0",
-  "description": "Machine-readable contract for aligned comparison of a reference SOF Report and a target SOF Report. The v1.0 field name candidate is retained for compatibility.",
+  "title": "SOF Report Comparison Record Specification v1.0",
+  "description": "Machine-readable contract for one admissible SOF comparison object, its induced audit signature, and a factual claim boundary.",
   "type": "object",
   "required": [
     "sofaudit_version",
     "report_type",
-    "audit_object",
+    "comparison_object",
     "audit_id",
     "system",
     "claim_status",
@@ -15,16 +15,16 @@
     "regime",
     "failure_mode",
     "reference",
-    "candidate",
+    "target",
     "alignment",
-    "normalization",
+    "comparison_specification",
     "signature",
     "failure_modes"
   ],
   "properties": {
     "sofaudit_version": {"const": "1.0"},
     "report_type": {"const": "sofaudit"},
-    "audit_object": {"const": "Delta_audit"},
+    "comparison_object": {"const": "SOFReportComparison"},
     "audit_id": {"type": "string", "minLength": 1},
     "system": {"type": "string", "minLength": 1},
     "claim_status": {
@@ -33,25 +33,53 @@
     "claim_note": {"type": "string", "minLength": 1},
     "regime": {"enum": ["A", "B", "C"]},
     "failure_mode": {"type": "string", "minLength": 1},
+    "domain": {
+      "description": "Optional factual domain label for the aligned comparison.",
+      "type": "string",
+      "minLength": 1
+    },
+    "wall_note": {
+      "description": "Optional factual qualification of a serialized wall-record comparison.",
+      "type": "string",
+      "minLength": 1
+    },
     "comparison_role": {
       "description": "Optional semantic role for the comparison. The legacy failure_mode field remains required in v1.0.",
       "enum": ["failure_mode_control", "legitimate_transformation_control", "model_comparison", "behavioral_comparison"]
     },
     "reference": {"$ref": "#/$defs/reportReference"},
-    "candidate": {"$ref": "#/$defs/reportReference"},
+    "target": {"$ref": "#/$defs/reportReference"},
     "alignment": {
       "type": "object",
       "required": ["sector_alignment", "observable_alignment"],
       "properties": {
-        "sector_alignment": {"type": "object", "minProperties": 1},
-        "observable_alignment": {"type": "object", "minProperties": 1}
+        "sector_alignment": {"$ref": "#/$defs/alignmentComponent"},
+        "observable_alignment": {"$ref": "#/$defs/alignmentComponent"}
       },
-      "additionalProperties": true
+      "additionalProperties": false
     },
-    "normalization": {
-      "description": "Artifact-level comparison specification: normalization, metric, thresholds, depth semantics, aggregation rules, and parameter-path synchronization.",
+    "comparison_specification": {
+      "description": "Machine-readable serialization of Theta. It fixes the semantics required to compute every non-null audit coordinate.",
       "type": "object",
-      "minProperties": 1
+      "required": [
+        "specification_id",
+        "normalization",
+        "metric",
+        "depth_semantics",
+        "thresholds",
+        "parameter_synchronization",
+        "aggregation"
+      ],
+      "properties": {
+        "specification_id": {"const": "paper13-coordinatewise-v1"},
+        "normalization": {"type": "object", "minProperties": 1},
+        "metric": {"type": "object", "minProperties": 1},
+        "depth_semantics": {"type": ["string", "object"]},
+        "thresholds": {"type": "object", "minProperties": 1},
+        "parameter_synchronization": {"type": "object", "minProperties": 1},
+        "aggregation": {"type": "object", "minProperties": 1}
+      },
+      "additionalProperties": false
     },
     "signature": {
       "description": "Machine-readable serialization of the mathematical output Delta_audit.",
@@ -73,7 +101,10 @@
         "depth_distortion": {"type": ["object", "null"]},
         "frozen_disagreement": {"type": ["object", "null"]},
         "constraint_violations": {"type": ["object", "null"]},
-        "action_response_failure": {"type": ["object", "null"]},
+        "action_response_failure": {
+          "description": "Compatibility field name for the native control-response mismatch coordinate; action refers to a source-system control, not a downstream intervention.",
+          "type": ["object", "null"]
+        },
         "wall_record_mismatch": {"type": ["object", "null"]}
       },
       "additionalProperties": false
@@ -108,14 +139,23 @@
         "raw_change_summary": {"type": "object", "minProperties": 1}
       },
       "additionalProperties": true
-    },
-    "decision": {
-      "description": "Optional downstream deployment decision. It is not part of the alignment-induced comparison signature.",
-      "type": "object",
-      "minProperties": 1
     }
   },
   "$defs": {
+    "alignmentComponent": {
+      "description": "One leg-pair of the alignment into common retained coordinates. Identity, relabelling, partial, and declared aggregate alignments are permitted.",
+      "type": "object",
+      "required": ["kind"],
+      "properties": {
+        "kind": {"type": "string", "minLength": 1},
+        "mapping": {"type": "object"},
+        "reference_to_common": {"type": "object"},
+        "target_to_common": {"type": "object"},
+        "unmatched_reference": {"type": "array"},
+        "unmatched_target": {"type": "array"}
+      },
+      "additionalProperties": true
+    },
     "reportReference": {
       "type": "object",
       "required": ["report_id", "artifact", "label"],
@@ -127,6 +167,21 @@
       "additionalProperties": true
     }
   },
-  "not": {"required": ["sofrs_version"]},
-  "additionalProperties": true
+  "not": {
+    "anyOf": [
+      {"required": ["sofrs_version"]},
+      {"required": ["audit_object"]},
+      {"required": ["candidate"]},
+      {"required": ["normalization"]},
+      {"required": ["decision"]},
+      {"required": ["action_semantics"]},
+      {"required": ["action_set"]},
+      {"required": ["selection"]},
+      {"required": ["candidate_action"]},
+      {"required": ["expected_effect"]},
+      {"required": ["risk"]},
+      {"required": ["policy_source"]}
+    ]
+  },
+  "additionalProperties": false
 }

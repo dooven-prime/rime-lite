@@ -10,8 +10,9 @@
 [![Paper VIII DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21287278.svg)](https://doi.org/10.5281/zenodo.21287278)
 [![Paper IX DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21287695.svg)](https://doi.org/10.5281/zenodo.21287695)
 [![Paper X DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21288036.svg)](https://doi.org/10.5281/zenodo.21288036)
-[![Paper XI DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21350768.svg)](https://doi.org/10.5281/zenodo.21350768)
+[![Paper XI DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21453674.svg)](https://doi.org/10.5281/zenodo.21453674)
 [![Paper XII DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21387462.svg)](https://doi.org/10.5281/zenodo.21387462)
+[![Paper XIII DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21449512.svg)](https://doi.org/10.5281/zenodo.21449512)
 
 RIME studies spectral, transport, accessibility, and deformation structures in
 finite-dimensional represented systems. The Rubik cube is used as a concrete
@@ -19,7 +20,7 @@ finite representation laboratory, not as a puzzle-solving problem.
 
 ## Public Release
 
-The current public release contains Papers I--XII plus the Computational
+The current public release contains Papers I--XIII plus the Computational
 Canonical Specification (CCS).
 
 | Component | Topic | DOI / source |
@@ -32,8 +33,15 @@ Canonical Specification (CCS).
 | Paper VIII | sectorized observable framework | [10.5281/zenodo.21287278](https://doi.org/10.5281/zenodo.21287278) |
 | Paper IX | observable dynamics of sectorized observable frameworks | [10.5281/zenodo.21287695](https://doi.org/10.5281/zenodo.21287695) |
 | Paper X | universal observable pipeline and SOF registry evidence | [10.5281/zenodo.21288036](https://doi.org/10.5281/zenodo.21288036) |
-| Paper XI | observable classification theory for SOF wall records | [10.5281/zenodo.21350768](https://doi.org/10.5281/zenodo.21350768) |
+| Paper XI | observable classification theory for SOF wall records | [10.5281/zenodo.21453674](https://doi.org/10.5281/zenodo.21453674) |
 | Paper XII | SOF diagnostic protocol and report specification | [10.5281/zenodo.21387462](https://doi.org/10.5281/zenodo.21387462) |
+| Paper XIII | comparison geometry, SOF Report Alignment, and audit signatures | [10.5281/zenodo.21449512](https://doi.org/10.5281/zenodo.21449512) |
+
+The DOI table identifies immutable published records. Repository manuscripts
+and PDFs may contain an explicitly labeled later revision candidate. In
+particular, the current Paper XII repository copy is a post-v1.0 candidate;
+its published DOI still identifies v1.0, and the SOFRS v1.0 contract is
+unchanged.
 
 ## Start Here
 
@@ -47,6 +55,7 @@ Canonical Specification (CCS).
 | check geometry and move conventions | [`docs/conventions.md`](docs/conventions.md) |
 | read the trilogy overview | [`docs/TRILOGY_OVERVIEW.md`](docs/TRILOGY_OVERVIEW.md) |
 | inspect reproducibility scripts | [`experiments/README.md`](experiments/README.md) |
+| inspect published SOF data contracts | [`schemas/README.md`](schemas/README.md) |
 | check canonical computation notes | [`ccs/canonical_specification.md`](ccs/canonical_specification.md) |
 
 ## Papers
@@ -65,6 +74,7 @@ Canonical Specification (CCS).
 | X | [`paper10_arxiv.pdf`](papers/paper10/paper10_arxiv.pdf) | [`Paper X.md`](papers/paper10/Paper%20X.md) | Why do different species share one observable pipeline? |
 | XI | [`paper11_arxiv.pdf`](papers/paper11/paper11_arxiv.pdf) | [`Paper XI.md`](papers/paper11/Paper%20XI.md) | Which SOF wall records can be classified, and by what kind of local or global theory? |
 | XII | [`paper12_arxiv.pdf`](papers/paper12/paper12_arxiv.pdf) | [`Paper XII.md`](papers/paper12/Paper%20XII.md) | How does SOF produce reusable SOF Reports? |
+| XIII | [`paper13_arxiv.pdf`](papers/paper13/paper13_arxiv.pdf) | [`Paper XIII.md`](papers/paper13/Paper%20XIII.md) | How can two SOF Reports be aligned and compared without conflating difference with defect? |
 | CCS | [`ccs_arxiv.pdf`](ccs/ccs_arxiv.pdf) | [`canonical_specification.md`](ccs/canonical_specification.md) | Which numerical objects, figures, stability checks, and claim dependencies are canonical? |
 
 Program arc:
@@ -82,6 +92,7 @@ Arithmetic
   -> Universal observable pipeline
   -> Observable wall classification
   -> SOF diagnostic reporting
+  -> SOF Report Alignment and comparison geometry
 ```
 
 ## Repository Structure
@@ -93,8 +104,8 @@ rime-lite/
 |-- tests/                invariant checks
 |-- papers/               manuscript sources
 |-- ccs/                  Computational Canonical Specification source
-|-- docs/                 public overview, program map, and research notes
-|-- schemas/              versioned SOFRS and SOF Registry data contracts
+|-- docs/                 public overview, program map, and companion notes
+|-- schemas/              published SOFRS, SOFAudit, and Registry contracts
 |-- registry/             frozen Paper X SOF Registry release snapshots
 `-- figures/              frozen generated figures used by papers
 ```
@@ -126,6 +137,9 @@ python experiments/paper7/rank_protected_bridge_audit.py
 python experiments/paper8_figures.py
 python experiments/paper9/rate_hierarchy.py
 python experiments/paper10/registry_evidence.py
+python experiments/paper11/validation/wall_record_census_v2.py
+python experiments/paper12/validate_protocol_admission.py
+python experiments/paper13/validate_sofaudit.py
 ```
 
 For the full experiment map, see [`experiments/README.md`](experiments/README.md).
@@ -162,6 +176,7 @@ Paper VII  10.5281/zenodo.21193940
 Paper VIII 10.5281/zenodo.21287278
 Paper IX   10.5281/zenodo.21287695
 Paper X    10.5281/zenodo.21288036
-Paper XI   10.5281/zenodo.21350768
+Paper XI   10.5281/zenodo.21453674
 Paper XII  10.5281/zenodo.21387462
+Paper XIII 10.5281/zenodo.21449512
 ```

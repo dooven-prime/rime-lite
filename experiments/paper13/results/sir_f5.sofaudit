@@ -1,0 +1,337 @@
+{
+  "sofaudit_version": "1.0",
+  "report_type": "sofaudit",
+  "comparison_object": "SOFReportComparison",
+  "audit_id": "sir_f5",
+  "system": "SIR wall record audit",
+  "claim_status": "evidence",
+  "claim_note": "controlled protocol validation",
+  "regime": "A",
+  "failure_mode": "f5_wall_record",
+  "reference": {
+    "report_id": "sir_ref",
+    "artifact": "sir_ref.sofreport",
+    "label": "SIR(β=0.300, γ=0.100, R₀=3.00)"
+  },
+  "target": {
+    "report_id": "sir_f5_learned",
+    "artifact": "sir_f5_learned.sofreport",
+    "label": "SIR(β=0.200, γ=0.100, R₀=2.00)"
+  },
+  "alignment": {
+    "sector_alignment": {
+      "kind": "identity"
+    },
+    "observable_alignment": {
+      "kind": "identity"
+    }
+  },
+  "comparison_specification": {
+    "specification_id": "paper13-coordinatewise-v1",
+    "normalization": {
+      "tol": 1e-08,
+      "max_depth": 4,
+      "frozen_sentinel": 999,
+      "depth_semantics": "word depth",
+      "bridge_semantics": [
+        "word",
+        "Lie commutator"
+      ],
+      "generator_normalization": "skew(T)=(T-T^T)/2"
+    },
+    "metric": {
+      "signature": "coordinatewise mismatch records and counts",
+      "fixed_fiber_structural": "weighted Hamming when explicitly invoked"
+    },
+    "depth_semantics": "word depth",
+    "thresholds": {
+      "tol": 1e-08,
+      "source": "comparison record"
+    },
+    "parameter_synchronization": {
+      "mode": "not_applicable"
+    },
+    "aggregation": {
+      "mode": "coordinatewise",
+      "scalarization": "none"
+    }
+  },
+  "signature": {
+    "support_mismatch": {
+      "extra": [],
+      "extra_count": 0,
+      "missing": [],
+      "missing_count": 0,
+      "total_mismatch": 0,
+      "ref_offdiag": 4,
+      "candidate_offdiag": 4
+    },
+    "bridge_word_mismatch": {
+      "extra": [],
+      "extra_count": 0,
+      "missing": [],
+      "missing_count": 0,
+      "total_mismatch": 0,
+      "ref_offdiag": 2,
+      "candidate_offdiag": 2
+    },
+    "bridge_lie_mismatch": {
+      "extra": [],
+      "extra_count": 0,
+      "missing": [],
+      "missing_count": 0,
+      "total_mismatch": 0,
+      "ref_offdiag": 2,
+      "candidate_offdiag": 2
+    },
+    "depth_distortion": {
+      "depth_distortions": [],
+      "distortion_count": 0,
+      "ref_frozen_candidate_not": [],
+      "ref_frozen_candidate_not_count": 0,
+      "candidate_frozen_ref_not": [],
+      "candidate_frozen_ref_not_count": 0,
+      "total_mismatch": 0
+    },
+    "frozen_disagreement": {
+      "frozen_R1": {
+        "ref": 2,
+        "candidate": 2,
+        "delta": 0
+      },
+      "frozen_D_word": {
+        "ref": 0,
+        "candidate": 0,
+        "delta": 0
+      },
+      "frozen_D_lie": {
+        "ref": 0,
+        "candidate": 0,
+        "delta": 0
+      }
+    },
+    "constraint_violations": {
+      "violations": [],
+      "count": 0
+    },
+    "action_response_failure": {
+      "per_action_deltas": {
+        "beta": [
+          {
+            "pair": [
+              "S",
+              "I"
+            ],
+            "ref": 0.15,
+            "candidate": 0.1,
+            "delta": 0.05
+          },
+          {
+            "pair": [
+              "I",
+              "S"
+            ],
+            "ref": 0.15,
+            "candidate": 0.1,
+            "delta": 0.05
+          }
+        ],
+        "gamma": []
+      },
+      "total_large_deltas": 2,
+      "action_aliasing": [],
+      "response_sep": {
+        "ref": 0.223607,
+        "candidate": 0.158114
+      }
+    },
+    "wall_record_mismatch": {
+      "steps": [
+        {
+          "step": 0,
+          "beta": 0.0,
+          "frozen_R1_ref": 4,
+          "frozen_R1_lrn": 2,
+          "frozen_R1_delta": -2,
+          "frozen_D_word_ref": 4,
+          "frozen_D_word_lrn": 0,
+          "frozen_D_word_delta": -4,
+          "frozen_D_lie_ref": 4,
+          "frozen_D_lie_lrn": 0,
+          "frozen_D_lie_delta": -4,
+          "response_sep_ref": 0.07071067811865477,
+          "response_sep_lrn": 0.158113883008419,
+          "R0": 0.0
+        },
+        {
+          "step": 1,
+          "beta": 0.05,
+          "frozen_R1_ref": 2,
+          "frozen_R1_lrn": 2,
+          "frozen_R1_delta": 0,
+          "frozen_D_word_ref": 0,
+          "frozen_D_word_lrn": 0,
+          "frozen_D_word_delta": 0,
+          "frozen_D_lie_ref": 0,
+          "frozen_D_lie_lrn": 0,
+          "frozen_D_lie_delta": 0,
+          "response_sep_ref": 0.07905694150420949,
+          "response_sep_lrn": 0.158113883008419,
+          "R0": 0.5
+        },
+        {
+          "step": 2,
+          "beta": 0.1,
+          "frozen_R1_ref": 2,
+          "frozen_R1_lrn": 2,
+          "frozen_R1_delta": 0,
+          "frozen_D_word_ref": 0,
+          "frozen_D_word_lrn": 0,
+          "frozen_D_word_delta": 0,
+          "frozen_D_lie_ref": 0,
+          "frozen_D_lie_lrn": 0,
+          "frozen_D_lie_delta": 0,
+          "response_sep_ref": 0.1,
+          "response_sep_lrn": 0.158113883008419,
+          "R0": 1.0
+        },
+        {
+          "step": 3,
+          "beta": 0.15000000000000002,
+          "frozen_R1_ref": 2,
+          "frozen_R1_lrn": 2,
+          "frozen_R1_delta": 0,
+          "frozen_D_word_ref": 0,
+          "frozen_D_word_lrn": 0,
+          "frozen_D_word_delta": 0,
+          "frozen_D_lie_ref": 0,
+          "frozen_D_lie_lrn": 0,
+          "frozen_D_lie_delta": 0,
+          "response_sep_ref": 0.12747548783981963,
+          "response_sep_lrn": 0.158113883008419,
+          "R0": 1.5000000000000002
+        },
+        {
+          "step": 4,
+          "beta": 0.2,
+          "frozen_R1_ref": 2,
+          "frozen_R1_lrn": 2,
+          "frozen_R1_delta": 0,
+          "frozen_D_word_ref": 0,
+          "frozen_D_word_lrn": 0,
+          "frozen_D_word_delta": 0,
+          "frozen_D_lie_ref": 0,
+          "frozen_D_lie_lrn": 0,
+          "frozen_D_lie_delta": 0,
+          "response_sep_ref": 0.158113883008419,
+          "response_sep_lrn": 0.158113883008419,
+          "R0": 2.0
+        },
+        {
+          "step": 5,
+          "beta": 0.25,
+          "frozen_R1_ref": 2,
+          "frozen_R1_lrn": 2,
+          "frozen_R1_delta": 0,
+          "frozen_D_word_ref": 0,
+          "frozen_D_word_lrn": 0,
+          "frozen_D_word_delta": 0,
+          "frozen_D_lie_ref": 0,
+          "frozen_D_lie_lrn": 0,
+          "frozen_D_lie_delta": 0,
+          "response_sep_ref": 0.19039432764659772,
+          "response_sep_lrn": 0.158113883008419,
+          "R0": 2.5
+        },
+        {
+          "step": 6,
+          "beta": 0.30000000000000004,
+          "frozen_R1_ref": 2,
+          "frozen_R1_lrn": 2,
+          "frozen_R1_delta": 0,
+          "frozen_D_word_ref": 0,
+          "frozen_D_word_lrn": 0,
+          "frozen_D_word_delta": 0,
+          "frozen_D_lie_ref": 0,
+          "frozen_D_lie_lrn": 0,
+          "frozen_D_lie_delta": 0,
+          "response_sep_ref": 0.22360679774997902,
+          "response_sep_lrn": 0.158113883008419,
+          "R0": 3.0000000000000004
+        },
+        {
+          "step": 7,
+          "beta": 0.35000000000000003,
+          "frozen_R1_ref": 2,
+          "frozen_R1_lrn": 2,
+          "frozen_R1_delta": 0,
+          "frozen_D_word_ref": 0,
+          "frozen_D_word_lrn": 0,
+          "frozen_D_word_delta": 0,
+          "frozen_D_lie_ref": 0,
+          "frozen_D_lie_lrn": 0,
+          "frozen_D_lie_delta": 0,
+          "response_sep_ref": 0.25739075352467505,
+          "response_sep_lrn": 0.158113883008419,
+          "R0": 3.5
+        },
+        {
+          "step": 8,
+          "beta": 0.4,
+          "frozen_R1_ref": 2,
+          "frozen_R1_lrn": 2,
+          "frozen_R1_delta": 0,
+          "frozen_D_word_ref": 0,
+          "frozen_D_word_lrn": 0,
+          "frozen_D_word_delta": 0,
+          "frozen_D_lie_ref": 0,
+          "frozen_D_lie_lrn": 0,
+          "frozen_D_lie_delta": 0,
+          "response_sep_ref": 0.29154759474226505,
+          "response_sep_lrn": 0.158113883008419,
+          "R0": 4.0
+        },
+        {
+          "step": 9,
+          "beta": 0.45,
+          "frozen_R1_ref": 2,
+          "frozen_R1_lrn": 2,
+          "frozen_R1_delta": 0,
+          "frozen_D_word_ref": 0,
+          "frozen_D_word_lrn": 0,
+          "frozen_D_word_delta": 0,
+          "frozen_D_lie_ref": 0,
+          "frozen_D_lie_lrn": 0,
+          "frozen_D_lie_delta": 0,
+          "response_sep_ref": 0.32596012026013244,
+          "response_sep_lrn": 0.158113883008419,
+          "R0": 4.5
+        },
+        {
+          "step": 10,
+          "beta": 0.5,
+          "frozen_R1_ref": 2,
+          "frozen_R1_lrn": 2,
+          "frozen_R1_delta": 0,
+          "frozen_D_word_ref": 0,
+          "frozen_D_word_lrn": 0,
+          "frozen_D_word_delta": 0,
+          "frozen_D_lie_ref": 0,
+          "frozen_D_lie_lrn": 0,
+          "frozen_D_lie_delta": 0,
+          "response_sep_ref": 0.36055512754639896,
+          "response_sep_lrn": 0.158113883008419,
+          "R0": 5.0
+        }
+      ],
+      "n_steps": 11
+    }
+  },
+  "failure_modes": [
+    "controlled finite compartmental variant, not an epidemiological theorem",
+    "identity sector and observable alignment only",
+    "skew support is a proxy for directed transition semantics"
+  ],
+  "domain": "epidemiology",
+  "wall_note": "beta=0: topological wall. R0=1: response-order crossing (smooth)."
+}

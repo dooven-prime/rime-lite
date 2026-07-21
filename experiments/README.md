@@ -12,7 +12,7 @@ RIME program. The public-facing directory has four separate responsibilities:
 Tests under `tests/` verify package invariants and are not part of this
 directory.
 
-Public release scope: Papers I--XII plus CCS. Unreleased paper-stage
+Public release scope: Papers I--XIII plus CCS. Unreleased paper-stage
 experiments are intentionally omitted from this public reproducibility map
 until their manuscripts and artifact contracts are frozen.
 
@@ -35,6 +35,7 @@ experiments/
 |-- paper10/                Paper X: registry evidence and SOF portability
 |-- paper11/                Paper XI: observable wall records and taxonomy
 |-- paper12/                Paper XII: SOF diagnostic protocol and reports
+|-- paper13/                Paper XIII: SOF Report Alignment and comparison geometry
 |-- quantum/                quantum-gate SOF diagnostics
 |-- cross_ref/              related-work diagnostics, not theorem sources
 `-- trilogy_style/          shared styling utilities used by local figure scripts
@@ -189,20 +190,27 @@ proxy-layer support; proxy-to-shadow and `tau(D)` bridges remain open.
 | `experiments/paper11/cross_species_wall_audit.py` | cross-species wall diagnostics for the observable taxonomy; no ADE classification theorem is claimed |
 | `experiments/paper11/spectral_ade_collision.py` | Rubik smooth spectral local-model audit: 16 pairwise A1-type closures plus sampling-dependent simultaneous pair-gap responses |
 | `experiments/paper11/discriminant_bifurcation_map.py` | auxiliary 2D commutativity-discriminant slice; one hit on the chosen `20 x 20` evaluation grid |
-| `experiments/paper11/wall_density_registry.py` | wall-density table for the 15-entry Paper XI taxonomy sample |
-| `experiments/paper11/wall_record_census.py` | 24-record multi-label coverage audit separating species prevalence from eligible wall-record diversity; Class A remains the sampling gap |
+| `experiments/paper11/wall_density_registry.py` | wall-density table for the frozen 15-entry v1 taxonomy sample |
+| `experiments/paper11/wall_record_census.py` | frozen v1 24-record multi-label coverage audit; Class A remains the original sampling gap |
 | `experiments/paper11/invariant_redundancy.py` | definition-compatible 166-configuration redundancy audit; three PCA components explain both 90% and 95% for the tested ensemble, without claiming an invariant basis |
 | `experiments/paper11/an_adjacency.py` | Appendix A boundary audit: block-restricted eigenbranch continuation finds no A2-to-two-A1 split candidate on the tested slices |
 | `experiments/paper11/wall_trajectory.py` | Appendix B boundary audit: sampled observable-status trajectories for GridWorld, SIR, and weighted graph controls; counts status changes rather than static frozen pairs |
 | `experiments/paper11/repair_persistence_quantum.py` | CNOT-strength interpolation audit: repair threshold `0.55`, persistence `p_W=0.45`, and post-activation stability |
 | `experiments/paper11/piecewise_smooth_activation_wall.py` | activation-wall boundary audit: ReLU kink, GeLU control, and top-k rank-selection diagnostic |
+| `experiments/paper11/validation/degenerate_endpoint_collision.py` | v1.1 smooth endpoint witness with two transverse A1-type spectral closures |
+| `experiments/paper11/validation/percolation_wall.py` | v1.1 nested-threshold percolation witness for a discrete monotone repair wall |
+| `experiments/paper11/validation/kuramoto_wall.py` | v1.1 matched-frequency control for a smooth negative-orientation freezing wall |
+| `experiments/paper11/validation/grn_toggle_wall.py` | v1.1 knockout structure-wall witness; the earlier low-volume CLE noise-wall interpretation is explicitly withdrawn after SSA control |
+| `experiments/paper11/validation/wall_robustness_audit.py` | unified robustness checks for the four added wall profiles |
+| `experiments/paper11/validation/wall_record_census_v2.py` | independently generated v1.1 census: 28 records, 19 eligible records, and 38 class memberships |
 | `experiments/paper11_figures.py` | generates Figure 1 wall-record pipeline, Figure 2 six-class taxonomy, and Figure 3 wall-density/repair-persistence evidence |
 
-Paper XI scripts are taxonomy evidence and boundary audits. They support
-observable wall records, wall signatures, wall spectra, and the six-class
-Observable Wall Taxonomy. ADE remains only a candidate local model for smooth
-discriminant branches; graph, Markov, activation, and degenerate rate probes
-require non-ADE, stratified, or species-specific wall languages.
+Paper XI scripts are taxonomy evidence and boundary audits. The v1.1 extension
+meets the predeclared finite-sample coverage target for Classes A--F, but this is
+coverage closure rather than taxonomy completeness. ADE remains only a
+candidate local model for smooth discriminant branches; graph, Markov,
+activation, and degenerate rate probes require non-ADE, stratified, or
+species-specific wall languages.
 
 ## Paper XII - SOF Diagnostic Protocol
 
@@ -226,7 +234,7 @@ require non-ADE, stratified, or species-specific wall languages.
 | `experiments/paper12/results/diffusion.sofreport` | SOFRS v1.0 diffusion-time wall and reverse-repair report |
 | `experiments/paper12/results/maze.sofreport` | SOFRS v1.0 connectivity split/merge wall record |
 | `experiments/paper12/results/moe.sofreport` | SOFRS v1.0 expert-routing support and two-step repair report |
-| `experiments/paper12/results/qwen.sofreport` | SOFRS v1.0 real pretrained-Qwen attention-head report on the strict 40-token retained subspace |
+| `experiments/paper12/results/qwen.sofreport` | SOFRS v1.0 revision-pinned pretrained-Qwen attention-head report on the strict 40-token retained subspace |
 | `experiments/paper12/results/recommender.sofreport` | SOFRS v1.0 recommender coverage and targeted dead-zone repair report |
 | `experiments/paper12/results/moe_bias_repair.sofreport` | SOFRS v1.0 private-expert load and bias-driven routing-repair trajectory |
 | `experiments/paper12/results/transformer_batch.sofreport` | SOFRS v1.0 token-bin sector-count robustness sweep |
@@ -236,17 +244,31 @@ require non-ADE, stratified, or species-specific wall languages.
 
 Paper XII scripts support the published diagnostic methodology and its
 reference SOFRS artifacts. They do not retroactively enlarge the claim sets of
-Papers I--XI. Later comparison and action-semantics stages remain outside this
-public experiment index until their release boundaries are fixed.
+Papers I--XI. The current repository manuscript is an explicit new-version
+candidate; it retains the same SOFRS v1.0 schema, artifact paths, and nine
+admitted reference reports.
 
-## Figure Production Scripts
+## Paper XIII - Comparison Geometry of SOF Reports
 
-Top-level scripts such as `experiments/paper*_figures.py`,
-`experiments/ccs_figures.py`, and `experiments/trilogy_overview.py` are local
-production tools for figure assets. They are not part of the public
-reproducibility index unless a paper explicitly cites them as support scripts.
-Manuscripts reference frozen figures under `figures/`; public support scripts
-do not regenerate them.
+| Script | Status |
+|--------|--------|
+| `schemas/sofaudit/v1.0.schema.json` | canonical factual-only contract for aligned reference/target comparisons and induced audit signatures |
+| `experiments/paper13/validate_sofaudit.py` | validates the canonical schema, linked SOFRS reports, legitimate-transformation semantics, and all published `.sofaudit` artifacts |
+| `experiments/paper13/gridworld_reference_sof.py` | controlled GridWorld reference and five comparison signatures, including word/Lie channel separation |
+| `experiments/paper13/sir_compartment_sof.py` | SIR rate, support, response-order, and wall-record comparisons |
+| `experiments/paper13/traffic_intersection_sof.py` | traffic phase, timing, and trajectory-mismatch comparisons |
+| `experiments/paper13/compiler_ir_sof.py` | compiler-IR CFG/def-use alignment and pass-pipeline controls |
+| `experiments/paper13/network_routing_sof.py` | appendix routing domain with ACL removal and higher-order bridge diagnostics |
+| `experiments/paper13/before_after_alignment.py` | three legitimate transformations with nonzero raw signatures and zero contract residuals |
+| `experiments/paper13/signature_metric.py` | fixed-fiber weighted structural pseudometric control |
+| `experiments/paper13/word_lie_controlled.py` | exact-support word/Lie inclusion and strict word-only witness |
+| `experiments/paper13/regenerate_tables.py` | regenerates the published signature tables from canonical artifacts |
+
+Paper XIII scripts support the published alignment and comparison methodology.
+They establish local fixed-fiber comparison geometry and controlled portability;
+they do not infer alignments automatically, define cross-fiber transport, or
+interpret nonzero signatures as defects or actions. Paper XIV action semantics
+remain outside this public experiment index until that release boundary is fixed.
 
 ## Usage
 

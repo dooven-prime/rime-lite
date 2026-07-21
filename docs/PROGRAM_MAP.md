@@ -1,8 +1,8 @@
 # RIME Program Map
 
-**Date**: 2026-07-16
-**Status**: public narrative architecture map for Papers I--XII, with a
-Paper XIII--XIV horizon.
+**Date**: 2026-07-21
+**Status**: public narrative architecture map for Papers I--XIII, with a
+Paper XIV horizon.
 
 This document summarizes the program-level organization. It is not a proof
 document and does not replace the manuscripts. Its purpose is to make the
@@ -142,7 +142,7 @@ Paper X     Universal Observable Pipeline and registry evidence
 Paper XI    Observable Wall Taxonomy
 Paper XII   SOF Diagnostic Protocol and SOF Report Specification
 Paper XIII  SOF Report Alignment and induced comparison signatures
-Paper XIV   SOF Action Semantics and candidate intervention sets
+Paper XIV   context-indexed interpretation and action semantics (horizon)
 ```
 
 Paper VIII asks what the object is and proves that the RIME observables are
@@ -150,17 +150,19 @@ natural constructions on strict SOF data. Paper IX asks how SOF objects deform
 and why different deformation spaces generate different wall geometries. Paper
 X asks why broad external species can enter one observable pipeline. Paper XI
 classifies observable wall records, signatures, spectra, and taxonomy while
-keeping ADE as a smooth-branch local model only. Paper XII asks how SOF
-is deployed in practice: diagnostics become SOF Reports, with automatic sector
-audits and application sections organized as AI Systems, Dynamic Systems, and
-Industrial Diagnostics. Paper XII separates white-box reports, whose internal
-finite realization is visible, from API-level Behavioral SOF Reports, whose
-probe sectors and observables come from externally visible interfaces. Its Black-Box SOF
-Diagnostic Principle states that a white-box realization is sufficient but not
-necessary: compatible sectors or stable probe sectors plus measurable outputs
-can support a claim-status-aware report without internal access. This is why
-SOF is an observable framework rather than a weight framework. Stable slogan:
-No weights required. Only observables.
+keeping ADE as a smooth-branch local model only. Paper XII introduces the
+eight-field SOF Report Specification (SOFRS) v1.0 for one declared realization
+or diagnostic probe system. It separates envelope validity from scientific
+protocol admission, makes report relativity explicit, and distinguishes
+white-box, trajectory-based, and API-level behavioral reports. Three
+representative reports establish the reading protocol; a cross-domain
+validation section then tests portability without identifying native
+mechanisms. Its Black-Box SOF Diagnostic Principle states that a white-box
+realization is sufficient but not necessary: stable probe sectors, measurable
+outputs, evaluator provenance, and a weak claim boundary can support a
+behavioral report. The slogan **No weights required. Only observables.** is a
+protocol-level statement; white-box realizations may still use internal
+weights or operators.
 
 The protocol boundary is explicit: Paper XII is the single-system report
 language, Paper XIII is the aligned comparison language, and Paper XIV is the
@@ -196,18 +198,11 @@ before/after controls show that a nonzero alignment signature records change, no
 failure: their raw signatures are retained while a declared transformation
 contract produces a separate zero-residual evaluation.
 
-Paper XIV defines context-indexed signature semantics
-$\operatorname{Sem}_{\Gamma,i}:\Delta_i\to\mathcal I_i$. A nonzero coordinate
-records difference, not defect; legitimate-transformation controls map active
-coordinates to `licensed_change`. The candidate Action Set is the derived union
-of coordinate-level consequences under
-$\operatorname{GenerateActions}_{\Gamma}:\mathsf{AuditSignature}\to
-\mathsf{ActionSet}$. Repair, observation, containment, and validation candidates
-follow from these interpretations. A downstream policy
-$\pi:\mathsf{ActionSet}\times\mathsf{PolicyContext}\to
-\mathsf{SelectedActionPlan}$ may select from that set, but policy selection is
-not the Paper XIV mathematical contribution. The legacy `.sofdecision` rule
-engine remains a compatibility control.
+Paper XIV remains a development horizon. Its intended question is how a
+declared context interprets a nonzero comparison coordinate before any
+candidate action or policy selection is considered. This horizon does not alter
+the published Paper XIII comparison object: $\Delta_{\mathrm{audit}}$ records
+difference, not defect, and Paper XIII itself supplies no intervention rule.
 
 The common observable architecture behind Papers V--VII is the
 SOF data package

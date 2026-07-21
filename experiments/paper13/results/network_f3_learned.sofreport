@@ -1,0 +1,152 @@
+{
+  "sofrs_version": "1.0",
+  "report_id": "network_f3_learned",
+  "system": "4-prefix (forbidden route)",
+  "sectorization": {
+    "origin": "one-hot prefix sectors",
+    "prefixes": [
+      "P0(local)",
+      "P1(dmz)",
+      "P2(internal)",
+      "P3(external)"
+    ],
+    "sector_count": 4,
+    "strict_sof_realization": true
+  },
+  "observable_family": {
+    "observables": [
+      "X_internal (with spurious P0->P3)",
+      "X_external"
+    ]
+  },
+  "support_matrix": {
+    "kind": "word-generator direct support",
+    "matrix": [
+      [
+        0,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        0,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        0
+      ]
+    ],
+    "offdiag_count": 12
+  },
+  "bridge_matrix": {
+    "word": {
+      "matrix": [
+        [
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          0
+        ]
+      ],
+      "offdiag_count": 12
+    },
+    "lie": {
+      "matrix": [
+        [
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          0
+        ]
+      ],
+      "offdiag_count": 8
+    },
+    "claim_note": "word and Lie bridge channels are recorded separately"
+  },
+  "repair_matrix": {
+    "kind": "word-depth accessibility summary",
+    "depth_matrix": [
+      [
+        0,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        0,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        0
+      ]
+    ],
+    "max_finite_depth": 1,
+    "frozen_R1": 0,
+    "frozen_D_word": 0,
+    "frozen_D_lie": 0
+  },
+  "wall_record": null,
+  "claim_status": "evidence",
+  "claim_note": "constructed failure: forbidden route",
+  "failure_modes": [
+    "hallucinated P0->P3 in internal zone"
+  ]
+}

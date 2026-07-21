@@ -1,0 +1,199 @@
+{
+  "sofrs_version": "1.0",
+  "report_id": "compiler_ref",
+  "system": "5-block compiler IR (O2-like)",
+  "sectorization": {
+    "origin": "one-hot basic-block sectors",
+    "blocks": [
+      "B0(entry)",
+      "B1",
+      "B2",
+      "B3(side)",
+      "B4(exit)"
+    ],
+    "sector_count": 5,
+    "strict_sof_realization": true,
+    "alignment": "BB names, SSA provenance, CFG node correspondence"
+  },
+  "observable_family": {
+    "observables": [
+      "X_cfg (control-flow edges)",
+      "X_defuse (data-flow def-use chains)"
+    ],
+    "generator_type": "skew-symmetrised directed edge matrices"
+  },
+  "support_matrix": {
+    "kind": "word-generator direct support",
+    "matrix": [
+      [
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        1,
+        1,
+        1
+      ],
+      [
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        1,
+        1,
+        0
+      ]
+    ],
+    "offdiag_count": 12
+  },
+  "bridge_matrix": {
+    "word": {
+      "matrix": [
+        [
+          0,
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          0
+        ]
+      ],
+      "offdiag_count": 18
+    },
+    "lie": {
+      "matrix": [
+        [
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          1,
+          0
+        ]
+      ],
+      "offdiag_count": 12
+    },
+    "claim_note": "word and Lie bridge channels are recorded separately"
+  },
+  "repair_matrix": {
+    "kind": "word-depth accessibility summary",
+    "depth_matrix": [
+      [
+        0,
+        1,
+        2,
+        2,
+        2
+      ],
+      [
+        1,
+        0,
+        1,
+        1,
+        1
+      ],
+      [
+        2,
+        1,
+        0,
+        2,
+        1
+      ],
+      [
+        2,
+        1,
+        2,
+        0,
+        1
+      ],
+      [
+        2,
+        1,
+        1,
+        1,
+        0
+      ]
+    ],
+    "max_finite_depth": 2,
+    "frozen_R1": 8,
+    "frozen_D_word": 0,
+    "frozen_D_lie": 0
+  },
+  "wall_record": null,
+  "claim_status": "evidence",
+  "claim_note": "controlled reference (Regime A)",
+  "failure_modes": [
+    "controlled reference -- no failure mode applied"
+  ]
+}

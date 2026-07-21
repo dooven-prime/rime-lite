@@ -36,7 +36,6 @@ functions assume the same contract; callers using them directly should invoke
 import numpy as np
 from itertools import combinations
 
-
 FROZEN_DEPTH = 999
 
 
@@ -334,6 +333,7 @@ def assert_accessibility_inputs(Vs, Xs, **kwargs):
     if not report["valid"]:
         raise ValueError(_validation_error_message(report))
     return report
+
 
 def _gram_schmidt(vecs, tol=1e-8):
     """Orthonormalize a list of complex vectors. Two passes for stability.

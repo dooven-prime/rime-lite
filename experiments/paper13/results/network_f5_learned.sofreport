@@ -1,0 +1,153 @@
+{
+  "sofrs_version": "1.0",
+  "report_id": "network_f5_learned",
+  "system": "4-prefix (ACL policy)",
+  "sectorization": {
+    "origin": "one-hot prefix sectors",
+    "prefixes": [
+      "P0(local)",
+      "P1(dmz)",
+      "P2(internal)",
+      "P3(external)"
+    ],
+    "sector_count": 4,
+    "strict_sof_realization": true
+  },
+  "observable_family": {
+    "observables": [
+      "X_internal",
+      "X_external"
+    ],
+    "deformation": "ACL policy changes"
+  },
+  "support_matrix": {
+    "kind": "word-generator direct support",
+    "matrix": [
+      [
+        0,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        0,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        0
+      ]
+    ],
+    "offdiag_count": 12
+  },
+  "bridge_matrix": {
+    "word": {
+      "matrix": [
+        [
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          0
+        ]
+      ],
+      "offdiag_count": 10
+    },
+    "lie": {
+      "matrix": [
+        [
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          0
+        ]
+      ],
+      "offdiag_count": 4
+    },
+    "claim_note": "word and Lie bridge channels are recorded separately"
+  },
+  "repair_matrix": {
+    "kind": "word-depth accessibility summary",
+    "depth_matrix": [
+      [
+        0,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        0,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        0
+      ]
+    ],
+    "max_finite_depth": 1,
+    "frozen_R1": 0,
+    "frozen_D_word": 0,
+    "frozen_D_lie": 0
+  },
+  "wall_record": null,
+  "claim_status": "evidence",
+  "claim_note": "constructed failure: stale ACL policy",
+  "failure_modes": [
+    "ACL policy not updated, reference blocks prefixes"
+  ]
+}
