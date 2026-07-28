@@ -1,12 +1,12 @@
-"""Theorem verification:
-  - Rational spectral law: Spec(A₁₈) = {1 − k/9 | k ∈ {0,1,2,3,4,6}}
-  - Genuine gap: k=5 absent (not a numerical accident)
+"""Computational registration checks:
+  - Six eigenvalues match the displayed rational labels 1 - k/9
+  - k=5 is absent from the registered census
   - Multiplicities: [20, 2, 39, 26, 106, 35]
   - Projector completeness: Σ P_λ = I
   - Trace consistency: Tr(A) = Σ λᵢ·dᵢ
 
 Paper: Paper I, Sec 3 (Spectral decomposition)
-Invariant level: 1 (group algebra)
+Claim status: computational certificate
 """
 
 import numpy as np
@@ -17,10 +17,10 @@ TOL_EVAL = 1e-6
 TOL_ORTHO = 1e-10
 TOL_COMPLETE = 1e-10
 
-# Expected rational spectrum: lambda = 1 - k/9
+# Registered rational labels: lambda = 1 - k/9
 EXPECTED_K = {0, 1, 2, 3, 4, 6}
 EXPECTED_DIMS = [20, 2, 39, 26, 106, 35]  # in decreasing λ order
-K_ABSENT = 5  # k=5 MUST be absent
+K_ABSENT = 5
 
 op = CubieSpectralOperator.from_gens_dict(CubieMove.prim_moves)
 layers = op.layer_keys  # decreasing λ
@@ -38,10 +38,10 @@ check(n_layers == 6, f"Expected 6 layers, got {n_layers}")
 print(f"  OK — {n_layers} layers")
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# Test 2: Rational spectrum
+# Test 2: Numerical matching to displayed rational labels
 # ═══════════════════════════════════════════════════════════════════════════════
 
-print("Test 2: Rational eigenvalues λ = 1 - k/9 ...")
+print("Test 2: Eigenvalues registered against λ = 1 - k/9 ...")
 k_vals = []
 for lam in layers:
     k = round((1 - lam) * 9)
@@ -56,10 +56,10 @@ check(k_set == EXPECTED_K,
       f"k-set mismatch: expected {EXPECTED_K}, got {k_set}")
 print(f"  OK — k ∈ {sorted(k_set)}")
 
-# k=5 absence
+# k=5 absence in the registered census
 check(K_ABSENT not in k_set,
-      f"k={K_ABSENT} is present but should be genuinely absent")
-print(f"  OK — k={K_ABSENT} genuinely absent")
+      f"k={K_ABSENT} is present in the registered census")
+print(f"  OK — k={K_ABSENT} absent from the registered census")
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # Test 3: Multiplicities

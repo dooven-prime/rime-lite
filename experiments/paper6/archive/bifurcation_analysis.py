@@ -2,10 +2,10 @@
 
 Status: computational observation only.
 
-This script writes the same stabilized tables as
-``generator_moduli_space.py`` to ``data/_paper6_bifurcation_log.txt``. It is a
-lightweight support artifact for the Paper VI experimental section and a guard
-against table drift.
+This retired script writes a legacy snapshot to an ignored internal ``data/``
+directory. It is retained for provenance only. The active validation script
+``../validation/generator_moduli_space.py`` writes the public review record to
+``../results/_paper6_bifurcation_log.txt``.
 """
 
 from __future__ import annotations

@@ -45,13 +45,13 @@ All classes meet the first-pass coverage target.
 
 | Record | Classes | Species | Deformation | Eligible | Evidence |
 |---|---|---|---|:---:|---|
-| `A-rubik-collision-quotient` | A | Rubik QT/HT | affine projection parameter | yes | `experiments/paper4/rubik_collision_quotient.py` |
+| `A-rubik-collision-quotient` | A | Rubik QT/HT | affine projection parameter | yes | `experiments/paper4/validation/rubik_collision_quotient.py` |
 | `A-rubik-endpoint-pair-closures` | A | Rubik QT/HT | single QT generator weight | yes | `experiments/paper11/spectral_ade_collision.py` |
 | `A-rubik-simultaneous-pair-gap-response` | A | Rubik QT/HT | two-weight diagonal QT path | no | `experiments/paper11/spectral_ade_collision.py` |
-| `BF-rubik-r2-repair` | B,F | Rubik accessibility | fixed generator family | no | `experiments/paper5/path_commutator_cancellation.py` |
+| `BF-rubik-r2-repair` | B,F | Rubik accessibility | fixed generator family | no | `experiments/paper5/validation/path_commutator_cancellation.py` |
 | `F-rubik-type-iii-cancellation` | F | Rubik Type III/IV wild | static natural-sector audit | no | `experiments/paper10/rubik_wild_type34_audit.py` |
-| `F-rubik-type-iv-incidence` | F | Rubik Type III/IV wild | algebraic bridge perturbation | yes | `experiments/paper7/incidence_variety_codim.py` |
-| `BF-synthetic-complement-repair` | B,F | Synthetic Type III/IV | constructed obstruction control | no | `experiments/paper5/complement_explosion.py` |
+| `F-rubik-type-iv-incidence` | F | Rubik Type III/IV wild | algebraic bridge perturbation | yes | `experiments/paper7/validation/incidence_variety_codim.py` |
+| `BF-synthetic-complement-repair` | B,F | Synthetic Type III/IV | constructed obstruction control | no | `experiments/paper5/validation/complement_explosion.py` |
 | `BCF-quantum-cnot-threshold` | B,C,F | Quantum Clifford+CNOT | CNOT-strength matrix interpolation | yes | `experiments/paper11/repair_persistence_quantum.py` |
 | `BF-control-kalman-chain` | B,F | Control Kalman | static chain realization | no | `experiments/paper10/control_pde_combinatorial_sof.py` |
 | `B-transformer-lie-depth-repair` | B | NN Transformer activation | single synthetic transformer realization | no | `experiments/paper12/transformer_activation_sof.py` |

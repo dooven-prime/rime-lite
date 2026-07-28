@@ -1,4 +1,4 @@
-"""Theorem verification:
+"""Finite representation-construction regression:
   - Group homomorphism: ρ(g₁·g₂) = ρ(g₁) ρ(g₂)
   - Unitary consistency: ρ(g)† ρ(g) = I
   - Block decomposition: ρ(g) = diag(cp, ep, co, eo)

@@ -6,8 +6,8 @@
 
 Independent Researcher | RIME Project | 2026
 
-*This paper is Part XI of the RIME program. Paper VII isolates generic
-accessibility completion; Paper VIII fixes the static SOF object layer; Paper IX
+*This paper is Part XI of the RIME program. Paper VII isolates incidence
+geometry and promotion limits; Paper VIII fixes the static SOF object layer; Paper IX
 studies observable dynamics over SOFs; and Paper X isolates the Universal
 Observable Pipeline together with a five-layer SOF Registry. Paper XI turns
 that registry into an observable classification layer: given registered SOFs,
@@ -587,7 +587,7 @@ smooth model.
 | C | Terminal-structure walls | the number, identity, incidence, or persistence of attracting, absorbing, dead, recurrent, or stopping components changes | GRN basin loss, absorbing Markov classes, barrier/stopping regions |
 | D | Plateau walls | observables remain flat, delayed, oscillatory, or degenerate over intervals | Yang-like degeneration, training plateaus, grokking-style delayed rates |
 | E | Nonsmooth or discrete walls | wall is induced by a discrete jump, rank selection, or piecewise-smooth kink | graph rewiring, ReLU kinks, Top-k activation selection |
-| F | Bridge or incidence walls | bridge products, rank incidence, or algebraic association controls wall behavior | Rubik Type III/IV mechanisms, incidence products, bridge-level audits |
+| F | Bridge or incidence walls | bridge products, rank incidence, or algebraic association controls wall behavior | Rubik cancellation/incidence mechanisms, incidence products, bridge-level audits |
 
 ![Wall-coordinate map. The qualitative map places registered
 observable morphologies by qualitative orientation and regularity. A--E are
@@ -633,8 +633,8 @@ $p_W=0.45$, and $100\%$ post-activation stability on the tested grid.](../../fig
 
 The snapshot is not a theorem and should not be read as a population estimate
 for all possible SOFs. It is a taxonomy-sample statistic. Its immediate interpretation
-is useful: repair walls are the most common in the taxonomy sample, echoing
-the Paper VII focus on generic completion and repair; spectral collision walls
+is useful: repair walls are the most common in the taxonomy sample, while
+Paper VII separately studies incidence and promotion boundaries; spectral collision walls
 are the rarest, suggesting that Paper XI requires more continuous deformation
 models before spectral-collision taxonomy can be considered representative.
 
@@ -729,7 +729,7 @@ observable signatures, not theorem-level ADE classes.
 | NF-3: oscillatory repair | repair or plateau observable alternates before stabilizing | nonzero oscillation index $O_W$ |
 | NF-4: plateau collapse | plateau interval degenerates, flattens, or terminates | monotone degeneration or endpoint collapse |
 | NF-5: terminal absorption | a state, sector, or channel enters an absorbing/frozen terminal regime | frozen pairs with no repair |
-| NF-6: bridge/incidence association | a bridge product, image-kernel relation, or algebraic incidence controls the wall | Rubik Type III/IV and rank-protected bridge audits |
+| NF-6: bridge/incidence association | a bridge product, image-kernel relation, or algebraic incidence controls the wall | Rubik cancellation/incidence and rank-protected bridge audits |
 
 Observable wall records are first sorted by five axes.
 
@@ -1082,7 +1082,7 @@ replace the record-level claim-status data in the five-layer census.
 | Rubik spectral deformation | A: higher-order endpoint with 16 pairwise $A_1$ closures | Smooth-branch diagnostic; no tested $A_2\to A_1+A_1$ split. |
 | Rubik $\Sigma_{\mathrm{comm}}$ slice | A/B anchor: sparse sampled intersection | Boundary diagnostic; codimension $11$ belongs to Paper VI. |
 | Accessibility $R_1/R_2/D$ | B: support or first-depth repair jump | Conditional on a declared deformation and threshold. |
-| Rubik Type III/IV mechanisms | F: cancellation and rank-incidence structure | Algebraic evidence; not ADE by default. |
+| Rubik cancellation/incidence mechanisms | F: cancellation and rank-incidence structure | Algebraic evidence; not ADE by default. |
 | Quantum accessibility | B: entangling-gate $D$-repair | Diagnostic evidence; local model unclassified. |
 | Markov absorbing boundary | C: unrepaired terminal component | Diagnostic evidence; not ADE by default. |
 | Graph edge rewiring | E: discrete gap and support change | Outside smooth ADE. |
@@ -1312,7 +1312,7 @@ to that directory; `paper10/` and `paper12/` are relative to `experiments/`.
 ## References
 
 **Program lineage.** Paper XI depends on Papers VII--X. Paper VII supplies the
-generic completion and repair boundary \cite{paper7}; Paper VIII supplies the
+incidence and promotion boundary \cite{paper7}; Paper VIII supplies the
 SOF object layer \cite{paper8}; Paper IX supplies observable trajectories and
 wall pullbacks \cite{paper9}; Paper X supplies the Universal Observable
 Pipeline and five-layer SOF Registry \cite{paper10}.

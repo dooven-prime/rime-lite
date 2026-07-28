@@ -14,6 +14,24 @@ ROOT = HERE.parent
 DEFAULT_SCHEMA = ROOT / "schemas" / "registry" / "v1.0.schema.json"
 DEFAULT_SNAPSHOTS = [HERE / "paper10-release-v1.0.registry.json"]
 
+# The release snapshot is immutable; resolve repository-only path migrations
+# when checking whether its historical evidence still exists in the active tree.
+RELOCATED_EVIDENCE_PATHS = {
+    "experiments/paper5/path_commutator_cancellation.py": (
+        "experiments/paper5/validation/path_commutator_cancellation.py"
+    ),
+    "experiments/paper7/incidence_variety_codim.py": (
+        "experiments/paper7/validation/incidence_variety_codim.py"
+    ),
+    "experiments/paper7/markov_graph_sof.py": (
+        "experiments/paper7/archive/markov_graph_sof.py"
+    ),
+}
+
+
+def repository_path(value: str) -> Path:
+    return ROOT / RELOCATED_EVIDENCE_PATHS.get(value, value)
+
 
 def schema_errors(payload: dict, schema: dict) -> list[str]:
     validator = Draft202012Validator(schema, format_checker=FormatChecker())
@@ -49,7 +67,7 @@ def contract_errors(payload: dict) -> list[str]:
         metadata = entry.get("metadata", {})
         for field in ("evidence_scripts", "reports"):
             for value in metadata.get(field, []):
-                if not (ROOT / value).is_file():
+                if not repository_path(value).is_file():
                     errors.append(f"{entry_id}: missing {field} path: {value}")
 
     if snapshot.get("id") == "paper10-release-v1.0":
@@ -109,4 +127,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

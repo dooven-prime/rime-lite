@@ -1,16 +1,16 @@
-"""Theorem verification — CubieSpectralOperator: the canonical spectral engine.
+"""Numerical certificate — CubieSpectralOperator canonical spectral engine.
 
-CubieSpectralOperator is the SINGLE source of truth for spectral decomposition.
-SpectralStructure is only a theorem façade — it predicts/explains/names what CSO
-computes numerically. All spectral claims MUST be verified against CSO output.
+CubieSpectralOperator supplies the registered numerical spectral decomposition.
+SpectralStructure names structural and computational data that must retain its
+declared claim status when compared with this output.
 
 These tests require CubieSpectralOperator (~2-3 min total). Slow test suite.
 
 Invariant levels:
-  Level 1 — Spectral theorem:  eigenvalues, projectors, orthogonality, minimal
+  Level 1 — Numerical spectral checks: eigenvalues, projectors, orthogonality, minimal
                                 polynomial, trace consistency
-  Level 2 — Bose-Mesner:       polynomial closure, adjacency algebra dimension,
-                                k-set reconstruction (numerical confirmation)
+  Level 2 — Numerical registration: polynomial span, Lagrange reconstruction,
+                                k-set matching
   Level 3 — Dynamical prep:    slow-fast splitting, generator symmetry
 """
 
@@ -24,11 +24,12 @@ TOL = 1e-10
 # Level 1 — Spectral theorem invariants
 # ═══════════════════════════════════════════════════════════════════════════
 
-def test_minimal_polynomial():
-    """‖p(A)‖ = 0 where p(x) = ∏_{λ∈Spec(A)} (x − λ).
+def test_minimal_polynomial_residual():
+    """Register the residual for p(A), p(x) = product(x - lambda).
 
-    The degree-6 polynomial annihilates A — this is the fundamental
-    closure property: the spectral decomposition is algebraically complete.
+    The coefficients use the six floating-point spectral labels. A small
+    residual is a numerical consistency check, not an exact annihilation
+    certificate.
     """
     op = CubieSpectralOperator()
     A = op.A
@@ -39,7 +40,7 @@ def test_minimal_polynomial():
     residual = float(np.linalg.norm(p_A, 'fro'))
 
     assert residual < 1e-6, f'‖p(A)‖ = {residual:.2e}, expected < 1e-6'
-    print(f'test_minimal_polynomial: OK  (‖p(A)‖ = {residual:.1e})')
+    print(f'test_minimal_polynomial_residual: OK  (‖p(A)‖ = {residual:.1e})')
 
 
 def test_multiplicity_consistency():
@@ -64,10 +65,11 @@ def test_multiplicity_consistency():
     print(f'test_multiplicity_consistency: OK  (Σ dim=228, Tr(A)={trace_A:.6f})')
 
 
-def test_spectral_projector_theorem():
-    """P_i P_j = δ_ij P_i, Σ P_i = I, A = Σ λ_i P_i.
+def test_spectral_projector_registration():
+    """Numerically check P_i P_j, completeness, and reconstruction.
 
-    This is the full spectral theorem — stronger than eigenvalue count alone.
+    These residual checks register the computed eigenspaces; the general
+    finite-dimensional spectral theorem is separate from this computation.
     """
     op = CubieSpectralOperator()
     layers = op.layer_keys
@@ -98,18 +100,18 @@ def test_spectral_projector_theorem():
     assert np.allclose(A_recon, op.A, atol=1e-3), \
         f'‖A − Σ λ_i P_i‖ = {np.linalg.norm(A_recon - op.A):.1e}'
 
-    print(f'test_spectral_projector_theorem: OK  ({n} layers)')
+    print(f'test_spectral_projector_registration: OK  ({n} layers)')
 
 
 # ═══════════════════════════════════════════════════════════════════════════
-# Level 2 — Bose-Mesner / algebraic structure
+# Level 2 — numerical algebraic registration
 # ═══════════════════════════════════════════════════════════════════════════
 
-def test_bose_mesner_dimension():
+def test_krylov_dimension_registration():
     """dim span{I, A, A², …, A^(d−1)} = 6 where d = |Spec(A)|.
 
-    The adjacency algebra closes at degree equal to the number of distinct
-    eigenvalues — the defining property of a Bose-Mesner / association scheme.
+    Reports the numerical Krylov/algebra dimension of C[A] for the registered
+    matrix. This does not identify a Bose--Mesner algebra.
     """
     op = CubieSpectralOperator()
     A = op.A
@@ -129,14 +131,15 @@ def test_bose_mesner_dimension():
 
     assert rank == 6, \
         f'dim span{{I,A,…,A^{n_eigs}}} = {rank}, expected {n_eigs}'
-    print(f'test_bose_mesner_dimension: OK  (rank = {rank})')
+    print(f'test_krylov_dimension_registration: OK  (rank = {rank})')
 
 
-def test_rational_projector_reconstruction():
+def test_lagrange_projector_registration():
     """P_i = ∏_{j≠i} (A − λ_j I) / (λ_i − λ_j) matches eigenspace projector.
 
-    The Lagrange interpolation formula reconstructs spectral projectors as
-    rational polynomials in A — proving projectors lie in ℚ[A], not just ℂ.
+    Numerically reconstructs each projector as a polynomial in A over
+    floating-point coefficients. Membership in C[A] is the ordinary finite
+    spectral-calculus statement; this test is not an exact proof of Q[A].
     """
     op = CubieSpectralOperator()
     A = op.A
@@ -157,7 +160,7 @@ def test_rational_projector_reconstruction():
         assert error < 1e-3, \
             f'P_{lam_i:.6f}: ‖Lagrange − eigenspace‖ = {error:.1e}'
 
-    print(f'test_rational_projector_reconstruction: OK  ({len(layers)} layers)')
+    print(f'test_lagrange_projector_registration: OK  ({len(layers)} layers)')
 
 
 def test_k_set_reconstruction():
@@ -202,7 +205,7 @@ def test_k_set_reconstruction():
 
     print(f'test_k_set_reconstruction: OK  (k-set → {len(k_set)} eigenvalues)')
 
-    # Verify k=5 genuinely absent at the reconstruction level
+    # Verify k=5 is absent from the registered reconstruction.
     assert 5 not in k_set, 'k=5 should be absent from k-set'
 
 

@@ -1,7 +1,7 @@
 # Program Philosophy
 
 **Status:** public philosophy note for the RIME program. This file explains the
-Rubik-as-laboratory stance and the sectorization bridge from the trilogy to
+Rubik-as-laboratory stance and the sectorization bridge from the early papers to
 Papers VIII--XIII. It is not a proof source; paper manuscripts and
 [PROGRAM_MAP.md](PROGRAM_MAP.md) control theorem boundaries.
 
@@ -12,7 +12,7 @@ Spectral geometry determines the objects.
 Compatible sectorization is the interface.
 Observable geometry is the invariant.
 Accessibility geometry determines their behavior.
-Genericity determines why the behavior is stable.
+Genericity tests when the behavior is stable.
 ```
 
 The objective of this program is not to study the Rubik's Cube itself.
@@ -51,15 +51,16 @@ observable wall taxonomy
 SOF diagnostic reporting
 ```
 
-Each paper removes or abstracts one layer of problem-specific structure while
-preserving the mathematical object introduced at the previous stage.
+Each paper isolates or abstracts one layer of problem-specific structure.
+Later papers may refine the object types rather than assume a theorem
+dependency on every earlier formulation.
 
 The long-term goal is therefore not a theory of Rubik, but a theory of
 sectorized observable geometry and accessibility.
 
 ---
 
-## Two-Layer Unity
+## Two-Layer Unity and the Typed Middle
 
 The program now has two formal layers of unity, joined by sectorization and
 extended by the observable pipeline.
@@ -81,18 +82,20 @@ the usual equivalences. This layer is classical.
                         |
                         v
 
-        Transport Unity (RIME)
+        Observable Transport Architecture (RIME)
 ========================================================
-Once sectors and observable families are chosen, the resulting
-sectorized observable architecture carries a common transport ladder:
+Once sectors and typed observable families are registered, the
+common middle layer is branched:
 
-  R1       projected support
-  R2       projected commutator survival
-  D        first Lie-depth accessibility
-  J_acc    accessibility jets
-  Walls    spectral/accessibility discriminants
-  Completion
-           generic completion principles such as (R1,R2) -> D
+  admissibility gates
+       |
+  typed sector fields
+       |
+       +-- operator / routed composition / full words
+       |
+       +-- Lie generators / brackets / Hall depth
+       |
+  branch-specific jets, walls, and promotion certificates
 ```
 
 Compatible sectorization is the interface between the two layers. It is not
@@ -101,10 +104,25 @@ Sectorized Observable Framework (SOF):
 
 ```text
 source system
+  -> admissibility or realization gate
   -> compatible sectorization
-  -> SOF data (V, {Q_i}, X)
-  -> observable shadows R1, R2, D, J_acc, walls
+  -> registered operator and/or Lie/Hall families
+  -> typed shadows, jets, and walls
 ```
+
+The central mathematical question is not whether every system has the same
+unqualified ladder. It is:
+
+```text
+After projection, matrix composition, route summation, and Lie
+antisymmetrization, which information survives, which cancels, and which can
+be promoted only under an additional certificate?
+```
+
+Boolean paths, routed products, full words, and Lie brackets are therefore
+different objects. Graph-to-product nondegeneracy, no-cancellation conditions,
+operator-to-Lie registration, closure saturation, and proxy-to-shadow control
+are different promotion problems.
 
 This interface is necessary for the RIME shadows.  Without sector projectors
 there is no sector-to-sector support, no bridge product, no frozen pair, no
@@ -119,7 +137,7 @@ This is the current clean separation:
 |-------|--------|------|
 | Structural Unity | classical | Wedderburn-Artin / character-theoretic block decomposition |
 | Sectorization | interface | converts representation data into SOF data |
-| Transport Unity | RIME contribution | studies projected support, commutators, depth, jets, walls, and completion |
+| Observable Transport Architecture | RIME contribution | studies typed operator/word and Lie/Hall branches, their information loss, jets, walls, and promotion certificates |
 | Observable Pipeline | Paper X contribution | compares source systems through finite space, sectorization, observables, shadows, and diagnostics |
 | Diagnostic Protocol | Paper XII contribution | serializes one declared realization as a versioned, claim-status-aware SOF Report |
 
@@ -130,9 +148,10 @@ represented systems, quantum gate systems, graph systems, Markov systems,
 control/PDE systems, and finite spectral-triple systems can be compared once
 their sectors and observable families have been fixed.
 
-The statement must remain claim-status gated. RIME does not yet prove that
-`R_1/R_2/D` completely determine all transport behavior in every sectorized
-system. The stable statement is:
+The statement must remain claim-status gated. RIME does not identify operator
+support, word accessibility, and Lie/Hall accessibility, and it does not prove
+that one low-order signature determines every higher transport object. The
+stable statement is:
 
 ```text
 Sectorization is source-dependent.
@@ -143,14 +162,17 @@ This is the philosophical version of the Paper X boundary: the pipeline is the
 theorem-level organizational object; the SOF Registry is evidence architecture,
 not a universal dynamics theorem.
 
-The stronger completion statement, such as `(R_1,R_2) -> D`, belongs to the
-generic completion program under the richness and nondegeneracy hypotheses
-isolated in Paper VII.
+Stronger completion statements belong to branch-qualified promotion programs.
+For example, graph paths require image--kernel nondegeneracy to promote to
+routed products, routed terms require cancellation control to promote to full
+words, and low-order Lie supports require declared richness and closure
+hypotheses to constrain `D_Lie`. Paper VII must be re-audited in these typed
+terms before any such statement is propagated as a common SOF principle.
 
 This also fixes the relation to adjacent representation-rigidity projects.  A
 project such as W33 may be viewed as a parallel world in which a concrete finite
 combinatorial object is resolved into representation-theoretic rigidity.  RIME
 adopts the same philosophy of finite represented laboratories, but asks a
 different mathematical question: not how representations decompose, but how
-observable transport emerges, deforms, and becomes generically stable above
-that decomposition.
+observable transport emerges, deforms, and admits stable promotion under
+explicit hypotheses above that decomposition.

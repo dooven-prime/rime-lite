@@ -1,149 +1,138 @@
 # RIME Program Overview
 
-## One-Page Project Summary
+RIME (Representation-Induced Mechanics and Evolution) studies how spectral,
+transport, accessibility, and deformation structures arise in
+finite-dimensional represented systems. The Rubik cube provides a concrete,
+reproducible, and highly noncommutative laboratory. It is used as a
+representation-theoretic testbed, not as a puzzle-solving problem.
 
-**Public release scope.** This overview refers to the current public RIME
-release: Papers I--XIII plus the Computational Canonical Specification (CCS).
-The original three-paper trilogy remains the Rubik-centered foundation; Papers
-IV--XIII extend it into the broader RIME program.
+The public program currently contains Papers I--XIII. Papers I--VII are
+independent version-2 papers, and Papers VIII--XIII retain their published
+release-local semantics unless explicitly reopened. The canonical publication
+list is the root [Public Release table](../README.md#public-release).
 
-Published DOI records are immutable release snapshots. The repository may
-carry explicitly labeled later manuscript candidates; the current Paper XII
-repository copy is such a candidate and does not alter the published SOFRS
-v1.0 contract.
+## Central Architecture
 
-RIME studies how spectral, transport, accessibility, and deformation structures
-arise from finite-dimensional represented systems. The Rubik cube is used as a
-finite, explicit, highly noncommutative laboratory, not as a puzzle-solving
-object.
-
-The program invariant is:
+RIME asks what information survives each passage from a represented system to
+observable behavior:
 
 ```text
-Spectral geometry determines the objects.
-Compatible sectorization is the interface.
-Observable geometry is the invariant.
-Accessibility geometry determines their behavior.
-Genericity determines why the behavior is stable.
+represented system
+  -> compatible sectorization
+  -> registered observable family
+  -> typed support and composition data
+  -> deformation or comparison diagnostics
 ```
 
-## Thirteen-Paper Arc
-
-| Paper | Role | Main question |
-|-------|------|---------------|
-| Paper I | spectral formation | Why does the canonical Rubik spectrum have six rational layers? |
-| Paper II | transport topology | Why does the resolved sector graph have its observed structure? |
-| Paper III | accessibility separation | Why can composition see channels Lie generation misses? |
-| Paper IV | collision geometry | Why are the six spectral layers a collision quotient? |
-| Paper V | repair calculus | What repairs binary support after path-commutator cancellation? |
-| Paper VI | deformation geometry | Why do sectors and accessibility walls move under generator variation? |
-| Paper VII | generic completion | Why is accessibility generically stable? |
-| Paper VIII | SOF object theory | What is the sectorized observable object? |
-| Paper IX | observable dynamics | How do SOF observables evolve under deformation? |
-| Paper X | observable pipeline | Why do different species share one observable pipeline? |
-| Paper XI | observable classification | Which wall records and signatures belong to common observable classes? |
-| Paper XII | diagnostic protocol | How does SOF produce reusable, claim-status-aware SOF Reports? |
-| Paper XIII | comparison geometry | How can two SOF Reports be aligned and compared without conflating difference with defect? |
-
-The dependency chain is:
+When the sectors vary with parameters, the spectral carrier must first pass
+the admissibility gates
 
 ```text
-Arithmetic
-  -> Transport
-  -> Lie/composition separation
-  -> Collision geometry
-  -> Accessibility repair
-  -> Generator-set deformation
-  -> Generic completion
-  -> SOF object theory
-  -> Observable dynamics
-  -> Universal observable pipeline
-  -> Observable wall classification
-  -> SOF diagnostic reporting
-  -> SOF Report Alignment and comparison geometry
+Sigma_comm -> Sigma_normal -> Sigma_spec -> {Q_i(w)}.
 ```
 
-## Main Objects
+Commutativity alone does not supply orthogonal sectors, and pointwise
+diagonalization alone does not supply coherent projector fields.
 
-The trilogy begins with the Rubik cubie representation and the generator
-average
+After sectorization, the operator and Lie constructions form separate
+branches:
 
 ```text
-A = (1 / |S|) sum_{s in S} rho(s).
+operator branch:
+  R_1[Y] -> routed products C_d[Y] -> full words W_d[Y]
+         -> D_route[Y], D_word[Y]
+
+Lie branch:
+  R_1^Lie -> R_2^Lie -> D_Lie
 ```
 
-The canonical spectrum collapses to six rational layers:
+These arrows indicate construction order, not automatic promotion. Boolean
+paths, projected products, word sums, commutators, and Lie depth are distinct
+objects. Each promotion requires its own nondegeneracy, cancellation,
+saturation, or comparison certificate.
 
-```text
-Spec(A) = {1, 8/9, 7/9, 2/3, 5/9, 1/3}.
-```
+## Program Arc
 
-The QT/HT joint-sector decomposition refines this into nine sectors. Papers
-II--III study transport and accessibility on these sectors. Papers IV--VII
-then separate the post-trilogy geometry into four layers:
+### Papers I--III: Rubik-Centered Foundations
 
-```text
-fixed projection geometry      -> Paper IV
-static accessibility calculus  -> Paper V
-moving sector/wall geometry    -> Paper VI
-generic completion theory      -> Paper VII
-```
+- **Paper I** studies block spectral structure and conditional arithmetic
+  criteria for averaging operators.
+- **Paper II** studies sector non-invariance, projected generator blocks, and
+  the registered direct transport graph.
+- **Paper III** separates support-graph reachability from projected matrix
+  composition through the image--kernel obstruction.
 
-## Sectorized Observable Architecture
+These papers are self-contained. Their compatible interfaces do not form a
+Paper I -> Paper II -> Paper III theorem chain.
 
-The common organizational architecture after Paper V is the Sectorized Observable
-Framework (SOF). In the current papers this is used only as neutral terminology
-for data of the form
+### Papers IV--VII: Geometry and Promotion Limits
 
-```text
-(V, {Q_i}, X),
-```
+- **Paper IV** studies collision quotients of a fixed finite affine-branch
+  arrangement and gives only a conditional exact Rubik interpretation.
+- **Paper V** separates direct support, routed products, full words,
+  commutator support, and Lie depth on a fixed sectorized system.
+- **Paper VI** gives linearized commutativity/normality certificates and
+  normality-gated pointwise registrations, not a moving-wall theorem.
+- **Paper VII** studies fixed-rank image--kernel incidence, rank protection,
+  and the limits of graph-to-route and low-order-to-depth promotion.
 
-where `V` is a finite-dimensional space, `{Q_i}` is a sector
-projector family, and `X` is a chosen observable family. The observables
-`R_1`, `R_2`, and `D` are defined relative to this data, not to the Rubik
-representation alone.
+These are neighboring self-contained interfaces. Paper IV keeps its
+arrangement fixed; Paper VI treats moving spectral fields only as a gated
+research target; Paper VII does not assert a generic completion theorem.
 
-SOF is a sectorized observable architecture. It does not prescribe a universal wall
-theory; deformation geometry is chosen separately in each branch.
+### Papers VIII--XIII: Sectorized Observable Framework
 
-The lightweight registry lives in [SOF_REGISTRY.md](SOF_REGISTRY.md). The post-VII SOF
-material is split by role:
+- **Paper VIII** introduces the static SOF object language and strict
+  morphisms.
+- **Paper IX** studies observable trajectories, deformation geometry, and
+  wall diagnostics.
+- **Paper X** formulates the Universal Observable Pipeline and maintains
+  Registry evidence.
+- **Paper XI** organizes observable wall records and classification
+  boundaries.
+- **Paper XII** defines the SOF Report protocol and its machine-readable
+  single-system contract.
+- **Paper XIII** defines aligned report comparison and factual audit
+  signatures.
 
-- [SOF_OBJECTS.md](SOF_OBJECTS.md) for the static object layer;
-- [SOF_DEFORMATIONS.md](SOF_DEFORMATIONS.md) for observable dynamics and walls;
-- [SOF_REGISTRY.md](SOF_REGISTRY.md) for cross-species evidence, application routing, and
-  claim-status boundaries.
+The current published terms in Papers VIII--XIII are release facts. Migrating
+them to the branched typed architecture requires versioned paper, artifact,
+figure, and Registry updates. The frozen Paper X Registry v1 snapshot is not
+silently rewritten.
 
-Detailed applications, comparison controls, and external precedents are
-documented in Papers X--XIII and their References sections. Internal
-research-routing notes are intentionally not part of the public documentation
-contract.
+## Claim Discipline
 
-Further SOF theorem upgrades remain future work. The current theorem layers
-remain paper-specific and claim-status gated.
+RIME keeps four reader-facing claim levels separate:
 
-## Repository Entry Points
+| Level | Meaning |
+|-------|---------|
+| Theorem | exact statement proved from declared hypotheses |
+| Computational Certificate | reproducible finite computation tied to declared inputs |
+| Computational Observation | bounded numerical pattern without theorem promotion |
+| Research Program | proposed extension, conjectural bridge, or open problem |
 
-| Resource | Public role |
-|----------|-------------|
-| `papers/paper1/`--`papers/paper13/` | canonical public manuscript sources and explicit revision candidates |
-| `ccs/canonical_specification.md` | canonical trilogy computation and claim dependencies |
-| [PROGRAM_MAP.md](PROGRAM_MAP.md) | program architecture, layer vocabulary, and Rubik/general boundary |
-| [PAPER_SCOPE.md](PAPER_SCOPE.md) | per-paper ownership and source-of-truth order |
-| [PROGRAM_PHILOSOPHY.md](PROGRAM_PHILOSOPHY.md) | Rubik-as-laboratory rationale |
-| [CORE_INVARIANTS.md](CORE_INVARIANTS.md) | stable Rubik calibration data |
-| [conventions.md](conventions.md) | coordinates, move encoding, composition, and tolerances |
-| [SOF_OBJECTS.md](SOF_OBJECTS.md) | Paper VIII object-layer companion |
-| [SOF_DEFORMATIONS.md](SOF_DEFORMATIONS.md) | Paper IX dynamic-layer companion |
-| [SOF_REGISTRY.md](SOF_REGISTRY.md) | Paper X Registry companion and evidence map |
-| [TRILOGY_OVERVIEW.md](TRILOGY_OVERVIEW.md) | trilogy-only introduction |
-| `experiments/README.md` | support-script and claim map |
-| `schemas/README.md` | published SOFRS, SOFAudit, and Registry contract map |
+Numerical residuals do not prove exact arithmetic identities. A finite atlas
+does not prove a generic completion theorem. A proxy trajectory does not prove
+a binary support or depth transition without an explicit proxy-to-shadow
+bridge.
 
-## Scope
+## Rubik and General Theory
 
-RIME is not a cube-solving project. It does not study solving algorithms,
-scramble search, neural solvers, sticker rendering, or game mechanics. The cube
-is used as a finite representation-theoretic laboratory for spectral
-accessibility.
+Rubik-specific records include the 228-dimensional cubie realization, the
+standard 18 face-turn family, six registered averaging layers, nine registered
+QT/HT sectors, and the sparse direct transport graph. These records provide a
+finite calibration laboratory.
+
+The general objects are averaging operators, compatible sectorizations,
+collision arrangements, projected compositions, word and commutator support,
+incidence varieties, normal spectral charts, observable deformations, and
+aligned report comparisons. A Rubik computation becomes a general theorem only
+when the abstract hypotheses and the promotion step are stated and proved.
+
+## Reading Further
+
+- [Public documentation index](README.md)
+- [Detailed program map](PROGRAM_MAP.md)
+- [Paper ownership and scope](PAPER_SCOPE.md)
+- [Rubik-as-laboratory philosophy](PROGRAM_PHILOSOPHY.md)
+- [Experiment and reproducibility map](../experiments/README.md)

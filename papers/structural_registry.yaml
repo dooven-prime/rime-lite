@@ -30,7 +30,7 @@ appendix:
 
   app:ccs-claim-status:
     location: "CCS Appendix E"
-    title: "Claim Status Register"
+    title: "Archive Status Register"
 
   app:ccs-kappa-hierarchy-search:
     location: "CCS Appendix F"
@@ -54,31 +54,6 @@ appendix:
     location: "CCS I.3"
     title: "Algebraic Extensions"
 
-  # -- Paper II Appendices --
-  app:p2-noncommutative-support-construction:
-    location: "Paper II Appendix A"
-    title: "Noncommutative Support Construction"
-
-  app:p2-cp-permutation-channel:
-    location: "Paper II Appendix B"
-    title: "The CP Permutation Channel (Type II)"
-
-  app:p2-t7-edge-tables:
-    location: "Paper II Appendix C"
-    title: "T7 Edge Tables"
-
-  app:p2-canonical-transport-summary:
-    location: "Paper II Appendix D"
-    title: "Canonical Transport Summary"
-
-  app:p2-generator-family-universality:
-    location: "Paper II Appendix E"
-    title: "Generator-Family Universality"
-
-  app:p2-numerical-methods-s3:
-    location: "Paper II Appendix F"
-    title: "Numerical Methods and S₃ Verification"
-
   # -- Paper III Appendices --
   app:p3-compact-data-reference:
     location: "Paper III Appendix A"
@@ -99,7 +74,7 @@ appendix:
 figure:
   fig:c0-structural-pipeline:
     location: "CCS Figure C0"
-    title: "Structural Pipeline — Trilogy Weld"
+    title: "Withdrawn First-Version Structural Pipeline"
 
   fig:c1-canonical-spectrum:
     location: "CCS Figure C1"
@@ -219,7 +194,7 @@ table:
 
   tab:c16-t7-morphisms:
     location: "CCS Table C16"
-    title: "T7 Morphisms"
+    title: "Historical Graph-Only Pair Census"
 
   tab:c17-accessibility-classes:
     location: "CCS Table C17"

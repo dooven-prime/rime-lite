@@ -1,10 +1,11 @@
 """
-Group representation utilities for the Accessibility Completeness framework.
+Group representation utilities for typed sectorized-operator diagnostics.
 
 Sections:
   1. Finite group enumeration -- symmetric_group, compose_perm, permutation_order, etc.
   2. Representations -- regular_rep, permutation_rep, block_diag_rep, skew_log_generators
-  3. Sector tools -- class_sum_center_ops, symmetrized_generator_center_ops,
+  3. Sector tools -- class_sum_center_ops,
+     symmetrized_generator_hermitian_ops,
      sector_bases_from_projectors, block_matrix_in_sector_basis
 
 All functions operate on raw numpy arrays. No CubieSpectralOperator dependency.
@@ -182,17 +183,26 @@ def block_diag_rep(reps):
     return result
 
 
-def skew_log_generators(rhos):
-    """Compute skew-Hermitian Lie algebra generators from unitary representations.
+def skew_log_generators(rhos, branch="scipy_principal"):
+    """Register skew-Hermitian generators using a declared log branch.
 
     X_g = (log rho(g) - log rho(g)^H) / 2
 
+    The currently supported registration is SciPy's principal matrix logarithm.
+    Finite-order logarithms or other branch choices are different operator
+    families and must be implemented under a different explicit registration.
+
     Args:
         rhos: list of unitary representation matrices.
+        branch: must be ``"scipy_principal"``.
 
     Returns:
         list of skew-Hermitian matrices.
     """
+    if branch != "scipy_principal":
+        raise ValueError(
+            "unsupported log branch; only 'scipy_principal' is registered"
+        )
     Xs = []
     for rg in rhos:
         X = logm(rg)
@@ -258,8 +268,10 @@ def class_sum_center_ops(group, rep_fn, hermitian=True, class_key=None):
     return ops
 
 
-def symmetrized_generator_center_ops(rho_gens):
-    """Build center operators from symmetrized skew-log generators.
+def symmetrized_generator_hermitian_ops(rho_gens):
+    """Build Hermitian registration operators from skew-log generators.
+
+    These operators need not be central and need not commute with one another.
 
     For each generator rho_g: iX = (i * skew_log(rho_g) + h.c.) / 2
 
@@ -277,12 +289,25 @@ def symmetrized_generator_center_ops(rho_gens):
     return ops
 
 
-def build_center_operators(group, gen_perms, rep_fn, class_key=None):
-    """Convenience: build the standard set of center operators.
+def symmetrized_generator_center_ops(rho_gens):
+    """Deprecated alias with an incorrect historical ``center`` label."""
+    import warnings
+    warnings.warn(
+        "symmetrized_generator_center_ops() is deprecated; these operators "
+        "need not be central. Use symmetrized_generator_hermitian_ops()",
+        DeprecationWarning,
+        stacklevel=2,
+    )
+    return symmetrized_generator_hermitian_ops(rho_gens)
 
-    Combines class_sum_center_ops + symmetrized_generator_center_ops,
-    which is the standard recipe for sector decomposition in the
-    Accessibility Completeness framework.
+
+def build_sector_registration_operators(
+        group, gen_perms, rep_fn, class_key=None):
+    """Build the ordered Hermitian family used by the S4 registration.
+
+    Central class sums are followed by noncentral generator-derived Hermitian
+    operators. The full family is generally noncommuting and must be passed to
+    ``ordered_compression_sectors``, not ``joint_diag_sectors``.
 
     Args:
         group: list of group elements (permutation tuples).
@@ -292,12 +317,26 @@ def build_center_operators(group, gen_perms, rep_fn, class_key=None):
                    Default: conjugacy_class_key (cycle-type, S_n specific).
 
     Returns:
-        list of Hermitian center operators.
+        list of Hermitian registration operators.
     """
     ops = class_sum_center_ops(group, rep_fn, class_key=class_key)
     gen_rhos = [rep_fn(p) for p in gen_perms]
-    ops.extend(symmetrized_generator_center_ops(gen_rhos))
+    ops.extend(symmetrized_generator_hermitian_ops(gen_rhos))
     return ops
+
+
+def build_center_operators(group, gen_perms, rep_fn, class_key=None):
+    """Deprecated alias with an incorrect historical ``center`` label."""
+    import warnings
+    warnings.warn(
+        "build_center_operators() is deprecated; the returned family includes "
+        "noncentral operators. Use build_sector_registration_operators()",
+        DeprecationWarning,
+        stacklevel=2,
+    )
+    return build_sector_registration_operators(
+        group, gen_perms, rep_fn, class_key=class_key
+    )
 
 
 def sector_bases_from_projectors(projectors, tol=1e-8):
@@ -315,11 +354,13 @@ def sector_bases_from_projectors(projectors, tol=1e-8):
     Returns:
         list of (n, d_i) matrices V_i with orthonormal columns.
     """
-    Vs = []
-    for P in projectors:
-        evals, evecs = np.linalg.eigh(P)
-        Vs.append(evecs[:, evals > 1.0 - tol])
-    return Vs
+    from rime.spectral_utils import sector_bases_from_projectors as register_bases
+    return register_bases(
+        projectors,
+        eigenvalue_cutoff=1.0 - tol,
+        tol=tol,
+        validate=True,
+    )
 
 
 def basis_from_indices(dim, indices, dtype=complex):
@@ -378,12 +419,15 @@ def sector_dimensions(Vs):
 def build_system_from_perms(elements, gen_perms):
     """Build a sectorized system from permutation group data.
 
-    The canonical pipeline for constructing R1/R2/D input from a finite
+    The declared S4-era pipeline for constructing typed Lie-audit input from a finite
     permutation group:
       1. Build regular representation
-      2. Compute class-sum + symmetrized-generator center operators
-      3. Joint diagonalization -> sector projectors -> sector bases
+      2. Compute class-sum + generator-derived Hermitian operators
+      3. Ordered compression -> sector projectors -> sector bases
       4. Skew-log generators
+
+    Step 3 is order-dependent. It produces an orthogonal carrier
+    decomposition, not joint eigenspaces of the generally noncommuting family.
 
     Args:
         elements: list of all group elements (permutation tuples).
@@ -391,9 +435,11 @@ def build_system_from_perms(elements, gen_perms):
 
     Returns:
         dict with keys: Vs, Xs, elements, gen_perms, rho_fn, projs,
-                        center_ops, sectors_raw, dims, n_sec
+                        registration_ops, sector_registration, sectors_raw,
+                        dims, n_sec. ``center_ops`` is retained as a legacy
+                        alias for ``registration_ops``.
     """
-    from rime.spectral_utils import joint_diag_sectors, build_projectors
+    from rime.spectral_utils import ordered_compression_sectors, build_projectors
 
     n_total = len(elements)
     idx = {p: i for i, p in enumerate(elements)}
@@ -405,22 +451,41 @@ def build_system_from_perms(elements, gen_perms):
             m[idx[r], i] = 1.0
         return m
 
-    center_ops = build_center_operators(elements, gen_perms, rho_fn)
-    sectors_raw = joint_diag_sectors(center_ops, tol=1e-8)
+    registration_ops = build_sector_registration_operators(
+        elements, gen_perms, rho_fn
+    )
+    sectors_raw = ordered_compression_sectors(registration_ops, tol=1e-8)
     projs = build_projectors(sectors_raw, n_total)
     Vs = sector_bases_from_projectors(projs)
 
     rho_gens = [rho_fn(p) for p in gen_perms]
-    Xs = skew_log_generators(rho_gens)
+    log_branch = "scipy_principal"
+    Xs = skew_log_generators(rho_gens, branch=log_branch)
 
     return {
         'Vs': Vs,
         'Xs': Xs,
+        'operator_registration': {
+            'family': 'skew_matrix_log',
+            'log_branch': log_branch,
+        },
+        'sector_registration': {
+            'algorithm': 'ordered_hermitian_compression',
+            'operator_count': len(registration_ops),
+            'maximum_pairwise_commutator_norm': max(
+                np.linalg.norm(left @ right - right @ left, 'fro')
+                for i, left in enumerate(registration_ops)
+                for right in registration_ops[i + 1:]
+            ),
+            'order_dependent': True,
+            'joint_spectral_claim': False,
+        },
         'elements': elements,
         'gen_perms': gen_perms,
         'rho_fn': rho_fn,
         'projs': projs,
-        'center_ops': center_ops,
+        'center_ops': registration_ops,
+        'registration_ops': registration_ops,
         'sectors_raw': sectors_raw,
         'dims': sector_dimensions(Vs),
         'n_sec': len(Vs),

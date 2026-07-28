@@ -373,20 +373,20 @@ class CubieMove:
 
         def _perm_mat(perm):
             n = len(perm)
-            M = np.zeros((n, n), dtype=np.float32)
+            M = np.zeros((n, n), dtype=np.float64)
             for i in range(n):
                 M[perm[i], i] = 1.0
             return M
 
-        Cp = np.kron(_perm_mat(self.corners_perm), np.eye(8, dtype=np.float32))
-        Ep = np.kron(_perm_mat(self.edges_perm), np.eye(12, dtype=np.float32))
+        Cp = np.kron(_perm_mat(self.corners_perm), np.eye(8, dtype=np.float64))
+        Ep = np.kron(_perm_mat(self.edges_perm), np.eye(12, dtype=np.float64))
 
         omega = np.exp(2j * np.pi / 3)
-        Co = np.zeros((8, 8), dtype=np.complex64)
+        Co = np.zeros((8, 8), dtype=np.complex128)
         for i in range(8):
             Co[self.corners_perm[i], i] = omega ** int(self.corners_ori_delta[i])
 
-        Eo = np.zeros((12, 12), dtype=np.float32)
+        Eo = np.zeros((12, 12), dtype=np.float64)
         for i in range(12):
             Eo[self.edges_perm[i], i] = -1.0 if self.edges_ori_delta[i] % 2 else 1.0
 
@@ -580,6 +580,19 @@ class CubieMove:
     @staticmethod
     def move_label(key: tuple[int, int, int]) -> str:
         return str(ActionToken.from_cubie_move(*key, n=3))
+
+    def move_key(self) -> tuple[tuple[int, ...], ...]:
+        """Return a dtype-independent key.
+
+        CubieMove.__hash__ includes ndarray bytes and therefore distinguishes equal
+        integer arrays with different dtypes. Audit sets must not rely on that hash.
+        """
+        return (
+            tuple(map(int, self.corners_perm)),
+            tuple(map(int, self.edges_perm)),
+            tuple(map(int, self.corners_ori_delta)),
+            tuple(map(int, self.edges_ori_delta)),
+        )
 
     @staticmethod
     def is_redundant(last, cur) -> bool:

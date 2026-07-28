@@ -1,6 +1,6 @@
-"""Theorem verification:
-  - Center commutativity: [A, QT_all] = [A, HT_all] = [QT_all, HT_all] = 0
-  - Sector projectors commute with center operators
+"""Paper II numerical-certificate regression:
+  - QH-family commutativity: [A, QT_all] = [A, HT_all] = [QT_all, HT_all] = 0
+  - Sector projectors commute with the registered QH operators
   - Idempotent decomposition: P_i P_j = δ_ij P_i
   - Noncommutativity localization (Supp_nc): cp block commutative,
     ep block carries >93% of total noncommutativity
@@ -16,9 +16,9 @@ TOL = 1e-10
 
 op = CubieSpectralOperator.from_gens_dict(CubieMove.prim_moves)
 A = op.A
-op_center = op.build_per_axis_ops()[0]
-QT_all = op_center['QT_all']
-HT_all = op_center['HT_all']
+qh_ops = op.build_per_axis_ops()[0]
+QT_all = qh_ops['QT_all']
+HT_all = qh_ops['HT_all']
 
 sec = op.center_decomposition()
 n = sec['n_sectors']
@@ -31,10 +31,10 @@ def check(condition, msg):
     assert condition, msg
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# Test 1: Center {A, QT_all, HT_all} is commutative
+# Test 1: The registered QH operator family is commutative
 # ═══════════════════════════════════════════════════════════════════════════════
 
-print("Test 1: Center commutativity [A, QT_all] = [A, HT_all] = [QT_all, HT_all] = 0 ...")
+print("Test 1: QH commutativity [A, QT_all] = [A, HT_all] = [QT_all, HT_all] = 0 ...")
 c1 = np.linalg.norm(A @ QT_all - QT_all @ A, 'fro')
 c2 = np.linalg.norm(A @ HT_all - HT_all @ A, 'fro')
 c3 = np.linalg.norm(QT_all @ HT_all - HT_all @ QT_all, 'fro')
@@ -45,26 +45,26 @@ check(c3 < TOL, f"[QT_all, HT_all] != 0: ||comm|| = {c3:.2e}")
 print(f"  OK — [A, QT]={c1:.1e}, [A, HT]={c2:.1e}, [QT, HT]={c3:.1e}")
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# Test 2: Sector projectors commute with center elements
+# Test 2: Sector projectors commute with the QH operators
 # ═══════════════════════════════════════════════════════════════════════════════
 
-print("Test 2: [P_i, center] = 0 for all sectors ...")
+print("Test 2: [P_i, QH operator] = 0 for all sectors ...")
 max_comm = 0.0
 for i, P in enumerate(Ps):
-    for center_op, name in [(A, 'A'), (QT_all, 'QT'), (HT_all, 'HT')]:
-        comm = np.linalg.norm(P @ center_op - center_op @ P, 'fro')
+    for qh_op, name in [(A, 'A'), (QT_all, 'QT'), (HT_all, 'HT')]:
+        comm = np.linalg.norm(P @ qh_op - qh_op @ P, 'fro')
         if comm > max_comm:
             max_comm = comm
         if comm > TOL:
             print(f"  WARNING: ||[P_{i+1}, {name}]|| = {comm:.2e}")
-check(max_comm < TOL, f"Sector projectors don't commute with center: max={max_comm:.2e}")
-print(f"  OK — max ||[P_i, center]|| = {max_comm:.2e}")
+check(max_comm < TOL, f"Sector projectors don't commute with QH operators: max={max_comm:.2e}")
+print(f"  OK — max ||[P_i, QH operator]|| = {max_comm:.2e}")
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# Test 3: Center idempotents: P_i @ P_j = δ_ij P_i
+# Test 3: QH joint-sector projectors: P_i @ P_j = δ_ij P_i
 # ═══════════════════════════════════════════════════════════════════════════════
 
-print("Test 3: Center idempotents ...")
+print("Test 3: QH joint-sector projectors ...")
 for i in range(n):
     P = Ps[i]
     err = np.linalg.norm(P @ P - P, 'fro')
@@ -77,7 +77,7 @@ for i in range(n):
         err = np.linalg.norm(Ps[i] @ Ps[j], 'fro')
         if err > ortho_max:
             ortho_max = err
-check(ortho_max < TOL, f"Center idempotents not orthogonal: max={ortho_max:.2e}")
+check(ortho_max < TOL, f"QH projectors not orthogonal: max={ortho_max:.2e}")
 print(f"  OK — P_i @ P_j = δ_ij P_i, max off-diag = {ortho_max:.2e}")
 
 # ═══════════════════════════════════════════════════════════════════════════════

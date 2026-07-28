@@ -1,0 +1,35 @@
+{
+  "schema": "paper5.figure-data.v2",
+  "claim_scope": "exact same-support counterexample and finite S4 low-order channel census; no completion theorem",
+  "provenance": {
+    "sources": [
+      {
+        "path": "experiments/paper5/validation/exact_support_commutator_counterexample.py",
+        "sha256": "1b20f76cfc0b4ab4aa993cce9c6221be0fda4e3ad359d4fefc275c652fc65020"
+      },
+      {
+        "path": "experiments/paper5/validation/low_order_channel_audit.py",
+        "sha256": "b7fa5e12011cd144ee738d360baaa07c5363fa0feefe7d42d0524f143efb5f4a"
+      }
+    ]
+  },
+  "exact_counterexample": {
+    "x": [[0, 1, 0], [-1, 0, 1], [0, -1, 0]],
+    "y_cancelling": [[0, 2, 0], [-2, 0, 2], [0, -2, 0]],
+    "y_emergent": [[0, 2, 0], [-2, 0, 3], [0, -3, 0]],
+    "cancelling_terms": [2, 2],
+    "emergent_terms": [3, 2],
+    "cancelling_commutator": 0,
+    "emergent_commutator": 1
+  },
+  "s4_low_order_census": {
+    "ordered_off_diagonal_pairs": 90,
+    "direct_r1_pairs": 10,
+    "r1_zero_pairs": 80,
+    "bracket_emergent_pairs": 2,
+    "product_supported_r2_zero_pairs": 2,
+    "unresolved_within_tested_order": 76,
+    "image_kernel_incidence_records": 0,
+    "threshold": 1e-8
+  }
+}

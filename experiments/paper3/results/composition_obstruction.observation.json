@@ -1,0 +1,417 @@
+{
+  "schema_version": "rime.experiment-observation.v1",
+  "artifact_role": "cached_computational_observation",
+  "authority": "Cached review aid. It records one completed run and does not replace the executable certificate or promote its claim status.",
+  "experiment": {
+    "id": "paper3-composition-obstruction",
+    "paper": "Paper III",
+    "command": [
+      "python",
+      "experiments/paper3/validation/composition_obstruction.py"
+    ]
+  },
+  "claim": {
+    "status": "computational_certificate",
+    "scope": "Canonical 228-dimensional Rubik realization: QH registration, ten-edge support graph, and five graph-only ordered-product audits.",
+    "limitations": [
+      "Machine-zero residuals are numerical observations, not exact vanishing proofs.",
+      "Exact vanishing additionally uses the manuscript's block-preserving construction.",
+      "Only explicitly declared source files participate in stale detection."
+    ]
+  },
+  "run": {
+    "status": "passed",
+    "started_at_utc": "2026-07-24T18:32:32Z",
+    "elapsed_seconds": 2.349579,
+    "parameters": {
+      "direct_edge_threshold": 0.05,
+      "composition_zero_threshold": 1e-10,
+      "physical_block_support_fraction_threshold": 0.01,
+      "clustering_tolerances": [
+        1e-06,
+        1e-08,
+        1e-10,
+        1e-12
+      ],
+      "generator_count": 18,
+      "dtype": "complex128"
+    }
+  },
+  "provenance": {
+    "git": {
+      "commit": "32fe5a981cb3d5535d74b7a189ba60a46a806976",
+      "tracked_worktree": "dirty"
+    },
+    "runtime": {
+      "python": "3.13.0",
+      "implementation": "CPython",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "packages": {
+        "numpy": "2.1.3",
+        "scipy": "1.18.0",
+        "rime": "0.0.1"
+      }
+    },
+    "source_scope": "explicitly_declared_files",
+    "source_set_sha256": "68bbd96d436341cff8d9fdbc42e1127d23b3f82888186c765391b6cae10a924c",
+    "sources": [
+      {
+        "path": "experiments/observation.py",
+        "sha256": "da4d556972862faece732316f1d3950600f06858865e61af6a8cc282ba24b4b5"
+      },
+      {
+        "path": "experiments/paper3/validation/composition_obstruction.py",
+        "sha256": "c4a2ab527b3af35c6fd891bfb3ec8312317711d2a2b255da4e00d0b3b99086d1"
+      },
+      {
+        "path": "pyproject.toml",
+        "sha256": "0dad94363942d0695f55e637406024e733ae1979478d466f36c9164643a6e2bf"
+      },
+      {
+        "path": "rime/base.py",
+        "sha256": "fead279b5631625050b0ee1f24a2bc47c19acac864b9c717a7917398bc4d0d30"
+      },
+      {
+        "path": "rime/cube.py",
+        "sha256": "6cfc68516f7aee5049b8124b8848d17f5a488bb67399d414d3442f0415ef2365"
+      },
+      {
+        "path": "rime/cubie.py",
+        "sha256": "8bc21b4035c579bc4ed6a3867b2bd53989c1e38f2f4b76c6ebc00bcb4d43c029"
+      },
+      {
+        "path": "rime/cubieoperator.py",
+        "sha256": "9b4b87038048b869e196ae586f28a38093f442e69d1826ef41be5a6f38127dfc"
+      },
+      {
+        "path": "rime/helpers.py",
+        "sha256": "0aa95428c5763ab41dce9cb25072c956b837bbdc07fa7347d07412995bf47887"
+      },
+      {
+        "path": "rime/spectral_utils.py",
+        "sha256": "36a1d7e7a6a369583c3fe6f72751aa5e7cc4a8db6fd219e68b3448d124fa0c9c"
+      }
+    ]
+  },
+  "observations": {
+    "summary": {
+      "passed": true,
+      "sector_count": 9,
+      "generator_count": 18,
+      "direct_edge_count": 10,
+      "graph_only_witness_count": 5
+    },
+    "sector_dimensions": [
+      20,
+      2,
+      39,
+      26,
+      1,
+      39,
+      66,
+      8,
+      27
+    ],
+    "sector_physical_block_support": [
+      [
+        "cp",
+        "ep"
+      ],
+      [
+        "eo"
+      ],
+      [
+        "eo",
+        "ep"
+      ],
+      [
+        "co",
+        "ep"
+      ],
+      [
+        "eo"
+      ],
+      [
+        "eo",
+        "ep"
+      ],
+      [
+        "co",
+        "cp",
+        "eo",
+        "ep"
+      ],
+      [
+        "cp"
+      ],
+      [
+        "co",
+        "cp"
+      ]
+    ],
+    "registration_residuals": {
+      "pairwise_commutator": 3.765390104928223e-16,
+      "idempotence": 4.188654979720673e-15,
+      "hermiticity": 8.033631196512817e-17,
+      "orthogonality": 3.2068230607938037e-15,
+      "completeness": 1.3200610325672551e-14,
+      "joint_invariance": 3.582914603653492e-14,
+      "block_diagonality": 1.4378809786074333e-15
+    },
+    "clustering_tolerance_census": {
+      "1e-06": [
+        1,
+        2,
+        8,
+        20,
+        26,
+        27,
+        39,
+        39,
+        66
+      ],
+      "1e-08": [
+        1,
+        2,
+        8,
+        20,
+        26,
+        27,
+        39,
+        39,
+        66
+      ],
+      "1e-10": [
+        1,
+        2,
+        8,
+        20,
+        26,
+        27,
+        39,
+        39,
+        66
+      ],
+      "1e-12": [
+        1,
+        2,
+        8,
+        20,
+        26,
+        27,
+        39,
+        39,
+        66
+      ]
+    },
+    "direct_support": {
+      "maximum_asymmetry": 1.3322676295501878e-15,
+      "edges": [
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          4,
+          9
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          8,
+          9
+        ]
+      ],
+      "matrix": [
+        [
+          4.4721359549995805,
+          1.2690977966570583e-16,
+          3.732129711552524e-15,
+          2.2411130634157895e-15,
+          0.0,
+          3.6201678095226794e-15,
+          6.535204499131183e-15,
+          1.6258573248217808e-15,
+          3.651455653967104e-15
+        ],
+        [
+          1.2690977966570583e-16,
+          1.4142135623730954,
+          2.4275852178424482e-15,
+          2.55841791826028e-31,
+          0.4714045207910331,
+          0.5773502691896263,
+          3.616370693325294e-15,
+          1.6221140570265882e-16,
+          2.6216630686429403e-16
+        ],
+        [
+          3.703913045618831e-15,
+          2.413906803902185e-15,
+          5.408326913195984,
+          2.5526007360396477e-14,
+          2.9916352490433952e-15,
+          2.5495097567963936,
+          3.6055512754639896,
+          1.1464791439657322e-15,
+          2.0425832910863237e-15
+        ],
+        [
+          2.2562209828032906e-15,
+          2.55841791826028e-31,
+          2.5530296498493386e-14,
+          5.099019513592786,
+          0.0,
+          3.4641016151377557,
+          3.6943989953316625e-14,
+          9.898202451918233e-16,
+          1.0000000000000002
+        ],
+        [
+          0.0,
+          0.47140452079103295,
+          2.9757535596521305e-15,
+          0.0,
+          1.0000000000000002,
+          0.8164965809277268,
+          3.3980719491826905e-15,
+          0.0,
+          0.0
+        ],
+        [
+          3.608273339151836e-15,
+          0.5773502691896263,
+          2.5495097567963936,
+          3.4641016151377557,
+          0.8164965809277268,
+          4.4158804331639265,
+          3.6055512754639896,
+          1.1074728418005714e-15,
+          1.943451495913294e-15
+        ],
+        [
+          6.530615636074046e-15,
+          3.615776373537189e-15,
+          3.6055512754639896,
+          3.6946505526747355e-14,
+          3.3924181622646334e-15,
+          3.605551275463991,
+          6.689544080129828,
+          4.987320400398364e-15,
+          4.062019202317982
+        ],
+        [
+          1.6279560449459031e-15,
+          1.6221140570265882e-16,
+          1.1464791439657322e-15,
+          9.898202451918233e-16,
+          0.0,
+          1.1074728418005714e-15,
+          5.00304811665643e-15,
+          2.82842712474619,
+          2.828427124746191
+        ],
+        [
+          3.647390642119404e-15,
+          2.6216630686429403e-16,
+          2.042583291086324e-15,
+          1.0000000000000002,
+          0.0,
+          1.943451495913294e-15,
+          4.062019202317981,
+          2.8284271247461907,
+          3.240370349203931
+        ]
+      ]
+    },
+    "generator_index_base": 0,
+    "graph_only_obstruction_witnesses": [
+      {
+        "endpoint_a": 2,
+        "endpoint_b": 4,
+        "intermediate": 6,
+        "max_left_edge_norm": 0.5773502691896263,
+        "max_right_edge_norm": 3.4641016151377557,
+        "max_ordered_product_norm": 1.097899818145087e-16,
+        "ordered_product_argmax": [
+          6,
+          14
+        ]
+      },
+      {
+        "endpoint_a": 3,
+        "endpoint_b": 9,
+        "intermediate": 7,
+        "max_left_edge_norm": 3.6055512754639896,
+        "max_right_edge_norm": 4.062019202317981,
+        "max_ordered_product_norm": 3.0169433815649997e-15,
+        "ordered_product_argmax": [
+          17,
+          11
+        ]
+      },
+      {
+        "endpoint_a": 4,
+        "endpoint_b": 5,
+        "intermediate": 6,
+        "max_left_edge_norm": 3.4641016151377557,
+        "max_right_edge_norm": 0.8164965809277267,
+        "max_ordered_product_norm": 1.552664812947738e-16,
+        "ordered_product_argmax": [
+          11,
+          7
+        ]
+      },
+      {
+        "endpoint_a": 4,
+        "endpoint_b": 8,
+        "intermediate": 9,
+        "max_left_edge_norm": 1.0000000000000002,
+        "max_right_edge_norm": 2.8284271247461907,
+        "max_ordered_product_norm": 1.0603827153465559e-15,
+        "ordered_product_argmax": [
+          6,
+          15
+        ]
+      },
+      {
+        "endpoint_a": 6,
+        "endpoint_b": 9,
+        "intermediate": 7,
+        "max_left_edge_norm": 3.6055512754639896,
+        "max_right_edge_norm": 4.062019202317981,
+        "max_ordered_product_norm": 2.936745638513762e-15,
+        "ordered_product_argmax": [
+          5,
+          17
+        ]
+      }
+    ]
+  }
+}

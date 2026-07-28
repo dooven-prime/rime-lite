@@ -53,8 +53,8 @@ $$
 **Results.** The main structural result is the Universal Observable Pipeline
 Principle: any admitted species equipped with a finite space, a sectorization,
 and an observable extraction rule induces an SOF and hence a canonical
-observable ladder.  The current registry contains Rubik, naturally occurring Rubik
-Type III/IV mechanism instances, synthetic Type III/IV boundary controls,
+ observable ladder.  The current registry contains Rubik, naturally occurring Rubik
+ cancellation/incidence mechanism records, synthetic mechanism controls,
 Xu-style ridge rate-separation, finite spectral-triple, control, PDE,
 combinatorial, quantum gate, barrier-option stochastic-finance, Markov, graph,
 neural-network, and Yang-like filtration instances.  These entries are
@@ -410,11 +410,11 @@ table in an appendix.
 | Registry role | Representative species | Sectorization origin | Diagnostic status |
 |---------------|------------------------|----------------------|-------------------|
 | Core RIME laboratory | Rubik QT/HT | representation / joint spectral geometry | spectra, collision quotient, $R_1/R_2/D$, $\mathcal J_{\mathrm{acc}}$; near-threshold ratio $\approx10.8$ and plateau oscillation score $0.38$ |
-| Natural mechanism evidence | Rubik Type III/IV wild mechanisms | representation / joint spectral geometry | $288$ Type III cancellations and $528$ Type IV bridge-level incidence candidates; Type IV remains bridge-level candidate evidence |
-| Mechanism controls | synthetic Type III/IV and mechanism-separated SOF | constructed sector models | boundary controls plus H3 positive control $\tau(K_0^{\mathrm{grow}})=30\ll\tau(K_1^{\mathrm{decay}})=1380$ |
+| Natural mechanism evidence | Rubik cancellation/incidence records | representation / joint spectral geometry | legacy release census of 288 cancellation and 528 bridge-level incidence candidates; current typed certification belongs to Papers V and VII |
+| Mechanism controls | synthetic cancellation/incidence and mechanism-separated SOF | constructed sector models | boundary controls plus H3 positive control $\tau(K_0^{\mathrm{grow}})=30\ll\tau(K_1^{\mathrm{decay}})=1380$ |
 | External rate precedent | Xu ridge model | external row/null decomposition | theorem-proven parameter-space separation; registry audit ratio $\approx68553$ |
 | Non-Rubik accessibility | quantum gates | computational-basis or spectral sectors | Pauli $\{X,Z\}$ has $D_{\mathrm{repaired}}=0$, Clifford+CNOT has $D_{\mathrm{repaired}}=6$ |
-| Non-representation sectorization | finite spectral triple | geometry / Dirac blocks | $\Vert[D,p_i]\Vert_F=0$, cross-block central distance infinite, two T7-style bridges |
+| Non-representation sectorization | finite spectral triple | geometry / Dirac blocks | $\Vert[D,p_i]\Vert_F=0$, cross-block central distance infinite, and two legacy bridge diagnostics not promoted to projected composition |
 | Sector-origin portability | control, PDE, combinatorial systems | Kalman flags, mesh/interface partitions, color classes | Kalman ranks $1,2,3$; PDE left-to-right word-depth $2$; coloring has $4$ inter-color support edges and $2$ same-color conflicts |
 | Stochastic-process portability | barrier-option SOF | stopping/barrier region in a log-price diffusion | cross-barrier support with $R_1=75.0\%$, $R_2=0.0\%$, and mean first-hit time $6.5915$; first hitting is not identified with $D$ |
 | Boundary and contrast species | Markov, graph, NN, Yang-like systems | state, graph, activation, filtration sectors | connected/frozen controls, proxy-only NN rates $(60,80,120)$, Yang/RIME plateau contrast $1/5$ versus $3/8$ zero-crossings |
@@ -690,10 +690,10 @@ generator deformation.
 | Evidence layer | Status | Interpretation |
 |----------------|--------|----------------|
 | Mechanism-separated SOF control | constructed-witness proposition, $\tau(K_0^{\mathrm{grow}})=30\ll\tau(K_1^{\mathrm{decay}})=1380$ | H3 positive control inside SOF |
-| Rubik Type III/IV wild mechanisms | $288$ Type III cancellations and $528$ Type IV bridge-level incidence candidates | natural QT/HT-sector mechanism evidence |
+| Rubik cancellation/incidence records | legacy release census of 288 cancellation and 528 bridge-level incidence candidates | historical QT/HT-sector evidence requiring the current typed interpretation |
 | Training-coupled NN SOF | positive for raw proxies, $60<80<120$ | proxy-only continuous observable rate hierarchy |
 | Engineered near-threshold accessibility | partial, $\tau(R_1)<\tau(R_2)$ | direct and commutator channels separate |
-| Finite spectral-triple SOF | central Connes-distance obstruction and $2$ ordered T7-style bridges | non-group/Lie portability evidence |
+| Finite spectral-triple SOF | central Connes-distance obstruction and $2$ ordered legacy bridge diagnostics | non-group/Lie portability evidence; no projected-composition promotion claimed |
 | Proxy-to-shadow bridge | open | Observable Proxy Shadow Principle not yet proved |
 | Binary $D$-repair trajectory | open | future quantum or Rubik deformation target; Clifford+CNOT gives static $D_{\mathrm{repaired}}=6$, but no structured $\tau(D)$ audit yet |
 | Quantum linear interpolation | negative/degenerate | interpolation is not mechanism-separated dynamics |
@@ -787,8 +787,8 @@ program.  The completed registry-evidence probes are:
    $D_{\mathrm{repaired}}=6$ versus Pauli $\{X,Z\}$ with
    $D_{\mathrm{repaired}}=0$;
 5. finite spectral-triple portability: block-diagonal Dirac sectorization gives
-   central Connes-distance obstruction while two ordered T7-style bridge
-   shadows survive;
+   central Connes-distance obstruction while two ordered support-level bridge
+   shadows are recorded without composition promotion;
 6. control/PDE/combinatorial portability: Kalman flags, mesh subdomains, and
    graph-color sectors all support the same observable-pipeline audit;
 7. stochastic-process portability: a barrier-option log-price grid gives

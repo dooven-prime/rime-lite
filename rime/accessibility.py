@@ -33,10 +33,14 @@ Interpretation boundaries
 functions assume the same contract; callers using them directly should invoke
 ``assert_accessibility_inputs`` first.
 """
-import numpy as np
 from itertools import combinations
+import warnings
 
-FROZEN_DEPTH = 999
+import numpy as np
+
+UNREACHED_DEPTH = 999
+# Compatibility alias for versioned artifacts that still serialize "frozen".
+FROZEN_DEPTH = UNREACHED_DEPTH
 
 
 # ============================================================
@@ -428,6 +432,68 @@ def compute_direct_support(Vs, Xs, tol=1e-8):
     return support
 
 
+def _routed_products_from_source(Vs, Xs, source, depth):
+    """Enumerate reduced products for every labelled route from one source."""
+    source_dim = Vs[source].shape[1]
+    routes = [(source, np.eye(source_dim, dtype=complex))]
+    for _ in range(depth):
+        next_routes = []
+        for intermediate, product in routes:
+            for target, target_basis in enumerate(Vs):
+                for observable in Xs:
+                    block = (
+                        target_basis.conj().T
+                        @ observable
+                        @ Vs[intermediate]
+                    )
+                    routed = block @ product
+                    if np.count_nonzero(routed):
+                        next_routes.append((target, routed))
+        routes = next_routes
+    return routes
+
+
+def compute_routed_support(Vs, Xs, depth=2, tol=1e-8):
+    """Compute aggregate support of fixed-route projected products ``C_d``.
+
+    A pair ``(i, j)`` is supported when at least one observable-label tuple and
+    one intermediate-sector tuple gives a routed product with Frobenius norm
+    above ``tol``. This is not full-word support: different routes are not
+    summed. Diagonal entries are omitted from the accessibility relation.
+    """
+    if not isinstance(depth, (int, np.integer)) or depth < 1:
+        raise ValueError("depth must be an integer >= 1")
+
+    n_sec = len(Vs)
+    support = np.zeros((n_sec, n_sec), dtype=bool)
+    for source in range(n_sec):
+        for target, product in _routed_products_from_source(
+                Vs, Xs, source, int(depth)):
+            if target != source and np.linalg.norm(product, "fro") > tol:
+                support[target, source] = True
+    return support
+
+
+def compute_routed_depth_matrix(
+        Vs, Xs, max_depth=4, tol=1e-8, unreached=UNREACHED_DEPTH):
+    """Compute cutoff-relative routed-composition depth ``D_route``.
+
+    Depth one is direct support. An entry equal to ``unreached`` means only
+    that no routed product was found through ``max_depth``.
+    """
+    if not isinstance(max_depth, (int, np.integer)) or max_depth < 1:
+        raise ValueError("max_depth must be an integer >= 1")
+
+    n_sec = len(Vs)
+    depth_matrix = np.full((n_sec, n_sec), unreached, dtype=int)
+    np.fill_diagonal(depth_matrix, 0)
+    for depth in range(1, int(max_depth) + 1):
+        support = compute_routed_support(Vs, Xs, depth=depth, tol=tol)
+        newly_reached = support & (depth_matrix == unreached)
+        depth_matrix[newly_reached] = depth
+    return depth_matrix
+
+
 def compute_length_two_support(Vs, Xs, tol=1e-8):
     """Aggregate length-two word support over an observable family.
 
@@ -447,16 +513,32 @@ def compute_length_two_support(Vs, Xs, tol=1e-8):
 
 
 def compute_word_depth_matrix(
-        Vs, Xs, max_depth=4, tol=1e-8, frozen=FROZEN_DEPTH):
+        Vs,
+        Xs,
+        max_depth=4,
+        tol=1e-8,
+        unreached=UNREACHED_DEPTH,
+        *,
+        frozen=None):
     """Compute first accessibility depth using words in the observables.
 
     Depth 1 uses generators, depth 2 uses products of two generators, etc.
     This is useful for transport/PDE/control diagnostics. It is distinct from
     compute_lie_depth_matrix, which uses the Lie filtration.
     """
+    if not isinstance(max_depth, (int, np.integer)) or max_depth < 1:
+        raise ValueError("max_depth must be an integer >= 1")
+    if frozen is not None:
+        warnings.warn(
+            "the frozen keyword is deprecated; use unreached",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+        unreached = frozen
+
     n_sec = len(Vs)
     dim = Xs[0].shape[0]
-    D = np.full((n_sec, n_sec), frozen, dtype=int)
+    D = np.full((n_sec, n_sec), unreached, dtype=int)
     np.fill_diagonal(D, 0)
 
     words = [np.eye(dim, dtype=Xs[0].dtype)]
@@ -464,22 +546,29 @@ def compute_word_depth_matrix(
         words = [X @ W for X in Xs for W in words]
         for i in range(n_sec):
             for j in range(n_sec):
-                if i == j or D[i, j] != frozen:
+                if i == j or D[i, j] != unreached:
                     continue
                 if any(sector_block_norm(Vs, W, i, j) > tol for W in words):
                     D[i, j] = depth
     return D
 
 
-def plateau_fraction(D, depth, frozen=FROZEN_DEPTH):
+def plateau_fraction(D, depth, unreached=UNREACHED_DEPTH, *, frozen=None):
     """Fraction of off-diagonal sector pairs reachable by a given depth."""
+    if frozen is not None:
+        warnings.warn(
+            "the frozen keyword is deprecated; use unreached",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+        unreached = frozen
     n_sec = D.shape[0]
     total = n_sec * (n_sec - 1)
     if total == 0:
         return 0.0
     reached = sum(
         1 for i in range(n_sec) for j in range(n_sec)
-        if i != j and D[i, j] != frozen and D[i, j] <= depth
+        if i != j and D[i, j] != unreached and D[i, j] <= depth
     )
     return reached / total
 
@@ -638,12 +727,105 @@ def compute_lie_filtration(Xs, max_depth=4, tol=1e-8):
     return per_depth
 
 
+def audit_lie_closure(Xs, basis, tol=1e-8):
+    """Audit whether a numerical span is closed under generator brackets.
+
+    ``basis`` may contain flattened vectors or square matrices. Closure under
+    ``[X_g, L_a]`` for every declared generator and span basis element, together
+    with containment of the generators, certifies saturation of the generated
+    Lie span at the declared numerical tolerance. The result remains a
+    computational certificate, not an exact Lie-algebra theorem.
+    """
+    if not Xs:
+        raise ValueError("at least one generator is required")
+    if not basis:
+        raise ValueError("at least one basis element is required")
+    tol_value = _positive_finite_float(tol)
+    if tol_value is None:
+        raise ValueError("tol must be a finite positive scalar")
+    tol = tol_value
+
+    ambient_dim = np.asarray(Xs[0]).shape[0]
+    vectors = []
+    for index, value in enumerate(basis):
+        array = np.asarray(value)
+        if array.shape == (ambient_dim, ambient_dim):
+            vectors.append(array.reshape(-1))
+        elif array.ndim == 1 and array.size == ambient_dim * ambient_dim:
+            vectors.append(array)
+        else:
+            raise ValueError(
+                f"basis[{index}] must be a square matrix or flattened matrix"
+            )
+
+    columns = np.column_stack(vectors)
+    u_basis, singular_basis, _ = np.linalg.svd(columns, full_matrices=False)
+    basis_rank = int(np.sum(singular_basis > tol))
+    if basis_rank == 0:
+        raise ValueError("basis is numerically zero at the declared tolerance")
+    span_basis = u_basis[:, :basis_rank]
+
+    def residual(vector):
+        return vector - span_basis @ (span_basis.conj().T @ vector)
+
+    generator_residuals = [
+        float(np.linalg.norm(residual(np.asarray(X).reshape(-1))))
+        for X in Xs
+    ]
+    commutator_columns = []
+    closure_residuals = []
+    for vector in vectors:
+        element = vector.reshape(ambient_dim, ambient_dim)
+        for generator in Xs:
+            commutator = generator @ element - element @ generator
+            flat = commutator.reshape(-1)
+            commutator_columns.append(flat)
+            closure_residuals.append(float(np.linalg.norm(residual(flat))))
+
+    augmented = np.column_stack([*vectors, *commutator_columns])
+    augmented_singular = np.linalg.svd(augmented, compute_uv=False)
+    retained = augmented_singular[augmented_singular > tol]
+    discarded = augmented_singular[augmented_singular <= tol]
+    augmented_rank = int(retained.size)
+    max_generator_residual = max(generator_residuals, default=0.0)
+    max_closure_residual = max(closure_residuals, default=0.0)
+    gram_error = float(
+        np.linalg.norm(
+            columns.conj().T @ columns - np.eye(columns.shape[1]), "fro"
+        )
+    )
+
+    return {
+        "declared_basis_count": len(vectors),
+        "dimension": basis_rank,
+        "augmented_rank": augmented_rank,
+        "rank_threshold": float(tol),
+        "minimum_retained_singular_value": (
+            float(np.min(retained)) if retained.size else 0.0
+        ),
+        "maximum_discarded_singular_value": (
+            float(np.max(discarded)) if discarded.size else 0.0
+        ),
+        "basis_gram_error": gram_error,
+        "maximum_generator_span_residual": max_generator_residual,
+        "maximum_generator_closure_residual": max_closure_residual,
+        "contains_generators": max_generator_residual <= tol,
+        "closed_under_generators": max_closure_residual <= tol,
+        "saturated": (
+            augmented_rank == basis_rank
+            and max_generator_residual <= tol
+            and max_closure_residual <= tol
+        ),
+        "claim_status": "computational_certificate",
+    }
+
+
 def compute_lie_depth_matrix(Vs, Xs, max_depth=4, tol=1e-8):
     """Compute accessibility depth matrix D via Lie filtration.
 
     D[i, j] = first depth d where some Lie basis element connects sector i to j.
     D[i, i] = 0 (diagonal).
-    D[i, j] = 999 if Frozen (no connection through any depth).
+    D[i, j] = 999 if unreached through the declared cutoff.
 
     Args:
         Vs: list of sector bases.
@@ -686,7 +868,7 @@ def compute_lie_depth_matrix(Vs, Xs, max_depth=4, tol=1e-8):
                     found = True
                     break
             if not found:
-                D[i, j] = FROZEN_DEPTH  # Not reached within tested depth.
+                D[i, j] = UNREACHED_DEPTH  # Not reached within tested depth.
 
     return D, per_depth, cum_bases
 
@@ -777,8 +959,123 @@ def single_term_bridge_audit(Vs, Xs, tol=1e-8):
     return bridges
 
 
-def matrix_nondeg_audit(bridges, tol=1e-8):
-    """Check dimension + full rank conditions for single-term bridges.
+def image_kernel_distance(A, B, rank_tol=1e-10):
+    """Return normalized distance from ``im(B)`` to ``ker(A)``.
+
+    The value is
+
+    ``||(I - P_ker(A)) U_B||_F / sqrt(rank(B))``,
+
+    where the columns of ``U_B`` are an orthonormal basis for ``im(B)``. It is
+    zero for the zero map ``B``. This is a numerical subspace diagnostic, not
+    an exact-incidence certificate unless the input arithmetic is exact.
+    """
+    A = np.asarray(A)
+    B = np.asarray(B)
+    if A.ndim != 2 or B.ndim != 2 or A.shape[1] != B.shape[0]:
+        raise ValueError("A and B must be composable two-dimensional matrices")
+    if not np.all(np.isfinite(A)) or not np.all(np.isfinite(B)):
+        raise ValueError("A and B must contain only finite values")
+    rank_tol_value = _positive_finite_float(rank_tol)
+    if rank_tol_value is None:
+        raise ValueError("rank_tol must be a finite positive scalar")
+    rank_tol = rank_tol_value
+
+    u_b, singular_b, _ = np.linalg.svd(B, full_matrices=False)
+    rank_b = int(np.sum(singular_b > rank_tol))
+    if rank_b == 0:
+        return 0.0
+
+    _, singular_a, vh_a = np.linalg.svd(A, full_matrices=False)
+    rank_a = int(np.sum(singular_a > rank_tol))
+    if rank_a == 0:
+        return 0.0
+
+    image_b = u_b[:, :rank_b]
+    row_space_a = vh_a[:rank_a, :].conj().T
+    residual = row_space_a.conj().T @ image_b
+    return float(np.linalg.norm(residual, "fro") / np.sqrt(rank_b))
+
+
+def audit_matrix_product(A, B, tol=1e-8, rank_tol=None):
+    """Audit image--kernel incidence and rectangular rank protection.
+
+    For ``A: C^n -> C^m`` and ``B: C^p -> C^n``, left protection means
+    ``rank(A) = n`` and right protection means ``rank(B) = n``. Maximal rank
+    relative to a rectangular factor's own dimensions is not sufficient.
+    """
+    A = np.asarray(A)
+    B = np.asarray(B)
+    if A.ndim != 2 or B.ndim != 2 or A.shape[1] != B.shape[0]:
+        raise ValueError("A and B must be composable two-dimensional matrices")
+    if not np.all(np.isfinite(A)) or not np.all(np.isfinite(B)):
+        raise ValueError("A and B must contain only finite values")
+    if rank_tol is None:
+        rank_tol = tol
+    tol_value = _positive_finite_float(tol)
+    rank_tol_value = _positive_finite_float(rank_tol)
+    if tol_value is None or rank_tol_value is None:
+        raise ValueError("tol and rank_tol must be finite positive scalars")
+    tol = tol_value
+    rank_tol = rank_tol_value
+
+    middle_dim = A.shape[1]
+    singular_a = np.linalg.svd(A, compute_uv=False)
+    singular_b = np.linalg.svd(B, compute_uv=False)
+    rank_a = int(np.sum(singular_a > rank_tol))
+    rank_b = int(np.sum(singular_b > rank_tol))
+    norm_a = float(np.linalg.norm(A, "fro"))
+    norm_b = float(np.linalg.norm(B, "fro"))
+    product = A @ B
+    product_norm = float(np.linalg.norm(product, "fro"))
+    denominator = norm_a * norm_b
+    left_protected = rank_a == middle_dim
+    right_protected = rank_b == middle_dim
+
+    if left_protected and right_protected:
+        category = "both-protected"
+    elif left_protected:
+        category = "left-only"
+    elif right_protected:
+        category = "right-only"
+    elif product_norm > tol:
+        category = "unprotected-nonzero"
+    else:
+        category = "unprotected-zero"
+
+    factors_nonzero = norm_a > tol and norm_b > tol
+    protected = left_protected or right_protected
+    return {
+        "shape_A": tuple(int(value) for value in A.shape),
+        "shape_B": tuple(int(value) for value in B.shape),
+        "middle_dimension": int(middle_dim),
+        "rank_A": rank_a,
+        "rank_B": rank_b,
+        "minimum_nonzero_singular_A": (
+            float(singular_a[rank_a - 1]) if rank_a else 0.0
+        ),
+        "minimum_nonzero_singular_B": (
+            float(singular_b[rank_b - 1]) if rank_b else 0.0
+        ),
+        "norm_A": norm_a,
+        "norm_B": norm_b,
+        "product_norm": product_norm,
+        "relative_product_norm": product_norm / denominator if denominator else 0.0,
+        "image_kernel_distance": image_kernel_distance(A, B, rank_tol),
+        "left_protected": left_protected,
+        "right_protected": right_protected,
+        "protected": protected,
+        "factors_nonzero": factors_nonzero,
+        "product_nonzero": product_norm > tol,
+        "protection_consistent": not (
+            factors_nonzero and protected and product_norm <= tol
+        ),
+        "category": category,
+    }
+
+
+def rank_protection_audit(bridges, tol=1e-8):
+    """Add incidence and rank-protection fields to routed-product records.
 
     Adds keys to each bridge dict:
       rank_A, rank_B, dim_ok, full_col_rank, full_row_rank,
@@ -795,170 +1092,110 @@ def matrix_nondeg_audit(bridges, tol=1e-8):
         A, B = b['A'], b['B']
         d_i, d_k, d_j = b['d_i'], b['d_k'], b['d_j']
 
-        rank_A = np.linalg.matrix_rank(A, tol=tol)
-        rank_B = np.linalg.matrix_rank(B, tol=tol)
-
+        audit = audit_matrix_product(A, B, tol=tol)
         dim_ok = d_k <= min(d_i, d_j)
-        full_col_rank = (d_k <= d_i) and (rank_A == d_k)
-        full_row_rank = (d_k <= d_j) and (rank_B == d_k)
-        structural = full_col_rank or full_row_rank
 
-        b['rank_A'] = rank_A
-        b['rank_B'] = rank_B
+        b['rank_A'] = audit['rank_A']
+        b['rank_B'] = audit['rank_B']
         b['dim_ok'] = dim_ok
-        b['full_col_rank'] = full_col_rank
-        b['full_row_rank'] = full_row_rank
-        b['structural'] = structural
-        b['product_zero'] = b['prod_nrm'] <= tol
+        b['full_col_rank'] = audit['left_protected']
+        b['full_row_rank'] = audit['right_protected']
+        b['left_protected'] = audit['left_protected']
+        b['right_protected'] = audit['right_protected']
+        b['both_protected'] = (
+            audit['left_protected'] and audit['right_protected']
+        )
+        b['rank_protected'] = audit['protected']
+        b['structural'] = audit['protected']  # compatibility field
+        b['product_zero'] = not audit['product_nonzero']
+        b['relative_product_norm'] = audit['relative_product_norm']
+        b['image_kernel_distance'] = audit['image_kernel_distance']
+        b['protection_consistent'] = audit['protection_consistent']
+        b['incidence_category'] = audit['category']
 
     return bridges
 
 
-# ============================================================
-# Kappa depth values (numeric, for Papers II/III)
-# ============================================================
-
-def compute_kappa_depth_matrix(Vs, Xs, max_depth=4, tol=1e-8):
-    """Compute kappa_d[i,j] = max_{C in Lie^(d)} ||Q_i C Q_j||_F for each depth.
-
-    Uses the Lie filtration basis from compute_lie_filtration(). At each depth d,
-    iterates over the orthonormal basis of Lie^(d) and records the maximum
-    Frobenius norm of each projected block.
-
-    This gives the numeric kappa_d values (Paper III), not the binary D matrix.
-    kappa_d[i,j] > 0 iff D[i,j] <= d.
-
-    Args:
-        Vs: list of sector bases.
-        Xs: list of generator matrices.
-        max_depth: maximum Lie filtration depth.
-        tol: threshold for zero.
-
-    Returns:
-        list of (n_sec, n_sec) arrays, kappa_by_depth[d] = kappa_d matrix.
-    """
-    n_total = Xs[0].shape[0]
-    n_sec = len(Vs)
-    per_depth = compute_lie_filtration(Xs, max_depth, tol)
-
-    kappa_by_depth = []
-    for layer in per_depth:
-        kappa_d = np.zeros((n_sec, n_sec))
-        for v in layer:
-            M = v.reshape(n_total, n_total)
-            for i in range(n_sec):
-                for j in range(n_sec):
-                    block = Vs[i].conj().T @ M @ Vs[j]
-                    nrm = np.linalg.norm(block, 'fro')
-                    if nrm > kappa_d[i, j]:
-                        kappa_d[i, j] = nrm
-        kappa_by_depth.append(kappa_d)
-
-    return kappa_by_depth
-
-
-def compute_kappa_01(Vs, Xs):
-    """Compute kappa_0 and kappa_1 from sector bases and Lie generators.
-
-    kappa_0[i,j] = max_g ||Q_i X_g Q_j||_F        (direct generator transport)
-    kappa_1[i,j] = max_{g,h} ||Q_i [X_g,X_h] Q_j||_F  (commutator transport)
-
-    This is the Lie-algebraic counterpart to the transport tensor K.
-    For Paper II/III: kappa_0 corresponds to transport via generators,
-    kappa_1 corresponds to transport via commutators.
-
-    Args:
-        Vs: list of sector bases.
-        Xs: list of skew-Hermitian generator matrices.
-
-    Returns:
-        (kappa0, kappa1) -- two (n_sec, n_sec) arrays.
-    """
-    n_sec = len(Vs)
-    n_gens = len(Xs)
-
-    kappa0 = np.zeros((n_sec, n_sec))
-    for a in range(n_sec):
-        for b in range(n_sec):
-            max_k0 = 0.0
-            for X in Xs:
-                nrm = np.linalg.norm(Vs[a].conj().T @ X @ Vs[b], 'fro')
-                max_k0 = max(max_k0, nrm)
-            kappa0[a, b] = max_k0
-
-    kappa1 = np.zeros((n_sec, n_sec))
-    for a in range(n_sec):
-        for b in range(n_sec):
-            max_k1 = 0.0
-            for g in range(n_gens):
-                for h in range(g + 1, n_gens):
-                    comm = Xs[g] @ Xs[h] - Xs[h] @ Xs[g]
-                    nrm = np.linalg.norm(Vs[a].conj().T @ comm @ Vs[b], 'fro')
-                    if nrm > max_k1:
-                        max_k1 = nrm
-            kappa1[a, b] = max_k1
-
-    return kappa0, kappa1
-
-
-def compute_transport_tensor(Vs, rhos):
-    """Compute transport tensor K from sector bases and unitary representations.
-
-    K[i,j] = max_g ||Q_i rho(g) Q_j||_F   (Paper II, eq.1)
-
-    This is the maximum Frobenius norm of the projected representation
-    matrix across all generators. K measures direct (depth-0) transport
-    between sectors.
-
-    Args:
-        Vs: list of sector bases.
-        rhos: list of unitary representation matrices rho(g).
-
-    Returns:
-        (n_sec, n_sec) array.
-    """
-    n_sec = len(Vs)
-    K = np.zeros((n_sec, n_sec))
-    for a in range(n_sec):
-        for b in range(n_sec):
-            max_K = 0.0
-            for rho_g in rhos:
-                nrm = np.linalg.norm(Vs[a].conj().T @ rho_g @ Vs[b], 'fro')
-                max_K = max(max_K, nrm)
-            K[a, b] = max_K
-    return K
+def matrix_nondeg_audit(bridges, tol=1e-8):
+    """Deprecated alias for :func:`rank_protection_audit`."""
+    warnings.warn(
+        "matrix_nondeg_audit() is deprecated; use rank_protection_audit()",
+        DeprecationWarning,
+        stacklevel=2,
+    )
+    return rank_protection_audit(bridges, tol=tol)
 
 
 # ============================================================
 # Convenience
 # ============================================================
 
+def compute_depth_census(D, unreached=UNREACHED_DEPTH):
+    """Count off-diagonal pairs at every recorded depth and at the cutoff."""
+    matrix = np.asarray(D)
+    if matrix.ndim != 2 or matrix.shape[0] != matrix.shape[1]:
+        raise ValueError("D must be a square depth matrix")
+    try:
+        finite = bool(np.all(np.isfinite(matrix)))
+        unreached_code = int(unreached)
+    except (TypeError, ValueError, OverflowError):
+        raise ValueError("D and unreached must use finite integer codes") from None
+    if not finite or unreached_code != unreached:
+        raise ValueError("D must contain only finite depth codes")
+    if not np.all(matrix == np.floor(matrix)):
+        raise ValueError("D must contain integer depth codes")
+    if not np.all(np.diag(matrix) == 0):
+        raise ValueError("D diagonal must be zero")
+    offdiag = ~np.eye(matrix.shape[0], dtype=bool)
+    invalid = (matrix < 0) & (matrix != unreached_code) & offdiag
+    if np.any(invalid):
+        raise ValueError("off-diagonal depths must be nonnegative or unreached")
+    finite_depths = sorted(
+        int(value)
+        for value in np.unique(matrix[offdiag])
+        if value != unreached_code
+    )
+    return {
+        "by_depth": {
+            depth: int(np.sum((matrix == depth) & offdiag))
+            for depth in finite_depths
+        },
+        "unreached": int(np.sum((matrix == unreached_code) & offdiag)),
+        "unreached_value": unreached_code,
+    }
+
+
 def compute_signature_from_D(D):
-    """Extract (A0, A1, A2, Ainf) from a depth matrix.
+    """Deprecated fixed-width view of a cutoff Lie-depth matrix.
 
     A0 = direct edges (excluding diagonal), A1 = commutator,
-    A2 = nested commutator, Ainf = Frozen.
+    A2 = nested commutator, Aunreached = cutoff-unreached.
 
-    Warns if the matrix contains entries with D >= 3 that are not Frozen (999),
+    Warns if the matrix contains entries with D >= 3 that are not unreached,
     since these are not counted in the returned tuple.
     """
+    warnings.warn(
+        "compute_signature_from_D() drops finite depths >= 3; use "
+        "compute_depth_census()",
+        DeprecationWarning,
+        stacklevel=2,
+    )
     n_sec = D.shape[0]
     A0 = int(np.sum(D == 0)) - n_sec
     A1 = int(np.sum(D == 1))
     A2 = int(np.sum(D == 2))
-    Ainf = int(np.sum(D == FROZEN_DEPTH))
-    other = int(np.sum((D >= 3) & (D != FROZEN_DEPTH)))
+    aunreached = int(np.sum(D == UNREACHED_DEPTH))
+    other = int(np.sum((D >= 3) & (D != UNREACHED_DEPTH)))
     if other > 0:
-        import warnings
         warnings.warn(
-            f"Found {other} entries with D >= 3 (not Frozen). "
-            f"These are NOT reflected in (A0,A1,A2,Ainf)."
+            f"Found {other} entries with D >= 3 (not unreached). "
+            f"These are NOT reflected in (A0,A1,A2,Aunreached)."
         )
-    return (A0, A1, A2, Ainf)
+    return (A0, A1, A2, aunreached)
 
 
-def accessibility_signature(Vs, Xs, max_depth=4, tol=1e-8):
-    """Convenience: compute R1, R2, D, and signature in one call.
+def compute_lie_accessibility_audit(Vs, Xs, max_depth=4, tol=1e-8):
+    """Compute typed direct, commutator, and cutoff Lie-depth data.
 
     Args:
         Vs: list of sector bases.
@@ -967,8 +1204,9 @@ def accessibility_signature(Vs, Xs, max_depth=4, tol=1e-8):
         tol: norm/rank threshold.
 
     Returns:
-        dict with keys: R1, R2, R2_pairs, R2_gen, D, sig, per_depth,
-                        cum_bases, n_sec, n_gens.
+        A dictionary whose keys explicitly distinguish ``R1_Lie``,
+        ``R2_Lie``, and ``D_Lie_cutoff``. The depth census retains every
+        finite depth and a separate cutoff-unreached count.
     """
     sector_values = _materialize_sequence(Vs)
     observable_values = _materialize_sequence(Xs)
@@ -979,19 +1217,53 @@ def accessibility_signature(Vs, Xs, max_depth=4, tol=1e-8):
     D, per_depth, cum_bases = compute_lie_depth_matrix(
         sector_values, observable_values, max_depth, tol
     )
-    sig = compute_signature_from_D(D)
+    census = compute_depth_census(D)
 
     return {
-        'R1': R1,
-        'R2': R2,
+        'R1_Lie': R1,
+        'R2_Lie': R2,
         'R2_pairs': R2_pairs,
-        'R2_gen': R2_gen,
-        'D': D,
-        'sig': sig,
-        'per_depth': per_depth,
-        'cum_bases': cum_bases,
-        'n_sec': len(sector_values),
-        'n_gens': len(observable_values),
+        'R2_per_generator': R2_gen,
+        'D_Lie_cutoff': D,
+        'lie_depth_census': census,
+        'per_depth_basis': per_depth,
+        'cumulative_basis': cum_bases,
+        'n_sectors': len(sector_values),
+        'n_generators': len(observable_values),
+        'tested_max_depth_index': int(max_depth) - 1,
+        'unreached_value': UNREACHED_DEPTH,
+    }
+
+
+def accessibility_signature(Vs, Xs, max_depth=4, tol=1e-8):
+    """Deprecated compatibility wrapper with untyped historical keys."""
+    warnings.warn(
+        "accessibility_signature() uses untyped legacy keys; use "
+        "compute_lie_accessibility_audit()",
+        DeprecationWarning,
+        stacklevel=2,
+    )
+    typed = compute_lie_accessibility_audit(
+        Vs, Xs, max_depth=max_depth, tol=tol
+    )
+    census = typed['lie_depth_census']
+    by_depth = census['by_depth']
+    return {
+        'R1': typed['R1_Lie'],
+        'R2': typed['R2_Lie'],
+        'R2_pairs': typed['R2_pairs'],
+        'R2_gen': typed['R2_per_generator'],
+        'D': typed['D_Lie_cutoff'],
+        'sig': (
+            by_depth.get(0, 0),
+            by_depth.get(1, 0),
+            by_depth.get(2, 0),
+            census['unreached'],
+        ),
+        'per_depth': typed['per_depth_basis'],
+        'cum_bases': typed['cumulative_basis'],
+        'n_sec': typed['n_sectors'],
+        'n_gens': typed['n_generators'],
     }
 
 
@@ -1012,7 +1284,7 @@ class AccessibilityEngine:
         summary = engine.audit()           # full audit
         d_matrix, layers = engine.depth()   # D and filtration layers
         r1, r2, pairs = engine.support()    # generator and commutator support
-        frozen = engine.frozen_pairs()      # frozen pair counts
+        cutoff = engine.cutoff_summary()    # cutoff-relative pair counts
         engine.assert_consistent()           # R1/R2/D internal checks
 
     The engine copies its inputs into read-only arrays so cached results cannot
@@ -1146,7 +1418,7 @@ class AccessibilityEngine:
         if not np.all(np.diag(D) == 0):
             errors.append("D diagonal must be zero")
 
-        allowed_depths = set(range(self.max_depth)) | {FROZEN_DEPTH}
+        allowed_depths = set(range(self.max_depth)) | {UNREACHED_DEPTH}
         unexpected = sorted(set(int(value) for value in D.flat) - allowed_depths)
         if unexpected:
             errors.append(f"D contains unexpected depth values: {unexpected}")
@@ -1175,7 +1447,7 @@ class AccessibilityEngine:
                 "commutator level from D"
             )
 
-        frozen_count = int(np.sum((D == FROZEN_DEPTH) & offdiag))
+        frozen_count = int(np.sum((D == UNREACHED_DEPTH) & offdiag))
         if frozen_count:
             warnings.append(
                 f"{frozen_count} pairs are unreached through Lie depth "
@@ -1236,8 +1508,8 @@ class AccessibilityEngine:
         D, per_depth, _ = self._get_D()
         return D, per_depth
 
-    def frozen_pairs(self):
-        """Return cutoff-relative R1-frozen, D-frozen, and repaired counts."""
+    def cutoff_summary(self):
+        """Return typed cutoff-relative direct and Lie pair counts."""
         R1 = self._get_R1()
         D, _, _ = self._get_D()
         ns = self.n_sec
@@ -1245,13 +1517,34 @@ class AccessibilityEngine:
         R1_graph = np.zeros((ns, ns), dtype=bool)
         for g in range(self.n_gen):
             R1_graph |= R1[g]
-        frozen_R1 = ns * (ns - 1) - int(np.sum(R1_graph & offdiag))
-        frozen_D = sum(1 for i in range(ns) for j in range(ns)
-                       if i != j and D[i, j] == FROZEN_DEPTH)
-        repaired = sum(1 for i in range(ns) for j in range(ns)
-                       if i != j and not R1_graph[i, j]
-                       and D[i, j] != FROZEN_DEPTH)
-        return {'frozen_R1': frozen_R1, 'frozen_D': frozen_D, 'D_repaired': repaired}
+        unsupported_direct = ns * (ns - 1) - int(np.sum(R1_graph & offdiag))
+        unreached_lie = sum(
+            1 for i in range(ns) for j in range(ns)
+            if i != j and D[i, j] == UNREACHED_DEPTH
+        )
+        lie_emergent = sum(
+            1 for i in range(ns) for j in range(ns)
+            if i != j and not R1_graph[i, j] and D[i, j] != UNREACHED_DEPTH
+        )
+        return {
+            'unsupported_direct_pairs': unsupported_direct,
+            'unreached_lie_pairs': unreached_lie,
+            'lie_emergent_pairs': lie_emergent,
+        }
+
+    def frozen_pairs(self):
+        """Deprecated compatibility view of :meth:`cutoff_summary`."""
+        warnings.warn(
+            "frozen_pairs() uses retired untyped names; use cutoff_summary()",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+        summary = self.cutoff_summary()
+        return {
+            'frozen_R1': summary['unsupported_direct_pairs'],
+            'frozen_D': summary['unreached_lie_pairs'],
+            'D_repaired': summary['lie_emergent_pairs'],
+        }
 
     def per_sector_depth(self):
         """Return per-sector D matrix rows as dict."""
@@ -1267,13 +1560,19 @@ class AccessibilityEngine:
         Convention:
             R1_pct/R2_pct are off-diagonal accessibility densities. Diagonal
             block support is still reported separately as
-            R1_tensor_pct/R2_tensor_pct. Frozen-pair counts are always
-            off-diagonal sector-pair counts.
+            R1_tensor_pct/R2_tensor_pct. Cutoff-unreached counts are always
+            off-diagonal sector-pair counts. The ``frozen_*`` keys are legacy
+            serialization aliases only.
         """
         R1 = self._get_R1()
         R2_arr, R2_pairs = self._get_R2()
         D, per_depth, _ = self._get_D()
-        frozen = self.frozen_pairs()
+        cutoff = self.cutoff_summary()
+        legacy_cutoff = {
+            'frozen_R1': cutoff['unsupported_direct_pairs'],
+            'frozen_D': cutoff['unreached_lie_pairs'],
+            'D_repaired': cutoff['lie_emergent_pairs'],
+        }
         ns, ng = self.n_sec, self.n_gen
         offdiag = ~np.eye(ns, dtype=bool)
 
@@ -1303,7 +1602,8 @@ class AccessibilityEngine:
             'D_max': int(max(d_vals)) if d_vals else -1,
             'D_mean': float(np.mean(d_vals)) if d_vals else -1,
             'per_depth_sizes': [len(pd) for pd in per_depth],
-            **frozen,
+            **cutoff,
+            **legacy_cutoff,
         }
 
     def __repr__(self):
@@ -1313,15 +1613,17 @@ class AccessibilityEngine:
 
 # Also expose at module level
 __all__ = [
-    'FROZEN_DEPTH',
+    'UNREACHED_DEPTH', 'FROZEN_DEPTH',
     'check_accessibility_inputs', 'assert_accessibility_inputs',
     'sector_block_norm', 'projector_block_norm', 'offdiag_count',
-    'compute_direct_support', 'compute_length_two_support',
-    'compute_word_depth_matrix', 'plateau_fraction',
+    'compute_direct_support', 'compute_routed_support',
+    'compute_routed_depth_matrix', 'compute_length_two_support',
+    'compute_word_depth_matrix', 'plateau_fraction', 'compute_depth_census',
     'compute_R1', 'compute_R2', 'compute_R2_per_generator',
-    'compute_lie_filtration', 'compute_lie_depth_matrix',
-    'single_term_bridge_audit',
-    'compute_kappa_depth_matrix',
-    'accessibility_signature',
+    'compute_lie_filtration', 'audit_lie_closure',
+    'compute_lie_depth_matrix', 'image_kernel_distance',
+    'audit_matrix_product', 'rank_protection_audit',
+    'single_term_bridge_audit', 'matrix_nondeg_audit',
+    'compute_lie_accessibility_audit', 'accessibility_signature',
     'AccessibilityEngine',
 ]

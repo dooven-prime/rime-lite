@@ -1,0 +1,37 @@
+{
+  "schema": "paper6.figure-data.v2",
+  "claim_scope": "linearized rank certificates and pointwise normality-gated registrations; no nonlinear chart or moving-field theorem",
+  "provenance": {
+    "sources": [
+      {
+        "path": "experiments/paper6/validation/normal_spectral_chart_audit.py",
+        "sha256": "127b93222ce2c5a62601e4b2ccea255f7c68dbc64f3b957817887d53d98c476e"
+      }
+    ]
+  },
+  "linearized_maps": [
+    {
+      "label": "commutativity",
+      "rank": 11,
+      "nullity": 7,
+      "singular_values": [0.585314, 0.585314, 0.585314, 0.53287, 0.53287, 0.53287, 0.346944, 0.346944, 0.200308, 0.200308, 0.200308, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+      "smallest_retained": 0.2003084041924,
+      "largest_discarded": 1.047788697013e-15
+    },
+    {
+      "label": "commutativity + normality",
+      "rank": 14,
+      "nullity": 4,
+      "singular_values": [0.585314, 0.585314, 0.585314, 0.53287, 0.53287, 0.53287, 0.482726, 0.482726, 0.346944, 0.346944, 0.283279, 0.200308, 0.200308, 0.200308, 0.0, 0.0, 0.0, 0.0],
+      "smallest_retained": 0.2003084041924,
+      "largest_discarded": 1.587214161347e-15
+    }
+  ],
+  "pointwise_registrations": [
+    {"label": "canonical", "sectors": 9, "r1_op": 438, "r1_lie": 408, "commutator_residual": 3.765e-16, "projector_residual": 2.228e-14},
+    {"label": "QT axis 0", "sectors": 15, "r1_op": 1006, "r1_lie": 832, "commutator_residual": 7.906e-17, "projector_residual": 2.372e-14},
+    {"label": "QT axis 1", "sectors": 15, "r1_op": 1006, "r1_lie": 832, "commutator_residual": 1.122e-16, "projector_residual": 2.325e-14},
+    {"label": "QT axis 2", "sectors": 15, "r1_op": 1006, "r1_lie": 832, "commutator_residual": 1.572e-16, "projector_residual": 2.348e-14}
+  ],
+  "epsilon": 0.1
+}

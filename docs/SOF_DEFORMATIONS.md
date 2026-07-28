@@ -3,7 +3,9 @@
 **Status:** public dynamic-layer companion to Paper IX, published as
 DOI [10.5281/zenodo.21287695](https://doi.org/10.5281/zenodo.21287695). This
 summary records deformation geometry, observable dynamics, rate separation,
-and wall boundaries; Paper IX remains the canonical claim source.
+and wall boundaries; Paper IX remains the canonical source for its published
+claims. The typed-channel vocabulary below is the active migration convention
+and does not silently reinterpret the frozen v1 manuscript or artifacts.
 
 Paper IX is organized around:
 
@@ -33,17 +35,24 @@ The primary dynamic object is the path or family `(F_t)_{t in I}` in
 `Phi_t: F -> F_t` is shorthand for comparison data that lets observables be
 tracked along this path.
 
-An admissible deformation induces observable trajectories:
+An admissible deformation induces only the typed observable trajectories for
+which its carrier and comparison data have been registered. Depending on the
+realization, these may include:
 
 ```text
-R_1(t), R_2(t), D(t), J_acc(t), ...
+operator/word: R_1[Y](t), C_d[Y](t), W_d[Y](t),
+               D_route[Y](t), D_word[Y](t)
+Lie/Hall:      R_1^Lie(t), R_2^Lie(t), D_Lie(t)
+typed jets:    J_op(t), J_comp(t), J_word(t), J_Lie(t)
 ```
 
 Here admissible means:
 
 - the path has comparison data for the diagnostic under discussion;
+- the operator or Lie/Hall registration and its depth convention are fixed;
 - the relevant sectors, or registered analogues, can be tracked on the domain
   being studied;
+- spectrally derived sectors remain inside a certified normal spectral chart;
 - the continuous field underlying the diagnostic is defined on that domain;
 - the discrete shadow is locally constant away from the relevant rank,
   support, collision, filtration, or wall discriminant.
@@ -93,6 +102,19 @@ different observable dynamics.
 SOF supplies the analysis paradigm. The deformation geometry supplies the
 specific dynamics.
 
+The middle layer is therefore branched rather than linear:
+
+```text
+admissible typed sector path
+  -> operator / routed-composition / full-word trajectories
+  -> Lie / Hall trajectories
+  -> separate wall and promotion certificates for each branch
+```
+
+No deformation law identifies the branches automatically. A support wall, a
+word-depth wall, a commutator wall, and a Lie-depth wall are different typed
+events even when they occur at the same parameter value.
+
 Current Paper IX diagnostics separate three deformation geometries:
 
 | Diagnostic | Deformation geometry | Observable behavior |
@@ -117,11 +139,11 @@ tau(O_i) != tau(O_j)
 
 for some observables `O_i`, `O_j`.
 
-For RIME accessibility, a candidate hierarchy under a structured dynamical
-perturbation model is:
+For the registered Rubik Lie/Hall branch, a candidate hierarchy under a
+structured dynamical perturbation model is:
 
 ```text
-tau(R_1) < tau(R_2) < tau(D)
+tau(R_1^Lie) < tau(R_2^Lie) < tau(D_Lie)
 ```
 
 where direct support responds first, commutator survival responds next, and
@@ -135,25 +157,26 @@ Xu/Vardi/Safran grokking:
   tau(theta_parallel) << tau(theta_perp)
 
 RIME accessibility:
-  tau(R_1) < tau(R_2) < tau(D)
+  tau(R_1^Lie) < tau(R_2^Lie) < tau(D_Lie)
 ```
 
 The first is parameter-space rate separation. The second is observable-space
 rate separation.
 
 Static additive noise is a poor model for this hierarchy. It perturbs
-generators, commutators, and nested commutators simultaneously, so the Lie-depth
-observable `D` can acquire accidental new directions before `R_1` or `R_2`
+generators, commutators, and nested commutators simultaneously, so the
+Lie-depth observable `D_Lie` can acquire accidental new directions before
+`R_1^Lie` or `R_2^Lie`
 cross their intended thresholds. A useful diagnostic result is:
 
 ```text
 near-threshold additive-noise system:
-  tau(R_1) = 5.89e-9 < tau(R_2) = 6.37e-8
-  tau(D)   = 1.00e-10  (scrambled by simultaneous Lie-filtration perturbation)
+  tau(R_1^Lie) = 5.89e-9 < tau(R_2^Lie) = 6.37e-8
+  tau(D_Lie)   = 1.00e-10  (scrambled by simultaneous filtration perturbation)
 ```
 
-This supports `tau(R_1)<tau(R_2)` for engineered near-threshold systems, but it
-also shows that `tau(D)` requires a perturbation model that separates
+This supports `tau(R_1^Lie)<tau(R_2^Lie)` for the engineered registered family,
+but it also shows that `tau(D_Lie)` requires a perturbation model that separates
 first-order support, commutator survival, and higher Lie-depth effects.
 Xu--Vardi--Safran's gradient-descent plus weight-decay model is the right kind
 of precedent: one channel is gradient-driven while the hidden channel is driven
@@ -176,32 +199,34 @@ This closes the old H3 gap at the proxy layer.  The causal statement is:
 mechanism separation + ordered response constants -> proxy-rate separation
 ```
 
-It still does not prove `K_i -> R_i/D` and does not measure `tau(D)`.
+It still does not prove a proxy-to-typed-shadow map and does not measure a
+discrete depth time scale.
 
 Current evidence gap:
 
 ```text
 observed:
-  tau(R_1) < tau(R_2)              in engineered near-threshold accessibility
+  tau(R_1^Lie) < tau(R_2^Lie)      in engineered near-threshold accessibility
   tau(K0) < tau(K1) < tau(K2)      in training-coupled NN SOF
-  D_repaired = 6                  in static Clifford+CNOT quantum audit
+  legacy D_repaired = 6            in static Clifford+CNOT quantum audit
 
 not yet observed:
-  tau(R_1) < tau(R_2) < tau(D)
-  together with D_repaired > 0 along one structured deformation
+  tau(R_1^Lie) < tau(R_2^Lie) < tau(D_Lie)
+  together with typed Lie-depth repair along one structured deformation
 ```
 
 Here `K2` is a continuous nested-commutator proxy, not the discrete
-first-depth observable `D`.  A valid `tau(D)` audit needs a species with
+first-depth observable `D_Lie`. A valid `tau(D_Lie)` audit needs a species with
 initial frozen pairs that become accessible during a structured deformation.
-The NN audit remains proxy-only; natural `tau(D)` targets include
-structured quantum gate deformations or Rubik continuous deformations.
+The NN audit remains proxy-only; natural `tau(D_Lie)` targets include
+structured quantum gate deformations or Rubik continuous deformations with a
+fixed Lie/Hall registration.
 
 Open bridge:
 
 ```text
 continuous proxies        K0, K1, K2
-discrete shadows          R_1, R_2, D
+discrete Lie shadows      R_1^Lie, R_2^Lie, D_Lie
 missing bridge            Observable Proxy Shadow Principle
 ```
 
@@ -217,7 +242,7 @@ Cross-domain rate-separation comparison:
 | Domain | Fast channel | Slow channel | Ratio |
 |--------|--------------|--------------|-------|
 | Ridge regression | `theta_parallel` | `theta_perp` | about `6.7e4--6.8e4x` |
-| RIME near-threshold | `R_1` | `R_2` | about `11x` |
+| RIME near-threshold | `R_1^Lie` | `R_2^Lie` | about `11x` |
 
 The magnitudes are domain-dependent. The shared pattern is hierarchical
 visibility: a fast channel responds first, while a slow channel becomes visible
@@ -230,8 +255,9 @@ experiments/paper9/rate_hierarchy.py
 ```
 
 The Rubik local perturbation sweep is presently a flat-region negative control:
-for tested perturbations near the canonical point, `R_1`, `R_2`, and `D` may
-remain unchanged, so no finite threshold hierarchy is observed. This does not
+for tested perturbations near the canonical point, the registered
+`R_1^Lie`, `R_2^Lie`, and cutoff `D_Lie` may remain unchanged, so no finite
+threshold hierarchy is observed. This does not
 disprove observable rate separation; it says the tested Rubik region is locally
 stable and that rate hierarchy should be measured either across actual walls,
 under larger perturbations, or in smaller SOF test systems where full depth
@@ -245,15 +271,18 @@ The same diagnostic also records two useful guardrails:
 
 The richer sectorization-sensitivity run gives:
 
-| Sectorization | Sectors | R1% | R2% | D_max | D_rep |
+| Sectorization | Sectors | legacy R1% | legacy R2% | cutoff D_max | D_rep |
 |---------------|---------|-----|-----|-------|-------|
 | QT-only | 39 | 15.3 | 7.2 | 999 | 36 |
 | HT-only | 16 | 10.0 | 3.9 | 999 | 60 |
 | Mixed | 9 | 7.4 | 3.5 | 999 | 32 |
 
-Thus sectorization changes not only support density but also the distribution
-of higher-depth repair. In particular, the HT-only sectorization repairs more
-frozen pairs than the mixed canonical sectorization in this diagnostic.
+The legacy columns are implementation labels for one registered
+commutator-depth audit; they are not a common operator/word/Lie ladder. Within
+that fixed registration, sectorization changes not only support density but
+also the distribution of higher-depth repair. In particular, the HT-only
+sectorization repairs more frozen pairs than the mixed canonical
+sectorization in this diagnostic.
 
 Rubik sectorization sensitivity can be expensive when many sectors are
 generated. The exploratory script therefore skips large sectorizations by
@@ -274,12 +303,17 @@ where `O` is a discrete observable shadow and `J` is the corresponding
 continuous field. Equality requires the discriminant to exactly capture the
 rank, support, collision, or filtration change defining `O`.
 
+Both `O` and `J` must carry the same channel type. For example, an operator
+block field may pull back an `R_1[Y]` support wall, while a Hall-coefficient
+field may pull back a Lie-depth wall. A wall in one branch is not evidence for
+a wall in another branch without a separate comparison certificate.
+
 ## Deformation Species
 
 | Species | Deformation variable | Typical dynamics |
 |---------|----------------------|------------------|
 | Paper IV spectral | affine projection | collision geometry |
-| Paper VI accessibility | generator weights | accessibility walls |
+| Paper VI linearized spectral constraints | generator weights | commutativity/normality gates, pointwise registrations, and candidate typed walls |
 | Yang-like filtration | state mixing | monotone degeneration |
 | Neural-network SOF | activation family and training dynamics | activation-dependent sectorization and observable time-scale ratios |
 | Quantum circuits | gate-set or Hamiltonian variation | channel and controllability changes |
@@ -312,10 +346,15 @@ Examples:
 For hidden-layer weights, one can define projected observables:
 
 ```text
-R_1: Q_i W_l Q_j != 0
-R_2: Q_i [W_a, W_b] Q_j != 0
-D:   minimal effective composition / Lie-depth path
+R_1[W]:       Q_i W_l Q_j != 0
+Comm_2[W]:    Q_i [W_a, W_b] Q_j != 0
+Depth_comm:   cutoff depth in the declared matrix-commutator audit
 ```
+
+Unless the weight family is separately registered as a skew-Hermitian
+Lie/Hall family, the latter two are matrix-commutator diagnostics rather than
+strict `R_2^Lie` and `D_Lie` objects. Word-depth audits of the same weights form
+a separate associative branch.
 
 The current diagnostic is:
 
@@ -329,13 +368,13 @@ second script couples a small training loop to SOF observables and measures raw
 norm proxies:
 
 ```text
-K0(t): R_1 support proxy
-K1(t): R_2 commutator-survival proxy
-K2(t): nested-depth proxy
+K0(t): R_1[W] direct-support proxy
+K1(t): matrix-commutator-survival proxy
+K2(t): nested-commutator proxy
 ```
 
 The conclusion is not a training theorem: different activations produce
-different sector counts and `R_1/R_2/frozen` profiles, and the training-coupled
+different sector counts and legacy `R1/R2/frozen` diagnostic profiles, and the training-coupled
 audit is an exploratory test of `tau(K0) < tau(K1) < tau(K2)`.
 
 Default training-coupled diagnostic:
@@ -346,11 +385,11 @@ Default training-coupled diagnostic:
 | GeLU | 60 | 80 | 120 | `K0 < K1 < K2` |
 
 Here `K0`, `K1`, and `K2` are raw off-diagonal block-norm proxies for direct
-support, commutator survival, and nested-commutator depth. They retain scale
+support, commutator survival, and nested-commutator response. They retain scale
 information during training. This is why they are better suited to time-scale
-measurement than the normalized binary `D` matrix.
+measurement than a normalized binary depth matrix.
 
-The final binary audits remain connected at the `D` level:
+The final binary audits remain connected at the legacy cutoff-depth level:
 
 | Activation | final R1 | final R2 | final D_repaired | final D_frozen |
 |------------|----------|----------|------------------|----------------|
@@ -363,30 +402,31 @@ This also separates two effects:
 continuous rate hierarchy:
   K0/K1/K2 norms grow on different time scales
 
-binary accessibility repair:
-  D_repaired > 0 only when a frozen pair becomes accessible
+binary cutoff-depth repair:
+  legacy D_repaired > 0 only when a frozen pair becomes accessible
 ```
 
-In the default small NN SOF, `D_repaired` remains zero because all off-diagonal
+In the default small NN SOF, the legacy `D_repaired` field remains zero because all off-diagonal
 sector pairs are already connected at the binary support level from the first
 audit step. This is not a failure of the rate hierarchy. It shows that
 continuous time-scale separation and binary frozen-to-accessible repair are
 different observables. To see training-time D-repair, one needs more sectors,
 a higher binary threshold, or an SOF with genuine initial frozen pairs.
 
-Therefore `tau(K2)` should not be reported as `tau(D)`.  The current NN audit
+Therefore `tau(K2)` should not be reported as `tau(D_Lie)`, `tau(D_word)`, or
+any other discrete depth. The current NN audit
 supports continuous observable rate separation only.  Do not force NN to carry
-the binary `D` claim; use it for proxy rates and reserve `tau(D)` for quantum
-or Rubik deformation audits.
+an untyped binary `D` claim; use it for proxy rates and reserve typed depth-rate
+claims for a realization that registers the corresponding branch.
 
-Do not write `K_i -> R_i` as an established implication.  That arrow is exactly
-the open Proxy Shadow problem.
+Do not write `K_i` as determining any typed discrete support or depth shadow.
+That bridge is exactly the open Proxy Shadow problem.
 
 Interpretation:
 
 ```text
-Paper V:  static R_1/R_2/D structures are exposed.
-Paper IX: dynamic SOF processes make their rates measurable.
+Paper V:  fixed registered families expose typed low-order and depth shadows.
+Paper IX: admissible typed paths make selected trajectories and rates measurable.
 ```
 
 The training-coupled design choice makes the hierarchy observable: direct
@@ -417,11 +457,17 @@ coupled.
 
 ## External vs Internal Moduli
 
-RIME Papers V--VII mainly study external observable moduli:
+Paper VI studies an external generator-weight parameter at the linearized and
+pointwise levels:
 
 ```text
-generator weights -> sector arrangement / accessibility data
+generator weights -> commutativity/normality gates -> pointwise registrations
 ```
+
+Papers V and VII are static fixed-sector papers. They provide compatible typed
+objects and routed-product incidence criteria, not a deformation theorem.
+Moving accessibility fields and walls remain a separately gated research
+program.
 
 Yang-style filtration probes emphasize internal state/coherence moduli:
 
@@ -437,7 +483,7 @@ model.
 Yang-style filtration probes suggest a future degeneration diagnostic:
 
 ```text
-P_d(epsilon) = fraction of sector pairs with D(i,j) <= d
+P_d(epsilon) = fraction of sector pairs with registered cutoff depth <= d
 1 - P_d(epsilon) ~ C epsilon^alpha
 ```
 
@@ -450,7 +496,7 @@ flat, oscillate, or improve.
 Current decision:
 
 - treat Yang-like systems as future Filtration SOF examples;
-- do not force them into the Paper VI accessibility-wall template;
+- do not force them into Paper VI's candidate typed moving-field program;
 - fit exponents only after a monotone degeneration regime has been identified.
 
 Rubik state mixing is currently a contrast case:
@@ -468,7 +514,7 @@ The QT generator-weight plateau diagnostic belongs to this same Paper IX
 deformation layer. It computes and postprocesses
 
 ```text
-P_d(epsilon) = fraction of off-diagonal sector pairs with D(i,j) <= d
+P_d(epsilon) = fraction of off-diagonal sector pairs with registered cutoff depth <= d
 ```
 
 under QT-weight perturbations, and tests whether a monotone Yang-like decay

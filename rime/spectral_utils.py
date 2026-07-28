@@ -6,21 +6,99 @@ All functions work with raw numpy arrays — no CubieSpectralOperator dependency
 
 Sections:
   1. Joint diagonalization & sector classification
-  2. Transport & Lie curvature (K, kappa_0, kappa_1)
-  3. T7 detection
+  2. Declared direct/Lie-family compatibility diagnostics
+  3. Support-graph and projected-composition diagnostics
   4. Group element enumeration (inverse-closed subsets, etc.)
   5. Small group representations (S_3, abelian characters, etc.)
 """
 import numpy as np
-from scipy.linalg import logm
 from itertools import combinations
+
+
+def _positive_finite_float(value, name):
+    try:
+        result = float(value)
+    except (TypeError, ValueError):
+        raise ValueError(f"{name} must be a finite positive scalar") from None
+    if not np.isfinite(result) or result <= 0:
+        raise ValueError(f"{name} must be a finite positive scalar")
+    return result
 
 
 # ============================================================
 # 1. Joint diagonalization & sector classification
 # ============================================================
 
-def joint_diag_sectors(ops, tol=1e-10):
+def _validate_hermitian_operators(ops, validation_tol):
+    """Materialize and validate one finite Hermitian operator family."""
+    ops = [np.asarray(op) for op in ops]
+    if not ops:
+        raise ValueError("at least one spectral operator is required")
+    n = ops[0].shape[0]
+    if any(op.ndim != 2 or op.shape != (n, n) for op in ops):
+        raise ValueError("spectral operators must be square matrices of one size")
+    for index, op in enumerate(ops):
+        if not np.all(np.isfinite(op)):
+            raise ValueError(f"ops[{index}] contains non-finite values")
+        residual = np.linalg.norm(op - op.conj().T, "fro")
+        if residual > validation_tol:
+            raise ValueError(
+                f"ops[{index}] is not Hermitian at validation_tol="
+                f"{validation_tol}: residual={residual:.3e}"
+            )
+    return ops
+
+
+def ordered_compression_sectors(ops, tol=1e-10, validation_tol=1e-8):
+    """Build an order-dependent orthogonal sectorization from Hermitian ops.
+
+    Each operator is compressed to every sector produced by the preceding
+    operators, then the compression is diagonalized and clustered. When the
+    operators do not commute, the resulting sectors are not joint
+    eigenspaces and generally depend on operator order. This function records
+    a numerical carrier decomposition only.
+    """
+    tol = _positive_finite_float(tol, "tol")
+    validation_tol = _positive_finite_float(
+        validation_tol, "validation_tol"
+    )
+    ops = _validate_hermitian_operators(ops, validation_tol)
+    n = ops[0].shape[0]
+    if any(op.ndim != 2 or op.shape != (n, n) for op in ops):
+        raise ValueError("compression operators must be square matrices of one size")
+
+    sectors = [(tuple([None] * len(ops)), np.eye(n))]
+    for op_idx, op in enumerate(ops):
+        new_sectors = []
+        for evals_tuple, basis in sectors:
+            dim = basis.shape[1]
+            if dim <= 1:
+                new_sectors.append((evals_tuple, basis))
+                continue
+            compressed = basis.conj().T @ op @ basis
+            eigenvalues, eigenvectors = np.linalg.eigh(compressed)
+            used = set()
+            for i in range(dim):
+                if i in used:
+                    continue
+                group = [
+                    j for j in range(dim)
+                    if abs(eigenvalues[j] - eigenvalues[i]) < tol
+                ]
+                used.update(group)
+                registered_values = list(evals_tuple)
+                registered_values[op_idx] = round(eigenvalues[i].real, 10)
+                sector_basis = basis @ eigenvectors[:, group]
+                new_sectors.append((tuple(registered_values), sector_basis))
+        sectors = new_sectors
+
+    sectors.sort(key=lambda item: tuple(
+        -abs(value) if value is not None else 0 for value in item[0]
+    ))
+    return sectors
+
+
+def joint_diag_sectors(ops, tol=1e-10, validation_tol=1e-8, validate=True):
     """Find simultaneous eigenspaces of commuting Hermitian operators.
 
     Uses iterative subspace restriction with proper eigenvector tracking:
@@ -30,6 +108,9 @@ def joint_diag_sectors(ops, tol=1e-10):
     Args:
         ops: list of (n,n) Hermitian matrices that mutually commute.
         tol: eigenvalue grouping tolerance.
+        validation_tol: absolute Hermiticity and commutator tolerance.
+        validate: retained for compatibility. ``False`` is deprecated and no
+            longer bypasses the commuting-Hermitian gate.
 
     Returns:
         List of (eigenvalue_tuple, V) where eigenvalue_tuple is a tuple
@@ -37,39 +118,33 @@ def joint_diag_sectors(ops, tol=1e-10):
         matrix whose columns form an orthonormal basis for the joint eigenspace.
         Sorted by first op's eigenvalue descending, then second, etc.
     """
-    n = ops[0].shape[0]
-    # Each sector is (evals_tuple, V) where V columns span the subspace
-    sectors = [(tuple([None] * len(ops)), np.eye(n))]
-
-    for op_idx, op in enumerate(ops):
-        new_sectors = []
-        for evals_tuple, V in sectors:
-            dim = V.shape[1]
-            if dim <= 1:
-                new_sectors.append((evals_tuple, V))
-                continue
-            # Restrict operator to subspace spanned by V
-            sub_op = V.conj().T @ op @ V
-            sub_evals, sub_evecs = np.linalg.eigh(sub_op)
-            # Group by eigenvalue proximity
-            used = set()
-            for i in range(dim):
-                if i in used:
-                    continue
-                group = [j for j in range(dim)
-                         if abs(sub_evals[j] - sub_evals[i]) < tol]
-                used.update(group)
-                new_evals = list(evals_tuple)
-                new_evals[op_idx] = round(sub_evals[i].real, 10)
-                # Transform eigenvectors back to original basis
-                V_group = V @ sub_evecs[:, group]
-                new_sectors.append((tuple(new_evals), V_group))
-        sectors = new_sectors
-
-    sectors.sort(key=lambda x: tuple(
-        -abs(e) if e is not None else 0 for e in x[0]
-    ))
-    return sectors
+    tol = _positive_finite_float(tol, "tol")
+    validation_tol = _positive_finite_float(
+        validation_tol, "validation_tol"
+    )
+    if not validate:
+        import warnings
+        warnings.warn(
+            "validate=False no longer bypasses the commuting-Hermitian gate; "
+            "use ordered_compression_sectors() for noncommuting inputs",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+    ops = _validate_hermitian_operators(ops, validation_tol)
+    for i, left in enumerate(ops):
+        for j in range(i + 1, len(ops)):
+            residual = np.linalg.norm(
+                left @ ops[j] - ops[j] @ left, "fro"
+            )
+            if residual > validation_tol:
+                raise ValueError(
+                    f"ops[{i}] and ops[{j}] do not commute at "
+                    f"validation_tol={validation_tol}: "
+                    f"residual={residual:.3e}"
+                )
+    return ordered_compression_sectors(
+        ops, tol=tol, validation_tol=validation_tol
+    )
 
 
 def build_projectors(sectors, dim_total):
@@ -77,13 +152,17 @@ def build_projectors(sectors, dim_total):
 
     Args:
         sectors: output of joint_diag_sectors().
-        dim_total: total dimension of the Hilbert space (ignored, from V.shape).
+        dim_total: total dimension of the Hilbert space.
 
     Returns:
         List of (n,n) projector matrices, one per sector.
     """
+    if not sectors:
+        raise ValueError("at least one sector is required")
     projectors = []
     for _, V in sectors:
+        if V.ndim != 2 or V.shape[0] != dim_total:
+            raise ValueError("sector bases do not match dim_total")
         P = V @ V.conj().T
         projectors.append(P)
     return projectors
@@ -125,80 +204,12 @@ def classify_sectors(sectors, dim_a, dim_b=None, dim_total=None, tol=1e-10):
     return types
 
 
-# ============================================================
-# 2. Transport & Lie curvature
-# ============================================================
-
-def compute_transport_kappa(rhos, projectors, compute_kappa1=True):
-    """Compute transport tensor K, kappa_0, and optionally kappa_1.
-
-    Standalone computation — no CubieSpectralOperator dependency.
-    Used by Papers I/II/III for transport topology and Lie curvature.
-
-    K[a,b]     = max_g ‖P_a ρ(g) P_b‖_F        (transport tensor, Paper II eq.1)
-    kappa0[a,b] = max_g ‖P_a A_g P_b‖_F         (Lie depth 0, Paper III eq.2)
-    kappa1[a,b] = max_{g,h} ‖P_a [A_g,A_h] P_b‖_F  (Lie depth 1, Paper III eq.3)
-
-    where A_g = (log ρ(g) − log ρ(g)^H) / 2 are the skew-Hermitian generators.
-
-    Args:
-        rhos: list of (n,n) unitary representation matrices ρ(g).
-        projectors: list of (n,n) projector matrices P_α.
-        compute_kappa1: if True, also compute κ₁.
-
-    Returns:
-        (K, kappa0, kappa1) — three (n_sec, n_sec) arrays.
-        kappa1 is None if compute_kappa1=False.
-    """
-    n_sec = len(projectors)
-    K = np.zeros((n_sec, n_sec))
-    kappa0 = np.zeros((n_sec, n_sec))
-
-    # Compute skew-Hermitian Lie generators from unitary representations
-    A_gs = []
-    for rho_g in rhos:
-        X = logm(rho_g)
-        X = (X - X.conj().T) / 2
-        A_gs.append(X)
-
-    for a in range(n_sec):
-        Pa = projectors[a]
-        for b in range(n_sec):
-            Pb = projectors[b]
-            max_K = 0.0
-            max_k0 = 0.0
-            for i, rho_g in enumerate(rhos):
-                max_K = max(max_K, np.linalg.norm(Pa @ rho_g @ Pb, 'fro'))
-                max_k0 = max(max_k0, np.linalg.norm(Pa @ A_gs[i] @ Pb, 'fro'))
-            K[a, b] = max_K
-            kappa0[a, b] = max_k0
-
-    if compute_kappa1:
-        kappa1 = np.zeros((n_sec, n_sec))
-        for a in range(n_sec):
-            Pa = projectors[a]
-            for b in range(n_sec):
-                Pb = projectors[b]
-                max_k1 = 0.0
-                for g in range(len(A_gs)):
-                    for h in range(len(A_gs)):
-                        if g == h:
-                            continue
-                        comm = A_gs[g] @ A_gs[h] - A_gs[h] @ A_gs[g]
-                        max_k1 = max(max_k1, np.linalg.norm(Pa @ comm @ Pb, 'fro'))
-                kappa1[a, b] = max_k1
-    else:
-        kappa1 = None
-
-    return K, kappa0, kappa1
-
-
 def compute_transport_kappa_from_Xs(rhos, Xs, projectors, compute_kappa1=True):
     """Compute K, kappa_0, kappa_1 using pre-computed Lie generators Xs.
 
-    Like compute_transport_kappa() but accepts Xs directly — avoids
-    recomputing logm when Xs are already available (e.g., from
-    rep_utils.skew_log_generators).
+    The direct family ``rhos`` and Lie family ``Xs`` are explicit inputs. This
+    avoids the implicit principal-log registration used by the retired
+    first-version convenience helper.
 
     Args:
         rhos: list of unitary ρ(g) matrices (for K only).
@@ -246,8 +257,97 @@ def compute_transport_kappa_from_Xs(rhos, Xs, projectors, compute_kappa1=True):
 
 
 # ============================================================
-# 3. T7 detection
+# 3. Support-graph and projected-composition diagnostics
 # ============================================================
+
+def sector_bases_from_projectors(
+        projectors, eigenvalue_cutoff=0.5, tol=1e-8, validate=True):
+    """Return bases for a declared numerical orthogonal projector family.
+
+    Validation checks Hermiticity, idempotence, and pairwise orthogonality. The
+    family need not be complete; retained-subspace callers may intentionally
+    omit the complement.
+    """
+    projectors = [np.asarray(projector) for projector in projectors]
+    if not projectors:
+        raise ValueError("at least one projector is required")
+    ambient_dim = projectors[0].shape[0]
+    if any(
+            projector.ndim != 2
+            or projector.shape != (ambient_dim, ambient_dim)
+            for projector in projectors):
+        raise ValueError("projectors must be square matrices of one ambient size")
+    if validate:
+        for index, projector in enumerate(projectors):
+            if np.linalg.norm(projector - projector.conj().T, "fro") > tol:
+                raise ValueError(f"projectors[{index}] is not Hermitian")
+            if np.linalg.norm(projector @ projector - projector, "fro") > tol:
+                raise ValueError(f"projectors[{index}] is not idempotent")
+        for i, left in enumerate(projectors):
+            for j in range(i + 1, len(projectors)):
+                if np.linalg.norm(left @ projectors[j], "fro") > tol:
+                    raise ValueError(
+                        f"projectors[{i}] and projectors[{j}] are not orthogonal"
+                    )
+    bases = []
+    for projector in projectors:
+        hermitian = (projector + projector.conj().T) / 2
+        eigenvalues, eigenvectors = np.linalg.eigh(hermitian)
+        bases.append(eigenvectors[:, eigenvalues > eigenvalue_cutoff])
+    return bases
+
+
+def max_two_step_composition(rho_matrices, sector_bases, i, k, j):
+    """Audit all projected two-step products through sector ``k``.
+
+    Reduced sector-basis products have the same Frobenius norm and nonzero
+    status as ``Q_i rho(g2) Q_k rho(g1) Q_j``.
+    """
+    rhos = [matrix.toarray() if hasattr(matrix, 'toarray') else np.asarray(matrix)
+            for matrix in rho_matrices]
+    Bi, Bk, Bj = sector_bases[i], sector_bases[k], sector_bases[j]
+    left = [Bi.conj().T @ rho @ Bk for rho in rhos]
+    right = [Bk.conj().T @ rho @ Bj for rho in rhos]
+
+    left_norms = [np.linalg.norm(block, 'fro') for block in left]
+    right_norms = [np.linalg.norm(block, 'fro') for block in right]
+    best_norm = -1.0
+    best_pair = None
+    for g2, left_block in enumerate(left):
+        for g1, right_block in enumerate(right):
+            norm = np.linalg.norm(left_block @ right_block, 'fro')
+            if norm > best_norm:
+                best_norm = float(norm)
+                best_pair = (g2, g1)
+
+    return {
+        'left_max': float(max(left_norms, default=0.0)),
+        'right_max': float(max(right_norms, default=0.0)),
+        'composition_max': best_norm,
+        'composition_argmax': best_pair,
+    }
+
+
+def find_graph_only_two_step_pairs(K, block_sets, tol_K=0.05):
+    """Find disjoint-endpoint two-step paths in the direct support graph.
+
+    The result makes no matrix-composition claim. Each item is the zero-based
+    tuple ``(i, j, candidates)``.
+    """
+    n = len(block_sets)
+    pairs = []
+    for i in range(n):
+        for j in range(i + 1, n):
+            if not block_sets[i].isdisjoint(block_sets[j]):
+                continue
+            if K[i, j] >= tol_K:
+                continue
+            candidates = [k for k in range(n)
+                          if k != i and k != j
+                          and K[i, k] > tol_K and K[k, j] > tol_K]
+            if candidates:
+                pairs.append((i, j, candidates))
+    return pairs
 
 def block_set(P, block_ranges, threshold=0.01):
     """Return set of block names where projector P has significant support.
@@ -301,133 +401,6 @@ def select_canonical_intermediate(candidates, K, tol_K=0.05):
     degree = np.array([sum(K[i, :] > tol_K) + sum(K[:, i] > tol_K)
                        for i in range(n)], dtype=float)
     return max(candidates, key=lambda k: degree[k])
-
-
-def count_t7_pairs(K, kap0, kap1, block_sets, tol_K=0.05, tol_kappa=1e-6):
-    """Count T7 pairs: cross-block, K=0, kappa_0=kappa_1=0, 2-step reachable.
-
-    Detection pipeline (CCS §2.5):
-      1. Cross-block: block_sets[i].isdisjoint(block_sets[j]) — structural,
-         exact. This is the load-bearing step.
-      2. K=0 and kappa_0=kappa_1=0 — numerical check on depths 0 and 1
-         (logm noise ~1e-6).
-      3. 2-step reachable: at least one intermediate sector γ exists with
-         K[i,γ] > tol_K and K[γ,j] > tol_K.
-
-    kappa_d=0 for all d >= 2 is NOT checked numerically. It follows from
-    Lemma 1 (block-diagonal Lie closure): if block sets are disjoint, the
-    Lie algebra generated by {A_g} is block-diagonal, so all nested
-    commutators vanish structurally across blocks. The numerical pipeline
-    establishes cross-blockness (step 1) and depth-0/1 vanishing (step 2);
-    Lemma 1 then lifts depth-0/1 to all-depth vanishing.
-
-    This function answers "does a T7 pair exist?" (Level 1: identification).
-    For canonical witness selection (Level 2: which intermediate?), use the
-    separate function select_canonical_intermediate().
-
-    Args:
-        K: (n,n) transport tensor.
-        kap0: (n,n) kappa_0 matrix.
-        kap1: (n,n) kappa_1 matrix.
-        block_sets: list of sets, block_set(P_i) for each sector projector.
-        tol_K: threshold for "non-zero" transport (default 0.05).
-        tol_kappa: threshold for "zero" kappa (default 1e-6, logm noise ~1e-6).
-
-    Returns:
-        (count, pairs) where count is int and pairs is list of (i+1, j+1) tuples.
-    """
-    n = len(block_sets)
-    count = 0
-    pairs = []
-    for i in range(n):
-        for j in range(i + 1, n):
-            if not block_sets[i].isdisjoint(block_sets[j]):
-                continue
-            if K[i, j] < tol_K and kap0[i, j] < tol_kappa and kap1[i, j] < tol_kappa:
-                candidates = [k for k in range(n)
-                              if k != i and k != j
-                              and K[i, k] > tol_K and K[k, j] > tol_K]
-                if candidates:
-                    count += 1
-                    pairs.append((i + 1, j + 1))
-    return count, pairs
-
-
-def find_t7_pairs(K, kappa0, kappa1, sector_types, tol=1e-6):
-    """DEPRECATED — use count_t7_pairs() with block_set() instead.
-
-    Old T7 detection using A/B/H sector classification (2-block model only).
-    Does not handle the Rubik's cube 4-block structure correctly.
-    """
-    import warnings
-    warnings.warn(
-        'find_t7_pairs is deprecated. Use count_t7_pairs(K, kap0, kap1, '
-        'block_sets) with block_set() for multi-block support.',
-        DeprecationWarning, stacklevel=2)
-    n = len(sector_types)
-    pairs = []
-    for a in range(n):
-        if sector_types[a] not in ('A', 'B'):
-            continue
-        for b in range(a + 1, n):
-            if sector_types[b] not in ('A', 'B'):
-                continue
-            if sector_types[a] == sector_types[b]:
-                continue
-            has_path = False
-            for h in range(n):
-                if sector_types[h] == 'H':
-                    if K[a, h] > tol and K[h, b] > tol:
-                        has_path = True
-                        break
-            if K[a, b] < tol and kappa0[a, b] < tol and kappa1[a, b] < tol:
-                pairs.append((a, b, has_path,
-                              float(K[a, b]), float(kappa0[a, b]),
-                              float(kappa1[a, b])))
-    return pairs
-
-
-def analyze_t7(rhos, block_slices, center_ops=None):
-    """DEPRECATED — one-shot T7 using old A/B/H classification.
-
-    Use CubieSpectralOperator.center_decomposition() + count_t7_pairs() instead.
-    """
-    import warnings
-    warnings.warn(
-        'analyze_t7 is deprecated. Use CubieSpectralOperator + '
-        'count_t7_pairs() with block_set() for multi-block support.',
-        DeprecationWarning, stacklevel=2)
-    n = rhos[0].shape[0]
-    dim_a = block_slices[0][1].stop
-
-    if center_ops is None:
-        A = sum(rhos) / len(rhos)
-        center_ops = [A]
-
-    sectors = joint_diag_sectors(center_ops)
-    projectors = build_projectors(sectors, n)
-    types = classify_sectors(sectors, dim_a)
-
-    K, kappa0, kappa1 = compute_transport_kappa(rhos, projectors)
-    t7_pairs = find_t7_pairs(K, kappa0, kappa1, types)
-
-    n_pure_a = sum(1 for t in types if t == 'A')
-    n_pure_b = sum(1 for t in types if t == 'B')
-    n_hybrid = sum(1 for t in types if t == 'H')
-    n_true_t7 = sum(1 for _, _, has_path, _, _, _ in t7_pairs if has_path)
-
-    return {
-        'sectors': sectors,
-        'projectors': projectors,
-        'types': types,
-        'K': K, 'kappa0': kappa0, 'kappa1': kappa1,
-        't7_pairs': t7_pairs,
-        'dim_total': n, 'dim_a': dim_a,
-        'n_sectors': len(sectors),
-        'n_pure_a': n_pure_a, 'n_pure_b': n_pure_b, 'n_hybrid': n_hybrid,
-        'n_t7': len(t7_pairs), 'n_true_t7': n_true_t7,
-    }
-
 
 # ============================================================
 # 4. Group element enumeration

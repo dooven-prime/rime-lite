@@ -1,6 +1,6 @@
 # RIME Program Map
 
-**Date**: 2026-07-21
+**Date**: 2026-07-28
 **Status**: public narrative architecture map for Papers I--XIII, with a
 Paper XIV horizon.
 
@@ -16,18 +16,56 @@ For the public post-Paper VII SOF arc, see [SOF_OBJECTS.md](SOF_OBJECTS.md),
 [SOF_DEFORMATIONS.md](SOF_DEFORMATIONS.md), and
 [SOF_REGISTRY.md](SOF_REGISTRY.md).
 
+The active repository versions of Papers I--VII are maintained as independent
+version-2 papers. This map may summarize their typed interfaces but cannot
+reinterpret their theorem hypotheses, operator families, or claim status.
+Release identities and DOIs are maintained once in the root
+[Public Release table](../README.md#public-release).
+
+---
+
+## Active Accessibility Typing Rule
+
+The current cross-paper middle architecture is:
+
+```text
+spectral admissibility gates, where applicable
+  -> typed sector fields
+  -> operator / routed-composition / full-word branch
+     and a separate Lie / Hall branch
+  -> branch-specific promotion or comparison certificates
+```
+
+In particular, Boolean graph paths, routed projected products, full ordered
+words, commutator support, and Hall/Lie depth are distinct objects. Bare
+`R_1`, `R_2`, `D`, `J_acc`, and `Sigma_access` names below are retained only
+when describing a release-local manuscript convention. They must not be used
+to infer a cross-channel theorem. Frozen papers retain their locally audited
+semantics; any versioned reopening and all later-paper work must use typed
+names without global search-and-replace migration.
+
+The Paper VI and VII descriptions in this map are bounded summaries of their
+frozen v2 manuscripts. They do not promote pointwise certificates into moving
+field theorems or local incidence results into global accessibility claims.
+
+Cross-paper connections are **typed interfaces, not a dependency chain**. A
+paper may reuse the output type of a neighboring result, but it must redeclare
+the actual object, hypotheses, realization, and claim status used locally. A
+bibliographic citation identifies the neighboring result; it does not import
+its theorem hypotheses or promote its output to a stronger object.
+
 ---
 
 ## 1. Core Architecture
 
-The program now has three stable phases:
+The program has the following stable role summary:
 
 ```text
-Papers I--III: Rubik-centered static trilogy
-Paper IV:      projection geometry of spectral layers
-Paper V:       static repair calculus for accessibility on fixed sectors
-Paper VI:      deformation geometry of spectral and accessibility walls
-Paper VII:     generic completeness away from high-codimension incidence
+Papers I--III: independent Rubik-centered papers
+Paper IV:      fixed finite collision arrangements and conditional spectral quotients
+Paper V:       local direct-support and commutator-accessibility theory
+Paper VI:      normality-gated point samples and moving-field research boundary
+Paper VII:     incidence geometry, rank protection, and promotion limits
 Paper VIII:    SOF object layer and strict morphisms
 Paper IX:      SOF deformation geometry and observable trajectories
 Paper X:       Universal Observable Pipeline and registry evidence
@@ -40,25 +78,27 @@ Spectral geometry determines the objects.
 Compatible sectorization is the interface.
 Observable geometry is the invariant.
 Accessibility geometry determines their behavior.
-Genericity determines why the behavior is stable.
+Genericity tests when the behavior is stable.
 ```
 
 The governing distinction is:
 
 ```text
 Paper IV: fixed arrangement P, varying projection L_alpha
-Paper VI: moving arrangement P(w), defined on normal spectral charts
-          Sigma_spec subset Sigma_comm
+Paper VI v2: linearized constraints and normality-gated point registrations
+Paper VI research target: moving P(w), defined only on certified spectral charts
+                          Sigma_spec subset Sigma_normal subset Sigma_comm
 ```
 
 Important distinction:
 
 ```text
-Paper V Type I--IV = static length-2 mechanism taxonomy.
-Paper VI walls     = moduli loci where R1(w), R2(w), or D(w) changes.
+Paper V cancellation/incidence = static low-order mechanisms.
+Paper VI typed wall loci       = moving-field research program after all gates.
 ```
 
-Both use the words `R_1` and `R_2`, but they answer different questions.
+Historical drafts used the same bare `R_1` and `R_2` names across these layers.
+The active architecture requires carrier-qualified names.
 
 ---
 
@@ -66,74 +106,66 @@ Both use the words `R_1` and `R_2`, but they answer different questions.
 
 | Paper | Role | Core object | Main question |
 |-------|------|-------------|---------------|
-| I | Spectral formation | `A_18` | Why does the canonical Rubik spectrum have six rational layers? |
-| II | Sector transport | QT/HT joint-spectral sectors and `K` | Why does the resolved transport graph have its topology? |
-| III | Accessibility separation | Lie vs composition accessibility | Why can composition see channels Lie generation misses? |
-| IV | Collision geometry | finite joint spectrum `P={(q_i,h_i)}` | Why are the six layers a collision quotient? |
-| V | Static repair calculus | length-2 witnesses, `R_1`, `R_2`, weighted Hall paths | What repairs binary support after path-commutator cancellation? |
-| VI | Deformation theory | generator-set moduli space, `Sigma_comm`, accessibility jets | How do spectral phases and accessibility data bifurcate under generator variation? |
-| VII | Completion theory | incidence variety, rank-protected bridges, generic completion | Why is accessibility generically stable? |
+| I | Block spectral census | `A_18` and reducing blocks | What is the canonical block spectrum, and which conditional arithmetic criteria apply? |
+| II | Sector non-invariance and direct transport | registered QT/HT sectors, projected blocks, and `K` | When does direct off-diagonal transport occur, and how does it encode sector non-invariance? |
+| III | Graph/operator separation | support graph, projected composition, image--kernel obstruction | When does graph reachability survive matrix composition? |
+| IV | Collision geometry | fixed finite arrangement `P={(q_i,h_i)}` and linear projections | How do affine-branch collisions form quotient layers, and when may a numerical realization inherit that quotient? |
+| V | Local support/commutator theory | `R_1^Lie`, routed `X`-products, `X`-word support, `R_2^Lie`, and `D_Lie` | Why does Boolean support fail to determine commutator accessibility? |
+| VI | Linearized commutativity geometry | weighted QT/HT pairs, linearized constraints, and normality-gated point registrations | Which linearized directions preserve the declared constraints, and which samples pass the spectral registration gates? |
+| VII | Projected-composition incidence | composable projected factors and fixed-rank incidence strata | When do nonzero factors compose, and what does local incidence fail to promote? |
 | VIII | SOF object theory | finite SOF data, strict morphisms, naturality | What is the sectorized observable object? |
 | IX | Observable dynamics | SOF deformations, trajectories, wall pullbacks, rate separation | How do SOF observables evolve under deformation? |
 | X | Observable pipeline | source systems, sectorization origins, registry evidence | Why do different species share one observable pipeline? |
 
-Short form:
+### Interface Connections, Not a Reading Order
 
-```text
-Paper IV:  How spectral layers are geometrically formed.
-Paper V:   How accessibility is computed on fixed sectors.
-Paper VI:  How sectors and observables deform.
-Paper VII: Why the geometry is generically complete.
-Paper VIII: What the SOF object is.
-Paper IX:  How SOF observables evolve under deformation.
-Paper X:   Why cross-species diagnostics share one observable pipeline.
-```
+| Paper | Self-declared input | Output interface | Missing promotion |
+|-------|---------------------|------------------|-------------------|
+| I | inverse-closed averaging family and reducing blocks | block census, compression-trace identity, conditional arithmetic criteria | no exact QT/HT registration or collision quotient |
+| II | complete orthogonal sectors and declared transport family `rho(S)` | direct blocks, `K`, non-invariance, and block-local transport labels | support paths do not imply nonzero composition |
+| III | declared projectors and transport maps | routed projected products and image--kernel obstruction criteria | no route-to-word, commutator, or Lie-depth promotion |
+| IV | fixed finite `P` and `L_alpha`, or an exactly commuting Hermitian pair | collision classes and fixed-arrangement quotient census | numerical Rubik registration does not imply an exact joint spectrum |
+| V | fixed sectors, declared skew-Hermitian family, and declared Lie filtration | `R_1^Lie`, routed `X`-products, `X`-word support, `R_2^Lie`, and cutoff/exact `D_Lie` | low-order support does not determine full Lie depth |
+| VI | weighted QT/HT family plus commutativity, normality, and chart gates | full-matrix Jacobian certificates and pointwise typed registrations | no coherent moving projector field or wall theorem |
+| VII | composable factors `A:E_k->E_i` and `B:E_j->E_k` | image--kernel incidence geometry and rectangular rank protection | no automatic route-to-word, commutator, Lie-depth, or represented-genericity promotion |
 
-Representation-to-accessibility route:
+The useful neighboring interfaces are therefore limited and explicit:
 
-```text
-Finite Representation
-  -> sector decomposition and projected block operators
-  -> Projection / Collision Geometry       -> Paper IV
-  -> Transport / Accessibility             -> Paper V
-  -> Generator deformation / Wall hierarchy -> Paper VI
-  -> Generic completion                    -> Paper VII
-  -> SOF objects and morphisms             -> Paper VIII
-  -> SOF observable dynamics               -> Paper IX
-  -> Universal observable pipeline         -> Paper X
-```
+- Paper II output may instantiate Paper III, but Paper III redeclares arbitrary
+  sectors and transport maps.
+- Paper III's local image--kernel criterion is compatible with Paper VII's
+  matrix-pair input; Paper VII restates the factors and rank hypotheses.
+- Paper IV's theorem applies pointwise only when an exact finite arrangement
+  or exactly commuting Hermitian pair is supplied. A gated Paper VI numerical
+  sample supports only a pointwise computational comparison unless that exact
+  promotion is certified separately.
+- Paper V supplies typed distinctions for Paper VI and Paper VII audits, not
+  theorem premises for their stronger questions.
+- Paper VII supplies a routed-product survival gate, not a global
+  accessibility or completion theorem.
 
-This map uses only the stable interface: finite sectors, projected blocks,
-observable shadows, and wall discriminants.
-
-Four-Why form:
-
-```text
-Paper IV:  Why do spectral layers appear as projections?
-Paper V:   How is accessibility computed once sectors exist?
-Paper VI:  Why do sectors move and walls appear?
-Paper VII: Why is the resulting geometry generically complete?
-Paper VIII: What is the sectorized observable object?
-Paper IX:  How do observable shadows evolve?
-Paper X:   Which diagnostics persist across species?
-```
-
-Papers I--III are the Rubik laboratory. Papers IV--VII extract the general
-theory: projection geometry, weighted Hall accessibility, deformation
-geometry, and generic completion away from incidence.
+Papers I--III are independent Rubik-centered papers. Papers IV--VII address
+compatible but self-contained general structures: fixed projection geometry,
+typed low-order accessibility, linearized constraints, and composition
+incidence. In Paper IV,
+the finite-arrangement theorem and the exact census of the displayed rational
+nine-point set are unconditional; identification of that set with the exact
+Rubik QT/HT joint spectrum is a separate numerical registration and yields an
+exact Rubik quotient only conditionally.
 Papers VIII--X then package the sectorized observable object, deformation
 dynamics, and cross-species observable pipeline.
 
-Papers IV--VII close the first post-trilogy accessibility cycle:
+Papers IV--VII form a neighboring family of compatible, self-contained
+interfaces:
 
 ```text
 Paper IV    fixed spectral geometry
-Paper V     accessibility calculus
-Paper VI    accessibility deformation
-Paper VII   generic completion
+Paper V     fixed typed accessibility objects
+Paper VI    linearized constraints and pointwise typed registrations
+Paper VII   routed-product incidence and promotion limits
 ```
 
-The next cycle is SOF-oriented:
+The post-Paper VII SOF papers are organized around their own declared objects:
 
 ```text
 Paper VIII  SOF object layer, strict morphisms, and naturality
@@ -145,8 +177,17 @@ Paper XIII  SOF Report Alignment and induced comparison signatures
 Paper XIV   context-indexed interpretation and action semantics (horizon)
 ```
 
-Paper VIII asks what the object is and proves that the RIME observables are
-natural constructions on strict SOF data. Paper IX asks how SOF objects deform
+The descriptions of Papers VIII--XIII below report their published,
+release-local objects. Their bare ladder, repair, and wall terminology is not a
+cross-paper identification of operator support, routed composition, full-word
+support, commutator support, and Lie depth. Migrating those papers to the
+branched typed architecture requires an explicit versioned reopening, updated
+artifacts and figures, and a new Registry version; the frozen Paper X Registry
+v1 snapshot remains unchanged.
+
+Published Paper VIII asks what the object is and proves its release-local
+naturality statements on strict SOF data. Its carrier and depth semantics must
+remain explicit. Paper IX asks how SOF objects deform
 and why different deformation spaces generate different wall geometries. Paper
 X asks why broad external species can enter one observable pipeline. Paper XI
 classifies observable wall records, signatures, spectra, and taxonomy while
@@ -204,45 +245,44 @@ candidate action or policy selection is considered. This horizon does not alter
 the published Paper XIII comparison object: $\Delta_{\mathrm{audit}}$ records
 difference, not defect, and Paper XIII itself supplies no intervention rule.
 
-The common observable architecture behind Papers V--VII is the
-SOF data package
+The common architecture behind Papers V--VII begins with sector projectors and
+registered families, but it is not one untyped data ladder:
 
-$$
-(V,\{Q_i\},\mathcal X).
-$$
+```text
+(Q,Y)     -> operator support, routed composition, full words
+(Q,X,H)   -> Lie support, commutators, Hall/Lie depth
+```
 
-Here $\{Q_i\}$ is a finite projector decomposition and $\mathcal X$ is an
-observable family. The observables $R_1$, $R_2$, $D$, and
-$\mathcal J_{\mathrm{acc}}$ are derived fields of this sectorized block
-geometry. This is program language, not an additional theorem claim: the
-current theorem layers remain the fixed-system repair calculus of Paper V, the
-local commutativity-wall/accessibility-wall geometry of Paper VI, and the
-generic nonincidence completion program of Paper VII.
+Here `Y` is a registered operator family, while `X` and `H` specify a
+registered Lie family and filtration. The shared problem is to determine what
+information survives projection, composition, route summation, and
+antisymmetrization. The theorem layers and promotion claims remain local to
+their declared branches.
 
 ---
 
-## 3. Two Main Routes
+## 3. Two Interface Families
+
+The following groupings indicate compatible input and output signatures. They
+do not prescribe a reading order, build order, or theorem dependency.
 
 ### Route A: Spectral / Sector Geometry
 
 ```text
-Paper I
-  -> Paper II
-  -> Paper IV
-  -> Paper VI, Part I
+Paper I:   (rho,S,reducing blocks) -> block spectral census
+Paper II:  (Q,H,{Q_i},rho(S))      -> registered sectors and direct transport
+Paper IV:  (P,L_alpha)             -> fixed collision quotient
+Paper VI:  (w,Q_T,H_T,gates)       -> linearized and pointwise certificates
 ```
 
-Conceptual chain:
-
-```text
-representation
-  -> averaging algebra
-  -> joint spectrum
-  -> sector decomposition
-  -> affine branch arrangement
-  -> collision quotient
-  -> deformation of the arrangement
-```
+These signatures overlap without identifying their claims. Paper I does not
+produce the exact QT/HT joint resolution required by an operator application
+of Paper IV. Paper II registers a numerical sectorization for its own direct
+transport census. Paper IV redeclares the exact rational arrangement `P_9`
+before using it. A Paper VI point supplies theorem-level input to Paper IV only
+if the pair or arrangement is exact; passing numerical commutativity,
+normality, projector, and chart gates supports a computational pointwise
+comparison, not that exact promotion.
 
 Rubik starting point:
 
@@ -250,111 +290,108 @@ Rubik starting point:
 A_18 = (2/3) QT_all + (1/3) HT_all
 ```
 
-Paper IV statement:
+Paper IV fixed-arrangement statement:
 
 ```text
-The canonical six-layer spectrum is the collision quotient of the nine-point
-QT/HT joint spectrum at alpha = 2/3.
+The displayed rational nine-point arrangement has a six-class collision
+quotient at alpha = 2/3. Its identification with the exact Rubik spectrum is
+conditional on exact operator registration.
 ```
 
-Paper VI extension:
+Paper VI compatibility boundary:
 
 ```text
-Generator-set perturbation changes the arrangement itself:
-P fixed in Paper IV becomes P(w) in Paper VI.
+If a moving normal spectral chart is certified, each point supplies a finite
+arrangement P(w). Exact fixed-arrangement theorems require exact point data;
+numerically registered points retain computational claim status.
 ```
 
-Thus:
-
-```text
-Collision Geometry studies fixed arrangements with varying projections.
-Generator-Set Deformation studies varying arrangements together with their
-induced collision quotients.
-```
+This pointwise compatibility does not establish coherent labels, projector
+continuation, a nonlinear atlas, or collision walls along a parameter path.
 
 ### Route B: Accessibility Theory
 
-```text
-Paper III
-  -> Paper V
-  -> Paper VI, Part III
-  -> Paper VII
-```
-
-Conceptual chain:
+Compatible signatures:
 
 ```text
-generator
-  -> Lie accessibility
-  -> composition accessibility
-  -> R1 support
-  -> length-2 witnesses
-  -> R2 projected commutator survival
-  -> weighted Hall path algebra
-  -> D first-depth data
-  -> accessibility walls
-  -> incidence varieties
-  -> generic completion
+admissible sector fields
+  +-- registered operators Y
+  |     -> direct blocks R_1[Y]
+  |     -> routed products C_d[Y]
+  |     -> full words W_d[Y]
+  |     -> D_route[Y] and D_word[Y]
+  |
+  +-- registered Lie family (X,H)
+        -> R_1^Lie and R_2^Lie
+        -> D_Lie in the declared filtration
+
+each attempted promotion -> its own nondegeneracy, cancellation,
+                             saturation, or comparison certificate
 ```
+
+Paper III uses arbitrary declared transport maps and studies one routed
+composition. Paper V uses a separately declared skew-Hermitian family and Lie
+filtration. Paper VI registers pointwise typed shadows only after its spectral
+gates. Paper VII takes an abstract composable matrix pair. None of these input
+families is imported from another paper without being declared again.
 
 Rubik starting point:
 
 ```text
-T7 is the first explicit separation example:
-composition-generated accessibility exceeds Lie-generated accessibility.
+The canonical five pairs are the first explicit graph/operator separation:
+two-step support paths exist while all projected products vanish.
 ```
 
-General static object:
+General static objects:
 
 ```text
-sector projectors Q_i
-skew generators X_g
-edge weights W(i,g,j)=Q_i X_g Q_j
-projected Hall coefficients
-first depth matrix D
+operator branch: (Q,Y), R_1[Y], C_d[Y], W_d[Y], typed depths
+Lie branch:      (Q,X,H), R_1^Lie, R_2^Lie, D_Lie
 ```
 
-Paper V correction:
+Paper V boundary:
 
 ```text
 (G, chi, Lambda) -> D is false.
 ```
 
-Binary support is insufficient. The live static object is a weighted Hall path
-algebra, with `R_2` as the first repair layer.
+Binary support is insufficient, but there is no single replacement object.
+Routed composition, full words, and Lie brackets retain different information.
 
-Paper VI deformation:
+Paper VI research target:
 
 ```text
-R_1(w), R_2(w), and D(w) are discrete shadows of smooth matrix fields on
-normal spectral charts Sigma_spec subset Sigma_comm.
+on certified normal spectral charts:
+  operator/word fields and Lie/Hall fields move separately
 ```
 
-They are functions on a deformation domain, not fixed invariants attached once
-and for all to a single sectorization.
+They are functions on a declared admissibility domain, not fixed invariants
+attached once and for all to a single sectorization. Existing fragmentation
+samples do not yet certify this target because normality and carrier alignment
+must first be re-established.
 
-Paper VII completion:
+Paper VII promotion boundary:
 
 ```text
-Type IV = incidence variety I={(A,B): AB=0, A!=0, B!=0}
-codim I_r = (m-r)(n-r)+pr
-rank-protected bridges survive
-generic nonincidence supports (R_1,R_2)->D completion
+image--kernel incidence: AB=0 with A!=0 and B!=0
+fixed-rank codimension formulas
+correct rectangular rank-protection conditions
+separate graph->routed, routed->word, and low-order-Lie->depth questions
 ```
 
-The Generic Completion Principle is:
+The incidence geometry is relevant to routed products. It does not by itself
+prove a full-word or Lie-depth completion theorem. Any such conclusion would
+require separately declared depth data, saturation, per-depth support, and
+noncircular promotion hypotheses.
+
+Compact interface synthesis:
 
 ```text
-Outside a high-codimension incidence variety, rank-protected bridge products
-generically survive, so the observable pair (R_1,R_2) determines the
-first-depth invariant D under the stated richness hypotheses.
-```
-
-Compact synthesis:
-
-```text
-Papers IV--VI describe the geometry.
-Paper VII explains why that geometry is generically complete.
+Paper II may supply direct-block data to a Paper III realization.
+Paper III and Paper VII share the local image--kernel matrix interface.
+Paper V fixes the typed distinctions used when formulating later audits.
+Paper VI currently supplies pointwise registrations, not moving fields.
+Every stronger promotion requires a local certificate in the receiving paper.
 ```
 
 ---
@@ -396,8 +433,10 @@ Papers:
 Paper I, Paper IV
 ```
 
-Paper II uses Layer A as input. Paper VI deforms Layer A by moving the
-generator weights.
+Paper II independently declares a registered spectral carrier before computing
+direct transport. Paper VI independently declares a weighted spectral family
+and applies commutativity and normality gates before any pointwise
+registration.
 
 ### Layer B: Transport Language
 
@@ -430,21 +469,46 @@ Papers:
 Paper II
 ```
 
-Layer B is still Rubik-facing in the current trilogy, although its language can
+Layer B is still Rubik-facing in Paper II, although its language can
 later be abstracted.
 
-### Layer C: Static Accessibility Language
+### Layer C1: Graph-to-Operator Composition
+
+Objects:
+
+- direct blocks `Q_i rho(g) Q_j`,
+- direct support graph,
+- ordered projected products,
+- image--kernel obstruction,
+- graph-to-composition promotion criteria.
+
+Main question:
+
+```text
+When does a Boolean support path survive as a nonzero projected product?
+```
+
+Paper:
+
+```text
+Paper III
+```
+
+This layer is representation-operator composition. It does not identify
+support paths with word accessibility and does not use logarithms or Lie
+brackets.
+
+### Layer C2: Static Lie-Accessibility Language
 
 Objects:
 
 - Lie generators,
 - Lie filtration,
-- word/composition filtration,
 - projected generator blocks,
-- `R_1` support,
-- `R_2` projected commutator survival,
-- weighted Hall path algebra,
-- first depth matrix `D`,
+- `R_1^Lie` support,
+- `R_2^Lie` projected commutator survival,
+- projected Hall coefficient data,
+- typed Lie-depth matrix `D_Lie`,
 - accessibility signature `Sig`.
 
 Typical notation:
@@ -452,11 +516,15 @@ Typical notation:
 ```text
 X_g = log rho(g)
 W(i,g,j)=Q_i X_g Q_j
-R_1(i,j;g) = 1 iff Q_i X_g Q_j != 0
-R_2(i,j;g,h) = 1 iff Q_i [X_g,X_h] Q_j != 0
-D = first nonzero Lie-depth matrix
-Sig=(A_0,A_1,A_2,A_inf)
+R_1^Lie(i,j;g) = 1 iff Q_i X_g Q_j != 0
+R_2^Lie(i,j;g,h) = 1 iff Q_i [X_g,X_h] Q_j != 0
+D_Lie = first nonzero depth in the declared Hall/Lie filtration
+cutoff census=(A_0,A_1,A_2,A_unreached)
 ```
+
+The logarithm branch, skew-Hermitian registration, normalization, filtration,
+threshold, and cutoff are part of the object. Associative products of the
+same `X_g` belong to the separate operator/word branch.
 
 Main question:
 
@@ -467,23 +535,27 @@ What determines the first depth at which sector-to-sector accessibility appears?
 Papers:
 
 ```text
-Paper III, Paper V
+Paper V
 ```
 
-Paper III is the separation example. Paper V is the static length-2 repair
-calculus and minimal-data program.
+Paper III and Paper V share a sector-projector interface but declare different
+operator families. Paper III studies represented transport composition;
+Paper V studies skew-Hermitian direct support, words, commutators, and a
+declared Lie filtration. Neither object's support census is imported into the
+other.
 
 ### Layer D: Deformation / Wall Language
 
 Objects:
 
-- generator-set moduli space `M=[0,1]^m`,
+- local differential domain `M_>0=(0,infinity)^m`, with `M_+` reserved for nonnegative boundary probes,
 - commutativity locus `Sigma_comm`,
+- commuting-normal locus `Sigma_normal`,
+- certified normal spectral charts `Sigma_spec`,
 - moving joint arrangement `P(w)`,
 - spectral walls `Sigma_L` and `Sigma_field`,
-- accessibility jet `J_acc(w)`,
-- accessibility wall `Sigma_access`,
-- residual accessibility walls `Sigma_R1`, `Sigma_R2^circ`, `Sigma_D^circ`.
+- typed jets `J_op`, `J_comp`, `J_word`, and `J_Lie`,
+- typed support, composition, word, commutator, and depth walls.
 
 Typical notation:
 
@@ -491,14 +563,15 @@ Typical notation:
 Q_T(w), H_T(w), A(w)
 C_comm(w)=[Q_T(w),H_T(w)]
 Sigma_comm={w:[Q_T(w),H_T(w)]=0}
-J_acc(w)=(J_block,J_comm,J_depth)
+Sigma_spec subset Sigma_normal subset Sigma_comm
+J_acc=(J_op,J_comp,J_word,J_Lie) only as an explicitly declared package
 ```
 
 Main question:
 
 ```text
-How do spectral layers and accessibility observables bifurcate when the
-generator set varies?
+Which linearized directions preserve commutativity and normality, which samples
+pass the spectral gates, and what remains necessary for a moving-field theory?
 ```
 
 Paper:
@@ -511,11 +584,13 @@ Paper VI
 
 ## 5. Paper IV: Fixed Collision Geometry
 
-Paper IV is closed around one central theorem:
+Paper IV is organized around four claim layers:
 
 ```text
-six Rubik spectral layers = collision quotient of a nine-point QT/HT joint
-spectrum at alpha = 2/3.
+general fixed-arrangement theorem
+-> exact census of an explicitly declared rational P_9
+-> computational Rubik registration
+-> conditional exact Rubik interpretation
 ```
 
 The finite-point object is:
@@ -532,10 +607,10 @@ The layer changes come from the collision quotient induced by `L_alpha`:
 fixed point set, changing projection direction.
 ```
 
-The Rubik system provides the motivating example, then the paper immediately
-returns to the general finite-point setting.
+The general theory is independent of the Rubik registration. The operator
+realization enters only after the exact finite-point census.
 
-Important Rubik facts:
+Exact facts for the declared arrangement `P_9`:
 
 ```text
 36 sector pairs = 2 parallel + 10 interior + 15 endpoint + 9 exterior
@@ -545,17 +620,17 @@ S5-S6-S7 collapse to V_5/9
 S8-S9 collapse to V_1/3
 ```
 
-Program-level meaning:
+Rubik claim boundary:
 
 ```text
-The old question "why these six layers?" is answered:
-because the nine-point joint spectrum has its maximal interior collision at
-alpha = 2/3.
+complex128 diagnostics register nine QT/HT clusters near P_9
+numerical table agreement does not prove exact rational joint spectral data
+if exact registration holds, the six A18 layers are the alpha=2/3 quotient
 ```
 
 ---
 
-## 6. Paper V: Static Repair Calculus
+## 6. Paper V: Local Support and Commutator Accessibility
 
 Paper V studies a fixed sectorized system:
 
@@ -563,249 +638,187 @@ Paper V studies a fixed sectorized system:
 (V, {Q_i}, {X_g})
 ```
 
-It does not move the generator set. It asks what information is needed to
-compute accessibility on the fixed sectors.
+It does not move the generator set. It asks which low-order support,
+composition, word, commutator, and Lie-depth data remain distinct on fixed
+sectors.
 
-Stable core:
+Stable theorem layer:
 
 ```text
-R_1 is insufficient.
-R_2 is the first repair layer.
-Weighted Hall path algebra is the right object.
-Length-2 witnesses admit a local obstruction calculus.
+R_1^Lie, routed X-products, X-word support, R_2^Lie, and D_Lie are distinct.
+Identical generator-indexed R_1^Lie can yield different R_2^Lie and depth.
+The pair (R_1^Lie,R_2^Lie) gives a neutral four-class low-order partition.
+Centered scalar hypotheses can certify a local bracket-emergent channel.
 ```
 
-The Type I--IV names are a mechanism taxonomy:
+The retired Type I--IV labels are not the primary Paper V taxonomy. The live
+mechanism names are:
 
 | Mechanism | Meaning |
 |-----------|---------|
-| Type I | singleton-color degeneracy |
-| Type II | projected commutator survives |
-| Type III | cancellation mechanism: signed products cancel |
-| Type IV | incidence mechanism: image-kernel coincidence makes products vanish |
+| direct/bracket status | the four Boolean classes determined by `(R_1^Lie,R_2^Lie)` |
+| cancellation | nonzero projected terms or words cancel in a commutator |
+| incidence | nonzero factors compose to zero by `im(B) subset ker(A)` |
 
-This mechanism taxonomy is distinct from the Paper VI moduli-wall hierarchy.
+This mechanism taxonomy is distinct from the candidate typed moving loci in
+Paper VI's research program; no Paper VI moduli-wall hierarchy is currently a
+theorem.
 
 Claim-status discipline:
 
 ```text
-The local length-2 calculus is the theorem layer.
-Full represented/dense (R_1,R_2)->D completeness remains a program-level
-conjecture, not a proved theorem.
+The exact same-support counterexample and scalar bracket-emergence proposition
+are the theorem layer. Matrix emergence, full represented/dense
+low-order-Lie-to-`D_Lie` completion, and moving walls remain research questions.
 ```
 
-Paper VI does not contradict this. Paper VI gives local stratification on
-normal spectral charts inside `Sigma_comm`; Paper V's completeness question is
-static/global.
+The compatible Paper VI interface begins only after a normal spectral chart is
+certified. Paper V's low-order/depth question is static; coherent motion of
+the corresponding typed fields remains part of Paper VI's research program.
 
 ---
 
-## 7. Paper VI: Commutativity Walls and Spectral Phase Transitions
+## 7. Paper VI: Linearized Geometry and Typed Deformation Program
 
-Paper VI opens the deformation-theory line of the program.
+Paper VI v2 separates a certified linearized geometry layer from a conditional
+moving-field research program.
 
-### Part I: Global Stratification
+### Admissibility Domain
 
-The moduli space is:
-
-```text
-M=[0,1]^m
-```
-
-For Rubik, `m=18`. Define weighted averages:
+For a declared moving spectral family, the required gates are
 
 ```text
-Q_T(w), H_T(w), A(w)
+Sigma_spec subseteq Sigma_normal subseteq Sigma_comm subseteq M
+  -> {Q_i(w)}.
 ```
 
-The commutativity locus is the primary object:
+`Sigma_comm` records pairwise commutativity. `Sigma_normal` additionally
+requires normality of each spectral operator. `Sigma_spec` is a chart on which
+joint spectral clusters have coherent labels, constant ranks, and enough
+separation or contour data to define projector fields with the claimed
+regularity. Moving accessibility fields are defined only after these gates.
+
+The corrected full real/imaginary Jacobian recomputation at the canonical
+point gives
 
 ```text
-Sigma_comm = {w : [Q_T(w),H_T(w)] = 0}.
+commutator derivative:                     rank = 11, nullity = 7
+commutator + QT/HT normality derivative:   rank = 14, nullity = 4
+commutator gap:   sigma_11 = 2.003084e-1, sigma_12 = 2.415461e-15
+combined gap:     sigma_14 = 2.003084e-1, sigma_15 = 2.238468e-15
 ```
 
-Inside normal spectral charts `Sigma_spec subset Sigma_comm`, the QT/HT joint
-arrangement, orthogonal joint-sector projectors, collision quotient, and
-accessibility jet are defined. Outside `Sigma_comm`, the collision quotient is
-undefined; inside `Sigma_comm` but outside `Sigma_spec`, the present
-orthogonal-projector formalism is not used. The global `A(w)`-spectrum
-continues to vary on the ambient weight space.
+The first line is a linearized commutativity-kernel certificate at a
+numerically registered near-zero point, not a Zariski-tangent or
+seven-dimensional smooth-manifold theorem. The second kernel is spanned
+numerically by uniform HT gauge motion and three inverse-pair-symmetric QT-axis
+directions; uniform QT motion is the sum of the three QT-axis directions.
+Both uniform QT and uniform HT scaling are exact class-scaling gauge families;
+one point on each QT-axis parameterization passes the numerical
+commutativity/normality gates.
+This does not prove interval-wide commutation, constant rank, or a nonlinear
+atlas theorem.
 
-Spectral wall hierarchy:
+### Normality-Gated Pointwise Registration
+
+At the canonical point and at QT-axis weight `1.1`, the active computational
+records are
 
 ```text
-Sigma_field subset Sigma_L subset Sigma_spec subset Sigma_comm
+canonical: sectors=9,  R1^op=438,  R1^Lie=408
+QT axis 0: sectors=15, R1^op=1006, R1^Lie=832
+QT axis 1: sectors=15, R1^op=1006, R1^Lie=832
+QT axis 2: sectors=15, R1^op=1006, R1^Lie=832
 ```
 
-Interpretation:
+All four records pass commutativity, Hermiticity/normality, orthogonality,
+idempotence, completeness, and projector checks at the declared complex128
+tolerances; the maximum reported projector residual is `2.390e-14`.
+`R1^Lie` uses a declared finite-order principal logarithm and is
+branch-sensitive. These are pointwise registrations, not evidence of coherent
+projector continuation along the connecting parameter intervals.
 
-| Layer | Meaning |
-|-------|---------|
-| `Sigma_comm` | outer algebraic commutativity wall |
-| `Sigma_spec` | normal spectral chart where joint sectors/projectors are used |
-| `Sigma_L` | once defined, whether the collision quotient changes layer count |
-| `Sigma_field` | once the quotient exists, whether the number field changes |
+### Withdrawn Promotion
 
-`Sigma_comm` is the outer commutativity wall, not merely an empirical sparse
-set. Earlier sparse 2D scans are transverse-slice evidence; the current local
-model treats `Sigma_comm` as a smooth commutativity wall at the canonical
-point.
+The first-version fragmentation samples generally remain in `Sigma_comm`
+numerically but fail normality. In addition, the manuscript's historical
+`R_1` uses registered `X_g`, while the fragmentation scripts count raw
+`rho(g)` blocks. Therefore the reported `9 -> 24...35` sector fragmentation
+and associated support jumps are not active certificates for
+`Sigma_spec`, moving Lie support, word depth, or a common accessibility wall.
 
-### Part II: Local Geometry at the Canonical Point
+The old Wall Origin Principle, single `R1/R2/D` hierarchy, and `438 -> 6334`
+support claim are retired from current authority.
 
-Theorem 1:
+### Typed Deformation Target
+
+On a certified chart, future Paper VI work must carry separate trajectories:
 
 ```text
-dim T_1 Sigma_comm = 7
-codim = 11
-kernel split = 1(HT) + 6(QT)
+operator branch: R_1[Y](w), C_d[Y](w), W_d[Y](w), typed word depths
+Lie branch:      R_1^Lie(w), R_2^Lie(w), D_Lie(w)
 ```
 
-The computational tangent model verifies local rank stability and finds no
-hidden nonlinear kernel emergence in the tested regime.
-
-Theorem 2:
-
-```text
-w=1 is maximally coarse.
-Uniform HT is a gauge direction.
-QT kernel directions fragment the sector decomposition immediately.
-Fragmentation causes R1 jumps.
-```
-
-Wall Origin Principle:
-
-```text
-Accessibility walls are not caused by bending of Sigma_comm.
-They are caused by combinatorial instability of the sector decomposition under
-smooth first-order motion of joint spectral points.
-```
-
-### Part III: Accessibility Theorem Layer
-
-On normal spectral charts `Sigma_spec subset Sigma_comm`, define:
-
-```text
-sectorized system Q_i(w)
-block maps Q_i(w) rho(g) Q_j(w)
-R_1(w): support graph
-R_2(w): repair graph
-D(w): minimal accessibility depth
-```
-
-The bridge object is the accessibility jet:
-
-```text
-J_acc(w)=(J_block,J_comm,J_depth)
-```
-
-with:
-
-```text
-J_block = generator-support response
-J_comm  = Lie-defect / projected-commutator tensor
-J_depth = composition-propagation / Hall projection kernel
-```
-
-The discrete observables are rank/support/first-depth projections of smooth
-fields:
-
-```text
-R_1, R_2, D are functions on Sigma_spec.
-They are not continuous invariants; they are discrete shadows.
-```
-
-Accessibility walls:
-
-```text
-Sigma_access = locus where the rank/support structure of J_acc is not locally
-constant.
-```
-
-Residual wall hierarchy:
-
-```text
-Sigma_R1
-Sigma_R2^circ
-Sigma_D^circ
-```
-
-Cumulative hierarchy:
-
-```text
-hat(Sigma_R1) subset hat(Sigma_R2) subset hat(Sigma_D)
-= Sigma_access subset Sigma_spec subset Sigma_comm.
-```
-
-Spectral walls and accessibility walls are different:
-
-```text
-Sigma_L and Sigma_field describe movement/arithmetic of the joint arrangement.
-Sigma_access describes jumps in R_1(w), R_2(w), or D(w).
-```
+Corresponding jets and walls must also be typed. `J_acc` and `Sigma_access`
+may be used only as explicit packages of named components. No active Paper VI
+ordered-word, routed-depth, `R2^Lie`, or `D_Lie` moving certificate exists,
+and no inclusion hierarchy between the typed wall loci is assumed.
 
 ---
 
-## 8. Paper VII: Generic Accessibility Completion
+## 8. Paper VII: Incidence Geometry and Promotion Limits
 
-Paper VII closes the static completion line opened by Paper V.
-
-Main question:
-
-```text
-Does (R_1,R_2) determine D?
-```
-
-Claim-status answer:
+Paper VII is a self-contained static paper on fixed sectorizations. It studies
+the image--kernel incidence condition for one routed projected product:
 
 ```text
-unconditionally: no;
-generically: conjecturally yes;
-hard boundary: Type IV incidence AB=0.
+Z={(A,B): AB=0},
+Z^x=Z intersect {A!=0, B!=0}.
 ```
 
-The algebraic object is the Type IV incidence variety:
+The closed object is `Z`; `Z^x` is constructible. On
+`rank(A)=r` and `(rank(A),rank(B))=(r,s)` strata, the theorem layer is
 
 ```text
-I={(A,B): AB=0, A!=0, B!=0}.
+dim I_r = r(m+n-r)+p(n-r)
+codim I_r = (m-r)(n-r)+pr
+dim I_(r,s) = r(m+n-r)+s(n-r+p-s)
+relative codim inside the rank-(r,s) pair stratum = rs
 ```
 
-On the fixed-rank stratum `rank(A)=r`,
+This incidence geometry belongs first to routed projected composition. It is
+not automatically a full-word cancellation theorem or a Lie-depth
+obstruction theorem.
+
+### Rank Protection
+
+For rectangular composable blocks `A:m x n` and `B:n x p`, the elementary
+rank-protection conditions are:
 
 ```text
-codim I_r = (m-r)(n-r)+pr.
+A has full column rank n  -> AB=0 implies B=0;
+B has full row rank n     -> AB=0 implies A=0.
 ```
 
-For square block scale, the dominant incidence codimension is asymptotic to
-`3d^2/4`. Thus Type IV is not merely a counterexample; it is a
-high-codimension algebraic degeneracy.
+The v2 implementation uses the middle dimension: left protection is
+`rank(A)=n` and right protection is `rank(B)=n`. It still evaluates every
+product and asserts that protected nonzero factors do not produce a numerical
+zero.
 
-The theorem roadmap is:
+### Promotion Boundary
 
-```text
-Corollary: rank-protected bridges survive.
-Proposition: Type IV incidence is nongeneric.
-Conjecture: away from incidence and under richness hypotheses, (R_1,R_2)
-            completes the first-depth invariant D.
-```
+The active questions are separate:
 
-Generic Completion Principle:
+1. When does a Boolean path promote to a nonzero routed product?
+2. When do routed terms survive their sum as a full word?
+3. When do low-order Lie supports constrain or determine `D_Lie`?
 
-```text
-Outside a high-codimension incidence variety, rank-protected bridge products
-generically survive, so the observable pair (R_1,R_2) determines the
-first-depth invariant D.
-```
-
-Rubik interpretation:
-
-```text
-Rubik is not a generic point of the sectorized-observable framework space.
-It is a stable carrier of high-codimension algebraic structure.
-```
-
-This is why Paper VII does not patch Paper V. It answers the question Paper V
-left open: whether the `R_2` repair layer is generically complete.
+The former Generic Completion Principle is withdrawn. The finite v2 atlas
+stores and compares complete `R1^Lie`, `R2^Lie`, `D_Lie`, per-depth support,
+cumulative support, and saturation records. Agreement in four finite mask
+families is a computational observation, not a low-order-to-depth theorem.
+Paper VII proves local incidence geometry and rank protection; all stronger
+promotions remain branch-specific research questions.
 
 ---
 
@@ -827,10 +840,12 @@ Use with care:
 
 - primitive sector.
 
-When writing for association-scheme readers, explain that the sectors are
-joint eigenspace sectors of a finite commutative algebra. Compare with
-Bose--Mesner / coherent-configuration language when useful, but do not identify
-the object with a quotient algebra unless that equivalence has been derived.
+Use `registered QT/HT cluster` for the numerical realization. Reserve `joint
+eigenspace sector` and `primitive idempotent of C[Q,H]` for an exact commuting
+normal setting with certified joint projectors. When writing for
+association-scheme readers, compare with Bose--Mesner / coherent-configuration
+language when useful, but do not identify the object with a quotient algebra
+unless that equivalence has been derived.
 
 ### Transport Vocabulary
 
@@ -850,34 +865,25 @@ same object as Lie depth or composition depth.
 
 Prefer:
 
-- Lie-generated accessibility,
-- composition-generated accessibility,
-- projected generator support,
-- projected commutator survival,
-- weighted Hall path algebra,
-- first depth,
-- accessibility signature,
-- accessibility jet,
-- accessibility wall.
+- operator direct support `R_1[Y]`,
+- routed projected composition `C_d[Y]`,
+- full-word support `W_d[Y]`,
+- word depth `D_word[Y]`,
+- Lie direct support `R_1^Lie`,
+- projected commutator support `R_2^Lie`,
+- Hall/Lie depth `D_Lie`,
+- projected Hall coefficient data,
+- typed accessibility signature,
+- typed accessibility jet,
+- typed accessibility wall.
 
-Use T7 as a named Rubik/trilogy phenomenon, not as the general name for all
-post-trilogy accessibility behavior.
+Use **graph-only two-step pair** for the five canonical Rubik paths and
+**Image--Kernel Criterion** for the matrix obstruction theorem. Revision
+history is kept in `HISTORY.md`.
 
-Terminology note:
-
-```text
-Type III wall
-Type IV wall
-```
-
-should be used only when the surrounding text makes clear that these are Paper
-V mechanism examples. In Paper VI, the preferred language is:
-
-```text
-cancellation mechanism
-incidence mechanism
-mechanism-level wall-crossing support
-```
+Historical Type I--IV labels are not active cross-paper vocabulary. Use
+`cancellation` and `image--kernel incidence`, and state whether the affected
+object is a routed product, full word, commutator, or depth certificate.
 
 ---
 
@@ -894,31 +900,32 @@ These belong primarily to Papers I--III and CCS:
 - `V_{5/9}` giant layer,
 - S6 hub,
 - 10 direct transport edges,
-- 5 T7 morphisms,
+- 5 graph-only two-step obstruction pairs,
 - EP `M_2` transport mechanism.
 
 These are not defects. They are the concrete laboratory.
 
 ### Generalizable Objects
 
-These are the post-trilogy objects:
+These are the general program objects:
 
 - finite commutative averaging algebras,
 - joint spectral point sets,
 - affine branch arrangements,
 - collision graphs and collision quotients,
 - sectorized observable frameworks,
-- projected generator weights,
-- `R_1` support,
-- `R_2` commutator survival,
-- weighted Hall path algebra,
-- accessibility depth matrix,
+- registered operator and Lie/Hall families,
+- direct operator and Lie supports,
+- routed projected products and full ordered words,
+- projected commutator support,
+- projected Hall coefficient data,
+- typed route, word, and Lie-depth matrices,
 - incidence varieties,
 - rank-protected bridge products,
-- generic completion principles,
+- branch-specific promotion principles,
 - generator-set moduli spaces,
 - commutativity loci,
-- spectral and accessibility walls.
+- spectral walls and typed accessibility-wall candidates.
 
 ### Boundary Rule
 
@@ -951,28 +958,24 @@ Generator-set deformation is not part of Paper IV; it belongs to Paper VI.
 
 ### Paper V Boundary
 
-Paper V is a static accessibility-repair paper:
+Paper V is a static local support/commutator paper:
 
 ```text
-R_1 failure
-R_2 repair
-length-2 witness taxonomy
-cancellation and incidence exceptional loci
-weighted Hall path algebra
+Lie direct support R_1^Lie
+routed X-products and X-word support
+commutator support R_2^Lie
+cutoff-relative versus exact D_Lie
+cancellation and incidence mechanisms
 ```
 
-Paper V's Type I--IV taxonomy is a local mechanism classification. It is not
-the Paper VI moduli-wall hierarchy.
+Historical Type I--IV labels are retired from the primary classification.
+Cancellation and incidence are static mechanisms, not Paper VI wall labels.
 
 ### Paper VI Boundary
 
-Paper VI is organized as:
-
-```text
-Part I:  global stratification on generator-set moduli
-Part II: local geometry of Sigma_comm at the canonical point
-Part III: accessibility theorem layer via J_acc
-```
+Paper VI v2 is organized around admissibility gates, corrected linearized
+commutativity/normality certificates, pointwise normality-gated registrations,
+and a conditional typed moving-field program.
 
 The algebraic characterization of `Sigma_comm` remains open:
 
@@ -983,45 +986,52 @@ minimal equations
 full algebraic classification
 ```
 
-The paper uses a computational tangent-local model and observed stratification.
-It does not claim a complete global algebraic classification of
+The paper uses computational tangent-local models. It does not claim a smooth
+seven-dimensional commutativity manifold, a four-dimensional nonlinear
+commutative-normal manifold, or a complete global algebraic classification of
 `Sigma_comm`.
+
+The active pointwise sector-count records (`9` versus `15`) pass the normality
+and projector gates,
+but no coherent projector continuation between those points is claimed. The
+older `9 -> 24...35` fragmentation samples are archived provenance: they fail
+normality and use a raw-operator support family that is not the manuscript's
+registered Lie family.
 
 ### Paper VII Boundary
 
-Paper VII is organized around:
+Paper VII v2 is fixed around:
 
 ```text
-Type IV incidence variety
-rank-protected bridge survival
-generic nonincidence
-completion away from incidence
-Rubik as structured non-generic carrier
+closed zero-product locus and constructible nonzero-factor locus
+fixed-rank and fixed-double-rank incidence strata
+correct rectangular rank protection
+explicit graph/route/word/commutator/Lie promotion boundaries
 ```
 
-Generic Completion is not an unconditional theorem for all sectorized systems.
-The claim-status split is:
+The current claim-status split is:
 
 ```text
-codimension theorem: proved
-rank-protection corollary: proved
-generic nonincidence proposition: algebraic consequence
-completion away from incidence: conjectural theorem program
+incidence and rank-protection theorem spine: proved
+corrected Rubik routed census: computational observation
+full-array finite Lie atlas: computational observation
+ambient-to-represented and low-order-to-depth promotion: open
 ```
 
-### Relation to the Trilogy
+### Relation to Papers I--III
 
-Papers I--III remain the Rubik-centered trilogy. Later structure can be read
-back into them as bounded discussion-level context:
+Papers I--III are independent Rubik-centered papers. Later structure can be
+read back into them only as bounded discussion-level context:
 
-- Paper I: the rational spectral layers later acquire a collision-quotient
-  interpretation.
-- Paper II: the transport sectors are QT/HT joint-spectral sectors, and the six
-  layers appear as their collision quotient at `alpha=2/3`.
-- Paper III: T7 is the first accessibility-separation example, not the final
-  theory.
-- CCS: records canonical computational data and bridge notes without importing
-  unproved completeness claims.
+- Paper I: the six registered layers admit a conditional collision-quotient
+  interpretation after an exact QT/HT registration is supplied.
+- Paper II: its registered QT/HT clusters can be matched to the independently
+  declared nine-point arrangement; this does not promote the numerical
+  clusters to an exact joint spectrum.
+- Paper III: support-graph reachability overapproximates projected matrix
+  composition; graph-to-composition promotion requires nondegeneracy data.
+- CCS: records Paper I--II reproducibility data and the historical combined
+  release; revised Paper III carries its own matrix certificate.
 
 ---
 
@@ -1029,6 +1039,6 @@ back into them as bounded discussion-level context:
 
 The RIME program starts from the Rubik representation as a finite reproducible
 laboratory, extracts spectral and accessibility geometry, studies how those
-geometries deform across generator-set moduli spaces, and explains why the
-resulting behavior is generically complete away from high-codimension
-incidence degeneracies.
+geometries deform across generator-set moduli spaces, and develops typed
+certificates for when support information survives projection, composition,
+summation, and Lie antisymmetrization.

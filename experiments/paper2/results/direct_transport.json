@@ -1,0 +1,26 @@
+{
+  "schema_version": "rime.paper-figure-data.v1",
+  "paper": "Paper II",
+  "claim_boundary": "Display data for the registered complex128 direct-support census at tau_K=0.05. Edges are aggregate unordered sector pairs, not generator-labelled multiplicities.",
+  "provenance": {
+    "sources": [
+      {"path": "experiments/paper2/validation/transport_graph.py", "sha256": "70a8c26bb451bfb8cea3130ff8f71e3491ee836e2957bb10c7553edb3f65859f"}
+    ]
+  },
+  "sector_count": 9,
+  "threshold": 0.05,
+  "diagonal": [4.472135955, 1.414213562, 5.408326913, 5.099019514, 1.0, 4.415880433, 6.68954408, 2.828427125, 3.240370349],
+  "edges": [
+    {"source": 2, "target": 5, "weight": 0.471404521, "label": "Type I"},
+    {"source": 2, "target": 6, "weight": 0.577350269, "label": "Type I"},
+    {"source": 3, "target": 6, "weight": 2.549509757, "label": "Type I"},
+    {"source": 3, "target": 7, "weight": 3.605551275, "label": "Type I"},
+    {"source": 4, "target": 6, "weight": 3.464101615, "label": "Type I"},
+    {"source": 4, "target": 9, "weight": 1.0, "label": "Type I"},
+    {"source": 5, "target": 6, "weight": 0.816496581, "label": "Type I"},
+    {"source": 6, "target": 7, "weight": 3.605551275, "label": "Type I"},
+    {"source": 7, "target": 9, "weight": 4.062019202, "label": "Type I"},
+    {"source": 8, "target": 9, "weight": 2.828427125, "label": "Type II"}
+  ],
+  "degree_sequence": [0, 2, 2, 2, 2, 5, 3, 1, 3]
+}

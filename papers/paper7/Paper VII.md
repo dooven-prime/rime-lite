@@ -1,256 +1,282 @@
-# Generic Accessibility Completion
+# Incidence Geometry of Projected Operator Composition
 
-### Incidence Varieties, Rank-Protected Bridges, and the Generic Completion Principle
+### Rank Protection, Image--Kernel Alignment, and Promotion Limits
 
 **WuJun Chen**
 
 Independent Researcher | RIME Project | 2026
 
-*This paper is Part VII of the RIME program. Paper IV gives the collision
-geometry, Paper V gives the local repair calculus, and Paper VI gives the
-deformation geometry of accessibility walls. Paper VII isolates the generic
-completion boundary: outside high-codimension incidence, rank-protected bridge
-products are expected to survive, giving the conjectural route from
-$(R_1,R_2)$ to the first-depth invariant $D$.*
-
 ***
 
 ## Abstract
 
-**Problem.** Why is accessibility generically stable? Paper V identifies local
-length-two obstruction mechanisms, and Paper VI places the corresponding
-accessibility data over a deformation base. The remaining static question is
-the completion problem: when does the accessibility jet
+**Problem.** Let $A:\mathbb C^n\to\mathbb C^m$ and
+$B:\mathbb C^p\to\mathbb C^n$ be nonzero. Their product can nevertheless
+vanish. In a sectorized operator setting, this is the basic obstruction to
+promoting a Boolean support path through an intermediate sector to a nonzero
+projected composition.
+
+**Approach.** We study the closed zero-product locus
 
 $$
-\mathcal J_{\mathrm{acc}}
-=
-(J_{\mathrm{block}},J_{\mathrm{comm}},J_{\mathrm{depth}})
+Z=\{(A,B):AB=0\}
 $$
 
-determine the accessibility depth matrix $D$?
+and its constructible nonzero-factor part. The identity
+$AB=0\iff\operatorname{im}B\subseteq\ker A$ turns product failure into an
+image--kernel incidence condition. We stratify this condition by
+$\operatorname{rank}A=r$ and by the double rank
+$(\operatorname{rank}A,\operatorname{rank}B)=(r,s)$.
 
-**Approach.** The paper combines three blocks. Paper V supplies the local
-mechanism taxonomy. Paper VI supplies the wall hierarchy
-
-$$
-\widehat{\Sigma}_{R_1}
-\subseteq
-\widehat{\Sigma}_{R_2}
-\subseteq
-\widehat{\Sigma}_D
-=
-\Sigma_{\mathrm{access}}
-\subseteq
-\Sigma_{\mathrm{spec}}
-\subseteq
-\Sigma_{\mathrm{comm}}
-$$
-
-and interprets $R_1,R_2,D$ as discrete shadows of
-$\mathcal J_{\mathrm{acc}}$. The new input developed here identifies Type IV
-incidence as a high-codimension algebraic degeneration:
+**Results.** The fixed-$r$ stratum has
 
 $$
-I=\{(A,B):AB=0,\ A\ne0,\ B\ne0\}.
+\dim I_r=r(m+n-r)+p(n-r),
+\qquad
+\operatorname{codim}I_r=(m-r)(n-r)+pr.
 $$
 
-For $A\in\mathbb C^{m\times n}$, $B\in\mathbb C^{n\times p}$, and
-$\operatorname{rank}A=r$, the fixed-rank incidence stratum has
+The fixed-$(r,s)$ incidence stratum has
 
 $$
-\operatorname{codim} I_r=(m-r)(n-r)+pr.
+\dim I_{r,s}
+=r(m+n-r)+s(n-r+p-s),
 $$
 
-For square $d\times d$ blocks, the dominant incidence component has
-$r\approx d/2$ and codimension asymptotic to $3d^2/4$, or about $37.5\%$ of
-the ambient dimension $2d^2$.
+and has relative codimension $rs$ inside the ambient rank-$(r,s)$ matrix-pair
+stratum. Full column rank of $A$, or full row rank of $B$, excludes nonzero
+zero-products and gives quantitative singular-value lower bounds. A corrected
+computational audit distinguishes both-protected, left-only, right-only,
+unprotected-nonzero, and unprotected-zero routed products. In the declared
+Rubik realization, 2592 nonzero-factor routed records split into 2016
+unprotected nonzero products and 576 machine-zero image--kernel alignments.
 
-**Results.** The theorem-level result is the codimension calculation for the
-Type IV incidence variety. The completion statement is formulated as a
-conjectural theorem program:
-
-> **Conjecture 1 (Completion Away from Incidence).** Under the stated richness
-> and nondegeneracy assumptions, on the generic non-incidence locus where all
-> bridge products avoid $AB=0$, the accessibility jet
-> $\mathcal J_{\mathrm{acc}}$ has a locally constant discrete shadow, and that
-> shadow determines the accessibility depth matrix $D$.
-
-Computational support is consistent with this program. Synthetic Type III
-systems lie inside the candidate completeness class; synthetic Type IV systems
-lie outside it; perturbation at $\varepsilon=10^{-6}$ destroys Type IV in
-$100/100$ trials for the tested incidence models; $0/400000$ random matrix
-pairs satisfy $AB=0$ with $A,B\ne0$; and exact-hash audits on $80$ diverse
-random systems found zero disagreements among systems with identical
-$(R_1,R_2)$. A claim-status-metadata bridge audit further separates
-the generic and structured regimes: five fixed-seed random systems give
-$1080/1080$ safe bridge products and zero incidence candidates, while the Rubik
-system has $528$ bridge-level incidence candidates concentrated in a small
-family of sector triples. An exploratory ablation over dimension, rank-deficient fraction, and
-generator count found zero incidence candidates across $75$ random runs and
-$23400$ audited bridge products.
-
-**Implications.** Paper V identifies local exceptional mechanisms. Paper VI
-places those mechanisms on the generator-set moduli space. Paper VII explains
-why the hardest mechanism, Type IV incidence, is nongeneric: it lies on a
-high-codimension algebraic variety. The resulting principle is conditional but
-sharp: away from incidence and under richness/nondegeneracy hypotheses, the
-accessibility jet is expected to complete the first-depth calculation. Rubik
-is therefore not a random-generic system; it is a stable carrier of
-high-codimension algebraic structure.
+**Boundary.** These results concern one routed product. They do not identify a
+support path with a routed product, a routed product with a full word, a full
+word with a commutator, or low-order commutator support with Lie depth.
+Likewise, high codimension in the free matrix-pair space does not determine the
+pullback incidence geometry of a representation-derived family.
 
 ***
 
-## Notation Table
+## Introduction
 
-| Symbol | Meaning |
-|--------|---------|
-| $V$ | finite-dimensional complex Hilbert space |
-| $\mathcal S=(V,\{Q_i\},\mathcal X)$ | sectorized observable framework |
-| $Q_i$ | orthogonal sector projector, $\sum_iQ_i=I$ |
-| $X_g$ | skew-Hermitian generator |
-| $B^g_{ij}=Q_iX_gQ_j$ | projected generator block |
-| $R_1(i,j;g)$ | generator support: $1$ iff $B^g_{ij}\ne0$ |
-| $R_2(i,j;g,h)$ | projected commutator survival: $1$ iff $Q_i[X_g,X_h]Q_j\ne0$ |
-| $D(i,j)$ | minimal Lie depth connecting sector $j$ to sector $i$ |
-| $\mathcal J_{\mathrm{acc}}$ | accessibility jet $(J_{\mathrm{block}},J_{\mathrm{comm}},J_{\mathrm{depth}})$ |
-| $\Sigma_{\mathrm{comm}}$ | outer commutativity locus $\{w:[Q_T(w),H_T(w)]=0\}$ |
-| $\Sigma_{\mathrm{spec}}$ | normal spectral chart inside $\Sigma_{\mathrm{comm}}$ where joint projectors and accessibility fields are used |
-| $\Sigma_{\mathrm{IV}}$ | Type IV incidence locus |
-| $C$ | candidate generic completeness class, excluding Type IV incidence |
+The local question is elementary:
 
-Depth convention: depth $0$ means a direct generator block, depth $1$ means a
-projected commutator block, depth $2$ means a nested commutator, and
-$D(i,j)=\infty$ means frozen in the tested Lie filtration.
+> Why can $A\ne0$ and $B\ne0$ coexist with $AB=0$?
 
-***
-
-## Completion Problem
-
-Why is accessibility generically stable? The answer proposed here is that the
-hard local obstruction, Type IV incidence, is a high-codimension algebraic
-condition. Away from this incidence locus, rank-protected bridge products
-survive in the generic matrix model, so the accessibility jet is expected to
-complete the first-depth calculation under the stated richness hypotheses.
-
-Paper V established the local accessibility calculus for a fixed sectorized
-observable framework
-
-$$
-(V,\{Q_i\},\{X_g\}).
-$$
-
-The first layer $R_1$ records which generator blocks are nonzero. The second
-layer $R_2$ records which projected commutators survive. Paper V showed that
-$R_1$ is not enough: binary support sees possible paths, but it does not see
-whether projected matrix products cancel.
-
-Paper VI then moved the same observables over normal spectral charts
-$\Sigma_{\mathrm{spec}}\subseteq\Sigma_{\mathrm{comm}}$. There, $R_1(w)$,
-$R_2(w)$, and $D(w)$ are discrete rank/support shadows of smooth matrix
-fields. The accessibility wall hierarchy records where these shadows fail to
-continue locally.
-
-The remaining question is whether the accessibility jet determines $D$.
-
-Equivalently, when is the data visible through $R_1$, $R_2$, and the
-Hall-propagation component of $\mathcal J_{\mathrm{acc}}$ complete for the
-first-depth matrix?
-
-This paper does not claim an unconditional theorem that $(R_1,R_2)$ determines
-$D$. That statement is false without hypotheses. Instead, it isolates the
-generic obstruction boundary and formulates the completion theorem on the
-non-incidence locus.
-
-![Paper VII overview. The Generic Completion Principle predicts completion
-away from high-codimension incidence, supported by rank-protected bridge
-survival. Rubik sits in a structured exceptional region that is described by
-incidence geometry and connected back to the deformation theory of Paper VI.](../../figures/paper7/fig1_generic_completion_overview.png)
-
-***
-
-## Local Mechanisms
-
-Paper V gives a length-two mechanism taxonomy. For sector pair $(i,j)$ and
-generators $g,h$, expand
-
-$$
-Q_i[X_g,X_h]Q_j
-=
-\sum_k
-\left(
-Q_iX_gQ_kX_hQ_j
--
-Q_iX_hQ_kX_gQ_j
-\right).
-$$
-
-The local mechanisms are:
-
-| Type | Mechanism | Status |
-|------|-----------|--------|
-| Type I | singleton-color degeneracy | no depth-one repair |
-| Type II | projected commutator survives | repaired at $R_2$ |
-| Type III | signed cancellation among nonzero products | exceptional but soft |
-| Type IV | termwise vanishing by image-kernel incidence | exceptional and hard |
-
-Type III is a relation among products that exist. Type IV is different: the
-candidate products vanish before signed cancellation can occur. For a single
-bridge product this means
-
-$$
-A=Q_iX_gQ_k,\qquad B=Q_kX_hQ_j,\qquad AB=0
-$$
-
-with $A\ne0$ and $B\ne0$, equivalently
+The answer is exact:
 
 $$
 \operatorname{im}B\subseteq\ker A.
 $$
 
-Thus Type IV is an incidence condition, not merely a cancellation condition.
+This condition is invisible to Boolean factor support. It depends on the
+relative position of two subspaces in the intermediate vector space. For
+projected operator blocks, it is therefore the first geometric datum that must
+be checked after a support path has been found.
 
-### Definition 1 (Candidate Completeness Class)
+The paper has three goals.
 
-Let $C$ denote the class of sectorized systems whose length-two
-$R_2=0$ obstructions are Type I or Type III, with no Type IV incidence
-obstruction.
+1. Give the rank-stratified geometry of the zero-product condition.
+2. State the correct rectangular rank-protection criteria.
+3. Separate local incidence from every stronger promotion involving route
+   sums, words, commutators, Lie depth, or representation-derived parameter
+   families.
 
-This is a candidate generic completeness class, not a universal theorem class.
-The generic completion conjecture below states that, after excluding incidence
-and assuming the usual nondegeneracy/richness hypotheses, the accessibility jet
-should determine $D$.
+The analysis is static: the sector projectors and operator family are fixed.
+Moving projectors, normal spectral charts, and parameter-dependent pullbacks
+remain research directions.
+
+The image--kernel obstruction is adjacent to two independent questions. First,
+Boolean graph paths need not survive projected matrix composition. Second,
+nonzero word terms need not survive antisymmetrization into a commutator.
+These neighboring failures motivate the promotion table below, but the
+corresponding theorems are not assumed here. The incidence and
+rank-protection criteria can serve as route-survival gates, but do not promote
+routed products to word or Lie accessibility.
 
 ***
 
-## Type IV Incidence Variety
+## Notation and Claim Layers {.unnumbered}
 
-The main algebraic input of Paper VII is the codimension of the Type IV
-incidence condition.
+The notation is introduced below in the order required by the routed-product
+problem. The claim-status vocabulary is **Theorem** for exact statements under
+their stated hypotheses, **Computational Certificate** only when a finite
+numerical check is explicitly assigned that status, **Computational
+Observation** for the declared Rubik, random-control, perturbation, and
+finite-atlas records, and **Research Program** for represented pullback
+geometry and all stronger promotion statements that remain open. The complete
+status table appears in Section~\ref{sec:claim-status-and-boundary}.
 
-### Theorem 1 (Incidence Codimension)
+Let $V$ be a finite-dimensional complex Hilbert space with a complete
+orthogonal sectorization
+
+$$
+V=\bigoplus_{i\in\mathcal I}E_i,
+\qquad
+I=\sum_{i\in\mathcal I}Q_i,
+\qquad
+Q_iQ_j=\delta_{ij}Q_i.
+$$
+
+Let $\mathcal Y=\{Y_a\}_{a\in\mathcal A}$ be a declared finite operator
+family. No commutant assumption is imposed.
+
+For a sector triple $(i,k,j)$ and ordered operator pair $(a,b)$, define
+
+$$
+A_{ik}^a
+=Q_iY_aQ_k:E_k\to E_i,
+\qquad
+B_{kj}^b
+=Q_kY_bQ_j:E_j\to E_k.
+$$
+
+Write
+
+$$
+d_i=\dim E_i,\qquad d_k=\dim E_k,\qquad d_j=\dim E_j.
+$$
+
+The routed projected composition is
+
+$$
+T_{ikj}^{a,b}
+=
+Q_iY_aQ_kY_bQ_j
+=
+A_{ik}^aB_{kj}^b.
+$$
+
+Our arrow convention is
+
+$$
+j\longrightarrow k\longrightarrow i.
+$$
+
+A support path records only
+
+$$
+A_{ik}^a\ne0,\qquad B_{kj}^b\ne0.
+$$
+
+It does not record whether $T_{ikj}^{a,b}$ is nonzero.
+
+The full two-letter word block is a different object:
+
+$$
+W_{ij}^{a,b}
+=Q_iY_aY_bQ_j
+=\sum_{k\in\mathcal I}T_{ikj}^{a,b}.
+$$
+
+If the declared family is a skew-Hermitian Lie family
+$\mathcal X=\{X_g\}$, then the projected commutator is
+
+$$
+C_{ij}^{g,h}
+=Q_i[X_g,X_h]Q_j
+=W_{ij}^{g,h}-W_{ij}^{h,g}.
+$$
+
+These three objects -- routed term, full word, and commutator -- remain
+separate throughout the paper.
+
+***
+
+## Image--Kernel Incidence
+
+### Theorem 3.1 (Image--Kernel Criterion)
 
 Let
 
 $$
-A\in\mathbb C^{m\times n},\qquad
-B\in\mathbb C^{n\times p},
-$$
-
-and let
-
-$$
-I_r=\{(A,B):AB=0,\ \operatorname{rank}A=r\}.
+A:\mathbb C^n\to\mathbb C^m,
+\qquad
+B:\mathbb C^p\to\mathbb C^n.
 $$
 
 Then
 
 $$
-\dim I_r=r(m+n-r)+np-pr
+AB=0
+\quad\Longleftrightarrow\quad
+\operatorname{im}B\subseteq\ker A.
 $$
 
-and the codimension of $I_r$ in the ambient space
-$\mathbb C^{m\times n}\times\mathbb C^{n\times p}$ is
+**Proof.** If $AB=0$, then $A(Bv)=0$ for every $v\in\mathbb C^p$, so every
+vector in $\operatorname{im}B$ lies in $\ker A$. Conversely, if
+$\operatorname{im}B\subseteq\ker A$, then $A(Bv)=0$ for every $v$, hence
+$AB=0$. $\square$
+
+### Closed and constructible loci
+
+Define
+
+$$
+Z_{m,n,p}
+=
+\{(A,B)\in
+\operatorname{Mat}_{m\times n}(\mathbb C)
+\times
+\operatorname{Mat}_{n\times p}(\mathbb C):AB=0\}.
+$$
+
+The entries of $AB$ are polynomial in the entries of $A$ and $B$, so
+$Z_{m,n,p}$ is a closed affine algebraic set.
+
+The nonzero-factor incidence locus is
+
+$$
+Z_{m,n,p}^{\times}
+=
+Z_{m,n,p}\cap\{A\ne0\}\cap\{B\ne0\}.
+$$
+
+It is constructible, not generally a closed subvariety. Fixed exact-rank
+pieces are locally closed strata.
+
+### Proposition 3.2 (Ambient Generic Nonincidence)
+
+The complement of $Z_{m,n,p}$ is a nonempty Zariski-open dense subset of the
+free matrix-pair space. Consequently, $Z_{m,n,p}$ and
+$Z_{m,n,p}^{\times}$ have Lebesgue measure zero.
+
+**Proof.** The zero-product equations are polynomial, and they do not vanish
+identically on the ambient matrix-pair space. Thus their common zero set is a
+proper closed algebraic subset. Its complement is nonempty, Zariski open, and
+dense; every proper complex algebraic subset has real Lebesgue measure zero.
+$\square$
+
+This proposition concerns freely varying matrix pairs. It makes no statement
+about a constrained parameter family whose image may lie partly or entirely
+inside $Z_{m,n,p}$.
+
+***
+
+## Rank-Stratified Geometry
+
+### Theorem 4.1 (Fixed-A-Rank Incidence Stratum)
+
+For $0\le r\le\min(m,n)$, let
+
+$$
+I_r
+=
+\{(A,B):\operatorname{rank}A=r,\ AB=0\}.
+$$
+
+Then $I_r$ is locally closed and
+
+$$
+\dim I_r
+=
+r(m+n-r)+p(n-r).
+$$
+
+Its codimension in
+$\operatorname{Mat}_{m\times n}\times\operatorname{Mat}_{n\times p}$ is
 
 $$
 \operatorname{codim}I_r
@@ -258,584 +284,636 @@ $$
 (m-r)(n-r)+pr.
 $$
 
-**Proof.** The variety of $m\times n$ matrices of rank $r$ has dimension
-$r(m+n-r)$. For fixed rank-$r$ matrix $A$, the equation $AB=0$ forces the
-columns of $B$ to lie in $\ker A$, whose dimension is $n-r$. Hence the fiber
-over $A$ has dimension $p(n-r)=np-pr$. Adding base and fiber dimensions gives
-the stated dimension. Subtracting from the ambient dimension $mn+np$ gives
+**Proof.** The rank-$r$ matrices $A$ form a locally closed stratum of
+dimension $r(m+n-r)$. For fixed $A$, the condition $AB=0$ requires every
+column of $B$ to lie in the $(n-r)$-dimensional space $\ker A$. The fiber has
+dimension $p(n-r)$. Adding base and fiber dimensions gives the first formula.
+Subtracting from the ambient dimension $mn+np$ gives the codimension formula.
+$\square$
+
+For the nonzero-factor locus, the admissible $A$-ranks are exactly
 
 $$
-mn+np-\big(r(m+n-r)+np-pr\big)
-=
-(m-r)(n-r)+pr.
+1\le r\le\min(m,n-1).
 $$
 
-This proves the formula. $\square$
+The upper bound is $r<n$, not $r<\min(m,n)$. In particular, if $m<n$, a
+full-row-rank matrix with $r=m$ still has a nontrivial kernel and can
+participate in a nonzero zero-product.
 
-### Corollary 1 (Square Blocks)
-
-For square blocks $m=n=p=d$,
-
-$$
-\operatorname{codim} I_r=(d-r)^2+dr.
-$$
-
-For the Type IV locus, the nonzero/non-rank-protected square ranks are
-$1\le r\le d-1$. The dominant component among these strata minimizes this
-expression at $r\approx d/2$, so
-
-$$
-\operatorname{codim} I\sim \frac{3d^2}{4}.
-$$
-
-Since the ambient dimension is $2d^2$, the incidence locus occupies codimension
-about $37.5\%$ of the ambient dimension.
-
-For the tested dimensions:
-
-| $d$ | ambient dimension | $\operatorname{codim} I$ | percentage |
-|-----|-------------------|--------------------------|------------|
-| $2$ | $8$ | $3$ | $37.5\%$ |
-| $3$ | $18$ | $7$ | $38.9\%$ |
-| $4$ | $32$ | $12$ | $37.5\%$ |
-| $6$ | $72$ | $27$ | $37.5\%$ |
-| $10$ | $200$ | $75$ | $37.5\%$ |
-
-### Corollary 2 (Rank-Protected Type IV Exclusion)
-
-If $A$ has full column rank, then $\ker A=0$ and $AB=0$ implies $B=0$.
-Therefore Type IV cannot occur on full-column-rank block strata. Dually, if
-$B$ has full row rank, then $AB=0$ implies $A=0$.
-
-Thus Type IV is structurally impossible on rank-protected projected block
-strata -- namely when $A$ has full column rank or $B$ has full row rank -- but
-constructible on rank-deficient sectorized matrix systems.
-
-![Incidence codimension growth. For square blocks, the dominant Type IV
-incidence locus has codimension asymptotic to $3d^2/4$, placing it in a
-high-codimension region rather than in the generic block stratum.](../../figures/paper7/fig2_incidence_codimension_growth.png)
-
-***
-
-## Generic Completion Roadmap
-
-The codimension theorem turns Type IV from an unexplained obstruction into a
-geometric boundary. It is a proper algebraic degeneracy in the space of bridge
-products.
-
-### Remark 1 (Generic Completion Principle)
-
-Outside a high-codimension incidence variety, rank-protected bridge products
-generically survive. Consequently, the observable pair $(R_1,R_2)$ is expected
-to determine the first-depth invariant $D$.
-
-This principle is the conceptual bridge from Paper V to Paper VII. Paper V
-shows why $R_1$ alone fails and identifies Type IV as the hard local
-exception. Paper VII identifies that exception as an incidence variety of
-quadratic codimension growth and formulates the generic completion statement
-away from it.
-
-The resulting theorem layer separates into three steps:
-
-$$
-\text{rank protection}
-\quad\Longrightarrow\quad
-\text{generic nonincidence}
-\quad\Longrightarrow\quad
-\text{completion away from incidence}.
-$$
-
-The first two steps are algebraic consequences of the incidence calculation.
-The third step is the remaining completion conjecture.
-
-### Corollary 3 (Rank-Protected Product Survival)
+### Theorem 4.2 (Fixed Double-Rank Incidence Stratum)
 
 Let
 
 $$
-A\in\mathbb C^{m\times n},
-\qquad
-B\in\mathbb C^{n\times p}.
-$$
-
-If $A$ has full column rank and $B\ne0$, then $AB\ne0$. Dually, if $B$ has
-full row rank and $A\ne0$, then $AB\ne0$.
-
-**Proof.** If $A$ has full column rank, then $\ker A=0$. Hence $AB=0$ forces
-every column of $B$ to lie in $\ker A$, so $B=0$. The dual statement follows
-from applying the same argument to adjoints. $\square$
-
-### Proposition 1 (Generic Nonincidence)
-
-Fix block dimensions $(m,n,p)$. The Type IV bridge-failure locus
-
-$$
-I=\{(A,B):AB=0,\ A\ne0,\ B\ne0\}
-\subset
-\mathbb C^{m\times n}\times\mathbb C^{n\times p}
-$$
-
-is contained in a finite union of proper algebraic strata. On the stratum
-$\operatorname{rank}A=r$, its codimension is
-
-$$
-\operatorname{codim} I_r=(m-r)(n-r)+pr.
-$$
-
-In particular, for square block scale $m=n=p=d$, the dominant incidence
-codimension grows quadratically, asymptotic to $3d^2/4$.
-
-**Proof.** This is Theorem 1 applied over all admissible ranks. In the square
-case used for the asymptotic, the Type IV strata have
-$1\le r\le d-1$, excluding $r=0$ and the rank-protected case $r=d$. In a
-general rectangular system, full row rank of $A$ is not by itself
-rank-protecting when $m<n$; nonzero $B$ may still land in $\ker A$. The
-rank-protected exclusions are exactly those in Corollary 2. The square-block
-asymptotic is Corollary 1. $\square$
-
-### Conjecture 1 (Completion Away from Incidence)
-
-Let $(V,\{Q_i\},\{X_g\})$ be a sectorized observable framework satisfying the usual
-nondegeneracy and commutant-richness hypotheses needed to repair Type I and
-Type III obstructions. Assume further that every relevant bridge product avoids
-the Type IV incidence variety:
-
-$$
-Q_iX_gQ_kX_hQ_j\ne0
-$$
-
-whenever the two factors are nonzero and the product is required as a bridge
-candidate.
-
-Then the accessibility jet $\mathcal J_{\mathrm{acc}}$ determines the
-accessibility depth matrix $D$. Equivalently, under these richness and
-nondegeneracy hypotheses, on the generic non-incidence locus the discrete
-shadow of $\mathcal J_{\mathrm{acc}}$ is complete for first-depth
-accessibility.
-
-Equivalently, under these hypotheses, the observable pair $(R_1,R_2)$ together
-with the first-depth shadow of $\mathcal J_{\mathrm{acc}}$ determines $D$.
-
-### Interpretation
-
-The conjecture separates the fate of exceptional mechanisms. Type III
-cancellation is a soft exceptional locus, repairable by higher-depth fields.
-Type IV incidence is a hard exceptional locus, but it has high codimension and
-measure zero in the ambient Lebesgue, equivalently Zariski-generic, matrix-pair
-space.
-
-Thus generic completion does not say that exceptions do not exist. It says that
-the only hard local obstruction is algebraically nongeneric.
-
-***
-
-## Relation to Paper VI
-
-Paper VI studies moving sectorized systems on normal spectral charts
-$\Sigma_{\mathrm{spec}}\subseteq\Sigma_{\mathrm{comm}}$. The accessibility jet
-varies as a smooth matrix-field object, while $R_1$, $R_2$, and $D$ are
-discrete projections of it. The accessibility wall hierarchy is
-
-$$
-\widehat{\Sigma}_{R_1}
-\subseteq
-\widehat{\Sigma}_{R_2}
-\subseteq
-\widehat{\Sigma}_D
+I_{r,s}
 =
-\Sigma_{\mathrm{access}}
-\subseteq
-\Sigma_{\mathrm{spec}}
-\subseteq
-\Sigma_{\mathrm{comm}}.
+\{(A,B):
+\operatorname{rank}A=r,\qquad
+\operatorname{rank}B=s,\qquad
+AB=0\}.
 $$
 
-Paper VII refines the residual $R_2/D$ boundary by identifying the Type IV
-component:
+This stratum is nonempty exactly when
 
 $$
-\Sigma_{\mathrm{IV}}
-\subseteq
-\Sigma_{R_2}^{\circ}\cup\Sigma_D^{\circ}.
+0\le r\le\min(m,n),
+\qquad
+0\le s\le\min(n-r,p).
 $$
 
-Type III and Type IV are not Paper VI wall-hierarchy labels, and they should
-not be read as wall classification labels. They are local mechanisms that can occur inside
-the static fibers over those walls. Paper VI
-answers where the observables jump in moduli space; Paper VII asks when the
-accessibility jet has enough information to complete the depth calculation in
-one fixed sectorized system.
+When nonempty,
 
-This gives the closing line: Paper V says that exceptional mechanisms exist;
-Paper VI says that exceptional mechanisms move on the moduli space; Paper VII
-says that, generically, exceptional mechanisms either repair or disappear.
+$$
+\dim I_{r,s}
+=
+r(m+n-r)+s(n-r+p-s).
+$$
+
+**Proof.** Choose a rank-$r$ matrix $A$, contributing
+$r(m+n-r)$ dimensions. Its kernel has dimension $n-r$. A rank-$s$ map
+$B:\mathbb C^p\to\ker A$ exists exactly when
+$s\le\min(n-r,p)$ and belongs to a rank-$s$ matrix stratum of dimension
+$s(n-r+p-s)$. $\square$
+
+### Corollary 4.3 (Relative Codimension by Rank Product)
+
+Inside the ambient rank-pair stratum
+
+$$
+\{(A,B):\operatorname{rank}A=r,\ \operatorname{rank}B=s\},
+$$
+
+the incidence condition $AB=0$ has relative codimension
+
+$$
+rs.
+$$
+
+**Proof.** The ambient rank-pair stratum has dimension
+
+$$
+r(m+n-r)+s(n+p-s).
+$$
+
+Subtracting the dimension in Theorem 4.2 gives $rs$. $\square$
+
+This formula isolates the alignment cost after the two ranks have already
+been fixed. Rank deficiency and image--kernel alignment are distinct
+conditions.
+
+### Corollary 4.4 (Square-Block Asymptotics)
+
+For $m=n=p=d$ and $1\le r\le d-1$,
+
+$$
+\operatorname{codim}I_r
+=(d-r)^2+dr
+=d^2-dr+r^2.
+$$
+
+The minimum is attained at the integer or integers nearest $d/2$, and equals
+
+$$
+\left\lceil\frac{3d^2}{4}\right\rceil.
+$$
+
+Thus the dominant nonzero-factor incidence stratum has codimension
+asymptotic to $3d^2/4$ in the $2d^2$-dimensional free matrix-pair space.
+
+![Exact fixed-rank codimension values for square blocks. The blue bars show the minimum of $\operatorname{codim}I_r=(d-r)^2+dr$ over admissible nonzero ranks, against the $2d^2$ ambient dimension and the $3d^2/4$ asymptotic. This is an ambient free-matrix calculation, not a represented pullback codimension.](../../figures/paper7/fig1_incidence_codimension.png)
 
 ***
 
-## Computational Proposition
+## Rank Protection
 
-The computational support for the completion theory is concentrated in three
-Paper VII support scripts, abbreviated below by role:
+Return to a sector triple:
 
-| Label | Role |
-|-------|------|
-| VII-A atlas | Type III/IV synthetic systems, represented-atlas limitation, exact $(R_1,R_2)\to D$ hash audit |
-| VII-B codimension | incidence codimension table, random-pair check, perturbation instability |
-| VII-C bridge audit | bridge-level rank-protection and nonincidence audit for Rubik, synthetic, and random systems |
+$$
+A:E_k\to E_i,
+\qquad
+B:E_j\to E_k,
+\qquad
+d_k=\dim E_k.
+$$
 
-The corresponding repository scripts are `atlas_r2_boundary.py`,
-`incidence_variety_codim.py`, and `rank_protected_bridge_audit.py` in
-`experiments/paper7/`.
+Define
 
-The stable support table is organized by claim-status metadata:
+$$
+L=[\operatorname{rank}A=d_k],
+\qquad
+R=[\operatorname{rank}B=d_k].
+$$
 
-| Claim supported | Source | Observed result | Status |
-|-----------------|--------|-----------------|--------|
-| Rank-protected bridge survival | VII-C | Corollary 3 checked for constructed rank-protected blocks in dimensions $2,3,4$; no violation | theorem-support gate |
-| Type IV incidence has high codimension | VII-B | square-block codimension is asymptotic to $3d^2/4$; tested values give about $37.5\%$ of ambient dimension | theorem-support computation |
-| Random matrix pairs avoid $AB=0$ | VII-B | $0/400000$ tested nonzero square matrix pairs satisfy $AB=0$ | empirical sanity check |
-| Type IV incidence is perturbatively unstable | VII-B | perturbation at $\varepsilon=10^{-6}$ breaks constructed $AB=0$ in $100/100$ trials for $d=2,3,4$ | empirical stability check |
-| Tested random bridge products avoid incidence | VII-C | five fixed-seed random systems give $1080/1080$ safe bridge products and zero incidence candidates | computational evidence |
-| Type III/IV boundary is sharp at bridge level | VII-C | synthetic Type III has $4/4$ rank-protected bridges; synthetic Type IV has $4/4$ incidence candidates | constructed boundary check |
-| Rubik is structured rather than random-generic | VII-C | Rubik has $2376$ bridge products, $1848$ generic nonincidence products, and $528$ bridge-level incidence candidates concentrated in four sector triples | structured-laboratory evidence |
-| Tested ablations keep missing incidence | VII-C | dimension $6$--$16$, rank-deficient fraction $0$--$0.8$, generator count $2$--$6$: $75$ random runs, $23400$ audited bridge products, zero incidence candidates | exploratory only |
-| Type III and Type IV separate the candidate class | VII-A | synthetic Type III lies in $C$; synthetic Type IV lies outside $C$ | constructed examples |
-| Exact $(R_1,R_2)$ signatures showed no $D$ disagreement | VII-A | $80$ systems produced $4$ exact-hash classes with identical $(R_1,R_2)$; all had identical $D$ structure | computational evidence |
-| Represented atlas is currently diagnostic | VII-A | regular-representation sectorizations produced nearly zero $R_1$ in most systems and no Type IV example | limitation, not negative theorem |
+The condition $L$ means that $A$ has full column rank, which is possible only
+when $d_i\ge d_k$. Similarly, the condition $R$ means that $B$ has full row
+rank, which is possible only when $d_j\ge d_k$.
 
-### Computational Proposition 1 (VII-A Completion Evidence)
+### Theorem 5.1 (Rank-Protected Product Survival)
 
-The Paper VII support suite verifies the following finite statements.
+Let $A\ne0$ and $B\ne0$.
 
-**(i) Type III versus Type IV.** A synthetic Type III cancellation system lies
-inside the candidate completeness class $C$. A synthetic Type IV incidence
-system lies outside $C$.
+1. If $\operatorname{rank}A=d_k$, then $AB\ne0$.
+2. If $\operatorname{rank}B=d_k$, then $AB\ne0$.
 
-**(ii) Incidence instability.** Starting from constructed Type IV systems,
-generic perturbation at $\varepsilon=10^{-6}$ breaks $AB=0$ in $100/100$
-trials for $d=2,3,4$.
+More quantitatively,
 
-**(iii) Random-pair absence.** Across $400000$ random square matrix pairs in
-the tested dimensions, no nonzero pair satisfied $AB=0$.
+$$
+\|AB\|_F
+\ge
+\sigma_{\min}(A)\|B\|_F
+$$
 
-**(iv) Exact signature audit.** In $80$ diverse random sectorized systems,
-there were $4$ exact-hash equivalence classes with identical $R_1$ and $R_2$
-arrays. All $4$ classes had identical $D_{\max}$ and identical per-depth
-structure. No $D$ disagreement was found.
+when $A$ has full column rank, and
 
-**(v) Claim-status-metadata bridge audit.** The rank-protected bridge audit is
-split into five gates. Gate A is theorem-support: Corollary 3 was checked on
-constructed rank-protected blocks in dimensions $2,3,4$, with no violation. Gate B
-checks the Type III/IV boundary: the synthetic Type III model has $4/4$
-rank-protected bridge products and zero incidence candidates, while the
-synthetic Type IV model has $4/4$ incidence candidates. Gate C is computational
-evidence for generic nonincidence: five fixed-seed random systems
-($42,\ldots,46$) give $1080/1080$ safe bridge products and zero incidence
-candidates.
+$$
+\|AB\|_F
+\ge
+\sigma_{\min}(B)\|A\|_F
+$$
 
-Gate D is diagnostic. The Rubik system behaves differently: among $2376$
-bridge products, $1848$ are generic nonincidence products and $528$ are
-bridge-level incidence candidates. These are candidate products in the audit,
-not certified Type IV accessibility obstructions. They are concentrated in
-four sector triples, in zero-based sector indices
-$(2,6,8)$, $(5,6,8)$, $(8,6,2)$, and $(8,6,5)$.
+when $B$ has full row rank.
 
-Equivalently, in the RIME sector labels, they involve the triples
-$(S3,S7,S9)$ and $(S6,S7,S9)$ together with their reversed orientations.
+**Proof.** Full column rank gives $\ker A=0$, so Theorem 3.1 rules out
+$AB=0$ for nonzero $B$. Applying the smallest-singular-value inequality to
+each column of $B$ gives the first norm bound. For the dual statement, use
+$(AB)^\ast=B^\ast A^\ast$ and note that $B^\ast$ has full column rank with
+the same positive singular values as $B$. $\square$
 
-Gate E is exploratory. It varies total dimension $6$--$16$, rank-deficient
-fraction $0$--$0.8$, and generator count $2$--$6$. Across $75$ random runs and
-$23400$ audited bridge products, no incidence candidate appears. This ablation
-is evidence for the genericity picture, not a theorem.
+The condition
 
-These computations do not prove Conjecture 1. They support the claim that Type
-IV is the hard boundary and that, away from this boundary and under the tested
-nondegeneracy/richness conditions, the accessibility jet behaves as a complete
-object in the tested families.
+$$
+\operatorname{rank}A=\min(d_i,d_k)
+$$
 
-![Rank-protected bridge audit. The tested random families show no audited
-incidence candidates; the synthetic Type IV boundary is sharp; Rubik
-concentrates bridge-level incidence candidates, not certified Type IV
-accessibility obstructions, in a small structured subset of sector triples.](../../figures/paper7/fig3_rank_protected_bridge_audit.png)
+is not sufficient for left protection. If $d_i<d_k$, such a matrix has
+maximum possible rank but still has a nonzero kernel. The analogous warning
+holds for $B$ when $d_j<d_k$.
 
-The Rubik bridge audit should not be read as a contradiction to generic
-nonincidence. It shows that Rubik lies in a structured, rank-deficient region
-of the sectorized-system space. This is precisely why the Rubik laboratory is
-useful: it is rich enough to expose nongeneric incidence geometry that random
-systems did not hit in the tested audits.
+The five mutually exclusive audit classes are:
 
-![Rubik incidence concentration. In the bridge audit, all observed bridge-level
-incidence candidates cluster in four oriented sector triples through the $S7$
-hub. This locates Rubik in a structured exceptional region rather than in the
-tested random-generic regime.](../../figures/paper7/fig4_rubik_incidence_concentration.png)
+| Class | Condition |
+|-------|-----------|
+| both-protected | $L\wedge R$ |
+| left-only | $L\wedge\neg R$ |
+| right-only | $\neg L\wedge R$ |
+| unprotected-nonzero | $\neg L\wedge\neg R\wedge AB\ne0$ |
+| unprotected-zero | $\neg L\wedge\neg R\wedge AB=0$ |
 
-**Remark 2 (Transport-to-Incidence Hub Recurrence).** The four Rubik incidence
-candidate triples are
-$(S3,S7,S9)$ and $(S6,S7,S9)$, together with their reversed orientations. Thus
-$S7$ is the bridge-level incidence hub in the Paper VII audit. This echoes the
-Paper II transport geometry, where $S7$ lies at the end of the
-$S5$--$S6$--$S7$ transport chain and next to the unique Type II edge
-$S8$--$S9$ \cite{paper2}. No theorem-level relation between the transport hub
-and the incidence hub is claimed here. Hub recurrence may indicate a later
-notion of sector centrality linking transport, incidence, and accessibility.
-
-![Generic sampling landscape. Across the audited products in the tested random
-families, incidence candidates remain absent. The final panel points back to Paper VI: structured
-exceptional carriers require a moduli-space and wall-crossing description.](../../figures/paper7/fig5_generic_sampling_landscape.png)
-
-### Represented Atlas Limitation
-
-The represented-atlas component is currently diagnostic rather than decisive.
-Regular-representation sectorizations produced nearly zero $R_1$ in most
-tested systems, meaning they do not yet probe rich cross-sector Type IV
-behavior. This is a known limitation of the current atlas.
-
-The lesson is useful: Type IV requires mixed sectorizations where cross-sector
-blocks exist and products nevertheless vanish by incidence. Regular
-representation sectorizations tend to suppress the first condition.
-
-The rank-protected bridge audit adds the opposite lesson. Tested random
-sectorized systems miss the incidence variety in the audited bridge products,
-whereas Rubik hits it in a structured and repeatable way. Thus Rubik is not a
-generic point of the sectorized-system space. It is a stable carrier of
-high-codimension algebraic structure, which is exactly why it functions as a
-useful laboratory for the RIME program.
+Protected records are still required to evaluate $AB$ numerically. Rank
+protection is used as a theorem-level cross-check, not as a branch that skips
+the product calculation.
 
 ***
 
-## Scope and Open Problems
+## Promotion Limits
 
-### What This Paper Establishes
+The local incidence theorem resolves only the first matrix-composition gate.
+For fixed $i,k,j,g,h$, the following implications are invalid without
+additional hypotheses:
 
-- Type IV incidence is the algebraic variety $I=\{(A,B):AB=0,\ A,B\ne0\}$.
-- On fixed-rank strata, $\operatorname{codim}I_r=(m-r)(n-r)+pr$.
-- For square blocks, the dominant incidence codimension is asymptotic to
-  $3d^2/4$.
-- Rank-protected projected block strata exclude Type IV.
-- Random bridge products in the tested families are fully safe from incidence,
-  while Rubik exhibits a structured incidence sublocus concentrated in a small
-  set of sector triples.
-- Computational evidence separates Type III from Type IV and supports
-  generic completion away from incidence.
+| Local datum | Stronger conclusion | Missing promotion condition |
+|-------------|---------------------|-----------------------------|
+| $A\ne0$, $B\ne0$ | $T_{ikj}^{g,h}\ne0$ | image--kernel nonalignment or rank protection |
+| some $T_{ikj}^{g,h}\ne0$ | $W_{ij}^{g,h}\ne0$ | no cancellation in the sum over $k$ |
+| $W_{ij}^{g,h}\ne0$ and $W_{ij}^{h,g}\ne0$ | $C_{ij}^{g,h}\ne0$ | no antisymmetric cancellation |
+| low-order Lie support | finite or exact $D_{\mathrm{Lie}}(i,j)$ | higher Hall data and closure/saturation certificate |
+| high ambient codimension | rare represented incidence | nondegenerate pullback or transversality of the parameter map |
 
-### What This Paper Does Not Establish
-
-- It does not prove a universal theorem that $(R_1,R_2)$ determines $D$.
-- It does not prove that all Type IV incidence conditions remain stable under
-  arbitrary Lie bracketing at all depths.
-- It does not classify higher-depth walls $R_3,R_4,\ldots$.
-- It does not yet construct a rich representation-derived Type IV accessibility
-  obstruction; Rubik currently supplies bridge-level incidence candidates.
-
-### Open Problems
-
-1. **Generic completion theorem.** Prove Conjecture 1 or find the minimal
-   non-incidence counterexample.
-
-2. **Algebraic richness.** Express the commutant-richness condition needed to
-   repair Type III cancellations in terms of the representation and the
-   accessibility jet.
-
-3. **Incidence in represented systems.** Determine the intersection of
-   $\Sigma_{\mathrm{IV}}$ with representation-derived sectorization loci.
-
-4. **Higher-depth completion.** Extend the incidence/cancellation analysis from
-   length-two witnesses to higher Hall layers.
-
-## Appendix A --- Perturbation Check
-
-The Type IV boundary is perturbatively unstable in the tested models.
-
-![Type IV perturbation instability. In the synthetic incidence families, every
-tested perturbation amplitude breaks the constructed $AB=0$ relation.](../../figures/paper7/figA1_type_iv_perturbation_instability.png)
-
-## Appendix B --- Claim-Status Metadata
-
-The support suite is intentionally tiered: theorem support, computational
-evidence, diagnostics, and exploratory scans are kept distinct.
-
-![Paper VII claim-status metadata. The codimension and rank-protection statements
-are theorem-level; random-family audits are computational evidence; the
-completion principle remains conjectural.](../../figures/paper7/figA2_claim_status_metadata.png)
-
-## Appendix C --- Cross-Species SOF Diagnostics
-
-The main body of this paper is about generic completion and the Type IV
-incidence boundary. The following diagnostics are not part of the proof of
-Conjecture 1. They record a separate sanity check: the observables $R_1$,
-$R_2$, and $D$ are not specific to the Rubik representation.
-
-### Note on the Sectorized Observable Framework (SOF)
-
-The objects appearing throughout Papers V--VII naturally admit a common
-description, which we refer to as a Sectorized Observable Framework (SOF). We
-describe an SOF by
+Equivalently,
 
 $$
-\mathcal F=(V,\{Q_i\},\mathcal X),
+\begin{aligned}
+\text{support path}
+&\not\Longrightarrow
+T_{ikj}^{g,h}\ne0,\\
+T_{ikj}^{g,h}\ne0
+&\not\Longrightarrow
+W_{ij}^{g,h}\ne0,\\
+W_{ij}^{g,h},W_{ij}^{h,g}\ne0
+&\not\Longrightarrow
+C_{ij}^{g,h}\ne0.
+\end{aligned}
 $$
 
-where $V$ is a finite-dimensional representation space, $\{Q_i\}$ is a
-distinguished family of sector projectors, and $\mathcal X$ is a chosen
-observable family, typically generators, transfer operators, or related
-observables.
+The first failure is controlled exactly by image--kernel incidence for the
+declared route. The second is a sum-over-routes cancellation problem. The
+third is an antisymmetrization problem. None is interchangeable with the
+others.
 
-Throughout this appendix we use the term "Sectorized Observable Framework
-(SOF)" as a neutral observable architecture for the sectorized systems
-appearing in the RIME program. It is intended as static object terminology
-only; no deformation theory, registry theorem, or universal wall theory beyond
-$(V,\{Q_i\},\mathcal X)$ is assumed here.
+### Ambient versus represented incidence
 
-The quantities $R_1$, $R_2$, and $D$ are defined relative to this triple rather
-than to any particular Rubik representation. The Rubik cube, quantum gate
-systems, Markov systems, and graph systems considered below are therefore
-interpreted as different realizations of the same observable architecture.
-
-The unifying object is not a particular wall theory, but the sectorization.
-Different systems may pass through the same observable architecture while
-exhibiting different deformation geometries.
-
-A systematic development of the SOF architecture lies beyond the scope of the
-present paper and is left for future work.
-
-### C.1 Quantum Gate Systems
-
-For the quantum diagnostic, $V=(\mathbb C^2)^{\otimes q}$, the sectors are
-computational-basis projectors $|b\rangle\langle b|$, and the operator family
-is obtained from skew-Hermitian logarithmic gate generators.  The audit uses
-the same convention as the main paper: $R_1$ records projected generator
-support, $R_2$ records projected commutator survival, and $D$ records first
-Lie-depth accessibility up to the tested depth.
-
-The diagnostic table is:
-
-| Gate set | $q$ | $R_1$ offdiag | $R_2$ offdiag | frozen $R_1$ | frozen $D$ | $D$-repaired | $D_{\max}$ |
-|----------|-----|---------------|---------------|--------------|------------|--------------|------------|
-| Pauli $\{X,Z\}$ | 2 | 16.7% | 33.3% | 8 | 8 | 0 | $\infty$ |
-| Pauli $\{X,Y,Z\}$ | 2 | 22.2% | 22.2% | 8 | 8 | 0 | $\infty$ |
-| Clifford $\{H,S,\mathrm{CNOT}\}$ | 2 | 16.7% | 33.3% | 6 | 0 | 6 | 2 |
-| Clifford $\{H,S,\mathrm{CZ}\}$ | 2 | 11.1% | 16.7% | 8 | 8 | 0 | $\infty$ |
-| Universal $\{H,T,\mathrm{CNOT}\}$ | 2 | 16.7% | 33.3% | 6 | 0 | 6 | 2 |
-| Pauli $\{X,Z\}$ | 3 | 7.1% | 14.3% | 48 | 48 | 0 | $\infty$ |
-| Clifford $\{H,S,\mathrm{CNOT}\}$ | 3 | 7.1% | 14.3% | 44 | 32 | 12 | $\infty$ |
-| Universal $\{H,T,\mathrm{CNOT}\}$ | 3 | 7.1% | 14.3% | 44 | 32 | 12 | $\infty$ |
-
-Here $\infty$ means unreached within the tested finite Lie-depth cutoff.
-
-The observations are:
-
-**Observation C.1 (Entangling generators create additional accessibility
-channels).** In the tested computational-basis sectorization, CNOT opens
-channels that are absent in product-only Pauli systems and in the tested CZ
-variant.  The ordering observed in the diagnostic is
+Let a constrained family be parameterized by
 
 $$
-\mathrm{CNOT}\;>\;\mathrm{CZ}\;>\;\text{product-only}
+\Phi:\Theta
+\longrightarrow
+\operatorname{Mat}_{m\times n}
+\times
+\operatorname{Mat}_{n\times p}.
 $$
 
-with respect to $D$-repair in the tested gate families.
+Its incidence locus is
 
-**Observation C.2 (Lie-depth repairs accessibility beyond first-order
-transport).** $R_1$-frozen does not imply $D$-frozen.  In the two-qubit
-Clifford+CNOT and Universal+CNOT systems, $6$ sector pairs frozen at the
-first support layer become accessible at higher Lie depth.  In the three-qubit
-versions, $12$ such repairs are observed within the tested depth range.
+$$
+\Phi^{-1}(Z_{m,n,p}).
+$$
 
-**Observation C.3 (Universality alone does not enrich low-order
-accessibility).** Adding the $T$ gate does not change the audited
-$R_1/R_2/D$ summary relative to Clifford+CNOT in the tested $2$- and
-$3$-qubit systems.  Thus computational universality of the gate set and
-low-order sector accessibility are different notions.
-
-### C.2 Markov and Graph Systems
-
-Markov and graph systems provide a second diagnostic layer.  For Markov
-systems, $V$ is a finite state space, sectors are state projectors, and the
-operator is a rate or logarithmic transition operator.  For graph systems,
-$V$ is a vertex space, sectors are vertex or spectral sectors, and operators
-may include adjacency, Laplacian, walk, or directed-edge data.
-
-The current diagnostic results are:
-
-| System | Species | Sectors | Generators | $R_1$ offdiag | frozen $R_1$ | frozen $D$ | $D$-repaired | $D_{\max}$ |
-|--------|---------|---------|------------|---------------|--------------|------------|--------------|------------|
-| Markov chain | Markov | 3 | 1 | 100.0% | 0 | 0 | 0 | 0 |
-| Absorbing Markov | Markov | 3 | 1 | 66.7% | 2 | 2 | 0 | $\infty$ |
-| Graph $K_3$ | Graph | 3 | 2 | 50.0% | 0 | 0 | 0 | 0 |
-| Graph $P_3$ | Graph | 3 | 2 | 33.3% | 2 | 2 | 0 | $\infty$ |
-| Graph $C_4$ | Graph | 4 | 2 | 33.3% | 4 | 4 | 0 | $\infty$ |
-
-These examples show that the audit interface is portable, but they do not
-establish a generic completion theorem.  Complete or strongly connected
-examples may have $D=0$ without any repair phenomenon, while sparse examples
-may remain frozen for the chosen operator family.
-
-Unlike Rubik or CNOT-generated systems, these examples employ only a single
-effective transport generator or an already-complete connectivity pattern,
-leaving no opportunity for higher-order Lie repair.
-
-### C.3 Cross-Species Observations
-
-Across the quantum, Markov, and graph diagnostics, the same audit interface
-applies once the sectorized data $(V,\{Q_i\},\mathcal X)$ are fixed.  The
-results support the SOF hypothesis that $R_1$, $R_2$, and $D$ are sectorized
-observables rather than Rubik-specific quantities.
-
-The diagnostics also separate three regimes:
-
-1. product-only or single-effective-generator systems, where higher-order Lie
-   repair is absent in the tested range;
-2. already-complete systems, where $D=0$ leaves no repair problem;
-3. sufficiently rich noncommuting systems, such as CNOT-generated examples,
-   where $R_1$-frozen pairs can be repaired at higher Lie depth.
-
-### C.4 Empirical SOF Principle
-
-Across the tested SOF species, nontrivial $D$-repair has appeared only in
-systems equipped with sufficiently rich noncommuting transport generators,
-visible to the chosen sectorization.  Tested single-generator or effectively
-degenerate systems either are already connected at first depth, or remain
-frozen in the tested Lie filtration.
-
-This principle is empirical.  It should be read as a routing rule for future
-SOF examples, not as a theorem.  To promote it, one would need a precise
-definition of sufficient noncommutative transport richness and a proof that it
-is necessary or generic for $D$-repair.
-
-The scripts supporting this appendix are the quantum SOF audit in
-`experiments/quantum/` and the Markov/graph SOF audit in
-`experiments/paper7/`.
+Ambient codimension does not determine the dimension of this pullback. A
+promotion from ambient genericity to a represented family requires, at
+minimum, evidence that $\Phi(\Theta)$ is not contained in $Z_{m,n,p}$ and a
+suitable transversality or nondegeneracy statement on the relevant rank
+strata. Symmetry may force a family into incidence despite the high ambient
+codimension.
 
 ***
 
-## References
+## Exact and Computational Case Studies
 
-**Program lineage.** Paper VII depends directly on Papers IV--VI. Paper IV
-supplies the fixed-arrangement collision quotient \cite{paper4}; Paper V
-supplies the local length-2 repair calculus and the Type III/IV mechanism
-taxonomy \cite{paper5}; Paper VI supplies the deformation geometry of the
-commutativity locus, accessibility jets, and accessibility walls
-\cite{paper6}. Thus Paper VII is the static completion layer after collision
-geometry, repair calculus, and wall geometry have been separated.
+The displayed integer examples are exact. All remaining claims in this section
+are finite numerical observations and are not used to prove the incidence
+theorems.
 
-**External background.** The matrix and rank arguments use standard finite-dimensional linear algebra \cite{hornJohnson2013}. The representation-theoretic background is standard finite-group representation theory \cite{serre1977}, while the generic-accessibility vocabulary is anchored in geometric control theory \cite{jurdjevic1997,agrachevSachkov2004}. The Type IV boundary is an incidence/Schubert condition, so the algebraic-geometry background is the usual one for determinantal and incidence loci \cite{fulton1998,harris1992}. Hall words and weighted Lie-depth language continue the free-Lie-algebra framework already used in Paper V \cite{hall1950,reutenauer1993}. Paper VII does not use the association-scheme quotient story as its main background; that belongs with the fixed collision geometry of Paper IV.
+### Declared numerical policy
 
-**Computational provenance.** The support suite is organized as the VII-A atlas
-experiment, the VII-B incidence codimension experiment, and the VII-C
-rank-protected bridge audit. The manuscript-level reproducibility notes remain
-attached to the support scripts in `experiments/paper7/`, while the repository
-stores the full logs and tables used to check the claim-status metadata.
+The projected-composition audit uses:
+
+| Quantity | Policy |
+|----------|--------|
+| support | $\|A\|_F,\|B\|_F>10^{-8}$ |
+| numerical rank | singular values above $\max(10^{-12},10^{-9}\sigma_{\max})$ |
+| product nonzero | $\|AB\|_F>10^{-12}+10^{-10}\|A\|_F\|B\|_F$ |
+| normalized product | $\eta(A,B)=\|AB\|_F/(\|A\|_F\|B\|_F)$ |
+| image--kernel action | $\|AU_B\|_F$, where $U_B$ spans $\operatorname{im}B$ |
+| subspace residual | $\delta_{\mathrm{inc}}(A,B)=\|(I-P_{\ker A})U_B\|_F$ |
+
+Here the columns of $U_B$ are an orthonormal basis of $\operatorname{im}B$ and
+$P_{\ker A}$ is the orthogonal projector onto $\ker A$. The reported
+$\delta_{\mathrm{inc}}$ is not divided by $\sqrt{\operatorname{rank}B}$.
+Small $\eta(A,B)$ is a numerical alignment diagnostic, not an exact incidence
+proof. Every protected record is still multiplied, and a numerically protected
+zero-product triggers an assertion.
+
+### Exact integer examples
+
+Five explicit integer matrix pairs realize all five audit classes. In the
+table, $r_A=\operatorname{rank}A$ and $r_B=\operatorname{rank}B$.
+
+| Example | $(m,n,p)$ | $(r_A,r_B)$ | Outcome |
+|---------|-----------|-------------|---------|
+| both | $(2,2,2)$ | $(2,2)$ | $AB\ne0$ |
+| left only | $(3,2,1)$ | $(2,1)$ | $AB\ne0$ |
+| right only | $(1,2,3)$ | $(1,2)$ | $AB\ne0$ |
+| unprotected, nonzero | $(2,2,2)$ | $(1,1)$ | $AB\ne0$ |
+| unprotected, zero | $(2,2,2)$ | $(1,1)$ | $AB=0$ |
+
+A concrete integer realization is
+
+1. both protected:
+   $A=I_2$ and $B=\begin{psmallmatrix}1&2\\3&4\end{psmallmatrix}$;
+2. left only:
+   $A=\begin{psmallmatrix}1&0\\0&1\\1&1\end{psmallmatrix}$ and
+   $B=\begin{psmallmatrix}1\\2\end{psmallmatrix}$;
+3. right only:
+   $A=\begin{psmallmatrix}1&2\end{psmallmatrix}$ and
+   $B=\begin{psmallmatrix}1&0&1\\0&1&1\end{psmallmatrix}$;
+4. unprotected and nonzero:
+   $A=B=\begin{psmallmatrix}1&0\\0&0\end{psmallmatrix}$;
+5. unprotected and zero:
+   $A=\begin{psmallmatrix}1&0\\0&0\end{psmallmatrix}$ and
+   $B=\begin{psmallmatrix}0&0\\1&0\end{psmallmatrix}$.
+
+Their ranks and products can be checked directly. In particular, the last two
+examples demonstrate that a lack of protection is necessary but not sufficient
+for incidence.
+
+### Rubik routed-product registration
+
+The computational Rubik case study fixes:
+
+- the nine declared center-decomposition sectors, whose dimensions are
+
+  $$
+  (20,2,39,26,1,39,66,8,27);
+  $$
+- the 18 skew-Hermitian operators
+  $X_g=(\rho(g)-\rho(g)^\ast)/2$;
+- all ordered operator pairs, including repeated operators;
+- all sector triples with off-diagonal factor legs $i\ne k$ and $k\ne j$.
+
+For each order-two half turn, unitarity gives
+$\rho(g)^\ast=\rho(g)^{-1}=\rho(g)$, and therefore $X_g=0$. The audit confirms
+six zero operators, at zero-based indices $2,5,8,11,14,17$, with maximum norm
+exactly zero in the declared realization. Consequently, all nonzero-factor
+routed records arise from the twelve quarter-turn operators. This explains the
+count $144=12^2$ for each exceptional sector triple, even though the declared
+family contains 18 operators and the enumeration initially considers all
+ordered pairs.
+
+This anti-Hermitian-part registration is not the numerical matrix-logarithm
+family used in Paper V's $S_4$ case study \cite{paper5}. In particular, a half
+turn vanishes here but generally has a nonzero logarithmic generator. The two
+papers' $R_1^{\mathrm{Lie}}$ and $R_2^{\mathrm{Lie}}$ censuses therefore cannot
+be compared without an explicit observable-family alignment.
+
+The corrected census is:
+
+| Class | Count |
+|-------|------:|
+| both-protected | 0 |
+| left-only | 0 |
+| right-only | 0 |
+| unprotected-nonzero | 2016 |
+| unprotected-zero | 576 |
+| total nonzero-factor routes | 2592 |
+
+The 576 machine-zero products are concentrated in four zero-based sector
+triples:
+
+| $(i,k,j)$ | Count |
+|-----------|------:|
+| $(2,6,8)$ | 144 |
+| $(5,6,8)$ | 144 |
+| $(8,6,2)$ | 144 |
+| $(8,6,5)$ | 144 |
+
+Across these records,
+
+$$
+\max\|AB\|_F=2.467\times10^{-16},
+\qquad
+\max\eta(A,B)=6.737\times10^{-17}.
+$$
+
+The minimum factor norm is $1.803$. The maximum image--kernel action residual
+is $1.210\times10^{-15}$ and the maximum subspace distance residual is
+$9.485\times10^{-15}$. These are machine-zero image--kernel alignment records
+in the declared complex128 realization, not exact symbolic equalities.
+
+![The declared Rubik routed-product census. Six half-turn operators vanish under the anti-Hermitian-part registration, leaving twelve nonzero quarter-turn operators and therefore $144=12^2$ nonzero-factor records in each of four registered image--kernel concentrations. The display is a finite numerical registration and does not determine the codimension of a representation-derived pullback locus.](../../figures/paper7/fig2_rubik_incidence_census.png)
+
+### Random and rank-deficient controls
+
+Five dense random systems contribute 1620 routed records. Every record is
+both-protected and has nonzero product.
+
+Five controls with an $80\%$ rank-deficient block-generation probability
+contribute another 1620 records:
+
+| Class | Count |
+|-------|------:|
+| both-protected | 122 |
+| left-only | 274 |
+| right-only | 274 |
+| unprotected-nonzero | 950 |
+| unprotected-zero | 0 |
+
+Thus, rank deficiency creates unprotected routes but does not, by itself,
+force image--kernel incidence.
+
+For independent dense square matrix pairs, the normalized product audit gives:
+
+| $d$ | $\min\eta$ | $q_{0.001}$ | $q_{0.01}$ | median |
+|----:|-----------:|------------:|-----------:|-------:|
+| 2 | 0.1068 | 0.2322 | 0.3461 | 0.7070 |
+| 3 | 0.2235 | 0.3017 | 0.3678 | 0.5744 |
+| 4 | 0.2460 | 0.3144 | 0.3610 | 0.4975 |
+| 5 | 0.2444 | 0.3122 | 0.3463 | 0.4455 |
+
+Each dimension uses $100000$ samples. No sample falls below relative
+thresholds $10^{-8}$, $10^{-10}$, or $10^{-12}$. This is an implementation and
+threshold sanity check consistent with Proposition 3.2; it is not evidence for
+operator or Lie completion.
+
+### Perturbation and finite full-array atlas
+
+Constructed incidence pairs in dimensions $2,3,4$ were perturbed at
+$\varepsilon=10^{-6},10^{-4},10^{-2}$. All $900/900$ perturbed products became
+nonzero at the declared threshold.
+
+A separate finite Lie audit registers 80 eight-dimensional skew-Hermitian
+systems in four mask families. It stores complete generator-indexed
+$R_1^{\mathrm{Lie}}$ arrays, complete commutator-indexed
+$R_2^{\mathrm{Lie}}$ arrays, complete $D_{\mathrm{Lie}}$ matrices, each
+per-depth support array, each cumulative support array, and deterministic
+SHA-256 hashes.
+
+Each of the four threshold-defined low-order array classes contains 20 systems.
+Within
+every class:
+
+- the complete $D_{\mathrm{Lie}}$ arrays agree elementwise;
+- all per-depth and cumulative support arrays agree elementwise;
+- the results are stable at thresholds $10^{-9},10^{-8},10^{-7}$;
+- the cumulative generator--commutator basis passes the closure audit described
+  below.
+
+At rank tolerance $10^{-8}$, the cumulative dimensions by mask family, listed
+through the first empty round, are
+
+1. family 0: $(3,6,14,28,49,63,63)$, first empty round 6;
+2. family 1: $(3,5,10,20,40,59,63,63)$, first empty round 7;
+3. family 2: $(3,5,10,18,31,43,51,58,61,63,63)$, first empty round 10;
+4. family 3: $(3,6,14,32,63,63)$, first empty round 5.
+
+An empty round means that every commutator of a basis element in the newest
+layer with every declared generator produces no new vector after projection
+against the cumulative basis. The closure audit additionally checks all
+generator--basis pairs, not solely those involving the newest layer. If
+$\mathcal L=\operatorname{span}\{L_a\}$ is the final numerical basis, it forms
+
+$$
+R_{\mathrm{cl}}
+=
+\left[
+(I-P_{\mathcal L})\operatorname{vec}[X_g,L_a]
+\right]_{g,a}.
+$$
+
+Across all 80 systems, the final dimension is 63, the smallest retained
+singular value of the vectorized basis matrix is at least
+$0.999999999998$, the largest singular value of $R_{\mathrm{cl}}$ is at most
+$7.175\times10^{-13}$, and the largest individual closure residual is
+$6.627\times10^{-13}$. Thus all generator--basis commutators lie in the final
+span to well below the declared rank tolerance. This is a numerical closure
+certificate for the finite atlas, not an exact-arithmetic Lie-algebra theorem.
+
+No disagreement occurs in this finite atlas. This is an observation about the
+declared four families, not a theorem that
+$(R_1^{\mathrm{Lie}},R_2^{\mathrm{Lie}})$ determines
+$D_{\mathrm{Lie}}$.
 
 ***
 
-*Program status.* Paper V identifies local exceptional mechanisms. Paper VI
-places those mechanisms on the generator-set moduli space. Paper VII identifies
-the hard mechanism, Type IV incidence, as a high-codimension algebraic
-degeneration. Within the SOF language
-$\mathcal S=(V,\{Q_i\},\mathcal X)$, Type IV is an incidence stratum in the
-block geometry of $\mathcal S$, not a Rubik anomaly. The resulting completion
-theory is the current static closure framework: under the stated richness and
-nondegeneracy hypotheses, and outside the relevant Type IV incidence variety,
-the Generic Completion Principle predicts that $(R_1,R_2)$ determines the
-first-depth invariant $D$. Deformation of the exceptional incidence locus
-belongs to the moduli-space line opened by Paper VI.
+## Claim Status and Boundary
+
+The table uses the four claim levels. Corollaries and exact finite
+examples belong to the Theorem level; refuted or unclaimed promotions are
+listed separately as boundaries.
+
+| Claim | Status |
+|-------|--------|
+| Image--Kernel Criterion | Theorem |
+| $Z=\{AB=0\}$ is closed; $Z^\times$ is constructible | Theorem |
+| fixed-$r$ dimension and codimension | Theorem |
+| fixed-$(r,s)$ dimension and relative codimension $rs$ | Theorem |
+| square-block dominant codimension | Theorem |
+| left/right rank protection and norm bounds | Theorem |
+| existence of the five displayed exact integer examples | Theorem |
+| six half-turn zeros and corrected Rubik routed census | Computational Observation |
+| random quantiles and perturbation breakdown | Computational Observation |
+| full-array finite Lie atlas agreement and closure residual | Computational Observation |
+| low-order Lie support determines Lie depth | Research Program |
+| represented pullback incidence and transversality | Research Program |
+
+The boundary is explicit: graph-to-route, route-to-word, and
+word-to-commutator promotions are not claimed. Furthermore, ambient codimension
+does not determine represented pullback geometry without additional hypotheses.
+
+There is no theorem or conjecture in this paper asserting
+
+$$
+(R_1^{\mathrm{Lie}},R_2^{\mathrm{Lie}})
+\Longrightarrow
+D_{\mathrm{Lie}}.
+$$
+
+***
+
+## Research Program
+
+### Conditional Low-Order Promotion Problem
+
+A future promotion theorem would need explicit, independently checkable
+hypotheses rather than an undefined richness condition. Candidate gates
+include:
+
+| Gate | Candidate requirement |
+|------|-----------------------|
+| H1 low-order coverage | every finite-depth target already appears at the declared $R_1^{\mathrm{Lie}}$ or $R_2^{\mathrm{Lie}}$ layer |
+| H2 route survival | every required routed product avoids image--kernel incidence |
+| H3 cancellation control | route sums and antisymmetrizations do not erase the required channels, or are repaired in a declared Hall layer |
+| H4 closure | the numerical or exact Lie closure is certified saturated |
+
+H1 is an exclusionary hypothesis, not an observed general principle. Indeed,
+it fails in the declared S4 numerical realization of Paper V: two registered
+channels have $R_1^{\mathrm{Lie}}=R_2^{\mathrm{Lie}}=0$ but first appear at
+$D_{\mathrm{Lie}}=2$ \cite{paper5}. The table is a research checklist, not a
+theorem statement.
+
+### Pullback incidence
+
+For a representation-derived map $\Phi:\Theta\to\operatorname{Mat}\times
+\operatorname{Mat}$, determine:
+
+1. whether $\Phi(\Theta)$ is contained in an incidence stratum;
+2. whether $\Phi$ is transverse to the relevant fixed-rank strata;
+3. how symmetry changes the pullback codimension;
+4. whether ranks remain constant on the declared parameter chart.
+
+The object of interest is the pullback locus $\Phi^{-1}(Z)$, not the ambient
+codimension alone.
+
+### Structural stability and moving charts
+
+The reported perturbation audit varies free matrix entries. A structural
+stability theorem would instead perturb inside a representation-preserving or
+sector-preserving family. Moving projectors require normal spectral charts and
+coherent continuation before incidence can be compared across parameters.
+
+### Hub recurrence
+
+The four Rubik zero-product triples share the intermediate sector $k=6$.
+Whether such incidence concentration relates to transport centrality remains
+open. A formal relation would require aligned operator families and a theorem
+connecting graph, routed, and representation-derived data.
+
+***
+
+## Conclusion
+
+Projected factors compose precisely when the image of the right factor is not
+contained in the kernel of the left factor. Thus
+
+$$
+AB=0
+\quad\Longleftrightarrow\quad
+\operatorname{im}B\subseteq\ker A
+$$
+
+is the local geometric obstruction, while full column rank of $A$ or full row
+rank of $B$ protects a nonzero product. On a fixed double-rank stratum, the
+incidence condition has relative codimension $rs$, cleanly separating rank
+deficiency from the additional image--kernel alignment cost.
+
+In the declared Rubik realization, the finite audit records 2016 unprotected
+nonzero products and 576 machine-zero image--kernel alignments among 2592
+nonzero-factor routes. This is a Computational Observation, not an exact
+represented-incidence theorem.
+
+These conclusions stop at routed matrix composition. They do not identify a
+support path with a routed product, a routed product with a full word, a word
+with a commutator, or low-order support with finite Lie depth. Rank protection,
+image--kernel alignment, and promotion limits are therefore distinct parts of
+one static composition problem.
+
+***
+
+## Related Work and Novelty Boundary
+
+The matrix inequalities and singular-value bounds are standard
+\cite{hornJohnson2013}. Determinantal and incidence strata are standard
+objects in algebraic geometry \cite{harris1992,fulton1998,eisenbud1995}. The
+distinction between Boolean zero patterns and evaluated matrix products is
+adjacent to qualitative matrix theory and structural controllability
+\cite{brualdiRyser1991,lin1974structural}. Routed products may also be viewed
+through path and quiver evaluation, although this paper does not construct a
+path-algebra quotient \cite{schiffler2014}.
+
+Related work separates support graphs from projected composition and direct
+support from words, commutators, and low-depth Lie data
+\cite{paper3,paper5}. Those results are not used in the incidence proofs here.
+
+***
+
+## Appendix A: Computational Artifacts
+
+The following repository artifacts support the exact incidence tables and the
+computational case studies. The default directory is
+`experiments/paper7/`; paths are relative to that directory.
+
+| Artifact | Role | Short path |
+|----------|-------------------|------------|
+| A1 | exact fixed-rank and fixed-double-rank tables | \path{validation/incidence_variety_codim.py} |
+| A2 | routed-product, rank-protection, and incidence audit | \path{validation/rank_protected_bridge_audit.py} |
+| A3 | full-array typed low-order and Lie-depth audit | \path{validation/atlas_r2_boundary.py} |
+| A4 | generated incidence tables | \path{results/incidence_geometry.json}, \path{.txt} |
+| A5 | generated projected-composition witnesses | \path{results/projected_composition_audit.json}, \path{.txt} |
+| A6 | generated complete-array Lie atlas | \path{results/full_array_lie_atlas.json}, \path{.txt} |
+
+From the repository root, run an executable artifact as
+`python experiments/paper7/<short path>`. A4 contains the fixed-rank tables;
+A5 records thresholds, exact examples, the Rubik operator-family declaration,
+zero-product witnesses, random controls, and perturbations; A6 records full
+arrays, per-layer and cumulative supports, dimensions, closure certificates,
+and hashes.
+
+Every zero-product witness records
+
+$$
+(d_i,d_k,d_j),\quad
+(\operatorname{rank}A,\operatorname{rank}B),\quad
+\sigma_{\min}^{+}(A),\quad
+\sigma_{\min}^{+}(B),
+$$
+
+together with $\|A\|_F$, $\|B\|_F$, $\|AB\|_F$, $\eta(A,B)$,
+$\|AU_B\|_F$, the image-to-kernel distance, sector indices, and operator
+indices.
+
+The array hashes detect artifact drift. Mathematical equality claims in the
+finite atlas use numpy.array_equal on the complete arrays rather than hash
+equality alone.
+
+All listed artifacts are available in the
+[RIME repository](https://github.com/dooven-prime/rime-lite).

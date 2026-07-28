@@ -1,0 +1,20 @@
+Paper VII v2 incidence geometry
+========================================================================
+Z={(A,B):AB=0} is closed; Zx=Z intersect {A!=0,B!=0} is constructible.
+fixed rank(A)=r: codim=(m-r)(n-r)+pr
+fixed ranks (r,s): dim=r(m+n-r)+s(n-r+p-s)
+relative codim inside the rank-(r,s) pair stratum: rs
+
+square_d_2: ambient=8, codim=3, rankA=[1]
+square_d_3: ambient=18, codim=7, rankA=[1, 2]
+square_d_4: ambient=32, codim=12, rankA=[2]
+square_d_5: ambient=50, codim=19, rankA=[2, 3]
+square_d_6: ambient=72, codim=27, rankA=[3]
+square_d_8: ambient=128, codim=48, rankA=[4]
+square_d_10: ambient=200, codim=75, rankA=[5]
+synthetic_3_2_3: ambient=12, codim=5, rankA=[1]
+small_asymmetric: ambient=12, codim=4, rankA=[1, 2]
+medium_asymmetric: ambient=24, codim=8, rankA=[2]
+large_asymmetric: ambient=60, codim=21, rankA=[3]
+narrow_intermediate: ambient=16, codim=7, rankA=[1]
+wide_intermediate: ambient=20, codim=4, rankA=[2]

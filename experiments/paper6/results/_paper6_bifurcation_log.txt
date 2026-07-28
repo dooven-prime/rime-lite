@@ -1,0 +1,49 @@
+========================================================================
+Paper VI: Bifurcation Table Snapshot
+========================================================================
+This is an experimental support table, not a paper theorem source.
+
+Single-generator deletions:
+  - L': CQ=blocked (comm=3.37e-01), A-layers=21, A-field=mixed
+  -  L: CQ=blocked (comm=3.37e-01), A-layers=21, A-field=mixed
+  - L2: CQ=blocked (comm=5.12e-01), A-layers=14, A-field=mixed
+  - R': CQ=blocked (comm=3.37e-01), A-layers=21, A-field=mixed
+  -  R: CQ=blocked (comm=3.37e-01), A-layers=21, A-field=mixed
+  - R2: CQ=blocked (comm=5.12e-01), A-layers=14, A-field=mixed
+  - D': CQ=blocked (comm=3.37e-01), A-layers=21, A-field=mixed
+  -  D: CQ=blocked (comm=3.37e-01), A-layers=21, A-field=mixed
+  - D2: CQ=blocked (comm=5.12e-01), A-layers=14, A-field=mixed
+  - U': CQ=blocked (comm=3.37e-01), A-layers=21, A-field=mixed
+  -  U: CQ=blocked (comm=3.37e-01), A-layers=21, A-field=mixed
+  - U2: CQ=blocked (comm=5.12e-01), A-layers=14, A-field=mixed
+  - B': CQ=blocked (comm=3.37e-01), A-layers=21, A-field=mixed
+  -  B: CQ=blocked (comm=3.37e-01), A-layers=21, A-field=mixed
+  - B2: CQ=blocked (comm=5.12e-01), A-layers=14, A-field=mixed
+  - F': CQ=blocked (comm=3.37e-01), A-layers=21, A-field=mixed
+  -  F: CQ=blocked (comm=3.37e-01), A-layers=21, A-field=mixed
+  - F2: CQ=blocked (comm=5.12e-01), A-layers=14, A-field=mixed
+  [OK] 18/18 deletions leave the QT/HT collision quotient blocked.
+  A-layer counts: {14: 6, 21: 12}
+  A-field counts: {'mixed': 18}
+
+Selected families:
+  n=18 full                    CQ=defined CQ-layers=   6 CQ-field=Q          A-layers=  6 A-field=Q
+  n=16 drop axis-0 HT          CQ=blocked CQ-layers=None CQ-field=undefined  A-layers=  9 A-field=mixed
+  n=15 drop negative-face HT   CQ=blocked CQ-layers=None CQ-field=undefined  A-layers= 23 A-field=mixed
+  n=14 drop axis-1 QT          CQ=defined CQ-layers=  10 CQ-field=mixed      A-layers=  8 A-field=mixed
+  n=12 QT only                 CQ=defined CQ-layers=   6 CQ-field=Q          A-layers=  6 A-field=Q
+  n=6 HT only                  CQ=defined CQ-layers=   3 CQ-field=Q          A-layers=  3 A-field=Q
+
+2D weight scan (axis-0 half-turn weights):
+  Grid: 11 x 11
+  CQ commutative cells: 1/121
+  CQ layer counts on commutative cells: {6: 1}
+  A-spectrum layer counts: {6: 1, 9: 1, 10: 9, 14: 20, 15: 90}
+
+Observed internal hierarchy inside Sigma_comm:
+  Sigma_field -> Sigma_L
+  Sigma_comm is the primary object; its global ideal/equations remain open.
+  The canonical tangent model is handled by tangent_commutator_map.py.
+  A(w)-spectrum is globally defined on the full weight space.
+
+[snapshot OK: Sigma_comm primary object and internal events recorded]

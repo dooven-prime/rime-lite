@@ -1,11 +1,11 @@
-"""Theorem verification:
-  - 9 primitive sectors from Center{A₁₈, QT_all, HT_all}
+"""Paper II numerical sector-registration regression:
+  - 9 minimal joint sectors from the registered commuting QH algebra
   - Spectral layer refinement: V₅/₉ splits into 3, V₁/₃ splits into 2
   - Sector completeness, orthogonality, idempotence
   - S6 ≡ primary transport hub (deg ≥ 4)
   - S1 ≡ fully isolated sector
 
-Paper: Paper II, Sec 4 (Primitive sector decomposition)
+Paper: Paper II, Sec 4 (QH joint-sector registration)
 Invariant level: 2 (generator-conditioned)
 """
 
@@ -29,9 +29,9 @@ def check(condition, msg):
 # Test 1: Exactly 9 sectors
 # ═══════════════════════════════════════════════════════════════════════════════
 
-print("Test 1: Primitive sector count ...")
-check(n == 9, f"Expected 9 primitive sectors, got {n}")
-print(f"  OK — {n} primitive sectors")
+print("Test 1: QH joint-sector count ...")
+check(n == 9, f"Expected 9 QH joint sectors, got {n}")
+print(f"  OK — {n} QH joint sectors")
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # Test 2: Sector completeness Σ P_s = I
@@ -127,9 +127,9 @@ for rho_m in rho_list:
         for j in range(n):
             K_sec[i, j] = max(K_sec[i, j], np.linalg.norm(Pi_rho @ Ps[j], 'fro'))
 
-# S6 = index 5 (0-based), expected degree >= 4
-s6_deg = int(np.sum(K_sec[5, :] > 0.05))
-check(s6_deg >= 4, f"S6 connectivity too low: degree={s6_deg} (expected >= 4)")
+# S6 = index 5 (0-based); graph degree excludes the diagonal block.
+s6_deg = int(np.sum(K_sec[5, :] > 0.05)) - 1
+check(s6_deg == 5, f"S6 degree changed: {s6_deg} (expected 5)")
 print(f"  OK — S6 degree = {s6_deg} (primary hub)")
 
 # S1 = index 0, should be isolated (no off-diagonal connections)
@@ -142,4 +142,4 @@ print(f"  OK — S1 isolated (degree=0)")
 nz = int(np.sum(K_sec > 0.05))
 print(f"  Transport sparsity: {nz}/{n*n} = {nz/(n*n):.1%} edges nonzero")
 
-print(f"\nAll primitive sector tests passed.")
+print(f"\nAll QH joint-sector tests passed.")

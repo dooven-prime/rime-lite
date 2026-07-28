@@ -1,33 +1,14 @@
-"""
-SpectralStructure: generator-set-level spectral model
+"""Rubik-specific block reductions and numerical spectral registration.
 
-Pre-spectral layer that predicts spectral structure from generator sets,
-encoding the paper's block decomposition, association scheme, and
-partition integrality framework (Section 7.3, Lemma 4.0, Lemma 4.1, Lemma 9.1).
-
-Key insight: Before building A and doing eigendecomposition, we already
-know what the spectrum should look like — from the block structure,
-association schemes, and Z2 / Z3 phase structures.
-
-Architecture:
-  When rho_moves is provided via from_rho_moves():
-    Group representation (algebra) → SpectralStructure (structural prediction)
-    Zero geometry dependence — incidence/adjacency derived from ep/cp block diagonals.
-
-  When only CubieMove generators are provided:
-    CubeGeometry (geometry) + generators (group action) → SpectralStructure
-    (geometric fallback via CubeGeometry.build_* classmethods)
-
-  Downstream:
-    SpectralStructure → build_A / eigenspaces (numerical verification)
-                     → Dynamics (dynamical interpretation)
-
-All facts are derived, not hardcoded — from the group representation when possible,
-from CubeGeometry when generators alone are provided.
+The cp/ep paths use exact combinatorial reductions. The co/eo paths retain
+finite floating-point registrations. This module is not a general
+spectral-field predictor, and numerical recognition is not an exact arithmetic
+certificate.
 """
 
 import numpy as np
 from collections import defaultdict
+import warnings
 
 from rime.cube import CubeGeometry
 from rime.cubie import CubieMove, TOTAL_DIM, BLOCK_DIMS, BLOCK_RANGES
@@ -1136,7 +1117,12 @@ class SpectralStructure:
             raise ValueError(f"Block '{block}' is not an association scheme")
 
     def verify_integrality(self) -> dict:
-        """Verify Tr(E_k M_class) in Z via Lemma 9.1 (Bose-Mesner trace pairing)."""
+        """Report block-level integrality certificates and unresolved blocks.
+
+        This helper does not verify the canonical face-partition hypothesis.
+        Phase cancellation or signed entries alone do not certify eigenspace
+        compression-trace integrality for CO or EO.
+        """
         results = {}
 
         # ── cp block: via Q3 Krawtchouk eigenmatrix ──
@@ -1167,7 +1153,7 @@ class SpectralStructure:
         for k in self.k_set_ep():
             ep_results[k] = {
                 "is_integer": True,
-                "mechanism": "S_12 = c_I*I + c_JJt*JJ^T has integer entries -> Bose-Mesner trace yields integers",
+                "mechanism": "the exact face-incidence reduction supplies the block-level certificate",
             }
         results["ep"] = ep_results
 
@@ -1175,8 +1161,9 @@ class SpectralStructure:
         co_results = {}
         for k in self.k_set_co():
             co_results[k] = {
-                "is_integer": True,
-                "mechanism": "omega + omega^2 + 1 = 0 cancellation on complete faces",
+                "is_integer": None,
+                "status": "not_certified",
+                "mechanism": "phase cancellation does not by itself certify compression-trace integrality",
             }
         results["co"] = co_results
 
@@ -1184,31 +1171,63 @@ class SpectralStructure:
         eo_results = {}
         for k in self.k_set_eo():
             eo_results[k] = {
-                "is_integer": True,
-                "mechanism": "Edge orientation entries are +/-1, giving integer traces",
+                "is_integer": None,
+                "status": "not_certified",
+                "mechanism": "signed entries do not by themselves certify compression-trace integrality",
             }
         results["eo"] = eo_results
 
-        results["all_integer"] = True
-        # Cross-check: all blocks must report integer
-        for block in ["cp", "ep", "co", "eo"]:
-            for k, info in results.get(block, {}).items():
-                assert info["is_integer"], f"Integrality failure: {block} k={k}"
+        statuses = [
+            info["is_integer"]
+            for block in ["cp", "ep", "co", "eo"]
+            for info in results.get(block, {}).values()
+        ]
+        results["all_integer"] = bool(statuses) and all(
+            value is True for value in statuses
+        )
+        results["certified_blocks"] = ["cp", "ep"]
+        results["unresolved_blocks"] = ["co", "eo"]
         return results
 
     # ═══════════════════════════════════════════════════════════════════════════
     # 7. Structural predictions
     # ═══════════════════════════════════════════════════════════════════════════
 
-    def predict_spectral_field(self) -> str:
-        if self.class_symmetric:
-            return "rational"
-        return "unknown"
+    def structural_spectral_field_status(self) -> str:
+        """Return the arithmetic status justified by structural input alone.
 
-    def predict_n_eigenvalues(self) -> int:
+        Class symmetry is not an exact rationality certificate for the full
+        represented spectrum. Numerical field recognition is reported by
+        dedicated registration routines instead.
+        """
+        return "not_certified"
+
+    def predict_spectral_field(self) -> str:
+        """Deprecated alias for ``structural_spectral_field_status``."""
+        warnings.warn(
+            "predict_spectral_field() is deprecated; use "
+            "structural_spectral_field_status()",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+        return self.structural_spectral_field_status()
+
+    def registered_eigenvalue_count(self) -> int:
+        """Return the number of eigenvalue labels in the registered census."""
         return len(self.k_set_total())
 
-    def predict_slow_dimension(self, threshold: float = 2 / 3) -> int:
+    def predict_n_eigenvalues(self) -> int:
+        """Deprecated alias for ``registered_eigenvalue_count``."""
+        warnings.warn(
+            "predict_n_eigenvalues() is deprecated; use "
+            "registered_eigenvalue_count()",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+        return self.registered_eigenvalue_count()
+
+    def registered_slow_dimension(self, threshold: float = 2 / 3) -> int:
+        """Return the registered multiplicity at or above ``threshold``."""
         total = 0
         k_by_block = self.k_by_block()
 
@@ -1226,6 +1245,16 @@ class SpectralStructure:
                         total += self._eo_mult_map.get(k, 0)
         assert total <= TOTAL_DIM, f"Slow dimension {total} exceeds TOTAL_DIM {TOTAL_DIM}"
         return total
+
+    def predict_slow_dimension(self, threshold: float = 2 / 3) -> int:
+        """Deprecated alias for ``registered_slow_dimension``."""
+        warnings.warn(
+            "predict_slow_dimension() is deprecated; use "
+            "registered_slow_dimension()",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+        return self.registered_slow_dimension(threshold)
 
     # ═══════════════════════════════════════════════════════════════════════════
     # 8. Factory and validation
@@ -1295,7 +1324,7 @@ class SpectralStructure:
         results["total_dimension"] = {"match": dim_match, "predicted": total_pred, "numerical": total_num}
 
         # ── Check 4: slow dimension ──
-        slow_pred = self.predict_slow_dimension(2 / 3)
+        slow_pred = self.registered_slow_dimension(2 / 3)
         slow_num = int(np.sum(np.array(w, dtype=float) >= 2 / 3 - tol))
         slow_match = slow_pred == slow_num
         results["slow_dimension"] = {"match": slow_match, "predicted": slow_pred, "numerical": slow_num}
@@ -1303,98 +1332,6 @@ class SpectralStructure:
         results["all_match"] = all(v["match"] for v in results.values()
                                    if isinstance(v, dict) and "match" in v)
         return results
-
-    # ═══════════════════════════════════════════════════════════════════════════
-    # 10. Theoretical gap implementations (Paper I §7.2–§10)
-    # ═══════════════════════════════════════════════════════════════════════════
-
-    # ── Gap 1: Diophantine feasibility solver (C1-C5) ──
-
-    def diophantine_feasibility(self) -> dict:
-        """Solve the C1-C5 constrained Diophantine system for admissible k-sets.
-
-        The admissible k-set K is the set of k ∈ {0,…,m} for which there exists
-        a non-negative integer vector (d_cp, d_ep, d_co, d_eo) at each k
-        satisfying all five constraints:
-
-        C1: 0 ≤ d_{B,k} ≤ dim(B)  (block dimension bounds)
-        C2: Σ_k d_{B,k} = dim(B)  (block exhaustion — partition property)
-        C3: χ_k(s) ∈ Z for all s   (eigenspace-level trace integrality)
-        C4: ω + ω² + 1 = 0       (co-block phase cancellation)
-        C5: cp/ep traces ∈ Z automatically (permutation character integrality)
-
-        Returns:
-            dict with keys: admissible_k_set, assignments, constraints, feasible
-        """
-        m = self.m
-        dims = {"cp": 64, "ep": 144, "co": 8, "eo": 12}
-        blocks = ["cp", "ep", "co", "eo"]
-
-        # C4: co-block face-sum integrality — use cached k-set from _derive_k_sets
-        co_allowed_k = self.k_set_co()
-
-        # Use cached multiplicity maps from _derive_k_sets (avoids redundant eigh)
-        tensor_factors = {"cp": 8, "ep": 12, "co": 1, "eo": 1}
-        block_mult = {
-            "cp": {k: self._cp_multiplicity(k) // tensor_factors["cp"]
-                   for k in range(m + 1)},
-            "ep": {k: (self._ep_eigenspace_map.get(k, 0))
-                   for k in range(m + 1)},
-            "co": {k: self._co_mult_map.get(k, 0)
-                   for k in range(m + 1)},
-            "eo": {k: self._eo_mult_map.get(k, 0)
-                   for k in range(m + 1)},
-        }
-        # Scale to full block dimensions
-        for b in blocks:
-            for k in range(m + 1):
-                block_mult[b][k] *= tensor_factors[b]
-
-        candidate_k = set()
-        assignments = {}
-
-        for k in range(m + 1):
-            d = {b: block_mult[b].get(k, 0) for b in blocks}
-            total = d["cp"] + d["ep"] + d["co"] + d["eo"]
-
-            # C1: block dimension bounds
-            c1_ok = all(0 <= d[b] <= dims[b] for b in blocks)
-            # C4: co support only at allowed k
-            c4_ok = (d["co"] == 0) or (k in co_allowed_k)
-            # C3: if total > 0, eigenvalue must be rational
-            c3_ok = True  # λ = 1-k/m is rational by construction
-
-            if c1_ok and c3_ok and c4_ok:
-                d["total"] = total
-                assignments[k] = d
-                if total > 0:
-                    candidate_k.add(k)
-
-        # C2: block exhaustion — verify sum across k equals block dims
-        c2_results = {}
-        for b in blocks:
-            total_b = sum(d[b] for d in assignments.values())
-            c2_results[b] = (total_b == dims[b], total_b, dims[b])
-
-        c2_ok = all(ok for ok, _, _ in c2_results.values())
-
-        constraints = {
-            "C1_bounds": all(True for _ in blocks),  # enforced during assignment
-            "C2_exhaustion": c2_ok,
-            "C2_details": c2_results,
-            "C3_trace_integrality": True,
-            "C4_co_cancellation": {"allowed_k": sorted(co_allowed_k),
-                                   "mechanism": "ω + ω² + 1 = 0"},
-            "C5_permutation_integrality": True,
-        }
-
-        return {
-            "admissible_k_set": candidate_k,
-            "assignments": {k: v for k, v in assignments.items() if v["total"] > 0},
-            "constraints": constraints,
-            "feasible": c2_ok,
-            "predicted_match": candidate_k == self.k_set_total(),
-        }
 
     def _derive_co_combinatorial(self):
         """Derive co block k-values from cached eigenvalue data (computed once in _derive_k_sets)."""
@@ -1404,10 +1341,8 @@ class SpectralStructure:
         """Derive eo block k-values from cached eigenvalue data (computed once in _derive_k_sets)."""
         return self.k_set_eo()
 
-    # ── Gap 2: co/eo first-principles spectrum ──
-
-    def derive_perm_phase_co_spectrum(self) -> dict[float, int]:
-        """First-principles co spectrum from the structurally-built 8×8 class-sum matrix.
+    def registered_co_spectrum(self) -> dict[float, int]:
+        """Return the numerical co spectrum from the registered 8x8 block.
 
         Uses cached eigenvalue data from _derive_k_sets — no redundant diagonalization.
         """
@@ -1417,8 +1352,8 @@ class SpectralStructure:
             spectrum[float(lam)] = mult
         return spectrum
 
-    def derive_perm_phase_eo_spectrum(self) -> dict[float, int]:
-        """First-principles eo spectrum from the structurally-built 12×12 class-sum matrix.
+    def registered_eo_spectrum(self) -> dict[float, int]:
+        """Return the numerical eo spectrum from the registered 12x12 block.
 
         Uses cached eigenvalue data from _derive_k_sets — no redundant diagonalization.
         """
@@ -1428,69 +1363,10 @@ class SpectralStructure:
             spectrum[float(lam)] = mult
         return spectrum
 
-    # ── Gap 3: Krawtchouk eigenvalue prediction for arbitrary families ──
+    # Partition-integrality audit for Proposition 6.2.
 
-    def predict_q3_krawtchouk(self) -> dict:
-        """Predict Q3 eigenvalues via Krawtchouk polynomials for arbitrary families.
-
-        For class-symmetric families: the Q3 Bose-Mesner algebra is commutative,
-        eigenvalues are rational combinations of Krawtchouk values.
-
-        For symmetry-broken families (n=8, n=16): the Bose-Mesner algebra breaks,
-        √5 enters through the quadratic field extension ℚ(√5). The Krawtchouk
-        eigenmatrix P[k,d] = K_k(d; n=3) still diagonalizes the adjacency
-        algebra, but the class-sum cofficients c_d are no longer class-uniform.
-
-        Returns:
-            dict with: k_values, field_extension, eigenvalues, is_rational
-        """
-        m = self.m
-        P = self._q3["P"]  # Krawtchouk eigenmatrix (4×4)
-        coeffs = self._class_coeffs
-
-        if coeffs is None:
-            return {"k_values": set(), "field_extension": None,
-                    "eigenvalues": {}, "is_rational": None}
-
-        cp_c = coeffs["cp"]
-        eigenvalues = {}
-        k_values = set()
-        field_extension = None  # None=rational, 'sqrt5'=ℚ(√5)
-
-        for k_idx in range(4):
-            face_sum = sum(cp_c[d] * P[k_idx, d] for d in range(4))
-            lam = face_sum / (2 * m)
-            k = int(round(m * (1 - lam)))
-            eigenvalues[k] = {"k_idx": k_idx, "face_sum": face_sum,
-                              "lambda": lam, "dim": self._q3["dims"][k_idx]}
-            k_values.add(k)
-
-        # Detect √5 extension: if any eigenvalue is not exactly rational
-        is_rational = True
-        for k, info in eigenvalues.items():
-            lam = info["lambda"]
-            # Check if λ is of form p/q (rational)
-            lam_rounded = round(lam, 10)
-            if abs(lam - lam_rounded) > 1e-10:
-                # Check if it's in ℚ(√5): λ = (p + q√5)/r
-                from rime.helpers import is_in_qsqrt5
-                in_q5, _ = is_in_qsqrt5(lam)
-                if in_q5:
-                    field_extension = "sqrt5"
-                    is_rational = False
-                    eigenvalues[k]["field_form"] = "ℚ(√5)"
-
-        return {
-            "k_values": k_values,
-            "field_extension": field_extension or "rational",
-            "eigenvalues": eigenvalues,
-            "is_rational": is_rational,
-        }
-
-    # ── Gap 4: Partition integrality verifier (Theorem 6.1) ──
-
-    def verify_partition_integrality(self) -> dict:
-        """Verify Theorem 6.1: per-face trace integrality using block-level data.
+    def audit_partition_integrality(self) -> dict:
+        """Audit Proposition 6.2's per-face integrality hypothesis.
 
         Uses eigenvectors from the block-level class-sum operators (cached during
         _derive_k_sets) rather than diagonalizing the full 228×228 A. This avoids
@@ -1567,6 +1443,16 @@ class SpectralStructure:
                 merged_lam.append(lam)
 
         # ── For each global eigenvalue, compute per-face traces ──
+        def matching_group(groups, target):
+            matches = [
+                value for value in groups if abs(value - target) < 1e-4
+            ]
+            if len(matches) > 1:
+                raise RuntimeError(
+                    f"ambiguous block eigenvalue match for {target}: {matches}"
+                )
+            return groups[matches[0]] if matches else None
+
         results = {"faces": {}, "all_integer": True, "mechanism": {}}
 
         for lam in merged_lam:
@@ -1587,8 +1473,9 @@ class SpectralStructure:
                             face_traces[face] += np.trace(P_q3 @ rho_cp).real * tensor["cp"]
 
             # EP contribution
-            if lam in ep_lam_groups:
-                idxs, V = ep_lam_groups[lam]
+            ep_group = matching_group(ep_lam_groups, lam)
+            if ep_group is not None:
+                idxs, V = ep_group
                 P_ep = V @ V.T
                 d_lam += len(idxs) * tensor["ep"]
                 for face, keys in face_keys.items():
@@ -1597,8 +1484,9 @@ class SpectralStructure:
                         face_traces[face] += np.trace(P_ep @ rho_ep).real * tensor["ep"]
 
             # CO contribution
-            if lam in co_lam_groups:
-                idxs, V = co_lam_groups[lam]
+            co_group = matching_group(co_lam_groups, lam)
+            if co_group is not None:
+                idxs, V = co_group
                 P_co = V @ V.T.conj()
                 d_lam += len(idxs) * tensor["co"]
                 for face, keys in face_keys.items():
@@ -1607,8 +1495,9 @@ class SpectralStructure:
                         face_traces[face] += np.trace(P_co @ rho_co).real
 
             # EO contribution
-            if lam in eo_lam_groups:
-                idxs, V = eo_lam_groups[lam]
+            eo_group = matching_group(eo_lam_groups, lam)
+            if eo_group is not None:
+                idxs, V = eo_group
                 P_eo = V @ V.T
                 d_lam += len(idxs) * tensor["eo"]
                 for face, keys in face_keys.items():
@@ -1626,18 +1515,23 @@ class SpectralStructure:
                 if not is_int:
                     results["all_integer"] = False
 
-        predicted_rational = self.predict_spectral_field() == "rational"
-        if results["all_integer"]:
-            theorem_holds = predicted_rational
-        else:
-            theorem_holds = None
         results["rationality_conclusion"] = {
-            "predicted": predicted_rational,
-            "theorem_holds": theorem_holds,
-            "note": "Theorem 6.1: per-face integer traces => rational. "
-                    "Verified using block-level eigensystems (no full 228×228 eigh).",
+            "hypothesis_satisfied": results["all_integer"],
+            "certifies_rationality": results["all_integer"],
+            "note": "Proposition 6.2: per-face integer compression traces imply rationality. "
+                    "The canonical face partition is audited using block-level eigensystems.",
         }
         return results
+
+    def verify_partition_integrality(self) -> dict:
+        """Deprecated alias for ``audit_partition_integrality``."""
+        warnings.warn(
+            "verify_partition_integrality() is deprecated; use "
+            "audit_partition_integrality()",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+        return self.audit_partition_integrality()
 
     # ── Helpers for verify_partition_integrality: block-level ρ(g) access ──
 
@@ -1690,10 +1584,10 @@ class SpectralStructure:
             Ek += Pinv[k_idx, d] * A[d]
         return Ek
 
-    # ── Gap 5: Galois stability tester (Theorem 3.2) ──
+    # ── Gap 5: numerical field registration ──
 
-    def verify_galois_stability(self, tol: float = 1e-8) -> dict:
-        """Verify Galois stability using block-level eigensystems.
+    def register_spectral_field(self, tol: float = 1e-8) -> dict:
+        """Numerically register a candidate field using block eigensystems.
 
         Detects the spectral field from block-level eigenvalues (cached).
         For rational fields: trivial stability (identity group only).
@@ -1791,10 +1685,21 @@ class SpectralStructure:
         return {
             "is_stable": all_stable,
             "field": field,
+            "claim_status": "computational_observation",
             "galois_group": galois_group,
             "projector_invariance": projector_invariance,
-            "note": "Verified using block-level eigensystems (no full 228×228 eigh).",
+            "note": "Numerically registered using block-level eigensystems; this is not an exact field certificate.",
         }
+
+    def verify_galois_stability(self, tol: float = 1e-8) -> dict:
+        """Deprecated alias for ``register_spectral_field``."""
+        warnings.warn(
+            "verify_galois_stability() is deprecated; use "
+            "register_spectral_field()",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+        return self.register_spectral_field(tol=tol)
 
     # ═══════════════════════════════════════════════════════════════════════════
     # 9. Summary
@@ -1867,9 +1772,11 @@ class SpectralStructure:
         lines.append(f"  Total multiplicity: {total_mult} / {TOTAL_DIM}")
 
         lines.append(f"\n-- Spectral field --")
-        lines.append(f"  Predicted: {self.predict_spectral_field()}")
+        lines.append(
+            f"  Structural status: {self.structural_spectral_field_status()}"
+        )
 
-        lines.append(f"\n-- Integrality (Lemma 9.1) --")
+        lines.append(f"\n-- Block-level integrality status --")
         results = self.verify_integrality()
         lines.append(f"  All integer: {results['all_integer']}")
 

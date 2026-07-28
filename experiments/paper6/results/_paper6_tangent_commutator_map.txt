@@ -1,0 +1,15 @@
+Paper VI linearized commutator map snapshot
+baseline_comm_norm=3.765390e-16
+rank=11
+nullity=7
+smallest_retained=2.003084041924e-01
+largest_discarded=1.047788697013e-15
+singular_groups=[(0.585314, 3), (0.53287, 3), (0.346944, 2), (0.200308, 3), (0.0, 7)]
+qt_jacobian_norm=0.309320
+ht_jacobian_norm=0.426730
+qt_skew_residual=2.003084e-01
+ht_skew_residual=4.388637e-17
+inside_kernel=['all HT symmetric', 'all QT symmetric', 'axis-0 QT symmetric', 'axis-1 QT symmetric', 'axis-2 QT symmetric']
+outside_count=21
+delete_R_rel_error=8.333333e-05
+delete_R2_rel_error=1.666667e-04

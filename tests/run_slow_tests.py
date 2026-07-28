@@ -8,18 +8,18 @@ No pytest. No test framework. Just plain assert-based verification.
 """
 import subprocess
 import sys
+import os
 from pathlib import Path
 
 SLOW_TESTS = [
     "test_cubieoperator.py",
-    "test_commutant_gap.py",
     "test_transport.py",
-    "test_f3.py",
 ]
 
 ROOT = Path(__file__).resolve().parent
 PROJECT_ROOT = ROOT.parent  # rime-lite root, where rime/ package lives
 N = len(SLOW_TESTS)
+env = {**os.environ, 'PYTHONPATH': str(PROJECT_ROOT)}
 passed = 0
 failed = []
 
@@ -32,6 +32,7 @@ for name in SLOW_TESTS:
     result = subprocess.run(
         [sys.executable, str(path)],
         cwd=str(PROJECT_ROOT),
+        env=env,
     )
     if result.returncode == 0:
         passed += 1

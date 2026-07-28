@@ -1,971 +1,968 @@
-# Accessibility Repair Calculus
+# Boolean Support Does Not Determine Commutator Accessibility
 
-### Local R2 Repair and Exceptional Loci for Length-2 Witnesses
+### Direct Support, Exact Cancellation, and Low-Depth Hall Bridges
 
 **WuJun Chen**
 
-Independent Researcher · RIME Project · 2026
-
-*This paper is Part V of the RIME program. Paper III gives the first Rubik-centered accessibility separation example: composition-generated accessibility can exceed Lie-generated accessibility. The present paper isolates the stable static core behind that phenomenon: binary support is insufficient, projected commutator survival is the first repair layer, and length-2 accessibility witnesses admit a local repair calculus.*
+Independent Researcher | RIME Project | 2026
 
 ***
 
 ## Abstract
 
-**Problem.** Once sectors are fixed, how is accessibility computed? A sectorized representation supplies projectors $Q_i$ and skew-Hermitian generators $X_g$, but the binary support graph is too coarse: it sees possible paths and forgets whether projected products survive, cancel, or vanish by incidence.
+**Problem.** A generator-labelled support graph records which projected blocks
+$Q_iX_gQ_j$ are nonzero, but it does not record whether two-step matrix
+products survive or whether their signed difference survives in a commutator.
+Consequently, direct support need not determine bracket accessibility or full
+Lie depth.
 
-**Approach.** We separate support from relation data. The first layer $R_1$ records generator support, $Q_iX_gQ_j\ne 0$. The second layer $R_2$ records projected commutator survival, $Q_i[X_g,X_h]Q_j\ne 0$. Both are organized inside a weighted Hall path algebra with edge weights $W(i,g,j)=Q_iX_gQ_j$.
+**Approach.** For a fixed orthogonal sectorization and a declared family of
+skew-Hermitian generators, we separate five object layers: generator support
+$R_1$, routed projected-composition support, full-word support, commutator
+support $R_2$, and cutoff-relative Lie depth $D^{(d_{\max})}$. We give an exact
+$3\times3$ counterexample in which two systems have identical
+generator-indexed Boolean support but differ in commutator support and exact
+Lie depth. We then classify ordered sector pairs by the Boolean pair
+$(R_1,R_2)$ and separate signed cancellation from image--kernel incidence.
 
-**Results.** The binary implication $(G,\chi,\Lambda)\to D$ is false. A three-generator $S_4$ example exhibits path-commutator cancellation: the binary graph predicts depth $1$, but the projected commutator vanishes and the first nonzero Lie block appears at depth $2$. For pairs with length-2 $R_1$ witnesses, the local behavior falls into four mechanisms: singleton-color degeneracy, commutator survival, Type III cancellation, and Type IV incidence. Type III is relation-level signed cancellation; Type IV is product-level image-kernel incidence. In the support-level obstruction calculus, $R_2$ repairs valid bridge failures through single-term commutator bridges forced by incomparability. For matrix blocks, this repair requires actual $R_2$ survival data, rank protection, or another nondegeneracy certificate.
+**Results.** Boolean support does not determine commutator accessibility. In a
+centered one-dimensional model, explicit hypotheses imply a local
+bracket-emergent bridge, namely $R_1(i,j)=0$ and $R_2(i,j)=1$. For matrix
+blocks, this conclusion requires actual product survival, rank protection, or a
+separate nondegeneracy certificate. A computational $S_4$ case study exhibits
+ten direct channels, two bracket-emergent channels, two channels with both
+routed-product and full-word support but cancelled simple commutators, and
+seventy-six channels unreached through the declared cutoff. Its machine-zero
+cancellations are computational evidence, not exact equalities.
 
-**Implications.** Accessibility is not a binary graph invariant. It is a weighted Hall path problem, with $D$ obtained as a valuation of Hall coefficients. The stable conclusion is a local one: $R_1$ is insufficient, $R_2$ is the first structural repair layer beyond binary support, and length-2 witnesses admit a closed local obstruction calculus. The later completion perspective upgrades the role of Type III and Type IV: Type III is the soft cancellation component, while Type IV is the hard incidence component. This Type I--IV vocabulary is a mechanism taxonomy, distinct from the moduli-wall hierarchy developed later in Paper VI. Full $(R_1,R_2)\to D$ completeness remains a theorem program rather than a closed theorem.
+**Boundary.** The stable contribution is a local classification of direct
+and bracket-emergent support together with exact cancellation and incidence
+mechanisms. It is not a global repair or completion theorem. A general
+word-level promotion theorem, full Lie-depth completion, and
+moving-family promotion are not established here.
 
 ***
 
-## Notation Table
+## Notation and Claim Layers {.unnumbered}
 
 | Symbol | Meaning |
 |--------|---------|
 | $V$ | finite-dimensional complex Hilbert space |
 | $Q_i$ | orthogonal sector projector, $\sum_iQ_i=I$ |
-| $X_g$ | skew-Hermitian generator, usually $X_g=\log\rho(g)$ |
-| $W(i,g,j)$ | projected generator block $Q_iX_gQ_j$ |
-| $R_1(i,j;g)$ | generator support: $1$ iff $Q_iX_gQ_j\ne 0$ |
-| $(G,\chi,\Lambda)$ | binary colored accessibility graph encoded by $R_1$ |
-| $R_2(i,j;g,h)$ | projected commutator survival: $1$ iff $Q_i[X_g,X_h]Q_j\ne 0$ |
-| $B_{ij}$ | infinite-depth channel discriminator $Q_iM_d(\mathbb{C})Q_j$ in a block model |
-| $H_{ij}$ | Hall coefficient object: projected Hall monomials and their norms |
-| $D_{ij}$ | first nonzero Lie-depth from sector $j$ to sector $i$ |
-| $\mathrm{Sig}$ | accessibility signature, the histogram of entries of $D$ |
-| Type I | singleton-generator length-2 path: $R_2=0$ locally |
-| Type II | at least one projected commutator survives: $R_2=1$ |
-| Type III | cancellation locus: nonzero products survive termwise but cancel in projected commutators |
-| Type IV | incidence locus: candidate products vanish termwise by $AB=0$ |
+| $X_g$ | declared skew-Hermitian generator |
+| $R_1^g(i,j)$ | direct support of generator $g$ from sector $j$ to sector $i$ |
+| $R_1(i,j)$ | aggregate direct support over generators |
+| $C_2^{g,h,k}(i,j)$ | Boolean support of the routed projected two-step term through sector $k$ |
+| $C_2^X(i,j)$ | aggregate routed-product support over $g,h,k$ |
+| $W_2^{g,h}(i,j)$ | full two-letter word support |
+| $W_2^X(i,j)$ | aggregate full-word support over $g,h$ |
+| $R_2^{g,h}(i,j)$ | projected commutator support |
+| $R_2(i,j)$ | aggregate commutator support |
+| $D^{(d_{\max})}_{ij}$ | first detected Lie depth up to the declared cutoff |
+| $D_{ij}$ | exact first Lie depth, used only when the full Lie closure is certified |
 
-Depth convention: depth $0$ means a single generator block $Q_iX_gQ_j$. Depth $1$ means a commutator block $Q_i[X_g,X_h]Q_j$. Depth $2$ means a nested commutator such as $Q_i[X_a,[X_b,X_c]]Q_j$.
+The direction convention is fixed throughout:
+
+$$
+Q_iX_gQ_j\ne0
+\quad\Longleftrightarrow\quad
+j\longrightarrow i.
+$$
+
+Within this paper, the unqualified aliases are local to the declared Lie
+family $\mathcal X=\{X_g\}$:
+
+$$
+R_1:=R_1^{\mathrm{Lie}}[\mathcal X],
+\qquad
+R_2:=R_2^{\mathrm{Lie}}[\mathcal X],
+\qquad
+D:=D_{\mathrm{Lie}}[\mathcal X]
+$$
+
+once the relevant Lie filtration has been declared. The associative supports
+$C_2^X$ and $W_2^X$ remain separate diagnostics.
+
+The paper uses four claim-status levels:
+
+1. **Theorem:** finite-dimensional algebraic statements with exact matrices;
+2. **Computational Certificate:** declared $S_4$ registrations and closure
+   audits with reproducible thresholds and cutoffs;
+3. **Computational Observation:** finite patterns without a promotion
+   certificate, including the direct-channel product audit;
+4. **Research Program:** statements explicitly identified as open and not used
+   in the proofs.
 
 ***
 
 ## Introduction
 
-How is accessibility computed once sectors exist? The answer is not binary
-support alone. Accessibility is computed from a weighted Hall path algebra:
-the blocks $Q_iX_gQ_j$ give possible moves, while signed products of those
-blocks determine whether Lie brackets actually survive after projection.
-
-Paper III proves a separation phenomenon in the Rubik cubie representation.
-There are sector pairs that are reachable by finite composition but invisible
-to the Lie algebra generated by the same representation. This raises the
-static problem studied here: given sector projectors and generators, determine
-the first Lie depth at which a sector pair becomes visible.
-
-A tempting simplification is the binary colored graph:
-
-its vertices are sectors, and it has an edge of color $g$ from $j$ to $i$ precisely when $Q_iX_gQ_j\ne 0$.
-
-This graph records where each generator has nonzero projected support. It is the natural first abstraction because it ignores metric data and remembers only the possible sector-to-sector moves.
-
-The central correction of this paper is that binary support is not enough.
-
-The graph sees that two colored paths exist. It does not know whether their projected matrix products cancel in a Lie bracket. Thus first depth is not determined by support alone.
-
-The corrected object is a weighted Hall path algebra. Its edge weights are the blocks
+Once a sectorization has been fixed, several different notions of
+accessibility become available. They must not be collapsed into a single graph:
 
 $$
-W(i,g,j)=Q_iX_gQ_j.
+\begin{gathered}
+\text{direct support}
+\ne
+\text{projected composition}
+\ne
+\text{word support},
+\\
+\text{word support}
+\ne
+\text{commutator support}
+\ne
+\text{full Lie depth}.
+\end{gathered}
 $$
 
-The binary graph is only the support of these weights. Lie brackets are formed by signed sums of path products. Whether a bracket survives after projection depends on those products, not only on their nonzero pattern.
+For represented group elements, support-graph paths can fail to survive
+projected matrix composition \cite{paper3}. Here the operator family is
+different: the inputs are declared skew-Hermitian matrices $X_g$, and the
+first question is
+whether direct generator support determines projected commutator support.
 
-The first repair layer is $R_2$:
+The answer is no. This obstruction already appears in an exact three-sector
+counterexample. Two associative products may be individually nonzero yet
+equal, so their signed difference vanishes. Changing one coefficient preserves
+every generator support bit while making the commutator nonzero.
 
-$$
-R_2(i,j;g,h)=1
-\quad\Longleftrightarrow\quad
-Q_i[X_g,X_h]Q_j\ne 0.
-$$
+The contributions are:
 
-This paper organizes the current state around a deliberately local target:
+1. a formal separation of $R_1$, projected two-step terms, word support,
+   $R_2$, cutoff depth, and exact Lie depth;
+2. an exact same-support counterexample for commutator accessibility and depth;
+3. a neutral four-class partition by $(R_1,R_2)$;
+4. a centered scalar proposition that produces a local bracket-emergent bridge;
+5. a matrix-level incidence and rank boundary;
+6. a claim-separated $S_4$ computational case study.
 
-1. $R_1$ records generator support.
-2. $R_1$ is insufficient.
-3. $R_2$ records projected commutator survival.
-4. Length-2 $R_1$ witnesses admit a four-type $R_2$ obstruction classification, with Type III and Type IV separated as distinct exceptional mechanisms.
-5. In the support-level obstruction calculus, $R_2$ repairs valid bridge failures.
-6. Class-level accessibility completeness still requires a global length-2 witness reduction and matrix nondegeneracy.
-
-The result is not a universal depth theorem. It is a closed length-2 obstruction calculus plus a precise theorem program for higher Hall layers.
-
-### Remark 1 (Two Classification Axes)
-
-The Type I--IV terminology in this paper is a **static local mechanism
-classification**. It applies after a sectorized system and a sector pair have
-been fixed, and it asks why a length-2 $R_1$ witness does or does not survive
-at the projected commutator layer $R_2$.
-
-This is a different axis from the wall hierarchy used in Paper VI. Paper VI
-studies moving sectorized systems on normal spectral charts
-$\Sigma_{\mathrm{spec}}\subseteq\Sigma_{\mathrm{comm}}$ and classifies loci
-where the discrete observables $R_1(w)$, $R_2(w)$, or $D(w)$ change:
-
-$$
-\Sigma_{R_1},\qquad \Sigma_{R_2}^{\circ},\qquad \Sigma_D^{\circ}.
-$$
-
-Thus the same symbols $R_1$ and $R_2$ appear in both papers, but the
-classification axes are not the same:
-
-| Paper | Axis | Object classified |
-|-------|------|-------------------|
-| Paper V | length-2 obstruction mechanism | Type I--IV behavior of a fixed sector pair |
-| Paper VI | moduli wall hierarchy | jumps of $R_1(w)$, $R_2(w)$, or $D(w)$ on normal spectral charts inside $\Sigma_{\mathrm{comm}}$ |
-
-In this dictionary, Paper V's Type III cancellation and Type IV incidence are
-two concrete local mechanisms that can appear inside a Paper VI
-$\Sigma_{R_2}^{\circ}$ wall: $R_1$ is held fixed, but projected commutator
-survival changes.
+No result in this paper implies that $R_2$ restores general operator
+propagation or that $(R_1,R_2)$ determines full depth; those remain separate
+completion questions. The low-order taxonomy can serve as input to a full
+Lie-depth audit, but such an audit still requires a declared filtration and
+closure certificate.
 
 ***
 
-## Claim Status Summary
+## Fixed Sectorized Skew-Hermitian Systems
 
-| Claim | Status in this paper |
-|-------|----------------------|
-| Binary support $(G,\chi,\Lambda)$ does not determine $D$ in the local realization model | established by path-commutator cancellation plus support-preserving perturbation |
-| $R_1$ admits complement and non-complement bridge obstructions | support-level exhaustive evidence and structural analysis |
-| $R_2$ is not derived from $R_1$ | definition-level distinction; required by cancellation |
-| Type I--IV classification covers pairs with length-2 $R_1$ witnesses | Theorem 1; local classification |
-| Single-term bridge mechanism repairs valid centered length-2 support obstructions | Proposition 2; support/scalar level with stated support restriction |
-| Type III failures are signed-product cancellation loci | Theorem 1 and Proposition 3; local exceptional locus |
-| Type IV failures are image-kernel incidence loci | Theorem 1, Proposition 3, and Lemma 3; local exceptional locus |
-| Matrix-block single-term products survive under rank protection | lemma; S4-3gen-B verified example |
-| Matrix-level local repair beyond rank-protected cases | open upgrade / conditional program |
-| Type IV incidence has high codimension in matrix-pair space | algebraic completion input; not needed for local classification |
-| $D$ is observed to be constant on exact $(R_1,R_2)$ signature classes in tested structured systems | observed computational evidence for the later completion program; see the completion-atlas audit |
-| Every finite-depth accessible pair has a length-2 $R_1$ witness | open Layer C reduction |
-| Universal arbitrary-quiver $N=2$ completeness | not claimed; sparse random counterevidence exists |
-| Represented/dense $(R_1,R_2)\to D$ completeness | program-level conjecture |
+**Definition 2.1 (Static sectorized system).**
 
-This table is part of the statement discipline of the paper. The proved local
-mechanisms are separated from the full Accessibility Completeness program.
-The last row is a static/global completeness question: it asks whether $D$ can
-be recovered from $(R_1,R_2)$ throughout a represented or dense class of
-sectorized systems. It is not changed by Paper VI's local stratification
-theorem, which organizes where $R_1(w)$, $R_2(w)$, and $D(w)$ jump on normal
-spectral charts inside the commutative moduli wall.
-
-***
-
-## Static Sectorized Observable Framework
-
-### Definition 1 (Sectorized Observable Framework)
-
-A static sectorized observable framework consists of:
-
-1. a finite-dimensional complex Hilbert space $V$;
-2. a finite orthogonal projector decomposition
+A static sectorized skew-Hermitian system is a triple
 
 $$
-I=\sum_i Q_i,\qquad Q_iQ_j=\delta_{ij}Q_i;
+\mathcal S=(V,\{Q_i\}_{i\in I},\{X_g\}_{g\in G}),
 $$
 
-3. a finite family of skew-Hermitian generators
+where $V$ is finite-dimensional,
 
 $$
-\mathcal{X}=\{X_g:g\in S\}.
-$$
-
-In representation-derived examples, $X_g$ is typically the skew-Hermitian logarithm of a unitary representation matrix:
-
-$$
-X_g=\log\rho(g).
-$$
-
-The projectors $Q_i$ may come from a spectral center, a joint eigenspace decomposition, or another chosen sectorization. The finite-group representation background for these examples follows the standard semisimple representation setting \cite{serre1977}.
-
-### Definition 2 (Lie-Depth Matrix)
-
-Let $\mathcal{L}^{(0)}$ be the span of the generators $X_g$. For $d\ge 1$, let $\mathcal{L}^{(d)}$ be the span of Lie monomials of bracket depth $d$ in the $X_g$.
-
-For sector pair $(i,j)$, define
-
-$$
-D_{ij}
-  =
-  \min\{d\ge 0: Q_iYQ_j\ne 0
-             \text{ for some }Y\in\mathcal{L}^{(d)}\},
-$$
-
-with $D_{ij}=\infty$ if no such $d$ exists.
-
-The accessibility signature is a compressed histogram of $D$:
-
-$$
-\mathrm{Sig}=(A_0,A_1,A_2,A_\infty),
-$$
-
-where $A_d$ counts pairs first visible at depth $d$ and $A_\infty$ counts frozen pairs. In systems where higher depths occur, the signature can be extended.
-
-### Definition 3 (Projected Edge Weights)
-
-The weighted sector edge associated to generator $g$ is
-
-$$
-W(i,g,j)=Q_iX_gQ_j.
-$$
-
-The binary support layer is
-
-$$
-R_1(i,j;g)=1
-\quad\Longleftrightarrow\quad
-W(i,g,j)\ne 0.
-$$
-
-Equivalently, $R_1$ is a colored directed graph with vertex set the sectors and edge colors the generators.
-
-### Definition 4 (Projected Commutator Survival)
-
-The second relation layer is
-
-$$
-R_2(i,j;g,h)=1
-\quad\Longleftrightarrow\quad
-Q_i[X_g,X_h]Q_j\ne 0.
-$$
-
-Expanding through the sector resolution gives
-
-$$
-Q_i[X_g,X_h]Q_j
- =
-\sum_k
-\left(
-Q_iX_gQ_kX_hQ_j
--
-Q_iX_hQ_kX_gQ_j
-\right).
-$$
-
-Thus $R_2$ is the survival status of the full projected commutator after summing all intermediate sector contributions. It is not a separate equality test at each intermediate sector, and it is not determined by $R_1$.
-
-***
-
-## Weighted Hall Path Algebra
-
-The free Lie algebra on the generators has a Hall basis: generators, commutators, nested commutators, and so on \cite{hall1950,reutenauer1993}. Projecting a Hall monomial between sectors gives a signed sum of colored path products.
-
-For example:
-
-$$
-Q_i[X_g,X_h]Q_j
- =
-\sum_k
-\big(W(i,g,k)W(k,h,j)-W(i,h,k)W(k,g,j)\big).
-$$
-
-At higher depth, a Hall tree produces a larger signed sum over colored sector paths. The Hall coefficient object records these projected monomials:
-
-$$
-H_{ij}
- =
-\{T\mapsto Q_iB_TQ_j\},
-$$
-
-where $T$ ranges over Hall trees and $B_T$ is the corresponding Lie monomial.
-
-The depth matrix is the valuation of $H$:
-
-$$
-D_{ij}
- =
-\min\{\operatorname{depth}(T):Q_iB_TQ_j\ne 0\}.
-$$
-
-Thus the correct relation is not
-
-$$
-\text{binary graph}\longrightarrow D.
-$$
-
-It is
-
-$$
-\text{weighted Hall coefficients}\longrightarrow D.
-$$
-
-The central compression problem is to determine how much of the weighted data is needed to recover $D$.
-
-***
-
-## Binary Support Is Insufficient
-
-### Proposition 1 (Binary Insufficiency in the Local Realization Model)
-
-The binary colored graph $(G,\chi,\Lambda)$ determined by $R_1$ does not
-determine the first depth matrix $D$ in the local matrix-realization model.
-
-**Reason.** Binary support records only whether each projected block is zero or nonzero. It does not record whether two nonzero path products are equal, collinear, or otherwise cancel after projection.
-
-The minimal observed mechanism is path-commutator cancellation. The binary graph sees two length-2 paths
-
-$$
-i\xrightarrow{g}k\xrightarrow{h}j,
+Q_i=Q_i^\ast,
 \qquad
-i\xrightarrow{h}k\xrightarrow{g}j,
-$$
-
-but the projected products satisfy
-
-$$
-Q_iX_gQ_kX_hQ_j
- =
-Q_iX_hQ_kX_gQ_j.
-$$
-
-Therefore
-
-$$
-Q_i[X_g,X_h]Q_j=0,
-$$
-
-even though the binary graph predicts a depth-1 commutator channel. This
-vanishing is a polynomial equality among the allowed block entries, not a
-condition encoded by the support pattern itself. A support-preserving
-perturbation of one allowed block generically breaks the equality while leaving
-$(G,\chi,\Lambda)$ unchanged. Thus two local realizations with the same binary
-support can have different first-depth behavior. $\square$
-
-### S4 Path-Commutator Cancellation
-
-The current canonical counterexample is a three-generator $S_4$ system from the exploratory atlas. For one sector pair, the binary prediction is depth $1$, while the observed first depth is depth $2$.
-
-The binary graph sees compatible length-2 paths, but every depth-1 projected commutator vanishes. The first nonzero Hall projection appears at the next nested depth.
-
-This example is the concrete reason the unconditional implication
-
-$$
-(G,\chi,\Lambda)\to D
-$$
-
-is false.
-
-### Remark 2 (Why Earlier Binary Tests Passed)
-
-Earlier two-generator tests passed because the relevant depth-2 leaf multisets often had a single Hall tree. With no same-multiset multi-tree cancellation available, the binary graph appeared sufficient. The three-generator counterexample exposes the missing relation data.
-
-***
-
-## R1 Failure as a Structural Problem
-
-Binary insufficiency is not only a numerical cancellation issue. The independent $R_1$ support model also admits structural bridge obstructions.
-
-Fix two boundary sectors, denoted $0$ and $1$, and a set $V'$ of intermediate vertices. For each generator $g$, define the source-side and sink-side supports:
-
-$$
-A_g=\{u\in V': Q_uX_gQ_0\ne 0\},
+Q_iQ_j=\delta_{ij}Q_i,
 \qquad
-B_g=\{u\in V': Q_1X_gQ_u\ne 0\}.
+\sum_iQ_i=I,
 $$
 
-The obstruction pattern is:
+and every $X_g$ is skew-Hermitian:
 
 $$
-A_g\cap B_g=\emptyset,
-\qquad
-A_g\cap B_h\ne\emptyset
-\quad(g\ne h).
+X_g^\ast=-X_g.
 $$
 
-Each generator fails to close its own diagonal, but different generators cross.
+The generators are declared input data. If they are constructed from unitary
+matrices $\rho(g)$, the logarithm branch and any numerical skew-Hermitian
+projection are part of the realization and must be reported. No invariant in
+this paper is inferred directly from $\rho(g)$ without first fixing $X_g$.
 
-### Complement Family
+### Direct support
 
-The complement family is
+**Definition 2.2 (Generator-indexed and aggregate direct support).**
 
-$$
-A_g=\{u_g\},
-\qquad
-B_g=V'\setminus\{u_g\},
-$$
-
-with the $u_g$ distinct. Then
+Define
 
 $$
-A_g\cap B_g=\emptyset,
-\qquad
-A_g\cap B_h\ne\emptyset
-\quad(g\ne h).
-$$
-
-Exhaustive support searches found stable $R_1$ survivors of this type:
-
-| Universe | Survivors |
-|----------|-----------|
-| $|V'|=3$ | $8/8$ |
-| $|V'|=4$ | $512/512$ |
-
-Per-generator forward closure does not destroy these obstructions. This is the structural failure of $R_1$: independent generator supports can satisfy all off-diagonal crossing conditions while keeping every diagonal empty.
-
-***
-
-## Local R2 Obstruction Classification
-
-The following classification applies to sector pairs $(v,w)$ satisfying:
-
-1. $R_1(v,w)=0$;
-2. there exists at least one length-2 $R_1$ path $v\to k\to w$.
-
-It is not a classification of all finite-depth accessibility. Pairs whose first possible witness has length at least $3$ are outside its scope.
-
-For each generator $g$, define
-
-$$
-\operatorname{Exit}_g(v)=\{k:Q_vX_gQ_k\ne 0\},
+R_1^g(i,j)
+=
+\mathbf 1[Q_iX_gQ_j\ne0],
 $$
 
 and
 
 $$
-\operatorname{Entry}_g(w)=\{k:Q_kX_gQ_w\ne 0\}.
+R_1(i,j)
+=
+\max_{g\in G}R_1^g(i,j).
 $$
 
-A length-2 path of color pair $(g,h)$ exists through $k$ if
+Because the generators are skew-Hermitian, support is symmetric for each
+generator:
 
 $$
-k\in \operatorname{Exit}_g(v)\cap\operatorname{Entry}_h(w).
+R_1^g(i,j)=R_1^g(j,i).
 $$
 
-Define
+We nevertheless retain the ordered-pair convention because products are
+composed from right to left.
+
+### Projected products and word support
+
+For an intermediate sector $k$, define the projected two-step term
 
 $$
-T_{g,h,k}=Q_vX_gQ_kX_hQ_w.
+T_{g,h,k}(i,j)
+=
+Q_iX_gQ_kX_hQ_j.
 $$
 
-Then
+Its Boolean support is
 
 $$
-Q_v[X_g,X_h]Q_w
- =
-\sum_k(T_{g,h,k}-T_{h,g,k}).
+C_2^{g,h,k}(i,j)
+=
+\mathbf 1[T_{g,h,k}(i,j)\ne0].
 $$
 
-### Theorem 1 (Length-2 R2 Type Classification)
+The aggregate routed-product support is
 
-For pairs with length-2 $R_1$ witnesses, the $R_2$ behavior falls into four types:
+$$
+C_2^X(i,j)=\max_{g,h,k}C_2^{g,h,k}(i,j).
+$$
 
-| Type | Mechanism | $R_2$ |
-|------|-----------|-------|
-| I | all length-2 paths use a single generator color, so no distinct commutator contributes | $0$ |
-| II | at least one projected commutator block survives | $1$ |
-| III | signed cancellation locus: some $T_{g,h,k}$ are nonzero, but $\sum_k(T_{g,h,k}-T_{h,g,k})=0$ for every color pair | $0$ |
-| IV | incidence locus: cross-generator support paths exist, but every relevant product vanishes termwise, $T_{g,h,k}=0$ | $0$ |
+The full two-letter word block is
 
-**Proof.** If no cross-generator path exists, all depth-1 commutators vanish by antisymmetry, giving Type I. Otherwise cross-generator terms exist. If some projected commutator is nonzero, the pair is Type II. If no projected commutator is nonzero, then either products exist but cancel in each commutator channel, giving Type III, or every relevant product is already zero termwise, giving Type IV. These cases exhaust the length-2 projected commutator expansion. $\square$
+$$
+Q_iX_gX_hQ_j
+=
+\sum_kT_{g,h,k}(i,j),
+$$
 
-The separation between Type III and Type IV is structural, not cosmetic. In
-Type III, the length-2 products are present as matrix products, but the Lie
-signs place the system on a cancellation locus. In Type IV, the products never
-reach the signed-sum stage: each candidate product is already killed by an
-image-kernel alignment. Thus Type III is a relation among surviving path
-products, while Type IV is a failure of product transversality.
+and its support is
 
-![Length-2 witness taxonomy for a fixed sector pair. Type I has only a singleton-color witness and no distinct-generator commutator. Type II is repaired when a projected commutator survives. Type III is a cancellation mechanism: path products exist but cancel in the projected commutator. Type IV is an incidence mechanism: candidate products vanish termwise through image-kernel alignment.](../../figures/paper5/fig1_length2_witness_taxonomy.png)
+$$
+W_2^{g,h}(i,j)
+=
+\mathbf 1[Q_iX_gX_hQ_j\ne0].
+$$
+
+Its aggregate support is
+
+$$
+W_2^X(i,j)=\max_{g,h}W_2^{g,h}(i,j).
+$$
+
+Thus a Boolean path in $R_1$ is only a candidate for $C_2$; a nonzero
+$C_2$ term does not by itself determine $W_2$, because different intermediate
+terms may cancel.
+
+### Commutator support
+
+**Definition 2.3 (Generator-pair and aggregate commutator support).**
+
+Fix an ordering of the finite generator labels. For $g<h$, define
+
+$$
+R_2^{g,h}(i,j)
+=
+\mathbf 1[Q_i[X_g,X_h]Q_j\ne0],
+$$
+
+and
+
+$$
+R_2(i,j)
+=
+\max_{g<h}R_2^{g,h}(i,j).
+$$
+
+The exact expansion is
+
+$$
+Q_i[X_g,X_h]Q_j
+=
+\sum_k\big(T_{g,h,k}(i,j)-T_{h,g,k}(i,j)\big).
+$$
+
+Consequently, $R_2$ is not a Boolean function of $R_1$. It is also not the
+same object as word support: it records the signed difference of two word
+orders.
+
+### Cutoff depth and exact depth
+
+Let
+
+$$
+\mathcal L_{\le0}=\operatorname{span}\{X_g:g\in G\},
+$$
+
+and recursively
+
+$$
+\mathcal L_{\le d}
+=
+\mathcal L_{\le d-1}
++
+\operatorname{span}\{[X_g,Y]:g\in G,\ Y\in\mathcal L_{\le d-1}\}.
+$$
+
+**Definition 2.4 (Cutoff-relative Lie depth).**
+
+For a declared cutoff $d_{\max}$, define
+
+$$
+D^{(d_{\max})}_{ij}
+=
+\min\{d\le d_{\max}:Q_iYQ_j\ne0
+\text{ for some }Y\in\mathcal L_{\le d}\}.
+$$
+
+If no such $d$ is found, write
+
+$$
+D^{(d_{\max})}_{ij}=\mathrm{unreached}.
+$$
+
+The implementation may serialize this state as `999`; that integer is not
+mathematical infinity.
+
+If an exact or separately certified closure $\mathcal L=\operatorname{Lie}
+\langle X_g\rangle$ is available, define the exact depth $D_{ij}$ by the same
+minimum over the full filtration and set $D_{ij}=\infty$ only when
+
+$$
+Q_i\mathcal LQ_j=\{0\}.
+$$
 
 ***
 
-## R2 as the First Repair Layer
+## Low-Order Support Partition
 
-The repair mechanism is cross-generator commutator survival.
+**Theorem 3.1 (Four low-order support classes).**
 
-In the complement pattern, take two generators $a,b$ with $u_a=2$ and $u_b=3$. Since the generators are skew-Hermitian, a nonzero block in one direction is equivalent to a nonzero adjoint block in the reverse direction. The projected commutator bridge is
+Every ordered off-diagonal sector pair belongs to exactly one of the following
+classes:
 
-$$
-Q_2[X_a,X_b]Q_3
- =
-Q_2X_aQ_0X_bQ_3
--
-Q_2X_bQ_0X_aQ_3.
-$$
+| Class | $R_1(i,j)$ | $R_2(i,j)$ | Meaning |
+|-------|--------------|--------------|---------|
+| direct-and-bracket supported | 1 | 1 | visible at both declared low-order layers |
+| direct-only at bracket layer | 1 | 0 | directly visible; no projected commutator survives |
+| bracket-emergent | 0 | 1 | absent from direct support and visible in a commutator |
+| unresolved at layers 1--2 | 0 | 0 | absent from both low-order support layers |
 
-The second term is structurally absent because $2\notin A_b$. Thus
+**Proof.** The ordered pair $(R_1(i,j),R_2(i,j))$ belongs to
+$\{0,1\}^2$, whose four elements are disjoint and exhaustive. $\square$
 
-$$
-Q_2[X_a,X_b]Q_3
- =
-Q_2X_aQ_0X_bQ_3.
-$$
-
-If this product survives, $R_2$ creates the bridge $u_a\to u_b$ and destroys the isolated-cycle obstruction.
-
-![Local repair logic for fixed sectors. The $R_1$ layer detects candidate length-2 paths but cannot decide whether the projected products survive in a Lie bracket. The $R_2$ layer records projected commutator survival: in the generic matrix model under the stated non-cancellation and non-incidence hypotheses, repair occurs at the $R_2$ layer, while Type III and Type IV pairs mark cancellation or incidence loci.](../../figures/paper5/fig2_r1_failure_r2_repair.png)
-
-### Lemma 1 (Incomparability)
-
-Suppose
+This theorem is a classification of low-order support status, not a depth or
+completion theorem. In particular,
 
 $$
-A_g\cap B_g=\emptyset,
+R_1(i,j)=R_2(i,j)=0
+$$
+
+does not imply that $(i,j)$ is frozen, inaccessible, or invisible to higher
+Hall layers.
+
+### Mechanisms inside the partition
+
+The Boolean pair does not identify why a commutator vanishes. Two mechanisms
+must be separated.
+
+**Cancellation mechanism.** At least one projected product term is nonzero,
+but every relevant signed commutator sum vanishes.
+
+**Incidence mechanism.** A support path has nonzero block factors
+
+$$
+A=Q_iX_gQ_k\ne0,
 \qquad
-A_g\cap B_h\ne\emptyset
-\quad(g\ne h).
+B=Q_kX_hQ_j\ne0,
 $$
 
-Then for $g\ne h$, neither $A_g\subseteq A_h$ nor $A_h\subseteq A_g$ is forced in general, but at least $A_g\not\subseteq A_h$ holds for every ordered pair $g\ne h$ satisfying the displayed cross condition.
-
-**Proof.** If $A_g\subseteq A_h$, then any vertex in $A_g\cap B_h$ also lies in $A_h\cap B_h$, contradicting $A_h\cap B_h=\emptyset$. Since $A_g\cap B_h$ is nonempty by assumption, this proves $A_g\not\subseteq A_h$. $\square$
-
-For the next lemma we work in the centered support/scalar obstruction model:
-the relevant length-2 bridge products between the selected sectors pass through
-the distinguished sector $0$, and all other intermediate sector products for
-the selected block are zero by support. Without this support restriction, other
-intermediate sector summands may contribute to the projected commutator and the
-conclusion below is only a candidate mechanism.
-
-Under the local support-obstruction model considered here, only one candidate
-bridge contributes.
-
-### Lemma 2 (Single-Term Bridge Candidate)
-
-Under the hypotheses of Lemma 1, choose
+while the product is zero:
 
 $$
-v\in A_g\setminus A_h,
-\qquad
-w\in A_h\cap B_g.
+AB=0.
 $$
 
-Then, in the centered support/scalar obstruction model, the commutator block
-
-$$
-Q_v[X_g,X_h]Q_w
-$$
-
-has a single surviving support term:
-
-$$
-Q_vX_gQ_0X_hQ_w.
-$$
-
-**Proof.** Since $v\in A_g$, the block $Q_vX_gQ_0$ is nonzero. Since $w\in A_h$, the block $Q_wX_hQ_0$ is nonzero; by skew-Hermitian symmetry, the reverse block $Q_0X_hQ_w$ is also nonzero. Since $v\notin A_h$, the opposite block $Q_vX_hQ_0$ is zero. Therefore
-
-$$
-Q_v[X_g,X_h]Q_w
- =
-Q_vX_gQ_0X_hQ_w
--
-0.
-$$
-
-At the support level under the centered-model restriction, this is a
-single-term commutator bridge. $\square$
-
-### Proposition 2 (Support-Level R2 Repair)
-
-In the centered scalar/support obstruction model, $R_2$ destroys every valid
-length-2 $R_1$ bridge obstruction satisfying the hypotheses above.
-
-**Proof.** Lemma 2 produces a single-term commutator bridge under the
-centered support restriction. In the scalar/support model, a product of two
-nonzero scalar factors is nonzero. Therefore the projected commutator survives
-and creates an $R_2$ bridge. This bridge breaks the diagonal-empty obstruction.
-$\square$
-
-### Remark 3 (Matrix Caveat)
-
-For matrix blocks, nonzero factors do not automatically imply a nonzero product:
-
-$$
-A\ne 0,\ B\ne 0
-\quad\not\Rightarrow\quad
-AB\ne 0.
-$$
-
-Thus Proposition 2 is a support-level statement in the centered obstruction model. At
-matrix level, or when additional intermediate sector summands are present, the
-safe statement is that incomparability identifies a single-term $R_2$
-candidate, while full $R_2$ records whether the projected commutator actually
-survives.
-
-This is why $R_2$ must be relation data, not a value inferred from $R_1$.
-
-### Proposition 3 (Conditional Generic Repair and Exceptional Loci)
-
-Fix a binary support pattern $G$, a list of sector dimensions
-$\mathbf d=(d_i)$, and a finite generator set. Let
-$\mathcal R(G,\mathbf d)$ be the corresponding matrix-realization variety:
-forbidden blocks are set equal to zero, and allowed blocks range over the
-matrix spaces $\operatorname{Mat}_{d_i\times d_j}$. The open support stratum
-$\mathcal R^\circ(G,\mathbf d)\subset\mathcal R(G,\mathbf d)$ consists of
-realizations in which every block allowed by $G$ is nonzero.
-
-Assume that the relevant length-2 candidate products exist and that the
-projected commutator polynomial is not identically zero on the chosen support
-stratum. Inside $\mathcal R^\circ(G,\mathbf d)$, Types III and IV are
-nongeneric algebraic exceptional loci. They are different exceptional
-mechanisms.
-
-Type III is the cancellation locus cut out by the projected commutator
-equations
-
-$$
-\sum_k(T_{g,h,k}-T_{h,g,k})=0
-\qquad
-\text{for all relevant }(g,h),
-$$
-
-with at least one summand nonzero. It is a signed-product relation among
-existing length-2 paths.
-
-Type IV is the incidence locus where each candidate product is termwise zero.
-For a single product $AB$, this is the image-kernel alignment
+Equivalently,
 
 $$
 \operatorname{im}(B)\subseteq\ker(A).
 $$
 
-Thus, under the stated nonzero-polynomial and candidate-product hypotheses,
-away from these exceptional loci non-Type-I length-2 witnesses survive at
-$R_2$. The Type IV condition is naturally an incidence or Schubert-type
-condition on subspaces \cite{harris1992,fulton1998}. This generic repair statement is
-local and conditional. It does not prove global accessibility completeness, and
-it does not apply to pairs whose first possible witness has Hall length at
-least $3$.
-
-![Generic versus exceptional local geometry for length-2 witnesses. In the generic matrix model, under the stated nonzero-polynomial and candidate-product hypotheses, the relevant projected products survive away from algebraic cancellation and incidence loci and the witness is repaired at the $R_2$ layer. The cancellation locus is represented by a polynomial vanishing condition; the incidence locus is represented by rank drop or image-kernel alignment.](../../figures/paper5/fig3_generic_vs_exceptional.png)
-
-The proposition is the static mechanism layer beneath the later wall-crossing
-question. In deformation language, Type III records signed commutator
-cancellation and Type IV records product incidence. These are not additional
-names for the Paper VI wall-hierarchy loci $\Sigma_{R_1}$,
-$\Sigma_{R_2}^{\circ}$, or $\Sigma_D^{\circ}$, and they are not a wall
-classification scheme. Rather, they are
-local mechanism strata that may realize pieces of the residual $R_2$ wall after
-$R_1$ has been held fixed.
-
-### Remark 4 (Algebraic Accessibility Structures)
-
-The Type III/Type IV distinction is the first place where the accessibility
-calculus becomes algebraic rather than combinatorial. Type III is a relation
-among existing products: the length-2 paths exist as matrices, but their signed
-sum lies on a cancellation locus. Type IV is a product-incidence condition:
-the candidate products vanish termwise because an image lies in a kernel.
-
-Thus the failure and success pattern of
-
-$$
-(R_1,R_2)\longrightarrow D
-$$
-
-is controlled by two different algebraic structures. Cancellation can often be
-broken by adding higher-depth Hall directions; incidence is a nontransversality
-condition for the block product itself. Later completion theory uses this
-distinction to explain why, in all tested structured systems with exact
-$(R_1,R_2)$ signature matches, the depth data $D$ is empirically constant on
-each signature class, while Type IV remains the natural exceptional boundary.
+A third possibility is absence of any two-step support candidate. These are
+mechanism labels, not additional values of $(R_1,R_2)$ and not moving-wall
+categories.
 
 ***
 
-## Matrix Nondegeneracy
+## Exact Same-Support Counterexample
 
-The single-term bridge has matrix form
-
-$$
-A=Q_vX_gQ_k:\mathbb{C}^{d_k}\to\mathbb{C}^{d_v},
-$$
+Let $V=\mathbb C^3$ with coordinate projectors $Q_1,Q_2,Q_3$. Define the real
+skew-symmetric, hence skew-Hermitian, matrices
 
 $$
-B=Q_kX_hQ_w:\mathbb{C}^{d_w}\to\mathbb{C}^{d_k}.
+X=
+\begin{pmatrix}
+0&1&0\\
+-1&0&1\\
+0&-1&0
+\end{pmatrix},
+\qquad
+Y_0=2X,
 $$
 
-The product is
+and
 
 $$
-AB=Q_vX_gQ_kX_hQ_w.
+Y_1=
+\begin{pmatrix}
+0&2&0\\
+-2&0&3\\
+0&-3&0
+\end{pmatrix}.
 $$
 
-### Lemma 3 (Rank Protection)
+**Theorem 4.1 (Boolean support does not determine commutator accessibility).**
 
-If $A$ has full column rank and $B\ne 0$, then $AB\ne 0$. Dually, if $B$ has full row rank and $A\ne 0$, then $AB\ne 0$.
-
-**Proof.** If $A$ has full column rank, then $\ker A=\{0\}$. If $AB=0$, then every vector in the image of $B$ lies in $\ker A$, so $\operatorname{im}B=0$ and hence $B=0$, contradiction. The dual statement follows by replacing full column rank with full row rank and using $\operatorname{im}B=\mathbb{C}^{d_k}$. $\square$
-
-This is the elementary form of the rank obstruction underlying the usual matrix-rank nondegeneracy tests, compatible with the Sylvester-rank viewpoint in standard matrix analysis \cite{hornJohnson2013}.
-
-The useful dimension condition is
+The systems
 
 $$
-d_k\le \min(d_v,d_w).
+\mathcal S_0=(\mathbb C^3,\{Q_i\},\{X,Y_0\}),
+\qquad
+\mathcal S_1=(\mathbb C^3,\{Q_i\},\{X,Y_1\})
 $$
 
-Under generic full-rank behavior, this permits $A$ to have full column rank and $B$ to have full row rank.
+have identical generator-indexed direct support, but their commutator support
+differs. More precisely,
 
-### S4 Three-Generator Verification
+$$
+Q_1[X,Y_0]Q_3=0,
+\qquad
+Q_1[X,Y_1]Q_3\ne0.
+$$
 
-The S4-3gen-B matrix nondegeneracy check found:
+The exact Lie depth of the channel $3\to1$ is infinite in $\mathcal S_0$ and
+$1$ in $\mathcal S_1$.
+
+**Proof.** The matrices $Y_0$ and $Y_1$ have the same zero pattern as $X$:
+both connect sectors $1$ and $2$, and sectors $2$ and $3$, with no direct
+$1$--$3$ block. Hence the labelled $R_1$ tensors agree in the two systems.
+
+Since $Y_0=2X$,
+
+$$
+[X,Y_0]=0.
+$$
+
+Moreover, the Lie algebra generated by $X$ and $Y_0$ is the one-dimensional
+space $\operatorname{span}\{X\}$, whose $Q_1$--$Q_3$ block is zero. Thus the
+exact channel $3\to1$ is absent at every Lie depth.
+
+Direct multiplication gives
+
+$$
+[X,Y_1]
+=
+\begin{pmatrix}
+0&0&1\\
+0&0&0\\
+-1&0&0
+\end{pmatrix}.
+$$
+
+Therefore $Q_1[X,Y_1]Q_3\ne0$, while the direct $Q_1XQ_3$ and
+$Q_1Y_1Q_3$ blocks remain zero. The channel is bracket-emergent at depth $1$.
+$\square$
+
+At the intermediate sector $2$, the cancellation in $\mathcal S_0$ is visible
+termwise:
+
+$$
+Q_1XQ_2Y_0Q_3
+=
+Q_1Y_0Q_2XQ_3
+\ne0.
+$$
+
+This exact counterexample establishes the general negative result without
+relying on floating-point reconstruction or a specific group realization.
+
+![The exact same-support counterexample. The two systems have identical generator-indexed direct support, but the two projected product orders cancel for $Y_0$ and leave a nonzero commutator block for $Y_1$. The figure summarizes the displayed integer matrices and does not introduce a numerical claim.](../../figures/paper5/fig1_same_support_counterexample.png)
+
+***
+
+## Centered Scalar Bracket Emergence
+
+The following statement isolates a sufficient condition for a local
+bracket-emergent bridge.
+
+**Proposition 5.1 (Centered scalar bracket-emergence).**
+
+Assume all sectors are one-dimensional. Fix distinct generators $g,h$, a
+source sector $j$, a target sector $i$, and an intermediate sector $k$. Suppose:
+
+1. $R_1(i,j)=0$;
+2. $Q_iX_gQ_k\ne0$ and $Q_kX_hQ_j\ne0$;
+3. $Q_iX_hQ_k=0$;
+4. for every $\ell\ne k$, both
+   $Q_iX_gQ_\ell X_hQ_j$ and $Q_iX_hQ_\ell X_gQ_j$ vanish;
+
+Then
+
+$$
+Q_i[X_g,X_h]Q_j\ne0,
+$$
+
+so $(i,j)$ is bracket-emergent:
+
+$$
+R_1(i,j)=0,
+\qquad
+R_2(i,j)=1.
+$$
+
+**Proof.** The sector expansion and hypotheses give
+
+$$
+Q_i[X_g,X_h]Q_j
+=
+Q_iX_gQ_kX_hQ_j.
+$$
+
+In one dimension the two displayed factors are nonzero scalars, so their
+product is nonzero. $\square$
+
+This proposition proves emergence at the commutator layer only. It does not
+assert global propagation, operator-word completion, or the recovery of full
+Lie depth.
+
+### Support-set mechanism
+
+One way to produce the hypotheses is to fix a distinguished center sector
+$0$ and define
+
+$$
+A_g=\{u:Q_uX_gQ_0\ne0\},
+\qquad
+B_g=\{u:Q_1X_gQ_u\ne0\}.
+$$
+
+The conditions
+
+$$
+A_g\cap B_g=\varnothing,
+\qquad
+A_g\cap B_h\ne\varnothing\quad(g\ne h)
+$$
+
+imply $A_g\not\subseteq A_h$ for every ordered pair $g\ne h$: otherwise a
+point of $A_g\cap B_h$ would lie in $A_h\cap B_h$. Under the additional
+centered-support and direct-absence hypotheses of Proposition 5.1, these set
+relations identify candidate bracket-emergent pairs. They do not by themselves
+prove matrix-product survival.
+
+***
+
+## Matrix Products and Incidence
+
+For higher-dimensional sectors, individually nonzero factors do not imply a
+nonzero product:
+
+$$
+A\ne0,
+\quad
+B\ne0
+\quad\not\Longrightarrow\quad
+AB\ne0.
+$$
+
+**Lemma 6.1 (Image--kernel criterion).**
+
+For composable finite-dimensional linear maps $A$ and $B$,
+
+$$
+AB=0
+\quad\Longleftrightarrow\quad
+\operatorname{im}(B)\subseteq\ker(A).
+$$
+
+**Proof.** The equality $AB=0$ holds exactly when $A$ annihilates every vector
+in the image of $B$. $\square$
+
+**Lemma 6.2 (Rank protection).**
+
+If $A$ has full column rank and $B\ne0$, then $AB\ne0$. Dually, if $B$ has
+full row rank and $A\ne0$, then $AB\ne0$.
+
+**Proof.** Full column rank gives $\ker A=\{0\}$, so Lemma 6.1 would force
+$B=0$ if $AB=0$. Full row rank gives $\operatorname{im}B$ equal to the entire
+intermediate space, so $AB=0$ would force $A=0$. $\square$
+
+### Free block model versus skew-Hermitian locus
+
+Let $\mathcal M_{\mathrm{free}}(G,\mathbf d)$ be the affine space in which
+allowed complex blocks vary independently and forbidden blocks are zero. Its
+open support stratum requires every allowed block to be nonzero.
+
+**Proposition 6.3 (Conditional exceptional sets in the free block model).**
+
+Fix a projected commutator channel in
+$\mathcal M_{\mathrm{free}}(G,\mathbf d)$. If its matrix-valued polynomial is
+not identically zero, its vanishing set is a proper algebraic subset. The region
+where at least one projected product survives but the commutator cancels is a
+constructible subset of that zero set. Similarly, the region where specified
+nonzero factors satisfy $AB=0$ is an incidence subset defined by polynomial
+product equations alongside open nonzero conditions.
+
+**Proof.** Matrix products and commutators have polynomial entries in the free
+block coordinates. A nonzero polynomial cannot vanish on the entire affine
+space. Adding nonvanishing conditions removes algebraic subvarieties and hence
+produces constructible subsets. $\square$
+
+This proposition applies only to the free complex-block model. Define the
+skew-Hermitian realization locus by
+
+$$
+\mathcal M_{\mathrm{skew}}
+\subset
+\mathcal M_{\mathrm{free}}.
+$$
+
+This locus has adjoint constraints coupling opposite blocks and is naturally a
+real algebraic locus. Genericity or codimension after intersection with
+$\mathcal M_{\mathrm{skew}}$ requires a separate argument. Standard matrix and
+incidence background is given in
+\cite{hornJohnson2013,harris1992,fulton1998}.
+
+***
+
+## Computational S4 Case Study
+
+The $S_4$ realization supplies evidence for the low-order mechanisms and is
+not used in the exact proofs. It is constructed from the regular representation using
+three declared permutations. The numerical generators are
+
+$$
+X_g
+=
+\frac{\operatorname{logm}(\rho(g))
+-\operatorname{logm}(\rho(g))^\ast}{2},
+$$
+
+with SciPy's numerical matrix logarithm. This branch-dependent construction is
+part of the declared computational realization.
+
+For this section only, the short symbols mean
+
+$$
+R_1:=R_1^{\mathrm{Lie}}[X],\qquad
+R_2:=R_2^{\mathrm{Lie}}[X],\qquad
+C_2:=C_2^X,\qquad
+W_2:=W_2^X,\qquad
+D:=D_{\mathrm{Lie}}[X].
+$$
+
+The ten sectors are produced numerically in the $24$-dimensional regular
+representation by an ordered compression procedure. Central class sums are
+applied first, followed by three generator-derived Hermitian operators in the
+declared order. The latter do not commute: the maximum pairwise
+commutator norm in the seven-operator registration family is approximately
+$26.319$. Thus this procedure defines an order-dependent orthogonal carrier
+decomposition, not a joint spectral resolution. The compression clustering
+tolerance is $10^{-8}$, and the resulting projectors are fixed throughout the
+case study. Their registration audit is:
+
+| Registration quantity | Result |
+|-----------------------|--------|
+| numerical dtype | `complex128` |
+| projector ranks | $(1,1,3,3,3,3,3,3,2,2)$ |
+| maximum idempotence residual | $3.127\times10^{-15}$ |
+| maximum Hermiticity residual | $1.335\times10^{-16}$ |
+| maximum pairwise-orthogonality residual | $2.105\times10^{-15}$ |
+| completeness residual | $8.697\times10^{-15}$ |
+
+All residuals use the Frobenius norm. This is a numerical orthogonal-complete
+sector registration, not an exact representation-theoretic decomposition.
+
+The support threshold is $10^{-8}$. With ten numerical sectors, the ordered
+off-diagonal census is:
+
+| Low-order status | Count |
+|------------------|-------|
+| direct, $R_1^{\mathrm{Lie}}=1$ | 10 |
+| bracket-emergent, $R_1^{\mathrm{Lie}}=0,R_2^{\mathrm{Lie}}=1$ | 2 |
+| $C_2^X=W_2^X=1$ but $R_1^{\mathrm{Lie}}=R_2^{\mathrm{Lie}}=0$ | 2 |
+| $C_2^X=W_2^X=R_2^{\mathrm{Lie}}=0$ among $R_1^{\mathrm{Lie}}=0$ pairs | 76 |
+
+![Low-order object separation in the declared $S_4$ realization. The arrows indicate audit order only: direct support, routed products, full words, commutator support, and cutoff depth are distinct typed objects. The bar census partitions the 80 aggregate-$R_1$-zero ordered pairs at threshold $10^{-8}$ and does not assert low-order-to-depth completion.](../../figures/paper5/fig2_low_order_channel_separation.png)
+
+The two routed- and full-word-supported pairs are $S_4\to S_3$ and
+$S_3\to S_4$.
+For each one, the audit finds both $C_2^X=1$ and $W_2^X=1$, while
+$R_2^{\mathrm{Lie}}=0$. Their two word-order norms are approximately
+$2.01462$, while the projected commutator residuals are approximately
+$6.1\times10^{-15}$. These are machine-zero observations under the declared
+tolerance, not exact identities.
+
+For cutoff $d_{\max}=3$, the numerical depth census is
+
+$$
+(A_0,A_1,A_2,A_{\mathrm{unreached}})=(10,2,2,76).
+$$
+
+Here `unreached` means no block was detected through depth $3$. The filtration
+uses generators at Lie depth $0$, simple commutators at depth $1$, and nested
+commutators at depth $2$ and above. The two entries counted by $A_2$ are
+exactly the two cancellation channels $S_4\leftrightarrow S_3$; they first
+appear through nested commutators, not through simple-commutator support.
+
+The numerical filtration and saturation audit gives:
+
+| Lie round | new dimension | cumulative dimension |
+|-----------|---------------|----------------------|
+| 0 | 3 | 3 |
+| 1 | 3 | 6 |
+| 2 | 7 | 13 |
+| 3 | 8 | 21 |
+| 4 | 0 | 21 |
+| 5 | 0 | 21 |
+
+At absolute rank threshold $10^{-8}$, the matrix augmented by the $21$
+retained basis vectors and all $[X_g,L_a]$ columns has numerical rank $21$.
+Its minimum retained singular value is $1.000$, its maximum discarded singular
+value is $1.400\times10^{-13}$, the orthonormal-basis Gram residual is
+$2.133\times10^{-14}$, and
+
+$$
+\max_{g,a}\operatorname{dist}
+\big([X_g,L_a],\operatorname{span}\mathcal L\big)
+=1.344\times10^{-13}.
+$$
+
+This supports numerical Lie-span saturation for the declared realization. It
+remains a computational closure certificate rather than an exact symbolic
+proof.
+
+### Direct-channel product audit
+
+The 48-product matrix audit covers only target pairs with $R_1(i,j)=1$. In
+those already-direct channels:
 
 | Quantity | Result |
 |----------|--------|
-| single-term bridge products | 48 |
-| $AB=0$ cases | 0 |
-| bridges satisfying $d_k\le\min(d_v,d_w)$ | 48/48 |
-| perturbation trials | 100/100 with no $AB=0$ |
+| tested single-term two-step products | 48 |
+| targets with direct $R_1$ support | 48/48 |
+| targets with $R_1=0$ | 0/48 |
+| zero products at tolerance $10^{-8}$ | 0/48 |
+| rank-protected products | 48/48 |
+| left-protected, $\operatorname{rank}(A)=d_k$ | 48/48 |
+| right-protected, $\operatorname{rank}(B)=d_k$ | 48/48 |
+| protected on both sides | 48/48 |
+| sampled perturbation trials with a zero product | 0/100 |
 
-This does not prove a universal matrix theorem. It identifies the right matrix-level certificate for Proposition 2: single-term bridge products need rank protection, direct verification, or inclusion in $R_2$ as relation data.
+Here $A:V_k\to V_i$ and $B:V_j\to V_k$. The implemented criterion is
+
+$$
+\operatorname{rank}(A)=d_k
+\quad\text{or}\quad
+\operatorname{rank}(B)=d_k,
+$$
+
+which is exactly the full-column/full-row condition of Lemma 6.2. It is not
+the insufficient condition that only the smaller matrix dimension be attained.
+
+This is a **Direct-Channel Product Nondegeneracy Audit**. It does not certify
+matrix-level bracket emergence, absence of incidence on $R_1=0$ pairs, or
+$(R_1,R_2)\to D$ completion.
 
 ***
 
-## Jacobi and Higher Layers
+## Claim Status and Boundary
 
-The free Lie algebra has two primitive relation sources relevant here:
+The object distinctions in Section 2 are definitions, not an evidence level.
+The table uses the four claim-status levels; proposition and lemma are
+result types inside the Theorem level.
 
-1. antisymmetry of the bracket, already visible in $R_2$;
-2. the Jacobi identity, first visible at the next nested layer.
+| Claim | Status |
+|-------|--------|
+| Four classes partition ordered pairs by $(R_1,R_2)$ | Theorem |
+| Boolean generator support does not determine commutator support | Theorem |
+| Boolean generator support does not determine exact Lie depth | Theorem |
+| Centered one-dimensional hypotheses imply a bracket-emergent bridge | Theorem |
+| $AB=0$ iff $\operatorname{im}B\subseteq\ker A$ | Theorem |
+| Specified cancellation/incidence conditions define constructible free-model loci; cancellation is proper when its polynomial is nonzero | Theorem |
+| S4 low-order census and cancellation residuals | Computational Certificate |
+| S4 numerical Lie-span closure under the declared closure audit | Computational Certificate |
+| 48 tested direct-channel products are nondegenerate | Computational Observation |
+| Matrix-level emergence for general $R_1=0$ channels | Research Program |
+| $(R_1,R_2)$ determines full $D$ in represented or dense systems | Research Program |
+| Moving accessibility-wall hierarchy | Research Program |
 
-We use only these standard Lie-algebraic relations and their projected consequences \cite{humphreys1972,reutenauer1993}.
+The principal failure boundaries are:
 
-Earlier evidence suggested Jacobi might always be latent. Later sparse random graph searches corrected this: Jacobi latency is a density phenomenon.
+$$
+\text{Boolean path}
+\not\Longrightarrow
+\text{nonzero projected product},
+$$
 
-Sparse artificial sector graphs can exhibit non-latent $R_3$ cases. In medium, dense, and representation-like tests, $R_2$ usually connects first, making Jacobi redundant for the first depth matrix.
+$$
+\text{nonzero words}
+\not\Longrightarrow
+\text{nonzero commutator},
+$$
 
-The current boundary is:
+and
 
-| Statement | Status |
-|-----------|--------|
-| universal Jacobi latency for arbitrary quivers | false |
-| Jacobi latency in sparse random graphs | false at low frequency |
-| Jacobi latency in dense or represented systems | strong evidence |
-| arbitrary-quiver $N=2$ completeness | false or unsupported |
-| represented/dense $N=2$ completeness | program-level conjecture |
-
-Therefore Paper V should not claim a universal $N=2$ theorem. The correct theorem program is domain-sensitive.
+$$
+R_1=R_2=0
+\not\Longrightarrow
+D=\infty.
+$$
 
 ***
 
-## Boundary of the Static Theory
+## Research Boundary
 
-The stable results of this paper are Theorem 1, Proposition 2, and Proposition 3:
-a local classification of length-2 $R_1$ witnesses, a centered support-level
-repair theorem, and a conditional generic exceptional-locus statement. These
-results deliberately stop short of a full depth theorem.
+### Matrix-level bracket emergence
 
-![Static-to-dynamic bridge. Paper V studies fixed-system data $R_1$, $R_2$, and $D$: support, projected commutator survival, and first accessibility depth. Paper VI moves the same observable shadows over a parameter space and studies the walls where their rank/support profiles jump.](../../figures/paper5/fig4_r1_r2_d_layer_bridge.png)
-
-### Matrix-Level Local R2 Repair
-
-For a representation-derived sectorized system, a valid length-2 $R_1$ bridge
-obstruction is repaired or certified by full projected $R_2$ when each relevant
-bridge product has a concrete nondegeneracy certificate: rank protection,
-direct nonzero-product verification, or explicit projected $R_2$ survival.
-
-This is proved at centered support/scalar level by the single-term bridge
-mechanism. The matrix-level upgrade requires rank protection, direct
-nondegeneracy verification, or accepting $R_2$ as the relation oracle.
-
-### Length-2 Witness Reduction
-
-Every finite-depth accessible pair with $R_1=0$ in the represented systems of interest admits a length-2 $R_1$ witness.
-
-This is the global Layer C reduction. It is open.
-
-### Conditional Local Completeness
-
-If the matrix-level local repair program and the length-2 witness reduction both hold for a class of sectorized systems, then one obtains the candidate conditional theorem
+A matrix-level emergence audit should begin with
 
 $$
-(R_1,R_2)\to D
+\mathcal O_{R_1}
+=
+\{(i,j):i\ne j,\ R_1(i,j)=0\}
 $$
 
-for that class.
+and separately classify:
 
-This is the desired Accessibility Completeness theorem for that class. It is not claimed here as proved, and it is not a theorem of the present paper.
+1. $R_2(i,j)=1$ bracket-emergent channels;
+2. $R_2(i,j)=0$ with nonzero projected products or words;
+3. support paths whose products vanish by image--kernel incidence;
+4. pairs with no tested two-step candidate.
 
-### Relation to the Deformation Stratification
+Only the first class is a local commutator-layer emergence statement.
 
-This program-level status is compatible with the accessibility stratification
-developed in Paper VI. Paper VI is local in moduli: on normal spectral charts
-$\Sigma_{\mathrm{spec}}\subseteq\Sigma_{\mathrm{comm}}$, it studies where the
-discrete observables $R_1(w)$, $R_2(w)$, and $D(w)$ remain locally constant
-and where they jump. Its wall hierarchy is an observable-level stratification,
+### Full Lie depth
+
+Recovering exact $D$ requires either symbolic Lie closure or a certified
+finite-dimensional closure argument. A numerical certificate should report the
+filtration ranks, singular values, rank tolerance, and residuals of
 
 $$
-\widehat{\Sigma}_{R_1}
-\subseteq
-\widehat{\Sigma}_{R_2}
-\subseteq
-\widehat{\Sigma}_{D}.
+[X_g,L_a]\in\operatorname{span}\mathcal L
 $$
 
-Paper V asks a different question. It fixes a sectorized system and a sector
-pair, then classifies the length-2 mechanisms by which $R_1$ may fail and
-$R_2$ may repair or fail to repair it. Thus Paper VI supplies a local
-wall hierarchy for moving systems, while Paper V supplies mechanism types for
-the static fibers over those walls. Neither statement implies the global
-represented/dense completeness theorem $(R_1,R_2)\to D$ by itself.
+for every generator and retained Lie-basis element. Cutoff stability alone is
+not exact closure.
+
+### Represented genericity and completion
+
+Whether $(R_1,R_2)$ determines $D$ on a checkable represented or dense class
+is open. Image--kernel incidence geometry, rectangular rank protection, and
+conditional low-order promotion questions are studied separately
+\cite{paper7}. The associated computational atlas and incidence candidates are
+separate evidence and are not
+used in the proofs here. In particular, a bridge-level incidence
+candidate is not automatically a certified accessibility obstruction.
+
+### Moving systems
+
+Linearized commutativity and normality constraints, together with pointwise
+typed registrations on certified commutative-normal samples, are studied in
+\cite{paper6}. Moving accessibility fields remain a research problem. Any
+hierarchy involving $\Sigma_{R_1}$, $\Sigma_{R_2}$, or
+$\Sigma_D$ belongs to that separate deformation problem. No such hierarchy is
+proved or assumed here. Cancellation and incidence are
+static mechanisms, not wall labels.
+
+### Higher Hall layers
+
+Jacobi relations and higher Hall monomials can create or remove channels not
+seen by $R_2$. Claims about Jacobi latency, dense-system completion, or a
+universal finite truncation require independent certificates and are not
+claimed here.
 
 ***
 
-## Relation to Paper III
+## Related Work and Novelty Boundary
 
-Paper III's T7 result shows a separation between composition-generated accessibility and Lie-generated accessibility in the Rubik cubie representation. It is a witness that accessibility depends on sector projectors and composition, not only on the Lie algebra. The terminology of Lie-generated accessibility follows the usual Lie-algebraic control-theoretic lineage \cite{jurdjevic1997}.
+Hall bases and free Lie algebras provide the standard organization of
+commutators and nested commutators \cite{hall1950,reutenauer1993}. Geometric
+control theory and structural controllability supply broader Lie-accessibility
+and graph-generic settings \cite{jurdjevic1997,lin1974structural}. Zero-pattern
+and combinatorial matrix theory study which matrix properties are visible from
+support data \cite{brualdiRyser1991}. Quivers and path algebras provide a
+standard language for labelled paths and their algebraic evaluation
+\cite{schiffler2014}. Matrix-product survival and rank protection are elementary
+finite-dimensional linear algebra \cite{hornJohnson2013}; incidence language
+uses standard algebraic geometry \cite{harris1992,fulton1998}.
 
-Paper V asks a different question: at what first depth does the projected Lie algebra see a sector pair?
+These structural theories motivate the Boolean and path shadows used here, but
+they do not identify a support path with its value under a concrete matrix or
+Hall evaluation. The present contribution isolates that evaluation gap through
+exact signed cancellation, routed/full-word separation, and a local
+commutator-support boundary.
 
-Thus Paper III supplies the seed example and motivation. Paper V supplies the minimal-data problem for first-depth emergence.
-
-The two are related but not identical:
-
-| Paper III | Paper V |
-|-----------|---------|
-| Rubik-centered separation example | general sectorized observable framework |
-| Lie vs composition | first Lie-depth inside the Lie filtration |
-| T7 morphisms | $R_1$, $R_2$, weighted Hall paths |
-| cross-block composition gap | projected commutator survival and cancellation |
-
-***
-
-## Computational Support
-
-The reproducibility suite records the finite examples used to test the local
-repair calculus. It is not part of the mathematical definitions; it keeps each
-computation attached to the manuscript statement it illustrates or audits.
-
-| Label | Manuscript interface | Role |
-|-------|-----------------|------|
-| S4 depth | Proposition 1; Theorem 1 | S4-3gen-B sectorized example with signature $(10,2,2,76)$ and depth-2 behavior |
-| PCM | Proposition 1; Theorem 1 Type III | binary-support counterexample: predicted depth $1$, observed depth $2$ by projected commutator cancellation |
-| Complement | Proposition 2 | scalar/support complement obstruction and nonzero single-term $R_2$ bridge repair |
-| Non-complement | Proposition 2 boundary | finite enumeration showing complement is not the only $R_1$ obstruction family |
-| Matrix | Lemma 3; Proposition 3 Type IV boundary | S4-3gen-B bridge audit: $48/48$ nonzero products and rank-protected bridges |
-
-The repository groups these audits under the Paper V experiment suite:
-S4 depth, path-commutator cancellation, complement and non-complement
-obstruction enumeration, and matrix nondegeneracy.
-
-The mapping is intentionally tight. Proposition 1 is witnessed by the explicit
-failure of binary support to determine $D$. Theorem 1 is proved by the local
-length-2 expansion; the audits instantiate the Type III case and check the
-finite examples used in the classification. Proposition 2 is illustrated at the
-support/scalar level by the single-term bridge computations. Lemma 3 and the
-Type IV side of Proposition 3 are audited by the matrix nondegeneracy computation,
-which shows that the expected image-kernel incidence failure does not occur in
-the S4-3gen-B bridge family.
-
-Additional deformation and Type IV search audits are reserved for the later
-deformation theory. They motivate the
-representation-derived exceptional-locus question, but they are not used as
-claim support in this paper. In the language of Paper VI, the current suite
-exhibits a Type III mechanism that may occur inside a residual
-$\Sigma_{R_2}^{\circ}$ wall, together with a tested absence of Type IV in one
-structured matrix-block bridge family; it does not classify all represented
-exceptional loci.
-
-***
-
-## Long-Term Program
-
-The preceding sections close the local length-2 repair calculus. They do not close the global accessibility-completeness problem. The remaining program splits into four independent questions.
-
-### Monochromatic Closure
-
-Type I pairs have length-2 paths, but no distinct-generator commutator contributes. The local classification proves only $R_2=0$. It does not prove that the pair is frozen in the full Hall filtration.
-
-The closure problem asks whether a Type I pair can become visible through a longer Hall word, or whether it is closed under the full Lie filtration.
-
-This is the first boundary of the local calculus.
-
-### Length-2 Reduction
-
-The local theory assumes the existence of a length-2 $R_1$ witness. The global reduction asks whether every finite-depth accessible pair with $R_1=0$ admits a length-2 $R_1$ witness.
-
-If the answer is negative, then some accessibility phenomena begin only at Hall length at least $3$, outside the scope of this paper. If the answer is positive for a represented class of systems, then the local $R_2$ calculus becomes a candidate depth detector for that class.
-
-### Representation-Derived Exceptional Loci
-
-The local classification identifies two nongeneric depth-1 loci. Type III is
-the signed cancellation locus: length-2 products survive, but the projected
-commutator sum vanishes. Type IV is the incidence locus: candidate products
-vanish termwise through $AB=0$.
-
-The representation-derived question is to determine which of these exceptional
-loci are actually realized by structured systems. The current evidence is
-asymmetric: Type III appears in finite-group examples such as S4-3gen-B, while
-Type IV is absent in the tested Wedderburn-coordinate regular-representation
-sectorizations and is controlled by rank/nondegeneracy conditions in the S4
-bridge audit.
-
-This is the point where Paper V feeds Paper VI. Type III and Type IV are not
-Paper VI wall-hierarchy labels, and they should not be read as wall
-classification labels.
-They are mechanism-level strata inside the static fiber of the deformation
-problem: Type III is the cancellation component of residual $R_2$ failure, and
-Type IV is the incidence component. The observable-level walls
-$\Sigma_{R_1}$, $\Sigma_{R_2}^{\circ}$, and $\Sigma_D^{\circ}$ remain the
-Paper VI classification axis.
-
-### Conditional Accessibility Completeness
-
-Only after the previous questions are settled for a chosen class of sectorized systems should one promote the global statement
-
-$$
-(R_1,R_2)\to D
-$$
-
-from a program to a theorem.
-
-The conditional route combines local length-2 $R_2$ repair, matrix nondegeneracy or direct $R_2$ survival, length-2 witness reduction, and control of represented exceptional loci. Together, these ingredients would yield a candidate class-level completeness theorem.
-
-Thus $(R_1,R_2)\to D$ is not the main theorem of Paper V. It is the long-term completeness program opened by the repair calculus.
-
-Paper VII \cite{paper7} takes up precisely this program. There, the Type IV mechanism is
-reinterpreted as the incidence variety
-
-$$
-I=\{(A,B):AB=0,\ A\ne0,\ B\ne0\},
-$$
-
-whose fixed-rank strata have quadratic codimension growth. In that later
-completion theory, Type IV is no longer only a local exceptional label: it is
-the high-codimension algebraic boundary outside which the Generic Completion
-Principle is formulated.
+Support graphs and projected products for represented group elements are
+separated in \cite{paper3}. Those products are not identified here with the
+logarithmic-generator products. The contribution is
+the exact same-support commutator counterexample, the explicit low-order object
+separation, and the local bracket-emergence/incidence boundary.
 
 ***
 
 ## Conclusion
 
-The accessibility problem has moved from binary graph theory to weighted Hall path algebra. The binary graph $(G,\chi,\Lambda)$ records generator support, but it does not record projected product cancellation. Therefore it cannot determine first Lie-accessibility depth.
+Direct support does not determine commutator support. A Boolean two-step path
+is not a matrix product, a matrix product is not a word sum, a word sum is not
+a commutator, and low-order absence does not imply infinite-depth
+inaccessibility.
 
-The first repair layer is $R_2$, the survival of projected commutators. At support level, valid $R_1$ bridge obstructions force single-term $R_2$ bridge candidates by incomparability. These bridges destroy the obstruction. At matrix level, their survival is controlled by rank/nondegeneracy or must be recorded directly as relation data.
+The exact $3\times3$ example proves that identical generator-indexed support can
+produce different commutator support and different full Lie depth. The
+centered scalar proposition identifies one precise local emergence mechanism:
 
-The current stable statement has five parts: $R_1$ fails structurally; $R_2$ is the first repair layer; length-2 accessibility witnesses admit a local Type I--IV calculus with distinct Type III and Type IV exceptional mechanisms; accessibility depth is a valuation of weighted Hall coefficients; and full $(R_1,R_2)\to D$ completeness remains a long-term program.
+$$
+R_1(i,j)=0,
+\qquad
+R_2(i,j)=1.
+$$
 
-This is the natural post-T7 theory. Paper III shows that accessibility separates. Paper V identifies the first repair calculus for length-2 witnesses, explains why binary support must be replaced by weighted Hall path data before any global depth theorem can be attempted, and isolates local mechanisms that later deformation theory can see inside accessibility walls.
+For matrix blocks, image--kernel incidence is the missing product datum. The
+$S_4$ realization supplies a computational case study of direct,
+bracket-emergent, cancellation, and cutoff-unreached channels, whereas the
+48-product audit is explicitly restricted to already-direct channels.
+
+The resulting scope is deliberately local. General matrix emergence and exact
+closure in representation-derived systems remain open. Completion from
+$(R_1,R_2)$ to $D$, and moving accessibility walls, remain research programs.
 
 ***
 
-## References
+## Appendix A: Computational Artifacts
 
-**Program lineage.** Paper V continues the accessibility line opened by Paper
-III. Paper III supplies the Lie-generated versus composition-generated
-separation in the Rubik cubie representation \cite{paper3}; the CCS records
-the canonical sector and transport data used by the trilogy \cite{ccs}. Paper V
-extracts the static local repair calculus for fixed sectorized systems and
-prepares the $R_1/R_2/D$ language used later by Papers VI and VII
-\cite{paper6,paper7}.
+The following repository artifacts support the exact counterexample and the
+computational $S_4$ case study. The default directory is
+`experiments/paper5/`; paths are relative to that directory.
 
-**External background.** The weighted Hall path algebra uses Hall's
-construction of Hall bases and the modern free-Lie-algebra treatment of Hall
-words and Lie monomials \cite{hall1950,reutenauer1993}. The Lie-depth
-viewpoint is aligned with geometric control theory and standard Lie-algebra
-representation conventions \cite{jurdjevic1997,humphreys1972}. Rank protection
-uses elementary matrix-analysis principles \cite{hornJohnson2013}.
-Representation-derived examples use finite-group representation theory
-\cite{serre1977}. The incidence-locus language for Type IV uses the standard
-incidence/Schubert viewpoint from algebraic geometry
-\cite{harris1992,fulton1998}.
+| Artifact | Role | Short path |
+|----------|-----------------|------------|
+| A1 | exact same-support commutator counterexample | \path{validation/exact_support_commutator_counterexample.py} |
+| A2 | typed $R_1/R_2/C_2^X/W_2^X$ low-order census | \path{validation/low_order_channel_audit.py} |
+| A3 | cutoff Lie-depth and closure audit | \path{validation/s4_r1_r2_depth.py} |
+| A4 | projected-product cancellation residuals | \path{validation/path_commutator_cancellation.py} |
+| A5 | centered scalar bracket-emergence example | \path{validation/complement_explosion.py} |
+| A6 | support-set enumeration control | \path{validation/noncomplement_obstruction_enumeration.py} |
+| A7 | direct-channel product nondegeneracy audit | \path{validation/matrix_nondegeneracy.py} |
 
-**Computational provenance.** The manuscript-level support consists of the
-S4 $R_1/R_2$ depth example, the path-commutator cancellation audit, complement
-and non-complement obstruction enumerations, and the matrix-nondegeneracy
-check. The repository stores the corresponding support files, figures, and
-canonical tables.
+From the repository root, run an artifact as
+`python experiments/paper5/<short path>`. A1 uses exact integer arithmetic.
+The $S_4$ and matrix-logarithm artifacts are numerical and must declare dtype,
+tolerance, generator family, logarithm branch, and cutoff. A passing assertion
+supports only the claim mapped to that artifact.
+
+All listed artifacts are available in the
+[RIME repository](https://github.com/dooven-prime/rime-lite).

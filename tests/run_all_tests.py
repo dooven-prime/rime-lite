@@ -1,41 +1,40 @@
 #!/usr/bin/env python
-"""Run all fast mathematical invariant tests sequentially.
+"""Run the active mathematical and API regression tests sequentially.
 
 No pytest. No test framework. Just plain assert-based verification.
 Each test runs with stdout/stderr inherited so output streams directly.
 
-Slow tests (require CubieSpectralOperator ~2-5 min each):
-  test_cubieoperator.py  — canonical engine: spectral theorem, Bose-Mesner, k-set recon
-  test_commutant_gap.py  — Δ_comm, transport invariants
-
-Run them with: python tests/run_slow_tests.py
+The active suite includes the current CubieSpectralOperator regressions. The
+separate slow runner is retained only as a convenience for rerunning those
+files.
 """
 import subprocess
 import sys
 from pathlib import Path
 
-# Fast tests — no CubieSpectralOperator construction (<<1s each)
+# Active tests. Some construct CubieSpectralOperator and are not sub-second.
 TESTS = [
     "test_action_token.py",
     "test_cubie.py",
     "test_cubieoperator.py",
     "test_spectralstructure.py",
+    "test_spectral_utils_api.py",
+    "claim_contract_tests.py",
     "test_representation.py",
     "test_spectrum.py",
     "test_sectors.py",
     "test_commutant.py",
     "test_transport.py",
+    "test_experiment_observation.py",
     "test_accessibility_engine.py",
     "test_wall_trajectory.py",
-    "test_sof_action.py",
-    "test_sof_decision.py",
+    "test_paper13_methodology.py",
 ]
 
 # Slow tests — each constructs CubieSpectralOperator (~1-2 min)
 SLOW_TESTS = [
-    "test_commutant_gap.py",
-    "test_f3.py",
-    "test_generator_families.py",
+    "test_cubieoperator.py",
+    "test_transport.py",
 ]
 
 ROOT = Path(__file__).resolve().parent
@@ -68,11 +67,11 @@ if failed:
     for f in failed:
         print(f"    - {f}")
 else:
-    print(f"  ALL FAST TESTS PASSED  ({passed}/{N})")
+    print(f"  ALL ACTIVE TESTS PASSED  ({passed}/{N})")
 print(f"{'=' * 60}")
 
 if SLOW_TESTS:
-    print(f"\nSlow tests (require CubieSpectralOperator, ~2-5 min each):")
+    print(f"\nLonger tests can be rerun separately:")
     for name in SLOW_TESTS:
         print(f"  python tests/{name}")
     print(f"Run: python tests/run_slow_tests.py")

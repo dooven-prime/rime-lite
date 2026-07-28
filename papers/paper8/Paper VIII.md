@@ -6,9 +6,9 @@
 
 Independent Researcher | RIME Project | 2026
 
-*This paper is Part VIII of the RIME program. Papers IV--VII close the first
-post-trilogy accessibility cycle: fixed spectral geometry, accessibility
-calculus, accessibility deformation, and generic completion. Paper VIII begins
+*This paper is Part VIII of the RIME program. Papers IV--VII form an
+accessibility cycle: fixed spectral geometry, accessibility
+calculus, accessibility deformation, and composition incidence. Paper VIII begins
 the object layer. Its purpose is to identify the mathematical object on which
 the RIME observables naturally live.*
 
@@ -18,7 +18,7 @@ the RIME observables naturally live.*
 
 **Problem.** Papers IV--VII repeatedly introduce structures of the same form:
 sectors, observable families, projected blocks, support shadows, commutator
-shadows, accessibility depth, jets, walls, and completion principles. The
+shadows, accessibility depth, jets, walls, and promotion limits. The
 structural question is therefore not only what these objects do, but what
 object they are attached to.
 
@@ -80,14 +80,14 @@ previous papers arise as natural constructions.
 
 What is the mathematical object studied by the RIME program?
 
-The first post-trilogy cycle has now closed:
+The Papers IV--VII accessibility cycle has now closed:
 
 | Paper | Layer | Question |
 |-------|-------|----------|
 | Paper IV | fixed spectral geometry | How are spectral layers formed by projection? |
 | Paper V | accessibility calculus | How is accessibility computed once sectors exist? |
 | Paper VI | accessibility deformation | How do sectors and accessibility data move? |
-| Paper VII | generic completion | Why is accessibility generically stable? |
+| Paper VII | incidence geometry | When do projected factors compose? |
 
 These papers follow a common pattern:
 
@@ -382,7 +382,7 @@ The status of the main constructions is:
 | weak/deformation morphisms $\mathsf{SOF}_{\mathrm{def}}$ | named dynamic gap, developed only provisionally in Paper IX |
 | $R_1/R_2/D/\mathcal J_{\mathrm{acc}}$ | natural constructions on SOF data once a filtration or smooth family is fixed |
 | cross-species examples | illustrative examples, not new computational evidence |
-| generic completion | inherited program question from Paper VII, not proved here |
+| low-order promotion | open typed problem; Paper VII proves only matrix-pair incidence and rank protection |
 
 ***
 
@@ -635,7 +635,8 @@ fixed.
 The Rubik laboratory gives the motivating SOF. The sectors are the nine QT/HT
 joint-spectral sectors. The observable families include face-turn logarithmic
 generators, QT/HT averages, and the canonical averaging operator. This single
-SOF instance supports the trilogy and the post-trilogy accessibility cycle.
+SOF instance supports several independent Rubik papers and the Papers IV--VII
+accessibility cycle.
 
 ### Quantum Gate Systems
 
@@ -684,9 +685,9 @@ the fixed spectral geometry of one sectorized observable family.
 ### Paper V
 
 Paper V studies accessibility calculus on a fixed SOF \cite{paper5}. The objects $R_1$,
-$R_2$, and $D$ are natural shadows of projected block data. Type III
-cancellation and Type IV incidence are local mechanisms inside this fixed
-SOF calculus.
+$R_2$, and $D$ are natural shadows of projected block data. Commutator
+cancellation and image--kernel incidence are local mechanisms inside this
+fixed SOF calculus, not universal accessibility types.
 
 ### Paper VI
 
@@ -697,28 +698,29 @@ these shadows under generator-set deformation.
 
 ### Paper VII
 
-Paper VII studies generic completion for accessibility SOFs \cite{paper7}. Its incidence
-variety is a high-codimension degeneracy of SOF bridge products. The Generic
-Completion Principle asks when the observable pair $(R_1,R_2)$ completes the
-first-depth invariant $D$ under richness and nondegeneracy hypotheses.
+Paper VII studies image--kernel incidence and rank protection for projected
+operator composition \cite{paper7}. It separates routed-product geometry from
+stronger word, commutator, and Lie-depth promotion questions.
 
 Thus the earlier papers are not patches of one another. They are examples of
 natural SOF structures at different levels: spectral shadow, accessibility
-calculus, deformation, and generic completion.
+calculus, deformation, and incidence geometry.
 
 ***
 
 ## Outlook
 
-### Generic Completion
+### Low-Order Promotion
 
-The completion problem remains a theorem program:
+The typed promotion problem remains a theorem program:
 
 When does $(R_1,R_2)$ determine $D$?
 
-Paper VII answers this generically away from Type IV incidence only under
-explicit richness and nondegeneracy hypotheses. Paper VIII provides the
-observable architecture in which that question can be asked across species.
+Paper VII does not answer this question. It identifies image--kernel incidence
+and rank protection at the routed-product layer, while route-to-word,
+word-to-commutator, and low-order-to-depth promotions remain open. Paper VIII
+provides the observable architecture in which typed versions of those questions
+can be asked.
 
 ### Wall Theory
 
@@ -770,7 +772,7 @@ natural constructions on SOF data.
 **Program lineage.** Paper VIII depends on Papers IV--VII. Paper IV supplies
 the fixed spectral shadow \cite{paper4}; Paper V supplies the accessibility
 calculus \cite{paper5}; Paper VI supplies deformation and jets \cite{paper6};
-Paper VII supplies generic completion \cite{paper7}.
+Paper VII supplies incidence geometry and promotion limits \cite{paper7}.
 
 **External background.** Many RIME examples use standard finite-dimensional
 representation theory and Wedderburn-Artin decomposition

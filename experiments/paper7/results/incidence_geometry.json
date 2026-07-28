@@ -1,0 +1,1409 @@
+{
+  "closed_locus": "Z={(A,B):AB=0}",
+  "configurations": [
+    {
+      "ambient_dimension": 8,
+      "fixed_double_rank_strata": [
+        {
+          "codimension": 3,
+          "dimension": 5,
+          "rank_a": 1,
+          "rank_b": 1,
+          "relative_codimension_in_rank_pair_stratum": 1
+        }
+      ],
+      "fixed_rank_a_strata": [
+        {
+          "codimension": 3,
+          "dimension": 5,
+          "rank_a": 1
+        }
+      ],
+      "label": "square_d_2",
+      "m": 2,
+      "minimizing_rank_a": [
+        1
+      ],
+      "n": 2,
+      "p": 2,
+      "type_iv_codimension": 3
+    },
+    {
+      "ambient_dimension": 18,
+      "fixed_double_rank_strata": [
+        {
+          "codimension": 9,
+          "dimension": 9,
+          "rank_a": 1,
+          "rank_b": 1,
+          "relative_codimension_in_rank_pair_stratum": 1
+        },
+        {
+          "codimension": 7,
+          "dimension": 11,
+          "rank_a": 1,
+          "rank_b": 2,
+          "relative_codimension_in_rank_pair_stratum": 2
+        },
+        {
+          "codimension": 7,
+          "dimension": 11,
+          "rank_a": 2,
+          "rank_b": 1,
+          "relative_codimension_in_rank_pair_stratum": 2
+        }
+      ],
+      "fixed_rank_a_strata": [
+        {
+          "codimension": 7,
+          "dimension": 11,
+          "rank_a": 1
+        },
+        {
+          "codimension": 7,
+          "dimension": 11,
+          "rank_a": 2
+        }
+      ],
+      "label": "square_d_3",
+      "m": 3,
+      "minimizing_rank_a": [
+        1,
+        2
+      ],
+      "n": 3,
+      "p": 3,
+      "type_iv_codimension": 7
+    },
+    {
+      "ambient_dimension": 32,
+      "fixed_double_rank_strata": [
+        {
+          "codimension": 19,
+          "dimension": 13,
+          "rank_a": 1,
+          "rank_b": 1,
+          "relative_codimension_in_rank_pair_stratum": 1
+        },
+        {
+          "codimension": 15,
+          "dimension": 17,
+          "rank_a": 1,
+          "rank_b": 2,
+          "relative_codimension_in_rank_pair_stratum": 2
+        },
+        {
+          "codimension": 13,
+          "dimension": 19,
+          "rank_a": 1,
+          "rank_b": 3,
+          "relative_codimension_in_rank_pair_stratum": 3
+        },
+        {
+          "codimension": 15,
+          "dimension": 17,
+          "rank_a": 2,
+          "rank_b": 1,
+          "relative_codimension_in_rank_pair_stratum": 2
+        },
+        {
+          "codimension": 12,
+          "dimension": 20,
+          "rank_a": 2,
+          "rank_b": 2,
+          "relative_codimension_in_rank_pair_stratum": 4
+        },
+        {
+          "codimension": 13,
+          "dimension": 19,
+          "rank_a": 3,
+          "rank_b": 1,
+          "relative_codimension_in_rank_pair_stratum": 3
+        }
+      ],
+      "fixed_rank_a_strata": [
+        {
+          "codimension": 13,
+          "dimension": 19,
+          "rank_a": 1
+        },
+        {
+          "codimension": 12,
+          "dimension": 20,
+          "rank_a": 2
+        },
+        {
+          "codimension": 13,
+          "dimension": 19,
+          "rank_a": 3
+        }
+      ],
+      "label": "square_d_4",
+      "m": 4,
+      "minimizing_rank_a": [
+        2
+      ],
+      "n": 4,
+      "p": 4,
+      "type_iv_codimension": 12
+    },
+    {
+      "ambient_dimension": 50,
+      "fixed_double_rank_strata": [
+        {
+          "codimension": 33,
+          "dimension": 17,
+          "rank_a": 1,
+          "rank_b": 1,
+          "relative_codimension_in_rank_pair_stratum": 1
+        },
+        {
+          "codimension": 27,
+          "dimension": 23,
+          "rank_a": 1,
+          "rank_b": 2,
+          "relative_codimension_in_rank_pair_stratum": 2
+        },
+        {
+          "codimension": 23,
+          "dimension": 27,
+          "rank_a": 1,
+          "rank_b": 3,
+          "relative_codimension_in_rank_pair_stratum": 3
+        },
+        {
+          "codimension": 21,
+          "dimension": 29,
+          "rank_a": 1,
+          "rank_b": 4,
+          "relative_codimension_in_rank_pair_stratum": 4
+        },
+        {
+          "codimension": 27,
+          "dimension": 23,
+          "rank_a": 2,
+          "rank_b": 1,
+          "relative_codimension_in_rank_pair_stratum": 2
+        },
+        {
+          "codimension": 22,
+          "dimension": 28,
+          "rank_a": 2,
+          "rank_b": 2,
+          "relative_codimension_in_rank_pair_stratum": 4
+        },
+        {
+          "codimension": 19,
+          "dimension": 31,
+          "rank_a": 2,
+          "rank_b": 3,
+          "relative_codimension_in_rank_pair_stratum": 6
+        },
+        {
+          "codimension": 23,
+          "dimension": 27,
+          "rank_a": 3,
+          "rank_b": 1,
+          "relative_codimension_in_rank_pair_stratum": 3
+        },
+        {
+          "codimension": 19,
+          "dimension": 31,
+          "rank_a": 3,
+          "rank_b": 2,
+          "relative_codimension_in_rank_pair_stratum": 6
+        },
+        {
+          "codimension": 21,
+          "dimension": 29,
+          "rank_a": 4,
+          "rank_b": 1,
+          "relative_codimension_in_rank_pair_stratum": 4
+        }
+      ],
+      "fixed_rank_a_strata": [
+        {
+          "codimension": 21,
+          "dimension": 29,
+          "rank_a": 1
+        },
+        {
+          "codimension": 19,
+          "dimension": 31,
+          "rank_a": 2
+        },
+        {
+          "codimension": 19,
+          "dimension": 31,
+          "rank_a": 3
+        },
+        {
+          "codimension": 21,
+          "dimension": 29,
+          "rank_a": 4
+        }
+      ],
+      "label": "square_d_5",
+      "m": 5,
+      "minimizing_rank_a": [
+        2,
+        3
+      ],
+      "n": 5,
+      "p": 5,
+      "type_iv_codimension": 19
+    },
+    {
+      "ambient_dimension": 72,
+      "fixed_double_rank_strata": [
+        {
+          "codimension": 51,
+          "dimension": 21,
+          "rank_a": 1,
+          "rank_b": 1,
+          "relative_codimension_in_rank_pair_stratum": 1
+        },
+        {
+          "codimension": 43,
+          "dimension": 29,
+          "rank_a": 1,
+          "rank_b": 2,
+          "relative_codimension_in_rank_pair_stratum": 2
+        },
+        {
+          "codimension": 37,
+          "dimension": 35,
+          "rank_a": 1,
+          "rank_b": 3,
+          "relative_codimension_in_rank_pair_stratum": 3
+        },
+        {
+          "codimension": 33,
+          "dimension": 39,
+          "rank_a": 1,
+          "rank_b": 4,
+          "relative_codimension_in_rank_pair_stratum": 4
+        },
+        {
+          "codimension": 31,
+          "dimension": 41,
+          "rank_a": 1,
+          "rank_b": 5,
+          "relative_codimension_in_rank_pair_stratum": 5
+        },
+        {
+          "codimension": 43,
+          "dimension": 29,
+          "rank_a": 2,
+          "rank_b": 1,
+          "relative_codimension_in_rank_pair_stratum": 2
+        },
+        {
+          "codimension": 36,
+          "dimension": 36,
+          "rank_a": 2,
+          "rank_b": 2,
+          "relative_codimension_in_rank_pair_stratum": 4
+        },
+        {
+          "codimension": 31,
+          "dimension": 41,
+          "rank_a": 2,
+          "rank_b": 3,
+          "relative_codimension_in_rank_pair_stratum": 6
+        },
+        {
+          "codimension": 28,
+          "dimension": 44,
+          "rank_a": 2,
+          "rank_b": 4,
+          "relative_codimension_in_rank_pair_stratum": 8
+        },
+        {
+          "codimension": 37,
+          "dimension": 35,
+          "rank_a": 3,
+          "rank_b": 1,
+          "relative_codimension_in_rank_pair_stratum": 3
+        },
+        {
+          "codimension": 31,
+          "dimension": 41,
+          "rank_a": 3,
+          "rank_b": 2,
+          "relative_codimension_in_rank_pair_stratum": 6
+        },
+        {
+          "codimension": 27,
+          "dimension": 45,
+          "rank_a": 3,
+          "rank_b": 3,
+          "relative_codimension_in_rank_pair_stratum": 9
+        },
+        {
+          "codimension": 33,
+          "dimension": 39,
+          "rank_a": 4,
+          "rank_b": 1,
+          "relative_codimension_in_rank_pair_stratum": 4
+        },
+        {
+          "codimension": 28,
+          "dimension": 44,
+          "rank_a": 4,
+          "rank_b": 2,
+          "relative_codimension_in_rank_pair_stratum": 8
+        },
+        {
+          "codimension": 31,
+          "dimension": 41,
+          "rank_a": 5,
+          "rank_b": 1,
+          "relative_codimension_in_rank_pair_stratum": 5
+        }
+      ],
+      "fixed_rank_a_strata": [
+        {
+          "codimension": 31,
+          "dimension": 41,
+          "rank_a": 1
+        },
+        {
+          "codimension": 28,
+          "dimension": 44,
+          "rank_a": 2
+        },
+        {
+          "codimension": 27,
+          "dimension": 45,
+          "rank_a": 3
+        },
+        {
+          "codimension": 28,
+          "dimension": 44,
+          "rank_a": 4
+        },
+        {
+          "codimension": 31,
+          "dimension": 41,
+          "rank_a": 5
+        }
+      ],
+      "label": "square_d_6",
+      "m": 6,
+      "minimizing_rank_a": [
+        3
+      ],
+      "n": 6,
+      "p": 6,
+      "type_iv_codimension": 27
+    },
+    {
+      "ambient_dimension": 128,
+      "fixed_double_rank_strata": [
+        {
+          "codimension": 99,
+          "dimension": 29,
+          "rank_a": 1,
+          "rank_b": 1,
+          "relative_codimension_in_rank_pair_stratum": 1
+        },
+        {
+          "codimension": 87,
+          "dimension": 41,
+          "rank_a": 1,
+          "rank_b": 2,
+          "relative_codimension_in_rank_pair_stratum": 2
+        },
+        {
+          "codimension": 77,
+          "dimension": 51,
+          "rank_a": 1,
+          "rank_b": 3,
+          "relative_codimension_in_rank_pair_stratum": 3
+        },
+        {
+          "codimension": 69,
+          "dimension": 59,
+          "rank_a": 1,
+          "rank_b": 4,
+          "relative_codimension_in_rank_pair_stratum": 4
+        },
+        {
+          "codimension": 63,
+          "dimension": 65,
+          "rank_a": 1,
+          "rank_b": 5,
+          "relative_codimension_in_rank_pair_stratum": 5
+        },
+        {
+          "codimension": 59,
+          "dimension": 69,
+          "rank_a": 1,
+          "rank_b": 6,
+          "relative_codimension_in_rank_pair_stratum": 6
+        },
+        {
+          "codimension": 57,
+          "dimension": 71,
+          "rank_a": 1,
+          "rank_b": 7,
+          "relative_codimension_in_rank_pair_stratum": 7
+        },
+        {
+          "codimension": 87,
+          "dimension": 41,
+          "rank_a": 2,
+          "rank_b": 1,
+          "relative_codimension_in_rank_pair_stratum": 2
+        },
+        {
+          "codimension": 76,
+          "dimension": 52,
+          "rank_a": 2,
+          "rank_b": 2,
+          "relative_codimension_in_rank_pair_stratum": 4
+        },
+        {
+          "codimension": 67,
+          "dimension": 61,
+          "rank_a": 2,
+          "rank_b": 3,
+          "relative_codimension_in_rank_pair_stratum": 6
+        },
+        {
+          "codimension": 60,
+          "dimension": 68,
+          "rank_a": 2,
+          "rank_b": 4,
+          "relative_codimension_in_rank_pair_stratum": 8
+        },
+        {
+          "codimension": 55,
+          "dimension": 73,
+          "rank_a": 2,
+          "rank_b": 5,
+          "relative_codimension_in_rank_pair_stratum": 10
+        },
+        {
+          "codimension": 52,
+          "dimension": 76,
+          "rank_a": 2,
+          "rank_b": 6,
+          "relative_codimension_in_rank_pair_stratum": 12
+        },
+        {
+          "codimension": 77,
+          "dimension": 51,
+          "rank_a": 3,
+          "rank_b": 1,
+          "relative_codimension_in_rank_pair_stratum": 3
+        },
+        {
+          "codimension": 67,
+          "dimension": 61,
+          "rank_a": 3,
+          "rank_b": 2,
+          "relative_codimension_in_rank_pair_stratum": 6
+        },
+        {
+          "codimension": 59,
+          "dimension": 69,
+          "rank_a": 3,
+          "rank_b": 3,
+          "relative_codimension_in_rank_pair_stratum": 9
+        },
+        {
+          "codimension": 53,
+          "dimension": 75,
+          "rank_a": 3,
+          "rank_b": 4,
+          "relative_codimension_in_rank_pair_stratum": 12
+        },
+        {
+          "codimension": 49,
+          "dimension": 79,
+          "rank_a": 3,
+          "rank_b": 5,
+          "relative_codimension_in_rank_pair_stratum": 15
+        },
+        {
+          "codimension": 69,
+          "dimension": 59,
+          "rank_a": 4,
+          "rank_b": 1,
+          "relative_codimension_in_rank_pair_stratum": 4
+        },
+        {
+          "codimension": 60,
+          "dimension": 68,
+          "rank_a": 4,
+          "rank_b": 2,
+          "relative_codimension_in_rank_pair_stratum": 8
+        },
+        {
+          "codimension": 53,
+          "dimension": 75,
+          "rank_a": 4,
+          "rank_b": 3,
+          "relative_codimension_in_rank_pair_stratum": 12
+        },
+        {
+          "codimension": 48,
+          "dimension": 80,
+          "rank_a": 4,
+          "rank_b": 4,
+          "relative_codimension_in_rank_pair_stratum": 16
+        },
+        {
+          "codimension": 63,
+          "dimension": 65,
+          "rank_a": 5,
+          "rank_b": 1,
+          "relative_codimension_in_rank_pair_stratum": 5
+        },
+        {
+          "codimension": 55,
+          "dimension": 73,
+          "rank_a": 5,
+          "rank_b": 2,
+          "relative_codimension_in_rank_pair_stratum": 10
+        },
+        {
+          "codimension": 49,
+          "dimension": 79,
+          "rank_a": 5,
+          "rank_b": 3,
+          "relative_codimension_in_rank_pair_stratum": 15
+        },
+        {
+          "codimension": 59,
+          "dimension": 69,
+          "rank_a": 6,
+          "rank_b": 1,
+          "relative_codimension_in_rank_pair_stratum": 6
+        },
+        {
+          "codimension": 52,
+          "dimension": 76,
+          "rank_a": 6,
+          "rank_b": 2,
+          "relative_codimension_in_rank_pair_stratum": 12
+        },
+        {
+          "codimension": 57,
+          "dimension": 71,
+          "rank_a": 7,
+          "rank_b": 1,
+          "relative_codimension_in_rank_pair_stratum": 7
+        }
+      ],
+      "fixed_rank_a_strata": [
+        {
+          "codimension": 57,
+          "dimension": 71,
+          "rank_a": 1
+        },
+        {
+          "codimension": 52,
+          "dimension": 76,
+          "rank_a": 2
+        },
+        {
+          "codimension": 49,
+          "dimension": 79,
+          "rank_a": 3
+        },
+        {
+          "codimension": 48,
+          "dimension": 80,
+          "rank_a": 4
+        },
+        {
+          "codimension": 49,
+          "dimension": 79,
+          "rank_a": 5
+        },
+        {
+          "codimension": 52,
+          "dimension": 76,
+          "rank_a": 6
+        },
+        {
+          "codimension": 57,
+          "dimension": 71,
+          "rank_a": 7
+        }
+      ],
+      "label": "square_d_8",
+      "m": 8,
+      "minimizing_rank_a": [
+        4
+      ],
+      "n": 8,
+      "p": 8,
+      "type_iv_codimension": 48
+    },
+    {
+      "ambient_dimension": 200,
+      "fixed_double_rank_strata": [
+        {
+          "codimension": 163,
+          "dimension": 37,
+          "rank_a": 1,
+          "rank_b": 1,
+          "relative_codimension_in_rank_pair_stratum": 1
+        },
+        {
+          "codimension": 147,
+          "dimension": 53,
+          "rank_a": 1,
+          "rank_b": 2,
+          "relative_codimension_in_rank_pair_stratum": 2
+        },
+        {
+          "codimension": 133,
+          "dimension": 67,
+          "rank_a": 1,
+          "rank_b": 3,
+          "relative_codimension_in_rank_pair_stratum": 3
+        },
+        {
+          "codimension": 121,
+          "dimension": 79,
+          "rank_a": 1,
+          "rank_b": 4,
+          "relative_codimension_in_rank_pair_stratum": 4
+        },
+        {
+          "codimension": 111,
+          "dimension": 89,
+          "rank_a": 1,
+          "rank_b": 5,
+          "relative_codimension_in_rank_pair_stratum": 5
+        },
+        {
+          "codimension": 103,
+          "dimension": 97,
+          "rank_a": 1,
+          "rank_b": 6,
+          "relative_codimension_in_rank_pair_stratum": 6
+        },
+        {
+          "codimension": 97,
+          "dimension": 103,
+          "rank_a": 1,
+          "rank_b": 7,
+          "relative_codimension_in_rank_pair_stratum": 7
+        },
+        {
+          "codimension": 93,
+          "dimension": 107,
+          "rank_a": 1,
+          "rank_b": 8,
+          "relative_codimension_in_rank_pair_stratum": 8
+        },
+        {
+          "codimension": 91,
+          "dimension": 109,
+          "rank_a": 1,
+          "rank_b": 9,
+          "relative_codimension_in_rank_pair_stratum": 9
+        },
+        {
+          "codimension": 147,
+          "dimension": 53,
+          "rank_a": 2,
+          "rank_b": 1,
+          "relative_codimension_in_rank_pair_stratum": 2
+        },
+        {
+          "codimension": 132,
+          "dimension": 68,
+          "rank_a": 2,
+          "rank_b": 2,
+          "relative_codimension_in_rank_pair_stratum": 4
+        },
+        {
+          "codimension": 119,
+          "dimension": 81,
+          "rank_a": 2,
+          "rank_b": 3,
+          "relative_codimension_in_rank_pair_stratum": 6
+        },
+        {
+          "codimension": 108,
+          "dimension": 92,
+          "rank_a": 2,
+          "rank_b": 4,
+          "relative_codimension_in_rank_pair_stratum": 8
+        },
+        {
+          "codimension": 99,
+          "dimension": 101,
+          "rank_a": 2,
+          "rank_b": 5,
+          "relative_codimension_in_rank_pair_stratum": 10
+        },
+        {
+          "codimension": 92,
+          "dimension": 108,
+          "rank_a": 2,
+          "rank_b": 6,
+          "relative_codimension_in_rank_pair_stratum": 12
+        },
+        {
+          "codimension": 87,
+          "dimension": 113,
+          "rank_a": 2,
+          "rank_b": 7,
+          "relative_codimension_in_rank_pair_stratum": 14
+        },
+        {
+          "codimension": 84,
+          "dimension": 116,
+          "rank_a": 2,
+          "rank_b": 8,
+          "relative_codimension_in_rank_pair_stratum": 16
+        },
+        {
+          "codimension": 133,
+          "dimension": 67,
+          "rank_a": 3,
+          "rank_b": 1,
+          "relative_codimension_in_rank_pair_stratum": 3
+        },
+        {
+          "codimension": 119,
+          "dimension": 81,
+          "rank_a": 3,
+          "rank_b": 2,
+          "relative_codimension_in_rank_pair_stratum": 6
+        },
+        {
+          "codimension": 107,
+          "dimension": 93,
+          "rank_a": 3,
+          "rank_b": 3,
+          "relative_codimension_in_rank_pair_stratum": 9
+        },
+        {
+          "codimension": 97,
+          "dimension": 103,
+          "rank_a": 3,
+          "rank_b": 4,
+          "relative_codimension_in_rank_pair_stratum": 12
+        },
+        {
+          "codimension": 89,
+          "dimension": 111,
+          "rank_a": 3,
+          "rank_b": 5,
+          "relative_codimension_in_rank_pair_stratum": 15
+        },
+        {
+          "codimension": 83,
+          "dimension": 117,
+          "rank_a": 3,
+          "rank_b": 6,
+          "relative_codimension_in_rank_pair_stratum": 18
+        },
+        {
+          "codimension": 79,
+          "dimension": 121,
+          "rank_a": 3,
+          "rank_b": 7,
+          "relative_codimension_in_rank_pair_stratum": 21
+        },
+        {
+          "codimension": 121,
+          "dimension": 79,
+          "rank_a": 4,
+          "rank_b": 1,
+          "relative_codimension_in_rank_pair_stratum": 4
+        },
+        {
+          "codimension": 108,
+          "dimension": 92,
+          "rank_a": 4,
+          "rank_b": 2,
+          "relative_codimension_in_rank_pair_stratum": 8
+        },
+        {
+          "codimension": 97,
+          "dimension": 103,
+          "rank_a": 4,
+          "rank_b": 3,
+          "relative_codimension_in_rank_pair_stratum": 12
+        },
+        {
+          "codimension": 88,
+          "dimension": 112,
+          "rank_a": 4,
+          "rank_b": 4,
+          "relative_codimension_in_rank_pair_stratum": 16
+        },
+        {
+          "codimension": 81,
+          "dimension": 119,
+          "rank_a": 4,
+          "rank_b": 5,
+          "relative_codimension_in_rank_pair_stratum": 20
+        },
+        {
+          "codimension": 76,
+          "dimension": 124,
+          "rank_a": 4,
+          "rank_b": 6,
+          "relative_codimension_in_rank_pair_stratum": 24
+        },
+        {
+          "codimension": 111,
+          "dimension": 89,
+          "rank_a": 5,
+          "rank_b": 1,
+          "relative_codimension_in_rank_pair_stratum": 5
+        },
+        {
+          "codimension": 99,
+          "dimension": 101,
+          "rank_a": 5,
+          "rank_b": 2,
+          "relative_codimension_in_rank_pair_stratum": 10
+        },
+        {
+          "codimension": 89,
+          "dimension": 111,
+          "rank_a": 5,
+          "rank_b": 3,
+          "relative_codimension_in_rank_pair_stratum": 15
+        },
+        {
+          "codimension": 81,
+          "dimension": 119,
+          "rank_a": 5,
+          "rank_b": 4,
+          "relative_codimension_in_rank_pair_stratum": 20
+        },
+        {
+          "codimension": 75,
+          "dimension": 125,
+          "rank_a": 5,
+          "rank_b": 5,
+          "relative_codimension_in_rank_pair_stratum": 25
+        },
+        {
+          "codimension": 103,
+          "dimension": 97,
+          "rank_a": 6,
+          "rank_b": 1,
+          "relative_codimension_in_rank_pair_stratum": 6
+        },
+        {
+          "codimension": 92,
+          "dimension": 108,
+          "rank_a": 6,
+          "rank_b": 2,
+          "relative_codimension_in_rank_pair_stratum": 12
+        },
+        {
+          "codimension": 83,
+          "dimension": 117,
+          "rank_a": 6,
+          "rank_b": 3,
+          "relative_codimension_in_rank_pair_stratum": 18
+        },
+        {
+          "codimension": 76,
+          "dimension": 124,
+          "rank_a": 6,
+          "rank_b": 4,
+          "relative_codimension_in_rank_pair_stratum": 24
+        },
+        {
+          "codimension": 97,
+          "dimension": 103,
+          "rank_a": 7,
+          "rank_b": 1,
+          "relative_codimension_in_rank_pair_stratum": 7
+        },
+        {
+          "codimension": 87,
+          "dimension": 113,
+          "rank_a": 7,
+          "rank_b": 2,
+          "relative_codimension_in_rank_pair_stratum": 14
+        },
+        {
+          "codimension": 79,
+          "dimension": 121,
+          "rank_a": 7,
+          "rank_b": 3,
+          "relative_codimension_in_rank_pair_stratum": 21
+        },
+        {
+          "codimension": 93,
+          "dimension": 107,
+          "rank_a": 8,
+          "rank_b": 1,
+          "relative_codimension_in_rank_pair_stratum": 8
+        },
+        {
+          "codimension": 84,
+          "dimension": 116,
+          "rank_a": 8,
+          "rank_b": 2,
+          "relative_codimension_in_rank_pair_stratum": 16
+        },
+        {
+          "codimension": 91,
+          "dimension": 109,
+          "rank_a": 9,
+          "rank_b": 1,
+          "relative_codimension_in_rank_pair_stratum": 9
+        }
+      ],
+      "fixed_rank_a_strata": [
+        {
+          "codimension": 91,
+          "dimension": 109,
+          "rank_a": 1
+        },
+        {
+          "codimension": 84,
+          "dimension": 116,
+          "rank_a": 2
+        },
+        {
+          "codimension": 79,
+          "dimension": 121,
+          "rank_a": 3
+        },
+        {
+          "codimension": 76,
+          "dimension": 124,
+          "rank_a": 4
+        },
+        {
+          "codimension": 75,
+          "dimension": 125,
+          "rank_a": 5
+        },
+        {
+          "codimension": 76,
+          "dimension": 124,
+          "rank_a": 6
+        },
+        {
+          "codimension": 79,
+          "dimension": 121,
+          "rank_a": 7
+        },
+        {
+          "codimension": 84,
+          "dimension": 116,
+          "rank_a": 8
+        },
+        {
+          "codimension": 91,
+          "dimension": 109,
+          "rank_a": 9
+        }
+      ],
+      "label": "square_d_10",
+      "m": 10,
+      "minimizing_rank_a": [
+        5
+      ],
+      "n": 10,
+      "p": 10,
+      "type_iv_codimension": 75
+    },
+    {
+      "ambient_dimension": 12,
+      "fixed_double_rank_strata": [
+        {
+          "codimension": 5,
+          "dimension": 7,
+          "rank_a": 1,
+          "rank_b": 1,
+          "relative_codimension_in_rank_pair_stratum": 1
+        }
+      ],
+      "fixed_rank_a_strata": [
+        {
+          "codimension": 5,
+          "dimension": 7,
+          "rank_a": 1
+        }
+      ],
+      "label": "synthetic_3_2_3",
+      "m": 3,
+      "minimizing_rank_a": [
+        1
+      ],
+      "n": 2,
+      "p": 3,
+      "type_iv_codimension": 5
+    },
+    {
+      "ambient_dimension": 12,
+      "fixed_double_rank_strata": [
+        {
+          "codimension": 5,
+          "dimension": 7,
+          "rank_a": 1,
+          "rank_b": 1,
+          "relative_codimension_in_rank_pair_stratum": 1
+        },
+        {
+          "codimension": 4,
+          "dimension": 8,
+          "rank_a": 1,
+          "rank_b": 2,
+          "relative_codimension_in_rank_pair_stratum": 2
+        },
+        {
+          "codimension": 4,
+          "dimension": 8,
+          "rank_a": 2,
+          "rank_b": 1,
+          "relative_codimension_in_rank_pair_stratum": 2
+        }
+      ],
+      "fixed_rank_a_strata": [
+        {
+          "codimension": 4,
+          "dimension": 8,
+          "rank_a": 1
+        },
+        {
+          "codimension": 4,
+          "dimension": 8,
+          "rank_a": 2
+        }
+      ],
+      "label": "small_asymmetric",
+      "m": 2,
+      "minimizing_rank_a": [
+        1,
+        2
+      ],
+      "n": 3,
+      "p": 2,
+      "type_iv_codimension": 4
+    },
+    {
+      "ambient_dimension": 24,
+      "fixed_double_rank_strata": [
+        {
+          "codimension": 13,
+          "dimension": 11,
+          "rank_a": 1,
+          "rank_b": 1,
+          "relative_codimension_in_rank_pair_stratum": 1
+        },
+        {
+          "codimension": 10,
+          "dimension": 14,
+          "rank_a": 1,
+          "rank_b": 2,
+          "relative_codimension_in_rank_pair_stratum": 2
+        },
+        {
+          "codimension": 9,
+          "dimension": 15,
+          "rank_a": 1,
+          "rank_b": 3,
+          "relative_codimension_in_rank_pair_stratum": 3
+        },
+        {
+          "codimension": 10,
+          "dimension": 14,
+          "rank_a": 2,
+          "rank_b": 1,
+          "relative_codimension_in_rank_pair_stratum": 2
+        },
+        {
+          "codimension": 8,
+          "dimension": 16,
+          "rank_a": 2,
+          "rank_b": 2,
+          "relative_codimension_in_rank_pair_stratum": 4
+        },
+        {
+          "codimension": 9,
+          "dimension": 15,
+          "rank_a": 3,
+          "rank_b": 1,
+          "relative_codimension_in_rank_pair_stratum": 3
+        }
+      ],
+      "fixed_rank_a_strata": [
+        {
+          "codimension": 9,
+          "dimension": 15,
+          "rank_a": 1
+        },
+        {
+          "codimension": 8,
+          "dimension": 16,
+          "rank_a": 2
+        },
+        {
+          "codimension": 9,
+          "dimension": 15,
+          "rank_a": 3
+        }
+      ],
+      "label": "medium_asymmetric",
+      "m": 3,
+      "minimizing_rank_a": [
+        2
+      ],
+      "n": 4,
+      "p": 3,
+      "type_iv_codimension": 8
+    },
+    {
+      "ambient_dimension": 60,
+      "fixed_double_rank_strata": [
+        {
+          "codimension": 41,
+          "dimension": 19,
+          "rank_a": 1,
+          "rank_b": 1,
+          "relative_codimension_in_rank_pair_stratum": 1
+        },
+        {
+          "codimension": 34,
+          "dimension": 26,
+          "rank_a": 1,
+          "rank_b": 2,
+          "relative_codimension_in_rank_pair_stratum": 2
+        },
+        {
+          "codimension": 29,
+          "dimension": 31,
+          "rank_a": 1,
+          "rank_b": 3,
+          "relative_codimension_in_rank_pair_stratum": 3
+        },
+        {
+          "codimension": 26,
+          "dimension": 34,
+          "rank_a": 1,
+          "rank_b": 4,
+          "relative_codimension_in_rank_pair_stratum": 4
+        },
+        {
+          "codimension": 25,
+          "dimension": 35,
+          "rank_a": 1,
+          "rank_b": 5,
+          "relative_codimension_in_rank_pair_stratum": 5
+        },
+        {
+          "codimension": 34,
+          "dimension": 26,
+          "rank_a": 2,
+          "rank_b": 1,
+          "relative_codimension_in_rank_pair_stratum": 2
+        },
+        {
+          "codimension": 28,
+          "dimension": 32,
+          "rank_a": 2,
+          "rank_b": 2,
+          "relative_codimension_in_rank_pair_stratum": 4
+        },
+        {
+          "codimension": 24,
+          "dimension": 36,
+          "rank_a": 2,
+          "rank_b": 3,
+          "relative_codimension_in_rank_pair_stratum": 6
+        },
+        {
+          "codimension": 22,
+          "dimension": 38,
+          "rank_a": 2,
+          "rank_b": 4,
+          "relative_codimension_in_rank_pair_stratum": 8
+        },
+        {
+          "codimension": 29,
+          "dimension": 31,
+          "rank_a": 3,
+          "rank_b": 1,
+          "relative_codimension_in_rank_pair_stratum": 3
+        },
+        {
+          "codimension": 24,
+          "dimension": 36,
+          "rank_a": 3,
+          "rank_b": 2,
+          "relative_codimension_in_rank_pair_stratum": 6
+        },
+        {
+          "codimension": 21,
+          "dimension": 39,
+          "rank_a": 3,
+          "rank_b": 3,
+          "relative_codimension_in_rank_pair_stratum": 9
+        },
+        {
+          "codimension": 26,
+          "dimension": 34,
+          "rank_a": 4,
+          "rank_b": 1,
+          "relative_codimension_in_rank_pair_stratum": 4
+        },
+        {
+          "codimension": 22,
+          "dimension": 38,
+          "rank_a": 4,
+          "rank_b": 2,
+          "relative_codimension_in_rank_pair_stratum": 8
+        },
+        {
+          "codimension": 25,
+          "dimension": 35,
+          "rank_a": 5,
+          "rank_b": 1,
+          "relative_codimension_in_rank_pair_stratum": 5
+        }
+      ],
+      "fixed_rank_a_strata": [
+        {
+          "codimension": 25,
+          "dimension": 35,
+          "rank_a": 1
+        },
+        {
+          "codimension": 22,
+          "dimension": 38,
+          "rank_a": 2
+        },
+        {
+          "codimension": 21,
+          "dimension": 39,
+          "rank_a": 3
+        },
+        {
+          "codimension": 22,
+          "dimension": 38,
+          "rank_a": 4
+        },
+        {
+          "codimension": 25,
+          "dimension": 35,
+          "rank_a": 5
+        }
+      ],
+      "label": "large_asymmetric",
+      "m": 5,
+      "minimizing_rank_a": [
+        3
+      ],
+      "n": 6,
+      "p": 5,
+      "type_iv_codimension": 21
+    },
+    {
+      "ambient_dimension": 16,
+      "fixed_double_rank_strata": [
+        {
+          "codimension": 7,
+          "dimension": 9,
+          "rank_a": 1,
+          "rank_b": 1,
+          "relative_codimension_in_rank_pair_stratum": 1
+        }
+      ],
+      "fixed_rank_a_strata": [
+        {
+          "codimension": 7,
+          "dimension": 9,
+          "rank_a": 1
+        }
+      ],
+      "label": "narrow_intermediate",
+      "m": 4,
+      "minimizing_rank_a": [
+        1
+      ],
+      "n": 2,
+      "p": 4,
+      "type_iv_codimension": 7
+    },
+    {
+      "ambient_dimension": 20,
+      "fixed_double_rank_strata": [
+        {
+          "codimension": 9,
+          "dimension": 11,
+          "rank_a": 1,
+          "rank_b": 1,
+          "relative_codimension_in_rank_pair_stratum": 1
+        },
+        {
+          "codimension": 6,
+          "dimension": 14,
+          "rank_a": 1,
+          "rank_b": 2,
+          "relative_codimension_in_rank_pair_stratum": 2
+        },
+        {
+          "codimension": 6,
+          "dimension": 14,
+          "rank_a": 2,
+          "rank_b": 1,
+          "relative_codimension_in_rank_pair_stratum": 2
+        },
+        {
+          "codimension": 4,
+          "dimension": 16,
+          "rank_a": 2,
+          "rank_b": 2,
+          "relative_codimension_in_rank_pair_stratum": 4
+        }
+      ],
+      "fixed_rank_a_strata": [
+        {
+          "codimension": 6,
+          "dimension": 14,
+          "rank_a": 1
+        },
+        {
+          "codimension": 4,
+          "dimension": 16,
+          "rank_a": 2
+        }
+      ],
+      "label": "wide_intermediate",
+      "m": 2,
+      "minimizing_rank_a": [
+        2
+      ],
+      "n": 5,
+      "p": 2,
+      "type_iv_codimension": 4
+    }
+  ],
+  "constructible_locus": "Zx=Z intersect {A!=0,B!=0}",
+  "field": "complex",
+  "formulas": {
+    "admissible_rank_a": "1<=r<=min(m,n-1)",
+    "admissible_rank_b": "1<=s<=min(n-r,p)",
+    "fixed_double_rank_dimension": "r(m+n-r)+s(n-r+p-s)",
+    "fixed_double_rank_relative_codimension": "rs",
+    "fixed_rank_a_codimension": "(m-r)(n-r)+pr",
+    "fixed_rank_a_dimension": "r(m+n-r)+p(n-r)"
+  },
+  "runtime": {
+    "python": "3.13.0",
+    "script_sha256": "1a7479b52dbeb7abf429cd1495d611705ea4360191be6f08cce9a75b4ea6507f"
+  },
+  "schema": "paper7.incidence-geometry.v2"
+}

@@ -1,93 +1,198 @@
-# Unified Computational Supplement for Papers I–III
+# RIME Computational Companion Archive
 
-### Spectral Decomposition, Transport Topology, Lie Accessibility, and Structural Verification in the Rubik's Cube Representation
+### Versioned Reproducibility Data, Computational Observations, Open Problems, and Historical Records
 
-**Alias**: CCS-r3
-**Date**: 2026-07-16
-**Status**: DEFINITIVE. All numerical values correspond to the post-ρ-fix canonical representation. Revision r3 corrects figure indexing, freezes the transport-symmetry audit, and consolidates claim-status upgrades.
+**Alias**: CCS v2 (Computational Companion and Status Archive)
+**Version**: 2.0
+**Date**: 2026-07-27
+**Document type**: Versioned non-paper computational companion archive
+**Status**: Published as version 2.0 at DOI `10.5281/zenodo.21616956`;
+concept DOI `10.5281/zenodo.21108196`.
 
 **WuJun Chen**<sup>∗</sup>
 
 Independent Researcher, China
 Email: dooven@outlook.com
 
-<sup>∗</sup> Code, computational supplement (CCS-r3), and experiment scripts:
-https://github.com/dooven-prime/rime-lite
+<sup>∗</sup> Code, companion archive, and experiment scripts:
+[RIME repository](https://github.com/dooven-prime/rime-lite)
 
 ***
 
-> **Revision r3 (2026-07-16).** This revision corrects the CCS figure index, freezes the inverse-closed transport-symmetry audit, and consolidates scoped claim-status upgrades for the M₂ Principle, collision-quotient wall nesting, and T7 D-stability.
+> **Archive boundary.** This archive is optional human-readable research
+> companion material. Papers I, II, and III are mathematically self-contained
+> and do not rely on it as a premise, definition source, executable
+> certificate, or claim authority. It is not a paper, theorem source, semantic
+> authority, or prerequisite for those papers. Mathematical claims must be
+> cited from the corresponding papers. The archive preserves reproducibility
+> data, computational observations, open conjectures, and versioned historical
+> records with explicit status labels. Executable certificates are controlled
+> by their declared scripts and structured artifacts; corrections affecting
+> interpretation are recorded in `HISTORY.md`.
 
-### Three-Layer Architecture
+### Independent Paper Navigation
 
-The trilogy is organized into three strictly separated layers:
+The entries below are navigation records, not a dependency chain. Papers I,
+II, and III have independent Zenodo records.
+
+| Paper | Independent title | Repository | Separate Zenodo DOI |
+|-------|-------------------|------------|---------------------|
+| I | *Spectral Sector Decomposition in the Rubik's Cube Representation: Block Spectral Structure and a Conditional Rationality Criterion* | [PDF](../papers/paper1/paper1_arxiv.pdf), [source](../papers/paper1/Paper%20I.md), BibTeX `paper1` | [10.5281/zenodo.21571403](https://doi.org/10.5281/zenodo.21571403) |
+| II | *Noncommutative Transport Topology in the Rubik's Cube Representation: Sector Non-Invariance, Direct Support, and Transport Channels* | [PDF](../papers/paper2/paper2_arxiv.pdf), [source](../papers/paper2/Paper%20II.md), BibTeX `paper2` | [10.5281/zenodo.21581072](https://doi.org/10.5281/zenodo.21581072) |
+| III | *Support-Graph Reachability and Matrix-Composition Obstructions: Image--Kernel Mismatch with a Rubik-Cube Case Study* | [PDF](../papers/paper3/paper3_arxiv.pdf), [source](../papers/paper3/Paper%20III.md), BibTeX `paper3` | [10.5281/zenodo.21583070](https://doi.org/10.5281/zenodo.21583070) |
+
+The immutable combined-release DOI
+[10.5281/zenodo.21108197](https://doi.org/10.5281/zenodo.21108197) remains
+historical provenance. It does not define the current Paper I--III
+architecture and must not be reused as the CCS v2 DOI.
+That historical combined package is a provenance record only.
+
+> **Paper II v2 routing.** The Paper II theorem spine is the exact
+> Transport--Non-Invariance Identity and direct block-locality theorem. The
+> nine-sector registration, ten-edge graph, Type I/II labels, and EP algebra
+> census are computational certificates. Block-level
+> $\operatorname{Supp}_{\mathrm{nc}}$ is the family-level maximum over all
+> three per-axis QT commutator pairs and is only a candidate localizer: its 15
+> overlap pairs contain the nine Type I labelled edges and six nonedges.
+> It is not a sufficient transport criterion.
+> Generator-family field tables, S3 negative controls, full EP algebra tables,
+> and auxiliary figures remain CCS material and are not manuscript premises.
+
+### Reproducibility Architecture
+
+The repository uses four separated layers:
 
 | Layer | Name | Files | Role | Rule |
 |-------|------|-------|------|------|
-| **1** | Papers | `papers/paper*/` | Convince | Readable. Theorems, narrative, key figures. No hardcoded numbers. |
-| **2** | CCS | `ccs/canonical_specification.md` | Freeze | Authoritative but curated. Only what papers cite. Numerical constitution. |
-| **3** | Private Raw Archive | not distributed | Record | Giant matrices, old revisions, failed experiments, pre-ρ-fix, and exploratory provenance. |
+| **1** | Papers | `papers/paper*/` | Claim | Self-contained theorem, certificate, observation, and research-program boundaries. |
+| **2** | Executable artifacts | `experiments/paper*/`, `results/` | Certify | Declared scripts, parameters, hashes, residuals, and structured outputs. |
+| **3** | CCS v2 | `ccs/canonical_specification.md` | Review | Human-readable extended data, observations, open questions, and selected history. |
+| **4** | Private raw archive | not distributed | Preserve | Giant matrices, abandoned runs, and exploratory provenance. |
 
-Layer 2 (CCS) is NOT a copy of Layer 3 — it is a curated subset, selected and formatted for citation. Layer 3 contains the full computational history, including dead ends.
-
-The main papers argue. CCS certifies. Raw archive remembers.
+CCS v2 is not a copy of the raw archive and does not replace executable
+artifacts. It is a curated review layer. The papers state their claims, the
+declared scripts and structured artifacts certify finite computations, and
+`HISTORY.md` records corrections that affect interpretation.
 
 ***
-### Citation Convention
+### Navigation and Citation Boundary
 
-> All numerical values and computational invariants are defined in the Unified Computational Supplement (CCS-r3).
+> Papers I--III do not cite CCS v2 as a scholarly or mathematical authority.
+> Internal part, table, and figure labels below are navigation aids for this
+> archive only. Paper III numerical claims are defined by its own manuscript
+> and matrix certificate.
 
-**Part-level references.** Papers cite CCS parts with Roman numeral prefixes:
+**Internal part references.** Archive-local links use Roman numeral prefixes:
 
 | Prefix | Scope | Example |
 |--------|-------|---------|
 | `CCS Part 0` | Global Reference Map (notation tables, terminology) | `(CCS Part 0)` |
 | `CCS Part 0.5` | Canonical API Surface | `(CCS Part 0.5)` |
 | `CCS-I` | Part I — Core Numerical Structures (§1, §2) | `(CCS-I §2.1)` |
-| `CCS-II` | Part II — Structural Consequences (§II.1–II.5) | `(CCS-II §II.4)` |
-| `CCS-III` | Part III — Formal Derivations (§7–§11) | `(CCS-III §10.2)` |
-| `CCS Appendix X` | Appendices A–I | `(CCS Appendix G)` |
+| `CCS-II` | Part II — Extended Computational Observations (§II.1–II.4) | `(CCS-II §II.4)` |
+| `CCS-III` | Historical derivation index; excluded from the release PDF | source provenance only |
+| `CCS Appendix X` | Appendices A–F | `(CCS Appendix F)` |
 
-**Section numbering.** Part I uses §1.x (spectral objects) and §2.x (numerical data). Part II sections are numbered §II.1–II.5. Part III sections follow paper theorem numbers (§7–§11, §8 reserved → Appendix E). Appendix subsections use letter prefixes (§A.1, §B.1, §E.1, §F.1, §I.1).
+**Section numbering.** Part I uses §1.x (spectral objects) and §2.x (numerical
+data). Part II uses §II.1–II.4 for extended observations. The historical Part
+III numbering is retained in source provenance only. Appendix subsections use
+letter prefixes (§A.1, §B.1, §E.1, §F.1).
 
-**Tables and figures.** `(CCS Table C3)`, `(CCS Fig. C0)` — the CCS figure directory (Appendix C) lists all canonical figures.
+**Tables and figures.** `(CCS Table C3)`, `(CCS Fig. C1)` — figures are
+captioned where they appear. Historical images are repository provenance and
+are not separately indexed in this release.
 
 The Terminology Convention at the end of Part 0 defines the four canonical terms: QT/HT joint-spectral sector, hybrid sector, transport-active, canonical sectorization.
 
 ***
-### Stability Layers
+### Archive Status Tags
 
-Every numerical claim is classified by its stability under recomputation:
+Every retained item must carry one of the following statuses in context:
 
-| Layer | Label | Meaning |
-|-------|-------|---------|
-| **A** | Canonical | Invariant under recomputation, generator permutation, and gauge freedom. Promoted to Specification Theorems. |
-| **B** | Numerical | Stable under recomputation with fixed parameters. Values reported to 2–3 significant digits. |
-| **C** | Exploratory | Not yet frozen. May change with methodology refinement. |
+| Status | Meaning |
+|--------|---------|
+| **Theorem / exact derivation** | Finite mathematical statement proved under explicit hypotheses; the independent paper remains the preferred citation. |
+| **Computational certificate** | Declared realization, dtype, tolerance, algorithm, artifact, and reproducible script are available. |
+| **Computational observation** | Finite pattern or numerical recognition without a full promotion certificate. |
+| **Research program** | Conjecture, proposed hierarchy, genericity question, or future experiment. |
+| **Historical / withdrawn** | Provenance only; excluded from the PDF or displayed with an explicit historical warning. |
 
 ### Box Conventions
 
-Four callout box types are used consistently throughout this specification to visually separate formal statements, frozen data, normative rules, and provisional findings:
+Callout boxes separate exact statements, registered data, warnings, and
+provisional findings. Their labels describe archive status; they do not make
+CCS v2 an independent claim authority:
 
 | Box | Style | Purpose |
 |-----|-------|---------|
 | **Theorem / Lemma / Corollary / Definition** | Blockquote `>` with bold label | Formal mathematical statement. Proofs appear inside the box, set off with *Proof.* or *Proof sketch.* |
-| **Canonical** | Blockquote `>` with **Canonical.** label | Frozen numerical or structural fact. Layer A or B. Definitive reference for all papers. |
+| **Registered** | Blockquote `>` with **Registered.** label | Finite data tied to a declared computational realization. |
 | **Warning** | Blockquote `>` with **Warning.** label | Important constraint, pitfall, or normative requirement (SHALL/MUST). Non-negotiable. |
-| **Exploratory** | Blockquote `>` with **Exploratory.** label | Not yet frozen. Layer C stability. Subject to methodology refinement. |
+| **Exploratory** | Blockquote `>` with **Exploratory.** label | Observation, conjecture, or research-program item subject to revision. |
+
+## Executive Guide
+
+This guide provides the shortest reliable reading path through the archive.
+The subsequent sections preserve tables, implementation context, figures, failed
+candidates, and research history. They do not enlarge the claims of the
+independent papers.
+
+### Current Finite Records
+
+| Record | Current status | Owning source |
+|--------|----------------|---------------|
+| Six displayed averaging layers with dimension census `(20,2,39,26,106,35)` | Computational observation; exact and conditional statements are separated in Paper I | Paper I and `experiments/paper1/validation/` |
+| Nine registered QT/HT joint-spectral sectors | Numerical registration on the declared complex128 realization | Paper II and `experiments/paper2/validation/` |
+| Symmetric ten-edge direct graph with degree sequence `(0,2,2,2,2,5,3,1,3)` | Computational certificate | Paper II |
+| Fifteen noncommutative-support candidates: nine Type I edges and six nonedges | Computational certificate; the localizer is not sufficient | Paper II |
+| EP algebra census: four $M_2(\mathbb C)$ components and four scalar components | Computational certificate supported by the finite-dimensional unital $*$-algebra argument | Paper II |
+| Five support-graph paths whose evaluated projected products are machine-zero | Computational certificate with image--kernel/block obstruction interpretation | Paper III |
+
+These five declared two-step support-graph paths form the finite Paper III
+composition-obstruction audit.
+
+### Promotion Boundaries
+
+- Numerical QT/HT commutation and clustering do not prove an exact labelled
+  joint spectral resolution.
+- Numerical recognition of rational or quadratic values does not determine an
+  exact spectral field.
+- A direct-support path does not guarantee a nonzero routed matrix product.
+- A routed product does not automatically determine a full word,
+  commutator, or Lie depth.
+- Ambient incidence codimension is a benchmark, not the codimension of a
+  representation-derived pullback.
+
+### Research Seeds Preserved Here
+
+The archive retains three concrete promotion targets: exact QH algebra
+registration; exact characteristic/minimal-polynomial certificates for
+generator-family arithmetic contrasts; and structured pullback geometry for
+representation-derived incidence. Earlier T7, commutant-restriction,
+completion, search, and spectral-triple narratives are historical records
+only.
 
 **Part 0 — Global Reference Map**
 
 ***
 ## Part 0 — Global Reference Map
 
-**Purpose.** Single-point lookup: every named mathematical object in the RIME trilogy, where it is first defined, and which papers use it. The trilogy has entered "large theory system" scale (~30 distinct objects across three papers); this map prevents terminology drift and cross-reference errors.
+**Purpose.** Human-readable lookup for registered Paper I--II numerical
+objects, implementation locations, and shared Rubik notation. The independent
+papers define their own mathematical objects and claims locally.
 
-**How to use.** For any symbol or concept name, find its canonical definition location (column 3) and usage scope (column 4). All objects trace to a single authoritative first definition. Internal CCS sections (§X.Y) and paper sections are both listed.
+**How to use.** For any symbol or concept name, use column 3 to locate the
+paper definition or the archive record and column 4 to identify its scope.
+Paper definitions control mathematical meaning; archive entries provide data
+and provenance only.
 
-**Canonical policy.** Unless otherwise stated, all sector decompositions in this trilogy are defined with respect to the QT/HT commutative algebra
-$$Z_{\mathrm{QH}}=\langle A_{18},\mathrm{QT}_{\mathrm{all}},\mathrm{HT}_{\mathrm{all}}\rangle=\langle\mathrm{QT}_{\mathrm{all}},\mathrm{HT}_{\mathrm{all}}\rangle,$$
-where $A_{18}=(2/3)\mathrm{QT}_{\mathrm{all}}+(1/3)\mathrm{HT}_{\mathrm{all}}$. Sectorizations involving auxiliary block projectors (e.g. $P_{\text{nat}}$) are treated as externally refined decompositions and are not considered canonical.
+**Registered default.** Unless otherwise stated, the archived nine-sector
+decomposition is the numerical joint-spectral registration associated with
+$$\mathcal B_{\mathrm{QH}}=\operatorname{alg}(A_{18},\mathrm{QT}_{\mathrm{all}},\mathrm{HT}_{\mathrm{all}})=\operatorname{alg}(\mathrm{QT}_{\mathrm{all}},\mathrm{HT}_{\mathrm{all}}),$$
+where $A_{18}=(2/3)\mathrm{QT}_{\mathrm{all}}+(1/3)\mathrm{HT}_{\mathrm{all}}$.
+The displayed algebraic interpretation is conditional on exact
+commuting-Hermitian registration. Sectorizations involving auxiliary block
+projectors (e.g. $P_{\text{nat}}$) are separate declared realizations.
 
 ### Layer A — Static Spectral Structure (Paper I)
 
@@ -101,105 +206,108 @@ Core object: $A = \frac{1}{|S|}\sum_{g \in S} \rho(g)$
 | $A = \frac{1}{|S|}\sum_{s \in S} \rho(s)$ | Averaging operator | Paper I §2 | I, II, III |
 | $V_\lambda$, $\lambda = 1 - k/9$ | Canonical layers (6), eigenvalue form | Paper I §3 | I, II, III |
 | $k \in \{0,1,2,3,4,6\}$ | Admissible $k$-set (6 values, $k=5$ vacant) | Paper I §3, §7.3 | I, II, III |
-| $P_i$ | Spectral projector (layer level) | Paper I §3.1 | I, II, III |
+| $P_\lambda^A$ | Orthogonal projector onto the $A$-eigenspace $V_\lambda^A$ | Paper I §3.1 | I, II |
 | $\mathcal{K}(A) = \bigcup_B \mathcal{K}_B$ | Blockwise $k$-set union formula | Paper I §7.3 | I |
 | $\chi_\lambda(s) = \operatorname{Tr}(P_\lambda \rho(s))$ | Eigenspace trace | Paper I §3.1 | I |
 | $\omega + \omega^2 + 1 = 0$ | $\mathbb{Z}_3$ phase cancellation | Paper I §4.1, §7.1 | I |
 | $h_i = \frac{1}{2}(\rho(g_i) + \rho(g_i^{-1}))$ | Per-generator Hermitian average | Paper I §7.2 | I |
-| $\operatorname{Comm}(A)$, $\operatorname{Comm}(\rho)$ | Commutant algebras (804-dim, 610-dim) | Paper I App B; CCS §2.8 | I, II |
-| $\Delta_{\operatorname{comm}} = 194$ | Commutant gap | CCS §2.8 | II |
-| Isotypic decomposition | 51 isotypic components, 59 irreducible summands | Paper I App B §B.1 | I, II |
-| $V_{5/9}^{(3,11)}$ | Multiplicity reservoir (unique $m>1$, effective rank 11) | Paper I App B §B.3 | I, II, III |
+| $V=\bigoplus_\mu V^{(\mu)}$, $C_\mu$ | Ambient $G$-isotypic decomposition and its central projectors; distinct from the $A$-spectral decomposition | Paper I App B | I |
+| $\operatorname{Tr}(P_\lambda^A C_\mu P_\lambda^A)$ | Ambient-isotypic overlap mass; not a subrepresentation multiplicity unless the projectors commute | Paper I App B | I |
+| $O$, $U_R$ | Registered orientation-preserving cubic rotation action commuting numerically with $A$; distinct from transport by $G$ | Paper I §4, App B | I |
+| $\dim\operatorname{End}_G(V)=610$ | Candidate ambient-commutant dimension; unpromoted pending exact certificate | CCS legacy §2.8 | provenance only |
 
 ### Layer B — Discrete Transport Structure (Paper II)
 
-Core object: $K_{\alpha\beta} = \max_g \|P_\alpha \rho(g) P_\beta\|_F$
+Core object: $K^S_{\beta\alpha} = \max_{s\in S} \|Q_\beta \rho(s) Q_\alpha\|_F$
 
 | Symbol | Concept | First Defined | Used In |
 |--------|---------|--------------|---------|
-| $S1$–$S9$ | 9 QT/HT joint-spectral sectors (legacy: primitive sectors) | Paper I §3; Paper II §2 | I, II, III |
-| $Z_{\mathrm{QH}}=\operatorname{Center}\{A, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\mathrm{all}}\}$ | QT/HT commutative center (joint diagonalization) | Paper II §2 | II, III |
+| $S1$–$S9$ | Nine numerically registered QT/HT joint-spectral sectors | Paper II §2 | II, III |
+| $\mathcal B_{\mathrm{QH}}=\operatorname{alg}(A, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\mathrm{all}})$ | Conditional exact algebra associated with the numerically commuting QT/HT registration; not identified with the full group commutant | Paper II §2 | II, III |
 | $\mathrm{QT}_{\mathrm{all}}$, $\mathrm{HT}_{\mathrm{all}}$ | Quarter-turn / half-turn total averages | Paper II §2 | II, III |
-| $P_\alpha$ | QT/HT joint-spectral sector projector | Paper II §2 | II, III |
-| $K_{\alpha\beta} = \max_g \|P_\alpha \rho(g) P_\beta\|_F$ | Transport norm | Paper II §3.1 | II, III |
-| $\operatorname{Supp}_{\mathrm{nc}}(\alpha)$ | Noncommutative support | Paper II §4.3 | II, III |
+| $Q_\alpha$ | QT/HT joint-spectral sector projector; not assumed $G$-invariant | Paper II §2 | II, III |
+| $K^S_{\beta\alpha} = \max_{s\in S} \|Q_\beta \rho(s) Q_\alpha\|_F$ | Direct generator-transport norm | Paper II §3.1 | II, III |
+| $\operatorname{Supp}_{\mathrm{nc}}(\alpha)$ | Thresholded family-level block localizer using the maximum over all three per-axis QT commutator pairs; Type I labels require overlap by definition, but overlap is not sufficient | Paper II §4 | II |
 | $\|[\mathrm{QT}^0, \mathrm{QT}^1]\|_b$ | Per-block QT commutator norm | Paper II §4.2 | II, III |
 | $\mathrm{QT}^a$ ($a \in \{0,1,2\}$) | Per-axis quarter-turn averaging operators | Paper II App A | II, III |
-| Type I / Type II transport | Noncommutative mixing / Commutative permutation | Paper II §4.4 | II, III |
-| $\mathrm{CP}$ permutation channel | S8$\leftrightarrow$S9 Type II ($K=2.83$) | Paper II §4.4, App B | II |
-| $A_{\mathrm{EP}} \cong M_2(\mathbb{C})^4 \oplus M_1(\mathbb{C})^4$ | EP block algebra (20-dim, 3 transport-active $M_2$ components) | Paper II §5.1 | II, III |
-| M₂ Principle | In the canonical Rubik realization, noncommutative simple components carry Type I transport and Lie curvature, while the $M_2$ summands of $A_{\mathrm{EP}}$ impose the compatible-refinement obstruction; the unique Type II CP permutation edge is recorded separately | Paper II §5; CCS Spec Theorem S4 | II, III |
-| Refinement obstruction lattice | M₂ overlap caps refinement at 9 sectors | Paper II §6 | II |
-| Hub / Star topology | S6 primary hub (deg 5), S7 secondary (deg 3) | Paper II §3.4 | II, III |
-| S1 isolation | $V_1$ is the unique $G$-invariant proper subrepresentation | Paper II §3.6 | II, III |
-| G-determined / Center-determined / S-conditioned | Three-level invariance hierarchy | Paper II §7.1 | II, III |
-| $\pi: \operatorname{End}_G(V) \to \bigoplus_\lambda \operatorname{End}_G(V_\lambda)$ | Commutant restriction map ($\ker=0$, $\operatorname{coker}=356$) | Paper II §5.2; CCS §2.9 | II |
-| $T_{\alpha\beta}(g) = P_\alpha \rho(g) P_\beta$ | Individual generator transport (pre-max) | Paper II §3.1 | II, III |
+| Type I / Type II transport | Post-certification labels for the nine shared-noncommutative-support edges and the one CP exception; not universal sufficient criteria | Paper II §4 | II |
+| $\mathrm{CP}$ permutation channel | Registered S8$\leftrightarrow$S9 Type II edge ($K=2.83$) | Paper II §4 | II |
+| $A_{\mathrm{EP}} \cong M_2(\mathbb{C})^4 \oplus M_1(\mathbb{C})^4$ | Computational EP block algebra census (20-dimensional with 8-dimensional center) | Paper II §4 | II |
+| QH refinement boundary | Conditional minimality only inside the declared commuting QH algebra; no global maximal-refinement theorem | Paper II §5 | II |
+| Hub pattern | Sparse ten-edge graph with unique degree-five hub S6; the graph is not a star | Paper II §3.4 | II, III |
+| S1 isolation | Machine-zero off-diagonal direct transport in the canonical audit; exact $G$-invariance remains unproved | Paper II §4 | II |
+| Generator-family comparison | Extended computational census retained in CCS; not part of the Paper II theorem spine | CCS Part II | CCS only |
+| $T_{\beta\alpha}(g) = Q_\beta \rho(g) Q_\alpha$ | Generator transport block from source $\alpha$ to target $\beta$ | Paper II §3.1 | II, III |
+| $\sum_{\beta\ne\alpha}\|T_{\beta\alpha}(g)\|_F^2=\frac12\|[\rho(g),Q_\alpha]\|_F^2$ | Off-diagonal transport--non-invariance identity | Paper II Prop. 3.5 | II, III |
 
-### Layer C — Differential / Lie Accessibility (Paper III)
+### External Independent Paper III
 
-Core object: $\kappa_1(P_\alpha,P_\beta) = \max_{g,h} \|P_\alpha [A_g, A_h] P_\beta\|_F$
+The independent Paper III defines its support graph, projected composition
+operators, image--kernel obstruction, local promotion criteria, and Rubik
+matrix certificate in its own manuscript. The CCS does not define, number, or
+certify that theorem spine.
+
+<!-- Historical object map excluded from the current CCS output.
 
 | Symbol | Concept | First Defined | Used In |
 |--------|---------|--------------|---------|
-| $A_g = \log \rho(g)$ | Lie generator (principal matrix logarithm) | Paper III §2.4 | III |
-| $\mathcal{L} = \operatorname{Lie}\{A_g\}$ | Lie algebra generated by $\{A_g\}$ | Paper III §2.4 | III |
-| $\kappa_0(\alpha,\beta) = \max_g \|P_\alpha A_g P_\beta\|_F$ | Gradient transport (depth 0) | Paper III §3.2 | III |
-| $\kappa_1(\alpha,\beta) = \max_{g,h} \|P_\alpha [A_g, A_h] P_\beta\|_F$ | Curvature transport (depth 1) | Paper III §3.3 | III |
-| $\kappa_d(\alpha,\beta)$ | Lie accessibility at depth $d$ | Paper III §3.4 | III |
-| Pure curvature channel | $\kappa_0 \approx 0$, $\kappa_1 > 0$ (7 total, all within-block) | Paper III §3.3 | III |
-| Lemma 0 | Isotypic support necessity (Schur's lemma) | Paper III §2.6 | III |
-| Lemma 1 | Lie-Generated Support Invariance | Paper III §4.1 | III |
-| **T7 morphism** | $K=\kappa_d=0$ for all $d$, yet reachable via compositional accessibility | Paper III §5.1 | II, III |
-| T7 Theorem | Compositional accessibility $\supsetneq$ Lie-generated accessibility (under C1–C3) | Paper III §5.2 | III |
-| C1 / C2 / C3 | T7 sufficient conditions | Paper III §5.2 | III |
-| Hybrid sector | QT/HT joint-spectral sector spanning $\geq 2$ blocks | Paper III §2.5 | II, III |
-| Transport-active hybrid | Hybrid sector sharing irrep support with sectors in both blocks | Paper III §2.5 | III |
-| Inert hybrid | Spectrally hybrid but transport-inactive (no shared irrep) | Paper III §2.5, App B | III |
-| $\mathcal{T}$, $\overline{\mathcal{T}}$ | Transport category, compositional accessibility | Paper III §4.4, §7 | III |
-| T7 Principle | Compositional accessibility strictly exceeds Lie-generated accessibility | Paper III §7.3 | III |
-| Lie-generated accessibility $\subsetneq$ compositional accessibility | Accessibility hierarchy | Paper III §1.3 | III |
+| $\Gamma_S$ | Direct support graph defined by nonzero $Q_i\rho(s)Q_j$ blocks | Paper III T1 | II, III |
+| $\mathcal C_{ikj}(g_2,g_1)$ | Projected two-step composition $Q_i\rho(g_2)Q_k\rho(g_1)Q_j$ | Paper III T3 | III |
+| Composition graph | Endpoint relation certified by a nonzero projected product | Paper III T3 | III |
+| Image--Kernel Criterion | $\operatorname{im}(Q_k\rho(g_1)Q_j)\subseteq\ker(Q_i\rho(g_2)Q_k)$ is equivalent to zero composition for fixed witnesses | Paper III Theorem C | III |
+| Disjoint Endpoint Block-Support Obstruction | Block-preserving maps and block-diagonal projectors cannot connect disjoint endpoint block supports | Paper III Theorem D | III |
+| Canonical five witnesses | Five support-graph paths with order-one edge maxima and machine-zero projected products | Paper III Proposition E; CCS §2.5 | III |
+| Promotion Problem | Additional hypotheses under which graph reachability implies nonzero composition | Paper III Open Problem F; formerly T7 | III |
+| First-version $\kappa_d$/T7 diagnostics | Archived provenance; not support for the revised theorem spine | CCS legacy §§2.3--2.7, Part III | provenance only |
+
+-->
 
 ### Prototypes, Controls, and Cross-Cutting
 
 | Symbol | Concept | First Defined | Used In |
 |--------|---------|--------------|---------|
-| S₃ nat$\oplus$reg (9-dim) | C0 negative control (3 sectors, 0 T7, K diagonal) | Paper III §6.1 | II, III |
-| S₃ reg$\oplus$reg (12-dim) | C0 negative control (3 sectors, 0 T7, all hybrid) | Paper III §6.2 | II, III |
-| N=2 pocket cube (72-dim) | Negative control (0 hybrid, 0 T7) | Paper III App C | III |
-| S1–S6 (Specification Theorems) | Six empirical structural laws | CCS §II.5 | I, II, III |
-| Unified Structural Picture | Dependency diagram: G-determined → S-conditioned → T7 | CCS §II.5 | I, II, III |
+| S₃ nat$\oplus$reg (9-dim) | Archived first-version sector-invariance control; not matrix-composition evidence | excluded source provenance | provenance only |
+| S₃ reg$\oplus$reg (12-dim) | Archived first-version sector-invariance control; not matrix-composition evidence | excluded source provenance | provenance only |
+| N=2 pocket cube (72-dim) | Archived first-version graph/kappa control; not matrix-composition evidence | CCS legacy control | provenance only |
+| Archived S1–S6 summaries | First-version empirical summaries; current status is determined item by item | CCS legacy §II.5 | archive only |
+| Cross-paper comparison path | Spectral sectors → direct support graph → projected composition audit | Independent Papers I--III | comparison only |
 | Canonical layer keys | $\lambda = 1-k/9$: $[1, 8/9, 7/9, 2/3, 5/9, 1/3]$ | CCS Part 0.5 | I, II, III |
 | $m = |S|/2$ | Effective generator count | Paper I §7.3 | I |
 | Face-symmetric / symmetry-broken | Generator family classification | Paper I §7.4 | I, II |
-| $\mathbb{Q} \to \mathbb{Q}(\sqrt{5})$ | Rational-to-irrational phase transition | Paper I §7.4; Paper II §8 | I, II |
+| Registered arithmetic contrast | Historical generator-family scans with values numerically recognized in $\mathbb{Q}$ or $\mathbb{Q}(\sqrt{5})$ | CCS Part II | archive only |
 
 ### Terminology Convention
 
 | Term | Definition |
 |------|------------|
-| **QT/HT joint-spectral sector** | An indecomposable joint eigenspace of the canonical QT/HT commutative algebra $Z_{\mathrm{QH}}=\langle A_{18}, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\mathrm{all}}\rangle$. There are 9 sectors, labelled S1–S9. The legacy term "primitive sector" refers to the same object in the trilogy. |
+| **QT/HT joint-spectral sector** | One of the nine numerical joint-spectral clusters registered from the declared QT/HT averages. Under exact commuting-Hermitian registration, these become the joint spectral subspaces associated with primitive spectral idempotents of the generated commutative algebra. |
 | **hybrid sector** | A QT/HT joint-spectral sector whose projector has nonzero support on more than one block. There are 6 hybrid sectors: S1 (cp+ep), S3 (ep+eo), S4 (ep+co), S6 (ep+eo), S7 (cp+ep+co+eo), S9 (cp+co). S7 is the unique all-block hybrid spanning all four blocks. |
 | **transport-active** | A sector pair $(\alpha, \beta)$ is transport-active if $K_{\alpha\beta} > 0$ (non-zero one-step transport). All 10 direct edges are block-preserving. |
-| **canonical sectorization** | The 9-sector decomposition defined by $Z_{\mathrm{QH}}=\operatorname{Center}\{A, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\mathrm{all}}\}$ without auxiliary block projectors. Sectorizations involving additional projectors (e.g. $P_{\text{nat}}$) are externally refined and non-canonical. |
+| **registered QH sectorization** | The nine-sector numerical decomposition obtained from the declared QT/HT pair. Exact commutation is a hypothesis for the corresponding algebraic joint-resolution statement. It is not a full-$G$ commutant decomposition. |
 
 **Geometric & move conventions** (coordinate system, cubie ordering, generator encoding, action direction, block decomposition, numerical tolerances) are maintained in `docs/conventions.md`.
 
 ***
-**Part 0.5 — Canonical API Surface**
+**Part 0.5 — Registered API Surface**
 
 ***
-## Part 0.5 — Canonical API Surface
+## Part 0.5 — Registered API Surface
 
-**Purpose.** Establish the authoritative mapping between mathematical objects, their canonical computational interfaces, and their stability guarantees. This section is the binding between paper notation, code API, and numerical data — it answers "which function produces this value and can I trust it?"
+**Purpose.** Record the current mapping between mathematical notation,
+computational interfaces, and archived numerical outputs. This section answers
+which implementation produced a value; it does not make that implementation a
+mathematical definition.
 
-**Scope.** Every function listed here is the sole authoritative source for its return value. No paper or figure script SHALL compute the corresponding quantity through any other code path.
+**Scope.** Functions listed here are the registered v2 implementation entry
+points. Alternative implementations may be used when their conventions,
+parameters, and comparison residuals are declared.
 
 **Dependencies.** `rime.cubieoperator.CubieSpectralOperator` (primary), `rime.cubie.CubieMove` (generator enumeration), `rime.spectral_utils` (S₃ negative controls, joint diagonalization helpers).
 
 **Outputs.** All numerical values in CCS Parts I–II are produced by the functions listed below.
 
-*This part binds paper notation to code — every function listed here is the sole authoritative source for its return value.*
+*This part records the current paper-to-code mapping; executable scripts and
+structured artifacts remain the computational certificate layer.*
 
 ### 0.5.1 Spectral Objects
 
@@ -216,17 +324,17 @@ Core object: $\kappa_1(P_\alpha,P_\beta) = \max_{g,h} \|P_\alpha [A_g, A_h] P_\b
 
 | Mathematical object | Canonical API | Returns | Stability |
 |---------------------|---------------|---------|-----------|
-| Transport tensor K | `.transport_kappa(projectors, compute_kappa1=True)` | `tuple[K, kappa0, kappa1]` | **B** |
-| κ at depth d | `.kappa_depth(d)` | `ndarray` — κ_d matrix | **B** (d≤1), **C** (d≥2) |
-| Lie generators A_g | `.compute_lie_generators()` | `list[ndarray]` — 18 skew-Hermitian matrices (principal log of unitary ρ(g)) | **A** |
+| Direct-support matrix plus legacy arrays | `.transport_kappa(projectors, compute_kappa1=True)` | `tuple[K, kappa0, kappa1]`; only $K$ is the current direct-support object | **B/C** |
+| First-version κ array at depth d | `.kappa_depth(d)` | archived principal-log diagnostic; not current exact Lie depth | **C** |
+| Principal-log registration | `.compute_lie_generators()` | `list[ndarray]` — 18 numerically skew-Hermitian matrices for the declared branch | **B/C** |
 | ρ(g) matrices | `.rho_matrices()` | `list[ndarray]` — 18 unitary representation matrices | **A** |
 
 ### 0.5.3 Algebraic Structure
 
 | Mathematical object | Canonical API | Returns | Stability |
 |---------------------|---------------|---------|-----------|
-| Full commutant basis | `.full_commutant_combinatorial()` | `ndarray` — 610 orthonormal basis vectors | **A** |
-| Per-layer commutant | `.commutant_algebra()` | per-layer dimensions | **A** |
+| Ambient commutant candidate | `.full_commutant_combinatorial()` | numerical/combinatorial candidate basis of dimension 610; exact certificate still required | **C** |
+| Compressed spectral-layer commutants | `.commutant_algebra()` | withdrawn layerwise interpretation; archive compatibility only | **C** |
 | Block projectors | `BLOCK_RANGES` (in `rime.cubie`) | block index slices | **A** |
 | QT/HT per-axis ops | `.build_per_axis_ops()` | QT⁰,QT¹,QT², HT⁰,HT¹,HT² | **A** |
 
@@ -236,7 +344,9 @@ Core object: $\kappa_1(P_\alpha,P_\beta) = \max_{g,h} \|P_\alpha [A_g, A_h] P_\b
 |---------------------|---------------|---------|-----------|
 | S₃ representations | `rime.spectral_utils.build_s3_*_rep()` | `ndarray` — S₃ irrep matrices | **A** |
 | Joint diagonalization | `rime.spectral_utils.joint_diag_sectors()` | sector projectors | **A** |
-| T7 detection | `rime.spectral_utils.find_t7_pairs()` | T7 morphism list | **B** |
+| Two-step projected product maximum | `rime.spectral_utils.max_two_step_composition()` | maximum Frobenius norm and maximizing generator pair | **B** |
+| Graph-only candidate enumeration | `rime.spectral_utils.find_graph_only_two_step_pairs()` | endpoint/intermediate triples requiring matrix audit | **B** |
+| First-version T7 detector | `rime.spectral_utils.find_t7_pairs()` | archived support-level interpretation; not a morphism certificate | **C** |
 
 ### 0.5.5 Generator Enumeration
 
@@ -245,16 +355,25 @@ Core object: $\kappa_1(P_\alpha,P_\beta) = \max_{g,h} \|P_\alpha [A_g, A_h] P_\b
 | 18 face-turn generators | `CubieMove.prim_moves` | `list[CubieMove]` | **A** |
 | Generator weighting | `A_18 = (12 QT_all + 6 HT_all) / 18` | Definitional identity | **A** |
 
-**Stability key**: **A** = invariant under recomputation, generator permutation, gauge freedom. **B** = stable with fixed parameters (±tolerance). **C** = exploratory, not frozen.
+**Legacy stability key**: **A** = invariant under the listed recomputation,
+permutation, and gauge checks; **B** = stable with fixed parameters and the
+declared tolerance sweep; **C** = exploratory or withdrawn. These tags describe
+the archived implementation record and are not the current four-level paper
+claim status.
 
-**Rule.** No experiment script, figure script, or paper SHALL compute any of the above quantities through a code path that bypasses the canonical API listed here. This section defines which APIs are authoritative; private raw archives retain provenance but do not override CCS values.
+**Implementation boundary.** The listed APIs are the registered implementation
+paths used to generate this archive. Alternative implementations are allowed
+when they declare conventions, parameters, tolerances, and comparison
+residuals. The independent papers and their claim-specific executable
+artifacts, not this API table, control current claims and certificates.
 
 **Part I — Core Numerical Structures**
 
 ***
 ## Part I — Core Numerical Structures
 
-**Purpose.** Define the mathematical objects and freeze their canonical numerical values. These are the referents of every theorem in the trilogy.
+**Purpose.** Register the numerical objects used by Papers I--II. These data
+do not replace paper-level proofs and do not govern revised Paper III.
 
 **Scope.** Operators, eigenspaces, sectors, projectors at 6-layer ($A_{18}$) and 9-sector (Center) resolution. All canonical tables live in this Part.
 
@@ -262,7 +381,8 @@ Core object: $\kappa_1(P_\alpha,P_\beta) = \max_{g,h} \|P_\alpha [A_g, A_h] P_\b
 
 **Outputs.** All objects and numerical values referenced by Parts II–III and the papers.
 
-![(CCS Fig. C0) Structural pipeline: trilogy weld — ρ(g)→(QT_all,HT_all)→{Sα}→A18 collision quotient {Vλ}→K→κ₀/κ₁→T7.](../figures/ccs/fig_c0_structural_pipeline.png)
+**CCS Fig. C0 omitted.** The first-version combined pipeline is not part of
+the current reproducibility compendium.
 
 
 ### 1.1 Representation Space
@@ -294,23 +414,29 @@ where $\mathrm{QT}_{\mathrm{all}} = \sum_{a \in \{x,y,z\}} \mathrm{QT}^a$, $\mat
 
 $$\mathrm{QT}^a = \tfrac{1}{2}(\rho(+a) + \rho(-a)),\qquad \mathrm{HT}^a = \rho(2a)$$
 
-$A$ is Hermitian (since $\rho$ is orthogonal and $S = S^{-1}$, Proposition 2.1 of \cite{paper1}).
+$A$ is Hermitian because the declared generator family is inverse closed and
+the representation is unitary; Paper I states the general result with its
+hypotheses.
 
-The canonical sectorization is governed by the commuting QT/HT algebra:
+In the declared complex128 realization, the QT/HT averages are registered as
+numerically commuting. Conditional on exact commutation, the corresponding
+commutative algebra is
 
-$$[\mathrm{QT}_{\mathrm{all}},\mathrm{HT}_{\mathrm{all}}]=0,\qquad
-Z_{\mathrm{QH}}=\langle A_{18},\mathrm{QT}_{\mathrm{all}},\mathrm{HT}_{\mathrm{all}}\rangle
+$$Z_{\mathrm{QH}}=\langle A_{18},\mathrm{QT}_{\mathrm{all}},\mathrm{HT}_{\mathrm{all}}\rangle
        =\langle \mathrm{QT}_{\mathrm{all}},\mathrm{HT}_{\mathrm{all}}\rangle.$$
 
-The nine sectors in §1.4 are the joint eigenspaces of this algebra. The six
-canonical layers in §1.3 are the collision quotient obtained by the linear
-projection
+The nine sectors in §1.4 are numerical joint-spectral clusters. Conditional
+on exact registration, the six displayed layers are the collision quotient
+obtained by the linear projection
 
 $$L_{2/3}(q,h)=(2q+h)/3.$$
 
 ### 1.3 Six Canonical Layers
 
-Eigenspaces of $A_{18}$. Eigenvalues take the rational form $\lambda = 1 - k/9$. Equivalently, these are the collision quotients of the nine QT/HT joint-spectral sectors under $L_{2/3}$.
+The declared computation registers six eigenspaces of $A_{18}$ against the
+displayed rational values $\lambda = 1-k/9$. Conditional on exact QT/HT
+registration, these are the collision quotients of the nine joint-spectral
+sectors under $L_{2/3}$.
 
 **Table C2 — Six Canonical Layers.**
 
@@ -323,13 +449,18 @@ Eigenspaces of $A_{18}$. Eigenvalues take the rational form $\lambda = 1 - k/9$.
 | 4 | 5/9 | 106 | $V_{5/9}$ | cp(24) + ep(72) + co(3) + eo(7) | A |
 | 6 | 1/3 | 35 | $V_{1/3}$ | cp(32) + co(3) | A |
 
-$k = 5$ ($\lambda = 4/9$) is structurally absent; see §1.7 for the block-by-block proof.
+$k = 5$ ($\lambda = 4/9$) is absent from the registered block census; see
+§1.7 for the exact cp/ep reductions and qualified co/eo audit.
 
 Canonical layer keys: $[1, 8/9, 7/9, 2/3, 5/9, 1/3]$ ($\lambda = 1 - k/9$, $k \in \{0,1,2,3,4,6\}$).
 
 ### 1.4 Nine QT/HT Joint-Spectral Sectors
 
-Minimal joint eigenspaces of $\operatorname{Center}\{A_{18}, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\mathrm{all}}\}$, equivalently of the commuting QT/HT algebra $Z_{\mathrm{QH}}$. Sectors are the finest spectral resolution achievable within the canonical commutative center.
+These nine numerical clusters are produced by the declared QT/HT joint
+diagonalization and registration policy. For commuting Hermitian QT/HT
+operators, the corresponding projectors are primitive spectral idempotents of
+the generated commutative algebra. This does not assert a finest orthogonal
+sectorization in all of $\operatorname{End}(V)$.
 
 **Table C3 — Nine QT/HT Joint-Spectral Sectors.**
 
@@ -349,13 +480,19 @@ Sector ordering: CCS canonical — sort by $k = 9(1-\lambda_{18})$ ascending, th
 
 $V_{5/9}$ splits into 3 sectors (S5, S6, S7). $V_{1/3}$ splits into 2 sectors (S8, S9). Thus the six-layer $A_{18}$ decomposition is a coarse collision quotient of the nine-sector QT/HT joint spectrum.
 
-![(CCS Fig. C1) Canonical 18-full spectrum: eigenvalue ladder with multiplicities (left) and 9-sector decomposition within each layer (right).](../figures/ccs/fig_c1_canonical_spectrum.png)
+![(CCS Fig. C1) Current source-addressed blockwise spectral census. The six
+numerical clusters are registered against the displayed values; per-block
+status remains as stated in §1.5.](../figures/ccs/fig_c1_canonical_spectrum.png)
 
 
 ***
 ### 1.5 Block-Level Spectral Derivations
 
-This section provides the complete first-principles derivation of each block's spectrum. These derivations are the computational foundation for the Structure Theorem of Paper I (§3.5–§3.6): $\operatorname{Spec}(A) = \bigcup_B \operatorname{Spec}(A_B)$.
+This section preserves the finite block reductions and orientation-block
+audits behind the registered census. The cp and ep reductions are exact
+combinatorial calculations. The co and eo sections retain their explicit
+numerical inputs. Paper I, rather than this archive, owns the block-union
+theorem and its proof.
 
 #### 1.5.1 The cp Block: Q₃ Hypercube Bose–Mesner Algebra
 
@@ -423,13 +560,23 @@ With $(1/18)S_{12}$ eigenvalues $\{1, 7/9, 2/3, 5/9\}$, we obtain:
 
 $$\mathcal{K}_{\mathrm{ep}} = \{0, 2, 3, 4\}, \qquad \text{multiplicities: } 12 \times (1, 3, 2, 6) = (12, 36, 24, 72)$$
 
-The commuting algebra of $JJ^{\top}$ is a 3-dimensional non-classical association scheme — it does not correspond to a Johnson or Hamming scheme. Its classification within the known taxonomy of association schemes is an open combinatorial problem (CCS Appendix E, §E.2).
+The matrix $JJ^{\top}$ generates a finite commutative adjacency algebra. This
+archive does not formally identify that algebra with a specific new
+association scheme; reconstructing the relevant coherent-configuration or
+association-scheme object remains an open combinatorial problem.
 
-#### 1.5.3 The co Block: O_h Symmetry + Schur Reduction (Proposition)
+#### 1.5.3 The co Block: Symmetry-Guided Computation
 
-The corner-orientation block is the only block where generator matrix entries live in $\mathbb{Z}[\omega]$ rather than $\mathbb{Z}$ ($\omega = e^{2\pi i/3}$). Despite the complex entries, the spectrum is fully determined by cube symmetry. The derivation below is a **theorem-grade result** — O_h symmetry and Schur's lemma force the spectral stratification, at the same conceptual level as the rationality theorem of \cite{paper1} and the M₂ obstruction principle of \cite{paper2}.
+The corner-orientation block is the only block where generator matrix entries
+live in $\mathbb{Z}[\omega]$ rather than $\mathbb{Z}$, with
+$\omega=e^{2\pi i/3}$. Cube symmetry constrains the possible multiplicities,
+but it does not force the displayed accidental degeneracy. The final spectrum
+therefore remains a symmetry-guided computational proposition.
 
-**Proposition (CO Analytic Spectrum).** Let $A_{\mathrm{co}} = \frac{1}{18} \sum_{s \in S} \rho_{\mathrm{co}}(s)$ where $S$ is the set of 18 face-turn generators. Then:
+**Computational Proposition (registered CO spectrum).** Let
+$A_{\mathrm{co}}=\frac1{18}\sum_{s\in S}\rho_{\mathrm{co}}(s)$ for the
+declared 18 face-turn realization. The symmetry decomposition and direct
+matrix audit register:
 
 1. The permutation representation of the cube symmetry group $O$ on the 8 corners decomposes as $\chi_{\mathrm{corners}} = A_1 \oplus A_2 \oplus T_1 \oplus T_2$ (irrep dimensions $1 + 1 + 3 + 3 = 8$).
 
@@ -440,7 +587,7 @@ The corner-orientation block is the only block where generator matrix entries li
    $$\operatorname{Spec}(A_{\mathrm{co}}) = \{\tfrac{2}{3}, \tfrac{2}{3}, \tfrac{5}{9}^{(3)}, \tfrac{1}{3}^{(3)}\}, \qquad
    \mathcal{K}_{\mathrm{co}} = \{3, 4, 6\}, \qquad (d_3, d_4, d_6) = (2, 3, 3)$$
 
-**Proof sketch.**
+**Audit sketch.**
 
 *Diagonal & trace.* Tr$(\rho_{\mathrm{co}}(g)) = 4$ for all 18 generators: each face turn fixes the 4 corners on the opposite face (no orientation change → $+1$ contribution for each fixed corner). Hence Tr$(A_{\mathrm{co}}) = 4$ and $A_{\mathrm{co}}[i,i] = 9/18 = 1/2$ (each corner is fixed by 9 generators: 6 on the two faces containing it, plus 3 opposite-face half-turns that preserve orientation).
 
@@ -482,16 +629,31 @@ $$\lambda = \frac{1}{2} + \frac{\mu}{18}: \quad
 
 *Trace consistency.* $2 \cdot \frac{2}{3} + 3 \cdot \frac{5}{9} + 3 \cdot \frac{1}{3} = \frac{4}{3} + \frac{5}{3} + 1 = 4 = \operatorname{Tr}(A_{\mathrm{co}})$. ✓
 
-*Rationality.* All three eigenvalues are rational despite the $\mathbb{Z}[\omega]$ matrix entries. The per-face phase cancellation $\omega + \omega^2 + 1 = 0$ eliminates all non-rational cyclotomic components in the averaged operator — this identity operates at the level of the matrix entries before diagonalization.
+*Local arithmetic identity.* The complete-face phase sum satisfies
+$\omega+\omega^2+1=0$. This exact local cancellation is compatible with the
+displayed rational labels, but it is not by itself a compression-trace
+certificate or a proof of rationality for the full averaging spectrum.
 
-![(CCS Fig. C10) Phase cancellation: Z₃ roots of unity on the unit circle, and per-face move accounting.](../figures/ccs/fig_c10_phase_cancellation.png)
+![(CCS Fig. C10) Current rendering of the exact local roots-of-unity identity,
+with its full-spectrum boundary stated in the
+figure.](../figures/ccs/fig_c10_phase_cancellation.png)
 
 
-**Status.** This is a **theorem-grade result**: O_h symmetry + Schur reduction → 3-level spectral stratification with k-set $\{3, 4, 6\}$. The only non-axiomatic input is the accidental $A_1/A_2$ degeneracy (verified numerically). The structural mechanism — cube symmetry inducing spectral arithmetic sectors — is the same conceptual level as the rationality theorem (\cite{paper1}, §3) and the M₂ obstruction principle (\cite{paper2}, §4).
+**Status.** Computational proposition. The symmetry decomposition and trace
+identities are exact local ingredients; the accidental $A_1/A_2$ degeneracy
+and the assignment of the two three-dimensional components remain numerical
+inputs.
 
 #### 1.5.4 The eo Block: Numerical-Representation Observation
 
-The edge-orientation block carries a $\mathbb{Z}_2$ permutation@phase structure: generators act as monomial matrices with entries in $\{0, \pm 1\}$ that permute edge positions and flip orientation signs. Unlike the co block, the eo block does not admit a complete group-theoretic derivation from $O_h$ symmetry + Schur's lemma, because the isotypic decomposition contains a multiplicity-2 component (see below). What follows is a **numerical-representation observation** — empirically rigid, structurally consistent, but not theorem-grade.
+The edge-orientation block carries a $\mathbb{Z}_2$ permutation@phase
+structure: generators act as monomial matrices with entries in
+$\{0,\pm1\}$ that permute edge positions and flip orientation signs. The
+present archive does not supply a complete group-theoretic derivation from
+$O_h$ symmetry and Schur's lemma because the isotypic decomposition contains a
+multiplicity-2 component. The registered spectrum below is therefore a
+**numerical-representation observation**: it is empirically rigid and
+structurally consistent, but not an exact theorem.
 
 **Observed spectrum (18-full).**
 $$\operatorname{Spec}(A_{\mathrm{eo}}) = \{\tfrac{8}{9}^{(2)}, \tfrac{7}{9}^{(3)}, \tfrac{5}{9}^{(7)}\}, \qquad
@@ -514,13 +676,21 @@ The 4 Type A edges correspond to the 4 space diagonals of the cube; the 8 Type B
 $$\operatorname{Spec}(N_{\mathrm{eo}}) = \{4^{(2)},\; 2^{(3)},\; -2^{(7)}\}$$
 Converting: $\lambda = \frac{2}{3} + \frac{\mu}{18}$ gives the $A_{\mathrm{eo}}$ spectrum above.
 
-**Why this is NOT a theorem.** The obstruction is the **$2T_2$ multiplicity fiber**. Under $O$, the permutation representation on 12 edges is conjectured to decompose as $A_1 \oplus E \oplus T_1 \oplus 2T_2$. The component $2T_2$ has multiplicity 2 — by Schur's lemma, an $O_h$-invariant operator on an isotypic component of multiplicity $m > 1$ acts as $I_m \otimes B$ where $B$ is a $(\dim_{\mathrm{irrep}} \times \dim_{\mathrm{irrep}})$ matrix, NOT necessarily scalar. Without explicit block-diagonalization into the multiplicity fiber, a single eigenvalue cannot be assigned to the $2T_2$ component by pure representation theory.
+**Why this is NOT a theorem.** The obstruction is the **$2T_2$ multiplicity fiber**. Under $O$, the permutation representation on 12 edges is conjectured to decompose as $A_1 \oplus E \oplus T_1 \oplus 2T_2$. The component $2T_2$ has multiplicity 2 — by Schur's lemma, an $O_h$-invariant operator on an isotypic component of multiplicity $m > 1$ acts as $I_m \otimes B$ where $B$ is a $(\dim_{\mathrm{irrep}} \times \dim_{\mathrm{irrep}})$ matrix, NOT necessarily scalar. Without explicitly block-diagonalizing the multiplicity fiber, a single eigenvalue cannot be assigned to the $2T_2$ component using representation theory alone.
 
 A complete analytic proof would require: edge incidence algebra on the signed line graph of the cube, Hecke-type structure encoding the Z₂ orientation representation, and multiplicity-algebra machinery to resolve the $2T_2$ fiber. These extend beyond the current mathematical framework.
 
-**Generator-family rigidity.** The k-set $\{1, 2, 4\}$ is specific to the 18-full family; other generator families produce different $\mathcal{K}_{\mathrm{eo}}$ spectra (see Table C4 for the full per-family block spectra). The 18-full three-level structure is a structural invariant of the edge-orientation representation under complete face-turn averaging — not a numerical coincidence, but not currently derivable from pure representation theory without the additional machinery noted above.
+**Generator-family scope.** The registered k-set $\{1,2,4\}$ is specific to
+the declared 18-full family. Other archived generator families produce
+different numerical spectra. No exact family-wide rigidity theorem is claimed.
 
 #### 1.5.5 Block Spectra Across All Generator Families
+
+> **Historical computational observation.** This table preserves a
+> first-version family scan. Its rational and quadratic labels are numerical
+> recognitions, not exact spectral-field certificates. Every family must be
+> recomputed and supplied with an exact characteristic or minimal polynomial
+> before its field label can be promoted.
 
 **Table C4 — Block Spectra Across Generator Families.**
 
@@ -538,19 +708,26 @@ A complete analytic proof would require: edge incidence algebra on the signed li
 
 1. **Block profiles determine k.** Each admissible k-value corresponds to a specific combination of active blocks. The block profile is a sharper invariant than the k-value itself: the same k can appear in different families with different block profiles (e.g., $k=2$ in 18-full is ep+eo, while $k=2$ in 12-quarter is cp+ep+eo).
 
-2. **The co-block is the decisive filter.** The corner-orientation block (8-dim) is the only block where generator matrix entries live in $\mathbb{Z}[\omega]$ rather than $\mathbb{Z}$. An eigenspace can have $d_{\mathrm{co}} > 0$ only for specific k-values where the $\omega$-phase cancellation across complete faces yields integer per-face trace sums.
+2. **The co block is the decisive arithmetic filter.** Within this archived
+family census, it is the only block whose generator matrix entries lie in
+$\mathbb{Z}[\omega]$ rather than $\mathbb{Z}$. An eigenspace can have
+$d_{\mathrm{co}}>0$ only for specific k-values where the $\omega$-phase
+cancellation across complete faces yields integer per-face trace sums.
 
 3. **The number of layers is $|\mathcal{K}(A)|$, not $m+1$.** The 6 layers in the 18-full case is not a fundamental constant — it is the size of the admissible k-set for this specific generator family.
 
 4. **Forbidden k-values** are those for which no block-dimension assignment satisfies all integrality constraints (see §7.2 for the full Diophantine system C1–C5).
 
-### 1.6 Resonance Merging: The 10 → 6 Collapse
+### 1.6 Blockwise Union and the Six-Layer Census
 
-The four block-level algebras carry $4 + 3 + 3 + 2 = 12$ block-level primitive idempotents (counting each block's distinct eigenspaces). These collapse to exactly 6 global spectral layers through eigenvalue coincidence under the common rational form $\lambda = 1 - k/m$.
+The declared block computations register repeated eigenvalues across the four
+physical blocks. Grouping equal displayed values gives the following six
+global layers. This is a blockwise census, not a claim that a fixed number of
+primitive idempotents is canonically present across all four block algebras.
 
 **Full resonance merging table (18-full, $m=9$):**
 
-**Table C5 — Resonance Merging (10→6 Collapse).**
+**Table C5 — Registered Blockwise Union.**
 
 | Global $\lambda$ | $k$ | $\dim$ | cp $k$ ($d$) | ep $k$ ($d$) | co $k$ ($d$) | eo $k$ ($d$) | Blocks merged |
 |------------------|-----|--------|-------------|-------------|-------------|-------------|---------------|
@@ -561,16 +738,23 @@ The four block-level algebras carry $4 + 3 + 3 + 2 = 12$ block-level primitive i
 | $5/9$ | 4 | 106 | 4 (24) | 4 (72) | 4 (3) | 4 (7) | cp + ep + co + eo |
 | $1/3$ | 6 | 35 | 6 (32) | — | 6 (3) | — | cp + co |
 
-$k = 5$ ($\lambda = 4/9$) is **structurally absent** — no block produces this k-value. This is proven block-by-block in §1.7.
+$k=5$ does not occur in the registered block spectra. Section 1.7 records the
+status of that absence block by block.
 
-The formula $|\mathcal{K}(A)| = |\bigcup_B \mathcal{K}_B|$ is exact. The six spectral layers are not primitive objects — they are coincidence classes of block-level idempotents under the global averaging operator. The number 6 is the cardinality of the union of four independently computable block-level k-sets, each arising from a distinct commuting algebra (Q₃ Hamming, face-incidence, $\mathbb{Z}_3$ perm@phase, $\mathbb{Z}_2$ perm@phase).
+For any block-diagonal operator, the spectrum is the union of the block
+spectra. In the declared computation, the six displayed labels are the union
+of the four registered block spectra.
 
-![(CCS Fig. C9) Resonance merging: 10 block-level eigenvalues collapse to 6 global layers.](../figures/ccs/fig_c9_resonance_merging.png)
+The historical “10 to 6” rendering is retained in the figure archive but is
+not used in this release because its primitive-idempotent count was not a
+stable typed object.
 
 
-### 1.7 The $k = 5$ Vacancy: Block-by-Block Structural Proof
+### 1.7 The $k = 5$ Vacancy: Blockwise Status
 
-The vacancy at $k = 5$ ($\lambda = 4/9$) is a structural theorem, not an empirical accident. Each block independently excludes $k = 5$ for a different structural reason:
+The vacancy at $k=5$ is registered across all four blocks. The cp and ep
+exclusions follow from the exact combinatorial reductions above, whereas the
+co and eo exclusions remain tied to the displayed computational spectra.
 
 **cp block**: The Q₃ hypercube Bose–Mesner algebra has eigenspaces indexed by Hamming weight $|u| \in \{0,1,2,3\}$. The eigenvalue of $S_8$ on $|u|$ is $\lambda_{|u|} = 1 - k_{|u|}/9$ where:
 
@@ -588,15 +772,23 @@ Converting to k-values: $k = 9(1 - \lambda/18)$ gives $\{0, 2, 3, 4\}$. The octa
 
 **eo block**: The $\mathbb{Z}_2$ permutation@phase structure yields $\mathcal{K}_{\mathrm{eo}} = \{1, 2, 4\}$. The $\pm 1$ phase classes (flipped vs. unflipped edges) produce exactly three distinct k-values. $k = 5$ would require a third orientation class beyond the $\{\pm 1\}$ dichotomy.
 
-**Conclusion**: $k = 5$ is genuinely absent because **no block's commuting algebra supports it**. This is a structural theorem — the vacancy follows from the representation's block decomposition and the spectral properties of each block's commuting algebra. It is not a numerical coincidence or a constraint-satisfaction artifact.
+**Conclusion.** The declared finite census contains no $k=5$ contribution.
+The exact block-union theorem turns the four block-level statements into a
+global absence statement at the same evidential level as those statements;
+it does not promote the numerical co/eo inputs to exact arithmetic.
 
 ### 1.8 The $V_{5/9}$ Giant Layer
 
-The $V_{5/9}$ layer ($k = 4$, $\lambda = 5/9$) is the largest eigenspace at 106 dimensions (46.5% of the total 228-dimensional space). It is the **unique 4-block confluence point** — all four invariant subspaces contribute nonzero support:
+In the registered census, the $V_{5/9}$ layer is the largest eigenspace at 106
+dimensions and the unique displayed layer receiving contributions from all
+four physical blocks:
 
 $$V_{5/9} = \underbrace{V_{5/9,\mathrm{cp}}}_{24} \oplus \underbrace{V_{5/9,\mathrm{ep}}}_{72} \oplus \underbrace{V_{5/9,\mathrm{co}}}_{3} \oplus \underbrace{V_{5/9,\mathrm{eo}}}_{7}$$
 
-This is the principal resonance locus: four distinct block-level primitive idempotents from four different commuting algebras coincide at the same global eigenvalue. No other layer receives contributions from all four blocks.
+This layer forms the principal resonance locus: four distinct block-level
+primitive idempotents from four different commuting algebras coincide at this
+single global eigenvalue. No other layer receives contributions from all four
+blocks.
 
 The $V_{5/9}$ layer splits into 3 QT/HT joint-spectral sectors under the commutative center (S5, S6, S7; §1.4). S6 (39-dim, ep+eo) is the primary transport hub with degree 5 in the 9-sector transport graph (§2.2).
 
@@ -605,36 +797,39 @@ The $V_{5/9}$ layer splits into 3 QT/HT joint-spectral sectors under the commuta
 ***
 ### Numerical Data (§2.1–§2.11)
 
-> Every number a paper cites lives here. These tables are the single source of truth for all numerical claims in the trilogy.
+> These tables register CCS-backed numerical claims in Papers I--II.
 
-*This part freezes all numerical invariants cited by Papers I–III — the single source of truth for every table in the trilogy.*
+*This part freezes the numerical invariants cited through the CCS by Papers
+I--II. Paper III uses its own matrix certificate.*
 
 ### 2.1 Block Noncommutativity
 
-$\|[QT^0, QT^1]\|_F$ — Frobenius norm of the QT commutator, per block:
+$\max_{0\le a<c\le2}\|[QT^a, QT^c]\|_F$ --- family-level Frobenius
+commutator norm, per block. All three axis pairs give the same registered
+block norms to displayed precision:
 
 **Table C6 — Block Noncommutativity.**
 
-| Block | $\|[QT^0, QT^1]\|_F$ | % of total | Character |
+| Block | $\max_{a<c}\|[QT^a, QT^c]\|_F$ | % of total | Character |
 |-------|------------------------|------------|-----------|
-| CP | 0 | 0% | Exactly commutative |
+| CP | 0 | 0% | Registered machine-zero |
 | EP | 2.74 | 93.9% | Noncommutative core |
 | CO | 0.61 | 21.0% | Weakly noncommutative |
 | EO | 0.79 | 27.1% | Weakly noncommutative |
 
-Total $\|[QT^0, QT^1]\|_F = 2.92$. Noncommutativity is concentrated in EP.
+For every axis pair, the total norm is $2.92$. Noncommutativity is
+concentrated in EP.
 
 ![(CCS Fig. C14) Noncommutative support overlap: 9 sectors × 4 blocks binary grid with commutator norm values and Supp_nc cardinality.](../figures/ccs/fig_c14_supp_nc_overlap.png)
 
 
-Block-level noncommutativity propagates through spectral layers into the sector decomposition — see (CCS Fig. C17, CCS Fig. C14).
+Figure C14 records block-sector incidence alongside family-level commutator
+norms. It is a localizer display, not a derivation of the direct-support graph.
 
-![(CCS Fig. C17) Block-sector alluvial diagram: three-panel flow from 4 blocks (left, with qualitative noncommutativity labels) through 6 layers (center) to 9 sectors (right), tracing the algebraic origin of transport topology.](../figures/ccs/fig_c17_block_sector_alluvial.png)
 
+### 2.2 Direct Support Graph ($K$, 9-Sector)
 
-### 2.2 Transport Topology ($K$, 9-Sector)
-
-$K_{\alpha\beta} = \max_g \|P_\alpha \rho(g) P_\beta\|_F$ over 18 face-turn generators. Edge threshold: $K > 0.01$.
+$K_{\alpha\beta} = \max_g \|P_\alpha \rho(g) P_\beta\|_F$ over 18 face-turn generators. The registered edge threshold is $K > 0.05$.
 
 Because the canonical generator family is inverse-closed and $\rho(g)^{\dagger}=\rho(g^{-1})$,
 $$
@@ -664,7 +859,7 @@ so the S4--S9 channel is undirected at the transport-matrix level.
 
 Symmetric to $1.11\times10^{-16}$. Diagonal entries are intra-sector transport (irrelevant for topology).
 
-**Direct edges (10, $K > 0.01$):**
+**Direct edges (10 unordered pairs, equivalently 20 directed off-diagonal blocks, $K > 0.05$):**
 
 **Table C8 — Direct Transport Edges.**
 
@@ -699,9 +894,14 @@ All 10 direct edges are **block-preserving** (share ≥ 1 block). Zero cross-blo
 | S8 | 1 | S9 |
 | S9 | 3 | S4, S7, S8 |
 
-S6 is the primary hub (degree 5). S7 is the secondary hub (degree 3). S1 is fully isolated ($K < 10^{-14}$ with all other sectors).
+S6 is the unique degree-five hub, while S7 and S9 have degree three. S1 remains
+fully isolated ($K<10^{-14}$ against all other sectors). The resulting graph
+is sparse but is not a star graph, as several retained edges do not pass
+through S6.
 
-![(CCS Fig. C2) Full 9×9 transport matrix K_αβ heatmap with annotated values.](../figures/ccs/fig_c2_transport_heatmap.png)
+![Current source-addressed view of the registered direct transport matrix at
+$\tau_K=0.05$. Diagonal self-blocks are omitted from the color
+scale.](../figures/ccs/fig_c2_transport_heatmap.png)
 
 
 **Table C15 — Block-Support Transport.** $\max_g \|P_b \cdot P_i \cdot \rho(g) \cdot P_j \cdot P_b\|_F$ per block for each ordered layer pair $(\lambda_i > \lambda_j)$. Only nonzero entries ($\tau > 10^{-8}$) shown. Sorted by block (CP→EP→CO→EO), then descending $\tau_{\max}$.
@@ -718,10 +918,18 @@ S6 is the primary hub (degree 5). S7 is the secondary hub (degree 3). S1 is full
 
 *7 inter-layer channels across 4 blocks. EP carries the strongest channel (4.2426, $V_{7/9} \to V_{5/9}$). CP/CO/EO each carry 1–2 channels at lower strength.*
 
-![(CCS Fig. C16) Transport skeleton: 9-sector connectivity graph showing the 10 direct edges, hub structure (S6 primary, S7 secondary), and S1 isolation.](../figures/ccs/fig_c16_transport_skeleton.png)
+![(CCS Fig. C19) Current source-addressed ten-edge aggregate direct-support
+graph. Type I/II names are post-certification labels, not universal
+mechanisms.](../figures/ccs/fig_c19_direct_support_graph.png)
 
 
-### 2.3 Lie Accessibility ($\kappa$, 6-Layer)
+### 2.3 Historical Lie-Registration Table ($\kappa$, 6-Layer)
+
+> **Historical computational observation.** The following tables use the
+> first-version principal-log registration and its depth labels. They are
+> retained as finite numerical records only. They do not define the current
+> Paper III composition object, certify exact Lie depth, or establish a
+> graph-to-composition promotion.
 
 $\kappa_d(\alpha,\beta) = \max \|P_\alpha C_d P_\beta\|$ where $C_d$ is a depth-$d$ Lie monomial.
 
@@ -766,10 +974,11 @@ Symmetric to $<10^{-8}$.
 
 All pure curvature channels ($\kappa_0 \approx 0$, $\kappa_1 > 0$) are **within-block**. Zero cross-block curvature channels.
 
-![(CCS Fig. C11) κ₀ vs κ₁ hierarchy: gradient vs curvature transport at 6-layer resolution.](../figures/ccs/fig_c11_kappa_hierarchy.png)
+The retired first-version visualization remains repository provenance but is
+not part of the current reading path.
 
 
-### 2.4 Lie Accessibility ($\kappa$, 9-Sector)
+### 2.4 Historical Lie-Registration Table ($\kappa$, 9-Sector)
 
 Computed with `center_decomposition()` → 9 sector projectors.
 
@@ -823,39 +1032,47 @@ Max asymmetry: $1.6 \times 10^{-8}$.
 | S5 ↔ S7 | 1.42 | eo |
 | S7 ↔ S8 | 6.98 | cp |
 
-### 2.5 T7 Morphisms (9-Sector)
+### 2.5 Graph Paths and Matrix-Composition Obstructions (9-Sector)
 
-T7 morphism $(\alpha, \beta)$: $K_{\alpha\beta} = 0$, $\kappa_0 = \kappa_1 = 0$ (numerically verified), and $\kappa_d(\alpha,\beta) = 0$ for all $d \ge 2$ (structural, by Lemma 1: block-diagonal Lie closure + disjoint block support), with 2-step reachability via an intermediate hub $\gamma$.
+For a two-step support path $j\to k\to i$, the corresponding operator-level
+object is
 
-**5 T7 morphisms, all cross-block:**
+$$
+Q_i\rho(g_2)Q_k\rho(g_1)Q_j.
+$$
 
-**Table C16 — T7 Morphisms.**
+Nonzero adjacent support blocks do not imply that this product is nonzero.
+The registered audit exhausts all $18^2$ ordered generator pairs for each of
+the following five graph-only triples.
 
-| Pair | Mediation path |
-|------|---------------|
-| S2(eo) ↔ S4(ep+co) | S2 → S6 → S4 |
-| S3(ep+eo) ↔ S9(cp+co) | S3 → S7 → S9 |
-| S4(ep+co) ↔ S5(eo) | S4 → S6 → S5 |
-| S4(ep+co) ↔ S8(cp) | S4 → S9 → S8 |
-| S6(ep+eo) ↔ S9(cp+co) | S6 → S7 → S9 |
+**Table C16 — Canonical graph-only composition obstructions.**
 
-All mediated through the S6–S7–S9 hub complex (canonical mediation statistics: S6:2, S7:2, S9:1). Zero within-block T7 morphisms. S1 is not T7 — it is G-invariant (no composition path exists).
+| Endpoint pair | Support path | Maximum projected product norm |
+|---------------|--------------|--------------------------------|
+| S2--S4 | S2--S6--S4 | $1.10\times10^{-16}$ |
+| S3--S9 | S3--S7--S9 | $3.02\times10^{-15}$ |
+| S4--S5 | S4--S6--S5 | $1.55\times10^{-16}$ |
+| S4--S8 | S4--S9--S8 | $1.06\times10^{-15}$ |
+| S6--S9 | S6--S7--S9 | $2.94\times10^{-15}$ |
 
-**Structural detection.** T7 is detected via an exact structural test, not a numerical κ threshold:
+For every row, both adjacent factor maxima are order one, while every tested
+projected product is machine-zero. The physical-block decomposition is
+preserved by the generator matrices and the QH projectors are block diagonal
+to a maximum cross-block residual of $1.45\times10^{-15}$. Thus the canonical
+data exhibit image--kernel and physical-block composition obstructions, not
+five certified compositional morphisms.
 
-1. **Block-set disjointness:** $\mathrm{blocks}(\alpha) \cap \mathrm{blocks}(\beta) = \emptyset$ — the two sectors have zero block overlap. By Lemma 1 (Lie-Generated Support Invariance, Part III §10.2), this implies $\kappa_d(\alpha,\beta) = 0$ for all Lie depths $d$ *exactly and structurally* — not because a floating-point norm fell below a tolerance.
-2. **K = 0:** $K_{\alpha\beta} < \mathrm{TOL\_K}$ — no single-generator transport.
-3. **2-step reachability:** $\exists \gamma$ (hybrid hub) with $K_{\alpha\gamma} > \mathrm{TOL\_K}$ and $K_{\gamma\beta} > \mathrm{TOL\_K}$.
+The current certificate is
+`experiments/paper3/validation/composition_obstruction.py`, with regression coverage in
+`tests/test_transport.py`. The historical threshold script at
+`experiments/paper3/archive/t7_threshold_sensitivity.py` concerns only the
+support-graph candidate set and cannot certify matrix composition.
 
-The sequence $\mathrm{isdisjoint}()$ → $K=0$ → 2-step path constitutes a *representation-theoretic obstruction test*, upgrading T7 from a numerical observation ("κ is small") to a theorem ("Lie-Generated Support Invariance structurally forbids cross-block infinitesimal transport"). This is codified in `experiments/paper3/t7_detection.py` and `tests/test_transport.py`.
+### 2.6 Historical Three-Class Diagnostic (6-Layer)
 
-**Canonical witness.** When multiple length-2 witnesses exist for a given T7 pair (e.g. S6↔S9 is reachable via both S4 and S7), mediation statistics use the highest-transport-degree intermediate as the canonical witness. This is a principled tie-breaker (preferring hub sectors over leaf sectors), implemented as `select_canonical_intermediate()` in `rime/spectral_utils.py`, not a hardcoded per-pair rule.
-
-**Threshold stability.** For the canonical center in the 18-generator family, the 5 T7 pairs are invariant under a 500-fold sweep of `TOL_K` ($[0.001, 0.500]$), even though the direct-edge count changes at higher thresholds. T7 is not a threshold artifact of the canonical cutoff. Reproducibility: `experiments/paper3/t7_threshold_sensitivity.py`.
-
-T7 detection is structural (block-set disjointness, Lemma 1) with κ_d as a consistency check (§2.5).
-
-### 2.6 Three Accessibility Classes (6-Layer)
+> **Withdrawn interpretation.** These labels summarize the first-version
+> $\kappa_0/\kappa_1$ arrays. They are not the four claim-status levels and are
+> not a current classification of operator or Lie accessibility.
 
 **Table C17 — Accessibility Classes.**
 
@@ -865,7 +1082,7 @@ T7 detection is structural (block-set disjointness, Lemma 1) with κ_d as a cons
 | II (gradient) | $V_{8/9}, V_{5/9}, V_{1/3}$ | $\kappa_0 > 0$ on direct edges |
 | III (curvature) | $V_{7/9} \leftrightarrow V_{2/3}$ | $\kappa_0 \approx 0$, $\kappa_1 = 4.27$ (commutator-mediated) |
 
-### 2.7 EP Algebra
+### 2.7 EP Algebra Census
 
 $$A_{\mathrm{EP}} = \langle Q_0, Q_1, Q_2 \rangle \cong M_2(\mathbb{C})^4 \oplus M_1(\mathbb{C})^4$$
 
@@ -877,28 +1094,39 @@ $$A_{\mathrm{EP}} = \langle Q_0, Q_1, Q_2 \rangle \cong M_2(\mathbb{C})^4 \oplus
 | Algebraic closure | Degree 3 |
 | $Z(A_{\mathrm{EP}})$ | 8-dim |
 | Simple components | 8 (4 × $M_2$, 4 × $M_1$) |
-| Killing form signature | $(8^+, 4^-, 8^0)$ |
-| $\ker(\text{Killing}) = Z(A_{\mathrm{EP}})$ | ✓ |
+| Representation multiplicities | 12 on every registered simple component |
 
-Isotypic components: $4 \times 24$ ($M_2$) + $4 \times 12$ ($M_1$) = 144 on EP. Uniform multiplicity 12.
+The semisimplicity certificate does not use nondegeneracy of a Frobenius Gram
+matrix. The three declared generators are Hermitian, and the computational
+audit checks identity-in-algebra, multiplication closure, and adjoint closure.
+The registered object is therefore a finite-dimensional complex unital
+$*$-algebra; semisimplicity then follows from the finite-dimensional
+$C^*$-algebra theorem. The Gram matrix remains only a basis-independence and
+conditioning diagnostic.
 
-Double commutant: $\operatorname{Comm}(A_{\mathrm{EP}}) \cong M_{12}(\mathbb{C})^8$, $\dim = 1152$. $\operatorname{End}_{\operatorname{Comm}(A)}(\mathrm{EP}) = A_{\mathrm{EP}}$ ✓.
+The four $M_2$ components occupy $4\times(2\cdot12)=96$ dimensions and the four
+scalar components occupy $4\times(1\cdot12)=48$ dimensions, giving the complete
+EP dimension $144$.
 
-### 2.8 Commutant Dimensions
+### 2.8 Ambient and Spectral Centralizers: Current Status
 
 **Table C19 — Commutant Dimensions.**
 
-| Object | Dimension | Layer |
-|--------|-----------|-------|
-| $\operatorname{Comm}(A_{18})$ | 804 | A |
-| $\operatorname{Comm}(\rho)$ | 610 | A |
-| $\Delta_{\operatorname{comm}}$ | 194 | A |
+| Object | Dimension | Status |
+|--------|-----------|--------|
+| $\operatorname{Comm}(A_{18})$ | 804 | Exact from the six spectral multiplicities |
+| $\operatorname{End}_G(V)$ | 610 | Candidate computation; exact certificate required before promotion |
+| Former difference $804-610$ | 194 | Arithmetic difference only; not a current structural invariant |
 
-Per-layer commutant dimensions:
+The following first-version table records centralizers of compressed numerical
+matrices. Because the five nontrivial $A$-spectral layers are not invariant
+under the full $G$-action, its third-column objects are not
+$\operatorname{End}_G(V_\lambda)$ and the table is not a layerwise group-
+commutant decomposition.
 
 **Table C20 — Per-Layer Commutant Dimensions.**
 
-| $\lambda$ | $\dim V_\lambda$ | $\dim \operatorname{End}_G(V_\lambda)$ |
+| $\lambda$ | $\dim V_\lambda$ | Archived compressed-centralizer output |
 |-----------|------------------|----------------------------------|
 | 1 | 20 | 400 |
 | 8/9 | 2 | 1 |
@@ -907,10 +1135,19 @@ Per-layer commutant dimensions:
 | 5/9 | 106 | 210 |
 | 1/3 | 35 | 65 |
 
-![(CCS Fig. C4) Commutant dimension spectrum and SVD gap verification.](../figures/ccs/fig_c4_commutant_svd.png)
+**CCS Fig. C4 withdrawn.** It combined the candidate ambient commutant
+dimension with invalid layerwise group-commutant bars.
 
 
-### 2.9 Commutant Restriction Map $\pi$
+<!-- The invalid first-version restriction map is excluded from the current
+CCS. Its correction history is summarized in HISTORY.md.
+
+### 2.9 Withdrawn Commutant Restriction Map
+
+> **Withdrawn.** The displayed first-version map below is not defined as a map
+> of group commutants on the five non-invariant spectral layers. Its numerical
+> dimensions are retained only to identify the historical computation; no
+> kernel, cokernel, or transport conclusion is currently claimed from it.
 
 $$\pi: \operatorname{End}_G(V) \to \bigoplus_\lambda \operatorname{End}_G(V_\lambda), \quad \pi(C) = (P_\lambda C P_\lambda)_\lambda$$
 
@@ -923,7 +1160,9 @@ $$\pi: \operatorname{End}_G(V) \to \bigoplus_\lambda \operatorname{End}_G(V_\lam
 | $\ker \pi$ | 0 (injective) |
 | $\operatorname{coker} \pi$ | 356 |
 
-The 356-dimensional cokernel encodes cross-layer linear constraints: each zero-transport pair forces $C_{\alpha\beta} = 0$, locking relative scaling between per-layer commutant bases.
+The former cokernel interpretation is withdrawn.
+
+-->
 
 ### 2.10 Fundamental Identities
 
@@ -934,34 +1173,50 @@ The 356-dimensional cokernel encodes cross-layer linear constraints: each zero-t
 | $A_{18} = (12\mathrm{QT}_{\mathrm{all}} + 6\mathrm{HT}_{\mathrm{all}})/18$ | Machine precision |
 | $A_{\mathrm{axis}} = (4\mathrm{QT}^a + 2\mathrm{HT}^a)/6$ | Per axis |
 | $\|\rho(g)\rho(h) - \rho(gh)\| < 3 \times 10^{-8}$ | 15 random products, all blocks |
-| $\max\|\exp(A_g) - \rho(g)\| = 2.71 \times 10^{-15}$ | Lie embedding fidelity |
-| $\max|\kappa_{ij} - \kappa_{ji}| \approx 10^{-15}$ | $\kappa$ symmetry, all depths |
+| $\max\|\exp(A_g) - \rho(g)\| = 2.71 \times 10^{-15}$ | Historical principal-log registration check |
+| $\max|\kappa_{ij} - \kappa_{ji}| \approx 10^{-15}$ | Historical array-symmetry diagnostic at computed depths |
 
-### 2.11 S₃ Prototypes (C0 Negative Control)
+### 2.11 S₃ Prototypes (Archived Sector-Invariance Controls)
 
-**S₃ prototype declaration.** Unless explicitly stated otherwise within the S₃ prototype sections, the S₃ sector decompositions are defined with respect to the transport-generated commutative algebra $Z = \langle A_{\text{full}}, A_{\text{trans}} \rangle$. This is the S₃ analogue of the Rubik QT/HT sectorization; the canonical Rubik trilogy center is $Z_{\mathrm{QH}}$. Additional projectors such as $P_{\text{nat}}$ are treated as external refinement operators and are not part of the S₃ canonical transport geometry. The P_nat-refined decomposition is provided in Appendix~\ref{sec:s-nat3-reg6-externally-refined-pnat} as a robustness check only.
+> **Scope boundary.** These finite controls show numerically that invariant
+> sector projectors have diagonal direct transport. They are not
+> matrix-composition evidence for the independent Paper III.
 
-**C0 diagnostic.** Both S₃ negative controls fail C0 (Center Incompleteness): Z's joint diagonalization coincides with the isotypic decomposition — all sector projectors are G-invariant (max‖[P_i, ρ(g)]‖ ≈ 10⁻¹⁵). K is purely diagonal. Without non-invariant sectors, off-diagonal transport is structurally impossible regardless of C1–C3 status. See Appendix~\ref{sec:c0-comparison-s-vs-rubik} for the C0 comparison table.
+**S₃ prototype declaration.** Unless explicitly stated otherwise within the S₃ prototype sections, the S₃ sector decompositions are defined with respect to the transport-generated commutative algebra $Z = \langle A_{\text{full}}, A_{\text{trans}} \rangle$. This is an analogue of the Rubik QT/HT sectorization $Z_{\mathrm{QH}}$. Additional projectors such as $P_{\text{nat}}$ are treated as external refinement operators and are not part of the declared S₃ transport geometry. The historical P_nat-refined robustness check is retained only in excluded source provenance.
 
-**S₃ nat(3) ⊕ reg(6)** — 9-dim, **0 T7 morphisms**. Under canonical Center{A_full, A_trans}: 3 sectors (2 hybrid, 1 pure-reg). All cross-sector K=0 — hybrid sectors are transport-inert. C0 fails: Z sectors = isotypic components (trivial², sign¹, standard⁶). C2 also fails (no transport-active hybrid). Two independent reasons for 0 T7.
+**Current diagnostic.** In both S₃ controls, all declared sector projectors commute numerically with the tested action (maximum residual approximately $10^{-15}$), and $K$ is diagonal. This is consistent with the transport--non-invariance identity. No comparison with a Rubik commutant inclusion is required.
 
-**S₃ reg(6) ⊕ reg(6)** — 12-dim, **0 T7 morphisms**. Under canonical Center{A_full, A_trans}: 3 sectors, ALL hybrid, zero pure sectors. C0 fails: Z sectors = isotypic components (trivial², sign², standard⁴). C0–C3 cannot be satisfied when Z is center-complete and no pure-block sector pairs exist.
+**S₃ nat(3) ⊕ reg(6)** — 9-dim. Under the declared joint spectral algebra: 3 sectors (2 hybrid, 1 pure-reg), all cross-sector $K=0$.
 
-Full data (sector tables, joint diagonalization, transport graphs): (CCS Appendix G).
+**S₃ reg(6) ⊕ reg(6)** — 12-dim. Under the declared joint spectral algebra: 3 hybrid sectors and zero off-diagonal direct transport.
 
-![(CCS Fig. C7) S₃ nat⊕reg (9-dim) negative control comparison with Rubik's cube transport topology: three-panel comparison showing canonical decomposition, transport matrix, and T7 detection side-by-side.](../figures/ccs/fig_c7_prototype_comparison.png)
+The full first-version tables remain in excluded source provenance rather than
+the release PDF.
+
+**CCS Fig. C7 withdrawn.** Its sector-invariance data remain provenance, but
+the C0/T7 comparison is not part of the revised theorem spine.
 
 
 **Part II — Structural Consequences**
 
 ***
-## Part II — Structural Consequences
+## Part II — Extended Observations and Historical Records
 
-> **Scope.** Persistence, universality, phase transition, generator families — higher-order interpretation of the core numerical data. These sections analyze the behavior of canonical objects under perturbations, alternative generator families, and continuous evolution. They do NOT modify any canonical table in Part I.
+> **Scope.** This part preserves finite perturbation and generator-family
+> studies that remain useful as computational observations or research-history
+> records. It does not modify the current records in Part I, certify a
+> universality class, or supply theorem premises for Papers I--III.
 
-### II.1 Spectral Persistence Under Continuous Evolution
+### II.1 Historical Spectral-Persistence Audit
 
-**Purpose.** Test whether the spectral decomposition, transport topology, and Lie accessibility hierarchy are dynamically stable — i.e., preserved under continuous unitary evolution generated by natural Hamiltonians.
+> **Computational observation.** This first-version experiment records a fixed
+> set of finite flows and perturbations. Terms such as ``frozen'', ``drift'',
+> and ``mixing'' are diagnostic labels for the displayed arrays, not a general
+> dynamical-stability theorem.
+
+**Purpose.** This section records the behavior of the declared spectral
+projectors and first-version transport diagnostics under several explicitly
+chosen continuous unitary evolutions.
 
 **Dependencies.** `CubieSpectralOperator`, `scipy.linalg.expm`, `build_per_axis_ops`, `compute_lie_generators`, `transport_kappa`.
 
@@ -978,8 +1233,8 @@ with P_i(t) = e^{−itH} P_i(0) e^{+itH}. Measure Frobenius norm of projector de
 | H | t=0.01 | t=0.1 | t=0.5 | t=1.0 | Class |
 |---|--------|-------|-------|-------|-------|
 | A_18 | 0.0000 | 0.0000 | 0.0000 | 0.0000 | **Frozen** — projectors are exact stationary states of A_18 |
-| QT_all | 0.0000 | 0.0000 | 0.0000 | 0.0000 | **Frozen** — QT_all commutes with A_18, preserves eigenspaces |
-| HT_all | 0.0000 | 0.0000 | 0.0000 | 0.0000 | **Frozen** — same mechanism |
+| QT_all | 0.0000 | 0.0000 | 0.0000 | 0.0000 | **Registered frozen** — machine-zero commutator in this realization |
+| HT_all | 0.0000 | 0.0000 | 0.0000 | 0.0000 | **Registered frozen** — machine-zero commutator in this realization |
 | A_g(R) | 0.0200 | 0.2431 | 4.2012 | 89.8430 | **Exponential drift** — Lie generator is maximally non-conserving |
 | random | 0.2133 | 1.6928 | 1.9857 | 1.9819 | **Saturating mixing** — fully scrambled by t≈0.1, saturates near ‖P_i‖ |
 
@@ -990,41 +1245,42 @@ with P_i(t) = e^{−itH} P_i(0) e^{+itH}. Measure Frobenius norm of projector de
 - < 10⁻¹: drifting (spectral content shifting)
 - \> 10⁻¹: mixing (layers lose identity)
 
-**Structural mechanism.** A_18, QT_all, HT_all are elements of the commutative center
-C = Center{A_18, QT_all, HT_all}, hence [H, A_18] = 0 and [H, P_i] = 0 identically.
-The Lie generator A_g(R) = log ρ(R) is NOT in the center, and its flow rotates
-eigenspaces across each other. Random Hermitian H provides the ergodic baseline.
+**Registered mechanism.** Evolution generated by $A_{18}$ fixes its spectral
+projectors exactly. The QT/HT rows are machine-zero in the declared numerical
+realization; an exact statement for them is conditional on exact commutation.
+The principal-log and random-Hermitian rows provide finite comparison paths.
 
 **Per-layer differential stability.** Under A_g(R) at t=0.1:
 
-- V₁ (dim=20): 0.0000 — fully frozen (commutant subspace)
+- V₁ (dim=20): 0.0000 — numerically frozen in this registered flow audit
 - V₈/₉ (dim=2): 0.2431 — begins to drift
 - V₇/₉ (dim=39): 0.6433 — moderate drift
 - V₂/₃ (dim=26): 1.8360 — rapid mixing (most fragile layer)
 - V₅/₉ (dim=106): 2.4891 — rapid mixing (large target space amplifies drift)
 - V₁/₃ (dim=35): 2.6580 — maximally unstable
 
-The V₁ layer is protected by its role as the commutant subspace — it spans the
-intersection of all block-diagonal invariant subspaces. V₂/₃ and V₅/₉, the layers
-most enriched in EP block content, are the most fragile.
+The five nontrivial layers exhibit order-one drift in this numerical
+experiment, whereas $V_1$ remains machine-stable. Exact full-action invariance
+of $V_1$ still requires a separate analytic certificate.
 
 #### II.1.2 Transport Persistence K_αβ(t)
 
-**Setup.** Evolve the 9 QT/HT joint-spectral sector projectors under e^{−itA_18} and recompute
-K_αβ(t), κ₀(t), κ₁(t), and T7 morphism count at each time.
+**Setup.** Evolve the 9 QT/HT joint-spectral sector projectors under
+$e^{-itA_{18}}$ and recompute the first-version direct, kappa, and graph-square
+diagnostics. The final count below is a graph-only candidate count.
 
 **Result.** Transport is structurally invariant under A_18 flow:
 
-| t | K edges | κ₀ edges | κ₁ edges | T7 morphisms | max\|K(t)−K(0)\| |
+| t | K edges | κ₀ edges | κ₁ edges | graph-only candidates | max\|K(t)−K(0)\| |
 |---|---------|----------|----------|----------|-------------------|
 | 0 | 20 | 26 | 37 | 5 | 0 |
 | 0.05 | 20 | 26 | 37 | 5 | 1.33×10⁻¹⁵ |
 | 0.1 | 20 | 26 | 37 | 5 | 1.78×10⁻¹⁵ |
 | 0.5 | 20 | 26 | 37 | 5 | 8.88×10⁻¹⁶ |
 
-The edge count, κ hierarchy, and T7 morphism count are exact invariants of A_18 flow —
-the unitary evolution merely rotates each sector within its eigenspace without
-changing the inter-sector coupling strength.
+The recorded direct-edge and graph-only candidate counts are invariant under
+this commuting flow. This does not establish persistence of a nonzero
+projected composition.
 
 **Mechanism.** [A_18, P_i] = 0 for all i, so P_i(t) = e^{−itA_18} P_i e^{+itA_18} = P_i
 exactly. The transport norm K_αβ is therefore identically invariant under the
@@ -1049,10 +1305,10 @@ fixed (seed=42). Track the 5/9 eigenvalue and neighboring eigenvalues for
 | 10⁻³ | 0 | < 10⁻¹⁰ | fully stable |
 | 10⁻² | 0 | < 10⁻¹⁰ | fully stable |
 
-**Interpretation.** The gap to the nearest eigenvalue is 0.444… (to λ=1, above) and
-−0.444… (to λ=1/9, below). This large gap (4/9 in λ-space) acts as a spectral buffer:
-perturbations up to ε = 10⁻² (2% of ‖A‖) cannot shift eigenvalues across this gap.
-The 5/9 resonance is a structurally protected feature, not a numerical accident.
+**Interpretation.** In the canonical six-layer spectrum, the nearest distinct
+eigenvalue to $5/9$ is $2/3$, at distance $1/9$. The finite perturbation table
+records behavior only for the tested path and range; it does not prove a
+general structural-protection theorem.
 
 #### II.1.4 Structural Summary
 
@@ -1060,42 +1316,65 @@ The 5/9 resonance is a structurally protected feature, not a numerical accident.
 |--------|-------------------|-------------------|----------------|
 | P_i(t) | Frozen (exact) | Exponential drift | Saturating mix |
 | K_αβ(t) | Invariant (exact) | — | — |
-| T7 count | Invariant | — | — |
+| graph-only candidate count | Invariant | — | — |
 | λ=5/9 gap | Robust (Δλ=0.44) | — | — |
 
-The spectral decomposition and transport topology are **dynamically stable** under
-the natural Hamiltonian A_18 (the averaging operator). They are **dynamically fragile**
-under Lie generators A_g, which continuously rotate eigenspaces. The λ=5/9 resonance
-is **structurally protected** by a large spectral gap.
+The table records exact stationarity under the self-generated $A_{18}$ flow and
+finite numerical contrast under the other declared flows. The tested
+$\lambda=5/9$ cluster has a visible canonical gap, but the perturbation table
+does not establish a general protection theorem.
 
-### II.2 Structural Bridge: Cross-Paper Data Pipeline
+### II.2 Independent-Paper Consistency Snapshot
 
-**Purpose.** Weld the three papers into a single mathematical cascade:
-$$\rho(g)\to(\mathrm{QT}_{\mathrm{all}},\mathrm{HT}_{\mathrm{all}})\to\{S_\alpha\}\to A_{18}\text{ collision quotient }\{V_\lambda\}\to K_{\alpha\beta}\to \kappa_0/\kappa_1\to \mathrm{T7}.$$
-This section is the **cross-paper stitching layer** — it references authoritative definitions and emphasizes only the structural points that bind the papers together. Full canonical data live in the sections cited below; do not duplicate them here.
+**Purpose.** Compare adjacent objects used by the independent papers:
+$$
+\rho(g)\to\mathcal B_{\mathrm{QH}}\to\{Q_\alpha\}
+\to K^S\to\Gamma_S
+\to\{Q_i\rho(g_2)Q_k\rho(g_1)Q_j\}.
+$$
+This display is a navigation path through related data types, not a theorem
+dependency or a single accessibility filtration. Each paper defines its own
+objects and hypotheses. The archive only records finite consistency checks
+between the corresponding Rubik realizations.
 
-**Dependencies.** `CubieSpectralOperator`, `center_decomposition`, `transport_kappa`, `BLOCK_RANGES`.
+**Dependencies.** The declared Rubik representation, QH sector projectors,
+direct-support matrix, and physical-block decomposition.
 
-**Outputs.** Pipeline invariant table, S₃ negative control verification (C0 negative control), N=2 negative control.
+**Outputs.** Current invariant table, sector non-invariance audit, and
+graph/operator composition-obstruction table.
 
-#### II.2.1 The Three-Level Pipeline
+#### II.2.1 Three Adjacent Data Layers
 
-The pipeline is a single mathematical cascade. Each level is defined authoritatively elsewhere; this section states the key structural invariant at each level and points to the canonical data.
+The three layers below are maintained independently. Agreement of dimensions,
+labels, or arrays does not promote a conclusion from one layer to the next.
 
-**Level 1 — \cite{paper1}: Spectral Origin.**
-Canonical spectral decomposition — 6 rational $A_{18}$ layers, k-set $\{0,1,2,3,4,6\}$ with the $k=5$ structural vacancy. These layers are the $L_{2/3}$ collision quotient of the QT/HT joint spectrum. Full data: (CCS §1.3, Table C2).
+**Layer 1 — Paper I: Averaging-operator spectrum.**
+The registered Rubik realization has six $A_{18}$ layers and k-set
+$\{0,1,2,3,4,6\}$. Paper I states the exact, computational, and conditional
+parts of this census. Extended data: CCS §1.3 and Table C2.
 
-**Level 2 — \cite{paper2}: Transport Topology.**
-9 QT/HT joint-spectral sectors from Center$\{A, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\mathrm{all}}\}$ joint diagonalization. Full data: (CCS Table C3, CCS §1.4, CCS Fig. C2).
+**Layer 2 — Paper II: Direct transport.**
+Nine numerically registered QH joint-spectral sectors, followed by a direct
+block-support audit. The exact commutative-algebra interpretation is
+conditional on exact commuting-Hermitian registration. Extended data: CCS
+Table C3, CCS §1.4, and the current direct-support heatmap in §2.2.
 
-**Level 3 — \cite{paper3}: Lie Accessibility.**
-$\kappa_0$ (gradient), $\kappa_1$ (curvature), T7 (discrete-only) hierarchy. Full data: (CCS §2.3–§2.5, Tables C10–C16).
+**Layer 3 — Paper III: Projected composition.**
+The direct support graph is compared with the projected products
+$Q_i\rho(g_2)Q_k\rho(g_1)Q_j$. Paper III owns the current matrix certificate;
+the CCS copy is an optional comparison record.
 
-The pipeline is **fully closed for the trilogy**: every structural feature at \cite{paper3} (T7, $\kappa$ hierarchy, cross-block obstruction) is determined by the QT/HT sectorization, the $A_{18}$ collision quotient, and the transport topology at \cite{paper2}. No new numerical parameters enter at \cite{paper3} — $\kappa_d$ is derived from $A_g = \log\rho(g)$, which are functions of the same $\rho(g)$ that define $A$ and $K_{\alpha\beta}$. The pipeline is **non-redundant**: $A_{18}$ captures spectral rationality (commutative, static), the QT/HT sectors provide the resolved transport vertices, $K_{\alpha\beta}$ captures discrete transport topology (noncommutative, static), and $\kappa_d$ captures the discrete/continuous gap (dynamical, obstruction-theoretic).
+This three-layer comparison is not closed by graph data alone. Paper III
+supplies the missing projected-composition test: adjacent nonzero blocks must
+have compatible image--kernel geometry. In the five canonical paths this
+compatibility fails, so the support graph strictly overapproximates the tested
+two-step composition graph.
 
-#### II.2.2 Cross-Paper Invariant Verification
+#### II.2.2 Registered Consistency Values
 
-Every numerical quantity is consistent across all three papers. The values below are the **single authoritative** values; each paper may cite them with a reference to this table.
+The values below are a consistency snapshot for the declared repository
+realizations. Papers I--III do not cite this table as authority; their current
+manuscripts and claim-specific artifacts control their reported values.
 
 | Quantity | Value | Defined in |
 |----------|-------|-----------|
@@ -1107,47 +1386,59 @@ Every numerical quantity is consistent across all three papers. The values below
 | $\|[\mathrm{QT}^0, \mathrm{QT}^1]\|_\mathrm{ep}$ | 2.74 (93.9% of total) | §2.1 |
 | $A_\mathrm{EP} \cong M_2(\mathbb{C})^4 \oplus M_1(\mathbb{C})^4$ | dim=20 | §2.8 |
 | $\dim \operatorname{Comm}(A_{18})$ | 804 | §2.8 |
-| $\dim \operatorname{Comm}(\rho)$ | 610 | §2.8 |
-| $\Delta_{\operatorname{comm}}$ | 194 | §2.8 |
+| candidate $\dim \operatorname{End}_G(V)$ | 610 (exact certificate open) | §2.8 |
+| former commutant-gap interpretation | withdrawn | §2.8--§2.9 |
 | Direct transport edges | 10 (undirected, block-preserving) | §2.2, Table C8 |
 | Primary hub | S6 (deg=5) | §2.2 |
-| T7 morphisms | 5 (all cross-block) | §2.5, Table C16 |
-| Pure curvature channels | 7 (all within-block) | §2.4, Table C14 |
-| $\kappa_0$ cross-block max | 0 | §2.3 |
-| $\kappa_1$ cross-block max | $5.8 \times 10^{-8}$ | §2.4 |
+| graph-only two-step obstruction witnesses | 5 | §2.5, Table C16 |
+| maximum projected product norm among them | $3.02\times10^{-15}$ | §2.5, Table C16 |
 
-#### II.2.3 S₃ Prototype Verification (C0 Negative Control)
+#### II.2.3 Archived S3 Sector-Invariance Controls
 
-**S₃ negative controls.** Verified: 0 T7 morphisms under canonical Center{A_full, A_trans}. Z sectors = isotypic components → K diagonal → C0 fails. C2 also fails (no transport-active hybrid). Both negative controls demonstrate that C0–C3 are non-trivial: neither satisfies the full condition set. Full data: (CCS Appendix G).
+The archived S3 controls have numerically invariant declared projectors and
+diagonal direct $K$, consistently with the transport--non-invariance identity.
+They do not certify any graph-to-composition promotion theorem.
 
-**N=2 pocket cube.** 4 sectors, 0 T7 morphisms — negative control. Hybrid sector presence alone does NOT guarantee T7. Full data: (CCS Appendix H).
+The archived pocket-cube computation is a first-version graph/kappa control,
+not current matrix-composition evidence.
 
-#### II.2.4 Bridges to Papers IV and V
+#### II.2.4 Adjacent Later Work
 
-**Paper IV bridge.** The CCS certifies the data needed for the collision-geometry sequel: the nine QT/HT joint-spectral sectors, the $L_{2/3}$ collision quotient giving the six $A_{18}$ layers, and the nontrivial quotient components
+**Paper IV comparison.** The archive records the nine QT/HT joint-spectral
+sectors and the registered $L_{2/3}$ quotient, including
 $$
 V_{5/9}=S5\oplus S6\oplus S7,\qquad
 V_{1/3}=S8\oplus S9.
 $$
-Paper IV develops the exact finite-point collision arithmetic from these certified values. The CCS records the canonical table and quotient; it does not duplicate the full affine-branch classification.
+Paper IV independently declares its exact nine-point arrangement, Rubik
+registration, and conditional interpretation. CCS v2 is not a certificate or
+premise for that paper.
 
-**Paper V bridge.** Paper III's T7 result is the first certified separation between Lie-generated visibility and finite compositional visibility. This motivates, but does not prove, the later minimal-data problem for general sectorized observable frameworks:
+**Paper V comparison.** Paper III proves that support-graph reachability need not
+survive projected matrix composition. This motivates, but does not prove, the
+later minimal-data problem for general sectorized observable frameworks:
 $$
 R_1(i,j;g)=1 \iff Q_iX_gQ_j\ne0,
 \qquad
 R_2(i,j;g,h)=1 \iff Q_i[X_g,X_h]Q_j\ne0.
 $$
-The CCS does not import the post-trilogy weighted Hall path program as a certified theorem. In particular, it makes no claim that $(R_1,R_2)$ universally determines first accessibility depth. The certified trilogy claim remains the Rubik T7 separation recorded in CCS §II.5 and Paper III.
+The CCS does not define or certify Paper V's typed word, commutator, or Lie
+objects. In particular, it makes no claim that $(R_1,R_2)$ universally
+determines first accessibility depth.
 
-### II.3 Generator-Family Structural Invariants
+### II.3 Historical Generator-Family Census
 
-**Purpose.** Test whether spectral/transport structure is specific to the 18-generator
-face-turn family or reflects a broader universality class.
+> **Computational observation.** This finite census compares four declared
+> generator families. It does not establish a universality class or an exact
+> arithmetic-field classification.
+
+**Purpose.** This census compares how registered spectral and direct-support
+quantities change across four explicitly declared face-turn families.
 
 **Dependencies.** `CubieSpectralOperator.from_gens_dict`, `center_decomposition`, `transport_graph`,
 `build_per_axis_ops`, `full_commutant_combinatorial`.
 
-**Outputs.** Four-family invariant table, universality class assessment.
+**Outputs.** Four-family numerical comparison table and candidate regularities.
 
 #### II.3.1 Four Generator Families
 
@@ -1172,10 +1463,10 @@ otherwise noted. Exact composition: F/B/R/U faces, axis side = +1, quarter-turns
 | **Rational spectrum** | True | True | True | False | **NO** |
 | **Layer dimensions** | see below | see below | see below | see below | **NO** |
 | **Σ dim = 228** | True | True | True | True | **YES** |
-| **Transport edges** | 20 | 20 | 20 | — | **YES** (?) |
-| **Star topology** | True | True | True | — | **YES** |
+| **Directed off-diagonal blocks** | 20 | 20 | 20 | — | **Observed equal** |
+| **Canonical graph form** | Sparse, non-star | Not classified here | Not classified here | — | **Not assessed** |
 | **Cross-block K** | 0 | 0 | 0 | — | **YES** |
-| **Commutant dim** | 2 | 2 | 2 | 2 | **YES** |
+| **Legacy algebra-dimension diagnostic** | 2 | 2 | 2 | 2 | **Historical only** |
 | **‖[QT⁰,QT¹]‖** | 2.915 | N/A | N/A | 7.591 | **NO** |
 | **EP fraction** | 93.9% | N/A | N/A | 72.2% | **NO** |
 | **EP block dim** | 144 | 144 | 144 | 144 | **YES** |
@@ -1192,14 +1483,15 @@ otherwise noted. Exact composition: F/B/R/U faces, axis side = +1, quarter-turns
 
 #### II.3.3 Invariant Classification
 
-**G-determined (4 invariants):**
+**Representation-determined records:**
 
 1. **Total dimension** = 228 — the group representation is the same object regardless of generator subset.
-2. **Commutant dimension** = 2 — the double-commutant of A is invariant under generator subset. The algebraic closure of the averaging operator is a G-determined property.
-3. **EP block dimension** = 144 — the block structure of ρ is generator-independent.
-4. **Cross-block K = 0** — transport never crosses physical block boundaries, regardless of generators. Follows from ρ(g) being block-diagonal for all g ∈ G.
+2. **EP block dimension** = 144 — the block structure of $\rho$ is generator-independent.
+3. **Cross-block K = 0** — direct blocks between disjoint physical carrier
+   blocks vanish because every $\rho(g)$ and every declared sector projector is
+   block diagonal.
 
-**S-conditioned (3 invariants):**
+**Generator-family-conditioned observations:**
 
 1. **Layer count** — varies from 3 (6-half, fully commutative) to 18 (9-face-pos, symmetry-broken). The 18-full and 12-quarter both yield 6 layers — quarter-turn completeness across all faces is the minimal condition for full spectral resolution.
 2. **Rational spectrum** — requires face-symmetric generator sets. Breaking face symmetry (9-face-pos) introduces irrational eigenvalues. The half-turn family preserves rationality but collapses the spectrum to 3 layers.
@@ -1207,11 +1499,14 @@ otherwise noted. Exact composition: F/B/R/U faces, axis side = +1, quarter-turns
 
 #### II.3.4 Scope and Relation to §II.4
 
-This section studies four generator families at fixed points. The full continuum 18→16→12→10→8→6, including the Q→Q(√5) phase transition and block-selective irrationality, is documented in (CCS §II.4). The two sections are complementary: §II.3 identifies which invariants are G-determined vs S-conditioned; §II.4 maps the detailed spectral evolution across the coverage continuum.
+This section studies four generator families at fixed points. Section II.4
+records a larger finite coverage sequence and numerical recognition against
+$\mathbb Q$ and $\mathbb Q(\sqrt5)$. Neither table is an exhaustive
+classification of generator subsets.
 
 #### II.3.5 Computational Details
 
-- Source: `experiments/persistence_bridge.py`, Phase B
+- Archived source: `experiments/paper3/archive/persistence_bridge.py`, Phase B
 - Method: Build `CubieSpectralOperator.from_gens_dict(gens)` for each family,
   call `center_decomposition()`, `transport_graph()`, `build_per_axis_ops()`,
   `full_commutant_combinatorial()`.
@@ -1221,10 +1516,15 @@ This section studies four generator families at fixed points. The full continuum
 - Commutant computed via index-pair orbit decomposition (BFS on (i,j) → (π_g(i), π_g(j))).
 - All computations use TOL = 10⁻¹⁰, seed = 42.
 
-### II.4 Symmetry-Breaking Transition Atlas (Rational → Irrational)
+### II.4 Registered Generator-Family Arithmetic Contrast
 
-**Purpose.** Study the spectral evolution as face-turn generator coverage decreases from the
-full 18-generator set, parameterized by the number of generators |S|. Map the rational-to-irrational phase boundary.
+> **Computational observation.** The displayed fields are numerical
+> recognitions against explicit candidate expressions. This archive does not
+> provide exact characteristic or minimal-polynomial certificates for every
+> family and does not claim a mathematical phase transition.
+
+**Purpose.** Record spectral changes along one declared sequence of generator
+subsets as the number of retained face turns decreases.
 
 **Dependencies.** `CubieSpectralOperator.lite`, `helpers.is_rational_form`, `helpers.is_in_qsqrt5`, `BLOCK_RANGES`.
 
@@ -1245,9 +1545,14 @@ full 18-generator set, parameterized by the number of generators |S|. Map the ra
 | n=8 | 8 | 7 | False | Q(√5) | 0 | 0 | Axes 0 and 2 only, no half-turns |
 | n=6 | 6 | 3 | True | Q | 0 | 78 | Half-turns only |
 
-**Key observation.** The irrational field extension Q(√5) appears at precisely two points: n=16 and n=8. These share incomplete face coverage — an entire face pair is missing or half-turns are selectively removed. All rational families (n=18, 12, 10, 6) either cover all faces with a single turn type or form a closed algebraic structure.
+**Registered contrast.** Values numerically matching
+$\mathbb Q(\sqrt5)\setminus\mathbb Q$ occur at the $n=16$ and $n=8$ points of
+this declared sequence. Although this finite pattern motivates an exact
+arithmetic problem, it does not show that incomplete face coverage is either
+necessary or sufficient for a field extension.
 
-The full phase transition (eigenvalue bifurcation tracks, phase boundary, block-level localization) is shown in (CCS Fig. C12).
+The corresponding first-version phase-transition visualization is retained
+only as repository provenance. The table above is the current archive record.
 
 #### II.4.2 Eigenvalue Bifurcation Data
 
@@ -1268,7 +1573,7 @@ The full phase transition (eigenvalue bifurcation tracks, phase boundary, block-
 
 | Family | Sectors | K edges | Hub (deg) | Cross-block K | Topology class |
 |--------|---------|---------|-----------|---------------|----------------|
-| n=18 | 9 | 20 | S6 (5) | 0 | Star (canonical) |
+| n=18 | 9 | 20 directed / 10 unordered | S6 (5) | 0 | Sparse, non-star |
 | n=16 | — | — | — | — | Dense (irrational splitting expands sector count) |
 | n=12 | — | — | — | — | Collapsed (degeneracy absorbs 5/9 layer) |
 | n=10 | — | — | — | — | Sparse (fewer layers → fewer possible edges) |
@@ -1280,19 +1585,25 @@ for α,β in disjoint blocks) holds at every n verified. This follows from ρ(g)
 block-diagonal — a property of the representation, independent of which generators
 are selected.
 
-**Observed hub persistence.** S6 remains the primary hub (deg=5) at n=8 despite the
-field extension and layer-count change. Hub status tracks Supp_nc intersection and
-is stable under generator variation.
+**Observed hub recurrence.** A degree-five registered hub also appears at the
+$n=8$ point. No theorem identifies hub status with
+$\operatorname{Supp}_{\mathrm{nc}}$ intersection or guarantees persistence
+under generator variation.
 
-#### II.4.4 Generator Genealogy
+#### II.4.4 Bounded Arithmetic Contrast
 
-![(CCS Fig. C13) Generator-Family Genealogy — canonical 18-family QT/HT breakdown, three defect-family branches (n=14/15/16), and coverage continuum with field labels.](../figures/ccs/fig_c13_generator_family_genealogy.png)
+![(CCS Fig. C20) Current source-addressed comparison of the canonical family
+and the eight-generator broken-face control. Red rings denote numerical
+recognition against displayed quadratic
+candidates.](../figures/ccs/fig_c20_arithmetic_contrast.png)
 
-**Observed pattern.** The rational domain contains generator families that form a closed algebraic structure (all faces represented with a single turn type, or all turn types represented across all faces). The irrational domain appears when an entire symmetry axis is missing while noncommutative elements are present. A broader structural generalization remains outside the CCS claim set.
+**Observed pattern.** The two highlighted values in the broken-face control
+are numerically recognized against $\mathbb Q(\sqrt5)$ candidates. The figure
+does not provide an exact field certificate or classify all generator subsets.
 
 #### II.4.5 Computational Details
 
-- Source: `experiments/persistence_bridge.py`, Phase C
+- Archived source: `experiments/paper3/archive/persistence_bridge.py`, Phase C
 - Method: For each n = 18, 16, 12, 10, 8, 6, select a generator subset of size n
   from the 18 face-turn moves, build A = (1/n) Σ ρ(s), diagonalize.
 - n=18: full 18 generators
@@ -1306,9 +1617,21 @@ is stable under generator variation.
 - Block-level decomposition: restrict A to block submatrices and diagonalize.
 - All computations use TOL = 10⁻¹⁰.
 
-![(CCS Fig. C12) Phase Transition: generator-family continuum 18→16→12→10→8→6 showing the Q → Q(√5) phase boundary at n=8 and n=16 with eigenvalue bifurcation tracks and block-level irrationality localization.](../figures/ccs/fig_c12_phase_transition.png)
-
 ***
+
+## Historical Derivation Index
+
+The 2026-07-26 mother source contained a compact invariant hierarchy followed
+by complete derivation chapters for the former combined-paper narrative. Those
+chapters remain below in the Markdown source for versioned provenance, but are
+excluded from the CCS v2 PDF. Current theorem statements and proofs belong to
+the independently maintained Papers I--III; the archive must not duplicate or
+override them.
+
+```{=latex}
+\iffalse
+```
+
 ### II.5 Invariant Hierarchy (Specification Reference)
 
 Compact invariant hierarchy — which transport/spectral properties survive generator-set variation. Full narrative in (Paper II, §7).
@@ -1335,54 +1658,60 @@ $\mathcal{K}(A) = \bigcup_B \mathcal{K}_B = \{0,1,2,3,4,6\}$. $k=5$ absent — n
 ***
 #### Unified Structural Picture
 
-The six structural consequences converge to a single coherent picture — see (CCS Fig. C0) for the full trilogy weld diagram.
+The corrected structural consequences are summarized in the current Part 0
+map and CCS §2.5. The former Fig. C0 is withdrawn.
 
-**The governing principle.** Everything above the dashed line ($\rho(G)$) is G-determined — universal across all generator choices. These are properties of the representation itself: the block decomposition, the commutant dimension, and the Artin-Wedderburn structure of $A_{\mathrm{EP}}$. Everything below the dashed line ($S \subset G$) is S-conditioned — specific to the chosen generators but structured by the G-level constraints. The 18 canonical generators are the unique completion of the cube's geometric symmetries into a generator set whose spectral consequences are fully arithmetic.
+**The governing distinction.** The physical block decomposition belongs to
+the ambient representation. The $A$-spectral layers, QH sectors, transport
+graph, and EP averaging algebra depend on the declared generator construction.
+The candidate ambient commutant dimension and generator-family uniqueness are
+not theorem-level inputs to current papers.
 
-**The single deepest structural sentence:**
+**Current structural sentence.**
 
-> Averaging algebras on finite group orbits decompose into simple components.
-> Noncommutative components (n_i ≥ 2) appear, across all systems verified in
-> this trilogy (Rubik cube + S₃ negative controls), to be the sole carriers of
-> refinement obstruction, transport mediation, and Lie curvature. The
-> continuous limit preserves intra-component propagation but freezes
-> cross-component support chains — discrete composition is strictly more
-> powerful than Lie accessibility in every example we have analyzed.
+> Direct support is Boolean data; projected composition additionally depends
+> on image--kernel incidence inside each intermediate sector.
 
-Every structural consequence in this specification — and every transport and accessibility result in the trilogy — follows from this sentence plus the specific architecture of the Rubik's cube representation: four blocks, $A_{\mathrm{EP}}$ as the M₂ carrier, CP as the commutative shadow, and hybrid sectors from the Center joint diagonalization.
+The canonical five Rubik paths demonstrate this distinction. Broader
+M2/curvature and Lie-versus-word claims require separate certificates.
 
 ***
 
 
-**Status.** Six structural laws are frozen across the canonical computations. Their proof status varies:
+**Status.** The current register mixes exact identities with finite Rubik computations; each row carries its own status.
 
-- **S2 (Transport Locality):** Proven — direct consequence of ρ(g) block-diagonal structure + Lemma 1 (Paper III §4.1).
-- **S3 (T7 Separation):** Verified for the Rubik cube and all verified systems (S₃ nat⊕reg, S₃ reg⊕reg); general proof remains open.
-- **S4 (M₂ Principle):** Proven for the canonical Rubik realization. Commutative simple summands have zero commutator curvature; the $M_2$ summands are the noncommutative carriers, and the center acts scalarly on each $M_2$ summand, producing the compatible-refinement obstruction. The unique Type II CP permutation edge is outside the Type I clause. Cross-system universality remains a Layer B principle.
-- **S5 (S1 Isolation):** Proven — V₁ is the unique G-invariant proper subrepresentation, determined by the irreducible decomposition.
-- **S6 (Curvature Confinement):** Proven — direct consequence of Lemma 1 (Paper III §4.1): [A_g, A_h] preserves block structure identically.
+- **S1 (Canonical Spectral Census):** Computationally verified for the declared 18-generator average.
 
-S1 remains a computational structural law — observed without exception in every recomputation, but not yet proven for all inverse-closed generator families.
+- **S2 (Transport Locality):** Proven for direct transport from the block-diagonal form of $\rho(g)$ and the QH projectors.
+- **S3 (Graph/Composition Separation):** Computationally verified for the five canonical Rubik paths, with a structural block-composition explanation.
+- **S4 (M₂ Overlap Pattern):** Computationally verified for the registered EP algebra and Type I edge pattern; no universal sole-carrier theorem is claimed.
+- **S5 (S1 Isolation):** The registered direct graph isolates S1; its full-action invariance is numerical pending an exact certificate. No claim of uniqueness among all proper $G$-subrepresentations is made.
+- **S6 (Transport--Non-Invariance):** Proven for any complete orthogonal sectorization and unitary transport action by the block-matrix identity in Paper II.
 
-**Spec Theorems use an independent numbering system (S1–S6), distinct from paper theorem numbers.** Cross-references from papers SHALL cite "CCS Spec Theorem S$n$", never by number alone.
+The labels S1--S6 are register identifiers, not a uniform theorem numbering system.
 
-| Spec Theorem | Name | Statement |
+| Claim ID | Name | Status-qualified statement |
 |-------------|------|-----------|
-| **S1** | Spectral Rigidity | The 6-layer decomposition is $G$-determined (invariant under all tested inverse-closed $S$). |
-| **S2** | Transport Locality | All direct transport and pure curvature are block-preserving. Zero cross-block direct edges or curvature channels. |
-| **S3** | T7 Separation | All T7 morphisms are cross-block. Zero within-block T7 morphisms. |
-| **S4** | M₂ Principle | In the canonical Rubik realization, noncommutative simple components ($n_i \geq 2$) carry all Type I transport and Lie curvature, and the $M_2$ summands of $A_{\mathrm{EP}}$ obstruct further compatible commutative refinement. The Type II CP permutation channel is excluded from the Type I statement. |
-| **S5** | S1 Isolation | $V_1$ is the unique $G$-invariant proper subrepresentation. $K = \kappa_d = 0$ at all depths. |
-| **S6** | Curvature Confinement | $\kappa_1 > 0$ exclusively within blocks. The commutator $[A_g, A_h]$ preserves block structure identically. |
+| **S1** | Canonical Spectral Census | The declared 18-generator average has six computed layers. |
+| **S2** | Direct Transport Locality | All direct transport blocks are physical-block preserving. |
+| **S3** | Graph/Composition Separation | Five support paths have order-one factors and machine-zero products. |
+| **S4** | M₂ Overlap Pattern | The registered EP components organize the computed Type I incidence; universal extension is open. |
+| **S5** | S1 Direct Isolation | S1 has no off-diagonal direct edge; exact full-$G$ invariance is uncertified. |
+| **S6** | Transport--Non-Invariance | Outgoing mass equals one half of the projector-commutator mass. |
 
 **Part III — Formal Derivations**
 
 ***
 ## Part III — Formal Derivations
 
-> **Scope.** Transport proofs, algebra proofs, commutator proofs, hub necessity — formal support for all structural claims made in Parts I–II. The derivations are organized by paper.
+> **Scope.** This part mixes current derivations with first-version material.
+> Sections 9.7, 10.1--10.8, and 11 are superseded by the consolidation
+> correction and are retained only as provenance. Current Paper III support is
+> CCS §2.5 together with the revised manuscript and matrix certificate.
 >
-> **Roadmap.** §7 — Paper I derivations (spectral rationality); §8 — Claim Status Register, see Appendix E; §9 — Paper II derivations (transport topology); §10 — Paper III derivations (Lie accessibility, T7); §11 — Isotypic decomposition and multiplicity reservoir. The numbering follows the paper theorem numbering to keep cross-references stable.
+> **Roadmap.** §7 contains Paper I derivations subject to the current claim
+> qualifications; §9 contains Paper II material, except the withdrawn §9.7;
+> the first-version §10 and §11 are non-authoritative provenance.
 
 ### Paper I: Complete Proofs and Derivations
 
@@ -1595,7 +1924,10 @@ The increase from 5 to 6 spectral layers (relative to an 18-turn subset) reflect
 
 **Purpose.** Provide the complete structural proofs and algebraic derivations underlying the transport topology claims of Paper II. Every Observation (A–D) and supporting structural claim is certified by a derivation in this Part.
 
-**Scope.** Transport tensor formalism, Supp_nc derivation and transport-commutator identity, EP algebra structure (M₂ Principle), hub necessity proof, refinement obstruction lattice, transport mechanism classification (Type I/II), CP permutation channel analysis, π map and commutant structure.
+**Scope.** Transport tensor formalism, Supp_nc derivation and
+transport-commutator identity, EP algebra structure (M₂ Principle), hub
+analysis, refinement obstruction, transport mechanism classification
+(Type I/II), and CP permutation-channel analysis.
 
 **Dependencies.** Part I (canonical objects, numerical data §§2.1–2.9), Part 0.5 (canonical API), Paper II (Observations A–D, §§4–6).
 
@@ -1687,7 +2019,14 @@ $$\text{HTM (3)} \prec \mathrm{QT}_{\mathrm{all}} \text{ (6)} \prec A_{18} \text
 
 Each step adds a commuting operator. The next step would require an operator commuting with all three Center operators — but any such operator, when restricted to the EP block, must lie in $Z(A_{\mathrm{EP}})$, and $Z(A_{\mathrm{EP}})$ has already been exhausted (8 central idempotents, all used in the 9-sector construction). The refinement sequence terminates here — not arbitrarily, but at the algebraic boundary between commutative and noncommutative regimes.
 
-### 9.7 The π Map: Commutant Restriction
+<!-- The invalid first-version restriction map is excluded from the current
+CCS. Its correction history is summarized in HISTORY.md.
+
+### 9.7 The π Map: Commutant Restriction (Withdrawn)
+
+> **Superseded first-version material.** The nontrivial $A$-spectral layers are
+> not $G$-invariant, so the layerwise group-commutant codomain used below is not
+> defined. The displayed values have provenance status only.
 
 $$\pi: \operatorname{End}_G(V) \to \bigoplus_\lambda \operatorname{End}_G(V_\lambda), \quad \pi(C) = (P_\lambda C P_\lambda)_\lambda$$
 
@@ -1700,6 +2039,8 @@ $$\pi: \operatorname{End}_G(V) \to \bigoplus_\lambda \operatorname{End}_G(V_\lam
 
 The 356-dimensional cokernel is the structural signature of transport sparsity. Each zero-transport pair $(\alpha, \beta)$ with $K_{\alpha\beta} = 0$ forces the corresponding block $C_{\alpha\beta}$ of every global intertwiner to vanish: $P_\alpha C P_\beta = 0$ for all $C \in \operatorname{End}_G(V)$. These constraints lock the relative scaling between per-layer commutant bases, reducing the effective degrees of freedom from 966 (the unconstrained sum) to 610 (the actual commutant dimension).
 
+-->
+
 ### 9.8 The CP Permutation Channel (Type II)
 
 The S8↔S9 edge ($K = 2.83$) is the unique direct transport channel not explained by Supp_nc intersection. Both sectors have empty Supp_nc on their shared block (CP), yet transport occurs.
@@ -1710,9 +2051,12 @@ S8 (8-dim, pure CP, $k=6$) is the $|u| \in \{2,3\}$ eigenspace of the Q₃ hyper
 
 **Structural significance.** The existence of the Type II channel demonstrates that Supp_nc is the dominant invariant for Type I transport but not a universal transport criterion. A complete transport criterion must account for both noncommutative mixing (Type I) and commutative permutation channels (Type II). In the Rubik's cube, the Type II channel is unique — all other transport is Type I.
 
-**Part III — Formal Derivations (Paper III)**
+**Historical first-version section excluded from current CCS output**
 
 ***
+<!-- First-version Paper III derivations are excluded from the current CCS.
+Their correction history is summarized in HISTORY.md.
+
 ### Paper III: Complete Proofs and Derivations
 
 **Purpose.** Provide the complete proofs and structural derivations underlying the Lie accessibility and composition transcendence claims of Paper III. Every lemma, theorem, and structural observation is certified by a derivation in this Part.
@@ -1773,7 +2117,11 @@ The largest pure curvature enhancement is $V_{7/9} \leftrightarrow V_{2/3}$ (S3�
 
 **Level 3+ (κ₂ and beyond).** Higher commutators amplify all within-block channels but create no new cross-block ones — Lemma 1 guarantees zero cross-block κ at all depths.
 
-### 10.4 The T7 Theorem: Compositional Accessibility ⊋ Lie-Generated Accessibility
+### 10.4 First-Version T7 Theorem (Withdrawn)
+
+> **Superseded first-version material.** Graph-square reachability was
+> incorrectly promoted to nonzero projected composition. The exhaustive
+> matrix audit in CCS §2.5 shows that all five registered products vanish.
 
 > **Definition (T7 Morphism).** \label{def:t7-morphism} An ordered pair of distinct QT/HT joint-spectral sectors $(\alpha, \beta)$ with $\alpha \neq \beta$ is a T7 morphism if:
 >
@@ -1813,13 +2161,13 @@ All mediated through the S6–S7–S9 hub complex (canonical mediation statistic
 
 C3 is the only unconditionally proved necessary condition. C1 and C2 are observed to be necessary in all systems verified but await general proof.
 
-### 10.6 T7 and M₂ Are Independent Obstruction Types
+### 10.6 First-Version T7/M₂ Comparison (Withdrawn)
 
 The S₃ nat⊕reg negative control (9-dim, see CCS §2.11) demonstrates that T7 does not require M₂. The S₃ reg⊕reg negative control (12-dim, see CCS §2.11) has full separation.
 
 The Rubik's cube has both M₂ (EP algebra) and T7 morphisms (5, all cross-block), establishing them as logically independent obstruction types that can coexist without implying each other.
 
-### 10.7 N=2 Pocket Cube: T7-Free Negative Control
+### 10.7 N=2 Pocket Cube (Archived First-Version Control)
 
 The 2×2×2 pocket cube ($N=2$) has a 24-dimensional representation with 3 blocks (cp: 8, co: 8, eo: 8 — no ep block). The key structural difference: the system has zero $M_2$-active components. The commutator $\|[\mathrm{QT}^0, \mathrm{QT}^1]\|_F = 0$ on all blocks (all are commutative or scalar).
 
@@ -1831,14 +2179,24 @@ The 2×2×2 pocket cube ($N=2$) has a 24-dimensional representation with 3 block
 
 **The C1–C3 diagnostic chain.** C2 requires at least one $M_2$-active block. Noncommutativity confined to a single block, even if non-zero, cannot satisfy C2. The $N=2$ case demonstrates that T7 is not an automatic consequence of having a multi-block representation — it requires the specific algebraic structure (noncommutative blocks + hybrid sectors) present in $N=3$ but absent in $N=2$.
 
-### 10.8 S₃ Prototypes (C0 Negative Control)
+### 10.8 S₃ Prototypes (Archived First-Version Controls)
 
 See CCS §2.11 and Appendix G for the authoritative S₃ negative control data (nat⊕reg and reg⊕reg). Both negative controls have 0 T7 under the canonical decomposition: C0 fails (Z sectors = isotypic components, K diagonal) and C2 fails (no transport-active hybrid). The Rubik's cube (228-dim) is the sole verified T7 system (5 T7 morphisms). S₃ demonstrates that C0 is the foundational structural divide: without center incompleteness, off-diagonal transport cannot exist regardless of C1–C3 status.
 
 **Part III — Formal Derivations (Isotypic)**
 
 ***
-### Isotypic Decomposition and Multiplicity Reservoir
+-->
+
+<!-- The first-version compressed-layer/isotypic section is excluded from the
+current CCS. Its correction history is summarized in HISTORY.md.
+
+### Compressed-Layer Decomposition (Withdrawn Interpretation)
+
+> **Superseded first-version material.** The numerical decompositions below
+> compress ambient matrices to non-invariant $A$-spectral layers. They are not
+> group-isotypic decompositions of those layers. The 51/59 census and the
+> multiplicity-reservoir interpretation are withdrawn; see Paper I Appendix B.
 
 **Purpose.** Provide the complete isotypic decomposition of the 228-dimensional representation — the finest algebraic decomposition — and characterize the unique multiplicity reservoir. This is the "F1–F4" analysis from the original Appendix B of Paper I.
 
@@ -1922,16 +2280,11 @@ This component spans 33 of the 106 dimensions in $V_{5/9}$ (31%). Its 11-fold mu
 
 > **Theorem (Transport Complexity Concentration).** \label{thm:transport-complexity-concentration} In the 228-dimensional Rubik's cube representation, the $V_{5/9}^{(3,11)}$ component is the unique multiplicity reservoir. All transport complexity beyond the isotypic-level backbone is concentrated in this single component.
 
-**Implications for the trilogy:**
+**Historical cross-paper implications:**
 
 - **Paper I**: The isotypic decomposition and multiplicity reservoir are structural facts about the spectral object $A$ — the finest algebraic decomposition.
 - **Paper II**: The transport backbone ($\tilde{K}_{\alpha\beta}$ at the isotypic level) is the substrate on which the sector-level transport graph is built. The multiplicity reservoir enriches the hub structure.
 - **Paper III**: The internal dynamics of the multiplicity reservoir — non-Schur copy coupling, full-rank multiplicity transfer — may contribute to the accessibility hierarchy through T7 morphism channels requiring the internal fibre degree of freedom.
-
-**Appendix A — Computational Stability**
-
-***
-## Appendix A — Computational Stability
 
 **Purpose.** Define the normative tolerance regime, stability guarantees, failure mode taxonomy, gauge-fixing conventions, and canonicalization philosophy. This Part is **normative** — it specifies what SHALL be done, not what was done.
 
@@ -1939,11 +2292,20 @@ This component spans 33 of the 106 dimensions in $V_{5/9}$ (31%). Its 11-fold mu
 
 **Dependencies.** Part 0.5 (canonical API).
 
-**Outputs.** Normative rules that any recomputation MUST follow to produce CCS-compatible values.
+**Outputs.** Declared conventions for reproducing the archived arrays.
 
-*This part certifies which numerical structures are canonical (Layer A/B) and which remain exploratory (Layer C) — the stability constitution.*
+*This part records the realization used by the archive. It is not a semantic
+specification for the independent papers.*
 
 **Geometric and move conventions.** The coordinate system, face mapping, cubie orderings, rotation conventions, and move encoding used throughout this specification are defined in `docs/conventions.md`. All CCS-compatible computations SHALL use these conventions.
+
+-->
+
+```{=latex}
+\fi
+```
+
+## Appendix A — Computational Stability
 
 ### A.1 Tolerance Regime
 \label{sec:ccs-tolerance-regime}
@@ -1954,30 +2316,58 @@ The canonical tolerance regime is:
 |--------|-------|-------|
 | `TOL` | $10^{-10}$ | Numerical equality assertions |
 | `TOL_K` | 0.05 | Transport edge detection threshold |
-| `TOL_KAPPA` | $10^{-6}$ | κ value sanity floor (logm noise ceiling) |
+| `TOL_KAPPA` | $10^{-6}$ | Historical κ-array sanity floor (logm noise ceiling) |
 | `SPECTRAL_DECIMALS` | 6 | Canonical eigenvalue key rounding |
 | `CENTER_CLUSTER_TOL` | $10^{-8}$ | Sector merge clustering |
 | `tol` | $10^{-6}$ | Default operator tolerance |
 
-All tests and experiments SHALL use these tolerance values. Any computation using a different `SPECTRAL_DECIMALS`, `CENTER_CLUSTER_TOL`, or `TOL_K` produces values that are not CCS-compatible and MUST be treated as a distinct revision.
+The archived realization uses these tolerance values. A computation using a
+different `SPECTRAL_DECIMALS`, `CENTER_CLUSTER_TOL`, or `TOL_K` is a distinct
+registered realization and should report a comparison sweep.
 
-The canonical sector decomposition SHALL use `CENTER_CLUSTER_TOL` = $10^{-8}$. Any decomposition using a different clustering tolerance MUST be explicitly identified as a non-canonical revision and cross-validated against the canonical values in Part I.
+The registered sector decomposition uses `CENTER_CLUSTER_TOL` = $10^{-8}$.
+A different clustering tolerance should be identified explicitly and
+cross-validated against the Part I tables.
 
-**Numerical Robustness.** All canonical quantities (layer count, sector count, transport edges, T7 count) remain invariant under `tol` in $\{10^{-5}, 10^{-6}, 10^{-7}\}$ and under random seed in $\{1, 42, 123\}$. Reproducibility: `experiments/paper3/stability_sweep.py`.
+**Historical numerical robustness.** The recorded layer, sector, edge, and graph-only candidate counts remain invariant under the tested tolerances and seeds. The first-version audit is archived at `experiments/paper3/archive/stability_sweep.py` and does not certify matrix composition.
 
-**T7 Threshold Stability.** The 5 canonical T7 pairs are invariant under `TOL_K` across the full range $[0.001, 0.500]$ — a 500-fold perturbation of the canonical 0.05 threshold. The T7 count is not a threshold artifact. Reproducibility: `experiments/paper3/t7_threshold_sensitivity.py`.
+**Graph-candidate threshold stability.** The five graph-only candidate pairs are invariant under the recorded threshold sweep. The archived script is `experiments/paper3/archive/t7_threshold_sensitivity.py`; this statement does not promote graph reachability to operator composition.
 
 ### A.2 Norm and Projector Conventions
 
-All norms SHALL be Frobenius: $\|X\|_F = \sqrt{\sum |x_{ij}|^2}$.
+Unless a record states otherwise, archived matrix norms are Frobenius:
+$\|X\|_F = \sqrt{\sum |x_{ij}|^2}$.
 
-All projectors SHALL be Schatten-normalized: $P = VV^H$ where $V$ has orthonormal columns from `numpy.linalg.eigh`. $\operatorname{Tr}(P) = \dim(\text{subspace})$.
+Archived projectors use $P=VV^H$, where $V$ has orthonormal columns from
+`numpy.linalg.eigh`, so $\operatorname{Tr}(P)=\dim(\text{subspace})$.
 
-The canonical generator weighting SHALL be the uniform average: $A = \frac{1}{|S|}\sum_{s\in S} \rho(s)$.
+The registered generator weighting is the uniform average
+$A = \frac{1}{|S|}\sum_{s\in S} \rho(s)$.
 
-The canonical random seed SHALL be `np.random.seed(42)`. Tests are deterministic and do not depend on random state.
+Where a seed is used, the registered value is `np.random.seed(42)`. Deterministic
+audits should not depend on random state.
 
-### A.3 Stability Classification
+### A.3 Claim-Status Routing
+
+Numerical stability and mathematical claim status are separate. The current
+repository uses four paper claim levels; CCS v2 adds a history tag solely for
+archive routing.
+
+| Status | Use in CCS v2 |
+|--------|---------------|
+| **Theorem / exact derivation** | Restate only with explicit hypotheses and proof; cite the owning independent paper when used externally. |
+| **Computational Certificate** | Record realization, dtype, tolerance, registration, algorithm, artifact, and reproducible script. |
+| **Computational Observation** | Record a finite pattern, contrast, or numerical recognition without promotion beyond the tested realization. |
+| **Research Program** | Record conjectures, proposed hierarchies, genericity questions, and future experiments. |
+| **Historical / Withdrawn** | Preserve correction provenance without treating the item as a current claim. |
+
+Passing recomputation, basis, permutation, or tolerance checks strengthens a
+computational record but does not by itself change its status. In particular,
+the candidate ambient-commutant dimension, first-version $\kappa$/T7
+diagnostics, and moving accessibility hierarchies are not promoted by this
+appendix.
+
+<!-- Historical A/B/C stability classification retained in source provenance.
 
 **Layer A — Canonical (11 items)**
 
@@ -2002,11 +2392,8 @@ The canonical random seed SHALL be `np.random.seed(42)`. Tests are deterministic
 | 9 canonical sectors | Merge pattern deterministic; gap $> 10^{-3}$ |
 | 10 direct transport edges | Stable under `TOL_K = 0.05` |
 | S6 degree 5 (primary hub) | Invariant under recomputation |
-| 5 T7 morphisms | Binary detection; $K=0$ threshold sharp ($<10^{-14}$ vs $>0.01$) |
-| 7 pure curvature channels | $\kappa_0/K$ ratio $> 10^8$ |
-| $\kappa$ values | Stable to $10^{-12}$ |
-| $\pi$ map: $\ker=0$, $\operatorname{coker}=356$ | SVD gap $>10^{-8}$ |
-| $\Delta_{\operatorname{comm}} = 194$ | Exact combinatorial count |
+| 5 graph-only composition obstructions | Adjacent edge maxima are order one; exhaustive projected products are at most $3.02\times10^{-15}$ in the independent Paper III audit |
+| Candidate $\dim\operatorname{End}_G(V)=610$ | Not promoted without a separate exact rank/nullity certificate |
 | S1 isolation | $G$-invariant subrepresentation |
 | Collision-quotient wall nesting on tested charts | Every observed field-extension event lies on a layer-count wall; $\Sigma_{\mathrm{field}}\subseteq\Sigma_L\subseteq\Sigma_{\mathrm{spec}}\subseteq\Sigma_{\mathrm{comm}}$ on the registered Paper VI charts |
 | T7 D-stability on tested block-diagonal constructions | Five Rubik T7 pairs and zero S₃-control pairs persist across all registered scalar and Casimir Dirac constructions |
@@ -2023,6 +2410,8 @@ The canonical random seed SHALL be `np.random.seed(42)`. Tests are deterministic
 | Universal collision-quotient wall nesting | Extension beyond the tested normal spectral charts remains conjectural |
 | Universal T7 D-stability | Invariance for arbitrary admissible block-diagonal Dirac operators remains conjectural |
 
+-->
+
 ### A.4 Failure Modes
 
 All observed failure modes fall into four categories:
@@ -2036,7 +2425,11 @@ The canonical r2 pipeline eliminates categories (3) and (4) by construction. Cat
 
 #### A.4.1 Pre-ρ-fix Representation Defect (Category 3)
 
-The single most consequential failure in the project's history. An inconsistent sign convention in the EP orientation sub-block caused $\rho(g)\rho(h) \neq \rho(gh)$, violating the homomorphism property. This erased the $V_{8/9}$ layer ($k=1$, 2-dim) entirely — it was absorbed into adjacent layers by numerical accident.
+The most consequential recorded implementation failure was an inconsistent
+sign convention in the EP orientation sub-block. It caused
+$\rho(g)\rho(h)\ne\rho(gh)$, thereby violating the homomorphism property. This
+erased the $V_{8/9}$ layer ($k=1$, 2-dim) entirely — it was absorbed into
+adjacent layers by numerical accident.
 
 > **Warning.** Pre-fix data archived and must not be cited. Representation defects differ qualitatively from numerical issues — they propagate into structural claims, not just numerical values. Block-wise homomorphism verification is mandatory. **Status**: Resolved in r2.
 
@@ -2056,24 +2449,30 @@ The private raw archive retains the full historical logs; the public error catal
 ![(CCS Fig. C5) Null-space drift diagnostics: incremental intersection vs one-shot SVD.](../figures/ccs/fig_c5_nullspace_drift.png)
 
 
-### A.5 Canonicalization Principle
+### A.5 Numerical Registration and Stability Policy
 
-The governing principle of the r2 pipeline is:
+The working principle of the archived numerical pipeline is:
 
-> **Canonical.** Canonicalize first, analyze second.
+> **Registration policy.** Register first, analyze second.
 
-All mathematically equivalent but numerically unstable representations SHALL be reduced to a unique canonical form before any structural claim is extracted. A claim SHALL be promoted to Layer A (Canonical) only if it survives all four stability criteria:
+Numerically equivalent realizations must be reduced to a declared registration
+before their tables are compared. The following checks support the stability
+of a finite record, but passing them does not automatically promote an
+observation or certificate to the status of a theorem:
 
 1. **Recomputation** — same code, same parameters → same result to within prescribed tolerance.
 2. **Generator permutation** — invariant under $S_6 \times \mathbb{Z}_2$ face relabeling.
 3. **Basis changes** — invariant under $U(n)$ gauge freedom inside degenerate eigenspaces.
 4. **Tolerance perturbation** — stable under perturbation of any tolerance within the prescribed regime (§A.1).
 
-Claims satisfying all four criteria are Specification Theorems (§12). Claims failing any criterion SHALL remain in Layer B (Numerical) or Layer C (Exploratory), and MUST be labeled as such.
+Records failing a relevant check remain computational observations or research
+program items. Current claim status is assigned under the four-level contract
+in the independent paper, not by this appendix.
 
-### A.6 Gauge Freedoms and Canonical Fixings
+### A.6 Gauge Freedoms and Registered Choices
 
-Seven gauge freedoms exist in the mathematical objects of this specification. Each SHALL be fixed by the canonical convention listed below. Any computation using a different gauge fixing MUST be explicitly identified and cross-validated.
+The archived implementation fixes the following representation choices.
+Alternative choices are admissible when they are declared and cross-validated.
 
 | # | Freedom | Canonical fixing |
 |---|---------|-----------------|
@@ -2083,203 +2482,83 @@ Seven gauge freedoms exist in the mathematical objects of this specification. Ea
 | D.4 | Generator labels ($S_6 \times \mathbb{Z}_2$) | `CubieMove.prim_moves` enumeration order. Spectral identity (layers, dimensions, projectors) is label-invariant. |
 | D.5 | Isotypic multiplicity ($\mathrm{GL}(m,\mathbb{C})$) | Commutant basis from orbit-enumeration construction. Gram-Schmidt orthogonalized. |
 | D.6 | Layer key representation | `SPECTRAL_DECIMALS = 6`. Canonical keys: $\lambda = 1-k/9$, $k \in \{0,1,2,3,4,6\}$ → $[1, 8/9, 7/9, 2/3, 5/9, 1/3]$. |
-| D.7 | Commutant basis | Gram-Schmidt orthogonalized conjugacy class orbit sums. The dimension (610) is gauge-invariant. |
+| D.7 | Ambient-commutant candidate basis | Gram-Schmidt orthogonalized conjugacy-class orbit sums. The registered numerical candidate dimension is 610; an exact certificate remains open. |
 
-All gauge-invariant observables — projectors $P_\lambda$, transport strengths $K_{\alpha\beta}$, accessibility strengths $\kappa_d(\alpha,\beta)$, layer dimensions, commutant dimensions — are unaffected by these choices. The gauge fixings affect only representation, not content.
+Projectors, transport strengths, and layer dimensions should agree under valid
+changes of basis up to the declared matching and numerical tolerances.
+First-version $\kappa_d$ diagnostics and the candidate ambient-commutant
+dimension are retained as archived computational records, not theorem-level
+gauge invariants established by CCS v2.
 
 **Appendix B — Provenance**
 
 ***
 ## Appendix B — Provenance
 
-**Purpose.** Establish the traceable lineage from experiment scripts to numerical claims to paper citations. Every value in Part I SHALL be traceable to a specific experiment script.
+**Purpose.** Record traceable lineage from experiment scripts to structured
+artifacts, archive tables, figures, and paper-level computational statements.
 
-**Scope.** Data flow diagram, experiment→claim mapping, paper dependency matrix, figure mapping.
+**Scope.** Data flow diagram, artifact/experiment provenance map, paper usage
+map, and figure mapping.
 
-**Dependencies.** All experiment scripts in `experiments/paper1/`, `experiments/paper2/`, `experiments/paper3/`, and top-level `experiments/`.
+**Dependencies.** The paper-local validation and result records indexed below.
 
-**Outputs.** Complete traceability matrix — every numerical claim is linked to its producing experiment and its consuming paper.
+**Outputs.** A reviewable provenance map linking retained numerical records to
+their producing experiments and, where applicable, their consuming papers.
 
-*This part defines the provenance chain from experiment script to published claim — every number in Part I is traceable to its producing code.*
+*This part indexes provenance. It does not assign mathematical claim status.*
 
 ### B.1 Data Flow
 
 ```
-experiments/*.py  ->  CCS-r3 (this document)  ->  figures/*.py
-                                               ->  papers/*.tex
-private raw archive  ->  provenance only
+experiments and validation scripts -> structured artifacts -> papers
+                                  \-> generated figures
+                                  \-> CCS v2 review index
+private raw archive               -> provenance only
 ```
 
-Experiment scripts compute, CCS freezes the public numerical constitution, and figures and papers reference the frozen values. The private raw archive retains failed experiments and older revisions but is not an authoritative public layer.
+Executable scripts and structured outputs form the certificate layer. CCS v2
+indexes selected values and observations for human review. The private raw
+archive retains failed experiments and older revisions as provenance only.
 
-### B.2 Experiment → Claim Mapping
+### B.2 Artifact and Experiment Provenance Map
 
 | Claim | Primary experiment |
 |-------|-------------------|
-| 6-layer spectrum, dims, block support | `experiments/paper1/spectral_ladder.py` |
-| $k=5$ genuinely absent | `experiments/paper1/k_absence.py` |
-| Projector algebra ($P_iP_j = \delta_{ij}P_i$) | `experiments/paper1/projector_algebra.py` |
-| 9 QT/HT joint-spectral sectors | `experiments/paper2/primitive_sectors.py` |
-| $K$ matrix, transport graph | `experiments/paper2/transport_graph.py` |
-| Block noncommutativity | `experiments/paper2/supp_nc.py` |
-| EP algebra ≅ $M_2(\mathbb{C})^4 \oplus M_1(\mathbb{C})^4$ | `experiments/paper2/ep_algebra.py` |
-| $\pi$ map (ker=0, coker=356) | `experiments/paper2/commutant_pi_map.py` |
-| T7 detection ($N=3$: 5 pairs) | `experiments/paper3/t7_detection.py` |
-| $\kappa_0/\kappa_1$ hierarchy | `experiments/paper3/kappa_depth.py` |
-| S₃ negative control (C0 negative control) | `experiments/paper3/t7_refined.py` |
-| Isotypic decomposition (51 components) | `experiments/paper1/isotypic_decomposition.py` |
-| 84-check Lie accessibility audit | `experiments/paper3/transport_closure.py` |
-| 9-sector transport tensor | `experiments/paper3/transport_9sector.py` |
+| 6-layer spectrum, dims, block support | `experiments/paper1/validation/spectral_ladder.py` |
+| registered $k=5$ vacancy | `experiments/paper1/validation/k_absence.py` |
+| Projector algebra ($P_iP_j = \delta_{ij}P_i$) | `experiments/paper1/validation/projector_algebra.py` |
+| 9 QT/HT joint-spectral sectors | `experiments/paper2/validation/primitive_sectors.py` |
+| $K$ matrix, transport graph | `experiments/paper2/validation/transport_graph.py` |
+| Block noncommutativity | `experiments/paper2/validation/supp_nc.py` |
+| EP algebra census | `experiments/paper2/validation/ep_algebra.py` |
+| Graph/operator separation for five canonical paths | `experiments/paper3/validation/composition_obstruction.py` |
+| Withdrawn spectral-layer $\pi$ map | `experiments/paper2/archive/commutant_pi_map.py` (provenance only) |
+| Withdrawn compressed-commutant census | `experiments/paper1/archive/isotypic_decomposition.py` (provenance only) |
 
-### B.3 Paper Dependencies
+### B.3 Subject Navigation
 
-| Paper | Primary CCS reference | Sections used |
-|-------|----------------------|---------------|
-| Paper I (Spectral Ontology) | §§1.1–1.3, 2.1, 2.10, 3.1–3.2 | Layers, blocks, fundamental identities |
-| Paper II (Transport Topology) | §§1.4, 2.2, 2.7–2.9 | Sectors, $K$ matrix, EP algebra, commutants |
-| Paper III (Lie Accessibility) | §§2.3–2.6, 2.11 | $\kappa$ matrices, T7 morphisms, S₃ negative controls |
+| Subject | Primary CCS reference | Archived material |
+|---------|-----------------------|-------------------|
+| Averaging-operator spectrum | §§1.1–1.8 | Layers, block reductions, and extended census tables |
+| Direct transport | §§1.4, 2.1–2.2, 2.7–2.8 | Sectors, $K$ matrix, localizer data, and EP algebra |
+| Projected composition | §2.5 | Optional copy of the five matrix-obstruction records |
 
-### B.4 Figure Mapping
+### B.4 Figure Boundary
 
-CCS canonical figures cited by each paper. Paper figures are derived
-visualizations generated by the per-paper figure scripts; CCS figures are
-the frozen canonical source data. For full definitions see
-**Appendix C --- CCS Figure Directory**.
+Figures used by the current archive are placed beside the records they
+illustrate and are explained by their captions. Historical and withdrawn
+images remain repository provenance; they are not indexed in this release and
+do not enlarge the claims of the independent papers.
 
-**Paper I (Spectral Ontology):**
-
-- CCS Fig. C1 --- Canonical Spectrum (§1.4): spectral tower, layer multiplicities
-- CCS Fig. C9 --- Resonance Merging: 10 → 6 (§1.6)
-- CCS Fig. C10 --- Phase Cancellation: Z₃ Arithmetic Filter (§1.5.3)
-- CCS Fig. C12 --- Phase Transition (§II.4): generator-family continuum, Q→Q(√5) boundary
-
-**Paper II (Transport Topology):**
-
-- CCS Fig. C2 --- Transport Heatmap (§2.2)
-- CCS Fig. C4 --- Commutant SVD Gap (§2.8)
-- CCS Fig. C14 --- Noncommutative Support Overlap (§2.1)
-- CCS Fig. C16 --- Transport Skeleton (§2.2)
-- CCS Fig. C17 --- Block-Sector Alluvial (§2.1--§2.2)
-- CCS Fig. C12 --- Phase Transition (§II.4)
-- CCS Table C15 --- Block-Support Transport (§2.2)
-
-**Paper III (Lie Accessibility):**
-
-- CCS Fig. C0 --- Structural Pipeline (Preamble)
-- CCS Fig. C7 --- S₃ Prototype Comparison (§2.11)
-- CCS Fig. C11 --- κ Hierarchy: Gradient vs Curvature (§2.3)
-- CCS Fig. C13 --- Generator-Family Genealogy (§II.4.4)
-- CCS Fig. C18 --- Generator Defect Taxonomy (§I.3)
-
-**Cross-paper:**
-
-- CCS Fig. C5 --- Null-Space Drift Diagnostics (§A.4): commutant computation stability
-- CCS Fig. C0 --- Structural Pipeline (Preamble): trilogy weld diagram
-
-**Appendix C — CCS Figure Directory**
+**Appendix C — Figure Provenance**
 
 ***
-## Appendix C — CCS Figure Directory
+## Appendix C — Figure Provenance
 
-**Purpose.** Index all canonical verification figures (C0–C14, C16–C18) with their locations, citation format, and the CCS sections they accompany. All CCS figures are frozen artifacts generated by `experiments/ccs_figures.py`.
-
-**Scope.** Fifteen CCS figures provide visual verification of canonical data: structural pipeline, spectrum, transport, commutant, symmetry breaking, S₃ negative controls, failure mode diagnostics, block decomposition, resonance merging, phase cancellation, κ hierarchy, generator-family genealogy, noncommutative support overlap, transport skeleton, block-sector alluvial diagram, and generator defect taxonomy.
-
-**Dependencies.** Part I (core numerical structures), Part III (formal derivations); `CubieSpectralOperator` public API.
-
-**Outputs.** Frozen PNG figures in `figures/ccs/`.
-
-*This appendix collects the frozen figure artifacts that CCS sections cite — generated once, never recomputed.*
-
-### CCS Fig. C0 — Structural Pipeline (Preamble)
-
-`figures/ccs/fig_c0_structural_pipeline.png`
-
-Master "trilogy weld" diagram showing the updated data pipeline: $\rho(g)$ → $(\mathrm{QT}_{\mathrm{all}},\mathrm{HT}_{\mathrm{all}})$ → $\{S_\alpha\}$ (9 QT/HT joint-spectral sectors) → $A_{18}$ collision quotient $\{V_\lambda\}$ (6 spectral layers) → $K_{\alpha\beta} = \max_g\|P_\alpha\rho(g)P_\beta\|_F$ → $\kappa_0, \kappa_1$ (Lie accessibility hierarchy) → T7 (Composition Escape). Seven stages flow downward with Paper I (blue), Paper II (purple), and Paper III (orange) color regions. Right-side annotations mark the mathematical operation at each stage.
-
-### CCS Fig. C1 — Canonical Spectrum (§1.4)
-
-`figures/ccs/fig_c1_canonical_spectrum.png`
-
-Dual panel: eigenvalue ladder ($\lambda = 1 - k/9$, $k \in \{0,1,2,3,4,6\}$) with dimensional multiplicities; and the nine QT/HT joint-spectral sector decomposition (S1–S9) from joint diagonalization of $\operatorname{Center}\{A_{18}, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\mathrm{all}}\}$. The $V_{5/9}$ giant layer splits into three sectors; the structural $k=5$ gap is visible.
-
-### CCS Fig. C2 — Transport Heatmap (§2.2)
-
-`figures/ccs/fig_c2_transport_heatmap.png`
-
-Complete $9 \times 9$ transport matrix $K_{\alpha\beta} = \max_g \|P_\alpha \rho(g) P_\beta\|_F$ as a data-dense heatmap. All entries normalized for visual encoding. Diagonal entries (intra-sector) structurally irrelevant. All ten active off-diagonal edges ($K > 0.01$) are block-preserving.
-
-### CCS Fig. C4 — Commutant SVD Gap (§2.8, §A.4)
-
-`figures/ccs/fig_c4_commutant_svd.png`
-
-Per-layer commutant dimension bar chart and total commutant decomposition ($\operatorname{Comm}(A_{18}) = 804$, $\operatorname{Comm}(\rho) = 610$, $\Delta_{\operatorname{comm}} = 194$). One-shot SVD clean nullspace separation concept. Dual-placed: as numerical data (§2.8) and as stability diagnostic (§A.4) certifying the Layer A/B boundary.
-
-### CCS Fig. C5 — Null-Space Drift Diagnostics (§A.4)
-
-`figures/ccs/fig_c5_nullspace_drift.png`
-
-Four-panel failure mode diagnostic. Simulated incremental null-space drift (169→65→2→0) on a synthetic d=20 system; one-shot SVD clean separation; documented canonical drift cascade; method comparison table. Validates the one-shot SVD as the canonical commutant computation method.
-
-### CCS Fig. C7 — S₃ Prototype Comparison (§2.11)
-
-`figures/ccs/fig_c7_prototype_comparison.png`
-
-S₃ $\mathrm{nat} \oplus \mathrm{reg}$ (9-dim) negative control comparison with Rubik's cube transport topology. See CCS §2.11 for the full S₃ negative control data.
-
-### CCS Fig. C9 — Resonance Merging: 10 → 6 (§1.6)
-
-`figures/ccs/fig_c9_resonance_merging.png`
-
-Visualization of the coincidence mechanism: four independent block algebras produce 4+3+3+2 = 12 block-level primitive idempotents (10 distinct k-values), which collapse to exactly 6 global spectral layers under the common rational form $\lambda = 1 - k/9$. The $V_{5/9}$ giant layer (k=4, 106D) is the unique 4-block confluence point. The k=5 gap is marked.
-
-### CCS Fig. C10 — Phase Cancellation: Z₃ Arithmetic Filter (§1.5.3)
-
-`figures/ccs/fig_c10_phase_cancellation.png`
-
-Dual panel: (left) the three third roots of unity {1, ω, ω²} on the unit circle, summing to zero — the decisive arithmetic identity ω + ω² + 1 = 0; (right) per-face move accounting showing how the complete face {R, R', R2} contributes phases {ω, ω², 1} whose sum vanishes. This is why co-block eigenvalues stay rational (k=3,4,6 only) and why incomplete faces produce irrational $\mathbb{Q}(\sqrt{5})$ eigenvalues.
-
-### CCS Fig. C11 — κ Hierarchy: Gradient vs Curvature (§2.3)
-
-`figures/ccs/fig_c11_kappa_hierarchy.png`
-
-Side-by-side comparison of κ₀ (gradient, depth-0 Lie monomials) and κ₁ (curvature, depth-1 commutators) at 6-layer resolution. Pure curvature channels ($\kappa_0 \approx 0$, $\kappa_1 > 0$) are highlighted with red boxes — these are the Lie-inaccessible layer pairs reachable only by discrete composition. All pure curvature channels are within-block, confirming the M₂ Principle.
-
-### CCS Fig. C12 — Phase Transition: Generator-Family Continuum (§II.4)
-
-`figures/ccs/fig_c12_phase_transition.png`
-
-Generator-family continuum 18→16→12→10→8→6 showing the spectral field $\mathbb{Q}$ (blue) → $\mathbb{Q}(\sqrt{5})$ (red) phase transition. Top panel: timeline strip with per-family field label, layer count, missing axes, and EP irrationality markers; symmetry-breaking brackets at the 18→16 and 10→8 boundaries. Bottom 3×2 grid: eigenvalue bar charts colored by rationality, with block composition (CP/EP/CO/EO in grayscale). Red-bordered panels mark irrational families (n=16, n=8). This is the single-figure proof that the 18-generator family is the unique complete-face arithmetic closure. See (CCS §II.4) for the full transition atlas.
-
-### CCS Fig. C13 — Generator-Family Genealogy (§II.4.4)
-
-`figures/ccs/fig_c13_generator_family_genealogy.png`
-
-Minimalist genealogy tree: canonical 18-generator family (QT + HT) at root, three defect-family branches (n=14 Field Defect Localization, n=15 Transport Resolution Amplifier, n=16 Sector Shielding) with removal operations labeled, and coverage continuum (18→16→12→10→8→6) annotated with $\mathbb{Q}$/$\mathbb{Q}(\sqrt{5})$ field labels. Complements C12 (phase-transition results) and C18 (detailed defect data) by showing generator-type provenance.
-
-### CCS Fig. C14 — Noncommutative Support Overlap (§2.1)
-
-`figures/ccs/fig_c14_supp_nc_overlap.png`
-
-Nine sector × four block binary grid showing Supp_nc presence per sector–block pair. Positive cells display the per-block commutator norm $\|[QT^0, QT^1]\|_F$ with a left-edge grayscale strip encoding block identity (darkest = most noncommutative). Right column shows $|\operatorname{Supp}_{\mathrm{nc}}|$ per sector with hub/isolated/leaf markers. The grid confirms: CP is universally commutative (all 9 rows zero), EP is the dominant noncommutative carrier, S7 has the broadest support (ep+co+eo), and two sectors (S1, S8) have empty Supp_nc.
-
-### CCS Fig. C16 — Transport Skeleton (§2.2)
-
-`figures/ccs/fig_c16_transport_skeleton.png`
-
-9-sector connectivity graph showing the three transport types: Type I (noncommutative, M₂-driven, 9 edges marked blue), Type II (commutative CP-permutation, S8↔S9 marked green), and S1 isolated (fully disconnected, marked gray). The skeleton visualizes the complete transport topology including edge type classification.
-
-### CCS Fig. C17 — Block-Sector Alluvial (§2.1–§2.2)
-
-`figures/ccs/fig_c17_block_sector_alluvial.png`
-
-Three-panel diagram tracing the algebraic origin of transport topology: (left) 4 blocks with qualitative noncommutativity labels (strongly/weakly/commutative) → (center) 6 layers → (right) 9 sectors. Alluvial flows show how block support propagates through spectral layers into QT/HT joint-spectral sectors, explaining why S6 emerges as the primary hub and why cross-block transport requires composition.
-
-### CCS Fig. C18 — Generator Defect Taxonomy (§I.3)
-
-`figures/ccs/fig_c18_generator_defect_taxonomy.png`
-
-Branching tree diagram showing the canonical 18-generator system at top and three generator-defect families below: Sector Shielding (n=16, 2 axis-0 HT removed, $\mathbb{Q}(\sqrt{5})$, 9 layers, 13 sectors, T7=11), Field Defect Localization (n=14, 4 axis-1 QT removed, $\mathbb{Q}(\sqrt{5})$, 8 layers, 10 sectors, T7=5), and Transport Resolution Amplifier (n=15, 3 negative-face HT removed, higher field, 23 layers, 25 sectors, T7=24). All three preserve Comm($\rho$)=610 except n=14 (Comm=675). The taxonomy exemplifies the three observed structural failure modes under generator deletion: sector splitting, field extension, and transport proliferation. See (CCS §I.3) for the full taxonomy table and sector splitting statistics.
+The release PDF includes only figures placed directly in the relevant archive
+sections. Historical images and presentation-build details are maintained in
+the repository rather than repeated here.
 
 **Appendix D — Implementation Notes**
 
@@ -2316,19 +2595,34 @@ $$P_\lambda = V_\lambda V_\lambda^H$$
 
 where $V_\lambda \in \mathbb{C}^{228 \times d_\lambda}$ has orthonormal columns (Schatten normalization). $\operatorname{Tr}(P_\lambda) = d_\lambda$, $P_\lambda^2 = P_\lambda$, $P_\lambda P_\mu = \delta_{\lambda\mu}P_\lambda$.
 
-Sector projectors $P_{\mathrm{S}_k}$ are obtained by joint diagonalization of $\operatorname{Center}\{A_{18}, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\mathrm{all}}\}$. The three operators commute; their simultaneous eigenvectors span 1-dimensional joint eigenspaces that group into sectors. Clustering threshold: $\mathrm{CENTER\_CLUSTER\_TOL} = 10^{-8}$.
+Sector projectors $P_{\mathrm{S}_k}$ are obtained by numerical joint
+diagonalization of $A_{18}$, $\mathrm{QT}_{\mathrm{all}}$, and
+$\mathrm{HT}_{\mathrm{all}}$ after the declared commutator audit. Their
+registered joint clusters group into nine sectors at
+$\mathrm{CENTER\_CLUSTER\_TOL}=10^{-8}$. Exact simultaneous spectral
+projectors require exact commuting-Hermitian registration.
 
 ### D.3 Transport and Lie Generators
 
 **Transport**: $K_{\alpha\beta} = \max_{g \in S} \|P_\alpha \rho(g) P_\beta\|_F$ — enumerates all 18 generators, no optimization needed.
 
-**Lie generators**: $A_g = \operatorname{logm}(\rho(g))$ via `scipy.linalg.logm`. The matrix logarithm of a unitary $\rho(g)$ is skew-Hermitian (eigenvalues on the imaginary axis); the raw skew-Hermitian output is used directly — Frobenius norms $\|P_i A_g P_j\|_F$ and commutator norms are invariant under $\pm i$ scaling, so no Hermitian conversion is needed for $\kappa_0$/$\kappa_1$. Embedding fidelity: $\max_g \|\exp(A_g) - \rho(g)\| < 3 \times 10^{-15}$.
+**Historical principal-log registration**: $A_g =
+\operatorname{logm}(\rho(g))$ via `scipy.linalg.logm`, using the declared
+numerical branch. The embedding residual is
+$\max_g\|\exp(A_g)-\rho(g)\|<3\times10^{-15}$. These arrays are retained for
+first-version reproducibility and are not the anti-Hermitian-part family or a
+current exact Lie-depth certificate.
 
-**Curvature**: $\kappa_1$ uses commutators $C_1 = [A_g, A_h]$ for all 153 unordered generator pairs. $\kappa_2$ additionally enumerates nested commutators $[A_g, [A_h, A_k]]$.
+**Historical commutator arrays**: $\kappa_1$ uses
+$[A_g,A_h]$ for all 153 unordered generator pairs. The partial $\kappa_2$
+enumeration is exploratory and does not certify Lie closure or saturation.
 
 ### D.4 Commutant Computation
 
-**Full commutant** (dim=610): Combinatorial orbit enumeration — each basis element is the sum of $\rho(g)$ over a conjugacy class orbit, Gram-Schmidt orthogonalized. This is exact (combinatorial), not numerical.
+**Ambient commutant candidate** (registered dimension 610): a combinatorial
+orbit-enumeration implementation followed by numerical orthogonalization. The
+current archive does not contain an independent exact rank/nullity certificate,
+so 610 remains an unpromoted candidate.
 
 **Per-layer commutant**: 
 
@@ -2343,7 +2637,7 @@ $N = 228$, $d_\lambda \leq 106$, $|S| = 18$, $K = 3$ (Center operators).
 |-----------|-----------|-----------|
 | $A_{18}$ eigendecomposition | $O(d^3)$ | < 1s |
 | center_decomposition() | $O(K \cdot d^3)$ | < 5s |
-| Full commutant (combinatorial) | $O(d^2 \cdot |\mathrm{Conj}(G)|)$ | < 1s |
+| Ambient commutant candidate | $O(d^2 \cdot |\mathrm{Conj}(G)|)$ | < 1s |
 | Layer commutant ($d_\lambda \leq 50$) | $O(d_\lambda^6)$ | ~1s each |
 | Layer commutant ($d_\lambda = 106$) | $O(d_\lambda^3 \cdot N_{\mathrm{iter}})$ | ~30s |
 | transport_kappa() | $O(|S| \cdot d^3)$ | ~2s |
@@ -2352,20 +2646,41 @@ $N = 228$, $d_\lambda \leq 106$, $|S| = 18$, $K = 3$ (Center operators).
 
 Total wall time for full canonical recomputation: ~5–10 minutes on commodity hardware.
 
-**Appendix E — Claim Status Register**
+**Appendix E — Archive Status Register**
 
 ***
-## Appendix E — Claim Status Register
+## Appendix E — Archive Status Register
 
-**Purpose.** Provide the definitive register of what is proven, what is numerically observed, and what remains open across the entire trilogy. This Part is the single-source-of-truth for claim status — every "proven" or "observed" assertion in any paper SHALL be traceable to an entry in this register.
+**Purpose.** Route retained CCS v2 material to its current status without
+restating the independent papers' theorem spines.
 
-**Scope.** All major claims of Papers I–III, plus explicitly registered computational extensions from Papers IV–VII and Appendix H, classified by proof status and stability layer.
+**Scope.** Selected Paper I--II data records, archived extensions, open
+questions, and withdrawn first-version interpretations.
 
-**Dependencies.** Part I (canonical objects and numerical data), Part III (complete proofs), Paper I–III theorem numbering.
+**Dependencies.** The current Paper I and Paper II ``Claim Status and
+Boundary'' sections, declared executable artifacts, and `HISTORY.md`.
 
-**Outputs.** The authoritative proven-vs-observed table, problem status register, completeness hierarchy, and three-route taxonomy.
+**Outputs.** A compact routing table. It is not a theorem register.
 
-*This part is the authoritative register of what is proved, what is observed, and what remains open — the epistemological map of the trilogy.*
+*The independent papers control theorem and certificate wording. CCS v2
+retains extended human-readable records only.*
+
+| Archive material | Current status | Controlling source |
+|------------------|----------------|--------------------|
+| Six-layer $A_{18}$ census and block records | Mixed exact derivation, computational certificate, and observation | Paper I claim-status section and Paper I scripts |
+| Trace-rationality and partition-integrality statements | Theorem under the hypotheses stated in Paper I; no canonical-face application is asserted here | Paper I |
+| Nine QH sectors, ten direct edges, and EP algebra census | Computational certificate | Paper II and Paper II scripts |
+| Generator-family arithmetic and transport extensions | Computational observation | CCS v2 tables and archived scripts |
+| Candidate ambient-commutant dimension 610 | Research program / unpromoted numerical candidate | CCS v2 provenance |
+| Graph/operator composition obstruction | Outside CCS authority; independently certified | Paper III and its matrix audit |
+| C0, T7 morphisms, strict word/Lie containment, and old $\kappa$ completion narrative | Historical / withdrawn | `HISTORY.md` |
+| Moving spectral/accessibility hierarchies | Research program unless separately certified in the owning paper | Papers IV--VII claim boundaries |
+
+The repository may retain older tables below in source history, but they are
+excluded from the current CCS output because their numbering and promotion
+language predate the v2 paper revisions.
+
+<!-- Historical pre-v2 claim register retained in source provenance only.
 
 ### E.1 What Is Firmly Proven (Paper I)
 
@@ -2403,12 +2718,10 @@ Total wall time for full canonical recomputation: ~5–10 minutes on commodity h
 | O4 | 9 QT/HT joint-spectral sectors from Center$\{A, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\mathrm{all}}\}$ | A | Invariant under recomputation |
 | O5 | 10 direct transport edges, all block-preserving | B | Threshold $K > 0.01$ |
 | O6 | S6 is the primary hub (degree 5), S1 isolated | A | Invariant under generator permutation |
-| O7 | 5 T7 morphisms ($N=3$), 0 T7 morphisms ($N=2$ control) | B | Binary detection; $K=0$ threshold sharp |
+| O7 | Five canonical graph-only pairs have machine-zero projected products | B | Independent Paper III matrix certificate |
 | O8 | 7 pure curvature channels, all within-block | B | $K \approx 0$, $\kappa_0 \approx 0$, $\kappa_1 > 0$ |
 | O9 | EP algebra $\cong M_2(\mathbb{C})^4 \oplus M_1(\mathbb{C})^4$ | A | SVD rank tolerance-stable |
-| O10 | $\dim\operatorname{Comm}(A) = 804$, $\dim\operatorname{Comm}(\rho) = 610$, $\Delta_{\operatorname{comm}} = 194$ | A | Exact combinatorial count |
-| O11 | $\pi$: $\ker = 0$, $\operatorname{coker} = 356$ | A | SVD gap $> 10^{-8}$ |
-| O12 | 51 isotypic components, 1 multiplicity reservoir ($V_{5/9}^{(3,11)}$) | C | Not yet integrated into main data sections |
+| O10 | $\dim\operatorname{Comm}(A) = 804$; candidate $\dim\operatorname{End}_G(V)=610$ | B/C | The ambient value requires a separate exact rank/nullity certificate |
 | O13 | eo spectrum from $\mathbb{Z}_2$ phase classes (numerical-representation observation, see §1.5.4) | B | $2T_2$ multiplicity blocks analytic derivation; observed-rigid across all canonical computations |
 | O14 | Six canonical layers are the $L_{2/3}$ collision quotient of the 9 QT/HT joint-spectral sectors | A | Exact QT/HT eigenvalue table, §1.3–§1.4 |
 | O15 | $V_{5/9}=S5\oplus S6\oplus S7$ and $V_{1/3}=S8\oplus S9$ are the nontrivial canonical collision components | A | Exact joint eigenvalue signatures, §1.4 |
@@ -2458,12 +2771,19 @@ This register cleanly separates three routes to spectral rationality, ordered by
 
 2. **Trace rationality criterion** (Paper I, Theorem 6.2, unconditional sufficient direction): $\chi_\lambda(s) \in \mathbb{Q} \Rightarrow \lambda \in \mathbb{Q}$. Uses only the eigenspace trace identity. The converse holds under the additional hypothesis $A \in M_n(\mathbb{Q})$ (face-symmetric case). This route is the rigorous core — it provides the unconditional forward direction without any symmetry or commutativity hypothesis.
 
-3. **Partition integrality** (Paper I, §6.1 and Theorem 6.2): The Structural Rationality Criterion (§6.1) provides the general arithmetic partition criterion — any partition of $S$ with integer per-subset trace sums forces $\lambda \in \mathbb{Q}$, with no group-specific structure required. Theorem 6.2 closes the converse ($\lambda \in \mathbb{Q} \Rightarrow \chi_\lambda(s) \in \mathbb{Q}$) via the field-of-definition argument. In the Rubik's cube, the face partition supplies the concrete integrality input (Theorem 5.1/5.2); the mechanism is verified for all tested face-symmetric families. This is the most general route and the one that defines the paper's central conjecture.
+3. **Partition integrality** (Paper I, §6.1): if a declared partition has integer per-subset eigenspace trace sums, rationality follows. The current manuscript does not prove that the canonical Rubik face partition satisfies this hypothesis. The implication is theorem-level; its application to the canonical Rubik realization is not.
 
-**Appendix F — Empirical Validation**
+-->
 
 ***
-## Appendix F — Empirical Validation: κ Hierarchy Search Diagnostics
+<!-- First-version search, S3, and spectral-triple appendices are excluded from
+the current CCS. Their correction history is summarized in HISTORY.md.
+
+## Appendix F — Archived First-Version κ/Search Diagnostics
+
+> **Provenance only.** This appendix uses the withdrawn graph-to-composition
+> interpretation. Its search traces do not support the revised Paper III
+> theorem spine and are retained only to document the first-version workflow.
 
 **Purpose.** Provide empirical evidence that the κ hierarchy (κ₀ → κ₁ → T7) from Paper III is not merely a theoretical decomposition but a *diagnostic framework* for search obstruction. Each κ level unlocks a new layer of accessibility; the structural barrier at each level is precisely the geometric feature identified by Paper III.
 
@@ -2471,7 +2791,7 @@ This register cleanly separates three routes to spectral rationality, ordered by
 
 **Dependencies.** Part I (canonical objects, block decomposition), Part I §§2.2–2.6 (transport and Lie accessibility), Part III (Paper III proofs), Paper III (κ hierarchy, T7 Theorem).
 
-**Code.** `experiments/paper3/kappa_hierarchy_search.py`: standalone search with `greedy_full_search`, `hub_routed_beam_search`, `phase_crossing_moves`, `detect_cycles` — built on `CubieSpectralOperator`. All use real 228-dim ρ(g) actions — no projection, no heuristic scoring.
+**Archived code.** `experiments/paper3/archive/kappa_hierarchy_search.py`: first-version standalone search built on support and kappa diagnostics. It is not part of the revised Paper III claim support.
 
 **Data stability.** Layer B (numerical). Distance traces and 2-cycle/3-cycle attractor patterns are reproducible across random initial states. The qualitative barrier structure (κ₀ swirl, κ₁ 3-cycle) is structural, not state-dependent.
 
@@ -2623,14 +2943,18 @@ Individual search traces and move sequences are omitted. The purpose of the sear
 **Appendix G — S₃ Prototypes**
 
 ***
-## Appendix G — S₃ Prototypes
+## Appendix G — Archived S₃ Prototype Data
+
+> **Provenance only.** These examples remain valid as finite sector-invariance
+> diagnostics, but all C0 and T7 interpretations in this appendix are
+> withdrawn.
 
 **Purpose.** Full canonical data for the S₃ nat⊕reg and reg⊕reg negative controls. These are negative controls demonstrating that C0–C3 are non-trivial characterizing conditions: C0 fails in the canonical S₃ decomposition (Z sectors = isotypic components → K diagonal), and neither negative control satisfies C2 (transport-active hybrid).
 
 
 **C0 diagnostic.** dim(Z) = 3 for both negative controls (3 sectors match the 3 isotypic components). dim(C(ρ)) = 14 (nat⊕reg) / 24 (reg⊕reg). Crucially, sector projectors commute with all ρ(g): max‖[P_i, ρ(g)]‖ = 1.02×10⁻¹⁵. Sectors are G-invariant subrepresentations — the joint diagonalization of Z coincides with the isotypic decomposition. K is purely diagonal. C0 fails: the transport-generated center is "too complete" to enable off-diagonal transport. T7 is structurally impossible regardless of C1–C3 status.
 
-**Dependencies.** `experiments/paper3/t7_refined.py`, `experiments/paper3/t7_reg_reg.py`.
+**Archived dependencies.** `experiments/paper3/archive/t7_refined.py`, `experiments/paper3/archive/t7_reg_reg.py`.
 
 ### G.1 S₃ nat(3) ⊕ reg(6) — 9-dim (CANONICAL)
 
@@ -2702,18 +3026,22 @@ All 3 sectors are hybrid. Zero pure-block sectors — no cross-block pure-sector
 
 ### G.5 Joint Diagonalization Data
 
-Full joint diagonalization matrices and sector projectors are available via `experiments/paper3/t7_refined.py` and `experiments/paper3/t7_reg_reg.py`.
+Historical joint diagonalization matrices and sector projectors are available via `experiments/paper3/archive/t7_refined.py` and `experiments/paper3/archive/t7_reg_reg.py`.
 
 Transport graphs: (CCS Fig. C7).
 
 **Appendix H — Spectral-Triple Interpretation and D-Stability of T7**
 
 ***
-## Appendix H — Spectral-Triple Interpretation and D-Stability of T7
+## Appendix H — Archived Spectral-Triple Probe
+
+> **Withdrawn interpretation.** This appendix depends on the former T7
+> morphism classification. It is not evidence for a current spectral-triple or
+> D-stability claim.
 
 **Purpose.** The purpose of this appendix is not to introduce a physical interpretation, but to test whether the T7 phenomenon survives under representation-theoretically canonical Dirac constructions. The Casimir construction removes all free mass parameters and reveals a canonical two-class degeneracy structure intrinsic to the Rubik representation: the four canonical blocks collapse into two representation-theoretic mass classes under all tested Casimir constructions. T7 is not a metric artifact; it is a manifestation of deeper representation geometry. The construction is a structural probe of accessibility obstruction — not a claim of full Connes spectral geometry.
 
-**Code.** `experiments/spectral_triple_t7.py`.
+**Archived code.** `experiments/paper3/archive/spectral_triple_t7.py`. This first-version interpretation is not current Paper III theorem support.
 
 
 ### H.1 Finite Spectral Triple Setup
@@ -2814,50 +3142,86 @@ Several structural analogies may help contextualize the two-layer obstruction pi
 
 The purpose of this appendix is therefore not to reinterpret the Rubik cube as a physical spectral geometry, but to demonstrate that the T7 phenomenon persists under natural representation-theoretic Dirac constructions and survives the removal of arbitrary mass parameters.
 
-**Appendix I — Future Directions and Verification Scope**
+**Appendix F — Future Directions and Verification Scope**
 
 ***
-## Appendix I — Future Directions and Verification Scope
+-->
 
-**Purpose.** Collect all speculative content, open problems, and structural scope boundaries from the trilogy into one unified location, organized in four layers from structural generalization to computational implementation. Nothing here is claimed as proven.
+## Appendix F — Future Directions and Verification Scope
+
+**Purpose.** Collect CCS-adjacent open problems and computational boundaries.
+Nothing here is claimed as proven or imported into revised Paper III.
 
 
-**Verification status.** The Rubik's cube with its 18 face-turn generators and the 228-dimensional faithful representation is the canonical fully verified realization of the algebraic framework presented in Papers I–III. All structural claims — the spectral decomposition into six layers, the 9-sector primitive decomposition, the transport topology, the $M_2(\mathbb{C})^4 \oplus M_1(\mathbb{C})^4$ structure of the EP block, the noncommutative support $\operatorname{Supp}_{\mathrm{nc}}$, the Lie-generated accessibility hierarchy $\kappa_d$, and the strict separation $\mathcal{L} \subsetneq \overline{\mathcal{T}}$ (Theorem T7) — have been rigorously verified for this system using exact numerical linear algebra and combinatorial commutant methods. The methodology (center joint diagonalization, transport tensor analysis, commutant decomposition, and compositional closure) is representation-theoretic and applies to other finite-group representations, but the resulting transport geometries must be computed independently in each case. The $S_3$ systems satisfy only subsets of Conditions C0–C3, fail C0, exhibit no T7 morphisms, and serve as negative controls. The Rubik cube is the certified witness of the strict separation between compositional and Lie-generated accessibility.
-
-***
-
-### I.1 Structural Generalization
-
-**Broader finite-group representations.** The trilogy is verified on three systems: Rubik cube (228-dim), S₃ nat⊕reg (9-dim), S₃ reg⊕reg (12-dim). All have block-diagonal $\rho$ and symmetric generator sets. Whether the transport/accessibility architecture generalizes to non-block-diagonal representations, non-symmetric generator families, or infinite discrete groups is open. The structural question: which features are G-determined (universal) vs. S-conditioned (generator-specific)? Whether the noncommutative-support framework $\operatorname{Supp}_{\mathrm{nc}}$ extends canonically to non-permutation or non-semisimple transport geometries is unknown.
-
-**Alternative transport centers.** The canonical Rubik center $Z_{\mathrm{QH}}=\langle A_{18},\mathrm{QT}_{\mathrm{all}},\mathrm{HT}_{\mathrm{all}}\rangle$ produces 9 sectors with rich transport topology. What alternative commutative subalgebras yield structurally distinct transport graphs? The S₃ externally refined decomposition (§G.2) demonstrates that expanding a center changes the sector count and transport pattern — but the compositional-accessibility gap persists under that refinement. Whether the gap is invariant under all center choices is open.
-
-**Continuous–Discrete Accessibility Separation.** The Rubik transport geometry establishes $\mathcal{L} \subsetneq \overline{\mathcal{T}}$: Lie-generated directions preserve sector support (Condition C3), while discrete finite compositions produce cross-sector accessibility through transport-active hybrid structures. This suggests a possible general paradigm — continuous/infinitesimal generators $\to$ local sector preservation, discrete/finite compositions $\to$ global cross-sector accessibility. Potential structural analogies include large gauge transformations in Yang–Mills theory, topological sector transitions, and compositional holonomy phenomena. These analogies are structural only and are not claimed as mathematical equivalences. Further spectral-triple interpretations and Dirac-operator robustness experiments are recorded in Appendix H.
-
-**Further structural questions.** Whether the transport phenomena (Type I/II classification, M₂ Principle, T7 morphisms) appear in non-permutation representations (e.g., monomial or induced representations) is open. The relationship between commutant dimension, the center/commutant gap $\Delta_{\operatorname{comm}}$, and transport graph edge count remains unexplored. Preliminary evidence suggests hierarchical generator geometries — coarse face-turn families first produce communicable sector structure, while auxiliary generators subsequently activate hybrid-sector transport — but a general theory of layered generator roles is not yet developed.
+**Verification status.** The current records include the mixed-status
+six-layer census, nine numerically registered QH sectors, the direct transport
+matrix, sector non-invariance residuals, and five graph/operator composition
+obstructions in the 228-dimensional Rubik realization. They do not establish
+the former T7 strict-containment theorem, a layerwise $G$-isotypic
+decomposition, or an exact 610-dimensional ambient-commutant theorem. Exact
+statements and finite numerical certificates are separated in Papers I--III.
 
 ***
 
-### I.2 Accessibility Questions
+### F.1 Structural Generalization
 
-**Algebraic characterization of noncommutative support.** The current trilogy defines $\operatorname{Supp}_{\mathrm{nc}}(\alpha)$ operationally through transport-active noncommutative simple components of the commutant decomposition. For the verified Rubik realization, the resulting support sets exactly characterize all Type I transport edges. Whether this support notion admits a purely algebraic characterization directly from the semisimple decomposition of $\mathbb{C}[G]$, independent of numerical transport extraction, remains open.
+**Broader finite-group representations.** CCS experiments include the Rubik
+cube (228-dim), S₃ nat⊕reg (9-dim), and S₃ reg⊕reg (12-dim). It remains open
+whether the Paper II transport architecture generalizes to non-block-diagonal
+representations, non-symmetric generator families, or infinite discrete
+groups. The central structural question is which features are $G$-determined
+and which are generator-conditioned. Whether
+$\operatorname{Supp}_{\mathrm{nc}}$ extends canonically to non-permutation or
+non-semisimple transport geometries is unknown.
 
-**Necessity of C1–C3.** The T7 Theorem establishes C0–C3 as characterizing conditions for the Rubik cube. C2 and C3 are proved necessary; C1 necessity is proved for abelian and isotypic cases but conjectural for general non-abelian groups. Whether C0–C3 are sufficient for T7 in arbitrary finite group representations is open.
+**Alternative spectral algebras.** The registered Rubik algebra $\mathcal B_{\mathrm{QH}}$ produces nine sectors with a sparse direct transport graph. Alternative commuting algebras may change both the sector count and the support/composition relation. No refinement-invariance theorem for a compositional gap is currently claimed.
 
-**Classification of T7 morphisms.** Five T7 morphisms exist in the Rubik cube — all cross-block, all mediated through S6–S7. Are there other types of T7 morphisms (e.g., within-block T7 via non-M₂ curvature, or cross-block T7 without hybrid mediation)? The S₃ negative controls have 0 T7 (C0 fails), so they provide no additional taxonomy. A classification of T7 morphism types beyond the Rubik case requires additional test systems.
+**Graph-to-composition promotion.** The canonical audit instead establishes that a two-step support path need not survive matrix multiplication. A current open problem is to identify transversality, rank, or image--kernel conditions under which graph reachability does imply operator reachability. Comparisons with Lie-generated accessibility require a separate certificate after this operator-level relation is fixed.
+
+**Further structural questions.** Whether the Type I/II classification, the M₂ overlap pattern, or graph/composition obstructions appear in non-permutation representations is open. The candidate ambient-commutant dimension must first receive an independent exact certificate before it is related to transport-graph statistics.
 
 ***
 
-### I.3 Algebraic Extensions
+### F.2 Accessibility Questions
+
+**Algebraic characterization of noncommutative support.** Paper II defines
+$\operatorname{Supp}_{\mathrm{nc}}(\alpha)$ from the family-level maximum over
+the three per-axis QT commutator pairs. In the registered Rubik realization,
+shared support selects 15 unordered candidates: nine Type I labelled direct
+edges and six nonedges. It is therefore a localizer, not an edge
+characterization. Whether a sharper support notion can be derived
+algebraically from the represented finite-dimensional $*$-algebra remains
+open.
+
+**Promotion conditions.** The former C0--C3 characterization is withdrawn. Candidate replacement hypotheses should act directly on the projected factors, for example through image--kernel transversality, rank protection, singular-value lower bounds, or compatible block support.
+
+**Classification of composition obstructions.** The current five witnesses are explained by physical-block image--kernel mismatch. Whether other systems exhibit incidence, cancellation, or rank-loss obstructions without block separation is open.
+
+***
+
+### F.3 Algebraic Extensions
 \label{sec:ccs-algebraic-extensions}
 
-**Generalized transport algebras.** The transport norm $K_{\alpha\beta} = \max_g \|P_\alpha \rho(g) P_\beta\|$ is defined via spectral projectors of the averaging operator $A$. What happens when projectors come from other commutative subalgebras? The $\kappa$-hierarchy generalizes $K$ to Lie algebraic depth; a unified algebraic framework for transport at arbitrary operator-algebraic depth is open.
+**Generalized transport algebras.** The direct-support norm
+$K_{\alpha\beta}=\max_g\|Q_\alpha\rho(g)Q_\beta\|_F$ is defined for the
+declared sectorization and operator family. What changes when the projectors
+come from another certified commuting-normal registration? Routed products,
+full words, commutators, and Lie depth must remain separate typed objects. The
+first-version $\kappa$ arrays do not provide the missing bridge.
 
-**Refinement obstruction beyond M₂.** In the verified Rubik system, noncommutative simple blocks produce refinement obstruction: projector refinements preserving transport compatibility cease to exist once the commutant contains $M_2(\mathbb{C})$ components. Whether refinement obstruction is controlled purely by semisimple type, Morita equivalence class, or higher-rank multiplicity structure remains open.
+**Refinement questions beyond $M_2$.** The EP census exhibits four registered
+$M_2$ components, while the direct graph and localizer record a finite overlap
+pattern. No theorem states that the presence of $M_2$ alone forbids every
+transport-compatible refinement. Identifying the additional hypotheses needed
+for a refinement obstruction remains open.
 
-**Observed Generator Defect Taxonomy.** Four generator families were constructed by selective deletion from the 18-generator canonical set (Paper III §8.3). Reproducibility: `experiments/paper3/generator_defect_taxonomy.py`.
+**Historical Generator Defect Taxonomy.** Four generator families were constructed by selective deletion from the 18-generator canonical set. The first-version script is archived at `experiments/paper3/archive/generator_defect_taxonomy.py` and is not current matrix-composition evidence.
 
 ![(CCS Fig. C18) Generator defect taxonomy: canonical n=18 and three defect families — Sector Shielding (n=16), Field Defect Localization (n=14), Transport Resolution Amplifier (n=15).](../figures/ccs/fig_c18_generator_defect_taxonomy.png)
+
+```{=latex}
+\iffalse
+```
 
 **Summary Table**
 
@@ -2876,45 +3240,52 @@ The purpose of this appendix is therefore not to reinterpret the Rubik cube as a
 
 **Stability:** Layer C (Exploratory). These are empirical regularities across four generator families, not derived from first principles. Whether the taxonomy exhausts the possible structural failure modes is open.
 
+```{=latex}
+\fi
+```
+
 ***
 
-### I.4 Computational Directions
+### F.4 Computational Directions
 
 **Scalable commutant extraction.** The current commutant computation uses generator reduction + one-shot SVD ($d \leq 50$) or randomized Reynolds ($d > 50$). For representations beyond ~1000 dimensions, both methods become impractical. A scalable commutant algorithm — perhaps exploiting sparse generator structure or block-diagonal preconditioning — is open.
 
-**Automated transport decomposition.** The transport graph, Type I/II classification, and κ-hierarchy are currently computed through explicit projector construction and per-pair optimization. An automated pipeline that takes $\rho(G)$ and outputs the full transport/accessibility decomposition (QT/HT sectors → $A_{18}$ collision layers → K → κ₀ → κ₁ → T7) without manual threshold tuning is a computational engineering goal.
+**Automated typed audit.** A future pipeline may take a declared
+representation, sectorization, operator family, dtype, and tolerance policy and
+emit separate direct-support, routed-product, full-word, commutator, and
+Lie-closure records. It must preserve these types rather than reconstruct the
+withdrawn $K\to\kappa_0\to\kappa_1\to\mathrm{T7}$ ladder.
 
-**Symbolic center reconstruction.** The canonical center $Z = \langle A, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\mathrm{all}} \rangle$ is constructed from numerically computed operators. A symbolic reconstruction — deriving the center generators directly from the group algebra structure without numerical diagonalization — would transform the CCS from a numerical constitution into an algebraic derivation. The Bose-Mesner framework for CP and the $M_2$ characterization for EP (§5) are partial steps in this direction.
+**Exact QH-algebra reconstruction.** The commuting algebra
+$\mathcal B_{\mathrm{QH}}=\operatorname{alg}(A,\mathrm{QT}_{\mathrm{all}},
+\mathrm{HT}_{\mathrm{all}})$ is presently supported by numerical
+commutation and joint-sector certificates. An exact reconstruction would
+promote this numerical object without identifying it with the center or the
+full ambient commutant.
 
-**Higher κ depth enumeration.** $\kappa_2$ and beyond are partially enumerated through Lie monomial sampling; a complete, systematic enumeration at all depths — with guarantees on coverage — is open.
+**Separate Lie-accessibility audit.** First-version $\kappa_d$ calculations
+are archived diagnostics. Any future comparison between Lie accessibility and
+projected word composition requires a new claim-specific certificate.
 
 ***
 
 ### Structural Scope Boundary
 
-What the trilogy does NOT claim:
+What the current CCS does NOT claim:
 
 | Claim | Status |
 |-------|--------|
-| T7 is universal for all finite groups | **Not claimed.** Proved for systems satisfying C0–C3; generality conditions open. |
-| The trilogy applies to AGI, cognition, planning, solver algorithms, robotics | **Not claimed.** Structural rather than algorithmic. Scope is finite group representation transport geometry. |
-| The trilogy is a general classification of finite-group representations | **Not claimed.** Complete characterization of one system (Rubik, 228-dim) with two controls (S₃, 9+12-dim). |
-| The $\kappa_d$ hierarchy is a computational tool for control | **Not claimed.** It is a structural diagnostic, not an algorithm. |
-| There is a "directed transport barrier" | **Disproved** — $\kappa$ is symmetric to $10^{-15}$. |
+| A support-graph path implies nonzero projected composition | **Refuted in general.** The five canonical paths are obstruction witnesses. |
+| The CCS applies to AGI, cognition, planning, solver algorithms, robotics | **Not claimed.** Its scope is finite-group representation computation. |
+| The CCS is a general classification of finite-group representations | **Not claimed.** Rubik is one finite computational realization. |
+| The first-version $\kappa_d$/T7 hierarchy proves a composition gap | **Withdrawn.** A separate operator-level certificate is required. |
+| The registered direct graph is directed or asymmetric | **Not supported.** The inverse-closed family gives a symmetric $K$ matrix to the declared numerical tolerance. |
 
 ***
 
+**Code availability.** Code and computational certificates are available in
+the [RIME repository](https://github.com/dooven-prime/rime-lite).
 
-*End of CCS-r3. All numerical values are recomputed through the canonical APIs and frozen in this supplement. Discrepancies between this supplement and any other document are resolved in favor of this supplement.*
-
-***
-
-### Code Availability
-
-All numerical experiments, projector constructions, transport computations,
-and figure-generation scripts are available at:
-
-https://github.com/dooven-prime/rime-lite
-
-The repository also contains this Computational Supplement (CCS-r3),
-canonical datasets, and reproducibility notebooks corresponding to the trilogy.
+*End of the CCS v2 computational companion archive. Independent papers and
+declared executable artifacts control current claims and certificates;
+withdrawn source sections are retained for provenance only.*

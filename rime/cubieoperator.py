@@ -1,23 +1,23 @@
-"""CubieSpectralOperator — numerical spectral engine for the RIME trilogy.
+"""Rubik-specific numerical spectral and direct-transport engine.
 
-Architecture:
-  SpectralStructure (theory) → CubieSpectralOperator (numerics) → SlowDynamics (dynamics)
+Legacy module flow (non-normative):
+  SpectralStructure (block helper) -> CubieSpectralOperator (numerics)
+  -> SlowDynamics (dynamics)
 
-Trilogy decomposition A → K_αβ → κ_d:
-  Paper I  — A:       spectral origin (layers, projectors, field)
-  Paper II — K_αβ:    transport topology (transport tensor, commutant, sectors)
-  Paper III — κ_d:    Lie accessibility (infinitesimal transport, kappa depth)
+Current ownership:
+  Paper I: averaging-operator spectral registration.
+  Paper II: QH sectors and direct transport.
+  Paper III: projected-composition audits live outside this class.
 
-Core invariants (CCS-frozen):
-  6 spectral layers, λ = 1 − k/9, k ∈ {0,1,2,3,4,6}
-  9 primitive sectors from Center{A, QT_all, HT_all}
+Registered finite data (module-scoped, not theorem premises):
+  6 layers numerically matched to displayed labels 1 - k/9,
+  k in {0,1,2,3,4,6}
+  9 joint sectors from the commuting QH algebra
   10 transport edges (undirected), S6 is the main hub
-  5 T7 pairs (all cross-block), Comm(ρ) = 610
 
 Usage:
     cso = CubieSpectralOperator.from_gens_dict(CubieMove.prim_moves())
     P = cso.layer_projector(0.777778)
-    K, k0, k1 = cso.transport_kappa(projectors)
     sec = cso.center_decomposition()   # 9 sectors
 """
 
@@ -30,7 +30,7 @@ import numpy as np
 setup_utf8_stdout()
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# Numerical precision constants — layer identity is a topological invariant, not a tolerance knob
+# Numerical precision constants for the declared registrations
 # ═══════════════════════════════════════════════════════════════════════════════
 SPECTRAL_DECIMALS = 6  # rounding precision for spectral layer keys (canonical, fixed)
 CENTER_CLUSTER_TOL = 1e-8  # center diagonalization clustering tolerance
@@ -1103,15 +1103,17 @@ class CubieSpectralOperator:
         }
 
     # ═══════════════════════════════════════════════════════════════
-    # 9 Primitive Sectors — Center joint diagonalization (Object 4)
+    # 9 joint sectors from the commuting QH algebra
     # ═══════════════════════════════════════════════════════════════
 
     def center_decomposition(self) -> dict:
-        """Joint diagonalization of {A_18, QT_all, HT_all} → 9 primitive sectors.
-        Primary Object 4: minimal simultaneous eigenspaces of the commutative
-        center of the averaging algebra. order (k ascending, dim ascending)
+        """Joint diagonalization of {A_18, QT_all, HT_all} into 9 sectors.
 
-        Center{A_18, QT_all, HT_all} 联合对角化 → 9 primitive sectors
+        These are the minimal simultaneous eigenspaces of the registered
+        commuting QH algebra, ordered by k and then dimension. No identification
+        with the center or the full group commutant is made here.
+
+        Registered commuting QH algebra -> 9 minimal joint sectors
         CCS canonical order (k 升序, dim 升序):
         S1: V₁   dim=20  [cp=8 + ep=12]          — Isolated (deg=0)
         S2: V₈/₉ dim= 2  [eo=2]                   — Connective (deg=2)
@@ -1240,17 +1242,17 @@ class CubieSpectralOperator:
         return [block_set(P, BLOCK_RANGES) for P in projectors]
 
     # ═══════════════════════════════════════════════════════════════
-    # Paper III: κ_d — Lie accessibility hierarchy
+    # Archived first-version kappa diagnostics; not current Paper III support
     # ═══════════════════════════════════════════════════════════════
 
-    def compute_lie_generators(self) -> list[np.ndarray]:
-        """Compute A_g = log(ρ(g)) for all generators via scipy.linalg.logm.
-        Result is cached after first computation — 18 logm calls are expensive.
+    def registered_principal_log_generators(self) -> list[np.ndarray]:
+        """Register ``log(rho(g))`` using SciPy's principal matrix-log branch.
+
+        This is one declared observable family. It is not interchangeable with
+        finite-order logarithms or anti-Hermitian-part registrations. The
+        result is cached because the 18 matrix logarithms are expensive.
 
         Verification: expm(A_g) ≈ ρ(g) to ~1e-15 for all generators.
-
-        A_g = log(ρ(g)) — Lie 生成元, scipy.logm
-        首次调用后缓存 — 18 次 logm 很贵。验证: expm(A_g) ≈ ρ(g) 到 ~1e-15
         """
         if self._lie_gens_cache is not None:
             return self._lie_gens_cache
@@ -1268,6 +1270,17 @@ class CubieSpectralOperator:
         self._lie_gens_cache = A_gens
         return A_gens
 
+    def compute_lie_generators(self) -> list[np.ndarray]:
+        """Deprecated alias for ``registered_principal_log_generators``."""
+        import warnings
+        warnings.warn(
+            "compute_lie_generators() is deprecated; use "
+            "registered_principal_log_generators() and record the branch",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+        return self.registered_principal_log_generators()
+
     def infinitesimal_transport(self) -> dict:
         """Compute κ_ij = max_g ‖P_i A_g P_j‖_F — infinitesimal transport.
 
@@ -1277,7 +1290,14 @@ class CubieSpectralOperator:
 
         无穷小传输 (κ₀) 连续 Lie 动力学的传输矩阵 κ_ij > 0 ⇔ Lie 可达。
         """
-        A_gens = self.compute_lie_generators()
+        import warnings
+        warnings.warn(
+            "infinitesimal_transport() is a legacy principal-log diagnostic; "
+            "use typed accessibility APIs with an explicitly declared family",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+        A_gens = self.registered_principal_log_generators()
         layers = sorted(self._layers, reverse=True)
         n_layers = len(layers)
 
@@ -1308,6 +1328,13 @@ class CubieSpectralOperator:
         depth=2: κ₂ (嵌套 commutator)
         """
         import itertools
+        import warnings
+        warnings.warn(
+            "kappa_depth() is a legacy sampled diagnostic; use "
+            "rime.accessibility.compute_lie_depth_matrix() for declared cutoffs",
+            DeprecationWarning,
+            stacklevel=2,
+        )
         layers = sorted(self._layers, reverse=True)
         n_layers = len(layers)
 
@@ -1318,7 +1345,7 @@ class CubieSpectralOperator:
                     'layers': result['layers'],
                     'lam_labels': lam_labels}
 
-        A_gens = self.compute_lie_generators()
+        A_gens = self.registered_principal_log_generators()
         n_gen = len(A_gens)
         P = [self._layers[lam]['projector'] for lam in layers]
 
@@ -1352,14 +1379,14 @@ class CubieSpectralOperator:
         return {'kappa_matrix': kappa, 'layers': layers, 'lam_labels': lam_labels}
 
     # ═══════════════════════════════════════════════════════════════
-    # transport_kappa — Paper II/III 的 canonical 入口
+    # Legacy mixed-family kappa compatibility entry point
     # ═══════════════════════════════════════════════════════════════
 
     def transport_kappa(self, projectors: list[np.ndarray], compute_kappa1: bool = True) -> tuple:
         """K, κ₀, κ₁ on arbitrary projectors using cached generators + Lie generators.
 
-        This is the CANONICAL path for Paper II/III transport computations.
-        Uses cached self.rho_moves and self.compute_lie_generators() — the
+        This is a legacy compatibility path. It uses cached representation
+        matrices and the registered principal-log family; the
         computation itself is delegated to the standalone
         compute_transport_kappa_from_Xs() to avoid duplicating the loop logic.
 
@@ -1370,9 +1397,16 @@ class CubieSpectralOperator:
         Returns:
             (K, kappa0, kappa1) — three (n_sec, n_sec) arrays.
         """
+        import warnings
+        warnings.warn(
+            "transport_kappa() is a legacy mixed-family diagnostic; compute "
+            "direct and Lie supports separately with declared operator families",
+            DeprecationWarning,
+            stacklevel=2,
+        )
         from rime.spectral_utils import compute_transport_kappa_from_Xs
         rhos = [v[1] for v in self.rho_moves.values()]
-        Xs = self.compute_lie_generators()
+        Xs = self.registered_principal_log_generators()
         return compute_transport_kappa_from_Xs(rhos, Xs, projectors, compute_kappa1=compute_kappa1)
 
     # ═══════════════════════════════════════════════════════════════

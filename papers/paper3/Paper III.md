@@ -1,883 +1,714 @@
-# Accessibility Structure in the Rubik's Cube Representation
+# Support-Graph Reachability and Matrix-Composition Obstructions
 
-### Lie-Generated Accessibility, Hybrid Sectors, and T7 Morphisms
+### Image--Kernel Mismatch with a Rubik-Cube Case Study
 
 **WuJun Chen**
 
-Independent Researcher · RIME Project · 2026
+Independent Researcher | RIME Project | 2026
 
-*This paper is Part III of the RIME trilogy. Paper I established the canonical spectral layers. Paper II characterized transport on the resolved QT/HT joint-spectral sectors. The present paper proves the first accessibility-separation result: T7 morphisms show that composition-generated accessibility can exceed Lie-generated accessibility.*
+ORCID: 0009-0007-9561-2892
 
 ***
 
 ## Abstract
 
-**Problem.** When a finite group $G$ acts on a representation $V = V_A \oplus V_B$, what is the structural difference between *infinitesimal generation* (the Lie algebra $\mathcal{L} = \operatorname{Lie}\{A_g\}$ with $A_g = \log\rho(g)$) and *discrete composition* of the original group action? Are there morphisms reachable by composition that no commutator depth of $\mathcal{L}$ can produce?
+**Problem.** A sector transport graph records whether a projected generator block $Q_i\rho(g)Q_j$ is nonzero. One might infer that a graph path $j\to k\to i$ guarantees a nonzero projected composition $Q_i\rho(g_2)Q_k\rho(g_1)Q_j$. That inference is false in general: nonzero adjacent factors can have a zero product.
 
-**Approach.** Every element of the universal enveloping algebra $\mathcal{U}(\mathcal{L})$ is block-diagonal (Lemma~\ref{lem:lie-generated-support-invariance}, Lie-Generated Support Invariance), so $P_\alpha X P_\beta = 0$ for all $X \in \mathcal{U}(\mathcal{L})$ whenever $\alpha, \beta$ are supported in disjoint blocks. Lie-generated accessibility is block-preserving — not just at finite commutator depth, but at all algebraic depths. Discrete composition $P_\alpha\,\rho(g)\,P_\gamma\,\rho(h)\,P_\beta$ through a *hybrid sector* $\gamma$ spanning both blocks is not an element of $\mathcal{U}(\mathcal{L})$ — it is a projector-mediated morphism outside Lie-generated accessibility.
+**Approach.** We distinguish three objects. The **support graph** records nonzero direct blocks. The **two-step composition graph** records nonzero projected products. The **obstruction set** consists of support-graph paths that disappear under matrix composition. For two adjacent factors $A=Q_i\rho(g_2)Q_k$ and $B=Q_k\rho(g_1)Q_j$, the exact obstruction is $\operatorname{im}B\subseteq\ker A$. We then specialize to representations and sector projectors respecting a common physical-block decomposition.
 
-**Results.** Under conditions C0–C3 — center incompleteness ($Z \subsetneq \operatorname{Comm}(\rho)$), shared noncommutative support, transport-active hybrid sectors, and block-preserving Lie dynamics — T7 morphisms arise: cross-block morphisms reachable by discrete composition through hybrid sectors but inaccessible to Lie-generated accessibility at every commutator depth. C2 and C3 are proved necessary; C1 necessity is conjectured for general non-abelian groups and supported by all small-group systems tested. The 228-dimensional Rubik cube exhibits 5 T7 morphisms, all cross-block; S₃ negative controls (0 T7) isolate C0 as the foundational structural divide.
+**Results.** We prove that the two-step composition graph is a subgraph of the square of the support graph, with equality requiring an additional image--kernel nondegeneracy condition. If the group action and all sector projectors preserve the same physical blocks, projected composition cannot cross between sectors with disjoint block support at any finite length. In the canonical 228-dimensional Rubik realization, five distinguished pairs selected from two-step support paths all satisfy this block obstruction. Their adjacent factor norms are order one, while exhaustive products over the $18^2$ ordered generator pairs have Frobenius norms between $1.10\times10^{-16}$ and $3.02\times10^{-15}$.
 
-**Implications.** In the Rubik cube, compositional accessibility is strictly richer than Lie-generated accessibility: the continuous limit is structurally incomplete, omitting an entire class of cross-block morphisms that the discrete group action realizes. The S₃ negative controls support this: their canonical decompositions fail C0 (center completeness forces diagonal $K$), consistent with C0–C3 as non-trivial characterizing conditions. Formally, compositional accessibility strictly contains Lie-generated accessibility, and the T7 morphisms are the cross-block morphisms outside Lie-generated accessibility (§7). From the broader viewpoint, T7 is the first explicit separation example for a later accessibility theory; it is not claimed here as a complete classification of accessibility depth.
-
-**Core claim.** The trilogy establishes a single structural fact across three papers: **projector-mediated composition can create accessibility structures not captured by the Lie algebra generated from the same representation.** \cite{paper1} established the canonical spectral layers. \cite{paper2} resolved them into QT/HT joint-spectral sectors and characterized the transport topology. This paper proves that compositional accessibility strictly exceeds Lie-generated accessibility (T7 morphisms). The resolved sector geometry of the representation is not contained in the Lie-generated accessibility geometry of $\{A_g = \log\rho(g)\}$ — a structural consequence of Schur's lemma and the isotypic decomposition (Layers A+B), verified on the Rubik's cube (228-dim); two S₃ systems (9-dim and 12-dim) serve as negative controls exhibiting no T7 morphisms.
-
-***
-
-## Notation Table
-
-| Symbol | Meaning | Origin |
-|--------|---------|--------|
-| $A$, $P_\alpha$, $K_{\alpha\beta}$, $\operatorname{Supp}_{\mathrm{nc}}$, blocks, layers, sectors S1–S9 | Spectral objects, transport graph, noncommutative support | Papers I–II |
-| $A_g = \log \rho(g)$ | Infinitesimal generator — logarithmic embedding of discrete generator | **this paper** |
-| $\mathcal{A} = \text{span}\{\rho(g)\}$ | Image of the group algebra on $V$ — block-diagonal by the isotypic decomposition | **this paper** |
-| $\mathcal{L} = \operatorname{Lie}\{A_g\}$ | Lie algebra generated by $\{A_g\}_{g \in S}$; contained in $\mathcal{A}$ (Layer A, \ref{lem:pure-sector-obstruction}) | **this paper** |
-| $\mathcal{U}(\mathcal{L})$ | Universal enveloping algebra of $\mathcal{L}$ — the full associative algebra of Lie polynomials | **this paper** |
-| $\kappa_0(\alpha,\beta) = \max_g \|P_\alpha A_g P_\beta\|_F$ | Lie gradient (κ₀) — single-generator morphism within Lie-generated accessibility | **this paper** |
-| $\kappa_1(\alpha,\beta) = \max_{g,h} \|P_\alpha [A_g, A_h] P_\beta\|_F$ | Lie curvature (κ₁) — commutator-mediated morphism within Lie-generated accessibility | **this paper** |
-| $\kappa_d(\alpha,\beta)$ | Lie-generated accessibility at commutator depth $d$ | **this paper** |
-| **T7 morphism** | Cross-block morphism outside Lie-generated accessibility: $K_{\alpha\beta} = 0$, $\kappa_d(\alpha,\beta) = 0$ for all $d$, yet $\alpha \leadsto \beta$ via composition through a hybrid sector | **this paper** |
-| **Hybrid sector** | A QT/HT joint-spectral sector whose projector spans multiple blocks; when transport-active, it enables T7 morphisms across block boundaries (C2) | Paper II/III |
-| C0 | Center Incompleteness: $Z \subsetneq \operatorname{Comm}(\rho)$ — the transport-generated center is a proper subalgebra of the full commutant; sectors aggregate isotypic components, enabling off-diagonal transport | Paper II |
-| C1, C2, C3 | T7 characterizing conditions: (C1) shared isotypic support, (C2) transport-active hybrid sector, (C3) block-preserving dynamics | **this paper** |
-| $\mathcal{T}$, $\overline{\mathcal{T}}$ | Transport category and its compositional accessibility closure | **this paper** |
-
-Full notation glossary: `docs/conventions.md` and (CCS Part 0).
+**Boundary.** Graph reachability and projected-composition reachability are distinct invariants. A hybrid sector may be incident to edges carried by different physical-block components without transferring amplitude between those components. The canonical five pairs are therefore not compositional morphisms; they are finite witnesses of support-graph overapproximation. Image--kernel compatibility is the missing promotion datum.
 
 ***
 
 ## Introduction
 
-**Conventions.** We use a right-handed Cartesian coordinate system ($+X \to R$, $+Y \to U$, $+Z \to F$). The representation space $V = \mathbb{C}^{228}$ decomposes as $V = V_{\mathrm{cp}} \oplus V_{\mathrm{ep}} \oplus V_{\mathrm{co}} \oplus V_{\mathrm{eo}}$ ($64 + 144 + 8 + 12$). The generator set $S$ is the 18 standard face-turn generators ($S = S^{-1}$). Full conventions: `docs/conventions.md`. All numerical values: (CCS-I §2, CCS-III §10.4, Appendices F–I).
+Sectorized operator analysis frequently begins with a family of orthogonal projectors
 
-### Where Papers I and II Left Off
+$$
+I=\sum_{i\in\mathcal I}Q_i,
+\qquad
+Q_iQ_j=\delta_{ij}Q_i,
+$$
 
-\cite{paper1} established the spectral ontology: the averaging operator $A_{18} = \frac{1}{|S|}\sum\rho(s)$ has a rational 6-layer spectrum. \cite{paper2} then resolved those layers into 9 QT/HT joint-spectral sectors and established the static transport topology: $K_{\alpha\beta} = \max_g\|P_\alpha \rho(g) P_\beta\|_F > 0$ when two sectors share noncommutative support (sufficient condition; one Type II exception, S8$\leftrightarrow$S9), with S6 as the primary hub and S1 as isolated. Both papers study static objects — the spectral decomposition and the transport graph.
+and a unitary action $\rho:G\to U(V)$. For every declared generator $g$, define the transport blocks
 
-Paper III studies **dynamics**. Given the transport topology, what can actually reach what — and at what Lie-algebraic depth?
+$$
+T_{ij}(g)=Q_i\rho(g)Q_j.
+$$
 
-### The Central Question
+The direct support relation $j\to i$ is present when one of these blocks is nonzero. This relation is useful: it records exactly where a single generator fails to preserve the chosen sectorization. It does not, however, retain the images and kernels of the nonzero blocks.
 
-Take two QT/HT joint-spectral sectors $\alpha$ and $\beta$ supported in disjoint blocks of the representation. Can a nonzero morphism exist from $\beta$ to $\alpha$?
+This loss of information matters under composition. Given nonzero blocks
 
-| Mechanism | Object | Cross-block? |
-|-----------|--------|-------------|
-| **Direct** | $K_{\alpha\beta} = \max_g\|P_\alpha \rho(g) P_\beta\|_F$ | No — Type I via shared Supp_nc; one Type II exception (S8$\leftrightarrow$S9) via CP channel (\cite{paper2}) |
-| **Lie gradient (κ₀)** | $\kappa_0(\alpha,\beta) = \max_g\|P_\alpha A_g P_\beta\|_F$ | No — $A_g = \log\rho(g)$ is block-diagonal |
-| **Lie curvature (κ₁)** | $\kappa_1(\alpha,\beta) = \max\|P_\alpha [A_g, A_h] P_\beta\|_F$ | No — $[A_g, A_h]$ is block-diagonal |
-| **Composition (T7)** | $P_\alpha \rho(g) P_\gamma \rho(h) P_\beta$ | **Yes** — through a hybrid sector $\gamma$ |
+$$
+Q_k\rho(g_1)Q_j\ne0,
+\qquad
+Q_i\rho(g_2)Q_k\ne0,
+$$
 
-The first three rows are structural consequences of Schur's lemma (Lemmas 0–1, Layers A+B). $A_g = \log\rho(g)$ inherits the block-diagonal structure of $\rho(g)$. Commutators of block-diagonal matrices are block-diagonal. By induction, **every element of $\mathcal{U}(\mathcal{L})$ — the full universal enveloping algebra — is block-diagonal.** Lie-generated accessibility is structurally blind to cross-block morphisms.
+the graph contains a path $j\to k\to i$. The corresponding operator is
 
-The fourth row — discrete composition through a hybrid sector — is not blocked. A hybrid sector $\gamma$ whose projector spans both blocks can route a composition path: $\alpha \to \gamma \to \beta$. The discrete group action preserves this path; the Lie algebra collapses it.
+$$
+Q_i\rho(g_2)Q_k\rho(g_1)Q_j.
+$$
 
-**This is the discrete/continuous split.** $\mathcal{U}(\mathcal{L})$ probes infinitesimal tangent geometry inside blocks; discrete composition probes global projector geometry across blocks. The mismatch between Lie-generated accessibility and compositional accessibility is the conceptual core of this paper. This paper is not a solver: no Kociemba algorithm, no sticker rendering, no neural networks, no genetic algorithms, no control policies. The $\kappa_d$ hierarchy is a structural diagnostic — it measures reachability, not optimality.
+The product can vanish if the first step lands entirely within directions
+annihilated by the second. Thus, for a fixed sectorization and declared
+generator set, Boolean support-graph reachability overapproximates
+projected-composition reachability defined by compatible ordered generator
+tuples.
 
-### T7 Morphisms
+This paper makes that distinction formal through named definitions, exact
+obstruction theorems, local promotion criteria, and a promotion problem.
 
-A **T7 morphism** is a cross-block morphism outside Lie-generated accessibility: $K_{\alpha\beta} = 0$, $\kappa_d(\alpha,\beta) = 0$ for all commutator depths $d$, yet there exists a finite composition path
+### Scope
 
-$$P_\alpha \rho(g_1) P_{\gamma_1} \cdots \rho(g_n) P_\beta \neq 0$$
+The general theorems concern finite-dimensional Hilbert spaces, orthogonal sector projectors, and unitary or linear transport maps. The Rubik's cube representation supplies one finite realization. Claims about its nine sectors, ten direct edges, and five graph-only pairs are computational certificates for the declared representation and generator set.
 
-through a hybrid sector.
+This paper does not claim that every support path is obstructed. It identifies
+the missing datum and provides exact local criteria for both obstruction and
+promotion.
+Higher-depth accessibility theories require additional declared objects and
+are not considered here. The criterion supplied here can be used as the local
+survival gate in any later routed-composition analysis.
 
-Lie-generated accessibility is block-preserving at every algebraic depth (Layers A+B, Lemmas 0–1). Only compositional accessibility bridges blocks — through projector-mediated morphisms outside Lie-generated accessibility. Four distinctions keep the trilogy's concepts distinct: (i) **T7 $\neq$ M₂** — the Rubik cube exhibits both as structurally orthogonal (§5.5); (ii) **curvature $\neq$ transport** — curvature is within-block $\kappa_1$, transport is depth-1 $K$ (\cite{paper2}); (iii) **transport $\neq$ accessibility** — transport is single-generator edges, accessibility is compositional closure; (iv) **center completeness $\neq$ sector granularity** — $Z = \operatorname{Comm}(\rho)$ forces diagonal K; $Z \subsetneq \operatorname{Comm}(\rho)$ enables off-diagonal transport (C0, §5.2).
+## Notation {.unnumbered}
 
-### T7 Theorem (Preview)
-
-T7 morphisms require four structural conditions: (C0) center incompleteness ($Z \subsetneq \operatorname{Comm}(\rho)$), (C1) shared noncommutative support, (C2) transport-active hybrid sectors, (C3) block-preserving Lie dynamics. The formal theorem is stated and proved below (see the T7 Theorem).
-
-### The S₃ Narrative Arc
-
-**S₃ (order 6) serves as the negative control.** Under the canonical Center{A_full, A_trans} decomposition, neither nat⊕reg (9-dim) nor reg⊕reg (12-dim) exhibits T7 morphisms — both fail C0 ($Z = \operatorname{Comm}(\rho)$ forces diagonal $K$) and lack transport-active hybrid sectors (C2). These failures confirm C0–C3 as non-trivial characterizing conditions. The Rubik cube (228-dim) satisfies all four conditions and exhibits 5 verified T7 morphisms. Section 6 develops the full comparison.
-
-### Structure
-
-| Part | Content | Question |
-|------|---------|----------|
-| **I** (Setup and Accessibility Hierarchy) | Lie-generated accessibility: K, κ₀, κ₁ | What can reach what, at what Lie-algebraic depth? |
-| **II** (Why Lie-Generated Accessibility Cannot Cross Blocks) | Lie-Generated Support Invariance (\ref{lem:lie-generated-support-invariance}) + formal definitions | Why can't $\mathcal{U}(\mathcal{L})$ cross blocks? |
-| **III** (The T7 Morphism Theorem) | T7 Morphism Theorem | When does compositional accessibility transcend Lie-generated accessibility? |
-| **IV** (S₃ Prototypes and Rubik Realization) | S₃ negative controls → Rubik at scale | How does this manifest across systems? |
-| **V** (The Structure Behind T7) | Structural separation | What structure does T7 reveal? |
-| **VI** (Discussion and Concluding Perspective) | Discussion, concluding perspective | |
-
-Figure~\ref{fig:trilogy-master} shows the full trilogy cascade from spectral decomposition through transport topology to Lie accessibility.
-
-![The RIME trilogy cascade: spectral decomposition (Paper I) $\to$ transport topology (Paper II) $\to$ Lie accessibility (Paper III), from $\rho(g)$ through $A$, $\{V_\lambda\}$, $\{S_\alpha\}$, $K_{\alpha\beta}$, $\kappa_0$/$\kappa_1$, to T7 morphisms. Each stage refines the structural resolution: layers aggregate isotypic components, sectors aggregate layers, transport connects sectors, and accessibility distinguishes Lie-reachable from composition-only paths. The single structural fact unifying the trilogy is that spectral projector geometry is not contained in Lie tangent geometry.](../../figures/paper3/trilogy_master.png)
+| Symbol | Meaning |
+|---|---|
+| $V$ | finite-dimensional complex Hilbert space |
+| $\rho:G\to U(V)$ | declared transport representation |
+| $S\subset G$ | finite generator set; inverse-closed in the canonical audit |
+| $Q_i$ | orthogonal projector onto sector $V_i=\operatorname{im}Q_i$ |
+| $T_{ij}(g)$ | direct transport block $Q_i\rho(g)Q_j$ |
+| $K^S_{ij}$ | $\max_{g\in S}\lVert T_{ij}(g)\rVert_F$ |
+| $\mathcal G_S$ | directed support graph of the direct blocks |
+| $C_{ikj}(g_2,g_1)$ | projected two-step composition $Q_i\rho(g_2)Q_k\rho(g_1)Q_j$ |
+| $\mathcal G^{(2)}_{\mathrm{comp}}$ | two-step composition graph |
+| $\mathcal O^{(2)}_{\mathrm{wit}}$ | witness-level image--kernel obstruction tuples |
+| $\mathcal O^{(2)}_{\mathrm{path}}$ | path-level triples whose every declared two-step product vanishes |
+| $\Pi_b$ | orthogonal projector onto physical block $V_b$ |
+| $\operatorname{BlockSupp}(Q_i)$ | blocks on which $Q_i$ has nonzero restriction |
 
 ***
 
-## Setup and Prerequisites
+## Sector Transport and the Support Graph
 
-### Representation and Generators
+### Sectorization
 
-**Geometric conventions.** We use a right-handed Cartesian coordinate system ($+X \to R$, $+Y \to U$, $+Z \to F$). Corner and edge positions are defined by sign vectors in $\{\pm 1\}^3$ and $\{\pm 1,0\}^3$ respectively; all combinatorial constants (orderings, face adjacency, rotation strips) are derived algorithmically from these coordinate rules, not hand-enumerated. Orderings are induced canonically by clockwise XZ-plane cycles. Clockwise rotation is defined relative to the outward face normal. Full detail: `docs/conventions.md`.
+Let $V$ be finite dimensional and let $\{Q_i\}_{i\in\mathcal I}$ be a complete orthogonal sectorization:
 
-We work with the 228-dimensional representation $\rho: G \to \text{GL}(228, \mathbb{R})$ of the Rubik's cube group, decomposing into four $G$-invariant blocks:
+$$
+Q_i=Q_i^\dagger=Q_i^2,
+\qquad
+Q_iQ_j=0\ (i\ne j),
+\qquad
+\sum_iQ_i=I.
+$$
 
-$$V = V_{\mathrm{cp}} \oplus V_{\mathrm{ep}} \oplus V_{\mathrm{co}} \oplus V_{\mathrm{eo}},\qquad 64 + 144 + 8 + 12 = 228,$$
+We do not assume that $Q_i$ commutes with $\rho(G)$. Indeed, non-invariance is
+the source of off-diagonal direct transport.
 
-laid out in cp $\to$ ep $\to$ co $\to$ eo order. By construction, $\rho(g)$ is block-diagonal for all $g \in G$ — each block transforms independently, and cross-block matrix elements are identically zero.
+### Support Graph
 
-The generator set $S$ consists of the 18 standard face-turn generators ($S = S^{-1}$). The logarithmic embedding $A_g = \log \rho(g)$ inherits the block-diagonal structure (Lemma~\ref{lem:lie-generated-support-invariance}, see Lie-Generated Support Invariance below).
+**Definition 2.1 (Direct support graph).** \label{def:paper3-support-graph}
+For a declared generator set $S$, the directed support graph $\mathcal G_S$ has vertex set $\mathcal I$ and edge
 
-All numerical data in this paper correspond to the 6 canonical layers ($k \in \{0,1,2,3,4,6\}$, $\lambda = 1 - k/9$) and 9 QT/HT joint-spectral sectors from the Center $\{A_{18}, \mathrm{QT}_{\mathrm{all}}, \mathrm{HT}_{\mathrm{all}}\}$ joint diagonalization. The single source of truth is the Unified Computational Supplement (CCS).
+$$
+j\longrightarrow i
+\quad\Longleftrightarrow\quad
+T_{ij}(g)=Q_i\rho(g)Q_j\ne0
+\text{ for some }g\in S.
+$$
 
-### Spectral Decomposition
+The associated weighted support matrix is
 
-The averaging operator $A = \frac{1}{18}\sum_{s \in S} \rho(s)$ has eigendecomposition:
+$$
+K^S_{ij}=\max_{g\in S}\lVert Q_i\rho(g)Q_j\rVert_F.
+$$
 
-$$A = \sum_{i} \lambda_i P_i, \quad P_i P_j = \delta_{ij} P_i, \quad \sum_i P_i = I_{228}$$
+When $S=S^{-1}$ and $\rho$ is unitary, $K^S$ is symmetric, although the block-level definition remains directed.
 
-with 6 distinct eigenvalues and 9 QT/HT joint-spectral sectors (Center joint diagonalization). Full tables in (CCS-I §1.3–§1.4).
+### Transport--Non-Invariance Identity
 
-### Block Decomposition and Supp_nc
+The support graph has the following exact operator interpretation.
 
-Each sector has well-defined block support. The noncommutativity hierarchy (\cite{paper2}):
+**Theorem 2.2 (Transport--Non-Invariance Identity).** \label{prop:paper3-transport-noninvariance}
+For a unitary $U$ and an orthogonal projector $Q_j$ in a complete sectorization,
 
-$$\|[QT^0, QT^1]\|_F = 2.92 \text{ total}; \quad \mathrm{cp}=0,\; \mathrm{ep}=2.74\;(93.9\%),\; \mathrm{co}=0.61,\; \mathrm{eo}=0.79$$
+$$
+\sum_{i\ne j}\lVert Q_iUQ_j\rVert_F^2
+=\lVert(I-Q_j)UQ_j\rVert_F^2
+=\frac12\lVert[U,Q_j]\rVert_F^2.
+$$
 
-$\operatorname{Supp}_{\mathrm{nc}}(\alpha) = \{b \in \{\mathrm{cp},\mathrm{ep},\mathrm{co},\mathrm{eo}\} : P_\alpha|_b \neq 0 \text{ and } \|[QT^0,QT^1]\|_b > 0\}$.
+*Proof.* Orthogonality gives $I-Q_j=\sum_{i\ne j}Q_i$, so the first equality is the Pythagorean decomposition of the outgoing block. Put $Q=Q_j$. Relative to $V=\operatorname{im}Q\oplus\ker Q$, the commutator has off-diagonal blocks $(I-Q)UQ$ and $-QU(I-Q)$. Unitarity gives $\lVert(I-Q)UQ\rVert_F^2=\operatorname{tr}(Q)-\lVert QUQ\rVert_F^2$ and $\lVert QU(I-Q)\rVert_F^2=\operatorname{tr}(Q)-\lVert QU^\dagger Q\rVert_F^2$. The two compressed operators are adjoints, so
+$\lVert QUQ\rVert_F=\lVert QU^\dagger Q\rVert_F$. Hence the two off-diagonal blocks have equal Frobenius mass, and their squared norms sum to $\lVert[U,Q]\rVert_F^2$. $\square$
 
-### Lie Generators
+**Corollary 2.3.** Vertex $j$ has no outgoing off-diagonal edge for $U$ if and only if $[U,Q_j]=0$.
 
-The Lie generators are computed via the principal matrix logarithm:
-
-$$A_g = \log \rho(g)$$
-
-using `scipy.linalg.logm`. Fidelity: $\max_g \|\exp(A_g) - \rho(g)\| < 3 \times 10^{-8}$. The $A_g$ are skew-Hermitian to numerical precision. The full Lie algebra is $\mathcal{L} = \operatorname{Lie}\{A_g\}_{g \in S}$, generated by iterated commutators.
-
-### Hybrid Sectors — A Formal Definition
-
-The term "hybrid sector" has been used informally throughout the trilogy to designate QT/HT joint-spectral sectors whose projectors span multiple invariant blocks. It is now formalized as a mathematical object.
-
-**Definition (Hybrid Sector).** Let $V = V_A \oplus V_B \oplus \cdots$ be the block decomposition of the representation. A QT/HT joint-spectral sector $E_\gamma$ with projector $P_\gamma$ is called **hybrid** if its projector has nonzero restriction to more than one invariant block:
-
-$$P_\gamma|_{V_A} \neq 0 \quad\text{and}\quad P_\gamma|_{V_B} \neq 0$$
-
-for at least two distinct blocks $A \neq B$.
-
-A hybrid sector is **transport-active** if it participates in nonzero transport morphisms to sectors in both blocks:
-
-$$\exists \alpha \subset V_A,\; \beta \subset V_B : K_{\alpha\gamma} > 0 \;\text{and}\; K_{\gamma\beta} > 0$$
-
-Equivalently (computable criterion): $\operatorname{Supp}(E_\gamma) \cap \operatorname{Supp}(E_\alpha) \neq \emptyset$ and $\operatorname{Supp}(E_\gamma) \cap \operatorname{Supp}(E_\beta) \neq \emptyset$, where $\operatorname{Supp}(E) = \{\tau \in \hat{G} : \operatorname{Tr}(P \Pi_\tau) > 0\}$ is the isotypic support.
-
-A hybrid sector that fails the transport-active criterion — hybrid by block support but sharing no irreducible content with sectors in both blocks — is called **inert**. Inert hybrids arise from eigenvalue coincidence in the commutative center $Z$ without shared irrep geometry, and provide no T7 morphism (confirmed by the S₃ inert hybrid counterexample, Appendix C).
-
-**Remark (Examples — Rubik's cube, 9-sector resolution).**
-
-| Sector | Blocks | Transport-active? | Role |
-|--------|--------|-------------------|------|
-| S1 ($V_1$, 20-dim) | cp+ep | No — isolated | $G$-invariant subrepresentation |
-| S3 (V$_{7/9}$, 39-dim) | ep+eo | Yes | Hub connector |
-| S4 (V$_{2/3}$, 26-dim) | ep+co | Yes | Hub connector |
-| S6 (V$_{5/9}$, 39-dim) | ep+eo | **Yes** | Primary hub (degree 5) |
-| S7 (V$_{5/9}$, 66-dim) | cp+ep+co+eo | **Yes** | Secondary hub (degree 3) |
-| S9 (V$_{1/3}$, 27-dim) | cp+co | Yes | CP-mediated channel to S8 |
-
-S6 (2 pairs) and S7 (2 pairs) are the dominant T7 mediators; S4 and S9 each mediate 1 pair (see Rubik's Cube Realization below). S1 is hybrid by block support (cp+ep) but transport-inert — a $G$-invariant subrepresentation with $K < 10^{-14}$ to all other sectors.
-
-This definition makes precise the C2 condition in the T7 Theorem (see below): "transport-active hybrid projector" is now a fully defined mathematical object.
-
-**Conceptual note — hybrid sectors cannot be reduced to predominant blocks.** A common error in earlier computational analysis was to classify each sector by its *predominant* block — the block with largest trace contribution — and treat that as the sector's block assignment. This is incorrect. Sectors S1 (cp+ep), S4 (ep+co), S7 (cp+ep+co+eo), and S9 (cp+co) each have *multi-block support* — their projectors have nonzero restriction to more than one invariant block. Collapsing a hybrid sector to its predominant block destroys the geometric feature that enables T7 morphisms: the projector's ability to bridge two representation blocks in a single composition step. S7, for example, is split approximately 36%/39%/12%/13% across cp/ep/co/eo — calling it "an ep sector" loses its bridging role. The entire transport topology, M₂ overlap structure, and T7 mediation depend on **multi-block support**, not dominant-block assignment.
-
-### Lemma 0 — Schur-Locality: Why the Lie Algebra Cannot Cross Blocks
-\label{lem:pure-sector-obstruction}
-
-The representation-level obstruction that underlies the entire paper is a structural consequence of Schur's lemma and the isotypic decomposition. This section makes it explicit.
-
-**Isotypic decomposition.** Let $V = \bigoplus_{\tau \in \hat{G}} V_\tau$ where $V_\tau \cong M_\tau \otimes W_\tau$ is the $\tau$-isotypic component: $M_\tau$ the irreducible module, $W_\tau$ the multiplicity space. By Schur's lemma:
-
-$$\operatorname{End}_G(V) = \bigoplus_\tau I_{M_\tau} \otimes \operatorname{End}(W_\tau), \qquad \operatorname{Hom}_G(V_\tau, V_{\tau'}) = 0 \;\; (\tau \neq \tau')$$
-
-The double commutant theorem gives the image of the group algebra:
-
-$$\mathcal{A} = \text{span}\{\rho(g) : g \in G\} = \operatorname{End}_{\operatorname{End}_G(V)}(V) = \bigoplus_\tau \operatorname{End}(M_\tau) \otimes I_{W_\tau}$$
-
-**Block decomposition.** The paper's working blocks (cp, ep, co, eo) are coarser than the isotypic decomposition: each block $V_b = \bigoplus_{\tau \in \operatorname{Supp}(V_b)} V_\tau$ is a union of complete isotypic components. Consequently:
-
-$$\rho(g) = \bigoplus_b \rho_b(g), \qquad \mathcal{A} = \bigoplus_b \mathcal{A}_b$$
-
-where $\mathcal{A}_b = \text{span}\{\rho_b(g)\}$ acts on $V_b$ and vanishes on $V_{b' \neq b}$.
-
-**Proposition (Schur-locality).** The matrix logarithm preserves the block-diagonal structure inherited from the isotypic decomposition:
-
-$$A_g = \log \rho(g) = \bigoplus_b \log \rho_b(g) \in \mathcal{A}$$
-
-Therefore the Lie algebra generated by the $\{A_g\}$ is contained in $\mathcal{A}$:
-
-$$\mathcal{L} = \operatorname{Lie}\{A_g : g \in G\} \subset \mathcal{A} = \bigoplus_b \mathcal{A}_b$$
-
-Every Lie monomial at every depth — and by extension every element of the universal enveloping algebra $\mathcal{U}(\mathcal{L})$ — lives in $\mathcal{A}$ and is therefore block-diagonal. The Lie algebra cannot create new inter-block morphisms: this is a categorical obstruction, not a numerical one. Hom$_{\mathcal{L}}(V_A, V_B) = 0$ whenever $A \neq B$.
-
-This is Layer A of the obstruction the T7 theorem builds on.
-
-**Concrete form (Isotypic Support Necessity).** For computations with sector projectors, the same principle takes this form. Define the isotypic support $\operatorname{Supp}(E_\alpha) = \{\tau \in \hat{G} : \operatorname{Tr}(P_\alpha \Pi_\tau) > 0\}$, where $\Pi_\tau$ is the projector onto the $\tau$-isotypic component of $V$.
-
-If $\operatorname{Supp}(E_\alpha) \cap \operatorname{Supp}(E_\beta) = \emptyset$, then for all $g \in G$:
-
-$$T_{\alpha\beta}(g) = P_\alpha \rho(g) P_\beta = 0$$
-
-*Proof.* Take $v \in E_\beta$. Decompose: $v = \sum_{\tau \in \operatorname{Supp}(E_\beta)} v_\tau$. By Schur's lemma, $\rho(g)$ preserves each isotypic component. $P_\alpha$ annihilates all $\tau \notin \operatorname{Supp}(E_\alpha)$. Since the supports are disjoint, $P_\alpha \rho(g)v = 0$.
-
-**Corollary (Composition can bridge disjoint support).** $P_\alpha \rho(g) P_\gamma \rho(h) P_\beta$ can be nonzero even when $\operatorname{Supp}(E_\alpha) \cap \operatorname{Supp}(E_\beta) = \emptyset$, provided an intermediate hybrid sector $\gamma$ shares isotypic support with both: its $V_A$ component receives $\rho(h)v$ and its $V_B$ component passes the result to $P_\alpha$.
-
-This proves that **zero cross-block direct morphisms is a theorem, not an observation.**
+This result is local to one generator. It does not assert that paths in the resulting support graph compose nontrivially.
 
 ***
 
-## Part I — The Accessibility Hierarchy
+## Projected Matrix Composition
 
-**Remark (Open question).** At what Lie-algebraic depth can sector $\alpha$ reach sector $\beta$?
+### Composition Operator
 
-### Level 0 — Direct Transport: K
+**Definition 3.1 (Two-step composition operator).** \label{def:paper3-composition-operator}
+For sectors $j,k,i$ and generators $g_1,g_2\in S$, define
 
-$$K_{\alpha\beta} = \max_{g \in S} \|P_\alpha \rho(g) P_\beta\|_F$$
+$$
+C_{ikj}(g_2,g_1)
+=Q_i\rho(g_2)Q_k\rho(g_1)Q_j.
+$$
 
-At 9-sector resolution (CCS-I §2.2): 20 directed edges (10 undirected pairs), **all block-preserving** — zero cross-block direct edges. S1 ($V_1$, 20-dim, cp+ep) has $K < 10^{-14}$ with all other sectors — a G-invariant subrepresentation. S6 (39-dim, ep+eo, V₅/₉) is the primary hub (degree 5). S7 (66-dim, all blocks, V₅/₉) is the secondary hub (degree 3).
+The ordered triple $(j,k,i)$ is **composition-active** if this operator is nonzero for at least one ordered pair $(g_1,g_2)$.
 
-**Structural Observation (\cite{paper2}, Obs. A).** Nonempty Supp_nc intersection is sufficient for direct transport: $\operatorname{Supp}_{\mathrm{nc}}(\alpha) \cap \operatorname{Supp}_{\mathrm{nc}}(\beta) \neq \emptyset \;\Longrightarrow\; K_{\alpha\beta} > 0$. All 9 Type I edges in the Rubik cube transport graph satisfy this criterion. The converse is an empirical regularity with a single exception: S8 (pure CP) $\leftrightarrow$ S9 (CP+CO) has $K = 2.83$ despite both having empty Supp_nc — the commutative CP-mediated Type II channel. Verified on the Rubik cube and S₃ negative controls; no first-principles derivation is claimed.
+**Definition 3.2 (Two-step composition graph).**
+The graph $\mathcal G^{(2)}_{\mathrm{comp}}$ contains $j\Rightarrow i$ when there are $k\in\mathcal I$ and $g_1,g_2\in S$ such that $C_{ikj}(g_2,g_1)\ne0$.
 
-### Level 1 — Gradient Transport: κ₀
+The graph square $\mathcal G_S^2$ contains $j\leadsto i$ when there is an intermediate $k$ with edges $j\to k$ and $k\to i$. The two relations are deliberately different.
 
-$$\kappa_0(\alpha,\beta) = \max_{g \in S} \|P_\alpha A_g P_\beta\|_F$$
+### Composition-to-Path Inclusion
 
-Computed over all 18 $A_g$. At 9-sector resolution — canonical matrix in (CCS-I §2.3). Gradient transport preserves all $K > 0$ channels: if $K_{\alpha\beta} > 0$ then $\kappa_0(\alpha,\beta) > 0$, symmetric to $<1.6 \times 10^{-8}$. The 9-sector resolution reveals intra-V₅/₉ structure invisible at 6-layer: S5 (1-dim, pure EO), S6 (39-dim, ep+eo, primary hub), and S7 (66-dim, all-block, secondary hub) are distinct sectors with distinct κ₀ profiles.
+**Theorem 3.3 (Composition-to-Path Inclusion).** \label{prop:paper3-composition-implies-path}
+If $C_{ikj}(g_2,g_1)\ne0$, then
 
-### Level 2 — Curvature Transport: κ₁
+$$
+Q_k\rho(g_1)Q_j\ne0
+\quad\text{and}\quad
+Q_i\rho(g_2)Q_k\ne0.
+$$
 
-$$\kappa_1(\alpha,\beta) = \max_{g,h \in S} \|P_\alpha [A_g, A_h] P_\beta\|_F$$
+Consequently,
 
-At 9-sector resolution — canonical matrix in (CCS-I §2.4). Figure~\ref{fig:fig3-curvature-emergence} illustrates the geometric mechanism of curvature emergence at the Lie barrier.
+$$
+\mathcal G^{(2)}_{\mathrm{comp}}\subseteq\mathcal G_S^2.
+$$
 
-![Geometric mechanism of curvature emergence at the Lie barrier: $\kappa_0 = 0$ (gradient freeze) on cross-block pairs means no single generator can bridge them at first order, while $\kappa_1 > 0$ (curvature active) within blocks means Lie brackets $\frac{1}{2}[\mathrm{QT}^a, \mathrm{QT}^b]$ produce second-order transport. All 7 curvature channels ($\kappa_1 > 0$) are confined within blocks, confirming that Lie brackets cannot cross block boundaries. Curvature and transport are independent structural dimensions — an edge can be gradient-only ($\kappa_0>0$, $\kappa_1=0$), curvature-assisted ($\kappa_0>0$, $\kappa_1>0$), or composition-only ($\kappa_0=\kappa_1=0$).](../../figures/paper3/fig3_curvature_emergence.png)
+*Proof.* A product with a zero factor is zero. $\square$
 
-**Seven pure curvature channels** at 9-sector — pairs with $\kappa_0 \approx 0$ but $\kappa_1 > 0$: S2↔S3 (κ₁=0.71, shared EO), S2↔S7 (κ₁=1.01, shared EO), S3↔S4 (κ₁=4.27, shared EP), S3↔S5 (κ₁=1.01, shared EO), S4↔S7 (κ₁=6.17, shared EP+CO), S5↔S7 (κ₁=1.42, shared EO), S7↔S8 (κ₁=6.98, shared CP). The largest curvature-only channel at 9-sector is S7↔S8 with $\kappa_0 \sim 10^{-14}$ and $\kappa_1 = 6.98$ (enhancement $\sim 5 \times 10^{14}$).
+The converse fails. This is not a numerical artifact but a direct consequence
+of ordinary matrix algebra.
 
-**All 7 pure curvature channels are within-block** — every pair shares at least one block (EP, EO, CO, or CP). Zero cross-block curvature channels at any resolution. **Lie curvature creates new within-block channels but cannot bridge blocks.** The 6-layer analysis identified 6 such channels; the 9-sector refinement resolves one more (S2↔S7 distinguishing intra-V₅/₉ EO coupling from the broader S2↔S6/S7 pairing at 6-layer).
+**Definition 3.4 (Witness-level obstruction set).** \label{def:paper3-witness-obstruction-set}
+The witnessed obstruction set is
 
-### Higher Depth: κ₂ and Beyond
+$$
+\mathcal O^{(2)}_{\mathrm{wit}}
+=\left\{(j,k,i,g_2,g_1):
+Q_k\rho(g_1)Q_j\ne0,
+\ Q_i\rho(g_2)Q_k\ne0,
+\ C_{ikj}(g_2,g_1)=0
+\right\}.
+$$
 
-$\kappa_2$ (nested commutators $[[A_g, A_h], A_k]$) further amplifies all channels but creates no new cross-block ones. The pattern is stable: $\kappa_d$ grows with $d$ within blocks, stays zero across blocks. The Lie algebra is block-preserving at **all** depths (Lemma~\ref{lem:lie-generated-support-invariance}, see below).
+**Definition 3.5 (Path-level obstruction set).** \label{def:paper3-path-obstruction-set}
+The graph-only path obstruction set is
 
-### Three Accessibility Classes
+$$
+\mathcal O^{(2)}_{\mathrm{path}}
+=\left\{(j,k,i):
+j\to k\to i\text{ in }\mathcal G_S,
+\ C_{ikj}(g_2,g_1)=0\ \forall g_1,g_2\in S
+\right\}.
+$$
 
-The κ hierarchy partitions sectors into three classes:
-
-| Class | Sectors | κ₀ (gradient) | κ₁ (curvature) | Mechanism |
-|-------|---------|--------------|----------------|-----------|
-| **I** | S1 ($V_1$) | 0 | 0 | G-invariant subrepresentation |
-| **II** | Most non-S1 pairs | $>0$ | $>0$ | Gradient + curvature coupled |
-| **III** | S3↔S4, S7↔S8, etc. | $\approx 0$ | **> 0** | Pure curvature (Krawtchouk-order mismatch) |
-
-Class I is subrepresentation isolation — the sector is an actual $G$-subrepresentation, hence invariant under all $\rho(g)$ and $A_g$.
-
-Class II is the generic case — individual Lie generators already couple the sectors, curvature amplifies.
-
-Class III is the Krawtchouk-order mismatch mechanism: sectors in different Krawtchouk eigenspaces (e.g., $k=2$ vs $k=3$) that share block support. Individual $A_g$ preserve Krawtchouk order (they live in the Bose-Mesner algebra); commutators $[A_g, A_h]$ mix across orders. The enhancement ratio $\kappa_1/\kappa_0 \sim 10^{14}$ is the signature of pure curvature coupling. At 9-sector resolution, 7 pure curvature channels are identified — all within-block, zero cross-block.
-
-**These three classes exhaust Lie-generated accessibility.** What lies beyond them — compositional accessibility — is the subject of Parts II–III.
-
-**Connection to classical accessibility theory.** The κ_d hierarchy mirrors the Lie bracket accessibility test in nonlinear control [2,3,4]: κ₀ corresponds to the Lie algebra generated by {A_g}, κ₁ to the first-order bracket $[A_g, A_h]$, and higher κ_d to iterated brackets. The key difference is that classical accessibility concerns the Lie algebra generated by vector fields on a manifold, while here the Lie generators A_g act linearly on the fixed representation space V. The block-preserving Lemma~\ref{lem:lie-generated-support-invariance} (§4.1) is the finite-group analogue of the fact that the accessibility distribution respects invariant foliations [4, Ch.5].
-
-***
-
-## Part II — Why Lie-Generated Accessibility Cannot Cross Blocks
-
-Figure~\ref{fig:fig2-lie-barrier} illustrates the Lie barrier and the T7 bridge mechanism.
-
-![The Lie barrier: continuous tangent dynamics are confined within blocks (gradient $\kappa_0$ and curvature $\kappa_1$ cannot cross block boundaries), but compositional accessibility bridges blocks through hybrid sectors via length-2 paths. On the left, Lie-generated flows hit a wall at the block boundary and freeze; on the right, the T7 bridge bypasses the wall through a hybrid intermediate sector. Five T7 morphisms cross the block boundary, establishing that compositional accessibility strictly exceeds Lie-generated accessibility.](../../figures/paper3/fig2_lie_barrier.png)
-
-### Lie-Generated Support Invariance
-
-Layer A (Lemma~\ref{lem:pure-sector-obstruction}) established containment in the group algebra: $\mathcal{L} \subset \mathcal{A} = \bigoplus_b \mathcal{A}_b$. Layer B extends this to the universal enveloping algebra — the full associative algebra generated by $\mathcal{L}$ under multiplication, not just the Lie subalgebra under commutator bracket.
-
-**Lemma 1 (Lie-Generated Support Invariance).** \label{lem:lie-generated-support-invariance} Let $V = V_A \oplus V_B$ be a decomposition into $G$-invariant blocks, and let $\rho(g) = \rho_A(g) \oplus \rho_B(g)$ for all $g \in G$. Define $\mathcal{L} = \operatorname{Lie}\{A_g : g \in G\}$ where $A_g = \log\rho(g)$. If $P_\alpha$ and $P_\beta$ are projectors with disjoint block support ($P_\alpha = P_\alpha \Pi_A$, $P_\beta = \Pi_B P_\beta$), then:
-
-$$P_\alpha X P_\beta = 0 \quad \forall X \in \mathcal{U}(\mathcal{L})$$
-
-where $\mathcal{U}(\mathcal{L})$ is the universal enveloping algebra of $\mathcal{L}$ — the associative algebra linearly spanned by finite products of the form $X_1 X_2 \cdots X_k$ for $X_i \in \mathcal{L}$.
-
-Equivalently: if $P_\alpha \mathcal{L} P_\beta = \{0\}$, then $P_\alpha \mathcal{U}(\mathcal{L}) P_\beta = \{0\}$. Lie-generated accessibility preserves block support at all algebraic depths.
-
-*Proof.* For each $g$, $A_g = \log\rho(g) = \log\rho_A(g) \oplus \log\rho_B(g)$ — the matrix logarithm preserves block structure. The commutator of block-diagonal matrices is block-diagonal:
-
-$$[X_A \oplus X_B,\; Y_A \oplus Y_B] = [X_A, Y_A] \oplus [X_B, Y_B]$$
-
-so $\mathcal{L} \subset \mathcal{A}_A \oplus \mathcal{A}_B$ (all Lie generators and their commutators are block-diagonal). Now any $X \in \mathcal{U}(\mathcal{L})$ is a finite linear combination of finite products $Y_1 Y_2 \cdots Y_k$ with $Y_i \in \mathcal{L}$. Each $Y_i$ is block-diagonal. The product of block-diagonal matrices is block-diagonal:
-
-$$(C_A \oplus C_B)(D_A \oplus D_B) = C_A D_A \oplus C_B D_B$$
-
-By induction on product length, every such product — and hence every element of $\mathcal{U}(\mathcal{L})$ — is block-diagonal. Projecting onto disjoint blocks annihilates:
-
-$$P_\alpha X P_\beta = P_\alpha \Pi_A X \Pi_B P_\beta = P_\alpha \cdot 0 \cdot P_\beta = 0$$
-
-**This is the central structural fact of the paper.** The universal enveloping algebra $\mathcal{U}(\mathcal{L})$ — the totality of Lie-generated accessibility — is block-preserving. No polynomial in the Lie generators, of any degree or depth, can couple sectors with disjoint block support.
-
-**Remark (Why $\mathcal{U}(\mathcal{L})$ and not just $\mathcal{L}$).** The Lie algebra $\mathcal{L}$ controls commutator-depth accessibility ($\kappa_d$), but finite-time Lie-generated motion is not limited to single commutators. Products of exponentials $\exp(t_1 A_{g_1}) \exp(t_2 A_{g_2}) \cdots$ expand, via the Baker-Campbell-Hausdorff formula, into polynomials in the generators — elements of the universal enveloping algebra $\mathcal{U}(\mathcal{L})$, the associative algebra spanned by finite products $X_1 \cdots X_k$ with $X_i \in \mathcal{L}$. Proving $\mathcal{U}(\mathcal{L})$ is block-preserving (Lemma~\ref{lem:lie-generated-support-invariance}) therefore proves that no Lie-generated motion — infinitesimal or finite, at any order — can couple sectors with disjoint block support. Lemma~\ref{lem:lie-generated-support-invariance} is strictly stronger than $\kappa_d = 0$ at every depth $d$.
-
-**Remark (Terminology — Lie-generated vs compositional).** The name **Lie-Generated Support Invariance** reflects what the lemma establishes: Lie-generated accessibility preserves block support. The term "curvature" is retained for $\kappa_1$ specifically — the commutator-mediated channel within Lie-generated accessibility — but Lemma~\ref{lem:lie-generated-support-invariance} governs the entire Lie-generated structure, not curvature alone.
-
-### Cross-Block Lie Inaccessibility
-
-For a pure-A sector $\alpha$ (projector supported entirely in $V_A$) and a pure-B sector $\beta$ (supported entirely in $V_B$), and any block-diagonal operator $C = C_A \oplus C_B$:
-
-$$P_\alpha C P_\beta = (P_\alpha \Pi_A)(C_A \oplus C_B)(\Pi_B P_\beta) = P_\alpha \cdot (\Pi_A (C_A \oplus C_B) \Pi_B) \cdot P_\beta = P_\alpha \cdot 0 \cdot P_\beta = 0$$
-
-By Lemma~\ref{lem:lie-generated-support-invariance}, every $C_d$ at any Lie depth $d$ is block-diagonal. Therefore:
-
-$$\kappa_d(\alpha, \beta) = 0 \quad \forall d \geq 0$$
-
-**Cross-block Lie-generated accessibility is identically zero at all depths.** The continuous limit, no matter how many commutator levels are included, cannot couple sectors supported in disjoint blocks.
-
-### Within-Block Curvature Channels
-
-In contrast, **within** a block, commutators create genuinely new transport. The 7 pure curvature channels ($\kappa_0 \approx 0$, $\kappa_1 > 0$) all share block support. The Krawtchouk-order mixing mechanism operates entirely within the cp/EP blocks — it cannot cross the block boundary.
-
-This separation is absolute:
-
-- **Within-block**: Lie gradient + Lie curvature + higher depth — rich Lie-generated accessibility
-- **Cross-block**: identically zero at all Lie depths — compositional accessibility is the sole channel
-
-### Formal Definitions
-
-Before the T7 theorem, we define the two accessibility structures the theorem compares.
-
-**Definition (Compositional accessibility).** Let $\{E_\alpha\}$ be the QT/HT joint-spectral sectors. A morphism $E_\beta \to E_\alpha$ exists in **compositional accessibility** if there exists a finite sequence of intermediate sectors $\gamma_1, \ldots, \gamma_{n-1}$ and group elements $g_1, \ldots, g_n \in G$ such that:
-
-$$P_\alpha \rho(g_n) P_{\gamma_{n-1}} \cdots P_{\gamma_1} \rho(g_1) P_\beta \neq 0$$
-
-This is the accessibility structure of the discrete group action: which sectors can exchange amplitude through any finite sequence of generators. Length-1 morphisms are the direct morphisms $T_{\alpha\beta}(g) = P_\alpha \rho(g) P_\beta$ (\cite{paper2}); the closure under finite composition is denoted $\overline{\mathcal{T}}$.
-
-**Definition (Lie-generated accessibility).** **Lie-generated accessibility** has the same objects $\{E_\alpha\}$ but its morphisms are restricted to those realizable by elements of the universal enveloping algebra: a morphism $E_\beta \to E_\alpha$ exists when $P_\alpha X P_\beta \neq 0$ for some $X \in \mathcal{U}(\mathcal{L})$, where $\mathcal{L} = \operatorname{Lie}\{A_g\}$. This is the accessibility structure of the continuous (Lie) limit.
-
-**Containment.** Lie-generated accessibility is contained in compositional accessibility ($\mathcal{L} \subset \overline{\mathcal{T}}$), since every Lie-generated morphism is a limit of compositional morphisms via the exponential map. Lemma~\ref{lem:lie-generated-support-invariance} (§4.1) establishes that Lie-generated accessibility is block-preserving: no morphism connects sectors with disjoint block support. The central question of §5 is whether this containment is strict — whether compositional accessibility contains cross-block morphisms that Lie-generated accessibility lacks.
+The Image--Kernel Criterion acts on a fixed witness tuple in
+$\mathcal O^{(2)}_{\mathrm{wit}}$. The canonical five-pair census is a
+path-level statement in $\mathcal O^{(2)}_{\mathrm{path}}$.
 
 ***
 
-## Part III — The T7 Morphism Theorem
+## Exact Obstruction Theorems
 
-**This is the climactic theorem of the trilogy.**
+### Image--Kernel Criterion
 
-### Definition: T7 Morphism
+**Theorem 4.1 (Image--Kernel Criterion).** \label{thm:paper3-image-kernel}
+Fix $i,k,j$ and $g_1,g_2$. Set
 
-A **T7 morphism** (for "type 7," the seventh structural pattern identified in the Rubik's cube spectral enumeration, following six within-block accessibility types) between sectors $(\alpha, \beta)$ satisfies three conditions:
+$$
+A=Q_i\rho(g_2)Q_k,
+\qquad
+B=Q_k\rho(g_1)Q_j.
+$$
 
-1. **$K_{\alpha\beta} = 0$** — no direct morphism (single generator)
-2. **$\kappa_d(\alpha,\beta) = 0$ for all $d$** — no Lie-generated accessibility at any depth
-3. **$\exists\, \gamma$ with $K_{\alpha\gamma} > 0$ and $K_{\gamma\beta} > 0$** — reachable via length-2 discrete composition through a hybrid sector
+Then
 
-The morphism is cross-block and outside Lie-generated accessibility: discrete group action can bridge it through a hybrid sector; the continuous Lie limit cannot — at any order of commutators, at any polynomial degree in $\mathcal{U}(\mathcal{L})$.
+$$
+C_{ikj}(g_2,g_1)=AB=0
+\quad\Longleftrightarrow\quad
+\operatorname{im}B\subseteq\ker A.
+$$
 
-**Structural detection vs numerical κ threshold.** The canonical T7 detection criterion is *structural*: condition 2 (κ_d = 0 for all d) is verified via block-set disjointness — $\text{block support}(\alpha) \cap \text{block support}(\beta) = \emptyset$ implies κ_d(α,β) = 0 for all d as an exact consequence of Lemma~\ref{lem:lie-generated-support-invariance} (Lie-Generated Support Invariance). This is a representation-theoretic obstruction test, not a floating-point heuristic. κ_d numerical thresholds (TOL_KAPPA = 10⁻⁶) are used only as consistency sanity checks — they confirm that the computed κ values are consistent with the structural prediction, but the prediction itself is derived from block algebra, not from comparing floating-point norms to a tolerance. Earlier experimental versions used purely numerical κ thresholds (TOL = 10⁻¹⁰), which incorrectly removed the S4↔S5 T7 channel due to logm numerical leakage (∼10⁻⁸). The present canonical definition is set-based and representation-structural.
+In particular, $A\ne0$ and $B\ne0$ do not imply $AB\ne0$.
 
-### T7 Theorem (Formal Statement)
+*Proof.* The product $AB$ vanishes exactly when $A(Bv)=0$ for every $v$, which is equivalent to every vector in $\operatorname{im}B$ belonging to $\ker A$. $\square$
 
-**Setup.** Let:
+This theorem identifies the information discarded by the support graph. A tuple
+belongs to $\mathcal O^{(2)}_{\mathrm{wit}}$ exactly when both factors are
+nonzero and the displayed image--kernel inclusion holds. An edge records only
+that a block is nonzero; it does not record its image subspace or the kernel of
+the next block.
 
-- **C0 (Center Incompleteness).** $Z \subsetneq \operatorname{Comm}(\rho)$ (\cite{paper2}, Notation Table). The sector-decomposing center $Z$ is a proper subalgebra of the full commutant $\operatorname{Comm}(\rho)$. When $Z = \operatorname{Comm}(\rho)$, sectors are $G$-invariant, $K$ is purely diagonal, and T7 is structurally impossible. C0 is the foundational condition: without center incompleteness, C1–C3 cannot produce T7.
+### Composition Mass and Efficiency
 
-- $G$ be a finite group
-- $(V, \rho)$ a finite-dimensional unitary representation: $\rho(g) = \rho_A(g) \oplus \rho_B(g)$, $V = V_A \oplus V_B$
-- $S \subset G$ an inverse-closed generator subset
-- $Z = \langle A_{S_1}, \ldots, A_{S_k}\rangle$ a commutative subalgebra of the averaging algebra ($k \geq 1$), containing $A_S$, where each $A_{S_i} = \frac{1}{|S_i|}\sum_{g \in S_i}\rho(g)$ is the averaging operator over a generator subset $S_i \subseteq S$
-- $\{E_\alpha\}$ the joint-spectral sectors from joint diagonalization of $Z$
-- A sector $E_\alpha$ is **pure-A** if $P_\alpha V_B = \{0\}$, **pure-B** if $P_\alpha V_A = \{0\}$, **hybrid** otherwise
+For a fixed path and generator pair, define
 
-**Structural Conditions.**
+$$
+M_{ikj}(g_2,g_1)=\lVert C_{ikj}(g_2,g_1)\rVert_F
+$$
 
-**(C1) Shared noncommutative support.** There exists an irreducible representation $\tau$ of $G$ appearing in both $\rho_A$ and $\rho_B$ with multiplicity $\geq 1$ in each.
+and, when both factors are nonzero,
 
-Equivalently: $\operatorname{Supp}_{\mathrm{nc}}(V_A) \cap \operatorname{Supp}_{\mathrm{nc}}(V_B) \neq \emptyset$.
+$$
+\eta_{ikj}(g_2,g_1)
+=\frac{\lVert AB\rVert_F}
+{\lVert A\rVert_F\lVert B\rVert_F}.
+$$
 
-**(C2) Transport-active hybrid projector.** There exists a QT/HT joint-spectral sector $E_\gamma$ (a joint eigenspace of $Z$) whose projector $P_\gamma$ satisfies both:
+Submultiplicativity gives $0\le\eta\le1$. While the support graph records only
+that the denominator is nonzero, the quantity $\eta$ measures the extent to
+which the two incident blocks are compositionally aligned.
 
-(i) **Hybrid block support:** $P_\gamma V_A \neq \{0\}$ and $P_\gamma V_B \neq \{0\}$ — the projector spans both blocks.
+### Disjoint Endpoint Block-Support Obstruction
 
-(ii) **Transport-active (computable criterion):** Define the isotypic support $\operatorname{Supp}(E_\alpha) = \{\tau \in \hat{G} : \operatorname{Tr}(P_\alpha \Pi_\tau) > 0\}$ where $\Pi_\tau$ is the projector onto the $\tau$-isotypic component of $V$. Then $E_\gamma$ is *transport-active* if and only if:
+Suppose now that
 
-$$\operatorname{Supp}(E_\alpha) \cap \operatorname{Supp}(E_\gamma) \neq \emptyset \quad\text{and}\quad \operatorname{Supp}(E_\gamma) \cap \operatorname{Supp}(E_\beta) \neq \emptyset$$
+$$
+V=\bigoplus_{b\in\mathcal B}V_b,
+\qquad
+I=\sum_b\Pi_b,
+$$
 
-for some pure-A sector $\alpha$ and pure-B sector $\beta$. Equivalently, there exists an irreducible representation $\tau$ common to all three isotypic supports, and within each block the $\tau$-multiplicity spaces of $P_\alpha$ and $P_\gamma$ (in $V_A$) and of $P_\gamma$ and $P_\beta$ (in $V_B$) have nonzero overlap under $\rho(g)$. This is computable: given the isotypic projectors $\Pi_\tau$ — obtained by diagonalizing the full commutant algebra $\operatorname{Comm}(\rho(G))$, which for this representation is a 610-dimensional commutative algebra computed via index-pair orbit decomposition (see `experiments/paper1/isotypic_decomposition.py`) — verify $\operatorname{Tr}(P_\alpha \Pi_\tau) > 0$, $\operatorname{Tr}(P_\gamma \Pi_\tau) > 0$, $\operatorname{Tr}(P_\beta \Pi_\tau) > 0$ for at least one $\tau \in \hat{G}$. For the S₃ negative controls, the isotypic decomposition is explicit in (CCS Appendix G).
+and that both the action and sectorization respect this decomposition:
 
-A *spectral hybrid* — a joint eigenspace spanning both blocks but arising from eigenvalue coincidence in the commutative center $Z$ without shared $\tau$-multiplicity geometry — satisfies (i) but not (ii). Such sectors are transport-inert: they provide no composition path, as confirmed by the S₃ inert hybrid counterexample (Appendix C).
+$$
+[\rho(g),\Pi_b]=0,
+\qquad
+[Q_i,\Pi_b]=0
+$$
 
-**(C3) Block-preserving dynamics.** $\rho(g) = \rho_A(g) \oplus \rho_B(g)$ for all $g \in G$.
+for every $g,i,b$. Write
 
-**Theorem (T7 Theorem).** \label{thm:t7} Under C0–C3:
+$$
+Q_i=\bigoplus_bQ_i^{(b)},
+\qquad
+\operatorname{BlockSupp}(Q_i)
+=\{b:Q_i^{(b)}\ne0\}.
+$$
 
-**(a) Lie inaccessibility.** For any pure-A sector $\alpha$ and pure-B sector $\beta$:
+**Theorem 4.2 (Disjoint Endpoint Block-Support Obstruction).** \label{thm:paper3-block-composition}
+If
 
-$$\kappa_d(\alpha, \beta) = 0 \quad \forall d \geq 0$$
+$$
+\operatorname{BlockSupp}(Q_i)
+\cap
+\operatorname{BlockSupp}(Q_j)
+=\varnothing,
+$$
 
-No finite-depth Lie bracket sequence can couple them.
+then for every finite sequence of intermediate sectors and group elements,
 
-**(b) Compositional accessibility.** There exists a transport-active hybrid sector $\gamma$ and group elements $g, h \in G$ such that:
+$$
+Q_i\rho(g_n)Q_{k_{n-1}}\cdots
+Q_{k_1}\rho(g_1)Q_j=0.
+$$
 
-$$P_\alpha \rho(g) P_\gamma \neq 0 \quad\text{and}\quad P_\gamma \rho(h) P_\beta \neq 0$$
+*Proof.* Every factor is block diagonal, so the full product is block diagonal. Its restriction to block $b$ contains $Q_i^{(b)}$ on the left and $Q_j^{(b)}$ on the right. For every $b$, at least one of these endpoint restrictions is zero. Hence every block of the product vanishes. $\square$
 
-Hence the composition path $\alpha \to \gamma \to \beta$ is accessible.
+**Corollary 4.3 (Hybrid sectors do not switch blocks).**
+With the convention $T_{ij}=Q_i\rho(g)Q_j$, vertex $j$ is the source and
+vertex $i$ is the target. A hybrid intermediate $k$ can have an incoming edge
+$j\to k$ supported on one physical-block component and an outgoing edge
+$k\to i$ supported on another. Because
+$Q_k=\bigoplus_bQ_k^{(b)}$ contains no off-diagonal map between these
+components, such incidence does not promote the path to a cross-block
+composition.
 
-**(c) Compositional accessibility ⊋ Lie-generated accessibility.**
+**Corollary 4.4 (All-length obstruction).**
+Under the hypotheses of Theorem~\ref{thm:paper3-block-composition}, graph paths of arbitrary length between disjoint-block endpoints remain operator-inactive after inserting the corresponding sector projectors.
 
-### Proof — Three-Layer Architecture
+### Local Promotion Criteria
 
-The proof is structured as a chain of three layers, each relying on the previous one. Layer A (Schur-locality, Lemma~\ref{lem:pure-sector-obstruction}) establishes that the Lie algebra is contained in the block-diagonal subalgebra. Layer B (Support Invariance, Lemma~\ref{lem:lie-generated-support-invariance}) extends this to the full universal enveloping algebra — the totality of Lie-generated accessibility. Layer C (T7) shows that compositional accessibility circumvents this containment via hybrid sectors.
+The obstruction theorem gives an exact criterion and two convenient sufficient
+certificates.
 
-**Layer A — Schur-locality (Lemma~\ref{lem:pure-sector-obstruction}).** The isotypic decomposition $V = \bigoplus_\tau M_\tau \otimes W_\tau$ gives $\rho(g) \in \mathcal{A} = \bigoplus_\tau \operatorname{End}(M_\tau) \otimes I_{W_\tau}$. Since the blocks $V_A, V_B$ are unions of complete isotypic components, $\mathcal{A} = \mathcal{A}_A \oplus \mathcal{A}_B$. The matrix logarithm preserves this structure: $A_g = \log \rho(g) \in \mathcal{A}$. Therefore:
+**Proposition 4.5 (Exact local promotion criterion).**
+For $A=Q_i\rho(g_2)Q_k$ and $B=Q_k\rho(g_1)Q_j$,
 
-$$\mathcal{L} = \operatorname{Lie}\{A_g\} \subset \mathcal{A} = \mathcal{A}_A \oplus \mathcal{A}_B$$
+$$
+AB\ne0
+\quad\Longleftrightarrow\quad
+\exists v\in\operatorname{im}B\text{ such that }Av\ne0.
+$$
 
-Every Lie generator and every Lie bracket lives in the block-diagonal algebra. Hom$_{\mathcal{L}}(V_A, V_B) = 0$ — no Lie monomial at any depth can create an inter-block morphism. This is a categorical obstruction, not a numerical one.
+Two useful sufficient certificates are:
 
-**Layer B — Lie-Generated Support Invariance (Lemma~\ref{lem:lie-generated-support-invariance}).** Layer A shows $\mathcal{L} \subset \mathcal{A}_A \oplus \mathcal{A}_B$. Lemma~\ref{lem:lie-generated-support-invariance} extends this to the universal enveloping algebra: every $X \in \mathcal{U}(\mathcal{L})$ is block-diagonal, because $\mathcal{U}(\mathcal{L})$ is linearly spanned by finite products of elements of $\mathcal{L}$, and the product of block-diagonal matrices is block-diagonal. Consequently:
+1. $B\ne0$ and $A$ is injective on $\operatorname{im}B$;
+2. $\operatorname{im}B=\operatorname{im}Q_k$ and $A\ne0$.
 
-$$P_\alpha X P_\beta = 0 \quad \forall X \in \mathcal{U}(\mathcal{L})$$
-
-whenever $\alpha$ is pure-A and $\beta$ is pure-B. This is strictly stronger than $\kappa_d = 0$ for all $d$: it says Lie-generated accessibility — not just the commutator-depth hierarchy — is block-preserving. Any channel between pure-A and pure-B objects is absent from $\mathcal{U}(\mathcal{L})$ entirely.
-
-**(a) Cross-block κ_d = 0.** Immediate from Layer B. Let $\alpha$ be pure-A ($P_\alpha V_B = \{0\}$), $\beta$ pure-B ($P_\beta V_A = \{0\}$). For any block-diagonal $C = C_A \oplus C_B$:
-
-$$P_\alpha C P_\beta = P_\alpha \Pi_A (C_A \oplus C_B) \Pi_B P_\beta = P_\alpha \cdot 0 \cdot P_\beta = 0$$
-
-By Layers A+B, every $C \in \mathcal{U}(\mathcal{L})$ is block-diagonal. Hence $\kappa_d(\alpha,\beta) = 0$ for all $d$.
-
-**Layer C — Compositional accessibility circumvents the Lie obstruction.** Layers A+B establish that Lie-generated accessibility is block-preserving: no Lie-generated morphism connects pure-A to pure-B. But the discrete group action $\rho(g)$ operates at the level of the representation itself, not at the level of $\mathcal{U}(\mathcal{L})$. A two-step composition through a hybrid projector $P_\gamma$ is not an element of $\mathcal{U}(\mathcal{L})$ — it is a projector-mediated morphism of the form:
-
-$$P_\alpha \rho(g) P_\gamma \rho(h) P_\beta$$
-
-This object lives in compositional accessibility, not in Lie-generated accessibility.
-
-**(b) Discrete composition path exists.** By C1, there exists a shared irreducible representation $\tau$ appearing in both $\rho_A$ and $\rho_B$. By C2, there exists a transport-active hybrid sector $\gamma$ with $\tau \in \operatorname{Supp}(E_\gamma)$ and nonzero $K_{\alpha\gamma}$ and $K_{\gamma\beta}$ (the computable isotypic-support criterion of §5.2). By the concrete form of Lemma~\ref{lem:pure-sector-obstruction}, $\operatorname{Supp}(E_\alpha) \cap \operatorname{Supp}(E_\gamma) \neq \emptyset$ (both carry $\tau$ in $V_A$) and $\operatorname{Supp}(E_\gamma) \cap \operatorname{Supp}(E_\beta) \neq \emptyset$ (both carry $\tau$ in $V_B$). Hence there exist $g, h \in G$ with $T_{\alpha\gamma}(g) = P_\alpha \rho(g) P_\gamma \neq 0$ and $T_{\gamma\beta}(h) = P_\gamma \rho(h) P_\beta \neq 0$. The composition path $\alpha \to \gamma \to \beta$ is accessible.
-
-**(c) Structural separation.** Parts (a) and (b) together establish that Lie-generated accessibility is strictly contained in compositional accessibility:
-
-$$\text{Lie-generated accessibility}|_{\text{cross-block}} = \emptyset, \qquad \text{compositional accessibility}|_{\text{cross-block}} \neq \emptyset$$
-
-Lie-generated accessibility has zero cross-block morphisms; compositional accessibility has nonzero cross-block morphisms. The T7 morphisms are precisely the cross-block morphisms outside Lie-generated accessibility. This is the central structural fact of the trilogy.
-
-**Why the Lie obstruction cannot be circumvented by higher commutators.** A natural question: could a sufficiently high commutator depth $d$ produce a cross-block channel? Layers A+B answer definitively: no. The obstruction is not that commutators fail to mix blocks at low depth — it is that the entire algebra $\mathcal{U}(\mathcal{L})$ is block-preserving. Lie-generated accessibility has no cross-block morphisms at any algebraic depth, because it lives inside $\mathcal{A}_A \oplus \mathcal{A}_B$ by the structural consequence of Schur's lemma (Layer A). Composition through a hybrid projector is a qualitatively different mathematical operation from Lie-polynomial generation. This is the structural separation that T7 names.
-
-### Necessity
-
-| Condition | Structural Role | Necessity Status |
-|-----------|----------------|-----------------|
-| **C1** Shared noncommutative support | Algebraic substrate — bridgeability (\ref{lem:pure-sector-obstruction}) | **Conjectured** for general case; proved for abelian groups + isotypic representations; exhaustive search passed on all small-group systems tested (see below) |
-| **C2** Transport-active hybrid sector | Structural bridge — composition path exists | Definitional — follows from the computable criterion (see the T7 Theorem below); the distinction from inert spectral hybrids is verified |
-| **C3** Block-preserving dynamics | Dynamic separation — Lie inaccessibility | Proved (contrapositive of T7 definition; Lemma~\ref{lem:lie-generated-support-invariance} guarantees all Lie monomials are block-diagonal) |
-
-**N1 (C1 necessity — why the general proof is hard).** Without shared noncommutative support, C1 asserts that no T7 morphism exists. In the abelian case, all irreps are 1-dimensional; the center $Z$ acts as simultaneous eigenvalues on each irrep, making the sector partition a refinement of the irrep decomposition. Disjoint irreps yield sectors with disjoint isotypic support — Lemma~\ref{lem:pure-sector-obstruction} then forces K=0, blocking the composition path. For the isotypic case (both blocks carry only one irrep type), the shared support is automatic.
-
-The difficulty in the general non-abelian case is that the center $Z$ can mix distinct irreps within the same eigenspace (eigenvalue coincidence), producing spectral hybrids that carry disjoint irreps — a "not shared" scenario that could, in principle, circumvent C1. The question is whether such a spectral hybrid can ever be transport-active. All small-group systems tested to date — S₃ (all representation pairs: nat⊕reg, reg⊕reg, nat⊕nat, std⊕sign, etc.), Q₃ (quaternion, 8 elements), S₄ (24 elements), and Z₂×Z₂ — provide evidence for C1 necessity: no T7 morphism was found without a shared irrep. The S₃ "false T7" (standard vs. trivial⊕sign) confirms the mechanism: eigenvalue coincidence creates a hybrid projector spanning both blocks, but without a shared irrep the hybrid fails the computable C2 criterion (Tr(P_α Π_τ) = 0 for all τ common to α and β).
-
-**N2 (C2 necessity).** If no transport-active hybrid sector exists between $\alpha$ and $\beta$, no length-2 composition path through any mediating sector $\gamma$ can carry amplitude between the two blocks. The contrapositive is built into the definition of C2: a hybrid $P_\gamma$ is transport-active iff $K_{\alpha\gamma} > 0$ and $K_{\gamma\beta} > 0$ — exactly the third T7 condition. C2 necessity is therefore a definitional restatement of the composition-path requirement and does not require separate proof.
-
-**N3 (C3 necessity).** If cross-block $\kappa_d(\alpha,\beta) > 0$ for some $d$, the pair is Lie-accessible and not a T7 morphism. The contrapositive is the T7 definition. Block-diagonal $\rho$ is the natural sufficient condition; it is conjectured necessary for *systematic* cross-block T7 (a single non-block-diagonal generator would provide a Lie-accessible cross-block channel).
-
-**The C0–C3 chain is established** for the Rubik cube (verified in §5.3). C2 and C3 are proved necessary (§5.4). C1 necessity is established for abelian and isotypic cases and supported by exhaustive search on all small-group systems tested; general C1 necessity is conjectural. A proof for general non-abelian groups would require showing that eigenvalue coincidence across disjoint irreps (in the commutative center $Z$) can never produce a transport-active hybrid sector — i.e., that the computable C2 criterion cannot be satisfied without shared isotypic support.
-
-### T7 and M₂ Are Independent Obstruction Types
-
-The T7 mechanism is often conflated with the M₂ principle (\cite{paper2} — noncommutative AW simple components as transport atoms). They are logically distinct:
-
-| Property | M₂ Obstruction | T7 Obstruction |
-|----------|---------------|----------------|
-| **Origin** | Noncommutative AW components ($n_i \geq 2$) | Block-diagonal $\rho$ + shared irrep + hybrid sector |
-| **Effect** | Refinement failure, curvature transport | Cross-block T7 morphisms |
-| **Lie consequence** | $\kappa_1 > 0$ within shared M₂ | $\kappa_d = 0$ across blocks |
-| **Minimal system** | Any noncommutative AW component | Rubik cube (228-dim, both T7 and M₂) |
-| **Within/cross block** | Within-block | Cross-block |
-
-**Co-occurrence:** The Rubik cube exhibits both T7 (5 cross-block pairs) and M₂ curvature (7 within-block channels). The structural orthogonality is observed at scale: T7 morphisms are exclusively cross-block, curvature channels exclusively within-block. Neither S₃ negative control exhibits T7.
+*Proof.* The equivalence is the negation of Theorem~\ref{thm:paper3-image-kernel}.
+For (1), any nonzero vector in $\operatorname{im}B$ survives $A$. For (2),
+$A=Q_i\rho(g_2)Q_k$ is nonzero on some vector of
+$\operatorname{im}Q_k=\operatorname{im}B$. $\square$
 
 ***
 
-## Part IV — S₃ Prototypes and Rubik Realization
+## The Canonical Rubik Realization
 
-Figure~\ref{fig:fig4-s3-prototype} shows the S₃ nat⊕reg prototype as a negative control for the C0–C3 conditions.
+### Declared System
 
-![The S$_3$ nat$\oplus$reg prototype (9-dimensional) as a negative control: 3 sectors from the canonical Center decomposition, 2 are hybrid, but C0 fails (Z coincides with isotypic components, K is diagonal), producing 0 T7 morphisms. Despite having hybrid sectors (S1, S3 span nat+reg), they are transport-inert — no cross-sector coupling exists. This negative control demonstrates that hybrid sectors alone are insufficient for T7: the center must be sufficiently incomplete (C0) for compositional accessibility to exceed Lie accessibility.](../../figures/paper3/fig4_s3_prototype.png)
+The canonical realization uses
 
-### S₃ nat⊕reg — 9-dim (Negative Result)
+$$
+V=V_{\mathrm{cp}}\oplus V_{\mathrm{ep}}
+\oplus V_{\mathrm{co}}\oplus V_{\mathrm{eo}},
+$$
 
-$G = S_3$ (order 6), $\rho = \rho_{\mathrm{nat}} \oplus \rho_{\mathrm{reg}}$ (3-dim natural + 6-dim regular),  $S =$ all 6 group elements, $Z = \langle A_{\mathrm{full}}, A_{\mathrm{trans}}\rangle$.
+with dimensions $64+144+8+12=228$. Every standard face-turn matrix preserves these four cubie-type blocks. The nine QH projectors $Q_1,\ldots,Q_9$ are obtained from the registered simultaneous spectral resolution of the numerically commuting operators $\mathrm{QT}_{\mathrm{all}}$ and $\mathrm{HT}_{\mathrm{all}}$. Since those operators are block diagonal, their registered projectors are block diagonal to the declared numerical tolerance.
 
-**Canonical decomposition.** Center$\{A_{\mathrm{full}}, A_{\mathrm{trans}}\}$ yields 3 sectors (not 5 as previously reported; the earlier result was an artifact of a bug in the joint diagonalization that used standard basis indices instead of eigenvectors, fixed 2026-05-26).
+The registration audit uses the complex128 root-of-unity realization and
+reports the following maximum Frobenius residuals:
 
-| Sector | dim | $\lambda(A_{\mathrm{full}})$ | $\lambda(A_{\mathrm{trans}})$ | Block support | Type |
-|--------|-----|---------------------------|-----------------------------|--------------|------|
-| S1 | 2 | 1.0 | 1.0 | nat+reg | hybrid |
-| S2 | 1 | 0.0 | −1.0 | reg | pure |
-| S3 | 6 | 0.0 | 0.0 | nat+reg | hybrid |
+| Registration check | Maximum residual |
+|---|---:|
+| Pairwise commutators of $A_{18},\mathrm{QT}_{\mathrm{all}},\mathrm{HT}_{\mathrm{all}}$ | $3.77\times10^{-16}$ |
+| Projector idempotence | $4.19\times10^{-15}$ |
+| Projector Hermiticity | $8.03\times10^{-17}$ |
+| Pairwise projector orthogonality | $3.21\times10^{-15}$ |
+| Completeness $\lVert\sum_iQ_i-I\rVert_F$ | $1.32\times10^{-14}$ |
+| Joint invariance under the three QH operators | $3.58\times10^{-14}$ |
+| Cross-physical-block projector mass | $1.44\times10^{-15}$ |
 
-**0 T7 morphisms.** All cross-sector transport $K_{ij} = 0$ for $i \neq j$ ($K_{11}=1.41$, $K_{22}=1.0$, $K_{33}=2.45$ are self-transport only). The hybrid sectors S1 and S3 are transport-inert: despite spanning both blocks, they have zero transport coupling to any other sector. C2 (transport-active hybrid sector) fails.
+Independent iterative joint diagonalization returns nine sectors with sorted
+dimensions
 
-**Structural lesson.** A non-abelian group with block-diagonal representation is INSUFFICIENT for T7. The specific irrep structure must produce transport-active hybrid sectors — sectors that both span multiple blocks AND couple to sectors in different blocks via $K_{\alpha\gamma} > 0$. S₃ nat⊕reg has hybrid sectors but they are inert. The Rubik cube (228-dim) is the canonical realization satisfying all four C0–C3 conditions (5 T7 pairs, 9 sectors).
+$$
+[1,2,8,20,26,27,39,39,66]
+$$
 
-### S₃ reg⊕reg — 12-dim (Negative Result)
+at clustering tolerances $10^{-6},10^{-8},10^{-10}$, and $10^{-12}$. Although
+these data certify the registered numerical sectorization, they do not promote
+it to an exact algebraic joint-spectrum theorem.
 
-$G = S_3$, $\rho = \rho_{\mathrm{reg}} \oplus \rho_{\mathrm{reg}}$, $S =$ {3 transpositions}, $Z = \langle A_{\mathrm{full}}, A_{\mathrm{trans}}\rangle$.
+The direct transport graph uses the 18 standard face-turn generators. The
+computational certificate declares three distinct numerical controls:
 
-**Canonical decomposition.** Center$\{A_{\mathrm{full}}, A_{\mathrm{trans}}\}$ yields 3 sectors, ALL hybrid (span both reg copies). Zero pure sectors — no cross-block pure-sector pairs can exist. 0 T7 morphisms.
+| Control | Value |
+|---|---:|
+| Direct-edge threshold | $5\times10^{-2}$ |
+| Registration and composition-zero tolerance | $10^{-10}$ |
+| Joint-sector clustering sweep | $10^{-6},10^{-8},10^{-10},10^{-12}$ |
 
-| Sector | dim | $\lambda(A_{\mathrm{full}})$ | $\lambda(A_{\mathrm{trans}})$ | Block support |
-|--------|-----|---------------------------|-----------------------------|--------------|
-| S1 | 2 | 1.0 | 1.0 | A+B |
-| S2 | 2 | 0.0 | −1.0 | A+B |
-| S3 | 8 | 0.0 | 0.0 | A+B |
+At the declared direct-edge threshold, the graph has ten undirected
+off-diagonal edges. All ten edges join sectors sharing at least one physical
+block. The general definitions above remain exact nonzero statements; the
+threshold is part of this finite numerical realization.
 
-**Structural lesson.** When the center decomposition produces only hybrid sectors, there are no pure-block sectors to form cross-block T7 pairs. C0–C3 are characterizing conditions — their absence perfectly predicts T7 absence. The Rubik cube satisfies all four conditions; the S₃ canonical decomposition fails C0 ($Z = \operatorname{Comm}(\rho)$), and neither S₃ negative control satisfies C2.
+### The Five Graph-Only Pairs
 
-### Rubik's Cube — 228-dim, Same Mechanism at Scale
+The square of the support graph contains five distinguished two-step paths whose endpoints have disjoint physical-block support:
 
-The Rubik's cube realizes the identical C0–C3 mechanism.
+| Endpoints | Endpoint block support | Canonical intermediate |
+|---|---|---:|
+| S2--S4 | eo vs. ep+co | S6 |
+| S3--S9 | ep+eo vs. cp+co | S7 |
+| S4--S5 | ep+co vs. eo | S6 |
+| S4--S8 | ep+co vs. cp | S9 |
+| S6--S9 | ep+eo vs. cp+co | S7 |
 
-**C1 — Shared noncommutative support.** The EP block (144-dim, $\|[QT^0, QT^1]\| = 2.74$) carries the $M_2(\mathbb{C})^4$ noncommutative AW components. Multiple sectors share EP support (S3, S4, S6, S7), with $M_2$ components distributed across them.
+These are support-graph statements: they show that the intermediate sector is
+incident to both endpoint edges, not that it transfers amplitude between the
+endpoint block components.
 
-**C2 — Hybrid projectors.** S6 (ep+eo, 39-dim, k=4) and S7 (cp+ep+co+eo, 66-dim, k=4) span multiple blocks. S6 is the primary hub (degree 5), S7 the secondary (degree 3). Both are transport-active — they route composition paths between pure-EP, pure-EO, pure-CP, and pure-CO sectors.
+### Canonical Composition Audit
 
-**C3 — Block-preserving dynamics.** $\rho = \rho_{\mathrm{cp}} \oplus \rho_{\mathrm{ep}} \oplus \rho_{\mathrm{co}} \oplus \rho_{\mathrm{eo}}$ is block-diagonal by construction. Lemma~\ref{lem:lie-generated-support-invariance} applies.
+**Computational Proposition 5.1 (Canonical five obstruction witnesses).** \label{prop:paper3-canonical-five}
+In the declared complex128 realization, exhaustive evaluation over all $18^2$ ordered generator pairs gives:
 
-**5 T7 morphisms** (CCS-I §2.5):
+| Endpoints | Intermediate | Max left edge | Max right edge | Max product ($S^2$) |
+|---|---:|---:|---:|---:|
+| S2--S4 | S6 | 0.577350 | 3.464102 | $1.098\times10^{-16}$ |
+| S3--S9 | S7 | 3.605551 | 4.062019 | $3.017\times10^{-15}$ |
+| S4--S5 | S6 | 3.464102 | 0.816497 | $1.553\times10^{-16}$ |
+| S4--S8 | S9 | 1.000000 | 2.828427 | $1.060\times10^{-15}$ |
+| S6--S9 | S7 | 3.605551 | 4.062019 | $2.937\times10^{-15}$ |
 
-| Pair | Block support | Mediation path |
-|------|--------------|----------------|
-| S2(eo) ↔ S4(ep+co) | eo $\cap$ (ep+co) = $\emptyset$ | S2 → S6 → S4 |
-| S3(ep+eo) ↔ S9(cp+co) | (ep+eo) $\cap$ (cp+co) = $\emptyset$ | S3 → S7 → S9 |
-| S4(ep+co) ↔ S5(eo) | (ep+co) $\cap$ eo = $\emptyset$ | S4 → S6 → S5 |
-| S4(ep+co) ↔ S8(cp) | (ep+co) $\cap$ cp = $\emptyset$ | S4 → S9 → S8 |
-| S6(ep+eo) ↔ S9(cp+co) | (ep+eo) $\cap$ (cp+co) = $\emptyset$ | S6 → S7 → S9 (also S6 → S4 → S9) |
+The left and right columns are independently maximized over $g_2\in S$ and
+$g_1\in S$. They summarize the individual edge strengths and need not arise
+from the same ordered generator pair. The final column is the maximum over all
+$(g_2,g_1)\in S^2$. The edge maxima are order one, while the composition
+maxima are machine-zero. Theorem~\ref{thm:paper3-block-composition} explains
+the pattern structurally: the two incident edges use different physical-block
+components of the intermediate sector.
 
-All 5 T7 morphisms are **cross-block** (disjoint block support). All are mediated through the S6–S7–S9 hub complex (canonical mediation statistics: S6:2, S7:2, S9:1). Zero within-block T7 morphisms.
+![The exact local image--kernel obstruction and the five registered Rubik witnesses. The two factor columns are independently maximized, while the product column is exhaustive over all $18^2$ ordered generator pairs. Machine-zero product norms are computational data; exact vanishing uses the stated block-preserving hypothesis.](../../figures/paper3/fig1_composition_obstruction.png)
 
-**7 curvature channels** — all **within-block** (share at least one block). Zero cross-block curvature channels. Curvature is block-preserving at scale, exactly as the S₃ negative controls predict.
+**Claim boundary.** The nonzero factor norms and machine-zero products are computational certificates for the declared matrices. Exact vanishing follows conditionally from the exact block-preserving construction and exact block support. No conclusion here depends on a full-$G$ commutant decomposition, a layer-wise isotypic decomposition, or the candidate value $\dim\operatorname{End}_G(V)=610$.
 
-**S1 is NOT T7.** S1 ($V_1$, 20-dim, cp+ep) has K = κ₀ = κ₁ = 0 with all other sectors, but it is a genuine $G$-invariant subrepresentation — no composition path exists. This is subrepresentation isolation, not T7. Figure~\ref{fig:fig5-hybrid-bridge} shows the hybrid bridge topology at full 9-sector resolution.
+### Graph-Only Detection Boundary
 
-![Hybrid bridge topology at 9-sector resolution: the four invariant blocks (CP, EP, CO, EO) partition sectors by support, with hybrid sectors (supported on multiple blocks) acting as bridges across the block boundary. All five T7 cross-block pairs involve at least one hybrid intermediate; pure sectors within a single block cannot reach sectors in different blocks through Lie-generated paths. Hybrid sectors are the structural precondition for compositional accessibility to exceed Lie accessibility.](../../figures/paper3/fig5_hybrid_bridge.png)
+The graph-level detector applies three tests:
 
-### Scale Comparison
+1. the endpoints had disjoint block-support labels;
+2. the direct endpoint block was zero;
+3. the weighted support graph contained a two-step path.
 
-| Property | S₃ nat⊕reg | S₃ reg⊕reg | Rubik |
-|----------|-----------|-----------|-------|
-| Dimension | 9 | 12 | 228 |
-| Sectors | 3 | 3 | 9 |
-| Blocks | 2 (nat, reg) | 2 (reg, reg) | 4 (CP, EP, CO, EO) |
-| Hybrid sectors | 2 (both inert) | 3 (all hybrid) | 6 (5 transport-active) |
-| Curvature (κ₁ > 0) | 0 | 0 | 7 (within-block) |
-| T7 morphisms | **0** | **0** | 5 (cross-block) |
-| C2 satisfied? | No | No | Yes |
-| M₂ present? | Yes (reg: M₂(C)) | Yes | Yes (A_EP ≅ M₂⁴ ⊕ M₁⁴) |
+Although these tests identify the five rows above as graph paths, they do not
+evaluate projected matrix products. The exhaustive matrix audit supplies the
+additional conclusion: every declared two-step product for these five path
+triples is machine-zero and satisfies the structural block obstruction.
 
-The S₃ negative controls (9-dim, 12-dim) demonstrate that C0–C3 are non-trivial: S₃ canonical fails C0 (center completeness forces diagonal K), and neither negative control satisfies C2 (transport-active hybrid), despite having non-abelian group structure, block-diagonal representations, and shared irreps. The specific irrep structure must also produce transport-active hybrid sectors.
+***
+
+## Support Graphs as Overapproximations
+
+### Boolean Support Forgets Linear Geometry
+
+Replacing each transport block by the Boolean value $\mathbf 1[T_{ij}(g)\ne0]$ forgets rank, image, kernel, singular directions, phase, and cancellation. Boolean matrix multiplication therefore computes possible support paths rather than guaranteed nonzero operator products.
+
+This distinction is familiar in sparse linear algebra: the structural pattern of a matrix product can contain entries that cancel or vanish because the corresponding row and column subspaces are orthogonal. Here the loss is stronger because each graph edge aggregates over generators and discards the witness-specific subspace geometry.
+
+### Witness Compatibility
+
+A path $j\to k\to i$ may use one generator to establish the first edge and another to establish the second. Even after those witnesses are fixed, composition requires
+
+$$
+\operatorname{im}\bigl(Q_k\rho(g_1)Q_j\bigr)
+\not\subseteq
+\ker\bigl(Q_i\rho(g_2)Q_k\bigr).
+$$
+
+Consequently, a composition-aware data structure must retain more information
+than $K^S_{ij}$. Possible choices include:
+
+- the family of block maps $T_{ij}(g)$;
+- their image and kernel projectors;
+- singular-value data;
+- the composition mass tensor $M_{ikj}(g_2,g_1)$;
+- normalized composition efficiency $\eta_{ikj}(g_2,g_1)$.
+
+The scalar maximum $K^S$ is sufficient for direct support and insufficient for compositional reachability.
 
 ***
 
-## Part V — The Structure Behind T7: Lie vs. Composition
+## Related Work and Novelty Boundary
 
-The preceding sections established the T7 phenomenon at three scales. This section steps back and asks: **what kind of mathematical structure does T7 reveal?**
+The support graph is a Boolean abstraction of a family of linear maps. Boolean
+zero-pattern calculus and combinatorial matrix theory record possible product
+support, but they do not retain cancellation, image, kernel, or singular-direction
+data \cite{brualdiRyser1991,hornJohnson2013}. The inclusion
+$\mathcal G^{(2)}_{\mathrm{comp}}\subseteq\mathcal G_S^2$ is the corresponding
+one-sided abstraction statement for projected sector blocks.
 
-The answer is a strict separation between two accessibility structures on the same set of sectors. Lie-generated accessibility is block-preserving (Layers A+B). Compositional accessibility is not. The gap between them — exactly the T7 morphisms — is the structural signature of a fundamental mismatch between infinitesimal generation and discrete composition in finite group representations.
+Products selected from a declared family also occur in switched linear systems
+\cite{liberzon2003}. The present result is
+narrower: it does not study asymptotic stability or semigroup growth, but asks
+when a Boolean path in a sector support graph is realized by a nonzero ordered
+product. The image--kernel criterion supplies the exact local obstruction, and
+the block-support theorem supplies an all-length structural obstruction.
 
-### Two Generation Principles
+Linear representations of free monoids and noncommutative rational series
+provide a direct comparison for word-indexed matrix products
+\cite{berstelReutenauer2011}. In this context, the additional sector projectors select a
+fixed route and can annihilate an otherwise admissible product. The resulting
+image--kernel condition is also the local matrix incidence underlying the
+rank-stratified treatment in \cite{paper7}; that broader incidence geometry is
+not needed for the criterion proved here.
 
-The paper's data organizes around a central dichotomy — not in the group, not in the representation, but in **how accessibility is generated:**
-
-| | Lie-generated accessibility | Compositional accessibility |
-|---|---|---|
-| **Generators** | $A_g = \log\rho(g)$ | $\rho(g)$ |
-| **Operation** | Lie bracket $[A_g, A_h]$, universal enveloping algebra $\mathcal{U}(\mathcal{L})$ | Concatenation through sector projectors $P_\gamma$ |
-| **Geometry probed** | Tangent space of group orbit (infinitesimal) | Global projector geometry (finite) |
-| **Block crossing** | Forbidden — $\mathcal{L} \subset \bigoplus_b \mathcal{A}_b$ (Layers A+B) | Enabled — through hybrid sectors (C2) |
-| **Increasing reach** | Commutator depth ($d = 0, 1, 2, \ldots$), polynomial degree | Path length ($n = 1, 2, \ldots$) |
-| **Structural scope** | Inside blocks — $\mathcal{U}(\mathcal{L})$ is block-preserving | Across blocks — projector-mediated morphisms |
-
-The continuous limit — the standard mathematical tool for smooth accessibility analysis — replaces $\rho(g)$ with its logarithm $A_g$. This collapses projector-mediated cross-block paths into block-diagonal operators. Lie-generated accessibility is structurally blind to cross-block composition. **Compositional accessibility restores the morphisms that the continuous limit annihilates.**
-
-This is not a failure of the Lie algebra — Lie-generated accessibility is perfectly adequate for within-block morphisms. It is a structural mismatch between two generation principles, neither fully reducible to the other.
-
-### The Structural Separation
-
-Lie-generated accessibility is contained in compositional accessibility. Any Lie monomial $C \in \mathcal{U}(\mathcal{L})$ can be expressed via the exponential map as a limit of group compositions, so every Lie-generated morphism is a compositional morphism. But the containment is strict: compositional accessibility contains morphisms that no element of $\mathcal{U}(\mathcal{L})$ can realize — the cross-block composition paths through hybrid sectors.
-
-**The mediating role of hybrid sectors.** Every cross-block morphism in compositional accessibility must pass through a hybrid sector — a sector whose projector has nonzero restriction to multiple blocks (see Hybrid Sectors definition above). Hybrid sectors carry irreducible content from both blocks, enabling paths where Lie-generated accessibility sees only a block boundary and terminates.
-
-### The Central Formula
-
-The T7 phenomenon is the gap between the two accessibility structures. It is not "higher-order transport" — it is **projector-mediated morphism outside Lie-generated accessibility.** The central formula of the trilogy:
-
-$$\boxed{\;\mathcal{L} \;\subsetneq\; \overline{\mathcal{T}}\;}$$
-
-T7 morphisms are precisely the cross-block morphisms outside Lie-generated accessibility. Concretely: S2(eo) can reach S4(ep+co) through S6 in compositional accessibility, but no element of $\mathcal{U}(\mathcal{L})$ — no Lie polynomial, no iterated commutator, no finite linear combination of products of $A_g$ — can couple them. The proved obstruction is cross-block: Lie-generated accessibility is block-preserving, while projector-mediated composition can cross the block boundary. In the verified Rubik T7 experiments, no within-block discrepancy between Lie-generated and compositional accessibility has been observed.
-
-### Connection to Classical Accessibility Theory
-
-This structure reframes a classical result. The Lie algebraic rank condition (Chow 1939, Brockett 1973, Sussmann-Jurdjevic 1972) tests accessibility via iterated Lie brackets of vector fields — exactly Lie-generated accessibility. Compositional accessibility tests accessibility via finite group composition — the concatenation of generator actions through sector projectors.
-
-For block-diagonal representations, the Lie rank condition is necessary but not sufficient for full accessibility. T7 morphisms are the morphisms that pass the compositional test but fail the Lie test — invisible to the standard accessibility criterion. **Compositional accessibility detects transport channels inaccessible to Lie-generated accessibility in the verified block-diagonal Rubik geometry.**
+The underlying image, kernel, singular-value, and block-matrix language is
+standard matrix analysis \cite{hornJohnson2013}. The ambient finite-group
+language is standard representation theory \cite{serre1977,curtisReiner1962}.
 
 ***
+
+## Graph-to-Composition Promotion Problem
+
+The promotion question is open:
+
+> **When does a support-graph path force a nonzero projected matrix composition?**
+
+In the shared typed notation, the direct relation studied here is
+$R_1^{\mathrm{op}}=R_1[\rho(S)]$. It is a Boolean overapproximation and cannot
+be substituted for routed-composition support $C_d^{\mathrm{op}}$, full-word
+support $W_d^{\mathrm{op}}$, or either associated depth.
+
+For length two, Theorem~\ref{thm:paper3-image-kernel} gives the exact answer for fixed witnesses: promotion occurs precisely when the incoming image is not contained in the outgoing kernel. The broader problem is to derive useful hypotheses from coarser data.
+
+Candidate directions include:
+
+1. **Rank conditions.** Determine when ranks of the two incident blocks force nontrivial image overlap inside $Q_kV$.
+2. **Generic transversality.** On a declared parameter space, identify when image--kernel incidence is exceptional rather than persistent.
+3. **Witness compatibility.** Distinguish paths assembled from unrelated edge-maximizing generators from paths admitting a compatible generator tuple.
+4. **Higher length.** Develop recursive image propagation rather than Boolean graph powers.
+5. **Compression bounds.** Determine which singular-value or principal-angle summaries are sufficient to certify nonzero composition without storing every block matrix.
+
+Any theorem promoting graph reachability to projected-composition reachability
+must state one of these nondegeneracy mechanisms explicitly. Graph incidence
+alone is insufficient.
+
+***
+
 ## Discussion
 
-Conditions C0–C3 and the T7 Theorem are structural: they identify the algebraic prerequisites for accessibility separation in block-diagonal finite group representations. The specific T7 data reported in this paper (5 cross-block T7 morphisms mediated through the S6–S7–S9 hub complex) is the Rubik realization. The $S_3$ systems serve as negative controls (C0 fails, 0 T7), not as realizations of the separation phenomenon. The present work establishes the existence of compositional accessibility beyond Lie-generated accessibility in the Rubik representation. Whether analogous separations occur in broader finite transport geometries depends on the independent verification of Conditions C0–C3.
+The obstruction clarifies the role of hybrid sectors. A hybrid sector remains
+an important spectral object with nonzero components in several physical
+blocks, and it may be incident to direct transport edges carried by those
+components. However, a block-diagonal hybrid projector is not a switch between
+them; its multiple components coexist as a direct sum.
 
-The T7 Theorem establishes the strict separation between Lie-generated accessibility and compositional accessibility under conditions C0–C3. The proof architecture — Schur-locality (Lemma~\ref{lem:pure-sector-obstruction}) → Lie-Generated Support Invariance (Lemma~\ref{lem:lie-generated-support-invariance}) → T7 — is structural, not numerical. The five T7 morphisms are all cross-block, all mediated through the S6–S7–S9 hub complex, and all invisible to any element of $\mathcal{U}(\mathcal{L})$. A 500-fold sweep of the transport threshold confirms the 5 T7 pairs are stable (CCS Appendix \ref{sec:ccs-tolerance-regime}), supporting the claim that T7 is not a threshold artifact.
+The canonical five pairs expose this distinction cleanly. Each has two
+order-one adjacent support edges, while the registered audit finds every
+projected two-step product to be machine-zero. The block-support theorem
+explains the vanishing under its exact hypotheses. The support graph therefore
+describes potential incidence, while operator composition describes compatible
+amplitude propagation.
 
-The S₃ negative controls (nat⊕reg, reg⊕reg) provide negative controls: C0 fails in both canonical decompositions, and neither exhibits T7 — confirming C0–C3 as non-trivial characterizing conditions. What is NOT claimed and all open problems are recorded in (CCS Appendix I).
-
-The one structural question left open is whether accessibility separation persists beyond block-preserving transport geometries.
-
-The sector side of this story is adjacent to association-scheme quotient
-theory: commutative quotient algebras and simple-cell decompositions organize
-the spectral pieces on which transport is measured
-\cite{godsilMartin1995quotients}. The present paper studies a different layer.
-It asks which inter-sector morphisms are visible to direct transport,
-Lie-generated accessibility, or only finite composition. Thus quotient theory
-supplies algebraic context for sectors, but not the T7 accessibility
-separation itself.
-
-### Higher-Order Rubik Families
-
-The verified $3\times3\times3$ Rubik cube provides the canonical realization of the C0–C3 $\Rightarrow$ T7 mechanism:
-
-$$\text{C0} \land \text{C1} \land \text{C2} \land \text{C3} \;\Rightarrow\; \mathrm{T7}.$$
-
-Preliminary structural evidence suggests that higher-order Rubik systems may exhibit analogous transport-geometry hierarchies. Coarse face-turn generators appear to create communicable sector structures and incomplete transport centers $Z \subsetneq \operatorname{Comm}(\rho)$, while additional slice and symmetry operations subsequently activate controlled hybrid transport and cross-sector compositional accessibility.
-
-The generator families admit a conjectural three-layer stratification:
-
-$$\text{coarse generators} \;\rightarrow\; \text{transport activators} \;\rightarrow\; \text{compositional generators}.$$
-
-This suggests a possible inheritance pattern:
-
-$$\text{C0} \;\rightarrow\; \text{transport topology} \;\rightarrow\; \mathcal{L} \subsetneq \overline{\mathcal{T}}.$$
-
-Whether higher-order cube systems systematically exhibit T7 morphisms remains an open computational and representation-theoretic problem.
-
-### Multiplicity Interpretation of T7
-
-The observed T7 mechanism suggests that compositional accessibility may fundamentally originate from isotypic multiplicity geometry.
-
-Conditions C1 and C2 are **multiplicity accessibility conditions**: C1 requires that at least one irreducible representation appear across multiple sectors, and C2 requires that such multiplicity be transport-active through a hybrid sector spanning distinct blocks. Together, C1 and C2 demand that the representation possess distinguishable multiplicity — isotypic components whose internal commutant structure (noncommutative matrix blocks such as $M_2(\mathbb{C})$) enables cross-block morphisms invisible to the Lie algebra.
-
-Under this interpretation, T7 is **distinguishable multiplicity-mediated accessibility**: compositional paths that exploit the internal multiplicity geometry of hybrid sectors to cross block boundaries that Lie-generated accessibility cannot penetrate. Hybrid transport, refinement obstruction, and T7 accessibility become different manifestations of the same underlying multiplicity structure. A general proof remains open.
-
-### Structural Defect Taxonomy of Generator Families
-
-**Exploratory. Discussion-level. Empirical pattern.**
-
-The canonical 18-generator system closes all three structural levels: arithmetic (rational spectrum), sector (9 QT/HT joint-spectral sectors), and transport (10 edges, 5 T7). Removing specific generators activates distinct failure modes. Four families were constructed by selective deletion:
-
-| $n$ | Removed | Arithmetic | Sector | Transport | $\operatorname{Comm}(\rho)$ |
-|-----|---------|-----------|--------|-----------|-------------|
-| 18 | — | closed ($\mathbb{Q}$) | closed (9) | closed (10 edges, 5 T7) | 610 |
-| 16 | 2 axis-0 HT (R², L²) | $\sqrt{5}$ at layer | shielded (13, 2 non-rat.) | mild (32 edges, 11 T7) | 610 |
-| 15 | 3 negative-face HT | higher field | amplified (25, 4→20) | amplified (65 edges, 24 T7) | 610 |
-| 14 | 4 axis-1 QT | $\sqrt{5}$ at layer | affected (10, √5 in 2) | stable (20 edges, 5 T7) | 675 |
-
-**$n=16$ (Sector Shielding):** $\mathbb{Q}(\sqrt{5})$ appears at the layer level but is largely shielded at the sector level — only 2 of 13 sectors carry non-rational $\lambda$. **$n=14$ (Field Defect Localization):** $\sqrt{5}$ survives to the sector level but is confined to 2 EP+EO sectors; $\operatorname{Comm}(\rho)$ expands to 675. **$n=15$ (Transport Resolution Amplifier):** the field becomes higher, sectors explode 9→25 with mirror splitting (S3 $\cong$ S6) and hierarchical composition (S7 $\cong$ union of S3/S6/S9 patterns), T7 amplifies 5→24.
-
-Across the families tested, all observed arithmetic defects and transport amplifications occur in sectors carrying EP-block support, consistent with the M₂ Principle of \cite{paper2}. CP-block sectors (S1, S8) remain intact across all families. The comparison also suggests that transport amplification and commutant expansion are independent structural responses: $n=15$ amplifies T7 (5→24) with unchanged $\operatorname{Comm}(\rho)=610$, while $n=14$ expands $\operatorname{Comm}(\rho)$ (610→675) without T7 amplification.
-
-This is a Discussion-level observation, not a theorem: it describes empirical regularities across four generator families. Whether the taxonomy exhausts the possible structural failure modes remains open. The complete numerical data and sector-level statistics are archived in (CCS Appendix \ref{sec:ccs-algebraic-extensions}).
-
-***
-
-## Concluding Perspective
-
-Classical accessibility theory tests reachability through the tangent structure (Chow 1939, Brockett 1973). For the Rubik representation studied here — and for finite group representations exhibiting the same block-diagonal transport geometry — the tangent picture is systematically incomplete. The universal enveloping algebra $\mathcal{U}(\mathcal{L})$ captures the infinitesimal geometry of the group orbit, but a finite group action also possesses **projector geometry**: the way sector projectors $\{P_\alpha\}$ partition the representation into subspaces that the group elements map between. This projector geometry is invisible to the tangent structure — the logarithm $A_g = \log\rho(g)$ erases it, and T7 morphisms are frozen out of $\mathcal{U}(\mathcal{L})$ entirely.
-
-The two coincide within each invariant block and diverge at the block boundary, where only finite composition through hybrid sectors can access morphisms that the continuous limit structurally excludes:
-
-$$\boxed{\;\mathcal{L} \;\subsetneq\; \overline{\mathcal{T}}\;}$$
-
-is the structural signature of this incompleteness — the central result of this trilogy.
-
-### Accessibility Theory Outlook
-
-This result is also the starting point for a broader accessibility theory. The present paper proves a separation example: T7 morphisms are composition-visible but Lie-invisible in the canonical Rubik sector geometry. It does not attempt to classify all possible first-depth phenomena.
-
-The natural next abstraction is a general sectorized observable framework with projectors $Q_i$ and skew-Hermitian generators $X_g$. In that language, the first binary layer records generator support,
+This separation gives the logical audit order:
 
 $$
-R_1(i,j;g)=1
-\quad\Longleftrightarrow\quad
-Q_iX_gQ_j\ne 0,
+\text{spectral sectors}
+\longrightarrow
+\text{direct transport blocks}
+\longrightarrow
+\text{support graph}
+\longrightarrow
+\text{composition audit}.
 $$
 
-and the next layer records projected commutator survival,
+The arrows indicate construction and audit order, not implication or
+functional determination. Replacing the direct blocks by their Boolean support
+discards image--kernel data. Theorem~\ref{prop:paper3-transport-noninvariance}
+characterizes the direct off-diagonal mass, while the passage from graph paths
+to matrix composition has no unconditional converse.
+
+***
+
+## Claim Status and Boundary
+
+The table uses the four claim levels. Refuted implications are
+listed separately as failure boundaries.
+
+| Claim | Status |
+|---|---|
+| Transport--Non-Invariance Identity | Theorem |
+| Nonzero projected composition implies a support-graph path | Theorem |
+| Image--Kernel Criterion | Theorem |
+| Disjoint Endpoint Block-Support Obstruction | Theorem |
+| Canonical ten-edge direct support graph | Computational Certificate |
+| Canonical five two-step graph-only pairs | Computational Certificate |
+| Canonical five projected products are machine-zero, with a structural block explanation | Computational Certificate |
+| Generic graph-to-composition promotion | Research Program |
+
+The paper's principal failure boundary is explicit: a support-graph path does
+not imply nonzero composition. Support data are Boolean incidence data and
+cannot certify matrix composition without image--kernel or equivalent
+nondegeneracy information.
+
+***
+
+## Conclusion
+
+The support graph and the matrix-composition graph are distinct mathematical
+objects. For projected blocks
 
 $$
-R_2(i,j;g,h)=1
-\quad\Longleftrightarrow\quad
-Q_i[X_g,X_h]Q_j\ne 0.
+A=Q_i\rho(g_2)Q_k,
+\qquad
+B=Q_k\rho(g_1)Q_j,
 $$
 
-Paper III does not claim that these data classify accessibility. Its role is more modest and more concrete: it supplies the first certified separation witness. T7 shows that binary transport visibility, Lie-generated visibility, and finite compositional visibility are genuinely different notions. Later work can ask what minimal sector-level data determine first accessibility depth in arbitrary sectorized systems; in that future language, T7 is the motivating example rather than the complete theory.
+the exact missing condition is
 
-Additional spectral-triple interpretations and Dirac-operator robustness experiments are recorded in (CCS Appendix H).
+$$
+\operatorname{im}B\not\subseteq\ker A.
+$$
 
-### Trilogy Arc
+In block-preserving systems, this becomes a structural obstruction: a hybrid intermediate sector cannot transfer amplitude between its distinct physical-block components. The five canonical Rubik paths are finite witnesses of that obstruction. They are visible in the square of the support graph but absent from the projected composition graph.
 
-| Paper | Structural Result |
-|-------|-------------------|
-| **I** | Projector geometry exists |
-| **II** | Noncommutative curvature exists within projector geometry |
-| **III** | Compositional accessibility exceeds Lie accessibility |
+For the fixed sectorization, generator set, and projected-product semantics used
+throughout this paper, the central principle is therefore:
 
-Thus the continuous Lie tangent picture is structurally incomplete: finite compositional geometry contains accessibility channels invisible to the tangent algebra. Equivalently: projector-mediated composition can create accessibility structures that the Lie algebra generated from the same representation does not capture.
+$$
+\boxed{\text{Boolean support-graph reachability overapproximates projected-composition reachability}.}
+$$
 
-***
-
-## Appendix A: Compact Data Reference
-
-All numerical values cited in this paper are frozen in the Unified Computational Supplement (CCS). The CCS is the authoritative numerical source; this paper reports the structural conclusions.
-
-| CCS Location | Content |
-|-------------|---------|
-| CCS-I §2.3–§2.6 | κ₀, κ₁ matrices; T7 morphisms; accessibility classes at 6-layer and 9-sector resolution |
-| CCS-III | \ref{lem:pure-sector-obstruction} (Schur-locality), \ref{lem:lie-generated-support-invariance} (Lie-Generated Support Invariance), T7 Theorem (three-layer proof chain), C0–C3 analysis |
-| CCS App. F | Empirical validation: κ hierarchy as search diagnostic framework |
-| CCS App. G | S₃ negative controls (nat⊕reg: 9-dim, 0 T7; reg⊕reg: 12-dim, 0 T7 — negative results) |
-
-Terminology: `docs/conventions.md`. Canonical layer keys, sector data: (CCS Part 0).
+The next problem is to identify nondegeneracy conditions under which that overapproximation becomes exact.
 
 ***
 
-## Appendix B: S₃ Prototypes (Negative Results)
+## Appendix A: Basis-Level Composition Certificate
 
-**S₃ prototype policy.** In this appendix, the canonical S₃ sector decomposition is defined with respect to the S₃ transport-generated commutative algebra $Z = \langle A_{\mathrm{full}}, A_{\mathrm{trans}} \rangle$. This is the S₃ analogue of the Rubik QT/HT sectorization, not a replacement for the trilogy's Rubik center $Z_{\mathrm{QH}}$. Sectorizations involving auxiliary block projectors (e.g. $P_{\mathrm{nat}}$) are treated as externally refined decompositions and are not considered canonical for the S₃ controls.
+Let $B_i$ be an orthonormal basis matrix for $Q_iV$, so $Q_i=B_iB_i^\dagger$. Then
 
+$$
+Q_i\rho(g_2)Q_k\rho(g_1)Q_j
+=B_i\left(B_i^\dagger\rho(g_2)B_k\right)
+\left(B_k^\dagger\rho(g_1)B_j\right)B_j^\dagger.
+$$
 
-**Sector refinement.** A *refined decomposition* is obtained by adjoining auxiliary commuting projectors to the canonical transport-generated center:
+Because left multiplication by $B_i$ and right multiplication by
+$B_j^\dagger$ preserve nonzero status and Frobenius norm,
 
-$$Z_{\mathrm{refined}} = \langle Z_{\mathrm{canonical}}, P_{\mathrm{aux}} \rangle$$
+$$
+\left\lVert Q_i\rho(g_2)Q_k\rho(g_1)Q_j\right\rVert_F
+=
+\left\lVert
+\left(B_i^\dagger\rho(g_2)B_k\right)
+\left(B_k^\dagger\rho(g_1)B_j\right)
+\right\rVert_F.
+$$
 
-where $Z_{\mathrm{canonical}} = \langle A_{\mathrm{full}}, A_{\mathrm{trans}} \rangle$ and $P_{\mathrm{aux}}$ is any projector that commutes with both $A_{\mathrm{full}}$ and $A_{\mathrm{trans}}$ (e.g., a block projector $P_{\mathrm{nat}} = \operatorname{diag}(I_{\dim V_A}, 0_{\dim V_B})$). Refined decompositions produce finer sectorizations (more sectors, smaller dimensions) by splitting degenerate eigenspaces of the canonical center. However, they are not unique — different choices of $P_{\mathrm{aux}}$ yield different sector counts — and are classified as externally refined, not canonical.
-
-**Persistence under refinement.** The compositional-accessibility gap persists under externally refined sectorizations: if a cross-block pair has $K = \kappa_d = 0$ in the canonical decomposition, it remains inaccessible to Lie-generated accessibility in any refinement. Refinement can change sector boundaries but cannot create Lie-generated cross-block channels where none exist. The structural separation between Lie-generated and compositional accessibility is invariant under the choice of commuting auxiliary projectors.
-
-The two S₃ negative controls were investigated as test cases for the C0–C3 conditions. Under the corrected canonical decomposition (joint diagonalization eigenvector bug fixed 2026-05-26), neither exhibits T7. Full verification in (CCS Appendix G).
-
-
-
-## Appendix C: Inert Hybrid Counterexample
-
-The T7 Theorem requires C2: the hybrid sector must be **transport-active** — it must share isotypic support with sectors in both blocks. This appendix presents a minimal counterexample where a hybrid sector forms (satisfying the block-spanning criterion) but fails the transport-active criterion, confirming that hybrid block support alone is insufficient for T7 morphisms.
-
-Consider the S₃ representation pair standard ($\rho_{\mathrm{std}}$, 2-dim) vs. trivial$\oplus$sign ($\rho_{\mathrm{triv}} \oplus \rho_{\mathrm{sign}}$, 2-dim). With $Z = \langle A_{\mathrm{full}}\rangle$, eigenvalue coincidence in the commutative center produces a joint eigenspace whose projector spans both blocks — a **spectral hybrid** satisfying (i) of C2.
-
-However, this hybrid shares no irreducible representation with sectors in both blocks simultaneously. Computing the isotypic support:
-
-$$\operatorname{Supp}(E_{\mathrm{hybrid}}) = \{\mathrm{std}\} \cap \{\mathrm{triv}, \mathrm{sign}\} = \emptyset$$
-
-No single irreducible $\tau$ appears in the isotypic supports of $E_\alpha$, $E_\gamma$, and $E_\beta$. The C2 criterion fails: $\operatorname{Tr}(P_\alpha \Pi_\tau) = 0$ for all $\tau$ common to $\alpha$ and $\beta$ — no finite composition path exists through this hybrid.
-
-| Property | S₃ nat⊕reg (0 T7) | S₃ std vs. triv⊕sign (Inert hybrid) |
-|----------|-----------------|--------------------------------|
-| Hybrid exists? | Yes (S5, nat+reg) | Yes (eigenvalue coincidence) |
-| Shared irrep? | **Yes** (std in both blocks) | **No** (std vs. triv/sign disjoint) |
-| Transport-active? | **Yes** | **No** (inert) |
-| T7 morphisms | 0 | 0 |
-
-This counterexample supports the C1 necessity mechanism in this inert-hybrid class: eigenvalue coincidence can produce a hybrid projector spanning both blocks without shared irrep geometry, but such an inert hybrid provides no composition path. The distinction between spectral hybrids and transport-active hybrids (see definition above) is not a definitional nuance — it is the operational boundary between T7 existence and T7 absence.
+The implementation evaluates these reduced matrices. This avoids repeated dense $228\times228$ products without changing the certificate.
 
 ***
 
-## Appendix D: Lie Accessibility Diagnostics
+## Appendix B: Longer Paths
 
-Compact summary of the κ hierarchy at 9-sector resolution. Full κ matrices in (CCS-I §2.3–§2.4); exhaustive verification in (CCS Appendix F).
+For a path $i_0\to i_1\to\cdots\to i_n$, define recursively
 
-### D.1 Accessibility Hierarchy Summary
+$$
+W_0=Q_{i_0}V,
+\qquad
+W_r=Q_{i_r}\rho(g_r)W_{r-1}.
+$$
 
-| Depth | Object | Definition | Cross-block? | New channels |
-|-------|--------|-----------|-------------|--------------|
-| 0 | $K$ (direct) | $\max_g \|P_\alpha \rho(g) P_\beta\|_F$ | No | 10 edges |
-| 1 | $\kappa_0$ (Lie gradient) | $\max_g \|P_\alpha A_g P_\beta\|_F$ | No | Preserves all K>0 channels |
-| 2 | $\kappa_1$ (Lie curvature) | $\max_{g,h} \|P_\alpha [A_g, A_h] P_\beta\|_F$ | No | 7 pure curvature channels |
-| ≥3 | $\kappa_d$ (higher) | $d$-fold commutators | No | Amplifies within-block; no new cross-block |
+The projected composition is nonzero exactly when $W_n\ne\{0\}$. A Boolean support path verifies only that each isolated block map is nonzero on some input; it does not verify that the propagated subspace $W_{r-1}$ avoids the next kernel. This recursion is the natural higher-length replacement for graph powers.
 
-### D.2 Pure Curvature Channels (κ₀≈0, κ₁>0)
-
-All 7 are within-block (share ≥ 1 block). Zero cross-block curvature channels.
-
-| Pair | $\kappa_1$ | Shared block | Mechanism |
-|------|-----------|-------------|-----------|
-| S2↔S3 | 0.71 | eo | Krawtchouk-order mismatch (EO) |
-| S2↔S7 | 1.01 | eo | Intra-V₅/₉ EO coupling |
-| S3↔S4 | 4.27 | ep | Krawtchouk-order mismatch (EP, k=2 vs k=3) |
-| S3↔S5 | 1.01 | eo | Krawtchouk-order mismatch (EO) |
-| S4↔S7 | 6.17 | ep, co | Mixed EP+CO curvature |
-| S5↔S7 | 1.42 | eo | Intra-V₅/₉ EO coupling |
-| S7↔S8 | 6.98 | cp | CP Krawtchouk-order mismatch (largest) |
-
-Enhancement ratio $\kappa_1/\kappa_0 \sim 10^{14}$ for the pure curvature channels — the signature of commutator-mediated transport where individual Lie generators are blocked.
-
-### D.3 Within-Block Restriction
-
-| Accessibility type | Within-block | Cross-block |
-|-------------------|-------------|-------------|
-| Direct ($K$) | 10 edges | 0 |
-| Lie gradient ($\kappa_0$) | All K>0 channels preserved | 0 |
-| Lie curvature ($\kappa_1$) | 7 pure curvature channels | 0 |
-| Higher ($\kappa_d, d \geq 2$) | Amplifies existing channels | 0 |
-| Compositional accessibility (T7) | 0 (none needed) | 5 morphisms |
-
-The within-block restriction is a structural theorem (Lemma~\ref{lem:lie-generated-support-invariance}): every Lie monomial is block-diagonal, so cross-block $\kappa_d = 0$ for all $d$. Curvature enriches within-block accessibility but cannot breach the block boundary.
-
-### D.4 Tolerance and Numerical Stability
-
-| Parameter | Value | Purpose |
-|-----------|-------|---------|
-| TOL | $10^{-10}$ | General numerical assertions (projector idempotence, orthogonality) |
-| TOL_K | 0.05 | Transport detection threshold (K > TOL_K → edge exists) |
-| TOL_KAPPA | $10^{-6}$ | κ sanity consistency floor (logm noise ceiling ∼$10^{-8}$) |
-| logm fidelity | $< 3 \times 10^{-8}$ | $\max_g \|\exp(A_g) - \rho(g)\|$ — principal matrix logarithm accuracy |
-
-**logm numerical leakage.** `scipy.linalg.logm` produces off-diagonal errors ∼$10^{-6}$ to $10^{-8}$ across adjacent blocks (e.g., co↔eo at indices 208–228). These are numerical artifacts, not structural κ signals. The structural T7 test (block-set disjointness $\implies \kappa_d = 0$) is immune to this leakage; TOL_KAPPA = $10^{-6}$ serves as a consistency sanity check, not the primary detection criterion.
+Under the hypotheses of Theorem~\ref{thm:paper3-block-composition}, every $W_r$ remains inside the physical blocks present at the source. Therefore no sequence of block-respecting projectors and group elements can connect disjoint-block endpoints.
 
 ***
 
-## References
+## Appendix C: Computational Artifacts
 
-**Mathematical lineage.** This paper belongs to the accessibility side of the
-RIME trilogy. The continuous comparison class is Lie algebraic accessibility
-and geometric control theory: Chow's bracket-generating theorem, the
-Brockett--Sussmann--Jurdjevic orbit-theorem tradition, and the modern
-geometric-control formulation \cite{chow1939,brockett1973,
-sussmannJurdjevic1972,jurdjevic1997,nijmeijerSchaft1990}. The $\kappa_d$
-hierarchy is a finite-representation analogue of iterated Lie-bracket
-accessibility distributions.
+The following repository artifacts support the canonical Rubik certificate.
+The default directory for C1--C2 is `experiments/paper3/`; C3 is relative to
+the repository root.
 
-The representation-theoretic background is finite-group representation theory
-and universal enveloping algebras \cite{serre1977,humphreys1972}. Schur's
-lemma and the isotypic decomposition give the block-preserving obstruction for
-the Lie-generated layer, while the Poincare--Birkhoff--Witt viewpoint explains
-why passing from Lie brackets to the full universal enveloping algebra still
-does not create cross-block morphisms.
+| Artifact | Role | Short path |
+|----------|-------------------|------------|
+| C1 | exhaustive graph-versus-composition certificate | \path{validation/composition_obstruction.py} |
+| C2 | source-addressed completed-run observation | \path{results/composition_obstruction.observation.json} |
+| C3 | direct graph and composition regression | \path{tests/test_transport.py} |
 
-The sector background is adjacent to association-scheme quotient theory
-\cite{godsilMartin1995quotients}, but the accessibility layer studied here is
-not a quotient-algebra theorem. Quotient theory organizes commutative sector
-structure; this paper distinguishes direct transport, Lie-generated
-accessibility, and composition-only accessibility between those sectors.
-Elementary category language is used only to compare compositional closure with
-the Lie-generated sublayer \cite{macLane1998}.
+C1 reconstructs the nine QH projectors and 18 standard generator matrices,
+reports commutation, projector, and physical-block residuals, checks the
+nine-sector census across clustering tolerances $10^{-6}$ through $10^{-12}$,
+and evaluates all $18^2$ ordered products for each canonical triple. From the
+repository root, run it as `python experiments/paper3/<C1 short path>`; append
+`--check-result` to verify C2 against its declared source hashes without
+repeating the matrix calculation.
 
-Papers I and II provide the spectral and transport input
-\cite{paper1,paper2}; the CCS records the canonical numerical data and
-stability checks \cite{ccs}.
+C2 records parameters, runtime, package versions, Git state, and explicit
+source hashes. It is a source-addressed run record, not an independent
+certificate; reproducing the certificate requires a clean full run of C1. C1 supports
+Proposition~\ref{prop:paper3-canonical-five}.
 
-### Code Availability
-
-All numerical experiments, projector constructions, transport computations,
-and figure-generation scripts are available at:
-
-https://github.com/dooven-prime/rime-lite
-
-The repository also contains the Unified Computational Supplement (CCS),
-canonical datasets, and reproducibility notebooks corresponding to the trilogy.
+All listed artifacts are available in the
+[RIME repository](https://github.com/dooven-prime/rime-lite).
 
 ***

@@ -1,0 +1,22 @@
+Paper VII v2 projected-composition audit
+========================================================================
+support_atol=1e-08
+rank cutoff=max(1e-12, 1e-09*sigma_max)
+product cutoff=1e-12 + 1e-10*||A||_F*||B||_F
+
+rubik operator registration: 12 nonzero, 6 half-turn zeros
+
+rubik: total=2592, both=0, left-only=0, right-only=0, unprotected-nonzero=2016, unprotected-zero=576
+random_seed_42: total=324, both=324, left-only=0, right-only=0, unprotected-nonzero=0, unprotected-zero=0
+random_seed_43: total=324, both=324, left-only=0, right-only=0, unprotected-nonzero=0, unprotected-zero=0
+random_seed_44: total=324, both=324, left-only=0, right-only=0, unprotected-nonzero=0, unprotected-zero=0
+random_seed_45: total=324, both=324, left-only=0, right-only=0, unprotected-nonzero=0, unprotected-zero=0
+random_seed_46: total=324, both=324, left-only=0, right-only=0, unprotected-nonzero=0, unprotected-zero=0
+rank_deficient_seed_42: total=324, both=10, left-only=44, right-only=44, unprotected-nonzero=226, unprotected-zero=0
+rank_deficient_seed_43: total=324, both=38, left-only=70, right-only=70, unprotected-nonzero=146, unprotected-zero=0
+rank_deficient_seed_44: total=324, both=40, left-only=68, right-only=68, unprotected-nonzero=148, unprotected-zero=0
+rank_deficient_seed_45: total=324, both=6, left-only=30, right-only=30, unprotected-nonzero=258, unprotected-zero=0
+rank_deficient_seed_46: total=324, both=28, left-only=62, right-only=62, unprotected-nonzero=172, unprotected-zero=0
+
+The audit classifies routed products only.
+It does not promote routes to full words, commutators, or Lie depth.

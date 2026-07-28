@@ -1,34 +1,54 @@
+% Reader-facing citation style: published RIME papers use journal = Preprint
+% and print the program identity, version when needed, and DOI URL in note.
+% The doi and url fields remain machine-readable even though plain.bst does
+% not render them directly.
+
 @article{paper1,
   author  = {WuJun Chen},
-  title   = {Spectral Sector Decomposition in the {Rubik's} Cube Representation: Rational Spectral Collapse, Primitive Idempotents, and Block Spectral Factorization},
+  title   = {Spectral Sector Decomposition in the {Rubik's} Cube Representation: Block Spectral Structure and a Conditional Rationality Criterion},
   journal = {Preprint},
   year    = {2026},
-  note    = {Paper I of the RIME trilogy},
+  doi     = {10.5281/zenodo.21571403},
+  url     = {https://doi.org/10.5281/zenodo.21571403},
+  note    = {Paper I of the RIME program, version 2.0. DOI: \url{https://doi.org/10.5281/zenodo.21571403}},
 }
 
 @article{paper2,
   author  = {WuJun Chen},
-  title   = {Noncommutative Transport Topology in the {Rubik's} Cube Representation: Hybrid Sectors, Permutation Channels, and Refinement Obstructions},
+  title   = {Noncommutative Transport Topology in the {Rubik's} Cube Representation: Sector Non-Invariance, Direct Support, and Transport Channels},
   journal = {Preprint},
   year    = {2026},
-  note    = {Paper II of the RIME trilogy},
+  doi     = {10.5281/zenodo.21581072},
+  url     = {https://doi.org/10.5281/zenodo.21581072},
+  note    = {Paper II of the RIME program, version 2.0. DOI: \url{https://doi.org/10.5281/zenodo.21581072}},
 }
 
 @article{paper3,
   author  = {WuJun Chen},
-  title   = {Accessibility Structure in the {Rubik's} Cube Representation: {Lie}-Generated Accessibility, Hybrid Sectors, and {T7} Morphisms},
+  title   = {Support-Graph Reachability and Matrix-Composition Obstructions: Image--Kernel Mismatch with a {Rubik}-Cube Case Study},
   journal = {Preprint},
   year    = {2026},
-  note    = {Paper III of the RIME trilogy},
+  doi     = {10.5281/zenodo.21583070},
+  url     = {https://doi.org/10.5281/zenodo.21583070},
+  note    = {Paper III of the RIME program, version 2.0. DOI: \url{https://doi.org/10.5281/zenodo.21583070}},
 }
 
 @misc{ccs,
   author  = {WuJun Chen},
-  title   = {Unified Computational Supplement for {Papers I--III}},
+  title   = {{RIME} Computational Companion Archive: Versioned Reproducibility Data, Computational Observations, Open Problems, and Historical Records},
+  year    = {2026},
+  doi     = {10.5281/zenodo.21616956},
+  url     = {https://doi.org/10.5281/zenodo.21616956},
+  note    = {Optional non-paper archive, version 2.0. DOI: \url{https://doi.org/10.5281/zenodo.21616956}},
+}
+
+@misc{rimecombinedv1,
+  author  = {WuJun Chen},
+  title   = {The {RIME} Trilogy: Spectral, Transport, and Accessibility Structures in Finite Group Representations},
   year    = {2026},
   doi     = {10.5281/zenodo.21108197},
   url     = {https://doi.org/10.5281/zenodo.21108197},
-  note    = {Definitive numerical constitution for the RIME trilogy. DOI: \url{https://doi.org/10.5281/zenodo.21108197}. Repository: \url{https://github.com/dooven-prime/rime-lite}},
+  note    = {Immutable historical combined Papers I--III and CCS release.},
 }
 
 @article{hall1950,
@@ -89,6 +109,90 @@
   publisher = {Cambridge University Press},
   address   = {Cambridge},
   year      = {2013},
+}
+
+@book{brualdiRyser1991,
+  author    = {Brualdi, Richard A. and Ryser, Herbert J.},
+  title     = {Combinatorial Matrix Theory},
+  series    = {Encyclopedia of Mathematics and its Applications},
+  volume    = {39},
+  publisher = {Cambridge University Press},
+  address   = {Cambridge},
+  year      = {1991},
+}
+
+@article{lin1974structural,
+  author  = {Lin, Ching-Tai},
+  title   = {Structural Controllability},
+  journal = {IEEE Transactions on Automatic Control},
+  volume  = {19},
+  number  = {3},
+  pages   = {201--208},
+  year    = {1974},
+  doi     = {10.1109/TAC.1974.1100557},
+}
+
+@book{schiffler2014,
+  author    = {Schiffler, Ralf},
+  title     = {Quiver Representations},
+  series    = {CMS Books in Mathematics},
+  publisher = {Springer},
+  address   = {Cham},
+  year      = {2014},
+  doi       = {10.1007/978-3-319-09204-1},
+}
+
+@book{liberzon2003,
+  author    = {Liberzon, Daniel},
+  title     = {Switching in Systems and Control},
+  series    = {Systems and Control: Foundations and Applications},
+  publisher = {Birkh{\"a}user},
+  address   = {Boston},
+  year      = {2003},
+}
+
+@book{berstelReutenauer2011,
+  author    = {Berstel, Jean and Reutenauer, Christophe},
+  title     = {Noncommutative Rational Series with Applications},
+  series    = {Encyclopedia of Mathematics and its Applications},
+  volume    = {137},
+  publisher = {Cambridge University Press},
+  address   = {Cambridge},
+  year      = {2011},
+  doi       = {10.1017/CBO9780511760860},
+}
+
+@article{gerstenhaber1961commuting,
+  author  = {Gerstenhaber, Murray},
+  title   = {On Dominance and Varieties of Commuting Matrices},
+  journal = {Annals of Mathematics},
+  volume  = {73},
+  number  = {2},
+  pages   = {324--348},
+  year    = {1961},
+  doi     = {10.2307/1970336},
+}
+
+@article{bunseGerstnerByersMehrmann1993,
+  author  = {Bunse-Gerstner, Angelika and Byers, Ralph and Mehrmann, Volker},
+  title   = {Numerical Methods for Simultaneous Diagonalization},
+  journal = {SIAM Journal on Matrix Analysis and Applications},
+  volume  = {14},
+  number  = {4},
+  pages   = {927--949},
+  year    = {1993},
+  doi     = {10.1137/0614062},
+}
+
+@article{afsari2008sensitivity,
+  author  = {Afsari, Bijan},
+  title   = {Sensitivity Analysis for the Problem of Matrix Joint Diagonalization},
+  journal = {SIAM Journal on Matrix Analysis and Applications},
+  volume  = {30},
+  number  = {3},
+  pages   = {1148--1171},
+  year    = {2008},
+  doi     = {10.1137/060655997},
 }
 
 @book{bannaiIto1984,
@@ -166,6 +270,14 @@
   year      = {2001},
 }
 
+@book{murphy1990cstar,
+  author    = {Murphy, Gerard J.},
+  title     = {{$C^*$}-Algebras and Operator Theory},
+  publisher = {Academic Press},
+  address   = {Boston},
+  year      = {1990},
+}
+
 @book{goodmanHarpeJones1989,
   author    = {Goodman, Frederick M. and de la Harpe, Pierre and Jones, Vaughan F. R.},
   title     = {Coxeter Graphs and Towers of Algebras},
@@ -223,44 +335,90 @@
   year      = {1998},
 }
 
-@article{paper4,
+% Version identity rule: a BibTeX record's title, semantic scope, version, and
+% DOI must identify the same immutable release object. Keys ending in "v1"
+% refer to the historical Zenodo releases; unqualified paper4--paper7 keys
+% refer only to the active v2 manuscripts and remain DOI-free until their
+% corresponding v2 objects are deposited.
+
+@article{paper4v1,
   author  = {WuJun Chen},
   title   = {Collision Geometry of Joint Spectra: Affine Branch Arrangements, Visible Collisions, and Spectral Quotients},
   journal = {Preprint},
   year    = {2026},
   doi     = {10.5281/zenodo.21127271},
   url     = {https://doi.org/10.5281/zenodo.21127271},
-  note    = {Paper IV of the RIME program. DOI: \url{https://doi.org/10.5281/zenodo.21127271}},
+  note    = {Paper IV of the RIME program, version 1. DOI: \url{https://doi.org/10.5281/zenodo.21127271}},
 }
 
-@article{paper5,
+@article{paper5v1,
   author  = {WuJun Chen},
   title   = {Accessibility Repair Calculus: Local {R2} Repair and Exceptional Loci for Length-2 Witnesses},
   journal = {Preprint},
   year    = {2026},
   doi     = {10.5281/zenodo.21152972},
   url     = {https://doi.org/10.5281/zenodo.21152972},
-  note    = {Paper V of the RIME program. DOI: \url{https://doi.org/10.5281/zenodo.21152972}},
+  note    = {Paper V of the RIME program, version 1. DOI: \url{https://doi.org/10.5281/zenodo.21152972}},
 }
 
-@article{paper6,
+@article{paper6v1,
   author  = {WuJun Chen},
   title   = {Phase Transition Geometry on the Generator-Set Moduli Space: Global Stratification, Local Commutativity Geometry, and Accessibility Walls},
   journal = {Preprint},
   year    = {2026},
   doi     = {10.5281/zenodo.21154656},
   url     = {https://doi.org/10.5281/zenodo.21154656},
-  note    = {Paper VI of the RIME program. DOI: \url{https://doi.org/10.5281/zenodo.21154656}},
+  note    = {Paper VI of the RIME program, version 1. DOI: \url{https://doi.org/10.5281/zenodo.21154656}},
 }
 
-@article{paper7,
+@article{paper7v1,
   author  = {WuJun Chen},
   title   = {Generic Accessibility Completion: Incidence Varieties, Rank-Protected Bridges, and the Generic Completion Principle},
   journal = {Preprint},
   year    = {2026},
   doi     = {10.5281/zenodo.21193940},
   url     = {https://doi.org/10.5281/zenodo.21193940},
-  note    = {Paper VII of the RIME program. DOI: \url{https://doi.org/10.5281/zenodo.21193940}},
+  note    = {Paper VII of the RIME program, version 1. DOI: \url{https://doi.org/10.5281/zenodo.21193940}},
+}
+
+@article{paper4,
+  author  = {WuJun Chen},
+  title   = {Collision Geometry of Joint Spectra: Affine Branch Arrangements, Exact Finite Censuses, and Conditional Spectral Quotients},
+  journal = {Preprint},
+  year    = {2026},
+  doi     = {10.5281/zenodo.21620776},
+  url     = {https://doi.org/10.5281/zenodo.21620776},
+  note    = {Paper IV of the RIME program, version 2.0. DOI: \url{https://doi.org/10.5281/zenodo.21620776}},
+}
+
+@article{paper5,
+  author  = {WuJun Chen},
+  title   = {Boolean Support Does Not Determine Commutator Accessibility: Direct Support, Exact Cancellation, and Low-Depth Hall Bridges},
+  journal = {Preprint},
+  year    = {2026},
+  doi     = {10.5281/zenodo.21634007},
+  url     = {https://doi.org/10.5281/zenodo.21634007},
+  note    = {Paper V of the RIME program, version 2.0. DOI: \url{https://doi.org/10.5281/zenodo.21634007}},
+}
+
+@article{paper6,
+  author  = {WuJun Chen},
+  title   = {Linearized Commutativity Geometry on the Generator-Set Moduli Space: Full-Matrix Jacobian Certificates, Normality Gates, and Typed Spectral Registrations},
+  journal = {Preprint},
+  year    = {2026},
+  doi     = {10.5281/zenodo.21634256},
+  url     = {https://doi.org/10.5281/zenodo.21634256},
+  note    = {Paper VI of the RIME program, version 2.0. DOI: \url{https://doi.org/10.5281/zenodo.21634256}},
+}
+
+@article{paper7,
+  author  = {WuJun Chen},
+  title   = {Incidence Geometry of Projected Operator Composition: Rank Protection, Image--Kernel Alignment, and Promotion Limits},
+  journal = {Preprint},
+  year    = {2026},
+  doi     = {10.5281/zenodo.21634538},
+  url     = {https://doi.org/10.5281/zenodo.21634538},
+  note    = {Paper VII of the RIME program, version 2.0. DOI: \url{https://doi.org/10.5281/zenodo.21634538}},
 }
 
 @article{paper8,
@@ -603,6 +761,15 @@
   year      = {1995},
 }
 
+@book{orlikTerao1992,
+  author    = {Orlik, Peter and Terao, Hiroaki},
+  title     = {Arrangements of Hyperplanes},
+  series    = {Grundlehren der mathematischen Wissenschaften},
+  volume    = {300},
+  publisher = {Springer},
+  year      = {1992},
+}
+
 @book{chung1997spectral,
   author    = {Chung, Fan R. K.},
   title     = {Spectral Graph Theory},
@@ -717,4 +884,63 @@
   pages   = {113--129},
   year    = {2010},
   doi     = {10.1007/s10044-008-0141-y},
+}
+
+@article{pearl1995causal,
+  author  = {Pearl, Judea},
+  title   = {Causal Diagrams for Empirical Research},
+  journal = {Biometrika},
+  volume  = {82},
+  number  = {4},
+  pages   = {669--688},
+  year    = {1995},
+  doi     = {10.1093/biomet/82.4.669},
+}
+
+@article{reiter1987diagnosis,
+  author  = {Reiter, Raymond},
+  title   = {A Theory of Diagnosis from First Principles},
+  journal = {Artificial Intelligence},
+  volume  = {32},
+  number  = {1},
+  pages   = {57--95},
+  year    = {1987},
+  doi     = {10.1016/0004-3702(87)90062-2},
+}
+
+@article{fikes1971strips,
+  author  = {Fikes, Richard E. and Nilsson, Nils J.},
+  title   = {{STRIPS}: A New Approach to the Application of Theorem Proving to Problem Solving},
+  journal = {Artificial Intelligence},
+  volume  = {2},
+  number  = {3--4},
+  pages   = {189--208},
+  year    = {1971},
+  doi     = {10.1016/0004-3702(71)90010-5},
+}
+
+@article{gelfond1998action,
+  author  = {Gelfond, Michael and Lifschitz, Vladimir},
+  title   = {Action Languages},
+  journal = {Electronic Transactions on Artificial Intelligence},
+  volume  = {3},
+  number  = {16},
+  pages   = {195--210},
+  year    = {1998},
+}
+
+@book{bellman1957dynamic,
+  author    = {Bellman, Richard},
+  title     = {Dynamic Programming},
+  publisher = {Princeton University Press},
+  address   = {Princeton, New Jersey},
+  year      = {1957},
+}
+
+@book{savage1954foundations,
+  author    = {Savage, Leonard J.},
+  title     = {The Foundations of Statistics},
+  publisher = {Wiley},
+  address   = {New York},
+  year      = {1954},
 }

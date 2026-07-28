@@ -1,0 +1,10 @@
+Paper VII v2 full-array finite Lie atlas
+========================================================================
+systems=80
+low-order hash classes=4
+multi-member classes=4
+full-D disagreement classes=0
+all systems threshold-stable=True
+all systems closure-certified=True
+
+This is a cutoff-relative finite observation, not a completion theorem.
