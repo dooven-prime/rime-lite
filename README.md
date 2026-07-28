@@ -147,6 +147,15 @@ This is not a cube-solving repository. It does not implement Kociemba's
 algorithm, pruning tables, scramble search, sticker rendering, or neural
 solvers. The cube is used as a finite representation-theoretic testbed.
 
+## Acknowledgements
+
+Repository maintenance and editorial workflows have used ChatGPT/Codex,
+Claude, and Gemini/Continue for bounded assistance with code, document
+restructuring, language suggestions, and consistency review. These tools are
+not authors or authorities on mathematical claims. All mathematical judgments,
+accepted edits, verification choices, releases, and scholarly responsibility
+remain with WuJun Chen.
+
 ## License
 
 Code: MIT License. See [`LICENSE`](LICENSE).
