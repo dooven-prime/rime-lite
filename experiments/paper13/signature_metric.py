@@ -144,7 +144,7 @@ def main() -> None:
     print("Paper XIII fixed-fiber structural pseudometric")
     for name, passed in checks.items():
         print(f"  {name}: {'PASS' if passed else 'FAIL'}")
-    print("Boundary: the full eight-dimensional audit signature is not claimed metric.")
+    print("Boundary: no full Standard Regime-A or universal Audit Profile metric is claimed.")
     if not all(checks.values()):
         raise SystemExit(1)
 

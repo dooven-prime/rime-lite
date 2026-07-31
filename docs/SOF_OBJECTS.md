@@ -1,11 +1,12 @@
 # SOF Objects
 
 **Status:** public object-layer companion to Paper VIII, published as
-DOI [10.5281/zenodo.21287278](https://doi.org/10.5281/zenodo.21287278). Paper
-VIII remains the canonical source for the published v1 definition and
-naturality theorem. This companion also records the active typed-object
-migration; that migration does not retroactively strengthen the published
-theorem or alter frozen artifacts.
+version 2.0 under DOI
+[10.5281/zenodo.21700863](https://doi.org/10.5281/zenodo.21700863). Paper VIII
+remains the canonical source for its release-local definition. This companion
+summarizes the carrier-qualified static objects, strict categories, matched
+closure isomorphisms, and support-preservation and depth-monotonicity
+theorems of that release.
 
 SOF means **Sectorized Observable Framework**. The purpose of SOF is to provide
 a sectorization-based observable architecture for cross-species comparison of
@@ -15,26 +16,54 @@ been supplied. It is not a new physical model.
 
 ## Core Object
 
-A finite SOF is specified by
+A finite operator SOF core is specified by
 
 ```text
-F = (V, {Q_i}, X)
+F_op = (V, {Q_i}, Y)
 ```
 
 where:
 
-- `V` is a finite-dimensional representation, state, Hilbert, graph, control,
-  mesh, or other finite source space;
+- `V` is a finite-dimensional complex Hilbert space;
 - `{Q_i}` is a distinguished sector projector family;
-- `X` is a chosen observable family.
+- `Y={Y_a}` is a declared labelled operator alphabet.
 
-The observable family may consist of generators, averaged operators, transfer
+Representations, graphs, Markov chains, controls, meshes, and other source
+systems enter through adapters that realize these three strict objects. The
+source object itself is not substituted for `V`.
+
+The operator alphabet may consist of generators, averaged operators, transfer
 operators, rate operators, adjacency/Laplacian operators, or filtration
-observables. The origin of the family is not part of the published SOF
-definition. In the active typed architecture, however, its registration type
-is part of the realization: a general operator family and a Lie/Hall family do
-not induce the same higher constructions merely because both are denoted by
-operators.
+observables. Its label map, multiplicities, adjoint convention, and word
+alphabet are part of the typed realization.
+
+The associated static layers are kept separate:
+
+```text
+D_Q        = span_C{Q_i}                    marked sector algebra
+E_Y        = span_C{I,Y_a,Y_a^*}            observable operator system
+S_QY       = D_Q + E_Y                      sector-enriched operator system
+
+A_Y^+      = alg_C(I,Y)                     positive associative word algebra
+A_Y^*      = C^*(Y)                         observable star-closure
+A_QY^*     = C^*(D_Q union Y)               sector-enriched star-closure
+```
+
+An optional Lie/Hall enrichment is independently registered as `(X,H_Hall)`.
+It does not follow automatically from `Y`, `E_Y`, or any generated closure.
+
+The distinction is structural:
+
+```text
+closure     answers what is generated after saturation
+filtration  records how, along which routes, and at what first length it is generated
+```
+
+Passing from the labelled alphabet to an operator system or generated algebra
+forgets generator labels and first-hit word length. Adding `D_Q` to the
+star-closure additionally permits sector projectors as internal route
+separators. Thus positive-word, star-word, and sector-enriched routed
+saturation are not interchangeable.
 
 ## Sectorization Interface
 
@@ -120,7 +149,7 @@ The operator branch contains:
 
 ```text
 R_1[Y]          direct projected-block support
-C_d[Y]          support of routed projected products
+Route_d[Y]      support of routed projected products
 W_d[Y]          support of full ordered words
 D_route[Y]      first routed-composition depth
 D_word[Y]       first full-word depth
@@ -129,11 +158,43 @@ D_word[Y]       first full-word depth
 For complete sectorizations, the exact support relations satisfy
 
 ```text
-W_d[Y] subseteq C_d[Y] subseteq Path_d(R_1[Y]).
+W_d[Y] subseteq Route_d[Y] subseteq Path_d(R_1[Y]).
 ```
+
+Here `Path_d(R_1[Y])(i,j)` means an aggregate directed support path of exactly
+`d` steps from `j` to `i`. It forgets generator labels and does not require
+label compatibility across adjacent edges. Repeated vertices are allowed, and
+a self-loop step is allowed only when the corresponding aggregate diagonal
+support is nonzero. These conventions keep the path shadow broad enough to
+contain routed products with diagonal intermediate steps. Off-diagonal
+accessibility still uses endpoint pairs `i != j`.
 
 Neither reverse promotion is automatic: graph paths can die by image--kernel
 incidence, and nonzero routed terms can cancel in the full word sum.
+`C_d[Y]` remains a compatibility symbol for the frozen Papers III and VII
+interfaces; active SOF writing uses `Route_d[Y]`.
+
+The three saturated corner families are
+
+```text
+A_ij^+    = Q_i A_Y^+ Q_j
+A_ij^*    = Q_i A_Y^* Q_j
+A_ij^Q,*  = Q_i A_QY^* Q_j
+```
+
+All three are automatically nonzero on the diagonal because their defining
+unital algebras contain `I`, so `Q_i I Q_i = Q_i`. Saturated Boolean support is
+therefore informative without qualification primarily for `i != j`. A
+nontrivial diagonal audit must use a scalar-reduced corner, for example the
+Hilbert--Schmidt complement
+
+```text
+A_ii^bullet intersect (C Q_i)^(perp_HS)
+```
+
+or the corresponding vector-space quotient by `C Q_i`. Registry and wall
+records must state whether saturated support is off-diagonal or
+scalar-reduced diagonal support.
 
 The Lie/Hall branch contains:
 
@@ -146,8 +207,10 @@ D_Lie           first depth in the declared Hall/Lie filtration
 The two branches are not identified. In particular,
 `R_1^op != R_1^Lie`, `W_d^X != R_d^Lie`, and
 `D_word != D_Lie` without an additional theorem and compatible registrations.
-Before a closure certificate exists, an unseen numerical pair is recorded as
-`unreached` at a declared cutoff, never as mathematical infinity.
+An exact finite first-hit value at depth `d` requires both a level-`d` witness
+and verified non-hits at every lower level; the witness alone gives only an
+upper bound. Before a closure certificate exists, an unseen numerical pair is
+recorded as `unreached` at a declared cutoff, never as mathematical infinity.
 
 Promotion certificates are therefore branch-specific. Examples include:
 
@@ -167,51 +230,47 @@ typed discriminants, not one primitive universal wall.
 ## Claim-Status Boundary
 
 Examples in Paper VIII are illustrative rather than new numerical evidence.
-Its theorem layer is definitional and structural:
+Its theorem layer is structural and functorial:
 
 ```text
-SOF data -> natural observable constructions.
+declared SOF data
+  -> well-defined typed constructions
+  -> support preservation and target-depth monotonicity under strict morphisms
 ```
 
 Deformation behavior, rate hierarchy, and observable dynamics belong to Paper
 IX.
 
-## Applicability Boundary
+## Report Admission Boundary
 
-Paper VIII owns the formal core of the SOF Applicability Hierarchy:
+Paper VIII owns the strict finite object
 
 ```text
-Level I  Definitional applicability
-         explicit finite SOF object satisfying the axioms
-
-Level II Realizational applicability
-         reproducible source system -> SOF construction
+F_op = (V, {Q_i}, Y).
 ```
 
-Realizational applicability must identify the finite space, sectorization
-origin, observable extraction, truncation, and any non-uniqueness. Different
-realizations of the same source system need not be equivalent; equivalence
-requires a separate strict or weak comparison argument. Neither
-level determines claim strength: a valid object may support a theorem,
-evidence, a diagnostic, or only a boundary statement. Diagnostic and
-analogical applicability are Paper XII methodology levels rather than objects
-of the strict category.
+Paper XII v2.0 uses two mutually exclusive report kinds. `strict_sof` requires
+this finite complex object and structural validation. `diagnostic_analogue`
+records provenance-bound descriptors and an analogue mapping without claiming
+membership in the strict category. Source-map status (`native`,
+`adapter-derived`, or `migrated`) is independent of record kind, and evidence
+status is independent of both.
+
+Different strict realizations of the same source need not be equivalent.
+Different analogue mappings need not be comparable. Neither record kind
+determines claim strength, and an analogue does not become strict by
+accumulating observations.
 
 ## Paper VIII Boundary
 
-Published Paper VIII owns:
+Published Paper VIII version 2 owns its release-local static definition:
 
-- SOF definition;
-- compatible-sectorization realization / Sectorized Realization Theorem;
-- strict SOF morphisms;
-- the strict category `SOF_str`;
-- its release-local natural constructions on SOF data;
-- its release-local naturality theorem under strict equivalence.
-
-A future typed revision must state separate carrier-qualified functors and
-their filtration or saturation hypotheses. The v1 proof strategy may be
-reusable, but the old unqualified `R_1/R_2/D` ladder is not the active
-cross-paper object architecture.
+- the marked sector algebra and labelled operator alphabet;
+- the operator-system and saturated-algebra layers;
+- separate routed-product and full-word filtrations;
+- an optional independently registered Lie/Hall enrichment;
+- strict carrier-qualified morphisms;
+- separate operator/word and Lie/Hall functoriality theorems.
 
 Paper VIII does not own:
 

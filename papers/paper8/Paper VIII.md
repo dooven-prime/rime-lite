@@ -1,783 +1,1259 @@
 # Sectorized Observable Framework
 
-### A Sectorized Observable Architecture for Spectral Accessibility
+### A Typed Static Object Language for Sectorized Observables
 
 **WuJun Chen**
 
-Independent Researcher | RIME Project | 2026
+Independent Researcher | RIME Program | 2026
 
-*This paper is Part VIII of the RIME program. Papers IV--VII form an
-accessibility cycle: fixed spectral geometry, accessibility
-calculus, accessibility deformation, and composition incidence. Paper VIII begins
-the object layer. Its purpose is to identify the mathematical object on which
-the RIME observables naturally live.*
+*This paper is Paper VIII of the RIME program. It begins the static typed
+object layer by identifying the data on which sectorized observable
+constructions are defined. Papers IV--VII provide compatible earlier
+interfaces but remain logically independent.*
 
 ***
 
 ## Abstract
 
-**Problem.** Papers IV--VII repeatedly introduce structures of the same form:
-sectors, observable families, projected blocks, support shadows, commutator
-shadows, accessibility depth, jets, walls, and promotion limits. The
-structural question is therefore not only what these objects do, but what
-object they are attached to.
+**Problem.** Sectorized analyses repeatedly use projectors, observable
+families, projected blocks, routed products, words, commutators, depth
+filtrations, and several distinct operator-algebra closures. Treating these
+objects as a single accessibility ladder obscures the carrier, labels, word
+length, and closure conventions that determine their mathematical meaning.
 
-**Approach.** We define the **Sectorized Observable Framework** (SOF) as an
-analysis paradigm and language for sectorized observables derived from a
-chosen space, sectorization, and observable family. A finite SOF is a triple
+**Approach.** We define a finite Sectorized Observable Framework (SOF) as a
+marked sector realization together with a labelled observable alphabet. The
+static data include the marked sector algebra
+$D_Q$, the labelled family $Y$, the observable operator system
+$E_{Y}$, and the sector-enriched system $S_{Q,Y}$. We
+separate the positive word algebra $A_{Y}^{+}$, the observable
+star-closure $A_{Y}^{*}$, and the sector-enriched star-closure
+$A_{Q,Y}^{*}$. We then define separate operator/word and Lie/Hall
+carriers, their strict morphisms, and their functorial constructions.
 
-$$
-\mathcal F=(V,\{Q_i\}_{i\in I},\mathcal X),
-$$
+**Results.** A declared realization supplies a well-defined operator SOF core.
+Strict operator morphisms form a category, as do independently enriched
+Lie/Hall morphisms. Exact algebra or $*$-isomorphisms identify the matched
+multiplication closures. Two functoriality theorems map labelled operator
+blocks, routed products, full words, and registered Lie/Hall witnesses forward,
+yielding non-increasing target depths. Equality is asserted under strict
+equivalence, not under an arbitrary strict embedding. The two branches are not
+identified without an explicit bridge theorem. Positive-word, star-word, and
+sector-enriched saturated corners are recorded separately from finite
+first-hit filtrations.
 
-where $V$ is a finite-dimensional Hilbert space, $\{Q_i\}$ is a finite
-orthogonal sector decomposition, and $\mathcal X$ is a finite observable
-family. We then define strict SOF morphisms, the category
-$\mathsf{SOF}_{\mathrm{str}}$, and the natural accessibility constructions
-$R_1$, $R_2$, $D$, and $\mathcal J_{\mathrm{acc}}$.
-
-**Results.** The main result is a naturality theorem: the RIME accessibility
-observables are canonical constructions on SOF data. Under strict SOF
-equivalences they are preserved exactly. Under strict embeddings they are
-preserved on the embedded image, with first-depth accessibility satisfying the
-expected monotonicity. Spectral charts and accessibility walls are likewise
-natural once the corresponding smooth spectral SOF family has been specified.
-
-**Implications.** Paper VIII marks the transition from result-oriented papers
-to object-oriented theory. Papers IV--VII discovered and tested the
-observable ladder. Paper VIII identifies the object on which the ladder is
-natural. Rubik, quantum gates, Markov systems, graph systems, and Yang-like
-filtration systems are then different instances of the same sectorized
-observable architecture rather than separate theories. The principal contribution
-of this paper is not a new accessibility invariant, but the identification of
-a common analysis paradigm in which the accessibility observables of the
-previous papers arise as natural constructions.
+**Boundary.** The sectorization may be representation-derived,
+geometry-derived, filtration-derived, activation-derived, or externally
+chosen. The realization construction is formal relative to the declared
+choices, not a classification theorem and not a proof that every source has
+a unique or canonical SOF realization. This paper does not claim a complete
+weak deformation category, moving accessibility fields, universal
+completion, or an unconditional relation between word and Lie depth.
 
 ***
 
-## Notation Table
+## Notation and Claim Layers {.unnumbered}
 
 | Symbol | Meaning |
 |--------|---------|
 | $V$ | finite-dimensional complex Hilbert space |
 | $Q_i$ | orthogonal sector projector |
-| $\{Q_i\}_{i\in I}$ | finite sector decomposition, $\sum_i Q_i=I$ |
-| $\mathcal X=\{X_a\}_{a\in A}$ | finite observable family |
-| $\mathcal F=(V,\{Q_i\},\mathcal X)$ | Sectorized Observable Framework |
-| $B^a_{ij}=Q_iX_aQ_j$ | projected block field |
-| $C^{a,b}_{ij}=Q_i[X_a,X_b]Q_j$ | projected commutator field |
-| $R_1$ | projected support shadow |
-| $R_2$ | projected commutator-survival shadow |
-| $D$ | first-depth accessibility shadow |
-| $\mathcal J_{\mathrm{acc}}$ | accessibility jet package |
-| $\Sigma_{\mathrm{spec}}$ | normal spectral chart where spectral projectors vary coherently |
-| $\Sigma_{\mathrm{access}}$ | accessibility discriminant where the discrete shadow changes |
-| $\mathsf{SOF}_{\mathrm{str}}$ | category of finite SOFs with strict morphisms |
+| $D_Q=\operatorname{span}_{\mathbb C}\{Q_i\}$ | marked sector algebra |
+| $Y=\{Y_a\}_{a\in A}$ | declared labelled operator and word alphabet |
+| $E_{Y}$ | $\operatorname{span}_{\mathbb C}\{I,Y_a,Y_a^*:a\in A\}$ |
+| $S_{Q,Y}$ | $D_Q+E_{Y}$, the sector-enriched operator system |
+| $A_{Y}^{+}$ | $\operatorname{alg}_{\mathbb C}(I,Y)$, the positive associative word algebra |
+| $A_{Y}^{*}$ | $C^*(Y)$, the observable star-closure |
+| $A_{Q,Y}^{*}$ | $C^*(D_Q\cup Y)$, the sector-enriched star-closure |
+| $B_{ij}^a$ | $Q_iY_aQ_j$, a labelled operator block |
+| $R_1[Y]$ | aggregate direct support of the labelled operator family |
+| $\mathscr R_{d,ij}[Y]$ | linear span of length-$d$ routed products from $j$ to $i$ |
+| $\mathrm{Route}_d[Y]$ | support of nonzero routed projected products |
+| $\mathscr W_d(Y)$ | linear span of full ordered words of length $d$ |
+| $W_d[Y]$ | support of nonzero full ordered words of length $d$ |
+| $D_{\mathrm{route}}[Y]$ | first routed-product depth |
+| $D_{\mathrm{word}}[Y]$ | first full-word depth |
+| $X$ | independently registered skew-adjoint Lie family |
+| $R_1^{\mathrm{Lie}},R_2^{\mathrm{Lie}}$ | direct and simple-commutator Lie shadows |
+| $D_{\mathrm{Lie}}$ | depth relative to a declared Hall/Lie filtration |
+
+The four reader-facing evidence levels are:
+
+1. **Theorem:** an exact result proved from declared hypotheses;
+2. **Computational Certificate:** a reproducible finite computation tied to
+   declared inputs;
+3. **Computational Observation:** a bounded numerical pattern without
+   promotion;
+4. **Research Program:** an open problem, conjectural bridge, or proposed
+   extension.
+
+Definitions are not evidence claims. Arrows in object diagrams denote
+construction or audit order unless a theorem explicitly states an implication.
 
 ***
 
 ## Introduction
 
-What is the mathematical object studied by the RIME program?
+### Problem and Scope
 
-The Papers IV--VII accessibility cycle has now closed:
+The object studied here is not a particular representation, group, or
+physical model. Instead, it is a finite sectorized observable realization: a
+space, a compatible sectorization, and a declared observable alphabet. The
+sectorization is source-dependent. It may arise from representation theory, a Dirac
+operator, a mesh or interface geometry, a state filtration, a graph coloring,
+an activation rule, a control decomposition, or an external coarse
+coordinate choice. The observable language begins after that choice has been
+made.
 
-| Paper | Layer | Question |
-|-------|-------|----------|
-| Paper IV | fixed spectral geometry | How are spectral layers formed by projection? |
-| Paper V | accessibility calculus | How is accessibility computed once sectors exist? |
-| Paper VI | accessibility deformation | How do sectors and accessibility data move? |
-| Paper VII | incidence geometry | When do projected factors compose? |
+The static object language must preserve distinctions that are frequently
+obscured by the shorthand
 
-These papers follow a common pattern:
+$$
+R_1\longrightarrow R_2\longrightarrow D.
+$$
 
-discover a structure $\to$ define an observable $\to$ compute examples
-$\to$ isolate a conjecture or theorem layer.
+In particular, a labelled operator family is not the same as its linear span,
+an operator system is not a word filtration, a routed product is not a full
+word, and a simple commutator is not a second associative word layer.
+Positive multiplication closure, adjoint closure, and closure under internal
+sector markers are also distinct operations. A saturated algebra records
+closure, not the first length at which a sector pair is reached.
 
-Paper VIII changes the direction. It starts from the object:
+This paper therefore has four aims:
 
-define SOF $\to$ define morphisms $\to$ define observable functors
-$\to$ reinterpret previous RIME structures as natural constructions.
+1. define the marked static SOF data;
+2. define typed operator/word and Lie/Hall carriers;
+3. define strict static morphisms and their categories;
+4. prove carrier-qualified support preservation and depth monotonicity.
 
-The answer is not "Rubik." Rubik is the finite laboratory. The answer is not
-"semisimple representation theory." Wedderburn-Artin decomposition and
-standard finite representation theory supply the structural layer
-\cite{curtisReiner1962,serre1977,lam2001}, but RIME studies what happens
-above that layer. The object is the **sectorized observable architecture** obtained
-after one has chosen sectors and observables.
+This is a realization construction, not a classification theorem. It says
+what data are sufficient to enter the SOF object language; it does not say
+that all source systems admit the same canonical sectorization.
 
-The guiding invariant is:
+### Relation to Earlier Work
 
-Spectral geometry determines the objects. Compatible sectorization is the
-interface. Observable geometry is the invariant. Accessibility geometry
-determines their behavior. Genericity determines why the behavior is stable.
-
-The conceptual architecture is:
-
-| Layer | Role |
-|-------|------|
-| Structural Unity | Wedderburn--Artin block decomposition |
-| Compatible sectorization | interface from source data to SOF data |
-| Transport Unity | natural RIME observables on SOF data |
-
-Paper VIII develops the third line as an object theory. It does not introduce
-a new physical model; it fixes the analysis paradigm in which different
-sectorized systems can be compared. The categorical language used below is
-standard \cite{macLane1998}; the new point is the SOF-specific choice of
-objects, morphisms, and accessibility observables.
-
-### Applicability Boundary
-
-Paper VIII distinguishes two applicability levels at the formal object layer.
-**Definitional applicability** means that an explicit finite triple
-$\mathcal F=(V,\{Q_i\},\mathcal X)$ satisfying the SOF axioms has been supplied.
-**Realizational applicability** means that a source system has been mapped to
-such a triple by an explicit and reproducible choice of finite space,
-sectorization, and observable family. The second level must state whether the
-realization is canonical, constructed, truncated, or non-unique.
-Different realizations of the same source system need not be equivalent as
-SOF objects, and any equivalence claim requires a separate morphism-level
-argument.
-
-These levels describe proximity to the formal SOF core; they do not determine
-the strength of a claim. A definitionally valid SOF may still support only a
-computational diagnostic, while a realization theorem requires a separate
-proof. Report-level and heuristic uses lie outside the theorem layer of Paper
-VIII. Paper XII extends this boundary to diagnostic applicability, where
-stable probe sectors and measurable outputs can support a qualified report
-without a strict projector realization, and to analogical applicability,
-where only heuristic language is permitted.
+The fixed spectral arrangements of Paper IV, the typed fixed-family objects
+of Paper V, the normality-gated point registrations of Paper VI, and the
+projected-composition incidence geometry of Paper VII supply compatible
+interfaces for the present static language \cite{paper4,paper5,paper6,paper7}.
+They remain independent papers. Paper VI is not used here as a positive
+moving SOF instance: the cited evidence consists of linearized
+commutativity/normality certificates and pointwise registrations, while
+coherent moving projector fields remain open.
 
 ***
 
-## Sectorized Observable Framework
+## Static SOF Objects
 
-### SOF Definition
+### Definition (Operator SOF)
 
-A finite **Sectorized Observable Framework** is a triple
-
-$$
-\mathcal F=(V,\{Q_i\}_{i\in I},\mathcal X),
-$$
-
-where:
-
-1. $V$ is a finite-dimensional complex Hilbert space;
-2. $\{Q_i\}_{i\in I}$ is a finite orthogonal projector decomposition,
+Let $V$ be a finite-dimensional complex Hilbert space and let
+$\{Q_i\}_{i\in I}$ be a finite complete orthogonal sectorization:
 
 $$
-Q_iQ_j=\delta_{ij}Q_i,\qquad \sum_{i\in I}Q_i=I;
+Q_i^*=Q_i,\qquad Q_i\ne0,\qquad Q_iQ_j=\delta_{ij}Q_i,\qquad
+\sum_{i\in I}Q_i=I.
 $$
 
-3. $\mathcal X=\{X_a\}_{a\in A}$ is a finite observable family on $V$.
+Here compatibility means that the projectors and declared observables act on
+the same space and that any source-specific admissibility conditions have
+been recorded. It does not mean that the $Q_i$ commute with, or reduce, the
+declared observables.
 
-The observables may be logarithmic generators, unitary representation
-operators, averaged operators, transfer operators, adjacency or Laplacian
-operators, rate operators, or filtration observables. Their origin is not part
-of the definition.
-
-![SOF object. A Sectorized Observable Framework is the realized triple
-$(V,\{Q_i\},\mathcal X)$ obtained after choosing a space, sector projectors,
-and observable family. Once this data is fixed, projected blocks,
-commutator blocks, and accessibility shadows are SOF-intrinsic constructions.](../../figures/paper8/fig1_sof_definition.png)
-
-**Remark (Origin of the sectorization).** The source of the projectors is also
-not part of the SOF definition. A sectorization may be representation-derived,
-geometry-derived, filtration-derived, activation-derived, or externally chosen.
-Examples include Wedderburn--Artin blocks, joint spectral projectors,
-block-diagonal Dirac sectors, mesh or interface partitions, reachable-state
-flags, color-class projectors, and activation regions. SOF begins after such a
-compatible sectorization has been supplied. Its constructions depend on the
-projectors and observables, not on the origin of the projectors.
-
-The basic block field is
+Let $Y_0=\{Y_a^{(0)}\}_{a\in A_0}$ be a finite nonempty extracted
+operator family on $V$. Its operative word convention is fixed before the SOF
+core is declared. A positive-word convention sets
+$Y=Y_0$. A star-word convention sets
+$A=A_0\times\{+,-\}$ and declares the labelled completion
 
 $$
-B^a_{ij}=Q_iX_aQ_j.
+Y^{\mathrm{adj}}
+=
+\{Y_{(a,+)}=Y_a^{(0)},\
+Y_{(a,-)}=(Y_a^{(0)})^*:a\in A_0\},
 $$
 
-The SOF is therefore the data needed to talk about projected observable
-transport.
-
-### Why Sectorization Is Necessary
-
-One may ask why the pipeline is not simply
-
-representation $\to$ observable family.
-
-The reason is that the RIME observables are not global observables of
-$\mathcal X$ alone. They are **projected** observables. Their basic unit is the
-sector-to-sector block
+with $Y=Y^{\mathrm{adj}}$. After this registration,
+$Y=\{Y_a\}_{a\in A}$ denotes the selected operative alphabet
+in all direct-support, routed-product, path, word, and depth constructions
+below. Sector projectors are not letters of $Y$ unless a realization
+explicitly declares them as observables. An **operator SOF core** is the tuple
 
 $$
-Q_iX_aQ_j.
+\mathcal F_{\mathrm{op}}=(V,\{Q_i\}_{i\in I},Y).
 $$
 
-Without the projectors $\{Q_i\}$, there is no intrinsic meaning to:
+The label map $a\mapsto Y_a$, including any adjoint-completion labels, is part
+of the data. Passing to a span or a generated algebra may forget labels,
+multiplicities, order, and word length; therefore those constructions are
+recorded separately.
 
-1. support from sector $i$ to sector $j$;
-2. a bridge through an intermediate sector;
-3. a frozen pair that can later be repaired;
-4. a first-depth matrix $D(i,j)$;
-5. an accessibility wall where one of these sector shadows changes.
-
-Thus sectorization is not decoration. It is the interface that makes the
-observable shadows visible.
-
-![Sectorization necessity. Without sector projectors there are global
-observables but no sector-indexed support, bridge, repair, or wall shadows.
-With sectors, the projected blocks $Q_iX_aQ_j$ define the observable architecture
-used by $R_1$, $R_2$, $D$, and $\mathcal J_{\mathrm{acc}}$.](../../figures/paper8/fig2_no_sector_no_shadow.png)
-
-### Proposition 1 (No-Sector No-Shadow Principle)
-
-Let $V$ be a finite-dimensional space with an observable family
-$\mathcal X=\{X_a\}$.  If no sectorization $\{Q_i\}$ is specified, then the
-sector-indexed RIME shadows $R_1$, $R_2$, $D$, and
-$\mathcal J_{\mathrm{acc}}$ are not defined.  If the only sectorization is the
-trivial one $\{I\}$, then the off-diagonal sector-to-sector shadows are
-degenerate: there are no distinct sector pairs, no bridge products, and no
-nontrivial frozen-to-accessible repair.
-
-### Proof
-
-Each construction uses the projected blocks $Q_iX_aQ_j$ as input. Without
-projectors there are no indices $i,j$ and no projected blocks. With the trivial
-one-sector projector $I$, all blocks have source and target equal to the single
-sector, so the cross-sector support, bridge, repair, and wall shadows collapse.
-The claim is therefore a definitional necessity statement, not an additional
-classification theorem.
-
-### Compatible Sectorization Realization
-
-A source system enters the SOF language only after the following data have
-been specified:
-
-1. a finite-dimensional space $V$;
-2. a compatible sectorization $\{Q_i\}$;
-3. a source of observables, such as a representation, generator family,
-   averaging family, transition operator, graph operator, Dirac operator,
-   control operator, mesh operator, or filtration observable;
-4. a chosen extraction rule producing $\mathcal X$.
-
-Represented systems are the main RIME source, but they are not the only
-possible source.  The same realization step applies to sectorizations coming
-from geometry, state filtrations, activation regions, control flags, mesh
-partitions, graph colorings, or externally chosen coarse coordinates.
-
-### Theorem 1 (Sectorized Realization Theorem)
-
-Every finite source system endowed with a compatible sectorization and a
-chosen observable extraction rule induces an SOF
+The marked sector algebra, observable operator system, and sector-enriched
+operator system are
 
 $$
-\mathcal F=(V,\{Q_i\},\mathcal X),
+D_Q=\operatorname{span}_{\mathbb C}\{Q_i:i\in I\},
 $$
 
-canonical relative to those choices.
-
-Moreover, every static algebraic construction formed from the projectors,
-observables, and finite algebraic operations on them is an SOF-intrinsic
-construction after realization. Depth, wall, rate, repair, and plateau
-diagnostics are relative constructions: they become intrinsic only after the
-relevant filtration, deformation, threshold, or diagnostic rule has also been
-specified.
-
-### Proof
-
-The chosen sectorization supplies the projectors $\{Q_i\}$ and the extraction
-rule supplies the observable family $\mathcal X$. Together with $V$, these are
-exactly the SOF data. Any block, commutator block, word block, Lie block, jet,
-or rank/support condition built from them depends only on
-$(V,\{Q_i\},\mathcal X)$ after realization, together with the explicitly
-supplied filtration or smooth-family data when such data are required. It no
-longer depends on the native coordinates or origin of the source species.
-
-### Morphisms
-
-Let
+$$
+E_{Y}
+ =
+\operatorname{span}_{\mathbb C}
+\{I,Y_a,Y_a^*:a\in A\},
+$$
 
 $$
-\mathcal F=(V,\{Q_i\}_{i\in I},\{X_a\}_{a\in A})
+S_{Q,Y}=D_Q+E_{Y}.
+$$
+
+$E_{Y}$ and $S_{Q,Y}$ carry their standard operator-system
+meanings. Here SOF abbreviates Sectorized Observable Framework, not operator
+system.
+
+Three multiplication closures are recorded separately. The **positive
+associative word algebra** is
+
+$$
+A_{Y}^{+}
+:=
+\operatorname{alg}_{\mathbb C}(I,Y).
+$$
+
+It uses finite products of the declared operative letters and does not add
+undeclared adjoints. It need not be adjoint-closed or semisimple. The
+**observable star-closure** is
+
+$$
+A_{Y}^{*}:=C^*(Y),
+$$
+
+the smallest unital $*$-subalgebra of $\mathcal B(V)$ containing the declared
+observables. The **sector-enriched star-closure** is
+
+$$
+A_{Q,Y}^{*}
+:=
+C^*(D_Q\cup Y)
+=
+C^*(S_{Q,Y}).
+$$
+
+The last closure permits sector projectors to occur as internal
+multiplicative separators. It therefore contains routed star-words, not only
+full words in the operative alphabet. If the operative alphabet is already
+adjoint-completed, then $A_{Y}^{+}=A_{Y}^{*}$; this equality
+is a consequence of that declared convention, not a default identification.
+
+Finite-dimensional $C^*$-algebras are semisimple by standard theory, so the
+two star-closures have Wedderburn decompositions. That background fact does
+not automatically apply to $A_{Y}^{+}$, nor does it constitute an SOF theorem.
+The marked tuple
+
+$$
+(D_Q,Y,E_{Y},S_{Q,Y},
+A_{Y}^{+},A_{Y}^{*},A_{Q,Y}^{*})
+$$
+
+retains information that the abstract Wedderburn type alone does not retain.
+
+### Optional Lie/Hall Enrichment
+
+An operator SOF does not automatically contain a Lie carrier. A **Lie/Hall
+enrichment** consists of an independently registered labelled family
+
+$$
+X=\{X_g\}_{g\in G_0},\qquad X_g^*=-X_g,
+$$
+
+together with a declared filtration
+
+$$
+\mathcal H_0\subseteq\mathcal H_1\subseteq\cdots.
+$$
+
+Each $\mathcal H_d$ is a declared linear space of formal Lie expressions in
+the registered labels, and $H(X)$ denotes evaluation of
+$H\in\mathcal H_d$ on the family $X$. The filtration record must
+state whether $d$ denotes Hall length, bracket depth, or a
+closure-generation round.
+
+This registration must specify how $X$ is obtained, including any
+logarithm branch, skew-adjoint projection, normalization, label map, and
+depth convention. An explicit induction rule from $Y$ may provide
+such an enrichment, but $X=\operatorname{skew}(E_{Y})$ is
+not sufficient unless the labelled selection rule is also declared. In
+particular, $iQ_i$ and $iI$ are not automatic Lie generators.
+
+The layered SOF record is therefore one of:
+
+$$
+\begin{aligned}
+\text{operator core:}\quad
+    &(V,Q,Y),\\
+\text{operator-system layer:}\quad
+    &(V,Q,Y,E_Y,S_{Q,Y}),\\
+\text{positive-word closure:}\quad
+    &(V,Q,Y,A_Y^+),\\
+\text{observable star layer:}\quad
+    &(V,Q,Y,A_Y^*),\\
+\text{sector-star layer:}\quad
+    &(V,Q,Y,A_{Q,Y}^*),\\
+\text{Lie/Hall enrichment:}\quad
+    &(V,Q,Y;X,\{\mathcal H_d\}_{d\ge0}).
+\end{aligned}
+$$
+
+The layers are optional enrichments, not an assertion that all SOFs contain
+all of them.
+
+### Sectorization Origin
+
+The source of the projectors is not part of the abstract SOF core. A
+sectorization may be:
+
+- representation-derived, such as reducing or joint-spectral projectors;
+- geometry-derived, such as block-diagonal Dirac or mesh/interface sectors;
+- filtration-derived, such as reachable or communicating-state flags;
+- graph-derived, such as vertex or color-class sectors;
+- activation-derived, such as activation or rank regions;
+- externally chosen, when a declared coarse coordinate system is supplied.
+
+The origin must be recorded in a realization, because different origins can
+produce different admissibility domains and different observable families.
+Once the projectors and labelled alphabet are fixed, the static constructions
+below depend on the realized SOF data.
+
+***
+
+## Declared Sectorized Realizations
+
+### No-Sector No-Shadow Principle
+
+Let $V$ carry a finite operator family $Y$. If no sectorization
+$\{Q_i\}$ is specified, then sector-indexed blocks and their typed shadows are
+not defined. If the only sectorization is the trivial one $\{I\}$, there are
+no distinct sector pairs and hence no nontrivial cross-sector support,
+routed bridge, or sector-indexed depth.
+
+This is a definitional necessity statement, not a classification theorem. A
+global observable or an unsectorized diagnostic may still exist; it simply is
+not a sector-indexed SOF shadow.
+
+### Figure and Interface
+
+![Typed SOF object language. The marked sector algebra, labelled operator
+alphabet, typed finite filtrations, and saturated closures are distinct
+layers. The operator/word and Lie/Hall branches are not identified without a
+bridge theorem.](../../figures/paper8/fig1_sof_definition.png)
+
+### Construction (Declared SOF Realization)
+
+Let a finite source system provide:
+
+1. a finite-dimensional complex Hilbert space $V$;
+2. a compatible complete sectorization $\{Q_i\}_{i\in I}$;
+3. a finite labelled observable extraction rule producing
+   $Y=\{Y_a\}_{a\in A}$.
+
+Then the data define an operator SOF core
+
+$$
+\mathcal F_{\mathrm{op}}=(V,\{Q_i\},Y).
+$$
+
+The realization is uniquely determined relative to the declared space,
+sectorization, extraction rule, label set, word convention, and
+normalization. If a Lie/Hall enrichment or a finite filtration is also
+supplied, the corresponding typed constructions are defined relative to
+those additional choices.
+
+### Well-Definedness
+
+The extraction rule supplies the labelled family $Y$, and the
+compatible sectorization supplies the mutually orthogonal projectors. These
+are exactly the data of the operator SOF core. The definitions of
+$D_Q$, $E_{Y}$, $S_{Q,Y}$, and the three closure layers
+then use only the realized operators and the declared operative alphabet. A
+filtration or Lie/Hall carrier is available only when its additional
+registration data have been supplied. Thus, the construction is
+source-independent once these choices are fixed; however, it does not
+constitute a classification of source systems.
+
+### Realization Boundary
+
+Sectorization may come from representation theory, geometry, a filtration, a
+graph, an activation, control/PDE data, or an external choice. All may enter
+the SOF language. The realization record must state whether the choice is
+canonical, constructed, truncated, or non-unique. Different realizations of
+the same source system need not be strictly equivalent.
+
+The construction does not turn a source model into a unique SOF, and it does not
+promote a numerical sectorization to an exact one. Report-level or
+black-box uses belong to later diagnostic protocols and are not strict SOF
+objects by this construction alone.
+
+![Sectorization necessity. Global observables exist without sectors, but
+sector-indexed blocks, routes, and typed shadows require the compatible
+sectorization.](../../figures/paper8/fig2_no_sector_no_shadow.png)
+
+***
+
+## Typed Static Constructions
+
+### Labelled Blocks and Direct Support
+
+For $i,j\in I$ and $a\in A$, define the labelled block
+
+$$
+B_{ij}^a=Q_iY_aQ_j.
+$$
+
+The labelled and aggregate direct supports are
+
+$$
+R_{1,a}[Y](i,j)
+=
+\mathbf 1[B_{ij}^a\ne0],
+\qquad
+R_1[Y](i,j)
+=
+\max_{a\in A}R_{1,a}[Y](i,j).
+$$
+
+The aggregate support forgets the witnessing label; the tensor
+$R_{1,a}[Y]$ retains it. The direction convention is
+
+$$
+B_{ij}^a\ne0
+\quad\Longleftrightarrow\quad
+j\longrightarrow i.
+$$
+
+For an off-diagonal pair $i\ne j$, the first operator corner
+
+$$
+C_{ij}^{(1)}=Q_iE_{Y}Q_j
+$$
+
+is an operator-system-derived corner space. For $i\ne j$, it need not itself
+be an operator system, nor is it a replacement for the
+generator-labelled block tensor. It agrees with aggregate direct support
+only when the selected alphabet is adjoint-closed with the declared direction
+convention. On the diagonal, $Q_iE_{Y}Q_i$ always contains
+$\mathbb C Q_i$ because $I\in E_{Y}$, so it cannot be identified
+with observable direct support.
+
+### Aggregate Support Paths
+
+For $d\ge1$, define the exact-length aggregate path shadow by
+
+$$
+\operatorname{Path}_d(R_1[Y])(i,j)
+:=
+\mathbf 1\!\left[
+\begin{array}{c}
+\text{there exist }k_0=j,k_1,\ldots,k_d=i\\
+\text{such that }R_1[Y](k_\ell,k_{\ell-1})=1\\
+\text{for every }1\le\ell\le d
+\end{array}
+\right].
+$$
+
+Also set
+
+$$
+\operatorname{Path}_0(R_1[Y])(i,j)=\delta_{ij}.
+$$
+
+This is a path in the aggregate directed support graph, with direction
+$j\to i$. It has exactly $d$ steps, forgets all generator labels, and imposes
+no compatibility condition between witnessing labels on adjacent edges.
+Repeated vertices are allowed, and a self-loop step is permitted exactly when
+the corresponding aggregate diagonal support $R_1[Y](k,k)$ is nonzero.
+These conventions are required for comparison with routed products that may
+contain nonzero diagonal sector blocks. Off-diagonal accessibility statements
+still restrict the endpoint pair to $i\ne j$.
+
+### Routed Products
+
+For labels $a_1,\ldots,a_d$ and intermediate sectors
+$\mathbf k=(k_1,\ldots,k_{d-1})$, define
+
+$$
+\begin{aligned}
+P^{Y}_{i,\mathbf k,j}(a_d,\ldots,a_1)
+={}&Q_iY_{a_d}Q_{k_{d-1}}Y_{a_{d-1}}\cdots\\
+&\qquad Q_{k_1}Y_{a_1}Q_j.
+\end{aligned}
+$$
+
+For $d=1$, the intermediate tuple is empty and the routed product is
+$P^{Y}_{i,j}(a_1)=Q_iY_{a_1}Q_j$.
+
+The corresponding routed-product space is
+
+$$
+\mathscr R_{d,ij}[Y]
+:=
+\operatorname{span}_{\mathbb C}
+\left\{
+P^{Y}_{i,\mathbf k,j}(a_d,\ldots,a_1):
+\mathbf k\in I^{d-1},\ (a_1,\ldots,a_d)\in A^d
+\right\}.
+$$
+
+The Boolean routed shadow is
+
+$$
+\mathrm{Route}_d[Y](i,j)
+:=
+\mathbf 1[
+\mathscr R_{d,ij}[Y]\ne\{0\}].
+$$
+
+Thus the shadow is nonzero exactly when at least one declared label tuple and
+intermediate-sector tuple produces a nonzero routed product. The space
+$\mathscr R_{d,ij}[Y]$ retains linear routed-product information; its
+Boolean shadow is not graph path closure.
+
+### Full Words
+
+Use the same operative alphabet $Y$ that defines $R_1[Y]$
+and $\mathrm{Route}_d[Y]$. Define the exact-length word space
+
+$$
+\mathscr W_d(Y)
+:=
+\operatorname{span}_{\mathbb C}
+\{Y_{a_d}\cdots Y_{a_1}:(a_1,\ldots,a_d)\in A^d\},
+$$
+
+with $\mathscr W_0(Y)=\mathbb C I$, and its sector corner
+
+$$
+\mathscr W_{d,ij}[Y]
+:=
+Q_i\mathscr W_d(Y)Q_j.
+$$
+
+The full-word shadow is
+
+$$
+W_d[Y](i,j)
+:=
+\mathbf 1[
+\mathscr W_{d,ij}[Y]\ne\{0\}].
+$$
+
+Completeness of the sectorization gives
+
+$$
+Q_iY_{a_d}\cdots Y_{a_1}Q_j
+=
+\sum_{\mathbf k}
+P^{Y}_{i,\mathbf k,j}(a_d,\ldots,a_1).
+$$
+
+Consequently,
+
+$$
+\mathscr W_{d,ij}[Y]
+\subseteq
+\mathscr R_{d,ij}[Y],
+\qquad
+W_d[Y]
+\subseteq
+\mathrm{Route}_d[Y]
+\subseteq
+\operatorname{Path}_d(R_1[Y]).
+$$
+
+The reverse inclusions are not available in general. A full word may vanish
+by cancellation among routed terms, and a routed product may vanish by
+image--kernel alignment even when its Boolean path is present.
+
+The dimensions of $\mathscr W_{d,ij}[Y]$ and
+$\mathscr R_{d,ij}[Y]$ are typed static data. Although later deformation
+theories may study their rank or dimension walls, this paper makes no
+moving-wall claim.
+
+### Typed Depths and Saturation
+
+For exact extended-valued objects define
+
+$$
+D_{\mathrm{route}}[Y](i,j)
+=
+\inf\{d\ge1:\mathrm{Route}_d[Y](i,j)=1\},
+$$
+
+$$
+D_{\mathrm{word}}[Y](i,j)
+=
+\inf\{d\ge1:W_d[Y](i,j)=1\}.
+$$
+
+Here $\inf\varnothing=\infty$. A finite computation reports
+$D^{(\le d_{\max})}=d$ when it witnesses a first hit at
+$1\leq d\leq d_{\max}$, and reports
+$D^{(\le d_{\max})}=\mathrm{unreached}$ otherwise. Promoting the latter value
+to exact mathematical infinity requires the relevant closure or saturation
+certificate. The sentinel $999$ is never mathematical infinity.
+
+The three saturated corner spaces are
+
+$$
+A_{ij}^{+}
+:=
+Q_iA_{Y}^{+}Q_j,
+\qquad
+A_{ij}^{*}
+:=
+Q_iA_{Y}^{*}Q_j,
 $$
 
 and
 
 $$
-\mathcal F'=(V',\{Q'_{i'}\}_{i'\in I'},\{X'_{a'}\}_{a'\in A'}).
+A_{ij}^{Q,*}
+:=
+Q_iA_{Q,Y}^{*}Q_j.
 $$
 
-A **strict SOF morphism**
+Since
 
 $$
-\Phi:\mathcal F\to\mathcal F'
+A_{Y}^{+}
+=
+\operatorname{span}_{\mathbb C}
+\bigcup_{d\ge0}\mathscr W_d(Y),
 $$
 
-consists of:
-
-1. an isometric linear embedding $U:V\to V'$;
-2. an injective sector map $f:I\to I'$ satisfying
+The condition $A_{ij}^{+}\ne0$ records positive-word saturation for the
+operative alphabet. In finite dimensions, the cumulative spaces
+$\sum_{\ell=0}^{d}\mathscr W_\ell(Y)$ stabilize at
+$A_{Y}^{+}$; however, the stabilized algebra alone does not retain
+the first stabilizing or first-hit length. The corner $A_{ij}^{*}$ records
+star-word saturation and may use
+adjoints that are absent from a positive operative alphabet. The corner
+$A_{ij}^{Q,*}$ records sector-enriched star-saturation and may use projectors
+as internal route separators. In particular, a nonzero element such as
 
 $$
-UQ_i=Q'_{f(i)}U;
+Q_iY_aQ_kY_bQ_j
 $$
 
-3. an injective observable-label map $\phi:A\to A'$ satisfying
+may survive in $A_{ij}^{Q,*}$ even when the corresponding full-word corner
+$Q_iY_aY_bQ_j$, which sums over all intermediate routes, vanishes by
+cancellation. Thus positive-word, star-word, and routed star-saturation are
+not identified.
+
+None of these corner spaces records the first-hit word length, a witnessing
+labelled word, or a witnessing route. For $i=j$, all three saturated corners
+are automatically nonzero because their defining unital algebras contain
+$I$, and hence
 
 $$
-UX_a=X'_{\phi(a)}U
-\qquad \text{for all }a\in A.
+Q_iIQ_i=Q_i
+\in
+A_{ii}^{+}\cap A_{ii}^{*}\cap A_{ii}^{Q,*}.
 $$
 
-A strict SOF morphism is a **strict SOF equivalence** if $U$ is unitary and
-$f,\phi$ are bijections.
+Saturated Boolean accessibility is therefore informative without
+qualification primarily on off-diagonal sector pairs. A nontrivial diagonal
+audit must remove the scalar sector identity. For any
+$A_{ii}^{\bullet}\in\{A_{ii}^{+},A_{ii}^{*},A_{ii}^{Q,*}\}$, one may use the
+Hilbert--Schmidt reduced space
 
-This is intentionally a strong notion. Weaker comparison notions, such as
-support-preserving maps or depth-equivalences, are useful but do not preserve
-all natural constructions strictly.
+$$
+\widetilde A_{ii}^{\bullet}
+:=
+A_{ii}^{\bullet}
+\cap
+(\mathbb C Q_i)^{\perp_{\mathrm{HS}}},
+$$
 
-![Strict SOF morphism. A strict morphism consists of a linear embedding,
-sector map, and observable-label map satisfying the corresponding intertwining
-relations. Naturality of the accessibility ladder follows because projected
-blocks and shadows are preserved on the image.](../../figures/paper8/fig3_strict_morphism.png)
+or equivalently the vector-space quotient
+$A_{ii}^{\bullet}/\mathbb C Q_i$. The quotient is not asserted to be an
+algebra quotient. Registry or wall data must state whether a saturated-corner
+quantity is off-diagonal or uses this scalar-reduced diagonal convention. The
+condition $D_Q\subseteq A_{Y}^{*}$ is required before the observable
+star-closure and the sector-enriched star-closure coincide.
 
-### Category $\mathsf{SOF}_{\mathrm{str}}$
+### Lie/Hall Branch
 
-Finite SOFs with strict SOF morphisms form a category
-$\mathsf{SOF}_{\mathrm{str}}$.
+Fix a total order on the Lie-label set $G_0$. For a registered Lie family
+$X=\{X_g\}_{g\in G_0}$, define
 
-The identity morphism is $(I_V,\mathrm{id}_I,\mathrm{id}_A)$. Composition is
-given by composing the linear embeddings, sector maps, and observable-label
-maps. The intertwining equations are stable under composition, so the result
-is again a strict SOF morphism.
+$$
+R_{1,g}^{\mathrm{Lie}}(i,j)
+=
+\mathbf 1[Q_iX_gQ_j\ne0],
+\qquad
+R_1^{\mathrm{Lie}}(i,j)
+=
+\max_gR_{1,g}^{\mathrm{Lie}}(i,j),
+$$
 
-The equivalences in this category are precisely the strict SOF equivalences.
+and
 
-### Claim-Status Boundary
+$$
+R_{2,g,h}^{\mathrm{Lie}}(i,j)
+=
+\mathbf 1[Q_i[X_g,X_h]Q_j\ne0],
+\qquad
+R_2^{\mathrm{Lie}}(i,j)
+=
+\max_{g<h}R_{2,g,h}^{\mathrm{Lie}}(i,j).
+$$
 
-This paper uses the strict category to make naturality precise. It does not
-claim that every meaningful comparison of SOF objects is strict. Later work
-in the applications/universality layer requires weaker morphisms, quotient
-morphisms, transport morphisms, and functorial comparison classes.
+Here $\max\varnothing:=0$; equivalently,
+$R_2^{\mathrm{Lie}}(i,j)=0$ when $|G_0|<2$.
 
-In particular, the deformation maps used in the dynamic layer are not strict
-SOF morphisms in general. A generator-weight path, a state-mixing path, or a
-training trajectory may preserve only the observable diagnostics, not an
-isometric embedding together with sector and observable-label injections. The
-appropriate home for such arrows is a weaker deformation category, denoted
-provisionally by $\mathsf{SOF}_{\mathrm{def}}$, whose morphisms are
-parameterized SOF families equipped with enough comparison data to evaluate
-observable trajectories. Paper VIII does not develop this category; it fixes
-the strict static category against which the later weak theory can be
-measured.
+Given a declared Hall or Lie filtration $\{\mathcal H_d\}$,
 
-The status of the main constructions is:
+$$
+D_{\mathrm{Lie}}(i,j)
+=
+\inf\{d:\exists H\in\mathcal H_d,\ Q_iH(X)Q_j\ne0\}.
+$$
 
-| Item | Claim status |
-|------|--------------|
-| SOF definition | definition |
-| No-Sector No-Shadow Principle | definitional necessity: sector-indexed shadows require projectors |
-| sectorized realization theorem | formal realization relative to chosen sectorization and extraction rule |
-| strict morphisms and $\mathsf{SOF}_{\mathrm{str}}$ | structural bookkeeping category |
-| weak/deformation morphisms $\mathsf{SOF}_{\mathrm{def}}$ | named dynamic gap, developed only provisionally in Paper IX |
-| $R_1/R_2/D/\mathcal J_{\mathrm{acc}}$ | natural constructions on SOF data once a filtration or smooth family is fixed |
-| cross-species examples | illustrative examples, not new computational evidence |
-| low-order promotion | open typed problem; Paper VII proves only matrix-pair incidence and rank protection |
+The depth index must state whether it means Hall length, bracket depth, or
+closure-generation round. Associative products
+$\mathrm{Route}_d[X]$ and $W_d[X]$ are allowed as
+diagnostics, but they are not Hall-filtered support and do not define
+$D_{\mathrm{Lie}}$.
+
+There is no canonical identification
+
+$$
+R_1[Y]\equiv R_1^{\mathrm{Lie}},
+\qquad
+D_{\mathrm{word}}\equiv D_{\mathrm{Lie}}.
+$$
+
+Nor is $W_d[X]$ canonically identified with support at the
+corresponding Hall level. Each identification requires a separately declared
+bridge theorem and aligned registrations.
 
 ***
 
-## Natural Accessibility Objects
+## Strict Morphisms and Functoriality
 
-The natural accessibility ladder of an SOF is:
+### Operator Strict Morphisms
 
-$$
-\mathcal F
-\longrightarrow B
-\longrightarrow R_1
-\longrightarrow R_2
-\longrightarrow D
-\longrightarrow \mathcal J_{\mathrm{acc}},
-$$
-
-with $\Sigma_{\mathrm{spec}}$ and $\Sigma_{\mathrm{access}}$ added when a
-smooth spectral family is supplied.
-
-### R1 Support Shadow
-
-Define
+Let
 
 $$
-R_1(i,j;a)=1
-\quad\Longleftrightarrow\quad
-Q_iX_aQ_j\ne0.
+\mathcal F=(V,Q,Y),
+\qquad
+\mathcal F'=(V',Q',Y')
 $$
 
-This is the generator-labelled support graph of the SOF.
+be operator SOF cores. A **strict operator SOF morphism**
+$\Phi=(U,f,\phi):\mathcal F\to\mathcal F'$ consists of:
 
-### R2 Commutator-Survival Shadow
-
-Define
-
-$$
-R_2(i,j;a,b)=1
-\quad\Longleftrightarrow\quad
-Q_i[X_a,X_b]Q_j\ne0.
-$$
-
-This records projected relation-level survival. Paper V shows that $R_2$ is
-not determined by $R_1$ in general \cite{paper5}.
-
-### Depth Shadow D
-
-Choose a filtration $\mathcal H^{(d)}(\mathcal X)$: Lie monomials, PBW
-monomials, word monomials, transfer iterates, or another specified
-depth-producing family. Define
+1. an isometric embedding $U:V\to V'$;
+2. an injective sector map $f:I\to I'$;
+3. an injective operative-alphabet map $\phi:A\to A'$ that respects any
+   explicitly registered adjoint labels;
+4. a reducing-image condition for
+   $P_f=\sum_{i\in I}Q'_{f(i)}$;
+5. the intertwining identities
 
 $$
-D(i,j)=\min\{d:Q_iYQ_j\ne0
-\text{ for some }Y\in\mathcal H^{(d)}(\mathcal X)\},
+UQ_iU^*=Q'_{f(i)},
 $$
 
-with $D(i,j)=\infty$ if no such $d$ exists.
-
-Depth is therefore filtration-relative. The SOF supplies the object layer; the
-filtration supplies the depth convention.
-
-### Accessibility Jet
-
-For a smooth SOF family
-
 $$
-\mathcal F(w)=(V,\{Q_i(w)\},\mathcal X(w)),
+UY_aU^*=P_fY'_{\phi(a)}P_f
+\qquad (a\in A).
 $$
 
-the accessibility jet is the package
+The reducing-image condition is
 
 $$
-\mathcal J_{\mathrm{acc}}(w)
+[P_f,Y'_{\phi(a)}]=0
+\qquad (a\in A).
+$$
+
+Completeness and the sector intertwining identities give
+
+$$
+P_f
 =
-(J_{\mathrm{block}},J_{\mathrm{comm}},J_{\mathrm{depth}}),
+\sum_{i\in I}UQ_iU^*
+=
+UU^*.
 $$
 
-where these components record first-order variation of projected blocks,
-projected commutators, and depth-producing propagation data.
+The reducing-image condition prevents the matched observable from leaving the
+embedded selected sectors and returning through an untracked target sector.
+The matched-observable conjugation identity also intertwines adjoints.
 
-This definition becomes theorem-level only after the admissible smooth family,
-projector chart, and filtration rule are specified. Paper VI supplies the
-Rubik generator-set instance on normal spectral charts \cite{paper6}.
-
-### Spectral and Accessibility Discriminants
-
-For a smooth spectral SOF family, the spectral chart
-$\Sigma_{\mathrm{spec}}$ is the domain where the sector projectors and
-spectral arrangement vary coherently. The accessibility discriminant
-$\Sigma_{\mathrm{access}}$ is the locus where the discrete shadow of the
-accessibility jet changes.
-
-In Paper VI language:
+The induced marked-sector map sends $Q_i$ to $Q'_{f(i)}$, and the induced
+operator-system map sends $E_{Y}$ into $P_fE_{Y'}P_f$.
+For the matched target family
+$\phi(Y)=\{Y'_{\phi(a)}:a\in A\}$, conjugation by $U$ yields
+an algebra isomorphism and a unital $*$-isomorphism, respectively:
 
 $$
-\Sigma_{\mathrm{access}}
+\operatorname{Ad}_U:A_{Y}^{+}
+\xrightarrow{\cong}
+P_fA_{\phi(Y)}^{+\prime}P_f,
+\qquad
+\operatorname{Ad}_U:A_{Y}^{*}
+\xrightarrow{\cong}
+P_fA_{\phi(Y)}^{*\prime}P_f.
+$$
+
+Here the primed closures are formed in $\mathcal B(V')$ from the matched
+target family only. Because $P_f$ reduces every matched observable, both
+compressed closures are algebras on $P_fV'$ with unit $P_f$.
+
+For the sector-enriched layer, define the **matched sector-star closure**
+
+$$
+A_{f(Q),\phi(Y)}^{*\prime}
+:=
+C^*_{P_f\mathcal B(V')P_f}
+\left(
+\{Q'_{f(i)}:i\in I\}
+\cup
+\{P_fY'_{\phi(a)}P_f:a\in A\}
+\right).
+$$
+
+Conjugation by $U$ then gives the unital $*$-isomorphism
+
+$$
+\operatorname{Ad}_U:A_{Q,Y}^{*}
+\xrightarrow{\cong}
+A_{f(Q),\phi(Y)}^{*\prime}.
+$$
+
+This matched closure satisfies
+
+$$
+A_{f(Q),\phi(Y)}^{*\prime}
 \subseteq
-\Sigma_{\mathrm{spec}}
+P_fA_{Q',Y'}^{*}P_f.
+$$
+
+Because $P_f\in D_{Q'}\subseteq A_{Q',Y'}^*$, the right-hand side is a
+$C^*$-corner rather than merely a linear corner. Equality with the full target
+corner is not asserted, because unmatched target observables may contribute
+additional corner elements.
+
+A strict equivalence is a strict morphism for which $U$ is unitary and $f$
+and $\phi$ are bijections. The optional Lie/Hall enrichment adds an injective
+label map $\psi:G_0\to G'_0$. It must satisfy
+
+$$
+[P_f,X'_{\psi(g)}]=0,
+\qquad
+UX_gU^*=P_fX'_{\psi(g)}P_f.
+$$
+
+Let $\psi_*$ denote relabelling of formal Lie expressions. Filtration
+preservation means
+
+$$
+\psi_*(\mathcal H_d)\subseteq\mathcal H'_d
+\qquad\text{for every }d,
+$$
+
+and, for every $H\in\mathcal H_d$,
+
+$$
+UH(X)U^*
+=
+P_f(\psi_*H)(X')P_f.
+$$
+
+A strict Lie/Hall equivalence additionally requires $\psi$ to be bijective
+and the filtration-preservation condition to hold in both directions.
+
+### Strict-Category Proposition
+
+**Proposition 1 (Closure of Strict Morphisms).** Finite operator SOF cores and
+strict operator morphisms form a category, denoted
+
+$$
+\mathsf{SOF}_{\mathrm{op,str}}.
+$$
+
+Lie/Hall-enriched SOFs and filtration-preserving strict morphisms form a
+separate category over the operator category, denoted
+
+$$
+\mathsf{SOF}_{\mathrm{Lie,str}}.
+$$
+
+**Proof.** Identity isometries and identity label maps satisfy all defining
+conditions. For composition, let
+
+$$
+\Phi=(U,f,\phi):\mathcal F\longrightarrow\mathcal F',
+\qquad
+\Phi'=(U',f',\phi'):\mathcal F'\longrightarrow\mathcal F''.
+$$
+
+The composite isometry and label maps are $U'U$, $f'\circ f$, and
+$\phi'\circ\phi$. The corresponding selected-sector projection is
+
+$$
+P_{f'\circ f}
+=
+\sum_{i\in I}Q''_{f'(f(i))}
+=
+U'P_fU'^*.
+$$
+
+Write $P_{f'}=U'U'^*$ and
+$Z=Y''_{\phi'(\phi(a))}$. Since $P_{f'}$ reduces $Z$ and
+$U'^*ZU'=Y'_{\phi(a)}$, the first reducing condition gives
+
+$$
+\begin{aligned}
+P_{f'\circ f}Z
+&=U'P_fY'_{\phi(a)}U'^*\\
+&=U'Y'_{\phi(a)}P_fU'^*
+=ZP_{f'\circ f}.
+\end{aligned}
+$$
+
+Moreover,
+
+$$
+\begin{aligned}
+(U'U)Y_a(U'U)^*
+&=U'P_fY'_{\phi(a)}P_fU'^*\\
+&=P_{f'\circ f}
+Y''_{\phi'(\phi(a))}
+P_{f'\circ f}.
+\end{aligned}
+$$
+
+The sector identities compose in the same way, so the operator composite is
+strict. For Lie/Hall enrichments, the composite relabelling is
+$(\psi'\circ\psi)_*=\psi'_*\circ\psi_*$. It preserves every filtration level,
+and the same calculation proves the reducing and intertwining identities for
+each evaluated formal Lie expression. Thus identities and composition are
+closed in both categories. Associativity is inherited from composition of
+isometries and label maps. $\square$
+
+The existence of a Lie/Hall carrier is not inferred from an operator
+morphism.
+
+### Operator/Word Functoriality
+
+**Theorem 2 (Operator/Word Support Preservation and Depth Monotonicity).** Let
+$\Phi=(U,f,\phi):\mathcal F\to\mathcal F'$ be a strict operator SOF
+morphism. Then for all matched labels and sectors:
+
+$$
+B_{ij}^a\ne0
+\Longleftrightarrow
+Q'_{f(i)}Y'_{\phi(a)}Q'_{f(j)}\ne0.
+$$
+
+The same equivalence holds for every matched routed product and every
+matched full word. At the linear-space level,
+
+$$
+\operatorname{Ad}_U\bigl(
+\mathscr R_{d,ij}[Y]\bigr)
 \subseteq
-\Sigma_{\mathrm{comm}}.
+\mathscr R'_{d,f(i)f(j)}[Y'],
 $$
 
-These loci are not part of every SOF. They are natural objects of SOF families
-with the required spectral and smooth structure.
-
-***
-
-## Functoriality
-
-### Observable Functors
-
-On $\mathsf{SOF}_{\mathrm{str}}$, the support construction gives a functor
+and
 
 $$
-\mathsf R_1:\mathsf{SOF}_{\mathrm{str}}\to
-\mathsf{Graph}_{\mathrm{lab}},
+\operatorname{Ad}_U\bigl(
+\mathscr W_{d,ij}[Y]\bigr)
+\subseteq
+\mathscr W'_{d,f(i)f(j)}[Y'].
 $$
 
-where vertices are sectors and labelled edges record nonzero projected blocks.
-
-Similarly, the commutator-survival construction gives a labelled hypergraph
-or tensor-valued shadow
+Therefore
 
 $$
-\mathsf R_2:\mathsf{SOF}_{\mathrm{str}}\to
-\mathsf{Rel}_{\mathrm{comm}}.
+R_1[Y](i,j)
+\Longrightarrow
+R_1[Y'](f(i),f(j)),
 $$
 
-After choosing a filtration class, the depth construction gives a partial
-functor or pseudofunctor to extended distance matrices:
-
 $$
-\mathsf D:\mathsf{SOF}_{\mathrm{str}}^{\mathcal H}\to
-\mathsf{Mat}_{\mathbb N\cup\{\infty\}}.
+\mathrm{Route}_d[Y](i,j)
+\Longrightarrow
+\mathrm{Route}_d[Y'](f(i),f(j)),
 $$
 
-For smooth families, the jet construction gives
+and
 
 $$
-\mathsf J_{\mathrm{acc}}:
-\mathsf{SOF}_{\mathrm{str}}^{\mathrm{sm}}
-\to
-\mathsf{Jet}_{\mathrm{acc}}.
+W_d[Y](i,j)
+\Longrightarrow
+W_d[Y'](f(i),f(j)).
 $$
 
-The targets are intentionally schematic. Their full functorial formalization
-belongs to later SOF theory; Paper VIII uses them only to identify the natural
-output types of the strict object theory.
-
-### Main Theorem
-
-### Theorem 2 (Naturality of Accessibility Observables)
-
-Let $\Phi=(U,f,\phi):\mathcal F\to\mathcal F'$ be a strict SOF morphism.
-Then:
-
-1. $R_1$ is preserved on the image:
+Taking the first-hit infima gives
 
 $$
-R_1(i,j;a)=1
-\quad\Longrightarrow\quad
-R'_1(f(i),f(j);\phi(a))=1.
+D_{\mathrm{route}}'(f(i),f(j))
+\le D_{\mathrm{route}}(i,j),
+\qquad
+D_{\mathrm{word}}'(f(i),f(j))
+\le D_{\mathrm{word}}(i,j)
 $$
 
-2. $R_2$ is preserved on the image:
+whenever the source depths are finite. Under strict equivalence, the
+corresponding supports and depths are equal.
+
+**Proof.** The sector and observable intertwining identities give
 
 $$
-R_2(i,j;a,b)=1
-\quad\Longrightarrow\quad
-R'_2(f(i),f(j);\phi(a),\phi(b))=1.
-$$
-
-3. For any compatible filtration $\mathcal H$, first-depth accessibility is
-monotone on the image:
-
-$$
-D'(f(i),f(j))\le D(i,j),
-$$
-
-provided the target filtration contains the image of the source filtration
-under $\phi$.
-
-4. If $\Phi$ is a strict SOF equivalence, then all implications above are
-equivalences and
-
-$$
-D'(f(i),f(j))=D(i,j).
-$$
-
-5. For smooth strict equivalences of SOF families, the accessibility jet is
-natural:
-
-$$
-\mathcal J'_{\mathrm{acc}}(f(i),f(j))
+UQ_iY_aQ_jU^*
 =
-U\,\mathcal J_{\mathrm{acc}}(i,j)\,U^{-1}
+Q'_{f(i)}Y'_{\phi(a)}Q'_{f(j)}.
 $$
 
-in the corresponding sector and observable labels. Consequently
-$\Sigma_{\mathrm{spec}}$ and $\Sigma_{\mathrm{access}}$ are carried to the
-corresponding discriminants of the equivalent family.
-
-### Proof
-
-The intertwining relations give
+Because $P_f$ reduces every matched observable, routed products satisfy
 
 $$
-UQ_iX_aQ_j
+\begin{aligned}
+&UQ_iY_{a_d}Q_{k_{d-1}}\cdots Q_{k_1}Y_{a_1}Q_jU^*\\
+&\qquad=
+Q'_{f(i)}Y'_{\phi(a_d)}Q'_{f(k_{d-1})}\cdots
+Q'_{f(k_1)}Y'_{\phi(a_1)}Q'_{f(j)},
+\end{aligned}
+$$
+
+and full words satisfy
+
+$$
+UQ_iY_{a_d}\cdots Y_{a_1}Q_jU^*
 =
-Q'_{f(i)}X'_{\phi(a)}Q'_{f(j)}U.
+Q'_{f(i)}Y'_{\phi(a_d)}\cdots
+Y'_{\phi(a_1)}Q'_{f(j)}.
 $$
 
-Since $U$ is injective, a nonzero source block maps to a nonzero target block
-on the embedded image. This proves preservation of $R_1$.
+Because $U$ is an isometry, nonzero source matrices remain nonzero.
+Consequently, a source filtration witness supplies a target witness of no
+greater depth. A strict equivalence provides the reverse identities. $\square$
 
-For commutators,
+### Lie/Hall Functoriality
+
+**Theorem 3 (Lie/Hall Support Preservation and Depth Monotonicity).** Let
+$\Phi$ be a strict morphism between
+Lie/Hall-enriched SOFs with the filtration-preserving Lie-label map declared
+above. Then
 
 $$
-U[X_a,X_b]=[X'_{\phi(a)},X'_{\phi(b)}]U,
+R_1^{\mathrm{Lie}}(i,j)
+\Longrightarrow
+R_1^{{\mathrm{Lie}}\prime}(f(i),f(j)),
 $$
 
-so the same block-intertwining argument proves preservation of $R_2$.
+$$
+R_2^{\mathrm{Lie}}(i,j)
+\Longrightarrow
+R_2^{{\mathrm{Lie}}\prime}(f(i),f(j)),
+$$
 
-For depth, every source filtration element $Y\in\mathcal H^{(d)}(\mathcal X)$
-maps to the corresponding target filtration element $Y'$ of depth at most
-$d$. Hence a source witness of depth $d$ gives a target witness of depth at
-most $d$. This proves monotonicity.
+and
 
-If $\Phi$ is a strict equivalence, the inverse morphism gives the reverse
-implications and the reverse depth inequality, hence equality.
+$$
+D_{\mathrm{Lie}}'(f(i),f(j))
+\le D_{\mathrm{Lie}}(i,j)
+$$
 
-For smooth families, differentiating the block and commutator intertwining
-relations gives the jet identity. Rank/support discriminants are defined by
-failure of local constancy of these shadows, so strict equivalence carries
-them to the corresponding discriminants.
+whenever the source depth is finite. Under strict Lie/Hall equivalence, the
+matched supports and depths are equal.
 
-### Boundary of the Theorem
+**Proof.** The carrier intertwining gives
 
-The theorem is a naturality statement, not a generic completion theorem. It
-does not say that $(R_1,R_2)$ determines $D$ for all SOFs. It says that
-$R_1$, $R_2$, $D$, jets, and the corresponding discriminants are natural
-constructions once the SOF and the relevant filtration or smooth family are
-fixed.
+$$
+UX_gU^*=P_fX'_{\psi(g)}P_f.
+$$
+
+Consequently, conjugation by $U$ intertwines every matched commutator. The
+formal relabelling $\psi_*$ likewise matches every filtered Lie expression
+without increasing its filtration index. Therefore, the same nonzero-block and
+filtration-witness argument used in the operator/word functoriality theorem
+proves the claims. $\square$
+
+### Functoriality Boundary
+
+The theorems are functorial support and depth statements, not completion
+results. They do not
+imply that direct support determines routed composition, that routed products
+determine full words, or that low-order Lie support determines Lie depth.
+Matched multiplication closures are carried by exact isomorphisms, whereas
+support in the full target alphabet is preserved by inclusion and first-hit
+depth is only non-increasing.
+Strict morphisms also do not create a deformation morphism. A generator-weight
+path, a state-mixing path, or a training trajectory may fail to be isometric,
+label-preserving, or reducing.
+
+A deformation analysis may use a weaker category, provisionally denoted
+$\mathsf{SOF}_{\mathrm{def}}$, but this paper does not define its arrows.
+
+![Strict SOF morphism. The operator/word and optional Lie/Hall carriers have
+separate label maps and separate functorial outputs. The static morphism is
+not a deformation arrow.](../../figures/paper8/fig3_strict_morphism.png)
 
 ***
 
-## Examples
+## Realization Examples
 
-### Rubik
+The following examples illustrate the source boundary. They are not new
+computational evidence for the theorem layer developed here.
 
-The Rubik laboratory gives the motivating SOF. The sectors are the nine QT/HT
-joint-spectral sectors. The observable families include face-turn logarithmic
-generators, QT/HT averages, and the canonical averaging operator. This single
-SOF instance supports several independent Rubik papers and the Papers IV--VII
-accessibility cycle.
+The static object can be interpreted as a marked geometry of coarse-grained
+information accessibility. The sectorization supplies source-dependent coarse
+coordinates; labelled operator blocks, routed products, words, and any
+independently registered Lie/Hall fields describe different forms of
+cross-sector propagation. This interpretation does not identify their
+carriers or make the sectorization canonical.
 
-### Quantum Gate Systems
+### Representation-Derived Sectors
 
-For a small quantum gate system, $V=(\mathbb C^2)^{\otimes q}$ and the
-sectors may be computational-basis projectors. Observable families are
-obtained from logarithmic gate generators. The Pauli, Clifford, and
-Universal+CNOT diagnostics show that $R_1/R_2/D$ are sectorized observables,
-not Rubik-specific quantities. These are worked examples for the SOF language;
-the computational evidence itself belongs to Paper VII and later diagnostic
-notes, not to the theorem layer of Paper VIII.
+Finite-group representations may supply invariant blocks or joint-spectral
+projectors. Rubik QT/HT sectors provide a motivating realization, while their
+exact numerical status remains owned by the relevant earlier papers.
 
-### Markov Systems
+### Geometry-Derived Sectors
 
-For a Markov chain, $V$ is a finite state space, sectors may be state
-projectors or communicating-class projectors, and observables may be rate
-operators, logarithmic transition operators, or transfer operators. These
-examples test portability of the SOF audit interface, not generic completion.
+Finite spectral triples may use block-diagonal Dirac operators to define
+sectors. Mesh/interface partitions and other geometric decompositions provide
+additional examples. The sectorization need not originate in irreducible
+representation theory.
 
-### Graph Systems
+### State, Graph, and Activation Sectors
 
-For a graph, $V$ is a vertex or edge space. Sectors may be vertex sectors,
-spectral sectors, or symmetry-adapted sectors. Observables may include
-adjacency matrices, Laplacians, directed-edge operators, or walk operators.
-The graph examples demonstrate that the SOF language is not restricted to
-group representations.
+Finite Markov systems may use communicating classes or state flags. Graph
+systems may use vertex, edge, color, or spectral sectors. Neural systems may
+use activation or rank regions. In each case the observable family and the
+sector provenance must be declared before a typed SOF audit is meaningful.
 
-### Yang-Like Filtration Systems
+### External Sectorizations
 
-Yang-like systems are naturally treated as Filtration SOF examples. Their
-deformation variable is state mixing or coherence variation. This produces
-filtration degeneration rather than the generator-weight accessibility walls
-of Paper VI. The shared feature is a common observable architecture, not a
-shared wall geometry.
+An externally chosen coarse coordinate system is admissible when the
+projectors, completeness, normalization, and observable family are explicit.
+Such a choice is not automatically canonical or source-invariant.
 
 ***
 
-## Previous RIME Papers Revisited
+## Claim Status and Boundary
 
-### Paper IV
+The No-Sector No-Shadow Principle is a definitional structural principle.
+Definitions are not evidence-level claims, so it is not assigned one of the
+four statuses in the table.
 
-Paper IV studies a spectral SOF shadow \cite{paper4}. The QT/HT joint spectrum is a finite
-sectorized spectral arrangement, and the six canonical spectral layers arise
-as a collision quotient under affine projection. In SOF language, Paper IV is
-the fixed spectral geometry of one sectorized observable family.
+Background facts used here include finite-dimensional $C^*$-algebra
+semisimplicity and Wedderburn decomposition. They are standard results, not
+reader-facing claims or contributions of this paper.
 
-### Paper V
-
-Paper V studies accessibility calculus on a fixed SOF \cite{paper5}. The objects $R_1$,
-$R_2$, and $D$ are natural shadows of projected block data. Commutator
-cancellation and image--kernel incidence are local mechanisms inside this
-fixed SOF calculus, not universal accessibility types.
-
-### Paper VI
-
-Paper VI studies smooth SOF families on normal spectral charts \cite{paper6}. The
-accessibility jet $\mathcal J_{\mathrm{acc}}$ is the continuous object behind
-the discrete shadows $R_1$, $R_2$, and $D$. The walls are discriminants of
-these shadows under generator-set deformation.
-
-### Paper VII
-
-Paper VII studies image--kernel incidence and rank protection for projected
-operator composition \cite{paper7}. It separates routed-product geometry from
-stronger word, commutator, and Lie-depth promotion questions.
-
-Thus the earlier papers are not patches of one another. They are examples of
-natural SOF structures at different levels: spectral shadow, accessibility
-calculus, deformation, and incidence geometry.
-
-***
-
-## Outlook
-
-### Low-Order Promotion
-
-The typed promotion problem remains a theorem program:
-
-When does $(R_1,R_2)$ determine $D$?
-
-Paper VII does not answer this question. It identifies image--kernel incidence
-and rank protection at the routed-product layer, while route-to-word,
-word-to-commutator, and low-order-to-depth promotions remain open. Paper VIII
-provides the observable architecture in which typed versions of those questions
-can be asked.
-
-### Wall Theory
-
-SOF does not prescribe a universal wall theory. It provides the sectorized
-observable architecture in which different deformation geometries produce
-different walls:
-
-| Branch | Deformation variable | Wall or degeneration |
-|--------|----------------------|----------------------|
-| Spectral SOF | affine projection / spectral parameter | collision and spectral walls |
-| Accessibility SOF | generator weights / observable-family deformation | accessibility walls |
-| Filtration SOF | state mixing / coherence variation | filtration degeneration |
-
-### Future SOF Program
-
-The next program stages are:
-
-| Paper | Program stage |
-|-------|---------------|
-| Paper IX | observable dynamics, deformation geometries, wall discriminants |
-| Paper X | SOF registry, cross-species observable diagnostics, and universality |
-
-Paper VIII fixes the object architecture. Paper IX studies how SOF observables
-evolve after a deformation geometry is chosen. The bridge between the two is
-not the strict category $\mathsf{SOF}_{\mathrm{str}}$, but the weaker
-deformation-category viewpoint $\mathsf{SOF}_{\mathrm{def}}$: a deformation is
-an arrow only after one specifies the comparison data by which observables are
-tracked along the path. Paper X tests the architecture through the SOF Registry
-and cross-species observable diagnostics.
+| Claim | Status |
+|-------|--------|
+| strict operator category and carrier-qualified Lie/Hall category | Theorem |
+| operator/word support preservation and depth monotonicity | Theorem |
+| Lie/Hall support preservation and depth monotonicity | Theorem |
+| source-specific realization and equivalence questions | Research Program |
+| automatic identification of operator/word and Lie/Hall branches | Research Program |
+| complete weak/deformation category $\mathsf{SOF}_{\mathrm{def}}$ | Research Program |
+| unconditional low-order promotion or universal completion | Research Program |
+| unique or canonical sectorization for every source system | Research Program |
 
 ### What This Paper Does Not Claim
 
 This paper does not claim:
 
-1. a complete theory of weak SOF morphisms;
-2. a universal wall theory for all SOFs;
-3. unconditional $(R_1,R_2)\to D$ completion;
-4. uniqueness of natural sectorization for every source system;
-5. equivalence between Yang-like filtration walls and RIME accessibility
-   walls.
+1. a classification of all source systems admitting a SOF realization;
+2. uniqueness of compatible sectorization;
+3. a universal wall or deformation theory;
+4. an unconditional relation between word depth and Lie depth;
+5. a complete weak morphism category;
+6. new numerical evidence for Rubik, quantum, Markov, graph, neural, or
+   other application species.
 
-The stable claim is narrower and foundational: the RIME observables are
-natural constructions on SOF data.
+The stable claim is narrower: once a compatible sectorization, a labelled
+observable alphabet, and any required filtration or Lie/Hall enrichment have
+been declared, the resulting static typed constructions admit a strict
+object language and carrier-qualified functoriality statements.
 
 ***
 
-## References
+## Conclusion
 
-**Program lineage.** Paper VIII depends on Papers IV--VII. Paper IV supplies
-the fixed spectral shadow \cite{paper4}; Paper V supplies the accessibility
-calculus \cite{paper5}; Paper VI supplies deformation and jets \cite{paper6};
-Paper VII supplies incidence geometry and promotion limits \cite{paper7}.
+This paper fixes the static typed SOF object language. The marked
+sectorization, labelled operative alphabet, observable operator system, and
+three multiplication closures remain distinct data. Routed products and full
+words form one finite-filtration branch; an optional Lie/Hall carrier forms an
+independently registered branch. Strict morphisms identify matched
+multiplication closures exactly, preserve matched witnesses, and make target
+first-hit depths non-increasing, with equality reserved for strict
+equivalence.
 
-**External background.** Many RIME examples use standard finite-dimensional
-representation theory and Wedderburn-Artin decomposition
-\cite{curtisReiner1962,serre1977,lam2001}. SOF is not a replacement for that
-decomposition. It is the sectorized observable architecture built once a
-compatible sectorization and observable family have been supplied. The strict
-morphism language is categorical bookkeeping in the standard sense
-\cite{macLane1998}.
+These results concern static objects and carrier-qualified functoriality. No
+computation, deformation field, wall classification, compiler contract, or
+application census serves as a premise for the theorem layer.
+
+***
+
+## Outlook
+
+Paper IX takes a realized SOF and studies typed deformation fields. The
+deformation variable may move projectors, observables, or both. Its walls
+must be defined as typed discriminants over a declared admissible domain.
+Paper VI supplies only a normality-gated spectral interface and pointwise
+registrations; it is not a positive moving SOF theorem.
+
+Paper X studies capability-aware compilation and Registry evidence through the
+pipeline
+
+$$
+\begin{aligned}
+\text{source and admission}
+&\longrightarrow \text{Capability Manifest}
+\longrightarrow \text{Typed SOF IR}\\
+&\longrightarrow \text{Report Profile}
+\longrightarrow \text{supported report claims}.
+\end{aligned}
+$$
+
+The strict-admission branch factors through the static realization construction
+of the present paper. The resulting pipeline is neither a universal accessibility
+ladder nor a universal dynamics theorem. The Capability Manifest, Typed SOF
+IR, and Report Profile belong to Paper X rather than to the static object
+defined here.
+
+Open promotion problems include proxy/shadow bridges and route/word criteria.
+Word/Lie comparisons, saturation certificates, and weaker comparison
+morphisms are also open. These are future typed results, not implicit
+consequences of the static category.
+
+***
+
+## Related Work and Novelty Boundary
+
+Finite-dimensional representation theory and Wedderburn--Artin decomposition
+provide the ambient structural background \cite{curtisReiner1962,serre1977,lam2001}.
+The finite-dimensional $C^*$-algebra and operator-system terminology is
+standard \cite{murphy1990cstar,paulsen2002}. The category language is standard
+mathematical bookkeeping \cite{macLane1998}.
+
+Papers IV--VII provide independent compatible interfaces: fixed spectral
+arrangements, fixed typed accessibility objects, normality-gated linearized
+registrations, and projected-composition incidence \cite{paper4,paper5,paper6,paper7}.
+They are not premises that promote one typed carrier into another. In
+particular, this paper does not identify a routed product with a full word or
+a commutator with Lie depth.
+
+The contribution here is the marked static SOF object language: sector
+projectors remain marked, observable labels remain visible, finite
+filtrations remain separate from positive, star, and sector-enriched
+closures, and optional Lie/Hall data are independently registered.

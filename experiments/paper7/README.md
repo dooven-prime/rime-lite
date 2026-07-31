@@ -15,7 +15,9 @@ to words or commutators, and they do not prove low-order-to-depth completion.
 
 Historical Type-IV searches, the old completion atlas, and the former
 cross-species Markov/graph appendix script live under `archive/`. They are not
-current claim authority.
+current claim authority. The Markov and graph examples were re-registered with
+native positive-word semantics under `experiments/paper10/markov_graph_sof.py`;
+the archived Paper VII script remains provenance only.
 
 `figures/paper7/render.py` reads the current `incidence_geometry.json` and
 `projected_composition_audit.json` records directly. It renders the ambient

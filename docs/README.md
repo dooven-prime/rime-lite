@@ -52,13 +52,21 @@ definition source, or claim authority for the independent papers.
 
 ## Source Authority
 
-Use the following order when statements appear to differ:
+Authority depends on the kind of statement:
 
-1. The owning paper's current manuscript and declared version boundary.
-2. The paper-owned validation artifact or canonical machine-readable schema.
-3. The public scope, program-map, and companion documentation in this
-   directory.
-4. CCS v2 for optional reproducibility records and historical context.
+- The owning versioned manuscript determines definitions, hypotheses,
+  theorem statements, ownership, and claim boundaries.
+- Declared source inputs, versioned result records, and passing validators
+  determine project-specific numerical values, censuses, digests, and
+  computational certificates.
+- Published Zenodo records determine release identity. The root release table
+  indexes those immutable identities without promoting repository candidates
+  to published versions.
+- These public companions summarize the owning sources. CCS v2 supplies
+  optional reproducibility records and historical context only.
+
+A manuscript/evidence disagreement blocks release; prose precedence does not
+resolve a numerical mismatch.
 
 Cross-paper citations identify compatible objects; they do not import
 hypotheses or promote support to composition, words, commutators, Lie depth,

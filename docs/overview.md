@@ -39,7 +39,7 @@ branches:
 
 ```text
 operator branch:
-  R_1[Y] -> routed products C_d[Y] -> full words W_d[Y]
+  R_1[Y] -> routed products Route_d[Y] -> full words W_d[Y]
          -> D_route[Y], D_word[Y]
 
 Lie branch:
@@ -82,23 +82,31 @@ research target; Paper VII does not assert a generic completion theorem.
 
 ### Papers VIII--XIII: Sectorized Observable Framework
 
-- **Paper VIII** introduces the static SOF object language and strict
-  morphisms.
-- **Paper IX** studies observable trajectories, deformation geometry, and
-  wall diagnostics.
-- **Paper X** formulates the Universal Observable Pipeline and maintains
+- **Paper VIII** introduces the static SOF object language, marked sector
+  algebra, labelled operator alphabet, optional Lie/Hall enrichment, and
+  strict carrier-qualified morphisms.
+- **Paper IX** studies typed deformation charts, one-parameter observable
+  trajectories, pullback walls, and policy-relative response diagnostics.
+- **Paper X** defines capability-aware compilation contracts, proves
+  report-compilation soundness under their declared conditions, and maintains
   Registry evidence.
-- **Paper XI** organizes observable wall records and classification
-  boundaries.
-- **Paper XII** defines the SOF Report protocol and its machine-readable
-  single-system contract.
-- **Paper XIII** defines aligned report comparison and factual audit
-  signatures.
+- **Paper XI** records admitted wall atoms as sparse trajectory-event changes
+  or incident-stratum locus germs, derives six structured coordinate
+  families, and applies nonexclusive curation and local-model eligibility.
+- **Paper XII** instantiates those contracts as a versioned SOF Report protocol
+  governed by Report Relativity, the Adapter Adequacy Boundary, and explicit
+  strict/analogue deployment and migration rules.
+- **Paper XIII** defines Audit Profiles, explicit report alignment, and sparse
+  typed comparison maps. Its standard Regime-A profile requests eight
+  historical channels without making them universal.
 
-The current published terms in Papers VIII--XIII are release facts. Migrating
-them to the branched typed architecture requires versioned paper, artifact,
-figure, and Registry updates. The frozen Paper X Registry v1 snapshot is not
-silently rewritten.
+Papers VIII and IX are published in their typed version-2 form. Papers X--XIII
+have source-addressed later-version candidates or migrations in the
+repository; their currently listed Zenodo DOIs remain release-local published
+identities. The Registry v2 snapshot supports the typed Paper X/XI evidence
+layer. The frozen Paper X Registry v1, SOFRS v1.0, and SOFAUDIT v1.0 artifacts
+remain unchanged. SOFAUDIT v2 is a source-addressed migration that preserves
+unavailable coordinates as typed states.
 
 ## Claim Discipline
 

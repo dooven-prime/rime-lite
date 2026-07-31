@@ -5,11 +5,16 @@ and boundary document: what each paper studies, which files support it, and
 which claims should not be moved across paper boundaries.
 
 Current public release: Papers I--XIII, with CCS v2 retained as an optional
-non-paper archive. Paper XIV remains active development material.
+non-paper archive. Paper XIV remains a development horizon. Publication
+identities belong to the root release table; repository manuscripts may carry
+explicitly labelled later-version candidates without mutating those releases.
 
-Paper XI currently points to its published Zenodo v1.1 record. Paper XII's
-repository manuscript and PDF are an explicit new-version candidate above the
-published v1.0 record; the eight-field SOFRS v1.0 contract remains unchanged.
+The repository typed stack uses the frozen Registry v2.0 snapshot together
+with SOFRS v2.0 and SOFAUDIT v2.0 versioned migrations. Their v1 artifacts
+remain immutable.
+Paper XII owns single-report protocol semantics, Paper XIII owns pairwise
+alignment and sparse comparison, and Paper XIV owns downstream interpretation
+and action semantics.
 
 The active repository versions of Papers I--VII are frozen in maintenance
 mode. Admissible changes are limited to explicit errata, build or certificate
@@ -31,18 +36,31 @@ canonical Rubik numerical invariants used across the early papers, see
 | Paper V | direct support, projected products, commutator support, and cutoff Lie depth | Why does Boolean support fail to determine commutator accessibility? |
 | Paper VI | linearized commutativity/normality constraints and pointwise typed registrations | Which tangent directions preserve the declared constraints, and which samples pass the spectral gates? |
 | Paper VII | incidence geometry, rank protection, and promotion limits | When do nonzero projected factors compose? |
-| Paper VIII | finite SOF data, strict morphisms, and naturality | What is the sectorized observable object? |
-| Paper IX | SOF deformations and observable trajectories | How do SOF observables evolve under deformation? |
-| Paper X | Universal Observable Pipeline and SOF Registry evidence | Why do different species share one observable pipeline? |
-| Paper XI | observable wall records, signatures, wall spectra, and taxonomy | Which SOF wall records can be classified, and by what local or global theory? |
-| Paper XII | SOF Diagnostic Protocol and SOFRS v1.0 | How does SOF produce versioned, claim-qualified single-system reports? |
-| Paper XIII | SOF Report Alignment, fixed-fiber pseudometrics, and audit signatures | How can two SOF Reports be aligned and compared in a domain-independent way? |
+| Paper VIII | marked static SOF objects, typed filtrations, and strict morphisms | What is the sectorized observable object, and what is preserved under strict morphisms? |
+| Paper IX | typed dynamic fields, deformation charts, and observable trajectories | Which typed SOF fields can be compared continuously, and where can their walls occur? |
+| Paper X | capability-aware compilation theory and SOF Registry evidence | Under which contracts can typed claims be compiled without manufacturing evidence or crossing carrier boundaries? |
+| Paper XI | typed wall records, profile-relative coordinates, multi-label taxonomy, and local-model eligibility | How can admitted wall data be organized without redefining walls or assigning an intrinsic type to the source system? |
+| Paper XII | versioned reporting protocol and epistemic boundary (SOFRS v2.0) | What does a compiled report represent, what remains the adapter's responsibility, and how are strict and analogue reports migrated with alignment-ready provenance? |
+| Paper XIII | Audit Profiles, SOF Report Alignment, sparse typed comparison maps, and fixed-fiber pseudometrics | How can two SOF Reports be aligned and compared without manufacturing unavailable coordinates? |
 
 Development horizon:
 
 | Paper | Object | Question |
 |-------|--------|----------|
 | Paper XIV | context-indexed signature semantics $\operatorname{Sem}_{\Gamma,i}:\Delta_i\to\mathcal I_i$ | What does each alignment-signature difference mean before candidate actions and policy selection? |
+
+The artifact chain is:
+
+```text
+typed SOF objects and findings
+  -> .sofreport
+  -> .sofaudit
+  -> .sofdecision
+```
+
+The first artifact describes one declared realization, the second compares two
+aligned reports, and the third is policy-relative. None may be imported
+backward into the preceding layer.
 
 The expanded sections keep the objects and claim boundaries of Papers I--VII
 separate. Their shared computational realization does not create a formal
@@ -246,19 +264,26 @@ This repository does not study:
 
 Avoid Phase-1 subgroup explanations for the spectral boundary. The corrected interpretation is the co-block support boundary described in Paper I and CCS, not Phase-1 invariance.
 
-## Source-of-Truth Order
+## Authority Boundaries
 
-When documents disagree, use this order:
+Authority is typed rather than represented by one universal precedence list:
 
-1. current paper markdown for an explicit new-version manuscript or active
-   revision candidate;
-2. frozen Zenodo releases as immutable authority for what that historical
-   version published, not for later corrected claims;
-3. paper-specific certificates, versioned schemas, Registry snapshots, and
-   declared tests;
-4. `ccs/canonical_specification.md` as an optional index of registered Paper
-   I--II computations and history only;
-5. overview and navigation documents such as this file.
+- **Semantic authority:** the owning versioned manuscript determines
+  definitions, hypotheses, theorem statements, ownership, and claim
+  boundaries. Public interface documents summarize those meanings; planning
+  and archive notes do not replace them.
+- **Evidence authority:** declared source inputs, the owning versioned result
+  record, and its passing validator determine public numerical values,
+  censuses, digests, and computational certificates. Manuscript prose states
+  the meaning and scope of those claims but does not override a conflicting
+  result record.
+- **Release-identity authority:** a published Zenodo record fixes the title,
+  authorship, version, files, DOI, and date of that historical release. The
+  root release table indexes those identities; a repository candidate does not
+  mutate them.
 
-`HISTORY.md` records why a historical statement was superseded. It does not
-prove the replacement theorem.
+A disagreement between manuscript prose and its owning evidence blocks a new
+release rather than being resolved by prose precedence.
+`ccs/canonical_specification.md` remains an optional Paper I--II computation
+and history index. `HISTORY.md` records why a historical statement was
+superseded; neither file proves a replacement theorem.

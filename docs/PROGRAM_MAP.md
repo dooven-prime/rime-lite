@@ -1,6 +1,6 @@
 # RIME Program Map
 
-**Date**: 2026-07-28
+**Date**: 2026-07-31
 **Status**: public narrative architecture map for Papers I--XIII, with a
 Paper XIV horizon.
 
@@ -66,9 +66,13 @@ Paper IV:      fixed finite collision arrangements and conditional spectral quot
 Paper V:       local direct-support and commutator-accessibility theory
 Paper VI:      normality-gated point samples and moving-field research boundary
 Paper VII:     incidence geometry, rank protection, and promotion limits
-Paper VIII:    SOF object layer and strict morphisms
-Paper IX:      SOF deformation geometry and observable trajectories
-Paper X:       Universal Observable Pipeline and registry evidence
+Paper VIII:    marked static SOF objects and strict morphisms
+Paper IX:      typed dynamic fields, deformation charts, and walls
+Paper X:       capability-aware compilation theory and Registry evidence
+Paper XI:      typed wall morphology, coordinate profiles, and taxonomy
+Paper XII:     versioned reporting protocol and epistemic boundary
+Paper XIII:    aligned sparse report comparison
+Paper XIV:     context-indexed interpretation and action semantics (horizon)
 ```
 
 Program invariant / slogan:
@@ -113,9 +117,9 @@ The active architecture requires carrier-qualified names.
 | V | Local support/commutator theory | `R_1^Lie`, routed `X`-products, `X`-word support, `R_2^Lie`, and `D_Lie` | Why does Boolean support fail to determine commutator accessibility? |
 | VI | Linearized commutativity geometry | weighted QT/HT pairs, linearized constraints, and normality-gated point registrations | Which linearized directions preserve the declared constraints, and which samples pass the spectral registration gates? |
 | VII | Projected-composition incidence | composable projected factors and fixed-rank incidence strata | When do nonzero factors compose, and what does local incidence fail to promote? |
-| VIII | SOF object theory | finite SOF data, strict morphisms, naturality | What is the sectorized observable object? |
-| IX | Observable dynamics | SOF deformations, trajectories, wall pullbacks, rate separation | How do SOF observables evolve under deformation? |
-| X | Observable pipeline | source systems, sectorization origins, registry evidence | Why do different species share one observable pipeline? |
+| VIII | SOF object theory | marked sector algebra, labelled operator alphabet, typed filtrations, optional Lie/Hall enrichment, and strict functoriality | What is the sectorized observable object? |
+| IX | Observable dynamics | typed deformation charts, one-parameter trajectories, wall pullbacks, and policy-relative rate separation | How do comparable SOF observables evolve along a declared deformation? |
+| X | Compilation theory | Capability-sound compiler contracts, typed claims, and Registry evidence | Which capability-supported conclusions may a typed compiler emit? |
 
 ### Interface Connections, Not a Reading Order
 
@@ -152,8 +156,8 @@ the finite-arrangement theorem and the exact census of the displayed rational
 nine-point set are unconditional; identification of that set with the exact
 Rubik QT/HT joint spectrum is a separate numerical registration and yields an
 exact Rubik quotient only conditionally.
-Papers VIII--X then package the sectorized observable object, deformation
-dynamics, and cross-species observable pipeline.
+Papers VIII--X then package the sectorized observable object, typed
+deformation fields, and capability-aware compilation interface.
 
 Papers IV--VII form a neighboring family of compatible, self-contained
 interfaces:
@@ -168,76 +172,100 @@ Paper VII   routed-product incidence and promotion limits
 The post-Paper VII SOF papers are organized around their own declared objects:
 
 ```text
-Paper VIII  SOF object layer, strict morphisms, and naturality
-Paper IX    SOF deformation geometry and wall dynamics
-Paper X     Universal Observable Pipeline and registry evidence
-Paper XI    Observable Wall Taxonomy
-Paper XII   SOF Diagnostic Protocol and SOF Report Specification
-Paper XIII  SOF Report Alignment and induced comparison signatures
+Paper VIII  marked static SOF objects, typed filtrations, strict morphisms, and functoriality
+Paper IX    typed dynamic fields, deformation charts, trajectories, and walls
+Paper X     capability-aware compilation theory and Registry evidence
+Paper XI    typed wall records, coordinate profiles, taxonomy, and local-model eligibility
+Paper XII   versioned reporting protocol and epistemic boundary (SOFRS v2.0)
+Paper XIII  Audit Profiles, SOF Report Alignment, and sparse typed comparison maps
 Paper XIV   context-indexed interpretation and action semantics (horizon)
 ```
 
-The descriptions of Papers VIII--XIII below report their published,
-release-local objects. Their bare ladder, repair, and wall terminology is not a
-cross-paper identification of operator support, routed composition, full-word
-support, commutator support, and Lie depth. Migrating those papers to the
-branched typed architecture requires an explicit versioned reopening, updated
-artifacts and figures, and a new Registry version; the frozen Paper X Registry
-v1 snapshot remains unchanged.
+The published releases of Papers VIII--XIII remain release-local objects.
+Their bare ladder, repair, and wall terminology is not a cross-paper
+identification of operator support, routed composition, full-word support,
+commutator support, and Lie depth. Papers VIII and IX are published in their
+typed version-2 form. Repository copies of Papers X--XIII contain explicitly
+labelled later-version candidates or migrations relative to their currently
+listed release identities. The Registry v2 snapshot supports the Paper X/XI
+typed evidence layer; SOFRS v2 and SOFAUDIT v2 provide source-addressed
+migrations. The published Paper X Registry v1, SOFRS v1.0, and SOFAUDIT v1.0
+artifacts remain unchanged.
 
-Published Paper VIII asks what the object is and proves its release-local
-naturality statements on strict SOF data. Its carrier and depth semantics must
-remain explicit. Paper IX asks how SOF objects deform
-and why different deformation spaces generate different wall geometries. Paper
-X asks why broad external species can enter one observable pipeline. Paper XI
-classifies observable wall records, signatures, spectra, and taxonomy while
-keeping ADE as a smooth-branch local model only. Paper XII introduces the
-eight-field SOF Report Specification (SOFRS) v1.0 for one declared realization
-or diagnostic probe system. It separates envelope validity from scientific
-protocol admission, makes report relativity explicit, and distinguishes
-white-box, trajectory-based, and API-level behavioral reports. Three
-representative reports establish the reading protocol; a cross-domain
-validation section then tests portability without identifying native
-mechanisms. Its Black-Box SOF Diagnostic Principle states that a white-box
-realization is sufficient but not necessary: stable probe sectors, measurable
-outputs, evaluator provenance, and a weak claim boundary can support a
-behavioral report. The slogan **No weights required. Only observables.** is a
-protocol-level statement; white-box realizations may still use internal
-weights or operators.
+The main ownership chain is:
+
+```text
+Paper VIII: static objects
+  -> Paper IX: typed dynamic fields
+  -> Paper X: compilation theory
+  -> Paper XI: wall morphology and taxonomy
+  -> Paper XII: reporting protocol and epistemic boundary
+  -> Paper XIII: aligned sparse comparison
+  -> Paper XIV: policy-relative interpretation and action
+```
+
+Paper VIII asks what the marked static object is and proves carrier-qualified
+functoriality statements on strict SOF data. Paper IX asks how typed SOF fields
+deform and why distinct carriers generate distinct wall geometries. Paper X
+owns the Capability Manifest, Typed SOF IR, Report Profile, compiler soundness,
+and Registry evidence architecture. Paper XI records admitted walls, derives
+profile-relative coordinates, and applies nonexclusive taxonomy tags while
+keeping ADE behind a smooth-branch eligibility gate. Paper XII does not
+recreate the compiler contracts. It instantiates them as SOFRS v2.0 through
+three pillars: Report Relativity, the Adapter Adequacy Boundary, and the
+Versioned Reporting Protocol.
+
+Under that protocol, a domain adapter emits a Capability Manifest and Typed
+SOF IR, and a Report Profile enables only modules supported by declared
+carriers, conventions, policies, and evidence. `strict_sof` requires finite
+complex $(V,Q,Y)$ data and structural admission. `diagnostic_analogue` requires
+provenance, an analogue mapping, and a negative strict boundary and cannot
+instantiate an SOF theorem. The frozen eight-field SOFRS v1.0 reports remain
+source-addressed compatibility inputs. The slogan **No weights required. Only
+observables.** remains protocol-level: weights are neither necessary nor
+sufficient for strict admission.
 
 The protocol boundary is explicit: Paper XII is the single-system report
 language, Paper XIII is the aligned comparison language, and Paper XIV is the
-context-indexed action-semantics language. A `Repair Matrix` in SOFRS records
-observed repair; it is not an intervention instruction. Common report syntax
-does not itself supply sector alignment, observable alignment, normalization,
-or a cross-report difference.
+context-indexed action-semantics language. A repair finding in SOFRS v2.0 is
+carrier-qualified and descriptive; it is not an intervention instruction.
+Common compiler contracts do not themselves supply sector alignment,
+observable alignment, normalization, or a cross-report difference.
 
-Paper XI keeps three computational boundaries explicit. Its trajectory
-audit counts only adjacent observable-status changes, so a static frozen pair
-is not a wall event. Its 166-configuration redundancy audit excludes
-codimension, cross-species density, and trajectory-only quantities from the
-snapshot PCA; the resulting three-component 95% summary is empirical, not an
-orthogonal invariant-basis theorem. Its invariant-block eigenbranch audit finds
-no $A_2\to A_1+A_1$ split candidate on the tested Rubik slices, so sorted
-pair-gap responses are not promoted to $A_n$ adjacency evidence.
+Paper XI keeps three computational boundaries explicit. Its typed v3.3 census
+preserves 28 source rows but admits only 8 wall events and 2 wall-locus samples
+to the main profile-relative spectrum; static findings and proxy diagnostics
+remain outside it. Its trajectory audit stores independent typed pair-state
+components and distinguishes pair events from field changes. Its
+invariant-block eigenbranch audit finds no $A_2\to A_1+A_1$ split candidate on
+the tested Rubik slices, so sorted pair-gap responses are not promoted to
+$A_n$ adjacency evidence.
 
 Paper XIII begins only after two single-system reports exist. Its primary object
 is the alignment $(\mathcal R^\star,\widehat{\mathcal R},
 \Phi_{\mathrm{sec}},\Phi_{\mathrm{obs}})$ consisting of a reference report, a
 target report, and explicit sector and observable alignments. The comparison
 specification $\Theta$ records normalization, metric, depth semantics, thresholds,
-parameter synchronization, and aggregation. For fixed $\Theta$, the typed operator
-$\operatorname{Compare}_{\Theta}:\mathsf{SOFReportAlign}\to\mathsf{AuditSignature}$
-maps the alignment to the eight-dimensional comparison signature
-$\Delta_{\mathrm{audit}}$, serialized inside a `.sofaudit` artifact. GridWorld,
+parameter synchronization, and aggregation. An Audit Profile selects the
+jointly aligned capabilities, producing a sparse typed map
+$\Delta_{\mathrm{audit}}^{P_{\mathrm{audit}}}$ rather than a mandatory
+eight-dimensional vector. The historical eight channels form the Standard
+Regime-A Audit Profile. GridWorld,
 SIR, Traffic, and Compiler IR are controlled-reference protocol validations;
-latent and black-box World Model alignments remain potential deployment regimes,
+latent and black-box World Model alignments remain potential comparison regimes,
 not Paper XIII contributions or current evidence. The regimes describe increasing
 uncertainty in constructing the alignment object, not increasingly powerful
 algorithms. Three additional Compiler, Traffic, and GridWorld
 before/after controls show that a nonzero alignment signature records change, not
 failure: their raw signatures are retained while a declared transformation
 contract produces a separate zero-residual evaluation.
+
+SOFAUDIT v2 inherits Paper X record-kind, carrier, policy, evidence, and
+promotion guards. Its `audit_profile` selects requested coordinates and its
+`coordinates` map records `ALIGNED`, `MISMATCH`, `NOT_DECLARED`,
+`NOT_APPLICABLE`, `INCOMPARABLE`, or `UNRESOLVED`. The v2 migration preserves
+28 frozen v1 records by digest and converts the legacy `999` policy sentinel
+to `UNREACHED_AT_CUTOFF` with an explicit cutoff.
 
 Paper XIV remains a development horizon. Its intended question is how a
 declared context interprets a nonzero comparison coordinate before any
@@ -317,7 +345,7 @@ Compatible signatures:
 admissible sector fields
   +-- registered operators Y
   |     -> direct blocks R_1[Y]
-  |     -> routed products C_d[Y]
+  |     -> routed products Route_d[Y]
   |     -> full words W_d[Y]
   |     -> D_route[Y] and D_word[Y]
   |
@@ -345,7 +373,7 @@ two-step support paths exist while all projected products vanish.
 General static objects:
 
 ```text
-operator branch: (Q,Y), R_1[Y], C_d[Y], W_d[Y], typed depths
+operator branch: (Q,Y), R_1[Y], Route_d[Y], W_d[Y], typed depths
 Lie branch:      (Q,X,H), R_1^Lie, R_2^Lie, D_Lie
 ```
 
@@ -755,7 +783,7 @@ support claim are retired from current authority.
 On a certified chart, future Paper VI work must carry separate trajectories:
 
 ```text
-operator branch: R_1[Y](w), C_d[Y](w), W_d[Y](w), typed word depths
+operator branch: R_1[Y](w), Route_d[Y](w), W_d[Y](w), typed word depths
 Lie branch:      R_1^Lie(w), R_2^Lie(w), D_Lie(w)
 ```
 
@@ -866,7 +894,8 @@ same object as Lie depth or composition depth.
 Prefer:
 
 - operator direct support `R_1[Y]`,
-- routed projected composition `C_d[Y]`,
+- routed projected composition `Route_d[Y]`
+  (`C_d[Y]` only in the frozen Papers III/VII compatibility interface),
 - full-word support `W_d[Y]`,
 - word depth `D_word[Y]`,
 - Lie direct support `R_1^Lie`,
@@ -1038,7 +1067,7 @@ read back into them only as bounded discussion-level context:
 ## 12. One-Sentence Program Summary
 
 The RIME program starts from the Rubik representation as a finite reproducible
-laboratory, extracts spectral and accessibility geometry, studies how those
-geometries deform across generator-set moduli spaces, and develops typed
-certificates for when support information survives projection, composition,
-summation, and Lie antisymmetrization.
+laboratory and develops a typed stack from static sectorized observable
+objects through deformation, compilation, wall records, single-report
+serialization, aligned comparison, and policy-relative interpretation, while
+requiring an explicit certificate for every promotion across carriers.

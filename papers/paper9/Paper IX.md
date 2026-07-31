@@ -1,975 +1,1154 @@
 # Observable Dynamics of Sectorized Observable Frameworks
 
-### Deformations, Rate Separation, and Observable Dynamics
+### Typed Deformations, Observable Trajectories, and Wall Pullbacks
 
 **WuJun Chen**
 
-Independent Researcher | RIME Project | 2026
+Independent Researcher | RIME Program | 2026
 
-*This paper is Part IX of the RIME program. Paper VIII establishes the static
-object layer of Sectorized Observable Frameworks: SOFs, strict morphisms,
-categories, and natural accessibility constructions. Paper IX studies
-observable dynamics: how SOFs deform, how observable trajectories evolve, how
-different time scales appear, and why different deformation spaces produce
-different observable dynamics over the same observable architecture.*
+*This paper (Paper IX of the RIME program) develops the typed deformation layer
+over Paper VIII's static SOF object language while keeping trajectories, wall
+pullbacks, and response diagnostics relative to declared charts, paths,
+carriers, and policies.*
 
 ***
 
 ## Abstract
 
-**Problem.** Paper VIII identifies the Sectorized Observable Framework (SOF)
-as the common observable architecture in which the RIME observables $R_1$, $R_2$, $D$, and
-$\mathcal J_{\mathrm{acc}}$ arise naturally. The next question is dynamic:
-how do these observables behave when the SOF itself varies? The difficulty is
-that different systems deform different data. Rubik deforms generator weights;
-Yang-like systems deform states; Markov systems deform transition operators;
-graphs deform adjacency or Laplacian data; quantum systems deform Hamiltonians
-or gate families.
+**Problem.** Paper VIII defines a SOF together with a marked sectorization, a
+labelled observable alphabet, and separate operator/word and Lie/Hall carriers.
+This paper asks how these typed static objects can be compared across a declared
+deformation family without conflating carrier changes, parameterization, or
+finite-cutoff observations.
 
-**Approach.** We define a deformation of an SOF as a parameterized family
+**Approach.** We develop the corresponding dynamic layer. On an admissible
+chart, a deformation has the form
 
 $$
-\mathcal F_t=(V_t,\{Q_i(t)\},\mathcal X(t)),
-\qquad t\in T,
+\mathcal F_t=(V_t,Q(t),Y(t);X(t),\mathcal H),
+\qquad t\in U\subseteq T,
 $$
 
-viewed as a path in the provisional deformation category
-$\mathsf{SOF}_{\mathrm{def}}$.  The notation
-$\Phi_t:\mathcal F\to\mathcal F_t$ is used only as shorthand for comparison
-data that allows observable shadows to be tracked along this path.
-Accessibility deformations induce trajectories
+where $\mathcal V\to U$ is a finite-rank Hermitian bundle or a declared local
+trivialization, the label sets and filtration conventions are fixed, and each
+field is included only when that carrier is present. A typed comparison map
+places the selected fibrewise data into a fixed target space. Observable
+trajectories are obtained only after choosing a one-parameter path in the
+chart. The dynamic observables are therefore typed fields such as
 
 $$
-R_1(t),\qquad R_2(t),\qquad D(t),\qquad
-\mathcal J_{\mathrm{acc}}(t).
+R_1[Y](t),\quad \mathrm{Route}_d[Y](t),\quad W_d[Y](t),
+\quad D_{\mathrm{word}}^{(\leq d_{\max})}(t),
 $$
 
-Other SOF species induce their registered analogue shadows, such as plateau
-functions, spectral gaps, communicating-class profiles, or proxy norms.
-
-Walls are defined as loci in the deformation space where an observable shadow
-fails to be locally constant.
-
-**Results.** The main structural object is observable dynamics: the collection
-of trajectories, time scales, plateaus, and wall loci attached to an SOF
-deformation.  The first structural principle is the Observable Wall Pullback
-Principle: for an admissible SOF deformation and a discrete observable shadow
-$O$, the wall of $O$ is contained in, and under exact discriminant hypotheses
-is realized as, the pullback of a rank, support, spectral, or filtration
-discriminant of the corresponding continuous field:
+and, independently,
 
 $$
-\Sigma_O\subseteq\mathcal J^{-1}(\Delta_O),
+R_1^{\mathrm{Lie}}(t),\quad R_2^{\mathrm{Lie}}(t),
+\quad D_{\mathrm{Lie}}^{(\leq d_{\max})}(t).
 $$
 
-with equality only when the chosen discriminant exactly captures the shadow
-change.
+**Results.** The paper proves the Observable Wall Pullback Theorem: under explicit
+admissibility and local-constancy hypotheses, the wall of a discrete shadow is
+contained in the pullback of the corresponding typed rank, support, collision,
+or filtration discriminant. Equality requires pullback-exactness on the
+selected chart; a transverse one-parameter crossing supplies a geometric
+sufficient condition. An exact three-sector construction with equally
+normalized generators separates first-order direct norm scaling from
+second-order simple-commutator norm scaling under a declared threshold policy.
+A second exact exponential model proves policy-relative half-response ordering
+under a declared calibration, and a finite three-sector realization certifies
+$30<1380$. It also records an endpoint-normalized, computationally
+observed hierarchy of continuous neural-network proxies,
+$\tau_{50}^{\mathrm{end}}(K_0)<\tau_{50}^{\mathrm{end}}(K_1)
+<\tau_{50}^{\mathrm{end}}(K_2)$, while explicitly leaving the
+proxy-to-discrete-shadow bridge open.
 
-This recovers the Paper VI hierarchy
-
-$$
-\Sigma_{\mathrm{access}}
-\subseteq
-\Sigma_{\mathrm{spec}}
-\subseteq
-\Sigma_{\mathrm{comm}}
-$$
-
-as the accessibility-deformation instance. A second structural theme is
-observable rate separation: different observable shadows may become visible on
-different characteristic time scales. This separates RIME generator-weight
-deformation from Yang-like state-mixing degeneration and from parameter-space
-rate separation in ridge-regression grokking.
-
-**Implications.** Paper IX provides the dynamic counterpart to Paper VIII's
-static unity. The unifying object is the SOF architecture; the central subject is
-observable dynamics. The same observable ladder may produce different time
-scales, plateaus, repairs, and walls because different systems move in
-different deformation spaces.
+**Boundary.** The scope is deliberately
+narrow: the typed static language is shared, but observable dynamics and wall
+geometry remain species- and deformation-dependent.
 
 ***
+
+\newpage
 
 ## Notation Table
 
 | Symbol | Meaning |
 |--------|---------|
-| $\mathcal F$ | Sectorized Observable Framework |
-| $\mathcal F_t$ | deformed SOF at parameter $t$ |
-| $(\mathcal F_t)_{t\in T}$ | SOF deformation trajectory / path |
-| $\mathsf{SOF}_{\mathrm{def}}$ | provisional deformation category for SOF paths |
+| $\mathcal F$ | a declared SOF object from Paper VIII |
+| $\mathcal F_t$ | SOF at deformation parameter $t$ |
 | $T$ | deformation parameter space |
-| $\Phi_t:\mathcal F\to\mathcal F_t$ | shorthand for comparison data along a deformation |
-| $Q_i(t)$ | moving sector projector |
-| $\mathcal X(t)$ | moving observable family |
-| $R_1(t)$ | support-shadow trajectory |
-| $R_2(t)$ | commutator-survival trajectory |
-| $D(t)$ | first-depth trajectory |
-| $\mathcal J_{\mathrm{acc}}(t)$ | accessibility-jet trajectory |
-| $\Sigma_O$ | wall of observable shadow $O$ |
-| $\Delta_O$ | target discriminant for $O$ |
-| $\tau(O)$ | characteristic time scale of an observable trajectory |
-| $\Sigma_{\mathrm{comm}}$ | commutativity locus |
-| $\Sigma_{\mathrm{spec}}$ | normal spectral chart |
-| $\Sigma_{\mathrm{access}}$ | accessibility discriminant |
+| $\mathcal V\to U$ | finite-rank Hermitian bundle on one typed deformation chart |
+| $V_t$ | fibre of $\mathcal V$ at $t$ |
+| $I,A,G_0$ | fixed sector, operative-alphabet, and Lie label sets on a chart |
+| $Q(t)$ | declared sector projectors, if the sectorization moves |
+| $Y(t)$ | labelled operator alphabet, if the operator branch is present |
+| $X(t)$ | registered Lie generator family, if the Lie branch is present |
+| $\mathcal H=\{\mathcal H_d\}_{d\geq0}$ | fixed Lie/Hall formal-expression filtration and depth convention on a chart |
+| $\Theta_\kappa$ | comparison/extraction map into the fixed target $\mathcal E_\kappa$ |
+| $\mathsf{SOF}_{\mathrm{def}}$ | interface for declared deformation records |
+| $A_Y^+(t)$ | positive associative word algebra generated by $Y(t)$ |
+| $A_Y^*(t)$ | observable star-closure generated by $Y(t)$ |
+| $A_{Q,Y}^*(t)$ | sector-enriched star-closure generated by $D_{Q(t)}\cup Y(t)$ |
+| $\mathscr R_{d,ij}[Y](t)$ | routed-product space from sector $j$ to sector $i$ |
+| $\mathscr W_{d,ij}[Y](t)$ | full-word corner space from sector $j$ to sector $i$ |
+| $R_1[Y]$ | direct support for a labelled operator family |
+| $\mathrm{Route}_d[Y]$ | routed-product shadow at route depth $d$ |
+| $W_d[Y]$ | full labelled word shadow at word length $d$ |
+| $D_{\mathrm{route}}[Y],D_{\mathrm{word}}[Y]$ | exact first-hit depths in $\mathbb N\cup\{\infty\}$ |
+| $D_\kappa^{(\leq d_{\max})}$ | truncated depth in $\{1,\ldots,d_{\max},\mathrm{unreached}\}$ |
+| $R_1^{\mathrm{Lie}}$ | direct support for a registered Lie family |
+| $R_2^{\mathrm{Lie}}$ | projected simple-commutator support |
+| $D_{\mathrm{Lie}}$ | exact first-hit depth in a declared Hall/Lie filtration |
+| $J_\kappa$ | continuous target-space field for typed carrier $\kappa$ |
+| $\widehat O_\kappa$ | target-space feature map evaluated on $J_\kappa$ |
+| $\Sigma_O$ | wall of a selected shadow $O$ |
+| $\Delta_\kappa$ | discriminant in the target space of $J_\kappa$ |
+| $\gamma:I_\gamma\to U$ | selected one-parameter trajectory through a chart |
+| $\tau_\eta(O_{\kappa,\gamma})$ | threshold time relative to $\gamma$, normalization, norm, and policy |
+
+The symbols $R_1$, $R_2$, and $D$ without a carrier qualifier are not used as
+dynamic objects below. Exact and truncated depths use different
+symbols. The value $\mathrm{unreached}$ belongs only to a truncated field and
+is not mathematical infinity.
 
 ***
 
 ## Introduction
 
-Paper VIII answers the static question:
+Paper VIII answers the static question: what data constitute a SOF and which
+typed constructions are functorial under strict morphisms \cite{paper8}?
+This paper asks the
+next question:
 
-What is a Sectorized Observable Framework?
+> How do selected SOF observables change along a declared deformation?
 
-Paper IX answers the dynamic question:
+The answer cannot be a universal ladder. A deformation may move projectors,
+move labelled operators, move both, or change only a concrete embedding while
+leaving an abstract algebra type unchanged. Even for a single alphabet, the
+positive word algebra $A_Y^+$, the observable star-closure $A_Y^*$, and the
+sector-enriched star-closure $A_{Q,Y}^*$ are distinct. Each closure choice
+produces a different observable field. The common object is the pipeline for
+constructing and measuring them, not a universal law of dynamics.
 
-How does a Sectorized Observable Framework evolve?
+Schematically, the typed static data vary as
 
-The guiding principle is:
+$$
+t\longmapsto
+\bigl(
+Q(t),Y(t),E_Y(t),
+\{\mathscr R_d[Y](t),\mathscr W_d[Y](t)\}_{d\geq 1},
+A_Y^+(t),A_Y^*(t),A_{Q,Y}^*(t),
+X(t),\mathcal H
+\bigr),
+$$
 
-same observable architecture, different deformation geometry,
-different observable dynamics.
+with only the components present in the declared realization retained. This
+single notation does not merge their wall types. It instead separates direct
+support walls, routed-space rank walls, word-space dimension walls,
+star-algebra type walls, word-depth walls, and Lie-depth walls. Closure fields
+record what is ultimately generated; finite filtrations record how and at what
+first length it is generated.
 
-This distinction is necessary because SOF is an observable architecture, not a
-universal dynamics or wall theory. It records sectors, observables, projected
-blocks, support, commutators, depth, and jets. A trajectory or wall appears only
-after a deformation space has been chosen.
+The central distinction is:
 
-The central observation is that the same observable ladder can behave very
-differently depending on what is allowed to vary:
+> Sectorization is source-dependent, while comparison data are chart-dependent.
+> The typed object and deformation-record interfaces are shared; observable
+> dynamics remain deformation-dependent.
 
-| System | Deformation variable | Expected dynamics |
-|--------|----------------------|-------------------|
-| Rubik / RIME | generator weights or observable family | accessibility walls, fragmentation, nonmonotone plateaus |
-| Yang-like filtration | state or density matrix | monotone filtration degeneration |
-| Markov | transition or rate operator | communicating-class and transport changes |
-| Graph | adjacency or Laplacian | rewiring, spectral jumps, transport changes |
-| Quantum | Hamiltonian or gate family | circuit accessibility and spectral response |
+The distinction is operational. A deformation family over $T$ is not yet a
+time trajectory. A trajectory additionally chooses a map
+$\gamma:I_\gamma\to T$ from an ordered real interval and a typed chart along
+its image. A wall is not a primitive object of the static SOF. It is a failure
+of local constancy of a selected shadow on a chart or along such a trajectory.
 
-Paper IX therefore provides **Dynamic Unity**: different deformation spaces
-generate different observable dynamics over a common observable architecture.
+### Dynamic Data Are Typed
+
+For an operator SOF, the available fields may include
+
+$$
+R_1[Y](t),\quad \mathrm{Route}_d[Y](t),\quad W_d[Y](t),
+\quad D_{\mathrm{route}}^{(\leq d_{\max})}[Y](t),\quad
+D_{\mathrm{word}}^{(\leq d_{\max})}[Y](t).
+$$
+
+For a separately registered Lie/Hall carrier, the available fields may include
+
+$$
+R_1^{\mathrm{Lie}}(t),\quad R_2^{\mathrm{Lie}}(t),\quad
+D_{\mathrm{Lie}}^{(\leq d_{\max})}(t).
+$$
+
+These two lines represent parallel audit branches. No equality between word
+support, routed support, commutator support, and Lie depth is assumed. A
+promotion from one line to another needs a separate theorem or certificate.
+
+The Boolean routed and word shadows sit over the actual moving corner spaces
+
+$$
+\mathscr R_{d,ij}[Y](t)
+\quad\text{and}\quad
+\mathscr W_{d,ij}[Y](t).
+$$
+
+Their dimensions and ranks can define walls even when a thresholded support
+shadow does not change. They must also be distinguished from the saturated
+corners
+
+$$
+Q_i(t)A_Y^+(t)Q_j(t),\qquad
+Q_i(t)A_Y^*(t)Q_j(t),\qquad
+Q_i(t)A_{Q,Y}^*(t)Q_j(t).
+$$
+
+The first is positive-word saturated, the second is star-word saturated, and
+the third permits sector projectors as internal route separators.
+
+### Exact and Truncated Depth Fields
+
+For any declared route, word, or Hall filtration with level shadows
+$O_{\kappa,d}(t)$, the exact first-hit depth is
+
+$$
+D_\kappa(t)
+=
+\inf\{d\geq1:O_{\kappa,d}(t)=1\}
+\in\mathbb N\cup\{\infty\}.
+$$
+
+The corresponding cutoff record is a different field:
+
+$$
+D_\kappa^{(\leq d_{\max})}(t)
+=
+\begin{cases}
+D_\kappa(t),&D_\kappa(t)\leq d_{\max},\\
+\mathrm{unreached},&\text{otherwise}.
+\end{cases}
+$$
+
+An exact finite first-hit depth $D_\kappa(t)=d$ may be reported only from a
+first-hit certificate consisting of a witness at level $d$ together with
+verified non-hits at every lower level $1,\ldots,d-1$. A witness at level $d$
+alone establishes only
+
+$$
+D_\kappa(t)\leq d.
+$$
+
+Exact infinity additionally requires an appropriate closure or saturation
+certificate. A finite computation must therefore distinguish: first hit
+certified at $d$; hit observed by $d$ with minimality unaudited; and unreached
+through $d_{\max}$. The last case has truncated-field value
+$\mathrm{unreached}$ and compiler-facing result state
+`UNREACHED_AT_CUTOFF`; neither denotes mathematical infinity. Consequently, a
+cutoff wall
+$\Sigma_{D_\kappa^{(\leq d_{\max})}}$ may depend on $d_{\max}$ and must not be
+identified with an exact-depth wall.
+
+### Deformation Classes
+
+The following cases are distinct:
+
+| Class | Moving data | Typical question |
+|-------|-------------|------------------|
+| fixed sectors | $Q(t)=Q$, $Y(t)$ varies | how does one family redistribute support? |
+| moving sectors | $Q(t)$ varies, $Y(t)=Y$ | how does a changing coarse coordinate system alter shadows? |
+| joint deformation | both $Q(t)$ and $Y(t)$ vary | which field is responsible for a wall? |
+| positive word closure | $A_Y^+(t)$ varies | does positive-word saturation change? |
+| observable star-closure | $A_Y^*(t)$ varies | does adjoint closure change the corner structure? |
+| sector-enriched closure | $A_{Q,Y}^*(t)$ varies | do marked routed corners change? |
+| abstract star-algebra | a Wedderburn type of $A_Y^*$ or $A_{Q,Y}^*$ is compared | what is invisible to abstract type alone? |
+
+An unchanged abstract Wedderburn type of either star-closure does not imply
+that the marked sector corners remain unchanged; a changed concrete embedding
+does not by itself imply a change in the abstract star-algebra type. No
+Wedderburn claim is made for $A_Y^+$ unless semisimplicity is established
+separately.
 
 ***
 
-## Related Work: Observable Dynamics Precedents
+## Related Work and Novelty Boundary
 
-This paper uses related work as precedent for observable dynamics, not as
-theorem support for SOF. The three most relevant external frameworks occupy
-different roles.
+The external results below provide precedents for dynamic phenomena. They are
+not theorems about SOF.
 
-### Rate Separation in Parameter Space
+### Parameter-Space Rate Separation
 
-Xu, Vardi, and Safran's ridge-regression analysis of grokking
-\cite{xuVardiSafran2026grokking} proves a clean rate separation between two
-parameter-space directions:
-
-$$
-\theta=\theta_{\parallel}+\theta_{\perp}.
-$$
-
-The data-visible component $\theta_{\parallel}$ evolves quickly under the
-empirical loss, while $\theta_{\perp}$ is controlled only by weight decay and
-therefore evolves slowly. This is not an SOF theorem and not an accessibility
-statement. Its relevance is structural: it shows that different directions of
-a deformation may become visible on different time scales.
-
-Paper IX studies the analogous question in observable space:
+Xu, Vardi, and Safran prove a rate separation in ridge regression between a
+data-visible row-space component and an orthogonal component controlled only by
+weight decay \cite{xuVardiSafran2026grokking}. Writing
 
 $$
-O_1(t),\ldots,O_k(t)
-\quad\leadsto\quad
-\tau(O_1),\ldots,\tau(O_k).
+\theta=\theta_{\parallel}+\theta_{\perp},
 $$
 
-Neural-network activations give a concrete source of observable-space
-predictions.  Changing the activation changes both the induced sectorization
-and the effective observable family: a trivial linear activation gives one
-sector, ReLU gives hard activation sectors, GeLU gives soft response sectors,
-and Top-k activations give rank-jump sectors.  Thus the same weight matrices
-may produce different $R_1/R_2$ profiles, and potentially different depth
-profiles once a training filtration is specified, when viewed through different
-activation-induced SOFs.  The corresponding Paper IX prediction is that
-activation families can systematically change observable time-scale ratios
-once the sectorized observables are coupled to training dynamics.
+their result gives a fast channel driven by the empirical loss and a slow
+channel driven by regularization. This provides a mechanism-separated
+precedent for asking whether a comparable separation can be measured in
+observable space, without identifying $\theta_{\parallel}$ or
+$\theta_{\perp}$ with any SOF carrier.
 
-A small training-coupled diagnostic supports the basic rate hierarchy for raw
-observable proxies: for both ReLU and GeLU, the measured half-response times
-satisfy
+### Long Plateaus
 
-$$
-\tau(K_0)<\tau(K_1)<\tau(K_2),
-$$
+Prethermalization provides a precedent for fast transients followed by long
+plateaus and delayed visibility of slower effects
+\cite{abaninDeRoeckHoHuveneers2017prethermalization}. This motivates studying
+plateau observables in SOFs, but no prethermalization law is assumed here.
 
-where $K_0$, $K_1$, and $K_2$ are raw block-norm proxies for direct support,
-commutator survival, and nested-commutator depth. The computational footnote
-in Section 6.6 records the default diagnostic run. This is evidence for the
-observable-dynamics framing, not a theorem about all neural networks or all
-activation functions.
+### Wall-Crossing Formulae
 
-The conceptual point is that structures classified statically in Paper V become
-rate-bearing only after a dynamical process has been chosen.  The small NN
-audit realizes only the proxy part of this program: direct support,
-commutator-like survival, and nested-depth proxies become measurable as
-continuous time scales.  It is not a test of the discrete first-depth invariant
-$D$ itself.
+Kontsevich and Soibelman provide settings in which crossing a wall is
+accompanied by an exact transformation law
+\cite{kontsevichSoibelman2008stability}. The theorem below proves only a
+pullback inclusion for selected observable walls. An SOF wall-crossing
+transformation law remains open.
 
-The same diagnostic also separates continuous and binary effects.  The
-$K_0/K_1/K_2$ hierarchy is a continuous norm-growth phenomenon, while
-$D$-repair is a binary event in which a frozen pair becomes accessible.  In the
-small NN SOF diagnostic, $D_{\mathrm{repaired}}$ remains zero because the
-sector pairs are already connected at the binary support level; observing
-training-time $D$-repair requires more sectors, a higher binary threshold, or a
-system with genuine initial frozen pairs.
+The static typed SOF object language is inherited from Paper VIII
+\cite{paper8}.
+Papers V and VII supply independent low-order channel and incidence
+interfaces \cite{paper5,paper7}; Paper VI supplies normality-gated pointwise
+registrations and a linearized research interface \cite{paper6}. These papers
+are compatible interfaces, not a linear proof chain.
 
-Thus the available evidence supports
-$\tau(K_0)<\tau(K_1)<\tau(K_2)$ for continuous proxy observables, not an
-observed $\tau(D)$ for the discrete first-depth shadow. A direct $\tau(D)$
-audit requires a system with genuine binary accessibility repair, such as a
-structured quantum gate deformation or a Rubik continuous deformation where
-frozen sector pairs become accessible along the path.
-
-### Prethermalization and Long Plateaus
-
-Many-body prethermalization provides a second precedent. Abanin, De Roeck,
-Ho, and Huveneers' rigorous theory of many-body prethermalization
-\cite{abaninDeRoeckHoHuveneers2017prethermalization} shows that, in
-high-frequency driven quantum systems, fast microscopic dynamics can coexist
-with a long-lived effective Hamiltonian and a delayed heating time. This is
-closer to the Paper IX viewpoint than a monotone degeneration example: it has
-a fast observable regime, a long plateau, and a slow mode that becomes visible
-only after a large time scale.
-
-The SOF use is again conceptual. Prethermalization suggests that observable
-plateaus and delayed wall visibility may admit quantitative time-scale bounds
-in favorable deformation geometries.
-
-### Wall-Crossing Without a Formula
-
-Kontsevich--Soibelman wall-crossing
-\cite{kontsevichSoibelman2008stability} demonstrates that, in some settings,
-invariants jumping across walls admit exact transformation laws. The SOF
-framework developed here has wall loci and observable shadows, but no
-wall-crossing formula.
-
-Thus KS wall-crossing belongs in discussion, not in the theorem layer:
-
-| Framework | Wall data |
-|-----------|-----------|
-| KS | wall plus exact transformation formula |
-| SOF | wall plus observable shadow; transformation formula open |
-
-An exact transformation law across $\Sigma_O$ is therefore an additional
-structure to be proved for a restricted SOF class, not part of the present
-framework.
+The contribution here is the typed deformation layer: admissible deformation
+charts, response observables along declared trajectories, typed wall
+pullbacks, and rate constructions under declared policies. It does not
+promote continuous proxies to binary shadows, identify distinct carriers, or
+supply a universal wall-crossing law.
 
 ***
 
-## SOF Deformations
+## Typed SOF Deformations
 
-### SOF Deformation Definition
+### Deformation Families
 
 Let
 
 $$
-\mathcal F=(V,\{Q_i\}_{i\in I},\mathcal X)
+\mathcal F=(V,Q,Y;X,\mathcal H)
 $$
 
-be an SOF. A **deformation** of $\mathcal F$ over a parameter space $T$ is a
-family
+denote a typed SOF record. The entries after the semicolon are optional
+enrichments; the operator alphabet $Y$ and the Lie family $X$ are not silently
+identified.
+
+A deformation over a parameter space $T$ is a family of typed SOF records.
+The notation
 
 $$
-\mathcal F_t=(V_t,\{Q_i(t)\}_{i\in I_t},\mathcal X(t)),
+\mathcal F_t=(V_t,Q(t),Y(t);X(t),\mathcal H),
 \qquad t\in T,
 $$
 
-together with comparison data identifying the objects along the family on the
-parameter region where such identification is meaningful.
+is meaningful pointwise, but it does not itself compare different fibres.
+Continuity, walls, and response times are defined only after the required local
+comparison data have been supplied.
 
-The primary dynamic object is the path or family
+### Typed Deformation Charts
 
-$$
-(\mathcal F_t)_{t\in T}
-$$
+**Definition 1 (Typed Deformation Chart).** Let $U\subseteq T$. A
+$\kappa$-typed deformation chart on $U$ consists of:
 
-in the provisional deformation category $\mathsf{SOF}_{\mathrm{def}}$, not
-merely an endpoint arrow $\mathcal F_{t_0}\to\mathcal F_{t_1}$.  Observable
-trajectories are paths in $\mathsf{SOF}_{\mathrm{def}}$ after the relevant
-comparison data have been specified.
+1. a finite-rank Hermitian vector bundle $\pi:\mathcal V\to U$ with fibre
+   $V_t$, together with a local trivialization whenever matrix coordinates are
+   used;
+2. fixed finite label sets $I$, $A$, and, when present,
+   $G_0$ for sectors, operative letters, and Lie generators;
+3. continuous sections
+   $Q_i(t),Y_a(t),X_g(t)\in\operatorname{End}(V_t)$ for the declared
+   labels, where the $Q_i(t)$ form a complete orthogonal sectorization;
+4. a fixed operative word convention, positive or explicitly star-completed,
+   and a fixed Lie/Hall formal-expression filtration
+   $\mathcal H=\{\mathcal H_d\}_{d\geq0}$ and depth convention on $U$;
+5. a fixed target space $\mathcal E_\kappa$ and a declared continuous
+   comparison/extraction map $\Theta_\kappa$ from the selected fibrewise
+   carrier data into $\mathcal E_\kappa$.
 
-![Observable trajectory. Paper IX treats observable dynamics as paths
-$(\mathcal F_t)_{t\in T}$ whose shadows $R_1(t)$, $R_2(t)$, $D(t)$, and
-$\mathcal J_{\mathrm{acc}}(t)$ are tracked only where the corresponding
-comparison data are admissible.](../../figures/paper9/fig1_observable_trajectory.png)
-
-In the simplest fixed-space case,
-
-$$
-V_t=V,\qquad
-\mathcal F_t=(V,\{Q_i(t)\},\mathcal X(t)).
-$$
-
-In a fixed-sector deformation,
+The resulting target-space field is
 
 $$
-Q_i(t)=Q_i,\qquad
-\mathcal X(t)\text{ varies}.
+J_\kappa(t)
+=
+\Theta_\kappa\bigl(
+V_t,\{Q_i(t)\},\{Y_a(t)\};\{X_g(t)\},\mathcal H
+\bigr).
 $$
 
-In a moving-sector deformation, both $\{Q_i(t)\}$ and $\mathcal X(t)$ may
-vary.
+Only the components required by $\kappa$ are retained. A globally fixed
+finite-dimensional space is the special case of a trivial bundle.
 
-### Deformation Map
+Because a continuous finite-dimensional projector family has locally constant
+rank, a sector-rank change cannot occur inside one connected typed chart.
+Changes in sector rank, label sets, operative alphabets, word conventions, or
+Hall conventions are **chart-transition or schema events**. They are not
+ordinary walls of a fixed typed field unless an additional comparison
+construction is declared.
 
-For a fixed base object, a deformation can be written schematically as
+### The Deformation Record Interface
 
-$$
-\Phi_t:\mathcal F\longrightarrow\mathcal F_t.
-$$
-
-This notation does not mean that $\Phi_t$ is necessarily a strict SOF
-morphism. In Paper IX, $\Phi_t$ records the comparison data used to track
-observable shadows along the path $(\mathcal F_t)_{t\in T}$. Strict morphisms
-belong to the static category of Paper VIII.
-
-### Working Deformation Category
-
-For the purposes of Paper IX, the ambient dynamic category is the provisional
-category
+The notation $\mathsf{SOF}_{\mathrm{def}}$ denotes the class of deformation
+records used here. A record from $\mathcal F$ to $\mathcal G$
 
 $$
-\mathsf{SOF}_{\mathrm{def}}.
+\mathcal F\rightsquigarrow\mathcal G
 $$
 
-Its objects are finite SOFs. A morphism
+consists of:
+
+1. a parameter space $T$ with marked endpoints $t_-$ and $t_+$;
+2. a family $(\mathcal F_t)_{t\in T}$ satisfying
+   $\mathcal F_{t_-}=\mathcal F$ and
+   $\mathcal F_{t_+}=\mathcal G$ after the declared endpoint
+   identifications;
+3. a typed deformation chart covering each domain on which a selected field
+   is compared;
+4. endpoint comparison maps, and chart-transition data when the endpoint
+   fibres or chart schema differ;
+5. a cutoff, threshold, and saturation convention where relevant.
+
+These deformation records are not declared morphisms in a category.
+Concatenation would require a specified gluing rule, a reparameterization
+convention such as Moore paths, and a proof of associativity. None is imposed
+here. A deformation datum may be non-isometric or may change sector dimensions,
+but it must state which observables it preserves or tracks. The notation keeps
+the static strict category of Paper VIII separate from this declared dynamic
+comparison interface.
+
+### Admissibility
+
+For a selected carrier $\kappa$, a deformation is $\kappa$-admissible on
+$U\subseteq T$ when:
+
+1. a $\kappa$-typed deformation chart is declared on $U$;
+2. its comparison map defines a continuous field
+   $J_\kappa:U\to\mathcal E_\kappa$;
+3. the threshold, cutoff, and saturation policy are fixed on $U$;
+4. the target-space feature map is locally constant away from its declared
+   discriminant;
+5. any exact-depth claim states the closure or saturation certificate that
+   distinguishes $\infty$ from cutoff-unreached.
+
+Admissibility is diagnostic-specific: a family can be admissible for a
+continuous norm proxy yet inadmissible for a binary depth field.
+
+A deformation of the Hall convention itself is outside the default chart
+definition. Such a filtration-schema deformation requires level-identification
+maps between the changing conventions and is registered as a schema event,
+not silently treated as a value change of $D_{\mathrm{Lie}}$.
+
+### Carrier Packages
+
+The compact notation
 
 $$
-\mathcal F\rightsquigarrow \mathcal G
+J_{\mathrm{acc}}
+  = (J_{\mathrm{op}},J_{\mathrm{route}},J_{\mathrm{word}},J_{\mathrm{Lie}})
 $$
 
-is a deformation datum consisting of:
+is allowed only as an explicitly enumerated package. The individual fields
+have different meanings:
 
-1. a parameter space $T$ with marked endpoints $t_0,t_1$;
-2. a family of SOFs $\{\mathcal F_t\}_{t\in T}$;
-3. endpoint identifications $\mathcal F_{t_0}\simeq \mathcal F$ and
-   $\mathcal F_{t_1}\simeq \mathcal G$ in whatever weak sense is sufficient for
-   the chosen diagnostic;
-4. comparison data along $T$ allowing the relevant observable shadows
-   $R_1(t),R_2(t),D(t),\mathcal J_{\mathrm{acc}}(t)$, or their analogues, to be
-   evaluated consistently.
+| Carrier | Field examples | Typical discriminant |
+|---------|----------------|----------------------|
+| operator | $B_{ij}^{a}(t)$, $R_1[Y](t)$ | block support threshold |
+| routed | $\mathscr R_{d,ij}[Y](t)$, $\mathrm{Route}_d[Y](t)$ | routed-product-space rank/support |
+| word | $\mathscr W_{d,ij}[Y](t)$, $W_d[Y](t)$, $D_{\mathrm{word}}^{(\leq d_{\max})}(t)$ | word-space rank or truncated first hit |
+| positive associative closure | $A_Y^+(t)$ | concrete algebra, corner, or dimension change; no automatic Wedderburn type |
+| star closures | $A_Y^*(t)$, $A_{Q,Y}^*(t)$ | concrete corner or finite-dimensional $C^*$-algebra Wedderburn-type change |
+| Lie/Hall | $X_g(t)$, $R_2^{\mathrm{Lie}}(t)$, $D_{\mathrm{Lie}}^{(\leq d_{\max})}(t)$ | commutator rank/support or truncated Hall first hit |
 
-Composition is concatenation of deformation data when the endpoint comparison
-data are compatible; the identity arrow is the constant deformation. This is
-not the strict category $\mathsf{SOF}_{\mathrm{str}}$ of Paper VIII. A
-deformation morphism may be non-isometric, may change sector dimensions, and
-may preserve only support, rank, norm, plateau, or rate diagnostics. Its role
-is to make observable trajectories well-defined, not to preserve all natural
-SOF constructions strictly.
-
-The full theory of weak SOF morphisms is left open. Paper IX only uses the
-minimal deformation-category language needed to locate $\Phi_t$ formally and
-to separate dynamic comparison from strict static naturality.
-
-For the observable claims below, **admissible** means:
-
-1. the path $\{\mathcal F_t\}_{t\in T}$ is equipped with comparison data for
-   the diagnostic under discussion;
-2. the relevant sectors, or their registered analogues, can be tracked along
-   the path on the domain being studied;
-3. the continuous field underlying the diagnostic is defined along that
-   domain;
-4. the discrete shadow is locally constant away from the corresponding
-   rank, support, collision, filtration, or wall discriminant.
-
-Thus admissibility is not automatic for every formal deformation in
-$\mathsf{SOF}_{\mathrm{def}}$. It is a hypothesis attached to the chosen
-observable diagnostic.
-
-### Observable Trajectories
-
-An admissible accessibility deformation induces trajectories of the
-accessibility shadows:
-
-$$
-R_1(t),\qquad
-R_2(t),\qquad
-D(t),\qquad
-\mathcal J_{\mathrm{acc}}(t).
-$$
-
-Other SOF species induce the shadows registered for that branch:
-
-| Branch | Additional shadow |
-|--------|-------------------|
-| Spectral SOF | joint spectral arrangement, collision quotient |
-| Accessibility SOF | accessibility jet, wall hierarchy |
-| Filtration SOF | plateau functions $P_d(t)$ |
-| Markov SOF | communicating-class or transport profile |
-| Graph SOF | spectral gap, connectedness, Laplacian rank |
+The table is an audit order, not an implication diagram.
 
 ***
 
-## Walls as Observable Discontinuities
+## Observable Trajectories
+
+Let a deformation family be declared over $T$, let $U\subseteq T$ carry a
+$\kappa$-typed deformation chart, and choose a continuous one-parameter path
+
+$$
+\gamma:I_\gamma\longrightarrow U,
+\qquad I_\gamma\subseteq\mathbb R.
+$$
+
+The associated **observable trajectory** is
+
+$$
+O_{\kappa,\gamma}(s)
+=
+\widehat O_\kappa\bigl(J_\kappa(\gamma(s))\bigr),
+\qquad s\in I_\gamma.
+$$
+
+Thus, although a deformation family can be studied over a general topological
+parameter space, a response time is attached only to a selected ordered path.
+Different paths through the same family need not define the same trajectory.
+
+Examples include:
+
+$$
+\begin{aligned}
+& R_1[Y](t),\ \mathrm{Route}_d[Y](t),\ W_d[Y](t),\\
+& D_{\mathrm{route}}^{(\leq d_{\max})}[Y](t),\
+  D_{\mathrm{word}}^{(\leq d_{\max})}[Y](t),\\
+& R_1^{\mathrm{Lie}}(t),\ R_2^{\mathrm{Lie}}(t),\
+  D_{\mathrm{Lie}}^{(\leq d_{\max})}(t),\\
+& P_d^{\mathrm{state}}(t),\ \mathrm{gap}(t),\ \mathrm{proxy}(t).
+\end{aligned}
+$$
+
+The last line contains separately registered state, spectral, or proxy
+observables, not automatic identifications with the operator or Lie branches.
+In particular, $P_d^{\mathrm{state}}$ requires its own state filtration and
+depth convention; it is not the unqualified plateau of
+$D_{\mathrm{word}}$ or $D_{\mathrm{Lie}}$.
+
+![Typed observable trajectory. A typed chart first makes the selected
+fibrewise data comparable in one target space; a one-parameter path then
+defines a trajectory for one carrier. Different branches are not merged by
+the diagram.](../../figures/paper9/fig1_observable_trajectory.png)
+
+### Response Times
+
+Let $O_{\kappa,\gamma}:I_\gamma\to\mathbb R$ be a continuous scalar observable
+on an ordered interval with initial point $s_0$. For a declared threshold
+$\eta$, define the first-crossing parameter
+
+$$
+\tau_\eta(O_{\kappa,\gamma})
+=
+\inf\{s\in I_\gamma:s\geq s_0,\ O_{\kappa,\gamma}(s)\geq\eta\}.
+$$
+
+The extended-real convention is $\inf\varnothing=+\infty$. A finite sampled
+or bounded observation record must instead carry a declared right-censoring
+record, which may be displayed as `UNREACHED_ON_DECLARED_INTERVAL`; it cannot
+promote non-crossing on that interval to an intrinsic infinite response time.
+`UNREACHED_ON_DECLARED_INTERVAL` is a response-measurement censoring value,
+not the filtration result state `UNREACHED_AT_CUTOFF`. Under Compiler v1.0, it
+is represented by an `OBSERVED` response-time finding with null numerical
+value and a referenced sampling or trajectory policy declaring right
+censoring; it is not a new generic result state.
+
+Other response conventions, such as half-response or interval-censored wall
+time, must be declared separately. Response times are defined only relative to
+the chosen trajectory parameterization, observable normalization, norm,
+orientation, and threshold policy. A nonlinear reparameterization of $\gamma$
+or a rescaling of the observable generally changes $\tau_\eta$.
+
+For discrete shadows, a wall time may be interval-censored:
+
+$$
+\tau_{\mathrm{wall}}(O_{\kappa,\gamma})\in[s_m,s_{m+1}]
+$$
+
+when the sampling grid identifies only the first interval containing the
+change. A proxy half-response is not a discrete wall time.
+
+***
+
+## Typed Observable Walls
 
 ### Wall Definition
 
-Let $O$ be an observable shadow defined along a deformation
-$\mathcal F_t$. The **wall** of $O$ is the locus
+For a discrete shadow $O_\kappa$ on a $\kappa$-admissible domain $U$, define
 
 $$
-\Sigma_O
+\Sigma_{O_\kappa}
+=\{t\in U:O_\kappa\text{ is not locally constant at }t\}.
+$$
+
+For a selected trajectory $\gamma:I_\gamma\to U$, define analogously
+
+$$
+\Sigma_{O_{\kappa,\gamma}}
 =
-\{t\in T:O(\mathcal F_t)\text{ is not locally constant at }t\}.
+\{s\in I_\gamma:O_{\kappa,\gamma}
+\text{ is not locally constant at }s\}.
 $$
 
-If $O$ is continuous rather than discrete, the wall is replaced by the
-discriminant where its rank, support, stratification type, or qualitative
-regime changes.
+For a continuous field, the corresponding object is a declared discriminant
+where rank, support, collision, filtration type, or another qualitative
+regime changes. Both the continuous field and its threshold policy must be
+named explicitly.
 
-### Examples
-
-For accessibility:
-
-$$
-\Sigma_{R_1},\qquad
-\Sigma_{R_2},\qquad
-\Sigma_D
-$$
-
-record changes in support, commutator survival, and first-depth accessibility.
-
-For spectral geometry:
+Examples are
 
 $$
-\Sigma_{\mathrm{spec}}
+\Sigma_{R_1[Y]},\quad
+\Sigma_{\mathrm{Route}_d[Y]},\quad
+\Sigma_{W_d[Y]},\quad
+\Sigma_{R_1^{\mathrm{Lie}}},\quad
+\Sigma_{R_2^{\mathrm{Lie}}},\quad
+\Sigma_{D_{\mathrm{Lie}}^{(\leq d_{\max})}}.
 $$
 
-records the domain where joint spectral projectors vary coherently, while
-internal spectral walls record collisions, field changes, or arrangement
-changes.
+The notation $\Sigma_{\mathrm{access}}$ is permitted only when it is defined
+as a named union of these typed walls with a fixed domain and policy. It is not
+a primitive universal wall.
 
-For filtration geometry, a plateau wall is a locus where
+### Observable Wall Pullback Theorem
+
+**Theorem 1 (Observable Wall Pullback Inclusion).** Let $U\subseteq T$ carry a
+$\kappa$-typed deformation chart and be $\kappa$-admissible. Let
+$\mathcal E_\kappa$ be a locally connected topological space, and let
 
 $$
-P_d(t)=\#\{(i,j):D_t(i,j)\le d\}
+J_\kappa:U\longrightarrow\mathcal E_\kappa
 $$
 
-changes qualitative behavior.
+be continuous. Let $\Delta_\kappa\subseteq\mathcal E_\kappa$ be closed, and
+suppose the target feature map $\widehat O_\kappa$ is constant on every
+connected component of
+$\mathcal E_\kappa\setminus\Delta_\kappa$. For
+$O_\kappa=\widehat O_\kappa\circ J_\kappa$, one has
+
+$$
+\Sigma_{O_\kappa}\subseteq J_\kappa^{-1}(\Delta_\kappa).
+$$
+
+**Proof.** Because $\Delta_\kappa$ is closed, its complement is open. Local
+connectedness implies that each connected component of this complement is
+open. If $t\notin J_\kappa^{-1}(\Delta_\kappa)$, continuity of $J_\kappa$
+therefore guarantees a neighborhood of $t$ mapped entirely into one such
+component. The observable
+$O_\kappa=\widehat O_\kappa\circ J_\kappa$ is constant on that neighborhood,
+which proves the inclusion. $\square$
+
+**Definition 2 (Pullback-Exact Discriminant).** The discriminant
+$\Delta_\kappa$ is pullback-exact for $(J_\kappa,\widehat O_\kappa)$ on $U$
+when, for
+every $t\in J_\kappa^{-1}(\Delta_\kappa)$ and every neighborhood $N$ of $t$ in
+$U$, there exist $t_1,t_2\in N$ such that
+
+$$
+\widehat O_\kappa(J_\kappa(t_1))
+\ne
+\widehat O_\kappa(J_\kappa(t_2)).
+$$
+
+**Corollary 1 (Equality under Pullback-Exactness).** Under the hypotheses of
+Theorem 1, if $\Delta_\kappa$ is pullback-exact for the selected chart, then
+
+$$
+\Sigma_{O_\kappa}=J_\kappa^{-1}(\Delta_\kappa).
+$$
+
+**Proof.** Theorem 1 gives one inclusion. Pullback-exactness makes every point
+of the pullback a failure of local constancy, giving the reverse inclusion.
+$\square$
+
+An ambient discriminant can fail to be pullback-exact when the deformation is
+constant inside it, tangent to it, or confined to one feature stratum. Thus
+ambient exactness alone does not imply equality. The theorem is a pullback
+statement for one selected carrier; it does not identify different carriers or
+prove that a typed wall exists for every deformation.
+
+**Proposition 1 (Transverse Trajectory Crossing).** Suppose
+$\mathcal E_\kappa$ is a smooth manifold and, near
+$J_\kappa(\gamma(s_0))$, the discriminant $\Delta_\kappa$ is a smooth embedded
+hypersurface separating two local components on which
+$\widehat O_\kappa$ takes different values. Assume $s_0$ is an interior point
+of $I_\gamma$, and that $J_\kappa\circ\gamma$ is $C^1$ on an open interval
+containing $s_0$, with
+$J_\kappa(\gamma(s_0))\in\Delta_\kappa$. If
+
+$$
+\frac{d}{ds}(J_\kappa\circ\gamma)(s_0)
+\notin
+T_{J_\kappa(\gamma(s_0))}\Delta_\kappa,
+$$
+
+then $J_\kappa\circ\gamma$ crosses $\Delta_\kappa$ transversely at $s_0$ and
+
+$$
+s_0\in\Sigma_{O_{\kappa,\gamma}}.
+$$
+
+**Proof.** Transversality to a locally separating hypersurface places the
+trajectory on opposite local sides of the discriminant for parameters
+arbitrarily close to $s_0$. The feature values on those sides differ, so
+$O_{\kappa,\gamma}$ is not locally constant at $s_0$. $\square$
+
+Call $\Delta_\kappa$ **trajectory-exact** for $J_\kappa\circ\gamma$ when every
+
+$$
+s\in(J_\kappa\circ\gamma)^{-1}(\Delta_\kappa)
+$$
+
+is a local nonconstancy point of $O_{\kappa,\gamma}$. Consequently, a
+one-parameter trajectory for which every discriminant encounter satisfies
+Proposition 1 is trajectory-exact for $J_\kappa\circ\gamma$, equivalently
+pullback-exact after restriction to that trajectory.
+Tangencies, motion inside the discriminant, and crossings between sides
+carrying the same feature value remain outside this sufficient condition.
+
+![Typed wall pullback. A chart field pulls a target discriminant back to the
+deformation domain. Equality requires pullback-exactness; transverse path
+crossing is a separate sufficient test.](../../figures/paper9/fig2_wall_pullback.png)
+
+### Paper VI Boundary
+
+Paper VI supplies a normality-gated interface for pointwise registrations and
+linearized computational certificates. In the notation used here, its
+spectral gates are relevant only on domains where the selected spectral
+construction is defined:
+
+$$
+\Sigma_{\mathrm{comm}}\supseteq\Sigma_{\mathrm{normal}}
+\supseteq\Sigma_{\mathrm{spec}}^{(\nu)}.
+$$
+
+Those registrations may serve as inputs to a moving-field theory. They are not
+used here as a positive moving SOF instance, and the nonnormal fragmentation
+calculations do not support a universal wall hierarchy.
 
 ***
 
-## Observable Wall Pullback
+## Deformation Species and Boundary Cases
 
-### Principle 1 (Observable Wall Pullback)
+### Operator and Generator Deformations
 
-Let $\mathcal F_t$ be an admissible SOF deformation and let $O$ be a discrete
-observable shadow obtained from a continuous block, commutator, spectral, jet,
-or filtration field
+For a fixed sectorization, one may vary the labelled operator family:
 
 $$
-\mathcal J:T\to\mathcal E.
+Y_a\longmapsto Y_a(w).
 $$
 
-Suppose $O$ is locally constant on the complement of a discriminant
-$\Delta_O\subseteq\mathcal E$. Then the wall of $O$ is contained in the
-pullback
-
-$$
-\Sigma_O\subseteq \mathcal J^{-1}(\Delta_O).
-$$
-
-If the admissibility hypotheses are strengthened so that $\Delta_O$ exactly
-captures the rank, support, collision, or filtration changes defining $O$,
-then
-
-$$
-\Sigma_O= \mathcal J^{-1}(\Delta_O).
-$$
-
-![Wall pullback principle. Observable walls are contained in pullbacks of
-rank, support, spectral, or filtration discriminants along admissible
-observable fields. Equality is asserted only under exact discriminant
-hypotheses.](../../figures/paper9/fig2_wall_pullback.png)
-
-### Justification
-
-By assumption, $O$ is locally constant whenever $\mathcal J(t)$ remains in a
-single stratum of $\mathcal E\setminus\Delta_O$. Therefore a failure of local
-constancy can occur only when $\mathcal J(t)$ meets the discriminant. This
-gives the inclusion. If the discriminant is defined to be exactly the locus
-where the relevant rank, support, collision, or filtration type changes, then
-every point in the pullback is a wall point for $O$, giving equality.
-
-### Paper VI as an Instance
-
-In Paper VI, the admissible deformation space is the generator-set moduli
-space restricted to normal spectral charts:
-
-$$
-\Sigma_{\mathrm{spec}}\subseteq\Sigma_{\mathrm{comm}}.
-$$
-
-The accessibility jet
-
-$$
-\mathcal J_{\mathrm{acc}}
-=
-(J_{\mathrm{block}},J_{\mathrm{comm}},J_{\mathrm{depth}})
-$$
-
-is the continuous field. When $\Delta_{\mathrm{access}}$ is taken as the exact
-accessibility discriminant, the accessibility wall is the pullback of the
-rank/support discriminant:
-
-$$
-\Sigma_{\mathrm{access}}
-=
-\mathcal J_{\mathrm{acc}}^{-1}(\Delta_{\mathrm{access}}),
-$$
-
-with
-
-$$
-\Sigma_{\mathrm{access}}
-\subseteq
-\Sigma_{\mathrm{spec}}
-\subseteq
-\Sigma_{\mathrm{comm}}.
-$$
-
-This is the prototype for the Paper IX framework.
-
-***
-
-## Deformation Species
-
-### Generator Deformation
-
-In RIME generator deformation, the sectorized observable family changes by
-varying generator weights or observable weights:
-
-$$
-X_g\mapsto X_g(w).
-$$
-
-This deformation redistributes transport. Its wall behavior can include
-sector fragmentation, $R_1/R_2/D$ jumps, stable plateaus, oscillation, or
-temporary accessibility improvement.
+The resulting fields are $R_1[Y](w)$, routed shadows, or word shadows only
+after the route, word, threshold, and cutoff conventions are fixed. The moving
+closure must be identified explicitly as $A_Y^+(w)$, $A_Y^*(w)$, or
+$A_{Q,Y}^*(w)$. For the two star-closures, the concrete embedding or marked
+corners can change without a change in abstract Wedderburn type. The positive
+algebra $A_Y^+(w)$ carries no such type unless semisimplicity is separately
+proved. No generic fragmentation, plateau, or oscillation law is claimed.
 
 ### State-Mixing Deformation
 
-In Yang-like filtration systems, the natural deformation is state mixing:
-
-$$
-\rho(\varepsilon)
-=
-(1-\varepsilon)\rho_0+\varepsilon\sigma.
-$$
-
-This tends to be entropy-increasing and naturally supports monotone plateau
-degradation:
-
-$$
-1-P(\varepsilon)\sim C\varepsilon^\alpha.
-$$
-
-This is a different geometry from generator-weight deformation.
-
-### Markov Deformation
-
-For Markov systems, one may deform a transition or rate operator:
-
-$$
-P\mapsto P(\varepsilon),
-\qquad
-L_M\mapsto L_M(\varepsilon).
-$$
-
-Walls may correspond to changes in communicating classes, absorbing
-components, stationary structure, or transport support.
-
-### Graph Deformation
-
-For graph systems, one may deform adjacency or Laplacian data:
-
-$$
-A\mapsto A(\varepsilon),
-\qquad
-L\mapsto L(\varepsilon).
-$$
-
-Walls may correspond to edge rewiring, connectedness changes, spectral
-collisions, Laplacian rank changes, or transport-profile changes.
-
-### Quantum Deformation
-
-For quantum systems, one may deform Hamiltonians, gate families, or circuit
-generators:
-
-$$
-H\mapsto H(\varepsilon),
-\qquad
-U_g\mapsto U_g(\varepsilon).
-$$
-
-Walls may correspond to spectral transitions, controllability changes,
-entangling-channel changes, or accessibility-channel changes relative to a
-chosen sectorization.
-
-### Computational Footnote: Training-Coupled NN Deformation
-
-A small neural-network SOF gives a concrete diagnostic for observable
-rate-separation under a specified training dynamics.  The sectorization is
-activation-induced, the observable family is derived from trainable weight
-operators, and the measured quantities are raw off-diagonal block-norm proxies
-
-$$
-K_0(t),\qquad K_1(t),\qquad K_2(t),
-$$
-
-for direct support, commutator survival, and nested-commutator depth.  These
-continuous proxies retain scale information, unlike the normalized binary
-depth matrix.
-
-In the default run of
-`experiments/paper9/nn_training_sof_tau.py`, both ReLU and GeLU satisfy
-
-$$
-\tau_{50}(K_0)<\tau_{50}(K_1)<\tau_{50}(K_2).
-$$
-
-| Activation | $\tau_{50}(K_0)$ | $\tau_{50}(K_1)$ | $\tau_{50}(K_2)$ | final binary audit |
-|------------|------------------|------------------|------------------|--------------------|
-| ReLU | 60 | 80 | 120 | $R_1=4$, $R_2=2$, $D_{\mathrm{repaired}}=0$ |
-| GeLU | 60 | 80 | 120 | $R_1=12$, $R_2=6$, $D_{\mathrm{repaired}}=0$ |
-
-![Training-coupled NN proxy rate hierarchy. In the default diagnostic,
-$K_0$, $K_1$, and $K_2$ exhibit ordered half-response times
-$60<80<120$. This is proxy-rate evidence only; it does not identify
-$\tau(K_2)$ with a binary $\tau(D)$ event.](../../figures/paper9/fig3_nn_rate_hierarchy.png)
-
-The claim status is computational diagnostic only. The result supports
-observable time-scale separation under this training-coupled deformation, but
-it does not claim binary $D$-repair: in this small SOF all sector pairs are
-already connected at the binary depth level throughout the audit.
-
-Consequently, neural-network SOFs are used here only for proxy-rate
-diagnostics. A positive control for $\tau(D)$ requires a species with genuine
-binary repair, for example a structured entangling-gate deformation or a Rubik
-continuous deformation.
-
-### Open Bridge: The Proxy Shadow Principle
-
-The preceding diagnostic exposes a formal gap between two observable layers:
-
-the continuous proxy layer $K_0(t),K_1(t),K_2(t)$ and the discrete shadow
-layer $R_1(t),R_2(t),D(t)$.
-
-There is no theorem in this paper identifying $K_i$ with the corresponding
-discrete shadow. In particular,
-
-$$
-K_2(t)\quad\not\Rightarrow\quad D(t)
-$$
-
-without an additional bridge theorem controlling thresholds, margins, and
-shadow stability.
-
-We refer to the missing bridge as the **Observable Proxy Shadow Principle**.
-In a future theorem-level form, such a principle would specify hypotheses under
-which a continuous observable proxy $K_i(t)$ determines, approximates, or
-predicts the corresponding discrete shadow $R_i(t)$ or $D(t)$. At minimum, one
-expects conditions such as:
-
-1. a fixed threshold or calibration rule from proxy norms to binary shadows;
-2. a margin condition excluding near-threshold ambiguity;
-3. stability of the sectorization along the measured interval;
-4. compatibility between proxy order and the discrete filtration order.
-
-Paper IX does not assume this principle.  Until such a bridge is proved,
-$K_0/K_1/K_2$ audits are proxy diagnostics only. They support the broader
-observable-dynamics viewpoint, but they do not prove rate separation for
-$R_1/R_2/D$.
-
-### Example Claim-Status Stratification
-
-The examples in this paper are deliberately separated by claim status. Their
-role is not to accumulate many unrelated systems, but to show which kinds of
-evidence support observable dynamics and which kinds mark boundary cases.
-
-| Class | Examples used here | Supports | Does not support |
-|-------|--------------------|----------|------------------|
-| Positive dynamics | Paper VI generator-weight deformation on normal spectral charts; Rubik generator-weight plateau/oscillation diagnostics; engineered near-threshold accessibility with $\tau(R_1)<\tau(R_2)$ | observable trajectories and species-dependent wall behavior | a universal wall law or a full $\tau(R_1)<\tau(R_2)<\tau(D)$ theorem |
-| Negative or degenerate boundary | Yang-like state mixing; static additive noise that perturbs Lie layers simultaneously; discrete graph rewiring or unstructured quantum interpolation when no smooth mechanism-separated dynamics is specified | deformation geometry matters; the same observable architecture can produce different or degenerate wall behavior | failure of SOF itself |
-| Proxy-only diagnostics | training-coupled NN audits of $K_0/K_1/K_2$; Xu--Vardi--Safran ridge dynamics as parameter-space precedent | continuous observable or parameter rate separation | binary $D$-repair, $\tau(D)$, or a proved $K_i\to R_i/D$ bridge |
-
-Static positive witnesses, such as Clifford+CNOT giving non-Rubik
-$D_{\mathrm{repaired}}>0$, are important for the registry but are not yet
-dynamic $\tau(D)$ audits. Paper IX therefore treats them as static repair
-witnesses rather than as completed rate-hierarchy evidence.
-
-***
-
-## Rubik and Yang: A Diagnostic Contrast
-
-The Rubik/Yang comparison illustrates why Paper IX is needed.
-
-Both systems can be described by the same observable architecture. Both can
-produce plateau functions. But they deform different data.
-
-Yang-like deformation changes the state:
+A Yang-like state-mixing family may be written
 
 $$
 \rho(\varepsilon)=(1-\varepsilon)\rho_0+\varepsilon\sigma.
 $$
 
-This is a degeneration geometry. It naturally suggests laws such as
+The associated plateau or mixing observable belongs to the registered state
+carrier. It need not equal an operator accessibility field. Here the family
+serves only to distinguish state deformation from operator deformation. No
+typed wall or rate law is inferred from the available plateau summaries.
+
+### Markov, Graph, and Quantum Deformations
+
+Markov, graph, and quantum systems may vary transition operators, adjacency or
+Laplacian data, Hamiltonians, or gate families. Their registered shadows can
+include communicating-class profiles, connectedness, spectral gaps, or
+word/Lie accessibility. A discrete rewiring or an unstructured interpolation
+does not automatically define a smooth rate hierarchy. The carrier and
+deformation law must be declared before a wall or response time is compared.
+
+### Training-Coupled Neural SOF
+
+In the neural diagnostic listed as Appendix A (A3), activation-induced sectors
+and trainable weight operators define a small SOF-like realization. The
+measured quantities are continuous block-norm proxies:
 
 $$
-1-P(\varepsilon)\sim C\varepsilon^\alpha.
+K_0(t),\qquad K_1(t),\qquad K_2(t),
 $$
 
-RIME deformation changes observables or generator weights:
+for direct blocks, simple-commutator blocks, and nested-commutator blocks.
+These continuous proxies are not the typed binary fields
+$R_1^{\mathrm{Lie}}$,
+$R_2^{\mathrm{Lie}}$, or
+$D_{\mathrm{Lie}}^{(\leq d_{\max})}$.
+
+The audit uses the final declared sample $t_{\mathrm{end}}$, not an asymptotic
+limit. For each nonflat proxy, it defines the endpoint-normalized displacement
 
 $$
-X_g\mapsto X_g(w).
+\widehat K_r^{\mathrm{end}}(t)
+=
+\frac{K_r(t)-K_r(0)}
+{K_r(t_{\mathrm{end}})-K_r(0)}
 $$
 
-This is a transport-redistribution geometry. The plateau functions
+and reports the first sampled half-response
 
 $$
-P_d(w)
+\tau_{50}^{\mathrm{end}}(K_r)
+=
+\min\left\{
+t\in\mathcal G:
+\widehat K_r^{\mathrm{end}}(t)\geq\frac12
+\right\},
 $$
 
-need not degrade. They may remain constant, oscillate, or improve.
+where $\mathcal G$ is the declared training-audit grid. Thus these quantities
+are normalized by the declared endpoint and use a sampled half-response
+policy. They are distinct from the asymptotic normalization introduced in the
+calibrated construction below.
 
-The diagnostics make this distinction concrete.  Under a Rubik
-state-mixing probe, the plateau functions remain flat for
-$\varepsilon=0,\ldots,0.9$ and jump only at the extreme endpoint
-$\varepsilon=1$.  Under generator-weight deformation, the observed plateau
-sequence is oscillatory:
+The default run gives
 
 $$
-P_2=(0.111,0.111,0.111,0.111,0.111,0.111,0.139,0.111,0.264),
+\tau_{50}^{\mathrm{end}}(K_0)=60,\qquad
+\tau_{50}^{\mathrm{end}}(K_1)=80,\qquad
+\tau_{50}^{\mathrm{end}}(K_2)=120.
 $$
 
-with three detrended sign changes out of eight intervals and oscillation score
-$0.38$. Thus state mixing and generator-weight deformation produce different
-observable dynamics even when they are described in the same sectorized
-language.
+| Activation | $\tau_{50}^{\mathrm{end}}(K_0)$ | $\tau_{50}^{\mathrm{end}}(K_1)$ | $\tau_{50}^{\mathrm{end}}(K_2)$ | pointwise cutoff audit |
+|------------|------------------|------------------|------------------|------------------------|
+| ReLU | 60 | 80 | 120 | $(0,0,0)$ |
+| GeLU | 60 | 80 | 120 | $(0,0,0)$ |
 
-![Yang-like state mixing versus RIME generator weights. Both diagnostics use
-plateau-style observable architecture, but state mixing produces endpoint
-degeneration while generator-weight deformation produces oscillatory,
-nonmonotone behavior.](../../figures/paper9/fig4_yang_vs_rime.png)
+This is a computational observation of ordered proxy response times. The
+pointwise triples report, in order, unsupported direct pairs, Lie-emergent
+pairs, and cutoff-unreached Lie pairs. They do not define a temporal repair
+event: the diagnostic does not coherently continue sector labels across
+training time. In particular, it does not measure
+$\tau(D_{\mathrm{Lie}}^{(\leq d_{\max})})$.
 
-The diagnostic scripts separate these two roles: the QT perturbation audit
-computes plateau functions under generator-weight deformation, while the
-state-mixing/FFT audit summarizes endpoint stability and oscillation.
+![Training-coupled neural proxies. The ordered response times are shown as
+continuous proxy evidence only; no bar is labeled as a binary depth event.](../../figures/paper9/fig3_nn_rate_hierarchy.png)
 
-Therefore the distinction is not the observable architecture. The distinction is
-the deformation geometry.
+### Proxy Shadow Boundary
 
-### Observable Rate-Separation Dynamics
+The neural diagnostic exposes two layers:
 
-The natural object in RIME is not a parameter vector but an observable
-trajectory.  Thus the relevant abstraction is **observable time-scale
-separation**.
+$$
+(K_0,K_1,K_2)
+\qquad\text{and}\qquad
+(R_1^{\mathrm{Lie}},R_2^{\mathrm{Lie}},
+D_{\mathrm{Lie}}^{(\leq d_{\max})}).
+$$
+
+No theorem identifies these layers. In particular,
+
+$$
+K_2(t)\not\Rightarrow D_{\mathrm{Lie}}^{(\leq d_{\max})}(t)
+$$
+
+without a threshold, margin, sector-stability, and filtration-compatibility
+result. We call the missing result the **Observable Proxy Shadow Principle**.
+It remains a Research Program rather than an assumption.
+
+***
+
+## Diagnostic Contrast and Rate Separation
+
+### Species Dependence
+
+State mixing changes a state carrier, while an operator deformation changes a
+labelled alphabet or its concrete embedding. Similar scalar summaries do not
+identify the underlying typed fields. Accordingly, the Rubik generator-weight
+fragmentation/oscillation diagnostic is excluded from the typed evidence and
+from the present comparison.
+
+### Observable Rate Separation
+
+For selected observables $O_1,\ldots,O_k$ on the same parameterized trajectory
+$\gamma$, with fixed normalization, norm, orientation, and response policy,
+the trajectory is called observable-rate-separated when at least two
+characteristic times
+
+$$
+\tau(O_{1,\gamma}),\ldots,\tau(O_{k,\gamma})
+$$
+
+are demonstrably separated. This rate separation is a property of the
+registered trajectory and policy, not of the underlying static SOF alone.
+
+### Exact Scale-Separated Threshold Construction
+
+Let $Q_1,Q_2,Q_3$ be the coordinate projectors on $\mathbb C^3$, and put
+
+$$
+J_{ab}=E_{ab}-E_{ba},\qquad
+X_1(t)=tJ_{12},\qquad
+X_2(t)=tJ_{23},\qquad t\ge0.
+$$
+
+Both declared generators are skew-Hermitian and have the same Frobenius scale
+at $t=1$. Along the declared trajectory $\gamma(t)=t$, select the continuous
+block observables
+
+$$
+\begin{aligned}
+K_{\mathrm{dir}}(t)
+  &=\lVert Q_1X_1(t)Q_2\rVert_F,\\
+K_{\mathrm{comm}}(t)
+  &=\lVert Q_1[X_1(t),X_2(t)]Q_3\rVert_F.
+\end{aligned}
+$$
+
+**Proposition 2 (Exact Scale-Separated Threshold Construction).** For the
+declared generator normalization, trajectory parameterization, Frobenius norm,
+and common threshold $0<\eta<1$, the selected block norms satisfy
+
+$$
+K_{\mathrm{dir}}(t)=t,\qquad
+K_{\mathrm{comm}}(t)=t^2.
+$$
+
+Their first-crossing parameters are
+
+$$
+\tau_\eta(K_{\mathrm{dir}})=\eta,\qquad
+\tau_\eta(K_{\mathrm{comm}})=\sqrt{\eta},
+$$
+
+respectively.
+
+**Proof.** The identity $[J_{12},J_{23}]=J_{13}$ and the declared normalization
+give the displayed first- and second-order norm scalings. Solving $t=\eta$ and
+$t^2=\eta$ gives the two crossing parameters. $\square$
+
+Consequently,
+
+$$
+\frac{\tau_\eta(K_{\mathrm{comm}})}
+{\tau_\eta(K_{\mathrm{dir}})}
+=
+\eta^{-1/2}>1.
+$$
+
+This construction separates the selected continuous direct and
+simple-commutator block norms because they appear at different polynomial
+orders along the declared trajectory. It is an existence construction, not an
+intrinsic rate invariant of the underlying static SOF. Rescaling either
+observable, changing the threshold, or nonlinearly reparameterizing the path
+generally changes the ratio. It also does not prove a separation of Boolean
+support walls or Lie depth. Appendix A (A1) validates the displayed matrices
+and records zero formula residual at the default threshold $\eta=10^{-6}$,
+where the two crossings are $10^{-6}$ and $10^{-3}$.
+
+### Calibrated Exponential Response Construction
+
+A second construction isolates policy-aligned response times without
+introducing a new carrier. Assume that the finite limit $K(\infty)$ exists and
+$K(\infty)\neq K(0)$. Define normalized displacement by
+
+$$
+\widehat K(t)
+=
+\frac{|K(t)-K(0)|}{|K(\infty)-K(0)|}.
+$$
 
 Let
 
 $$
-O_1(t),\ldots,O_k(t)
+\widehat K_a(t)=1-e^{-\gamma t},
+\qquad
+\widehat K_b(t)=1-e^{-\lambda t},
+\qquad
+\gamma>\lambda>0.
 $$
 
-be observable shadows or continuous fields induced by an SOF deformation.  If
-one can assign characteristic time scales
+**Proposition 3 (Calibrated Two-Channel Response Separation).** Under the
+declared parameterization, normalized-displacement convention, and common
+half-response policy,
 
 $$
-\tau(O_1),\ldots,\tau(O_k)
+\tau_{1/2}(\widehat K_a)=\frac{\log 2}{\gamma}
+<
+\frac{\log 2}{\lambda}
+=\tau_{1/2}(\widehat K_b).
 $$
 
-and at least two of them are separated, then the deformation is called
-**observable rate-separated**.
+**Proof.** For $c>0$, the equation $1-e^{-ct}=1/2$ has the unique solution
+$t=(\log 2)/c$. Apply this identity to $\gamma$ and $\lambda$, then use
+$\gamma>\lambda$. $\square$
 
-For accessibility deformations, a candidate hierarchy under structured
-dynamical perturbations is
-
-$$
-\tau(R_1)<\tau(R_2)<\tau(D)
-$$
-
-whenever direct support changes first, commutator survival changes next, and
-depth repair is visible only after slower channels enter the observable
-shadow.  This is the accessibility analogue of a fast/intermediate/slow
-observable hierarchy, but it is not a claim about arbitrary static additive
-noise.
-
-At present this remains a target hierarchy, not a completed empirical theorem:
-the available diagnostics show $\tau(R_1)<\tau(R_2)$ in an engineered
-near-threshold system and $\tau(K_0)<\tau(K_1)<\tau(K_2)$ in a
-training-coupled NN SOF, while the available runs do not simultaneously observe
-$\tau(R_1)<\tau(R_2)<\tau(D)$ together with
-$D_{\mathrm{repaired}}>0$. The quantum Clifford+CNOT audit provides a static
-non-Rubik example with $D_{\mathrm{repaired}}=6$, but it does not yet provide a
-structured deformation from which $\tau(D)$ can be measured. Thus NN supplies
-proxy-rate evidence, while quantum or Rubik deformations remain the natural
-candidates for the first genuine $\tau(D)$ audit.
-
-A related diagnostic appears in Xu, Vardi, and Safran's ridge-regression
-analysis of grokking \cite{xuVardiSafran2026grokking}. Their model separates
-the parameter vector into a row-space component and an orthogonal component:
+Appendix A (A2) realizes the two responses as normalized sector-to-sector block
+norms in a fixed three-sector SOF. With
 
 $$
-\theta=\theta_{\parallel}+\theta_{\perp}.
+\gamma=\frac{\log 2}{30},
+\qquad
+\lambda=\frac{\log 2}{1380},
 $$
 
-The row-space component is driven directly by empirical loss and converges
-quickly. The orthogonal component is invisible to the training data and is
-controlled only by weight decay, producing a delayed generalization transition.
+the finite audit returns half-response times $30<1380$. This has status
+**Computational Certificate** for the declared block realization. The
+mechanism labels provide an interpretation; the ordered calibration supplies
+the inequality. Neither the proposition nor the finite certificate is an
+intrinsic rate invariant, a Boolean support wall, or a Lie-depth statement.
 
-This is not the same observable as RIME accessibility. Their theorem proves a
-rate separation in parameter space; Paper IX uses it as a comparison point for
-rate separation in observable space.  The common higher-level phenomenon is
-that different directions of a deformation may become visible on different
-time scales.
-
-In the SOF architecture, the template is:
-
-visible channel $\to$ fast observable change, while hidden channel $\to$ slow
-deformation-controlled repair.
-
-Ridge regression has
+The candidate hierarchy
 
 $$
-\tau(\theta_{\parallel})\ll \tau(\theta_{\perp}),
+\tau(R_1^{\mathrm{Lie}})
+<
+\tau(R_2^{\mathrm{Lie}})
+<
+\tau(D_{\mathrm{Lie}}^{(\leq d_{\max})})
 $$
 
-while a RIME accessibility deformation may have
+is a cutoff-relative structured-dynamics hypothesis, not a universal law. A
+corresponding exact-depth hierarchy would require an exact closure or
+saturation certificate. The established evidence is deliberately narrower:
+
+1. Proposition 2 gives an exact two-level direct/commutator norm separation;
+2. Proposition 3 and its finite realization give a calibrated two-channel
+   half-response separation under one declared policy;
+3. the NN run observes $60<80<120$ for continuous proxies;
+4. state mixing and unstructured interpolations remain distinct deformation
+   interfaces rather than positive hierarchy evidence.
+
+Consequently, no completed
+$\tau(R_1^{\mathrm{Lie}})<\tau(R_2^{\mathrm{Lie}})
+<\tau(D_{\mathrm{Lie}}^{(\leq d_{\max})})$ trajectory is claimed, much less an
+exact-depth version.
+
+### Parameter-to-Observable Precedent
+
+The ridge-regression result yields
 
 $$
-\tau(R_1)<\tau(R_2)<\tau(D).
+\tau(\theta_{\parallel})\ll\tau(\theta_{\perp}),
 $$
 
-The objects are different, but both are rate hierarchies.  Wall crossing is
-observable only when the slow modes become visible to the chosen observable
-shadow.
+where the two directions are separated by the training mechanism. The
+observable-space analogue asks whether a declared mechanism-separated
+deformation produces ordered response times in a typed carrier. The objects
+are different, and no map from parameter directions to SOF fields is assumed.
 
-![Xu-style parameter-to-observable bridge. Ridge-regression rate separation
-is theorem-level evidence in parameter space. Paper IX uses it only as a
-bridge precedent for observable-space rate separation; the proxy-shadow bridge
-from $K_i(t)$ to $R_i(t)$ or $D(t)$ remains open.](../../figures/paper9/fig5_xu_parameter_observable_bridge.png)
+![Parameter-to-observable comparison. The left side records the theorem-level
+parameter precedent; the right side records the open SOF question rather than
+asserting an identification.](../../figures/paper9/fig5_xu_parameter_observable_bridge.png)
 
-This distinction matters.  In engineered near-threshold accessibility systems,
-one may observe
+### Dynamic Interface
 
-$$
-\tau(R_1)<\tau(R_2),
-$$
+The role of $\mathsf{SOF}_{\mathrm{def}}$ is restricted to paths with declared
+typed charts and comparison data. It is not a category and does not provide a
+complete weak-morphism theory, a metric on deformation space, or a
+wall-crossing transformation law.
 
-while static additive noise can make $D$ change earlier by injecting accidental
-directions into higher Lie-filtration layers.  Thus $\tau(D)$ is meaningful
-only after the deformation model specifies how first-order support,
-commutator-survival, and nested Lie-depth effects are coupled.  Paper IX
-therefore treats rate hierarchy as a property of observable dynamics under a
-specified deformation model, not as a universal consequence of adding noise to
-generators.
+![Deformation-record interface. Typed charts, trajectories,
+endpoints, and schema transitions support selected diagnostics, but no weak
+deformation category is asserted.](../../figures/paper9/fig6_sof_def_category.png)
 
-![Provisional deformation category. The dynamic layer uses
-$\mathsf{SOF}_{\mathrm{def}}$ as a weak home for paths equipped with endpoint
-identification, sector tracking, observable tracking, and diagnostic
-admissibility. This is deliberately weaker than the strict SOF morphisms of
-Paper VIII.](../../figures/paper9/fig6_sof_def_category.png)
+## Claim Status and Boundary
 
-The diagnostic values are:
+| Claim | Status |
+|-------|--------|
+| Observable Wall Pullback Inclusion | Theorem |
+| Equality under pullback-exactness | Theorem |
+| Transverse Trajectory Crossing Criterion | Theorem |
+| exact scale-separated threshold construction | Theorem |
+| calibrated two-channel response separation | Theorem |
+| calibrated three-sector block realization with half-response times $30<1380$ | Computational Certificate |
+| NN ordering $\tau_{50}^{\mathrm{end}}(K_0)<\tau_{50}^{\mathrm{end}}(K_1)<\tau_{50}^{\mathrm{end}}(K_2)$ | Computational Observation |
+| NN proxy-to-discrete-shadow identification | Research Program |
+| full typed rate hierarchy through truncated or exact $D_{\mathrm{Lie}}$ | Research Program |
+| universal wall law or universal deformation geometry | Research Program |
 
-| Domain | Fast channel | Slow channel | Ratio |
-|--------|--------------|--------------|-------|
-| Ridge regression | $\theta_{\parallel}$ | $\theta_{\perp}$ | $68553\times$ |
-| RIME near-threshold | $R_1$ | $R_2$ | about $10.8$ |
-| NN training-coupled SOF | $K_0$ | $K_2$ proxy | ordered proxy half-response $60<80<120$ |
+The typed deformation record and $\mathsf{SOF}_{\mathrm{def}}$ define the
+deformation-record interface; they are not evidence levels. Paper VI's
+normality-gated pointwise registrations are cited background and do not supply
+claims here.
 
-The ratios are not meant to be numerically comparable across domains. The
-shared structure is hierarchical visibility under a specified deformation.
+### Excluded Claims
+
+The following are not claimed:
+
+1. that one untyped $R_1/R_2/D$ ladder exists for every SOF;
+2. that a route, full word, commutator, or Lie depth is determined by another
+   carrier without a bridge theorem;
+3. that Paper VI supplies a completed moving-field theorem;
+4. that numerical unreached values are infinity;
+5. that parameter-space and observable-space rates are identical;
+6. that NN proxies exhibit a temporal Lie-depth repair event;
+7. that Yang-like state mixing and operator deformation share a wall law;
+8. that every deformation is smooth or has one discriminant type;
+9. that the full $\tau(R_1^{\mathrm{Lie}})<\tau(R_2^{\mathrm{Lie}})
+   <\tau(D_{\mathrm{Lie}}^{(\leq d_{\max})})$ hierarchy has been observed;
+10. that response times are invariant under observable rescaling or trajectory
+    reparameterization;
+11. that the Observable Proxy Shadow Principle has been proved.
+
+***
+
+## Conclusion
+
+The static SOF language extends to declared deformation records without
+merging operator/word, Lie/Hall, state, or saturated-algebra carriers.
+The wall-pullback theorem gives a general inclusion and identifies
+pullback-exactness as the additional condition required for equality; a
+transverse trajectory crossing supplies a geometric sufficient condition.
+Proposition 2 supplies an exact parameterization- and normalization-relative
+direct/commutator threshold construction. Proposition 3 supplies a calibrated
+exponential half-response inequality, and its three-sector realization
+certifies $30<1380$ under the declared policy. The NN audit remains continuous
+proxy evidence only. Together, these results support a typed deformation
+program rather than a universal wall hierarchy, intrinsic rate invariant, or
+proxy-to-depth theorem.
 
 ***
 
 ## Outlook
 
-Paper IX establishes the dynamic layer:
+The dynamic evidence supplied to the Paper X compiler follows the construction
+order
 
 $$
-\begin{aligned}
 \mathrm{SOF}
-&\longrightarrow \text{deformation space}
-\longrightarrow \text{observable trajectories}\\
-&\longrightarrow \text{wall discriminants}.
-\end{aligned}
+\longrightarrow
+\text{deformation family}
+\longrightarrow
+\text{typed observable fields}
+\longrightarrow
+\text{wall and rate diagnostics}.
 $$
 
-Paper X then turns these trajectories into registry evidence:
+The arrows denote construction order, not implication.
 
-$$
-\begin{aligned}
-\mathrm{SOF\ Registry}
-&\longrightarrow \text{registered species}
-\longrightarrow \text{observable diagnostics}\\
-&\longrightarrow \text{pipeline-level comparison principles}.
-\end{aligned}
-$$
+The next theorem-level targets are:
 
-The comparison question for Paper X is not whether these systems are strictly
-isomorphic as SOFs. In general they are not. The question is whether
-observable phenomena persist across admissible registry entries:
+1. a weak/deformation morphism theory extending the
+   $\mathsf{SOF}_{\mathrm{def}}$ deformation-record interface;
+2. a proxy-to-shadow theorem with margin and threshold hypotheses;
+3. a higher-depth structured-dynamics construction with separately controlled
+   direct, commutator, and Lie-depth channels;
+4. a genuinely time-resolved
+   $D_{\mathrm{word}}^{(\leq d_{\max})}$ or
+   $D_{\mathrm{Lie}}^{(\leq d_{\max})}$ repair audit, followed where possible
+   by an exact saturation certificate;
+5. wall-crossing formulae for restricted species.
 
-Which wall invariants, plateau laws, accessibility repairs, or completion
-principles survive across different SOF species?
+These are open extensions, not premises of the results above.
 
 ***
 
-## What This Paper Does Not Claim
+## Appendix A: Computational Artifacts
 
-Paper IX does not claim:
+The following repository artifacts support the exact response constructions,
+the finite three-sector certificate, and the neural proxy observations. The
+default directory is:
 
-1. a universal observable dynamics or wall geometry for all SOF deformations;
-2. that Yang-like filtration degeneration and RIME accessibility walls are the
-   same object;
-3. that monotone exponent laws apply to generator-weight deformation;
-4. that parameter-space rate separation and observable-space rate separation
-   are identical;
-5. that every deformation is smooth or has a single discriminant type;
-6. that the NN diagnostics in this paper exhibit binary $D$-repair;
-7. that the program has already observed a full
-   $\tau(R_1)<\tau(R_2)<\tau(D)$ trajectory with
-   $D_{\mathrm{repaired}}>0$;
-8. that the Observable Proxy Shadow Principle has been proved;
-9. unconditional generic completion.
+`experiments/paper9/`
 
-The stable claim is:
+All short paths below are relative to that directory.
 
-SOF provides the common observable architecture; deformation geometry determines
-the observable dynamics.
+| Artifact | Role | Short path |
+|----------|------|------------|
+| A1 | exact direct/commutator threshold construction | \path{rate_hierarchy.py} |
+| A2 | calibrated exponential block-response realization | \path{calibrated_response.py} |
+| A3 | training-coupled $K_0/K_1/K_2$ proxy audit | \path{nn_training_sof_tau.py} |
+| A4 | fixed-weight activation/sectorization audit | \path{nn_activation_sof.py} |
+| A5 | versioned result and claim-boundary validator | \path{validation/validate_results.py} |
+| A6 | exact-construction and calibrated-response records | \path{results/rate_hierarchy.json}, \path{results/calibrated_response.json} |
+| A7 | neural proxy and activation records | \path{results/nn_training_sof_tau.json}, \path{results/nn_activation_sof.json} |
 
-***
+From the repository root, run an executable artifact as
+`python experiments/paper9/<short path>`. A1 checks the exact formulas of
+Proposition 2. A2 supplies the finite Computational Certificate associated with
+Proposition 3. A3 and A4 support only their declared Computational
+Observations. A5 checks the versioned records and their stated numerical and
+status invariants.
 
-## References
-
-**Program lineage.** Paper VIII supplies the static SOF object layer and the
-naturality theorem for accessibility observables \cite{paper8}. Paper IX
-studies deformation geometry over that object layer. Paper VI is the main RIME
-accessibility-deformation prototype \cite{paper6}; Paper V supplies the
-length-2 repair calculus \cite{paper5}; and Paper VII supplies the generic
-completion boundary that later deformation theory must respect \cite{paper7}.
-
-**Related observable-dynamics precedents.** Xu, Vardi, and Safran, "To Grok
-Grokking: Provable Grokking in Ridge Regression," arXiv:2601.19791
-\cite{xuVardiSafran2026grokking}, provides a clean parameter-space example
-where different directions evolve on different time scales. Abanin, De Roeck,
-Ho, and Huveneers, "A Rigorous Theory of Many-Body Prethermalization for
-Periodically Driven and Closed Quantum Systems," Communications in
-Mathematical Physics 354 (2017), 809--827, arXiv:1509.05386
-\cite{abaninDeRoeckHoHuveneers2017prethermalization}, provides a many-body
-example of fast dynamics, long plateaus, and delayed slow-mode visibility.
-Kontsevich and Soibelman, "Stability structures, motivic Donaldson--Thomas
-invariants and cluster transformations," arXiv:0811.2435
-\cite{kontsevichSoibelman2008stability}, provides a precedent for exact
-transformation laws across walls; the SOF framework in this paper has wall
-loci and observable shadows, not such a formula.
+Archived Rubik generator-weight, plateau, and hard-coded state-mixing scripts
+are retained under `experiments/paper9/archive/` as historical provenance and
+do not support the claims above. All listed artifacts are available in the
+[RIME repository](https://github.com/dooven-prime/rime-lite).

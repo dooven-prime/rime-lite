@@ -21,21 +21,22 @@ immutable first combined record retains its historical predecessor.
 | Paper V | Boolean support and commutator accessibility | <https://doi.org/10.5281/zenodo.21634007> |
 | Paper VI | linearized commutativity geometry, normality gates, and typed spectral registrations | <https://doi.org/10.5281/zenodo.21634256> |
 | Paper VII | incidence geometry, rank protection, and composition-promotion limits | <https://doi.org/10.5281/zenodo.21634538> |
-| Paper VIII | sectorized observable framework | <https://doi.org/10.5281/zenodo.21287278> |
-| Paper IX | observable dynamics of sectorized observable frameworks | <https://doi.org/10.5281/zenodo.21287695> |
-| Paper X | universal observable pipeline and SOF registry evidence | <https://doi.org/10.5281/zenodo.21288036> |
-| Paper XI | observable classification theory for SOF wall records | <https://doi.org/10.5281/zenodo.21453674> |
+| Paper VIII | sectorized observable framework | <https://doi.org/10.5281/zenodo.21700863> |
+| Paper IX | observable dynamics of sectorized observable frameworks | <https://doi.org/10.5281/zenodo.21713306> |
+| Paper X | capability-aware compilation for Sectorized Observable Frameworks and Registry evidence | <https://doi.org/10.5281/zenodo.21288036> |
+| Paper XI | typed wall-record taxonomy for Sectorized Observable Frameworks | <https://doi.org/10.5281/zenodo.21453674> |
 | Paper XII | SOF diagnostic protocol and report specification | <https://doi.org/10.5281/zenodo.21387462> |
-| Paper XIII | comparison geometry, SOF Report Alignment, and audit signatures | <https://doi.org/10.5281/zenodo.21449512> |
+| Paper XIII | Audit Profiles, SOF Report Alignment, and sparse typed comparison maps | <https://doi.org/10.5281/zenodo.21449512> |
 | CCS v2 | optional reproducibility, observation, open-problem, and history archive | <https://doi.org/10.5281/zenodo.21616956> |
 | Historical combined Papers I--III + CCS release | immutable first-version archive; current papers are maintained independently | <https://doi.org/10.5281/zenodo.21108197> |
 
 This is the repository's canonical DOI index. It identifies immutable
 published records; other public documents link here instead of duplicating the
-list. Repository manuscripts and PDFs may contain an explicitly labeled later
-revision candidate. In particular, the current Paper XII repository copy is a
-post-v1.0 candidate; its published DOI still identifies v1.0, and the SOFRS
-v1.0 contract is unchanged.
+list. Papers VIII and IX now match their published version-2 records.
+Repository copies of Papers X--XIII may contain explicitly labelled
+later-version candidates or migrations; their listed DOIs continue to identify
+the immutable published versions, and the frozen v1 contracts remain
+unchanged.
 
 ## Start Here
 
@@ -63,11 +64,11 @@ v1.0 contract is unchanged.
 | V | [`paper5_arxiv.pdf`](papers/paper5/paper5_arxiv.pdf) | [`Paper V.md`](papers/paper5/Paper%20V.md) | Why does Boolean support fail to determine commutator accessibility? |
 | VI | [`paper6_arxiv.pdf`](papers/paper6/paper6_arxiv.pdf) | [`Paper VI.md`](papers/paper6/Paper%20VI.md) | Which linearized directions preserve the constraints, and which samples pass the spectral gates? |
 | VII | [`paper7_arxiv.pdf`](papers/paper7/paper7_arxiv.pdf) | [`Paper VII.md`](papers/paper7/Paper%20VII.md) | When do nonzero projected factors compose, and what limits stronger promotions? |
-| VIII | [`paper8_arxiv.pdf`](papers/paper8/paper8_arxiv.pdf) | [`Paper VIII.md`](papers/paper8/Paper%20VIII.md) | What is the sectorized observable object? |
-| IX | [`paper9_arxiv.pdf`](papers/paper9/paper9_arxiv.pdf) | [`Paper IX.md`](papers/paper9/Paper%20IX.md) | How do SOF observables evolve under deformation? |
-| X | [`paper10_arxiv.pdf`](papers/paper10/paper10_arxiv.pdf) | [`Paper X.md`](papers/paper10/Paper%20X.md) | Why do different species share one observable pipeline? |
-| XI | [`paper11_arxiv.pdf`](papers/paper11/paper11_arxiv.pdf) | [`Paper XI.md`](papers/paper11/Paper%20XI.md) | Which SOF wall records can be classified, and by what kind of local or global theory? |
-| XII | [`paper12_arxiv.pdf`](papers/paper12/paper12_arxiv.pdf) | [`Paper XII.md`](papers/paper12/Paper%20XII.md) | How does SOF produce reusable SOF Reports? |
+| VIII | [`paper8_arxiv.pdf`](papers/paper8/paper8_arxiv.pdf) | [`Paper VIII.md`](papers/paper8/Paper%20VIII.md) | What is the marked static sectorized observable object? |
+| IX | [`paper9_arxiv.pdf`](papers/paper9/paper9_arxiv.pdf) | [`Paper IX.md`](papers/paper9/Paper%20IX.md) | How do comparable typed SOF fields evolve under a declared deformation? |
+| X | [`paper10_arxiv.pdf`](papers/paper10/paper10_arxiv.pdf) | [`Paper X.md`](papers/paper10/Paper%20X.md) | Under which contracts can typed claims be compiled without manufacturing evidence or crossing carriers? |
+| XI | [`paper11_arxiv.pdf`](papers/paper11/paper11_arxiv.pdf) | [`Paper XI.md`](papers/paper11/Paper%20XI.md) | How can admitted wall data be recorded as sparse typed changes and organized by profile-relative morphology? |
+| XII | [`paper12_arxiv.pdf`](papers/paper12/paper12_arxiv.pdf) | [`Paper XII.md`](papers/paper12/Paper%20XII.md) | What does a compiled report represent, and where do adapter adequacy and reporting authority end? |
 | XIII | [`paper13_arxiv.pdf`](papers/paper13/paper13_arxiv.pdf) | [`Paper XIII.md`](papers/paper13/Paper%20XIII.md) | How can two SOF Reports be aligned and compared without conflating difference with defect? |
 | CCS v2 Archive | [`ccs_arxiv.pdf`](ccs/ccs_arxiv.pdf) | [`canonical_specification.md`](ccs/canonical_specification.md) | Optional Paper I--III reproducibility pointers, computational observations, open problems, and historical records |
 
@@ -83,8 +84,8 @@ Linearized commutativity and normality-gated registration
 Incidence geometry and promotion limits
 SOF object theory
 Observable dynamics
-Universal observable pipeline
-Observable wall classification
+Capability-aware compilation for Sectorized Observable Frameworks and Registry evidence
+Typed wall morphology and multi-label taxonomy
 SOF diagnostic reporting
 SOF Report Alignment and comparison geometry
 ```
@@ -103,8 +104,8 @@ rime-lite/
 |-- papers/               manuscript sources
 |-- ccs/                  Computational Companion and Status Archive source
 |-- docs/                 public overview, program map, and companion notes
-|-- schemas/              published SOFRS, SOFAudit, and Registry contracts
-|-- registry/             frozen Paper X SOF Registry release snapshots
+|-- schemas/              versioned SOFRS, SOFAudit, and Registry contracts
+|-- registry/             immutable v1 and frozen typed v2 Registry snapshots
 `-- figures/              manuscript figures and presentation-only renderers
 ```
 
@@ -132,11 +133,11 @@ python experiments/paper4/validation/rubik_collision_quotient.py
 python experiments/paper5/validation/matrix_nondegeneracy.py
 python experiments/paper6/validation/tangent_commutator_map.py
 python experiments/paper7/validation/rank_protected_bridge_audit.py
-python experiments/paper9/rate_hierarchy.py
-python experiments/paper10/registry_evidence.py
-python experiments/paper11/validation/wall_record_census_v2.py
-python experiments/paper12/validate_protocol_admission.py
-python experiments/paper13/validate_sofaudit.py
+python experiments/paper9/validation/validate_results.py
+python experiments/paper10/validation/validate_results.py
+python experiments/paper11/validation/typed_wall_record_census.py
+python experiments/paper12/validate_sofrs_v2.py
+python experiments/paper13/validate_sofaudit_v2.py
 ```
 
 For the full experiment map, see [`experiments/README.md`](experiments/README.md).

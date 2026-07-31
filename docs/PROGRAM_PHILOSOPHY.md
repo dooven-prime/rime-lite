@@ -2,17 +2,17 @@
 
 **Status:** public philosophy note for the RIME program. This file explains the
 Rubik-as-laboratory stance and the sectorization bridge from the early papers to
-Papers VIII--XIII. It is not a proof source; paper manuscripts and
+Papers VIII--XIII, with Paper XIV as a development horizon. It is not a proof source; paper manuscripts and
 [PROGRAM_MAP.md](PROGRAM_MAP.md) control theorem boundaries.
 
 Program invariant:
 
 ```text
-Spectral geometry determines the objects.
-Compatible sectorization is the interface.
-Observable geometry is the invariant.
-Accessibility geometry determines their behavior.
-Genericity tests when the behavior is stable.
+Source geometry proposes a realization.
+Marked sectorization declares the interface.
+Typed carriers determine the observable questions.
+Filtrations and closures record different generation data.
+Deformation, compilation, reporting, comparison, and action remain separate.
 ```
 
 The objective of this program is not to study the Rubik's Cube itself.
@@ -44,11 +44,15 @@ sectorized observable frameworks
   ->
 observable dynamics
   ->
-universal observable pipeline
+capability-aware compilation
   ->
-observable wall taxonomy
+typed wall records
   ->
-SOF diagnostic reporting
+single-system SOF reports
+  ->
+aligned sparse audits
+  ->
+policy-relative decisions
 ```
 
 Each paper isolates or abstracts one layer of problem-specific structure.
@@ -138,8 +142,11 @@ This is the current clean separation:
 | Structural Unity | classical | Wedderburn-Artin / character-theoretic block decomposition |
 | Sectorization | interface | converts representation data into SOF data |
 | Observable Transport Architecture | RIME contribution | studies typed operator/word and Lie/Hall branches, their information loss, jets, walls, and promotion certificates |
-| Observable Pipeline | Paper X contribution | compares source systems through finite space, sectorization, observables, shadows, and diagnostics |
-| Diagnostic Protocol | Paper XII contribution | serializes one declared realization as a versioned, claim-status-aware SOF Report |
+| Capability-Aware Compiler | Paper X contribution | emits only claims supported by declared carriers, policies, evidence, and checked derivations |
+| Wall Records | Paper XI contribution | stores carrier-qualified wall deltas and derives record-level taxonomy profiles |
+| Reporting Protocol | Paper XII contribution | serializes one declared realization as a versioned, alignment-ready SOF Report |
+| Audit Comparison | Paper XIII contribution | aligns two reports and emits a sparse typed comparison object |
+| Decision Layer | Paper XIV horizon | interprets audit coordinates under an external context and policy |
 
 The novelty of RIME is not the existence of a semisimple block decomposition.
 That is the classical input for representation-derived examples. The novelty
@@ -154,20 +161,36 @@ that one low-order signature determines every higher transport object. The
 stable statement is:
 
 ```text
-Sectorization is source-dependent.
-Observable pipelines are source-independent.
+Sectorization and adapters are source-dependent.
+The typed object and compiler interfaces are shared.
 ```
 
-This is the philosophical version of the Paper X boundary: the pipeline is the
-theorem-level organizational object; the SOF Registry is evidence architecture,
-not a universal dynamics theorem.
+This is the philosophical version of the Paper X boundary: capability-sound
+compilation is the theorem-level organizational object; the SOF Registry is
+evidence architecture, not a universal dynamics theorem. Compiler soundness
+also does not establish that an adapter is scientifically adequate.
+
+The corresponding artifact chain is:
+
+```text
+typed SOF objects and findings
+  -> .sofreport
+  -> .sofaudit
+  -> .sofdecision
+```
+
+A report is realization- and profile-relative. An audit additionally requires
+explicit alignment and comparison policies. A decision additionally requires
+external interpretation and action policy. No downstream artifact changes the
+mathematical meaning of an upstream carrier.
 
 Stronger completion statements belong to branch-qualified promotion programs.
 For example, graph paths require image--kernel nondegeneracy to promote to
 routed products, routed terms require cancellation control to promote to full
 words, and low-order Lie supports require declared richness and closure
-hypotheses to constrain `D_Lie`. Paper VII must be re-audited in these typed
-terms before any such statement is propagated as a common SOF principle.
+hypotheses to constrain `D_Lie`. Paper VII supplies a local incidence and
+rank-protection interface only; it does not establish any stronger common SOF
+promotion principle.
 
 This also fixes the relation to adjacent representation-rigidity projects.  A
 project such as W33 may be viewed as a parallel world in which a concrete finite

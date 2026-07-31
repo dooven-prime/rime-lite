@@ -8,9 +8,10 @@ time scales.
 Claim status:
   - Paper IX diagnostic for observable dynamics.
   - Diagnostic support, not a standalone theorem source.
-  - Uses raw block-norm proxies K0/K1/K2 rather than the normalized binary D
-    matrix, because binary Lie-depth normalization removes scale information.
-  - D-repair is tracked separately as a binary frozen-to-accessible event.
+  - Uses raw block-norm proxies K0/K1/K2 rather than a binary depth field,
+    because thresholded support removes scale information.
+  - Binary counts are pointwise cutoff audits. Sector labels are not continued
+    across training time, so this script does not measure a repair event.
 
 Observable proxies:
   K0(t): max off-diagonal ||Q_i X_g Q_j||              (R1 proxy)
@@ -28,6 +29,7 @@ later. The script reports the measured ratios; it does not force the pattern.
 from __future__ import annotations
 
 import argparse
+import json
 import os
 import sys
 from pathlib import Path
@@ -45,6 +47,9 @@ from rime.rep_utils import basis_from_indices  # noqa: E402
 ROOT = Path(__file__).resolve().parents[2]
 DATA_DIR = ROOT / "data"
 LOG_PATH = DATA_DIR / "_paper9_nn_training_sof_tau.txt"
+RESULTS_DIR = Path(__file__).resolve().parent / "results"
+RESULT_PATH = RESULTS_DIR / "nn_training_sof_tau.json"
+SCHEMA_VERSION = "paper9-nn-training-v2.0"
 SEED = 42
 TOL = 1e-8
 
@@ -174,12 +179,16 @@ def raw_kappa_levels(Vs: list[np.ndarray], Xs: list[np.ndarray]) -> tuple[float,
 
 def binary_audit(Vs: list[np.ndarray], Xs: list[np.ndarray], tol: float) -> dict:
     engine = AccessibilityEngine(Vs, Xs, tol=tol, max_depth=3)
-    summary = engine.audit()
+    audit = engine.audit()
+    cutoff = engine.cutoff_summary()
     return {
-        "R1": int(summary["R1_count"]),
-        "R2": int(summary["R2_count"]),
-        "D_repaired": int(summary["D_repaired"]),
-        "D_frozen": int(summary["frozen_D"]),
+        "n_sectors": len(Vs),
+        "sector_dims": [int(V.shape[1]) for V in Vs],
+        "R1_lie_count": int(audit["R1_count"]),
+        "R2_lie_count": int(audit["R2_count"]),
+        "unsupported_direct_pairs": int(cutoff["unsupported_direct_pairs"]),
+        "lie_emergent_pairs": int(cutoff["lie_emergent_pairs"]),
+        "unreached_lie_pairs": int(cutoff["unreached_lie_pairs"]),
     }
 
 
@@ -302,37 +311,24 @@ def print_summary(result: dict) -> None:
     )
     last = result["binary"][-1]
     log(
-        "  final binary audit: "
-        f"R1={last['R1']}, R2={last['R2']}, "
-        f"D_repaired={last['D_repaired']}, D_frozen={last['D_frozen']}"
+        "  final pointwise cutoff audit: "
+        f"R1^Lie={last['R1_lie_count']}, R2^Lie={last['R2_lie_count']}, "
+        f"unsupported_direct={last['unsupported_direct_pairs']}, "
+        f"Lie-emergent={last['lie_emergent_pairs']}, "
+        f"unreached_Lie={last['unreached_lie_pairs']}"
     )
 
-    d_rep_traj = [
-        (t, b["D_repaired"], b["D_frozen"], b["R1"])
-        for t, b in zip(result["times"], result["binary"])
-    ]
-    first_repair = None
-    events = []
-    prev = d_rep_traj[0][1]
-    for t, repaired, frozen, r1 in d_rep_traj:
-        if repaired != prev:
-            events.append((t, prev, repaired))
-            if repaired > 0 and first_repair is None:
-                first_repair = t
-        prev = repaired
-
-    if first_repair is None:
-        log("  D-repair trajectory: none observed")
-    else:
-        log(f"  first D-repair event: step {first_repair}")
-    for t, old, new in events[:5]:
-        log(f"    step {t}: D_repaired {old}->{new}")
-
-    step = max(1, len(d_rep_traj) // 6)
-    log("  D-repair sampled trajectory:")
-    for idx in range(0, len(d_rep_traj), step):
-        t, repaired, frozen, r1 = d_rep_traj[idx]
-        log(f"    step {t:>5d}: R1={r1}, D_repaired={repaired}, D_frozen={frozen}")
+    rows = list(zip(result["times"], result["binary"]))
+    step = max(1, len(rows) // 6)
+    log("  sampled pointwise cutoff counts:")
+    for idx in range(0, len(rows), step):
+        t, row = rows[idx]
+        log(
+            f"    step {t:>5d}: R1^Lie={row['R1_lie_count']}, "
+            f"R2^Lie={row['R2_lie_count']}, "
+            f"Lie-emergent={row['lie_emergent_pairs']}, "
+            f"unreached_Lie={row['unreached_lie_pairs']}"
+        )
 
 
 def parse_args() -> argparse.Namespace:
@@ -355,7 +351,7 @@ def main() -> None:
     log("  Training-Coupled NN SOF Tau Diagnostic")
     log("=" * 88)
     log("Claim status: exploratory Paper IX diagnostic.")
-    log("K0/K1/K2 are raw norm proxies for R1/R2/D-depth observables.")
+    log("K0/K1/K2 are direct, simple-commutator, and nested-commutator norms.")
     log(
         f"steps={args.steps}, audit_every={args.audit_every}, eta={args.eta}, "
         f"weight_decay={args.weight_decay}, hidden={args.hidden}, batch={args.batch}"
@@ -375,6 +371,39 @@ def main() -> None:
         results.append(result)
         print_summary(result)
 
+    record = {
+        "schema_version": SCHEMA_VERSION,
+        "claim_status": "Computational Observation",
+        "numpy_version": np.__version__,
+        "seed": SEED,
+        "parameters": {
+            "steps": args.steps,
+            "audit_every": args.audit_every,
+            "eta": args.eta,
+            "weight_decay": args.weight_decay,
+            "hidden": args.hidden,
+            "batch": args.batch,
+            "binary_tolerance": TOL,
+            "binary_max_depth": 3,
+        },
+        "semantics": {
+            "continuous_fields": [
+                "K0: maximum direct skew-generator block norm",
+                "K1: maximum simple-commutator block norm",
+                "K2: maximum nested-commutator block norm",
+            ],
+            "binary_counts": "pointwise cutoff-relative Lie/Hall audit",
+            "coherent_sector_tracking": False,
+            "temporal_repair_claimed": False,
+        },
+        "runs": results,
+    }
+    RESULTS_DIR.mkdir(parents=True, exist_ok=True)
+    RESULT_PATH.write_text(
+        json.dumps(record, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+
     log("\nTau-ratio check:")
     for result in results:
         taus = [result["tau_K0"], result["tau_K1"], result["tau_K2"]]
@@ -387,8 +416,9 @@ def main() -> None:
     log("  A positive result supports observable time-scale separation under a")
     log("  specified training dynamics. A flat or inverted result indicates that")
     log("  the activation, threshold, or training model has not isolated slow modes.")
-    log("  D-repair is a separate binary frozen-to-accessible event; it can remain")
-    log("  zero even when continuous K0/K1/K2 rate separation is visible.")
+    log("  The pointwise binary rows do not define a temporal repair event because")
+    log("  this diagnostic does not continue sector labels across training time.")
+    log(f"Versioned result: {RESULT_PATH}")
     log(f"\nFull log: {LOG_PATH}")
     log("Done.")
 

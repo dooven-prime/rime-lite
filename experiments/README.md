@@ -25,6 +25,7 @@ older fixed paths until a versioned reopening.
 Paper-facing computations write generated records under the owning
 `results/` directory. They do not write public artifacts to repository-level
 `data/`. Presentation renderers and manuscript images belong under
+`figures/paperN/`.
 
 ## Paper Routing
 
@@ -37,11 +38,12 @@ Paper-facing computations write generated records under the owning
 | V | [paper5/README.md](paper5/README.md) | support, products, words, commutators, and Lie depth |
 | VI | [paper6/README.md](paper6/README.md) | linearized commutativity/normality and point registrations |
 | VII | [paper7/README.md](paper7/README.md) | incidence geometry, rank protection, and finite Lie atlas |
+| VIII | [paper8/README.md](paper8/README.md) | static theorem layer; illustrative realizations only, with no computational claim dependency |
 | IX | [paper9/](paper9/) | observable-deformation diagnostics |
-| X | [paper10/](paper10/) | pipeline and Registry evidence |
+| X | [paper10/README.md](paper10/README.md) | capability-aware admission and Registry evidence |
 | XI | [paper11/README.md](paper11/README.md) | wall records, taxonomy, and boundary audits |
 | XII | [paper12/README.md](paper12/README.md) | SOF Report validation and diagnostic probes |
-| XIII | [paper13/](paper13/) | aligned report comparison and controlled examples |
+| XIII | [paper13/](paper13/) | Audit Profiles, aligned report comparison, and SOFAUDIT v2 migration |
 
 Where a paper-local README is not yet present, the owning manuscript and
 script docstrings define the release-local scope. A future versioned reopening

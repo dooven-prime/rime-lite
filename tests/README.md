@@ -32,7 +32,6 @@ input family, arithmetic mode, and claim status.
 | `test_representation.py` | Group homomorphism, unitary, block decomposition | Paper I, Sec 2 |
 | `test_spectralstructure.py` | k-set registration, certificate boundaries, failed face-partition hypothesis | Paper I |
 | `test_spectral_utils_api.py` | Commuting-Hermitian and orthogonal-projector registration gates | General spectral API |
-| `claim_contract_tests.py` | Executable claim-status boundaries: arithmetic, semisimplicity, S4 H1, graph shape, cutoff, normality gates, observation metadata, and public-output routing | Papers I--VII |
 | `test_cubieoperator.py` | Canonical engine: spectral-calculus checks, polynomial span, k-set registration | Paper I |
 | `test_spectrum.py` | Six-layer numerical registration, k=5 census absence, multiplicities | Paper I |
 | `test_sectors.py` | 9 QH joint sectors, layer splitting, S6 hub, S1 isolation | Paper II, Sec 4 |
@@ -40,7 +39,9 @@ input family, arithmetic mode, and claim status.
 | `test_transport.py` | Direct graph, sector non-invariance, and graph/operator composition obstruction | Paper II / revised Paper III |
 | `test_experiment_observation.py` | Cached-observation manifest integrity and stale-source detection | Reproducibility infrastructure |
 | `test_accessibility_engine.py` | Typed direct/routed/word/Lie separation, incidence, rank protection, cutoff semantics | General API / Papers III, V, VII |
-| `test_paper13_methodology.py` | Comparison-layer methodology controls | Paper XIII |
+| `test_registry_v2.py` | Registry v2.0 schema, evidence, depth, repair, and promotion guards | Paper X Registry contract |
+| `test_registry_migration.py` | Immutable-v1 digest and reproducible frozen-v2 migration | Paper X Appendix A11 |
+| `test_sofcompiler_contracts.py` | Manifest/IR/Profile schemas and claim-local compilation gates | Paper X compiler theorem implementation |
 | `archive/test_commutant_gap.py` | First-version candidate commutant dimensions | Provenance only |
 | `archive/test_f3.py` | First-version compressed-centralizer computation | Withdrawn interpretation; provenance only |
 | `archive/test_generator_families.py` | First-version generator-family T7 counts | Graph-square provenance only |

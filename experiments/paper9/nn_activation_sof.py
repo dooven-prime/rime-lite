@@ -8,18 +8,19 @@ Claim status:
   - Paper IX diagnostic for observable dynamics.
   - Diagnostic support, not a standalone theorem source.
   - The fixed-weight audit shows that activation-induced sectorization changes
-    R1/R2/frozen profiles.
+    pointwise direct/simple-commutator support profiles.
   - A full tau-ratio experiment requires a coupled training/deformation model;
     static random weights are not enough.
 
 SOF reading:
   activation + batch statistics -> sectorization {Q_i}
   weights                       -> observable family X
-  R1/R2/frozen                  -> sectorized observable shadows
+  R1^Lie/R2^Lie                -> pointwise sectorized shadows
 """
 
 from __future__ import annotations
 
+import json
 import os
 import sys
 from pathlib import Path
@@ -37,6 +38,9 @@ from rime.rep_utils import basis_from_indices  # noqa: E402
 ROOT = Path(__file__).resolve().parents[2]
 DATA_DIR = ROOT / "data"
 LOG_PATH = DATA_DIR / "_paper9_nn_activation_sof.txt"
+RESULTS_DIR = Path(__file__).resolve().parent / "results"
+RESULT_PATH = RESULTS_DIR / "nn_activation_sof.json"
+SCHEMA_VERSION = "paper9-nn-activation-v2.0"
 TOL = 1e-6
 SEED = 42
 
@@ -154,11 +158,13 @@ def audit(Vs: list[np.ndarray], Xs: list[np.ndarray]) -> dict:
     return {
         "n_sec": ns,
         "dims": [int(V.shape[1]) for V in Vs],
-        "R1_tensor": int(np.sum(R1)),
-        "R2_tensor": int(np.sum(R2_arr)),
-        "R1_offdiag": int(np.sum(R1[:, offdiag])),
-        "R2_offdiag": int(np.sum(R2_arr[:, offdiag])),
-        "frozen": int(ns * (ns - 1) - np.sum(r1_graph & offdiag)),
+        "R1_lie_tensor": int(np.sum(R1)),
+        "R2_lie_tensor": int(np.sum(R2_arr)),
+        "R1_lie_offdiag": int(np.sum(R1[:, offdiag])),
+        "R2_lie_offdiag": int(np.sum(R2_arr[:, offdiag])),
+        "unsupported_direct_pairs": int(
+            ns * (ns - 1) - np.sum(r1_graph & offdiag)
+        ),
     }
 
 
@@ -189,23 +195,45 @@ def main() -> None:
 
     header = (
         f"{'activation':<10s} {'sec':>3s} {'dims':<18s} "
-        f"{'R1':>4s} {'R2':>4s} {'R1off':>6s} {'R2off':>6s} {'frozen':>6s}"
+        f"{'R1L':>4s} {'R2L':>4s} {'R1off':>6s} {'R2off':>6s} {'no-R1':>6s}"
     )
     log(header)
     log("-" * len(header))
     for row in rows:
         log(
             f"{row['activation']:<10s} {row['n_sec']:3d} "
-            f"{str(row['dims']):<18s} {row['R1_tensor']:4d} "
-            f"{row['R2_tensor']:4d} {row['R1_offdiag']:6d} "
-            f"{row['R2_offdiag']:6d} {row['frozen']:6d}"
+            f"{str(row['dims']):<18s} {row['R1_lie_tensor']:4d} "
+            f"{row['R2_lie_tensor']:4d} {row['R1_lie_offdiag']:6d} "
+            f"{row['R2_lie_offdiag']:6d} "
+            f"{row['unsupported_direct_pairs']:6d}"
         )
+
+    record = {
+        "schema_version": SCHEMA_VERSION,
+        "claim_status": "Computational Observation",
+        "numpy_version": np.__version__,
+        "seed": SEED,
+        "binary_tolerance": TOL,
+        "semantics": {
+            "carrier": "declared skew-Hermitian family",
+            "counts": "pointwise generator-indexed support counts",
+            "temporal_claim": False,
+        },
+        "rows": rows,
+    }
+    RESULTS_DIR.mkdir(parents=True, exist_ok=True)
+    RESULT_PATH.write_text(
+        json.dumps(record, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
 
     log()
     log("Interpretation:")
     log("  activation choice changes the SOF sectorization and therefore the")
-    log("  R1/R2/frozen observable profile, even with fixed weights.")
+    log("  R1^Lie/R2^Lie profile, even with fixed weights.")
     log("  Full tau-ratio tests require a coupled training/deformation model.")
+    log()
+    log(f"Versioned result: {RESULT_PATH}")
     log()
     log("Paper IX prediction:")
     log("  activation families should systematically change observable time-scale")
