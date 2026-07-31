@@ -1,0 +1,99 @@
+{
+  "boundaries": [
+    "selected continuous block norms, not Boolean support times",
+    "simple commutator only, not Lie depth",
+    "one engineered family, not a universal hierarchy",
+    "response times depend on trajectory parameterization",
+    "response times depend on observable normalization, norm, and threshold"
+  ],
+  "claim_status": "Theorem",
+  "construction": {
+    "lie_family": [
+      "X_12(t)=t(E_12-E_21)",
+      "X_23(t)=t(E_23-E_32)"
+    ],
+    "normalization": "both generators have Frobenius norm sqrt(2) at t=1",
+    "sectorization": "three labelled coordinate projectors",
+    "selected_commutator_block": "Q_1 [X_12(t),X_23(t)] Q_3",
+    "selected_direct_block": "Q_1 X_12(t) Q_2",
+    "space": "C^3",
+    "trajectory": "gamma(t)=t for t>=0"
+  },
+  "exact_formulas": {
+    "commutator_norm": "t^2",
+    "direct_norm": "t",
+    "ratio": "eta^(-1/2)",
+    "tau_commutator": "sqrt(eta)",
+    "tau_direct": "eta"
+  },
+  "numpy_version": "2.1.3",
+  "observed": {
+    "max_validation_residual": 0.0,
+    "ratio": 1000.0000000000001,
+    "tau_commutator": 0.001,
+    "tau_direct": 1e-06
+  },
+  "samples": [
+    {
+      "commutator_formula_residual": 0.0,
+      "commutator_norm": 0.0,
+      "direct_formula_residual": 0.0,
+      "direct_norm": 0.0,
+      "t": 0.0,
+      "x12_skew_residual": 0.0,
+      "x23_skew_residual": 0.0
+    },
+    {
+      "commutator_formula_residual": 0.0,
+      "commutator_norm": 2.5e-13,
+      "direct_formula_residual": 0.0,
+      "direct_norm": 5e-07,
+      "t": 5e-07,
+      "x12_skew_residual": 0.0,
+      "x23_skew_residual": 0.0
+    },
+    {
+      "commutator_formula_residual": 0.0,
+      "commutator_norm": 1e-12,
+      "direct_formula_residual": 0.0,
+      "direct_norm": 1e-06,
+      "t": 1e-06,
+      "x12_skew_residual": 0.0,
+      "x23_skew_residual": 0.0
+    },
+    {
+      "commutator_formula_residual": 0.0,
+      "commutator_norm": 2.5e-07,
+      "direct_formula_residual": 0.0,
+      "direct_norm": 0.0005,
+      "t": 0.0005,
+      "x12_skew_residual": 0.0,
+      "x23_skew_residual": 0.0
+    },
+    {
+      "commutator_formula_residual": 0.0,
+      "commutator_norm": 1e-06,
+      "direct_formula_residual": 0.0,
+      "direct_norm": 0.001,
+      "t": 0.001,
+      "x12_skew_residual": 0.0,
+      "x23_skew_residual": 0.0
+    },
+    {
+      "commutator_formula_residual": 0.0,
+      "commutator_norm": 4e-06,
+      "direct_formula_residual": 0.0,
+      "direct_norm": 0.002,
+      "t": 0.002,
+      "x12_skew_residual": 0.0,
+      "x23_skew_residual": 0.0
+    }
+  ],
+  "schema_version": "paper9-rate-hierarchy-v3.0",
+  "threshold_policy": {
+    "comparison": "norm >= eta",
+    "eta": 1e-06,
+    "type": "common first-crossing threshold"
+  },
+  "validation_role": "deterministic finite-matrix check"
+}

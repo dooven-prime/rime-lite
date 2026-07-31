@@ -1,0 +1,66 @@
+{
+  "binary_tolerance": 1e-06,
+  "claim_status": "Computational Observation",
+  "numpy_version": "2.1.3",
+  "rows": [
+    {
+      "R1_lie_offdiag": 0,
+      "R1_lie_tensor": 2,
+      "R2_lie_offdiag": 0,
+      "R2_lie_tensor": 1,
+      "activation": "None",
+      "dims": [
+        24
+      ],
+      "n_sec": 1,
+      "unsupported_direct_pairs": 0
+    },
+    {
+      "R1_lie_offdiag": 4,
+      "R1_lie_tensor": 8,
+      "R2_lie_offdiag": 2,
+      "R2_lie_tensor": 4,
+      "activation": "ReLU",
+      "dims": [
+        12,
+        12
+      ],
+      "n_sec": 2,
+      "unsupported_direct_pairs": 0
+    },
+    {
+      "R1_lie_offdiag": 12,
+      "R1_lie_tensor": 18,
+      "R2_lie_offdiag": 6,
+      "R2_lie_tensor": 9,
+      "activation": "GeLU",
+      "dims": [
+        8,
+        8,
+        8
+      ],
+      "n_sec": 3,
+      "unsupported_direct_pairs": 0
+    },
+    {
+      "R1_lie_offdiag": 4,
+      "R1_lie_tensor": 6,
+      "R2_lie_offdiag": 2,
+      "R2_lie_tensor": 3,
+      "activation": "Top-2",
+      "dims": [
+        23,
+        1
+      ],
+      "n_sec": 2,
+      "unsupported_direct_pairs": 0
+    }
+  ],
+  "schema_version": "paper9-nn-activation-v2.0",
+  "seed": 42,
+  "semantics": {
+    "carrier": "declared skew-Hermitian family",
+    "counts": "pointwise generator-indexed support counts",
+    "temporal_claim": false
+  }
+}
