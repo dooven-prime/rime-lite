@@ -1,0 +1,633 @@
+{
+  "ir_version": "1.0",
+  "record_id": "example.strict-associative.run-001",
+  "record_kind": "strict_sof",
+  "manifest_ref": {
+    "manifest_id": "example.strict-associative",
+    "manifest_version": "1.0",
+    "artifact_id": "artifact.manifest",
+    "digest": {
+      "algorithm": "sha256",
+      "value": "ffa6e006073f93ad593097ebc7c00b62626797ea73f8565eac8a1e15c0556a02"
+    }
+  },
+  "source": {
+    "adapter_id": "example-matrix-adapter",
+    "adapter_version": "1.0",
+    "source_id": "example-source-001",
+    "artifact_ids": ["artifact.manifest", "artifact.evidence"]
+  },
+  "objects": [
+    {
+      "id": "space.v",
+      "kind": "finite_space",
+      "label": "V = C^8",
+      "provenance_artifact_ids": ["artifact.manifest"],
+      "data": {"dimension": 8, "scalar_field": "complex"}
+    },
+    {
+      "id": "sectorization.q",
+      "kind": "sectorization",
+      "label": "Q = {Q_A,Q_B,Q_C}",
+      "carrier_id": "carrier.sector",
+      "provenance_artifact_ids": ["artifact.manifest"],
+      "data": {"labels": ["A", "B", "C"], "complete": true}
+    },
+    {
+      "id": "sector-algebra.dq",
+      "kind": "marked_sector_algebra",
+      "label": "D_Q",
+      "carrier_id": "carrier.sector",
+      "provenance_artifact_ids": ["artifact.manifest"],
+      "data": {"primitive_labels": ["A", "B", "C"]}
+    },
+    {
+      "id": "alphabet.y",
+      "kind": "labelled_alphabet",
+      "label": "Y = {Y_1,Y_2}",
+      "carrier_id": "carrier.operator",
+      "provenance_artifact_ids": ["artifact.manifest"],
+      "data": {"labels": ["Y_1", "Y_2"]}
+    },
+    {
+      "id": "operator-system.ey",
+      "kind": "operator_system",
+      "label": "E_Y",
+      "carrier_id": "carrier.operator-system",
+      "provenance_artifact_ids": ["artifact.manifest"],
+      "data": {"definition": "span_C{I,Y_a,Y_a^*}"}
+    },
+    {
+      "id": "route-space.depth-3",
+      "kind": "route_space",
+      "label": "Route_3[Y]",
+      "carrier_id": "carrier.route",
+      "provenance_artifact_ids": ["artifact.manifest"],
+      "data": {"length_semantics": "exact labelled routes"}
+    },
+    {
+      "id": "word-space.depth-5",
+      "kind": "word_space",
+      "label": "W_5[Y]",
+      "carrier_id": "carrier.word",
+      "provenance_artifact_ids": ["artifact.manifest"],
+      "data": {"length_semantics": "exact positive words"}
+    },
+    {
+      "id": "closure.ay-positive",
+      "kind": "associative_closure",
+      "label": "A_Y^+",
+      "carrier_id": "carrier.positive-closure",
+      "provenance_artifact_ids": ["artifact.manifest"],
+      "data": {"closure_semantics": "positive associative"}
+    },
+    {
+      "id": "closure.ay-star",
+      "kind": "star_closure",
+      "label": "A_Y^*",
+      "carrier_id": "carrier.observable-star-closure",
+      "provenance_artifact_ids": ["artifact.manifest"],
+      "data": {"closure_semantics": "observable star"}
+    },
+    {
+      "id": "closure.aqy-star",
+      "kind": "star_closure",
+      "label": "A_{Q,Y}^*",
+      "carrier_id": "carrier.sector-star-closure",
+      "provenance_artifact_ids": ["artifact.manifest"],
+      "data": {"closure_semantics": "sector-enriched star"}
+    }
+  ],
+  "carriers": [
+    {
+      "id": "carrier.sector",
+      "kind": "sector",
+      "capability_id": "sectorization",
+      "semantics": "Marked complete orthogonal sectorization.",
+      "object_ids": ["sectorization.q", "sector-algebra.dq"],
+      "semantic_convention_ids": ["semantic.direction"]
+    },
+    {
+      "id": "carrier.operator",
+      "kind": "operator",
+      "capability_id": "operator_carrier",
+      "semantics": "Labelled operative alphabet; projectors are not word letters.",
+      "object_ids": ["alphabet.y"],
+      "semantic_convention_ids": [
+        "semantic.alphabet",
+        "semantic.word",
+        "semantic.projector-letter",
+        "semantic.direction",
+        "semantic.depth-indexing"
+      ]
+    },
+    {
+      "id": "carrier.operator-system",
+      "kind": "operator_system",
+      "capability_id": "operator_system",
+      "semantics": "Self-adjoint linear span without generator-length semantics.",
+      "object_ids": ["operator-system.ey"],
+      "semantic_convention_ids": ["semantic.alphabet"]
+    },
+    {
+      "id": "carrier.route",
+      "kind": "route",
+      "capability_id": "route_carrier",
+      "semantics": "Labelled products with declared intermediate projectors.",
+      "object_ids": ["route-space.depth-3"],
+      "semantic_convention_ids": [
+        "semantic.alphabet",
+        "semantic.word",
+        "semantic.projector-letter",
+        "semantic.direction",
+        "semantic.depth-indexing"
+      ]
+    },
+    {
+      "id": "carrier.word",
+      "kind": "word",
+      "capability_id": "word_carrier",
+      "semantics": "Positive full-word filtration.",
+      "object_ids": ["word-space.depth-5"],
+      "semantic_convention_ids": [
+        "semantic.alphabet",
+        "semantic.word",
+        "semantic.projector-letter",
+        "semantic.direction",
+        "semantic.depth-indexing"
+      ]
+    },
+    {
+      "id": "carrier.positive-closure",
+      "kind": "positive_associative_closure",
+      "capability_id": "positive_associative_closure",
+      "semantics": "Positive associative saturation without automatic adjoints.",
+      "object_ids": ["closure.ay-positive"],
+      "semantic_convention_ids": ["semantic.alphabet", "semantic.word"]
+    },
+    {
+      "id": "carrier.observable-star-closure",
+      "kind": "observable_star_closure",
+      "capability_id": "observable_star_closure",
+      "semantics": "Star saturation of the alphabet without internal sector markers.",
+      "object_ids": ["closure.ay-star"],
+      "semantic_convention_ids": ["semantic.alphabet"]
+    },
+    {
+      "id": "carrier.sector-star-closure",
+      "kind": "sector_enriched_star_closure",
+      "capability_id": "sector_enriched_star_closure",
+      "semantics": "Star saturation with sector projectors available as separators.",
+      "object_ids": ["closure.aqy-star"],
+      "semantic_convention_ids": [
+        "semantic.alphabet",
+        "semantic.projector-letter"
+      ]
+    }
+  ],
+  "semantic_conventions": [
+    {
+      "id": "semantic.alphabet",
+      "kind": "operative_alphabet",
+      "specification": {
+        "alphabet_id": "transition-operators",
+        "labels": ["Y_1", "Y_2"],
+        "adjoint_closed": false
+      }
+    },
+    {
+      "id": "semantic.word",
+      "kind": "word_convention",
+      "specification": {"type": "positive"}
+    },
+    {
+      "id": "semantic.projector-letter",
+      "kind": "projector_letter_policy",
+      "specification": {"projectors_are_letters": false}
+    },
+    {
+      "id": "semantic.direction",
+      "kind": "direction_convention",
+      "specification": {"channel_direction": "j_to_i"}
+    },
+    {
+      "id": "semantic.depth-indexing",
+      "kind": "depth_indexing",
+      "specification": {"first_generator_depth": 1}
+    }
+  ],
+  "run_policies": [
+    {
+      "id": "run.threshold",
+      "kind": "threshold",
+      "specification": {
+        "type": "frobenius_norm",
+        "value": 1e-12,
+        "comparison": "strictly_greater_than"
+      }
+    },
+    {
+      "id": "run.cutoff",
+      "kind": "cutoff",
+      "specification": {
+        "route_max_depth": 3,
+        "word_max_depth": 5,
+        "unreached_is_infinity": false
+      }
+    },
+    {
+      "id": "run.norm",
+      "kind": "norm",
+      "specification": {"name": "frobenius"}
+    },
+    {
+      "id": "run.tolerance",
+      "kind": "numerical_tolerance",
+      "specification": {"absolute": 1e-12, "relative": 1e-10}
+    },
+    {
+      "id": "run.saturation",
+      "kind": "saturation_audit",
+      "specification": {
+        "positive_closure": "computationally_stabilized",
+        "observable_star_closure": "computationally_stabilized",
+        "sector_enriched_star_closure": "computationally_stabilized"
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "artifact.manifest",
+      "uri": "schemas/sofcompiler/examples/strict-associative-capabilities-v1.0.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "ffa6e006073f93ad593097ebc7c00b62626797ea73f8565eac8a1e15c0556a02"
+      },
+      "media_type": "application/json",
+      "schema_version": "1.0",
+      "role": "manifest"
+    },
+    {
+      "id": "artifact.evidence",
+      "uri": "schemas/sofcompiler/examples/strict-associative-evidence-v1.0.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "32e5b9805e87b56a419491ad10c16f65d7c365ee91fe210747018de9622626a5"
+      },
+      "media_type": "application/json",
+      "schema_version": "1.0",
+      "role": "validator-output"
+    },
+    {
+      "id": "artifact.rule-registry",
+      "uri": "schemas/sofcompiler/rule-registry-v1.0.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "12e987288ff4263f6c4e493850bf7ca8e32ebf89d01c6635c04f7f430bd9bef4"
+      },
+      "media_type": "application/json",
+      "schema_version": "1.0",
+      "role": "proof-reference"
+    }
+  ],
+  "certificates": [
+    {
+      "id": "certificate.block-audit",
+      "validator_id": "example-block-validator",
+      "status": "PASS",
+      "scope": "Projector identities and labelled direct blocks.",
+      "artifact_ids": ["artifact.evidence"]
+    },
+    {
+      "id": "certificate.route-word-audit",
+      "validator_id": "example-route-word-validator",
+      "status": "PASS",
+      "scope": "Routed products through depth 3 and positive words through depth 5.",
+      "artifact_ids": ["artifact.evidence"]
+    },
+    {
+      "id": "certificate.closure-audit",
+      "validator_id": "example-closure-validator",
+      "status": "PASS",
+      "scope": "Separate stabilization of the three declared closure carriers.",
+      "artifact_ids": ["artifact.evidence"]
+    },
+    {
+      "id": "certificate.semantic-alignment",
+      "validator_id": "example-semantic-validator",
+      "status": "PASS",
+      "scope": "The word carrier and positive closure use the same operative alphabet.",
+      "artifact_ids": ["artifact.manifest", "artifact.evidence"]
+    }
+  ],
+  "findings": [
+    {
+      "id": "finding.direct-support",
+      "kind": "boolean_support",
+      "carrier_id": "carrier.operator",
+      "subject_object_ids": ["sectorization.q", "alphabet.y"],
+      "value": true,
+      "result_state": "CERTIFIED",
+      "semantic_convention_ids": ["semantic.alphabet", "semantic.direction"],
+      "run_policy_ids": ["run.threshold", "run.norm", "run.tolerance"],
+      "certificate_ids": ["certificate.block-audit"],
+      "artifact_ids": ["artifact.evidence"]
+    },
+    {
+      "id": "finding.route-depth",
+      "kind": "depth",
+      "carrier_id": "carrier.route",
+      "subject_object_ids": ["route-space.depth-3"],
+      "value": 3,
+      "unit": "generator steps",
+      "result_state": "CERTIFIED",
+      "semantic_convention_ids": [
+        "semantic.word",
+        "semantic.depth-indexing"
+      ],
+      "run_policy_ids": ["run.cutoff", "run.threshold", "run.norm"],
+      "certificate_ids": ["certificate.route-word-audit"],
+      "artifact_ids": ["artifact.evidence"]
+    },
+    {
+      "id": "finding.word-depth",
+      "kind": "depth",
+      "carrier_id": "carrier.word",
+      "subject_object_ids": ["word-space.depth-5"],
+      "value": "UNREACHED_AT_CUTOFF",
+      "unit": "generator steps",
+      "result_state": "UNREACHED_AT_CUTOFF",
+      "semantic_convention_ids": [
+        "semantic.word",
+        "semantic.projector-letter",
+        "semantic.depth-indexing"
+      ],
+      "run_policy_ids": ["run.cutoff", "run.threshold"],
+      "certificate_ids": ["certificate.route-word-audit"],
+      "artifact_ids": ["artifact.evidence"]
+    },
+    {
+      "id": "finding.positive-closure-dimension",
+      "kind": "dimension",
+      "carrier_id": "carrier.positive-closure",
+      "subject_object_ids": ["closure.ay-positive"],
+      "value": 12,
+      "result_state": "CERTIFIED",
+      "semantic_convention_ids": ["semantic.alphabet", "semantic.word"],
+      "run_policy_ids": ["run.saturation", "run.tolerance"],
+      "certificate_ids": ["certificate.closure-audit"],
+      "artifact_ids": ["artifact.evidence"]
+    },
+    {
+      "id": "finding.observable-star-dimension",
+      "kind": "dimension",
+      "carrier_id": "carrier.observable-star-closure",
+      "subject_object_ids": ["closure.ay-star"],
+      "value": 16,
+      "result_state": "CERTIFIED",
+      "semantic_convention_ids": ["semantic.alphabet"],
+      "run_policy_ids": ["run.saturation", "run.tolerance"],
+      "certificate_ids": ["certificate.closure-audit"],
+      "artifact_ids": ["artifact.evidence"]
+    },
+    {
+      "id": "finding.sector-star-dimension",
+      "kind": "dimension",
+      "carrier_id": "carrier.sector-star-closure",
+      "subject_object_ids": ["closure.aqy-star"],
+      "value": 20,
+      "result_state": "CERTIFIED",
+      "semantic_convention_ids": [
+        "semantic.alphabet",
+        "semantic.projector-letter"
+      ],
+      "run_policy_ids": ["run.saturation", "run.tolerance"],
+      "certificate_ids": ["certificate.closure-audit"],
+      "artifact_ids": ["artifact.evidence"]
+    },
+    {
+      "id": "finding.lie-depth-status",
+      "kind": "status_only",
+      "carrier_id": null,
+      "subject_object_ids": [],
+      "value": "NOT_DECLARED",
+      "result_state": "NOT_DECLARED",
+      "semantic_convention_ids": [],
+      "run_policy_ids": [],
+      "certificate_ids": [],
+      "artifact_ids": ["artifact.manifest"]
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim.direct-support",
+      "statement": "The declared labelled family has certified off-diagonal direct support.",
+      "result_state": "CERTIFIED",
+      "claim_status": "Computational Certificate",
+      "capability_ids": ["sectorization", "operator_carrier"],
+      "carrier_ids": ["carrier.sector", "carrier.operator"],
+      "object_ids": ["sectorization.q", "alphabet.y"],
+      "finding_ids": ["finding.direct-support"],
+      "semantic_convention_ids": ["semantic.alphabet", "semantic.direction"],
+      "run_policy_ids": ["run.threshold", "run.norm", "run.tolerance"],
+      "hypotheses": [
+        "Complete orthogonal sectorization",
+        "Declared labelled alphabet"
+      ],
+      "certificate_ids": ["certificate.block-audit"],
+      "artifact_ids": ["artifact.evidence"],
+      "scope": "Declared off-diagonal sector pairs.",
+      "negative_boundary": "This claim does not establish route, word, or Lie accessibility."
+    },
+    {
+      "id": "claim.route-audit",
+      "statement": "Labelled routed products were audited through route depth 3.",
+      "result_state": "CERTIFIED",
+      "claim_status": "Computational Certificate",
+      "capability_ids": [
+        "sectorization",
+        "operator_carrier",
+        "route_carrier"
+      ],
+      "carrier_ids": ["carrier.route"],
+      "object_ids": ["route-space.depth-3"],
+      "finding_ids": ["finding.route-depth"],
+      "semantic_convention_ids": [
+        "semantic.alphabet",
+        "semantic.word",
+        "semantic.projector-letter",
+        "semantic.direction",
+        "semantic.depth-indexing"
+      ],
+      "run_policy_ids": ["run.cutoff", "run.threshold", "run.norm"],
+      "hypotheses": ["Declared intermediate-sector convention"],
+      "certificate_ids": ["certificate.route-word-audit"],
+      "artifact_ids": ["artifact.evidence"],
+      "scope": "Routes of length at most 3.",
+      "negative_boundary": "A surviving route does not imply survival after route summation."
+    },
+    {
+      "id": "claim.word-depth",
+      "statement": "The selected word channel was not reached through positive-word depth 5.",
+      "result_state": "UNREACHED_AT_CUTOFF",
+      "claim_status": "Computational Certificate",
+      "capability_ids": [
+        "sectorization",
+        "operator_carrier",
+        "word_carrier"
+      ],
+      "carrier_ids": ["carrier.word"],
+      "object_ids": ["word-space.depth-5"],
+      "finding_ids": ["finding.word-depth"],
+      "semantic_convention_ids": [
+        "semantic.alphabet",
+        "semantic.word",
+        "semantic.projector-letter",
+        "semantic.direction",
+        "semantic.depth-indexing"
+      ],
+      "run_policy_ids": ["run.cutoff", "run.threshold", "run.norm"],
+      "hypotheses": ["Positive operative alphabet", "Declared cutoff 5"],
+      "certificate_ids": ["certificate.route-word-audit"],
+      "artifact_ids": ["artifact.evidence"],
+      "scope": "One selected off-diagonal word channel.",
+      "negative_boundary": "Unreached at cutoff is not infinite exact word depth."
+    },
+    {
+      "id": "claim.word-carrier-declared",
+      "statement": "A positive-word carrier is declared for the operative alphabet.",
+      "result_state": "DECLARED",
+      "claim_status": null,
+      "capability_ids": ["word_carrier"],
+      "carrier_ids": ["carrier.word"],
+      "object_ids": ["alphabet.y", "word-space.depth-5"],
+      "finding_ids": [],
+      "semantic_convention_ids": ["semantic.alphabet", "semantic.word"],
+      "run_policy_ids": [],
+      "hypotheses": [],
+      "certificate_ids": [],
+      "artifact_ids": ["artifact.manifest"],
+      "scope": "The declared static realization.",
+      "negative_boundary": "Declaration alone does not establish a support or depth claim."
+    },
+    {
+      "id": "claim.word-in-positive-closure",
+      "statement": "Every positive word in the declared alphabet belongs to A_Y^+.",
+      "result_state": "ESTABLISHED",
+      "claim_status": "Theorem",
+      "capability_ids": [
+        "word_carrier",
+        "positive_associative_closure"
+      ],
+      "carrier_ids": ["carrier.word", "carrier.positive-closure"],
+      "object_ids": [
+        "alphabet.y",
+        "word-space.depth-5",
+        "closure.ay-positive"
+      ],
+      "finding_ids": [],
+      "semantic_convention_ids": ["semantic.alphabet", "semantic.word"],
+      "run_policy_ids": [],
+      "hypotheses": [
+        "The word carrier and positive closure use the same operative alphabet"
+      ],
+      "certificate_ids": [],
+      "artifact_ids": ["artifact.rule-registry"],
+      "scope": "All finite positive words in the declared alphabet.",
+      "negative_boundary": "The inclusion does not identify star or sector-enriched closure."
+    },
+    {
+      "id": "claim.positive-closure",
+      "statement": "The positive associative closure stabilized at dimension 12.",
+      "result_state": "CERTIFIED",
+      "claim_status": "Computational Certificate",
+      "capability_ids": ["positive_associative_closure"],
+      "carrier_ids": ["carrier.positive-closure"],
+      "object_ids": ["closure.ay-positive"],
+      "finding_ids": ["finding.positive-closure-dimension"],
+      "semantic_convention_ids": ["semantic.alphabet", "semantic.word"],
+      "run_policy_ids": ["run.saturation", "run.tolerance"],
+      "hypotheses": ["Positive multiplication closure only"],
+      "certificate_ids": ["certificate.closure-audit"],
+      "artifact_ids": ["artifact.evidence"],
+      "scope": "A_Y^+ in the declared realization.",
+      "negative_boundary": "No C-star semisimplicity or Wedderburn claim is inferred for A_Y^+."
+    },
+    {
+      "id": "claim.observable-star-closure",
+      "statement": "The observable star closure stabilized at dimension 16.",
+      "result_state": "CERTIFIED",
+      "claim_status": "Computational Certificate",
+      "capability_ids": ["observable_star_closure"],
+      "carrier_ids": ["carrier.observable-star-closure"],
+      "object_ids": ["closure.ay-star"],
+      "finding_ids": ["finding.observable-star-dimension"],
+      "semantic_convention_ids": ["semantic.alphabet"],
+      "run_policy_ids": ["run.saturation", "run.tolerance"],
+      "hypotheses": ["Adjoints admitted by star closure"],
+      "certificate_ids": ["certificate.closure-audit"],
+      "artifact_ids": ["artifact.evidence"],
+      "scope": "A_Y^* in the declared realization.",
+      "negative_boundary": "Sector projectors are not admitted as internal route separators."
+    },
+    {
+      "id": "claim.sector-star-closure",
+      "statement": "The sector-enriched star closure stabilized at dimension 20.",
+      "result_state": "CERTIFIED",
+      "claim_status": "Computational Certificate",
+      "capability_ids": ["sector_enriched_star_closure"],
+      "carrier_ids": ["carrier.sector-star-closure"],
+      "object_ids": ["closure.aqy-star"],
+      "finding_ids": ["finding.sector-star-dimension"],
+      "semantic_convention_ids": [
+        "semantic.alphabet",
+        "semantic.projector-letter"
+      ],
+      "run_policy_ids": ["run.saturation", "run.tolerance"],
+      "hypotheses": [
+        "Sector projectors admitted in the generated star algebra"
+      ],
+      "certificate_ids": ["certificate.closure-audit"],
+      "artifact_ids": ["artifact.evidence"],
+      "scope": "A_{Q,Y}^* in the declared realization.",
+      "negative_boundary": "This routed star saturation does not recover positive-word depth."
+    },
+    {
+      "id": "claim.lie-depth",
+      "statement": "Lie/Hall depth is unavailable because no Lie carrier was declared.",
+      "result_state": "NOT_DECLARED",
+      "claim_status": null,
+      "capability_ids": ["lie_hall_carrier"],
+      "carrier_ids": [],
+      "object_ids": [],
+      "finding_ids": ["finding.lie-depth-status"],
+      "semantic_convention_ids": [],
+      "run_policy_ids": [],
+      "hypotheses": [],
+      "certificate_ids": [],
+      "artifact_ids": ["artifact.manifest"],
+      "scope": "This realization.",
+      "negative_boundary": "Not declared is distinct from zero, cutoff-unreached, and mathematical nonexistence."
+    }
+  ],
+  "derivations": [
+    {
+      "id": "derivation.word-to-positive-closure",
+      "source_claim_ids": ["claim.word-carrier-declared"],
+      "target_claim_id": "claim.word-in-positive-closure",
+      "rule_id": "word-to-positive-closure-v1",
+      "rule_registry_version": "1.0",
+      "rule_status": "Theorem",
+      "condition_checks": [
+        {
+          "condition_id": "same-operative-alphabet",
+          "description": "The word carrier and A_Y^+ use the same labelled alphabet.",
+          "status": "SATISFIED",
+          "certificate_ids": ["certificate.semantic-alignment"],
+          "artifact_ids": ["artifact.manifest", "artifact.evidence"]
+        }
+      ],
+      "derivation_state": "VALID"
+    }
+  ]
+}

@@ -12,9 +12,9 @@ Scope:
        color classes.
 
 Claim status:
-    - Registry evidence for the Universal Observable Pipeline Principle.
-    - These examples use word/transport-depth shadows, not the full Paper V
-      commutator-repair theorem.
+    - Registry evidence for capability-aware strict admission.
+    - These examples use positive-word support and depth; no Lie/Hall carrier
+      or commutator-repair claim is registered.
     - They show that SOF requires compatible sectorization, not a fixed
       representation-theoretic origin for sectors.
 """
@@ -158,8 +158,8 @@ def main() -> None:
     print("=" * 72)
     print("  Paper X Registry Probe: Control / PDE / Combinatorial SOFs")
     print("=" * 72)
-    print("Claim status: portability diagnostics for the SOF pipeline.")
-    print("Boundary: word-depth shadows, not a Paper V commutator-repair theorem.")
+    print("Claim status: typed portability diagnostics for strict SOF admission.")
+    print("Boundary: positive-word findings only; no Lie/Hall carrier is declared.")
     print()
 
     control = result["control"]
@@ -167,7 +167,7 @@ def main() -> None:
     print(f"  Kalman ranks: {control['kalman_ranks']}")
     print(f"  controllable: {control['controllable']}")
     print(f"  R1 direct edges: {control['r1_edges']}")
-    print(f"  length-2 support edges: {control['r2_word_edges']}")
+    print(f"  W_2 aggregate word-support edges: {control['r2_word_edges']}")
     print(f"  first word-depth from input sector to terminal sector: {control['D_0_to_2']}")
     print()
 
@@ -176,7 +176,7 @@ def main() -> None:
     print(f"  grid size: {pde['n_grid']}")
     print(f"  sector dims left/interface/right: {pde['sector_dims']}")
     print(f"  R1 direct edges: {pde['r1_edges']}")
-    print(f"  length-2 support edges: {pde['r2_word_edges']}")
+    print(f"  W_2 aggregate word-support edges: {pde['r2_word_edges']}")
     print(f"  first word-depth left -> right: {pde['D_left_to_right']}")
     print()
 
@@ -190,7 +190,8 @@ def main() -> None:
 
     print("Conclusion:")
     print("  Control, PDE, and combinatorial examples use different sector origins.")
-    print("  Once compatible sectors exist, the same observable pipeline applies.")
+    print("  Each enters through the same capability-aware interface.")
+    print("  Only its declared operator/word findings are reported.")
     print("Done.")
 
 

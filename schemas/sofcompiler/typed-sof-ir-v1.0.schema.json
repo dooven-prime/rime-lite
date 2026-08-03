@@ -1,0 +1,580 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rime-project.local/schemas/sofcompiler/typed-sof-ir-v1.0.schema.json",
+  "title": "Typed SOF Intermediate Representation v1.0",
+  "description": "Normalized objects, carriers, conventions, run policies, findings, evidence, and typed-claim derivations consumed by report profiles.",
+  "type": "object",
+  "required": [
+    "ir_version",
+    "record_id",
+    "record_kind",
+    "manifest_ref",
+    "source",
+    "objects",
+    "carriers",
+    "semantic_conventions",
+    "run_policies",
+    "artifacts",
+    "certificates",
+    "findings",
+    "claims",
+    "derivations"
+  ],
+  "properties": {
+    "ir_version": {"const": "1.0"},
+    "record_id": {"$ref": "#/$defs/id"},
+    "record_kind": {
+      "enum": ["strict_sof", "diagnostic_analogue"]
+    },
+    "manifest_ref": {
+      "type": "object",
+      "required": [
+        "manifest_id",
+        "manifest_version",
+        "artifact_id",
+        "digest"
+      ],
+      "properties": {
+        "manifest_id": {"$ref": "#/$defs/id"},
+        "manifest_version": {"const": "1.0"},
+        "artifact_id": {"$ref": "#/$defs/id"},
+        "digest": {"$ref": "#/$defs/digest"}
+      },
+      "additionalProperties": false
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "adapter_id",
+        "adapter_version",
+        "source_id",
+        "artifact_ids"
+      ],
+      "properties": {
+        "adapter_id": {"$ref": "#/$defs/id"},
+        "adapter_version": {"type": "string", "minLength": 1},
+        "source_id": {"type": "string", "minLength": 1},
+        "artifact_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/id"},
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "objects": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/object"}
+    },
+    "carriers": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/carrier"}
+    },
+    "semantic_conventions": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/semantic_convention"}
+    },
+    "run_policies": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/run_policy"}
+    },
+    "artifacts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/artifact"}
+    },
+    "certificates": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/certificate"}
+    },
+    "findings": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/finding"}
+    },
+    "claims": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/claim"}
+    },
+    "derivations": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/derivation"}
+    }
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._-]*$"
+    },
+    "digest": {
+      "type": "object",
+      "required": ["algorithm", "value"],
+      "properties": {
+        "algorithm": {"enum": ["sha256", "sha512"]},
+        "value": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "capability_id": {
+      "enum": [
+        "sectorization",
+        "operator_carrier",
+        "operator_system",
+        "route_carrier",
+        "word_carrier",
+        "positive_associative_closure",
+        "observable_star_closure",
+        "sector_enriched_star_closure",
+        "lie_hall_carrier",
+        "deformation_chart",
+        "proxy_diagnostic",
+        "diagnostic_analogue"
+      ]
+    },
+    "result_state": {
+      "enum": [
+        "DECLARED",
+        "ESTABLISHED",
+        "CERTIFIED",
+        "OBSERVED",
+        "UNREACHED_AT_CUTOFF",
+        "NOT_APPLICABLE",
+        "NOT_DECLARED"
+      ]
+    },
+    "claim_status": {
+      "enum": [
+        "Theorem",
+        "Computational Certificate",
+        "Computational Observation",
+        "Research Program"
+      ]
+    },
+    "object_kind": {
+      "enum": [
+        "finite_space",
+        "sectorization",
+        "sector_projector",
+        "marked_sector_algebra",
+        "labelled_alphabet",
+        "operator",
+        "labelled_block",
+        "operator_system",
+        "sector_enriched_operator_system",
+        "route_space",
+        "word_space",
+        "commutator_space",
+        "depth_field",
+        "associative_closure",
+        "star_closure",
+        "lie_family",
+        "hall_filtration",
+        "typed_field",
+        "typed_shadow",
+        "support_shadow",
+        "deformation_chart",
+        "comparison_map",
+        "trajectory",
+        "trajectory_observable",
+        "discriminant",
+        "wall_record",
+        "response_time",
+        "measurement",
+        "proxy",
+        "diagnostic_analogue"
+      ]
+    },
+    "carrier_kind": {
+      "enum": [
+        "sector",
+        "operator",
+        "operator_system",
+        "route",
+        "word",
+        "positive_associative_closure",
+        "observable_star_closure",
+        "sector_enriched_star_closure",
+        "lie",
+        "hall",
+        "deformation",
+        "proxy",
+        "analogue"
+      ]
+    },
+    "semantic_convention_kind": {
+      "enum": [
+        "operative_alphabet",
+        "word_convention",
+        "projector_letter_policy",
+        "hall_convention",
+        "direction_convention",
+        "depth_indexing",
+        "comparison_identification"
+      ]
+    },
+    "run_policy_kind": {
+      "enum": [
+        "threshold",
+        "cutoff",
+        "norm",
+        "numerical_tolerance",
+        "saturation_audit",
+        "sampling_grid",
+        "trajectory_parameterization"
+      ]
+    },
+    "object": {
+      "type": "object",
+      "required": [
+        "id",
+        "kind",
+        "label",
+        "provenance_artifact_ids"
+      ],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "kind": {"$ref": "#/$defs/object_kind"},
+        "label": {"type": "string", "minLength": 1},
+        "carrier_id": {"$ref": "#/$defs/id"},
+        "provenance_artifact_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/id"},
+          "uniqueItems": true
+        },
+        "data": {"type": "object"},
+        "data_schema_ref": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "carrier": {
+      "type": "object",
+      "required": [
+        "id",
+        "kind",
+        "capability_id",
+        "semantics",
+        "object_ids",
+        "semantic_convention_ids"
+      ],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "kind": {"$ref": "#/$defs/carrier_kind"},
+        "capability_id": {"$ref": "#/$defs/capability_id"},
+        "semantics": {"type": "string", "minLength": 1},
+        "object_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/id"},
+          "uniqueItems": true
+        },
+        "semantic_convention_ids": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/id"},
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "semantic_convention": {
+      "type": "object",
+      "required": ["id", "kind", "specification"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "kind": {"$ref": "#/$defs/semantic_convention_kind"},
+        "specification": {
+          "type": "object",
+          "minProperties": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "run_policy": {
+      "type": "object",
+      "required": ["id", "kind", "specification"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "kind": {"$ref": "#/$defs/run_policy_kind"},
+        "specification": {
+          "type": "object",
+          "minProperties": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "artifact": {
+      "type": "object",
+      "required": [
+        "id",
+        "uri",
+        "digest",
+        "media_type",
+        "schema_version",
+        "role"
+      ],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "uri": {"type": "string", "minLength": 1},
+        "digest": {"$ref": "#/$defs/digest"},
+        "media_type": {"type": "string", "minLength": 1},
+        "schema_version": {"type": ["string", "null"]},
+        "role": {
+          "enum": [
+            "manifest",
+            "source-input",
+            "adapter-output",
+            "validator-output",
+            "proof-reference",
+            "source-data",
+            "log",
+            "figure",
+            "report"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "certificate": {
+      "type": "object",
+      "required": [
+        "id",
+        "validator_id",
+        "status",
+        "scope",
+        "artifact_ids"
+      ],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "validator_id": {"$ref": "#/$defs/id"},
+        "status": {"enum": ["PASS", "FAIL", "NOT_RUN"]},
+        "scope": {"type": "string", "minLength": 1},
+        "artifact_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/id"},
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "finding": {
+      "type": "object",
+      "required": [
+        "id",
+        "kind",
+        "carrier_id",
+        "subject_object_ids",
+        "value",
+        "result_state",
+        "semantic_convention_ids",
+        "run_policy_ids",
+        "certificate_ids",
+        "artifact_ids"
+      ],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "kind": {
+          "enum": [
+            "boolean_support",
+            "rank",
+            "dimension",
+            "depth",
+            "norm",
+            "residual",
+            "algebra_type",
+            "response_time",
+            "wall_event",
+            "status_only"
+          ]
+        },
+        "carrier_id": {
+          "anyOf": [
+            {"$ref": "#/$defs/id"},
+            {"type": "null"}
+          ]
+        },
+        "subject_object_ids": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/id"},
+          "uniqueItems": true
+        },
+        "value": {},
+        "unit": {"type": ["string", "null"]},
+        "result_state": {"$ref": "#/$defs/result_state"},
+        "semantic_convention_ids": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/id"},
+          "uniqueItems": true
+        },
+        "run_policy_ids": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/id"},
+          "uniqueItems": true
+        },
+        "certificate_ids": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/id"},
+          "uniqueItems": true
+        },
+        "artifact_ids": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/id"},
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "claim": {
+      "type": "object",
+      "required": [
+        "id",
+        "statement",
+        "result_state",
+        "claim_status",
+        "capability_ids",
+        "carrier_ids",
+        "object_ids",
+        "finding_ids",
+        "semantic_convention_ids",
+        "run_policy_ids",
+        "hypotheses",
+        "certificate_ids",
+        "artifact_ids",
+        "scope",
+        "negative_boundary"
+      ],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "statement": {"type": "string", "minLength": 1},
+        "result_state": {"$ref": "#/$defs/result_state"},
+        "claim_status": {
+          "anyOf": [
+            {"$ref": "#/$defs/claim_status"},
+            {"type": "null"}
+          ]
+        },
+        "capability_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/capability_id"},
+          "uniqueItems": true
+        },
+        "carrier_ids": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/id"},
+          "uniqueItems": true
+        },
+        "object_ids": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/id"},
+          "uniqueItems": true
+        },
+        "finding_ids": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/id"},
+          "uniqueItems": true
+        },
+        "semantic_convention_ids": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/id"},
+          "uniqueItems": true
+        },
+        "run_policy_ids": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/id"},
+          "uniqueItems": true
+        },
+        "hypotheses": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        },
+        "certificate_ids": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/id"},
+          "uniqueItems": true
+        },
+        "artifact_ids": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/id"},
+          "uniqueItems": true
+        },
+        "scope": {"type": "string", "minLength": 1},
+        "negative_boundary": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "condition_check": {
+      "type": "object",
+      "required": [
+        "condition_id",
+        "description",
+        "status",
+        "certificate_ids",
+        "artifact_ids"
+      ],
+      "properties": {
+        "condition_id": {"$ref": "#/$defs/id"},
+        "description": {"type": "string", "minLength": 1},
+        "status": {"enum": ["SATISFIED", "FAILED", "NOT_CHECKED"]},
+        "certificate_ids": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/id"},
+          "uniqueItems": true
+        },
+        "artifact_ids": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/id"},
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "derivation": {
+      "type": "object",
+      "required": [
+        "id",
+        "source_claim_ids",
+        "target_claim_id",
+        "rule_id",
+        "rule_registry_version",
+        "rule_status",
+        "condition_checks",
+        "derivation_state"
+      ],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "source_claim_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/id"},
+          "uniqueItems": true
+        },
+        "target_claim_id": {"$ref": "#/$defs/id"},
+        "rule_id": {"$ref": "#/$defs/id"},
+        "rule_registry_version": {"const": "1.0"},
+        "rule_status": {
+          "enum": [
+            "Theorem",
+            "Computational Certificate",
+            "Research Program"
+          ]
+        },
+        "condition_checks": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/condition_check"}
+        },
+        "derivation_state": {
+          "enum": ["VALID", "INVALID", "UNRESOLVED"]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

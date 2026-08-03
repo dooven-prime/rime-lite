@@ -1,0 +1,59 @@
+{
+  "artifact_role": "versioned_migration_result",
+  "authority": "Source-addressed import of finite certificate values from the immutable Registry v1.0 snapshot. This artifact does not claim a fresh scientific recomputation.",
+  "records": {
+    "constructed_commutator_cancellation": {
+      "claim_status": "Computational Certificate",
+      "negative_boundary": "Migrated mechanism control; no fresh genericity or completion claim is made.",
+      "value": "constructed positive and negative controls"
+    },
+    "quantum_static_repair": {
+      "carrier_id": "quantum.gates.principal-log-skew.hall-v1",
+      "claim_status": "Computational Certificate",
+      "clifford_cnot_repair_count": 6,
+      "cutoff": 4,
+      "cutoff_semantics": "legacy four-level cutoff label; the source engine indexes the tested Hall levels by 0,1,2,3",
+      "generator_registration": {
+        "embedding": "H and S act on the first qubit; CNOT acts on the ordered two-qubit computational basis",
+        "fallback": "X -> (U - U^*) / 2 only if logm raises",
+        "gate_labels": [
+          "H",
+          "S",
+          "CNOT"
+        ],
+        "matrix_logarithm": "scipy.linalg.logm principal matrix logarithm",
+        "normalization": "none",
+        "skew_extraction": "X -> (X - X^*) / 2"
+      },
+      "hall_filtration": {
+        "convention": "depth 0 contains the registered generators; depth 1 contains simple commutators; each later layer brackets a generator with the preceding layer and removes the cumulative real-linear span",
+        "declared_level_count": 4,
+        "tested_depth_indices": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "negative_boundary": "Migrated finite cutoff census; unreached at cutoff is not exact infinite depth.",
+      "pair_scope": "off_diagonal_ordered",
+      "pauli_repair_count": 0,
+      "zero_tolerance": 1e-06
+    }
+  },
+  "schema": "paper10.legacy-certificate-imports.v2",
+  "source_scripts": [
+    {
+      "path": "experiments/paper5/validation/path_commutator_cancellation.py",
+      "sha256": "5bdf095b86e4e54391029eb1497118efe027af15dac9665c817e8a656aebbf0d"
+    },
+    {
+      "path": "experiments/quantum/quantum_accessibility_universality.py",
+      "sha256": "75fead3d0857b9a8cd5b702b6520fa97f512bc5309b2b072aacdf7e4df0a6dcd"
+    }
+  ],
+  "source_snapshot": {
+    "path": "registry/paper10-release-v1.0.registry.json",
+    "sha256": "fc1cd5cf8c7c8b768da1c61dfdfcea88723ce47433c562812cd386d940e8495c"
+  }
+}

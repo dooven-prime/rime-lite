@@ -78,6 +78,8 @@ def local_gap_audit(direction: np.ndarray, pair: tuple[int, int]) -> dict:
     return {
         "pair": list(pair),
         "endpoint_gap": 0.0,
+        "first_positive_parameter": float(LOCAL_T[0]),
+        "first_positive_gap": float(gaps[0]),
         "fitted_order": float(fitted_order),
         "fitted_prefactor": float(np.exp(log_prefactor)),
         "gap_over_t_min": float(np.min(gaps / LOCAL_T)),
@@ -156,6 +158,7 @@ def run_audit(seed: int = 42, robustness_draws: int = 32) -> dict:
         raise AssertionError("endpoint-lifting negative control did not remove both collisions")
 
     return {
+        "record_version": "paper11-constructed-goe-endpoint-v1.0",
         "claim_status": "constructed_witness",
         "paper_xi_release_status": "post_v1_candidate",
         "taxonomy_candidates": ["A"],
@@ -171,6 +174,22 @@ def run_audit(seed: int = 42, robustness_draws: int = 32) -> dict:
             "constructed pair-gap endpoint witness; not a generic GOE crossing, "
             "unrestricted stability theorem, or full ADE classification"
         ),
+        "trajectory_event": {
+            "orientation": "endpoint_to_positive_parameter",
+            "parameter_bracket": [0.0, float(LOCAL_T[0])],
+            "before_state": {
+                "adjacent_gaps": [
+                    collision["endpoint_gap"] for collision in collisions
+                ]
+            },
+            "after_state": {
+                "adjacent_gaps": [
+                    collision["first_positive_gap"] for collision in collisions
+                ]
+            },
+            "raw_numeric_direction": "increase",
+            "event_semantics": "collision_exit",
+        },
     }
 
 

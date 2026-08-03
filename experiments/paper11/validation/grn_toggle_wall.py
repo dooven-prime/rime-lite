@@ -408,6 +408,24 @@ def edge_deformation_audit() -> dict:
             sweep[transition_index - 1]["edge_strength"],
         ],
         "refined_controlled_grid_bracket": [one_basin, two_basin],
+        "trajectory_event": {
+            "orientation": "decreasing_regulatory_edge_strength",
+            "sampled_transition_bracket": {
+                "before_parameter": two_basin,
+                "after_parameter": one_basin,
+            },
+            "before_state": {
+                "attractor_count": 2,
+                "terminal_sectors": reference["terminal_sectors"],
+            },
+            "after_state": {
+                "attractor_count": 1,
+                "terminal_sectors": edge_deleted["terminal_sectors"],
+            },
+            "raw_numeric_direction": "decrease",
+            "accessibility_direction": "not_applicable",
+            "event_semantics": "terminalization",
+        },
         "refined_scan": refined,
         "reference": reference,
         "edge_deleted": edge_deleted,
@@ -425,6 +443,7 @@ def run_audit(
     seed: int = 42,
 ) -> dict:
     return {
+        "record_version": "paper11-grn-terminal-basin-loss-v1.0",
         "paper_xi_release_status": "post_v1_candidate",
         "withdrawn_claims": ["Class B noise repair", "Class D noise plateau wall"],
         "historical_failure_boundary": (

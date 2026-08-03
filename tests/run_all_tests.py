@@ -32,6 +32,7 @@ TESTS = [
     "test_sofcompiler_contracts.py",
     "test_sofrs_v2.py",
     "test_sofaudit_v2.py",
+    "test_typed_wall_record_census.py",
 ]
 
 # Slow tests — each constructs CubieSpectralOperator (~1-2 min)

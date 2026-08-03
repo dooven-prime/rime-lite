@@ -8,13 +8,13 @@ Scope:
         finite spectral triple data
           -> block projectors from D
           -> observable family from algebra/one-form blocks
-          -> sector shadows and T7-style bridge diagnostic
+          -> direct blocks and labelled routed-word diagnostics
 
 Claim status:
     - Cross-species registry evidence for Paper X.
     - The Connes-distance obstruction is verified for the central finite
       algebra A0 = C^3 represented by block scalars.
-    - The T7-style bridge is an SOF accessibility diagnostic, not a claim that
+    - The ordered routed bridges are associative diagnostics, not a claim that
       Connes distance itself is repaired.
 """
 
@@ -92,11 +92,11 @@ def audit() -> dict:
     bridge_lr = projector_block_norm(qs, x_lm @ x_mr, 0, 2)
     bridge_rl = projector_block_norm(qs, x_rm @ x_ml, 2, 0)
 
-    t7_pairs = []
+    routed_bridge_pairs = []
     if direct_lr < TOL and bridge_lr > TOL:
-        t7_pairs.append(("L", "R"))
+        routed_bridge_pairs.append(("L", "R"))
     if direct_rl < TOL and bridge_rl > TOL:
-        t7_pairs.append(("R", "L"))
+        routed_bridge_pairs.append(("R", "L"))
 
     return {
         "dim": DIM,
@@ -109,8 +109,8 @@ def audit() -> dict:
         "direct_rl": direct_rl,
         "bridge_lr": bridge_lr,
         "bridge_rl": bridge_rl,
-        "t7_pairs": t7_pairs,
-        "t7_count_ordered": len(t7_pairs),
+        "routed_bridge_pairs": routed_bridge_pairs,
+        "ordered_routed_bridge_count": len(routed_bridge_pairs),
     }
 
 
@@ -135,11 +135,14 @@ def main() -> None:
     print(f"  bridge L->M->R norm:   {result['bridge_lr']:.2e}")
     print(f"  direct R->L block norm: {result['direct_rl']:.2e}")
     print(f"  bridge R->M->L norm:   {result['bridge_rl']:.2e}")
-    print(f"  ordered T7-style bridge count: {result['t7_count_ordered']}")
+    print(
+        "  ordered routed bridge count: "
+        f"{result['ordered_routed_bridge_count']}"
+    )
     print()
     print("Claim status:")
     print("  finite NCG-inspired registry entry")
-    print("  T7 bridge is an SOF shadow, not a Connes-distance repair theorem")
+    print("  routed bridges do not constitute a Connes-distance repair theorem")
     print("Done.")
 
 

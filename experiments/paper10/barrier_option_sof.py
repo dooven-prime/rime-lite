@@ -12,10 +12,9 @@ The SOF is built from a finite log-price grid:
     X      = drift and diffusion finite-difference observables
     Q      = CTMC log-GBM generator used for first-hitting-time diagnostics
 
-The SOF diagnostic is not "D = first hitting time".  The accessibility ladder
-records whether the generator couples the barrier sectors.  The stochastic
-first hitting time is an additional registered diagnostic computed from the
-absorbing CTMC subgenerator.
+The operator diagnostic records labelled direct blocks across the barrier. The
+stochastic first-hitting time is a separate proxy diagnostic computed from the
+absorbing CTMC subgenerator. No Lie/Hall carrier or depth field is declared.
 """
 
 from __future__ import annotations
@@ -30,7 +29,7 @@ if sys.platform == "win32":
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", ".."))
-from rime.accessibility import AccessibilityEngine  # noqa: E402
+from rime.accessibility import compute_R1  # noqa: E402
 
 
 def sector_bases_from_masks(masks: list[np.ndarray]) -> list[np.ndarray]:
@@ -114,8 +113,11 @@ def audit(
 
     # Use drift/diffusion pieces as observable-family data; use Q for hitting time.
     Xs = [drift.astype(complex), diff.astype(complex)]
-    engine = AccessibilityEngine(Vs, Xs, tol=1e-10, max_depth=3)
-    access = engine.audit()
+    r1 = compute_R1(Vs, Xs, tol=1e-10)
+    offdiag = ~np.eye(len(Vs), dtype=bool)
+    labelled_count = int(np.sum(r1[:, offdiag]))
+    labelled_possible = len(Xs) * len(Vs) * (len(Vs) - 1)
+    labelled_pct = 100.0 * labelled_count / labelled_possible
 
     start_idx = int(np.argmin(np.abs(prices - s0)))
     tau_hit = mean_first_hit_time(Q, start_idx, above)
@@ -134,7 +136,9 @@ def audit(
         "tau_hit": tau_hit,
         "below_to_above_norm": block_norm,
         "above_to_below_norm": reverse_norm,
-        **access,
+        "labelled_direct_support_count": labelled_count,
+        "labelled_direct_support_possible": labelled_possible,
+        "labelled_direct_support_pct": labelled_pct,
     }
 
 
@@ -155,12 +159,14 @@ def main() -> None:
     print(f"S0 grid point: {result['s0']:.4f}; barrier: {result['barrier']:.4f}")
     print(f"Sectors: below-barrier dim={result['below_dim']}, above-barrier dim={result['above_dim']}")
     print()
-    print("SOF accessibility audit:")
-    print(f"  R1 generator-block offdiag density: {result['R1_pct']:.1f}%")
-    print(f"  R2 commutator-block offdiag density: {result['R2_pct']:.1f}%")
-    print(f"  frozen_R1:          {result['frozen_R1']}")
-    print(f"  D_repaired:         {result['D_repaired']}")
-    print(f"  D_max:              {result['D_max']}")
+    print("Declared operator-carrier audit:")
+    print(
+        "  labelled direct off-diagonal support: "
+        f"{result['labelled_direct_support_count']}/"
+        f"{result['labelled_direct_support_possible']} "
+        f"({result['labelled_direct_support_pct']:.1f}%)"
+    )
+    print("  Lie/Hall carrier: not declared")
     print()
     print("Barrier diagnostics:")
     print(f"  ||Q_below Q Q_above||_F = {result['below_to_above_norm']:.4e}")
@@ -169,8 +175,8 @@ def main() -> None:
     print()
     print("Interpretation:")
     print("  - the barrier defines a source-dependent sectorization of the price grid;")
-    print("  - cross-barrier generator support is the SOF shadow;")
-    print("  - mean first-hit time is a stochastic diagnostic, not the SOF depth D;")
+    print("  - cross-barrier labelled blocks form the operator support finding;")
+    print("  - mean first-hit time is a separate stochastic proxy diagnostic;")
     print("  - this is a registry/application entry, not an option-pricing theorem.")
     print("Done.")
 

@@ -1,15 +1,15 @@
 """Paper X tau-boundary probes for quantum, graph, and Yang-like SOFs.
 
 Claim status:
-    - Registry evidence for Paper X.
-    - Negative/boundary evidence for Paper X calibrated mechanism separation / H3'.
-    - Evidence summary, not a standalone theorem source.
+    - Computational Observations for declared proxy trajectories.
+    - Boundary evidence only; not a standalone theorem source.
 
 The purpose of this script is to test whether observable rate hierarchy appears
 outside the known structured training-coupled setting.  The result is mostly
 negative: linear interpolation, discrete graph rewiring, and weak state-mixing
-probes do not produce a robust K0 < K1 < K2 hierarchy.  This supports H3:
-structured dynamics with mechanism-separated channels is decisive.
+probes do not produce a robust K0 < K1 < K2 hierarchy. This does not prove
+that mechanism separation is necessary or sufficient, and it does not promote
+continuous proxies to discrete support or depth fields.
 """
 
 from __future__ import annotations
@@ -31,7 +31,7 @@ from rime.rep_utils import computational_basis_sectors  # noqa: E402
 
 
 TOL = 1e-10
-RNG = np.random.RandomState(42)
+SEED = 42
 
 
 @dataclass(frozen=True)
@@ -168,6 +168,7 @@ def block_trajectory_norms(Vs: list[np.ndarray], Xs: list[np.ndarray]) -> tuple[
 
 def quantum_linear_interpolation() -> list[dict]:
     section("Probe 4: Quantum Linear Generator Interpolation")
+    rng = np.random.RandomState(SEED)
     systems = [
         ("Clifford+CNOT", ["H", "S", "CNOT"]),
         ("Pauli {X,Z}", ["X", "Z"]),
@@ -180,7 +181,7 @@ def quantum_linear_interpolation() -> list[dict]:
         initials = []
         for target in targets:
             dim = target.shape[0]
-            M = RNG.randn(dim, dim) + 1j * RNG.randn(dim, dim)
+            M = rng.randn(dim, dim) + 1j * rng.randn(dim, dim)
             initials.append((M - M.conj().T) / 2.0)
 
         K0s, K1s, K2s = [], [], []
@@ -202,7 +203,7 @@ def quantum_linear_interpolation() -> list[dict]:
               f"K2 {K2s[0]:.4e}->{K2s[-1]:.4e}")
         rows.append({"name": name, "taus": (tau0, tau1, tau2), "status": status})
 
-    print("  Interpretation: linear interpolation is not mechanism-separated dynamics (H3 fails).")
+    print("  Interpretation: the declared interpolation does not yield an ordered proxy hierarchy.")
     print()
     return rows
 
@@ -219,9 +220,10 @@ def graph_sof(A: np.ndarray) -> tuple[list[np.ndarray], list[np.ndarray]]:
 
 def graph_edge_rewiring() -> dict:
     section("Probe 5: Graph Edge-Rewiring")
+    rng = np.random.RandomState(SEED)
     n_vertices = 6
     edges = [(i, j) for i in range(n_vertices) for j in range(i + 1, n_vertices)]
-    RNG.shuffle(edges)
+    rng.shuffle(edges)
     A = np.zeros((n_vertices, n_vertices), dtype=float)
     K0s, K1s = [], []
 
@@ -277,8 +279,8 @@ def yang_state_mixing() -> dict:
 
 def main() -> None:
     section("Paper X Tau Boundary Probes")
-    print("Claim status: registry boundary evidence for calibrated mechanism separation / H3'.")
-    print("Positive hierarchy requires structured, mechanism-separated dynamics (H3).")
+    print("Claim status: Computational Observations for declared proxy trajectories.")
+    print("Boundary: no proxy-to-shadow or mechanism-to-rate theorem is inferred.")
     print()
 
     quantum = quantum_linear_interpolation()
@@ -286,16 +288,19 @@ def main() -> None:
     yang = yang_state_mixing()
 
     section("Summary")
-    print("  Known constructive control: mechanism-separated SOF has tau(K0_grow)=30 << tau(K1_decay)=1380.")
+    print("  Paper IX calibrated control: tau(K0_grow)=30 < tau(K1_response)=1380.")
     print("  Known positive: NN GD+WD has tau(K0)<tau(K1)<tau(K2) = 60<80<120.")
-    print("  Known partial: engineered near-threshold accessibility has tau(R1)<tau(R2).")
+    print(
+        "  Exact policy-relative construction: three-sector block norms cross "
+        "at eta and sqrt(eta)."
+    )
     for row in quantum:
-        print(f"  Quantum {row['name']}: {row['status']} (linear interpolation; H3 fails)")
+        print(f"  Quantum {row['name']}: {row['status']} (declared linear interpolation)")
     print(f"  Graph rewiring: {graph['status']} (discrete/degenerate dynamics)")
     print(f"  Yang-like mixing: {yang['status']} (state-mixing geometry, not training-coupled)")
     print()
     print("Conclusion: observable rate hierarchy is not universal over all SOF deformations.")
-    print("Positive cases require H3: structured, mechanism-separated dynamics.")
+    print("These boundary observations do not establish a universal causal condition.")
     print("Done.")
 
 

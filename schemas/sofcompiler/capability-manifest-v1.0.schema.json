@@ -1,0 +1,226 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rime-project.local/schemas/sofcompiler/capability-manifest-v1.0.schema.json",
+  "title": "SOF Capability Manifest v1.0",
+  "description": "Declares which typed SOF capabilities an application adapter supplies. It does not record run results or claim evidence.",
+  "type": "object",
+  "required": [
+    "manifest_version",
+    "manifest_id",
+    "record_kind",
+    "sof_semantics_version",
+    "adapter",
+    "space",
+    "capabilities",
+    "semantic_convention_requirements",
+    "run_policy_requirements"
+  ],
+  "properties": {
+    "manifest_version": {"const": "1.0"},
+    "manifest_id": {"$ref": "#/$defs/id"},
+    "record_kind": {
+      "enum": ["strict_sof", "diagnostic_analogue"]
+    },
+    "sof_semantics_version": {"const": "2.0"},
+    "adapter": {
+      "type": "object",
+      "required": ["id", "version", "domain", "source_type"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "version": {"type": "string", "minLength": 1},
+        "domain": {"type": "string", "minLength": 1},
+        "source_type": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "space": {
+      "type": "object",
+      "required": ["dimension", "scalar_field"],
+      "properties": {
+        "dimension": {"type": ["integer", "null"], "minimum": 1},
+        "scalar_field": {
+          "enum": ["real", "complex", "declared_analogue", "not_applicable"]
+        }
+      },
+      "additionalProperties": false
+    },
+    "capabilities": {
+      "type": "object",
+      "required": [
+        "sectorization",
+        "operator_carrier",
+        "operator_system",
+        "route_carrier",
+        "word_carrier",
+        "positive_associative_closure",
+        "observable_star_closure",
+        "sector_enriched_star_closure",
+        "lie_hall_carrier",
+        "deformation_chart",
+        "proxy_diagnostic",
+        "diagnostic_analogue"
+      ],
+      "properties": {
+        "sectorization": {"$ref": "#/$defs/capability"},
+        "operator_carrier": {"$ref": "#/$defs/capability"},
+        "operator_system": {"$ref": "#/$defs/capability"},
+        "route_carrier": {"$ref": "#/$defs/capability"},
+        "word_carrier": {"$ref": "#/$defs/capability"},
+        "positive_associative_closure": {"$ref": "#/$defs/capability"},
+        "observable_star_closure": {"$ref": "#/$defs/capability"},
+        "sector_enriched_star_closure": {"$ref": "#/$defs/capability"},
+        "lie_hall_carrier": {"$ref": "#/$defs/capability"},
+        "deformation_chart": {"$ref": "#/$defs/capability"},
+        "proxy_diagnostic": {"$ref": "#/$defs/capability"},
+        "diagnostic_analogue": {"$ref": "#/$defs/capability"}
+      },
+      "additionalProperties": false
+    },
+    "semantic_convention_requirements": {
+      "type": "object",
+      "required": [
+        "operative_alphabet",
+        "word_convention",
+        "projector_letter_policy",
+        "direction_convention",
+        "depth_indexing",
+        "hall_convention"
+      ],
+      "properties": {
+        "operative_alphabet": {"$ref": "#/$defs/requirement"},
+        "word_convention": {"$ref": "#/$defs/requirement"},
+        "projector_letter_policy": {"$ref": "#/$defs/requirement"},
+        "direction_convention": {"$ref": "#/$defs/requirement"},
+        "depth_indexing": {"$ref": "#/$defs/requirement"},
+        "hall_convention": {"$ref": "#/$defs/requirement"}
+      },
+      "additionalProperties": false
+    },
+    "run_policy_requirements": {
+      "type": "object",
+      "required": [
+        "threshold",
+        "cutoff",
+        "norm",
+        "numerical_tolerance",
+        "saturation_audit",
+        "sampling_grid",
+        "trajectory_parameterization"
+      ],
+      "properties": {
+        "threshold": {"$ref": "#/$defs/requirement"},
+        "cutoff": {"$ref": "#/$defs/requirement"},
+        "norm": {"$ref": "#/$defs/requirement"},
+        "numerical_tolerance": {"$ref": "#/$defs/requirement"},
+        "saturation_audit": {"$ref": "#/$defs/requirement"},
+        "sampling_grid": {"$ref": "#/$defs/requirement"},
+        "trajectory_parameterization": {"$ref": "#/$defs/requirement"}
+      },
+      "additionalProperties": false
+    },
+    "notes": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {"record_kind": {"const": "strict_sof"}},
+        "required": ["record_kind"]
+      },
+      "then": {
+        "properties": {
+          "space": {
+            "properties": {
+              "dimension": {"type": "integer", "minimum": 1},
+              "scalar_field": {"const": "complex"}
+            }
+          },
+          "capabilities": {
+            "properties": {
+              "sectorization": {
+                "properties": {"availability": {"const": "DECLARED"}}
+              },
+              "operator_carrier": {
+                "properties": {"availability": {"const": "DECLARED"}}
+              },
+              "diagnostic_analogue": {
+                "properties": {
+                  "availability": {
+                    "enum": ["NOT_DECLARED", "NOT_APPLICABLE"]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {"record_kind": {"const": "diagnostic_analogue"}},
+        "required": ["record_kind"]
+      },
+      "then": {
+        "properties": {
+          "capabilities": {
+            "properties": {
+              "diagnostic_analogue": {
+                "properties": {"availability": {"const": "DECLARED"}}
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._-]*$"
+    },
+    "capability": {
+      "type": "object",
+      "required": ["availability", "description"],
+      "properties": {
+        "availability": {
+          "enum": ["DECLARED", "NOT_DECLARED", "NOT_APPLICABLE"]
+        },
+        "description": {"type": "string", "minLength": 1},
+        "configuration": {
+          "type": "object",
+          "minProperties": 1
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {"availability": {"const": "DECLARED"}},
+            "required": ["availability"]
+          },
+          "then": {"required": ["configuration"]}
+        },
+        {
+          "if": {
+            "properties": {
+              "availability": {
+                "enum": ["NOT_DECLARED", "NOT_APPLICABLE"]
+              }
+            },
+            "required": ["availability"]
+          },
+          "then": {
+            "not": {"required": ["configuration"]}
+          }
+        }
+      ],
+      "additionalProperties": false
+    },
+    "requirement": {
+      "enum": ["required", "optional", "not_applicable"]
+    }
+  },
+  "additionalProperties": false
+}

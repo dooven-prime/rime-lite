@@ -1,0 +1,197 @@
+{
+  "profile_version": "1.0",
+  "profile_id": "basic-associative-closure",
+  "title": "Basic, Associative, and Closure SOF Report",
+  "description": "A composable strict-SOF report that intentionally omits Lie/Hall and dynamic modules.",
+  "applies_to": ["strict_sof"],
+  "ir_version": "1.0",
+  "modules": [
+    {
+      "id": "basic",
+      "title": "SOF Basic",
+      "capability_requirements": {
+        "all_of": ["sectorization", "operator_carrier"],
+        "any_of": [],
+        "none_of": ["diagnostic_analogue"]
+      },
+      "object_kind_requirements": {
+        "all_of": ["sectorization", "labelled_alphabet"],
+        "any_of": [],
+        "none_of": ["diagnostic_analogue"]
+      },
+      "semantic_convention_requirements": {
+        "all_of": ["operative_alphabet", "direction_convention"],
+        "any_of": [],
+        "none_of": []
+      },
+      "run_policy_requirements": {
+        "all_of": ["threshold", "norm", "numerical_tolerance"],
+        "any_of": [],
+        "none_of": []
+      },
+      "accepted_result_states": ["ESTABLISHED", "CERTIFIED", "OBSERVED"],
+      "accepted_claim_statuses": [
+        "Theorem",
+        "Computational Certificate",
+        "Computational Observation"
+      ],
+      "carrier_kinds": ["sector", "operator", "operator_system"],
+      "evidence_requirements": {
+        "Theorem": "PROOF_REFERENCE",
+        "Computational Certificate": "PASS_CERTIFICATE",
+        "Computational Observation": "SOURCE_ARTIFACT",
+        "Research Program": "NO_EVIDENCE_REQUIRED",
+        "null": "NO_CLAIM"
+      },
+      "forbidden_promotion_ids": [
+        "PATH_TO_ROUTE",
+        "OPERATOR_SYSTEM_TO_LABELLED_WITNESS"
+      ],
+      "forbidden_promotion_notes": [
+        "A graph path does not establish a routed product.",
+        "An aggregate operator-system corner does not recover a labelled generator witness."
+      ],
+      "output_sections": [
+        "Sectorization",
+        "Observable Alphabet",
+        "Direct Support"
+      ]
+    },
+    {
+      "id": "associative",
+      "title": "Associative Filtrations",
+      "capability_requirements": {
+        "all_of": ["sectorization", "operator_carrier"],
+        "any_of": ["route_carrier", "word_carrier"],
+        "none_of": []
+      },
+      "object_kind_requirements": {
+        "all_of": [],
+        "any_of": ["route_space", "word_space", "depth_field"],
+        "none_of": []
+      },
+      "semantic_convention_requirements": {
+        "all_of": [
+          "operative_alphabet",
+          "word_convention",
+          "projector_letter_policy",
+          "direction_convention",
+          "depth_indexing"
+        ],
+        "any_of": [],
+        "none_of": []
+      },
+      "run_policy_requirements": {
+        "all_of": ["cutoff", "threshold"],
+        "any_of": ["norm", "numerical_tolerance"],
+        "none_of": []
+      },
+      "accepted_result_states": [
+        "ESTABLISHED",
+        "CERTIFIED",
+        "OBSERVED",
+        "UNREACHED_AT_CUTOFF"
+      ],
+      "accepted_claim_statuses": [
+        "Theorem",
+        "Computational Certificate",
+        "Computational Observation"
+      ],
+      "carrier_kinds": [
+        "route",
+        "word",
+        "positive_associative_closure"
+      ],
+      "evidence_requirements": {
+        "Theorem": "PROOF_REFERENCE",
+        "Computational Certificate": "PASS_CERTIFICATE",
+        "Computational Observation": "SOURCE_ARTIFACT",
+        "Research Program": "NO_EVIDENCE_REQUIRED",
+        "null": "NO_CLAIM"
+      },
+      "forbidden_promotion_ids": [
+        "PATH_TO_ROUTE",
+        "ROUTE_TO_WORD",
+        "CUTOFF_UNREACHED_TO_INFINITY"
+      ],
+      "forbidden_promotion_notes": [
+        "Route survival and route-sum survival are distinct.",
+        "Cutoff-unreached depth is not exact infinity."
+      ],
+      "output_sections": [
+        "Routed Products",
+        "Full Words",
+        "First-Hit Cutoff"
+      ]
+    },
+    {
+      "id": "closure",
+      "title": "Associative and Star Closures",
+      "capability_requirements": {
+        "all_of": [],
+        "any_of": [
+          "positive_associative_closure",
+          "observable_star_closure",
+          "sector_enriched_star_closure"
+        ],
+        "none_of": []
+      },
+      "object_kind_requirements": {
+        "all_of": [],
+        "any_of": ["associative_closure", "star_closure"],
+        "none_of": []
+      },
+      "semantic_convention_requirements": {
+        "all_of": ["operative_alphabet"],
+        "any_of": [],
+        "none_of": []
+      },
+      "run_policy_requirements": {
+        "all_of": ["saturation_audit", "numerical_tolerance"],
+        "any_of": [],
+        "none_of": []
+      },
+      "accepted_result_states": ["ESTABLISHED", "CERTIFIED", "OBSERVED"],
+      "accepted_claim_statuses": [
+        "Theorem",
+        "Computational Certificate",
+        "Computational Observation"
+      ],
+      "carrier_kinds": [
+        "positive_associative_closure",
+        "observable_star_closure",
+        "sector_enriched_star_closure"
+      ],
+      "evidence_requirements": {
+        "Theorem": "PROOF_REFERENCE",
+        "Computational Certificate": "PASS_CERTIFICATE",
+        "Computational Observation": "SOURCE_ARTIFACT",
+        "Research Program": "NO_EVIDENCE_REQUIRED",
+        "null": "NO_CLAIM"
+      },
+      "forbidden_promotion_ids": [
+        "POSITIVE_CLOSURE_TO_STAR_CLOSURE",
+        "SECTOR_ENRICHED_CLOSURE_TO_FULL_WORD",
+        "ABSTRACT_TYPE_TO_MARKED_CORNERS"
+      ],
+      "forbidden_promotion_notes": [
+        "Positive, observable-star, and sector-enriched closures remain distinct.",
+        "Abstract algebra type does not recover marked corner geometry."
+      ],
+      "output_sections": [
+        "Positive Associative Closure",
+        "Observable Star Closure",
+        "Sector-Enriched Star Closure"
+      ]
+    }
+  ],
+  "degradation_policy": {
+    "unsatisfied_capability_expression": "omit_module",
+    "unsatisfied_object_expression": "omit_module",
+    "unsatisfied_policy_expression": "emit_unavailable",
+    "not_declared_message": "The selected carrier was not declared for this realization.",
+    "not_applicable_message": "The selected diagnostic does not apply to this realization.",
+    "unreached_message": "The selected channel was not reached within the declared cutoff; no infinite-depth claim is made."
+  },
+  "outputs": ["markdown", "pdf", "registry", "json_api"]
+}

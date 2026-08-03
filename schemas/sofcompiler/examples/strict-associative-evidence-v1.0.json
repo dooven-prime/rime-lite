@@ -1,0 +1,14 @@
+{
+  "evidence_version": "1.0",
+  "source_id": "example-source-001",
+  "projector_residual": 0.0,
+  "direct_support_present": true,
+  "route_audited_through": 3,
+  "word_audited_through": 5,
+  "selected_word_channel_state": "UNREACHED_AT_CUTOFF",
+  "closure_dimensions": {
+    "positive_associative": 12,
+    "observable_star": 16,
+    "sector_enriched_star": 20
+  }
+}

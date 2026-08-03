@@ -1,0 +1,126 @@
+{
+  "compiler_id": "sofcompiler.compile_v1",
+  "compiler_output_version": "1.0",
+  "ir_record_id": "example.strict-associative.run-001",
+  "item_type": "ClaimItem_v1 | DegradationItem_v1",
+  "items": [
+    {
+      "carrier_ids": [
+        "carrier.sector",
+        "carrier.operator"
+      ],
+      "claim_id": "claim.direct-support",
+      "claim_status": "Computational Certificate",
+      "derivation_ids": [],
+      "item_kind": "claim",
+      "module_id": "basic",
+      "result_state": "CERTIFIED",
+      "source_ir_id": "claim.direct-support",
+      "source_ir_kind": "claim"
+    },
+    {
+      "action": "omit_claim",
+      "details": [
+        "capability: missing all_of: operator_carrier, sectorization",
+        "semantic convention: missing all_of: depth_indexing, direction_convention, projector_letter_policy",
+        "run policy: missing all_of: cutoff, threshold",
+        "run policy: no any_of member present: norm, numerical_tolerance"
+      ],
+      "item_kind": "degradation",
+      "module_id": "associative",
+      "reason_kind": "claim_ineligible",
+      "source_ir_id": "claim.word-in-positive-closure"
+    },
+    {
+      "action": "omit_claim",
+      "details": [
+        "capability: missing all_of: operator_carrier, sectorization",
+        "capability: no any_of member present: route_carrier, word_carrier",
+        "object: no any_of member present: route_space, word_space, depth_field",
+        "semantic convention: missing all_of: depth_indexing, direction_convention, projector_letter_policy",
+        "run policy: missing all_of: cutoff, threshold"
+      ],
+      "item_kind": "degradation",
+      "module_id": "associative",
+      "reason_kind": "claim_ineligible",
+      "source_ir_id": "claim.positive-closure"
+    },
+    {
+      "carrier_ids": [
+        "carrier.route"
+      ],
+      "claim_id": "claim.route-audit",
+      "claim_status": "Computational Certificate",
+      "derivation_ids": [],
+      "item_kind": "claim",
+      "module_id": "associative",
+      "result_state": "CERTIFIED",
+      "source_ir_id": "claim.route-audit",
+      "source_ir_kind": "claim"
+    },
+    {
+      "carrier_ids": [
+        "carrier.word"
+      ],
+      "claim_id": "claim.word-depth",
+      "claim_status": "Computational Certificate",
+      "derivation_ids": [],
+      "item_kind": "claim",
+      "module_id": "associative",
+      "result_state": "UNREACHED_AT_CUTOFF",
+      "source_ir_id": "claim.word-depth",
+      "source_ir_kind": "claim"
+    },
+    {
+      "action": "omit_claim",
+      "details": [
+        "run policy: missing all_of: numerical_tolerance, saturation_audit"
+      ],
+      "item_kind": "degradation",
+      "module_id": "closure",
+      "reason_kind": "claim_ineligible",
+      "source_ir_id": "claim.word-in-positive-closure"
+    },
+    {
+      "carrier_ids": [
+        "carrier.positive-closure"
+      ],
+      "claim_id": "claim.positive-closure",
+      "claim_status": "Computational Certificate",
+      "derivation_ids": [],
+      "item_kind": "claim",
+      "module_id": "closure",
+      "result_state": "CERTIFIED",
+      "source_ir_id": "claim.positive-closure",
+      "source_ir_kind": "claim"
+    },
+    {
+      "carrier_ids": [
+        "carrier.observable-star-closure"
+      ],
+      "claim_id": "claim.observable-star-closure",
+      "claim_status": "Computational Certificate",
+      "derivation_ids": [],
+      "item_kind": "claim",
+      "module_id": "closure",
+      "result_state": "CERTIFIED",
+      "source_ir_id": "claim.observable-star-closure",
+      "source_ir_kind": "claim"
+    },
+    {
+      "carrier_ids": [
+        "carrier.sector-star-closure"
+      ],
+      "claim_id": "claim.sector-star-closure",
+      "claim_status": "Computational Certificate",
+      "derivation_ids": [],
+      "item_kind": "claim",
+      "module_id": "closure",
+      "result_state": "CERTIFIED",
+      "source_ir_id": "claim.sector-star-closure",
+      "source_ir_kind": "claim"
+    }
+  ],
+  "manifest_id": "example.strict-associative",
+  "profile_id": "basic-associative-closure"
+}

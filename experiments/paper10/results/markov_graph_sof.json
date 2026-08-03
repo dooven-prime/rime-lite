@@ -1,0 +1,303 @@
+{
+  "claim_scope": "two finite strict-SOF registrations with operator and exact positive-word carriers",
+  "realizations": {
+    "graph": {
+      "boundaries": [
+        "positive-word accessibility only",
+        "no Lie/Hall family is declared",
+        "graph paths agree with words here because the single operator is entrywise nonnegative",
+        "the certificate is specific to the displayed finite matrices"
+      ],
+      "capabilities": {
+        "deformation_chart": false,
+        "lie_hall_carrier": false,
+        "operator_carrier": true,
+        "sectorization": true,
+        "word_carrier": true
+      },
+      "claim_status": "Computational Certificate",
+      "findings": {
+        "direct_support_count": 10,
+        "direct_support_edges": [
+          "v1->v0",
+          "v0->v1",
+          "v2->v1",
+          "v1->v2",
+          "v3->v2",
+          "v2->v3",
+          "v4->v3",
+          "v3->v4",
+          "v5->v4",
+          "v4->v5"
+        ],
+        "direct_support_possible": 30,
+        "exact_word_depth": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            1,
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            1,
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            3,
+            2,
+            1,
+            0,
+            1,
+            2
+          ],
+          [
+            4,
+            3,
+            2,
+            1,
+            0,
+            1
+          ],
+          [
+            5,
+            4,
+            3,
+            2,
+            1,
+            0
+          ]
+        ],
+        "maximum_finite_word_depth": 5,
+        "reachable_off_diagonal_count": 30,
+        "unreachable_off_diagonal_count": 0,
+        "word_two_support_count": 8,
+        "word_two_support_edges": [
+          "v2->v0",
+          "v3->v1",
+          "v0->v2",
+          "v4->v2",
+          "v1->v3",
+          "v5->v3",
+          "v2->v4",
+          "v3->v5"
+        ]
+      },
+      "id": "graph-path-6",
+      "matrix": [
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "operative_alphabet": {
+        "adjoint_closed": true,
+        "labels": [
+          "A"
+        ],
+        "projectors_are_letters": false,
+        "semantics": "undirected path-graph adjacency operator",
+        "word_convention": "positive"
+      },
+      "record_kind": "strict_sof",
+      "saturation_certificate": {
+        "entrywise_nonnegative": true,
+        "method": "entrywise-nonnegative support graph and finite shortest paths",
+        "search_bound": 5,
+        "status": "PASS",
+        "word_depth_matches_support_graph": true
+      },
+      "sectorization": {
+        "complete": true,
+        "labels": [
+          "v0",
+          "v1",
+          "v2",
+          "v3",
+          "v4",
+          "v5"
+        ],
+        "origin": "vertex sectors",
+        "sector_dimensions": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "space": {
+        "dimension": 6,
+        "scalar_field": "complex"
+      },
+      "species": "Graph"
+    },
+    "markov": {
+      "boundaries": [
+        "positive-word accessibility only",
+        "no Lie/Hall family is declared",
+        "graph paths agree with words here because the single operator is entrywise nonnegative",
+        "the certificate is specific to the displayed finite matrices"
+      ],
+      "capabilities": {
+        "deformation_chart": false,
+        "lie_hall_carrier": false,
+        "operator_carrier": true,
+        "sectorization": true,
+        "word_carrier": true
+      },
+      "claim_status": "Computational Certificate",
+      "findings": {
+        "direct_support_count": 3,
+        "direct_support_edges": [
+          "state2->state0",
+          "state0->state1",
+          "state1->state2"
+        ],
+        "direct_support_possible": 6,
+        "exact_word_depth": [
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            2
+          ],
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "maximum_finite_word_depth": 2,
+        "reachable_off_diagonal_count": 6,
+        "unreachable_off_diagonal_count": 0,
+        "word_two_support_count": 6,
+        "word_two_support_edges": [
+          "state1->state0",
+          "state2->state0",
+          "state0->state1",
+          "state2->state1",
+          "state0->state2",
+          "state1->state2"
+        ]
+      },
+      "id": "markov-lazy-cycle-3",
+      "matrix": [
+        [
+          0.5,
+          0.0,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.0
+        ],
+        [
+          0.0,
+          0.5,
+          0.5
+        ]
+      ],
+      "operative_alphabet": {
+        "adjoint_closed": false,
+        "labels": [
+          "P"
+        ],
+        "projectors_are_letters": false,
+        "semantics": "column-stochastic transition operator; matrix entry P_ij carries state j to state i",
+        "word_convention": "positive"
+      },
+      "record_kind": "strict_sof",
+      "saturation_certificate": {
+        "entrywise_nonnegative": true,
+        "method": "entrywise-nonnegative support graph and finite shortest paths",
+        "search_bound": 2,
+        "status": "PASS",
+        "word_depth_matches_support_graph": true
+      },
+      "sectorization": {
+        "complete": true,
+        "labels": [
+          "state0",
+          "state1",
+          "state2"
+        ],
+        "origin": "coordinate state sectors",
+        "sector_dimensions": [
+          1,
+          1,
+          1
+        ]
+      },
+      "space": {
+        "dimension": 3,
+        "scalar_field": "complex"
+      },
+      "species": "Markov"
+    }
+  },
+  "schema_version": "paper10.markov-graph-static.v2"
+}

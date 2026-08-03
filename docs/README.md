@@ -13,6 +13,8 @@ Publication identities and DOIs are maintained only in the root
 |-------------|----------|
 | Read a concise research overview | [overview.md](overview.md) |
 | Understand the full paper architecture and typed interfaces | [PROGRAM_MAP.md](PROGRAM_MAP.md) |
+| Trace Papers I--VII interfaces and promotion limits | [PRE_SOF_INTERFACE_MAP.md](PRE_SOF_INTERFACE_MAP.md) |
+| Check controlled cross-paper terminology | [PROGRAM_VOCABULARY.md](PROGRAM_VOCABULARY.md) |
 | See which paper owns each object and claim | [PAPER_SCOPE.md](PAPER_SCOPE.md) |
 | Understand why Rubik is used as a finite laboratory | [PROGRAM_PHILOSOPHY.md](PROGRAM_PHILOSOPHY.md) |
 
@@ -74,6 +76,7 @@ moving fields, or represented genericity.
 
 ## Repository Boundary
 
-The public documentation covers Papers I--XIII and their released support
-contracts. Author-side planning, exploratory research routing, and historical
-working notes are outside this public documentation index.
+The public documentation covers the Papers I--XIII architecture and the Paper
+XIV development horizon. Author-side planning, exploratory research routing,
+release migration status, and historical working notes are outside this public
+documentation index.

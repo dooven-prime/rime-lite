@@ -41,7 +41,8 @@ input family, arithmetic mode, and claim status.
 | `test_accessibility_engine.py` | Typed direct/routed/word/Lie separation, incidence, rank protection, cutoff semantics | General API / Papers III, V, VII |
 | `test_registry_v2.py` | Registry v2.0 schema, evidence, depth, repair, and promotion guards | Paper X Registry contract |
 | `test_registry_migration.py` | Immutable-v1 digest and reproducible frozen-v2 migration | Paper X Appendix A11 |
-| `test_sofcompiler_contracts.py` | Manifest/IR/Profile schemas and claim-local compilation gates | Paper X compiler theorem implementation |
+| `test_sofcompiler_contracts.py` | Manifest/IR/Profile schemas, claim-local gates, and typed `Compile_v1` output regression | Paper X compiler theorem implementation |
+| `test_typed_wall_record_census.py` | Realization/role/field-family separation, admission ledger, real event endpoints, and strict/analogue spectrum partition | Paper XI typed wall census |
 | `archive/test_commutant_gap.py` | First-version candidate commutant dimensions | Provenance only |
 | `archive/test_f3.py` | First-version compressed-centralizer computation | Withdrawn interpretation; provenance only |
 | `archive/test_generator_families.py` | First-version generator-family T7 counts | Graph-square provenance only |

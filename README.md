@@ -23,7 +23,7 @@ immutable first combined record retains its historical predecessor.
 | Paper VII | incidence geometry, rank protection, and composition-promotion limits | <https://doi.org/10.5281/zenodo.21634538> |
 | Paper VIII | sectorized observable framework | <https://doi.org/10.5281/zenodo.21700863> |
 | Paper IX | observable dynamics of sectorized observable frameworks | <https://doi.org/10.5281/zenodo.21713306> |
-| Paper X | capability-aware compilation for Sectorized Observable Frameworks and Registry evidence | <https://doi.org/10.5281/zenodo.21288036> |
+| Paper X | capability-aware compilation for Sectorized Observable Frameworks and Registry evidence | <https://doi.org/10.5281/zenodo.21768257> |
 | Paper XI | typed wall-record taxonomy for Sectorized Observable Frameworks | <https://doi.org/10.5281/zenodo.21453674> |
 | Paper XII | SOF diagnostic protocol and report specification | <https://doi.org/10.5281/zenodo.21387462> |
 | Paper XIII | Audit Profiles, SOF Report Alignment, and sparse typed comparison maps | <https://doi.org/10.5281/zenodo.21449512> |
@@ -32,8 +32,8 @@ immutable first combined record retains its historical predecessor.
 
 This is the repository's canonical DOI index. It identifies immutable
 published records; other public documents link here instead of duplicating the
-list. Papers VIII and IX now match their published version-2 records.
-Repository copies of Papers X--XIII may contain explicitly labelled
+list. Papers VIII--X now match their published version-2 records.
+Repository copies of Papers XI--XIII may contain explicitly labelled
 later-version candidates or migrations; their listed DOIs continue to identify
 the immutable published versions, and the frozen v1 contracts remain
 unchanged.

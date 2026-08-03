@@ -1,0 +1,117 @@
+{
+  "manifest_version": "1.0",
+  "manifest_id": "example.strict-associative",
+  "record_kind": "strict_sof",
+  "sof_semantics_version": "2.0",
+  "adapter": {
+    "id": "example-matrix-adapter",
+    "version": "1.0",
+    "domain": "finite-dimensional matrix system",
+    "source_type": "declared matrices"
+  },
+  "space": {
+    "dimension": 8,
+    "scalar_field": "complex"
+  },
+  "capabilities": {
+    "sectorization": {
+      "availability": "DECLARED",
+      "description": "A complete exact orthogonal sectorization.",
+      "configuration": {
+        "origin": "declared coordinate decomposition",
+        "realization_status": "exact",
+        "complete": true,
+        "labels": ["A", "B", "C"],
+        "provenance": "example source record"
+      }
+    },
+    "operator_carrier": {
+      "availability": "DECLARED",
+      "description": "A labelled positive-word operative alphabet.",
+      "configuration": {
+        "alphabet_id": "transition-operators",
+        "word_convention": "positive",
+        "adjoint_closed": false,
+        "projectors_are_letters": false
+      }
+    },
+    "operator_system": {
+      "availability": "DECLARED",
+      "description": "The self-adjoint linear span E_Y.",
+      "configuration": {
+        "definition": "span_C{I,Y_a,Y_a^*}"
+      }
+    },
+    "route_carrier": {
+      "availability": "DECLARED",
+      "description": "Labelled routed products with explicit intermediate sectors.",
+      "configuration": {
+        "semantics": "exact-length labelled routed products"
+      }
+    },
+    "word_carrier": {
+      "availability": "DECLARED",
+      "description": "Positive full words in the declared alphabet.",
+      "configuration": {
+        "semantics": "exact-length positive words"
+      }
+    },
+    "positive_associative_closure": {
+      "availability": "DECLARED",
+      "description": "Positive associative closure A_Y^+.",
+      "configuration": {
+        "closure_id": "closure.ay-positive"
+      }
+    },
+    "observable_star_closure": {
+      "availability": "DECLARED",
+      "description": "Observable star closure A_Y^*.",
+      "configuration": {
+        "closure_id": "closure.ay-star"
+      }
+    },
+    "sector_enriched_star_closure": {
+      "availability": "DECLARED",
+      "description": "Sector-enriched star closure A_{Q,Y}^*.",
+      "configuration": {
+        "closure_id": "closure.aqy-star"
+      }
+    },
+    "lie_hall_carrier": {
+      "availability": "NOT_DECLARED",
+      "description": "No Lie family or Hall convention is registered."
+    },
+    "deformation_chart": {
+      "availability": "NOT_APPLICABLE",
+      "description": "This example is a static realization."
+    },
+    "proxy_diagnostic": {
+      "availability": "NOT_APPLICABLE",
+      "description": "No continuous proxy is used."
+    },
+    "diagnostic_analogue": {
+      "availability": "NOT_APPLICABLE",
+      "description": "The record is a strict SOF realization."
+    }
+  },
+  "semantic_convention_requirements": {
+    "operative_alphabet": "required",
+    "word_convention": "required",
+    "projector_letter_policy": "required",
+    "direction_convention": "required",
+    "depth_indexing": "required",
+    "hall_convention": "not_applicable"
+  },
+  "run_policy_requirements": {
+    "threshold": "required",
+    "cutoff": "required",
+    "norm": "required",
+    "numerical_tolerance": "required",
+    "saturation_audit": "required",
+    "sampling_grid": "not_applicable",
+    "trajectory_parameterization": "not_applicable"
+  },
+  "notes": [
+    "Capability availability is distinct from claim evidence and run outcome."
+  ]
+}

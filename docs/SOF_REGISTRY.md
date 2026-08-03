@@ -1,14 +1,15 @@
 # SOF Registry
 
-**Status:** public explanatory companion to Paper X, published as DOI
-[10.5281/zenodo.21288036](https://doi.org/10.5281/zenodo.21288036). Paper X
+**Status:** public explanatory companion to Paper X version 2.0, published as DOI
+[10.5281/zenodo.21768257](https://doi.org/10.5281/zenodo.21768257). Paper X
 owns capability-aware compilation theory and Registry evidence. The Registry
 is evidence architecture, not the compiler theorem, a species-classification
 theorem, or a replacement for the static objects of Paper VIII.
 
 ## Versioned Snapshots
 
-The immutable published snapshot is:
+The immutable version-1 snapshot, published with DOI
+`10.5281/zenodo.21288036`, is:
 
 ```text
 registry/paper10-release-v1.0.registry.json
@@ -18,7 +19,7 @@ schemas/registry/v1.0.schema.json
 It contains 16 release-local rows. Its old field names and applicability labels
 retain their v1 meanings.
 
-The frozen typed v2.0 repository snapshot is:
+The frozen typed v2.0 snapshot published with Paper X version 2.0 is:
 
 ```text
 registry/paper10-typed-v2.0.registry.json

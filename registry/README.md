@@ -5,7 +5,7 @@ is a first-class public data artifact, not an experiment directory, not the
 Paper XII SOF Report collection, and not the future `sof-toolkit`
 implementation.
 
-## Current Snapshot
+## Versioned Snapshots
 
 `paper10-release-v1.0.registry.json` freezes the 16-entry SOF Registry boundary
 published with Paper X on 2026-07-10 (DOI `10.5281/zenodo.21288036`). It does
@@ -13,7 +13,8 @@ not include species introduced later by Papers XI--XII, including Qwen, MoE,
 diffusion, dynamic maze, API-only LLM, and recommender reports.
 
 `paper10-typed-v2.0.registry.json` is the frozen capability-aware v2.0
-repository snapshot. It has 19 entries: 15 strict SOF realizations and 4
+snapshot published with Paper X version 2.0 on 2026-08-03 (DOI
+`10.5281/zenodo.21768257`). It has 19 entries: 15 strict SOF realizations and 4
 diagnostic analogues. Each row declares admission kind, source-map and evidence
 role, capabilities, typed objects and carriers, semantic conventions, run
 policies, channels, structured findings and claims, artifacts, certificates,

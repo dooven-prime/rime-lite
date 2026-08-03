@@ -1,0 +1,381 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rime-project.local/schemas/sofcompiler/report-profile-v1.0.schema.json",
+  "title": "SOF Report Profile v1.0",
+  "description": "Declares Boolean capability gates, typed evidence requirements, forbidden promotions, graceful degradation, and output modules.",
+  "type": "object",
+  "required": [
+    "profile_version",
+    "profile_id",
+    "title",
+    "applies_to",
+    "ir_version",
+    "modules",
+    "degradation_policy",
+    "outputs"
+  ],
+  "properties": {
+    "profile_version": {"const": "1.0"},
+    "profile_id": {"$ref": "#/$defs/id"},
+    "title": {"type": "string", "minLength": 1},
+    "description": {"type": "string", "minLength": 1},
+    "applies_to": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "enum": ["strict_sof", "diagnostic_analogue"]
+      },
+      "uniqueItems": true
+    },
+    "ir_version": {"const": "1.0"},
+    "modules": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/module"}
+    },
+    "degradation_policy": {
+      "type": "object",
+      "required": [
+        "unsatisfied_capability_expression",
+        "unsatisfied_object_expression",
+        "unsatisfied_policy_expression",
+        "not_declared_message",
+        "not_applicable_message",
+        "unreached_message"
+      ],
+      "properties": {
+        "unsatisfied_capability_expression": {
+          "enum": ["fail_profile", "omit_module", "emit_unavailable"]
+        },
+        "unsatisfied_object_expression": {
+          "enum": ["fail_profile", "omit_module", "emit_unavailable"]
+        },
+        "unsatisfied_policy_expression": {
+          "enum": ["fail_profile", "omit_module", "emit_unavailable"]
+        },
+        "not_declared_message": {"type": "string", "minLength": 1},
+        "not_applicable_message": {"type": "string", "minLength": 1},
+        "unreached_message": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "outputs": {
+      "description": "Requested downstream serialization targets. Compile_v1 does not itself construct these report or Registry artifacts.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "enum": ["markdown", "pdf", "registry", "json_api"]
+      },
+      "uniqueItems": true
+    }
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._-]*$"
+    },
+    "capability_id": {
+      "enum": [
+        "sectorization",
+        "operator_carrier",
+        "operator_system",
+        "route_carrier",
+        "word_carrier",
+        "positive_associative_closure",
+        "observable_star_closure",
+        "sector_enriched_star_closure",
+        "lie_hall_carrier",
+        "deformation_chart",
+        "proxy_diagnostic",
+        "diagnostic_analogue"
+      ]
+    },
+    "object_kind": {
+      "enum": [
+        "finite_space",
+        "sectorization",
+        "sector_projector",
+        "marked_sector_algebra",
+        "labelled_alphabet",
+        "operator",
+        "labelled_block",
+        "operator_system",
+        "sector_enriched_operator_system",
+        "route_space",
+        "word_space",
+        "commutator_space",
+        "depth_field",
+        "associative_closure",
+        "star_closure",
+        "lie_family",
+        "hall_filtration",
+        "typed_field",
+        "typed_shadow",
+        "support_shadow",
+        "deformation_chart",
+        "comparison_map",
+        "trajectory",
+        "trajectory_observable",
+        "discriminant",
+        "wall_record",
+        "response_time",
+        "measurement",
+        "proxy",
+        "diagnostic_analogue"
+      ]
+    },
+    "carrier_kind": {
+      "enum": [
+        "sector",
+        "operator",
+        "operator_system",
+        "route",
+        "word",
+        "positive_associative_closure",
+        "observable_star_closure",
+        "sector_enriched_star_closure",
+        "lie",
+        "hall",
+        "deformation",
+        "proxy",
+        "analogue"
+      ]
+    },
+    "semantic_convention_kind": {
+      "enum": [
+        "operative_alphabet",
+        "word_convention",
+        "projector_letter_policy",
+        "hall_convention",
+        "direction_convention",
+        "depth_indexing",
+        "comparison_identification"
+      ]
+    },
+    "run_policy_kind": {
+      "enum": [
+        "threshold",
+        "cutoff",
+        "norm",
+        "numerical_tolerance",
+        "saturation_audit",
+        "sampling_grid",
+        "trajectory_parameterization"
+      ]
+    },
+    "result_state": {
+      "enum": [
+        "DECLARED",
+        "ESTABLISHED",
+        "CERTIFIED",
+        "OBSERVED",
+        "UNREACHED_AT_CUTOFF",
+        "NOT_APPLICABLE",
+        "NOT_DECLARED"
+      ]
+    },
+    "claim_status": {
+      "enum": [
+        "Theorem",
+        "Computational Certificate",
+        "Computational Observation",
+        "Research Program"
+      ]
+    },
+    "capability_expression": {
+      "type": "object",
+      "required": ["all_of", "any_of", "none_of"],
+      "properties": {
+        "all_of": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/capability_id"},
+          "uniqueItems": true
+        },
+        "any_of": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/capability_id"},
+          "uniqueItems": true
+        },
+        "none_of": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/capability_id"},
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "object_kind_expression": {
+      "type": "object",
+      "required": ["all_of", "any_of", "none_of"],
+      "properties": {
+        "all_of": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/object_kind"},
+          "uniqueItems": true
+        },
+        "any_of": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/object_kind"},
+          "uniqueItems": true
+        },
+        "none_of": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/object_kind"},
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "semantic_kind_expression": {
+      "type": "object",
+      "required": ["all_of", "any_of", "none_of"],
+      "properties": {
+        "all_of": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/semantic_convention_kind"},
+          "uniqueItems": true
+        },
+        "any_of": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/semantic_convention_kind"},
+          "uniqueItems": true
+        },
+        "none_of": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/semantic_convention_kind"},
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "run_policy_kind_expression": {
+      "type": "object",
+      "required": ["all_of", "any_of", "none_of"],
+      "properties": {
+        "all_of": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/run_policy_kind"},
+          "uniqueItems": true
+        },
+        "any_of": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/run_policy_kind"},
+          "uniqueItems": true
+        },
+        "none_of": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/run_policy_kind"},
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "evidence_requirements": {
+      "type": "object",
+      "required": [
+        "Theorem",
+        "Computational Certificate",
+        "Computational Observation",
+        "Research Program",
+        "null"
+      ],
+      "properties": {
+        "Theorem": {"const": "PROOF_REFERENCE"},
+        "Computational Certificate": {"const": "PASS_CERTIFICATE"},
+        "Computational Observation": {"const": "SOURCE_ARTIFACT"},
+        "Research Program": {"const": "NO_EVIDENCE_REQUIRED"},
+        "null": {"const": "NO_CLAIM"}
+      },
+      "additionalProperties": false
+    },
+    "promotion_id": {
+      "enum": [
+        "PROXY_TO_DISCRETE_SHADOW",
+        "CUTOFF_UNREACHED_TO_INFINITY",
+        "PATH_TO_ROUTE",
+        "ROUTE_TO_WORD",
+        "WORD_TO_LIE",
+        "POINTWISE_TO_MOVING_FIELD",
+        "ABSTRACT_TYPE_TO_MARKED_CORNERS",
+        "AMBIENT_DISCRIMINANT_TO_PULLBACK_EQUALITY",
+        "OPERATOR_SYSTEM_TO_LABELLED_WITNESS",
+        "POSITIVE_CLOSURE_TO_STAR_CLOSURE",
+        "SECTOR_ENRICHED_CLOSURE_TO_FULL_WORD",
+        "WORD_TO_POSITIVE_CLOSURE",
+        "STRICT_MORPHISM_WITNESS_TRANSFER"
+      ]
+    },
+    "module": {
+      "type": "object",
+      "required": [
+        "id",
+        "title",
+        "capability_requirements",
+        "object_kind_requirements",
+        "semantic_convention_requirements",
+        "run_policy_requirements",
+        "accepted_result_states",
+        "accepted_claim_statuses",
+        "carrier_kinds",
+        "evidence_requirements",
+        "forbidden_promotion_ids",
+        "forbidden_promotion_notes",
+        "output_sections"
+      ],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "title": {"type": "string", "minLength": 1},
+        "capability_requirements": {
+          "$ref": "#/$defs/capability_expression"
+        },
+        "object_kind_requirements": {
+          "$ref": "#/$defs/object_kind_expression"
+        },
+        "semantic_convention_requirements": {
+          "$ref": "#/$defs/semantic_kind_expression"
+        },
+        "run_policy_requirements": {
+          "$ref": "#/$defs/run_policy_kind_expression"
+        },
+        "accepted_result_states": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/result_state"},
+          "uniqueItems": true
+        },
+        "accepted_claim_statuses": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/claim_status"},
+          "uniqueItems": true
+        },
+        "carrier_kinds": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/carrier_kind"},
+          "uniqueItems": true
+        },
+        "evidence_requirements": {
+          "$ref": "#/$defs/evidence_requirements"
+        },
+        "forbidden_promotion_ids": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/promotion_id"},
+          "uniqueItems": true
+        },
+        "forbidden_promotion_notes": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        },
+        "output_sections": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

@@ -6,10 +6,10 @@ finite-dimensional represented systems. The Rubik cube provides a concrete,
 reproducible, and highly noncommutative laboratory. It is used as a
 representation-theoretic testbed, not as a puzzle-solving problem.
 
-The public program currently contains Papers I--XIII. Papers I--VII are
-independent version-2 papers, and Papers VIII--XIII retain their published
-release-local semantics unless explicitly reopened. The canonical publication
-list is the root [Public Release table](../README.md#public-release).
+The public program arc covers Papers I--XIII and the Paper XIV development
+horizon. Public release identities, current versions, and DOIs are maintained
+only in the root [Public Release table](../README.md#public-release). This
+overview describes semantic ownership rather than repository migration status.
 
 ## Central Architecture
 
@@ -20,8 +20,12 @@ observable behavior:
 represented system
   -> compatible sectorization
   -> registered observable family
-  -> typed support and composition data
-  -> deformation or comparison diagnostics
+  -> distinct typed carriers and closures
+  -> declared deformation charts and trajectories
+  -> capability-sound claim compilation
+  -> wall morphology and realization-relative reports
+  -> aligned sparse comparisons
+  -> context- and policy-relative interpretation
 ```
 
 When the sectors vary with parameters, the spectral carrier must first pass
@@ -80,7 +84,7 @@ These are neighboring self-contained interfaces. Paper IV keeps its
 arrangement fixed; Paper VI treats moving spectral fields only as a gated
 research target; Paper VII does not assert a generic completion theorem.
 
-### Papers VIII--XIII: Sectorized Observable Framework
+### Papers VIII--XIV: Sectorized Observable Framework
 
 - **Paper VIII** introduces the static SOF object language, marked sector
   algebra, labelled operator alphabet, optional Lie/Hall enrichment, and
@@ -91,22 +95,17 @@ research target; Paper VII does not assert a generic completion theorem.
   report-compilation soundness under their declared conditions, and maintains
   Registry evidence.
 - **Paper XI** records admitted wall atoms as sparse trajectory-event changes
-  or incident-stratum locus germs, derives six structured coordinate
-  families, and applies nonexclusive curation and local-model eligibility.
+  or incident-stratum locus germs, derives a structured coordinate profile,
+  and applies nonexclusive curation and local-model eligibility.
 - **Paper XII** instantiates those contracts as a versioned SOF Report protocol
   governed by Report Relativity, the Adapter Adequacy Boundary, and explicit
   strict/analogue deployment and migration rules.
 - **Paper XIII** defines Audit Profiles, explicit report alignment, and sparse
   typed comparison maps. Its standard Regime-A profile requests eight
   historical channels without making them universal.
-
-Papers VIII and IX are published in their typed version-2 form. Papers X--XIII
-have source-addressed later-version candidates or migrations in the
-repository; their currently listed Zenodo DOIs remain release-local published
-identities. The Registry v2 snapshot supports the typed Paper X/XI evidence
-layer. The frozen Paper X Registry v1, SOFRS v1.0, and SOFAUDIT v1.0 artifacts
-remain unchanged. SOFAUDIT v2 is a source-addressed migration that preserves
-unavailable coordinates as typed states.
+- **Paper XIV** studies context- and policy-relative interpretation of aligned
+  comparison coordinates and their conversion into structured candidate action
+  or decision records. Difference alone does not determine intervention.
 
 ## Claim Discipline
 
@@ -126,10 +125,10 @@ bridge.
 
 ## Rubik and General Theory
 
-Rubik-specific records include the 228-dimensional cubie realization, the
-standard 18 face-turn family, six registered averaging layers, nine registered
-QT/HT sectors, and the sparse direct transport graph. These records provide a
-finite calibration laboratory.
+Rubik-specific represented operators, registered averaging layers, compatible
+sectors, support records, and collision data provide a finite calibration
+laboratory. Their numerical payloads remain with the owning manuscripts and
+source-addressed result records.
 
 The general objects are averaging operators, compatible sectorizations,
 collision arrangements, projected compositions, word and commutator support,
@@ -141,6 +140,8 @@ when the abstract hypotheses and the promotion step are stated and proved.
 
 - [Public documentation index](README.md)
 - [Detailed program map](PROGRAM_MAP.md)
+- [Papers I--VII interface map](PRE_SOF_INTERFACE_MAP.md)
+- [Controlled program vocabulary](PROGRAM_VOCABULARY.md)
 - [Paper ownership and scope](PAPER_SCOPE.md)
 - [Rubik-as-laboratory philosophy](PROGRAM_PHILOSOPHY.md)
 - [Experiment and reproducibility map](../experiments/README.md)

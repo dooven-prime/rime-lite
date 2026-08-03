@@ -1,17 +1,18 @@
-"""Paper X audit: wild Type III/IV mechanisms in Rubik QT/HT sectors.
+"""Paper X audit: typed cancellation and incidence counts in Rubik sectors.
 
 Scope:
-    Counts naturally occurring Type III cancellation and Type IV incidence
-    mechanisms in the canonical Rubik QT/HT sectorization.  This is not a
-    synthetic construction: the sectors are the nine QT/HT joint sectors and
-    the generators are the 18 Rubik face-turn representation matrices.
+    Counts commutator cancellations and routed image--kernel incidences in the
+    canonical Rubik QT/HT sectorization. This is not a synthetic construction:
+    the sectors are the nine QT/HT joint sectors and the registered Lie family
+    consists of the anti-Hermitian parts of the 18 face-turn matrices.
 
 Claim status:
-    - Registry evidence for Paper X and Paper VII.
-    - Confirms wild Type III and bridge-level Type IV incidence mechanisms in
-      the Rubik QT/HT sectorization.
-    - Type IV is counted at the bridge-product/incidence level; this should not
-      be overstated as a completed global accessibility-obstruction theorem.
+    - Computational Certificate for the declared finite Lie-family audit.
+    - The routed incidence count is bridge-level evidence, not a global
+      accessibility or completion theorem.
+
+The filename is retained for source-path compatibility with Registry v1. The
+active result keys and reader-facing output use typed v2 vocabulary.
 """
 
 from __future__ import annotations
@@ -48,8 +49,8 @@ def audit() -> dict[str, int]:
         pair_to_cp[(g, h)] = cp
         pair_to_cp[(h, g)] = cp
 
-    type_iii = 0
-    type_iv = 0
+    commutator_cancellations = 0
+    routed_image_kernel_incidences = 0
 
     for i in range(n_sectors):
         for j in range(n_sectors):
@@ -79,35 +80,37 @@ def audit() -> dict[str, int]:
                             break
 
                     if all_products_zero:
-                        type_iv += 1
+                        routed_image_kernel_incidences += 1
                     else:
-                        type_iii += 1
+                        commutator_cancellations += 1
 
     return {
         "n_sectors": n_sectors,
         "n_generators": n_generators,
-        "type_iii": type_iii,
-        "type_iv": type_iv,
+        "commutator_cancellation_count": commutator_cancellations,
+        "routed_image_kernel_incidence_count": routed_image_kernel_incidences,
     }
 
 
 def main() -> None:
     result = audit()
     print("=" * 72)
-    print("  Paper X: Rubik Wild Type III/IV Audit")
+    print("  Paper X: Rubik Typed Cancellation / Incidence Audit")
     print("=" * 72)
     print(f"Rubik QT/HT sectors: {result['n_sectors']}")
     print(f"Rubik generators:    {result['n_generators']}")
-    print(f"Wild Type III cancellation mechanisms:       {result['type_iii']}")
-    print(f"Wild Type IV bridge-level incidence products: {result['type_iv']}")
+    print(
+        "Commutator cancellations:             "
+        f"{result['commutator_cancellation_count']}"
+    )
+    print(
+        "Routed image-kernel incidences:        "
+        f"{result['routed_image_kernel_incidence_count']}"
+    )
     print()
-    if result["type_iii"] > 0:
-        print("  Wild Type III confirmed in Rubik QT/HT sectorization.")
-    if result["type_iv"] > 0:
-        print("  Wild Type IV incidence confirmed at bridge-product level.")
-    print()
-    print("Claim boundary: Type IV is bridge-level incidence evidence,")
-    print("not a global accessibility-obstruction theorem by itself.")
+    print("Claim status: Computational Certificate for the declared family.")
+    print("Boundary: incidence is counted at the routed bridge-product level;")
+    print("it is not a global accessibility or completion theorem.")
     print("Done.")
 
 
