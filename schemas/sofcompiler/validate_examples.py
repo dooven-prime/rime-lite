@@ -3,8 +3,8 @@
 from __future__ import annotations
 
 import argparse
-import hashlib
 import json
+import sys
 from pathlib import Path
 
 from jsonschema import Draft202012Validator
@@ -12,6 +12,18 @@ from jsonschema import Draft202012Validator
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from schemas.contract_api import (  # noqa: E402
+    RESULT_CLAIM_STATUS_MATRIX,
+    artifact_reference_errors,
+    file_digest,
+    load_json,
+    schema_errors,
+)
+
+
 EXAMPLES = HERE / "examples"
 
 DEFAULT_MANIFEST = EXAMPLES / "strict-associative-capabilities-v1.0.json"
@@ -19,6 +31,7 @@ DEFAULT_IR = EXAMPLES / "strict-associative-ir-v1.0.json"
 DEFAULT_PROFILE = EXAMPLES / "basic-associative-closure-profile-v1.0.json"
 DEFAULT_RULE_REGISTRY = HERE / "rule-registry-v1.0.json"
 DEFAULT_COMPILER_OUTPUT = EXAMPLES / "strict-associative-compiler-output-v1.0.json"
+COMPILER_OUTPUT_SCHEMA = HERE / "compiler-output-v1.0.schema.json"
 
 SCHEMAS = {
     "manifest": HERE / "capability-manifest-v1.0.schema.json",
@@ -60,18 +73,7 @@ REQUIRED_CONFIGURATION = {
     "diagnostic_analogue": {"analogue_mapping_id"},
 }
 
-RESULT_STATUS_MATRIX = {
-    "DECLARED": {None, "Research Program"},
-    "ESTABLISHED": {"Theorem"},
-    "CERTIFIED": {"Computational Certificate"},
-    "OBSERVED": {"Computational Observation"},
-    "UNREACHED_AT_CUTOFF": {
-        "Computational Certificate",
-        "Computational Observation",
-    },
-    "NOT_APPLICABLE": {None},
-    "NOT_DECLARED": {None},
-}
+RESULT_STATUS_MATRIX = RESULT_CLAIM_STATUS_MATRIX
 
 OBSERVATION_ARTIFACT_ROLES = {
     "source-input",
@@ -80,21 +82,6 @@ OBSERVATION_ARTIFACT_ROLES = {
     "source-data",
     "log",
 }
-
-
-def load_json(path: Path) -> dict:
-    return json.loads(path.read_text(encoding="utf-8"))
-
-
-def schema_errors(payload: dict, schema: dict) -> list[str]:
-    validator = Draft202012Validator(schema)
-    return [
-        f"{'.'.join(str(part) for part in error.path) or '<root>'}: {error.message}"
-        for error in sorted(
-            validator.iter_errors(payload),
-            key=lambda item: [str(part) for part in item.path],
-        )
-    ]
 
 
 def indexed(items: list[dict], collection: str) -> tuple[dict[str, dict], list[str]]:
@@ -162,32 +149,20 @@ def manifest_errors(manifest: dict) -> list[str]:
 
 
 def digest_value(path: Path, algorithm: str) -> str:
-    digest = hashlib.new(algorithm)
-    with path.open("rb") as handle:
-        for block in iter(lambda: handle.read(1024 * 1024), b""):
-            digest.update(block)
-    return digest.hexdigest()
+    return file_digest(path, algorithm)
 
 
 def artifact_errors(artifacts: dict[str, dict]) -> list[str]:
     errors: list[str] = []
-    root = ROOT.resolve()
     for artifact_id, artifact in artifacts.items():
-        path = (ROOT / artifact["uri"]).resolve()
-        try:
-            path.relative_to(root)
-        except ValueError:
-            errors.append(f"artifact {artifact_id}: path escapes repository root")
-            continue
-        if not path.is_file():
-            errors.append(f"artifact {artifact_id}: local URI does not exist")
-            continue
-        digest = artifact["digest"]
-        actual = digest_value(path, digest["algorithm"])
-        if actual.lower() != digest["value"].lower():
-            errors.append(
-                f"artifact {artifact_id}: {digest['algorithm']} digest mismatch"
+        errors.extend(
+            artifact_reference_errors(
+                artifact,
+                label=f"artifact {artifact_id}",
+                repository_root=ROOT,
+                allowed_algorithms=("sha256", "sha512"),
             )
+        )
     return errors
 
 
@@ -1075,6 +1050,26 @@ def compile_v1(
     return output["items"]
 
 
+def compile_output_v1(
+    manifest: dict,
+    ir: dict,
+    profile: dict,
+    rule_registry: dict,
+) -> dict:
+    """Return the complete typed CompilerOutput v1.0 envelope."""
+    errors, _, output = _compiler_run(manifest, ir, profile, rule_registry)
+    if errors:
+        raise ValueError("Compile_v1 rejected the contract triple: " + "; ".join(errors))
+    output_schema = load_json(COMPILER_OUTPUT_SCHEMA)
+    output_errors = schema_errors(output, output_schema)
+    if output_errors:
+        raise ValueError(
+            "Compile_v1 produced an invalid CompilerOutput: "
+            + "; ".join(output_errors)
+        )
+    return output
+
+
 def profile_errors(
     manifest: dict,
     ir: dict,
@@ -1216,6 +1211,7 @@ def main() -> None:
         contract_name: load_json(schema_path)
         for contract_name, schema_path in SCHEMAS.items()
     }
+    compiler_output_schema = load_json(COMPILER_OUTPUT_SCHEMA)
     errors: list[str] = []
 
     for contract_name, schema_path in SCHEMAS.items():
@@ -1228,6 +1224,8 @@ def main() -> None:
             )
         else:
             print(f"PASS {contract_name} schema: {schema_path.name}")
+    Draft202012Validator.check_schema(compiler_output_schema)
+    print(f"PASS compiler output schema: {COMPILER_OUTPUT_SCHEMA.name}")
 
     if not errors:
         errors.extend(manifest_errors(payloads["manifest"]))
@@ -1246,6 +1244,10 @@ def main() -> None:
         )
         errors.extend(profile_validation_errors)
         if not profile_validation_errors:
+            errors.extend(
+                f"compiler output schema: {error}"
+                for error in schema_errors(compiler_output, compiler_output_schema)
+            )
             if args.write_compiler_output:
                 args.compiler_output.write_text(
                     json.dumps(compiler_output, indent=2, sort_keys=True) + "\n",
@@ -1257,10 +1259,15 @@ def main() -> None:
                     f"compiler output fixture is missing: {args.compiler_output}"
                 )
             else:
+                fixture = load_json(args.compiler_output)
+                errors.extend(
+                    f"compiler output fixture schema: {error}"
+                    for error in schema_errors(fixture, compiler_output_schema)
+                )
                 errors.extend(
                     compiler_output_errors(
                         compiler_output,
-                        load_json(args.compiler_output),
+                        fixture,
                     )
                 )
         errors.extend(
@@ -1282,7 +1289,10 @@ def main() -> None:
     print("PASS cross-contract references, evidence, and semantic admission")
     print("PASS Boolean profile gates and boundary regressions")
     print("PASS typed Compile_v1 output regression")
-    print("Validated Capability Manifest, Typed SOF IR, and Report Profile v1.0.")
+    print(
+        "Validated Capability Manifest, Typed SOF IR, Report Profile, and "
+        "Compiler Output v1.0."
+    )
 
 
 if __name__ == "__main__":

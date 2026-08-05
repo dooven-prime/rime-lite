@@ -123,6 +123,21 @@ does not prove a generic completion theorem. A proxy trajectory does not prove
 a binary support or depth transition without an explicit proxy-to-shadow
 bridge.
 
+## Specification and Runtime
+
+`rime-lite` owns the normative language: papers, mathematical definitions,
+claim boundaries, schemas, accepted evidence, and release identities. The
+separate [`sof-runtime`](https://github.com/dooven-prime/sof-runtime) implements
+domain adapters, execution protocols, validators, compiler operation, and
+application-facing artifacts.
+
+The runtime protocol is intentionally reusable outside full-theory adoption.
+A domain may use versioned schemas, digests, provenance, plugin boundaries, and
+degradation rules without importing every SOF carrier or theorem. Domain
+experts retain responsibility for domain conclusions. New stable semantics
+enter the normative repository only through an explicit source-addressed
+promotion and versioned contract update.
+
 ## Rubik and General Theory
 
 Rubik-specific represented operators, registered averaging layers, compatible

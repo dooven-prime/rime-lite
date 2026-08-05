@@ -25,6 +25,7 @@ TESTS = [
     "test_commutant.py",
     "test_transport.py",
     "test_experiment_observation.py",
+    "test_contract_api.py",
     "test_accessibility_engine.py",
     "test_wall_trajectory.py",
     "test_registry_v2.py",
@@ -32,7 +33,6 @@ TESTS = [
     "test_sofcompiler_contracts.py",
     "test_sofrs_v2.py",
     "test_sofaudit_v2.py",
-    "test_typed_wall_record_census.py",
 ]
 
 # Slow tests — each constructs CubieSpectralOperator (~1-2 min)

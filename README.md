@@ -24,7 +24,7 @@ immutable first combined record retains its historical predecessor.
 | Paper VIII | sectorized observable framework | <https://doi.org/10.5281/zenodo.21700863> |
 | Paper IX | observable dynamics of sectorized observable frameworks | <https://doi.org/10.5281/zenodo.21713306> |
 | Paper X | capability-aware compilation for Sectorized Observable Frameworks and Registry evidence | <https://doi.org/10.5281/zenodo.21768257> |
-| Paper XI | typed wall-record taxonomy for Sectorized Observable Frameworks | <https://doi.org/10.5281/zenodo.21453674> |
+| Paper XI | typed wall morphology for Sectorized Observable Frameworks | <https://doi.org/10.5281/zenodo.21801722> |
 | Paper XII | SOF diagnostic protocol and report specification | <https://doi.org/10.5281/zenodo.21387462> |
 | Paper XIII | Audit Profiles, SOF Report Alignment, and sparse typed comparison maps | <https://doi.org/10.5281/zenodo.21449512> |
 | CCS v2 | optional reproducibility, observation, open-problem, and history archive | <https://doi.org/10.5281/zenodo.21616956> |
@@ -32,8 +32,8 @@ immutable first combined record retains its historical predecessor.
 
 This is the repository's canonical DOI index. It identifies immutable
 published records; other public documents link here instead of duplicating the
-list. Papers VIII--X now match their published version-2 records.
-Repository copies of Papers XI--XIII may contain explicitly labelled
+list. Papers VIII--XI now match their published version-2 records.
+Repository copies of Papers XII--XIII may contain explicitly labelled
 later-version candidates or migrations; their listed DOIs continue to identify
 the immutable published versions, and the frozen v1 contracts remain
 unchanged.
@@ -51,6 +51,7 @@ unchanged.
 | check geometry and move conventions | [`docs/conventions.md`](docs/conventions.md) |
 | inspect reproducibility scripts | [`experiments/README.md`](experiments/README.md) |
 | inspect published SOF data contracts | [`schemas/README.md`](schemas/README.md) |
+| run domain adapters, plugins, and capability-aware compilation | [`sof-runtime`](https://github.com/dooven-prime/sof-runtime) |
 | inspect optional reproducibility data, observations, open problems, and history | [`ccs/canonical_specification.md`](ccs/canonical_specification.md) |
 
 ## Papers
@@ -108,6 +109,20 @@ rime-lite/
 |-- registry/             immutable v1 and frozen typed v2 Registry snapshots
 `-- figures/              manuscript figures and presentation-only renderers
 ```
+
+## Runtime and Application Boundary
+
+This repository is the normative source for papers, mathematical objects,
+theorems, versioned contracts, accepted evidence, and publication identities.
+The separate [`sof-runtime`](https://github.com/dooven-prime/sof-runtime)
+repository provides the Python reference runtime, domain adapters, execution
+plugins, evidence generation, compiler operation, and application examples.
+
+Runtime protocol conformance or a passing extension validator does not by
+itself add a carrier, theorem, claim status, or public result to RIME. Stable
+extensions return here as source-addressed promotion proposals; accepted
+semantics are versioned here before the runtime refreshes its upstream lock.
+Existing paper-local experiments remain with their owning releases.
 
 ## Reproducibility
 

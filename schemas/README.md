@@ -11,11 +11,15 @@ schemas/
                                typed objects, conventions, findings, and claims
   sofcompiler/report-profile-v1.0.schema.json
                                capability-gated report composition
+  sofcompiler/compiler-output-v1.0.schema.json
+                               typed claim/degradation compiler output
   sofcompiler/rule-registry-v1.0.json
                                versioned derivation-rule vocabulary
   sofrs/v1.0.schema.json      one concrete SOF diagnostic run
   sofrs/paper12-protocol-profile-v1.0.json Paper XII admission rules
   sofrs/v2.0.schema.json      capability-gated compiled SOF report
+  sofrs/report-validation-receipt-v1.0.schema.json
+                              receipt for one frozen strict SOFRS v1 artifact
   sofrs/paper12-strict-report-profile-v2.0.json
                                strict SOF report modules
   sofrs/paper12-analogue-report-profile-v2.0.json
@@ -28,13 +32,21 @@ schemas/
 
 The contracts are deliberately separate:
 
+- **Shared contract mechanics** live in `schemas/contract_api.py`. Paper-local
+  validators reuse its JSON Schema error format, digest verification,
+  repository-bounded artifact resolution, and result-state/claim-status
+  matrix. These mechanics do not own paper-specific admission, morphology,
+  reporting, comparison, or action semantics.
+
 - **SOF compiler contracts** define a new three-stage interface:
   Capability Manifest, Typed SOF IR, and Report Profile. The manifest declares
   available carriers and convention/run-policy requirements; the IR records
   separate conventions and run policies, artifacts, findings, certificates,
   typed claims, and audited derivation edges; the profile enables only report
-  modules supported by Boolean capability/object/policy expressions. Result
-  state is distinct from the four reader-facing claim levels. Run
+  modules supported by Boolean capability/object/policy expressions. Compiler
+  Output records the resulting `ClaimItem_v1 | DegradationItem_v1` collection;
+  it is not a SOFRS report. Result state is distinct from the four
+  reader-facing claim levels. Run
   `python schemas/sofcompiler/validate_examples.py` for schema and
   cross-contract semantic validation. The rule registry is controlled support
   data, not a fourth report contract. Claim selection is claim-local: a claim
@@ -53,8 +65,10 @@ The contracts are deliberately separate:
   `python experiments/paper12/validate_protocol_admission.py`. Multi-system
   validator fixtures may be envelope-valid while remaining explicitly excluded
   from protocol admission.
-- **SOFRS v2.0 reporting** compiles a Capability Manifest and Typed SOF IR
-  through either the strict or diagnostic-analogue Report Profile. It does not
+- **SOFRS v2.0 reporting** binds the exact Paper X Compiler Output produced
+  from a Capability Manifest, Typed SOF IR, Report Profile, and rule registry.
+  The validator recomputes that output before checking report modules. SOFRS
+  does not
   require one universal support/bridge/repair/wall grammar. Strict reports
   require finite complex `(V,Q,Y)` data and structural admission; analogue
   reports carry descriptor provenance, an analogue mapping, and a negative SOF
@@ -66,8 +80,16 @@ The contracts are deliberately separate:
   policy, comparison-key, and digest metadata without constructing a pairwise
   alignment. Run
   `python experiments/paper12/validate_sofrs_v2.py`.
+- **SOFRS report validation receipts** bind one exact report artifact to the
+  Paper XII validator and schema that checked it. The v1.0 receipt contract is
+  limited to frozen strict SOFRS v1 compatibility inputs; native v2 validation
+  uses a future versioned receipt contract. A receipt records validation
+  evidence; it is neither a report result state nor a Paper XIII comparison
+  state. Consumers must verify the receipt and its report linkage rather than
+  trusting a self-declared `PASS` field.
 - **SOFAUDIT v2.0** validates a `.sofaudit` artifact comparing two aligned
-  SOFRS reports. It inherits record-kind, carrier, policy, evidence, and
+  SOFRS reports with validated source-report receipts. A report digest alone
+  is insufficient. SOFAUDIT inherits record-kind, carrier, policy, evidence, and
   promotion guards from the Paper X compiler contracts. The fields
   `source_reports`, `alignment`, and `comparison_specification` serialize the
   canonical comparison object

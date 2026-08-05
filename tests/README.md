@@ -3,9 +3,9 @@
 ## Philosophy
 
 The mathematical tests are **not** general software QA tests. They do not test
-arbitrary edge cases or application behavior. The one explicit infrastructure
-exception is `test_experiment_observation.py`, which protects the provenance
-and stale-detection contract used by cached computational observations.
+arbitrary edge cases or application behavior. Explicit infrastructure
+exceptions protect experiment provenance and the versioned compiler, report,
+and audit contracts.
 
 They are **mathematical invariant verification tests** corresponding to claims
 in independent RIME papers. Each test file verifies one declared class of
@@ -38,11 +38,13 @@ input family, arithmetic mode, and claim status.
 | `test_commutant.py` | QH-family commutativity, Supp_nc localization | Paper II, Sec 5 |
 | `test_transport.py` | Direct graph, sector non-invariance, and graph/operator composition obstruction | Paper II / revised Paper III |
 | `test_experiment_observation.py` | Cached-observation manifest integrity and stale-source detection | Reproducibility infrastructure |
+| `test_contract_api.py` | Shared digest, repository-bound artifact, status-axis, and CompilerOutput schema mechanics | Cross-paper contract infrastructure |
 | `test_accessibility_engine.py` | Typed direct/routed/word/Lie separation, incidence, rank protection, cutoff semantics | General API / Papers III, V, VII |
 | `test_registry_v2.py` | Registry v2.0 schema, evidence, depth, repair, and promotion guards | Paper X Registry contract |
 | `test_registry_migration.py` | Immutable-v1 digest and reproducible frozen-v2 migration | Paper X Appendix A11 |
 | `test_sofcompiler_contracts.py` | Manifest/IR/Profile schemas, claim-local gates, and typed `Compile_v1` output regression | Paper X compiler theorem implementation |
-| `test_typed_wall_record_census.py` | Realization/role/field-family separation, admission ledger, real event endpoints, and strict/analogue spectrum partition | Paper XI typed wall census |
+| `test_sofrs_v2.py` | Capability-gated migration, exact CompilerOutput binding, and single-report validation | Paper XII SOFRS v2 contract |
+| `test_sofaudit_v2.py` | Validated source-report receipts, source-addressed alignment, sparse comparison states, wall-input ownership, and shared status guards | Paper XIII SOFAUDIT v2 contract |
 | `archive/test_commutant_gap.py` | First-version candidate commutant dimensions | Provenance only |
 | `archive/test_f3.py` | First-version compressed-centralizer computation | Withdrawn interpretation; provenance only |
 | `archive/test_generator_families.py` | First-version generator-family T7 counts | Graph-square provenance only |

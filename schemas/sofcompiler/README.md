@@ -37,6 +37,15 @@ state, and derivation references. A degradation item records an omitted module
 or claim and the failed gate. Serialization, presentation, and report-level
 epistemic metadata belong to the Paper XII reporting protocol.
 
+`compiler-output-v1.0.schema.json` is the canonical machine-readable output
+contract. `compile_output_v1` returns its complete envelope, while the legacy
+`compile_v1` helper continues to return only the ordered item collection.
+Downstream serializers must consume this compiler result rather than
+reimplementing admission, evidence, derivation, or promotion checks.
+Python consumers import these functions from `schemas.sofcompiler.api`; the
+`validate_examples.py` module remains the CLI and regression implementation,
+not the downstream import path.
+
 ### Capability Manifest v1.0
 
 `capability-manifest-v1.0.schema.json` records:
