@@ -25,7 +25,7 @@ if sys.platform == "win32":
 from wall_density_registry import SPECIES, WALL_TYPES, compute_density
 
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[3]
 RESULTS_DIR = Path(__file__).resolve().parent / "results"
 PAPER_PATH = ROOT / "papers" / "paper11" / "Paper XI - v1.md"
 TARGET_RECORDS = 3
@@ -301,7 +301,7 @@ WALL_RECORDS = [
         "K0 growth and K1 decay proxies",
         "gradient/regularization response time",
         "tau(K0)=30 and tau(K1)=1380",
-        "experiments/paper10/mechanism_separation_theorem.py",
+        "experiments/paper9/calibrated_response.py",
         "evidence",
         explicit_deformation=True,
         explicit_locus=True,

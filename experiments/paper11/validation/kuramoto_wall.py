@@ -1,6 +1,6 @@
-"""Post-release Paper XI candidate: Kuramoto freezing-direction control.
+"""Paper XI Kuramoto cutoff-unreached direction control.
 
-Claim status: exploratory computational candidate for a wall-direction control.
+Claim status: Computational Observation and diagnostic analogue.
 
 Each ensemble member uses one matched natural-frequency sample and one matched
 initial phase vector across the full coupling sweep.  Frequencies are centered,
@@ -19,6 +19,7 @@ import argparse
 import json
 import sys
 from pathlib import Path
+from time import perf_counter
 
 import numpy as np
 
@@ -28,9 +29,14 @@ if sys.platform == "win32":
 ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT))
 from rime.accessibility import (  # noqa: E402
+    UNREACHED_DEPTH,
     compute_direct_support,
     compute_word_depth_matrix,
     offdiag_count,
+)
+from experiments.observation import (  # noqa: E402
+    utc_now,
+    write_experiment_observation,
 )
 
 N_OSCILLATORS = 20
@@ -45,7 +51,6 @@ N_R_BINS = 5
 N_PSI_BINS = 6
 N_SECTORS = N_R_BINS * N_PSI_BINS
 MAX_DEPTH = 4
-FROZEN = 999
 TOL = 1e-8
 
 
@@ -110,20 +115,20 @@ def audit_one(K: float, frequencies: np.ndarray, initial: np.ndarray) -> dict:
         [transition],
         max_depth=MAX_DEPTH,
         tol=TOL,
-        frozen=FROZEN,
+        unreached=UNREACHED_DEPTH,
     )
     n_pairs = N_SECTORS * (N_SECTORS - 1)
-    frozen_depth = sum(
+    unreached_depth = sum(
         1
         for i in range(N_SECTORS)
         for j in range(N_SECTORS)
-        if i != j and depth[i, j] == FROZEN
+        if i != j and depth[i, j] == UNREACHED_DEPTH
     )
     sampled_r = [order_parameter(frame)[0] for frame in trajectory[::10]]
     return {
         "r_mean": float(np.mean(sampled_r)),
-        "frozen_R1": n_pairs - offdiag_count(r1),
-        "frozen_D_word": frozen_depth,
+        "direct_unsupported_pairs": n_pairs - offdiag_count(r1),
+        "word_unreached_at_cutoff_pairs": unreached_depth,
         "visited_sectors": visited,
     }
 
@@ -152,23 +157,24 @@ def run_audit(ensemble_size: int = 8, seed: int = 42) -> dict:
             row[f"{key}_std"] = float(values.std())
         sweep.append(row)
 
-    frozen_means = np.array([item["frozen_D_word_mean"] for item in sweep])
-    changes = np.diff(frozen_means)
+    unreached_means = np.array(
+        [item["word_unreached_at_cutoff_pairs_mean"] for item in sweep]
+    )
+    changes = np.diff(unreached_means)
     wall_index = int(np.argmax(changes)) + 1
     low_index = int(np.argmin(np.abs(K_SWEEP - 0.8)))
     high_index = int(np.argmin(np.abs(K_SWEEP - 2.4)))
     paired_changes = np.array(
         [
-            member_sweeps[member][high_index]["frozen_D_word"]
-            - member_sweeps[member][low_index]["frozen_D_word"]
+            member_sweeps[member][high_index]["word_unreached_at_cutoff_pairs"]
+            - member_sweeps[member][low_index]["word_unreached_at_cutoff_pairs"]
             for member in range(ensemble_size)
         ],
         dtype=float,
     )
     return {
-        "claim_status": "exploratory_candidate",
-        "paper_xi_release_status": "post_v1_candidate",
-        "taxonomy_candidates": ["D", "E"],
+        "claim_status": "Computational Observation",
+        "curation_tags": ["PLATEAU_RATE", "NONSMOOTH_DISCRETE"],
         "taxonomy_role": "opposite-direction freezing control",
         "observable": "raw directed trajectory transition; general word transport",
         "ensemble_size": ensemble_size,
@@ -179,8 +185,8 @@ def run_audit(ensemble_size: int = 8, seed: int = 42) -> dict:
         "wall_increase": float(changes[wall_index - 1]),
         "paired_low_K": float(K_SWEEP[low_index]),
         "paired_high_K": float(K_SWEEP[high_index]),
-        "paired_frozen_depth_change_mean": float(paired_changes.mean()),
-        "paired_frozen_depth_change_std": float(paired_changes.std()),
+        "paired_unreached_change_mean": float(paired_changes.mean()),
+        "paired_unreached_change_std": float(paired_changes.std()),
         "freezing_fraction": float(np.mean(paired_changes > 0)),
         "claim_boundary": (
             "finite-N, finite-window sector-occupancy control; not a universal "
@@ -194,18 +200,22 @@ def main() -> None:
     parser.add_argument("--ensemble", type=int, default=8)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--output", type=Path)
+    parser.add_argument("--observation-output", type=Path)
     args = parser.parse_args()
 
+    started_at = utc_now()
+    started = perf_counter()
     result = run_audit(args.ensemble, args.seed)
     print("=" * 72)
     print("  Paper XI candidate: Kuramoto freezing-direction control")
     print("=" * 72)
     print(f"Continuum Gaussian onset reference: K_c={result['continuum_onset_reference']:.3f}")
-    print("    K      <r> mean   frozen_D mean +/- std   visited mean")
+    print("    K      <r> mean   unreached mean +/- std   visited mean")
     for row in result["sweep"]:
         print(
             f"  {row['K']:5.2f}      {row['r_mean_mean']:.3f}       "
-            f"{row['frozen_D_word_mean']:7.1f} +/- {row['frozen_D_word_std']:5.1f}"
+            f"{row['word_unreached_at_cutoff_pairs_mean']:7.1f} +/- "
+            f"{row['word_unreached_at_cutoff_pairs_std']:5.1f}"
             f"       {row['visited_sectors_mean']:5.1f}"
         )
     print()
@@ -215,8 +225,8 @@ def main() -> None:
     )
     print(
         f"Matched K={result['paired_low_K']:.1f}->{result['paired_high_K']:.1f}: "
-        f"delta frozen_D={result['paired_frozen_depth_change_mean']:+.1f} +/- "
-        f"{result['paired_frozen_depth_change_std']:.1f}; "
+        f"delta unreached={result['paired_unreached_change_mean']:+.1f} +/- "
+        f"{result['paired_unreached_change_std']:.1f}; "
         f"positive in {result['freezing_fraction']:.0%} of members"
     )
     print("Claim boundary: " + result["claim_boundary"] + ".")
@@ -224,6 +234,53 @@ def main() -> None:
     if args.output:
         args.output.parent.mkdir(parents=True, exist_ok=True)
         args.output.write_text(json.dumps(result, indent=2), encoding="utf-8")
+    if args.observation_output:
+        write_experiment_observation(
+            args.observation_output,
+            root=ROOT,
+            experiment_id="paper11.kuramoto-freezing-crossover",
+            paper="paper11",
+            command=[
+                "python",
+                "experiments/paper11/validation/kuramoto_wall.py",
+                "--ensemble",
+                str(args.ensemble),
+                "--seed",
+                str(args.seed),
+            ],
+            sources=[
+                "experiments/paper11/validation/kuramoto_wall.py",
+                "experiments/observation.py",
+                "rime/accessibility.py",
+            ],
+            parameters={
+                "ensemble_size": args.ensemble,
+                "seed": args.seed,
+                "n_oscillators": N_OSCILLATORS,
+                "dt": DT,
+                "equilibration_time": EQUILIBRATION_TIME,
+                "production_time": PRODUCTION_TIME,
+                "stride": STRIDE,
+                "coupling_sweep": [float(value) for value in K_SWEEP],
+                "sector_shape": [N_R_BINS, N_PSI_BINS],
+                "word_cutoff": MAX_DEPTH,
+                "tolerance": TOL,
+            },
+            observations=result,
+            claim_status="Computational Observation",
+            claim_scope=(
+                "Finite-N matched-ensemble Kuramoto freezing-direction control "
+                "under the declared sampling and sector policies."
+            ),
+            limitations=[
+                result["claim_boundary"],
+                "The cached observation does not replace release recomputation.",
+                "The continuum onset is a reference scale, not a fitted wall law.",
+            ],
+            started_at_utc=started_at,
+            elapsed_seconds=perf_counter() - started,
+            distributions=["numpy"],
+        )
 
 
 if __name__ == "__main__":

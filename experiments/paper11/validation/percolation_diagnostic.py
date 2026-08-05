@@ -1,6 +1,8 @@
-"""Post-release Paper XI candidate: nested percolation wall audit.
+"""Paper XI nested-percolation sampled-trajectory diagnostic.
 
-Claim status: computational candidate evidence for Classes B/E.
+Claim status: Computational Observation with REPAIR and NONSMOOTH_DISCRETE
+curation tags.  The largest adjacent sampled drop is not promoted to a wall
+crossing because no upstream threshold discriminant is declared.
 
 Each ensemble member is generated from one fixed symmetric threshold matrix
 U.  The graph path G(p) = {ij : U_ij < p} is therefore nested.  The raw
@@ -8,8 +10,7 @@ adjacency matrix is used as a general word-transport observable: applying
 degree normalization and then skew-symmetrizing can cancel existing edges and
 would invalidate the monotone-support control.
 
-This is not part of the frozen Paper XI v1.0 census and is not Class A spectral
-collision evidence.
+This is not spectral-collision evidence.
 """
 
 from __future__ import annotations
@@ -27,6 +28,7 @@ if sys.platform == "win32":
 ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT))
 from rime.accessibility import (  # noqa: E402
+    UNREACHED_DEPTH,
     compute_direct_support,
     compute_word_depth_matrix,
     offdiag_count,
@@ -35,7 +37,6 @@ from rime.accessibility import (  # noqa: E402
 N_NODES = 20
 P_SWEEP = np.linspace(0.0, 0.30, 16)
 MAX_DEPTH = 6
-FROZEN = 999
 TOL = 1e-8
 
 
@@ -81,17 +82,19 @@ def audit_adjacency(adjacency: np.ndarray, sectors: list[np.ndarray]) -> dict:
         [adjacency],
         max_depth=MAX_DEPTH,
         tol=TOL,
-        frozen=FROZEN,
+        unreached=UNREACHED_DEPTH,
     )
     n = adjacency.shape[0]
     n_pairs = n * (n - 1)
-    reached = depth != FROZEN
+    reached = depth != UNREACHED_DEPTH
     np.fill_diagonal(reached, False)
     return {
         "R1": r1,
         "reached": reached,
-        "frozen_R1": n_pairs - offdiag_count(r1),
-        "frozen_D_word": int(n_pairs - np.count_nonzero(reached)),
+        "direct_unsupported_pairs": n_pairs - offdiag_count(r1),
+        "word_unreached_at_cutoff_pairs": int(
+            n_pairs - np.count_nonzero(reached)
+        ),
         "giant_component_fraction": largest_component_fraction(adjacency),
     }
 
@@ -118,37 +121,88 @@ def run_audit(ensemble_size: int = 32, seed: int = 42) -> dict:
             per_member[member].append(audit)
             audits.append(audit)
 
-        fdw = np.array([item["frozen_D_word"] for item in audits], dtype=float)
+        unreached = np.array(
+            [item["word_unreached_at_cutoff_pairs"] for item in audits],
+            dtype=float,
+        )
         sweep.append(
             {
                 "p": float(p),
-                "frozen_R1_mean": float(np.mean([item["frozen_R1"] for item in audits])),
-                "frozen_D_word_mean": float(fdw.mean()),
-                "frozen_D_word_std": float(fdw.std()),
+                "direct_unsupported_pairs_mean": float(
+                    np.mean([item["direct_unsupported_pairs"] for item in audits])
+                ),
+                "word_unreached_at_cutoff_pairs_mean": float(unreached.mean()),
+                "word_unreached_at_cutoff_pairs_std": float(unreached.std()),
                 "giant_component_mean": float(
                     np.mean([item["giant_component_fraction"] for item in audits])
                 ),
             }
         )
 
-    fdw_means = np.array([item["frozen_D_word_mean"] for item in sweep])
-    fdw_stds = np.array([item["frozen_D_word_std"] for item in sweep])
-    drops = np.diff(fdw_means)
-    wall_index = int(np.argmin(drops)) + 1
-    variance_index = int(np.argmax(fdw_stds))
+    unreached_means = np.array(
+        [item["word_unreached_at_cutoff_pairs_mean"] for item in sweep]
+    )
+    unreached_stds = np.array(
+        [item["word_unreached_at_cutoff_pairs_std"] for item in sweep]
+    )
+    drops = np.diff(unreached_means)
+    largest_drop_index = int(np.argmin(drops)) + 1
+    variance_index = int(np.argmax(unreached_stds))
+    before = sweep[largest_drop_index - 1]
+    after = sweep[largest_drop_index]
     return {
-        "claim_status": "candidate_evidence",
-        "paper_xi_release_status": "post_v1_candidate",
-        "taxonomy_candidates": ["B", "E"],
+        "record_version": "paper11-percolation-diagnostic-v1.0",
+        "claim_status": "Computational Observation",
+        "record_role": "trajectory_diagnostic",
+        "wall_admission": "not_admitted",
+        "diagnostic_kind": "largest_adjacent_sampled_drop",
+        "producer": "experiments/paper11/validation/percolation_diagnostic.py",
+        "curation_assignment": {
+            "rulebook_version": "paper11-curation-tags-v1.0",
+            "assignment_source": "derived",
+            "tags": ["REPAIR", "NONSMOOTH_DISCRETE"],
+            "override_reason": None,
+        },
         "observable": "raw symmetric adjacency; general word transport",
+        "primary_field": (
+            "word.unreached_pair_count_at_cutoff"
+            "[Y,cutoff=6,aggregation=ensemble_mean,ensemble_policy=seeded_nested_32]"
+        ),
+        "value_type": "ensemble_mean_of_integer_pair_counts",
+        "negative_boundary": (
+            "the support-graph equivalence uses a single entrywise-nonnegative "
+            "letter and strict positivity; no signed, multi-letter, complex-weight, "
+            "or tolerance-based cancellation claim is made"
+        ),
         "ensemble_size": ensemble_size,
         "seed": seed,
         "max_depth": MAX_DEPTH,
         "sweep": sweep,
-        "wall_p": sweep[wall_index]["p"],
-        "wall_drop": float(drops[wall_index - 1]),
+        "largest_sampled_drop_at_p": sweep[largest_drop_index]["p"],
+        "largest_sampled_drop": float(drops[largest_drop_index - 1]),
+        "trajectory_diagnostic": {
+            "orientation": "increasing_edge_probability",
+            "adjacent_sample_interval": {
+                "left_sample": before["p"],
+                "right_sample": after["p"],
+            },
+            "before_state": {
+                "word_unreached_at_cutoff_pairs_mean": before[
+                    "word_unreached_at_cutoff_pairs_mean"
+                ]
+            },
+            "after_state": {
+                "word_unreached_at_cutoff_pairs_mean": after[
+                    "word_unreached_at_cutoff_pairs_mean"
+                ]
+            },
+            "raw_numeric_direction": "decrease",
+            "accessibility_direction": "increase",
+            "diagnostic_semantics": "largest_adjacent_sampled_drop",
+            "declared_wall_crossing": False,
+        },
         "variance_peak_p": sweep[variance_index]["p"],
-        "variance_peak_std": float(fdw_stds[variance_index]),
+        "variance_peak_std": float(unreached_stds[variance_index]),
         "monotone_support_verified": True,
     }
 
@@ -162,23 +216,31 @@ def main() -> None:
 
     result = run_audit(ensemble_size=args.ensemble, seed=args.seed)
     print("=" * 72)
-    print("  Paper XI candidate: nested percolation wall")
+    print("  Paper XI candidate: nested percolation sampled diagnostic")
     print("=" * 72)
-    print("     p   frozen_D mean +/- std   frozen_R1 mean   giant component")
+    print("     p   unreached mean +/- std   direct- mean   giant component")
     for row in result["sweep"]:
         print(
-            f"  {row['p']:5.2f}   {row['frozen_D_word_mean']:7.1f} +/-"
-            f" {row['frozen_D_word_std']:5.1f}       {row['frozen_R1_mean']:7.1f}"
+            f"  {row['p']:5.2f}   "
+            f"{row['word_unreached_at_cutoff_pairs_mean']:7.1f} +/-"
+            f" {row['word_unreached_at_cutoff_pairs_std']:5.1f}       "
+            f"{row['direct_unsupported_pairs_mean']:7.1f}"
             f"          {row['giant_component_mean']:.3f}"
         )
     print()
-    print(f"Largest frozen-depth drop: p={result['wall_p']:.2f} ({result['wall_drop']:+.1f})")
+    print(
+        "Largest sampled cutoff-unreached drop: "
+        f"p={result['largest_sampled_drop_at_p']:.2f} "
+        f"({result['largest_sampled_drop']:+.1f})"
+    )
     print(
         "Largest ensemble fluctuation: "
         f"p={result['variance_peak_p']:.2f} (std={result['variance_peak_std']:.1f})"
     )
     print("Nested direct support and bounded-depth reachability: verified monotone")
-    print("Claim boundary: Classes B/E candidate; not Class A collision evidence.")
+    print(
+        "Claim boundary: profile-relative sampled diagnostic; no declared wall crossing."
+    )
 
     if args.output:
         args.output.parent.mkdir(parents=True, exist_ok=True)

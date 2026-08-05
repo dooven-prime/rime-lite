@@ -1,0 +1,160 @@
+{
+  "record_version": "paper11-percolation-diagnostic-v1.0",
+  "claim_status": "Computational Observation",
+  "record_role": "trajectory_diagnostic",
+  "wall_admission": "not_admitted",
+  "diagnostic_kind": "largest_adjacent_sampled_drop",
+  "producer": "experiments/paper11/validation/percolation_diagnostic.py",
+  "curation_assignment": {
+    "rulebook_version": "paper11-curation-tags-v1.0",
+    "assignment_source": "derived",
+    "tags": [
+      "REPAIR",
+      "NONSMOOTH_DISCRETE"
+    ],
+    "override_reason": null
+  },
+  "observable": "raw symmetric adjacency; general word transport",
+  "primary_field": "word.unreached_pair_count_at_cutoff[Y,cutoff=6,aggregation=ensemble_mean,ensemble_policy=seeded_nested_32]",
+  "value_type": "ensemble_mean_of_integer_pair_counts",
+  "negative_boundary": "the support-graph equivalence uses a single entrywise-nonnegative letter and strict positivity; no signed, multi-letter, complex-weight, or tolerance-based cancellation claim is made",
+  "ensemble_size": 32,
+  "seed": 42,
+  "max_depth": 6,
+  "sweep": [
+    {
+      "p": 0.0,
+      "direct_unsupported_pairs_mean": 380.0,
+      "word_unreached_at_cutoff_pairs_mean": 380.0,
+      "word_unreached_at_cutoff_pairs_std": 0.0,
+      "giant_component_mean": 0.05
+    },
+    {
+      "p": 0.02,
+      "direct_unsupported_pairs_mean": 371.8125,
+      "word_unreached_at_cutoff_pairs_mean": 367.625,
+      "word_unreached_at_cutoff_pairs_std": 10.16658128379447,
+      "giant_component_mean": 0.1515625
+    },
+    {
+      "p": 0.04,
+      "direct_unsupported_pairs_mean": 362.75,
+      "word_unreached_at_cutoff_pairs_mean": 328.75,
+      "word_unreached_at_cutoff_pairs_std": 43.1182965804541,
+      "giant_component_mean": 0.3125
+    },
+    {
+      "p": 0.06,
+      "direct_unsupported_pairs_mean": 355.0625,
+      "word_unreached_at_cutoff_pairs_mean": 274.4375,
+      "word_unreached_at_cutoff_pairs_std": 64.7432127234199,
+      "giant_component_mean": 0.496875
+    },
+    {
+      "p": 0.08,
+      "direct_unsupported_pairs_mean": 346.6875,
+      "word_unreached_at_cutoff_pairs_mean": 203.875,
+      "word_unreached_at_cutoff_pairs_std": 86.76395781083295,
+      "giant_component_mean": 0.6640625
+    },
+    {
+      "p": 0.1,
+      "direct_unsupported_pairs_mean": 340.1875,
+      "word_unreached_at_cutoff_pairs_mean": 143.0,
+      "word_unreached_at_cutoff_pairs_std": 87.94458482476337,
+      "giant_component_mean": 0.7937500000000001
+    },
+    {
+      "p": 0.12,
+      "direct_unsupported_pairs_mean": 332.3125,
+      "word_unreached_at_cutoff_pairs_mean": 86.375,
+      "word_unreached_at_cutoff_pairs_std": 65.95535895588773,
+      "giant_component_mean": 0.8843749999999999
+    },
+    {
+      "p": 0.14,
+      "direct_unsupported_pairs_mean": 324.8125,
+      "word_unreached_at_cutoff_pairs_mean": 50.6875,
+      "word_unreached_at_cutoff_pairs_std": 50.80012149345708,
+      "giant_component_mean": 0.9312499999999999
+    },
+    {
+      "p": 0.16,
+      "direct_unsupported_pairs_mean": 317.5,
+      "word_unreached_at_cutoff_pairs_mean": 26.0625,
+      "word_unreached_at_cutoff_pairs_std": 32.62470066912492,
+      "giant_component_mean": 0.9671875
+    },
+    {
+      "p": 0.18,
+      "direct_unsupported_pairs_mean": 310.0625,
+      "word_unreached_at_cutoff_pairs_mean": 15.4375,
+      "word_unreached_at_cutoff_pairs_std": 24.332254185545573,
+      "giant_component_mean": 0.9796875
+    },
+    {
+      "p": 0.2,
+      "direct_unsupported_pairs_mean": 302.1875,
+      "word_unreached_at_cutoff_pairs_mean": 10.75,
+      "word_unreached_at_cutoff_pairs_std": 17.049560111627514,
+      "giant_component_mean": 0.9859375
+    },
+    {
+      "p": 0.22,
+      "direct_unsupported_pairs_mean": 294.75,
+      "word_unreached_at_cutoff_pairs_mean": 9.5,
+      "word_unreached_at_cutoff_pairs_std": 16.454482671904334,
+      "giant_component_mean": 0.9875
+    },
+    {
+      "p": 0.24,
+      "direct_unsupported_pairs_mean": 286.625,
+      "word_unreached_at_cutoff_pairs_mean": 7.125,
+      "word_unreached_at_cutoff_pairs_std": 14.831870246196196,
+      "giant_component_mean": 0.9906250000000001
+    },
+    {
+      "p": 0.26,
+      "direct_unsupported_pairs_mean": 277.5625,
+      "word_unreached_at_cutoff_pairs_mean": 3.5625,
+      "word_unreached_at_cutoff_pairs_std": 11.076262625542968,
+      "giant_component_mean": 0.9953125
+    },
+    {
+      "p": 0.28,
+      "direct_unsupported_pairs_mean": 271.0,
+      "word_unreached_at_cutoff_pairs_mean": 1.1875,
+      "word_unreached_at_cutoff_pairs_std": 6.611720180860651,
+      "giant_component_mean": 0.9984375
+    },
+    {
+      "p": 0.3,
+      "direct_unsupported_pairs_mean": 262.875,
+      "word_unreached_at_cutoff_pairs_mean": 0.0,
+      "word_unreached_at_cutoff_pairs_std": 0.0,
+      "giant_component_mean": 1.0
+    }
+  ],
+  "largest_sampled_drop_at_p": 0.08,
+  "largest_sampled_drop": -70.5625,
+  "trajectory_diagnostic": {
+    "orientation": "increasing_edge_probability",
+    "adjacent_sample_interval": {
+      "left_sample": 0.06,
+      "right_sample": 0.08
+    },
+    "before_state": {
+      "word_unreached_at_cutoff_pairs_mean": 274.4375
+    },
+    "after_state": {
+      "word_unreached_at_cutoff_pairs_mean": 203.875
+    },
+    "raw_numeric_direction": "decrease",
+    "accessibility_direction": "increase",
+    "diagnostic_semantics": "largest_adjacent_sampled_drop",
+    "declared_wall_crossing": false
+  },
+  "variance_peak_p": 0.1,
+  "variance_peak_std": 87.94458482476337,
+  "monotone_support_verified": true
+}

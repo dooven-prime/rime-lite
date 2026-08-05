@@ -1,0 +1,263 @@
+{
+  "record_version": "paper11-cnot-repair-wall-v1.0",
+  "claim_status": "Computational Certificate",
+  "producer": "experiments/paper11/repair_persistence_quantum.py",
+  "grid": 21,
+  "sample_spacing": 0.05,
+  "n_qubits": 2,
+  "lie_registration": {
+    "matrix_interpolation": "I + strength * (U_CNOT - I), followed by Frobenius normalization",
+    "matrix_logarithm": "samplewise scipy.linalg.logm",
+    "skew_adjoint_projection": "(logm(U) - logm(U)^*) / 2",
+    "fixed_generators": [
+      "skew_log(H)",
+      "skew_log(S)"
+    ],
+    "continuous_logarithm_branch_certified": false,
+    "physical_hamiltonian_path_claimed": false
+  },
+  "rows": [
+    {
+      "strength": 0.0,
+      "cutoff": 4,
+      "declared_pairs": 12,
+      "direct_supported_pairs": 4,
+      "direct_unsupported_pairs": 8,
+      "lie_unreached_at_cutoff_pairs": 8,
+      "lie_repair_pair_count": 0,
+      "direct_supported_pair_fraction": 0.3333333333333333
+    },
+    {
+      "strength": 0.05,
+      "cutoff": 4,
+      "declared_pairs": 12,
+      "direct_supported_pairs": 4,
+      "direct_unsupported_pairs": 8,
+      "lie_unreached_at_cutoff_pairs": 8,
+      "lie_repair_pair_count": 0,
+      "direct_supported_pair_fraction": 0.3333333333333333
+    },
+    {
+      "strength": 0.1,
+      "cutoff": 4,
+      "declared_pairs": 12,
+      "direct_supported_pairs": 4,
+      "direct_unsupported_pairs": 8,
+      "lie_unreached_at_cutoff_pairs": 8,
+      "lie_repair_pair_count": 0,
+      "direct_supported_pair_fraction": 0.3333333333333333
+    },
+    {
+      "strength": 0.15000000000000002,
+      "cutoff": 4,
+      "declared_pairs": 12,
+      "direct_supported_pairs": 4,
+      "direct_unsupported_pairs": 8,
+      "lie_unreached_at_cutoff_pairs": 8,
+      "lie_repair_pair_count": 0,
+      "direct_supported_pair_fraction": 0.3333333333333333
+    },
+    {
+      "strength": 0.2,
+      "cutoff": 4,
+      "declared_pairs": 12,
+      "direct_supported_pairs": 4,
+      "direct_unsupported_pairs": 8,
+      "lie_unreached_at_cutoff_pairs": 8,
+      "lie_repair_pair_count": 0,
+      "direct_supported_pair_fraction": 0.3333333333333333
+    },
+    {
+      "strength": 0.25,
+      "cutoff": 4,
+      "declared_pairs": 12,
+      "direct_supported_pairs": 4,
+      "direct_unsupported_pairs": 8,
+      "lie_unreached_at_cutoff_pairs": 8,
+      "lie_repair_pair_count": 0,
+      "direct_supported_pair_fraction": 0.3333333333333333
+    },
+    {
+      "strength": 0.30000000000000004,
+      "cutoff": 4,
+      "declared_pairs": 12,
+      "direct_supported_pairs": 4,
+      "direct_unsupported_pairs": 8,
+      "lie_unreached_at_cutoff_pairs": 8,
+      "lie_repair_pair_count": 0,
+      "direct_supported_pair_fraction": 0.3333333333333333
+    },
+    {
+      "strength": 0.35000000000000003,
+      "cutoff": 4,
+      "declared_pairs": 12,
+      "direct_supported_pairs": 4,
+      "direct_unsupported_pairs": 8,
+      "lie_unreached_at_cutoff_pairs": 8,
+      "lie_repair_pair_count": 0,
+      "direct_supported_pair_fraction": 0.3333333333333333
+    },
+    {
+      "strength": 0.4,
+      "cutoff": 4,
+      "declared_pairs": 12,
+      "direct_supported_pairs": 4,
+      "direct_unsupported_pairs": 8,
+      "lie_unreached_at_cutoff_pairs": 8,
+      "lie_repair_pair_count": 0,
+      "direct_supported_pair_fraction": 0.3333333333333333
+    },
+    {
+      "strength": 0.45,
+      "cutoff": 4,
+      "declared_pairs": 12,
+      "direct_supported_pairs": 4,
+      "direct_unsupported_pairs": 8,
+      "lie_unreached_at_cutoff_pairs": 8,
+      "lie_repair_pair_count": 0,
+      "direct_supported_pair_fraction": 0.3333333333333333
+    },
+    {
+      "strength": 0.5,
+      "cutoff": 4,
+      "declared_pairs": 12,
+      "direct_supported_pairs": 4,
+      "direct_unsupported_pairs": 8,
+      "lie_unreached_at_cutoff_pairs": 8,
+      "lie_repair_pair_count": 0,
+      "direct_supported_pair_fraction": 0.3333333333333333
+    },
+    {
+      "strength": 0.55,
+      "cutoff": 4,
+      "declared_pairs": 12,
+      "direct_supported_pairs": 6,
+      "direct_unsupported_pairs": 6,
+      "lie_unreached_at_cutoff_pairs": 0,
+      "lie_repair_pair_count": 6,
+      "direct_supported_pair_fraction": 0.5
+    },
+    {
+      "strength": 0.6000000000000001,
+      "cutoff": 4,
+      "declared_pairs": 12,
+      "direct_supported_pairs": 6,
+      "direct_unsupported_pairs": 6,
+      "lie_unreached_at_cutoff_pairs": 0,
+      "lie_repair_pair_count": 6,
+      "direct_supported_pair_fraction": 0.5
+    },
+    {
+      "strength": 0.65,
+      "cutoff": 4,
+      "declared_pairs": 12,
+      "direct_supported_pairs": 6,
+      "direct_unsupported_pairs": 6,
+      "lie_unreached_at_cutoff_pairs": 0,
+      "lie_repair_pair_count": 6,
+      "direct_supported_pair_fraction": 0.5
+    },
+    {
+      "strength": 0.7000000000000001,
+      "cutoff": 4,
+      "declared_pairs": 12,
+      "direct_supported_pairs": 6,
+      "direct_unsupported_pairs": 6,
+      "lie_unreached_at_cutoff_pairs": 0,
+      "lie_repair_pair_count": 6,
+      "direct_supported_pair_fraction": 0.5
+    },
+    {
+      "strength": 0.75,
+      "cutoff": 4,
+      "declared_pairs": 12,
+      "direct_supported_pairs": 6,
+      "direct_unsupported_pairs": 6,
+      "lie_unreached_at_cutoff_pairs": 0,
+      "lie_repair_pair_count": 6,
+      "direct_supported_pair_fraction": 0.5
+    },
+    {
+      "strength": 0.8,
+      "cutoff": 4,
+      "declared_pairs": 12,
+      "direct_supported_pairs": 6,
+      "direct_unsupported_pairs": 6,
+      "lie_unreached_at_cutoff_pairs": 0,
+      "lie_repair_pair_count": 6,
+      "direct_supported_pair_fraction": 0.5
+    },
+    {
+      "strength": 0.8500000000000001,
+      "cutoff": 4,
+      "declared_pairs": 12,
+      "direct_supported_pairs": 6,
+      "direct_unsupported_pairs": 6,
+      "lie_unreached_at_cutoff_pairs": 0,
+      "lie_repair_pair_count": 6,
+      "direct_supported_pair_fraction": 0.5
+    },
+    {
+      "strength": 0.9,
+      "cutoff": 4,
+      "declared_pairs": 12,
+      "direct_supported_pairs": 6,
+      "direct_unsupported_pairs": 6,
+      "lie_unreached_at_cutoff_pairs": 0,
+      "lie_repair_pair_count": 6,
+      "direct_supported_pair_fraction": 0.5
+    },
+    {
+      "strength": 0.9500000000000001,
+      "cutoff": 4,
+      "declared_pairs": 12,
+      "direct_supported_pairs": 6,
+      "direct_unsupported_pairs": 6,
+      "lie_unreached_at_cutoff_pairs": 0,
+      "lie_repair_pair_count": 6,
+      "direct_supported_pair_fraction": 0.5
+    },
+    {
+      "strength": 1.0,
+      "cutoff": 4,
+      "declared_pairs": 12,
+      "direct_supported_pairs": 6,
+      "direct_unsupported_pairs": 6,
+      "lie_unreached_at_cutoff_pairs": 0,
+      "lie_repair_pair_count": 6,
+      "direct_supported_pair_fraction": 0.5
+    }
+  ],
+  "first_detected_strength": 0.55,
+  "sampled_transition_bracket": {
+    "lower_exclusive": 0.5,
+    "upper_inclusive": 0.55
+  },
+  "before_state": {
+    "strength": 0.5,
+    "cutoff": 4,
+    "declared_pairs": 12,
+    "direct_supported_pairs": 4,
+    "direct_unsupported_pairs": 8,
+    "lie_unreached_at_cutoff_pairs": 8,
+    "lie_repair_pair_count": 0,
+    "direct_supported_pair_fraction": 0.3333333333333333
+  },
+  "after_state": {
+    "strength": 0.55,
+    "cutoff": 4,
+    "declared_pairs": 12,
+    "direct_supported_pairs": 6,
+    "direct_unsupported_pairs": 6,
+    "lie_unreached_at_cutoff_pairs": 0,
+    "lie_repair_pair_count": 6,
+    "direct_supported_pair_fraction": 0.5
+  },
+  "persistence_coordinate": 0.44999999999999996,
+  "persistence_profile": "persistent_on_declared_sample_tail",
+  "active_samples": 10,
+  "sample_fraction": 0.47619047619047616,
+  "stability": 1.0,
+  "regularity": "unknown",
+  "claim_boundary": "first detection and persistence are relative to the declared grid; no continuous logarithm branch or physical Hamiltonian path is certified"
+}

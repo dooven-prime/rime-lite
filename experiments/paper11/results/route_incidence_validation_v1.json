@@ -1,0 +1,37 @@
+{
+  "schema": "paper11-validation-certificate-v1.0",
+  "claim_status": "Computational Certificate",
+  "validator": "experiments/paper11/validation/validate_route_incidence_result.py",
+  "validator_version": "1.0",
+  "validator_independence": {
+    "implementation_relation": "separate_formula_recomputation",
+    "language_relation": "same_language",
+    "runtime_relation": "separate_process",
+    "input_source": "canonical_input_and_frozen_result",
+    "producer_cache_used": false
+  },
+  "canonical_input_sha256": "574e0e1e308fb8e023402d253200f1239e3640fe0416e45d5a3e14123d4744c5",
+  "producer_sha256": "53df725204d053d089f30a727592196050d777bdec8a2624821e657879e7109d",
+  "result_sha256": "8bbc3c7d2c919d4ef9439bb4a506efec0784d626bd9db3b4c74018497eb749c9",
+  "validator_sha256": "8242888be885556c4c8fa7de357fc8c7e62358477e92f3d5dcd2323bb4f2c20c",
+  "recomputed_summary": {
+    "configuration_count": 13,
+    "type_iv_codimensions": {
+      "square_d_2": 3,
+      "square_d_3": 7,
+      "square_d_4": 12,
+      "square_d_5": 19,
+      "square_d_6": 27,
+      "square_d_8": 48,
+      "square_d_10": 75,
+      "synthetic_3_2_3": 5,
+      "small_asymmetric": 4,
+      "medium_asymmetric": 8,
+      "large_asymmetric": 21,
+      "narrow_intermediate": 7,
+      "wide_intermediate": 4
+    }
+  },
+  "claim_scope": "exact finite dimension-table certificate for the free complex matrix-pair incidence locus AB=0; no represented-Rubik transversality claim",
+  "validation_status": "passed"
+}

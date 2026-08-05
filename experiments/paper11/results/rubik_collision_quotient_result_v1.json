@@ -1,0 +1,51 @@
+{
+  "schema": "paper11-rubik-collision-result-v1.0",
+  "claim_status": "Computational Certificate",
+  "producer": "experiments/paper11/validation/produce_collision_quotient_result.py",
+  "canonical_input": {
+    "path": "experiments/paper11/validation/inputs/rubik_collision_points_v1.json",
+    "sha256": "f6c9678e044de4f780e44c7032d2d50afd68745cf33ad4fd5d5710705bea5401"
+  },
+  "upstream_source": {
+    "owner": "paper4",
+    "path": "experiments/paper4/validation/rubik_collision_quotient.py",
+    "sha256": "3b8e2ca4900664cfe4750884379237caf453017dc81f48350977659bda189d9c"
+  },
+  "summary": {
+    "pair_classification": {
+      "parallel": 2,
+      "interior": 10,
+      "endpoint": 15,
+      "exterior": 9
+    },
+    "interior_collision_parameters": [
+      "2/7",
+      "2/5",
+      "1/2",
+      "2/3",
+      "4/5"
+    ],
+    "interior_layer_counts": {
+      "2/7": 8,
+      "2/5": 7,
+      "1/2": 7,
+      "2/3": 6,
+      "4/5": 8
+    },
+    "maximal_interior_collision_parameter": "2/3",
+    "maximal_interior_layer_count": 6,
+    "maximal_interior_drop": 3,
+    "maximal_collision_classes": [
+      [
+        "S5",
+        "S6",
+        "S7"
+      ],
+      [
+        "S8",
+        "S9"
+      ]
+    ]
+  },
+  "claim_scope": "exact finite rational nine-point collision quotient; no claim that the point table is independently derived from the full Rubik matrices"
+}

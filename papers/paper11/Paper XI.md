@@ -1,79 +1,73 @@
-# Observable Classification Theory for Sectorized Observable Frameworks
+# Typed Wall Morphology for Sectorized Observable Frameworks
 
-### Wall Records, Wall Coordinates, Taxonomy, and Smooth Local Models
+### Sparse Wall Records, Coordinate Profiles, Multi-Label Taxonomy, and Local-Model Eligibility
 
 **WuJun Chen**
 
-Independent Researcher | RIME Project | 2026
+Independent Researcher | RIME Program | 2026
 
-*This paper is Part XI of the RIME program. Paper VII isolates incidence
-geometry and promotion limits; Paper VIII fixes the static SOF object layer; Paper IX
-studies observable dynamics over SOFs; and Paper X isolates the Universal
-Observable Pipeline together with a five-layer SOF Registry. Paper XI turns
-that registry into an observable classification layer: given registered SOFs,
-what feature space classifies their observable behavior?*
+*This paper is Paper XI of the RIME program. It develops wall-record
+morphology, profile-relative coordinates, multi-label curation, and
+local-model eligibility over the typed interfaces of Papers VIII--X. Strict
+records require upstream wall admission; analogue morphology does not.*
 
 ***
 
 ## Abstract
 
-**Problem.** The SOF Registry records species, SOF objects, observable
-ladders, dynamics, and diagnostics. This makes cross-species comparison
-possible, but it does not yet say what type a registered SOF has at the
-observable level. The next question is not whether every wall belongs to a
-known singularity class. The question is which observable signatures and
-diagnostics organize the behavior of registered SOFs.
+**Problem.** A typed wall and a source-addressed finding do not yet determine
+how the observed change should be recorded or organized. Fixed vectors
+such as $(\Delta R_1,\Delta R_2,\Delta D,\Delta\tau,\Delta P_d)$ conflate
+distinct carriers, force absent coordinates to look like zeros, and can promote
+static findings or trajectory diagnostics into wall events.
 
-**Approach.** We introduce a five-layer organization. First, a
-**per-observable wall record** preserves the observation history of a chosen
-observable along a declared deformation: its change locus, discriminant data,
-diagnostics, and ordered atomic events $W_{a,1},\ldots,W_{a,k_a}$. The
-**aggregate wall record** collects these histories across the declared ladder.
-Second, feature extraction derives a **wall signature** from each atomic event:
-rank type, support type, repair type, oscillation type, plateau type, or
-equivalently changes such as
-$(\Delta R_1,\Delta R_2,\Delta D,\Delta\tau,\Delta P_d)$. The multiset of all
-atomic-event signatures is the **wall spectrum**
-$\mathrm{Spec}_W(\mathcal F,\mathcal L,\Gamma)$. Third, a
-**wall-coordinate profile** records
-position, observable orientation, regularity, and stochastic status. Fourth,
-the **Observable Wall Taxonomy** groups wall spectra into collision, repair,
-terminal-structure, plateau/rate, nonsmooth/discrete, and bridge/incidence wall
-families. Smooth ADE models enter only afterward as the fifth layer: candidate
-local normal forms for sufficiently smooth discriminant branches.
+**Approach.** For the strict branch, starting from an admissible wall datum
+supplied by the typed deformation interface, this paper defines an ordinary
+record construction
+$\operatorname{RecordWall}_{P_W}(\mathfrak D_\kappa)$. A separate analogue
+construction records included morphology without claiming wall admission. The corpus separates
+morphology-record bundles from non-wall context records and distinguishes
+strict wall records from included analogue morphology. Each morphology bundle
+contains atoms that are either oriented trajectory events
+with sparse before/after maps or domain-level locus samples with
+incident-stratum germs. In the strict branch, one primary field carries the
+record's upstream wall admission; in the analogue branch, it anchors morphology without
+asserting strict admission. Separately registered context fields remain
+co-observations. A Wall Profile $P_W$ selects fields and policies, while six
+structured coordinate families record morphology and evidence. The declared
+mechanism labels serve only as nonexclusive curation tags. A separate
+eligibility gate determines whether a sufficiently smooth local branch may be
+compared with an ADE-type model.
 
-**Results.** The main result is a proto-geometric wall-record schema, not a
-complete classification theorem. It separates mechanism labels from geometric
-coordinates and turns wall records into computable features such as crossing
-count, atomic-event count, wall-cell count, repair index, oscillation index, depth index, rate
-ratio, spectral gap, and codimension. Four extended profiles expose four
-different geometries: a constructed real-symmetric endpoint gives two isolated
-order-one $A_1$-type pair-gap closures; nested Erdos--Renyi percolation gives a
-monotone opening window near $p=0.08$--$0.10$; matched Kuramoto ensembles give
-a freezing crossover near $K=1.6$--$1.8$; and continuous weakening of one GRN
-repression edge gives a two-to-one terminal-basin loss in the controlled
-bracket $[0.520,0.525]$. A matched fixed-time CLE/SSA control withdraws the
-earlier GRN noise-wall interpretation. The extended census retains the
-original 24 records, adds these four records, and contains 28 records, 38
-class memberships, and 19 first-pass eligible records. All six classes meet
-the predeclared three-record, two-species, two-deformation finite-sample target.
-Class A closes that target through a constructed non-Rubik witness; naturally
-occurring non-Rubik Class A breadth remains open.
+**Results.** The resulting architecture is
 
-**Implications.** Paper XI develops the zeroth geometric layer of SOF wall
-theory. The wall-record language is source-independent, while realized wall
-geometry is source-dependent. The resulting wall-coordinate space has
-position, orientation, regularity, and stochasticity, but it does not yet have
-a metric, curvature, coordinate-change law, or transport structure. ADE-type
-local models may be useful for spectral collision or smooth discriminant maps,
-but they cannot be the default language for all SOF walls.
+$$
+\begin{aligned}
+\text{Typed Wall Records}
+&\longrightarrow \text{Wall Coordinate Profiles}\\
+&\longrightarrow \text{Multi-Label Taxonomy}\\
+&\longrightarrow \text{Local-Model Eligibility}.
+\end{aligned}
+$$
 
-**Revision note.** Relative to the initial release, this version adds four
-controlled wall profiles, extends the original 24-record census to an
-independently generated 28-record census, and withdraws the earlier
-low-$\Omega$ GRN noise-wall interpretation after a matched CLE/SSA control. The
-A--F taxonomy is retained, while the distinction between observation histories
-and derived wall signatures is made explicit.
+The finite census reads a source-pinned 28-row census, of which 27 rows remain
+active. A versioned corpus-inclusion and upstream-admission reference ledger
+places 5 strict wall bundles in the strict wall spectrum and retains 2
+analogue morphology bundles in a separate analogue morphology set.
+The remaining active rows are 5 static boundary witnesses, 2 pre-wall
+references, and 13 trajectory diagnostics. The 27 active records carry 34
+recomputed nonexclusive curation-tag memberships. Three anchors exhibit the
+intended range: spectral pair-gap morphology with a branch-aware
+$A_2\to A_1+A_1$ falsification audit, a paired affine/unitary CNOT
+path-admissibility audit excluded from wall admission, and a discrete
+graph endpoint.
+
+**Boundary.** The construction is not a functor and no category of deformation
+records is asserted. Wall coordinates are relative to the declared carrier,
+chart, path, threshold, cutoff, normalization, sampling, and profile. Static
+repair findings, plateau intervals, and rate separation are not walls without
+a declared change locus. The census is not a complete classification, and ADE
+terminology is restricted to eligible smooth local-model candidates.
 
 ***
 
@@ -81,1141 +75,1015 @@ and derived wall signatures is made explicit.
 
 | Symbol | Meaning |
 |--------|---------|
-| $\mathcal F=(V,\{Q_i\},\mathcal X)$ | Sectorized Observable Framework |
-| $\mathcal F_t$ | SOF deformation |
-| $O(t)$ | observable trajectory or shadow |
-| $\Sigma_O$ | wall or discriminant locus of $O$ |
-| $\Sigma_{\mathrm{comm}}$ | commutativity locus in generator-weight moduli |
-| $\Delta_O$ | target discriminant in observable space |
-| $\mathcal W_a(\mathcal F,\mathcal L,\Gamma)$ | per-observable wall record for $O_a\in\mathcal L$ |
-| $W_{a,j}$ | the $j$th atomic wall event in the record of $O_a$ |
-| $\mathcal W(\mathcal F,\mathcal L,\Gamma)$ | aggregate wall record $(\mathcal W_a)_{O_a\in\mathcal L}$ |
-| $\operatorname{Feat}_W$ | feature-extraction map from wall records or atomic events to derived wall features |
-| $\mathrm{Sig}_W(W_{a,j})$ | computable signature of an atomic wall event |
-| $\mathrm{Spec}_W(\mathcal F,\mathcal L,\Gamma)$ | multiset of atomic-event wall signatures |
-| $\mathrm{Prof}_W(\mathcal W)$ | wall profile: class together with position, orientation, regularity, and stochasticity |
-| $\mathrm{Pos},\mathrm{Ori},\mathrm{Reg},\mathrm{Sto}$ | wall-coordinate components |
-| $\mathrm{Term}(\mathcal F_t)$ | terminal decomposition induced by the declared dynamics and observable realization |
-| $\mathrm{WallAssign}$ | record-producing assignment (bookkeeping): $(\mathcal F,\mathcal L,\Gamma)\mapsto \mathcal W$ |
-| $N_{\mathrm{cross}},N_{\mathrm{evt}},N_{\mathrm{cell}}$ | crossing-step count, atomic-event count, and wall-cell count |
-| $R_W,p_W,O_W,P_W$ | repair, persistence, oscillation, and plateau indices |
-| $\bar D,\rho_W,\gamma_W,c_W,\delta_W$ | depth, rate-ratio, spectral-gap, codimension, and density diagnostics |
-| $R_1,R_2,D$ | accessibility observable ladder |
-| $\tau(O)$ | characteristic time scale when defined |
-| $P_d(t)$ | plateau function |
-| $A_k,D_k,E_k$ | Arnold ADE singularity families |
+| $\mathcal F=(V,Q,Y;X,\mathcal H)$ | typed Sectorized Observable Framework (SOF), with optional independently declared Lie/Hall data |
+| $\mathfrak D_\kappa$ | admissible wall datum for a selected typed field $\kappa$ |
+| $P_W$ | Wall Profile declaring fields, conventions, and policies |
+| $\operatorname{RecordWall}_{P_W}(\mathfrak D_\kappa)$ | ordinary wall-record construction |
+| $e$ | one morphology atom |
+| $\mathrm{WallCorpusEntry}$ | disjoint union of morphology-record bundles and wall context records; morphology bundles split into strict wall and analogue morphology records |
+| $\mathcal C$ | a finite corpus of $\mathrm{WallCorpusEntry}$ values |
+| $\mathrm{MorphologyAtom}$ | disjoint union of trajectory events and locus samples |
+| $K_e$ | finite set containing the primary field and any registered context fields |
+| $\delta_e^\gamma$ | oriented sparse before/after map for a trajectory event |
+| $\delta_e^{\mathrm{loc}}$ | incident-stratum germ for a locus sample |
+| $\operatorname{Prof}^{P_W}_W(e)$ | structured wall coordinate profile |
+| $\operatorname{MorphSig}^{P_W}_W(e)$ | curation-independent morphology signature |
+| $\operatorname{CuratedSig}^{P_W,v}_W(e)$ | versioned pairing of a morphology signature with a curation assignment |
+| $\operatorname{Spec}^{P_W}_{W,\mathrm{str}}(\mathcal F,\mathcal C;\chi)$ | profile-relative multiset of admitted strict-SOF morphology signatures in context $\chi$ |
+| $A_Y^+$ | positive-word algebra $\operatorname{alg}_{\mathbb C}(I,Y)$ |
+| $A_Y^*$ | observable star-closure $C^*(Y)$ |
+| $A_{Q,Y}^*$ | sector-enriched star-closure $C^*(D_Q\cup Y)$ |
+| $R_1[Y]$ | aggregate direct operator support |
+| $\operatorname{Route}_d[Y],W_d[Y]$ | routed-product and full-word support at length $d$ |
+| $R_1^{\mathrm{Lie}},R_2^{\mathrm{Lie}}$ | direct and simple-commutator support on a registered Lie/Hall carrier |
+| $D_\kappa$ | exact first-hit depth, when certified |
+| $D_\kappa^{(\leq d_{\max})}$ | truncated first-hit depth with an explicit cutoff |
+| `UNREACHED_AT_CUTOFF` | finite-audit state; never mathematical infinity |
+| $A_k,D_k,E_k$ | Arnold singularity families, used only after local-model eligibility |
+
+Arrows in diagrams denote construction or audit order unless a theorem
+explicitly states otherwise.
 
 ***
 
 ## Introduction
 
-The post-Paper-VII SOF arc has three layers:
+The static object language supplies marked sectors, labelled observables,
+distinct closure layers, and separate operator/word and Lie/Hall branches
+\cite{paper8}. The deformation language supplies typed charts, comparison
+maps, trajectories, selected fields, discriminants, walls, and policy-relative
+response quantities \cite{paper9}. Capability declarations and evidence
+routing are supplied by the compilation and Registry interface
+\cite{paper10}. None of those layers needs a universal wall taxonomy.
 
-| Paper | Role |
-|-------|------|
-| Paper VIII | SOF object layer |
-| Paper IX | observable trajectories over SOFs |
-| Paper X | Universal Observable Pipeline and five-layer SOF Registry |
+This paper addresses the next, narrower question: once a typed wall datum or a
+wall-related finding is available, what record role does it have, which
+coordinates may be extracted, and which mechanism and regularity labels may be
+attached without conflating carriers?
 
-Paper XI asks what comes after the registry.
+Paper IX determines when a typed observable change qualifies as a wall. This
+paper does not redefine that wall; it records its typed changes, assigns a
+profile-relative morphology, and organizes eligible records into a multi-label
+taxonomy. Paper X supplies capability and evidence guards. This paper applies
+those guards to source-addressed records without rebuilding either upstream
+interface.
 
-The registry is a taxonomy input:
+The stable division of responsibility is:
 
-species $\to$ SOF object $\to$ observable ladder $\to$ dynamics $\to$
-diagnostics.
+| Paper | Owning object |
+|-------|---------------|
+| VIII | static carriers, closures, and filtrations |
+| IX | charts, trajectories, walls, pullbacks, and response policies |
+| X | capability/evidence guards and Registry findings |
+| XI | wall morphology, coordinate profiles, taxonomy, and local-model eligibility |
+| XII | single-report protocol and presentation |
+| XIII | two-report alignment and comparison |
 
-Paper X records which SOFs exist and how they enter the observable pipeline.
-Paper XI asks what observable type those SOFs have. In other words, the
-registry is a list of realized species, while Paper XI extracts the observable
-features by which those species can be compared.
+The input to this paper is therefore not a bare static SOF. A wall depends at
+least on a declared realization, a typed chart, a selected field, a policy, and
+a parameter domain or trajectory. Moreover, the deformation-record interface
+is not a category \cite{paper9}. These facts rule out a pseudo-functor
 
-Paper XI asks whether registered wall records can be grouped into classes and
-compared geometrically. The answer is not yet a complete classification. The
-safe claim is that the classification problem splits into observable
-signatures, wall spectra, wall coordinates, mechanism classes, normal forms,
-and smooth local models.
+$$
+\mathrm{SOF}_{\mathrm{str}}\longrightarrow\mathrm{WallRecord}.
+$$
 
-This paper is deliberately conservative. It does not claim that Arnold ADE
-classification applies to all SOF walls. It treats ADE as one candidate local
-model for sufficiently smooth discriminant-like wall records and records where
-that language does not apply. The organizing object is the wall record, not an
-ADE class.
+The construction introduced below is deliberately ordinary and
+profile-relative.
 
-The RIME papers up to this point mostly control **wall location**: where support,
-rank, accessibility, plateau, or collision behavior changes. They do not yet
-give a general wall-crossing law for how all invariants transform across every
-wall. Paper XI therefore asks a prior organizational question: what kinds of
-observable walls have been registered, and how should they be organized before
-any transformation law is attempted?
+***
 
-The answer has five layers:
+## Related Work and Novelty Boundary
 
-| Layer | Object | Question |
-|-------|--------|----------|
-| Wall Records | loci and observable changes | Where do walls occur? |
-| Wall Signatures | computable diagnostics of events and records | What does the wall look like? |
-| Wall Coordinates | position, orientation, regularity, stochasticity | How is the wall realized? |
-| Observable Wall Taxonomy | classes of signatures | What type of wall is it? |
-| Smooth Wall Models | local smooth-discriminant models | When can ADE-like tools apply? |
+**Program interfaces.** Paper VII supplies static image--kernel incidence
+geometry and promotion limits \cite{paper7}. Papers VIII--X supply the static
+SOF object language, typed deformation and wall data, and capability-aware
+evidence guards used here \cite{paper8,paper9,paper10}. Downstream, Paper XII
+defines the single-report protocol \cite{paper12}, while Paper XIII defines
+aligned cross-report comparison \cite{paper13}; neither supplies upstream wall
+evidence.
 
-For later diagnostic reports, the same layer becomes a feature extractor. An
-application-facing SOF report need not use theorem proofs directly. It can
-emit quantities such as crossing count, wall-cell count, repair index, plateau or oscillation
-index, and depth index, then interpret them as observable diagnostics.
+**Local-model background.** Relevant external background includes Arnold's
+catastrophe and singularity theory
+\cite{arnold1992catastrophe,arnoldGuseinVarchenko1985singularities}, stable
+mappings \cite{golubitskyGuillemin1973stable}, stratified Morse theory
+\cite{goreskyMacPherson1988stratified}, piecewise-smooth systems
+\cite{dibernardo2008piecewise}, and discontinuous differential equations
+\cite{filippov1988discontinuous}.
 
-This also extends the categorical architecture begun in Paper VIII:
+**Domain precedents.** Spectral and finite-state diagnostics are compared with
+spectral perturbation theory \cite{kato1995perturbation}, spectral graph theory
+\cite{chung1997spectral}, and Markov perturbation theory
+\cite{seneta2006nonnegative}. Additional bounded observations use
+Erdos--Renyi random-graph connectivity \cite{erdosRenyi1960evolution}, finite
+Kuramoto dynamics \cite{kuramoto1975selfentrainment}, and Gillespie simulation
+\cite{gillespie1977exact} as domain precedents rather than SOF taxonomy
+theorems.
+
+**Novelty boundary.** This paper begins with wall data admitted under the
+upstream deformation and evidence interfaces. Its contribution is the sparse
+record structure, profile-relative morphology, nonexclusive curation, and
+local-model eligibility layer. It does not redefine static SOF objects, wall
+admissibility, compiler emission, report serialization, cross-report
+alignment, or any downstream comparison result.
+
+***
+
+## Admissible Wall Data
+
+### Upstream Input
+
+**Definition 1 (Admissible Wall Datum).** An admissible wall datum
+$\mathfrak D_\kappa$ consists of the data needed to
+invoke one declared wall notion from the deformation interface:
+
+1. a typed local chart with fixed labels, ranks, alphabet conventions, and
+   comparison data;
+2. a selected carrier-qualified field $O_\kappa$;
+3. its declared discriminant or threshold policy;
+4. a parameter domain or a selected trajectory $\gamma$;
+5. a source-addressed evidence record and claim status;
+6. any cutoff, saturation, norm, normalization, censoring, or sampling policy
+   used by that field.
+
+Changing labels, ranks, alphabets, or filtration schemas is a chart or schema
+transition unless an additional comparison construction has been supplied. It
+is not silently recorded as a fixed-chart wall.
+
+A wall event or locus is recorded only after its corresponding upstream
+admissibility conditions have been satisfied.
+
+### Realization Kind, Record Role, and Field Family
+
+Three independent fields prevent admission, function, and mathematical carrier
+from being conflated:
+
+| Field | Controlled values | Function |
+|-------|-------------------|----------|
+| `realization_kind` | `strict_sof`, `diagnostic_analogue` | states whether the source instantiates the strict SOF interface |
+| `record_role` | `wall_event`, `wall_locus_sample`, `pre_wall_reference`, `static_boundary_witness`, `trajectory_diagnostic`, `retired_provenance` | states what the record does |
+| `field_family` | spectral, operator, route, word, Lie-Hall, closure, state, graph, stochastic, proxy, or another declared family | identifies the typed field being observed |
+
+Every source row receives exactly one realization kind and record role. Every
+primary or context field receives its own field family and carrier identifier.
+Only upstream-admitted, corpus-included `strict_sof` records with role
+`wall_event` or `wall_locus_sample` enter the strict wall spectrum. A
+corpus-included `diagnostic_analogue` may retain event or locus morphology, but it
+remains in a separate analogue morphology set. Thus `diagnostic_analogue` is
+neither a record role nor a field family.
+
+This gate enforces
+
+$$
+\text{static repair finding}\neq\text{repair wall}.
+$$
+
+A plateau interval is a regime; its onset, exit, or collapse may be a wall
+event. Rate separation is a trajectory diagnostic; a declared response-order
+crossing may be a wall event. A cutoff-unreached pair is a state; a typed
+transition into or out of that state may be an event.
+
+***
+
+## Typed Wall Records
+
+### Wall Profile
+
+**Definition 2 (Wall Profile).** A Wall Profile $P_W$ declares the interface
+used for one wall-record construction. It contains:
+
+1. enabled typed field keys;
+2. carrier, alphabet, adjoint, route, word, and Hall conventions;
+3. exact or truncated depth semantics and any cutoff;
+4. chart, path, orientation, and event-segmentation rules;
+5. norm, threshold, normalization, censoring, and sampling policies;
+6. the evidence requirements and references to any applicable upstream
+   promotion permissions for each retained coordinate.
+
+Missing fields are omitted or marked unavailable. They are never manufactured
+from a nearby carrier.
+
+### Construction 1 (Profile-Relative Wall Corpus)
+
+The corpus type is
+
+$$
+\mathrm{WallCorpusEntry}
+=
+\mathrm{MorphologyRecordBundle}
+\sqcup
+\mathrm{WallContextRecord}.
+$$
+
+The morphology-bundle type is
+
+$$
+\mathrm{MorphologyRecordBundle}
+=
+\mathrm{StrictWallRecord}
+\sqcup
+\mathrm{AnalogueMorphologyRecord}.
+$$
+
+A morphology record bundle contains a finite collection of morphology atoms.
+A `StrictWallRecord` has an upstream-admitted primary wall field. An
+`AnalogueMorphologyRecord` is included by the Paper XI corpus construction
+without asserting upstream strict-wall admission. A wall context record
+carries a pre-wall reference, static boundary witness, trajectory diagnostic,
+or retired provenance entry and contains no morphology atom.
+
+For an admissible datum
+$\mathfrak D_\kappa$, define
 
 $$
 \begin{aligned}
-\text{Source}
-&\to \mathsf{SOF}_{\mathrm{str}}
-\to \text{Observable ladder}\\
-&\to \text{Observable dynamics}
-\to \text{Wall records}\\
-&\to \text{Feature extraction}
-\to \text{Wall signatures and diagnostics}\\
-&\to \text{Wall coordinates}
-\to \text{Wall taxonomy}.
+\operatorname{RecordWall}_{P_W}(\mathfrak D_\kappa)
+&\in \mathrm{StrictWallRecord},\\
+\operatorname{RecordWall}_{P_W}(\mathfrak D_\kappa)
+&=
+(\operatorname{Addr},\operatorname{Role},\operatorname{Scope},\\
+&\qquad
+\operatorname{Policy},\operatorname{Events},\operatorname{Evidence}).
 \end{aligned}
 $$
 
-The program invariant of this paper is therefore:
+where `Addr` is the source address and `Events` is a finite collection of
+morphology atoms, ordered only when its declared context supplies an order. This is a
+record-producing construction. No functor arrow, naturality law, or
+weak-morphism transport is asserted.
 
-> **Wall-record language is source-independent; realized wall geometry is
-> source-dependent.**
+Analogue morphology enters through a separate corpus-inclusion construction,
+denoted $\operatorname{RecordAnalogueMorphology}_{P_W}$ when a name is
+needed. It does not consume an upstream-admitted wall datum and does not
+produce a `StrictWallRecord`.
 
-The coordinate language does not assert that wall records already form a
-manifold or phase space. It supplies a comparison chart before any metric,
-curvature, or transport law has been defined.
-
-Paper XI does not prove that this last passage is a categorical invariant of
-SOFs. It introduces the record-producing layer needed to make the passage
-explicit once the observable ladder and deformation geometry have been chosen.
-
-***
-
-## Boundary Notes
-
-Paper XI is organized by constructive definitions, record audits, and explicit
-non-claims rather than by a single classification theorem. Its scope is
-deliberately record-level. In particular, it does not claim:
-
-1. a classification of the underlying dynamical systems, phase transitions,
-   singularities, or bifurcations that produce the records;
-2. a universal wall-crossing or wall-transition law;
-3. that the qualitative wall-coordinate space already carries a metric,
-   topology, curvature, or coordinate-change structure;
-4. that Arnold ADE models apply outside sufficiently smooth
-   discriminant-like branches;
-5. that $\mathrm{WallAssign}$ is invariant under all weak SOF comparisons,
-   path reparametrizations, thresholds, or sampling refinements.
-
-These boundaries are repeated locally where a construction or computational
-profile requires a narrower claim. The repeated boundary statements are part
-of the taxonomy: they record which conclusions each wall signature licenses
-and which native interpretations remain external to SOF.
-
-***
-
-## Wall Records
-
-### Definition
-
-For a declared ladder observable $O_a\in\mathcal L$, its
-**per-observable wall record** is the data
-
-$$
-\mathcal W_a(\mathcal F,\mathcal L,\Gamma)
-=
-(\mathcal F_t,\ O_a(t),\ \Sigma_{O_a},\ \Delta_{O_a},\ \mathcal D_{O_a}),
-$$
-
-where:
-
-1. $\mathcal F_t$ is a specified SOF deformation;
-2. $O_a(t)$ is an observable shadow or continuous observable field;
-3. $\Sigma_{O_a}$ is the locus where the observable changes qualitative type;
-4. $\Delta_{O_a}$ is the target discriminant when a pullback description exists;
-5. $\mathcal D_{O_a}$ is the raw measured diagnostic history, such as
-   $\tau(O_a)$, repair, plateau, frozen-pair count, or spectral-gap change.
-
-A wall record is an **observation history** relative to the declared SOF
-realization, observable ladder, deformation path, and audit convention. It
-retains what was observed, where it changed, and in what path order. It is not
-itself a wall signature: signatures arise only after a feature-extraction rule
-has been chosen.
-
-If the chosen path order on $\Gamma$ meets $k_a$ registered event components,
-the associated event sequence is
-
-$$
-\operatorname{Evt}(\mathcal W_a;\Gamma)
-=
-(W_{a,1},W_{a,2},\ldots,W_{a,k_a}).
-$$
-
-The $W_{a,j}$ are atomic wall events. Paper XI classifies their signatures and
-the aggregate records built from them; it does not identify the event, the
-per-observable record, and the aggregate record as the same object.
-
-### Wall Assignment
-
-Paper VIII defines strict SOF morphisms and the category
-$\mathsf{SOF}_{\mathrm{str}}$. Paper XI adds a record-producing construction
-
-$$
-\mathrm{WallAssign}:(\mathcal F,\mathcal L,\Gamma)
-\longmapsto
-\mathcal W(\mathcal F,\mathcal L,\Gamma),
-$$
-
-read as: a realized SOF $\mathcal F$, together with a chosen observable ladder
-$\mathcal L$ and deformation geometry or sampled path $\Gamma$, determines the
-aggregate family of per-observable wall records along that geometry.
-
-This notation is intentionally modest. It is a bookkeeping assignment, not a
-claim that wall records form a categorical morphism out of
-$\mathsf{SOF}_{\mathrm{str}}$. The present paper does not prove invariance
-under every weak SOF comparison. It only asserts that wall records are naturally
-recorded after SOF realization, observable extraction, and deformation choice.
-
-![Observable wall-record pipeline. A realized SOF, observable ladder,
-deformation geometry, and change loci produce indexed per-observable histories
-and their aggregate wall record. Feature extraction derives atomic signatures,
-wall spectra, wall coordinates, and diagnostics; these derived taxonomy
-features, rather than the observation history itself, feed the Observable Wall
-Taxonomy. ADE is only a candidate local model on sufficiently smooth
-discriminant branches.](../../figures/paper11/fig1_wall_record_pipeline.png)
-
-### Aggregate Wall Record
-
-For a realized SOF deformation, the aggregate wall record is the indexed family
-
-$$
-\mathcal W(\mathcal F,\mathcal L,\Gamma)
-=
-\bigl(\mathcal W_a(\mathcal F,\mathcal L,\Gamma)\bigr)_{O_a\in\mathcal L}.
-$$
-
-Schematically, its registered change loci may include
+For a morphology atom $e$ in a morphology bundle, the atom record is
 
 $$
 \begin{aligned}
-\{\Sigma_{O_a}:O_a\in\mathcal L\}
-={}&\{\text{rank jumps},\ \text{support jumps},\ \text{accessibility jumps},\\
-&\phantom{\{}\text{plateau intervals},\ \text{collision loci},\ldots\}.
+W_e=
+(&\operatorname{id},\operatorname{realization\_kind},
+\operatorname{record\_role},\kappa_0,
+\operatorname{primary\_carrier\_id},\\
+&\operatorname{context\_field\_keys},
+\operatorname{context\_carrier\_ids},
+\operatorname{atom},\operatorname{policy\_refs},
+\operatorname{evidence\_refs}).
 \end{aligned}
 $$
 
-For a one-parameter deformation, each per-observable record carries the ordered
-atomic-event sequence
+The atom type is the disjoint union
 
 $$
-\operatorname{Evt}(\mathcal W_a;\Gamma)
+\mathrm{MorphologyAtom}
 =
-(W_{a,1},W_{a,2},\ldots,W_{a,k_a}),
+\mathrm{TrajectoryEvent}
+\sqcup
+\mathrm{LocusSample}.
 $$
 
-where each $W_{a,j}$ is an atomic observable event encountered along the path.
-This sequence is analogous in spirit to a critical sequence in Morse
-theory, a bifurcation diagram, a persistence barcode, or an RG-flow history,
-but it is not identified with any of these objects. It is the SOF-native
-record of observable changes along a chosen deformation.
+The two summands are fully typed as
 
-The ellipsis is important: the registry is open. A new wall type may enter
-only after its SOF object, observable ladder, deformation geometry, jump or
-discriminant locus, and diagnostic package are explicit.
+$$
+\begin{aligned}
+\mathrm{TrajectoryEvent}=
+(&\operatorname{id},\operatorname{realization\_kind},
+\operatorname{trajectory\_ref},\operatorname{orientation},\\
+&\operatorname{event\_interval},\operatorname{sampling\_rule},
+\operatorname{primary\_field},\\
+&\operatorname{context\_fields},\operatorname{field\_registrations},
+\delta_e^\gamma,\\
+&\operatorname{policy\_refs},\operatorname{evidence\_refs}),
+\end{aligned}
+$$
+
+and
+
+$$
+\begin{aligned}
+\mathrm{LocusSample}=
+(&\operatorname{id},\operatorname{realization\_kind},
+\operatorname{domain\_context\_ref},\operatorname{event\_locus},
+\operatorname{primary\_field},\\
+&\operatorname{context\_fields},\operatorname{field\_registrations},
+\delta_e^{\mathrm{loc}},\operatorname{probe\_path\_ref?},\\
+&\operatorname{probe\_orientation?},
+\operatorname{order\_semantics},\\
+&\operatorname{policy\_refs},\operatorname{evidence\_refs}).
+\end{aligned}
+$$
+
+For an oriented trajectory event, the sparse change map is
+
+$$
+\delta_e^\gamma
+=
+\left\{
+q\longmapsto
+\bigl(v_q^-,v_q^+,\operatorname{change}_q\bigr)
+\right\}_{q\in K_e}.
+$$
+
+Its record must declare a trajectory reference, orientation, left/right
+sampling rule, and event parameter or interval. The superscripts $-$ and $+$
+refer to that declared orientation; they are not intrinsic labels on an
+ambient wall locus. The primary field of a `wall_event` must contain present,
+typed, and distinct endpoint values. `NOT_RECORDED` is therefore forbidden for
+either primary endpoint.
+
+For a domain-level locus sample, the change data instead form an
+incident-stratum germ:
+
+$$
+\delta_e^{\mathrm{loc}}
+=
+\left\{
+q\longmapsto
+\left\{
+\bigl(C_\alpha,v_{q,\alpha}\bigr)
+\right\}_{\alpha\in A_e}
+\right\}_{q\in K_e}.
+$$
+
+Here the $C_\alpha$ are incident local strata. There need not be a unique
+before/after pair: a multiparameter bifurcation may have three or more
+incident strata. If a transverse probe path supplies two-sided samples, the
+record must retain its path and orientation and set `order_semantics` to
+`probe_relative`. Without such a probe it uses `intrinsic_none`; an oriented
+trajectory event uses `trajectory_oriented`.
+
+The distinguished schema key
+$\kappa_0=\operatorname{primary\_wall\_field}$ names the primary field. In a
+`StrictWallRecord`, that field's upstream admissibility establishes the wall
+atom. In an `AnalogueMorphologyRecord`, it anchors the recorded morphology but
+does not assert wall admission. Other
+keys in $K_e$ are `context_field_keys`. Each context field must carry its own
+chart, comparison map, evidence reference, and every threshold, tolerance, or
+cutoff policy applicable to that field. Inapplicable policy slots are
+explicitly `not_applicable`.
+Thus the record has the typed form
+
+$$
+\mathfrak D_{\kappa_0}
+\rightsquigarrow
+\left(
+\delta_{\kappa_0},
+\{\delta_q^{\mathrm{context}}\}_{q\in K_e\setminus\{\kappa_0\}}
+\right).
+$$
+
+A context-field change is a co-observation only. It does not become a second
+strict wall atom without independent wall admission, or a second analogue atom
+without separate corpus inclusion. A constant context field
+does not disprove the primary wall. In particular, recording a Lie/Hall wall
+beside a word-field change does not identify the two carriers.
+
+Each key $q$ is a typed tuple
+
+$$
+q=(f_q,n_q,c_q),
+$$
+
+where $f_q$ is its field family, $n_q$ is its registered field name, and
+$c_q$ is the convention map containing the applicable carrier, alphabet,
+depth, pair-scope, reduction, and policy parameters. Representative
+registrations are:
+
+| Field family | Registered field name | Convention parameters |
+|--------------|-----------------------|-----------------------|
+| operator | `operator.direct_support[Y]` | labelled alphabet $Y$ |
+| route | `route.support[Y,d=2]` | route length $d=2$ |
+| word | `word.support[Y,d=2]` | word length $d=2$ |
+| word | `word.depth_truncated[Y]` | cutoff $6$ |
+| Lie-Hall | `lie.simple_commutator_support[X]` | registered Lie family $X$ |
+| Lie-Hall | `lie.depth_truncated[X,H]` | Hall convention $H$, cutoff $4$ |
+| closure | `closure.observable_star.marked_corner_dimension[Y,i,j]` | off-diagonal pair scope |
+| closure | `closure.observable_star.marked_corner_dimension[Y,i,i]` | Hilbert--Schmidt scalar-complement reduction |
+| closure | `closure.sector_star.marked_corner_type[Q,Y,i,j]` | marked sectors $Q$ and alphabet $Y$ |
+| spectral | `spectral.gap` | declared normalization and gap policy |
+| proxy | `proxy.response_time[policy]` | declared response policy |
+| state | `state.first_hit_time[policy]` | declared first-hit policy |
+
+Raw diagonal unital corners are not compared without a declared reduction
+convention. An unrecorded endpoint may carry the record-field presence marker
+`NOT_RECORDED` only on non-admitting context or reference fields; an absent
+capability is typed as unavailable.
+`NOT_RECORDED` is neither a Paper X IR result state nor a Paper XIII
+comparison state. Neither marker is numerical zero.
+
+#### Directional Semantics
+
+Every trajectory delta also carries the direction tuple
+
+$$
+\operatorname{Dir}_e(q)
+=
+\left(
+d_n(q),d_a(q),d_s(q)
+\right),
+$$
+
+whose components have distinct meanings:
+
+| Component | Meaning |
+|-----------|---------|
+| $d_n$ | direction of the recorded numerical value |
+| $d_a$ | direction of accessibility under the field's declared order |
+| $d_s$ | event-relative meaning, such as gain, loss, repair, or terminalization |
+
+For example, an endpoint repair may decrease a depth or unreached-pair count
+while increasing accessibility. Direction without this qualifier is not a
+valid wall coordinate.
+
+![**Figure 1:** Profile-relative wall-record construction. Paper IX supplies
+wall-admissibility conditions and deformation data, while Paper X supplies
+capability and evidence guards. Paper XI records a discriminated morphology atom: an oriented
+trajectory event has a sparse before/after map, whereas a domain-level locus
+sample has an incident-stratum germ without intrinsic two-sided order. The
+primary field and context co-observations remain separately registered, and
+strict-SOF signatures remain separate from diagnostic-analogue
+morphology.](../../figures/paper11/fig1_wall_record_pipeline.png)
+
+### Independent Pair States
+
+For a fixed-schema pair audit, the state is a bundle rather than a ladder:
+
+$$
+S_{ij}(t)=
+\left(
+s_{\mathrm{op}},
+s_{\mathrm{route}},
+s_{\mathrm{word}},
+s_{\mathrm{Lie}},
+d_{\mathrm{word}}^{(\leq m)},
+d_{\mathrm{Lie}}^{(\leq n)},
+s_{\mathrm{terminal}}
+\right),
+$$
+
+with only declared components retained. Direct support, a word witness, and a
+Lie witness may coexist. Terminality is not a competing transport layer.
+Adjacent samples produce the sparse component change
+
+$$
+\delta S_{ij}(t_k)
+=
+S_{ij}(t_{k-1})\rightsquigarrow S_{ij}(t_k),
+$$
+
+where the arrow denotes a recorded before/after transition, not subtraction in
+a common vector space.
+
+### Closure Fields
+
+The three closure layers remain distinct:
+
+$$
+A_Y^+,\qquad A_Y^*,\qquad A_{Q,Y}^*.
+$$
+
+The record schema may include dimension or corner-dimension changes for the
+positive algebra. Observable-star and sector-star records may separately track
+marked corners, abstract algebra type, and concrete embedding. An unchanged
+abstract star-algebra type does not imply unchanged marked corners or concrete
+embedding.
+
+Finite-dimensional $C^*$-algebras admit standard Wedderburn decomposition,
+but $A_Y^+$ is not automatically a $C^*$-algebra or semisimple. A
+positive-algebra field may use Wedderburn terminology only when a separate
+semisimplicity certificate is declared.
 
 ***
 
-## Wall Signatures
+## Wall Coordinate Profiles
 
-Wall records preserve what was observed along a deformation. A **wall
-signature** is a feature extraction from that history: it records what an
-atomic wall event looks like in computable terms. Schematically,
+### Six Structured Coordinate Families
 
-$$
-\mathcal W
-\xrightarrow{\ \operatorname{Feat}_W\ }
-\bigl(\mathrm{Sig}_W,\mathrm{Spec}_W,\mathrm{Prof}_W,\mathcal D_W\bigr).
-$$
-
-Wall signatures are therefore derived from wall records and are not primitive
-SOF objects. Different admissible feature maps may extract different signatures
-from the same observation history, so the extraction convention belongs to the
-declared audit semantics.
-
-The basic object is the signature of an atomic observable event
+The derived coordinate profile is
 
 $$
-\mathrm{Sig}_W(W_{a,j})
+\operatorname{Prof}^{P_W}_W(e)
 =
-(\mathrm{rank\ type},\ \mathrm{support\ type},\ \mathrm{repair\ type},
-\ \mathrm{oscillation\ type},\ \mathrm{plateau\ type}).
+\bigl(
+\operatorname{FieldFamilies},
+\operatorname{EventKinds},
+\operatorname{Regularity},
+\operatorname{PersistenceProfile},
+\operatorname{Geometry},
+\operatorname{Evidence}
+\bigr).
 $$
 
-For accessibility and trajectory diagnostics, the same information can be
-recorded as an observable-difference vector
+These families use the following controlled vocabulary:
+
+| Family | Values |
+|--------|--------|
+| Field families | operator, route, word, Lie-Hall, closure, spectral, state, graph, stochastic, proxy, or another declared typed family |
+| Event kinds | any declared subset of support gain/loss, rank jump, first-hit change, collision, repair, terminalization, plateau onset/exit, response-order crossing, boundary hit |
+| Regularity | smooth, stratified, piecewise smooth, discrete, stochastic, unknown |
+| Persistence profile | any declared subset of transient, persistent, oscillatory, plateau, terminal, unresolved |
+| Geometry | location: interior/boundary/endpoint; crossing: transverse/tangent/unresolved; codimension status: certified/unresolved |
+| Evidence | Theorem, Computational Certificate, Computational Observation, Research Program |
+
+Event kinds and persistence entries need not be single-valued, and geometry is
+a structured object rather than one categorical coordinate. Censoring and
+sampling remain observation policies in $P_W$, not regularity types. These
+entries are wall coordinates or diagnostics, not automatically
+invariants. Crossing counts depend on sampling; lengths and response times
+depend on parameterization and policy; truncated depth depends on cutoff;
+spectral gaps depend on normalization; codimension depends on the ambient
+chart; and census prevalence depends on the selected sample.
+
+### Wall-Profile Relativity Principle
+
+> **Principle (Wall-Profile Relativity).** A source system does not determine a
+> unique wall record or wall spectrum. The result is indexed by its typed
+> realization, chart, selected field, parameter domain or trajectory, and Wall
+> Profile.
+
+Accordingly, morphology identity is defined without curation metadata:
 
 $$
-\mathrm{Sig}_W(W_{a,j})
+\begin{aligned}
+\operatorname{MorphSig}^{P_W}_W(e)
 =
-(\Delta R_1,\Delta R_2,\Delta D,\Delta\tau,\Delta P_d).
+\left(
+\operatorname{RealizationKind}(e),
+\operatorname{Role}(e),
+\operatorname{AtomKind}(e),
+\operatorname{PrimaryFieldFamily}(e),\right.\\
+\left.
+\operatorname{PrimaryCarrierId}(e),
+\delta_e,
+\operatorname{Prof}^{P_W}_W(e)
+\right).
+\end{aligned}
 $$
 
-The first notation records qualitative type; the second records measured
-observable change. Paper XI classifies these observable signatures, not bare
-wall events.
-
-A typical signature has the form
+where $\delta_e$ denotes $\delta_e^\gamma$ or
+$\delta_e^{\mathrm{loc}}$ according to the atom type. A versioned curated
+view is the separate object
 
 $$
-\mathrm{Sig}_W(W_{a,j})
+\operatorname{CuratedSig}^{P_W,v}_W(e)
 =
-(c,\ k,\ p,\ m,\ r,\ b,\ldots),
+\left(
+\operatorname{MorphSig}^{P_W}_W(e),
+\operatorname{Curate}_v(e)
+\right).
 $$
 
-where:
-
-1. $c$ records the number of detected components or cells;
-2. $k$ records codimension when a meaningful ambient geometry is known;
-3. $p$ records persistence: persistent, transient, terminal, or degenerate;
-4. $m$ records temporal profile: monotone, oscillatory, plateau, flat, or
-   discontinuous;
-5. $r$ records repair status: repairable, unrepaired, terminal, or not
-   applicable;
-6. $b$ records boundary type: collision, rank/support jump, absorbing
-   boundary, activation kink, stopping boundary, or filtration degeneration.
-
-This is not a complete invariant. It is a computable signature schema for
-comparing wall records without pretending that all walls belong to one smooth
-classification theory.
-
-### Wall Spectrum
-
-The **wall spectrum** of a realized SOF deformation is the multiset of all
-atomic-event signatures observed across the chosen observable ladder:
+Changing a curation rulebook may therefore change a curated view without
+changing the morphology identity. For a finite corpus $\mathcal C$ of
+$\mathrm{WallCorpusEntry}$ values, the profile-relative strict wall spectrum
+of $\mathcal F$ is
 
 $$
-\mathrm{Spec}_W(\mathcal F,\mathcal L,\Gamma)
+\operatorname{Spec}^{P_W}_{W,\mathrm{str}}(\mathcal F,\mathcal C;\chi)
 =
-\{\!\{\mathrm{Sig}_W(W_{a,j}):O_a\in\mathcal L,\ 1\le j\le k_a\}\!\},
+\left\{\!\left\{
+\operatorname{MorphSig}^{P_W}_W(e):
+\substack{
+e\in\mathcal C,\\
+e\text{ is attached to }\mathcal F,\\
+e\text{ is upstream-admitted}\\
+\text{and is a strict-SOF morphology atom}
+}
+\right\}\!\right\}.
 $$
 
-where $k_a$ is the number of registered events in the record of $O_a$.
-Equivalently, one may write schematically
+Corpus-included diagnostic analogues define a separate set
+$\operatorname{Morph}^{P_W}_{W,\mathrm{an}}(\mathcal C;\chi)$; they are not
+members of $\operatorname{Spec}^{P_W}_{W,\mathrm{str}}$. Record role alone
+therefore never promotes an analogue into the strict wall spectrum.
 
-$$
-\mathrm{Spec}_W(\mathcal F,\mathcal L,\Gamma)
-=
-\{\!\{\text{rank wall},\ \text{accessibility wall},\ \text{plateau wall},
-\ldots\}\!\}.
-$$
+The context $\chi$ is either a trajectory context, including its orientation
+and sampling rule, or a domain context, including its incident-stratum
+convention and any probe. Different choices of sectorization, alphabet,
+closure, filtration, path or domain, threshold, cutoff, or profile may yield
+different spectra. This is a definition-level relativity statement, not a
+theorem that two profiles are equivalent or comparable. Cross-profile and
+cross-report alignment belongs to the comparison interface of Paper XIII.
 
-The multiset notation allows repeated wall types. A species may exhibit two
-distinct repair walls, or both a collision wall and a plateau wall, and these
-should not be collapsed into a single label.
-
-### Observable Wall Diagnostics
-
-Feature extraction also summarizes the measured history into numerical wall
-diagnostics. Their values are relative
-to the declared realization, ladder, deformation path, threshold, depth cutoff,
-and sampling protocol. Paper XI does not prove invariance under changes of those
-choices. Within a fixed audit convention, they provide reproducible coordinates
-for comparing wall spectra and for passing summaries to later SOF reports.
-
-| Diagnostic | Definition | Example audited value |
-|-----------|------------|-----------------------|
-| Crossing count $N_{\mathrm{cross}}$ | number of sampled parameter transitions containing at least one atomic wall event | GridWorld obstacle path: $2$ crossing steps; SIR and graph controls: $1$ each |
-| Atomic-event count $N_{\mathrm{evt}}$ | total number of atomic observable-status changes, including simultaneous changes and repeated changes of one pair | GridWorld obstacle path: $190$ pair-status events |
-| Wall-cell count $N_{\mathrm{cell}}$ | number of sampled cells or points on an evaluation grid satisfying a declared wall predicate | Rubik 2D slice: one $\Sigma_{\mathrm{comm}}$ hit on the chosen $20\times20$ evaluation grid |
-| Repair index $R_W$ | $D_{\mathrm{repaired}}/\mathrm{frozen}_{R_1}$ when both are defined | Clifford+CNOT: $6/6=1.0$; Pauli: $0/8=0$ |
-| Repair persistence $p_W$ | parameter-range length, measured relative to the normalized deformation parameter, for which a repaired channel remains accessible after activation | CNOT-strength interpolation: threshold $0.55$, $p_W=0.45$, stability $100\%$ |
-| Oscillation index $O_W$ | number of sign changes or oscillatory reversals in a plateau diagnostic | Rubik generator-weight plateau: $3$; Yang-like state mixing: $0$ |
-| Plateau index $P_W$ | number, length, or collapse profile of plateau intervals in $P_d(t)$ | Yang-like and training-coupled diagnostics supply initial plateau profiles |
-| Depth index $\bar D$ | maximum recorded $D$ over sector pairs, with cutoff-unreached entries marked separately | some audits serialize cutoff-unreached entries as the sentinel $999$; this is not proof of global impossibility; transformer diagnostic has $\bar D=2$ |
-| Rate ratio $\rho_W$ | slow observable time divided by fast observable time | NN GD+WD proxy: about $2\times$; ridge row/null diagnostic: about $68553\times$ |
-| Spectral gap $\gamma_W$ | normalized second-gap or transition-gap diagnostic for a registered species | Clifford+CNOT registry example: about $0.73$; Pauli control: $0$ |
-| Codimension $c_W$ | local or computational codimension when an ambient geometry is available | $\Sigma_{\mathrm{comm}}$: $11$; $A_1$: $1$; $A_2$: $2$ |
-| Wall density $\delta_W$ | fraction of species in the Paper XI wall-density taxonomy sample exhibiting a given wall type | 15-entry sample shown below |
-
-These quantities make the taxonomy operational. A later SOF diagnostic report
-can emit a wall spectrum together with $N_{\mathrm{cross}}$, $N_{\mathrm{evt}}$, $N_{\mathrm{cell}}$, $R_W$, $P_W$, $O_W$, $\bar D$,
-$\rho_W$, $\gamma_W$, $c_W$, $p_W$, and $\delta_W$ whenever the corresponding
-observable layer is defined. For example, a transformer diagnostic need not
-prove a wall theorem; it may report crossing count, wall-cell count, repair index, plateau or
-oscillation index, and depth index as observable features of the model under
-the chosen sectorization.
+![**Figure 2:** Structured wall coordinates and nonexclusive curation. The six
+coordinate families form a typed morphology profile; sampling, censoring,
+threshold, normalization, and cutoff remain policies in the Wall Profile.
+The versioned curation tags are multi-label assignments rather than partition
+classes, and neither coordinates nor tags promote a record into the strict
+wall spectrum.](../../figures/paper11/fig2_observable_wall_taxonomy.png)
 
 ***
 
-## Wall Coordinates
+## Multi-Label Taxonomy
 
-Taxonomy classes record wall mechanism. They do not by themselves record where
-the wall lies, which observables increase or decrease, whether the realized
-shadow is smooth or discrete, or whether the evidence is deterministic,
-ensemble-defined, or pathwise stochastic. Paper XI therefore associates to a
-wall record the profile
+The six mechanism families are retained as full curation tags:
+
+| Curation tag | Typical use |
+|--------------|-------------|
+| Collision | spectral or observable branches meet under a declared collision policy |
+| Repair | a previously absent or cutoff-unreached typed field witness, support state, or finite-filtration reachability state becomes present |
+| Terminal | a terminal component, stopping region, or endpoint structure changes |
+| Plateau / rate | plateau or response-order morphology is recorded |
+| Nonsmooth / discrete | piecewise-smooth, rank-selection, discrete, or censored behavior occurs |
+| Bridge / incidence | route, word, commutator, or image-kernel mechanism is implicated |
+
+The tags are not a partition and do not replace the structured coordinate
+families. One event may be simultaneously `REPAIR`, `NONSMOOTH_DISCRETE`, and
+`BRIDGE_INCIDENCE`. Conversely, a static `REPAIR`-tagged finding may remain a
+`static_boundary_witness` and therefore stay outside the wall spectrum.
+The slash-separated display names map to the corresponding
+underscore-separated keys in the machine-readable census.
+
+Each assignment is a versioned object
 
 $$
-\mathrm{Prof}_W(\mathcal W)
+\operatorname{Curate}_{v}(e)
 =
-(\mathrm{Class},\mathrm{Pos},\mathrm{Ori},\mathrm{Reg},\mathrm{Sto}).
+(\operatorname{rulebook\_version},\operatorname{assignment\_source},
+\operatorname{tags},\operatorname{override\_reason?}),
 $$
 
-The five entries have different roles. `Class` is a mechanism label from the
-A--F taxonomy. The remaining four entries are realization coordinates.
+not an untracked list copied from a source letter label. The active rulebook is
+`paper11-curation-tags-v1.0`; it declares nonexclusive membership and records
+any typed override to an inherited assignment.
 
-### Position
-
-$\mathrm{Pos}$ records how the wall sits in the declared deformation domain:
-
-| Position type | Meaning |
-|---------------|---------|
-| endpoint | the wall is attained only at the endpoint of the sampled path |
-| interior | the change locus is bracketed on both sides inside the domain |
-| boundary | the wall lies on a stopping, absorbing, or realization boundary |
-| transition window | an ensemble or finite-resolution audit localizes an interval rather than a single point |
-
-Position is relative to the declared deformation and sampling protocol. An
-endpoint in one restricted path may be an interior point in a larger parameter
-space.
-
-### Observable Orientation
-
-$\mathrm{Ori}$ records the dominant observable response. It is generally a
-vector rather than a sign:
-
-$$
-\mathrm{Ori}(\mathcal W)
-=
-(\Delta\mathrm{gap},\Delta R_1,\Delta R_2^{\mathrm{word}},
-\Delta R_2^{\mathrm{Lie}},\Delta D,\Delta P_d,
-\Delta\mathrm{Term},\ldots).
-$$
-
-Typical orientations include spectral closure, monotone opening or repair,
-freezing or contraction, plateau deformation, and terminal-component loss.
-This prevents a spectral gap closure from being mislabeled as negative
-accessibility and permits different coordinates to move in different
-directions across the same wall.
-
-### Regularity
-
-$\mathrm{Reg}$ records the regularity of the realized wall shadow:
-
-| Regularity | Diagnostic interpretation |
-|------------|---------------------------|
-| smooth | a smooth observable field meets a local discriminant |
-| piecewise smooth | smooth branches meet at kinks or switching surfaces |
-| discrete | the native deformation or observed shadow changes by jumps |
-| degenerate | the tested trajectory is flat, unresolved, or nontransverse |
-| algebraic/incidence | a rank, image-kernel, or bridge-product relation controls the locus |
-
-Regularity belongs to the wall record, not permanently to the source species.
-A smooth native flow may produce a thresholded discrete shadow, and a discrete
-species may admit a continuous weighting deformation.
-
-### Stochastic Status
-
-$\mathrm{Sto}$ records how randomness enters the evidence:
-
-| Status | Meaning |
-|--------|---------|
-| deterministic | the declared realization and trajectory are fixed |
-| constructed-random | a random direction or instance is sampled and then held fixed |
-| ensemble | the wall is defined through a distribution of realizations |
-| pathwise stochastic | individual stochastic trajectories define the native record |
-| finite-time estimator | the wall is inferred from a sampling-dependent empirical observable |
-
-These labels are claim-status aids. They do not impose a probability geometry
-on the wall-coordinate space.
-
-### Class C: Terminal-Structure Walls
-
-Let
-$\mathrm{Term}(\mathcal F_t)$ denote the terminal decomposition induced by the
-declared dynamics and observable realization. Its components may be attracting
-basins, absorbing or recurrent classes, dead components, or stopping regions.
-
-> **Definition (Class C terminal-structure wall).** A Class C wall is a
-> deformation locus at which $\mathrm{Term}(\mathcal F_t)$ is not locally
-> equivalent: the number, identity, incidence, or persistence of terminal
-> components changes.
-
-The compatible sectorization may remain fixed. Class C does not require the
-number of projectors or coarse sectors to change. A changing sector count is a
-realization change or an additional nonsmooth/discrete coordinate; it is not,
-by itself, the Class C mechanism. This definition includes absorbing Markov
-classes, barrier/stopping regions, and deterministic GRN basin loss without
-identifying their native dynamics.
-
-### Four Canonical Profiles
-
-The four extended profiles give a two-axis spread in orientation and
-regularity, together with distinct stochastic status:
-
-| Profile | Class | Position | Orientation | Regularity | Stochasticity |
-|-----------|-------|----------|-------------|------------|---------------|
-| constructed real-symmetric endpoint | A | endpoint discriminant | two order-one pair-gap closures | smooth conical local model | constructed-random direction |
-| nested percolation | B/E | interior transition window | monotone opening and bounded-depth repair | pathwise discrete, ensemble-smoothed | ensemble |
-| Kuramoto synchronization | D/E | finite-size interior crossover | freezing and occupancy contraction | smooth flow, thresholded shadow | matched ensemble |
-| GRN regulatory-edge weakening | C | interior basin-loss bracket | terminal components $2\to1$; terminal sector loss | smooth deterministic flow, discrete terminal shadow | deterministic; stochastic noise sweep retained only as a negative control |
-
-The four profiles share one record schema while retaining distinct coordinate
-profiles, orientations, and regularity types.
-
-The term **wall-coordinate space** is intentional. No equivalence relation,
-topology, metric, curvature, coordinate-change law, or transport structure has
-yet been imposed. Calling the present object a wall phase space would therefore
-be premature.
+Letter names are not used for the active tags because they suggest a partition
+and conflict visually with Arnold's $A_k,D_k,E_k$ notation.
 
 ***
 
-## Observable Wall Taxonomy
+## Local-Model Eligibility
 
-Paper XI organizes signatures into a taxonomy before attempting any local
-smooth model.
+For any proposed local-model family $\mathcal M$ and local branch $B$ of a
+declared discriminant, define the general eligibility predicate
 
-### Taxonomy Classes
+$$
+\operatorname{Eligible}_{\mathcal M}(B;P_W)
+\in\{\mathrm{yes},\mathrm{no},\mathrm{unresolved}\}.
+$$
 
-| Class | Name | Diagnostic pattern | Typical examples |
-|-------|------|--------------------|------------------|
-| A | Collision walls | spectral or discriminant branches collide or merge | Rubik spectral deformation, smooth spectral probes, NCG spectral-block diagnostics |
-| B | Repair walls | an inaccessible or frozen channel becomes accessible at a higher observable layer | Rubik repair, quantum $D$-repair, transformer sparse repair |
-| C | Terminal-structure walls | the number, identity, incidence, or persistence of attracting, absorbing, dead, recurrent, or stopping components changes | GRN basin loss, absorbing Markov classes, barrier/stopping regions |
-| D | Plateau walls | observables remain flat, delayed, oscillatory, or degenerate over intervals | Yang-like degeneration, training plateaus, grokking-style delayed rates |
-| E | Nonsmooth or discrete walls | wall is induced by a discrete jump, rank selection, or piecewise-smooth kink | graph rewiring, ReLU kinks, Top-k activation selection |
-| F | Bridge or incidence walls | bridge products, rank incidence, or algebraic association controls wall behavior | Rubik cancellation/incidence mechanisms, incidence products, bridge-level audits |
+The predicate asks whether the branch, evidence, and declared equivalence
+notion satisfy the hypotheses of $\mathcal M$; it does not assign a model.
+ADE terminology enters only as the smooth-singularity specialization
 
-![Wall-coordinate map. The qualitative map places registered
-observable morphologies by qualitative orientation and regularity. A--E are
-shown on the two morphology axes; F is kept as an orthogonal bridge/incidence
-coordinate. Positions record qualitative morphology only. The map is not a
-metric, a phase space, or a classification of native
-systems.](../../figures/paper11/fig2_observable_wall_taxonomy.png)
+$$
+\operatorname{Eligible}_{\mathrm{ADE}}(B;P_W)
+:=
+\operatorname{Eligible}_{\mathcal M_{\mathrm{ADE}}}(B;P_W).
+$$
+
+ADE eligibility requires all of the following:
+
+1. a smooth finite-dimensional ambient chart near the point;
+2. a locally defined smooth discriminant branch;
+3. fixed carrier, labels, ranks, and field conventions;
+4. sufficient differentiability for the proposed normal-form comparison;
+5. a declared local equivalence notion and ambient dimension;
+6. source-addressed evidence for transversality, tangency, or the relevant jet
+   data;
+7. explicit isolation of, or accounting for, unrelated invariant blocks and
+   symmetry-protected degeneracies.
+
+The machine record retains the legacy Boolean under
+`compatibility.historical_census_eligible`. It does not reuse that field for
+`local_model_eligibility`. Its `status` is `no`
+only when at least one necessary condition is certified false; missing or
+unchecked evidence yields `unresolved`.
+
+An affirmative value means only that an ADE comparison is mathematically
+meaningful. The local-model branch must first be identified:
+
+| Branch | Required treatment |
+|--------|--------------------|
+| smooth discriminant | smooth local equivalence and jet analysis |
+| stratified | stratum and incidence data |
+| piecewise smooth | side-specific smooth data and switching rule |
+| discrete | combinatorial event description |
+| algebraic incidence | ambient algebraic variety and rank conditions |
+| stochastic | stochastic model together with its declared sampling, censoring, and uncertainty policy |
+
+These branches require distinct tools
+\cite{goreskyMacPherson1988stratified,dibernardo2008piecewise,filippov1988discontinuous}.
+
+The branch-aware audit in Appendix A is a negative eligibility control:
+simultaneous small sorted eigenvalue gaps do not establish
+$A_2\to A_1+A_1$ adjacency.
 
 ***
 
-## Census Evidence
+## Evidence Anchors
 
-### Wall-Density Taxonomy Sample
+### Smooth-candidate Spectral Branch
 
-In the 15-entry Paper XI wall-density taxonomy sample, wall density is computed as
+A constructed real-symmetric endpoint has two isolated adjacent pair-gap
+closures. Degenerate perturbation theory supports recording them as
+first-order pair-gap closure candidates under the declared perturbation audit,
+subject to the real-symmetric crossing
+boundary \cite{vonNeumannWigner1929}. The independent branch-aware Rubik audit
+continues eigenbranches within the $cp$, $ep$, $co$, and $eo$ invariant blocks
+and detects no tested $A_2\to A_1+A_1$ split candidate. Thus pair-gap
+morphology is retained while an unsupported ADE adjacency is rejected.
 
-$$
-\delta_W(\mathrm{type})
-=
-\frac{\#\{\text{taxonomy-sample species carrying that wall type}\}}{15}.
-$$
+**Claim status.** Computational Certificate for the declared matrices,
+parameter slices, and branch-matching rule. No generic ADE classification is
+claimed.
 
-The table below is generated by the wall-density support artifact listed in
-Appendix C.
+### CNOT Path-Admissibility Diagnostic
 
-The resulting finite-sample density table is:
-
-| Wall type | Density | Dominant source |
-|-----------|---------|-----------------|
-| B repair | $33.3\%$ | 5 species; the most common wall type |
-| F bridge/incidence | $20.0\%$ | Rubik naturally carries bridge and incidence walls |
-| C terminal-structure | $13.3\%$ | barrier option and absorbing Markov examples |
-| D plateau/rate | $13.3\%$ | Xu ridge and mechanism-separated dynamics |
-| E nonsmooth/discrete | $13.3\%$ | graph rewiring and ReLU kink diagnostics |
-| A spectral collision | $6.7\%$ | Rubik spectral collision branch; rarest in this sample |
-| no registered wall type | $20.0\%$ | 3 of 15 entries are static or structural species |
-
-![Wall-density and repair-persistence evidence. The left panel reports A--F
-wall densities in the 15-entry Paper XI taxonomy sample, which is distinct
-from the frozen 16-entry Paper X Registry release snapshot. The right panel
-shows the CNOT-strength repair threshold at $0.55$, persistence
-$p_W=0.45$, and $100\%$ post-activation stability on the tested grid.](../../figures/paper11/fig3_density_and_repair_persistence.png)
-
-The snapshot is not a theorem and should not be read as a population estimate
-for all possible SOFs. It is a taxonomy-sample statistic. Its immediate interpretation
-is useful: repair walls are the most common in the taxonomy sample, while
-Paper VII separately studies incidence and promotion boundaries; spectral collision walls
-are the rarest, suggesting that Paper XI requires more continuous deformation
-models before spectral-collision taxonomy can be considered representative.
-
-### Wall-Record Coverage Census
-
-Species prevalence alone does not measure whether each taxonomy class has
-enough independent wall records. We therefore maintain a second computational
-census whose unit is a wall record, not a species. A record may carry multiple class labels when one
-deformation has several observable features, but repeated records do not create
-new species in the prevalence denominator.
-
-For this record-level audit, a record is **eligible** when it has an explicit
-deformation, an explicit change locus, a measured signature, and an existing
-evidence file. The predeclared coverage target for each class is at least
-three eligible records, two distinct species, and two deformation origins.
-This is a curation threshold, not a classification theorem criterion.
-
-The original census contains 24 records. The independently generated extended
-census retains all 24 records and adds four controlled profiles: the constructed
-real-symmetric endpoint, nested percolation, Kuramoto synchronization, and GRN
-regulatory-edge weakening. It contains 28 records, 38 class memberships, and
-19 eligible records:
-
-| Class | Registered records | Eligible records | Eligible species | Deformation origins | Coverage |
-|-------|-------------------:|-----------------:|-----------------:|--------------------:|----------|
-| A | 4 | 3 | 2 | 3 | pass |
-| B | 10 | 6 | 6 | 6 | pass |
-| C | 5 | 4 | 4 | 4 | pass |
-| D | 5 | 5 | 5 | 5 | pass |
-| E | 6 | 5 | 5 | 5 | pass |
-| F | 8 | 3 | 3 | 3 | pass |
-
-All six classes now meet the predeclared record, species, and deformation target.
-This is **coverage closure**, not taxonomy completeness. In particular, Class
-A closes through a constructed real-symmetric endpoint whose degeneracy is
-placed explicitly on the codimension-two discriminant. It is a non-Rubik
-species witness, but not a naturally occurring generic GOE crossing.
-Naturally occurring non-Rubik Class A breadth remains open. Full generated
-tables and record provenance are stored in the repository artifacts listed in
-Appendix C.
-
-### Definition-Compatible Redundancy Audit
-
-The listed wall diagnostics do not share one sampling unit.
-Codimension requires an ambient geometric model, $\delta_W$ is a cross-species
-statistic, and $O_W$, $P_W$, and $p_W$ require trajectories. They therefore
-must not be inserted into one snapshot correlation matrix by replacing them
-with unrelated proxies.
-
-The definition-compatible redundancy audit instead computes eight snapshot
-diagnostics on the same 166 controlled configurations:
-direct-frozen fraction, Lie-terminal fraction, repair index, word-bridge
-only fraction, Lie-bridge-only fraction, mean and maximum word depth, and log observable
-norm ratio. The strongest empirical correlations are:
-
-| Pair | Correlation $r$ |
-|------|:---:|
-| direct-frozen fraction / mean word depth | $+0.932$ |
-| mean / maximum word depth | $+0.938$ |
-| direct-frozen fraction / maximum word depth | $+0.923$ |
-| direct-frozen / Lie-terminal fraction | $+0.886$ |
-| Lie-terminal fraction / mean word depth | $+0.856$ |
-
-The Lie-bridge-only fraction has zero variance on this ensemble and is removed
-before standardization. PCA on the seven retained diagnostics gives three
-components for both 90% and 95% of the observed variance.
-The leading axis is a reachability/depth scale; later axes separate repair,
-bridge-channel, and observable-rate effects. This is an empirical dimension
-estimate for the tested ensemble, not a proof of a minimal, complete, or
-orthogonal invariant basis. It is also ensemble-composition dependent: changing
-the relative mix of GridWorld, SIR, random-graph, and random-skew configurations
-can change the explained-variance percentages.
-
-Trajectory diagnostics are reported separately. The present three trajectory
-controls are insufficient for a trajectory-invariant PCA, so no independence
-claim is made for oscillation, plateau, or persistence coordinates.
-
-***
-
-## Observable Normal Forms and Wall Layers
-
-### SOF-Native Observable Normal Forms
-
-Before invoking smooth singularity theory, wall signatures can be grouped into
-SOF-native observable normal forms. These are descriptive normal forms for
-observable signatures, not theorem-level ADE classes.
-
-| Normal form | Signature pattern | Typical diagnostic |
-|-------------|-------------------|--------------------|
-| NF-1: single rank collision | one spectral/rank component collides or merges | one $A_1$-like gap closure or one rank jump |
-| NF-2: bridge creation | a previously frozen pair becomes accessible at $R_2$ or $D$ | positive $D_{\mathrm{repaired}}$ or bridge support |
-| NF-3: oscillatory repair | repair or plateau observable alternates before stabilizing | nonzero oscillation index $O_W$ |
-| NF-4: plateau collapse | plateau interval degenerates, flattens, or terminates | monotone degeneration or endpoint collapse |
-| NF-5: terminal absorption | a state, sector, or channel enters an absorbing/frozen terminal regime | frozen pairs with no repair |
-| NF-6: bridge/incidence association | a bridge product, image-kernel relation, or algebraic incidence controls the wall | Rubik cancellation/incidence and rank-protected bridge audits |
-
-Observable wall records are first sorted by five axes.
-
-### Smoothness Type
-
-| Type | Description | Classification status |
-|------|-------------|-----------------------|
-| Smooth discriminant | $O(t)$ is smooth and $\Sigma_O$ is a discriminant pullback | ADE may apply locally |
-| Piecewise-smooth wall | $O(t)$ is continuous but not smooth across strata | needs stratified or piecewise theory |
-| Discontinuous jump | $O(t)$ changes by a discrete event or rank jump | outside classical ADE |
-| Degenerate/nonresponsive | trajectory is flat, decreasing, zero, or not a response curve | not a wall class by itself |
-| Incidence mechanism | wall is defined by algebraic product or rank incidence | requires algebraic-geometric tools |
-
-### Observable Layer
-
-| Layer | Typical observable | Typical wall type |
-|-------|--------------------|-------------------|
-| Spectral | eigenvalues, collision quotients | spectral collision/discriminant |
-| Accessibility | $R_1$, $R_2$, $D$, $\mathcal J_{\mathrm{acc}}$ | rank, support, or accessibility discriminant |
-| Filtration | plateau functions $P_d(t)$ | degeneration or plateau transition |
-| Markov | communicating-class or transition support | absorbing/frozen boundary |
-| Graph | Laplacian gap, adjacency transport | discrete rewiring or spectral sensitivity |
-| Quantum | gate-log accessibility, controllability | channel/accessibility transition |
-| Neural-network | activation sectors, $K_0/K_1/K_2$ | training-coupled or activation-induced wall |
-
-### Deformation Geometry
-
-The same observable ladder can produce different wall behavior depending on
-what changes:
-
-generator weights, state mixing, gate interpolation, edge rewiring, training
-dynamics, or rate-matrix perturbation.
-
-Therefore wall classification must be attached to a deformation geometry, not
-only to the SOF object.
-
-***
-
-## Smooth Wall Models
-
-Smooth wall models are the final layer, not the starting point. Arnold ADE
-classification is a plausible local model only for sufficiently smooth
-discriminant branches. A typical admissible situation would have:
+Let $U_C=U_{\mathrm{CNOT}}$. Since $U_C=U_C^*=U_C^{-1}$, define its spectral
+projectors
 
 $$
-O:T\to E,\qquad
-\Sigma_O=O^{-1}(\Delta),
-$$
-
-with $O$ smooth and $\Delta$ a stable local singularity.
-
-In this restricted setting, the local wall may fall into an $A_k$, $D_k$, or
-$E_{6,7,8}$ class.
-
-This paper does not assert such a classification globally. In particular:
-
-1. graph rewiring is discrete;
-2. Top-k and step activations are discontinuous;
-3. ReLU-type walls are piecewise-smooth;
-4. accessibility incidence can be algebraic rather than ADE-like;
-5. flat or decreasing trajectories are not rate-response walls.
-
-ADE is therefore a local smooth-branch model, not the SOF classification
-framework.
-
-The branch-aware $A_n$ adjacency falsification audit is recorded in Appendix A.
-Its role in the main text is only to prevent a false promotion of sorted-index
-pair-gap responses into an ADE adjacency claim.
-
-***
-
-## Cross-Species Audit
-
-The computational audit combines cross-species wall diagnostics, smooth
-spectral pair-gap responses, record coverage, snapshot redundancy,
-branch-aware adjacency falsification, sampled trajectory events, and two
-registry-handoff diagnostics. The artifact map is collected in Appendix C.
-The discriminant-bifurcation scan is an auxiliary 2D-slice diagnostic; it is
-not a full map of $\Sigma_{\mathrm{access}}$.
-
-### Rubik Spectral Snapshot
-
-The Rubik $A_{18}$ audit reports six spectral layers with eigenvalues
-
-$$
-1,\ 8/9,\ 7/9,\ 2/3,\ 5/9,\ 1/3,
-$$
-
-and $k$-set $\{0,1,2,3,4,6\}$. This is a fixed spectral snapshot. It is not,
-by itself, a moving wall.
-
-### Rubik Spectral Pair-Gap Local-Model Audit
-
-The spectral-deformation audit varies one QT generator weight and tracks the
-eigenvalues of a fixed separating Hermitian probe
-
-$$
-M(\alpha)=QT(\alpha)+\beta HT(\alpha),\qquad \beta=0.314159.
-$$
-
-The audit detects 16 pairwise adjacent-gap closures at the canonical endpoint.
-Each closure is recorded as an $A_1$/fold candidate in the smooth spectral
-branch. The endpoint itself is higher order: the regular QT/HT sector point is
-a simultaneous multi-branch collapse rather than a single isolated fold.
-
-The same audit also runs a two-weight diagonal search and records simultaneous
-pair-gap responses. The observed count ranges from one to three across tested
-sampling resolutions, so the integer is not promoted to a stable invariant. The
-two gaps need not share an eigenvalue branch, and the audit does not perform
-eigenbranch continuation. These observations therefore remain pair-gap response
-diagnostics; they are not identified as $A_2$/cusp unfoldings and do not prove
-an ADE classification theorem for SOF walls.
-
-### Rubik 2D $\Sigma_{\mathrm{comm}}$ Slice
-
-The discriminant-bifurcation audit scans a two-dimensional plane of QT
-generator weights and tests the Frobenius norm of
-
-$$
-[QT(w),HT(w)].
-$$
-
-On the $20\times20$ slice varying two QT generator weights, the audit reports
-one hit on the chosen $20\times20$ evaluation grid. The single commutative cell
-has 9 spectral points, and the audit records no spectral point-count
-bifurcations inside the commutative cells. This is not a proof of the
-codimension-$11$ commutativity theorem from Paper VI and not a map of
-$\Sigma_{\mathrm{access}}$. Its role in Paper XI is narrower: it gives a
-sampling anchor showing that arbitrary two-dimensional generator-weight slices
-meet the high-codimension commutativity locus sparsely. Spectral and
-accessibility wall taxonomy should therefore be computed on normal spectral
-charts or on deformation models chosen for that purpose, not inferred from a
-generic 2D scan alone.
-
-### Quantum Accessibility Contrast
-
-The quantum audit compares Pauli, Clifford+CNOT, and Universal+CNOT
-gate-sector SOFs. Clifford+CNOT and Universal+CNOT show $D$-repair, while the
-Pauli control does not. This is an accessibility contrast outside Rubik, not
-a claim that quantum systems obey Rubik wall theory.
-
-A separate repair-persistence audit interpolates CNOT strength in matrix space
-from a product endpoint to the Clifford+CNOT gate-log SOF. On the 21-point
-grid $0,0.05,\ldots,1$, $D_{\mathrm{repaired}}$ is zero through strength
-$0.50$ and jumps to $6$ at strength $0.55$. The repair then persists through
-strength $1.00$ with no reversal. Thus the registered repair-persistence
-signature is threshold $0.55$, $p_W=0.45$ over the unit interpolation range,
-and post-activation stability $100\%$. In grid-count terms this corresponds
-to $10$ active samples out of $21$; $p_W$ records the continuous parameter
-range, not the sample fraction.
-
-### Markov Frozen-Pair Contrast
-
-The Markov audit separates complete/strongly connected examples from an
-absorbing-state example. The absorbing case has true frozen pairs. This is a
-communicating-class or absorbing-boundary diagnostic, not an ADE
-classification.
-
-### Graph Spectral-Gap Sensitivity
-
-The graph audit records Laplacian-gap changes under edge removal. This is a
-discrete perturbation diagnostic. It is not a smooth codimension-one wall
-without a separate continuous edge-weight model and discriminant calculation.
-
-### Piecewise-Smooth Activation Wall Boundary
-
-The activation-wall audit compares ReLU, GeLU, and Top-k sector diagnostics.
-In the default finite test, the ReLU sector diagnostic has distinct left and
-right slopes, producing a piecewise-smooth kink.  GeLU is smooth in the same
-test and does not define a kink wall.  Top-k is a rank-selection diagnostic
-and is treated as a discontinuous or discrete wall record.
-
-This audit supports the negative boundary for ADE usage: activation-induced
-SOF walls may require piecewise-smooth, stratified, or discrete wall theory
-rather than classical smooth ADE singularity theory.
-
-### Barrier-Option Stopping Boundary
-
-The barrier-option SOF uses a finite log-price grid with below-barrier and
-above-barrier sectors. The default audit reports cross-barrier generator
-support with $R_1=75.0\%$, $R_2=0.0\%$, no $D$-repair, and mean first-hit time
-$6.5915$ from the chosen initial grid point to the barrier sector. This is a
-stochastic stopping-region wall record. The first-hitting time is a native
-stochastic diagnostic, not the SOF depth $D$, and the entry is not an
-option-pricing theorem.
-
-### Transformer Activation-Sector Diagnostic
-
-The transformer diagnostic constructs a token-space SOF from activation-count
-clusters in a small synthetic transformer-like block. Attention top-k and FFN
-activation-similarity operators give $R_1=58.3\%$, $R_2=66.7\%$,
-$D_{\mathrm{repaired}}=2$, and $D_{\max}=2$ in the default audit. This is an
-activation-induced diagnostic wall record: it shows how token-sector
-decompositions can expose cross-sector influence, but it is not a theorem
-about all transformers or LLM explainability.
-
-### Constructed Real-Symmetric Endpoint
-
-**Setup.** The non-Rubik Class A witness is the family
-
-$$
-H(t)=D+tV,
+P_- = \frac{I-U_C}{2},
 \qquad
-D=\operatorname{diag}(1,1,2,3,4,4),
+P_+ = I-P_-.
 $$
 
-with $V$ a sampled GOE splitting direction. The endpoint $D$ is deliberately
-placed on the real-symmetric double-eigenvalue discriminant.
-
-**Observed wall record.** The two isolated target gaps have fitted local orders
-$1.000015$ and $0.999968$ in the canonical draw, with first-order splitting
-coefficients $0.598557$ and $0.333281$. The minimum non-target gap on the
-tested local interval is $0.937503$. Four sampled transverse splitting
-directions pass the local-order and endpoint-lifting controls.
-
-For a $2\times2$ degenerate block, the traceless normal coordinates $(x,y)$
-give
+The previously used strength interpolation is the affine path
 
 $$
-\operatorname{gap}=2\sqrt{x^2+y^2}.
+U_{\mathrm{aff}}(s)
+=I+s(U_C-I)
+=P_+ +(1-2s)P_-.
 $$
 
-The one-parameter family follows a ray through this conical normal slice, so
-the pair gap opens linearly. Endpoint-preserving changes of the splitting
-direction remain transverse in the tested draws, while perturbing $D$ off the
-discriminant removes both collisions.
-
-**SOF interpretation.** This is a constructed Class A $A_1$-type endpoint
-witness: a smooth local collision record with two order-one pair-gap closures.
-
-**Boundary.** This is not a generic one-parameter GOE crossing and not an
-unrestricted structural-stability theorem. It closes the predeclared finite-sample Class A
-coverage target through a constructed witness; naturally occurring non-Rubik
-Class A breadth remains open.
-
-### Nested Percolation Opening
-
-**Setup.** For each Erdos--Renyi ensemble member, one symmetric threshold
-matrix $U=(U_{ij})$ is fixed and
+It is singular at $s=1/2$: its rank is $3$, its determinant is zero, and no
+finite matrix logarithm exists. Away from that point, the samplewise scalar
+convention $\operatorname{Arg}(-x)=\pi$ gives
 
 $$
-G(p)=\{ij:U_{ij}<p\}.
+L_{\mathrm{aff}}(s)
+=
+\begin{cases}
+\log(1-2s)P_-, & 0\leq s<1/2,\\
+\bigl(\log|1-2s|+i\pi\bigr)P_-, & 1/2<s\leq1.
+\end{cases}
 $$
 
-The path is nested: edges are added but never removed. Raw adjacency is used
-as the nonnegative word-transport observable.
+Thus the skew-adjoint part is zero on the left component and $i\pi P_-$ on
+the right component. The corresponding $0/12\to6/12$ side difference is tied
+to a singular logarithm-domain crossing and a samplewise branch convention;
+it cannot be promoted to an ordinary Lie/Hall trajectory wall.
 
-**Observed wall record.** In the default 32-member ensemble, the largest mean
-bounded-depth frozen-count drop occurs at $p=0.08$, while the largest ensemble
-fluctuation occurs at $p=0.10$. Across the robustness audit, the opening
-window lies in $p\in[0.08,0.10]$. Direct support and bounded-depth
-reachability are verified to be monotone for every nested realization.
+The control replaces the affine interpolation by the fractional-CNOT path
 
-**SOF interpretation.** This is a B/E profile: a monotone repair wall in
-orientation, with a pathwise discrete record and an ensemble-smoothed
-transition window.
+$$
+U_{\mathrm{uni}}(s)
+=P_+ +e^{i\pi s}P_-,
+\qquad
+L_{\mathrm{uni}}(s)=i\pi sP_-.
+$$
 
-**Boundary.** The result is pathwise discrete and ensemble-smoothed only.
-Degree normalization followed by skew-symmetrization would permit cancellation
-and would destroy the monotone support control. This is not a theorem about
-arbitrary percolation processes or a claim that all opening walls have the
-same local geometry.
+Here $U_{\mathrm{uni}}(s)=\exp L_{\mathrm{uni}}(s)$ is unitary and invertible
+for every $s\in[0,1]$, with $U_{\mathrm{uni}}(0)=I$ and
+$U_{\mathrm{uni}}(1)=U_C$. The $H$ and $S$ logarithms are held fixed using
+explicit anti-Hermitian branches. On the declared 21-point grid, the bounded
+support tuple
 
-### Kuramoto Freezing Orientation
+$$
+\left(
+N_{\mathrm{direct,unreached}},
+N_{\mathrm{Lie,unreached}}^{(\leq4)},
+N_{\mathrm{Lie,reached\ without\ direct}}^{(\leq4)}
+\right)
+$$
 
-**Setup.** The Kuramoto control fixes each natural-frequency sample and initial phase
-vector across the complete coupling sweep. Frequencies are centered so that
-the $(r,\psi)$ sectorization is evaluated in a common co-rotating frame. The
-raw directed trajectory transition is the word observable.
+equals $(8,8,0)$ at $s=0$ and $(6,0,6)$ at every sampled $s>0$. Hence the
+admissible control exhibits one-sided endpoint activation but no sampled
+interior transition near $s=0.55$. The previously reported repair bracket
+$(0.50,0.55]$ is withdrawn rather than repaired by reparameterization.
 
-**Observed wall record.** In the default eight-member matched ensemble, the largest mean freezing step
-occurs at $K=1.6$. Between $K=0.8$ and $K=2.4$, the bounded-depth frozen count
-increases by $273.4\pm38.0$, with positive direction in every tested member.
-Across the robustness audit the crossover lies in $K\in[1.6,1.8]$. The
-continuum Gaussian synchronization scale $K_c\approx1.277$ is only a reference.
+**Claim status.** The projector and path formulas are exact finite-dimensional
+identities. The thresholded 21-point support census is a Computational
+Observation. The retained record role is `trajectory_diagnostic`, with
+`wall_admission=not_admitted`; no physical Hamiltonian mechanism or interior
+repair wall is claimed.
 
-**SOF interpretation.** This is a D/E profile and a negative-orientation wall:
-stronger coupling produces occupancy contraction and more frozen sector pairs.
-Wall orientation therefore cannot be identified universally with repair or
-increasing accessibility.
+### Nonsmooth/Discrete Branch
 
-**Boundary.** The SOF wall location depends on finite size, time window,
-sector resolution, and depth cutoff. This is not a synchronization theorem,
-nor a universal statement about Kuramoto criticality.
+In the graph edge-weight control, the typed state bundle is constant for
+$t<1$ and changes only when the weakened edges vanish at the endpoint. The
+certificate records 6 pair events and 12 independent field changes at that
+step. This is a discrete endpoint wall record; it is not assigned a smooth
+codimension or ADE type.
 
-### GRN Terminal-Structure Loss
+**Claim status.** Computational Certificate for the declared 11-sample path.
 
-**Setup.** The GRN positive record varies the strength $\lambda$ of one repression edge
-$A\dashv B$ continuously from $1$ to $0$ in a deterministic toggle-switch
-flow. The compatible $8\times8$ concentration sectorization is fixed.
+The nested-percolation audit records the statistical field
+`word.unreached_pair_count_at_cutoff[Y,cutoff=6,aggregation=ensemble_mean]`.
+Its value is an ensemble mean of integer pair counts, not an individual
+truncated word depth. The largest adjacent sampled drop occurs in the declared
+probability sweep, but no threshold discriminant was fixed upstream. It is
+therefore a `trajectory_diagnostic`, not a strict wall event.
 
-**Observed wall record.** At $\lambda=1$ the controlled initial grid reaches
-two attracting basins; after the edge is removed only one remains. The coarse
-scan brackets the basin loss in $[0.50,0.55]$, and the controlled-initial
-refinement gives $[0.520,0.525]$. The terminal-sector set changes from
-$\{5,40\}$ to $\{5\}$.
-
-**Methodological correction.** The initial-release low-$\Omega$ noise-wall interpretation is
-withdrawn. Under a matched fixed-time protocol with the same concentration grid and raw directed
-observable, a $3$-seed by $12$-trajectory comparison gives CLE and exact SSA
-frozen-depth ranges of $0.94\%$ and $0.89\%$, respectively, a maximum method
-gap of $6.7/4032$, and no SSA basin switches for
-$\Omega=60,30,15,10$.
-
-**SOF interpretation.** This is the canonical Class C terminal-structure
-wall: terminal components change from $2$ to $1$ and one terminal sector is
-lost. The positive evidence is deterministic terminal-structure loss, not
-stochastic basin merging.
-
-**Boundary.** The refined interval is a numerical diagnostic, not a
-saddle-node theorem. The fully deleted edge is a discrete endpoint
-intervention, while the primary wall is the interior change in the terminal
-decomposition along the continuous $\lambda$ deformation. No stochastic
-basin-merging or absorbing-state theorem is claimed. The superseded discrepancy
-resulted from mixing event-count sampling with incompatible sector and
-observable choices.
-
-### Extended Profile Robustness
-
-The unified extended-profile robustness audit evaluates the same canonical
-implementations used for the individual profiles. Four sampled GOE splitting directions pass
-the local-order and endpoint-lifting controls; nested percolation gives a wall
-window $[0.08,0.10]$; matched Kuramoto controls give a freezing window
-$[1.6,1.8]$; and the GRN terminal-component loss remains in the
-controlled-initial bracket $[0.520,0.525]$. These are protocol-scoped
-robustness statements, not universality results.
+**Claim status.** Computational Observation for the seeded 32-member ensemble
+and cutoff $6$.
 
 ***
 
-## Supporting Audit Boundaries
+## Census Certificate
 
-Two boundary audits are deferred to the appendices. Appendix A records the
-branch-aware adjacency falsification audit for Rubik spectral pair responses.
-Appendix B records the observable-status trajectory audit. Their shared
-main-text role is cautionary: sorted gaps should not be promoted to ADE
-adjacency without branch continuation, and static inaccessible pairs should not
-be relabeled as walls without a change along a declared deformation path.
+The typed census is generated from a SHA-256-pinned 28-row source census.
+Corpus inclusion, record roles, and upstream admission references are read
+from the versioned `results/wall_record_inclusion_ledger_v1.json` rather than
+inferred from source identifiers. This ledger is not a wall-admission
+authority.
+
+| Record role | Count |
+|-------------|------:|
+| `pre_wall_reference` | 2 |
+| `retired_provenance` | 1 |
+| `static_boundary_witness` | 5 |
+| `trajectory_diagnostic` | 13 |
+| `wall_event` | 5 |
+| `wall_locus_sample` | 2 |
+
+The independent realization-kind census contains 19 `strict_sof` and 9
+`diagnostic_analogue` rows. Seven morphology record bundles contain seven
+morphology atoms: 5 strict bundles enter the strict wall spectrum and 2 analogue
+bundles enter only the analogue morphology set. In this snapshot every
+morphology bundle contains exactly one morphology atom, so bundle and atom
+counts coincide; the schema does not identify these notions. The seven atoms
+contain 10 registered atom-field entries: 8 trajectory-change entries and 2
+locus-germ entries. Four entries are pair-scoped. These
+entry counts are not counts of changed ordered pairs inside an aggregate
+field.
+
+In the compact table below, `CC` and `CO` abbreviate the controlled statuses
+Computational Certificate and Computational Observation, respectively.
+
+| Record | Corpus status | Primary field | Evidence |
+|--------|-----------|---------------|--------|
+| Rubik collision quotient | strict locus | `spectral.joint_sector_count` | `CC` |
+| Rubik endpoint closures | strict event | `spectral.adjacent_gap` | `CC` |
+| constructed route incidence | strict locus | `route.support[Y,d=2]` | `CC` |
+| graph edge endpoint | strict event | `operator.direct_support[Y]` | `CC` |
+| constructed GOE endpoint | strict event | `spectral.adjacent_gap` | `CC` |
+| dynamic maze split | analogue morphology | `graph.component_count` | `CO` |
+| GRN basin loss | analogue morphology | `state.terminal_component_count` | `CO` |
+
+Every trajectory event in this table has present, typed, and distinct primary
+endpoint values. The CNOT logarithm boundary, nested percolation sampled drop,
+and barrier first-hit proxy are `trajectory_diagnostic` records rather than
+admitted events. Among 27 active records, the regenerated nonexclusive
+curation assignments have 34 memberships:
+
+| Tag | Active records | Strict-wall records |
+|-----|---------------:|------------------:|
+| `COLLISION` | 4 | 3 |
+| `REPAIR` | 9 | 0 |
+| `TERMINAL` | 3 | 0 |
+| `PLATEAU_RATE` | 4 | 0 |
+| `NONSMOOTH_DISCRETE` | 7 | 1 |
+| `BRIDGE_INCIDENCE` | 7 | 1 |
+
+The zeros in the strict-wall column are intentional. Plateau/rate rows
+remain diagnostics, while included terminal morphology is presently analogue
+rather than strict. No coverage target requires every tag to appear in the
+strict wall spectrum.
+
+This finite source-addressed census has Computational Certificate status. Its
+counts do not estimate population prevalence, prove tag independence, or
+establish taxonomy completeness.
+
+![**Figure 3:** Typed census and CNOT path-admissibility diagnostic. The left
+panel shows the 27 active records by role and separately states the 5 strict
+wall bundles, 2 analogue morphology bundles, and 34 regenerated nonexclusive
+tag memberships. The right panel compares the singular affine interpolation
+with the unitary fractional-CNOT control. The affine path changes across an excluded
+logarithm-domain point; the latter has one sampled signature for every $s>0$
+and no interior repair threshold.](../../figures/paper11/fig3_census_and_cnot_log_domain.png)
 
 ***
 
-## Taxonomy Registry Summary
+## Discussion and Ownership
 
-This compact registry view records only species or realization, assigned wall
-class, and claim boundary. It does not repeat the experimental descriptions or
-replace the record-level claim-status data in the five-layer census.
+The logical center is one-record morphology: upstream-admitted strict wall
+records and separately included analogue morphology. Paper IX owns wall
+admission, and Paper X owns capability and evidence guards. Paper XI neither
+infers a wall from a static SOF nor fills missing upstream data.
 
-| Species / realization | Wall class | Claim boundary |
-|-----------------------|------------|----------------|
-| Rubik spectral snapshot | A reference: fixed finite arrangement | Exact snapshot; not a moving wall by itself. |
-| Rubik spectral deformation | A: higher-order endpoint with 16 pairwise $A_1$ closures | Smooth-branch diagnostic; no tested $A_2\to A_1+A_1$ split. |
-| Rubik $\Sigma_{\mathrm{comm}}$ slice | A/B anchor: sparse sampled intersection | Boundary diagnostic; codimension $11$ belongs to Paper VI. |
-| Accessibility $R_1/R_2/D$ | B: support or first-depth repair jump | Conditional on a declared deformation and threshold. |
-| Rubik cancellation/incidence mechanisms | F: cancellation and rank-incidence structure | Algebraic evidence; not ADE by default. |
-| Quantum accessibility | B: entangling-gate $D$-repair | Diagnostic evidence; local model unclassified. |
-| Markov absorbing boundary | C: unrepaired terminal component | Diagnostic evidence; not ADE by default. |
-| Graph edge rewiring | E: discrete gap and support change | Outside smooth ADE. |
-| Barrier-option stopping sector | C/D: first-hitting boundary | Registry diagnostic; hitting time is not SOF depth. |
-| NN training dynamics | D: delayed or ordered proxy response | Paper IX/X proxy evidence; rate order is not a wall class. |
-| ReLU / Top-k activations | E: kink or rank-selection jump | Requires nonsmooth or stratified models. |
-| Transformer activation sectors | B/E: sparse token-sector repair | Diagnostic handoff; activation-derived sectorization. |
-| Yang-like state mixing | D: plateau degeneration | Comparison branch; model-dependent smoothness. |
+The discriminated morphology-atom model resolves the orientation ambiguity:
+trajectory events carry declared before/after order, whereas locus samples
+carry incident-stratum germs. The realization/role/field-family split prevents
+analogue status from being mistaken for event function or mathematical
+carrier. Exact operator, route, word, Lie/Hall, closure, spectral, state, and
+proxy fields can coexist as separately registered observations without being
+promoted into one carrier or projected into a mandatory vector. The same
+principle rules out a mutually exclusive pair-status ladder: independent
+components may be simultaneously true, and the cutoff-unreached marker remains
+a finite-audit state.
+
+The profile-relative terminology also explains why many quantities sometimes
+called "invariants" are only coordinates here. Their values remain useful, but
+only relative to the declared
+parameterization, cutoff, threshold, normalization, ambient chart, or sample.
+An invariance claim requires a separate equivalence relation and proof.
+
+The evidence anchors align with this boundary. The spectral audit tests local
+smooth-model eligibility; the CNOT audit exposes a logarithm-domain boundary
+and uses an admissible unitary control to reject the reported interior
+threshold; and the graph endpoint exhibits admitted discrete morphology. The
+finite census then shows that one record may carry multiple mechanism tags
+while retaining one explicit record role.
+
+The ownership boundary is equally important. Paper XII may present these
+records in a single report, and Paper XIII may align coordinates from two
+reports. Neither downstream operation changes a wall record or supplies
+missing upstream evidence.
 
 ***
 
-## Scope and Claim Boundary
+## Claim Status and Boundary
 
-Paper XI classifies **observable wall records**. It does not classify the
-underlying dynamical systems, phase transitions, singularities, PDE
-bifurcations, or catastrophe-theory objects themselves. These native
-structures may be related to a wall record, but they are not identified with
-it.
+Definitions of record structure, coordinate families, record roles, curation
+tags, and eligibility predicates are not additional evidence levels.
+Reader-facing claims use exactly four levels:
 
-Paper XI intentionally avoids introducing a formal wall geometry. The
-wall-coordinate map is a qualitative visualization of observable morphology,
-not a metric, topology, curvature theory, or coordinate-change structure.
+| Claim | Status |
+|-------|--------|
+| imported wall-pullback and calibrated response results | Theorem |
+| typed census, sampled trajectory audit, independently validated collision/incidence records, and branch-aware spectral audit | Computational Certificate |
+| CNOT domain diagnostic and bounded percolation, Kuramoto, GRN, neural, and application-specific records | Computational Observation |
+| wall-record functoriality, complete taxonomy, stable metrics, and universal local models | Research Program |
 
-Different systems may generate identical wall records, while the same system
-may generate different wall records under different observable families or
-sectorizations. The record language is therefore intended for comparison of
-observable morphology, not for replacing the native theory of a registered
-species.
+The theorem row remains owned by the cited upstream paper. Certificates are
+finite and source-addressed; observations remain bounded by their declared
+realizations and policies. Source artifacts retain their original ownership.
+This paper owns only the derived wall records, coordinate profiles, curation
+tags, eligibility decisions, and the finite census certificate.
 
-Accordingly, Paper XI does not claim:
+### Excluded Claims
 
-1. a complete classification of all SOF trajectories or their native systems;
-2. that Arnold ADE applies to all SOF branches, including graph rewiring or
-   activation-induced walls without extension;
-3. that the mechanism-separation principle or rate hierarchy alone determines
-   wall class;
-4. that Paper XI supplies general transformation laws for observables across
-   walls;
-5. that the wall assignment is full, faithful, or invariant under all weak SOF
-   comparisons;
-6. that the listed diagnostics form a complete invariant system or that the
-   observable normal forms are classification theorems;
-7. that the tested Rubik slices exhibit $A_n$ adjacency or that the constructed
-   endpoint is a generic GOE crossing;
-8. that finite-sample census coverage is taxonomy completeness or a population
-   estimate;
-9. that the wall-coordinate space already has a metric, topology, curvature,
-   coordinate-change law, or transport structure;
-10. that the GRN audit establishes a stochastic basin-merging or
-    absorbing-state theorem.
+This paper does not claim:
 
-The stable claim is narrower:
+1. a functor from a static or deformation category to wall records;
+2. that a static finding, plateau interval, response hierarchy, or proxy is
+   automatically a wall;
+3. that operator, route, word, and Lie/Hall support or depth are interchangeable;
+4. that positive-word, observable-star, and sector-enriched star closures have
+   the same wall coordinates;
+5. that `UNREACHED_AT_CUTOFF` or any legacy numeric sentinel means infinity;
+6. that the Paper VI rank $11$/nullity $7$ linearization is a nonlinear
+   codimension theorem \cite{paper6};
+7. that sampled hit fractions are locus cardinalities or measures;
+8. that wall coordinates are intrinsic invariants;
+9. that the finite census is complete or prevalence-estimating;
+10. that ADE types classify all SOF walls.
 
-SOF wall behavior is first organized by observable wall records, wall
-signatures, wall spectra, computable observable diagnostics, and wall-coordinate
-profiles. The Observable Wall Taxonomy groups those signatures into collision,
-repair, terminal-structure, plateau, nonsmooth/discrete, and bridge/incidence
-classes. The extended census closes the predeclared record, species, and deformation target
-for every class, while retaining explicit constructed-evidence and
-natural-occurrence boundaries. Observable normal forms organize the registered
-signatures before any smooth singularity model is invoked. ADE-type local
-modeling is one candidate subtheory for sufficiently smooth wall records, not
-the whole theory.
+The exact response theorem and calibrated rate certificates remain owned by
+Paper IX. This paper may register their morphology as diagnostic context, but
+it does not turn a contraction-deficit ratio or response-time ordering into a
+wall-rate invariant.
 
 ***
 
 ## Conclusion
 
-Paper XI is about **observable wall morphology**, not universal wall dynamics.
-Its purpose is to organize observable wall morphology rather than derive
-universal wall-transition laws. It turns SOF wall phenomena into a
-proto-geometric record-level
-classification problem. Its basic output is not a universal wall-crossing law,
-but a sequence of observable records, signatures, wall spectra, wall
-diagnostics, and wall-coordinate profiles that can be compared across
-registered SOF species. Mechanism classes answer what kind of wall occurs;
-position, orientation, regularity, and stochasticity answer how that mechanism
-is realized. Smooth ADE-style normal forms remain candidate local models only
-on sufficiently smooth discriminant branches; the taxonomy itself also admits
-repair, terminal-structure, plateau/rate, nonsmooth/discrete, and
-bridge/incidence records.
+This paper defines the morphology layer of the Sectorized Observable Framework
+program. In the strict branch, an admissible wall datum is converted by an
+ordinary, profile-relative construction into a bundle of oriented trajectory
+events or incident-stratum locus samples. The analogue branch uses a separate
+corpus-inclusion construction and makes no wall-admission claim. In both
+branches, the primary field and separately registered context fields retain
+their own carriers and policies. Realization kind, record role, and field
+family remain independent coordinates. Derived morphology uses structured
+field-family, event-kind, regularity, persistence, geometry, and evidence
+families. Mechanism labels are versioned nonexclusive curation assignments,
+and ADE comparison is a special case of a general local-model eligibility
+test.
 
-The four extended profiles show why both layers are needed. Spectral gaps may
-close, accessibility may open, synchronized dynamics may freeze, and terminal
-components may disappear. The record language is common; the realized geometry
-is not. The extended census reaches the predeclared finite-sample coverage target for A--F, but
-coverage closure is not classification completeness.
+The finite evidence supports this architecture without promoting it to a
+classification theorem. Five strict wall bundles enter the strict wall spectrum;
+two included analogue morphology bundles remain in a separate analogue
+morphology set, and static, pre-wall, diagnostic, and retired rows remain
+outside the strict wall spectrum. Spectral morphology, the excluded CNOT wall
+candidate with its admissible-path control, and the discrete
+graph endpoint demonstrate the intended separation of local-model eligibility,
+event morphology, diagnostic context, and evidence status.
 
 ***
 
 ## Outlook
 
-Paper XI supplies a wall-coordinate taxonomy, not a classification theorem.
-The next stage is to determine which coordinates are stable under comparison
-of SOF presentations, which depend on the chosen ladder or sampling path, and
-which admit local geometric normal forms.
+The open program is to define admissible equivalences and reparameterizations
+under which selected wall coordinates become invariant, to develop local
+models for stratified and nonsmooth branches, and to study transport between
+wall records only after an actual category of comparison data is defined.
 
-The remaining classification program has seven parts:
-
-1. develop or import piecewise-smooth and stratified wall theory for
-   activation-induced and rank-selection SOFs;
-2. formalize comparison and equivariance conditions for
-   $\mathrm{WallAssign}(\mathcal F,\mathcal L,\Gamma)$: defining compatible
-   comparison data is straightforward, but proving invariance under weak SOF
-   comparisons, path reparametrizations, and sampling refinements is a separate
-   theorem-level problem;
-3. define equivalence and admissible coordinate changes for wall profiles;
-4. test normalization and sampling stability before introducing any wall metric;
-5. build continuous graph and Markov deformation models where smooth
-   discriminants can be computed;
-6. compute local codimensions for accessibility discriminants and higher-order
-   spectral endpoints;
-7. separate incidence varieties from smooth singularity classes.
-
-Only after these ingredients and additional registered examples are available
-can the taxonomy be promoted toward classification theorems.
+Wall-record functoriality and naturality remain Research Programs. They must
+not be inferred from the strict categories of Paper VIII or from the
+record-only deformation interface of Paper IX.
 
 ***
 
-## Appendix A: Branch-Aware Adjacency Falsification Audit
+## Appendix A: Branch-Aware Adjacency Falsification
 
-Simultaneous small gaps in a sorted full-spectrum list are not enough to
-establish $A_n$ adjacency. Such gaps may belong to different invariant blocks,
-may exchange order, or may be symmetry-protected degeneracies rather than
-isolated collision branches.
-
-The branch-aware audit therefore separates the Rubik representation into its
-$cp$, $ep$, $co$, and $eo$ blocks and continues
-eigenbranches by maximizing eigenvector overlap between adjacent parameter
-samples. A candidate $A_2\to A_1+A_1$ split requires two isolated pair-gap
-minima at separated parameter values whose union involves all three branches.
-Persistent degeneracies, endpoint-only closures, and cross-block equalities are
-rejected.
+The audit separates the Rubik representation into its invariant blocks and
+continues eigenbranches by maximum adjacent-sample eigenvector overlap. A
+candidate $A_2\to A_1+A_1$ split requires two isolated pair-gap minima at
+separated parameter values whose union involves three branches. Persistent
+degeneracies, endpoint-only closures, and cross-block equalities are rejected.
 
 | Block | Dimension | Endpoint cluster sizes | Tested triples | Split candidates |
 |-------|----------:|------------------------|---------------:|-----------------:|
@@ -1224,125 +1092,98 @@ rejected.
 | $co$ | 8 | $3,3$ | 2 | 0 |
 | $eo$ | 12 | $3,3,3$ | 0 | 0 |
 
-On the tested diagonal and asymmetric slices, no branch-aware
-$A_2\to A_1+A_1$ split candidate is detected. The sorted-index
-pair-gap responses remain useful spectral diagnostics, but they do not support
-an $A_n$ adjacency claim. Even a future positive candidate would still require
-local normal-form and versality analysis before becoming an ADE statement.
+No branch-aware split candidate is detected on the tested diagonal and
+asymmetric slices. A future positive candidate would still require local
+normal-form and versality analysis.
 
 ***
 
-## Appendix B: Observable-Status Wall Trajectories
+## Appendix B: Sampled Typed-State Trajectories
 
-Given audit snapshots at parameters $t_0,\ldots,t_K$, assign each ordered pair
-one observable status:
-
-$$
-S_{ij}(t)
-\in
-\{\mathrm{direct},\mathrm{word\ bridge},\mathrm{Lie\ bridge},
-\mathrm{deeper},\mathrm{terminal}\}.
-$$
-
-A sampled wall event occurs only when
+The controlled trajectory artifact declares four independent typed fields:
 
 $$
-S_{ij}(t_{k-1})\neq S_{ij}(t_k).
+D_W^{(6)}[Y]:=D_{\mathrm{word}}^{(\leq6)}[Y],
+\qquad
+R_2^L[X]:=R_2^{\mathrm{Lie}}[X],
 $$
 
-The trajectory implementation records every change between adjacent samples, including
-repeated changes of the same pair. Events are labeled as
-repair, terminalization, support gain, support loss, or layer change. Stable
-terminal pairs remain trajectory metadata and are not counted as walls.
+where the abbreviated symbols are used only in the following compact table.
 
-Three controlled paths are implemented:
+| Carrier | Typed field | Convention |
+|---------|-------------|------------|
+| operator | $R_1[Y]$ | labelled alphabet $Y$ |
+| word | $W_2[Y]$ | exact word length $2$ |
+| word | $D_W^{(6)}[Y]$ | truncated word depth at cutoff $6$ |
+| Lie-Hall | $R_2^L[X]$ | simple-commutator support on the independently registered Lie family $X$ |
 
-| Control | Steps | Ordered pairs | Events | Changed pairs | Event steps |
-|---------|------:|--------------:|-------:|--------------:|-------------|
-| GridWorld obstacle path | 3 | 600 | 190 | 140 | 1, 2 |
-| SIR $\beta$ sweep | 21 | 6 | 4 | 4 | 1 |
-| Graph edge-weight endpoint | 11 | 12 | 6 | 6 | 10 |
+Every adjacent pair event retains all changed fields. The generated summary is:
 
-The SIR result isolates all changes at the first sampled step
-$\beta=0\to0.025$. The graph control is constant for $t<1$ and changes only
-when the weakened edges vanish at $t=1$. GridWorld records two discrete
-topology replacements and therefore has events at both steps.
+| Control | Pair events | Field changes | Changed pairs | Change steps |
+|---------|------------:|--------------:|--------------:|-------------:|
+| GridWorld obstacle path | 236 | 314 | 174 | 1, 2 |
+| SIR $\beta$ sweep | 4 | 10 | 4 | 1 |
+| Graph edge-weight endpoint | 6 | 12 | 6 | 10 |
 
-These are wall records on sampled paths. They do not establish ambient codimension,
-continuous-time wall flow, or a bifurcation theorem. Their role is narrower:
-they provide a correct dynamic record layer between Paper IX deformations and
-the Paper XI taxonomy without relabeling every frozen pair as a wall.
+The counts are sampled-path coordinates. They do not establish continuous-time
+wall flow or ambient codimension.
 
 ***
 
 ## Appendix C: Computational Artifacts
 
-The following repository artifacts provide the reproducible support layer for
-the audits reported in this paper. The main text refers to audit roles rather
-than file paths; this appendix records the exact implementation and generated
-tables. Unless a prefix is shown, files are located under
-`experiments/paper11/`. The prefixes `validation/` and `results/` are relative
-to that directory; `paper10/` and `paper12/` are relative to `experiments/`.
+The following repository artifacts support the typed census, included
+morphology records, finite robustness checks, and bounded observations used
+above.
+Unless another base directory is stated, short paths are relative to
+`experiments/paper11/`.
 
-| Artifact | Role in Paper XI | File |
-|----------|------------------|------|
-| C1 | cross-species wall diagnostics | `cross_species_wall_audit.py` |
-| C2 | smooth spectral pair-gap local-model audit | `spectral_ade_collision.py` |
-| C3 | auxiliary 2D commutativity-discriminant slice | `discriminant_bifurcation_map.py` |
-| C4 | wall-density taxonomy sample | `wall_density_registry.py` |
-| C5 | original 24-record wall-record coverage census | `wall_record_census.py` |
-| C6 | original generated census tables | `results/wall_record_census.md`, `.json` |
-| C7 | definition-compatible redundancy audit | `invariant_redundancy.py` |
-| C8 | branch-aware adjacency falsification | `an_adjacency.py` |
-| C9 | observable-status trajectory records | `wall_trajectory.py` |
-| C10 | CNOT-strength repair persistence | `repair_persistence_quantum.py` |
-| C11 | piecewise-smooth activation boundary | `piecewise_smooth_activation_wall.py` |
-| C12 | barrier-option registry handoff | `paper10/barrier_option_sof.py` |
-| C13 | transformer activation-sector handoff | `paper12/transformer_activation_sof.py` |
-| C14 | constructed real-symmetric endpoint collision witness | `validation/degenerate_endpoint_collision.py` |
-| C15 | nested percolation opening wall | `validation/percolation_wall.py` |
-| C16 | matched Kuramoto freezing control | `validation/kuramoto_wall.py` |
-| C17 | GRN CLE/SSA negative control and terminal-basin loss | `validation/grn_toggle_wall.py` |
-| C18 | unified extended-profile robustness audit | `validation/wall_robustness_audit.py` |
-| C19 | independent extended wall-record coverage census | `validation/wall_record_census_v2.py` |
-| C20 | generated extended census tables | `results/wall_record_census_v2.md`, `.json` |
+### C.1 Census and Corpus Inclusion
 
-***
+| Artifact | Role | Short path |
+|----------|------|------------|
+| C1 | typed census producer and validator | \path{validation/typed_wall_record_census.py} |
+| C2 | versioned corpus-inclusion and upstream-admission reference ledger producer and result | \path{validation/build_wall_record_inclusion_ledger.py}; \path{results/wall_record_inclusion_ledger_v1.json} |
+| C3 | generated 28-row typed census and ownership summary | \path{results/wall_record_census_typed_v3.json}; \path{results/wall_record_census_typed_v3.md} |
 
-## References
+C1 verifies the SHA-256-pinned source census, the inclusion ledger,
+and every ledger evidence contract before generating C3. C2 separates upstream
+wall admission from Paper XI corpus inclusion and binds each included entry to
+its realization kind, record role, primary field, evidence schema, artifact
+SHA-256, producer SHA-256, and reader-facing claim status.
+The resulting census is a Computational Certificate for this finite
+source-addressed curation; it is not a completeness or prevalence theorem.
 
-**Program lineage.** Paper XI depends on Papers VII--X. Paper VII supplies the
-incidence and promotion boundary \cite{paper7}; Paper VIII supplies the
-SOF object layer \cite{paper8}; Paper IX supplies observable trajectories and
-wall pullbacks \cite{paper9}; Paper X supplies the Universal Observable
-Pipeline and five-layer SOF Registry \cite{paper10}.
+### C.2 Wall Records and Bounded Audits
 
-**Smooth singularities.** Arnold's catastrophe and ADE singularity theory is
-relevant only to the smooth-discriminant branch. Useful background includes
-Arnold's *Catastrophe Theory* \cite{arnold1992catastrophe}, the work of Arnold,
-Gusein-Zade, and Varchenko in *Singularities of Differentiable Maps*
-\cite{arnoldGuseinVarchenko1985singularities}, and Golubitsky and Guillemin's
-*Stable Mappings and Their Singularities* \cite{golubitskyGuillemin1973stable}.
+| Artifact | Role | Short path |
+|----------|------|------------|
+| C4 | typed pair-state trajectory producer and result | \path{wall_trajectory.py}; \path{results/wall_trajectory.json} |
+| C5 | CNOT affine-path failure and unitary-path control producer and record | \path{cnot_logarithm_boundary.py}; \path{results/cnot_logarithm_boundary_v1.json} |
+| C6a | Rubik spectral-endpoint producer and record | \path{spectral_ade_collision.py}; \path{results/rubik_spectral_endpoint_v1.json} |
+| C6b | constructed GOE endpoint producer and record | \path{validation/degenerate_endpoint_collision.py}; \path{results/constructed_goe_endpoint_v1.json} |
+| C6c | Rubik collision-quotient producer, result, independent validator, and certificate | \path{validation/produce_collision_quotient_result.py}; \path{results/rubik_collision_quotient_result_v1.json}; \path{validation/validate_collision_quotient_result.py}; \path{results/rubik_collision_quotient_validation_v1.json} |
+| C6d | route-incidence producer, result, independent validator, and certificate | \path{validation/produce_route_incidence_result.py}; \path{results/route_incidence_result_v1.json}; \path{validation/validate_route_incidence_result.py}; \path{results/route_incidence_validation_v1.json} |
+| C7 | nested-percolation producer and trajectory diagnostic | \path{validation/percolation_diagnostic.py}; \path{results/percolation_diagnostic_v1.json} |
+| C8 | GRN terminal-basin producer and wall record | \path{validation/grn_toggle_wall.py}; \path{results/grn_terminal_basin_loss_v1.json} |
+| C9 | bounded profile-robustness producer and record | \path{validation/wall_robustness_audit.py}; \path{results/wall_robustness_v1.json} |
+| C10 | branch-aware $A_n$ falsification producer and results | \path{an_adjacency.py}; \path{results/an_adjacency.json}; \path{results/an_adjacency.md} |
+| C11 | bounded Markov producer and source-hashed observation | \path{cross_species_wall_audit.py}; \path{results/markov_boundary.observation.json} |
+| C12 | bounded Kuramoto producer and source-hashed observation | \path{validation/kuramoto_wall.py}; \path{results/kuramoto_freezing.observation.json} |
 
-**Stratified and nonsmooth walls.** Piecewise smooth, discontinuous, and
-multi-stratum SOF walls require different tools. Relevant background includes
-stratified Morse theory \cite{goreskyMacPherson1988stratified}, piecewise-smooth
-dynamical systems \cite{dibernardo2008piecewise}, and differential equations
-with discontinuous right-hand sides \cite{filippov1988discontinuous}.
+From the repository root, run an executable artifact as
+`python experiments/paper11/<short path>`. C4--C10 support only the finite
+records and claim boundaries stated in their result artifacts. In
+particular, C10 is a negative adjacency control and does not establish a
+positive ADE classification. C5 and C7 are Computational Observations and do
+not enter the strict wall spectrum. C11 and C12 are Computational Observations
+cached through `experiments/observation.py`; stale source hashes block reuse,
+and the cached records do not enter the strict wall spectrum.
 
-**Spectral and finite-state diagnostics.** Graph and Markov wall records
-are compared against spectral perturbation theory \cite{kato1995perturbation},
-spectral graph theory \cite{chung1997spectral}, and Markov chain perturbation
-and mixing theory \cite{seneta2006nonnegative} before any singularity
-classification is claimed.
-
-**Additional-profile precedents.** The constructed endpoint audit uses standard
-degenerate perturbation theory and the von Neumann--Wigner codimension boundary
-for real-symmetric level crossings \cite{vonNeumannWigner1929}. The percolation profile is interpreted
-against Erdos--Renyi random-graph connectivity \cite{erdosRenyi1960evolution},
-the synchronization profile against the finite Kuramoto model
-\cite{kuramoto1975selfentrainment}, and the GRN method control against
-Gillespie's exact stochastic simulation algorithm \cite{gillespie1977exact}.
-These external theories
-motivate the native deformation diagnostics; they do not supply SOF taxonomy
-theorems automatically.
+Imported evidence remains owned by its source manuscript and is bound through
+C2 and C3 rather than duplicated here. Paper
+XII may later serialize or present the resulting Paper XI records but supplies
+no upstream wall evidence here. A downstream Paper XII artifact retained as
+analogue corpus provenance does not constitute upstream wall admission.
+All listed artifacts are available in the
+[RIME repository](https://github.com/dooven-prime/rime-lite).

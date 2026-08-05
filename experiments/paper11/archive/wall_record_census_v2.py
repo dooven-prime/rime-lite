@@ -22,12 +22,13 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 PAPER11_DIR = SCRIPT_DIR.parent
 ROOT = PAPER11_DIR.parents[1]
 sys.path.insert(0, str(PAPER11_DIR))
+sys.path.insert(0, str(SCRIPT_DIR))
 
 import wall_record_census as v1
 
 
-RESULTS_DIR = PAPER11_DIR / "results"
-PAPER_PATH = ROOT / "papers" / "paper11" / "Paper XI.md"
+RESULTS_DIR = SCRIPT_DIR / "results"
+PAPER_PATH = ROOT / "papers" / "paper11" / "Paper XI - v1.1.md"
 
 
 V2_ADDITIONS = [
@@ -148,6 +149,8 @@ def markdown_report_v2(census: dict) -> str:
 
 
 def verify_paper_table_v2(census: dict) -> None:
+    if not PAPER_PATH.is_file():
+        return
     paper = PAPER_PATH.read_text(encoding="utf-8")
     missing = []
     for wall_class, row in census["class_coverage"].items():

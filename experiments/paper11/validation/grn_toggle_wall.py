@@ -444,6 +444,8 @@ def run_audit(
 ) -> dict:
     return {
         "record_version": "paper11-grn-terminal-basin-loss-v1.0",
+        "claim_status": "Computational Observation",
+        "producer": "experiments/paper11/validation/grn_toggle_wall.py",
         "paper_xi_release_status": "post_v1_candidate",
         "withdrawn_claims": ["Class B noise repair", "Class D noise plateau wall"],
         "historical_failure_boundary": (

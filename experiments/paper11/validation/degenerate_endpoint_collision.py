@@ -159,7 +159,9 @@ def run_audit(seed: int = 42, robustness_draws: int = 32) -> dict:
 
     return {
         "record_version": "paper11-constructed-goe-endpoint-v1.0",
-        "claim_status": "constructed_witness",
+        "claim_status": "Computational Certificate",
+        "evidence_role": "constructed_witness",
+        "producer": "experiments/paper11/validation/degenerate_endpoint_collision.py",
         "paper_xi_release_status": "post_v1_candidate",
         "taxonomy_candidates": ["A"],
         "species": "finite real-symmetric random-matrix family",

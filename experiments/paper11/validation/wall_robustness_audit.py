@@ -25,7 +25,7 @@ from grn_toggle_wall import (  # noqa: E402
     noise_method_control,
 )
 from kuramoto_wall import run_audit as run_kuramoto  # noqa: E402
-from percolation_wall import run_audit as run_percolation  # noqa: E402
+from percolation_diagnostic import run_audit as run_percolation  # noqa: E402
 
 
 def goe_robustness() -> dict:
@@ -69,9 +69,9 @@ def percolation_robustness() -> dict:
                 {
                     "ensemble": ensemble,
                     "seed": seed,
-                    "wall_p": audit["wall_p"],
+                    "largest_sampled_drop_at_p": audit["largest_sampled_drop_at_p"],
                     "variance_peak_p": audit["variance_peak_p"],
-                    "wall_drop": audit["wall_drop"],
+                    "largest_sampled_drop": audit["largest_sampled_drop"],
                     "monotone_support_verified": audit[
                         "monotone_support_verified"
                     ],
@@ -79,8 +79,8 @@ def percolation_robustness() -> dict:
             )
     passed = all(
         row["monotone_support_verified"]
-        and 0.04 <= row["wall_p"] <= 0.14
-        and row["wall_drop"] < 0
+        and 0.04 <= row["largest_sampled_drop_at_p"] <= 0.14
+        and row["largest_sampled_drop"] < 0
         for row in rows
     )
     if not passed:
@@ -88,7 +88,10 @@ def percolation_robustness() -> dict:
     return {
         "status": "pass",
         "rows": rows,
-        "wall_p_range": [min(row["wall_p"] for row in rows), max(row["wall_p"] for row in rows)],
+        "largest_sampled_drop_p_range": [
+            min(row["largest_sampled_drop_at_p"] for row in rows),
+            max(row["largest_sampled_drop_at_p"] for row in rows),
+        ],
         "variance_peak_p_range": [
             min(row["variance_peak_p"] for row in rows),
             max(row["variance_peak_p"] for row in rows),
@@ -105,8 +108,8 @@ def kuramoto_robustness() -> dict:
                 "seed": seed,
                 "wall_K": audit["wall_K"],
                 "wall_increase": audit["wall_increase"],
-                "paired_change_mean": audit["paired_frozen_depth_change_mean"],
-                "paired_change_std": audit["paired_frozen_depth_change_std"],
+                "paired_change_mean": audit["paired_unreached_change_mean"],
+                "paired_change_std": audit["paired_unreached_change_std"],
                 "freezing_fraction": audit["freezing_fraction"],
             }
         )
@@ -158,7 +161,10 @@ def grn_robustness(full: bool) -> dict:
 
 def run_audit(full_grn: bool = False) -> dict:
     result = {
-        "claim_status": "post_v1_profile_robustness",
+        "record_version": "paper11-wall-robustness-v1.0",
+        "claim_status": "Computational Certificate",
+        "producer": "experiments/paper11/validation/wall_robustness_audit.py",
+        "audit_kind": "profile_robustness",
         "GOE": goe_robustness(),
         "percolation": percolation_robustness(),
         "Kuramoto": kuramoto_robustness(),
@@ -187,8 +193,8 @@ def main() -> None:
     print("=" * 72)
     print(f"GOE: pass across {len(result['GOE']['rows'])} splitting directions")
     print(
-        "Percolation: wall p range "
-        f"{result['percolation']['wall_p_range']}, variance-peak range "
+        "Percolation: largest-sampled-drop p range "
+        f"{result['percolation']['largest_sampled_drop_p_range']}, variance-peak range "
         f"{result['percolation']['variance_peak_p_range']}"
     )
     print(

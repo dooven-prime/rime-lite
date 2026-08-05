@@ -1,0 +1,44 @@
+{
+  "schema": "paper11-route-incidence-result-v1.0",
+  "claim_status": "Computational Certificate",
+  "producer": "experiments/paper11/validation/produce_route_incidence_result.py",
+  "canonical_input": {
+    "path": "experiments/paper7/results/incidence_geometry.json",
+    "sha256": "574e0e1e308fb8e023402d253200f1239e3640fe0416e45d5a3e14123d4744c5",
+    "schema": "paper7.incidence-geometry.v2"
+  },
+  "upstream_source": {
+    "owner": "paper7",
+    "path": "experiments/paper7/validation/incidence_variety_codim.py",
+    "sha256": "1a7479b52dbeb7abf429cd1495d611705ea4360191be6f08cce9a75b4ea6507f"
+  },
+  "summary": {
+    "configuration_count": 13,
+    "square_dimensions": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      8,
+      10
+    ],
+    "type_iv_codimensions": {
+      "square_d_2": 3,
+      "square_d_3": 7,
+      "square_d_4": 12,
+      "square_d_5": 19,
+      "square_d_6": 27,
+      "square_d_8": 48,
+      "square_d_10": 75,
+      "synthetic_3_2_3": 5,
+      "small_asymmetric": 4,
+      "medium_asymmetric": 8,
+      "large_asymmetric": 21,
+      "narrow_intermediate": 7,
+      "wide_intermediate": 4
+    },
+    "relative_codimension_formula": "rs"
+  },
+  "claim_scope": "exact finite dimension-table certificate for the free complex matrix-pair incidence locus AB=0; no represented-Rubik transversality claim"
+}

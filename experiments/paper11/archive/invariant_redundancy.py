@@ -1,4 +1,4 @@
-"""Paper XI definition-compatible diagnostic redundancy audit.
+"""Legacy Paper XI configuration-diagnostic redundancy audit.
 
 The audit deliberately excludes quantities that do not share a sampling unit:
 
@@ -7,8 +7,10 @@ The audit deliberately excludes quantities that do not share a sampling unit:
 - oscillation, plateau, and persistence require trajectories.
 
 Only snapshot diagnostics computed on every configuration enter the correlation
-and PCA tables. The result is an empirical redundancy audit, not an invariant
-completeness theorem or an "orthogonal core" theorem.
+and PCA tables. Static configurations are not admitted wall events, so this
+cohort is excluded from the Paper XI v2 wall spectrum and typed census. The
+result remains historical companion provenance, not an invariant completeness
+or "orthogonal core" theorem.
 """
 
 from __future__ import annotations
@@ -23,9 +25,11 @@ import numpy as np
 if sys.platform == "win32":
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", ".."))
+ROOT = Path(__file__).resolve().parents[3]
+sys.path.insert(0, str(ROOT))
 from rime.accessibility import (  # noqa: E402
     AccessibilityEngine,
+    UNREACHED_DEPTH,
     compute_direct_support,
     compute_length_two_support,
     compute_word_depth_matrix,
@@ -34,15 +38,14 @@ from rime.accessibility import (  # noqa: E402
 
 
 TOL = 1e-8
-FROZEN = 999
 MAX_DEPTH = 4
 RESULTS_DIR = Path(__file__).resolve().parent / "results"
-TRAJECTORY_PATH = RESULTS_DIR / "wall_trajectory.json"
+TRAJECTORY_PATH = Path(__file__).resolve().parents[1] / "results" / "wall_trajectory.json"
 
 METRIC_NAMES = [
-    "direct_frozen_fraction",
-    "lie_terminal_fraction",
-    "repair_index",
+    "direct_unsupported_fraction",
+    "lie_unreached_fraction",
+    "lie_emergent_index",
     "word_bridge_only_fraction",
     "lie_bridge_only_fraction",
     "mean_word_depth",
@@ -62,7 +65,7 @@ def sector_bases(n_sectors: int) -> list[np.ndarray]:
 
 def snapshot_metrics(sectors: list[np.ndarray], observables: list[np.ndarray]) -> dict[str, float]:
     engine = AccessibilityEngine(sectors, observables, tol=TOL, max_depth=MAX_DEPTH)
-    frozen = engine.frozen_pairs()
+    cutoff = engine.cutoff_summary()
     _r1, r2_lie_by_pair, _pairs = engine.support()
     r2_lie = (
         np.any(r2_lie_by_pair, axis=0)
@@ -76,12 +79,12 @@ def snapshot_metrics(sectors: list[np.ndarray], observables: list[np.ndarray]) -
         observables,
         max_depth=MAX_DEPTH,
         tol=TOL,
-        frozen=FROZEN,
+        unreached=UNREACHED_DEPTH,
     )
 
     n_sectors = len(sectors)
     total_pairs = max(n_sectors * (n_sectors - 1), 1)
-    finite_mask = (depth_word != FROZEN) & (~np.eye(n_sectors, dtype=bool))
+    finite_mask = (depth_word != UNREACHED_DEPTH) & (~np.eye(n_sectors, dtype=bool))
     finite_depths = depth_word[finite_mask]
     mean_depth = float(np.mean(finite_depths)) if finite_depths.size else 0.0
     max_depth = float(np.max(finite_depths)) if finite_depths.size else 0.0
@@ -93,12 +96,16 @@ def snapshot_metrics(sectors: list[np.ndarray], observables: list[np.ndarray]) -
     else:
         ratio = 1.0
 
-    frozen_r1 = int(frozen["frozen_R1"])
-    repair_index = int(frozen["D_repaired"]) / frozen_r1 if frozen_r1 else 0.0
+    unsupported_direct = int(cutoff["unsupported_direct_pairs"])
+    lie_emergent_index = (
+        int(cutoff["lie_emergent_pairs"]) / unsupported_direct
+        if unsupported_direct
+        else 0.0
+    )
     return {
-        "direct_frozen_fraction": frozen_r1 / total_pairs,
-        "lie_terminal_fraction": int(frozen["frozen_D"]) / total_pairs,
-        "repair_index": repair_index,
+        "direct_unsupported_fraction": unsupported_direct / total_pairs,
+        "lie_unreached_fraction": int(cutoff["unreached_lie_pairs"]) / total_pairs,
+        "lie_emergent_index": lie_emergent_index,
         "word_bridge_only_fraction": offdiag_count(r2_word & ~r1_word) / total_pairs,
         "lie_bridge_only_fraction": offdiag_count(r2_lie & ~r1_word & ~r2_word) / total_pairs,
         "mean_word_depth": mean_depth,
@@ -263,13 +270,17 @@ def trajectory_summary() -> dict:
         rows.append(
             {
                 "control": name,
-                "event_count": summary["n_events"],
+                "pair_event_count": summary["n_pair_events"],
+                "field_change_count": summary["n_field_changes"],
                 "changed_pair_fraction": summary["n_changed_pairs"]
                 / summary["total_pairs"],
                 "event_step_count": sum(
-                    count > 0 for count in summary["event_counts_by_step"]
+                    count > 0 for count in summary["pair_event_counts_by_step"]
                 ),
-                "max_event_density": max(summary["event_density_by_step"], default=0.0),
+                "max_pair_event_density": max(
+                    summary["pair_event_density_by_step"],
+                    default=0.0,
+                ),
             }
         )
     return {
@@ -282,7 +293,9 @@ def trajectory_summary() -> dict:
 def markdown_report(result: dict) -> str:
     analysis = result["snapshot_analysis"]
     lines = [
-        "# Paper XI Definition-Compatible Redundancy Audit",
+        "# Legacy Paper XI Configuration Redundancy Audit",
+        "",
+        "**Status:** excluded from the v2 wall spectrum and typed census.",
         "",
         f"Snapshot configurations: **{result['configuration_count']}**.",
         "",
@@ -314,15 +327,16 @@ def markdown_report(result: dict) -> str:
             "",
             "Trajectory quantities are reported separately; no trajectory PCA is performed.",
             "",
-            "| Control | Events | Changed-pair fraction | Event steps | Max event density |",
-            "|---|---:|---:|---:|---:|",
+            "| Control | Pair events | Field changes | Changed-pair fraction | Event steps | Max pair-event density |",
+            "|---|---:|---:|---:|---:|---:|",
         ]
     )
     for row in result["trajectory_analysis"].get("rows", []):
         lines.append(
-            f"| {row['control']} | {row['event_count']} | "
+            f"| {row['control']} | {row['pair_event_count']} | "
+            f"{row['field_change_count']} | "
             f"{row['changed_pair_fraction']:.3f} | {row['event_step_count']} | "
-            f"{row['max_event_density']:.3f} |"
+            f"{row['max_pair_event_density']:.3f} |"
         )
     lines.append("")
     return "\n".join(lines)
@@ -344,14 +358,20 @@ def run() -> dict:
 
     matrix = np.asarray(rows, dtype=float)
     result = {
+        "record_status": "excluded_from_v2_wall_spectrum",
+        "exclusion_reason": (
+            "the 166 rows are static configuration samples rather than "
+            "admitted wall events or wall-locus samples"
+        ),
         "configuration_count": len(configs),
         "metric_names": METRIC_NAMES,
         "configuration_labels": labels,
         "snapshot_analysis": correlation_analysis(matrix, METRIC_NAMES),
         "trajectory_analysis": trajectory_summary(),
         "claim_boundary": (
-            "Empirical redundancy on controlled configurations; no complete, "
-            "minimal, or orthogonal invariant basis is claimed."
+            "Legacy empirical redundancy on controlled static configurations; "
+            "excluded from the v2 wall census, with no complete, minimal, "
+            "orthogonal, or invariant coordinate basis claimed."
         ),
     }
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
@@ -361,7 +381,7 @@ def run() -> dict:
     md_path.write_text(markdown_report(result), encoding="utf-8")
 
     analysis = result["snapshot_analysis"]
-    print("Paper XI definition-compatible redundancy audit")
+    print("Legacy Paper XI configuration redundancy audit (excluded from v2 census)")
     print(f"  configurations: {result['configuration_count']}")
     print(f"  metrics: {len(analysis['retained_metrics'])}")
     print(f"  PCA components: 90%={analysis['pca_components_90']}, 95%={analysis['pca_components_95']}")

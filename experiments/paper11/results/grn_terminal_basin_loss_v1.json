@@ -1,0 +1,672 @@
+{
+  "record_version": "paper11-grn-terminal-basin-loss-v1.0",
+  "claim_status": "Computational Observation",
+  "producer": "experiments/paper11/validation/grn_toggle_wall.py",
+  "paper_xi_release_status": "post_v1_candidate",
+  "withdrawn_claims": [
+    "Class B noise repair",
+    "Class D noise plateau wall"
+  ],
+  "historical_failure_boundary": "the earlier large CLE/SSA discrepancy used non-matched event-time sampling and superseded sector/observable choices",
+  "noise_method_control": {
+    "claim_status": "negative_control",
+    "sampling_protocol": {
+      "equilibration_time": 10.0,
+      "production_time": 20.0,
+      "sample_dt": 0.2,
+      "fixed_concentration_grid": [
+        0.0,
+        30.0
+      ]
+    },
+    "rows": [
+      {
+        "omega": 60.0,
+        "CLE_frozen_R1_mean": 4028.0,
+        "CLE_frozen_R1_std": 0.0,
+        "CLE_frozen_D_word_mean": 4028.0,
+        "CLE_frozen_D_word_std": 0.0,
+        "CLE_visited_sectors_mean": 4.0,
+        "CLE_visited_sectors_std": 0.0,
+        "CLE_basin_switches_per_trajectory_mean": 0.0,
+        "CLE_basin_switches_per_trajectory_std": 0.0,
+        "CLE_clipped_fraction_mean": 0.0,
+        "CLE_clipped_fraction_std": 0.0,
+        "SSA_frozen_R1_mean": 4028.0,
+        "SSA_frozen_R1_std": 0.0,
+        "SSA_frozen_D_word_mean": 4028.0,
+        "SSA_frozen_D_word_std": 0.0,
+        "SSA_visited_sectors_mean": 4.0,
+        "SSA_visited_sectors_std": 0.0,
+        "SSA_basin_switches_per_trajectory_mean": 0.0,
+        "SSA_basin_switches_per_trajectory_std": 0.0,
+        "SSA_clipped_fraction_mean": 0.0,
+        "SSA_clipped_fraction_std": 0.0
+      },
+      {
+        "omega": 30.0,
+        "CLE_frozen_R1_mean": 4026.0,
+        "CLE_frozen_R1_std": 2.0,
+        "CLE_frozen_D_word_mean": 4024.0,
+        "CLE_frozen_D_word_std": 4.0,
+        "CLE_visited_sectors_mean": 5.0,
+        "CLE_visited_sectors_std": 1.0,
+        "CLE_basin_switches_per_trajectory_mean": 0.0,
+        "CLE_basin_switches_per_trajectory_std": 0.0,
+        "CLE_clipped_fraction_mean": 0.0,
+        "CLE_clipped_fraction_std": 0.0,
+        "SSA_frozen_R1_mean": 4028.0,
+        "SSA_frozen_R1_std": 0.0,
+        "SSA_frozen_D_word_mean": 4028.0,
+        "SSA_frozen_D_word_std": 0.0,
+        "SSA_visited_sectors_mean": 4.0,
+        "SSA_visited_sectors_std": 0.0,
+        "SSA_basin_switches_per_trajectory_mean": 0.0,
+        "SSA_basin_switches_per_trajectory_std": 0.0,
+        "SSA_clipped_fraction_mean": 0.0,
+        "SSA_clipped_fraction_std": 0.0
+      },
+      {
+        "omega": 15.0,
+        "CLE_frozen_R1_mean": 4019.0,
+        "CLE_frozen_R1_std": 1.0,
+        "CLE_frozen_D_word_mean": 4003.0,
+        "CLE_frozen_D_word_std": 3.0,
+        "CLE_visited_sectors_mean": 8.5,
+        "CLE_visited_sectors_std": 0.5,
+        "CLE_basin_switches_per_trajectory_mean": 0.0,
+        "CLE_basin_switches_per_trajectory_std": 0.0,
+        "CLE_clipped_fraction_mean": 0.0,
+        "CLE_clipped_fraction_std": 0.0,
+        "SSA_frozen_R1_mean": 4021.0,
+        "SSA_frozen_R1_std": 2.0,
+        "SSA_frozen_D_word_mean": 4012.5,
+        "SSA_frozen_D_word_std": 4.5,
+        "SSA_visited_sectors_mean": 7.5,
+        "SSA_visited_sectors_std": 0.5,
+        "SSA_basin_switches_per_trajectory_mean": 0.0,
+        "SSA_basin_switches_per_trajectory_std": 0.0,
+        "SSA_clipped_fraction_mean": 0.0,
+        "SSA_clipped_fraction_std": 0.0
+      },
+      {
+        "omega": 10.0,
+        "CLE_frozen_R1_mean": 4014.0,
+        "CLE_frozen_R1_std": 0.0,
+        "CLE_frozen_D_word_mean": 3996.0,
+        "CLE_frozen_D_word_std": 4.0,
+        "CLE_visited_sectors_mean": 9.5,
+        "CLE_visited_sectors_std": 0.5,
+        "CLE_basin_switches_per_trajectory_mean": 0.0,
+        "CLE_basin_switches_per_trajectory_std": 0.0,
+        "CLE_clipped_fraction_mean": 0.0,
+        "CLE_clipped_fraction_std": 0.0,
+        "SSA_frozen_R1_mean": 4012.0,
+        "SSA_frozen_R1_std": 2.0,
+        "SSA_frozen_D_word_mean": 3992.0,
+        "SSA_frozen_D_word_std": 0.0,
+        "SSA_visited_sectors_mean": 10.0,
+        "SSA_visited_sectors_std": 0.0,
+        "SSA_basin_switches_per_trajectory_mean": 0.0,
+        "SSA_basin_switches_per_trajectory_std": 0.0,
+        "SSA_clipped_fraction_mean": 0.0,
+        "SSA_clipped_fraction_std": 0.0
+      }
+    ],
+    "CLE_low_minus_high": -32.0,
+    "SSA_low_minus_high": -36.0,
+    "CLE_range": 32.0,
+    "SSA_range": 36.0,
+    "CLE_relative_range": 0.007936507936507936,
+    "SSA_relative_range": 0.008928571428571428,
+    "maximum_method_gap": 9.5,
+    "noise_wall_admitted": false,
+    "interpretation": "matched fixed-time CLE and SSA do not reproduce the historical large noise wall; the remaining sub-percent endpoint drift is not an admitted basin-merging wall"
+  },
+  "edge_deformation": {
+    "claim_status": "candidate_evidence",
+    "taxonomy_candidates": [
+      "C",
+      "E_endpoint"
+    ],
+    "deformation": "continuous A-represses-B edge strength lambda from 1 to 0",
+    "sweep": [
+      {
+        "edge_strength": 1.0,
+        "attractor_count": 2,
+        "attractors": [
+          [
+            2.294368597824297,
+            19.761325706181545
+          ],
+          [
+            19.761325706181545,
+            2.294368597824297
+          ]
+        ],
+        "terminal_sectors": [
+          5,
+          40
+        ],
+        "frozen_R1": 3994,
+        "frozen_D_word": 3891,
+        "visited_sectors": 25
+      },
+      {
+        "edge_strength": 0.95,
+        "attractor_count": 2,
+        "attractors": [
+          [
+            2.2903742456102343,
+            19.774293567007327
+          ],
+          [
+            19.72289837211774,
+            2.412993285422485
+          ]
+        ],
+        "terminal_sectors": [
+          5,
+          40
+        ],
+        "frozen_R1": 3993,
+        "frozen_D_word": 3891,
+        "visited_sectors": 25
+      },
+      {
+        "edge_strength": 0.9,
+        "attractor_count": 2,
+        "attractors": [
+          [
+            2.286426304610167,
+            19.7871384958663
+          ],
+          [
+            19.675221803494594,
+            2.546179846486708
+          ]
+        ],
+        "terminal_sectors": [
+          5,
+          40
+        ],
+        "frozen_R1": 3994,
+        "frozen_D_word": 3891,
+        "visited_sectors": 25
+      },
+      {
+        "edge_strength": 0.85,
+        "attractor_count": 2,
+        "attractors": [
+          [
+            2.282523686783178,
+            19.799863180316493
+          ],
+          [
+            19.61508454893955,
+            2.6972739212181986
+          ]
+        ],
+        "terminal_sectors": [
+          5,
+          40
+        ],
+        "frozen_R1": 3994,
+        "frozen_D_word": 3890,
+        "visited_sectors": 25
+      },
+      {
+        "edge_strength": 0.8,
+        "attractor_count": 2,
+        "attractors": [
+          [
+            2.278665342870479,
+            19.81247021541804
+          ],
+          [
+            19.53767516896466,
+            2.8709443764424263
+          ]
+        ],
+        "terminal_sectors": [
+          5,
+          40
+        ],
+        "frozen_R1": 3993,
+        "frozen_D_word": 3879,
+        "visited_sectors": 25
+      },
+      {
+        "edge_strength": 0.75,
+        "attractor_count": 2,
+        "attractors": [
+          [
+            2.2748502605408056,
+            19.824962108064746
+          ],
+          [
+            19.435421822635135,
+            3.0740437124677324
+          ]
+        ],
+        "terminal_sectors": [
+          5,
+          40
+        ],
+        "frozen_R1": 3993,
+        "frozen_D_word": 3879,
+        "visited_sectors": 25
+      },
+      {
+        "edge_strength": 0.7,
+        "attractor_count": 2,
+        "attractors": [
+          [
+            2.271077462646807,
+            19.837341281059977
+          ],
+          [
+            19.295568241359604,
+            3.3173690224637626
+          ]
+        ],
+        "terminal_sectors": [
+          5,
+          40
+        ],
+        "frozen_R1": 3991,
+        "frozen_D_word": 3868,
+        "visited_sectors": 25
+      },
+      {
+        "edge_strength": 0.6499999999999999,
+        "attractor_count": 2,
+        "attractors": [
+          [
+            2.267346005584428,
+            19.84961007695516
+          ],
+          [
+            19.09430664599291,
+            3.6198654599176097
+          ]
+        ],
+        "terminal_sectors": [
+          5,
+          40
+        ],
+        "frozen_R1": 3992,
+        "frozen_D_word": 3875,
+        "visited_sectors": 26
+      },
+      {
+        "edge_strength": 0.6,
+        "attractor_count": 2,
+        "attractors": [
+          [
+            2.263654977748061,
+            19.86177076166736
+          ],
+          [
+            18.77866396944151,
+            4.021519321144746
+          ]
+        ],
+        "terminal_sectors": [
+          5,
+          41
+        ],
+        "frozen_R1": 3994,
+        "frozen_D_word": 3893,
+        "visited_sectors": 26
+      },
+      {
+        "edge_strength": 0.55,
+        "attractor_count": 2,
+        "attractors": [
+          [
+            2.2600034980747044,
+            19.8738255278914
+          ],
+          [
+            18.172206659000867,
+            4.650573092120264
+          ]
+        ],
+        "terminal_sectors": [
+          5,
+          33
+        ],
+        "frozen_R1": 3993,
+        "frozen_D_word": 3890,
+        "visited_sectors": 26
+      },
+      {
+        "edge_strength": 0.5,
+        "attractor_count": 1,
+        "attractors": [
+          [
+            2.256390714671036,
+            19.885776498320425
+          ]
+        ],
+        "terminal_sectors": [
+          5
+        ],
+        "frozen_R1": 3994,
+        "frozen_D_word": 3895,
+        "visited_sectors": 26
+      },
+      {
+        "edge_strength": 0.44999999999999996,
+        "attractor_count": 1,
+        "attractors": [
+          [
+            2.252815803517734,
+            19.897625728687863
+          ]
+        ],
+        "terminal_sectors": [
+          5
+        ],
+        "frozen_R1": 3994,
+        "frozen_D_word": 3884,
+        "visited_sectors": 25
+      },
+      {
+        "edge_strength": 0.3999999999999999,
+        "attractor_count": 1,
+        "attractors": [
+          [
+            2.2492779672458276,
+            19.90937521064277
+          ]
+        ],
+        "terminal_sectors": [
+          5
+        ],
+        "frozen_R1": 3992,
+        "frozen_D_word": 3854,
+        "visited_sectors": 25
+      },
+      {
+        "edge_strength": 0.35,
+        "attractor_count": 1,
+        "attractors": [
+          [
+            2.2457764339803017,
+            19.921026874469398
+          ]
+        ],
+        "terminal_sectors": [
+          5
+        ],
+        "frozen_R1": 3992,
+        "frozen_D_word": 3851,
+        "visited_sectors": 25
+      },
+      {
+        "edge_strength": 0.29999999999999993,
+        "attractor_count": 1,
+        "attractors": [
+          [
+            2.2423104562465026,
+            19.9325825916613
+          ]
+        ],
+        "terminal_sectors": [
+          5
+        ],
+        "frozen_R1": 3993,
+        "frozen_D_word": 3855,
+        "visited_sectors": 25
+      },
+      {
+        "edge_strength": 0.25,
+        "attractor_count": 1,
+        "attractors": [
+          [
+            2.238879309935281,
+            19.944044177359203
+          ]
+        ],
+        "terminal_sectors": [
+          5
+        ],
+        "frozen_R1": 3993,
+        "frozen_D_word": 3851,
+        "visited_sectors": 25
+      },
+      {
+        "edge_strength": 0.19999999999999996,
+        "attractor_count": 1,
+        "attractors": [
+          [
+            2.2354822933230922,
+            19.95541339266137
+          ]
+        ],
+        "terminal_sectors": [
+          5
+        ],
+        "frozen_R1": 3993,
+        "frozen_D_word": 3856,
+        "visited_sectors": 26
+      },
+      {
+        "edge_strength": 0.1499999999999999,
+        "attractor_count": 1,
+        "attractors": [
+          [
+            2.232118726143523,
+            19.966691946814535
+          ]
+        ],
+        "terminal_sectors": [
+          5
+        ],
+        "frozen_R1": 3995,
+        "frozen_D_word": 3862,
+        "visited_sectors": 26
+      },
+      {
+        "edge_strength": 0.09999999999999998,
+        "attractor_count": 1,
+        "attractors": [
+          [
+            2.228787948707067,
+            19.9778814992927
+          ]
+        ],
+        "terminal_sectors": [
+          5
+        ],
+        "frozen_R1": 3995,
+        "frozen_D_word": 3866,
+        "visited_sectors": 26
+      },
+      {
+        "edge_strength": 0.04999999999999993,
+        "attractor_count": 1,
+        "attractors": [
+          [
+            2.2254893210660978,
+            19.988983661770845
+          ]
+        ],
+        "terminal_sectors": [
+          5
+        ],
+        "frozen_R1": 3995,
+        "frozen_D_word": 3877,
+        "visited_sectors": 26
+      },
+      {
+        "edge_strength": 0.0,
+        "attractor_count": 1,
+        "attractors": [
+          [
+            2.222222222222258,
+            19.999999999999915
+          ]
+        ],
+        "terminal_sectors": [
+          5
+        ],
+        "frozen_R1": 3989,
+        "frozen_D_word": 3832,
+        "visited_sectors": 27
+      }
+    ],
+    "wall_bracket": [
+      0.5,
+      0.55
+    ],
+    "refined_controlled_grid_bracket": [
+      0.52,
+      0.525
+    ],
+    "trajectory_event": {
+      "orientation": "decreasing_regulatory_edge_strength",
+      "sampled_transition_bracket": {
+        "before_parameter": 0.525,
+        "after_parameter": 0.52
+      },
+      "before_state": {
+        "attractor_count": 2,
+        "terminal_sectors": [
+          5,
+          40
+        ]
+      },
+      "after_state": {
+        "attractor_count": 1,
+        "terminal_sectors": [
+          5
+        ]
+      },
+      "raw_numeric_direction": "decrease",
+      "accessibility_direction": "not_applicable",
+      "event_semantics": "terminalization"
+    },
+    "refined_scan": [
+      {
+        "edge_strength": 0.48,
+        "attractor_count": 1
+      },
+      {
+        "edge_strength": 0.485,
+        "attractor_count": 1
+      },
+      {
+        "edge_strength": 0.49,
+        "attractor_count": 1
+      },
+      {
+        "edge_strength": 0.495,
+        "attractor_count": 1
+      },
+      {
+        "edge_strength": 0.5,
+        "attractor_count": 1
+      },
+      {
+        "edge_strength": 0.505,
+        "attractor_count": 1
+      },
+      {
+        "edge_strength": 0.51,
+        "attractor_count": 1
+      },
+      {
+        "edge_strength": 0.515,
+        "attractor_count": 1
+      },
+      {
+        "edge_strength": 0.52,
+        "attractor_count": 1
+      },
+      {
+        "edge_strength": 0.525,
+        "attractor_count": 2
+      },
+      {
+        "edge_strength": 0.53,
+        "attractor_count": 2
+      },
+      {
+        "edge_strength": 0.535,
+        "attractor_count": 2
+      },
+      {
+        "edge_strength": 0.54,
+        "attractor_count": 2
+      },
+      {
+        "edge_strength": 0.545,
+        "attractor_count": 2
+      },
+      {
+        "edge_strength": 0.55,
+        "attractor_count": 2
+      },
+      {
+        "edge_strength": 0.555,
+        "attractor_count": 2
+      },
+      {
+        "edge_strength": 0.56,
+        "attractor_count": 2
+      },
+      {
+        "edge_strength": 0.5650000000000001,
+        "attractor_count": 2
+      },
+      {
+        "edge_strength": 0.5700000000000001,
+        "attractor_count": 2
+      }
+    ],
+    "reference": {
+      "edge_strength": 1.0,
+      "attractor_count": 2,
+      "attractors": [
+        [
+          2.294368597824297,
+          19.761325706181545
+        ],
+        [
+          19.761325706181545,
+          2.294368597824297
+        ]
+      ],
+      "terminal_sectors": [
+        5,
+        40
+      ],
+      "frozen_R1": 3994,
+      "frozen_D_word": 3891,
+      "visited_sectors": 25
+    },
+    "edge_deleted": {
+      "edge_strength": 0.0,
+      "attractor_count": 1,
+      "attractors": [
+        [
+          2.222222222222258,
+          19.999999999999915
+        ]
+      ],
+      "terminal_sectors": [
+        5
+      ],
+      "frozen_R1": 3989,
+      "frozen_D_word": 3832,
+      "visited_sectors": 27
+    },
+    "removed_terminal_sectors": [
+      40
+    ],
+    "claim_boundary": "deterministic attractor/basin loss under regulatory-edge weakening; not an absorbing-state theorem for the finite stochastic process"
+  }
+}

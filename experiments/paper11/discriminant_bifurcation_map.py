@@ -1,11 +1,12 @@
 """Paper XI audit: 2D discriminant and bifurcation slice.
 
 Claim status:
-    - Auxiliary wall-taxonomy diagnostic for Paper XI.
+    - Historical auxiliary diagnostic; not part of the current Paper XI
+      computational-artifact set or wall-corpus evidence chain.
     - Consistency check for the high codimension of the Rubik commutativity
       locus on arbitrary two-dimensional generator-weight slices.
-    - Not a full discriminant map and not a proof of
-      Sigma_access subset Sigma_spec subset Sigma_comm.
+    - Not a full discriminant map and not evidence for any inclusion among
+      declared commutativity, spectral, or accessibility wall packages.
 
 The script scans a small 2D plane of QT generator weights.  It records:
     - commutative cells where [QT(w), HT(w)] is numerically zero;

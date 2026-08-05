@@ -1,0 +1,374 @@
+{
+  "record_version": "paper11-rubik-spectral-endpoint-v1.0",
+  "claim_status": "Computational Certificate",
+  "producer": "experiments/paper11/spectral_ade_collision.py",
+  "spectral_endpoint": {
+    "record_version": "paper11-rubik-spectral-endpoint-v1.0",
+    "claim_status": "Computational Certificate",
+    "n_eigs": 228,
+    "n_collisions": 16,
+    "collisions": [
+      {
+        "idx": [
+          20,
+          21
+        ],
+        "gap_start": 0.04155169168527295,
+        "gap_end": 2.220446049250313e-16,
+        "class": "A1 collision candidate"
+      },
+      {
+        "idx": [
+          47,
+          48
+        ],
+        "gap_start": 0.028113216567140498,
+        "gap_end": 0.0,
+        "class": "A1 collision candidate"
+      },
+      {
+        "idx": [
+          72,
+          73
+        ],
+        "gap_start": 0.032009290240136545,
+        "gap_end": 0.0,
+        "class": "A1 collision candidate"
+      },
+      {
+        "idx": [
+          73,
+          74
+        ],
+        "gap_start": 0.05235021899000969,
+        "gap_end": 0.0,
+        "class": "A1 collision candidate"
+      },
+      {
+        "idx": [
+          74,
+          75
+        ],
+        "gap_start": 0.03459719902457614,
+        "gap_end": 1.1102230246251565e-16,
+        "class": "A1 collision candidate"
+      },
+      {
+        "idx": [
+          90,
+          91
+        ],
+        "gap_start": 0.001375045883815318,
+        "gap_end": 1.1102230246251565e-16,
+        "class": "A1 collision candidate"
+      },
+      {
+        "idx": [
+          116,
+          117
+        ],
+        "gap_start": 0.009914107635774383,
+        "gap_end": 1.1102230246251565e-16,
+        "class": "A1 collision candidate"
+      },
+      {
+        "idx": [
+          117,
+          118
+        ],
+        "gap_start": 0.011364687057626499,
+        "gap_end": 0.0,
+        "class": "A1 collision candidate"
+      },
+      {
+        "idx": [
+          130,
+          131
+        ],
+        "gap_start": 0.02000336533407876,
+        "gap_end": 1.1102230246251565e-16,
+        "class": "A1 collision candidate"
+      },
+      {
+        "idx": [
+          131,
+          132
+        ],
+        "gap_start": 0.007782925310786837,
+        "gap_end": 0.0,
+        "class": "A1 collision candidate"
+      },
+      {
+        "idx": [
+          153,
+          154
+        ],
+        "gap_start": 0.03870741259215993,
+        "gap_end": 1.1102230246251565e-16,
+        "class": "A1 collision candidate"
+      },
+      {
+        "idx": [
+          165,
+          166
+        ],
+        "gap_start": 0.02548600920425892,
+        "gap_end": 1.1102230246251565e-16,
+        "class": "A1 collision candidate"
+      },
+      {
+        "idx": [
+          200,
+          201
+        ],
+        "gap_start": 0.049188203716499235,
+        "gap_end": 0.0,
+        "class": "A1 collision candidate"
+      },
+      {
+        "idx": [
+          201,
+          202
+        ],
+        "gap_start": 0.011900077150229615,
+        "gap_end": 5.551115123125783e-17,
+        "class": "A1 collision candidate"
+      },
+      {
+        "idx": [
+          202,
+          203
+        ],
+        "gap_start": 0.030757128761071062,
+        "gap_end": 0.0,
+        "class": "A1 collision candidate"
+      },
+      {
+        "idx": [
+          218,
+          219
+        ],
+        "gap_start": 0.03459719902457603,
+        "gap_end": 5.551115123125783e-17,
+        "class": "A1 collision candidate"
+      }
+    ],
+    "beta": 0.314159,
+    "target_index": 0,
+    "qt_count": 12,
+    "ht_count": 6,
+    "trajectory_event": {
+      "orientation": "endpoint_to_interior",
+      "parameter_bracket": [
+        1.0,
+        0.01
+      ],
+      "before_state": {
+        "adjacent_gaps": [
+          2.220446049250313e-16,
+          0.0,
+          0.0,
+          0.0,
+          1.1102230246251565e-16,
+          1.1102230246251565e-16,
+          1.1102230246251565e-16,
+          0.0,
+          1.1102230246251565e-16,
+          0.0,
+          1.1102230246251565e-16,
+          1.1102230246251565e-16,
+          0.0,
+          5.551115123125783e-17,
+          0.0,
+          5.551115123125783e-17
+        ]
+      },
+      "after_state": {
+        "adjacent_gaps": [
+          0.04155169168527295,
+          0.028113216567140498,
+          0.032009290240136545,
+          0.05235021899000969,
+          0.03459719902457614,
+          0.001375045883815318,
+          0.009914107635774383,
+          0.011364687057626499,
+          0.02000336533407876,
+          0.007782925310786837,
+          0.03870741259215993,
+          0.02548600920425892,
+          0.049188203716499235,
+          0.011900077150229615,
+          0.030757128761071062,
+          0.03459719902457603
+        ]
+      },
+      "raw_numeric_direction": "increase",
+      "event_semantics": "collision_exit"
+    }
+  },
+  "simultaneous_pair_gap": {
+    "n_pairs": 18,
+    "n_simultaneous": 3,
+    "candidates": [
+      {
+        "pair1": [
+          59,
+          60
+        ],
+        "pair2": [
+          118,
+          119
+        ],
+        "t": 0.10166666666666667,
+        "class": "simultaneous pair-gap half-closure diagnostic"
+      },
+      {
+        "pair1": [
+          74,
+          75
+        ],
+        "pair2": [
+          131,
+          132
+        ],
+        "t": 0.6733333333333333,
+        "class": "simultaneous pair-gap half-closure diagnostic"
+      },
+      {
+        "pair1": [
+          72,
+          73
+        ],
+        "pair2": [
+          153,
+          154
+        ],
+        "t": 0.7958333333333334,
+        "class": "simultaneous pair-gap half-closure diagnostic"
+      }
+    ]
+  },
+  "resolution_audit": {
+    "25": {
+      "n_pairs": 18,
+      "n_simultaneous": 3,
+      "candidates": [
+        {
+          "pair1": [
+            59,
+            60
+          ],
+          "pair2": [
+            118,
+            119
+          ],
+          "t": 0.10166666666666667,
+          "class": "simultaneous pair-gap half-closure diagnostic"
+        },
+        {
+          "pair1": [
+            74,
+            75
+          ],
+          "pair2": [
+            131,
+            132
+          ],
+          "t": 0.6733333333333333,
+          "class": "simultaneous pair-gap half-closure diagnostic"
+        },
+        {
+          "pair1": [
+            72,
+            73
+          ],
+          "pair2": [
+            153,
+            154
+          ],
+          "t": 0.7958333333333334,
+          "class": "simultaneous pair-gap half-closure diagnostic"
+        }
+      ]
+    },
+    "50": {
+      "n_pairs": 18,
+      "n_simultaneous": 3,
+      "candidates": [
+        {
+          "pair1": [
+            59,
+            60
+          ],
+          "pair2": [
+            118,
+            119
+          ],
+          "t": 0.1,
+          "class": "simultaneous pair-gap half-closure diagnostic"
+        },
+        {
+          "pair1": [
+            74,
+            75
+          ],
+          "pair2": [
+            131,
+            132
+          ],
+          "t": 0.66,
+          "class": "simultaneous pair-gap half-closure diagnostic"
+        },
+        {
+          "pair1": [
+            47,
+            48
+          ],
+          "pair2": [
+            72,
+            73
+          ],
+          "t": 0.76,
+          "class": "simultaneous pair-gap half-closure diagnostic"
+        }
+      ]
+    },
+    "100": {
+      "n_pairs": 18,
+      "n_simultaneous": 1,
+      "candidates": [
+        {
+          "pair1": [
+            72,
+            73
+          ],
+          "pair2": [
+            153,
+            154
+          ],
+          "t": 0.7624242424242424,
+          "class": "simultaneous pair-gap half-closure diagnostic"
+        }
+      ]
+    },
+    "200": {
+      "n_pairs": 18,
+      "n_simultaneous": 1,
+      "candidates": [
+        {
+          "pair1": [
+            72,
+            73
+          ],
+          "pair2": [
+            153,
+            154
+          ],
+          "t": 0.7636180904522614,
+          "class": "simultaneous pair-gap half-closure diagnostic"
+        }
+      ]
+    }
+  }
+}

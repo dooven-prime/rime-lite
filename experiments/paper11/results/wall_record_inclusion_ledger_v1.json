@@ -1,0 +1,440 @@
+{
+  "ledger_version": "paper11-wall-record-inclusion-v1.0",
+  "wall_definition_owner": "paper9",
+  "ledger_owner": "paper11",
+  "ledger_role": "corpus inclusion and upstream-admission reference; not wall-admission authority",
+  "legacy_migration_input": {
+    "path": "experiments/paper11/archive/results/main_wall_admission_ledger_v1.json",
+    "sha256": "2ec7df2dbb72a4286972fc4c60a139e9ba649b5772f99a38c2c5ecf5d1775096"
+  },
+  "corpus_contract": {
+    "entry_type": "WallCorpusEntry = MorphologyRecordBundle disjoint_union WallContextRecord",
+    "bundle_type": "MorphologyRecordBundle = StrictWallRecord disjoint_union AnalogueMorphologyRecord",
+    "strict_record_type": "RecordWall_PW maps an admissible wall datum to StrictWallRecord",
+    "analogue_record_type": "analogue morphology enters through corpus inclusion, not upstream strict-wall admission",
+    "record_bundle_type": "each morphology record bundle contains a finite collection of MorphologyAtom",
+    "atom_type": "MorphologyAtom = TrajectoryEvent disjoint_union LocusSample",
+    "counting_hierarchy": "source row -> corpus entry/bundle -> morphology atoms -> atom-field entries"
+  },
+  "records": [
+    {
+      "source_record_id": "A-rubik-collision-quotient",
+      "realization_kind": "strict_sof",
+      "record_role": "wall_locus_sample",
+      "spectrum_partition": "strict_main",
+      "primary_field": "spectral.joint_sector_count",
+      "field_family": "spectral",
+      "primary_carrier_id": "carrier.spectral_joint_sectorization",
+      "context_carrier_ids": [],
+      "domain_or_trajectory_ref": "paper4.rubik_joint_sector_parameter_domain",
+      "orientation_or_incident_strata": {
+        "kind": "incident_strata",
+        "strata": [
+          "left_regular_chamber",
+          "joint_sector_collision_stratum",
+          "right_regular_chamber"
+        ],
+        "intrinsic_two_sided_order": false
+      },
+      "policy_refs": [
+        "paper4.rubik_collision_quotient.tolerance",
+        "paper4.rubik_collision_quotient.joint_sector_count"
+      ],
+      "claim_status": "Computational Certificate",
+      "evidence_artifact": "experiments/paper11/results/rubik_collision_quotient_result_v1.json",
+      "evidence_contract": {
+        "schema": "paper11-rubik-collision-result-v1.0",
+        "sha256": "460fc52eecf312eb1aae3faecd9607c058918153fc421f9b9a003852391fde36",
+        "producer": "experiments/paper11/validation/produce_collision_quotient_result.py",
+        "producer_sha256": "bf89c749d1bcb7275965718e9d7706059fc0d6d620d8893dad7262135c836486",
+        "validation_certificate": "experiments/paper11/results/rubik_collision_quotient_validation_v1.json",
+        "validation_certificate_sha256": "8246de146c6ca4fe748626be2234178854fc73bced664b61bd7851e11855d592",
+        "validator": "experiments/paper11/validation/validate_collision_quotient_result.py",
+        "validator_sha256": "09d1c2d2beab0cecf7fbc1d764752e5fe4fdd4c51bca4f1771192c804198e066"
+      },
+      "upstream_wall_admission": {
+        "status": "admitted",
+        "owner": "domain_source",
+        "owner_ref": "paper4",
+        "evidence_ref": "experiments/paper11/results/rubik_collision_quotient_result_v1.json"
+      },
+      "paper11_corpus_inclusion": {
+        "included": true,
+        "entry_kind": "morphology_record_bundle",
+        "bundle_kind": "strict_wall_record",
+        "record_role": "wall_locus_sample",
+        "provenance_ref": "experiments/paper11/results/rubik_collision_quotient_result_v1.json",
+        "reason": "included after upstream admission reference and evidence-contract validation"
+      }
+    },
+    {
+      "source_record_id": "A-rubik-endpoint-pair-closures",
+      "realization_kind": "strict_sof",
+      "record_role": "wall_event",
+      "spectrum_partition": "strict_main",
+      "primary_field": "spectral.adjacent_gap",
+      "field_family": "spectral",
+      "primary_carrier_id": "carrier.separating_hermitian_probe",
+      "context_carrier_ids": [],
+      "domain_or_trajectory_ref": "paper11.rubik_qt_generator_weight_path",
+      "orientation_or_incident_strata": {
+        "kind": "oriented_trajectory",
+        "orientation": "endpoint_to_interior",
+        "sampling_rule": "canonical endpoint and alpha=0.01 interior sample",
+        "event_interval": "[1.0,0.01]"
+      },
+      "policy_refs": [
+        "paper11.rubik_spectral_endpoint.beta=0.314159",
+        "paper11.rubik_spectral_endpoint.start_tolerance=1e-4",
+        "paper11.rubik_spectral_endpoint.end_tolerance=1e-4"
+      ],
+      "claim_status": "Computational Certificate",
+      "evidence_artifact": "experiments/paper11/results/rubik_spectral_endpoint_v1.json",
+      "evidence_contract": {
+        "schema": "paper11-rubik-spectral-endpoint-v1.0",
+        "sha256": "b2ddc81c8910f6b117ebac0810750f3f4793bf0466f3b042539b59fe08a4b011",
+        "producer": "experiments/paper11/spectral_ade_collision.py",
+        "producer_sha256": "00cbfc571afcff675125afb2147d3a809b0be03981235d8572ef513541a9f63a"
+      },
+      "upstream_wall_admission": {
+        "status": "admitted",
+        "owner": "domain_source",
+        "owner_ref": "paper11",
+        "evidence_ref": "experiments/paper11/results/rubik_spectral_endpoint_v1.json"
+      },
+      "paper11_corpus_inclusion": {
+        "included": true,
+        "entry_kind": "morphology_record_bundle",
+        "bundle_kind": "strict_wall_record",
+        "record_role": "wall_event",
+        "provenance_ref": "experiments/paper11/results/rubik_spectral_endpoint_v1.json",
+        "reason": "included after upstream admission reference and evidence-contract validation"
+      }
+    },
+    {
+      "source_record_id": "F-rubik-type-iv-incidence",
+      "realization_kind": "strict_sof",
+      "record_role": "wall_locus_sample",
+      "spectrum_partition": "strict_main",
+      "primary_field": "route.support[Y,d=2]",
+      "field_family": "route",
+      "primary_carrier_id": "carrier.routed_operator_product",
+      "context_carrier_ids": [],
+      "domain_or_trajectory_ref": "paper7.free_matrix_pair_incidence_domain",
+      "orientation_or_incident_strata": {
+        "kind": "incident_strata",
+        "strata": [
+          "image_kernel_incidence_stratum",
+          "incident_nonzero_composition_stratum"
+        ],
+        "intrinsic_two_sided_order": false
+      },
+      "policy_refs": [
+        "paper7.route_length=2",
+        "paper7.image_kernel_incidence"
+      ],
+      "claim_status": "Computational Certificate",
+      "evidence_artifact": "experiments/paper11/results/route_incidence_result_v1.json",
+      "evidence_contract": {
+        "schema": "paper11-route-incidence-result-v1.0",
+        "sha256": "8bbc3c7d2c919d4ef9439bb4a506efec0784d626bd9db3b4c74018497eb749c9",
+        "producer": "experiments/paper11/validation/produce_route_incidence_result.py",
+        "producer_sha256": "53df725204d053d089f30a727592196050d777bdec8a2624821e657879e7109d",
+        "validation_certificate": "experiments/paper11/results/route_incidence_validation_v1.json",
+        "validation_certificate_sha256": "44c033fa52ae4b82ac5f5ef5113622a0bb194edd779477f91621aa97ff40845d",
+        "validator": "experiments/paper11/validation/validate_route_incidence_result.py",
+        "validator_sha256": "8242888be885556c4c8fa7de357fc8c7e62358477e92f3d5dcd2323bb4f2c20c"
+      },
+      "upstream_wall_admission": {
+        "status": "admitted",
+        "owner": "domain_source",
+        "owner_ref": "paper7",
+        "evidence_ref": "experiments/paper11/results/route_incidence_result_v1.json"
+      },
+      "paper11_corpus_inclusion": {
+        "included": true,
+        "entry_kind": "morphology_record_bundle",
+        "bundle_kind": "strict_wall_record",
+        "record_role": "wall_locus_sample",
+        "provenance_ref": "experiments/paper11/results/route_incidence_result_v1.json",
+        "reason": "included after upstream admission reference and evidence-contract validation"
+      }
+    },
+    {
+      "source_record_id": "BCF-quantum-cnot-threshold",
+      "realization_kind": "strict_sof",
+      "record_role": "trajectory_diagnostic",
+      "spectrum_partition": "context_only",
+      "primary_field": "diagnostic.path_logarithm_admissibility",
+      "field_family": "diagnostic",
+      "primary_carrier_id": "carrier.cnot_path_admissibility_control",
+      "context_carrier_ids": [],
+      "domain_or_trajectory_ref": "paper11.cnot_affine_path_and_fractional_unitary_control",
+      "orientation_or_incident_strata": {
+        "kind": "sampled_trajectory_context",
+        "orientation": "increasing_cnot_strength",
+        "sampling_rule": "matched 21-point affine and unitary grids; affine s=0.5 is excluded from logarithm evaluation",
+        "sample_context": "affine side samples 0.45 and 0.55; unitary control on [0,1]"
+      },
+      "policy_refs": [
+        "paper11.cnot.affine_matrix_path",
+        "paper11.cnot.affine_arg_negative=pi",
+        "paper11.cnot.fractional_unitary_path",
+        "paper11.cnot.continuous_log=i*pi*s*P_minus",
+        "paper11.cnot.tolerance=1e-6",
+        "paper11.cnot.hall_cutoff=4"
+      ],
+      "claim_status": "Computational Observation",
+      "evidence_artifact": "experiments/paper11/results/cnot_logarithm_boundary_v1.json",
+      "evidence_contract": {
+        "schema": "paper11-cnot-path-admissibility-v1.0",
+        "sha256": "e0d5cb708d742ad3d3a151a4329ca19ed0b2c2c07b8e4019e5bbc9796f8411c7",
+        "producer": "experiments/paper11/cnot_logarithm_boundary.py",
+        "producer_sha256": "8bf97e96201b1bacd5d7a50a7b3781f80ccd9142f769a74d3afa6c1170ee5529"
+      },
+      "upstream_wall_admission": {
+        "status": "not_admitted",
+        "owner": "domain_source",
+        "owner_ref": "paper11",
+        "evidence_ref": "experiments/paper11/results/cnot_logarithm_boundary_v1.json"
+      },
+      "paper11_corpus_inclusion": {
+        "included": true,
+        "entry_kind": "wall_context_record",
+        "bundle_kind": null,
+        "record_role": "trajectory_diagnostic",
+        "provenance_ref": "experiments/paper11/results/cnot_logarithm_boundary_v1.json",
+        "reason": "retained as a bounded diagnostic with an explicit negative promotion boundary"
+      }
+    },
+    {
+      "source_record_id": "BE-maze-door-wall",
+      "realization_kind": "diagnostic_analogue",
+      "record_role": "wall_event",
+      "spectrum_partition": "analogue_morphology",
+      "primary_field": "graph.component_count",
+      "field_family": "graph",
+      "primary_carrier_id": "carrier.analogue_connectivity_descriptor",
+      "context_carrier_ids": [
+        "carrier.analogue_unreachable_pair_descriptor"
+      ],
+      "domain_or_trajectory_ref": "paper12.maze_declared_door_sequence",
+      "orientation_or_incident_strata": {
+        "kind": "oriented_trajectory",
+        "orientation": "door_closure_order",
+        "sampling_rule": "adjacent discrete door states",
+        "event_interval": "first component-splitting door event"
+      },
+      "policy_refs": [
+        "paper12.maze.seed=42",
+        "paper12.maze.connected_component_descriptor",
+        "paper12.maze.schema_transition_boundary"
+      ],
+      "claim_status": "Computational Observation",
+      "evidence_artifact": "experiments/paper12/results/v2/ir/maze.ir.json",
+      "evidence_contract": {
+        "schema": "1.0",
+        "sha256": "5ba55c0b8215aa27eba5202e2b55732c51e39b887e117a6d4b927a653e2701fa",
+        "producer": "experiments/paper12/migrate_sofrs_v1_to_v2.py",
+        "producer_sha256": "93162fab3a6b3483dd610affa438e6e9936f881aa6a98b498bd6e262a154db1e"
+      },
+      "upstream_wall_admission": {
+        "status": "not_applicable",
+        "owner": null,
+        "owner_ref": null,
+        "evidence_ref": null
+      },
+      "paper11_corpus_inclusion": {
+        "included": true,
+        "entry_kind": "morphology_record_bundle",
+        "bundle_kind": "analogue_morphology_record",
+        "record_role": "wall_event",
+        "provenance_ref": "experiments/paper12/results/v2/ir/maze.ir.json",
+        "reason": "included as analogue morphology without an upstream strict-wall admission claim"
+      }
+    },
+    {
+      "source_record_id": "E-graph-edge-removal",
+      "realization_kind": "strict_sof",
+      "record_role": "wall_event",
+      "spectrum_partition": "strict_main",
+      "primary_field": "operator.direct_support[Y]",
+      "field_family": "operator",
+      "primary_carrier_id": "carrier.graph_operator",
+      "context_carrier_ids": [
+        "carrier.graph_positive_word"
+      ],
+      "domain_or_trajectory_ref": "paper11.graph_edge_weight_path",
+      "orientation_or_incident_strata": {
+        "kind": "oriented_trajectory",
+        "orientation": "increasing_edge_removal_parameter",
+        "sampling_rule": "last interior sample and endpoint sample",
+        "event_interval": "(0.9,1.0]"
+      },
+      "policy_refs": [
+        "paper11.graph.tolerance=1e-8",
+        "paper11.graph.word_cutoff=6",
+        "paper11.graph.off_diagonal_pair_scope"
+      ],
+      "claim_status": "Computational Certificate",
+      "evidence_artifact": "experiments/paper11/results/wall_trajectory.json",
+      "evidence_contract": {
+        "schema": "paper11-wall-trajectory-v1.0",
+        "sha256": "a7232f4ac34622fa508220e8cdb99d6803b4e0d73f4c2c39515030697600c548",
+        "producer": "experiments/paper11/wall_trajectory.py",
+        "producer_sha256": "384b28e3389081c54436299c2b6235367c37337cb837245ddd7f97aa7d0354f6"
+      },
+      "upstream_wall_admission": {
+        "status": "admitted",
+        "owner": "domain_source",
+        "owner_ref": "paper11",
+        "evidence_ref": "experiments/paper11/results/wall_trajectory.json"
+      },
+      "paper11_corpus_inclusion": {
+        "included": true,
+        "entry_kind": "morphology_record_bundle",
+        "bundle_kind": "strict_wall_record",
+        "record_role": "wall_event",
+        "provenance_ref": "experiments/paper11/results/wall_trajectory.json",
+        "reason": "included after upstream admission reference and evidence-contract validation"
+      }
+    },
+    {
+      "source_record_id": "A-constructed-goe-endpoint",
+      "realization_kind": "strict_sof",
+      "record_role": "wall_event",
+      "spectrum_partition": "strict_main",
+      "primary_field": "spectral.adjacent_gap",
+      "field_family": "spectral",
+      "primary_carrier_id": "carrier.constructed_real_symmetric_probe",
+      "context_carrier_ids": [],
+      "domain_or_trajectory_ref": "paper11.constructed_goe_positive_ray",
+      "orientation_or_incident_strata": {
+        "kind": "oriented_trajectory",
+        "orientation": "endpoint_to_positive_parameter",
+        "sampling_rule": "endpoint and first positive log-spaced sample",
+        "event_interval": "[0,1e-8]"
+      },
+      "policy_refs": [
+        "paper11.goe.seed=42",
+        "paper11.goe.gap_tolerance=1e-10",
+        "paper11.goe.endpoint_preserving_direction"
+      ],
+      "claim_status": "Computational Certificate",
+      "evidence_artifact": "experiments/paper11/results/constructed_goe_endpoint_v1.json",
+      "evidence_contract": {
+        "schema": "paper11-constructed-goe-endpoint-v1.0",
+        "sha256": "abb0f827606143626b18468b6efd821641e4a2096e900465872ddb8550988a89",
+        "producer": "experiments/paper11/validation/degenerate_endpoint_collision.py",
+        "producer_sha256": "9e918a26b2d0e9af49c277c4b696a1352eef299cbd9449dd54980122f9f05dc9"
+      },
+      "upstream_wall_admission": {
+        "status": "admitted",
+        "owner": "domain_source",
+        "owner_ref": "paper11",
+        "evidence_ref": "experiments/paper11/results/constructed_goe_endpoint_v1.json"
+      },
+      "paper11_corpus_inclusion": {
+        "included": true,
+        "entry_kind": "morphology_record_bundle",
+        "bundle_kind": "strict_wall_record",
+        "record_role": "wall_event",
+        "provenance_ref": "experiments/paper11/results/constructed_goe_endpoint_v1.json",
+        "reason": "included after upstream admission reference and evidence-contract validation"
+      }
+    },
+    {
+      "source_record_id": "BE-nested-percolation-opening",
+      "realization_kind": "strict_sof",
+      "record_role": "trajectory_diagnostic",
+      "spectrum_partition": "context_only",
+      "primary_field": "word.unreached_pair_count_at_cutoff[Y,cutoff=6,aggregation=ensemble_mean,ensemble_policy=seeded_nested_32]",
+      "field_family": "word",
+      "primary_carrier_id": "carrier.graph_positive_word",
+      "context_carrier_ids": [
+        "carrier.graph_operator"
+      ],
+      "domain_or_trajectory_ref": "paper11.nested_percolation_probability_sweep",
+      "orientation_or_incident_strata": {
+        "kind": "sampled_trajectory_context",
+        "orientation": "increasing_edge_probability",
+        "sampling_rule": "adjacent samples in the declared probability sweep",
+        "sample_context": "largest adjacent ensemble-mean drop; no declared threshold discriminant"
+      },
+      "policy_refs": [
+        "paper11.percolation.ensemble=32",
+        "paper11.percolation.seed=42",
+        "paper11.percolation.word_cutoff=6",
+        "paper11.percolation.largest_sampled_drop"
+      ],
+      "claim_status": "Computational Observation",
+      "evidence_artifact": "experiments/paper11/results/percolation_diagnostic_v1.json",
+      "evidence_contract": {
+        "schema": "paper11-percolation-diagnostic-v1.0",
+        "sha256": "a66fc7f8857ab788e0b715a378c709cf39455ab1233656af36dbfd5b0ec49fdf",
+        "producer": "experiments/paper11/validation/percolation_diagnostic.py",
+        "producer_sha256": "edcee431f977230ce234e96fb89d687d363be63fdd32ced0e35e7101b4a65533"
+      },
+      "upstream_wall_admission": {
+        "status": "not_admitted",
+        "owner": "domain_source",
+        "owner_ref": "paper11",
+        "evidence_ref": "experiments/paper11/results/percolation_diagnostic_v1.json"
+      },
+      "paper11_corpus_inclusion": {
+        "included": true,
+        "entry_kind": "wall_context_record",
+        "bundle_kind": null,
+        "record_role": "trajectory_diagnostic",
+        "provenance_ref": "experiments/paper11/results/percolation_diagnostic_v1.json",
+        "reason": "retained as a bounded diagnostic with an explicit negative promotion boundary"
+      }
+    },
+    {
+      "source_record_id": "C-grn-terminal-basin-loss",
+      "realization_kind": "diagnostic_analogue",
+      "record_role": "wall_event",
+      "spectrum_partition": "analogue_morphology",
+      "primary_field": "state.terminal_component_count",
+      "field_family": "state",
+      "primary_carrier_id": "carrier.attractor_basin_descriptor",
+      "context_carrier_ids": [
+        "carrier.terminal_sector_descriptor"
+      ],
+      "domain_or_trajectory_ref": "paper11.grn_regulatory_edge_strength",
+      "orientation_or_incident_strata": {
+        "kind": "oriented_trajectory",
+        "orientation": "decreasing_regulatory_edge_strength",
+        "sampling_rule": "adjacent controlled initial-condition samples",
+        "event_interval": "[0.525,0.520]"
+      },
+      "policy_refs": [
+        "paper11.grn.fixed_initial_condition_grid",
+        "paper11.grn.attractor_clustering_tolerance=0.5",
+        "paper11.grn.refined_step=0.005"
+      ],
+      "claim_status": "Computational Observation",
+      "evidence_artifact": "experiments/paper11/results/grn_terminal_basin_loss_v1.json",
+      "evidence_contract": {
+        "schema": "paper11-grn-terminal-basin-loss-v1.0",
+        "sha256": "9fcfc931f1405aade7d1615fa38677ffcc13897b3f0f1b4ac6d6196395fd1294",
+        "producer": "experiments/paper11/validation/grn_toggle_wall.py",
+        "producer_sha256": "827bc5011b3698092f3aa46571f8dc80477b4b98f2f93242c9560b1a9244dff0"
+      },
+      "upstream_wall_admission": {
+        "status": "not_applicable",
+        "owner": null,
+        "owner_ref": null,
+        "evidence_ref": null
+      },
+      "paper11_corpus_inclusion": {
+        "included": true,
+        "entry_kind": "morphology_record_bundle",
+        "bundle_kind": "analogue_morphology_record",
+        "record_role": "wall_event",
+        "provenance_ref": "experiments/paper11/results/grn_terminal_basin_loss_v1.json",
+        "reason": "included as analogue morphology without an upstream strict-wall admission claim"
+      }
+    }
+  ]
+}

@@ -17,8 +17,11 @@ features and avoids codimension or smooth-wall claims unless directly proved.
 
 from __future__ import annotations
 
+import argparse
 import os
 import sys
+from pathlib import Path
+from time import perf_counter
 
 import numpy as np
 from scipy.linalg import logm
@@ -27,8 +30,12 @@ if sys.platform == "win32":
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", ".."))
-from rime.accessibility import AccessibilityEngine  # noqa: E402
+from rime.accessibility import AccessibilityEngine, UNREACHED_DEPTH  # noqa: E402
 from rime.cubieoperator import CubieSpectralOperator  # noqa: E402
+from experiments.observation import (  # noqa: E402
+    utc_now,
+    write_experiment_observation,
+)
 
 
 TOL = 1e-8
@@ -171,9 +178,13 @@ def probe_markov_frozen_pairs() -> list[dict]:
     for name, P in systems:
         Vs, Xs = markov_sof(P)
         audit = AccessibilityEngine(Vs, Xs, tol=TOL, max_depth=MAX_DEPTH).audit()
+        if audit.get("D_max") == UNREACHED_DEPTH:
+            audit["D_max"] = "UNREACHED_AT_CUTOFF"
+        audit["depth_cutoff"] = MAX_DEPTH
         rows.append({"name": name, **audit})
         print(f"  {name:<16s} {audit['R1_pct']:>5.1f}% {audit['frozen_R1']:>6d} "
-              f"{audit['frozen_D']:>5d} {audit['D_repaired']:>5d} {audit['D_max']:>5d}")
+              f"{audit['frozen_D']:>5d} {audit['D_repaired']:>5d} "
+              f"{str(audit['D_max']):>21s}")
     print("  Taxonomy: communicating-class / frozen-pair boundary diagnostics.")
     print()
     return rows
@@ -213,6 +224,53 @@ def probe_graph_gap_sensitivity() -> list[dict]:
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--markov-only",
+        action="store_true",
+        help="run only the bounded Markov diagnostic",
+    )
+    parser.add_argument("--observation-output", type=Path)
+    args = parser.parse_args()
+    started_at = utc_now()
+    started = perf_counter()
+
+    if args.markov_only:
+        markov = probe_markov_frozen_pairs()
+        if args.observation_output:
+            write_experiment_observation(
+                args.observation_output,
+                root=Path(__file__).resolve().parents[2],
+                experiment_id="paper11.markov-frozen-pair-boundary",
+                paper="paper11",
+                command=[
+                    "python",
+                    "experiments/paper11/cross_species_wall_audit.py",
+                    "--markov-only",
+                ],
+                sources=[
+                    "experiments/paper11/cross_species_wall_audit.py",
+                    "experiments/observation.py",
+                    "rime/accessibility.py",
+                ],
+                parameters={"tolerance": TOL, "max_depth": MAX_DEPTH},
+                observations={"markov_rows": markov},
+                claim_status="Computational Observation",
+                claim_scope=(
+                    "Three declared finite Markov matrices under the registered "
+                    "logarithm/skew diagnostic convention."
+                ),
+                limitations=[
+                    "This is a bounded diagnostic, not an admitted wall event.",
+                    "The cached observation does not replace release recomputation.",
+                    "No general Markov-chain wall theorem is claimed.",
+                ],
+                started_at_utc=started_at,
+                elapsed_seconds=perf_counter() - started,
+                distributions=["numpy", "scipy"],
+            )
+        return
+
     section("Paper XI Cross-Species Wall Taxonomy Audit")
     print("Claim status: taxonomy evidence; no ADE classification theorem is claimed.")
     print()
@@ -236,6 +294,35 @@ def main() -> None:
     print("Conclusion: registered species expose distinct wall/taxonomy types.")
     print("ADE classification, if used, should be restricted to smooth discriminant maps.")
     print("Done.")
+
+    if args.observation_output:
+        write_experiment_observation(
+            args.observation_output,
+            root=Path(__file__).resolve().parents[2],
+            experiment_id="paper11.markov-frozen-pair-boundary",
+            paper="paper11",
+            command=["python", "experiments/paper11/cross_species_wall_audit.py"],
+            sources=[
+                "experiments/paper11/cross_species_wall_audit.py",
+                "experiments/observation.py",
+                "rime/accessibility.py",
+            ],
+            parameters={"tolerance": TOL, "max_depth": MAX_DEPTH},
+            observations={"markov_rows": markov},
+            claim_status="Computational Observation",
+            claim_scope=(
+                "Three declared finite Markov matrices under the registered "
+                "logarithm/skew diagnostic convention."
+            ),
+            limitations=[
+                "This is a bounded diagnostic, not an admitted wall event.",
+                "The cached observation does not replace release recomputation.",
+                "No general Markov-chain wall theorem is claimed.",
+            ],
+            started_at_utc=started_at,
+            elapsed_seconds=perf_counter() - started,
+            distributions=["numpy", "scipy"],
+        )
 
 
 if __name__ == "__main__":

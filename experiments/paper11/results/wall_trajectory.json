@@ -1,4 +1,7 @@
 {
+  "record_version": "paper11-wall-trajectory-v1.0",
+  "claim_status": "Computational Certificate",
+  "producer": "experiments/paper11/wall_trajectory.py",
   "GridWorld obstacle path": {
     "parameters": [
       "obstacle=(2, 2)",
@@ -10,46 +13,111 @@
       "n_transitions": 2,
       "n_sectors": 25,
       "total_pairs": 600,
-      "n_events": 190,
-      "n_changed_pairs": 140,
-      "n_stable_pairs": 460,
-      "event_counts_by_step": [
-        100,
-        90
+      "n_pair_events": 236,
+      "n_field_changes": 314,
+      "n_changed_pairs": 174,
+      "n_stable_pairs": 426,
+      "pair_event_counts_by_step": [
+        132,
+        104
       ],
-      "event_density_by_step": [
-        0.16666666666666666,
-        0.15
+      "field_change_counts_by_step": [
+        180,
+        134
       ],
-      "event_kind_counts": {
-        "repair": 92,
-        "terminalization": 86,
-        "support_gain": 0,
-        "support_loss": 0,
-        "layer_change": 12
-      }
+      "pair_event_density_by_step": [
+        0.22,
+        0.17333333333333334
+      ],
+      "field_change_kind_counts": {
+        "first_hit_change": 218,
+        "support_gain": 54,
+        "support_loss": 42
+      },
+      "event_tag_counts": {
+        "REPAIR": 92
+      },
+      "declared_field_keys": [
+        "operator.direct_support[Y]",
+        "word.support[Y,d=2]",
+        "lie.simple_commutator_support[X]",
+        "word.depth_truncated[Y,cutoff=6]"
+      ],
+      "unreached_state": "UNREACHED_AT_CUTOFF",
+      "cutoff": 6
     },
-    "status_counts": [
+    "field_state_counts": [
       {
-        "direct": 72,
-        "word_bridge": 104,
-        "lie_bridge": 0,
-        "deeper": 356,
-        "terminal": 68
+        "operator.direct_support[Y]": {
+          "false": 553,
+          "true": 72
+        },
+        "word.support[Y,d=2]": {
+          "false": 521,
+          "true": 104
+        },
+        "lie.simple_commutator_support[X]": {
+          "false": 617,
+          "true": 8
+        },
+        "word.depth_truncated[Y,cutoff=6]": {
+          "0": 25,
+          "1": 72,
+          "2": 104,
+          "3": 112,
+          "4": 112,
+          "5": 88,
+          "UNREACHED_AT_CUTOFF": 68,
+          "6": 44
+        }
       },
       {
-        "direct": 72,
-        "word_bridge": 108,
-        "lie_bridge": 0,
-        "deeper": 352,
-        "terminal": 68
+        "operator.direct_support[Y]": {
+          "false": 553,
+          "true": 72
+        },
+        "word.support[Y,d=2]": {
+          "false": 517,
+          "true": 108
+        },
+        "lie.simple_commutator_support[X]": {
+          "false": 617,
+          "true": 8
+        },
+        "word.depth_truncated[Y,cutoff=6]": {
+          "0": 25,
+          "1": 72,
+          "2": 108,
+          "3": 120,
+          "4": 110,
+          "UNREACHED_AT_CUTOFF": 68,
+          "5": 80,
+          "6": 42
+        }
       },
       {
-        "direct": 76,
-        "word_bridge": 118,
-        "lie_bridge": 0,
-        "deeper": 344,
-        "terminal": 62
+        "operator.direct_support[Y]": {
+          "false": 549,
+          "true": 76
+        },
+        "word.support[Y,d=2]": {
+          "false": 507,
+          "true": 118
+        },
+        "lie.simple_commutator_support[X]": {
+          "false": 623,
+          "true": 2
+        },
+        "word.depth_truncated[Y,cutoff=6]": {
+          "0": 25,
+          "UNREACHED_AT_CUTOFF": 62,
+          "1": 76,
+          "2": 118,
+          "3": 128,
+          "4": 110,
+          "5": 72,
+          "6": 34
+        }
       }
     ],
     "events": [
@@ -61,9 +129,21 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "word_bridge",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": true,
+            "after_state": false,
+            "change_kind": "support_loss"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 2,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -73,9 +153,35 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "terminal",
-        "status_after": "deeper",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 4,
+            "change_kind": "first_hit_change"
+          }
+        ]
+      },
+      {
+        "pair": [
+          1,
+          5
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "lie.simple_commutator_support[X]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          }
+        ]
       },
       {
         "pair": [
@@ -85,9 +191,39 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "direct",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "operator.direct_support[Y]",
+            "before_state": true,
+            "after_state": false,
+            "change_kind": "support_loss"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 1,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
+      },
+      {
+        "pair": [
+          1,
+          7
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "lie.simple_commutator_support[X]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          }
+        ]
       },
       {
         "pair": [
@@ -97,9 +233,21 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "word_bridge",
-        "status_after": "deeper",
-        "kind": "layer_change"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": true,
+            "after_state": false,
+            "change_kind": "support_loss"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 2,
+            "after_state": 4,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -109,9 +257,53 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "terminal",
-        "status_after": "deeper",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 3,
+            "change_kind": "first_hit_change"
+          }
+        ]
+      },
+      {
+        "pair": [
+          1,
+          16
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 3,
+            "after_state": 5,
+            "change_kind": "first_hit_change"
+          }
+        ]
+      },
+      {
+        "pair": [
+          1,
+          21
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 4,
+            "after_state": 6,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -121,9 +313,21 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "word_bridge",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": true,
+            "after_state": false,
+            "change_kind": "support_loss"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 2,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -133,9 +337,59 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "terminal",
-        "status_after": "word_bridge",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 2,
+            "change_kind": "first_hit_change"
+          }
+        ]
+      },
+      {
+        "pair": [
+          2,
+          17
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 5,
+            "after_state": 3,
+            "change_kind": "first_hit_change"
+          }
+        ]
+      },
+      {
+        "pair": [
+          2,
+          22
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 6,
+            "after_state": 4,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -145,9 +399,15 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 3,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -157,9 +417,17 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "terminal",
-        "status_after": "deeper",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 3,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -169,9 +437,15 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 4,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -181,9 +455,35 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "terminal",
-        "status_after": "deeper",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 4,
+            "change_kind": "first_hit_change"
+          }
+        ]
+      },
+      {
+        "pair": [
+          5,
+          1
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "lie.simple_commutator_support[X]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          }
+        ]
       },
       {
         "pair": [
@@ -193,9 +493,21 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "direct",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "operator.direct_support[Y]",
+            "before_state": true,
+            "after_state": false,
+            "change_kind": "support_loss"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 1,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -205,9 +517,75 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "word_bridge",
-        "status_after": "deeper",
-        "kind": "layer_change"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": true,
+            "after_state": false,
+            "change_kind": "support_loss"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 2,
+            "after_state": 4,
+            "change_kind": "first_hit_change"
+          }
+        ]
+      },
+      {
+        "pair": [
+          5,
+          8
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 3,
+            "after_state": 5,
+            "change_kind": "first_hit_change"
+          }
+        ]
+      },
+      {
+        "pair": [
+          5,
+          9
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 4,
+            "after_state": 6,
+            "change_kind": "first_hit_change"
+          }
+        ]
+      },
+      {
+        "pair": [
+          5,
+          11
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "lie.simple_commutator_support[X]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          }
+        ]
       },
       {
         "pair": [
@@ -217,9 +595,17 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "terminal",
-        "status_after": "deeper",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 3,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -229,9 +615,21 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "word_bridge",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": true,
+            "after_state": false,
+            "change_kind": "support_loss"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 2,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -241,9 +639,21 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "direct",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "operator.direct_support[Y]",
+            "before_state": true,
+            "after_state": false,
+            "change_kind": "support_loss"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 1,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -253,9 +663,21 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "word_bridge",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": true,
+            "after_state": false,
+            "change_kind": "support_loss"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 2,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -265,9 +687,15 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 3,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -277,9 +705,15 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 4,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -289,9 +723,21 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "direct",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "operator.direct_support[Y]",
+            "before_state": true,
+            "after_state": false,
+            "change_kind": "support_loss"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 1,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -301,9 +747,21 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "direct",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "operator.direct_support[Y]",
+            "before_state": true,
+            "after_state": false,
+            "change_kind": "support_loss"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 1,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -313,9 +771,21 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "word_bridge",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": true,
+            "after_state": false,
+            "change_kind": "support_loss"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 2,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -325,9 +795,15 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 3,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -337,9 +813,21 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "word_bridge",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": true,
+            "after_state": false,
+            "change_kind": "support_loss"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 2,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -349,9 +837,21 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "direct",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "operator.direct_support[Y]",
+            "before_state": true,
+            "after_state": false,
+            "change_kind": "support_loss"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 1,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -361,9 +861,15 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 3,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -373,9 +879,15 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 4,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -385,9 +897,15 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 3,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -397,9 +915,21 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "word_bridge",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": true,
+            "after_state": false,
+            "change_kind": "support_loss"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 2,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -409,9 +939,15 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 3,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -421,9 +957,15 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 4,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -433,9 +975,15 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 5,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -445,9 +993,15 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 4,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -457,9 +1011,15 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 3,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -469,9 +1029,15 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 4,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -481,9 +1047,15 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 5,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -493,9 +1065,33 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 6,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
+      },
+      {
+        "pair": [
+          7,
+          1
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "lie.simple_commutator_support[X]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          }
+        ]
       },
       {
         "pair": [
@@ -505,9 +1101,21 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "word_bridge",
-        "status_after": "deeper",
-        "kind": "layer_change"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": true,
+            "after_state": false,
+            "change_kind": "support_loss"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 2,
+            "after_state": 4,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -517,9 +1125,21 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "direct",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "operator.direct_support[Y]",
+            "before_state": true,
+            "after_state": false,
+            "change_kind": "support_loss"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 1,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -529,9 +1149,41 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "terminal",
-        "status_after": "direct",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "operator.direct_support[Y]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 1,
+            "change_kind": "first_hit_change"
+          }
+        ]
+      },
+      {
+        "pair": [
+          7,
+          13
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "lie.simple_commutator_support[X]",
+            "before_state": true,
+            "after_state": false,
+            "change_kind": "support_loss"
+          }
+        ]
       },
       {
         "pair": [
@@ -541,9 +1193,57 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "deeper",
-        "status_after": "word_bridge",
-        "kind": "layer_change"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 4,
+            "after_state": 2,
+            "change_kind": "first_hit_change"
+          }
+        ]
+      },
+      {
+        "pair": [
+          7,
+          22
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 5,
+            "after_state": 3,
+            "change_kind": "first_hit_change"
+          }
+        ]
+      },
+      {
+        "pair": [
+          8,
+          5
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 3,
+            "after_state": 5,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -553,9 +1253,21 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "word_bridge",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": true,
+            "after_state": false,
+            "change_kind": "support_loss"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 2,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -565,9 +1277,41 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "terminal",
-        "status_after": "word_bridge",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 2,
+            "change_kind": "first_hit_change"
+          }
+        ]
+      },
+      {
+        "pair": [
+          9,
+          5
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 4,
+            "after_state": 6,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -577,9 +1321,15 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 3,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -589,9 +1339,17 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "terminal",
-        "status_after": "deeper",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 3,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -601,9 +1359,21 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "word_bridge",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": true,
+            "after_state": false,
+            "change_kind": "support_loss"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 2,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -613,9 +1383,59 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "terminal",
-        "status_after": "word_bridge",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 2,
+            "change_kind": "first_hit_change"
+          }
+        ]
+      },
+      {
+        "pair": [
+          10,
+          13
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 5,
+            "after_state": 3,
+            "change_kind": "first_hit_change"
+          }
+        ]
+      },
+      {
+        "pair": [
+          10,
+          14
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 6,
+            "after_state": 4,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -625,9 +1445,39 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "word_bridge",
-        "status_after": "deeper",
-        "kind": "layer_change"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": true,
+            "after_state": false,
+            "change_kind": "support_loss"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 2,
+            "after_state": 4,
+            "change_kind": "first_hit_change"
+          }
+        ]
+      },
+      {
+        "pair": [
+          11,
+          5
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "lie.simple_commutator_support[X]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          }
+        ]
       },
       {
         "pair": [
@@ -637,9 +1487,21 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "direct",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "operator.direct_support[Y]",
+            "before_state": true,
+            "after_state": false,
+            "change_kind": "support_loss"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 1,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -649,9 +1511,23 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "terminal",
-        "status_after": "direct",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "operator.direct_support[Y]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 1,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -661,9 +1537,57 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "deeper",
-        "status_after": "word_bridge",
-        "kind": "layer_change"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 4,
+            "after_state": 2,
+            "change_kind": "first_hit_change"
+          }
+        ]
+      },
+      {
+        "pair": [
+          11,
+          14
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 5,
+            "after_state": 3,
+            "change_kind": "first_hit_change"
+          }
+        ]
+      },
+      {
+        "pair": [
+          11,
+          17
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "lie.simple_commutator_support[X]",
+            "before_state": true,
+            "after_state": false,
+            "change_kind": "support_loss"
+          }
+        ]
       },
       {
         "pair": [
@@ -673,9 +1597,17 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "terminal",
-        "status_after": "deeper",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 4,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -685,9 +1617,17 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "terminal",
-        "status_after": "deeper",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 3,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -697,9 +1637,23 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "terminal",
-        "status_after": "word_bridge",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 2,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -709,9 +1663,17 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "terminal",
-        "status_after": "deeper",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 3,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -721,9 +1683,17 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "terminal",
-        "status_after": "deeper",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 4,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -733,9 +1703,17 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "terminal",
-        "status_after": "deeper",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 3,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -745,9 +1723,23 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "terminal",
-        "status_after": "direct",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "operator.direct_support[Y]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 1,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -757,9 +1749,23 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "terminal",
-        "status_after": "word_bridge",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 2,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -769,9 +1775,17 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "terminal",
-        "status_after": "deeper",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 3,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -781,9 +1795,23 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "terminal",
-        "status_after": "word_bridge",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 2,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -793,9 +1821,23 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "terminal",
-        "status_after": "direct",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "operator.direct_support[Y]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 1,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -805,9 +1847,23 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "terminal",
-        "status_after": "direct",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "operator.direct_support[Y]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 1,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -817,9 +1873,23 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "terminal",
-        "status_after": "word_bridge",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 2,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -829,9 +1899,17 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "terminal",
-        "status_after": "deeper",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 3,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -841,9 +1919,23 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "terminal",
-        "status_after": "word_bridge",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 2,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -853,9 +1945,23 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "terminal",
-        "status_after": "direct",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "operator.direct_support[Y]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 1,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -865,9 +1971,23 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "terminal",
-        "status_after": "word_bridge",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 2,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -877,9 +1997,17 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "terminal",
-        "status_after": "deeper",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 3,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -889,9 +2017,17 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "terminal",
-        "status_after": "deeper",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 4,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -901,9 +2037,17 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "terminal",
-        "status_after": "deeper",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 3,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -913,9 +2057,23 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "terminal",
-        "status_after": "word_bridge",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 2,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -925,9 +2083,17 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "terminal",
-        "status_after": "deeper",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 3,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -937,9 +2103,17 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "terminal",
-        "status_after": "deeper",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 4,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -949,9 +2123,51 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 3,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
+      },
+      {
+        "pair": [
+          13,
+          7
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "lie.simple_commutator_support[X]",
+            "before_state": true,
+            "after_state": false,
+            "change_kind": "support_loss"
+          }
+        ]
+      },
+      {
+        "pair": [
+          13,
+          10
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 5,
+            "after_state": 3,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -961,9 +2177,21 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "deeper",
-        "status_after": "word_bridge",
-        "kind": "layer_change"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 4,
+            "after_state": 2,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -973,9 +2201,41 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "terminal",
-        "status_after": "direct",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "operator.direct_support[Y]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 1,
+            "change_kind": "first_hit_change"
+          }
+        ]
+      },
+      {
+        "pair": [
+          13,
+          17
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "lie.simple_commutator_support[X]",
+            "before_state": true,
+            "after_state": false,
+            "change_kind": "support_loss"
+          }
+        ]
       },
       {
         "pair": [
@@ -985,9 +2245,51 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 4,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
+      },
+      {
+        "pair": [
+          14,
+          10
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 6,
+            "after_state": 4,
+            "change_kind": "first_hit_change"
+          }
+        ]
+      },
+      {
+        "pair": [
+          14,
+          11
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 5,
+            "after_state": 3,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -997,9 +2299,23 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "terminal",
-        "status_after": "word_bridge",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 2,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1009,9 +2325,15 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 3,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1021,9 +2343,35 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "terminal",
-        "status_after": "deeper",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 3,
+            "change_kind": "first_hit_change"
+          }
+        ]
+      },
+      {
+        "pair": [
+          16,
+          1
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 3,
+            "after_state": 5,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1033,9 +2381,21 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "word_bridge",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": true,
+            "after_state": false,
+            "change_kind": "support_loss"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 2,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1045,9 +2405,41 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "terminal",
-        "status_after": "word_bridge",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 2,
+            "change_kind": "first_hit_change"
+          }
+        ]
+      },
+      {
+        "pair": [
+          17,
+          2
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 5,
+            "after_state": 3,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1057,9 +2449,15 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 3,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1069,9 +2467,39 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "deeper",
-        "status_after": "word_bridge",
-        "kind": "layer_change"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 4,
+            "after_state": 2,
+            "change_kind": "first_hit_change"
+          }
+        ]
+      },
+      {
+        "pair": [
+          17,
+          11
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "lie.simple_commutator_support[X]",
+            "before_state": true,
+            "after_state": false,
+            "change_kind": "support_loss"
+          }
+        ]
       },
       {
         "pair": [
@@ -1081,9 +2509,41 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "terminal",
-        "status_after": "direct",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "operator.direct_support[Y]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 1,
+            "change_kind": "first_hit_change"
+          }
+        ]
+      },
+      {
+        "pair": [
+          17,
+          13
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "lie.simple_commutator_support[X]",
+            "before_state": true,
+            "after_state": false,
+            "change_kind": "support_loss"
+          }
+        ]
       },
       {
         "pair": [
@@ -1093,9 +2553,15 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 4,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1105,9 +2571,23 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "terminal",
-        "status_after": "word_bridge",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 2,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1117,9 +2597,15 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 5,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1129,9 +2615,17 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "terminal",
-        "status_after": "deeper",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 3,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1141,9 +2635,15 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 4,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1153,9 +2653,35 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "terminal",
-        "status_after": "deeper",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 4,
+            "change_kind": "first_hit_change"
+          }
+        ]
+      },
+      {
+        "pair": [
+          21,
+          1
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 4,
+            "after_state": 6,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1165,9 +2691,15 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 3,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1177,9 +2709,35 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "terminal",
-        "status_after": "deeper",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 3,
+            "change_kind": "first_hit_change"
+          }
+        ]
+      },
+      {
+        "pair": [
+          22,
+          2
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 6,
+            "after_state": 4,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1189,9 +2747,33 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 4,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
+      },
+      {
+        "pair": [
+          22,
+          7
+        ],
+        "step": 1,
+        "param_before": "obstacle=(2, 2)",
+        "param_after": "obstacle=(1, 1)",
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 5,
+            "after_state": 3,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1201,9 +2783,23 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "terminal",
-        "status_after": "word_bridge",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 2,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1213,9 +2809,15 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 5,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1225,9 +2827,17 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "terminal",
-        "status_after": "deeper",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 3,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1237,9 +2847,15 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 6,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1249,9 +2865,17 @@
         "step": 1,
         "param_before": "obstacle=(2, 2)",
         "param_after": "obstacle=(1, 1)",
-        "status_before": "terminal",
-        "status_after": "deeper",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 4,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1261,9 +2885,21 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "direct",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "operator.direct_support[Y]",
+            "before_state": true,
+            "after_state": false,
+            "change_kind": "support_loss"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 1,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1273,9 +2909,21 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "word_bridge",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": true,
+            "after_state": false,
+            "change_kind": "support_loss"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 2,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1285,9 +2933,15 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 3,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1297,9 +2951,15 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 4,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1309,9 +2969,21 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "direct",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "operator.direct_support[Y]",
+            "before_state": true,
+            "after_state": false,
+            "change_kind": "support_loss"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 1,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1321,9 +2993,15 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 3,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1333,9 +3011,15 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 4,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1345,9 +3029,15 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 5,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1357,9 +3047,21 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "word_bridge",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": true,
+            "after_state": false,
+            "change_kind": "support_loss"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 2,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1369,9 +3071,15 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 3,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1381,9 +3089,15 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 4,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1393,9 +3107,15 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 5,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1405,9 +3125,15 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 6,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1417,9 +3143,15 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 3,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1429,9 +3161,15 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 4,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1441,9 +3179,15 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 5,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1453,9 +3197,15 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 6,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1465,9 +3215,15 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 4,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1477,9 +3233,15 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 5,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1489,9 +3251,15 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 6,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1501,9 +3269,21 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "direct",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "operator.direct_support[Y]",
+            "before_state": true,
+            "after_state": false,
+            "change_kind": "support_loss"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 1,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1513,9 +3293,41 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "terminal",
-        "status_after": "direct",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "operator.direct_support[Y]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 1,
+            "change_kind": "first_hit_change"
+          }
+        ]
+      },
+      {
+        "pair": [
+          1,
+          7
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "lie.simple_commutator_support[X]",
+            "before_state": true,
+            "after_state": false,
+            "change_kind": "support_loss"
+          }
+        ]
       },
       {
         "pair": [
@@ -1525,9 +3337,57 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "deeper",
-        "status_after": "word_bridge",
-        "kind": "layer_change"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 4,
+            "after_state": 2,
+            "change_kind": "first_hit_change"
+          }
+        ]
+      },
+      {
+        "pair": [
+          1,
+          16
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 5,
+            "after_state": 3,
+            "change_kind": "first_hit_change"
+          }
+        ]
+      },
+      {
+        "pair": [
+          1,
+          21
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 6,
+            "after_state": 4,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1537,9 +3397,21 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "word_bridge",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": true,
+            "after_state": false,
+            "change_kind": "support_loss"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 2,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1549,9 +3421,23 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "terminal",
-        "status_after": "word_bridge",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 2,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1561,9 +3447,15 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 3,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1573,9 +3465,17 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "terminal",
-        "status_after": "deeper",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 3,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1585,9 +3485,15 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 4,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1597,9 +3503,17 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "terminal",
-        "status_after": "deeper",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 4,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1609,9 +3523,21 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "direct",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "operator.direct_support[Y]",
+            "before_state": true,
+            "after_state": false,
+            "change_kind": "support_loss"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 1,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1621,9 +3547,23 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "terminal",
-        "status_after": "direct",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "operator.direct_support[Y]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 1,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1633,9 +3573,75 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "deeper",
-        "status_after": "word_bridge",
-        "kind": "layer_change"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 4,
+            "after_state": 2,
+            "change_kind": "first_hit_change"
+          }
+        ]
+      },
+      {
+        "pair": [
+          5,
+          8
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 5,
+            "after_state": 3,
+            "change_kind": "first_hit_change"
+          }
+        ]
+      },
+      {
+        "pair": [
+          5,
+          9
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 6,
+            "after_state": 4,
+            "change_kind": "first_hit_change"
+          }
+        ]
+      },
+      {
+        "pair": [
+          5,
+          11
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "lie.simple_commutator_support[X]",
+            "before_state": true,
+            "after_state": false,
+            "change_kind": "support_loss"
+          }
+        ]
       },
       {
         "pair": [
@@ -1645,9 +3651,23 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "terminal",
-        "status_after": "direct",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "operator.direct_support[Y]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 1,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1657,9 +3677,23 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "terminal",
-        "status_after": "word_bridge",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 2,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1669,9 +3703,17 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "terminal",
-        "status_after": "deeper",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 3,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1681,9 +3723,17 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "terminal",
-        "status_after": "deeper",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 4,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1693,9 +3743,23 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "terminal",
-        "status_after": "direct",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "operator.direct_support[Y]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 1,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1705,9 +3769,23 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "terminal",
-        "status_after": "direct",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "operator.direct_support[Y]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 1,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1717,9 +3795,23 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "terminal",
-        "status_after": "word_bridge",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 2,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1729,9 +3821,17 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "terminal",
-        "status_after": "deeper",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 3,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1741,9 +3841,23 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "terminal",
-        "status_after": "word_bridge",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 2,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1753,9 +3867,23 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "terminal",
-        "status_after": "direct",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "operator.direct_support[Y]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 1,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1765,9 +3893,23 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "terminal",
-        "status_after": "word_bridge",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 2,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1777,9 +3919,17 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "terminal",
-        "status_after": "deeper",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 3,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1789,9 +3939,17 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "terminal",
-        "status_after": "deeper",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 4,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1801,9 +3959,17 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "terminal",
-        "status_after": "deeper",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 3,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1813,9 +3979,23 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "terminal",
-        "status_after": "word_bridge",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 2,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1825,9 +4005,17 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "terminal",
-        "status_after": "deeper",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 3,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1837,9 +4025,17 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "terminal",
-        "status_after": "deeper",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 4,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1849,9 +4045,17 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "terminal",
-        "status_after": "deeper",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 5,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1861,9 +4065,17 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "terminal",
-        "status_after": "deeper",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 4,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1873,9 +4085,17 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "terminal",
-        "status_after": "deeper",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 3,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1885,9 +4105,17 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "terminal",
-        "status_after": "deeper",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 4,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1897,9 +4125,17 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "terminal",
-        "status_after": "deeper",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 5,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1909,9 +4145,17 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "terminal",
-        "status_after": "deeper",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 6,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1921,9 +4165,33 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 3,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
+      },
+      {
+        "pair": [
+          7,
+          1
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "lie.simple_commutator_support[X]",
+            "before_state": true,
+            "after_state": false,
+            "change_kind": "support_loss"
+          }
+        ]
       },
       {
         "pair": [
@@ -1933,9 +4201,21 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "deeper",
-        "status_after": "word_bridge",
-        "kind": "layer_change"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 4,
+            "after_state": 2,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1945,9 +4225,41 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "terminal",
-        "status_after": "direct",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "operator.direct_support[Y]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 1,
+            "change_kind": "first_hit_change"
+          }
+        ]
+      },
+      {
+        "pair": [
+          7,
+          11
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "lie.simple_commutator_support[X]",
+            "before_state": true,
+            "after_state": false,
+            "change_kind": "support_loss"
+          }
+        ]
       },
       {
         "pair": [
@@ -1957,9 +4269,33 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 4,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
+      },
+      {
+        "pair": [
+          8,
+          5
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 5,
+            "after_state": 3,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1969,9 +4305,23 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "terminal",
-        "status_after": "word_bridge",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 2,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1981,9 +4331,33 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 5,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
+      },
+      {
+        "pair": [
+          9,
+          5
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 6,
+            "after_state": 4,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -1993,9 +4367,17 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "terminal",
-        "status_after": "deeper",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 3,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -2005,9 +4387,21 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "word_bridge",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": true,
+            "after_state": false,
+            "change_kind": "support_loss"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 2,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -2017,9 +4411,23 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "terminal",
-        "status_after": "word_bridge",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 2,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -2029,9 +4437,15 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 3,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -2041,9 +4455,39 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "deeper",
-        "status_after": "word_bridge",
-        "kind": "layer_change"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 4,
+            "after_state": 2,
+            "change_kind": "first_hit_change"
+          }
+        ]
+      },
+      {
+        "pair": [
+          11,
+          5
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "lie.simple_commutator_support[X]",
+            "before_state": true,
+            "after_state": false,
+            "change_kind": "support_loss"
+          }
+        ]
       },
       {
         "pair": [
@@ -2053,9 +4497,41 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "terminal",
-        "status_after": "direct",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "operator.direct_support[Y]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 1,
+            "change_kind": "first_hit_change"
+          }
+        ]
+      },
+      {
+        "pair": [
+          11,
+          7
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "lie.simple_commutator_support[X]",
+            "before_state": true,
+            "after_state": false,
+            "change_kind": "support_loss"
+          }
+        ]
       },
       {
         "pair": [
@@ -2065,9 +4541,15 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 4,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -2077,9 +4559,23 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "terminal",
-        "status_after": "word_bridge",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 2,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -2089,9 +4585,15 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 5,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -2101,9 +4603,17 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "terminal",
-        "status_after": "deeper",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 3,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -2113,9 +4623,15 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 6,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -2125,9 +4641,17 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "terminal",
-        "status_after": "deeper",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 4,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -2137,9 +4661,15 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 3,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -2149,9 +4679,17 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "terminal",
-        "status_after": "deeper",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 3,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -2161,9 +4699,33 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 4,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
+      },
+      {
+        "pair": [
+          16,
+          1
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 5,
+            "after_state": 3,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -2173,9 +4735,23 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "terminal",
-        "status_after": "word_bridge",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 2,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -2185,9 +4761,15 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 5,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -2197,9 +4779,17 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "terminal",
-        "status_after": "deeper",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 3,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -2209,9 +4799,15 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 6,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -2221,9 +4817,17 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "terminal",
-        "status_after": "deeper",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 4,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -2233,9 +4837,17 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "terminal",
-        "status_after": "deeper",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 5,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -2245,9 +4857,15 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 4,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -2257,9 +4875,17 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "terminal",
-        "status_after": "deeper",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 4,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -2269,9 +4895,33 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 5,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
+      },
+      {
+        "pair": [
+          21,
+          1
+        ],
+        "step": 2,
+        "param_before": "obstacle=(1, 1)",
+        "param_after": "obstacle=(0, 0)",
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 6,
+            "after_state": 4,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -2281,9 +4931,17 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "terminal",
-        "status_after": "deeper",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 3,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -2293,9 +4951,15 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "deeper",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 6,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -2305,9 +4969,17 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "terminal",
-        "status_after": "deeper",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 4,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -2317,9 +4989,17 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "terminal",
-        "status_after": "deeper",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 5,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -2329,9 +5009,17 @@
         "step": 2,
         "param_before": "obstacle=(1, 1)",
         "param_after": "obstacle=(0, 0)",
-        "status_before": "terminal",
-        "status_after": "deeper",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 6,
+            "change_kind": "first_hit_change"
+          }
+        ]
       }
     ]
   },
@@ -2364,10 +5052,11 @@
       "n_transitions": 20,
       "n_sectors": 3,
       "total_pairs": 6,
-      "n_events": 4,
+      "n_pair_events": 4,
+      "n_field_changes": 10,
       "n_changed_pairs": 4,
       "n_stable_pairs": 2,
-      "event_counts_by_step": [
+      "pair_event_counts_by_step": [
         4,
         0,
         0,
@@ -2389,7 +5078,29 @@
         0,
         0
       ],
-      "event_density_by_step": [
+      "field_change_counts_by_step": [
+        10,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "pair_event_density_by_step": [
         0.6666666666666666,
         0.0,
         0.0,
@@ -2411,161 +5122,419 @@
         0.0,
         0.0
       ],
-      "event_kind_counts": {
-        "repair": 4,
-        "terminalization": 0,
-        "support_gain": 0,
-        "support_loss": 0,
-        "layer_change": 0
-      }
+      "field_change_kind_counts": {
+        "first_hit_change": 4,
+        "support_gain": 6
+      },
+      "event_tag_counts": {
+        "REPAIR": 4
+      },
+      "declared_field_keys": [
+        "operator.direct_support[Y]",
+        "word.support[Y,d=2]",
+        "lie.simple_commutator_support[X]",
+        "word.depth_truncated[Y,cutoff=6]"
+      ],
+      "unreached_state": "UNREACHED_AT_CUTOFF",
+      "cutoff": 6
     },
-    "status_counts": [
+    "field_state_counts": [
       {
-        "direct": 2,
-        "word_bridge": 0,
-        "lie_bridge": 0,
-        "deeper": 0,
-        "terminal": 4
+        "operator.direct_support[Y]": {
+          "false": 7,
+          "true": 2
+        },
+        "word.support[Y,d=2]": {
+          "false": 9
+        },
+        "lie.simple_commutator_support[X]": {
+          "false": 9
+        },
+        "word.depth_truncated[Y,cutoff=6]": {
+          "0": 3,
+          "UNREACHED_AT_CUTOFF": 4,
+          "1": 2
+        }
       },
       {
-        "direct": 4,
-        "word_bridge": 2,
-        "lie_bridge": 0,
-        "deeper": 0,
-        "terminal": 0
+        "operator.direct_support[Y]": {
+          "false": 5,
+          "true": 4
+        },
+        "word.support[Y,d=2]": {
+          "false": 7,
+          "true": 2
+        },
+        "lie.simple_commutator_support[X]": {
+          "false": 7,
+          "true": 2
+        },
+        "word.depth_truncated[Y,cutoff=6]": {
+          "0": 3,
+          "1": 4,
+          "2": 2
+        }
       },
       {
-        "direct": 4,
-        "word_bridge": 2,
-        "lie_bridge": 0,
-        "deeper": 0,
-        "terminal": 0
+        "operator.direct_support[Y]": {
+          "false": 5,
+          "true": 4
+        },
+        "word.support[Y,d=2]": {
+          "false": 7,
+          "true": 2
+        },
+        "lie.simple_commutator_support[X]": {
+          "false": 7,
+          "true": 2
+        },
+        "word.depth_truncated[Y,cutoff=6]": {
+          "0": 3,
+          "1": 4,
+          "2": 2
+        }
       },
       {
-        "direct": 4,
-        "word_bridge": 2,
-        "lie_bridge": 0,
-        "deeper": 0,
-        "terminal": 0
+        "operator.direct_support[Y]": {
+          "false": 5,
+          "true": 4
+        },
+        "word.support[Y,d=2]": {
+          "false": 7,
+          "true": 2
+        },
+        "lie.simple_commutator_support[X]": {
+          "false": 7,
+          "true": 2
+        },
+        "word.depth_truncated[Y,cutoff=6]": {
+          "0": 3,
+          "1": 4,
+          "2": 2
+        }
       },
       {
-        "direct": 4,
-        "word_bridge": 2,
-        "lie_bridge": 0,
-        "deeper": 0,
-        "terminal": 0
+        "operator.direct_support[Y]": {
+          "false": 5,
+          "true": 4
+        },
+        "word.support[Y,d=2]": {
+          "false": 7,
+          "true": 2
+        },
+        "lie.simple_commutator_support[X]": {
+          "false": 7,
+          "true": 2
+        },
+        "word.depth_truncated[Y,cutoff=6]": {
+          "0": 3,
+          "1": 4,
+          "2": 2
+        }
       },
       {
-        "direct": 4,
-        "word_bridge": 2,
-        "lie_bridge": 0,
-        "deeper": 0,
-        "terminal": 0
+        "operator.direct_support[Y]": {
+          "false": 5,
+          "true": 4
+        },
+        "word.support[Y,d=2]": {
+          "false": 7,
+          "true": 2
+        },
+        "lie.simple_commutator_support[X]": {
+          "false": 7,
+          "true": 2
+        },
+        "word.depth_truncated[Y,cutoff=6]": {
+          "0": 3,
+          "1": 4,
+          "2": 2
+        }
       },
       {
-        "direct": 4,
-        "word_bridge": 2,
-        "lie_bridge": 0,
-        "deeper": 0,
-        "terminal": 0
+        "operator.direct_support[Y]": {
+          "false": 5,
+          "true": 4
+        },
+        "word.support[Y,d=2]": {
+          "false": 7,
+          "true": 2
+        },
+        "lie.simple_commutator_support[X]": {
+          "false": 7,
+          "true": 2
+        },
+        "word.depth_truncated[Y,cutoff=6]": {
+          "0": 3,
+          "1": 4,
+          "2": 2
+        }
       },
       {
-        "direct": 4,
-        "word_bridge": 2,
-        "lie_bridge": 0,
-        "deeper": 0,
-        "terminal": 0
+        "operator.direct_support[Y]": {
+          "false": 5,
+          "true": 4
+        },
+        "word.support[Y,d=2]": {
+          "false": 7,
+          "true": 2
+        },
+        "lie.simple_commutator_support[X]": {
+          "false": 7,
+          "true": 2
+        },
+        "word.depth_truncated[Y,cutoff=6]": {
+          "0": 3,
+          "1": 4,
+          "2": 2
+        }
       },
       {
-        "direct": 4,
-        "word_bridge": 2,
-        "lie_bridge": 0,
-        "deeper": 0,
-        "terminal": 0
+        "operator.direct_support[Y]": {
+          "false": 5,
+          "true": 4
+        },
+        "word.support[Y,d=2]": {
+          "false": 7,
+          "true": 2
+        },
+        "lie.simple_commutator_support[X]": {
+          "false": 7,
+          "true": 2
+        },
+        "word.depth_truncated[Y,cutoff=6]": {
+          "0": 3,
+          "1": 4,
+          "2": 2
+        }
       },
       {
-        "direct": 4,
-        "word_bridge": 2,
-        "lie_bridge": 0,
-        "deeper": 0,
-        "terminal": 0
+        "operator.direct_support[Y]": {
+          "false": 5,
+          "true": 4
+        },
+        "word.support[Y,d=2]": {
+          "false": 7,
+          "true": 2
+        },
+        "lie.simple_commutator_support[X]": {
+          "false": 7,
+          "true": 2
+        },
+        "word.depth_truncated[Y,cutoff=6]": {
+          "0": 3,
+          "1": 4,
+          "2": 2
+        }
       },
       {
-        "direct": 4,
-        "word_bridge": 2,
-        "lie_bridge": 0,
-        "deeper": 0,
-        "terminal": 0
+        "operator.direct_support[Y]": {
+          "false": 5,
+          "true": 4
+        },
+        "word.support[Y,d=2]": {
+          "false": 7,
+          "true": 2
+        },
+        "lie.simple_commutator_support[X]": {
+          "false": 7,
+          "true": 2
+        },
+        "word.depth_truncated[Y,cutoff=6]": {
+          "0": 3,
+          "1": 4,
+          "2": 2
+        }
       },
       {
-        "direct": 4,
-        "word_bridge": 2,
-        "lie_bridge": 0,
-        "deeper": 0,
-        "terminal": 0
+        "operator.direct_support[Y]": {
+          "false": 5,
+          "true": 4
+        },
+        "word.support[Y,d=2]": {
+          "false": 7,
+          "true": 2
+        },
+        "lie.simple_commutator_support[X]": {
+          "false": 7,
+          "true": 2
+        },
+        "word.depth_truncated[Y,cutoff=6]": {
+          "0": 3,
+          "1": 4,
+          "2": 2
+        }
       },
       {
-        "direct": 4,
-        "word_bridge": 2,
-        "lie_bridge": 0,
-        "deeper": 0,
-        "terminal": 0
+        "operator.direct_support[Y]": {
+          "false": 5,
+          "true": 4
+        },
+        "word.support[Y,d=2]": {
+          "false": 7,
+          "true": 2
+        },
+        "lie.simple_commutator_support[X]": {
+          "false": 7,
+          "true": 2
+        },
+        "word.depth_truncated[Y,cutoff=6]": {
+          "0": 3,
+          "1": 4,
+          "2": 2
+        }
       },
       {
-        "direct": 4,
-        "word_bridge": 2,
-        "lie_bridge": 0,
-        "deeper": 0,
-        "terminal": 0
+        "operator.direct_support[Y]": {
+          "false": 5,
+          "true": 4
+        },
+        "word.support[Y,d=2]": {
+          "false": 7,
+          "true": 2
+        },
+        "lie.simple_commutator_support[X]": {
+          "false": 7,
+          "true": 2
+        },
+        "word.depth_truncated[Y,cutoff=6]": {
+          "0": 3,
+          "1": 4,
+          "2": 2
+        }
       },
       {
-        "direct": 4,
-        "word_bridge": 2,
-        "lie_bridge": 0,
-        "deeper": 0,
-        "terminal": 0
+        "operator.direct_support[Y]": {
+          "false": 5,
+          "true": 4
+        },
+        "word.support[Y,d=2]": {
+          "false": 7,
+          "true": 2
+        },
+        "lie.simple_commutator_support[X]": {
+          "false": 7,
+          "true": 2
+        },
+        "word.depth_truncated[Y,cutoff=6]": {
+          "0": 3,
+          "1": 4,
+          "2": 2
+        }
       },
       {
-        "direct": 4,
-        "word_bridge": 2,
-        "lie_bridge": 0,
-        "deeper": 0,
-        "terminal": 0
+        "operator.direct_support[Y]": {
+          "false": 5,
+          "true": 4
+        },
+        "word.support[Y,d=2]": {
+          "false": 7,
+          "true": 2
+        },
+        "lie.simple_commutator_support[X]": {
+          "false": 7,
+          "true": 2
+        },
+        "word.depth_truncated[Y,cutoff=6]": {
+          "0": 3,
+          "1": 4,
+          "2": 2
+        }
       },
       {
-        "direct": 4,
-        "word_bridge": 2,
-        "lie_bridge": 0,
-        "deeper": 0,
-        "terminal": 0
+        "operator.direct_support[Y]": {
+          "false": 5,
+          "true": 4
+        },
+        "word.support[Y,d=2]": {
+          "false": 7,
+          "true": 2
+        },
+        "lie.simple_commutator_support[X]": {
+          "false": 7,
+          "true": 2
+        },
+        "word.depth_truncated[Y,cutoff=6]": {
+          "0": 3,
+          "1": 4,
+          "2": 2
+        }
       },
       {
-        "direct": 4,
-        "word_bridge": 2,
-        "lie_bridge": 0,
-        "deeper": 0,
-        "terminal": 0
+        "operator.direct_support[Y]": {
+          "false": 5,
+          "true": 4
+        },
+        "word.support[Y,d=2]": {
+          "false": 7,
+          "true": 2
+        },
+        "lie.simple_commutator_support[X]": {
+          "false": 7,
+          "true": 2
+        },
+        "word.depth_truncated[Y,cutoff=6]": {
+          "0": 3,
+          "1": 4,
+          "2": 2
+        }
       },
       {
-        "direct": 4,
-        "word_bridge": 2,
-        "lie_bridge": 0,
-        "deeper": 0,
-        "terminal": 0
+        "operator.direct_support[Y]": {
+          "false": 5,
+          "true": 4
+        },
+        "word.support[Y,d=2]": {
+          "false": 7,
+          "true": 2
+        },
+        "lie.simple_commutator_support[X]": {
+          "false": 7,
+          "true": 2
+        },
+        "word.depth_truncated[Y,cutoff=6]": {
+          "0": 3,
+          "1": 4,
+          "2": 2
+        }
       },
       {
-        "direct": 4,
-        "word_bridge": 2,
-        "lie_bridge": 0,
-        "deeper": 0,
-        "terminal": 0
+        "operator.direct_support[Y]": {
+          "false": 5,
+          "true": 4
+        },
+        "word.support[Y,d=2]": {
+          "false": 7,
+          "true": 2
+        },
+        "lie.simple_commutator_support[X]": {
+          "false": 7,
+          "true": 2
+        },
+        "word.depth_truncated[Y,cutoff=6]": {
+          "0": 3,
+          "1": 4,
+          "2": 2
+        }
       },
       {
-        "direct": 4,
-        "word_bridge": 2,
-        "lie_bridge": 0,
-        "deeper": 0,
-        "terminal": 0
+        "operator.direct_support[Y]": {
+          "false": 5,
+          "true": 4
+        },
+        "word.support[Y,d=2]": {
+          "false": 7,
+          "true": 2
+        },
+        "lie.simple_commutator_support[X]": {
+          "false": 7,
+          "true": 2
+        },
+        "word.depth_truncated[Y,cutoff=6]": {
+          "0": 3,
+          "1": 4,
+          "2": 2
+        }
       }
     ],
     "events": [
@@ -2577,9 +5546,23 @@
         "step": 1,
         "param_before": 0.0,
         "param_after": 0.025,
-        "status_before": "terminal",
-        "status_after": "direct",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "operator.direct_support[Y]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 1,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -2589,9 +5572,29 @@
         "step": 1,
         "param_before": 0.0,
         "param_after": 0.025,
-        "status_before": "terminal",
-        "status_after": "word_bridge",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "lie.simple_commutator_support[X]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 2,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -2601,9 +5604,23 @@
         "step": 1,
         "param_before": 0.0,
         "param_after": 0.025,
-        "status_before": "terminal",
-        "status_after": "direct",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "operator.direct_support[Y]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 1,
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -2613,9 +5630,29 @@
         "step": 1,
         "param_before": 0.0,
         "param_after": 0.025,
-        "status_before": "terminal",
-        "status_after": "word_bridge",
-        "kind": "repair"
+        "tags": [
+          "REPAIR"
+        ],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "lie.simple_commutator_support[X]",
+            "before_state": false,
+            "after_state": true,
+            "change_kind": "support_gain"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": "UNREACHED_AT_CUTOFF",
+            "after_state": 2,
+            "change_kind": "first_hit_change"
+          }
+        ]
       }
     ]
   },
@@ -2638,10 +5675,11 @@
       "n_transitions": 10,
       "n_sectors": 4,
       "total_pairs": 12,
-      "n_events": 6,
+      "n_pair_events": 6,
+      "n_field_changes": 12,
       "n_changed_pairs": 6,
       "n_stable_pairs": 6,
-      "event_counts_by_step": [
+      "pair_event_counts_by_step": [
         0,
         0,
         0,
@@ -2653,7 +5691,19 @@
         0,
         6
       ],
-      "event_density_by_step": [
+      "field_change_counts_by_step": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        12
+      ],
+      "pair_event_density_by_step": [
         0.0,
         0.0,
         0.0,
@@ -2665,91 +5715,219 @@
         0.0,
         0.5
       ],
-      "event_kind_counts": {
-        "repair": 0,
-        "terminalization": 6,
-        "support_gain": 0,
-        "support_loss": 0,
-        "layer_change": 0
-      }
+      "field_change_kind_counts": {
+        "first_hit_change": 6,
+        "support_loss": 6
+      },
+      "event_tag_counts": {},
+      "declared_field_keys": [
+        "operator.direct_support[Y]",
+        "word.support[Y,d=2]",
+        "lie.simple_commutator_support[X]",
+        "word.depth_truncated[Y,cutoff=6]"
+      ],
+      "unreached_state": "UNREACHED_AT_CUTOFF",
+      "cutoff": 6
     },
-    "status_counts": [
+    "field_state_counts": [
       {
-        "direct": 8,
-        "word_bridge": 4,
-        "lie_bridge": 0,
-        "deeper": 0,
-        "terminal": 0
+        "operator.direct_support[Y]": {
+          "false": 8,
+          "true": 8
+        },
+        "word.support[Y,d=2]": {
+          "false": 12,
+          "true": 4
+        },
+        "lie.simple_commutator_support[X]": {
+          "false": 16
+        },
+        "word.depth_truncated[Y,cutoff=6]": {
+          "0": 4,
+          "1": 8,
+          "2": 4
+        }
       },
       {
-        "direct": 8,
-        "word_bridge": 4,
-        "lie_bridge": 0,
-        "deeper": 0,
-        "terminal": 0
+        "operator.direct_support[Y]": {
+          "false": 8,
+          "true": 8
+        },
+        "word.support[Y,d=2]": {
+          "false": 12,
+          "true": 4
+        },
+        "lie.simple_commutator_support[X]": {
+          "false": 16
+        },
+        "word.depth_truncated[Y,cutoff=6]": {
+          "0": 4,
+          "1": 8,
+          "2": 4
+        }
       },
       {
-        "direct": 8,
-        "word_bridge": 4,
-        "lie_bridge": 0,
-        "deeper": 0,
-        "terminal": 0
+        "operator.direct_support[Y]": {
+          "false": 8,
+          "true": 8
+        },
+        "word.support[Y,d=2]": {
+          "false": 12,
+          "true": 4
+        },
+        "lie.simple_commutator_support[X]": {
+          "false": 16
+        },
+        "word.depth_truncated[Y,cutoff=6]": {
+          "0": 4,
+          "1": 8,
+          "2": 4
+        }
       },
       {
-        "direct": 8,
-        "word_bridge": 4,
-        "lie_bridge": 0,
-        "deeper": 0,
-        "terminal": 0
+        "operator.direct_support[Y]": {
+          "false": 8,
+          "true": 8
+        },
+        "word.support[Y,d=2]": {
+          "false": 12,
+          "true": 4
+        },
+        "lie.simple_commutator_support[X]": {
+          "false": 16
+        },
+        "word.depth_truncated[Y,cutoff=6]": {
+          "0": 4,
+          "1": 8,
+          "2": 4
+        }
       },
       {
-        "direct": 8,
-        "word_bridge": 4,
-        "lie_bridge": 0,
-        "deeper": 0,
-        "terminal": 0
+        "operator.direct_support[Y]": {
+          "false": 8,
+          "true": 8
+        },
+        "word.support[Y,d=2]": {
+          "false": 12,
+          "true": 4
+        },
+        "lie.simple_commutator_support[X]": {
+          "false": 16
+        },
+        "word.depth_truncated[Y,cutoff=6]": {
+          "0": 4,
+          "1": 8,
+          "2": 4
+        }
       },
       {
-        "direct": 8,
-        "word_bridge": 4,
-        "lie_bridge": 0,
-        "deeper": 0,
-        "terminal": 0
+        "operator.direct_support[Y]": {
+          "false": 8,
+          "true": 8
+        },
+        "word.support[Y,d=2]": {
+          "false": 12,
+          "true": 4
+        },
+        "lie.simple_commutator_support[X]": {
+          "false": 16
+        },
+        "word.depth_truncated[Y,cutoff=6]": {
+          "0": 4,
+          "1": 8,
+          "2": 4
+        }
       },
       {
-        "direct": 8,
-        "word_bridge": 4,
-        "lie_bridge": 0,
-        "deeper": 0,
-        "terminal": 0
+        "operator.direct_support[Y]": {
+          "false": 8,
+          "true": 8
+        },
+        "word.support[Y,d=2]": {
+          "false": 12,
+          "true": 4
+        },
+        "lie.simple_commutator_support[X]": {
+          "false": 16
+        },
+        "word.depth_truncated[Y,cutoff=6]": {
+          "0": 4,
+          "1": 8,
+          "2": 4
+        }
       },
       {
-        "direct": 8,
-        "word_bridge": 4,
-        "lie_bridge": 0,
-        "deeper": 0,
-        "terminal": 0
+        "operator.direct_support[Y]": {
+          "false": 8,
+          "true": 8
+        },
+        "word.support[Y,d=2]": {
+          "false": 12,
+          "true": 4
+        },
+        "lie.simple_commutator_support[X]": {
+          "false": 16
+        },
+        "word.depth_truncated[Y,cutoff=6]": {
+          "0": 4,
+          "1": 8,
+          "2": 4
+        }
       },
       {
-        "direct": 8,
-        "word_bridge": 4,
-        "lie_bridge": 0,
-        "deeper": 0,
-        "terminal": 0
+        "operator.direct_support[Y]": {
+          "false": 8,
+          "true": 8
+        },
+        "word.support[Y,d=2]": {
+          "false": 12,
+          "true": 4
+        },
+        "lie.simple_commutator_support[X]": {
+          "false": 16
+        },
+        "word.depth_truncated[Y,cutoff=6]": {
+          "0": 4,
+          "1": 8,
+          "2": 4
+        }
       },
       {
-        "direct": 8,
-        "word_bridge": 4,
-        "lie_bridge": 0,
-        "deeper": 0,
-        "terminal": 0
+        "operator.direct_support[Y]": {
+          "false": 8,
+          "true": 8
+        },
+        "word.support[Y,d=2]": {
+          "false": 12,
+          "true": 4
+        },
+        "lie.simple_commutator_support[X]": {
+          "false": 16
+        },
+        "word.depth_truncated[Y,cutoff=6]": {
+          "0": 4,
+          "1": 8,
+          "2": 4
+        }
       },
       {
-        "direct": 4,
-        "word_bridge": 2,
-        "lie_bridge": 0,
-        "deeper": 0,
-        "terminal": 6
+        "operator.direct_support[Y]": {
+          "false": 12,
+          "true": 4
+        },
+        "word.support[Y,d=2]": {
+          "false": 14,
+          "true": 2
+        },
+        "lie.simple_commutator_support[X]": {
+          "false": 16
+        },
+        "word.depth_truncated[Y,cutoff=6]": {
+          "0": 4,
+          "1": 4,
+          "2": 2,
+          "UNREACHED_AT_CUTOFF": 6
+        }
       }
     ],
     "events": [
@@ -2761,9 +5939,21 @@
         "step": 10,
         "param_before": 0.9,
         "param_after": 1.0,
-        "status_before": "direct",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "operator.direct_support[Y]",
+            "before_state": true,
+            "after_state": false,
+            "change_kind": "support_loss"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 1,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -2773,9 +5963,21 @@
         "step": 10,
         "param_before": 0.9,
         "param_after": 1.0,
-        "status_before": "word_bridge",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": true,
+            "after_state": false,
+            "change_kind": "support_loss"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 2,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -2785,9 +5987,21 @@
         "step": 10,
         "param_before": 0.9,
         "param_after": 1.0,
-        "status_before": "direct",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "operator.direct_support[Y]",
+            "before_state": true,
+            "after_state": false,
+            "change_kind": "support_loss"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 1,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -2797,9 +6011,21 @@
         "step": 10,
         "param_before": 0.9,
         "param_after": 1.0,
-        "status_before": "direct",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "operator.direct_support[Y]",
+            "before_state": true,
+            "after_state": false,
+            "change_kind": "support_loss"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 1,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -2809,9 +6035,21 @@
         "step": 10,
         "param_before": 0.9,
         "param_after": 1.0,
-        "status_before": "word_bridge",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "word.support[Y,d=2]",
+            "before_state": true,
+            "after_state": false,
+            "change_kind": "support_loss"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 2,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       },
       {
         "pair": [
@@ -2821,9 +6059,21 @@
         "step": 10,
         "param_before": 0.9,
         "param_after": 1.0,
-        "status_before": "direct",
-        "status_after": "terminal",
-        "kind": "terminalization"
+        "tags": [],
+        "changes": [
+          {
+            "field_key": "operator.direct_support[Y]",
+            "before_state": true,
+            "after_state": false,
+            "change_kind": "support_loss"
+          },
+          {
+            "field_key": "word.depth_truncated[Y,cutoff=6]",
+            "before_state": 1,
+            "after_state": "UNREACHED_AT_CUTOFF",
+            "change_kind": "first_hit_change"
+          }
+        ]
       }
     ]
   }

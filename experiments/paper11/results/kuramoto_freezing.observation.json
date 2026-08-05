@@ -1,0 +1,292 @@
+{
+  "schema_version": "rime.experiment-observation.v1",
+  "artifact_role": "cached_computational_observation",
+  "authority": "Cached review aid. It records one completed run and does not replace the executable certificate or promote its claim status.",
+  "experiment": {
+    "id": "paper11.kuramoto-freezing-crossover",
+    "paper": "paper11",
+    "command": [
+      "python",
+      "experiments/paper11/validation/kuramoto_wall.py",
+      "--ensemble",
+      "8",
+      "--seed",
+      "42"
+    ]
+  },
+  "claim": {
+    "status": "Computational Observation",
+    "scope": "Finite-N matched-ensemble Kuramoto freezing-direction control under the declared sampling and sector policies.",
+    "limitations": [
+      "finite-N, finite-window sector-occupancy control; not a universal Kuramoto critical-coupling or wall-direction theorem",
+      "The cached observation does not replace release recomputation.",
+      "The continuum onset is a reference scale, not a fitted wall law."
+    ]
+  },
+  "run": {
+    "status": "passed",
+    "started_at_utc": "2026-08-05T03:31:48Z",
+    "elapsed_seconds": 15.032439,
+    "parameters": {
+      "ensemble_size": 8,
+      "seed": 42,
+      "n_oscillators": 20,
+      "dt": 0.02,
+      "equilibration_time": 40.0,
+      "production_time": 80.0,
+      "stride": 4,
+      "coupling_sweep": [
+        0.0,
+        0.2,
+        0.4,
+        0.6000000000000001,
+        0.8,
+        1.0,
+        1.2000000000000002,
+        1.4000000000000001,
+        1.6,
+        1.8,
+        2.0,
+        2.2,
+        2.4000000000000004,
+        2.6,
+        2.8000000000000003,
+        3.0
+      ],
+      "sector_shape": [
+        5,
+        6
+      ],
+      "word_cutoff": 4,
+      "tolerance": 1e-08
+    }
+  },
+  "provenance": {
+    "git": {
+      "commit": "6274b7b387e8f5b84a39afe1d5c1082edebc3792",
+      "tracked_worktree": "dirty"
+    },
+    "runtime": {
+      "python": "3.13.0",
+      "implementation": "CPython",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "packages": {
+        "numpy": "2.1.3"
+      }
+    },
+    "source_scope": "explicitly_declared_files",
+    "source_set_sha256": "8260d6fb5d6c03562540a1d5ac7564d349b1db38b66ebe8eef6546089fa18385",
+    "sources": [
+      {
+        "path": "experiments/observation.py",
+        "sha256": "da4d556972862faece732316f1d3950600f06858865e61af6a8cc282ba24b4b5"
+      },
+      {
+        "path": "experiments/paper11/validation/kuramoto_wall.py",
+        "sha256": "c8ce7db236b70740c5f277554bfdce312bda017b763b68709f85e76cbb8f8aa6"
+      },
+      {
+        "path": "rime/accessibility.py",
+        "sha256": "f9785179cba6ed3db7fbee5e6ef1c9d4dd495b6471462aa208d13658e9540e5a"
+      }
+    ]
+  },
+  "observations": {
+    "claim_status": "Computational Observation",
+    "curation_tags": [
+      "PLATEAU_RATE",
+      "NONSMOOTH_DISCRETE"
+    ],
+    "taxonomy_role": "opposite-direction freezing control",
+    "observable": "raw directed trajectory transition; general word transport",
+    "ensemble_size": 8,
+    "seed": 42,
+    "continuum_onset_reference": 1.2766152972845848,
+    "sweep": [
+      {
+        "K": 0.0,
+        "r_mean_mean": 0.2006031210333069,
+        "r_mean_std": 0.012269391779087667,
+        "direct_unsupported_pairs_mean": 833.0,
+        "direct_unsupported_pairs_std": 3.3166247903554,
+        "word_unreached_at_cutoff_pairs_mean": 694.5,
+        "word_unreached_at_cutoff_pairs_std": 27.08320512790168,
+        "visited_sectors_mean": 14.5,
+        "visited_sectors_std": 1.5
+      },
+      {
+        "K": 0.2,
+        "r_mean_mean": 0.22038311143900552,
+        "r_mean_std": 0.016188679757759915,
+        "direct_unsupported_pairs_mean": 829.75,
+        "direct_unsupported_pairs_std": 2.384848003542364,
+        "word_unreached_at_cutoff_pairs_mean": 667.375,
+        "word_unreached_at_cutoff_pairs_std": 18.397944858054117,
+        "visited_sectors_mean": 15.5,
+        "visited_sectors_std": 0.8660254037844386
+      },
+      {
+        "K": 0.4,
+        "r_mean_mean": 0.23580630827094584,
+        "r_mean_std": 0.01804352921637828,
+        "direct_unsupported_pairs_mean": 826.875,
+        "direct_unsupported_pairs_std": 4.5397549493337195,
+        "word_unreached_at_cutoff_pairs_mean": 636.875,
+        "word_unreached_at_cutoff_pairs_std": 34.693073876495866,
+        "visited_sectors_mean": 16.875,
+        "visited_sectors_std": 1.0532687216470449
+      },
+      {
+        "K": 0.6000000000000001,
+        "r_mean_mean": 0.27872688402874557,
+        "r_mean_std": 0.03190387443251415,
+        "direct_unsupported_pairs_mean": 822.875,
+        "direct_unsupported_pairs_std": 5.509934210133547,
+        "word_unreached_at_cutoff_pairs_mean": 603.125,
+        "word_unreached_at_cutoff_pairs_std": 42.671528857072836,
+        "visited_sectors_mean": 18.5,
+        "visited_sectors_std": 1.6583123951777
+      },
+      {
+        "K": 0.8,
+        "r_mean_mean": 0.3204029554751988,
+        "r_mean_std": 0.04587345370919207,
+        "direct_unsupported_pairs_mean": 822.125,
+        "direct_unsupported_pairs_std": 4.807221130757353,
+        "word_unreached_at_cutoff_pairs_mean": 596.625,
+        "word_unreached_at_cutoff_pairs_std": 37.976760986161,
+        "visited_sectors_mean": 19.5,
+        "visited_sectors_std": 2.179449471770337
+      },
+      {
+        "K": 1.0,
+        "r_mean_mean": 0.38502980023046,
+        "r_mean_std": 0.08443099795476115,
+        "direct_unsupported_pairs_mean": 823.5,
+        "direct_unsupported_pairs_std": 7.365459931328117,
+        "word_unreached_at_cutoff_pairs_mean": 592.875,
+        "word_unreached_at_cutoff_pairs_std": 58.361882894574265,
+        "visited_sectors_mean": 20.125,
+        "visited_sectors_std": 2.0879116360612584
+      },
+      {
+        "K": 1.2000000000000002,
+        "r_mean_mean": 0.44229106219010617,
+        "r_mean_std": 0.11010029635082923,
+        "direct_unsupported_pairs_mean": 827.875,
+        "direct_unsupported_pairs_std": 11.836780601160097,
+        "word_unreached_at_cutoff_pairs_mean": 623.625,
+        "word_unreached_at_cutoff_pairs_std": 93.73624899151875,
+        "visited_sectors_mean": 18.875,
+        "visited_sectors_std": 3.059309562630104
+      },
+      {
+        "K": 1.4000000000000001,
+        "r_mean_mean": 0.5544247084097008,
+        "r_mean_std": 0.14811749135680205,
+        "direct_unsupported_pairs_mean": 834.375,
+        "direct_unsupported_pairs_std": 17.283934013991143,
+        "word_unreached_at_cutoff_pairs_mean": 665.25,
+        "word_unreached_at_cutoff_pairs_std": 136.99612220789317,
+        "visited_sectors_mean": 16.25,
+        "visited_sectors_std": 5.4715171570598224
+      },
+      {
+        "K": 1.6,
+        "r_mean_mean": 0.6888353283077113,
+        "r_mean_std": 0.16045536522649625,
+        "direct_unsupported_pairs_mean": 850.25,
+        "direct_unsupported_pairs_std": 18.019087102292392,
+        "word_unreached_at_cutoff_pairs_mean": 759.25,
+        "word_unreached_at_cutoff_pairs_std": 136.34583785359933,
+        "visited_sectors_mean": 11.0,
+        "visited_sectors_std": 7.615773105863909
+      },
+      {
+        "K": 1.8,
+        "r_mean_mean": 0.7973469607616803,
+        "r_mean_std": 0.14079913193111412,
+        "direct_unsupported_pairs_mean": 860.125,
+        "direct_unsupported_pairs_std": 15.583946066385112,
+        "word_unreached_at_cutoff_pairs_mean": 824.875,
+        "word_unreached_at_cutoff_pairs_std": 87.60342102338241,
+        "visited_sectors_mean": 6.5,
+        "visited_sectors_std": 7.632168761236874
+      },
+      {
+        "K": 2.0,
+        "r_mean_mean": 0.8449646805428178,
+        "r_mean_std": 0.14417988259141137,
+        "direct_unsupported_pairs_mean": 864.375,
+        "direct_unsupported_pairs_std": 14.882351124738323,
+        "word_unreached_at_cutoff_pairs_mean": 839.5,
+        "word_unreached_at_cutoff_pairs_std": 80.69541498747002,
+        "visited_sectors_mean": 3.375,
+        "visited_sectors_std": 6.283659363778403
+      },
+      {
+        "K": 2.2,
+        "r_mean_mean": 0.8833518696533268,
+        "r_mean_std": 0.11066298989189728,
+        "direct_unsupported_pairs_mean": 865.125,
+        "direct_unsupported_pairs_std": 12.89803764143988,
+        "word_unreached_at_cutoff_pairs_mean": 843.375,
+        "word_unreached_at_cutoff_pairs_std": 70.44312865709472,
+        "visited_sectors_mean": 3.5,
+        "visited_sectors_std": 6.614378277661476
+      },
+      {
+        "K": 2.4000000000000004,
+        "r_mean_mean": 0.9263816377368705,
+        "r_mean_std": 0.03842463740191195,
+        "direct_unsupported_pairs_mean": 870.0,
+        "direct_unsupported_pairs_std": 0.0,
+        "word_unreached_at_cutoff_pairs_mean": 870.0,
+        "word_unreached_at_cutoff_pairs_std": 0.0,
+        "visited_sectors_mean": 1.0,
+        "visited_sectors_std": 0.0
+      },
+      {
+        "K": 2.6,
+        "r_mean_mean": 0.9419516516139459,
+        "r_mean_std": 0.025518982402993686,
+        "direct_unsupported_pairs_mean": 870.0,
+        "direct_unsupported_pairs_std": 0.0,
+        "word_unreached_at_cutoff_pairs_mean": 870.0,
+        "word_unreached_at_cutoff_pairs_std": 0.0,
+        "visited_sectors_mean": 1.0,
+        "visited_sectors_std": 0.0
+      },
+      {
+        "K": 2.8000000000000003,
+        "r_mean_mean": 0.9520397921292556,
+        "r_mean_std": 0.01950083435962079,
+        "direct_unsupported_pairs_mean": 870.0,
+        "direct_unsupported_pairs_std": 0.0,
+        "word_unreached_at_cutoff_pairs_mean": 870.0,
+        "word_unreached_at_cutoff_pairs_std": 0.0,
+        "visited_sectors_mean": 1.0,
+        "visited_sectors_std": 0.0
+      },
+      {
+        "K": 3.0,
+        "r_mean_mean": 0.9594282206109974,
+        "r_mean_std": 0.015719572029961236,
+        "direct_unsupported_pairs_mean": 870.0,
+        "direct_unsupported_pairs_std": 0.0,
+        "word_unreached_at_cutoff_pairs_mean": 870.0,
+        "word_unreached_at_cutoff_pairs_std": 0.0,
+        "visited_sectors_mean": 1.0,
+        "visited_sectors_std": 0.0
+      }
+    ],
+    "wall_K": 1.6,
+    "wall_increase": 94.0,
+    "paired_low_K": 0.8,
+    "paired_high_K": 2.4000000000000004,
+    "paired_unreached_change_mean": 273.375,
+    "paired_unreached_change_std": 37.976760986161,
+    "freezing_fraction": 1.0,
+    "claim_boundary": "finite-N, finite-window sector-occupancy control; not a universal Kuramoto critical-coupling or wall-direction theorem"
+  }
+}

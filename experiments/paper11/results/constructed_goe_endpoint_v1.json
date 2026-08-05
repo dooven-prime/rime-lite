@@ -1,0 +1,137 @@
+{
+  "record_version": "paper11-constructed-goe-endpoint-v1.0",
+  "claim_status": "Computational Certificate",
+  "evidence_role": "constructed_witness",
+  "producer": "experiments/paper11/validation/degenerate_endpoint_collision.py",
+  "paper_xi_release_status": "post_v1_candidate",
+  "taxonomy_candidates": [
+    "A"
+  ],
+  "species": "finite real-symmetric random-matrix family",
+  "family": "H(t)=D+tV with constructed degenerate D and GOE direction V",
+  "ambient_collision_codimension": 2,
+  "collision_count": 2,
+  "collisions": [
+    {
+      "pair": [
+        0,
+        1
+      ],
+      "endpoint_gap": 0.0,
+      "first_positive_parameter": 1e-08,
+      "first_positive_gap": 5.985569040412031e-09,
+      "fitted_order": 1.0000149128426934,
+      "fitted_prefactor": 0.5986922576402446,
+      "gap_over_t_min": 0.5985569040412031,
+      "gap_over_t_max": 0.5987356924164189,
+      "first_order": {
+        "restricted_block": [
+          [
+            0.20278270381604144,
+            0.29413238381209983
+          ],
+          [
+            0.29413238381209983,
+            0.3133039162192728
+          ]
+        ],
+        "coefficient": 0.5985569105933317,
+        "conical_coefficient": 0.5985569105933318,
+        "normal_coordinates": [
+          -0.05526060620161567,
+          0.29413238381209983
+        ],
+        "normal_form_residual": 1.1102230246251565e-16
+      },
+      "smallest_t_relative_error": 1.0946542428101115e-08
+    },
+    {
+      "pair": [
+        4,
+        5
+      ],
+      "endpoint_gap": 0.0,
+      "first_positive_parameter": 1e-08,
+      "first_positive_gap": 3.3328100279561568e-09,
+      "fitted_order": 0.9999684412301286,
+      "fitted_prefactor": 0.3331215286369971,
+      "gap_over_t_min": 0.33307037700147646,
+      "gap_over_t_max": 0.3332810027956157,
+      "first_order": {
+        "restricted_block": [
+          [
+            -0.24520971834580646,
+            0.10835953975188817
+          ],
+          [
+            0.10835953975188817,
+            -0.49840733302433265
+          ]
+        ],
+        "coefficient": 0.33328094980040424,
+        "conical_coefficient": 0.33328094980040424,
+        "normal_coordinates": [
+          0.1265988073392631,
+          0.10835953975188817
+        ],
+        "normal_form_residual": 0.0
+      },
+      "smallest_t_relative_error": 1.5901062293886855e-07
+    }
+  ],
+  "minimum_non_target_gap_on_local_interval": 0.9375032657264355,
+  "direction_robustness": {
+    "pair_0_1": {
+      "minimum_coefficient": 0.013549284097655045,
+      "median_coefficient": 0.6278008405015593,
+      "nontransverse_draws": 0
+    },
+    "pair_4_5": {
+      "minimum_coefficient": 0.12475160784747259,
+      "median_coefficient": 0.7158718211920407,
+      "nontransverse_draws": 0
+    }
+  },
+  "endpoint_lifting_negative_control": [
+    {
+      "epsilon": 1e-06,
+      "pair_0_1_gap": 9.999999999177334e-07,
+      "pair_4_5_gap": 2.000000000279556e-06,
+      "collisions_retained": false
+    },
+    {
+      "epsilon": 0.0001,
+      "pair_0_1_gap": 9.999999999998899e-05,
+      "pair_4_5_gap": 0.00020000000000042206,
+      "collisions_retained": false
+    },
+    {
+      "epsilon": 0.01,
+      "pair_0_1_gap": 0.010000000000000009,
+      "pair_4_5_gap": 0.019999999999999574,
+      "collisions_retained": false
+    }
+  ],
+  "claim_boundary": "constructed pair-gap endpoint witness; not a generic GOE crossing, unrestricted stability theorem, or full ADE classification",
+  "trajectory_event": {
+    "orientation": "endpoint_to_positive_parameter",
+    "parameter_bracket": [
+      0.0,
+      1e-08
+    ],
+    "before_state": {
+      "adjacent_gaps": [
+        0.0,
+        0.0
+      ]
+    },
+    "after_state": {
+      "adjacent_gaps": [
+        5.985569040412031e-09,
+        3.3328100279561568e-09
+      ]
+    },
+    "raw_numeric_direction": "increase",
+    "event_semantics": "collision_exit"
+  }
+}

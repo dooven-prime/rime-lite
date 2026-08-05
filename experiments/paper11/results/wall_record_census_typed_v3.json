@@ -1,0 +1,4943 @@
+{
+  "version": "paper11-typed-v3.6",
+  "base_version": "paper11-v2-prep-preserved",
+  "historical_base_census": {
+    "path": "experiments/paper11/archive/results/wall_record_census_v2.json",
+    "version": "paper11-v2-prep",
+    "sha256": "988d0fb807ac1deb239ccfd59d0e743fe6c7ab76caf18ea9fb1a033727a8cf79",
+    "record_count": 28
+  },
+  "historical_record_count": 28,
+  "active_record_count": 27,
+  "retired_record_count": 1,
+  "main_wall_spectrum_record_count": 5,
+  "analogue_morphology_record_count": 2,
+  "morphology_record_bundle_count": 7,
+  "morphology_atom_count": 7,
+  "registered_atom_field_entry_count": 10,
+  "trajectory_change_entry_count": 8,
+  "locus_germ_entry_count": 2,
+  "pair_scoped_entry_count": 4,
+  "current_atoms_per_morphology_bundle": 1,
+  "active_tag_membership_count": 34,
+  "record_role_summary": {
+    "pre_wall_reference": 2,
+    "retired_provenance": 1,
+    "static_boundary_witness": 5,
+    "trajectory_diagnostic": 13,
+    "wall_event": 5,
+    "wall_locus_sample": 2
+  },
+  "realization_kind_summary": {
+    "diagnostic_analogue": 9,
+    "strict_sof": 19
+  },
+  "curation_tag_summary": {
+    "COLLISION": {
+      "active_records": 4,
+      "main_wall_records": 3,
+      "main_wall_species": 2,
+      "main_wall_deformations": 3
+    },
+    "REPAIR": {
+      "active_records": 9,
+      "main_wall_records": 0,
+      "main_wall_species": 0,
+      "main_wall_deformations": 0
+    },
+    "TERMINAL": {
+      "active_records": 3,
+      "main_wall_records": 0,
+      "main_wall_species": 0,
+      "main_wall_deformations": 0
+    },
+    "PLATEAU_RATE": {
+      "active_records": 4,
+      "main_wall_records": 0,
+      "main_wall_species": 0,
+      "main_wall_deformations": 0
+    },
+    "NONSMOOTH_DISCRETE": {
+      "active_records": 7,
+      "main_wall_records": 1,
+      "main_wall_species": 1,
+      "main_wall_deformations": 1
+    },
+    "BRIDGE_INCIDENCE": {
+      "active_records": 7,
+      "main_wall_records": 1,
+      "main_wall_species": 1,
+      "main_wall_deformations": 1
+    }
+  },
+  "wall_record_inclusion_ledger": {
+    "path": "experiments/paper11/results/wall_record_inclusion_ledger_v1.json",
+    "version": "paper11-wall-record-inclusion-v1.0",
+    "sha256": "40a3b591ffd1ae19225b6ca4ba91e187030d03ffe74cf8cad00d229ff6e1a590",
+    "record_count": 9
+  },
+  "strict_main_wall_records": [
+    {
+      "record_id": "rubik-collision-quotient",
+      "source_record_id": "A-rubik-collision-quotient",
+      "record_role": "wall_locus_sample",
+      "field_family": "spectral",
+      "primary_field": "spectral.joint_sector_count",
+      "evidence_artifact": "experiments/paper11/results/rubik_collision_quotient_result_v1.json",
+      "claim_status": "Computational Certificate"
+    },
+    {
+      "record_id": "rubik-endpoint-pair-closures",
+      "source_record_id": "A-rubik-endpoint-pair-closures",
+      "record_role": "wall_event",
+      "field_family": "spectral",
+      "primary_field": "spectral.adjacent_gap",
+      "evidence_artifact": "experiments/paper11/results/rubik_spectral_endpoint_v1.json",
+      "claim_status": "Computational Certificate"
+    },
+    {
+      "record_id": "constructed-route-incidence",
+      "source_record_id": "F-rubik-type-iv-incidence",
+      "record_role": "wall_locus_sample",
+      "field_family": "route",
+      "primary_field": "route.support[Y,d=2]",
+      "evidence_artifact": "experiments/paper11/results/route_incidence_result_v1.json",
+      "claim_status": "Computational Certificate"
+    },
+    {
+      "record_id": "graph-edge-removal",
+      "source_record_id": "E-graph-edge-removal",
+      "record_role": "wall_event",
+      "field_family": "operator",
+      "primary_field": "operator.direct_support[Y]",
+      "evidence_artifact": "experiments/paper11/results/wall_trajectory.json",
+      "claim_status": "Computational Certificate"
+    },
+    {
+      "record_id": "constructed-goe-endpoint",
+      "source_record_id": "A-constructed-goe-endpoint",
+      "record_role": "wall_event",
+      "field_family": "spectral",
+      "primary_field": "spectral.adjacent_gap",
+      "evidence_artifact": "experiments/paper11/results/constructed_goe_endpoint_v1.json",
+      "claim_status": "Computational Certificate"
+    }
+  ],
+  "analogue_morphology_records": [
+    {
+      "record_id": "maze-door-wall",
+      "source_record_id": "BE-maze-door-wall",
+      "record_role": "wall_event",
+      "field_family": "graph",
+      "primary_field": "graph.component_count",
+      "evidence_artifact": "experiments/paper12/results/v2/ir/maze.ir.json",
+      "claim_status": "Computational Observation"
+    },
+    {
+      "record_id": "grn-terminal-basin-loss",
+      "source_record_id": "C-grn-terminal-basin-loss",
+      "record_role": "wall_event",
+      "field_family": "state",
+      "primary_field": "state.terminal_component_count",
+      "evidence_artifact": "experiments/paper11/results/grn_terminal_basin_loss_v1.json",
+      "claim_status": "Computational Observation"
+    }
+  ],
+  "records": [
+    {
+      "record_id": "rubik-collision-quotient",
+      "species": "Rubik QT/HT",
+      "observable": "finite QT/HT joint spectrum",
+      "deformation_origin": "affine projection parameter",
+      "change_locus": "unique maximal collision at alpha=2/3",
+      "evidence": "experiments/paper11/results/rubik_collision_quotient_result_v1.json",
+      "claim_status": "Computational Certificate",
+      "explicit_deformation": true,
+      "explicit_locus": true,
+      "measured_signature": true,
+      "note": "",
+      "evidence_exists": true,
+      "wall_package": "spectral",
+      "active": true,
+      "source_record_id": "A-rubik-collision-quotient",
+      "curation_tags": [
+        "COLLISION"
+      ],
+      "curation_assignment": {
+        "rulebook_version": "paper11-curation-tags-v1.0",
+        "assignment_source": "inherited",
+        "tags": [
+          "COLLISION"
+        ],
+        "override_reason": null
+      },
+      "compatibility": {
+        "historical_census_eligible": true
+      },
+      "local_model_eligibility": {
+        "status": "unresolved",
+        "model_family": "ADE",
+        "condition_checks": [],
+        "evidence_refs": []
+      },
+      "realization_kind": "strict_sof",
+      "record_role": "wall_locus_sample",
+      "evidence_contract": {
+        "schema": "paper11-rubik-collision-result-v1.0",
+        "sha256": "460fc52eecf312eb1aae3faecd9607c058918153fc421f9b9a003852391fde36",
+        "producer": "experiments/paper11/validation/produce_collision_quotient_result.py",
+        "producer_sha256": "bf89c749d1bcb7275965718e9d7706059fc0d6d620d8893dad7262135c836486",
+        "validation_certificate": "experiments/paper11/results/rubik_collision_quotient_validation_v1.json",
+        "validation_certificate_sha256": "8246de146c6ca4fe748626be2234178854fc73bced664b61bd7851e11855d592",
+        "validator": "experiments/paper11/validation/validate_collision_quotient_result.py",
+        "validator_sha256": "09d1c2d2beab0cecf7fbc1d764752e5fe4fdd4c51bca4f1771192c804198e066"
+      },
+      "source_evidence": "experiments/paper11/validation/produce_collision_quotient_result.py",
+      "wall_coordinate_profile": {
+        "field_families": [
+          "spectral"
+        ],
+        "event_kinds": [
+          "collision"
+        ],
+        "regularity": "smooth",
+        "persistence_profile": [
+          "unresolved"
+        ],
+        "geometry": {
+          "location": "unresolved",
+          "crossing": "unresolved",
+          "codimension_status": "codimension_unresolved"
+        },
+        "evidence": "Computational Certificate"
+      },
+      "field_family": "spectral",
+      "typed_channel_count": 1,
+      "field_observations": [
+        {
+          "field_key": "spectral.joint_sector_count",
+          "field_family": "spectral",
+          "carrier_id": "carrier.spectral_joint_sectorization",
+          "change_kind": "declared_change",
+          "observation": "maximal collision",
+          "direction": {
+            "raw_numeric": "decrease",
+            "accessibility": "not_applicable",
+            "event_semantics": "declared_change"
+          },
+          "pair_scope": "not_applicable"
+        }
+      ],
+      "morphology_atoms": [
+        {
+          "atom_kind": "locus_sample",
+          "inclusion_ledger_version": "paper11-wall-record-inclusion-v1.0",
+          "realization_kind": "strict_sof",
+          "spectrum_partition": "strict_main",
+          "primary_wall_field": "spectral.joint_sector_count",
+          "primary_field_family": "spectral",
+          "primary_carrier_id": "carrier.spectral_joint_sectorization",
+          "context_field_keys": [],
+          "context_carrier_ids": [],
+          "field_registrations": [
+            {
+              "field_key": "spectral.joint_sector_count",
+              "field_role": "primary_wall_field",
+              "field_family": "spectral",
+              "carrier_id": "carrier.spectral_joint_sectorization",
+              "chart_or_domain_ref": "paper4.rubik_joint_sector_parameter_domain",
+              "comparison_ref": "identity_on_declared_fixed_schema",
+              "policy_refs": {
+                "named_policy_refs": [
+                  "paper4.rubik_collision_quotient.tolerance",
+                  "paper4.rubik_collision_quotient.joint_sector_count"
+                ],
+                "pair_scope": "not_applicable",
+                "diagonal_reduction": "not_applicable",
+                "depth_convention": "not_applicable",
+                "cutoff": "not_applicable"
+              },
+              "evidence_ref": "experiments/paper11/results/rubik_collision_quotient_result_v1.json"
+            }
+          ],
+          "context_no_promotion": "a context-field change is a co-observation only; it creates a separate wall atom only after independent wall admission",
+          "domain_context_ref": "paper4.rubik_joint_sector_parameter_domain",
+          "event_locus": "unique maximal collision at alpha=2/3",
+          "field_germs": [
+            {
+              "field_key": "spectral.joint_sector_count",
+              "incident_strata": [
+                {
+                  "stratum_ref": "left_regular_chamber",
+                  "value": {
+                    "joint_sector_count": 9
+                  }
+                },
+                {
+                  "stratum_ref": "joint_sector_collision_stratum",
+                  "value": {
+                    "joint_sector_count": 6
+                  }
+                },
+                {
+                  "stratum_ref": "right_regular_chamber",
+                  "value": {
+                    "joint_sector_count": 9
+                  }
+                }
+              ]
+            }
+          ],
+          "probe_path_ref": null,
+          "probe_orientation": null,
+          "order_semantics": "intrinsic_none"
+        }
+      ],
+      "corpus_entry": {
+        "entry_kind": "morphology_record_bundle",
+        "bundle_kind": "strict_wall_record",
+        "record_bundle": {
+          "bundle_id": "rubik-collision-quotient",
+          "morphology_atoms": [
+            {
+              "atom_kind": "locus_sample",
+              "inclusion_ledger_version": "paper11-wall-record-inclusion-v1.0",
+              "realization_kind": "strict_sof",
+              "spectrum_partition": "strict_main",
+              "primary_wall_field": "spectral.joint_sector_count",
+              "primary_field_family": "spectral",
+              "primary_carrier_id": "carrier.spectral_joint_sectorization",
+              "context_field_keys": [],
+              "context_carrier_ids": [],
+              "field_registrations": [
+                {
+                  "field_key": "spectral.joint_sector_count",
+                  "field_role": "primary_wall_field",
+                  "field_family": "spectral",
+                  "carrier_id": "carrier.spectral_joint_sectorization",
+                  "chart_or_domain_ref": "paper4.rubik_joint_sector_parameter_domain",
+                  "comparison_ref": "identity_on_declared_fixed_schema",
+                  "policy_refs": {
+                    "named_policy_refs": [
+                      "paper4.rubik_collision_quotient.tolerance",
+                      "paper4.rubik_collision_quotient.joint_sector_count"
+                    ],
+                    "pair_scope": "not_applicable",
+                    "diagonal_reduction": "not_applicable",
+                    "depth_convention": "not_applicable",
+                    "cutoff": "not_applicable"
+                  },
+                  "evidence_ref": "experiments/paper11/results/rubik_collision_quotient_result_v1.json"
+                }
+              ],
+              "context_no_promotion": "a context-field change is a co-observation only; it creates a separate wall atom only after independent wall admission",
+              "domain_context_ref": "paper4.rubik_joint_sector_parameter_domain",
+              "event_locus": "unique maximal collision at alpha=2/3",
+              "field_germs": [
+                {
+                  "field_key": "spectral.joint_sector_count",
+                  "incident_strata": [
+                    {
+                      "stratum_ref": "left_regular_chamber",
+                      "value": {
+                        "joint_sector_count": 9
+                      }
+                    },
+                    {
+                      "stratum_ref": "joint_sector_collision_stratum",
+                      "value": {
+                        "joint_sector_count": 6
+                      }
+                    },
+                    {
+                      "stratum_ref": "right_regular_chamber",
+                      "value": {
+                        "joint_sector_count": 9
+                      }
+                    }
+                  ]
+                }
+              ],
+              "probe_path_ref": null,
+              "probe_orientation": null,
+              "order_semantics": "intrinsic_none"
+            }
+          ]
+        },
+        "context_record": null
+      },
+      "morphology_signature": {
+        "role": "wall_locus_sample",
+        "realization_kind": "strict_sof",
+        "atom_kind": "locus_sample",
+        "primary_field_family": "spectral",
+        "primary_carrier_id": "carrier.spectral_joint_sectorization",
+        "delta_ref": "rubik-collision-quotient:morphology_atom:0",
+        "profile": {
+          "field_families": [
+            "spectral"
+          ],
+          "event_kinds": [
+            "collision"
+          ],
+          "regularity": "smooth",
+          "persistence_profile": [
+            "unresolved"
+          ],
+          "geometry": {
+            "location": "unresolved",
+            "crossing": "unresolved",
+            "codimension_status": "codimension_unresolved"
+          },
+          "evidence": "Computational Certificate"
+        }
+      },
+      "curated_signature": {
+        "morphology_signature_ref": "rubik-collision-quotient:morphology_signature",
+        "curation_assignment": {
+          "rulebook_version": "paper11-curation-tags-v1.0",
+          "assignment_source": "inherited",
+          "tags": [
+            "COLLISION"
+          ],
+          "override_reason": null
+        }
+      },
+      "evidence_owner": "paper11",
+      "evidence_relation": "paper11_local",
+      "inclusion_ledger_entry": "paper11-wall-record-inclusion-v1.0:A-rubik-collision-quotient",
+      "corpus_entry_kind": "morphology_record_bundle",
+      "morphology_bundle_kind": "strict_wall_record",
+      "main_wall_spectrum_eligible": true,
+      "analogue_morphology_eligible": false
+    },
+    {
+      "record_id": "rubik-endpoint-pair-closures",
+      "species": "Rubik QT/HT",
+      "observable": "Hermitian spectral probe eigenvalue gaps",
+      "deformation_origin": "single QT generator weight",
+      "change_locus": "16 pairwise closures at the canonical endpoint",
+      "evidence": "experiments/paper11/results/rubik_spectral_endpoint_v1.json",
+      "claim_status": "Computational Certificate",
+      "explicit_deformation": true,
+      "explicit_locus": true,
+      "measured_signature": true,
+      "note": "",
+      "evidence_exists": true,
+      "wall_package": "spectral",
+      "active": true,
+      "source_record_id": "A-rubik-endpoint-pair-closures",
+      "curation_tags": [
+        "COLLISION"
+      ],
+      "curation_assignment": {
+        "rulebook_version": "paper11-curation-tags-v1.0",
+        "assignment_source": "inherited",
+        "tags": [
+          "COLLISION"
+        ],
+        "override_reason": null
+      },
+      "compatibility": {
+        "historical_census_eligible": true
+      },
+      "local_model_eligibility": {
+        "status": "unresolved",
+        "model_family": "ADE",
+        "condition_checks": [],
+        "evidence_refs": []
+      },
+      "realization_kind": "strict_sof",
+      "record_role": "wall_event",
+      "evidence_contract": {
+        "schema": "paper11-rubik-spectral-endpoint-v1.0",
+        "sha256": "b2ddc81c8910f6b117ebac0810750f3f4793bf0466f3b042539b59fe08a4b011",
+        "producer": "experiments/paper11/spectral_ade_collision.py",
+        "producer_sha256": "00cbfc571afcff675125afb2147d3a809b0be03981235d8572ef513541a9f63a"
+      },
+      "source_evidence": "experiments/paper11/spectral_ade_collision.py",
+      "wall_coordinate_profile": {
+        "field_families": [
+          "spectral"
+        ],
+        "event_kinds": [
+          "collision"
+        ],
+        "regularity": "smooth",
+        "persistence_profile": [
+          "unresolved"
+        ],
+        "geometry": {
+          "location": "endpoint",
+          "crossing": "unresolved",
+          "codimension_status": "codimension_unresolved"
+        },
+        "evidence": "Computational Certificate"
+      },
+      "field_family": "spectral",
+      "typed_channel_count": 1,
+      "field_observations": [
+        {
+          "field_key": "spectral.adjacent_gap",
+          "field_family": "spectral",
+          "carrier_id": "carrier.separating_hermitian_probe",
+          "change_kind": "collision_exit",
+          "observation": "16 pairwise closures",
+          "direction": {
+            "raw_numeric": "increase",
+            "accessibility": "not_applicable",
+            "event_semantics": "collision_exit"
+          },
+          "pair_scope": "not_applicable"
+        }
+      ],
+      "morphology_atoms": [
+        {
+          "atom_kind": "trajectory_event",
+          "inclusion_ledger_version": "paper11-wall-record-inclusion-v1.0",
+          "realization_kind": "strict_sof",
+          "spectrum_partition": "strict_main",
+          "primary_wall_field": "spectral.adjacent_gap",
+          "primary_field_family": "spectral",
+          "primary_carrier_id": "carrier.separating_hermitian_probe",
+          "context_field_keys": [],
+          "context_carrier_ids": [],
+          "field_registrations": [
+            {
+              "field_key": "spectral.adjacent_gap",
+              "field_role": "primary_wall_field",
+              "field_family": "spectral",
+              "carrier_id": "carrier.separating_hermitian_probe",
+              "chart_or_domain_ref": "paper11.rubik_qt_generator_weight_path",
+              "comparison_ref": "identity_on_declared_fixed_schema",
+              "policy_refs": {
+                "named_policy_refs": [
+                  "paper11.rubik_spectral_endpoint.beta=0.314159",
+                  "paper11.rubik_spectral_endpoint.start_tolerance=1e-4",
+                  "paper11.rubik_spectral_endpoint.end_tolerance=1e-4"
+                ],
+                "pair_scope": "not_applicable",
+                "diagonal_reduction": "not_applicable",
+                "depth_convention": "not_applicable",
+                "cutoff": "not_applicable"
+              },
+              "evidence_ref": "experiments/paper11/results/rubik_spectral_endpoint_v1.json"
+            }
+          ],
+          "context_no_promotion": "a context-field change is a co-observation only; it creates a separate wall atom only after independent wall admission",
+          "trajectory_ref": "paper11.rubik_qt_generator_weight_path",
+          "order_semantics": "trajectory_oriented",
+          "orientation": "endpoint_to_interior",
+          "left_right_sampling_rule": "canonical endpoint and alpha=0.01 interior sample",
+          "event_parameter_or_interval": "[1.0,0.01]",
+          "field_changes": [
+            {
+              "field_key": "spectral.adjacent_gap",
+              "field_family": "spectral",
+              "carrier_id": "spectral",
+              "before_state": {
+                "adjacent_gaps": [
+                  2.220446049250313e-16,
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.1102230246251565e-16,
+                  1.1102230246251565e-16,
+                  1.1102230246251565e-16,
+                  0.0,
+                  1.1102230246251565e-16,
+                  0.0,
+                  1.1102230246251565e-16,
+                  1.1102230246251565e-16,
+                  0.0,
+                  5.551115123125783e-17,
+                  0.0,
+                  5.551115123125783e-17
+                ]
+              },
+              "after_state": {
+                "adjacent_gaps": [
+                  0.04155169168527295,
+                  0.028113216567140498,
+                  0.032009290240136545,
+                  0.05235021899000969,
+                  0.03459719902457614,
+                  0.001375045883815318,
+                  0.009914107635774383,
+                  0.011364687057626499,
+                  0.02000336533407876,
+                  0.007782925310786837,
+                  0.03870741259215993,
+                  0.02548600920425892,
+                  0.049188203716499235,
+                  0.011900077150229615,
+                  0.030757128761071062,
+                  0.03459719902457603
+                ]
+              },
+              "change_kind": "collision_exit",
+              "observation": "16 pairwise closures",
+              "direction": {
+                "raw_numeric": "increase",
+                "accessibility": "not_applicable",
+                "event_semantics": "collision_exit"
+              },
+              "pair_scope": "not_applicable"
+            }
+          ]
+        }
+      ],
+      "corpus_entry": {
+        "entry_kind": "morphology_record_bundle",
+        "bundle_kind": "strict_wall_record",
+        "record_bundle": {
+          "bundle_id": "rubik-endpoint-pair-closures",
+          "morphology_atoms": [
+            {
+              "atom_kind": "trajectory_event",
+              "inclusion_ledger_version": "paper11-wall-record-inclusion-v1.0",
+              "realization_kind": "strict_sof",
+              "spectrum_partition": "strict_main",
+              "primary_wall_field": "spectral.adjacent_gap",
+              "primary_field_family": "spectral",
+              "primary_carrier_id": "carrier.separating_hermitian_probe",
+              "context_field_keys": [],
+              "context_carrier_ids": [],
+              "field_registrations": [
+                {
+                  "field_key": "spectral.adjacent_gap",
+                  "field_role": "primary_wall_field",
+                  "field_family": "spectral",
+                  "carrier_id": "carrier.separating_hermitian_probe",
+                  "chart_or_domain_ref": "paper11.rubik_qt_generator_weight_path",
+                  "comparison_ref": "identity_on_declared_fixed_schema",
+                  "policy_refs": {
+                    "named_policy_refs": [
+                      "paper11.rubik_spectral_endpoint.beta=0.314159",
+                      "paper11.rubik_spectral_endpoint.start_tolerance=1e-4",
+                      "paper11.rubik_spectral_endpoint.end_tolerance=1e-4"
+                    ],
+                    "pair_scope": "not_applicable",
+                    "diagonal_reduction": "not_applicable",
+                    "depth_convention": "not_applicable",
+                    "cutoff": "not_applicable"
+                  },
+                  "evidence_ref": "experiments/paper11/results/rubik_spectral_endpoint_v1.json"
+                }
+              ],
+              "context_no_promotion": "a context-field change is a co-observation only; it creates a separate wall atom only after independent wall admission",
+              "trajectory_ref": "paper11.rubik_qt_generator_weight_path",
+              "order_semantics": "trajectory_oriented",
+              "orientation": "endpoint_to_interior",
+              "left_right_sampling_rule": "canonical endpoint and alpha=0.01 interior sample",
+              "event_parameter_or_interval": "[1.0,0.01]",
+              "field_changes": [
+                {
+                  "field_key": "spectral.adjacent_gap",
+                  "field_family": "spectral",
+                  "carrier_id": "spectral",
+                  "before_state": {
+                    "adjacent_gaps": [
+                      2.220446049250313e-16,
+                      0.0,
+                      0.0,
+                      0.0,
+                      1.1102230246251565e-16,
+                      1.1102230246251565e-16,
+                      1.1102230246251565e-16,
+                      0.0,
+                      1.1102230246251565e-16,
+                      0.0,
+                      1.1102230246251565e-16,
+                      1.1102230246251565e-16,
+                      0.0,
+                      5.551115123125783e-17,
+                      0.0,
+                      5.551115123125783e-17
+                    ]
+                  },
+                  "after_state": {
+                    "adjacent_gaps": [
+                      0.04155169168527295,
+                      0.028113216567140498,
+                      0.032009290240136545,
+                      0.05235021899000969,
+                      0.03459719902457614,
+                      0.001375045883815318,
+                      0.009914107635774383,
+                      0.011364687057626499,
+                      0.02000336533407876,
+                      0.007782925310786837,
+                      0.03870741259215993,
+                      0.02548600920425892,
+                      0.049188203716499235,
+                      0.011900077150229615,
+                      0.030757128761071062,
+                      0.03459719902457603
+                    ]
+                  },
+                  "change_kind": "collision_exit",
+                  "observation": "16 pairwise closures",
+                  "direction": {
+                    "raw_numeric": "increase",
+                    "accessibility": "not_applicable",
+                    "event_semantics": "collision_exit"
+                  },
+                  "pair_scope": "not_applicable"
+                }
+              ]
+            }
+          ]
+        },
+        "context_record": null
+      },
+      "morphology_signature": {
+        "role": "wall_event",
+        "realization_kind": "strict_sof",
+        "atom_kind": "trajectory_event",
+        "primary_field_family": "spectral",
+        "primary_carrier_id": "carrier.separating_hermitian_probe",
+        "delta_ref": "rubik-endpoint-pair-closures:morphology_atom:0",
+        "profile": {
+          "field_families": [
+            "spectral"
+          ],
+          "event_kinds": [
+            "collision"
+          ],
+          "regularity": "smooth",
+          "persistence_profile": [
+            "unresolved"
+          ],
+          "geometry": {
+            "location": "endpoint",
+            "crossing": "unresolved",
+            "codimension_status": "codimension_unresolved"
+          },
+          "evidence": "Computational Certificate"
+        }
+      },
+      "curated_signature": {
+        "morphology_signature_ref": "rubik-endpoint-pair-closures:morphology_signature",
+        "curation_assignment": {
+          "rulebook_version": "paper11-curation-tags-v1.0",
+          "assignment_source": "inherited",
+          "tags": [
+            "COLLISION"
+          ],
+          "override_reason": null
+        }
+      },
+      "evidence_owner": "paper11",
+      "evidence_relation": "paper11_local",
+      "inclusion_ledger_entry": "paper11-wall-record-inclusion-v1.0:A-rubik-endpoint-pair-closures",
+      "corpus_entry_kind": "morphology_record_bundle",
+      "morphology_bundle_kind": "strict_wall_record",
+      "main_wall_spectrum_eligible": true,
+      "analogue_morphology_eligible": false
+    },
+    {
+      "record_id": "rubik-simultaneous-pair-gap-response",
+      "species": "Rubik QT/HT",
+      "observable": "two independently indexed spectral gaps",
+      "deformation_origin": "two-weight diagonal QT path",
+      "change_locus": "one to three common half-closure responses across tested sampling resolutions",
+      "evidence": "experiments/paper11/spectral_ade_collision.py",
+      "claim_status": "Computational Observation",
+      "explicit_deformation": true,
+      "explicit_locus": false,
+      "measured_signature": true,
+      "note": "Pair-gap response only; count is sampling-resolution dependent; no eigenbranch continuation or A2 identification.",
+      "evidence_exists": true,
+      "wall_package": "spectral",
+      "active": true,
+      "source_record_id": "A-rubik-simultaneous-pair-gap-response",
+      "curation_tags": [
+        "COLLISION"
+      ],
+      "curation_assignment": {
+        "rulebook_version": "paper11-curation-tags-v1.0",
+        "assignment_source": "inherited",
+        "tags": [
+          "COLLISION"
+        ],
+        "override_reason": null
+      },
+      "compatibility": {
+        "historical_census_eligible": false
+      },
+      "local_model_eligibility": {
+        "status": "unresolved",
+        "model_family": "ADE",
+        "condition_checks": [],
+        "evidence_refs": []
+      },
+      "realization_kind": "strict_sof",
+      "record_role": "pre_wall_reference",
+      "wall_coordinate_profile": {
+        "field_families": [
+          "spectral"
+        ],
+        "event_kinds": [
+          "collision"
+        ],
+        "regularity": "smooth",
+        "persistence_profile": [
+          "unresolved"
+        ],
+        "geometry": {
+          "location": "unresolved",
+          "crossing": "unresolved",
+          "codimension_status": "codimension_unresolved"
+        },
+        "evidence": "Computational Observation"
+      },
+      "field_family": "spectral",
+      "typed_channel_count": 1,
+      "field_observations": [
+        {
+          "field_key": "spectral.pair_gap_response",
+          "field_family": "spectral",
+          "carrier_id": "spectral",
+          "change_kind": "declared_change",
+          "observation": "sampling-dependent common half-closure response",
+          "direction": {
+            "raw_numeric": "decrease",
+            "accessibility": "not_applicable",
+            "event_semantics": "declared_change"
+          },
+          "pair_scope": "not_applicable"
+        }
+      ],
+      "morphology_atoms": [],
+      "corpus_entry": {
+        "entry_kind": "wall_context_record",
+        "bundle_kind": null,
+        "record_bundle": null,
+        "context_record": {
+          "record_role": "pre_wall_reference",
+          "diagnostic_fields": [
+            {
+              "field_key": "spectral.pair_gap_response",
+              "field_family": "spectral",
+              "carrier_id": "spectral",
+              "change_kind": "declared_change",
+              "observation": "sampling-dependent common half-closure response",
+              "direction": {
+                "raw_numeric": "decrease",
+                "accessibility": "not_applicable",
+                "event_semantics": "declared_change"
+              },
+              "pair_scope": "not_applicable"
+            }
+          ]
+        }
+      },
+      "morphology_signature": null,
+      "curated_signature": null,
+      "evidence_owner": "paper11",
+      "evidence_relation": "paper11_local",
+      "inclusion_ledger_entry": null,
+      "corpus_entry_kind": "wall_context_record",
+      "morphology_bundle_kind": null,
+      "main_wall_spectrum_eligible": false,
+      "analogue_morphology_eligible": false
+    },
+    {
+      "record_id": "rubik-r2-repair",
+      "species": "Rubik accessibility",
+      "observable": "registered Lie direct and simple-commutator support",
+      "deformation_origin": "fixed generator family",
+      "change_locus": "path-commutator cancellation repaired at R2",
+      "evidence": "experiments/paper5/validation/path_commutator_cancellation.py",
+      "claim_status": "Computational Certificate",
+      "explicit_deformation": false,
+      "explicit_locus": false,
+      "measured_signature": true,
+      "note": "Static repair mechanism, not yet a deformation wall record. Carrier is the declared Paper V Lie family.",
+      "evidence_exists": true,
+      "wall_package": "lie_hall",
+      "active": true,
+      "source_record_id": "BF-rubik-r2-repair",
+      "curation_tags": [
+        "REPAIR",
+        "BRIDGE_INCIDENCE"
+      ],
+      "curation_assignment": {
+        "rulebook_version": "paper11-curation-tags-v1.0",
+        "assignment_source": "inherited",
+        "tags": [
+          "REPAIR",
+          "BRIDGE_INCIDENCE"
+        ],
+        "override_reason": null
+      },
+      "compatibility": {
+        "historical_census_eligible": false
+      },
+      "local_model_eligibility": {
+        "status": "unresolved",
+        "model_family": "ADE",
+        "condition_checks": [],
+        "evidence_refs": []
+      },
+      "realization_kind": "strict_sof",
+      "record_role": "static_boundary_witness",
+      "wall_coordinate_profile": {
+        "field_families": [
+          "lie_hall"
+        ],
+        "event_kinds": [
+          "first_hit_change",
+          "repair"
+        ],
+        "regularity": "unknown",
+        "persistence_profile": [
+          "unresolved"
+        ],
+        "geometry": {
+          "location": "unresolved",
+          "crossing": "unresolved",
+          "codimension_status": "codimension_unresolved"
+        },
+        "evidence": "Computational Certificate"
+      },
+      "field_family": "lie_hall",
+      "typed_channel_count": 2,
+      "field_observations": [
+        {
+          "field_key": "lie.direct_support[X]",
+          "field_family": "lie_hall",
+          "carrier_id": "lie_hall",
+          "change_kind": "declared_change",
+          "observation": "declared direct obstruction",
+          "direction": {
+            "raw_numeric": "not_applicable",
+            "accessibility": "not_applicable",
+            "event_semantics": "declared_change"
+          },
+          "pair_scope": "off_diagonal"
+        },
+        {
+          "field_key": "lie.simple_commutator_support[X]",
+          "field_family": "lie_hall",
+          "carrier_id": "lie_hall",
+          "change_kind": "declared_change",
+          "observation": "simple-commutator emergence",
+          "direction": {
+            "raw_numeric": "increase",
+            "accessibility": "not_applicable",
+            "event_semantics": "declared_change"
+          },
+          "pair_scope": "off_diagonal",
+          "depth_convention": "simple commutator"
+        }
+      ],
+      "morphology_atoms": [],
+      "corpus_entry": {
+        "entry_kind": "wall_context_record",
+        "bundle_kind": null,
+        "record_bundle": null,
+        "context_record": {
+          "record_role": "static_boundary_witness",
+          "diagnostic_fields": [
+            {
+              "field_key": "lie.direct_support[X]",
+              "field_family": "lie_hall",
+              "carrier_id": "lie_hall",
+              "change_kind": "declared_change",
+              "observation": "declared direct obstruction",
+              "direction": {
+                "raw_numeric": "not_applicable",
+                "accessibility": "not_applicable",
+                "event_semantics": "declared_change"
+              },
+              "pair_scope": "off_diagonal"
+            },
+            {
+              "field_key": "lie.simple_commutator_support[X]",
+              "field_family": "lie_hall",
+              "carrier_id": "lie_hall",
+              "change_kind": "declared_change",
+              "observation": "simple-commutator emergence",
+              "direction": {
+                "raw_numeric": "increase",
+                "accessibility": "not_applicable",
+                "event_semantics": "declared_change"
+              },
+              "pair_scope": "off_diagonal",
+              "depth_convention": "simple commutator"
+            }
+          ]
+        }
+      },
+      "morphology_signature": null,
+      "curated_signature": null,
+      "evidence_owner": "paper5",
+      "evidence_relation": "imported_source_record",
+      "inclusion_ledger_entry": null,
+      "corpus_entry_kind": "wall_context_record",
+      "morphology_bundle_kind": null,
+      "main_wall_spectrum_eligible": false,
+      "analogue_morphology_eligible": false
+    },
+    {
+      "record_id": "rubik-commutator-cancellation",
+      "species": "Rubik anti-Hermitian low-order audit",
+      "observable": "simple-commutator cancellation relative to represented products",
+      "deformation_origin": "static natural-sector audit",
+      "change_locus": "288 registered commutator-cancellation instances",
+      "evidence": "experiments/paper10/rubik_wild_type34_audit.py",
+      "claim_status": "Computational Certificate",
+      "explicit_deformation": false,
+      "explicit_locus": false,
+      "measured_signature": true,
+      "note": "Static typed count; not a deformation wall record.",
+      "evidence_exists": true,
+      "wall_package": "lie_hall",
+      "active": true,
+      "source_record_id": "F-rubik-type-iii-cancellation",
+      "curation_tags": [
+        "BRIDGE_INCIDENCE"
+      ],
+      "curation_assignment": {
+        "rulebook_version": "paper11-curation-tags-v1.0",
+        "assignment_source": "inherited",
+        "tags": [
+          "BRIDGE_INCIDENCE"
+        ],
+        "override_reason": null
+      },
+      "compatibility": {
+        "historical_census_eligible": false
+      },
+      "local_model_eligibility": {
+        "status": "unresolved",
+        "model_family": "ADE",
+        "condition_checks": [],
+        "evidence_refs": []
+      },
+      "realization_kind": "strict_sof",
+      "record_role": "static_boundary_witness",
+      "wall_coordinate_profile": {
+        "field_families": [
+          "lie_hall"
+        ],
+        "event_kinds": [
+          "first_hit_change"
+        ],
+        "regularity": "unknown",
+        "persistence_profile": [
+          "unresolved"
+        ],
+        "geometry": {
+          "location": "unresolved",
+          "crossing": "unresolved",
+          "codimension_status": "codimension_unresolved"
+        },
+        "evidence": "Computational Certificate"
+      },
+      "field_family": "lie_hall",
+      "typed_channel_count": 1,
+      "field_observations": [
+        {
+          "field_key": "lie.simple_commutator_support[X]",
+          "field_family": "lie_hall",
+          "carrier_id": "lie_hall",
+          "change_kind": "declared_change",
+          "observation": "cancellation after nonzero ordered-product contributions",
+          "direction": {
+            "raw_numeric": "decrease",
+            "accessibility": "not_applicable",
+            "event_semantics": "declared_change"
+          },
+          "pair_scope": "off_diagonal",
+          "depth_convention": "simple commutator"
+        }
+      ],
+      "morphology_atoms": [],
+      "corpus_entry": {
+        "entry_kind": "wall_context_record",
+        "bundle_kind": null,
+        "record_bundle": null,
+        "context_record": {
+          "record_role": "static_boundary_witness",
+          "diagnostic_fields": [
+            {
+              "field_key": "lie.simple_commutator_support[X]",
+              "field_family": "lie_hall",
+              "carrier_id": "lie_hall",
+              "change_kind": "declared_change",
+              "observation": "cancellation after nonzero ordered-product contributions",
+              "direction": {
+                "raw_numeric": "decrease",
+                "accessibility": "not_applicable",
+                "event_semantics": "declared_change"
+              },
+              "pair_scope": "off_diagonal",
+              "depth_convention": "simple commutator"
+            }
+          ]
+        }
+      },
+      "morphology_signature": null,
+      "curated_signature": null,
+      "evidence_owner": "paper10",
+      "evidence_relation": "imported_source_record",
+      "inclusion_ledger_entry": null,
+      "corpus_entry_kind": "wall_context_record",
+      "morphology_bundle_kind": null,
+      "main_wall_spectrum_eligible": false,
+      "analogue_morphology_eligible": false
+    },
+    {
+      "record_id": "constructed-route-incidence",
+      "species": "Constructed routed-product incidence",
+      "observable": "selected routed operator product",
+      "deformation_origin": "algebraic bridge perturbation",
+      "change_locus": "image-kernel incidence variety AB=0",
+      "evidence": "experiments/paper11/results/route_incidence_result_v1.json",
+      "claim_status": "Computational Certificate",
+      "explicit_deformation": true,
+      "explicit_locus": true,
+      "measured_signature": true,
+      "note": "Free matrix-pair incidence model from Paper VII; not a represented Rubik transversality or genericity theorem.",
+      "evidence_exists": true,
+      "wall_package": "operator_route",
+      "active": true,
+      "source_record_id": "F-rubik-type-iv-incidence",
+      "curation_tags": [
+        "BRIDGE_INCIDENCE"
+      ],
+      "curation_assignment": {
+        "rulebook_version": "paper11-curation-tags-v1.0",
+        "assignment_source": "inherited",
+        "tags": [
+          "BRIDGE_INCIDENCE"
+        ],
+        "override_reason": null
+      },
+      "compatibility": {
+        "historical_census_eligible": true
+      },
+      "local_model_eligibility": {
+        "status": "unresolved",
+        "model_family": "ADE",
+        "condition_checks": [],
+        "evidence_refs": []
+      },
+      "realization_kind": "strict_sof",
+      "record_role": "wall_locus_sample",
+      "evidence_contract": {
+        "schema": "paper11-route-incidence-result-v1.0",
+        "sha256": "8bbc3c7d2c919d4ef9439bb4a506efec0784d626bd9db3b4c74018497eb749c9",
+        "producer": "experiments/paper11/validation/produce_route_incidence_result.py",
+        "producer_sha256": "53df725204d053d089f30a727592196050d777bdec8a2624821e657879e7109d",
+        "validation_certificate": "experiments/paper11/results/route_incidence_validation_v1.json",
+        "validation_certificate_sha256": "44c033fa52ae4b82ac5f5ef5113622a0bb194edd779477f91621aa97ff40845d",
+        "validator": "experiments/paper11/validation/validate_route_incidence_result.py",
+        "validator_sha256": "8242888be885556c4c8fa7de357fc8c7e62358477e92f3d5dcd2323bb4f2c20c"
+      },
+      "source_evidence": "experiments/paper11/validation/produce_route_incidence_result.py",
+      "wall_coordinate_profile": {
+        "field_families": [
+          "route"
+        ],
+        "event_kinds": [
+          "first_hit_change"
+        ],
+        "regularity": "stratified",
+        "persistence_profile": [
+          "unresolved"
+        ],
+        "geometry": {
+          "location": "unresolved",
+          "crossing": "unresolved",
+          "codimension_status": "codimension_unresolved"
+        },
+        "evidence": "Computational Certificate"
+      },
+      "field_family": "route",
+      "typed_channel_count": 1,
+      "field_observations": [
+        {
+          "field_key": "route.support[Y,d=2]",
+          "field_family": "route",
+          "carrier_id": "carrier.routed_operator_product",
+          "change_kind": "declared_change",
+          "observation": "selected routed product vanishes by image-kernel incidence",
+          "direction": {
+            "raw_numeric": "decrease",
+            "accessibility": "not_applicable",
+            "event_semantics": "declared_change"
+          },
+          "pair_scope": "off_diagonal",
+          "depth_convention": "ordered route length 2"
+        }
+      ],
+      "morphology_atoms": [
+        {
+          "atom_kind": "locus_sample",
+          "inclusion_ledger_version": "paper11-wall-record-inclusion-v1.0",
+          "realization_kind": "strict_sof",
+          "spectrum_partition": "strict_main",
+          "primary_wall_field": "route.support[Y,d=2]",
+          "primary_field_family": "route",
+          "primary_carrier_id": "carrier.routed_operator_product",
+          "context_field_keys": [],
+          "context_carrier_ids": [],
+          "field_registrations": [
+            {
+              "field_key": "route.support[Y,d=2]",
+              "field_role": "primary_wall_field",
+              "field_family": "route",
+              "carrier_id": "carrier.routed_operator_product",
+              "chart_or_domain_ref": "paper7.free_matrix_pair_incidence_domain",
+              "comparison_ref": "identity_on_declared_fixed_schema",
+              "policy_refs": {
+                "named_policy_refs": [
+                  "paper7.route_length=2",
+                  "paper7.image_kernel_incidence"
+                ],
+                "pair_scope": "off_diagonal",
+                "diagonal_reduction": "not_applicable",
+                "depth_convention": "ordered route length 2",
+                "cutoff": "not_applicable"
+              },
+              "evidence_ref": "experiments/paper11/results/route_incidence_result_v1.json"
+            }
+          ],
+          "context_no_promotion": "a context-field change is a co-observation only; it creates a separate wall atom only after independent wall admission",
+          "domain_context_ref": "paper7.free_matrix_pair_incidence_domain",
+          "event_locus": "image-kernel incidence variety AB=0",
+          "field_germs": [
+            {
+              "field_key": "route.support[Y,d=2]",
+              "incident_strata": [
+                {
+                  "stratum_ref": "image_kernel_incidence_stratum",
+                  "value": {
+                    "route_support": false
+                  }
+                },
+                {
+                  "stratum_ref": "incident_nonzero_composition_stratum",
+                  "value": {
+                    "route_support": true
+                  }
+                }
+              ]
+            }
+          ],
+          "probe_path_ref": null,
+          "probe_orientation": null,
+          "order_semantics": "intrinsic_none"
+        }
+      ],
+      "corpus_entry": {
+        "entry_kind": "morphology_record_bundle",
+        "bundle_kind": "strict_wall_record",
+        "record_bundle": {
+          "bundle_id": "constructed-route-incidence",
+          "morphology_atoms": [
+            {
+              "atom_kind": "locus_sample",
+              "inclusion_ledger_version": "paper11-wall-record-inclusion-v1.0",
+              "realization_kind": "strict_sof",
+              "spectrum_partition": "strict_main",
+              "primary_wall_field": "route.support[Y,d=2]",
+              "primary_field_family": "route",
+              "primary_carrier_id": "carrier.routed_operator_product",
+              "context_field_keys": [],
+              "context_carrier_ids": [],
+              "field_registrations": [
+                {
+                  "field_key": "route.support[Y,d=2]",
+                  "field_role": "primary_wall_field",
+                  "field_family": "route",
+                  "carrier_id": "carrier.routed_operator_product",
+                  "chart_or_domain_ref": "paper7.free_matrix_pair_incidence_domain",
+                  "comparison_ref": "identity_on_declared_fixed_schema",
+                  "policy_refs": {
+                    "named_policy_refs": [
+                      "paper7.route_length=2",
+                      "paper7.image_kernel_incidence"
+                    ],
+                    "pair_scope": "off_diagonal",
+                    "diagonal_reduction": "not_applicable",
+                    "depth_convention": "ordered route length 2",
+                    "cutoff": "not_applicable"
+                  },
+                  "evidence_ref": "experiments/paper11/results/route_incidence_result_v1.json"
+                }
+              ],
+              "context_no_promotion": "a context-field change is a co-observation only; it creates a separate wall atom only after independent wall admission",
+              "domain_context_ref": "paper7.free_matrix_pair_incidence_domain",
+              "event_locus": "image-kernel incidence variety AB=0",
+              "field_germs": [
+                {
+                  "field_key": "route.support[Y,d=2]",
+                  "incident_strata": [
+                    {
+                      "stratum_ref": "image_kernel_incidence_stratum",
+                      "value": {
+                        "route_support": false
+                      }
+                    },
+                    {
+                      "stratum_ref": "incident_nonzero_composition_stratum",
+                      "value": {
+                        "route_support": true
+                      }
+                    }
+                  ]
+                }
+              ],
+              "probe_path_ref": null,
+              "probe_orientation": null,
+              "order_semantics": "intrinsic_none"
+            }
+          ]
+        },
+        "context_record": null
+      },
+      "morphology_signature": {
+        "role": "wall_locus_sample",
+        "realization_kind": "strict_sof",
+        "atom_kind": "locus_sample",
+        "primary_field_family": "route",
+        "primary_carrier_id": "carrier.routed_operator_product",
+        "delta_ref": "constructed-route-incidence:morphology_atom:0",
+        "profile": {
+          "field_families": [
+            "route"
+          ],
+          "event_kinds": [
+            "first_hit_change"
+          ],
+          "regularity": "stratified",
+          "persistence_profile": [
+            "unresolved"
+          ],
+          "geometry": {
+            "location": "unresolved",
+            "crossing": "unresolved",
+            "codimension_status": "codimension_unresolved"
+          },
+          "evidence": "Computational Certificate"
+        }
+      },
+      "curated_signature": {
+        "morphology_signature_ref": "constructed-route-incidence:morphology_signature",
+        "curation_assignment": {
+          "rulebook_version": "paper11-curation-tags-v1.0",
+          "assignment_source": "inherited",
+          "tags": [
+            "BRIDGE_INCIDENCE"
+          ],
+          "override_reason": null
+        }
+      },
+      "evidence_owner": "paper11",
+      "evidence_relation": "paper11_local",
+      "inclusion_ledger_entry": "paper11-wall-record-inclusion-v1.0:F-rubik-type-iv-incidence",
+      "corpus_entry_kind": "morphology_record_bundle",
+      "morphology_bundle_kind": "strict_wall_record",
+      "main_wall_spectrum_eligible": true,
+      "analogue_morphology_eligible": false
+    },
+    {
+      "record_id": "constructed-commutator-repair",
+      "species": "Constructed commutator-cancellation control",
+      "observable": "direct Lie support and simple-commutator support",
+      "deformation_origin": "constructed obstruction control",
+      "change_locus": "nonzero R2 bridge across an R1 obstruction",
+      "evidence": "experiments/paper5/validation/complement_explosion.py",
+      "claim_status": "Computational Certificate",
+      "explicit_deformation": false,
+      "explicit_locus": false,
+      "measured_signature": true,
+      "note": "",
+      "evidence_exists": true,
+      "wall_package": "lie_hall",
+      "active": true,
+      "source_record_id": "BF-synthetic-complement-repair",
+      "curation_tags": [
+        "REPAIR",
+        "BRIDGE_INCIDENCE"
+      ],
+      "curation_assignment": {
+        "rulebook_version": "paper11-curation-tags-v1.0",
+        "assignment_source": "inherited",
+        "tags": [
+          "REPAIR",
+          "BRIDGE_INCIDENCE"
+        ],
+        "override_reason": null
+      },
+      "compatibility": {
+        "historical_census_eligible": false
+      },
+      "local_model_eligibility": {
+        "status": "unresolved",
+        "model_family": "ADE",
+        "condition_checks": [],
+        "evidence_refs": []
+      },
+      "realization_kind": "strict_sof",
+      "record_role": "static_boundary_witness",
+      "wall_coordinate_profile": {
+        "field_families": [
+          "lie_hall"
+        ],
+        "event_kinds": [
+          "first_hit_change",
+          "repair"
+        ],
+        "regularity": "unknown",
+        "persistence_profile": [
+          "unresolved"
+        ],
+        "geometry": {
+          "location": "unresolved",
+          "crossing": "unresolved",
+          "codimension_status": "codimension_unresolved"
+        },
+        "evidence": "Computational Certificate"
+      },
+      "field_family": "lie_hall",
+      "typed_channel_count": 2,
+      "field_observations": [
+        {
+          "field_key": "lie.direct_support[X]",
+          "field_family": "lie_hall",
+          "carrier_id": "lie_hall",
+          "change_kind": "declared_change",
+          "observation": "declared direct obstruction",
+          "direction": {
+            "raw_numeric": "not_applicable",
+            "accessibility": "not_applicable",
+            "event_semantics": "declared_change"
+          },
+          "pair_scope": "off_diagonal"
+        },
+        {
+          "field_key": "lie.simple_commutator_support[X]",
+          "field_family": "lie_hall",
+          "carrier_id": "lie_hall",
+          "change_kind": "declared_change",
+          "observation": "simple-commutator support appears",
+          "direction": {
+            "raw_numeric": "increase",
+            "accessibility": "not_applicable",
+            "event_semantics": "declared_change"
+          },
+          "pair_scope": "off_diagonal",
+          "depth_convention": "simple commutator"
+        }
+      ],
+      "morphology_atoms": [],
+      "corpus_entry": {
+        "entry_kind": "wall_context_record",
+        "bundle_kind": null,
+        "record_bundle": null,
+        "context_record": {
+          "record_role": "static_boundary_witness",
+          "diagnostic_fields": [
+            {
+              "field_key": "lie.direct_support[X]",
+              "field_family": "lie_hall",
+              "carrier_id": "lie_hall",
+              "change_kind": "declared_change",
+              "observation": "declared direct obstruction",
+              "direction": {
+                "raw_numeric": "not_applicable",
+                "accessibility": "not_applicable",
+                "event_semantics": "declared_change"
+              },
+              "pair_scope": "off_diagonal"
+            },
+            {
+              "field_key": "lie.simple_commutator_support[X]",
+              "field_family": "lie_hall",
+              "carrier_id": "lie_hall",
+              "change_kind": "declared_change",
+              "observation": "simple-commutator support appears",
+              "direction": {
+                "raw_numeric": "increase",
+                "accessibility": "not_applicable",
+                "event_semantics": "declared_change"
+              },
+              "pair_scope": "off_diagonal",
+              "depth_convention": "simple commutator"
+            }
+          ]
+        }
+      },
+      "morphology_signature": null,
+      "curated_signature": null,
+      "evidence_owner": "paper5",
+      "evidence_relation": "imported_source_record",
+      "inclusion_ledger_entry": null,
+      "corpus_entry_kind": "wall_context_record",
+      "morphology_bundle_kind": null,
+      "main_wall_spectrum_eligible": false,
+      "analogue_morphology_eligible": false
+    },
+    {
+      "record_id": "quantum-cnot-path-admissibility",
+      "species": "Quantum Clifford+CNOT path control",
+      "observable": "path admissibility and bounded Lie/Hall support summary",
+      "deformation_origin": "affine CNOT interpolation with fractional-unitary control",
+      "change_locus": "affine singularity at s=0.5; no internal transition on the unitary control",
+      "evidence": "experiments/paper11/results/cnot_logarithm_boundary_v1.json",
+      "claim_status": "Computational Observation",
+      "explicit_deformation": true,
+      "explicit_locus": true,
+      "measured_signature": true,
+      "note": "The former s=0.55 repair threshold is withdrawn. The affine-side difference is induced by a singular logarithm-domain crossing and samplewise branch choice. The fractional-unitary control is admissible and has no internal support transition on the declared grid.",
+      "evidence_exists": true,
+      "wall_package": "cnot_path_admissibility_diagnostic",
+      "active": true,
+      "source_record_id": "BCF-quantum-cnot-threshold",
+      "curation_tags": [
+        "NONSMOOTH_DISCRETE"
+      ],
+      "curation_assignment": {
+        "rulebook_version": "paper11-curation-tags-v1.0",
+        "assignment_source": "override",
+        "tags": [
+          "NONSMOOTH_DISCRETE"
+        ],
+        "override_reason": "typed carrier and promotion-boundary correction"
+      },
+      "compatibility": {
+        "historical_census_eligible": true
+      },
+      "local_model_eligibility": {
+        "status": "unresolved",
+        "model_family": "ADE",
+        "condition_checks": [],
+        "evidence_refs": []
+      },
+      "realization_kind": "strict_sof",
+      "record_role": "trajectory_diagnostic",
+      "evidence_contract": {
+        "schema": "paper11-cnot-path-admissibility-v1.0",
+        "sha256": "e0d5cb708d742ad3d3a151a4329ca19ed0b2c2c07b8e4019e5bbc9796f8411c7",
+        "producer": "experiments/paper11/cnot_logarithm_boundary.py",
+        "producer_sha256": "8bf97e96201b1bacd5d7a50a7b3781f80ccd9142f769a74d3afa6c1170ee5529"
+      },
+      "source_evidence": "experiments/paper11/cnot_logarithm_boundary.py",
+      "wall_coordinate_profile": {
+        "field_families": [
+          "diagnostic"
+        ],
+        "event_kinds": [
+          "boundary_hit"
+        ],
+        "regularity": "unknown",
+        "persistence_profile": [
+          "unresolved"
+        ],
+        "geometry": {
+          "location": "unresolved",
+          "crossing": "unresolved",
+          "codimension_status": "codimension_unresolved"
+        },
+        "evidence": "Computational Observation"
+      },
+      "field_family": "diagnostic",
+      "typed_channel_count": 1,
+      "field_observations": [
+        {
+          "field_key": "diagnostic.path_logarithm_admissibility",
+          "field_family": "diagnostic",
+          "carrier_id": "carrier.cnot_path_admissibility_control",
+          "change_kind": "domain_boundary",
+          "observation": "the affine path is singular at s=0.5; the unitary path has an explicit continuous logarithm and one positive-parameter signature",
+          "direction": {
+            "raw_numeric": "not_applicable",
+            "accessibility": "not_applicable",
+            "event_semantics": "domain_boundary"
+          },
+          "pair_scope": "not_applicable"
+        }
+      ],
+      "morphology_atoms": [],
+      "corpus_entry": {
+        "entry_kind": "wall_context_record",
+        "bundle_kind": null,
+        "record_bundle": null,
+        "context_record": {
+          "record_role": "trajectory_diagnostic",
+          "diagnostic_fields": [
+            {
+              "field_key": "diagnostic.path_logarithm_admissibility",
+              "field_family": "diagnostic",
+              "carrier_id": "carrier.cnot_path_admissibility_control",
+              "change_kind": "domain_boundary",
+              "observation": "the affine path is singular at s=0.5; the unitary path has an explicit continuous logarithm and one positive-parameter signature",
+              "direction": {
+                "raw_numeric": "not_applicable",
+                "accessibility": "not_applicable",
+                "event_semantics": "domain_boundary"
+              },
+              "pair_scope": "not_applicable"
+            }
+          ]
+        }
+      },
+      "morphology_signature": null,
+      "curated_signature": null,
+      "evidence_owner": "paper11",
+      "evidence_relation": "paper11_local",
+      "inclusion_ledger_entry": "paper11-wall-record-inclusion-v1.0:BCF-quantum-cnot-threshold",
+      "corpus_entry_kind": "wall_context_record",
+      "morphology_bundle_kind": null,
+      "main_wall_spectrum_eligible": false,
+      "analogue_morphology_eligible": false
+    },
+    {
+      "record_id": "control-kalman-chain",
+      "species": "Control Kalman",
+      "observable": "controllability-flag word depth",
+      "deformation_origin": "static chain realization",
+      "change_locus": "terminal sector reached at word depth 2",
+      "evidence": "experiments/paper10/control_pde_combinatorial_sof.py",
+      "claim_status": "Computational Observation",
+      "explicit_deformation": false,
+      "explicit_locus": false,
+      "measured_signature": true,
+      "note": "",
+      "evidence_exists": true,
+      "wall_package": "operator_word",
+      "active": true,
+      "source_record_id": "BF-control-kalman-chain",
+      "curation_tags": [
+        "REPAIR",
+        "BRIDGE_INCIDENCE"
+      ],
+      "curation_assignment": {
+        "rulebook_version": "paper11-curation-tags-v1.0",
+        "assignment_source": "inherited",
+        "tags": [
+          "REPAIR",
+          "BRIDGE_INCIDENCE"
+        ],
+        "override_reason": null
+      },
+      "compatibility": {
+        "historical_census_eligible": false
+      },
+      "local_model_eligibility": {
+        "status": "unresolved",
+        "model_family": "ADE",
+        "condition_checks": [],
+        "evidence_refs": []
+      },
+      "realization_kind": "strict_sof",
+      "record_role": "static_boundary_witness",
+      "wall_coordinate_profile": {
+        "field_families": [
+          "word"
+        ],
+        "event_kinds": [
+          "first_hit_change",
+          "repair"
+        ],
+        "regularity": "unknown",
+        "persistence_profile": [
+          "unresolved"
+        ],
+        "geometry": {
+          "location": "unresolved",
+          "crossing": "unresolved",
+          "codimension_status": "codimension_unresolved"
+        },
+        "evidence": "Computational Observation"
+      },
+      "field_family": "word",
+      "typed_channel_count": 1,
+      "field_observations": [
+        {
+          "field_key": "word.depth_truncated[Y,cutoff=3]",
+          "field_family": "word",
+          "carrier_id": "operator_word",
+          "change_kind": "declared_change",
+          "observation": "terminal flag reached at word depth 2",
+          "direction": {
+            "raw_numeric": "increase",
+            "accessibility": "not_applicable",
+            "event_semantics": "declared_change"
+          },
+          "pair_scope": "off_diagonal",
+          "depth_convention": "positive word length",
+          "cutoff": 3
+        }
+      ],
+      "morphology_atoms": [],
+      "corpus_entry": {
+        "entry_kind": "wall_context_record",
+        "bundle_kind": null,
+        "record_bundle": null,
+        "context_record": {
+          "record_role": "static_boundary_witness",
+          "diagnostic_fields": [
+            {
+              "field_key": "word.depth_truncated[Y,cutoff=3]",
+              "field_family": "word",
+              "carrier_id": "operator_word",
+              "change_kind": "declared_change",
+              "observation": "terminal flag reached at word depth 2",
+              "direction": {
+                "raw_numeric": "increase",
+                "accessibility": "not_applicable",
+                "event_semantics": "declared_change"
+              },
+              "pair_scope": "off_diagonal",
+              "depth_convention": "positive word length",
+              "cutoff": 3
+            }
+          ]
+        }
+      },
+      "morphology_signature": null,
+      "curated_signature": null,
+      "evidence_owner": "paper10",
+      "evidence_relation": "imported_source_record",
+      "inclusion_ledger_entry": null,
+      "corpus_entry_kind": "wall_context_record",
+      "morphology_bundle_kind": null,
+      "main_wall_spectrum_eligible": false,
+      "analogue_morphology_eligible": false
+    },
+    {
+      "record_id": "transformer-matrix-commutator-repair",
+      "species": "NN Transformer activation",
+      "observable": "activation-sector accessibility",
+      "deformation_origin": "single synthetic transformer realization",
+      "change_locus": "2 frozen-R1 pairs repaired at Lie depth",
+      "evidence": "experiments/paper12/transformer_activation_sof.py",
+      "claim_status": "Computational Observation",
+      "explicit_deformation": false,
+      "explicit_locus": false,
+      "measured_signature": true,
+      "note": "Static activation-sector diagnostic, not a deformation wall. The registered matrices are not a strict Lie/Hall carrier.",
+      "evidence_exists": true,
+      "wall_package": "matrix_commutator_diagnostic",
+      "active": true,
+      "source_record_id": "B-transformer-lie-depth-repair",
+      "curation_tags": [
+        "REPAIR"
+      ],
+      "curation_assignment": {
+        "rulebook_version": "paper11-curation-tags-v1.0",
+        "assignment_source": "inherited",
+        "tags": [
+          "REPAIR"
+        ],
+        "override_reason": null
+      },
+      "compatibility": {
+        "historical_census_eligible": false
+      },
+      "local_model_eligibility": {
+        "status": "unresolved",
+        "model_family": "ADE",
+        "condition_checks": [],
+        "evidence_refs": []
+      },
+      "realization_kind": "diagnostic_analogue",
+      "record_role": "trajectory_diagnostic",
+      "wall_coordinate_profile": {
+        "field_families": [
+          "diagnostic"
+        ],
+        "event_kinds": [
+          "repair"
+        ],
+        "regularity": "unknown",
+        "persistence_profile": [
+          "unresolved"
+        ],
+        "geometry": {
+          "location": "unresolved",
+          "crossing": "unresolved",
+          "codimension_status": "codimension_unresolved"
+        },
+        "evidence": "Computational Observation"
+      },
+      "field_family": "diagnostic",
+      "typed_channel_count": 1,
+      "field_observations": [
+        {
+          "field_key": "diagnostic.matrix_commutator_repair_pair_count[cutoff=3]",
+          "field_family": "diagnostic",
+          "carrier_id": "matrix_commutator_diagnostic",
+          "change_kind": "declared_change",
+          "observation": "two direct-unsupported pairs reached within tested rounds",
+          "direction": {
+            "raw_numeric": "increase",
+            "accessibility": "not_applicable",
+            "event_semantics": "declared_change"
+          },
+          "pair_scope": "off_diagonal",
+          "depth_convention": "legacy matrix-commutator generation round",
+          "cutoff": 3
+        }
+      ],
+      "morphology_atoms": [],
+      "corpus_entry": {
+        "entry_kind": "wall_context_record",
+        "bundle_kind": null,
+        "record_bundle": null,
+        "context_record": {
+          "record_role": "trajectory_diagnostic",
+          "diagnostic_fields": [
+            {
+              "field_key": "diagnostic.matrix_commutator_repair_pair_count[cutoff=3]",
+              "field_family": "diagnostic",
+              "carrier_id": "matrix_commutator_diagnostic",
+              "change_kind": "declared_change",
+              "observation": "two direct-unsupported pairs reached within tested rounds",
+              "direction": {
+                "raw_numeric": "increase",
+                "accessibility": "not_applicable",
+                "event_semantics": "declared_change"
+              },
+              "pair_scope": "off_diagonal",
+              "depth_convention": "legacy matrix-commutator generation round",
+              "cutoff": 3
+            }
+          ]
+        }
+      },
+      "morphology_signature": null,
+      "curated_signature": null,
+      "evidence_owner": "paper12",
+      "evidence_relation": "imported_source_record",
+      "inclusion_ledger_entry": null,
+      "corpus_entry_kind": "wall_context_record",
+      "morphology_bundle_kind": null,
+      "main_wall_spectrum_eligible": false,
+      "analogue_morphology_eligible": false
+    },
+    {
+      "record_id": "moe-bias-repair",
+      "species": "Mixture-of-Experts routing",
+      "observable": "private-expert activity",
+      "deformation_origin": "load-bias update trajectory",
+      "change_locus": "10 dead experts repair from step 18",
+      "evidence": "experiments/paper12/moe_bias_repair_sof.py",
+      "claim_status": "Computational Certificate",
+      "explicit_deformation": true,
+      "explicit_locus": true,
+      "measured_signature": true,
+      "note": "Routing repair, not Lie-depth D-repair.",
+      "evidence_exists": true,
+      "wall_package": "routing",
+      "active": true,
+      "source_record_id": "BC-moe-bias-repair",
+      "curation_tags": [
+        "REPAIR"
+      ],
+      "curation_assignment": {
+        "rulebook_version": "paper11-curation-tags-v1.0",
+        "assignment_source": "override",
+        "tags": [
+          "REPAIR"
+        ],
+        "override_reason": "typed carrier and promotion-boundary correction"
+      },
+      "compatibility": {
+        "historical_census_eligible": true
+      },
+      "local_model_eligibility": {
+        "status": "unresolved",
+        "model_family": "ADE",
+        "condition_checks": [],
+        "evidence_refs": []
+      },
+      "realization_kind": "diagnostic_analogue",
+      "record_role": "trajectory_diagnostic",
+      "wall_coordinate_profile": {
+        "field_families": [
+          "state"
+        ],
+        "event_kinds": [
+          "repair"
+        ],
+        "regularity": "piecewise_smooth",
+        "persistence_profile": [
+          "unresolved"
+        ],
+        "geometry": {
+          "location": "unresolved",
+          "crossing": "unresolved",
+          "codimension_status": "codimension_unresolved"
+        },
+        "evidence": "Computational Certificate"
+      },
+      "field_family": "state",
+      "typed_channel_count": 1,
+      "field_observations": [
+        {
+          "field_key": "routing.active_private_experts",
+          "field_family": "state",
+          "carrier_id": "routing",
+          "change_kind": "declared_change",
+          "observation": "ten inactive experts become active",
+          "direction": {
+            "raw_numeric": "increase",
+            "accessibility": "not_applicable",
+            "event_semantics": "declared_change"
+          },
+          "pair_scope": "not_applicable"
+        }
+      ],
+      "morphology_atoms": [],
+      "corpus_entry": {
+        "entry_kind": "wall_context_record",
+        "bundle_kind": null,
+        "record_bundle": null,
+        "context_record": {
+          "record_role": "trajectory_diagnostic",
+          "diagnostic_fields": [
+            {
+              "field_key": "routing.active_private_experts",
+              "field_family": "state",
+              "carrier_id": "routing",
+              "change_kind": "declared_change",
+              "observation": "ten inactive experts become active",
+              "direction": {
+                "raw_numeric": "increase",
+                "accessibility": "not_applicable",
+                "event_semantics": "declared_change"
+              },
+              "pair_scope": "not_applicable"
+            }
+          ]
+        }
+      },
+      "morphology_signature": null,
+      "curated_signature": null,
+      "evidence_owner": "paper12",
+      "evidence_relation": "imported_source_record",
+      "inclusion_ledger_entry": null,
+      "corpus_entry_kind": "wall_context_record",
+      "morphology_bundle_kind": null,
+      "main_wall_spectrum_eligible": false,
+      "analogue_morphology_eligible": false
+    },
+    {
+      "record_id": "diffusion-denoising-repair",
+      "species": "Diffusion / denoising",
+      "observable": "PCA-sign sector count and support",
+      "deformation_origin": "forward diffusion and reverse denoising time",
+      "change_locus": "sector split at t=11 and reverse repair",
+      "evidence": "experiments/paper12/diffusion_denoising_sof.py",
+      "claim_status": "Computational Observation",
+      "explicit_deformation": true,
+      "explicit_locus": true,
+      "measured_signature": true,
+      "note": "",
+      "evidence_exists": true,
+      "wall_package": "state_partition",
+      "active": true,
+      "source_record_id": "B-diffusion-denoising-repair",
+      "curation_tags": [
+        "REPAIR"
+      ],
+      "curation_assignment": {
+        "rulebook_version": "paper11-curation-tags-v1.0",
+        "assignment_source": "inherited",
+        "tags": [
+          "REPAIR"
+        ],
+        "override_reason": null
+      },
+      "compatibility": {
+        "historical_census_eligible": true
+      },
+      "local_model_eligibility": {
+        "status": "unresolved",
+        "model_family": "ADE",
+        "condition_checks": [],
+        "evidence_refs": []
+      },
+      "realization_kind": "diagnostic_analogue",
+      "record_role": "trajectory_diagnostic",
+      "wall_coordinate_profile": {
+        "field_families": [
+          "state"
+        ],
+        "event_kinds": [
+          "repair"
+        ],
+        "regularity": "stochastic",
+        "persistence_profile": [
+          "unresolved"
+        ],
+        "geometry": {
+          "location": "unresolved",
+          "crossing": "unresolved",
+          "codimension_status": "codimension_unresolved"
+        },
+        "evidence": "Computational Observation"
+      },
+      "field_family": "state",
+      "typed_channel_count": 2,
+      "field_observations": [
+        {
+          "field_key": "state.sector_count",
+          "field_family": "state",
+          "carrier_id": "state_partition",
+          "change_kind": "declared_change",
+          "observation": "PCA-sign sectors split and reverse under denoising",
+          "direction": {
+            "raw_numeric": "mixed",
+            "accessibility": "not_applicable",
+            "event_semantics": "declared_change"
+          },
+          "pair_scope": "not_applicable"
+        },
+        {
+          "field_key": "state.direct_support",
+          "field_family": "state",
+          "carrier_id": "state_partition",
+          "change_kind": "declared_change",
+          "observation": "support repairs on the reverse path",
+          "direction": {
+            "raw_numeric": "increase",
+            "accessibility": "not_applicable",
+            "event_semantics": "declared_change"
+          },
+          "pair_scope": "off_diagonal"
+        }
+      ],
+      "morphology_atoms": [],
+      "corpus_entry": {
+        "entry_kind": "wall_context_record",
+        "bundle_kind": null,
+        "record_bundle": null,
+        "context_record": {
+          "record_role": "trajectory_diagnostic",
+          "diagnostic_fields": [
+            {
+              "field_key": "state.sector_count",
+              "field_family": "state",
+              "carrier_id": "state_partition",
+              "change_kind": "declared_change",
+              "observation": "PCA-sign sectors split and reverse under denoising",
+              "direction": {
+                "raw_numeric": "mixed",
+                "accessibility": "not_applicable",
+                "event_semantics": "declared_change"
+              },
+              "pair_scope": "not_applicable"
+            },
+            {
+              "field_key": "state.direct_support",
+              "field_family": "state",
+              "carrier_id": "state_partition",
+              "change_kind": "declared_change",
+              "observation": "support repairs on the reverse path",
+              "direction": {
+                "raw_numeric": "increase",
+                "accessibility": "not_applicable",
+                "event_semantics": "declared_change"
+              },
+              "pair_scope": "off_diagonal"
+            }
+          ]
+        }
+      },
+      "morphology_signature": null,
+      "curated_signature": null,
+      "evidence_owner": "paper12",
+      "evidence_relation": "imported_source_record",
+      "inclusion_ledger_entry": null,
+      "corpus_entry_kind": "wall_context_record",
+      "morphology_bundle_kind": null,
+      "main_wall_spectrum_eligible": false,
+      "analogue_morphology_eligible": false
+    },
+    {
+      "record_id": "maze-door-wall",
+      "species": "Dynamic maze connectivity",
+      "observable": "component and frozen-pair counts",
+      "deformation_origin": "discrete door closure/reopening path",
+      "change_locus": "24 splits followed by 24 reverse merges",
+      "evidence": "experiments/paper12/results/v2/ir/maze.ir.json",
+      "claim_status": "Computational Observation",
+      "explicit_deformation": true,
+      "explicit_locus": true,
+      "measured_signature": true,
+      "note": "Connectivity repair, not fixed-sector D-repair.",
+      "evidence_exists": true,
+      "wall_package": "graph_connectivity",
+      "active": true,
+      "source_record_id": "BE-maze-door-wall",
+      "curation_tags": [
+        "REPAIR",
+        "NONSMOOTH_DISCRETE"
+      ],
+      "curation_assignment": {
+        "rulebook_version": "paper11-curation-tags-v1.0",
+        "assignment_source": "inherited",
+        "tags": [
+          "REPAIR",
+          "NONSMOOTH_DISCRETE"
+        ],
+        "override_reason": null
+      },
+      "compatibility": {
+        "historical_census_eligible": true
+      },
+      "local_model_eligibility": {
+        "status": "unresolved",
+        "model_family": "ADE",
+        "condition_checks": [],
+        "evidence_refs": []
+      },
+      "realization_kind": "diagnostic_analogue",
+      "record_role": "wall_event",
+      "evidence_contract": {
+        "schema": "1.0",
+        "sha256": "5ba55c0b8215aa27eba5202e2b55732c51e39b887e117a6d4b927a653e2701fa",
+        "producer": "experiments/paper12/migrate_sofrs_v1_to_v2.py",
+        "producer_sha256": "93162fab3a6b3483dd610affa438e6e9936f881aa6a98b498bd6e262a154db1e"
+      },
+      "source_evidence": "experiments/paper12/migrate_sofrs_v1_to_v2.py",
+      "wall_coordinate_profile": {
+        "field_families": [
+          "graph"
+        ],
+        "event_kinds": [
+          "boundary_hit",
+          "repair"
+        ],
+        "regularity": "discrete",
+        "persistence_profile": [
+          "unresolved"
+        ],
+        "geometry": {
+          "location": "unresolved",
+          "crossing": "unresolved",
+          "codimension_status": "codimension_unresolved"
+        },
+        "evidence": "Computational Observation"
+      },
+      "field_family": "graph",
+      "typed_channel_count": 2,
+      "field_observations": [
+        {
+          "field_key": "graph.component_count",
+          "field_family": "graph",
+          "carrier_id": "carrier.analogue_connectivity_descriptor",
+          "change_kind": "declared_change",
+          "observation": "24 splits followed by 24 reverse merges",
+          "direction": {
+            "raw_numeric": "mixed",
+            "accessibility": "not_applicable",
+            "event_semantics": "declared_change"
+          },
+          "pair_scope": "not_applicable"
+        },
+        {
+          "field_key": "graph.unreachable_pair_count",
+          "field_family": "graph",
+          "carrier_id": "graph",
+          "change_kind": "declared_change",
+          "observation": "connectivity loss and repair",
+          "direction": {
+            "raw_numeric": "mixed",
+            "accessibility": "not_applicable",
+            "event_semantics": "declared_change"
+          },
+          "pair_scope": "off_diagonal"
+        }
+      ],
+      "morphology_atoms": [
+        {
+          "atom_kind": "trajectory_event",
+          "inclusion_ledger_version": "paper11-wall-record-inclusion-v1.0",
+          "realization_kind": "diagnostic_analogue",
+          "spectrum_partition": "analogue_morphology",
+          "primary_wall_field": "graph.component_count",
+          "primary_field_family": "graph",
+          "primary_carrier_id": "carrier.analogue_connectivity_descriptor",
+          "context_field_keys": [
+            "graph.unreachable_pair_count"
+          ],
+          "context_carrier_ids": [
+            "carrier.analogue_unreachable_pair_descriptor"
+          ],
+          "field_registrations": [
+            {
+              "field_key": "graph.component_count",
+              "field_role": "primary_wall_field",
+              "field_family": "graph",
+              "carrier_id": "carrier.analogue_connectivity_descriptor",
+              "chart_or_domain_ref": "paper12.maze_declared_door_sequence",
+              "comparison_ref": "identity_on_declared_fixed_schema",
+              "policy_refs": {
+                "named_policy_refs": [
+                  "paper12.maze.seed=42",
+                  "paper12.maze.connected_component_descriptor",
+                  "paper12.maze.schema_transition_boundary"
+                ],
+                "pair_scope": "not_applicable",
+                "diagonal_reduction": "not_applicable",
+                "depth_convention": "not_applicable",
+                "cutoff": "not_applicable"
+              },
+              "evidence_ref": "experiments/paper12/results/v2/ir/maze.ir.json"
+            },
+            {
+              "field_key": "graph.unreachable_pair_count",
+              "field_role": "context_co_observation",
+              "field_family": "graph",
+              "carrier_id": "graph",
+              "chart_or_domain_ref": "paper12.maze_declared_door_sequence",
+              "comparison_ref": "identity_on_declared_fixed_schema",
+              "policy_refs": {
+                "named_policy_refs": [
+                  "paper12.maze.seed=42",
+                  "paper12.maze.connected_component_descriptor",
+                  "paper12.maze.schema_transition_boundary"
+                ],
+                "pair_scope": "off_diagonal",
+                "diagonal_reduction": "not_applicable",
+                "depth_convention": "not_applicable",
+                "cutoff": "not_applicable"
+              },
+              "evidence_ref": "experiments/paper12/results/v2/ir/maze.ir.json"
+            }
+          ],
+          "context_no_promotion": "a context-field change is a co-observation only; it creates a separate wall atom only after independent wall admission",
+          "trajectory_ref": "paper12.maze_declared_door_sequence",
+          "order_semantics": "trajectory_oriented",
+          "orientation": "door_closure_order",
+          "left_right_sampling_rule": "adjacent discrete door states",
+          "event_parameter_or_interval": "first component-splitting door event",
+          "field_changes": [
+            {
+              "field_key": "graph.component_count",
+              "field_family": "graph",
+              "carrier_id": "graph",
+              "before_state": 1,
+              "after_state": 2,
+              "change_kind": "declared_change",
+              "observation": "24 splits followed by 24 reverse merges",
+              "direction": {
+                "raw_numeric": "increase",
+                "accessibility": "decrease",
+                "event_semantics": "connectivity_split"
+              },
+              "pair_scope": "not_applicable"
+            },
+            {
+              "field_key": "graph.unreachable_pair_count",
+              "field_family": "graph",
+              "carrier_id": "graph",
+              "before_state": "NOT_RECORDED",
+              "after_state": "NOT_RECORDED",
+              "change_kind": "declared_change",
+              "observation": "connectivity loss and repair",
+              "direction": {
+                "raw_numeric": "mixed",
+                "accessibility": "not_applicable",
+                "event_semantics": "declared_change"
+              },
+              "pair_scope": "off_diagonal"
+            }
+          ]
+        }
+      ],
+      "corpus_entry": {
+        "entry_kind": "morphology_record_bundle",
+        "bundle_kind": "analogue_morphology_record",
+        "record_bundle": {
+          "bundle_id": "maze-door-wall",
+          "morphology_atoms": [
+            {
+              "atom_kind": "trajectory_event",
+              "inclusion_ledger_version": "paper11-wall-record-inclusion-v1.0",
+              "realization_kind": "diagnostic_analogue",
+              "spectrum_partition": "analogue_morphology",
+              "primary_wall_field": "graph.component_count",
+              "primary_field_family": "graph",
+              "primary_carrier_id": "carrier.analogue_connectivity_descriptor",
+              "context_field_keys": [
+                "graph.unreachable_pair_count"
+              ],
+              "context_carrier_ids": [
+                "carrier.analogue_unreachable_pair_descriptor"
+              ],
+              "field_registrations": [
+                {
+                  "field_key": "graph.component_count",
+                  "field_role": "primary_wall_field",
+                  "field_family": "graph",
+                  "carrier_id": "carrier.analogue_connectivity_descriptor",
+                  "chart_or_domain_ref": "paper12.maze_declared_door_sequence",
+                  "comparison_ref": "identity_on_declared_fixed_schema",
+                  "policy_refs": {
+                    "named_policy_refs": [
+                      "paper12.maze.seed=42",
+                      "paper12.maze.connected_component_descriptor",
+                      "paper12.maze.schema_transition_boundary"
+                    ],
+                    "pair_scope": "not_applicable",
+                    "diagonal_reduction": "not_applicable",
+                    "depth_convention": "not_applicable",
+                    "cutoff": "not_applicable"
+                  },
+                  "evidence_ref": "experiments/paper12/results/v2/ir/maze.ir.json"
+                },
+                {
+                  "field_key": "graph.unreachable_pair_count",
+                  "field_role": "context_co_observation",
+                  "field_family": "graph",
+                  "carrier_id": "graph",
+                  "chart_or_domain_ref": "paper12.maze_declared_door_sequence",
+                  "comparison_ref": "identity_on_declared_fixed_schema",
+                  "policy_refs": {
+                    "named_policy_refs": [
+                      "paper12.maze.seed=42",
+                      "paper12.maze.connected_component_descriptor",
+                      "paper12.maze.schema_transition_boundary"
+                    ],
+                    "pair_scope": "off_diagonal",
+                    "diagonal_reduction": "not_applicable",
+                    "depth_convention": "not_applicable",
+                    "cutoff": "not_applicable"
+                  },
+                  "evidence_ref": "experiments/paper12/results/v2/ir/maze.ir.json"
+                }
+              ],
+              "context_no_promotion": "a context-field change is a co-observation only; it creates a separate wall atom only after independent wall admission",
+              "trajectory_ref": "paper12.maze_declared_door_sequence",
+              "order_semantics": "trajectory_oriented",
+              "orientation": "door_closure_order",
+              "left_right_sampling_rule": "adjacent discrete door states",
+              "event_parameter_or_interval": "first component-splitting door event",
+              "field_changes": [
+                {
+                  "field_key": "graph.component_count",
+                  "field_family": "graph",
+                  "carrier_id": "graph",
+                  "before_state": 1,
+                  "after_state": 2,
+                  "change_kind": "declared_change",
+                  "observation": "24 splits followed by 24 reverse merges",
+                  "direction": {
+                    "raw_numeric": "increase",
+                    "accessibility": "decrease",
+                    "event_semantics": "connectivity_split"
+                  },
+                  "pair_scope": "not_applicable"
+                },
+                {
+                  "field_key": "graph.unreachable_pair_count",
+                  "field_family": "graph",
+                  "carrier_id": "graph",
+                  "before_state": "NOT_RECORDED",
+                  "after_state": "NOT_RECORDED",
+                  "change_kind": "declared_change",
+                  "observation": "connectivity loss and repair",
+                  "direction": {
+                    "raw_numeric": "mixed",
+                    "accessibility": "not_applicable",
+                    "event_semantics": "declared_change"
+                  },
+                  "pair_scope": "off_diagonal"
+                }
+              ]
+            }
+          ]
+        },
+        "context_record": null
+      },
+      "morphology_signature": {
+        "role": "wall_event",
+        "realization_kind": "diagnostic_analogue",
+        "atom_kind": "trajectory_event",
+        "primary_field_family": "graph",
+        "primary_carrier_id": "carrier.analogue_connectivity_descriptor",
+        "delta_ref": "maze-door-wall:morphology_atom:0",
+        "profile": {
+          "field_families": [
+            "graph"
+          ],
+          "event_kinds": [
+            "boundary_hit",
+            "repair"
+          ],
+          "regularity": "discrete",
+          "persistence_profile": [
+            "unresolved"
+          ],
+          "geometry": {
+            "location": "unresolved",
+            "crossing": "unresolved",
+            "codimension_status": "codimension_unresolved"
+          },
+          "evidence": "Computational Observation"
+        }
+      },
+      "curated_signature": {
+        "morphology_signature_ref": "maze-door-wall:morphology_signature",
+        "curation_assignment": {
+          "rulebook_version": "paper11-curation-tags-v1.0",
+          "assignment_source": "inherited",
+          "tags": [
+            "REPAIR",
+            "NONSMOOTH_DISCRETE"
+          ],
+          "override_reason": null
+        }
+      },
+      "evidence_owner": "paper12",
+      "evidence_relation": "imported_source_record",
+      "inclusion_ledger_entry": "paper11-wall-record-inclusion-v1.0:BE-maze-door-wall",
+      "corpus_entry_kind": "morphology_record_bundle",
+      "morphology_bundle_kind": "analogue_morphology_record",
+      "main_wall_spectrum_eligible": false,
+      "analogue_morphology_eligible": true
+    },
+    {
+      "record_id": "recommender-targeted-bridge",
+      "species": "Recommender structural coverage",
+      "observable": "user-item cluster coverage",
+      "deformation_origin": "targeted interaction intervention",
+      "change_locus": "unreachable pairs reduced from 12/16 to 10/16",
+      "evidence": "experiments/paper12/recommender_sof.py",
+      "claim_status": "Computational Observation",
+      "explicit_deformation": true,
+      "explicit_locus": true,
+      "measured_signature": true,
+      "note": "",
+      "evidence_exists": true,
+      "wall_package": "bipartite_coverage",
+      "active": true,
+      "source_record_id": "BF-recommender-targeted-bridge",
+      "curation_tags": [
+        "REPAIR",
+        "BRIDGE_INCIDENCE"
+      ],
+      "curation_assignment": {
+        "rulebook_version": "paper11-curation-tags-v1.0",
+        "assignment_source": "inherited",
+        "tags": [
+          "REPAIR",
+          "BRIDGE_INCIDENCE"
+        ],
+        "override_reason": null
+      },
+      "compatibility": {
+        "historical_census_eligible": true
+      },
+      "local_model_eligibility": {
+        "status": "unresolved",
+        "model_family": "ADE",
+        "condition_checks": [],
+        "evidence_refs": []
+      },
+      "realization_kind": "strict_sof",
+      "record_role": "trajectory_diagnostic",
+      "wall_coordinate_profile": {
+        "field_families": [
+          "graph"
+        ],
+        "event_kinds": [
+          "first_hit_change",
+          "repair"
+        ],
+        "regularity": "discrete",
+        "persistence_profile": [
+          "unresolved"
+        ],
+        "geometry": {
+          "location": "unresolved",
+          "crossing": "unresolved",
+          "codimension_status": "codimension_unresolved"
+        },
+        "evidence": "Computational Observation"
+      },
+      "field_family": "graph",
+      "typed_channel_count": 1,
+      "field_observations": [
+        {
+          "field_key": "coverage.unreachable_pair_count",
+          "field_family": "graph",
+          "carrier_id": "bipartite_coverage",
+          "change_kind": "declared_change",
+          "observation": "12/16 to 10/16",
+          "direction": {
+            "raw_numeric": "decrease",
+            "accessibility": "not_applicable",
+            "event_semantics": "declared_change"
+          },
+          "pair_scope": "off_diagonal"
+        }
+      ],
+      "morphology_atoms": [],
+      "corpus_entry": {
+        "entry_kind": "wall_context_record",
+        "bundle_kind": null,
+        "record_bundle": null,
+        "context_record": {
+          "record_role": "trajectory_diagnostic",
+          "diagnostic_fields": [
+            {
+              "field_key": "coverage.unreachable_pair_count",
+              "field_family": "graph",
+              "carrier_id": "bipartite_coverage",
+              "change_kind": "declared_change",
+              "observation": "12/16 to 10/16",
+              "direction": {
+                "raw_numeric": "decrease",
+                "accessibility": "not_applicable",
+                "event_semantics": "declared_change"
+              },
+              "pair_scope": "off_diagonal"
+            }
+          ]
+        }
+      },
+      "morphology_signature": null,
+      "curated_signature": null,
+      "evidence_owner": "paper12",
+      "evidence_relation": "imported_source_record",
+      "inclusion_ledger_entry": null,
+      "corpus_entry_kind": "wall_context_record",
+      "morphology_bundle_kind": null,
+      "main_wall_spectrum_eligible": false,
+      "analogue_morphology_eligible": false
+    },
+    {
+      "record_id": "markov-absorbing-endpoint",
+      "species": "Markov absorbing",
+      "observable": "communicating/frozen-pair accessibility",
+      "deformation_origin": "endpoint contrast across transition systems",
+      "change_locus": "absorbing example has 2 terminal frozen pairs",
+      "evidence": "experiments/paper11/results/markov_boundary.observation.json",
+      "claim_status": "Computational Observation",
+      "explicit_deformation": false,
+      "explicit_locus": true,
+      "measured_signature": true,
+      "note": "Endpoint contrast; a parameterized absorbing-limit path remains to be added.",
+      "evidence_exists": true,
+      "wall_package": "markov_communication",
+      "active": true,
+      "source_record_id": "C-markov-absorbing-endpoint",
+      "curation_tags": [
+        "TERMINAL"
+      ],
+      "curation_assignment": {
+        "rulebook_version": "paper11-curation-tags-v1.0",
+        "assignment_source": "inherited",
+        "tags": [
+          "TERMINAL"
+        ],
+        "override_reason": null
+      },
+      "compatibility": {
+        "historical_census_eligible": false
+      },
+      "local_model_eligibility": {
+        "status": "unresolved",
+        "model_family": "ADE",
+        "condition_checks": [],
+        "evidence_refs": []
+      },
+      "realization_kind": "strict_sof",
+      "record_role": "pre_wall_reference",
+      "source_evidence": "experiments/paper11/cross_species_wall_audit.py",
+      "observation_contract": {
+        "schema": "rime.experiment-observation.v1",
+        "artifact_role": "cached_computational_observation",
+        "claim_status": "Computational Observation"
+      },
+      "wall_coordinate_profile": {
+        "field_families": [
+          "state"
+        ],
+        "event_kinds": [
+          "terminalization"
+        ],
+        "regularity": "unknown",
+        "persistence_profile": [
+          "terminal"
+        ],
+        "geometry": {
+          "location": "endpoint",
+          "crossing": "unresolved",
+          "codimension_status": "codimension_unresolved"
+        },
+        "evidence": "Computational Observation"
+      },
+      "field_family": "state",
+      "typed_channel_count": 1,
+      "field_observations": [
+        {
+          "field_key": "markov.terminal_unreachable_pair_count",
+          "field_family": "state",
+          "carrier_id": "markov",
+          "change_kind": "declared_change",
+          "observation": "two terminal unreachable pairs in endpoint contrast",
+          "direction": {
+            "raw_numeric": "increase",
+            "accessibility": "not_applicable",
+            "event_semantics": "declared_change"
+          },
+          "pair_scope": "off_diagonal"
+        }
+      ],
+      "morphology_atoms": [],
+      "corpus_entry": {
+        "entry_kind": "wall_context_record",
+        "bundle_kind": null,
+        "record_bundle": null,
+        "context_record": {
+          "record_role": "pre_wall_reference",
+          "diagnostic_fields": [
+            {
+              "field_key": "markov.terminal_unreachable_pair_count",
+              "field_family": "state",
+              "carrier_id": "markov",
+              "change_kind": "declared_change",
+              "observation": "two terminal unreachable pairs in endpoint contrast",
+              "direction": {
+                "raw_numeric": "increase",
+                "accessibility": "not_applicable",
+                "event_semantics": "declared_change"
+              },
+              "pair_scope": "off_diagonal"
+            }
+          ]
+        }
+      },
+      "morphology_signature": null,
+      "curated_signature": null,
+      "evidence_owner": "paper11",
+      "evidence_relation": "paper11_local",
+      "inclusion_ledger_entry": null,
+      "corpus_entry_kind": "wall_context_record",
+      "morphology_bundle_kind": null,
+      "main_wall_spectrum_eligible": false,
+      "analogue_morphology_eligible": false
+    },
+    {
+      "record_id": "barrier-stopping-boundary",
+      "species": "Barrier option GBM",
+      "observable": "cross-barrier support and first-hit time",
+      "deformation_origin": "log-price diffusion",
+      "change_locus": "absorbing barrier/stopping boundary",
+      "evidence": "experiments/paper10/barrier_option_sof.py",
+      "claim_status": "Computational Observation",
+      "explicit_deformation": true,
+      "explicit_locus": true,
+      "measured_signature": true,
+      "note": "First hitting is not identified with SOF depth.",
+      "evidence_exists": true,
+      "wall_package": "stochastic_stopping",
+      "active": true,
+      "source_record_id": "C-barrier-stopping-boundary",
+      "curation_tags": [
+        "TERMINAL"
+      ],
+      "curation_assignment": {
+        "rulebook_version": "paper11-curation-tags-v1.0",
+        "assignment_source": "inherited",
+        "tags": [
+          "TERMINAL"
+        ],
+        "override_reason": null
+      },
+      "compatibility": {
+        "historical_census_eligible": true
+      },
+      "local_model_eligibility": {
+        "status": "unresolved",
+        "model_family": "ADE",
+        "condition_checks": [],
+        "evidence_refs": []
+      },
+      "realization_kind": "strict_sof",
+      "record_role": "trajectory_diagnostic",
+      "wall_coordinate_profile": {
+        "field_families": [
+          "stochastic"
+        ],
+        "event_kinds": [
+          "terminalization"
+        ],
+        "regularity": "smooth",
+        "persistence_profile": [
+          "terminal"
+        ],
+        "geometry": {
+          "location": "boundary",
+          "crossing": "unresolved",
+          "codimension_status": "codimension_unresolved"
+        },
+        "evidence": "Computational Observation"
+      },
+      "field_family": "stochastic",
+      "typed_channel_count": 1,
+      "field_observations": [
+        {
+          "field_key": "stochastic.first_hit_boundary",
+          "field_family": "stochastic",
+          "carrier_id": "stochastic",
+          "change_kind": "declared_change",
+          "observation": "entry into absorbing stopping sector",
+          "direction": {
+            "raw_numeric": "not_applicable",
+            "accessibility": "not_applicable",
+            "event_semantics": "declared_change"
+          },
+          "pair_scope": "not_applicable"
+        }
+      ],
+      "morphology_atoms": [],
+      "corpus_entry": {
+        "entry_kind": "wall_context_record",
+        "bundle_kind": null,
+        "record_bundle": null,
+        "context_record": {
+          "record_role": "trajectory_diagnostic",
+          "diagnostic_fields": [
+            {
+              "field_key": "stochastic.first_hit_boundary",
+              "field_family": "stochastic",
+              "carrier_id": "stochastic",
+              "change_kind": "declared_change",
+              "observation": "entry into absorbing stopping sector",
+              "direction": {
+                "raw_numeric": "not_applicable",
+                "accessibility": "not_applicable",
+                "event_semantics": "declared_change"
+              },
+              "pair_scope": "not_applicable"
+            }
+          ]
+        }
+      },
+      "morphology_signature": null,
+      "curated_signature": null,
+      "evidence_owner": "paper10",
+      "evidence_relation": "imported_source_record",
+      "inclusion_ledger_entry": null,
+      "corpus_entry_kind": "wall_context_record",
+      "morphology_bundle_kind": null,
+      "main_wall_spectrum_eligible": false,
+      "analogue_morphology_eligible": false
+    },
+    {
+      "record_id": "exact-three-sector-rate-separation",
+      "species": "Exact three-sector skew family",
+      "observable": "selected direct and simple-commutator block norms",
+      "deformation_origin": "skew-generator amplitude",
+      "change_locus": "common-threshold crossings eta and sqrt(eta), 0<eta<1",
+      "evidence": "experiments/paper9/rate_hierarchy.py",
+      "claim_status": "Theorem",
+      "explicit_deformation": true,
+      "explicit_locus": true,
+      "measured_signature": true,
+      "note": "Exact selected block-norm response separation relative to the declared trajectory, normalization, norm, and threshold policy; not an intrinsic rate invariant, Boolean support wall, or Lie-depth computation.",
+      "evidence_exists": true,
+      "wall_package": "continuous_lie_block_norms",
+      "active": true,
+      "source_record_id": "D-xu-ridge-rate-hierarchy",
+      "curation_tags": [
+        "PLATEAU_RATE"
+      ],
+      "curation_assignment": {
+        "rulebook_version": "paper11-curation-tags-v1.0",
+        "assignment_source": "inherited",
+        "tags": [
+          "PLATEAU_RATE"
+        ],
+        "override_reason": null
+      },
+      "compatibility": {
+        "historical_census_eligible": true
+      },
+      "local_model_eligibility": {
+        "status": "unresolved",
+        "model_family": "ADE",
+        "condition_checks": [],
+        "evidence_refs": []
+      },
+      "realization_kind": "strict_sof",
+      "record_role": "trajectory_diagnostic",
+      "wall_coordinate_profile": {
+        "field_families": [
+          "proxy"
+        ],
+        "event_kinds": [
+          "response_order_crossing"
+        ],
+        "regularity": "smooth",
+        "persistence_profile": [
+          "plateau"
+        ],
+        "geometry": {
+          "location": "unresolved",
+          "crossing": "unresolved",
+          "codimension_status": "codimension_unresolved"
+        },
+        "evidence": "Theorem"
+      },
+      "field_family": "proxy",
+      "typed_channel_count": 2,
+      "field_observations": [
+        {
+          "field_key": "lie_norm.K_direct",
+          "field_family": "proxy",
+          "carrier_id": "continuous_lie_block_norm",
+          "change_kind": "declared_change",
+          "observation": "first crossing at eta",
+          "direction": {
+            "raw_numeric": "increase",
+            "accessibility": "not_applicable",
+            "event_semantics": "declared_change"
+          },
+          "pair_scope": "off_diagonal"
+        },
+        {
+          "field_key": "lie_norm.K_simple_commutator",
+          "field_family": "proxy",
+          "carrier_id": "continuous_lie_block_norm",
+          "change_kind": "declared_change",
+          "observation": "first crossing at sqrt(eta)",
+          "direction": {
+            "raw_numeric": "increase",
+            "accessibility": "not_applicable",
+            "event_semantics": "declared_change"
+          },
+          "pair_scope": "off_diagonal"
+        }
+      ],
+      "morphology_atoms": [],
+      "corpus_entry": {
+        "entry_kind": "wall_context_record",
+        "bundle_kind": null,
+        "record_bundle": null,
+        "context_record": {
+          "record_role": "trajectory_diagnostic",
+          "diagnostic_fields": [
+            {
+              "field_key": "lie_norm.K_direct",
+              "field_family": "proxy",
+              "carrier_id": "continuous_lie_block_norm",
+              "change_kind": "declared_change",
+              "observation": "first crossing at eta",
+              "direction": {
+                "raw_numeric": "increase",
+                "accessibility": "not_applicable",
+                "event_semantics": "declared_change"
+              },
+              "pair_scope": "off_diagonal"
+            },
+            {
+              "field_key": "lie_norm.K_simple_commutator",
+              "field_family": "proxy",
+              "carrier_id": "continuous_lie_block_norm",
+              "change_kind": "declared_change",
+              "observation": "first crossing at sqrt(eta)",
+              "direction": {
+                "raw_numeric": "increase",
+                "accessibility": "not_applicable",
+                "event_semantics": "declared_change"
+              },
+              "pair_scope": "off_diagonal"
+            }
+          ]
+        }
+      },
+      "morphology_signature": null,
+      "curated_signature": null,
+      "evidence_owner": "paper9",
+      "evidence_relation": "imported_source_record",
+      "inclusion_ledger_entry": null,
+      "corpus_entry_kind": "wall_context_record",
+      "morphology_bundle_kind": null,
+      "main_wall_spectrum_eligible": false,
+      "analogue_morphology_eligible": false
+    },
+    {
+      "record_id": "mechanism-separated-rates",
+      "species": "Mechanism-separated SOF",
+      "observable": "K0 growth and K1 decay proxies",
+      "deformation_origin": "gradient/regularization response time",
+      "change_locus": "tau(K0)=30 and tau(K1)=1380",
+      "evidence": "experiments/paper10/mechanism_separation_theorem.py",
+      "claim_status": "Computational Certificate",
+      "explicit_deformation": true,
+      "explicit_locus": true,
+      "measured_signature": true,
+      "note": "Proxy-rate evidence; no K-to-R/D bridge.",
+      "evidence_exists": true,
+      "wall_package": "observable_proxy",
+      "active": true,
+      "source_record_id": "D-mechanism-separated-rates",
+      "curation_tags": [
+        "PLATEAU_RATE"
+      ],
+      "curation_assignment": {
+        "rulebook_version": "paper11-curation-tags-v1.0",
+        "assignment_source": "inherited",
+        "tags": [
+          "PLATEAU_RATE"
+        ],
+        "override_reason": null
+      },
+      "compatibility": {
+        "historical_census_eligible": true
+      },
+      "local_model_eligibility": {
+        "status": "unresolved",
+        "model_family": "ADE",
+        "condition_checks": [],
+        "evidence_refs": []
+      },
+      "realization_kind": "strict_sof",
+      "record_role": "trajectory_diagnostic",
+      "wall_coordinate_profile": {
+        "field_families": [
+          "proxy"
+        ],
+        "event_kinds": [
+          "response_order_crossing"
+        ],
+        "regularity": "smooth",
+        "persistence_profile": [
+          "plateau"
+        ],
+        "geometry": {
+          "location": "unresolved",
+          "crossing": "unresolved",
+          "codimension_status": "codimension_unresolved"
+        },
+        "evidence": "Computational Certificate"
+      },
+      "field_family": "proxy",
+      "typed_channel_count": 2,
+      "field_observations": [
+        {
+          "field_key": "proxy.K0_growth_time",
+          "field_family": "proxy",
+          "carrier_id": "proxy",
+          "change_kind": "declared_change",
+          "observation": "half-response time 30",
+          "direction": {
+            "raw_numeric": "not_applicable",
+            "accessibility": "not_applicable",
+            "event_semantics": "declared_change"
+          },
+          "pair_scope": "not_applicable"
+        },
+        {
+          "field_key": "proxy.K1_response_time",
+          "field_family": "proxy",
+          "carrier_id": "proxy",
+          "change_kind": "declared_change",
+          "observation": "half-response time 1380",
+          "direction": {
+            "raw_numeric": "not_applicable",
+            "accessibility": "not_applicable",
+            "event_semantics": "declared_change"
+          },
+          "pair_scope": "not_applicable"
+        }
+      ],
+      "morphology_atoms": [],
+      "corpus_entry": {
+        "entry_kind": "wall_context_record",
+        "bundle_kind": null,
+        "record_bundle": null,
+        "context_record": {
+          "record_role": "trajectory_diagnostic",
+          "diagnostic_fields": [
+            {
+              "field_key": "proxy.K0_growth_time",
+              "field_family": "proxy",
+              "carrier_id": "proxy",
+              "change_kind": "declared_change",
+              "observation": "half-response time 30",
+              "direction": {
+                "raw_numeric": "not_applicable",
+                "accessibility": "not_applicable",
+                "event_semantics": "declared_change"
+              },
+              "pair_scope": "not_applicable"
+            },
+            {
+              "field_key": "proxy.K1_response_time",
+              "field_family": "proxy",
+              "carrier_id": "proxy",
+              "change_kind": "declared_change",
+              "observation": "half-response time 1380",
+              "direction": {
+                "raw_numeric": "not_applicable",
+                "accessibility": "not_applicable",
+                "event_semantics": "declared_change"
+              },
+              "pair_scope": "not_applicable"
+            }
+          ]
+        }
+      },
+      "morphology_signature": null,
+      "curated_signature": null,
+      "evidence_owner": "paper10",
+      "evidence_relation": "imported_source_record",
+      "inclusion_ledger_entry": null,
+      "corpus_entry_kind": "wall_context_record",
+      "morphology_bundle_kind": null,
+      "main_wall_spectrum_eligible": false,
+      "analogue_morphology_eligible": false
+    },
+    {
+      "record_id": "nn-proxy-rate-ordering",
+      "species": "Training-coupled NN SOF",
+      "observable": "continuous direct, simple-commutator, and nested-commutator block-norm proxies",
+      "deformation_origin": "sampled training trajectory",
+      "change_locus": "ordered half-response times 60 < 80 < 120",
+      "evidence": "experiments/paper9/nn_training_sof_tau.py",
+      "claim_status": "Computational Observation",
+      "explicit_deformation": true,
+      "explicit_locus": true,
+      "measured_signature": true,
+      "note": "Continuous proxy ordering only; no coherent temporal sector continuation or proxy-to-discrete-shadow promotion.",
+      "evidence_exists": true,
+      "wall_package": "observable_proxy",
+      "active": true,
+      "source_record_id": "D-yang-state-mixing-plateau",
+      "curation_tags": [
+        "PLATEAU_RATE"
+      ],
+      "curation_assignment": {
+        "rulebook_version": "paper11-curation-tags-v1.0",
+        "assignment_source": "inherited",
+        "tags": [
+          "PLATEAU_RATE"
+        ],
+        "override_reason": null
+      },
+      "compatibility": {
+        "historical_census_eligible": true
+      },
+      "local_model_eligibility": {
+        "status": "unresolved",
+        "model_family": "ADE",
+        "condition_checks": [],
+        "evidence_refs": []
+      },
+      "realization_kind": "diagnostic_analogue",
+      "record_role": "trajectory_diagnostic",
+      "wall_coordinate_profile": {
+        "field_families": [
+          "proxy"
+        ],
+        "event_kinds": [
+          "response_order_crossing"
+        ],
+        "regularity": "stochastic",
+        "persistence_profile": [
+          "plateau"
+        ],
+        "geometry": {
+          "location": "unresolved",
+          "crossing": "unresolved",
+          "codimension_status": "codimension_unresolved"
+        },
+        "evidence": "Computational Observation"
+      },
+      "field_family": "proxy",
+      "typed_channel_count": 3,
+      "field_observations": [
+        {
+          "field_key": "proxy.K0_direct_norm",
+          "field_family": "proxy",
+          "carrier_id": "observable_proxy",
+          "change_kind": "declared_change",
+          "observation": "half-response time 60",
+          "direction": {
+            "raw_numeric": "not_applicable",
+            "accessibility": "not_applicable",
+            "event_semantics": "declared_change"
+          },
+          "pair_scope": "declared_mixed"
+        },
+        {
+          "field_key": "proxy.K1_simple_commutator_norm",
+          "field_family": "proxy",
+          "carrier_id": "observable_proxy",
+          "change_kind": "declared_change",
+          "observation": "half-response time 80",
+          "direction": {
+            "raw_numeric": "not_applicable",
+            "accessibility": "not_applicable",
+            "event_semantics": "declared_change"
+          },
+          "pair_scope": "declared_mixed"
+        },
+        {
+          "field_key": "proxy.K2_nested_commutator_norm",
+          "field_family": "proxy",
+          "carrier_id": "observable_proxy",
+          "change_kind": "declared_change",
+          "observation": "half-response time 120",
+          "direction": {
+            "raw_numeric": "not_applicable",
+            "accessibility": "not_applicable",
+            "event_semantics": "declared_change"
+          },
+          "pair_scope": "declared_mixed"
+        }
+      ],
+      "morphology_atoms": [],
+      "corpus_entry": {
+        "entry_kind": "wall_context_record",
+        "bundle_kind": null,
+        "record_bundle": null,
+        "context_record": {
+          "record_role": "trajectory_diagnostic",
+          "diagnostic_fields": [
+            {
+              "field_key": "proxy.K0_direct_norm",
+              "field_family": "proxy",
+              "carrier_id": "observable_proxy",
+              "change_kind": "declared_change",
+              "observation": "half-response time 60",
+              "direction": {
+                "raw_numeric": "not_applicable",
+                "accessibility": "not_applicable",
+                "event_semantics": "declared_change"
+              },
+              "pair_scope": "declared_mixed"
+            },
+            {
+              "field_key": "proxy.K1_simple_commutator_norm",
+              "field_family": "proxy",
+              "carrier_id": "observable_proxy",
+              "change_kind": "declared_change",
+              "observation": "half-response time 80",
+              "direction": {
+                "raw_numeric": "not_applicable",
+                "accessibility": "not_applicable",
+                "event_semantics": "declared_change"
+              },
+              "pair_scope": "declared_mixed"
+            },
+            {
+              "field_key": "proxy.K2_nested_commutator_norm",
+              "field_family": "proxy",
+              "carrier_id": "observable_proxy",
+              "change_kind": "declared_change",
+              "observation": "half-response time 120",
+              "direction": {
+                "raw_numeric": "not_applicable",
+                "accessibility": "not_applicable",
+                "event_semantics": "declared_change"
+              },
+              "pair_scope": "declared_mixed"
+            }
+          ]
+        }
+      },
+      "morphology_signature": null,
+      "curated_signature": null,
+      "evidence_owner": "paper9",
+      "evidence_relation": "imported_source_record",
+      "inclusion_ledger_entry": null,
+      "corpus_entry_kind": "wall_context_record",
+      "morphology_bundle_kind": null,
+      "main_wall_spectrum_eligible": false,
+      "analogue_morphology_eligible": false
+    },
+    {
+      "record_id": "rubik-generator-weight-plateau",
+      "species": "Rubik deformation probes",
+      "observable": "depth plateau P3",
+      "deformation_origin": "QT generator-weight deformation",
+      "change_locus": "oscillatory plateau profile with 3/8 zero crossings",
+      "evidence": "experiments/paper9/state_mixing_fft.py",
+      "claim_status": "Research Program",
+      "explicit_deformation": true,
+      "explicit_locus": true,
+      "measured_signature": true,
+      "note": "",
+      "evidence_exists": false,
+      "active": false,
+      "retirement_reason": "retired nonnormal generator-weight fragmentation/oscillation diagnostic; not admitted to the typed moving-wall census",
+      "wall_package": "retired",
+      "source_record_id": "D-rubik-generator-weight-plateau",
+      "curation_tags": [
+        "PLATEAU_RATE"
+      ],
+      "curation_assignment": {
+        "rulebook_version": "paper11-curation-tags-v1.0",
+        "assignment_source": "inherited",
+        "tags": [
+          "PLATEAU_RATE"
+        ],
+        "override_reason": null
+      },
+      "compatibility": {
+        "historical_census_eligible": true
+      },
+      "local_model_eligibility": {
+        "status": "unresolved",
+        "model_family": "ADE",
+        "condition_checks": [],
+        "evidence_refs": []
+      },
+      "realization_kind": "strict_sof",
+      "record_role": "retired_provenance",
+      "wall_coordinate_profile": {
+        "field_families": [],
+        "event_kinds": [
+          "response_order_crossing"
+        ],
+        "regularity": "unknown",
+        "persistence_profile": [
+          "plateau"
+        ],
+        "geometry": {
+          "location": "unresolved",
+          "crossing": "unresolved",
+          "codimension_status": "codimension_unresolved"
+        },
+        "evidence": "Research Program"
+      },
+      "field_family": "not_applicable",
+      "typed_channel_count": 0,
+      "field_observations": [],
+      "morphology_atoms": [],
+      "corpus_entry": {
+        "entry_kind": "wall_context_record",
+        "bundle_kind": null,
+        "record_bundle": null,
+        "context_record": {
+          "record_role": "retired_provenance",
+          "diagnostic_fields": []
+        }
+      },
+      "morphology_signature": null,
+      "curated_signature": null,
+      "evidence_owner": "paper9",
+      "evidence_relation": "imported_source_record",
+      "inclusion_ledger_entry": null,
+      "corpus_entry_kind": "wall_context_record",
+      "morphology_bundle_kind": null,
+      "main_wall_spectrum_eligible": false,
+      "analogue_morphology_eligible": false
+    },
+    {
+      "record_id": "graph-edge-removal",
+      "species": "Graph P3/C4",
+      "observable": "Laplacian spectral gap",
+      "deformation_origin": "discrete edge removal",
+      "change_locus": "nonzero gap jump after rewiring",
+      "evidence": "experiments/paper11/results/wall_trajectory.json",
+      "claim_status": "Computational Certificate",
+      "explicit_deformation": true,
+      "explicit_locus": true,
+      "measured_signature": true,
+      "note": "",
+      "evidence_exists": true,
+      "wall_package": "operator_word",
+      "active": true,
+      "source_record_id": "E-graph-edge-removal",
+      "curation_tags": [
+        "NONSMOOTH_DISCRETE"
+      ],
+      "curation_assignment": {
+        "rulebook_version": "paper11-curation-tags-v1.0",
+        "assignment_source": "inherited",
+        "tags": [
+          "NONSMOOTH_DISCRETE"
+        ],
+        "override_reason": null
+      },
+      "compatibility": {
+        "historical_census_eligible": true
+      },
+      "local_model_eligibility": {
+        "status": "unresolved",
+        "model_family": "ADE",
+        "condition_checks": [],
+        "evidence_refs": []
+      },
+      "realization_kind": "strict_sof",
+      "record_role": "wall_event",
+      "evidence_contract": {
+        "schema": "paper11-wall-trajectory-v1.0",
+        "sha256": "a7232f4ac34622fa508220e8cdb99d6803b4e0d73f4c2c39515030697600c548",
+        "producer": "experiments/paper11/wall_trajectory.py",
+        "producer_sha256": "384b28e3389081c54436299c2b6235367c37337cb837245ddd7f97aa7d0354f6"
+      },
+      "source_evidence": "experiments/paper11/wall_trajectory.py",
+      "wall_coordinate_profile": {
+        "field_families": [
+          "operator",
+          "word"
+        ],
+        "event_kinds": [
+          "boundary_hit"
+        ],
+        "regularity": "discrete",
+        "persistence_profile": [
+          "unresolved"
+        ],
+        "geometry": {
+          "location": "boundary",
+          "crossing": "unresolved",
+          "codimension_status": "codimension_unresolved"
+        },
+        "evidence": "Computational Certificate"
+      },
+      "field_family": "operator",
+      "typed_channel_count": 2,
+      "field_observations": [
+        {
+          "field_key": "operator.direct_support[Y]",
+          "field_family": "operator",
+          "carrier_id": "carrier.graph_operator",
+          "change_kind": "support_loss",
+          "observation": "four direct-support pairs are lost at the endpoint",
+          "direction": {
+            "raw_numeric": "decrease",
+            "accessibility": "not_applicable",
+            "event_semantics": "support_loss"
+          },
+          "pair_scope": "off_diagonal"
+        },
+        {
+          "field_key": "word.depth_truncated[Y,cutoff=6]",
+          "field_family": "word",
+          "carrier_id": "operator_word",
+          "change_kind": "first_hit_change",
+          "observation": "six pairs become unreached at the endpoint",
+          "direction": {
+            "raw_numeric": "increase",
+            "accessibility": "not_applicable",
+            "event_semantics": "first_hit_change"
+          },
+          "pair_scope": "off_diagonal",
+          "depth_convention": "positive word length",
+          "cutoff": 6
+        }
+      ],
+      "morphology_atoms": [
+        {
+          "atom_kind": "trajectory_event",
+          "inclusion_ledger_version": "paper11-wall-record-inclusion-v1.0",
+          "realization_kind": "strict_sof",
+          "spectrum_partition": "strict_main",
+          "primary_wall_field": "operator.direct_support[Y]",
+          "primary_field_family": "operator",
+          "primary_carrier_id": "carrier.graph_operator",
+          "context_field_keys": [
+            "word.depth_truncated[Y,cutoff=6]"
+          ],
+          "context_carrier_ids": [
+            "carrier.graph_positive_word"
+          ],
+          "field_registrations": [
+            {
+              "field_key": "operator.direct_support[Y]",
+              "field_role": "primary_wall_field",
+              "field_family": "operator",
+              "carrier_id": "carrier.graph_operator",
+              "chart_or_domain_ref": "paper11.graph_edge_weight_path",
+              "comparison_ref": "identity_on_declared_fixed_schema",
+              "policy_refs": {
+                "named_policy_refs": [
+                  "paper11.graph.tolerance=1e-8",
+                  "paper11.graph.word_cutoff=6",
+                  "paper11.graph.off_diagonal_pair_scope"
+                ],
+                "pair_scope": "off_diagonal",
+                "diagonal_reduction": "not_applicable",
+                "depth_convention": "not_applicable",
+                "cutoff": "not_applicable"
+              },
+              "evidence_ref": "experiments/paper11/results/wall_trajectory.json"
+            },
+            {
+              "field_key": "word.depth_truncated[Y,cutoff=6]",
+              "field_role": "context_co_observation",
+              "field_family": "word",
+              "carrier_id": "operator_word",
+              "chart_or_domain_ref": "paper11.graph_edge_weight_path",
+              "comparison_ref": "identity_on_declared_fixed_schema",
+              "policy_refs": {
+                "named_policy_refs": [
+                  "paper11.graph.tolerance=1e-8",
+                  "paper11.graph.word_cutoff=6",
+                  "paper11.graph.off_diagonal_pair_scope"
+                ],
+                "pair_scope": "off_diagonal",
+                "diagonal_reduction": "not_applicable",
+                "depth_convention": "positive word length",
+                "cutoff": 6
+              },
+              "evidence_ref": "experiments/paper11/results/wall_trajectory.json"
+            }
+          ],
+          "context_no_promotion": "a context-field change is a co-observation only; it creates a separate wall atom only after independent wall admission",
+          "trajectory_ref": "paper11.graph_edge_weight_path",
+          "order_semantics": "trajectory_oriented",
+          "orientation": "increasing_edge_removal_parameter",
+          "left_right_sampling_rule": "last interior sample and endpoint sample",
+          "event_parameter_or_interval": "(0.9,1.0]",
+          "field_changes": [
+            {
+              "field_key": "operator.direct_support[Y]",
+              "field_family": "operator",
+              "carrier_id": "operator",
+              "before_state": {
+                "false": 8,
+                "true": 8
+              },
+              "after_state": {
+                "false": 12,
+                "true": 4
+              },
+              "change_kind": "support_loss",
+              "observation": "four direct-support pairs are lost at the endpoint",
+              "direction": {
+                "raw_numeric": "decrease",
+                "accessibility": "decrease",
+                "event_semantics": "support_loss"
+              },
+              "pair_scope": "off_diagonal"
+            },
+            {
+              "field_key": "word.depth_truncated[Y,cutoff=6]",
+              "field_family": "word",
+              "carrier_id": "operator_word",
+              "before_state": {
+                "unreached_pairs": 0
+              },
+              "after_state": {
+                "unreached_pairs": 6
+              },
+              "change_kind": "first_hit_change",
+              "observation": "six pairs become unreached at the endpoint",
+              "direction": {
+                "raw_numeric": "increase",
+                "accessibility": "not_applicable",
+                "event_semantics": "first_hit_change"
+              },
+              "pair_scope": "off_diagonal",
+              "depth_convention": "positive word length",
+              "cutoff": 6
+            }
+          ]
+        }
+      ],
+      "corpus_entry": {
+        "entry_kind": "morphology_record_bundle",
+        "bundle_kind": "strict_wall_record",
+        "record_bundle": {
+          "bundle_id": "graph-edge-removal",
+          "morphology_atoms": [
+            {
+              "atom_kind": "trajectory_event",
+              "inclusion_ledger_version": "paper11-wall-record-inclusion-v1.0",
+              "realization_kind": "strict_sof",
+              "spectrum_partition": "strict_main",
+              "primary_wall_field": "operator.direct_support[Y]",
+              "primary_field_family": "operator",
+              "primary_carrier_id": "carrier.graph_operator",
+              "context_field_keys": [
+                "word.depth_truncated[Y,cutoff=6]"
+              ],
+              "context_carrier_ids": [
+                "carrier.graph_positive_word"
+              ],
+              "field_registrations": [
+                {
+                  "field_key": "operator.direct_support[Y]",
+                  "field_role": "primary_wall_field",
+                  "field_family": "operator",
+                  "carrier_id": "carrier.graph_operator",
+                  "chart_or_domain_ref": "paper11.graph_edge_weight_path",
+                  "comparison_ref": "identity_on_declared_fixed_schema",
+                  "policy_refs": {
+                    "named_policy_refs": [
+                      "paper11.graph.tolerance=1e-8",
+                      "paper11.graph.word_cutoff=6",
+                      "paper11.graph.off_diagonal_pair_scope"
+                    ],
+                    "pair_scope": "off_diagonal",
+                    "diagonal_reduction": "not_applicable",
+                    "depth_convention": "not_applicable",
+                    "cutoff": "not_applicable"
+                  },
+                  "evidence_ref": "experiments/paper11/results/wall_trajectory.json"
+                },
+                {
+                  "field_key": "word.depth_truncated[Y,cutoff=6]",
+                  "field_role": "context_co_observation",
+                  "field_family": "word",
+                  "carrier_id": "operator_word",
+                  "chart_or_domain_ref": "paper11.graph_edge_weight_path",
+                  "comparison_ref": "identity_on_declared_fixed_schema",
+                  "policy_refs": {
+                    "named_policy_refs": [
+                      "paper11.graph.tolerance=1e-8",
+                      "paper11.graph.word_cutoff=6",
+                      "paper11.graph.off_diagonal_pair_scope"
+                    ],
+                    "pair_scope": "off_diagonal",
+                    "diagonal_reduction": "not_applicable",
+                    "depth_convention": "positive word length",
+                    "cutoff": 6
+                  },
+                  "evidence_ref": "experiments/paper11/results/wall_trajectory.json"
+                }
+              ],
+              "context_no_promotion": "a context-field change is a co-observation only; it creates a separate wall atom only after independent wall admission",
+              "trajectory_ref": "paper11.graph_edge_weight_path",
+              "order_semantics": "trajectory_oriented",
+              "orientation": "increasing_edge_removal_parameter",
+              "left_right_sampling_rule": "last interior sample and endpoint sample",
+              "event_parameter_or_interval": "(0.9,1.0]",
+              "field_changes": [
+                {
+                  "field_key": "operator.direct_support[Y]",
+                  "field_family": "operator",
+                  "carrier_id": "operator",
+                  "before_state": {
+                    "false": 8,
+                    "true": 8
+                  },
+                  "after_state": {
+                    "false": 12,
+                    "true": 4
+                  },
+                  "change_kind": "support_loss",
+                  "observation": "four direct-support pairs are lost at the endpoint",
+                  "direction": {
+                    "raw_numeric": "decrease",
+                    "accessibility": "decrease",
+                    "event_semantics": "support_loss"
+                  },
+                  "pair_scope": "off_diagonal"
+                },
+                {
+                  "field_key": "word.depth_truncated[Y,cutoff=6]",
+                  "field_family": "word",
+                  "carrier_id": "operator_word",
+                  "before_state": {
+                    "unreached_pairs": 0
+                  },
+                  "after_state": {
+                    "unreached_pairs": 6
+                  },
+                  "change_kind": "first_hit_change",
+                  "observation": "six pairs become unreached at the endpoint",
+                  "direction": {
+                    "raw_numeric": "increase",
+                    "accessibility": "not_applicable",
+                    "event_semantics": "first_hit_change"
+                  },
+                  "pair_scope": "off_diagonal",
+                  "depth_convention": "positive word length",
+                  "cutoff": 6
+                }
+              ]
+            }
+          ]
+        },
+        "context_record": null
+      },
+      "morphology_signature": {
+        "role": "wall_event",
+        "realization_kind": "strict_sof",
+        "atom_kind": "trajectory_event",
+        "primary_field_family": "operator",
+        "primary_carrier_id": "carrier.graph_operator",
+        "delta_ref": "graph-edge-removal:morphology_atom:0",
+        "profile": {
+          "field_families": [
+            "operator",
+            "word"
+          ],
+          "event_kinds": [
+            "boundary_hit"
+          ],
+          "regularity": "discrete",
+          "persistence_profile": [
+            "unresolved"
+          ],
+          "geometry": {
+            "location": "boundary",
+            "crossing": "unresolved",
+            "codimension_status": "codimension_unresolved"
+          },
+          "evidence": "Computational Certificate"
+        }
+      },
+      "curated_signature": {
+        "morphology_signature_ref": "graph-edge-removal:morphology_signature",
+        "curation_assignment": {
+          "rulebook_version": "paper11-curation-tags-v1.0",
+          "assignment_source": "inherited",
+          "tags": [
+            "NONSMOOTH_DISCRETE"
+          ],
+          "override_reason": null
+        }
+      },
+      "evidence_owner": "paper11",
+      "evidence_relation": "paper11_local",
+      "inclusion_ledger_entry": "paper11-wall-record-inclusion-v1.0:E-graph-edge-removal",
+      "corpus_entry_kind": "morphology_record_bundle",
+      "morphology_bundle_kind": "strict_wall_record",
+      "main_wall_spectrum_eligible": true,
+      "analogue_morphology_eligible": false
+    },
+    {
+      "record_id": "relu-kink",
+      "species": "NN Transformer activation",
+      "observable": "mean absolute activation response",
+      "deformation_origin": "activation bias",
+      "change_locus": "slope jump at ReLU bias 0",
+      "evidence": "experiments/paper11/piecewise_smooth_activation_wall.py",
+      "claim_status": "Computational Certificate",
+      "explicit_deformation": true,
+      "explicit_locus": true,
+      "measured_signature": true,
+      "note": "",
+      "evidence_exists": true,
+      "wall_package": "activation",
+      "active": true,
+      "source_record_id": "E-relu-kink",
+      "curation_tags": [
+        "NONSMOOTH_DISCRETE"
+      ],
+      "curation_assignment": {
+        "rulebook_version": "paper11-curation-tags-v1.0",
+        "assignment_source": "inherited",
+        "tags": [
+          "NONSMOOTH_DISCRETE"
+        ],
+        "override_reason": null
+      },
+      "compatibility": {
+        "historical_census_eligible": true
+      },
+      "local_model_eligibility": {
+        "status": "unresolved",
+        "model_family": "ADE",
+        "condition_checks": [],
+        "evidence_refs": []
+      },
+      "realization_kind": "diagnostic_analogue",
+      "record_role": "trajectory_diagnostic",
+      "wall_coordinate_profile": {
+        "field_families": [
+          "state"
+        ],
+        "event_kinds": [
+          "boundary_hit"
+        ],
+        "regularity": "piecewise_smooth",
+        "persistence_profile": [
+          "unresolved"
+        ],
+        "geometry": {
+          "location": "boundary",
+          "crossing": "unresolved",
+          "codimension_status": "codimension_unresolved"
+        },
+        "evidence": "Computational Certificate"
+      },
+      "field_family": "state",
+      "typed_channel_count": 1,
+      "field_observations": [
+        {
+          "field_key": "activation.response_slope",
+          "field_family": "state",
+          "carrier_id": "activation",
+          "change_kind": "declared_change",
+          "observation": "left/right slope jump at zero",
+          "direction": {
+            "raw_numeric": "mixed",
+            "accessibility": "not_applicable",
+            "event_semantics": "declared_change"
+          },
+          "pair_scope": "not_applicable"
+        }
+      ],
+      "morphology_atoms": [],
+      "corpus_entry": {
+        "entry_kind": "wall_context_record",
+        "bundle_kind": null,
+        "record_bundle": null,
+        "context_record": {
+          "record_role": "trajectory_diagnostic",
+          "diagnostic_fields": [
+            {
+              "field_key": "activation.response_slope",
+              "field_family": "state",
+              "carrier_id": "activation",
+              "change_kind": "declared_change",
+              "observation": "left/right slope jump at zero",
+              "direction": {
+                "raw_numeric": "mixed",
+                "accessibility": "not_applicable",
+                "event_semantics": "declared_change"
+              },
+              "pair_scope": "not_applicable"
+            }
+          ]
+        }
+      },
+      "morphology_signature": null,
+      "curated_signature": null,
+      "evidence_owner": "paper11",
+      "evidence_relation": "paper11_local",
+      "inclusion_ledger_entry": null,
+      "corpus_entry_kind": "wall_context_record",
+      "morphology_bundle_kind": null,
+      "main_wall_spectrum_eligible": false,
+      "analogue_morphology_eligible": false
+    },
+    {
+      "record_id": "topk-rank-selection",
+      "species": "NN Transformer activation",
+      "observable": "top-k active-entry count",
+      "deformation_origin": "activation bias samples",
+      "change_locus": "rank-selection boundary not crossed on the tested grid",
+      "evidence": "experiments/paper11/piecewise_smooth_activation_wall.py",
+      "claim_status": "Computational Observation",
+      "explicit_deformation": true,
+      "explicit_locus": false,
+      "measured_signature": true,
+      "note": "Negative boundary record; no top-k wall event observed.",
+      "evidence_exists": true,
+      "wall_package": "activation",
+      "active": true,
+      "source_record_id": "E-topk-rank-selection",
+      "curation_tags": [
+        "NONSMOOTH_DISCRETE"
+      ],
+      "curation_assignment": {
+        "rulebook_version": "paper11-curation-tags-v1.0",
+        "assignment_source": "inherited",
+        "tags": [
+          "NONSMOOTH_DISCRETE"
+        ],
+        "override_reason": null
+      },
+      "compatibility": {
+        "historical_census_eligible": false
+      },
+      "local_model_eligibility": {
+        "status": "unresolved",
+        "model_family": "ADE",
+        "condition_checks": [],
+        "evidence_refs": []
+      },
+      "realization_kind": "diagnostic_analogue",
+      "record_role": "trajectory_diagnostic",
+      "wall_coordinate_profile": {
+        "field_families": [
+          "state"
+        ],
+        "event_kinds": [
+          "boundary_hit"
+        ],
+        "regularity": "piecewise_smooth",
+        "persistence_profile": [
+          "unresolved"
+        ],
+        "geometry": {
+          "location": "boundary",
+          "crossing": "unresolved",
+          "codimension_status": "codimension_unresolved"
+        },
+        "evidence": "Computational Observation"
+      },
+      "field_family": "state",
+      "typed_channel_count": 1,
+      "field_observations": [
+        {
+          "field_key": "activation.topk_active_count",
+          "field_family": "state",
+          "carrier_id": "activation",
+          "change_kind": "declared_change",
+          "observation": "no rank-selection crossing on tested grid",
+          "direction": {
+            "raw_numeric": "not_applicable",
+            "accessibility": "not_applicable",
+            "event_semantics": "declared_change"
+          },
+          "pair_scope": "not_applicable"
+        }
+      ],
+      "morphology_atoms": [],
+      "corpus_entry": {
+        "entry_kind": "wall_context_record",
+        "bundle_kind": null,
+        "record_bundle": null,
+        "context_record": {
+          "record_role": "trajectory_diagnostic",
+          "diagnostic_fields": [
+            {
+              "field_key": "activation.topk_active_count",
+              "field_family": "state",
+              "carrier_id": "activation",
+              "change_kind": "declared_change",
+              "observation": "no rank-selection crossing on tested grid",
+              "direction": {
+                "raw_numeric": "not_applicable",
+                "accessibility": "not_applicable",
+                "event_semantics": "declared_change"
+              },
+              "pair_scope": "not_applicable"
+            }
+          ]
+        }
+      },
+      "morphology_signature": null,
+      "curated_signature": null,
+      "evidence_owner": "paper11",
+      "evidence_relation": "paper11_local",
+      "inclusion_ledger_entry": null,
+      "corpus_entry_kind": "wall_context_record",
+      "morphology_bundle_kind": null,
+      "main_wall_spectrum_eligible": false,
+      "analogue_morphology_eligible": false
+    },
+    {
+      "record_id": "ncg-t7-bridge",
+      "species": "Finite spectral triple",
+      "observable": "Dirac-block and one-form bridge support",
+      "deformation_origin": "static finite spectral-triple realization",
+      "change_locus": "2 ordered T7-style bridges",
+      "evidence": "experiments/paper10/ncg_spectral_triple_sof.py",
+      "claim_status": "Computational Observation",
+      "explicit_deformation": false,
+      "explicit_locus": false,
+      "measured_signature": true,
+      "note": "Support-level bridge record; no composition promotion.",
+      "evidence_exists": true,
+      "wall_package": "operator_route",
+      "active": true,
+      "source_record_id": "F-ncg-t7-bridge",
+      "curation_tags": [
+        "BRIDGE_INCIDENCE"
+      ],
+      "curation_assignment": {
+        "rulebook_version": "paper11-curation-tags-v1.0",
+        "assignment_source": "inherited",
+        "tags": [
+          "BRIDGE_INCIDENCE"
+        ],
+        "override_reason": null
+      },
+      "compatibility": {
+        "historical_census_eligible": false
+      },
+      "local_model_eligibility": {
+        "status": "unresolved",
+        "model_family": "ADE",
+        "condition_checks": [],
+        "evidence_refs": []
+      },
+      "realization_kind": "strict_sof",
+      "record_role": "static_boundary_witness",
+      "wall_coordinate_profile": {
+        "field_families": [
+          "route"
+        ],
+        "event_kinds": [
+          "first_hit_change"
+        ],
+        "regularity": "discrete",
+        "persistence_profile": [
+          "unresolved"
+        ],
+        "geometry": {
+          "location": "unresolved",
+          "crossing": "unresolved",
+          "codimension_status": "codimension_unresolved"
+        },
+        "evidence": "Computational Observation"
+      },
+      "field_family": "route",
+      "typed_channel_count": 1,
+      "field_observations": [
+        {
+          "field_key": "route.support[Y,d=2]",
+          "field_family": "route",
+          "carrier_id": "operator_route",
+          "change_kind": "declared_change",
+          "observation": "two ordered T7-style bridge diagnostics",
+          "direction": {
+            "raw_numeric": "increase",
+            "accessibility": "not_applicable",
+            "event_semantics": "declared_change"
+          },
+          "pair_scope": "off_diagonal",
+          "depth_convention": "ordered route length 2"
+        }
+      ],
+      "morphology_atoms": [],
+      "corpus_entry": {
+        "entry_kind": "wall_context_record",
+        "bundle_kind": null,
+        "record_bundle": null,
+        "context_record": {
+          "record_role": "static_boundary_witness",
+          "diagnostic_fields": [
+            {
+              "field_key": "route.support[Y,d=2]",
+              "field_family": "route",
+              "carrier_id": "operator_route",
+              "change_kind": "declared_change",
+              "observation": "two ordered T7-style bridge diagnostics",
+              "direction": {
+                "raw_numeric": "increase",
+                "accessibility": "not_applicable",
+                "event_semantics": "declared_change"
+              },
+              "pair_scope": "off_diagonal",
+              "depth_convention": "ordered route length 2"
+            }
+          ]
+        }
+      },
+      "morphology_signature": null,
+      "curated_signature": null,
+      "evidence_owner": "paper10",
+      "evidence_relation": "imported_source_record",
+      "inclusion_ledger_entry": null,
+      "corpus_entry_kind": "wall_context_record",
+      "morphology_bundle_kind": null,
+      "main_wall_spectrum_eligible": false,
+      "analogue_morphology_eligible": false
+    },
+    {
+      "record_id": "constructed-goe-endpoint",
+      "species": "Constructed real-symmetric spectral family",
+      "observable": "two isolated adjacent eigenvalue gaps",
+      "deformation_origin": "degenerate endpoint with GOE splitting direction",
+      "change_locus": "two order-one pair-gap closures at t=0",
+      "evidence": "experiments/paper11/results/constructed_goe_endpoint_v1.json",
+      "claim_status": "Computational Certificate",
+      "explicit_deformation": true,
+      "explicit_locus": true,
+      "measured_signature": true,
+      "note": "Constructed non-Rubik Class A witness. The double-level endpoint has ambient codimension two; endpoint perturbation removes both collisions. Not a generic one-parameter GOE crossing.",
+      "evidence_exists": true,
+      "wall_package": "spectral",
+      "active": true,
+      "source_record_id": "A-constructed-goe-endpoint",
+      "curation_tags": [
+        "COLLISION"
+      ],
+      "curation_assignment": {
+        "rulebook_version": "paper11-curation-tags-v1.0",
+        "assignment_source": "inherited",
+        "tags": [
+          "COLLISION"
+        ],
+        "override_reason": null
+      },
+      "compatibility": {
+        "historical_census_eligible": true
+      },
+      "local_model_eligibility": {
+        "status": "unresolved",
+        "model_family": "ADE",
+        "condition_checks": [],
+        "evidence_refs": []
+      },
+      "realization_kind": "strict_sof",
+      "record_role": "wall_event",
+      "evidence_contract": {
+        "schema": "paper11-constructed-goe-endpoint-v1.0",
+        "sha256": "abb0f827606143626b18468b6efd821641e4a2096e900465872ddb8550988a89",
+        "producer": "experiments/paper11/validation/degenerate_endpoint_collision.py",
+        "producer_sha256": "9e918a26b2d0e9af49c277c4b696a1352eef299cbd9449dd54980122f9f05dc9"
+      },
+      "source_evidence": "experiments/paper11/validation/degenerate_endpoint_collision.py",
+      "wall_coordinate_profile": {
+        "field_families": [
+          "spectral"
+        ],
+        "event_kinds": [
+          "collision"
+        ],
+        "regularity": "smooth",
+        "persistence_profile": [
+          "unresolved"
+        ],
+        "geometry": {
+          "location": "endpoint",
+          "crossing": "unresolved",
+          "codimension_status": "codimension_unresolved"
+        },
+        "evidence": "Computational Certificate"
+      },
+      "field_family": "spectral",
+      "typed_channel_count": 1,
+      "field_observations": [
+        {
+          "field_key": "spectral.adjacent_gap",
+          "field_family": "spectral",
+          "carrier_id": "carrier.constructed_real_symmetric_probe",
+          "change_kind": "collision_exit",
+          "observation": "two order-one endpoint closures",
+          "direction": {
+            "raw_numeric": "increase",
+            "accessibility": "not_applicable",
+            "event_semantics": "collision_exit"
+          },
+          "pair_scope": "not_applicable"
+        }
+      ],
+      "morphology_atoms": [
+        {
+          "atom_kind": "trajectory_event",
+          "inclusion_ledger_version": "paper11-wall-record-inclusion-v1.0",
+          "realization_kind": "strict_sof",
+          "spectrum_partition": "strict_main",
+          "primary_wall_field": "spectral.adjacent_gap",
+          "primary_field_family": "spectral",
+          "primary_carrier_id": "carrier.constructed_real_symmetric_probe",
+          "context_field_keys": [],
+          "context_carrier_ids": [],
+          "field_registrations": [
+            {
+              "field_key": "spectral.adjacent_gap",
+              "field_role": "primary_wall_field",
+              "field_family": "spectral",
+              "carrier_id": "carrier.constructed_real_symmetric_probe",
+              "chart_or_domain_ref": "paper11.constructed_goe_positive_ray",
+              "comparison_ref": "identity_on_declared_fixed_schema",
+              "policy_refs": {
+                "named_policy_refs": [
+                  "paper11.goe.seed=42",
+                  "paper11.goe.gap_tolerance=1e-10",
+                  "paper11.goe.endpoint_preserving_direction"
+                ],
+                "pair_scope": "not_applicable",
+                "diagonal_reduction": "not_applicable",
+                "depth_convention": "not_applicable",
+                "cutoff": "not_applicable"
+              },
+              "evidence_ref": "experiments/paper11/results/constructed_goe_endpoint_v1.json"
+            }
+          ],
+          "context_no_promotion": "a context-field change is a co-observation only; it creates a separate wall atom only after independent wall admission",
+          "trajectory_ref": "paper11.constructed_goe_positive_ray",
+          "order_semantics": "trajectory_oriented",
+          "orientation": "endpoint_to_positive_parameter",
+          "left_right_sampling_rule": "endpoint and first positive log-spaced sample",
+          "event_parameter_or_interval": "[0,1e-8]",
+          "field_changes": [
+            {
+              "field_key": "spectral.adjacent_gap",
+              "field_family": "spectral",
+              "carrier_id": "spectral",
+              "before_state": {
+                "adjacent_gaps": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "after_state": {
+                "adjacent_gaps": [
+                  5.985569040412031e-09,
+                  3.3328100279561568e-09
+                ]
+              },
+              "change_kind": "collision_exit",
+              "observation": "two order-one endpoint closures",
+              "direction": {
+                "raw_numeric": "increase",
+                "accessibility": "not_applicable",
+                "event_semantics": "collision_exit"
+              },
+              "pair_scope": "not_applicable"
+            }
+          ]
+        }
+      ],
+      "corpus_entry": {
+        "entry_kind": "morphology_record_bundle",
+        "bundle_kind": "strict_wall_record",
+        "record_bundle": {
+          "bundle_id": "constructed-goe-endpoint",
+          "morphology_atoms": [
+            {
+              "atom_kind": "trajectory_event",
+              "inclusion_ledger_version": "paper11-wall-record-inclusion-v1.0",
+              "realization_kind": "strict_sof",
+              "spectrum_partition": "strict_main",
+              "primary_wall_field": "spectral.adjacent_gap",
+              "primary_field_family": "spectral",
+              "primary_carrier_id": "carrier.constructed_real_symmetric_probe",
+              "context_field_keys": [],
+              "context_carrier_ids": [],
+              "field_registrations": [
+                {
+                  "field_key": "spectral.adjacent_gap",
+                  "field_role": "primary_wall_field",
+                  "field_family": "spectral",
+                  "carrier_id": "carrier.constructed_real_symmetric_probe",
+                  "chart_or_domain_ref": "paper11.constructed_goe_positive_ray",
+                  "comparison_ref": "identity_on_declared_fixed_schema",
+                  "policy_refs": {
+                    "named_policy_refs": [
+                      "paper11.goe.seed=42",
+                      "paper11.goe.gap_tolerance=1e-10",
+                      "paper11.goe.endpoint_preserving_direction"
+                    ],
+                    "pair_scope": "not_applicable",
+                    "diagonal_reduction": "not_applicable",
+                    "depth_convention": "not_applicable",
+                    "cutoff": "not_applicable"
+                  },
+                  "evidence_ref": "experiments/paper11/results/constructed_goe_endpoint_v1.json"
+                }
+              ],
+              "context_no_promotion": "a context-field change is a co-observation only; it creates a separate wall atom only after independent wall admission",
+              "trajectory_ref": "paper11.constructed_goe_positive_ray",
+              "order_semantics": "trajectory_oriented",
+              "orientation": "endpoint_to_positive_parameter",
+              "left_right_sampling_rule": "endpoint and first positive log-spaced sample",
+              "event_parameter_or_interval": "[0,1e-8]",
+              "field_changes": [
+                {
+                  "field_key": "spectral.adjacent_gap",
+                  "field_family": "spectral",
+                  "carrier_id": "spectral",
+                  "before_state": {
+                    "adjacent_gaps": [
+                      0.0,
+                      0.0
+                    ]
+                  },
+                  "after_state": {
+                    "adjacent_gaps": [
+                      5.985569040412031e-09,
+                      3.3328100279561568e-09
+                    ]
+                  },
+                  "change_kind": "collision_exit",
+                  "observation": "two order-one endpoint closures",
+                  "direction": {
+                    "raw_numeric": "increase",
+                    "accessibility": "not_applicable",
+                    "event_semantics": "collision_exit"
+                  },
+                  "pair_scope": "not_applicable"
+                }
+              ]
+            }
+          ]
+        },
+        "context_record": null
+      },
+      "morphology_signature": {
+        "role": "wall_event",
+        "realization_kind": "strict_sof",
+        "atom_kind": "trajectory_event",
+        "primary_field_family": "spectral",
+        "primary_carrier_id": "carrier.constructed_real_symmetric_probe",
+        "delta_ref": "constructed-goe-endpoint:morphology_atom:0",
+        "profile": {
+          "field_families": [
+            "spectral"
+          ],
+          "event_kinds": [
+            "collision"
+          ],
+          "regularity": "smooth",
+          "persistence_profile": [
+            "unresolved"
+          ],
+          "geometry": {
+            "location": "endpoint",
+            "crossing": "unresolved",
+            "codimension_status": "codimension_unresolved"
+          },
+          "evidence": "Computational Certificate"
+        }
+      },
+      "curated_signature": {
+        "morphology_signature_ref": "constructed-goe-endpoint:morphology_signature",
+        "curation_assignment": {
+          "rulebook_version": "paper11-curation-tags-v1.0",
+          "assignment_source": "inherited",
+          "tags": [
+            "COLLISION"
+          ],
+          "override_reason": null
+        }
+      },
+      "evidence_owner": "paper11",
+      "evidence_relation": "paper11_local",
+      "inclusion_ledger_entry": "paper11-wall-record-inclusion-v1.0:A-constructed-goe-endpoint",
+      "corpus_entry_kind": "morphology_record_bundle",
+      "morphology_bundle_kind": "strict_wall_record",
+      "main_wall_spectrum_eligible": true,
+      "analogue_morphology_eligible": false
+    },
+    {
+      "record_id": "nested-percolation-opening",
+      "species": "Erdos-Renyi percolation ensemble",
+      "observable": "direct support and bounded word-depth reachability",
+      "deformation_origin": "nested edge-threshold probability path",
+      "change_locus": "monotone repair window near p=0.08--0.10",
+      "evidence": "experiments/paper11/results/percolation_diagnostic_v1.json",
+      "claim_status": "Computational Observation",
+      "explicit_deformation": true,
+      "explicit_locus": true,
+      "measured_signature": true,
+      "note": "Pathwise edge addition is discrete and monotone; the ensemble mean and fluctuation profile define the transition window.",
+      "evidence_exists": true,
+      "wall_package": "operator_word",
+      "active": true,
+      "source_record_id": "BE-nested-percolation-opening",
+      "curation_tags": [
+        "REPAIR",
+        "NONSMOOTH_DISCRETE"
+      ],
+      "curation_assignment": {
+        "rulebook_version": "paper11-curation-tags-v1.0",
+        "assignment_source": "inherited",
+        "tags": [
+          "REPAIR",
+          "NONSMOOTH_DISCRETE"
+        ],
+        "override_reason": null
+      },
+      "compatibility": {
+        "historical_census_eligible": true
+      },
+      "local_model_eligibility": {
+        "status": "unresolved",
+        "model_family": "ADE",
+        "condition_checks": [],
+        "evidence_refs": []
+      },
+      "realization_kind": "strict_sof",
+      "record_role": "trajectory_diagnostic",
+      "evidence_contract": {
+        "schema": "paper11-percolation-diagnostic-v1.0",
+        "sha256": "a66fc7f8857ab788e0b715a378c709cf39455ab1233656af36dbfd5b0ec49fdf",
+        "producer": "experiments/paper11/validation/percolation_diagnostic.py",
+        "producer_sha256": "edcee431f977230ce234e96fb89d687d363be63fdd32ced0e35e7101b4a65533"
+      },
+      "source_evidence": "experiments/paper11/validation/percolation_diagnostic.py",
+      "wall_coordinate_profile": {
+        "field_families": [
+          "operator",
+          "word"
+        ],
+        "event_kinds": [
+          "boundary_hit",
+          "repair"
+        ],
+        "regularity": "discrete",
+        "persistence_profile": [
+          "unresolved"
+        ],
+        "geometry": {
+          "location": "unresolved",
+          "crossing": "unresolved",
+          "codimension_status": "codimension_unresolved"
+        },
+        "evidence": "Computational Observation"
+      },
+      "field_family": "word",
+      "typed_channel_count": 2,
+      "field_observations": [
+        {
+          "field_key": "operator.direct_support[Y]",
+          "field_family": "operator",
+          "carrier_id": "operator",
+          "change_kind": "declared_change",
+          "observation": "monotone direct-support opening",
+          "direction": {
+            "raw_numeric": "increase",
+            "accessibility": "not_applicable",
+            "event_semantics": "declared_change"
+          },
+          "pair_scope": "off_diagonal"
+        },
+        {
+          "field_key": "word.unreached_pair_count_at_cutoff[Y,cutoff=6,aggregation=ensemble_mean,ensemble_policy=seeded_nested_32]",
+          "field_family": "word",
+          "carrier_id": "carrier.graph_positive_word",
+          "change_kind": "largest_adjacent_sampled_drop",
+          "observation": "ensemble-mean cutoff-unreached pair count has a largest adjacent sampled drop",
+          "direction": {
+            "raw_numeric": "decrease",
+            "accessibility": "not_applicable",
+            "event_semantics": "largest_adjacent_sampled_drop"
+          },
+          "pair_scope": "off_diagonal",
+          "cutoff": 6
+        }
+      ],
+      "morphology_atoms": [],
+      "corpus_entry": {
+        "entry_kind": "wall_context_record",
+        "bundle_kind": null,
+        "record_bundle": null,
+        "context_record": {
+          "record_role": "trajectory_diagnostic",
+          "diagnostic_fields": [
+            {
+              "field_key": "operator.direct_support[Y]",
+              "field_family": "operator",
+              "carrier_id": "operator",
+              "change_kind": "declared_change",
+              "observation": "monotone direct-support opening",
+              "direction": {
+                "raw_numeric": "increase",
+                "accessibility": "not_applicable",
+                "event_semantics": "declared_change"
+              },
+              "pair_scope": "off_diagonal"
+            },
+            {
+              "field_key": "word.unreached_pair_count_at_cutoff[Y,cutoff=6,aggregation=ensemble_mean,ensemble_policy=seeded_nested_32]",
+              "field_family": "word",
+              "carrier_id": "carrier.graph_positive_word",
+              "change_kind": "largest_adjacent_sampled_drop",
+              "observation": "ensemble-mean cutoff-unreached pair count has a largest adjacent sampled drop",
+              "direction": {
+                "raw_numeric": "decrease",
+                "accessibility": "not_applicable",
+                "event_semantics": "largest_adjacent_sampled_drop"
+              },
+              "pair_scope": "off_diagonal",
+              "cutoff": 6
+            }
+          ]
+        }
+      },
+      "morphology_signature": null,
+      "curated_signature": null,
+      "evidence_owner": "paper11",
+      "evidence_relation": "paper11_local",
+      "inclusion_ledger_entry": "paper11-wall-record-inclusion-v1.0:BE-nested-percolation-opening",
+      "corpus_entry_kind": "wall_context_record",
+      "morphology_bundle_kind": null,
+      "main_wall_spectrum_eligible": false,
+      "analogue_morphology_eligible": false
+    },
+    {
+      "record_id": "kuramoto-freezing-crossover",
+      "species": "Kuramoto oscillator ensemble",
+      "observable": "order-parameter occupancy and bounded word-depth freezing",
+      "deformation_origin": "matched coupling-strength sweep",
+      "change_locus": "freezing crossover near K=1.6--1.8",
+      "evidence": "experiments/paper11/results/kuramoto_freezing.observation.json",
+      "claim_status": "Computational Observation",
+      "explicit_deformation": true,
+      "explicit_locus": true,
+      "measured_signature": true,
+      "note": "Smooth phase dynamics induce a thresholded finite-sector shadow. The freezing direction is stable across the tested matched ensembles.",
+      "evidence_exists": true,
+      "wall_package": "operator_word",
+      "active": true,
+      "source_record_id": "DE-kuramoto-freezing-crossover",
+      "curation_tags": [
+        "PLATEAU_RATE",
+        "NONSMOOTH_DISCRETE"
+      ],
+      "curation_assignment": {
+        "rulebook_version": "paper11-curation-tags-v1.0",
+        "assignment_source": "inherited",
+        "tags": [
+          "PLATEAU_RATE",
+          "NONSMOOTH_DISCRETE"
+        ],
+        "override_reason": null
+      },
+      "compatibility": {
+        "historical_census_eligible": true
+      },
+      "local_model_eligibility": {
+        "status": "unresolved",
+        "model_family": "ADE",
+        "condition_checks": [],
+        "evidence_refs": []
+      },
+      "realization_kind": "diagnostic_analogue",
+      "record_role": "trajectory_diagnostic",
+      "source_evidence": "experiments/paper11/validation/kuramoto_wall.py",
+      "observation_contract": {
+        "schema": "rime.experiment-observation.v1",
+        "artifact_role": "cached_computational_observation",
+        "claim_status": "Computational Observation"
+      },
+      "wall_coordinate_profile": {
+        "field_families": [
+          "proxy",
+          "word"
+        ],
+        "event_kinds": [
+          "boundary_hit",
+          "response_order_crossing"
+        ],
+        "regularity": "stochastic",
+        "persistence_profile": [
+          "plateau"
+        ],
+        "geometry": {
+          "location": "unresolved",
+          "crossing": "unresolved",
+          "codimension_status": "codimension_unresolved"
+        },
+        "evidence": "Computational Observation"
+      },
+      "field_family": "word",
+      "typed_channel_count": 2,
+      "field_observations": [
+        {
+          "field_key": "word.depth_truncated[Y,cutoff=3]",
+          "field_family": "word",
+          "carrier_id": "operator_word",
+          "change_kind": "declared_change",
+          "observation": "cutoff-unreached word-pair count increases",
+          "direction": {
+            "raw_numeric": "decrease",
+            "accessibility": "not_applicable",
+            "event_semantics": "declared_change"
+          },
+          "pair_scope": "off_diagonal",
+          "depth_convention": "positive word length",
+          "cutoff": 3
+        },
+        {
+          "field_key": "dynamics.order_parameter_occupancy",
+          "field_family": "proxy",
+          "carrier_id": "dynamics",
+          "change_kind": "declared_change",
+          "observation": "occupancy contracts",
+          "direction": {
+            "raw_numeric": "decrease",
+            "accessibility": "not_applicable",
+            "event_semantics": "declared_change"
+          },
+          "pair_scope": "not_applicable"
+        }
+      ],
+      "morphology_atoms": [],
+      "corpus_entry": {
+        "entry_kind": "wall_context_record",
+        "bundle_kind": null,
+        "record_bundle": null,
+        "context_record": {
+          "record_role": "trajectory_diagnostic",
+          "diagnostic_fields": [
+            {
+              "field_key": "word.depth_truncated[Y,cutoff=3]",
+              "field_family": "word",
+              "carrier_id": "operator_word",
+              "change_kind": "declared_change",
+              "observation": "cutoff-unreached word-pair count increases",
+              "direction": {
+                "raw_numeric": "decrease",
+                "accessibility": "not_applicable",
+                "event_semantics": "declared_change"
+              },
+              "pair_scope": "off_diagonal",
+              "depth_convention": "positive word length",
+              "cutoff": 3
+            },
+            {
+              "field_key": "dynamics.order_parameter_occupancy",
+              "field_family": "proxy",
+              "carrier_id": "dynamics",
+              "change_kind": "declared_change",
+              "observation": "occupancy contracts",
+              "direction": {
+                "raw_numeric": "decrease",
+                "accessibility": "not_applicable",
+                "event_semantics": "declared_change"
+              },
+              "pair_scope": "not_applicable"
+            }
+          ]
+        }
+      },
+      "morphology_signature": null,
+      "curated_signature": null,
+      "evidence_owner": "paper11",
+      "evidence_relation": "paper11_local",
+      "inclusion_ledger_entry": null,
+      "corpus_entry_kind": "wall_context_record",
+      "morphology_bundle_kind": null,
+      "main_wall_spectrum_eligible": false,
+      "analogue_morphology_eligible": false
+    },
+    {
+      "record_id": "grn-terminal-basin-loss",
+      "species": "GRN toggle-switch flow",
+      "observable": "terminal attractor count and terminal-sector identity",
+      "deformation_origin": "continuous regulatory-edge weakening",
+      "change_locus": "two-to-one basin loss in lambda bracket 0.520--0.525",
+      "evidence": "experiments/paper11/results/grn_terminal_basin_loss_v1.json",
+      "claim_status": "Computational Observation",
+      "explicit_deformation": true,
+      "explicit_locus": true,
+      "measured_signature": true,
+      "note": "Class C terminal-structure witness. The discrete edge-deletion endpoint has an E-coordinate, but the primary wall mechanism is continuous deterministic basin loss. The CLE/SSA noise wall is withdrawn.",
+      "evidence_exists": true,
+      "wall_package": "terminal_structure",
+      "active": true,
+      "source_record_id": "C-grn-terminal-basin-loss",
+      "curation_tags": [
+        "TERMINAL"
+      ],
+      "curation_assignment": {
+        "rulebook_version": "paper11-curation-tags-v1.0",
+        "assignment_source": "inherited",
+        "tags": [
+          "TERMINAL"
+        ],
+        "override_reason": null
+      },
+      "compatibility": {
+        "historical_census_eligible": true
+      },
+      "local_model_eligibility": {
+        "status": "unresolved",
+        "model_family": "ADE",
+        "condition_checks": [],
+        "evidence_refs": []
+      },
+      "realization_kind": "diagnostic_analogue",
+      "record_role": "wall_event",
+      "evidence_contract": {
+        "schema": "paper11-grn-terminal-basin-loss-v1.0",
+        "sha256": "9fcfc931f1405aade7d1615fa38677ffcc13897b3f0f1b4ac6d6196395fd1294",
+        "producer": "experiments/paper11/validation/grn_toggle_wall.py",
+        "producer_sha256": "827bc5011b3698092f3aa46571f8dc80477b4b98f2f93242c9560b1a9244dff0"
+      },
+      "source_evidence": "experiments/paper11/validation/grn_toggle_wall.py",
+      "wall_coordinate_profile": {
+        "field_families": [
+          "state"
+        ],
+        "event_kinds": [
+          "terminalization"
+        ],
+        "regularity": "unknown",
+        "persistence_profile": [
+          "terminal"
+        ],
+        "geometry": {
+          "location": "unresolved",
+          "crossing": "unresolved",
+          "codimension_status": "codimension_unresolved"
+        },
+        "evidence": "Computational Observation"
+      },
+      "field_family": "state",
+      "typed_channel_count": 2,
+      "field_observations": [
+        {
+          "field_key": "state.terminal_component_count",
+          "field_family": "state",
+          "carrier_id": "carrier.attractor_basin_descriptor",
+          "change_kind": "declared_change",
+          "observation": "two attracting components become one",
+          "direction": {
+            "raw_numeric": "decrease",
+            "accessibility": "not_applicable",
+            "event_semantics": "declared_change"
+          },
+          "pair_scope": "not_applicable"
+        },
+        {
+          "field_key": "state.terminal_sector_identity",
+          "field_family": "state",
+          "carrier_id": "terminal_structure",
+          "change_kind": "declared_change",
+          "observation": "terminal sector 40 is lost",
+          "direction": {
+            "raw_numeric": "decrease",
+            "accessibility": "not_applicable",
+            "event_semantics": "declared_change"
+          },
+          "pair_scope": "not_applicable"
+        }
+      ],
+      "morphology_atoms": [
+        {
+          "atom_kind": "trajectory_event",
+          "inclusion_ledger_version": "paper11-wall-record-inclusion-v1.0",
+          "realization_kind": "diagnostic_analogue",
+          "spectrum_partition": "analogue_morphology",
+          "primary_wall_field": "state.terminal_component_count",
+          "primary_field_family": "state",
+          "primary_carrier_id": "carrier.attractor_basin_descriptor",
+          "context_field_keys": [
+            "state.terminal_sector_identity"
+          ],
+          "context_carrier_ids": [
+            "carrier.terminal_sector_descriptor"
+          ],
+          "field_registrations": [
+            {
+              "field_key": "state.terminal_component_count",
+              "field_role": "primary_wall_field",
+              "field_family": "state",
+              "carrier_id": "carrier.attractor_basin_descriptor",
+              "chart_or_domain_ref": "paper11.grn_regulatory_edge_strength",
+              "comparison_ref": "identity_on_declared_fixed_schema",
+              "policy_refs": {
+                "named_policy_refs": [
+                  "paper11.grn.fixed_initial_condition_grid",
+                  "paper11.grn.attractor_clustering_tolerance=0.5",
+                  "paper11.grn.refined_step=0.005"
+                ],
+                "pair_scope": "not_applicable",
+                "diagonal_reduction": "not_applicable",
+                "depth_convention": "not_applicable",
+                "cutoff": "not_applicable"
+              },
+              "evidence_ref": "experiments/paper11/results/grn_terminal_basin_loss_v1.json"
+            },
+            {
+              "field_key": "state.terminal_sector_identity",
+              "field_role": "context_co_observation",
+              "field_family": "state",
+              "carrier_id": "terminal_structure",
+              "chart_or_domain_ref": "paper11.grn_regulatory_edge_strength",
+              "comparison_ref": "identity_on_declared_fixed_schema",
+              "policy_refs": {
+                "named_policy_refs": [
+                  "paper11.grn.fixed_initial_condition_grid",
+                  "paper11.grn.attractor_clustering_tolerance=0.5",
+                  "paper11.grn.refined_step=0.005"
+                ],
+                "pair_scope": "not_applicable",
+                "diagonal_reduction": "not_applicable",
+                "depth_convention": "not_applicable",
+                "cutoff": "not_applicable"
+              },
+              "evidence_ref": "experiments/paper11/results/grn_terminal_basin_loss_v1.json"
+            }
+          ],
+          "context_no_promotion": "a context-field change is a co-observation only; it creates a separate wall atom only after independent wall admission",
+          "trajectory_ref": "paper11.grn_regulatory_edge_strength",
+          "order_semantics": "trajectory_oriented",
+          "orientation": "decreasing_regulatory_edge_strength",
+          "left_right_sampling_rule": "adjacent controlled initial-condition samples",
+          "event_parameter_or_interval": "[0.525,0.520]",
+          "field_changes": [
+            {
+              "field_key": "state.terminal_component_count",
+              "field_family": "state",
+              "carrier_id": "terminal_structure",
+              "before_state": {
+                "attractor_count": 2,
+                "terminal_sectors": [
+                  5,
+                  40
+                ]
+              },
+              "after_state": {
+                "attractor_count": 1,
+                "terminal_sectors": [
+                  5
+                ]
+              },
+              "change_kind": "declared_change",
+              "observation": "two attracting components become one",
+              "direction": {
+                "raw_numeric": "decrease",
+                "accessibility": "not_applicable",
+                "event_semantics": "terminalization"
+              },
+              "pair_scope": "not_applicable"
+            },
+            {
+              "field_key": "state.terminal_sector_identity",
+              "field_family": "state",
+              "carrier_id": "terminal_structure",
+              "before_state": "NOT_RECORDED",
+              "after_state": "NOT_RECORDED",
+              "change_kind": "declared_change",
+              "observation": "terminal sector 40 is lost",
+              "direction": {
+                "raw_numeric": "decrease",
+                "accessibility": "not_applicable",
+                "event_semantics": "declared_change"
+              },
+              "pair_scope": "not_applicable"
+            }
+          ]
+        }
+      ],
+      "corpus_entry": {
+        "entry_kind": "morphology_record_bundle",
+        "bundle_kind": "analogue_morphology_record",
+        "record_bundle": {
+          "bundle_id": "grn-terminal-basin-loss",
+          "morphology_atoms": [
+            {
+              "atom_kind": "trajectory_event",
+              "inclusion_ledger_version": "paper11-wall-record-inclusion-v1.0",
+              "realization_kind": "diagnostic_analogue",
+              "spectrum_partition": "analogue_morphology",
+              "primary_wall_field": "state.terminal_component_count",
+              "primary_field_family": "state",
+              "primary_carrier_id": "carrier.attractor_basin_descriptor",
+              "context_field_keys": [
+                "state.terminal_sector_identity"
+              ],
+              "context_carrier_ids": [
+                "carrier.terminal_sector_descriptor"
+              ],
+              "field_registrations": [
+                {
+                  "field_key": "state.terminal_component_count",
+                  "field_role": "primary_wall_field",
+                  "field_family": "state",
+                  "carrier_id": "carrier.attractor_basin_descriptor",
+                  "chart_or_domain_ref": "paper11.grn_regulatory_edge_strength",
+                  "comparison_ref": "identity_on_declared_fixed_schema",
+                  "policy_refs": {
+                    "named_policy_refs": [
+                      "paper11.grn.fixed_initial_condition_grid",
+                      "paper11.grn.attractor_clustering_tolerance=0.5",
+                      "paper11.grn.refined_step=0.005"
+                    ],
+                    "pair_scope": "not_applicable",
+                    "diagonal_reduction": "not_applicable",
+                    "depth_convention": "not_applicable",
+                    "cutoff": "not_applicable"
+                  },
+                  "evidence_ref": "experiments/paper11/results/grn_terminal_basin_loss_v1.json"
+                },
+                {
+                  "field_key": "state.terminal_sector_identity",
+                  "field_role": "context_co_observation",
+                  "field_family": "state",
+                  "carrier_id": "terminal_structure",
+                  "chart_or_domain_ref": "paper11.grn_regulatory_edge_strength",
+                  "comparison_ref": "identity_on_declared_fixed_schema",
+                  "policy_refs": {
+                    "named_policy_refs": [
+                      "paper11.grn.fixed_initial_condition_grid",
+                      "paper11.grn.attractor_clustering_tolerance=0.5",
+                      "paper11.grn.refined_step=0.005"
+                    ],
+                    "pair_scope": "not_applicable",
+                    "diagonal_reduction": "not_applicable",
+                    "depth_convention": "not_applicable",
+                    "cutoff": "not_applicable"
+                  },
+                  "evidence_ref": "experiments/paper11/results/grn_terminal_basin_loss_v1.json"
+                }
+              ],
+              "context_no_promotion": "a context-field change is a co-observation only; it creates a separate wall atom only after independent wall admission",
+              "trajectory_ref": "paper11.grn_regulatory_edge_strength",
+              "order_semantics": "trajectory_oriented",
+              "orientation": "decreasing_regulatory_edge_strength",
+              "left_right_sampling_rule": "adjacent controlled initial-condition samples",
+              "event_parameter_or_interval": "[0.525,0.520]",
+              "field_changes": [
+                {
+                  "field_key": "state.terminal_component_count",
+                  "field_family": "state",
+                  "carrier_id": "terminal_structure",
+                  "before_state": {
+                    "attractor_count": 2,
+                    "terminal_sectors": [
+                      5,
+                      40
+                    ]
+                  },
+                  "after_state": {
+                    "attractor_count": 1,
+                    "terminal_sectors": [
+                      5
+                    ]
+                  },
+                  "change_kind": "declared_change",
+                  "observation": "two attracting components become one",
+                  "direction": {
+                    "raw_numeric": "decrease",
+                    "accessibility": "not_applicable",
+                    "event_semantics": "terminalization"
+                  },
+                  "pair_scope": "not_applicable"
+                },
+                {
+                  "field_key": "state.terminal_sector_identity",
+                  "field_family": "state",
+                  "carrier_id": "terminal_structure",
+                  "before_state": "NOT_RECORDED",
+                  "after_state": "NOT_RECORDED",
+                  "change_kind": "declared_change",
+                  "observation": "terminal sector 40 is lost",
+                  "direction": {
+                    "raw_numeric": "decrease",
+                    "accessibility": "not_applicable",
+                    "event_semantics": "declared_change"
+                  },
+                  "pair_scope": "not_applicable"
+                }
+              ]
+            }
+          ]
+        },
+        "context_record": null
+      },
+      "morphology_signature": {
+        "role": "wall_event",
+        "realization_kind": "diagnostic_analogue",
+        "atom_kind": "trajectory_event",
+        "primary_field_family": "state",
+        "primary_carrier_id": "carrier.attractor_basin_descriptor",
+        "delta_ref": "grn-terminal-basin-loss:morphology_atom:0",
+        "profile": {
+          "field_families": [
+            "state"
+          ],
+          "event_kinds": [
+            "terminalization"
+          ],
+          "regularity": "unknown",
+          "persistence_profile": [
+            "terminal"
+          ],
+          "geometry": {
+            "location": "unresolved",
+            "crossing": "unresolved",
+            "codimension_status": "codimension_unresolved"
+          },
+          "evidence": "Computational Observation"
+        }
+      },
+      "curated_signature": {
+        "morphology_signature_ref": "grn-terminal-basin-loss:morphology_signature",
+        "curation_assignment": {
+          "rulebook_version": "paper11-curation-tags-v1.0",
+          "assignment_source": "inherited",
+          "tags": [
+            "TERMINAL"
+          ],
+          "override_reason": null
+        }
+      },
+      "evidence_owner": "paper11",
+      "evidence_relation": "paper11_local",
+      "inclusion_ledger_entry": "paper11-wall-record-inclusion-v1.0:C-grn-terminal-basin-loss",
+      "corpus_entry_kind": "morphology_record_bundle",
+      "morphology_bundle_kind": "analogue_morphology_record",
+      "main_wall_spectrum_eligible": false,
+      "analogue_morphology_eligible": true
+    }
+  ],
+  "wall_corpus_contract": "WallCorpusEntry is MorphologyRecordBundle or WallContextRecord; MorphologyRecordBundle is StrictWallRecord or AnalogueMorphologyRecord, and each bundle contains MorphologyAtom values. MorphologyAtom is a discriminated union: trajectory_event carries an oriented before/after field map, while locus_sample carries incident-stratum field germs without intrinsic two-sided order",
+  "morphology_signature_contract": "MorphSig_W^{P_W}(atom) = (realization_kind, record_role, atom_kind, primary_field_family, primary_carrier_id, atom_delta, wall_coordinate_profile)",
+  "curated_signature_contract": "CuratedSig_W^{P_W,v}(atom) = (MorphSig_W^{P_W}(atom), Curate_v(atom))",
+  "primary_context_contract": "in a StrictWallRecord the primary_wall_field establishes wall admissibility; in an AnalogueMorphologyRecord it anchors morphology without asserting strict admission. Each context_field_key is separately registered as a co-observation and creates no additional wall atom without independent admission",
+  "profile_contract": {
+    "families": [
+      "field_families",
+      "event_kinds",
+      "regularity",
+      "persistence_profile",
+      "geometry",
+      "evidence"
+    ],
+    "multi_valued": [
+      "event_kinds",
+      "persistence_profile"
+    ],
+    "geometry_fields": [
+      "location",
+      "crossing",
+      "codimension_status"
+    ],
+    "observation_policies_excluded_from_regularity": [
+      "censoring",
+      "sampling"
+    ]
+  },
+  "supported_field_key_families": {
+    "operator_word_lie": [
+      "operator.direct_support[Y]",
+      "route.support[Y,d]",
+      "word.support[Y,d]",
+      "word.depth_exact[Y]",
+      "word.depth_truncated[Y,cutoff=m]",
+      "lie.simple_commutator_support[X]",
+      "lie.depth_exact[X,H]",
+      "lie.depth_truncated[X,H,cutoff=n]"
+    ],
+    "closures": [
+      "closure.positive_algebra.dimension[Y]",
+      "closure.positive_algebra.corner_dimension[Y,i,j]",
+      "closure.observable_star.marked_corner_dimension[Y,i,j]",
+      "closure.observable_star.abstract_algebra_type[Y]",
+      "closure.observable_star.concrete_embedding[Y]",
+      "closure.sector_star.marked_corner_type[Q,Y,i,j]",
+      "closure.sector_star.abstract_algebra_type[Q,Y]",
+      "closure.sector_star.concrete_embedding[Q,Y]"
+    ],
+    "other": [
+      "spectral.gap",
+      "proxy.response_time[policy]",
+      "state.first_hit_time[policy]"
+    ]
+  },
+  "closure_boundary": "positive-algebra fields do not admit a Wedderburn-type coordinate without a separately declared semisimplicity certificate",
+  "closure_corner_policy_contract": {
+    "off_diagonal": {
+      "pair_scope": "off_diagonal",
+      "diagonal_reduction": "not_applicable"
+    },
+    "scalar_reduced_diagonal": {
+      "pair_scope": "scalar_reduced_diagonal",
+      "diagonal_reduction": "hs_scalar_complement"
+    },
+    "raw_diagonal_unital_corner_comparison": "forbidden"
+  },
+  "not_recorded_marker_contract": "NOT_RECORDED marks record-field presence only; it is neither a Paper X IR result state nor a Paper XIII comparison state",
+  "census_interpretation": "finite source-addressed curation certificate; no partition, completeness, or population-prevalence claim",
+  "typed_delta_contract": "trajectory-event deltas are oriented sparse before/after maps; locus-sample deltas are incident-stratum germs",
+  "wall_spectrum_gate": "only upstream-admitted strict_sof wall_event and wall_locus_sample bundles included by the versioned ledger enter the strict main wall spectrum; included diagnostic_analogue atoms remain in a separate analogue-morphology set without an upstream strict-wall admission claim",
+  "curation_rulebook": {
+    "version": "paper11-curation-tags-v1.0",
+    "assignment_kind": "nonexclusive",
+    "tags": {
+      "COLLISION": "declared spectral or observable collision morphology",
+      "REPAIR": "field witness, support, or bounded reachability becomes present",
+      "TERMINAL": "terminal component, basin, or endpoint structure changes",
+      "PLATEAU_RATE": "plateau or response-order morphology",
+      "NONSMOOTH_DISCRETE": "piecewise, discrete, or sampled-boundary morphology",
+      "BRIDGE_INCIDENCE": "route, word, commutator, or incidence mechanism"
+    }
+  },
+  "ownership_contract": "source artifacts retain their owning paper; Paper XI owns the corpus inclusion, derived wall-coordinate profiles, curation tags, and this finite census certificate"
+}

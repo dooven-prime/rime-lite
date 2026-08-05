@@ -1,0 +1,154 @@
+{
+  "record_version": "paper11-wall-robustness-v1.0",
+  "claim_status": "Computational Certificate",
+  "producer": "experiments/paper11/validation/wall_robustness_audit.py",
+  "audit_kind": "profile_robustness",
+  "GOE": {
+    "status": "pass",
+    "rows": [
+      {
+        "seed": 42,
+        "collision_count": 2,
+        "minimum_order": 0.9999684412301286,
+        "maximum_order": 1.0000149128426934,
+        "minimum_non_target_gap": 0.9375032657264355,
+        "endpoint_lifting_passed": true
+      },
+      {
+        "seed": 43,
+        "collision_count": 2,
+        "minimum_order": 0.9999678637950125,
+        "maximum_order": 1.0000137179767192,
+        "minimum_non_target_gap": 0.9689918928351167,
+        "endpoint_lifting_passed": true
+      },
+      {
+        "seed": 44,
+        "collision_count": 2,
+        "minimum_order": 1.0000007923262952,
+        "maximum_order": 1.0000084108018066,
+        "minimum_non_target_gap": 0.9538938878905314,
+        "endpoint_lifting_passed": true
+      },
+      {
+        "seed": 45,
+        "collision_count": 2,
+        "minimum_order": 0.9999833130186119,
+        "maximum_order": 0.9999903547156921,
+        "minimum_non_target_gap": 0.9631288424863154,
+        "endpoint_lifting_passed": true
+      }
+    ]
+  },
+  "percolation": {
+    "status": "pass",
+    "rows": [
+      {
+        "ensemble": 8,
+        "seed": 42,
+        "largest_sampled_drop_at_p": 0.08,
+        "variance_peak_p": 0.08,
+        "largest_sampled_drop": -100.75,
+        "monotone_support_verified": true
+      },
+      {
+        "ensemble": 8,
+        "seed": 142,
+        "largest_sampled_drop_at_p": 0.1,
+        "variance_peak_p": 0.08,
+        "largest_sampled_drop": -72.75,
+        "monotone_support_verified": true
+      },
+      {
+        "ensemble": 16,
+        "seed": 42,
+        "largest_sampled_drop_at_p": 0.08,
+        "variance_peak_p": 0.08,
+        "largest_sampled_drop": -82.625,
+        "monotone_support_verified": true
+      },
+      {
+        "ensemble": 16,
+        "seed": 142,
+        "largest_sampled_drop_at_p": 0.1,
+        "variance_peak_p": 0.06,
+        "largest_sampled_drop": -75.375,
+        "monotone_support_verified": true
+      },
+      {
+        "ensemble": 32,
+        "seed": 42,
+        "largest_sampled_drop_at_p": 0.08,
+        "variance_peak_p": 0.1,
+        "largest_sampled_drop": -70.5625,
+        "monotone_support_verified": true
+      },
+      {
+        "ensemble": 32,
+        "seed": 142,
+        "largest_sampled_drop_at_p": 0.1,
+        "variance_peak_p": 0.08,
+        "largest_sampled_drop": -69.6875,
+        "monotone_support_verified": true
+      }
+    ],
+    "largest_sampled_drop_p_range": [
+      0.08,
+      0.1
+    ],
+    "variance_peak_p_range": [
+      0.06,
+      0.1
+    ]
+  },
+  "Kuramoto": {
+    "status": "pass",
+    "rows": [
+      {
+        "seed": 42,
+        "wall_K": 1.8,
+        "wall_increase": 112.5,
+        "paired_change_mean": 273.75,
+        "paired_change_std": 31.838459447655442,
+        "freezing_fraction": 1.0
+      },
+      {
+        "seed": 142,
+        "wall_K": 1.6,
+        "wall_increase": 98.0,
+        "paired_change_mean": 239.75,
+        "paired_change_std": 30.825111516424396,
+        "freezing_fraction": 1.0
+      }
+    ],
+    "wall_K_range": [
+      1.6,
+      1.8
+    ]
+  },
+  "GRN": {
+    "status": "pass",
+    "protocol": "smoke: 1 seed x 2 trajectories",
+    "CLE_relative_range": 0.004464285714285714,
+    "SSA_relative_range": 0.004464285714285714,
+    "maximum_method_gap": 6.0,
+    "SSA_basin_switches": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "coarse_wall_bracket": [
+      0.5,
+      0.55
+    ],
+    "refined_controlled_grid_bracket": [
+      0.52,
+      0.525
+    ],
+    "removed_terminal_sectors": [
+      40
+    ]
+  },
+  "all_passed": true
+}

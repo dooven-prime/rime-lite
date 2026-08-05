@@ -1,0 +1,45 @@
+{
+  "schema": "paper11-validation-certificate-v1.0",
+  "claim_status": "Computational Certificate",
+  "validator": "experiments/paper11/validation/validate_collision_quotient_result.py",
+  "validator_version": "1.0",
+  "validator_independence": {
+    "implementation_relation": "separate_algorithm",
+    "language_relation": "same_language",
+    "runtime_relation": "separate_process",
+    "input_source": "canonical_input_and_frozen_result",
+    "producer_cache_used": false
+  },
+  "canonical_input_sha256": "f6c9678e044de4f780e44c7032d2d50afd68745cf33ad4fd5d5710705bea5401",
+  "producer_sha256": "bf89c749d1bcb7275965718e9d7706059fc0d6d620d8893dad7262135c836486",
+  "result_sha256": "460fc52eecf312eb1aae3faecd9607c058918153fc421f9b9a003852391fde36",
+  "validator_sha256": "09d1c2d2beab0cecf7fbc1d764752e5fe4fdd4c51bca4f1771192c804198e066",
+  "recomputed_summary": {
+    "pair_classification": {
+      "parallel": 2,
+      "interior": 10,
+      "endpoint": 15,
+      "exterior": 9
+    },
+    "interior_layer_counts": {
+      "2/7": 8,
+      "2/5": 7,
+      "1/2": 7,
+      "2/3": 6,
+      "4/5": 8
+    },
+    "maximal_collision_classes": [
+      [
+        "S5",
+        "S6",
+        "S7"
+      ],
+      [
+        "S8",
+        "S9"
+      ]
+    ]
+  },
+  "claim_scope": "exact finite rational nine-point collision quotient; no claim that the point table is independently derived from the full Rubik matrices",
+  "validation_status": "passed"
+}

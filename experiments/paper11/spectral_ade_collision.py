@@ -20,8 +20,11 @@ closures are pairwise A1 collision candidates along the approach.
 
 from __future__ import annotations
 
+import argparse
+import json
 import os
 import sys
+from pathlib import Path
 
 import numpy as np
 
@@ -84,6 +87,8 @@ def spectral_path(beta: float = BETA, n_steps: int = N_STEPS) -> dict:
             )
 
     return {
+        "record_version": "paper11-rubik-spectral-endpoint-v1.0",
+        "claim_status": "Computational Certificate",
         "n_eigs": n_eigs,
         "n_collisions": len(collisions),
         "collisions": collisions,
@@ -91,6 +96,22 @@ def spectral_path(beta: float = BETA, n_steps: int = N_STEPS) -> dict:
         "target_index": target,
         "qt_count": len(qt_idx),
         "ht_count": len(ht_idx),
+        "trajectory_event": {
+            "orientation": "endpoint_to_interior",
+            "parameter_bracket": [float(alphas[-1]), float(alphas[0])],
+            "before_state": {
+                "adjacent_gaps": [
+                    collision["gap_end"] for collision in collisions
+                ]
+            },
+            "after_state": {
+                "adjacent_gaps": [
+                    collision["gap_start"] for collision in collisions
+                ]
+            },
+            "raw_numeric_direction": "increase",
+            "event_semantics": "collision_exit",
+        },
     }
 
 
@@ -168,6 +189,10 @@ def pair_gap_resolution_audit(
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output", type=Path)
+    args = parser.parse_args()
+
     result = spectral_path()
     print("=" * 72)
     print("  Paper XI: Rubik Spectral Pair-Gap Local-Model Audit")
@@ -218,6 +243,17 @@ def main() -> None:
     print("  - the canonical QT/HT point is a higher-order endpoint where many branches collapse;")
     print("  - this is smooth-branch local-model evidence, not an ADE classification theorem.")
     print("Done.")
+    if args.output:
+        payload = {
+            "record_version": "paper11-rubik-spectral-endpoint-v1.0",
+            "claim_status": "Computational Certificate",
+            "producer": "experiments/paper11/spectral_ade_collision.py",
+            "spectral_endpoint": result,
+            "simultaneous_pair_gap": pair_gap,
+            "resolution_audit": resolution_audit,
+        }
+        args.output.parent.mkdir(parents=True, exist_ok=True)
+        args.output.write_text(json.dumps(payload, indent=2), encoding="utf-8")
 
 
 if __name__ == "__main__":
