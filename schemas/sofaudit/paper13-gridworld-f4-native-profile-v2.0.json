@@ -1,0 +1,20 @@
+{
+  "profile_id": "paper13.gridworld-f4.native-object.v2",
+  "profile_version": "2.0",
+  "profile_contract_version": "2.0",
+  "profile_revision": "gridworld-f4-native-v2",
+  "applicable_regimes": ["strict_vs_strict"],
+  "applicable_regime": "strict_vs_strict",
+  "coordinate_registry_ref": "schemas/sofaudit/coordinate-semantics-registry-v1.0.json",
+  "coordinate_families": ["operator", "word", "lie"],
+  "requested_coordinate_ids": ["operator.support.summary", "word.support.length-2.summary", "lie.simple-commutator-support.summary"],
+  "availability_semantics": {
+    "unavailable_states": ["NOT_DECLARED", "NOT_APPLICABLE", "INCOMPARABLE", "UNRESOLVED"],
+    "null_value_states": ["NOT_DECLARED", "NOT_APPLICABLE", "INCOMPARABLE", "UNRESOLVED"],
+    "zero_is_unavailable": false
+  },
+  "comparison_semantics": {"matched_states": ["ALIGNED", "MISMATCH"], "comparison_is_pairwise": true},
+  "carrier_requirements": {"strict": ["operator", "word", "lie"], "analogue": []},
+  "required_evidence_roles": ["reference-report", "target-report", "reference-report-validation-receipt", "target-report-validation-receipt", "audit-profile", "coordinate-semantics-registry", "object-oracle-result"],
+  "negative_boundary": ["This finite profile does not establish GridWorld adequacy or action semantics."]
+}

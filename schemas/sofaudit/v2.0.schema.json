@@ -1,0 +1,1422 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rime-project.local/schemas/sofaudit/v2.0.schema.json",
+  "title": "SOF Audit Object Specification v2.0",
+  "description": "Capability-aligned, policy-normalized comparison records compiled from two alignment-ready SOFRS reports with validated source-report receipts.",
+  "type": "object",
+  "required": [
+    "sofaudit_version",
+    "artifact_type",
+    "comparison_object",
+    "audit_id",
+    "system",
+    "regime",
+    "source_reports",
+    "inherited_compiler_guards",
+    "audit_profile",
+    "alignment",
+    "comparison_specification",
+    "comparison_basis",
+    "coordinates",
+    "claim",
+    "failure_modes",
+    "source_artifacts",
+    "provenance"
+  ],
+  "properties": {
+    "sofaudit_version": {
+      "const": "2.0"
+    },
+    "artifact_type": {
+      "const": "sofaudit"
+    },
+    "comparison_object": {
+      "const": "SOFReportComparison"
+    },
+    "audit_id": {
+      "$ref": "#/$defs/id"
+    },
+    "system": {
+      "type": "string",
+      "minLength": 1
+    },
+    "regime": {
+      "enum": [
+        "strict_vs_strict",
+        "strict_vs_analogue",
+        "analogue_vs_analogue"
+      ]
+    },
+    "source_reports": {
+      "type": "object",
+      "required": [
+        "reference",
+        "target"
+      ],
+      "properties": {
+        "reference": {
+          "$ref": "#/$defs/report_reference"
+        },
+        "target": {
+          "$ref": "#/$defs/report_reference"
+        }
+      },
+      "additionalProperties": false
+    },
+    "inherited_compiler_guards": {
+      "type": "object",
+      "required": [
+        "paper_x_contract_version",
+        "state",
+        "condition_checks",
+        "negative_boundaries"
+      ],
+      "properties": {
+        "paper_x_contract_version": {
+          "const": "1.0"
+        },
+        "state": {
+          "enum": [
+            "ADMITTED",
+            "REJECTED",
+            "UNRESOLVED"
+          ]
+        },
+        "condition_checks": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/condition_check"
+          }
+        },
+        "negative_boundaries": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "audit_profile": {
+      "type": "object",
+      "required": [
+        "profile_id",
+        "profile_version",
+        "profile_artifact_id",
+        "coordinate_registry_artifact_id",
+        "applicable_regime",
+        "requested_coordinate_ids",
+        "coordinate_registry_ref",
+        "coordinate_families",
+        "availability_semantics",
+        "comparison_semantics",
+        "carrier_requirements",
+        "required_evidence_roles"
+      ],
+      "properties": {
+        "profile_id": {
+          "$ref": "#/$defs/id"
+        },
+        "profile_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "profile_artifact_id": {
+          "$ref": "#/$defs/id"
+        },
+        "coordinate_registry_artifact_id": {
+          "$ref": "#/$defs/id"
+        },
+        "applicable_regime": {
+          "enum": [
+            "strict_vs_strict",
+            "strict_vs_analogue",
+            "analogue_vs_analogue"
+          ]
+        },
+        "requested_coordinate_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/coordinate_id"
+          },
+          "uniqueItems": true
+        },
+        "coordinate_registry_ref": {
+          "const": "schemas/sofaudit/coordinate-semantics-registry-v1.0.json"
+        },
+        "coordinate_families": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        },
+        "availability_semantics": {
+          "type": "object",
+          "required": ["unavailable_states", "null_value_states", "zero_is_unavailable"],
+          "properties": {
+            "unavailable_states": {"type": "array", "items": {"type": "string"}, "minItems": 1, "uniqueItems": true},
+            "null_value_states": {"type": "array", "items": {"type": "string"}, "minItems": 1, "uniqueItems": true},
+            "zero_is_unavailable": {"type": "boolean"}
+          },
+          "additionalProperties": false
+        },
+        "comparison_semantics": {
+          "type": "object",
+          "required": ["matched_states", "comparison_is_pairwise"],
+          "properties": {
+            "matched_states": {"type": "array", "items": {"type": "string"}, "minItems": 1, "uniqueItems": true},
+            "comparison_is_pairwise": {"const": true}
+          },
+          "additionalProperties": false
+        },
+        "carrier_requirements": {
+          "type": "object",
+          "required": ["strict", "analogue"],
+          "properties": {
+            "strict": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+            "analogue": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+          },
+          "additionalProperties": false
+        },
+        "required_evidence_roles": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "alignment": {
+      "type": "object",
+      "required": [
+        "sector_alignment",
+        "observable_alignment"
+      ],
+      "properties": {
+        "sector_alignment": {
+          "oneOf": [
+            { "$ref": "#/$defs/sector_alignment_component" },
+            { "type": "null" }
+          ]
+        },
+        "observable_alignment": {
+          "oneOf": [
+            { "$ref": "#/$defs/observable_alignment_component" },
+            { "type": "null" }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "comparison_specification": {
+      "description": "Machine-readable serialization of the Paper XIII comparison specification Theta.",
+      "type": "object",
+      "required": [
+        "specification_id",
+        "normalization",
+        "metric",
+        "depth_semantics",
+        "thresholds",
+        "parameter_synchronization",
+        "aggregation"
+      ],
+      "properties": {
+        "specification_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "normalization": { "$ref": "#/$defs/normalization_specification" },
+        "metric": { "$ref": "#/$defs/metric_specification" },
+        "depth_semantics": { "$ref": "#/$defs/depth_specification" },
+        "thresholds": { "$ref": "#/$defs/threshold_specification" },
+        "parameter_synchronization": { "$ref": "#/$defs/parameter_synchronization" },
+        "aggregation": { "$ref": "#/$defs/aggregation_specification" }
+      },
+      "additionalProperties": false
+    },
+    "comparison_basis": {
+      "$ref": "#/$defs/comparison_basis"
+    },
+    "coordinates": {
+      "type": "object",
+      "minProperties": 1,
+      "propertyNames": {
+        "$ref": "#/$defs/coordinate_id"
+      },
+      "additionalProperties": {
+        "$ref": "#/$defs/coordinate"
+      }
+    },
+    "claim": {
+      "type": "object",
+      "required": [
+        "result_state",
+        "claim_status",
+        "claim_target",
+        "certificate_class",
+        "classification_source",
+        "statement",
+        "negative_boundary",
+        "source_artifact_ids"
+      ],
+      "properties": {
+        "result_state": {
+          "$ref": "#/$defs/result_state"
+        },
+        "claim_status": {
+          "oneOf": [
+            { "$ref": "#/$defs/claim_status" },
+            { "type": "null" }
+          ]
+        },
+        "claim_target": {
+          "oneOf": [
+            { "$ref": "#/$defs/claim_target" },
+            { "type": "null" }
+          ]
+        },
+        "certificate_class": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/certificate_class"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "classification_source": {
+          "$ref": "#/$defs/classification_source"
+        },
+        "statement": {
+          "type": "string",
+          "minLength": 1
+        },
+        "negative_boundary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_artifact_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "uniqueItems": true
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "claim_status": {
+                "const": "Computational Certificate"
+              }
+            },
+            "required": ["claim_status"]
+          },
+          "then": {
+            "properties": {
+              "certificate_class": {
+                "$ref": "#/$defs/certificate_class"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "certificate_class": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ],
+      "additionalProperties": false
+    },
+    "failure_modes": {
+      "type": "array",
+      "items": {
+        "type": [
+          "string",
+          "object"
+        ]
+      }
+    },
+    "source_artifacts": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "$ref": "#/$defs/artifact"
+      }
+    },
+    "provenance": {
+      "$ref": "#/$defs/audit_provenance"
+    }
+  },
+  "$defs": {
+    "audit_provenance": {
+      "oneOf": [
+        { "$ref": "#/$defs/native_generation_provenance" },
+        { "$ref": "#/$defs/migration_provenance" }
+      ]
+    },
+    "native_generation_provenance": {
+      "type": "object",
+      "required": [
+        "kind",
+        "generator_id",
+        "generator_version",
+        "generation_artifact_ids",
+        "generation_notes"
+      ],
+      "properties": {
+        "kind": { "const": "native" },
+        "generator_id": { "$ref": "#/$defs/id" },
+        "generator_version": { "type": "string", "minLength": 1 },
+        "generation_artifact_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/id" },
+          "uniqueItems": true
+        },
+        "generation_notes": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "migration_provenance": {
+      "type": "object",
+      "required": [
+        "kind",
+        "source_sofaudit_version",
+        "adapter_id",
+        "adapter_version",
+        "source_audit_artifact_id",
+        "normalized_legacy_sentinels",
+        "semantic_normalizations"
+      ],
+      "properties": {
+        "kind": { "const": "migration" },
+        "source_sofaudit_version": { "const": "1.0" },
+        "adapter_id": { "$ref": "#/$defs/id" },
+        "adapter_version": { "type": "string", "minLength": 1 },
+        "source_audit_artifact_id": { "$ref": "#/$defs/id" },
+        "normalized_legacy_sentinels": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        },
+        "semantic_normalizations": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._-]*$"
+    },
+    "digest": {
+      "type": "object",
+      "required": [
+        "algorithm",
+        "value"
+      ],
+      "properties": {
+        "algorithm": {
+          "const": "sha256"
+        },
+        "value": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "artifact_reference": {
+      "type": "object",
+      "required": [
+        "uri",
+        "digest"
+      ],
+      "properties": {
+        "uri": {
+          "type": "string",
+          "minLength": 1
+        },
+        "digest": {
+          "$ref": "#/$defs/digest"
+        }
+      },
+      "additionalProperties": false
+    },
+    "artifact": {
+      "type": "object",
+      "required": [
+        "id",
+        "role",
+        "uri",
+        "digest"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "role": {
+          "type": "string",
+          "minLength": 1
+        },
+        "uri": {
+          "type": "string",
+          "minLength": 1
+        },
+        "digest": {
+          "$ref": "#/$defs/digest"
+        }
+      },
+      "additionalProperties": false
+    },
+    "report_reference": {
+      "type": "object",
+      "required": [
+        "report_id",
+        "label",
+        "artifact",
+        "validation_receipt",
+        "sofrs_version",
+        "record_kind",
+        "admission_basis",
+        "comparison_role_basis"
+      ],
+      "properties": {
+        "report_id": {
+          "$ref": "#/$defs/id"
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "artifact": {
+          "$ref": "#/$defs/artifact_reference"
+        },
+        "validation_receipt": {
+          "$ref": "#/$defs/artifact_reference"
+        },
+        "sofrs_version": {
+          "const": "2.0"
+        },
+        "record_kind": {
+          "enum": [
+            "strict_sof",
+            "diagnostic_analogue"
+          ]
+        },
+        "admission_basis": {
+          "const": "native_sofrs_v2"
+        },
+        "comparison_role_basis": {
+          "$ref": "#/$defs/comparison_role_basis"
+        }
+      },
+      "additionalProperties": false
+    },
+    "comparison_role_basis": {
+      "type": "object",
+      "required": [
+        "role",
+        "basis_kind",
+        "authority_status",
+        "scope",
+        "evidence_artifacts",
+        "negative_boundary"
+      ],
+      "properties": {
+        "role": { "enum": ["reference", "target"] },
+        "basis_kind": {
+          "enum": [
+            "formal_specification",
+            "exact_recomputation",
+            "certified_measurement",
+            "consensus_standard",
+            "declared_baseline_only"
+          ]
+        },
+        "authority_status": {
+          "enum": ["ESTABLISHED", "PARTIAL", "DECLARED"]
+        },
+        "scope": { "type": "string", "minLength": 1 },
+        "evidence_artifacts": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/id" },
+          "uniqueItems": true
+        },
+        "negative_boundary": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "condition_check": {
+      "type": "object",
+      "required": [
+        "condition_id",
+        "status",
+        "evidence_artifact_ids"
+      ],
+      "properties": {
+        "condition_id": {
+          "$ref": "#/$defs/id"
+        },
+        "status": {
+          "enum": [
+            "SATISFIED",
+            "FAILED",
+            "NOT_CHECKED"
+          ]
+        },
+        "evidence_artifact_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "uniqueItems": true
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "alignment_pair": {
+      "type": "object",
+      "required": ["reference_id", "target_id", "relation", "evidence_artifact_ids"],
+      "properties": {
+        "reference_id": { "type": "string", "minLength": 1 },
+        "target_id": { "type": "string", "minLength": 1 },
+        "relation": {
+          "enum": ["equivalent", "refinement", "aggregation", "analogue"]
+        },
+        "evidence_artifact_ids": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/id" },
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "alignment_properties": {
+      "type": "object",
+      "required": ["total_on_reference", "total_on_target", "injective", "surjective"],
+      "properties": {
+        "total_on_reference": { "type": "boolean" },
+        "total_on_target": { "type": "boolean" },
+        "injective": { "type": "boolean" },
+        "surjective": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    },
+    "alignment_component_base": {
+      "type": "object",
+      "required": [
+        "alignment_id", "state", "map_kind", "reference_carrier", "target_carrier",
+        "alignment_kind", "pairs", "unmatched_reference_ids", "unmatched_target_ids", "properties",
+        "semantic_basis", "negative_boundary"
+      ],
+      "properties": {
+        "alignment_id": { "$ref": "#/$defs/id" },
+        "state": { "enum": ["TOTAL", "PARTIAL", "INCOMPARABLE", "UNRESOLVED"] },
+        "map_kind": {
+          "enum": ["bijection", "injection", "surjection", "relation", "quotient", "refinement"]
+        },
+        "reference_carrier": { "type": "string", "minLength": 1 },
+        "target_carrier": { "type": "string", "minLength": 1 },
+        "alignment_kind": { "enum": ["sector", "observable"] },
+        "pairs": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/alignment_pair" },
+          "uniqueItems": true
+        },
+        "unmatched_reference_ids": {
+          "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true
+        },
+        "unmatched_target_ids": {
+          "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true
+        },
+        "properties": { "$ref": "#/$defs/alignment_properties" },
+        "semantic_basis": { "type": "string", "minLength": 1 },
+        "negative_boundary": {
+          "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 }, "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "sector_alignment_component": {
+      "allOf": [
+        { "$ref": "#/$defs/alignment_component_base" },
+        {
+          "properties": {
+            "alignment_kind": { "const": "sector" }
+          },
+          "required": ["alignment_kind"]
+        }
+      ]
+    },
+    "observable_alignment_component": {
+      "allOf": [
+        { "$ref": "#/$defs/alignment_component_base" },
+        {
+          "properties": {
+            "alignment_kind": { "const": "observable" }
+          },
+          "required": ["alignment_kind"]
+        }
+      ]
+    },
+    "normalization_specification": {
+      "type": "object",
+      "required": ["normalization_id", "numeric_policy", "equality_tolerance", "sentinel_policy", "generator_policy"],
+      "properties": {
+        "normalization_id": { "$ref": "#/$defs/id" },
+        "numeric_policy": { "enum": ["exact", "float-tolerance", "decimal-string"] },
+        "equality_tolerance": { "type": ["number", "null"], "minimum": 0 },
+        "sentinel_policy": { "enum": ["state-not-infinity", "explicit-infinity", "not-applicable"] },
+        "generator_policy": { "enum": ["declared-carrier-generators", "report-bound-generators", "not-applicable"] }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "numeric_policy": { "const": "exact" } } },
+          "then": {
+            "properties": {
+              "equality_tolerance": {
+                "oneOf": [{ "type": "null" }, { "const": 0 }]
+              }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "numeric_policy": { "const": "float-tolerance" } } },
+          "then": {
+            "properties": {
+              "equality_tolerance": { "type": "number", "exclusiveMinimum": 0 }
+            }
+          }
+        }
+      ],
+      "additionalProperties": false
+    },
+    "metric_specification": {
+      "type": "object",
+      "required": ["metric_id", "domain", "unit_policy", "missing_value_policy", "zero_denominator_policy"],
+      "properties": {
+        "metric_id": { "enum": ["absolute-difference", "relative-difference", "discrete-mismatch", "coordinatewise-record"] },
+        "domain": { "enum": ["real", "integer", "boolean", "typed-state", "mixed"] },
+        "unit_policy": { "enum": ["same-unit-required", "declared-conversion", "unitless", "not-applicable"] },
+        "missing_value_policy": { "enum": ["incomparable", "unresolved", "state-preserving"] },
+        "zero_denominator_policy": {
+          "enum": ["incomparable", "zero-if-both-zero", "declared", "not-applicable"]
+        }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "metric_id": { "const": "relative-difference" } } },
+          "then": {
+            "properties": {
+              "zero_denominator_policy": {
+                "enum": ["incomparable", "zero-if-both-zero", "declared"]
+              }
+            }
+          },
+          "else": {
+            "properties": { "zero_denominator_policy": { "const": "not-applicable" } }
+          }
+        }
+      ],
+      "additionalProperties": false
+    },
+    "depth_specification": {
+      "type": "object",
+      "required": ["carrier", "mode", "reference_cutoff", "target_cutoff", "unreached_policy"],
+      "properties": {
+        "carrier": { "enum": ["word", "route", "lie", "mixed", "not-applicable"] },
+        "mode": { "enum": ["exact-first-hit", "truncated-first-hit", "summary-only", "not-applicable"] },
+        "reference_cutoff": { "type": ["integer", "null"], "minimum": 1 },
+        "target_cutoff": { "type": ["integer", "null"], "minimum": 1 },
+        "unreached_policy": { "enum": ["state-not-infinity", "explicit-infinity", "incomparable"] }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "mode": { "const": "truncated-first-hit" } } },
+          "then": {
+            "properties": {
+              "reference_cutoff": { "type": "integer", "minimum": 1 },
+              "target_cutoff": { "type": "integer", "minimum": 1 }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "mode": { "const": "not-applicable" } } },
+          "then": {
+            "properties": {
+              "carrier": { "const": "not-applicable" },
+              "reference_cutoff": { "type": "null" },
+              "target_cutoff": { "type": "null" }
+            }
+          }
+        }
+      ],
+      "additionalProperties": false
+    },
+    "threshold_specification": {
+      "type": "object",
+      "required": ["threshold_id", "value", "source"],
+      "properties": {
+        "threshold_id": { "$ref": "#/$defs/id" },
+        "value": { "type": ["number", "null"] },
+        "source": { "enum": ["comparison-specification", "source-report", "coordinate-policy", "not-applicable"] }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "source": { "const": "not-applicable" } } },
+          "then": { "properties": { "value": { "type": "null" } } },
+          "else": { "properties": { "value": { "type": "number" } } }
+        }
+      ],
+      "additionalProperties": false
+    },
+    "parameter_synchronization": {
+      "type": "object",
+      "required": ["kind", "map_artifact_id", "interpolation_method", "extrapolation_forbidden"],
+      "properties": {
+        "kind": { "enum": ["identity", "interpolation", "nearest-sample", "declared-map", "not-applicable"] },
+        "map_artifact_id": { "oneOf": [{ "$ref": "#/$defs/id" }, { "type": "null" }] },
+        "interpolation_method": {
+          "enum": ["linear", "nearest", "step", "declared", "not-applicable"]
+        },
+        "extrapolation_forbidden": { "type": "boolean" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "kind": { "const": "declared-map" } } },
+          "then": {
+            "properties": {
+              "map_artifact_id": { "$ref": "#/$defs/id" },
+              "interpolation_method": { "const": "declared" }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "kind": { "const": "interpolation" } } },
+          "then": {
+            "properties": {
+              "interpolation_method": { "enum": ["linear", "nearest", "step"] },
+              "extrapolation_forbidden": { "const": true }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "kind": { "const": "not-applicable" } } },
+          "then": {
+            "properties": {
+              "map_artifact_id": { "type": "null" },
+              "interpolation_method": { "const": "not-applicable" }
+            }
+          }
+        }
+      ],
+      "additionalProperties": false
+    },
+    "aggregation_specification": {
+      "type": "object",
+      "required": ["kind", "scalarization", "weights_artifact_id", "weight_declaration"],
+      "properties": {
+        "kind": { "enum": ["coordinatewise", "pairwise", "ensemble", "none"] },
+        "scalarization": { "enum": ["none", "weighted-hamming", "mean", "median", "declared"] },
+        "weights_artifact_id": {
+          "oneOf": [{ "$ref": "#/$defs/id" }, { "type": "null" }]
+        },
+        "weight_declaration": { "type": ["string", "null"] }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "scalarization": { "const": "weighted-hamming" } } },
+          "then": {
+            "anyOf": [
+              { "properties": { "weights_artifact_id": { "$ref": "#/$defs/id" } } },
+              { "properties": { "weight_declaration": { "type": "string", "minLength": 1 } } }
+            ]
+          },
+          "else": {
+            "properties": {
+              "weights_artifact_id": { "type": "null" },
+              "weight_declaration": { "type": "null" }
+            }
+          }
+        }
+      ],
+      "additionalProperties": false
+    },
+    "comparison_basis": {
+      "type": "object",
+      "required": ["basis_status", "reference_role_basis", "alignment_evidence", "object_level_oracle", "policy_compatibility", "negative_boundary"],
+      "properties": {
+        "basis_status": { "enum": ["COMPLETE", "PARTIAL", "NOT_ASSESSED"] },
+        "reference_role_basis": { "$ref": "#/$defs/comparison_role_basis" },
+        "alignment_evidence": { "type": "array", "items": { "$ref": "#/$defs/id" }, "uniqueItems": true },
+        "object_level_oracle": { "$ref": "#/$defs/object_level_oracle" },
+        "policy_compatibility": { "$ref": "#/$defs/policy_compatibility" },
+        "negative_boundary": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 }, "uniqueItems": true }
+      },
+      "additionalProperties": false
+    },
+    "object_level_oracle": {
+      "type": "object",
+      "required": ["status", "independence", "raw_source_artifacts", "independent_recomputation_artifacts", "oracle_result_artifact", "audit_result_artifact"],
+      "properties": {
+        "status": { "enum": ["SATISFIED", "NOT_ASSESSED", "INCOMPLETE"] },
+        "independence": { "$ref": "#/$defs/oracle_independence" },
+        "raw_source_artifacts": { "type": "array", "items": { "$ref": "#/$defs/id" }, "uniqueItems": true },
+        "independent_recomputation_artifacts": { "type": "array", "items": { "$ref": "#/$defs/id" }, "uniqueItems": true },
+        "oracle_result_artifact": { "oneOf": [{ "$ref": "#/$defs/id" }, { "type": "null" }] },
+        "audit_result_artifact": { "oneOf": [{ "$ref": "#/$defs/id" }, { "type": "null" }] }
+      },
+      "additionalProperties": false
+    },
+    "oracle_independence": {
+      "type": "object",
+      "required": [
+        "implementation_relation",
+        "producer_relation",
+        "input_source",
+        "producer_cache_used"
+      ],
+      "properties": {
+        "implementation_relation": {
+          "enum": ["separate_algorithm", "independent_implementation", "external_standard", "not_assessed"]
+        },
+        "producer_relation": {
+          "enum": ["separate_producer", "same_producer_disclosed", "not_assessed"]
+        },
+        "input_source": {
+          "enum": ["canonical_raw_sources", "frozen_source_artifacts", "report_artifacts_only", "not_assessed"]
+        },
+        "producer_cache_used": { "type": ["boolean", "null"] }
+      },
+      "additionalProperties": false
+    },
+    "policy_compatibility": {
+      "type": "object",
+      "required": ["status", "policy_artifact_ids", "negative_boundary"],
+      "properties": {
+        "status": { "enum": ["SATISFIED", "INCOMPLETE", "NOT_ASSESSED"] },
+        "policy_artifact_ids": { "type": "array", "items": { "$ref": "#/$defs/id" }, "uniqueItems": true },
+        "negative_boundary": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 }, "uniqueItems": true }
+      },
+      "additionalProperties": false
+    },
+    "coordinate_id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_-]*(\\.[a-z0-9][a-z0-9_.-]*)*$"
+    },
+    "comparison_state": {
+      "enum": [
+        "ALIGNED",
+        "MISMATCH",
+        "NOT_DECLARED",
+        "NOT_APPLICABLE",
+        "INCOMPARABLE",
+        "UNRESOLVED"
+      ]
+    },
+    "result_state": {
+      "enum": [
+        "DECLARED",
+        "ESTABLISHED",
+        "CERTIFIED",
+        "OBSERVED",
+        "UNREACHED_AT_CUTOFF",
+        "NOT_APPLICABLE",
+        "NOT_DECLARED"
+      ]
+    },
+    "claim_status": {
+      "enum": [
+        "Theorem",
+        "Computational Certificate",
+        "Computational Observation",
+        "Research Program"
+      ]
+    },
+    "claim_target": {
+      "enum": [
+        "external_mathematical_object",
+        "empirical_domain_system",
+        "representation_interface",
+        "protocol_conformance",
+        "migration_consistency",
+        "comparison_relation"
+      ]
+    },
+    "certificate_class": {
+      "enum": [
+        "object",
+        "comparison_audit",
+        "protocol_conformance",
+        "migration_assembly"
+      ]
+    },
+    "classification_source": {
+      "enum": [
+        "comparison_specification",
+        "domain_adapter",
+        "migration_adapter",
+        "audit_engine",
+        "alignment_validator",
+        "independent_oracle",
+        "independent_validator",
+        "external_evaluator"
+      ]
+    },
+    "report_item_binding": {
+      "type": "object",
+      "required": [
+        "binding_state",
+        "reference_item_ref",
+        "target_item_ref",
+        "reason"
+      ],
+      "properties": {
+        "binding_state": {
+          "enum": [
+            "paired",
+            "unmatched_reference",
+            "unmatched_target",
+            "incomparable",
+            "unresolved",
+            "legacy_payload_only"
+          ]
+        },
+        "reference_item_ref": {
+          "oneOf": [
+            { "$ref": "#/$defs/report_item_reference" },
+            { "type": "null" }
+          ]
+        },
+        "target_item_ref": {
+          "oneOf": [
+            { "$ref": "#/$defs/report_item_reference" },
+            { "type": "null" }
+          ]
+        },
+        "reason": {
+          "type": ["string", "null"]
+        }
+      },
+      "additionalProperties": false
+    },
+    "report_item_reference": {
+      "type": "object",
+      "required": [
+        "report_id",
+        "report_item_id",
+        "source_output_item_id",
+        "item_kind",
+        "artifact_digest"
+      ],
+      "properties": {
+        "report_id": { "$ref": "#/$defs/id" },
+        "report_item_id": { "$ref": "#/$defs/id" },
+        "source_output_item_id": { "$ref": "#/$defs/id" },
+        "item_kind": { "enum": ["claim", "degradation", "finding"] },
+        "artifact_digest": { "$ref": "#/$defs/digest" }
+      },
+      "additionalProperties": false
+    },
+    "wall_input_reference": {
+      "type": "object",
+      "required": [
+        "state",
+        "record_ref",
+        "signature_ref",
+        "source_artifact_id",
+        "reason"
+      ],
+      "properties": {
+        "state": {
+          "enum": [
+            "RETAINED",
+            "NOT_DECLARED",
+            "NOT_APPLICABLE"
+          ]
+        },
+        "record_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "signature_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_artifact_id": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/id"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "wall_comparison_context": {
+      "type": "object",
+      "required": [
+        "state",
+        "context_kind",
+        "context_alignment_ref",
+        "orientation_alignment",
+        "field_alignment",
+        "reason"
+      ],
+      "properties": {
+        "state": {
+          "enum": [
+            "READY",
+            "NOT_DECLARED",
+            "INCOMPARABLE",
+            "UNRESOLVED"
+          ]
+        },
+        "context_kind": {
+          "enum": [
+            "trajectory",
+            "domain",
+            null
+          ]
+        },
+        "context_alignment_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "orientation_alignment": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "field_alignment": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "wall_input_binding": {
+      "type": "object",
+      "required": [
+        "reference_wall",
+        "target_wall",
+        "comparison_context"
+      ],
+      "properties": {
+        "reference_wall": {
+          "$ref": "#/$defs/wall_input_reference"
+        },
+        "target_wall": {
+          "$ref": "#/$defs/wall_input_reference"
+        },
+        "comparison_context": {
+          "$ref": "#/$defs/wall_comparison_context"
+        },
+        "legacy_observation": {
+          "type": "object",
+          "required": [
+            "source_artifact_id",
+            "source_field",
+            "disposition"
+          ],
+          "properties": {
+            "source_artifact_id": {
+              "$ref": "#/$defs/id"
+            },
+            "source_field": {
+              "const": "signature.wall_record_mismatch"
+            },
+            "disposition": {
+              "const": "COMPATIBILITY_ONLY"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "coordinate": {
+      "type": "object",
+      "required": [
+        "comparison_state",
+        "result_state",
+        "claim_status",
+        "claim_target",
+        "certificate_class",
+        "classification_source",
+        "report_item_binding",
+        "coordinate_family",
+        "value_schema_id",
+        "value",
+        "source_artifact_ids"
+      ],
+      "properties": {
+        "comparison_state": {
+          "$ref": "#/$defs/comparison_state"
+        },
+        "result_state": {
+          "$ref": "#/$defs/result_state"
+        },
+        "claim_status": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/claim_status"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "claim_target": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/claim_target"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "certificate_class": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/certificate_class"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "classification_source": {
+          "$ref": "#/$defs/classification_source"
+        },
+        "report_item_binding": {
+          "$ref": "#/$defs/report_item_binding"
+        },
+        "coordinate_family": {
+          "enum": [
+            "operator",
+            "word",
+            "lie",
+            "depth",
+            "frozen_summary",
+            "constraint",
+            "response",
+            "wall_record",
+            "analogue"
+          ]
+        },
+        "value_schema_id": {
+          "$ref": "#/$defs/value_schema_id"
+        },
+        "value": {
+          "oneOf": [
+            { "$ref": "#/$defs/comparison_value" },
+            { "type": "null" }
+          ]
+        },
+        "source_artifact_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "uniqueItems": true
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "wall_input_binding": {
+          "$ref": "#/$defs/wall_input_binding"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "claim_status": {
+                "const": "Computational Certificate"
+              }
+            },
+            "required": ["claim_status"]
+          },
+          "then": {
+            "properties": {
+              "claim_target": {
+                "$ref": "#/$defs/claim_target"
+              },
+              "certificate_class": {
+                "$ref": "#/$defs/certificate_class"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "certificate_class": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "claim_status": {
+                "const": null
+              }
+            },
+            "required": ["claim_status"]
+          },
+          "then": {
+            "properties": {
+              "claim_target": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ],
+      "additionalProperties": false
+    },
+    "comparison_value": {
+      "type": "object",
+      "required": [
+        "reference_value",
+        "target_value",
+        "normalized_reference_value",
+        "normalized_target_value",
+        "relation",
+        "delta",
+        "unit",
+        "metric_result",
+        "policy_refs",
+        "oracle_ref"
+      ],
+      "properties": {
+        "reference_value": { "$ref": "#/$defs/coordinate_payload" },
+        "target_value": { "$ref": "#/$defs/coordinate_payload" },
+        "normalized_reference_value": { "$ref": "#/$defs/coordinate_payload" },
+        "normalized_target_value": { "$ref": "#/$defs/coordinate_payload" },
+        "relation": {
+          "enum": ["equal", "increased", "decreased", "mismatch", "unmatched", "incomparable"]
+        },
+        "delta": { "$ref": "#/$defs/coordinate_payload" },
+        "unit": { "type": ["string", "null"] },
+        "metric_result": {
+          "oneOf": [{ "$ref": "#/$defs/metric_result" }, { "type": "null" }]
+        },
+        "policy_refs": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/id" },
+          "uniqueItems": true
+        },
+        "oracle_ref": {
+          "oneOf": [{ "$ref": "#/$defs/id" }, { "type": "null" }]
+        }
+      },
+      "additionalProperties": false
+    },
+    "value_schema_id": {
+      "enum": [
+        "operator.support.v1",
+        "word.support.v1",
+        "lie.simple-commutator-support.v1",
+        "word.depth.v1",
+        "summary.frozen.v1",
+        "constraint.count.v1",
+        "response.record.v1",
+        "wall.morphology.v1",
+        "analogue.descriptor.v1"
+      ]
+    },
+    "coordinate_payload": {
+      "oneOf": [
+        { "type": "null" },
+        { "type": "boolean" },
+        { "type": "number" },
+        { "type": "string", "minLength": 1 },
+        {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              { "type": "boolean" },
+              { "type": "number" },
+              { "type": "string", "minLength": 1 },
+              { "type": "array", "items": { "type": ["number", "string", "boolean"] } }
+            ]
+          }
+        },
+        {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {
+            "type": ["number", "string", "boolean", "array", "null"]
+          }
+        }
+      ]
+    },
+    "metric_result": {
+      "type": "object",
+      "required": ["metric_id", "status", "value"],
+      "properties": {
+        "metric_id": { "type": "string", "minLength": 1 },
+        "status": { "enum": ["computed", "incomparable", "unresolved"] },
+        "value": { "$ref": "#/$defs/coordinate_payload" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

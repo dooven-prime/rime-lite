@@ -1,0 +1,100 @@
+{
+  "profile_version": "1.0",
+  "profile_id": "paper12.analogue.v2",
+  "title": "Paper XII Diagnostic Analogue Compiler Profile Instance",
+  "description": "Paper XII compiler-profile instance conforming to the Paper X Report Profile v1.0 contract for diagnostic analogues.",
+  "applies_to": [
+    "diagnostic_analogue"
+  ],
+  "ir_version": "1.0",
+  "modules": [
+    {
+      "id": "diagnostic-analogue",
+      "title": "Diagnostic Analogue",
+      "capability_requirements": {
+        "all_of": [
+          "diagnostic_analogue"
+        ],
+        "any_of": [],
+        "none_of": [
+          "sectorization",
+          "operator_carrier",
+          "lie_hall_carrier"
+        ]
+      },
+      "object_kind_requirements": {
+        "all_of": [
+          "diagnostic_analogue"
+        ],
+        "any_of": [],
+        "none_of": [
+          "finite_space",
+          "sector_projector",
+          "lie_family"
+        ]
+      },
+      "semantic_convention_requirements": {
+        "all_of": [],
+        "any_of": [],
+        "none_of": []
+      },
+      "run_policy_requirements": {
+        "all_of": [],
+        "any_of": [],
+        "none_of": []
+      },
+      "accepted_result_states": [
+        "CERTIFIED",
+        "OBSERVED",
+        "UNREACHED_AT_CUTOFF"
+      ],
+      "accepted_claim_statuses": [
+        "Computational Certificate",
+        "Computational Observation"
+      ],
+      "carrier_kinds": [
+        "analogue"
+      ],
+      "evidence_requirements": {
+        "Theorem": "PROOF_REFERENCE",
+        "Computational Certificate": "PASS_CERTIFICATE",
+        "Computational Observation": "SOURCE_ARTIFACT",
+        "Research Program": "NO_EVIDENCE_REQUIRED",
+        "null": "NO_CLAIM"
+      },
+      "forbidden_promotion_ids": [
+        "PROXY_TO_DISCRETE_SHADOW",
+        "PATH_TO_ROUTE",
+        "ROUTE_TO_WORD",
+        "WORD_TO_LIE",
+        "POINTWISE_TO_MOVING_FIELD",
+        "AMBIENT_DISCRIMINANT_TO_PULLBACK_EQUALITY",
+        "OPERATOR_SYSTEM_TO_LABELLED_WITNESS"
+      ],
+      "forbidden_promotion_notes": [
+        "Analogue descriptors cannot instantiate a strict SOF theorem.",
+        "Pointwise or behavioral observations do not create missing projectors, alphabets, filtrations, or deformation charts."
+      ],
+      "output_sections": [
+        "Source and evaluator provenance",
+        "Analogue mapping",
+        "Support, bridge, repair, or wall descriptors",
+        "Negative SOF boundary"
+      ]
+    }
+  ],
+  "degradation_policy": {
+    "unsatisfied_capability_expression": "fail_profile",
+    "unsatisfied_object_expression": "fail_profile",
+    "unsatisfied_policy_expression": "emit_unavailable",
+    "not_declared_message": "No strict carrier is declared by this analogue record.",
+    "not_applicable_message": "The requested strict module is not applicable to this analogue record.",
+    "unreached_message": "A finite analogue audit did not reach the event; no exact SOF depth is asserted."
+  },
+  "outputs": [
+    "markdown",
+    "pdf",
+    "registry",
+    "json_api"
+  ]
+}

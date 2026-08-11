@@ -1,0 +1,312 @@
+{
+  "profile_version": "1.0",
+  "profile_id": "paper12.strict.v2",
+  "title": "Paper XII Strict SOF Compiler Profile Instance",
+  "description": "Paper XII compiler-profile instance conforming to the Paper X Report Profile v1.0 contract.",
+  "applies_to": [
+    "strict_sof"
+  ],
+  "ir_version": "1.0",
+  "modules": [
+    {
+      "id": "sof-basic",
+      "title": "Strict SOF Core",
+      "capability_requirements": {
+        "all_of": [
+          "sectorization",
+          "operator_carrier"
+        ],
+        "any_of": [],
+        "none_of": [
+          "diagnostic_analogue"
+        ]
+      },
+      "object_kind_requirements": {
+        "all_of": [
+          "finite_space",
+          "sectorization",
+          "labelled_alphabet",
+          "support_shadow"
+        ],
+        "any_of": [],
+        "none_of": [
+          "diagnostic_analogue"
+        ]
+      },
+      "semantic_convention_requirements": {
+        "all_of": [
+          "operative_alphabet",
+          "direction_convention"
+        ],
+        "any_of": [],
+        "none_of": []
+      },
+      "run_policy_requirements": {
+        "all_of": [
+          "threshold",
+          "norm"
+        ],
+        "any_of": [],
+        "none_of": []
+      },
+      "accepted_result_states": [
+        "CERTIFIED",
+        "OBSERVED"
+      ],
+      "accepted_claim_statuses": [
+        "Computational Certificate",
+        "Computational Observation"
+      ],
+      "carrier_kinds": [
+        "operator"
+      ],
+      "evidence_requirements": {
+        "Theorem": "PROOF_REFERENCE",
+        "Computational Certificate": "PASS_CERTIFICATE",
+        "Computational Observation": "SOURCE_ARTIFACT",
+        "Research Program": "NO_EVIDENCE_REQUIRED",
+        "null": "NO_CLAIM"
+      },
+      "forbidden_promotion_ids": [
+        "OPERATOR_SYSTEM_TO_LABELLED_WITNESS",
+        "PATH_TO_ROUTE",
+        "ROUTE_TO_WORD",
+        "WORD_TO_LIE",
+        "PROXY_TO_DISCRETE_SHADOW"
+      ],
+      "forbidden_promotion_notes": [
+        "A strict core reports only declared labelled operator witnesses.",
+        "Nearby carriers cannot replace missing route, word, or Lie data."
+      ],
+      "output_sections": [
+        "Declared finite realization",
+        "Labelled operator support",
+        "Evidence and boundary"
+      ]
+    },
+    {
+      "id": "associative",
+      "title": "Associative Route or Word Audit",
+      "capability_requirements": {
+        "all_of": [],
+        "any_of": [
+          "route_carrier",
+          "word_carrier"
+        ],
+        "none_of": [
+          "diagnostic_analogue"
+        ]
+      },
+      "object_kind_requirements": {
+        "all_of": [
+          "depth_field"
+        ],
+        "any_of": [
+          "route_space",
+          "word_space"
+        ],
+        "none_of": []
+      },
+      "semantic_convention_requirements": {
+        "all_of": [
+          "depth_indexing"
+        ],
+        "any_of": [
+          "word_convention",
+          "direction_convention"
+        ],
+        "none_of": []
+      },
+      "run_policy_requirements": {
+        "all_of": [
+          "cutoff"
+        ],
+        "any_of": [],
+        "none_of": []
+      },
+      "accepted_result_states": [
+        "CERTIFIED",
+        "OBSERVED",
+        "UNREACHED_AT_CUTOFF"
+      ],
+      "accepted_claim_statuses": [
+        "Computational Certificate",
+        "Computational Observation"
+      ],
+      "carrier_kinds": [
+        "route",
+        "word"
+      ],
+      "evidence_requirements": {
+        "Theorem": "PROOF_REFERENCE",
+        "Computational Certificate": "PASS_CERTIFICATE",
+        "Computational Observation": "SOURCE_ARTIFACT",
+        "Research Program": "NO_EVIDENCE_REQUIRED",
+        "null": "NO_CLAIM"
+      },
+      "forbidden_promotion_ids": [
+        "PATH_TO_ROUTE",
+        "ROUTE_TO_WORD",
+        "WORD_TO_LIE",
+        "CUTOFF_UNREACHED_TO_INFINITY",
+        "SECTOR_ENRICHED_CLOSURE_TO_FULL_WORD"
+      ],
+      "forbidden_promotion_notes": [
+        "Route and full-word support remain distinct.",
+        "A cutoff-unreached value is never exact infinity."
+      ],
+      "output_sections": [
+        "Declared associative convention",
+        "Finite-depth findings",
+        "Cutoff boundary"
+      ]
+    },
+    {
+      "id": "lie-hall",
+      "title": "Lie and Hall Audit",
+      "capability_requirements": {
+        "all_of": [
+          "lie_hall_carrier"
+        ],
+        "any_of": [],
+        "none_of": [
+          "diagnostic_analogue"
+        ]
+      },
+      "object_kind_requirements": {
+        "all_of": [
+          "lie_family",
+          "hall_filtration",
+          "depth_field"
+        ],
+        "any_of": [],
+        "none_of": []
+      },
+      "semantic_convention_requirements": {
+        "all_of": [
+          "hall_convention",
+          "depth_indexing"
+        ],
+        "any_of": [],
+        "none_of": []
+      },
+      "run_policy_requirements": {
+        "all_of": [
+          "cutoff"
+        ],
+        "any_of": [],
+        "none_of": []
+      },
+      "accepted_result_states": [
+        "CERTIFIED",
+        "OBSERVED",
+        "UNREACHED_AT_CUTOFF"
+      ],
+      "accepted_claim_statuses": [
+        "Computational Certificate",
+        "Computational Observation"
+      ],
+      "carrier_kinds": [
+        "lie",
+        "hall"
+      ],
+      "evidence_requirements": {
+        "Theorem": "PROOF_REFERENCE",
+        "Computational Certificate": "PASS_CERTIFICATE",
+        "Computational Observation": "SOURCE_ARTIFACT",
+        "Research Program": "NO_EVIDENCE_REQUIRED",
+        "null": "NO_CLAIM"
+      },
+      "forbidden_promotion_ids": [
+        "WORD_TO_LIE",
+        "CUTOFF_UNREACHED_TO_INFINITY",
+        "PROXY_TO_DISCRETE_SHADOW"
+      ],
+      "forbidden_promotion_notes": [
+        "A Lie/Hall carrier must be independently declared.",
+        "General matrix commutators do not instantiate this module."
+      ],
+      "output_sections": [
+        "Declared Lie family",
+        "Hall filtration",
+        "Cutoff-qualified Lie depth"
+      ]
+    },
+    {
+      "id": "proxy",
+      "title": "Registered Proxy Diagnostics",
+      "capability_requirements": {
+        "all_of": [
+          "proxy_diagnostic"
+        ],
+        "any_of": [],
+        "none_of": [
+          "diagnostic_analogue"
+        ]
+      },
+      "object_kind_requirements": {
+        "all_of": [
+          "proxy"
+        ],
+        "any_of": [],
+        "none_of": []
+      },
+      "semantic_convention_requirements": {
+        "all_of": [],
+        "any_of": [],
+        "none_of": []
+      },
+      "run_policy_requirements": {
+        "all_of": [],
+        "any_of": [],
+        "none_of": []
+      },
+      "accepted_result_states": [
+        "OBSERVED",
+        "UNREACHED_AT_CUTOFF"
+      ],
+      "accepted_claim_statuses": [
+        "Computational Observation"
+      ],
+      "carrier_kinds": [
+        "proxy"
+      ],
+      "evidence_requirements": {
+        "Theorem": "PROOF_REFERENCE",
+        "Computational Certificate": "PASS_CERTIFICATE",
+        "Computational Observation": "SOURCE_ARTIFACT",
+        "Research Program": "NO_EVIDENCE_REQUIRED",
+        "null": "NO_CLAIM"
+      },
+      "forbidden_promotion_ids": [
+        "PROXY_TO_DISCRETE_SHADOW",
+        "WORD_TO_LIE",
+        "POINTWISE_TO_MOVING_FIELD",
+        "AMBIENT_DISCRIMINANT_TO_PULLBACK_EQUALITY"
+      ],
+      "forbidden_promotion_notes": [
+        "Proxy output remains on its declared carrier.",
+        "A proxy does not fill an unavailable strict module."
+      ],
+      "output_sections": [
+        "Proxy definition",
+        "Observed values",
+        "Negative promotion boundary"
+      ]
+    }
+  ],
+  "degradation_policy": {
+    "unsatisfied_capability_expression": "emit_unavailable",
+    "unsatisfied_object_expression": "emit_unavailable",
+    "unsatisfied_policy_expression": "emit_unavailable",
+    "not_declared_message": "This carrier was not declared for the realization.",
+    "not_applicable_message": "This module is not applicable to the declared realization.",
+    "unreached_message": "The field was not reached through the declared finite cutoff; exact infinity is not asserted."
+  },
+  "outputs": [
+    "markdown",
+    "pdf",
+    "registry",
+    "json_api"
+  ]
+}

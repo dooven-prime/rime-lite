@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rime-project.local/schemas/sofrs/assembly-profile-v2.0.schema.json",
+  "title": "SOFRS Assembly Profile v2.0",
+  "description": "Paper XII profile for faithful assembly and presentation of one Paper X CompilerOutput.",
+  "type": "object",
+  "required": [
+    "assembly_profile_version",
+    "assembly_profile_id",
+    "title",
+    "record_kind",
+    "compiler_profile_id",
+    "assembly_contract_version",
+    "normative_item_policy",
+    "presentation_fields"
+  ],
+  "properties": {
+    "assembly_profile_version": {"const": "2.0"},
+    "assembly_profile_id": {"$ref": "#/$defs/id"},
+    "title": {"type": "string", "minLength": 1},
+    "record_kind": {"enum": ["strict_sof", "diagnostic_analogue"]},
+    "compiler_profile_id": {"$ref": "#/$defs/id"},
+    "assembly_contract_version": {"const": "2.0"},
+    "normative_item_policy": {
+      "type": "object",
+      "required": [
+        "mapping",
+        "order",
+        "claim_rendering",
+        "degradation_rendering"
+      ],
+      "properties": {
+        "mapping": {"const": "typed_identity_bijection"},
+        "order": {"const": "compiler_output_order"},
+        "claim_rendering": {"const": "ir_summary_with_source_item_identity"},
+        "degradation_rendering": {"const": "lossless_compiler_item"}
+      },
+      "additionalProperties": false
+    },
+    "presentation_fields": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "modules",
+          "findings",
+          "failure_modes",
+          "alignment_readiness",
+          "source_mapping",
+          "provenance"
+        ]
+      },
+      "uniqueItems": true
+    }
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._-]*$"
+    }
+  },
+  "additionalProperties": false
+}

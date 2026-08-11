@@ -1,0 +1,22 @@
+{
+  "assembly_profile_version": "2.0",
+  "assembly_profile_id": "paper12.analogue.assembly.v2",
+  "title": "Paper XII Diagnostic Analogue Assembly Profile",
+  "record_kind": "diagnostic_analogue",
+  "compiler_profile_id": "paper12.analogue.v2",
+  "assembly_contract_version": "2.0",
+  "normative_item_policy": {
+    "mapping": "typed_identity_bijection",
+    "order": "compiler_output_order",
+    "claim_rendering": "ir_summary_with_source_item_identity",
+    "degradation_rendering": "lossless_compiler_item"
+  },
+  "presentation_fields": [
+    "modules",
+    "findings",
+    "failure_modes",
+    "alignment_readiness",
+    "source_mapping",
+    "provenance"
+  ]
+}

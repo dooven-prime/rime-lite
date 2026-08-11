@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rime-project.local/schemas/common/artifact-reference-v1.schema.json",
+  "title": "Source-Addressed Artifact Reference v1",
+  "type": "object",
+  "required": ["uri", "digest"],
+  "properties": {
+    "uri": {"type": "string", "minLength": 1},
+    "digest": {"$ref": "digest-v1.schema.json"}
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rime-project.local/schemas/common/validation-receipt-reference-v1.schema.json",
+  "title": "Source-Addressed Validation Receipt Reference v1",
+  "type": "object",
+  "required": ["receipt_id", "artifact", "digest", "validator_id", "validator_version"],
+  "properties": {
+    "receipt_id": {"type": "string", "minLength": 1},
+    "artifact": {"type": "string", "minLength": 1},
+    "digest": {"$ref": "digest-v1.schema.json"},
+    "validator_id": {"type": "string", "minLength": 1},
+    "validator_version": {"type": "string", "minLength": 1}
+  },
+  "additionalProperties": false
+}

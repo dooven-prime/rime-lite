@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rime-project.local/schemas/sofrs/report-validation-receipt-v1.0.schema.json",
+  "title": "SOFRS Report Validation Receipt v1.0",
+  "description": "Source-addressed evidence that a specific SOFRS report artifact passed the declared Paper XII validation contract.",
+  "type": "object",
+  "required": [
+    "receipt_version",
+    "artifact_type",
+    "receipt_id",
+    "report",
+    "validator",
+    "status",
+    "checks",
+    "negative_boundaries"
+  ],
+  "properties": {
+    "receipt_version": {"const": "1.0"},
+    "artifact_type": {"const": "sofrs_report_validation_receipt"},
+    "receipt_id": {"$ref": "#/$defs/id"},
+    "report": {
+      "type": "object",
+      "required": [
+        "report_id",
+        "sofrs_version",
+        "record_kind",
+        "artifact"
+      ],
+      "properties": {
+        "report_id": {"$ref": "#/$defs/id"},
+        "sofrs_version": {"const": "1.0"},
+        "record_kind": {"const": "strict_sof"},
+        "artifact": {"$ref": "#/$defs/artifact_reference"}
+      },
+      "additionalProperties": false
+    },
+    "validator": {
+      "type": "object",
+      "required": ["validator_id", "validator_version", "contract"],
+      "properties": {
+        "validator_id": {"const": "sofrs.report-validator.v1"},
+        "validator_version": {"const": "1.0"},
+        "contract": {"$ref": "#/$defs/artifact_reference"}
+      },
+      "additionalProperties": false
+    },
+    "status": {"const": "PASS"},
+    "checks": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["check_id", "status"],
+        "properties": {
+          "check_id": {
+            "enum": [
+              "schema-validation",
+              "protocol-ownership-boundary",
+              "record-kind-admission"
+            ]
+          },
+          "status": {"const": "PASS"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "negative_boundaries": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true
+    }
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._-]*$"
+    },
+    "digest": {
+      "type": "object",
+      "required": ["algorithm", "value"],
+      "properties": {
+        "algorithm": {"const": "sha256"},
+        "value": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": false
+    },
+    "artifact_reference": {
+      "type": "object",
+      "required": ["uri", "digest"],
+      "properties": {
+        "uri": {"type": "string", "minLength": 1},
+        "digest": {"$ref": "#/$defs/digest"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

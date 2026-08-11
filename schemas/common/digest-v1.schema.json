@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rime-project.local/schemas/common/digest-v1.schema.json",
+  "title": "Canonical SHA-256 Digest v1",
+  "type": "object",
+  "required": ["algorithm", "value"],
+  "properties": {
+    "algorithm": {"const": "sha256"},
+    "value": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "additionalProperties": false
+}

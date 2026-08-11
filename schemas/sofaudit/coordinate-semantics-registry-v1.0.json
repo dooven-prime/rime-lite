@@ -1,0 +1,18 @@
+{
+  "registry_id": "sofaudit.coordinate-semantics.v1",
+  "registry_version": "1.0",
+  "coordinates": {
+    "operator": {"value_schema_id": "operator.support.v1", "carrier": "operator"},
+    "word": {"value_schema_id": "word.support.v1", "carrier": "word"},
+    "lie": {"value_schema_id": "lie.simple-commutator-support.v1", "carrier": "lie"},
+    "depth": {"value_schema_id": "word.depth.v1", "carrier": "depth"},
+    "frozen_summary": {"value_schema_id": "summary.frozen.v1", "carrier": "frozen_summary"},
+    "constraint": {"value_schema_id": "constraint.count.v1", "carrier": "constraint"},
+    "response": {"value_schema_id": "response.record.v1", "carrier": "response"},
+    "wall_record": {"value_schema_id": "wall.morphology.v1", "carrier": "wall_record"},
+    "analogue": {"value_schema_id": "analogue.descriptor.v1", "carrier": "analogue"}
+  },
+  "negative_boundary": [
+    "The registry assigns coordinate types; it does not establish coordinate values or object truth."
+  ]
+}

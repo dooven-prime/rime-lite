@@ -1,0 +1,12 @@
+{
+  "receipt_version": "2.0",
+  "receipt_type": "sofrs_migration_ruleset_receipt",
+  "ruleset_id": "sofrs.v1-to-v2.migration",
+  "ruleset_version": "2.0",
+  "source_contract": "schemas/sofrs/v1.0.schema.json",
+  "target_contract": "schemas/sofrs/v2.0.schema.json",
+  "negative_boundary": [
+    "This receipt binds the migration ruleset and its implementation inputs; it does not establish scientific adequacy or object truth.",
+    "Native SOFRS v2 generation is not a migration and must use the native_generation provenance variant."
+  ]
+}

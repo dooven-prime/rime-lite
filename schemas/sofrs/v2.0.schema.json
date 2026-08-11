@@ -1,0 +1,1116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rime-project.local/schemas/sofrs/v2.0.schema.json",
+  "title": "SOF Report Specification (SOFRS) v2.0",
+  "description": "Capability-gated report output serialized from an explicitly bound Paper X CompilerOutput artifact and its Capability Manifest, Typed SOF IR, and Report Profile inputs.",
+  "type": "object",
+  "required": [
+    "sofrs_version",
+    "report_id",
+    "system",
+    "record_kind",
+    "strict_reconstruction",
+    "external_basis_registry",
+    "compiler_contracts",
+    "compiler_output_binding",
+    "assembly_contract",
+    "item_bindings",
+    "alignment_readiness",
+    "source_mapping",
+    "source_artifacts",
+    "modules",
+    "findings",
+    "claims",
+    "degradation_items",
+    "failure_modes",
+    "provenance"
+  ],
+  "properties": {
+    "sofrs_version": {
+      "const": "2.0"
+    },
+    "report_id": {
+      "$ref": "#/$defs/id"
+    },
+    "system": {
+      "type": "string",
+      "minLength": 1
+    },
+    "record_kind": {
+      "enum": [
+        "strict_sof",
+        "diagnostic_analogue"
+      ]
+    },
+    "strict_reconstruction": {
+      "$ref": "#/$defs/strict_reconstruction"
+    },
+    "external_basis_registry": {
+      "$ref": "#/$defs/external_basis_registry"
+    },
+    "compiler_contracts": {
+      "type": "object",
+      "required": [
+        "capability_manifest",
+        "typed_sof_ir",
+        "compiler_profile",
+        "compiler_output"
+      ],
+      "properties": {
+        "capability_manifest": {
+          "$ref": "#/$defs/artifact_reference"
+        },
+        "typed_sof_ir": {
+          "$ref": "#/$defs/artifact_reference"
+        },
+        "compiler_profile": {
+          "$ref": "#/$defs/artifact_reference"
+        },
+        "compiler_output": {
+          "$ref": "#/$defs/artifact_reference"
+        }
+      },
+      "additionalProperties": false
+    },
+    "compiler_output_binding": {
+      "type": "object",
+      "required": [
+        "artifact_id",
+        "artifact",
+        "compiler_id",
+        "compiler_output_version",
+        "compiler_profile_id"
+      ],
+      "properties": {
+        "artifact_id": {"$ref": "#/$defs/id"},
+        "artifact": {"$ref": "#/$defs/artifact_reference"},
+        "compiler_id": {"const": "sofcompiler.compile_v1"},
+        "compiler_output_version": {"const": "1.0"},
+        "compiler_profile_id": {"$ref": "#/$defs/id"}
+      },
+      "additionalProperties": false
+    },
+    "assembly_contract": {
+      "type": "object",
+      "required": [
+        "schema_id",
+        "version",
+        "implementation",
+        "assembly_profile",
+        "assembly_profile_id"
+      ],
+      "properties": {
+        "schema_id": {"const": "sofrs-assembly-v2.0"},
+        "version": {"const": "2.0"},
+        "implementation": {"$ref": "#/$defs/artifact_reference"},
+        "assembly_profile": {"$ref": "#/$defs/artifact_reference"},
+        "assembly_profile_id": {"$ref": "#/$defs/id"}
+      },
+      "additionalProperties": false
+    },
+    "item_bindings": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/item_binding"}
+    },
+    "alignment_readiness": {
+      "type": "object",
+      "required": [
+        "adapter",
+        "compiler_profile_id",
+        "assembly_profile_id",
+        "sector_metadata",
+        "observable_metadata",
+        "carrier_kinds",
+        "semantic_conventions",
+        "run_policies",
+        "comparison_keys",
+        "source_artifact_digests"
+      ],
+      "properties": {
+        "adapter": {
+          "type": "object",
+          "required": [
+            "id",
+            "version"
+          ],
+          "properties": {
+            "id": {
+              "$ref": "#/$defs/id"
+            },
+            "version": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "compiler_profile_id": {
+          "$ref": "#/$defs/id"
+        },
+        "assembly_profile_id": {
+          "$ref": "#/$defs/id"
+        },
+        "sector_metadata": {
+          "$ref": "#/$defs/alignment_metadata"
+        },
+        "observable_metadata": {
+          "$ref": "#/$defs/alignment_metadata"
+        },
+        "carrier_kinds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/carrier_kind"
+          },
+          "uniqueItems": true
+        },
+        "semantic_conventions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/alignment_item"
+          }
+        },
+        "run_policies": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/alignment_item"
+          }
+        },
+        "comparison_keys": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "source_artifact_digests": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/artifact_reference"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "source_mapping": {
+      "type": "object",
+      "required": [
+        "status",
+        "construction",
+        "adapter_id",
+        "adapter_version",
+        "justification",
+        "limitations"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "native",
+            "adapter-derived",
+            "migrated"
+          ]
+        },
+        "construction": {
+          "type": "string",
+          "minLength": 1
+        },
+        "adapter_id": {
+          "$ref": "#/$defs/id"
+        },
+        "adapter_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "justification": {
+          "type": "string",
+          "minLength": 1
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "source_artifacts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/artifact_reference"
+      },
+      "uniqueItems": true
+    },
+    "modules": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/module"
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/finding_summary"
+      }
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/claim_summary"
+      }
+    },
+    "degradation_items": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/degradation_item"
+      }
+    },
+    "failure_modes": {
+      "type": "array",
+      "items": {
+        "type": [
+          "object",
+          "string"
+        ]
+      }
+    },
+    "provenance": {
+      "oneOf": [
+        {"$ref": "#/$defs/nativeGenerationProvenance"},
+        {"$ref": "#/$defs/migrationProvenance"}
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "record_kind": {
+            "const": "strict_sof"
+          }
+        },
+        "required": [
+          "record_kind"
+        ]
+      },
+      "then": {
+        "properties": {
+          "modules": {
+            "contains": {
+              "properties": {
+                "module_id": {
+                  "const": "sof-basic"
+                },
+                "status": {
+                  "const": "ENABLED"
+                }
+              },
+              "required": [
+                "module_id",
+                "status"
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "record_kind": {
+            "const": "diagnostic_analogue"
+          }
+        },
+        "required": [
+          "record_kind"
+        ]
+      },
+      "then": {
+        "properties": {
+          "modules": {
+            "contains": {
+              "properties": {
+                "module_id": {
+                  "const": "diagnostic-analogue"
+                },
+                "status": {
+                  "const": "ENABLED"
+                }
+              },
+              "required": [
+                "module_id",
+                "status"
+              ]
+            }
+          },
+          "claims": {
+            "not": {
+              "contains": {
+                "properties": {
+                  "claim_status": {
+                    "const": "Theorem"
+                  }
+                },
+                "required": [
+                  "claim_status"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._-]*$"
+    },
+    "digest": {
+      "type": "object",
+      "required": [
+        "algorithm",
+        "value"
+      ],
+      "properties": {
+        "algorithm": {
+          "const": "sha256"
+        },
+        "value": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "nativeGenerationProvenance": {
+      "type": "object",
+      "required": [
+        "kind",
+        "producer",
+        "source_snapshot",
+        "adapter",
+        "compiler_profile_ref",
+        "compiler_output_ref",
+        "assembly_profile_ref"
+      ],
+      "properties": {
+        "kind": {"const": "native_generation"},
+        "producer": {"$ref": "#/$defs/artifact_reference"},
+        "source_snapshot": {"$ref": "#/$defs/artifact_reference"},
+        "adapter": {"$ref": "#/$defs/artifact_reference"},
+        "compiler_profile_ref": {"$ref": "#/$defs/artifact_reference"},
+        "compiler_output_ref": {"$ref": "#/$defs/artifact_reference"},
+        "assembly_profile_ref": {"$ref": "#/$defs/artifact_reference"}
+      },
+      "additionalProperties": false
+    },
+    "migrationProvenance": {
+      "type": "object",
+      "required": [
+        "kind",
+        "source_artifact",
+        "source_sofrs_version",
+        "migration_adapter_ref",
+        "migration_ruleset_version",
+        "migration_receipt_ref",
+        "normalized_legacy_sentinels",
+        "semantic_normalizations"
+      ],
+      "properties": {
+        "kind": {"const": "migration"},
+        "source_artifact": {"$ref": "#/$defs/artifact_reference"},
+        "source_sofrs_version": {"const": "1.0"},
+        "migration_adapter_ref": {"$ref": "#/$defs/artifact_reference"},
+        "migration_ruleset_version": {"type": "string", "minLength": 1},
+        "migration_receipt_ref": {"$ref": "#/$defs/artifact_reference"},
+        "normalized_legacy_sentinels": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+        "semantic_normalizations": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true}
+      },
+      "additionalProperties": false
+    },
+    "artifact_reference": {
+      "type": "object",
+      "required": [
+        "uri",
+        "digest"
+      ],
+      "properties": {
+        "uri": {
+          "type": "string",
+          "minLength": 1
+        },
+        "digest": {
+          "$ref": "#/$defs/digest"
+        }
+      },
+      "additionalProperties": false
+    },
+    "alignment_item": {
+      "type": "object",
+      "required": [
+        "id",
+        "kind"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "kind": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "alignment_metadata": {
+      "type": "object",
+      "required": [
+        "status",
+        "labels",
+        "provenance",
+        "ranks_or_dimensions",
+        "semantics"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "PRESENT",
+            "NOT_DECLARED",
+            "NOT_APPLICABLE"
+          ]
+        },
+        "labels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "provenance": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "ranks_or_dimensions": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "semantics": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "result_state": {
+      "enum": [
+        "DECLARED",
+        "ESTABLISHED",
+        "CERTIFIED",
+        "OBSERVED",
+        "UNREACHED_AT_CUTOFF",
+        "NOT_APPLICABLE",
+        "NOT_DECLARED"
+      ]
+    },
+    "claim_status": {
+      "enum": [
+        "Theorem",
+        "Computational Certificate",
+        "Computational Observation",
+        "Research Program"
+      ]
+    },
+    "claim_target": {
+      "enum": [
+        "external_mathematical_object",
+        "empirical_domain_system",
+        "representation_interface",
+        "protocol_conformance",
+        "migration_consistency"
+      ]
+    },
+    "certificate_class": {
+      "enum": [
+        "object",
+        "protocol_conformance",
+        "migration_assembly"
+      ]
+    },
+    "classification_source": {
+      "enum": [
+        "compiler_ir",
+        "domain_adapter",
+        "assembly_profile",
+        "migration_adapter",
+        "independent_validator",
+        "assembly_validator",
+        "external_evaluator"
+      ]
+    },
+    "strict_reconstruction": {
+      "type": "object",
+      "required": [
+        "candidate_status",
+        "available_requirements",
+        "missing_requirements",
+        "evaluator_id",
+        "evaluator_version",
+        "interpretation"
+      ],
+      "properties": {
+        "candidate_status": {
+          "enum": ["yes", "no", "unresolved", "not_applicable"]
+        },
+        "available_requirements": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/id"},
+          "uniqueItems": true
+        },
+        "missing_requirements": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/id"},
+          "uniqueItems": true
+        },
+        "evaluator_id": {"$ref": "#/$defs/id"},
+        "evaluator_version": {"type": "string", "minLength": 1},
+        "interpretation": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "external_constraint": {
+      "type": "object",
+      "required": [
+        "constraint_id",
+        "basis_id",
+        "status",
+        "statement",
+        "evidence_artifacts"
+      ],
+      "properties": {
+        "constraint_id": {
+          "$ref": "#/$defs/id"
+        },
+        "basis_id": {
+          "$ref": "#/$defs/id"
+        },
+        "status": {
+          "enum": [
+            "SATISFIED",
+            "PARTIAL",
+            "NOT_ASSESSED",
+            "NOT_APPLICABLE"
+          ]
+        },
+        "statement": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence_artifacts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_reference"
+          },
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "external_basis_package": {
+      "type": "object",
+      "required": [
+        "basis_id",
+        "level",
+        "constraint_ids",
+        "status",
+        "method",
+        "scope",
+        "evidence_artifacts",
+        "negative_boundary"
+      ],
+      "properties": {
+        "basis_id": {"$ref": "#/$defs/id"},
+        "level": {
+          "enum": [
+            "source_identity",
+            "object_level",
+            "structure_level",
+            "semantic_adequacy"
+          ]
+        },
+        "constraint_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/id"},
+          "uniqueItems": true
+        },
+        "status": {
+          "enum": [
+            "SATISFIED",
+            "PARTIAL",
+            "NOT_ASSESSED",
+            "NOT_APPLICABLE"
+          ]
+        },
+        "method": {"type": "string", "minLength": 1},
+        "scope": {"type": "string", "minLength": 1},
+        "evidence_artifacts": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/artifact_reference"},
+          "uniqueItems": true
+        },
+        "negative_boundary": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "external_basis_registry": {
+      "type": "object",
+      "required": [
+        "registry_version",
+        "basis_status",
+        "packages",
+        "constraints",
+        "negative_boundary"
+      ],
+      "properties": {
+        "registry_version": {"const": "1.0"},
+        "basis_status": {
+          "enum": ["COMPLETE", "PARTIAL", "NOT_ASSESSED"]
+        },
+        "packages": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/external_basis_package"},
+          "uniqueItems": true
+        },
+        "constraints": {
+          "type": "array",
+          "minItems": 4,
+          "items": {"$ref": "#/$defs/external_constraint"},
+          "uniqueItems": true
+        },
+        "negative_boundary": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "carrier_kind": {
+      "enum": [
+        "sector",
+        "operator",
+        "operator_system",
+        "route",
+        "word",
+        "positive_associative_closure",
+        "observable_star_closure",
+        "sector_enriched_star_closure",
+        "lie",
+        "hall",
+        "deformation",
+        "proxy",
+        "analogue"
+      ]
+    },
+    "module": {
+      "type": "object",
+      "required": [
+        "module_id",
+        "status",
+        "carrier_kinds",
+        "finding_ids",
+        "claim_ids",
+        "output_sections"
+      ],
+      "properties": {
+        "module_id": {
+          "$ref": "#/$defs/id"
+        },
+        "status": {
+          "enum": [
+            "ENABLED",
+            "OMITTED",
+            "UNAVAILABLE"
+          ]
+        },
+        "carrier_kinds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/carrier_kind"
+          },
+          "uniqueItems": true
+        },
+        "finding_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "uniqueItems": true
+        },
+        "claim_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "uniqueItems": true
+        },
+        "output_sections": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "ENABLED"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "claim_ids": {
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "OMITTED",
+                  "UNAVAILABLE"
+                ]
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "required": [
+              "reason"
+            ]
+          }
+        }
+      ],
+      "additionalProperties": false
+    },
+    "finding_summary": {
+      "type": "object",
+      "required": [
+        "finding_id",
+        "kind",
+        "result_state",
+        "value"
+      ],
+      "properties": {
+        "finding_id": {
+          "$ref": "#/$defs/id"
+        },
+        "kind": {
+          "enum": [
+            "boolean_support",
+            "rank",
+            "dimension",
+            "depth",
+            "norm",
+            "residual",
+            "algebra_type",
+            "response_time",
+            "wall_event",
+            "status_only"
+          ]
+        },
+        "result_state": {
+          "$ref": "#/$defs/result_state"
+        },
+        "value": {}
+      },
+      "additionalProperties": false
+    },
+    "claim_summary": {
+      "type": "object",
+      "required": [
+        "report_item_id",
+        "source_output_item_id",
+        "claim_id",
+        "statement",
+        "result_state",
+        "claim_status",
+        "claim_target",
+        "certificate_class",
+        "classification_source",
+        "external_basis_refs",
+        "external_constraint_ids",
+        "carrier_kinds",
+        "scope",
+        "negative_boundary"
+      ],
+      "properties": {
+        "report_item_id": {
+          "$ref": "#/$defs/id"
+        },
+        "source_output_item_id": {
+          "$ref": "#/$defs/id"
+        },
+        "claim_id": {
+          "$ref": "#/$defs/id"
+        },
+        "statement": {
+          "type": "string",
+          "minLength": 1
+        },
+        "result_state": {
+          "$ref": "#/$defs/result_state"
+        },
+        "claim_status": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/claim_status"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "claim_target": {
+          "$ref": "#/$defs/claim_target"
+        },
+        "certificate_class": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/certificate_class"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "classification_source": {
+          "$ref": "#/$defs/classification_source"
+        },
+        "external_basis_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/id"},
+          "uniqueItems": true
+        },
+        "external_constraint_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/id"},
+          "uniqueItems": true
+        },
+        "carrier_kinds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/carrier_kind"
+          },
+          "uniqueItems": true
+        },
+        "scope": {
+          "type": "string",
+          "minLength": 1
+        },
+        "negative_boundary": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "claim_status": {
+                "const": "Computational Certificate"
+              }
+            },
+            "required": ["claim_status"]
+          },
+          "then": {
+            "properties": {
+              "certificate_class": {
+                "$ref": "#/$defs/certificate_class"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "certificate_class": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {"result_state": {"const": "ESTABLISHED"}},
+            "required": ["result_state"]
+          },
+          "then": {"properties": {"claim_status": {"const": "Theorem"}}}
+        },
+        {
+          "if": {
+            "properties": {"result_state": {"const": "CERTIFIED"}},
+            "required": ["result_state"]
+          },
+          "then": {"properties": {"claim_status": {"const": "Computational Certificate"}}}
+        },
+        {
+          "if": {
+            "properties": {"result_state": {"const": "OBSERVED"}},
+            "required": ["result_state"]
+          },
+          "then": {"properties": {"claim_status": {"const": "Computational Observation"}}}
+        },
+        {
+          "if": {
+            "properties": {"claim_target": {"const": "external_mathematical_object"}},
+            "required": ["claim_target"]
+          },
+          "then": {
+            "properties": {
+              "certificate_class": {"const": "object"},
+              "classification_source": {
+                "enum": ["compiler_ir", "domain_adapter", "independent_validator", "external_evaluator"]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {"claim_target": {"const": "empirical_domain_system"}},
+            "required": ["claim_target"]
+          },
+          "then": {
+            "properties": {
+              "certificate_class": {"enum": ["object", null]},
+              "classification_source": {
+                "enum": ["domain_adapter", "independent_validator", "external_evaluator"]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {"claim_target": {"const": "representation_interface"}},
+            "required": ["claim_target"]
+          },
+          "then": {
+            "properties": {
+              "certificate_class": {"enum": ["protocol_conformance", null]}
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {"claim_target": {"const": "protocol_conformance"}},
+            "required": ["claim_target"]
+          },
+          "then": {
+            "properties": {
+              "certificate_class": {"const": "protocol_conformance"}
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {"claim_target": {"const": "migration_consistency"}},
+            "required": ["claim_target"]
+          },
+          "then": {
+            "properties": {
+              "certificate_class": {"const": "migration_assembly"}
+            }
+          }
+        }
+      ],
+      "additionalProperties": false
+    },
+    "degradation_item": {
+      "type": "object",
+      "required": [
+        "report_item_id",
+        "source_output_item_id",
+        "module_id",
+        "action",
+        "reason_kind",
+        "details"
+      ],
+      "properties": {
+        "report_item_id": {"$ref": "#/$defs/id"},
+        "source_output_item_id": {"$ref": "#/$defs/id"},
+        "module_id": {"$ref": "#/$defs/id"},
+        "action": {
+          "enum": [
+            "fail_profile",
+            "omit_module",
+            "emit_unavailable",
+            "omit_claim"
+          ]
+        },
+        "reason_kind": {"type": "string", "minLength": 1},
+        "source_ir_id": {"$ref": "#/$defs/id"},
+        "details": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 1}
+        }
+      },
+      "additionalProperties": false
+    },
+    "item_binding": {
+      "type": "object",
+      "required": [
+        "compiler_output_item_id",
+        "report_item_id",
+        "item_kind",
+        "rendering_status"
+      ],
+      "properties": {
+        "compiler_output_item_id": {"$ref": "#/$defs/id"},
+        "report_item_id": {"$ref": "#/$defs/id"},
+        "item_kind": {"enum": ["claim", "degradation"]},
+        "rendering_status": {"const": "rendered"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
