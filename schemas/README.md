@@ -58,7 +58,7 @@ The contracts are deliberately separate:
   `schemas/common/`. The v2 SOFRS, SOFAUDIT, SOFAction, and validation-receipt
   schemas contain self-contained generated copies so direct JSON Schema consumers do not need
   a filesystem reference registry. Regenerate and check them with
-  `python tools/generate_shared_contract_fragments.py --check`; the generator
+  `python schemas/common/generate_shared_contract_fragments.py --check`; the generator
   is the only supported update path for these repeated definitions. All three
   contracts use the same lowercase SHA-256 digest pattern and receipt-reference
   shape. SOFAction's

@@ -14,8 +14,8 @@ from pathlib import Path
 from typing import Any
 
 
-ROOT = Path(__file__).resolve().parents[1]
-COMMON = ROOT / "schemas" / "common"
+COMMON = Path(__file__).resolve().parent
+ROOT = COMMON.parents[1]
 TARGETS = {
     ROOT / "schemas" / "sofrs" / "v2.0.schema.json": {
         "digest": "digest",
