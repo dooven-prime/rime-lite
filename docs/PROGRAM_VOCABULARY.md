@@ -199,6 +199,24 @@ bridge. Use **proxy** when the measured field is not the claimed strict field.
 Use **sampled** or **truncated** when the conclusion is bounded by a grid,
 interval, or cutoff.
 
+Certificate class is a separate contract axis from reader-facing evidence
+level. A class identifies what a machine certificate checks; it does not by
+itself promote the associated claim to a Theorem or establish scientific
+adequacy.
+
+| Certificate class | Serialized value or record class | Controlled scope |
+|-------------------|----------------------------------|------------------|
+| Protocol Conformance Certificate | `protocol_conformance` | contract, validator, artifact, and receipt closure only |
+| Object Certificate | `object` | independently checkable source- or object-level recomputation under the declared basis |
+| Migration/Assembly Certificate | `migration_assembly` | source identity and declared migration or faithful-assembly preservation |
+| Comparison Audit Certificate | `comparison_audit` | alignment-relative comparison under the declared profile and basis |
+| Policy Conformance Certificate | `policy_conformance_certificate` | admitted context/policy execution under the closed SOFAction contract |
+| Decision Trace Certificate | `decision_trace_certificate` | deterministic interpretation and bounded disposition trace; not selection or authorization |
+
+The first four values occur in SOFRS or SOFAUDIT claim records as permitted by
+their owning schema. The final two are SOFAction record classes. Their scopes
+are not interchangeable, and none overrides the four evidence levels above.
+
 ## 10. Deprecated or Restricted Shorthand
 
 Avoid the following as active cross-paper vocabulary:

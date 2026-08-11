@@ -32,6 +32,7 @@ Publication identities and DOIs are maintained only in the root
 | [SOF_OBJECTS.md](SOF_OBJECTS.md) | static Sectorized Observable Framework object layer |
 | [SOF_DEFORMATIONS.md](SOF_DEFORMATIONS.md) | deformation geometry, trajectories, and wall diagnostics |
 | [SOF_REGISTRY.md](SOF_REGISTRY.md) | Registry evidence architecture and cross-species routing |
+| [SOF_PROTOCOL_STACK.md](SOF_PROTOCOL_STACK.md) | compiler-to-report-to-audit-to-interpretation contracts and authority boundaries |
 
 The companion documents explain the public SOF arc. They do not silently
 promote release-local `R1`/`R2`/`D` terminology into a universal ladder.
@@ -44,7 +45,7 @@ and Lie depth remain typed separately.
 |----------|------|
 | [experiments/README.md](../experiments/README.md) | paper-owned scripts, result artifacts, and claim boundaries |
 | [figures/README.md](../figures/README.md) | presentation renderers and manuscript image assets |
-| [schemas/README.md](../schemas/README.md) | published SOFRS, SOFAudit, and Registry contracts |
+| [schemas/README.md](../schemas/README.md) | published compiler, SOFRS, SOFAUDIT, SOFAction, and Registry contracts |
 | [registry/](../registry/) | frozen versioned Registry snapshots |
 | [CCS v2](../ccs/canonical_specification.md) | optional computational companion archive |
 

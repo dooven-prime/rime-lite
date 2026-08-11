@@ -55,13 +55,13 @@ schemas/
 The contracts are deliberately separate:
 
 - **Shared digest and reference fragments** are canonicalized under
-  `schemas/common/`. The v2 SOFRS, SOFAUDIT, SOFACTION, and validation-receipt
+  `schemas/common/`. The v2 SOFRS, SOFAUDIT, SOFAction, and validation-receipt
   schemas contain self-contained generated copies so direct JSON Schema consumers do not need
   a filesystem reference registry. Regenerate and check them with
   `python tools/generate_shared_contract_fragments.py --check`; the generator
   is the only supported update path for these repeated definitions. All three
   contracts use the same lowercase SHA-256 digest pattern and receipt-reference
-  shape. SOFACTION's
+  shape. SOFAction's
   role-bearing artifact reference is a typed superset whose digest component is
   generated from the same shared fragment.
 
@@ -177,6 +177,22 @@ The contracts are deliberately separate:
   `python experiments/paper13/validation/migrate_sofrs_v1_to_v2.py`,
   `python experiments/paper13/validation/migrate_sofaudit_v1_to_v2.py`, and
   `python experiments/paper13/validation/validate_sofaudit_v2.py`.
+- **SOFAction v2.0** validates a `.sofaction` artifact that binds an immutable
+  SOFAUDIT projection and its receipt to an independently supplied
+  `ActionContext` and the sole normative `PolicyProfile`. Policy Predicate
+  Language v1.0 is a closed AST; its controlled uncertainty policy preserves
+  unresolved and unavailable states rather than coercing them to false or
+  zero. The semantic validator independently replays admission, predicate
+  evaluation, rule precedence, interpretation records, disposition closure,
+  and the bounded `CandidateActionSet`.
+
+  The published workbench contains 28 migration-relative inputs and one native
+  GridWorld F4 factual audit, producing 29 source-addressed SOFAction objects
+  and validation receipts. The current record classes are
+  `policy_conformance_certificate` and `decision_trace_certificate`. Neither
+  class selects, recommends, authorizes, executes, observes, or certifies the
+  effect of an action. Run `python experiments/paper14/action_workbench.py` and
+  `python experiments/paper14/validate_sofaction.py`.
 - **SOF Registry Schema** validates a versioned collection of evidence entries.
   v1 retains the frozen five-layer Paper X release shape. v2.0 instead declares
   strict-SOF or diagnostic-analogue admission, capabilities, typed objects and
@@ -198,5 +214,6 @@ The contracts are deliberately separate:
 
 Published schema versions are immutable. A change to required fields,
 controlled vocabularies, or field meaning requires a new versioned file.
-Contracts for unreleased downstream stages are intentionally excluded from this
-public schema index.
+Published contracts end at SOFAction's bounded candidates. Reserved downstream
+stages such as `.sofplan`, `.sofauth`, `.sofoutcome`, and `.sofeffect` are not
+part of this public schema index.

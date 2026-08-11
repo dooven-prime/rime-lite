@@ -78,7 +78,7 @@ that uniquely determines behavior.
 | XI | wall morphology | sparse wall atoms, profile-relative coordinates, multi-label taxonomy, and local-model eligibility | What morphology does an admitted wall record have? |
 | XII | single-report protocol | realization-relative `.sofreport` record | What does one typed report assert, and where does adapter responsibility remain? |
 | XIII | alignment and comparison | Audit Profile, alignment contract, and sparse `.sofaudit` comparison | How do two aligned reports differ? |
-| XIV (horizon) | interpretation and bounded action semantics | `ActionContext`, `PolicyProfile`, `InterpretationRecord`, and bounded `CandidateActionSet` | What can admitted context and policy legitimately support from an aligned difference? |
+| XIV | interpretation and bounded candidate semantics | `ActionContext`, `PolicyProfile`, `InterpretationRecord`, and bounded `CandidateActionSet` | What can admitted context and policy legitimately support from an aligned difference? |
 
 This table is thematic rather than sequential. A paper may import an object or
 certificate from another paper while retaining its own hypotheses and claim

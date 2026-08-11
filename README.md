@@ -70,6 +70,7 @@ contracts remain unchanged.
 | XI | [`paper11_arxiv.pdf`](papers/paper11/paper11_arxiv.pdf) | [`Paper XI.md`](papers/paper11/Paper%20XI.md) | How can admitted wall data be recorded as sparse typed changes and organized by profile-relative morphology? |
 | XII | [`paper12_arxiv.pdf`](papers/paper12/paper12_arxiv.pdf) | [`Paper XII.md`](papers/paper12/Paper%20XII.md) | What does a compiled report represent, and where do adapter adequacy and reporting authority end? |
 | XIII | [`paper13_arxiv.pdf`](papers/paper13/paper13_arxiv.pdf) | [`Paper XIII.md`](papers/paper13/Paper%20XIII.md) | How can two SOF Reports be aligned and compared without conflating difference with defect? |
+| XIV | [`paper14_arxiv.pdf`](papers/paper14/paper14_arxiv.pdf) | [`Paper XIV.md`](papers/paper14/Paper%20XIV.md) | How can an immutable audit be interpreted under admitted context and policy without promoting candidates into decisions or effects? |
 | CCS v2 Archive | [`ccs_arxiv.pdf`](ccs/ccs_arxiv.pdf) | [`canonical_specification.md`](ccs/canonical_specification.md) | Optional Paper I--III reproducibility pointers, computational observations, open problems, and historical records |
 
 Thematic index, not a paper dependency order:
@@ -88,6 +89,7 @@ Capability-aware compilation for Sectorized Observable Frameworks and Registry e
 Typed wall morphology and multi-label taxonomy
 SOF diagnostic reporting
 SOF Report Alignment and comparison geometry
+Context- and policy-relative interpretation and bounded candidate semantics
 ```
 
 Papers I--VII are independently readable. Their neighboring results connect
@@ -104,7 +106,7 @@ rime-lite/
 |-- papers/               manuscript sources
 |-- ccs/                  Computational Companion and Status Archive source
 |-- docs/                 public overview, program map, and companion notes
-|-- schemas/              versioned SOFRS, SOFAudit, and Registry contracts
+|-- schemas/              versioned SOFRS, SOFAUDIT, SOFAction, and Registry contracts
 |-- registry/             immutable v1 and frozen typed v2 Registry snapshots
 `-- figures/              manuscript figures and presentation-only renderers
 ```
@@ -151,7 +153,9 @@ python experiments/paper9/validation/validate_results.py
 python experiments/paper10/validation/validate_results.py
 python experiments/paper11/validation/typed_wall_record_census.py
 python experiments/paper12/validation/validate_sofrs_v2.py
-python experiments/paper13/validate_sofaudit_v2.py
+python experiments/paper13/validation/validate_sofaudit_v2.py
+python experiments/paper14/action_workbench.py
+python experiments/paper14/validate_sofaction.py
 ```
 
 For the full experiment map, see [`experiments/README.md`](experiments/README.md).

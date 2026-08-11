@@ -28,8 +28,11 @@ where:
 - `{Q_i}` is a distinguished sector projector family;
 - `Y={Y_a}` is a declared labelled operator alphabet.
 
-Representations, graphs, Markov chains, controls, meshes, and other source
-systems enter through adapters that realize these three strict objects. The
+Strict applications of representations, graphs, Markov chains, controls,
+meshes, and other source systems enter through adapters that realize these
+three objects. A validated external realization without an admitted canonical
+carrier remains at the diagnostic-analogue or extension boundary; it is not
+promoted into the strict category merely because an adapter executed. The
 source object itself is not substituted for `V`.
 
 The operator alphabet may consist of generators, averaged operators, transfer

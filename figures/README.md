@@ -18,7 +18,7 @@ figures/
 `-- archive/                 retired figure builders and legacy style code
 ```
 
-Papers I--X currently use:
+Active paper-local figure workflows use:
 
 ```text
 figures/paperN/render.py
@@ -33,9 +33,10 @@ figures/ccs/render.py
 It generates only the current white-listed CCS figures. It does not invoke the
 retired all-in-one CCS atlas builder.
 
-Other `paperN/` directories may contain only retained image assets. When a
-figure workflow is rebuilt, its active entry point should be
-`figures/paperN/render.py`.
+Not every paper requires a renderer, and some `paperN/` directories contain
+only retained image assets. When a figure workflow is current, its active
+entry point is `figures/paperN/render.py`; retired builders belong under
+`figures/archive/`.
 
 ## Renderer Contract
 

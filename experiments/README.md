@@ -44,12 +44,13 @@ Paper-facing computations write generated records under the owning
 | XI | [paper11/README.md](paper11/README.md) | wall records, taxonomy, and boundary audits |
 | XII | [paper12/README.md](paper12/README.md) | SOFRS v2 assembly, validation receipts, and diagnostic probes |
 | XIII | [paper13/README.md](paper13/README.md) | Audit Profiles, aligned comparison, 28-record SOFAUDIT migration, and a separate native-v2 GridWorld factual audit |
+| XIV | [paper14/README.md](paper14/README.md) | 29-object SOFAction workbench, closed predicate replay, bounded candidate dispositions, and validation receipts |
 
 Where a paper-local README is not yet present, the owning manuscript and
 script docstrings define the release-local scope. A future versioned reopening
 should add the standard local README before changing artifact semantics.
 
-Papers VIII--XIII retain their published or release-local terminology. Bare
+Papers VIII--XIV retain their published or release-local terminology. Bare
 `R1`/`R2`/`D`, ladder, repair, and wall labels in those artifacts must not be
 read as a completed migration to the separate operator, routed-composition,
 full-word, commutator, and Lie-depth branches. The frozen Paper X Registry v1

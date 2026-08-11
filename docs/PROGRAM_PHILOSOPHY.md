@@ -12,7 +12,8 @@ Source geometry proposes a realization.
 Marked sectorization declares the interface.
 Typed carriers determine the observable questions.
 Filtrations and closures record different generation data.
-Deformation, compilation, reporting, comparison, and action remain separate.
+Deformation, compilation, reporting, comparison, and policy-relative
+interpretation remain separate.
 ```
 
 The objective of this program is not to study the Rubik's Cube itself.
@@ -52,15 +53,19 @@ single-system SOF reports
   ->
 aligned sparse audits
   ->
-policy-relative decisions
+policy-relative interpretation and bounded candidates
 ```
 
 Each paper isolates or abstracts one layer of problem-specific structure.
 Later papers may refine the object types rather than assume a theorem
 dependency on every earlier formulation.
 
-The long-term goal is therefore not a theory of Rubik, but a theory of
-sectorized observable geometry and accessibility.
+The long-term goal is therefore not a theory of Rubik. RIME develops a typed
+intermediate layer through which heterogeneous represented or computational
+systems can expose comparable, verifiable, and source-addressed structural
+information without requiring shared native mechanisms. A shared typed
+interface is not a shared native mechanism; sectorized observable geometry and
+accessibility provide the interface rather than replacing domain structure.
 
 ---
 
