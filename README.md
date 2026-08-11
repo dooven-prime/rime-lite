@@ -8,7 +8,7 @@ finite representation laboratory, not as a puzzle-solving problem.
 
 ## Public Release
 
-The current public release contains Papers I--XIII. CCS v2 is published
+The current public release contains Papers I--XIV. CCS v2 is published
 separately as an optional non-paper Computational Companion Archive; the
 immutable first combined record retains its historical predecessor.
 
@@ -27,16 +27,15 @@ immutable first combined record retains its historical predecessor.
 | Paper XI | typed wall morphology for Sectorized Observable Frameworks | <https://doi.org/10.5281/zenodo.21801722> |
 | Paper XII | SOF diagnostic protocol and report specification | <https://doi.org/10.5281/zenodo.21870368> |
 | Paper XIII | Audit Profiles, SOF Report Alignment, and sparse typed comparison maps | <https://doi.org/10.5281/zenodo.21870778> |
+| Paper XIV | context- and policy-relative interpretation and bounded candidate dispositions | <https://doi.org/10.5281/zenodo.21880943> |
 | CCS v2 | optional reproducibility, observation, open-problem, and history archive | <https://doi.org/10.5281/zenodo.21616956> |
 | Historical combined Papers I--III + CCS release | immutable first-version archive; current papers are maintained independently | <https://doi.org/10.5281/zenodo.21108197> |
 
 This is the repository's canonical DOI index. It identifies immutable
 published records; other public documents link here instead of duplicating the
-list. Papers VIII--XI now match their published version-2 records.
-Repository copies of Papers XII--XIII may contain explicitly labelled
-later-version candidates or migrations; their listed DOIs continue to identify
-the immutable published versions, and the frozen v1 contracts remain
-unchanged.
+list. Papers VIII--XIV now match their published version-2 records. Their
+listed DOIs identify immutable published versions, and frozen historical
+contracts remain unchanged.
 
 ## Start Here
 

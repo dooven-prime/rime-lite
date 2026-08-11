@@ -9,6 +9,25 @@ The canonical publication list is the root
 their declared artifacts remain the authority for mathematical and
 computational claims.
 
+## 2026-08-11: Paper XIV Version 2
+
+Paper XIV was released as the context- and policy-relative interpretation
+layer following an aligned SOF audit. Version 2:
+
+- freezes `SOFActionObject` as the audit projection, admitted ActionContext,
+  versioned PolicyProfile, Interpretation Records, bounded Candidate Action
+  Set, and closed DispositionResult;
+- makes Policy Predicate Language v1.0 and three-valued uncertainty propagation
+  executable, closed, and deterministically replayable;
+- states No Action Without Context and Policy, Interpretation Relativity,
+  Action Non-Fabrication, and Audit Preservation as protocol propositions;
+- validates 29 source-addressed action objects while preserving unresolved and
+  not-declared coordinates as non-affirmative states;
+- publishes `sof-runtime` v0.1.0 as a reference implementation and
+  external-adopter workflow without making it a normative definition source;
+- keeps selection, authorization, execution, outcome observation, and causal
+  effect outside the `.sofaction` contract.
+
 ## 2026-08-10: Paper XIII Version 2
 
 Paper XIII was released as the realization-relative comparison layer for
