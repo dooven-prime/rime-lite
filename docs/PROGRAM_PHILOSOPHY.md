@@ -146,7 +146,7 @@ This is the current clean separation:
 | Wall Records | Paper XI contribution | stores carrier-qualified wall deltas and derives record-level taxonomy profiles |
 | Reporting Protocol | Paper XII contribution | serializes one declared realization as a versioned, alignment-ready SOF Report |
 | Audit Comparison | Paper XIII contribution | aligns two reports and emits a sparse typed comparison object |
-| Decision Layer | Paper XIV horizon | interprets audit coordinates under an external context and policy |
+| Action Semantics | Paper XIV horizon | interprets immutable audit coordinates under an admitted `ActionContext` and `PolicyProfile` and stops at bounded candidates |
 
 The novelty of RIME is not the existence of a semisimple block decomposition.
 That is the classical input for representation-derived examples. The novelty
@@ -176,13 +176,15 @@ The corresponding artifact chain is:
 typed SOF objects and findings
   -> .sofreport
   -> .sofaudit
-  -> .sofdecision
+  -> .sofaction
 ```
 
 A report is realization- and profile-relative. An audit additionally requires
-explicit alignment and comparison policies. A decision additionally requires
-external interpretation and action policy. No downstream artifact changes the
-mathematical meaning of an upstream carrier.
+explicit alignment and comparison policies. An action artifact additionally
+requires an admitted `ActionContext` and applicable `PolicyProfile` and stops
+at bounded candidates. Selection, authorization, observation, and effect use
+separate downstream contracts. No downstream artifact changes the mathematical
+meaning of an upstream carrier.
 
 Stronger completion statements belong to branch-qualified promotion programs.
 For example, graph paths require image--kernel nondegeneracy to promote to

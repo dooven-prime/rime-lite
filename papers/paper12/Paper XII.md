@@ -1,408 +1,579 @@
 # SOF Diagnostic Protocol
 
-### A Report Specification for Sectorized Observable Analysis
+### Realization-Relative Reports for Strict SOF Realizations and Diagnostic Analogues
 
 **WuJun Chen**
 
-Independent Researcher | RIME Project | 2026
+Independent Researcher | RIME Program | 2026
 
-*This paper is Part XII of the RIME program. Paper VIII defines the static
-Sectorized Observable Framework (SOF), Paper IX studies observable
-deformations, Paper X introduces the Universal Observable Pipeline and the SOF
-Registry, and Paper XI turns wall records into an observable classification
-layer. Paper XII asks how SOF is deployed: how does one produce a reusable
-SOF Report for a concrete system?*
+*This paper is Paper XII of the RIME program. It consumes the typed interfaces
+of Papers VIII--XI and owns the versioned single-report protocol and its
+epistemic boundary.*
 
 ***
 
 ## Abstract
 
-**Problem.** Papers VIII--XI develop the SOF object language, deformation
-geometry, registry evidence, and wall-record taxonomy. These layers answer
-what an SOF is, why different species can share one observable pipeline, and
-when observable walls or signatures appear. The remaining methodological
-question is how a new system can be analyzed through a reproducible,
-claim-qualified SOF report without treating one realization as canonical.
+**Problem.** Paper X establishes capability-sound report compilation, but a
+source system need not determine a unique sectorization, observable extraction,
+analogue mapping, or report profile. The remaining question is therefore what
+an assembled report represents about its source.
 
-**Approach.** We formulate the **SOF Diagnostic Protocol** as a deployable
-workflow whose standard output is a **SOF Report** governed by the versioned
-**SOF Report Specification (SOFRS) v1.0**. A report records sectorization,
-observable family, support matrix, bridge matrix, repair matrix, wall record,
-claim status, and failure modes. The deployment slogan is **No weights
-required. Only observables.** Internal weights may support white-box
-realizations, but they are not a protocol-level requirement for a conforming
-report. The diagnostic pipeline is:
+**Approach.** This paper defines the capability-aware **SOF Report
+Specification (SOFRS) v2.0**. An admitted adapter $\eta$ supplies a Capability
+Manifest $M_\eta$ and validated Typed SOF IR $I_\eta$; Paper X compiles them
+under $P_X$, and SOFRS faithfully assembles the result under $P_A$:
 
 $$
-\begin{aligned}
-\text{input system}
-&\to \text{sectorization}
-\to \text{observable family}\\
-&\to \text{sector audit}
-\to \text{observable shadows}
-\to \text{SOF Report}.
-\end{aligned}
+\mathcal O_{\eta,P_X}
+=\operatorname{Compile}_{v1}(M_\eta,I_\eta,P_X),
+\qquad
+\mathcal R^{\mathrm{view}}
+=\operatorname{Assemble}_{v2}(\eta,M_\eta,I_\eta,P_X,
+\mathcal O_{\eta,P_X},P_A).
 $$
 
-**Results.** SOFRS v1.0 is accompanied by nine admitted reference reports
-covering white-box, trajectory-based, and API-level behavioral diagnostics.
-Representative controls include a revision-pinned Qwen attention realization,
-a dynamic-maze wall record, and an API-only language-model report. Additional
-activation, expert-routing, diffusion, and recommender audits test portability
-of the same eight-field grammar. Five constructed failure controls distinguish
-meaningful reports from degenerate sectorizations, invisible interfaces,
-all-to-all noise, and unavailable diagnostics. Envelope validity is separated
-from stronger scientific-protocol admission, and provider failure is separated
-from model behavior.
+**Results.** Report Relativity identifies a family indexed by source snapshot,
+adapter, profiles, and version closure rather than one canonical report attached
+to the source. Assembly Faithfulness preserves every normative compiler item
+exactly once, while the Adapter Adequacy Boundary keeps protocol conformance
+distinct from scientific adequacy. A source-addressed migration preserves nine
+frozen v1 reports as diagnostic analogues, records four bounded reconstruction
+assessments, and replaces 118 legacy cutoff sentinels with typed states.
 
-**Implications.** SOFRS standardizes disclosure and serialization, not the
-choice of realization, the scientific adequacy of domain observables, or
-cross-report comparability. A report may be positive, negative, degenerate, or
-explicitly inapplicable. This makes SOF a claim-status-aware observable
-methodology while preserving the boundary between single-system reporting,
-aligned comparison, and downstream interpretation.
+**Implications.** A SOFRS report is a capability-gated,
+realization-relative epistemic artifact. Missing capabilities are not converted
+to zero findings, infinity, failed bridges, or nearby carriers; claim status,
+claim target, and certificate class remain independently typed.
 
-**Revision note.** Relative to the initial release, this version separates
-SOFRS envelope validity from scientific-protocol admission, sharpens report
-relativity and applicability levels, adds an evaluator-qualified API-level
-diagnostic, and fixes the boundary between single-report description,
-cross-report comparison, and downstream interpretation. The nine admitted
-reference reports and five constructed boundary controls use the unchanged
-SOFRS v1.0 envelope contract.
+***
+
+## Notation Table
+
+| Symbol | Meaning |
+|--------|---------|
+| $S_\sigma$ | source system at the pinned source snapshot $\sigma$ |
+| $\eta$ | admitted domain adapter selecting a realization and its capabilities |
+| $M_\eta$ | Capability Manifest supplied by the adapter |
+| $I_\eta$ | validated Typed SOF IR supplied to the Paper X compiler |
+| $P_X$ | Paper X Compiler Report Profile selecting compiler modules and items |
+| $P_A$ | Paper XII Assembly Profile governing faithful report rendering |
+| $\mathcal O_{\eta,P_X}$ | Paper X `CompilerOutput` produced by `Compile_v1` |
+| $\mathcal R^{\mathrm{norm}}$ | normative report core assembled from compiler output |
+| $\mathcal R^{\mathrm{view}}$ | assembled SOFRS report view for the declared source, adapter, profiles, and version closure |
+| $\mathcal A$ | serialized `.sofreport` artifact with canonical provenance and validation bindings |
+| $v_N,v_A$ | normative and assembly version closures |
+| `external_basis_registry` | claim-scoped registry of source-addressed external constraint packages |
+| `claim_target` | typed object of a reader-facing claim, such as an external object or protocol conformance |
+| `certificate_class` | typed scope of a certificate: Object, Protocol, or Migration/Assembly |
+| `provenance.kind` | mutually exclusive `native_generation` or `migration` provenance variant |
+
+The table records the protocol's principal mathematical and machine-contract
+objects. Complete field inventories and status mappings remain in the SOFRS
+schema and its appendices.
 
 ***
 
 ## Introduction
 
-The first eleven papers of the RIME program build a sequence of increasingly
-general observable layers. Papers I--III establish the Rubik laboratory.
-Papers IV--VII develop collision geometry, accessibility repair, commutativity
-walls, and generic completion. Papers VIII--XI then extract the SOF program:
-the object layer, deformation layer, registry layer, and wall-record
-classification layer \cite{paper8,paper9,paper10,paper11}.
+Papers VIII--XI supply the typed objects, dynamic fields, capability-aware
+compiler contracts, and wall morphology consumed here
+\cite{paper8,paper9,paper10,paper11}. This paper assumes the Paper X compiler
+result and asks the remaining epistemic and protocol-level question:
 
-Paper XII changes the question. It does not ask for another universal SOF
-theorem. It asks how SOF becomes usable.
+> **What does a report assembled from capability-sound compiler output
+> represent about its source system?**
 
-In short, Papers VIII--XI ask what SOF objects are, why their observables
-matter, and when their dynamics change; Paper XII asks how to use them.
-
-The core methodological claim is: **SOF diagnostics are sectorized observable
-reports.**
-
-The standard artifact is the **SOF Report**. Like a test report, coverage
-report, profiling report, or static-analysis report, a SOF Report is meant to
-be produced by a workflow. It is not merely explanatory prose. It records what
-sectorization was used, which observables were extracted, what support or
-repair structure was found, which wall or trajectory diagnostics are present,
-and what claim-status boundary applies. Model cards and internal algorithmic
-audit frameworks provide related precedents for structured, scope-aware
-reporting \cite{mitchell2019modelcards,raji2020accountability}.
-
-This is why Paper XII is a methods paper. SOF becomes deployable only when the
-abstract object language can be converted into a reproducible report.
-
-A conforming SOF Report need not require access to internal mechanisms; it
-requires a declared observable structure, evaluator provenance where relevant,
-and an explicit claim boundary.
-
-***
-
-## SOF Report Specification
-
-**Definition 1 (SOF Report Specification).** The **SOF Report Specification
-(SOFRS) v1.0** is the versioned machine-readable contract for the fixed-format
-output of the SOF Diagnostic Protocol. A conforming report describes one named
-system, sectorization, observable family, and claim status. Its eight required
-diagnostic fields, each with a distinct reporting role, are listed below.
-
-| Field | Meaning |
-|-------|---------|
-| \seqsplit{Sectorization} | origin, sector dimensions or probe classes, construction rule, and strict/probe realization status |
-| Observable Family | operators, matrices, kernels, transitions, or registered analogues used for the audit |
-| Support Matrix | direct cross-sector support, typically an $R_1$-type shadow when available |
-| Bridge Matrix | typed length-two, word, Lie/commutator, routing, or explicitly labeled behavioral bridge analogue; the bridge semantics must be named |
-| Repair Matrix | observed frozen-to-active pairs, expert reactivations, or protocol failure-to-success transitions, with their repair layer or step; this field is descriptive rather than an action recommendation |
-| Wall Record | jumps, terminal boundaries, plateau events, collision loci, and, when a deformation exists, the associated trajectory summary |
-| Claim Status | one controlled claim class from the vocabulary below |
-| Failure Modes | applicability limitations, degeneracy, unavailable diagnostics, evaluator boundaries, or other warnings about interpreting the report |
-
-The controlled `Claim Status` vocabulary is `theorem`, `evidence`,
-`diagnostic`, `proxy_only`, `boundary`, `failure`, and `negative_control`.
-Human-readable qualifications belong in `claim_note`, not in the controlled
-status value.
-
-### Protocol Stack Boundary
-
-SOFRS is the **diagnostic language** of the protocol stack. Its unit is one
-named system, run, snapshot, or parameterized trajectory:
-
-$$
-\text{system or run}
-\longmapsto
-\mathcal R_{\mathrm{SOF}}.
-$$
-
-It does not align two independent reports, compute a cross-report difference,
-interpret that difference as an action consequence, or select a policy. Those
-operations belong to subsequent protocol layers:
-
-| Paper | Input and operation | Artifact |
-|-------|---------------------|----------|
-| XII | describe one system, run, snapshot, or internal trajectory | `.sofreport` |
-| XIII | align two reports and compute an Audit Signature | `.sofaudit` |
-| XIV (downstream) | interpret signature coordinates and derive candidate actions | `.sofaction` |
-
-A `Wall Record` may contain before/after values or a trajectory internal to one
-report when a deformation path is part of the audited system. This is not the
-same object as Paper XIII alignment between two separately emitted reports.
-
-Likewise, `Repair Matrix` records repair that was observed in the audited data.
-It does not prescribe `repair`, `monitor`, `preserve`, `contain`, or `validate`
-actions. Those are downstream Action Semantics.
-
-### Observable-Family Typing
-
-For deployable diagnostics, the observable family should be classified by
-what it measures rather than stored as an undifferentiated list. Paper XII
-uses three primary families:
-
-| Family | Typical observables | Role in the report |
-|--------|---------------------|--------------------|
-| Structural observables | operator-block support, graph or routing incidence, transition or kernel entries; at an external interface, JSON/XML validity, schema consistency, or valid tool-call emission | measure realized cross-sector structure or conformance to an externally specified interface structure |
-| Behavioral observables | instruction following, task completion, task-scoped groundedness, preference or protocol alignment | measure whether the response preserves the requested task and behavioral constraint |
-| Failure observables | refusal, grounded-answer failure, format collapse, prompt-injection failure | record named externally visible system events under a specified evaluator |
-
-Repair is not a fourth observable family. It is a transition recorded in the
-**Repair Matrix**, for example schema repair, few-shot repair, tool repair, or
-private-expert reactivation. These labels type observable entries; they are not
-universal invariants. In particular, task-scoped groundedness is not a general
-hallucination detector, and protocol-level repair is not identified with
-Lie-depth $D$-repair. The report must name the evaluator, task scope, and
-probe/evaluation protocol for every behavioral or failure observable.
-
-Failure observables and the top-level `Failure Modes` field are distinct.
-Failure observables are measured outputs of the audited system. `Failure Modes`
-records limitations of the report, realization, evaluator, or protocol itself.
-
-The fields are fixed even when their values are negative or unavailable. A
-static transformer audit records `Wall Record: not applicable; no deformation
-path supplied`. A diffusion audit records its trajectory inside `Wall Record`.
-A failure case still emits all eight fields, with an explicit failure status.
-The point is a stable report grammar that places unlike systems in a common
-syntax. Pairwise comparability still requires the explicit sector and observable
-alignment introduced in Paper XIII.
-
-Every artifact also carries `sofrs_version: "1.0"`. Human-readable
-qualification belongs in the optional `claim_note` field rather than in the
-controlled status value. The machine-readable artifact uses the `.sofreport`
-extension. The intended convention is one report per experiment or named
-system, for example `maze.sofreport`, `transformer.sofreport`,
-`diffusion.sofreport`, or `qwen.sofreport`.
-
-Implementations should additionally provide stable metadata such as
-`report_id`, `system`, applicability or realization status, and provenance for
-data, model, evaluator, thresholds, and code version. These are metadata around
-the eight diagnostic fields, not a ninth diagnostic layer. They are recommended
-for reproducibility and become essential when a report is referenced by the
-Paper XIII alignment layer.
-
-### Envelope Validity and Protocol Admission
-
-SOFRS v1.0 intentionally separates two validation questions. **Envelope
-validity** means that an artifact satisfies the frozen JSON Schema: the eight
-fields are present, `claim_status` belongs to the controlled vocabulary, and
-superseded or downstream top-level fields are absent. Envelope validity alone
-does not establish that the scientific protocol has been followed.
-
-**Paper XII protocol admission** is the stronger profile. It additionally
-requires a named `system`, stable `report_id`, explicit `claim_note`, nonempty
-failure boundary, and a wall result or explanation. A Level III behavioral
-report must also identify its source interface, evaluator, evaluator protocol,
-and evaluator scope. If Support, Bridge, and Repair are all unavailable, a
-boundary or failure report must explicitly name the unavailable diagnostics and
-the reason. Formally,
-
-$$
-\text{SOFRS envelope-valid}
-\not\Longrightarrow
-\text{Paper XII protocol-admissible}.
-$$
-
-The canonical envelope schema, independent admission profile, and executable
-validation checks are specified by Artifacts B1--B4 in Appendix B.
-
-***
-
-## SOF Report Protocol
-
-The operational pipeline is:
-
-$$
-\begin{aligned}
-\text{input}
-&\to \text{compatible sectorization}
-\to \text{observable family}\\
-&\to \text{support audit}
-\to \text{bridge audit}
-\to \text{repair audit}\\
-&\to \text{wall record}
-\to \text{SOF Diagnostic Report}.
-\end{aligned}
-$$
-
-![SOF Diagnostic Protocol. Eight protocol stages transform a named input into
-a fixed-format SOF Diagnostic Report. Trajectory summaries belong to Wall
-Record when a deformation path is supplied; the report places systems in a
-common output grammar but does not itself perform cross-report alignment or
-comparison.](../../figures/paper12/fig1_sof_diagnostic_protocol.png)
-
-The protocol is executed in the following order:
-
-1. **Input:** name the system, interface, state space, or deformation path.
-2. **Sectorization:** construct compatible sectors or label probe sectors.
-3. **Observable extraction:** name the operators, kernels, outputs, or metrics.
-4. **Support audit:** compute direct cross-sector support.
-5. **Bridge audit:** compute a named word, Lie, length-two, routing, or
-   behavioral bridge and declare its semantics.
-6. **Repair audit:** record observed frozen-to-active transitions in the Repair
-   Matrix without inferring an intervention command.
-7. **Wall record:** record jumps and trajectories when a path has been supplied.
-8. **Report:** emit the eight fields with claim status and failure modes.
-
-The pipeline assumes neither a representation-theoretic origin nor a universal
-source of sectors. In the Rubik laboratory, sectors come from joint spectral
-geometry. In control systems, they may come from controllability flags. In
-finite Markov systems, they may come from state partitions or absorbing
-classes. In neural systems, they may come from activation patterns, attention
-heads, token groups, residual subspaces, or expert routing.
-
-The common requirement is a stable information decomposition: a sectorization
-in which information flow, influence, reachability, hitting, activation, or
-propagation can be measured.
-
-### Domain Realization Responsibility
-
-SOFRS standardizes the diagnostic artifact; it does not standardize the native
-scientific meaning of every possible sectorization or observable family. A
-domain application therefore has two distinct responsibilities:
-
-| Responsibility | What must be supplied |
-|----------------|-----------------------|
-| SOF protocol | field semantics, artifact versioning, validation, claim status, failure boundaries, and reproducibility requirements |
-| Domain realization | source-to-sector construction, observable selection, thresholds, native constraints, and domain interpretation |
-| Joint analysis | applicability level, realization justification, known blind spots, and the scope of conclusions supported by the report |
-
-**Principle (Domain Realization Principle).** A conforming SOF Report records a
-declared realization; schema validity and protocol admission do not by
-themselves establish that the realization is scientifically adequate for its
-source domain. That adequacy requires domain-specific justification and may
-require subject-matter expertise.
-
-This division is intentional. SOF supplies a common diagnostic language and
-infrastructure, while domain specialists determine which decompositions and
-measurements preserve the distinctions that matter in their systems. A weak
-realization can produce a formally valid but scientifically uninformative
-report, and Failure Modes must say so.
-
-***
-
-## Report Relativity
-
-A SOF Diagnostic Report is never absolute. It is always relative to the
-declared sectorization, observable family, and reporting specification.
-
-The report is therefore not obtained directly from a source system $S$. One
-first chooses and justifies a realization
-
-$$
-\mathcal F_{\eta}
-=
-\operatorname{Realize}_{\eta}(S)
-=
-(V_{\eta},\{Q_i^{\eta}\},\mathcal X_{\eta}),
-$$
-
-where $\eta$ records the realization choices: retained finite space,
-sectorization, observable extraction, truncation, thresholds, and any other
-source-to-SOF decisions. A reporting specification $\Theta_{\mathrm{rep}}$
-then determines how the realized shadows are serialized, aggregated, qualified,
-and assigned claim status:
-
-$$
-\mathcal R_{\eta,\Theta_{\mathrm{rep}}}(S)
-=
-\operatorname{Report}_{\Theta_{\mathrm{rep}}}(\mathcal F_{\eta}).
-$$
-
-The complete chain is
+The answer is not a canonical map $S\mapsto\mathcal R$. A source may admit
+multiple scientifically defensible sectorizations, observable extractions,
+analogue mappings, thresholds, cutoffs, or Compiler Profiles. The protocol
+therefore retains the declared adapter, compiler-profile, and assembly-profile
+choices
 
 $$
 S
-\xrightarrow{\operatorname{Realize}_{\eta}}
-\mathcal F_{\eta}
-\xrightarrow{\operatorname{Report}_{\Theta_{\mathrm{rep}}}}
-\mathcal R_{\eta,\Theta_{\mathrm{rep}}}(S).
+\xrightarrow{\operatorname{Adapter}_{\eta}}
+(M_\eta,I_\eta)
+\xrightarrow{\operatorname{Compile}_{v1}(\cdot,P_X)}
+\mathcal O_{\eta,P_X}
+\xrightarrow{\operatorname{Assemble}_{v2}(\cdot,P_A)}
+\mathcal R^{\mathrm{view}}_{\sigma,\eta,P_X,P_A,v_N,v_A}(S).
 $$
 
-This distinguishes three objects that must not be identified:
+Different $\eta$, $P_X$, or $P_A$ may therefore yield different valid reports.
+By contrast, invalidity arises from failed admission, evidence, policy, or
+promotion rules.
+
+This paper has three governing contributions:
+
+1. **Report Relativity** separates semantic report equality, canonical artifact
+   equality, aligned comparability, and realization invariance.
+2. **Adapter Adequacy Boundary** separates compiler soundness from scientific
+   adequacy of the selected realization.
+3. **Versioned Reporting Protocol** defines SOFRS v2.0, with Assembly
+   Faithfulness as its central executable invariant.
+
+***
+
+## Related Work and Novelty Boundary
+
+**Program interfaces.** This paper consumes the typed object, deformation,
+compiler, Registry, and wall-record interfaces of Papers VIII--XI without
+re-owning them \cite{paper8,paper9,paper10,paper11}. Alignment and pairwise
+comparison begin only in Paper XIII; interpretation begins only in Paper XIV.
+
+**Reporting and provenance precedents.** Test, coverage, profiling, and
+static-analysis reports motivate a structured record rather than a positive
+example alone. Model cards and end-to-end algorithmic audits provide closer
+precedents for source, scope, limitation, and accountability disclosure
+\cite{mitchell2019modelcards,raji2020accountability}. SOFRS specializes that
+discipline to carrier-qualified mathematical claims, typed unavailability,
+claim targets, certificate classes, and digest-closed compiler/assembly
+provenance.
+
+**Diagnostic domain contexts.** Attention, routing, and diffusion studies
+motivate bounded examples of sectorization-like decompositions
+\cite{vaswani2017attention,clark2019bertattention,qwen2024qwen25,ho2020ddpm,
+dai2024deepseekmoe,deepseekai2024v3}; they do not supply a general
+explainability or load-balancing theorem here.
+
+**Novelty boundary.** The contribution is a realization-relative,
+carrier-qualified, digest-closed reporting protocol with faithful assembly and
+typed negative boundaries. Protocol conformance neither re-proves Paper X nor
+establishes adapter adequacy.
+
+***
+
+## Inherited Paper X Compiler Contracts
+
+This paper uses four Paper X results as inherited infrastructure rather than
+claiming them again. The compiler theorem invoked here is bound specifically
+to **Capability Manifest v1.0**, **Typed SOF IR v1.0**, and **Compiler Report Profile
+v1.0**; a future major contract version requires a new soundness statement.
+
+| Object or result | Owner | Paper XII role |
+|------------------|-------|----------------|
+| Capability Manifest v1.0 | Paper X | instantiate source capabilities and unavailable carriers |
+| Typed SOF IR v1.0 | Paper X | populate typed objects, findings, evidence, and audited derivations |
+| Compiler Report Profile v1.0 ($P_X$) | Paper X | select admissible compiler modules and items |
+| Capability-Sound Report Compilation | Paper X | assume compiler soundness under the versioned contract hypotheses |
+| Report Relativity | Paper XII | state how adapter and profile choices index valid reports |
+| Adapter Adequacy Boundary | Paper XII | separate compiler soundness from scientific adequacy and source fidelity |
+| Versioned Reporting Protocol (SOFRS v2.0) | Paper XII | define strict/analogue report structure, present graceful degradation, and govern migration, deployment, and failure boundaries |
+| SOFRS Assembly Profile v2.0 ($P_A$) | Paper XII | render one fixed `CompilerOutput` without changing its normative items |
+
+For the inherited compiler contracts, the Manifest contains no result, the IR
+selects no presentation, and the Profile creates no evidence. Paper X proves
+that an affirmative compiled conclusion must come from an eligible IR claim or
+finding after its capability, carrier, policy, evidence, derivation, and
+promotion checks pass \cite{paper10}. A diagnostic analogue cannot instantiate
+a strict-SOF theorem.
+
+This paper asks a different question: how the resulting `CompilerOutput` is
+assembled, serialized, migrated, and presented as a single-system report.
+
+![SOFRS v2 compile and assembly stack. Paper X compiles capability-gated
+normative items from a Manifest, Typed SOF IR, and Compiler Profile. SOFRS
+assembles the fixed CompilerOutput under an Assembly Profile without adding,
+deleting, duplicating, or altering a normative item.](../../figures/paper12/fig1_compile_assemble_protocol_stack.png)
+
+***
+
+## Admission Modes and Axes
+
+### Admission Modes
+
+Each Manifest and IR declares exactly one `record_kind`.
+
+| Record kind | Minimum admission data | Permitted conclusion |
+|-------------|------------------------|----------------------|
+| `strict_sof` | finite complex $V$, complete marked projectors $\{Q_i\}$, labelled alphabet $Y$, structural certificate, and declared conventions | carrier-qualified SOF findings and compatible theorem or computational instances |
+| `diagnostic_analogue` | source and evaluator provenance, stable descriptors, an analogue mapping, and a negative SOF boundary | structurally analogous diagnostics only |
+
+The strict core is
+
+$$
+\mathcal F_{\mathrm{op}}=(V,\{Q_i\}_{i\in I},Y).
+$$
+
+Declaring this core does not automatically declare route, word, closure,
+Lie/Hall, or deformation capabilities. Conversely, a diagnostic analogue does
+not become strict by accumulating observations. Promotion requires a new
+adapter construction and structural validation of explicit $(V,Q,Y)$ data.
+
+A strict record may carry a `proxy_diagnostic` side module. The record remains
+strict because its core is strict; the proxy remains a proxy because it is
+carrier-qualified. One record cannot simultaneously declare
+`diagnostic_analogue`.
+
+### Orthogonal Admission and Claim Axes
+
+The protocol separates five questions.
+
+| Axis | Controlled values | Question answered |
+|------|-------------------|-------------------|
+| record kind | `strict_sof`, `diagnostic_analogue` | what mathematical kind of report is admitted? |
+| source-map status | native; adapter-derived; migrated | how were the reported objects or descriptors obtained? |
+| evidence status | result state plus reader-facing claim status | what was established, certified, observed, left open, or unavailable? |
+| claim target | external mathematical object; empirical domain system; representation interface; protocol conformance; migration consistency | what kind of object does the statement concern? |
+| certificate class | object; protocol conformance; migration/assembly | what does a finite certificate actually certify? |
+
+The source-map vocabulary records provenance of construction rather than
+scientific quality. Consequently, `heuristic` is a pre-admission
+adapter-development label, not a valid status in an assembled SOFRS report; by
+definition, it indicates that no admissible strict or analogue record has yet
+been constructed. Every admitted source mapping must
+instead identify its adapter, construction, justification, limitations, and
+source artifacts.
+
+A result state records what happened: `DECLARED`, `ESTABLISHED`, `CERTIFIED`,
+`OBSERVED`, `UNREACHED_AT_CUTOFF`, `NOT_APPLICABLE`, or `NOT_DECLARED`. The
+independent reader-facing claim status uses exactly four levels: Theorem,
+Computational Certificate, Computational Observation, and Research Program.
+
+These pairings are constrained. `ESTABLISHED` accompanies a theorem,
+`CERTIFIED` accompanies a reproducible finite certificate, and `OBSERVED`
+accompanies a bounded computational observation. `UNREACHED_AT_CUTOFF`
+requires an explicit cutoff policy and never denotes exact infinity.
+`NOT_DECLARED` and `NOT_APPLICABLE` carry no positive claim status.
+
+Evidence strength alone is insufficient. A `Computational Certificate` in the
+inherited Paper X vocabulary must therefore be refined by a certificate class:
+
+| Certificate class | Certified object | Does not establish |
+|-------------------|------------------|--------------------|
+| Object Certificate | a finite matrix, graph, depth, trajectory, or other source-level fact independently recomputed from source artifacts | generalization, causal interpretation, or adapter optimality |
+| Protocol Certificate | satisfaction of a declared schema, type, policy, provenance, or compiler contract | truth of the represented scientific claim |
+| Migration Certificate | preservation of declared invariants across compilation, assembly, or version conversion | recomputation of the source experiment |
+
+Here, Protocol Certificate abbreviates Protocol Conformance Certificate, and
+Migration Certificate abbreviates Migration/Assembly Certificate. The machine
+fields are `claim_target`, `certificate_class`, and
+`classification_source`. Paper X v1 does not contain `claim_target`; SOFRS must
+therefore identify whether the classification came from a domain adapter,
+Assembly Profile, or migration adapter. It must not present a report-layer
+classification as inherited compiler content.
+
+The protocol uses the following compatibility matrix:
+
+| Claim target | Certificate class | Authorized classification sources |
+|--------------|-------------------|-----------------------------------|
+| external mathematical object | Object | compiler IR, domain adapter, independent validator, or external evaluator |
+| empirical domain system | Object, or none for an observation | domain adapter, independent validator, or external evaluator |
+| representation interface | Protocol, or none for a bounded adapter observation | compiler IR, assembly profile or validator, domain adapter, or migration adapter |
+| protocol conformance | Protocol | compiler IR, assembly profile or validator, or independent validator |
+| migration consistency | Migration/Assembly | migration adapter, assembly validator, or independent validator |
+
+In particular, an Assembly Profile cannot classify an external mathematical
+object as true. The validator also enforces the exact pairings
+`ESTABLISHED`/Theorem, `CERTIFIED`/Computational Certificate, and
+`OBSERVED`/Computational Observation.
+
+### Claim-Scoped External Basis
+
+Protocol conformance is not an external scientific check. SOFRS therefore
+associates each report with a finite registry of named external-basis packages
+at four distinct semantic levels: source identity, object-level recomputation,
+realization/structure validation, and domain semantic adequacy. Each claim
+cites only the packages and constraints used for that claim; satisfaction is
+never inherited merely because another claim cites the same report.
+
+Each package is satisfied, partial, not assessed, or not applicable, and every
+satisfied package binds source-addressed evidence. A report may therefore be
+protocol-valid while the object-level or domain-level basis of a particular
+claim remains unresolved. In the migration controls, for example, the frozen
+source identity is satisfied while independent object recomputation and
+semantic adequacy remain unassessed.
+
+The registry constrains certificate admission rather than authorizing new
+scientific claims. An Object Certificate requires a satisfied object-level
+basis with independently checkable evidence; strict-SOF admission requires a
+satisfied structure-level basis. Without those conditions, the result remains
+protocol/representation evidence or carries an unresolved external basis. The
+complete machine mapping, identifiers, and status vocabulary are given in
+Appendix A.
+
+This is an admissibility condition for certificate labeling, not a theorem of
+scientific adequacy. A domain adapter remains responsible for choosing a
+meaningful source realization and baseline. SOFRS records that responsibility,
+the evidence supplied for it, and the negative boundary when the evidence is
+absent.
+
+Record kind, source-map status, and evidence status are independently
+declared. A strict object may support only a bounded observation, while an
+analogue may carry a reproducible finite certificate about its own evaluator
+outputs. What the analogue cannot do is instantiate a strict-SOF theorem.
+
+**Principle (Admission Separation).** Forgetting a strict carrier may produce a
+separate analogue export, but that operation changes the record kind and must
+be performed by an explicit adapter. It is not an inclusion or promotion
+inside one hierarchy.
+
+![Claim-scoped epistemic boundary. External-basis packages separately record
+source identity, object recomputation, structure validation, and domain
+adequacy. Each claim cites only its own basis packages; protocol conformance
+does not supply missing external scientific support.](../../figures/paper12/fig2_claim_scoped_epistemic_boundary.png)
+
+## Report Relativity
+
+**Definition 1 (SOFRS v2.0 Report Protocol).** Let $S_\sigma$ be a canonically
+identified source snapshot, let $\eta$ be an admitted domain adapter producing
+a schema-valid Capability Manifest $M_\eta$ and validated Typed SOF IR
+$I_\eta$, let $P_X$ be an applicable Paper X Compiler Profile, and let $P_A$
+be a compatible Paper XII Assembly Profile. Paper X first produces
+
+$$
+\mathcal O_{\eta,P_X}
+=
+\operatorname{Compile}_{v1}(M_\eta,I_\eta,P_X).
+$$
+
+The normative report core is
+
+$$
+\mathcal R^{\mathrm{norm}}_{\sigma,\eta,P_X,v_N}
+=
+\operatorname{NormCore}_{v_N}
+(\sigma,\eta,M_\eta,I_\eta,P_X,\mathcal O_{\eta,P_X}),
+$$
+
+where $v_N$ fixes the normative compiler, claim, degradation, and report-core
+contracts. The assembled report view is
+
+$$
+\mathcal R^{\mathrm{view}}_{\sigma,\eta,P_X,P_A,v_N,v_A}
+=
+\operatorname{Assemble}_{v2}
+(\eta,M_\eta,I_\eta,P_X,\mathcal O_{\eta,P_X},P_A;v_N,v_A),
+$$
+
+where $v_A$ fixes the assembly contract. Finally, a serialization contract
+$v_S$ produces
+
+$$
+\mathcal A_{\sigma,\eta,P_X,P_A,v_N,v_A,v_S}
+=
+\operatorname{Serialize}_{v_S}
+(\mathcal R^{\mathrm{view}}_{\sigma,\eta,P_X,P_A,v_N,v_A}).
+$$
+
+Assembly is defined mathematically on typed objects, whereas the artifact
+protocol accepts immutable references to the source snapshot, adapter
+implementation, Manifest, IR, Compiler Profile, `CompilerOutput`, and Assembly
+Profile, each with its version and digest. Because a serialized report contains
+both normative and non-normative fields, the Assembly Profile declares which
+view fields remain non-normative.
+
+Write
+
+$$
+\operatorname{NormItems}(\mathcal R)
+=
+\operatorname{ClaimItems}(\mathcal R)
+\sqcup
+\operatorname{DegradationItems}(\mathcal R).
+$$
+
+Valid assembly requires a type- and identity-preserving bijection
+
+$$
+\alpha:\mathcal O_{\eta,P_X}
+\overset{\cong}{\longrightarrow}
+\operatorname{NormItems}(\mathcal R^{\mathrm{norm}}_{\sigma,\eta,P_X,v_N}).
+$$
+
+Each rendered item retains a `source_output_item_id`. Claim items remain claim
+items; degradation items remain degradation items. Adapter or application
+failure modes are separate report metadata and never substitute for compiler
+degradation items.
+
+**Protocol Invariant 1 (Assembly Faithfulness).** For every validated input closure,
+$\operatorname{Assemble}_{v2}$ neither adds, deletes, duplicates, nor changes a
+normative `CompilerOutput` item. It adds only the versioned envelope,
+provenance, alignment-ready metadata, migration metadata, and presentation
+fields licensed by $P_A$.
+
+**Verification argument.** The assembly rules traverse the ordered `CompilerOutput.items`
+array once. A `ClaimItem_v1` produces exactly one rendered claim item and a
+`DegradationItem_v1` produces exactly one rendered degradation item, both with
+the source item identity and kind retained. No other rule constructs a
+normative item. The validator independently recomputes
+$\operatorname{Compile}_{v1}$, reconstructs the report with
+$\operatorname{Assemble}_{v2}$, checks object equality, and verifies that the
+item-binding relation is a bijection. $\square$
+
+The source-to-report chain is therefore
+
+$$
+S
+\xrightarrow{\operatorname{Adapter}_{\eta}}
+(M_\eta,I_\eta)
+\xrightarrow{\operatorname{Compile}_{v1}(\cdot,P_X)}
+\mathcal O_{\eta,P_X}
+\xrightarrow{\operatorname{Assemble}_{v2}(\cdot,P_A)}
+\mathcal R^{\mathrm{view}}_{\sigma,\eta,P_X,P_A,v_N,v_A}.
+$$
+
+Here $\eta$ may construct either a strict realization
+
+$$
+\mathcal F_\eta
+=
+(V_\eta,\{Q_i^\eta\},Y_\eta)
+$$
+
+or a diagnostic analogue with an explicit source mapping and negative strict
+boundary. The choice records retained data, labels, extraction rules, and
+source-to-report decisions.
+
+**Proposition 1 (Report Relativity).** SOFRS v2.0 defines a family of normative
+report cores $\{\mathcal R^{\mathrm{norm}}_{\sigma,\eta,P_X,v_N}\}$ and
+assembled views
+$\{\mathcal R^{\mathrm{view}}_{\sigma,\eta,P_X,P_A,v_N,v_A}\}$, not a
+canonical map from an unversioned source $S$ to one report. A canonical
+normative report requires canonical identification of the source snapshot,
+admitted adapter, Compiler Profile, and normative version closure together
+with deterministic normative construction. A canonical view additionally
+requires an Assembly Profile and assembly version. Canonical artifact identity
+also requires a canonical serialization contract and encoding.
+
+**Argument.** Definition 1 makes the assembled report a function of the declared
+input closure
+
+$$
+(\sigma,\eta,M_\eta,I_\eta,P_X,P_A,
+\mathcal O_{\eta,P_X},v_N,v_A)
+$$
+
+rather than of $S$ alone. Distinct admitted adapters may
+select different sectorizations, alphabets, analogue mappings, or policies,
+and distinct Compiler Profiles may select different claim and degradation
+items from the same validated IR. Assembly Profiles may change only
+non-normative presentation. The Paper X contracts make each compiler output
+sound relative to its declarations; Protocol Invariant 1 preserves that output but does
+not canonically select the source snapshot, adapter, profiles, or version
+closure. Thus a unique report does not follow from the source system alone.
+$\square$
+
+Semantic report equality is equality of normative report cores. Equivalently,
+it quotients assembled views by fields declared non-normative by the Assembly
+Profile. Two views may therefore differ in licensed presentation metadata while
+remaining semantically equal. Canonical artifact equality is stronger: it
+requires equal canonical bytes, or equivalently equal digests under the fixed
+serialization contract.
+
+The proposition separates three non-implications:
+
+$$
+\begin{aligned}
+\text{same source} &\not\Longrightarrow \text{same realization},\\
+\text{same realization} &\not\Longrightarrow \text{same Compiler Profile},\\
+\text{different reports} &\not\Longrightarrow
+   \text{one report is erroneous}.
+\end{aligned}
+$$
+
+Only a contract violation, unsupported promotion, failed evidence condition,
+or false source declaration makes a report **protocol-inadmissible**. Different valid
+choices alone do not.
+
+The five layers must not be identified:
 
 | Layer | Object | Role |
 |-------|--------|------|
 | Source | $S$ | the underlying physical, algebraic, computational, or behavioral system |
-| Realization | $\mathcal F_{\eta}$ | the chosen finite SOF object or diagnostic realization |
-| Report | $\mathcal R_{\eta,\Theta_{\mathrm{rep}}}$ | the versioned protocol artifact derived from that realization |
+| Realized object | $\mathcal F_\eta$ | the typed strict SOF realization or declared diagnostic analogue represented in $(M_\eta,I_\eta)$ |
+| Compiler output | $\mathcal O_{\eta,P_X}$ | Paper X claim and degradation items selected by $P_X$ |
+| Normative report core | $\mathcal R^{\mathrm{norm}}_{\sigma,\eta,P_X,v_N}$ | compiler-derived claims and degradation items with normative envelope fields |
+| Assembled report view | $\mathcal R^{\mathrm{view}}_{\sigma,\eta,P_X,P_A,v_N,v_A}$ | the faithfully assembled single-system view, including licensed non-normative presentation fields |
+| Serialized artifact | $\mathcal A_{\sigma,\eta,P_X,P_A,v_N,v_A,v_S}$ | a versioned `.sofreport` encoding with digests and provenance |
 
-The SOF Report is a genuine object of the diagnostic protocol, but it is not the
-source object itself and it is not an intrinsic, unique image of that source.
-It is a derived epistemic artifact.
+The SOF Report is a genuine protocol object, but it is not the source object
+itself, the realized object, or the serialized file. It is a
+capability-gated, realization-relative epistemic object; the `.sofreport`
+artifact is its versioned serialization.
+
+This distinction fixes the single-report epistemic boundary:
+
+> A single-system SOFRS report, absent an external reference, specification,
+> or comparison contract, describes the declared realization but does not by
+> itself establish comparative conformance or correctness.
+
+Formal proofs, structural certificates, and internal contract checks can
+establish claims within the declared realization. They do not, without an
+external comparison datum, establish that this realization conforms to a
+different model, implementation, or specification.
 
 The conceptual division is concise:
 
 > **Sectorization determines the ontology of the report; observable families
 > determine its epistemology.**
 
-Sectorization declares which parts or information classes exist for the
-analysis. The observable family declares which relations, transitions, or
-responses can be detected between those parts. The reporting specification
-declares tolerances, depth semantics, aggregation, evaluator provenance, and
-claim boundaries. Altering any of these may alter the report without altering
-the underlying source system.
-
-**Principle (Report Relativity Principle).** Two SOF Reports derived from the
-same underlying system need not coincide, because realization choices may alter
-the measured sectors, observable families, reporting semantics, or all three.
-Consequently, equality of reports is not a primitive scientific notion;
-comparability requires explicit alignment.
+For a strict record, sectorization declares the marked parts and the labelled
+alphabet declares operative witnesses. For an analogue, descriptors and their
+mapping declare what is being compared without asserting projector semantics.
+The Manifest and IR declare conventions, policies, provenance, and claim
+boundaries. Altering any of these may alter the report without altering the
+underlying source system.
 
 For two admissible realizations of the same source,
 
 $$
+\begin{aligned}
 \mathcal R_1
-=
-\operatorname{Report}_{\Theta_1}
-(\operatorname{Realize}_{\eta_1}(S)),
-\qquad
+&=
+\operatorname{Assemble}_{v2}
+(\eta_1,M_{\eta_1},I_{\eta_1},P_{X,1},\mathcal O_{\eta_1,P_{X,1}},P_{A,1}),\\
 \mathcal R_2
-=
-\operatorname{Report}_{\Theta_2}
-(\operatorname{Realize}_{\eta_2}(S)),
+&=
+\operatorname{Assemble}_{v2}
+(\eta_2,M_{\eta_2},I_{\eta_2},P_{X,2},\mathcal O_{\eta_2,P_{X,2}},P_{A,2}).
+\end{aligned}
 $$
 
 one may have $\mathcal R_1\neq\mathcal R_2$ even though the source $S$ is
-unchanged. The discrepancy may come from $\eta_1\neq\eta_2$, from
-$\Theta_1\neq\Theta_2$, or from both. A report difference is therefore not, by
+unchanged. The discrepancy may come from $\eta_1\neq\eta_2$, from different
+Compiler Profiles or version closures, or from non-normative presentation
+choices. A report difference is therefore not, by
 itself, a system difference or a defect.
 
-Three notions should be kept separate:
+Four notions should be kept separate:
 
-1. **Literal report equality:** two serialized artifacts have the same fields
-   and values. This is reproducibility at fixed realization and specification.
-2. **Aligned report comparability:** sectors, observables, depth semantics, and
+1. **Semantic report equality:** two normative report cores are equal after
+   parsing under the same contract and canonical semantic normalization.
+   Fields declared non-normative by the Assembly Profile are quotiented out.
+2. **Canonical artifact equality:** two canonical serializations have identical
+   bytes, equivalently the same digest under the declared algorithm. Equal
+   JSON values with different key order or encoding need not have equal raw
+   bytes before canonicalization.
+3. **Aligned report comparability:** sectors, observables, depth semantics, and
    normalization are related by explicit maps. This is the object of Paper XIII.
-3. **Realization invariance:** a statement survives a declared class of
+4. **Realization invariance:** a statement survives a declared class of
    admissible realizations. This is a stronger theorem-level property and must
    be proved rather than assumed.
+
+### Alignment-Ready Metadata
+
+SOFRS v2.0 does not perform pairwise alignment, but it must preserve enough
+typed provenance for a later alignment protocol to determine whether alignment
+is possible. Each report therefore exposes:
+
+1. adapter, Compiler Profile, and Assembly Profile identifiers and versions;
+2. sector labels, provenance, and available ranks or dimensions;
+3. observable labels and operative semantics;
+4. declared carrier kinds;
+5. word, Hall, direction, depth, and projector-letter conventions when
+   applicable;
+6. cutoff, saturation, threshold, norm, and trajectory policies when
+   applicable;
+7. comparison keys or external identifiers;
+8. source-artifact digests.
+
+These fields are **alignment-ready metadata**, not an alignment map.
+Paper XIII owns the actual sector and observable correspondences
+$(\Phi_{\mathrm{sec}},\Phi_{\mathrm{obs}})$ and the comparison specification
+$\Theta$. Missing or incompatible metadata may make a later comparison
+`INCOMPARABLE`; it must not be repaired by label guessing.
 
 The need for Paper XIII now follows directly. If reports were absolute and
 canonical, alignment would be bookkeeping. Because reports are
@@ -420,184 +591,188 @@ $$
 declared realizations and therefore multiple versioned SOF Reports. A report
 difference is not by itself a source-system difference: sector, observable,
 and comparison alignment are required before an Audit Signature is
-formed.](../../figures/paper12/fig5_report_relativity_alignment.png)
+formed.](../../figures/paper12/fig3_report_relativity_alignment.png)
+
+***
+
+## Adapter Adequacy Boundary
+
+Paper X proves conditional compiler soundness: given valid declarations and
+evidence, compilation does not manufacture a claim or cross a forbidden
+carrier boundary. It does not prove that an adapter is scientifically adequate
+for its source domain.
+
+**Principle 1 (Adapter Adequacy Boundary).** Compiler soundness is internal to
+the declared contracts. It does not imply that the selected strict realization
+or analogue mapping is scientifically adequate for the source question.
+Adequacy remains an explicit domain-adapter obligation; it cannot be inferred
+from schema validity alone.
+
+An adapter must therefore justify:
+
+1. **source fidelity:** which source data are retained, transformed, or
+   discarded;
+2. **sectorization justification:** why the marked parts or analogue
+   descriptors are meaningful for the stated question;
+3. **observable adequacy:** what the alphabet or evaluator can and cannot
+   detect;
+4. **policy justification:** why thresholds, norms, cutoffs, sampling, and
+   truncation are appropriate;
+5. **negative-boundary completeness:** which nearby interpretations and
+   promotions are explicitly excluded;
+6. **provenance:** which inputs, code, environments, and artifacts support the
+   record.
+
+| Owner | Responsibility |
+|-------|----------------|
+| Paper X compiler contracts | internal admission, capability, policy, evidence, derivation, and promotion soundness |
+| Paper XII protocol | report organization, unavailable-state presentation, provenance, and migration discipline |
+| Domain adapter | scientific adequacy of the source realization or analogue mapping |
+
+A schema-valid adapter may still be scientifically weak or misleading. SOFRS
+makes that choice inspectable; it cannot replace domain judgment.
+
+***
+
+## Versioned SOFRS v2.0 Reporting Protocol
+
+The protocol assembles one validated Paper X compiler output into:
+
+1. a versioned header and contract references;
+2. an admission statement;
+3. a capability and unavailable-module summary;
+4. typed findings with carrier, semantic convention, and run policy;
+5. evidence, certificate, and artifact references;
+6. unresolved or forbidden derivation boundaries;
+7. limitations and negative claims;
+8. the canonical `.sofreport.json` serialization and its referenced artifact
+   manifest.
+
+The operational pipeline has a thin common waist:
+
+$$
+\begin{aligned}
+\text{source}
+&\to \text{domain adapter}\\
+&\to (M_\eta,I_\eta)\\
+&\to \text{typed validation}\\
+&\to \mathcal O_{\eta,P_X}=\operatorname{Compile}_{v1}(M_\eta,I_\eta,P_X)\\
+&\to \operatorname{Assemble}_{v2}(\cdot,P_A)\\
+&\to \mathcal R^{\mathrm{view}}_{\sigma,\eta,P_X,P_A,v_N,v_A}\\
+&\to \mathcal A_{\sigma,\eta,P_X,P_A,v_N,v_A,v_S}.
+\end{aligned}
+$$
+
+It is executed in the following order:
+
+1. **Source registration:** identify the system, run, interface, snapshot, or
+   aggregate diagnostic and freeze its provenance.
+2. **Adapter selection:** map native objects into either strict SOF data or an
+   explicitly bounded analogue mapping.
+3. **Capability declaration:** state which carriers, closures, filtrations,
+   charts, conventions, and policies are available.
+4. **Layered validation:** perform schema, structural, computational, semantic,
+   and claim checks appropriate to the declaration.
+5. **IR construction:** store machine-readable objects, findings, evidence,
+   and audited derivations without choosing presentation.
+6. **Compiler Profile selection:** Paper X enables only modules and items whose
+   Boolean requirements are satisfied.
+7. **SOFRS assembly:** the protocol binds the immutable `CompilerOutput` and a
+   compatible Assembly Profile, renders every normative item exactly once, and
+   adds report-level provenance without filling gaps from nearby carriers.
+
+The initial strict modules are SOF Basic, Associative, Closure, Lie/Hall, and
+Dynamic. They are composable rather than mandatory. An application with no Lie
+family emits no Lie-depth conclusion; it does not emit a zero Lie result. An
+analogue Compiler Profile instead selects descriptor provenance, analogue mapping,
+measured values, and the negative strict boundary.
+
+### Protocol Stack Boundary
+
+SOFRS is the descriptive layer of the protocol stack. Its unit is one named
+source realization, run, snapshot, aggregate diagnostic, or admissible
+trajectory:
+
+$$
+\text{typed IR}
+\xrightarrow{\operatorname{Compile}_{v1}}
+\text{CompilerOutput}
+\xrightarrow{\operatorname{Assemble}_{\mathrm{SOFRS}}}
+\mathcal R_{\mathrm{SOF}}.
+$$
+
+It does not align two independent reports, compute a cross-report difference,
+interpret that difference as an action consequence, or select a policy.
+
+| Paper | Input and operation | Artifact |
+|-------|---------------------|----------|
+| XII | assemble and serialize one validated `CompilerOutput` | `.sofreport.json` |
+| XIII | align two reports and compute an Audit Signature | `.sofaudit` |
+| XIV (downstream) | interpret signature coordinates and derive candidate actions | `.sofaction` |
+
+An internal wall or repair finding remains descriptive. It does not prescribe
+`repair`, `monitor`, `preserve`, `contain`, or `validate` actions.
+
+***
+
+## Protocol Instantiation Patterns
+
+White-box and behavioral access describe the source interface, but they do not
+determine admission. A white-box analysis can fail strict admission, while a
+finite adapter derived from internal data can pass it.
+
+| Source access | Possible v2 admission | Boundary |
+|---------------|-----------------------|----------|
+| internal matrices, activations, transitions, or graph operators | strict if complete $(V,Q,Y)$ data pass validation; otherwise analogue | internal access alone does not establish strictness |
+| external protocols, task classes, response classes, or interface states | normally diagnostic analogue | probe labels are not projector sectors |
+| mixed source | either path according to the adapter output | record kind is determined by declared objects, not branding |
+
+The methodological point remains that **SOF is an observable framework, not a
+weight framework.** Weights are neither necessary nor sufficient for strict
+admission. A black-box report may provide valuable structural, behavioral,
+failure, and repair diagnostics, but it cannot reconstruct hidden operators or
+instantiate a theorem about $\mathsf{SOF}_{\mathrm{str}}$.
+
+**Principle 2 (Analogue Boundary).** A diagnostic analogue may
+describe a structure that resembles support, bridge, repair, or wall behavior.
+Those descriptors remain on the analogue carrier until an explicit realization
+or bridge theorem supplies the missing strict objects.
 
 ### Quantum Probe Example
 
-The focused quantum controls (Artifacts B17--B18) exhibit this relativity on
+The focused quantum controls (Artifacts B17--B18) exhibit report relativity on
 one quantum gate-family comparison.
 
 | Realization | Sectorization | Observable family | Observed T sensitivity |
 |-------------|---------------|-------------------|------------------------|
-| gate-log | computational-basis projectors | skew-Hermitian gate logarithms | none; the Clifford and Universal $R_1/R_2/D$ shadows coincide |
+| gate-log | computational-basis projectors | skew-Hermitian gate logarithms | none; the Clifford and Universal $R_1^{\mathrm{Lie}}/R_2^{\mathrm{Lie}}/D_{\mathrm{Lie}}$ shadows coincide |
 | state trajectory | coarse STAB/MAGIC state classes | empirical class-transition observable | skew signal $0\to0.084$; off-diagonal support $0\to2$ |
 
 The first realization is blind to the T/S diagonal-phase distinction. The
 second converts magic-state production into complete off-diagonal support in a
 two-state coarse graining. STAB and MAGIC are nonlinear state classes rather
 than orthogonal subspaces of the qubit Hilbert space, so the second construction
-is a trajectory-induced Markov realization, not a strict projector
-sectorization of $\mathbb C^2$.
+is a trajectory-induced diagnostic analogue unless a separate finite Markov
+adapter supplies and validates its own state space and projectors.
 
-This example does not say that changing observables and changing sectors are
-mathematically identical. They are two independent ways to redesign the probe:
-one changes what counts as a part of the report, while the other changes what
-the report can detect. Both modify the realized SOF object and must be declared.
+Changing observables and changing sectors are not the same operation. One
+changes what counts as a part of the report; the other changes what the report
+can detect. Every realization must declare its sector origin, observable
+construction, truncation, evaluator, thresholds, and failure modes. Multiple
+realizations are allowed; hidden realization choices are not.
 
-The freedom is constrained rather than arbitrary. Every realization must state
-its sector origin, observable construction, truncation, evaluator, thresholds,
-and failure modes. SOF permits multiple realizations; it does not permit hidden
-realization choices.
-
-***
-
-## SOF Applicability Hierarchy
-
-The existence of a sector-like vocabulary is not by itself enough to justify
-an SOF claim. Paper XII therefore introduces the **SOF Applicability
-Hierarchy**, which measures the distance between a proposed application and a
-formal SOF realization. It is a methodological hierarchy, not a theorem that
-the four levels form a categorical filtration.
-
-The levels classify the justification used in a particular analysis, not a
-species permanently. A realizational application produces a definitional SOF
-target once its map has been fixed, but a claim about the legitimacy or
-non-uniqueness of the source-to-object map remains Level II. The same source
-may therefore appear at different levels under different analyses.
-Different realizations of the same source system need not be equivalent. They
-may use different finite spaces, sector resolutions, retained subspaces, or
-observable families, and equivalence must be established rather than assumed.
-
-| Level | Minimum requirement | Representative examples | Permitted use |
-|-------|---------------------|-------------------------|---------------|
-| I: Definitional | an explicit finite $\mathcal F=(V,\{Q_i\},\mathcal X)$ satisfying the SOF axioms | strict finite Rubik, quantum, Markov, graph, NCG, control, and PDE realizations | formal SOF constructions and qualified theorem, evidence, or diagnostic claims |
-| II: Realizational | a reproducible source-to-SOF map specifying finite space, sector origin, observable extraction, truncation, and non-uniqueness | transformer activations, attention heads, MoE routing, recommendation graphs, and visible hidden states | construction-level evidence and white-box SOF Reports |
-| III: Diagnostic | stable probe sectors, measurable outputs, evaluator provenance, and an explicit claim boundary; no strict projector realization is required | API-only language models, closed models, and external behavioral interfaces | Behavioral or API-level SOF Reports only |
-| IV: Analogical | only a structural or linguistic resemblance to sectors, walls, repair, or accessibility | candidate agent, economic, biological, or social analogies | heuristic discussion only |
-
-![SOF Applicability Hierarchy. Applicability measures distance from the formal
-SOF core: explicit SOF objects, reproducible source realizations, report-level
-probe diagnostics, and heuristic analogies. Claim status is an independent
-epistemic axis and must not be inferred from applicability level.](../../figures/paper12/fig2_sof_applicability_hierarchy.png)
-
-The four levels have the following admission rules.
-
-1. **Definitional applicability** requires a complete finite orthogonal
-   decomposition $\sum_iQ_i=I$ and a named observable family on $V$.
-2. **Realizational applicability** additionally requires an auditable map from
-   the source system to the SOF data. For example, the Qwen case uses a strict
-   four-sector realization on a stated $40$-token retained subspace rather
-   than silently treating a filtered partition of all $45$ tokens as complete.
-3. **Diagnostic applicability** does not require an internal SOF object, but
-   it does require stable probe sectors, measurable outputs, evaluator and
-   protocol provenance, and failure reporting. Prompt labels alone are not
-   enough.
-4. **Analogical applicability** cannot by itself produce a conforming SOFRS
-   artifact or enter the SOF Registry as a realized species. It may motivate a
-   future sectorization or diagnostic protocol, but its language must remain
-   explicitly heuristic.
-
-**Principle 1 (Applicability Monotonicity Principle).** Applicability may be
-weakened conservatively by forgetting structure or restricting attention to a
-report-level interface:
-
-$$
-\text{Level I}\longrightarrow\text{Level II}
-\longrightarrow\text{Level III}.
-$$
-
-The reverse direction is not automatic. In particular, Level III never
-upgrades to Level II merely by accumulating diagnostic reports. Promotion
-requires a new realizational construction together with an explicit finite
-space, sectorization, observable family, and justification of the
-source-to-SOF map. Likewise, repeated analogies do not establish Level III
-without a realizable diagnostic protocol.
-
-**SOFRS Eligibility.** Only Level I--III applications are eligible to produce
-conforming SOFRS artifacts. Level I and Level II reports are attached to
-formal or realized SOF data; Level III reports are explicitly diagnostic or
-behavioral. Level IV applications remain outside the report protocol until a
-realizable diagnostic pipeline with stable probes, measurable outputs,
-evaluator provenance, and failure boundaries has been defined.
-
-Applicability and claim status are independent coordinates:
-
-| Applicability level | Typically admissible `claim_status` values |
-|---------------------|--------------------------------------------|
-| Definitional | `theorem`, `evidence`, `diagnostic`, `boundary` |
-| Realizational | `evidence`, `diagnostic`, `proxy_only`, `boundary` |
-| Diagnostic | `diagnostic`, `boundary`, `failure`, `negative_control` |
-| Analogical | outside the formal claim-status system; label as heuristic prose |
-
-In particular, definitional applicability does not imply a theorem, and a
-diagnostic report does not imply an internal realization. **Applicability
-measures distance from a formal SOF realization; claim status measures the
-strength of what is known at that distance.**
-
-SOFRS v1.0 records this distinction through the Sectorization, Claim Status,
-Claim Note, and Failure Modes fields. Applicability remains report metadata
-rather than a required v1.0 diagnostic field.
-
-***
-
-## White-Box and Behavioral SOF Diagnostics
-
-SOF deployment separates into two diagnostic regimes. The distinction concerns
-what is observable, not whether the source system is neural.
-
-**Definition 2 (White-Box SOF Diagnostic).** A SOF Report is **white-box** when
-its sectorization and observable family are extracted from an explicitly
-specified finite internal realization, such as representations, weights,
-activations, state operators, controllability flags, mesh operators, or known
-transition matrices.
-
-**Definition 3 (Behavioral SOF Diagnostic).** A SOF Report is
-**behavioral** when its sectors are induced from externally observable
-interfaces and its observable family is computed from input--output behavior.
-Prompt protocols and task classes may serve as **probe sectors**. Unless these
-probe sectors are separately realized as orthogonal projectors on a specified
-finite space, the report is a weak behavioral diagnostic rather than an object
-of the strict category $\mathsf{SOF}_{\mathrm{str}}$.
-
-| Regime | Sector source | Observable source | Claim boundary |
-|--------|---------------|-------------------|----------------|
-| White-box | internal representations, activations, operators, or known state decompositions | matrices, kernels, weights, transitions, and support blocks | strict or represented SOF diagnostic only when the finite realization is explicit |
-| Behavioral | externally visible protocols, task classes, response classes, or interface states | format, semantic, operational, latency, tool, and repair outcomes | weak behavioral diagnostic unless a strict projector realization is supplied |
-
-The methodological point is that **SOF is an observable framework, not a
-weight framework.**
-
-Weight access is sufficient for some SOF realizations, but it is not necessary
-for a SOF Report. What is necessary is a stable information decomposition, an
-explicit observable family, and a claim status that says whether the report is
-strict, represented, proxy-only, or behavioral.
-
-**Principle 2 (Black-Box SOF Diagnostic Principle).** A white-box realization
-is sufficient but not necessary for SOF diagnostics. If a compatible
-sectorization or stable probe-sector decomposition is available and observable
-outputs are measurable, then a claim-status-aware SOF Report can be produced
-without access to the underlying internal representation.
-
-The conclusion is report-level, not mechanism-level. The principle permits
-external structural, behavioral, failure, wall, and repair diagnostics; it
-does not reconstruct hidden weights, certify a strict object of
-$\mathsf{SOF}_{\mathrm{str}}$, or identify the internal cause of an observed
-transition.
-
-### Attention Heads as Natural Sectorizers
+### Attention-Derived Candidate Partitions
 
 A central application domain is neural-system diagnosis. Transformer-style
 systems already contain mechanisms that partition information: activation
 patterns, attention heads, token groups, residual-stream directions, and
 expert-routing decisions \cite{vaswani2017attention,clark2019bertattention}.
 
-The central observation from the Qwen audit is that **attention heads naturally
-induce information sectorizations.**
-
-This statement is more important than any one accessibility percentage. A
-pretrained attention head can itself define the sectorization by grouping
-tokens with common top-attention targets. No synthetic generator or external
-partition is needed.
+The Qwen audit shows that attention heads provide **data-dependent candidate
+coordinate partitions**. Such a partition may seed a strict SOF
+reconstruction only after the retained finite space, complete projectors, and
+operative matrices are explicitly bound and validated. Attention grouping by
+itself is not strict sector admission.
 
 The Qwen attention audit (Artifact B7) uses the revision-pinned
 `Qwen/Qwen2.5-0.5B-Instruct` model \cite{qwen2024qwen25}. The recorded
@@ -607,524 +782,377 @@ diversity is:
 
 The reference artifact records the exact model/tokenizer commit,
 Transformers and PyTorch versions, device, dtype, input text, layer, head, and
-filtering parameters. Cache location is a command-line option and is not
-embedded as a machine-specific dependency.
+filtering parameters.
 
 | Head | Groups | Interpretation |
 |------|--------|----------------|
 | Head 3 | 1 group | global attention: all tokens attend to one target |
 | Head 1 | 3 groups, sizes `[38,4,3]` | coarse three-way token clustering |
-| Head 6 | 9 target groups, 4 sectors after filtering groups of size at least 2 | natural SOF sectorization used for the token-space audit |
+| Head 6 | 9 target groups, 4 groups after filtering groups of size at least 2 | candidate coordinate partition used for the retained token-space audit |
 | Head 13 | 13 groups | dispersed attention partition |
 
-Thus one pretrained layer supplies multiple sectorization granularities:
-global, coarse, intermediate, and dispersed. SOF does not impose these
-partitions; it records them and asks what observable shadows they carry.
+Thus, one pretrained layer supplies multiple candidate partition granularities:
+global, coarse, intermediate, and dispersed. SOFRS does not impose these
+partitions or admit them automatically; it records them and asks what
+observable shadows they carry.
 
-Using the Head 6 sectors and the layer's attention matrices as observables
-produces the complete eight-field artifact reported in Case Study A. The main
-significance is structural: attention heads provide sectorizations at different
-resolutions before any SOF machinery is applied.
+Using the Head 6 sectors together with the layer's attention matrices motivates
+a strict reconstruction, but the frozen envelope records only derived shadows
+and matrix-family descriptors. The migration therefore keeps both the
+support and commutator outputs on an analogue carrier. The main significance is
+structural: attention heads provide candidate finite coordinate partitions at
+different resolutions before compiler emission and report assembly.
 
 ### Behavioral Walls
 
-Behavioral diagnostics inherit the wall language of Papers IX and XI only
-after a deformation variable has been chosen. A collection of prompts is not
-yet a wall geometry. A parameterized protocol path $p(t)$ can, however, pull
-behavioral observables back to trajectories and wall records.
+Prompt collections do not define wall geometry. Instruction conflict, refusal,
+schema collapse, context saturation, or prompt injection becomes a candidate
+observable wall only after a typed chart, one-parameter path, comparison map,
+observable, norm, and threshold are declared; otherwise it remains an analogue
+trajectory descriptor.
 
-| Behavioral wall | Example deformation variable | Observable event |
-|-----------------|------------------------------|------------------|
-| Instruction-conflict wall | conflict strength, instruction order, or hierarchy position | instruction-following status changes |
-| Refusal wall | task or policy-sensitive probe parameter | refusal status changes |
-| Schema-collapse wall | schema complexity or constraint strength | format compliance drops or recovers |
-| Context-saturation wall | context length or distractor density | correctness or consistency changes sharply |
-| Prompt-injection wall | injection strength, location, or competing-instruction weight | control of the response shifts between prompt sectors |
+Likewise, few-shot repair, instruction tuning, and preference optimization
+\cite{ouyang2022instructgpt} are protocol-level behavioral observations, not
+Lie-depth repair or claims about hidden mechanisms.
 
-These are candidate **observable behavioral walls**, not claims about internal
-mechanisms. They belong to the SOF Report only when the path, evaluator,
-threshold, and claim status are explicit.
+***
 
-The same language gives a cautious behavioral repair pattern:
+## Case Studies: Compiler-Profile-Selected Reports
+
+A v2 report is read in the following logical order:
+
+1. inspect `record_kind` and the source adapter;
+2. inspect declared and unavailable capabilities;
+3. identify which Compiler Profile modules were enabled;
+4. read findings together with their carrier, conventions, and policies;
+5. finish with evidence level, scope, and negative boundary.
+
+### Three Bounded Controls
+
+| Control | Retained observation | Admission boundary |
+|---------|----------------------|--------------------|
+| Qwen attention | a 45-token probe yields a 40-dimensional retained space, a Head 6 candidate partition, and a $75.0\%$ off-diagonal support shadow | the frozen envelope does not bind the restricted matrices as source-addressed $(V,Q,Y)$; the record remains analogue, `strict_reconstruction=yes` denotes bounded enumerability only, and commutator depth remains a general-matrix proxy |
+| Dynamic maze | connected-component sectors change from $1$ to $25$ and back, with split and merge descriptors | the aggregate is a schema transition rather than one fixed typed chart; pointwise strict records would require separately validated projectors and alphabets |
+| API-only LLM | six prompt protocols across three task classes are evaluated deterministically | protocol classes do not become operator blocks, routed products, words, Lie repair, or hidden mechanisms |
+
+The commonality is the compiler interface and evidence discipline, not a claim
+that the three mechanisms or output modules are identical. Pairwise comparison
+still requires the alignment object of Paper XIII.
+
+***
+
+## Versioned Protocol Migration and Cross-Domain Validation
+
+Migration is one operation of the Versioned Reporting Protocol, not a fourth
+compiler contract or an independent paper-level pillar. It tests whether
+frozen reports can be admitted into SOFRS v2.0 without changing their source
+artifacts or silently promoting their typed claims.
+
+### Version Boundary
+
+SOFRS v1.0 remains immutable. It required one eight-field envelope containing
+`Sectorization`, `Observable Family`, `Support Matrix`, `Bridge Matrix`,
+`Repair Matrix`, `Wall Record`, `Claim Status`, and `Failure Modes`. That
+format was useful for disclosure but allowed unlike carriers to share a field.
+
+SOFRS v2.0 does not reinterpret a v1 field in place. A versioned adapter reads
+the frozen artifact, records its digest, declares capabilities, normalizes
+legacy sentinels and semantic labels, and emits new Manifest, IR, and report
+artifacts. Thus
 
 $$
-\text{zero-shot failure}
-\longrightarrow
-\text{demonstration bridge}
-\longrightarrow
-\text{few-shot behavioral repair}.
+\text{v1 envelope validity}
+\not\Longrightarrow
+\text{v2 strict admission}.
 $$
 
-This is protocol-level repair, not Lie-depth $D$-repair. At the diagnostic
-level, instruction tuning and preference optimization, exemplified by
-InstructGPT \cite{ouyang2022instructgpt}, are naturally studied as observable deformations of
-prompt--response behavior rather than inferred from parameter count or treated
-merely as enlargement of the underlying SOF object.
+The frozen v1 schema and validators remain executable. The v2 schema,
+profiles, migration index, and validator are separate versioned artifacts.
+
+### Registry of Migrated Reports
+
+The v2 migration is a contract and semantic audit of the nine frozen v1
+reports. It does not recompute the underlying experiments. Each v1 artifact and
+its producer are retained with SHA-256 digests and translated by one versioned
+adapter.
+
+| Migrated report | v2 record kind | Enabled strict/analogue content | Main correction |
+|-----------------|----------------|----------------------------------|-----------------|
+| Transformer activation | `diagnostic_analogue` | finite activation descriptors | explicit operative matrices are not bound by the frozen envelope |
+| Transformer batch sweep | `diagnostic_analogue` | cross-configuration robustness descriptor | changing ambient dimensions prevent one strict record |
+| Qwen attention | `diagnostic_analogue` | support and commutator-proxy descriptors | explicit operative matrices are not bound by the frozen envelope |
+| MoE route sectors | `diagnostic_analogue` | route and positive-word descriptors | the routing operator is not bound as an explicit reconstruction artifact |
+| MoE bias repair | `diagnostic_analogue` | routing activation descriptors | no explicit complete $(V,Q,Y)$ was declared |
+| Diffusion trajectory | `diagnostic_analogue` | sampled schema-transition descriptor | pointwise sectors do not imply one moving chart |
+| Dynamic maze | `diagnostic_analogue` | component split/merge descriptor | varying component projectors are a schema transition |
+| Recommender coverage | `diagnostic_analogue` | coverage and cutoff-depth descriptors | before/after operative matrices are not bound as reconstruction artifacts |
+| API-only LLM | `diagnostic_analogue` | behavioral descriptor module | probe classes are not projector sectors |
+
+**Migration/Assembly Certificate (Migration Census).**
+
+The source-addressed migration index records nine inputs, nine
+`diagnostic_analogue` outputs, four bounded reconstruction assessments with
+status `yes`, and 118 typed sentinel replacements. Its
+`claim_target=migration_consistency` and
+`certificate_class=migration_assembly` establish migration consistency only,
+not source-experiment recomputation or adapter adequacy.
 
 ***
 
-## Case Studies: Reading a SOF Report
-
-A conforming SOF Report has a fixed eight-field envelope, but the payload is
-allowed to reflect the diagnostic regime. A strict finite realization may
-store binary support matrices. A topology-changing report may leave the Bridge
-Matrix undefined while recording a complete Wall Record. A behavioral report
-may store protocol-by-observable scores and must label its bridges as
-behavioral analogues. The common grammar supports cross-case reading without
-claiming that the native mechanisms are equivalent or already aligned.
-
-A reader should inspect a report in the following order:
-
-1. verify where the sectors came from;
-2. identify which observables were actually measured;
-3. read support before interpreting bridges or repairs;
-4. check whether a deformation path exists before reading the Wall Record;
-5. finish with Claim Status and Failure Modes before making a scientific claim.
-
-The following three reports show the same specification under three different
-conditions: a static white-box realization, a topology-changing finite system,
-and an API-level behavioral diagnostic.
-
-### Case Study A: Static White-Box Report
-
-The Qwen attention audit is a Level II realizational analysis whose retained
-token subspace carries an explicit finite Level I SOF target. Head 6 supplies
-four retained attention-target sectors, while all attention matrices in the
-audited layer form the observable family.
-
-| Field | Recorded value |
-|-------|----------------|
-| Sectorization | four retained Head 6 attention-target sectors |
-| Observable Family | fourteen attention matrices from the audited layer |
-| Support Matrix | $4\times4$ aggregated $R_1$; off-diagonal density $75.0\%$ |
-| Bridge Matrix | $4\times4$ commutator $R_2$; off-diagonal density $75.0\%$ |
-| Repair Matrix | zero repaired pairs; three terminally frozen pairs |
-| Wall Record | not applicable; one pretrained snapshot |
-| Claim Status | `diagnostic` |
-| Failure Modes | prompt-, layer-, and filter-dependent; singleton groups excluded; attention support is not a causal explanation |
-
-The important negative entries are part of the result. `Repair Matrix: 0`
-means that the audited commutator layer does not repair the three frozen pairs.
-`Wall Record: not applicable` means that no deformation variable was supplied;
-it does not mean that the report failed.
-
-Figure 4 visualizes the versioned `qwen.sofreport` artifact and shows how the
-eight required fields coexist in one reader-facing specimen.
-
-![Concrete SOF Diagnostic Report specimen generated from the revision-pinned pretrained-Qwen
-artifact. The eight panels instantiate the fixed SOFRS v1.0 fields: retained
-attention-head sectors, attention observables, support and bridge matrices,
-repair data, a static wall record, controlled claim status, and explicit failure
-modes.](../../figures/paper12/fig3_sof_report_specimen.png)
-
-### Case Study B: Dynamic Wall Report
-
-The maze report uses a native deformation path: doors are closed and then
-reopened. Its sectors are connected components of the current open-door graph,
-so the sectorization itself changes along the path.
-
-| Field | Recorded value |
-|-------|----------------|
-| Sectorization | connected components of a 25-cell maze |
-| Observable Family | open-door adjacency, connectivity, and frozen ordered pairs |
-| Support Matrix | open: one component and zero frozen pairs; closed: 25 components and 600 frozen pairs |
-| Bridge Matrix | null; not defined for this component-level report |
-| Repair Matrix | 24 reopening merges; frozen pairs decrease from 600 to 0 |
-| Wall Record | 24 forward splits, 24 reverse merges, component path $1\to25\to1$ |
-| Claim Status | `diagnostic` |
-| Failure Modes | sectors vary with door state; connectivity repair is not fixed-sector Lie-depth $D$-repair |
-
-This case shows why fields may be explicitly null. Inventing a Bridge Matrix
-would overstate the analysis. The informative objects are instead the changing
-sectorization, the support summary, the repair events, and the wall trajectory.
-The report remains conforming because the missing field is declared and its
-reason is recorded.
-
-### Case Study C: API-Level Behavioral Report
-
-The NVIDIA NIM audit has no access to weights, activations, or hidden states.
-It is therefore a Level III behavioral analysis. Six prompt protocols crossed
-with three task classes define stable probe sectors, and measurable response
-properties define the observable family.
-
-| Field | Recorded value |
-|-------|----------------|
-| Sectorization | six prompt protocols crossed with three task classes |
-| Observable Family | Structural, Behavioral, and Failure observables |
-| Support Matrix | protocol-by-observable score table covering completion, instruction following, groundedness, and provider success |
-| Bridge Matrix | behavioral analogues for schema, few-shot, and tool changes |
-| Repair Matrix | schema, few-shot, and tool failure-to-success transitions |
-| Wall Record | not computed; the protocols form a discrete probe suite rather than a parameterized path |
-| Claim Status | `diagnostic`; `strict_sof_realization = false` |
-| Failure Modes | evaluator-, task-, provider-, and model-version scoped; protocol repair is not Lie-depth $D$-repair |
-
-Here `Support Matrix` is a declared protocol-by-observable score table rather
-than a projector-block matrix, and `Bridge Matrix` is explicitly marked as a
-behavioral analogue. The report therefore supports external behavioral claims
-but cannot reconstruct or certify an internal mechanism.
-
-### Cross-Case Reading Rule
-
-| Case | Diagnostic regime | Applicability | Correct reading |
-|------|-------------------|---------------|-----------------|
-| Qwen attention | white-box / realizational | Level II source map with a strict finite target | static support and bridge audit; no wall claim |
-| Dynamic maze | explicit finite trajectory | Level I finite graph analysis | topology wall and connectivity repair; no component-level bridge claim |
-| API-only LLM | behavioral / black-box | Level III diagnostic | external protocol outcomes only; no internal realization claim |
-
-The cases demonstrate the central reporting rule: **the same report grammar
-does not imply the same mechanism.**
-
-SOFRS standardizes what must be disclosed. Claim Status and Failure Modes
-control how far each disclosed result may be interpreted. Cross-case rows remain
-reader-facing contrasts; a machine-generated pairwise difference requires the
-Paper XIII comparison object.
-
-***
-
-## Cross-Domain Validation
-
-The three representative reports above establish the reading protocol. The
-remaining audits test whether the same eight-field grammar remains usable under
-different sector origins and native observables. They are portability controls,
-not evidence that the underlying mechanisms are equivalent.
-
-### Transformer Activation SOF
-
-The transformer activation audit (Artifact B5) builds a small transformer-like
-block. FFN activation-count clusters define token sectors,
-while attention and activation-similarity operators define the observable
-family. The reference report has three activation-count sectors, off-diagonal
-densities $R_1=58.3\%$ and $R_2=66.7\%$, two directly frozen pairs, two repaired
-pairs, and maximum finite depth $2$.
-
-The companion batch sweep (Artifact B6) tests whether the qualitative pattern
-survives a larger token partition. In the canonical `5 x 50` case it
-finds `frozen_R1=14`, `D_repaired=6`, `frozen_D=8`, and one permanently frozen
-sector. This is a robustness audit, not a theorem about all transformers.
-
-### Qwen Attention-Head SOF
-
-The Qwen white-box realization is reported in Case Study A. Its role here is to
-show that one internally visible model can supply multiple admissible sector
-granularities without making any one head partition canonical.
-
-### Mixture-of-Experts Routing SOF
-
-Artifacts B8--B9 test two routing realizations. In the first, tokens sharing a
-top-2 expert pair form one of six route sectors; routing overlap gives
-$24/30$ directly supported ordered pairs, six two-step word repairs, and no
-remaining frozen pair. In the second, 12 private experts are separated from an
-always-active shared baseline. Ten initially inactive private experts become
-active at routing step 18 under a declared load-bias update, giving a
-$100.0\%$ private-expert repair index. This is bias-driven routing repair, not
-Lie-depth $D$-repair. The control is inspired by published MoE routing
-architectures and is not an audit of DeepSeek weights
-\cite{dai2024deepseekmoe,deepseekai2024v3}.
-
-### Diffusion Denoising SOF
-
-Diffusion asks how an information decomposition changes along a native time
-parameter. In the denoising audit (Artifact B10), forward noise creates a
-probe-sector split at `t=11`, while reverse-time denoising crosses back between `t=11` and
-`t=10`. The experiment uses the forward/reverse denoising organization of
-diffusion models as background, not as a new diffusion theorem
-\cite{ho2020ddpm}.
-At the forward wall, $t=11$ changes the probe from one sector to two at
-$\bar\alpha=0.1296$, with six $R_1$ edges at the first split. Reverse denoising
-restores the clean endpoint signature.
-
-The counterintuitive forward split is precisely why a trajectory-aware report
-is useful: noise does not merely erase sectors; under the chosen probe it can
-create an intermediate sectorization.
-
-***
-
-### Dynamic and Propagation Controls
-
-Dynamic systems make wall and propagation semantics explicit. Here the main
-question is not expert specialization but **how topology or reachability
-changes**.
-
-#### Dynamic Maze Wall Crossing
-
-The maze audit (Artifact B11) is the topology-changing instance detailed in
-Case Study B. Its methodological role is to distinguish wall events from static
-frozen pairs: the initial connected component is already present, so the number
-of split events is one less than the final component count. Reverse door opening
-records connectivity repair rather than fixed-sector Lie-depth $D$-repair.
-
-#### Kalman Reachability SOF
-
-The control/PDE probe (Artifact B19) uses increments of the Kalman
-controllability flag as sectors. For the
-three-state chain, the Kalman ranks are `[1,2,3]`, the system is controllable,
-and the terminal sector first appears at word depth `2` from the input sector.
-
-This report asks where control influence appears immediately and where it
-requires delayed propagation. The depth is a finite word/reachability depth,
-not automatically the commutator depth of Paper V.
-
-#### PDE Interface Propagation SOF
-
-The same computational control partitions a seven-point finite-difference grid into
-left, interface, and right sectors. The left-to-right block is not directly
-adjacent, but propagation through the interface appears at word depth `2`.
-
-The native question is **how does influence cross a discretized interface?**
-The SOF Report records subdomain sectors, Laplacian support, the interface
-bridge, and propagation depth without claiming a general PDE theorem.
-
-***
-
-### External and Industrial Controls
-
-Industrial reports emphasize actionable coverage, first-passage, and external
-behavior. Their value lies in identifying where a system cannot currently
-reach, comply, or recover before a more expensive evaluation is run.
-
-#### Recommender Coverage SOF
-
-Recommendation asks: **why do some items never appear?** In the recommender
-audit (Artifact B12), user clusters and item clusters are sectors and the
-bipartite interaction graph is the observable family.
-Direct user--item coverage is $4/16$, leaving $12/16$ recommendation dead
-zones. One targeted bridge reduces the dead-zone count from 12 to 10.
-
-The $12/16$ unreachable pairs are dead accessibility sectors for the audited
-collaborative-filtering propagation graph. This is an offline structural
-coverage signal. It identifies where an online experiment has no structural
-path to work with, but it does not replace ranking metrics, causal evaluation,
-or A/B testing.
-
-#### Barrier-Finance SOF
-
-The barrier-finance audit (Artifact B20) sectorizes a finite log-price grid into
-below-barrier and above-barrier regions. Drift and diffusion operators
-supply cross-barrier support, while a continuous-time Markov generator supplies
-a separate first-hitting-time diagnostic.
-
-The reference audit reports $R_1=75.0\%$, $R_2=0.0\%$, no $D$-repair, and mean
-first-hit time $6.5915$. First-hitting time is a native stochastic diagnostic;
-it is not identified with SOF depth $D$, and the case is not an option-pricing
-theorem.
-
-#### API-Only LLM: API-Level SOF Report
-
-The API-level realization is reported in Case Study C. Artifact B13 uses prompt
-protocols crossed with task classes as probe sectors and records
-interface-structural, behavioral, and failure observables. Schema, few-shot,
-and tool changes are protocol-level bridge and repair analogues. With no
-parameterized prompt path, no Wall Record is computed. The controlled status is
-`diagnostic`, with an explicit qualification that the report does not recover a
-strict projector-valued SOF realization or hidden mechanism.
-
-The recorded API-level report uses NVIDIA NIM with the model ID
-`meta/llama-3.1-8b-instruct` on 2026-07-11. All `18/18` protocol--task requests
-completed successfully. The report records:
-
-| Observable class | Recorded values |
-|------------------|-----------------|
-| Structural | nonempty $100.0\%$, schema consistency $50.0\%$, valid tool call $16.7\%$ |
-| Behavioral | task completion $61.1\%$, instruction following $72.2\%$, task-scoped groundedness $83.3\%$, API success $100.0\%$ |
-| Failure | refusal $22.2\%$, grounded-answer failure $16.7\%$, format collapse $50.0\%$; prompt injection not measured |
-| Repair | schema 2, few-shot 0, tool 1 |
-
-These percentages describe this model/version, provider endpoint, evaluator,
-and prompt matrix only. They are not a ranking claim about language models.
-The versioned API artifact is included in the report collection (Artifact B15).
-
-Only normalized events and aggregate diagnostics enter the report; long raw
-model responses and provider payloads are excluded.
-
-### Cross-Domain Validation Summary
-
-| System | Sector origin | Primary observable | Deformation or wall record | Repair semantics |
-|--------|---------------|--------------------|----------------------------|------------------|
-| Trans\-former model | activation clusters | attention / activation support | no path supplied in the static reference | word/depth diagnostic |
-| Qwen | attention-target groups | attention support | not computed | none in the reference audit |
-| MoE | expert routes | routing overlap / private loads | load-imbalance control | routing-word and bias-driven repair |
-| Diffusion | time-indexed feature sectors | denoising trajectory | present | present |
-| Maze | connectivity components | reachability | present | present |
-| Kalman | controllability-flag increments | control propagation | optional path | word depth |
-| PDE | mesh/interface partition | Laplacian propagation | optional path | interface bridge |
-| RecSys | user--item graph clusters | structural coverage | intervention path | partial |
-| Finance | barrier regions | cross-barrier support / first hit | barrier parameter not swept in the reference audit | none in the reference audit |
-| API-only LLM | prompt/task probe sectors | response observables | no parameterized prompt path supplied | protocol-level |
-
-The validation table is deliberately heterogeneous in native meaning. Its point is not
-that every repair is the same invariant. Its point is that every entry can be
-reported through the same sectorization--observable--wall--repair grammar with
-an explicit claim status. Every row emits the same SOFRS output grammar; the
-API-only audit is marked as an API-level SOF Report, with all `18/18` NVIDIA NIM
-requests successful in the reported audit.
-
-Figure 5 summarizes the methodological distinction behind this validation
-summary.
-White-box and realizational analyses may use internal operators, kernels,
-routes, or explicit graph structure, whereas behavioral analyses use stable
-probe sectors and measurable outputs. They meet at the SOFRS contract, not at
-a claim that their internal mechanisms are equivalent. The Qwen, maze, and
-API-only LLM reports then instantiate Levels II, I, and III respectively while
-preserving the same report grammar.
-
-![One specification, two diagnostic regimes. White-box and realizational
-analyses and behavioral API-level analyses enter SOFRS v1.0 through different
-observable interfaces. Qwen attention, dynamic-maze connectivity, and an
-API-only language model provide three claim-status-aware reports without being
-identified at the mechanism level.](../../figures/paper12/fig4_two_diagnostic_regimes.png)
-
-***
-
-## Failure Modes and Applicability
+## Hostile Fixtures, Failure Modes, and Applicability
 
 A deployable method must say when it should not be used. The multi-system
 **validator fixture** (Artifact B14) contains five constructed structural
-boundary cases. It is envelope-valid so that validators can exercise all eight
-fields, but it is intentionally excluded from ordinary protocol admission. An
-API infrastructure boundary is listed separately because it can occur within a
-single behavioral report:
+boundary cases. It remains a frozen v1 envelope fixture and is intentionally
+excluded from v2 migration and ordinary protocol admission. An API
+infrastructure boundary is listed separately because it can occur within a
+single analogue report:
 
 | Case | Case interpretation | Diagnostic reason |
 |------|---------------------|-------------------|
-| Single sector | inapplicable | no cross-sector pair exists |
+| Single sector | cross-sector modules not applicable | support, bridge, and repair have no cross-sector pair; global one-sector findings may remain reportable |
 | Dense random all-to-all observables | no contrast | immediate full support destroys structure |
 | Over-refined one-dimensional sectors | over-refined | sectorization is too fine to expose subspace structure |
-| Commuting observables | no Lie bridge | the commutator-driven $R_2$ layer is absent |
+| Commuting matrices | empty commutator proxy | the declared matrices commute; no Lie claim is made without a Lie/Hall carrier |
 | Sector-observable mismatch | probe mismatch | observables do not see the proposed sector interface |
 | API infrastructure failure | infrastructure failure | provider or backend errors dominate the measurement |
 
-These interpretations are not `claim_status` values. An individual boundary
-construction can emit a conforming report with `claim_status: boundary` or
-`failure`, but the combined five-system fixture is not itself a normal
-single-system SOF Report.
+These interpretations are not claim-status values. The combined fixture is not
+one source realization and therefore is not a normal v2 report.
 
-The applicability conditions are therefore:
+The positive migration corpus is not sufficient evidence for the rejection
+boundary. The hostile conformance suite therefore mutates or constructs cases
+covering carrier substitution, policy substitution, source-digest drift,
+claim/finding disagreement, analogue-to-strict masquerading, missing or
+duplicated item bindings, missing external-basis evidence, and an untrusted
+validator that asserts `PASS` for a failing report. These are
+protocol-rejectable because a declared invariant or trusted source binding is
+violated. A satisfied external-basis level must also resolve to a real,
+digest-checked evidence artifact.
 
-1. there must be at least two meaningful sectors;
-2. the observable family must see the sector interfaces;
-3. the report should not be all-to-all noise;
-4. the sectorization should not be so fine that internal structure is erased;
-5. if bridge or repair diagnostics are claimed, the observable family must
-   support the corresponding layer.
-6. an API-level report must separate provider success from model behavior and
-   use `claim_status: failure` with an explanatory `claim_note` when
-   infrastructure failures make the behavioral result inconclusive.
+A scientifically misleading but internally consistent adapter presents a
+different challenge. No schema can identify such a failure from syntax alone.
+Without a domain
+baseline or falsifying source evidence, the protocol must leave adequacy
+unresolved and withhold an Object Certificate rather than claim automatic
+rejection. Conversely, with an external baseline, a contradicted adapter is
+rejected for the object claim even if its report remains schema-valid.
+
+The admission checks are now typed:
+
+1. strict admission requires finite complex $(V,Q,Y)$ data and a structural
+   certificate;
+2. analogue admission requires provenance, descriptors, an analogue mapping,
+   and a negative strict boundary;
+3. every enabled module requires its own carrier, convention, policy, and
+   evidence contract;
+4. dense, trivial, or mismatched data may pass structural validation while
+   remaining scientifically uninformative;
+5. provider failure must be separated from model behavior;
+6. unavailable capabilities must not be replaced by nearby carriers.
 
 ***
 
 ## Machine-Readable Deployment Boundary
 
-Paper XII requires a reproducible path from declared sectors and observables to
-the eight SOFRS fields, followed by envelope and protocol-admission validation.
-When a deformation path exists, its trajectory summary is recorded within Wall
-Record. The method does not require a particular software API or command-line
-interface.
+This paper requires a reproducible path from a source artifact to a Capability
+Manifest, Typed IR, selected Compiler Report Profile, bound `CompilerOutput`,
+Assembly Profile, and
+assembled v2 report. Every
+cross-file reference carries a digest. The method does not require a particular
+software API or command-line interface.
 
-The Paper XII boundary ends at report production and validation. Report
-alignment and normalized comparison belong to the downstream comparison layer;
-signature interpretation and candidate actions belong to the downstream action
-layer. These remain separate artifact contracts rather than hidden stages of a
-single report operation.
+The present protocol boundary ends at report production and validation. Report
+alignment and normalized comparison belong to the downstream comparison layer,
+while signature interpretation and candidate actions belong to the downstream
+action layer. These remain separate artifact contracts rather than hidden
+stages of a single report operation.
 
-Claim status is preserved across transformer activation, Qwen attention,
-diffusion deformation, and boundary reports even when their mathematical
-origins differ. The corresponding report collection and boundary fixture are
-indexed in Appendix B.
+Protocol validation recomputes `Compile_v1`, reconstructs `Assemble_v2`,
+checks the item-level assembly bijection and report-object equality, and then
+checks contract shape, cross-file references, evidence links, profile gates,
+strict/analogue exclusion, and sentinel migration. It does not decide domain
+adequacy.
+
+After those checks pass, the validator may issue a versioned validation
+receipt binding the exact report, Capability Manifest, Typed IR, Compiler
+Report Profile, `CompilerOutput`, Assembly Profile, assembly implementation,
+validator implementation, and receipt contract. The report itself binds its
+source-artifact closure. The receipt closure is ordered and digest-checked. A
+consumer must verify those links;
+the receipt's `PASS` field is not self-authenticating. A validation receipt is
+neither a scientific result state nor evidence of adapter adequacy, report
+alignment, interpretation, or action.
+
+***
+
+## Claim Spine
+
+Definitions and negative ownership boundaries are not additional evidence
+levels. The reader-facing status map is:
+
+| Claim or object | Formal role and claim target | Reader-facing status |
+|-----------------|------------------------------|----------------------|
+| SOFRS v2.0 Report Protocol and Assembly Profiles | owned normative definitions; representation interface | not an independent evidence claim |
+| Assembly Faithfulness | exact protocol invariant; implementation checked by a Protocol Conformance Certificate | Theorem |
+| Report Relativity | exact representation-interface proposition under the protocol definition | Theorem |
+| Claim-Scoped External Constraint Registry (`external_basis_registry`) | source, object, structure, and domain-basis evidence routing | not an independent evidence claim |
+| Adapter Adequacy Boundary | epistemic principle and negative boundary; no certificate promotion | not an independent evidence claim |
+| Object-level adapter result | independently recomputed finite source fact with a satisfied external basis (Object Certificate) | Computational Certificate |
+| Migration census: `9/9/4/118` | finite executable migration audit (Migration/Assembly Certificate) | Computational Certificate |
+| Qwen, maze, API, and quantum controls | bounded source-addressed controls | Computational Observation |
+| canonical realization and realization invariance | open uniqueness targets; no certificate is claimed here | Research Program |
 
 ***
 
 ## Boundary
 
-Paper XII claims:
+This paper owns single-report assembly and the SOFRS protocol boundary. It
+inherits Paper X compilation, preserves each normative `CompilerOutput` item
+exactly once, and does not perform alignment, interpretation, or selection.
 
-1. SOFRS v1.0 supplies a reproducible, eight-field contract for reporting one
-   declared sectorization and observable family.
-2. Under the Report Relativity Principle, a report is derived from a declared
-   realization and reporting specification rather than directly or uniquely
-   from its source system.
-3. Explicit finite realizations support white-box reports, while stable probe
-   sectors and measurable outputs can support Level III behavioral reports
-   with evaluator provenance and weaker claim status.
-4. The controlled examples show that the same report grammar can record
-   positive, negative, degenerate, and inapplicable outcomes across distinct
-   sector origins without identifying their native mechanisms.
+This paper does not claim:
 
-Paper XII does not claim:
-
-1. universal existence, uniqueness, or superiority of a sectorization or SOF
-   diagnostic over native domain methods;
-2. that proxy and protocol-level observables determine strict $R_1/R_2/D$,
-   Lie-depth repair, or hidden mechanisms without an additional realization or
-   bridge theorem;
-3. that task-scoped behavioral evaluators provide universal hallucination,
-   explainability, or behavioral-wall theories;
-4. that finite transformer, MoE, maze, recommender, finance, or API controls
-   generalize to production systems or replace domain-specific causal and
-   performance evaluation;
-5. that schema validity or protocol admission establishes scientific adequacy,
-   cross-report alignment, semantic interpretation, or an action policy.
+1. existence, uniqueness, or superiority of a realization over native domain
+   methods;
+2. promotion of proxy or analogue observations to strict carriers without an
+   additional realization or bridge theorem;
+3. that protocol validity establishes adapter adequacy, alignment,
+   interpretation, authorization, or action.
 
 ***
 
 ## Conclusion
 
-Paper XII introduces SOFRS v1.0 as the reporting layer of the SOF program. Its
-unit is a versioned SOF Report that records a declared sectorization,
-observable family, support and bridge structure, observed repair, wall data,
-claim status, and failure boundaries. The governing chain is
+This paper instantiates the Paper X compiler contracts as SOFRS v2.0. A report
+is a capability-gated, realization-relative epistemic artifact assembled from
+one bound `CompilerOutput`, not an absolute image of its source. Assembly
+Faithfulness preserves compiler items, while the Adapter Adequacy Boundary
+leaves source fidelity and realization adequacy to independently cited domain
+evidence.
 
-$$
-S
-\longrightarrow
-\mathcal F_{\eta}
-\longrightarrow
-\mathcal R_{\eta,\Theta_{\mathrm{rep}}}.
-$$
+Strict reports require validated strict carriers; diagnostic analogues retain
+their descriptors, provenance, and negative boundaries without promotion.
+SOFRS standardizes disclosure and serialization, but does not make two reports
+comparable or interpret their differences. Those operations begin in Papers
+XIII and XIV.
 
-The source is realized before it is reported. Consequently, the report is a
-protocol object rather than an absolute image of the source: changing sectors,
-observables, evaluators, thresholds, or reporting semantics may change every
-reported shadow. SOFRS standardizes disclosure and serialization. It does not
-standardize realization choice, establish scientific adequacy, or make two
-reports comparable before explicit alignment.
-
-The controlled white-box, trajectory-based, and API-level reports demonstrate
-the intended range. Internal operators or weights may be used when available,
-but they are not required at the protocol level. Behavioral reports instead
-require stable probe sectors, measurable outputs, evaluator provenance, and a
-claim status that does not imply access to hidden mechanisms. In both regimes,
-the report grammar remains fixed while the native meaning of its fields remains
-domain-dependent.
-
-This establishes the descriptive layer of the protocol stack. Paper XII
-describes one system or run; Paper XIII aligns two reports and computes a
-comparison signature; the downstream action-semantics layer interprets that
-signature before any policy selection. A Report describes, an Audit compares,
-and interpretation supplies context. None of these operations is silently
-performed by the preceding layer.
-
-Each new application therefore remains responsible for justifying its
-sectorization, observable family, evaluator, and failure boundary. The protocol
-makes those commitments inspectable and reproducible without replacing native
-domain analysis. Its contribution is a stable reporting object for sectorized
-observable diagnostics: **no weights are required at the protocol level, but
-observable structure and an explicit claim boundary are required.**
+SOFRS does not prescribe representation-specific numerical structure beyond
+the admitted carrier contracts.
 
 ***
 
-## Appendix A: SOF Report Specification v1.0
+## Appendix A: Normative SOFRS v2.0 Contract
 
-This appendix is normative. A SOFRS v1.0 artifact contains the version key
-`sofrs_version` and the eight diagnostic fields defined in Section 2. The
-controlled `claim_status` vocabulary supports machine-readable aggregation and
-prepares reports for later aligned comparison, while `claim_note` carries
-non-normative human qualification.
+The normative v2 contract is source-addressed rather than duplicated in full
+in this manuscript. Artifact B21 defines the assembled report envelope.
+Artifacts B22--B23 are strict and analogue Compiler Report Profile instances
+under the Paper X Compiler Report Profile v1.0 contract. Artifacts B29--B31 define the
+distinct Paper XII Assembly Profile contract and instances. The Capability
+Manifest, Typed SOF IR, Compiler Report Profile, and derivation-rule schemas
+are the versioned Paper X compiler contracts indexed by Artifact B24.
+
+A v2 report requires:
+
+```text
+sofrs_version, report_id, system, record_kind, strict_reconstruction,
+ external_basis_registry,
+compiler_contracts, compiler_output_binding, assembly_contract,
+item_bindings, alignment_readiness, source_mapping, source_artifacts,
+modules, findings, claims, degradation_items, failure_modes, provenance.
+```
+
+`provenance` is a disjoint union: `native_generation` binds the native source,
+adapter, compiler output, assembly profile, and producer closure; `migration`
+binds a non-native SOFRS v1 source, the migration adapter/ruleset, and its
+receipt. A native-v2 report cannot carry the migration variant.
+
+It does not require universal support, bridge, repair, or wall fields. The
+admission constraints are:
+
+```text
+strict_sof          -> enabled sof-basic module
+diagnostic_analogue -> enabled diagnostic-analogue module;
+                       strict-SOF theorem claims forbidden
+```
+
+Every affirmative statement must reference an admitted IR claim or finding and
+retain its carrier, convention, policy, evidence, scope, and derivation state.
+Every normative claim or degradation item must also retain its
+`source_output_item_id`; the binding list must be a typed bijection with the
+bound `CompilerOutput.items` array. `failure_modes` does not encode compiler
+degradation.
+Missing capabilities produce module omission or an explicit unavailable
+statement. All contract and source references carry 64-hex SHA-256 digests.
+
+### A.1 Claim-Scoped External Basis Mapping
+
+The semantic external basis is serialized by `external_basis_registry`. Its
+four levels and mandatory constraint identifiers are:
+
+- **Source identity:** `source_identity`, bound to
+  `source-snapshot-pinned`, records identity and digest closure for the cited
+  source snapshot.
+- **Object recomputation:** `object_level`, bound to
+  `object-level-recomputation`, records independent evidence for the cited
+  finite object fact.
+- **Realization/structure validation:** `structure_level`, bound to
+  `realization-structure-validation`, records satisfaction of the strict
+  structural admission basis.
+- **Semantic adequacy:** `semantic_adequacy`, bound to
+  `domain-semantic-adequacy`, records external assessment of domain relevance
+  and baseline adequacy.
+
+Packages and constraints use `SATISFIED`, `PARTIAL`, `NOT_ASSESSED`, or
+`NOT_APPLICABLE`. Every `SATISFIED` entry carries source-addressed evidence.
+Each claim binds its own package and constraint subset through
+`external_basis_refs` and `external_constraint_ids`; report-level validity does
+not transfer one claim's satisfied basis to another. `basis_status=COMPLETE` is
+reserved for registries whose applicable packages and mandatory constraints
+are all satisfied.
+
+An Object Certificate requires a cited, satisfied `object_level` package and
+independently checkable evidence. A `strict_sof` report requires a satisfied
+`structure_level` package. Otherwise the artifact may retain only its admitted
+protocol/representation claim or an unresolved external basis. These checks
+govern classification and admission; they do not establish scientific
+adequacy by schema validity alone.
+
+For a `strict_sof` report, `strict_reconstruction.candidate_status` is
+`not_applicable`: the candidate predicate applies only before strict admission.
+
+***
+
+## Appendix B: SOFRS v2.0 Example Reports
+
+The migrated collection supplies three compact protocol patterns:
+
+| Pattern | Example | Required presentation |
+|---------|---------|-----------------------|
+| strict-reconstruction boundary | Qwen attention | analogue descriptors, producer provenance, missing explicit $(V,Q,Y)$ boundary, and controlled reconstruction assessment |
+| diagnostic analogue | API-only LLM | descriptor provenance, evaluator outputs, analogue mapping, and negative strict boundary |
+| graceful degradation | dynamic maze aggregate | schema-transition findings and explicit unavailability of fixed-chart strict fields |
+
+These examples instantiate the protocol; they do not enlarge the Paper X
+compiler contracts or authorize promotion between their carriers.
+
+***
+
+## Appendix C: Frozen SOFRS v1.0 Provenance Contract
+
+This subsection preserves the frozen compatibility contract. A SOFRS v1.0
+artifact contains the version key `sofrs_version` and the eight diagnostic
+fields defined by the frozen schema. The controlled `claim_status` vocabulary
+supports machine-readable aggregation and prepares reports for later aligned
+comparison, while `claim_note` carries non-normative human qualification.
 Domain-specific metadata may be added without changing the eight-field report
-grammar. The executable schema is Artifact B1.
+grammar. The executable schema is Artifact B1. It is not the normative contract
+for new v2 reports.
 
-The JSON Schema below defines envelope validity only. Paper XII protocol
+The frozen JSON Schema defines envelope validity only. Protocol
 admission additionally requires `report_id`, `system`, `claim_note`, an explicit
-failure boundary, and conditional Level III evaluator provenance. Those rules
+failure boundary, and conditional provenance for the historical Level III
+behavioral regime. Those rules
 are encoded by Artifact B2; they do not mutate the frozen v1.0 envelope
 contract. Downstream protocol keys such
 as `reference`, `candidate`, `alignment`,
@@ -1133,187 +1161,119 @@ as `reference`, `candidate`, `alignment`,
 reserved for downstream comparison and action artifacts and should not appear
 as top-level SOFRS fields.
 
-The envelope validator (Artifact B3) also performs a schema-drift check: it
-extracts the JSON block below, parses it, and requires semantic equality with
-the canonical schema before validating any `.sofreport` artifact. Protocol
-admission is checked separately by Artifact B4. The schema `$id` is a stable
-namespace identifier rather than a network dependency; validation uses the
-versioned repository copy.
+Artifact B1 is the source-addressed frozen v1 schema. Artifact B3 validates
+the envelope against that schema, and Artifact B4 applies the separate v1
+admission profile. The executable contract, rather than a copy in this
+manuscript, is the source of truth.
 
-```json
-{
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://rime-project.local/schemas/sofrs/v1.0.schema.json",
-  "title": "SOF Report Specification (SOFRS) v1.0",
-  "description": "Versioned machine-readable contract for reports emitted by the Paper XII SOF Diagnostic Protocol.",
-  "type": "object",
-  "required": [
-    "sofrs_version",
-    "sectorization",
-    "observable_family",
-    "support_matrix",
-    "bridge_matrix",
-    "repair_matrix",
-    "wall_record",
-    "claim_status",
-    "failure_modes"
-  ],
-  "properties": {
-    "sofrs_version": {
-      "description": "SOF Report Specification version used by this artifact.",
-      "const": "1.0"
-    },
-    "sectorization": {
-      "description": "Sector origin, construction rule, dimensions or probe classes, and realization status.",
-      "type": "object",
-      "minProperties": 1
-    },
-    "observable_family": {
-      "description": "Named structural, behavioral, failure, operator, kernel, transition, or registered analogue observables.",
-      "type": "object",
-      "minProperties": 1
-    },
-    "support_matrix": {
-      "description": "Direct cross-sector support or a clearly labeled behavioral support analogue.",
-      "type": ["object", "array", "null"]
-    },
-    "bridge_matrix": {
-      "description": "Length-two, commutator, word-depth, routing, or protocol bridge data.",
-      "type": ["object", "array", "null"]
-    },
-    "repair_matrix": {
-      "description": "Frozen-to-active pairs or registered repair transitions with layer or step metadata.",
-      "type": ["object", "array", "null"]
-    },
-    "wall_record": {
-      "description": "Wall events and any trajectory summary associated with a supplied deformation path.",
-      "type": ["object", "array", "null"]
-    },
-    "claim_status": {
-      "description": "Controlled claim class for the report as a whole.",
-      "enum": [
-        "theorem",
-        "evidence",
-        "diagnostic",
-        "proxy_only",
-        "boundary",
-        "failure",
-        "negative_control"
-      ]
-    },
-    "claim_note": {
-      "description": "Optional human-readable qualification of the controlled claim status.",
-      "type": "string"
-    },
-    "failure_modes": {
-      "description": "Applicability warnings and known interpretation boundaries. Use an empty array only when none are known.",
-      "type": "array",
-      "items": {"type": ["object", "string"]},
-      "uniqueItems": true
-    }
-  },
-  "not": {
-    "anyOf": [
-      {"required": ["schema_version"]},
-      {"required": ["repair_candidates"]},
-      {"required": ["wall_records"]},
-      {"required": ["trajectory_summary"]}
-    ]
-  },
-  "additionalProperties": true
-}
+The schema forbids these superseded top-level names:
+
+```text
+schema_version      repair_candidates
+wall_records        trajectory_summary
 ```
 
-The schema forbids the superseded top-level names `schema_version`,
-`repair_candidates`, `wall_records`, and `trajectory_summary`. A trajectory
-summary, when present, is nested inside `wall_record`. Specification revisions
-that change required keys or controlled vocabularies must increment the SOFRS
-version rather than silently changing the meaning of v1.0.
+A trajectory summary, when present, is nested inside `wall_record`.
+Specification revisions that change required keys or controlled vocabularies
+must increment the SOFRS version rather than silently changing the meaning of
+v1.0.
 
 ***
 
-## Appendix B: Computational Artifacts
+## Appendix D: v1-to-v2 Migration Mapping and Certificate
+
+The migration is non-destructive and source-addressed:
+
+| v1 element | v2 destination | Migration rule |
+|------------|----------------|----------------|
+| one eight-field envelope | Manifest + IR + output + report | split declaration, compiler emission, and presentation |
+| support/bridge/repair field | carrier-qualified finding or analogue descriptor | no global text substitution |
+| `999` depth sentinel | `UNREACHED_AT_CUTOFF` | require the inherited cutoff policy |
+| report-level claim label | result state + claim status | enforce their legal pairing |
+| implicit missing field | unavailable module | do not serialize absence as zero |
+| source file | source artifact reference | pin path and SHA-256 digest |
+| external source basis | `external_basis_registry` and claim refs | separate source/object/structure/adequacy; do not infer |
+
+The executable certificate consists of the migration index, nine migrated
+Manifest/IR/`CompilerOutput`/report stacks, their v2 validation receipts, the
+v2 schema and profiles, and the versioned v2 validator that reproduces the
+census and reference checks. The
+index records nine analogue reports, four controlled strict-reconstruction
+assessments with status `yes`,
+and 118 sentinel normalizations. These
+counts certify the migrated collection only; they do not claim that every
+historical v1 field has a strict v2 equivalent.
+
+***
+
+## Appendix E: Computational Artifacts
 
 This appendix indexes the executable artifacts used for contract validation and
-the reported controls. Paths are relative to the directories stated below.
+the reported controls. The historical B-series artifact identifiers are
+retained for source-address stability. Paths are relative to the directories
+stated below.
 
 ### Contracts and Validators
 
-The default directory in this table is `schemas/sofrs/` for B1--B2 and
-`experiments/paper12/` for B3--B4.
+The default directory in this table is `schemas/sofrs/` for B1--B2,
+B21--B24, and B28--B31, and `experiments/paper12/validation/` for B3--B4
+and B32.
 
-| Artifact | Role in Paper XII | Short path |
+| Artifact | Role in this paper | Short path |
 |----------|-------------------|------------|
-| B1 | frozen SOFRS v1.0 envelope schema | `v1.0.schema.json` |
-| B2 | Paper XII protocol-admission profile | `paper12-protocol-profile-v1.0.json` |
-| B3 | envelope and Appendix schema-drift validator | `validate_sofreport.py` |
-| B4 | stronger protocol-admission validator | `validate_protocol_admission.py` |
+| B1 | v1 envelope schema | `v1.0.schema.json` |
+| B2 | v1 admission profile | `paper12-protocol-profile-v1.0.json` |
+| B3 | v1 schema-drift validator | `validate_sofreport.py` |
+| B4 | v1 admission validator | `validate_protocol_admission.py` |
+| B21 | v2 report schema | `v2.0.schema.json` |
+| B22 | strict Compiler Report Profile v1.0 instance | `paper12-strict-compiler-profile-v1.0.json` |
+| B23 | analogue Compiler Report Profile v1.0 instance | `paper12-analogue-compiler-profile-v1.0.json` |
+| B24 | compiler contracts and rule registry | `../sofcompiler/` |
+| B28 | v2 validation-receipt schema | `report-validation-receipt-v2.0.schema.json` |
+| B29 | Assembly Profile v2.0 schema | `assembly-profile-v2.0.schema.json` |
+| B30 | strict Assembly Profile instance | `paper12-strict-assembly-profile-v2.0.json` |
+| B31 | analogue Assembly Profile instance | `paper12-analogue-assembly-profile-v2.0.json` |
+| B32 | canonical normative-core and artifact-identity helper | `canonical_identity.py` |
 
-### Paper XII Audits
+### Report-Protocol Audits
 
 The default directory in this table is `experiments/paper12/`.
 
-| Artifact | Role in Paper XII | Short path |
+| Artifact | Role in this paper | Short path |
 |----------|-------------------|------------|
-| B5 | transformer activation-sector audit | `transformer_activation_sof.py` |
-| B6 | transformer batch robustness sweep | `transformer_batch_sweep.py` |
-| B7 | revision-pinned Qwen attention audit | `qwen_attention_sof.py` |
+| B5 | activation-sector audit | `transformer_activation_sof.py` |
+| B6 | transformer batch sweep | `transformer_batch_sweep.py` |
+| B7 | Qwen attention audit | `qwen_attention_sof.py` |
 | B8 | MoE route-sector audit | `moe_expert_sof.py` |
-| B9 | bias-driven private-expert repair control | `moe_bias_repair_sof.py` |
-| B10 | diffusion-time denoising audit | `diffusion_denoising_sof.py` |
-| B11 | dynamic-maze wall crossing | `maze_wall_crossing.py` |
-| B12 | recommender coverage and dead-zone audit | `recommender_sof.py` |
-| B13 | behavioral/API-level language-model audit | `blackbox_llm_sof.py` |
-| B14 | multi-system boundary-fixture generator | `failure_cases.py` |
-| B15 | admitted reference reports | `results/*.sofreport` |
-| B16 | envelope-valid validator fixture | `results/failure_cases.fixture.json` |
+| B9 | private-expert bias control | `moe_bias_repair_sof.py` |
+| B10 | diffusion aggregate | `diffusion_denoising_sof.py` |
+| B11 | maze aggregate | `maze_wall_crossing.py` |
+| B12 | recommender audit | `recommender_sof.py` |
+| B13 | API analogue audit | `blackbox_llm_sof.py` |
+| B14 | boundary-fixture generator | `failure_cases.py` |
+| B15 | frozen v1 reports | `archive/results/*.sofreport` |
+| B16 | v1 validator fixture | `archive/results/failure_cases.fixture.json` |
+| B25 | v1-to-v2 adapter | `validation/migrate_sofrs_v1_to_v2.py` |
+| B26 | v2 validator and receipt producer | `validation/validate_sofrs_v2.py` |
+| B27 | v2 stack and validation receipts | `results/` |
 
 ### Cross-Program Support
 
 The default directory in this table is `experiments/`.
 
-| Artifact | Role in Paper XII | Short path |
+| Artifact | Role in this paper | Short path |
 |----------|-------------------|------------|
-| B17 | quantum gate-log T-blind control | `quantum/quantum_gateset_t_blind_control.py` |
-| B18 | quantum state-trajectory probe control | `quantum/quantum_state_trajectory_sof.py` |
-| B19 | Kalman, PDE, and combinatorial handoff | `paper10/control_pde_combinatorial_sof.py` |
-| B20 | barrier-finance handoff | `paper10/barrier_option_sof.py` |
+| B17 | gate-log T-blind control | `quantum/quantum_gateset_t_blind_control.py` |
+| B18 | state-trajectory probe | `quantum/quantum_state_trajectory_sof.py` |
+| B19 | control/PDE handoff | `paper10/control_pde_combinatorial_sof.py` |
+| B20 | finance handoff | `paper10/barrier_option_sof.py` |
 
 ***
 
-## References
-
-**Program lineage.** Paper VIII defines the SOF object layer; Paper IX defines
-SOF deformations and observable trajectories; Paper X defines the Universal
-Observable Pipeline and SOF Registry; Paper XI defines observable wall records
-and wall-spectrum features \cite{paper8,paper9,paper10,paper11}. Paper XII uses
-these layers as report fields.
-
-**Downstream protocol lineage.** Paper XIII consumes two SOF Reports only after
-explicit sector and observable alignment, forms the comparison object
-$\mathfrak C_{\mathrm{cmp}}=(\mathcal R^\star,\widehat{\mathcal R},
-\Phi;\Theta)$, and emits a `.sofaudit` record containing that factual object and
-its induced signature only. Paper XIV
-interprets the resulting signature coordinates before
-deriving a `.sofaction` candidate set. These downstream layers clarify the boundary
-of SOFRS; they are not operations performed by a single SOF Report.
-
-**Diagnostic precedents.** The report orientation is analogous in spirit to
-test reports, coverage reports, profiling reports, static-analysis reports,
-model cards, and interpretability dashboards: the output is a structured
-artifact with claim-status metadata, not merely a positive example
-\cite{mitchell2019modelcards,raji2020accountability}.
-
-**Transformer and diffusion background.** Attention-head analysis, activation
-pattern studies, expert-routing diagnostics, and diffusion denoising analyses
-provide external contexts in which sectorization-like decompositions arise
-natively. Paper XII uses these contexts diagnostically and does not claim a
-general theory of transformer or diffusion-model explainability
-\cite{vaswani2017attention,clark2019bertattention,qwen2024qwen25,ho2020ddpm}.
-
-**MoE routing background.** DeepSeekMoE introduces fine-grained expert
-segmentation and shared experts; DeepSeek-V3 describes auxiliary-loss-free
-load balancing through routing-bias updates. Paper XII abstracts only the
-observable routing-repair pattern and does not audit DeepSeek parameters or
-claim a general MoE load-balancing theorem
-\cite{dai2024deepseekmoe,deepseekai2024v3}.
+The B-series artifacts certify only their declared compiler, assembly,
+migration, identity, or bounded control targets. They do not establish adapter
+adequacy, report alignment, interpretation, or action. Imported cross-program
+support retains its owning paper and claim status. The complete artifact map
+and runnable contract checks are indexed in `experiments/paper12/README.md`;
+all listed artifacts are available in the
+[RIME repository](https://github.com/dooven-prime/rime-lite).

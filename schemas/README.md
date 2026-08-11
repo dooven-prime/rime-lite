@@ -5,6 +5,12 @@ This directory is the canonical source for machine-readable SOF contracts in
 
 ```text
 schemas/
+  common/digest-v1.schema.json
+                              canonical lowercase SHA-256 digest
+  common/artifact-reference-v1.schema.json
+                              source-addressed artifact reference
+  common/validation-receipt-reference-v1.schema.json
+                              source-addressed validation receipt reference
   sofcompiler/capability-manifest-v1.0.schema.json
                                application capability declaration
   sofcompiler/typed-sof-ir-v1.0.schema.json
@@ -20,17 +26,44 @@ schemas/
   sofrs/v2.0.schema.json      capability-gated compiled SOF report
   sofrs/report-validation-receipt-v1.0.schema.json
                               receipt for one frozen strict SOFRS v1 artifact
-  sofrs/paper12-strict-report-profile-v2.0.json
-                               strict SOF report modules
-  sofrs/paper12-analogue-report-profile-v2.0.json
-                               diagnostic-analogue report module
+  sofrs/report-validation-receipt-v2.0.schema.json
+                              receipt for one SOFRS v2 report closure
+  sofrs/paper12-strict-compiler-profile-v1.0.json
+                               Paper X compiler-profile instance for strict SOF
+  sofrs/paper12-analogue-compiler-profile-v1.0.json
+                               Paper X compiler-profile instance for analogues
+  sofrs/assembly-profile-v2.0.schema.json
+                               Paper XII faithful-assembly profile contract
+  sofrs/paper12-strict-assembly-profile-v2.0.json
+                               strict SOFRS assembly instance
+  sofrs/paper12-analogue-assembly-profile-v2.0.json
+                               analogue SOFRS assembly instance
   sofaudit/v1.0.schema.json   one aligned reference/target SOF comparison
   sofaudit/v2.0.schema.json   capability-aligned profile-selected comparison
+  sofaudit/validation-receipt-v2.0.schema.json
+                               digest-bound SOFAUDIT protocol receipt
+  sofaudit/*profile-v2.0.json versioned Paper XIII Audit Profile inputs
+  sofaudit/coordinate-semantics-registry-v1.0.json
+                               coordinate family/value semantics registry
+  sofaction/v2.0.schema.json   policy-relative interpretation and bounded candidates
+  sofaction/validation-receipt-v2.0.schema.json
+                               digest-bound SOFAction protocol receipt
   registry/v1.0.schema.json   one frozen five-layer Registry snapshot
   registry/v2.0.schema.json   typed Registry snapshot contract
 ```
 
 The contracts are deliberately separate:
+
+- **Shared digest and reference fragments** are canonicalized under
+  `schemas/common/`. The v2 SOFRS, SOFAUDIT, SOFACTION, and validation-receipt
+  schemas contain self-contained generated copies so direct JSON Schema consumers do not need
+  a filesystem reference registry. Regenerate and check them with
+  `python tools/generate_shared_contract_fragments.py --check`; the generator
+  is the only supported update path for these repeated definitions. All three
+  contracts use the same lowercase SHA-256 digest pattern and receipt-reference
+  shape. SOFACTION's
+  role-bearing artifact reference is a typed superset whose digest component is
+  generated from the same shared fragment.
 
 - **Shared contract mechanics** live in `schemas/contract_api.py`. Paper-local
   validators reuse its JSON Schema error format, digest verification,
@@ -62,46 +95,88 @@ The contracts are deliberately separate:
 - **Paper XII protocol admission** is a separate profile layered over the
   frozen envelope. It requires named-system metadata, a failure boundary, and
   conditional evaluator provenance for Level III behavioral reports. Run
-  `python experiments/paper12/validate_protocol_admission.py`. Multi-system
+  `python experiments/paper12/validation/validate_protocol_admission.py`. Multi-system
   validator fixtures may be envelope-valid while remaining explicitly excluded
   from protocol admission.
 - **SOFRS v2.0 reporting** binds the exact Paper X Compiler Output produced
-  from a Capability Manifest, Typed SOF IR, Report Profile, and rule registry.
-  The validator recomputes that output before checking report modules. SOFRS
+  from a Capability Manifest, Typed SOF IR, Compiler Report Profile, and rule registry.
+  Paper XII then applies a separately typed Assembly Profile. The validator
+  recomputes the compiler output and complete assembly, checks object equality,
+  and verifies a typed identity bijection between `CompilerOutput.items` and
+  report claim/degradation items. SOFRS
   does not
   require one universal support/bridge/repair/wall grammar. Strict reports
   require finite complex `(V,Q,Y)` data and structural admission; analogue
   reports carry descriptor provenance, an analogue mapping, and a negative SOF
   boundary and cannot instantiate SOF theorems. The reference migration
-  preserves all nine v1 reports by digest, emits four strict records and five
-  analogues under `experiments/paper12/results/v2/`, and converts legacy `999`
+  preserves all nine archived v1 reports by digest, emits nine analogue
+  reports under `experiments/paper12/results/`, records four controlled
+  strict-reconstruction assessments with status `yes`, and converts legacy `999`
   values to `UNREACHED_AT_CUTOFF`. Every v2 report also carries
   alignment-ready adapter/profile, sector/observable, carrier, convention,
   policy, comparison-key, and digest metadata without constructing a pairwise
-  alignment. Run
-  `python experiments/paper12/validate_sofrs_v2.py`.
+  alignment. It also carries `external_basis_registry` and claim-level basis
+  references, separating source identity, object-level recomputation,
+  realization/structure validation, and domain semantic adequacy. A schema-valid report may leave the latter levels
+  unresolved; an Object Certificate requires a satisfied object-level basis
+  with digest-checked evidence. Run
+  `python experiments/paper12/validation/validate_sofrs_v2.py`.
 - **SOFRS report validation receipts** bind one exact report artifact to the
   Paper XII validator and schema that checked it. The v1.0 receipt contract is
-  limited to frozen strict SOFRS v1 compatibility inputs; native v2 validation
-  uses a future versioned receipt contract. A receipt records validation
+  limited to frozen strict SOFRS v1 compatibility inputs. The v2.0 receipt
+  contract binds the report, Manifest, IR, Compiler Profile, CompilerOutput,
+  Assembly Profile, assembly implementation, validator implementation, and
+  receipt schema as one digest-checked closure.
+  A receipt records validation
   evidence; it is neither a report result state nor a Paper XIII comparison
   state. Consumers must verify the receipt and its report linkage rather than
   trusting a self-declared `PASS` field.
 - **SOFAUDIT v2.0** validates a `.sofaudit` artifact comparing two aligned
-  SOFRS reports with validated source-report receipts. A report digest alone
+  SOFRS v2 reports with validated v2 source-report receipts. A report digest alone
   is insufficient. SOFAUDIT inherits record-kind, carrier, policy, evidence, and
   promotion guards from the Paper X compiler contracts. The fields
-  `source_reports`, `alignment`, and `comparison_specification` serialize the
+  `source_reports`, typed `alignment`, and controlled `comparison_specification` serialize the
   canonical comparison object
   $\mathfrak C_{\mathrm{cmp}}=(\mathcal R^\star,\widehat{\mathcal R},
-  \Phi;\Theta)$. `audit_profile` selects requested coordinates and
-  `coordinates` stores the sparse typed output. Unavailable coordinates are
+  \Phi;\Theta)$. `comparison_basis` records reference-role authority,
+  alignment evidence, policy compatibility, and any independent object oracle.
+  `audit_profile` selects namespaced coordinate instances and `coordinates`
+  stores typed reference/target values and relations under a controlled
+  `value_schema_id`. Unavailable coordinates are
   `NOT_DECLARED`, `NOT_APPLICABLE`, `INCOMPARABLE`, or `UNRESOLVED`, never
-  numerical zero. The frozen v1 schema and 28 source records remain immutable;
-  the v2 migration normalizes legacy `999` policy sentinels to
-  `UNREACHED_AT_CUTOFF` with explicit cutoffs. Run
-  `python experiments/paper13/migrate_sofaudit_v1_to_v2.py` and
-  `python experiments/paper13/validate_sofaudit_v2.py`.
+  numerical zero. Certificate classes distinguish object recomputation,
+  alignment-relative comparison audit, protocol conformance, and migration or
+  assembly preservation. Native generation and v1 migration use disjoint
+  provenance variants.
+
+  JSON Schema checks shape; the Paper XIII semantic validator executes the
+  cross-field contract. It recomputes reference/target roles, record-kind
+  regime, profile-coordinate closure, alignment coverage and
+  total/injective/surjective properties, inherited guard state, comparison-basis
+  completeness, claim/result/certificate compatibility, and artifact
+  identity/role/digest closure. It also requires an external-object claim to
+  bind a satisfied independent oracle over raw source, independent
+  recomputation, oracle result, and audit result artifacts. Hostile fixtures
+  exercise each rejection boundary.
+
+  The frozen v1 schema and 28 source records remain immutable. Their v2
+  Migration/Assembly Certificates preserve source identity and normalize legacy
+  `999` sentinels to `UNREACHED_AT_CUTOFF`; they do not recertify legacy
+  comparisons. Because the migrated SOFRS v2 analogue reports do not provide
+  the required report-level alignments and item bindings, 201 legacy-present
+  coordinates are `UNRESOLVED` and 23 absent coordinates are `NOT_DECLARED`.
+  Separately, the native GridWorld F4 chain binds two native SOFRS v2 reports,
+  explicit alignments and comparison semantics, report-item bindings, and an
+  independent object oracle. It emits factual `ALIGNED`, `ALIGNED`, and
+  `MISMATCH` coordinates with mismatch counts `0`, `0`, and `8`; it is not part
+  of the 28-record migration census. The SOFAUDIT validation receipt binds the
+  audit, validator, source-report receipts, and referenced artifacts as a
+  protocol-conformance closure. It does not replace the independent Object
+  Certificate.
+  Run
+  `python experiments/paper13/validation/migrate_sofrs_v1_to_v2.py`,
+  `python experiments/paper13/validation/migrate_sofaudit_v1_to_v2.py`, and
+  `python experiments/paper13/validation/validate_sofaudit_v2.py`.
 - **SOF Registry Schema** validates a versioned collection of evidence entries.
   v1 retains the frozen five-layer Paper X release shape. v2.0 instead declares
   strict-SOF or diagnostic-analogue admission, capabilities, typed objects and

@@ -1,0 +1,1246 @@
+{
+  "ir_version": "1.0",
+  "record_id": "paper12.maze.v2",
+  "record_kind": "diagnostic_analogue",
+  "manifest_ref": {
+    "manifest_id": "paper12.maze.v2",
+    "manifest_version": "1.0",
+    "artifact_id": "artifact.manifest",
+    "digest": {
+      "algorithm": "sha256",
+      "value": "5eedee9f6f297c5d514c417afe3aa10711ad52e165558ad9bdbb058ae6744258"
+    }
+  },
+  "source": {
+    "adapter_id": "paper12-v1-to-v2",
+    "adapter_version": "2.0",
+    "source_id": "paper12.maze.v1",
+    "artifact_ids": [
+      "artifact.legacy",
+      "artifact.producer"
+    ]
+  },
+  "objects": [
+    {
+      "id": "analogue.record",
+      "kind": "diagnostic_analogue",
+      "label": "Provenance-bound diagnostic analogue",
+      "provenance_artifact_ids": [
+        "artifact.legacy"
+      ],
+      "carrier_id": "carrier.analogue",
+      "data": {
+        "sector_descriptor": {
+          "origin": "connected components of the open-door graph",
+          "space": "25 maze cells",
+          "time_dependent": true,
+          "strict_sof_realization": true
+        },
+        "observable_descriptor": {
+          "connectivity": "open-door adjacency and connected components",
+          "frozen_pairs": "ordered cell pairs in different components"
+        },
+        "support_descriptor": {
+          "kind": "connectivity summary",
+          "fully_open": {
+            "components": 1,
+            "frozen_ordered_pairs": 0
+          },
+          "fully_closed": {
+            "components": 25,
+            "frozen_ordered_pairs": 600
+          }
+        },
+        "bridge_descriptor": null,
+        "repair_descriptor": {
+          "kind": "door-reopening connectivity repair",
+          "events": [
+            {
+              "step": 1,
+              "door": 38,
+              "before": 25,
+              "after": 24,
+              "frozen_pairs": 598
+            },
+            {
+              "step": 2,
+              "door": 28,
+              "before": 24,
+              "after": 23,
+              "frozen_pairs": 596
+            },
+            {
+              "step": 3,
+              "door": 14,
+              "before": 23,
+              "after": 22,
+              "frozen_pairs": 592
+            },
+            {
+              "step": 4,
+              "door": 7,
+              "before": 22,
+              "after": 21,
+              "frozen_pairs": 588
+            },
+            {
+              "step": 5,
+              "door": 20,
+              "before": 21,
+              "after": 20,
+              "frozen_pairs": 586
+            },
+            {
+              "step": 6,
+              "door": 18,
+              "before": 20,
+              "after": 19,
+              "frozen_pairs": 580
+            },
+            {
+              "step": 7,
+              "door": 22,
+              "before": 19,
+              "after": 18,
+              "frozen_pairs": 578
+            },
+            {
+              "step": 8,
+              "door": 10,
+              "before": 18,
+              "after": 17,
+              "frozen_pairs": 572
+            },
+            {
+              "step": 9,
+              "door": 32,
+              "before": 17,
+              "after": 16,
+              "frozen_pairs": 540
+            },
+            {
+              "step": 10,
+              "door": 23,
+              "before": 16,
+              "after": 15,
+              "frozen_pairs": 524
+            },
+            {
+              "step": 11,
+              "door": 35,
+              "before": 15,
+              "after": 14,
+              "frozen_pairs": 522
+            },
+            {
+              "step": 12,
+              "door": 3,
+              "before": 14,
+              "after": 13,
+              "frozen_pairs": 504
+            },
+            {
+              "step": 13,
+              "door": 36,
+              "before": 13,
+              "after": 12,
+              "frozen_pairs": 502
+            },
+            {
+              "step": 14,
+              "door": 30,
+              "before": 12,
+              "after": 11,
+              "frozen_pairs": 498
+            },
+            {
+              "step": 15,
+              "door": 2,
+              "before": 11,
+              "after": 10,
+              "frozen_pairs": 458
+            },
+            {
+              "step": 16,
+              "door": 21,
+              "before": 10,
+              "after": 9,
+              "frozen_pairs": 456
+            },
+            {
+              "step": 17,
+              "door": 29,
+              "before": 9,
+              "after": 8,
+              "frozen_pairs": 432
+            },
+            {
+              "step": 18,
+              "door": 1,
+              "before": 8,
+              "after": 7,
+              "frozen_pairs": 380
+            },
+            {
+              "step": 22,
+              "door": 0,
+              "before": 7,
+              "after": 6,
+              "frozen_pairs": 320
+            },
+            {
+              "step": 24,
+              "door": 17,
+              "before": 6,
+              "after": 5,
+              "frozen_pairs": 252
+            },
+            {
+              "step": 25,
+              "door": 8,
+              "before": 5,
+              "after": 4,
+              "frozen_pairs": 246
+            },
+            {
+              "step": 26,
+              "door": 34,
+              "before": 4,
+              "after": 3,
+              "frozen_pairs": 208
+            },
+            {
+              "step": 27,
+              "door": 31,
+              "before": 3,
+              "after": 2,
+              "frozen_pairs": 48
+            },
+            {
+              "step": 32,
+              "door": 39,
+              "before": 2,
+              "after": 1,
+              "frozen_pairs": 0
+            }
+          ],
+          "repair_count": 24,
+          "claim_note": "connectivity repair, not fixed-sector Lie-depth D-repair"
+        },
+        "wall_descriptor": {
+          "wall_type": "connected-component schema transition",
+          "wall_number": 24,
+          "split_events": [
+            {
+              "step": 9,
+              "door": 39,
+              "before": 1,
+              "after": 2,
+              "frozen_pairs": 48
+            },
+            {
+              "step": 14,
+              "door": 31,
+              "before": 2,
+              "after": 3,
+              "frozen_pairs": 208
+            },
+            {
+              "step": 15,
+              "door": 34,
+              "before": 3,
+              "after": 4,
+              "frozen_pairs": 246
+            },
+            {
+              "step": 16,
+              "door": 8,
+              "before": 4,
+              "after": 5,
+              "frozen_pairs": 252
+            },
+            {
+              "step": 17,
+              "door": 17,
+              "before": 5,
+              "after": 6,
+              "frozen_pairs": 320
+            },
+            {
+              "step": 19,
+              "door": 0,
+              "before": 6,
+              "after": 7,
+              "frozen_pairs": 380
+            },
+            {
+              "step": 23,
+              "door": 1,
+              "before": 7,
+              "after": 8,
+              "frozen_pairs": 432
+            },
+            {
+              "step": 24,
+              "door": 29,
+              "before": 8,
+              "after": 9,
+              "frozen_pairs": 456
+            },
+            {
+              "step": 25,
+              "door": 21,
+              "before": 9,
+              "after": 10,
+              "frozen_pairs": 458
+            },
+            {
+              "step": 26,
+              "door": 2,
+              "before": 10,
+              "after": 11,
+              "frozen_pairs": 498
+            },
+            {
+              "step": 27,
+              "door": 30,
+              "before": 11,
+              "after": 12,
+              "frozen_pairs": 502
+            },
+            {
+              "step": 28,
+              "door": 36,
+              "before": 12,
+              "after": 13,
+              "frozen_pairs": 504
+            },
+            {
+              "step": 29,
+              "door": 3,
+              "before": 13,
+              "after": 14,
+              "frozen_pairs": 522
+            },
+            {
+              "step": 30,
+              "door": 35,
+              "before": 14,
+              "after": 15,
+              "frozen_pairs": 524
+            },
+            {
+              "step": 31,
+              "door": 23,
+              "before": 15,
+              "after": 16,
+              "frozen_pairs": 540
+            },
+            {
+              "step": 32,
+              "door": 32,
+              "before": 16,
+              "after": 17,
+              "frozen_pairs": 572
+            },
+            {
+              "step": 33,
+              "door": 10,
+              "before": 17,
+              "after": 18,
+              "frozen_pairs": 578
+            },
+            {
+              "step": 34,
+              "door": 22,
+              "before": 18,
+              "after": 19,
+              "frozen_pairs": 580
+            },
+            {
+              "step": 35,
+              "door": 18,
+              "before": 19,
+              "after": 20,
+              "frozen_pairs": 586
+            },
+            {
+              "step": 36,
+              "door": 20,
+              "before": 20,
+              "after": 21,
+              "frozen_pairs": 588
+            },
+            {
+              "step": 37,
+              "door": 7,
+              "before": 21,
+              "after": 22,
+              "frozen_pairs": 592
+            },
+            {
+              "step": 38,
+              "door": 14,
+              "before": 22,
+              "after": 23,
+              "frozen_pairs": 596
+            },
+            {
+              "step": 39,
+              "door": 28,
+              "before": 23,
+              "after": 24,
+              "frozen_pairs": 598
+            },
+            {
+              "step": 40,
+              "door": 38,
+              "before": 24,
+              "after": 25,
+              "frozen_pairs": 600
+            }
+          ],
+          "merge_events": [
+            {
+              "step": 1,
+              "door": 38,
+              "before": 25,
+              "after": 24,
+              "frozen_pairs": 598
+            },
+            {
+              "step": 2,
+              "door": 28,
+              "before": 24,
+              "after": 23,
+              "frozen_pairs": 596
+            },
+            {
+              "step": 3,
+              "door": 14,
+              "before": 23,
+              "after": 22,
+              "frozen_pairs": 592
+            },
+            {
+              "step": 4,
+              "door": 7,
+              "before": 22,
+              "after": 21,
+              "frozen_pairs": 588
+            },
+            {
+              "step": 5,
+              "door": 20,
+              "before": 21,
+              "after": 20,
+              "frozen_pairs": 586
+            },
+            {
+              "step": 6,
+              "door": 18,
+              "before": 20,
+              "after": 19,
+              "frozen_pairs": 580
+            },
+            {
+              "step": 7,
+              "door": 22,
+              "before": 19,
+              "after": 18,
+              "frozen_pairs": 578
+            },
+            {
+              "step": 8,
+              "door": 10,
+              "before": 18,
+              "after": 17,
+              "frozen_pairs": 572
+            },
+            {
+              "step": 9,
+              "door": 32,
+              "before": 17,
+              "after": 16,
+              "frozen_pairs": 540
+            },
+            {
+              "step": 10,
+              "door": 23,
+              "before": 16,
+              "after": 15,
+              "frozen_pairs": 524
+            },
+            {
+              "step": 11,
+              "door": 35,
+              "before": 15,
+              "after": 14,
+              "frozen_pairs": 522
+            },
+            {
+              "step": 12,
+              "door": 3,
+              "before": 14,
+              "after": 13,
+              "frozen_pairs": 504
+            },
+            {
+              "step": 13,
+              "door": 36,
+              "before": 13,
+              "after": 12,
+              "frozen_pairs": 502
+            },
+            {
+              "step": 14,
+              "door": 30,
+              "before": 12,
+              "after": 11,
+              "frozen_pairs": 498
+            },
+            {
+              "step": 15,
+              "door": 2,
+              "before": 11,
+              "after": 10,
+              "frozen_pairs": 458
+            },
+            {
+              "step": 16,
+              "door": 21,
+              "before": 10,
+              "after": 9,
+              "frozen_pairs": 456
+            },
+            {
+              "step": 17,
+              "door": 29,
+              "before": 9,
+              "after": 8,
+              "frozen_pairs": 432
+            },
+            {
+              "step": 18,
+              "door": 1,
+              "before": 8,
+              "after": 7,
+              "frozen_pairs": 380
+            },
+            {
+              "step": 22,
+              "door": 0,
+              "before": 7,
+              "after": 6,
+              "frozen_pairs": 320
+            },
+            {
+              "step": 24,
+              "door": 17,
+              "before": 6,
+              "after": 5,
+              "frozen_pairs": 252
+            },
+            {
+              "step": 25,
+              "door": 8,
+              "before": 5,
+              "after": 4,
+              "frozen_pairs": 246
+            },
+            {
+              "step": 26,
+              "door": 34,
+              "before": 4,
+              "after": 3,
+              "frozen_pairs": 208
+            },
+            {
+              "step": 27,
+              "door": 31,
+              "before": 3,
+              "after": 2,
+              "frozen_pairs": 48
+            },
+            {
+              "step": 32,
+              "door": 39,
+              "before": 2,
+              "after": 1,
+              "frozen_pairs": 0
+            }
+          ],
+          "trajectory_summary": {
+            "component_path": [
+              1,
+              25,
+              1
+            ],
+            "frozen_pair_path": [
+              0,
+              600,
+              0
+            ]
+          }
+        },
+        "analogue_mapping": "Connected-component sectors change from one to twenty-five and back; the aggregate report is a schema-transition diagnostic."
+      }
+    }
+  ],
+  "carriers": [
+    {
+      "id": "carrier.analogue",
+      "kind": "analogue",
+      "capability_id": "diagnostic_analogue",
+      "semantics": "Descriptor-level support, bridge, repair, and wall analogues.",
+      "object_ids": [
+        "analogue.record"
+      ],
+      "semantic_convention_ids": []
+    }
+  ],
+  "semantic_conventions": [],
+  "run_policies": [],
+  "artifacts": [
+    {
+      "id": "artifact.manifest",
+      "uri": "experiments/paper12/results/manifests/maze.capabilities.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "5eedee9f6f297c5d514c417afe3aa10711ad52e165558ad9bdbb058ae6744258"
+      },
+      "media_type": "application/json",
+      "schema_version": "1.0",
+      "role": "manifest"
+    },
+    {
+      "id": "artifact.legacy",
+      "uri": "experiments/paper12/archive/results/maze.sofreport",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "8eb251fa49e63b41e08f7694a34f84aa75e6cba771d74444de50e8492f432929"
+      },
+      "media_type": "application/json",
+      "schema_version": "1.0",
+      "role": "source-input"
+    },
+    {
+      "id": "artifact.producer",
+      "uri": "experiments/paper12/maze_wall_crossing.py",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "5bb066ffec1fdd46ec6851cb1a444ba76c606aa359d50ffda4bbe703d1f059dd"
+      },
+      "media_type": "text/x-python",
+      "schema_version": "1.0",
+      "role": "proof-reference"
+    }
+  ],
+  "certificates": [],
+  "findings": [
+    {
+      "id": "finding.analogue",
+      "kind": "status_only",
+      "carrier_id": "carrier.analogue",
+      "subject_object_ids": [
+        "analogue.record"
+      ],
+      "value": {
+        "sector_descriptor": {
+          "origin": "connected components of the open-door graph",
+          "space": "25 maze cells",
+          "time_dependent": true,
+          "strict_sof_realization": true
+        },
+        "observable_descriptor": {
+          "connectivity": "open-door adjacency and connected components",
+          "frozen_pairs": "ordered cell pairs in different components"
+        },
+        "support_descriptor": {
+          "kind": "connectivity summary",
+          "fully_open": {
+            "components": 1,
+            "frozen_ordered_pairs": 0
+          },
+          "fully_closed": {
+            "components": 25,
+            "frozen_ordered_pairs": 600
+          }
+        },
+        "bridge_descriptor": null,
+        "repair_descriptor": {
+          "kind": "door-reopening connectivity repair",
+          "events": [
+            {
+              "step": 1,
+              "door": 38,
+              "before": 25,
+              "after": 24,
+              "frozen_pairs": 598
+            },
+            {
+              "step": 2,
+              "door": 28,
+              "before": 24,
+              "after": 23,
+              "frozen_pairs": 596
+            },
+            {
+              "step": 3,
+              "door": 14,
+              "before": 23,
+              "after": 22,
+              "frozen_pairs": 592
+            },
+            {
+              "step": 4,
+              "door": 7,
+              "before": 22,
+              "after": 21,
+              "frozen_pairs": 588
+            },
+            {
+              "step": 5,
+              "door": 20,
+              "before": 21,
+              "after": 20,
+              "frozen_pairs": 586
+            },
+            {
+              "step": 6,
+              "door": 18,
+              "before": 20,
+              "after": 19,
+              "frozen_pairs": 580
+            },
+            {
+              "step": 7,
+              "door": 22,
+              "before": 19,
+              "after": 18,
+              "frozen_pairs": 578
+            },
+            {
+              "step": 8,
+              "door": 10,
+              "before": 18,
+              "after": 17,
+              "frozen_pairs": 572
+            },
+            {
+              "step": 9,
+              "door": 32,
+              "before": 17,
+              "after": 16,
+              "frozen_pairs": 540
+            },
+            {
+              "step": 10,
+              "door": 23,
+              "before": 16,
+              "after": 15,
+              "frozen_pairs": 524
+            },
+            {
+              "step": 11,
+              "door": 35,
+              "before": 15,
+              "after": 14,
+              "frozen_pairs": 522
+            },
+            {
+              "step": 12,
+              "door": 3,
+              "before": 14,
+              "after": 13,
+              "frozen_pairs": 504
+            },
+            {
+              "step": 13,
+              "door": 36,
+              "before": 13,
+              "after": 12,
+              "frozen_pairs": 502
+            },
+            {
+              "step": 14,
+              "door": 30,
+              "before": 12,
+              "after": 11,
+              "frozen_pairs": 498
+            },
+            {
+              "step": 15,
+              "door": 2,
+              "before": 11,
+              "after": 10,
+              "frozen_pairs": 458
+            },
+            {
+              "step": 16,
+              "door": 21,
+              "before": 10,
+              "after": 9,
+              "frozen_pairs": 456
+            },
+            {
+              "step": 17,
+              "door": 29,
+              "before": 9,
+              "after": 8,
+              "frozen_pairs": 432
+            },
+            {
+              "step": 18,
+              "door": 1,
+              "before": 8,
+              "after": 7,
+              "frozen_pairs": 380
+            },
+            {
+              "step": 22,
+              "door": 0,
+              "before": 7,
+              "after": 6,
+              "frozen_pairs": 320
+            },
+            {
+              "step": 24,
+              "door": 17,
+              "before": 6,
+              "after": 5,
+              "frozen_pairs": 252
+            },
+            {
+              "step": 25,
+              "door": 8,
+              "before": 5,
+              "after": 4,
+              "frozen_pairs": 246
+            },
+            {
+              "step": 26,
+              "door": 34,
+              "before": 4,
+              "after": 3,
+              "frozen_pairs": 208
+            },
+            {
+              "step": 27,
+              "door": 31,
+              "before": 3,
+              "after": 2,
+              "frozen_pairs": 48
+            },
+            {
+              "step": 32,
+              "door": 39,
+              "before": 2,
+              "after": 1,
+              "frozen_pairs": 0
+            }
+          ],
+          "repair_count": 24,
+          "claim_note": "connectivity repair, not fixed-sector Lie-depth D-repair"
+        },
+        "wall_descriptor": {
+          "wall_type": "connected-component schema transition",
+          "wall_number": 24,
+          "split_events": [
+            {
+              "step": 9,
+              "door": 39,
+              "before": 1,
+              "after": 2,
+              "frozen_pairs": 48
+            },
+            {
+              "step": 14,
+              "door": 31,
+              "before": 2,
+              "after": 3,
+              "frozen_pairs": 208
+            },
+            {
+              "step": 15,
+              "door": 34,
+              "before": 3,
+              "after": 4,
+              "frozen_pairs": 246
+            },
+            {
+              "step": 16,
+              "door": 8,
+              "before": 4,
+              "after": 5,
+              "frozen_pairs": 252
+            },
+            {
+              "step": 17,
+              "door": 17,
+              "before": 5,
+              "after": 6,
+              "frozen_pairs": 320
+            },
+            {
+              "step": 19,
+              "door": 0,
+              "before": 6,
+              "after": 7,
+              "frozen_pairs": 380
+            },
+            {
+              "step": 23,
+              "door": 1,
+              "before": 7,
+              "after": 8,
+              "frozen_pairs": 432
+            },
+            {
+              "step": 24,
+              "door": 29,
+              "before": 8,
+              "after": 9,
+              "frozen_pairs": 456
+            },
+            {
+              "step": 25,
+              "door": 21,
+              "before": 9,
+              "after": 10,
+              "frozen_pairs": 458
+            },
+            {
+              "step": 26,
+              "door": 2,
+              "before": 10,
+              "after": 11,
+              "frozen_pairs": 498
+            },
+            {
+              "step": 27,
+              "door": 30,
+              "before": 11,
+              "after": 12,
+              "frozen_pairs": 502
+            },
+            {
+              "step": 28,
+              "door": 36,
+              "before": 12,
+              "after": 13,
+              "frozen_pairs": 504
+            },
+            {
+              "step": 29,
+              "door": 3,
+              "before": 13,
+              "after": 14,
+              "frozen_pairs": 522
+            },
+            {
+              "step": 30,
+              "door": 35,
+              "before": 14,
+              "after": 15,
+              "frozen_pairs": 524
+            },
+            {
+              "step": 31,
+              "door": 23,
+              "before": 15,
+              "after": 16,
+              "frozen_pairs": 540
+            },
+            {
+              "step": 32,
+              "door": 32,
+              "before": 16,
+              "after": 17,
+              "frozen_pairs": 572
+            },
+            {
+              "step": 33,
+              "door": 10,
+              "before": 17,
+              "after": 18,
+              "frozen_pairs": 578
+            },
+            {
+              "step": 34,
+              "door": 22,
+              "before": 18,
+              "after": 19,
+              "frozen_pairs": 580
+            },
+            {
+              "step": 35,
+              "door": 18,
+              "before": 19,
+              "after": 20,
+              "frozen_pairs": 586
+            },
+            {
+              "step": 36,
+              "door": 20,
+              "before": 20,
+              "after": 21,
+              "frozen_pairs": 588
+            },
+            {
+              "step": 37,
+              "door": 7,
+              "before": 21,
+              "after": 22,
+              "frozen_pairs": 592
+            },
+            {
+              "step": 38,
+              "door": 14,
+              "before": 22,
+              "after": 23,
+              "frozen_pairs": 596
+            },
+            {
+              "step": 39,
+              "door": 28,
+              "before": 23,
+              "after": 24,
+              "frozen_pairs": 598
+            },
+            {
+              "step": 40,
+              "door": 38,
+              "before": 24,
+              "after": 25,
+              "frozen_pairs": 600
+            }
+          ],
+          "merge_events": [
+            {
+              "step": 1,
+              "door": 38,
+              "before": 25,
+              "after": 24,
+              "frozen_pairs": 598
+            },
+            {
+              "step": 2,
+              "door": 28,
+              "before": 24,
+              "after": 23,
+              "frozen_pairs": 596
+            },
+            {
+              "step": 3,
+              "door": 14,
+              "before": 23,
+              "after": 22,
+              "frozen_pairs": 592
+            },
+            {
+              "step": 4,
+              "door": 7,
+              "before": 22,
+              "after": 21,
+              "frozen_pairs": 588
+            },
+            {
+              "step": 5,
+              "door": 20,
+              "before": 21,
+              "after": 20,
+              "frozen_pairs": 586
+            },
+            {
+              "step": 6,
+              "door": 18,
+              "before": 20,
+              "after": 19,
+              "frozen_pairs": 580
+            },
+            {
+              "step": 7,
+              "door": 22,
+              "before": 19,
+              "after": 18,
+              "frozen_pairs": 578
+            },
+            {
+              "step": 8,
+              "door": 10,
+              "before": 18,
+              "after": 17,
+              "frozen_pairs": 572
+            },
+            {
+              "step": 9,
+              "door": 32,
+              "before": 17,
+              "after": 16,
+              "frozen_pairs": 540
+            },
+            {
+              "step": 10,
+              "door": 23,
+              "before": 16,
+              "after": 15,
+              "frozen_pairs": 524
+            },
+            {
+              "step": 11,
+              "door": 35,
+              "before": 15,
+              "after": 14,
+              "frozen_pairs": 522
+            },
+            {
+              "step": 12,
+              "door": 3,
+              "before": 14,
+              "after": 13,
+              "frozen_pairs": 504
+            },
+            {
+              "step": 13,
+              "door": 36,
+              "before": 13,
+              "after": 12,
+              "frozen_pairs": 502
+            },
+            {
+              "step": 14,
+              "door": 30,
+              "before": 12,
+              "after": 11,
+              "frozen_pairs": 498
+            },
+            {
+              "step": 15,
+              "door": 2,
+              "before": 11,
+              "after": 10,
+              "frozen_pairs": 458
+            },
+            {
+              "step": 16,
+              "door": 21,
+              "before": 10,
+              "after": 9,
+              "frozen_pairs": 456
+            },
+            {
+              "step": 17,
+              "door": 29,
+              "before": 9,
+              "after": 8,
+              "frozen_pairs": 432
+            },
+            {
+              "step": 18,
+              "door": 1,
+              "before": 8,
+              "after": 7,
+              "frozen_pairs": 380
+            },
+            {
+              "step": 22,
+              "door": 0,
+              "before": 7,
+              "after": 6,
+              "frozen_pairs": 320
+            },
+            {
+              "step": 24,
+              "door": 17,
+              "before": 6,
+              "after": 5,
+              "frozen_pairs": 252
+            },
+            {
+              "step": 25,
+              "door": 8,
+              "before": 5,
+              "after": 4,
+              "frozen_pairs": 246
+            },
+            {
+              "step": 26,
+              "door": 34,
+              "before": 4,
+              "after": 3,
+              "frozen_pairs": 208
+            },
+            {
+              "step": 27,
+              "door": 31,
+              "before": 3,
+              "after": 2,
+              "frozen_pairs": 48
+            },
+            {
+              "step": 32,
+              "door": 39,
+              "before": 2,
+              "after": 1,
+              "frozen_pairs": 0
+            }
+          ],
+          "trajectory_summary": {
+            "component_path": [
+              1,
+              25,
+              1
+            ],
+            "frozen_pair_path": [
+              0,
+              600,
+              0
+            ]
+          }
+        },
+        "analogue_mapping": "Connected-component sectors change from one to twenty-five and back; the aggregate report is a schema-transition diagnostic."
+      },
+      "unit": null,
+      "result_state": "OBSERVED",
+      "semantic_convention_ids": [],
+      "run_policy_ids": [],
+      "certificate_ids": [],
+      "artifact_ids": [
+        "artifact.legacy"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim.analogue",
+      "statement": "The source artifact supports a provenance-bound structurally analogous diagnostic under the declared mapping.",
+      "result_state": "OBSERVED",
+      "claim_status": "Computational Observation",
+      "capability_ids": [
+        "diagnostic_analogue"
+      ],
+      "carrier_ids": [
+        "carrier.analogue"
+      ],
+      "object_ids": [
+        "analogue.record"
+      ],
+      "finding_ids": [
+        "finding.analogue"
+      ],
+      "semantic_convention_ids": [],
+      "run_policy_ids": [],
+      "hypotheses": [
+        "The frozen v1 report, adapter classification, and declared policies are fixed."
+      ],
+      "certificate_ids": [],
+      "artifact_ids": [
+        "artifact.legacy"
+      ],
+      "scope": "Descriptor-level Paper XII control maze.sofreport.",
+      "negative_boundary": "Connectivity splits and merges are not fixed-sector word or Lie repair, and pointwise graph partitions do not create one typed chart."
+    }
+  ],
+  "derivations": []
+}

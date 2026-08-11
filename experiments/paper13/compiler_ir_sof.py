@@ -452,7 +452,7 @@ def run() -> dict:
     print(f"    B3 reachable via B1->B3->B4; data dep B3->B4 present")
 
     all_results = {}
-    RESULTS = Path(__file__).resolve().parent / "results"
+    RESULTS = Path(__file__).resolve().parent / "archive" / "results"
     ref_sofreport_id = "compiler_ref"
 
     write_artifact(build_sofreport(

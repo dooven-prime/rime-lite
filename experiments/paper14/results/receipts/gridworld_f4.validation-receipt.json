@@ -1,0 +1,151 @@
+{
+  "receipt_version": "2.0",
+  "artifact_type": "sofaction_validation_receipt",
+  "receipt_id": "receipt.gridworld_f4-actions-v2.sofaction-v2",
+  "action": {
+    "action_record_id": "gridworld_f4-actions-v2",
+    "sofaction_version": "2.0",
+    "artifact": {
+      "uri": "experiments/paper14/results/gridworld_f4.sofaction",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "4eacd0a13a8ad7cf6a421db24745f3e4ed319537e85ca743b88d522f1f3383b6"
+      }
+    }
+  },
+  "validator": {
+    "validator_id": "paper14.sofaction-validator.v2",
+    "validator_version": "2.0",
+    "implementation": {
+      "uri": "experiments/paper14/validate_sofaction.py",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "14f0d88010df5537d183cfea37f2b95b1e43d31277a5addfde6b6e0a0572b8c0"
+      }
+    },
+    "receipt_contract": {
+      "uri": "schemas/sofaction/validation-receipt-v2.0.schema.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "01c5aa155d84fe9df45d5c9629c205f8801019fc2c47983015b1beaeefcf6f1b"
+      }
+    }
+  },
+  "artifact_closure": {
+    "artifact_count": 7,
+    "ordered_artifacts": [
+      {
+        "role": "action",
+        "artifact": {
+          "uri": "experiments/paper14/results/gridworld_f4.sofaction",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "4eacd0a13a8ad7cf6a421db24745f3e4ed319537e85ca743b88d522f1f3383b6"
+          }
+        }
+      },
+      {
+        "role": "source-audit",
+        "artifact": {
+          "uri": "experiments/paper13/results/audits/gridworld_f4.sofaudit.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "17bf196611892301d92c2fda96d7923b8f7dd9927f91a22ed7312532d31c571d"
+          }
+        }
+      },
+      {
+        "role": "source-audit-validation-receipt",
+        "artifact": {
+          "uri": "experiments/paper13/results/receipts/gridworld_f4.validation-receipt.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "33fc21b89b6dc44b5fb997cbe105cf4cb6db47ecc27e03f0fc4f57b76afaa5fd"
+          }
+        }
+      },
+      {
+        "role": "normative-basis-0",
+        "artifact": {
+          "uri": "papers/paper14/Paper XIV.md",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "ba0fa73a5f842b3fc44a5e8296708e4f8296bd8f7b9b1bf8dc1b656d7f0e2b02"
+          }
+        }
+      },
+      {
+        "role": "normative-basis-1",
+        "artifact": {
+          "uri": "papers/paper14/Paper XIV.md",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "ba0fa73a5f842b3fc44a5e8296708e4f8296bd8f7b9b1bf8dc1b656d7f0e2b02"
+          }
+        }
+      },
+      {
+        "role": "validator-implementation",
+        "artifact": {
+          "uri": "experiments/paper14/validate_sofaction.py",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "14f0d88010df5537d183cfea37f2b95b1e43d31277a5addfde6b6e0a0572b8c0"
+          }
+        }
+      },
+      {
+        "role": "validation-receipt-contract",
+        "artifact": {
+          "uri": "schemas/sofaction/validation-receipt-v2.0.schema.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "01c5aa155d84fe9df45d5c9629c205f8801019fc2c47983015b1beaeefcf6f1b"
+          }
+        }
+      }
+    ],
+    "closure_digest": {
+      "algorithm": "sha256",
+      "value": "a6cc263a9fb9f793342afe6e1f76da1152e39ef58035e0bec1c20eacda191438"
+    }
+  },
+  "status": "PASS",
+  "checks": [
+    {
+      "check_id": "schema-validation",
+      "status": "PASS"
+    },
+    {
+      "check_id": "artifact-digest-closure",
+      "status": "PASS"
+    },
+    {
+      "check_id": "action-context-policy-admission",
+      "status": "PASS"
+    },
+    {
+      "check_id": "audit-projection-preservation",
+      "status": "PASS"
+    },
+    {
+      "check_id": "predicate-replay",
+      "status": "PASS"
+    },
+    {
+      "check_id": "candidate-set-regeneration",
+      "status": "PASS"
+    },
+    {
+      "check_id": "disposition-closure",
+      "status": "PASS"
+    },
+    {
+      "check_id": "authorization-boundary",
+      "status": "PASS"
+    }
+  ],
+  "negative_boundaries": [
+    "This receipt establishes interpretation and candidate-set protocol conformance only; it does not establish policy correctness, action feasibility, authorization, or causal effect."
+  ]
+}

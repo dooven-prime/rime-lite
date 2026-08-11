@@ -1,0 +1,221 @@
+{
+  "receipt_version": "2.0",
+  "artifact_type": "sofaudit_validation_receipt",
+  "receipt_id": "receipt.gridworld-f4-native-v2.sofaudit-v2",
+  "audit": {
+    "audit_id": "gridworld-f4-native-v2",
+    "sofaudit_version": "2.0",
+    "artifact": {
+      "uri": "experiments/paper13/results/native/gridworld-f4/audits/gridworld-f4-native-v2.sofaudit.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "b35e74218ac71d4009e806743d9241d5b4af2fc9df62009c3e4eac493764303f"
+      }
+    }
+  },
+  "validator": {
+    "validator_id": "sofaudit.semantic-validator.v2",
+    "validator_version": "2.0",
+    "implementation": {
+      "uri": "experiments/paper13/validation/validate_sofaudit_v2.py",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "74b24b9485292d9e475849907abc9cb681ede7eda7743987e2d869121de4908d"
+      }
+    },
+    "receipt_contract": {
+      "uri": "schemas/sofaudit/validation-receipt-v2.0.schema.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "eca21b885a7ae80b8d306501b4a36118f041a579ee0033a6a311266cd2f4a452"
+      }
+    }
+  },
+  "artifact_closure": {
+    "artifact_count": 14,
+    "ordered_artifacts": [
+      {
+        "role": "audit",
+        "artifact": {
+          "uri": "experiments/paper13/results/native/gridworld-f4/audits/gridworld-f4-native-v2.sofaudit.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "b35e74218ac71d4009e806743d9241d5b4af2fc9df62009c3e4eac493764303f"
+          }
+        }
+      },
+      {
+        "role": "reference-report",
+        "artifact": {
+          "uri": "experiments/paper13/results/native/gridworld-f4/source-reports/reports/gridworld-f4-reference.sofreport.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "936c15d26052d110474a0e157ec7e5b9037b7c80f3671914ed5e5f8656ab1e0f"
+          }
+        }
+      },
+      {
+        "role": "target-report",
+        "artifact": {
+          "uri": "experiments/paper13/results/native/gridworld-f4/source-reports/reports/gridworld-f4-target.sofreport.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "5088aafe17b283bc3be1c62919ecd9ba11dcbcda09df81676c2d2cf72fd32c9f"
+          }
+        }
+      },
+      {
+        "role": "reference-report-validation-receipt",
+        "artifact": {
+          "uri": "experiments/paper13/results/native/gridworld-f4/source-reports/receipts/gridworld-f4-reference.validation-receipt.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "ec695e60d4f4c59d68068090028c6d1997cb41d1cbf727941a088827640f6ed2"
+          }
+        }
+      },
+      {
+        "role": "target-report-validation-receipt",
+        "artifact": {
+          "uri": "experiments/paper13/results/native/gridworld-f4/source-reports/receipts/gridworld-f4-target.validation-receipt.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "1d785730ed0dda2bfbbd0014dd6ed472375e53b5e1a8a235136bf037b9cde0f1"
+          }
+        }
+      },
+      {
+        "role": "alignment-evidence",
+        "artifact": {
+          "uri": "experiments/paper13/results/native/gridworld-f4/evidence/gridworld-f4.alignment-evidence.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "83cd9641ef975fea2f7c7fa0b9cda799fe59731c49dfd87216dedee9879dd4fb"
+          }
+        }
+      },
+      {
+        "role": "raw-source-reference",
+        "artifact": {
+          "uri": "experiments/paper13/results/native/gridworld-f4/sources/gridworld-reference.source.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "cb52babe5a1227c02f1f5ec2a3b57d93738ff2521db2eb6d5129f308dd6c5bd5"
+          }
+        }
+      },
+      {
+        "role": "raw-source-target",
+        "artifact": {
+          "uri": "experiments/paper13/results/native/gridworld-f4/sources/gridworld-f4-target.source.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "fc8f814ede339bfbfff0b54d3e112193628f4d0aaee8a7a8da86ce19dcb52470"
+          }
+        }
+      },
+      {
+        "role": "independent-recomputation-implementation",
+        "artifact": {
+          "uri": "experiments/paper13/validation/gridworld_f4_object_certificate.py",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "fa988371467ed0097ef94fefceff15f046461a730cd2a3943b2d4a814ed2f40f"
+          }
+        }
+      },
+      {
+        "role": "object-oracle-result",
+        "artifact": {
+          "uri": "experiments/paper13/results/object-certificates/gridworld_f4.object-certificate.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "bfa238903a1417364418c40cba6d5705706f79d2f731158b3110f69b7a8c82ee"
+          }
+        }
+      },
+      {
+        "role": "audit-result",
+        "artifact": {
+          "uri": "experiments/paper13/results/native/gridworld-f4/evidence/gridworld-f4.audit-result.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "b1704f81539ecacff23e43313e446351e97dac6c73b27ac0b20ba8e1a8c40455"
+          }
+        }
+      },
+      {
+        "role": "audit-generator",
+        "artifact": {
+          "uri": "experiments/paper13/validation/gridworld_f4_native_v2.py",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "d97955cbdfae68b872a7b9a88da4f30aa26c742f230dc08960101f7ee392e194"
+          }
+        }
+      },
+      {
+        "role": "audit-profile",
+        "artifact": {
+          "uri": "schemas/sofaudit/paper13-gridworld-f4-native-profile-v2.0.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "93728478c21d1b9af85c57abfccad857f0cbb62103bead52cf77f2e7ec973a6f"
+          }
+        }
+      },
+      {
+        "role": "coordinate-semantics-registry",
+        "artifact": {
+          "uri": "schemas/sofaudit/coordinate-semantics-registry-v1.0.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "1d2dc24ae56cfb364b02bccf8c0c3068138e6d07682cf4b0561ec75f765c6d48"
+          }
+        }
+      }
+    ],
+    "closure_digest": {
+      "algorithm": "sha256",
+      "value": "c66324b101d9c1621c7a7bf110d728407b8b54fb1006a9c94ace49bb2bc4678b"
+    }
+  },
+  "status": "PASS",
+  "checks": [
+    {
+      "check_id": "alignment-property-recomputation",
+      "status": "PASS"
+    },
+    {
+      "check_id": "artifact-digest-closure",
+      "status": "PASS"
+    },
+    {
+      "check_id": "claim-certificate-compatibility",
+      "status": "PASS"
+    },
+    {
+      "check_id": "comparison-basis-recomputation",
+      "status": "PASS"
+    },
+    {
+      "check_id": "guard-coordinate-coupling",
+      "status": "PASS"
+    },
+    {
+      "check_id": "role-regime-profile-closure",
+      "status": "PASS"
+    },
+    {
+      "check_id": "schema-validation",
+      "status": "PASS"
+    },
+    {
+      "check_id": "source-report-receipt-validation",
+      "status": "PASS"
+    }
+  ],
+  "negative_boundaries": [
+    "This receipt certifies SOFAUDIT v2 protocol conformance and the bound artifact closure; it is not an Object Certificate and does not assign correctness or action."
+  ]
+}

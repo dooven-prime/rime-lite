@@ -1,0 +1,345 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rime-project.local/schemas/sofaction/v1.0.schema.json",
+  "title": "SOF Action Semantics Specification v1.0",
+  "description": "An explicitly admitted semantic context, its interpreted SOF audit signature, and a candidate Action Set generated under a versioned rulebook. Policy selection is optional and downstream.",
+  "type": "object",
+  "required": [
+    "sofaction_version",
+    "record_type",
+    "action_record_id",
+    "audit_id",
+    "claim_status",
+    "claim_note",
+    "source",
+    "semantic_admission",
+    "semantic_context",
+    "interpreted_signature",
+    "action_rulebook",
+    "signature_summary",
+    "action_set",
+    "failure_modes"
+  ],
+  "properties": {
+    "sofaction_version": {"const": "1.0"},
+    "record_type": {"const": "sofaction"},
+    "action_record_id": {"type": "string", "minLength": 1},
+    "audit_id": {"type": "string", "minLength": 1},
+    "claim_status": {"enum": ["diagnostic", "boundary"]},
+    "claim_note": {"type": "string", "minLength": 1},
+    "source": {
+      "type": "object",
+      "required": ["kind", "artifact"],
+      "properties": {
+        "kind": {"const": "sofaudit"},
+        "artifact": {"type": "string", "pattern": "^[^/\\\\]+\\.sofaudit$"}
+      },
+      "additionalProperties": false
+    },
+    "semantic_admission": {
+      "type": "object",
+      "required": ["status", "missing_fields", "rationale"],
+      "properties": {
+        "status": {"enum": ["admitted", "inconclusive"]},
+        "missing_fields": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        },
+        "rationale": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "semantic_context": {
+      "oneOf": [
+        {"type": "null"},
+        {"$ref": "#/$defs/semanticContext"}
+      ]
+    },
+    "interpreted_signature": {
+      "type": "object",
+      "required": [
+        "semantics_id",
+        "semantics_version",
+        "principle",
+        "semantic_context",
+        "coordinates"
+      ],
+      "properties": {
+        "semantics_id": {"type": "string", "minLength": 1},
+        "semantics_version": {"const": "1.0"},
+        "principle": {"const": "difference_requires_interpretation"},
+        "semantic_context": {
+          "oneOf": [
+            {"type": "null"},
+            {"$ref": "#/$defs/semanticContext"}
+          ]
+        },
+        "coordinates": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/signatureInterpretation"}
+        }
+      },
+      "additionalProperties": false
+    },
+    "action_rulebook": {"$ref": "#/$defs/actionRulebook"},
+    "signature_summary": {
+      "type": "object",
+      "additionalProperties": {"type": "integer"}
+    },
+    "action_set": {
+      "type": "object",
+      "required": ["count", "actions"],
+      "properties": {
+        "count": {"type": "integer", "minimum": 0},
+        "actions": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/actionCandidate"}
+        }
+      },
+      "additionalProperties": false
+    },
+    "selection": {"$ref": "#/$defs/optionalPolicySelection"},
+    "failure_modes": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "minItems": 1,
+      "uniqueItems": true
+    }
+  },
+  "$defs": {
+    "semanticContext": {
+      "type": "object",
+      "required": [
+        "context_id",
+        "context_version",
+        "comparison_role",
+        "mismatch_direction",
+        "contract_status",
+        "evaluator_qualification",
+        "failure_mode",
+        "transformation_contract_id"
+      ],
+      "properties": {
+        "context_id": {"type": "string", "minLength": 1},
+        "context_version": {"const": "1.0"},
+        "comparison_role": {
+          "enum": [
+            "failure_mode_control",
+            "legitimate_transformation_control",
+            "model_comparison",
+            "diagnostic_comparison"
+          ]
+        },
+        "mismatch_direction": {
+          "enum": ["reference_to_target", "target_to_reference", "symmetric"]
+        },
+        "contract_status": {
+          "enum": ["conforming", "nonconforming", "inconclusive", "not_applicable"]
+        },
+        "evaluator_qualification": {"type": "string", "minLength": 1},
+        "failure_mode": {"type": ["string", "null"]},
+        "transformation_contract_id": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "signatureInterpretation": {
+      "type": "object",
+      "required": [
+        "interpretation_id",
+        "coordinate",
+        "observed_value",
+        "interpretation",
+        "rationale",
+        "evidence",
+        "supported_action_families"
+      ],
+      "properties": {
+        "interpretation_id": {"type": "string", "minLength": 1},
+        "coordinate": {"type": "string", "minLength": 1},
+        "observed_value": {"type": "integer"},
+        "interpretation": {
+          "enum": [
+            "licensed_change",
+            "rejected_transition",
+            "missing_structure",
+            "extra_structure",
+            "mixed_structural_mismatch",
+            "direction_unresolved_mismatch",
+            "accessibility_depth_distortion",
+            "accessibility_loss",
+            "accessibility_gain",
+            "response_mismatch",
+            "trajectory_mismatch"
+          ]
+        },
+        "severity": {
+          "description": "Optional context-relative semantic severity; not an intrinsic audit magnitude.",
+          "enum": ["informational", "low", "medium", "high", "critical"]
+        },
+        "confidence": {
+          "description": "Optional evaluator-relative confidence.",
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "rationale": {"type": "string", "minLength": 1},
+        "evidence": {"type": "object"},
+        "supported_action_families": {
+          "type": "array",
+          "items": {"enum": ["repair", "observation", "containment", "validation"]},
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "actionRulebook": {
+      "type": "object",
+      "required": ["rulebook_id", "rulebook_version", "vocabulary_version", "families"],
+      "properties": {
+        "rulebook_id": {"type": "string", "minLength": 1},
+        "rulebook_version": {"const": "1.0"},
+        "vocabulary_version": {"const": "1.0"},
+        "families": {
+          "type": "array",
+          "items": {"enum": ["repair", "observation", "containment", "validation"]},
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "actionCandidate": {
+      "type": "object",
+      "required": [
+        "action_id",
+        "family",
+        "target",
+        "supported_by",
+        "source_coordinates",
+        "evidence",
+        "intended_diagnostic_consequences",
+        "preconditions",
+        "limitations"
+      ],
+      "properties": {
+        "action_id": {"type": "string", "minLength": 1},
+        "family": {"enum": ["repair", "observation", "containment", "validation"]},
+        "target": {"type": "string", "minLength": 1},
+        "supported_by": {
+          "description": "Interpretation identifiers consumed by Generate_Lambda.",
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "source_coordinates": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "evidence": {"type": "object"},
+        "intended_diagnostic_consequences": {
+          "description": "Diagnostic consequences intended by the candidate under its declared interpretation and preconditions; not an identified causal effect.",
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "minItems": 1
+        },
+        "preconditions": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "minItems": 1
+        },
+        "limitations": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "minItems": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "optionalPolicySelection": {
+      "type": "object",
+      "required": ["status", "policy", "selected_action_ids", "rationale"],
+      "properties": {
+        "status": {"const": "illustrative_policy_selection"},
+        "policy": {
+          "type": "object",
+          "required": ["policy_id", "family_order", "max_actions", "policy_version"],
+          "properties": {
+            "policy_id": {"type": "string", "minLength": 1},
+            "family_order": {
+              "type": "array",
+              "items": {"enum": ["repair", "observation", "containment", "validation"]},
+              "uniqueItems": true
+            },
+            "max_actions": {"type": "integer", "minimum": 1},
+            "policy_version": {"const": "1.0"}
+          },
+          "additionalProperties": false
+        },
+        "selected_action_ids": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        },
+        "rationale": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "minItems": 1
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "semantic_admission": {
+            "properties": {"status": {"const": "admitted"}},
+            "required": ["status"]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "semantic_admission": {
+            "properties": {"missing_fields": {"maxItems": 0}}
+          },
+          "semantic_context": {"$ref": "#/$defs/semanticContext"}
+        }
+      },
+      "else": {
+        "properties": {
+          "semantic_admission": {
+            "properties": {"missing_fields": {"minItems": 1}}
+          },
+          "semantic_context": {"type": "null"},
+          "interpreted_signature": {
+            "properties": {
+              "semantic_context": {"type": "null"},
+              "coordinates": {"maxItems": 0}
+            }
+          },
+          "action_set": {
+            "properties": {
+              "count": {"const": 0},
+              "actions": {"maxItems": 0}
+            }
+          }
+        }
+      }
+    }
+  ],
+  "not": {
+    "anyOf": [
+      {"required": ["sofrs_version"]},
+      {"required": ["sofaudit_version"]},
+      {"required": ["sofdecision_version"]}
+    ]
+  },
+  "additionalProperties": false
+}

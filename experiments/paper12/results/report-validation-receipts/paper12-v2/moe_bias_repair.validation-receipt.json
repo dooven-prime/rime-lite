@@ -1,0 +1,152 @@
+{
+  "receipt_version": "2.0",
+  "artifact_type": "sofrs_report_validation_receipt",
+  "receipt_id": "receipt.moe-bias-repair.sofrs-v2",
+  "report": {
+    "report_id": "moe-bias-repair",
+    "sofrs_version": "2.0",
+    "record_kind": "diagnostic_analogue",
+    "artifact": {
+      "uri": "experiments/paper12/results/reports/moe_bias_repair.sofreport.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "dd24642c1a51282a748be9ac33c6219c37c9d296bd47b533ed89e5c6473298f9"
+      }
+    }
+  },
+  "validator": {
+    "validator_id": "sofrs.report-validator.v2",
+    "validator_version": "2.0",
+    "implementation": {
+      "uri": "experiments/paper12/validation/validate_sofrs_v2.py",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "c0b39a841b592dc2173c8a3fc350a8c2096a5fb9fe1c2e443f07b88d0764d4e9"
+      }
+    },
+    "receipt_contract": {
+      "uri": "schemas/sofrs/report-validation-receipt-v2.0.schema.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "3268e1119185a8401ac08ff2b41745152e9a7787b75bff9e3f0ff5183e5ae672"
+      }
+    }
+  },
+  "artifact_closure": {
+    "artifact_count": 7,
+    "ordered_artifacts": [
+      {
+        "role": "report",
+        "artifact": {
+          "uri": "experiments/paper12/results/reports/moe_bias_repair.sofreport.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "dd24642c1a51282a748be9ac33c6219c37c9d296bd47b533ed89e5c6473298f9"
+          }
+        }
+      },
+      {
+        "role": "capability_manifest",
+        "artifact": {
+          "uri": "experiments/paper12/results/manifests/moe_bias_repair.capabilities.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "823907dc80bf8a914040fceef0d47cd23f48d075500c1be2d563e80af468447b"
+          }
+        }
+      },
+      {
+        "role": "typed_sof_ir",
+        "artifact": {
+          "uri": "experiments/paper12/results/ir/moe_bias_repair.ir.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "d5e94dd6c3c1de22031a2f711fa2893360297381d9801aae6aeba7d7b237796d"
+          }
+        }
+      },
+      {
+        "role": "compiler_profile",
+        "artifact": {
+          "uri": "schemas/sofrs/paper12-analogue-compiler-profile-v1.0.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "facc293462a79d93a00ece68e42951c49e8cfe8b141147bdfd6333bbb2b430b5"
+          }
+        }
+      },
+      {
+        "role": "compiler_output",
+        "artifact": {
+          "uri": "experiments/paper12/results/compiler-output/moe_bias_repair.compiler-output.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "2fcf8fd1b628431af42d61f92e56fa111daaf12ebfb85fbbba1869ef33addbde"
+          }
+        }
+      },
+      {
+        "role": "assembly_profile",
+        "artifact": {
+          "uri": "schemas/sofrs/paper12-analogue-assembly-profile-v2.0.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "936a80b0bcc238d47739ec5bac3aabcfb422feac2fed159739342189e678aaf1"
+          }
+        }
+      },
+      {
+        "role": "assembly_implementation",
+        "artifact": {
+          "uri": "experiments/paper12/validation/migrate_sofrs_v1_to_v2.py",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "d0905b3647dddd67c30815f4062fdd0e4266e62c7fa5cde2e72f43840cab6252"
+          }
+        }
+      }
+    ],
+    "closure_digest": {
+      "algorithm": "sha256",
+      "value": "31f01018a436a3d4a636b01ba722805cf0529120f402a4e874c5c65134a3790f"
+    }
+  },
+  "status": "PASS",
+  "checks": [
+    {
+      "check_id": "artifact-closure",
+      "status": "PASS"
+    },
+    {
+      "check_id": "claim-compatibility",
+      "status": "PASS"
+    },
+    {
+      "check_id": "claim-external-basis-binding",
+      "status": "PASS"
+    },
+    {
+      "check_id": "compiler-output-recompilation",
+      "status": "PASS"
+    },
+    {
+      "check_id": "cutoff-provenance",
+      "status": "PASS"
+    },
+    {
+      "check_id": "record-kind-boundary",
+      "status": "PASS"
+    },
+    {
+      "check_id": "report-assembly-recomputation",
+      "status": "PASS"
+    },
+    {
+      "check_id": "schema-validation",
+      "status": "PASS"
+    }
+  ],
+  "negative_boundaries": [
+    "This receipt validates the bound SOFRS v2 report and compiler-contract closure; it does not establish adapter scientific adequacy, cross-report alignment, or downstream interpretation."
+  ]
+}

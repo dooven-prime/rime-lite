@@ -13,7 +13,7 @@ import numpy as np
 
 
 HERE = Path(__file__).resolve().parent
-RESULTS = HERE.parent / "results"
+RESULTS = HERE.parent / "archive" / "results"
 DOMAINS = ("gridworld", "sir", "traffic", "compiler", "network")
 FAILURE_TYPES = ("f1", "f2", "f3", "f4", "f5")
 

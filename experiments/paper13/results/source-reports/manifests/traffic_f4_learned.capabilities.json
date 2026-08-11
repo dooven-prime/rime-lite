@@ -1,0 +1,90 @@
+{
+  "manifest_version": "1.0",
+  "manifest_id": "paper12.traffic-f4-learned.v2",
+  "record_kind": "diagnostic_analogue",
+  "sof_semantics_version": "2.0",
+  "adapter": {
+    "id": "paper12-v1-to-v2",
+    "version": "2.0",
+    "domain": "Paper XIII traffic finite control",
+    "source_type": "frozen Paper XIII SOFRS v1 report envelope"
+  },
+  "space": {
+    "dimension": null,
+    "scalar_field": "declared_analogue"
+  },
+  "capabilities": {
+    "sectorization": {
+      "availability": "NOT_DECLARED",
+      "description": "Capability not declared by this record."
+    },
+    "operator_carrier": {
+      "availability": "NOT_DECLARED",
+      "description": "Capability not declared by this record."
+    },
+    "operator_system": {
+      "availability": "NOT_DECLARED",
+      "description": "Capability not declared by this record."
+    },
+    "route_carrier": {
+      "availability": "NOT_DECLARED",
+      "description": "Capability not declared by this record."
+    },
+    "word_carrier": {
+      "availability": "NOT_DECLARED",
+      "description": "Capability not declared by this record."
+    },
+    "positive_associative_closure": {
+      "availability": "NOT_DECLARED",
+      "description": "Capability not declared by this record."
+    },
+    "observable_star_closure": {
+      "availability": "NOT_DECLARED",
+      "description": "Capability not declared by this record."
+    },
+    "sector_enriched_star_closure": {
+      "availability": "NOT_DECLARED",
+      "description": "Capability not declared by this record."
+    },
+    "lie_hall_carrier": {
+      "availability": "NOT_DECLARED",
+      "description": "Capability not declared by this record."
+    },
+    "deformation_chart": {
+      "availability": "NOT_DECLARED",
+      "description": "No fixed typed deformation chart is declared by the aggregate record."
+    },
+    "proxy_diagnostic": {
+      "availability": "NOT_DECLARED",
+      "description": "Capability not declared by this record."
+    },
+    "diagnostic_analogue": {
+      "availability": "DECLARED",
+      "description": "Provenance-bound descriptors with an explicit mapping and strict negative boundary.",
+      "configuration": {
+        "analogue_mapping_id": "traffic-f4-learned-analogue-mapping"
+      }
+    }
+  },
+  "semantic_convention_requirements": {
+    "operative_alphabet": "not_applicable",
+    "word_convention": "not_applicable",
+    "projector_letter_policy": "not_applicable",
+    "direction_convention": "not_applicable",
+    "depth_indexing": "not_applicable",
+    "hall_convention": "not_applicable"
+  },
+  "run_policy_requirements": {
+    "threshold": "optional",
+    "cutoff": "not_applicable",
+    "norm": "optional",
+    "numerical_tolerance": "optional",
+    "saturation_audit": "not_applicable",
+    "sampling_grid": "optional",
+    "trajectory_parameterization": "optional"
+  },
+  "notes": [
+    "The report is migrated from a frozen Paper XIII SOFRS v1 envelope into the Paper XII v2 CompilerOutput-bound report contract.",
+    "This v2 source report preserves the finite source envelope; it does not establish an independent object-level oracle or cross-report semantic alignment."
+  ]
+}

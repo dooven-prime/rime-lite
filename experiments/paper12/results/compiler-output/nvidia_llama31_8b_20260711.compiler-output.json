@@ -1,0 +1,23 @@
+{
+  "compiler_output_version": "1.0",
+  "compiler_id": "sofcompiler.compile_v1",
+  "manifest_id": "paper12.nvidia-llama31-8b-20260711.v2",
+  "ir_record_id": "paper12.nvidia-llama31-8b-20260711.v2",
+  "profile_id": "paper12.analogue.v2",
+  "item_type": "ClaimItem_v1 | DegradationItem_v1",
+  "items": [
+    {
+      "item_kind": "claim",
+      "module_id": "diagnostic-analogue",
+      "claim_id": "claim.analogue",
+      "source_ir_kind": "claim",
+      "source_ir_id": "claim.analogue",
+      "claim_status": "Computational Observation",
+      "result_state": "OBSERVED",
+      "carrier_ids": [
+        "carrier.analogue"
+      ],
+      "derivation_ids": []
+    }
+  ]
+}

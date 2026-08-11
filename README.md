@@ -25,8 +25,8 @@ immutable first combined record retains its historical predecessor.
 | Paper IX | observable dynamics of sectorized observable frameworks | <https://doi.org/10.5281/zenodo.21713306> |
 | Paper X | capability-aware compilation for Sectorized Observable Frameworks and Registry evidence | <https://doi.org/10.5281/zenodo.21768257> |
 | Paper XI | typed wall morphology for Sectorized Observable Frameworks | <https://doi.org/10.5281/zenodo.21801722> |
-| Paper XII | SOF diagnostic protocol and report specification | <https://doi.org/10.5281/zenodo.21387462> |
-| Paper XIII | Audit Profiles, SOF Report Alignment, and sparse typed comparison maps | <https://doi.org/10.5281/zenodo.21449512> |
+| Paper XII | SOF diagnostic protocol and report specification | <https://doi.org/10.5281/zenodo.21870368> |
+| Paper XIII | Audit Profiles, SOF Report Alignment, and sparse typed comparison maps | <https://doi.org/10.5281/zenodo.21870778> |
 | CCS v2 | optional reproducibility, observation, open-problem, and history archive | <https://doi.org/10.5281/zenodo.21616956> |
 | Historical combined Papers I--III + CCS release | immutable first-version archive; current papers are maintained independently | <https://doi.org/10.5281/zenodo.21108197> |
 
@@ -151,7 +151,7 @@ python experiments/paper7/validation/rank_protected_bridge_audit.py
 python experiments/paper9/validation/validate_results.py
 python experiments/paper10/validation/validate_results.py
 python experiments/paper11/validation/typed_wall_record_census.py
-python experiments/paper12/validate_sofrs_v2.py
+python experiments/paper12/validation/validate_sofrs_v2.py
 python experiments/paper13/validate_sofaudit_v2.py
 ```
 

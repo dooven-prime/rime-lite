@@ -1,0 +1,32 @@
+{
+  "receipt_version": "1.0",
+  "receipt_id": "paper13-contextual-descent-control-v1.validation",
+  "status": "PASS",
+  "control": {
+    "uri": "experiments/paper13/results/controls/paper13-contextual-descent-control-v1.json",
+    "digest": {
+      "algorithm": "sha256",
+      "value": "37c5e6cd10b3f29566e7b95e60c724a6315aa5bc3492ac97ce188e5a2ba67636"
+    }
+  },
+  "producer": {
+    "uri": "experiments/paper13/validation/contextual_descent_control.py",
+    "digest": {
+      "algorithm": "sha256",
+      "value": "dbe1419d3e1299f6e26c980833c3a3eafc6dca446791f8eaf883ddae5e5f5770"
+    }
+  },
+  "independent_validator": {
+    "uri": "experiments/paper13/validation/validate_contextual_descent_control.py",
+    "digest": {
+      "algorithm": "sha256",
+      "value": "5847974be64d0b7610c232fd5992676f2c6d578d8102085a870c74b75f233092"
+    }
+  },
+  "checks": [
+    "candidate-space-digest",
+    "finite-match-recomputation",
+    "classifier-cardinality",
+    "known-nonclaim-preservation"
+  ]
+}

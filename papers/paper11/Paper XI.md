@@ -6,10 +6,10 @@
 
 Independent Researcher | RIME Program | 2026
 
-*This paper is Paper XI of the RIME program. It develops wall-record
-morphology, profile-relative coordinates, multi-label curation, and
-local-model eligibility over the typed interfaces of Papers VIII--X. Strict
-records require upstream wall admission; analogue morphology does not.*
+*This paper is Paper XI of the RIME program. It owns wall-record morphology,
+profile-relative coordinates, multi-label curation, and local-model eligibility
+over the typed interfaces of Papers VIII--X. Strict records require upstream
+wall admission; analogue morphology does not.*
 
 ***
 

@@ -1,0 +1,340 @@
+{
+  "ir_version": "1.0",
+  "record_id": "paper12.transformer.v2",
+  "record_kind": "diagnostic_analogue",
+  "manifest_ref": {
+    "manifest_id": "paper12.transformer.v2",
+    "manifest_version": "1.0",
+    "artifact_id": "artifact.manifest",
+    "digest": {
+      "algorithm": "sha256",
+      "value": "267300f89f4a34d96cc34fb9b2a8f493c3592a7c77c130841cee0dffae78d538"
+    }
+  },
+  "source": {
+    "adapter_id": "paper12-v1-to-v2",
+    "adapter_version": "2.0",
+    "source_id": "paper12.transformer.v1",
+    "artifact_ids": [
+      "artifact.legacy",
+      "artifact.producer"
+    ]
+  },
+  "objects": [
+    {
+      "id": "analogue.record",
+      "kind": "diagnostic_analogue",
+      "label": "Provenance-bound diagnostic analogue",
+      "provenance_artifact_ids": [
+        "artifact.legacy"
+      ],
+      "carrier_id": "carrier.analogue",
+      "data": {
+        "sector_descriptor": {
+          "origin": "FFN activation-count quantiles",
+          "space": "token space",
+          "sector_count": 3,
+          "sector_dimensions": [
+            4,
+            1,
+            3
+          ],
+          "labels": [
+            "low activation count, tokens=[0, 3, 5, 6]",
+            "middle activation count, tokens=[4]",
+            "high activation count, tokens=[1, 2, 7]"
+          ],
+          "strict_sof_realization": true
+        },
+        "observable_descriptor": {
+          "attention": "row-top-2 token attention operator",
+          "activation": "row-top-2 FFN activation-similarity operator"
+        },
+        "support_descriptor": {
+          "kind": "aggregated_R1",
+          "matrix": [
+            [
+              1,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              1,
+              1,
+              1
+            ]
+          ],
+          "offdiag_density_pct": 58.333333333333336
+        },
+        "bridge_descriptor": {
+          "kind": "general matrix-commutator support proxy",
+          "matrix": [
+            [
+              1,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              1
+            ]
+          ],
+          "offdiag_density_pct": 66.66666666666667
+        },
+        "repair_descriptor": {
+          "kind": "cutoff general matrix-commutator depth proxy",
+          "depth_matrix": [
+            [
+              0,
+              2,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "repaired_pairs": [
+            {
+              "source": 0,
+              "target": 1,
+              "depth": 2
+            },
+            {
+              "source": 1,
+              "target": 2,
+              "depth": 1
+            }
+          ],
+          "repaired_count": 2,
+          "claim_note": "The operative matrices are not a declared skew-Hermitian Lie family; this is not Lie/Hall depth."
+        },
+        "wall_descriptor": {
+          "status": "not_applicable",
+          "reason": "no deformation path supplied"
+        },
+        "analogue_mapping": "The frozen v1 envelope records finite token groups and derived shadows, but it does not bind the two operative matrices as an explicit reconstruction artifact."
+      }
+    }
+  ],
+  "carriers": [
+    {
+      "id": "carrier.analogue",
+      "kind": "analogue",
+      "capability_id": "diagnostic_analogue",
+      "semantics": "Descriptor-level support, bridge, repair, and wall analogues.",
+      "object_ids": [
+        "analogue.record"
+      ],
+      "semantic_convention_ids": []
+    }
+  ],
+  "semantic_conventions": [],
+  "run_policies": [],
+  "artifacts": [
+    {
+      "id": "artifact.manifest",
+      "uri": "experiments/paper12/results/manifests/transformer.capabilities.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "267300f89f4a34d96cc34fb9b2a8f493c3592a7c77c130841cee0dffae78d538"
+      },
+      "media_type": "application/json",
+      "schema_version": "1.0",
+      "role": "manifest"
+    },
+    {
+      "id": "artifact.legacy",
+      "uri": "experiments/paper12/archive/results/transformer.sofreport",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "c579c144676530207981937f9cf924f12df79d2eb296fff2053a841b91bb8dbb"
+      },
+      "media_type": "application/json",
+      "schema_version": "1.0",
+      "role": "source-input"
+    },
+    {
+      "id": "artifact.producer",
+      "uri": "experiments/paper12/transformer_activation_sof.py",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "cb7111b986d0a8216e18a13e4eaeaeede4f7b2c89b886a1733f27f22c0a6ea2e"
+      },
+      "media_type": "text/x-python",
+      "schema_version": "1.0",
+      "role": "proof-reference"
+    }
+  ],
+  "certificates": [],
+  "findings": [
+    {
+      "id": "finding.analogue",
+      "kind": "status_only",
+      "carrier_id": "carrier.analogue",
+      "subject_object_ids": [
+        "analogue.record"
+      ],
+      "value": {
+        "sector_descriptor": {
+          "origin": "FFN activation-count quantiles",
+          "space": "token space",
+          "sector_count": 3,
+          "sector_dimensions": [
+            4,
+            1,
+            3
+          ],
+          "labels": [
+            "low activation count, tokens=[0, 3, 5, 6]",
+            "middle activation count, tokens=[4]",
+            "high activation count, tokens=[1, 2, 7]"
+          ],
+          "strict_sof_realization": true
+        },
+        "observable_descriptor": {
+          "attention": "row-top-2 token attention operator",
+          "activation": "row-top-2 FFN activation-similarity operator"
+        },
+        "support_descriptor": {
+          "kind": "aggregated_R1",
+          "matrix": [
+            [
+              1,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              1,
+              1,
+              1
+            ]
+          ],
+          "offdiag_density_pct": 58.333333333333336
+        },
+        "bridge_descriptor": {
+          "kind": "general matrix-commutator support proxy",
+          "matrix": [
+            [
+              1,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              1
+            ]
+          ],
+          "offdiag_density_pct": 66.66666666666667
+        },
+        "repair_descriptor": {
+          "kind": "cutoff general matrix-commutator depth proxy",
+          "depth_matrix": [
+            [
+              0,
+              2,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "repaired_pairs": [
+            {
+              "source": 0,
+              "target": 1,
+              "depth": 2
+            },
+            {
+              "source": 1,
+              "target": 2,
+              "depth": 1
+            }
+          ],
+          "repaired_count": 2,
+          "claim_note": "The operative matrices are not a declared skew-Hermitian Lie family; this is not Lie/Hall depth."
+        },
+        "wall_descriptor": {
+          "status": "not_applicable",
+          "reason": "no deformation path supplied"
+        },
+        "analogue_mapping": "The frozen v1 envelope records finite token groups and derived shadows, but it does not bind the two operative matrices as an explicit reconstruction artifact."
+      },
+      "unit": null,
+      "result_state": "OBSERVED",
+      "semantic_convention_ids": [],
+      "run_policy_ids": [],
+      "certificate_ids": [],
+      "artifact_ids": [
+        "artifact.legacy"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim.analogue",
+      "statement": "The source artifact supports a provenance-bound structurally analogous diagnostic under the declared mapping.",
+      "result_state": "OBSERVED",
+      "claim_status": "Computational Observation",
+      "capability_ids": [
+        "diagnostic_analogue"
+      ],
+      "carrier_ids": [
+        "carrier.analogue"
+      ],
+      "object_ids": [
+        "analogue.record"
+      ],
+      "finding_ids": [
+        "finding.analogue"
+      ],
+      "semantic_convention_ids": [],
+      "run_policy_ids": [],
+      "hypotheses": [
+        "The frozen v1 report, adapter classification, and declared policies are fixed."
+      ],
+      "certificate_ids": [],
+      "artifact_ids": [
+        "artifact.legacy"
+      ],
+      "scope": "Descriptor-level Paper XII control transformer.sofreport.",
+      "negative_boundary": "Strict admission requires a new source-addressed reconstruction of the complete (V,Q,Y) data. No independently declared skew-Hermitian family or Hall convention is present."
+    }
+  ],
+  "derivations": []
+}

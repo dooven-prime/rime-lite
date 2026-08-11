@@ -1,0 +1,1132 @@
+{
+  "ir_version": "1.0",
+  "record_id": "paper12.qwen.v2",
+  "record_kind": "diagnostic_analogue",
+  "manifest_ref": {
+    "manifest_id": "paper12.qwen.v2",
+    "manifest_version": "1.0",
+    "artifact_id": "artifact.manifest",
+    "digest": {
+      "algorithm": "sha256",
+      "value": "948f1c81066f6a4798e238f7e22a2d98db29094b3955f2ca71892ed1431a3fe9"
+    }
+  },
+  "source": {
+    "adapter_id": "paper12-v1-to-v2",
+    "adapter_version": "2.0",
+    "source_id": "paper12.qwen.v1",
+    "artifact_ids": [
+      "artifact.legacy",
+      "artifact.producer"
+    ]
+  },
+  "objects": [
+    {
+      "id": "analogue.record",
+      "kind": "diagnostic_analogue",
+      "label": "Provenance-bound diagnostic analogue",
+      "provenance_artifact_ids": [
+        "artifact.legacy"
+      ],
+      "carrier_id": "carrier.analogue",
+      "data": {
+        "sector_descriptor": {
+          "origin": "top-attention target groups from one pretrained attention head",
+          "space": "retained token subspace",
+          "selected_head": 6,
+          "raw_group_count": 9,
+          "retained_sector_count": 4,
+          "minimum_sector_size": 2,
+          "retained_token_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            10,
+            11,
+            13,
+            14,
+            15,
+            17,
+            18,
+            20,
+            22,
+            26,
+            28,
+            32,
+            33,
+            35,
+            36,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            24,
+            25,
+            27,
+            29,
+            30,
+            31,
+            7,
+            8,
+            9,
+            21,
+            23
+          ],
+          "excluded_singleton_count": 5,
+          "sectors": [
+            {
+              "target": 0,
+              "members": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                10,
+                11,
+                13,
+                14,
+                15,
+                17,
+                18,
+                20,
+                22,
+                26,
+                28,
+                32,
+                33,
+                35,
+                36,
+                38,
+                39,
+                40,
+                41,
+                42,
+                43,
+                44
+              ]
+            },
+            {
+              "target": 22,
+              "members": [
+                24,
+                25,
+                27,
+                29,
+                30,
+                31
+              ]
+            },
+            {
+              "target": 6,
+              "members": [
+                7,
+                8,
+                9
+              ]
+            },
+            {
+              "target": 20,
+              "members": [
+                21,
+                23
+              ]
+            }
+          ],
+          "original_probe_dimension": 45,
+          "retained_space_dimension": 40,
+          "candidate_complete_partition_on_retained_subspace": true,
+          "strict_admission_status": "not_admitted"
+        },
+        "observable_descriptor": {
+          "attention_heads": "all attention matrices from the audited layer",
+          "head_diversity": [
+            {
+              "head": 0,
+              "group_count": 45,
+              "filtered_sector_count": 0,
+              "group_sizes": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ]
+            },
+            {
+              "head": 1,
+              "group_count": 3,
+              "filtered_sector_count": 3,
+              "group_sizes": [
+                38,
+                4,
+                3
+              ]
+            },
+            {
+              "head": 2,
+              "group_count": 6,
+              "filtered_sector_count": 1,
+              "group_sizes": [
+                40,
+                1,
+                1,
+                1,
+                1,
+                1
+              ]
+            },
+            {
+              "head": 3,
+              "group_count": 1,
+              "filtered_sector_count": 1,
+              "group_sizes": [
+                45
+              ]
+            },
+            {
+              "head": 4,
+              "group_count": 1,
+              "filtered_sector_count": 1,
+              "group_sizes": [
+                45
+              ]
+            },
+            {
+              "head": 5,
+              "group_count": 2,
+              "filtered_sector_count": 1,
+              "group_sizes": [
+                44,
+                1
+              ]
+            },
+            {
+              "head": 6,
+              "group_count": 9,
+              "filtered_sector_count": 4,
+              "group_sizes": [
+                29,
+                6,
+                3,
+                2,
+                1,
+                1,
+                1,
+                1,
+                1
+              ]
+            },
+            {
+              "head": 7,
+              "group_count": 10,
+              "filtered_sector_count": 7,
+              "group_sizes": [
+                23,
+                6,
+                4,
+                3,
+                2,
+                2,
+                2,
+                1,
+                1,
+                1
+              ]
+            },
+            {
+              "head": 8,
+              "group_count": 31,
+              "filtered_sector_count": 9,
+              "group_sizes": [
+                6,
+                3,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ]
+            },
+            {
+              "head": 9,
+              "group_count": 10,
+              "filtered_sector_count": 7,
+              "group_sizes": [
+                15,
+                10,
+                7,
+                3,
+                3,
+                2,
+                2,
+                1,
+                1,
+                1
+              ]
+            },
+            {
+              "head": 10,
+              "group_count": 11,
+              "filtered_sector_count": 6,
+              "group_sizes": [
+                26,
+                4,
+                3,
+                3,
+                2,
+                2,
+                1,
+                1,
+                1,
+                1,
+                1
+              ]
+            },
+            {
+              "head": 11,
+              "group_count": 15,
+              "filtered_sector_count": 8,
+              "group_sizes": [
+                16,
+                5,
+                4,
+                3,
+                3,
+                3,
+                2,
+                2,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ]
+            },
+            {
+              "head": 12,
+              "group_count": 15,
+              "filtered_sector_count": 11,
+              "group_sizes": [
+                13,
+                5,
+                4,
+                4,
+                3,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                1,
+                1,
+                1,
+                1
+              ]
+            },
+            {
+              "head": 13,
+              "group_count": 13,
+              "filtered_sector_count": 8,
+              "group_sizes": [
+                18,
+                4,
+                4,
+                4,
+                3,
+                3,
+                2,
+                2,
+                1,
+                1,
+                1,
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        "support_descriptor": {
+          "kind": "aggregated_R1_over_attention_heads",
+          "matrix": [
+            [
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              1,
+              1
+            ]
+          ],
+          "offdiag_density_pct": 75.0
+        },
+        "bridge_descriptor": {
+          "kind": "general matrix-commutator support proxy",
+          "matrix": [
+            [
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              1,
+              1
+            ]
+          ],
+          "offdiag_density_pct": 75.0
+        },
+        "repair_descriptor": {
+          "kind": "cutoff general matrix-commutator depth proxy",
+          "depth_matrix": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              "UNREACHED_AT_CUTOFF",
+              0,
+              "UNREACHED_AT_CUTOFF"
+            ],
+            [
+              0,
+              "UNREACHED_AT_CUTOFF",
+              0,
+              0
+            ]
+          ],
+          "repaired_pairs": [],
+          "repaired_count": 0,
+          "terminally_frozen_count": 3,
+          "claim_note": "The operative matrices are not a declared skew-Hermitian Lie family; this is not Lie/Hall depth."
+        },
+        "wall_descriptor": {
+          "status": "not_applicable",
+          "reason": "single pretrained snapshot; no deformation path supplied"
+        },
+        "analogue_mapping": "The frozen v1 envelope identifies a 40-dimensional retained token space inside the 45-token probe and a candidate complete coordinate partition on that retained space, but it does not bind the fourteen operative matrices or projector-completeness certificate as explicit artifacts. The migration therefore retains a bounded reconstruction obligation as an analogue record."
+      }
+    }
+  ],
+  "carriers": [
+    {
+      "id": "carrier.analogue",
+      "kind": "analogue",
+      "capability_id": "diagnostic_analogue",
+      "semantics": "Descriptor-level support, bridge, repair, and wall analogues.",
+      "object_ids": [
+        "analogue.record"
+      ],
+      "semantic_convention_ids": []
+    }
+  ],
+  "semantic_conventions": [],
+  "run_policies": [
+    {
+      "id": "policy.cutoff",
+      "kind": "cutoff",
+      "specification": {
+        "maximum_depth": 3,
+        "source": "qwen_attention_sof.py",
+        "unreached_value": "UNREACHED_AT_CUTOFF"
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "artifact.manifest",
+      "uri": "experiments/paper12/results/manifests/qwen.capabilities.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "948f1c81066f6a4798e238f7e22a2d98db29094b3955f2ca71892ed1431a3fe9"
+      },
+      "media_type": "application/json",
+      "schema_version": "1.0",
+      "role": "manifest"
+    },
+    {
+      "id": "artifact.legacy",
+      "uri": "experiments/paper12/archive/results/qwen.sofreport",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "be1ece91fc2ea8f8526683d4c200cb2d3fcef781b0bdb4c9b0d48aa7e6613faf"
+      },
+      "media_type": "application/json",
+      "schema_version": "1.0",
+      "role": "source-input"
+    },
+    {
+      "id": "artifact.producer",
+      "uri": "experiments/paper12/qwen_attention_sof.py",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "6bf6a0f6fdb0af794d995e5c810d840c08ced4732c01468e8a7aff226c55c128"
+      },
+      "media_type": "text/x-python",
+      "schema_version": "1.0",
+      "role": "proof-reference"
+    }
+  ],
+  "certificates": [],
+  "findings": [
+    {
+      "id": "finding.analogue",
+      "kind": "status_only",
+      "carrier_id": "carrier.analogue",
+      "subject_object_ids": [
+        "analogue.record"
+      ],
+      "value": {
+        "sector_descriptor": {
+          "origin": "top-attention target groups from one pretrained attention head",
+          "space": "retained token subspace",
+          "selected_head": 6,
+          "raw_group_count": 9,
+          "retained_sector_count": 4,
+          "minimum_sector_size": 2,
+          "retained_token_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            10,
+            11,
+            13,
+            14,
+            15,
+            17,
+            18,
+            20,
+            22,
+            26,
+            28,
+            32,
+            33,
+            35,
+            36,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            24,
+            25,
+            27,
+            29,
+            30,
+            31,
+            7,
+            8,
+            9,
+            21,
+            23
+          ],
+          "excluded_singleton_count": 5,
+          "sectors": [
+            {
+              "target": 0,
+              "members": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                10,
+                11,
+                13,
+                14,
+                15,
+                17,
+                18,
+                20,
+                22,
+                26,
+                28,
+                32,
+                33,
+                35,
+                36,
+                38,
+                39,
+                40,
+                41,
+                42,
+                43,
+                44
+              ]
+            },
+            {
+              "target": 22,
+              "members": [
+                24,
+                25,
+                27,
+                29,
+                30,
+                31
+              ]
+            },
+            {
+              "target": 6,
+              "members": [
+                7,
+                8,
+                9
+              ]
+            },
+            {
+              "target": 20,
+              "members": [
+                21,
+                23
+              ]
+            }
+          ],
+          "original_probe_dimension": 45,
+          "retained_space_dimension": 40,
+          "candidate_complete_partition_on_retained_subspace": true,
+          "strict_admission_status": "not_admitted"
+        },
+        "observable_descriptor": {
+          "attention_heads": "all attention matrices from the audited layer",
+          "head_diversity": [
+            {
+              "head": 0,
+              "group_count": 45,
+              "filtered_sector_count": 0,
+              "group_sizes": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ]
+            },
+            {
+              "head": 1,
+              "group_count": 3,
+              "filtered_sector_count": 3,
+              "group_sizes": [
+                38,
+                4,
+                3
+              ]
+            },
+            {
+              "head": 2,
+              "group_count": 6,
+              "filtered_sector_count": 1,
+              "group_sizes": [
+                40,
+                1,
+                1,
+                1,
+                1,
+                1
+              ]
+            },
+            {
+              "head": 3,
+              "group_count": 1,
+              "filtered_sector_count": 1,
+              "group_sizes": [
+                45
+              ]
+            },
+            {
+              "head": 4,
+              "group_count": 1,
+              "filtered_sector_count": 1,
+              "group_sizes": [
+                45
+              ]
+            },
+            {
+              "head": 5,
+              "group_count": 2,
+              "filtered_sector_count": 1,
+              "group_sizes": [
+                44,
+                1
+              ]
+            },
+            {
+              "head": 6,
+              "group_count": 9,
+              "filtered_sector_count": 4,
+              "group_sizes": [
+                29,
+                6,
+                3,
+                2,
+                1,
+                1,
+                1,
+                1,
+                1
+              ]
+            },
+            {
+              "head": 7,
+              "group_count": 10,
+              "filtered_sector_count": 7,
+              "group_sizes": [
+                23,
+                6,
+                4,
+                3,
+                2,
+                2,
+                2,
+                1,
+                1,
+                1
+              ]
+            },
+            {
+              "head": 8,
+              "group_count": 31,
+              "filtered_sector_count": 9,
+              "group_sizes": [
+                6,
+                3,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ]
+            },
+            {
+              "head": 9,
+              "group_count": 10,
+              "filtered_sector_count": 7,
+              "group_sizes": [
+                15,
+                10,
+                7,
+                3,
+                3,
+                2,
+                2,
+                1,
+                1,
+                1
+              ]
+            },
+            {
+              "head": 10,
+              "group_count": 11,
+              "filtered_sector_count": 6,
+              "group_sizes": [
+                26,
+                4,
+                3,
+                3,
+                2,
+                2,
+                1,
+                1,
+                1,
+                1,
+                1
+              ]
+            },
+            {
+              "head": 11,
+              "group_count": 15,
+              "filtered_sector_count": 8,
+              "group_sizes": [
+                16,
+                5,
+                4,
+                3,
+                3,
+                3,
+                2,
+                2,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ]
+            },
+            {
+              "head": 12,
+              "group_count": 15,
+              "filtered_sector_count": 11,
+              "group_sizes": [
+                13,
+                5,
+                4,
+                4,
+                3,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                1,
+                1,
+                1,
+                1
+              ]
+            },
+            {
+              "head": 13,
+              "group_count": 13,
+              "filtered_sector_count": 8,
+              "group_sizes": [
+                18,
+                4,
+                4,
+                4,
+                3,
+                3,
+                2,
+                2,
+                1,
+                1,
+                1,
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        "support_descriptor": {
+          "kind": "aggregated_R1_over_attention_heads",
+          "matrix": [
+            [
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              1,
+              1
+            ]
+          ],
+          "offdiag_density_pct": 75.0
+        },
+        "bridge_descriptor": {
+          "kind": "general matrix-commutator support proxy",
+          "matrix": [
+            [
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              1,
+              1
+            ]
+          ],
+          "offdiag_density_pct": 75.0
+        },
+        "repair_descriptor": {
+          "kind": "cutoff general matrix-commutator depth proxy",
+          "depth_matrix": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              "UNREACHED_AT_CUTOFF",
+              0,
+              "UNREACHED_AT_CUTOFF"
+            ],
+            [
+              0,
+              "UNREACHED_AT_CUTOFF",
+              0,
+              0
+            ]
+          ],
+          "repaired_pairs": [],
+          "repaired_count": 0,
+          "terminally_frozen_count": 3,
+          "claim_note": "The operative matrices are not a declared skew-Hermitian Lie family; this is not Lie/Hall depth."
+        },
+        "wall_descriptor": {
+          "status": "not_applicable",
+          "reason": "single pretrained snapshot; no deformation path supplied"
+        },
+        "analogue_mapping": "The frozen v1 envelope identifies a 40-dimensional retained token space inside the 45-token probe and a candidate complete coordinate partition on that retained space, but it does not bind the fourteen operative matrices or projector-completeness certificate as explicit artifacts. The migration therefore retains a bounded reconstruction obligation as an analogue record."
+      },
+      "unit": null,
+      "result_state": "OBSERVED",
+      "semantic_convention_ids": [],
+      "run_policy_ids": [
+        "policy.cutoff"
+      ],
+      "certificate_ids": [],
+      "artifact_ids": [
+        "artifact.legacy"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim.analogue",
+      "statement": "The source artifact supports a provenance-bound structurally analogous diagnostic under the declared mapping.",
+      "result_state": "OBSERVED",
+      "claim_status": "Computational Observation",
+      "capability_ids": [
+        "diagnostic_analogue"
+      ],
+      "carrier_ids": [
+        "carrier.analogue"
+      ],
+      "object_ids": [
+        "analogue.record"
+      ],
+      "finding_ids": [
+        "finding.analogue"
+      ],
+      "semantic_convention_ids": [],
+      "run_policy_ids": [
+        "policy.cutoff"
+      ],
+      "hypotheses": [
+        "The frozen v1 report, adapter classification, and declared policies are fixed."
+      ],
+      "certificate_ids": [],
+      "artifact_ids": [
+        "artifact.legacy"
+      ],
+      "scope": "Descriptor-level Paper XII control qwen.sofreport.",
+      "negative_boundary": "Strict admission requires a new source-addressed reconstruction of the complete (V,Q,Y) data. The general attention matrices are also not a declared skew-Hermitian Lie family."
+    }
+  ],
+  "derivations": []
+}

@@ -1,0 +1,967 @@
+{
+  "sofaction_version": "2.0",
+  "record_type": "sofaction",
+  "action_record_id": "before_after_traffic-actions-v2",
+  "claim_status": "Computational Certificate",
+  "record_class": "decision_trace_certificate",
+  "claim_note": "Policy-relative interpretation with bounded candidate actions",
+  "source_audit": {
+    "audit_id": "before_after_traffic_retiming",
+    "artifact": "experiments/paper13/results/audits/before_after_traffic.sofaudit.json",
+    "sofaudit_version": "2.0",
+    "digest": {
+      "algorithm": "sha256",
+      "value": "13f8a8523aaf00728c8003c2cd6bc91576971f77390a4b6da4d1eccb5c853fa7"
+    },
+    "validation_receipt": {
+      "receipt_id": "receipt.before_after_traffic_retiming.sofaudit-v2",
+      "artifact": "experiments/paper13/results/receipts/before_after_traffic_retiming.validation-receipt.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "771c2403094f36ede938187926a2f64130d7736acaee3157c59f225bcd82b032"
+      },
+      "validator_id": "sofaudit.semantic-validator.v2",
+      "validator_version": "2.0"
+    }
+  },
+  "audit_projection": {
+    "audit_id": "before_after_traffic_retiming",
+    "signature": {
+      "support": {
+        "comparison_state": "UNRESOLVED",
+        "result_state": "DECLARED",
+        "claim_status": null,
+        "claim_target": null,
+        "certificate_class": null,
+        "classification_source": "migration_adapter",
+        "report_item_binding": {
+          "binding_state": "legacy_payload_only",
+          "reference_item_ref": null,
+          "target_item_ref": null,
+          "reason": "The frozen v1 audit stores a comparison payload but no item-level reference/target report binding."
+        },
+        "coordinate_family": "operator",
+        "value_schema_id": "operator.support.v1",
+        "value": null,
+        "source_artifact_ids": [
+          "artifact.source-audit"
+        ],
+        "reason": "The v1 payload is retained by source digest, but the migrated SOFRS reports do not bind enough alignment metadata or item-level mappings to promote it as a v2 comparison coordinate."
+      },
+      "word_bridge": {
+        "comparison_state": "UNRESOLVED",
+        "result_state": "DECLARED",
+        "claim_status": null,
+        "claim_target": null,
+        "certificate_class": null,
+        "classification_source": "migration_adapter",
+        "report_item_binding": {
+          "binding_state": "legacy_payload_only",
+          "reference_item_ref": null,
+          "target_item_ref": null,
+          "reason": "The frozen v1 audit stores a comparison payload but no item-level reference/target report binding."
+        },
+        "coordinate_family": "word",
+        "value_schema_id": "word.support.v1",
+        "value": null,
+        "source_artifact_ids": [
+          "artifact.source-audit"
+        ],
+        "reason": "The v1 payload is retained by source digest, but the migrated SOFRS reports do not bind enough alignment metadata or item-level mappings to promote it as a v2 comparison coordinate."
+      },
+      "lie_bridge": {
+        "comparison_state": "UNRESOLVED",
+        "result_state": "DECLARED",
+        "claim_status": null,
+        "claim_target": null,
+        "certificate_class": null,
+        "classification_source": "migration_adapter",
+        "report_item_binding": {
+          "binding_state": "legacy_payload_only",
+          "reference_item_ref": null,
+          "target_item_ref": null,
+          "reason": "The frozen v1 audit stores a comparison payload but no item-level reference/target report binding."
+        },
+        "coordinate_family": "lie",
+        "value_schema_id": "lie.simple-commutator-support.v1",
+        "value": null,
+        "source_artifact_ids": [
+          "artifact.source-audit"
+        ],
+        "reason": "The v1 payload is retained by source digest, but the migrated SOFRS reports do not bind enough alignment metadata or item-level mappings to promote it as a v2 comparison coordinate."
+      },
+      "depth": {
+        "comparison_state": "UNRESOLVED",
+        "result_state": "DECLARED",
+        "claim_status": null,
+        "claim_target": null,
+        "certificate_class": null,
+        "classification_source": "migration_adapter",
+        "report_item_binding": {
+          "binding_state": "legacy_payload_only",
+          "reference_item_ref": null,
+          "target_item_ref": null,
+          "reason": "The frozen v1 audit stores a comparison payload but no item-level reference/target report binding."
+        },
+        "coordinate_family": "depth",
+        "value_schema_id": "word.depth.v1",
+        "value": null,
+        "source_artifact_ids": [
+          "artifact.source-audit"
+        ],
+        "reason": "The v1 payload is retained by source digest, but the migrated SOFRS reports do not bind enough alignment metadata or item-level mappings to promote it as a v2 comparison coordinate."
+      },
+      "frozen_summary": {
+        "comparison_state": "UNRESOLVED",
+        "result_state": "DECLARED",
+        "claim_status": null,
+        "claim_target": null,
+        "certificate_class": null,
+        "classification_source": "migration_adapter",
+        "report_item_binding": {
+          "binding_state": "legacy_payload_only",
+          "reference_item_ref": null,
+          "target_item_ref": null,
+          "reason": "The frozen v1 audit stores a comparison payload but no item-level reference/target report binding."
+        },
+        "coordinate_family": "frozen_summary",
+        "value_schema_id": "summary.frozen.v1",
+        "value": null,
+        "source_artifact_ids": [
+          "artifact.source-audit"
+        ],
+        "reason": "The v1 payload is retained by source digest, but the migrated SOFRS reports do not bind enough alignment metadata or item-level mappings to promote it as a v2 comparison coordinate."
+      },
+      "constraint": {
+        "comparison_state": "UNRESOLVED",
+        "result_state": "DECLARED",
+        "claim_status": null,
+        "claim_target": null,
+        "certificate_class": null,
+        "classification_source": "migration_adapter",
+        "report_item_binding": {
+          "binding_state": "legacy_payload_only",
+          "reference_item_ref": null,
+          "target_item_ref": null,
+          "reason": "The frozen v1 audit stores a comparison payload but no item-level reference/target report binding."
+        },
+        "coordinate_family": "constraint",
+        "value_schema_id": "constraint.count.v1",
+        "value": null,
+        "source_artifact_ids": [
+          "artifact.source-audit"
+        ],
+        "reason": "The v1 payload is retained by source digest, but the migrated SOFRS reports do not bind enough alignment metadata or item-level mappings to promote it as a v2 comparison coordinate."
+      },
+      "response": {
+        "comparison_state": "UNRESOLVED",
+        "result_state": "DECLARED",
+        "claim_status": null,
+        "claim_target": null,
+        "certificate_class": null,
+        "classification_source": "migration_adapter",
+        "report_item_binding": {
+          "binding_state": "legacy_payload_only",
+          "reference_item_ref": null,
+          "target_item_ref": null,
+          "reason": "The frozen v1 audit stores a comparison payload but no item-level reference/target report binding."
+        },
+        "coordinate_family": "response",
+        "value_schema_id": "response.record.v1",
+        "value": null,
+        "source_artifact_ids": [
+          "artifact.source-audit"
+        ],
+        "reason": "The v1 payload is retained by source digest, but the migrated SOFRS reports do not bind enough alignment metadata or item-level mappings to promote it as a v2 comparison coordinate."
+      },
+      "wall_record": {
+        "comparison_state": "NOT_DECLARED",
+        "result_state": "NOT_DECLARED",
+        "claim_status": null,
+        "claim_target": null,
+        "certificate_class": null,
+        "classification_source": "migration_adapter",
+        "report_item_binding": {
+          "binding_state": "unresolved",
+          "reference_item_ref": null,
+          "target_item_ref": null,
+          "reason": "No retained Paper XI wall items are bound by the v1 payload."
+        },
+        "coordinate_family": "wall_record",
+        "value_schema_id": "wall.morphology.v1",
+        "value": null,
+        "source_artifact_ids": [],
+        "reason": "The frozen v1 comparison did not declare this profile coordinate; absence is not numerical zero.",
+        "wall_input_binding": {
+          "reference_wall": {
+            "state": "NOT_DECLARED",
+            "record_ref": null,
+            "signature_ref": null,
+            "source_artifact_id": null,
+            "reason": "The frozen SOFAUDIT v1 input does not bind this side to a retained Paper XI wall record and signature."
+          },
+          "target_wall": {
+            "state": "NOT_DECLARED",
+            "record_ref": null,
+            "signature_ref": null,
+            "source_artifact_id": null,
+            "reason": "The frozen SOFAUDIT v1 input does not bind this side to a retained Paper XI wall record and signature."
+          },
+          "comparison_context": {
+            "state": "NOT_DECLARED",
+            "context_kind": null,
+            "context_alignment_ref": null,
+            "orientation_alignment": null,
+            "field_alignment": null,
+            "reason": "No wall comparison was requested by the frozen v1 record."
+          }
+        }
+      }
+    }
+  },
+  "context_admission": {
+    "status": "admitted",
+    "contract_validation": "admitted",
+    "applicability": "applicable",
+    "completeness": "complete",
+    "missing_fields": [],
+    "rationale": "All required ActionContext fields were explicitly declared."
+  },
+  "policy_admission": {
+    "status": "admitted",
+    "contract_validation": "admitted",
+    "applicability": "applicable",
+    "completeness": "complete",
+    "missing_fields": [],
+    "rationale": "PolicyProfile is versioned and applicable to the declared audit context."
+  },
+  "action_context": {
+    "context_id": "paper14:before_after_traffic_retiming:action-context-v2",
+    "context_contract_version": "2.0",
+    "context_revision": "2026-08-07.1",
+    "actor": {
+      "actor_id": "paper14-workbench",
+      "role": "analysis_producer",
+      "description": "Paper XIV controlled interpretation workbench"
+    },
+    "scope": {
+      "scope_id": "audit:before_after_traffic_retiming",
+      "description": "Interpret only the retained coordinates of this Paper XIII audit.",
+      "audit_id": "before_after_traffic_retiming"
+    },
+    "objective": {
+      "objective_id": "bounded-diagnostic-interpretation",
+      "statement": "Separate licensed change, review need, and unresolved evidence without issuing an execution command."
+    },
+    "constraints": [
+      {
+        "constraint_id": "preserve-audit-projection",
+        "statement": "The Paper XIII audit projection is immutable at this layer.",
+        "status": "binding"
+      },
+      {
+        "constraint_id": "no-action-from-unresolved",
+        "statement": "UNRESOLVED and NOT_DECLARED coordinates cannot support affirmative candidates.",
+        "status": "binding"
+      }
+    ],
+    "time": {
+      "kind": "source_snapshot",
+      "start": null,
+      "end": null,
+      "timezone": null,
+      "basis": "inherited from the source-addressed audit artifact"
+    },
+    "authority": {
+      "authority_id": "paper14-analysis-only",
+      "status": "not_authorized",
+      "description": "This record has no authority to execute, approve, or select an action.",
+      "actor_ids": [
+        "paper14-workbench"
+      ],
+      "scope_ids": [
+        "audit:before_after_traffic_retiming"
+      ]
+    },
+    "uncertainty_conditions": [
+      "source comparison states are retained exactly",
+      "unresolved or not-declared coordinates block affirmative action",
+      "candidate effect, feasibility, safety, and authorization remain unverified"
+    ],
+    "comparison_role": "diagnostic_comparison",
+    "mismatch_direction": "reference_to_target",
+    "contract_status": "not_applicable",
+    "evaluator_qualification_note": "migration preservation only",
+    "transformation_contract_refs": [],
+    "negative_boundary": [
+      "Reference role is not a truth or defect authority.",
+      "A candidate action is not a recommendation, command, or causal-effect claim."
+    ]
+  },
+  "policy_profile": {
+    "policy_id": "paper14-diagnostic-review",
+    "policy_contract_version": "2.0",
+    "policy_revision": "paper14-diagnostic-review-r1",
+    "applicability": {
+      "regimes": [
+        "strict_vs_strict",
+        "strict_vs_analogue",
+        "analogue_vs_analogue"
+      ],
+      "comparison_roles": [
+        "failure_mode_control",
+        "legitimate_transformation_control",
+        "model_comparison",
+        "diagnostic_comparison"
+      ]
+    },
+    "normative_basis": [
+      {
+        "basis_id": "difference-is-not-defect",
+        "statement": "An audit difference is not by itself a defect, severity, or action.",
+        "source_ref": {
+          "artifact_id": "paper14-manuscript",
+          "role": "policy_source",
+          "uri": "artifact://papers/paper14/Paper%20XIV.md",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "ba0fa73a5f842b3fc44a5e8296708e4f8296bd8f7b9b1bf8dc1b656d7f0e2b02"
+          },
+          "producer": "RIME Paper XIV",
+          "contract_version": "2.0"
+        }
+      },
+      {
+        "basis_id": "unresolved-blocks-action",
+        "statement": "UNRESOLVED and NOT_DECLARED coordinates cannot support affirmative actions.",
+        "source_ref": {
+          "artifact_id": "paper14-manuscript",
+          "role": "policy_source",
+          "uri": "artifact://papers/paper14/Paper%20XIV.md",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "ba0fa73a5f842b3fc44a5e8296708e4f8296bd8f7b9b1bf8dc1b656d7f0e2b02"
+          },
+          "producer": "RIME Paper XIV",
+          "contract_version": "2.0"
+        }
+      }
+    ],
+    "rules": [
+      {
+        "rule_id": "unresolved-coordinate-no-action",
+        "when": {
+          "predicate_version": "1.0",
+          "op": "any",
+          "args": [
+            {
+              "predicate_version": "1.0",
+              "op": "coordinate_state_is",
+              "coordinate_id": "*",
+              "value": "UNRESOLVED"
+            },
+            {
+              "predicate_version": "1.0",
+              "op": "coordinate_state_is",
+              "coordinate_id": "*",
+              "value": "NOT_DECLARED"
+            },
+            {
+              "predicate_version": "1.0",
+              "op": "coordinate_state_is",
+              "coordinate_id": "*",
+              "value": "INCOMPARABLE"
+            },
+            {
+              "predicate_version": "1.0",
+              "op": "coordinate_state_is",
+              "coordinate_id": "*",
+              "value": "NOT_APPLICABLE"
+            }
+          ]
+        },
+        "assessment_kind": "evidence_insufficient",
+        "assessment_note": "Unavailable comparison coordinates cannot support affirmative action.",
+        "uncertainty_status": "unresolved",
+        "allowed_dispositions": [],
+        "negative_boundary": [
+          "Missing or unresolved comparison evidence cannot support an affirmative action."
+        ]
+      },
+      {
+        "rule_id": "licensed-change-is-not-defect",
+        "when": {
+          "predicate_version": "1.0",
+          "op": "all",
+          "args": [
+            {
+              "predicate_version": "1.0",
+              "op": "any",
+              "args": [
+                {
+                  "predicate_version": "1.0",
+                  "op": "coordinate_state_is",
+                  "coordinate_id": "*",
+                  "value": "ALIGNED"
+                },
+                {
+                  "predicate_version": "1.0",
+                  "op": "coordinate_state_is",
+                  "coordinate_id": "*",
+                  "value": "MISMATCH"
+                }
+              ]
+            },
+            {
+              "predicate_version": "1.0",
+              "op": "comparison_role_is",
+              "value": "legitimate_transformation_control"
+            },
+            {
+              "predicate_version": "1.0",
+              "op": "contract_status_is",
+              "value": "conforming"
+            },
+            {
+              "predicate_version": "1.0",
+              "op": "transformation_contract_present"
+            }
+          ]
+        },
+        "assessment_kind": "licensed_change",
+        "assessment_note": "The declared transformation contract licenses the retained change.",
+        "uncertainty_status": "bounded",
+        "allowed_dispositions": [
+          "NoAction",
+          "Investigate"
+        ],
+        "negative_boundary": [
+          "Conformance licenses the declared change but does not establish domain-wide correctness."
+        ]
+      },
+      {
+        "rule_id": "certified-mismatch-requires-review",
+        "when": {
+          "predicate_version": "1.0",
+          "op": "coordinate_state_is",
+          "coordinate_id": "*",
+          "value": "MISMATCH"
+        },
+        "assessment_kind": "defect_candidate",
+        "assessment_note": "A mismatch is a policy-relative review status, not a certified defect.",
+        "uncertainty_status": "bounded",
+        "allowed_dispositions": [
+          "Investigate",
+          "RequestEvidence"
+        ],
+        "negative_boundary": [
+          "A defect candidate is a policy-relative review status, not a certified defect."
+        ]
+      },
+      {
+        "rule_id": "aligned-coordinate-no-action",
+        "when": {
+          "predicate_version": "1.0",
+          "op": "coordinate_state_is",
+          "coordinate_id": "*",
+          "value": "ALIGNED"
+        },
+        "assessment_kind": "no_action_indicated",
+        "assessment_note": "Equality on the requested coordinate indicates no action under this policy.",
+        "uncertainty_status": "bounded",
+        "allowed_dispositions": [
+          "NoAction"
+        ],
+        "negative_boundary": [
+          "Equality on the requested coordinate does not establish global equivalence or safety."
+        ]
+      }
+    ],
+    "exceptions": [],
+    "precedence_edges": [
+      {
+        "before": "unresolved-coordinate-no-action",
+        "after": "licensed-change-is-not-defect"
+      },
+      {
+        "before": "licensed-change-is-not-defect",
+        "after": "certified-mismatch-requires-review"
+      },
+      {
+        "before": "certified-mismatch-requires-review",
+        "after": "aligned-coordinate-no-action"
+      }
+    ],
+    "uncertainty_policy": {
+      "version": "1.0",
+      "unresolved_predicate": "propagate_unresolved",
+      "unavailable_coordinate": "non_satisfying",
+      "not_declared": "propagate_unresolved",
+      "incomparable": "propagate_unresolved",
+      "rule_conflict": "unresolved_disposition",
+      "no_applicable_rule": "no_disposition"
+    },
+    "candidate_families": [
+      "Investigate",
+      "RequestEvidence",
+      "Mitigate",
+      "Rollback",
+      "Escalate"
+    ],
+    "selection_status": "downstream"
+  },
+  "interpretation_records": [
+    {
+      "interpretation_id": "interp:before_after_traffic_retiming:support",
+      "audit_coordinate_refs": [
+        {
+          "coordinate_id": "support",
+          "comparison_state": "UNRESOLVED",
+          "carrier": "operator"
+        }
+      ],
+      "context_refs": [
+        "paper14:before_after_traffic_retiming:action-context-v2"
+      ],
+      "policy_rule_refs": [
+        "unresolved-coordinate-no-action"
+      ],
+      "assessment_kind": "evidence_insufficient",
+      "assessment_note": "Unavailable comparison coordinates cannot support affirmative action.",
+      "uncertainty": {
+        "status": "unresolved",
+        "reasons": [
+          "source comparison state is UNRESOLVED"
+        ]
+      },
+      "rationale": "Unavailable comparison coordinates cannot support affirmative action.",
+      "supported_dispositions": [],
+      "evidence_refs": [
+        {
+          "audit_id": "before_after_traffic_retiming",
+          "artifact": "experiments/paper13/results/audits/before_after_traffic.sofaudit.json",
+          "sofaudit_version": "2.0",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "13f8a8523aaf00728c8003c2cd6bc91576971f77390a4b6da4d1eccb5c853fa7"
+          },
+          "validation_receipt": {
+            "receipt_id": "receipt.before_after_traffic_retiming.sofaudit-v2",
+            "artifact": "experiments/paper13/results/receipts/before_after_traffic_retiming.validation-receipt.json",
+            "digest": {
+              "algorithm": "sha256",
+              "value": "771c2403094f36ede938187926a2f64130d7736acaee3157c59f225bcd82b032"
+            },
+            "validator_id": "sofaudit.semantic-validator.v2",
+            "validator_version": "2.0"
+          }
+        }
+      ],
+      "negative_boundary": [
+        "Missing or unresolved comparison evidence cannot support an affirmative action."
+      ]
+    },
+    {
+      "interpretation_id": "interp:before_after_traffic_retiming:word_bridge",
+      "audit_coordinate_refs": [
+        {
+          "coordinate_id": "word_bridge",
+          "comparison_state": "UNRESOLVED",
+          "carrier": "word"
+        }
+      ],
+      "context_refs": [
+        "paper14:before_after_traffic_retiming:action-context-v2"
+      ],
+      "policy_rule_refs": [
+        "unresolved-coordinate-no-action"
+      ],
+      "assessment_kind": "evidence_insufficient",
+      "assessment_note": "Unavailable comparison coordinates cannot support affirmative action.",
+      "uncertainty": {
+        "status": "unresolved",
+        "reasons": [
+          "source comparison state is UNRESOLVED"
+        ]
+      },
+      "rationale": "Unavailable comparison coordinates cannot support affirmative action.",
+      "supported_dispositions": [],
+      "evidence_refs": [
+        {
+          "audit_id": "before_after_traffic_retiming",
+          "artifact": "experiments/paper13/results/audits/before_after_traffic.sofaudit.json",
+          "sofaudit_version": "2.0",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "13f8a8523aaf00728c8003c2cd6bc91576971f77390a4b6da4d1eccb5c853fa7"
+          },
+          "validation_receipt": {
+            "receipt_id": "receipt.before_after_traffic_retiming.sofaudit-v2",
+            "artifact": "experiments/paper13/results/receipts/before_after_traffic_retiming.validation-receipt.json",
+            "digest": {
+              "algorithm": "sha256",
+              "value": "771c2403094f36ede938187926a2f64130d7736acaee3157c59f225bcd82b032"
+            },
+            "validator_id": "sofaudit.semantic-validator.v2",
+            "validator_version": "2.0"
+          }
+        }
+      ],
+      "negative_boundary": [
+        "Missing or unresolved comparison evidence cannot support an affirmative action."
+      ]
+    },
+    {
+      "interpretation_id": "interp:before_after_traffic_retiming:lie_bridge",
+      "audit_coordinate_refs": [
+        {
+          "coordinate_id": "lie_bridge",
+          "comparison_state": "UNRESOLVED",
+          "carrier": "lie"
+        }
+      ],
+      "context_refs": [
+        "paper14:before_after_traffic_retiming:action-context-v2"
+      ],
+      "policy_rule_refs": [
+        "unresolved-coordinate-no-action"
+      ],
+      "assessment_kind": "evidence_insufficient",
+      "assessment_note": "Unavailable comparison coordinates cannot support affirmative action.",
+      "uncertainty": {
+        "status": "unresolved",
+        "reasons": [
+          "source comparison state is UNRESOLVED"
+        ]
+      },
+      "rationale": "Unavailable comparison coordinates cannot support affirmative action.",
+      "supported_dispositions": [],
+      "evidence_refs": [
+        {
+          "audit_id": "before_after_traffic_retiming",
+          "artifact": "experiments/paper13/results/audits/before_after_traffic.sofaudit.json",
+          "sofaudit_version": "2.0",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "13f8a8523aaf00728c8003c2cd6bc91576971f77390a4b6da4d1eccb5c853fa7"
+          },
+          "validation_receipt": {
+            "receipt_id": "receipt.before_after_traffic_retiming.sofaudit-v2",
+            "artifact": "experiments/paper13/results/receipts/before_after_traffic_retiming.validation-receipt.json",
+            "digest": {
+              "algorithm": "sha256",
+              "value": "771c2403094f36ede938187926a2f64130d7736acaee3157c59f225bcd82b032"
+            },
+            "validator_id": "sofaudit.semantic-validator.v2",
+            "validator_version": "2.0"
+          }
+        }
+      ],
+      "negative_boundary": [
+        "Missing or unresolved comparison evidence cannot support an affirmative action."
+      ]
+    },
+    {
+      "interpretation_id": "interp:before_after_traffic_retiming:depth",
+      "audit_coordinate_refs": [
+        {
+          "coordinate_id": "depth",
+          "comparison_state": "UNRESOLVED",
+          "carrier": "depth"
+        }
+      ],
+      "context_refs": [
+        "paper14:before_after_traffic_retiming:action-context-v2"
+      ],
+      "policy_rule_refs": [
+        "unresolved-coordinate-no-action"
+      ],
+      "assessment_kind": "evidence_insufficient",
+      "assessment_note": "Unavailable comparison coordinates cannot support affirmative action.",
+      "uncertainty": {
+        "status": "unresolved",
+        "reasons": [
+          "source comparison state is UNRESOLVED"
+        ]
+      },
+      "rationale": "Unavailable comparison coordinates cannot support affirmative action.",
+      "supported_dispositions": [],
+      "evidence_refs": [
+        {
+          "audit_id": "before_after_traffic_retiming",
+          "artifact": "experiments/paper13/results/audits/before_after_traffic.sofaudit.json",
+          "sofaudit_version": "2.0",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "13f8a8523aaf00728c8003c2cd6bc91576971f77390a4b6da4d1eccb5c853fa7"
+          },
+          "validation_receipt": {
+            "receipt_id": "receipt.before_after_traffic_retiming.sofaudit-v2",
+            "artifact": "experiments/paper13/results/receipts/before_after_traffic_retiming.validation-receipt.json",
+            "digest": {
+              "algorithm": "sha256",
+              "value": "771c2403094f36ede938187926a2f64130d7736acaee3157c59f225bcd82b032"
+            },
+            "validator_id": "sofaudit.semantic-validator.v2",
+            "validator_version": "2.0"
+          }
+        }
+      ],
+      "negative_boundary": [
+        "Missing or unresolved comparison evidence cannot support an affirmative action."
+      ]
+    },
+    {
+      "interpretation_id": "interp:before_after_traffic_retiming:frozen_summary",
+      "audit_coordinate_refs": [
+        {
+          "coordinate_id": "frozen_summary",
+          "comparison_state": "UNRESOLVED",
+          "carrier": "frozen_summary"
+        }
+      ],
+      "context_refs": [
+        "paper14:before_after_traffic_retiming:action-context-v2"
+      ],
+      "policy_rule_refs": [
+        "unresolved-coordinate-no-action"
+      ],
+      "assessment_kind": "evidence_insufficient",
+      "assessment_note": "Unavailable comparison coordinates cannot support affirmative action.",
+      "uncertainty": {
+        "status": "unresolved",
+        "reasons": [
+          "source comparison state is UNRESOLVED"
+        ]
+      },
+      "rationale": "Unavailable comparison coordinates cannot support affirmative action.",
+      "supported_dispositions": [],
+      "evidence_refs": [
+        {
+          "audit_id": "before_after_traffic_retiming",
+          "artifact": "experiments/paper13/results/audits/before_after_traffic.sofaudit.json",
+          "sofaudit_version": "2.0",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "13f8a8523aaf00728c8003c2cd6bc91576971f77390a4b6da4d1eccb5c853fa7"
+          },
+          "validation_receipt": {
+            "receipt_id": "receipt.before_after_traffic_retiming.sofaudit-v2",
+            "artifact": "experiments/paper13/results/receipts/before_after_traffic_retiming.validation-receipt.json",
+            "digest": {
+              "algorithm": "sha256",
+              "value": "771c2403094f36ede938187926a2f64130d7736acaee3157c59f225bcd82b032"
+            },
+            "validator_id": "sofaudit.semantic-validator.v2",
+            "validator_version": "2.0"
+          }
+        }
+      ],
+      "negative_boundary": [
+        "Missing or unresolved comparison evidence cannot support an affirmative action."
+      ]
+    },
+    {
+      "interpretation_id": "interp:before_after_traffic_retiming:constraint",
+      "audit_coordinate_refs": [
+        {
+          "coordinate_id": "constraint",
+          "comparison_state": "UNRESOLVED",
+          "carrier": "constraint"
+        }
+      ],
+      "context_refs": [
+        "paper14:before_after_traffic_retiming:action-context-v2"
+      ],
+      "policy_rule_refs": [
+        "unresolved-coordinate-no-action"
+      ],
+      "assessment_kind": "evidence_insufficient",
+      "assessment_note": "Unavailable comparison coordinates cannot support affirmative action.",
+      "uncertainty": {
+        "status": "unresolved",
+        "reasons": [
+          "source comparison state is UNRESOLVED"
+        ]
+      },
+      "rationale": "Unavailable comparison coordinates cannot support affirmative action.",
+      "supported_dispositions": [],
+      "evidence_refs": [
+        {
+          "audit_id": "before_after_traffic_retiming",
+          "artifact": "experiments/paper13/results/audits/before_after_traffic.sofaudit.json",
+          "sofaudit_version": "2.0",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "13f8a8523aaf00728c8003c2cd6bc91576971f77390a4b6da4d1eccb5c853fa7"
+          },
+          "validation_receipt": {
+            "receipt_id": "receipt.before_after_traffic_retiming.sofaudit-v2",
+            "artifact": "experiments/paper13/results/receipts/before_after_traffic_retiming.validation-receipt.json",
+            "digest": {
+              "algorithm": "sha256",
+              "value": "771c2403094f36ede938187926a2f64130d7736acaee3157c59f225bcd82b032"
+            },
+            "validator_id": "sofaudit.semantic-validator.v2",
+            "validator_version": "2.0"
+          }
+        }
+      ],
+      "negative_boundary": [
+        "Missing or unresolved comparison evidence cannot support an affirmative action."
+      ]
+    },
+    {
+      "interpretation_id": "interp:before_after_traffic_retiming:response",
+      "audit_coordinate_refs": [
+        {
+          "coordinate_id": "response",
+          "comparison_state": "UNRESOLVED",
+          "carrier": "response"
+        }
+      ],
+      "context_refs": [
+        "paper14:before_after_traffic_retiming:action-context-v2"
+      ],
+      "policy_rule_refs": [
+        "unresolved-coordinate-no-action"
+      ],
+      "assessment_kind": "evidence_insufficient",
+      "assessment_note": "Unavailable comparison coordinates cannot support affirmative action.",
+      "uncertainty": {
+        "status": "unresolved",
+        "reasons": [
+          "source comparison state is UNRESOLVED"
+        ]
+      },
+      "rationale": "Unavailable comparison coordinates cannot support affirmative action.",
+      "supported_dispositions": [],
+      "evidence_refs": [
+        {
+          "audit_id": "before_after_traffic_retiming",
+          "artifact": "experiments/paper13/results/audits/before_after_traffic.sofaudit.json",
+          "sofaudit_version": "2.0",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "13f8a8523aaf00728c8003c2cd6bc91576971f77390a4b6da4d1eccb5c853fa7"
+          },
+          "validation_receipt": {
+            "receipt_id": "receipt.before_after_traffic_retiming.sofaudit-v2",
+            "artifact": "experiments/paper13/results/receipts/before_after_traffic_retiming.validation-receipt.json",
+            "digest": {
+              "algorithm": "sha256",
+              "value": "771c2403094f36ede938187926a2f64130d7736acaee3157c59f225bcd82b032"
+            },
+            "validator_id": "sofaudit.semantic-validator.v2",
+            "validator_version": "2.0"
+          }
+        }
+      ],
+      "negative_boundary": [
+        "Missing or unresolved comparison evidence cannot support an affirmative action."
+      ]
+    },
+    {
+      "interpretation_id": "interp:before_after_traffic_retiming:wall_record",
+      "audit_coordinate_refs": [
+        {
+          "coordinate_id": "wall_record",
+          "comparison_state": "NOT_DECLARED",
+          "carrier": "wall_record"
+        }
+      ],
+      "context_refs": [
+        "paper14:before_after_traffic_retiming:action-context-v2"
+      ],
+      "policy_rule_refs": [
+        "unresolved-coordinate-no-action"
+      ],
+      "assessment_kind": "evidence_insufficient",
+      "assessment_note": "Unavailable comparison coordinates cannot support affirmative action.",
+      "uncertainty": {
+        "status": "unresolved",
+        "reasons": [
+          "source comparison state is NOT_DECLARED"
+        ]
+      },
+      "rationale": "Unavailable comparison coordinates cannot support affirmative action.",
+      "supported_dispositions": [],
+      "evidence_refs": [
+        {
+          "audit_id": "before_after_traffic_retiming",
+          "artifact": "experiments/paper13/results/audits/before_after_traffic.sofaudit.json",
+          "sofaudit_version": "2.0",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "13f8a8523aaf00728c8003c2cd6bc91576971f77390a4b6da4d1eccb5c853fa7"
+          },
+          "validation_receipt": {
+            "receipt_id": "receipt.before_after_traffic_retiming.sofaudit-v2",
+            "artifact": "experiments/paper13/results/receipts/before_after_traffic_retiming.validation-receipt.json",
+            "digest": {
+              "algorithm": "sha256",
+              "value": "771c2403094f36ede938187926a2f64130d7736acaee3157c59f225bcd82b032"
+            },
+            "validator_id": "sofaudit.semantic-validator.v2",
+            "validator_version": "2.0"
+          }
+        }
+      ],
+      "negative_boundary": [
+        "Missing or unresolved comparison evidence cannot support an affirmative action."
+      ]
+    }
+  ],
+  "candidate_action_set": {
+    "count": 0,
+    "actions": []
+  },
+  "disposition_result": {
+    "kind": "unresolved_disposition",
+    "reason": "At least one retained coordinate is unavailable for affirmative disposition.",
+    "interpretation_ids": [
+      "interp:before_after_traffic_retiming:support",
+      "interp:before_after_traffic_retiming:word_bridge",
+      "interp:before_after_traffic_retiming:lie_bridge",
+      "interp:before_after_traffic_retiming:depth",
+      "interp:before_after_traffic_retiming:frozen_summary",
+      "interp:before_after_traffic_retiming:constraint",
+      "interp:before_after_traffic_retiming:response",
+      "interp:before_after_traffic_retiming:wall_record"
+    ],
+    "candidate_action_ids": []
+  },
+  "record_basis": {
+    "basis_kind": "protocol_trace",
+    "evidence_refs": [
+      {
+        "audit_id": "before_after_traffic_retiming",
+        "artifact": "experiments/paper13/results/audits/before_after_traffic.sofaudit.json",
+        "sofaudit_version": "2.0",
+        "digest": {
+          "algorithm": "sha256",
+          "value": "13f8a8523aaf00728c8003c2cd6bc91576971f77390a4b6da4d1eccb5c853fa7"
+        },
+        "validation_receipt": {
+          "receipt_id": "receipt.before_after_traffic_retiming.sofaudit-v2",
+          "artifact": "experiments/paper13/results/receipts/before_after_traffic_retiming.validation-receipt.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "771c2403094f36ede938187926a2f64130d7736acaee3157c59f225bcd82b032"
+          },
+          "validator_id": "sofaudit.semantic-validator.v2",
+          "validator_version": "2.0"
+        }
+      }
+    ],
+    "causal_status": "not_claimed",
+    "negative_boundary": [
+      "Protocol trace completeness does not establish policy validity or action effectiveness."
+    ]
+  },
+  "failure_modes": [
+    "difference is not defect, severity, or action without policy-relative interpretation",
+    "candidate actions are not feasibility, causal-effect, safety, or authorization claims",
+    "post-action facts require a new Paper XIII audit and cannot rewrite this projection"
+  ]
+}

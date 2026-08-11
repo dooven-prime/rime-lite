@@ -363,7 +363,7 @@ def run():
     print(f"    frozen_R1={ref_audit['frozen_R1']}, frozen_D_word={ref_audit['frozen_D_word']}")
 
     all_results = {}
-    RESULTS = Path(__file__).resolve().parent / "results"
+    RESULTS = Path(__file__).resolve().parent / "archive" / "results"
     ref_id = "network_ref"
 
     write_artifact(build_sofreport(

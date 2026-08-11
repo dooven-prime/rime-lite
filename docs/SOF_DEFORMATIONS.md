@@ -175,7 +175,7 @@ Paper X     capability-aware compilation and Registry evidence
 Paper XI    typed wall morphology, coordinate profiles, and taxonomy
 Paper XII   single-system report protocol
 Paper XIII  aligned sparse comparison
-Paper XIV   policy-relative interpretation and action
+Paper XIV   policy-relative interpretation and bounded candidate generation
 ```
 
 Paper X may register a Paper IX finding but does not re-own its theorem or

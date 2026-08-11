@@ -1,0 +1,544 @@
+{
+  "ir_version": "1.0",
+  "record_id": "paper12.nvidia-llama31-8b-20260711.v2",
+  "record_kind": "diagnostic_analogue",
+  "manifest_ref": {
+    "manifest_id": "paper12.nvidia-llama31-8b-20260711.v2",
+    "manifest_version": "1.0",
+    "artifact_id": "artifact.manifest",
+    "digest": {
+      "algorithm": "sha256",
+      "value": "2b01e970f42be4c101bb34a203f120767ff422675aa20cb73d45ba4a9fc5ded5"
+    }
+  },
+  "source": {
+    "adapter_id": "paper12-v1-to-v2",
+    "adapter_version": "2.0",
+    "source_id": "paper12.nvidia-llama31-8b-20260711.v1",
+    "artifact_ids": [
+      "artifact.legacy",
+      "artifact.producer"
+    ]
+  },
+  "objects": [
+    {
+      "id": "analogue.record",
+      "kind": "diagnostic_analogue",
+      "label": "Provenance-bound diagnostic analogue",
+      "provenance_artifact_ids": [
+        "artifact.legacy"
+      ],
+      "carrier_id": "carrier.analogue",
+      "data": {
+        "sector_descriptor": {
+          "type": "probe sectors",
+          "protocols": [
+            "bare",
+            "concise",
+            "json_schema",
+            "xml_schema",
+            "few_shot",
+            "tool_enabled"
+          ],
+          "task_classes": [
+            "closed_answer",
+            "grounded_qa",
+            "tool_use"
+          ]
+        },
+        "observable_descriptor": {
+          "structural": [
+            "nonempty",
+            "json_valid",
+            "xml_valid",
+            "schema_consistent",
+            "tool_call_valid"
+          ],
+          "behavioral": [
+            "task_completion",
+            "instruction_following",
+            "task_scoped_groundedness",
+            "cross_protocol_consistency",
+            "api_success",
+            "concise",
+            "latency_recorded",
+            "appropriate_tool_use"
+          ],
+          "failure": [
+            "refusal",
+            "grounded_answer_failure",
+            "format_collapse",
+            "prompt_injection_failure"
+          ]
+        },
+        "support_descriptor": {
+          "meta/llama-3.1-8b-instruct": {
+            "bare": {
+              "structural.nonempty": 100.0,
+              "structural.json_valid": null,
+              "structural.xml_valid": null,
+              "structural.schema_consistent": null,
+              "structural.tool_call_valid": 0.0,
+              "behavioral.task_completion": 66.66666666666667,
+              "behavioral.instruction_following": 100.0,
+              "behavioral.task_scoped_groundedness": 100.0,
+              "behavioral.cross_protocol_consistency": 33.333333333333336,
+              "behavioral.api_success": 100.0,
+              "behavioral.concise": 66.66666666666667,
+              "behavioral.latency_recorded": 100.0,
+              "behavioral.appropriate_tool_use": 66.66666666666667,
+              "failure.refusal": 33.333333333333336,
+              "failure.grounded_answer_failure": 0.0,
+              "failure.format_collapse": null,
+              "failure.prompt_injection_failure": null
+            },
+            "concise": {
+              "structural.nonempty": 100.0,
+              "structural.json_valid": null,
+              "structural.xml_valid": null,
+              "structural.schema_consistent": null,
+              "structural.tool_call_valid": 0.0,
+              "behavioral.task_completion": 66.66666666666667,
+              "behavioral.instruction_following": 100.0,
+              "behavioral.task_scoped_groundedness": 100.0,
+              "behavioral.cross_protocol_consistency": 0.0,
+              "behavioral.api_success": 100.0,
+              "behavioral.concise": 66.66666666666667,
+              "behavioral.latency_recorded": 100.0,
+              "behavioral.appropriate_tool_use": 66.66666666666667,
+              "failure.refusal": 33.333333333333336,
+              "failure.grounded_answer_failure": 0.0,
+              "failure.format_collapse": null,
+              "failure.prompt_injection_failure": null
+            },
+            "json_schema": {
+              "structural.nonempty": 100.0,
+              "structural.json_valid": 66.66666666666667,
+              "structural.xml_valid": null,
+              "structural.schema_consistent": 66.66666666666667,
+              "structural.tool_call_valid": 0.0,
+              "behavioral.task_completion": 66.66666666666667,
+              "behavioral.instruction_following": 66.66666666666667,
+              "behavioral.task_scoped_groundedness": 100.0,
+              "behavioral.cross_protocol_consistency": 33.333333333333336,
+              "behavioral.api_success": 100.0,
+              "behavioral.concise": 66.66666666666667,
+              "behavioral.latency_recorded": 100.0,
+              "behavioral.appropriate_tool_use": 66.66666666666667,
+              "failure.refusal": 0.0,
+              "failure.grounded_answer_failure": 0.0,
+              "failure.format_collapse": 33.333333333333336,
+              "failure.prompt_injection_failure": null
+            },
+            "xml_schema": {
+              "structural.nonempty": 100.0,
+              "structural.json_valid": null,
+              "structural.xml_valid": 33.333333333333336,
+              "structural.schema_consistent": 33.333333333333336,
+              "structural.tool_call_valid": 0.0,
+              "behavioral.task_completion": 66.66666666666667,
+              "behavioral.instruction_following": 33.333333333333336,
+              "behavioral.task_scoped_groundedness": 100.0,
+              "behavioral.cross_protocol_consistency": 66.66666666666667,
+              "behavioral.api_success": 100.0,
+              "behavioral.concise": 66.66666666666667,
+              "behavioral.latency_recorded": 100.0,
+              "behavioral.appropriate_tool_use": 66.66666666666667,
+              "failure.refusal": 33.333333333333336,
+              "failure.grounded_answer_failure": 0.0,
+              "failure.format_collapse": 66.66666666666667,
+              "failure.prompt_injection_failure": null
+            },
+            "few_shot": {
+              "structural.nonempty": 100.0,
+              "structural.json_valid": null,
+              "structural.xml_valid": null,
+              "structural.schema_consistent": null,
+              "structural.tool_call_valid": 0.0,
+              "behavioral.task_completion": 66.66666666666667,
+              "behavioral.instruction_following": 100.0,
+              "behavioral.task_scoped_groundedness": 100.0,
+              "behavioral.cross_protocol_consistency": 66.66666666666667,
+              "behavioral.api_success": 100.0,
+              "behavioral.concise": 66.66666666666667,
+              "behavioral.latency_recorded": 100.0,
+              "behavioral.appropriate_tool_use": 66.66666666666667,
+              "failure.refusal": 33.333333333333336,
+              "failure.grounded_answer_failure": 0.0,
+              "failure.format_collapse": null,
+              "failure.prompt_injection_failure": null
+            },
+            "tool_enabled": {
+              "structural.nonempty": 100.0,
+              "structural.json_valid": null,
+              "structural.xml_valid": null,
+              "structural.schema_consistent": null,
+              "structural.tool_call_valid": 100.0,
+              "behavioral.task_completion": 33.333333333333336,
+              "behavioral.instruction_following": 33.333333333333336,
+              "behavioral.task_scoped_groundedness": 0.0,
+              "behavioral.cross_protocol_consistency": 0.0,
+              "behavioral.api_success": 100.0,
+              "behavioral.concise": 100.0,
+              "behavioral.latency_recorded": 100.0,
+              "behavioral.appropriate_tool_use": 33.333333333333336,
+              "failure.refusal": 0.0,
+              "failure.grounded_answer_failure": 100.0,
+              "failure.format_collapse": null,
+              "failure.prompt_injection_failure": null
+            }
+          }
+        },
+        "bridge_descriptor": {
+          "status": "behavioral_analogue",
+          "claim_note": "protocol transitions, not algebraic or commutator bridges",
+          "transitions": {
+            "schema_bridge": {
+              "from": "bare",
+              "to": "json_schema",
+              "observable": "structural.schema_consistent"
+            },
+            "few_shot_bridge": {
+              "from": "bare",
+              "to": "few_shot",
+              "observable": "behavioral.task_completion"
+            },
+            "tool_bridge": {
+              "from": "bare",
+              "to": "tool_enabled",
+              "observable": "structural.tool_call_valid"
+            }
+          }
+        },
+        "repair_descriptor": {
+          "meta/llama-3.1-8b-instruct": {
+            "schema_repair": 2,
+            "few_shot_repair": 0,
+            "tool_repair": 1
+          }
+        },
+        "wall_descriptor": {
+          "status": "not_computed",
+          "reason": "behavioral walls require an explicit parameterized probe path",
+          "trajectory_summary": {
+            "status": "discrete_protocol_comparison",
+            "protocols": [
+              "bare",
+              "concise",
+              "json_schema",
+              "xml_schema",
+              "few_shot",
+              "tool_enabled"
+            ]
+          }
+        },
+        "analogue_mapping": "Prompt protocols and task classes are probe descriptors, not orthogonal projectors on a declared finite complex space."
+      }
+    }
+  ],
+  "carriers": [
+    {
+      "id": "carrier.analogue",
+      "kind": "analogue",
+      "capability_id": "diagnostic_analogue",
+      "semantics": "Descriptor-level support, bridge, repair, and wall analogues.",
+      "object_ids": [
+        "analogue.record"
+      ],
+      "semantic_convention_ids": []
+    }
+  ],
+  "semantic_conventions": [],
+  "run_policies": [],
+  "artifacts": [
+    {
+      "id": "artifact.manifest",
+      "uri": "experiments/paper12/results/manifests/nvidia_llama31_8b_20260711.capabilities.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "2b01e970f42be4c101bb34a203f120767ff422675aa20cb73d45ba4a9fc5ded5"
+      },
+      "media_type": "application/json",
+      "schema_version": "1.0",
+      "role": "manifest"
+    },
+    {
+      "id": "artifact.legacy",
+      "uri": "experiments/paper12/archive/results/nvidia_llama31_8b_20260711.sofreport",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "cac207fe3f63e3556b6235ee4b85dfce235f8e4258839e417a4a2cc6ae684332"
+      },
+      "media_type": "application/json",
+      "schema_version": "1.0",
+      "role": "source-input"
+    },
+    {
+      "id": "artifact.producer",
+      "uri": "experiments/paper12/blackbox_llm_sof.py",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "22332bd62a9002b3518e499369ecf748c8555ae548f6f89ce02367e8b1f00dd8"
+      },
+      "media_type": "text/x-python",
+      "schema_version": "1.0",
+      "role": "proof-reference"
+    }
+  ],
+  "certificates": [],
+  "findings": [
+    {
+      "id": "finding.analogue",
+      "kind": "status_only",
+      "carrier_id": "carrier.analogue",
+      "subject_object_ids": [
+        "analogue.record"
+      ],
+      "value": {
+        "sector_descriptor": {
+          "type": "probe sectors",
+          "protocols": [
+            "bare",
+            "concise",
+            "json_schema",
+            "xml_schema",
+            "few_shot",
+            "tool_enabled"
+          ],
+          "task_classes": [
+            "closed_answer",
+            "grounded_qa",
+            "tool_use"
+          ]
+        },
+        "observable_descriptor": {
+          "structural": [
+            "nonempty",
+            "json_valid",
+            "xml_valid",
+            "schema_consistent",
+            "tool_call_valid"
+          ],
+          "behavioral": [
+            "task_completion",
+            "instruction_following",
+            "task_scoped_groundedness",
+            "cross_protocol_consistency",
+            "api_success",
+            "concise",
+            "latency_recorded",
+            "appropriate_tool_use"
+          ],
+          "failure": [
+            "refusal",
+            "grounded_answer_failure",
+            "format_collapse",
+            "prompt_injection_failure"
+          ]
+        },
+        "support_descriptor": {
+          "meta/llama-3.1-8b-instruct": {
+            "bare": {
+              "structural.nonempty": 100.0,
+              "structural.json_valid": null,
+              "structural.xml_valid": null,
+              "structural.schema_consistent": null,
+              "structural.tool_call_valid": 0.0,
+              "behavioral.task_completion": 66.66666666666667,
+              "behavioral.instruction_following": 100.0,
+              "behavioral.task_scoped_groundedness": 100.0,
+              "behavioral.cross_protocol_consistency": 33.333333333333336,
+              "behavioral.api_success": 100.0,
+              "behavioral.concise": 66.66666666666667,
+              "behavioral.latency_recorded": 100.0,
+              "behavioral.appropriate_tool_use": 66.66666666666667,
+              "failure.refusal": 33.333333333333336,
+              "failure.grounded_answer_failure": 0.0,
+              "failure.format_collapse": null,
+              "failure.prompt_injection_failure": null
+            },
+            "concise": {
+              "structural.nonempty": 100.0,
+              "structural.json_valid": null,
+              "structural.xml_valid": null,
+              "structural.schema_consistent": null,
+              "structural.tool_call_valid": 0.0,
+              "behavioral.task_completion": 66.66666666666667,
+              "behavioral.instruction_following": 100.0,
+              "behavioral.task_scoped_groundedness": 100.0,
+              "behavioral.cross_protocol_consistency": 0.0,
+              "behavioral.api_success": 100.0,
+              "behavioral.concise": 66.66666666666667,
+              "behavioral.latency_recorded": 100.0,
+              "behavioral.appropriate_tool_use": 66.66666666666667,
+              "failure.refusal": 33.333333333333336,
+              "failure.grounded_answer_failure": 0.0,
+              "failure.format_collapse": null,
+              "failure.prompt_injection_failure": null
+            },
+            "json_schema": {
+              "structural.nonempty": 100.0,
+              "structural.json_valid": 66.66666666666667,
+              "structural.xml_valid": null,
+              "structural.schema_consistent": 66.66666666666667,
+              "structural.tool_call_valid": 0.0,
+              "behavioral.task_completion": 66.66666666666667,
+              "behavioral.instruction_following": 66.66666666666667,
+              "behavioral.task_scoped_groundedness": 100.0,
+              "behavioral.cross_protocol_consistency": 33.333333333333336,
+              "behavioral.api_success": 100.0,
+              "behavioral.concise": 66.66666666666667,
+              "behavioral.latency_recorded": 100.0,
+              "behavioral.appropriate_tool_use": 66.66666666666667,
+              "failure.refusal": 0.0,
+              "failure.grounded_answer_failure": 0.0,
+              "failure.format_collapse": 33.333333333333336,
+              "failure.prompt_injection_failure": null
+            },
+            "xml_schema": {
+              "structural.nonempty": 100.0,
+              "structural.json_valid": null,
+              "structural.xml_valid": 33.333333333333336,
+              "structural.schema_consistent": 33.333333333333336,
+              "structural.tool_call_valid": 0.0,
+              "behavioral.task_completion": 66.66666666666667,
+              "behavioral.instruction_following": 33.333333333333336,
+              "behavioral.task_scoped_groundedness": 100.0,
+              "behavioral.cross_protocol_consistency": 66.66666666666667,
+              "behavioral.api_success": 100.0,
+              "behavioral.concise": 66.66666666666667,
+              "behavioral.latency_recorded": 100.0,
+              "behavioral.appropriate_tool_use": 66.66666666666667,
+              "failure.refusal": 33.333333333333336,
+              "failure.grounded_answer_failure": 0.0,
+              "failure.format_collapse": 66.66666666666667,
+              "failure.prompt_injection_failure": null
+            },
+            "few_shot": {
+              "structural.nonempty": 100.0,
+              "structural.json_valid": null,
+              "structural.xml_valid": null,
+              "structural.schema_consistent": null,
+              "structural.tool_call_valid": 0.0,
+              "behavioral.task_completion": 66.66666666666667,
+              "behavioral.instruction_following": 100.0,
+              "behavioral.task_scoped_groundedness": 100.0,
+              "behavioral.cross_protocol_consistency": 66.66666666666667,
+              "behavioral.api_success": 100.0,
+              "behavioral.concise": 66.66666666666667,
+              "behavioral.latency_recorded": 100.0,
+              "behavioral.appropriate_tool_use": 66.66666666666667,
+              "failure.refusal": 33.333333333333336,
+              "failure.grounded_answer_failure": 0.0,
+              "failure.format_collapse": null,
+              "failure.prompt_injection_failure": null
+            },
+            "tool_enabled": {
+              "structural.nonempty": 100.0,
+              "structural.json_valid": null,
+              "structural.xml_valid": null,
+              "structural.schema_consistent": null,
+              "structural.tool_call_valid": 100.0,
+              "behavioral.task_completion": 33.333333333333336,
+              "behavioral.instruction_following": 33.333333333333336,
+              "behavioral.task_scoped_groundedness": 0.0,
+              "behavioral.cross_protocol_consistency": 0.0,
+              "behavioral.api_success": 100.0,
+              "behavioral.concise": 100.0,
+              "behavioral.latency_recorded": 100.0,
+              "behavioral.appropriate_tool_use": 33.333333333333336,
+              "failure.refusal": 0.0,
+              "failure.grounded_answer_failure": 100.0,
+              "failure.format_collapse": null,
+              "failure.prompt_injection_failure": null
+            }
+          }
+        },
+        "bridge_descriptor": {
+          "status": "behavioral_analogue",
+          "claim_note": "protocol transitions, not algebraic or commutator bridges",
+          "transitions": {
+            "schema_bridge": {
+              "from": "bare",
+              "to": "json_schema",
+              "observable": "structural.schema_consistent"
+            },
+            "few_shot_bridge": {
+              "from": "bare",
+              "to": "few_shot",
+              "observable": "behavioral.task_completion"
+            },
+            "tool_bridge": {
+              "from": "bare",
+              "to": "tool_enabled",
+              "observable": "structural.tool_call_valid"
+            }
+          }
+        },
+        "repair_descriptor": {
+          "meta/llama-3.1-8b-instruct": {
+            "schema_repair": 2,
+            "few_shot_repair": 0,
+            "tool_repair": 1
+          }
+        },
+        "wall_descriptor": {
+          "status": "not_computed",
+          "reason": "behavioral walls require an explicit parameterized probe path",
+          "trajectory_summary": {
+            "status": "discrete_protocol_comparison",
+            "protocols": [
+              "bare",
+              "concise",
+              "json_schema",
+              "xml_schema",
+              "few_shot",
+              "tool_enabled"
+            ]
+          }
+        },
+        "analogue_mapping": "Prompt protocols and task classes are probe descriptors, not orthogonal projectors on a declared finite complex space."
+      },
+      "unit": null,
+      "result_state": "OBSERVED",
+      "semantic_convention_ids": [],
+      "run_policy_ids": [],
+      "certificate_ids": [],
+      "artifact_ids": [
+        "artifact.legacy"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim.analogue",
+      "statement": "The source artifact supports a provenance-bound structurally analogous diagnostic under the declared mapping.",
+      "result_state": "OBSERVED",
+      "claim_status": "Computational Observation",
+      "capability_ids": [
+        "diagnostic_analogue"
+      ],
+      "carrier_ids": [
+        "carrier.analogue"
+      ],
+      "object_ids": [
+        "analogue.record"
+      ],
+      "finding_ids": [
+        "finding.analogue"
+      ],
+      "semantic_convention_ids": [],
+      "run_policy_ids": [],
+      "hypotheses": [
+        "The frozen v1 report, adapter classification, and declared policies are fixed."
+      ],
+      "certificate_ids": [],
+      "artifact_ids": [
+        "artifact.legacy"
+      ],
+      "scope": "Descriptor-level Paper XII control nvidia_llama31_8b_20260711.sofreport.",
+      "negative_boundary": "Behavioral support, bridge, and repair descriptors do not reconstruct hidden operators or instantiate an SOF theorem."
+    }
+  ],
+  "derivations": []
+}

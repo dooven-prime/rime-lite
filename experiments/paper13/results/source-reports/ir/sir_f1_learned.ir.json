@@ -1,0 +1,354 @@
+{
+  "ir_version": "1.0",
+  "record_id": "paper12.sir-f1-learned.v2",
+  "record_kind": "diagnostic_analogue",
+  "manifest_ref": {
+    "manifest_id": "paper12.sir-f1-learned.v2",
+    "manifest_version": "1.0",
+    "artifact_id": "artifact.manifest",
+    "digest": {
+      "algorithm": "sha256",
+      "value": "efd540eda1720919469181919b5ae55c11c17656b803c0b4c25414a179b7b4f9"
+    }
+  },
+  "source": {
+    "adapter_id": "paper12-v1-to-v2",
+    "adapter_version": "2.0",
+    "source_id": "paper12.sir-f1-learned.v1",
+    "artifact_ids": [
+      "artifact.legacy",
+      "artifact.producer"
+    ]
+  },
+  "objects": [
+    {
+      "id": "analogue.record",
+      "kind": "diagnostic_analogue",
+      "label": "Provenance-bound diagnostic analogue",
+      "provenance_artifact_ids": [
+        "artifact.legacy"
+      ],
+      "carrier_id": "carrier.analogue",
+      "data": {
+        "sector_descriptor": {
+          "origin": "one-hot compartment sectors",
+          "compartments": [
+            "S",
+            "I",
+            "R"
+          ],
+          "sector_count": 3,
+          "strict_sof_realization": true
+        },
+        "observable_descriptor": {
+          "rates": [
+            "beta (S->I)",
+            "gamma (I->R)"
+          ],
+          "generator_type": "skew-symmetrised rate transition matrices",
+          "skew_note": "ordered antisymmetric support is a proxy for directed epidemiological transitions"
+        },
+        "support_descriptor": {
+          "kind": "word-generator direct support",
+          "matrix": [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "offdiag_count": 4
+        },
+        "bridge_descriptor": {
+          "word": {
+            "matrix": [
+              [
+                0,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                1,
+                0,
+                0
+              ]
+            ],
+            "offdiag_count": 2
+          },
+          "lie": {
+            "matrix": [
+              [
+                0,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                1,
+                0,
+                0
+              ]
+            ],
+            "offdiag_count": 2
+          },
+          "claim_note": "word and Lie bridge channels are recorded separately"
+        },
+        "repair_descriptor": {
+          "kind": "word-depth accessibility summary",
+          "depth_matrix": [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              1,
+              0,
+              1
+            ],
+            [
+              2,
+              1,
+              0
+            ]
+          ],
+          "max_finite_depth": 2,
+          "frozen_R1": 2,
+          "frozen_D_word": 0,
+          "frozen_D_lie": 0
+        },
+        "wall_descriptor": null,
+        "analogue_mapping": "The report is migrated from a frozen Paper XIII SOFRS v1 envelope into the Paper XII v2 CompilerOutput-bound report contract."
+      }
+    }
+  ],
+  "carriers": [
+    {
+      "id": "carrier.analogue",
+      "kind": "analogue",
+      "capability_id": "diagnostic_analogue",
+      "semantics": "Descriptor-level support, bridge, repair, and wall analogues.",
+      "object_ids": [
+        "analogue.record"
+      ],
+      "semantic_convention_ids": []
+    }
+  ],
+  "semantic_conventions": [],
+  "run_policies": [],
+  "artifacts": [
+    {
+      "id": "artifact.manifest",
+      "uri": "experiments/paper13/results/source-reports/manifests/sir_f1_learned.capabilities.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "efd540eda1720919469181919b5ae55c11c17656b803c0b4c25414a179b7b4f9"
+      },
+      "media_type": "application/json",
+      "schema_version": "1.0",
+      "role": "manifest"
+    },
+    {
+      "id": "artifact.legacy",
+      "uri": "experiments/paper13/archive/results/sir_f1_learned.sofreport",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "50213bec052adaa8bf8b444c1a26ebf2fc4115ff2ed74f39815dd75d1a1bd6d6"
+      },
+      "media_type": "application/json",
+      "schema_version": "1.0",
+      "role": "source-input"
+    },
+    {
+      "id": "artifact.producer",
+      "uri": "experiments/paper13/sir_compartment_sof.py",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "1213f96cabc3e42ac6efb751509509c34667f69757cfbcd778ca4f8c13730c40"
+      },
+      "media_type": "text/x-python",
+      "schema_version": "1.0",
+      "role": "proof-reference"
+    }
+  ],
+  "certificates": [],
+  "findings": [
+    {
+      "id": "finding.analogue",
+      "kind": "status_only",
+      "carrier_id": "carrier.analogue",
+      "subject_object_ids": [
+        "analogue.record"
+      ],
+      "value": {
+        "sector_descriptor": {
+          "origin": "one-hot compartment sectors",
+          "compartments": [
+            "S",
+            "I",
+            "R"
+          ],
+          "sector_count": 3,
+          "strict_sof_realization": true
+        },
+        "observable_descriptor": {
+          "rates": [
+            "beta (S->I)",
+            "gamma (I->R)"
+          ],
+          "generator_type": "skew-symmetrised rate transition matrices",
+          "skew_note": "ordered antisymmetric support is a proxy for directed epidemiological transitions"
+        },
+        "support_descriptor": {
+          "kind": "word-generator direct support",
+          "matrix": [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "offdiag_count": 4
+        },
+        "bridge_descriptor": {
+          "word": {
+            "matrix": [
+              [
+                0,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                1,
+                0,
+                0
+              ]
+            ],
+            "offdiag_count": 2
+          },
+          "lie": {
+            "matrix": [
+              [
+                0,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                1,
+                0,
+                0
+              ]
+            ],
+            "offdiag_count": 2
+          },
+          "claim_note": "word and Lie bridge channels are recorded separately"
+        },
+        "repair_descriptor": {
+          "kind": "word-depth accessibility summary",
+          "depth_matrix": [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              1,
+              0,
+              1
+            ],
+            [
+              2,
+              1,
+              0
+            ]
+          ],
+          "max_finite_depth": 2,
+          "frozen_R1": 2,
+          "frozen_D_word": 0,
+          "frozen_D_lie": 0
+        },
+        "wall_descriptor": null,
+        "analogue_mapping": "The report is migrated from a frozen Paper XIII SOFRS v1 envelope into the Paper XII v2 CompilerOutput-bound report contract."
+      },
+      "unit": null,
+      "result_state": "OBSERVED",
+      "semantic_convention_ids": [],
+      "run_policy_ids": [],
+      "certificate_ids": [],
+      "artifact_ids": [
+        "artifact.legacy"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim.analogue",
+      "statement": "The source artifact supports a provenance-bound structurally analogous diagnostic under the declared mapping.",
+      "result_state": "OBSERVED",
+      "claim_status": "Computational Observation",
+      "capability_ids": [
+        "diagnostic_analogue"
+      ],
+      "carrier_ids": [
+        "carrier.analogue"
+      ],
+      "object_ids": [
+        "analogue.record"
+      ],
+      "finding_ids": [
+        "finding.analogue"
+      ],
+      "semantic_convention_ids": [],
+      "run_policy_ids": [],
+      "hypotheses": [
+        "The frozen v1 report, adapter classification, and declared policies are fixed."
+      ],
+      "certificate_ids": [],
+      "artifact_ids": [
+        "artifact.legacy"
+      ],
+      "scope": "Descriptor-level Paper XII control sir_f1_learned.sofreport.",
+      "negative_boundary": "This v2 source report preserves the finite source envelope; it does not establish an independent object-level oracle or cross-report semantic alignment."
+    }
+  ],
+  "derivations": []
+}

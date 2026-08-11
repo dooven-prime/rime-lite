@@ -23,7 +23,7 @@ from report_contract import build_sofaudit, build_sofreport, write_artifact
 
 
 HERE = Path(__file__).resolve().parent
-RESULTS = HERE / "results"
+RESULTS = HERE / "archive" / "results"
 TOL = 1e-8
 
 

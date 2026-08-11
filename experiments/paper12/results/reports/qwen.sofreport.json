@@ -1,0 +1,882 @@
+{
+  "sofrs_version": "2.0",
+  "report_id": "qwen-attention",
+  "system": "Qwen/Qwen2.5-0.5B-Instruct",
+  "record_kind": "diagnostic_analogue",
+  "strict_reconstruction": {
+    "candidate_status": "yes",
+    "available_requirements": [
+      "finite_space_dimension",
+      "candidate_complete_partition",
+      "operator_family_descriptor"
+    ],
+    "missing_requirements": [
+      "explicit_operator_artifacts",
+      "projector_completeness_certificate",
+      "operator_artifact_source_digest_binding"
+    ],
+    "evaluator_id": "paper12.strict-reconstruction-obligation-audit",
+    "evaluator_version": "1.0",
+    "interpretation": "The missing strict-admission obligations are explicitly enumerated; candidate status does not predict successful strict reconstruction."
+  },
+  "external_basis_registry": {
+    "registry_version": "1.0",
+    "basis_status": "PARTIAL",
+    "packages": [
+      {
+        "basis_id": "basis.source.identity",
+        "level": "source_identity",
+        "constraint_ids": [
+          "source-snapshot-pinned"
+        ],
+        "status": "SATISFIED",
+        "method": "source-and-producer-digest-binding",
+        "scope": "The frozen source envelope and its declared producer are source-addressed.",
+        "evidence_artifacts": [
+          {
+            "uri": "experiments/paper12/archive/results/qwen.sofreport",
+            "digest": {
+              "algorithm": "sha256",
+              "value": "be1ece91fc2ea8f8526683d4c200cb2d3fcef781b0bdb4c9b0d48aa7e6613faf"
+            }
+          },
+          {
+            "uri": "experiments/paper12/qwen_attention_sof.py",
+            "digest": {
+              "algorithm": "sha256",
+              "value": "6bf6a0f6fdb0af794d995e5c810d840c08ced4732c01468e8a7aff226c55c128"
+            }
+          }
+        ],
+        "negative_boundary": [
+          "Digest binding identifies inputs and producer provenance; it does not establish scientific adequacy."
+        ]
+      },
+      {
+        "basis_id": "basis.object.recomputation",
+        "level": "object_level",
+        "constraint_ids": [
+          "object-level-recomputation"
+        ],
+        "status": "NOT_ASSESSED",
+        "method": "no-independent-object-recomputation",
+        "scope": "No matrix, graph, depth, trajectory, or domain fact is independently recertified by this migration.",
+        "evidence_artifacts": [],
+        "negative_boundary": [
+          "Migration consistency is not an Object Certificate."
+        ]
+      },
+      {
+        "basis_id": "basis.structure.validation",
+        "level": "structure_level",
+        "constraint_ids": [
+          "realization-structure-validation"
+        ],
+        "status": "NOT_APPLICABLE",
+        "method": "analogue-negative-boundary",
+        "scope": "The aggregate analogue does not claim a complete strict (V,Q,Y) realization.",
+        "evidence_artifacts": [],
+        "negative_boundary": [
+          "This field does not authorize strict admission or carrier promotion."
+        ]
+      },
+      {
+        "basis_id": "basis.semantic.adequacy",
+        "level": "semantic_adequacy",
+        "constraint_ids": [
+          "domain-semantic-adequacy"
+        ],
+        "status": "NOT_ASSESSED",
+        "method": "domain-owner-assessment-not-bound",
+        "scope": "The migration does not determine whether the adapter answers the source domain question adequately.",
+        "evidence_artifacts": [],
+        "negative_boundary": [
+          "A protocol-valid analogue may remain scientifically misleading."
+        ]
+      }
+    ],
+    "constraints": [
+      {
+        "constraint_id": "source-snapshot-pinned",
+        "basis_id": "basis.source.identity",
+        "status": "SATISFIED",
+        "statement": "The source envelope and producer identity are bound by digests.",
+        "evidence_artifacts": [
+          {
+            "uri": "experiments/paper12/archive/results/qwen.sofreport",
+            "digest": {
+              "algorithm": "sha256",
+              "value": "be1ece91fc2ea8f8526683d4c200cb2d3fcef781b0bdb4c9b0d48aa7e6613faf"
+            }
+          },
+          {
+            "uri": "experiments/paper12/qwen_attention_sof.py",
+            "digest": {
+              "algorithm": "sha256",
+              "value": "6bf6a0f6fdb0af794d995e5c810d840c08ced4732c01468e8a7aff226c55c128"
+            }
+          }
+        ]
+      },
+      {
+        "constraint_id": "object-level-recomputation",
+        "basis_id": "basis.object.recomputation",
+        "status": "NOT_ASSESSED",
+        "statement": "An independent object-level recomputation is not part of this migration.",
+        "evidence_artifacts": []
+      },
+      {
+        "constraint_id": "realization-structure-validation",
+        "basis_id": "basis.structure.validation",
+        "status": "NOT_APPLICABLE",
+        "statement": "The migrated analogue does not assert a complete strict realization.",
+        "evidence_artifacts": []
+      },
+      {
+        "constraint_id": "domain-semantic-adequacy",
+        "basis_id": "basis.semantic.adequacy",
+        "status": "NOT_ASSESSED",
+        "statement": "Domain adequacy remains the adapter owner's responsibility.",
+        "evidence_artifacts": []
+      }
+    ],
+    "negative_boundary": [
+      "The external basis records what has and has not been checked; it does not turn protocol conformance into scientific confirmation.",
+      "Object-level claims require a satisfied object-level basis and independently checkable evidence."
+    ]
+  },
+  "compiler_contracts": {
+    "capability_manifest": {
+      "uri": "experiments/paper12/results/manifests/qwen.capabilities.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "948f1c81066f6a4798e238f7e22a2d98db29094b3955f2ca71892ed1431a3fe9"
+      }
+    },
+    "typed_sof_ir": {
+      "uri": "experiments/paper12/results/ir/qwen.ir.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "4fedfd05276b4f8cb7bccc49a104245f9458616ea62a892a8df13636f9bc263d"
+      }
+    },
+    "compiler_profile": {
+      "uri": "schemas/sofrs/paper12-analogue-compiler-profile-v1.0.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "facc293462a79d93a00ece68e42951c49e8cfe8b141147bdfd6333bbb2b430b5"
+      }
+    },
+    "compiler_output": {
+      "uri": "experiments/paper12/results/compiler-output/qwen.compiler-output.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "7b00d2dae6a9d7218feef150df44cd73b7b950e338660d140902bf487fc71f92"
+      }
+    }
+  },
+  "compiler_output_binding": {
+    "artifact_id": "artifact.compiler-output",
+    "artifact": {
+      "uri": "experiments/paper12/results/compiler-output/qwen.compiler-output.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "7b00d2dae6a9d7218feef150df44cd73b7b950e338660d140902bf487fc71f92"
+      }
+    },
+    "compiler_id": "sofcompiler.compile_v1",
+    "compiler_output_version": "1.0",
+    "compiler_profile_id": "paper12.analogue.v2"
+  },
+  "assembly_contract": {
+    "schema_id": "sofrs-assembly-v2.0",
+    "version": "2.0",
+    "implementation": {
+      "uri": "experiments/paper12/validation/migrate_sofrs_v1_to_v2.py",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "d0905b3647dddd67c30815f4062fdd0e4266e62c7fa5cde2e72f43840cab6252"
+      }
+    },
+    "assembly_profile": {
+      "uri": "schemas/sofrs/paper12-analogue-assembly-profile-v2.0.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "936a80b0bcc238d47739ec5bac3aabcfb422feac2fed159739342189e678aaf1"
+      }
+    },
+    "assembly_profile_id": "paper12.analogue.assembly.v2"
+  },
+  "item_bindings": [
+    {
+      "compiler_output_item_id": "compiler.item.0000",
+      "report_item_id": "report.claim-item.0000",
+      "item_kind": "claim",
+      "rendering_status": "rendered"
+    }
+  ],
+  "alignment_readiness": {
+    "adapter": {
+      "id": "paper12-v1-to-v2",
+      "version": "2.0"
+    },
+    "compiler_profile_id": "paper12.analogue.v2",
+    "assembly_profile_id": "paper12.analogue.assembly.v2",
+    "sector_metadata": {
+      "status": "NOT_DECLARED",
+      "labels": [],
+      "provenance": null,
+      "ranks_or_dimensions": [],
+      "semantics": null
+    },
+    "observable_metadata": {
+      "status": "NOT_DECLARED",
+      "labels": [],
+      "provenance": null,
+      "ranks_or_dimensions": [],
+      "semantics": null
+    },
+    "carrier_kinds": [
+      "analogue"
+    ],
+    "semantic_conventions": [],
+    "run_policies": [
+      {
+        "id": "policy.cutoff",
+        "kind": "cutoff"
+      }
+    ],
+    "comparison_keys": [
+      "report:qwen-attention",
+      "system:qwen-qwen2.5-0.5b-instruct",
+      "record-kind:diagnostic_analogue"
+    ],
+    "source_artifact_digests": [
+      {
+        "uri": "experiments/paper12/archive/results/qwen.sofreport",
+        "digest": {
+          "algorithm": "sha256",
+          "value": "be1ece91fc2ea8f8526683d4c200cb2d3fcef781b0bdb4c9b0d48aa7e6613faf"
+        }
+      },
+      {
+        "uri": "experiments/paper12/qwen_attention_sof.py",
+        "digest": {
+          "algorithm": "sha256",
+          "value": "6bf6a0f6fdb0af794d995e5c810d840c08ced4732c01468e8a7aff226c55c128"
+        }
+      }
+    ]
+  },
+  "source_mapping": {
+    "status": "migrated",
+    "construction": "v1-to-v2-adapter",
+    "adapter_id": "paper12-v1-to-v2",
+    "adapter_version": "2.0",
+    "justification": "The report is assembled by the versioned Paper XII adapter from a frozen SOFRS v1 envelope and declared v2 contracts.",
+    "limitations": [
+      "The mapping preserves the v1 source envelope and does not promote missing strict (V,Q,Y) data."
+    ]
+  },
+  "source_artifacts": [
+    {
+      "uri": "experiments/paper12/archive/results/qwen.sofreport",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "be1ece91fc2ea8f8526683d4c200cb2d3fcef781b0bdb4c9b0d48aa7e6613faf"
+      }
+    },
+    {
+      "uri": "experiments/paper12/qwen_attention_sof.py",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "6bf6a0f6fdb0af794d995e5c810d840c08ced4732c01468e8a7aff226c55c128"
+      }
+    }
+  ],
+  "modules": [
+    {
+      "module_id": "diagnostic-analogue",
+      "status": "ENABLED",
+      "carrier_kinds": [
+        "analogue"
+      ],
+      "finding_ids": [
+        "finding.analogue"
+      ],
+      "claim_ids": [
+        "claim.analogue"
+      ],
+      "output_sections": [
+        "Source and evaluator provenance",
+        "Analogue mapping",
+        "Support, bridge, repair, or wall descriptors",
+        "Negative SOF boundary"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "finding.analogue",
+      "kind": "status_only",
+      "result_state": "OBSERVED",
+      "value": {
+        "sector_descriptor": {
+          "origin": "top-attention target groups from one pretrained attention head",
+          "space": "retained token subspace",
+          "selected_head": 6,
+          "raw_group_count": 9,
+          "retained_sector_count": 4,
+          "minimum_sector_size": 2,
+          "retained_token_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            10,
+            11,
+            13,
+            14,
+            15,
+            17,
+            18,
+            20,
+            22,
+            26,
+            28,
+            32,
+            33,
+            35,
+            36,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            24,
+            25,
+            27,
+            29,
+            30,
+            31,
+            7,
+            8,
+            9,
+            21,
+            23
+          ],
+          "excluded_singleton_count": 5,
+          "sectors": [
+            {
+              "target": 0,
+              "members": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                10,
+                11,
+                13,
+                14,
+                15,
+                17,
+                18,
+                20,
+                22,
+                26,
+                28,
+                32,
+                33,
+                35,
+                36,
+                38,
+                39,
+                40,
+                41,
+                42,
+                43,
+                44
+              ]
+            },
+            {
+              "target": 22,
+              "members": [
+                24,
+                25,
+                27,
+                29,
+                30,
+                31
+              ]
+            },
+            {
+              "target": 6,
+              "members": [
+                7,
+                8,
+                9
+              ]
+            },
+            {
+              "target": 20,
+              "members": [
+                21,
+                23
+              ]
+            }
+          ],
+          "original_probe_dimension": 45,
+          "retained_space_dimension": 40,
+          "candidate_complete_partition_on_retained_subspace": true,
+          "strict_admission_status": "not_admitted"
+        },
+        "observable_descriptor": {
+          "attention_heads": "all attention matrices from the audited layer",
+          "head_diversity": [
+            {
+              "head": 0,
+              "group_count": 45,
+              "filtered_sector_count": 0,
+              "group_sizes": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ]
+            },
+            {
+              "head": 1,
+              "group_count": 3,
+              "filtered_sector_count": 3,
+              "group_sizes": [
+                38,
+                4,
+                3
+              ]
+            },
+            {
+              "head": 2,
+              "group_count": 6,
+              "filtered_sector_count": 1,
+              "group_sizes": [
+                40,
+                1,
+                1,
+                1,
+                1,
+                1
+              ]
+            },
+            {
+              "head": 3,
+              "group_count": 1,
+              "filtered_sector_count": 1,
+              "group_sizes": [
+                45
+              ]
+            },
+            {
+              "head": 4,
+              "group_count": 1,
+              "filtered_sector_count": 1,
+              "group_sizes": [
+                45
+              ]
+            },
+            {
+              "head": 5,
+              "group_count": 2,
+              "filtered_sector_count": 1,
+              "group_sizes": [
+                44,
+                1
+              ]
+            },
+            {
+              "head": 6,
+              "group_count": 9,
+              "filtered_sector_count": 4,
+              "group_sizes": [
+                29,
+                6,
+                3,
+                2,
+                1,
+                1,
+                1,
+                1,
+                1
+              ]
+            },
+            {
+              "head": 7,
+              "group_count": 10,
+              "filtered_sector_count": 7,
+              "group_sizes": [
+                23,
+                6,
+                4,
+                3,
+                2,
+                2,
+                2,
+                1,
+                1,
+                1
+              ]
+            },
+            {
+              "head": 8,
+              "group_count": 31,
+              "filtered_sector_count": 9,
+              "group_sizes": [
+                6,
+                3,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ]
+            },
+            {
+              "head": 9,
+              "group_count": 10,
+              "filtered_sector_count": 7,
+              "group_sizes": [
+                15,
+                10,
+                7,
+                3,
+                3,
+                2,
+                2,
+                1,
+                1,
+                1
+              ]
+            },
+            {
+              "head": 10,
+              "group_count": 11,
+              "filtered_sector_count": 6,
+              "group_sizes": [
+                26,
+                4,
+                3,
+                3,
+                2,
+                2,
+                1,
+                1,
+                1,
+                1,
+                1
+              ]
+            },
+            {
+              "head": 11,
+              "group_count": 15,
+              "filtered_sector_count": 8,
+              "group_sizes": [
+                16,
+                5,
+                4,
+                3,
+                3,
+                3,
+                2,
+                2,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ]
+            },
+            {
+              "head": 12,
+              "group_count": 15,
+              "filtered_sector_count": 11,
+              "group_sizes": [
+                13,
+                5,
+                4,
+                4,
+                3,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                1,
+                1,
+                1,
+                1
+              ]
+            },
+            {
+              "head": 13,
+              "group_count": 13,
+              "filtered_sector_count": 8,
+              "group_sizes": [
+                18,
+                4,
+                4,
+                4,
+                3,
+                3,
+                2,
+                2,
+                1,
+                1,
+                1,
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        "support_descriptor": {
+          "kind": "aggregated_R1_over_attention_heads",
+          "matrix": [
+            [
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              1,
+              1
+            ]
+          ],
+          "offdiag_density_pct": 75.0
+        },
+        "bridge_descriptor": {
+          "kind": "general matrix-commutator support proxy",
+          "matrix": [
+            [
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              1,
+              1
+            ]
+          ],
+          "offdiag_density_pct": 75.0
+        },
+        "repair_descriptor": {
+          "kind": "cutoff general matrix-commutator depth proxy",
+          "depth_matrix": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              "UNREACHED_AT_CUTOFF",
+              0,
+              "UNREACHED_AT_CUTOFF"
+            ],
+            [
+              0,
+              "UNREACHED_AT_CUTOFF",
+              0,
+              0
+            ]
+          ],
+          "repaired_pairs": [],
+          "repaired_count": 0,
+          "terminally_frozen_count": 3,
+          "claim_note": "The operative matrices are not a declared skew-Hermitian Lie family; this is not Lie/Hall depth."
+        },
+        "wall_descriptor": {
+          "status": "not_applicable",
+          "reason": "single pretrained snapshot; no deformation path supplied"
+        },
+        "analogue_mapping": "The frozen v1 envelope identifies a 40-dimensional retained token space inside the 45-token probe and a candidate complete coordinate partition on that retained space, but it does not bind the fourteen operative matrices or projector-completeness certificate as explicit artifacts. The migration therefore retains a bounded reconstruction obligation as an analogue record."
+      }
+    }
+  ],
+  "claims": [
+    {
+      "report_item_id": "report.claim-item.0000",
+      "source_output_item_id": "compiler.item.0000",
+      "claim_id": "claim.analogue",
+      "statement": "The source artifact supports a provenance-bound structurally analogous diagnostic under the declared mapping.",
+      "result_state": "OBSERVED",
+      "claim_status": "Computational Observation",
+      "claim_target": "representation_interface",
+      "certificate_class": null,
+      "classification_source": "migration_adapter",
+      "external_basis_refs": [
+        "basis.source.identity"
+      ],
+      "external_constraint_ids": [
+        "source-snapshot-pinned"
+      ],
+      "carrier_kinds": [
+        "analogue"
+      ],
+      "scope": "Descriptor-level Paper XII control qwen.sofreport.",
+      "negative_boundary": "Strict admission requires a new source-addressed reconstruction of the complete (V,Q,Y) data. The general attention matrices are also not a declared skew-Hermitian Lie family."
+    }
+  ],
+  "degradation_items": [],
+  "failure_modes": [
+    "sector counts depend on the prompt, layer, head, and minimum-size filter",
+    "singleton attention groups are excluded from the analyzed subspace",
+    "attention-derived sectors are not claimed to be unique or canonical",
+    "attention weights alone do not establish causal explanation",
+    "single-model diagnostic is not a theorem about all language models",
+    "Strict admission requires a new source-addressed reconstruction of the complete (V,Q,Y) data. The general attention matrices are also not a declared skew-Hermitian Lie family."
+  ],
+  "provenance": {
+    "kind": "migration",
+    "source_artifact": {
+      "uri": "experiments/paper12/archive/results/qwen.sofreport",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "be1ece91fc2ea8f8526683d4c200cb2d3fcef781b0bdb4c9b0d48aa7e6613faf"
+      }
+    },
+    "source_sofrs_version": "1.0",
+    "migration_adapter_ref": {
+      "uri": "experiments/paper12/validation/migrate_sofrs_v1_to_v2.py",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "d0905b3647dddd67c30815f4062fdd0e4266e62c7fa5cde2e72f43840cab6252"
+      }
+    },
+    "migration_ruleset_version": "2.0",
+    "migration_receipt_ref": {
+      "uri": "schemas/sofrs/migration-receipt-v2.0.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "5b6f098b8b7657eed3810abccd2c2b99f96213739d9f2e03909e2023a4a168af"
+      }
+    },
+    "normalized_legacy_sentinels": [
+      "3 integer 999 value(s) -> UNREACHED_AT_CUTOFF"
+    ],
+    "semantic_normalizations": [
+      "legacy Lie-depth label -> general matrix-commutator proxy"
+    ]
+  }
+}

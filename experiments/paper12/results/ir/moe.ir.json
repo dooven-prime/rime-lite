@@ -1,0 +1,508 @@
+{
+  "ir_version": "1.0",
+  "record_id": "paper12.moe.v2",
+  "record_kind": "diagnostic_analogue",
+  "manifest_ref": {
+    "manifest_id": "paper12.moe.v2",
+    "manifest_version": "1.0",
+    "artifact_id": "artifact.manifest",
+    "digest": {
+      "algorithm": "sha256",
+      "value": "cdc8bd7939746c57772141a631c0259c287c6f5a742023ddca584dffade6fb96"
+    }
+  },
+  "source": {
+    "adapter_id": "paper12-v1-to-v2",
+    "adapter_version": "2.0",
+    "source_id": "paper12.moe.v1",
+    "artifact_ids": [
+      "artifact.legacy",
+      "artifact.producer"
+    ]
+  },
+  "objects": [
+    {
+      "id": "analogue.record",
+      "kind": "diagnostic_analogue",
+      "label": "Provenance-bound diagnostic analogue",
+      "provenance_artifact_ids": [
+        "artifact.legacy"
+      ],
+      "carrier_id": "carrier.analogue",
+      "data": {
+        "sector_descriptor": {
+          "origin": "identical top-2 expert routes",
+          "space": "token space",
+          "sector_count": 6,
+          "labels": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "sector_dimensions": [
+            1,
+            2,
+            6,
+            6,
+            6,
+            11
+          ],
+          "strict_sof_realization": true
+        },
+        "observable_descriptor": {
+          "routing_overlap": "token-space expert-incidence Gram kernel"
+        },
+        "support_descriptor": {
+          "kind": "direct routing overlap",
+          "matrix": [
+            [
+              0,
+              1,
+              1,
+              1,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              1,
+              1,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              0,
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              0,
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              1,
+              1,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              1,
+              1,
+              1,
+              0
+            ]
+          ],
+          "ordered_support_edges": 24
+        },
+        "bridge_descriptor": {
+          "kind": "positive word-depth audit",
+          "depth_matrix": [
+            [
+              0,
+              1,
+              1,
+              1,
+              1,
+              2
+            ],
+            [
+              1,
+              0,
+              1,
+              1,
+              2,
+              1
+            ],
+            [
+              1,
+              1,
+              0,
+              2,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              2,
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              2,
+              1,
+              1,
+              0,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1,
+              1,
+              0
+            ]
+          ],
+          "claim_note": "Finite positive-word filtration; no saturation or Lie-depth claim."
+        },
+        "repair_descriptor": {
+          "repaired_pairs": [
+            [
+              0,
+              5
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              5,
+              0
+            ]
+          ],
+          "repaired_count": 6
+        },
+        "wall_descriptor": {
+          "status": "not_applicable",
+          "reason": "no routing deformation supplied"
+        },
+        "analogue_mapping": "The frozen v1 envelope records route classes and positive-word shadows, but it does not bind the routing-overlap operator as an explicit reconstruction artifact."
+      }
+    }
+  ],
+  "carriers": [
+    {
+      "id": "carrier.analogue",
+      "kind": "analogue",
+      "capability_id": "diagnostic_analogue",
+      "semantics": "Descriptor-level support, bridge, repair, and wall analogues.",
+      "object_ids": [
+        "analogue.record"
+      ],
+      "semantic_convention_ids": []
+    }
+  ],
+  "semantic_conventions": [],
+  "run_policies": [],
+  "artifacts": [
+    {
+      "id": "artifact.manifest",
+      "uri": "experiments/paper12/results/manifests/moe.capabilities.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "cdc8bd7939746c57772141a631c0259c287c6f5a742023ddca584dffade6fb96"
+      },
+      "media_type": "application/json",
+      "schema_version": "1.0",
+      "role": "manifest"
+    },
+    {
+      "id": "artifact.legacy",
+      "uri": "experiments/paper12/archive/results/moe.sofreport",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "aebdb653fe0cb12bd29dd31b15e56f92e715155f4720354eef9870d91f7befb2"
+      },
+      "media_type": "application/json",
+      "schema_version": "1.0",
+      "role": "source-input"
+    },
+    {
+      "id": "artifact.producer",
+      "uri": "experiments/paper12/moe_expert_sof.py",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "972a7fc34dc76439fd3dabe30fff6e5ab3bdd8285a10f6b7bc66a7dd637cb9cd"
+      },
+      "media_type": "text/x-python",
+      "schema_version": "1.0",
+      "role": "proof-reference"
+    }
+  ],
+  "certificates": [],
+  "findings": [
+    {
+      "id": "finding.analogue",
+      "kind": "status_only",
+      "carrier_id": "carrier.analogue",
+      "subject_object_ids": [
+        "analogue.record"
+      ],
+      "value": {
+        "sector_descriptor": {
+          "origin": "identical top-2 expert routes",
+          "space": "token space",
+          "sector_count": 6,
+          "labels": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "sector_dimensions": [
+            1,
+            2,
+            6,
+            6,
+            6,
+            11
+          ],
+          "strict_sof_realization": true
+        },
+        "observable_descriptor": {
+          "routing_overlap": "token-space expert-incidence Gram kernel"
+        },
+        "support_descriptor": {
+          "kind": "direct routing overlap",
+          "matrix": [
+            [
+              0,
+              1,
+              1,
+              1,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              1,
+              1,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              0,
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              0,
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              1,
+              1,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              1,
+              1,
+              1,
+              0
+            ]
+          ],
+          "ordered_support_edges": 24
+        },
+        "bridge_descriptor": {
+          "kind": "positive word-depth audit",
+          "depth_matrix": [
+            [
+              0,
+              1,
+              1,
+              1,
+              1,
+              2
+            ],
+            [
+              1,
+              0,
+              1,
+              1,
+              2,
+              1
+            ],
+            [
+              1,
+              1,
+              0,
+              2,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              2,
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              2,
+              1,
+              1,
+              0,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1,
+              1,
+              0
+            ]
+          ],
+          "claim_note": "Finite positive-word filtration; no saturation or Lie-depth claim."
+        },
+        "repair_descriptor": {
+          "repaired_pairs": [
+            [
+              0,
+              5
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              5,
+              0
+            ]
+          ],
+          "repaired_count": 6
+        },
+        "wall_descriptor": {
+          "status": "not_applicable",
+          "reason": "no routing deformation supplied"
+        },
+        "analogue_mapping": "The frozen v1 envelope records route classes and positive-word shadows, but it does not bind the routing-overlap operator as an explicit reconstruction artifact."
+      },
+      "unit": null,
+      "result_state": "OBSERVED",
+      "semantic_convention_ids": [],
+      "run_policy_ids": [],
+      "certificate_ids": [],
+      "artifact_ids": [
+        "artifact.legacy"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim.analogue",
+      "statement": "The source artifact supports a provenance-bound structurally analogous diagnostic under the declared mapping.",
+      "result_state": "OBSERVED",
+      "claim_status": "Computational Observation",
+      "capability_ids": [
+        "diagnostic_analogue"
+      ],
+      "carrier_ids": [
+        "carrier.analogue"
+      ],
+      "object_ids": [
+        "analogue.record"
+      ],
+      "finding_ids": [
+        "finding.analogue"
+      ],
+      "semantic_convention_ids": [],
+      "run_policy_ids": [],
+      "hypotheses": [
+        "The frozen v1 report, adapter classification, and declared policies are fixed."
+      ],
+      "certificate_ids": [],
+      "artifact_ids": [
+        "artifact.legacy"
+      ],
+      "scope": "Descriptor-level Paper XII control moe.sofreport.",
+      "negative_boundary": "Strict admission requires a new source-addressed reconstruction of the complete (V,Q,Y) data. The retained depth descriptor is positive-word rather than Lie/Hall depth."
+    }
+  ],
+  "derivations": []
+}

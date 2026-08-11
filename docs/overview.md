@@ -104,8 +104,10 @@ research target; Paper VII does not assert a generic completion theorem.
   typed comparison maps. Its standard Regime-A profile requests eight
   historical channels without making them universal.
 - **Paper XIV** studies context- and policy-relative interpretation of aligned
-  comparison coordinates and their conversion into structured candidate action
-  or decision records. Difference alone does not determine intervention.
+  comparison coordinates and their conversion into bounded
+  `CandidateActionSet` records. The `.sofaction` contract does not select,
+  authorize, execute, or certify the effect of a candidate. Difference alone
+  does not determine intervention.
 
 ## Claim Discipline
 

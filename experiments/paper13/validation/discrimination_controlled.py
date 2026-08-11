@@ -15,7 +15,7 @@ from rime.accessibility import (
 
 
 HERE = Path(__file__).resolve().parent
-RESULTS = HERE.parent / "results"
+RESULTS = HERE.parent / "archive" / "results"
 TOL = 1e-8
 FROZEN = 999
 

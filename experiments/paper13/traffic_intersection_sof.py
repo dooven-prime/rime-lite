@@ -428,7 +428,7 @@ def run() -> dict:
     print(f"    Diagonal pairs (NW<->SE, NE<->SW): no direct edge -> 2-step word bridges")
 
     all_results = {}
-    RESULTS = Path(__file__).resolve().parent / "results"
+    RESULTS = Path(__file__).resolve().parent / "archive" / "results"
     ref_sofreport_id = "traffic_ref"
 
     write_artifact(build_sofreport(

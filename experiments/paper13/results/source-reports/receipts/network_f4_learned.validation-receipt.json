@@ -1,0 +1,152 @@
+{
+  "receipt_version": "2.0",
+  "artifact_type": "sofrs_report_validation_receipt",
+  "receipt_id": "receipt.network-f4-learned.sofrs-v2",
+  "report": {
+    "report_id": "network-f4-learned",
+    "sofrs_version": "2.0",
+    "record_kind": "diagnostic_analogue",
+    "artifact": {
+      "uri": "experiments/paper13/results/source-reports/reports/network_f4_learned.sofreport.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "0dd0ad2046fdc26ba1867ddb210b0a4c47d8515c43ea744943eb54369d70b564"
+      }
+    }
+  },
+  "validator": {
+    "validator_id": "sofrs.report-validator.v2",
+    "validator_version": "2.0",
+    "implementation": {
+      "uri": "experiments/paper12/validation/validate_sofrs_v2.py",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "c0b39a841b592dc2173c8a3fc350a8c2096a5fb9fe1c2e443f07b88d0764d4e9"
+      }
+    },
+    "receipt_contract": {
+      "uri": "schemas/sofrs/report-validation-receipt-v2.0.schema.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "3268e1119185a8401ac08ff2b41745152e9a7787b75bff9e3f0ff5183e5ae672"
+      }
+    }
+  },
+  "artifact_closure": {
+    "artifact_count": 7,
+    "ordered_artifacts": [
+      {
+        "role": "report",
+        "artifact": {
+          "uri": "experiments/paper13/results/source-reports/reports/network_f4_learned.sofreport.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "0dd0ad2046fdc26ba1867ddb210b0a4c47d8515c43ea744943eb54369d70b564"
+          }
+        }
+      },
+      {
+        "role": "capability_manifest",
+        "artifact": {
+          "uri": "experiments/paper13/results/source-reports/manifests/network_f4_learned.capabilities.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "d907280281f9bc695623336e3cf379ae3bb2d6652c00367ee03024eebdea0990"
+          }
+        }
+      },
+      {
+        "role": "typed_sof_ir",
+        "artifact": {
+          "uri": "experiments/paper13/results/source-reports/ir/network_f4_learned.ir.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "81e7c4ca01c41a8d071dec663f9c7bdb16d4a2dd9d9e97d1f014fe9263178ab7"
+          }
+        }
+      },
+      {
+        "role": "compiler_profile",
+        "artifact": {
+          "uri": "schemas/sofrs/paper12-analogue-compiler-profile-v1.0.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "facc293462a79d93a00ece68e42951c49e8cfe8b141147bdfd6333bbb2b430b5"
+          }
+        }
+      },
+      {
+        "role": "compiler_output",
+        "artifact": {
+          "uri": "experiments/paper13/results/source-reports/compiler-output/network_f4_learned.compiler-output.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "59afd2796e29927399bf65f37c8eb25bd7e1d18462c0a1d00bcd7b5e09d404e5"
+          }
+        }
+      },
+      {
+        "role": "assembly_profile",
+        "artifact": {
+          "uri": "schemas/sofrs/paper12-analogue-assembly-profile-v2.0.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "936a80b0bcc238d47739ec5bac3aabcfb422feac2fed159739342189e678aaf1"
+          }
+        }
+      },
+      {
+        "role": "assembly_implementation",
+        "artifact": {
+          "uri": "experiments/paper12/validation/migrate_sofrs_v1_to_v2.py",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "d0905b3647dddd67c30815f4062fdd0e4266e62c7fa5cde2e72f43840cab6252"
+          }
+        }
+      }
+    ],
+    "closure_digest": {
+      "algorithm": "sha256",
+      "value": "98ed8beb8392a66876591cebcd6eb797d1ed9d8630baf158728b3d20449205f2"
+    }
+  },
+  "status": "PASS",
+  "checks": [
+    {
+      "check_id": "artifact-closure",
+      "status": "PASS"
+    },
+    {
+      "check_id": "claim-compatibility",
+      "status": "PASS"
+    },
+    {
+      "check_id": "claim-external-basis-binding",
+      "status": "PASS"
+    },
+    {
+      "check_id": "compiler-output-recompilation",
+      "status": "PASS"
+    },
+    {
+      "check_id": "cutoff-provenance",
+      "status": "PASS"
+    },
+    {
+      "check_id": "record-kind-boundary",
+      "status": "PASS"
+    },
+    {
+      "check_id": "report-assembly-recomputation",
+      "status": "PASS"
+    },
+    {
+      "check_id": "schema-validation",
+      "status": "PASS"
+    }
+  ],
+  "negative_boundaries": [
+    "This receipt validates the bound SOFRS v2 report and compiler-contract closure; it does not establish adapter scientific adequacy, cross-report alignment, or downstream interpretation."
+  ]
+}

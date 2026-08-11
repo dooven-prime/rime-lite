@@ -553,12 +553,12 @@ def make_sofaudit(audit_id: str, system: str, failure_mode: str,
 
 
 def write_sofreport(report: dict, stem: str) -> Path:
-    path = Path(__file__).resolve().parent / "results" / f"{stem}.sofreport"
+    path = Path(__file__).resolve().parent / "archive" / "results" / f"{stem}.sofreport"
     return write_artifact(report, path)
 
 
 def write_sofaudit(audit: dict, stem: str) -> Path:
-    path = Path(__file__).resolve().parent / "results" / f"{stem}.sofaudit"
+    path = Path(__file__).resolve().parent / "archive" / "results" / f"{stem}.sofaudit"
     return write_artifact(audit, path)
 
 

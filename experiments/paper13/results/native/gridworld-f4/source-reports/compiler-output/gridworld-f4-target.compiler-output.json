@@ -1,0 +1,67 @@
+{
+  "compiler_output_version": "1.0",
+  "compiler_id": "sofcompiler.compile_v1",
+  "manifest_id": "paper13.gridworld-f4.target.native-v2",
+  "ir_record_id": "paper13.gridworld-f4.target.native-v2",
+  "profile_id": "paper12.strict.v2",
+  "item_type": "ClaimItem_v1 | DegradationItem_v1",
+  "items": [
+    {
+      "item_kind": "claim",
+      "module_id": "sof-basic",
+      "claim_id": "claim.direct-support",
+      "source_ir_kind": "claim",
+      "source_ir_id": "claim.direct-support",
+      "claim_status": "Computational Observation",
+      "result_state": "OBSERVED",
+      "carrier_ids": [
+        "carrier.operator"
+      ],
+      "derivation_ids": []
+    },
+    {
+      "item_kind": "claim",
+      "module_id": "associative",
+      "claim_id": "claim.word-length-two",
+      "source_ir_kind": "claim",
+      "source_ir_id": "claim.word-length-two",
+      "claim_status": "Computational Observation",
+      "result_state": "OBSERVED",
+      "carrier_ids": [
+        "carrier.word"
+      ],
+      "derivation_ids": []
+    },
+    {
+      "item_kind": "claim",
+      "module_id": "lie-hall",
+      "claim_id": "claim.lie-simple-commutator",
+      "source_ir_kind": "claim",
+      "source_ir_id": "claim.lie-simple-commutator",
+      "claim_status": "Computational Observation",
+      "result_state": "OBSERVED",
+      "carrier_ids": [
+        "carrier.lie"
+      ],
+      "derivation_ids": []
+    },
+    {
+      "item_kind": "degradation",
+      "module_id": "proxy",
+      "action": "emit_unavailable",
+      "reason_kind": "unsatisfied_capability_requirements",
+      "details": [
+        "missing all_of: proxy_diagnostic"
+      ]
+    },
+    {
+      "item_kind": "degradation",
+      "module_id": "proxy",
+      "action": "emit_unavailable",
+      "reason_kind": "unsatisfied_object_kind_requirements",
+      "details": [
+        "missing all_of: proxy"
+      ]
+    }
+  ]
+}

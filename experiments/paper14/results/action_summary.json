@@ -1,0 +1,591 @@
+{
+  "summary_version": "1.0",
+  "source_artifacts": [
+    {
+      "case": "gridworld_f1",
+      "uri": "experiments/paper14/results/gridworld_f1.sofaction",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "fc6eba09b044438c6d9a25ef96798981a18c09f280d98965f51bf1f67439b636"
+      }
+    },
+    {
+      "case": "gridworld_f2",
+      "uri": "experiments/paper14/results/gridworld_f2.sofaction",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "f89c32ff0a86a22467c2435021fc0665d976482dc2560b254064efa262511577"
+      }
+    },
+    {
+      "case": "gridworld_f3",
+      "uri": "experiments/paper14/results/gridworld_f3.sofaction",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "379cba6bc8ad493c572c6af1e7e8b38e1e8bd11bafae5c24f8a03a92ec957d76"
+      }
+    },
+    {
+      "case": "gridworld_f4",
+      "uri": "experiments/paper14/results/gridworld_f4.sofaction",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "4eacd0a13a8ad7cf6a421db24745f3e4ed319537e85ca743b88d522f1f3383b6"
+      }
+    },
+    {
+      "case": "gridworld_f5",
+      "uri": "experiments/paper14/results/gridworld_f5.sofaction",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "d8164d4b204748cf05105f8ed2a9c12d1c8bd7cf5f7583137bd1df140ff67ff0"
+      }
+    },
+    {
+      "case": "sir_f1",
+      "uri": "experiments/paper14/results/sir_f1.sofaction",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "c3dc3809f306a7d9a412421cb1eca7cba9c4c2df5efc9c627f318ddb05f6438c"
+      }
+    },
+    {
+      "case": "sir_f2",
+      "uri": "experiments/paper14/results/sir_f2.sofaction",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "f13092ae7e969bed580e84102189a70e3ebeebed5bf2472bd93437b7d3f7f12b"
+      }
+    },
+    {
+      "case": "sir_f3",
+      "uri": "experiments/paper14/results/sir_f3.sofaction",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "2f904718eb8b784ddfc7d106d413713aca07e932030001d5965846c81c18c5d6"
+      }
+    },
+    {
+      "case": "sir_f4",
+      "uri": "experiments/paper14/results/sir_f4.sofaction",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "b322a51d4a1031d3fea38efec0c5647ec5593f11ad628b1836c2f7a6f1f5b816"
+      }
+    },
+    {
+      "case": "sir_f5",
+      "uri": "experiments/paper14/results/sir_f5.sofaction",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "cb0d0b0ecad893a693837288f6913803ebc35181f699c80077c7761bc692d1d7"
+      }
+    },
+    {
+      "case": "traffic_f1",
+      "uri": "experiments/paper14/results/traffic_f1.sofaction",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "c92af37f42dc5ef99dad5e52f49141a8b7c31996d23a6e55a002471d6c95c5f8"
+      }
+    },
+    {
+      "case": "traffic_f2",
+      "uri": "experiments/paper14/results/traffic_f2.sofaction",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "cd7db747b18bf2f7b191597403c9a07159c0c3d6cfb370366b4ca92b0cd34943"
+      }
+    },
+    {
+      "case": "traffic_f3",
+      "uri": "experiments/paper14/results/traffic_f3.sofaction",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "b87388186b8839aa974ff1a55b72ec6ef63f904591d254f4c8ef752d52229075"
+      }
+    },
+    {
+      "case": "traffic_f4",
+      "uri": "experiments/paper14/results/traffic_f4.sofaction",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "fe23c78ce40062dd540782ef7d13fe7b03fdb69f920630a13cfafc6169bb7109"
+      }
+    },
+    {
+      "case": "traffic_f5",
+      "uri": "experiments/paper14/results/traffic_f5.sofaction",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "1fcebc7e77f751b059e26893f7a268b86237f11f4e932718404abf47354f9f18"
+      }
+    },
+    {
+      "case": "compiler_f1",
+      "uri": "experiments/paper14/results/compiler_f1.sofaction",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "2160c4a63ee1635e13c28c7d6c7f190a8ba1092442224332a131cb7b552c6770"
+      }
+    },
+    {
+      "case": "compiler_f2",
+      "uri": "experiments/paper14/results/compiler_f2.sofaction",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "2ea97b14e93543f9ccbf43c393afa59acdc18364efdc47d87d27b2e2ad023ad7"
+      }
+    },
+    {
+      "case": "compiler_f3",
+      "uri": "experiments/paper14/results/compiler_f3.sofaction",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "397fa29a13782368a9af68837c7318f57bb59f1780d7e74253551146c14f14b5"
+      }
+    },
+    {
+      "case": "compiler_f4",
+      "uri": "experiments/paper14/results/compiler_f4.sofaction",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "1cddd63026b07fe4d1175e97a42b49596d232d42a3adf3b785b708b37bff9ed2"
+      }
+    },
+    {
+      "case": "compiler_f5",
+      "uri": "experiments/paper14/results/compiler_f5.sofaction",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "4cc86b595c3bbeca1fd5aced78efae71c48df0b7f2db8e4da0a927b7d098b7b6"
+      }
+    },
+    {
+      "case": "network_f1",
+      "uri": "experiments/paper14/results/network_f1.sofaction",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "361cff3720637c407c04c4075f145932cb60abc09d3d121c474c13b050b50d15"
+      }
+    },
+    {
+      "case": "network_f2",
+      "uri": "experiments/paper14/results/network_f2.sofaction",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "1b240b81958369516f2e6ad5cf06d037765204b8ab77e329d836fec020a0331d"
+      }
+    },
+    {
+      "case": "network_f3",
+      "uri": "experiments/paper14/results/network_f3.sofaction",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "b469133c3099dac2125e9546a2b1ea06eab82de7cf223cef26ca4cc7139d83bb"
+      }
+    },
+    {
+      "case": "network_f4",
+      "uri": "experiments/paper14/results/network_f4.sofaction",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "c89e1eb10153677d6e93d515ce3733cc311d4630440537c80c71af5680d820ef"
+      }
+    },
+    {
+      "case": "network_f5",
+      "uri": "experiments/paper14/results/network_f5.sofaction",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "fd22f7dab970fa869234e7530de54a79394284a2c86fbfa0e78c7fa2dd0ecc5c"
+      }
+    },
+    {
+      "case": "before_after_compiler_o0_o2",
+      "uri": "experiments/paper14/results/before_after_compiler.sofaction",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "06f28acc1c5e98d45d98af99dff8378e36a18116911a64d43ee9797288814ba5"
+      }
+    },
+    {
+      "case": "before_after_traffic_retiming",
+      "uri": "experiments/paper14/results/before_after_traffic.sofaction",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "062174ab1275472d6ce01c45447c305f92354cd745c607f43887f57f83a02e13"
+      }
+    },
+    {
+      "case": "before_after_gridworld_obstacle",
+      "uri": "experiments/paper14/results/before_after_gridworld.sofaction",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "a1db8e1089aa3e2546ed4c9aa8ea66ee3204c1ebfcc5a3cce309446794df0c96"
+      }
+    },
+    {
+      "case": "gridworld-f4-native-v2",
+      "uri": "experiments/paper14/results/gridworld_f4_native.sofaction",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "d853d21ab6c75213344d65316f3e8122a9c57e64fc68a8306689bdac109bb622"
+      }
+    }
+  ],
+  "records": [
+    {
+      "case": "gridworld_f1",
+      "source_kind": "migration",
+      "context_role": "diagnostic_comparison",
+      "context_admission": "admitted",
+      "policy_admission": "admitted",
+      "interpretations": [
+        "evidence_insufficient"
+      ],
+      "candidate_count": 0,
+      "dispositions": []
+    },
+    {
+      "case": "gridworld_f2",
+      "source_kind": "migration",
+      "context_role": "diagnostic_comparison",
+      "context_admission": "admitted",
+      "policy_admission": "admitted",
+      "interpretations": [
+        "evidence_insufficient"
+      ],
+      "candidate_count": 0,
+      "dispositions": []
+    },
+    {
+      "case": "gridworld_f3",
+      "source_kind": "migration",
+      "context_role": "diagnostic_comparison",
+      "context_admission": "admitted",
+      "policy_admission": "admitted",
+      "interpretations": [
+        "evidence_insufficient"
+      ],
+      "candidate_count": 0,
+      "dispositions": []
+    },
+    {
+      "case": "gridworld_f4",
+      "source_kind": "migration",
+      "context_role": "diagnostic_comparison",
+      "context_admission": "admitted",
+      "policy_admission": "admitted",
+      "interpretations": [
+        "evidence_insufficient"
+      ],
+      "candidate_count": 0,
+      "dispositions": []
+    },
+    {
+      "case": "gridworld_f5",
+      "source_kind": "migration",
+      "context_role": "diagnostic_comparison",
+      "context_admission": "admitted",
+      "policy_admission": "admitted",
+      "interpretations": [
+        "evidence_insufficient"
+      ],
+      "candidate_count": 0,
+      "dispositions": []
+    },
+    {
+      "case": "sir_f1",
+      "source_kind": "migration",
+      "context_role": "diagnostic_comparison",
+      "context_admission": "admitted",
+      "policy_admission": "admitted",
+      "interpretations": [
+        "evidence_insufficient"
+      ],
+      "candidate_count": 0,
+      "dispositions": []
+    },
+    {
+      "case": "sir_f2",
+      "source_kind": "migration",
+      "context_role": "diagnostic_comparison",
+      "context_admission": "admitted",
+      "policy_admission": "admitted",
+      "interpretations": [
+        "evidence_insufficient"
+      ],
+      "candidate_count": 0,
+      "dispositions": []
+    },
+    {
+      "case": "sir_f3",
+      "source_kind": "migration",
+      "context_role": "diagnostic_comparison",
+      "context_admission": "admitted",
+      "policy_admission": "admitted",
+      "interpretations": [
+        "evidence_insufficient"
+      ],
+      "candidate_count": 0,
+      "dispositions": []
+    },
+    {
+      "case": "sir_f4",
+      "source_kind": "migration",
+      "context_role": "diagnostic_comparison",
+      "context_admission": "admitted",
+      "policy_admission": "admitted",
+      "interpretations": [
+        "evidence_insufficient"
+      ],
+      "candidate_count": 0,
+      "dispositions": []
+    },
+    {
+      "case": "sir_f5",
+      "source_kind": "migration",
+      "context_role": "diagnostic_comparison",
+      "context_admission": "admitted",
+      "policy_admission": "admitted",
+      "interpretations": [
+        "evidence_insufficient"
+      ],
+      "candidate_count": 0,
+      "dispositions": []
+    },
+    {
+      "case": "traffic_f1",
+      "source_kind": "migration",
+      "context_role": "diagnostic_comparison",
+      "context_admission": "admitted",
+      "policy_admission": "admitted",
+      "interpretations": [
+        "evidence_insufficient"
+      ],
+      "candidate_count": 0,
+      "dispositions": []
+    },
+    {
+      "case": "traffic_f2",
+      "source_kind": "migration",
+      "context_role": "diagnostic_comparison",
+      "context_admission": "admitted",
+      "policy_admission": "admitted",
+      "interpretations": [
+        "evidence_insufficient"
+      ],
+      "candidate_count": 0,
+      "dispositions": []
+    },
+    {
+      "case": "traffic_f3",
+      "source_kind": "migration",
+      "context_role": "diagnostic_comparison",
+      "context_admission": "admitted",
+      "policy_admission": "admitted",
+      "interpretations": [
+        "evidence_insufficient"
+      ],
+      "candidate_count": 0,
+      "dispositions": []
+    },
+    {
+      "case": "traffic_f4",
+      "source_kind": "migration",
+      "context_role": "diagnostic_comparison",
+      "context_admission": "admitted",
+      "policy_admission": "admitted",
+      "interpretations": [
+        "evidence_insufficient"
+      ],
+      "candidate_count": 0,
+      "dispositions": []
+    },
+    {
+      "case": "traffic_f5",
+      "source_kind": "migration",
+      "context_role": "diagnostic_comparison",
+      "context_admission": "admitted",
+      "policy_admission": "admitted",
+      "interpretations": [
+        "evidence_insufficient"
+      ],
+      "candidate_count": 0,
+      "dispositions": []
+    },
+    {
+      "case": "compiler_f1",
+      "source_kind": "migration",
+      "context_role": "diagnostic_comparison",
+      "context_admission": "admitted",
+      "policy_admission": "admitted",
+      "interpretations": [
+        "evidence_insufficient"
+      ],
+      "candidate_count": 0,
+      "dispositions": []
+    },
+    {
+      "case": "compiler_f2",
+      "source_kind": "migration",
+      "context_role": "diagnostic_comparison",
+      "context_admission": "admitted",
+      "policy_admission": "admitted",
+      "interpretations": [
+        "evidence_insufficient"
+      ],
+      "candidate_count": 0,
+      "dispositions": []
+    },
+    {
+      "case": "compiler_f3",
+      "source_kind": "migration",
+      "context_role": "diagnostic_comparison",
+      "context_admission": "admitted",
+      "policy_admission": "admitted",
+      "interpretations": [
+        "evidence_insufficient"
+      ],
+      "candidate_count": 0,
+      "dispositions": []
+    },
+    {
+      "case": "compiler_f4",
+      "source_kind": "migration",
+      "context_role": "diagnostic_comparison",
+      "context_admission": "admitted",
+      "policy_admission": "admitted",
+      "interpretations": [
+        "evidence_insufficient"
+      ],
+      "candidate_count": 0,
+      "dispositions": []
+    },
+    {
+      "case": "compiler_f5",
+      "source_kind": "migration",
+      "context_role": "diagnostic_comparison",
+      "context_admission": "admitted",
+      "policy_admission": "admitted",
+      "interpretations": [
+        "evidence_insufficient"
+      ],
+      "candidate_count": 0,
+      "dispositions": []
+    },
+    {
+      "case": "network_f1",
+      "source_kind": "migration",
+      "context_role": "diagnostic_comparison",
+      "context_admission": "admitted",
+      "policy_admission": "admitted",
+      "interpretations": [
+        "evidence_insufficient"
+      ],
+      "candidate_count": 0,
+      "dispositions": []
+    },
+    {
+      "case": "network_f2",
+      "source_kind": "migration",
+      "context_role": "diagnostic_comparison",
+      "context_admission": "admitted",
+      "policy_admission": "admitted",
+      "interpretations": [
+        "evidence_insufficient"
+      ],
+      "candidate_count": 0,
+      "dispositions": []
+    },
+    {
+      "case": "network_f3",
+      "source_kind": "migration",
+      "context_role": "diagnostic_comparison",
+      "context_admission": "admitted",
+      "policy_admission": "admitted",
+      "interpretations": [
+        "evidence_insufficient"
+      ],
+      "candidate_count": 0,
+      "dispositions": []
+    },
+    {
+      "case": "network_f4",
+      "source_kind": "migration",
+      "context_role": "diagnostic_comparison",
+      "context_admission": "admitted",
+      "policy_admission": "admitted",
+      "interpretations": [
+        "evidence_insufficient"
+      ],
+      "candidate_count": 0,
+      "dispositions": []
+    },
+    {
+      "case": "network_f5",
+      "source_kind": "migration",
+      "context_role": "diagnostic_comparison",
+      "context_admission": "admitted",
+      "policy_admission": "admitted",
+      "interpretations": [
+        "evidence_insufficient"
+      ],
+      "candidate_count": 0,
+      "dispositions": []
+    },
+    {
+      "case": "before_after_compiler_o0_o2",
+      "source_kind": "migration",
+      "context_role": "diagnostic_comparison",
+      "context_admission": "admitted",
+      "policy_admission": "admitted",
+      "interpretations": [
+        "evidence_insufficient"
+      ],
+      "candidate_count": 0,
+      "dispositions": []
+    },
+    {
+      "case": "before_after_traffic_retiming",
+      "source_kind": "migration",
+      "context_role": "diagnostic_comparison",
+      "context_admission": "admitted",
+      "policy_admission": "admitted",
+      "interpretations": [
+        "evidence_insufficient"
+      ],
+      "candidate_count": 0,
+      "dispositions": []
+    },
+    {
+      "case": "before_after_gridworld_obstacle",
+      "source_kind": "migration",
+      "context_role": "diagnostic_comparison",
+      "context_admission": "admitted",
+      "policy_admission": "admitted",
+      "interpretations": [
+        "evidence_insufficient"
+      ],
+      "candidate_count": 0,
+      "dispositions": []
+    },
+    {
+      "case": "gridworld-f4-native-v2",
+      "source_kind": "native",
+      "context_role": "failure_mode_control",
+      "context_admission": "admitted",
+      "policy_admission": "admitted",
+      "interpretations": [
+        "defect_candidate",
+        "no_action_indicated"
+      ],
+      "candidate_count": 2,
+      "dispositions": [
+        "Investigate",
+        "RequestEvidence"
+      ]
+    }
+  ]
+}

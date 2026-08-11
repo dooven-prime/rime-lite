@@ -39,11 +39,11 @@ Paper-facing computations write generated records under the owning
 | VI | [paper6/README.md](paper6/README.md) | linearized commutativity/normality and point registrations |
 | VII | [paper7/README.md](paper7/README.md) | incidence geometry, rank protection, and finite Lie atlas |
 | VIII | [paper8/README.md](paper8/README.md) | static theorem layer; illustrative realizations only, with no computational claim dependency |
-| IX | [paper9/](paper9/) | observable-deformation diagnostics |
+| IX | [paper9/README.md](paper9/README.md) | observable-deformation diagnostics |
 | X | [paper10/README.md](paper10/README.md) | capability-aware admission and Registry evidence |
 | XI | [paper11/README.md](paper11/README.md) | wall records, taxonomy, and boundary audits |
-| XII | [paper12/README.md](paper12/README.md) | SOF Report validation and diagnostic probes |
-| XIII | [paper13/](paper13/) | Audit Profiles, aligned report comparison, and SOFAUDIT v2 migration |
+| XII | [paper12/README.md](paper12/README.md) | SOFRS v2 assembly, validation receipts, and diagnostic probes |
+| XIII | [paper13/README.md](paper13/README.md) | Audit Profiles, aligned comparison, 28-record SOFAUDIT migration, and a separate native-v2 GridWorld factual audit |
 
 Where a paper-local README is not yet present, the owning manuscript and
 script docstrings define the release-local scope. A future versioned reopening
@@ -64,6 +64,14 @@ snapshot is not backfilled during later migration.
 
 These directories provide bounded comparisons and controls. They are not
 standalone theorem sources.
+
+## Exploratory Research
+
+Public research-program packages are indexed separately at
+[exploratory/README.md](exploratory/README.md). They are not part of the paper
+evidence map above, do not enter the public SOF Registry by directory
+placement, and may be cited by a paper only through an explicit
+source-addressed promotion record.
 
 ## Cached Observations
 

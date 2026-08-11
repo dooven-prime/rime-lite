@@ -1,0 +1,656 @@
+{
+  "sofaudit_version": "2.0",
+  "artifact_type": "sofaudit",
+  "comparison_object": "SOFReportComparison",
+  "audit_id": "before_after_traffic_retiming",
+  "system": "Traffic legitimate retiming alignment",
+  "regime": "analogue_vs_analogue",
+  "source_reports": {
+    "reference": {
+      "report_id": "traffic-rho05-before",
+      "label": "rho=0.5 before retiming",
+      "artifact": {
+        "uri": "../source-reports/reports/traffic_rho05_before.sofreport.json",
+        "digest": {
+          "algorithm": "sha256",
+          "value": "f76c4e3261b84050ef5d96d7eb7bd75dcbd77bcec69b7a906f571a6eab3748f3"
+        }
+      },
+      "validation_receipt": {
+        "uri": "../source-reports/receipts/traffic_rho05_before.validation-receipt.json",
+        "digest": {
+          "algorithm": "sha256",
+          "value": "6d75782bf04cdf7f4d12591732111595478aaac899527c34cbca6021457d6b01"
+        }
+      },
+      "sofrs_version": "2.0",
+      "record_kind": "diagnostic_analogue",
+      "admission_basis": "native_sofrs_v2",
+      "comparison_role_basis": {
+        "role": "reference",
+        "basis_kind": "declared_baseline_only",
+        "authority_status": "DECLARED",
+        "scope": "The selected report is a declared comparison baseline, not an automatic truth oracle.",
+        "evidence_artifacts": [
+          "artifact.reference-report",
+          "artifact.reference-report-validation-receipt"
+        ],
+        "negative_boundary": [
+          "Reference role does not imply ground truth, correctness, or defect authority.",
+          "The selected report supports only a scoped difference from this baseline unless an external object-level oracle is bound."
+        ]
+      }
+    },
+    "target": {
+      "report_id": "traffic-rho20-after",
+      "label": "rho=2.0 transformed target",
+      "artifact": {
+        "uri": "../source-reports/reports/traffic_rho20_after.sofreport.json",
+        "digest": {
+          "algorithm": "sha256",
+          "value": "75fc01ca5d7b427f359f975692311b6b9aefa48143e213f688ef83d3c7266ef2"
+        }
+      },
+      "validation_receipt": {
+        "uri": "../source-reports/receipts/traffic_rho20_after.validation-receipt.json",
+        "digest": {
+          "algorithm": "sha256",
+          "value": "e020371b9d336dd44c1e1d841445623c226785b0fb1b491d94e0fccf415527e0"
+        }
+      },
+      "sofrs_version": "2.0",
+      "record_kind": "diagnostic_analogue",
+      "admission_basis": "native_sofrs_v2",
+      "comparison_role_basis": {
+        "role": "target",
+        "basis_kind": "declared_baseline_only",
+        "authority_status": "DECLARED",
+        "scope": "The selected report is a declared comparison baseline, not an automatic truth oracle.",
+        "evidence_artifacts": [
+          "artifact.target-report",
+          "artifact.target-report-validation-receipt"
+        ],
+        "negative_boundary": [
+          "Reference role does not imply ground truth, correctness, or defect authority.",
+          "The selected report supports only a scoped difference from this baseline unless an external object-level oracle is bound."
+        ]
+      }
+    }
+  },
+  "inherited_compiler_guards": {
+    "paper_x_contract_version": "1.0",
+    "state": "UNRESOLVED",
+    "condition_checks": [
+      {
+        "condition_id": "source-report-receipts-validate",
+        "status": "SATISFIED",
+        "evidence_artifact_ids": [
+          "artifact.reference-report-validation-receipt",
+          "artifact.target-report-validation-receipt"
+        ]
+      },
+      {
+        "condition_id": "paper-x-record-kind-permission",
+        "status": "SATISFIED",
+        "evidence_artifact_ids": [
+          "artifact.reference-report",
+          "artifact.target-report"
+        ],
+        "note": "Both migrated inputs are validated SOFRS v2 diagnostic-analogue reports."
+      },
+      {
+        "condition_id": "paper-x-carrier-alignment",
+        "status": "SATISFIED",
+        "evidence_artifact_ids": [
+          "artifact.source-audit"
+        ]
+      },
+      {
+        "condition_id": "paper-x-policy-alignment",
+        "status": "SATISFIED",
+        "evidence_artifact_ids": [
+          "artifact.source-audit"
+        ]
+      },
+      {
+        "condition_id": "paper-x-evidence-alignment",
+        "status": "SATISFIED",
+        "evidence_artifact_ids": [
+          "artifact.source-audit"
+        ]
+      },
+      {
+        "condition_id": "paper-x-promotion-audit",
+        "status": "SATISFIED",
+        "evidence_artifact_ids": [
+          "artifact.source-audit"
+        ],
+        "note": "No unavailable profile coordinate is filled from a nearby carrier."
+      },
+      {
+        "condition_id": "paper-xiii-sector-alignment",
+        "status": "NOT_CHECKED",
+        "evidence_artifact_ids": [
+          "artifact.source-audit"
+        ]
+      },
+      {
+        "condition_id": "paper-xiii-observable-alignment",
+        "status": "NOT_CHECKED",
+        "evidence_artifact_ids": [
+          "artifact.source-audit"
+        ]
+      },
+      {
+        "condition_id": "paper-xiii-comparison-specification",
+        "status": "SATISFIED",
+        "evidence_artifact_ids": [
+          "artifact.source-audit"
+        ]
+      }
+    ],
+    "negative_boundaries": [
+      "Legacy strict compatibility does not reconstruct native SOFRS v2 compiler contracts.",
+      "Missing coordinates remain unavailable and are not replaced by nearby carriers.",
+      "A nonzero audit coordinate records difference, not defect or action."
+    ]
+  },
+  "audit_profile": {
+    "profile_id": "paper13.standard-regime-a.v2",
+    "profile_version": "2.0",
+    "applicable_regime": "analogue_vs_analogue",
+    "coordinate_registry_ref": "schemas/sofaudit/coordinate-semantics-registry-v1.0.json",
+    "coordinate_families": [
+      "operator",
+      "word",
+      "lie",
+      "depth",
+      "frozen_summary",
+      "constraint",
+      "response",
+      "wall_record"
+    ],
+    "requested_coordinate_ids": [
+      "support",
+      "word_bridge",
+      "lie_bridge",
+      "depth",
+      "frozen_summary",
+      "constraint",
+      "response",
+      "wall_record"
+    ],
+    "availability_semantics": {
+      "unavailable_states": [
+        "NOT_DECLARED",
+        "NOT_APPLICABLE",
+        "INCOMPARABLE",
+        "UNRESOLVED"
+      ],
+      "null_value_states": [
+        "NOT_DECLARED",
+        "NOT_APPLICABLE",
+        "INCOMPARABLE",
+        "UNRESOLVED"
+      ],
+      "zero_is_unavailable": false
+    },
+    "comparison_semantics": {
+      "matched_states": [
+        "ALIGNED",
+        "MISMATCH"
+      ],
+      "comparison_is_pairwise": true
+    },
+    "carrier_requirements": {
+      "strict": [
+        "operator",
+        "word",
+        "lie"
+      ],
+      "analogue": [
+        "analogue"
+      ]
+    },
+    "required_evidence_roles": [
+      "reference-report",
+      "target-report",
+      "reference-report-validation-receipt",
+      "target-report-validation-receipt",
+      "audit-profile",
+      "coordinate-semantics-registry"
+    ],
+    "profile_artifact_id": "artifact.audit-profile",
+    "coordinate_registry_artifact_id": "artifact.coordinate-semantics-registry"
+  },
+  "alignment": {
+    "sector_alignment": {
+      "alignment_id": "paper13.sector.identity-v2",
+      "alignment_kind": "sector",
+      "state": "UNRESOLVED",
+      "map_kind": "relation",
+      "reference_carrier": "declared-report-labels",
+      "target_carrier": "declared-report-labels",
+      "pairs": [],
+      "unmatched_reference_ids": [],
+      "unmatched_target_ids": [],
+      "properties": {
+        "total_on_reference": false,
+        "total_on_target": false,
+        "injective": false,
+        "surjective": false
+      },
+      "semantic_basis": "{'kind': 'identity', 'labels': ['NW', 'NE', 'SW', 'SE']}",
+      "negative_boundary": [
+        "Identity alignment is a declared baseline and does not establish semantic equivalence beyond the retained labels."
+      ]
+    },
+    "observable_alignment": {
+      "alignment_id": "paper13.observable.identity-v2",
+      "alignment_kind": "observable",
+      "state": "UNRESOLVED",
+      "map_kind": "relation",
+      "reference_carrier": "declared-report-labels",
+      "target_carrier": "declared-report-labels",
+      "pairs": [],
+      "unmatched_reference_ids": [],
+      "unmatched_target_ids": [],
+      "properties": {
+        "total_on_reference": false,
+        "total_on_target": false,
+        "injective": false,
+        "surjective": false
+      },
+      "semantic_basis": "{'kind': 'identity_by_semantic_label', 'mapping': {'phase_A': 'phase_A', 'phase_B': 'phase_B'}}",
+      "negative_boundary": [
+        "Identity alignment is a declared baseline and does not establish semantic equivalence beyond the retained labels."
+      ]
+    }
+  },
+  "comparison_specification": {
+    "specification_id": "paper13-coordinatewise-v2",
+    "normalization": {
+      "normalization_id": "paper13.default-normalization-v2",
+      "numeric_policy": "exact",
+      "equality_tolerance": null,
+      "sentinel_policy": "state-not-infinity",
+      "generator_policy": "report-bound-generators"
+    },
+    "metric": {
+      "metric_id": "coordinatewise-record",
+      "domain": "mixed",
+      "unit_policy": "not-applicable",
+      "missing_value_policy": "state-preserving",
+      "zero_denominator_policy": "not-applicable"
+    },
+    "depth_semantics": {
+      "carrier": "word",
+      "mode": "summary-only",
+      "reference_cutoff": null,
+      "target_cutoff": null,
+      "unreached_policy": "state-not-infinity"
+    },
+    "thresholds": {
+      "threshold_id": "paper13.coordinatewise-tolerance",
+      "value": null,
+      "source": "not-applicable"
+    },
+    "parameter_synchronization": {
+      "kind": "identity",
+      "map_artifact_id": null,
+      "interpolation_method": "not-applicable",
+      "extrapolation_forbidden": true
+    },
+    "aggregation": {
+      "kind": "coordinatewise",
+      "scalarization": "none",
+      "weights_artifact_id": null,
+      "weight_declaration": null
+    }
+  },
+  "comparison_basis": {
+    "basis_status": "PARTIAL",
+    "reference_role_basis": {
+      "role": "reference",
+      "basis_kind": "declared_baseline_only",
+      "authority_status": "DECLARED",
+      "scope": "The selected report is a declared comparison baseline, not an automatic truth oracle.",
+      "evidence_artifacts": [
+        "artifact.reference-report",
+        "artifact.reference-report-validation-receipt"
+      ],
+      "negative_boundary": [
+        "Reference role does not imply ground truth, correctness, or defect authority.",
+        "The selected report supports only a scoped difference from this baseline unless an external object-level oracle is bound."
+      ]
+    },
+    "alignment_evidence": [
+      "artifact.source-audit"
+    ],
+    "object_level_oracle": {
+      "status": "NOT_ASSESSED",
+      "independence": {
+        "implementation_relation": "not_assessed",
+        "producer_relation": "not_assessed",
+        "input_source": "not_assessed",
+        "producer_cache_used": null
+      },
+      "raw_source_artifacts": [
+        "artifact.reference-report",
+        "artifact.target-report"
+      ],
+      "independent_recomputation_artifacts": [],
+      "oracle_result_artifact": null,
+      "audit_result_artifact": null
+    },
+    "policy_compatibility": {
+      "status": "SATISFIED",
+      "policy_artifact_ids": [
+        "artifact.source-audit"
+      ],
+      "negative_boundary": [
+        "Policy compatibility permits the declared comparison procedure but does not establish scientific adequacy."
+      ]
+    },
+    "negative_boundary": [
+      "This migrated comparison records protocol-relative differences only; it is not an object-level correctness certificate.",
+      "A nonzero coordinate does not imply defect, error, or action."
+    ]
+  },
+  "coordinates": {
+    "support": {
+      "comparison_state": "UNRESOLVED",
+      "result_state": "DECLARED",
+      "claim_status": null,
+      "claim_target": null,
+      "certificate_class": null,
+      "classification_source": "migration_adapter",
+      "report_item_binding": {
+        "binding_state": "legacy_payload_only",
+        "reference_item_ref": null,
+        "target_item_ref": null,
+        "reason": "The frozen v1 audit stores a comparison payload but no item-level reference/target report binding."
+      },
+      "coordinate_family": "operator",
+      "value_schema_id": "operator.support.v1",
+      "value": null,
+      "source_artifact_ids": [
+        "artifact.source-audit"
+      ],
+      "reason": "The v1 payload is retained by source digest, but the migrated SOFRS reports do not bind enough alignment metadata or item-level mappings to promote it as a v2 comparison coordinate."
+    },
+    "word_bridge": {
+      "comparison_state": "UNRESOLVED",
+      "result_state": "DECLARED",
+      "claim_status": null,
+      "claim_target": null,
+      "certificate_class": null,
+      "classification_source": "migration_adapter",
+      "report_item_binding": {
+        "binding_state": "legacy_payload_only",
+        "reference_item_ref": null,
+        "target_item_ref": null,
+        "reason": "The frozen v1 audit stores a comparison payload but no item-level reference/target report binding."
+      },
+      "coordinate_family": "word",
+      "value_schema_id": "word.support.v1",
+      "value": null,
+      "source_artifact_ids": [
+        "artifact.source-audit"
+      ],
+      "reason": "The v1 payload is retained by source digest, but the migrated SOFRS reports do not bind enough alignment metadata or item-level mappings to promote it as a v2 comparison coordinate."
+    },
+    "lie_bridge": {
+      "comparison_state": "UNRESOLVED",
+      "result_state": "DECLARED",
+      "claim_status": null,
+      "claim_target": null,
+      "certificate_class": null,
+      "classification_source": "migration_adapter",
+      "report_item_binding": {
+        "binding_state": "legacy_payload_only",
+        "reference_item_ref": null,
+        "target_item_ref": null,
+        "reason": "The frozen v1 audit stores a comparison payload but no item-level reference/target report binding."
+      },
+      "coordinate_family": "lie",
+      "value_schema_id": "lie.simple-commutator-support.v1",
+      "value": null,
+      "source_artifact_ids": [
+        "artifact.source-audit"
+      ],
+      "reason": "The v1 payload is retained by source digest, but the migrated SOFRS reports do not bind enough alignment metadata or item-level mappings to promote it as a v2 comparison coordinate."
+    },
+    "depth": {
+      "comparison_state": "UNRESOLVED",
+      "result_state": "DECLARED",
+      "claim_status": null,
+      "claim_target": null,
+      "certificate_class": null,
+      "classification_source": "migration_adapter",
+      "report_item_binding": {
+        "binding_state": "legacy_payload_only",
+        "reference_item_ref": null,
+        "target_item_ref": null,
+        "reason": "The frozen v1 audit stores a comparison payload but no item-level reference/target report binding."
+      },
+      "coordinate_family": "depth",
+      "value_schema_id": "word.depth.v1",
+      "value": null,
+      "source_artifact_ids": [
+        "artifact.source-audit"
+      ],
+      "reason": "The v1 payload is retained by source digest, but the migrated SOFRS reports do not bind enough alignment metadata or item-level mappings to promote it as a v2 comparison coordinate."
+    },
+    "frozen_summary": {
+      "comparison_state": "UNRESOLVED",
+      "result_state": "DECLARED",
+      "claim_status": null,
+      "claim_target": null,
+      "certificate_class": null,
+      "classification_source": "migration_adapter",
+      "report_item_binding": {
+        "binding_state": "legacy_payload_only",
+        "reference_item_ref": null,
+        "target_item_ref": null,
+        "reason": "The frozen v1 audit stores a comparison payload but no item-level reference/target report binding."
+      },
+      "coordinate_family": "frozen_summary",
+      "value_schema_id": "summary.frozen.v1",
+      "value": null,
+      "source_artifact_ids": [
+        "artifact.source-audit"
+      ],
+      "reason": "The v1 payload is retained by source digest, but the migrated SOFRS reports do not bind enough alignment metadata or item-level mappings to promote it as a v2 comparison coordinate."
+    },
+    "constraint": {
+      "comparison_state": "UNRESOLVED",
+      "result_state": "DECLARED",
+      "claim_status": null,
+      "claim_target": null,
+      "certificate_class": null,
+      "classification_source": "migration_adapter",
+      "report_item_binding": {
+        "binding_state": "legacy_payload_only",
+        "reference_item_ref": null,
+        "target_item_ref": null,
+        "reason": "The frozen v1 audit stores a comparison payload but no item-level reference/target report binding."
+      },
+      "coordinate_family": "constraint",
+      "value_schema_id": "constraint.count.v1",
+      "value": null,
+      "source_artifact_ids": [
+        "artifact.source-audit"
+      ],
+      "reason": "The v1 payload is retained by source digest, but the migrated SOFRS reports do not bind enough alignment metadata or item-level mappings to promote it as a v2 comparison coordinate."
+    },
+    "response": {
+      "comparison_state": "UNRESOLVED",
+      "result_state": "DECLARED",
+      "claim_status": null,
+      "claim_target": null,
+      "certificate_class": null,
+      "classification_source": "migration_adapter",
+      "report_item_binding": {
+        "binding_state": "legacy_payload_only",
+        "reference_item_ref": null,
+        "target_item_ref": null,
+        "reason": "The frozen v1 audit stores a comparison payload but no item-level reference/target report binding."
+      },
+      "coordinate_family": "response",
+      "value_schema_id": "response.record.v1",
+      "value": null,
+      "source_artifact_ids": [
+        "artifact.source-audit"
+      ],
+      "reason": "The v1 payload is retained by source digest, but the migrated SOFRS reports do not bind enough alignment metadata or item-level mappings to promote it as a v2 comparison coordinate."
+    },
+    "wall_record": {
+      "comparison_state": "NOT_DECLARED",
+      "result_state": "NOT_DECLARED",
+      "claim_status": null,
+      "claim_target": null,
+      "certificate_class": null,
+      "classification_source": "migration_adapter",
+      "report_item_binding": {
+        "binding_state": "unresolved",
+        "reference_item_ref": null,
+        "target_item_ref": null,
+        "reason": "No retained Paper XI wall items are bound by the v1 payload."
+      },
+      "coordinate_family": "wall_record",
+      "value_schema_id": "wall.morphology.v1",
+      "value": null,
+      "source_artifact_ids": [],
+      "reason": "The frozen v1 comparison did not declare this profile coordinate; absence is not numerical zero.",
+      "wall_input_binding": {
+        "reference_wall": {
+          "state": "NOT_DECLARED",
+          "record_ref": null,
+          "signature_ref": null,
+          "source_artifact_id": null,
+          "reason": "The frozen SOFAUDIT v1 input does not bind this side to a retained Paper XI wall record and signature."
+        },
+        "target_wall": {
+          "state": "NOT_DECLARED",
+          "record_ref": null,
+          "signature_ref": null,
+          "source_artifact_id": null,
+          "reason": "The frozen SOFAUDIT v1 input does not bind this side to a retained Paper XI wall record and signature."
+        },
+        "comparison_context": {
+          "state": "NOT_DECLARED",
+          "context_kind": null,
+          "context_alignment_ref": null,
+          "orientation_alignment": null,
+          "field_alignment": null,
+          "reason": "No wall comparison was requested by the frozen v1 record."
+        }
+      }
+    }
+  },
+  "claim": {
+    "result_state": "CERTIFIED",
+    "claim_status": "Computational Certificate",
+    "claim_target": "migration_consistency",
+    "certificate_class": "migration_assembly",
+    "classification_source": "migration_adapter",
+    "statement": "controlled legitimate retiming; response change with invariant topology",
+    "negative_boundary": "Controlled Regime A comparison under frozen v1 report semantics; no source-level causal, defect, correctness, or action inference.",
+    "source_artifact_ids": [
+      "artifact.source-audit",
+      "artifact.reference-report",
+      "artifact.target-report",
+      "artifact.reference-report-validation-receipt",
+      "artifact.target-report-validation-receipt",
+      "artifact.audit-profile",
+      "artifact.coordinate-semantics-registry"
+    ]
+  },
+  "failure_modes": [
+    "legitimacy is relative to the declared transformation contract",
+    "finite rho values do not sample the rho->0 or rho->infinity limit walls"
+  ],
+  "source_artifacts": [
+    {
+      "id": "artifact.source-audit",
+      "role": "source-audit",
+      "uri": "../../archive/results/before_after_traffic.sofaudit",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "7f83876aded4ad18c4d10eb025dcac16a56190969cf0a4e9a53dd453e135eb80"
+      }
+    },
+    {
+      "id": "artifact.reference-report",
+      "role": "reference-report",
+      "uri": "../source-reports/reports/traffic_rho05_before.sofreport.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "f76c4e3261b84050ef5d96d7eb7bd75dcbd77bcec69b7a906f571a6eab3748f3"
+      }
+    },
+    {
+      "id": "artifact.target-report",
+      "role": "target-report",
+      "uri": "../source-reports/reports/traffic_rho20_after.sofreport.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "75fc01ca5d7b427f359f975692311b6b9aefa48143e213f688ef83d3c7266ef2"
+      }
+    },
+    {
+      "id": "artifact.reference-report-validation-receipt",
+      "role": "reference-report-validation-receipt",
+      "uri": "../source-reports/receipts/traffic_rho05_before.validation-receipt.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "6d75782bf04cdf7f4d12591732111595478aaac899527c34cbca6021457d6b01"
+      }
+    },
+    {
+      "id": "artifact.target-report-validation-receipt",
+      "role": "target-report-validation-receipt",
+      "uri": "../source-reports/receipts/traffic_rho20_after.validation-receipt.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "e020371b9d336dd44c1e1d841445623c226785b0fb1b491d94e0fccf415527e0"
+      }
+    },
+    {
+      "id": "artifact.audit-profile",
+      "role": "audit-profile",
+      "uri": "../../../../schemas/sofaudit/paper13-standard-regime-a-profile-v2.0.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "25a59d8f5897620deaa69a660b3160d32df43030b097830a0668c9eb8a5a20ee"
+      }
+    },
+    {
+      "id": "artifact.coordinate-semantics-registry",
+      "role": "coordinate-semantics-registry",
+      "uri": "../../../../schemas/sofaudit/coordinate-semantics-registry-v1.0.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "1d2dc24ae56cfb364b02bccf8c0c3068138e6d07682cf4b0561ec75f765c6d48"
+      }
+    }
+  ],
+  "provenance": {
+    "kind": "migration",
+    "source_sofaudit_version": "1.0",
+    "adapter_id": "paper13-sofaudit-v1-to-v2",
+    "adapter_version": "2.0",
+    "source_audit_artifact_id": "artifact.source-audit",
+    "normalized_legacy_sentinels": [],
+    "semantic_normalizations": [
+      "Replaced the fixed v1 signature tuple with an Audit Profile and sparse typed coordinate map.",
+      "Renamed action_response_failure to the descriptive response coordinate.",
+      "Separated comparison state from result state and claim status.",
+      "Classified missing legacy coordinates as NOT_DECLARED rather than zero.",
+      "Retained legacy F5 path payloads as source-addressed compatibility observations without promoting them to Paper XI wall records or Paper XIII wall mismatches.",
+      "Recorded Paper X guard checks as inherited conditions rather than a new admission taxonomy.",
+      "Retained legacy comparison payloads only in the source artifact; v2 coordinates remain unresolved until report-level alignment and item bindings are available."
+    ]
+  }
+}

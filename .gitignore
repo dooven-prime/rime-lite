@@ -1,0 +1,64 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+.venv1/
+
+# IDE / tools
+.idea/
+.vscode/
+.obsidian/
+.continue/
+.claude/
+.codex/
+.agents/
+.pytest_cache/
+
+# Generated
+data/
+backup/
+notebooks/
+tmp/
+docs/archive/
+docs/internal/
+figures/archive/
+figures/ccs/*.pdf
+figures/paper*/*.pdf
+
+
+# CCS frozen snapshots
+ccs/canonical_specification - *.md
+ccs/canonical_specification.pdf
+
+# Paper dated snapshots
+papers/paper*/* - *.md
+papers/paper*/* - v*.pdf
+papers/paper*/Paper * Position.md
+ccs/* - v*.pdf
+papers/tex/
+experiments/* - v*.md
+
+# Unreleased paper-stage material
+schemas/sofdecision/
+tests/test_sof_decision.py
+tests/internal/
+
+# Local review scratch files
+/_check_appendix.py
+/_headers.txt
+/_tmp_pdf_review/
+/tmp_*.txt
+
+# Temp / misc
+*.tmp
+*.tmp.*
+*.bak
+.DS_Store
+backup.py
+Thumbs.db
+
+AGENTS.md
+CLAUDE.md

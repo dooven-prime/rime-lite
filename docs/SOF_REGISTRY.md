@@ -226,7 +226,7 @@ Paper X     compiler theory and Registry evidence
 Paper XI    typed wall morphology, coordinate profiles, and taxonomy
 Paper XII   .sofreport single-system protocol
 Paper XIII  .sofaudit aligned comparison
-Paper XIV   .sofdecision interpretation and action horizon
+Paper XIV   .sofaction context/policy interpretation and bounded candidates
 ```
 
 After an explicit versioned Registry-to-IR adapter is supplied, the Registry
@@ -237,11 +237,13 @@ alignment or choose an action. The artifact chain remains:
 typed objects and findings
   -> .sofreport
   -> .sofaudit
-  -> .sofdecision
+  -> .sofaction
 ```
 
 Each downstream stage adds a new contract and cannot silently revise upstream
-carrier semantics.
+carrier semantics. `.sofaction` does not contain a selected plan,
+authorization receipt, outcome observation, or action-effect certificate;
+those remain separate future artifacts.
 
 ## Validation
 

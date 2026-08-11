@@ -165,7 +165,25 @@ A diagnostic analogue does not instantiate strict-SOF theorems.
 `ALIGNED` names the successful aligned-equality outcome in the current
 contract; it does not merely mean that an alignment map exists.
 
-## 8. Claim and Evidence Vocabulary
+## 8. Action Semantics Vocabulary
+
+| Term | Controlled meaning |
+|------|--------------------|
+| `ActionContext` | independently admitted actor, scope, objective, constraints, time, authority, and uncertainty input; it is not derived from an audit |
+| `PolicyProfile` | the sole normative rule input of the current Paper XIV contract, with closed predicate, uncertainty, exception, and precedence semantics |
+| `InterpretationRecord` | context- and policy-relative interpretation of retained Paper XIII coordinates; it does not rewrite the audit |
+| `CandidateActionSet` | bounded set of policy-supported candidate records; it is not a selected or executed plan |
+| `.sofaction` | Paper XIV artifact binding the immutable audit projection, admitted context and policy, interpretations, and disposition result |
+| `NoDisposition` | no legal disposition was formed, including failed context or policy admission |
+| `UnresolvedDisposition` | admitted inputs remain insufficient for a supported disposition |
+| `NoActionDisposition` | an explicit applicable-policy result; it is not an empty candidate set by default |
+
+The current `.sofaction` contract stops at bounded candidates. Selected plans,
+authorization receipts, post-action observations, and independently validated
+effects require separate downstream contracts. A missing context, policy, or
+capability is never promoted into `NoAction`.
+
+## 9. Claim and Evidence Vocabulary
 
 Use exactly four reader-facing levels:
 
@@ -181,7 +199,7 @@ bridge. Use **proxy** when the measured field is not the claimed strict field.
 Use **sampled** or **truncated** when the conclusion is bounded by a grid,
 interval, or cutoff.
 
-## 9. Deprecated or Restricted Shorthand
+## 10. Deprecated or Restricted Shorthand
 
 Avoid the following as active cross-paper vocabulary:
 
@@ -199,7 +217,7 @@ Avoid the following as active cross-paper vocabulary:
 | Type I--IV as universal wall/accessibility classes | named mechanism such as commutator cancellation or image--kernel incidence |
 | ADE as universal wall taxonomy | ADE candidate local model after a declared eligibility gate |
 
-## 10. Numerical and Release Discipline
+## 11. Numerical and Release Discipline
 
 Public numerical values belong to versioned result records and passing
 validators. Public release identity belongs to Zenodo records, accepted release

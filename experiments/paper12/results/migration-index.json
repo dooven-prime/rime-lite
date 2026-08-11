@@ -1,0 +1,258 @@
+{
+  "migration_version": "2.0",
+  "source_contract": "SOFRS v1.0",
+  "target_contract": "SOFRS v2.0",
+  "adapter_id": "paper12-v1-to-v2",
+  "adapter_version": "2.0",
+  "records": [
+    {
+      "source": "experiments/paper12/archive/results/diffusion.sofreport",
+      "source_digest": "d35940d2dc1f89e40da832c082ed08c5df36798662eebd51a06bc9caa8279615",
+      "producer": "experiments/paper12/diffusion_denoising_sof.py",
+      "producer_digest": "d2b712dcab60e6c1cd438c18d6ed518719b77c0ddcd228ecba85be5b15faeaff",
+      "record_kind": "diagnostic_analogue",
+      "strict_reconstruction": {
+        "candidate_status": "no",
+        "available_requirements": [],
+        "missing_requirements": [
+          "bounded_strict_reconstruction_obligation_not_declared"
+        ],
+        "evaluator_id": "paper12.strict-reconstruction-obligation-audit",
+        "evaluator_version": "1.0",
+        "interpretation": "No bounded strict-reconstruction obligation is declared for this migration row."
+      },
+      "manifest": "experiments/paper12/results/manifests/diffusion.capabilities.json",
+      "ir": "experiments/paper12/results/ir/diffusion.ir.json",
+      "compiler_output": "experiments/paper12/results/compiler-output/diffusion.compiler-output.json",
+      "compiler_profile": "schemas/sofrs/paper12-analogue-compiler-profile-v1.0.json",
+      "assembly_profile": "schemas/sofrs/paper12-analogue-assembly-profile-v2.0.json",
+      "report": "experiments/paper12/results/reports/diffusion.sofreport.json",
+      "classification_reason": "The report aggregates pointwise finite audits while the sector count and projector family change along the sampled path.",
+      "normalized_legacy_sentinel_count": 0
+    },
+    {
+      "source": "experiments/paper12/archive/results/maze.sofreport",
+      "source_digest": "8eb251fa49e63b41e08f7694a34f84aa75e6cba771d74444de50e8492f432929",
+      "producer": "experiments/paper12/maze_wall_crossing.py",
+      "producer_digest": "5bb066ffec1fdd46ec6851cb1a444ba76c606aa359d50ffda4bbe703d1f059dd",
+      "record_kind": "diagnostic_analogue",
+      "strict_reconstruction": {
+        "candidate_status": "no",
+        "available_requirements": [],
+        "missing_requirements": [
+          "bounded_strict_reconstruction_obligation_not_declared"
+        ],
+        "evaluator_id": "paper12.strict-reconstruction-obligation-audit",
+        "evaluator_version": "1.0",
+        "interpretation": "No bounded strict-reconstruction obligation is declared for this migration row."
+      },
+      "manifest": "experiments/paper12/results/manifests/maze.capabilities.json",
+      "ir": "experiments/paper12/results/ir/maze.ir.json",
+      "compiler_output": "experiments/paper12/results/compiler-output/maze.compiler-output.json",
+      "compiler_profile": "schemas/sofrs/paper12-analogue-compiler-profile-v1.0.json",
+      "assembly_profile": "schemas/sofrs/paper12-analogue-assembly-profile-v2.0.json",
+      "report": "experiments/paper12/results/reports/maze.sofreport.json",
+      "classification_reason": "Connected-component sectors change from one to twenty-five and back; the aggregate report is a schema-transition diagnostic.",
+      "normalized_legacy_sentinel_count": 0
+    },
+    {
+      "source": "experiments/paper12/archive/results/moe.sofreport",
+      "source_digest": "aebdb653fe0cb12bd29dd31b15e56f92e715155f4720354eef9870d91f7befb2",
+      "producer": "experiments/paper12/moe_expert_sof.py",
+      "producer_digest": "972a7fc34dc76439fd3dabe30fff6e5ab3bdd8285a10f6b7bc66a7dd637cb9cd",
+      "record_kind": "diagnostic_analogue",
+      "strict_reconstruction": {
+        "candidate_status": "yes",
+        "available_requirements": [
+          "finite_space_dimension",
+          "candidate_complete_partition",
+          "operator_family_descriptor"
+        ],
+        "missing_requirements": [
+          "explicit_operator_artifacts",
+          "projector_completeness_certificate",
+          "operator_artifact_source_digest_binding"
+        ],
+        "evaluator_id": "paper12.strict-reconstruction-obligation-audit",
+        "evaluator_version": "1.0",
+        "interpretation": "The missing strict-admission obligations are explicitly enumerated; candidate status does not predict successful strict reconstruction."
+      },
+      "manifest": "experiments/paper12/results/manifests/moe.capabilities.json",
+      "ir": "experiments/paper12/results/ir/moe.ir.json",
+      "compiler_output": "experiments/paper12/results/compiler-output/moe.compiler-output.json",
+      "compiler_profile": "schemas/sofrs/paper12-analogue-compiler-profile-v1.0.json",
+      "assembly_profile": "schemas/sofrs/paper12-analogue-assembly-profile-v2.0.json",
+      "report": "experiments/paper12/results/reports/moe.sofreport.json",
+      "classification_reason": "The frozen v1 envelope records route classes and positive-word shadows, but it does not bind the routing-overlap operator as an explicit reconstruction artifact.",
+      "normalized_legacy_sentinel_count": 0
+    },
+    {
+      "source": "experiments/paper12/archive/results/moe_bias_repair.sofreport",
+      "source_digest": "94a31d20b7e843d9892c7e5d2ae212e9da32351ff8e76f77220a4e9b11abe30f",
+      "producer": "experiments/paper12/moe_bias_repair_sof.py",
+      "producer_digest": "2eae98a6a3735a57f8a5b7d28b6366bf62fab7e1931dc124b18352976b8c5b98",
+      "record_kind": "diagnostic_analogue",
+      "strict_reconstruction": {
+        "candidate_status": "no",
+        "available_requirements": [],
+        "missing_requirements": [
+          "bounded_strict_reconstruction_obligation_not_declared"
+        ],
+        "evaluator_id": "paper12.strict-reconstruction-obligation-audit",
+        "evaluator_version": "1.0",
+        "interpretation": "No bounded strict-reconstruction obligation is declared for this migration row."
+      },
+      "manifest": "experiments/paper12/results/manifests/moe_bias_repair.capabilities.json",
+      "ir": "experiments/paper12/results/ir/moe_bias_repair.ir.json",
+      "compiler_output": "experiments/paper12/results/compiler-output/moe_bias_repair.compiler-output.json",
+      "compiler_profile": "schemas/sofrs/paper12-analogue-compiler-profile-v1.0.json",
+      "assembly_profile": "schemas/sofrs/paper12-analogue-assembly-profile-v2.0.json",
+      "report": "experiments/paper12/results/reports/moe_bias_repair.sofreport.json",
+      "classification_reason": "The report declares expert-load, bias, and activation descriptors without an explicit complete projector realization and alphabet.",
+      "normalized_legacy_sentinel_count": 0
+    },
+    {
+      "source": "experiments/paper12/archive/results/nvidia_llama31_8b_20260711.sofreport",
+      "source_digest": "cac207fe3f63e3556b6235ee4b85dfce235f8e4258839e417a4a2cc6ae684332",
+      "producer": "experiments/paper12/blackbox_llm_sof.py",
+      "producer_digest": "22332bd62a9002b3518e499369ecf748c8555ae548f6f89ce02367e8b1f00dd8",
+      "record_kind": "diagnostic_analogue",
+      "strict_reconstruction": {
+        "candidate_status": "no",
+        "available_requirements": [],
+        "missing_requirements": [
+          "bounded_strict_reconstruction_obligation_not_declared"
+        ],
+        "evaluator_id": "paper12.strict-reconstruction-obligation-audit",
+        "evaluator_version": "1.0",
+        "interpretation": "No bounded strict-reconstruction obligation is declared for this migration row."
+      },
+      "manifest": "experiments/paper12/results/manifests/nvidia_llama31_8b_20260711.capabilities.json",
+      "ir": "experiments/paper12/results/ir/nvidia_llama31_8b_20260711.ir.json",
+      "compiler_output": "experiments/paper12/results/compiler-output/nvidia_llama31_8b_20260711.compiler-output.json",
+      "compiler_profile": "schemas/sofrs/paper12-analogue-compiler-profile-v1.0.json",
+      "assembly_profile": "schemas/sofrs/paper12-analogue-assembly-profile-v2.0.json",
+      "report": "experiments/paper12/results/reports/nvidia_llama31_8b_20260711.sofreport.json",
+      "classification_reason": "Prompt protocols and task classes are probe descriptors, not orthogonal projectors on a declared finite complex space.",
+      "normalized_legacy_sentinel_count": 0
+    },
+    {
+      "source": "experiments/paper12/archive/results/qwen.sofreport",
+      "source_digest": "be1ece91fc2ea8f8526683d4c200cb2d3fcef781b0bdb4c9b0d48aa7e6613faf",
+      "producer": "experiments/paper12/qwen_attention_sof.py",
+      "producer_digest": "6bf6a0f6fdb0af794d995e5c810d840c08ced4732c01468e8a7aff226c55c128",
+      "record_kind": "diagnostic_analogue",
+      "strict_reconstruction": {
+        "candidate_status": "yes",
+        "available_requirements": [
+          "finite_space_dimension",
+          "candidate_complete_partition",
+          "operator_family_descriptor"
+        ],
+        "missing_requirements": [
+          "explicit_operator_artifacts",
+          "projector_completeness_certificate",
+          "operator_artifact_source_digest_binding"
+        ],
+        "evaluator_id": "paper12.strict-reconstruction-obligation-audit",
+        "evaluator_version": "1.0",
+        "interpretation": "The missing strict-admission obligations are explicitly enumerated; candidate status does not predict successful strict reconstruction."
+      },
+      "manifest": "experiments/paper12/results/manifests/qwen.capabilities.json",
+      "ir": "experiments/paper12/results/ir/qwen.ir.json",
+      "compiler_output": "experiments/paper12/results/compiler-output/qwen.compiler-output.json",
+      "compiler_profile": "schemas/sofrs/paper12-analogue-compiler-profile-v1.0.json",
+      "assembly_profile": "schemas/sofrs/paper12-analogue-assembly-profile-v2.0.json",
+      "report": "experiments/paper12/results/reports/qwen.sofreport.json",
+      "classification_reason": "The frozen v1 envelope identifies a 40-dimensional retained token space inside the 45-token probe and a candidate complete coordinate partition on that retained space, but it does not bind the fourteen operative matrices or projector-completeness certificate as explicit artifacts. The migration therefore retains a bounded reconstruction obligation as an analogue record.",
+      "normalized_legacy_sentinel_count": 3
+    },
+    {
+      "source": "experiments/paper12/archive/results/recommender.sofreport",
+      "source_digest": "a83a729ddee49b6b0e8c26c0b403f9e3a8047228bd49da88b600ccf4a9cee22a",
+      "producer": "experiments/paper12/recommender_sof.py",
+      "producer_digest": "8b70faab95c3870797ffd537213a0abbbbb46e0955ca5eeee8ccbc4f0bf11e6d",
+      "record_kind": "diagnostic_analogue",
+      "strict_reconstruction": {
+        "candidate_status": "yes",
+        "available_requirements": [
+          "finite_space_dimension",
+          "candidate_complete_partition",
+          "operator_family_descriptor"
+        ],
+        "missing_requirements": [
+          "explicit_operator_artifacts",
+          "projector_completeness_certificate",
+          "operator_artifact_source_digest_binding"
+        ],
+        "evaluator_id": "paper12.strict-reconstruction-obligation-audit",
+        "evaluator_version": "1.0",
+        "interpretation": "The missing strict-admission obligations are explicitly enumerated; candidate status does not predict successful strict reconstruction."
+      },
+      "manifest": "experiments/paper12/results/manifests/recommender.capabilities.json",
+      "ir": "experiments/paper12/results/ir/recommender.ir.json",
+      "compiler_output": "experiments/paper12/results/compiler-output/recommender.compiler-output.json",
+      "compiler_profile": "schemas/sofrs/paper12-analogue-compiler-profile-v1.0.json",
+      "assembly_profile": "schemas/sofrs/paper12-analogue-assembly-profile-v2.0.json",
+      "report": "experiments/paper12/results/reports/recommender.sofreport.json",
+      "classification_reason": "The frozen v1 envelope records user/item clusters and derived coverage shadows, but it does not bind the before/after operative matrices as explicit reconstruction artifacts.",
+      "normalized_legacy_sentinel_count": 88
+    },
+    {
+      "source": "experiments/paper12/archive/results/transformer.sofreport",
+      "source_digest": "c579c144676530207981937f9cf924f12df79d2eb296fff2053a841b91bb8dbb",
+      "producer": "experiments/paper12/transformer_activation_sof.py",
+      "producer_digest": "cb7111b986d0a8216e18a13e4eaeaeede4f7b2c89b886a1733f27f22c0a6ea2e",
+      "record_kind": "diagnostic_analogue",
+      "strict_reconstruction": {
+        "candidate_status": "yes",
+        "available_requirements": [
+          "finite_space_dimension",
+          "candidate_complete_partition",
+          "operator_family_descriptor"
+        ],
+        "missing_requirements": [
+          "explicit_operator_artifacts",
+          "projector_completeness_certificate",
+          "operator_artifact_source_digest_binding"
+        ],
+        "evaluator_id": "paper12.strict-reconstruction-obligation-audit",
+        "evaluator_version": "1.0",
+        "interpretation": "The missing strict-admission obligations are explicitly enumerated; candidate status does not predict successful strict reconstruction."
+      },
+      "manifest": "experiments/paper12/results/manifests/transformer.capabilities.json",
+      "ir": "experiments/paper12/results/ir/transformer.ir.json",
+      "compiler_output": "experiments/paper12/results/compiler-output/transformer.compiler-output.json",
+      "compiler_profile": "schemas/sofrs/paper12-analogue-compiler-profile-v1.0.json",
+      "assembly_profile": "schemas/sofrs/paper12-analogue-assembly-profile-v2.0.json",
+      "report": "experiments/paper12/results/reports/transformer.sofreport.json",
+      "classification_reason": "The frozen v1 envelope records finite token groups and derived shadows, but it does not bind the two operative matrices as an explicit reconstruction artifact.",
+      "normalized_legacy_sentinel_count": 0
+    },
+    {
+      "source": "experiments/paper12/archive/results/transformer_batch.sofreport",
+      "source_digest": "a41d928d002050e2ff5ca849481f99edda46d4dbb778687cf8dd4a45588fc99e",
+      "producer": "experiments/paper12/transformer_batch_sweep.py",
+      "producer_digest": "f81776939ab9b1a480420b483f4d7f22163f4ab5279a2ab634ac6455a4749ba7",
+      "record_kind": "diagnostic_analogue",
+      "strict_reconstruction": {
+        "candidate_status": "no",
+        "available_requirements": [],
+        "missing_requirements": [
+          "bounded_strict_reconstruction_obligation_not_declared"
+        ],
+        "evaluator_id": "paper12.strict-reconstruction-obligation-audit",
+        "evaluator_version": "1.0",
+        "interpretation": "No bounded strict-reconstruction obligation is declared for this migration row."
+      },
+      "manifest": "experiments/paper12/results/manifests/transformer_batch.capabilities.json",
+      "ir": "experiments/paper12/results/ir/transformer_batch.ir.json",
+      "compiler_output": "experiments/paper12/results/compiler-output/transformer_batch.compiler-output.json",
+      "compiler_profile": "schemas/sofrs/paper12-analogue-compiler-profile-v1.0.json",
+      "assembly_profile": "schemas/sofrs/paper12-analogue-assembly-profile-v2.0.json",
+      "report": "experiments/paper12/results/reports/transformer_batch.sofreport.json",
+      "classification_reason": "The v1 report aggregates 240-, 300-, and 360-dimensional realizations. The aggregate is not one fixed finite (V,Q,Y).",
+      "normalized_legacy_sentinel_count": 27
+    }
+  ]
+}

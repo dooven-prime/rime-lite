@@ -1,0 +1,30 @@
+{
+  "certificate_version": "1.0",
+  "certificate_id": "paper13.gridworld-f4.structure.v1",
+  "status": "PASS",
+  "checks": [
+    "dimension-25",
+    "complete-coordinate-sectorization",
+    "four-labelled-square-matrices",
+    "word-and-lie-conventions-declared"
+  ],
+  "source_artifacts": [
+    {
+      "uri": "experiments/paper13/results/native/gridworld-f4/sources/gridworld-reference.source.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "cb52babe5a1227c02f1f5ec2a3b57d93738ff2521db2eb6d5129f308dd6c5bd5"
+      }
+    },
+    {
+      "uri": "experiments/paper13/results/native/gridworld-f4/sources/gridworld-f4-target.source.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "fc8f814ede339bfbfff0b54d3e112193628f4d0aaee8a7a8da86ce19dcb52470"
+      }
+    }
+  ],
+  "negative_boundary": [
+    "This structure certificate is not the independent object-level comparison oracle."
+  ]
+}

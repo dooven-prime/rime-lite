@@ -41,13 +41,13 @@ canonical Rubik numerical invariants used across the early papers, see
 | Paper X | capability-aware compilation theory and SOF Registry evidence | Under which contracts can typed claims be compiled without manufacturing evidence or crossing carrier boundaries? |
 | Paper XI | typed wall records, profile-relative coordinates, multi-label taxonomy, and local-model eligibility | How can admitted wall data be organized without redefining walls or assigning an intrinsic type to the source system? |
 | Paper XII | versioned reporting protocol and epistemic boundary (SOFRS v2.0) | What does a compiled report represent, what remains the adapter's responsibility, and how are strict and analogue reports migrated with alignment-ready provenance? |
-| Paper XIII | Audit Profiles, SOF Report Alignment, sparse typed comparison maps, and fixed-fiber pseudometrics | How can two SOF Reports be aligned and compared without manufacturing unavailable coordinates? |
+| Paper XIII | Audit Profiles, SOF Report Alignment, sparse typed comparison maps, and fixed-frame pseudometrics | How can two SOF Reports be aligned and compared without manufacturing unavailable coordinates? |
 
 Development horizon:
 
 | Paper | Object | Question |
 |-------|--------|----------|
-| Paper XIV | context-indexed signature semantics $\operatorname{Sem}_{\Gamma,i}:\Delta_i\to\mathcal I_i$ | What does each alignment-signature difference mean before candidate actions and policy selection? |
+| Paper XIV | `SOFActionObject = (Delta_audit, K_ctx, Pi_policy, I_interp, A_cand)` | Under which admitted `ActionContext` and `PolicyProfile` can an audit difference be interpreted, and which bounded candidates are supported? |
 
 The artifact chain is:
 
@@ -55,12 +55,15 @@ The artifact chain is:
 typed SOF objects and findings
   -> .sofreport
   -> .sofaudit
-  -> .sofdecision
+  -> .sofaction
 ```
 
 The first artifact describes one declared realization, the second compares two
-aligned reports, and the third is policy-relative. None may be imported
-backward into the preceding layer.
+aligned reports, and the third interprets the immutable audit under an admitted
+`ActionContext` and the single normative `PolicyProfile`. A `.sofaction`
+artifact stops at bounded candidates; selection, authorization, observation,
+and effect belong to separate downstream contracts. No downstream artifact may
+be imported backward into the preceding layer.
 
 The expanded sections keep the objects and claim boundaries of Papers I--VII
 separate. Their shared computational realization does not create a formal
