@@ -6,8 +6,8 @@ finite-dimensional represented systems. The Rubik cube provides a concrete,
 reproducible, and highly noncommutative laboratory. It is used as a
 representation-theoretic testbed, not as a puzzle-solving problem.
 
-The public program arc covers Papers I--XIII and the Paper XIV development
-horizon. Public release identities, current versions, and DOIs are maintained
+The public program arc covers Papers I--XIV. Public release identities,
+current versions, and DOIs are maintained
 only in the root [Public Release table](../README.md#public-release). This
 overview describes semantic ownership rather than repository migration status.
 

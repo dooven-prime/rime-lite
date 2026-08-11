@@ -4,10 +4,10 @@ This file defines the public scope of the RIME paper series. It is a navigation
 and boundary document: what each paper studies, which files support it, and
 which claims should not be moved across paper boundaries.
 
-Current public release: Papers I--XIII, with CCS v2 retained as an optional
-non-paper archive. Paper XIV remains a development horizon. Publication
-identities belong to the root release table; repository manuscripts may carry
-explicitly labelled later-version candidates without mutating those releases.
+Current public release: Papers I--XIV, with CCS v2 retained as an optional
+non-paper archive. Publication identities belong to the root release table;
+repository manuscripts may carry explicitly labelled later-version candidates
+without mutating those releases.
 
 The repository typed stack uses the frozen Registry v2.0 snapshot together
 with SOFRS v2.0 and SOFAUDIT v2.0 versioned migrations. Their v1 artifacts
@@ -42,11 +42,6 @@ canonical Rubik numerical invariants used across the early papers, see
 | Paper XI | typed wall records, profile-relative coordinates, multi-label taxonomy, and local-model eligibility | How can admitted wall data be organized without redefining walls or assigning an intrinsic type to the source system? |
 | Paper XII | versioned reporting protocol and epistemic boundary (SOFRS v2.0) | What does a compiled report represent, what remains the adapter's responsibility, and how are strict and analogue reports migrated with alignment-ready provenance? |
 | Paper XIII | Audit Profiles, SOF Report Alignment, sparse typed comparison maps, and fixed-frame pseudometrics | How can two SOF Reports be aligned and compared without manufacturing unavailable coordinates? |
-
-Development horizon:
-
-| Paper | Object | Question |
-|-------|--------|----------|
 | Paper XIV | `SOFActionObject = (Delta_audit, K_ctx, Pi_policy, I_interp, A_cand)` | Under which admitted `ActionContext` and `PolicyProfile` can an audit difference be interpreted, and which bounded candidates are supported? |
 
 The artifact chain is:

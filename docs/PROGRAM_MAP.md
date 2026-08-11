@@ -196,7 +196,7 @@ SOFAUDIT comparison states are interpreted as follows:
 | `INCOMPARABLE` | the declarations exist but no valid comparison map or convention is available |
 | `UNRESOLVED` | comparison was requested but the required check did not reach a conclusion |
 
-Paper XIV is the downstream horizon. It studies context- and policy-relative
+Paper XIV is the downstream action-semantics layer. It studies context- and policy-relative
 interpretation of aligned coordinates and their conversion into structured
 bounded candidate-action records. Difference alone is not defect, and no
 candidate follows from a Paper XIII mismatch without an admitted

@@ -1,9 +1,10 @@
 # Paper XIV Experiment Layout
 
-This directory supports the current unpublished Paper XIV draft. The
-manuscript, v2 schema, implementation, generated artifacts, and hostile focused
-tests use the same SOFActionObject interface. Paper XIV has no published or
-frozen release identity.
+This directory supports the published Paper XIV v2 contract and its retained
+release evidence. The manuscript, v2 schema, implementation, generated
+artifacts, and focused hostile tests use the same SOFActionObject interface.
+The immutable publication identity is listed in the repository's root release
+table.
 
 The current implementation is:
 
@@ -40,7 +41,8 @@ Selected plans, authorization receipts, post-action observations, and causal
 effect certificates are reserved for future `.sofplan`, `.sofauth`,
 `.sofoutcome`, and `.sofeffect` contracts.
 
-Figures and PDF builds remain draft artifacts until a release is declared.
+The source-addressed results and receipts are release evidence; figures remain
+derived summaries rather than independent evidence.
 
 ## Run
 

@@ -76,7 +76,7 @@ moving fields, or represented genericity.
 
 ## Repository Boundary
 
-The public documentation covers the Papers I--XIII architecture and the Paper
-XIV development horizon. Author-side planning, exploratory research routing,
+The public documentation covers the Papers I--XIV architecture. Author-side
+planning, exploratory research routing,
 release migration status, and historical working notes are outside this public
 documentation index.

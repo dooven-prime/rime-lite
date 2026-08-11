@@ -2,7 +2,7 @@
 
 **Status:** public philosophy note for the RIME program. This file explains the
 Rubik-as-laboratory stance and the sectorization bridge from the early papers to
-Papers VIII--XIII, with Paper XIV as a development horizon. It is not a proof source; paper manuscripts and
+Papers VIII--XIV. It is not a proof source; paper manuscripts and
 [PROGRAM_MAP.md](PROGRAM_MAP.md) control theorem boundaries.
 
 Program invariant:
@@ -146,7 +146,7 @@ This is the current clean separation:
 | Wall Records | Paper XI contribution | stores carrier-qualified wall deltas and derives record-level taxonomy profiles |
 | Reporting Protocol | Paper XII contribution | serializes one declared realization as a versioned, alignment-ready SOF Report |
 | Audit Comparison | Paper XIII contribution | aligns two reports and emits a sparse typed comparison object |
-| Action Semantics | Paper XIV horizon | interprets immutable audit coordinates under an admitted `ActionContext` and `PolicyProfile` and stops at bounded candidates |
+| Action Semantics | Paper XIV contribution | interprets immutable audit coordinates under an admitted `ActionContext` and `PolicyProfile` and stops at bounded candidates |
 
 The novelty of RIME is not the existence of a semisimple block decomposition.
 That is the classical input for representation-derived examples. The novelty
