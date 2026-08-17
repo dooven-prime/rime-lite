@@ -338,7 +338,7 @@
   "runtime": {
     "numpy": "2.1.3",
     "python": "3.13.0",
-    "script_sha256": "a9fa475eea006726a72f516648292cf31eceea77370689d79ad6d227d78c7b72"
+    "script_sha256": "9c514a103dc88dff8afa098953619c390f3f2c77283f1323bd8028c8b1115659"
   },
   "schema": "paper7.full-array-lie-atlas.v2",
   "system_count": 80,

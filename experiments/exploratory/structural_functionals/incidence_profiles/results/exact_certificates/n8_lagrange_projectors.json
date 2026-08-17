@@ -1,0 +1,603 @@
+{
+  "assumptions": [
+    "M is diagonalizable over Q(sqrt(5), zeta_3)",
+    "the supplied mu_j are the complete exact distinct spectrum of M",
+    "the target sector is the mu_j eigenspace"
+  ],
+  "certificate_kind": "conditional_exact_algebraic",
+  "claim_status": "Computational Certificate",
+  "field": "Q(sqrt(5))",
+  "projector_polynomials": [
+    {
+      "evaluations": [
+        {
+          "expression": "1",
+          "rational": "1",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        }
+      ],
+      "polynomial_coefficients_low_to_high": [
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "-5",
+          "rational": "-5",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "170/3",
+          "rational": "170/3",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "-728/3",
+          "rational": "-728/3",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "1472/3",
+          "rational": "1472/3",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "-1408/3",
+          "rational": "-1408/3",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "512/3",
+          "rational": "512/3",
+          "sqrt5": "0"
+        }
+      ],
+      "sector": 0
+    },
+    {
+      "evaluations": [
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "1",
+          "rational": "1",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        }
+      ],
+      "polynomial_coefficients_low_to_high": [
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "(-48) + (144/5)*sqrt(5)",
+          "rational": "-48",
+          "sqrt5": "144/5"
+        },
+        {
+          "expression": "(2192/5) + (-1392/5)*sqrt(5)",
+          "rational": "2192/5",
+          "sqrt5": "-1392/5"
+        },
+        {
+          "expression": "(-1440) + (992)*sqrt(5)",
+          "rational": "-1440",
+          "sqrt5": "992"
+        },
+        {
+          "expression": "(2176) + (-1664)*sqrt(5)",
+          "rational": "2176",
+          "sqrt5": "-1664"
+        },
+        {
+          "expression": "(-1536) + (6656/5)*sqrt(5)",
+          "rational": "-1536",
+          "sqrt5": "6656/5"
+        },
+        {
+          "expression": "(2048/5) + (-2048/5)*sqrt(5)",
+          "rational": "2048/5",
+          "sqrt5": "-2048/5"
+        }
+      ],
+      "sector": 1
+    },
+    {
+      "evaluations": [
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "1",
+          "rational": "1",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        }
+      ],
+      "polynomial_coefficients_low_to_high": [
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "-80/3",
+          "rational": "-80/3",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "880/3",
+          "rational": "880/3",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "-3616/3",
+          "rational": "-3616/3",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "2304",
+          "rational": "2304",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "-2048",
+          "rational": "-2048",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "2048/3",
+          "rational": "2048/3",
+          "sqrt5": "0"
+        }
+      ],
+      "sector": 2
+    },
+    {
+      "evaluations": [
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "1",
+          "rational": "1",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        }
+      ],
+      "polynomial_coefficients_low_to_high": [
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "60",
+          "rational": "60",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "-620",
+          "rational": "-620",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "2352",
+          "rational": "2352",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "-4096",
+          "rational": "-4096",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "3328",
+          "rational": "3328",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "-1024",
+          "rational": "-1024",
+          "sqrt5": "0"
+        }
+      ],
+      "sector": 3
+    },
+    {
+      "evaluations": [
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "1",
+          "rational": "1",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        }
+      ],
+      "polynomial_coefficients_low_to_high": [
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "(-48) + (-144/5)*sqrt(5)",
+          "rational": "-48",
+          "sqrt5": "-144/5"
+        },
+        {
+          "expression": "(2192/5) + (1392/5)*sqrt(5)",
+          "rational": "2192/5",
+          "sqrt5": "1392/5"
+        },
+        {
+          "expression": "(-1440) + (-992)*sqrt(5)",
+          "rational": "-1440",
+          "sqrt5": "-992"
+        },
+        {
+          "expression": "(2176) + (1664)*sqrt(5)",
+          "rational": "2176",
+          "sqrt5": "1664"
+        },
+        {
+          "expression": "(-1536) + (-6656/5)*sqrt(5)",
+          "rational": "-1536",
+          "sqrt5": "-6656/5"
+        },
+        {
+          "expression": "(2048/5) + (2048/5)*sqrt(5)",
+          "rational": "2048/5",
+          "sqrt5": "2048/5"
+        }
+      ],
+      "sector": 4
+    },
+    {
+      "evaluations": [
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "1",
+          "rational": "1",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        }
+      ],
+      "polynomial_coefficients_low_to_high": [
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "80",
+          "rational": "80",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "-2000/3",
+          "rational": "-2000/3",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "6368/3",
+          "rational": "6368/3",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "-9728/3",
+          "rational": "-9728/3",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "7168/3",
+          "rational": "7168/3",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "-2048/3",
+          "rational": "-2048/3",
+          "sqrt5": "0"
+        }
+      ],
+      "sector": 5
+    },
+    {
+      "evaluations": [
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "1",
+          "rational": "1",
+          "sqrt5": "0"
+        }
+      ],
+      "polynomial_coefficients_low_to_high": [
+        {
+          "expression": "1",
+          "rational": "1",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "-37/3",
+          "rational": "-37/3",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "898/15",
+          "rational": "898/15",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "-440/3",
+          "rational": "-440/3",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "192",
+          "rational": "192",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "-128",
+          "rational": "-128",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "512/15",
+          "rational": "512/15",
+          "sqrt5": "0"
+        }
+      ],
+      "sector": 6
+    }
+  ],
+  "promotion_boundary": "Exact interpolation is verified. Numerical recognition of the spectrum does not discharge the serialized exact-spectrum assumptions.",
+  "provenance": {
+    "source_artifacts": [
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/make_exact_certificates.py",
+        "sha256": "58c9ba027f7215316c8d98e253141c81b5f9ab03f1c9ad2ac035f31a89d4bdda"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/incidence_profiles.py",
+        "sha256": "e8b3854c3530d482f0c230a0eb69e5887634bb6242add12b97a356b8f001ef6c"
+      }
+    ]
+  },
+  "separating_eigenvalues": [
+    {
+      "expression": "1",
+      "rational": "1",
+      "sqrt5": "0"
+    },
+    {
+      "expression": "(5/8) + (1/8)*sqrt(5)",
+      "rational": "5/8",
+      "sqrt5": "1/8"
+    },
+    {
+      "expression": "3/4",
+      "rational": "3/4",
+      "sqrt5": "0"
+    },
+    {
+      "expression": "1/2",
+      "rational": "1/2",
+      "sqrt5": "0"
+    },
+    {
+      "expression": "(5/8) + (-1/8)*sqrt(5)",
+      "rational": "5/8",
+      "sqrt5": "-1/8"
+    },
+    {
+      "expression": "1/4",
+      "rational": "1/4",
+      "sqrt5": "0"
+    },
+    {
+      "expression": "0",
+      "rational": "0",
+      "sqrt5": "0"
+    }
+  ],
+  "statement": "P_j = product_{l != j}(M-mu_l I)/(mu_j-mu_l)",
+  "verified_interpolation_identity": true
+}

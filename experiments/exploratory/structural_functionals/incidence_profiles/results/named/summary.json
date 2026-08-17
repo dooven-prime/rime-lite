@@ -1,0 +1,22 @@
+[
+  {
+    "class_counts": {
+      "unprotected_nonzero": 896,
+      "unprotected_zero": 256
+    },
+    "distinct_zero_triples": 4,
+    "elapsed_seconds": 1.0179979000240564,
+    "family": "axes02_qt",
+    "protected_fraction": 0.0,
+    "protected_routes": 0,
+    "protocol": "fixed_full",
+    "total_supported_routes": 1152,
+    "unprotected_routes": 1152,
+    "unprotected_zero": 256,
+    "zero_mechanism_counts": {
+      "physical_carrier_forced": 256
+    },
+    "zero_over_all_supported": 0.2222222222222222,
+    "zero_over_unprotected": 0.2222222222222222
+  }
+]

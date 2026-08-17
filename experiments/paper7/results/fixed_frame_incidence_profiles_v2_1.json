@@ -284,19 +284,19 @@
     "source_artifacts": {
       "axis_rotation_control": {
         "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/exact_certificates/drop_axis0_vs_axis2_ht.json",
-        "sha256": "967926d7c82f7b6acde70f501e2b3ab968b69cd502ee6d0797e18651ea8b5690"
+        "sha256": "eee218a342cac09e9a8ad48a6b241071db3e6e42f9143fc613610f05b77cb604"
       },
       "canonical_carrier_certificate": {
         "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/exact_certificates/canonical_carrier_zero_products.json",
-        "sha256": "4ab2689b74a3abe7437989e2ffef893f0640dc81067286ce291a6733201bc4d3"
+        "sha256": "69d818eb3dc4584d3cfa47405c561673b595ff1c603ef2d518dcc8795a9faa1e"
       },
       "family_index": {
         "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_family_index.json",
-        "sha256": "dd8e3378979dc32a191646dfd8f95e9279618cac9fed6785bea0fe2e82135134"
+        "sha256": "3b7041369d719dc59c426fa3ad95de93454bfe3cf654c63aa755f0568d157841"
       },
       "fixed_summary": {
         "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed_summary.json",
-        "sha256": "c831bb95b7d99dcbced1762915e56ab6d74aeee05c758f0a441a35d507ff5d72"
+        "sha256": "a3e69660547ba739068ad3d4acf85625cee1ceaa7da7036c7f61b1aed17988be"
       }
     }
   },

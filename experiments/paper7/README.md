@@ -52,5 +52,7 @@ ordinary validation must omit it.
 
 ```bash
 python experiments/paper7/validation/structured_incidence_geometry.py
+python experiments/exploratory/structural_functionals/incidence_profiles/test_incidence_profiles.py
+python experiments/exploratory/structural_functionals/incidence_profiles/validate_results.py
 python experiments/paper7/validation/register_fixed_frame_profiles.py
 ```

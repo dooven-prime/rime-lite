@@ -1,0 +1,524 @@
+{
+  "all_scientific_fields_match": true,
+  "boundary": "The certificate checks migrated scientific fields against historical bytes. It does not make the historical repository a runtime dependency and does not itself promote any artifact into Paper VII evidence; promotion requires a separate paper-local registration.",
+  "certificate_kind": "finite_migration_equivalence",
+  "claim_status": "Computational Certificate",
+  "comparison_policy": {
+    "absolute_tolerance": 1e-11,
+    "ignored_fields": [
+      "claim_status",
+      "provenance",
+      "historical single-index overlap/containment tie-break selectors"
+    ],
+    "non_numeric_fields": "exact equality",
+    "relative_tolerance": 1e-11
+  },
+  "historical_source_label": "local pre-migration rime incidence-profile snapshot",
+  "maximum_compared_numeric_delta": 8.526512829121202e-14,
+  "profile_count": 38,
+  "provenance": {
+    "source_artifacts": [
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/compare_historical.py",
+        "sha256": "3d767aaafeb02e29917a52e5e7bf0368e1820ff7a4335a4a575e675960a29e30"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-00__fixed_full.json",
+        "sha256": "3749c40a76a03cf9d4218d8d29bb97d8bc7af8951949304add66ce5a362acd73"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-01__fixed_full.json",
+        "sha256": "4ece7e56f35ad2f09e03e788167674c1f48080e4ed5caeb1589990f540d671e4"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-02__fixed_full.json",
+        "sha256": "350d4b5ffd61a236ebe40e378a99b1d8a23a2324f3e15ef63289b085ec3220e5"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-03__fixed_full.json",
+        "sha256": "b5c00b58502fbcc3998fc02b0e3a8cd6347ab4c0b43a4f369ffd8466dd7278c9"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-04__fixed_full.json",
+        "sha256": "02651b86ac9739b19021d923cb8be54a155a6026c7e2c5eafcd684219ecce120"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-05__fixed_full.json",
+        "sha256": "85cb9e991d9b1d83e63eb78c9a5ed94d2a87613f541eb471f396d98b76651a11"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-06__fixed_full.json",
+        "sha256": "b53a633e54f4ca5fb5a25c9ec1d4454c73d6cbe0910ed516eb9e1919f220da95"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-07__fixed_full.json",
+        "sha256": "2343fcfaf732de966d160d527132ffe5b9a0e0828a7b796d5a117f39fb3833ec"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-08__fixed_full.json",
+        "sha256": "3756d99b2b0b05a07dbcc619c52f984f9c6c604dec42075fca907179d541e9ab"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-09__fixed_full.json",
+        "sha256": "ff8365b5d4bbd57a2e367eb063d6849dfdff80eaa61d7ad3ac466a6c9e81141c"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-10__fixed_full.json",
+        "sha256": "6259044013233c2e3763ebbc05cae33138efb61008a69b8a07cb85819eefd94f"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-11__fixed_full.json",
+        "sha256": "8c09701c32f1efa0c46dc31af66c0a8a03088933f71053d085e0cbfe1549daa9"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-12__fixed_full.json",
+        "sha256": "aa70effcb6a9d9b22499688367650574f5c5ff79a8b68d20f99d7440883ccca4"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-13__fixed_full.json",
+        "sha256": "1ee787521db4de1cc9da6ef08c8e8432eb3e1cbeb7ecaa22396aaf45c2d99e44"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-14__fixed_full.json",
+        "sha256": "d922cc6860fb734b1b7f486504a91839c9ed1ae17904d16ab6ed05ccef403f39"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-15__fixed_full.json",
+        "sha256": "a3b4c6a157f39b5802f74331d707dac58f38258cacd12f2acbb7a91ae7fbba61"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-16__fixed_full.json",
+        "sha256": "49455547f3f39a0beb0980f6b0332f17cac061dc87989f10c23c01106a3c669d"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-17__fixed_full.json",
+        "sha256": "7f1d9e1c2ee578e36fe370faee630b58ce4309a3605813233d5c3d956d792ef4"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-18__fixed_full.json",
+        "sha256": "7c61df63083f8490685cbcad8d830179d39f6cd3b8f17836f461983c31b4d159"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_endogenous/axis-balanced-00__endogenous.json",
+        "sha256": "43e53d8e8efb01d7b1bbfa8610d1b271704b5ad2ebabbb365f0d0ed0b41fe74d"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_endogenous/axis-balanced-01__endogenous.json",
+        "sha256": "cb448409c515633fabe7d8d6e603ff6c67fd0da019a880765deb9d4fca1b028c"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_endogenous/axis-balanced-02__endogenous.json",
+        "sha256": "2f07838349de0d6a929cb603cebdd2d60b1efc2c743635c14e40edc6da766723"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_endogenous/axis-balanced-03__endogenous.json",
+        "sha256": "760ba3dd2f8194e72ee6958071ac38499df1a2b1e5542d94f5892e2c9224eb82"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_endogenous/axis-balanced-04__endogenous.json",
+        "sha256": "31afd5d79e86eb92e3e910078a08a1ebc955db280a7579145e0aee8aa10687b4"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_endogenous/axis-balanced-05__endogenous.json",
+        "sha256": "231aea9ea7a42458fba281c45e5dd7e099d08ba336d0d36693ed7dac9a948aa7"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_endogenous/axis-balanced-06__endogenous.json",
+        "sha256": "8125e2783b5b3e0d923c28c98abb0aee2d991b8d8f99ff926b5935ab5e36e929"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_endogenous/axis-balanced-07__endogenous.json",
+        "sha256": "66f978f46dd7701bdb6ff13ee565395c95e815fd8f469018421af6df36a697bb"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_endogenous/axis-balanced-08__endogenous.json",
+        "sha256": "10f2bcf9586cbd16e5b8e4ddf2260c3810b01b1fd46f986d7a16fda32a13c631"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_endogenous/axis-balanced-09__endogenous.json",
+        "sha256": "c9f18382eedae0ff04be7c113767168c8d77aa8f8da64a632aa04a65dfd2a821"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_endogenous/axis-balanced-10__endogenous.json",
+        "sha256": "ab5e3a46037687d8a928c0b4fe38bf301727d9b84277ba3bc8f17b104e8476e9"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_endogenous/axis-balanced-11__endogenous.json",
+        "sha256": "ddd929ba4c2e913be0a75485b581ed05ba8f39b642a3f977312c49db41cd6f69"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_endogenous/axis-balanced-12__endogenous.json",
+        "sha256": "2eaddce124473884a4ed3028b531143d914def07dadf10a84b50db57731f2d13"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_endogenous/axis-balanced-13__endogenous.json",
+        "sha256": "a04d0dd37ac99e47dc9c077b275ba92bf784044a4894dac4cdf8285e7da1e458"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_endogenous/axis-balanced-14__endogenous.json",
+        "sha256": "7f3ca7a4aabc2fd8b7ad33b79ff8bab6865c0f3c7d7c4a350f0f8fb87d00c017"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_endogenous/axis-balanced-15__endogenous.json",
+        "sha256": "660ef3eaea56ce5116cb4619de4725284c996a0fecb644a6d07db0d0337269ed"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_endogenous/axis-balanced-16__endogenous.json",
+        "sha256": "1bff371f6da0d9388ab26e17153833b1de20c26023aac1d656280f81038ef941"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_endogenous/axis-balanced-17__endogenous.json",
+        "sha256": "95f2bc984b860f78001596bdfb8a7c2bea072c4be7bd66d3c20748465a23ded5"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_endogenous/axis-balanced-18__endogenous.json",
+        "sha256": "9dc106528b7b5d241ca38f852e3069c5fc2aa570a6282e05f4f954ec02bdef4a"
+      }
+    ]
+  },
+  "records": [
+    {
+      "file": "axis-balanced-00__fixed_full.json",
+      "historical_sha256": "c7f81a0fbd8e70b7c24de8e4ce9301cd025c5feaeaf6a9c285338fce9564a5ec",
+      "maximum_compared_numeric_delta": 5.329070518200751e-15,
+      "migrated_sha256": "3749c40a76a03cf9d4218d8d29bb97d8bc7af8951949304add66ce5a362acd73",
+      "mismatches": [],
+      "protocol_directory": "axis_balanced_fixed",
+      "scientific_fields_match": true
+    },
+    {
+      "file": "axis-balanced-01__fixed_full.json",
+      "historical_sha256": "bb6aaadb3b26f45123ea79ac0b16833fc1f14e1b0fd370f28590aca172dcff85",
+      "maximum_compared_numeric_delta": 5.329070518200751e-15,
+      "migrated_sha256": "4ece7e56f35ad2f09e03e788167674c1f48080e4ed5caeb1589990f540d671e4",
+      "mismatches": [],
+      "protocol_directory": "axis_balanced_fixed",
+      "scientific_fields_match": true
+    },
+    {
+      "file": "axis-balanced-02__fixed_full.json",
+      "historical_sha256": "498690b0d9d7401b63266336ed4172f721c94b9705a9e1776396a0a51780b9fc",
+      "maximum_compared_numeric_delta": 5.329070518200751e-15,
+      "migrated_sha256": "350d4b5ffd61a236ebe40e378a99b1d8a23a2324f3e15ef63289b085ec3220e5",
+      "mismatches": [],
+      "protocol_directory": "axis_balanced_fixed",
+      "scientific_fields_match": true
+    },
+    {
+      "file": "axis-balanced-03__fixed_full.json",
+      "historical_sha256": "3cb3e70061c7a7677f2cab2723b8deaa0d2527dfb9eccd01c85186cd03d38760",
+      "maximum_compared_numeric_delta": 5.329070518200751e-15,
+      "migrated_sha256": "b5c00b58502fbcc3998fc02b0e3a8cd6347ab4c0b43a4f369ffd8466dd7278c9",
+      "mismatches": [],
+      "protocol_directory": "axis_balanced_fixed",
+      "scientific_fields_match": true
+    },
+    {
+      "file": "axis-balanced-04__fixed_full.json",
+      "historical_sha256": "71cd4b722b4639de88a805e4bce7f071443dd322f349f32a40e9055261905f95",
+      "maximum_compared_numeric_delta": 5.329070518200751e-15,
+      "migrated_sha256": "02651b86ac9739b19021d923cb8be54a155a6026c7e2c5eafcd684219ecce120",
+      "mismatches": [],
+      "protocol_directory": "axis_balanced_fixed",
+      "scientific_fields_match": true
+    },
+    {
+      "file": "axis-balanced-05__fixed_full.json",
+      "historical_sha256": "a2bbecc04bf021f604ff065d6262e1f1b093adbbeac741d63dc5f899c4a7f94e",
+      "maximum_compared_numeric_delta": 5.329070518200751e-15,
+      "migrated_sha256": "85cb9e991d9b1d83e63eb78c9a5ed94d2a87613f541eb471f396d98b76651a11",
+      "mismatches": [],
+      "protocol_directory": "axis_balanced_fixed",
+      "scientific_fields_match": true
+    },
+    {
+      "file": "axis-balanced-06__fixed_full.json",
+      "historical_sha256": "c1292439dcb26619cdc9957f5755ffdcd1b1949f5ee101beec5bd12867f6c7bb",
+      "maximum_compared_numeric_delta": 5.329070518200751e-15,
+      "migrated_sha256": "b53a633e54f4ca5fb5a25c9ec1d4454c73d6cbe0910ed516eb9e1919f220da95",
+      "mismatches": [],
+      "protocol_directory": "axis_balanced_fixed",
+      "scientific_fields_match": true
+    },
+    {
+      "file": "axis-balanced-07__fixed_full.json",
+      "historical_sha256": "efe6f19c28445c8c7b1ffc7732b015245290cd8c7f2f065086b8b484e922a8bc",
+      "maximum_compared_numeric_delta": 5.329070518200751e-15,
+      "migrated_sha256": "2343fcfaf732de966d160d527132ffe5b9a0e0828a7b796d5a117f39fb3833ec",
+      "mismatches": [],
+      "protocol_directory": "axis_balanced_fixed",
+      "scientific_fields_match": true
+    },
+    {
+      "file": "axis-balanced-08__fixed_full.json",
+      "historical_sha256": "a712c3e66bc72a7ccbc5f10b40968f826b28338a6842504efc70097570c2461e",
+      "maximum_compared_numeric_delta": 5.329070518200751e-15,
+      "migrated_sha256": "3756d99b2b0b05a07dbcc619c52f984f9c6c604dec42075fca907179d541e9ab",
+      "mismatches": [],
+      "protocol_directory": "axis_balanced_fixed",
+      "scientific_fields_match": true
+    },
+    {
+      "file": "axis-balanced-09__fixed_full.json",
+      "historical_sha256": "8d53a910c8cef1bc9ba53f1bc6ea693f0cb8148ca6a383ad63651e802abe8208",
+      "maximum_compared_numeric_delta": 5.329070518200751e-15,
+      "migrated_sha256": "ff8365b5d4bbd57a2e367eb063d6849dfdff80eaa61d7ad3ac466a6c9e81141c",
+      "mismatches": [],
+      "protocol_directory": "axis_balanced_fixed",
+      "scientific_fields_match": true
+    },
+    {
+      "file": "axis-balanced-10__fixed_full.json",
+      "historical_sha256": "9f1b481f153b77f73bf616d96d8bcf96cdc46746c62763aa887f47f0d64c3135",
+      "maximum_compared_numeric_delta": 5.329070518200751e-15,
+      "migrated_sha256": "6259044013233c2e3763ebbc05cae33138efb61008a69b8a07cb85819eefd94f",
+      "mismatches": [],
+      "protocol_directory": "axis_balanced_fixed",
+      "scientific_fields_match": true
+    },
+    {
+      "file": "axis-balanced-11__fixed_full.json",
+      "historical_sha256": "9c2aac7be4d858442934e34766d11e2c2403041ee6742b915bb736d81e3a52bb",
+      "maximum_compared_numeric_delta": 5.329070518200751e-15,
+      "migrated_sha256": "8c09701c32f1efa0c46dc31af66c0a8a03088933f71053d085e0cbfe1549daa9",
+      "mismatches": [],
+      "protocol_directory": "axis_balanced_fixed",
+      "scientific_fields_match": true
+    },
+    {
+      "file": "axis-balanced-12__fixed_full.json",
+      "historical_sha256": "b49fb99330f7b81fab9aa3ce71d132ade700172408d709b8e1b76f91302247b9",
+      "maximum_compared_numeric_delta": 5.329070518200751e-15,
+      "migrated_sha256": "aa70effcb6a9d9b22499688367650574f5c5ff79a8b68d20f99d7440883ccca4",
+      "mismatches": [],
+      "protocol_directory": "axis_balanced_fixed",
+      "scientific_fields_match": true
+    },
+    {
+      "file": "axis-balanced-13__fixed_full.json",
+      "historical_sha256": "d143acf6f69809989fa8529ae0f911df870eeb4b1fddced2f591c9ad588c3c22",
+      "maximum_compared_numeric_delta": 5.329070518200751e-15,
+      "migrated_sha256": "1ee787521db4de1cc9da6ef08c8e8432eb3e1cbeb7ecaa22396aaf45c2d99e44",
+      "mismatches": [],
+      "protocol_directory": "axis_balanced_fixed",
+      "scientific_fields_match": true
+    },
+    {
+      "file": "axis-balanced-14__fixed_full.json",
+      "historical_sha256": "9691f91a2a72705ed9dfdffae52f4acc7227ec93ec09b150fa516dc08f7f921a",
+      "maximum_compared_numeric_delta": 5.329070518200751e-15,
+      "migrated_sha256": "d922cc6860fb734b1b7f486504a91839c9ed1ae17904d16ab6ed05ccef403f39",
+      "mismatches": [],
+      "protocol_directory": "axis_balanced_fixed",
+      "scientific_fields_match": true
+    },
+    {
+      "file": "axis-balanced-15__fixed_full.json",
+      "historical_sha256": "9725ff5b249be7b129cc589faf38a4f923dd0d07e5ae80c2f707e1a279802de3",
+      "maximum_compared_numeric_delta": 5.329070518200751e-15,
+      "migrated_sha256": "a3b4c6a157f39b5802f74331d707dac58f38258cacd12f2acbb7a91ae7fbba61",
+      "mismatches": [],
+      "protocol_directory": "axis_balanced_fixed",
+      "scientific_fields_match": true
+    },
+    {
+      "file": "axis-balanced-16__fixed_full.json",
+      "historical_sha256": "80fcd224fb342921bf8db689753228e3fa8e546745b64d60578d80c0e8ddc99c",
+      "maximum_compared_numeric_delta": 5.329070518200751e-15,
+      "migrated_sha256": "49455547f3f39a0beb0980f6b0332f17cac061dc87989f10c23c01106a3c669d",
+      "mismatches": [],
+      "protocol_directory": "axis_balanced_fixed",
+      "scientific_fields_match": true
+    },
+    {
+      "file": "axis-balanced-17__fixed_full.json",
+      "historical_sha256": "c9a3235d4ace1537d000b39406cd26de94acecbce6fecbe343145d33a66054d4",
+      "maximum_compared_numeric_delta": 5.329070518200751e-15,
+      "migrated_sha256": "7f1d9e1c2ee578e36fe370faee630b58ce4309a3605813233d5c3d956d792ef4",
+      "mismatches": [],
+      "protocol_directory": "axis_balanced_fixed",
+      "scientific_fields_match": true
+    },
+    {
+      "file": "axis-balanced-18__fixed_full.json",
+      "historical_sha256": "7254194603c3feb5ae3caff849c4d986f49daa941d7ae61e890672c3746e8593",
+      "maximum_compared_numeric_delta": 5.329070518200751e-15,
+      "migrated_sha256": "7c61df63083f8490685cbcad8d830179d39f6cd3b8f17836f461983c31b4d159",
+      "mismatches": [],
+      "protocol_directory": "axis_balanced_fixed",
+      "scientific_fields_match": true
+    },
+    {
+      "file": "axis-balanced-00__endogenous.json",
+      "historical_sha256": "95b4aa8e0cba54e3d00493f96876c5a403985ec434bda88ea88cccb265b92350",
+      "maximum_compared_numeric_delta": 3.552713678800501e-14,
+      "migrated_sha256": "43e53d8e8efb01d7b1bbfa8610d1b271704b5ad2ebabbb365f0d0ed0b41fe74d",
+      "mismatches": [],
+      "protocol_directory": "axis_balanced_endogenous",
+      "scientific_fields_match": true
+    },
+    {
+      "file": "axis-balanced-01__endogenous.json",
+      "historical_sha256": "dc1ec0a7c9c40e263a310faeec3297c3c3a41f0fc4bc6fe8a6adc7687f082b96",
+      "maximum_compared_numeric_delta": 3.197442310920451e-14,
+      "migrated_sha256": "cb448409c515633fabe7d8d6e603ff6c67fd0da019a880765deb9d4fca1b028c",
+      "mismatches": [],
+      "protocol_directory": "axis_balanced_endogenous",
+      "scientific_fields_match": true
+    },
+    {
+      "file": "axis-balanced-02__endogenous.json",
+      "historical_sha256": "f05648fe608a1338f046284acee5049ce71df7a6f852c1b027857b08913b9e55",
+      "maximum_compared_numeric_delta": 2.842170943040401e-14,
+      "migrated_sha256": "2f07838349de0d6a929cb603cebdd2d60b1efc2c743635c14e40edc6da766723",
+      "mismatches": [],
+      "protocol_directory": "axis_balanced_endogenous",
+      "scientific_fields_match": true
+    },
+    {
+      "file": "axis-balanced-03__endogenous.json",
+      "historical_sha256": "7f3ffc8f48c2e68b8206c88f8cc2345cf69e0297d30caad9d2cfbf42f026550a",
+      "maximum_compared_numeric_delta": 5.3290705182007514e-14,
+      "migrated_sha256": "760ba3dd2f8194e72ee6958071ac38499df1a2b1e5542d94f5892e2c9224eb82",
+      "mismatches": [],
+      "protocol_directory": "axis_balanced_endogenous",
+      "scientific_fields_match": true
+    },
+    {
+      "file": "axis-balanced-04__endogenous.json",
+      "historical_sha256": "91e6d3d0934f1101734f71599140c772dfa8eaaff03a403acf15cd8f3ffa5de9",
+      "maximum_compared_numeric_delta": 7.105427357601002e-15,
+      "migrated_sha256": "31afd5d79e86eb92e3e910078a08a1ebc955db280a7579145e0aee8aa10687b4",
+      "mismatches": [],
+      "protocol_directory": "axis_balanced_endogenous",
+      "scientific_fields_match": true
+    },
+    {
+      "file": "axis-balanced-05__endogenous.json",
+      "historical_sha256": "2e7470882526e70d9dd03dd56e9e6713559786151e0f5bcce95cad98cd6c2ebd",
+      "maximum_compared_numeric_delta": 5.684341886080802e-14,
+      "migrated_sha256": "231aea9ea7a42458fba281c45e5dd7e099d08ba336d0d36693ed7dac9a948aa7",
+      "mismatches": [],
+      "protocol_directory": "axis_balanced_endogenous",
+      "scientific_fields_match": true
+    },
+    {
+      "file": "axis-balanced-06__endogenous.json",
+      "historical_sha256": "25a5524e65bb90698d48ff9445f06de17c3010a876d77c0c05930b257ec30367",
+      "maximum_compared_numeric_delta": 4.263256414560601e-14,
+      "migrated_sha256": "8125e2783b5b3e0d923c28c98abb0aee2d991b8d8f99ff926b5935ab5e36e929",
+      "mismatches": [],
+      "protocol_directory": "axis_balanced_endogenous",
+      "scientific_fields_match": true
+    },
+    {
+      "file": "axis-balanced-07__endogenous.json",
+      "historical_sha256": "5feb71625dd79eab7f509295efb53e992e0362cfe54fe05e2996ed959c30e867",
+      "maximum_compared_numeric_delta": 5.684341886080802e-14,
+      "migrated_sha256": "66f978f46dd7701bdb6ff13ee565395c95e815fd8f469018421af6df36a697bb",
+      "mismatches": [],
+      "protocol_directory": "axis_balanced_endogenous",
+      "scientific_fields_match": true
+    },
+    {
+      "file": "axis-balanced-08__endogenous.json",
+      "historical_sha256": "4b94288683b24080c7f4556e1e4f2d0c1e1c3ec18bf1f75674a7e75998158d97",
+      "maximum_compared_numeric_delta": 3.552713678800501e-14,
+      "migrated_sha256": "10f2bcf9586cbd16e5b8e4ddf2260c3810b01b1fd46f986d7a16fda32a13c631",
+      "mismatches": [],
+      "protocol_directory": "axis_balanced_endogenous",
+      "scientific_fields_match": true
+    },
+    {
+      "file": "axis-balanced-09__endogenous.json",
+      "historical_sha256": "c1fe9de270e3c23d92d11fa154cd34417184e843977325460b05f2b5eadc7859",
+      "maximum_compared_numeric_delta": 2.4868995751603507e-14,
+      "migrated_sha256": "c9f18382eedae0ff04be7c113767168c8d77aa8f8da64a632aa04a65dfd2a821",
+      "mismatches": [],
+      "protocol_directory": "axis_balanced_endogenous",
+      "scientific_fields_match": true
+    },
+    {
+      "file": "axis-balanced-10__endogenous.json",
+      "historical_sha256": "3399c63800f39b3b73487c4b83a05a634c7be7f6aaff6f4eac8b6dd3d6d002a6",
+      "maximum_compared_numeric_delta": 2.842170943040401e-14,
+      "migrated_sha256": "ab5e3a46037687d8a928c0b4fe38bf301727d9b84277ba3bc8f17b104e8476e9",
+      "mismatches": [],
+      "protocol_directory": "axis_balanced_endogenous",
+      "scientific_fields_match": true
+    },
+    {
+      "file": "axis-balanced-11__endogenous.json",
+      "historical_sha256": "83265ec5123e07d5e202c9149ee39acffc0b8987a60667a834d39155ce80999a",
+      "maximum_compared_numeric_delta": 2.1316282072803006e-14,
+      "migrated_sha256": "ddd929ba4c2e913be0a75485b581ed05ba8f39b642a3f977312c49db41cd6f69",
+      "mismatches": [],
+      "protocol_directory": "axis_balanced_endogenous",
+      "scientific_fields_match": true
+    },
+    {
+      "file": "axis-balanced-12__endogenous.json",
+      "historical_sha256": "d2459a5b1417cb6376f983dbf3cbdf9d2bf7ae7173ff0f8fdbcc741c5674a2d6",
+      "maximum_compared_numeric_delta": 2.842170943040401e-14,
+      "migrated_sha256": "2eaddce124473884a4ed3028b531143d914def07dadf10a84b50db57731f2d13",
+      "mismatches": [],
+      "protocol_directory": "axis_balanced_endogenous",
+      "scientific_fields_match": true
+    },
+    {
+      "file": "axis-balanced-13__endogenous.json",
+      "historical_sha256": "ac9671a849eeecdaa895af458151e85bf78e16a27f4269a7dce83fc01a6f1cdd",
+      "maximum_compared_numeric_delta": 8.881784197001252e-15,
+      "migrated_sha256": "a04d0dd37ac99e47dc9c077b275ba92bf784044a4894dac4cdf8285e7da1e458",
+      "mismatches": [],
+      "protocol_directory": "axis_balanced_endogenous",
+      "scientific_fields_match": true
+    },
+    {
+      "file": "axis-balanced-14__endogenous.json",
+      "historical_sha256": "2451e8a8cc068149589bfc233bcca2a601808c921de183dbafb214b3f1adc5e6",
+      "maximum_compared_numeric_delta": 8.526512829121202e-14,
+      "migrated_sha256": "7f3ca7a4aabc2fd8b7ad33b79ff8bab6865c0f3c7d7c4a350f0f8fb87d00c017",
+      "mismatches": [],
+      "protocol_directory": "axis_balanced_endogenous",
+      "scientific_fields_match": true
+    },
+    {
+      "file": "axis-balanced-15__endogenous.json",
+      "historical_sha256": "930ebf52ba36f69aa26158ddf5c95d5289ba326667a0d4a6e0ada12ecf270756",
+      "maximum_compared_numeric_delta": 1.4210854715202004e-14,
+      "migrated_sha256": "660ef3eaea56ce5116cb4619de4725284c996a0fecb644a6d07db0d0337269ed",
+      "mismatches": [],
+      "protocol_directory": "axis_balanced_endogenous",
+      "scientific_fields_match": true
+    },
+    {
+      "file": "axis-balanced-16__endogenous.json",
+      "historical_sha256": "b42b046b7b9ceace902850ab7f5a087d9f39b960f0140760f22676b745e84d0b",
+      "maximum_compared_numeric_delta": 4.973799150320701e-14,
+      "migrated_sha256": "1bff371f6da0d9388ab26e17153833b1de20c26023aac1d656280f81038ef941",
+      "mismatches": [],
+      "protocol_directory": "axis_balanced_endogenous",
+      "scientific_fields_match": true
+    },
+    {
+      "file": "axis-balanced-17__endogenous.json",
+      "historical_sha256": "6288c8138f0ef34e149964705640e3a671fa789978ef6cb7d85dd78214c2707f",
+      "maximum_compared_numeric_delta": 3.197442310920451e-14,
+      "migrated_sha256": "95f2bc984b860f78001596bdfb8a7c2bea072c4be7bd66d3c20748465a23ded5",
+      "mismatches": [],
+      "protocol_directory": "axis_balanced_endogenous",
+      "scientific_fields_match": true
+    },
+    {
+      "file": "axis-balanced-18__endogenous.json",
+      "historical_sha256": "c596193f2a72444eb8350075b87f261b25364a71caaabfd76b89aff064e30b09",
+      "maximum_compared_numeric_delta": 7.105427357601002e-15,
+      "migrated_sha256": "9dc106528b7b5d241ca38f852e3069c5fc2aa570a6282e05f4f954ec02bdef4a",
+      "mismatches": [],
+      "protocol_directory": "axis_balanced_endogenous",
+      "scientific_fields_match": true
+    }
+  ],
+  "schema": "rime.incidence-profile-migration-validation.v1"
+}

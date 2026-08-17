@@ -1,0 +1,364 @@
+{
+  "audit_kind": "finite_symbolic_pattern_audit",
+  "candidates": [
+    {
+      "candidate": "fixed-frame zero rate equals 2/9 whenever supported routes exist",
+      "observed_rate": "2/9",
+      "scope": "19 declared axis-balanced rotation orbits only",
+      "status": "SURVIVES_DECLARED_CENSUS"
+    },
+    {
+      "candidate": "endogenous zero rate is a function of operator count",
+      "counterexample": {
+        "left": {
+          "conditional_zero_rate": "0/1",
+          "operators": 8,
+          "orbit": "axis-balanced-06",
+          "protected": 16,
+          "sectors": 8,
+          "total": 32,
+          "zero": 0,
+          "zero_rate": "0/1"
+        },
+        "right": {
+          "conditional_zero_rate": "17/26",
+          "operators": 8,
+          "orbit": "axis-balanced-07",
+          "protected": 0,
+          "sectors": 7,
+          "total": 1664,
+          "zero": 1088,
+          "zero_rate": "17/26"
+        },
+        "shared_feature": {
+          "operators": 8
+        }
+      },
+      "status": "REJECTED_BY_CENSUS"
+    },
+    {
+      "candidate": "endogenous zero rate is a function of sector count",
+      "counterexample": {
+        "left": {
+          "conditional_zero_rate": "49/92",
+          "operators": 10,
+          "orbit": "axis-balanced-11",
+          "protected": 0,
+          "sectors": 9,
+          "total": 2944,
+          "zero": 1568,
+          "zero_rate": "49/92"
+        },
+        "right": {
+          "conditional_zero_rate": "17/26",
+          "operators": 12,
+          "orbit": "axis-balanced-12",
+          "protected": 0,
+          "sectors": 9,
+          "total": 1664,
+          "zero": 1088,
+          "zero_rate": "17/26"
+        },
+        "shared_feature": {
+          "sectors": 9
+        }
+      },
+      "status": "REJECTED_BY_CENSUS"
+    },
+    {
+      "candidate": "endogenous zero rate is nondecreasing in operator count",
+      "counterexample": {
+        "left": {
+          "conditional_zero_rate": "17/26",
+          "operators": 8,
+          "orbit": "axis-balanced-07",
+          "protected": 0,
+          "sectors": 7,
+          "total": 1664,
+          "zero": 1088,
+          "zero_rate": "17/26"
+        },
+        "right": {
+          "conditional_zero_rate": "6/13",
+          "operators": 10,
+          "orbit": "axis-balanced-09",
+          "protected": 128,
+          "sectors": 11,
+          "total": 960,
+          "zero": 384,
+          "zero_rate": "2/5"
+        }
+      },
+      "status": "REJECTED_BY_CENSUS"
+    },
+    {
+      "candidate": "endogenous zero rate is nonincreasing in operator count",
+      "counterexample": {
+        "left": {
+          "conditional_zero_rate": "0/1",
+          "operators": 6,
+          "orbit": "axis-balanced-04",
+          "protected": 16,
+          "sectors": 8,
+          "total": 32,
+          "zero": 0,
+          "zero_rate": "0/1"
+        },
+        "right": {
+          "conditional_zero_rate": "17/26",
+          "operators": 8,
+          "orbit": "axis-balanced-07",
+          "protected": 0,
+          "sectors": 7,
+          "total": 1664,
+          "zero": 1088,
+          "zero_rate": "17/26"
+        }
+      },
+      "status": "REJECTED_BY_CENSUS"
+    },
+    {
+      "candidate": "endogenous zero rate is nondecreasing in sector count",
+      "counterexample": {
+        "left": {
+          "conditional_zero_rate": "17/26",
+          "operators": 8,
+          "orbit": "axis-balanced-07",
+          "protected": 0,
+          "sectors": 7,
+          "total": 1664,
+          "zero": 1088,
+          "zero_rate": "17/26"
+        },
+        "right": {
+          "conditional_zero_rate": "0/1",
+          "operators": 6,
+          "orbit": "axis-balanced-04",
+          "protected": 16,
+          "sectors": 8,
+          "total": 32,
+          "zero": 0,
+          "zero_rate": "0/1"
+        }
+      },
+      "status": "REJECTED_BY_CENSUS"
+    },
+    {
+      "candidate": "endogenous zero rate is nonincreasing in sector count",
+      "counterexample": {
+        "left": {
+          "conditional_zero_rate": "0/1",
+          "operators": 6,
+          "orbit": "axis-balanced-04",
+          "protected": 16,
+          "sectors": 8,
+          "total": 32,
+          "zero": 0,
+          "zero_rate": "0/1"
+        },
+        "right": {
+          "conditional_zero_rate": "6/13",
+          "operators": 10,
+          "orbit": "axis-balanced-09",
+          "protected": 128,
+          "sectors": 11,
+          "total": 960,
+          "zero": 384,
+          "zero_rate": "2/5"
+        }
+      },
+      "status": "REJECTED_BY_CENSUS"
+    },
+    {
+      "candidate": "protected-route count is nondecreasing in operator count",
+      "counterexample": {
+        "left": {
+          "conditional_zero_rate": "0/1",
+          "operators": 6,
+          "orbit": "axis-balanced-04",
+          "protected": 16,
+          "sectors": 8,
+          "total": 32,
+          "zero": 0,
+          "zero_rate": "0/1"
+        },
+        "right": {
+          "conditional_zero_rate": "17/26",
+          "operators": 8,
+          "orbit": "axis-balanced-07",
+          "protected": 0,
+          "sectors": 7,
+          "total": 1664,
+          "zero": 1088,
+          "zero_rate": "17/26"
+        }
+      },
+      "status": "REJECTED_BY_CENSUS"
+    }
+  ],
+  "claim_status": "Computational Observation",
+  "conclusion": "The fixed-frame 2/9 statement survives the declared finite census; simple endogenous laws based only on operator count or sector count are rejected with explicit orbit counterexamples.",
+  "endogenous_profile_count": 19,
+  "fixed_profile_count": 19,
+  "provenance": {
+    "source_artifacts": [
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/search_conjectures.py",
+        "sha256": "e1debcd2c0d8501937e581f08bc54c8e587e1b0374f06b6b41fc04ed1cd6fc8b"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-00__fixed_full.json",
+        "sha256": "3749c40a76a03cf9d4218d8d29bb97d8bc7af8951949304add66ce5a362acd73"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-01__fixed_full.json",
+        "sha256": "4ece7e56f35ad2f09e03e788167674c1f48080e4ed5caeb1589990f540d671e4"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-02__fixed_full.json",
+        "sha256": "350d4b5ffd61a236ebe40e378a99b1d8a23a2324f3e15ef63289b085ec3220e5"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-03__fixed_full.json",
+        "sha256": "b5c00b58502fbcc3998fc02b0e3a8cd6347ab4c0b43a4f369ffd8466dd7278c9"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-04__fixed_full.json",
+        "sha256": "02651b86ac9739b19021d923cb8be54a155a6026c7e2c5eafcd684219ecce120"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-05__fixed_full.json",
+        "sha256": "85cb9e991d9b1d83e63eb78c9a5ed94d2a87613f541eb471f396d98b76651a11"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-06__fixed_full.json",
+        "sha256": "b53a633e54f4ca5fb5a25c9ec1d4454c73d6cbe0910ed516eb9e1919f220da95"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-07__fixed_full.json",
+        "sha256": "2343fcfaf732de966d160d527132ffe5b9a0e0828a7b796d5a117f39fb3833ec"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-08__fixed_full.json",
+        "sha256": "3756d99b2b0b05a07dbcc619c52f984f9c6c604dec42075fca907179d541e9ab"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-09__fixed_full.json",
+        "sha256": "ff8365b5d4bbd57a2e367eb063d6849dfdff80eaa61d7ad3ac466a6c9e81141c"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-10__fixed_full.json",
+        "sha256": "6259044013233c2e3763ebbc05cae33138efb61008a69b8a07cb85819eefd94f"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-11__fixed_full.json",
+        "sha256": "8c09701c32f1efa0c46dc31af66c0a8a03088933f71053d085e0cbfe1549daa9"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-12__fixed_full.json",
+        "sha256": "aa70effcb6a9d9b22499688367650574f5c5ff79a8b68d20f99d7440883ccca4"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-13__fixed_full.json",
+        "sha256": "1ee787521db4de1cc9da6ef08c8e8432eb3e1cbeb7ecaa22396aaf45c2d99e44"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-14__fixed_full.json",
+        "sha256": "d922cc6860fb734b1b7f486504a91839c9ed1ae17904d16ab6ed05ccef403f39"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-15__fixed_full.json",
+        "sha256": "a3b4c6a157f39b5802f74331d707dac58f38258cacd12f2acbb7a91ae7fbba61"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-16__fixed_full.json",
+        "sha256": "49455547f3f39a0beb0980f6b0332f17cac061dc87989f10c23c01106a3c669d"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-17__fixed_full.json",
+        "sha256": "7f1d9e1c2ee578e36fe370faee630b58ce4309a3605813233d5c3d956d792ef4"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-18__fixed_full.json",
+        "sha256": "7c61df63083f8490685cbcad8d830179d39f6cd3b8f17836f461983c31b4d159"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_endogenous/axis-balanced-00__endogenous.json",
+        "sha256": "43e53d8e8efb01d7b1bbfa8610d1b271704b5ad2ebabbb365f0d0ed0b41fe74d"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_endogenous/axis-balanced-01__endogenous.json",
+        "sha256": "cb448409c515633fabe7d8d6e603ff6c67fd0da019a880765deb9d4fca1b028c"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_endogenous/axis-balanced-02__endogenous.json",
+        "sha256": "2f07838349de0d6a929cb603cebdd2d60b1efc2c743635c14e40edc6da766723"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_endogenous/axis-balanced-03__endogenous.json",
+        "sha256": "760ba3dd2f8194e72ee6958071ac38499df1a2b1e5542d94f5892e2c9224eb82"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_endogenous/axis-balanced-04__endogenous.json",
+        "sha256": "31afd5d79e86eb92e3e910078a08a1ebc955db280a7579145e0aee8aa10687b4"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_endogenous/axis-balanced-05__endogenous.json",
+        "sha256": "231aea9ea7a42458fba281c45e5dd7e099d08ba336d0d36693ed7dac9a948aa7"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_endogenous/axis-balanced-06__endogenous.json",
+        "sha256": "8125e2783b5b3e0d923c28c98abb0aee2d991b8d8f99ff926b5935ab5e36e929"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_endogenous/axis-balanced-07__endogenous.json",
+        "sha256": "66f978f46dd7701bdb6ff13ee565395c95e815fd8f469018421af6df36a697bb"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_endogenous/axis-balanced-08__endogenous.json",
+        "sha256": "10f2bcf9586cbd16e5b8e4ddf2260c3810b01b1fd46f986d7a16fda32a13c631"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_endogenous/axis-balanced-09__endogenous.json",
+        "sha256": "c9f18382eedae0ff04be7c113767168c8d77aa8f8da64a632aa04a65dfd2a821"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_endogenous/axis-balanced-10__endogenous.json",
+        "sha256": "ab5e3a46037687d8a928c0b4fe38bf301727d9b84277ba3bc8f17b104e8476e9"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_endogenous/axis-balanced-11__endogenous.json",
+        "sha256": "ddd929ba4c2e913be0a75485b581ed05ba8f39b642a3f977312c49db41cd6f69"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_endogenous/axis-balanced-12__endogenous.json",
+        "sha256": "2eaddce124473884a4ed3028b531143d914def07dadf10a84b50db57731f2d13"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_endogenous/axis-balanced-13__endogenous.json",
+        "sha256": "a04d0dd37ac99e47dc9c077b275ba92bf784044a4894dac4cdf8285e7da1e458"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_endogenous/axis-balanced-14__endogenous.json",
+        "sha256": "7f3ca7a4aabc2fd8b7ad33b79ff8bab6865c0f3c7d7c4a350f0f8fb87d00c017"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_endogenous/axis-balanced-15__endogenous.json",
+        "sha256": "660ef3eaea56ce5116cb4619de4725284c996a0fecb644a6d07db0d0337269ed"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_endogenous/axis-balanced-16__endogenous.json",
+        "sha256": "1bff371f6da0d9388ab26e17153833b1de20c26023aac1d656280f81038ef941"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_endogenous/axis-balanced-17__endogenous.json",
+        "sha256": "95f2bc984b860f78001596bdfb8a7c2bea072c4be7bd66d3c20748465a23ded5"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_endogenous/axis-balanced-18__endogenous.json",
+        "sha256": "9dc106528b7b5d241ca38f852e3069c5fc2aa570a6282e05f4f954ec02bdef4a"
+      }
+    ]
+  },
+  "schema": "rime.incidence-conjecture-audit.v1"
+}

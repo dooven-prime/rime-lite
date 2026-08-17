@@ -1403,7 +1403,7 @@
   },
   "runtime": {
     "python": "3.13.0",
-    "script_sha256": "1a7479b52dbeb7abf429cd1495d611705ea4360191be6f08cce9a75b4ea6507f"
+    "script_sha256": "1dcac8a48c695db208f1109ee87d1d5484e0f90f3eee84a418f51b8684b47109"
   },
   "schema": "paper7.incidence-geometry.v2"
 }

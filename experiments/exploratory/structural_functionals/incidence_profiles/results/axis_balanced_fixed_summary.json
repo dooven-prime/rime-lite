@@ -1,6 +1,6 @@
 {
   "claim_status": "Computational Observation",
-  "directory": "results\\axis_balanced_fixed",
+  "directory": "results/axis_balanced_fixed",
   "distinct_profile_signature_count": 4,
   "interpretation": "Fixed-frame profiles are comparable because all rows use the same canonical sector frame. Endogenous profiles require the serialized projector-overlap alignment and refinement relation.",
   "orbit_count": 19,
@@ -8,83 +8,83 @@
     "source_artifacts": [
       {
         "path": "experiments/exploratory/structural_functionals/incidence_profiles/summarize_census.py",
-        "sha256": "5ead250fd5e48959d2bbc316d555bfb058106b0962121a5ca7c348e504531a53"
+        "sha256": "f5212b25236b6a16b7698a0e68140bbbf095ee9c29aa419b24d8e33bc1683a32"
       },
       {
         "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-00__fixed_full.json",
-        "sha256": "d7ebd8703985c2f1b17b6ba6c20c1b063678b8c4680863a893bb4a6f30e5bb97"
+        "sha256": "3749c40a76a03cf9d4218d8d29bb97d8bc7af8951949304add66ce5a362acd73"
       },
       {
         "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-01__fixed_full.json",
-        "sha256": "1978266e29321428de3d4b3e6d80adaef8ae885b1d0f5735d4cf7fe3e59f78a1"
+        "sha256": "4ece7e56f35ad2f09e03e788167674c1f48080e4ed5caeb1589990f540d671e4"
       },
       {
         "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-02__fixed_full.json",
-        "sha256": "c62f02e0127be6b567dc5f53a42c8537ce80c241c0284ecf3f32fa55c942c56f"
+        "sha256": "350d4b5ffd61a236ebe40e378a99b1d8a23a2324f3e15ef63289b085ec3220e5"
       },
       {
         "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-03__fixed_full.json",
-        "sha256": "b1f03495c92b8efdef9511c23b9c8a3b962e28052a533fbd4ef15421f762ed3e"
+        "sha256": "b5c00b58502fbcc3998fc02b0e3a8cd6347ab4c0b43a4f369ffd8466dd7278c9"
       },
       {
         "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-04__fixed_full.json",
-        "sha256": "69b292bd1dd5e895f33374df9ede6dbe49808c2245c1e0ebb75b493547d27410"
+        "sha256": "02651b86ac9739b19021d923cb8be54a155a6026c7e2c5eafcd684219ecce120"
       },
       {
         "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-05__fixed_full.json",
-        "sha256": "d3e13f88960e12f1b06a8069db5d58c0a76c0a13496c7d1e2e2d2395df2dd3db"
+        "sha256": "85cb9e991d9b1d83e63eb78c9a5ed94d2a87613f541eb471f396d98b76651a11"
       },
       {
         "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-06__fixed_full.json",
-        "sha256": "977bbd2a94ce74fcdae88d3b67a4c842628aa71481be5fdd42d6aab76be45cae"
+        "sha256": "b53a633e54f4ca5fb5a25c9ec1d4454c73d6cbe0910ed516eb9e1919f220da95"
       },
       {
         "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-07__fixed_full.json",
-        "sha256": "d4b7a1380c3fcac63e4432f92aa7db7b1f3ac5fa631f8d5cbebeb292ba5098df"
+        "sha256": "2343fcfaf732de966d160d527132ffe5b9a0e0828a7b796d5a117f39fb3833ec"
       },
       {
         "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-08__fixed_full.json",
-        "sha256": "ed8e6572dd0f0064e89a87fcdcbdac1faa599cbf72978a75f779a63c89e87a33"
+        "sha256": "3756d99b2b0b05a07dbcc619c52f984f9c6c604dec42075fca907179d541e9ab"
       },
       {
         "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-09__fixed_full.json",
-        "sha256": "cfa2ae04733153ebdec8835d1307297da8fa3072a439470761f056c3ca2ff7f5"
+        "sha256": "ff8365b5d4bbd57a2e367eb063d6849dfdff80eaa61d7ad3ac466a6c9e81141c"
       },
       {
         "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-10__fixed_full.json",
-        "sha256": "f42382425bbaa51875d309b479d865920b5ecb0f1f022afc64d59cccd2816d63"
+        "sha256": "6259044013233c2e3763ebbc05cae33138efb61008a69b8a07cb85819eefd94f"
       },
       {
         "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-11__fixed_full.json",
-        "sha256": "8b0401cab66b52f505f4fd4922961e858a68647ee1732da8d5972ff0a5d2808b"
+        "sha256": "8c09701c32f1efa0c46dc31af66c0a8a03088933f71053d085e0cbfe1549daa9"
       },
       {
         "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-12__fixed_full.json",
-        "sha256": "ca35b0832b652bd083be1d9cf591664bb521e65c00d75a89522b7a18c4c1e7f0"
+        "sha256": "aa70effcb6a9d9b22499688367650574f5c5ff79a8b68d20f99d7440883ccca4"
       },
       {
         "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-13__fixed_full.json",
-        "sha256": "737d20e1dad16ce6d6499f3ba09559fd1365896c2088ea4f7a6cdd4839db4dff"
+        "sha256": "1ee787521db4de1cc9da6ef08c8e8432eb3e1cbeb7ecaa22396aaf45c2d99e44"
       },
       {
         "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-14__fixed_full.json",
-        "sha256": "3ce29a3eafa455ac84a77071ff1a13a4b6dbd7ef28d20bd2d34100c5349c8c75"
+        "sha256": "d922cc6860fb734b1b7f486504a91839c9ed1ae17904d16ab6ed05ccef403f39"
       },
       {
         "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-15__fixed_full.json",
-        "sha256": "2063ad45fdf07d7bf73aac54e5d00eb9b473fe3a55aa0e677f550f7f55ffce13"
+        "sha256": "a3b4c6a157f39b5802f74331d707dac58f38258cacd12f2acbb7a91ae7fbba61"
       },
       {
         "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-16__fixed_full.json",
-        "sha256": "744bd13855b8050312f03bfcc257a17b748fa1b6045fea4b15403cad349fe174"
+        "sha256": "49455547f3f39a0beb0980f6b0332f17cac061dc87989f10c23c01106a3c669d"
       },
       {
         "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-17__fixed_full.json",
-        "sha256": "d0b5cff930b59ee13e9ee5f0435905dffb529674cf3b7fdae571ed2530a249c0"
+        "sha256": "7f1d9e1c2ee578e36fe370faee630b58ce4309a3605813233d5c3d956d792ef4"
       },
       {
         "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-18__fixed_full.json",
-        "sha256": "59ca0568b52c70fa492e57bfcf694604c39455206f746bfc9d81099bc51e5f58"
+        "sha256": "7c61df63083f8490685cbcad8d830179d39f6cd3b8f17836f461983c31b4d159"
       }
     ]
   },

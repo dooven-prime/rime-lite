@@ -176,6 +176,7 @@ def main() -> None:
     JSON_PATH.write_text(
         json.dumps(payload, indent=2, sort_keys=True),
         encoding="utf-8",
+        newline="\n",
     )
 
     lines = [
@@ -193,7 +194,7 @@ def main() -> None:
             f"codim={record['type_iv_codimension']}, "
             f"rankA={record['minimizing_rank_a']}"
         )
-    TEXT_PATH.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    TEXT_PATH.write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
     print("\n".join(lines))
     print(f"\nJSON: {JSON_PATH}")
 

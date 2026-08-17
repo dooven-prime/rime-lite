@@ -400,6 +400,7 @@ def main() -> None:
     JSON_PATH.write_text(
         json.dumps(payload, indent=2, sort_keys=True),
         encoding="utf-8",
+        newline="\n",
     )
 
     lines = [
@@ -423,7 +424,7 @@ def main() -> None:
         "",
         "This is a cutoff-relative finite observation, not a completion theorem.",
     ]
-    TEXT_PATH.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    TEXT_PATH.write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
     print("\n".join(lines))
     print(f"\nJSON: {JSON_PATH}")
 

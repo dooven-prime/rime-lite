@@ -348,7 +348,7 @@
   "runtime": {
     "numpy": "2.1.3",
     "python": "3.13.0",
-    "script_sha256": "1e6e4165dbecf3c27d22034e4b4249abf92845f5143dd508c3bdfb6468ecb49b"
+    "script_sha256": "bc1d621537f299ed460422737b4bcf99d4f9cfba47e73ab36b33395eb60ed1f1"
   },
   "schema": "paper7.projected-composition-audit.v2",
   "systems": [

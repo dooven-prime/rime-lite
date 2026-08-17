@@ -23,10 +23,10 @@ AUDIT = ROOT / "experiments" / "paper7" / "results" / "projected_composition_aud
 STRUCTURED = ROOT / "experiments" / "paper7" / "results" / "structured_incidence_geometry_v2_1.json"
 FIXED_PROFILE = ROOT / "experiments" / "paper7" / "results" / "fixed_frame_incidence_profiles_v2_1.json"
 EXPECTED = {
-    "experiments/paper7/results/incidence_geometry.json": "099dd98d09d4c907b44bf590039f358dee404aff5910bf03c9e9dbd8e7bbdf04",
-    "experiments/paper7/results/projected_composition_audit.json": "ed4d24316a158480e67076a5d4b74f3fa15e1e9824f6c2e6ac3a9b343efd5762",
+    "experiments/paper7/results/incidence_geometry.json": "b139746bfc75f00084b2750328500db0429fed12f58c732f932cb08c0db0da99",
+    "experiments/paper7/results/projected_composition_audit.json": "ba329db6659ff35d190a8b5ee9e4d0bf98e34d44f2e38e827eb733a98431fa0c",
     "experiments/paper7/results/structured_incidence_geometry_v2_1.json": "42d8a0cedcb2721a581eec16eebfc4d56df3108361fe65259f06059a1ae45fd2",
-    "experiments/paper7/results/fixed_frame_incidence_profiles_v2_1.json": "d2d1dbd119fbda3c5173ab20416d3dee112c3b9953d7d539a408375a47539e30",
+    "experiments/paper7/results/fixed_frame_incidence_profiles_v2_1.json": "5740a4bf33f83ba7ce20582918320edb450ffa086819b02aec15d8d972fe6e3d",
 }
 
 sys.path.insert(0, str(HERE.parent))

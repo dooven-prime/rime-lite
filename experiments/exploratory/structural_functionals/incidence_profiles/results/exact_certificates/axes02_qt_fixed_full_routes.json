@@ -1,0 +1,53 @@
+{
+  "carrier_labels": [
+    "cp",
+    "ep",
+    "co",
+    "eo"
+  ],
+  "certificate_kind": "conditional_exact_route_promotion",
+  "claim_status": "Computational Certificate",
+  "numerical_hypothesis_diagnostics": {
+    "commutator_residuals": {
+      "co": 2.624913952483598e-16,
+      "cp": 2.099658462790149e-15,
+      "eo": 4.523941981333525e-16,
+      "ep": 2.033470781024931e-15
+    },
+    "max_commutator_residual": 2.099658462790149e-15,
+    "warning": "Residuals do not establish exact commutation."
+  },
+  "observed_route_counts": {
+    "numerical_cancellation_or_threshold_conflict": 0,
+    "physical_carrier_forced": 256,
+    "within_carrier_image_kernel": 0
+  },
+  "provenance": {
+    "source_artifacts": [
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/exact_route_certificate.py",
+        "sha256": "f8e253d67e591913caa5598294b224a64a33d3fafecf51fe1d6443369ff73170"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/incidence_profiles.py",
+        "sha256": "e8b3854c3530d482f0c230a0eb69e5887634bb6242add12b97a356b8f001ef6c"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/named/axes02_qt__fixed_full.json",
+        "sha256": "cd428c39d4456301f8cc177a4b55ffed11f20c9823ccc056cb1f618982ed2b3e"
+      }
+    ]
+  },
+  "schema": "rime.exact-route-certificate.v1",
+  "source_profile": "results/named/axes02_qt__fixed_full.json",
+  "statement": "Under exact sector-projector reduction, exact operative-matrix reduction, and exact support-mask hypotheses, all physical-carrier-forced routes satisfy AB=0 exactly.",
+  "theorem": "Carrier-Forced Routed Incidence (THEOREMS.md, Theorem 1)",
+  "upgrade_requirements": [
+    "replace numerical sector bases with exact algebraic projectors",
+    "verify [P_i,C_b]=0 exactly for every sector and carrier",
+    "verify [X_g,C_b]=0 exactly for every operative generator and carrier",
+    "verify each declared carrier support mask exactly",
+    "retain within-carrier routes as image-kernel certificates, not carrier-forced routes"
+  ],
+  "verified_conditional_conclusion": true
+}

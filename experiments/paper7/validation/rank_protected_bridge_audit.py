@@ -475,6 +475,7 @@ def main() -> None:
     JSON_PATH.write_text(
         json.dumps(payload, indent=2, sort_keys=True),
         encoding="utf-8",
+        newline="\n",
     )
 
     lines = [
@@ -511,7 +512,7 @@ def main() -> None:
             "It does not promote routes to full words, commutators, or Lie depth.",
         ]
     )
-    TEXT_PATH.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    TEXT_PATH.write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
     print("\n".join(lines))
     print(f"\nJSON: {JSON_PATH}")
 

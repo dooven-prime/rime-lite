@@ -1,0 +1,651 @@
+{
+  "claim_status": "Computational Observation",
+  "counts": {
+    "class_counts": {
+      "unprotected_nonzero": 224,
+      "unprotected_zero": 64
+    },
+    "distinct_zero_triples": 4,
+    "protected_fraction": 0.0,
+    "protected_routes": 0,
+    "total_supported_routes": 288,
+    "unprotected_routes": 288,
+    "unprotected_zero": 64,
+    "zero_mechanism_counts": {
+      "physical_carrier_forced": 64
+    },
+    "zero_over_all_supported": 0.2222222222222222,
+    "zero_over_unprotected": 0.2222222222222222
+  },
+  "family": {
+    "active_skew_operator_count": 4,
+    "generator_keys": [
+      [
+        0,
+        -1,
+        -1
+      ],
+      [
+        0,
+        -1,
+        1
+      ],
+      [
+        0,
+        1,
+        -1
+      ],
+      [
+        0,
+        1,
+        1
+      ]
+    ],
+    "generator_labels": [
+      "L'",
+      "L",
+      "R'",
+      "R"
+    ],
+    "operator_count": 4,
+    "orbit_id": "axis-balanced-01",
+    "rotation_canonical_key": [
+      [
+        0,
+        -1,
+        -1
+      ],
+      [
+        0,
+        -1,
+        1
+      ],
+      [
+        0,
+        1,
+        -1
+      ],
+      [
+        0,
+        1,
+        1
+      ]
+    ],
+    "zero_skew_operator_keys": []
+  },
+  "policy": {
+    "alignment_atol": 1e-09,
+    "product_atol": 1e-12,
+    "product_rtol": 1e-10,
+    "rank_atol": 1e-12,
+    "rank_rtol": 1e-09,
+    "support_atol": 1e-08
+  },
+  "protocol": "fixed_full",
+  "provenance": {
+    "elapsed_seconds": 0.9506808000151068,
+    "git_boundary": "The commit identifies the repository baseline. The source-artifact digests bind the executed producer files, including uncommitted bytes.",
+    "git_commit": "1d40f7b397830c61bb77160f18483e9ea337fbde",
+    "numpy": "2.1.3",
+    "python": "3.13.0",
+    "source_artifacts": [
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/incidence_profiles.py",
+        "sha256": "e8b3854c3530d482f0c230a0eb69e5887634bb6242add12b97a356b8f001ef6c"
+      },
+      {
+        "path": "rime/base.py",
+        "sha256": "fead279b5631625050b0ee1f24a2bc47c19acac864b9c717a7917398bc4d0d30"
+      },
+      {
+        "path": "rime/cube.py",
+        "sha256": "6cfc68516f7aee5049b8124b8848d17f5a488bb67399d414d3442f0415ef2365"
+      },
+      {
+        "path": "rime/cubie.py",
+        "sha256": "557989aa6854ca4dd521e71537d87e51d3f174dd095b3255299ce23cb7811cc2"
+      },
+      {
+        "path": "rime/cubieoperator.py",
+        "sha256": "044f3ee6c16f1dcd0f454d282690573a75e9ec71df3fdc113b4eb205b789c788"
+      },
+      {
+        "path": "rime/helpers.py",
+        "sha256": "b6d31e34fa05762cde94bd137b2d124bd36c83fda3227ce69a66bf0517c77582"
+      },
+      {
+        "path": "rime/spectral_utils.py",
+        "sha256": "d5634b376b125b146819909350356a4247e2ad3747dfe5ef102760466daf05c4"
+      }
+    ],
+    "source_sha256": "e8b3854c3530d482f0c230a0eb69e5887634bb6242add12b97a356b8f001ef6c"
+  },
+  "rank_signature_counts": [
+    {
+      "class": "unprotected_nonzero",
+      "count": 16,
+      "di": 27,
+      "dj": 27,
+      "dk": 66,
+      "rank_a": 18,
+      "rank_b": 18
+    },
+    {
+      "class": "unprotected_zero",
+      "count": 32,
+      "di": 27,
+      "dj": 39,
+      "dk": 66,
+      "rank_a": 18,
+      "rank_b": 26
+    },
+    {
+      "class": "unprotected_nonzero",
+      "count": 32,
+      "di": 39,
+      "dj": 39,
+      "dk": 39,
+      "rank_a": 26,
+      "rank_b": 26
+    },
+    {
+      "class": "unprotected_nonzero",
+      "count": 32,
+      "di": 39,
+      "dj": 66,
+      "dk": 39,
+      "rank_a": 26,
+      "rank_b": 26
+    },
+    {
+      "class": "unprotected_zero",
+      "count": 32,
+      "di": 39,
+      "dj": 27,
+      "dk": 66,
+      "rank_a": 26,
+      "rank_b": 18
+    },
+    {
+      "class": "unprotected_nonzero",
+      "count": 64,
+      "di": 39,
+      "dj": 39,
+      "dk": 66,
+      "rank_a": 26,
+      "rank_b": 26
+    },
+    {
+      "class": "unprotected_nonzero",
+      "count": 16,
+      "di": 66,
+      "dj": 66,
+      "dk": 27,
+      "rank_a": 18,
+      "rank_b": 18
+    },
+    {
+      "class": "unprotected_nonzero",
+      "count": 32,
+      "di": 66,
+      "dj": 39,
+      "dk": 39,
+      "rank_a": 26,
+      "rank_b": 26
+    },
+    {
+      "class": "unprotected_nonzero",
+      "count": 32,
+      "di": 66,
+      "dj": 66,
+      "dk": 39,
+      "rank_a": 26,
+      "rank_b": 26
+    }
+  ],
+  "schema": "rime.incidence-profile.v1",
+  "sector_frame": {
+    "alignment_to_full": {
+      "reference_mass_residual": 0.0,
+      "semantics": "identity: canonical sectors are fixed",
+      "target_mass_residual": 0.0
+    },
+    "physical_carrier_commutator_residuals": {
+      "co": 2.624913952483598e-16,
+      "cp": 2.099658462790149e-15,
+      "eo": 4.523941981333525e-16,
+      "ep": 2.033470781024931e-15
+    },
+    "sector_count": 9,
+    "sectors": [
+      {
+        "dimension": 20,
+        "joint_labels": {
+          "lambda_family_scaled": 0.9999999999999988,
+          "lambda_ht": 0.9999999999999991,
+          "lambda_qt": 0.999999999999999
+        },
+        "physical_carrier_weights": {
+          "cp": 8.0,
+          "ep": 12.0
+        },
+        "sector_id": 0
+      },
+      {
+        "dimension": 2,
+        "joint_labels": {
+          "lambda_family_scaled": 0.8888888888888891,
+          "lambda_ht": 1.0,
+          "lambda_qt": 0.8333333333333335
+        },
+        "physical_carrier_weights": {
+          "eo": 2.0000000000000004
+        },
+        "sector_id": 1
+      },
+      {
+        "dimension": 39,
+        "joint_labels": {
+          "lambda_family_scaled": 0.7777777777777767,
+          "lambda_ht": 0.6666666666666659,
+          "lambda_qt": 0.8333333333333324
+        },
+        "physical_carrier_weights": {
+          "eo": 3.000000000000001,
+          "ep": 36.0
+        },
+        "sector_id": 2
+      },
+      {
+        "dimension": 26,
+        "joint_labels": {
+          "lambda_family_scaled": 0.6666666666666657,
+          "lambda_ht": 0.999999999999998,
+          "lambda_qt": 0.4999999999999993
+        },
+        "physical_carrier_weights": {
+          "co": 2.0,
+          "ep": 24.0
+        },
+        "sector_id": 3
+      },
+      {
+        "dimension": 1,
+        "joint_labels": {
+          "lambda_family_scaled": 0.5555555555555557,
+          "lambda_ht": 1.0,
+          "lambda_qt": 0.3333333333333335
+        },
+        "physical_carrier_weights": {
+          "eo": 1.0000000000000002
+        },
+        "sector_id": 4
+      },
+      {
+        "dimension": 39,
+        "joint_labels": {
+          "lambda_family_scaled": 0.555555555555555,
+          "lambda_ht": 0.666666666666666,
+          "lambda_qt": 0.49999999999999944
+        },
+        "physical_carrier_weights": {
+          "eo": 3.0,
+          "ep": 36.0
+        },
+        "sector_id": 5
+      },
+      {
+        "dimension": 66,
+        "joint_labels": {
+          "lambda_family_scaled": 0.5555555555555537,
+          "lambda_ht": 0.3333333333333323,
+          "lambda_qt": 0.6666666666666647
+        },
+        "physical_carrier_weights": {
+          "co": 3.0000000000000004,
+          "cp": 24.0,
+          "eo": 3.000000000000001,
+          "ep": 36.0
+        },
+        "sector_id": 6
+      },
+      {
+        "dimension": 8,
+        "joint_labels": {
+          "lambda_family_scaled": 0.33333333333333304,
+          "lambda_ht": 0.9999999999999992,
+          "lambda_qt": 0.0
+        },
+        "physical_carrier_weights": {
+          "cp": 8.000000000000004
+        },
+        "sector_id": 7
+      },
+      {
+        "dimension": 27,
+        "joint_labels": {
+          "lambda_family_scaled": 0.33333333333333287,
+          "lambda_ht": 0.333333333333333,
+          "lambda_qt": 0.3333333333333329
+        },
+        "physical_carrier_weights": {
+          "co": 3.0,
+          "cp": 24.0
+        },
+        "sector_id": 8
+      }
+    ]
+  },
+  "zero_profile": {
+    "examples_by_mechanism": {
+      "physical_carrier_forced": [
+        {
+          "carrier_products": {},
+          "dimensions": [
+            39,
+            66,
+            27
+          ],
+          "generator_pair": [
+            [
+              0,
+              -1,
+              -1
+            ],
+            [
+              0,
+              -1,
+              -1
+            ]
+          ],
+          "maximum_cross_carrier_product_norm": 1.4895453442214517e-16,
+          "overlapping_carriers": [],
+          "product_norm": 1.9408714883071313e-16,
+          "product_threshold": 3.671454628969202e-10,
+          "ranks": [
+            26,
+            18
+          ],
+          "sector_triple": [
+            2,
+            6,
+            8
+          ]
+        },
+        {
+          "carrier_products": {},
+          "dimensions": [
+            39,
+            66,
+            27
+          ],
+          "generator_pair": [
+            [
+              0,
+              -1,
+              -1
+            ],
+            [
+              0,
+              -1,
+              1
+            ]
+          ],
+          "maximum_cross_carrier_product_norm": 1.4895453442214517e-16,
+          "overlapping_carriers": [],
+          "product_norm": 1.9408714883071313e-16,
+          "product_threshold": 3.671454628969202e-10,
+          "ranks": [
+            26,
+            18
+          ],
+          "sector_triple": [
+            2,
+            6,
+            8
+          ]
+        },
+        {
+          "carrier_products": {},
+          "dimensions": [
+            39,
+            66,
+            27
+          ],
+          "generator_pair": [
+            [
+              0,
+              -1,
+              -1
+            ],
+            [
+              0,
+              1,
+              -1
+            ]
+          ],
+          "maximum_cross_carrier_product_norm": 1.3561503101235408e-16,
+          "overlapping_carriers": [],
+          "product_norm": 1.8602861349691606e-16,
+          "product_threshold": 3.671454628969203e-10,
+          "ranks": [
+            26,
+            18
+          ],
+          "sector_triple": [
+            2,
+            6,
+            8
+          ]
+        },
+        {
+          "carrier_products": {},
+          "dimensions": [
+            39,
+            66,
+            27
+          ],
+          "generator_pair": [
+            [
+              0,
+              -1,
+              -1
+            ],
+            [
+              0,
+              1,
+              1
+            ]
+          ],
+          "maximum_cross_carrier_product_norm": 1.3561503101235408e-16,
+          "overlapping_carriers": [],
+          "product_norm": 1.8602861349691606e-16,
+          "product_threshold": 3.671454628969203e-10,
+          "ranks": [
+            26,
+            18
+          ],
+          "sector_triple": [
+            2,
+            6,
+            8
+          ]
+        },
+        {
+          "carrier_products": {},
+          "dimensions": [
+            39,
+            66,
+            27
+          ],
+          "generator_pair": [
+            [
+              0,
+              -1,
+              1
+            ],
+            [
+              0,
+              -1,
+              -1
+            ]
+          ],
+          "maximum_cross_carrier_product_norm": 1.4895453442214517e-16,
+          "overlapping_carriers": [],
+          "product_norm": 1.9408714883071313e-16,
+          "product_threshold": 3.671454628969202e-10,
+          "ranks": [
+            26,
+            18
+          ],
+          "sector_triple": [
+            2,
+            6,
+            8
+          ]
+        },
+        {
+          "carrier_products": {},
+          "dimensions": [
+            39,
+            66,
+            27
+          ],
+          "generator_pair": [
+            [
+              0,
+              -1,
+              1
+            ],
+            [
+              0,
+              -1,
+              1
+            ]
+          ],
+          "maximum_cross_carrier_product_norm": 1.4895453442214517e-16,
+          "overlapping_carriers": [],
+          "product_norm": 1.9408714883071313e-16,
+          "product_threshold": 3.671454628969202e-10,
+          "ranks": [
+            26,
+            18
+          ],
+          "sector_triple": [
+            2,
+            6,
+            8
+          ]
+        },
+        {
+          "carrier_products": {},
+          "dimensions": [
+            39,
+            66,
+            27
+          ],
+          "generator_pair": [
+            [
+              0,
+              -1,
+              1
+            ],
+            [
+              0,
+              1,
+              -1
+            ]
+          ],
+          "maximum_cross_carrier_product_norm": 1.3561503101235408e-16,
+          "overlapping_carriers": [],
+          "product_norm": 1.8602861349691606e-16,
+          "product_threshold": 3.671454628969203e-10,
+          "ranks": [
+            26,
+            18
+          ],
+          "sector_triple": [
+            2,
+            6,
+            8
+          ]
+        },
+        {
+          "carrier_products": {},
+          "dimensions": [
+            39,
+            66,
+            27
+          ],
+          "generator_pair": [
+            [
+              0,
+              -1,
+              1
+            ],
+            [
+              0,
+              1,
+              1
+            ]
+          ],
+          "maximum_cross_carrier_product_norm": 1.3561503101235408e-16,
+          "overlapping_carriers": [],
+          "product_norm": 1.8602861349691606e-16,
+          "product_threshold": 3.671454628969203e-10,
+          "ranks": [
+            26,
+            18
+          ],
+          "sector_triple": [
+            2,
+            6,
+            8
+          ]
+        }
+      ]
+    },
+    "maximum_cross_carrier_product_norm": 1.566975273926189e-16,
+    "maximum_product_norm": 2.1670542484113264e-16,
+    "maximum_relative_product_norm": 5.91856097646473e-17,
+    "top_hub": {
+      "count": 64,
+      "sector": 6,
+      "share": 1.0
+    },
+    "triple_counts": [
+      {
+        "count": 16,
+        "triple": [
+          2,
+          6,
+          8
+        ]
+      },
+      {
+        "count": 16,
+        "triple": [
+          5,
+          6,
+          8
+        ]
+      },
+      {
+        "count": 16,
+        "triple": [
+          8,
+          6,
+          2
+        ]
+      },
+      {
+        "count": 16,
+        "triple": [
+          8,
+          6,
+          5
+        ]
+      }
+    ]
+  }
+}

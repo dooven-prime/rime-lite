@@ -1,0 +1,379 @@
+{
+  "ambient_dimension": 228,
+  "annihilating_polynomial": "x(x-2)(x-4)(x-6)(x-8)((x-5)^2-5)",
+  "annihilator_verified_entrywise": true,
+  "certificate_kind": "exact_finite_algebraic",
+  "claim_status": "Computational Certificate",
+  "coefficient_ring": "Z[zeta_3], zeta_3^2 + zeta_3 + 1 = 0",
+  "conclusion": "Because S is Hermitian (the family is inverse closed), the square-free annihilator and positive exact projector traces certify the complete exact spectrum and multiplicities. The Lagrange polynomials therefore define the exact spectral projectors over Q(sqrt(5), zeta_3).",
+  "family": "axes02_qt",
+  "generator_family_inverse_closed": true,
+  "generator_inverse_checks": [
+    {
+      "generator": [
+        0,
+        -1,
+        -1
+      ],
+      "inverse": [
+        0,
+        -1,
+        1
+      ],
+      "inverse_identity_verified": true
+    },
+    {
+      "generator": [
+        0,
+        -1,
+        1
+      ],
+      "inverse": [
+        0,
+        -1,
+        -1
+      ],
+      "inverse_identity_verified": true
+    },
+    {
+      "generator": [
+        0,
+        1,
+        -1
+      ],
+      "inverse": [
+        0,
+        1,
+        1
+      ],
+      "inverse_identity_verified": true
+    },
+    {
+      "generator": [
+        0,
+        1,
+        1
+      ],
+      "inverse": [
+        0,
+        1,
+        -1
+      ],
+      "inverse_identity_verified": true
+    },
+    {
+      "generator": [
+        2,
+        -1,
+        -1
+      ],
+      "inverse": [
+        2,
+        -1,
+        1
+      ],
+      "inverse_identity_verified": true
+    },
+    {
+      "generator": [
+        2,
+        -1,
+        1
+      ],
+      "inverse": [
+        2,
+        -1,
+        -1
+      ],
+      "inverse_identity_verified": true
+    },
+    {
+      "generator": [
+        2,
+        1,
+        -1
+      ],
+      "inverse": [
+        2,
+        1,
+        1
+      ],
+      "inverse_identity_verified": true
+    },
+    {
+      "generator": [
+        2,
+        1,
+        1
+      ],
+      "inverse": [
+        2,
+        1,
+        -1
+      ],
+      "inverse_identity_verified": true
+    }
+  ],
+  "generator_keys": [
+    [
+      0,
+      -1,
+      -1
+    ],
+    [
+      0,
+      -1,
+      1
+    ],
+    [
+      0,
+      1,
+      -1
+    ],
+    [
+      0,
+      1,
+      1
+    ],
+    [
+      2,
+      -1,
+      -1
+    ],
+    [
+      2,
+      -1,
+      1
+    ],
+    [
+      2,
+      1,
+      -1
+    ],
+    [
+      2,
+      1,
+      1
+    ]
+  ],
+  "int64_preoperation_audit": {
+    "all_operations_safe": true,
+    "int64_limit": 9223372036854775807,
+    "maximum_conservative_output_bound": 15752064,
+    "operation_count": 21
+  },
+  "intermediate_max_abs_integer_coefficient": [
+    6,
+    26,
+    68,
+    60,
+    32,
+    0
+  ],
+  "multiplicities": [
+    {
+      "eigenvalue_of_A_equals_S_over_8": {
+        "expression": "0",
+        "rational": "0",
+        "sqrt5": "0"
+      },
+      "eigenvalue_of_S": {
+        "expression": "0",
+        "rational": "0",
+        "sqrt5": "0"
+      },
+      "multiplicity": 8,
+      "trace_zeta_basis": [
+        {
+          "expression": "8",
+          "rational": "8",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        }
+      ]
+    },
+    {
+      "eigenvalue_of_A_equals_S_over_8": {
+        "expression": "1/4",
+        "rational": "1/4",
+        "sqrt5": "0"
+      },
+      "eigenvalue_of_S": {
+        "expression": "2",
+        "rational": "2",
+        "sqrt5": "0"
+      },
+      "multiplicity": 32,
+      "trace_zeta_basis": [
+        {
+          "expression": "32",
+          "rational": "32",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        }
+      ]
+    },
+    {
+      "eigenvalue_of_A_equals_S_over_8": {
+        "expression": "1/2",
+        "rational": "1/2",
+        "sqrt5": "0"
+      },
+      "eigenvalue_of_S": {
+        "expression": "4",
+        "rational": "4",
+        "sqrt5": "0"
+      },
+      "multiplicity": 31,
+      "trace_zeta_basis": [
+        {
+          "expression": "31",
+          "rational": "31",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        }
+      ]
+    },
+    {
+      "eigenvalue_of_A_equals_S_over_8": {
+        "expression": "(5/8) + (1/8)*sqrt(5)",
+        "rational": "5/8",
+        "sqrt5": "1/8"
+      },
+      "eigenvalue_of_S": {
+        "expression": "(5) + (1)*sqrt(5)",
+        "rational": "5",
+        "sqrt5": "1"
+      },
+      "multiplicity": 26,
+      "trace_zeta_basis": [
+        {
+          "expression": "26",
+          "rational": "26",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        }
+      ]
+    },
+    {
+      "eigenvalue_of_A_equals_S_over_8": {
+        "expression": "(5/8) + (-1/8)*sqrt(5)",
+        "rational": "5/8",
+        "sqrt5": "-1/8"
+      },
+      "eigenvalue_of_S": {
+        "expression": "(5) + (-1)*sqrt(5)",
+        "rational": "5",
+        "sqrt5": "-1"
+      },
+      "multiplicity": 26,
+      "trace_zeta_basis": [
+        {
+          "expression": "26",
+          "rational": "26",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        }
+      ]
+    },
+    {
+      "eigenvalue_of_A_equals_S_over_8": {
+        "expression": "3/4",
+        "rational": "3/4",
+        "sqrt5": "0"
+      },
+      "eigenvalue_of_S": {
+        "expression": "6",
+        "rational": "6",
+        "sqrt5": "0"
+      },
+      "multiplicity": 84,
+      "trace_zeta_basis": [
+        {
+          "expression": "84",
+          "rational": "84",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        }
+      ]
+    },
+    {
+      "eigenvalue_of_A_equals_S_over_8": {
+        "expression": "1",
+        "rational": "1",
+        "sqrt5": "0"
+      },
+      "eigenvalue_of_S": {
+        "expression": "8",
+        "rational": "8",
+        "sqrt5": "0"
+      },
+      "multiplicity": 21,
+      "trace_zeta_basis": [
+        {
+          "expression": "21",
+          "rational": "21",
+          "sqrt5": "0"
+        },
+        {
+          "expression": "0",
+          "rational": "0",
+          "sqrt5": "0"
+        }
+      ]
+    }
+  ],
+  "multiplicity_sum": 228,
+  "operator_sum_self_adjoint_verified": true,
+  "projector_interpolation_verified": true,
+  "projector_traces_verified_positive_integers": true,
+  "provenance": {
+    "source_artifacts": [
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/exact_n8_spectrum.py",
+        "sha256": "357f6c882545ca16a784efeaba465072fd356e31c0a02021c551f5096c3c578b"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/incidence_profiles.py",
+        "sha256": "e8b3854c3530d482f0c230a0eb69e5887634bb6242add12b97a356b8f001ef6c"
+      },
+      {
+        "path": "rime/base.py",
+        "sha256": "fead279b5631625050b0ee1f24a2bc47c19acac864b9c717a7917398bc4d0d30"
+      },
+      {
+        "path": "rime/cube.py",
+        "sha256": "6cfc68516f7aee5049b8124b8848d17f5a488bb67399d414d3442f0415ef2365"
+      },
+      {
+        "path": "rime/cubie.py",
+        "sha256": "557989aa6854ca4dd521e71537d87e51d3f174dd095b3255299ce23cb7811cc2"
+      }
+    ]
+  },
+  "schema": "rime.exact-spectrum-certificate.v1"
+}

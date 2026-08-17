@@ -1,0 +1,689 @@
+{
+  "claim_status": "Computational Observation",
+  "counts": {
+    "class_counts": {
+      "both_protected": 16,
+      "unprotected_nonzero": 16
+    },
+    "distinct_zero_triples": 0,
+    "protected_fraction": 0.5,
+    "protected_routes": 16,
+    "total_supported_routes": 32,
+    "unprotected_routes": 16,
+    "unprotected_zero": 0,
+    "zero_mechanism_counts": {},
+    "zero_over_all_supported": 0.0,
+    "zero_over_unprotected": 0.0
+  },
+  "family": {
+    "active_skew_operator_count": 4,
+    "generator_keys": [
+      [
+        0,
+        -1,
+        -1
+      ],
+      [
+        0,
+        -1,
+        1
+      ],
+      [
+        0,
+        -1,
+        2
+      ],
+      [
+        0,
+        1,
+        -1
+      ],
+      [
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        1,
+        -1,
+        2
+      ],
+      [
+        1,
+        1,
+        2
+      ],
+      [
+        2,
+        -1,
+        2
+      ],
+      [
+        2,
+        1,
+        2
+      ]
+    ],
+    "generator_labels": [
+      "L'",
+      "L",
+      "L2",
+      "R'",
+      "R",
+      "R2",
+      "D2",
+      "U2",
+      "B2",
+      "F2"
+    ],
+    "operator_count": 10,
+    "orbit_id": "axis-balanced-10",
+    "rotation_canonical_key": [
+      [
+        0,
+        -1,
+        -1
+      ],
+      [
+        0,
+        -1,
+        1
+      ],
+      [
+        0,
+        -1,
+        2
+      ],
+      [
+        0,
+        1,
+        -1
+      ],
+      [
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        1,
+        -1,
+        2
+      ],
+      [
+        1,
+        1,
+        2
+      ],
+      [
+        2,
+        -1,
+        2
+      ],
+      [
+        2,
+        1,
+        2
+      ]
+    ],
+    "zero_skew_operator_keys": [
+      [
+        0,
+        -1,
+        2
+      ],
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        1,
+        -1,
+        2
+      ],
+      [
+        1,
+        1,
+        2
+      ],
+      [
+        2,
+        -1,
+        2
+      ],
+      [
+        2,
+        1,
+        2
+      ]
+    ]
+  },
+  "policy": {
+    "alignment_atol": 1e-09,
+    "product_atol": 1e-12,
+    "product_rtol": 1e-10,
+    "rank_atol": 1e-12,
+    "rank_rtol": 1e-09,
+    "support_atol": 1e-08
+  },
+  "protocol": "endogenous",
+  "provenance": {
+    "elapsed_seconds": 1.7439887000364251,
+    "git_boundary": "The commit identifies the repository baseline. The source-artifact digests bind the executed producer files, including uncommitted bytes.",
+    "git_commit": "1d40f7b397830c61bb77160f18483e9ea337fbde",
+    "numpy": "2.1.3",
+    "python": "3.13.0",
+    "source_artifacts": [
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/incidence_profiles.py",
+        "sha256": "e8b3854c3530d482f0c230a0eb69e5887634bb6242add12b97a356b8f001ef6c"
+      },
+      {
+        "path": "rime/base.py",
+        "sha256": "fead279b5631625050b0ee1f24a2bc47c19acac864b9c717a7917398bc4d0d30"
+      },
+      {
+        "path": "rime/cube.py",
+        "sha256": "6cfc68516f7aee5049b8124b8848d17f5a488bb67399d414d3442f0415ef2365"
+      },
+      {
+        "path": "rime/cubie.py",
+        "sha256": "557989aa6854ca4dd521e71537d87e51d3f174dd095b3255299ce23cb7811cc2"
+      },
+      {
+        "path": "rime/cubieoperator.py",
+        "sha256": "044f3ee6c16f1dcd0f454d282690573a75e9ec71df3fdc113b4eb205b789c788"
+      },
+      {
+        "path": "rime/helpers.py",
+        "sha256": "b6d31e34fa05762cde94bd137b2d124bd36c83fda3227ce69a66bf0517c77582"
+      },
+      {
+        "path": "rime/spectral_utils.py",
+        "sha256": "d5634b376b125b146819909350356a4247e2ad3747dfe5ef102760466daf05c4"
+      }
+    ],
+    "source_sha256": "e8b3854c3530d482f0c230a0eb69e5887634bb6242add12b97a356b8f001ef6c"
+  },
+  "rank_signature_counts": [
+    {
+      "class": "unprotected_nonzero",
+      "count": 16,
+      "di": 26,
+      "dj": 26,
+      "dk": 62,
+      "rank_a": 26,
+      "rank_b": 26
+    },
+    {
+      "class": "both_protected",
+      "count": 16,
+      "di": 62,
+      "dj": 62,
+      "dk": 26,
+      "rank_a": 26,
+      "rank_b": 26
+    }
+  ],
+  "schema": "rime.incidence-profile.v1",
+  "sector_frame": {
+    "alignment_to_full": {
+      "containment_atol": 1e-09,
+      "entries": [
+        {
+          "overlap_dimension": 20.00000000000001,
+          "reference_fraction": 1.0000000000000004,
+          "reference_sector": 0,
+          "target_fraction": 0.5714285714285717,
+          "target_sector": 0
+        },
+        {
+          "overlap_dimension": 1.6666666666666676,
+          "reference_fraction": 0.8333333333333338,
+          "reference_sector": 1,
+          "target_fraction": 0.047619047619047644,
+          "target_sector": 0
+        },
+        {
+          "overlap_dimension": 0.3333333333333333,
+          "reference_fraction": 0.16666666666666666,
+          "reference_sector": 1,
+          "target_fraction": 0.01515151515151515,
+          "target_sector": 3
+        },
+        {
+          "overlap_dimension": 26.000000000000007,
+          "reference_fraction": 0.6666666666666669,
+          "reference_sector": 2,
+          "target_fraction": 0.6666666666666669,
+          "target_sector": 1
+        },
+        {
+          "overlap_dimension": 13.000000000000009,
+          "reference_fraction": 0.33333333333333354,
+          "reference_sector": 2,
+          "target_fraction": 0.5000000000000003,
+          "target_sector": 4
+        },
+        {
+          "overlap_dimension": 12.999999999999998,
+          "reference_fraction": 0.49999999999999994,
+          "reference_sector": 3,
+          "target_fraction": 0.3714285714285714,
+          "target_sector": 0
+        },
+        {
+          "overlap_dimension": 13.000000000000002,
+          "reference_fraction": 0.5000000000000001,
+          "reference_sector": 3,
+          "target_fraction": 0.5909090909090909,
+          "target_sector": 3
+        },
+        {
+          "overlap_dimension": 0.3333333333333334,
+          "reference_fraction": 0.3333333333333334,
+          "reference_sector": 4,
+          "target_fraction": 0.009523809523809526,
+          "target_sector": 0
+        },
+        {
+          "overlap_dimension": 0.6666666666666669,
+          "reference_fraction": 0.6666666666666669,
+          "reference_sector": 4,
+          "target_fraction": 0.03030303030303031,
+          "target_sector": 3
+        },
+        {
+          "overlap_dimension": 12.999999999999998,
+          "reference_fraction": 0.3333333333333333,
+          "reference_sector": 5,
+          "target_fraction": 0.3333333333333333,
+          "target_sector": 1
+        },
+        {
+          "overlap_dimension": 13.000000000000002,
+          "reference_fraction": 0.33333333333333337,
+          "reference_sector": 5,
+          "target_fraction": 0.5000000000000001,
+          "target_sector": 4
+        },
+        {
+          "overlap_dimension": 13.000000000000009,
+          "reference_fraction": 0.33333333333333354,
+          "reference_sector": 5,
+          "target_fraction": 1.0000000000000007,
+          "target_sector": 5
+        },
+        {
+          "overlap_dimension": 22.0,
+          "reference_fraction": 0.3333333333333333,
+          "reference_sector": 6,
+          "target_fraction": 1.0,
+          "target_sector": 2
+        },
+        {
+          "overlap_dimension": 44.00000000000004,
+          "reference_fraction": 0.6666666666666673,
+          "reference_sector": 6,
+          "target_fraction": 0.7096774193548394,
+          "target_sector": 6
+        },
+        {
+          "overlap_dimension": 8.000000000000002,
+          "reference_fraction": 1.0000000000000002,
+          "reference_sector": 7,
+          "target_fraction": 0.3636363636363637,
+          "target_sector": 3
+        },
+        {
+          "overlap_dimension": 18.000000000000004,
+          "reference_fraction": 0.6666666666666669,
+          "reference_sector": 8,
+          "target_fraction": 0.29032258064516137,
+          "target_sector": 6
+        },
+        {
+          "overlap_dimension": 8.999999999999998,
+          "reference_fraction": 0.33333333333333326,
+          "reference_sector": 8,
+          "target_fraction": 0.9999999999999998,
+          "target_sector": 7
+        }
+      ],
+      "maximizing_reference_sectors_for_target": [
+        [
+          0
+        ],
+        [
+          2
+        ],
+        [
+          6
+        ],
+        [
+          3
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          8
+        ]
+      ],
+      "maximizing_target_sectors_for_reference": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          3
+        ],
+        [
+          1,
+          4,
+          5
+        ],
+        [
+          6
+        ],
+        [
+          3
+        ],
+        [
+          6
+        ]
+      ],
+      "reference_in_target_containment": [
+        {
+          "minimizing_target_sectors": [
+            0
+          ],
+          "minimum_residual": 2.0783320927717347e-14,
+          "reference_sector": 0
+        },
+        {
+          "minimizing_target_sectors": [
+            0
+          ],
+          "minimum_residual": 0.5773502691896258,
+          "reference_sector": 1
+        },
+        {
+          "minimizing_target_sectors": [
+            1
+          ],
+          "minimum_residual": 3.605551275463991,
+          "reference_sector": 2
+        },
+        {
+          "minimizing_target_sectors": [
+            0,
+            3
+          ],
+          "minimum_residual": 3.605551275463989,
+          "reference_sector": 3
+        },
+        {
+          "minimizing_target_sectors": [
+            3
+          ],
+          "minimum_residual": 0.5773502691896258,
+          "reference_sector": 4
+        },
+        {
+          "minimizing_target_sectors": [
+            1,
+            4,
+            5
+          ],
+          "minimum_residual": 5.099019513592782,
+          "reference_sector": 5
+        },
+        {
+          "minimizing_target_sectors": [
+            6
+          ],
+          "minimum_residual": 4.690415759823431,
+          "reference_sector": 6
+        },
+        {
+          "minimizing_target_sectors": [
+            3
+          ],
+          "minimum_residual": 5.698935981492909e-15,
+          "reference_sector": 7
+        },
+        {
+          "minimizing_target_sectors": [
+            6
+          ],
+          "minimum_residual": 2.9999999999999996,
+          "reference_sector": 8
+        }
+      ],
+      "reference_mass_residual": 4.263256414560601e-14,
+      "relation": "overlapping_non_refinement_frames",
+      "selector_tolerance": 1e-09,
+      "semantics": "trace(P_reference P_target) = ||V_reference^* V_target||_F^2",
+      "target_in_reference_containment": [
+        {
+          "minimizing_reference_sectors": [
+            0
+          ],
+          "minimum_residual": 3.872983346207418,
+          "target_sector": 0
+        },
+        {
+          "minimizing_reference_sectors": [
+            2
+          ],
+          "minimum_residual": 3.605551275463988,
+          "target_sector": 1
+        },
+        {
+          "minimizing_reference_sectors": [
+            6
+          ],
+          "minimum_residual": 3.464631787379414e-14,
+          "target_sector": 2
+        },
+        {
+          "minimizing_reference_sectors": [
+            3
+          ],
+          "minimum_residual": 2.9999999999999996,
+          "target_sector": 3
+        },
+        {
+          "minimizing_reference_sectors": [
+            2,
+            5
+          ],
+          "minimum_residual": 3.6055512754639905,
+          "target_sector": 4
+        },
+        {
+          "minimizing_reference_sectors": [
+            5
+          ],
+          "minimum_residual": 1.9966297483449102e-14,
+          "target_sector": 5
+        },
+        {
+          "minimizing_reference_sectors": [
+            6
+          ],
+          "minimum_residual": 4.242640687119285,
+          "target_sector": 6
+        },
+        {
+          "minimizing_reference_sectors": [
+            8
+          ],
+          "minimum_residual": 4.7445972869121416e-15,
+          "target_sector": 7
+        }
+      ],
+      "target_mass_residual": 4.263256414560601e-14
+    },
+    "physical_carrier_commutator_residuals": {
+      "co": 3.6213778700369936e-16,
+      "cp": 1.774612188578452e-15,
+      "eo": 2.84664152516994e-16,
+      "ep": 1.7137884826742908e-15
+    },
+    "sector_count": 8,
+    "sectors": [
+      {
+        "dimension": 35,
+        "joint_labels": {
+          "lambda_family_scaled": 0.5555555555555544,
+          "lambda_ht": 0.9999999999999984,
+          "lambda_qt": 0.9999999999999983
+        },
+        "physical_carrier_weights": {
+          "co": 1.0000000000000004,
+          "cp": 8.0,
+          "eo": 2.0,
+          "ep": 24.000000000000004
+        },
+        "sector_id": 0
+      },
+      {
+        "dimension": 39,
+        "joint_labels": {
+          "lambda_family_scaled": 0.44444444444444403,
+          "lambda_ht": 0.666666666666666,
+          "lambda_qt": 0.999999999999999
+        },
+        "physical_carrier_weights": {
+          "eo": 3.0000000000000004,
+          "ep": 36.0
+        },
+        "sector_id": 1
+      },
+      {
+        "dimension": 22,
+        "joint_labels": {
+          "lambda_family_scaled": 0.33333333333333304,
+          "lambda_ht": 0.333333333333333,
+          "lambda_qt": 0.9999999999999991
+        },
+        "physical_carrier_weights": {
+          "co": 1.0,
+          "cp": 8.000000000000002,
+          "eo": 1.0,
+          "ep": 12.0
+        },
+        "sector_id": 2
+      },
+      {
+        "dimension": 22,
+        "joint_labels": {
+          "lambda_family_scaled": 0.3333333333333324,
+          "lambda_ht": 0.9999999999999974,
+          "lambda_qt": 0.0
+        },
+        "physical_carrier_weights": {
+          "co": 1.0000000000000002,
+          "cp": 8.0,
+          "eo": 0.9999999999999999,
+          "ep": 12.000000000000002
+        },
+        "sector_id": 3
+      },
+      {
+        "dimension": 26,
+        "joint_labels": {
+          "lambda_family_scaled": 0.33333333333333304,
+          "lambda_ht": 0.6666666666666661,
+          "lambda_qt": 0.49999999999999944
+        },
+        "physical_carrier_weights": {
+          "eo": 2.0,
+          "ep": 24.000000000000004
+        },
+        "sector_id": 4
+      },
+      {
+        "dimension": 13,
+        "joint_labels": {
+          "lambda_family_scaled": 0.2222222222222221,
+          "lambda_ht": 0.6666666666666664,
+          "lambda_qt": 0.0
+        },
+        "physical_carrier_weights": {
+          "eo": 1.0,
+          "ep": 12.000000000000004
+        },
+        "sector_id": 5
+      },
+      {
+        "dimension": 62,
+        "joint_labels": {
+          "lambda_family_scaled": 0.22222222222222135,
+          "lambda_ht": 0.33333333333333204,
+          "lambda_qt": 0.4999999999999982
+        },
+        "physical_carrier_weights": {
+          "co": 4.0,
+          "cp": 32.0,
+          "eo": 1.9999999999999998,
+          "ep": 24.0
+        },
+        "sector_id": 6
+      },
+      {
+        "dimension": 9,
+        "joint_labels": {
+          "lambda_family_scaled": 0.11111111111111104,
+          "lambda_ht": 0.33333333333333304,
+          "lambda_qt": 0.0
+        },
+        "physical_carrier_weights": {
+          "co": 1.0,
+          "cp": 8.0
+        },
+        "sector_id": 7
+      }
+    ]
+  },
+  "zero_profile": {
+    "examples_by_mechanism": {},
+    "maximum_cross_carrier_product_norm": 0.0,
+    "maximum_product_norm": 0.0,
+    "maximum_relative_product_norm": 0.0,
+    "top_hub": {
+      "count": 0,
+      "sector": null,
+      "share": null
+    },
+    "triple_counts": []
+  }
+}
