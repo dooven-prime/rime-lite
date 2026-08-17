@@ -1,0 +1,207 @@
+{
+  "certificate_kind": "exact_combinatorial",
+  "claim_status": "Computational Certificate",
+  "profile_invariance_theorem": "If rho is equivariant under the certified cube rotation and the sector projectors are transported by the same unitary, Frobenius norms, ranks, protection classes, and carrier-mechanism counts are identical.",
+  "provenance": {
+    "source_artifacts": [
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/make_exact_certificates.py",
+        "sha256": "58c9ba027f7215316c8d98e253141c81b5f9ab03f1c9ad2ac035f31a89d4bdda"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/incidence_profiles.py",
+        "sha256": "2988df28c80140913abb94f30b137968b2303784564ee2265016c5134cd252e2"
+      },
+      {
+        "path": "rime/base.py",
+        "sha256": "fead279b5631625050b0ee1f24a2bc47c19acac864b9c717a7917398bc4d0d30"
+      },
+      {
+        "path": "rime/cube.py",
+        "sha256": "6cfc68516f7aee5049b8124b8848d17f5a488bb67399d414d3442f0415ef2365"
+      },
+      {
+        "path": "rime/cubie.py",
+        "sha256": "8bc21b4035c579bc4ed6a3867b2bd53989c1e38f2f4b76c6ebc00bcb4d43c029"
+      }
+    ]
+  },
+  "rotation": {
+    "axis_image": [
+      2,
+      0,
+      1
+    ],
+    "sign": [
+      -1,
+      -1,
+      1
+    ]
+  },
+  "source_family": [
+    [
+      0,
+      -1,
+      -1
+    ],
+    [
+      0,
+      -1,
+      1
+    ],
+    [
+      0,
+      1,
+      -1
+    ],
+    [
+      0,
+      1,
+      1
+    ],
+    [
+      1,
+      -1,
+      -1
+    ],
+    [
+      1,
+      -1,
+      1
+    ],
+    [
+      1,
+      -1,
+      2
+    ],
+    [
+      1,
+      1,
+      -1
+    ],
+    [
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      2
+    ],
+    [
+      2,
+      -1,
+      -1
+    ],
+    [
+      2,
+      -1,
+      1
+    ],
+    [
+      2,
+      -1,
+      2
+    ],
+    [
+      2,
+      1,
+      -1
+    ],
+    [
+      2,
+      1,
+      1
+    ],
+    [
+      2,
+      1,
+      2
+    ]
+  ],
+  "statement": "families lie in the same orientation-preserving cube-rotation orbit",
+  "target_family": [
+    [
+      0,
+      -1,
+      -1
+    ],
+    [
+      0,
+      -1,
+      1
+    ],
+    [
+      0,
+      -1,
+      2
+    ],
+    [
+      0,
+      1,
+      -1
+    ],
+    [
+      0,
+      1,
+      1
+    ],
+    [
+      0,
+      1,
+      2
+    ],
+    [
+      1,
+      -1,
+      -1
+    ],
+    [
+      1,
+      -1,
+      1
+    ],
+    [
+      1,
+      -1,
+      2
+    ],
+    [
+      1,
+      1,
+      -1
+    ],
+    [
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      2
+    ],
+    [
+      2,
+      -1,
+      -1
+    ],
+    [
+      2,
+      -1,
+      1
+    ],
+    [
+      2,
+      1,
+      -1
+    ],
+    [
+      2,
+      1,
+      1
+    ]
+  ],
+  "verified": true
+}

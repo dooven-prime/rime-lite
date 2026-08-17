@@ -1,0 +1,2075 @@
+{
+  "claim_status": "Computational Observation",
+  "directory": "results\\axis_balanced_fixed",
+  "distinct_profile_signature_count": 4,
+  "interpretation": "Fixed-frame profiles are comparable because all rows use the same canonical sector frame. Endogenous profiles require the serialized projector-overlap alignment and refinement relation.",
+  "orbit_count": 19,
+  "provenance": {
+    "source_artifacts": [
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/summarize_census.py",
+        "sha256": "5ead250fd5e48959d2bbc316d555bfb058106b0962121a5ca7c348e504531a53"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-00__fixed_full.json",
+        "sha256": "d7ebd8703985c2f1b17b6ba6c20c1b063678b8c4680863a893bb4a6f30e5bb97"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-01__fixed_full.json",
+        "sha256": "1978266e29321428de3d4b3e6d80adaef8ae885b1d0f5735d4cf7fe3e59f78a1"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-02__fixed_full.json",
+        "sha256": "c62f02e0127be6b567dc5f53a42c8537ce80c241c0284ecf3f32fa55c942c56f"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-03__fixed_full.json",
+        "sha256": "b1f03495c92b8efdef9511c23b9c8a3b962e28052a533fbd4ef15421f762ed3e"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-04__fixed_full.json",
+        "sha256": "69b292bd1dd5e895f33374df9ede6dbe49808c2245c1e0ebb75b493547d27410"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-05__fixed_full.json",
+        "sha256": "d3e13f88960e12f1b06a8069db5d58c0a76c0a13496c7d1e2e2d2395df2dd3db"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-06__fixed_full.json",
+        "sha256": "977bbd2a94ce74fcdae88d3b67a4c842628aa71481be5fdd42d6aab76be45cae"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-07__fixed_full.json",
+        "sha256": "d4b7a1380c3fcac63e4432f92aa7db7b1f3ac5fa631f8d5cbebeb292ba5098df"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-08__fixed_full.json",
+        "sha256": "ed8e6572dd0f0064e89a87fcdcbdac1faa599cbf72978a75f779a63c89e87a33"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-09__fixed_full.json",
+        "sha256": "cfa2ae04733153ebdec8835d1307297da8fa3072a439470761f056c3ca2ff7f5"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-10__fixed_full.json",
+        "sha256": "f42382425bbaa51875d309b479d865920b5ecb0f1f022afc64d59cccd2816d63"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-11__fixed_full.json",
+        "sha256": "8b0401cab66b52f505f4fd4922961e858a68647ee1732da8d5972ff0a5d2808b"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-12__fixed_full.json",
+        "sha256": "ca35b0832b652bd083be1d9cf591664bb521e65c00d75a89522b7a18c4c1e7f0"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-13__fixed_full.json",
+        "sha256": "737d20e1dad16ce6d6499f3ba09559fd1365896c2088ea4f7a6cdd4839db4dff"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-14__fixed_full.json",
+        "sha256": "3ce29a3eafa455ac84a77071ff1a13a4b6dbd7ef28d20bd2d34100c5349c8c75"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-15__fixed_full.json",
+        "sha256": "2063ad45fdf07d7bf73aac54e5d00eb9b473fe3a55aa0e677f550f7f55ffce13"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-16__fixed_full.json",
+        "sha256": "744bd13855b8050312f03bfcc257a17b748fa1b6045fea4b15403cad349fe174"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-17__fixed_full.json",
+        "sha256": "d0b5cff930b59ee13e9ee5f0435905dffb529674cf3b7fdae571ed2530a249c0"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-18__fixed_full.json",
+        "sha256": "59ca0568b52c70fa492e57bfcf694604c39455206f746bfc9d81099bc51e5f58"
+      }
+    ]
+  },
+  "rows": [
+    {
+      "file": "axis-balanced-00__fixed_full.json",
+      "operator_count": 2,
+      "orbit_id": "axis-balanced-00",
+      "profile_signature": {
+        "class_counts": {},
+        "protocol": "fixed_full",
+        "rank_signature_counts": [],
+        "sector_dimensions": [
+          1,
+          2,
+          8,
+          20,
+          26,
+          27,
+          39,
+          39,
+          66
+        ],
+        "zero_mechanism_counts": {}
+      },
+      "protected_routes": 0,
+      "sector_count": 9,
+      "total_supported_routes": 0,
+      "unprotected_zero": 0,
+      "zero_mechanism_counts": {},
+      "zero_over_all_supported": null,
+      "zero_over_unprotected": null
+    },
+    {
+      "file": "axis-balanced-01__fixed_full.json",
+      "operator_count": 4,
+      "orbit_id": "axis-balanced-01",
+      "profile_signature": {
+        "class_counts": {
+          "unprotected_nonzero": 224,
+          "unprotected_zero": 64
+        },
+        "protocol": "fixed_full",
+        "rank_signature_counts": [
+          [
+            27,
+            66,
+            27,
+            18,
+            18,
+            "unprotected_nonzero",
+            16
+          ],
+          [
+            27,
+            66,
+            39,
+            18,
+            26,
+            "unprotected_zero",
+            32
+          ],
+          [
+            39,
+            39,
+            39,
+            26,
+            26,
+            "unprotected_nonzero",
+            32
+          ],
+          [
+            39,
+            39,
+            66,
+            26,
+            26,
+            "unprotected_nonzero",
+            32
+          ],
+          [
+            39,
+            66,
+            27,
+            26,
+            18,
+            "unprotected_zero",
+            32
+          ],
+          [
+            39,
+            66,
+            39,
+            26,
+            26,
+            "unprotected_nonzero",
+            64
+          ],
+          [
+            66,
+            27,
+            66,
+            18,
+            18,
+            "unprotected_nonzero",
+            16
+          ],
+          [
+            66,
+            39,
+            39,
+            26,
+            26,
+            "unprotected_nonzero",
+            32
+          ],
+          [
+            66,
+            39,
+            66,
+            26,
+            26,
+            "unprotected_nonzero",
+            32
+          ]
+        ],
+        "sector_dimensions": [
+          1,
+          2,
+          8,
+          20,
+          26,
+          27,
+          39,
+          39,
+          66
+        ],
+        "zero_mechanism_counts": {
+          "physical_carrier_forced": 64
+        }
+      },
+      "protected_routes": 0,
+      "sector_count": 9,
+      "total_supported_routes": 288,
+      "unprotected_zero": 64,
+      "zero_mechanism_counts": {
+        "physical_carrier_forced": 64
+      },
+      "zero_over_all_supported": 0.2222222222222222,
+      "zero_over_unprotected": 0.2222222222222222
+    },
+    {
+      "file": "axis-balanced-02__fixed_full.json",
+      "operator_count": 4,
+      "orbit_id": "axis-balanced-02",
+      "profile_signature": {
+        "class_counts": {},
+        "protocol": "fixed_full",
+        "rank_signature_counts": [],
+        "sector_dimensions": [
+          1,
+          2,
+          8,
+          20,
+          26,
+          27,
+          39,
+          39,
+          66
+        ],
+        "zero_mechanism_counts": {}
+      },
+      "protected_routes": 0,
+      "sector_count": 9,
+      "total_supported_routes": 0,
+      "unprotected_zero": 0,
+      "zero_mechanism_counts": {},
+      "zero_over_all_supported": null,
+      "zero_over_unprotected": null
+    },
+    {
+      "file": "axis-balanced-03__fixed_full.json",
+      "operator_count": 6,
+      "orbit_id": "axis-balanced-03",
+      "profile_signature": {
+        "class_counts": {
+          "unprotected_nonzero": 224,
+          "unprotected_zero": 64
+        },
+        "protocol": "fixed_full",
+        "rank_signature_counts": [
+          [
+            27,
+            66,
+            27,
+            18,
+            18,
+            "unprotected_nonzero",
+            16
+          ],
+          [
+            27,
+            66,
+            39,
+            18,
+            26,
+            "unprotected_zero",
+            32
+          ],
+          [
+            39,
+            39,
+            39,
+            26,
+            26,
+            "unprotected_nonzero",
+            32
+          ],
+          [
+            39,
+            39,
+            66,
+            26,
+            26,
+            "unprotected_nonzero",
+            32
+          ],
+          [
+            39,
+            66,
+            27,
+            26,
+            18,
+            "unprotected_zero",
+            32
+          ],
+          [
+            39,
+            66,
+            39,
+            26,
+            26,
+            "unprotected_nonzero",
+            64
+          ],
+          [
+            66,
+            27,
+            66,
+            18,
+            18,
+            "unprotected_nonzero",
+            16
+          ],
+          [
+            66,
+            39,
+            39,
+            26,
+            26,
+            "unprotected_nonzero",
+            32
+          ],
+          [
+            66,
+            39,
+            66,
+            26,
+            26,
+            "unprotected_nonzero",
+            32
+          ]
+        ],
+        "sector_dimensions": [
+          1,
+          2,
+          8,
+          20,
+          26,
+          27,
+          39,
+          39,
+          66
+        ],
+        "zero_mechanism_counts": {
+          "physical_carrier_forced": 64
+        }
+      },
+      "protected_routes": 0,
+      "sector_count": 9,
+      "total_supported_routes": 288,
+      "unprotected_zero": 64,
+      "zero_mechanism_counts": {
+        "physical_carrier_forced": 64
+      },
+      "zero_over_all_supported": 0.2222222222222222,
+      "zero_over_unprotected": 0.2222222222222222
+    },
+    {
+      "file": "axis-balanced-04__fixed_full.json",
+      "operator_count": 6,
+      "orbit_id": "axis-balanced-04",
+      "profile_signature": {
+        "class_counts": {
+          "unprotected_nonzero": 224,
+          "unprotected_zero": 64
+        },
+        "protocol": "fixed_full",
+        "rank_signature_counts": [
+          [
+            27,
+            66,
+            27,
+            18,
+            18,
+            "unprotected_nonzero",
+            16
+          ],
+          [
+            27,
+            66,
+            39,
+            18,
+            26,
+            "unprotected_zero",
+            32
+          ],
+          [
+            39,
+            39,
+            39,
+            26,
+            26,
+            "unprotected_nonzero",
+            32
+          ],
+          [
+            39,
+            39,
+            66,
+            26,
+            26,
+            "unprotected_nonzero",
+            32
+          ],
+          [
+            39,
+            66,
+            27,
+            26,
+            18,
+            "unprotected_zero",
+            32
+          ],
+          [
+            39,
+            66,
+            39,
+            26,
+            26,
+            "unprotected_nonzero",
+            64
+          ],
+          [
+            66,
+            27,
+            66,
+            18,
+            18,
+            "unprotected_nonzero",
+            16
+          ],
+          [
+            66,
+            39,
+            39,
+            26,
+            26,
+            "unprotected_nonzero",
+            32
+          ],
+          [
+            66,
+            39,
+            66,
+            26,
+            26,
+            "unprotected_nonzero",
+            32
+          ]
+        ],
+        "sector_dimensions": [
+          1,
+          2,
+          8,
+          20,
+          26,
+          27,
+          39,
+          39,
+          66
+        ],
+        "zero_mechanism_counts": {
+          "physical_carrier_forced": 64
+        }
+      },
+      "protected_routes": 0,
+      "sector_count": 9,
+      "total_supported_routes": 288,
+      "unprotected_zero": 64,
+      "zero_mechanism_counts": {
+        "physical_carrier_forced": 64
+      },
+      "zero_over_all_supported": 0.2222222222222222,
+      "zero_over_unprotected": 0.2222222222222222
+    },
+    {
+      "file": "axis-balanced-05__fixed_full.json",
+      "operator_count": 6,
+      "orbit_id": "axis-balanced-05",
+      "profile_signature": {
+        "class_counts": {},
+        "protocol": "fixed_full",
+        "rank_signature_counts": [],
+        "sector_dimensions": [
+          1,
+          2,
+          8,
+          20,
+          26,
+          27,
+          39,
+          39,
+          66
+        ],
+        "zero_mechanism_counts": {}
+      },
+      "protected_routes": 0,
+      "sector_count": 9,
+      "total_supported_routes": 0,
+      "unprotected_zero": 0,
+      "zero_mechanism_counts": {},
+      "zero_over_all_supported": null,
+      "zero_over_unprotected": null
+    },
+    {
+      "file": "axis-balanced-06__fixed_full.json",
+      "operator_count": 8,
+      "orbit_id": "axis-balanced-06",
+      "profile_signature": {
+        "class_counts": {
+          "unprotected_nonzero": 224,
+          "unprotected_zero": 64
+        },
+        "protocol": "fixed_full",
+        "rank_signature_counts": [
+          [
+            27,
+            66,
+            27,
+            18,
+            18,
+            "unprotected_nonzero",
+            16
+          ],
+          [
+            27,
+            66,
+            39,
+            18,
+            26,
+            "unprotected_zero",
+            32
+          ],
+          [
+            39,
+            39,
+            39,
+            26,
+            26,
+            "unprotected_nonzero",
+            32
+          ],
+          [
+            39,
+            39,
+            66,
+            26,
+            26,
+            "unprotected_nonzero",
+            32
+          ],
+          [
+            39,
+            66,
+            27,
+            26,
+            18,
+            "unprotected_zero",
+            32
+          ],
+          [
+            39,
+            66,
+            39,
+            26,
+            26,
+            "unprotected_nonzero",
+            64
+          ],
+          [
+            66,
+            27,
+            66,
+            18,
+            18,
+            "unprotected_nonzero",
+            16
+          ],
+          [
+            66,
+            39,
+            39,
+            26,
+            26,
+            "unprotected_nonzero",
+            32
+          ],
+          [
+            66,
+            39,
+            66,
+            26,
+            26,
+            "unprotected_nonzero",
+            32
+          ]
+        ],
+        "sector_dimensions": [
+          1,
+          2,
+          8,
+          20,
+          26,
+          27,
+          39,
+          39,
+          66
+        ],
+        "zero_mechanism_counts": {
+          "physical_carrier_forced": 64
+        }
+      },
+      "protected_routes": 0,
+      "sector_count": 9,
+      "total_supported_routes": 288,
+      "unprotected_zero": 64,
+      "zero_mechanism_counts": {
+        "physical_carrier_forced": 64
+      },
+      "zero_over_all_supported": 0.2222222222222222,
+      "zero_over_unprotected": 0.2222222222222222
+    },
+    {
+      "file": "axis-balanced-07__fixed_full.json",
+      "operator_count": 8,
+      "orbit_id": "axis-balanced-07",
+      "profile_signature": {
+        "class_counts": {
+          "unprotected_nonzero": 896,
+          "unprotected_zero": 256
+        },
+        "protocol": "fixed_full",
+        "rank_signature_counts": [
+          [
+            27,
+            66,
+            27,
+            18,
+            18,
+            "unprotected_nonzero",
+            64
+          ],
+          [
+            27,
+            66,
+            39,
+            18,
+            26,
+            "unprotected_zero",
+            128
+          ],
+          [
+            39,
+            39,
+            39,
+            26,
+            26,
+            "unprotected_nonzero",
+            128
+          ],
+          [
+            39,
+            39,
+            66,
+            26,
+            26,
+            "unprotected_nonzero",
+            128
+          ],
+          [
+            39,
+            66,
+            27,
+            26,
+            18,
+            "unprotected_zero",
+            128
+          ],
+          [
+            39,
+            66,
+            39,
+            26,
+            26,
+            "unprotected_nonzero",
+            256
+          ],
+          [
+            66,
+            27,
+            66,
+            18,
+            18,
+            "unprotected_nonzero",
+            64
+          ],
+          [
+            66,
+            39,
+            39,
+            26,
+            26,
+            "unprotected_nonzero",
+            128
+          ],
+          [
+            66,
+            39,
+            66,
+            26,
+            26,
+            "unprotected_nonzero",
+            128
+          ]
+        ],
+        "sector_dimensions": [
+          1,
+          2,
+          8,
+          20,
+          26,
+          27,
+          39,
+          39,
+          66
+        ],
+        "zero_mechanism_counts": {
+          "physical_carrier_forced": 256
+        }
+      },
+      "protected_routes": 0,
+      "sector_count": 9,
+      "total_supported_routes": 1152,
+      "unprotected_zero": 256,
+      "zero_mechanism_counts": {
+        "physical_carrier_forced": 256
+      },
+      "zero_over_all_supported": 0.2222222222222222,
+      "zero_over_unprotected": 0.2222222222222222
+    },
+    {
+      "file": "axis-balanced-08__fixed_full.json",
+      "operator_count": 8,
+      "orbit_id": "axis-balanced-08",
+      "profile_signature": {
+        "class_counts": {
+          "unprotected_nonzero": 224,
+          "unprotected_zero": 64
+        },
+        "protocol": "fixed_full",
+        "rank_signature_counts": [
+          [
+            27,
+            66,
+            27,
+            18,
+            18,
+            "unprotected_nonzero",
+            16
+          ],
+          [
+            27,
+            66,
+            39,
+            18,
+            26,
+            "unprotected_zero",
+            32
+          ],
+          [
+            39,
+            39,
+            39,
+            26,
+            26,
+            "unprotected_nonzero",
+            32
+          ],
+          [
+            39,
+            39,
+            66,
+            26,
+            26,
+            "unprotected_nonzero",
+            32
+          ],
+          [
+            39,
+            66,
+            27,
+            26,
+            18,
+            "unprotected_zero",
+            32
+          ],
+          [
+            39,
+            66,
+            39,
+            26,
+            26,
+            "unprotected_nonzero",
+            64
+          ],
+          [
+            66,
+            27,
+            66,
+            18,
+            18,
+            "unprotected_nonzero",
+            16
+          ],
+          [
+            66,
+            39,
+            39,
+            26,
+            26,
+            "unprotected_nonzero",
+            32
+          ],
+          [
+            66,
+            39,
+            66,
+            26,
+            26,
+            "unprotected_nonzero",
+            32
+          ]
+        ],
+        "sector_dimensions": [
+          1,
+          2,
+          8,
+          20,
+          26,
+          27,
+          39,
+          39,
+          66
+        ],
+        "zero_mechanism_counts": {
+          "physical_carrier_forced": 64
+        }
+      },
+      "protected_routes": 0,
+      "sector_count": 9,
+      "total_supported_routes": 288,
+      "unprotected_zero": 64,
+      "zero_mechanism_counts": {
+        "physical_carrier_forced": 64
+      },
+      "zero_over_all_supported": 0.2222222222222222,
+      "zero_over_unprotected": 0.2222222222222222
+    },
+    {
+      "file": "axis-balanced-09__fixed_full.json",
+      "operator_count": 10,
+      "orbit_id": "axis-balanced-09",
+      "profile_signature": {
+        "class_counts": {
+          "unprotected_nonzero": 896,
+          "unprotected_zero": 256
+        },
+        "protocol": "fixed_full",
+        "rank_signature_counts": [
+          [
+            27,
+            66,
+            27,
+            18,
+            18,
+            "unprotected_nonzero",
+            64
+          ],
+          [
+            27,
+            66,
+            39,
+            18,
+            26,
+            "unprotected_zero",
+            128
+          ],
+          [
+            39,
+            39,
+            39,
+            26,
+            26,
+            "unprotected_nonzero",
+            128
+          ],
+          [
+            39,
+            39,
+            66,
+            26,
+            26,
+            "unprotected_nonzero",
+            128
+          ],
+          [
+            39,
+            66,
+            27,
+            26,
+            18,
+            "unprotected_zero",
+            128
+          ],
+          [
+            39,
+            66,
+            39,
+            26,
+            26,
+            "unprotected_nonzero",
+            256
+          ],
+          [
+            66,
+            27,
+            66,
+            18,
+            18,
+            "unprotected_nonzero",
+            64
+          ],
+          [
+            66,
+            39,
+            39,
+            26,
+            26,
+            "unprotected_nonzero",
+            128
+          ],
+          [
+            66,
+            39,
+            66,
+            26,
+            26,
+            "unprotected_nonzero",
+            128
+          ]
+        ],
+        "sector_dimensions": [
+          1,
+          2,
+          8,
+          20,
+          26,
+          27,
+          39,
+          39,
+          66
+        ],
+        "zero_mechanism_counts": {
+          "physical_carrier_forced": 256
+        }
+      },
+      "protected_routes": 0,
+      "sector_count": 9,
+      "total_supported_routes": 1152,
+      "unprotected_zero": 256,
+      "zero_mechanism_counts": {
+        "physical_carrier_forced": 256
+      },
+      "zero_over_all_supported": 0.2222222222222222,
+      "zero_over_unprotected": 0.2222222222222222
+    },
+    {
+      "file": "axis-balanced-10__fixed_full.json",
+      "operator_count": 10,
+      "orbit_id": "axis-balanced-10",
+      "profile_signature": {
+        "class_counts": {
+          "unprotected_nonzero": 224,
+          "unprotected_zero": 64
+        },
+        "protocol": "fixed_full",
+        "rank_signature_counts": [
+          [
+            27,
+            66,
+            27,
+            18,
+            18,
+            "unprotected_nonzero",
+            16
+          ],
+          [
+            27,
+            66,
+            39,
+            18,
+            26,
+            "unprotected_zero",
+            32
+          ],
+          [
+            39,
+            39,
+            39,
+            26,
+            26,
+            "unprotected_nonzero",
+            32
+          ],
+          [
+            39,
+            39,
+            66,
+            26,
+            26,
+            "unprotected_nonzero",
+            32
+          ],
+          [
+            39,
+            66,
+            27,
+            26,
+            18,
+            "unprotected_zero",
+            32
+          ],
+          [
+            39,
+            66,
+            39,
+            26,
+            26,
+            "unprotected_nonzero",
+            64
+          ],
+          [
+            66,
+            27,
+            66,
+            18,
+            18,
+            "unprotected_nonzero",
+            16
+          ],
+          [
+            66,
+            39,
+            39,
+            26,
+            26,
+            "unprotected_nonzero",
+            32
+          ],
+          [
+            66,
+            39,
+            66,
+            26,
+            26,
+            "unprotected_nonzero",
+            32
+          ]
+        ],
+        "sector_dimensions": [
+          1,
+          2,
+          8,
+          20,
+          26,
+          27,
+          39,
+          39,
+          66
+        ],
+        "zero_mechanism_counts": {
+          "physical_carrier_forced": 64
+        }
+      },
+      "protected_routes": 0,
+      "sector_count": 9,
+      "total_supported_routes": 288,
+      "unprotected_zero": 64,
+      "zero_mechanism_counts": {
+        "physical_carrier_forced": 64
+      },
+      "zero_over_all_supported": 0.2222222222222222,
+      "zero_over_unprotected": 0.2222222222222222
+    },
+    {
+      "file": "axis-balanced-11__fixed_full.json",
+      "operator_count": 10,
+      "orbit_id": "axis-balanced-11",
+      "profile_signature": {
+        "class_counts": {
+          "unprotected_nonzero": 896,
+          "unprotected_zero": 256
+        },
+        "protocol": "fixed_full",
+        "rank_signature_counts": [
+          [
+            27,
+            66,
+            27,
+            18,
+            18,
+            "unprotected_nonzero",
+            64
+          ],
+          [
+            27,
+            66,
+            39,
+            18,
+            26,
+            "unprotected_zero",
+            128
+          ],
+          [
+            39,
+            39,
+            39,
+            26,
+            26,
+            "unprotected_nonzero",
+            128
+          ],
+          [
+            39,
+            39,
+            66,
+            26,
+            26,
+            "unprotected_nonzero",
+            128
+          ],
+          [
+            39,
+            66,
+            27,
+            26,
+            18,
+            "unprotected_zero",
+            128
+          ],
+          [
+            39,
+            66,
+            39,
+            26,
+            26,
+            "unprotected_nonzero",
+            256
+          ],
+          [
+            66,
+            27,
+            66,
+            18,
+            18,
+            "unprotected_nonzero",
+            64
+          ],
+          [
+            66,
+            39,
+            39,
+            26,
+            26,
+            "unprotected_nonzero",
+            128
+          ],
+          [
+            66,
+            39,
+            66,
+            26,
+            26,
+            "unprotected_nonzero",
+            128
+          ]
+        ],
+        "sector_dimensions": [
+          1,
+          2,
+          8,
+          20,
+          26,
+          27,
+          39,
+          39,
+          66
+        ],
+        "zero_mechanism_counts": {
+          "physical_carrier_forced": 256
+        }
+      },
+      "protected_routes": 0,
+      "sector_count": 9,
+      "total_supported_routes": 1152,
+      "unprotected_zero": 256,
+      "zero_mechanism_counts": {
+        "physical_carrier_forced": 256
+      },
+      "zero_over_all_supported": 0.2222222222222222,
+      "zero_over_unprotected": 0.2222222222222222
+    },
+    {
+      "file": "axis-balanced-12__fixed_full.json",
+      "operator_count": 12,
+      "orbit_id": "axis-balanced-12",
+      "profile_signature": {
+        "class_counts": {
+          "unprotected_nonzero": 896,
+          "unprotected_zero": 256
+        },
+        "protocol": "fixed_full",
+        "rank_signature_counts": [
+          [
+            27,
+            66,
+            27,
+            18,
+            18,
+            "unprotected_nonzero",
+            64
+          ],
+          [
+            27,
+            66,
+            39,
+            18,
+            26,
+            "unprotected_zero",
+            128
+          ],
+          [
+            39,
+            39,
+            39,
+            26,
+            26,
+            "unprotected_nonzero",
+            128
+          ],
+          [
+            39,
+            39,
+            66,
+            26,
+            26,
+            "unprotected_nonzero",
+            128
+          ],
+          [
+            39,
+            66,
+            27,
+            26,
+            18,
+            "unprotected_zero",
+            128
+          ],
+          [
+            39,
+            66,
+            39,
+            26,
+            26,
+            "unprotected_nonzero",
+            256
+          ],
+          [
+            66,
+            27,
+            66,
+            18,
+            18,
+            "unprotected_nonzero",
+            64
+          ],
+          [
+            66,
+            39,
+            39,
+            26,
+            26,
+            "unprotected_nonzero",
+            128
+          ],
+          [
+            66,
+            39,
+            66,
+            26,
+            26,
+            "unprotected_nonzero",
+            128
+          ]
+        ],
+        "sector_dimensions": [
+          1,
+          2,
+          8,
+          20,
+          26,
+          27,
+          39,
+          39,
+          66
+        ],
+        "zero_mechanism_counts": {
+          "physical_carrier_forced": 256
+        }
+      },
+      "protected_routes": 0,
+      "sector_count": 9,
+      "total_supported_routes": 1152,
+      "unprotected_zero": 256,
+      "zero_mechanism_counts": {
+        "physical_carrier_forced": 256
+      },
+      "zero_over_all_supported": 0.2222222222222222,
+      "zero_over_unprotected": 0.2222222222222222
+    },
+    {
+      "file": "axis-balanced-13__fixed_full.json",
+      "operator_count": 12,
+      "orbit_id": "axis-balanced-13",
+      "profile_signature": {
+        "class_counts": {
+          "unprotected_nonzero": 896,
+          "unprotected_zero": 256
+        },
+        "protocol": "fixed_full",
+        "rank_signature_counts": [
+          [
+            27,
+            66,
+            27,
+            18,
+            18,
+            "unprotected_nonzero",
+            64
+          ],
+          [
+            27,
+            66,
+            39,
+            18,
+            26,
+            "unprotected_zero",
+            128
+          ],
+          [
+            39,
+            39,
+            39,
+            26,
+            26,
+            "unprotected_nonzero",
+            128
+          ],
+          [
+            39,
+            39,
+            66,
+            26,
+            26,
+            "unprotected_nonzero",
+            128
+          ],
+          [
+            39,
+            66,
+            27,
+            26,
+            18,
+            "unprotected_zero",
+            128
+          ],
+          [
+            39,
+            66,
+            39,
+            26,
+            26,
+            "unprotected_nonzero",
+            256
+          ],
+          [
+            66,
+            27,
+            66,
+            18,
+            18,
+            "unprotected_nonzero",
+            64
+          ],
+          [
+            66,
+            39,
+            39,
+            26,
+            26,
+            "unprotected_nonzero",
+            128
+          ],
+          [
+            66,
+            39,
+            66,
+            26,
+            26,
+            "unprotected_nonzero",
+            128
+          ]
+        ],
+        "sector_dimensions": [
+          1,
+          2,
+          8,
+          20,
+          26,
+          27,
+          39,
+          39,
+          66
+        ],
+        "zero_mechanism_counts": {
+          "physical_carrier_forced": 256
+        }
+      },
+      "protected_routes": 0,
+      "sector_count": 9,
+      "total_supported_routes": 1152,
+      "unprotected_zero": 256,
+      "zero_mechanism_counts": {
+        "physical_carrier_forced": 256
+      },
+      "zero_over_all_supported": 0.2222222222222222,
+      "zero_over_unprotected": 0.2222222222222222
+    },
+    {
+      "file": "axis-balanced-14__fixed_full.json",
+      "operator_count": 12,
+      "orbit_id": "axis-balanced-14",
+      "profile_signature": {
+        "class_counts": {
+          "unprotected_nonzero": 2016,
+          "unprotected_zero": 576
+        },
+        "protocol": "fixed_full",
+        "rank_signature_counts": [
+          [
+            27,
+            66,
+            27,
+            18,
+            18,
+            "unprotected_nonzero",
+            144
+          ],
+          [
+            27,
+            66,
+            39,
+            18,
+            26,
+            "unprotected_zero",
+            288
+          ],
+          [
+            39,
+            39,
+            39,
+            26,
+            26,
+            "unprotected_nonzero",
+            288
+          ],
+          [
+            39,
+            39,
+            66,
+            26,
+            26,
+            "unprotected_nonzero",
+            288
+          ],
+          [
+            39,
+            66,
+            27,
+            26,
+            18,
+            "unprotected_zero",
+            288
+          ],
+          [
+            39,
+            66,
+            39,
+            26,
+            26,
+            "unprotected_nonzero",
+            576
+          ],
+          [
+            66,
+            27,
+            66,
+            18,
+            18,
+            "unprotected_nonzero",
+            144
+          ],
+          [
+            66,
+            39,
+            39,
+            26,
+            26,
+            "unprotected_nonzero",
+            288
+          ],
+          [
+            66,
+            39,
+            66,
+            26,
+            26,
+            "unprotected_nonzero",
+            288
+          ]
+        ],
+        "sector_dimensions": [
+          1,
+          2,
+          8,
+          20,
+          26,
+          27,
+          39,
+          39,
+          66
+        ],
+        "zero_mechanism_counts": {
+          "physical_carrier_forced": 576
+        }
+      },
+      "protected_routes": 0,
+      "sector_count": 9,
+      "total_supported_routes": 2592,
+      "unprotected_zero": 576,
+      "zero_mechanism_counts": {
+        "physical_carrier_forced": 576
+      },
+      "zero_over_all_supported": 0.2222222222222222,
+      "zero_over_unprotected": 0.2222222222222222
+    },
+    {
+      "file": "axis-balanced-15__fixed_full.json",
+      "operator_count": 14,
+      "orbit_id": "axis-balanced-15",
+      "profile_signature": {
+        "class_counts": {
+          "unprotected_nonzero": 896,
+          "unprotected_zero": 256
+        },
+        "protocol": "fixed_full",
+        "rank_signature_counts": [
+          [
+            27,
+            66,
+            27,
+            18,
+            18,
+            "unprotected_nonzero",
+            64
+          ],
+          [
+            27,
+            66,
+            39,
+            18,
+            26,
+            "unprotected_zero",
+            128
+          ],
+          [
+            39,
+            39,
+            39,
+            26,
+            26,
+            "unprotected_nonzero",
+            128
+          ],
+          [
+            39,
+            39,
+            66,
+            26,
+            26,
+            "unprotected_nonzero",
+            128
+          ],
+          [
+            39,
+            66,
+            27,
+            26,
+            18,
+            "unprotected_zero",
+            128
+          ],
+          [
+            39,
+            66,
+            39,
+            26,
+            26,
+            "unprotected_nonzero",
+            256
+          ],
+          [
+            66,
+            27,
+            66,
+            18,
+            18,
+            "unprotected_nonzero",
+            64
+          ],
+          [
+            66,
+            39,
+            39,
+            26,
+            26,
+            "unprotected_nonzero",
+            128
+          ],
+          [
+            66,
+            39,
+            66,
+            26,
+            26,
+            "unprotected_nonzero",
+            128
+          ]
+        ],
+        "sector_dimensions": [
+          1,
+          2,
+          8,
+          20,
+          26,
+          27,
+          39,
+          39,
+          66
+        ],
+        "zero_mechanism_counts": {
+          "physical_carrier_forced": 256
+        }
+      },
+      "protected_routes": 0,
+      "sector_count": 9,
+      "total_supported_routes": 1152,
+      "unprotected_zero": 256,
+      "zero_mechanism_counts": {
+        "physical_carrier_forced": 256
+      },
+      "zero_over_all_supported": 0.2222222222222222,
+      "zero_over_unprotected": 0.2222222222222222
+    },
+    {
+      "file": "axis-balanced-16__fixed_full.json",
+      "operator_count": 14,
+      "orbit_id": "axis-balanced-16",
+      "profile_signature": {
+        "class_counts": {
+          "unprotected_nonzero": 2016,
+          "unprotected_zero": 576
+        },
+        "protocol": "fixed_full",
+        "rank_signature_counts": [
+          [
+            27,
+            66,
+            27,
+            18,
+            18,
+            "unprotected_nonzero",
+            144
+          ],
+          [
+            27,
+            66,
+            39,
+            18,
+            26,
+            "unprotected_zero",
+            288
+          ],
+          [
+            39,
+            39,
+            39,
+            26,
+            26,
+            "unprotected_nonzero",
+            288
+          ],
+          [
+            39,
+            39,
+            66,
+            26,
+            26,
+            "unprotected_nonzero",
+            288
+          ],
+          [
+            39,
+            66,
+            27,
+            26,
+            18,
+            "unprotected_zero",
+            288
+          ],
+          [
+            39,
+            66,
+            39,
+            26,
+            26,
+            "unprotected_nonzero",
+            576
+          ],
+          [
+            66,
+            27,
+            66,
+            18,
+            18,
+            "unprotected_nonzero",
+            144
+          ],
+          [
+            66,
+            39,
+            39,
+            26,
+            26,
+            "unprotected_nonzero",
+            288
+          ],
+          [
+            66,
+            39,
+            66,
+            26,
+            26,
+            "unprotected_nonzero",
+            288
+          ]
+        ],
+        "sector_dimensions": [
+          1,
+          2,
+          8,
+          20,
+          26,
+          27,
+          39,
+          39,
+          66
+        ],
+        "zero_mechanism_counts": {
+          "physical_carrier_forced": 576
+        }
+      },
+      "protected_routes": 0,
+      "sector_count": 9,
+      "total_supported_routes": 2592,
+      "unprotected_zero": 576,
+      "zero_mechanism_counts": {
+        "physical_carrier_forced": 576
+      },
+      "zero_over_all_supported": 0.2222222222222222,
+      "zero_over_unprotected": 0.2222222222222222
+    },
+    {
+      "file": "axis-balanced-17__fixed_full.json",
+      "operator_count": 16,
+      "orbit_id": "axis-balanced-17",
+      "profile_signature": {
+        "class_counts": {
+          "unprotected_nonzero": 2016,
+          "unprotected_zero": 576
+        },
+        "protocol": "fixed_full",
+        "rank_signature_counts": [
+          [
+            27,
+            66,
+            27,
+            18,
+            18,
+            "unprotected_nonzero",
+            144
+          ],
+          [
+            27,
+            66,
+            39,
+            18,
+            26,
+            "unprotected_zero",
+            288
+          ],
+          [
+            39,
+            39,
+            39,
+            26,
+            26,
+            "unprotected_nonzero",
+            288
+          ],
+          [
+            39,
+            39,
+            66,
+            26,
+            26,
+            "unprotected_nonzero",
+            288
+          ],
+          [
+            39,
+            66,
+            27,
+            26,
+            18,
+            "unprotected_zero",
+            288
+          ],
+          [
+            39,
+            66,
+            39,
+            26,
+            26,
+            "unprotected_nonzero",
+            576
+          ],
+          [
+            66,
+            27,
+            66,
+            18,
+            18,
+            "unprotected_nonzero",
+            144
+          ],
+          [
+            66,
+            39,
+            39,
+            26,
+            26,
+            "unprotected_nonzero",
+            288
+          ],
+          [
+            66,
+            39,
+            66,
+            26,
+            26,
+            "unprotected_nonzero",
+            288
+          ]
+        ],
+        "sector_dimensions": [
+          1,
+          2,
+          8,
+          20,
+          26,
+          27,
+          39,
+          39,
+          66
+        ],
+        "zero_mechanism_counts": {
+          "physical_carrier_forced": 576
+        }
+      },
+      "protected_routes": 0,
+      "sector_count": 9,
+      "total_supported_routes": 2592,
+      "unprotected_zero": 576,
+      "zero_mechanism_counts": {
+        "physical_carrier_forced": 576
+      },
+      "zero_over_all_supported": 0.2222222222222222,
+      "zero_over_unprotected": 0.2222222222222222
+    },
+    {
+      "file": "axis-balanced-18__fixed_full.json",
+      "operator_count": 18,
+      "orbit_id": "axis-balanced-18",
+      "profile_signature": {
+        "class_counts": {
+          "unprotected_nonzero": 2016,
+          "unprotected_zero": 576
+        },
+        "protocol": "fixed_full",
+        "rank_signature_counts": [
+          [
+            27,
+            66,
+            27,
+            18,
+            18,
+            "unprotected_nonzero",
+            144
+          ],
+          [
+            27,
+            66,
+            39,
+            18,
+            26,
+            "unprotected_zero",
+            288
+          ],
+          [
+            39,
+            39,
+            39,
+            26,
+            26,
+            "unprotected_nonzero",
+            288
+          ],
+          [
+            39,
+            39,
+            66,
+            26,
+            26,
+            "unprotected_nonzero",
+            288
+          ],
+          [
+            39,
+            66,
+            27,
+            26,
+            18,
+            "unprotected_zero",
+            288
+          ],
+          [
+            39,
+            66,
+            39,
+            26,
+            26,
+            "unprotected_nonzero",
+            576
+          ],
+          [
+            66,
+            27,
+            66,
+            18,
+            18,
+            "unprotected_nonzero",
+            144
+          ],
+          [
+            66,
+            39,
+            39,
+            26,
+            26,
+            "unprotected_nonzero",
+            288
+          ],
+          [
+            66,
+            39,
+            66,
+            26,
+            26,
+            "unprotected_nonzero",
+            288
+          ]
+        ],
+        "sector_dimensions": [
+          1,
+          2,
+          8,
+          20,
+          26,
+          27,
+          39,
+          39,
+          66
+        ],
+        "zero_mechanism_counts": {
+          "physical_carrier_forced": 576
+        }
+      },
+      "protected_routes": 0,
+      "sector_count": 9,
+      "total_supported_routes": 2592,
+      "unprotected_zero": 576,
+      "zero_mechanism_counts": {
+        "physical_carrier_forced": 576
+      },
+      "zero_over_all_supported": 0.2222222222222222,
+      "zero_over_unprotected": 0.2222222222222222
+    }
+  ],
+  "schema": "rime.incidence-profile-orbit-summary.v1",
+  "signature_multiplicities": [
+    3,
+    4,
+    6,
+    6
+  ]
+}

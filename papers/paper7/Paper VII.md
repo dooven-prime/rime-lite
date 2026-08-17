@@ -1,6 +1,6 @@
 # Incidence Geometry of Projected Operator Composition
 
-### Rank Protection, Image--Kernel Alignment, and Promotion Limits
+### Rank Protection, Carrier-Resolved Strata, and Promotion Limits
 
 **WuJun Chen**
 
@@ -16,7 +16,7 @@ vanish. In a sectorized operator setting, this is the basic obstruction to
 promoting a Boolean support path through an intermediate sector to a nonzero
 projected composition.
 
-**Approach.** We study the closed zero-product locus
+**Approach.** We first study the closed free zero-product locus
 
 $$
 Z=\{(A,B):AB=0\}
@@ -26,7 +26,10 @@ and its constructible nonzero-factor part. The identity
 $AB=0\iff\operatorname{im}B\subseteq\ker A$ turns product failure into an
 image--kernel incidence condition. We stratify this condition by
 $\operatorname{rank}A=r$ and by the double rank
-$(\operatorname{rank}A,\operatorname{rank}B)=(r,s)$.
+$(\operatorname{rank}A,\operatorname{rank}B)=(r,s)$. We then replace the
+free ambient by a declared common carrier decomposition and stratify by the
+carrier rank vectors $\mathbf r=(r_\beta)$ and
+$\mathbf s=(s_\beta)$.
 
 **Results.** The fixed-$r$ stratum has
 
@@ -44,18 +47,31 @@ $$
 $$
 
 and has relative codimension $rs$ inside the ambient rank-$(r,s)$ matrix-pair
-stratum. Full column rank of $A$, or full row rank of $B$, excludes nonzero
-zero-products and gives quantitative singular-value lower bounds. A corrected
-computational audit distinguishes both-protected, left-only, right-only,
-unprotected-nonzero, and unprotected-zero routed products. In the declared
-Rubik realization, 2592 nonzero-factor routed records split into 2016
-unprotected nonzero products and 576 machine-zero image--kernel alignments.
+stratum. In a common block structure, the zero-product locus is the product
+of the carrierwise loci. Its fixed-$\mathbf r$ codimension is
+
+$$
+\sum_\beta\bigl[(m_\beta-r_\beta)(n_\beta-r_\beta)
+ +p_\beta r_\beta\bigr],
+$$
+
+and the fixed-$(\mathbf r,\mathbf s)$ incidence condition has relative
+codimension $\sum_\beta r_\beta s_\beta$. The full diagonal pair ambient has
+zero-product codimension $d$, while a complementary-support represented
+family can lie entirely in incidence and therefore have pullback codimension
+zero. Full column rank of $A$, or full row rank of $B$, excludes nonzero
+zero-products. An exact carrier certificate upgrades the four canonical Rubik
+zero-route concentrations from numerical zeros to exact fixed-frame
+incidence. A separate 19-orbit restriction census remains a bounded
+Computational Observation.
 
 **Boundary.** These results concern one routed product. They do not identify a
 support path with a routed product, a routed product with a full word, a full
 word with a commutator, or low-order commutator support with Lie depth.
-Likewise, high codimension in the free matrix-pair space does not determine the
-pullback incidence geometry of a representation-derived family.
+Likewise, neither free nor structured-ambient codimension determines the
+pullback incidence geometry of a representation-derived family. The
+structured theorem is fixed-frame: it does not compare endogenous sector
+frames or establish a universal incidence rate.
 
 ***
 
@@ -76,17 +92,20 @@ relative position of two subspaces in the intermediate vector space. For
 projected operator blocks, it is therefore the first geometric datum that must
 be checked after a support path has been found.
 
-The paper has three goals.
+The paper has four goals.
 
 1. Give the rank-stratified geometry of the zero-product condition.
-2. State the correct rectangular rank-protection criteria.
-3. Separate local incidence from every stronger promotion involving route
+2. Refine that geometry for a declared common carrier decomposition.
+3. Register a fixed-frame represented incidence profile with exact and
+   numerical evidence kept separate.
+4. Separate local incidence from every stronger promotion involving route
    sums, words, commutators, Lie depth, or representation-derived parameter
    families.
 
-The analysis is static: the sector projectors and operator family are fixed.
-Moving projectors, normal spectral charts, and parameter-dependent pullbacks
-remain research directions.
+The analysis is static: the sector projectors, carrier projectors, and labelled
+operator family are fixed. Moving projectors, endogenous frame
+reconstruction, normal spectral charts, and general parameter-dependent
+pullbacks remain research directions.
 
 The image--kernel obstruction is adjacent to two independent questions. First,
 Boolean graph paths need not survive projected matrix composition. Second,
@@ -102,12 +121,14 @@ routed products to word or Lie accessibility.
 
 The notation is introduced below in the order required by the routed-product
 problem. The claim-status vocabulary is **Theorem** for exact statements under
-their stated hypotheses, **Computational Certificate** only when a finite
-numerical check is explicitly assigned that status, **Computational
+their stated hypotheses, **Computational Certificate** for a source-addressed
+finite exact or computational check explicitly assigned that status,
+**Computational
 Observation** for the declared Rubik, random-control, perturbation, and
-finite-atlas records, and **Research Program** for represented pullback
-geometry and all stronger promotion statements that remain open. The complete
-status table appears in Section~\ref{sec:claim-status-and-boundary}.
+finite-atlas records, and **Research Program** for general represented
+pullback geometry and all stronger promotion statements that remain open. The
+complete status table appears in
+Section~\ref{sec:claim-status-and-boundary}.
 
 Let $V$ be a finite-dimensional complex Hilbert space with a complete
 orthogonal sectorization
@@ -122,6 +143,31 @@ $$
 
 Let $\mathcal Y=\{Y_a\}_{a\in\mathcal A}$ be a declared finite operator
 family. No commutant assumption is imposed.
+
+When a common carrier structure is invoked, it is separately declared as
+
+$$
+V=\bigoplus_{\beta\in\mathcal B}H_\beta,
+\qquad
+I=\sum_{\beta\in\mathcal B}C_\beta,
+$$
+
+with orthogonal carrier projectors $C_\beta$. The structured results require
+
+$$
+[Q_i,C_\beta]=0,
+\qquad
+[Y_a,C_\beta]=0
+$$
+
+for every registered $i,a,\beta$. These are additional hypotheses, not
+consequences of sectorization. They give carrier-resolved sector spaces
+
+$$
+E_{i,\beta}=Q_iC_\beta V,
+\qquad
+E_i=\bigoplus_\beta E_{i,\beta}.
+$$
 
 For a sector triple $(i,k,j)$ and ordered operator pair $(a,b)$, define
 
@@ -466,6 +512,285 @@ the product calculation.
 
 ***
 
+## Carrier-Structured Incidence
+
+The free matrix-pair ambient treats every entry of $A$ and $B$ as an
+independent coordinate. A represented system often supplies a smaller ambient
+before any parameter pullback is considered. The first structured case is a
+declared common block decomposition of the source, intermediate, and target
+spaces.
+
+### Definition 6.1 (Common-Carrier Matrix-Pair Ambient)
+
+Let
+
+$$
+E_i=\bigoplus_{\beta\in\mathcal B}E_{i,\beta},
+\qquad
+E_k=\bigoplus_{\beta\in\mathcal B}E_{k,\beta},
+\qquad
+E_j=\bigoplus_{\beta\in\mathcal B}E_{j,\beta},
+$$
+
+where
+
+$$
+m_\beta=\dim E_{i,\beta},
+\qquad
+n_\beta=\dim E_{k,\beta},
+\qquad
+p_\beta=\dim E_{j,\beta}.
+$$
+
+The common-carrier matrix-pair ambient is
+
+$$
+\mathcal M_{\mathcal B}
+=
+\left(\bigoplus_\beta
+\operatorname{Mat}_{m_\beta\times n_\beta}(\mathbb C)\right)
+\times
+\left(\bigoplus_\beta
+\operatorname{Mat}_{n_\beta\times p_\beta}(\mathbb C)\right).
+$$
+
+Write $A=\bigoplus_\beta A_\beta$ and
+$B=\bigoplus_\beta B_\beta$. Its structured zero-product locus is
+
+$$
+Z_{\mathcal B}
+=\{(A,B)\in\mathcal M_{\mathcal B}:AB=0\}.
+$$
+
+Zero-dimensional carrier blocks are permitted and contribute no coordinates.
+
+### Theorem 6.2 (Carrier Product Decomposition)
+
+The structured zero-product locus decomposes as
+
+$$
+Z_{\mathcal B}
+=
+\prod_{\beta\in\mathcal B}Z_{m_\beta,n_\beta,p_\beta}.
+$$
+
+Equivalently,
+
+$$
+AB=0
+\quad\Longleftrightarrow\quad
+A_\beta B_\beta=0\ \text{for every }\beta
+\quad\Longleftrightarrow\quad
+\operatorname{im}B_\beta\subseteq\ker A_\beta
+\ \text{for every }\beta.
+$$
+
+If the exact carrier supports
+
+$$
+\mathcal S(A)=\{\beta:A_\beta\ne0\},
+\qquad
+\mathcal S(B)=\{\beta:B_\beta\ne0\}
+$$
+
+are disjoint, then $AB=0$.
+
+**Proof.** Common-carrier reduction gives
+$AB=\bigoplus_\beta A_\beta B_\beta$. A direct-sum operator vanishes exactly
+when every block vanishes. Apply Theorem 3.1 to each block. The final statement
+follows because one factor of every carrier-local product is then zero.
+$\square$
+
+The disjoint-support clause is sufficient, not necessary. If the carrier
+supports overlap, zero product is still possible through carrier-local
+image--kernel alignment.
+
+### Theorem 6.3 (Fixed Carrier-Rank Stratum)
+
+Fix a carrier rank vector
+
+$$
+\mathbf r=(r_\beta)_\beta,
+\qquad
+0\le r_\beta\le\min(m_\beta,n_\beta).
+$$
+
+The locally closed stratum of $Z_{\mathcal B}$ with
+$\operatorname{rank}A_\beta=r_\beta$ for every $\beta$ has dimension
+
+$$
+\dim I_{\mathbf r}^{\mathcal B}
+=
+\sum_\beta
+\left[
+r_\beta(m_\beta+n_\beta-r_\beta)
++p_\beta(n_\beta-r_\beta)
+\right]
+$$
+
+and codimension in $\mathcal M_{\mathcal B}$
+
+$$
+\operatorname{codim}_{\mathcal M_{\mathcal B}}
+I_{\mathbf r}^{\mathcal B}
+=
+\sum_\beta
+\left[
+(m_\beta-r_\beta)(n_\beta-r_\beta)
++p_\beta r_\beta
+\right].
+$$
+
+**Proof.** By Theorem 6.2, the stratum is the product of the corresponding
+fixed-$r_\beta$ strata. Apply Theorem 4.1 blockwise and add dimensions.
+$\square$
+
+### Theorem 6.4 (Fixed Double Carrier-Rank Stratum)
+
+Fix also $\mathbf s=(s_\beta)_\beta$. The structured fixed-double-rank
+incidence stratum is nonempty exactly when
+
+$$
+0\le s_\beta\le\min(n_\beta-r_\beta,p_\beta)
+$$
+
+for every $\beta$. When nonempty, it has dimension
+
+$$
+\dim I_{\mathbf r,\mathbf s}^{\mathcal B}
+=
+\sum_\beta
+\left[
+r_\beta(m_\beta+n_\beta-r_\beta)
++s_\beta(n_\beta-r_\beta+p_\beta-s_\beta)
+\right].
+$$
+
+Inside the structured rank-$(\mathbf r,\mathbf s)$ matrix-pair stratum, its
+relative codimension is
+
+$$
+\sum_\beta r_\beta s_\beta.
+$$
+
+**Proof.** Apply Theorem 4.2 and Corollary 4.3 independently on every carrier
+block, then take the product. $\square$
+
+### Corollary 6.5 (Diagonal Ambient and Pullback Boundary)
+
+For the full diagonal pair ambient with $d$ scalar carrier blocks,
+
+$$
+A=\operatorname{diag}(a_1,\ldots,a_d),
+\qquad
+B=\operatorname{diag}(b_1,\ldots,b_d),
+$$
+
+one has
+
+$$
+AB=0
+\quad\Longleftrightarrow\quad
+a_\beta b_\beta=0
+\ \text{for every }\beta.
+$$
+
+The zero-product locus is a union of coordinate linear spaces of dimension
+$d$ in the $2d$-dimensional diagonal pair ambient. Its codimension is therefore
+$d$, not one. Its nonzero-factor part is nonempty for $d\ge2$, for example by
+choosing disjoint nonempty supports for $A$ and $B$.
+
+By contrast, the represented map
+
+$$
+\Phi:\mathbb C^2\longrightarrow\mathcal M_{\mathcal B},
+\qquad
+\Phi(u,v)
+=
+\left(
+\operatorname{diag}(u,0),
+\operatorname{diag}(0,v)
+\right)
+$$
+
+satisfies $AB=0$ identically. Hence
+$\Phi^{-1}(Z_{\mathcal B})=\mathbb C^2$ has pullback codimension zero, while
+both factors are nonzero on the open set $uv\ne0$.
+
+This gives three different questions:
+
+$$
+\operatorname{codim}_{\text{free}}Z,
+\qquad
+\operatorname{codim}_{\text{structured}}Z_{\mathcal B},
+\qquad
+\operatorname{codim}_{\Theta}\Phi^{-1}(Z_{\mathcal B}).
+$$
+
+None may be substituted for another.
+
+![Free matrix-pair incidence supplies a baseline, a declared common carrier decomposition replaces it by a product of blockwise incidence loci, and a represented parameter family may meet or lie inside that structured locus. Codimension is ambient-relative at every stage.](../../figures/paper7/fig3_structured_incidence_layers.png)
+
+***
+
+## Fixed-Frame Routed-Incidence Profiles
+
+The carrier theorems become represented statements only after a fixed sector
+frame, labelled operator family, and exact or numerical policy are supplied.
+For the route $(i,k,j,a,b)$, common-carrier reduction gives
+
+$$
+A_{ik}^a=\bigoplus_\beta A_{ik,\beta}^a,
+\qquad
+B_{kj}^b=\bigoplus_\beta B_{kj,\beta}^b.
+$$
+
+Let $\Omega_{Q,\mathcal Y}$ be the finite set of declared route tuples for
+which both factors are supported. A **fixed-frame routed-incidence profile**
+records:
+
+1. the identities of $\{Q_i\}$, $\{C_\beta\}$, and the labelled alphabet
+   $\mathcal Y$;
+2. the route scope, threshold and rank policies, and evidence level;
+3. carrier rank signatures and the five rank-protection classes;
+4. exact carrier-forced zeros, carrier-local image--kernel zeros, and unresolved
+   numerical zeros as distinct mechanisms;
+5. both $N_0/|\Omega_{Q,\mathcal Y}|$ and $N_0/N_{\mathrm{unprotected}}$.
+
+The two denominators answer different questions. An unavailable denominator is
+not replaced by zero. An exact mechanism label requires exact carrier
+reduction and exact support masks; a floating-point threshold supplies only a
+numerical diagnostic.
+
+### Proposition 7.1 (Transported-Frame Covariance)
+
+Suppose a unitary $U$ transports two represented data sets by
+
+$$
+Q_i'=UQ_iU^{-1},
+\qquad
+C_\beta'=UC_\beta U^{-1},
+\qquad
+Y_{\alpha(a)}'=UY_aU^{-1},
+$$
+
+for explicit label bijections. Then corresponding routed products are
+unitarily conjugate. Their Frobenius norms, carrier rank vectors, rank
+protection classes, carrier-incidence mechanisms, and aggregate profile counts
+agree under the transported policy.
+
+**Proof.** Substitute the transported projectors and operators into each
+routed product. Adjacent $U^{-1}U$ factors cancel, leaving the unitary conjugate
+of the original route. Unitary conjugation preserves ranks and Frobenius norms,
+and the transported carrier projectors preserve the carrier labels up to the
+declared bijection. $\square$
+
+The converse is false: equality of aggregate profiles does not identify the
+labelled generator family or the frame. Profile equality is therefore a
+coarse represented invariant, not a reconstruction theorem.
+
+***
+
 ## Promotion Limits
 
 The local incidence theorem resolves only the first matrix-composition gate.
@@ -478,7 +803,7 @@ additional hypotheses:
 | some $T_{ikj}^{g,h}\ne0$ | $W_{ij}^{g,h}\ne0$ | no cancellation in the sum over $k$ |
 | $W_{ij}^{g,h}\ne0$ and $W_{ij}^{h,g}\ne0$ | $C_{ij}^{g,h}\ne0$ | no antisymmetric cancellation |
 | low-order Lie support | finite or exact $D_{\mathrm{Lie}}(i,j)$ | higher Hall data and closure/saturation certificate |
-| high ambient codimension | rare represented incidence | nondegenerate pullback or transversality of the parameter map |
+| high free or structured codimension | rare represented incidence | nondegenerate pullback or transversality of the parameter map |
 
 Equivalently,
 
@@ -501,38 +826,39 @@ declared route. The second is a sum-over-routes cancellation problem. The
 third is an antisymmetrization problem. None is interchangeable with the
 others.
 
-### Ambient versus represented incidence
+### Free, structured, and represented incidence
 
 Let a constrained family be parameterized by
 
 $$
 \Phi:\Theta
 \longrightarrow
-\operatorname{Mat}_{m\times n}
-\times
-\operatorname{Mat}_{n\times p}.
+\mathcal M_{\mathcal B}.
 $$
 
 Its incidence locus is
 
 $$
-\Phi^{-1}(Z_{m,n,p}).
+\Phi^{-1}(Z_{\mathcal B}).
 $$
 
-Ambient codimension does not determine the dimension of this pullback. A
-promotion from ambient genericity to a represented family requires, at
-minimum, evidence that $\Phi(\Theta)$ is not contained in $Z_{m,n,p}$ and a
-suitable transversality or nondegeneracy statement on the relevant rank
-strata. Symmetry may force a family into incidence despite the high ambient
-codimension.
+Theorem 6.3 determines the structured-ambient codimension, but not the
+dimension of this pullback. A promotion from ambient genericity to a
+represented family requires, at minimum, evidence that $\Phi(\Theta)$ is not
+contained in $Z_{\mathcal B}$ and a suitable transversality or nondegeneracy
+statement on the relevant carrier-rank strata. Symmetry or prescribed support
+may force a family into incidence despite high free or structured codimension,
+as Corollary 6.5 shows.
 
 ***
 
 ## Exact and Computational Case Studies
 
-The displayed integer examples are exact. All remaining claims in this section
-are finite numerical observations and are not used to prove the incidence
-theorems.
+The displayed integer examples are exact theorem-level examples. The canonical
+carrier and rotation-orbit records are source-addressed Computational
+Certificates. The routed censuses, random controls, perturbations, and finite
+Lie atlas are Computational Observations. None is used to prove the abstract
+incidence theorems.
 
 ### Declared numerical policy
 
@@ -586,6 +912,109 @@ A concrete integer realization is
 Their ranks and products can be checked directly. In particular, the last two
 examples demonstrate that a lack of protection is necessary but not sufficient
 for incidence.
+
+### Exact carrier certificate and fixed-frame restriction census
+
+The structured Rubik registration uses the four declared physical carriers
+
+$$
+V=V_{\mathrm{cp}}\oplus V_{\mathrm{ep}}
+ \oplus V_{\mathrm{co}}\oplus V_{\mathrm{eo}}.
+$$
+
+An exact finite certificate over
+$\mathbb Z[\zeta_3]$, with $\zeta_3^2+\zeta_3+1=0$, constructs the nine
+canonical joint quarter-turn/half-turn projectors by Lagrange interpolation.
+Writing each projector as $P_\ell=N_\ell/d_\ell$, it verifies entrywise
+
+$$
+N_\ell^2=d_\ell N_\ell,
+\qquad
+N_\ell N_m=0\quad(\ell\ne m),
+$$
+
+and, for a common denominator $D$,
+
+$$
+\sum_\ell\frac{D}{d_\ell}N_\ell=DI.
+$$
+
+The exact traces give the nine dimensions and sum to 228. Thus idempotence,
+pairwise orthogonality, completeness, and dimension are checked independently.
+For distinct physical carriers $\beta\ne\gamma$, the certificate also checks
+
+$$
+C_\beta\rho(g)C_\gamma
+=C_\beta\rho(g)^\ast C_\gamma
+=C_\beta\bigl(\rho(g)-\rho(g)^\ast\bigr)C_\gamma
+=0
+$$
+
+for all 18 labelled generators. Hence the represented operators, their
+adjoints, and the anti-Hermitian numerators all preserve the same exact carrier
+decomposition.
+
+The coefficient arrays use `int64`, but exactness is not inferred from the
+absence of a runtime warning. Before each identity construction, addition,
+subtraction, integer scaling, adjoint, matrix multiplication, and trace, the
+validator records a conservative absolute coefficient bound. All 387 audited
+operations pass; the largest bound is $121031884800<2^{63}-1$. Trace
+accumulation is performed with Python integers. These prior bounds close the
+fixed-width arithmetic obligation without replacing the 228-dimensional
+matrix products by object-array arithmetic.
+
+For the four zero-based sector triples
+
+$$
+(2,6,8),\qquad(5,6,8),\qquad(8,6,2),\qquad(8,6,5),
+$$
+
+the endpoint carrier masks are disjoint. Theorem 6.2 therefore proves
+$A_{ik}^aB_{kj}^b=0$ exactly for every registered operative pair on these
+triples. This certificate upgrades the zero status of the numerator recorded
+by the numerical Rubik audit below. It does not certify that every other
+supported product is exactly nonzero.
+
+A separate exact combinatorial enumeration considers axis-balanced,
+inverse-closed subsets of the 18 labelled Rubik generators. On each of the
+three axes, one independently retains none of its turns, its four quarter
+turns, its two half turns, or both classes. The three four-way choices give
+$4^3=64$ labelled families; removing the empty family leaves 63. Quotienting
+these 63 labelled families by the 24 orientation-preserving cube rotations
+gives 19 orbit representatives. Every family is evaluated against the same
+canonical nine-sector frame; no sector decomposition is recomputed.
+Among the 19 representative rows, 16 have supported anti-Hermitian routes and
+three consist only of operators that vanish under this registration. Every
+active row has the finite numerical rate
+
+$$
+\frac{N_{\mathrm{carrier\mbox{-}forced\ zero}}}
+{N_{\mathrm{supported}}}=\frac29.
+$$
+
+Across the 16 unweighted active representatives this is
+$4224/19008=2/9$. Every zero in the numerator has an exact
+carrier-disjointness witness, but the complementary nonzero set is still
+thresholded numerical evidence. The ratio is therefore a bounded
+Computational Observation for the declared family index, not an exact or
+universal law.
+
+As a non-identifiability control, let
+
+$$
+\mathcal Y_0
+=\mathcal Y_{18}\setminus\{L^2,R^2\},
+\qquad
+\mathcal Y_2
+=\mathcal Y_{18}\setminus\{F^2,B^2\}.
+$$
+
+These are distinct labelled 16-generator families. An exact combinatorial
+certificate places them in the same orientation-preserving rotation orbit.
+Proposition 7.1 gives profile equality only after representation equivariance
+and transport of the sector and carrier frames are supplied. Thus equal
+sector counts, sector dimensions, or aggregate incidence profiles do not
+identify which labelled half-turn pair was removed.
 
 ### Rubik routed-product registration
 
@@ -647,10 +1076,12 @@ $$
 
 The minimum factor norm is $1.803$. The maximum image--kernel action residual
 is $1.210\times10^{-15}$ and the maximum subspace distance residual is
-$9.485\times10^{-15}$. These are machine-zero image--kernel alignment records
-in the declared complex128 realization, not exact symbolic equalities.
+$9.485\times10^{-15}$. Taken alone, these are machine-zero image--kernel
+alignment records in the declared complex128 realization. The independent
+carrier certificate above establishes the exact zero status of these 576
+routes under the exact canonical projector and operator registration.
 
-![The declared Rubik routed-product census. Six half-turn operators vanish under the anti-Hermitian-part registration, leaving twelve nonzero quarter-turn operators and therefore $144=12^2$ nonzero-factor records in each of four registered image--kernel concentrations. The display is a finite numerical registration and does not determine the codimension of a representation-derived pullback locus.](../../figures/paper7/fig2_rubik_incidence_census.png)
+![The declared Rubik routed-product census. Six half-turn operators vanish under the anti-Hermitian-part registration, leaving twelve nonzero quarter-turn operators and therefore $144=12^2$ nonzero-factor records in each of four registered incidence concentrations. The complex128 census supplies the route counts and residuals; the separate exact carrier certificate proves the zero status of the four concentrations.](../../figures/paper7/fig2_rubik_incidence_census.png)
 
 ### Random and rank-deficient controls
 
@@ -759,16 +1190,26 @@ listed separately as boundaries.
 | fixed-$(r,s)$ dimension and relative codimension $rs$ | Theorem |
 | square-block dominant codimension | Theorem |
 | left/right rank protection and norm bounds | Theorem |
+| common-carrier product decomposition and carrierwise image--kernel criterion | Theorem |
+| fixed-$\mathbf r$ and fixed-$(\mathbf r,\mathbf s)$ structured dimensions | Theorem |
+| structured relative codimension $\sum_\beta r_\beta s_\beta$ | Theorem |
+| diagonal-ambient codimension $d$ and complementary-support pullback example | Theorem |
+| transported-frame covariance of routed-incidence profiles | Theorem |
 | existence of the five displayed exact integer examples | Theorem |
+| 63 labelled axis-balanced families and 19 rotation orbits | Computational Certificate |
+| exact canonical carrier masks and exact zero status of the four Rubik concentrations | Computational Certificate |
+| fixed-frame 19-orbit restriction census and active-row $2/9$ rate | Computational Observation |
 | six half-turn zeros and corrected Rubik routed census | Computational Observation |
 | random quantiles and perturbation breakdown | Computational Observation |
 | full-array finite Lie atlas agreement and closure residual | Computational Observation |
 | low-order Lie support determines Lie depth | Research Program |
-| represented pullback incidence and transversality | Research Program |
+| general represented pullback incidence and transversality | Research Program |
 
 The boundary is explicit: graph-to-route, route-to-word, and
-word-to-commutator promotions are not claimed. Furthermore, ambient codimension
-does not determine represented pullback geometry without additional hypotheses.
+word-to-commutator promotions are not claimed. Furthermore, free or
+carrier-structured ambient codimension does not determine represented pullback
+geometry without additional hypotheses. Fixed-frame profile equality does not
+identify a labelled operator family.
 
 There is no theorem or conjecture in this paper asserting
 
@@ -803,16 +1244,24 @@ theorem statement.
 
 ### Pullback incidence
 
-For a representation-derived map $\Phi:\Theta\to\operatorname{Mat}\times
-\operatorname{Mat}$, determine:
+Theorem 6.3 resolves one declared common-carrier ambient. Let a more
+constrained represented family be given by
+
+$$
+\Phi:\Theta\longrightarrow\mathcal M_{\mathcal B}.
+$$
+
+Determine:
 
 1. whether $\Phi(\Theta)$ is contained in an incidence stratum;
-2. whether $\Phi$ is transverse to the relevant fixed-rank strata;
+2. whether $\Phi$ is transverse to the relevant carrier-rank strata;
 3. how symmetry changes the pullback codimension;
 4. whether ranks remain constant on the declared parameter chart.
 
-The object of interest is the pullback locus $\Phi^{-1}(Z)$, not the ambient
-codimension alone.
+The object of interest is the pullback locus
+$\Phi^{-1}(Z_{\mathcal B})$, not the free or structured ambient codimension
+alone. Corollary 6.5 gives an identically incident control, not a general
+pullback-dimension theorem.
 
 ### Structural stability and moving charts
 
@@ -846,16 +1295,26 @@ rank of $B$ protects a nonzero product. On a fixed double-rank stratum, the
 incidence condition has relative codimension $rs$, cleanly separating rank
 deficiency from the additional image--kernel alignment cost.
 
-In the declared Rubik realization, the finite audit records 2016 unprotected
-nonzero products and 576 machine-zero image--kernel alignments among 2592
-nonzero-factor routes. This is a Computational Observation, not an exact
-represented-incidence theorem.
+When a common carrier decomposition is part of the data, the zero-product
+locus is the product of its carrierwise incidence loci. Fixed carrier-rank
+vectors replace $rs$ by $\sum_\beta r_\beta s_\beta$. This structured
+codimension is still not a represented pullback codimension: the full diagonal
+ambient has codimension $d$, while a complementary-support family can lie
+inside incidence with pullback codimension zero.
+
+In the declared Rubik realization, the finite complex128 audit records 2016
+unprotected nonzero products and 576 zero products among 2592 nonzero-factor
+routes. The route counts and residuals are Computational Observations. An
+independent exact carrier certificate proves the zero status of the four
+registered concentrations. Across the fixed canonical frame, the 19-orbit
+restriction census retains $2/9$ only as a bounded numerical pattern because
+the complementary nonzero products have not all been certified exactly.
 
 These conclusions stop at routed matrix composition. They do not identify a
 support path with a routed product, a routed product with a full word, a word
 with a commutator, or low-order support with finite Lie depth. Rank protection,
-image--kernel alignment, and promotion limits are therefore distinct parts of
-one static composition problem.
+carrier structure, represented pullback geometry, and promotion limits are
+therefore distinct parts of one static composition problem.
 
 ***
 
@@ -864,6 +1323,10 @@ one static composition problem.
 The matrix inequalities and singular-value bounds are standard
 \cite{hornJohnson2013}. Determinantal and incidence strata are standard
 objects in algebraic geometry \cite{harris1992,fulton1998,eisenbud1995}. The
+carrier-structured locus is a direct product of these standard incidence
+strata; the dimension formulas follow by blockwise addition. The new role here
+is to keep that structured ambient distinct from both the free ambient and a
+representation-derived pullback. The
 distinction between Boolean zero patterns and evaluated matrix products is
 adjacent to qualitative matrix theory and structural controllability
 \cite{brualdiRyser1991,lin1974structural}. Routed products may also be viewed
@@ -872,7 +1335,11 @@ path-algebra quotient \cite{schiffler2014}.
 
 Related work separates support graphs from projected composition and direct
 support from words, commutators, and low-depth Lie data
-\cite{paper3,paper5}. Those results are not used in the incidence proofs here.
+\cite{paper3,paper5}. Paper III's block-local obstruction covers all finite
+projected compositions under its physical-block hypotheses; the
+carrier-disjoint clause of Theorem 6.2 is its one-product specialization. The
+rank-vector incidence geometry and fixed-frame profile developed here do not
+re-own that all-length theorem.
 
 ***
 
@@ -890,13 +1357,22 @@ computational case studies. The default directory is
 | A4 | generated incidence tables | \path{results/incidence_geometry.json}, \path{.txt} |
 | A5 | generated projected-composition witnesses | \path{results/projected_composition_audit.json}, \path{.txt} |
 | A6 | generated complete-array Lie atlas | \path{results/full_array_lie_atlas.json}, \path{.txt} |
+| A7 | carrier-structured formula and boundary validator | \path{validation/structured_incidence_geometry.py} |
+| A8 | generated structured-incidence record | \path{results/} |
+| A9 | fixed-frame profile promotion validator | \path{validation/register_fixed_frame_profiles.py} |
+| A10 | source-addressed fixed-frame profile registration | \path{results/} |
 
 From the repository root, run an executable artifact as
 `python experiments/paper7/<short path>`. A4 contains the fixed-rank tables;
 A5 records thresholds, exact examples, the Rubik operator-family declaration,
 zero-product witnesses, random controls, and perturbations; A6 records full
 arrays, per-layer and cumulative supports, dimensions, closure certificates,
-and hashes.
+and hashes. A8 evaluates the structured formulas, diagonal correction, and
+codimension-zero represented control exactly. A10 binds the selected
+fixed-frame source artifacts and their SHA-256 digests. Its source package is
+the Paper VII exploratory `incidence_profiles/` directory; the registration
+excludes every endogenous-frame and cross-frame artifact. A8 and A10 each
+serialize JSON and text under the paper-local `results/` directory.
 
 Every zero-product witness records
 

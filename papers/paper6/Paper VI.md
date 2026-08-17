@@ -1,10 +1,10 @@
-# Linearized Commutativity Geometry on the Generator-Set Moduli Space
+# Linearized Certificates and Normality-Gated Registrations for Weighted Generator Averages
 
-### Full-Matrix Jacobian Certificates, Normality Gates, and Typed Spectral Registrations
+### Commutativity Kernels, Fail-Closed Spectral Admission, and Typed Direct Support
 
 **WuJun Chen**
 
-Independent Researcher | RIME Project | 2026
+Independent Researcher | RIME Program | 2026
 
 ***
 
@@ -46,12 +46,15 @@ The combined commutativity-normality derivative has numerical rank $14$ and
 nullity $4$. Its kernel is spanned numerically by uniform half-turn scaling and
 three inverse-pair-symmetric quarter-turn axis directions. This kernel contains
 both exact class-scaling gauges, while the three QT-axis directions have sample
-points that pass the declared numerical commutativity and normality gates. At
+points that pass the declared numerical commutativity, Hermiticity, normality,
+and projector gates. At
 the canonical point, the validated joint decomposition has $9$ sectors and
 typed support counts $438$ and $408$. At quarter-turn axis weight $1.1$, each
 tested axis has $15$ sectors; $R_1^{\mathrm{op}}=1006$, while the declared
 finite-order logarithm branch gives $R_1^{\mathrm{Lie}}=832$ on each of the
-three axes.
+three axes. A single-QT perturbation at the same weight is rejected before
+projector construction; its post-admission sector and support fields are not
+computed.
 
 **Boundary.** Rank $11$ is a linearized commutativity-kernel certificate,
 not a proof of a seven-dimensional smooth zero-set manifold. The pointwise
@@ -75,6 +78,11 @@ The paper uses four claim-status levels.
    records without coherent continuation.
 4. **Research Program:** statements explicitly identified as open and not used
    in the proved or certified results.
+
+Headings labeled **Numerical Certificate** are local result statements inside
+the reader-facing Computational Certificate level. They are not mathematical
+propositions proved independently of the declared realization, dtype,
+thresholds, and validator.
 
 The domain gates are
 
@@ -400,9 +408,9 @@ $$
 The computation uses the unconditional formulas in Lemma 3.1, including the
 machine-scale baseline commutator terms.
 
-**Computational Proposition 3.2 (Linearized commutativity-kernel
-certificate).** In the declared realization and at relative singular-value
-threshold $10^{-10}$,
+**Numerical Certificate 3.2 (Linearized commutativity kernel).** In the
+declared realization, using rank threshold multiplier $10^{-10}$ and reference
+scale $\max(\sigma_1,1)$,
 
 $$
 \operatorname{rank}\mathcal J_{\mathrm{comm}}=11,
@@ -425,10 +433,11 @@ The rank boundary is numerically separated by
 $$
 \sigma_{11}=2.003084041924\times10^{-1},
 \qquad
-\sigma_{12}=2.415461205698\times10^{-15},
+\sigma_{12}=1.047788697013\times10^{-15},
 $$
 
-with retained/discarded ratio $8.293\times10^{13}$.
+with retained/discarded ratio $1.912\times10^{14}$ in the frozen v2.1 result
+record.
 
 The twelve QT Jacobians have Frobenius norm $0.309320$ and the six HT
 Jacobians have norm $0.426730$.
@@ -485,8 +494,9 @@ $$
 
 Every component is again encoded by full real and imaginary entries.
 
-**Computational Proposition 4.1 (Combined linearized constraint kernel).** At
-the numerically registered point $w_0=\mathbf1$, the combined derivative has
+**Numerical Certificate 4.1 (Combined linearized constraint kernel).** At the
+numerically registered point $w_0=\mathbf1$, using the same rank policy, the
+combined derivative has
 
 $$
 \operatorname{rank}D F|_{w_0}=14,
@@ -514,10 +524,11 @@ The combined-map rank boundary is
 $$
 \sigma_{14}=2.003084041924\times10^{-1},
 \qquad
-\sigma_{15}=2.238468379596\times10^{-15},
+\sigma_{15}=1.587214161347\times10^{-15},
 $$
 
-with retained/discarded ratio $8.948\times10^{13}$.
+with retained/discarded ratio $1.262\times10^{14}$ in the frozen v2.1 result
+record.
 
 Four interpretable vectors span the numerical kernel:
 
@@ -569,6 +580,19 @@ No interval-wide commutativity sweep or exact commutation proof is claimed for
 the QT-axis parameterizations. The samples do not classify the nonlinear set
 $\Sigma_{\mathrm{normal}}$.
 
+As a fail-closed negative control, increase only the generator labeled $L'$,
+with key $(0,-1,-1)$, from weight $1$ to $1.1$. The commutator, QT normality,
+and QT Hermiticity residuals are respectively
+
+$$
+3.068\times10^{-2},\qquad
+2.099\times10^{-2},\qquad
+1.096\times10^{-1}.
+$$
+
+This sample is `REJECTED` before projector construction. No sector count,
+$R_1^{\mathrm{op}}$, or $R_1^{\mathrm{Lie}}$ value is assigned to it.
+
 ***
 
 ## Normality-Gated Spectral Registrations
@@ -597,8 +621,8 @@ $$
 \left\|\sum_iQ_i-I\right\|_F.
 $$
 
-The maximum projector residual in the registered samples is
-$2.390\times10^{-14}$.
+The maximum projector residual in the admitted samples is
+$2.373\times10^{-14}$.
 
 ### Typed support conventions
 
@@ -636,17 +660,64 @@ $(-\pi,\pi]$ and $\log(-1)=i\pi$. This branch declaration is part of the
 realization. A different logarithm branch can change
 $R_1^{\mathrm{Lie}}$ without changing $R_1^{\mathrm{op}}$.
 
-### Registered samples
+### Admission ledger
 
-All computations use `complex128`, support and clustering threshold $10^{-8}$,
-and the same 18-generator realization.
+All computations use `complex128`, admission, support, and clustering
+threshold $10^{-8}$, and the same 18-generator realization. To make the gate
+and its codomain explicit, write
 
-| Sample | sectors | $R_1^{\mathrm{op}}$ | $R_1^{\mathrm{Lie}}$ |
-|--------|---------|-----------------------|--------------------------|
-| canonical $w=\mathbf1$ | 9 | 438 | 408 |
-| QT axis 0, $\varepsilon=0.1$ | 15 | 1006 | 832 |
-| QT axis 1, $\varepsilon=0.1$ | 15 | 1006 | 832 |
-| QT axis 2, $\varepsilon=0.1$ | 15 | 1006 | 832 |
+$$
+\begin{aligned}
+r_C&=\|[Q_T,H_T]\|_F,\\
+r_N&=(\|N(Q_T)\|_F,\|N(H_T)\|_F),\\
+r_H&=(\|Q_T-Q_T^\ast\|_F,\|H_T-H_T^\ast\|_F),\\
+r_P&=\max\{r_{\mathrm{idemp}},r_{\mathrm{Herm}},
+r_{\mathrm{orth}},r_{\mathrm{complete}}\}.
+\end{aligned}
+$$
+
+The frozen result record
+`results/normality_gated_admission_v2_1.json` contains the full residuals,
+projector checks, sector dimensions, threshold gaps, and implementation digest.
+The compact admission projection is:
+
+\begin{center}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{@{}lccccrrrrc@{}}
+\toprule
+Sample & $r_C$ & $r_N$ & $r_H$ & $r_P$ & $n_Q$ &
+$R_{\mathrm{op}}$ & $R_{\mathrm{Lie}}$ & gate \\
+\midrule
+$w_0$ &
+$3.77\mathrm{e}{-16}$ & $3.17\mathrm{e}{-18}/0$ &
+$2.73\mathrm{e}{-16}/0$ & $2.23\mathrm{e}{-14}$ &
+$9$ & $438$ & $408$ & A \\
+QT axis 0, $\varepsilon=0.1$ &
+$7.91\mathrm{e}{-17}$ & $5.72\mathrm{e}{-18}/0$ &
+$2.62\mathrm{e}{-16}/0$ & $2.37\mathrm{e}{-14}$ &
+$15$ & $1006$ & $832$ & A \\
+QT axis 1, $\varepsilon=0.1$ &
+$1.12\mathrm{e}{-16}$ & $4.65\mathrm{e}{-18}/0$ &
+$2.53\mathrm{e}{-16}/0$ & $2.33\mathrm{e}{-14}$ &
+$15$ & $1006$ & $832$ & A \\
+QT axis 2, $\varepsilon=0.1$ &
+$1.57\mathrm{e}{-16}$ & $6.01\mathrm{e}{-18}/0$ &
+$2.60\mathrm{e}{-16}/0$ & $2.35\mathrm{e}{-14}$ &
+$15$ & $1006$ & $832$ & A \\
+single QT $L'$, $\varepsilon=0.1$ &
+$3.07\mathrm{e}{-2}$ & $2.10\mathrm{e}{-2}/0$ &
+$1.10\mathrm{e}{-1}/0$ & -- & -- & -- & -- & R \\
+\bottomrule
+\end{tabular}%
+}
+\end{center}
+
+In the paired columns $r_N$ and $r_H$, entries are ordered QT/HT. Gate A means
+`ADMITTED`: every pre-projector and post-projector residual is below
+$10^{-8}$. Gate R means `REJECTED` and is fail-closed: projector construction
+is not called, and the sector and support fields are not computed. The dashes
+in the final row therefore mean unavailable after failed admission, not
+numerical zero.
 
 The sorted sector-dimension censuses are
 
@@ -660,16 +731,17 @@ $$
 \end{aligned}
 $$
 
-Thus, the pointwise registrations exhibit a sector-count change from $9$ to
-$15$ alongside a change in both typed direct-support counts. The operator and
-Lie direct-support counts are not equal. The canonical Lie-support gap has
+Thus, the four admitted pointwise registrations exhibit a sector-count change
+from $9$ to $15$ alongside a change in both typed direct-support counts. The
+operator and Lie direct-support counts are not equal. The canonical
+Lie-support gap has
 smallest retained block norm $0.5236$ and largest discarded block norm
 $1.83\times10^{-14}$; across the three axis samples the smallest retained norm
 is $3.53\times10^{-3}$ and the largest discarded norm is
 $1.50\times10^{-13}$. The logarithm branch, dtype, and threshold therefore
 remain part of the declared numerical registration.
 
-![Normality-gated pointwise registrations. The canonical point has nine sectors, while each of the three tested QT-axis samples has fifteen; the operator-family and Lie-family direct-support counts are displayed separately. All four records pass the declared numerical gates, but the figure does not supply projector continuation along an intervening path.](../../figures/paper6/fig2_pointwise_typed_registrations.png)
+![Normality-gated pointwise registrations. Five candidate samples enter the pre-projector gate. The single-QT control is rejected, while the canonical point and three QT-axis samples are admitted. Sector and typed direct-support counts are displayed only for admitted records. The figure supplies neither projector continuation nor a path theorem.](../../figures/paper6/fig2_pointwise_typed_registrations.png)
 
 These samples do not yet prove a wall location or a smooth projector chart
 connecting the endpoints. Such a claim requires coordinate-matched projector
@@ -785,6 +857,7 @@ are listed separately as boundaries.
 | four displayed directions span the numerical combined kernel | Computational Certificate |
 | uniform QT/HT gauges leave the normalized pair fixed | Theorem |
 | three QT-axis points pass numerical commutator, Hermiticity, and normality audits | Computational Certificate |
+| single-QT negative control fails admission before projector construction | Computational Certificate |
 | canonical and axis-sample projectors are orthogonal and complete | Computational Certificate |
 | registered sector-count change from $9$ to $15$ | Computational Observation |
 | typed $R_1^{\mathrm{op}}$ and $R_1^{\mathrm{Lie}}$ counts | Computational Observation |
@@ -797,15 +870,16 @@ inclusion hierarchy among accessibility walls is claimed.
 
 ### Earlier-version correction
 
-An earlier fragmentation calculation incorrectly diagonalized commuting but
-nonnormal QT averages using a Hermitian eigensolver. The resulting
-$9\to24\text{--}35$ sector counts and $438\to6334$ untyped support count are
-invalid because the normality gate was not satisfied, and they are therefore
-not used here.
+The active claim surface applies the following correction ledger.
 
-Likewise, statements that fragmentation automatically changes
-the untyped $R_2$ or $D$ are withdrawn. No corresponding Rubik typed product,
-commutator, or closure certificate was computed.
+| Earlier result | Failure reason | Current status |
+|----------------|----------------|----------------|
+| $9\to24\text{--}35$ sectors | nonnormal samples were processed with a Hermitian eigensolver | `REJECTED` |
+| $438\to6334$ raw support | raw $\rho(g)$ support was not declared as operator- or Lie-typed support | provenance only |
+| legacy $R_2$ and $D$ claims | no typed routed-product, word, commutator, or closure certificate was supplied | `WITHDRAWN` |
+
+Archived scripts preserve historical provenance only and do not support active
+claims in this revision.
 
 ***
 
@@ -919,10 +993,12 @@ The second is the construction of moving spectral and accessibility fields.
 That construction begins only after normality and projector continuation have
 been certified. The combined linearized commutativity-normality map has rank
 $14$ and nullity $4$. The kernel contains both exact class-scaling gauges, and
-the three displayed QT-axis directions have certified sample points. The axis points have
-$15$ registered sectors versus $9$ at the canonical point; no projector
-refinement relation is asserted. Operator and Lie direct-support counts remain
-distinct.
+the three displayed QT-axis directions have admitted sample points. Together
+with the canonical point, these give four admitted records; the single-QT
+negative control is rejected before projector construction. The admitted axis
+points have $15$ registered sectors versus $9$ at the canonical point; no
+projector refinement relation is asserted. Operator and Lie direct-support
+counts remain distinct.
 
 The correct future architecture is therefore
 
@@ -954,9 +1030,12 @@ paths are relative to that directory.
 |----------|------------------|------------|
 | A1 | full complex-real commutator Jacobian certificate | \path{validation/tangent_commutator_map.py} |
 | A2 | normality gate and pointwise typed registration audit | \path{validation/normal_spectral_chart_audit.py} |
-| A3 | contextual ambient-moduli probes | \path{validation/generator_moduli_space.py} |
-| A4 | tangent-map run summary | \path{results/_paper6_tangent_commutator_map.txt} |
-| A5 | ambient-moduli run summary | \path{results/_paper6_bifurcation_log.txt} |
+| A3 | v2.1 admission and certificate result record | \path{results/normality_gated_admission_v2_1.json} |
+| A4 | source-addressed manuscript figure projection | \path{results/figure_data.json} |
+| A5 | figure renderer, relative to repository root | \path{figures/paper6/render.py} |
+| A6 | contextual ambient-moduli probes | \path{validation/generator_moduli_space.py} |
+| A7 | tangent-map run summary | \path{results/_paper6_tangent_commutator_map.txt} |
+| A8 | ambient-moduli run summary | \path{results/_paper6_bifurcation_log.txt} |
 
 From the repository root, run an executable artifact as
 `python experiments/paper6/<short path>`. The numerical reports declare
@@ -964,7 +1043,9 @@ matrix dtype and norm, absolute and optional relative thresholds, reference
 scale, threshold sweep, projector registration, and any logarithm branch,
 cutoff, or saturation policy used by the reported object.
 
-A3 is contextual computation rather than a spectral-chart theorem.
+A6 is contextual computation rather than a spectral-chart theorem. A4 is a
+display projection of A3, and A5 renders that projection without creating a
+new scientific claim.
 
 All listed artifacts are available in the
 [RIME repository](https://github.com/dooven-prime/rime-lite).

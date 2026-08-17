@@ -1,6 +1,6 @@
 # Sectorized Observable Framework
 
-### A Typed Static Object Language for Sectorized Observables
+### A Typed Static Object Language with Exact Marked Finite Realizations
 
 **WuJun Chen**
 
@@ -22,7 +22,8 @@ objects as a single accessibility ladder obscures the carrier, labels, word
 length, and closure conventions that determine their mathematical meaning.
 
 **Approach.** We define a finite Sectorized Observable Framework (SOF) as a
-marked sector realization together with a labelled observable alphabet. The
+marked sector realization together with a labelled observable map
+$Y:A\to\mathcal B(V)$, which need not be injective. The
 static data include the marked sector algebra
 $D_Q$, the labelled family $Y$, the observable operator system
 $E_{Y}$, and the sector-enriched system $S_{Q,Y}$. We
@@ -40,15 +41,25 @@ yielding non-increasing target depths. Equality is asserted under strict
 equivalence, not under an arbitrary strict embedding. The two branches are not
 identified without an explicit bridge theorem. Positive-word, star-word, and
 sector-enriched saturated corners are recorded separately from finite
-first-hit filtrations.
+first-hit filtrations. As an exact realization family, a finite permutation
+action together with a declared label map and marked state partition produces
+a coordinate-sector SOF. In this family routed and full-word support coincide,
+while aggregate Boolean paths can still strictly overestimate them. Finite
+represented-image saturation gives exact first-hit word depths, including
+certified nonreachability when present. A paper-owned conformance certificate
+replays six modular actions, seventeen bounded triangle-group actions, fifty-one
+marked sectorizations, and a four-state strict path/word witness.
 
 **Boundary.** The sectorization may be representation-derived,
 geometry-derived, filtration-derived, activation-derived, or externally
 chosen. The realization construction is formal relative to the declared
 choices, not a classification theorem and not a proof that every source has
-a unique or canonical SOF realization. This paper does not claim a complete
-weak deformation category, moving accessibility fields, universal
-completion, or an unconditional relation between word and Lie depth.
+a unique or canonical SOF realization. A finite representation alone is not
+sufficient data for the labelled operative map or marked partition. The
+promoted finite family supplies no Lie/Hall carrier and does not establish
+generic strict separation of positive and star closures. This paper does not
+claim a complete weak deformation category, moving accessibility fields,
+universal completion, or an unconditional relation between word and Lie depth.
 
 ***
 
@@ -59,7 +70,7 @@ completion, or an unconditional relation between word and Lie depth.
 | $V$ | finite-dimensional complex Hilbert space |
 | $Q_i$ | orthogonal sector projector |
 | $D_Q=\operatorname{span}_{\mathbb C}\{Q_i\}$ | marked sector algebra |
-| $Y=\{Y_a\}_{a\in A}$ | declared labelled operator and word alphabet |
+| $Y:A\to\mathcal B(V)$ | declared labelled operator and word alphabet; the map need not be injective |
 | $E_{Y}$ | $\operatorname{span}_{\mathbb C}\{I,Y_a,Y_a^*:a\in A\}$ |
 | $S_{Q,Y}$ | $D_Q+E_{Y}$, the sector-enriched operator system |
 | $A_{Y}^{+}$ | $\operatorname{alg}_{\mathbb C}(I,Y)$, the positive associative word algebra |
@@ -76,6 +87,9 @@ completion, or an unconditional relation between word and Lie depth.
 | $X$ | independently registered skew-adjoint Lie family |
 | $R_1^{\mathrm{Lie}},R_2^{\mathrm{Lie}}$ | direct and simple-commutator Lie shadows |
 | $D_{\mathrm{Lie}}$ | depth relative to a declared Hall/Lie filtration |
+| $G\curvearrowright\Omega$ | finite action used by the exact marked-permutation realization family |
+| $\Pi=\{\Omega_i\}_{i\in I}$ | declared marked partition of the finite state set |
+| $C_{\le d}[Y]$ | represented operators reached by positive words of lengths $1$ through $d$ |
 
 The four reader-facing evidence levels are:
 
@@ -119,12 +133,14 @@ Positive multiplication closure, adjoint closure, and closure under internal
 sector markers are also distinct operations. A saturated algebra records
 closure, not the first length at which a sector pair is reached.
 
-This paper therefore has four aims:
+This paper therefore has five aims:
 
 1. define the marked static SOF data;
 2. define typed operator/word and Lie/Hall carriers;
 3. define strict static morphisms and their categories;
-4. prove carrier-qualified support preservation and depth monotonicity.
+4. prove carrier-qualified support preservation and depth monotonicity;
+5. provide an exact marked finite-permutation realization family with a
+   source-addressed conformance certificate and strict Boolean-path control.
 
 This is a realization construction, not a classification theorem. It says
 what data are sufficient to enter the SOF object language; it does not say
@@ -160,8 +176,16 @@ the same space and that any source-specific admissibility conditions have
 been recorded. It does not mean that the $Q_i$ commute with, or reduce, the
 declared observables.
 
-Let $Y_0=\{Y_a^{(0)}\}_{a\in A_0}$ be a finite nonempty extracted
-operator family on $V$. Its operative word convention is fixed before the SOF
+Let $A_0$ be a finite nonempty label set and let
+
+$$
+Y_0:A_0\longrightarrow\mathcal B(V),
+\qquad a\longmapsto Y_a^{(0)},
+$$
+
+be an extracted labelled operator map. It is not required to be injective:
+distinct source labels may have the same represented operator. Its operative
+word convention is fixed before the SOF
 core is declared. A positive-word convention sets
 $Y=Y_0$. A star-word convention sets
 $A=A_0\times\{+,-\}$ and declares the labelled completion
@@ -173,18 +197,20 @@ Y^{\mathrm{adj}}
 Y_{(a,-)}=(Y_a^{(0)})^*:a\in A_0\},
 $$
 
-with $Y=Y^{\mathrm{adj}}$. After this registration,
-$Y=\{Y_a\}_{a\in A}$ denotes the selected operative alphabet
+with $Y=Y^{\mathrm{adj}}$. Distinct completion labels remain distinct even
+when their represented operators agree. After this registration,
+$Y:A\to\mathcal B(V)$ denotes the selected operative alphabet
 in all direct-support, routed-product, path, word, and depth constructions
 below. Sector projectors are not letters of $Y$ unless a realization
 explicitly declares them as observables. An **operator SOF core** is the tuple
 
 $$
-\mathcal F_{\mathrm{op}}=(V,\{Q_i\}_{i\in I},Y).
+\mathcal F_{\mathrm{op}}=(V,\{Q_i\}_{i\in I},Y:A\to\mathcal B(V)).
 $$
 
-The label map $a\mapsto Y_a$, including any adjoint-completion labels, is part
-of the data. Passing to a span or a generated algebra may forget labels,
+The possibly noninjective label map $a\mapsto Y_a$, including any
+adjoint-completion labels, is part of the data. Passing to its image set, a
+span, or a generated algebra may forget labels,
 multiplicities, order, and word length; therefore those constructions are
 recorded separately.
 
@@ -352,13 +378,13 @@ Let a finite source system provide:
 
 1. a finite-dimensional complex Hilbert space $V$;
 2. a compatible complete sectorization $\{Q_i\}_{i\in I}$;
-3. a finite labelled observable extraction rule producing
-   $Y=\{Y_a\}_{a\in A}$.
+3. a finite label set $A$ and an observable extraction rule producing a
+   possibly noninjective map $Y:A\to\mathcal B(V)$.
 
 Then the data define an operator SOF core
 
 $$
-\mathcal F_{\mathrm{op}}=(V,\{Q_i\},Y).
+\mathcal F_{\mathrm{op}}=(V,\{Q_i\},Y:A\to\mathcal B(V)).
 $$
 
 The realization is uniquely determined relative to the declared space,
@@ -369,7 +395,7 @@ those additional choices.
 
 ### Well-Definedness
 
-The extraction rule supplies the labelled family $Y$, and the
+The extraction rule supplies the labelled map $Y$, and the
 compatible sectorization supplies the mutually orthogonal projectors. These
 are exactly the data of the operator SOF core. The definitions of
 $D_Q$, $E_{Y}$, $S_{Q,Y}$, and the three closure layers
@@ -1107,10 +1133,306 @@ not a deformation arrow.](../../figures/paper8/fig3_strict_morphism.png)
 
 ***
 
-## Realization Examples
+## Exact Marked Finite Permutation Realizations
 
-The following examples illustrate the source boundary. They are not new
-computational evidence for the theorem layer developed here.
+The abstract static interface does not require a group action. Finite
+permutation actions nevertheless provide a useful exact conformance family:
+the Hilbert space, projectors, represented letters, routed products, and words
+all admit finite combinatorial descriptions, while the marked partition and
+source labels remain visible.
+
+### Labelled Action Data
+
+Let a finite group $G$ act on a finite set $\Omega$, let $A$ be a finite
+nonempty label set, and let
+
+$$
+y:A\longrightarrow G
+$$
+
+be a declared source-letter map. Neither $y$ nor the represented map below is
+assumed injective. The permutation representation on
+$V=\mathbb C^{\Omega}$ is
+
+$$
+\rho(g)e_\omega=e_{g\omega},
+\qquad
+Y_a=\rho(y(a)).
+$$
+
+Let
+
+$$
+\Pi=\{\Omega_i\}_{i\in I},
+\qquad
+\Omega=\bigsqcup_{i\in I}\Omega_i,
+$$
+
+be a declared marked partition. Define the coordinate projector
+
+$$
+Q_i^{\Pi}e_\omega
+=
+\begin{cases}
+e_\omega,&\omega\in\Omega_i,\\
+0,&\omega\notin\Omega_i.
+\end{cases}
+$$
+
+Here $G$ and $y$ retain source provenance, while the static SOF core consumes
+the represented labelled map and marked partition. Neither the action nor the
+label map is required to be faithful.
+
+**Proposition 4 (Marked Finite Permutation Realization).** The data
+$(\Omega,G,\rho,A,y,\Pi)$ define an exact operator SOF core
+
+$$
+\mathcal F_{\rho,y,\Pi}
+=
+\left(
+\mathbb C^\Omega,
+\{Q_i^\Pi\}_{i\in I},
+(Y_a)_{a\in A}
+\right).
+$$
+
+The operative alphabet is the labelled map
+$Y:A\to U(\mathbb C^\Omega)$, not its image set. Thus $a\ne b$ and
+$Y_a=Y_b$ are compatible with the realization. The action and labelled
+alphabet do not by themselves select $\Pi$; different marked partitions of
+the same represented action define different marked SOF data unless an
+additional equivalence is supplied.
+
+**Proof.** Every $Y_a$ is a permutation unitary. The coordinate projectors
+satisfy
+
+$$
+(Q_i^\Pi)^*=Q_i^\Pi,
+\qquad
+Q_i^\Pi Q_j^\Pi=\delta_{ij}Q_i^\Pi,
+\qquad
+\sum_iQ_i^\Pi=I.
+$$
+
+They act on the same space as the labelled represented family, so the defining
+conditions of an operator SOF core hold exactly. Nothing in $\rho$ selects a
+partition as part of the SOF data, and replacing $Y:A\to U(V)$ by its image
+would identify distinct labels whenever the represented map is noninjective.
+$\square$
+
+This gives the **Marked-Realization Principle**:
+
+$$
+\text{finite action}
++\text{ labelled operative map}
++\text{ marked partition}
+\longrightarrow
+\text{exact finite SOF realization}.
+$$
+
+The arrow is a construction. It does not assert a canonical partition or a
+classification of finite representations.
+
+### Deterministic Route/Word Coincidence
+
+Coordinate partitions and permutation letters have a special property that
+does not hold for general operator SOFs.
+
+**Proposition 5 (Permutation Route/Word Coincidence).** For a marked finite
+permutation realization and every $d\ge1$,
+
+$$
+\mathrm{Route}_d[Y]=W_d[Y].
+$$
+
+This is equality of Boolean support relations. It does not identify the linear
+spaces $\mathscr R_{d,ij}[Y]$ and $\mathscr W_{d,ij}[Y]$.
+
+**Proof.** Fix a labelled word and a source basis state. Because each letter
+is a permutation, the state follows one unique sequence of intermediate
+states and therefore one unique sequence of marked sectors. A nonzero full
+word corner supplies that routed witness. Conversely, a nonzero routed product
+contains a source basis state whose unique permutation trajectory follows the
+declared intermediate sectors and ends in the target sector; the corresponding
+full-word corner is therefore nonzero. Taking the union over labelled words
+and intermediate-sector tuples proves the equality. $\square$
+
+The proposition is carrier-specific. It removes route cancellation inside
+this exact realization family, but it does not identify either relation with
+aggregate Boolean graph paths.
+
+### Exact Finite Word Saturation
+
+For $d\ge1$, let
+
+$$
+C_{\le d}[Y]
+=
+\left\{
+Y_{a_k}\cdots Y_{a_1}:
+1\le k\le d,
+(a_1,\ldots,a_k)\in A^k
+\right\}.
+$$
+
+This is a cumulative represented-operator set. It is distinct from the
+exact-length word space $\mathscr W_d(Y)$ and from the set of labelled words:
+different labelled words may evaluate to the same represented permutation.
+
+**Proposition 6 (Exact Finite Positive-Word Saturation).** For every marked
+finite permutation realization, there is a finite $d_{\mathrm{sat}}\ge1$
+such that
+
+$$
+C_{\le d_{\mathrm{sat}}}[Y]
+=
+C_{\le d_{\mathrm{sat}}+1}[Y]
+=
+\langle Y(A)\rangle,
+$$
+
+where $\langle Y(A)\rangle$ is the finite represented subgroup generated by
+the operative letters. Hence, for every sector pair $(i,j)$, exhaustive
+labelled breadth-first search gives either an exact shortest nonempty
+first-hit word or an exact certificate that
+$D_{\mathrm{word}}[Y](i,j)=\infty$.
+
+**Proof.** All represented words lie in the finite permutation group on
+$\Omega$, so the increasing sequence $C_{\le d}[Y]$ stabilizes. Because $A$
+is nonempty and each represented letter has finite order, the identity occurs
+at a positive length. At stabilization the cumulative set is closed under
+right multiplication by every declared letter, so no later positive word can
+add a represented operator. Conversely, every generated represented operator
+has a finite positive-word witness. Exhaustive labelled breadth-first search
+therefore records the minimum positive length of every represented operator.
+Testing all saturated operators against $Q_i(\cdot)Q_j$ decides each sector
+pair exactly. $\square$
+
+A saturation receipt must bind the label alphabet, the label-to-operator map,
+the marked partition, cumulative closure sizes, stabilization depth,
+right-multiplication closure, the shortest nonempty identity word, and the
+first-hit witnesses. A bounded search without this closure evidence still
+reports `unreached`, not infinity.
+
+### Four-State Exact Separation Witness
+
+Let
+
+$$
+\Omega=\{0,1,2,3\},
+\qquad
+\Pi=\bigl\{\{0,1,2\},\{3\}\bigr\},
+$$
+
+and declare two labels represented by
+
+$$
+Y_a=(2\ 3),
+\qquad
+Y_b=(0\ 1)(2\ 3).
+$$
+
+**Proposition 7 (Boolean Path Overestimate).** With rows indexed by target
+sector and columns by source sector,
+
+$$
+R_1[Y]
+=
+\begin{pmatrix}
+1&1\\
+1&0
+\end{pmatrix},
+\qquad
+\operatorname{Path}_2(R_1[Y])
+=
+\begin{pmatrix}
+1&1\\
+1&1
+\end{pmatrix},
+$$
+
+whereas
+
+$$
+\mathrm{Route}_2[Y]
+=
+W_2[Y]
+=
+\begin{pmatrix}
+1&0\\
+0&1
+\end{pmatrix}.
+$$
+
+Thus
+
+$$
+W_2[Y]
+=
+\mathrm{Route}_2[Y]
+\subsetneq
+\operatorname{Path}_2(R_1[Y]).
+$$
+
+**Proof.** The direct-support matrix follows by applying the two permutations
+to the two marked sectors. Boolean squaring gives the displayed full
+$\operatorname{Path}_2$ relation. The four labelled words of length two
+evaluate to either $I$ or $(0\ 1)$ because
+
+$$
+Y_a^2=Y_b^2=I,
+\qquad
+Y_aY_b=Y_bY_a=(0\ 1).
+$$
+
+Both represented operators preserve the two marked sectors, so $W_2[Y]$ is
+diagonal. Proposition 5 gives the same relation for
+$\mathrm{Route}_2[Y]$. $\square$
+
+All data in this witness are exact: no tolerance, approximate rank, or
+asymptotic enters. Thus aggregate support composition can overestimate actual
+words even for permutation operators on a complete finite coordinate
+partition.
+
+### Promoted Conformance Certificate
+
+The paper-owned certificate promotes only the static realization and
+word-filtration claims needed here. Its accepted scope is:
+
+| Family or control | Declared scope | Marked sectorization | Promoted role |
+|---|---|---|---|
+| modular permutation actions | $\mathbb P^1(\mathbb F_p)$ for $p=3,5,7,11,13,17$ | orbits of the declared $T$ operator | six exact conformance records |
+| triangle-group permutation actions | signatures $(2,3,7)$, $(2,4,5)$, $(3,3,4)$ through index $7$ | separate $x$-, $y$-, and $z$-cycle partitions | seventeen actions and fifty-one marked realizations |
+| four-state control | two labelled permutations on four states | one declared two-sector partition | strict Boolean-path overestimate witness |
+
+Among the seventeen triangle records, twelve retain all three declared
+signature orders and five are explicitly marked as proper-order-divisor
+quotients. The bounded census contains three pairs of distinct labels with
+equal represented permutation operators. All fifty-seven modular/triangle
+marked realization--sectorization records carry complete finite
+positive-closure receipts; no sector pair in those records remains
+unreachable after saturation. The four-state hostile control carries its own
+exact first-hit and finite-closure replay record.
+
+The active record and receipt have artifact IDs
+`P8V2.1-CONFORMANCE` and `P8V2.1-REPLAY`; the paper-local artifact catalogue
+binds those IDs to their source paths and validators. The two exploratory
+source bundles remain source-addressed provenance inputs; they do not acquire
+Paper VIII evidence status independently of this promotion record and
+validation receipt.
+
+This evidence is a **Computational Certificate**. The propositions above are
+proved from the declared finite-action hypotheses and do not depend on the
+census counts. Graph-Laplacian, spanning-tree, surface, Hecke, moduli, Selberg,
+and automorphic fields are outside the promoted claim surface.
+
+***
+
+## Other Realization Classes
+
+The following examples illustrate the broader source boundary. Except for the
+promoted finite-permutation family above, they are not new computational
+evidence for the theorem layer developed here.
 
 The static object can be interpreted as a marked geometry of coarse-grained
 information accessibility. The sectorization supplies source-dependent coarse
@@ -1122,8 +1444,11 @@ carriers or make the sectorization canonical.
 ### Representation-Derived Sectors
 
 Finite-group representations may supply invariant blocks or joint-spectral
-projectors. Rubik QT/HT sectors provide a motivating realization, while their
-exact numerical status remains owned by the relevant earlier papers.
+projectors. The exact family above instead uses separately declared marked
+state partitions and therefore does not claim that a representation selects
+its own canonical SOF sectors. Rubik QT/HT sectors provide a motivating
+realization, while their exact numerical status remains owned by the relevant
+earlier papers.
 
 ### Geometry-Derived Sectors
 
@@ -1162,11 +1487,15 @@ reader-facing claims or contributions of this paper.
 | strict operator category and carrier-qualified Lie/Hall category | Theorem |
 | operator/word support preservation and depth monotonicity | Theorem |
 | Lie/Hall support preservation and depth monotonicity | Theorem |
-| source-specific realization and equivalence questions | Research Program |
-| automatic identification of operator/word and Lie/Hall branches | Research Program |
-| complete weak/deformation category $\mathsf{SOF}_{\mathrm{def}}$ | Research Program |
-| unconditional low-order promotion or universal completion | Research Program |
-| unique or canonical sectorization for every source system | Research Program |
+| marked finite permutation realization | Theorem |
+| permutation route/word coincidence | Theorem |
+| exact finite positive-word saturation | Theorem |
+| four-state Boolean path overestimate | Theorem |
+| modular and bounded triangle-group conformance census | Computational Certificate |
+| source-specific realization and equivalence criteria | Research Program |
+| typed bridge criteria between operator/word and Lie/Hall branches | Research Program |
+| weak and deformation morphism structures | Research Program |
+| conditional low-order promotion and completion criteria | Research Program |
 
 ### What This Paper Does Not Claim
 
@@ -1177,38 +1506,54 @@ This paper does not claim:
 3. a universal wall or deformation theory;
 4. an unconditional relation between word depth and Lie depth;
 5. a complete weak morphism category;
-6. new numerical evidence for Rubik, quantum, Markov, graph, neural, or
-   other application species.
+6. new numerical evidence for Rubik, quantum, Markov, graph, neural, or other
+   application species outside the promoted exact finite-permutation family;
+7. a canonical sectorization determined by a finite representation;
+8. a Lie/Hall carrier induced from the promoted permutation letters;
+9. generic strict separation of $A_Y^+$ and $A_Y^*$ from finite-group data;
+10. a surface, Hecke, moduli, Selberg, or automorphic interpretation of the
+    finite Schreier diagnostics.
 
 The stable claim is narrower: once a compatible sectorization, a labelled
-observable alphabet, and any required filtration or Lie/Hall enrichment have
-been declared, the resulting static typed constructions admit a strict
-object language and carrier-qualified functoriality statements.
+observable map, and any required filtration or Lie/Hall enrichment have been
+declared, the resulting static typed constructions admit a strict object
+language and carrier-qualified functoriality statements. Finite permutation
+actions provide one exact marked conformance family, not a replacement for the
+abstract object language.
 
 ***
 
 ## Conclusion
 
 This paper fixes the static typed SOF object language. The marked
-sectorization, labelled operative alphabet, observable operator system, and
+sectorization, possibly noninjective labelled operative map, observable
+operator system, and
 three multiplication closures remain distinct data. Routed products and full
 words form one finite-filtration branch; an optional Lie/Hall carrier forms an
-independently registered branch. Strict morphisms identify matched
-multiplication closures exactly, preserve matched witnesses, and make target
-first-hit depths non-increasing, with equality reserved for strict
-equivalence.
+independently registered branch. Strict morphisms carry matched multiplication
+closures by exact algebraic or $*$-isomorphisms, preserve matched witnesses,
+and make target first-hit depths non-increasing, with equality reserved for
+strict equivalence. For finite coordinate-sector permutation realizations, routed and
+full-word support coincide, finite represented-image saturation decides exact
+first-hit word depth, and aggregate Boolean paths may nevertheless strictly
+overestimate actual words.
 
-These results concern static objects and carrier-qualified functoriality. No
-computation, deformation field, wall classification, compiler contract, or
-application census serves as a premise for the theorem layer.
+These results concern static objects and carrier-qualified functoriality. The
+paper-owned modular, triangle-group, and four-state certificates are exact
+conformance witnesses; they do not serve as premises for the theorem layer.
+No deformation field, wall classification, compiler contract, or downstream
+application report is introduced.
 
 ***
 
 ## Outlook
 
-Paper IX takes a realized SOF and studies typed deformation fields. The
-deformation variable may move projectors, observables, or both. Its walls
-must be defined as typed discriminants over a declared admissible domain.
+Paper IX takes a separately supplied object trajectory and studies its typed
+SOF observation/deformation record. The underlying dynamics, parameter
+update, or intervention supplies each object-state transition; observed
+projectors, observables, and derived fields may vary along that trajectory.
+Wall loci are typed discriminants of the observation/deformation record over
+a declared admissible domain.
 Paper VI supplies only a normality-gated spectral interface and pointwise
 registrations; it is not a positive moving SOF theorem.
 
@@ -1231,10 +1576,11 @@ ladder nor a universal dynamics theorem. The Capability Manifest, Typed SOF
 IR, and Report Profile belong to Paper X rather than to the static object
 defined here.
 
-Open promotion problems include proxy/shadow bridges and route/word criteria.
-Word/Lie comparisons, saturation certificates, and weaker comparison
-morphisms are also open. These are future typed results, not implicit
-consequences of the static category.
+Open promotion problems include proxy/shadow bridges, route/word criteria
+beyond deterministic permutation carriers, and saturation certificates for
+nonfinite or numerically represented operator families. Word/Lie comparisons
+and weaker comparison morphisms are also open. These are future typed results,
+not implicit consequences of the static category.
 
 ***
 
@@ -1254,6 +1600,9 @@ particular, this paper does not identify a routed product with a full word or
 a commutator with Lie depth.
 
 The contribution here is the marked static SOF object language: sector
-projectors remain marked, observable labels remain visible, finite
-filtrations remain separate from positive, star, and sector-enriched
-closures, and optional Lie/Hall data are independently registered.
+projectors remain marked, observable labels remain visible even when the
+represented operator map is noninjective, finite filtrations remain separate
+from positive, star, and sector-enriched closures, and optional Lie/Hall data
+are independently registered. The exact finite-permutation family is a
+conformance witness for that interface and a strict control against replacing
+actual ordered words by aggregate Boolean graph powers.

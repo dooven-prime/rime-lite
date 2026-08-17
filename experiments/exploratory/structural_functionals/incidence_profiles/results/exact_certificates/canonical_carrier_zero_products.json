@@ -1,0 +1,3423 @@
+{
+  "all_operative_generators_preserve_registered_carriers": true,
+  "arithmetic_backend": "numpy.int64 coefficient arrays guarded by conservative preoperation bounds for every arithmetic operation; trace accumulation uses Python integers",
+  "canonical_zero_triples": [
+    {
+      "all_generator_pairs_have_exact_zero_product": true,
+      "carrier_intersection": [],
+      "source_carriers": [
+        "cp",
+        "co"
+      ],
+      "target_carriers": [
+        "ep",
+        "eo"
+      ],
+      "triple": [
+        2,
+        6,
+        8
+      ]
+    },
+    {
+      "all_generator_pairs_have_exact_zero_product": true,
+      "carrier_intersection": [],
+      "source_carriers": [
+        "cp",
+        "co"
+      ],
+      "target_carriers": [
+        "ep",
+        "eo"
+      ],
+      "triple": [
+        5,
+        6,
+        8
+      ]
+    },
+    {
+      "all_generator_pairs_have_exact_zero_product": true,
+      "carrier_intersection": [],
+      "source_carriers": [
+        "ep",
+        "eo"
+      ],
+      "target_carriers": [
+        "cp",
+        "co"
+      ],
+      "triple": [
+        8,
+        6,
+        2
+      ]
+    },
+    {
+      "all_generator_pairs_have_exact_zero_product": true,
+      "carrier_intersection": [],
+      "source_carriers": [
+        "ep",
+        "eo"
+      ],
+      "target_carriers": [
+        "cp",
+        "co"
+      ],
+      "triple": [
+        8,
+        6,
+        5
+      ]
+    }
+  ],
+  "certificate_kind": "exact_finite_algebraic",
+  "claim_status": "Computational Certificate",
+  "coefficient_ring": "Z[zeta_3], zeta_3^2 + zeta_3 + 1 = 0",
+  "conclusion": "The exact canonical sector projectors reduce the four physical carriers. The endpoint carrier masks of each canonical zero triple are disjoint; the represented Rubik operators, their adjoints, and the anti-Hermitian operative numerators preserve those carriers; therefore AB=0 exactly for every registered operative pair on those triples.",
+  "fixed_frame_orbit_certificates": [
+    {
+      "all_observed_zero_routes_exactly_certified": true,
+      "observed_zero_count": 0,
+      "observed_zero_triples": [],
+      "only_carrier_forced_mechanism": true,
+      "operator_count": 2,
+      "orbit_id": "axis-balanced-00"
+    },
+    {
+      "all_observed_zero_routes_exactly_certified": true,
+      "observed_zero_count": 64,
+      "observed_zero_triples": [
+        [
+          2,
+          6,
+          8
+        ],
+        [
+          5,
+          6,
+          8
+        ],
+        [
+          8,
+          6,
+          2
+        ],
+        [
+          8,
+          6,
+          5
+        ]
+      ],
+      "only_carrier_forced_mechanism": true,
+      "operator_count": 4,
+      "orbit_id": "axis-balanced-01"
+    },
+    {
+      "all_observed_zero_routes_exactly_certified": true,
+      "observed_zero_count": 0,
+      "observed_zero_triples": [],
+      "only_carrier_forced_mechanism": true,
+      "operator_count": 4,
+      "orbit_id": "axis-balanced-02"
+    },
+    {
+      "all_observed_zero_routes_exactly_certified": true,
+      "observed_zero_count": 64,
+      "observed_zero_triples": [
+        [
+          2,
+          6,
+          8
+        ],
+        [
+          5,
+          6,
+          8
+        ],
+        [
+          8,
+          6,
+          2
+        ],
+        [
+          8,
+          6,
+          5
+        ]
+      ],
+      "only_carrier_forced_mechanism": true,
+      "operator_count": 6,
+      "orbit_id": "axis-balanced-03"
+    },
+    {
+      "all_observed_zero_routes_exactly_certified": true,
+      "observed_zero_count": 64,
+      "observed_zero_triples": [
+        [
+          2,
+          6,
+          8
+        ],
+        [
+          5,
+          6,
+          8
+        ],
+        [
+          8,
+          6,
+          2
+        ],
+        [
+          8,
+          6,
+          5
+        ]
+      ],
+      "only_carrier_forced_mechanism": true,
+      "operator_count": 6,
+      "orbit_id": "axis-balanced-04"
+    },
+    {
+      "all_observed_zero_routes_exactly_certified": true,
+      "observed_zero_count": 0,
+      "observed_zero_triples": [],
+      "only_carrier_forced_mechanism": true,
+      "operator_count": 6,
+      "orbit_id": "axis-balanced-05"
+    },
+    {
+      "all_observed_zero_routes_exactly_certified": true,
+      "observed_zero_count": 64,
+      "observed_zero_triples": [
+        [
+          2,
+          6,
+          8
+        ],
+        [
+          5,
+          6,
+          8
+        ],
+        [
+          8,
+          6,
+          2
+        ],
+        [
+          8,
+          6,
+          5
+        ]
+      ],
+      "only_carrier_forced_mechanism": true,
+      "operator_count": 8,
+      "orbit_id": "axis-balanced-06"
+    },
+    {
+      "all_observed_zero_routes_exactly_certified": true,
+      "observed_zero_count": 256,
+      "observed_zero_triples": [
+        [
+          2,
+          6,
+          8
+        ],
+        [
+          5,
+          6,
+          8
+        ],
+        [
+          8,
+          6,
+          2
+        ],
+        [
+          8,
+          6,
+          5
+        ]
+      ],
+      "only_carrier_forced_mechanism": true,
+      "operator_count": 8,
+      "orbit_id": "axis-balanced-07"
+    },
+    {
+      "all_observed_zero_routes_exactly_certified": true,
+      "observed_zero_count": 64,
+      "observed_zero_triples": [
+        [
+          2,
+          6,
+          8
+        ],
+        [
+          5,
+          6,
+          8
+        ],
+        [
+          8,
+          6,
+          2
+        ],
+        [
+          8,
+          6,
+          5
+        ]
+      ],
+      "only_carrier_forced_mechanism": true,
+      "operator_count": 8,
+      "orbit_id": "axis-balanced-08"
+    },
+    {
+      "all_observed_zero_routes_exactly_certified": true,
+      "observed_zero_count": 256,
+      "observed_zero_triples": [
+        [
+          2,
+          6,
+          8
+        ],
+        [
+          5,
+          6,
+          8
+        ],
+        [
+          8,
+          6,
+          2
+        ],
+        [
+          8,
+          6,
+          5
+        ]
+      ],
+      "only_carrier_forced_mechanism": true,
+      "operator_count": 10,
+      "orbit_id": "axis-balanced-09"
+    },
+    {
+      "all_observed_zero_routes_exactly_certified": true,
+      "observed_zero_count": 64,
+      "observed_zero_triples": [
+        [
+          2,
+          6,
+          8
+        ],
+        [
+          5,
+          6,
+          8
+        ],
+        [
+          8,
+          6,
+          2
+        ],
+        [
+          8,
+          6,
+          5
+        ]
+      ],
+      "only_carrier_forced_mechanism": true,
+      "operator_count": 10,
+      "orbit_id": "axis-balanced-10"
+    },
+    {
+      "all_observed_zero_routes_exactly_certified": true,
+      "observed_zero_count": 256,
+      "observed_zero_triples": [
+        [
+          2,
+          6,
+          8
+        ],
+        [
+          5,
+          6,
+          8
+        ],
+        [
+          8,
+          6,
+          2
+        ],
+        [
+          8,
+          6,
+          5
+        ]
+      ],
+      "only_carrier_forced_mechanism": true,
+      "operator_count": 10,
+      "orbit_id": "axis-balanced-11"
+    },
+    {
+      "all_observed_zero_routes_exactly_certified": true,
+      "observed_zero_count": 256,
+      "observed_zero_triples": [
+        [
+          2,
+          6,
+          8
+        ],
+        [
+          5,
+          6,
+          8
+        ],
+        [
+          8,
+          6,
+          2
+        ],
+        [
+          8,
+          6,
+          5
+        ]
+      ],
+      "only_carrier_forced_mechanism": true,
+      "operator_count": 12,
+      "orbit_id": "axis-balanced-12"
+    },
+    {
+      "all_observed_zero_routes_exactly_certified": true,
+      "observed_zero_count": 256,
+      "observed_zero_triples": [
+        [
+          2,
+          6,
+          8
+        ],
+        [
+          5,
+          6,
+          8
+        ],
+        [
+          8,
+          6,
+          2
+        ],
+        [
+          8,
+          6,
+          5
+        ]
+      ],
+      "only_carrier_forced_mechanism": true,
+      "operator_count": 12,
+      "orbit_id": "axis-balanced-13"
+    },
+    {
+      "all_observed_zero_routes_exactly_certified": true,
+      "observed_zero_count": 576,
+      "observed_zero_triples": [
+        [
+          2,
+          6,
+          8
+        ],
+        [
+          5,
+          6,
+          8
+        ],
+        [
+          8,
+          6,
+          2
+        ],
+        [
+          8,
+          6,
+          5
+        ]
+      ],
+      "only_carrier_forced_mechanism": true,
+      "operator_count": 12,
+      "orbit_id": "axis-balanced-14"
+    },
+    {
+      "all_observed_zero_routes_exactly_certified": true,
+      "observed_zero_count": 256,
+      "observed_zero_triples": [
+        [
+          2,
+          6,
+          8
+        ],
+        [
+          5,
+          6,
+          8
+        ],
+        [
+          8,
+          6,
+          2
+        ],
+        [
+          8,
+          6,
+          5
+        ]
+      ],
+      "only_carrier_forced_mechanism": true,
+      "operator_count": 14,
+      "orbit_id": "axis-balanced-15"
+    },
+    {
+      "all_observed_zero_routes_exactly_certified": true,
+      "observed_zero_count": 576,
+      "observed_zero_triples": [
+        [
+          2,
+          6,
+          8
+        ],
+        [
+          5,
+          6,
+          8
+        ],
+        [
+          8,
+          6,
+          2
+        ],
+        [
+          8,
+          6,
+          5
+        ]
+      ],
+      "only_carrier_forced_mechanism": true,
+      "operator_count": 14,
+      "orbit_id": "axis-balanced-16"
+    },
+    {
+      "all_observed_zero_routes_exactly_certified": true,
+      "observed_zero_count": 576,
+      "observed_zero_triples": [
+        [
+          2,
+          6,
+          8
+        ],
+        [
+          5,
+          6,
+          8
+        ],
+        [
+          8,
+          6,
+          2
+        ],
+        [
+          8,
+          6,
+          5
+        ]
+      ],
+      "only_carrier_forced_mechanism": true,
+      "operator_count": 16,
+      "orbit_id": "axis-balanced-17"
+    },
+    {
+      "all_observed_zero_routes_exactly_certified": true,
+      "observed_zero_count": 576,
+      "observed_zero_triples": [
+        [
+          2,
+          6,
+          8
+        ],
+        [
+          5,
+          6,
+          8
+        ],
+        [
+          8,
+          6,
+          2
+        ],
+        [
+          8,
+          6,
+          5
+        ]
+      ],
+      "only_carrier_forced_mechanism": true,
+      "operator_count": 18,
+      "orbit_id": "axis-balanced-18"
+    }
+  ],
+  "ht_sum_self_adjoint_verified": true,
+  "int64_all_arithmetic_safety_verified": true,
+  "int64_pair_matmul_safety_verified": true,
+  "int64_preoperation_audit": {
+    "all_operations_safe": true,
+    "coverage": [
+      "identity",
+      "add",
+      "subtract",
+      "scale",
+      "adjoint",
+      "matmul",
+      "trace"
+    ],
+    "int64_limit": 9223372036854775807,
+    "maximum_conservative_output_bound": 121031884800,
+    "operation_count": 387,
+    "operation_kind_counts": {
+      "add": 27,
+      "adjoint": 29,
+      "identity": 46,
+      "matmul": 146,
+      "scale": 36,
+      "subtract": 94,
+      "trace": 9
+    },
+    "operations": [
+      {
+        "conservative_max_abs_output_bound": 2,
+        "int64_safe": true,
+        "operation": "generator-(0, -1, -1):adjoint",
+        "operation_kind": "adjoint"
+      },
+      {
+        "conservative_max_abs_output_bound": 2,
+        "int64_safe": true,
+        "operation": "generator-(0, -1, -1):skew-numerator",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 1,
+        "int64_safe": true,
+        "operation": "qt-sum:add-(0, -1, -1)",
+        "operation_kind": "add"
+      },
+      {
+        "conservative_max_abs_output_bound": 2,
+        "int64_safe": true,
+        "operation": "generator-(0, -1, 1):adjoint",
+        "operation_kind": "adjoint"
+      },
+      {
+        "conservative_max_abs_output_bound": 2,
+        "int64_safe": true,
+        "operation": "generator-(0, -1, 1):skew-numerator",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 2,
+        "int64_safe": true,
+        "operation": "qt-sum:add-(0, -1, 1)",
+        "operation_kind": "add"
+      },
+      {
+        "conservative_max_abs_output_bound": 1,
+        "int64_safe": true,
+        "operation": "generator-(0, -1, 2):adjoint",
+        "operation_kind": "adjoint"
+      },
+      {
+        "conservative_max_abs_output_bound": 2,
+        "int64_safe": true,
+        "operation": "generator-(0, -1, 2):skew-numerator",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 1,
+        "int64_safe": true,
+        "operation": "ht-sum:add-(0, -1, 2)",
+        "operation_kind": "add"
+      },
+      {
+        "conservative_max_abs_output_bound": 2,
+        "int64_safe": true,
+        "operation": "generator-(0, 1, -1):adjoint",
+        "operation_kind": "adjoint"
+      },
+      {
+        "conservative_max_abs_output_bound": 2,
+        "int64_safe": true,
+        "operation": "generator-(0, 1, -1):skew-numerator",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 3,
+        "int64_safe": true,
+        "operation": "qt-sum:add-(0, 1, -1)",
+        "operation_kind": "add"
+      },
+      {
+        "conservative_max_abs_output_bound": 2,
+        "int64_safe": true,
+        "operation": "generator-(0, 1, 1):adjoint",
+        "operation_kind": "adjoint"
+      },
+      {
+        "conservative_max_abs_output_bound": 2,
+        "int64_safe": true,
+        "operation": "generator-(0, 1, 1):skew-numerator",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 4,
+        "int64_safe": true,
+        "operation": "qt-sum:add-(0, 1, 1)",
+        "operation_kind": "add"
+      },
+      {
+        "conservative_max_abs_output_bound": 1,
+        "int64_safe": true,
+        "operation": "generator-(0, 1, 2):adjoint",
+        "operation_kind": "adjoint"
+      },
+      {
+        "conservative_max_abs_output_bound": 2,
+        "int64_safe": true,
+        "operation": "generator-(0, 1, 2):skew-numerator",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 2,
+        "int64_safe": true,
+        "operation": "ht-sum:add-(0, 1, 2)",
+        "operation_kind": "add"
+      },
+      {
+        "conservative_max_abs_output_bound": 1,
+        "int64_safe": true,
+        "operation": "generator-(1, -1, -1):adjoint",
+        "operation_kind": "adjoint"
+      },
+      {
+        "conservative_max_abs_output_bound": 2,
+        "int64_safe": true,
+        "operation": "generator-(1, -1, -1):skew-numerator",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 5,
+        "int64_safe": true,
+        "operation": "qt-sum:add-(1, -1, -1)",
+        "operation_kind": "add"
+      },
+      {
+        "conservative_max_abs_output_bound": 1,
+        "int64_safe": true,
+        "operation": "generator-(1, -1, 1):adjoint",
+        "operation_kind": "adjoint"
+      },
+      {
+        "conservative_max_abs_output_bound": 2,
+        "int64_safe": true,
+        "operation": "generator-(1, -1, 1):skew-numerator",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 6,
+        "int64_safe": true,
+        "operation": "qt-sum:add-(1, -1, 1)",
+        "operation_kind": "add"
+      },
+      {
+        "conservative_max_abs_output_bound": 1,
+        "int64_safe": true,
+        "operation": "generator-(1, -1, 2):adjoint",
+        "operation_kind": "adjoint"
+      },
+      {
+        "conservative_max_abs_output_bound": 2,
+        "int64_safe": true,
+        "operation": "generator-(1, -1, 2):skew-numerator",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 3,
+        "int64_safe": true,
+        "operation": "ht-sum:add-(1, -1, 2)",
+        "operation_kind": "add"
+      },
+      {
+        "conservative_max_abs_output_bound": 1,
+        "int64_safe": true,
+        "operation": "generator-(1, 1, -1):adjoint",
+        "operation_kind": "adjoint"
+      },
+      {
+        "conservative_max_abs_output_bound": 2,
+        "int64_safe": true,
+        "operation": "generator-(1, 1, -1):skew-numerator",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 7,
+        "int64_safe": true,
+        "operation": "qt-sum:add-(1, 1, -1)",
+        "operation_kind": "add"
+      },
+      {
+        "conservative_max_abs_output_bound": 1,
+        "int64_safe": true,
+        "operation": "generator-(1, 1, 1):adjoint",
+        "operation_kind": "adjoint"
+      },
+      {
+        "conservative_max_abs_output_bound": 2,
+        "int64_safe": true,
+        "operation": "generator-(1, 1, 1):skew-numerator",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 7,
+        "int64_safe": true,
+        "operation": "qt-sum:add-(1, 1, 1)",
+        "operation_kind": "add"
+      },
+      {
+        "conservative_max_abs_output_bound": 1,
+        "int64_safe": true,
+        "operation": "generator-(1, 1, 2):adjoint",
+        "operation_kind": "adjoint"
+      },
+      {
+        "conservative_max_abs_output_bound": 2,
+        "int64_safe": true,
+        "operation": "generator-(1, 1, 2):skew-numerator",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 4,
+        "int64_safe": true,
+        "operation": "ht-sum:add-(1, 1, 2)",
+        "operation_kind": "add"
+      },
+      {
+        "conservative_max_abs_output_bound": 2,
+        "int64_safe": true,
+        "operation": "generator-(2, -1, -1):adjoint",
+        "operation_kind": "adjoint"
+      },
+      {
+        "conservative_max_abs_output_bound": 2,
+        "int64_safe": true,
+        "operation": "generator-(2, -1, -1):skew-numerator",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 7,
+        "int64_safe": true,
+        "operation": "qt-sum:add-(2, -1, -1)",
+        "operation_kind": "add"
+      },
+      {
+        "conservative_max_abs_output_bound": 2,
+        "int64_safe": true,
+        "operation": "generator-(2, -1, 1):adjoint",
+        "operation_kind": "adjoint"
+      },
+      {
+        "conservative_max_abs_output_bound": 2,
+        "int64_safe": true,
+        "operation": "generator-(2, -1, 1):skew-numerator",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 8,
+        "int64_safe": true,
+        "operation": "qt-sum:add-(2, -1, 1)",
+        "operation_kind": "add"
+      },
+      {
+        "conservative_max_abs_output_bound": 1,
+        "int64_safe": true,
+        "operation": "generator-(2, -1, 2):adjoint",
+        "operation_kind": "adjoint"
+      },
+      {
+        "conservative_max_abs_output_bound": 2,
+        "int64_safe": true,
+        "operation": "generator-(2, -1, 2):skew-numerator",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 4,
+        "int64_safe": true,
+        "operation": "ht-sum:add-(2, -1, 2)",
+        "operation_kind": "add"
+      },
+      {
+        "conservative_max_abs_output_bound": 2,
+        "int64_safe": true,
+        "operation": "generator-(2, 1, -1):adjoint",
+        "operation_kind": "adjoint"
+      },
+      {
+        "conservative_max_abs_output_bound": 2,
+        "int64_safe": true,
+        "operation": "generator-(2, 1, -1):skew-numerator",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 9,
+        "int64_safe": true,
+        "operation": "qt-sum:add-(2, 1, -1)",
+        "operation_kind": "add"
+      },
+      {
+        "conservative_max_abs_output_bound": 2,
+        "int64_safe": true,
+        "operation": "generator-(2, 1, 1):adjoint",
+        "operation_kind": "adjoint"
+      },
+      {
+        "conservative_max_abs_output_bound": 2,
+        "int64_safe": true,
+        "operation": "generator-(2, 1, 1):skew-numerator",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 9,
+        "int64_safe": true,
+        "operation": "qt-sum:add-(2, 1, 1)",
+        "operation_kind": "add"
+      },
+      {
+        "conservative_max_abs_output_bound": 1,
+        "int64_safe": true,
+        "operation": "generator-(2, 1, 2):adjoint",
+        "operation_kind": "adjoint"
+      },
+      {
+        "conservative_max_abs_output_bound": 2,
+        "int64_safe": true,
+        "operation": "generator-(2, 1, 2):skew-numerator",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 5,
+        "int64_safe": true,
+        "operation": "ht-sum:add-(2, 1, 2)",
+        "operation_kind": "add"
+      },
+      {
+        "conservative_max_abs_output_bound": 7296,
+        "int64_safe": true,
+        "operation": "qt-ht-commutator:left",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 7296,
+        "int64_safe": true,
+        "operation": "qt-ht-commutator:right",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 64,
+        "int64_safe": true,
+        "operation": "qt-ht-commutator:subtract",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 9,
+        "int64_safe": true,
+        "operation": "qt-sum:adjoint",
+        "operation_kind": "adjoint"
+      },
+      {
+        "conservative_max_abs_output_bound": 16,
+        "int64_safe": true,
+        "operation": "qt-sum:self-adjoint-residual",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 4,
+        "int64_safe": true,
+        "operation": "ht-sum:adjoint",
+        "operation_kind": "adjoint"
+      },
+      {
+        "conservative_max_abs_output_bound": 8,
+        "int64_safe": true,
+        "operation": "ht-sum:self-adjoint-residual",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 1,
+        "int64_safe": true,
+        "operation": "qt-projector-0:identity",
+        "operation_kind": "identity"
+      },
+      {
+        "conservative_max_abs_output_bound": 4,
+        "int64_safe": true,
+        "operation": "qt-projector-0:identity-4",
+        "operation_kind": "identity"
+      },
+      {
+        "conservative_max_abs_output_bound": 12,
+        "int64_safe": true,
+        "operation": "qt-projector-0:shift-4",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 912,
+        "int64_safe": true,
+        "operation": "qt-projector-0:factor-4",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 6,
+        "int64_safe": true,
+        "operation": "qt-projector-0:identity-6",
+        "operation_kind": "identity"
+      },
+      {
+        "conservative_max_abs_output_bound": 14,
+        "int64_safe": true,
+        "operation": "qt-projector-0:shift-6",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 2052,
+        "int64_safe": true,
+        "operation": "qt-projector-0:factor-6",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 8,
+        "int64_safe": true,
+        "operation": "qt-projector-0:identity-8",
+        "operation_kind": "identity"
+      },
+      {
+        "conservative_max_abs_output_bound": 16,
+        "int64_safe": true,
+        "operation": "qt-projector-0:shift-8",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 5928,
+        "int64_safe": true,
+        "operation": "qt-projector-0:factor-8",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 10,
+        "int64_safe": true,
+        "operation": "qt-projector-0:identity-10",
+        "operation_kind": "identity"
+      },
+      {
+        "conservative_max_abs_output_bound": 18,
+        "int64_safe": true,
+        "operation": "qt-projector-0:shift-10",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 43776,
+        "int64_safe": true,
+        "operation": "qt-projector-0:factor-10",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 12,
+        "int64_safe": true,
+        "operation": "qt-projector-0:identity-12",
+        "operation_kind": "identity"
+      },
+      {
+        "conservative_max_abs_output_bound": 20,
+        "int64_safe": true,
+        "operation": "qt-projector-0:shift-12",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 393984,
+        "int64_safe": true,
+        "operation": "qt-projector-0:factor-12",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 1,
+        "int64_safe": true,
+        "operation": "qt-projector-4:identity",
+        "operation_kind": "identity"
+      },
+      {
+        "conservative_max_abs_output_bound": 0,
+        "int64_safe": true,
+        "operation": "qt-projector-4:identity-0",
+        "operation_kind": "identity"
+      },
+      {
+        "conservative_max_abs_output_bound": 8,
+        "int64_safe": true,
+        "operation": "qt-projector-4:shift-0",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 1824,
+        "int64_safe": true,
+        "operation": "qt-projector-4:factor-0",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 6,
+        "int64_safe": true,
+        "operation": "qt-projector-4:identity-6",
+        "operation_kind": "identity"
+      },
+      {
+        "conservative_max_abs_output_bound": 14,
+        "int64_safe": true,
+        "operation": "qt-projector-4:shift-6",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 3876,
+        "int64_safe": true,
+        "operation": "qt-projector-4:factor-6",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 8,
+        "int64_safe": true,
+        "operation": "qt-projector-4:identity-8",
+        "operation_kind": "identity"
+      },
+      {
+        "conservative_max_abs_output_bound": 16,
+        "int64_safe": true,
+        "operation": "qt-projector-4:shift-8",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 10488,
+        "int64_safe": true,
+        "operation": "qt-projector-4:factor-8",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 10,
+        "int64_safe": true,
+        "operation": "qt-projector-4:identity-10",
+        "operation_kind": "identity"
+      },
+      {
+        "conservative_max_abs_output_bound": 18,
+        "int64_safe": true,
+        "operation": "qt-projector-4:shift-10",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 45600,
+        "int64_safe": true,
+        "operation": "qt-projector-4:factor-10",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 12,
+        "int64_safe": true,
+        "operation": "qt-projector-4:identity-12",
+        "operation_kind": "identity"
+      },
+      {
+        "conservative_max_abs_output_bound": 20,
+        "int64_safe": true,
+        "operation": "qt-projector-4:shift-12",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 142272,
+        "int64_safe": true,
+        "operation": "qt-projector-4:factor-12",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 1,
+        "int64_safe": true,
+        "operation": "qt-projector-6:identity",
+        "operation_kind": "identity"
+      },
+      {
+        "conservative_max_abs_output_bound": 0,
+        "int64_safe": true,
+        "operation": "qt-projector-6:identity-0",
+        "operation_kind": "identity"
+      },
+      {
+        "conservative_max_abs_output_bound": 8,
+        "int64_safe": true,
+        "operation": "qt-projector-6:shift-0",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 1824,
+        "int64_safe": true,
+        "operation": "qt-projector-6:factor-0",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 4,
+        "int64_safe": true,
+        "operation": "qt-projector-6:identity-4",
+        "operation_kind": "identity"
+      },
+      {
+        "conservative_max_abs_output_bound": 12,
+        "int64_safe": true,
+        "operation": "qt-projector-6:shift-4",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 7524,
+        "int64_safe": true,
+        "operation": "qt-projector-6:factor-4",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 8,
+        "int64_safe": true,
+        "operation": "qt-projector-6:identity-8",
+        "operation_kind": "identity"
+      },
+      {
+        "conservative_max_abs_output_bound": 16,
+        "int64_safe": true,
+        "operation": "qt-projector-6:shift-8",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 18240,
+        "int64_safe": true,
+        "operation": "qt-projector-6:factor-8",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 10,
+        "int64_safe": true,
+        "operation": "qt-projector-6:identity-10",
+        "operation_kind": "identity"
+      },
+      {
+        "conservative_max_abs_output_bound": 18,
+        "int64_safe": true,
+        "operation": "qt-projector-6:shift-10",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 47424,
+        "int64_safe": true,
+        "operation": "qt-projector-6:factor-10",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 12,
+        "int64_safe": true,
+        "operation": "qt-projector-6:identity-12",
+        "operation_kind": "identity"
+      },
+      {
+        "conservative_max_abs_output_bound": 20,
+        "int64_safe": true,
+        "operation": "qt-projector-6:shift-12",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 142272,
+        "int64_safe": true,
+        "operation": "qt-projector-6:factor-12",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 1,
+        "int64_safe": true,
+        "operation": "qt-projector-8:identity",
+        "operation_kind": "identity"
+      },
+      {
+        "conservative_max_abs_output_bound": 0,
+        "int64_safe": true,
+        "operation": "qt-projector-8:identity-0",
+        "operation_kind": "identity"
+      },
+      {
+        "conservative_max_abs_output_bound": 8,
+        "int64_safe": true,
+        "operation": "qt-projector-8:shift-0",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 1824,
+        "int64_safe": true,
+        "operation": "qt-projector-8:factor-0",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 4,
+        "int64_safe": true,
+        "operation": "qt-projector-8:identity-4",
+        "operation_kind": "identity"
+      },
+      {
+        "conservative_max_abs_output_bound": 12,
+        "int64_safe": true,
+        "operation": "qt-projector-8:shift-4",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 7524,
+        "int64_safe": true,
+        "operation": "qt-projector-8:factor-4",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 6,
+        "int64_safe": true,
+        "operation": "qt-projector-8:identity-6",
+        "operation_kind": "identity"
+      },
+      {
+        "conservative_max_abs_output_bound": 14,
+        "int64_safe": true,
+        "operation": "qt-projector-8:shift-6",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 18240,
+        "int64_safe": true,
+        "operation": "qt-projector-8:factor-6",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 10,
+        "int64_safe": true,
+        "operation": "qt-projector-8:identity-10",
+        "operation_kind": "identity"
+      },
+      {
+        "conservative_max_abs_output_bound": 18,
+        "int64_safe": true,
+        "operation": "qt-projector-8:shift-10",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 116736,
+        "int64_safe": true,
+        "operation": "qt-projector-8:factor-10",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 12,
+        "int64_safe": true,
+        "operation": "qt-projector-8:identity-12",
+        "operation_kind": "identity"
+      },
+      {
+        "conservative_max_abs_output_bound": 20,
+        "int64_safe": true,
+        "operation": "qt-projector-8:shift-12",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 269952,
+        "int64_safe": true,
+        "operation": "qt-projector-8:factor-12",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 1,
+        "int64_safe": true,
+        "operation": "qt-projector-10:identity",
+        "operation_kind": "identity"
+      },
+      {
+        "conservative_max_abs_output_bound": 0,
+        "int64_safe": true,
+        "operation": "qt-projector-10:identity-0",
+        "operation_kind": "identity"
+      },
+      {
+        "conservative_max_abs_output_bound": 8,
+        "int64_safe": true,
+        "operation": "qt-projector-10:shift-0",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 1824,
+        "int64_safe": true,
+        "operation": "qt-projector-10:factor-0",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 4,
+        "int64_safe": true,
+        "operation": "qt-projector-10:identity-4",
+        "operation_kind": "identity"
+      },
+      {
+        "conservative_max_abs_output_bound": 12,
+        "int64_safe": true,
+        "operation": "qt-projector-10:shift-4",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 7524,
+        "int64_safe": true,
+        "operation": "qt-projector-10:factor-4",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 6,
+        "int64_safe": true,
+        "operation": "qt-projector-10:identity-6",
+        "operation_kind": "identity"
+      },
+      {
+        "conservative_max_abs_output_bound": 14,
+        "int64_safe": true,
+        "operation": "qt-projector-10:shift-6",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 18240,
+        "int64_safe": true,
+        "operation": "qt-projector-10:factor-6",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 8,
+        "int64_safe": true,
+        "operation": "qt-projector-10:identity-8",
+        "operation_kind": "identity"
+      },
+      {
+        "conservative_max_abs_output_bound": 16,
+        "int64_safe": true,
+        "operation": "qt-projector-10:shift-8",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 60192,
+        "int64_safe": true,
+        "operation": "qt-projector-10:factor-8",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 12,
+        "int64_safe": true,
+        "operation": "qt-projector-10:identity-12",
+        "operation_kind": "identity"
+      },
+      {
+        "conservative_max_abs_output_bound": 20,
+        "int64_safe": true,
+        "operation": "qt-projector-10:shift-12",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 426816,
+        "int64_safe": true,
+        "operation": "qt-projector-10:factor-12",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 1,
+        "int64_safe": true,
+        "operation": "qt-projector-12:identity",
+        "operation_kind": "identity"
+      },
+      {
+        "conservative_max_abs_output_bound": 0,
+        "int64_safe": true,
+        "operation": "qt-projector-12:identity-0",
+        "operation_kind": "identity"
+      },
+      {
+        "conservative_max_abs_output_bound": 8,
+        "int64_safe": true,
+        "operation": "qt-projector-12:shift-0",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 1824,
+        "int64_safe": true,
+        "operation": "qt-projector-12:factor-0",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 4,
+        "int64_safe": true,
+        "operation": "qt-projector-12:identity-4",
+        "operation_kind": "identity"
+      },
+      {
+        "conservative_max_abs_output_bound": 12,
+        "int64_safe": true,
+        "operation": "qt-projector-12:shift-4",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 7524,
+        "int64_safe": true,
+        "operation": "qt-projector-12:factor-4",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 6,
+        "int64_safe": true,
+        "operation": "qt-projector-12:identity-6",
+        "operation_kind": "identity"
+      },
+      {
+        "conservative_max_abs_output_bound": 14,
+        "int64_safe": true,
+        "operation": "qt-projector-12:shift-6",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 18240,
+        "int64_safe": true,
+        "operation": "qt-projector-12:factor-6",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 8,
+        "int64_safe": true,
+        "operation": "qt-projector-12:identity-8",
+        "operation_kind": "identity"
+      },
+      {
+        "conservative_max_abs_output_bound": 16,
+        "int64_safe": true,
+        "operation": "qt-projector-12:shift-8",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 60192,
+        "int64_safe": true,
+        "operation": "qt-projector-12:factor-8",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 10,
+        "int64_safe": true,
+        "operation": "qt-projector-12:identity-10",
+        "operation_kind": "identity"
+      },
+      {
+        "conservative_max_abs_output_bound": 18,
+        "int64_safe": true,
+        "operation": "qt-projector-12:shift-10",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 284544,
+        "int64_safe": true,
+        "operation": "qt-projector-12:factor-10",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 1,
+        "int64_safe": true,
+        "operation": "ht-projector-2:identity",
+        "operation_kind": "identity"
+      },
+      {
+        "conservative_max_abs_output_bound": 4,
+        "int64_safe": true,
+        "operation": "ht-projector-2:identity-4",
+        "operation_kind": "identity"
+      },
+      {
+        "conservative_max_abs_output_bound": 8,
+        "int64_safe": true,
+        "operation": "ht-projector-2:shift-4",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 228,
+        "int64_safe": true,
+        "operation": "ht-projector-2:factor-4",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 6,
+        "int64_safe": true,
+        "operation": "ht-projector-2:identity-6",
+        "operation_kind": "identity"
+      },
+      {
+        "conservative_max_abs_output_bound": 10,
+        "int64_safe": true,
+        "operation": "ht-projector-2:shift-6",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 684,
+        "int64_safe": true,
+        "operation": "ht-projector-2:factor-6",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 1,
+        "int64_safe": true,
+        "operation": "ht-projector-4:identity",
+        "operation_kind": "identity"
+      },
+      {
+        "conservative_max_abs_output_bound": 2,
+        "int64_safe": true,
+        "operation": "ht-projector-4:identity-2",
+        "operation_kind": "identity"
+      },
+      {
+        "conservative_max_abs_output_bound": 6,
+        "int64_safe": true,
+        "operation": "ht-projector-4:shift-2",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 456,
+        "int64_safe": true,
+        "operation": "ht-projector-4:factor-2",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 6,
+        "int64_safe": true,
+        "operation": "ht-projector-4:identity-6",
+        "operation_kind": "identity"
+      },
+      {
+        "conservative_max_abs_output_bound": 10,
+        "int64_safe": true,
+        "operation": "ht-projector-4:shift-6",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 1368,
+        "int64_safe": true,
+        "operation": "ht-projector-4:factor-6",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 1,
+        "int64_safe": true,
+        "operation": "ht-projector-6:identity",
+        "operation_kind": "identity"
+      },
+      {
+        "conservative_max_abs_output_bound": 2,
+        "int64_safe": true,
+        "operation": "ht-projector-6:identity-2",
+        "operation_kind": "identity"
+      },
+      {
+        "conservative_max_abs_output_bound": 6,
+        "int64_safe": true,
+        "operation": "ht-projector-6:shift-2",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 456,
+        "int64_safe": true,
+        "operation": "ht-projector-6:factor-2",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 4,
+        "int64_safe": true,
+        "operation": "ht-projector-6:identity-4",
+        "operation_kind": "identity"
+      },
+      {
+        "conservative_max_abs_output_bound": 8,
+        "int64_safe": true,
+        "operation": "ht-projector-6:shift-4",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 456,
+        "int64_safe": true,
+        "operation": "ht-projector-6:factor-4",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 262656,
+        "int64_safe": true,
+        "operation": "joint-projector-0",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 4841275392,
+        "int64_safe": true,
+        "operation": "joint-projector-0:idempotence",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 169869312,
+        "int64_safe": true,
+        "operation": "joint-projector-0:denominator-scale",
+        "operation_kind": "scale"
+      },
+      {
+        "conservative_max_abs_output_bound": 339738624,
+        "int64_safe": true,
+        "operation": "joint-projector-0:idempotence-residual",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 4608,
+        "int64_safe": true,
+        "operation": "joint-projector-0:adjoint",
+        "operation_kind": "adjoint"
+      },
+      {
+        "conservative_max_abs_output_bound": 9216,
+        "int64_safe": true,
+        "operation": "joint-projector-0:self-adjoint-residual",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 8404992,
+        "int64_safe": true,
+        "operation": "joint-projector-0:qt-eigenvalue",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 55296,
+        "int64_safe": true,
+        "operation": "joint-projector-0:qt-scale",
+        "operation_kind": "scale"
+      },
+      {
+        "conservative_max_abs_output_bound": 110592,
+        "int64_safe": true,
+        "operation": "joint-projector-0:qt-eigen-residual",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 4202496,
+        "int64_safe": true,
+        "operation": "joint-projector-0:ht-eigenvalue",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 27648,
+        "int64_safe": true,
+        "operation": "joint-projector-0:ht-scale",
+        "operation_kind": "scale"
+      },
+      {
+        "conservative_max_abs_output_bound": 55296,
+        "int64_safe": true,
+        "operation": "joint-projector-0:ht-eigen-residual",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 1050624,
+        "int64_safe": true,
+        "operation": "joint-projector-0:trace",
+        "operation_kind": "trace"
+      },
+      {
+        "conservative_max_abs_output_bound": 182400,
+        "int64_safe": true,
+        "operation": "joint-projector-1",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 373555200,
+        "int64_safe": true,
+        "operation": "joint-projector-1:idempotence",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 9830400,
+        "int64_safe": true,
+        "operation": "joint-projector-1:denominator-scale",
+        "operation_kind": "scale"
+      },
+      {
+        "conservative_max_abs_output_bound": 19660800,
+        "int64_safe": true,
+        "operation": "joint-projector-1:idempotence-residual",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 1280,
+        "int64_safe": true,
+        "operation": "joint-projector-1:adjoint",
+        "operation_kind": "adjoint"
+      },
+      {
+        "conservative_max_abs_output_bound": 2560,
+        "int64_safe": true,
+        "operation": "joint-projector-1:self-adjoint-residual",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 2334720,
+        "int64_safe": true,
+        "operation": "joint-projector-1:qt-eigenvalue",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 12800,
+        "int64_safe": true,
+        "operation": "joint-projector-1:qt-scale",
+        "operation_kind": "scale"
+      },
+      {
+        "conservative_max_abs_output_bound": 25600,
+        "int64_safe": true,
+        "operation": "joint-projector-1:qt-eigen-residual",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 1167360,
+        "int64_safe": true,
+        "operation": "joint-projector-1:ht-eigenvalue",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 7680,
+        "int64_safe": true,
+        "operation": "joint-projector-1:ht-scale",
+        "operation_kind": "scale"
+      },
+      {
+        "conservative_max_abs_output_bound": 15360,
+        "int64_safe": true,
+        "operation": "joint-projector-1:ht-eigen-residual",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 291840,
+        "int64_safe": true,
+        "operation": "joint-projector-1:trace",
+        "operation_kind": "trace"
+      },
+      {
+        "conservative_max_abs_output_bound": 182400,
+        "int64_safe": true,
+        "operation": "joint-projector-2",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 210124800,
+        "int64_safe": true,
+        "operation": "joint-projector-2:idempotence",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 3686400,
+        "int64_safe": true,
+        "operation": "joint-projector-2:denominator-scale",
+        "operation_kind": "scale"
+      },
+      {
+        "conservative_max_abs_output_bound": 7372800,
+        "int64_safe": true,
+        "operation": "joint-projector-2:idempotence-residual",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 960,
+        "int64_safe": true,
+        "operation": "joint-projector-2:adjoint",
+        "operation_kind": "adjoint"
+      },
+      {
+        "conservative_max_abs_output_bound": 1920,
+        "int64_safe": true,
+        "operation": "joint-projector-2:self-adjoint-residual",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 1751040,
+        "int64_safe": true,
+        "operation": "joint-projector-2:qt-eigenvalue",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 9600,
+        "int64_safe": true,
+        "operation": "joint-projector-2:qt-scale",
+        "operation_kind": "scale"
+      },
+      {
+        "conservative_max_abs_output_bound": 19200,
+        "int64_safe": true,
+        "operation": "joint-projector-2:qt-eigen-residual",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 875520,
+        "int64_safe": true,
+        "operation": "joint-projector-2:ht-eigenvalue",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 3840,
+        "int64_safe": true,
+        "operation": "joint-projector-2:ht-scale",
+        "operation_kind": "scale"
+      },
+      {
+        "conservative_max_abs_output_bound": 7680,
+        "int64_safe": true,
+        "operation": "joint-projector-2:ht-eigen-residual",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 218880,
+        "int64_safe": true,
+        "operation": "joint-projector-2:trace",
+        "operation_kind": "trace"
+      },
+      {
+        "conservative_max_abs_output_bound": 109440,
+        "int64_safe": true,
+        "operation": "joint-projector-3",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 302579712,
+        "int64_safe": true,
+        "operation": "joint-projector-3:idempotence",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 5308416,
+        "int64_safe": true,
+        "operation": "joint-projector-3:denominator-scale",
+        "operation_kind": "scale"
+      },
+      {
+        "conservative_max_abs_output_bound": 10616832,
+        "int64_safe": true,
+        "operation": "joint-projector-3:idempotence-residual",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 1152,
+        "int64_safe": true,
+        "operation": "joint-projector-3:adjoint",
+        "operation_kind": "adjoint"
+      },
+      {
+        "conservative_max_abs_output_bound": 2304,
+        "int64_safe": true,
+        "operation": "joint-projector-3:self-adjoint-residual",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 2101248,
+        "int64_safe": true,
+        "operation": "joint-projector-3:qt-eigenvalue",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 6912,
+        "int64_safe": true,
+        "operation": "joint-projector-3:qt-scale",
+        "operation_kind": "scale"
+      },
+      {
+        "conservative_max_abs_output_bound": 13824,
+        "int64_safe": true,
+        "operation": "joint-projector-3:qt-eigen-residual",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 1050624,
+        "int64_safe": true,
+        "operation": "joint-projector-3:ht-eigenvalue",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 6912,
+        "int64_safe": true,
+        "operation": "joint-projector-3:ht-scale",
+        "operation_kind": "scale"
+      },
+      {
+        "conservative_max_abs_output_bound": 13824,
+        "int64_safe": true,
+        "operation": "joint-projector-3:ht-eigen-residual",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 262656,
+        "int64_safe": true,
+        "operation": "joint-projector-3:trace",
+        "operation_kind": "trace"
+      },
+      {
+        "conservative_max_abs_output_bound": 262656,
+        "int64_safe": true,
+        "operation": "joint-projector-4",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 239075328,
+        "int64_safe": true,
+        "operation": "joint-projector-4:idempotence",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 12582912,
+        "int64_safe": true,
+        "operation": "joint-projector-4:denominator-scale",
+        "operation_kind": "scale"
+      },
+      {
+        "conservative_max_abs_output_bound": 25165824,
+        "int64_safe": true,
+        "operation": "joint-projector-4:idempotence-residual",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 1024,
+        "int64_safe": true,
+        "operation": "joint-projector-4:adjoint",
+        "operation_kind": "adjoint"
+      },
+      {
+        "conservative_max_abs_output_bound": 2048,
+        "int64_safe": true,
+        "operation": "joint-projector-4:self-adjoint-residual",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 1867776,
+        "int64_safe": true,
+        "operation": "joint-projector-4:qt-eigenvalue",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 4096,
+        "int64_safe": true,
+        "operation": "joint-projector-4:qt-scale",
+        "operation_kind": "scale"
+      },
+      {
+        "conservative_max_abs_output_bound": 8192,
+        "int64_safe": true,
+        "operation": "joint-projector-4:qt-eigen-residual",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 933888,
+        "int64_safe": true,
+        "operation": "joint-projector-4:ht-eigenvalue",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 6144,
+        "int64_safe": true,
+        "operation": "joint-projector-4:ht-scale",
+        "operation_kind": "scale"
+      },
+      {
+        "conservative_max_abs_output_bound": 12288,
+        "int64_safe": true,
+        "operation": "joint-projector-4:ht-eigen-residual",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 233472,
+        "int64_safe": true,
+        "operation": "joint-projector-4:trace",
+        "operation_kind": "trace"
+      },
+      {
+        "conservative_max_abs_output_bound": 109440,
+        "int64_safe": true,
+        "operation": "joint-projector-5",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 75644928,
+        "int64_safe": true,
+        "operation": "joint-projector-5:idempotence",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 1327104,
+        "int64_safe": true,
+        "operation": "joint-projector-5:denominator-scale",
+        "operation_kind": "scale"
+      },
+      {
+        "conservative_max_abs_output_bound": 2654208,
+        "int64_safe": true,
+        "operation": "joint-projector-5:idempotence-residual",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 576,
+        "int64_safe": true,
+        "operation": "joint-projector-5:adjoint",
+        "operation_kind": "adjoint"
+      },
+      {
+        "conservative_max_abs_output_bound": 1152,
+        "int64_safe": true,
+        "operation": "joint-projector-5:self-adjoint-residual",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 1050624,
+        "int64_safe": true,
+        "operation": "joint-projector-5:qt-eigenvalue",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 3456,
+        "int64_safe": true,
+        "operation": "joint-projector-5:qt-scale",
+        "operation_kind": "scale"
+      },
+      {
+        "conservative_max_abs_output_bound": 6912,
+        "int64_safe": true,
+        "operation": "joint-projector-5:qt-eigen-residual",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 525312,
+        "int64_safe": true,
+        "operation": "joint-projector-5:ht-eigenvalue",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 2304,
+        "int64_safe": true,
+        "operation": "joint-projector-5:ht-scale",
+        "operation_kind": "scale"
+      },
+      {
+        "conservative_max_abs_output_bound": 4608,
+        "int64_safe": true,
+        "operation": "joint-projector-5:ht-eigen-residual",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 131328,
+        "int64_safe": true,
+        "operation": "joint-projector-5:trace",
+        "operation_kind": "trace"
+      },
+      {
+        "conservative_max_abs_output_bound": 262656,
+        "int64_safe": true,
+        "operation": "joint-projector-6",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 956301312,
+        "int64_safe": true,
+        "operation": "joint-projector-6:idempotence",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 6291456,
+        "int64_safe": true,
+        "operation": "joint-projector-6:denominator-scale",
+        "operation_kind": "scale"
+      },
+      {
+        "conservative_max_abs_output_bound": 12582912,
+        "int64_safe": true,
+        "operation": "joint-projector-6:idempotence-residual",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 2560,
+        "int64_safe": true,
+        "operation": "joint-projector-6:adjoint",
+        "operation_kind": "adjoint"
+      },
+      {
+        "conservative_max_abs_output_bound": 3072,
+        "int64_safe": true,
+        "operation": "joint-projector-6:self-adjoint-residual",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 3035136,
+        "int64_safe": true,
+        "operation": "joint-projector-6:qt-eigenvalue",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 12288,
+        "int64_safe": true,
+        "operation": "joint-projector-6:qt-scale",
+        "operation_kind": "scale"
+      },
+      {
+        "conservative_max_abs_output_bound": 24576,
+        "int64_safe": true,
+        "operation": "joint-projector-6:qt-eigen-residual",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 1400832,
+        "int64_safe": true,
+        "operation": "joint-projector-6:ht-eigenvalue",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 3072,
+        "int64_safe": true,
+        "operation": "joint-projector-6:ht-scale",
+        "operation_kind": "scale"
+      },
+      {
+        "conservative_max_abs_output_bound": 6144,
+        "int64_safe": true,
+        "operation": "joint-projector-6:ht-eigen-residual",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 350208,
+        "int64_safe": true,
+        "operation": "joint-projector-6:trace",
+        "operation_kind": "trace"
+      },
+      {
+        "conservative_max_abs_output_bound": 1313280,
+        "int64_safe": true,
+        "operation": "joint-projector-7",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 121031884800,
+        "int64_safe": true,
+        "operation": "joint-projector-7:idempotence",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 4246732800,
+        "int64_safe": true,
+        "operation": "joint-projector-7:denominator-scale",
+        "operation_kind": "scale"
+      },
+      {
+        "conservative_max_abs_output_bound": 8493465600,
+        "int64_safe": true,
+        "operation": "joint-projector-7:idempotence-residual",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 23040,
+        "int64_safe": true,
+        "operation": "joint-projector-7:adjoint",
+        "operation_kind": "adjoint"
+      },
+      {
+        "conservative_max_abs_output_bound": 46080,
+        "int64_safe": true,
+        "operation": "joint-projector-7:self-adjoint-residual",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 42024960,
+        "int64_safe": true,
+        "operation": "joint-projector-7:qt-eigenvalue",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 0,
+        "int64_safe": true,
+        "operation": "joint-projector-7:qt-scale",
+        "operation_kind": "scale"
+      },
+      {
+        "conservative_max_abs_output_bound": 0,
+        "int64_safe": true,
+        "operation": "joint-projector-7:qt-eigen-residual",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 21012480,
+        "int64_safe": true,
+        "operation": "joint-projector-7:ht-eigenvalue",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 138240,
+        "int64_safe": true,
+        "operation": "joint-projector-7:ht-scale",
+        "operation_kind": "scale"
+      },
+      {
+        "conservative_max_abs_output_bound": 276480,
+        "int64_safe": true,
+        "operation": "joint-projector-7:ht-eigen-residual",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 5253120,
+        "int64_safe": true,
+        "operation": "joint-projector-7:trace",
+        "operation_kind": "trace"
+      },
+      {
+        "conservative_max_abs_output_bound": 787968,
+        "int64_safe": true,
+        "operation": "joint-projector-8",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 8606711808,
+        "int64_safe": true,
+        "operation": "joint-projector-8:idempotence",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 56623104,
+        "int64_safe": true,
+        "operation": "joint-projector-8:denominator-scale",
+        "operation_kind": "scale"
+      },
+      {
+        "conservative_max_abs_output_bound": 113246208,
+        "int64_safe": true,
+        "operation": "joint-projector-8:idempotence-residual",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 7680,
+        "int64_safe": true,
+        "operation": "joint-projector-8:adjoint",
+        "operation_kind": "adjoint"
+      },
+      {
+        "conservative_max_abs_output_bound": 9216,
+        "int64_safe": true,
+        "operation": "joint-projector-8:self-adjoint-residual",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 9105408,
+        "int64_safe": true,
+        "operation": "joint-projector-8:qt-eigenvalue",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 18432,
+        "int64_safe": true,
+        "operation": "joint-projector-8:qt-scale",
+        "operation_kind": "scale"
+      },
+      {
+        "conservative_max_abs_output_bound": 36864,
+        "int64_safe": true,
+        "operation": "joint-projector-8:qt-eigen-residual",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 4202496,
+        "int64_safe": true,
+        "operation": "joint-projector-8:ht-eigenvalue",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 9216,
+        "int64_safe": true,
+        "operation": "joint-projector-8:ht-scale",
+        "operation_kind": "scale"
+      },
+      {
+        "conservative_max_abs_output_bound": 18432,
+        "int64_safe": true,
+        "operation": "joint-projector-8:ht-eigen-residual",
+        "operation_kind": "subtract"
+      },
+      {
+        "conservative_max_abs_output_bound": 1050624,
+        "int64_safe": true,
+        "operation": "joint-projector-8:trace",
+        "operation_kind": "trace"
+      },
+      {
+        "conservative_max_abs_output_bound": 1344798720,
+        "int64_safe": true,
+        "operation": "orthogonality-0-1",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 1008599040,
+        "int64_safe": true,
+        "operation": "orthogonality-0-2",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 1210318848,
+        "int64_safe": true,
+        "operation": "orthogonality-0-3",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 1075838976,
+        "int64_safe": true,
+        "operation": "orthogonality-0-4",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 605159424,
+        "int64_safe": true,
+        "operation": "orthogonality-0-5",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 1613758464,
+        "int64_safe": true,
+        "operation": "orthogonality-0-6",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 24206376960,
+        "int64_safe": true,
+        "operation": "orthogonality-0-7",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 4841275392,
+        "int64_safe": true,
+        "operation": "orthogonality-0-8",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 1344798720,
+        "int64_safe": true,
+        "operation": "orthogonality-1-0",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 280166400,
+        "int64_safe": true,
+        "operation": "orthogonality-1-2",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 336199680,
+        "int64_safe": true,
+        "operation": "orthogonality-1-3",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 298844160,
+        "int64_safe": true,
+        "operation": "orthogonality-1-4",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 168099840,
+        "int64_safe": true,
+        "operation": "orthogonality-1-5",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 448266240,
+        "int64_safe": true,
+        "operation": "orthogonality-1-6",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 6723993600,
+        "int64_safe": true,
+        "operation": "orthogonality-1-7",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 1344798720,
+        "int64_safe": true,
+        "operation": "orthogonality-1-8",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 1008599040,
+        "int64_safe": true,
+        "operation": "orthogonality-2-0",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 280166400,
+        "int64_safe": true,
+        "operation": "orthogonality-2-1",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 252149760,
+        "int64_safe": true,
+        "operation": "orthogonality-2-3",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 224133120,
+        "int64_safe": true,
+        "operation": "orthogonality-2-4",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 126074880,
+        "int64_safe": true,
+        "operation": "orthogonality-2-5",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 336199680,
+        "int64_safe": true,
+        "operation": "orthogonality-2-6",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 5042995200,
+        "int64_safe": true,
+        "operation": "orthogonality-2-7",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 1008599040,
+        "int64_safe": true,
+        "operation": "orthogonality-2-8",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 1210318848,
+        "int64_safe": true,
+        "operation": "orthogonality-3-0",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 336199680,
+        "int64_safe": true,
+        "operation": "orthogonality-3-1",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 252149760,
+        "int64_safe": true,
+        "operation": "orthogonality-3-2",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 268959744,
+        "int64_safe": true,
+        "operation": "orthogonality-3-4",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 151289856,
+        "int64_safe": true,
+        "operation": "orthogonality-3-5",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 403439616,
+        "int64_safe": true,
+        "operation": "orthogonality-3-6",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 6051594240,
+        "int64_safe": true,
+        "operation": "orthogonality-3-7",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 1210318848,
+        "int64_safe": true,
+        "operation": "orthogonality-3-8",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 1075838976,
+        "int64_safe": true,
+        "operation": "orthogonality-4-0",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 298844160,
+        "int64_safe": true,
+        "operation": "orthogonality-4-1",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 224133120,
+        "int64_safe": true,
+        "operation": "orthogonality-4-2",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 268959744,
+        "int64_safe": true,
+        "operation": "orthogonality-4-3",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 134479872,
+        "int64_safe": true,
+        "operation": "orthogonality-4-5",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 358612992,
+        "int64_safe": true,
+        "operation": "orthogonality-4-6",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 5379194880,
+        "int64_safe": true,
+        "operation": "orthogonality-4-7",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 1075838976,
+        "int64_safe": true,
+        "operation": "orthogonality-4-8",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 605159424,
+        "int64_safe": true,
+        "operation": "orthogonality-5-0",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 168099840,
+        "int64_safe": true,
+        "operation": "orthogonality-5-1",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 126074880,
+        "int64_safe": true,
+        "operation": "orthogonality-5-2",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 151289856,
+        "int64_safe": true,
+        "operation": "orthogonality-5-3",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 134479872,
+        "int64_safe": true,
+        "operation": "orthogonality-5-4",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 201719808,
+        "int64_safe": true,
+        "operation": "orthogonality-5-6",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 3025797120,
+        "int64_safe": true,
+        "operation": "orthogonality-5-7",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 605159424,
+        "int64_safe": true,
+        "operation": "orthogonality-5-8",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 1613758464,
+        "int64_safe": true,
+        "operation": "orthogonality-6-0",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 448266240,
+        "int64_safe": true,
+        "operation": "orthogonality-6-1",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 336199680,
+        "int64_safe": true,
+        "operation": "orthogonality-6-2",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 403439616,
+        "int64_safe": true,
+        "operation": "orthogonality-6-3",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 358612992,
+        "int64_safe": true,
+        "operation": "orthogonality-6-4",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 201719808,
+        "int64_safe": true,
+        "operation": "orthogonality-6-5",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 8068792320,
+        "int64_safe": true,
+        "operation": "orthogonality-6-7",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 2868903936,
+        "int64_safe": true,
+        "operation": "orthogonality-6-8",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 24206376960,
+        "int64_safe": true,
+        "operation": "orthogonality-7-0",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 6723993600,
+        "int64_safe": true,
+        "operation": "orthogonality-7-1",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 5042995200,
+        "int64_safe": true,
+        "operation": "orthogonality-7-2",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 6051594240,
+        "int64_safe": true,
+        "operation": "orthogonality-7-3",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 5379194880,
+        "int64_safe": true,
+        "operation": "orthogonality-7-4",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 3025797120,
+        "int64_safe": true,
+        "operation": "orthogonality-7-5",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 8068792320,
+        "int64_safe": true,
+        "operation": "orthogonality-7-6",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 24206376960,
+        "int64_safe": true,
+        "operation": "orthogonality-7-8",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 4841275392,
+        "int64_safe": true,
+        "operation": "orthogonality-8-0",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 1344798720,
+        "int64_safe": true,
+        "operation": "orthogonality-8-1",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 1008599040,
+        "int64_safe": true,
+        "operation": "orthogonality-8-2",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 1210318848,
+        "int64_safe": true,
+        "operation": "orthogonality-8-3",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 1075838976,
+        "int64_safe": true,
+        "operation": "orthogonality-8-4",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 605159424,
+        "int64_safe": true,
+        "operation": "orthogonality-8-5",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 2868903936,
+        "int64_safe": true,
+        "operation": "orthogonality-8-6",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 24206376960,
+        "int64_safe": true,
+        "operation": "orthogonality-8-7",
+        "operation_kind": "matmul"
+      },
+      {
+        "conservative_max_abs_output_bound": 23040,
+        "int64_safe": true,
+        "operation": "completeness-0:scale",
+        "operation_kind": "scale"
+      },
+      {
+        "conservative_max_abs_output_bound": 23040,
+        "int64_safe": true,
+        "operation": "completeness-0:add",
+        "operation_kind": "add"
+      },
+      {
+        "conservative_max_abs_output_bound": 30720,
+        "int64_safe": true,
+        "operation": "completeness-1:scale",
+        "operation_kind": "scale"
+      },
+      {
+        "conservative_max_abs_output_bound": 53760,
+        "int64_safe": true,
+        "operation": "completeness-1:add",
+        "operation_kind": "add"
+      },
+      {
+        "conservative_max_abs_output_bound": 46080,
+        "int64_safe": true,
+        "operation": "completeness-2:scale",
+        "operation_kind": "scale"
+      },
+      {
+        "conservative_max_abs_output_bound": 76800,
+        "int64_safe": true,
+        "operation": "completeness-2:add",
+        "operation_kind": "add"
+      },
+      {
+        "conservative_max_abs_output_bound": 46080,
+        "int64_safe": true,
+        "operation": "completeness-3:scale",
+        "operation_kind": "scale"
+      },
+      {
+        "conservative_max_abs_output_bound": 122880,
+        "int64_safe": true,
+        "operation": "completeness-3:add",
+        "operation_kind": "add"
+      },
+      {
+        "conservative_max_abs_output_bound": 15360,
+        "int64_safe": true,
+        "operation": "completeness-4:scale",
+        "operation_kind": "scale"
+      },
+      {
+        "conservative_max_abs_output_bound": 107520,
+        "int64_safe": true,
+        "operation": "completeness-4:add",
+        "operation_kind": "add"
+      },
+      {
+        "conservative_max_abs_output_bound": 46080,
+        "int64_safe": true,
+        "operation": "completeness-5:scale",
+        "operation_kind": "scale"
+      },
+      {
+        "conservative_max_abs_output_bound": 138240,
+        "int64_safe": true,
+        "operation": "completeness-5:add",
+        "operation_kind": "add"
+      },
+      {
+        "conservative_max_abs_output_bound": 69120,
+        "int64_safe": true,
+        "operation": "completeness-6:scale",
+        "operation_kind": "scale"
+      },
+      {
+        "conservative_max_abs_output_bound": 207360,
+        "int64_safe": true,
+        "operation": "completeness-6:add",
+        "operation_kind": "add"
+      },
+      {
+        "conservative_max_abs_output_bound": 23040,
+        "int64_safe": true,
+        "operation": "completeness-7:scale",
+        "operation_kind": "scale"
+      },
+      {
+        "conservative_max_abs_output_bound": 207360,
+        "int64_safe": true,
+        "operation": "completeness-7:add",
+        "operation_kind": "add"
+      },
+      {
+        "conservative_max_abs_output_bound": 69120,
+        "int64_safe": true,
+        "operation": "completeness-8:scale",
+        "operation_kind": "scale"
+      },
+      {
+        "conservative_max_abs_output_bound": 253440,
+        "int64_safe": true,
+        "operation": "completeness-8:add",
+        "operation_kind": "add"
+      },
+      {
+        "conservative_max_abs_output_bound": 184320,
+        "int64_safe": true,
+        "operation": "completeness:identity",
+        "operation_kind": "identity"
+      },
+      {
+        "conservative_max_abs_output_bound": 368640,
+        "int64_safe": true,
+        "operation": "completeness:residual",
+        "operation_kind": "subtract"
+      }
+    ]
+  },
+  "maximum_intermediate_integer_coefficient": 23040,
+  "operative_family": "anti-Hermitian numerators rho(g)-rho(g)^*; division by 2 omitted",
+  "operative_generator_carrier_checks": [
+    {
+      "adjoint_preserves_registered_carriers": true,
+      "anti_hermitian_numerator_preserves_registered_carriers": true,
+      "generator": [
+        0,
+        -1,
+        -1
+      ],
+      "represented_operator_preserves_registered_carriers": true
+    },
+    {
+      "adjoint_preserves_registered_carriers": true,
+      "anti_hermitian_numerator_preserves_registered_carriers": true,
+      "generator": [
+        0,
+        -1,
+        1
+      ],
+      "represented_operator_preserves_registered_carriers": true
+    },
+    {
+      "adjoint_preserves_registered_carriers": true,
+      "anti_hermitian_numerator_preserves_registered_carriers": true,
+      "generator": [
+        0,
+        -1,
+        2
+      ],
+      "represented_operator_preserves_registered_carriers": true
+    },
+    {
+      "adjoint_preserves_registered_carriers": true,
+      "anti_hermitian_numerator_preserves_registered_carriers": true,
+      "generator": [
+        0,
+        1,
+        -1
+      ],
+      "represented_operator_preserves_registered_carriers": true
+    },
+    {
+      "adjoint_preserves_registered_carriers": true,
+      "anti_hermitian_numerator_preserves_registered_carriers": true,
+      "generator": [
+        0,
+        1,
+        1
+      ],
+      "represented_operator_preserves_registered_carriers": true
+    },
+    {
+      "adjoint_preserves_registered_carriers": true,
+      "anti_hermitian_numerator_preserves_registered_carriers": true,
+      "generator": [
+        0,
+        1,
+        2
+      ],
+      "represented_operator_preserves_registered_carriers": true
+    },
+    {
+      "adjoint_preserves_registered_carriers": true,
+      "anti_hermitian_numerator_preserves_registered_carriers": true,
+      "generator": [
+        1,
+        -1,
+        -1
+      ],
+      "represented_operator_preserves_registered_carriers": true
+    },
+    {
+      "adjoint_preserves_registered_carriers": true,
+      "anti_hermitian_numerator_preserves_registered_carriers": true,
+      "generator": [
+        1,
+        -1,
+        1
+      ],
+      "represented_operator_preserves_registered_carriers": true
+    },
+    {
+      "adjoint_preserves_registered_carriers": true,
+      "anti_hermitian_numerator_preserves_registered_carriers": true,
+      "generator": [
+        1,
+        -1,
+        2
+      ],
+      "represented_operator_preserves_registered_carriers": true
+    },
+    {
+      "adjoint_preserves_registered_carriers": true,
+      "anti_hermitian_numerator_preserves_registered_carriers": true,
+      "generator": [
+        1,
+        1,
+        -1
+      ],
+      "represented_operator_preserves_registered_carriers": true
+    },
+    {
+      "adjoint_preserves_registered_carriers": true,
+      "anti_hermitian_numerator_preserves_registered_carriers": true,
+      "generator": [
+        1,
+        1,
+        1
+      ],
+      "represented_operator_preserves_registered_carriers": true
+    },
+    {
+      "adjoint_preserves_registered_carriers": true,
+      "anti_hermitian_numerator_preserves_registered_carriers": true,
+      "generator": [
+        1,
+        1,
+        2
+      ],
+      "represented_operator_preserves_registered_carriers": true
+    },
+    {
+      "adjoint_preserves_registered_carriers": true,
+      "anti_hermitian_numerator_preserves_registered_carriers": true,
+      "generator": [
+        2,
+        -1,
+        -1
+      ],
+      "represented_operator_preserves_registered_carriers": true
+    },
+    {
+      "adjoint_preserves_registered_carriers": true,
+      "anti_hermitian_numerator_preserves_registered_carriers": true,
+      "generator": [
+        2,
+        -1,
+        1
+      ],
+      "represented_operator_preserves_registered_carriers": true
+    },
+    {
+      "adjoint_preserves_registered_carriers": true,
+      "anti_hermitian_numerator_preserves_registered_carriers": true,
+      "generator": [
+        2,
+        -1,
+        2
+      ],
+      "represented_operator_preserves_registered_carriers": true
+    },
+    {
+      "adjoint_preserves_registered_carriers": true,
+      "anti_hermitian_numerator_preserves_registered_carriers": true,
+      "generator": [
+        2,
+        1,
+        -1
+      ],
+      "represented_operator_preserves_registered_carriers": true
+    },
+    {
+      "adjoint_preserves_registered_carriers": true,
+      "anti_hermitian_numerator_preserves_registered_carriers": true,
+      "generator": [
+        2,
+        1,
+        1
+      ],
+      "represented_operator_preserves_registered_carriers": true
+    },
+    {
+      "adjoint_preserves_registered_carriers": true,
+      "anti_hermitian_numerator_preserves_registered_carriers": true,
+      "generator": [
+        2,
+        1,
+        2
+      ],
+      "represented_operator_preserves_registered_carriers": true
+    }
+  ],
+  "projector_construction": "P_(q,h) = product_{q'!=q}(S_QT-q'I)/(q-q') product_{h'!=h}(S_HT-h'I)/(h-h')",
+  "projector_family": {
+    "ambient_dimension": 228,
+    "candidate_count": 9,
+    "common_denominator": 184320,
+    "completeness_verified": true,
+    "dimension_sum_verified": true,
+    "exact_dimension_sum": 228,
+    "pairwise_orthogonality_check_count": 72,
+    "pairwise_orthogonality_verified": true
+  },
+  "provenance": {
+    "source_artifacts": [
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/exact_canonical_carriers.py",
+        "sha256": "b20b2d21ec4688f8c9225773a0137d2b98b0cbdd010acd007dfa63df730c8df7"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/exact_n8_spectrum.py",
+        "sha256": "357f6c882545ca16a784efeaba465072fd356e31c0a02021c551f5096c3c578b"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/incidence_profiles.py",
+        "sha256": "2988df28c80140913abb94f30b137968b2303784564ee2265016c5134cd252e2"
+      },
+      {
+        "path": "rime/base.py",
+        "sha256": "fead279b5631625050b0ee1f24a2bc47c19acac864b9c717a7917398bc4d0d30"
+      },
+      {
+        "path": "rime/cube.py",
+        "sha256": "6cfc68516f7aee5049b8124b8848d17f5a488bb67399d414d3442f0415ef2365"
+      },
+      {
+        "path": "rime/cubie.py",
+        "sha256": "8bc21b4035c579bc4ed6a3867b2bd53989c1e38f2f4b76c6ebc00bcb4d43c029"
+      },
+      {
+        "path": "rime/cubieoperator.py",
+        "sha256": "9b4b87038048b869e196ae586f28a38093f442e69d1826ef41be5a6f38127dfc"
+      },
+      {
+        "path": "rime/helpers.py",
+        "sha256": "0aa95428c5763ab41dce9cb25072c956b837bbdc07fa7347d07412995bf47887"
+      },
+      {
+        "path": "rime/spectral_utils.py",
+        "sha256": "bc8347596d66bb96d9b32a74f27b08e3f92120ce32d6c7fe6b154102bd6c3474"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-00__fixed_full.json",
+        "sha256": "d7ebd8703985c2f1b17b6ba6c20c1b063678b8c4680863a893bb4a6f30e5bb97"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-01__fixed_full.json",
+        "sha256": "1978266e29321428de3d4b3e6d80adaef8ae885b1d0f5735d4cf7fe3e59f78a1"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-02__fixed_full.json",
+        "sha256": "c62f02e0127be6b567dc5f53a42c8537ce80c241c0284ecf3f32fa55c942c56f"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-03__fixed_full.json",
+        "sha256": "b1f03495c92b8efdef9511c23b9c8a3b962e28052a533fbd4ef15421f762ed3e"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-04__fixed_full.json",
+        "sha256": "69b292bd1dd5e895f33374df9ede6dbe49808c2245c1e0ebb75b493547d27410"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-05__fixed_full.json",
+        "sha256": "d3e13f88960e12f1b06a8069db5d58c0a76c0a13496c7d1e2e2d2395df2dd3db"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-06__fixed_full.json",
+        "sha256": "977bbd2a94ce74fcdae88d3b67a4c842628aa71481be5fdd42d6aab76be45cae"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-07__fixed_full.json",
+        "sha256": "d4b7a1380c3fcac63e4432f92aa7db7b1f3ac5fa631f8d5cbebeb292ba5098df"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-08__fixed_full.json",
+        "sha256": "ed8e6572dd0f0064e89a87fcdcbdac1faa599cbf72978a75f779a63c89e87a33"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-09__fixed_full.json",
+        "sha256": "cfa2ae04733153ebdec8835d1307297da8fa3072a439470761f056c3ca2ff7f5"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-10__fixed_full.json",
+        "sha256": "f42382425bbaa51875d309b479d865920b5ecb0f1f022afc64d59cccd2816d63"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-11__fixed_full.json",
+        "sha256": "8b0401cab66b52f505f4fd4922961e858a68647ee1732da8d5972ff0a5d2808b"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-12__fixed_full.json",
+        "sha256": "ca35b0832b652bd083be1d9cf591664bb521e65c00d75a89522b7a18c4c1e7f0"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-13__fixed_full.json",
+        "sha256": "737d20e1dad16ce6d6499f3ba09559fd1365896c2088ea4f7a6cdd4839db4dff"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-14__fixed_full.json",
+        "sha256": "3ce29a3eafa455ac84a77071ff1a13a4b6dbd7ef28d20bd2d34100c5349c8c75"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-15__fixed_full.json",
+        "sha256": "2063ad45fdf07d7bf73aac54e5d00eb9b473fe3a55aa0e677f550f7f55ffce13"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-16__fixed_full.json",
+        "sha256": "744bd13855b8050312f03bfcc257a17b748fa1b6045fea4b15403cad349fe174"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-17__fixed_full.json",
+        "sha256": "d0b5cff930b59ee13e9ee5f0435905dffb529674cf3b7fdae571ed2530a249c0"
+      },
+      {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed/axis-balanced-18__fixed_full.json",
+        "sha256": "59ca0568b52c70fa492e57bfcf694604c39455206f746bfc9d81099bc51e5f58"
+      }
+    ]
+  },
+  "qt_ht_commutator_verified_entrywise": true,
+  "qt_sum_self_adjoint_verified": true,
+  "schema": "rime.exact-canonical-carrier-certificate.v2",
+  "sectors": [
+    {
+      "carrier_mask_verified": true,
+      "exact_carrier_mask": [
+        "cp",
+        "ep"
+      ],
+      "exact_dimension": 20,
+      "expected_carrier_mask": [
+        "cp",
+        "ep"
+      ],
+      "ht_joint_eigenvalue_verified": true,
+      "ht_sum_eigenvalue": 6,
+      "projector_denominator": 36864,
+      "projector_idempotence_verified": true,
+      "projector_preserves_registered_carriers": true,
+      "projector_self_adjoint_verified": true,
+      "qt_joint_eigenvalue_verified": true,
+      "qt_sum_eigenvalue": 12,
+      "sector": 0
+    },
+    {
+      "carrier_mask_verified": true,
+      "exact_carrier_mask": [
+        "eo"
+      ],
+      "exact_dimension": 2,
+      "expected_carrier_mask": [
+        "eo"
+      ],
+      "ht_joint_eigenvalue_verified": true,
+      "ht_sum_eigenvalue": 6,
+      "projector_denominator": -7680,
+      "projector_idempotence_verified": true,
+      "projector_preserves_registered_carriers": true,
+      "projector_self_adjoint_verified": true,
+      "qt_joint_eigenvalue_verified": true,
+      "qt_sum_eigenvalue": 10,
+      "sector": 1
+    },
+    {
+      "carrier_mask_verified": true,
+      "exact_carrier_mask": [
+        "ep",
+        "eo"
+      ],
+      "exact_dimension": 39,
+      "expected_carrier_mask": [
+        "ep",
+        "eo"
+      ],
+      "ht_joint_eigenvalue_verified": true,
+      "ht_sum_eigenvalue": 4,
+      "projector_denominator": 3840,
+      "projector_idempotence_verified": true,
+      "projector_preserves_registered_carriers": true,
+      "projector_self_adjoint_verified": true,
+      "qt_joint_eigenvalue_verified": true,
+      "qt_sum_eigenvalue": 10,
+      "sector": 2
+    },
+    {
+      "carrier_mask_verified": true,
+      "exact_carrier_mask": [
+        "ep",
+        "co"
+      ],
+      "exact_dimension": 26,
+      "expected_carrier_mask": [
+        "ep",
+        "co"
+      ],
+      "ht_joint_eigenvalue_verified": true,
+      "ht_sum_eigenvalue": 6,
+      "projector_denominator": -4608,
+      "projector_idempotence_verified": true,
+      "projector_preserves_registered_carriers": true,
+      "projector_self_adjoint_verified": true,
+      "qt_joint_eigenvalue_verified": true,
+      "qt_sum_eigenvalue": 6,
+      "sector": 3
+    },
+    {
+      "carrier_mask_verified": true,
+      "exact_carrier_mask": [
+        "eo"
+      ],
+      "exact_dimension": 1,
+      "expected_carrier_mask": [
+        "eo"
+      ],
+      "ht_joint_eigenvalue_verified": true,
+      "ht_sum_eigenvalue": 6,
+      "projector_denominator": 12288,
+      "projector_idempotence_verified": true,
+      "projector_preserves_registered_carriers": true,
+      "projector_self_adjoint_verified": true,
+      "qt_joint_eigenvalue_verified": true,
+      "qt_sum_eigenvalue": 4,
+      "sector": 4
+    },
+    {
+      "carrier_mask_verified": true,
+      "exact_carrier_mask": [
+        "ep",
+        "eo"
+      ],
+      "exact_dimension": 39,
+      "expected_carrier_mask": [
+        "ep",
+        "eo"
+      ],
+      "ht_joint_eigenvalue_verified": true,
+      "ht_sum_eigenvalue": 4,
+      "projector_denominator": 2304,
+      "projector_idempotence_verified": true,
+      "projector_preserves_registered_carriers": true,
+      "projector_self_adjoint_verified": true,
+      "qt_joint_eigenvalue_verified": true,
+      "qt_sum_eigenvalue": 6,
+      "sector": 5
+    },
+    {
+      "carrier_mask_verified": true,
+      "exact_carrier_mask": [
+        "cp",
+        "ep",
+        "co",
+        "eo"
+      ],
+      "exact_dimension": 66,
+      "expected_carrier_mask": [
+        "cp",
+        "ep",
+        "co",
+        "eo"
+      ],
+      "ht_joint_eigenvalue_verified": true,
+      "ht_sum_eigenvalue": 2,
+      "projector_denominator": 4096,
+      "projector_idempotence_verified": true,
+      "projector_preserves_registered_carriers": true,
+      "projector_self_adjoint_verified": true,
+      "qt_joint_eigenvalue_verified": true,
+      "qt_sum_eigenvalue": 8,
+      "sector": 6
+    },
+    {
+      "carrier_mask_verified": true,
+      "exact_carrier_mask": [
+        "cp"
+      ],
+      "exact_dimension": 8,
+      "expected_carrier_mask": [
+        "cp"
+      ],
+      "ht_joint_eigenvalue_verified": true,
+      "ht_sum_eigenvalue": 6,
+      "projector_denominator": -184320,
+      "projector_idempotence_verified": true,
+      "projector_preserves_registered_carriers": true,
+      "projector_self_adjoint_verified": true,
+      "qt_joint_eigenvalue_verified": true,
+      "qt_sum_eigenvalue": 0,
+      "sector": 7
+    },
+    {
+      "carrier_mask_verified": true,
+      "exact_carrier_mask": [
+        "cp",
+        "co"
+      ],
+      "exact_dimension": 27,
+      "expected_carrier_mask": [
+        "cp",
+        "co"
+      ],
+      "ht_joint_eigenvalue_verified": true,
+      "ht_sum_eigenvalue": 2,
+      "projector_denominator": 12288,
+      "projector_idempotence_verified": true,
+      "projector_preserves_registered_carriers": true,
+      "projector_self_adjoint_verified": true,
+      "qt_joint_eigenvalue_verified": true,
+      "qt_sum_eigenvalue": 4,
+      "sector": 8
+    }
+  ],
+  "theorem": "Carrier-Forced Routed Incidence (THEOREMS.md, Theorem 1)"
+}

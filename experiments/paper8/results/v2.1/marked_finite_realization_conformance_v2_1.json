@@ -1,0 +1,4130 @@
+{
+  "artifact_id": "P8V2.1-CONFORMANCE",
+  "artifact_role": "PAPER_OWNED_PROMOTED_CONFORMANCE_CERTIFICATE",
+  "candidate_version": "2.1",
+  "certificate_id": "paper8.marked-finite-realization-conformance.v2.1",
+  "claim_status": "Computational Certificate",
+  "content_sha256": "23060ad90bc30ebcc8fa64847c337ecc92533fb0ddb14c75286bcc894e67bd6d",
+  "finite_saturation_receipts": [
+    {
+      "bounded_word_support_layers_sha256": "25f0b9cbb6f088a1b0057d96d860a52624e41445b092e79e2041f57435249616",
+      "closure_stabilization_depth": 3,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 3,
+          "depth": 1,
+          "new_shortest_represented_operators": 3
+        },
+        {
+          "cumulative_represented_operators": 8,
+          "depth": 2,
+          "new_shortest_represented_operators": 5
+        },
+        {
+          "cumulative_represented_operators": 12,
+          "depth": 3,
+          "new_shortest_represented_operators": 4
+        }
+      ],
+      "distinct_represented_letter_count": 3,
+      "finite_first_hit_count": 4,
+      "first_hit_depth_sha256": "36b0b4b8cb63f2936b08f158becae98bb26c181540955f1ae16fc970ed1ccc2c",
+      "first_hit_witnesses_sha256": "6370e29954ed65a226546229501a86bf087a0db3c7925d7f0d67acbcdcd8d99c",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "99c26878eb20a8dfe2d157ec760be3f0295255bfb915c14273ce9ee83547e693",
+      "label_count": 3,
+      "label_to_operator_sha256": "97a962a55dc96c877ab573654296a0975b56d888447a49a16179da2c8a22b2d8",
+      "realization_id": "modular-p1-f3-v2",
+      "represented_positive_closure_order": 12,
+      "represented_positive_closure_sha256": "9a599ba44c9286fc1937b61ccbe4e27b50e1e0d1c6b74c6115cb03b6b5bf9af2",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "3274bbec42a8a8236296c6da0e3d617876065ca6761eeb5e86fc9a3cd347f4c9",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "cae75003a7424be6701de04883682cd5f25f1fe75da15d214624d0626ec2b7d7",
+      "closure_stabilization_depth": 10,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 3,
+          "depth": 1,
+          "new_shortest_represented_operators": 3
+        },
+        {
+          "cumulative_represented_operators": 8,
+          "depth": 2,
+          "new_shortest_represented_operators": 5
+        },
+        {
+          "cumulative_represented_operators": 14,
+          "depth": 3,
+          "new_shortest_represented_operators": 6
+        },
+        {
+          "cumulative_represented_operators": 22,
+          "depth": 4,
+          "new_shortest_represented_operators": 8
+        },
+        {
+          "cumulative_represented_operators": 32,
+          "depth": 5,
+          "new_shortest_represented_operators": 10
+        },
+        {
+          "cumulative_represented_operators": 40,
+          "depth": 6,
+          "new_shortest_represented_operators": 8
+        },
+        {
+          "cumulative_represented_operators": 50,
+          "depth": 7,
+          "new_shortest_represented_operators": 10
+        },
+        {
+          "cumulative_represented_operators": 56,
+          "depth": 8,
+          "new_shortest_represented_operators": 6
+        },
+        {
+          "cumulative_represented_operators": 59,
+          "depth": 9,
+          "new_shortest_represented_operators": 3
+        },
+        {
+          "cumulative_represented_operators": 60,
+          "depth": 10,
+          "new_shortest_represented_operators": 1
+        }
+      ],
+      "distinct_represented_letter_count": 3,
+      "finite_first_hit_count": 4,
+      "first_hit_depth_sha256": "36b0b4b8cb63f2936b08f158becae98bb26c181540955f1ae16fc970ed1ccc2c",
+      "first_hit_witnesses_sha256": "0e648043bb3d9520748614a75e1962d7fc5f6e08b5dbfced917d98df485d0edf",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "99c26878eb20a8dfe2d157ec760be3f0295255bfb915c14273ce9ee83547e693",
+      "label_count": 3,
+      "label_to_operator_sha256": "bdd11aade52bb1980c8d9a015286be6eb74a9f701e39e396204d3a1cfd079d51",
+      "realization_id": "modular-p1-f5-v2",
+      "represented_positive_closure_order": 60,
+      "represented_positive_closure_sha256": "6772b86887305c2663adb100bbc58d74ff690b0e3a5d05c7d6baa3346f5bd48f",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "31b12ef04eb078491e2854adb0771939a50928be4761d59b145f4086bb538410",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "cae75003a7424be6701de04883682cd5f25f1fe75da15d214624d0626ec2b7d7",
+      "closure_stabilization_depth": 12,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 3,
+          "depth": 1,
+          "new_shortest_represented_operators": 3
+        },
+        {
+          "cumulative_represented_operators": 8,
+          "depth": 2,
+          "new_shortest_represented_operators": 5
+        },
+        {
+          "cumulative_represented_operators": 14,
+          "depth": 3,
+          "new_shortest_represented_operators": 6
+        },
+        {
+          "cumulative_represented_operators": 22,
+          "depth": 4,
+          "new_shortest_represented_operators": 8
+        },
+        {
+          "cumulative_represented_operators": 34,
+          "depth": 5,
+          "new_shortest_represented_operators": 12
+        },
+        {
+          "cumulative_represented_operators": 50,
+          "depth": 6,
+          "new_shortest_represented_operators": 16
+        },
+        {
+          "cumulative_represented_operators": 72,
+          "depth": 7,
+          "new_shortest_represented_operators": 22
+        },
+        {
+          "cumulative_represented_operators": 94,
+          "depth": 8,
+          "new_shortest_represented_operators": 22
+        },
+        {
+          "cumulative_represented_operators": 119,
+          "depth": 9,
+          "new_shortest_represented_operators": 25
+        },
+        {
+          "cumulative_represented_operators": 145,
+          "depth": 10,
+          "new_shortest_represented_operators": 26
+        },
+        {
+          "cumulative_represented_operators": 166,
+          "depth": 11,
+          "new_shortest_represented_operators": 21
+        },
+        {
+          "cumulative_represented_operators": 168,
+          "depth": 12,
+          "new_shortest_represented_operators": 2
+        }
+      ],
+      "distinct_represented_letter_count": 3,
+      "finite_first_hit_count": 4,
+      "first_hit_depth_sha256": "36b0b4b8cb63f2936b08f158becae98bb26c181540955f1ae16fc970ed1ccc2c",
+      "first_hit_witnesses_sha256": "5c4ca58e06501abab0b68e8cb485a29dc91827a730dc636cd2943c594ad35208",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "99c26878eb20a8dfe2d157ec760be3f0295255bfb915c14273ce9ee83547e693",
+      "label_count": 3,
+      "label_to_operator_sha256": "249ec12f5913b0d5fa8f0698d3f5cf7bee791602536dcf53422ee20d590b90d5",
+      "realization_id": "modular-p1-f7-v2",
+      "represented_positive_closure_order": 168,
+      "represented_positive_closure_sha256": "23ef74cd762fdd0b30df18739271105693315eeac6b22675960fbf90e283b478",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "a2974f362ead506168eb68d62957ff47db2034c97cb42b22fa3b405a32758e92",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "cae75003a7424be6701de04883682cd5f25f1fe75da15d214624d0626ec2b7d7",
+      "closure_stabilization_depth": 17,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 3,
+          "depth": 1,
+          "new_shortest_represented_operators": 3
+        },
+        {
+          "cumulative_represented_operators": 8,
+          "depth": 2,
+          "new_shortest_represented_operators": 5
+        },
+        {
+          "cumulative_represented_operators": 14,
+          "depth": 3,
+          "new_shortest_represented_operators": 6
+        },
+        {
+          "cumulative_represented_operators": 22,
+          "depth": 4,
+          "new_shortest_represented_operators": 8
+        },
+        {
+          "cumulative_represented_operators": 34,
+          "depth": 5,
+          "new_shortest_represented_operators": 12
+        },
+        {
+          "cumulative_represented_operators": 50,
+          "depth": 6,
+          "new_shortest_represented_operators": 16
+        },
+        {
+          "cumulative_represented_operators": 74,
+          "depth": 7,
+          "new_shortest_represented_operators": 24
+        },
+        {
+          "cumulative_represented_operators": 106,
+          "depth": 8,
+          "new_shortest_represented_operators": 32
+        },
+        {
+          "cumulative_represented_operators": 154,
+          "depth": 9,
+          "new_shortest_represented_operators": 48
+        },
+        {
+          "cumulative_represented_operators": 216,
+          "depth": 10,
+          "new_shortest_represented_operators": 62
+        },
+        {
+          "cumulative_represented_operators": 301,
+          "depth": 11,
+          "new_shortest_represented_operators": 85
+        },
+        {
+          "cumulative_represented_operators": 401,
+          "depth": 12,
+          "new_shortest_represented_operators": 100
+        },
+        {
+          "cumulative_represented_operators": 506,
+          "depth": 13,
+          "new_shortest_represented_operators": 105
+        },
+        {
+          "cumulative_represented_operators": 584,
+          "depth": 14,
+          "new_shortest_represented_operators": 78
+        },
+        {
+          "cumulative_represented_operators": 635,
+          "depth": 15,
+          "new_shortest_represented_operators": 51
+        },
+        {
+          "cumulative_represented_operators": 657,
+          "depth": 16,
+          "new_shortest_represented_operators": 22
+        },
+        {
+          "cumulative_represented_operators": 660,
+          "depth": 17,
+          "new_shortest_represented_operators": 3
+        }
+      ],
+      "distinct_represented_letter_count": 3,
+      "finite_first_hit_count": 4,
+      "first_hit_depth_sha256": "36b0b4b8cb63f2936b08f158becae98bb26c181540955f1ae16fc970ed1ccc2c",
+      "first_hit_witnesses_sha256": "861b946ba048b5d425e4dd8ec6038a172c54824620f039ec7b3599d33eaa2456",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "99c26878eb20a8dfe2d157ec760be3f0295255bfb915c14273ce9ee83547e693",
+      "label_count": 3,
+      "label_to_operator_sha256": "ed7c2e0756068f8763053b608b1d3299a1d5ac96cb368a89c0d473358102d0b4",
+      "realization_id": "modular-p1-f11-v2",
+      "represented_positive_closure_order": 660,
+      "represented_positive_closure_sha256": "0955f4f96ca1981ca909d91429a2f72fc204536c1e80aedc6e6c0056a93d8712",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "6b6adf240490b33d5f1eab2f1a4a040849ad45e925e1a18333cdf06a3115f2ed",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "cae75003a7424be6701de04883682cd5f25f1fe75da15d214624d0626ec2b7d7",
+      "closure_stabilization_depth": 19,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 3,
+          "depth": 1,
+          "new_shortest_represented_operators": 3
+        },
+        {
+          "cumulative_represented_operators": 8,
+          "depth": 2,
+          "new_shortest_represented_operators": 5
+        },
+        {
+          "cumulative_represented_operators": 14,
+          "depth": 3,
+          "new_shortest_represented_operators": 6
+        },
+        {
+          "cumulative_represented_operators": 22,
+          "depth": 4,
+          "new_shortest_represented_operators": 8
+        },
+        {
+          "cumulative_represented_operators": 34,
+          "depth": 5,
+          "new_shortest_represented_operators": 12
+        },
+        {
+          "cumulative_represented_operators": 50,
+          "depth": 6,
+          "new_shortest_represented_operators": 16
+        },
+        {
+          "cumulative_represented_operators": 74,
+          "depth": 7,
+          "new_shortest_represented_operators": 24
+        },
+        {
+          "cumulative_represented_operators": 106,
+          "depth": 8,
+          "new_shortest_represented_operators": 32
+        },
+        {
+          "cumulative_represented_operators": 154,
+          "depth": 9,
+          "new_shortest_represented_operators": 48
+        },
+        {
+          "cumulative_represented_operators": 218,
+          "depth": 10,
+          "new_shortest_represented_operators": 64
+        },
+        {
+          "cumulative_represented_operators": 314,
+          "depth": 11,
+          "new_shortest_represented_operators": 96
+        },
+        {
+          "cumulative_represented_operators": 430,
+          "depth": 12,
+          "new_shortest_represented_operators": 116
+        },
+        {
+          "cumulative_represented_operators": 566,
+          "depth": 13,
+          "new_shortest_represented_operators": 136
+        },
+        {
+          "cumulative_represented_operators": 725,
+          "depth": 14,
+          "new_shortest_represented_operators": 159
+        },
+        {
+          "cumulative_represented_operators": 903,
+          "depth": 15,
+          "new_shortest_represented_operators": 178
+        },
+        {
+          "cumulative_represented_operators": 1027,
+          "depth": 16,
+          "new_shortest_represented_operators": 124
+        },
+        {
+          "cumulative_represented_operators": 1074,
+          "depth": 17,
+          "new_shortest_represented_operators": 47
+        },
+        {
+          "cumulative_represented_operators": 1090,
+          "depth": 18,
+          "new_shortest_represented_operators": 16
+        },
+        {
+          "cumulative_represented_operators": 1092,
+          "depth": 19,
+          "new_shortest_represented_operators": 2
+        }
+      ],
+      "distinct_represented_letter_count": 3,
+      "finite_first_hit_count": 4,
+      "first_hit_depth_sha256": "36b0b4b8cb63f2936b08f158becae98bb26c181540955f1ae16fc970ed1ccc2c",
+      "first_hit_witnesses_sha256": "b7e884aa5f736c48aee904d7fdf8b11137e666ce260519771e194598e5dc7c5f",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "99c26878eb20a8dfe2d157ec760be3f0295255bfb915c14273ce9ee83547e693",
+      "label_count": 3,
+      "label_to_operator_sha256": "a30e1680a18671814eb44ed9ce69c23876fdc4c8b442831adc212e170b7dad38",
+      "realization_id": "modular-p1-f13-v2",
+      "represented_positive_closure_order": 1092,
+      "represented_positive_closure_sha256": "e721be069df940fde35a1770f3ef550cb5a8d8467073da15001cbe0373ff07b1",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "326be4a98fa66bda11e4970a09d7d05fe3e44b611893daf2639783dad3b496ca",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "cae75003a7424be6701de04883682cd5f25f1fe75da15d214624d0626ec2b7d7",
+      "closure_stabilization_depth": 21,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 3,
+          "depth": 1,
+          "new_shortest_represented_operators": 3
+        },
+        {
+          "cumulative_represented_operators": 8,
+          "depth": 2,
+          "new_shortest_represented_operators": 5
+        },
+        {
+          "cumulative_represented_operators": 14,
+          "depth": 3,
+          "new_shortest_represented_operators": 6
+        },
+        {
+          "cumulative_represented_operators": 22,
+          "depth": 4,
+          "new_shortest_represented_operators": 8
+        },
+        {
+          "cumulative_represented_operators": 34,
+          "depth": 5,
+          "new_shortest_represented_operators": 12
+        },
+        {
+          "cumulative_represented_operators": 50,
+          "depth": 6,
+          "new_shortest_represented_operators": 16
+        },
+        {
+          "cumulative_represented_operators": 74,
+          "depth": 7,
+          "new_shortest_represented_operators": 24
+        },
+        {
+          "cumulative_represented_operators": 106,
+          "depth": 8,
+          "new_shortest_represented_operators": 32
+        },
+        {
+          "cumulative_represented_operators": 154,
+          "depth": 9,
+          "new_shortest_represented_operators": 48
+        },
+        {
+          "cumulative_represented_operators": 218,
+          "depth": 10,
+          "new_shortest_represented_operators": 64
+        },
+        {
+          "cumulative_represented_operators": 314,
+          "depth": 11,
+          "new_shortest_represented_operators": 96
+        },
+        {
+          "cumulative_represented_operators": 442,
+          "depth": 12,
+          "new_shortest_represented_operators": 128
+        },
+        {
+          "cumulative_represented_operators": 634,
+          "depth": 13,
+          "new_shortest_represented_operators": 192
+        },
+        {
+          "cumulative_represented_operators": 890,
+          "depth": 14,
+          "new_shortest_represented_operators": 256
+        },
+        {
+          "cumulative_represented_operators": 1244,
+          "depth": 15,
+          "new_shortest_represented_operators": 354
+        },
+        {
+          "cumulative_represented_operators": 1592,
+          "depth": 16,
+          "new_shortest_represented_operators": 348
+        },
+        {
+          "cumulative_represented_operators": 1928,
+          "depth": 17,
+          "new_shortest_represented_operators": 336
+        },
+        {
+          "cumulative_represented_operators": 2201,
+          "depth": 18,
+          "new_shortest_represented_operators": 273
+        },
+        {
+          "cumulative_represented_operators": 2396,
+          "depth": 19,
+          "new_shortest_represented_operators": 195
+        },
+        {
+          "cumulative_represented_operators": 2442,
+          "depth": 20,
+          "new_shortest_represented_operators": 46
+        },
+        {
+          "cumulative_represented_operators": 2448,
+          "depth": 21,
+          "new_shortest_represented_operators": 6
+        }
+      ],
+      "distinct_represented_letter_count": 3,
+      "finite_first_hit_count": 4,
+      "first_hit_depth_sha256": "36b0b4b8cb63f2936b08f158becae98bb26c181540955f1ae16fc970ed1ccc2c",
+      "first_hit_witnesses_sha256": "db1dfb9f248b4b871235b667d4d5d8679a9ac48a9df1f25e7d1115402084528c",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "99c26878eb20a8dfe2d157ec760be3f0295255bfb915c14273ce9ee83547e693",
+      "label_count": 3,
+      "label_to_operator_sha256": "d2386c9369374cf98133b3b4bcc37244c447760c97bc87dbcff918801754ac40",
+      "realization_id": "modular-p1-f17-v2",
+      "represented_positive_closure_order": 2448,
+      "represented_positive_closure_sha256": "8ba97a063734c56dfe0bf2a17af8261c2d6e51939f2aa859d108248f754f7e4a",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "14d9160b6c5bb43271de8dcfc78e8c9fd243d7472419e84bb60509cb29867211",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "02e365cf0392db9b604e8654b01875472876ed562a78bf59ee408ca68e871016",
+      "closure_stabilization_depth": 12,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 3,
+          "depth": 1,
+          "new_shortest_represented_operators": 3
+        },
+        {
+          "cumulative_represented_operators": 8,
+          "depth": 2,
+          "new_shortest_represented_operators": 5
+        },
+        {
+          "cumulative_represented_operators": 14,
+          "depth": 3,
+          "new_shortest_represented_operators": 6
+        },
+        {
+          "cumulative_represented_operators": 22,
+          "depth": 4,
+          "new_shortest_represented_operators": 8
+        },
+        {
+          "cumulative_represented_operators": 34,
+          "depth": 5,
+          "new_shortest_represented_operators": 12
+        },
+        {
+          "cumulative_represented_operators": 50,
+          "depth": 6,
+          "new_shortest_represented_operators": 16
+        },
+        {
+          "cumulative_represented_operators": 72,
+          "depth": 7,
+          "new_shortest_represented_operators": 22
+        },
+        {
+          "cumulative_represented_operators": 94,
+          "depth": 8,
+          "new_shortest_represented_operators": 22
+        },
+        {
+          "cumulative_represented_operators": 119,
+          "depth": 9,
+          "new_shortest_represented_operators": 25
+        },
+        {
+          "cumulative_represented_operators": 145,
+          "depth": 10,
+          "new_shortest_represented_operators": 26
+        },
+        {
+          "cumulative_represented_operators": 166,
+          "depth": 11,
+          "new_shortest_represented_operators": 21
+        },
+        {
+          "cumulative_represented_operators": 168,
+          "depth": 12,
+          "new_shortest_represented_operators": 2
+        }
+      ],
+      "distinct_represented_letter_count": 3,
+      "finite_first_hit_count": 25,
+      "first_hit_depth_sha256": "6e9f9ff90295078c96a527b1551014136cb9132cf6eeca5c12216bc91b1604c0",
+      "first_hit_witnesses_sha256": "96a519d1efc16be3ed63dd85cb7d4d5a5dc394ff085ab427340204bc9ff7a455",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "62fb5345b409f33f39a177a3c89d292b968b0721916f861d1f3692998541280a",
+      "label_count": 3,
+      "label_to_operator_sha256": "f07c6fc6820939590f67792237c553dc0eb33135d9d3582ac280d5328ca7ed04",
+      "realization_id": "delta-2-3-7-i7-c000-v2.x_cycles",
+      "represented_positive_closure_order": 168,
+      "represented_positive_closure_sha256": "bd0407c8e8e49c6c7656c527551b30b67934ab0e8570b2505dc3ce92f2b25c3c",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "18012c762e3f7b45b3f3aba173dcefaa63adab98914ca96852f637daed89ad80",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "01404d901ed2cf5a192b24bcf192cfc826f0e826c03d0a86603d0a030e5094a8",
+      "closure_stabilization_depth": 12,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 3,
+          "depth": 1,
+          "new_shortest_represented_operators": 3
+        },
+        {
+          "cumulative_represented_operators": 8,
+          "depth": 2,
+          "new_shortest_represented_operators": 5
+        },
+        {
+          "cumulative_represented_operators": 14,
+          "depth": 3,
+          "new_shortest_represented_operators": 6
+        },
+        {
+          "cumulative_represented_operators": 22,
+          "depth": 4,
+          "new_shortest_represented_operators": 8
+        },
+        {
+          "cumulative_represented_operators": 34,
+          "depth": 5,
+          "new_shortest_represented_operators": 12
+        },
+        {
+          "cumulative_represented_operators": 50,
+          "depth": 6,
+          "new_shortest_represented_operators": 16
+        },
+        {
+          "cumulative_represented_operators": 72,
+          "depth": 7,
+          "new_shortest_represented_operators": 22
+        },
+        {
+          "cumulative_represented_operators": 94,
+          "depth": 8,
+          "new_shortest_represented_operators": 22
+        },
+        {
+          "cumulative_represented_operators": 119,
+          "depth": 9,
+          "new_shortest_represented_operators": 25
+        },
+        {
+          "cumulative_represented_operators": 145,
+          "depth": 10,
+          "new_shortest_represented_operators": 26
+        },
+        {
+          "cumulative_represented_operators": 166,
+          "depth": 11,
+          "new_shortest_represented_operators": 21
+        },
+        {
+          "cumulative_represented_operators": 168,
+          "depth": 12,
+          "new_shortest_represented_operators": 2
+        }
+      ],
+      "distinct_represented_letter_count": 3,
+      "finite_first_hit_count": 9,
+      "first_hit_depth_sha256": "e5683a3bb48a4c6cad9d3f0069968b09eb39f328b24e456eb9c560a5ff8a0170",
+      "first_hit_witnesses_sha256": "2931001de8146f03f7a9b0cdefe0d853ad26bb23fdef3ca03f55f7112e7fec21",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "62fb5345b409f33f39a177a3c89d292b968b0721916f861d1f3692998541280a",
+      "label_count": 3,
+      "label_to_operator_sha256": "f07c6fc6820939590f67792237c553dc0eb33135d9d3582ac280d5328ca7ed04",
+      "realization_id": "delta-2-3-7-i7-c000-v2.y_cycles",
+      "represented_positive_closure_order": 168,
+      "represented_positive_closure_sha256": "bd0407c8e8e49c6c7656c527551b30b67934ab0e8570b2505dc3ce92f2b25c3c",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "da59f0deafa0e794dc01459592802e67021439c8a86778dc790c299da3123ae2",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "072d8b740d0d1f8a6d4299df7c052e937200ac131a87d3502ca42374c8d5df80",
+      "closure_stabilization_depth": 12,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 3,
+          "depth": 1,
+          "new_shortest_represented_operators": 3
+        },
+        {
+          "cumulative_represented_operators": 8,
+          "depth": 2,
+          "new_shortest_represented_operators": 5
+        },
+        {
+          "cumulative_represented_operators": 14,
+          "depth": 3,
+          "new_shortest_represented_operators": 6
+        },
+        {
+          "cumulative_represented_operators": 22,
+          "depth": 4,
+          "new_shortest_represented_operators": 8
+        },
+        {
+          "cumulative_represented_operators": 34,
+          "depth": 5,
+          "new_shortest_represented_operators": 12
+        },
+        {
+          "cumulative_represented_operators": 50,
+          "depth": 6,
+          "new_shortest_represented_operators": 16
+        },
+        {
+          "cumulative_represented_operators": 72,
+          "depth": 7,
+          "new_shortest_represented_operators": 22
+        },
+        {
+          "cumulative_represented_operators": 94,
+          "depth": 8,
+          "new_shortest_represented_operators": 22
+        },
+        {
+          "cumulative_represented_operators": 119,
+          "depth": 9,
+          "new_shortest_represented_operators": 25
+        },
+        {
+          "cumulative_represented_operators": 145,
+          "depth": 10,
+          "new_shortest_represented_operators": 26
+        },
+        {
+          "cumulative_represented_operators": 166,
+          "depth": 11,
+          "new_shortest_represented_operators": 21
+        },
+        {
+          "cumulative_represented_operators": 168,
+          "depth": 12,
+          "new_shortest_represented_operators": 2
+        }
+      ],
+      "distinct_represented_letter_count": 3,
+      "finite_first_hit_count": 1,
+      "first_hit_depth_sha256": "043f347c2cdc0d8ce70c38775d24e556c0290acf6d0c87a3a52aa85471cb8d02",
+      "first_hit_witnesses_sha256": "35097b28e181b5c0dfb28d367f8e7a441db2a3f51d59b2866b5331261e7715f8",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "62fb5345b409f33f39a177a3c89d292b968b0721916f861d1f3692998541280a",
+      "label_count": 3,
+      "label_to_operator_sha256": "f07c6fc6820939590f67792237c553dc0eb33135d9d3582ac280d5328ca7ed04",
+      "realization_id": "delta-2-3-7-i7-c000-v2.z_cycles",
+      "represented_positive_closure_order": 168,
+      "represented_positive_closure_sha256": "bd0407c8e8e49c6c7656c527551b30b67934ab0e8570b2505dc3ce92f2b25c3c",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "800f43aecbf663f7631c7f259bee17e8724c34e9583f4d7dd8d6df7727eb9764",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "02e365cf0392db9b604e8654b01875472876ed562a78bf59ee408ca68e871016",
+      "closure_stabilization_depth": 12,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 3,
+          "depth": 1,
+          "new_shortest_represented_operators": 3
+        },
+        {
+          "cumulative_represented_operators": 8,
+          "depth": 2,
+          "new_shortest_represented_operators": 5
+        },
+        {
+          "cumulative_represented_operators": 14,
+          "depth": 3,
+          "new_shortest_represented_operators": 6
+        },
+        {
+          "cumulative_represented_operators": 22,
+          "depth": 4,
+          "new_shortest_represented_operators": 8
+        },
+        {
+          "cumulative_represented_operators": 34,
+          "depth": 5,
+          "new_shortest_represented_operators": 12
+        },
+        {
+          "cumulative_represented_operators": 50,
+          "depth": 6,
+          "new_shortest_represented_operators": 16
+        },
+        {
+          "cumulative_represented_operators": 72,
+          "depth": 7,
+          "new_shortest_represented_operators": 22
+        },
+        {
+          "cumulative_represented_operators": 94,
+          "depth": 8,
+          "new_shortest_represented_operators": 22
+        },
+        {
+          "cumulative_represented_operators": 119,
+          "depth": 9,
+          "new_shortest_represented_operators": 25
+        },
+        {
+          "cumulative_represented_operators": 145,
+          "depth": 10,
+          "new_shortest_represented_operators": 26
+        },
+        {
+          "cumulative_represented_operators": 166,
+          "depth": 11,
+          "new_shortest_represented_operators": 21
+        },
+        {
+          "cumulative_represented_operators": 168,
+          "depth": 12,
+          "new_shortest_represented_operators": 2
+        }
+      ],
+      "distinct_represented_letter_count": 3,
+      "finite_first_hit_count": 25,
+      "first_hit_depth_sha256": "6e9f9ff90295078c96a527b1551014136cb9132cf6eeca5c12216bc91b1604c0",
+      "first_hit_witnesses_sha256": "4a2a25a8f097136596866c2cf650b46df3f1f1e4853e063b37d6cca999381ba7",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "62fb5345b409f33f39a177a3c89d292b968b0721916f861d1f3692998541280a",
+      "label_count": 3,
+      "label_to_operator_sha256": "5aea4a93c340d33e89a1db688aa25be3d2ec86fa0aefaf7ebf258929bba368e9",
+      "realization_id": "delta-2-3-7-i7-c001-v2.x_cycles",
+      "represented_positive_closure_order": 168,
+      "represented_positive_closure_sha256": "80175910d6d9c1a854f776771f47768ef5e598ba4ce95b23b02dbaa83a1cd02b",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "18012c762e3f7b45b3f3aba173dcefaa63adab98914ca96852f637daed89ad80",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "01404d901ed2cf5a192b24bcf192cfc826f0e826c03d0a86603d0a030e5094a8",
+      "closure_stabilization_depth": 12,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 3,
+          "depth": 1,
+          "new_shortest_represented_operators": 3
+        },
+        {
+          "cumulative_represented_operators": 8,
+          "depth": 2,
+          "new_shortest_represented_operators": 5
+        },
+        {
+          "cumulative_represented_operators": 14,
+          "depth": 3,
+          "new_shortest_represented_operators": 6
+        },
+        {
+          "cumulative_represented_operators": 22,
+          "depth": 4,
+          "new_shortest_represented_operators": 8
+        },
+        {
+          "cumulative_represented_operators": 34,
+          "depth": 5,
+          "new_shortest_represented_operators": 12
+        },
+        {
+          "cumulative_represented_operators": 50,
+          "depth": 6,
+          "new_shortest_represented_operators": 16
+        },
+        {
+          "cumulative_represented_operators": 72,
+          "depth": 7,
+          "new_shortest_represented_operators": 22
+        },
+        {
+          "cumulative_represented_operators": 94,
+          "depth": 8,
+          "new_shortest_represented_operators": 22
+        },
+        {
+          "cumulative_represented_operators": 119,
+          "depth": 9,
+          "new_shortest_represented_operators": 25
+        },
+        {
+          "cumulative_represented_operators": 145,
+          "depth": 10,
+          "new_shortest_represented_operators": 26
+        },
+        {
+          "cumulative_represented_operators": 166,
+          "depth": 11,
+          "new_shortest_represented_operators": 21
+        },
+        {
+          "cumulative_represented_operators": 168,
+          "depth": 12,
+          "new_shortest_represented_operators": 2
+        }
+      ],
+      "distinct_represented_letter_count": 3,
+      "finite_first_hit_count": 9,
+      "first_hit_depth_sha256": "e5683a3bb48a4c6cad9d3f0069968b09eb39f328b24e456eb9c560a5ff8a0170",
+      "first_hit_witnesses_sha256": "074008879b3577d738a869bc5b34afcb28e7a3f42dcd458fcfe11e4022d0aeae",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "62fb5345b409f33f39a177a3c89d292b968b0721916f861d1f3692998541280a",
+      "label_count": 3,
+      "label_to_operator_sha256": "5aea4a93c340d33e89a1db688aa25be3d2ec86fa0aefaf7ebf258929bba368e9",
+      "realization_id": "delta-2-3-7-i7-c001-v2.y_cycles",
+      "represented_positive_closure_order": 168,
+      "represented_positive_closure_sha256": "80175910d6d9c1a854f776771f47768ef5e598ba4ce95b23b02dbaa83a1cd02b",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "da59f0deafa0e794dc01459592802e67021439c8a86778dc790c299da3123ae2",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "072d8b740d0d1f8a6d4299df7c052e937200ac131a87d3502ca42374c8d5df80",
+      "closure_stabilization_depth": 12,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 3,
+          "depth": 1,
+          "new_shortest_represented_operators": 3
+        },
+        {
+          "cumulative_represented_operators": 8,
+          "depth": 2,
+          "new_shortest_represented_operators": 5
+        },
+        {
+          "cumulative_represented_operators": 14,
+          "depth": 3,
+          "new_shortest_represented_operators": 6
+        },
+        {
+          "cumulative_represented_operators": 22,
+          "depth": 4,
+          "new_shortest_represented_operators": 8
+        },
+        {
+          "cumulative_represented_operators": 34,
+          "depth": 5,
+          "new_shortest_represented_operators": 12
+        },
+        {
+          "cumulative_represented_operators": 50,
+          "depth": 6,
+          "new_shortest_represented_operators": 16
+        },
+        {
+          "cumulative_represented_operators": 72,
+          "depth": 7,
+          "new_shortest_represented_operators": 22
+        },
+        {
+          "cumulative_represented_operators": 94,
+          "depth": 8,
+          "new_shortest_represented_operators": 22
+        },
+        {
+          "cumulative_represented_operators": 119,
+          "depth": 9,
+          "new_shortest_represented_operators": 25
+        },
+        {
+          "cumulative_represented_operators": 145,
+          "depth": 10,
+          "new_shortest_represented_operators": 26
+        },
+        {
+          "cumulative_represented_operators": 166,
+          "depth": 11,
+          "new_shortest_represented_operators": 21
+        },
+        {
+          "cumulative_represented_operators": 168,
+          "depth": 12,
+          "new_shortest_represented_operators": 2
+        }
+      ],
+      "distinct_represented_letter_count": 3,
+      "finite_first_hit_count": 1,
+      "first_hit_depth_sha256": "043f347c2cdc0d8ce70c38775d24e556c0290acf6d0c87a3a52aa85471cb8d02",
+      "first_hit_witnesses_sha256": "35097b28e181b5c0dfb28d367f8e7a441db2a3f51d59b2866b5331261e7715f8",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "62fb5345b409f33f39a177a3c89d292b968b0721916f861d1f3692998541280a",
+      "label_count": 3,
+      "label_to_operator_sha256": "5aea4a93c340d33e89a1db688aa25be3d2ec86fa0aefaf7ebf258929bba368e9",
+      "realization_id": "delta-2-3-7-i7-c001-v2.z_cycles",
+      "represented_positive_closure_order": 168,
+      "represented_positive_closure_sha256": "80175910d6d9c1a854f776771f47768ef5e598ba4ce95b23b02dbaa83a1cd02b",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "800f43aecbf663f7631c7f259bee17e8724c34e9583f4d7dd8d6df7727eb9764",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "4d04719dd0514d717070563ff333bad78d5dd36b29671e75b0ede21c41ff4271",
+      "closure_stabilization_depth": 2,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 1,
+          "depth": 1,
+          "new_shortest_represented_operators": 1
+        },
+        {
+          "cumulative_represented_operators": 2,
+          "depth": 2,
+          "new_shortest_represented_operators": 1
+        }
+      ],
+      "distinct_represented_letter_count": 1,
+      "finite_first_hit_count": 1,
+      "first_hit_depth_sha256": "043f347c2cdc0d8ce70c38775d24e556c0290acf6d0c87a3a52aa85471cb8d02",
+      "first_hit_witnesses_sha256": "35097b28e181b5c0dfb28d367f8e7a441db2a3f51d59b2866b5331261e7715f8",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "01f650e85c95620160b40ed22626dca932e9f700ffe599be060da184dd4d7822",
+      "label_count": 2,
+      "label_to_operator_sha256": "ff6763781415e0480abd9026536593dea2bcc51926aef07fc3985b5da922bb4e",
+      "realization_id": "delta-2-4-5-i2-c000-v2.x_cycles",
+      "represented_positive_closure_order": 2,
+      "represented_positive_closure_sha256": "ac320b742751f8f0aaa45b6bff6a15e60453540c875cc4deba6b4bb30e673fcf",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "f515fa775d99acd6f31a0b7f0a698ebf3bb5052eb031c28e49b7b81b7ad53b6a",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "4d04719dd0514d717070563ff333bad78d5dd36b29671e75b0ede21c41ff4271",
+      "closure_stabilization_depth": 2,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 1,
+          "depth": 1,
+          "new_shortest_represented_operators": 1
+        },
+        {
+          "cumulative_represented_operators": 2,
+          "depth": 2,
+          "new_shortest_represented_operators": 1
+        }
+      ],
+      "distinct_represented_letter_count": 1,
+      "finite_first_hit_count": 1,
+      "first_hit_depth_sha256": "043f347c2cdc0d8ce70c38775d24e556c0290acf6d0c87a3a52aa85471cb8d02",
+      "first_hit_witnesses_sha256": "35097b28e181b5c0dfb28d367f8e7a441db2a3f51d59b2866b5331261e7715f8",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "01f650e85c95620160b40ed22626dca932e9f700ffe599be060da184dd4d7822",
+      "label_count": 2,
+      "label_to_operator_sha256": "ff6763781415e0480abd9026536593dea2bcc51926aef07fc3985b5da922bb4e",
+      "realization_id": "delta-2-4-5-i2-c000-v2.y_cycles",
+      "represented_positive_closure_order": 2,
+      "represented_positive_closure_sha256": "ac320b742751f8f0aaa45b6bff6a15e60453540c875cc4deba6b4bb30e673fcf",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "f515fa775d99acd6f31a0b7f0a698ebf3bb5052eb031c28e49b7b81b7ad53b6a",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "2467b0a7be0587756e2613d2062d8d650d7a20331b8f969a4ec69efcf4868c30",
+      "closure_stabilization_depth": 2,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 1,
+          "depth": 1,
+          "new_shortest_represented_operators": 1
+        },
+        {
+          "cumulative_represented_operators": 2,
+          "depth": 2,
+          "new_shortest_represented_operators": 1
+        }
+      ],
+      "distinct_represented_letter_count": 1,
+      "finite_first_hit_count": 4,
+      "first_hit_depth_sha256": "507aa9b221726527e8352d41199d112b97970842bd11578bb875adc014faecfa",
+      "first_hit_witnesses_sha256": "3ceeb29324f0f827032158bab85182f92186ddc546541daae42cef40844d0d99",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "01f650e85c95620160b40ed22626dca932e9f700ffe599be060da184dd4d7822",
+      "label_count": 2,
+      "label_to_operator_sha256": "ff6763781415e0480abd9026536593dea2bcc51926aef07fc3985b5da922bb4e",
+      "realization_id": "delta-2-4-5-i2-c000-v2.z_cycles",
+      "represented_positive_closure_order": 2,
+      "represented_positive_closure_sha256": "ac320b742751f8f0aaa45b6bff6a15e60453540c875cc4deba6b4bb30e673fcf",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "57361b63331982d3b2000f0840884dc9f5c3e41fcc6ec2e32c9daf4721696adf",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "b4a13626f0ba9be67bab79d8ed23b59c5ffb068b3119f34768f8c124d31a0f97",
+      "closure_stabilization_depth": 9,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 3,
+          "depth": 1,
+          "new_shortest_represented_operators": 3
+        },
+        {
+          "cumulative_represented_operators": 9,
+          "depth": 2,
+          "new_shortest_represented_operators": 6
+        },
+        {
+          "cumulative_represented_operators": 17,
+          "depth": 3,
+          "new_shortest_represented_operators": 8
+        },
+        {
+          "cumulative_represented_operators": 30,
+          "depth": 4,
+          "new_shortest_represented_operators": 13
+        },
+        {
+          "cumulative_represented_operators": 49,
+          "depth": 5,
+          "new_shortest_represented_operators": 19
+        },
+        {
+          "cumulative_represented_operators": 73,
+          "depth": 6,
+          "new_shortest_represented_operators": 24
+        },
+        {
+          "cumulative_represented_operators": 102,
+          "depth": 7,
+          "new_shortest_represented_operators": 29
+        },
+        {
+          "cumulative_represented_operators": 119,
+          "depth": 8,
+          "new_shortest_represented_operators": 17
+        },
+        {
+          "cumulative_represented_operators": 120,
+          "depth": 9,
+          "new_shortest_represented_operators": 1
+        }
+      ],
+      "distinct_represented_letter_count": 3,
+      "finite_first_hit_count": 16,
+      "first_hit_depth_sha256": "5465944d22b741793be2b63fe402d06516fcedf94028c03c524469adbe5f0862",
+      "first_hit_witnesses_sha256": "d891c331dc07d7db43cba3cf520b1e8b18cf8d5dd300722ba5258fd0a7d6a1ee",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "62fb5345b409f33f39a177a3c89d292b968b0721916f861d1f3692998541280a",
+      "label_count": 3,
+      "label_to_operator_sha256": "4cb0a751733fa27ff333f3085c9e4b57aa81ebe45ce8dc34794a2fcb35b96114",
+      "realization_id": "delta-2-4-5-i5-c000-v2.x_cycles",
+      "represented_positive_closure_order": 120,
+      "represented_positive_closure_sha256": "6093a33ec685f54836d2e49434acf3efdfe6e13ac11413832535ff6e12cfecce",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "83242f77f096055bfce0671f60bd57152f1daa5aaea75048efcb74d5ba86f6cc",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "2f13a62ae7b675110140ca47a9d3e7789b57e772a135b7129562e504d4585601",
+      "closure_stabilization_depth": 9,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 3,
+          "depth": 1,
+          "new_shortest_represented_operators": 3
+        },
+        {
+          "cumulative_represented_operators": 9,
+          "depth": 2,
+          "new_shortest_represented_operators": 6
+        },
+        {
+          "cumulative_represented_operators": 17,
+          "depth": 3,
+          "new_shortest_represented_operators": 8
+        },
+        {
+          "cumulative_represented_operators": 30,
+          "depth": 4,
+          "new_shortest_represented_operators": 13
+        },
+        {
+          "cumulative_represented_operators": 49,
+          "depth": 5,
+          "new_shortest_represented_operators": 19
+        },
+        {
+          "cumulative_represented_operators": 73,
+          "depth": 6,
+          "new_shortest_represented_operators": 24
+        },
+        {
+          "cumulative_represented_operators": 102,
+          "depth": 7,
+          "new_shortest_represented_operators": 29
+        },
+        {
+          "cumulative_represented_operators": 119,
+          "depth": 8,
+          "new_shortest_represented_operators": 17
+        },
+        {
+          "cumulative_represented_operators": 120,
+          "depth": 9,
+          "new_shortest_represented_operators": 1
+        }
+      ],
+      "distinct_represented_letter_count": 3,
+      "finite_first_hit_count": 4,
+      "first_hit_depth_sha256": "3613c3e1f49a7dd2bc2468afcc33f58c4f0ee9716dbc99d06f25251d3b832735",
+      "first_hit_witnesses_sha256": "600ca1ec0c23fd90a5a804dbed3037da842aaf2441c956545979db9a8c7145b4",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "62fb5345b409f33f39a177a3c89d292b968b0721916f861d1f3692998541280a",
+      "label_count": 3,
+      "label_to_operator_sha256": "4cb0a751733fa27ff333f3085c9e4b57aa81ebe45ce8dc34794a2fcb35b96114",
+      "realization_id": "delta-2-4-5-i5-c000-v2.y_cycles",
+      "represented_positive_closure_order": 120,
+      "represented_positive_closure_sha256": "6093a33ec685f54836d2e49434acf3efdfe6e13ac11413832535ff6e12cfecce",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "6806de18480f8cfbd59a5509aa7b4a78c74b272fb50d272376d93aedd7f6620c",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "64c866452fd034d6c6860f5bc771967d75c8ba72e101b760646ff870c7ebf3ed",
+      "closure_stabilization_depth": 9,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 3,
+          "depth": 1,
+          "new_shortest_represented_operators": 3
+        },
+        {
+          "cumulative_represented_operators": 9,
+          "depth": 2,
+          "new_shortest_represented_operators": 6
+        },
+        {
+          "cumulative_represented_operators": 17,
+          "depth": 3,
+          "new_shortest_represented_operators": 8
+        },
+        {
+          "cumulative_represented_operators": 30,
+          "depth": 4,
+          "new_shortest_represented_operators": 13
+        },
+        {
+          "cumulative_represented_operators": 49,
+          "depth": 5,
+          "new_shortest_represented_operators": 19
+        },
+        {
+          "cumulative_represented_operators": 73,
+          "depth": 6,
+          "new_shortest_represented_operators": 24
+        },
+        {
+          "cumulative_represented_operators": 102,
+          "depth": 7,
+          "new_shortest_represented_operators": 29
+        },
+        {
+          "cumulative_represented_operators": 119,
+          "depth": 8,
+          "new_shortest_represented_operators": 17
+        },
+        {
+          "cumulative_represented_operators": 120,
+          "depth": 9,
+          "new_shortest_represented_operators": 1
+        }
+      ],
+      "distinct_represented_letter_count": 3,
+      "finite_first_hit_count": 1,
+      "first_hit_depth_sha256": "043f347c2cdc0d8ce70c38775d24e556c0290acf6d0c87a3a52aa85471cb8d02",
+      "first_hit_witnesses_sha256": "35097b28e181b5c0dfb28d367f8e7a441db2a3f51d59b2866b5331261e7715f8",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "62fb5345b409f33f39a177a3c89d292b968b0721916f861d1f3692998541280a",
+      "label_count": 3,
+      "label_to_operator_sha256": "4cb0a751733fa27ff333f3085c9e4b57aa81ebe45ce8dc34794a2fcb35b96114",
+      "realization_id": "delta-2-4-5-i5-c000-v2.z_cycles",
+      "represented_positive_closure_order": 120,
+      "represented_positive_closure_sha256": "6093a33ec685f54836d2e49434acf3efdfe6e13ac11413832535ff6e12cfecce",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "ce5c59665784c6cc3ba1e54b935d6b25abd46b3c7b93214d8566be3bf61ecf4c",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "d5338bd5a9b5aa7ae4a96f088644a7cd3a1a3ee39310be9d158da0c9a2285a64",
+      "closure_stabilization_depth": 5,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 2,
+          "depth": 1,
+          "new_shortest_represented_operators": 2
+        },
+        {
+          "cumulative_represented_operators": 5,
+          "depth": 2,
+          "new_shortest_represented_operators": 3
+        },
+        {
+          "cumulative_represented_operators": 7,
+          "depth": 3,
+          "new_shortest_represented_operators": 2
+        },
+        {
+          "cumulative_represented_operators": 9,
+          "depth": 4,
+          "new_shortest_represented_operators": 2
+        },
+        {
+          "cumulative_represented_operators": 10,
+          "depth": 5,
+          "new_shortest_represented_operators": 1
+        }
+      ],
+      "distinct_represented_letter_count": 2,
+      "finite_first_hit_count": 9,
+      "first_hit_depth_sha256": "d8200ed2b626b7088287d8f0b2d046ce2f4744ef1ca755efaa30fb574cc7abba",
+      "first_hit_witnesses_sha256": "c698053ea2c37b6fbc77b07338102ad390cf8c5277d2f4369edf12161d9a2b9d",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "01f650e85c95620160b40ed22626dca932e9f700ffe599be060da184dd4d7822",
+      "label_count": 2,
+      "label_to_operator_sha256": "2cc22e5ab8724c930f49e2bef68d35ac877d8b9a0ffcb16470fc23c7c422ac81",
+      "realization_id": "delta-2-4-5-i5-c001-v2.x_cycles",
+      "represented_positive_closure_order": 10,
+      "represented_positive_closure_sha256": "603b3d0ee7ce6d50a38b69f50d4c4318d911644ffdc31ed00d5deba92a8ea243",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "bb022ee596ce08e672cc1f89dfd0a37606e5abea0b04a6a210cbb6d7ba11508e",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "4e96e2ad0335e903799d9d1b8be4d2fa859a71b5f1d876360a75f127c12fe0ed",
+      "closure_stabilization_depth": 5,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 2,
+          "depth": 1,
+          "new_shortest_represented_operators": 2
+        },
+        {
+          "cumulative_represented_operators": 5,
+          "depth": 2,
+          "new_shortest_represented_operators": 3
+        },
+        {
+          "cumulative_represented_operators": 7,
+          "depth": 3,
+          "new_shortest_represented_operators": 2
+        },
+        {
+          "cumulative_represented_operators": 9,
+          "depth": 4,
+          "new_shortest_represented_operators": 2
+        },
+        {
+          "cumulative_represented_operators": 10,
+          "depth": 5,
+          "new_shortest_represented_operators": 1
+        }
+      ],
+      "distinct_represented_letter_count": 2,
+      "finite_first_hit_count": 9,
+      "first_hit_depth_sha256": "e5683a3bb48a4c6cad9d3f0069968b09eb39f328b24e456eb9c560a5ff8a0170",
+      "first_hit_witnesses_sha256": "eb0ddfd111e15c2639962dd461e6dac664612db9839b70cd93dfe99039d45efb",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "01f650e85c95620160b40ed22626dca932e9f700ffe599be060da184dd4d7822",
+      "label_count": 2,
+      "label_to_operator_sha256": "2cc22e5ab8724c930f49e2bef68d35ac877d8b9a0ffcb16470fc23c7c422ac81",
+      "realization_id": "delta-2-4-5-i5-c001-v2.y_cycles",
+      "represented_positive_closure_order": 10,
+      "represented_positive_closure_sha256": "603b3d0ee7ce6d50a38b69f50d4c4318d911644ffdc31ed00d5deba92a8ea243",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "9911dc3f5148d65045ee44c51b609b594b94e3ab689a9222159d08727281ccb4",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "5cda1873b2827681492ef430b1270f3661add1a3ab87055738c9b848772b09ec",
+      "closure_stabilization_depth": 5,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 2,
+          "depth": 1,
+          "new_shortest_represented_operators": 2
+        },
+        {
+          "cumulative_represented_operators": 5,
+          "depth": 2,
+          "new_shortest_represented_operators": 3
+        },
+        {
+          "cumulative_represented_operators": 7,
+          "depth": 3,
+          "new_shortest_represented_operators": 2
+        },
+        {
+          "cumulative_represented_operators": 9,
+          "depth": 4,
+          "new_shortest_represented_operators": 2
+        },
+        {
+          "cumulative_represented_operators": 10,
+          "depth": 5,
+          "new_shortest_represented_operators": 1
+        }
+      ],
+      "distinct_represented_letter_count": 2,
+      "finite_first_hit_count": 1,
+      "first_hit_depth_sha256": "043f347c2cdc0d8ce70c38775d24e556c0290acf6d0c87a3a52aa85471cb8d02",
+      "first_hit_witnesses_sha256": "35097b28e181b5c0dfb28d367f8e7a441db2a3f51d59b2866b5331261e7715f8",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "01f650e85c95620160b40ed22626dca932e9f700ffe599be060da184dd4d7822",
+      "label_count": 2,
+      "label_to_operator_sha256": "2cc22e5ab8724c930f49e2bef68d35ac877d8b9a0ffcb16470fc23c7c422ac81",
+      "realization_id": "delta-2-4-5-i5-c001-v2.z_cycles",
+      "represented_positive_closure_order": 10,
+      "represented_positive_closure_sha256": "603b3d0ee7ce6d50a38b69f50d4c4318d911644ffdc31ed00d5deba92a8ea243",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "ce5c59665784c6cc3ba1e54b935d6b25abd46b3c7b93214d8566be3bf61ecf4c",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "33392749f4040a59e30b42fb6f77ed592a54d96fb95336314339e959991c3010",
+      "closure_stabilization_depth": 14,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 3,
+          "depth": 1,
+          "new_shortest_represented_operators": 3
+        },
+        {
+          "cumulative_represented_operators": 9,
+          "depth": 2,
+          "new_shortest_represented_operators": 6
+        },
+        {
+          "cumulative_represented_operators": 17,
+          "depth": 3,
+          "new_shortest_represented_operators": 8
+        },
+        {
+          "cumulative_represented_operators": 30,
+          "depth": 4,
+          "new_shortest_represented_operators": 13
+        },
+        {
+          "cumulative_represented_operators": 49,
+          "depth": 5,
+          "new_shortest_represented_operators": 19
+        },
+        {
+          "cumulative_represented_operators": 75,
+          "depth": 6,
+          "new_shortest_represented_operators": 26
+        },
+        {
+          "cumulative_represented_operators": 112,
+          "depth": 7,
+          "new_shortest_represented_operators": 37
+        },
+        {
+          "cumulative_represented_operators": 158,
+          "depth": 8,
+          "new_shortest_represented_operators": 46
+        },
+        {
+          "cumulative_represented_operators": 214,
+          "depth": 9,
+          "new_shortest_represented_operators": 56
+        },
+        {
+          "cumulative_represented_operators": 262,
+          "depth": 10,
+          "new_shortest_represented_operators": 48
+        },
+        {
+          "cumulative_represented_operators": 300,
+          "depth": 11,
+          "new_shortest_represented_operators": 38
+        },
+        {
+          "cumulative_represented_operators": 334,
+          "depth": 12,
+          "new_shortest_represented_operators": 34
+        },
+        {
+          "cumulative_represented_operators": 354,
+          "depth": 13,
+          "new_shortest_represented_operators": 20
+        },
+        {
+          "cumulative_represented_operators": 360,
+          "depth": 14,
+          "new_shortest_represented_operators": 6
+        }
+      ],
+      "distinct_represented_letter_count": 3,
+      "finite_first_hit_count": 16,
+      "first_hit_depth_sha256": "59031333ebbd01e617e48fd1f4e345a5f899883ad43ec987442ff0144bd09d08",
+      "first_hit_witnesses_sha256": "c066be5346eb3ae0c10a18815e30763e21f9a51007ddafe7c2e3fd100b5895a8",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "62fb5345b409f33f39a177a3c89d292b968b0721916f861d1f3692998541280a",
+      "label_count": 3,
+      "label_to_operator_sha256": "4d5e36891571e1989f75a701fd842a54495214da78644e45cb15db2b92913f06",
+      "realization_id": "delta-2-4-5-i6-c000-v2.x_cycles",
+      "represented_positive_closure_order": 360,
+      "represented_positive_closure_sha256": "5440a5e7cb72f7263ecfceadc3854682bb3151b3db21338d26d24a2e98e5fbfb",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "e5ce411c6b2623c6736eb35d91ea706bd88fef91762aeeaf533fdb021f9698a3",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "2f13a62ae7b675110140ca47a9d3e7789b57e772a135b7129562e504d4585601",
+      "closure_stabilization_depth": 14,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 3,
+          "depth": 1,
+          "new_shortest_represented_operators": 3
+        },
+        {
+          "cumulative_represented_operators": 9,
+          "depth": 2,
+          "new_shortest_represented_operators": 6
+        },
+        {
+          "cumulative_represented_operators": 17,
+          "depth": 3,
+          "new_shortest_represented_operators": 8
+        },
+        {
+          "cumulative_represented_operators": 30,
+          "depth": 4,
+          "new_shortest_represented_operators": 13
+        },
+        {
+          "cumulative_represented_operators": 49,
+          "depth": 5,
+          "new_shortest_represented_operators": 19
+        },
+        {
+          "cumulative_represented_operators": 75,
+          "depth": 6,
+          "new_shortest_represented_operators": 26
+        },
+        {
+          "cumulative_represented_operators": 112,
+          "depth": 7,
+          "new_shortest_represented_operators": 37
+        },
+        {
+          "cumulative_represented_operators": 158,
+          "depth": 8,
+          "new_shortest_represented_operators": 46
+        },
+        {
+          "cumulative_represented_operators": 214,
+          "depth": 9,
+          "new_shortest_represented_operators": 56
+        },
+        {
+          "cumulative_represented_operators": 262,
+          "depth": 10,
+          "new_shortest_represented_operators": 48
+        },
+        {
+          "cumulative_represented_operators": 300,
+          "depth": 11,
+          "new_shortest_represented_operators": 38
+        },
+        {
+          "cumulative_represented_operators": 334,
+          "depth": 12,
+          "new_shortest_represented_operators": 34
+        },
+        {
+          "cumulative_represented_operators": 354,
+          "depth": 13,
+          "new_shortest_represented_operators": 20
+        },
+        {
+          "cumulative_represented_operators": 360,
+          "depth": 14,
+          "new_shortest_represented_operators": 6
+        }
+      ],
+      "distinct_represented_letter_count": 3,
+      "finite_first_hit_count": 4,
+      "first_hit_depth_sha256": "3613c3e1f49a7dd2bc2468afcc33f58c4f0ee9716dbc99d06f25251d3b832735",
+      "first_hit_witnesses_sha256": "277f6909b19d4bec3ad685c698d0988190d9f04d24f7ad1ae8629d4bc85ff688",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "62fb5345b409f33f39a177a3c89d292b968b0721916f861d1f3692998541280a",
+      "label_count": 3,
+      "label_to_operator_sha256": "4d5e36891571e1989f75a701fd842a54495214da78644e45cb15db2b92913f06",
+      "realization_id": "delta-2-4-5-i6-c000-v2.y_cycles",
+      "represented_positive_closure_order": 360,
+      "represented_positive_closure_sha256": "5440a5e7cb72f7263ecfceadc3854682bb3151b3db21338d26d24a2e98e5fbfb",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "c6659e16c2a78f1dc78bd4dbb5f8de5475a105546910c770255231da8c8e123b",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "60779566fae499ae899b57d71aea39b348dd0e51f9ef6a7a69e73c2aae8db6d0",
+      "closure_stabilization_depth": 14,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 3,
+          "depth": 1,
+          "new_shortest_represented_operators": 3
+        },
+        {
+          "cumulative_represented_operators": 9,
+          "depth": 2,
+          "new_shortest_represented_operators": 6
+        },
+        {
+          "cumulative_represented_operators": 17,
+          "depth": 3,
+          "new_shortest_represented_operators": 8
+        },
+        {
+          "cumulative_represented_operators": 30,
+          "depth": 4,
+          "new_shortest_represented_operators": 13
+        },
+        {
+          "cumulative_represented_operators": 49,
+          "depth": 5,
+          "new_shortest_represented_operators": 19
+        },
+        {
+          "cumulative_represented_operators": 75,
+          "depth": 6,
+          "new_shortest_represented_operators": 26
+        },
+        {
+          "cumulative_represented_operators": 112,
+          "depth": 7,
+          "new_shortest_represented_operators": 37
+        },
+        {
+          "cumulative_represented_operators": 158,
+          "depth": 8,
+          "new_shortest_represented_operators": 46
+        },
+        {
+          "cumulative_represented_operators": 214,
+          "depth": 9,
+          "new_shortest_represented_operators": 56
+        },
+        {
+          "cumulative_represented_operators": 262,
+          "depth": 10,
+          "new_shortest_represented_operators": 48
+        },
+        {
+          "cumulative_represented_operators": 300,
+          "depth": 11,
+          "new_shortest_represented_operators": 38
+        },
+        {
+          "cumulative_represented_operators": 334,
+          "depth": 12,
+          "new_shortest_represented_operators": 34
+        },
+        {
+          "cumulative_represented_operators": 354,
+          "depth": 13,
+          "new_shortest_represented_operators": 20
+        },
+        {
+          "cumulative_represented_operators": 360,
+          "depth": 14,
+          "new_shortest_represented_operators": 6
+        }
+      ],
+      "distinct_represented_letter_count": 3,
+      "finite_first_hit_count": 4,
+      "first_hit_depth_sha256": "36b0b4b8cb63f2936b08f158becae98bb26c181540955f1ae16fc970ed1ccc2c",
+      "first_hit_witnesses_sha256": "a22bdc0fa014ffd06dd53fd2c774697fc99fa7a54ef62ae93657aace59e831ba",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "62fb5345b409f33f39a177a3c89d292b968b0721916f861d1f3692998541280a",
+      "label_count": 3,
+      "label_to_operator_sha256": "4d5e36891571e1989f75a701fd842a54495214da78644e45cb15db2b92913f06",
+      "realization_id": "delta-2-4-5-i6-c000-v2.z_cycles",
+      "represented_positive_closure_order": 360,
+      "represented_positive_closure_sha256": "5440a5e7cb72f7263ecfceadc3854682bb3151b3db21338d26d24a2e98e5fbfb",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "49e13cbd5647937dfa786017aeb5deba8ffdf0ad2bb42520ae0a64bdb7ae4bcb",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "33392749f4040a59e30b42fb6f77ed592a54d96fb95336314339e959991c3010",
+      "closure_stabilization_depth": 14,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 3,
+          "depth": 1,
+          "new_shortest_represented_operators": 3
+        },
+        {
+          "cumulative_represented_operators": 9,
+          "depth": 2,
+          "new_shortest_represented_operators": 6
+        },
+        {
+          "cumulative_represented_operators": 17,
+          "depth": 3,
+          "new_shortest_represented_operators": 8
+        },
+        {
+          "cumulative_represented_operators": 30,
+          "depth": 4,
+          "new_shortest_represented_operators": 13
+        },
+        {
+          "cumulative_represented_operators": 49,
+          "depth": 5,
+          "new_shortest_represented_operators": 19
+        },
+        {
+          "cumulative_represented_operators": 75,
+          "depth": 6,
+          "new_shortest_represented_operators": 26
+        },
+        {
+          "cumulative_represented_operators": 112,
+          "depth": 7,
+          "new_shortest_represented_operators": 37
+        },
+        {
+          "cumulative_represented_operators": 158,
+          "depth": 8,
+          "new_shortest_represented_operators": 46
+        },
+        {
+          "cumulative_represented_operators": 214,
+          "depth": 9,
+          "new_shortest_represented_operators": 56
+        },
+        {
+          "cumulative_represented_operators": 262,
+          "depth": 10,
+          "new_shortest_represented_operators": 48
+        },
+        {
+          "cumulative_represented_operators": 300,
+          "depth": 11,
+          "new_shortest_represented_operators": 38
+        },
+        {
+          "cumulative_represented_operators": 334,
+          "depth": 12,
+          "new_shortest_represented_operators": 34
+        },
+        {
+          "cumulative_represented_operators": 354,
+          "depth": 13,
+          "new_shortest_represented_operators": 20
+        },
+        {
+          "cumulative_represented_operators": 360,
+          "depth": 14,
+          "new_shortest_represented_operators": 6
+        }
+      ],
+      "distinct_represented_letter_count": 3,
+      "finite_first_hit_count": 16,
+      "first_hit_depth_sha256": "59031333ebbd01e617e48fd1f4e345a5f899883ad43ec987442ff0144bd09d08",
+      "first_hit_witnesses_sha256": "8854d06fed189429b86f3dd1ab0406f20d2874cb1aad16d6b6755bdd57b6a9ea",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "62fb5345b409f33f39a177a3c89d292b968b0721916f861d1f3692998541280a",
+      "label_count": 3,
+      "label_to_operator_sha256": "2aacd848d88b3710ee9da0dbe9dbe0706e4bba66632ad3aee65444d6e53afc77",
+      "realization_id": "delta-2-4-5-i6-c001-v2.x_cycles",
+      "represented_positive_closure_order": 360,
+      "represented_positive_closure_sha256": "5440a5e7cb72f7263ecfceadc3854682bb3151b3db21338d26d24a2e98e5fbfb",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "e5ce411c6b2623c6736eb35d91ea706bd88fef91762aeeaf533fdb021f9698a3",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "2f13a62ae7b675110140ca47a9d3e7789b57e772a135b7129562e504d4585601",
+      "closure_stabilization_depth": 14,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 3,
+          "depth": 1,
+          "new_shortest_represented_operators": 3
+        },
+        {
+          "cumulative_represented_operators": 9,
+          "depth": 2,
+          "new_shortest_represented_operators": 6
+        },
+        {
+          "cumulative_represented_operators": 17,
+          "depth": 3,
+          "new_shortest_represented_operators": 8
+        },
+        {
+          "cumulative_represented_operators": 30,
+          "depth": 4,
+          "new_shortest_represented_operators": 13
+        },
+        {
+          "cumulative_represented_operators": 49,
+          "depth": 5,
+          "new_shortest_represented_operators": 19
+        },
+        {
+          "cumulative_represented_operators": 75,
+          "depth": 6,
+          "new_shortest_represented_operators": 26
+        },
+        {
+          "cumulative_represented_operators": 112,
+          "depth": 7,
+          "new_shortest_represented_operators": 37
+        },
+        {
+          "cumulative_represented_operators": 158,
+          "depth": 8,
+          "new_shortest_represented_operators": 46
+        },
+        {
+          "cumulative_represented_operators": 214,
+          "depth": 9,
+          "new_shortest_represented_operators": 56
+        },
+        {
+          "cumulative_represented_operators": 262,
+          "depth": 10,
+          "new_shortest_represented_operators": 48
+        },
+        {
+          "cumulative_represented_operators": 300,
+          "depth": 11,
+          "new_shortest_represented_operators": 38
+        },
+        {
+          "cumulative_represented_operators": 334,
+          "depth": 12,
+          "new_shortest_represented_operators": 34
+        },
+        {
+          "cumulative_represented_operators": 354,
+          "depth": 13,
+          "new_shortest_represented_operators": 20
+        },
+        {
+          "cumulative_represented_operators": 360,
+          "depth": 14,
+          "new_shortest_represented_operators": 6
+        }
+      ],
+      "distinct_represented_letter_count": 3,
+      "finite_first_hit_count": 4,
+      "first_hit_depth_sha256": "3613c3e1f49a7dd2bc2468afcc33f58c4f0ee9716dbc99d06f25251d3b832735",
+      "first_hit_witnesses_sha256": "277f6909b19d4bec3ad685c698d0988190d9f04d24f7ad1ae8629d4bc85ff688",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "62fb5345b409f33f39a177a3c89d292b968b0721916f861d1f3692998541280a",
+      "label_count": 3,
+      "label_to_operator_sha256": "2aacd848d88b3710ee9da0dbe9dbe0706e4bba66632ad3aee65444d6e53afc77",
+      "realization_id": "delta-2-4-5-i6-c001-v2.y_cycles",
+      "represented_positive_closure_order": 360,
+      "represented_positive_closure_sha256": "5440a5e7cb72f7263ecfceadc3854682bb3151b3db21338d26d24a2e98e5fbfb",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "c6659e16c2a78f1dc78bd4dbb5f8de5475a105546910c770255231da8c8e123b",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "7f0a0452336f7a42ab1f8b0a185f94a3d1184d495958b22d73f4f175e3729254",
+      "closure_stabilization_depth": 14,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 3,
+          "depth": 1,
+          "new_shortest_represented_operators": 3
+        },
+        {
+          "cumulative_represented_operators": 9,
+          "depth": 2,
+          "new_shortest_represented_operators": 6
+        },
+        {
+          "cumulative_represented_operators": 17,
+          "depth": 3,
+          "new_shortest_represented_operators": 8
+        },
+        {
+          "cumulative_represented_operators": 30,
+          "depth": 4,
+          "new_shortest_represented_operators": 13
+        },
+        {
+          "cumulative_represented_operators": 49,
+          "depth": 5,
+          "new_shortest_represented_operators": 19
+        },
+        {
+          "cumulative_represented_operators": 75,
+          "depth": 6,
+          "new_shortest_represented_operators": 26
+        },
+        {
+          "cumulative_represented_operators": 112,
+          "depth": 7,
+          "new_shortest_represented_operators": 37
+        },
+        {
+          "cumulative_represented_operators": 158,
+          "depth": 8,
+          "new_shortest_represented_operators": 46
+        },
+        {
+          "cumulative_represented_operators": 214,
+          "depth": 9,
+          "new_shortest_represented_operators": 56
+        },
+        {
+          "cumulative_represented_operators": 262,
+          "depth": 10,
+          "new_shortest_represented_operators": 48
+        },
+        {
+          "cumulative_represented_operators": 300,
+          "depth": 11,
+          "new_shortest_represented_operators": 38
+        },
+        {
+          "cumulative_represented_operators": 334,
+          "depth": 12,
+          "new_shortest_represented_operators": 34
+        },
+        {
+          "cumulative_represented_operators": 354,
+          "depth": 13,
+          "new_shortest_represented_operators": 20
+        },
+        {
+          "cumulative_represented_operators": 360,
+          "depth": 14,
+          "new_shortest_represented_operators": 6
+        }
+      ],
+      "distinct_represented_letter_count": 3,
+      "finite_first_hit_count": 4,
+      "first_hit_depth_sha256": "36b0b4b8cb63f2936b08f158becae98bb26c181540955f1ae16fc970ed1ccc2c",
+      "first_hit_witnesses_sha256": "a22bdc0fa014ffd06dd53fd2c774697fc99fa7a54ef62ae93657aace59e831ba",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "62fb5345b409f33f39a177a3c89d292b968b0721916f861d1f3692998541280a",
+      "label_count": 3,
+      "label_to_operator_sha256": "2aacd848d88b3710ee9da0dbe9dbe0706e4bba66632ad3aee65444d6e53afc77",
+      "realization_id": "delta-2-4-5-i6-c001-v2.z_cycles",
+      "represented_positive_closure_order": 360,
+      "represented_positive_closure_sha256": "5440a5e7cb72f7263ecfceadc3854682bb3151b3db21338d26d24a2e98e5fbfb",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "49e13cbd5647937dfa786017aeb5deba8ffdf0ad2bb42520ae0a64bdb7ae4bcb",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "fab3b49de6f77e49d52368efac511e062c19fd5c4111ed392f6a4d4b7c24f8fa",
+      "closure_stabilization_depth": 9,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 3,
+          "depth": 1,
+          "new_shortest_represented_operators": 3
+        },
+        {
+          "cumulative_represented_operators": 9,
+          "depth": 2,
+          "new_shortest_represented_operators": 6
+        },
+        {
+          "cumulative_represented_operators": 17,
+          "depth": 3,
+          "new_shortest_represented_operators": 8
+        },
+        {
+          "cumulative_represented_operators": 30,
+          "depth": 4,
+          "new_shortest_represented_operators": 13
+        },
+        {
+          "cumulative_represented_operators": 49,
+          "depth": 5,
+          "new_shortest_represented_operators": 19
+        },
+        {
+          "cumulative_represented_operators": 73,
+          "depth": 6,
+          "new_shortest_represented_operators": 24
+        },
+        {
+          "cumulative_represented_operators": 102,
+          "depth": 7,
+          "new_shortest_represented_operators": 29
+        },
+        {
+          "cumulative_represented_operators": 119,
+          "depth": 8,
+          "new_shortest_represented_operators": 17
+        },
+        {
+          "cumulative_represented_operators": 120,
+          "depth": 9,
+          "new_shortest_represented_operators": 1
+        }
+      ],
+      "distinct_represented_letter_count": 3,
+      "finite_first_hit_count": 9,
+      "first_hit_depth_sha256": "8521d89afab0b73a5bee79e11969c8ad64378de702a79799107d3c56a98593be",
+      "first_hit_witnesses_sha256": "205bec65b9c705942d2dd5415de87baf21a244b2f0090ed9a276e8c269626a15",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "62fb5345b409f33f39a177a3c89d292b968b0721916f861d1f3692998541280a",
+      "label_count": 3,
+      "label_to_operator_sha256": "7b66bab784e1633353d50d73d9a0c677579c802061dc248f21d8d535defd4010",
+      "realization_id": "delta-2-4-5-i6-c002-v2.x_cycles",
+      "represented_positive_closure_order": 120,
+      "represented_positive_closure_sha256": "2eecae94f4cc0d33cb564d3909e8d236985318d13560542376aa92fb2d48f072",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "a1d2cb2a5fc4dac6a769e500374e86b58fe6b799854daf73f6f249190e6b025a",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "7cf8f3c1e033c665b04c3643d5e936197efbf6f157ac1deb32ce3ae4069b49fc",
+      "closure_stabilization_depth": 9,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 3,
+          "depth": 1,
+          "new_shortest_represented_operators": 3
+        },
+        {
+          "cumulative_represented_operators": 9,
+          "depth": 2,
+          "new_shortest_represented_operators": 6
+        },
+        {
+          "cumulative_represented_operators": 17,
+          "depth": 3,
+          "new_shortest_represented_operators": 8
+        },
+        {
+          "cumulative_represented_operators": 30,
+          "depth": 4,
+          "new_shortest_represented_operators": 13
+        },
+        {
+          "cumulative_represented_operators": 49,
+          "depth": 5,
+          "new_shortest_represented_operators": 19
+        },
+        {
+          "cumulative_represented_operators": 73,
+          "depth": 6,
+          "new_shortest_represented_operators": 24
+        },
+        {
+          "cumulative_represented_operators": 102,
+          "depth": 7,
+          "new_shortest_represented_operators": 29
+        },
+        {
+          "cumulative_represented_operators": 119,
+          "depth": 8,
+          "new_shortest_represented_operators": 17
+        },
+        {
+          "cumulative_represented_operators": 120,
+          "depth": 9,
+          "new_shortest_represented_operators": 1
+        }
+      ],
+      "distinct_represented_letter_count": 3,
+      "finite_first_hit_count": 9,
+      "first_hit_depth_sha256": "d8200ed2b626b7088287d8f0b2d046ce2f4744ef1ca755efaa30fb574cc7abba",
+      "first_hit_witnesses_sha256": "79bff216d0ba35f37104abd921ea00cbb631ab44cc21749373ecb6ca8308e869",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "62fb5345b409f33f39a177a3c89d292b968b0721916f861d1f3692998541280a",
+      "label_count": 3,
+      "label_to_operator_sha256": "7b66bab784e1633353d50d73d9a0c677579c802061dc248f21d8d535defd4010",
+      "realization_id": "delta-2-4-5-i6-c002-v2.y_cycles",
+      "represented_positive_closure_order": 120,
+      "represented_positive_closure_sha256": "2eecae94f4cc0d33cb564d3909e8d236985318d13560542376aa92fb2d48f072",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "36cbaf479b543838dfd9a707da7726eb7ca8462bf165c68414cd10148aca127f",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "60779566fae499ae899b57d71aea39b348dd0e51f9ef6a7a69e73c2aae8db6d0",
+      "closure_stabilization_depth": 9,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 3,
+          "depth": 1,
+          "new_shortest_represented_operators": 3
+        },
+        {
+          "cumulative_represented_operators": 9,
+          "depth": 2,
+          "new_shortest_represented_operators": 6
+        },
+        {
+          "cumulative_represented_operators": 17,
+          "depth": 3,
+          "new_shortest_represented_operators": 8
+        },
+        {
+          "cumulative_represented_operators": 30,
+          "depth": 4,
+          "new_shortest_represented_operators": 13
+        },
+        {
+          "cumulative_represented_operators": 49,
+          "depth": 5,
+          "new_shortest_represented_operators": 19
+        },
+        {
+          "cumulative_represented_operators": 73,
+          "depth": 6,
+          "new_shortest_represented_operators": 24
+        },
+        {
+          "cumulative_represented_operators": 102,
+          "depth": 7,
+          "new_shortest_represented_operators": 29
+        },
+        {
+          "cumulative_represented_operators": 119,
+          "depth": 8,
+          "new_shortest_represented_operators": 17
+        },
+        {
+          "cumulative_represented_operators": 120,
+          "depth": 9,
+          "new_shortest_represented_operators": 1
+        }
+      ],
+      "distinct_represented_letter_count": 3,
+      "finite_first_hit_count": 4,
+      "first_hit_depth_sha256": "36b0b4b8cb63f2936b08f158becae98bb26c181540955f1ae16fc970ed1ccc2c",
+      "first_hit_witnesses_sha256": "da6f764a802e616a2761e9c331d8df96004d7d85f6433c2683c79aad31d0a959",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "62fb5345b409f33f39a177a3c89d292b968b0721916f861d1f3692998541280a",
+      "label_count": 3,
+      "label_to_operator_sha256": "7b66bab784e1633353d50d73d9a0c677579c802061dc248f21d8d535defd4010",
+      "realization_id": "delta-2-4-5-i6-c002-v2.z_cycles",
+      "represented_positive_closure_order": 120,
+      "represented_positive_closure_sha256": "2eecae94f4cc0d33cb564d3909e8d236985318d13560542376aa92fb2d48f072",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "d9e2032608a493c974721211a23af29bd9fcea591a12288f4faeefbc14abbb16",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "e889e0b13c087c6aab172541f05ccb45b6d12c17b38180fb01e7adf12dccd60d",
+      "closure_stabilization_depth": 2,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 2,
+          "depth": 1,
+          "new_shortest_represented_operators": 2
+        },
+        {
+          "cumulative_represented_operators": 3,
+          "depth": 2,
+          "new_shortest_represented_operators": 1
+        }
+      ],
+      "distinct_represented_letter_count": 2,
+      "finite_first_hit_count": 1,
+      "first_hit_depth_sha256": "043f347c2cdc0d8ce70c38775d24e556c0290acf6d0c87a3a52aa85471cb8d02",
+      "first_hit_witnesses_sha256": "35097b28e181b5c0dfb28d367f8e7a441db2a3f51d59b2866b5331261e7715f8",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "5b133b07e23cb0e359274e37a4620bb0aaf9924579b8080a904d5722c1dd6148",
+      "label_count": 4,
+      "label_to_operator_sha256": "a6a6d2182b0393067648645b1247279aa2a5d24dcc60d8e571667b2833426a49",
+      "realization_id": "delta-3-3-4-i3-c000-v2.x_cycles",
+      "represented_positive_closure_order": 3,
+      "represented_positive_closure_sha256": "9ae3a8423176ba4b10daebe31239c0dfe362500241361d9bf376ac01a4cb73fc",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "aa766e53d3d3dd46260bdd8985eb2851a61e5da2156052a75560d814e4ece156",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "e889e0b13c087c6aab172541f05ccb45b6d12c17b38180fb01e7adf12dccd60d",
+      "closure_stabilization_depth": 2,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 2,
+          "depth": 1,
+          "new_shortest_represented_operators": 2
+        },
+        {
+          "cumulative_represented_operators": 3,
+          "depth": 2,
+          "new_shortest_represented_operators": 1
+        }
+      ],
+      "distinct_represented_letter_count": 2,
+      "finite_first_hit_count": 1,
+      "first_hit_depth_sha256": "043f347c2cdc0d8ce70c38775d24e556c0290acf6d0c87a3a52aa85471cb8d02",
+      "first_hit_witnesses_sha256": "35097b28e181b5c0dfb28d367f8e7a441db2a3f51d59b2866b5331261e7715f8",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "5b133b07e23cb0e359274e37a4620bb0aaf9924579b8080a904d5722c1dd6148",
+      "label_count": 4,
+      "label_to_operator_sha256": "a6a6d2182b0393067648645b1247279aa2a5d24dcc60d8e571667b2833426a49",
+      "realization_id": "delta-3-3-4-i3-c000-v2.y_cycles",
+      "represented_positive_closure_order": 3,
+      "represented_positive_closure_sha256": "9ae3a8423176ba4b10daebe31239c0dfe362500241361d9bf376ac01a4cb73fc",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "aa766e53d3d3dd46260bdd8985eb2851a61e5da2156052a75560d814e4ece156",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "21d1e952e2ca6e9449bdf436c1b037178b1b54dda9c930303ce65a2eafa3ef0d",
+      "closure_stabilization_depth": 2,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 2,
+          "depth": 1,
+          "new_shortest_represented_operators": 2
+        },
+        {
+          "cumulative_represented_operators": 3,
+          "depth": 2,
+          "new_shortest_represented_operators": 1
+        }
+      ],
+      "distinct_represented_letter_count": 2,
+      "finite_first_hit_count": 9,
+      "first_hit_depth_sha256": "c3a698c2adffe369207b1a8819dae2060530f6bb10682655fcce2bb6c587e409",
+      "first_hit_witnesses_sha256": "e4bc60000ceb46c8c9ee5251901987e1327b0c419b9349ccfb3d114a76dc6aa8",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "5b133b07e23cb0e359274e37a4620bb0aaf9924579b8080a904d5722c1dd6148",
+      "label_count": 4,
+      "label_to_operator_sha256": "a6a6d2182b0393067648645b1247279aa2a5d24dcc60d8e571667b2833426a49",
+      "realization_id": "delta-3-3-4-i3-c000-v2.z_cycles",
+      "represented_positive_closure_order": 3,
+      "represented_positive_closure_sha256": "9ae3a8423176ba4b10daebe31239c0dfe362500241361d9bf376ac01a4cb73fc",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "1f40aff81e6bc99080eeb68eb2c35024a6cc3dab63f6c911a63c9b743598cf0d",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "8529992a5f87766095e032d5dd3af3ade13b30f6400d2f75362d418f597ed297",
+      "closure_stabilization_depth": 3,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 4,
+          "depth": 1,
+          "new_shortest_represented_operators": 4
+        },
+        {
+          "cumulative_represented_operators": 11,
+          "depth": 2,
+          "new_shortest_represented_operators": 7
+        },
+        {
+          "cumulative_represented_operators": 12,
+          "depth": 3,
+          "new_shortest_represented_operators": 1
+        }
+      ],
+      "distinct_represented_letter_count": 4,
+      "finite_first_hit_count": 4,
+      "first_hit_depth_sha256": "3613c3e1f49a7dd2bc2468afcc33f58c4f0ee9716dbc99d06f25251d3b832735",
+      "first_hit_witnesses_sha256": "358c4773a16d53b2b1cce215846e6ae9fe53347015a765c20b34cb8f0068e05b",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "5b133b07e23cb0e359274e37a4620bb0aaf9924579b8080a904d5722c1dd6148",
+      "label_count": 4,
+      "label_to_operator_sha256": "ab803440f2ece890812d65918815de2e13d8e47856e65b94f8ceb81e847d2ed8",
+      "realization_id": "delta-3-3-4-i4-c000-v2.x_cycles",
+      "represented_positive_closure_order": 12,
+      "represented_positive_closure_sha256": "9a599ba44c9286fc1937b61ccbe4e27b50e1e0d1c6b74c6115cb03b6b5bf9af2",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "3274bbec42a8a8236296c6da0e3d617876065ca6761eeb5e86fc9a3cd347f4c9",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "8529992a5f87766095e032d5dd3af3ade13b30f6400d2f75362d418f597ed297",
+      "closure_stabilization_depth": 3,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 4,
+          "depth": 1,
+          "new_shortest_represented_operators": 4
+        },
+        {
+          "cumulative_represented_operators": 11,
+          "depth": 2,
+          "new_shortest_represented_operators": 7
+        },
+        {
+          "cumulative_represented_operators": 12,
+          "depth": 3,
+          "new_shortest_represented_operators": 1
+        }
+      ],
+      "distinct_represented_letter_count": 4,
+      "finite_first_hit_count": 4,
+      "first_hit_depth_sha256": "3613c3e1f49a7dd2bc2468afcc33f58c4f0ee9716dbc99d06f25251d3b832735",
+      "first_hit_witnesses_sha256": "0d195f81a4bfaeb2befa5f069caf9cbacd03b54c2add1e1a700ff6dcf8c28480",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "5b133b07e23cb0e359274e37a4620bb0aaf9924579b8080a904d5722c1dd6148",
+      "label_count": 4,
+      "label_to_operator_sha256": "ab803440f2ece890812d65918815de2e13d8e47856e65b94f8ceb81e847d2ed8",
+      "realization_id": "delta-3-3-4-i4-c000-v2.y_cycles",
+      "represented_positive_closure_order": 12,
+      "represented_positive_closure_sha256": "9a599ba44c9286fc1937b61ccbe4e27b50e1e0d1c6b74c6115cb03b6b5bf9af2",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "b66f495ce53f0724795e0b8a6d6c51e20adba457c4f29f23d7f384301e6c38c2",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "8529992a5f87766095e032d5dd3af3ade13b30f6400d2f75362d418f597ed297",
+      "closure_stabilization_depth": 3,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 4,
+          "depth": 1,
+          "new_shortest_represented_operators": 4
+        },
+        {
+          "cumulative_represented_operators": 11,
+          "depth": 2,
+          "new_shortest_represented_operators": 7
+        },
+        {
+          "cumulative_represented_operators": 12,
+          "depth": 3,
+          "new_shortest_represented_operators": 1
+        }
+      ],
+      "distinct_represented_letter_count": 4,
+      "finite_first_hit_count": 4,
+      "first_hit_depth_sha256": "3613c3e1f49a7dd2bc2468afcc33f58c4f0ee9716dbc99d06f25251d3b832735",
+      "first_hit_witnesses_sha256": "4b787152d17ba16ed63be10631ddcfbce46c285e7fb0b907b2046cb9abb86cad",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "5b133b07e23cb0e359274e37a4620bb0aaf9924579b8080a904d5722c1dd6148",
+      "label_count": 4,
+      "label_to_operator_sha256": "ab803440f2ece890812d65918815de2e13d8e47856e65b94f8ceb81e847d2ed8",
+      "realization_id": "delta-3-3-4-i4-c000-v2.z_cycles",
+      "represented_positive_closure_order": 12,
+      "represented_positive_closure_sha256": "9a599ba44c9286fc1937b61ccbe4e27b50e1e0d1c6b74c6115cb03b6b5bf9af2",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "7cee6319d2ba1554fac7898220c5078535e39edd998bcecb59b8e5aa3b527856",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "a907deccf5ef70a68c846edd0e2117e55f615eb555bd07666441617588a8baea",
+      "closure_stabilization_depth": 10,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 4,
+          "depth": 1,
+          "new_shortest_represented_operators": 4
+        },
+        {
+          "cumulative_represented_operators": 13,
+          "depth": 2,
+          "new_shortest_represented_operators": 9
+        },
+        {
+          "cumulative_represented_operators": 29,
+          "depth": 3,
+          "new_shortest_represented_operators": 16
+        },
+        {
+          "cumulative_represented_operators": 59,
+          "depth": 4,
+          "new_shortest_represented_operators": 30
+        },
+        {
+          "cumulative_represented_operators": 107,
+          "depth": 5,
+          "new_shortest_represented_operators": 48
+        },
+        {
+          "cumulative_represented_operators": 181,
+          "depth": 6,
+          "new_shortest_represented_operators": 74
+        },
+        {
+          "cumulative_represented_operators": 283,
+          "depth": 7,
+          "new_shortest_represented_operators": 102
+        },
+        {
+          "cumulative_represented_operators": 355,
+          "depth": 8,
+          "new_shortest_represented_operators": 72
+        },
+        {
+          "cumulative_represented_operators": 359,
+          "depth": 9,
+          "new_shortest_represented_operators": 4
+        },
+        {
+          "cumulative_represented_operators": 360,
+          "depth": 10,
+          "new_shortest_represented_operators": 1
+        }
+      ],
+      "distinct_represented_letter_count": 4,
+      "finite_first_hit_count": 16,
+      "first_hit_depth_sha256": "cd9acb9eeafb3f385f21d9507c6d14590f0e8c843c64e56cc7085019d578008a",
+      "first_hit_witnesses_sha256": "7dd92f551f222cb054b7679123e94a787e60ca88373d36ddb2a20049581b36aa",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "5b133b07e23cb0e359274e37a4620bb0aaf9924579b8080a904d5722c1dd6148",
+      "label_count": 4,
+      "label_to_operator_sha256": "160df87dd6fb84427705bb3e03fe3db27e1c74cdba15f18e738722a536ceb9b1",
+      "realization_id": "delta-3-3-4-i6-c000-v2.x_cycles",
+      "represented_positive_closure_order": 360,
+      "represented_positive_closure_sha256": "5440a5e7cb72f7263ecfceadc3854682bb3151b3db21338d26d24a2e98e5fbfb",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "ec4400e0a2a2e0ffa3db5fe15d18ba51a37f8b71e429090f6831ff68f03ee829",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "869380cee94e3a62b73286a11e151e36cbf8887e9ca5504d03c0f26170bd9aea",
+      "closure_stabilization_depth": 10,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 4,
+          "depth": 1,
+          "new_shortest_represented_operators": 4
+        },
+        {
+          "cumulative_represented_operators": 13,
+          "depth": 2,
+          "new_shortest_represented_operators": 9
+        },
+        {
+          "cumulative_represented_operators": 29,
+          "depth": 3,
+          "new_shortest_represented_operators": 16
+        },
+        {
+          "cumulative_represented_operators": 59,
+          "depth": 4,
+          "new_shortest_represented_operators": 30
+        },
+        {
+          "cumulative_represented_operators": 107,
+          "depth": 5,
+          "new_shortest_represented_operators": 48
+        },
+        {
+          "cumulative_represented_operators": 181,
+          "depth": 6,
+          "new_shortest_represented_operators": 74
+        },
+        {
+          "cumulative_represented_operators": 283,
+          "depth": 7,
+          "new_shortest_represented_operators": 102
+        },
+        {
+          "cumulative_represented_operators": 355,
+          "depth": 8,
+          "new_shortest_represented_operators": 72
+        },
+        {
+          "cumulative_represented_operators": 359,
+          "depth": 9,
+          "new_shortest_represented_operators": 4
+        },
+        {
+          "cumulative_represented_operators": 360,
+          "depth": 10,
+          "new_shortest_represented_operators": 1
+        }
+      ],
+      "distinct_represented_letter_count": 4,
+      "finite_first_hit_count": 4,
+      "first_hit_depth_sha256": "3613c3e1f49a7dd2bc2468afcc33f58c4f0ee9716dbc99d06f25251d3b832735",
+      "first_hit_witnesses_sha256": "0ba424f29d4834ecb09d2e6eab2a35bcdc87429eddf75a7a7ec7d348d68cb677",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "5b133b07e23cb0e359274e37a4620bb0aaf9924579b8080a904d5722c1dd6148",
+      "label_count": 4,
+      "label_to_operator_sha256": "160df87dd6fb84427705bb3e03fe3db27e1c74cdba15f18e738722a536ceb9b1",
+      "realization_id": "delta-3-3-4-i6-c000-v2.y_cycles",
+      "represented_positive_closure_order": 360,
+      "represented_positive_closure_sha256": "5440a5e7cb72f7263ecfceadc3854682bb3151b3db21338d26d24a2e98e5fbfb",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "a117d04fe8d22bfa50043ac3145b6be303a291e79be42822da04162ce2f9d900",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "869380cee94e3a62b73286a11e151e36cbf8887e9ca5504d03c0f26170bd9aea",
+      "closure_stabilization_depth": 10,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 4,
+          "depth": 1,
+          "new_shortest_represented_operators": 4
+        },
+        {
+          "cumulative_represented_operators": 13,
+          "depth": 2,
+          "new_shortest_represented_operators": 9
+        },
+        {
+          "cumulative_represented_operators": 29,
+          "depth": 3,
+          "new_shortest_represented_operators": 16
+        },
+        {
+          "cumulative_represented_operators": 59,
+          "depth": 4,
+          "new_shortest_represented_operators": 30
+        },
+        {
+          "cumulative_represented_operators": 107,
+          "depth": 5,
+          "new_shortest_represented_operators": 48
+        },
+        {
+          "cumulative_represented_operators": 181,
+          "depth": 6,
+          "new_shortest_represented_operators": 74
+        },
+        {
+          "cumulative_represented_operators": 283,
+          "depth": 7,
+          "new_shortest_represented_operators": 102
+        },
+        {
+          "cumulative_represented_operators": 355,
+          "depth": 8,
+          "new_shortest_represented_operators": 72
+        },
+        {
+          "cumulative_represented_operators": 359,
+          "depth": 9,
+          "new_shortest_represented_operators": 4
+        },
+        {
+          "cumulative_represented_operators": 360,
+          "depth": 10,
+          "new_shortest_represented_operators": 1
+        }
+      ],
+      "distinct_represented_letter_count": 4,
+      "finite_first_hit_count": 4,
+      "first_hit_depth_sha256": "3613c3e1f49a7dd2bc2468afcc33f58c4f0ee9716dbc99d06f25251d3b832735",
+      "first_hit_witnesses_sha256": "f9d495f3530d51ac54e53b68e034bac61be89c02cc99d1d3524d7df7c1d03602",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "5b133b07e23cb0e359274e37a4620bb0aaf9924579b8080a904d5722c1dd6148",
+      "label_count": 4,
+      "label_to_operator_sha256": "160df87dd6fb84427705bb3e03fe3db27e1c74cdba15f18e738722a536ceb9b1",
+      "realization_id": "delta-3-3-4-i6-c000-v2.z_cycles",
+      "represented_positive_closure_order": 360,
+      "represented_positive_closure_sha256": "5440a5e7cb72f7263ecfceadc3854682bb3151b3db21338d26d24a2e98e5fbfb",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "446de3b028c8234c20be8e32d5c269b0a8b75a0de3e3bb2f464c655b31a77ead",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "869380cee94e3a62b73286a11e151e36cbf8887e9ca5504d03c0f26170bd9aea",
+      "closure_stabilization_depth": 10,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 4,
+          "depth": 1,
+          "new_shortest_represented_operators": 4
+        },
+        {
+          "cumulative_represented_operators": 13,
+          "depth": 2,
+          "new_shortest_represented_operators": 9
+        },
+        {
+          "cumulative_represented_operators": 29,
+          "depth": 3,
+          "new_shortest_represented_operators": 16
+        },
+        {
+          "cumulative_represented_operators": 59,
+          "depth": 4,
+          "new_shortest_represented_operators": 30
+        },
+        {
+          "cumulative_represented_operators": 107,
+          "depth": 5,
+          "new_shortest_represented_operators": 48
+        },
+        {
+          "cumulative_represented_operators": 181,
+          "depth": 6,
+          "new_shortest_represented_operators": 74
+        },
+        {
+          "cumulative_represented_operators": 283,
+          "depth": 7,
+          "new_shortest_represented_operators": 102
+        },
+        {
+          "cumulative_represented_operators": 355,
+          "depth": 8,
+          "new_shortest_represented_operators": 72
+        },
+        {
+          "cumulative_represented_operators": 359,
+          "depth": 9,
+          "new_shortest_represented_operators": 4
+        },
+        {
+          "cumulative_represented_operators": 360,
+          "depth": 10,
+          "new_shortest_represented_operators": 1
+        }
+      ],
+      "distinct_represented_letter_count": 4,
+      "finite_first_hit_count": 4,
+      "first_hit_depth_sha256": "3613c3e1f49a7dd2bc2468afcc33f58c4f0ee9716dbc99d06f25251d3b832735",
+      "first_hit_witnesses_sha256": "4c83a5ed93c544a3dd9701b8e25aa5bebd31c841515b16641ce8f4add5ab0733",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "5b133b07e23cb0e359274e37a4620bb0aaf9924579b8080a904d5722c1dd6148",
+      "label_count": 4,
+      "label_to_operator_sha256": "dd2c00fcf8cfcb434483d207eadcd6ba9de2d839e434b623616d5765a3479fb2",
+      "realization_id": "delta-3-3-4-i6-c001-v2.x_cycles",
+      "represented_positive_closure_order": 360,
+      "represented_positive_closure_sha256": "5440a5e7cb72f7263ecfceadc3854682bb3151b3db21338d26d24a2e98e5fbfb",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "ab35013b00d9e0f9fb8696536abfa913a9df38ef61b2e1d5391df3ff5f025896",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "33e4c584a562c78ec9bc49c9f0cd125aec2bb1e111f3a1dae85d483fbab93530",
+      "closure_stabilization_depth": 10,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 4,
+          "depth": 1,
+          "new_shortest_represented_operators": 4
+        },
+        {
+          "cumulative_represented_operators": 13,
+          "depth": 2,
+          "new_shortest_represented_operators": 9
+        },
+        {
+          "cumulative_represented_operators": 29,
+          "depth": 3,
+          "new_shortest_represented_operators": 16
+        },
+        {
+          "cumulative_represented_operators": 59,
+          "depth": 4,
+          "new_shortest_represented_operators": 30
+        },
+        {
+          "cumulative_represented_operators": 107,
+          "depth": 5,
+          "new_shortest_represented_operators": 48
+        },
+        {
+          "cumulative_represented_operators": 181,
+          "depth": 6,
+          "new_shortest_represented_operators": 74
+        },
+        {
+          "cumulative_represented_operators": 283,
+          "depth": 7,
+          "new_shortest_represented_operators": 102
+        },
+        {
+          "cumulative_represented_operators": 355,
+          "depth": 8,
+          "new_shortest_represented_operators": 72
+        },
+        {
+          "cumulative_represented_operators": 359,
+          "depth": 9,
+          "new_shortest_represented_operators": 4
+        },
+        {
+          "cumulative_represented_operators": 360,
+          "depth": 10,
+          "new_shortest_represented_operators": 1
+        }
+      ],
+      "distinct_represented_letter_count": 4,
+      "finite_first_hit_count": 16,
+      "first_hit_depth_sha256": "0d56c228ff213488b7dda7a69b100fb1d7c1897f15a7347e0d44f488f40b0b70",
+      "first_hit_witnesses_sha256": "b177adce4a230adcd473d4d25734ad96273cc79167500c1dfaebf410630d7396",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "5b133b07e23cb0e359274e37a4620bb0aaf9924579b8080a904d5722c1dd6148",
+      "label_count": 4,
+      "label_to_operator_sha256": "dd2c00fcf8cfcb434483d207eadcd6ba9de2d839e434b623616d5765a3479fb2",
+      "realization_id": "delta-3-3-4-i6-c001-v2.y_cycles",
+      "represented_positive_closure_order": 360,
+      "represented_positive_closure_sha256": "5440a5e7cb72f7263ecfceadc3854682bb3151b3db21338d26d24a2e98e5fbfb",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "88d385a66de86c7d44840791994e65720d74a089193b4b394285d918610725e6",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "869380cee94e3a62b73286a11e151e36cbf8887e9ca5504d03c0f26170bd9aea",
+      "closure_stabilization_depth": 10,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 4,
+          "depth": 1,
+          "new_shortest_represented_operators": 4
+        },
+        {
+          "cumulative_represented_operators": 13,
+          "depth": 2,
+          "new_shortest_represented_operators": 9
+        },
+        {
+          "cumulative_represented_operators": 29,
+          "depth": 3,
+          "new_shortest_represented_operators": 16
+        },
+        {
+          "cumulative_represented_operators": 59,
+          "depth": 4,
+          "new_shortest_represented_operators": 30
+        },
+        {
+          "cumulative_represented_operators": 107,
+          "depth": 5,
+          "new_shortest_represented_operators": 48
+        },
+        {
+          "cumulative_represented_operators": 181,
+          "depth": 6,
+          "new_shortest_represented_operators": 74
+        },
+        {
+          "cumulative_represented_operators": 283,
+          "depth": 7,
+          "new_shortest_represented_operators": 102
+        },
+        {
+          "cumulative_represented_operators": 355,
+          "depth": 8,
+          "new_shortest_represented_operators": 72
+        },
+        {
+          "cumulative_represented_operators": 359,
+          "depth": 9,
+          "new_shortest_represented_operators": 4
+        },
+        {
+          "cumulative_represented_operators": 360,
+          "depth": 10,
+          "new_shortest_represented_operators": 1
+        }
+      ],
+      "distinct_represented_letter_count": 4,
+      "finite_first_hit_count": 4,
+      "first_hit_depth_sha256": "3613c3e1f49a7dd2bc2468afcc33f58c4f0ee9716dbc99d06f25251d3b832735",
+      "first_hit_witnesses_sha256": "e9770b622ba11b87d3d03dc6472d0163c10ef4869ab9c7a07af8eab573290f66",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "5b133b07e23cb0e359274e37a4620bb0aaf9924579b8080a904d5722c1dd6148",
+      "label_count": 4,
+      "label_to_operator_sha256": "dd2c00fcf8cfcb434483d207eadcd6ba9de2d839e434b623616d5765a3479fb2",
+      "realization_id": "delta-3-3-4-i6-c001-v2.z_cycles",
+      "represented_positive_closure_order": 360,
+      "represented_positive_closure_sha256": "5440a5e7cb72f7263ecfceadc3854682bb3151b3db21338d26d24a2e98e5fbfb",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "d9d1e3f176c97447b457e6aab9b2e115592a8619f03779eb43575ffad6dcfb6a",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "8529992a5f87766095e032d5dd3af3ade13b30f6400d2f75362d418f597ed297",
+      "closure_stabilization_depth": 3,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 4,
+          "depth": 1,
+          "new_shortest_represented_operators": 4
+        },
+        {
+          "cumulative_represented_operators": 11,
+          "depth": 2,
+          "new_shortest_represented_operators": 7
+        },
+        {
+          "cumulative_represented_operators": 12,
+          "depth": 3,
+          "new_shortest_represented_operators": 1
+        }
+      ],
+      "distinct_represented_letter_count": 4,
+      "finite_first_hit_count": 4,
+      "first_hit_depth_sha256": "3613c3e1f49a7dd2bc2468afcc33f58c4f0ee9716dbc99d06f25251d3b832735",
+      "first_hit_witnesses_sha256": "1cbd6401fa124f8ec48a458550b08ef90a708ab4a79394f001a770e0c81bf219",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "5b133b07e23cb0e359274e37a4620bb0aaf9924579b8080a904d5722c1dd6148",
+      "label_count": 4,
+      "label_to_operator_sha256": "125097a1c738e985f3a4bb9955dd35e8c395baa7f3518d08b8dcaf9c5f24d3cb",
+      "realization_id": "delta-3-3-4-i6-c002-v2.x_cycles",
+      "represented_positive_closure_order": 12,
+      "represented_positive_closure_sha256": "b22c1c447425d6736b875f25a79024e2aa5f1efd00f1e33fc18911a30d44825b",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "ab35013b00d9e0f9fb8696536abfa913a9df38ef61b2e1d5391df3ff5f025896",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "8529992a5f87766095e032d5dd3af3ade13b30f6400d2f75362d418f597ed297",
+      "closure_stabilization_depth": 3,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 4,
+          "depth": 1,
+          "new_shortest_represented_operators": 4
+        },
+        {
+          "cumulative_represented_operators": 11,
+          "depth": 2,
+          "new_shortest_represented_operators": 7
+        },
+        {
+          "cumulative_represented_operators": 12,
+          "depth": 3,
+          "new_shortest_represented_operators": 1
+        }
+      ],
+      "distinct_represented_letter_count": 4,
+      "finite_first_hit_count": 4,
+      "first_hit_depth_sha256": "3613c3e1f49a7dd2bc2468afcc33f58c4f0ee9716dbc99d06f25251d3b832735",
+      "first_hit_witnesses_sha256": "75331f7605dc4d91176a0604a5bcedec8da856d53753871617b3a253521e8880",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "5b133b07e23cb0e359274e37a4620bb0aaf9924579b8080a904d5722c1dd6148",
+      "label_count": 4,
+      "label_to_operator_sha256": "125097a1c738e985f3a4bb9955dd35e8c395baa7f3518d08b8dcaf9c5f24d3cb",
+      "realization_id": "delta-3-3-4-i6-c002-v2.y_cycles",
+      "represented_positive_closure_order": 12,
+      "represented_positive_closure_sha256": "b22c1c447425d6736b875f25a79024e2aa5f1efd00f1e33fc18911a30d44825b",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "ef62fe6ae8d6b2397b85769a6029783d2fa79bae5a2b1f3fa8f56e2f519b5e0e",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "daf1e9b5cc9bb50160ee8ae56193732cd979fc31168b878f465bad8e867354c0",
+      "closure_stabilization_depth": 3,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 4,
+          "depth": 1,
+          "new_shortest_represented_operators": 4
+        },
+        {
+          "cumulative_represented_operators": 11,
+          "depth": 2,
+          "new_shortest_represented_operators": 7
+        },
+        {
+          "cumulative_represented_operators": 12,
+          "depth": 3,
+          "new_shortest_represented_operators": 1
+        }
+      ],
+      "distinct_represented_letter_count": 4,
+      "finite_first_hit_count": 16,
+      "first_hit_depth_sha256": "66900e27b180b8877a635c99768d00ea559eb99c80582ea762d6ebbf6e4cc49c",
+      "first_hit_witnesses_sha256": "d40fb29fe761aa55e8f892c86413fde724dc4e7b0a0c5067876fc0027871e159",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "5b133b07e23cb0e359274e37a4620bb0aaf9924579b8080a904d5722c1dd6148",
+      "label_count": 4,
+      "label_to_operator_sha256": "125097a1c738e985f3a4bb9955dd35e8c395baa7f3518d08b8dcaf9c5f24d3cb",
+      "realization_id": "delta-3-3-4-i6-c002-v2.z_cycles",
+      "represented_positive_closure_order": 12,
+      "represented_positive_closure_sha256": "b22c1c447425d6736b875f25a79024e2aa5f1efd00f1e33fc18911a30d44825b",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "a1bb065a91549a5a7912c018c3697fa4d6d7ee791cdca45cdf40d11f79c8f51a",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "5cf879aa7ca2f2c5f40eee4d33b2dca00cf768517a7ee3c054880e0fc4153092",
+      "closure_stabilization_depth": 10,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 4,
+          "depth": 1,
+          "new_shortest_represented_operators": 4
+        },
+        {
+          "cumulative_represented_operators": 13,
+          "depth": 2,
+          "new_shortest_represented_operators": 9
+        },
+        {
+          "cumulative_represented_operators": 29,
+          "depth": 3,
+          "new_shortest_represented_operators": 16
+        },
+        {
+          "cumulative_represented_operators": 57,
+          "depth": 4,
+          "new_shortest_represented_operators": 28
+        },
+        {
+          "cumulative_represented_operators": 93,
+          "depth": 5,
+          "new_shortest_represented_operators": 36
+        },
+        {
+          "cumulative_represented_operators": 133,
+          "depth": 6,
+          "new_shortest_represented_operators": 40
+        },
+        {
+          "cumulative_represented_operators": 155,
+          "depth": 7,
+          "new_shortest_represented_operators": 22
+        },
+        {
+          "cumulative_represented_operators": 163,
+          "depth": 8,
+          "new_shortest_represented_operators": 8
+        },
+        {
+          "cumulative_represented_operators": 167,
+          "depth": 9,
+          "new_shortest_represented_operators": 4
+        },
+        {
+          "cumulative_represented_operators": 168,
+          "depth": 10,
+          "new_shortest_represented_operators": 1
+        }
+      ],
+      "distinct_represented_letter_count": 4,
+      "finite_first_hit_count": 9,
+      "first_hit_depth_sha256": "d8200ed2b626b7088287d8f0b2d046ce2f4744ef1ca755efaa30fb574cc7abba",
+      "first_hit_witnesses_sha256": "ad9587d268934bbc3462cc5280563e5d48b4f840a3703a8332347802950cf2df",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "5b133b07e23cb0e359274e37a4620bb0aaf9924579b8080a904d5722c1dd6148",
+      "label_count": 4,
+      "label_to_operator_sha256": "0e6ba98d562fa76595da0825d127bfe90bae2fc84b89e8ebb5a7d4b45fe9c66e",
+      "realization_id": "delta-3-3-4-i7-c000-v2.x_cycles",
+      "represented_positive_closure_order": 168,
+      "represented_positive_closure_sha256": "2be96034d0ffb531388063aaf6cbc6de12c6997fdef41b12541e5b08bac38ec8",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "37a171cbd3acb18d1d1c22a6765bbbce2fda4e736d30dd5782fda8d038b64120",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "a9cf4c158179f47b1a41cbb1399808c8b0fb8f3e5ad362b95dec20942a86e769",
+      "closure_stabilization_depth": 10,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 4,
+          "depth": 1,
+          "new_shortest_represented_operators": 4
+        },
+        {
+          "cumulative_represented_operators": 13,
+          "depth": 2,
+          "new_shortest_represented_operators": 9
+        },
+        {
+          "cumulative_represented_operators": 29,
+          "depth": 3,
+          "new_shortest_represented_operators": 16
+        },
+        {
+          "cumulative_represented_operators": 57,
+          "depth": 4,
+          "new_shortest_represented_operators": 28
+        },
+        {
+          "cumulative_represented_operators": 93,
+          "depth": 5,
+          "new_shortest_represented_operators": 36
+        },
+        {
+          "cumulative_represented_operators": 133,
+          "depth": 6,
+          "new_shortest_represented_operators": 40
+        },
+        {
+          "cumulative_represented_operators": 155,
+          "depth": 7,
+          "new_shortest_represented_operators": 22
+        },
+        {
+          "cumulative_represented_operators": 163,
+          "depth": 8,
+          "new_shortest_represented_operators": 8
+        },
+        {
+          "cumulative_represented_operators": 167,
+          "depth": 9,
+          "new_shortest_represented_operators": 4
+        },
+        {
+          "cumulative_represented_operators": 168,
+          "depth": 10,
+          "new_shortest_represented_operators": 1
+        }
+      ],
+      "distinct_represented_letter_count": 4,
+      "finite_first_hit_count": 9,
+      "first_hit_depth_sha256": "e5683a3bb48a4c6cad9d3f0069968b09eb39f328b24e456eb9c560a5ff8a0170",
+      "first_hit_witnesses_sha256": "7436361e3339a6a9d4294bcf1b22975c5d10feebda5d365b475df90a590babf1",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "5b133b07e23cb0e359274e37a4620bb0aaf9924579b8080a904d5722c1dd6148",
+      "label_count": 4,
+      "label_to_operator_sha256": "0e6ba98d562fa76595da0825d127bfe90bae2fc84b89e8ebb5a7d4b45fe9c66e",
+      "realization_id": "delta-3-3-4-i7-c000-v2.y_cycles",
+      "represented_positive_closure_order": 168,
+      "represented_positive_closure_sha256": "2be96034d0ffb531388063aaf6cbc6de12c6997fdef41b12541e5b08bac38ec8",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "653d478ae199f0d43002fa87c09f1e16b1881f4dffabe08ecebe3b28eb466ea3",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "9ebcd32ca40d7ff94478ec2f85b6ae71fabba11a0c97fc4bbeabc6eeb16c1ff7",
+      "closure_stabilization_depth": 10,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 4,
+          "depth": 1,
+          "new_shortest_represented_operators": 4
+        },
+        {
+          "cumulative_represented_operators": 13,
+          "depth": 2,
+          "new_shortest_represented_operators": 9
+        },
+        {
+          "cumulative_represented_operators": 29,
+          "depth": 3,
+          "new_shortest_represented_operators": 16
+        },
+        {
+          "cumulative_represented_operators": 57,
+          "depth": 4,
+          "new_shortest_represented_operators": 28
+        },
+        {
+          "cumulative_represented_operators": 93,
+          "depth": 5,
+          "new_shortest_represented_operators": 36
+        },
+        {
+          "cumulative_represented_operators": 133,
+          "depth": 6,
+          "new_shortest_represented_operators": 40
+        },
+        {
+          "cumulative_represented_operators": 155,
+          "depth": 7,
+          "new_shortest_represented_operators": 22
+        },
+        {
+          "cumulative_represented_operators": 163,
+          "depth": 8,
+          "new_shortest_represented_operators": 8
+        },
+        {
+          "cumulative_represented_operators": 167,
+          "depth": 9,
+          "new_shortest_represented_operators": 4
+        },
+        {
+          "cumulative_represented_operators": 168,
+          "depth": 10,
+          "new_shortest_represented_operators": 1
+        }
+      ],
+      "distinct_represented_letter_count": 4,
+      "finite_first_hit_count": 9,
+      "first_hit_depth_sha256": "044decc12ae3f693de0d2e1c1eacfadb55a8b534193094cd7eacffe9d2ab6030",
+      "first_hit_witnesses_sha256": "ef2e7e9fd95fd3bd3b83f0129de7e35173f22e6ebf7e05919dd9380955a6796c",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "5b133b07e23cb0e359274e37a4620bb0aaf9924579b8080a904d5722c1dd6148",
+      "label_count": 4,
+      "label_to_operator_sha256": "0e6ba98d562fa76595da0825d127bfe90bae2fc84b89e8ebb5a7d4b45fe9c66e",
+      "realization_id": "delta-3-3-4-i7-c000-v2.z_cycles",
+      "represented_positive_closure_order": 168,
+      "represented_positive_closure_sha256": "2be96034d0ffb531388063aaf6cbc6de12c6997fdef41b12541e5b08bac38ec8",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "dffb6eee57a56d597b448cdcfbbdccdf6f12f208dd9734bed1a479da8bf5263b",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "5cf879aa7ca2f2c5f40eee4d33b2dca00cf768517a7ee3c054880e0fc4153092",
+      "closure_stabilization_depth": 10,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 4,
+          "depth": 1,
+          "new_shortest_represented_operators": 4
+        },
+        {
+          "cumulative_represented_operators": 13,
+          "depth": 2,
+          "new_shortest_represented_operators": 9
+        },
+        {
+          "cumulative_represented_operators": 29,
+          "depth": 3,
+          "new_shortest_represented_operators": 16
+        },
+        {
+          "cumulative_represented_operators": 57,
+          "depth": 4,
+          "new_shortest_represented_operators": 28
+        },
+        {
+          "cumulative_represented_operators": 93,
+          "depth": 5,
+          "new_shortest_represented_operators": 36
+        },
+        {
+          "cumulative_represented_operators": 133,
+          "depth": 6,
+          "new_shortest_represented_operators": 40
+        },
+        {
+          "cumulative_represented_operators": 155,
+          "depth": 7,
+          "new_shortest_represented_operators": 22
+        },
+        {
+          "cumulative_represented_operators": 163,
+          "depth": 8,
+          "new_shortest_represented_operators": 8
+        },
+        {
+          "cumulative_represented_operators": 167,
+          "depth": 9,
+          "new_shortest_represented_operators": 4
+        },
+        {
+          "cumulative_represented_operators": 168,
+          "depth": 10,
+          "new_shortest_represented_operators": 1
+        }
+      ],
+      "distinct_represented_letter_count": 4,
+      "finite_first_hit_count": 9,
+      "first_hit_depth_sha256": "d8200ed2b626b7088287d8f0b2d046ce2f4744ef1ca755efaa30fb574cc7abba",
+      "first_hit_witnesses_sha256": "b5e891dde2dda64b101f9be8480a40fb5ff90e9698eb970d5f6f028df1e03b55",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "5b133b07e23cb0e359274e37a4620bb0aaf9924579b8080a904d5722c1dd6148",
+      "label_count": 4,
+      "label_to_operator_sha256": "f1ed1983e5f4576877928d364c9bea3310030cb0450a10ed32c1be8fc4412efc",
+      "realization_id": "delta-3-3-4-i7-c001-v2.x_cycles",
+      "represented_positive_closure_order": 168,
+      "represented_positive_closure_sha256": "2be96034d0ffb531388063aaf6cbc6de12c6997fdef41b12541e5b08bac38ec8",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "37a171cbd3acb18d1d1c22a6765bbbce2fda4e736d30dd5782fda8d038b64120",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "a9cf4c158179f47b1a41cbb1399808c8b0fb8f3e5ad362b95dec20942a86e769",
+      "closure_stabilization_depth": 10,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 4,
+          "depth": 1,
+          "new_shortest_represented_operators": 4
+        },
+        {
+          "cumulative_represented_operators": 13,
+          "depth": 2,
+          "new_shortest_represented_operators": 9
+        },
+        {
+          "cumulative_represented_operators": 29,
+          "depth": 3,
+          "new_shortest_represented_operators": 16
+        },
+        {
+          "cumulative_represented_operators": 57,
+          "depth": 4,
+          "new_shortest_represented_operators": 28
+        },
+        {
+          "cumulative_represented_operators": 93,
+          "depth": 5,
+          "new_shortest_represented_operators": 36
+        },
+        {
+          "cumulative_represented_operators": 133,
+          "depth": 6,
+          "new_shortest_represented_operators": 40
+        },
+        {
+          "cumulative_represented_operators": 155,
+          "depth": 7,
+          "new_shortest_represented_operators": 22
+        },
+        {
+          "cumulative_represented_operators": 163,
+          "depth": 8,
+          "new_shortest_represented_operators": 8
+        },
+        {
+          "cumulative_represented_operators": 167,
+          "depth": 9,
+          "new_shortest_represented_operators": 4
+        },
+        {
+          "cumulative_represented_operators": 168,
+          "depth": 10,
+          "new_shortest_represented_operators": 1
+        }
+      ],
+      "distinct_represented_letter_count": 4,
+      "finite_first_hit_count": 9,
+      "first_hit_depth_sha256": "e5683a3bb48a4c6cad9d3f0069968b09eb39f328b24e456eb9c560a5ff8a0170",
+      "first_hit_witnesses_sha256": "d0bdb53a364e536fc8e83698fbe680f57f36dcabbb4a495cfa1ad1dde150d967",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "5b133b07e23cb0e359274e37a4620bb0aaf9924579b8080a904d5722c1dd6148",
+      "label_count": 4,
+      "label_to_operator_sha256": "f1ed1983e5f4576877928d364c9bea3310030cb0450a10ed32c1be8fc4412efc",
+      "realization_id": "delta-3-3-4-i7-c001-v2.y_cycles",
+      "represented_positive_closure_order": 168,
+      "represented_positive_closure_sha256": "2be96034d0ffb531388063aaf6cbc6de12c6997fdef41b12541e5b08bac38ec8",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "653d478ae199f0d43002fa87c09f1e16b1881f4dffabe08ecebe3b28eb466ea3",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "9ebcd32ca40d7ff94478ec2f85b6ae71fabba11a0c97fc4bbeabc6eeb16c1ff7",
+      "closure_stabilization_depth": 10,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 4,
+          "depth": 1,
+          "new_shortest_represented_operators": 4
+        },
+        {
+          "cumulative_represented_operators": 13,
+          "depth": 2,
+          "new_shortest_represented_operators": 9
+        },
+        {
+          "cumulative_represented_operators": 29,
+          "depth": 3,
+          "new_shortest_represented_operators": 16
+        },
+        {
+          "cumulative_represented_operators": 57,
+          "depth": 4,
+          "new_shortest_represented_operators": 28
+        },
+        {
+          "cumulative_represented_operators": 93,
+          "depth": 5,
+          "new_shortest_represented_operators": 36
+        },
+        {
+          "cumulative_represented_operators": 133,
+          "depth": 6,
+          "new_shortest_represented_operators": 40
+        },
+        {
+          "cumulative_represented_operators": 155,
+          "depth": 7,
+          "new_shortest_represented_operators": 22
+        },
+        {
+          "cumulative_represented_operators": 163,
+          "depth": 8,
+          "new_shortest_represented_operators": 8
+        },
+        {
+          "cumulative_represented_operators": 167,
+          "depth": 9,
+          "new_shortest_represented_operators": 4
+        },
+        {
+          "cumulative_represented_operators": 168,
+          "depth": 10,
+          "new_shortest_represented_operators": 1
+        }
+      ],
+      "distinct_represented_letter_count": 4,
+      "finite_first_hit_count": 9,
+      "first_hit_depth_sha256": "044decc12ae3f693de0d2e1c1eacfadb55a8b534193094cd7eacffe9d2ab6030",
+      "first_hit_witnesses_sha256": "9ca978454f991469824b435d1c129637abd754fefc263d7da45093a0e127a53e",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "5b133b07e23cb0e359274e37a4620bb0aaf9924579b8080a904d5722c1dd6148",
+      "label_count": 4,
+      "label_to_operator_sha256": "f1ed1983e5f4576877928d364c9bea3310030cb0450a10ed32c1be8fc4412efc",
+      "realization_id": "delta-3-3-4-i7-c001-v2.z_cycles",
+      "represented_positive_closure_order": 168,
+      "represented_positive_closure_sha256": "2be96034d0ffb531388063aaf6cbc6de12c6997fdef41b12541e5b08bac38ec8",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "2e4e0b442c605868ddb4e39a63bc3fe9846e69895035aa37cef7eb2081f11234",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "36014debf89e9e34805117130091df311b6bd8db8a0c93c75a170e55c0af5588",
+      "closure_stabilization_depth": 7,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 4,
+          "depth": 1,
+          "new_shortest_represented_operators": 4
+        },
+        {
+          "cumulative_represented_operators": 13,
+          "depth": 2,
+          "new_shortest_represented_operators": 9
+        },
+        {
+          "cumulative_represented_operators": 29,
+          "depth": 3,
+          "new_shortest_represented_operators": 16
+        },
+        {
+          "cumulative_represented_operators": 59,
+          "depth": 4,
+          "new_shortest_represented_operators": 30
+        },
+        {
+          "cumulative_represented_operators": 109,
+          "depth": 5,
+          "new_shortest_represented_operators": 50
+        },
+        {
+          "cumulative_represented_operators": 163,
+          "depth": 6,
+          "new_shortest_represented_operators": 54
+        },
+        {
+          "cumulative_represented_operators": 168,
+          "depth": 7,
+          "new_shortest_represented_operators": 5
+        }
+      ],
+      "distinct_represented_letter_count": 4,
+      "finite_first_hit_count": 9,
+      "first_hit_depth_sha256": "8521d89afab0b73a5bee79e11969c8ad64378de702a79799107d3c56a98593be",
+      "first_hit_witnesses_sha256": "5a56fc8e388fc4fa89cc09c140f68a9b96433f83544a19d5e7d5def63d08c59f",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "5b133b07e23cb0e359274e37a4620bb0aaf9924579b8080a904d5722c1dd6148",
+      "label_count": 4,
+      "label_to_operator_sha256": "f155e3296289bff5ca73a8faf92335000cc8eea8cf444d662a60739c5bf27534",
+      "realization_id": "delta-3-3-4-i7-c002-v2.x_cycles",
+      "represented_positive_closure_order": 168,
+      "represented_positive_closure_sha256": "e24d4f1ebb602291921ce05edaa4742869d399b6a1677215980340d4cee98a5f",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "37a171cbd3acb18d1d1c22a6765bbbce2fda4e736d30dd5782fda8d038b64120",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "36014debf89e9e34805117130091df311b6bd8db8a0c93c75a170e55c0af5588",
+      "closure_stabilization_depth": 7,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 4,
+          "depth": 1,
+          "new_shortest_represented_operators": 4
+        },
+        {
+          "cumulative_represented_operators": 13,
+          "depth": 2,
+          "new_shortest_represented_operators": 9
+        },
+        {
+          "cumulative_represented_operators": 29,
+          "depth": 3,
+          "new_shortest_represented_operators": 16
+        },
+        {
+          "cumulative_represented_operators": 59,
+          "depth": 4,
+          "new_shortest_represented_operators": 30
+        },
+        {
+          "cumulative_represented_operators": 109,
+          "depth": 5,
+          "new_shortest_represented_operators": 50
+        },
+        {
+          "cumulative_represented_operators": 163,
+          "depth": 6,
+          "new_shortest_represented_operators": 54
+        },
+        {
+          "cumulative_represented_operators": 168,
+          "depth": 7,
+          "new_shortest_represented_operators": 5
+        }
+      ],
+      "distinct_represented_letter_count": 4,
+      "finite_first_hit_count": 9,
+      "first_hit_depth_sha256": "8521d89afab0b73a5bee79e11969c8ad64378de702a79799107d3c56a98593be",
+      "first_hit_witnesses_sha256": "f3ba7f3501d8c77c54e42e565b3680cf0cfd1e3ab5a920921640f7f2a6b87d05",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "5b133b07e23cb0e359274e37a4620bb0aaf9924579b8080a904d5722c1dd6148",
+      "label_count": 4,
+      "label_to_operator_sha256": "f155e3296289bff5ca73a8faf92335000cc8eea8cf444d662a60739c5bf27534",
+      "realization_id": "delta-3-3-4-i7-c002-v2.y_cycles",
+      "represented_positive_closure_order": 168,
+      "represented_positive_closure_sha256": "e24d4f1ebb602291921ce05edaa4742869d399b6a1677215980340d4cee98a5f",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "ca4897e127370c12f3ef19723fd2a107be23346d2f43e8000f7d041f0acbe139",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "492b169808fcb768b20f61419eb2ba95e782d6e20ae0e9478f07f32e7786f829",
+      "closure_stabilization_depth": 7,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 4,
+          "depth": 1,
+          "new_shortest_represented_operators": 4
+        },
+        {
+          "cumulative_represented_operators": 13,
+          "depth": 2,
+          "new_shortest_represented_operators": 9
+        },
+        {
+          "cumulative_represented_operators": 29,
+          "depth": 3,
+          "new_shortest_represented_operators": 16
+        },
+        {
+          "cumulative_represented_operators": 59,
+          "depth": 4,
+          "new_shortest_represented_operators": 30
+        },
+        {
+          "cumulative_represented_operators": 109,
+          "depth": 5,
+          "new_shortest_represented_operators": 50
+        },
+        {
+          "cumulative_represented_operators": 163,
+          "depth": 6,
+          "new_shortest_represented_operators": 54
+        },
+        {
+          "cumulative_represented_operators": 168,
+          "depth": 7,
+          "new_shortest_represented_operators": 5
+        }
+      ],
+      "distinct_represented_letter_count": 4,
+      "finite_first_hit_count": 9,
+      "first_hit_depth_sha256": "f1cde58c66ba9bfcb9e401539defecba1f26f59efbc28de408adcb3ecacdfa20",
+      "first_hit_witnesses_sha256": "eb70b480c99d6f067960d90897948ff54e658fb7d2022ec57e55f692b3a6ab7c",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "5b133b07e23cb0e359274e37a4620bb0aaf9924579b8080a904d5722c1dd6148",
+      "label_count": 4,
+      "label_to_operator_sha256": "f155e3296289bff5ca73a8faf92335000cc8eea8cf444d662a60739c5bf27534",
+      "realization_id": "delta-3-3-4-i7-c002-v2.z_cycles",
+      "represented_positive_closure_order": 168,
+      "represented_positive_closure_sha256": "e24d4f1ebb602291921ce05edaa4742869d399b6a1677215980340d4cee98a5f",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "16c6373312c1e85de33bc130fc03343c54ebb3c232aa27c205a991eca2db866b",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "36014debf89e9e34805117130091df311b6bd8db8a0c93c75a170e55c0af5588",
+      "closure_stabilization_depth": 7,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 4,
+          "depth": 1,
+          "new_shortest_represented_operators": 4
+        },
+        {
+          "cumulative_represented_operators": 13,
+          "depth": 2,
+          "new_shortest_represented_operators": 9
+        },
+        {
+          "cumulative_represented_operators": 29,
+          "depth": 3,
+          "new_shortest_represented_operators": 16
+        },
+        {
+          "cumulative_represented_operators": 59,
+          "depth": 4,
+          "new_shortest_represented_operators": 30
+        },
+        {
+          "cumulative_represented_operators": 109,
+          "depth": 5,
+          "new_shortest_represented_operators": 50
+        },
+        {
+          "cumulative_represented_operators": 163,
+          "depth": 6,
+          "new_shortest_represented_operators": 54
+        },
+        {
+          "cumulative_represented_operators": 168,
+          "depth": 7,
+          "new_shortest_represented_operators": 5
+        }
+      ],
+      "distinct_represented_letter_count": 4,
+      "finite_first_hit_count": 9,
+      "first_hit_depth_sha256": "8521d89afab0b73a5bee79e11969c8ad64378de702a79799107d3c56a98593be",
+      "first_hit_witnesses_sha256": "fc1ef4e77fec6046984c1c842a4cd10a630135571e0c761b0bcfd21222f0af78",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "5b133b07e23cb0e359274e37a4620bb0aaf9924579b8080a904d5722c1dd6148",
+      "label_count": 4,
+      "label_to_operator_sha256": "83b51666e1bb6cb8deb2b090561c0ee10eb35f9a1fba593dccf64f91e5a05ad7",
+      "realization_id": "delta-3-3-4-i7-c003-v2.x_cycles",
+      "represented_positive_closure_order": 168,
+      "represented_positive_closure_sha256": "cec8a06080da6759eddbc14d89375ac8cb870b68d11c7b20b8c89d092d62188a",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "37a171cbd3acb18d1d1c22a6765bbbce2fda4e736d30dd5782fda8d038b64120",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "36014debf89e9e34805117130091df311b6bd8db8a0c93c75a170e55c0af5588",
+      "closure_stabilization_depth": 7,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 4,
+          "depth": 1,
+          "new_shortest_represented_operators": 4
+        },
+        {
+          "cumulative_represented_operators": 13,
+          "depth": 2,
+          "new_shortest_represented_operators": 9
+        },
+        {
+          "cumulative_represented_operators": 29,
+          "depth": 3,
+          "new_shortest_represented_operators": 16
+        },
+        {
+          "cumulative_represented_operators": 59,
+          "depth": 4,
+          "new_shortest_represented_operators": 30
+        },
+        {
+          "cumulative_represented_operators": 109,
+          "depth": 5,
+          "new_shortest_represented_operators": 50
+        },
+        {
+          "cumulative_represented_operators": 163,
+          "depth": 6,
+          "new_shortest_represented_operators": 54
+        },
+        {
+          "cumulative_represented_operators": 168,
+          "depth": 7,
+          "new_shortest_represented_operators": 5
+        }
+      ],
+      "distinct_represented_letter_count": 4,
+      "finite_first_hit_count": 9,
+      "first_hit_depth_sha256": "8521d89afab0b73a5bee79e11969c8ad64378de702a79799107d3c56a98593be",
+      "first_hit_witnesses_sha256": "b645062b02840b26b555c3604cf8c2abc1c985acfeb45760fd79ee62b0e0bcc0",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "5b133b07e23cb0e359274e37a4620bb0aaf9924579b8080a904d5722c1dd6148",
+      "label_count": 4,
+      "label_to_operator_sha256": "83b51666e1bb6cb8deb2b090561c0ee10eb35f9a1fba593dccf64f91e5a05ad7",
+      "realization_id": "delta-3-3-4-i7-c003-v2.y_cycles",
+      "represented_positive_closure_order": 168,
+      "represented_positive_closure_sha256": "cec8a06080da6759eddbc14d89375ac8cb870b68d11c7b20b8c89d092d62188a",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "9d14fe88fa22defa95b014a1c54b09dc6ba741d4c9425997aedb538954421920",
+      "shortest_nonempty_identity_word_length": 2
+    },
+    {
+      "bounded_word_support_layers_sha256": "492b169808fcb768b20f61419eb2ba95e782d6e20ae0e9478f07f32e7786f829",
+      "closure_stabilization_depth": 7,
+      "closure_trace": [
+        {
+          "cumulative_represented_operators": 4,
+          "depth": 1,
+          "new_shortest_represented_operators": 4
+        },
+        {
+          "cumulative_represented_operators": 13,
+          "depth": 2,
+          "new_shortest_represented_operators": 9
+        },
+        {
+          "cumulative_represented_operators": 29,
+          "depth": 3,
+          "new_shortest_represented_operators": 16
+        },
+        {
+          "cumulative_represented_operators": 59,
+          "depth": 4,
+          "new_shortest_represented_operators": 30
+        },
+        {
+          "cumulative_represented_operators": 109,
+          "depth": 5,
+          "new_shortest_represented_operators": 50
+        },
+        {
+          "cumulative_represented_operators": 163,
+          "depth": 6,
+          "new_shortest_represented_operators": 54
+        },
+        {
+          "cumulative_represented_operators": 168,
+          "depth": 7,
+          "new_shortest_represented_operators": 5
+        }
+      ],
+      "distinct_represented_letter_count": 4,
+      "finite_first_hit_count": 9,
+      "first_hit_depth_sha256": "f1cde58c66ba9bfcb9e401539defecba1f26f59efbc28de408adcb3ecacdfa20",
+      "first_hit_witnesses_sha256": "8fc0631353f064b0d616037f08c9dd65148d3a81a99716ff947ad44833f74c2d",
+      "infinite_after_saturation_count": 0,
+      "label_alphabet_sha256": "5b133b07e23cb0e359274e37a4620bb0aaf9924579b8080a904d5722c1dd6148",
+      "label_count": 4,
+      "label_to_operator_sha256": "83b51666e1bb6cb8deb2b090561c0ee10eb35f9a1fba593dccf64f91e5a05ad7",
+      "realization_id": "delta-3-3-4-i7-c003-v2.z_cycles",
+      "represented_positive_closure_order": 168,
+      "represented_positive_closure_sha256": "cec8a06080da6759eddbc14d89375ac8cb870b68d11c7b20b8c89d092d62188a",
+      "right_multiplication_closed": true,
+      "saturation_status": "EXACT_FINITE_POSITIVE_CLOSURE",
+      "sectorization_sha256": "26f49e51654bf3dc7f5ff2a3f008dd0eefb0ad5f0c7d6e134c047b9b1f54cb56",
+      "shortest_nonempty_identity_word_length": 2
+    }
+  ],
+  "implementation": {
+    "files": {
+      "experiments/exploratory/carrier_realizations/fuchsian_schreier/core.py": "f84c18f5ce35f9b0ab05169a783012a0e33b378ecb5058f52c2c6f6b5a7d500b",
+      "experiments/exploratory/carrier_realizations/fuchsian_schreier/modular_census.py": "90ae4946fad44ebe252a0409940f3d8ea807881e5dff618a673eff84f53a9abf",
+      "experiments/exploratory/carrier_realizations/fuchsian_schreier/triangle_census.py": "58a5c464f5a0c8ae4c2b3cd1731148c834d76d2de55f36f4f0af284b7cf30326",
+      "experiments/exploratory/carrier_realizations/fuchsian_schreier/validate.py": "059ffc5b03a2f658724ed48aa705e11b7388d4d8b32cabf8e99599ed85f0ff8e",
+      "experiments/paper8/validation/promote_marked_finite_realizations_v2_1.py": "7b733a21307df91e851ca3a7cac486c2c46cc789d18a56a24239f7b4dabaf430"
+    },
+    "implementation_sha256": "03c7c30dc75f48878e0e4d1fac7123180e915a9472b7444a723dcc7f10a1d3c4",
+    "producer_id": "paper8.marked-finite-realization-promotion.python.v2.1"
+  },
+  "label_collision_witnesses": [
+    {
+      "labels_distinct": true,
+      "left_label": "x",
+      "representation_id": "delta-2-4-5-i2-c000-v2",
+      "represented_operators_equal": true,
+      "right_label": "y",
+      "shared_permutation_target_by_source": [
+        1,
+        0
+      ]
+    },
+    {
+      "labels_distinct": true,
+      "left_label": "x",
+      "representation_id": "delta-3-3-4-i3-c000-v2",
+      "represented_operators_equal": true,
+      "right_label": "y_inv",
+      "shared_permutation_target_by_source": [
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "labels_distinct": true,
+      "left_label": "x_inv",
+      "representation_id": "delta-3-3-4-i3-c000-v2",
+      "represented_operators_equal": true,
+      "right_label": "y",
+      "shared_permutation_target_by_source": [
+        2,
+        0,
+        1
+      ]
+    }
+  ],
+  "marked_partition_witness": {
+    "interpretation": "three marked SOF realizations on one represented action; intersection tables do not identify the partitions",
+    "marked_partition_sha256": {
+      "x_cycles": "18012c762e3f7b45b3f3aba173dcefaa63adab98914ca96852f637daed89ad80",
+      "y_cycles": "da59f0deafa0e794dc01459592802e67021439c8a86778dc790c299da3123ae2",
+      "z_cycles": "800f43aecbf663f7631c7f259bee17e8724c34e9583f4d7dd8d6df7727eb9764"
+    },
+    "marked_partitions": {
+      "x_cycles": [
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "y_cycles": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          4
+        ],
+        [
+          3,
+          5,
+          6
+        ]
+      ],
+      "z_cycles": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      ]
+    },
+    "pairwise_controls": [
+      {
+        "alignment_status": "EXPLICIT_INTERSECTION_TABLE_ONLY",
+        "equal_partitions": false,
+        "intersection_table": [
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "left": "x_cycles",
+        "left_refines_right": false,
+        "right": "y_cycles",
+        "right_refines_left": false
+      },
+      {
+        "alignment_status": "EXPLICIT_INTERSECTION_TABLE_ONLY",
+        "equal_partitions": false,
+        "intersection_table": [
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ]
+        ],
+        "left": "x_cycles",
+        "left_refines_right": true,
+        "right": "z_cycles",
+        "right_refines_left": false
+      },
+      {
+        "alignment_status": "EXPLICIT_INTERSECTION_TABLE_ONLY",
+        "equal_partitions": false,
+        "intersection_table": [
+          [
+            1
+          ],
+          [
+            3
+          ],
+          [
+            3
+          ]
+        ],
+        "left": "y_cycles",
+        "left_refines_right": true,
+        "right": "z_cycles",
+        "right_refines_left": false
+      }
+    ],
+    "representation_id": "delta-2-3-7-i7-c000-v2",
+    "shared_labelled_operator_family_sha256": "df11d853ffe602d2535488e5013828900cda0ae1b13516509e0d6d4b1a01c813"
+  },
+  "negative_boundaries": [
+    "No finite group representation canonically selects a marked sectorization by this construction.",
+    "No Lie/Hall carrier or Lie depth is promoted.",
+    "No generic strict separation of positive and star closures is claimed.",
+    "No surface, Hecke, moduli, Selberg, or automorphic claim is promoted.",
+    "Graph-Laplacian diagnostics are not part of the Paper VIII claim surface.",
+    "The upstream exploratory bundles remain provenance inputs, not Paper VIII evidence by themselves."
+  ],
+  "paper": "Paper VIII",
+  "path_route_word_hostile_witness": {
+    "actual_route_2_target_by_source": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "actual_word_2_target_by_source": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "aggregate_direct_support_target_by_source": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "boolean_path_2_target_by_source": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "certified_relation": "W_2_EQUALS_ROUTE_2_STRICT_SUBSET_PATH_2",
+    "distinct_length_two_represented_operators": [
+      [
+        0,
+        1,
+        2,
+        3
+      ],
+      [
+        1,
+        0,
+        2,
+        3
+      ]
+    ],
+    "exact_first_hit_word_depth": {
+      "depth_convention": "minimum positive-word length d>=1 over the declared labelled alphabet; the empty word is excluded",
+      "depth_matrix_target_by_source": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "evaluation_convention": "a1...ad acts left-to-right, so the matrix product is P_ad...P_a1",
+      "first_hit_witnesses": [
+        {
+          "depth": 1,
+          "source_sector": 0,
+          "source_state": 0,
+          "target_sector": 0,
+          "target_state": 0,
+          "word_left_to_right": [
+            "a"
+          ]
+        },
+        {
+          "depth": 1,
+          "source_sector": 1,
+          "source_state": 3,
+          "target_sector": 0,
+          "target_state": 2,
+          "word_left_to_right": [
+            "a"
+          ]
+        },
+        {
+          "depth": 1,
+          "source_sector": 0,
+          "source_state": 2,
+          "target_sector": 1,
+          "target_state": 3,
+          "word_left_to_right": [
+            "a"
+          ]
+        },
+        {
+          "depth": 2,
+          "source_sector": 1,
+          "source_state": 3,
+          "target_sector": 1,
+          "target_state": 3,
+          "word_left_to_right": [
+            "a",
+            "a"
+          ]
+        }
+      ],
+      "saturation": {
+        "shortest_nonempty_identity_word_length": 2,
+        "status": "EXACT_FINITE_GROUP_CLOSURE",
+        "transformation_count": 4
+      }
+    },
+    "label_to_permutation_target_by_source": {
+      "a": [
+        0,
+        1,
+        3,
+        2
+      ],
+      "b": [
+        1,
+        0,
+        3,
+        2
+      ]
+    },
+    "marked_partition": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "route_2_candidate_count": 20,
+    "route_2_nonzero_count": 12,
+    "route_2_zero_count": 8,
+    "state_set": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "witness_id": "paper8.path-word-four-state.v2.1"
+  },
+  "promoted_claims": [
+    {
+      "claim_id": "P8V2.1-CERT-01",
+      "statement": "The declared modular and triangle actions instantiate exact finite marked operator SOF cores.",
+      "status": "Computational Certificate"
+    },
+    {
+      "claim_id": "P8V2.1-CERT-02",
+      "statement": "Distinct source labels may have equal represented permutation operators without being identified.",
+      "status": "Computational Certificate"
+    },
+    {
+      "claim_id": "P8V2.1-CERT-03",
+      "statement": "The four-state exact witness has W_2=Route_2 strictly contained in the Boolean Path_2 relation.",
+      "status": "Computational Certificate"
+    },
+    {
+      "claim_id": "P8V2.1-CERT-04",
+      "statement": "Every promoted first-hit word depth is replayed after complete finite represented-image saturation.",
+      "status": "Computational Certificate"
+    }
+  ],
+  "promoted_scope": {
+    "label_collision_witness_count": 3,
+    "modular_prime_count": 6,
+    "modular_primes": [
+      3,
+      5,
+      7,
+      11,
+      13,
+      17
+    ],
+    "saturation_receipt_count": 57,
+    "triangle_full_signature_order_count": 12,
+    "triangle_marked_sectorization_count": 51,
+    "triangle_max_index": 7,
+    "triangle_proper_order_divisor_count": 5,
+    "triangle_representation_count": 17,
+    "triangle_signatures": [
+      [
+        2,
+        3,
+        7
+      ],
+      [
+        2,
+        4,
+        5
+      ],
+      [
+        3,
+        3,
+        4
+      ]
+    ]
+  },
+  "promotion_decision": "ACCEPTED_FOR_PAPER8_V2_1_CANDIDATE",
+  "schema": "paper8.marked-finite-realization-conformance.v2.1",
+  "source_artifacts": [
+    {
+      "artifact_sha256": "53aef127b32546dfb2ef332a46394a14abfdca79ed2019c8263baec75cfff911",
+      "bundle_id": "fuchsian-schreier.modular-p1-census.v2",
+      "content_sha256": "370453f8b462cc3017c60781b44a48ee41c08ed64efe38255ffe219c4013143c",
+      "path": "experiments/exploratory/carrier_realizations/fuchsian_schreier/results/modular_p1_census_v2.json",
+      "promotion_role": "SOURCE_PROVENANCE_AND_REPLAY_INPUT",
+      "schema": "rime.exploratory.fuchsian-schreier.modular-p1-census.v2",
+      "upstream_paper_evidence_status": "NOT_PROMOTED"
+    },
+    {
+      "artifact_sha256": "0dded6e8ffe00419a1eaecaa10cd5db5c47d17f642a78534be8500714a09f5cb",
+      "bundle_id": "fuchsian-schreier.triangle-low-index-census.v2",
+      "content_sha256": "0dbeaf32280808a62e2603994acf8bd4d9eabb612566d6da1eac422e5cb4b37f",
+      "path": "experiments/exploratory/carrier_realizations/fuchsian_schreier/results/triangle_low_index_census_v2.json",
+      "promotion_role": "SOURCE_PROVENANCE_AND_REPLAY_INPUT",
+      "schema": "rime.exploratory.fuchsian-schreier.triangle-census.v2",
+      "upstream_paper_evidence_status": "NOT_PROMOTED"
+    }
+  ],
+  "theorem_relationship": "CONFORMANCE_WITNESS_NOT_THEOREM_PREMISE"
+}

@@ -1,0 +1,6096 @@
+{
+  "schema": "rime.exploratory.fuchsian-schreier.modular-p1-census.v2",
+  "bundle_id": "fuchsian-schreier.modular-p1-census.v2",
+  "artifact_role": "EXPLORATORY_CARRIER_CENSUS",
+  "claim_status": "Computational Certificate",
+  "paper_evidence_status": "NOT_PROMOTED",
+  "scope": {
+    "odd_primes": [
+      3,
+      5,
+      7,
+      11,
+      13,
+      17
+    ],
+    "max_word_depth": 4,
+    "word_layer_scope": "exact positive lengths d=1 through the declared finite depth",
+    "word_depth_scope": "minimum d>=1, exact after finite group saturation",
+    "numerical_spectrum": "NOT_INCLUDED"
+  },
+  "implementation": {
+    "producer_id": "rime.fuchsian-schreier.modular-p1.python.v2",
+    "language": "Python",
+    "arithmetic": "Python int and fractions.Fraction; no fixed-width certificate arithmetic",
+    "files": {
+      "experiments/exploratory/carrier_realizations/fuchsian_schreier/core.py": "f84c18f5ce35f9b0ab05169a783012a0e33b378ecb5058f52c2c6f6b5a7d500b",
+      "experiments/exploratory/carrier_realizations/fuchsian_schreier/modular_census.py": "90ae4946fad44ebe252a0409940f3d8ea807881e5dff618a673eff84f53a9abf"
+    },
+    "implementation_sha256": "0cd34d78e7a227d4f5d1ee66cca3fef948f481c0b2fe4bc38859a973592053ab"
+  },
+  "records": [
+    {
+      "record_id": "modular-p1-f3-v2",
+      "claim_status": "Computational Certificate",
+      "source_action": {
+        "source_group": "PSL(2,Z)",
+        "presentation": "<S,R | S^2=R^3=1>",
+        "finite_action": "reduction modulo 3 on P^1(F_3)",
+        "declared_quotient_image": "PSL(2,F_3)"
+      },
+      "carrier": {
+        "carrier_kind": "finite_permutation_schreier",
+        "space": {
+          "scalar_field": "C",
+          "dimension": 4,
+          "basis_state_labels": [
+            "0",
+            "1",
+            "2",
+            "infinity"
+          ]
+        },
+        "sectorization": {
+          "sectorization_id": "p1-f3.T-orbits.v2",
+          "kind": "coordinate_projectors_from_T_orbits",
+          "sectors": [
+            [
+              3
+            ],
+            [
+              0,
+              1,
+              2
+            ]
+          ],
+          "sector_sizes": [
+            1,
+            3
+          ],
+          "complete_and_pairwise_orthogonal": true
+        },
+        "labelled_operative_alphabet": {
+          "ordered_labels": [
+            "S",
+            "R",
+            "R_inv"
+          ],
+          "permutations_target_by_source": {
+            "S": [
+              3,
+              2,
+              1,
+              0
+            ],
+            "R": [
+              2,
+              1,
+              3,
+              0
+            ],
+            "R_inv": [
+              3,
+              1,
+              0,
+              2
+            ]
+          },
+          "adjoint_label_map": {
+            "S": "S",
+            "R": "R_inv",
+            "R_inv": "R"
+          },
+          "word_evaluation": "letters act left-to-right; matrices multiply in reverse written order"
+        },
+        "lie_hall_carrier": "NOT_DECLARED"
+      },
+      "presentation_certificate": {
+        "S_squared_identity": true,
+        "R_cubed_identity": true,
+        "T_equals_S_after_R": true
+      },
+      "finite_image_certificate": {
+        "generated_transformation_count": 12,
+        "expected_psl2_order": 12,
+        "order_matches": true,
+        "all_words_are_permutations": true,
+        "rank_collapse_status": "NOT_PRESENT_ON_THIS_GROUP_CARRIER"
+      },
+      "typed_observables": {
+        "labelled_direct_support": {
+          "S": {
+            "support_target_by_source": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "block_rank_target_by_source": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                2
+              ]
+            ]
+          },
+          "R": {
+            "support_target_by_source": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "block_rank_target_by_source": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                2
+              ]
+            ]
+          },
+          "R_inv": {
+            "support_target_by_source": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "block_rank_target_by_source": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                2
+              ]
+            ]
+          }
+        },
+        "aggregate_direct_support_target_by_source": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "boolean_path_layers": [
+          {
+            "depth": 1,
+            "support_target_by_source": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "depth": 2,
+            "support_target_by_source": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "depth": 3,
+            "support_target_by_source": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "depth": 4,
+            "support_target_by_source": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          }
+        ],
+        "route_length_two": {
+          "route_semantics": "Q_target P_second Q_middle P_first Q_source for the displayed left-to-right word [first,second]",
+          "ordered_letter_pair_profiles": [
+            {
+              "word_left_to_right": [
+                "S",
+                "S"
+              ],
+              "operator_product": "P_S P_S",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ]
+              ]
+            },
+            {
+              "word_left_to_right": [
+                "S",
+                "R"
+              ],
+              "operator_product": "P_R P_S",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ]
+              ]
+            },
+            {
+              "word_left_to_right": [
+                "S",
+                "R_inv"
+              ],
+              "operator_product": "P_R_inv P_S",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ]
+              ]
+            },
+            {
+              "word_left_to_right": [
+                "R",
+                "S"
+              ],
+              "operator_product": "P_S P_R",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ]
+              ]
+            },
+            {
+              "word_left_to_right": [
+                "R",
+                "R"
+              ],
+              "operator_product": "P_R P_R",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ]
+              ]
+            },
+            {
+              "word_left_to_right": [
+                "R",
+                "R_inv"
+              ],
+              "operator_product": "P_R_inv P_R",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ]
+              ]
+            },
+            {
+              "word_left_to_right": [
+                "R_inv",
+                "S"
+              ],
+              "operator_product": "P_S P_R_inv",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ]
+              ]
+            },
+            {
+              "word_left_to_right": [
+                "R_inv",
+                "R"
+              ],
+              "operator_product": "P_R P_R_inv",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ]
+              ]
+            },
+            {
+              "word_left_to_right": [
+                "R_inv",
+                "R_inv"
+              ],
+              "operator_product": "P_R_inv P_R_inv",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ]
+              ]
+            }
+          ],
+          "supported_route_candidate_count": 45,
+          "nonzero_routed_product_count": 31,
+          "zero_routed_product_count": 14
+        },
+        "positive_word_layers": [
+          {
+            "depth": 1,
+            "distinct_transformations": 3,
+            "support_target_by_source": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "depth": 2,
+            "distinct_transformations": 7,
+            "support_target_by_source": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "depth": 3,
+            "distinct_transformations": 12,
+            "support_target_by_source": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "depth": 4,
+            "distinct_transformations": 12,
+            "support_target_by_source": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          }
+        ],
+        "exact_first_hit_word_depth": {
+          "depth_convention": "minimum positive-word length d>=1 over the declared labelled alphabet; the empty word is excluded",
+          "evaluation_convention": "a1...ad acts left-to-right, so the matrix product is P_ad...P_a1",
+          "depth_matrix_target_by_source": [
+            [
+              2,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "first_hit_witnesses": [
+            {
+              "target_sector": 0,
+              "source_sector": 0,
+              "depth": 2,
+              "word_left_to_right": [
+                "S",
+                "S"
+              ],
+              "source_state": 3,
+              "target_state": 3
+            },
+            {
+              "target_sector": 0,
+              "source_sector": 1,
+              "depth": 1,
+              "word_left_to_right": [
+                "S"
+              ],
+              "source_state": 0,
+              "target_state": 3
+            },
+            {
+              "target_sector": 1,
+              "source_sector": 0,
+              "depth": 1,
+              "word_left_to_right": [
+                "S"
+              ],
+              "source_state": 3,
+              "target_state": 0
+            },
+            {
+              "target_sector": 1,
+              "source_sector": 1,
+              "depth": 1,
+              "word_left_to_right": [
+                "S"
+              ],
+              "source_state": 1,
+              "target_state": 2
+            }
+          ],
+          "saturation": {
+            "status": "EXACT_FINITE_GROUP_CLOSURE",
+            "transformation_count": 12,
+            "shortest_nonempty_identity_word_length": 2
+          }
+        }
+      },
+      "simple_support_graph": {
+        "convention": "loops removed and labelled multiplicities collapsed",
+        "connected": true,
+        "diameter": 2,
+        "girth": 3,
+        "edge_count": 4
+      },
+      "schreier_group_laplacian": {
+        "definition": "L=sum_a(I-P_a) for the declared symmetric labelled alphabet",
+        "arithmetic": "Python integer matrices, Fraction rank, Bareiss determinant, exact Newton identities",
+        "adjacency_sha256": "ab9f7eed06af9a8027f9b1e44040f0182842f58690cf2bdfae771aedcbf7ce57",
+        "laplacian_sha256": "4c8ae910ca1b4d0ae3a61bf763d967b58862f445ba63b3743f2a171523193ffe",
+        "symmetric": true,
+        "zero_row_sums": true,
+        "exact_rational_rank": 3,
+        "zero_eigenvalue_multiplicity": 1,
+        "spanning_tree_count": 5,
+        "characteristic_polynomial_coefficients_descending": [
+          1,
+          -10,
+          29,
+          -20,
+          0
+        ]
+      },
+      "claim_boundary": {
+        "exact": [
+          "finite permutation relations and closure",
+          "coordinate sector partition and labelled block ranks",
+          "Boolean path layers, routed length-two products, and actual word layers",
+          "saturated first-hit word depth",
+          "integer graph-Laplacian characteristic polynomial, rational rank, and Matrix-Tree cofactor"
+        ],
+        "not_claimed": [
+          "Lie or Hall accessibility",
+          "rank-collapse dynamics",
+          "surface Laplace-Beltrami spectrum",
+          "Hecke action or automorphic spectrum",
+          "expansion, Ramanujan, or asymptotic cross-prime theorem",
+          "SOFRS or SOFAUDIT artifact status"
+        ]
+      }
+    },
+    {
+      "record_id": "modular-p1-f5-v2",
+      "claim_status": "Computational Certificate",
+      "source_action": {
+        "source_group": "PSL(2,Z)",
+        "presentation": "<S,R | S^2=R^3=1>",
+        "finite_action": "reduction modulo 5 on P^1(F_5)",
+        "declared_quotient_image": "PSL(2,F_5)"
+      },
+      "carrier": {
+        "carrier_kind": "finite_permutation_schreier",
+        "space": {
+          "scalar_field": "C",
+          "dimension": 6,
+          "basis_state_labels": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "infinity"
+          ]
+        },
+        "sectorization": {
+          "sectorization_id": "p1-f5.T-orbits.v2",
+          "kind": "coordinate_projectors_from_T_orbits",
+          "sectors": [
+            [
+              5
+            ],
+            [
+              0,
+              1,
+              2,
+              3,
+              4
+            ]
+          ],
+          "sector_sizes": [
+            1,
+            5
+          ],
+          "complete_and_pairwise_orthogonal": true
+        },
+        "labelled_operative_alphabet": {
+          "ordered_labels": [
+            "S",
+            "R",
+            "R_inv"
+          ],
+          "permutations_target_by_source": {
+            "S": [
+              5,
+              4,
+              2,
+              3,
+              1,
+              0
+            ],
+            "R": [
+              4,
+              2,
+              3,
+              1,
+              5,
+              0
+            ],
+            "R_inv": [
+              5,
+              3,
+              1,
+              2,
+              0,
+              4
+            ]
+          },
+          "adjoint_label_map": {
+            "S": "S",
+            "R": "R_inv",
+            "R_inv": "R"
+          },
+          "word_evaluation": "letters act left-to-right; matrices multiply in reverse written order"
+        },
+        "lie_hall_carrier": "NOT_DECLARED"
+      },
+      "presentation_certificate": {
+        "S_squared_identity": true,
+        "R_cubed_identity": true,
+        "T_equals_S_after_R": true
+      },
+      "finite_image_certificate": {
+        "generated_transformation_count": 60,
+        "expected_psl2_order": 60,
+        "order_matches": true,
+        "all_words_are_permutations": true,
+        "rank_collapse_status": "NOT_PRESENT_ON_THIS_GROUP_CARRIER"
+      },
+      "typed_observables": {
+        "labelled_direct_support": {
+          "S": {
+            "support_target_by_source": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "block_rank_target_by_source": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                4
+              ]
+            ]
+          },
+          "R": {
+            "support_target_by_source": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "block_rank_target_by_source": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                4
+              ]
+            ]
+          },
+          "R_inv": {
+            "support_target_by_source": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "block_rank_target_by_source": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                4
+              ]
+            ]
+          }
+        },
+        "aggregate_direct_support_target_by_source": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "boolean_path_layers": [
+          {
+            "depth": 1,
+            "support_target_by_source": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "depth": 2,
+            "support_target_by_source": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "depth": 3,
+            "support_target_by_source": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "depth": 4,
+            "support_target_by_source": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          }
+        ],
+        "route_length_two": {
+          "route_semantics": "Q_target P_second Q_middle P_first Q_source for the displayed left-to-right word [first,second]",
+          "ordered_letter_pair_profiles": [
+            {
+              "word_left_to_right": [
+                "S",
+                "S"
+              ],
+              "operator_product": "P_S P_S",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ]
+              ]
+            },
+            {
+              "word_left_to_right": [
+                "S",
+                "R"
+              ],
+              "operator_product": "P_R P_S",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ]
+              ]
+            },
+            {
+              "word_left_to_right": [
+                "S",
+                "R_inv"
+              ],
+              "operator_product": "P_R_inv P_S",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ]
+              ]
+            },
+            {
+              "word_left_to_right": [
+                "R",
+                "S"
+              ],
+              "operator_product": "P_S P_R",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ]
+              ]
+            },
+            {
+              "word_left_to_right": [
+                "R",
+                "R"
+              ],
+              "operator_product": "P_R P_R",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ]
+              ]
+            },
+            {
+              "word_left_to_right": [
+                "R",
+                "R_inv"
+              ],
+              "operator_product": "P_R_inv P_R",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ]
+              ]
+            },
+            {
+              "word_left_to_right": [
+                "R_inv",
+                "S"
+              ],
+              "operator_product": "P_S P_R_inv",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ]
+              ]
+            },
+            {
+              "word_left_to_right": [
+                "R_inv",
+                "R"
+              ],
+              "operator_product": "P_R P_R_inv",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ]
+              ]
+            },
+            {
+              "word_left_to_right": [
+                "R_inv",
+                "R_inv"
+              ],
+              "operator_product": "P_R_inv P_R_inv",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ]
+              ]
+            }
+          ],
+          "supported_route_candidate_count": 45,
+          "nonzero_routed_product_count": 31,
+          "zero_routed_product_count": 14
+        },
+        "positive_word_layers": [
+          {
+            "depth": 1,
+            "distinct_transformations": 3,
+            "support_target_by_source": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "depth": 2,
+            "distinct_transformations": 7,
+            "support_target_by_source": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "depth": 3,
+            "distinct_transformations": 14,
+            "support_target_by_source": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "depth": 4,
+            "distinct_transformations": 22,
+            "support_target_by_source": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          }
+        ],
+        "exact_first_hit_word_depth": {
+          "depth_convention": "minimum positive-word length d>=1 over the declared labelled alphabet; the empty word is excluded",
+          "evaluation_convention": "a1...ad acts left-to-right, so the matrix product is P_ad...P_a1",
+          "depth_matrix_target_by_source": [
+            [
+              2,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "first_hit_witnesses": [
+            {
+              "target_sector": 0,
+              "source_sector": 0,
+              "depth": 2,
+              "word_left_to_right": [
+                "S",
+                "S"
+              ],
+              "source_state": 5,
+              "target_state": 5
+            },
+            {
+              "target_sector": 0,
+              "source_sector": 1,
+              "depth": 1,
+              "word_left_to_right": [
+                "S"
+              ],
+              "source_state": 0,
+              "target_state": 5
+            },
+            {
+              "target_sector": 1,
+              "source_sector": 0,
+              "depth": 1,
+              "word_left_to_right": [
+                "S"
+              ],
+              "source_state": 5,
+              "target_state": 0
+            },
+            {
+              "target_sector": 1,
+              "source_sector": 1,
+              "depth": 1,
+              "word_left_to_right": [
+                "S"
+              ],
+              "source_state": 1,
+              "target_state": 4
+            }
+          ],
+          "saturation": {
+            "status": "EXACT_FINITE_GROUP_CLOSURE",
+            "transformation_count": 60,
+            "shortest_nonempty_identity_word_length": 2
+          }
+        }
+      },
+      "simple_support_graph": {
+        "convention": "loops removed and labelled multiplicities collapsed",
+        "connected": true,
+        "diameter": 3,
+        "girth": 3,
+        "edge_count": 7
+      },
+      "schreier_group_laplacian": {
+        "definition": "L=sum_a(I-P_a) for the declared symmetric labelled alphabet",
+        "arithmetic": "Python integer matrices, Fraction rank, Bareiss determinant, exact Newton identities",
+        "adjacency_sha256": "e2fc051e4192daa0b554f1dda0d1eea406b9383abaf90f5e3c4d76413c8631c1",
+        "laplacian_sha256": "a5c19f04fdfa9fa9c71c581a80524454a1afcbf3328a89b88a2547105d9c4ba6",
+        "symmetric": true,
+        "zero_row_sums": true,
+        "exact_rational_rank": 5,
+        "zero_eigenvalue_multiplicity": 1,
+        "spanning_tree_count": 15,
+        "characteristic_polynomial_coefficients_descending": [
+          1,
+          -16,
+          96,
+          -262,
+          303,
+          -90,
+          0
+        ]
+      },
+      "claim_boundary": {
+        "exact": [
+          "finite permutation relations and closure",
+          "coordinate sector partition and labelled block ranks",
+          "Boolean path layers, routed length-two products, and actual word layers",
+          "saturated first-hit word depth",
+          "integer graph-Laplacian characteristic polynomial, rational rank, and Matrix-Tree cofactor"
+        ],
+        "not_claimed": [
+          "Lie or Hall accessibility",
+          "rank-collapse dynamics",
+          "surface Laplace-Beltrami spectrum",
+          "Hecke action or automorphic spectrum",
+          "expansion, Ramanujan, or asymptotic cross-prime theorem",
+          "SOFRS or SOFAUDIT artifact status"
+        ]
+      }
+    },
+    {
+      "record_id": "modular-p1-f7-v2",
+      "claim_status": "Computational Certificate",
+      "source_action": {
+        "source_group": "PSL(2,Z)",
+        "presentation": "<S,R | S^2=R^3=1>",
+        "finite_action": "reduction modulo 7 on P^1(F_7)",
+        "declared_quotient_image": "PSL(2,F_7)"
+      },
+      "carrier": {
+        "carrier_kind": "finite_permutation_schreier",
+        "space": {
+          "scalar_field": "C",
+          "dimension": 8,
+          "basis_state_labels": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "infinity"
+          ]
+        },
+        "sectorization": {
+          "sectorization_id": "p1-f7.T-orbits.v2",
+          "kind": "coordinate_projectors_from_T_orbits",
+          "sectors": [
+            [
+              7
+            ],
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ]
+          ],
+          "sector_sizes": [
+            1,
+            7
+          ],
+          "complete_and_pairwise_orthogonal": true
+        },
+        "labelled_operative_alphabet": {
+          "ordered_labels": [
+            "S",
+            "R",
+            "R_inv"
+          ],
+          "permutations_target_by_source": {
+            "S": [
+              7,
+              6,
+              3,
+              2,
+              5,
+              4,
+              1,
+              0
+            ],
+            "R": [
+              6,
+              3,
+              2,
+              5,
+              4,
+              1,
+              7,
+              0
+            ],
+            "R_inv": [
+              7,
+              5,
+              2,
+              1,
+              4,
+              3,
+              0,
+              6
+            ]
+          },
+          "adjoint_label_map": {
+            "S": "S",
+            "R": "R_inv",
+            "R_inv": "R"
+          },
+          "word_evaluation": "letters act left-to-right; matrices multiply in reverse written order"
+        },
+        "lie_hall_carrier": "NOT_DECLARED"
+      },
+      "presentation_certificate": {
+        "S_squared_identity": true,
+        "R_cubed_identity": true,
+        "T_equals_S_after_R": true
+      },
+      "finite_image_certificate": {
+        "generated_transformation_count": 168,
+        "expected_psl2_order": 168,
+        "order_matches": true,
+        "all_words_are_permutations": true,
+        "rank_collapse_status": "NOT_PRESENT_ON_THIS_GROUP_CARRIER"
+      },
+      "typed_observables": {
+        "labelled_direct_support": {
+          "S": {
+            "support_target_by_source": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "block_rank_target_by_source": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                6
+              ]
+            ]
+          },
+          "R": {
+            "support_target_by_source": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "block_rank_target_by_source": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                6
+              ]
+            ]
+          },
+          "R_inv": {
+            "support_target_by_source": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "block_rank_target_by_source": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                6
+              ]
+            ]
+          }
+        },
+        "aggregate_direct_support_target_by_source": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "boolean_path_layers": [
+          {
+            "depth": 1,
+            "support_target_by_source": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "depth": 2,
+            "support_target_by_source": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "depth": 3,
+            "support_target_by_source": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "depth": 4,
+            "support_target_by_source": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          }
+        ],
+        "route_length_two": {
+          "route_semantics": "Q_target P_second Q_middle P_first Q_source for the displayed left-to-right word [first,second]",
+          "ordered_letter_pair_profiles": [
+            {
+              "word_left_to_right": [
+                "S",
+                "S"
+              ],
+              "operator_product": "P_S P_S",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ]
+              ]
+            },
+            {
+              "word_left_to_right": [
+                "S",
+                "R"
+              ],
+              "operator_product": "P_R P_S",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ]
+              ]
+            },
+            {
+              "word_left_to_right": [
+                "S",
+                "R_inv"
+              ],
+              "operator_product": "P_R_inv P_S",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ]
+              ]
+            },
+            {
+              "word_left_to_right": [
+                "R",
+                "S"
+              ],
+              "operator_product": "P_S P_R",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ]
+              ]
+            },
+            {
+              "word_left_to_right": [
+                "R",
+                "R"
+              ],
+              "operator_product": "P_R P_R",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ]
+              ]
+            },
+            {
+              "word_left_to_right": [
+                "R",
+                "R_inv"
+              ],
+              "operator_product": "P_R_inv P_R",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ]
+              ]
+            },
+            {
+              "word_left_to_right": [
+                "R_inv",
+                "S"
+              ],
+              "operator_product": "P_S P_R_inv",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ]
+              ]
+            },
+            {
+              "word_left_to_right": [
+                "R_inv",
+                "R"
+              ],
+              "operator_product": "P_R P_R_inv",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ]
+              ]
+            },
+            {
+              "word_left_to_right": [
+                "R_inv",
+                "R_inv"
+              ],
+              "operator_product": "P_R_inv P_R_inv",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ]
+              ]
+            }
+          ],
+          "supported_route_candidate_count": 45,
+          "nonzero_routed_product_count": 31,
+          "zero_routed_product_count": 14
+        },
+        "positive_word_layers": [
+          {
+            "depth": 1,
+            "distinct_transformations": 3,
+            "support_target_by_source": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "depth": 2,
+            "distinct_transformations": 7,
+            "support_target_by_source": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "depth": 3,
+            "distinct_transformations": 14,
+            "support_target_by_source": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "depth": 4,
+            "distinct_transformations": 22,
+            "support_target_by_source": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          }
+        ],
+        "exact_first_hit_word_depth": {
+          "depth_convention": "minimum positive-word length d>=1 over the declared labelled alphabet; the empty word is excluded",
+          "evaluation_convention": "a1...ad acts left-to-right, so the matrix product is P_ad...P_a1",
+          "depth_matrix_target_by_source": [
+            [
+              2,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "first_hit_witnesses": [
+            {
+              "target_sector": 0,
+              "source_sector": 0,
+              "depth": 2,
+              "word_left_to_right": [
+                "S",
+                "S"
+              ],
+              "source_state": 7,
+              "target_state": 7
+            },
+            {
+              "target_sector": 0,
+              "source_sector": 1,
+              "depth": 1,
+              "word_left_to_right": [
+                "S"
+              ],
+              "source_state": 0,
+              "target_state": 7
+            },
+            {
+              "target_sector": 1,
+              "source_sector": 0,
+              "depth": 1,
+              "word_left_to_right": [
+                "S"
+              ],
+              "source_state": 7,
+              "target_state": 0
+            },
+            {
+              "target_sector": 1,
+              "source_sector": 1,
+              "depth": 1,
+              "word_left_to_right": [
+                "S"
+              ],
+              "source_state": 1,
+              "target_state": 6
+            }
+          ],
+          "saturation": {
+            "status": "EXACT_FINITE_GROUP_CLOSURE",
+            "transformation_count": 168,
+            "shortest_nonempty_identity_word_length": 2
+          }
+        }
+      },
+      "simple_support_graph": {
+        "convention": "loops removed and labelled multiplicities collapsed",
+        "connected": true,
+        "diameter": 4,
+        "girth": 3,
+        "edge_count": 9
+      },
+      "schreier_group_laplacian": {
+        "definition": "L=sum_a(I-P_a) for the declared symmetric labelled alphabet",
+        "arithmetic": "Python integer matrices, Fraction rank, Bareiss determinant, exact Newton identities",
+        "adjacency_sha256": "ae5ea74740ddfffbaa971091b7f32e85930bf0b3f6c2046a2b102026ea7e0a36",
+        "laplacian_sha256": "7f475e534f04dc9998b2c0223e77b169d27921240eaa123c135d7e9ecfb6ba3f",
+        "symmetric": true,
+        "zero_row_sums": true,
+        "exact_rational_rank": 7,
+        "zero_eigenvalue_multiplicity": 1,
+        "spanning_tree_count": 15,
+        "characteristic_polynomial_coefficients_descending": [
+          1,
+          -20,
+          160,
+          -650,
+          1404,
+          -1540,
+          749,
+          -120,
+          0
+        ]
+      },
+      "claim_boundary": {
+        "exact": [
+          "finite permutation relations and closure",
+          "coordinate sector partition and labelled block ranks",
+          "Boolean path layers, routed length-two products, and actual word layers",
+          "saturated first-hit word depth",
+          "integer graph-Laplacian characteristic polynomial, rational rank, and Matrix-Tree cofactor"
+        ],
+        "not_claimed": [
+          "Lie or Hall accessibility",
+          "rank-collapse dynamics",
+          "surface Laplace-Beltrami spectrum",
+          "Hecke action or automorphic spectrum",
+          "expansion, Ramanujan, or asymptotic cross-prime theorem",
+          "SOFRS or SOFAUDIT artifact status"
+        ]
+      }
+    },
+    {
+      "record_id": "modular-p1-f11-v2",
+      "claim_status": "Computational Certificate",
+      "source_action": {
+        "source_group": "PSL(2,Z)",
+        "presentation": "<S,R | S^2=R^3=1>",
+        "finite_action": "reduction modulo 11 on P^1(F_11)",
+        "declared_quotient_image": "PSL(2,F_11)"
+      },
+      "carrier": {
+        "carrier_kind": "finite_permutation_schreier",
+        "space": {
+          "scalar_field": "C",
+          "dimension": 12,
+          "basis_state_labels": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "infinity"
+          ]
+        },
+        "sectorization": {
+          "sectorization_id": "p1-f11.T-orbits.v2",
+          "kind": "coordinate_projectors_from_T_orbits",
+          "sectors": [
+            [
+              11
+            ],
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ]
+          ],
+          "sector_sizes": [
+            1,
+            11
+          ],
+          "complete_and_pairwise_orthogonal": true
+        },
+        "labelled_operative_alphabet": {
+          "ordered_labels": [
+            "S",
+            "R",
+            "R_inv"
+          ],
+          "permutations_target_by_source": {
+            "S": [
+              11,
+              10,
+              5,
+              7,
+              8,
+              2,
+              9,
+              3,
+              4,
+              6,
+              1,
+              0
+            ],
+            "R": [
+              10,
+              5,
+              7,
+              8,
+              2,
+              9,
+              3,
+              4,
+              6,
+              1,
+              11,
+              0
+            ],
+            "R_inv": [
+              11,
+              9,
+              4,
+              6,
+              7,
+              1,
+              8,
+              2,
+              3,
+              5,
+              0,
+              10
+            ]
+          },
+          "adjoint_label_map": {
+            "S": "S",
+            "R": "R_inv",
+            "R_inv": "R"
+          },
+          "word_evaluation": "letters act left-to-right; matrices multiply in reverse written order"
+        },
+        "lie_hall_carrier": "NOT_DECLARED"
+      },
+      "presentation_certificate": {
+        "S_squared_identity": true,
+        "R_cubed_identity": true,
+        "T_equals_S_after_R": true
+      },
+      "finite_image_certificate": {
+        "generated_transformation_count": 660,
+        "expected_psl2_order": 660,
+        "order_matches": true,
+        "all_words_are_permutations": true,
+        "rank_collapse_status": "NOT_PRESENT_ON_THIS_GROUP_CARRIER"
+      },
+      "typed_observables": {
+        "labelled_direct_support": {
+          "S": {
+            "support_target_by_source": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "block_rank_target_by_source": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                10
+              ]
+            ]
+          },
+          "R": {
+            "support_target_by_source": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "block_rank_target_by_source": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                10
+              ]
+            ]
+          },
+          "R_inv": {
+            "support_target_by_source": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "block_rank_target_by_source": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                10
+              ]
+            ]
+          }
+        },
+        "aggregate_direct_support_target_by_source": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "boolean_path_layers": [
+          {
+            "depth": 1,
+            "support_target_by_source": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "depth": 2,
+            "support_target_by_source": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "depth": 3,
+            "support_target_by_source": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "depth": 4,
+            "support_target_by_source": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          }
+        ],
+        "route_length_two": {
+          "route_semantics": "Q_target P_second Q_middle P_first Q_source for the displayed left-to-right word [first,second]",
+          "ordered_letter_pair_profiles": [
+            {
+              "word_left_to_right": [
+                "S",
+                "S"
+              ],
+              "operator_product": "P_S P_S",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ]
+              ]
+            },
+            {
+              "word_left_to_right": [
+                "S",
+                "R"
+              ],
+              "operator_product": "P_R P_S",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ]
+              ]
+            },
+            {
+              "word_left_to_right": [
+                "S",
+                "R_inv"
+              ],
+              "operator_product": "P_R_inv P_S",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ]
+              ]
+            },
+            {
+              "word_left_to_right": [
+                "R",
+                "S"
+              ],
+              "operator_product": "P_S P_R",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ]
+              ]
+            },
+            {
+              "word_left_to_right": [
+                "R",
+                "R"
+              ],
+              "operator_product": "P_R P_R",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ]
+              ]
+            },
+            {
+              "word_left_to_right": [
+                "R",
+                "R_inv"
+              ],
+              "operator_product": "P_R_inv P_R",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ]
+              ]
+            },
+            {
+              "word_left_to_right": [
+                "R_inv",
+                "S"
+              ],
+              "operator_product": "P_S P_R_inv",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ]
+              ]
+            },
+            {
+              "word_left_to_right": [
+                "R_inv",
+                "R"
+              ],
+              "operator_product": "P_R P_R_inv",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ]
+              ]
+            },
+            {
+              "word_left_to_right": [
+                "R_inv",
+                "R_inv"
+              ],
+              "operator_product": "P_R_inv P_R_inv",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ]
+              ]
+            }
+          ],
+          "supported_route_candidate_count": 45,
+          "nonzero_routed_product_count": 31,
+          "zero_routed_product_count": 14
+        },
+        "positive_word_layers": [
+          {
+            "depth": 1,
+            "distinct_transformations": 3,
+            "support_target_by_source": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "depth": 2,
+            "distinct_transformations": 7,
+            "support_target_by_source": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "depth": 3,
+            "distinct_transformations": 14,
+            "support_target_by_source": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "depth": 4,
+            "distinct_transformations": 22,
+            "support_target_by_source": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          }
+        ],
+        "exact_first_hit_word_depth": {
+          "depth_convention": "minimum positive-word length d>=1 over the declared labelled alphabet; the empty word is excluded",
+          "evaluation_convention": "a1...ad acts left-to-right, so the matrix product is P_ad...P_a1",
+          "depth_matrix_target_by_source": [
+            [
+              2,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "first_hit_witnesses": [
+            {
+              "target_sector": 0,
+              "source_sector": 0,
+              "depth": 2,
+              "word_left_to_right": [
+                "S",
+                "S"
+              ],
+              "source_state": 11,
+              "target_state": 11
+            },
+            {
+              "target_sector": 0,
+              "source_sector": 1,
+              "depth": 1,
+              "word_left_to_right": [
+                "S"
+              ],
+              "source_state": 0,
+              "target_state": 11
+            },
+            {
+              "target_sector": 1,
+              "source_sector": 0,
+              "depth": 1,
+              "word_left_to_right": [
+                "S"
+              ],
+              "source_state": 11,
+              "target_state": 0
+            },
+            {
+              "target_sector": 1,
+              "source_sector": 1,
+              "depth": 1,
+              "word_left_to_right": [
+                "S"
+              ],
+              "source_state": 1,
+              "target_state": 10
+            }
+          ],
+          "saturation": {
+            "status": "EXACT_FINITE_GROUP_CLOSURE",
+            "transformation_count": 660,
+            "shortest_nonempty_identity_word_length": 2
+          }
+        }
+      },
+      "simple_support_graph": {
+        "convention": "loops removed and labelled multiplicities collapsed",
+        "connected": true,
+        "diameter": 5,
+        "girth": 3,
+        "edge_count": 17
+      },
+      "schreier_group_laplacian": {
+        "definition": "L=sum_a(I-P_a) for the declared symmetric labelled alphabet",
+        "arithmetic": "Python integer matrices, Fraction rank, Bareiss determinant, exact Newton identities",
+        "adjacency_sha256": "e1a9c683f8ea211f532e63ac68f545db538b63e723decee76ac7a49ff994f7cf",
+        "laplacian_sha256": "53aab4e3e16412ec1b7139960b8f33f4e20aeb2f9f2da5e5748d5b72fba99fef",
+        "symmetric": true,
+        "zero_row_sums": true,
+        "exact_rational_rank": 11,
+        "zero_eigenvalue_multiplicity": 1,
+        "spanning_tree_count": 1875,
+        "characteristic_polynomial_coefficients_descending": [
+          1,
+          -36,
+          574,
+          -5330,
+          31869,
+          -128004,
+          349361,
+          -639990,
+          757130,
+          -534700,
+          191625,
+          -22500,
+          0
+        ]
+      },
+      "claim_boundary": {
+        "exact": [
+          "finite permutation relations and closure",
+          "coordinate sector partition and labelled block ranks",
+          "Boolean path layers, routed length-two products, and actual word layers",
+          "saturated first-hit word depth",
+          "integer graph-Laplacian characteristic polynomial, rational rank, and Matrix-Tree cofactor"
+        ],
+        "not_claimed": [
+          "Lie or Hall accessibility",
+          "rank-collapse dynamics",
+          "surface Laplace-Beltrami spectrum",
+          "Hecke action or automorphic spectrum",
+          "expansion, Ramanujan, or asymptotic cross-prime theorem",
+          "SOFRS or SOFAUDIT artifact status"
+        ]
+      }
+    },
+    {
+      "record_id": "modular-p1-f13-v2",
+      "claim_status": "Computational Certificate",
+      "source_action": {
+        "source_group": "PSL(2,Z)",
+        "presentation": "<S,R | S^2=R^3=1>",
+        "finite_action": "reduction modulo 13 on P^1(F_13)",
+        "declared_quotient_image": "PSL(2,F_13)"
+      },
+      "carrier": {
+        "carrier_kind": "finite_permutation_schreier",
+        "space": {
+          "scalar_field": "C",
+          "dimension": 14,
+          "basis_state_labels": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "infinity"
+          ]
+        },
+        "sectorization": {
+          "sectorization_id": "p1-f13.T-orbits.v2",
+          "kind": "coordinate_projectors_from_T_orbits",
+          "sectors": [
+            [
+              13
+            ],
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12
+            ]
+          ],
+          "sector_sizes": [
+            1,
+            13
+          ],
+          "complete_and_pairwise_orthogonal": true
+        },
+        "labelled_operative_alphabet": {
+          "ordered_labels": [
+            "S",
+            "R",
+            "R_inv"
+          ],
+          "permutations_target_by_source": {
+            "S": [
+              13,
+              12,
+              6,
+              4,
+              3,
+              5,
+              2,
+              11,
+              8,
+              10,
+              9,
+              7,
+              1,
+              0
+            ],
+            "R": [
+              12,
+              6,
+              4,
+              3,
+              5,
+              2,
+              11,
+              8,
+              10,
+              9,
+              7,
+              1,
+              13,
+              0
+            ],
+            "R_inv": [
+              13,
+              11,
+              5,
+              3,
+              2,
+              4,
+              1,
+              10,
+              7,
+              9,
+              8,
+              6,
+              0,
+              12
+            ]
+          },
+          "adjoint_label_map": {
+            "S": "S",
+            "R": "R_inv",
+            "R_inv": "R"
+          },
+          "word_evaluation": "letters act left-to-right; matrices multiply in reverse written order"
+        },
+        "lie_hall_carrier": "NOT_DECLARED"
+      },
+      "presentation_certificate": {
+        "S_squared_identity": true,
+        "R_cubed_identity": true,
+        "T_equals_S_after_R": true
+      },
+      "finite_image_certificate": {
+        "generated_transformation_count": 1092,
+        "expected_psl2_order": 1092,
+        "order_matches": true,
+        "all_words_are_permutations": true,
+        "rank_collapse_status": "NOT_PRESENT_ON_THIS_GROUP_CARRIER"
+      },
+      "typed_observables": {
+        "labelled_direct_support": {
+          "S": {
+            "support_target_by_source": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "block_rank_target_by_source": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                12
+              ]
+            ]
+          },
+          "R": {
+            "support_target_by_source": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "block_rank_target_by_source": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                12
+              ]
+            ]
+          },
+          "R_inv": {
+            "support_target_by_source": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "block_rank_target_by_source": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                12
+              ]
+            ]
+          }
+        },
+        "aggregate_direct_support_target_by_source": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "boolean_path_layers": [
+          {
+            "depth": 1,
+            "support_target_by_source": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "depth": 2,
+            "support_target_by_source": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "depth": 3,
+            "support_target_by_source": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "depth": 4,
+            "support_target_by_source": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          }
+        ],
+        "route_length_two": {
+          "route_semantics": "Q_target P_second Q_middle P_first Q_source for the displayed left-to-right word [first,second]",
+          "ordered_letter_pair_profiles": [
+            {
+              "word_left_to_right": [
+                "S",
+                "S"
+              ],
+              "operator_product": "P_S P_S",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ]
+              ]
+            },
+            {
+              "word_left_to_right": [
+                "S",
+                "R"
+              ],
+              "operator_product": "P_R P_S",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ]
+              ]
+            },
+            {
+              "word_left_to_right": [
+                "S",
+                "R_inv"
+              ],
+              "operator_product": "P_R_inv P_S",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ]
+              ]
+            },
+            {
+              "word_left_to_right": [
+                "R",
+                "S"
+              ],
+              "operator_product": "P_S P_R",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ]
+              ]
+            },
+            {
+              "word_left_to_right": [
+                "R",
+                "R"
+              ],
+              "operator_product": "P_R P_R",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ]
+              ]
+            },
+            {
+              "word_left_to_right": [
+                "R",
+                "R_inv"
+              ],
+              "operator_product": "P_R_inv P_R",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ]
+              ]
+            },
+            {
+              "word_left_to_right": [
+                "R_inv",
+                "S"
+              ],
+              "operator_product": "P_S P_R_inv",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ]
+              ]
+            },
+            {
+              "word_left_to_right": [
+                "R_inv",
+                "R"
+              ],
+              "operator_product": "P_R P_R_inv",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ]
+              ]
+            },
+            {
+              "word_left_to_right": [
+                "R_inv",
+                "R_inv"
+              ],
+              "operator_product": "P_R_inv P_R_inv",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ]
+              ]
+            }
+          ],
+          "supported_route_candidate_count": 45,
+          "nonzero_routed_product_count": 31,
+          "zero_routed_product_count": 14
+        },
+        "positive_word_layers": [
+          {
+            "depth": 1,
+            "distinct_transformations": 3,
+            "support_target_by_source": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "depth": 2,
+            "distinct_transformations": 7,
+            "support_target_by_source": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "depth": 3,
+            "distinct_transformations": 14,
+            "support_target_by_source": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "depth": 4,
+            "distinct_transformations": 22,
+            "support_target_by_source": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          }
+        ],
+        "exact_first_hit_word_depth": {
+          "depth_convention": "minimum positive-word length d>=1 over the declared labelled alphabet; the empty word is excluded",
+          "evaluation_convention": "a1...ad acts left-to-right, so the matrix product is P_ad...P_a1",
+          "depth_matrix_target_by_source": [
+            [
+              2,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "first_hit_witnesses": [
+            {
+              "target_sector": 0,
+              "source_sector": 0,
+              "depth": 2,
+              "word_left_to_right": [
+                "S",
+                "S"
+              ],
+              "source_state": 13,
+              "target_state": 13
+            },
+            {
+              "target_sector": 0,
+              "source_sector": 1,
+              "depth": 1,
+              "word_left_to_right": [
+                "S"
+              ],
+              "source_state": 0,
+              "target_state": 13
+            },
+            {
+              "target_sector": 1,
+              "source_sector": 0,
+              "depth": 1,
+              "word_left_to_right": [
+                "S"
+              ],
+              "source_state": 13,
+              "target_state": 0
+            },
+            {
+              "target_sector": 1,
+              "source_sector": 1,
+              "depth": 1,
+              "word_left_to_right": [
+                "S"
+              ],
+              "source_state": 1,
+              "target_state": 12
+            }
+          ],
+          "saturation": {
+            "status": "EXACT_FINITE_GROUP_CLOSURE",
+            "transformation_count": 1092,
+            "shortest_nonempty_identity_word_length": 2
+          }
+        }
+      },
+      "simple_support_graph": {
+        "convention": "loops removed and labelled multiplicities collapsed",
+        "connected": true,
+        "diameter": 7,
+        "girth": 3,
+        "edge_count": 17
+      },
+      "schreier_group_laplacian": {
+        "definition": "L=sum_a(I-P_a) for the declared symmetric labelled alphabet",
+        "arithmetic": "Python integer matrices, Fraction rank, Bareiss determinant, exact Newton identities",
+        "adjacency_sha256": "b20824d251922dc459d2920a217c8bb21425c59f2d8c780fba87365af1517e67",
+        "laplacian_sha256": "ce545bbbacedd6de5070548944722c73ad740025405b19fc3f76ec03b5352813",
+        "symmetric": true,
+        "zero_row_sums": true,
+        "exact_rational_rank": 13,
+        "zero_eigenvalue_multiplicity": 1,
+        "spanning_tree_count": 135,
+        "characteristic_polynomial_coefficients_descending": [
+          1,
+          -36,
+          578,
+          -5454,
+          33547,
+          -140996,
+          412715,
+          -841706,
+          1177383,
+          -1092484,
+          634783,
+          -209322,
+          32913,
+          -1890,
+          0
+        ]
+      },
+      "claim_boundary": {
+        "exact": [
+          "finite permutation relations and closure",
+          "coordinate sector partition and labelled block ranks",
+          "Boolean path layers, routed length-two products, and actual word layers",
+          "saturated first-hit word depth",
+          "integer graph-Laplacian characteristic polynomial, rational rank, and Matrix-Tree cofactor"
+        ],
+        "not_claimed": [
+          "Lie or Hall accessibility",
+          "rank-collapse dynamics",
+          "surface Laplace-Beltrami spectrum",
+          "Hecke action or automorphic spectrum",
+          "expansion, Ramanujan, or asymptotic cross-prime theorem",
+          "SOFRS or SOFAUDIT artifact status"
+        ]
+      }
+    },
+    {
+      "record_id": "modular-p1-f17-v2",
+      "claim_status": "Computational Certificate",
+      "source_action": {
+        "source_group": "PSL(2,Z)",
+        "presentation": "<S,R | S^2=R^3=1>",
+        "finite_action": "reduction modulo 17 on P^1(F_17)",
+        "declared_quotient_image": "PSL(2,F_17)"
+      },
+      "carrier": {
+        "carrier_kind": "finite_permutation_schreier",
+        "space": {
+          "scalar_field": "C",
+          "dimension": 18,
+          "basis_state_labels": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "infinity"
+          ]
+        },
+        "sectorization": {
+          "sectorization_id": "p1-f17.T-orbits.v2",
+          "kind": "coordinate_projectors_from_T_orbits",
+          "sectors": [
+            [
+              17
+            ],
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16
+            ]
+          ],
+          "sector_sizes": [
+            1,
+            17
+          ],
+          "complete_and_pairwise_orthogonal": true
+        },
+        "labelled_operative_alphabet": {
+          "ordered_labels": [
+            "S",
+            "R",
+            "R_inv"
+          ],
+          "permutations_target_by_source": {
+            "S": [
+              17,
+              16,
+              8,
+              11,
+              4,
+              10,
+              14,
+              12,
+              2,
+              15,
+              5,
+              3,
+              7,
+              13,
+              6,
+              9,
+              1,
+              0
+            ],
+            "R": [
+              16,
+              8,
+              11,
+              4,
+              10,
+              14,
+              12,
+              2,
+              15,
+              5,
+              3,
+              7,
+              13,
+              6,
+              9,
+              1,
+              17,
+              0
+            ],
+            "R_inv": [
+              17,
+              15,
+              7,
+              10,
+              3,
+              9,
+              13,
+              11,
+              1,
+              14,
+              4,
+              2,
+              6,
+              12,
+              5,
+              8,
+              0,
+              16
+            ]
+          },
+          "adjoint_label_map": {
+            "S": "S",
+            "R": "R_inv",
+            "R_inv": "R"
+          },
+          "word_evaluation": "letters act left-to-right; matrices multiply in reverse written order"
+        },
+        "lie_hall_carrier": "NOT_DECLARED"
+      },
+      "presentation_certificate": {
+        "S_squared_identity": true,
+        "R_cubed_identity": true,
+        "T_equals_S_after_R": true
+      },
+      "finite_image_certificate": {
+        "generated_transformation_count": 2448,
+        "expected_psl2_order": 2448,
+        "order_matches": true,
+        "all_words_are_permutations": true,
+        "rank_collapse_status": "NOT_PRESENT_ON_THIS_GROUP_CARRIER"
+      },
+      "typed_observables": {
+        "labelled_direct_support": {
+          "S": {
+            "support_target_by_source": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "block_rank_target_by_source": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                16
+              ]
+            ]
+          },
+          "R": {
+            "support_target_by_source": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "block_rank_target_by_source": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                16
+              ]
+            ]
+          },
+          "R_inv": {
+            "support_target_by_source": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "block_rank_target_by_source": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                16
+              ]
+            ]
+          }
+        },
+        "aggregate_direct_support_target_by_source": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "boolean_path_layers": [
+          {
+            "depth": 1,
+            "support_target_by_source": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "depth": 2,
+            "support_target_by_source": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "depth": 3,
+            "support_target_by_source": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "depth": 4,
+            "support_target_by_source": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          }
+        ],
+        "route_length_two": {
+          "route_semantics": "Q_target P_second Q_middle P_first Q_source for the displayed left-to-right word [first,second]",
+          "ordered_letter_pair_profiles": [
+            {
+              "word_left_to_right": [
+                "S",
+                "S"
+              ],
+              "operator_product": "P_S P_S",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ]
+              ]
+            },
+            {
+              "word_left_to_right": [
+                "S",
+                "R"
+              ],
+              "operator_product": "P_R P_S",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ]
+              ]
+            },
+            {
+              "word_left_to_right": [
+                "S",
+                "R_inv"
+              ],
+              "operator_product": "P_R_inv P_S",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ]
+              ]
+            },
+            {
+              "word_left_to_right": [
+                "R",
+                "S"
+              ],
+              "operator_product": "P_S P_R",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ]
+              ]
+            },
+            {
+              "word_left_to_right": [
+                "R",
+                "R"
+              ],
+              "operator_product": "P_R P_R",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ]
+              ]
+            },
+            {
+              "word_left_to_right": [
+                "R",
+                "R_inv"
+              ],
+              "operator_product": "P_R_inv P_R",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ]
+              ]
+            },
+            {
+              "word_left_to_right": [
+                "R_inv",
+                "S"
+              ],
+              "operator_product": "P_S P_R_inv",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ]
+              ]
+            },
+            {
+              "word_left_to_right": [
+                "R_inv",
+                "R"
+              ],
+              "operator_product": "P_R P_R_inv",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ]
+              ]
+            },
+            {
+              "word_left_to_right": [
+                "R_inv",
+                "R_inv"
+              ],
+              "operator_product": "P_R_inv P_R_inv",
+              "candidate_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "nonzero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "zero_routes_target_middle_source": [
+                [
+                  0,
+                  1,
+                  0
+                ]
+              ]
+            }
+          ],
+          "supported_route_candidate_count": 45,
+          "nonzero_routed_product_count": 31,
+          "zero_routed_product_count": 14
+        },
+        "positive_word_layers": [
+          {
+            "depth": 1,
+            "distinct_transformations": 3,
+            "support_target_by_source": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "depth": 2,
+            "distinct_transformations": 7,
+            "support_target_by_source": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "depth": 3,
+            "distinct_transformations": 14,
+            "support_target_by_source": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "depth": 4,
+            "distinct_transformations": 22,
+            "support_target_by_source": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          }
+        ],
+        "exact_first_hit_word_depth": {
+          "depth_convention": "minimum positive-word length d>=1 over the declared labelled alphabet; the empty word is excluded",
+          "evaluation_convention": "a1...ad acts left-to-right, so the matrix product is P_ad...P_a1",
+          "depth_matrix_target_by_source": [
+            [
+              2,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "first_hit_witnesses": [
+            {
+              "target_sector": 0,
+              "source_sector": 0,
+              "depth": 2,
+              "word_left_to_right": [
+                "S",
+                "S"
+              ],
+              "source_state": 17,
+              "target_state": 17
+            },
+            {
+              "target_sector": 0,
+              "source_sector": 1,
+              "depth": 1,
+              "word_left_to_right": [
+                "S"
+              ],
+              "source_state": 0,
+              "target_state": 17
+            },
+            {
+              "target_sector": 1,
+              "source_sector": 0,
+              "depth": 1,
+              "word_left_to_right": [
+                "S"
+              ],
+              "source_state": 17,
+              "target_state": 0
+            },
+            {
+              "target_sector": 1,
+              "source_sector": 1,
+              "depth": 1,
+              "word_left_to_right": [
+                "S"
+              ],
+              "source_state": 1,
+              "target_state": 16
+            }
+          ],
+          "saturation": {
+            "status": "EXACT_FINITE_GROUP_CLOSURE",
+            "transformation_count": 2448,
+            "shortest_nonempty_identity_word_length": 2
+          }
+        }
+      },
+      "simple_support_graph": {
+        "convention": "loops removed and labelled multiplicities collapsed",
+        "connected": true,
+        "diameter": 7,
+        "girth": 3,
+        "edge_count": 25
+      },
+      "schreier_group_laplacian": {
+        "definition": "L=sum_a(I-P_a) for the declared symmetric labelled alphabet",
+        "arithmetic": "Python integer matrices, Fraction rank, Bareiss determinant, exact Newton identities",
+        "adjacency_sha256": "2551645c94399ad344c36e1d6a31a022750f0cc96c6e902230a3dbfc49974e92",
+        "laplacian_sha256": "0d650f9a098ff5f0cee295ed57315ff5f118d4e1463080abacf6ed2b506517b6",
+        "symmetric": true,
+        "zero_row_sums": true,
+        "exact_rational_rank": 17,
+        "zero_eigenvalue_multiplicity": 1,
+        "spanning_tree_count": 40500,
+        "characteristic_polynomial_coefficients_descending": [
+          1,
+          -52,
+          1248,
+          -18326,
+          184010,
+          -1337328,
+          7262677,
+          -29995396,
+          94965029,
+          -230560892,
+          426465026,
+          -592773790,
+          605553720,
+          -439755336,
+          216043497,
+          -66442680,
+          11129400,
+          -729000,
+          0
+        ]
+      },
+      "claim_boundary": {
+        "exact": [
+          "finite permutation relations and closure",
+          "coordinate sector partition and labelled block ranks",
+          "Boolean path layers, routed length-two products, and actual word layers",
+          "saturated first-hit word depth",
+          "integer graph-Laplacian characteristic polynomial, rational rank, and Matrix-Tree cofactor"
+        ],
+        "not_claimed": [
+          "Lie or Hall accessibility",
+          "rank-collapse dynamics",
+          "surface Laplace-Beltrami spectrum",
+          "Hecke action or automorphic spectrum",
+          "expansion, Ramanujan, or asymptotic cross-prime theorem",
+          "SOFRS or SOFAUDIT artifact status"
+        ]
+      }
+    }
+  ],
+  "feature_table": [
+    {
+      "prime": 3,
+      "state_count": 4,
+      "sector_sizes": [
+        1,
+        3
+      ],
+      "finite_image_order": 12,
+      "maximum_first_hit_word_depth": 2,
+      "route2_zero_count": 14,
+      "spanning_tree_count": 5
+    },
+    {
+      "prime": 5,
+      "state_count": 6,
+      "sector_sizes": [
+        1,
+        5
+      ],
+      "finite_image_order": 60,
+      "maximum_first_hit_word_depth": 2,
+      "route2_zero_count": 14,
+      "spanning_tree_count": 15
+    },
+    {
+      "prime": 7,
+      "state_count": 8,
+      "sector_sizes": [
+        1,
+        7
+      ],
+      "finite_image_order": 168,
+      "maximum_first_hit_word_depth": 2,
+      "route2_zero_count": 14,
+      "spanning_tree_count": 15
+    },
+    {
+      "prime": 11,
+      "state_count": 12,
+      "sector_sizes": [
+        1,
+        11
+      ],
+      "finite_image_order": 660,
+      "maximum_first_hit_word_depth": 2,
+      "route2_zero_count": 14,
+      "spanning_tree_count": 1875
+    },
+    {
+      "prime": 13,
+      "state_count": 14,
+      "sector_sizes": [
+        1,
+        13
+      ],
+      "finite_image_order": 1092,
+      "maximum_first_hit_word_depth": 2,
+      "route2_zero_count": 14,
+      "spanning_tree_count": 135
+    },
+    {
+      "prime": 17,
+      "state_count": 18,
+      "sector_sizes": [
+        1,
+        17
+      ],
+      "finite_image_order": 2448,
+      "maximum_first_hit_word_depth": 2,
+      "route2_zero_count": 14,
+      "spanning_tree_count": 40500
+    }
+  ],
+  "negative_boundaries": [
+    "The finite Schreier/group Laplacian is not a surface Laplace-Beltrami operator.",
+    "Boolean paths, routed products, and full words are retained as distinct objects.",
+    "All group words have full operator rank; word accessibility is not rank collapse.",
+    "This bundle is not a SOFRS report, SOFAUDIT artifact, or paper-local certificate."
+  ],
+  "content_sha256": "370453f8b462cc3017c60781b44a48ee41c08ed64efe38255ffe219c4013143c"
+}

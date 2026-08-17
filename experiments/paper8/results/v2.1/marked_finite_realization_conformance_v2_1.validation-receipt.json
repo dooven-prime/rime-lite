@@ -1,0 +1,73 @@
+{
+  "artifact_id": "P8V2.1-REPLAY",
+  "candidate_version": "2.1",
+  "certificate": {
+    "artifact_sha256": "320f0249f29d247f0707787edb10d1e36f82ca728d030e1aeda2cfd0230db7f2",
+    "content_sha256": "23060ad90bc30ebcc8fa64847c337ecc92533fb0ddb14c75286bcc894e67bd6d",
+    "path": "experiments/paper8/results/v2.1/marked_finite_realization_conformance_v2_1.json"
+  },
+  "checks": [
+    "certificate content digest",
+    "exploratory source status and exact scope",
+    "full source-bundle replay through installed producer closure",
+    "marked partition distinction",
+    "noninjective label-map preservation",
+    "four-state Path/Route/W hostile relation",
+    "57 finite positive-closure saturation receipts",
+    "positive first-hit convention d>=1",
+    "excluded-carrier field rejection",
+    "coordinated result-and-digest tamper rejection"
+  ],
+  "claim_boundary": {
+    "certifies": "exact promoted conformance artifact and replay closure",
+    "does_not_certify": [
+      "a new proof of the abstract SOF object theory",
+      "canonical sectorization",
+      "Lie/Hall accessibility or Lie depth",
+      "surface, automorphic, Hecke, moduli, or Selberg claims",
+      "SOFRS or SOFAUDIT admission"
+    ]
+  },
+  "content_sha256": "14063a466da2c213e2b01b0991fccb418076fd2e5a130986dd614f88a5438b4d",
+  "paper": "Paper VIII",
+  "producer_implementation": {
+    "files": {
+      "experiments/exploratory/carrier_realizations/fuchsian_schreier/core.py": "f84c18f5ce35f9b0ab05169a783012a0e33b378ecb5058f52c2c6f6b5a7d500b",
+      "experiments/exploratory/carrier_realizations/fuchsian_schreier/modular_census.py": "90ae4946fad44ebe252a0409940f3d8ea807881e5dff618a673eff84f53a9abf",
+      "experiments/exploratory/carrier_realizations/fuchsian_schreier/triangle_census.py": "58a5c464f5a0c8ae4c2b3cd1731148c834d76d2de55f36f4f0af284b7cf30326",
+      "experiments/exploratory/carrier_realizations/fuchsian_schreier/validate.py": "059ffc5b03a2f658724ed48aa705e11b7388d4d8b32cabf8e99599ed85f0ff8e",
+      "experiments/paper8/validation/promote_marked_finite_realizations_v2_1.py": "7b733a21307df91e851ca3a7cac486c2c46cc789d18a56a24239f7b4dabaf430"
+    },
+    "implementation_sha256": "03c7c30dc75f48878e0e4d1fac7123180e915a9472b7444a723dcc7f10a1d3c4",
+    "producer_id": "paper8.marked-finite-realization-promotion.python.v2.1"
+  },
+  "receipt_kind": "PAPER8_CONFORMANCE_VALIDATION_RECEIPT",
+  "receipt_scope": "PAPER8_V2_1_PROMOTION_CONFORMANCE_ONLY",
+  "schema": "paper8.marked-finite-realization-validation-receipt.v2.1",
+  "source_artifacts": [
+    {
+      "artifact_sha256": "53aef127b32546dfb2ef332a46394a14abfdca79ed2019c8263baec75cfff911",
+      "bundle_id": "fuchsian-schreier.modular-p1-census.v2",
+      "content_sha256": "370453f8b462cc3017c60781b44a48ee41c08ed64efe38255ffe219c4013143c",
+      "path": "experiments/exploratory/carrier_realizations/fuchsian_schreier/results/modular_p1_census_v2.json",
+      "promotion_role": "SOURCE_PROVENANCE_AND_REPLAY_INPUT",
+      "schema": "rime.exploratory.fuchsian-schreier.modular-p1-census.v2",
+      "upstream_paper_evidence_status": "NOT_PROMOTED"
+    },
+    {
+      "artifact_sha256": "0dded6e8ffe00419a1eaecaa10cd5db5c47d17f642a78534be8500714a09f5cb",
+      "bundle_id": "fuchsian-schreier.triangle-low-index-census.v2",
+      "content_sha256": "0dbeaf32280808a62e2603994acf8bd4d9eabb612566d6da1eac422e5cb4b37f",
+      "path": "experiments/exploratory/carrier_realizations/fuchsian_schreier/results/triangle_low_index_census_v2.json",
+      "promotion_role": "SOURCE_PROVENANCE_AND_REPLAY_INPUT",
+      "schema": "rime.exploratory.fuchsian-schreier.triangle-census.v2",
+      "upstream_paper_evidence_status": "NOT_PROMOTED"
+    }
+  ],
+  "status": "PASS",
+  "validator": {
+    "path": "experiments/paper8/validation/validate_marked_finite_realizations_v2_1.py",
+    "sha256": "9068834f645f2d1b490cad259ff1cfc3e619180406cfa649763abe2f527421c5",
+    "validator_id": "paper8.marked-finite-realization-validator.python.v2.1"
+  }
+}

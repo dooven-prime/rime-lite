@@ -1,0 +1,305 @@
+{
+  "axis_rotation_control": {
+    "labelled_families_distinct": true,
+    "profile_invariance_requires": "representation equivariance and transport of the sector and carrier frames",
+    "same_orientation_preserving_rotation_orbit": true,
+    "source_family": "full generator family minus axis-0 half turns (L2/R2)",
+    "target_family": "full generator family minus axis-2 half turns (F2/B2)"
+  },
+  "claim_status_by_component": {
+    "axis_balanced_family_index": "Computational Certificate",
+    "axis_rotation_control": "Computational Certificate",
+    "canonical_carrier_zero_products": "Computational Certificate",
+    "fixed_frame_profile_census": "Computational Observation"
+  },
+  "exact_numerator_certificate": {
+    "all_fixed_frame_orbit_zero_routes_covered": true,
+    "arithmetic_backend": "numpy.int64 coefficient arrays guarded by conservative preoperation bounds for every arithmetic operation; trace accumulation uses Python integers",
+    "canonical_zero_triples": [
+      {
+        "all_generator_pairs_have_exact_zero_product": true,
+        "carrier_intersection": [],
+        "source_carriers": [
+          "cp",
+          "co"
+        ],
+        "target_carriers": [
+          "ep",
+          "eo"
+        ],
+        "triple": [
+          2,
+          6,
+          8
+        ]
+      },
+      {
+        "all_generator_pairs_have_exact_zero_product": true,
+        "carrier_intersection": [],
+        "source_carriers": [
+          "cp",
+          "co"
+        ],
+        "target_carriers": [
+          "ep",
+          "eo"
+        ],
+        "triple": [
+          5,
+          6,
+          8
+        ]
+      },
+      {
+        "all_generator_pairs_have_exact_zero_product": true,
+        "carrier_intersection": [],
+        "source_carriers": [
+          "ep",
+          "eo"
+        ],
+        "target_carriers": [
+          "cp",
+          "co"
+        ],
+        "triple": [
+          8,
+          6,
+          2
+        ]
+      },
+      {
+        "all_generator_pairs_have_exact_zero_product": true,
+        "carrier_intersection": [],
+        "source_carriers": [
+          "ep",
+          "eo"
+        ],
+        "target_carriers": [
+          "cp",
+          "co"
+        ],
+        "triple": [
+          8,
+          6,
+          5
+        ]
+      }
+    ],
+    "coefficient_ring": "Z[zeta_3], zeta_3^2 + zeta_3 + 1 = 0",
+    "int64_preoperation_audit": {
+      "all_operations_safe": true,
+      "coverage": [
+        "identity",
+        "add",
+        "subtract",
+        "scale",
+        "adjoint",
+        "matmul",
+        "trace"
+      ],
+      "int64_limit": 9223372036854775807,
+      "maximum_conservative_output_bound": 121031884800,
+      "operation_count": 387,
+      "operation_kind_counts": {
+        "add": 27,
+        "adjoint": 29,
+        "identity": 46,
+        "matmul": 146,
+        "scale": 36,
+        "subtract": 94,
+        "trace": 9
+      }
+    },
+    "registered_carriers": [
+      "cp",
+      "ep",
+      "co",
+      "eo"
+    ]
+  },
+  "family_index": {
+    "labelled_nonempty_family_count": 63,
+    "rotation_group_order": 24,
+    "rotation_orbit_representative_count": 19
+  },
+  "fixed_frame_census": {
+    "frame": "canonical joint quarter-turn/half-turn sector frame",
+    "inactive_orbit_ids": [
+      "axis-balanced-00",
+      "axis-balanced-02",
+      "axis-balanced-05"
+    ],
+    "observed_rate": "2/9",
+    "orbit_rows_with_supported_routes": 16,
+    "orbit_rows_without_supported_routes": 3,
+    "rows": [
+      {
+        "mechanism": "physical_carrier_forced",
+        "operator_count": 4,
+        "orbit_id": "axis-balanced-01",
+        "supported_routes": 288,
+        "unprotected_zero": 64,
+        "zero_over_all_supported": "2/9"
+      },
+      {
+        "mechanism": "physical_carrier_forced",
+        "operator_count": 6,
+        "orbit_id": "axis-balanced-03",
+        "supported_routes": 288,
+        "unprotected_zero": 64,
+        "zero_over_all_supported": "2/9"
+      },
+      {
+        "mechanism": "physical_carrier_forced",
+        "operator_count": 6,
+        "orbit_id": "axis-balanced-04",
+        "supported_routes": 288,
+        "unprotected_zero": 64,
+        "zero_over_all_supported": "2/9"
+      },
+      {
+        "mechanism": "physical_carrier_forced",
+        "operator_count": 8,
+        "orbit_id": "axis-balanced-06",
+        "supported_routes": 288,
+        "unprotected_zero": 64,
+        "zero_over_all_supported": "2/9"
+      },
+      {
+        "mechanism": "physical_carrier_forced",
+        "operator_count": 8,
+        "orbit_id": "axis-balanced-07",
+        "supported_routes": 1152,
+        "unprotected_zero": 256,
+        "zero_over_all_supported": "2/9"
+      },
+      {
+        "mechanism": "physical_carrier_forced",
+        "operator_count": 8,
+        "orbit_id": "axis-balanced-08",
+        "supported_routes": 288,
+        "unprotected_zero": 64,
+        "zero_over_all_supported": "2/9"
+      },
+      {
+        "mechanism": "physical_carrier_forced",
+        "operator_count": 10,
+        "orbit_id": "axis-balanced-09",
+        "supported_routes": 1152,
+        "unprotected_zero": 256,
+        "zero_over_all_supported": "2/9"
+      },
+      {
+        "mechanism": "physical_carrier_forced",
+        "operator_count": 10,
+        "orbit_id": "axis-balanced-10",
+        "supported_routes": 288,
+        "unprotected_zero": 64,
+        "zero_over_all_supported": "2/9"
+      },
+      {
+        "mechanism": "physical_carrier_forced",
+        "operator_count": 10,
+        "orbit_id": "axis-balanced-11",
+        "supported_routes": 1152,
+        "unprotected_zero": 256,
+        "zero_over_all_supported": "2/9"
+      },
+      {
+        "mechanism": "physical_carrier_forced",
+        "operator_count": 12,
+        "orbit_id": "axis-balanced-12",
+        "supported_routes": 1152,
+        "unprotected_zero": 256,
+        "zero_over_all_supported": "2/9"
+      },
+      {
+        "mechanism": "physical_carrier_forced",
+        "operator_count": 12,
+        "orbit_id": "axis-balanced-13",
+        "supported_routes": 1152,
+        "unprotected_zero": 256,
+        "zero_over_all_supported": "2/9"
+      },
+      {
+        "mechanism": "physical_carrier_forced",
+        "operator_count": 12,
+        "orbit_id": "axis-balanced-14",
+        "supported_routes": 2592,
+        "unprotected_zero": 576,
+        "zero_over_all_supported": "2/9"
+      },
+      {
+        "mechanism": "physical_carrier_forced",
+        "operator_count": 14,
+        "orbit_id": "axis-balanced-15",
+        "supported_routes": 1152,
+        "unprotected_zero": 256,
+        "zero_over_all_supported": "2/9"
+      },
+      {
+        "mechanism": "physical_carrier_forced",
+        "operator_count": 14,
+        "orbit_id": "axis-balanced-16",
+        "supported_routes": 2592,
+        "unprotected_zero": 576,
+        "zero_over_all_supported": "2/9"
+      },
+      {
+        "mechanism": "physical_carrier_forced",
+        "operator_count": 16,
+        "orbit_id": "axis-balanced-17",
+        "supported_routes": 2592,
+        "unprotected_zero": 576,
+        "zero_over_all_supported": "2/9"
+      },
+      {
+        "mechanism": "physical_carrier_forced",
+        "operator_count": 18,
+        "orbit_id": "axis-balanced-18",
+        "supported_routes": 2592,
+        "unprotected_zero": 576,
+        "zero_over_all_supported": "2/9"
+      }
+    ],
+    "status": "finite numerical census",
+    "total_carrier_forced_zeros_across_active_orbits": 4224,
+    "total_supported_routes_across_active_orbits": 19008
+  },
+  "promotion_boundary": {
+    "exact": "Every zero counted by the fixed-frame carrier-forced numerator has an exact carrier-disjointness certificate.",
+    "excluded": [
+      "endogenous-frame profiles",
+      "n=8 exact spectrum",
+      "cross-frame alignment and refinement",
+      "universal 2/9 law"
+    ],
+    "numerical_only": "Nonvanishing of every remaining supported route, hence the 2/9 rate."
+  },
+  "provenance": {
+    "registration_script": {
+      "path": "experiments/paper7/validation/register_fixed_frame_profiles.py",
+      "sha256": "3cf29ff63e6fdf02c10108a05c4247d534f8f599e516c3a70bf28a8454961b94"
+    },
+    "source_artifacts": {
+      "axis_rotation_control": {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/exact_certificates/drop_axis0_vs_axis2_ht.json",
+        "sha256": "967926d7c82f7b6acde70f501e2b3ab968b69cd502ee6d0797e18651ea8b5690"
+      },
+      "canonical_carrier_certificate": {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/exact_certificates/canonical_carrier_zero_products.json",
+        "sha256": "4ab2689b74a3abe7437989e2ffef893f0640dc81067286ce291a6733201bc4d3"
+      },
+      "family_index": {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_family_index.json",
+        "sha256": "dd8e3378979dc32a191646dfd8f95e9279618cac9fed6785bea0fe2e82135134"
+      },
+      "fixed_summary": {
+        "path": "experiments/exploratory/structural_functionals/incidence_profiles/results/axis_balanced_fixed_summary.json",
+        "sha256": "c831bb95b7d99dcbced1762915e56ab6d74aeee05c758f0a441a35d507ff5d72"
+      }
+    }
+  },
+  "schema": "paper7.fixed-frame-incidence-profile-registration.v2.1",
+  "scope": "fixed canonical sector frame only"
+}

@@ -1,16 +1,106 @@
 {
-  "schema": "paper6.figure-data.v2.1",
+  "schema": "paper6.normality-gated-admission.v2.1",
+  "paper_version": "2.1",
   "claim_scope": "linearized numerical certificates and pointwise normality-gated registrations; no nonlinear chart, continuation, or moving-field theorem",
-  "provenance": {
-    "sources": [
-      {
-        "path": "experiments/paper6/validation/normal_spectral_chart_audit.py",
-        "sha256": "d27bbb2f700b50e0accf80e50609da63ef69743507efc2966af2b40720e78c25"
-      },
-      {
-        "path": "experiments/paper6/results/normality_gated_admission_v2_1.json",
-        "sha256": "b623e5ee79360b62d04a8051a8b3f671c662bbc82004836e284eca8153aa811d"
-      }
+  "implementation": {
+    "path": "experiments/paper6/validation/normal_spectral_chart_audit.py",
+    "sha256": "d27bbb2f700b50e0accf80e50609da63ef69743507efc2966af2b40720e78c25"
+  },
+  "realization": {
+    "dtype": "complex128",
+    "ambient_dimension": 228,
+    "generator_count": 18,
+    "generator_keys": [
+      [
+        0,
+        -1,
+        -1
+      ],
+      [
+        0,
+        -1,
+        1
+      ],
+      [
+        0,
+        -1,
+        2
+      ],
+      [
+        0,
+        1,
+        -1
+      ],
+      [
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        1,
+        -1,
+        -1
+      ],
+      [
+        1,
+        -1,
+        1
+      ],
+      [
+        1,
+        -1,
+        2
+      ],
+      [
+        1,
+        1,
+        -1
+      ],
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        2
+      ],
+      [
+        2,
+        -1,
+        -1
+      ],
+      [
+        2,
+        -1,
+        1
+      ],
+      [
+        2,
+        -1,
+        2
+      ],
+      [
+        2,
+        1,
+        -1
+      ],
+      [
+        2,
+        1,
+        1
+      ],
+      [
+        2,
+        1,
+        2
+      ]
     ]
   },
   "numerical_policy": {
@@ -20,6 +110,12 @@
     "sector_clustering_threshold": 1e-08,
     "rank_threshold_multiplier": 1e-10,
     "rank_reference_scale": "max(largest_singular_value, 1.0)"
+  },
+  "claim_levels": {
+    "linearized_maps": "Computational Certificate",
+    "admission_residuals": "Computational Certificate",
+    "projector_residuals": "Computational Certificate",
+    "sector_and_typed_support_counts": "Computational Observation"
   },
   "linearized_maps": [
     {
@@ -89,6 +185,28 @@
       "retained_discarded_ratio": 126201245597803.08
     }
   ],
+  "combined_kernel_direction_residuals": {
+    "uniform HT gauge": 3.682994948972222e-15,
+    "QT axis 0": 2.241244966155921e-15,
+    "QT axis 1": 2.436500280208222e-15,
+    "QT axis 2": 1.342588557098214e-15
+  },
+  "exact_gauge_family_operator_drifts": {
+    "uniform HT": 1.5263043145882805e-15,
+    "uniform QT": 5.226354367994862e-16
+  },
+  "admission_rule": {
+    "pre_projector_required_fields": [
+      "commutator",
+      "qt_normality",
+      "ht_normality",
+      "qt_hermiticity",
+      "ht_hermiticity"
+    ],
+    "pre_projector_rule": "all residuals < admission_tolerance",
+    "post_projector_rule": "all projector residuals < admission_tolerance",
+    "failure_behavior": "REJECTED; projector, sector, and typed-support fields are not computed"
+  },
   "admission_records": [
     {
       "sample_id": "canonical",
@@ -339,6 +457,23 @@
         "qt_hermiticity"
       ],
       "post_admission_fields": "NOT_COMPUTED"
+    }
+  ],
+  "archive_correction_ledger": [
+    {
+      "legacy_result": "9 -> 24--35 sectors",
+      "failure_reason": "nonnormal samples were processed with a Hermitian eigensolver",
+      "current_status": "REJECTED"
+    },
+    {
+      "legacy_result": "438 -> 6334 raw support",
+      "failure_reason": "raw rho(g) support was not declared as operator- or Lie-typed support",
+      "current_status": "PROVENANCE_ONLY"
+    },
+    {
+      "legacy_result": "legacy R2 and D claims",
+      "failure_reason": "no typed routed-product, word, commutator, or closure certificate",
+      "current_status": "WITHDRAWN"
     }
   ]
 }

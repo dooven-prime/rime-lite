@@ -1,0 +1,15 @@
+Paper VII v2.1 structured incidence geometry
+========================================================================
+fixed rank vector codim = sum_b [(m_b-r_b)(n_b-r_b)+p_b r_b]
+fixed double-rank relative codim = sum_b r_b s_b
+
+Diagonal full ambient:
+  d=1: ambient=2, codim=1, nonzero-factor=False
+  d=2: ambient=4, codim=2, nonzero-factor=True
+  d=3: ambient=6, codim=3, nonzero-factor=True
+  d=4: ambient=8, codim=4, nonzero-factor=True
+  d=5: ambient=10, codim=5, nonzero-factor=True
+  d=6: ambient=12, codim=6, nonzero-factor=True
+
+Complementary-support represented pullback: codim=0.
+The full diagonal ambient has codimension d, not 1.

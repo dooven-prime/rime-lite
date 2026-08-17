@@ -1,0 +1,182 @@
+{
+  "certificate_kind": "exact_integer_formula_evaluation",
+  "claim_status": "Computational Certificate",
+  "diagonal_ambient": {
+    "boundary": "The full diagonal pair ambient has codimension d, not 1. A support-pattern component can nevertheless have relative codimension zero.",
+    "condition": "a_b b_b=0 for every carrier b",
+    "description": "d scalar 1x1 carrier blocks",
+    "rows": [
+      {
+        "ambient_dimension": 2,
+        "d": 1,
+        "nonzero_factor_locus_nonempty": false,
+        "zero_product_locus_codimension": 1,
+        "zero_product_locus_dimension": 1
+      },
+      {
+        "ambient_dimension": 4,
+        "d": 2,
+        "nonzero_factor_locus_nonempty": true,
+        "zero_product_locus_codimension": 2,
+        "zero_product_locus_dimension": 2
+      },
+      {
+        "ambient_dimension": 6,
+        "d": 3,
+        "nonzero_factor_locus_nonempty": true,
+        "zero_product_locus_codimension": 3,
+        "zero_product_locus_dimension": 3
+      },
+      {
+        "ambient_dimension": 8,
+        "d": 4,
+        "nonzero_factor_locus_nonempty": true,
+        "zero_product_locus_codimension": 4,
+        "zero_product_locus_dimension": 4
+      },
+      {
+        "ambient_dimension": 10,
+        "d": 5,
+        "nonzero_factor_locus_nonempty": true,
+        "zero_product_locus_codimension": 5,
+        "zero_product_locus_dimension": 5
+      },
+      {
+        "ambient_dimension": 12,
+        "d": 6,
+        "nonzero_factor_locus_nonempty": true,
+        "zero_product_locus_codimension": 6,
+        "zero_product_locus_dimension": 6
+      }
+    ]
+  },
+  "field_for_theorem": "complex numbers",
+  "finite_field_count_checks": [
+    {
+      "d": 1,
+      "direct_zero_product_pair_count": 3,
+      "field_order": 2,
+      "formula_zero_product_pair_count": 3,
+      "nonzero_factor_pair_count": 0
+    },
+    {
+      "d": 2,
+      "direct_zero_product_pair_count": 9,
+      "field_order": 2,
+      "formula_zero_product_pair_count": 9,
+      "nonzero_factor_pair_count": 2
+    },
+    {
+      "d": 3,
+      "direct_zero_product_pair_count": 27,
+      "field_order": 2,
+      "formula_zero_product_pair_count": 27,
+      "nonzero_factor_pair_count": 12
+    },
+    {
+      "d": 1,
+      "direct_zero_product_pair_count": 5,
+      "field_order": 3,
+      "formula_zero_product_pair_count": 5,
+      "nonzero_factor_pair_count": 0
+    },
+    {
+      "d": 2,
+      "direct_zero_product_pair_count": 25,
+      "field_order": 3,
+      "formula_zero_product_pair_count": 25,
+      "nonzero_factor_pair_count": 8
+    },
+    {
+      "d": 3,
+      "direct_zero_product_pair_count": 125,
+      "field_order": 3,
+      "formula_zero_product_pair_count": 125,
+      "nonzero_factor_pair_count": 72
+    }
+  ],
+  "formulas": {
+    "fixed_double_rank_relative_codimension": "sum_b r_b s_b",
+    "fixed_double_rank_vector_dimension": "sum_b [r_b(m_b+n_b-r_b)+s_b(n_b-r_b+p_b-s_b)]",
+    "fixed_rank_vector_codimension": "sum_b [(m_b-r_b)(n_b-r_b)+p_b r_b]",
+    "fixed_rank_vector_dimension": "sum_b [r_b(m_b+n_b-r_b)+p_b(n_b-r_b)]"
+  },
+  "represented_pullback_control": {
+    "map": "A(u,v)=diag(u,0), B(u,v)=diag(0,v)",
+    "nonzero_factor_open_subset": "{u!=0 and v!=0}",
+    "parameter_space": "C^2 with coordinates (u,v)",
+    "product": "A(u,v)B(u,v)=0 identically",
+    "pullback_codimension": 0,
+    "pullback_incidence_locus": "all of C^2"
+  },
+  "runtime": {
+    "python": "3.13.0",
+    "script_sha256": "758e171a2aeabe90dddb6b8953afdf4be84fcd9c3248f270d750b0854bca9167"
+  },
+  "schema": "paper7.structured-incidence-geometry.v2.1",
+  "structured_ambient": "direct_sum_b Mat(m_b,n_b) x direct_sum_b Mat(n_b,p_b)",
+  "structured_examples": [
+    {
+      "ambient_rank_pair_stratum_dimension": 14,
+      "blocks": [
+        {
+          "carrier": "alpha",
+          "m": 3,
+          "n": 2,
+          "p": 2,
+          "r": 1,
+          "s": 1
+        },
+        {
+          "carrier": "beta",
+          "m": 2,
+          "n": 3,
+          "p": 1,
+          "r": 1,
+          "s": 1
+        }
+      ],
+      "fixed_double_rank_vector_dimension": 12,
+      "fixed_rank_vector_codimension": 7,
+      "fixed_rank_vector_dimension": 12,
+      "label": "two_carrier_asymmetric",
+      "relative_codimension_in_rank_pair_stratum": 2,
+      "structured_ambient_dimension": 19
+    },
+    {
+      "ambient_rank_pair_stratum_dimension": 16,
+      "blocks": [
+        {
+          "carrier": "alpha",
+          "m": 2,
+          "n": 3,
+          "p": 2,
+          "r": 1,
+          "s": 1
+        },
+        {
+          "carrier": "beta",
+          "m": 1,
+          "n": 2,
+          "p": 3,
+          "r": 0,
+          "s": 2
+        },
+        {
+          "carrier": "gamma",
+          "m": 2,
+          "n": 1,
+          "p": 2,
+          "r": 1,
+          "s": 0
+        }
+      ],
+      "fixed_double_rank_vector_dimension": 15,
+      "fixed_rank_vector_codimension": 8,
+      "fixed_rank_vector_dimension": 16,
+      "label": "three_carrier_mixed_ranks",
+      "relative_codimension_in_rank_pair_stratum": 1,
+      "structured_ambient_dimension": 24
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+Paper VII v2.1 fixed-frame incidence-profile registration
+========================================================================
+axis-balanced families: 63 labelled / 19 rotation orbits
+supported fixed-frame orbit rows: 16
+unsupported fixed-frame orbit rows: 3
+aggregate fixed-frame census: 4224/19008 = 2/9
+exact boundary: every counted zero has a carrier-disjointness certificate
+numerical boundary: remaining supported routes are not exactly certified nonzero
+axis control: drop-axis0-HT and drop-axis2-HT are distinct but rotation conjugate

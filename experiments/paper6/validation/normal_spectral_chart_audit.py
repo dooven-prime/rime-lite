@@ -1,4 +1,4 @@
-"""Paper VI v2: linearized constraints and pointwise typed support certificate.
+"""Paper VI v2.1: linearized certificates and normality-gated registrations.
 
 The audit separates three claims:
 
@@ -6,7 +6,9 @@ The audit separates three claims:
 2. adjoining the linearized QT/HT normality equations gives rank 14 and
    nullity 4 at the canonical point;
 3. the combined kernel contains both exact class-scaling gauge directions and
-   three inverse-pair-symmetric QT-axis directions with certified sample points.
+   three inverse-pair-symmetric QT-axis directions with certified sample points;
+4. admission is fail-closed before projector construction, with one explicit
+   nonnormal single-generator negative control.
 
 Joint sectors are constructed only after commutativity, Hermiticity, and
 normality checks pass. Operator support R1^op[rho] and Lie support R1^Lie[X]
@@ -17,6 +19,11 @@ claimed by this script.
 from __future__ import annotations
 
 import _bootstrap  # noqa: F401
+
+import argparse
+import hashlib
+import json
+from pathlib import Path
 
 import numpy as np
 
@@ -29,6 +36,35 @@ TOL = 1e-8
 TOL_LINEAR = 1e-10
 CANONICAL_DIMS = [1, 2, 8, 20, 26, 27, 39, 39, 66]
 AXIS_DIMS = [1, 1, 1, 8, 9, 13, 13, 13, 13, 18, 20, 22, 26, 26, 44]
+HERE = Path(__file__).resolve().parent
+ROOT = HERE.parents[2]
+RESULT_PATH = ROOT / "experiments" / "paper6" / "results" / "normality_gated_admission_v2_1.json"
+FIGURE_DATA_PATH = ROOT / "experiments" / "paper6" / "results" / "figure_data.json"
+
+
+def _sha256(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def _write_json(path: Path, payload: dict) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(
+        json.dumps(payload, indent=2, sort_keys=False) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
+
+
+def _parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description="Validate the Paper VI v2.1 linearized and admission certificates."
+    )
+    parser.add_argument(
+        "--write-results",
+        action="store_true",
+        help="Rewrite the versioned result record and figure-data projection.",
+    )
+    return parser.parse_args()
 
 
 def _real_vector(matrix: np.ndarray) -> np.ndarray:
@@ -172,6 +208,7 @@ def _sector_record(
 
     return {
         "label": label,
+        "status": "ADMITTED",
         "qt": qt,
         "ht": ht,
         "bases": bases,
@@ -186,7 +223,215 @@ def _sector_record(
     }
 
 
+def _rejected_record(
+    label: str,
+    weights: np.ndarray,
+    rhos: list[np.ndarray],
+    qt_indices: list[int],
+    ht_indices: list[int],
+) -> dict:
+    qt, ht = _weighted_pair(weights, rhos, qt_indices, ht_indices)
+    pair = _pair_certificate(qt, ht)
+    failed = [name for name, value in pair.items() if value >= TOL]
+    assert failed, (label, pair)
+    return {
+        "label": label,
+        "status": "REJECTED",
+        "qt": qt,
+        "ht": ht,
+        "bases": None,
+        "projectors": None,
+        "dimensions": None,
+        "pair": pair,
+        "projector": None,
+        "r1_op": None,
+        "r1_lie": None,
+        "r1_op_gap": None,
+        "r1_lie_gap": None,
+        "failed_gates": failed,
+    }
+
+
+def _public_admission_record(record: dict, perturbation: dict) -> dict:
+    projector = record["projector"]
+    public = {
+        "sample_id": perturbation["sample_id"],
+        "label": record["label"],
+        "weight_perturbation": perturbation,
+        "status": record["status"],
+        "pair_residuals": record["pair"],
+        "projector_residuals": projector,
+        "projector_residual_max": (
+            max(projector.values()) if projector is not None else None
+        ),
+        "sector_count": (
+            len(record["bases"]) if record["bases"] is not None else None
+        ),
+        "sector_dimensions": record["dimensions"],
+        "r1_op": record["r1_op"],
+        "r1_lie": record["r1_lie"],
+        "r1_op_gap": record["r1_op_gap"],
+        "r1_lie_gap": record["r1_lie_gap"],
+    }
+    if record["status"] == "REJECTED":
+        public["failed_gates"] = record["failed_gates"]
+        public["post_admission_fields"] = "NOT_COMPUTED"
+    return public
+
+
+def _linearized_record(
+    label: str,
+    singular_values: np.ndarray,
+    rank: int,
+    gap: tuple[float, float, float],
+) -> dict:
+    return {
+        "label": label,
+        "rank": rank,
+        "nullity": int(len(singular_values) - rank),
+        "rank_threshold_policy": {
+            "multiplier": TOL_LINEAR,
+            "reference_scale": "max(largest_singular_value, 1.0)",
+            "effective_threshold": TOL_LINEAR
+            * max(float(singular_values[0]), 1.0),
+        },
+        "singular_values": [float(value) for value in singular_values],
+        "smallest_retained": gap[0],
+        "largest_discarded": gap[1],
+        "retained_discarded_ratio": gap[2],
+    }
+
+
+def _build_result(
+    *,
+    keys: list[tuple[int, int, int]],
+    commutator_map: dict,
+    combined_map: dict,
+    direction_residuals: dict[str, float],
+    gauge_operator_drifts: dict[str, float],
+    admission_records: list[dict],
+) -> dict:
+    script_path = Path(__file__).resolve()
+    return {
+        "schema": "paper6.normality-gated-admission.v2.1",
+        "paper_version": "2.1",
+        "claim_scope": (
+            "linearized numerical certificates and pointwise normality-gated "
+            "registrations; no nonlinear chart, continuation, or moving-field theorem"
+        ),
+        "implementation": {
+            "path": script_path.relative_to(ROOT).as_posix(),
+            "sha256": _sha256(script_path),
+        },
+        "realization": {
+            "dtype": "complex128",
+            "ambient_dimension": 228,
+            "generator_count": len(keys),
+            "generator_keys": [list(key) for key in keys],
+        },
+        "numerical_policy": {
+            "matrix_norm": "frobenius",
+            "admission_tolerance": TOL,
+            "support_threshold": TOL,
+            "sector_clustering_threshold": TOL,
+            "rank_threshold_multiplier": TOL_LINEAR,
+            "rank_reference_scale": "max(largest_singular_value, 1.0)",
+        },
+        "claim_levels": {
+            "linearized_maps": "Computational Certificate",
+            "admission_residuals": "Computational Certificate",
+            "projector_residuals": "Computational Certificate",
+            "sector_and_typed_support_counts": "Computational Observation",
+        },
+        "linearized_maps": [commutator_map, combined_map],
+        "combined_kernel_direction_residuals": direction_residuals,
+        "exact_gauge_family_operator_drifts": gauge_operator_drifts,
+        "admission_rule": {
+            "pre_projector_required_fields": [
+                "commutator",
+                "qt_normality",
+                "ht_normality",
+                "qt_hermiticity",
+                "ht_hermiticity",
+            ],
+            "pre_projector_rule": "all residuals < admission_tolerance",
+            "post_projector_rule": "all projector residuals < admission_tolerance",
+            "failure_behavior": (
+                "REJECTED; projector, sector, and typed-support fields are not computed"
+            ),
+        },
+        "admission_records": admission_records,
+        "archive_correction_ledger": [
+            {
+                "legacy_result": "9 -> 24--35 sectors",
+                "failure_reason": (
+                    "nonnormal samples were processed with a Hermitian eigensolver"
+                ),
+                "current_status": "REJECTED",
+            },
+            {
+                "legacy_result": "438 -> 6334 raw support",
+                "failure_reason": (
+                    "raw rho(g) support was not declared as operator- or Lie-typed support"
+                ),
+                "current_status": "PROVENANCE_ONLY",
+            },
+            {
+                "legacy_result": "legacy R2 and D claims",
+                "failure_reason": (
+                    "no typed routed-product, word, commutator, or closure certificate"
+                ),
+                "current_status": "WITHDRAWN",
+            },
+        ],
+    }
+
+
+def _build_figure_data(result: dict, result_digest: str) -> dict:
+    return {
+        "schema": "paper6.figure-data.v2.1",
+        "claim_scope": result["claim_scope"],
+        "provenance": {
+            "sources": [
+                result["implementation"],
+                {
+                    "path": RESULT_PATH.relative_to(ROOT).as_posix(),
+                    "sha256": result_digest,
+                },
+            ]
+        },
+        "numerical_policy": result["numerical_policy"],
+        "linearized_maps": result["linearized_maps"],
+        "admission_records": result["admission_records"],
+    }
+
+
+def _assert_match(expected, actual, path: str = "root") -> None:
+    if isinstance(expected, dict):
+        assert isinstance(actual, dict), path
+        assert set(expected) == set(actual), path
+        for key in expected:
+            _assert_match(expected[key], actual[key], f"{path}.{key}")
+        return
+    if isinstance(expected, list):
+        assert isinstance(actual, list), path
+        assert len(expected) == len(actual), path
+        for index, (left, right) in enumerate(zip(expected, actual)):
+            _assert_match(left, right, f"{path}[{index}]")
+        return
+    if isinstance(expected, float):
+        assert isinstance(actual, (int, float)), path
+        assert np.isclose(expected, actual, rtol=1e-9, atol=1e-12), (
+            path,
+            expected,
+            actual,
+        )
+        return
+    assert expected == actual, (path, expected, actual)
+
+
 def main() -> None:
+    args = _parse_args()
     keys = list(CubieMove.prim_moves.keys())
     rhos = [CubieMove.prim_moves[key].rho().astype(np.complex128) for key in keys]
     qt_indices = [i for i, key in enumerate(keys) if key[2] != 2]
@@ -268,6 +513,17 @@ def main() -> None:
             )
         )
 
+    rejected_index = qt_indices[0]
+    rejected_weights = base_weights.copy()
+    rejected_weights[rejected_index] += 0.1
+    rejected_control = _rejected_record(
+        f"single QT {CubieMove.move_label(keys[rejected_index])}, eps=0.1",
+        rejected_weights,
+        rhos,
+        qt_indices,
+        ht_indices,
+    )
+
     gauge_operator_drifts = {}
     for label, direction in {
         "uniform HT": directions["uniform HT gauge"],
@@ -284,8 +540,49 @@ def main() -> None:
             float(np.linalg.norm(gauge_ht - ht0, "fro")),
         )
 
+    perturbations = [
+        {
+            "sample_id": "canonical",
+            "kind": "none",
+            "epsilon": 0.0,
+        },
+        *[
+            {
+                "sample_id": f"qt_axis_{axis}_eps_0_1",
+                "kind": "qt_axis_symmetric",
+                "axis": axis,
+                "epsilon": 0.1,
+            }
+            for axis in range(3)
+        ],
+        {
+            "sample_id": "single_qt_generator_eps_0_1_negative_control",
+            "kind": "single_generator",
+            "generator_key": list(keys[rejected_index]),
+            "generator_label": CubieMove.move_label(keys[rejected_index]),
+            "epsilon": 0.1,
+        },
+    ]
+    all_records = [canonical, *axis_records, rejected_control]
+    admission_records = [
+        _public_admission_record(record, perturbation)
+        for record, perturbation in zip(all_records, perturbations)
+    ]
+    result = _build_result(
+        keys=keys,
+        commutator_map=_linearized_record(
+            "commutativity", comm_singular, comm_rank, comm_gap
+        ),
+        combined_map=_linearized_record(
+            "commutativity + normality", joint_singular, joint_rank, joint_gap
+        ),
+        direction_residuals=direction_residuals,
+        gauge_operator_drifts=gauge_operator_drifts,
+        admission_records=admission_records,
+    )
+
     print("=" * 72)
-    print("Paper VI v2: Linearized Constraints and Pointwise Typed R1 Audit")
+    print("Paper VI v2.1: Linearized Certificates and Gated Registrations")
     print("=" * 72)
     print(f"full commutator Jacobian: rank={comm_rank}, nullity={len(keys) - comm_rank}")
     print(f"commutator + normality map: rank={joint_rank}, nullity={len(keys) - joint_rank}")
@@ -307,12 +604,22 @@ def main() -> None:
     for label, drift in gauge_operator_drifts.items():
         print(f"{label} gauge-family operator drift at eps=0.1: {drift:.3e}")
     print()
-    print("validated sector records:")
-    for record in [canonical, *axis_records]:
+    print("admission records:")
+    for record in all_records:
         pair = record["pair"]
         projector = record["projector"]
+        if record["status"] == "REJECTED":
+            print(
+                f"  {record['label']}: status=REJECTED, "
+                f"comm={pair['commutator']:.3e}, "
+                f"normal=({pair['qt_normality']:.3e},{pair['ht_normality']:.3e}), "
+                f"hermitian=({pair['qt_hermiticity']:.3e},"
+                f"{pair['ht_hermiticity']:.3e}), "
+                f"failed={record['failed_gates']}"
+            )
+            continue
         print(
-            f"  {record['label']}: sectors={len(record['bases'])}, "
+            f"  {record['label']}: status=ADMITTED, sectors={len(record['bases'])}, "
             f"R1^op={record['r1_op']}, R1^Lie={record['r1_lie']}, "
             f"comm={pair['commutator']:.3e}, "
             f"normal=({pair['qt_normality']:.3e},{pair['ht_normality']:.3e}), "
@@ -336,15 +643,44 @@ def main() -> None:
     assert canonical["r1_lie"] == 408
     expected_lie_counts = [832, 832, 832]
     for record, expected_lie_count in zip(axis_records, expected_lie_counts):
+        assert record["status"] == "ADMITTED"
         assert record["dimensions"] == AXIS_DIMS
         assert record["r1_op"] == 1006
         assert record["r1_lie"] == expected_lie_count
+    assert canonical["status"] == "ADMITTED"
+    assert rejected_control["status"] == "REJECTED"
+    assert rejected_control["projector"] is None
+    assert rejected_control["r1_op"] is None
+    assert set(rejected_control["failed_gates"]) == {
+        "commutator",
+        "qt_normality",
+        "qt_hermiticity",
+    }
     assert canonical["r1_lie_gap"]["minimum_retained_norm"] > 1e-1
     assert max(
         record["r1_lie_gap"]["maximum_discarded_norm"]
         for record in [canonical, *axis_records]
     ) < 1e-10
-    print("\n[snapshot OK: normality-gated sectors and typed R1 are separately certified]")
+
+    if args.write_results:
+        _write_json(RESULT_PATH, result)
+        figure_data = _build_figure_data(result, _sha256(RESULT_PATH))
+        _write_json(FIGURE_DATA_PATH, figure_data)
+        print(f"wrote {RESULT_PATH.relative_to(ROOT)}")
+        print(f"wrote {FIGURE_DATA_PATH.relative_to(ROOT)}")
+    else:
+        committed_result = json.loads(RESULT_PATH.read_text(encoding="utf-8"))
+        _assert_match(result, committed_result)
+        expected_figure_data = _build_figure_data(
+            committed_result, _sha256(RESULT_PATH)
+        )
+        committed_figure_data = json.loads(
+            FIGURE_DATA_PATH.read_text(encoding="utf-8")
+        )
+        _assert_match(expected_figure_data, committed_figure_data)
+        print("validated committed v2.1 result and figure-data projection")
+
+    print("\n[snapshot OK: admission gates and post-admission fields are separated]")
 
 
 if __name__ == "__main__":

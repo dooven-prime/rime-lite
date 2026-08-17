@@ -1,0 +1,9 @@
+# Keep source-addressed contracts, evidence, and implementations byte-stable.
+schemas/**/*.json text eol=lf
+schemas/**/*.py text eol=lf
+experiments/**/*.json text eol=lf
+experiments/**/*.md text eol=lf
+experiments/**/*.py text eol=lf
+experiments/**/*.txt text eol=lf
+figures/**/*.py text eol=lf
+tests/**/*.py text eol=lf
