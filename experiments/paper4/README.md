@@ -1,6 +1,18 @@
 # Paper IV computational support
 
-Paper IV separates three evidence layers.
+Paper IV separates all four reader-facing claim layers. Exact theorems are
+proved in the manuscript; the scripts below own only the declared certificate
+and observation records. Research-program statements have no supporting
+artifact role.
+
+## Exact theorem controls
+
+The rectangular family $P_{\mathrm{rect}}(a,b)$ and its sole interior collision at
+$b/(a+b)$ are proved symbolically in Proposition 4.2. They do not consume a
+Rubik computation or a numerical result artifact. The diagonal negative
+control in Proposition 8.1 is likewise an exact theorem-level counterexample:
+collision adjacency alone cannot imply transport adjacency or projected
+composition.
 
 ## Exact explicit arrangement
 
@@ -31,7 +43,7 @@ coordinates to `P_9`. It performs no rational reconstruction. A successful run
 writes:
 
 ```text
-results/rubik_joint_spectrum_registration.observation.json
+results/rubik_joint_spectrum_registration_v2_1.observation.json
 ```
 
 Check whether the cached observation matches all declared sources without
@@ -41,8 +53,15 @@ repeating the matrix construction:
 python experiments/paper4/validation/rubik_joint_spectrum_registration.py --check-result
 ```
 
-The registration and its JSON snapshot are computational evidence, not exact
-commutation or exact rational-spectrum proofs.
+The published v2.0 observation at
+`results/rubik_joint_spectrum_registration.observation.json` is immutable.
+The producer defaults to the distinct v2.1 candidate path above and never
+refreshes the v2.0 bytes.
+
+The registration and its JSON snapshot form Computational Certificate 6.1,
+not an exact commutation or exact rational-spectrum proof. In particular, a
+passing certificate does not discharge the exact R1--R3 assumption checklist
+of Corollary 7.1; a new exact source would be required for that promotion.
 
 ## Transport comparison
 
@@ -50,9 +69,11 @@ commutation or exact rational-spectrum proofs.
 python experiments/paper4/validation/v59_collision_vs_transport.py
 ```
 
-This numerical check compares the exact collision triangle of the declared
-arrangement with the direct-support chain in the registered Rubik clusters.
-It makes no graph-to-composition or collision-to-transport implication.
+This Computational Observation compares the exact collision triangle of the
+declared arrangement with the direct-support chain in the registered Rubik
+clusters. It makes no graph-to-composition or collision-to-transport
+implication. The theorem-level nonimplication is supplied separately by the
+diagonal negative control in the manuscript.
 
 ## Presentation
 

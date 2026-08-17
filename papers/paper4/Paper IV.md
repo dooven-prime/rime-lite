@@ -22,8 +22,9 @@ $L_\alpha(q,h)=\alpha q+(1-\alpha)h$ and the equivalence relation induced by
 equal $L_\alpha$ values. We prove the collision formula, finiteness of the
 critical set, constancy of branch order on its complementary chambers, and the
 spectral quotient theorem for commuting Hermitian realizations. Rational
-coordinates give rational finite collision parameters. We then perform a
-complete exact census for one explicitly declared nine-point rational
+coordinates give rational finite collision parameters. A two-parameter
+rectangular family provides an exact control beyond the main example. We then
+perform a complete exact census for one explicitly declared nine-point rational
 arrangement.
 
 **Results.** For the explicit arrangement $P_9$, the $36$
@@ -34,15 +35,18 @@ $1$, $2$, $2$, $3$, and $1$, so $\alpha=2/3$ is the unique interior parameter
 of maximal drop.
 Its nontrivial quotient classes contain S5, S6, and S7, and S8 and S9,
 respectively.
+For the rectangular family with side parameters $a,b>0$, the sole interior
+collision occurs at $\alpha=b/(a+b)$ and produces one two-point class.
 
 **Boundary.** In the declared complex128 Rubik computation,
 coordinate-matched labels, ranks, and projectors are stable across the tested clustering
 tolerances, and the maximum raw-to-$P_9$ table discrepancy is below
 $10^{-15}$. Machine-zero commutator and projector residuals support this
 registration but do not prove exact commutation or exact rational joint
-eigenvalues. Conditional on exact registration, the six averaging layers are
-the $L_{2/3}$ collision quotient of $P_9$. No parameter-dependent or maximality
-conclusion is drawn.
+eigenvalues. The six exact averaging layers are the $L_{2/3}$ collision
+quotient of $P_9$ only when exact operator
+admissibility, exact labelled joint registration, and the exact averaging
+identity all hold. No parameter-dependent or maximality conclusion is drawn.
 
 ***
 
@@ -66,14 +70,26 @@ conclusion is drawn.
 
 The paper uses four claim-status levels:
 
-1. **Theorem:** general finite-point and commuting-Hermitian statements, the
-   exact finite census of $P_9$, and the conditional Rubik corollary;
-2. **Computational Certificate:** the declared operator-to-$P_9$
-   registration and residual audit;
-3. **Computational Observation:** finite transport comparisons that do not
-   supply a promotion theorem;
-4. **Research Program:** statements explicitly identified as open and not used
-   in the proofs.
+1. **Theorem.** The statement uses exact objects, displayed hypotheses, and a
+   proof. A conditional corollary is available only after every displayed
+   hypothesis is established.
+2. **Computational Certificate.** The statement is a reproducible finite
+   computation tied to declared operators, tolerance policy, and a result
+   record. Residual agreement does not discharge an exact theorem hypothesis.
+3. **Computational Observation.** The statement records a bounded finite
+   comparison under a declared threshold. The observed pattern supplies no
+   general implication or promotion theorem.
+4. **Research Program.** The statement is an explicitly open construction or
+   question. It is not used as an assumption, lemma, or explanation of an
+   established result.
+
+The classification is fail-closed. Exact arithmetic performed after a numerical
+registration does not promote the registration, and a conditional corollary
+does not certify its own assumptions. In particular, the exact finite census
+of $P_9$ and the conditional Rubik corollary lie in the Theorem level for
+different reasons: the former is proved directly from displayed rational data,
+whereas the latter applies only under the exact assumptions listed in
+Section 7.
 
 ***
 
@@ -108,17 +124,19 @@ be conflated:
 
 - proving the general finite-point quotient theorem;
 - classifying one explicitly declared rational arrangement exactly;
-- showing that a numerical operator computation realizes that arrangement.
+- registering a numerical operator computation against that arrangement under
+  declared tolerances.
 
 The present paper separates these tasks. Its contributions are:
 
 1. a self-contained collision-quotient theorem for fixed finite arrangements;
 2. a rationality proposition for finite collision parameters;
-3. a complete exact phase census on $[0,1]$ for a weighted nine-point rational
-   arrangement $P_9$;
-4. a claim-status-aware numerical registration of the Rubik QT/HT clusters;
+3. an exact rectangular control family and a complete phase census on
+   $[0,1]$ for a weighted nine-point rational arrangement $P_9$;
+4. a claim-status-aware computational certificate for the Rubik QT/HT
+   clusters;
 5. a conditional corollary identifying the Rubik averaging layers with the
-   exact quotient when the registration is promoted to exact data.
+   exact quotient under three separately stated exact assumptions.
 
 The general theory does not require Rubik data. Conversely, the numerical
 registration does not become exact merely because the downstream finite-point
@@ -311,6 +329,45 @@ denominators are established through a direct exact census rather than by
 invoking a general height theorem. The comparison with Farey-type
 small-denominator organization is descriptive only \cite{hardyWright2008}.
 
+**Proposition 4.2 (Rectangular control family).**
+\label{prop:paper4-rectangular-family}
+
+For $a,b>0$, let
+
+$$
+P_{\mathrm{rect}}(a,b)
+=
+\{p_{00}=(0,0),\ p_{10}=(a,0),\ p_{01}=(0,b),\ p_{11}=(a,b)\}.
+$$
+
+The unique collision parameter in the open interval $(0,1)$ is
+
+$$
+\alpha_\ast=\frac{b}{a+b}.
+$$
+
+At $\alpha_\ast$, the only non-singleton quotient class is
+$\{p_{10},p_{01}\}$, so $N_{P_{\mathrm{rect}}}(\alpha_\ast)=3$ and
+$\Delta_{P_{\mathrm{rect}}}(\alpha_\ast)=1$. At every other parameter in $(0,1)$,
+the four branch values are distinct. If $a,b\in\mathbb Q_{>0}$, then
+$\alpha_\ast\in\mathbb Q$.
+
+**Proof.** The four branches are
+
+$$
+0,\qquad \alpha a,\qquad (1-\alpha)b,\qquad
+\alpha a+(1-\alpha)b.
+$$
+
+For $0<\alpha<1$, the first is strictly smaller and the last strictly larger
+than both middle branches. The middle branches agree exactly when
+$\alpha a=(1-\alpha)b$, which gives the displayed value. Rationality follows
+immediately when $a$ and $b$ are rational. $\square$
+
+This family shows that an interior collision quotient is not peculiar to the
+nine-point census below. It also separates a general adjustable collision
+parameter from the special multiplicity and maximal-drop properties of $P_9$.
+
 ***
 
 ## Exact Nine-Point Census
@@ -370,7 +427,7 @@ For the displayed rational arrangement:
 4. $\alpha=2/3$ is the unique **interior** parameter maximizing the
    layer-count drop $\Delta_P$.
 
-**Proof.** Appendix~\ref{sec:complete-pair-certificate} lists all
+**Proof.** Appendix A lists all
 $\binom92=36$ pairs, their exact $\alpha_{ij}$ values, and their classifications.
 The table contains $2$ parallel, $10$ interior, $15$ endpoint, and $9$ exterior
 pairs. Grouping equal interior values yields
@@ -475,8 +532,8 @@ $$
 There is no random step, denominator search, or rational reconstruction: the
 procedure measures only agreement with the independently declared table.
 
-**Proposition 6.1 (Registered QT/HT clusters; computational).**
-\label{prop:paper4-rubik-registration}
+**Computational Certificate 6.1 (Registered QT/HT clusters).**
+\label{cert:paper4-rubik-registration}
 
 In the declared complex128 construction, the registration algorithm above
 produces nine clusters with coordinate-matched ranks
@@ -525,12 +582,14 @@ $$
 \min_{i\ne j}\|p_i-p_j\|_\infty=\frac16.
 $$
 
-Appendix~\ref{sec:registration-stability-certificate} records the complete
-tolerance certificate.
+The complete tolerance certificate appears in Appendix B.
 
-**Status.** This is computational evidence. It certifies numerical stability
-and proximity to the declared rational table, not exact commutation, exact
-rationality, or exact primitive idempotents.
+**Certificate boundary.** This finite computation certifies numerical
+stability and proximity to the declared rational table for the declared
+complex128 realization, clustering rule, tolerances, and implementation. It
+does not establish any exact hypothesis used by Corollary 7.1: in particular,
+it does not prove exact commutation, exact rational joint spectral data, or
+exact primitive idempotents.
 
 Within this numerical layer, S1--S9 are called the **registered joint
 clusters**. The phrase ``primitive idempotent of $\mathbb C[Q,H]$'' is
@@ -540,19 +599,49 @@ reserved for the exact conditional setting.
 
 ## Conditional Rubik Interpretation
 
+The promotion from Computational Certificate 6.1 to an exact Rubik statement
+is governed by the following three independently checkable assumptions.
+
+**Assumption R1 (exact operator admissibility).** The exact operators
+$Q=\mathrm{QT}_{\mathrm{all}}$ and $H=\mathrm{HT}_{\mathrm{all}}$ are
+Hermitian and commute:
+
+$$
+Q=Q^\ast,\qquad H=H^\ast,\qquad [Q,H]=0.
+$$
+
+**Assumption R2 (exact labelled joint registration).** There is an orthogonal
+decomposition
+
+$$
+V=\bigoplus_{i=1}^{9}E_i
+$$
+
+such that $\dim E_i=d_i$, $Q|_{E_i}=q_iI$, and $H|_{E_i}=h_iI$, with the
+labelled triples $(d_i,q_i,h_i)$ exactly equal to the displayed $P_9$ table.
+
+**Assumption R3 (exact averaging identity).** The exact canonical average
+satisfies
+
+$$
+A_{18}=\frac{2Q+H}{3}.
+$$
+
+When $Q$ and $H$ are defined as the equal-weight averages of the twelve
+quarter turns and six half turns, respectively, R3 is the corresponding exact
+finite-sum identity. Its numerical residual in Certificate 6.1 is an
+implementation check, not a substitute for that exact definition.
+
+The checklist is conjunctive: the conclusion below is available only when
+R1, R2, and R3 all hold. Certificate 6.1 supplies numerical evidence relevant
+to R1 and R2 but discharges neither assumption.
+
 **Corollary 7.1 (Conditional Rubik collision quotient).**
 \label{cor:paper4-conditional-rubik}
 
-Assume that:
-
-1. the exact Rubik operators $Q=\mathrm{QT}_{\mathrm{all}}$ and
-   $H=\mathrm{HT}_{\mathrm{all}}$ are commuting Hermitian operators;
-2. their exact joint eigenspaces have ranks and joint eigenvalue coordinates
-   given by $P_9$;
-3. $A_{18}=(2Q+H)/3$.
-
-Then the exact $A_{18}$ eigenspaces are the $L_{2/3}$ collision classes of
-$P_9$. In particular, their eigenvalues and dimensions are
+Under Assumptions R1--R3, the eigenspace partition of $A_{18}$ is the
+direct-sum partition induced by the $L_{2/3}$ collision quotient of $P_9$.
+In particular, the exact eigenvalues and eigenspace dimensions are
 
 $$
 (1,20),\ (8/9,2),\ (7/9,39),\ (2/3,26),\ (5/9,106),\ (1/3,35).
@@ -575,10 +664,32 @@ input \cite{paper1}.
 
 ***
 
-## Comparison with Transport
+## Negative Control
 
-Collision adjacency and transport adjacency are different objects. For the
-explicit arrangement, the $2/3$ collision graph contains the complete triangle
+Collision adjacency depends only on equality of projected scalar values.
+Transport and composition require an additional labelled operative family and
+its projected blocks. The distinction already has an exact negative control.
+
+**Proposition 8.1 (Diagonal negative control).**
+\label{prop:paper4-diagonal-negative-control}
+
+Let $P=\{(q_i,h_i)\}_{i=1}^N$ be any finite arrangement with a nontrivial
+collision $i\sim_\alpha j$. On $V=\mathbb C^N$, let $Q$ and $H$ be diagonal
+with diagonal entries $q_i$ and $h_i$, and let every operator in a declared
+operative family $\mathcal Y$ be diagonal in the same basis. Then the collision
+edge $i\text{--}j$ is present, while every off-diagonal direct-support block
+and every projected composition between distinct sectors is zero.
+
+**Proof.** For the coordinate projectors $P_i$, diagonality gives
+$P_iYP_j=0$ whenever $i\ne j$ and $Y\in\mathcal Y$. Every projected product
+with distinct endpoint sectors contains such a diagonal off-sector block and
+therefore vanishes. The equality $L_\alpha(q_i,h_i)=L_\alpha(q_j,h_j)$ is
+unchanged because it depends only on $Q$ and $H$. $\square$
+
+Thus collision adjacency alone implies neither transport adjacency nor a
+nonzero routed composition. The Rubik registration gives a less degenerate
+finite comparison. For the explicit arrangement, the $2/3$ collision graph
+contains the complete triangle
 
 $$
 S5\text{--}S6,
@@ -590,7 +701,7 @@ $$
 
 ### Triangle versus chain
 
-**Computational observation.**
+**Computational Observation 8.2 (Rubik triangle versus support chain).**
 
 In the declared Rubik numerical registration, direct generator-support blocks
 are nonzero for S5--S6 and S6--S7 and below the declared threshold for S5--S7.
@@ -602,10 +713,15 @@ $$
 
 not the collision triangle.
 
-This observation does not imply that collision geometry determines transport.
+**No-promotion boundary.** The exact negative control
+and the finite Rubik observation have different roles. Proposition 8.1 refutes
+any general implication from collision adjacency to transport or composition.
+Observation 8.2 records a nontrivial numerical separation in the declared
+Rubik realization, but it does not establish a general transport theorem.
 Collision geometry records equality of affine scalar values, whereas direct
-support records nonzero projected generator blocks. Projected composition
-requires a further image--kernel audit \cite{paper3}. If sectors are merged,
+support records nonzero projected generator blocks. Even a direct-support
+chain does not by itself certify a nonzero projected composition; that step
+requires a separate image--kernel audit \cite{paper3}. If sectors are merged,
 graph incidence and operator products must be explicitly recomputed at the new
 resolution rather than automatically pushed forward through the collision
 quotient.
@@ -624,10 +740,12 @@ hypotheses.
 | Chamberwise constancy of branch order | Theorem |
 | Spectral layers equal collision classes for commuting Hermitian $Q,H$ | Theorem |
 | Rational coordinates imply rational finite collision parameters | Theorem |
+| Rectangular family has one adjustable interior collision | Theorem |
 | Complete census of the displayed $P_9$ | Theorem |
 | $2/3$ is the unique interior maximal-drop point of $P_9$ | Theorem |
 | Numerical QT/HT clusters match $P_9$ to declared residuals | Computational Certificate |
-| Actual Rubik layers are the exact $2/3$ quotient, conditional on exact registration | Theorem |
+| Exact Rubik eigenspaces are the $2/3$ quotient under R1--R3 | Theorem |
+| Collision adjacency does not generally imply transport or composition | Theorem |
 | Collision triangle differs from direct-support chain | Computational Observation |
 | QH algebra is canonical or maximal among commuting refinements | Research Program |
 | Moving arrangements and spectral-wall inclusions | Research Program |
@@ -643,7 +761,9 @@ $$
 
 Exact arithmetic on the predeclared table validates that table. It does not
 retroactively prove that the numerical operator data are exact rational spectral
-data.
+data. Likewise, a `PASS` result for Certificate 6.1 does not mark R1 or R2 as
+proved; the three-item checklist in Section 7 remains external to that
+certificate.
 
 ***
 
@@ -667,8 +787,8 @@ language of hyperplane arrangements and discriminants provides the natural
 geometric comparison class \cite{orlikTerao1992}. This paper does not claim a
 new general eigenvalue-perturbation theorem. Its contribution is the explicit
 organization of a fixed joint-spectrum projection as a collision quotient,
-the exact census of $P_9$, and the claim-status-separated Rubik
-registration.
+the rectangular control family, the exact census of $P_9$, and the
+claim-status-separated Rubik registration.
 
 Association schemes provide a second comparison class: their Bose--Mesner
 algebras are finite-dimensional commutative semisimple algebras organized by
@@ -756,14 +876,20 @@ establish a general information-flow theorem.
 For a fixed finite arrangement, collision quotients are exact finite objects.
 The critical set is finite, the branch order is chamberwise constant, and a
 commuting-Hermitian realization identifies quotient classes with spectral
-layers. The explicit rational set $P_9$ admits a complete exact census on
-$[0,1]$, with $2/3$ the unique interior parameter of maximal layer-count drop.
+layers. The rectangular family supplies an adjustable one-collision control.
+The explicit rational set $P_9$ admits a complete exact census on $[0,1]$,
+with $2/3$ the unique interior parameter of maximal layer-count drop.
 
 The Rubik interpretation has a different status. The declared numerical
-operators produce nine stable clusters extremely close to $P_9$. However,
-numerical residuals and table agreement do not prove exact joint spectral data.
-Conditional on that exact promotion, the six $A_{18}$ layers are the
-$L_{2/3}$ collision quotient of the nine-point arrangement.
+operators produce nine stable clusters extremely close to $P_9$, which is a
+Computational Certificate. Numerical residuals and table agreement do not
+prove R1 or R2. Only under the conjunctive assumptions R1--R3 does Corollary
+7.1 identify the exact $A_{18}$ eigenspace partition with the $L_{2/3}$
+collision quotient of the nine-point arrangement.
+
+Finally, collision data do not carry transport or composition semantics. The
+diagonal negative control proves the general nonimplication, while the Rubik
+triangle-versus-chain comparison remains a separate Computational Observation.
 
 The resulting architecture is therefore:
 
@@ -774,11 +900,11 @@ $$
 \\[-0.15em]
 \downarrow
 \\[-0.15em]
-\text{exact nine-point census}
+\text{exact control family and nine-point census}
 \\[-0.15em]
 \downarrow
 \\[-0.15em]
-\text{computational Rubik registration}
+\text{Rubik computational certificate}
 \\[-0.15em]
 \downarrow
 \\[-0.15em]
@@ -916,7 +1042,7 @@ computational Rubik case study. The default directory is
 | C1 | exact `Fraction` census of the declared $P_9$ arrangement | \path{validation/rubik_collision_quotient.py} |
 | C2 | numerical Rubik registration and residual audit | \path{validation/rubik_joint_spectrum_registration.py} |
 | C3 | collision-triangle/direct-support-chain comparison | \path{validation/v59_collision_vs_transport.py} |
-| C4 | source-addressed registration observation | \path{results/rubik_joint_spectrum_registration.observation.json} |
+| C4 | source-addressed v2.1 registration observation | \path{results/rubik_joint_spectrum_registration_v2_1.observation.json} |
 
 C2 reports operator Hermiticity and normality, QT/HT commutation,
 $A_{18}$ reconstruction, projector identities, ranks, joint-eigen residuals,

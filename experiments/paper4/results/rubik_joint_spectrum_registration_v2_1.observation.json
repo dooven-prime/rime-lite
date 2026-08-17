@@ -1,0 +1,438 @@
+{
+  "schema_version": "rime.experiment-observation.v1",
+  "artifact_role": "cached_computational_observation",
+  "authority": "Cached review aid. It records one completed run and does not replace the executable certificate or promote its claim status.",
+  "experiment": {
+    "id": "paper4-rubik-joint-spectrum-registration",
+    "paper": "Paper IV",
+    "command": [
+      "python",
+      "experiments/paper4/validation/rubik_joint_spectrum_registration.py"
+    ]
+  },
+  "claim": {
+    "status": "computational_certificate",
+    "scope": "Numerical registration of nine QT/HT joint clusters against the independent exact rational set P_9 used by Paper IV.",
+    "limitations": [
+      "Machine-zero residuals do not prove exact QT/HT commutation.",
+      "Small raw-to-table discrepancies do not prove exact rational eigenvalues.",
+      "The actual Rubik collision-quotient statement remains conditional on exact registration."
+    ]
+  },
+  "run": {
+    "status": "passed",
+    "started_at_utc": "2026-08-17T02:44:26Z",
+    "elapsed_seconds": 0.552325,
+    "parameters": {
+      "residual_threshold": 1e-10,
+      "clustering_tolerances": [
+        1e-06,
+        1e-08,
+        1e-10,
+        1e-12
+      ],
+      "dtype": "complex128",
+      "matching_metric": "L-infinity on raw (q,h) coordinates",
+      "reference_tolerance": 1e-10,
+      "joint_diagonalization": "Diagonalize QT, cluster its eigenvalues by absolute gap < tau, then diagonalize HT within each retained QT cluster.",
+      "cluster_representative": "normalized trace / mean Rayleigh scalar",
+      "rank_definition": "number of orthonormal basis columns",
+      "rational_reconstruction": "none; compare to the predeclared set P_9",
+      "declared_coordinate_denominators": {
+        "q_h": 6,
+        "a18": 9
+      }
+    }
+  },
+  "provenance": {
+    "git": {
+      "commit": "2090fefcb2a693cd24fc0ac153757f910300340f",
+      "tracked_worktree": "dirty"
+    },
+    "runtime": {
+      "python": "3.13.0",
+      "implementation": "CPython",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "packages": {
+        "numpy": "2.1.3",
+        "scipy": "1.18.0",
+        "rime": "0.0.1"
+      }
+    },
+    "source_scope": "explicitly_declared_files",
+    "source_set_sha256": "2ea9c43684e8d0980a31ace5dc1ffd372f5db6c209be5c7a4441dec5713f74f7",
+    "sources": [
+      {
+        "path": "experiments/observation.py",
+        "sha256": "da4d556972862faece732316f1d3950600f06858865e61af6a8cc282ba24b4b5"
+      },
+      {
+        "path": "experiments/paper4/validation/rubik_joint_spectrum_registration.py",
+        "sha256": "d1a39544db4b6620082ae734b552562c8043c4002c1946ab23c8a39e7893406b"
+      },
+      {
+        "path": "pyproject.toml",
+        "sha256": "b8d69ad11d0014f874bd6300350f12889e33f162e9331dc017c0fa4c97216905"
+      },
+      {
+        "path": "rime/base.py",
+        "sha256": "fead279b5631625050b0ee1f24a2bc47c19acac864b9c717a7917398bc4d0d30"
+      },
+      {
+        "path": "rime/cube.py",
+        "sha256": "6cfc68516f7aee5049b8124b8848d17f5a488bb67399d414d3442f0415ef2365"
+      },
+      {
+        "path": "rime/cubie.py",
+        "sha256": "8bc21b4035c579bc4ed6a3867b2bd53989c1e38f2f4b76c6ebc00bcb4d43c029"
+      },
+      {
+        "path": "rime/cubieoperator.py",
+        "sha256": "9b4b87038048b869e196ae586f28a38093f442e69d1826ef41be5a6f38127dfc"
+      },
+      {
+        "path": "rime/helpers.py",
+        "sha256": "0aa95428c5763ab41dce9cb25072c956b837bbdc07fa7347d07412995bf47887"
+      },
+      {
+        "path": "rime/spectral_utils.py",
+        "sha256": "bc8347596d66bb96d9b32a74f27b08e3f92120ce32d6c7fe6b154102bd6c3474"
+      }
+    ]
+  },
+  "observations": {
+    "summary": {
+      "passed": true,
+      "claim_status": "computational_certificate",
+      "cluster_count": 9,
+      "ambient_dimension": 228,
+      "maximum_raw_to_p9_table_discrepancy": 9.992007221626409e-16,
+      "maximum_joint_eigen_residual": 8.660627828482088e-15,
+      "minimum_p9_joint_point_linf_gap": 0.16666666666666663
+    },
+    "operator_residuals": {
+      "qt_hermiticity": 2.7336071744532853e-16,
+      "ht_hermiticity": 0.0,
+      "qt_normality": 3.168789440856836e-18,
+      "ht_normality": 0.0,
+      "qh_commutator": 3.765390104928223e-16,
+      "a18_reconstruction": 2.943923360032078e-17
+    },
+    "projector_residuals": {
+      "idempotence": 1.0873421440560498e-14,
+      "hermiticity": 6.314077001282525e-16,
+      "orthogonality": 4.782267058033441e-15,
+      "completeness": 2.2288623624191114e-14,
+      "rank_trace_error": 1.4210854715202004e-14
+    },
+    "clustering_tolerance_census": {
+      "1e-06": {
+        "cluster_count": 9,
+        "label_rank_stable": true,
+        "label_rank_pairs": {
+          "S1": 20,
+          "S2": 2,
+          "S3": 39,
+          "S4": 26,
+          "S5": 1,
+          "S6": 39,
+          "S7": 66,
+          "S8": 8,
+          "S9": 27
+        },
+        "maximum_match_to_p9_linf": 9.992007221626409e-16,
+        "maximum_coordinate_drift_from_1e-10_linf": 0.0,
+        "maximum_projector_drift_from_1e-10_frobenius": 0.0,
+        "minimum_normalized_projector_overlap": 0.9999999999999983,
+        "maximum_principal_angle_radians": 7.742870483855356e-08
+      },
+      "1e-08": {
+        "cluster_count": 9,
+        "label_rank_stable": true,
+        "label_rank_pairs": {
+          "S1": 20,
+          "S2": 2,
+          "S3": 39,
+          "S4": 26,
+          "S5": 1,
+          "S6": 39,
+          "S7": 66,
+          "S8": 8,
+          "S9": 27
+        },
+        "maximum_match_to_p9_linf": 9.992007221626409e-16,
+        "maximum_coordinate_drift_from_1e-10_linf": 0.0,
+        "maximum_projector_drift_from_1e-10_frobenius": 0.0,
+        "minimum_normalized_projector_overlap": 0.9999999999999983,
+        "maximum_principal_angle_radians": 7.742870483855356e-08
+      },
+      "1e-10": {
+        "cluster_count": 9,
+        "label_rank_stable": true,
+        "label_rank_pairs": {
+          "S1": 20,
+          "S2": 2,
+          "S3": 39,
+          "S4": 26,
+          "S5": 1,
+          "S6": 39,
+          "S7": 66,
+          "S8": 8,
+          "S9": 27
+        },
+        "maximum_match_to_p9_linf": 9.992007221626409e-16,
+        "maximum_coordinate_drift_from_1e-10_linf": 0.0,
+        "maximum_projector_drift_from_1e-10_frobenius": 0.0,
+        "minimum_normalized_projector_overlap": 0.9999999999999983,
+        "maximum_principal_angle_radians": 7.742870483855356e-08
+      },
+      "1e-12": {
+        "cluster_count": 9,
+        "label_rank_stable": true,
+        "label_rank_pairs": {
+          "S1": 20,
+          "S2": 2,
+          "S3": 39,
+          "S4": 26,
+          "S5": 1,
+          "S6": 39,
+          "S7": 66,
+          "S8": 8,
+          "S9": 27
+        },
+        "maximum_match_to_p9_linf": 9.992007221626409e-16,
+        "maximum_coordinate_drift_from_1e-10_linf": 0.0,
+        "maximum_projector_drift_from_1e-10_frobenius": 0.0,
+        "minimum_normalized_projector_overlap": 0.9999999999999983,
+        "maximum_principal_angle_radians": 7.742870483855356e-08
+      }
+    },
+    "registered_clusters": [
+      {
+        "label": "S1",
+        "rank": 20,
+        "raw": {
+          "q": 1.0,
+          "h": 1.0000000000000002,
+          "a18": 1.0
+        },
+        "registered": {
+          "q": "1",
+          "h": "1",
+          "a18": "1"
+        },
+        "table_discrepancy": {
+          "q": 0.0,
+          "h": 2.220446049250313e-16,
+          "a18": 0.0
+        },
+        "coordinate_match_to_p9_linf": 2.220446049250313e-16,
+        "joint_eigen_residual": {
+          "qt": 2.2327133793015876e-15,
+          "ht": 3.222927933693497e-15,
+          "a18": 2.3727281429644333e-15
+        }
+      },
+      {
+        "label": "S2",
+        "rank": 2,
+        "raw": {
+          "q": 0.8333333333333327,
+          "h": 0.9999999999999991,
+          "a18": 0.8888888888888881
+        },
+        "registered": {
+          "q": "5/6",
+          "h": "1",
+          "a18": "8/9"
+        },
+        "table_discrepancy": {
+          "q": 6.661338147750939e-16,
+          "h": 8.881784197001252e-16,
+          "a18": 7.771561172376096e-16
+        },
+        "coordinate_match_to_p9_linf": 8.881784197001252e-16,
+        "joint_eigen_residual": {
+          "qt": 1.0619670565399286e-15,
+          "ht": 1.703196470958102e-15,
+          "a18": 1.2716693892893496e-15
+        }
+      },
+      {
+        "label": "S3",
+        "rank": 39,
+        "raw": {
+          "q": 0.8333333333333334,
+          "h": 0.6666666666666667,
+          "a18": 0.7777777777777778
+        },
+        "registered": {
+          "q": "5/6",
+          "h": "2/3",
+          "a18": "7/9"
+        },
+        "table_discrepancy": {
+          "q": 0.0,
+          "h": 1.1102230246251565e-16,
+          "a18": 0.0
+        },
+        "coordinate_match_to_p9_linf": 1.1102230246251565e-16,
+        "joint_eigen_residual": {
+          "qt": 3.6530653098251696e-15,
+          "ht": 5.0065412561520604e-15,
+          "a18": 3.4913558013964762e-15
+        }
+      },
+      {
+        "label": "S4",
+        "rank": 26,
+        "raw": {
+          "q": 0.4999999999999998,
+          "h": 0.9999999999999996,
+          "a18": 0.6666666666666665
+        },
+        "registered": {
+          "q": "1/2",
+          "h": "1",
+          "a18": "2/3"
+        },
+        "table_discrepancy": {
+          "q": 2.220446049250313e-16,
+          "h": 4.440892098500626e-16,
+          "a18": 1.1102230246251565e-16
+        },
+        "coordinate_match_to_p9_linf": 4.440892098500626e-16,
+        "joint_eigen_residual": {
+          "qt": 2.444061147477515e-15,
+          "ht": 7.821681334296467e-15,
+          "a18": 2.114490708216118e-15
+        }
+      },
+      {
+        "label": "S5",
+        "rank": 1,
+        "raw": {
+          "q": 0.33333333333333304,
+          "h": 0.999999999999999,
+          "a18": 0.555555555555555
+        },
+        "registered": {
+          "q": "1/3",
+          "h": "1",
+          "a18": "5/9"
+        },
+        "table_discrepancy": {
+          "q": 2.7755575615628914e-16,
+          "h": 9.992007221626409e-16,
+          "a18": 5.551115123125783e-16
+        },
+        "coordinate_match_to_p9_linf": 9.992007221626409e-16,
+        "joint_eigen_residual": {
+          "qt": 4.525176730115844e-16,
+          "ht": 1.2468107680338306e-15,
+          "a18": 5.619538922038344e-16
+        }
+      },
+      {
+        "label": "S6",
+        "rank": 39,
+        "raw": {
+          "q": 0.5,
+          "h": 0.6666666666666666,
+          "a18": 0.5555555555555555
+        },
+        "registered": {
+          "q": "1/2",
+          "h": "2/3",
+          "a18": "5/9"
+        },
+        "table_discrepancy": {
+          "q": 0.0,
+          "h": 0.0,
+          "a18": 1.1102230246251565e-16
+        },
+        "coordinate_match_to_p9_linf": 0.0,
+        "joint_eigen_residual": {
+          "qt": 2.8337322898960987e-15,
+          "ht": 5.242069347629956e-15,
+          "a18": 2.084977692498258e-15
+        }
+      },
+      {
+        "label": "S7",
+        "rank": 66,
+        "raw": {
+          "q": 0.6666666666666664,
+          "h": 0.3333333333333332,
+          "a18": 0.5555555555555555
+        },
+        "registered": {
+          "q": "2/3",
+          "h": "1/3",
+          "a18": "5/9"
+        },
+        "table_discrepancy": {
+          "q": 2.220446049250313e-16,
+          "h": 1.1102230246251565e-16,
+          "a18": 1.1102230246251565e-16
+        },
+        "coordinate_match_to_p9_linf": 2.220446049250313e-16,
+        "joint_eigen_residual": {
+          "qt": 4.280004067728645e-15,
+          "ht": 8.660627828482088e-15,
+          "a18": 3.5360368317157444e-15
+        }
+      },
+      {
+        "label": "S8",
+        "rank": 8,
+        "raw": {
+          "q": 2.79085240383506e-17,
+          "h": 1.0,
+          "a18": 0.33333333333333337
+        },
+        "registered": {
+          "q": "0",
+          "h": "1",
+          "a18": "1/3"
+        },
+        "table_discrepancy": {
+          "q": 2.79085240383506e-17,
+          "h": 0.0,
+          "a18": 5.551115123125783e-17
+        },
+        "coordinate_match_to_p9_linf": 2.79085240383506e-17,
+        "joint_eigen_residual": {
+          "qt": 9.630374166768823e-16,
+          "ht": 8.810462310203081e-16,
+          "a18": 5.082048393921973e-16
+        }
+      },
+      {
+        "label": "S9",
+        "rank": 27,
+        "raw": {
+          "q": 0.3333333333333334,
+          "h": 0.3333333333333334,
+          "a18": 0.3333333333333334
+        },
+        "registered": {
+          "q": "1/3",
+          "h": "1/3",
+          "a18": "1/3"
+        },
+        "table_discrepancy": {
+          "q": 1.1102230246251565e-16,
+          "h": 1.1102230246251565e-16,
+          "a18": 1.1102230246251565e-16
+        },
+        "coordinate_match_to_p9_linf": 1.1102230246251565e-16,
+        "joint_eigen_residual": {
+          "qt": 1.6580634349835763e-15,
+          "ht": 1.380041470777239e-15,
+          "a18": 1.2821476782725648e-15
+        }
+      }
+    ]
+  }
+}

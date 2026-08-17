@@ -28,7 +28,7 @@ from experiments.observation import (
 TOL = 1e-10
 CLUSTER_TOLERANCES = (1e-6, 1e-8, 1e-10, 1e-12)
 RESULT_PATH = Path(
-    "experiments/paper4/results/rubik_joint_spectrum_registration.observation.json"
+    "experiments/paper4/results/rubik_joint_spectrum_registration_v2_1.observation.json"
 )
 EXPECTED = (
     ("S1", 20, Fraction(1), Fraction(1), Fraction(1)),
