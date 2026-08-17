@@ -9,6 +9,24 @@ The canonical publication list is the root
 their declared artifacts remain the authority for mathematical and
 computational claims.
 
+## 2026-08-17: Paper IV Version 2.1
+
+Paper IV was released as a versioned reopening of the fixed-arrangement
+collision-geometry layer. Version 2.1:
+
+- adds an exact rectangular control family with one adjustable interior
+  collision;
+- records the declared complex128 Rubik registration as a source-addressed
+  Computational Certificate without promoting numerical residuals to exact
+  commutation or rational joint-spectrum data;
+- makes the exact Rubik quotient corollary conditional on the conjunctive
+  R1--R3 assumptions for operator admissibility, labelled registration, and
+  the averaging identity;
+- adds an exact diagonal negative control showing that collision adjacency
+  does not imply transport adjacency or nonzero projected composition;
+- retains the Rubik triangle-versus-chain comparison as a bounded
+  Computational Observation.
+
 ## 2026-08-11: Paper XIV Version 2
 
 Paper XIV was released as the context- and policy-relative interpretation

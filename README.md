@@ -17,7 +17,7 @@ immutable first combined record retains its historical predecessor.
 | Paper I | block spectral structure and a conditional rationality criterion | <https://doi.org/10.5281/zenodo.21571403> |
 | Paper II | sector non-invariance, direct support, and transport channels | <https://doi.org/10.5281/zenodo.21581072> |
 | Paper III | support-graph reachability and matrix-composition obstructions | <https://doi.org/10.5281/zenodo.21583070> |
-| Paper IV | collision geometry of joint spectra | <https://doi.org/10.5281/zenodo.21620776> |
+| Paper IV | collision geometry of joint spectra | <https://doi.org/10.5281/zenodo.21972335> |
 | Paper V | Boolean support and commutator accessibility | <https://doi.org/10.5281/zenodo.21634007> |
 | Paper VI | linearized commutativity geometry, normality gates, and typed spectral registrations | <https://doi.org/10.5281/zenodo.21634256> |
 | Paper VII | incidence geometry, rank protection, and composition-promotion limits | <https://doi.org/10.5281/zenodo.21634538> |

@@ -182,9 +182,9 @@ def check_bibliography_identities():
             "Paper III of the RIME program, version 2.0. DOI:",
         ),
         "paper4": (
-            "10.5281/zenodo.21620776",
-            "https://doi.org/10.5281/zenodo.21620776",
-            "Paper IV of the RIME program, version 2.0. DOI:",
+            "10.5281/zenodo.21972335",
+            "https://doi.org/10.5281/zenodo.21972335",
+            "Paper IV of the RIME program, version 2.1. DOI:",
         ),
         "paper5": (
             "10.5281/zenodo.21634007",
