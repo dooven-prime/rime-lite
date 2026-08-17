@@ -1624,14 +1624,5 @@ relative to that directory.
 | A6 | validation receipt, ID `P8V2.1-REPLAY` | \path{results/v2.1/marked_finite_realization_conformance_v2_1.validation-receipt.json} |
 | A7 | human-readable projection of A4 | \path{results/v2.1/marked_finite_realization_conformance_v2_1.md} |
 
-From the repository root, run:
-
-```bash
-cd experiments/paper8
-python validation/promote_marked_finite_realizations_v2_1.py
-python validation/validate_marked_finite_realizations_v2_1.py --write-receipt
-```
-
-The promotion and validation steps replay the two source bundles, reconstruct
-the paper-owned certificate, and bind the resulting receipt to the declared
-source and implementation digests.
+All listed artifacts are available in the
+[RIME repository](https://github.com/dooven-prime/rime-lite).

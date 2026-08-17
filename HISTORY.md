@@ -9,6 +9,45 @@ The canonical publication list is the root
 their declared artifacts remain the authority for mathematical and
 computational claims.
 
+## 2026-08-17: Paper VIII Version 2.1
+
+Paper VIII was released as a versioned extension of the static SOF object
+language. Version 2.1:
+
+- adds an exact marked finite-realization family for declared finite actions,
+  labelled source maps, and marked partitions;
+- records the carrier-qualified equality of routed and full-word Boolean
+  support for coordinate-sector permutation carriers;
+- adds finite represented positive-closure and exact first-hit word-depth
+  certificates;
+- publishes a paper-owned Computational Certificate covering six modular
+  actions, seventeen bounded triangle-group actions, fifty-seven saturation
+  receipts, label/operator collision witnesses, and a strict Path/Route/W
+  control;
+- preserves the boundaries against canonical sectorization, Lie/Hall depth,
+  deformation, wall, graph-Laplacian, Hecke, moduli, Selberg, and automorphic
+  promotion.
+
+The public release is DOI
+<https://doi.org/10.5281/zenodo.21977464>.
+
+## 2026-08-17: Paper VII Version 2.1
+
+Paper VII was released as a versioned extension of the incidence-geometry and
+composition-promotion boundary. Version 2.1:
+
+- adds an exact fixed-frame carrier certificate for the four canonical Rubik
+  zero-route concentrations;
+- registers the source-addressed 19-orbit canonical-frame census;
+- certifies every zero in the registered numerator by exact arithmetic while
+  retaining numerical nonvanishing of complementary supported routes as a
+  bounded Computational Observation;
+- keeps Boolean support, routed products, full words, commutators, and Lie
+  depth as distinct objects with no stronger promotion.
+
+The public release is DOI
+<https://doi.org/10.5281/zenodo.21976516>.
+
 ## 2026-08-17: Paper VI Version 2.1
 
 Paper VI was released as a versioned certificate and admission-boundary

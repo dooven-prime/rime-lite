@@ -69,8 +69,10 @@ Upstream provenance inputs:
 From the repository root:
 
 ```bash
-python experiments/paper8/validation/promote_marked_finite_realizations_v2_1.py
-python experiments/paper8/validation/validate_marked_finite_realizations_v2_1.py --write-receipt
+cd experiments/paper8
+python validation/promote_marked_finite_realizations_v2_1.py
+python validation/validate_marked_finite_realizations_v2_1.py --write-receipt
+cd ../..
 python papers/tex/build.py paper8
 ```
 

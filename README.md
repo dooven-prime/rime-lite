@@ -20,8 +20,8 @@ immutable first combined record retains its historical predecessor.
 | Paper IV | collision geometry of joint spectra | <https://doi.org/10.5281/zenodo.21972335> |
 | Paper V | Boolean support and commutator accessibility | <https://doi.org/10.5281/zenodo.21634007> |
 | Paper VI | linearized commutativity geometry, normality gates, and typed spectral registrations | <https://doi.org/10.5281/zenodo.21973224> |
-| Paper VII | incidence geometry, rank protection, and composition-promotion limits | <https://doi.org/10.5281/zenodo.21634538> |
-| Paper VIII | sectorized observable framework | <https://doi.org/10.5281/zenodo.21700863> |
+| Paper VII | incidence geometry, rank protection, and composition-promotion limits | <https://doi.org/10.5281/zenodo.21976516> |
+| Paper VIII | sectorized observable framework | <https://doi.org/10.5281/zenodo.21977464> |
 | Paper IX | observable dynamics of sectorized observable frameworks | <https://doi.org/10.5281/zenodo.21713306> |
 | Paper X | capability-aware compilation for Sectorized Observable Frameworks and Registry evidence | <https://doi.org/10.5281/zenodo.21768257> |
 | Paper XI | typed wall morphology for Sectorized Observable Frameworks | <https://doi.org/10.5281/zenodo.21801722> |
@@ -33,7 +33,7 @@ immutable first combined record retains its historical predecessor.
 
 This is the repository's canonical DOI index. It identifies immutable
 published records; other public documents link here instead of duplicating the
-list. Papers VIII--XIV now match their published version-2 records. Their
+list. Papers VII--XIV now match their published versioned records. Their
 listed DOIs identify immutable published versions, and frozen historical
 contracts remain unchanged.
 
