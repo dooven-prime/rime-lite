@@ -4,7 +4,7 @@
   "candidate_version": "2.1",
   "certificate_id": "paper8.marked-finite-realization-conformance.v2.1",
   "claim_status": "Computational Certificate",
-  "content_sha256": "23060ad90bc30ebcc8fa64847c337ecc92533fb0ddb14c75286bcc894e67bd6d",
+  "content_sha256": "12b835dde91891e79d82535edcda12f083f172de59e6543894084f6b2101873b",
   "finite_saturation_receipts": [
     {
       "bounded_word_support_layers_sha256": "25f0b9cbb6f088a1b0057d96d860a52624e41445b092e79e2041f57435249616",
@@ -3702,12 +3702,12 @@
   "implementation": {
     "files": {
       "experiments/exploratory/carrier_realizations/fuchsian_schreier/core.py": "f84c18f5ce35f9b0ab05169a783012a0e33b378ecb5058f52c2c6f6b5a7d500b",
-      "experiments/exploratory/carrier_realizations/fuchsian_schreier/modular_census.py": "90ae4946fad44ebe252a0409940f3d8ea807881e5dff618a673eff84f53a9abf",
-      "experiments/exploratory/carrier_realizations/fuchsian_schreier/triangle_census.py": "58a5c464f5a0c8ae4c2b3cd1731148c834d76d2de55f36f4f0af284b7cf30326",
+      "experiments/exploratory/carrier_realizations/fuchsian_schreier/modular_census.py": "db9570e28c9838543fbfc5d5c4e821813a2590d803f8aea1c490ff831d09ca28",
+      "experiments/exploratory/carrier_realizations/fuchsian_schreier/triangle_census.py": "c21e39facef7abe280318de2905e566604f89b05c71e2b5c6bca8d0d0c219fc5",
       "experiments/exploratory/carrier_realizations/fuchsian_schreier/validate.py": "059ffc5b03a2f658724ed48aa705e11b7388d4d8b32cabf8e99599ed85f0ff8e",
       "experiments/paper8/validation/promote_marked_finite_realizations_v2_1.py": "7b733a21307df91e851ca3a7cac486c2c46cc789d18a56a24239f7b4dabaf430"
     },
-    "implementation_sha256": "03c7c30dc75f48878e0e4d1fac7123180e915a9472b7444a723dcc7f10a1d3c4",
+    "implementation_sha256": "566b854d5854e49f7bbbd231cda60d5b4a10b671978454c799be6999cdc34320",
     "producer_id": "paper8.marked-finite-realization-promotion.python.v2.1"
   },
   "label_collision_witnesses": [
@@ -4108,18 +4108,18 @@
   "schema": "paper8.marked-finite-realization-conformance.v2.1",
   "source_artifacts": [
     {
-      "artifact_sha256": "53aef127b32546dfb2ef332a46394a14abfdca79ed2019c8263baec75cfff911",
+      "artifact_sha256": "4b3b5a60d88fd9106dd2a724d3a67f94fdfce592399dbc52181164f92f9f5616",
       "bundle_id": "fuchsian-schreier.modular-p1-census.v2",
-      "content_sha256": "370453f8b462cc3017c60781b44a48ee41c08ed64efe38255ffe219c4013143c",
+      "content_sha256": "c18d21d9fcae09f2be064024aa159e11655385db358f9703e5a58a3539bc6633",
       "path": "experiments/exploratory/carrier_realizations/fuchsian_schreier/results/modular_p1_census_v2.json",
       "promotion_role": "SOURCE_PROVENANCE_AND_REPLAY_INPUT",
       "schema": "rime.exploratory.fuchsian-schreier.modular-p1-census.v2",
       "upstream_paper_evidence_status": "NOT_PROMOTED"
     },
     {
-      "artifact_sha256": "0dded6e8ffe00419a1eaecaa10cd5db5c47d17f642a78534be8500714a09f5cb",
+      "artifact_sha256": "8d04a821ca6b297bf75e8c0ef9739ddd2c8bfbd81ff092fe8a826ee9a8045dcf",
       "bundle_id": "fuchsian-schreier.triangle-low-index-census.v2",
-      "content_sha256": "0dbeaf32280808a62e2603994acf8bd4d9eabb612566d6da1eac422e5cb4b37f",
+      "content_sha256": "7a5dca10acbed289815f3d1872f1384972e47695792a25598889ebcab4fd8d43",
       "path": "experiments/exploratory/carrier_realizations/fuchsian_schreier/results/triangle_low_index_census_v2.json",
       "promotion_role": "SOURCE_PROVENANCE_AND_REPLAY_INPUT",
       "schema": "rime.exploratory.fuchsian-schreier.triangle-census.v2",

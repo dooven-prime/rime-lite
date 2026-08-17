@@ -36,9 +36,9 @@
     "arithmetic": "Python int and fractions.Fraction; no floating-point result fields",
     "files": {
       "experiments/exploratory/carrier_realizations/fuchsian_schreier/core.py": "f84c18f5ce35f9b0ab05169a783012a0e33b378ecb5058f52c2c6f6b5a7d500b",
-      "experiments/exploratory/carrier_realizations/fuchsian_schreier/triangle_census.py": "58a5c464f5a0c8ae4c2b3cd1731148c834d76d2de55f36f4f0af284b7cf30326"
+      "experiments/exploratory/carrier_realizations/fuchsian_schreier/triangle_census.py": "c21e39facef7abe280318de2905e566604f89b05c71e2b5c6bca8d0d0c219fc5"
     },
-    "implementation_sha256": "ddb6e45a986e5a1f520e4c6388e1046d6017e0422947bb703b7756b86d050c1f"
+    "implementation_sha256": "cf04c8d1ff1a96049578d6c021e662ffa889959a703cb50694d6aeec5a37144f"
   },
   "enumeration": [
     {
@@ -69241,5 +69241,5 @@
     "Boolean paths, routed products, and full words are distinct typed objects.",
     "No hyperbolic-surface, Hecke, moduli, Selberg, SOFRS, or SOFAUDIT claim is included."
   ],
-  "content_sha256": "0dbeaf32280808a62e2603994acf8bd4d9eabb612566d6da1eac422e5cb4b37f"
+  "content_sha256": "7a5dca10acbed289815f3d1872f1384972e47695792a25598889ebcab4fd8d43"
 }

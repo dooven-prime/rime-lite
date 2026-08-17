@@ -24,6 +24,18 @@ The exploratory source artifacts retain their original provenance and
 `NOT_PROMOTED` status. Paper VIII owns the promotion decision, reduced claim
 surface, conformance certificate, and replay receipt.
 
+## Public Upstream Package
+
+The reviewed public source package is
+`experiments/exploratory/carrier_realizations/fuchsian_schreier/`. Its
+executable package closure includes the finite carrier core, modular and
+triangle census producers, exact JSON bundles, replay validator, Markdown
+projections, and hostile control.
+
+Paper VIII imports only the two JSON bundles listed below. Public package
+documentation, projections, hostile controls, and internal migration lineage
+are not additional Paper VIII evidence.
+
 ## Active Artifacts
 
 | Artifact ID | Path | Role |

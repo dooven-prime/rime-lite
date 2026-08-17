@@ -1414,12 +1414,11 @@ positive-closure receipts; no sector pair in those records remains
 unreachable after saturation. The four-state hostile control carries its own
 exact first-hit and finite-closure replay record.
 
-The active record and receipt have artifact IDs
-`P8V2.1-CONFORMANCE` and `P8V2.1-REPLAY`; the paper-local artifact catalogue
-binds those IDs to their source paths and validators. The two exploratory
-source bundles remain source-addressed provenance inputs; they do not acquire
-Paper VIII evidence status independently of this promotion record and
-validation receipt.
+The paper-owned conformance artifact and its validation receipt are
+source-addressed in Appendix A. Their artifact IDs are `P8V2.1-CONFORMANCE`
+and `P8V2.1-REPLAY`. The two exploratory source bundles remain provenance
+inputs; they do not acquire Paper VIII evidence status independently of the
+paper-owned promotion artifact and receipt.
 
 This evidence is a **Computational Certificate**. The propositions above are
 proved from the declared finite-action hypotheses and do not depend on the
@@ -1606,3 +1605,49 @@ from positive, star, and sector-enriched closures, and optional Lie/Hall data
 are independently registered. The exact finite-permutation family is a
 conformance witness for that interface and a strict control against replacing
 actual ordered words by aggregate Boolean graph powers.
+
+***
+
+## Appendix A: Computational Artifacts
+
+The executable artifacts below support the finite-permutation conformance
+certificate. The two default directories are
+
+```text
+experiments/exploratory/carrier_realizations/
+  fuchsian_schreier/
+experiments/paper8/
+```
+
+Paths beginning with `source/` are relative to the first directory; paths
+beginning with `paper/` are relative to the second.
+
+| Artifact | Role | Path |
+|---|---|---|
+| A1 | exact modular finite-carrier source bundle | \url{source/results/modular_p1_census_v2.json} |
+| A2 | exact bounded triangle-group source bundle | \url{source/results/triangle_low_index_census_v2.json} |
+| A3 | paper-owned promotion and saturation replay | \url{paper/validation/promote_marked_finite_realizations_v2_1.py} |
+| A4 | conformance artifact, ID `P8V2.1-CONFORMANCE` | \url{paper/results/v2.1/marked_finite_realization_conformance_v2_1.json} |
+| A5 | fail-closed paper-owned replay validator | \url{paper/validation/validate_marked_finite_realizations_v2_1.py} |
+| A6 | validation receipt, ID `P8V2.1-REPLAY` | \url{paper/results/v2.1/marked_finite_realization_conformance_v2_1.validation-receipt.json} |
+| A7 | human-readable projection of A4 | \url{paper/results/v2.1/marked_finite_realization_conformance_v2_1.md} |
+
+From the repository root, rebuild and validate the paper-owned closure with
+
+```bash
+cd experiments/paper8
+python validation/promote_marked_finite_realizations_v2_1.py
+python validation/validate_marked_finite_realizations_v2_1.py --write-receipt
+```
+
+The promotion producer first replays A1 and A2 under their installed public
+producer closure. It then reconstructs A4, including the four-state hostile
+control and all finite represented-image saturation records. The independent
+validator checks source digests, exact upstream replay, certificate
+reconstruction, right-closure, and coordinated tamper cases before emitting
+A6.
+
+Only A1 and A2 are imported as upstream provenance. Package documentation,
+hostile controls, graph-Laplacian fields, spanning-tree records, and excluded
+surface, Hecke, moduli, Selberg, or automorphic interpretations are not
+promoted by this paper.

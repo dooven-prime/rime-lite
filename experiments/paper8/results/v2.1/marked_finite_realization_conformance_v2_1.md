@@ -23,8 +23,8 @@ exploratory source bundles paper evidence by themselves.
 
 ## Source Artifacts
 
-- `experiments/exploratory/carrier_realizations/fuchsian_schreier/results/modular_p1_census_v2.json`: content `370453f8b462cc3017c60781b44a48ee41c08ed64efe38255ffe219c4013143c`.
-- `experiments/exploratory/carrier_realizations/fuchsian_schreier/results/triangle_low_index_census_v2.json`: content `0dbeaf32280808a62e2603994acf8bd4d9eabb612566d6da1eac422e5cb4b37f`.
+- `experiments/exploratory/carrier_realizations/fuchsian_schreier/results/modular_p1_census_v2.json`: content `c18d21d9fcae09f2be064024aa159e11655385db358f9703e5a58a3539bc6633`.
+- `experiments/exploratory/carrier_realizations/fuchsian_schreier/results/triangle_low_index_census_v2.json`: content `7a5dca10acbed289815f3d1872f1384972e47695792a25598889ebcab4fd8d43`.
 
 ## Boundaries
 
