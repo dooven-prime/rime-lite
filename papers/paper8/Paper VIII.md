@@ -1610,29 +1610,21 @@ actual ordered words by aggregate Boolean graph powers.
 
 ## Appendix A: Computational Artifacts
 
-The executable artifacts below support the finite-permutation conformance
-certificate. The two default directories are
+The following repository artifacts support the finite-permutation conformance
+certificate. The default directory is `experiments/paper8/`; paths are
+relative to that directory.
 
-```text
-experiments/exploratory/carrier_realizations/
-  fuchsian_schreier/
-experiments/paper8/
-```
+| Artifact | Role | Short path |
+|----------|-------------------|------------|
+| A1 | exact modular finite-carrier source bundle | \path{../exploratory/carrier_realizations/fuchsian_schreier/results/modular_p1_census_v2.json} |
+| A2 | exact bounded triangle-group source bundle | \path{../exploratory/carrier_realizations/fuchsian_schreier/results/triangle_low_index_census_v2.json} |
+| A3 | paper-owned promotion and saturation replay | \path{validation/promote_marked_finite_realizations_v2_1.py} |
+| A4 | conformance artifact, ID `P8V2.1-CONFORMANCE` | \path{results/v2.1/marked_finite_realization_conformance_v2_1.json} |
+| A5 | fail-closed paper-owned replay validator | \path{validation/validate_marked_finite_realizations_v2_1.py} |
+| A6 | validation receipt, ID `P8V2.1-REPLAY` | \path{results/v2.1/marked_finite_realization_conformance_v2_1.validation-receipt.json} |
+| A7 | human-readable projection of A4 | \path{results/v2.1/marked_finite_realization_conformance_v2_1.md} |
 
-Paths beginning with `source/` are relative to the first directory; paths
-beginning with `paper/` are relative to the second.
-
-| Artifact | Role | Path |
-|---|---|---|
-| A1 | exact modular finite-carrier source bundle | \url{source/results/modular_p1_census_v2.json} |
-| A2 | exact bounded triangle-group source bundle | \url{source/results/triangle_low_index_census_v2.json} |
-| A3 | paper-owned promotion and saturation replay | \url{paper/validation/promote_marked_finite_realizations_v2_1.py} |
-| A4 | conformance artifact, ID `P8V2.1-CONFORMANCE` | \url{paper/results/v2.1/marked_finite_realization_conformance_v2_1.json} |
-| A5 | fail-closed paper-owned replay validator | \url{paper/validation/validate_marked_finite_realizations_v2_1.py} |
-| A6 | validation receipt, ID `P8V2.1-REPLAY` | \url{paper/results/v2.1/marked_finite_realization_conformance_v2_1.validation-receipt.json} |
-| A7 | human-readable projection of A4 | \url{paper/results/v2.1/marked_finite_realization_conformance_v2_1.md} |
-
-From the repository root, rebuild and validate the paper-owned closure with
+From the repository root, run:
 
 ```bash
 cd experiments/paper8
@@ -1640,14 +1632,6 @@ python validation/promote_marked_finite_realizations_v2_1.py
 python validation/validate_marked_finite_realizations_v2_1.py --write-receipt
 ```
 
-The promotion producer first replays A1 and A2 under their installed public
-producer closure. It then reconstructs A4, including the four-state hostile
-control and all finite represented-image saturation records. The independent
-validator checks source digests, exact upstream replay, certificate
-reconstruction, right-closure, and coordinated tamper cases before emitting
-A6.
-
-Only A1 and A2 are imported as upstream provenance. Package documentation,
-hostile controls, graph-Laplacian fields, spanning-tree records, and excluded
-surface, Hecke, moduli, Selberg, or automorphic interpretations are not
-promoted by this paper.
+The promotion and validation steps replay the two source bundles, reconstruct
+the paper-owned certificate, and bind the resulting receipt to the declared
+source and implementation digests.
