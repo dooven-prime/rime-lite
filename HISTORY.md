@@ -9,6 +9,23 @@ The canonical publication list is the root
 their declared artifacts remain the authority for mathematical and
 computational claims.
 
+## 2026-08-17: Paper VI Version 2.1
+
+Paper VI was released as a versioned certificate and admission-boundary
+revision of the linearized commutativity and spectral-registration layer.
+Version 2.1:
+
+- freezes the singular-value rank policy for the full commutator and combined
+  commutator-normality Jacobians;
+- requires commutativity, Hermiticity, normality, and projector checks before
+  pointwise records enter the registration ledger;
+- admits four declared records and rejects a single-quarter-turn control
+  before projector construction, leaving post-admission fields uncomputed;
+- preserves the canonical 9-sector and weight-1.1 15-sector observations with
+  typed operator and finite-order-logarithm support counts;
+- keeps nonlinear charts, coherent continuation, moving walls, routed or
+  full-word depth, commutator support, and Lie depth outside the claim surface.
+
 ## 2026-08-17: Paper IV Version 2.1
 
 Paper IV was released as a versioned reopening of the fixed-arrangement

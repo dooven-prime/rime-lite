@@ -19,7 +19,7 @@ immutable first combined record retains its historical predecessor.
 | Paper III | support-graph reachability and matrix-composition obstructions | <https://doi.org/10.5281/zenodo.21583070> |
 | Paper IV | collision geometry of joint spectra | <https://doi.org/10.5281/zenodo.21972335> |
 | Paper V | Boolean support and commutator accessibility | <https://doi.org/10.5281/zenodo.21634007> |
-| Paper VI | linearized commutativity geometry, normality gates, and typed spectral registrations | <https://doi.org/10.5281/zenodo.21634256> |
+| Paper VI | linearized commutativity geometry, normality gates, and typed spectral registrations | <https://doi.org/10.5281/zenodo.21973224> |
 | Paper VII | incidence geometry, rank protection, and composition-promotion limits | <https://doi.org/10.5281/zenodo.21634538> |
 | Paper VIII | sectorized observable framework | <https://doi.org/10.5281/zenodo.21700863> |
 | Paper IX | observable dynamics of sectorized observable frameworks | <https://doi.org/10.5281/zenodo.21713306> |
