@@ -197,14 +197,14 @@ def check_bibliography_identities():
             "Paper VI of the RIME program, version 2.1. DOI:",
         ),
         "paper7": (
-            "10.5281/zenodo.21634538",
-            "https://doi.org/10.5281/zenodo.21634538",
-            "Paper VII of the RIME program, version 2.0. DOI:",
+            "10.5281/zenodo.21976516",
+            "https://doi.org/10.5281/zenodo.21976516",
+            "Paper VII of the RIME program, version 2.1. DOI:",
         ),
         "paper8": (
-            "10.5281/zenodo.21700863",
-            "https://doi.org/10.5281/zenodo.21700863",
-            "Paper VIII of the RIME program, version 2.0. DOI:",
+            "10.5281/zenodo.21977464",
+            "https://doi.org/10.5281/zenodo.21977464",
+            "Paper VIII of the RIME program, version 2.1. DOI:",
         ),
     }
 
