@@ -26,6 +26,22 @@ Companion Archive. Version 2.1:
 The public release is DOI
 <https://doi.org/10.5281/zenodo.21988041>.
 
+## 2026-08-18: Paper IX Version 2.1
+
+Paper IX was released as the non-intervention and attribution-boundary
+revision of the typed deformation layer. Version 2.1:
+
+- separates `ObjectDeformation`, its ordered-path `ObjectTrajectory`
+  specialization, `SOFObservationRecord`, and `DeformationRecord`;
+- adds an explicit semantic migration ledger for retained dynamic records;
+- does not infer an object-transition model, intervention, mechanism, causal
+  attribution, or repair event from a migrated record;
+- preserves the Observable Wall Pullback Inclusion, exact response
+  constructions, and proxy diagnostics at their declared evidence levels.
+
+The public release is DOI
+<https://doi.org/10.5281/zenodo.21991080>.
+
 ## 2026-08-17: Paper VIII Version 2.1
 
 Paper VIII was released as a versioned extension of the static SOF object

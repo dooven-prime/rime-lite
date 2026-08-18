@@ -22,7 +22,7 @@ immutable first combined record retains its historical predecessor.
 | Paper VI | linearized commutativity geometry, normality gates, and typed spectral registrations | <https://doi.org/10.5281/zenodo.21973224> |
 | Paper VII | incidence geometry, rank protection, and composition-promotion limits | <https://doi.org/10.5281/zenodo.21976516> |
 | Paper VIII | sectorized observable framework | <https://doi.org/10.5281/zenodo.21977464> |
-| Paper IX | observable dynamics of sectorized observable frameworks | <https://doi.org/10.5281/zenodo.21713306> |
+| Paper IX | observable dynamics of sectorized observable frameworks | <https://doi.org/10.5281/zenodo.21991080> |
 | Paper X | capability-aware compilation for Sectorized Observable Frameworks and Registry evidence | <https://doi.org/10.5281/zenodo.21768257> |
 | Paper XI | typed wall morphology for Sectorized Observable Frameworks | <https://doi.org/10.5281/zenodo.21801722> |
 | Paper XII | SOF diagnostic protocol and report specification | <https://doi.org/10.5281/zenodo.21870368> |

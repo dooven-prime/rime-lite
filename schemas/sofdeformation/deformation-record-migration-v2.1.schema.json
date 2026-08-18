@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rime-project.local/schemas/sofdeformation/deformation-record-migration-v2.1.schema.json",
+  "title": "Paper IX Deformation-Record Semantic Migration v2.1",
+  "description": "A non-inferential migration ledger that distinguishes a general ObjectDeformation, its ordered-path ObjectTrajectory specialization, SOFObservationRecord, and DeformationRecord. Legacy records do not acquire an object family, trajectory, transition model, or causal mechanism through migration.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "revision_title",
+    "migration_class",
+    "type_partition",
+    "records",
+    "excluded_static_records",
+    "negative_boundary"
+  ],
+  "properties": {
+    "schema_version": {"const": "paper9-deformation-record-migration-v2.1"},
+    "revision_title": {"const": "Non-Intervention and Attribution Boundary Revision"},
+    "migration_class": {"const": "semantic_type_migration"},
+    "type_partition": {
+      "type": "object",
+      "required": ["object_deformation", "object_trajectory", "trajectory_relation", "observation_record", "deformation_record", "identity_status"],
+      "properties": {
+        "object_deformation": {"const": "ObjectDeformation"},
+        "object_trajectory": {"const": "ObjectTrajectory"},
+        "trajectory_relation": {"const": "ORDERED_PATH_SPECIALIZATION"},
+        "observation_record": {"const": "SOFObservationRecord"},
+        "deformation_record": {"const": "DeformationRecord"},
+        "identity_status": {"const": "DISTINCT_TYPES"}
+      },
+      "additionalProperties": false
+    },
+    "records": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/migrated_record"}
+    },
+    "excluded_static_records": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/excluded_record"}
+    },
+    "negative_boundary": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    }
+  },
+  "$defs": {
+    "digest": {
+      "type": "object",
+      "required": ["algorithm", "value"],
+      "properties": {
+        "algorithm": {"const": "sha256"},
+        "value": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": false
+    },
+    "artifact_reference": {
+      "type": "object",
+      "required": ["uri", "digest"],
+      "properties": {
+        "uri": {"type": "string", "minLength": 1},
+        "digest": {"$ref": "#/$defs/digest"}
+      },
+      "additionalProperties": false
+    },
+    "migrated_record": {
+      "type": "object",
+      "required": [
+        "record_id",
+        "source_artifact",
+        "object_deformation_status",
+        "object_trajectory_status",
+        "trajectory_provenance",
+        "observation_record_status",
+        "deformation_record_status",
+        "object_transition_model",
+        "mechanism_label_status",
+        "causal_mechanism_status",
+        "claim_status",
+        "negative_boundary"
+      ],
+      "properties": {
+        "record_id": {"type": "string", "minLength": 1},
+        "source_artifact": {"$ref": "#/$defs/artifact_reference"},
+        "object_deformation_status": {"const": "NOT_DECLARED"},
+        "object_trajectory_status": {"const": "NOT_DECLARED"},
+        "trajectory_provenance": {"const": "LEGACY_RECORD_ONLY"},
+        "observation_record_status": {"const": "RECORDED"},
+        "deformation_record_status": {"const": "MIGRATED_AS_RECORDED_TRAJECTORY"},
+        "object_transition_model": {"const": "NOT_DECLARED"},
+        "mechanism_label_status": {"enum": ["DECLARED_INDEX_ONLY", "NOT_DECLARED"]},
+        "causal_mechanism_status": {"const": "NOT_ESTABLISHED"},
+        "claim_status": {"enum": ["Theorem", "Computational Certificate", "Computational Observation"]},
+        "negative_boundary": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "excluded_record": {
+      "type": "object",
+      "required": ["source_artifact", "record_kind", "deformation_record_status", "reason"],
+      "properties": {
+        "source_artifact": {"$ref": "#/$defs/artifact_reference"},
+        "record_kind": {"const": "SOFObservationRecord"},
+        "deformation_record_status": {"const": "NOT_APPLICABLE_STATIC"},
+        "reason": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

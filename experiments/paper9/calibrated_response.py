@@ -159,6 +159,7 @@ def main() -> None:
     RESULT_PATH.write_text(
         json.dumps(result, indent=2, sort_keys=True) + "\n",
         encoding="utf-8",
+        newline="\n",
     )
 
     print("=" * 72)
