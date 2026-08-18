@@ -106,7 +106,7 @@ def write_bifurcation_log(
         ]
     )
     os.makedirs(OUT_DIR, exist_ok=True)
-    with open(BIFURCATION_LOG_PATH, "w", encoding="utf-8") as f:
+    with open(BIFURCATION_LOG_PATH, "w", encoding="utf-8", newline="\n") as f:
         f.write("\n".join(lines) + "\n")
 
 

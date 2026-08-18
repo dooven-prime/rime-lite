@@ -192,6 +192,7 @@ def write_experiment_observation(
     temporary.write_text(
         json.dumps(record, indent=2, ensure_ascii=True, allow_nan=False) + "\n",
         encoding="utf-8",
+        newline="\n",
     )
     temporary.replace(path)
     return record
