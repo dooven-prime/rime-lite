@@ -4,7 +4,7 @@ This file is the public ownership and scope ledger for the RIME paper series.
 It identifies the object and reader question owned by each paper without
 repeating manuscript definitions, numerical tables, or release metadata.
 
-The current public release contains Papers I--XIV. CCS v2 is an optional
+The current public release contains Papers I--XIV. CCS v2.1 is an optional
 non-paper archive. Publication identities and DOIs are maintained only in the
 root [Public Release table](../README.md#public-release).
 
@@ -78,9 +78,9 @@ SOFAUDIT, or SOFRS.
 - A validation receipt is evidence of declared artifact closure, not a
   scientific result state.
 
-## CCS v2 Boundary
+## CCS v2.1 Boundary
 
-CCS v2 is optional reproducibility, observation, open-problem, and historical
+CCS v2.1 is optional reproducibility, observation, open-problem, and historical
 archive material. It is not a paper, theorem source, semantic authority,
 executable certificate, or prerequisite for Papers I--XIV. Its canonical
 public source is [ccs/canonical_specification.md](../ccs/canonical_specification.md).

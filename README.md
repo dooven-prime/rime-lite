@@ -8,7 +8,7 @@ finite representation laboratory, not as a puzzle-solving problem.
 
 ## Public Release
 
-The current public release contains Papers I--XIV. CCS v2 is published
+The current public release contains Papers I--XIV. CCS v2.1 is published
 separately as an optional non-paper Computational Companion Archive; the
 immutable first combined record retains its historical predecessor.
 
@@ -28,7 +28,7 @@ immutable first combined record retains its historical predecessor.
 | Paper XII | SOF diagnostic protocol and report specification | <https://doi.org/10.5281/zenodo.21870368> |
 | Paper XIII | Audit Profiles, SOF Report Alignment, and sparse typed comparison maps | <https://doi.org/10.5281/zenodo.21870778> |
 | Paper XIV | context- and policy-relative interpretation and bounded candidate dispositions | <https://doi.org/10.5281/zenodo.21880943> |
-| CCS v2 | optional reproducibility, observation, open-problem, and history archive | <https://doi.org/10.5281/zenodo.21616956> |
+| CCS v2.1 | optional reproducibility, observation, open-problem, and history archive | <https://doi.org/10.5281/zenodo.21988041> |
 | Historical combined Papers I--III + CCS release | immutable first-version archive; current papers are maintained independently | <https://doi.org/10.5281/zenodo.21108197> |
 
 This is the repository's canonical DOI index. It identifies immutable
@@ -71,7 +71,7 @@ contracts remain unchanged.
 | XII | [`paper12_arxiv.pdf`](papers/paper12/paper12_arxiv.pdf) | [`Paper XII.md`](papers/paper12/Paper%20XII.md) | What does a compiled report represent, and where do adapter adequacy and reporting authority end? |
 | XIII | [`paper13_arxiv.pdf`](papers/paper13/paper13_arxiv.pdf) | [`Paper XIII.md`](papers/paper13/Paper%20XIII.md) | How can two SOF Reports be aligned and compared without conflating difference with defect? |
 | XIV | [`paper14_arxiv.pdf`](papers/paper14/paper14_arxiv.pdf) | [`Paper XIV.md`](papers/paper14/Paper%20XIV.md) | How can an immutable audit be interpreted under admitted context and policy without promoting candidates into decisions or effects? |
-| CCS v2 Archive | [`ccs_arxiv.pdf`](ccs/ccs_arxiv.pdf) | [`canonical_specification.md`](ccs/canonical_specification.md) | Optional Paper I--III reproducibility pointers, computational observations, open problems, and historical records |
+| CCS v2.1 Archive | [`ccs_arxiv.pdf`](ccs/ccs_arxiv.pdf) | [`canonical_specification.md`](ccs/canonical_specification.md) | Optional Paper I--III reproducibility pointers, computational observations, open problems, and historical records |
 
 Thematic index, not a paper dependency order:
 
@@ -136,8 +136,14 @@ pip install -e .
 Run fast invariant checks:
 
 ```bash
-python tests/run_all_tests.py
+python tests/run_all_tests.py verify
 ```
+
+The runner executes in a temporary copy and fails with
+`VERIFICATION_SIDE_EFFECT` if the source checkout's tracked state changes.
+Artifact rebuilding and promotion are separate explicit operations; active
+verification does not rewrite historical result directories. See
+[`tests/README.md`](tests/README.md) for baseline and external-anchor handling.
 
 Representative support scripts:
 
@@ -186,5 +192,5 @@ Papers and manuscript sources: Creative Commons Attribution 4.0 International
 
 Please cite the individual paper DOI when referring to a specific result. Use
 the [canonical DOI index](#public-release) above to select the immutable record.
-Cite CCS v2 only for archive-specific material, and cite the historical
+Cite CCS v2.1 only for archive-specific material, and cite the historical
 combined record only when referring to that immutable first-version package.

@@ -2,12 +2,12 @@
 
 ### Versioned Reproducibility Data, Computational Observations, Open Problems, and Historical Records
 
-**Alias**: CCS v2 (Computational Companion and Status Archive)
-**Version**: 2.0
-**Date**: 2026-07-27
+**Alias**: CCS v2.1 (Computational Companion and Status Archive)
+**Version**: 2.1
+**Date**: 2026-08-18
 **Document type**: Versioned non-paper computational companion archive
-**Status**: Published as version 2.0 at DOI `10.5281/zenodo.21616956`;
-concept DOI `10.5281/zenodo.21108196`.
+**Status**: Version 2.1 correction release. Published version 2.0 remains at
+DOI `10.5281/zenodo.21616956`; concept DOI `10.5281/zenodo.21108196`.
 
 **WuJun Chen**<sup>∗</sup>
 
@@ -44,7 +44,7 @@ II, and III have independent Zenodo records.
 The immutable combined-release DOI
 [10.5281/zenodo.21108197](https://doi.org/10.5281/zenodo.21108197) remains
 historical provenance. It does not define the current Paper I--III
-architecture and must not be reused as the CCS v2 DOI.
+architecture and must not be reused as the CCS v2.1 DOI.
 That historical combined package is a provenance record only.
 
 > **Paper II v2 routing.** The Paper II theorem spine is the exact
@@ -66,10 +66,10 @@ The repository uses four separated layers:
 |-------|------|-------|------|------|
 | **1** | Papers | `papers/paper*/` | Claim | Self-contained theorem, certificate, observation, and research-program boundaries. |
 | **2** | Executable artifacts | `experiments/paper*/`, `results/` | Certify | Declared scripts, parameters, hashes, residuals, and structured outputs. |
-| **3** | CCS v2 | `ccs/canonical_specification.md` | Review | Human-readable extended data, observations, open questions, and selected history. |
+| **3** | CCS v2.1 | `ccs/canonical_specification.md` | Review | Human-readable extended data, observations, open questions, and selected history. |
 | **4** | Private raw archive | not distributed | Preserve | Giant matrices, abandoned runs, and exploratory provenance. |
 
-CCS v2 is not a copy of the raw archive and does not replace executable
+CCS v2.1 is not a copy of the raw archive and does not replace executable
 artifacts. It is a curated review layer. The papers state their claims, the
 declared scripts and structured artifacts certify finite computations, and
 `HISTORY.md` records corrections that affect interpretation.
@@ -77,7 +77,7 @@ declared scripts and structured artifacts certify finite computations, and
 ***
 ### Navigation and Citation Boundary
 
-> Papers I--III do not cite CCS v2 as a scholarly or mathematical authority.
+> Papers I--III do not cite CCS v2.1 as a scholarly or mathematical authority.
 > Internal part, table, and figure labels below are navigation aids for this
 > archive only. Paper III numerical claims are defined by its own manuscript
 > and matrix certificate.
@@ -121,7 +121,7 @@ Every retained item must carry one of the following statuses in context:
 
 Callout boxes separate exact statements, registered data, warnings, and
 provisional findings. Their labels describe archive status; they do not make
-CCS v2 an independent claim authority:
+CCS v2.1 an independent claim authority:
 
 | Box | Style | Purpose |
 |-----|-------|---------|
@@ -1411,7 +1411,7 @@ V_{5/9}=S5\oplus S6\oplus S7,\qquad
 V_{1/3}=S8\oplus S9.
 $$
 Paper IV independently declares its exact nine-point arrangement, Rubik
-registration, and conditional interpretation. CCS v2 is not a certificate or
+registration, and conditional interpretation. CCS v2.1 is not a certificate or
 premise for that paper.
 
 **Paper V comparison.** Paper III proves that support-graph reachability need not
@@ -1539,7 +1539,7 @@ subsets as the number of retained face turns decreases.
 | Family | \|S\| | Layers | All Q? | Field | 5/9 dim | 2/3 dim | Notes |
 |--------|------|--------|--------|-------|---------|---------|-------|
 | n=18 | 18 | 6 | True | Q | 106 | 26 | Canonical, full face-turn group |
-| n=16 | 16 | 9 | False | Q(√5) | 26 | 0 | Drop axis-2 (F/B) half-turns |
+| n=16 | 16 | 9 | False | Q(√5) | 26 | 0 | Drop axis-0 (R/L) half-turns |
 | n=12 | 12 | 8 | True | Q | 0 | 66 | Quarter-turns only |
 | n=10 | 10 | 5 | True | Q | 0 | 0 | Quarter-turns minus axis-2 |
 | n=8 | 8 | 7 | False | Q(√5) | 0 | 0 | Axes 0 and 2 only, no half-turns |
@@ -1553,6 +1553,15 @@ necessary or sufficient for a field extension.
 
 The corresponding first-version phase-transition visualization is retained
 only as repository provenance. The table above is the current archive record.
+
+For clarity, the value $9$ in this table is the number of spectral layers,
+not the number of joint sectors. The registered $n=16$ family selected by
+`CubieSpectralOperator(n=16)` removes the labelled moves R2 and L2 and has 13
+joint sectors with dimensions
+$(20,2,26,13,26,44,1,13,22,26,18,8,9)$. Removing F2 and B2 instead defines a
+different labelled generator family. In the declared realization it happens
+to have the same registered layer spectrum and joint-sector dimension profile;
+that numerical agreement does not identify the two generator families.
 
 #### II.4.2 Eigenvalue Bifurcation Data
 
@@ -1574,7 +1583,7 @@ only as repository provenance. The table above is the current archive record.
 | Family | Sectors | K edges | Hub (deg) | Cross-block K | Topology class |
 |--------|---------|---------|-----------|---------------|----------------|
 | n=18 | 9 | 20 directed / 10 unordered | S6 (5) | 0 | Sparse, non-star |
-| n=16 | — | — | — | — | Dense (irrational splitting expands sector count) |
+| n=16 | 13 | — | — | — | Dense (irrational splitting expands sector count) |
 | n=12 | — | — | — | — | Collapsed (degeneracy absorbs 5/9 layer) |
 | n=10 | — | — | — | — | Sparse (fewer layers → fewer possible edges) |
 | n=8 | 7 | 28 | S6 (5) | 0 | Hyper-connected (irrational intruders create more edges) |
@@ -1607,7 +1616,7 @@ does not provide an exact field certificate or classify all generator subsets.
 - Method: For each n = 18, 16, 12, 10, 8, 6, select a generator subset of size n
   from the 18 face-turn moves, build A = (1/n) Σ ρ(s), diagonalize.
 - n=18: full 18 generators
-- n=16: all moves except F2 and B2 (axis-2 half-turns)
+- n=16: all moves except R2 and L2 (axis-0 half-turns)
 - n=12: quarter-turns only (direction=±1, all 6 faces)
 - n=10: quarter-turns without axis-2 faces (remove F, F', B, B')
 - n=8: quarter-turns only, axes 0 and 2 (R,R',L,L',F,F',B,B')
@@ -1624,7 +1633,7 @@ does not provide an exact field certificate or classify all generator subsets.
 The 2026-07-26 mother source contained a compact invariant hierarchy followed
 by complete derivation chapters for the former combined-paper narrative. Those
 chapters remain below in the Markdown source for versioned provenance, but are
-excluded from the CCS v2 PDF. Current theorem statements and proofs belong to
+excluded from the CCS v2.1 PDF. Current theorem statements and proofs belong to
 the independently maintained Papers I--III; the archive must not duplicate or
 override them.
 
@@ -2350,10 +2359,10 @@ audits should not depend on random state.
 ### A.3 Claim-Status Routing
 
 Numerical stability and mathematical claim status are separate. The current
-repository uses four paper claim levels; CCS v2 adds a history tag solely for
+repository uses four paper claim levels; CCS v2.1 adds a history tag solely for
 archive routing.
 
-| Status | Use in CCS v2 |
+| Status | Use in CCS v2.1 |
 |--------|---------------|
 | **Theorem / exact derivation** | Restate only with explicit hypotheses and proof; cite the owning independent paper when used externally. |
 | **Computational Certificate** | Record realization, dtype, tolerance, registration, algorithm, artifact, and reproducible script. |
@@ -2488,7 +2497,7 @@ Projectors, transport strengths, and layer dimensions should agree under valid
 changes of basis up to the declared matching and numerical tolerances.
 First-version $\kappa_d$ diagnostics and the candidate ambient-commutant
 dimension are retained as archived computational records, not theorem-level
-gauge invariants established by CCS v2.
+gauge invariants established by CCS v2.1.
 
 **Appendix B — Provenance**
 
@@ -2513,11 +2522,11 @@ their producing experiments and, where applicable, their consuming papers.
 ```
 experiments and validation scripts -> structured artifacts -> papers
                                   \-> generated figures
-                                  \-> CCS v2 review index
+                                  \-> CCS v2.1 review index
 private raw archive               -> provenance only
 ```
 
-Executable scripts and structured outputs form the certificate layer. CCS v2
+Executable scripts and structured outputs form the certificate layer. CCS v2.1
 indexes selected values and observations for human review. The private raw
 archive retains failed experiments and older revisions as provenance only.
 
@@ -2651,7 +2660,7 @@ Total wall time for full canonical recomputation: ~5–10 minutes on commodity h
 ***
 ## Appendix E — Archive Status Register
 
-**Purpose.** Route retained CCS v2 material to its current status without
+**Purpose.** Route retained CCS v2.1 material to its current status without
 restating the independent papers' theorem spines.
 
 **Scope.** Selected Paper I--II data records, archived extensions, open
@@ -2662,7 +2671,7 @@ Boundary'' sections, declared executable artifacts, and `HISTORY.md`.
 
 **Outputs.** A compact routing table. It is not a theorem register.
 
-*The independent papers control theorem and certificate wording. CCS v2
+*The independent papers control theorem and certificate wording. CCS v2.1
 retains extended human-readable records only.*
 
 | Archive material | Current status | Controlling source |
@@ -2670,8 +2679,8 @@ retains extended human-readable records only.*
 | Six-layer $A_{18}$ census and block records | Mixed exact derivation, computational certificate, and observation | Paper I claim-status section and Paper I scripts |
 | Trace-rationality and partition-integrality statements | Theorem under the hypotheses stated in Paper I; no canonical-face application is asserted here | Paper I |
 | Nine QH sectors, ten direct edges, and EP algebra census | Computational certificate | Paper II and Paper II scripts |
-| Generator-family arithmetic and transport extensions | Computational observation | CCS v2 tables and archived scripts |
-| Candidate ambient-commutant dimension 610 | Research program / unpromoted numerical candidate | CCS v2 provenance |
+| Generator-family arithmetic and transport extensions | Computational observation | CCS v2.1 tables and archived scripts |
+| Candidate ambient-commutant dimension 610 | Research program / unpromoted numerical candidate | CCS v2.1 provenance |
 | Graph/operator composition obstruction | Outside CCS authority; independently certified | Paper III and its matrix audit |
 | C0, T7 morphisms, strict word/Lie containment, and old $\kappa$ completion narrative | Historical / withdrawn | `HISTORY.md` |
 | Moving spectral/accessibility hierarchies | Research program unless separately certified in the owning paper | Papers IV--VII claim boundaries |
@@ -3286,6 +3295,6 @@ What the current CCS does NOT claim:
 **Code availability.** Code and computational certificates are available in
 the [RIME repository](https://github.com/dooven-prime/rime-lite).
 
-*End of the CCS v2 computational companion archive. Independent papers and
+*End of the CCS v2.1 computational companion archive. Independent papers and
 declared executable artifacts control current claims and certificates;
 withdrawn source sections are retained for provenance only.*

@@ -47,10 +47,10 @@ and Lie depth remain typed separately.
 | [figures/README.md](../figures/README.md) | presentation renderers and manuscript image assets |
 | [schemas/README.md](../schemas/README.md) | published compiler, SOFRS, SOFAUDIT, SOFAction, and Registry contracts |
 | [registry/](../registry/) | frozen versioned Registry snapshots |
-| [CCS v2](../ccs/canonical_specification.md) | optional computational companion archive |
+| [CCS v2.1](../ccs/canonical_specification.md) | optional computational companion archive |
 
 Presentation renderers are not scientific certificates. Cached observations
-are not proofs. CCS v2 is optional archive material rather than a premise,
+are not proofs. CCS v2.1 is optional archive material rather than a premise,
 definition source, or claim authority for the independent papers.
 
 ## Source Authority
@@ -65,7 +65,7 @@ Authority depends on the kind of statement:
 - Published Zenodo records determine release identity. The root release table
   indexes those immutable identities without promoting repository candidates
   to published versions.
-- These public companions summarize the owning sources. CCS v2 supplies
+- These public companions summarize the owning sources. CCS v2.1 supplies
   optional reproducibility records and historical context only.
 
 A manuscript/evidence disagreement blocks release; prose precedence does not
