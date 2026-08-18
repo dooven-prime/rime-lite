@@ -6,10 +6,10 @@
 
 Independent Researcher | RIME Program | 2026
 
-*This paper (Paper IX of the RIME program) develops the typed deformation layer
-over Paper VIII's static SOF object language while keeping trajectories, wall
-pullbacks, and response diagnostics relative to declared charts, paths,
-carriers, and policies.*
+*This paper is Paper IX of the RIME program. It develops the typed deformation
+layer over Paper VIII's static SOF object language while keeping object
+deformations, observable records, wall pullbacks, and response diagnostics
+explicitly typed.*
 
 ***
 
@@ -21,8 +21,21 @@ This paper asks how these typed static objects can be compared across a declared
 deformation family without conflating carrier changes, parameterization, or
 finite-cutoff observations.
 
-**Approach.** We develop the corresponding dynamic layer. On an admissible
-chart, a deformation has the form
+**Approach.** We develop the corresponding observed dynamic layer. A
+separately supplied object deformation is a map
+
+$$
+\xi:T\longrightarrow\mathfrak S,
+\qquad t\longmapsto S_t,
+$$
+
+and declared observation maps produce
+
+$$
+\mathcal F_t=\operatorname{Observe}_{\eta,t}(S_t).
+$$
+
+On an admissible chart, the observed family has the form
 
 $$
 \mathcal F_t=(V_t,Q(t),Y(t);X(t),\mathcal H),
@@ -64,20 +77,24 @@ $\tau_{50}^{\mathrm{end}}(K_0)<\tau_{50}^{\mathrm{end}}(K_1)
 <\tau_{50}^{\mathrm{end}}(K_2)$, while explicitly leaving the
 proxy-to-discrete-shadow bridge open.
 
-**Boundary.** The scope is deliberately
-narrow: the typed static language is shared, but observable dynamics and wall
-geometry remain species- and deformation-dependent.
+**Boundary.** The scope is deliberately narrow: the typed static language is
+shared, but observable dynamics and wall geometry remain species- and
+deformation-dependent. A deformation record does not generate its underlying
+object trajectory, and a mechanism label is not causal identification.
 
 ***
-
-\newpage
 
 ## Notation Table
 
 | Symbol | Meaning |
 |--------|---------|
+| $\mathfrak S$ | declared source-object state space or class |
+| $\xi:T\to\mathfrak S$, $t\mapsto S_t$ | `ObjectDeformation`, the separately supplied underlying object family |
+| $\xi_\gamma=\xi\circ\gamma:I_\gamma\to\mathfrak S$ | `ObjectTrajectory`, the pullback of an object deformation along a declared ordered path $\gamma:I_\gamma\to T$ |
+| $\operatorname{Observe}_{\eta,t}$ | declared observation map at parameter $t$ |
 | $\mathcal F$ | a declared SOF object from Paper VIII |
-| $\mathcal F_t$ | SOF at deformation parameter $t$ |
+| $\mathcal F_t$ | `SOFObservationRecord`, the observed typed SOF object at deformation parameter $t$ |
+| $\mathcal D_\eta(\xi)$ | `DeformationRecord` $(\mathcal F_t)_{t\in T}$ with its declared charts and policies |
 | $T$ | deformation parameter space |
 | $\mathcal V\to U$ | finite-rank Hermitian bundle on one typed deformation chart |
 | $V_t$ | fibre of $\mathcal V$ at $t$ |
@@ -154,13 +171,15 @@ first length it is generated.
 The central distinction is:
 
 > Sectorization is source-dependent, while comparison data are chart-dependent.
-> The typed object and deformation-record interfaces are shared; observable
-> dynamics remain deformation-dependent.
+> The typed object and deformation-record interfaces are shared; recorded
+> observable response remains deformation- and observation-dependent.
 
-The distinction is operational. A deformation family over $T$ is not yet a
-time trajectory. A trajectory additionally chooses a map
-$\gamma:I_\gamma\to T$ from an ordered real interval and a typed chart along
-its image. A wall is not a primitive object of the static SOF. It is a failure
+The distinction is operational. An `ObjectDeformation` over $T$ is supplied
+independently of its SOF observation. A general parameterized object
+deformation is not yet a trajectory: a response trajectory additionally
+chooses a map $\gamma:I_\gamma\to T$ from an ordered real interval and uses
+the pullback $\xi_\gamma=\xi\circ\gamma$ together with a typed chart along its
+image. A wall is not a primitive object of the static SOF. It is a failure
 of local constancy of a selected shadow on a chart or along such a trajectory.
 
 ### Dynamic Data Are Typed
@@ -288,7 +307,10 @@ their result gives a fast channel driven by the empirical loss and a slow
 channel driven by regularization. This provides a mechanism-separated
 precedent for asking whether a comparable separation can be measured in
 observable space, without identifying $\theta_{\parallel}$ or
-$\theta_{\perp}$ with any SOF carrier.
+$\theta_{\perp}$ with any SOF carrier. In this paper,
+`mechanism-labelled` means that records are indexed by a declared source-side
+mechanism label or partition; it does not mean that the mechanism has been
+causally identified from the observations.
 
 ### Long Plateaus
 
@@ -324,17 +346,66 @@ supply a universal wall-crossing law.
 
 ### Deformation Families
 
-Let
+Let $\mathfrak S$ be a declared source-object state space or class. An
+**ObjectDeformation** is a separately supplied map
+
+$$
+\xi:T\longrightarrow\mathfrak S,
+\qquad t\longmapsto S_t.
+$$
+
+The map may be generated by external dynamics, a parameter update, an
+environmental process, or an intervention. Paper IX takes this map as input; it
+does not infer or generate it. If $I_\gamma\subseteq\mathbb R$ is an ordered
+interval and $\gamma:I_\gamma\to T$ is declared, then
+
+$$
+\xi_\gamma=\xi\circ\gamma:I_\gamma\longrightarrow\mathfrak S
+$$
+
+is an **ObjectTrajectory**. Thus `ObjectTrajectory` is an ordered-path
+specialization of `ObjectDeformation`, not a synonym for every map
+$T\to\mathfrak S$. A declared observation interface
+$\operatorname{Observe}_{\eta,t}$ produces a **SOFObservationRecord**
+
+$$
+\mathcal F_t
+=
+\operatorname{Observe}_{\eta,t}(S_t),
+$$
+
+where
 
 $$
 \mathcal F=(V,Q,Y;X,\mathcal H)
 $$
 
-denote a typed SOF record. The entries after the semicolon are optional
+denotes a typed SOF object. The entries after the semicolon are optional
 enrichments; the operator alphabet $Y$ and the Lie family $X$ are not silently
-identified.
+identified. The observation interface may retain only selected source data and
+need not be injective.
 
-A deformation over a parameter space $T$ is a family of typed SOF records.
+The **DeformationRecord** of $\xi$ under $\eta$ is
+
+$$
+\mathcal D_\eta(\xi)
+=
+(\mathcal F_t)_{t\in T},
+$$
+
+together with the declared charts, comparison maps, and policies used below.
+These are distinct types:
+
+$$
+\begin{aligned}
+\mathsf{ObjectTrajectory}
+&\subseteq \mathsf{ObjectDeformation},\\
+\mathsf{ObjectTrajectory}
+&\neq \mathsf{SOFObservationRecord}
+\neq \mathsf{DeformationRecord}.
+\end{aligned}
+$$
+
 The notation
 
 $$
@@ -343,8 +414,17 @@ $$
 $$
 
 is meaningful pointwise, but it does not itself compare different fibres.
-Continuity, walls, and response times are defined only after the required local
+Continuity, walls, and response times are properties of selected observed
+fields along this supplied record and are defined only after the required local
 comparison data have been supplied.
+
+For a legacy record that does not source-address an underlying trajectory or
+transition model, migration may retain the sampled `DeformationRecord` but
+must record `trajectory_provenance = LEGACY_RECORD_ONLY`,
+`object_transition_model = NOT_DECLARED`, and
+`causal_mechanism_status = NOT_ESTABLISHED`. It cannot manufacture an
+`ObjectDeformation`, an `ObjectTrajectory`, or a transition mechanism, and
+it cannot reinterpret a mechanism label as causal identification.
 
 ### Typed Deformation Charts
 
@@ -416,9 +496,31 @@ but it must state which observables it preserves or tracks. The notation keeps
 the static strict category of Paper VIII separate from this declared dynamic
 comparison interface.
 
+> **Principle (Deformation-Record Non-Intervention).** A typed deformation
+> record is obtained from a separately supplied object deformation through
+> declared observation maps. Formation, differentiation, comparison, or
+> serialization of the record does not generate the underlying trajectory or
+> any object-state transition.
+
+This is a type-level statement. Schematically,
+
+$$
+S_t
+\xrightarrow{\operatorname{Observe}_{\eta,t}}
+\mathcal F_t,
+\qquad
+(\mathcal F_t)_{t\in T}
+\xrightarrow{\operatorname{Record}}
+\mathcal D_\eta(\xi),
+$$
+
+and neither arrow is an object dynamics or intervention map. The interface
+does not claim that every software implementation is side-effect free; such a
+property requires separate execution controls.
+
 ### Admissibility
 
-For a selected carrier $\kappa$, a deformation is $\kappa$-admissible on
+For a selected carrier $\kappa$, a deformation record is $\kappa$-admissible on
 $U\subseteq T$ when:
 
 1. a $\kappa$-typed deformation chart is declared on $U$;
@@ -465,7 +567,7 @@ The table is an audit order, not an implication diagram.
 
 ## Observable Trajectories
 
-Let a deformation family be declared over $T$, let $U\subseteq T$ carry a
+Let a deformation record be declared over $T$, let $U\subseteq T$ carry a
 $\kappa$-typed deformation chart, and choose a continuous one-parameter path
 
 $$
@@ -971,9 +1073,10 @@ $$
 
 the finite audit returns half-response times $30<1380$. This has status
 **Computational Certificate** for the declared block realization. The
-mechanism labels provide an interpretation; the ordered calibration supplies
-the inequality. Neither the proposition nor the finite certificate is an
-intrinsic rate invariant, a Boolean support wall, or a Lie-depth statement.
+mechanism labels provide a declared partition and interpretation; the ordered
+calibration supplies the inequality. Neither the proposition nor the finite
+certificate is an intrinsic rate invariant, a Boolean support wall, a
+Lie-depth statement, or a causal-identification result.
 
 The candidate hierarchy
 
@@ -1011,8 +1114,10 @@ $$
 
 where the two directions are separated by the training mechanism. The
 observable-space analogue asks whether a declared mechanism-separated
-deformation produces ordered response times in a typed carrier. The objects
-are different, and no map from parameter directions to SOF fields is assumed.
+deformation record exhibits ordered response times in a typed carrier. Here
+the mechanism partition is supplied before observation; ordered recorded
+responses do not identify that mechanism causally. The objects are different,
+and no map from parameter directions to SOF fields is assumed.
 
 ![Parameter-to-observable comparison. The left side records the theorem-level
 parameter precedent; the right side records the open SOF question rather than
@@ -1066,14 +1171,18 @@ The following are not claimed:
    <\tau(D_{\mathrm{Lie}}^{(\leq d_{\max})})$ hierarchy has been observed;
 10. that response times are invariant under observable rescaling or trajectory
     reparameterization;
-11. that the Observable Proxy Shadow Principle has been proved.
+11. that the Observable Proxy Shadow Principle has been proved;
+12. that a deformation record generates the underlying object deformation; or
+13. that mechanism-labelled observations establish causal identification.
 
 ***
 
 ## Conclusion
 
-The static SOF language extends to declared deformation records without
-merging operator/word, Lie/Hall, state, or saturated-algebra carriers.
+Given a separately supplied object deformation, the static SOF language
+extends to declared deformation records without merging operator/word,
+Lie/Hall, state, or saturated-algebra carriers. The record describes a typed
+observable response; it is not the generator of the underlying trajectory.
 The wall-pullback theorem gives a general inclusion and identifies
 pullback-exactness as the additional condition required for equality; a
 transverse trajectory crossing supplies a geometric sufficient condition.
@@ -1140,15 +1249,22 @@ All short paths below are relative to that directory.
 | A5 | versioned result and claim-boundary validator | \path{validation/validate_results.py} |
 | A6 | exact-construction and calibrated-response records | \path{results/rate_hierarchy.json}, \path{results/calibrated_response.json} |
 | A7 | neural proxy and activation records | \path{results/nn_training_sof_tau.json}, \path{results/nn_activation_sof.json} |
+| A8 | v2.1 object/record migration schema | \path{../../schemas/sofdeformation/deformation-record-migration-v2.1.schema.json} |
+| A9 | conservative v2.1 semantic-type migrator | \path{validation/migrate_deformation_records_v2_1.py} |
+| A10 | source-addressed v2.1 migration ledger | \path{results/deformation-record-migration-v2.1.json} |
 
-From the repository root, run an executable artifact as
-`python experiments/paper9/<short path>`. A1 checks the exact formulas of
-Proposition 2. A2 supplies the finite Computational Certificate associated with
-Proposition 3. A3 and A4 support only their declared Computational
-Observations. A5 checks the versioned records and their stated numerical and
-status invariants.
+The A1--A4 scripts are rebuild commands: they write candidate result files
+under `experiments/paper9/results/` and must be run only in a scratch copy or
+staging area. They are not repository-non-intervening release verification.
+A1 checks the exact formulas of Proposition 2. A2 supplies the finite
+Computational Certificate associated with Proposition 3. A3 and A4 support
+only their declared Computational Observations. For read-only release
+verification, run A5 and A9 from the repository root; A5 checks the versioned
+records and their stated numerical and status invariants, while A9 checks the
+source-addressed migration ledger. A8 is the migration schema and A10 is the
+promoted ledger. Together A8--A10 verify that the retained dynamic records are
+typed as deformation records without inferring an object transition model or
+causal mechanism.
 
-Archived Rubik generator-weight, plateau, and hard-coded state-mixing scripts
-are retained under `experiments/paper9/archive/` as historical provenance and
-do not support the claims above. All listed artifacts are available in the
+All listed artifacts are available in the
 [RIME repository](https://github.com/dooven-prime/rime-lite).

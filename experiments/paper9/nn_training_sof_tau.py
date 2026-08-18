@@ -402,6 +402,7 @@ def main() -> None:
     RESULT_PATH.write_text(
         json.dumps(record, indent=2, sort_keys=True) + "\n",
         encoding="utf-8",
+        newline="\n",
     )
 
     log("\nTau-ratio check:")

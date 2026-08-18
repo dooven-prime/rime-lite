@@ -1,0 +1,95 @@
+{
+  "schema_version": "paper9-deformation-record-migration-v2.1",
+  "revision_title": "Non-Intervention and Attribution Boundary Revision",
+  "migration_class": "semantic_type_migration",
+  "type_partition": {
+    "object_deformation": "ObjectDeformation",
+    "object_trajectory": "ObjectTrajectory",
+    "trajectory_relation": "ORDERED_PATH_SPECIALIZATION",
+    "observation_record": "SOFObservationRecord",
+    "deformation_record": "DeformationRecord",
+    "identity_status": "DISTINCT_TYPES"
+  },
+  "records": [
+    {
+      "record_id": "rate-hierarchy",
+      "source_artifact": {
+        "uri": "experiments/paper9/results/rate_hierarchy.json",
+        "digest": {
+          "algorithm": "sha256",
+          "value": "c4417cd9cd0124a2fcad9e60a3d1399dd0d3b2858ac65b8d95705773c37296f0"
+        }
+      },
+      "object_deformation_status": "NOT_DECLARED",
+      "object_trajectory_status": "NOT_DECLARED",
+      "trajectory_provenance": "LEGACY_RECORD_ONLY",
+      "observation_record_status": "RECORDED",
+      "deformation_record_status": "MIGRATED_AS_RECORDED_TRAJECTORY",
+      "object_transition_model": "NOT_DECLARED",
+      "mechanism_label_status": "NOT_DECLARED",
+      "causal_mechanism_status": "NOT_ESTABLISHED",
+      "claim_status": "Theorem",
+      "negative_boundary": "Migration retypes the retained sampled trajectory as a DeformationRecord; it does not infer an ObjectDeformation, ObjectTrajectory, intervention, or causal mechanism."
+    },
+    {
+      "record_id": "nn-training-response",
+      "source_artifact": {
+        "uri": "experiments/paper9/results/nn_training_sof_tau.json",
+        "digest": {
+          "algorithm": "sha256",
+          "value": "130d11ab43263e7390c4df4b1a1779d7d255bab6d9dee88b6999df36522047dc"
+        }
+      },
+      "object_deformation_status": "NOT_DECLARED",
+      "object_trajectory_status": "NOT_DECLARED",
+      "trajectory_provenance": "LEGACY_RECORD_ONLY",
+      "observation_record_status": "RECORDED",
+      "deformation_record_status": "MIGRATED_AS_RECORDED_TRAJECTORY",
+      "object_transition_model": "NOT_DECLARED",
+      "mechanism_label_status": "NOT_DECLARED",
+      "causal_mechanism_status": "NOT_ESTABLISHED",
+      "claim_status": "Computational Observation",
+      "negative_boundary": "Migration retypes the retained sampled trajectory as a DeformationRecord; it does not infer an ObjectDeformation, ObjectTrajectory, intervention, or causal mechanism."
+    },
+    {
+      "record_id": "calibrated-response",
+      "source_artifact": {
+        "uri": "experiments/paper9/results/calibrated_response.json",
+        "digest": {
+          "algorithm": "sha256",
+          "value": "17d017174ead25c53ca6a34480e9d8b63fb12e193fdd4fa906c005b68e14cd8f"
+        }
+      },
+      "object_deformation_status": "NOT_DECLARED",
+      "object_trajectory_status": "NOT_DECLARED",
+      "trajectory_provenance": "LEGACY_RECORD_ONLY",
+      "observation_record_status": "RECORDED",
+      "deformation_record_status": "MIGRATED_AS_RECORDED_TRAJECTORY",
+      "object_transition_model": "NOT_DECLARED",
+      "mechanism_label_status": "NOT_DECLARED",
+      "causal_mechanism_status": "NOT_ESTABLISHED",
+      "claim_status": "Computational Certificate",
+      "negative_boundary": "Migration retypes the retained sampled trajectory as a DeformationRecord; it does not infer an ObjectDeformation, ObjectTrajectory, intervention, or causal mechanism."
+    }
+  ],
+  "excluded_static_records": [
+    {
+      "source_artifact": {
+        "uri": "experiments/paper9/results/nn_activation_sof.json",
+        "digest": {
+          "algorithm": "sha256",
+          "value": "20c180e029f2a7d0c8b5799b510e8cf71dbd4dc7cd573a6f5bae0d002e108e60"
+        }
+      },
+      "record_kind": "SOFObservationRecord",
+      "deformation_record_status": "NOT_APPLICABLE_STATIC",
+      "reason": "The retained artifact is a static observation census, not a recorded trajectory."
+    }
+  ],
+  "negative_boundary": [
+    "ObjectTrajectory is an ordered-path specialization of ObjectDeformation.",
+    "Neither ObjectDeformation nor ObjectTrajectory is a DeformationRecord.",
+    "A mechanism label is not causal identification.",
+    "Migration does not manufacture an object-transition model absent from the source artifact."
+  ]
+}
