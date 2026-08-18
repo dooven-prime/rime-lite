@@ -10,3 +10,4 @@ experiments/**/*.py text eol=lf
 experiments/**/*.txt text eol=lf
 figures/**/*.py text eol=lf
 tests/**/*.py text eol=lf
+tests/**/*.json text eol=lf

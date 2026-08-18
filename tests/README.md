@@ -38,6 +38,7 @@ input family, arithmetic mode, and claim status.
 | `test_commutant.py` | QH-family commutativity, Supp_nc localization | Paper II, Sec 5 |
 | `test_transport.py` | Direct graph, sector non-invariance, and graph/operator composition obstruction | Paper II / revised Paper III |
 | `test_experiment_observation.py` | Cached-observation manifest integrity and stale-source detection | Reproducibility infrastructure |
+| `test_verification_state.py` | Tracked-tree mutation detection and Zenodo record-ID parsing | Release verification infrastructure |
 | `test_contract_api.py` | Shared digest, repository-bound artifact, status-axis, and CompilerOutput schema mechanics | Cross-paper contract infrastructure |
 | `test_accessibility_engine.py` | Typed direct/routed/word/Lie separation, incidence, rank protection, cutoff semantics | General API / Papers III, V, VII |
 | `test_registry_v2.py` | Registry v2.0 schema, evidence, depth, repair, and promotion guards | Paper X Registry contract |
@@ -59,8 +60,52 @@ input family, arithmetic mode, and claim status.
   `$env:PYTHONPATH=(Resolve-Path '.').Path`, then run
   `python tests/test_spectrum.py`.
 - **Run individually (POSIX)**: `PYTHONPATH=. python tests/test_spectrum.py`
-- **Run active tests**: `python tests/run_all_tests.py` (~1-2 min)
+- **Run active tests**: `python tests/run_all_tests.py verify` (~1-2 min)
 - **Run slow tests**: `python tests/run_slow_tests.py` (~5-10 min, requires CubieSpectralOperator)
+
+## Repository-Non-Intervening Verification
+
+The active runner copies the current tracked and non-ignored working files to
+a temporary directory and runs every test there. Before and after the run it
+records the source checkout's `HEAD`, tracked status, tracked diff digest, and
+tracked-content digest. Any source-tree delta produces
+`VERIFICATION_SIDE_EFFECT` and fails the harness, even if all mathematical or
+protocol assertions passed.
+
+The generative Paper XII and XIII regressions also self-isolate when launched
+as individual scripts. Importing either regression outside verification
+scratch is rejected before its migration or receipt-writing steps begin.
+
+The versioned `verification-baseline.json` distinguishes new failures,
+existing baseline failures, and resolved baseline failures. Baseline failures
+remain unresolved evidence; verification never repairs, regenerates, or
+re-signs their historical artifacts. Exit codes are `0` for `PASS`, `1` for
+`FAIL`, and `2` for `UNRESOLVED`.
+
+Release verification has three explicit stages:
+
+1. `VERIFY` captures and checks the tracked release state.
+2. `BUILD/REPLAY IN ISOLATION` writes generated output only inside scratch or
+   an explicit candidate staging location.
+3. `ANCHOR CHECK` downloads an actual deposited file and compares its bytes
+   with one local release artifact.
+
+Promotion is outside those verification stages. Only a paper-owned, explicit
+`PROMOTE` operation may update tracked release paths; validator identity alone
+does not confer mutation authority.
+
+For a Zenodo file-byte check, run:
+
+```bash
+python tests/verify_zenodo_anchor.py \
+  --doi 10.5281/zenodo.RECORD_ID \
+  --local path/to/release-artifact.pdf \
+  --remote-name deposited-file.pdf
+```
+
+An anchor check establishes equality of those two files only. It does not
+validate the producer, validator, complete evidence closure, or scientific
+claims.
 
 Slow tests (each constructs a full CubieSpectralOperator):
   `test_cubieoperator.py` -- canonical engine: spectral-calculus checks, polynomial span, k-set registration

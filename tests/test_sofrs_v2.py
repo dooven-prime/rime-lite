@@ -5,12 +5,20 @@ from __future__ import annotations
 from copy import deepcopy
 from importlib.util import module_from_spec, spec_from_file_location
 import json
+import os
 import subprocess
 import sys
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
+if os.environ.get("RIME_VERIFICATION_SCRATCH") != "1":
+    if __name__ == "__main__":
+        from verification_state import run_script_in_isolation
+
+        raise SystemExit(run_script_in_isolation(ROOT, Path(__file__)))
+    raise RuntimeError("generative SOFRS regression requires verification scratch")
+
 MIGRATOR = (
     ROOT / "experiments" / "paper12" / "validation" / "migrate_sofrs_v1_to_v2.py"
 )

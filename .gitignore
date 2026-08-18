@@ -51,6 +51,7 @@ tests/internal/
 /_headers.txt
 /_tmp_pdf_review/
 /tmp_*.txt
+/output/
 
 # Temp / misc
 *.tmp

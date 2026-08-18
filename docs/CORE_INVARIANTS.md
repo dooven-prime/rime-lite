@@ -6,7 +6,7 @@ proof source or a substitute for the owning manuscripts.
 
 The records below have different claim levels. Exact statements must be cited
 from the paper that proves them; numerical records must retain their declared
-realization and tolerance. CCS v2 is optional companion material and is not a
+realization and tolerance. CCS v2.1 is optional companion material and is not a
 premise, definition source, or claim authority for the independent papers.
 
 For the complete program architecture, use [overview.md](overview.md) and

@@ -1,6 +1,7 @@
 from copy import deepcopy
 from importlib.util import module_from_spec, spec_from_file_location
 import json
+import os
 from pathlib import Path
 import subprocess
 import sys
@@ -82,6 +83,9 @@ def _payloads():
 
 
 def test_sofaudit_v2_schema_and_census():
+    assert os.environ.get("RIME_VERIFICATION_SCRATCH") == "1", (
+        "generative SOFAUDIT regression requires verification scratch"
+    )
     for command in (
         [str(SOURCE_MIGRATOR)],
         [str(AUDIT_MIGRATOR)],
@@ -820,6 +824,10 @@ def test_retained_wall_input_cannot_reuse_a_generic_audit_artifact():
 
 
 if __name__ == "__main__":
+    if os.environ.get("RIME_VERIFICATION_SCRATCH") != "1":
+        from verification_state import run_script_in_isolation
+
+        raise SystemExit(run_script_in_isolation(ROOT, Path(__file__)))
     test_sofaudit_v2_schema_and_census()
     for name in sorted(
         key

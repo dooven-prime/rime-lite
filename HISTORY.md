@@ -9,6 +9,23 @@ The canonical publication list is the root
 their declared artifacts remain the authority for mathematical and
 computational claims.
 
+## 2026-08-18: CCS Version 2.1
+
+CCS v2.1 was released as a correction to the optional RIME Computational
+Companion Archive. Version 2.1:
+
+- corrects the registered 16-generator family to removal of the labelled
+  half-turns R2 and L2 rather than F2 and B2;
+- distinguishes its nine spectral layers from its thirteen QT/HT
+  joint-spectral sectors and records the sector-dimension profile;
+- keeps the differently labelled F2/B2-removed family distinct despite the
+  matching finite layer spectrum and sector-dimension profile;
+- leaves theorem ownership, evidence classes, transport counts, and the
+  independence of Papers I--III unchanged.
+
+The public release is DOI
+<https://doi.org/10.5281/zenodo.21988041>.
+
 ## 2026-08-17: Paper VIII Version 2.1
 
 Paper VIII was released as a versioned extension of the static SOF object
