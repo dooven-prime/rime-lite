@@ -21,8 +21,8 @@
   },
   "run": {
     "status": "passed",
-    "started_at_utc": "2026-08-17T02:44:26Z",
-    "elapsed_seconds": 0.552325,
+    "started_at_utc": "2026-08-18T02:23:54Z",
+    "elapsed_seconds": 0.517968,
     "parameters": {
       "residual_threshold": 1e-10,
       "clustering_tolerances": [
@@ -46,8 +46,8 @@
   },
   "provenance": {
     "git": {
-      "commit": "2090fefcb2a693cd24fc0ac153757f910300340f",
-      "tracked_worktree": "dirty"
+      "commit": "f43e671216b1159c157553d6ef9b772379036052",
+      "tracked_worktree": "clean"
     },
     "runtime": {
       "python": "3.13.0",
@@ -60,11 +60,11 @@
       }
     },
     "source_scope": "explicitly_declared_files",
-    "source_set_sha256": "2ea9c43684e8d0980a31ace5dc1ffd372f5db6c209be5c7a4441dec5713f74f7",
+    "source_set_sha256": "1cdb897d6b0dc318ea0cdd8590e945b84fffc1b0a02810cba54d3a47ad44bbf3",
     "sources": [
       {
         "path": "experiments/observation.py",
-        "sha256": "da4d556972862faece732316f1d3950600f06858865e61af6a8cc282ba24b4b5"
+        "sha256": "e5222f4ae947c07d347eef1b6f53a3d1cd4b790fdbe57bd06585fa15354c6cd9"
       },
       {
         "path": "experiments/paper4/validation/rubik_joint_spectrum_registration.py",
@@ -72,31 +72,31 @@
       },
       {
         "path": "pyproject.toml",
-        "sha256": "b8d69ad11d0014f874bd6300350f12889e33f162e9331dc017c0fa4c97216905"
+        "sha256": "bdabf6ad81109078da5388c230ccc2d6b6bbd9deb02e68d5620f813eb440fc16"
       },
       {
         "path": "rime/base.py",
-        "sha256": "fead279b5631625050b0ee1f24a2bc47c19acac864b9c717a7917398bc4d0d30"
+        "sha256": "c10377864a1335635b646b686866e0c97661f49b1bfd1d092616b73a0b5446ce"
       },
       {
         "path": "rime/cube.py",
-        "sha256": "6cfc68516f7aee5049b8124b8848d17f5a488bb67399d414d3442f0415ef2365"
+        "sha256": "5adbf4596f2f82f83f4d373bd1a57279b4128911c75d45fbf9d2e905260a4304"
       },
       {
         "path": "rime/cubie.py",
-        "sha256": "8bc21b4035c579bc4ed6a3867b2bd53989c1e38f2f4b76c6ebc00bcb4d43c029"
+        "sha256": "5120fd2688153bb7f8ad6f0bd77844fbdf9352ee430ec3e4166e3d991db60730"
       },
       {
         "path": "rime/cubieoperator.py",
-        "sha256": "9b4b87038048b869e196ae586f28a38093f442e69d1826ef41be5a6f38127dfc"
+        "sha256": "559a6dbde4a3f239e260c603fa6c544007400d76d1efcf88f2c5d19d1f77c3df"
       },
       {
         "path": "rime/helpers.py",
-        "sha256": "0aa95428c5763ab41dce9cb25072c956b837bbdc07fa7347d07412995bf47887"
+        "sha256": "20247dad40d503913cb20a4b8cbde923c12187460c584e55d770308cc3d7bd12"
       },
       {
         "path": "rime/spectral_utils.py",
-        "sha256": "bc8347596d66bb96d9b32a74f27b08e3f92120ce32d6c7fe6b154102bd6c3474"
+        "sha256": "5e456b904d75e93a373ad5d1ec3b846303a498d8e45d6ae0b2548f3040917799"
       }
     ]
   },

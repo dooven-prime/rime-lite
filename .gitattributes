@@ -1,4 +1,7 @@
 # Keep source-addressed contracts, evidence, and implementations byte-stable.
+.gitattributes text eol=lf
+pyproject.toml text eol=lf
+rime/**/*.py text eol=lf
 schemas/**/*.json text eol=lf
 schemas/**/*.py text eol=lf
 experiments/**/*.json text eol=lf

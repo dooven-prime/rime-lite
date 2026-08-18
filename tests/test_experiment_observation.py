@@ -37,6 +37,9 @@ def test_current_then_stale() -> None:
             started_at_utc="2026-01-01T00:00:00Z",
             elapsed_seconds=0.1,
         )
+        artifact_bytes = artifact.read_bytes()
+        assert b"\r\n" not in artifact_bytes
+        assert artifact_bytes.endswith(b"\n")
         current = check_experiment_observation(artifact, root=root)
         assert current.reusable, current
 

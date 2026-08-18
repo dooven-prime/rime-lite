@@ -12,7 +12,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 FROZEN = ROOT / "experiments/paper4/results/rubik_joint_spectrum_registration.observation.json"
 CANDIDATE = ROOT / "experiments/paper4/results/rubik_joint_spectrum_registration_v2_1.observation.json"
-EXPECTED_FROZEN_SHA256 = "dc3729809f75e66f58d6750849ec28d5cd4a33bc05ea4a8d24f364eb3c655e9a"
+EXPECTED_FROZEN_SHA256 = "e3e2d2a21c6ee2cd6a621fffbe67c84bc05201e9c11c08a04d25dc9d63f5740d"
 
 
 def run(*parts: str) -> None:

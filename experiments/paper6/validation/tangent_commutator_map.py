@@ -96,7 +96,7 @@ LOG_PATH = os.path.join(OUT_DIR, "_paper6_tangent_commutator_map.txt")
 
 def write_snapshot_log(lines: list[str]) -> None:
     os.makedirs(OUT_DIR, exist_ok=True)
-    with open(LOG_PATH, "w", encoding="utf-8") as f:
+    with open(LOG_PATH, "w", encoding="utf-8", newline="\n") as f:
         f.write("\n".join(lines) + "\n")
 
 
