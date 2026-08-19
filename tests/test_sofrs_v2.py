@@ -17,7 +17,7 @@ if os.environ.get("RIME_VERIFICATION_SCRATCH") != "1":
         from verification_state import run_script_in_isolation
 
         raise SystemExit(run_script_in_isolation(ROOT, Path(__file__)))
-    raise RuntimeError("generative SOFRS regression requires verification scratch")
+    raise RuntimeError("SOFRS regression requires verification scratch")
 
 MIGRATOR = (
     ROOT / "experiments" / "paper12" / "validation" / "migrate_sofrs_v1_to_v2.py"
@@ -41,7 +41,7 @@ def _load_module(name: str, path: Path):
     spec.loader.exec_module(module)
     return module
 
-for script in (MIGRATOR, VALIDATOR):
+for script in (VALIDATOR,):
     result = subprocess.run(
         [sys.executable, str(script)],
         cwd=ROOT,

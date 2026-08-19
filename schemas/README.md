@@ -24,10 +24,13 @@ schemas/
   sofrs/v1.0.schema.json      one concrete SOF diagnostic run
   sofrs/paper12-protocol-profile-v1.0.json Paper XII admission rules
   sofrs/v2.0.schema.json      capability-gated compiled SOF report
+  sofrs/v2.1.schema.json      report non-intervention semantic revision
   sofrs/report-validation-receipt-v1.0.schema.json
                               receipt for one frozen strict SOFRS v1 artifact
   sofrs/report-validation-receipt-v2.0.schema.json
                               receipt for one SOFRS v2 report closure
+  sofrs/report-validation-receipt-v2.1.schema.json
+                              conformance-only receipt for SOFRS v2.1
   sofrs/paper12-strict-compiler-profile-v1.0.json
                                Paper X compiler-profile instance for strict SOF
   sofrs/paper12-analogue-compiler-profile-v1.0.json
@@ -131,6 +134,16 @@ The contracts are deliberately separate:
   evidence; it is neither a report result state nor a Paper XIII comparison
   state. Consumers must verify the receipt and its report linkage rather than
   trusting a self-declared `PASS` field.
+- **SOFRS v2.1 reporting** is the published non-intervention semantic revision.
+  A v2.0 report does not validate directly as v2.1. Explicit migration preserves
+  its normative projection, adds the fixed `object_transition_boundary`, and
+  binds the source v2.0 receipt, migration implementation, v2.1 contracts,
+  validator, and boundary helper in a new conformance-only receipt. Native
+  generation is a separate provenance branch requiring a digest-bound producer
+  and nonempty input closure. Report and receipt conformance does not establish
+  implementation purity, adapter adequacy, an object-state transition, outcome,
+  or causal effect. Run
+  `python experiments/paper12/validation/validate_sofrs_v2_1.py`.
 - **SOFAUDIT v2.0** validates a `.sofaudit` artifact comparing two aligned
   SOFRS v2 reports with validated v2 source-report receipts. A report digest alone
   is insufficient. SOFAUDIT inherits record-kind, carrier, policy, evidence, and

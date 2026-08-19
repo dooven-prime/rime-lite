@@ -1,4 +1,4 @@
-"""Generate the three active Paper XII v2 figures."""
+"""Generate the three active Paper XII v2.1 figures."""
 
 from __future__ import annotations
 
@@ -38,7 +38,7 @@ def fig1_compile_assemble_protocol_stack() -> None:
     ax.set_ylim(0, 1)
     title(
         ax,
-        "SOFRS v2 Compile and Assembly Stack",
+        "SOFRS v2.1 Compile and Assembly Stack",
         "Paper X owns normative item compilation; Paper XII owns faithful report assembly",
     )
 
@@ -109,7 +109,7 @@ def fig1_compile_assemble_protocol_stack() -> None:
         0.075,
         0.18,
         "SOFRS",
-        "v2 report",
+        "v2.1 report",
         edge=ORANGE,
         fill="#fff8ed",
         body_size=8.8,

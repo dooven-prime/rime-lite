@@ -98,7 +98,7 @@ def verification_exit_code(
 def copy_visible_worktree(source: Path, destination: Path) -> None:
     """Copy tracked and non-ignored untracked files, excluding Git metadata."""
     source = source.resolve()
-    destination.mkdir(parents=True, exist_ok=False)
+    destination.mkdir(parents=True, exist_ok=True)
     relative_paths = sorted(
         set(_paths(source, "--cached", "--others", "--exclude-standard"))
     )
@@ -112,6 +112,26 @@ def copy_visible_worktree(source: Path, destination: Path) -> None:
             shutil.copy2(src, dst)
 
 
+def create_verification_checkout(source: Path, destination: Path) -> None:
+    """Create a history-capable scratch checkout of the visible worktree."""
+    source = source.resolve()
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    subprocess.run(
+        [
+            "git",
+            "clone",
+            "--quiet",
+            "--shared",
+            "--no-checkout",
+            str(source),
+            str(destination),
+        ],
+        check=True,
+    )
+    subprocess.run(["git", "read-tree", "HEAD"], cwd=destination, check=True)
+    copy_visible_worktree(source, destination)
+
+
 def run_script_in_isolation(source_root: Path, script: Path) -> int:
     """Run one generative regression in scratch and guard its source checkout."""
     source_root = source_root.resolve()
@@ -119,7 +139,7 @@ def run_script_in_isolation(source_root: Path, script: Path) -> int:
     before = snapshot_tracked_state(source_root)
     with tempfile.TemporaryDirectory(prefix="rime-verify-one-") as directory:
         scratch = Path(directory) / "repository"
-        copy_visible_worktree(source_root, scratch)
+        create_verification_checkout(source_root, scratch)
         result = subprocess.run(
             [sys.executable, str(scratch / relative_script)],
             cwd=scratch,

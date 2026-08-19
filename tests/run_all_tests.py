@@ -15,7 +15,7 @@ import tempfile
 from verification_state import (
     SCRATCH_ENV,
     changed_tracked_paths,
-    copy_visible_worktree,
+    create_verification_checkout,
     snapshot_tracked_state,
     verification_exit_code,
 )
@@ -115,7 +115,7 @@ def verify(*, keep_scratch: bool, scratch_parent: Path | None) -> int:
         print(f"VERIFY_SOURCE_TRACKED_DIFF: {before.diff_digest}")
         print(f"VERIFY_SOURCE_TRACKED_CONTENT: {before.content_digest}")
         print(f"VERIFY_SCRATCH: {scratch}", flush=True)
-        copy_visible_worktree(PROJECT_ROOT, scratch)
+        create_verification_checkout(PROJECT_ROOT, scratch)
         print("RELEASE_STAGE: BUILD_REPLAY_IN_ISOLATION", flush=True)
         env = {**os.environ, SCRATCH_ENV: "1"}
         result = subprocess.run(

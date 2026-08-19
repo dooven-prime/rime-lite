@@ -7,8 +7,8 @@
 Independent Researcher | RIME Program | 2026
 
 *This paper is Paper XII of the RIME program. It consumes the typed interfaces
-of Papers VIII--XI and owns the versioned single-report protocol and its
-epistemic boundary.*
+of Papers VIII--XI and owns the single-report SOFRS protocol and its epistemic
+boundary.*
 
 ***
 
@@ -20,7 +20,7 @@ analogue mapping, or report profile. The remaining question is therefore what
 an assembled report represents about its source.
 
 **Approach.** This paper defines the capability-aware **SOF Report
-Specification (SOFRS) v2.0**. An admitted adapter $\eta$ supplies a Capability
+Specification (SOFRS) v2.1**. An admitted adapter $\eta$ supplies a Capability
 Manifest $M_\eta$ and validated Typed SOF IR $I_\eta$; Paper X compiles them
 under $P_X$, and SOFRS faithfully assembles the result under $P_A$:
 
@@ -36,10 +36,13 @@ $$
 **Results.** Report Relativity identifies a family indexed by source snapshot,
 adapter, profiles, and version closure rather than one canonical report attached
 to the source. Assembly Faithfulness preserves every normative compiler item
-exactly once, while the Adapter Adequacy Boundary keeps protocol conformance
-distinct from scientific adequacy. A source-addressed migration preserves nine
-frozen v1 reports as diagnostic analogues, records four bounded reconstruction
-assessments, and replaces 118 legacy cutoff sentinels with typed states.
+exactly once. Report Non-Intervention states that compilation, assembly,
+serialization, and validation act on report artifacts rather than on the
+reported source state, while the Adapter Adequacy Boundary keeps protocol
+conformance distinct from scientific adequacy. A source-addressed migration
+preserves nine frozen v1 reports as diagnostic analogues, records four bounded
+reconstruction assessments, and replaces 118 legacy cutoff sentinels with
+typed states.
 
 **Implications.** A SOFRS report is a capability-gated,
 realization-relative epistemic artifact. Missing capabilities are not converted
@@ -62,6 +65,8 @@ claim target, and certificate class remain independently typed.
 | $\mathcal R^{\mathrm{norm}}$ | normative report core assembled from compiler output |
 | $\mathcal R^{\mathrm{view}}$ | assembled SOFRS report view for the declared source, adapter, profiles, and version closure |
 | $\mathcal A$ | serialized `.sofreport` artifact with canonical provenance and validation bindings |
+| $\mathfrak A_{\mathrm{art}}$ | state space of report-pipeline artifacts, distinct from source state |
+| $\pi_S$ | projection from joint source/artifact protocol state to source state |
 | $v_N,v_A$ | normative and assembly version closures |
 | `external_basis_registry` | claim-scoped registry of source-addressed external constraint packages |
 | `claim_target` | typed object of a reader-facing claim, such as an external object or protocol conformance |
@@ -110,7 +115,7 @@ This paper has three governing contributions:
    equality, aligned comparability, and realization invariance.
 2. **Adapter Adequacy Boundary** separates compiler soundness from scientific
    adequacy of the selected realization.
-3. **Versioned Reporting Protocol** defines SOFRS v2.0, with Assembly
+3. **Versioned Reporting Protocol** defines SOFRS v2.1, with Assembly
    Faithfulness as its central executable invariant.
 
 ***
@@ -120,16 +125,13 @@ This paper has three governing contributions:
 **Program interfaces.** This paper consumes the typed object, deformation,
 compiler, Registry, and wall-record interfaces of Papers VIII--XI without
 re-owning them \cite{paper8,paper9,paper10,paper11}. Alignment and pairwise
-comparison begin only in Paper XIII; interpretation begins only in Paper XIV.
+comparison belong to Paper XIII; interpretation belongs to Paper XIV.
 
-**Reporting and provenance precedents.** Test, coverage, profiling, and
-static-analysis reports motivate a structured record rather than a positive
-example alone. Model cards and end-to-end algorithmic audits provide closer
-precedents for source, scope, limitation, and accountability disclosure
-\cite{mitchell2019modelcards,raji2020accountability}. SOFRS specializes that
-discipline to carrier-qualified mathematical claims, typed unavailability,
-claim targets, certificate classes, and digest-closed compiler/assembly
-provenance.
+**Reporting and provenance precedents.** Structured testing, profiling,
+static-analysis, model-card, and algorithmic-audit reports motivate explicit
+scope and limitation records \cite{mitchell2019modelcards,raji2020accountability}.
+SOFRS specializes that discipline to carrier-qualified claims, typed
+unavailability, certificate classes, and digest-closed provenance.
 
 **Diagnostic domain contexts.** Attention, routing, and diffusion studies
 motivate bounded examples of sectorization-like decompositions
@@ -159,20 +161,15 @@ v1.0**; a future major contract version requires a new soundness statement.
 | Capability-Sound Report Compilation | Paper X | assume compiler soundness under the versioned contract hypotheses |
 | Report Relativity | Paper XII | state how adapter and profile choices index valid reports |
 | Adapter Adequacy Boundary | Paper XII | separate compiler soundness from scientific adequacy and source fidelity |
-| Versioned Reporting Protocol (SOFRS v2.0) | Paper XII | define strict/analogue report structure, present graceful degradation, and govern migration, deployment, and failure boundaries |
+| Versioned Reporting Protocol (SOFRS v2.1) | Paper XII | define strict/analogue report structure, present graceful degradation, and govern migration, deployment, and failure boundaries |
 | SOFRS Assembly Profile v2.0 ($P_A$) | Paper XII | render one fixed `CompilerOutput` without changing its normative items |
 
-For the inherited compiler contracts, the Manifest contains no result, the IR
-selects no presentation, and the Profile creates no evidence. Paper X proves
-that an affirmative compiled conclusion must come from an eligible IR claim or
-finding after its capability, carrier, policy, evidence, derivation, and
-promotion checks pass \cite{paper10}. A diagnostic analogue cannot instantiate
-a strict-SOF theorem.
+The Manifest contains no result, the IR selects no presentation, and the
+Profile creates no evidence. Paper X supplies the capability- and
+carrier-qualified `CompilerOutput`; this paper defines how that fixed output is
+assembled, serialized, migrated, and presented as one report.
 
-This paper asks a different question: how the resulting `CompilerOutput` is
-assembled, serialized, migrated, and presented as a single-system report.
-
-![SOFRS v2 compile and assembly stack. Paper X compiles capability-gated
+![SOFRS v2.1 compile and assembly stack. Paper X compiles capability-gated
 normative items from a Manifest, Typed SOF IR, and Compiler Profile. SOFRS
 assembles the fixed CompilerOutput under an Assembly Profile without adding,
 deleting, duplicating, or altering a normative item.](../../figures/paper12/fig1_compile_assemble_protocol_stack.png)
@@ -264,6 +261,10 @@ The protocol uses the following compatibility matrix:
 | protocol conformance | Protocol | compiler IR, assembly profile or validator, or independent validator |
 | migration consistency | Migration/Assembly | migration adapter, assembly validator, or independent validator |
 
+Here, an independent validator requires a declared implementation, owner, or
+execution-environment basis; digest difference alone does not establish
+independence.
+
 In particular, an Assembly Profile cannot classify an external mathematical
 object as true. The validator also enforces the exact pairings
 `ESTABLISHED`/Theorem, `CERTIFIED`/Computational Certificate, and
@@ -316,7 +317,7 @@ does not supply missing external scientific support.](../../figures/paper12/fig2
 
 ## Report Relativity
 
-**Definition 1 (SOFRS v2.0 Report Protocol).** Let $S_\sigma$ be a canonically
+**Definition 1 (SOFRS v2.1 Report Protocol).** Let $S_\sigma$ be a canonically
 identified source snapshot, let $\eta$ be an admitted domain adapter producing
 a schema-valid Capability Manifest $M_\eta$ and validated Typed SOF IR
 $I_\eta$, let $P_X$ be an applicable Paper X Compiler Profile, and let $P_A$
@@ -397,7 +398,7 @@ fields licensed by $P_A$.
 array once. A `ClaimItem_v1` produces exactly one rendered claim item and a
 `DegradationItem_v1` produces exactly one rendered degradation item, both with
 the source item identity and kind retained. No other rule constructs a
-normative item. The validator independently recomputes
+normative item. The validator recomputes
 $\operatorname{Compile}_{v1}$, reconstructs the report with
 $\operatorname{Assemble}_{v2}$, checks object equality, and verifies that the
 item-binding relation is a bijection. $\square$
@@ -414,6 +415,35 @@ S
 \mathcal R^{\mathrm{view}}_{\sigma,\eta,P_X,P_A,v_N,v_A}.
 $$
 
+**Protocol Invariant 2 (Report Non-Intervention).** For a fixed source
+snapshot, admitted realization, compiler inputs, Assembly Profile, and
+versioned contract closure, compilation, assembly, serialization, and report
+validation produce or verify report-layer artifacts only. They do not define
+or induce a transition of the reported source object.
+
+Equivalently, lift the report pipeline to a joint protocol state consisting of
+the pinned source and an artifact state $a\in\mathfrak A_{\mathrm{art}}$:
+
+$$
+\operatorname{ReportPipe}:
+(S_\sigma,a)\longmapsto(S_\sigma,a').
+$$
+
+Then its source projection is invariant,
+
+$$
+\pi_S\!\left(\operatorname{ReportPipe}(S_\sigma,a)\right)=S_\sigma.
+$$
+
+**Verification argument.** The normative type signatures return
+`CompilerOutput`, report objects, serialized artifacts, or validation receipts.
+None has a source-state codomain, and the protocol defines no arrow
+$\mathcal R\to S'$ or $\mathcal A\to S'$. This proves protocol
+non-intervention. It does not prove implementation purity: a nonconforming
+program could perform an external side effect while constructing an artifact.
+Read-only source access, workspace confinement, and side-effect isolation are
+separate runtime controls. $\square$
+
 Here $\eta$ may construct either a strict realization
 
 $$
@@ -426,7 +456,7 @@ or a diagnostic analogue with an explicit source mapping and negative strict
 boundary. The choice records retained data, labels, extraction rules, and
 source-to-report decisions.
 
-**Proposition 1 (Report Relativity).** SOFRS v2.0 defines a family of normative
+**Proposition 1 (Report Relativity).** SOFRS v2.1 defines a family of normative
 report cores $\{\mathcal R^{\mathrm{norm}}_{\sigma,\eta,P_X,v_N}\}$ and
 assembled views
 $\{\mathcal R^{\mathrm{view}}_{\sigma,\eta,P_X,P_A,v_N,v_A}\}$, not a
@@ -477,7 +507,7 @@ Only a contract violation, unsupported promotion, failed evidence condition,
 or false source declaration makes a report **protocol-inadmissible**. Different valid
 choices alone do not.
 
-The five layers must not be identified:
+The six layers must not be identified:
 
 | Layer | Object | Role |
 |-------|--------|------|
@@ -488,21 +518,17 @@ The five layers must not be identified:
 | Assembled report view | $\mathcal R^{\mathrm{view}}_{\sigma,\eta,P_X,P_A,v_N,v_A}$ | the faithfully assembled single-system view, including licensed non-normative presentation fields |
 | Serialized artifact | $\mathcal A_{\sigma,\eta,P_X,P_A,v_N,v_A,v_S}$ | a versioned `.sofreport` encoding with digests and provenance |
 
-The SOF Report is a genuine protocol object, but it is not the source object
-itself, the realized object, or the serialized file. It is a
-capability-gated, realization-relative epistemic object; the `.sofreport`
-artifact is its versioned serialization.
-
-This distinction fixes the single-report epistemic boundary:
+The SOF Report is a capability-gated, realization-relative protocol object,
+distinct from the source, realized object, and serialized file. Its boundary
+is:
 
 > A single-system SOFRS report, absent an external reference, specification,
 > or comparison contract, describes the declared realization but does not by
 > itself establish comparative conformance or correctness.
 
-Formal proofs, structural certificates, and internal contract checks can
-establish claims within the declared realization. They do not, without an
-external comparison datum, establish that this realization conforms to a
-different model, implementation, or specification.
+Formal proofs and certificates can establish claims within the declared
+realization, but not conformance to another model, implementation, or
+specification without an external comparison datum.
 
 The conceptual division is concise:
 
@@ -554,7 +580,7 @@ Four notions should be kept separate:
 
 ### Alignment-Ready Metadata
 
-SOFRS v2.0 does not perform pairwise alignment, but it must preserve enough
+SOFRS v2.1 does not perform pairwise alignment, but it must preserve enough
 typed provenance for a later alignment protocol to determine whether alignment
 is possible. Each report therefore exposes:
 
@@ -574,18 +600,6 @@ Paper XIII owns the actual sector and observable correspondences
 $(\Phi_{\mathrm{sec}},\Phi_{\mathrm{obs}})$ and the comparison specification
 $\Theta$. Missing or incompatible metadata may make a later comparison
 `INCOMPARABLE`; it must not be repaired by label guessing.
-
-The need for Paper XIII now follows directly. If reports were absolute and
-canonical, alignment would be bookkeeping. Because reports are
-realization-relative, alignment is a mathematical prerequisite for comparison:
-
-$$
-(\mathcal R_1,\mathcal R_2)
-\not\longmapsto
-\Delta
-\quad\text{without}\quad
-(\Phi_{\mathrm{sec}},\Phi_{\mathrm{obs}},\Theta_{\mathrm{cmp}}).
-$$
 
 ![Report Relativity and Alignment. One source system may admit multiple
 declared realizations and therefore multiple versioned SOF Reports. A report
@@ -634,19 +648,13 @@ makes that choice inspectable; it cannot replace domain judgment.
 
 ***
 
-## Versioned SOFRS v2.0 Reporting Protocol
+## Versioned SOFRS v2.1 Reporting Protocol
 
 The protocol assembles one validated Paper X compiler output into:
 
-1. a versioned header and contract references;
-2. an admission statement;
-3. a capability and unavailable-module summary;
-4. typed findings with carrier, semantic convention, and run policy;
-5. evidence, certificate, and artifact references;
-6. unresolved or forbidden derivation boundaries;
-7. limitations and negative claims;
-8. the canonical `.sofreport.json` serialization and its referenced artifact
-   manifest.
+The assembly contains a versioned header, admission and capability state,
+typed findings, evidence and artifact references, explicit limitations, and a
+canonical `.sofreport.json` serialization.
 
 The operational pipeline has a thin common waist:
 
@@ -663,29 +671,16 @@ $$
 \end{aligned}
 $$
 
-It is executed in the following order:
+The operational order is source registration, adapter and capability
+declaration, layered validation and IR construction, Compiler Profile
+selection, and faithful SOFRS assembly. Missing capabilities remain unavailable
+and are not filled from nearby carriers.
 
-1. **Source registration:** identify the system, run, interface, snapshot, or
-   aggregate diagnostic and freeze its provenance.
-2. **Adapter selection:** map native objects into either strict SOF data or an
-   explicitly bounded analogue mapping.
-3. **Capability declaration:** state which carriers, closures, filtrations,
-   charts, conventions, and policies are available.
-4. **Layered validation:** perform schema, structural, computational, semantic,
-   and claim checks appropriate to the declaration.
-5. **IR construction:** store machine-readable objects, findings, evidence,
-   and audited derivations without choosing presentation.
-6. **Compiler Profile selection:** Paper X enables only modules and items whose
-   Boolean requirements are satisfied.
-7. **SOFRS assembly:** the protocol binds the immutable `CompilerOutput` and a
-   compatible Assembly Profile, renders every normative item exactly once, and
-   adds report-level provenance without filling gaps from nearby carriers.
-
-The initial strict modules are SOF Basic, Associative, Closure, Lie/Hall, and
-Dynamic. They are composable rather than mandatory. An application with no Lie
-family emits no Lie-depth conclusion; it does not emit a zero Lie result. An
-analogue Compiler Profile instead selects descriptor provenance, analogue mapping,
-measured values, and the negative strict boundary.
+Strict profiles may select SOF Basic, Associative, Closure, Lie/Hall, and
+Dynamic modules; none is universally required. An application with no Lie
+family emits no Lie-depth conclusion, rather than a zero result. An analogue
+profile instead selects descriptor provenance, analogue mapping, measured
+values, and the negative strict boundary.
 
 ### Protocol Stack Boundary
 
@@ -708,7 +703,7 @@ interpret that difference as an action consequence, or select a policy.
 |-------|---------------------|----------|
 | XII | assemble and serialize one validated `CompilerOutput` | `.sofreport.json` |
 | XIII | align two reports and compute an Audit Signature | `.sofaudit` |
-| XIV (downstream) | interpret signature coordinates and derive candidate actions | `.sofaction` |
+| XIV (downstream) | interpret signature coordinates under declared context and policy; emit bounded candidates | `.sofaction` |
 
 An internal wall or repair finding remains descriptive. It does not prescribe
 `repair`, `monitor`, `preserve`, `contain`, or `validate` actions.
@@ -819,14 +814,6 @@ Lie-depth repair or claims about hidden mechanisms.
 
 ## Case Studies: Compiler-Profile-Selected Reports
 
-A v2 report is read in the following logical order:
-
-1. inspect `record_kind` and the source adapter;
-2. inspect declared and unavailable capabilities;
-3. identify which Compiler Profile modules were enabled;
-4. read findings together with their carrier, conventions, and policies;
-5. finish with evidence level, scope, and negative boundary.
-
 ### Three Bounded Controls
 
 | Control | Retained observation | Admission boundary |
@@ -841,12 +828,12 @@ still requires the alignment object of Paper XIII.
 
 ***
 
-## Versioned Protocol Migration and Cross-Domain Validation
+## Versioned Protocol Migration and Cross-Domain Controls
 
 Migration is one operation of the Versioned Reporting Protocol, not a fourth
-compiler contract or an independent paper-level pillar. It tests whether
-frozen reports can be admitted into SOFRS v2.0 without changing their source
-artifacts or silently promoting their typed claims.
+compiler contract or an independent paper-level pillar. The first migration
+tests whether frozen v1 reports can be admitted into SOFRS v2.0 without
+changing their source artifacts or silently promoting their typed claims.
 
 ### Version Boundary
 
@@ -866,8 +853,14 @@ $$
 \text{v2 strict admission}.
 $$
 
-The frozen v1 schema and validators remain executable. The v2 schema,
+The frozen v1 schema and validators remain executable. The v2.0 schema,
 profiles, migration index, and validator are separate versioned artifacts.
+
+SOFRS v2.1 is a second, explicit boundary-annotation migration. A v2.0 report
+does not validate directly as v2.1. Source-addressed migration preserves its
+normative projection, adds revision provenance and the fixed
+`object_transition_boundary`, and requires a new v2.1 receipt. This is a
+semantic revision, not a claim of wire backward compatibility.
 
 ### Registry of Migrated Reports
 
@@ -899,14 +892,12 @@ not source-experiment recomputation or adapter adequacy.
 
 ***
 
-## Hostile Fixtures, Failure Modes, and Applicability
+## Failure Modes and Applicability
 
-A deployable method must say when it should not be used. The multi-system
-**validator fixture** (Artifact B14) contains five constructed structural
-boundary cases. It remains a frozen v1 envelope fixture and is intentionally
-excluded from v2 migration and ordinary protocol admission. An API
-infrastructure boundary is listed separately because it can occur within a
-single analogue report:
+The multi-system **validator fixture** (Artifact B14) contains five constructed
+structural boundary cases. It remains a frozen v1 envelope fixture, excluded
+from v2 migration and ordinary protocol admission. An API infrastructure
+boundary is listed separately because it may occur within one analogue report:
 
 | Case | Case interpretation | Diagnostic reason |
 |------|---------------------|-------------------|
@@ -920,15 +911,10 @@ single analogue report:
 These interpretations are not claim-status values. The combined fixture is not
 one source realization and therefore is not a normal v2 report.
 
-The positive migration corpus is not sufficient evidence for the rejection
-boundary. The hostile conformance suite therefore mutates or constructs cases
-covering carrier substitution, policy substitution, source-digest drift,
-claim/finding disagreement, analogue-to-strict masquerading, missing or
-duplicated item bindings, missing external-basis evidence, and an untrusted
-validator that asserts `PASS` for a failing report. These are
-protocol-rejectable because a declared invariant or trusted source binding is
-violated. A satisfied external-basis level must also resolve to a real,
-digest-checked evidence artifact.
+Protocol rejection applies to carrier or policy substitution, source-digest
+drift, claim/finding disagreement, analogue-to-strict masquerading, invalid
+item bindings, and unsatisfied external-basis references. A validator's `PASS`
+assertion is not self-authenticating.
 
 A scientifically misleading but internally consistent adapter presents a
 different challenge. No schema can identify such a failure from syntax alone.
@@ -953,36 +939,29 @@ The admission checks are now typed:
 
 ***
 
-## Machine-Readable Deployment Boundary
+## Machine-Readable Protocol Boundary
 
-This paper requires a reproducible path from a source artifact to a Capability
-Manifest, Typed IR, selected Compiler Report Profile, bound `CompilerOutput`,
-Assembly Profile, and
-assembled v2 report. Every
-cross-file reference carries a digest. The method does not require a particular
-software API or command-line interface.
+This paper requires a reproducible path from source artifacts through the
+Capability Manifest, Typed IR, selected Compiler Report Profile, bound
+`CompilerOutput`, Assembly Profile, and assembled report. Cross-file references
+are digest-bound; no particular software API or command-line interface is
+required.
 
-The present protocol boundary ends at report production and validation. Report
-alignment and normalized comparison belong to the downstream comparison layer,
-while signature interpretation and candidate actions belong to the downstream
-action layer. These remain separate artifact contracts rather than hidden
-stages of a single report operation.
+The protocol ends at report production and validation. Alignment and normalized
+comparison belong to Paper XIII; Paper XIV ends at policy-relative
+interpretation and bounded candidates. Selection, authorization, and execution
+require further downstream contracts.
 
-Protocol validation recomputes `Compile_v1`, reconstructs `Assemble_v2`,
-checks the item-level assembly bijection and report-object equality, and then
-checks contract shape, cross-file references, evidence links, profile gates,
-strict/analogue exclusion, and sentinel migration. It does not decide domain
-adequacy.
+Protocol validation recomputes compilation and assembly, checks item identity
+and report equality, and verifies contract shape, references, evidence links,
+profile gates, strict/analogue exclusion, and migration rules. It does not
+decide domain adequacy.
 
-After those checks pass, the validator may issue a versioned validation
-receipt binding the exact report, Capability Manifest, Typed IR, Compiler
-Report Profile, `CompilerOutput`, Assembly Profile, assembly implementation,
-validator implementation, and receipt contract. The report itself binds its
-source-artifact closure. The receipt closure is ordered and digest-checked. A
-consumer must verify those links;
-the receipt's `PASS` field is not self-authenticating. A validation receipt is
-neither a scientific result state nor evidence of adapter adequacy, report
-alignment, interpretation, or action.
+The resulting receipt binds the checked report closure and validator contract.
+For a v2.0-to-v2.1 migration it also cites the frozen v2.0 receipt. The receipt
+closure is ordered and digest-checked, but its `PASS` field is not
+self-authenticating. It certifies protocol conformance only, not adapter
+adequacy, alignment, interpretation, or action.
 
 ***
 
@@ -993,8 +972,9 @@ levels. The reader-facing status map is:
 
 | Claim or object | Formal role and claim target | Reader-facing status |
 |-----------------|------------------------------|----------------------|
-| SOFRS v2.0 Report Protocol and Assembly Profiles | owned normative definitions; representation interface | not an independent evidence claim |
+| SOFRS v2.1 Report Protocol and Assembly Profiles | owned normative definitions; representation interface | not an independent evidence claim |
 | Assembly Faithfulness | exact protocol invariant; implementation checked by a Protocol Conformance Certificate | Theorem |
+| Report Non-Intervention | exact protocol invariant from the declared type signatures | Theorem |
 | Report Relativity | exact representation-interface proposition under the protocol definition | Theorem |
 | Claim-Scoped External Constraint Registry (`external_basis_registry`) | source, object, structure, and domain-basis evidence routing | not an independent evidence claim |
 | Adapter Adequacy Boundary | epistemic principle and negative boundary; no certificate promotion | not an independent evidence claim |
@@ -1018,63 +998,74 @@ This paper does not claim:
 2. promotion of proxy or analogue observations to strict carriers without an
    additional realization or bridge theorem;
 3. that protocol validity establishes adapter adequacy, alignment,
-   interpretation, authorization, or action.
+   interpretation, authorization, or action;
+4. that protocol non-intervention proves arbitrary implementations are
+   side-effect free.
 
 ***
 
 ## Conclusion
 
-This paper instantiates the Paper X compiler contracts as SOFRS v2.0. A report
-is a capability-gated, realization-relative epistemic artifact assembled from
-one bound `CompilerOutput`, not an absolute image of its source. Assembly
-Faithfulness preserves compiler items, while the Adapter Adequacy Boundary
-leaves source fidelity and realization adequacy to independently cited domain
-evidence.
-
-Strict reports require validated strict carriers; diagnostic analogues retain
-their descriptors, provenance, and negative boundaries without promotion.
-SOFRS standardizes disclosure and serialization, but does not make two reports
-comparable or interpret their differences. Those operations begin in Papers
-XIII and XIV.
-
-SOFRS does not prescribe representation-specific numerical structure beyond
-the admitted carrier contracts.
+SOFRS v2.1 assembles one bound `CompilerOutput` into a capability-gated,
+realization-relative report. It preserves compiler items, keeps strict and
+analogue carriers separate, and leaves source adequacy to external domain
+evidence. Comparison and interpretation remain the separately owned operations
+of Papers XIII and XIV.
 
 ***
 
-## Appendix A: Normative SOFRS v2.0 Contract
+## Appendix A: Normative SOFRS v2.1 Contract
 
-The normative v2 contract is source-addressed rather than duplicated in full
-in this manuscript. Artifact B21 defines the assembled report envelope.
+The normative v2.1 contract is identified by source digest rather than
+duplicated in full in this manuscript. Artifact B21 defines the assembled
+report envelope.
 Artifacts B22--B23 are strict and analogue Compiler Report Profile instances
 under the Paper X Compiler Report Profile v1.0 contract. Artifacts B29--B31 define the
 distinct Paper XII Assembly Profile contract and instances. The Capability
-Manifest, Typed SOF IR, Compiler Report Profile, and derivation-rule schemas
+Manifest, Typed SOF IR, Compiler Report Profile, and derivation rule schemas
 are the versioned Paper X compiler contracts indexed by Artifact B24.
 
-A v2 report requires:
+A v2.1 report requires the following grouped fields:
 
-```text
-sofrs_version, report_id, system, record_kind, strict_reconstruction,
- external_basis_registry,
-compiler_contracts, compiler_output_binding, assembly_contract,
-item_bindings, alignment_readiness, source_mapping, source_artifacts,
-modules, findings, claims, degradation_items, failure_modes, provenance.
-```
+| Group | Required fields |
+|-------|-----------------|
+| Identity | `sofrs_version`, `report_id`, `system`, `record_kind` |
+| Revision and boundary | `revision_provenance`, `object_transition_boundary`, `strict_reconstruction`, `external_basis_registry` |
+| Contracts | `compiler_contracts`, `compiler_output_binding`, `assembly_contract` |
+| Content and bindings | `item_bindings`, `alignment_readiness`, `source_mapping`, `source_artifacts` |
+| Results and provenance | `modules`, `findings`, `claims`, `degradation_items`, `failure_modes`, `provenance` |
 
 `provenance` is a disjoint union: `native_generation` binds the native source,
 adapter, compiler output, assembly profile, and producer closure; `migration`
 binds a non-native SOFRS v1 source, the migration adapter/ruleset, and its
-receipt. A native-v2 report cannot carry the migration variant.
+receipt. A native report cannot carry the migration variant.
+
+The required boundary is constant:
+
+| Field | Required value |
+|-------|----------------|
+| `artifact_role` | `INFORMATIONAL_REPORT` |
+| `intervention_semantics` | `NONE` |
+| `source_state_transition_authority` | `NONE` |
+| `implementation_purity_status` | `NOT_ESTABLISHED_BY_SOFRS` |
+
+It states that compilation, assembly, serialization, and protocol validation
+have artifact codomains and no intervention authority over the source state.
+It does not prove that an arbitrary implementation is side-effect free.
+
+The v2.1 receipt fixes
+`receipt_kind = SOFRS_VALIDATION_RECEIPT` and
+`receipt_scope = SOFRS_PROTOCOL_CONFORMANCE_ONLY`. Its `PASS` status certifies
+the checked report closure only; it carries no intervention semantics and no
+implementation-purity claim.
 
 It does not require universal support, bridge, repair, or wall fields. The
 admission constraints are:
 
-```text
-strict_sof          -> enabled sof-basic module
-diagnostic_analogue -> enabled diagnostic-analogue module;
-                       strict-SOF theorem claims forbidden
-```
+| Record kind | Admission constraint |
+|-------------|----------------------|
+| `strict_sof` | An enabled `sof-basic` module is required. |
+| `diagnostic_analogue` | An enabled `diagnostic-analogue` module is required; strict-SOF theorem claims are forbidden. |
 
 Every affirmative statement must reference an admitted IR claim or finding and
 retain its carrier, convention, policy, evidence, scope, and derivation state.
@@ -1123,7 +1114,7 @@ For a `strict_sof` report, `strict_reconstruction.candidate_status` is
 
 ***
 
-## Appendix B: SOFRS v2.0 Example Reports
+## Appendix B: SOFRS v2.1 Example Reports
 
 The migrated collection supplies three compact protocol patterns:
 
@@ -1166,12 +1157,8 @@ the envelope against that schema, and Artifact B4 applies the separate v1
 admission profile. The executable contract, rather than a copy in this
 manuscript, is the source of truth.
 
-The schema forbids these superseded top-level names:
-
-```text
-schema_version      repair_candidates
-wall_records        trajectory_summary
-```
+The schema forbids the superseded top-level names `schema_version`,
+`wall_records`, `repair_candidates`, and `trajectory_summary`.
 
 A trajectory summary, when present, is nested inside `wall_record`.
 Specification revisions that change required keys or controlled vocabularies
@@ -1194,10 +1181,11 @@ The migration is non-destructive and source-addressed:
 | source file | source artifact reference | pin path and SHA-256 digest |
 | external source basis | `external_basis_registry` and claim refs | separate source/object/structure/adequacy; do not infer |
 
-The executable certificate consists of the migration index, nine migrated
-Manifest/IR/`CompilerOutput`/report stacks, their v2 validation receipts, the
-v2 schema and profiles, and the versioned v2 validator that reproduces the
-census and reference checks. The
+The executable certificate consists of the historical migration index, nine
+migrated Manifest/IR/`CompilerOutput`/v2.0 report stacks and receipts, and the
+explicit v2.0-to-v2.1 migration with nine new reports and receipts. The v2.1
+validator reproduces the boundary, projection, closure, and receipt-role
+checks. The
 index records nine analogue reports, four controlled strict-reconstruction
 assessments with status `yes`,
 and 118 sentinel normalizations. These
@@ -1216,8 +1204,8 @@ stated below.
 ### Contracts and Validators
 
 The default directory in this table is `schemas/sofrs/` for B1--B2,
-B21--B24, and B28--B31, and `experiments/paper12/validation/` for B3--B4
-and B32.
+B21--B24, and B28--B31, and `experiments/paper12/validation/` for B3--B4,
+B32--B34.
 
 | Artifact | Role in this paper | Short path |
 |----------|-------------------|------------|
@@ -1225,15 +1213,17 @@ and B32.
 | B2 | v1 admission profile | `paper12-protocol-profile-v1.0.json` |
 | B3 | v1 schema-drift validator | `validate_sofreport.py` |
 | B4 | v1 admission validator | `validate_protocol_admission.py` |
-| B21 | v2 report schema | `v2.0.schema.json` |
+| B21 | v2.1 report schema | `v2.1.schema.json` |
 | B22 | strict Compiler Report Profile v1.0 instance | `paper12-strict-compiler-profile-v1.0.json` |
 | B23 | analogue Compiler Report Profile v1.0 instance | `paper12-analogue-compiler-profile-v1.0.json` |
 | B24 | compiler contracts and rule registry | `../sofcompiler/` |
-| B28 | v2 validation-receipt schema | `report-validation-receipt-v2.0.schema.json` |
+| B28 | v2.1 validation-receipt schema | `report-validation-receipt-v2.1.schema.json` |
 | B29 | Assembly Profile v2.0 schema | `assembly-profile-v2.0.schema.json` |
 | B30 | strict Assembly Profile instance | `paper12-strict-assembly-profile-v2.0.json` |
 | B31 | analogue Assembly Profile instance | `paper12-analogue-assembly-profile-v2.0.json` |
 | B32 | canonical normative-core and artifact-identity helper | `canonical_identity.py` |
+| B33 | v2.0-to-v2.1 non-intervention migrator | `migrate_sofrs_v2_to_v2_1.py` |
+| B34 | v2.1 semantic and receipt validator | `validate_sofrs_v2_1.py` |
 
 ### Report-Protocol Audits
 
@@ -1254,8 +1244,9 @@ The default directory in this table is `experiments/paper12/`.
 | B15 | frozen v1 reports | `archive/results/*.sofreport` |
 | B16 | v1 validator fixture | `archive/results/failure_cases.fixture.json` |
 | B25 | v1-to-v2 adapter | `validation/migrate_sofrs_v1_to_v2.py` |
-| B26 | v2 validator and receipt producer | `validation/validate_sofrs_v2.py` |
+| B26 | frozen v2 validator and receipt checker | `validation/validate_sofrs_v2.py` |
 | B27 | v2 stack and validation receipts | `results/` |
+| B35 | v2.1 reports and conformance-only receipts | `results/v2.1/` |
 
 ### Cross-Program Support
 

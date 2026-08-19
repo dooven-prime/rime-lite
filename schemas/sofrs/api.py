@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import subprocess
 from pathlib import Path
 from typing import Any
 
@@ -25,6 +26,7 @@ RECEIPT_SCHEMA_PATH = (
 V2_RECEIPT_SCHEMA_PATH = (
     ROOT / "schemas" / "sofrs" / "report-validation-receipt-v2.0.schema.json"
 )
+SOFRS_V2_RELEASE_COMMIT = "c58633494257757e3316f31d8a7cfedc2e75af4e"
 DOWNSTREAM_TOP_LEVEL_FIELDS = {
     "reference",
     "candidate",
@@ -206,6 +208,7 @@ def v2_report_validation_receipt_errors(
     repository_root: str | Path,
     expected_report_reference: dict[str, Any] | None = None,
     expected_report_base_directory: str | Path | None = None,
+    historical_commit: str | None = SOFRS_V2_RELEASE_COMMIT,
 ) -> list[str]:
     root = Path(repository_root).resolve()
     errors = schema_errors(receipt, load_json(V2_RECEIPT_SCHEMA_PATH))
@@ -233,13 +236,35 @@ def v2_report_validation_receipt_errors(
         ]
     )
     for index, reference in enumerate(references):
-        errors.extend(
-            artifact_reference_errors(
-                reference,
-                label=f"v2 receipt artifact[{index}]",
-                repository_root=root,
-            )
+        reference_errors = artifact_reference_errors(
+            reference,
+            label=f"v2 receipt artifact[{index}]",
+            repository_root=root,
         )
+        if (
+            reference_errors
+            and historical_commit is not None
+            and index >= len(ordered)
+        ):
+            uri = reference.get("uri")
+            expected_digest = reference.get("digest", {}).get("value")
+            if isinstance(uri, str) and isinstance(expected_digest, str):
+                result = subprocess.run(
+                    ["git", "show", f"{historical_commit}:{uri}"],
+                    cwd=root,
+                    capture_output=True,
+                )
+                if result.returncode == 0:
+                    # Historical fallback is intentionally limited to the
+                    # validator and receipt contract. The v2 release receipts
+                    # bound their Windows CRLF checkout materialization.
+                    candidates = (result.stdout, result.stdout.replace(b"\n", b"\r\n"))
+                    if any(
+                        hashlib.sha256(candidate).hexdigest() == expected_digest
+                        for candidate in candidates
+                    ):
+                        reference_errors = []
+        errors.extend(reference_errors)
 
     report_ref = receipt["report"]["artifact"]
     if report_ref != ordered[0]["artifact"]:

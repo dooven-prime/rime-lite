@@ -1,0 +1,188 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rime-project.local/schemas/sofrs/report-validation-receipt-v2.1.schema.json",
+  "title": "SOFRS Report Validation Receipt v2.1",
+  "description": "Source-addressed conformance receipt for one explicitly migrated or natively generated SOFRS v2.1 report. PASS has no intervention or implementation-purity semantics.",
+  "type": "object",
+  "required": [
+    "receipt_version",
+    "artifact_type",
+    "receipt_kind",
+    "receipt_scope",
+    "receipt_id",
+    "report",
+    "validator",
+    "generation",
+    "artifact_closure",
+    "status",
+    "checks",
+    "object_transition_boundary",
+    "negative_boundaries"
+  ],
+  "properties": {
+    "receipt_version": {"const": "2.1"},
+    "artifact_type": {"const": "sofrs_report_validation_receipt"},
+    "receipt_kind": {"const": "SOFRS_VALIDATION_RECEIPT"},
+    "receipt_scope": {"const": "SOFRS_PROTOCOL_CONFORMANCE_ONLY"},
+    "receipt_id": {"$ref": "#/$defs/id"},
+    "report": {
+      "type": "object",
+      "required": ["report_id", "sofrs_version", "record_kind", "artifact"],
+      "properties": {
+        "report_id": {"$ref": "#/$defs/id"},
+        "sofrs_version": {"const": "2.1"},
+        "record_kind": {"enum": ["strict_sof", "diagnostic_analogue"]},
+        "artifact": {"$ref": "#/$defs/artifact_reference"}
+      },
+      "additionalProperties": false
+    },
+    "validator": {
+      "type": "object",
+      "required": ["validator_id", "validator_version", "implementation", "report_contract", "receipt_contract"],
+      "properties": {
+        "validator_id": {"const": "sofrs.report-validator.v2_1"},
+        "validator_version": {"const": "2.1"},
+        "implementation": {"$ref": "#/$defs/artifact_reference"},
+        "report_contract": {"$ref": "#/$defs/artifact_reference"},
+        "receipt_contract": {"$ref": "#/$defs/artifact_reference"}
+      },
+      "additionalProperties": false
+    },
+    "generation": {"$ref": "#/$defs/generation_provenance"},
+    "artifact_closure": {"$ref": "#/$defs/artifact_closure"},
+    "status": {"const": "PASS"},
+    "checks": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "required": ["check_id", "status"],
+        "properties": {
+          "check_id": {
+            "enum": [
+              "artifact-closure",
+              "assembly-faithfulness",
+              "claim-compatibility",
+              "degradation-semantics",
+              "explicit-v2.0-to-v2.1-migration",
+              "generation-input-closure",
+              "native-v2.1-generation",
+              "forbidden-semantic-role-scan",
+              "report-non-intervention",
+              "schema-validation",
+              "v2.0-source-validation"
+            ]
+          },
+          "status": {"const": "PASS"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "object_transition_boundary": {
+      "type": "object",
+      "required": ["intervention_semantics", "source_state_transition_authority", "implementation_purity_status"],
+      "properties": {
+        "intervention_semantics": {"const": "NONE"},
+        "source_state_transition_authority": {"const": "NONE"},
+        "implementation_purity_status": {"const": "NOT_ESTABLISHED_BY_SOFRS"}
+      },
+      "additionalProperties": false
+    },
+    "negative_boundaries": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    }
+  },
+  "$defs": {
+    "generation_provenance": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": ["kind", "class", "source_version", "source_artifact", "source_validation_receipt", "implementation"],
+          "properties": {
+            "kind": {"const": "migration"},
+            "class": {"const": "boundary_annotation"},
+            "source_version": {"const": "2.0"},
+            "source_artifact": {"$ref": "#/$defs/artifact_reference"},
+            "source_validation_receipt": {"$ref": "#/$defs/artifact_reference"},
+            "implementation": {"$ref": "#/$defs/artifact_reference"}
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": ["kind", "implementation", "input_artifacts"],
+          "properties": {
+            "kind": {"const": "native"},
+            "implementation": {"$ref": "#/$defs/artifact_reference"},
+            "input_artifacts": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {"$ref": "#/$defs/artifact_reference"}
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]*$"},
+    "digest": {
+      "type": "object",
+      "required": [
+        "algorithm",
+        "value"
+      ],
+      "properties": {
+        "algorithm": {
+          "const": "sha256"
+        },
+        "value": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "artifact_reference": {
+      "type": "object",
+      "required": [
+        "uri",
+        "digest"
+      ],
+      "properties": {
+        "uri": {
+          "type": "string",
+          "minLength": 1
+        },
+        "digest": {
+          "$ref": "#/$defs/digest"
+        }
+      },
+      "additionalProperties": false
+    },
+    "closure_item": {
+      "type": "object",
+      "required": ["role", "artifact"],
+      "properties": {
+        "role": {"type": "string", "minLength": 1},
+        "artifact": {"$ref": "#/$defs/artifact_reference"}
+      },
+      "additionalProperties": false
+    },
+    "artifact_closure": {
+      "type": "object",
+      "required": ["artifact_count", "ordered_artifacts", "closure_digest"],
+      "properties": {
+        "artifact_count": {"type": "integer", "minimum": 1},
+        "ordered_artifacts": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/closure_item"}},
+        "closure_digest": {"$ref": "#/$defs/digest"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
