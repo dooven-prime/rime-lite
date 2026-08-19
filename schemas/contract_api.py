@@ -86,16 +86,6 @@ def artifact_reference_errors(
     allowed_algorithms: Iterable[str] = ("sha256",),
 ) -> list[str]:
     try:
-        path = resolve_artifact_path(
-            reference["uri"],
-            repository_root=repository_root,
-            base_directory=base_directory,
-        )
-    except (KeyError, TypeError, ValueError) as error:
-        return [f"{label}: {error}"]
-    if not path.is_file():
-        return [f"{label}: referenced file does not exist"]
-    try:
         declared = reference["digest"]
         algorithm = declared["algorithm"]
         expected = declared["value"].lower()
@@ -103,6 +93,25 @@ def artifact_reference_errors(
         return [f"{label}: malformed digest declaration"]
     if algorithm not in set(allowed_algorithms):
         return [f"{label}: unsupported digest algorithm {algorithm!r}"]
+    try:
+        from schemas.release_snapshot import resolve_release_reference
+
+        path = resolve_release_reference(
+            reference,
+            repository_root=repository_root,
+            base_directory=base_directory,
+        )
+    except (ImportError, KeyError, TypeError, ValueError):
+        try:
+            path = resolve_artifact_path(
+                reference["uri"],
+                repository_root=repository_root,
+                base_directory=base_directory,
+            )
+        except (KeyError, TypeError, ValueError) as error:
+            return [f"{label}: {error}"]
+    if not path.is_file():
+        return [f"{label}: referenced file does not exist"]
     try:
         actual = file_digest(path, algorithm)
     except ValueError:

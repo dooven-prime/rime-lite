@@ -1,0 +1,461 @@
+{
+  "sofaudit_version": "1.0",
+  "report_type": "sofaudit",
+  "comparison_object": "SOFReportComparison",
+  "audit_id": "gridworld_f3",
+  "system": "5×5 GridWorld forbidden edge audit",
+  "claim_status": "evidence",
+  "claim_note": "controlled protocol validation",
+  "regime": "A",
+  "failure_mode": "f3_forbidden_edge",
+  "reference": {
+    "report_id": "gridworld_ref",
+    "artifact": "gridworld_ref.sofreport",
+    "label": "GridWorld(5x5, obstacles=[(2, 2)])"
+  },
+  "target": {
+    "report_id": "gridworld_f3_learned",
+    "artifact": "gridworld_f3_learned.sofreport",
+    "label": "wall-crossing hallucination"
+  },
+  "alignment": {
+    "sector_alignment": {
+      "kind": "identity"
+    },
+    "observable_alignment": {
+      "kind": "identity"
+    }
+  },
+  "comparison_specification": {
+    "specification_id": "paper13-coordinatewise-v1",
+    "normalization": {
+      "tol": 1e-08,
+      "max_depth": 6,
+      "frozen_sentinel": 999,
+      "depth_semantics": "word depth",
+      "bridge_semantics": [
+        "word",
+        "Lie commutator"
+      ],
+      "generator_normalization": "skew(T)=(T-T^T)/2"
+    },
+    "metric": {
+      "signature": "coordinatewise mismatch records and counts",
+      "fixed_fiber_structural": "weighted Hamming when explicitly invoked"
+    },
+    "depth_semantics": "word depth",
+    "thresholds": {
+      "tol": 1e-08,
+      "source": "comparison record"
+    },
+    "parameter_synchronization": {
+      "mode": "not_applicable"
+    },
+    "aggregation": {
+      "mode": "coordinatewise",
+      "scalarization": "none"
+    }
+  },
+  "signature": {
+    "support_mismatch": {
+      "extra_support": [
+        [
+          7,
+          12
+        ],
+        [
+          12,
+          7
+        ]
+      ],
+      "extra_count": 2,
+      "missing_support": [],
+      "missing_count": 0,
+      "total_mismatch": 2,
+      "ref_offdiag": 72,
+      "candidate_offdiag": 74
+    },
+    "bridge_word_mismatch": {
+      "extra_bridge": [
+        [
+          2,
+          12
+        ],
+        [
+          6,
+          12
+        ],
+        [
+          8,
+          12
+        ],
+        [
+          12,
+          2
+        ],
+        [
+          12,
+          6
+        ],
+        [
+          12,
+          8
+        ]
+      ],
+      "extra_count": 6,
+      "missing_bridge": [],
+      "missing_count": 0,
+      "total_mismatch": 6,
+      "ref_offdiag": 104,
+      "candidate_offdiag": 110
+    },
+    "bridge_lie_mismatch": {
+      "extra_bridge": [
+        [
+          2,
+          12
+        ],
+        [
+          6,
+          12
+        ],
+        [
+          8,
+          12
+        ],
+        [
+          12,
+          2
+        ],
+        [
+          12,
+          6
+        ],
+        [
+          12,
+          8
+        ]
+      ],
+      "extra_count": 6,
+      "missing_bridge": [],
+      "missing_count": 0,
+      "total_mismatch": 6,
+      "ref_offdiag": 8,
+      "candidate_offdiag": 14
+    },
+    "depth_distortion": {
+      "depth_distortions": [],
+      "distortion_count": 0,
+      "ref_frozen_candidate_not": [
+        [
+          0,
+          12,
+          4
+        ],
+        [
+          1,
+          12,
+          3
+        ],
+        [
+          2,
+          12,
+          2
+        ],
+        [
+          3,
+          12,
+          3
+        ],
+        [
+          4,
+          12,
+          4
+        ],
+        [
+          5,
+          12,
+          3
+        ],
+        [
+          6,
+          12,
+          2
+        ],
+        [
+          7,
+          12,
+          1
+        ],
+        [
+          8,
+          12,
+          2
+        ],
+        [
+          9,
+          12,
+          3
+        ],
+        [
+          10,
+          12,
+          4
+        ],
+        [
+          11,
+          12,
+          3
+        ],
+        [
+          12,
+          0,
+          4
+        ],
+        [
+          12,
+          1,
+          3
+        ],
+        [
+          12,
+          2,
+          2
+        ],
+        [
+          12,
+          3,
+          3
+        ],
+        [
+          12,
+          4,
+          4
+        ],
+        [
+          12,
+          5,
+          3
+        ],
+        [
+          12,
+          6,
+          2
+        ],
+        [
+          12,
+          7,
+          1
+        ],
+        [
+          12,
+          8,
+          2
+        ],
+        [
+          12,
+          9,
+          3
+        ],
+        [
+          12,
+          10,
+          4
+        ],
+        [
+          12,
+          11,
+          3
+        ],
+        [
+          12,
+          13,
+          3
+        ],
+        [
+          12,
+          14,
+          4
+        ],
+        [
+          12,
+          15,
+          5
+        ],
+        [
+          12,
+          16,
+          4
+        ],
+        [
+          12,
+          17,
+          5
+        ],
+        [
+          12,
+          18,
+          4
+        ],
+        [
+          12,
+          19,
+          5
+        ],
+        [
+          12,
+          20,
+          6
+        ],
+        [
+          12,
+          21,
+          5
+        ],
+        [
+          12,
+          22,
+          6
+        ],
+        [
+          12,
+          23,
+          5
+        ],
+        [
+          12,
+          24,
+          6
+        ],
+        [
+          13,
+          12,
+          3
+        ],
+        [
+          14,
+          12,
+          4
+        ],
+        [
+          15,
+          12,
+          5
+        ],
+        [
+          16,
+          12,
+          4
+        ],
+        [
+          17,
+          12,
+          5
+        ],
+        [
+          18,
+          12,
+          4
+        ],
+        [
+          19,
+          12,
+          5
+        ],
+        [
+          20,
+          12,
+          6
+        ],
+        [
+          21,
+          12,
+          5
+        ],
+        [
+          22,
+          12,
+          6
+        ],
+        [
+          23,
+          12,
+          5
+        ],
+        [
+          24,
+          12,
+          6
+        ]
+      ],
+      "ref_frozen_candidate_not_count": 48,
+      "candidate_frozen_ref_not": [],
+      "candidate_frozen_ref_not_count": 0,
+      "total_mismatch": 48
+    },
+    "frozen_disagreement": {
+      "frozen_R1": {
+        "ref": 528,
+        "candidate": 526,
+        "delta": -2
+      },
+      "frozen_D_word": {
+        "ref": 68,
+        "candidate": 20,
+        "delta": -48
+      },
+      "frozen_D_lie": {
+        "ref": 184,
+        "candidate": 118,
+        "delta": -66
+      }
+    },
+    "constraint_violations": {
+      "violations": [
+        {
+          "action": "S",
+          "from": 7,
+          "to": 12,
+          "candidate_value": 1.0
+        }
+      ],
+      "count": 1
+    },
+    "action_response_failure": {
+      "per_action_deltas": {
+        "N": [],
+        "S": [
+          {
+            "pair": [
+              7,
+              12
+            ],
+            "ref": 0.0,
+            "candidate": 0.5,
+            "delta": 0.5
+          },
+          {
+            "pair": [
+              12,
+              7
+            ],
+            "ref": 0.0,
+            "candidate": 0.5,
+            "delta": 0.5
+          }
+        ],
+        "E": [],
+        "W": []
+      },
+      "total_large_deltas": 2,
+      "action_aliasing": []
+    },
+    "wall_record_mismatch": null
+  },
+  "failure_modes": [
+    "controlled constructed variant, not a learned production world model",
+    "identity sector and observable alignment only",
+    "norm-based action responses are insensitive to sign and orientation aliasing"
+  ],
+  "domain": "gridworld"
+}

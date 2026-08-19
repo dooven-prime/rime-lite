@@ -1,0 +1,120 @@
+{
+  "control_version": "1.0",
+  "control_id": "paper13-contextual-descent-control-v1",
+  "claim_status": "Computational Certificate",
+  "scope": "Finite candidate-relative descent control for a typed word-support signature.",
+  "fixture": {
+    "global_context": {
+      "sectors": [
+        "A",
+        "B",
+        "C"
+      ],
+      "carrier": "word",
+      "realization_kind": "strict_sof",
+      "conventions": {
+        "support": "exact-boolean"
+      }
+    },
+    "candidate_space": [
+      {
+        "candidate_id": "s0",
+        "values": {
+          "A-B": 1,
+          "A-C": 0,
+          "B-C": 1
+        }
+      },
+      {
+        "candidate_id": "s1",
+        "values": {
+          "A-B": 1,
+          "A-C": 1,
+          "B-C": 1
+        }
+      }
+    ],
+    "covers": [
+      {
+        "cover_id": "minimal.cover.ab-bc",
+        "observed_coordinates": [
+          "A-B",
+          "B-C"
+        ],
+        "local_sections": {
+          "A-B": 1,
+          "B-C": 1
+        }
+      },
+      {
+        "cover_id": "minimal.cover.ab-bc-ac",
+        "observed_coordinates": [
+          "A-B",
+          "B-C",
+          "A-C"
+        ],
+        "local_sections": {
+          "A-B": 1,
+          "B-C": 1,
+          "A-C": 0
+        }
+      }
+    ]
+  },
+  "descent_basis": {
+    "candidate_space_id": "candidate-space.minimal-ab-bc-ac.v1",
+    "candidate_space_status": "bounded",
+    "enumerator_id": "enumerator.literal-minimal.v1",
+    "validator_id": "validator.contextual-descent.v1",
+    "candidate_digest": "e394ea1be0e042f13e02be7df0dcedf9dc3dd08e0f416b33003a206519f367e5"
+  },
+  "results": [
+    {
+      "cover_id": "minimal.cover.ab-bc",
+      "match_count": 2,
+      "state": "GLUED_NONUNIQUE",
+      "separatedness_failure": true
+    },
+    {
+      "cover_id": "minimal.cover.ab-bc-ac",
+      "match_count": 1,
+      "state": "GLUED_UNIQUE",
+      "separatedness_failure": false
+    }
+  ],
+  "source_artifacts": [
+    {
+      "uri": "experiments/exploratory/comparison_geometry/canonical_minimal_example.py",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "eaef1088fc2d7a112f4cd61f3ff1affa399c3e4d689ebf2330c44cd588f7de88"
+      }
+    },
+    {
+      "uri": "experiments/exploratory/comparison_geometry/finite_descent.py",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "27a9aa365a6ac3b57e53d6409b2e6afb79b745abdad6aa00146ac5a9fe6eed7c"
+      }
+    },
+    {
+      "uri": "experiments/exploratory/comparison_geometry/context_objects.py",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "919a5842dd9da45539355c71ca97083ea86ac2d2e432687cdbd17cd0644027d5"
+      }
+    },
+    {
+      "uri": "experiments/paper13/validation/contextual_descent_control.py",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "dbe1419d3e1299f6e26c980833c3a3eafc6dca446791f8eaf883ddae5e5f5770"
+      }
+    }
+  ],
+  "known_nonclaims": [
+    "The bounded candidate space is not an exhaustive global section space.",
+    "This control does not establish a Grothendieck topology, sheaf theorem, cross-fiber transport law, or topos structure.",
+    "The control is a same-realization-kind canonical-restriction subcase and does not reclassify strict-to-analogue alignment as restriction."
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "sofrs_version": "1.0",
+  "report_id": "sir_f1_learned",
+  "system": "SIR (rate equalization)",
+  "sectorization": {
+    "origin": "one-hot compartment sectors",
+    "compartments": [
+      "S",
+      "I",
+      "R"
+    ],
+    "sector_count": 3,
+    "strict_sof_realization": true
+  },
+  "observable_family": {
+    "rates": [
+      "beta (S->I)",
+      "gamma (I->R)"
+    ],
+    "generator_type": "skew-symmetrised rate transition matrices",
+    "skew_note": "ordered antisymmetric support is a proxy for directed epidemiological transitions"
+  },
+  "support_matrix": {
+    "kind": "word-generator direct support",
+    "matrix": [
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        1,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        0
+      ]
+    ],
+    "offdiag_count": 4
+  },
+  "bridge_matrix": {
+    "word": {
+      "matrix": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ],
+      "offdiag_count": 2
+    },
+    "lie": {
+      "matrix": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ],
+      "offdiag_count": 2
+    },
+    "claim_note": "word and Lie bridge channels are recorded separately"
+  },
+  "repair_matrix": {
+    "kind": "word-depth accessibility summary",
+    "depth_matrix": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        1,
+        0,
+        1
+      ],
+      [
+        2,
+        1,
+        0
+      ]
+    ],
+    "max_finite_depth": 2,
+    "frozen_R1": 2,
+    "frozen_D_word": 0,
+    "frozen_D_lie": 0
+  },
+  "wall_record": null,
+  "claim_status": "evidence",
+  "claim_note": "controlled finite SIR-chain evidence (Regime A)",
+  "failure_modes": [
+    "finite three-compartment control, not an epidemiological theorem",
+    "skew support does not preserve the original transition direction",
+    "rate-wall conclusions are relative to the chosen response constants"
+  ],
+  "model_label": "SIR(β=0.2, γ=0.2, R₀=1.0)",
+  "domain": "epidemiology"
+}

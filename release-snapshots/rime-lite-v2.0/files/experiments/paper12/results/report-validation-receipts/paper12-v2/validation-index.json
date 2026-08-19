@@ -1,0 +1,92 @@
+{
+  "validation_version": "2.0",
+  "validator": {
+    "uri": "experiments/paper12/validation/validate_sofrs_v2.py",
+    "digest": {
+      "algorithm": "sha256",
+      "value": "c0b39a841b592dc2173c8a3fc350a8c2096a5fb9fe1c2e443f07b88d0764d4e9"
+    }
+  },
+  "receipt_contract": {
+    "uri": "schemas/sofrs/report-validation-receipt-v2.0.schema.json",
+    "digest": {
+      "algorithm": "sha256",
+      "value": "3268e1119185a8401ac08ff2b41745152e9a7787b75bff9e3f0ff5183e5ae672"
+    }
+  },
+  "report_count": 9,
+  "receipts": [
+    {
+      "report": "experiments/paper12/results/reports/diffusion.sofreport.json",
+      "receipt": "experiments/paper12/results/report-validation-receipts/paper12-v2/diffusion.validation-receipt.json",
+      "receipt_digest": {
+        "algorithm": "sha256",
+        "value": "521c980c2a096c299ef423b4effa2782f24966b70fef34062a439f34eaf0ebb6"
+      }
+    },
+    {
+      "report": "experiments/paper12/results/reports/maze.sofreport.json",
+      "receipt": "experiments/paper12/results/report-validation-receipts/paper12-v2/maze.validation-receipt.json",
+      "receipt_digest": {
+        "algorithm": "sha256",
+        "value": "aa98673dd74b690f37c27383caed3c80d9cd88a758f5e2497f66e673dee90b4d"
+      }
+    },
+    {
+      "report": "experiments/paper12/results/reports/moe.sofreport.json",
+      "receipt": "experiments/paper12/results/report-validation-receipts/paper12-v2/moe.validation-receipt.json",
+      "receipt_digest": {
+        "algorithm": "sha256",
+        "value": "d47fdbe4dbb43f147e2623ee38ebc1b7d22cdb62efc672d7a44bc6af388b1e13"
+      }
+    },
+    {
+      "report": "experiments/paper12/results/reports/moe_bias_repair.sofreport.json",
+      "receipt": "experiments/paper12/results/report-validation-receipts/paper12-v2/moe_bias_repair.validation-receipt.json",
+      "receipt_digest": {
+        "algorithm": "sha256",
+        "value": "a9fe3965ddbb0ca22c9a02efd946171e280c9cd2224039d246b07c705ab15b2f"
+      }
+    },
+    {
+      "report": "experiments/paper12/results/reports/nvidia_llama31_8b_20260711.sofreport.json",
+      "receipt": "experiments/paper12/results/report-validation-receipts/paper12-v2/nvidia_llama31_8b_20260711.validation-receipt.json",
+      "receipt_digest": {
+        "algorithm": "sha256",
+        "value": "f26483cce2fc71d3c6c9c2407b0d6bf73f78c77dec64be850acdeb0629e57c25"
+      }
+    },
+    {
+      "report": "experiments/paper12/results/reports/qwen.sofreport.json",
+      "receipt": "experiments/paper12/results/report-validation-receipts/paper12-v2/qwen.validation-receipt.json",
+      "receipt_digest": {
+        "algorithm": "sha256",
+        "value": "96129450cc5cf3b1a4064621e8b202bf4dffa94f8efd2454232ee5e2b385fc80"
+      }
+    },
+    {
+      "report": "experiments/paper12/results/reports/recommender.sofreport.json",
+      "receipt": "experiments/paper12/results/report-validation-receipts/paper12-v2/recommender.validation-receipt.json",
+      "receipt_digest": {
+        "algorithm": "sha256",
+        "value": "ead167b19f26ffc3ab7a331bb9d6f7224a31101cc9140cdafcb527818c9490fc"
+      }
+    },
+    {
+      "report": "experiments/paper12/results/reports/transformer.sofreport.json",
+      "receipt": "experiments/paper12/results/report-validation-receipts/paper12-v2/transformer.validation-receipt.json",
+      "receipt_digest": {
+        "algorithm": "sha256",
+        "value": "28e47e616c921bd45afefbdba9b21129ee58f4745be8d96dcc08f108aca2c85f"
+      }
+    },
+    {
+      "report": "experiments/paper12/results/reports/transformer_batch.sofreport.json",
+      "receipt": "experiments/paper12/results/report-validation-receipts/paper12-v2/transformer_batch.validation-receipt.json",
+      "receipt_digest": {
+        "algorithm": "sha256",
+        "value": "94257e78be92384933f46fa021bf89a2c4ebdc6ba47ba0f9a56e8f8ddd33b162"
+      }
+    }
+  ]
+}

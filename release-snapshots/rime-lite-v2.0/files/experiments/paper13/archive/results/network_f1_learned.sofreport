@@ -1,0 +1,152 @@
+{
+  "sofrs_version": "1.0",
+  "report_id": "network_f1_learned",
+  "system": "4-prefix (route aliasing)",
+  "sectorization": {
+    "origin": "one-hot prefix sectors",
+    "prefixes": [
+      "P0(local)",
+      "P1(dmz)",
+      "P2(internal)",
+      "P3(external)"
+    ],
+    "sector_count": 4,
+    "strict_sof_realization": true
+  },
+  "observable_family": {
+    "observables": [
+      "X_internal",
+      "X_external = X_internal (aliased)"
+    ]
+  },
+  "support_matrix": {
+    "kind": "word-generator direct support",
+    "matrix": [
+      [
+        0,
+        1,
+        1,
+        0
+      ],
+      [
+        1,
+        0,
+        1,
+        0
+      ],
+      [
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "offdiag_count": 6
+  },
+  "bridge_matrix": {
+    "word": {
+      "matrix": [
+        [
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "offdiag_count": 6
+    },
+    "lie": {
+      "matrix": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "offdiag_count": 0
+    },
+    "claim_note": "word and Lie bridge channels are recorded separately"
+  },
+  "repair_matrix": {
+    "kind": "word-depth accessibility summary",
+    "depth_matrix": [
+      [
+        0,
+        1,
+        1,
+        999
+      ],
+      [
+        1,
+        0,
+        1,
+        999
+      ],
+      [
+        1,
+        1,
+        0,
+        999
+      ],
+      [
+        999,
+        999,
+        999,
+        0
+      ]
+    ],
+    "max_finite_depth": 1,
+    "frozen_R1": 6,
+    "frozen_D_word": 6,
+    "frozen_D_lie": 6
+  },
+  "wall_record": null,
+  "claim_status": "evidence",
+  "claim_note": "constructed failure: route aliasing",
+  "failure_modes": [
+    "X_external aliased to X_internal"
+  ]
+}

@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import hashlib
 import json
-import subprocess
 from pathlib import Path
 from typing import Any
 
@@ -15,6 +14,7 @@ from schemas.contract_api import (
     resolve_artifact_path,
     schema_errors,
 )
+from schemas.release_snapshot import resolve_release_reference
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -241,29 +241,6 @@ def v2_report_validation_receipt_errors(
             label=f"v2 receipt artifact[{index}]",
             repository_root=root,
         )
-        if (
-            reference_errors
-            and historical_commit is not None
-            and index >= len(ordered)
-        ):
-            uri = reference.get("uri")
-            expected_digest = reference.get("digest", {}).get("value")
-            if isinstance(uri, str) and isinstance(expected_digest, str):
-                result = subprocess.run(
-                    ["git", "show", f"{historical_commit}:{uri}"],
-                    cwd=root,
-                    capture_output=True,
-                )
-                if result.returncode == 0:
-                    # Historical fallback is intentionally limited to the
-                    # validator and receipt contract. The v2 release receipts
-                    # bound their Windows CRLF checkout materialization.
-                    candidates = (result.stdout, result.stdout.replace(b"\n", b"\r\n"))
-                    if any(
-                        hashlib.sha256(candidate).hexdigest() == expected_digest
-                        for candidate in candidates
-                    ):
-                        reference_errors = []
         errors.extend(reference_errors)
 
     report_ref = receipt["report"]["artifact"]
@@ -279,8 +256,10 @@ def v2_report_validation_receipt_errors(
         errors.append("v2 receipt does not bind the canonical receipt contract")
 
     try:
-        report_path = resolve_artifact_path(report_ref["uri"], repository_root=root)
-    except ValueError:
+        report_path = resolve_release_reference(
+            report_ref, repository_root=root
+        )
+    except (KeyError, ValueError):
         report_path = None
     if report_path is not None and report_path.is_file():
         report = load_json(report_path)
@@ -304,12 +283,12 @@ def v2_report_validation_receipt_errors(
     if expected_report_reference is not None:
         expected_artifact = expected_report_reference["artifact"]
         try:
-            expected_path = resolve_artifact_path(
-                expected_artifact["uri"],
+            expected_path = resolve_release_reference(
+                expected_artifact,
                 repository_root=root,
                 base_directory=expected_report_base_directory,
             )
-        except ValueError:
+        except (KeyError, ValueError):
             expected_path = None
         if expected_path is not None and report_path is not None:
             if expected_path != report_path:
@@ -365,10 +344,10 @@ def report_validation_receipt_errors(
         errors.append("SOFRS v1 receipt must bind the canonical v1.0 schema")
 
     try:
-        report_path = resolve_artifact_path(
-            report_ref["uri"], repository_root=root
+        report_path = resolve_release_reference(
+            report_ref, repository_root=root
         )
-    except ValueError:
+    except (KeyError, ValueError):
         report_path = None
     if report_path is not None and report_path.is_file():
         report = load_json(report_path)
@@ -381,12 +360,12 @@ def report_validation_receipt_errors(
     if expected_report_reference is not None:
         expected_artifact = expected_report_reference["artifact"]
         try:
-            expected_path = resolve_artifact_path(
-                expected_artifact["uri"],
+            expected_path = resolve_release_reference(
+                expected_artifact,
                 repository_root=root,
                 base_directory=expected_report_base_directory,
             )
-        except ValueError:
+        except (KeyError, ValueError):
             expected_path = None
         if expected_path is not None and report_path is not None:
             if expected_path != report_path:

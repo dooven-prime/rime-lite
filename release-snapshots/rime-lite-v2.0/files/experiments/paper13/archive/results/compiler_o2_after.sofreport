@@ -1,0 +1,209 @@
+{
+  "sofrs_version": "1.0",
+  "report_id": "compiler_o2_after",
+  "system": "Compiler IR after legitimate optimization",
+  "sectorization": {
+    "origin": "one-hot basic-block sectors in a shared five-block ambient space",
+    "blocks": [
+      "B0(entry)",
+      "B1",
+      "B2",
+      "B3(side)",
+      "B4(exit)"
+    ],
+    "sector_count": 5,
+    "strict_sof_realization": true
+  },
+  "observable_family": {
+    "observables": [
+      "X_cfg",
+      "X_defuse"
+    ],
+    "generator_type": "skew-symmetrised directed edge matrices"
+  },
+  "support_matrix": {
+    "kind": "word-generator direct support",
+    "matrix": [
+      [
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        1,
+        0,
+        0
+      ]
+    ],
+    "offdiag_count": 8
+  },
+  "bridge_matrix": {
+    "word": {
+      "matrix": [
+        [
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          0,
+          0
+        ]
+      ],
+      "offdiag_count": 10
+    },
+    "lie": {
+      "matrix": [
+        [
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          0,
+          0
+        ]
+      ],
+      "offdiag_count": 6
+    },
+    "claim_note": "word and Lie bridge channels are recorded separately"
+  },
+  "repair_matrix": {
+    "kind": "word-depth accessibility summary",
+    "depth_matrix": [
+      [
+        0,
+        1,
+        2,
+        999,
+        2
+      ],
+      [
+        1,
+        0,
+        1,
+        999,
+        1
+      ],
+      [
+        2,
+        1,
+        0,
+        999,
+        1
+      ],
+      [
+        999,
+        999,
+        999,
+        0,
+        999
+      ],
+      [
+        2,
+        1,
+        1,
+        999,
+        0
+      ]
+    ],
+    "max_finite_depth": 2,
+    "frozen_R1": 12,
+    "frozen_D_word": 8,
+    "frozen_D_lie": 8
+  },
+  "wall_record": null,
+  "claim_status": "evidence",
+  "claim_note": "controlled legitimate-transformation configuration",
+  "failure_modes": [
+    "controlled finite configuration",
+    "legitimacy is relative to the declared transformation contract"
+  ],
+  "configuration": {
+    "stage": "O2-like",
+    "active_blocks": [
+      "B0(entry)",
+      "B1",
+      "B2",
+      "B4(exit)"
+    ],
+    "retired_ambient_sector": "B3(side)"
+  }
+}

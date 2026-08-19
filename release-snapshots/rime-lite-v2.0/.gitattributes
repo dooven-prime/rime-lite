@@ -1,0 +1,2 @@
+# Historical release payloads are byte-addressed. Never normalize line endings.
+* -text

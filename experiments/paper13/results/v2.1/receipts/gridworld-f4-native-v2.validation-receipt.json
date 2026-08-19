@@ -1,0 +1,304 @@
+{
+  "receipt_version": "2.1",
+  "artifact_type": "sofaudit_validation_receipt",
+  "receipt_kind": "SOFAUDIT_VALIDATION_RECEIPT",
+  "receipt_scope": "SOFAUDIT_PROTOCOL_CONFORMANCE_ONLY",
+  "receipt_id": "receipt.gridworld-f4-native-v2.sofaudit-v2_1",
+  "audit": {
+    "audit_id": "gridworld-f4-native-v2",
+    "sofaudit_version": "2.1",
+    "artifact": {
+      "uri": "experiments/paper13/results/v2.1/audits/gridworld-f4-native-v2.sofaudit.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "243b330f517c865d7084c9930b6a451ed7f77e018752e12c22997d2c0149413a"
+      }
+    }
+  },
+  "validator": {
+    "validator_id": "sofaudit.semantic-validator.v2_1",
+    "validator_version": "2.1",
+    "implementation": {
+      "uri": "experiments/paper13/validation/validate_sofaudit_v2_1.py",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "a69cdcbb4fb7e29152ee1fd7200c8514d747290e5e118a9b81cb0fa8b4e98594"
+      }
+    },
+    "audit_contract": {
+      "uri": "schemas/sofaudit/v2.1.schema.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "c7d307bbd9f1e69e026deb7fe3f1eeeca25f745d652399bf8c4c374ba10935fe"
+      }
+    },
+    "receipt_contract": {
+      "uri": "schemas/sofaudit/validation-receipt-v2.1.schema.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "7d89e689eea44255e09937cb0746771c69a9592a8245dd6867c9093eb7104d57"
+      }
+    }
+  },
+  "generation": {
+    "kind": "migration",
+    "class": "boundary_annotation",
+    "source_version": "2.0",
+    "source_artifact": {
+      "uri": "experiments/paper13/results/native/gridworld-f4/audits/gridworld-f4-native-v2.sofaudit.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "65efd43d647c0db30974225927f29e8261219e09c901b10b96bdb7431af27f97"
+      }
+    },
+    "implementation": {
+      "uri": "experiments/paper13/validation/migrate_sofaudit_v2_to_v2_1.py",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "75592bcff8503993a261e1b71705f1be03d516411448a6981c0bf061cd42fc82"
+      }
+    }
+  },
+  "artifact_closure": {
+    "artifact_count": 19,
+    "ordered_artifacts": [
+      {
+        "role": "audit",
+        "artifact": {
+          "uri": "experiments/paper13/results/v2.1/audits/gridworld-f4-native-v2.sofaudit.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "243b330f517c865d7084c9930b6a451ed7f77e018752e12c22997d2c0149413a"
+          }
+        }
+      },
+      {
+        "role": "revision-source-audit-v2.0",
+        "artifact": {
+          "uri": "experiments/paper13/results/native/gridworld-f4/audits/gridworld-f4-native-v2.sofaudit.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "65efd43d647c0db30974225927f29e8261219e09c901b10b96bdb7431af27f97"
+          }
+        }
+      },
+      {
+        "role": "migration-implementation",
+        "artifact": {
+          "uri": "experiments/paper13/validation/migrate_sofaudit_v2_to_v2_1.py",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "75592bcff8503993a261e1b71705f1be03d516411448a6981c0bf061cd42fc82"
+          }
+        }
+      },
+      {
+        "role": "audit-contract",
+        "artifact": {
+          "uri": "schemas/sofaudit/v2.1.schema.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "c7d307bbd9f1e69e026deb7fe3f1eeeca25f745d652399bf8c4c374ba10935fe"
+          }
+        }
+      },
+      {
+        "role": "reference-report",
+        "artifact": {
+          "uri": "experiments/paper13/results/v2.1/source-reports/reports/gridworld-f4-reference.sofreport.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "4fbc1b609006ac1c8f92c1595434253eb1f3751dc11f4971c2e51f265e45cbef"
+          }
+        }
+      },
+      {
+        "role": "target-report",
+        "artifact": {
+          "uri": "experiments/paper13/results/v2.1/source-reports/reports/gridworld-f4-target.sofreport.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "96cd56fd1a4c7fbb383ed3f838b7f6252ff3eb645aff18a655fa89a38bea57b7"
+          }
+        }
+      },
+      {
+        "role": "reference-report-validation-receipt",
+        "artifact": {
+          "uri": "experiments/paper13/results/v2.1/source-reports/receipts/gridworld-f4-reference.validation-receipt.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "c325e343975241864b258cffed06a825f11977525a72dc229373ee95f6cf9c77"
+          }
+        }
+      },
+      {
+        "role": "target-report-validation-receipt",
+        "artifact": {
+          "uri": "experiments/paper13/results/v2.1/source-reports/receipts/gridworld-f4-target.validation-receipt.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "2f6519c847270c4c8b63076d6dda7100b6aa2e60b8ab9e8338f6e395841f4d01"
+          }
+        }
+      },
+      {
+        "role": "alignment-evidence",
+        "artifact": {
+          "uri": "experiments/paper13/results/native/gridworld-f4/evidence/gridworld-f4.alignment-evidence.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "9e14585b44d7b42b17d2c5f28745123b0a651c27df9794d2798313c02ac927d3"
+          }
+        }
+      },
+      {
+        "role": "raw-source-reference",
+        "artifact": {
+          "uri": "experiments/paper13/results/native/gridworld-f4/sources/gridworld-reference.source.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "e0b33bc2b62af3e1c95194c0e452ac46f7eb3cc606f06e61924bf42424cc2371"
+          }
+        }
+      },
+      {
+        "role": "raw-source-target",
+        "artifact": {
+          "uri": "experiments/paper13/results/native/gridworld-f4/sources/gridworld-f4-target.source.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "af0128851ab11934042ae6dffddd52fd4d82273f7929303b15153e917fb8f06f"
+          }
+        }
+      },
+      {
+        "role": "independent-recomputation-implementation",
+        "artifact": {
+          "uri": "experiments/paper13/validation/gridworld_f4_object_certificate.py",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "fa988371467ed0097ef94fefceff15f046461a730cd2a3943b2d4a814ed2f40f"
+          }
+        }
+      },
+      {
+        "role": "object-oracle-result",
+        "artifact": {
+          "uri": "experiments/paper13/results/object-certificates/gridworld_f4.object-certificate.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "98d3588f8d4d267ad836a9ee7edd4ccadb4d617dd4a1daadb194023377ff5eac"
+          }
+        }
+      },
+      {
+        "role": "audit-result",
+        "artifact": {
+          "uri": "experiments/paper13/results/native/gridworld-f4/evidence/gridworld-f4.audit-result.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "f2be99fe78ca9c64b5ad0056175f22fe7b5e919e9a9b247db7696bd5607fda9f"
+          }
+        }
+      },
+      {
+        "role": "audit-generator",
+        "artifact": {
+          "uri": "experiments/paper13/validation/gridworld_f4_native_v2.py",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "d97955cbdfae68b872a7b9a88da4f30aa26c742f230dc08960101f7ee392e194"
+          }
+        }
+      },
+      {
+        "role": "audit-profile",
+        "artifact": {
+          "uri": "schemas/sofaudit/paper13-gridworld-f4-native-profile-v2.0.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "93728478c21d1b9af85c57abfccad857f0cbb62103bead52cf77f2e7ec973a6f"
+          }
+        }
+      },
+      {
+        "role": "coordinate-semantics-registry",
+        "artifact": {
+          "uri": "schemas/sofaudit/coordinate-semantics-registry-v1.0.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "1d2dc24ae56cfb364b02bccf8c0c3068138e6d07682cf4b0561ec75f765c6d48"
+          }
+        }
+      },
+      {
+        "role": "validator-implementation",
+        "artifact": {
+          "uri": "experiments/paper13/validation/validate_sofaudit_v2_1.py",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "a69cdcbb4fb7e29152ee1fd7200c8514d747290e5e118a9b81cb0fa8b4e98594"
+          }
+        }
+      },
+      {
+        "role": "validation-receipt-contract",
+        "artifact": {
+          "uri": "schemas/sofaudit/validation-receipt-v2.1.schema.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "7d89e689eea44255e09937cb0746771c69a9592a8245dd6867c9093eb7104d57"
+          }
+        }
+      }
+    ],
+    "closure_digest": {
+      "algorithm": "sha256",
+      "value": "9167e2bd13632baf00e1858c69664ce42ef3b12b58a1af26483eebafb197e810"
+    }
+  },
+  "status": "PASS",
+  "checks": [
+    {
+      "check_id": "aligned-difference-without-attribution",
+      "status": "PASS"
+    },
+    {
+      "check_id": "artifact-digest-closure",
+      "status": "PASS"
+    },
+    {
+      "check_id": "explicit-v2.0-to-v2.1-migration",
+      "status": "PASS"
+    },
+    {
+      "check_id": "forbidden-semantic-role-scan",
+      "status": "PASS"
+    },
+    {
+      "check_id": "reference-role-boundary",
+      "status": "PASS"
+    },
+    {
+      "check_id": "schema-validation",
+      "status": "PASS"
+    },
+    {
+      "check_id": "source-report-receipt-validation",
+      "status": "PASS"
+    },
+    {
+      "check_id": "v2.0-source-validation",
+      "status": "PASS"
+    }
+  ],
+  "attribution_boundary": {
+    "causal_status": "OUT_OF_SCOPE_FOR_SOFAUDIT",
+    "defect_attribution_status": "OUT_OF_SCOPE_FOR_SOFAUDIT",
+    "reference_causal_role": "NOT_A_CAUSAL_BASELINE"
+  },
+  "negative_boundaries": [
+    "This receipt establishes aligned-comparison protocol conformance only; localization is not defect or causal attribution, and the reference is not a causal baseline."
+  ]
+}

@@ -12,7 +12,7 @@
       "uri": "experiments/paper12/results/v2.1/reports/nvidia_llama31_8b_20260711.sofreport.json",
       "digest": {
         "algorithm": "sha256",
-        "value": "5de4f0e1bc5e7cd4b3df345d068d7979d169511db2f0dc37ce1746844948c54b"
+        "value": "5afa7e37c00620f5f9828289c70ec9f55ffc997c54f954d2a0b5c717a13c397a"
       }
     }
   },
@@ -23,21 +23,21 @@
       "uri": "experiments/paper12/validation/validate_sofrs_v2_1.py",
       "digest": {
         "algorithm": "sha256",
-        "value": "f3a48081daa925d1089bd44f14c3177a1111acda3ca7cf4736869fe11e3f5363"
+        "value": "bd4a49eac44659c6f07e17899ebc72964f23fa7509a702107eca5ace769c7c4e"
       }
     },
     "report_contract": {
       "uri": "schemas/sofrs/v2.1.schema.json",
       "digest": {
         "algorithm": "sha256",
-        "value": "d5b01ed346c0ffad445fc1059890210f7f33ba6b6ea45dc7d43e86f7254c6919"
+        "value": "cb7803deff08d7f93e36d2d1157e2bcf9563048ccf5ee28fd9a16d82cb1993da"
       }
     },
     "receipt_contract": {
       "uri": "schemas/sofrs/report-validation-receipt-v2.1.schema.json",
       "digest": {
         "algorithm": "sha256",
-        "value": "2e00daebf8c8b0ce6ba59aecd8c69eab2cd0142452b84cd354a469419cde6fd7"
+        "value": "defd2bcaaac9d5f1a1ff2907494b35dfb853ca729244dced733a6329e69f6820"
       }
     }
   },
@@ -63,7 +63,7 @@
       "uri": "experiments/paper12/validation/migrate_sofrs_v2_to_v2_1.py",
       "digest": {
         "algorithm": "sha256",
-        "value": "0c6eec82b760b1173bf9b494c77365ce607edf4228a36938a6583b720c995b46"
+        "value": "b800f6f0362e98cf24b4c81e1faaa54714fac7e814fb7dcb9c522cd0a2ebecb4"
       }
     }
   },
@@ -76,7 +76,7 @@
           "uri": "experiments/paper12/results/v2.1/reports/nvidia_llama31_8b_20260711.sofreport.json",
           "digest": {
             "algorithm": "sha256",
-            "value": "5de4f0e1bc5e7cd4b3df345d068d7979d169511db2f0dc37ce1746844948c54b"
+            "value": "5afa7e37c00620f5f9828289c70ec9f55ffc997c54f954d2a0b5c717a13c397a"
           }
         }
       },
@@ -106,7 +106,7 @@
           "uri": "experiments/paper12/validation/migrate_sofrs_v2_to_v2_1.py",
           "digest": {
             "algorithm": "sha256",
-            "value": "0c6eec82b760b1173bf9b494c77365ce607edf4228a36938a6583b720c995b46"
+            "value": "b800f6f0362e98cf24b4c81e1faaa54714fac7e814fb7dcb9c522cd0a2ebecb4"
           }
         }
       },
@@ -126,7 +126,7 @@
           "uri": "schemas/sofrs/v2.0.schema.json",
           "digest": {
             "algorithm": "sha256",
-            "value": "a075ed1d392d42063eac53f5c721c04a258b7aa72f21357f124dc0fa8ab4e465"
+            "value": "8a751bd62a2746b334c81a394e6dce1cb1a9251c978aa723aef69c602dce098e"
           }
         }
       },
@@ -136,7 +136,7 @@
           "uri": "schemas/sofrs/report-validation-receipt-v2.0.schema.json",
           "digest": {
             "algorithm": "sha256",
-            "value": "3268e1119185a8401ac08ff2b41745152e9a7787b75bff9e3f0ff5183e5ae672"
+            "value": "84254cf908ce21a5d8ab6267e7e5c9a0b06bca3aa8caaa9246e1f9b492855647"
           }
         }
       },
@@ -146,7 +146,7 @@
           "uri": "schemas/sofrs/api.py",
           "digest": {
             "algorithm": "sha256",
-            "value": "d14032f47357393d45c5885916371a785cf662684494accc28ec61187ce2d4b3"
+            "value": "5f4e7f5e55944aa826a8c1977f501452f0680b4b9adec22f9e8ae16bed249e78"
           }
         }
       },
@@ -156,7 +156,7 @@
           "uri": "schemas/non_intervention.py",
           "digest": {
             "algorithm": "sha256",
-            "value": "da582ed29a6117b6e9431790cf53d64caf197a45268c6a9008607cf558b27689"
+            "value": "0e161d1450b310ac099ed62a7ad2914110a403a9bdd2aa37ec1d2b1a8335c857"
           }
         }
       },
@@ -166,7 +166,7 @@
           "uri": "schemas/sofrs/v2.1.schema.json",
           "digest": {
             "algorithm": "sha256",
-            "value": "d5b01ed346c0ffad445fc1059890210f7f33ba6b6ea45dc7d43e86f7254c6919"
+            "value": "cb7803deff08d7f93e36d2d1157e2bcf9563048ccf5ee28fd9a16d82cb1993da"
           }
         }
       },
@@ -236,7 +236,7 @@
           "uri": "experiments/paper12/validation/validate_sofrs_v2_1.py",
           "digest": {
             "algorithm": "sha256",
-            "value": "f3a48081daa925d1089bd44f14c3177a1111acda3ca7cf4736869fe11e3f5363"
+            "value": "bd4a49eac44659c6f07e17899ebc72964f23fa7509a702107eca5ace769c7c4e"
           }
         }
       },
@@ -246,14 +246,14 @@
           "uri": "schemas/sofrs/report-validation-receipt-v2.1.schema.json",
           "digest": {
             "algorithm": "sha256",
-            "value": "2e00daebf8c8b0ce6ba59aecd8c69eab2cd0142452b84cd354a469419cde6fd7"
+            "value": "defd2bcaaac9d5f1a1ff2907494b35dfb853ca729244dced733a6329e69f6820"
           }
         }
       }
     ],
     "closure_digest": {
       "algorithm": "sha256",
-      "value": "328af7ac19ebd52959e249a6d1268f15d00fc464d714dc0dca4eda8d9f61be4c"
+      "value": "49a7dc3f0396828b495e549c222ca4ed5652d9a127c79ff2dec044c1e3354121"
     }
   },
   "status": "PASS",

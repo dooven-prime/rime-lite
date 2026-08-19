@@ -37,12 +37,28 @@ def load_json(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def canonical_source_receipt_path(source_path: Path) -> Path:
+    """Return the frozen v2 receipt location owned by the source-report set."""
+
+    source_path = source_path.resolve()
+    if source_path.is_relative_to(PAPER_DIR / "results" / "reports"):
+        return SOURCE_RECEIPT_DIR / (
+            source_path.name.removesuffix(".sofreport.json")
+            + ".validation-receipt.json"
+        )
+    if source_path.parent.name == "reports" and source_path.parent.parent.name == "source-reports":
+        return source_path.parent.parent / "receipts" / (
+            source_path.name.removesuffix(".sofreport.json")
+            + ".validation-receipt.json"
+        )
+    raise ValueError(f"unsupported source-report location: {source_path}")
+
+
 def source_validation_receipt(source_path: Path) -> dict[str, Any]:
     """Require the frozen v2 receipt before annotating a report as v2.1."""
 
     source_path = source_path.resolve()
-    stem = source_path.name.removesuffix(".sofreport.json")
-    receipt_path = SOURCE_RECEIPT_DIR / f"{stem}.validation-receipt.json"
+    receipt_path = canonical_source_receipt_path(source_path)
     if not receipt_path.is_file():
         raise ValueError(f"missing v2.0 source validation receipt: {receipt_path}")
 

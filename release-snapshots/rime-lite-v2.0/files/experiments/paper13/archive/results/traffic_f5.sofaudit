@@ -1,0 +1,482 @@
+{
+  "sofaudit_version": "1.0",
+  "report_type": "sofaudit",
+  "comparison_object": "SOFReportComparison",
+  "audit_id": "traffic_f5",
+  "system": "2x2 traffic wall record audit",
+  "claim_status": "evidence",
+  "claim_note": "controlled protocol validation",
+  "regime": "A",
+  "failure_mode": "f5_wall_record",
+  "reference": {
+    "report_id": "traffic_ref",
+    "artifact": "traffic_ref.sofreport",
+    "label": "Traffic2x2(rho=1.000)"
+  },
+  "target": {
+    "report_id": "traffic_f5_learned",
+    "artifact": "traffic_f5_learned.sofreport",
+    "label": "Traffic2x2(rho=2.000)"
+  },
+  "alignment": {
+    "sector_alignment": {
+      "kind": "identity"
+    },
+    "observable_alignment": {
+      "kind": "identity"
+    }
+  },
+  "comparison_specification": {
+    "specification_id": "paper13-coordinatewise-v1",
+    "normalization": {
+      "ordered_pairs": 12,
+      "action_opportunities": 24,
+      "constraint_opportunities": 8,
+      "path_samples": 21
+    },
+    "metric": {
+      "signature": "coordinatewise mismatch records and counts",
+      "fixed_fiber_structural": "weighted Hamming when explicitly invoked"
+    },
+    "depth_semantics": "inherited from linked SOF Reports",
+    "thresholds": {
+      "source": "linked SOF Reports or coordinate defaults"
+    },
+    "parameter_synchronization": {
+      "mode": "index_aligned",
+      "path_samples": 21
+    },
+    "aggregation": {
+      "mode": "coordinatewise",
+      "scalarization": "none"
+    }
+  },
+  "signature": {
+    "support_mismatch": {
+      "extra": [],
+      "extra_count": 0,
+      "missing": [],
+      "missing_count": 0,
+      "total_mismatch": 0,
+      "ref_offdiag": 8,
+      "candidate_offdiag": 8
+    },
+    "bridge_word_mismatch": {
+      "extra": [],
+      "extra_count": 0,
+      "missing": [],
+      "missing_count": 0,
+      "total_mismatch": 0,
+      "ref_offdiag": 4,
+      "candidate_offdiag": 4
+    },
+    "bridge_lie_mismatch": {
+      "extra": [],
+      "extra_count": 0,
+      "missing": [],
+      "missing_count": 0,
+      "total_mismatch": 0,
+      "ref_offdiag": 0,
+      "candidate_offdiag": 0
+    },
+    "depth_distortion": {
+      "total_mismatch": 0,
+      "depth_distortions": [],
+      "distortion_count": 0,
+      "ref_frozen_candidate_not": [],
+      "ref_frozen_candidate_not_count": 0,
+      "candidate_frozen_ref_not": [],
+      "candidate_frozen_ref_not_count": 0
+    },
+    "frozen_disagreement": {
+      "frozen_R1": {
+        "ref": 4,
+        "candidate": 4,
+        "delta": 0
+      },
+      "frozen_D_word": {
+        "ref": 0,
+        "candidate": 0,
+        "delta": 0
+      },
+      "frozen_D_lie": {
+        "ref": 4,
+        "candidate": 4,
+        "delta": 0
+      }
+    },
+    "constraint_violations": {
+      "violations": [],
+      "count": 0
+    },
+    "action_response_failure": {
+      "per_action_deltas": {
+        "phase_A": [
+          {
+            "pair": [
+              "NW",
+              "SW"
+            ],
+            "ref": 0.25,
+            "candidate": 0.333333,
+            "delta": 0.083333
+          },
+          {
+            "pair": [
+              "NE",
+              "SE"
+            ],
+            "ref": 0.25,
+            "candidate": 0.333333,
+            "delta": 0.083333
+          },
+          {
+            "pair": [
+              "SW",
+              "NW"
+            ],
+            "ref": 0.25,
+            "candidate": 0.333333,
+            "delta": 0.083333
+          },
+          {
+            "pair": [
+              "SE",
+              "NE"
+            ],
+            "ref": 0.25,
+            "candidate": 0.333333,
+            "delta": 0.083333
+          }
+        ],
+        "phase_B": [
+          {
+            "pair": [
+              "NW",
+              "NE"
+            ],
+            "ref": 0.25,
+            "candidate": 0.166667,
+            "delta": 0.083333
+          },
+          {
+            "pair": [
+              "NE",
+              "NW"
+            ],
+            "ref": 0.25,
+            "candidate": 0.166667,
+            "delta": 0.083333
+          },
+          {
+            "pair": [
+              "SW",
+              "SE"
+            ],
+            "ref": 0.25,
+            "candidate": 0.166667,
+            "delta": 0.083333
+          },
+          {
+            "pair": [
+              "SE",
+              "SW"
+            ],
+            "ref": 0.25,
+            "candidate": 0.166667,
+            "delta": 0.083333
+          }
+        ]
+      },
+      "total_large_deltas": 8,
+      "action_aliasing": [],
+      "response_sep": {
+        "ref": 0.707107,
+        "candidate": 0.745356
+      }
+    },
+    "wall_record_mismatch": {
+      "steps": [
+        {
+          "step": 0,
+          "rho": 0.01,
+          "frozen_R1_ref": 4,
+          "frozen_R1_lrn": 4,
+          "frozen_R1_delta": 0,
+          "frozen_D_word_ref": 0,
+          "frozen_D_word_lrn": 0,
+          "frozen_D_word_delta": 0,
+          "frozen_D_lie_ref": 4,
+          "frozen_D_lie_lrn": 4,
+          "frozen_D_lie_delta": 0
+        },
+        {
+          "step": 1,
+          "rho": 0.015848931924611134,
+          "frozen_R1_ref": 4,
+          "frozen_R1_lrn": 4,
+          "frozen_R1_delta": 0,
+          "frozen_D_word_ref": 0,
+          "frozen_D_word_lrn": 0,
+          "frozen_D_word_delta": 0,
+          "frozen_D_lie_ref": 4,
+          "frozen_D_lie_lrn": 4,
+          "frozen_D_lie_delta": 0
+        },
+        {
+          "step": 2,
+          "rho": 0.025118864315095794,
+          "frozen_R1_ref": 4,
+          "frozen_R1_lrn": 4,
+          "frozen_R1_delta": 0,
+          "frozen_D_word_ref": 0,
+          "frozen_D_word_lrn": 0,
+          "frozen_D_word_delta": 0,
+          "frozen_D_lie_ref": 4,
+          "frozen_D_lie_lrn": 4,
+          "frozen_D_lie_delta": 0
+        },
+        {
+          "step": 3,
+          "rho": 0.039810717055349734,
+          "frozen_R1_ref": 4,
+          "frozen_R1_lrn": 4,
+          "frozen_R1_delta": 0,
+          "frozen_D_word_ref": 0,
+          "frozen_D_word_lrn": 0,
+          "frozen_D_word_delta": 0,
+          "frozen_D_lie_ref": 4,
+          "frozen_D_lie_lrn": 4,
+          "frozen_D_lie_delta": 0
+        },
+        {
+          "step": 4,
+          "rho": 0.06309573444801933,
+          "frozen_R1_ref": 4,
+          "frozen_R1_lrn": 4,
+          "frozen_R1_delta": 0,
+          "frozen_D_word_ref": 0,
+          "frozen_D_word_lrn": 0,
+          "frozen_D_word_delta": 0,
+          "frozen_D_lie_ref": 4,
+          "frozen_D_lie_lrn": 4,
+          "frozen_D_lie_delta": 0
+        },
+        {
+          "step": 5,
+          "rho": 0.1,
+          "frozen_R1_ref": 4,
+          "frozen_R1_lrn": 4,
+          "frozen_R1_delta": 0,
+          "frozen_D_word_ref": 0,
+          "frozen_D_word_lrn": 0,
+          "frozen_D_word_delta": 0,
+          "frozen_D_lie_ref": 4,
+          "frozen_D_lie_lrn": 4,
+          "frozen_D_lie_delta": 0
+        },
+        {
+          "step": 6,
+          "rho": 0.15848931924611143,
+          "frozen_R1_ref": 4,
+          "frozen_R1_lrn": 4,
+          "frozen_R1_delta": 0,
+          "frozen_D_word_ref": 0,
+          "frozen_D_word_lrn": 0,
+          "frozen_D_word_delta": 0,
+          "frozen_D_lie_ref": 4,
+          "frozen_D_lie_lrn": 4,
+          "frozen_D_lie_delta": 0
+        },
+        {
+          "step": 7,
+          "rho": 0.25118864315095807,
+          "frozen_R1_ref": 4,
+          "frozen_R1_lrn": 4,
+          "frozen_R1_delta": 0,
+          "frozen_D_word_ref": 0,
+          "frozen_D_word_lrn": 0,
+          "frozen_D_word_delta": 0,
+          "frozen_D_lie_ref": 4,
+          "frozen_D_lie_lrn": 4,
+          "frozen_D_lie_delta": 0
+        },
+        {
+          "step": 8,
+          "rho": 0.3981071705534973,
+          "frozen_R1_ref": 4,
+          "frozen_R1_lrn": 4,
+          "frozen_R1_delta": 0,
+          "frozen_D_word_ref": 0,
+          "frozen_D_word_lrn": 0,
+          "frozen_D_word_delta": 0,
+          "frozen_D_lie_ref": 4,
+          "frozen_D_lie_lrn": 4,
+          "frozen_D_lie_delta": 0
+        },
+        {
+          "step": 9,
+          "rho": 0.6309573444801934,
+          "frozen_R1_ref": 4,
+          "frozen_R1_lrn": 4,
+          "frozen_R1_delta": 0,
+          "frozen_D_word_ref": 0,
+          "frozen_D_word_lrn": 0,
+          "frozen_D_word_delta": 0,
+          "frozen_D_lie_ref": 4,
+          "frozen_D_lie_lrn": 4,
+          "frozen_D_lie_delta": 0
+        },
+        {
+          "step": 10,
+          "rho": 1.0,
+          "frozen_R1_ref": 4,
+          "frozen_R1_lrn": 4,
+          "frozen_R1_delta": 0,
+          "frozen_D_word_ref": 0,
+          "frozen_D_word_lrn": 0,
+          "frozen_D_word_delta": 0,
+          "frozen_D_lie_ref": 4,
+          "frozen_D_lie_lrn": 4,
+          "frozen_D_lie_delta": 0
+        },
+        {
+          "step": 11,
+          "rho": 1.584893192461114,
+          "frozen_R1_ref": 4,
+          "frozen_R1_lrn": 4,
+          "frozen_R1_delta": 0,
+          "frozen_D_word_ref": 0,
+          "frozen_D_word_lrn": 0,
+          "frozen_D_word_delta": 0,
+          "frozen_D_lie_ref": 4,
+          "frozen_D_lie_lrn": 4,
+          "frozen_D_lie_delta": 0
+        },
+        {
+          "step": 12,
+          "rho": 2.5118864315095824,
+          "frozen_R1_ref": 4,
+          "frozen_R1_lrn": 4,
+          "frozen_R1_delta": 0,
+          "frozen_D_word_ref": 0,
+          "frozen_D_word_lrn": 0,
+          "frozen_D_word_delta": 0,
+          "frozen_D_lie_ref": 4,
+          "frozen_D_lie_lrn": 4,
+          "frozen_D_lie_delta": 0
+        },
+        {
+          "step": 13,
+          "rho": 3.981071705534973,
+          "frozen_R1_ref": 4,
+          "frozen_R1_lrn": 4,
+          "frozen_R1_delta": 0,
+          "frozen_D_word_ref": 0,
+          "frozen_D_word_lrn": 0,
+          "frozen_D_word_delta": 0,
+          "frozen_D_lie_ref": 4,
+          "frozen_D_lie_lrn": 4,
+          "frozen_D_lie_delta": 0
+        },
+        {
+          "step": 14,
+          "rho": 6.309573444801936,
+          "frozen_R1_ref": 4,
+          "frozen_R1_lrn": 4,
+          "frozen_R1_delta": 0,
+          "frozen_D_word_ref": 0,
+          "frozen_D_word_lrn": 0,
+          "frozen_D_word_delta": 0,
+          "frozen_D_lie_ref": 4,
+          "frozen_D_lie_lrn": 4,
+          "frozen_D_lie_delta": 0
+        },
+        {
+          "step": 15,
+          "rho": 10.0,
+          "frozen_R1_ref": 4,
+          "frozen_R1_lrn": 4,
+          "frozen_R1_delta": 0,
+          "frozen_D_word_ref": 0,
+          "frozen_D_word_lrn": 0,
+          "frozen_D_word_delta": 0,
+          "frozen_D_lie_ref": 4,
+          "frozen_D_lie_lrn": 4,
+          "frozen_D_lie_delta": 0
+        },
+        {
+          "step": 16,
+          "rho": 15.848931924611142,
+          "frozen_R1_ref": 4,
+          "frozen_R1_lrn": 4,
+          "frozen_R1_delta": 0,
+          "frozen_D_word_ref": 0,
+          "frozen_D_word_lrn": 0,
+          "frozen_D_word_delta": 0,
+          "frozen_D_lie_ref": 4,
+          "frozen_D_lie_lrn": 4,
+          "frozen_D_lie_delta": 0
+        },
+        {
+          "step": 17,
+          "rho": 25.11886431509582,
+          "frozen_R1_ref": 4,
+          "frozen_R1_lrn": 4,
+          "frozen_R1_delta": 0,
+          "frozen_D_word_ref": 0,
+          "frozen_D_word_lrn": 0,
+          "frozen_D_word_delta": 0,
+          "frozen_D_lie_ref": 4,
+          "frozen_D_lie_lrn": 4,
+          "frozen_D_lie_delta": 0
+        },
+        {
+          "step": 18,
+          "rho": 39.810717055349734,
+          "frozen_R1_ref": 4,
+          "frozen_R1_lrn": 4,
+          "frozen_R1_delta": 0,
+          "frozen_D_word_ref": 0,
+          "frozen_D_word_lrn": 0,
+          "frozen_D_word_delta": 0,
+          "frozen_D_lie_ref": 4,
+          "frozen_D_lie_lrn": 4,
+          "frozen_D_lie_delta": 0
+        },
+        {
+          "step": 19,
+          "rho": 63.095734448019364,
+          "frozen_R1_ref": 4,
+          "frozen_R1_lrn": 4,
+          "frozen_R1_delta": 0,
+          "frozen_D_word_ref": 0,
+          "frozen_D_word_lrn": 0,
+          "frozen_D_word_delta": 0,
+          "frozen_D_lie_ref": 4,
+          "frozen_D_lie_lrn": 4,
+          "frozen_D_lie_delta": 0
+        },
+        {
+          "step": 20,
+          "rho": 100.0,
+          "frozen_R1_ref": 4,
+          "frozen_R1_lrn": 4,
+          "frozen_R1_delta": 0,
+          "frozen_D_word_ref": 0,
+          "frozen_D_word_lrn": 0,
+          "frozen_D_word_delta": 0,
+          "frozen_D_lie_ref": 4,
+          "frozen_D_lie_lrn": 4,
+          "frozen_D_lie_delta": 0
+        }
+      ],
+      "n_steps": 21
+    }
+  },
+  "failure_modes": [
+    "controlled constructed variant, not a production candidate system",
+    "identity alignment only",
+    "audit sensitivity is relative to the declared observable family"
+  ]
+}

@@ -1,0 +1,203 @@
+{
+  "sofaudit_version": "1.0",
+  "report_type": "sofaudit",
+  "comparison_object": "SOFReportComparison",
+  "audit_id": "traffic_f4",
+  "system": "2x2 traffic timing distortion audit",
+  "claim_status": "evidence",
+  "claim_note": "controlled protocol validation",
+  "regime": "A",
+  "failure_mode": "f4_timing_distortion",
+  "reference": {
+    "report_id": "traffic_ref",
+    "artifact": "traffic_ref.sofreport",
+    "label": "Traffic2x2(rho=1.000)"
+  },
+  "target": {
+    "report_id": "traffic_f4_learned",
+    "artifact": "traffic_f4_learned.sofreport",
+    "label": "rho=0.01"
+  },
+  "alignment": {
+    "sector_alignment": {
+      "kind": "identity"
+    },
+    "observable_alignment": {
+      "kind": "identity"
+    }
+  },
+  "comparison_specification": {
+    "specification_id": "paper13-coordinatewise-v1",
+    "normalization": {
+      "ordered_pairs": 12,
+      "action_opportunities": 24,
+      "constraint_opportunities": 8
+    },
+    "metric": {
+      "signature": "coordinatewise mismatch records and counts",
+      "fixed_fiber_structural": "weighted Hamming when explicitly invoked"
+    },
+    "depth_semantics": "inherited from linked SOF Reports",
+    "thresholds": {
+      "source": "linked SOF Reports or coordinate defaults"
+    },
+    "parameter_synchronization": {
+      "mode": "not_applicable"
+    },
+    "aggregation": {
+      "mode": "coordinatewise",
+      "scalarization": "none"
+    }
+  },
+  "signature": {
+    "support_mismatch": {
+      "extra": [],
+      "extra_count": 0,
+      "missing": [],
+      "missing_count": 0,
+      "total_mismatch": 0,
+      "ref_offdiag": 8,
+      "candidate_offdiag": 8
+    },
+    "bridge_word_mismatch": {
+      "extra": [],
+      "extra_count": 0,
+      "missing": [],
+      "missing_count": 0,
+      "total_mismatch": 0,
+      "ref_offdiag": 4,
+      "candidate_offdiag": 4
+    },
+    "bridge_lie_mismatch": {
+      "extra": [],
+      "extra_count": 0,
+      "missing": [],
+      "missing_count": 0,
+      "total_mismatch": 0,
+      "ref_offdiag": 0,
+      "candidate_offdiag": 0
+    },
+    "depth_distortion": {
+      "total_mismatch": 0,
+      "depth_distortions": [],
+      "distortion_count": 0,
+      "ref_frozen_candidate_not": [],
+      "ref_frozen_candidate_not_count": 0,
+      "candidate_frozen_ref_not": [],
+      "candidate_frozen_ref_not_count": 0
+    },
+    "frozen_disagreement": {
+      "frozen_R1": {
+        "ref": 4,
+        "candidate": 4,
+        "delta": 0
+      },
+      "frozen_D_word": {
+        "ref": 0,
+        "candidate": 0,
+        "delta": 0
+      },
+      "frozen_D_lie": {
+        "ref": 4,
+        "candidate": 4,
+        "delta": 0
+      }
+    },
+    "constraint_violations": {
+      "violations": [],
+      "count": 0
+    },
+    "action_response_failure": {
+      "per_action_deltas": {
+        "phase_A": [
+          {
+            "pair": [
+              "NW",
+              "SW"
+            ],
+            "ref": 0.25,
+            "candidate": 0.00495,
+            "delta": 0.24505
+          },
+          {
+            "pair": [
+              "NE",
+              "SE"
+            ],
+            "ref": 0.25,
+            "candidate": 0.00495,
+            "delta": 0.24505
+          },
+          {
+            "pair": [
+              "SW",
+              "NW"
+            ],
+            "ref": 0.25,
+            "candidate": 0.00495,
+            "delta": 0.24505
+          },
+          {
+            "pair": [
+              "SE",
+              "NE"
+            ],
+            "ref": 0.25,
+            "candidate": 0.00495,
+            "delta": 0.24505
+          }
+        ],
+        "phase_B": [
+          {
+            "pair": [
+              "NW",
+              "NE"
+            ],
+            "ref": 0.25,
+            "candidate": 0.49505,
+            "delta": 0.24505
+          },
+          {
+            "pair": [
+              "NE",
+              "NW"
+            ],
+            "ref": 0.25,
+            "candidate": 0.49505,
+            "delta": 0.24505
+          },
+          {
+            "pair": [
+              "SW",
+              "SE"
+            ],
+            "ref": 0.25,
+            "candidate": 0.49505,
+            "delta": 0.24505
+          },
+          {
+            "pair": [
+              "SE",
+              "SW"
+            ],
+            "ref": 0.25,
+            "candidate": 0.49505,
+            "delta": 0.24505
+          }
+        ]
+      },
+      "total_large_deltas": 8,
+      "action_aliasing": [],
+      "response_sep": {
+        "ref": 0.707107,
+        "candidate": 0.990149
+      }
+    },
+    "wall_record_mismatch": null
+  },
+  "failure_modes": [
+    "controlled constructed variant, not a production candidate system",
+    "identity alignment only",
+    "audit sensitivity is relative to the declared observable family"
+  ]
+}

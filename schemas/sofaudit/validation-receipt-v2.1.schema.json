@@ -1,0 +1,185 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rime-project.local/schemas/sofaudit/validation-receipt-v2.1.schema.json",
+  "title": "SOFAUDIT v2.1 Validation Receipt",
+  "description": "Source-addressed conformance receipt for a SOFAUDIT v2.1 aligned comparison. PASS does not establish interpretation, defect attribution, causal attribution, or a causal baseline.",
+  "type": "object",
+  "required": [
+    "receipt_version",
+    "artifact_type",
+    "receipt_kind",
+    "receipt_scope",
+    "receipt_id",
+    "audit",
+    "validator",
+    "generation",
+    "artifact_closure",
+    "status",
+    "checks",
+    "attribution_boundary",
+    "negative_boundaries"
+  ],
+  "properties": {
+    "receipt_version": {"const": "2.1"},
+    "artifact_type": {"const": "sofaudit_validation_receipt"},
+    "receipt_kind": {"const": "SOFAUDIT_VALIDATION_RECEIPT"},
+    "receipt_scope": {"const": "SOFAUDIT_PROTOCOL_CONFORMANCE_ONLY"},
+    "receipt_id": {"$ref": "#/$defs/id"},
+    "audit": {
+      "type": "object",
+      "required": ["audit_id", "sofaudit_version", "artifact"],
+      "properties": {
+        "audit_id": {"$ref": "#/$defs/id"},
+        "sofaudit_version": {"const": "2.1"},
+        "artifact": {"$ref": "#/$defs/artifact_reference"}
+      },
+      "additionalProperties": false
+    },
+    "validator": {
+      "type": "object",
+      "required": ["validator_id", "validator_version", "implementation", "audit_contract", "receipt_contract"],
+      "properties": {
+        "validator_id": {"const": "sofaudit.semantic-validator.v2_1"},
+        "validator_version": {"const": "2.1"},
+        "implementation": {"$ref": "#/$defs/artifact_reference"},
+        "audit_contract": {"$ref": "#/$defs/artifact_reference"},
+        "receipt_contract": {"$ref": "#/$defs/artifact_reference"}
+      },
+      "additionalProperties": false
+    },
+    "generation": {"$ref": "#/$defs/generation_provenance"},
+    "artifact_closure": {"$ref": "#/$defs/artifact_closure"},
+    "status": {"const": "PASS"},
+    "checks": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "required": ["check_id", "status"],
+        "properties": {
+          "check_id": {
+            "enum": [
+              "aligned-difference-without-attribution",
+              "artifact-digest-closure",
+              "explicit-v2.0-to-v2.1-migration",
+              "generation-input-closure",
+              "native-v2.1-generation",
+              "forbidden-semantic-role-scan",
+              "reference-role-boundary",
+              "schema-validation",
+              "source-report-receipt-validation",
+              "v2.0-source-validation"
+            ]
+          },
+          "status": {"const": "PASS"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "attribution_boundary": {
+      "type": "object",
+      "required": ["causal_status", "defect_attribution_status", "reference_causal_role"],
+      "properties": {
+        "causal_status": {"const": "OUT_OF_SCOPE_FOR_SOFAUDIT"},
+        "defect_attribution_status": {"const": "OUT_OF_SCOPE_FOR_SOFAUDIT"},
+        "reference_causal_role": {"const": "NOT_A_CAUSAL_BASELINE"}
+      },
+      "additionalProperties": false
+    },
+    "negative_boundaries": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    }
+  },
+  "$defs": {
+    "generation_provenance": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": ["kind", "class", "source_version", "source_artifact", "implementation"],
+          "properties": {
+            "kind": {"const": "migration"},
+            "class": {"const": "boundary_annotation"},
+            "source_version": {"const": "2.0"},
+            "source_artifact": {"$ref": "#/$defs/artifact_reference"},
+            "implementation": {"$ref": "#/$defs/artifact_reference"}
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": ["kind", "implementation", "input_artifacts"],
+          "properties": {
+            "kind": {"const": "native"},
+            "implementation": {"$ref": "#/$defs/artifact_reference"},
+            "input_artifacts": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {"$ref": "#/$defs/artifact_reference"}
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]*$"},
+    "digest": {
+      "type": "object",
+      "required": [
+        "algorithm",
+        "value"
+      ],
+      "properties": {
+        "algorithm": {
+          "const": "sha256"
+        },
+        "value": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "artifact_reference": {
+      "type": "object",
+      "required": [
+        "uri",
+        "digest"
+      ],
+      "properties": {
+        "uri": {
+          "type": "string",
+          "minLength": 1
+        },
+        "digest": {
+          "$ref": "#/$defs/digest"
+        }
+      },
+      "additionalProperties": false
+    },
+    "closure_item": {
+      "type": "object",
+      "required": ["role", "artifact"],
+      "properties": {
+        "role": {"type": "string", "minLength": 1},
+        "artifact": {"$ref": "#/$defs/artifact_reference"}
+      },
+      "additionalProperties": false
+    },
+    "artifact_closure": {
+      "type": "object",
+      "required": ["artifact_count", "ordered_artifacts", "closure_digest"],
+      "properties": {
+        "artifact_count": {"type": "integer", "minimum": 1},
+        "ordered_artifacts": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/closure_item"}},
+        "closure_digest": {"$ref": "#/$defs/digest"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

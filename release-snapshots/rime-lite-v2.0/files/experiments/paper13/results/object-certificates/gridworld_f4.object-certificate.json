@@ -1,0 +1,164 @@
+{
+  "certificate_version": "1.0",
+  "certificate_id": "paper13.gridworld-f4.object-certificate.v1",
+  "certificate_class": "object",
+  "claim_target": "external_mathematical_object",
+  "claim_status": "Computational Certificate",
+  "result_state": "CERTIFIED",
+  "scope": "GridWorld F4 source-level direct support, ordered length-two word support, and simple-commutator support under tol=1e-8 and skew(T)=(T-T^T)/2; the migrated SOFAUDIT coordinates remain unresolved.",
+  "source_artifacts": [
+    {
+      "uri": "experiments/paper13/gridworld_reference_sof.py",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "d8910e4587622c9100777a1f5b08c89f27bc42bbc3ba83d7c405bfbf4343d0d5"
+      }
+    },
+    {
+      "uri": "experiments/paper13/results/native/gridworld-f4/sources/gridworld-reference.source.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "cb52babe5a1227c02f1f5ec2a3b57d93738ff2521db2eb6d5129f308dd6c5bd5"
+      }
+    },
+    {
+      "uri": "experiments/paper13/results/native/gridworld-f4/sources/gridworld-f4-target.source.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "fc8f814ede339bfbfff0b54d3e112193628f4d0aaee8a7a8da86ce19dcb52470"
+      }
+    },
+    {
+      "uri": "experiments/paper13/results/native/gridworld-f4/evidence/gridworld-f4.audit-result.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "b1704f81539ecacff23e43313e446351e97dac6c73b27ac0b20ba8e1a8c40455"
+      }
+    },
+    {
+      "uri": "experiments/paper13/archive/results/gridworld_f4.sofaudit",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "560849678ab5d03521490e8a90d1db362a96c7fd4f0e0f39569c46e9e6e9ad00"
+      }
+    },
+    {
+      "uri": "experiments/paper13/results/audits/gridworld_f4.sofaudit.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "17bf196611892301d92c2fda96d7923b8f7dd9927f91a22ed7312532d31c571d"
+      }
+    },
+    {
+      "uri": "experiments/paper13/validation/gridworld_f4_object_certificate.py",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "fa988371467ed0097ef94fefceff15f046461a730cd2a3943b2d4a814ed2f40f"
+      }
+    }
+  ],
+  "validator_independence": {
+    "implementation_relation": "separate_algorithm",
+    "language_relation": "same_language",
+    "runtime_relation": "same_process",
+    "input_source": "declared_gridworld_source_construction",
+    "producer_cache_used": false
+  },
+  "external_baseline": {
+    "method": "direct graph incidence for the declared skew-generator convention",
+    "reference_pair_count": 72,
+    "target_pair_count": 72,
+    "agrees_with_matrix_support": true
+  },
+  "native_v2_control": {
+    "raw_sources": [
+      {
+        "uri": "experiments/paper13/results/native/gridworld-f4/sources/gridworld-reference.source.json",
+        "digest": {
+          "algorithm": "sha256",
+          "value": "cb52babe5a1227c02f1f5ec2a3b57d93738ff2521db2eb6d5129f308dd6c5bd5"
+        }
+      },
+      {
+        "uri": "experiments/paper13/results/native/gridworld-f4/sources/gridworld-f4-target.source.json",
+        "digest": {
+          "algorithm": "sha256",
+          "value": "fc8f814ede339bfbfff0b54d3e112193628f4d0aaee8a7a8da86ce19dcb52470"
+        }
+      }
+    ],
+    "producer_result": {
+      "uri": "experiments/paper13/results/native/gridworld-f4/evidence/gridworld-f4.audit-result.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "b1704f81539ecacff23e43313e446351e97dac6c73b27ac0b20ba8e1a8c40455"
+      }
+    },
+    "comparison": "The producer result and independent recomputation agree on all three native factual coordinates."
+  },
+  "recomputed": {
+    "support": {
+      "missing_pairs": [],
+      "extra_pairs": [],
+      "missing_count": 0,
+      "extra_count": 0,
+      "total_mismatch": 0
+    },
+    "word_bridge": {
+      "missing_pairs": [],
+      "extra_pairs": [],
+      "missing_count": 0,
+      "extra_count": 0,
+      "total_mismatch": 0
+    },
+    "lie_bridge": {
+      "missing_pairs": [],
+      "extra_pairs": [
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          7,
+          5
+        ],
+        [
+          15,
+          17
+        ],
+        [
+          17,
+          15
+        ],
+        [
+          20,
+          22
+        ],
+        [
+          22,
+          20
+        ]
+      ],
+      "missing_count": 0,
+      "extra_count": 8,
+      "total_mismatch": 8
+    }
+  },
+  "status": "PASS",
+  "migration_boundary": {
+    "active_audit_coordinates": "UNRESOLVED",
+    "reason": "The migrated SOFRS v2 reports do not bind the sector alignment and item-level report mappings needed for a comparison claim."
+  },
+  "negative_boundaries": [
+    "This finite certificate does not establish GridWorld model adequacy, causal interpretation, or a cross-realization sensitivity ordering.",
+    "Schema validation and migration consistency are checked separately and are not object-level evidence."
+  ]
+}

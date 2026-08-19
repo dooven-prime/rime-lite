@@ -1,0 +1,175 @@
+{
+  "sofaudit_version": "1.0",
+  "report_type": "sofaudit",
+  "comparison_object": "SOFReportComparison",
+  "audit_id": "sir_f1",
+  "system": "SIR rate equalization audit",
+  "claim_status": "evidence",
+  "claim_note": "controlled protocol validation",
+  "regime": "A",
+  "failure_mode": "f1_rate_equalization",
+  "reference": {
+    "report_id": "sir_ref",
+    "artifact": "sir_ref.sofreport",
+    "label": "SIR(β=0.300, γ=0.100, R₀=3.00)"
+  },
+  "target": {
+    "report_id": "sir_f1_learned",
+    "artifact": "sir_f1_learned.sofreport",
+    "label": "SIR(β=0.2, γ=0.2, R₀=1.0)"
+  },
+  "alignment": {
+    "sector_alignment": {
+      "kind": "identity"
+    },
+    "observable_alignment": {
+      "kind": "identity"
+    }
+  },
+  "comparison_specification": {
+    "specification_id": "paper13-coordinatewise-v1",
+    "normalization": {
+      "tol": 1e-08,
+      "max_depth": 4,
+      "frozen_sentinel": 999,
+      "depth_semantics": "word depth",
+      "bridge_semantics": [
+        "word",
+        "Lie commutator"
+      ],
+      "generator_normalization": "skew(T)=(T-T^T)/2"
+    },
+    "metric": {
+      "signature": "coordinatewise mismatch records and counts",
+      "fixed_fiber_structural": "weighted Hamming when explicitly invoked"
+    },
+    "depth_semantics": "word depth",
+    "thresholds": {
+      "tol": 1e-08,
+      "source": "comparison record"
+    },
+    "parameter_synchronization": {
+      "mode": "not_applicable"
+    },
+    "aggregation": {
+      "mode": "coordinatewise",
+      "scalarization": "none"
+    }
+  },
+  "signature": {
+    "support_mismatch": {
+      "extra": [],
+      "extra_count": 0,
+      "missing": [],
+      "missing_count": 0,
+      "total_mismatch": 0,
+      "ref_offdiag": 4,
+      "candidate_offdiag": 4
+    },
+    "bridge_word_mismatch": {
+      "extra": [],
+      "extra_count": 0,
+      "missing": [],
+      "missing_count": 0,
+      "total_mismatch": 0,
+      "ref_offdiag": 2,
+      "candidate_offdiag": 2
+    },
+    "bridge_lie_mismatch": {
+      "extra": [],
+      "extra_count": 0,
+      "missing": [],
+      "missing_count": 0,
+      "total_mismatch": 0,
+      "ref_offdiag": 2,
+      "candidate_offdiag": 2
+    },
+    "depth_distortion": {
+      "depth_distortions": [],
+      "distortion_count": 0,
+      "ref_frozen_candidate_not": [],
+      "ref_frozen_candidate_not_count": 0,
+      "candidate_frozen_ref_not": [],
+      "candidate_frozen_ref_not_count": 0,
+      "total_mismatch": 0
+    },
+    "frozen_disagreement": {
+      "frozen_R1": {
+        "ref": 2,
+        "candidate": 2,
+        "delta": 0
+      },
+      "frozen_D_word": {
+        "ref": 0,
+        "candidate": 0,
+        "delta": 0
+      },
+      "frozen_D_lie": {
+        "ref": 0,
+        "candidate": 0,
+        "delta": 0
+      }
+    },
+    "constraint_violations": {
+      "violations": [],
+      "count": 0
+    },
+    "action_response_failure": {
+      "per_action_deltas": {
+        "beta": [
+          {
+            "pair": [
+              "S",
+              "I"
+            ],
+            "ref": 0.15,
+            "candidate": 0.1,
+            "delta": 0.05
+          },
+          {
+            "pair": [
+              "I",
+              "S"
+            ],
+            "ref": 0.15,
+            "candidate": 0.1,
+            "delta": 0.05
+          }
+        ],
+        "gamma": [
+          {
+            "pair": [
+              "I",
+              "R"
+            ],
+            "ref": 0.05,
+            "candidate": 0.1,
+            "delta": 0.05
+          },
+          {
+            "pair": [
+              "R",
+              "I"
+            ],
+            "ref": 0.05,
+            "candidate": 0.1,
+            "delta": 0.05
+          }
+        ]
+      },
+      "total_large_deltas": 4,
+      "action_aliasing": [],
+      "response_sep": {
+        "ref": 0.223607,
+        "candidate": 0.2
+      }
+    },
+    "wall_record_mismatch": null
+  },
+  "failure_modes": [
+    "controlled finite compartmental variant, not an epidemiological theorem",
+    "identity sector and observable alignment only",
+    "skew support is a proxy for directed transition semantics"
+  ],
+  "domain": "epidemiology"
+}

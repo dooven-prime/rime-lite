@@ -1,0 +1,193 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rime-project.local/schemas/sofrs/report-validation-receipt-v2.0.schema.json",
+  "title": "SOFRS Report Validation Receipt v2.0",
+  "description": "Source-addressed evidence that one SOFRS v2 report and its bound compiler-contract closure passed the declared Paper XII validation contract.",
+  "type": "object",
+  "required": [
+    "receipt_version",
+    "artifact_type",
+    "receipt_id",
+    "report",
+    "validator",
+    "artifact_closure",
+    "status",
+    "checks",
+    "negative_boundaries"
+  ],
+  "properties": {
+    "receipt_version": {"const": "2.0"},
+    "artifact_type": {"const": "sofrs_report_validation_receipt"},
+    "receipt_id": {"$ref": "#/$defs/id"},
+    "report": {
+      "type": "object",
+      "required": ["report_id", "sofrs_version", "record_kind", "artifact"],
+      "properties": {
+        "report_id": {"$ref": "#/$defs/id"},
+        "sofrs_version": {"const": "2.0"},
+        "record_kind": {"enum": ["strict_sof", "diagnostic_analogue"]},
+        "artifact": {"$ref": "#/$defs/artifact_reference"}
+      },
+      "additionalProperties": false
+    },
+    "validator": {
+      "type": "object",
+      "required": ["validator_id", "validator_version", "implementation", "receipt_contract"],
+      "properties": {
+        "validator_id": {"const": "sofrs.report-validator.v2"},
+        "validator_version": {"const": "2.0"},
+        "implementation": {"$ref": "#/$defs/artifact_reference"},
+        "receipt_contract": {"$ref": "#/$defs/artifact_reference"}
+      },
+      "additionalProperties": false
+    },
+    "artifact_closure": {
+      "type": "object",
+      "required": ["artifact_count", "ordered_artifacts", "closure_digest"],
+      "properties": {
+        "artifact_count": {"const": 7},
+        "ordered_artifacts": {
+          "type": "array",
+          "prefixItems": [
+            {"$ref": "#/$defs/report_artifact"},
+            {"$ref": "#/$defs/manifest_artifact"},
+            {"$ref": "#/$defs/ir_artifact"},
+            {"$ref": "#/$defs/compiler_profile_artifact"},
+            {"$ref": "#/$defs/compiler_output_artifact"},
+            {"$ref": "#/$defs/assembly_profile_artifact"},
+            {"$ref": "#/$defs/assembly_implementation_artifact"}
+          ],
+          "items": false,
+          "minItems": 7,
+          "maxItems": 7
+        },
+        "closure_digest": {"$ref": "#/$defs/digest"}
+      },
+      "additionalProperties": false
+    },
+    "status": {"const": "PASS"},
+    "checks": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "required": ["check_id", "status"],
+        "properties": {
+          "check_id": {
+            "enum": [
+              "artifact-closure",
+              "claim-compatibility",
+              "claim-external-basis-binding",
+              "compiler-output-recompilation",
+              "cutoff-provenance",
+              "record-kind-boundary",
+              "report-assembly-recomputation",
+              "schema-validation"
+            ]
+          },
+          "status": {"const": "PASS"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "negative_boundaries": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true
+    }
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._-]*$"
+    },
+    "digest": {
+      "type": "object",
+      "required": [
+        "algorithm",
+        "value"
+      ],
+      "properties": {
+        "algorithm": {
+          "const": "sha256"
+        },
+        "value": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "artifact_reference": {
+      "type": "object",
+      "required": [
+        "uri",
+        "digest"
+      ],
+      "properties": {
+        "uri": {
+          "type": "string",
+          "minLength": 1
+        },
+        "digest": {
+          "$ref": "#/$defs/digest"
+        }
+      },
+      "additionalProperties": false
+    },
+    "closure_artifact": {
+      "type": "object",
+      "required": ["role", "artifact"],
+      "properties": {
+        "role": {"type": "string"},
+        "artifact": {"$ref": "#/$defs/artifact_reference"}
+      },
+      "additionalProperties": false
+    },
+    "report_artifact": {
+      "allOf": [
+        {"$ref": "#/$defs/closure_artifact"},
+        {"properties": {"role": {"const": "report"}}}
+      ]
+    },
+    "manifest_artifact": {
+      "allOf": [
+        {"$ref": "#/$defs/closure_artifact"},
+        {"properties": {"role": {"const": "capability_manifest"}}}
+      ]
+    },
+    "ir_artifact": {
+      "allOf": [
+        {"$ref": "#/$defs/closure_artifact"},
+        {"properties": {"role": {"const": "typed_sof_ir"}}}
+      ]
+    },
+    "compiler_profile_artifact": {
+      "allOf": [
+        {"$ref": "#/$defs/closure_artifact"},
+        {"properties": {"role": {"const": "compiler_profile"}}}
+      ]
+    },
+    "compiler_output_artifact": {
+      "allOf": [
+        {"$ref": "#/$defs/closure_artifact"},
+        {"properties": {"role": {"const": "compiler_output"}}}
+      ]
+    },
+    "assembly_profile_artifact": {
+      "allOf": [
+        {"$ref": "#/$defs/closure_artifact"},
+        {"properties": {"role": {"const": "assembly_profile"}}}
+      ]
+    },
+    "assembly_implementation_artifact": {
+      "allOf": [
+        {"$ref": "#/$defs/closure_artifact"},
+        {"properties": {"role": {"const": "assembly_implementation"}}}
+      ]
+    }
+  },
+  "additionalProperties": false
+}

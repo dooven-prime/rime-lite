@@ -1,0 +1,2483 @@
+{
+  "snapshot_id": "rime-lite-v2.0-byte-snapshot",
+  "snapshot_version": "1.0",
+  "release_tag": "rime-lite-v2.0",
+  "release_commit": "de572e942a4e0f9ac5edc4180e997bfd1f069e8a",
+  "historical_content_commit": "c58633494257757e3316f31d8a7cfedc2e75af4e",
+  "byte_policy": "Exact file bytes. Text conversion is disabled for snapshot payloads.",
+  "file_count": 412,
+  "files": [
+    {
+      "source_uri": "experiments/paper12/results/compiler-output/diffusion.compiler-output.json",
+      "snapshot_uri": "files/experiments/paper12/results/compiler-output/diffusion.compiler-output.json",
+      "digest": "7d76c89d85ff631eda7448e6516a848348ccf6a0f0b2fe222901c129586af01d",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/compiler-output/maze.compiler-output.json",
+      "snapshot_uri": "files/experiments/paper12/results/compiler-output/maze.compiler-output.json",
+      "digest": "491fd09f707e02c41f4170baf0e5475a064802dd382b5a2b4c37e062f7428af0",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/compiler-output/moe.compiler-output.json",
+      "snapshot_uri": "files/experiments/paper12/results/compiler-output/moe.compiler-output.json",
+      "digest": "0f953ed11755f052561499df6677bd645f1cb22ab17e86ad5156cb55f8c9e83c",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/compiler-output/moe_bias_repair.compiler-output.json",
+      "snapshot_uri": "files/experiments/paper12/results/compiler-output/moe_bias_repair.compiler-output.json",
+      "digest": "2fcf8fd1b628431af42d61f92e56fa111daaf12ebfb85fbbba1869ef33addbde",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/compiler-output/nvidia_llama31_8b_20260711.compiler-output.json",
+      "snapshot_uri": "files/experiments/paper12/results/compiler-output/nvidia_llama31_8b_20260711.compiler-output.json",
+      "digest": "947341873563e2c48a2fca9b0d095c4d946736b2dc9e39f8f69aee79431785b6",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/compiler-output/qwen.compiler-output.json",
+      "snapshot_uri": "files/experiments/paper12/results/compiler-output/qwen.compiler-output.json",
+      "digest": "7b00d2dae6a9d7218feef150df44cd73b7b950e338660d140902bf487fc71f92",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/compiler-output/recommender.compiler-output.json",
+      "snapshot_uri": "files/experiments/paper12/results/compiler-output/recommender.compiler-output.json",
+      "digest": "5c6813fade852e2d953cc1932b2869c761a0616d332f59005295cb7593c114bb",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/compiler-output/transformer.compiler-output.json",
+      "snapshot_uri": "files/experiments/paper12/results/compiler-output/transformer.compiler-output.json",
+      "digest": "eecb0d5fb6f8265b6d06db838d057d8d410a63d5b140adb4a82cadc0d314638d",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/compiler-output/transformer_batch.compiler-output.json",
+      "snapshot_uri": "files/experiments/paper12/results/compiler-output/transformer_batch.compiler-output.json",
+      "digest": "df5b1d5bc6cd062636f3f6e941f4f68b4219862d638e5ad56568f8aba3369eb6",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/ir/diffusion.ir.json",
+      "snapshot_uri": "files/experiments/paper12/results/ir/diffusion.ir.json",
+      "digest": "9098d83ab70d57310b50f533b31b0dec8d29152c5a0b37a67882c256c6ee226b",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/ir/maze.ir.json",
+      "snapshot_uri": "files/experiments/paper12/results/ir/maze.ir.json",
+      "digest": "5a69305dd5db07fc435cd43dbbf9a028299d26a36d0d6206a837a87450f18985",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/ir/moe.ir.json",
+      "snapshot_uri": "files/experiments/paper12/results/ir/moe.ir.json",
+      "digest": "1148c7cd57a2cd99fb0ad1a2a6f544f91987336f63aa71fb56f8bd4d1fca740c",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/ir/moe_bias_repair.ir.json",
+      "snapshot_uri": "files/experiments/paper12/results/ir/moe_bias_repair.ir.json",
+      "digest": "d5e94dd6c3c1de22031a2f711fa2893360297381d9801aae6aeba7d7b237796d",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/ir/nvidia_llama31_8b_20260711.ir.json",
+      "snapshot_uri": "files/experiments/paper12/results/ir/nvidia_llama31_8b_20260711.ir.json",
+      "digest": "946c6d6e4b99fdbba6af5627e00e9a45e871adea034e7ce2d97af36ca50b019e",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/ir/qwen.ir.json",
+      "snapshot_uri": "files/experiments/paper12/results/ir/qwen.ir.json",
+      "digest": "4fedfd05276b4f8cb7bccc49a104245f9458616ea62a892a8df13636f9bc263d",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/ir/recommender.ir.json",
+      "snapshot_uri": "files/experiments/paper12/results/ir/recommender.ir.json",
+      "digest": "001a0a4c784bb5d25a3d7997c84fa434ed101252a394ff04f48d3fa7d9c6893d",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/ir/transformer.ir.json",
+      "snapshot_uri": "files/experiments/paper12/results/ir/transformer.ir.json",
+      "digest": "881236a6055f39de9e7666b8fb5140d291d52b196257e312f44c576ed9f156cf",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/ir/transformer_batch.ir.json",
+      "snapshot_uri": "files/experiments/paper12/results/ir/transformer_batch.ir.json",
+      "digest": "a47cf8b074ca52120b717bfdb3d077e249614df773737288e669c72910723291",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/manifests/diffusion.capabilities.json",
+      "snapshot_uri": "files/experiments/paper12/results/manifests/diffusion.capabilities.json",
+      "digest": "e1b71af8a96e8c22fbb2d931f12c791ec342a95f99c3135d5a35ecc1ea34ccf5",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/manifests/maze.capabilities.json",
+      "snapshot_uri": "files/experiments/paper12/results/manifests/maze.capabilities.json",
+      "digest": "5eedee9f6f297c5d514c417afe3aa10711ad52e165558ad9bdbb058ae6744258",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/manifests/moe.capabilities.json",
+      "snapshot_uri": "files/experiments/paper12/results/manifests/moe.capabilities.json",
+      "digest": "cdc8bd7939746c57772141a631c0259c287c6f5a742023ddca584dffade6fb96",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/manifests/moe_bias_repair.capabilities.json",
+      "snapshot_uri": "files/experiments/paper12/results/manifests/moe_bias_repair.capabilities.json",
+      "digest": "823907dc80bf8a914040fceef0d47cd23f48d075500c1be2d563e80af468447b",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/manifests/nvidia_llama31_8b_20260711.capabilities.json",
+      "snapshot_uri": "files/experiments/paper12/results/manifests/nvidia_llama31_8b_20260711.capabilities.json",
+      "digest": "2b01e970f42be4c101bb34a203f120767ff422675aa20cb73d45ba4a9fc5ded5",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/manifests/qwen.capabilities.json",
+      "snapshot_uri": "files/experiments/paper12/results/manifests/qwen.capabilities.json",
+      "digest": "948f1c81066f6a4798e238f7e22a2d98db29094b3955f2ca71892ed1431a3fe9",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/manifests/recommender.capabilities.json",
+      "snapshot_uri": "files/experiments/paper12/results/manifests/recommender.capabilities.json",
+      "digest": "52dfa812916194c2122499503977bad5e5acb0f7e8a05169cb86bd0eadc9f2d6",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/manifests/transformer.capabilities.json",
+      "snapshot_uri": "files/experiments/paper12/results/manifests/transformer.capabilities.json",
+      "digest": "267300f89f4a34d96cc34fb9b2a8f493c3592a7c77c130841cee0dffae78d538",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/manifests/transformer_batch.capabilities.json",
+      "snapshot_uri": "files/experiments/paper12/results/manifests/transformer_batch.capabilities.json",
+      "digest": "f4eb01c63cdd46ed3f247bb106768c912d5760d2152488ae8e7da88c75a85409",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/migration-index.json",
+      "snapshot_uri": "files/experiments/paper12/results/migration-index.json",
+      "digest": "e71a04dfcc84738e62c1b651490d2fea3ffb3b6e0cca140b894b0d5778d07844",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/report-validation-receipts/paper12-v2/diffusion.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper12/results/report-validation-receipts/paper12-v2/diffusion.validation-receipt.json",
+      "digest": "521c980c2a096c299ef423b4effa2782f24966b70fef34062a439f34eaf0ebb6",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/report-validation-receipts/paper12-v2/maze.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper12/results/report-validation-receipts/paper12-v2/maze.validation-receipt.json",
+      "digest": "aa98673dd74b690f37c27383caed3c80d9cd88a758f5e2497f66e673dee90b4d",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/report-validation-receipts/paper12-v2/moe.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper12/results/report-validation-receipts/paper12-v2/moe.validation-receipt.json",
+      "digest": "d47fdbe4dbb43f147e2623ee38ebc1b7d22cdb62efc672d7a44bc6af388b1e13",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/report-validation-receipts/paper12-v2/moe_bias_repair.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper12/results/report-validation-receipts/paper12-v2/moe_bias_repair.validation-receipt.json",
+      "digest": "a9fe3965ddbb0ca22c9a02efd946171e280c9cd2224039d246b07c705ab15b2f",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/report-validation-receipts/paper12-v2/nvidia_llama31_8b_20260711.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper12/results/report-validation-receipts/paper12-v2/nvidia_llama31_8b_20260711.validation-receipt.json",
+      "digest": "f26483cce2fc71d3c6c9c2407b0d6bf73f78c77dec64be850acdeb0629e57c25",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/report-validation-receipts/paper12-v2/qwen.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper12/results/report-validation-receipts/paper12-v2/qwen.validation-receipt.json",
+      "digest": "96129450cc5cf3b1a4064621e8b202bf4dffa94f8efd2454232ee5e2b385fc80",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/report-validation-receipts/paper12-v2/recommender.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper12/results/report-validation-receipts/paper12-v2/recommender.validation-receipt.json",
+      "digest": "ead167b19f26ffc3ab7a331bb9d6f7224a31101cc9140cdafcb527818c9490fc",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/report-validation-receipts/paper12-v2/transformer.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper12/results/report-validation-receipts/paper12-v2/transformer.validation-receipt.json",
+      "digest": "28e47e616c921bd45afefbdba9b21129ee58f4745be8d96dcc08f108aca2c85f",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/report-validation-receipts/paper12-v2/transformer_batch.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper12/results/report-validation-receipts/paper12-v2/transformer_batch.validation-receipt.json",
+      "digest": "94257e78be92384933f46fa021bf89a2c4ebdc6ba47ba0f9a56e8f8ddd33b162",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/report-validation-receipts/paper12-v2/validation-index.json",
+      "snapshot_uri": "files/experiments/paper12/results/report-validation-receipts/paper12-v2/validation-index.json",
+      "digest": "2b26d7bceee34612b7ec7ec4b14fc9564cdbdcbfbd390e697698211141cbf2aa",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/report-validation-receipts/paper13-v1/compiler_f1_learned.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper12/results/report-validation-receipts/paper13-v1/compiler_f1_learned.validation-receipt.json",
+      "digest": "c65acf58d9ff8dda443376a9d0528f23f0dc076ed4ce03969cf89bb138e3fe55",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/report-validation-receipts/paper13-v1/compiler_f2_learned.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper12/results/report-validation-receipts/paper13-v1/compiler_f2_learned.validation-receipt.json",
+      "digest": "a57636d97045b566ebce6fd6afe9f1a14c63ef4192e5905d3c0d23811f9238f4",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/report-validation-receipts/paper13-v1/compiler_f3_learned.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper12/results/report-validation-receipts/paper13-v1/compiler_f3_learned.validation-receipt.json",
+      "digest": "7cbdbf32fda12562725dd37f6e2de383b8d04e9c7f0ed74ba87d82c4c5036bf1",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/report-validation-receipts/paper13-v1/compiler_f4_learned.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper12/results/report-validation-receipts/paper13-v1/compiler_f4_learned.validation-receipt.json",
+      "digest": "d5d583e0741bcf4c9042dea39904929b84f51691e661059526c625ba052da2c2",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/report-validation-receipts/paper13-v1/compiler_f5_learned.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper12/results/report-validation-receipts/paper13-v1/compiler_f5_learned.validation-receipt.json",
+      "digest": "68c69c213c8165442240258e2005edd88b9285b021e290095dce20692ede6c52",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/report-validation-receipts/paper13-v1/compiler_o0_before.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper12/results/report-validation-receipts/paper13-v1/compiler_o0_before.validation-receipt.json",
+      "digest": "c593277e3c34146faa5debefa586901e17db389eef257c49ab45f467e9b2ac82",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/report-validation-receipts/paper13-v1/compiler_o2_after.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper12/results/report-validation-receipts/paper13-v1/compiler_o2_after.validation-receipt.json",
+      "digest": "d4d42159fcdb99133a2386076785d6a61d13281089ecad96b2233a0553128260",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/report-validation-receipts/paper13-v1/compiler_ref.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper12/results/report-validation-receipts/paper13-v1/compiler_ref.validation-receipt.json",
+      "digest": "ae033ebd368d2d524ae5e80585feb95b3eed25637ef0f03f7c041820c5c78400",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/report-validation-receipts/paper13-v1/gridworld_f1_learned.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper12/results/report-validation-receipts/paper13-v1/gridworld_f1_learned.validation-receipt.json",
+      "digest": "9a25e34f05b14d3bb25c92f9ee59b6f249e1083f0237a9de1e306d0e4afc3310",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/report-validation-receipts/paper13-v1/gridworld_f2_learned.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper12/results/report-validation-receipts/paper13-v1/gridworld_f2_learned.validation-receipt.json",
+      "digest": "5e5823738109e9996ddd25d4ff3845120bb9ccd38e82c70ab8f7bf6a8524f847",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/report-validation-receipts/paper13-v1/gridworld_f3_learned.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper12/results/report-validation-receipts/paper13-v1/gridworld_f3_learned.validation-receipt.json",
+      "digest": "2bcbe5ca84f31e44ba97a9054d2a5e7585ef54f47ddabd9ef7db8e4d0c621049",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/report-validation-receipts/paper13-v1/gridworld_f4_learned.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper12/results/report-validation-receipts/paper13-v1/gridworld_f4_learned.validation-receipt.json",
+      "digest": "505ebcfc27ade5a86b37e5cd4100c2bd4bee05d9ac3b2524a701447aa52bab1b",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/report-validation-receipts/paper13-v1/gridworld_f5_learned.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper12/results/report-validation-receipts/paper13-v1/gridworld_f5_learned.validation-receipt.json",
+      "digest": "2269c9b53cfe05840ac6b59ecef25c087b7ee90ea34c422542ad0265bd9042ac",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/report-validation-receipts/paper13-v1/gridworld_obs00_after.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper12/results/report-validation-receipts/paper13-v1/gridworld_obs00_after.validation-receipt.json",
+      "digest": "ae42bbf59f9f6d444babc1b96d6d35feb0396eb8f2545aab55ff72be57823dc0",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/report-validation-receipts/paper13-v1/gridworld_obs22_before.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper12/results/report-validation-receipts/paper13-v1/gridworld_obs22_before.validation-receipt.json",
+      "digest": "e013a42425e633f13f31a2aabee32560936f21665372ab3230061d4346f154d1",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/report-validation-receipts/paper13-v1/gridworld_ref.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper12/results/report-validation-receipts/paper13-v1/gridworld_ref.validation-receipt.json",
+      "digest": "bf6f6d7bd58e5aaaee6eb5d3c3962e1542e56430cea9ec0a316df4d243617004",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/report-validation-receipts/paper13-v1/network_f1_learned.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper12/results/report-validation-receipts/paper13-v1/network_f1_learned.validation-receipt.json",
+      "digest": "cabfa309d7f30c5021d8e86e402ab7d9c2d578bced5cd57a9591289107890d08",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/report-validation-receipts/paper13-v1/network_f2_learned.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper12/results/report-validation-receipts/paper13-v1/network_f2_learned.validation-receipt.json",
+      "digest": "8439f9f34c081252f31e5da7e49888b1de7b9295926de2ec7cf3ed0ad32ad3d6",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/report-validation-receipts/paper13-v1/network_f3_learned.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper12/results/report-validation-receipts/paper13-v1/network_f3_learned.validation-receipt.json",
+      "digest": "b8d1026b71923022008f6ee9653b8ff7f66329741cc3ca59db6bd521f5df9404",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/report-validation-receipts/paper13-v1/network_f4_learned.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper12/results/report-validation-receipts/paper13-v1/network_f4_learned.validation-receipt.json",
+      "digest": "d8a8ae8fc5578c7fd678af4855d2af984dd72dfb6147257b17b6e8b4405525b2",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/report-validation-receipts/paper13-v1/network_f5_learned.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper12/results/report-validation-receipts/paper13-v1/network_f5_learned.validation-receipt.json",
+      "digest": "903262711de9ec9a765680c5cd01bc709d0ecd2ebcf1a9ebd0795585602502a2",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/report-validation-receipts/paper13-v1/network_ref.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper12/results/report-validation-receipts/paper13-v1/network_ref.validation-receipt.json",
+      "digest": "43755aeeff7d527002b4efa32a26491181c785f8bd2f3e932e278de05a8d4b0b",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/report-validation-receipts/paper13-v1/sir_f1_learned.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper12/results/report-validation-receipts/paper13-v1/sir_f1_learned.validation-receipt.json",
+      "digest": "af9cb11ff3b6c8923ca3e56bc2b2c7f0842fcb8436abd3e8f9786abea904a06d",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/report-validation-receipts/paper13-v1/sir_f2_learned.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper12/results/report-validation-receipts/paper13-v1/sir_f2_learned.validation-receipt.json",
+      "digest": "e174586ae2640e5e0ce4395bf903e7c0ec5e11537808ccabf75406552698f632",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/report-validation-receipts/paper13-v1/sir_f3_learned.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper12/results/report-validation-receipts/paper13-v1/sir_f3_learned.validation-receipt.json",
+      "digest": "d62db8531c61416e066aa29a2842a6af384985348234f8d8c18e93e170f83e5e",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/report-validation-receipts/paper13-v1/sir_f4_learned.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper12/results/report-validation-receipts/paper13-v1/sir_f4_learned.validation-receipt.json",
+      "digest": "781bf8c3e802ac03b2775d8bc792cfa7a9caf9473b47472ece8c56fccda4e539",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/report-validation-receipts/paper13-v1/sir_f5_learned.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper12/results/report-validation-receipts/paper13-v1/sir_f5_learned.validation-receipt.json",
+      "digest": "ec2910d04806cd902f1b37e58abc991fccfb2d45e40c392a604a366ec9464ffd",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/report-validation-receipts/paper13-v1/sir_ref.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper12/results/report-validation-receipts/paper13-v1/sir_ref.validation-receipt.json",
+      "digest": "d74e89a607fbe980f3abf6e7cd1988a5ac784bb9a04fb3a9ff1fbb08d21b3dd7",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/report-validation-receipts/paper13-v1/traffic_f1_learned.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper12/results/report-validation-receipts/paper13-v1/traffic_f1_learned.validation-receipt.json",
+      "digest": "d3384256759fb65ac1b1a0b3d2046d07626240740caa99e0d5c4bfd0ad95169b",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/report-validation-receipts/paper13-v1/traffic_f2_learned.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper12/results/report-validation-receipts/paper13-v1/traffic_f2_learned.validation-receipt.json",
+      "digest": "f3e287fbddc6a571b0144a547f93334a6efbea18beeedb159133dc944fe1a4fe",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/report-validation-receipts/paper13-v1/traffic_f3_learned.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper12/results/report-validation-receipts/paper13-v1/traffic_f3_learned.validation-receipt.json",
+      "digest": "78669958beddd6e3fd586e124c72e475c4f56ba36f75f65620e1601ba5c1b2b6",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/report-validation-receipts/paper13-v1/traffic_f4_learned.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper12/results/report-validation-receipts/paper13-v1/traffic_f4_learned.validation-receipt.json",
+      "digest": "89814c56044158a064f244e85bebac06d44b7598db530e10f07ce44328a63918",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/report-validation-receipts/paper13-v1/traffic_f5_learned.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper12/results/report-validation-receipts/paper13-v1/traffic_f5_learned.validation-receipt.json",
+      "digest": "88d0410450f85fc05be17908b8283b45022d53a0a2bc36b2f4d8008a72048945",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/report-validation-receipts/paper13-v1/traffic_ref.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper12/results/report-validation-receipts/paper13-v1/traffic_ref.validation-receipt.json",
+      "digest": "ed08285d1d972d231dbe57eb9167f1527cbdf2f43b5dc4147578d2ef5ddc2dd5",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/report-validation-receipts/paper13-v1/traffic_rho05_before.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper12/results/report-validation-receipts/paper13-v1/traffic_rho05_before.validation-receipt.json",
+      "digest": "880230bfa4311050dfb471652163fa689b6c40b407a00ceb604ac8dc7e86868e",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/report-validation-receipts/paper13-v1/traffic_rho20_after.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper12/results/report-validation-receipts/paper13-v1/traffic_rho20_after.validation-receipt.json",
+      "digest": "70e4caf6adc5a8584b2f4efa967f8e288fd2bc4e5064986d8cee6a5f13a067ce",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/reports/diffusion.sofreport.json",
+      "snapshot_uri": "files/experiments/paper12/results/reports/diffusion.sofreport.json",
+      "digest": "814117c21187ca066367888ea25e7da52a1c9cf314dd2ca90cbd5e9d1fc5546c",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/reports/maze.sofreport.json",
+      "snapshot_uri": "files/experiments/paper12/results/reports/maze.sofreport.json",
+      "digest": "a55e7e3cbebdd61f258d6695bcab24eaffcc4f098b396628a85e79391b570f5c",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/reports/moe.sofreport.json",
+      "snapshot_uri": "files/experiments/paper12/results/reports/moe.sofreport.json",
+      "digest": "782a8a4e4d8ed11d0079b28f2bfe5bceaba02b2171d08bd3437b43566e910007",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/reports/moe_bias_repair.sofreport.json",
+      "snapshot_uri": "files/experiments/paper12/results/reports/moe_bias_repair.sofreport.json",
+      "digest": "dd24642c1a51282a748be9ac33c6219c37c9d296bd47b533ed89e5c6473298f9",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/reports/nvidia_llama31_8b_20260711.sofreport.json",
+      "snapshot_uri": "files/experiments/paper12/results/reports/nvidia_llama31_8b_20260711.sofreport.json",
+      "digest": "3fb0f10c125a54919b0389fa2cc8a84909219e7f9002e2753520cd8ada33be25",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/reports/qwen.sofreport.json",
+      "snapshot_uri": "files/experiments/paper12/results/reports/qwen.sofreport.json",
+      "digest": "55c695d8927eaaf4835c6ff01ee1bf7ef630bb7f40f37c6f76d132416d5b5dff",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/reports/recommender.sofreport.json",
+      "snapshot_uri": "files/experiments/paper12/results/reports/recommender.sofreport.json",
+      "digest": "37c3bf1ade479c9f2d2f6d14194aaade444a1f0c430bf8e15f6a3192b3ac0b41",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/reports/transformer.sofreport.json",
+      "snapshot_uri": "files/experiments/paper12/results/reports/transformer.sofreport.json",
+      "digest": "4db1b3c52a758999621273e187082a81ca6f34043d4dcbf9da2b760546d4a929",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/results/reports/transformer_batch.sofreport.json",
+      "snapshot_uri": "files/experiments/paper12/results/reports/transformer_batch.sofreport.json",
+      "digest": "4d5709db02450499b1599054debf0a81bc01c82ba92c70d5e1dfe190a4599dcf",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper12/validation/validate_sofrs_v2.py",
+      "snapshot_uri": "files/experiments/paper12/validation/validate_sofrs_v2.py",
+      "digest": "c0b39a841b592dc2173c8a3fc350a8c2096a5fb9fe1c2e443f07b88d0764d4e9",
+      "origin": "published-release-blob"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/before_after_compiler.sofaudit",
+      "snapshot_uri": "files/experiments/paper13/archive/results/before_after_compiler.sofaudit",
+      "digest": "cd3b717de7060dee75a510aeb089305d46402e95b63103b2664a0ea38fa3e1eb",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/before_after_gridworld.sofaudit",
+      "snapshot_uri": "files/experiments/paper13/archive/results/before_after_gridworld.sofaudit",
+      "digest": "46c78066978132e2391d81bc73664f61b427bd51980f8aaafe9780cb665d005a",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/before_after_traffic.sofaudit",
+      "snapshot_uri": "files/experiments/paper13/archive/results/before_after_traffic.sofaudit",
+      "digest": "7f83876aded4ad18c4d10eb025dcac16a56190969cf0a4e9a53dd453e135eb80",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/compiler_f1.sofaudit",
+      "snapshot_uri": "files/experiments/paper13/archive/results/compiler_f1.sofaudit",
+      "digest": "071da3f0aee21b38cc69c11466cd00b0762bae32a1e1457da665e5c1e0c574a9",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/compiler_f1_learned.sofreport",
+      "snapshot_uri": "files/experiments/paper13/archive/results/compiler_f1_learned.sofreport",
+      "digest": "2e582eb943d64ead67a8bf8ce9c38311d60bc07f79d09618228459c769c3559a",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/compiler_f2.sofaudit",
+      "snapshot_uri": "files/experiments/paper13/archive/results/compiler_f2.sofaudit",
+      "digest": "3817e3e8ad15173986c989e0235bba54d7817cae9a2020b9d56f1864fca15708",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/compiler_f2_learned.sofreport",
+      "snapshot_uri": "files/experiments/paper13/archive/results/compiler_f2_learned.sofreport",
+      "digest": "82c86d0911e723ee3f895ded6706b0064fce81637eaf1b6f2bef5d6b5505815a",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/compiler_f3.sofaudit",
+      "snapshot_uri": "files/experiments/paper13/archive/results/compiler_f3.sofaudit",
+      "digest": "31b6b953dc199fbe6c767dce9819f71943607d70c3f1190df654800814cb85bc",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/compiler_f3_learned.sofreport",
+      "snapshot_uri": "files/experiments/paper13/archive/results/compiler_f3_learned.sofreport",
+      "digest": "547da2c291882cc8ddb7e42c5ad7e684ceaf8a15ff161e3aa75ee35b1010a9f9",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/compiler_f4.sofaudit",
+      "snapshot_uri": "files/experiments/paper13/archive/results/compiler_f4.sofaudit",
+      "digest": "cd04740837bebf725cd549e7de3c98c363eae4eedba55cd0286c1dd00f9850e8",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/compiler_f4_learned.sofreport",
+      "snapshot_uri": "files/experiments/paper13/archive/results/compiler_f4_learned.sofreport",
+      "digest": "4bc8410eb9c0588f0057fd808cb0b51aa0374d18beeafd9ef380d829babd1878",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/compiler_f5.sofaudit",
+      "snapshot_uri": "files/experiments/paper13/archive/results/compiler_f5.sofaudit",
+      "digest": "4fca2d788db23b07a81a5105c4c06c463e2b59c8d27e5ad9024abb1ddbe2da17",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/compiler_f5_learned.sofreport",
+      "snapshot_uri": "files/experiments/paper13/archive/results/compiler_f5_learned.sofreport",
+      "digest": "584d4f059c5bfe5d21ee0addd30858b7d6ac9b46ccaa4e5873ea4dfbf83ba8f4",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/compiler_o0_before.sofreport",
+      "snapshot_uri": "files/experiments/paper13/archive/results/compiler_o0_before.sofreport",
+      "digest": "524ee0a65593df0f01b7e0dd83d4b33d230c37f240af513b28bad79981fb2631",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/compiler_o2_after.sofreport",
+      "snapshot_uri": "files/experiments/paper13/archive/results/compiler_o2_after.sofreport",
+      "digest": "813a10ed34b789a1cdb15732cc19883fcceb58ed35fc665e8a2bafad3eaf0e17",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/compiler_ref.sofreport",
+      "snapshot_uri": "files/experiments/paper13/archive/results/compiler_ref.sofreport",
+      "digest": "052fb04ba5c1b21015216deb1fb09fa5c2905f56a9189c0608b29e48e7d724e0",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/gridworld_f1.sofaudit",
+      "snapshot_uri": "files/experiments/paper13/archive/results/gridworld_f1.sofaudit",
+      "digest": "47cd0862e6d5fef17e260b38c70dc015a1b0a686ad4e8d434e9ee44e72c99d67",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/gridworld_f1_learned.sofreport",
+      "snapshot_uri": "files/experiments/paper13/archive/results/gridworld_f1_learned.sofreport",
+      "digest": "fc9d30561bb98bf34b4ba7388ffa089355619ccb6aff177f2bb1aeb6a98c5d66",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/gridworld_f2.sofaudit",
+      "snapshot_uri": "files/experiments/paper13/archive/results/gridworld_f2.sofaudit",
+      "digest": "7759af21c03734e7125d919073318c67bc9da30c41771632dd18c9a881297d52",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/gridworld_f2_learned.sofreport",
+      "snapshot_uri": "files/experiments/paper13/archive/results/gridworld_f2_learned.sofreport",
+      "digest": "ab01d0392e939b7fc1d9098a83e416acd2c77e863361a2b3a5ada32476b93505",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/gridworld_f3.sofaudit",
+      "snapshot_uri": "files/experiments/paper13/archive/results/gridworld_f3.sofaudit",
+      "digest": "f364f2395fee4829127b998d156d6503da149915359e21096a29aee803688413",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/gridworld_f3_learned.sofreport",
+      "snapshot_uri": "files/experiments/paper13/archive/results/gridworld_f3_learned.sofreport",
+      "digest": "c8bad7b7f928720c7f51bff9fb710d12f1fcf9faeabee785f0bc682e4786fce6",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/gridworld_f4.sofaudit",
+      "snapshot_uri": "files/experiments/paper13/archive/results/gridworld_f4.sofaudit",
+      "digest": "560849678ab5d03521490e8a90d1db362a96c7fd4f0e0f39569c46e9e6e9ad00",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/gridworld_f4_learned.sofreport",
+      "snapshot_uri": "files/experiments/paper13/archive/results/gridworld_f4_learned.sofreport",
+      "digest": "81b3cf984be93862796862b69164b48a89b9720100521675bb6a98794df05bc3",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/gridworld_f5.sofaudit",
+      "snapshot_uri": "files/experiments/paper13/archive/results/gridworld_f5.sofaudit",
+      "digest": "0c6527d16f77844675a5adfadbe701d722aad9d6db25b8523acabbb6d760f6f4",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/gridworld_f5_learned.sofreport",
+      "snapshot_uri": "files/experiments/paper13/archive/results/gridworld_f5_learned.sofreport",
+      "digest": "214e1cd25c1f9ff1fff00190c0bd477c9fa4ec5a50312d8506e1e99954718faa",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/gridworld_obs00_after.sofreport",
+      "snapshot_uri": "files/experiments/paper13/archive/results/gridworld_obs00_after.sofreport",
+      "digest": "9fd6107b8a324ad3120a033838dc10d21aaeeb58fa2e4d517e903fbffad0c5c5",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/gridworld_obs22_before.sofreport",
+      "snapshot_uri": "files/experiments/paper13/archive/results/gridworld_obs22_before.sofreport",
+      "digest": "3fad33a0f6e595ecd2be8a9903d9609f6681c907b204abad0dab056562b91e06",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/gridworld_ref.sofreport",
+      "snapshot_uri": "files/experiments/paper13/archive/results/gridworld_ref.sofreport",
+      "digest": "a1b1ee7c702f6005728097c6239490d18dd898a6ec6f0e1aed80178b9813b4e7",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/network_f1.sofaudit",
+      "snapshot_uri": "files/experiments/paper13/archive/results/network_f1.sofaudit",
+      "digest": "cb1c7af93974ead81a8e5fc8206f091b4a9d034e6cb340df2d3accf3a08c734c",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/network_f1_learned.sofreport",
+      "snapshot_uri": "files/experiments/paper13/archive/results/network_f1_learned.sofreport",
+      "digest": "499aa0f7932b5e7ffada6e3f0dcad7c698f15a5a9ea735eb9f538eccf13b6a90",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/network_f2.sofaudit",
+      "snapshot_uri": "files/experiments/paper13/archive/results/network_f2.sofaudit",
+      "digest": "5292dca6766e10d537e7ed1d4431fb2d761de370c183b88cbe013b54582d40b8",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/network_f2_learned.sofreport",
+      "snapshot_uri": "files/experiments/paper13/archive/results/network_f2_learned.sofreport",
+      "digest": "841073d8d44e49bce25315fb8b7ddefc734b1ab272b61e0e435ceaae4adb9ed6",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/network_f3.sofaudit",
+      "snapshot_uri": "files/experiments/paper13/archive/results/network_f3.sofaudit",
+      "digest": "adede337e716167c16c7e316ee750e853fb15d07871171a62eab7ef99bb586af",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/network_f3_learned.sofreport",
+      "snapshot_uri": "files/experiments/paper13/archive/results/network_f3_learned.sofreport",
+      "digest": "c095b54bdfeb67a951ba3d45d3f7816d9532e646ec771731d860d5523f24a626",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/network_f4.sofaudit",
+      "snapshot_uri": "files/experiments/paper13/archive/results/network_f4.sofaudit",
+      "digest": "3819dd4c08e002ff8f56c408315fb383f3f09829893459153bacc391df0a8672",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/network_f4_learned.sofreport",
+      "snapshot_uri": "files/experiments/paper13/archive/results/network_f4_learned.sofreport",
+      "digest": "2237b9e25ca5c171515067600fcaea8d74db56fb40b564265fe13a59d0157af9",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/network_f5.sofaudit",
+      "snapshot_uri": "files/experiments/paper13/archive/results/network_f5.sofaudit",
+      "digest": "03b213011828c94f87109b16cb65877175b99714b4b853fdeaf3743ea15149c9",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/network_f5_learned.sofreport",
+      "snapshot_uri": "files/experiments/paper13/archive/results/network_f5_learned.sofreport",
+      "digest": "d16fc8dce767da144b34912eb303aa581ee18cfc1c797e00ba982ac6b97953f3",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/network_ref.sofreport",
+      "snapshot_uri": "files/experiments/paper13/archive/results/network_ref.sofreport",
+      "digest": "49e584d6db59e0ff854ec2c4188c7a49034d5f90694e0f77b6338d7720839135",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/signature_tables.md",
+      "snapshot_uri": "files/experiments/paper13/archive/results/signature_tables.md",
+      "digest": "a3ce79a654f6615477023b2c81602e8cfdd13cb5227b95b3094d829d9428c2a0",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/sir_f1.sofaudit",
+      "snapshot_uri": "files/experiments/paper13/archive/results/sir_f1.sofaudit",
+      "digest": "9d8449df0e73d281ae8ce623e445c08fff4fe546eb8f57fbd1b20f8671dd429b",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/sir_f1_learned.sofreport",
+      "snapshot_uri": "files/experiments/paper13/archive/results/sir_f1_learned.sofreport",
+      "digest": "50213bec052adaa8bf8b444c1a26ebf2fc4115ff2ed74f39815dd75d1a1bd6d6",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/sir_f2.sofaudit",
+      "snapshot_uri": "files/experiments/paper13/archive/results/sir_f2.sofaudit",
+      "digest": "1473880e9dc91d784eb0d303d62c6d72680496cadfcfd6f0b2b21cb54176fb48",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/sir_f2_learned.sofreport",
+      "snapshot_uri": "files/experiments/paper13/archive/results/sir_f2_learned.sofreport",
+      "digest": "0cd4f9151a20e39090bc0be64f15b9ad2718d3db5422b1cfe90a23be3308c111",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/sir_f3.sofaudit",
+      "snapshot_uri": "files/experiments/paper13/archive/results/sir_f3.sofaudit",
+      "digest": "522fcd4efe161b07d095c0eb8d9452a3a1d05d564f691a82ebfe5da7cfaafe34",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/sir_f3_learned.sofreport",
+      "snapshot_uri": "files/experiments/paper13/archive/results/sir_f3_learned.sofreport",
+      "digest": "429d8d5bf3ff7ca24849a5f4753f5c82353ff0afa15faeb532d7a630587a7014",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/sir_f4.sofaudit",
+      "snapshot_uri": "files/experiments/paper13/archive/results/sir_f4.sofaudit",
+      "digest": "8c0dae3d728123a76135cc0c39185ea0a11d11ba9422dfdae7ad2e0cb61c0410",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/sir_f4_learned.sofreport",
+      "snapshot_uri": "files/experiments/paper13/archive/results/sir_f4_learned.sofreport",
+      "digest": "06b796d58d58f87a4fa100ceed9c5c86171b85e6978bdf65a75248b1b27ece6d",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/sir_f5.sofaudit",
+      "snapshot_uri": "files/experiments/paper13/archive/results/sir_f5.sofaudit",
+      "digest": "ff3428b7bc805a957d1e513529ce464c648f4cc48324ba0903ae37b996aea3fc",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/sir_f5_learned.sofreport",
+      "snapshot_uri": "files/experiments/paper13/archive/results/sir_f5_learned.sofreport",
+      "digest": "1bdf153254d1cab794b9452be3d0f4858a1d7df76cd597d6b0d768e84d1f42e0",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/sir_ref.sofreport",
+      "snapshot_uri": "files/experiments/paper13/archive/results/sir_ref.sofreport",
+      "digest": "d4c15bd6e6c6758df0edab8a8b2cd6d4868c8bfb7d85573339cfeb656a7c5081",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/traffic_f1.sofaudit",
+      "snapshot_uri": "files/experiments/paper13/archive/results/traffic_f1.sofaudit",
+      "digest": "9f4f421b875acf7404156332db6d1e87de6e29bdf5d0c30880714fc302b85acf",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/traffic_f1_learned.sofreport",
+      "snapshot_uri": "files/experiments/paper13/archive/results/traffic_f1_learned.sofreport",
+      "digest": "0f1d9ce121be1de5427f5006454c91d9c6aaf6c95d76f62b65da0a5d9510a9fe",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/traffic_f2.sofaudit",
+      "snapshot_uri": "files/experiments/paper13/archive/results/traffic_f2.sofaudit",
+      "digest": "b1df9220745ca1571a8425d63fc8e63872d2eca60d052f09c88b00d6f2144420",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/traffic_f2_learned.sofreport",
+      "snapshot_uri": "files/experiments/paper13/archive/results/traffic_f2_learned.sofreport",
+      "digest": "0a5dac2e2ba9411f0e923673ec31e43f59a4706e7262cf0ff4117bc456f679d3",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/traffic_f3.sofaudit",
+      "snapshot_uri": "files/experiments/paper13/archive/results/traffic_f3.sofaudit",
+      "digest": "eb813c4fdbd2932354cd5cdd89563b1198af2d4693520251f01c63df63608426",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/traffic_f3_learned.sofreport",
+      "snapshot_uri": "files/experiments/paper13/archive/results/traffic_f3_learned.sofreport",
+      "digest": "1e9f2787625ba5de2509e4dd8d0e20840b3492f4fc2e9f3d7d6dd956f6d38aa0",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/traffic_f4.sofaudit",
+      "snapshot_uri": "files/experiments/paper13/archive/results/traffic_f4.sofaudit",
+      "digest": "10627cdd00003c308c97c020af06aea603886472027b757fc3a15048329c4165",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/traffic_f4_learned.sofreport",
+      "snapshot_uri": "files/experiments/paper13/archive/results/traffic_f4_learned.sofreport",
+      "digest": "a20826090a15a5135294b8753a1877a16ab18d10792b85d88d70befd04681c1d",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/traffic_f5.sofaudit",
+      "snapshot_uri": "files/experiments/paper13/archive/results/traffic_f5.sofaudit",
+      "digest": "8e87c5df216a1a98603c67befac4271e5ce16357c3444606ade8da220d0401fe",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/traffic_f5_learned.sofreport",
+      "snapshot_uri": "files/experiments/paper13/archive/results/traffic_f5_learned.sofreport",
+      "digest": "fdf52eee26471381252f57a55dcab34d44075c799480b664420a7390c91212ca",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/traffic_ref.sofreport",
+      "snapshot_uri": "files/experiments/paper13/archive/results/traffic_ref.sofreport",
+      "digest": "f42b2301e417ca8d15c7a22e8ec0bdb6bf53d7a7c2d22690bc5e24a14d8833ec",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/traffic_rho05_before.sofreport",
+      "snapshot_uri": "files/experiments/paper13/archive/results/traffic_rho05_before.sofreport",
+      "digest": "b0af2631c27affc0e033506f87951625a8f8f79bbe41534169cb389e5cd0864d",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/archive/results/traffic_rho20_after.sofreport",
+      "snapshot_uri": "files/experiments/paper13/archive/results/traffic_rho20_after.sofreport",
+      "digest": "893ddb05e6266cb18d7fb0cdcbc3aa0e288b3a9b35be943a2180bfa6cd897f45",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/audits/before_after_compiler.sofaudit.json",
+      "snapshot_uri": "files/experiments/paper13/results/audits/before_after_compiler.sofaudit.json",
+      "digest": "bb48ddcfb863432b7ec41bb4060fc0bff40240a8128087d01328699fcd70e0fb",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/audits/before_after_gridworld.sofaudit.json",
+      "snapshot_uri": "files/experiments/paper13/results/audits/before_after_gridworld.sofaudit.json",
+      "digest": "cdf06f2d2731c9e64043331d5c48dfb3d6513ac32f117d786f435a8cfd10726b",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/audits/before_after_traffic.sofaudit.json",
+      "snapshot_uri": "files/experiments/paper13/results/audits/before_after_traffic.sofaudit.json",
+      "digest": "13f8a8523aaf00728c8003c2cd6bc91576971f77390a4b6da4d1eccb5c853fa7",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/audits/compiler_f1.sofaudit.json",
+      "snapshot_uri": "files/experiments/paper13/results/audits/compiler_f1.sofaudit.json",
+      "digest": "bbff0eab6b1b23837cf48bb8caeabc885da45d04982b599dadc20d7ab4f15069",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/audits/compiler_f2.sofaudit.json",
+      "snapshot_uri": "files/experiments/paper13/results/audits/compiler_f2.sofaudit.json",
+      "digest": "719b173c8583e9cc335abe3edcdc25d6c0a847b303465f5d987b6b2579ca9f6d",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/audits/compiler_f3.sofaudit.json",
+      "snapshot_uri": "files/experiments/paper13/results/audits/compiler_f3.sofaudit.json",
+      "digest": "c93bdffc78a6e90c8a8d480c2ebbffaedfabe9061e46404d1c20da42cb83eeb9",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/audits/compiler_f4.sofaudit.json",
+      "snapshot_uri": "files/experiments/paper13/results/audits/compiler_f4.sofaudit.json",
+      "digest": "71a883614a14e6591f5a49ee80e5107e3317ba73c2ede93293efc0373e26eddd",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/audits/compiler_f5.sofaudit.json",
+      "snapshot_uri": "files/experiments/paper13/results/audits/compiler_f5.sofaudit.json",
+      "digest": "b5a757ca7b6b8241090f4ea4e85dfbba900f4d6b80d8b16f78f03c4044027cbd",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/audits/gridworld_f1.sofaudit.json",
+      "snapshot_uri": "files/experiments/paper13/results/audits/gridworld_f1.sofaudit.json",
+      "digest": "0fbba91097bcb56de5f2c49e4c6681b4b549213f92e14a39fc2c4685de0bd4c6",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/audits/gridworld_f2.sofaudit.json",
+      "snapshot_uri": "files/experiments/paper13/results/audits/gridworld_f2.sofaudit.json",
+      "digest": "c9411604e13cc51820f4c69ee23341f02d14a33a4afb6ac9e1a6030339fc0bd4",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/audits/gridworld_f3.sofaudit.json",
+      "snapshot_uri": "files/experiments/paper13/results/audits/gridworld_f3.sofaudit.json",
+      "digest": "b85b7698f169ba21cb042ca5655bf7828402feb35cc74762069df8f13b5b632e",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/audits/gridworld_f4.sofaudit.json",
+      "snapshot_uri": "files/experiments/paper13/results/audits/gridworld_f4.sofaudit.json",
+      "digest": "17bf196611892301d92c2fda96d7923b8f7dd9927f91a22ed7312532d31c571d",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/audits/gridworld_f5.sofaudit.json",
+      "snapshot_uri": "files/experiments/paper13/results/audits/gridworld_f5.sofaudit.json",
+      "digest": "dc4c1e7fedba4f41b64a9dae3bcb66b18c9a55a95ef75659cacfe4164960602b",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/audits/network_f1.sofaudit.json",
+      "snapshot_uri": "files/experiments/paper13/results/audits/network_f1.sofaudit.json",
+      "digest": "3dbf0856e2b9d7079c82ba5c0552bd529a32896cd74d88d5719bd22d3bd940fd",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/audits/network_f2.sofaudit.json",
+      "snapshot_uri": "files/experiments/paper13/results/audits/network_f2.sofaudit.json",
+      "digest": "62fcca9458d8742d68fa0354b6539c02d9f5601277225f2ac249edbf29bc6147",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/audits/network_f3.sofaudit.json",
+      "snapshot_uri": "files/experiments/paper13/results/audits/network_f3.sofaudit.json",
+      "digest": "01157d71401b04c413f29958cd83206fdc61b63a75beb6904955431b6b6ce497",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/audits/network_f4.sofaudit.json",
+      "snapshot_uri": "files/experiments/paper13/results/audits/network_f4.sofaudit.json",
+      "digest": "a66871f0f2908363526d1f3422d89e33b81a17e7b5347915a2d54f1c63d3a1fa",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/audits/network_f5.sofaudit.json",
+      "snapshot_uri": "files/experiments/paper13/results/audits/network_f5.sofaudit.json",
+      "digest": "20a4369a95df92388e5a1119708652098993d2d44c69c0022256b93c71ef5028",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/audits/sir_f1.sofaudit.json",
+      "snapshot_uri": "files/experiments/paper13/results/audits/sir_f1.sofaudit.json",
+      "digest": "abee5e9754fb2b1caf5c61c3a2f2351b4be07dea75ece63adae1d98a9bd943fa",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/audits/sir_f2.sofaudit.json",
+      "snapshot_uri": "files/experiments/paper13/results/audits/sir_f2.sofaudit.json",
+      "digest": "89caedef60b9856819df0533850358311d60c6a330b7bfe36f1888945780a616",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/audits/sir_f3.sofaudit.json",
+      "snapshot_uri": "files/experiments/paper13/results/audits/sir_f3.sofaudit.json",
+      "digest": "087900c245576b66e03e9bc69ef7d43d4144142c724a854b5c15ca8fa038edf4",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/audits/sir_f4.sofaudit.json",
+      "snapshot_uri": "files/experiments/paper13/results/audits/sir_f4.sofaudit.json",
+      "digest": "8410508a2ada2e22767567f6f13e78c959bbf9256a83569f51e6e0a03cc754e2",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/audits/sir_f5.sofaudit.json",
+      "snapshot_uri": "files/experiments/paper13/results/audits/sir_f5.sofaudit.json",
+      "digest": "f3f752cd3f7f8872a3b60a413e83176d014694973b1c9126c84cf7d1b2d81d69",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/audits/traffic_f1.sofaudit.json",
+      "snapshot_uri": "files/experiments/paper13/results/audits/traffic_f1.sofaudit.json",
+      "digest": "1472f624d9414c1438d42df0d2ca60b36a425d39d1e9a1fd7b6875d2b66be0a3",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/audits/traffic_f2.sofaudit.json",
+      "snapshot_uri": "files/experiments/paper13/results/audits/traffic_f2.sofaudit.json",
+      "digest": "c8ebe0d3b2316d20e2913f83fb9b7b84c0cbc3bb368056828ef488763654e117",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/audits/traffic_f3.sofaudit.json",
+      "snapshot_uri": "files/experiments/paper13/results/audits/traffic_f3.sofaudit.json",
+      "digest": "d98426ed72cd8afca98fe789c751073eb9623ef249b362457c3fc7502c69ca0d",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/audits/traffic_f4.sofaudit.json",
+      "snapshot_uri": "files/experiments/paper13/results/audits/traffic_f4.sofaudit.json",
+      "digest": "3f5809a071e2f81dabc340fdee495f58451fa99e5ed2436c69ce870319db025c",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/audits/traffic_f5.sofaudit.json",
+      "snapshot_uri": "files/experiments/paper13/results/audits/traffic_f5.sofaudit.json",
+      "digest": "9c0d9b74c8b84f14d0b7586afc509689d90bda11ad399d36d0a7c9555f744e2e",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/controls/paper13-contextual-descent-control-v1.json",
+      "snapshot_uri": "files/experiments/paper13/results/controls/paper13-contextual-descent-control-v1.json",
+      "digest": "37c5e6cd10b3f29566e7b95e60c724a6315aa5bc3492ac97ce188e5a2ba67636",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/controls/paper13-contextual-descent-control-v1.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/controls/paper13-contextual-descent-control-v1.validation-receipt.json",
+      "digest": "7584df4450cfb7a9c1894774c7e29694e4a5425ee9b16b527f53751113a8100a",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/migration-index.json",
+      "snapshot_uri": "files/experiments/paper13/results/migration-index.json",
+      "digest": "1227b0f2b4b5512e2fb55018a3ea5245613e594c35015762cf5971d87f61b30f",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/native/gridworld-f4/audits/gridworld-f4-native-v2.sofaudit.json",
+      "snapshot_uri": "files/experiments/paper13/results/native/gridworld-f4/audits/gridworld-f4-native-v2.sofaudit.json",
+      "digest": "b35e74218ac71d4009e806743d9241d5b4af2fc9df62009c3e4eac493764303f",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/native/gridworld-f4/evidence/gridworld-f4.alignment-evidence.json",
+      "snapshot_uri": "files/experiments/paper13/results/native/gridworld-f4/evidence/gridworld-f4.alignment-evidence.json",
+      "digest": "83cd9641ef975fea2f7c7fa0b9cda799fe59731c49dfd87216dedee9879dd4fb",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/native/gridworld-f4/evidence/gridworld-f4.audit-result.json",
+      "snapshot_uri": "files/experiments/paper13/results/native/gridworld-f4/evidence/gridworld-f4.audit-result.json",
+      "digest": "b1704f81539ecacff23e43313e446351e97dac6c73b27ac0b20ba8e1a8c40455",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/native/gridworld-f4/evidence/gridworld-f4.structure-certificate.json",
+      "snapshot_uri": "files/experiments/paper13/results/native/gridworld-f4/evidence/gridworld-f4.structure-certificate.json",
+      "digest": "fc62ada48b5e375a0bd2e8ee4bd4aaffbffd4da16c0627b881de484d0c16deed",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/native/gridworld-f4/receipts/gridworld-f4-native-v2.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/native/gridworld-f4/receipts/gridworld-f4-native-v2.validation-receipt.json",
+      "digest": "f06d0795217342f4528e1728a14432be402179db8bf22f435acf359d0b29a73a",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/native/gridworld-f4/source-reports/compiler-output/gridworld-f4-reference.compiler-output.json",
+      "snapshot_uri": "files/experiments/paper13/results/native/gridworld-f4/source-reports/compiler-output/gridworld-f4-reference.compiler-output.json",
+      "digest": "e5f1a1f7199c0ebf16d3161ee33619db278c63b7adee5080bd0af96bff09cc2d",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/native/gridworld-f4/source-reports/compiler-output/gridworld-f4-target.compiler-output.json",
+      "snapshot_uri": "files/experiments/paper13/results/native/gridworld-f4/source-reports/compiler-output/gridworld-f4-target.compiler-output.json",
+      "digest": "5851f049659f49ae720c675eec5a686c8c56db904f89a86ab5af1b917469c1aa",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/native/gridworld-f4/source-reports/ir/gridworld-f4-reference.ir.json",
+      "snapshot_uri": "files/experiments/paper13/results/native/gridworld-f4/source-reports/ir/gridworld-f4-reference.ir.json",
+      "digest": "e5d7fadce19bc1bb2afe44bd2dacb07adbe184e1cbbda9459a36278e885c2da8",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/native/gridworld-f4/source-reports/ir/gridworld-f4-target.ir.json",
+      "snapshot_uri": "files/experiments/paper13/results/native/gridworld-f4/source-reports/ir/gridworld-f4-target.ir.json",
+      "digest": "7237d4f3da81f5ac84b363716e45ca3359c5f6643e0cd1ca2dd2e9ffcbbd1d96",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/native/gridworld-f4/source-reports/manifests/gridworld-f4-reference.capabilities.json",
+      "snapshot_uri": "files/experiments/paper13/results/native/gridworld-f4/source-reports/manifests/gridworld-f4-reference.capabilities.json",
+      "digest": "0a8a9b27c64ccddf0700fe857dbf4bc1bb4ce66e573ebd7a0839f677e55e226a",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/native/gridworld-f4/source-reports/manifests/gridworld-f4-target.capabilities.json",
+      "snapshot_uri": "files/experiments/paper13/results/native/gridworld-f4/source-reports/manifests/gridworld-f4-target.capabilities.json",
+      "digest": "80fa32d16440e6bf70ece8833affb9dd2b3121bb40387778edf20d04182b6621",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/native/gridworld-f4/source-reports/receipts/gridworld-f4-reference.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/native/gridworld-f4/source-reports/receipts/gridworld-f4-reference.validation-receipt.json",
+      "digest": "ec695e60d4f4c59d68068090028c6d1997cb41d1cbf727941a088827640f6ed2",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/native/gridworld-f4/source-reports/receipts/gridworld-f4-target.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/native/gridworld-f4/source-reports/receipts/gridworld-f4-target.validation-receipt.json",
+      "digest": "1d785730ed0dda2bfbbd0014dd6ed472375e53b5e1a8a235136bf037b9cde0f1",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/native/gridworld-f4/source-reports/reports/gridworld-f4-reference.sofreport.json",
+      "snapshot_uri": "files/experiments/paper13/results/native/gridworld-f4/source-reports/reports/gridworld-f4-reference.sofreport.json",
+      "digest": "936c15d26052d110474a0e157ec7e5b9037b7c80f3671914ed5e5f8656ab1e0f",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/native/gridworld-f4/source-reports/reports/gridworld-f4-target.sofreport.json",
+      "snapshot_uri": "files/experiments/paper13/results/native/gridworld-f4/source-reports/reports/gridworld-f4-target.sofreport.json",
+      "digest": "5088aafe17b283bc3be1c62919ecd9ba11dcbcda09df81676c2d2cf72fd32c9f",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/native/gridworld-f4/sources/gridworld-f4-target.source.json",
+      "snapshot_uri": "files/experiments/paper13/results/native/gridworld-f4/sources/gridworld-f4-target.source.json",
+      "digest": "fc8f814ede339bfbfff0b54d3e112193628f4d0aaee8a7a8da86ce19dcb52470",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/native/gridworld-f4/sources/gridworld-reference.source.json",
+      "snapshot_uri": "files/experiments/paper13/results/native/gridworld-f4/sources/gridworld-reference.source.json",
+      "digest": "cb52babe5a1227c02f1f5ec2a3b57d93738ff2521db2eb6d5129f308dd6c5bd5",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/object-certificates/gridworld_f4.object-certificate.json",
+      "snapshot_uri": "files/experiments/paper13/results/object-certificates/gridworld_f4.object-certificate.json",
+      "digest": "bfa238903a1417364418c40cba6d5705706f79d2f731158b3110f69b7a8c82ee",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/receipts/before_after_compiler_o0_o2.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/receipts/before_after_compiler_o0_o2.validation-receipt.json",
+      "digest": "8ad7453b5f71ad92344a536cbf8ac83da5365935e4f6953db278022b76961e5a",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/receipts/before_after_gridworld_obstacle.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/receipts/before_after_gridworld_obstacle.validation-receipt.json",
+      "digest": "ce811147124f4a076f9e0d5bac2b5cb943addf057b4fdf6c3a640b29d425e152",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/receipts/before_after_traffic_retiming.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/receipts/before_after_traffic_retiming.validation-receipt.json",
+      "digest": "771c2403094f36ede938187926a2f64130d7736acaee3157c59f225bcd82b032",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/receipts/compiler_f1.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/receipts/compiler_f1.validation-receipt.json",
+      "digest": "6b6284e9e7265f8bd180b29678f392c0a1529cce47852ba5d6c0929a557375c5",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/receipts/compiler_f2.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/receipts/compiler_f2.validation-receipt.json",
+      "digest": "aff28e04978575183152343f6656f17fcbbce9f1a20832ddcd9bf41274033138",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/receipts/compiler_f3.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/receipts/compiler_f3.validation-receipt.json",
+      "digest": "c8e30bfe6a64ea2da7261577919b32a15bbf22c73148f85b99755837183b82ae",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/receipts/compiler_f4.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/receipts/compiler_f4.validation-receipt.json",
+      "digest": "50e805c427c00f0120767b4d38cfb1b8215e94cbb87b3118685bcf326796f72f",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/receipts/compiler_f5.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/receipts/compiler_f5.validation-receipt.json",
+      "digest": "673c6ec887011710b47e1927368fbd53014f1c651d8981763d947198b7a30d43",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/receipts/gridworld_f1.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/receipts/gridworld_f1.validation-receipt.json",
+      "digest": "9687c8c1e746f4db044955d99c9b5bd394749350b0d64dd02413af8aac4f9700",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/receipts/gridworld_f2.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/receipts/gridworld_f2.validation-receipt.json",
+      "digest": "5cac099eb009e8be8b95530a1f369b0c7e8430ec5fb8fdb0da7ac451839b0e4b",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/receipts/gridworld_f3.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/receipts/gridworld_f3.validation-receipt.json",
+      "digest": "9e11641c2e8180bb86e58b2b0a07484420d2c423d5428f6670a2c8ccd145779f",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/receipts/gridworld_f4.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/receipts/gridworld_f4.validation-receipt.json",
+      "digest": "33fc21b89b6dc44b5fb997cbe105cf4cb6db47ecc27e03f0fc4f57b76afaa5fd",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/receipts/gridworld_f5.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/receipts/gridworld_f5.validation-receipt.json",
+      "digest": "28f72547f74f27f8984df31e60f2d311460d773a0287cb395653c3fb30df13ea",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/receipts/network_f1.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/receipts/network_f1.validation-receipt.json",
+      "digest": "7ffb4fe579f6c848e814c8c60439b7f7131528e0464f1d57393fe6df9c407c98",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/receipts/network_f2.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/receipts/network_f2.validation-receipt.json",
+      "digest": "74b9fcb2c90fcb8f6c75331a8f43048602df88d47b981d62ecfeb02fc2503ee3",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/receipts/network_f3.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/receipts/network_f3.validation-receipt.json",
+      "digest": "cb6b0a094d5d236a64656aa7cbd65467d8f0386826f7f37b6310db3d16d0eb71",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/receipts/network_f4.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/receipts/network_f4.validation-receipt.json",
+      "digest": "1a5bef7946e7039d134b9cf0e04d0420ab2f3720de2c004254ced7fa70a7385d",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/receipts/network_f5.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/receipts/network_f5.validation-receipt.json",
+      "digest": "c7adca71c45cc3cf0511eb9ffc2f8deb8e781190346c387aef5d0e3e2623bc14",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/receipts/sir_f1.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/receipts/sir_f1.validation-receipt.json",
+      "digest": "2fb096e90da41d67006e6d6985b33f4e28f62119364483dbe0162340f51e15ed",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/receipts/sir_f2.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/receipts/sir_f2.validation-receipt.json",
+      "digest": "631c2a1e1dcf9d342618fb75397baf878fefaef270d514235f602afc6b7e1a14",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/receipts/sir_f3.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/receipts/sir_f3.validation-receipt.json",
+      "digest": "24e94b330c5889db9d301a89ddd00f752daad74fa0c653e648470165077f024b",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/receipts/sir_f4.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/receipts/sir_f4.validation-receipt.json",
+      "digest": "4e51f30db8b9728b83a4e2552048444f89502f97dd5769a7e57190fba7c424ea",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/receipts/sir_f5.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/receipts/sir_f5.validation-receipt.json",
+      "digest": "b4f27bf9a2b7023b89c82495b36152371722d6018c6e6e738a9f01635af2e1cd",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/receipts/traffic_f1.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/receipts/traffic_f1.validation-receipt.json",
+      "digest": "e588879d4083afd167dfd159bf6b3badfcfaf54cbfaa7b8fb55beb9998ab206b",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/receipts/traffic_f2.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/receipts/traffic_f2.validation-receipt.json",
+      "digest": "ff6e7d5819dce9399fc0b30cf727e214523656a42af1ee12d901f13a7ed39c77",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/receipts/traffic_f3.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/receipts/traffic_f3.validation-receipt.json",
+      "digest": "e478fe2b40c1b39ea3ad123344f9bf158f0186781dc8faa293798d7a3b62d9a2",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/receipts/traffic_f4.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/receipts/traffic_f4.validation-receipt.json",
+      "digest": "97acf6e19fe84ddfab792507427ed5976e6c896c9c17bb54a2c8cd2ca7397405",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/receipts/traffic_f5.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/receipts/traffic_f5.validation-receipt.json",
+      "digest": "1bf9ab06f3a3c24a99cacad81df57fbd5d132ac010305e90ddc144dc0322e460",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/compiler-output/compiler_f1_learned.compiler-output.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/compiler-output/compiler_f1_learned.compiler-output.json",
+      "digest": "4c411ed50df6684b2b16f9dde564b097e456900e26b82b3780dba4a929fc82e4",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/compiler-output/compiler_f2_learned.compiler-output.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/compiler-output/compiler_f2_learned.compiler-output.json",
+      "digest": "a7bf5ce27a740f2ccf845c644f635b69e04ef4b142782b0ce5d020a1e07607da",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/compiler-output/compiler_f3_learned.compiler-output.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/compiler-output/compiler_f3_learned.compiler-output.json",
+      "digest": "6e44d79147e1fd13f7afcef9c86b773e40077000e10ae38aeaafbc9674cea87f",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/compiler-output/compiler_f4_learned.compiler-output.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/compiler-output/compiler_f4_learned.compiler-output.json",
+      "digest": "80cf1ee0c739ff8e3bb6d086b2a66413245d94eeda6ea956b57fd71f06efb655",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/compiler-output/compiler_f5_learned.compiler-output.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/compiler-output/compiler_f5_learned.compiler-output.json",
+      "digest": "71cee756bd5c4752288f99e2b5cf39ad7c5374b37e5c6f6b4ff1b2dca9c37092",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/compiler-output/compiler_o0_before.compiler-output.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/compiler-output/compiler_o0_before.compiler-output.json",
+      "digest": "9a8b4b5da2e5cb5edbe9eddc1271a4ea399e574c4f011315dc87fbf494a0bd5b",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/compiler-output/compiler_o2_after.compiler-output.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/compiler-output/compiler_o2_after.compiler-output.json",
+      "digest": "ca4c1155f7e1c40b5f926a7fb9df3cb0a5353294dd870e34ad025f3464cc8d6e",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/compiler-output/compiler_ref.compiler-output.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/compiler-output/compiler_ref.compiler-output.json",
+      "digest": "0f3f529207271b37a05425edecf18411321e7df4bba9ad7a13770b2dd73aee9f",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/compiler-output/gridworld_f1_learned.compiler-output.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/compiler-output/gridworld_f1_learned.compiler-output.json",
+      "digest": "912997b952a7ec9092e743ea370740d0dfd5567ab1cbba17155af887e4e6ac7a",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/compiler-output/gridworld_f2_learned.compiler-output.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/compiler-output/gridworld_f2_learned.compiler-output.json",
+      "digest": "4acaaf5fd66be3abccc24ccee892635429e33b3336396e8e777a4f657a9e44c5",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/compiler-output/gridworld_f3_learned.compiler-output.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/compiler-output/gridworld_f3_learned.compiler-output.json",
+      "digest": "78817b936770b92f3399a302bf2a24dbd4031e166d17fb4a8344d836031e13b1",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/compiler-output/gridworld_f4_learned.compiler-output.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/compiler-output/gridworld_f4_learned.compiler-output.json",
+      "digest": "6201470a14e9233644d2a9a7a6acfb1a5421aa6077a0964782e180b664b5d1ff",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/compiler-output/gridworld_f5_learned.compiler-output.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/compiler-output/gridworld_f5_learned.compiler-output.json",
+      "digest": "1a77527b1904f74ef5216b29a308ae8fc6414b9c99e7cae83fa6f3f268e7bff7",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/compiler-output/gridworld_obs00_after.compiler-output.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/compiler-output/gridworld_obs00_after.compiler-output.json",
+      "digest": "0827fc6a87d736e7730a68a8b7917eb8e161446b6a64f36fb1bd11c4a4f84761",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/compiler-output/gridworld_obs22_before.compiler-output.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/compiler-output/gridworld_obs22_before.compiler-output.json",
+      "digest": "081cdab844449da7da62b04fcd873375bb35f1f6e9b017801bee7beb5f98cf01",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/compiler-output/gridworld_ref.compiler-output.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/compiler-output/gridworld_ref.compiler-output.json",
+      "digest": "279e2a0d795f68b8b4628e3a1bd405c646dc2c2913a59404f4d2b20af082e635",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/compiler-output/network_f1_learned.compiler-output.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/compiler-output/network_f1_learned.compiler-output.json",
+      "digest": "5be666869f1ff764c3869841b9cb194d4939bc7af34515b04b7da0b8014eca53",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/compiler-output/network_f2_learned.compiler-output.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/compiler-output/network_f2_learned.compiler-output.json",
+      "digest": "cbcf779abda1d1465b1d24af9da9e9985a610a84afef176a1083323f1841c0fd",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/compiler-output/network_f3_learned.compiler-output.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/compiler-output/network_f3_learned.compiler-output.json",
+      "digest": "224b9df8514caede522c6e2f351196c58192a040534286c175383e5b1e1b1a96",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/compiler-output/network_f4_learned.compiler-output.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/compiler-output/network_f4_learned.compiler-output.json",
+      "digest": "59afd2796e29927399bf65f37c8eb25bd7e1d18462c0a1d00bcd7b5e09d404e5",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/compiler-output/network_f5_learned.compiler-output.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/compiler-output/network_f5_learned.compiler-output.json",
+      "digest": "cf446dae0ab9b70c62353a6fbceb7c76ff20b9b9d918c1411ee1f140ca5825fa",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/compiler-output/network_ref.compiler-output.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/compiler-output/network_ref.compiler-output.json",
+      "digest": "694ec0ca3b7f6e8e5353db5bdfde8d592c3b53f3da56510dd0d9b65635fc1be6",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/compiler-output/sir_f1_learned.compiler-output.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/compiler-output/sir_f1_learned.compiler-output.json",
+      "digest": "4c12e9db038f875baa6877554441e5b5a308ce8a7b6600fc3a91f953a099a931",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/compiler-output/sir_f2_learned.compiler-output.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/compiler-output/sir_f2_learned.compiler-output.json",
+      "digest": "01cf3f978ea0aa0d9c0e515899fe384218fa15d17340975f89285fd66a52eede",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/compiler-output/sir_f3_learned.compiler-output.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/compiler-output/sir_f3_learned.compiler-output.json",
+      "digest": "b823105f0f0f893b8cd34495a9b94eff9056e26677877b787d92cd512e07d2d3",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/compiler-output/sir_f4_learned.compiler-output.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/compiler-output/sir_f4_learned.compiler-output.json",
+      "digest": "f10e4081a6f8f458d44ec7dd000bfa2744c379bbc08784813a874023a3f43ab7",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/compiler-output/sir_f5_learned.compiler-output.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/compiler-output/sir_f5_learned.compiler-output.json",
+      "digest": "d5ae9e0802065dd0f3e2ffb2f73f95130f901bd205f3f7a58e5a0236ad6b75ed",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/compiler-output/sir_ref.compiler-output.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/compiler-output/sir_ref.compiler-output.json",
+      "digest": "b7339c538412c1678be17ad603f613f5500b4c3f15c2e1cbdcc17f9f02182892",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/compiler-output/traffic_f1_learned.compiler-output.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/compiler-output/traffic_f1_learned.compiler-output.json",
+      "digest": "49c732bd3a5fbce810d35a614f60d8c09167e6c46424297e1056d86b4e44b112",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/compiler-output/traffic_f2_learned.compiler-output.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/compiler-output/traffic_f2_learned.compiler-output.json",
+      "digest": "1a741daabb542b16530c65041a8a74c22eb5b461ebf0c1c2b3a0211cd84dce8d",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/compiler-output/traffic_f3_learned.compiler-output.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/compiler-output/traffic_f3_learned.compiler-output.json",
+      "digest": "92fa7b94c5afcc469a8953376878b25fca2710c1246bf09bac3242b515417046",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/compiler-output/traffic_f4_learned.compiler-output.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/compiler-output/traffic_f4_learned.compiler-output.json",
+      "digest": "e23d9b9ca1d66163ec3cc257d230fcd568d4ae401f9ef3d3757476c8891cb7bf",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/compiler-output/traffic_f5_learned.compiler-output.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/compiler-output/traffic_f5_learned.compiler-output.json",
+      "digest": "39e61b7bba8321f7a59fac543fad656321644ffdfcff3d73a971d21d0ee2b4dc",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/compiler-output/traffic_ref.compiler-output.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/compiler-output/traffic_ref.compiler-output.json",
+      "digest": "3dc186b5f2c749507813e5f62ab927aef0632e94ca9c9d68855ad943eb418cc4",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/compiler-output/traffic_rho05_before.compiler-output.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/compiler-output/traffic_rho05_before.compiler-output.json",
+      "digest": "da08a3e9c45cbb96f9fb8c83836d28e230acd34d1b465bd4f7264b9870871cb5",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/compiler-output/traffic_rho20_after.compiler-output.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/compiler-output/traffic_rho20_after.compiler-output.json",
+      "digest": "a69dc2f52a62ff08a7f376f62070cd3a60a4363b6d42baad6ce649c0b30970ad",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/ir/compiler_f1_learned.ir.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/ir/compiler_f1_learned.ir.json",
+      "digest": "f393df766beccce9a724fdcd1ec6f8b3a89552a7e98459b630da039c90d4a61d",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/ir/compiler_f2_learned.ir.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/ir/compiler_f2_learned.ir.json",
+      "digest": "cfe46ab250a2d87ad147838a27566634a06b2b5d91380d384b36bb16eab2c5bd",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/ir/compiler_f3_learned.ir.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/ir/compiler_f3_learned.ir.json",
+      "digest": "261bf2906cb470aba48d6beb7e3428043076684974d581a45f94c2d1ac75d5b6",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/ir/compiler_f4_learned.ir.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/ir/compiler_f4_learned.ir.json",
+      "digest": "4b56f1e50599d5468d681df9a443c1048c6f83be13b524241001fb2b3b5add70",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/ir/compiler_f5_learned.ir.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/ir/compiler_f5_learned.ir.json",
+      "digest": "958392762b6183244e0320cdd8f4c4356bb4fcee189af78eebfecabe26b9343d",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/ir/compiler_o0_before.ir.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/ir/compiler_o0_before.ir.json",
+      "digest": "9977ce949d091816fef7627c2e67f3f289b0285b33a1a233e564aa3c9182d8b4",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/ir/compiler_o2_after.ir.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/ir/compiler_o2_after.ir.json",
+      "digest": "ca77028d92c6b3fc044a341eedd7a43ed53ff9437e2e6c1217bf50649f7dae51",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/ir/compiler_ref.ir.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/ir/compiler_ref.ir.json",
+      "digest": "f6e9d0ed8e24905030ffc203b1bd5f7739302a8fc4f389d222c849509a66aaa0",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/ir/gridworld_f1_learned.ir.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/ir/gridworld_f1_learned.ir.json",
+      "digest": "d20647dd6c73facd63b4adb532670eb5ff2333d75f2781a60b6727ed13db10e9",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/ir/gridworld_f2_learned.ir.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/ir/gridworld_f2_learned.ir.json",
+      "digest": "1f61bf98aa197595384d1190df83528a251865c281a28e1b669c722e916c9c8e",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/ir/gridworld_f3_learned.ir.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/ir/gridworld_f3_learned.ir.json",
+      "digest": "67c921d1af5bc44ab8df1b1ea3f423cc4a851bd315f5cfa039a05ec6489819f3",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/ir/gridworld_f4_learned.ir.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/ir/gridworld_f4_learned.ir.json",
+      "digest": "797af505425aca7e910e4e9d00187dc574ac8de8dd5ae061069d1367a3ec929f",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/ir/gridworld_f5_learned.ir.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/ir/gridworld_f5_learned.ir.json",
+      "digest": "acb913be3b82e69c0ebf41d54a03a2c9ccd9a9e26d5b4401820c032f26025543",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/ir/gridworld_obs00_after.ir.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/ir/gridworld_obs00_after.ir.json",
+      "digest": "7c4bd7ecbf5eaeb994d29af70fe81bbde59a01aee65225a754925d1a9faf2505",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/ir/gridworld_obs22_before.ir.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/ir/gridworld_obs22_before.ir.json",
+      "digest": "890b810c2976937173d0b8cb5ef0aa1c07a8ed12bcfc7cd18775d0fdd58c7370",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/ir/gridworld_ref.ir.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/ir/gridworld_ref.ir.json",
+      "digest": "a70145cd8ea58e02f7ccce3ec4320e5122c0b49f4c135de8bb35cc6ed1a2a903",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/ir/network_f1_learned.ir.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/ir/network_f1_learned.ir.json",
+      "digest": "6d0fc9f695ee42c48a9b98ba436ba8eadee306c6dcb40a1c08c9eababba2f381",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/ir/network_f2_learned.ir.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/ir/network_f2_learned.ir.json",
+      "digest": "7bdd98dd835fb2c1981abd4cdfbe16e608c6b4db091c2e10b207222b9c818562",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/ir/network_f3_learned.ir.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/ir/network_f3_learned.ir.json",
+      "digest": "c445a4fe944dc261a4a238be34f2f083d82a9212df298427cda452b8abe232df",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/ir/network_f4_learned.ir.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/ir/network_f4_learned.ir.json",
+      "digest": "81e7c4ca01c41a8d071dec663f9c7bdb16d4a2dd9d9e97d1f014fe9263178ab7",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/ir/network_f5_learned.ir.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/ir/network_f5_learned.ir.json",
+      "digest": "a062b147535a1ec6319ae1cd6337c1db58de41a00e9118f23b73b38409757544",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/ir/network_ref.ir.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/ir/network_ref.ir.json",
+      "digest": "bb276509c9f6194b64355abf476f6873b8154e6e4a55cf670b8b6e924c4ff1e5",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/ir/sir_f1_learned.ir.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/ir/sir_f1_learned.ir.json",
+      "digest": "82b1656ff5d18a8dc285d7ada082b766d7428f41418945d938f8d77c7ef8de8a",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/ir/sir_f2_learned.ir.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/ir/sir_f2_learned.ir.json",
+      "digest": "e53eba2ffbfdaeb6632bb96707ad8a7e5ba77e74aa90590e2e6e9b6da7081e09",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/ir/sir_f3_learned.ir.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/ir/sir_f3_learned.ir.json",
+      "digest": "0353756ca424d86222a382eae9374c4324675c46d30d73b056a6e02704f1f447",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/ir/sir_f4_learned.ir.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/ir/sir_f4_learned.ir.json",
+      "digest": "ea24b5db0b5ac17b86f36d80d1684c6dad9b07195504ae5cc4312391c831e28d",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/ir/sir_f5_learned.ir.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/ir/sir_f5_learned.ir.json",
+      "digest": "ebf9501e6fb675e2be0a8132fdb44dc58a860b0682e20bd01c12c15a504cce36",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/ir/sir_ref.ir.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/ir/sir_ref.ir.json",
+      "digest": "549f7f24ce5a49bc80e6a262c1cb1bddfaed178faadaff5c233c54be8bf76179",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/ir/traffic_f1_learned.ir.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/ir/traffic_f1_learned.ir.json",
+      "digest": "e5080f21a2010029ea15a3babc4b2105f9fe5d7d20144ae4cf4468d3e8848cd9",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/ir/traffic_f2_learned.ir.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/ir/traffic_f2_learned.ir.json",
+      "digest": "083b47ff238121edc6a40e3b08da07db597ab8689ac4f2931b5f29aa3cedc7d2",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/ir/traffic_f3_learned.ir.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/ir/traffic_f3_learned.ir.json",
+      "digest": "27704f6f51f002848546605b3699c3988b4df351535c317382cedd04e8da0f9f",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/ir/traffic_f4_learned.ir.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/ir/traffic_f4_learned.ir.json",
+      "digest": "0ebd3391f6320045702164a0925f119725a68939d5237ff04c39deb640888970",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/ir/traffic_f5_learned.ir.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/ir/traffic_f5_learned.ir.json",
+      "digest": "d77ab5b991a792c67c9391be28d7c31181f187f2eefe3b47f6015099a9a9e608",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/ir/traffic_ref.ir.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/ir/traffic_ref.ir.json",
+      "digest": "9b7583eb355541a2954304a83f81b8836a6dcd62de86a48622e56fe287c7ab9a",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/ir/traffic_rho05_before.ir.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/ir/traffic_rho05_before.ir.json",
+      "digest": "bb663cb669a2cea5e4377592b0124c14c19c154c07b93dc5dcd9887fb561663e",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/ir/traffic_rho20_after.ir.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/ir/traffic_rho20_after.ir.json",
+      "digest": "eefb079f9a9fd03d3ce4674d8b2f8055946f1a0ac524850c87e906537ac7d510",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/manifests/compiler_f1_learned.capabilities.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/manifests/compiler_f1_learned.capabilities.json",
+      "digest": "ffb540a16f8b4fe4d6e684cfcf02701949bd8fd97061b004a24daba6aff57673",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/manifests/compiler_f2_learned.capabilities.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/manifests/compiler_f2_learned.capabilities.json",
+      "digest": "d0cd270e1f1c3f510f525db773356a1fd81a0258ef57a54181f6a0b83ad319f3",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/manifests/compiler_f3_learned.capabilities.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/manifests/compiler_f3_learned.capabilities.json",
+      "digest": "07599dff390c8be73001f2313a22971e2cea8ad9f847534fa147ff1622779317",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/manifests/compiler_f4_learned.capabilities.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/manifests/compiler_f4_learned.capabilities.json",
+      "digest": "788418b87e2a2d079bca251d5a54bc1e579a7335bc2104f97cef8742b28c4ac2",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/manifests/compiler_f5_learned.capabilities.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/manifests/compiler_f5_learned.capabilities.json",
+      "digest": "fb3fb1816f0c636872af4209091cd497204412b970e5c8487ddd2bc3dbb444db",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/manifests/compiler_o0_before.capabilities.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/manifests/compiler_o0_before.capabilities.json",
+      "digest": "abecedd4db270a3e8daab72aef6d685a2ce22d20603863746ef8e60722299823",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/manifests/compiler_o2_after.capabilities.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/manifests/compiler_o2_after.capabilities.json",
+      "digest": "5cadb44bf524a98d70b7fb51be13518e7d7518f31f975339c5daaf3353eb70f3",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/manifests/compiler_ref.capabilities.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/manifests/compiler_ref.capabilities.json",
+      "digest": "98673c28ae084945ed6eb14c0c17ce5443b2b2673e182916c01413d203bb305f",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/manifests/gridworld_f1_learned.capabilities.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/manifests/gridworld_f1_learned.capabilities.json",
+      "digest": "da8e07e153012ac4b1b980f07d6f4e4c51eff2bc65c738810fcc442239e13972",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/manifests/gridworld_f2_learned.capabilities.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/manifests/gridworld_f2_learned.capabilities.json",
+      "digest": "4a29aaa774cc7dc8a6b2f8f399870d0fde5f8f614a6006f7ca3b0584d2064daa",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/manifests/gridworld_f3_learned.capabilities.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/manifests/gridworld_f3_learned.capabilities.json",
+      "digest": "6ba639fc670bc6a71ff0d96dcdfef279aa3a9076ebca80370c98f60017737a98",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/manifests/gridworld_f4_learned.capabilities.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/manifests/gridworld_f4_learned.capabilities.json",
+      "digest": "793f839c94159dc409080648b0433f314c392a5488bc3e88894cf7951187bf3d",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/manifests/gridworld_f5_learned.capabilities.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/manifests/gridworld_f5_learned.capabilities.json",
+      "digest": "4b1980227400eb12a8b31cca0912e70a9c5109ac2823a7ace99da5757849a6d4",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/manifests/gridworld_obs00_after.capabilities.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/manifests/gridworld_obs00_after.capabilities.json",
+      "digest": "25095e2da91ec76295c2477ca86748acad968767e1a40466e139f53352c495bb",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/manifests/gridworld_obs22_before.capabilities.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/manifests/gridworld_obs22_before.capabilities.json",
+      "digest": "78b58b1af9993951ab3bc5db2d837cca3d9b8fe92976d1a7c880fc3130fe5633",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/manifests/gridworld_ref.capabilities.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/manifests/gridworld_ref.capabilities.json",
+      "digest": "5e1181d93cd7ee01298ee39399326a1349376bbb897fb46c56e627eb8c2e1c06",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/manifests/network_f1_learned.capabilities.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/manifests/network_f1_learned.capabilities.json",
+      "digest": "aa8aeccc73315a8b693fc007450c24e16719cca85eb3316b8596b3b7059a5b02",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/manifests/network_f2_learned.capabilities.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/manifests/network_f2_learned.capabilities.json",
+      "digest": "0d26dfc98c632486528143acd313506288771034ea71beda254a0584eee18011",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/manifests/network_f3_learned.capabilities.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/manifests/network_f3_learned.capabilities.json",
+      "digest": "9f98ca6f9fd0c8a99c303ede007d7bef8c35b4de13047d538e313c7217735b0f",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/manifests/network_f4_learned.capabilities.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/manifests/network_f4_learned.capabilities.json",
+      "digest": "d907280281f9bc695623336e3cf379ae3bb2d6652c00367ee03024eebdea0990",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/manifests/network_f5_learned.capabilities.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/manifests/network_f5_learned.capabilities.json",
+      "digest": "64aba9f15d716c776eb15954cb77d6d4470879d78de7884eaf4b61a0a4700d67",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/manifests/network_ref.capabilities.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/manifests/network_ref.capabilities.json",
+      "digest": "ac33668fc2ba11c7e0087aea8ea51bd38a5800837d99ef86061d425081f27b94",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/manifests/sir_f1_learned.capabilities.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/manifests/sir_f1_learned.capabilities.json",
+      "digest": "efd540eda1720919469181919b5ae55c11c17656b803c0b4c25414a179b7b4f9",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/manifests/sir_f2_learned.capabilities.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/manifests/sir_f2_learned.capabilities.json",
+      "digest": "7bef74843909426c40ec15b8faeb6a9aedc980295736601cc931fdecfd6616f2",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/manifests/sir_f3_learned.capabilities.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/manifests/sir_f3_learned.capabilities.json",
+      "digest": "db2a0fc4f90ee7359d58a03fa56e960f3eb7a3f1651e29a6afe0c08ec753c9d2",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/manifests/sir_f4_learned.capabilities.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/manifests/sir_f4_learned.capabilities.json",
+      "digest": "10c0cd62df1e95acb5638c6d89cb611b2502422da4f4946b70f120fb1656c12e",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/manifests/sir_f5_learned.capabilities.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/manifests/sir_f5_learned.capabilities.json",
+      "digest": "8ac43d63dd8242336a5a4bf33acd33f4f4ee2b22c259e5ec924252b0a3511639",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/manifests/sir_ref.capabilities.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/manifests/sir_ref.capabilities.json",
+      "digest": "853df2af43b85441565b5bdd15d8939ac35782453806050af3e2a1ef88dd4d7e",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/manifests/traffic_f1_learned.capabilities.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/manifests/traffic_f1_learned.capabilities.json",
+      "digest": "c51fc25b5e4a054a21c9449e1dae5df4505dc6f03ed4f9a4bf05dfd0017df9eb",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/manifests/traffic_f2_learned.capabilities.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/manifests/traffic_f2_learned.capabilities.json",
+      "digest": "f205b3b8f5b65b443989196263fd572d5c7de894cb7be8541a84da6fdbca1758",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/manifests/traffic_f3_learned.capabilities.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/manifests/traffic_f3_learned.capabilities.json",
+      "digest": "9af167cb38be696bab752822fb23a8f5f108cf082a0d77dd5c4b3548aaf2d6ad",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/manifests/traffic_f4_learned.capabilities.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/manifests/traffic_f4_learned.capabilities.json",
+      "digest": "a354d0f4bdecb0db1c78146cf0e689e29636799613f544a1e5bbe3df67bc8be3",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/manifests/traffic_f5_learned.capabilities.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/manifests/traffic_f5_learned.capabilities.json",
+      "digest": "09675c33b404bea4ebb24160e77b051deea78ef94207c0a9496b2174335ced33",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/manifests/traffic_ref.capabilities.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/manifests/traffic_ref.capabilities.json",
+      "digest": "7b2a7a7d93516f0057a6728e62ee4dbada7307f338b5bfddbe83a5fdc42c3483",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/manifests/traffic_rho05_before.capabilities.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/manifests/traffic_rho05_before.capabilities.json",
+      "digest": "ba0120db47f1e49939c5e6c3cb1dc66cfe9c3e0b6b4d0d194e2525f3a27988eb",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/manifests/traffic_rho20_after.capabilities.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/manifests/traffic_rho20_after.capabilities.json",
+      "digest": "602be3fde3a443b45c917ff56cbaea4852f6eaa9b4718702bf34f7a653a4e496",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/migration-index.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/migration-index.json",
+      "digest": "4f8ee9d28be802e5bb710940dcfa07367be7a32e9da400d4233d9ffa91c03bef",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/receipts/compiler_f1_learned.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/receipts/compiler_f1_learned.validation-receipt.json",
+      "digest": "53cf654481f9a652df0e10790efd46e71bb55278729dd939bf4dd43ac0fbe9ff",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/receipts/compiler_f2_learned.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/receipts/compiler_f2_learned.validation-receipt.json",
+      "digest": "049147234ccd8fe9ae5461874de93babb72019e8111136ae06744d9714a315a1",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/receipts/compiler_f3_learned.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/receipts/compiler_f3_learned.validation-receipt.json",
+      "digest": "a9787d0f0d60b458f821d5f42c0280c9299a5014df2878baabd37d2446be6ebe",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/receipts/compiler_f4_learned.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/receipts/compiler_f4_learned.validation-receipt.json",
+      "digest": "9b98e64d021ccbe87deb8d1edf0f7eb502233e3a1787c25a6b921cac03d2e928",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/receipts/compiler_f5_learned.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/receipts/compiler_f5_learned.validation-receipt.json",
+      "digest": "41ac05f545c1f862aeb8ee245f6c46281f8259a853e7f40463ed92305cafae7b",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/receipts/compiler_o0_before.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/receipts/compiler_o0_before.validation-receipt.json",
+      "digest": "c1b409c8b2b5b8d920013c6085728c469df08baefcc98e0d418a323ba9ea1339",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/receipts/compiler_o2_after.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/receipts/compiler_o2_after.validation-receipt.json",
+      "digest": "4ba54d7c313b0215cbd0f100bccb25107f12ef6987ba02e8088d81e7deb3166b",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/receipts/compiler_ref.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/receipts/compiler_ref.validation-receipt.json",
+      "digest": "35e915a6aaad51b872242f08568088998fbfbf249528538cad1f418a423e60b5",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/receipts/gridworld_f1_learned.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/receipts/gridworld_f1_learned.validation-receipt.json",
+      "digest": "0df8e186622ee3d8e1707e107cb41b13e41a1d388740a21e4f1fae3741a3bcd4",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/receipts/gridworld_f2_learned.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/receipts/gridworld_f2_learned.validation-receipt.json",
+      "digest": "a05a7e056160724ffcd8fb80a21b5a1e77c9ddc80bde26280cbcbeec7ac91626",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/receipts/gridworld_f3_learned.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/receipts/gridworld_f3_learned.validation-receipt.json",
+      "digest": "22e81ed6e458d8443508805f9acf5b31bdbde72035e53574150ea2511768df5e",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/receipts/gridworld_f4_learned.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/receipts/gridworld_f4_learned.validation-receipt.json",
+      "digest": "b4ff4f0c59bcbfef4c49f3fb958dcade972764f59dad18255ea6a49bda58c2e0",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/receipts/gridworld_f5_learned.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/receipts/gridworld_f5_learned.validation-receipt.json",
+      "digest": "7789156b1a380c547864d4c346bd770f65fedbb354d5a6b63f0db29290eb6a49",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/receipts/gridworld_obs00_after.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/receipts/gridworld_obs00_after.validation-receipt.json",
+      "digest": "8bc794b9b9e1597dbada54471463314bcf9fd34da7e662e149e348f16ef185ab",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/receipts/gridworld_obs22_before.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/receipts/gridworld_obs22_before.validation-receipt.json",
+      "digest": "33041af73e3943de5e250f8df87727da574a55a957859682ccd68e303882caa6",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/receipts/gridworld_ref.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/receipts/gridworld_ref.validation-receipt.json",
+      "digest": "de66efafc830bd533176ea10046b2e0f298dc5ef8c13a2a1219048582d5786f8",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/receipts/network_f1_learned.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/receipts/network_f1_learned.validation-receipt.json",
+      "digest": "5650309adf67cc26e3beeed07b97c14f21b6a8a62826dd79e96777bbb1d1320e",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/receipts/network_f2_learned.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/receipts/network_f2_learned.validation-receipt.json",
+      "digest": "e1033be8f049e6e01e56cb8fbfe9f55975787aa8a18086b83a5ac5f8a454c002",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/receipts/network_f3_learned.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/receipts/network_f3_learned.validation-receipt.json",
+      "digest": "c5f17297edbc17a3cac51ca9e747cdd6a18b561d719ea82178c3344665b059ff",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/receipts/network_f4_learned.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/receipts/network_f4_learned.validation-receipt.json",
+      "digest": "0cad3d9db6baa0634d7ce7d027ea320021071fc6782cb7bd207e53348061c3a3",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/receipts/network_f5_learned.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/receipts/network_f5_learned.validation-receipt.json",
+      "digest": "585847adc96a96ce2f1976a9634752e760159d261e20df4bc694be122662cb9b",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/receipts/network_ref.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/receipts/network_ref.validation-receipt.json",
+      "digest": "fdbf090ea3be5b55f68f704f88dc8b65621ddacb0a6503142176fb95fc21ca2c",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/receipts/sir_f1_learned.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/receipts/sir_f1_learned.validation-receipt.json",
+      "digest": "655b642f34f71ceb36c78aa02a2f9eea57e3efb7fc042b158328e55e9fdfb7d9",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/receipts/sir_f2_learned.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/receipts/sir_f2_learned.validation-receipt.json",
+      "digest": "37c41ffcd2517a17da2c0a3a58456b9efe7b932a082d1806045321e6deec395f",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/receipts/sir_f3_learned.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/receipts/sir_f3_learned.validation-receipt.json",
+      "digest": "67e3ff28ee3370177729dea2a2b3f42b0f1bc45a0ae3b492754376d5f2cb6c3d",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/receipts/sir_f4_learned.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/receipts/sir_f4_learned.validation-receipt.json",
+      "digest": "cfeba16cf2b488dc774a70d3d2f61a402474493d13f9fb075679ecc2da346759",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/receipts/sir_f5_learned.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/receipts/sir_f5_learned.validation-receipt.json",
+      "digest": "aab3b9f861fccb6cd865bf28dbfd1a0e988d50583b84a384bf080a8f53cdbc60",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/receipts/sir_ref.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/receipts/sir_ref.validation-receipt.json",
+      "digest": "3e86157a012bfbdc60db1563a3e474602f95ccd265e9e060e6c2196b340519ac",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/receipts/traffic_f1_learned.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/receipts/traffic_f1_learned.validation-receipt.json",
+      "digest": "71092a5c5b0e79de47e0f381c2f18bb79a4139d92dea38cf1e156af98098ca63",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/receipts/traffic_f2_learned.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/receipts/traffic_f2_learned.validation-receipt.json",
+      "digest": "f57987a6750dcfd240055125598a49cc2d3d6cbdbbb939afa627e04972519068",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/receipts/traffic_f3_learned.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/receipts/traffic_f3_learned.validation-receipt.json",
+      "digest": "b214dd38bfea9656d915891b929c7b98b681d66f87f2126f3d4b7dd767046dba",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/receipts/traffic_f4_learned.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/receipts/traffic_f4_learned.validation-receipt.json",
+      "digest": "b0479086454a792fa307d55ccd50dc485f47eba6be49f40e19705ff847430b1d",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/receipts/traffic_f5_learned.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/receipts/traffic_f5_learned.validation-receipt.json",
+      "digest": "ba6600831e14540875584a559c148a20f7613b52da04ccfe120a30a2127e8cd6",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/receipts/traffic_ref.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/receipts/traffic_ref.validation-receipt.json",
+      "digest": "17e5439264b44c5a135eb243ba0c92432c4e14ce56872446df38c9ce0f52df7a",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/receipts/traffic_rho05_before.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/receipts/traffic_rho05_before.validation-receipt.json",
+      "digest": "6d75782bf04cdf7f4d12591732111595478aaac899527c34cbca6021457d6b01",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/receipts/traffic_rho20_after.validation-receipt.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/receipts/traffic_rho20_after.validation-receipt.json",
+      "digest": "e020371b9d336dd44c1e1d841445623c226785b0fb1b491d94e0fccf415527e0",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/reports/compiler_f1_learned.sofreport.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/reports/compiler_f1_learned.sofreport.json",
+      "digest": "c8f4a8e17d1100c497587395ba9300815afe92ad1a0b6fdb0282f741d72c7664",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/reports/compiler_f2_learned.sofreport.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/reports/compiler_f2_learned.sofreport.json",
+      "digest": "bb990bd7972061a600b7864665b6148897707c88e5c4eccc4bd5338e904ffc29",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/reports/compiler_f3_learned.sofreport.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/reports/compiler_f3_learned.sofreport.json",
+      "digest": "8f54b6f033738c7398e03d32ce936f2d080ff43d97ad623c12c72f67f5278489",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/reports/compiler_f4_learned.sofreport.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/reports/compiler_f4_learned.sofreport.json",
+      "digest": "b8550183ff9df95899add973bdbe4a69f457b07ab4559d833c479815282d50e9",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/reports/compiler_f5_learned.sofreport.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/reports/compiler_f5_learned.sofreport.json",
+      "digest": "052d6a4c10c072e537dd3274d49d8351788382e15b5842f5dd539df24015b2ac",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/reports/compiler_o0_before.sofreport.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/reports/compiler_o0_before.sofreport.json",
+      "digest": "1fd0ac4e4f3753267ac6f2b6282b01a07c8391da602823b5d2bc78697838c04a",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/reports/compiler_o2_after.sofreport.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/reports/compiler_o2_after.sofreport.json",
+      "digest": "78e9d5828e4518c83166e5670c81d6c1015e286ec8aeb386780ec6acf9486617",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/reports/compiler_ref.sofreport.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/reports/compiler_ref.sofreport.json",
+      "digest": "a2c9a85fee12e7d0eb1eb9caf93fdd25b7ec1bdb16c28412bf6f21a1df9bd6f0",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/reports/gridworld_f1_learned.sofreport.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/reports/gridworld_f1_learned.sofreport.json",
+      "digest": "99ff6bb60203999e3186d14dfabb84c9cc9dac99796839b07cc586467325ac16",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/reports/gridworld_f2_learned.sofreport.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/reports/gridworld_f2_learned.sofreport.json",
+      "digest": "137e40d3a4160e67aa2dad88d3fad6b0c4409a844991fdcf4b55bf691d9a5e2c",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/reports/gridworld_f3_learned.sofreport.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/reports/gridworld_f3_learned.sofreport.json",
+      "digest": "d6dba78020fd37ec6b9acf1ce35d5c301a1122cd78e0ff464c5cc6e37355eb7a",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/reports/gridworld_f4_learned.sofreport.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/reports/gridworld_f4_learned.sofreport.json",
+      "digest": "8c5b0661920f2d9c73bdf8b436cd3e3ff6702be2256836db0b065c738c40ba45",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/reports/gridworld_f5_learned.sofreport.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/reports/gridworld_f5_learned.sofreport.json",
+      "digest": "19159ba1e91bd43dd60bd372b90e9f5fcde022a60eccb6ca67558f9eca460129",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/reports/gridworld_obs00_after.sofreport.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/reports/gridworld_obs00_after.sofreport.json",
+      "digest": "1b331a521298ca992dc04b5f9ae407f04b432ff441363f68926825af901fd4e5",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/reports/gridworld_obs22_before.sofreport.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/reports/gridworld_obs22_before.sofreport.json",
+      "digest": "5502647c983e0641478ea670c02537f94160d6a23f735998cb502888985b83c0",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/reports/gridworld_ref.sofreport.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/reports/gridworld_ref.sofreport.json",
+      "digest": "94c9fa637f4a81f4583c30ea7c74a326edf514b052b338c907011626abb0b189",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/reports/network_f1_learned.sofreport.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/reports/network_f1_learned.sofreport.json",
+      "digest": "3764070f77199250e7701cb429f5705a55f1f87deaf8fc064b2980222166bbb6",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/reports/network_f2_learned.sofreport.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/reports/network_f2_learned.sofreport.json",
+      "digest": "7f627252a7f6aa3de36c0afa370811ebbe771195b66990d82a00cffbe129f321",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/reports/network_f3_learned.sofreport.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/reports/network_f3_learned.sofreport.json",
+      "digest": "77e87a25c567cf70bc831b59f37512712e2cdba559f82d582d9138a2073fd81d",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/reports/network_f4_learned.sofreport.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/reports/network_f4_learned.sofreport.json",
+      "digest": "0dd0ad2046fdc26ba1867ddb210b0a4c47d8515c43ea744943eb54369d70b564",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/reports/network_f5_learned.sofreport.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/reports/network_f5_learned.sofreport.json",
+      "digest": "bdeaed3dbb52a426254e837c033dcda0c7019bff1d8197003eac28fa5919746f",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/reports/network_ref.sofreport.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/reports/network_ref.sofreport.json",
+      "digest": "0ecbebbdfe19d30554efcbe16cc0a4524feb4a3790e1a76c657d6c32a3f85dd1",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/reports/sir_f1_learned.sofreport.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/reports/sir_f1_learned.sofreport.json",
+      "digest": "1c6315347ddf3a06c57e16577170163d50b8be923f92e5f20d3da923a8b60550",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/reports/sir_f2_learned.sofreport.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/reports/sir_f2_learned.sofreport.json",
+      "digest": "313d5777114971737d0327e4a9b391594c949d2bf6ab1e706140cb8c1496eabc",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/reports/sir_f3_learned.sofreport.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/reports/sir_f3_learned.sofreport.json",
+      "digest": "b958a5fb1a6f0d2393d372fd9c9b0cbbcfbfe6eb585455a7c80545f19f68cfd1",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/reports/sir_f4_learned.sofreport.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/reports/sir_f4_learned.sofreport.json",
+      "digest": "40300a52ce8660c14509b9c5a0a4de5a7b2e99d8fa60081e36eb4b98c4787635",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/reports/sir_f5_learned.sofreport.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/reports/sir_f5_learned.sofreport.json",
+      "digest": "8afa8de039febe69cae26502e022aac642e7fe2d0bb476b6f5db8eaaf0bcb5cb",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/reports/sir_ref.sofreport.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/reports/sir_ref.sofreport.json",
+      "digest": "45a944ca6c0b62e19f74584ab1a8d3bc81e385c66d5071f12841d84bf26c7eac",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/reports/traffic_f1_learned.sofreport.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/reports/traffic_f1_learned.sofreport.json",
+      "digest": "ac1c29f5083ddc315aa7b1e35bb0dfb27edcb07e6fffde5559ade3942eca9c09",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/reports/traffic_f2_learned.sofreport.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/reports/traffic_f2_learned.sofreport.json",
+      "digest": "8e0b57ce91160748132a2a0531af4c853364c78b4d05efc0a4584b2a4ff8a28b",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/reports/traffic_f3_learned.sofreport.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/reports/traffic_f3_learned.sofreport.json",
+      "digest": "8f13432f00e8d8c2d397ddc457bb80c730f46141b30e49224a5a678fd45b3a6e",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/reports/traffic_f4_learned.sofreport.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/reports/traffic_f4_learned.sofreport.json",
+      "digest": "e00e90331073d09b03f95a194b4ab41a0b8937d893995a06c9d6bdd6bae0d648",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/reports/traffic_f5_learned.sofreport.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/reports/traffic_f5_learned.sofreport.json",
+      "digest": "6e48663cb03ca7fbeb9be1120b5ea4099e10455326519a9a324f04c220051d93",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/reports/traffic_ref.sofreport.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/reports/traffic_ref.sofreport.json",
+      "digest": "92ce2da2fd0aa234bb1adafbd9d3b08adf69c250a83cd32d50448394f76ee787",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/reports/traffic_rho05_before.sofreport.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/reports/traffic_rho05_before.sofreport.json",
+      "digest": "f76c4e3261b84050ef5d96d7eb7bd75dcbd77bcec69b7a906f571a6eab3748f3",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/results/source-reports/reports/traffic_rho20_after.sofreport.json",
+      "snapshot_uri": "files/experiments/paper13/results/source-reports/reports/traffic_rho20_after.sofreport.json",
+      "digest": "75fc01ca5d7b427f359f975692311b6b9aefa48143e213f688ef83d3c7266ef2",
+      "origin": "current-materialized-byte"
+    },
+    {
+      "source_uri": "experiments/paper13/validation/validate_sofaudit_v2.py",
+      "snapshot_uri": "files/experiments/paper13/validation/validate_sofaudit_v2.py",
+      "digest": "74b24b9485292d9e475849907abc9cb681ede7eda7743987e2d869121de4908d",
+      "origin": "published-release-blob"
+    },
+    {
+      "source_uri": "schemas/sofaudit/v2.0.schema.json",
+      "snapshot_uri": "files/schemas/sofaudit/v2.0.schema.json",
+      "digest": "3435fa84bfd6ceb8705725c832fc1c0a036b628bcd758a663242b48dce44cf37",
+      "origin": "published-release-blob"
+    },
+    {
+      "source_uri": "schemas/sofaudit/validation-receipt-v2.0.schema.json",
+      "snapshot_uri": "files/schemas/sofaudit/validation-receipt-v2.0.schema.json",
+      "digest": "eca21b885a7ae80b8d306501b4a36118f041a579ee0033a6a311266cd2f4a452",
+      "origin": "historical-receipt-bound-byte"
+    },
+    {
+      "source_uri": "schemas/sofrs/report-validation-receipt-v2.0.schema.json",
+      "snapshot_uri": "files/schemas/sofrs/report-validation-receipt-v2.0.schema.json",
+      "digest": "3268e1119185a8401ac08ff2b41745152e9a7787b75bff9e3f0ff5183e5ae672",
+      "origin": "historical-receipt-bound-byte"
+    },
+    {
+      "source_uri": "schemas/sofrs/v2.0.schema.json",
+      "snapshot_uri": "files/schemas/sofrs/v2.0.schema.json",
+      "digest": "8a751bd62a2746b334c81a394e6dce1cb1a9251c978aa723aef69c602dce098e",
+      "origin": "published-release-blob"
+    }
+  ]
+}

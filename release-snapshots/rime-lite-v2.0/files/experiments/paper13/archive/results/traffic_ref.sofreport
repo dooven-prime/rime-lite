@@ -1,0 +1,155 @@
+{
+  "sofrs_version": "1.0",
+  "report_id": "traffic_ref",
+  "system": "2x2 traffic intersection grid",
+  "sectorization": {
+    "origin": "one-hot intersection sectors",
+    "intersections": [
+      "NW",
+      "NE",
+      "SW",
+      "SE"
+    ],
+    "sector_count": 4,
+    "strict_sof_realization": true
+  },
+  "observable_family": {
+    "phases": [
+      "phase_A (N-S green, southbound)",
+      "phase_B (E-W green, westbound)"
+    ],
+    "generator_type": "skew-symmetrised green-time-weighted transition matrices",
+    "deformation_parameter": "rho = t_A / t_B",
+    "note": "reverse directions are captured by the skew-symmetric transpose"
+  },
+  "support_matrix": {
+    "kind": "word-generator direct support",
+    "matrix": [
+      [
+        0,
+        1,
+        1,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        1,
+        0
+      ]
+    ],
+    "offdiag_count": 8
+  },
+  "bridge_matrix": {
+    "word": {
+      "matrix": [
+        [
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0
+        ]
+      ],
+      "offdiag_count": 4
+    },
+    "lie": {
+      "matrix": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "offdiag_count": 0
+    },
+    "claim_note": "word and Lie bridge channels are recorded separately"
+  },
+  "repair_matrix": {
+    "kind": "word-depth accessibility summary",
+    "depth_matrix": [
+      [
+        0,
+        1,
+        1,
+        2
+      ],
+      [
+        1,
+        0,
+        2,
+        1
+      ],
+      [
+        1,
+        2,
+        0,
+        1
+      ],
+      [
+        2,
+        1,
+        1,
+        0
+      ]
+    ],
+    "max_finite_depth": 2,
+    "frozen_R1": 4,
+    "frozen_D_word": 0,
+    "frozen_D_lie": 4
+  },
+  "wall_record": null,
+  "claim_status": "evidence",
+  "claim_note": "controlled reference (Regime A)",
+  "failure_modes": [
+    "controlled reference -- no failure mode applied"
+  ]
+}

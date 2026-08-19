@@ -1,0 +1,438 @@
+{
+  "ir_version": "1.0",
+  "record_id": "paper12.network-f1-learned.v2",
+  "record_kind": "diagnostic_analogue",
+  "manifest_ref": {
+    "manifest_id": "paper12.network-f1-learned.v2",
+    "manifest_version": "1.0",
+    "artifact_id": "artifact.manifest",
+    "digest": {
+      "algorithm": "sha256",
+      "value": "aa8aeccc73315a8b693fc007450c24e16719cca85eb3316b8596b3b7059a5b02"
+    }
+  },
+  "source": {
+    "adapter_id": "paper12-v1-to-v2",
+    "adapter_version": "2.0",
+    "source_id": "paper12.network-f1-learned.v1",
+    "artifact_ids": [
+      "artifact.legacy",
+      "artifact.producer"
+    ]
+  },
+  "objects": [
+    {
+      "id": "analogue.record",
+      "kind": "diagnostic_analogue",
+      "label": "Provenance-bound diagnostic analogue",
+      "provenance_artifact_ids": [
+        "artifact.legacy"
+      ],
+      "carrier_id": "carrier.analogue",
+      "data": {
+        "sector_descriptor": {
+          "origin": "one-hot prefix sectors",
+          "prefixes": [
+            "P0(local)",
+            "P1(dmz)",
+            "P2(internal)",
+            "P3(external)"
+          ],
+          "sector_count": 4,
+          "strict_sof_realization": true
+        },
+        "observable_descriptor": {
+          "observables": [
+            "X_internal",
+            "X_external = X_internal (aliased)"
+          ]
+        },
+        "support_descriptor": {
+          "kind": "word-generator direct support",
+          "matrix": [
+            [
+              0,
+              1,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "offdiag_count": 6
+        },
+        "bridge_descriptor": {
+          "word": {
+            "matrix": [
+              [
+                0,
+                1,
+                1,
+                0
+              ],
+              [
+                1,
+                0,
+                1,
+                0
+              ],
+              [
+                1,
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0
+              ]
+            ],
+            "offdiag_count": 6
+          },
+          "lie": {
+            "matrix": [
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0
+              ]
+            ],
+            "offdiag_count": 0
+          },
+          "claim_note": "word and Lie bridge channels are recorded separately"
+        },
+        "repair_descriptor": {
+          "kind": "word-depth accessibility summary",
+          "depth_matrix": [
+            [
+              0,
+              1,
+              1,
+              "UNREACHED_AT_CUTOFF"
+            ],
+            [
+              1,
+              0,
+              1,
+              "UNREACHED_AT_CUTOFF"
+            ],
+            [
+              1,
+              1,
+              0,
+              "UNREACHED_AT_CUTOFF"
+            ],
+            [
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              0
+            ]
+          ],
+          "max_finite_depth": 1,
+          "frozen_R1": 6,
+          "frozen_D_word": 6,
+          "frozen_D_lie": 6
+        },
+        "wall_descriptor": null,
+        "analogue_mapping": "The report is migrated from a frozen Paper XIII SOFRS v1 envelope into the Paper XII v2 CompilerOutput-bound report contract."
+      }
+    }
+  ],
+  "carriers": [
+    {
+      "id": "carrier.analogue",
+      "kind": "analogue",
+      "capability_id": "diagnostic_analogue",
+      "semantics": "Descriptor-level support, bridge, repair, and wall analogues.",
+      "object_ids": [
+        "analogue.record"
+      ],
+      "semantic_convention_ids": []
+    }
+  ],
+  "semantic_conventions": [],
+  "run_policies": [
+    {
+      "id": "policy.cutoff",
+      "kind": "cutoff",
+      "specification": {
+        "maximum_depth": 1,
+        "source": "network_routing_sof.py",
+        "unreached_value": "UNREACHED_AT_CUTOFF"
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "artifact.manifest",
+      "uri": "experiments/paper13/results/source-reports/manifests/network_f1_learned.capabilities.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "aa8aeccc73315a8b693fc007450c24e16719cca85eb3316b8596b3b7059a5b02"
+      },
+      "media_type": "application/json",
+      "schema_version": "1.0",
+      "role": "manifest"
+    },
+    {
+      "id": "artifact.legacy",
+      "uri": "experiments/paper13/archive/results/network_f1_learned.sofreport",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "499aa0f7932b5e7ffada6e3f0dcad7c698f15a5a9ea735eb9f538eccf13b6a90"
+      },
+      "media_type": "application/json",
+      "schema_version": "1.0",
+      "role": "source-input"
+    },
+    {
+      "id": "artifact.producer",
+      "uri": "experiments/paper13/network_routing_sof.py",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "3c28d18496223921630f249edecc632108a5a2a59702af484eed04b4b7f7c425"
+      },
+      "media_type": "text/x-python",
+      "schema_version": "1.0",
+      "role": "proof-reference"
+    }
+  ],
+  "certificates": [],
+  "findings": [
+    {
+      "id": "finding.analogue",
+      "kind": "status_only",
+      "carrier_id": "carrier.analogue",
+      "subject_object_ids": [
+        "analogue.record"
+      ],
+      "value": {
+        "sector_descriptor": {
+          "origin": "one-hot prefix sectors",
+          "prefixes": [
+            "P0(local)",
+            "P1(dmz)",
+            "P2(internal)",
+            "P3(external)"
+          ],
+          "sector_count": 4,
+          "strict_sof_realization": true
+        },
+        "observable_descriptor": {
+          "observables": [
+            "X_internal",
+            "X_external = X_internal (aliased)"
+          ]
+        },
+        "support_descriptor": {
+          "kind": "word-generator direct support",
+          "matrix": [
+            [
+              0,
+              1,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "offdiag_count": 6
+        },
+        "bridge_descriptor": {
+          "word": {
+            "matrix": [
+              [
+                0,
+                1,
+                1,
+                0
+              ],
+              [
+                1,
+                0,
+                1,
+                0
+              ],
+              [
+                1,
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0
+              ]
+            ],
+            "offdiag_count": 6
+          },
+          "lie": {
+            "matrix": [
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0
+              ]
+            ],
+            "offdiag_count": 0
+          },
+          "claim_note": "word and Lie bridge channels are recorded separately"
+        },
+        "repair_descriptor": {
+          "kind": "word-depth accessibility summary",
+          "depth_matrix": [
+            [
+              0,
+              1,
+              1,
+              "UNREACHED_AT_CUTOFF"
+            ],
+            [
+              1,
+              0,
+              1,
+              "UNREACHED_AT_CUTOFF"
+            ],
+            [
+              1,
+              1,
+              0,
+              "UNREACHED_AT_CUTOFF"
+            ],
+            [
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              0
+            ]
+          ],
+          "max_finite_depth": 1,
+          "frozen_R1": 6,
+          "frozen_D_word": 6,
+          "frozen_D_lie": 6
+        },
+        "wall_descriptor": null,
+        "analogue_mapping": "The report is migrated from a frozen Paper XIII SOFRS v1 envelope into the Paper XII v2 CompilerOutput-bound report contract."
+      },
+      "unit": null,
+      "result_state": "OBSERVED",
+      "semantic_convention_ids": [],
+      "run_policy_ids": [
+        "policy.cutoff"
+      ],
+      "certificate_ids": [],
+      "artifact_ids": [
+        "artifact.legacy"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim.analogue",
+      "statement": "The source artifact supports a provenance-bound structurally analogous diagnostic under the declared mapping.",
+      "result_state": "OBSERVED",
+      "claim_status": "Computational Observation",
+      "capability_ids": [
+        "diagnostic_analogue"
+      ],
+      "carrier_ids": [
+        "carrier.analogue"
+      ],
+      "object_ids": [
+        "analogue.record"
+      ],
+      "finding_ids": [
+        "finding.analogue"
+      ],
+      "semantic_convention_ids": [],
+      "run_policy_ids": [
+        "policy.cutoff"
+      ],
+      "hypotheses": [
+        "The frozen v1 report, adapter classification, and declared policies are fixed."
+      ],
+      "certificate_ids": [],
+      "artifact_ids": [
+        "artifact.legacy"
+      ],
+      "scope": "Descriptor-level Paper XII control network_f1_learned.sofreport.",
+      "negative_boundary": "This v2 source report preserves the finite source envelope; it does not establish an independent object-level oracle or cross-report semantic alignment."
+    }
+  ],
+  "derivations": []
+}

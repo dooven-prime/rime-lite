@@ -1,0 +1,276 @@
+{
+  "sofaudit_version": "1.0",
+  "report_type": "sofaudit",
+  "comparison_object": "SOFReportComparison",
+  "audit_id": "gridworld_f2",
+  "system": "5×5 GridWorld persistence loss audit",
+  "claim_status": "evidence",
+  "claim_note": "controlled protocol validation",
+  "regime": "A",
+  "failure_mode": "f2_persistence_loss",
+  "reference": {
+    "report_id": "gridworld_ref",
+    "artifact": "gridworld_ref.sofreport",
+    "label": "GridWorld(5x5, obstacles=[(2, 2)])"
+  },
+  "target": {
+    "report_id": "gridworld_f2_learned",
+    "artifact": "gridworld_f2_learned.sofreport",
+    "label": "E(1,1) smeared"
+  },
+  "alignment": {
+    "sector_alignment": {
+      "kind": "identity"
+    },
+    "observable_alignment": {
+      "kind": "identity"
+    }
+  },
+  "comparison_specification": {
+    "specification_id": "paper13-coordinatewise-v1",
+    "normalization": {
+      "tol": 1e-08,
+      "max_depth": 6,
+      "frozen_sentinel": 999,
+      "depth_semantics": "word depth",
+      "bridge_semantics": [
+        "word",
+        "Lie commutator"
+      ],
+      "generator_normalization": "skew(T)=(T-T^T)/2"
+    },
+    "metric": {
+      "signature": "coordinatewise mismatch records and counts",
+      "fixed_fiber_structural": "weighted Hamming when explicitly invoked"
+    },
+    "depth_semantics": "word depth",
+    "thresholds": {
+      "tol": 1e-08,
+      "source": "comparison record"
+    },
+    "parameter_synchronization": {
+      "mode": "not_applicable"
+    },
+    "aggregation": {
+      "mode": "coordinatewise",
+      "scalarization": "none"
+    }
+  },
+  "signature": {
+    "support_mismatch": {
+      "extra_support": [],
+      "extra_count": 0,
+      "missing_support": [],
+      "missing_count": 0,
+      "total_mismatch": 0,
+      "ref_offdiag": 72,
+      "candidate_offdiag": 72
+    },
+    "bridge_word_mismatch": {
+      "extra_bridge": [],
+      "extra_count": 0,
+      "missing_bridge": [],
+      "missing_count": 0,
+      "total_mismatch": 0,
+      "ref_offdiag": 104,
+      "candidate_offdiag": 104
+    },
+    "bridge_lie_mismatch": {
+      "extra_bridge": [
+        [
+          0,
+          6
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          11
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          5,
+          11
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          7,
+          5
+        ],
+        [
+          8,
+          6
+        ],
+        [
+          10,
+          6
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          11,
+          5
+        ]
+      ],
+      "extra_count": 18,
+      "missing_bridge": [],
+      "missing_count": 0,
+      "total_mismatch": 18,
+      "ref_offdiag": 8,
+      "candidate_offdiag": 26
+    },
+    "depth_distortion": {
+      "depth_distortions": [],
+      "distortion_count": 0,
+      "ref_frozen_candidate_not": [],
+      "ref_frozen_candidate_not_count": 0,
+      "candidate_frozen_ref_not": [],
+      "candidate_frozen_ref_not_count": 0,
+      "total_mismatch": 0
+    },
+    "frozen_disagreement": {
+      "frozen_R1": {
+        "ref": 528,
+        "candidate": 528,
+        "delta": 0
+      },
+      "frozen_D_word": {
+        "ref": 68,
+        "candidate": 68,
+        "delta": 0
+      },
+      "frozen_D_lie": {
+        "ref": 184,
+        "candidate": 106,
+        "delta": -78
+      }
+    },
+    "constraint_violations": {
+      "violations": [
+        {
+          "action": "E",
+          "from": 6,
+          "to": 1,
+          "candidate_value": 0.3
+        },
+        {
+          "action": "E",
+          "from": 6,
+          "to": 5,
+          "candidate_value": 0.2
+        }
+      ],
+      "count": 2
+    },
+    "action_response_failure": {
+      "per_action_deltas": {
+        "N": [],
+        "S": [],
+        "E": [
+          {
+            "pair": [
+              1,
+              6
+            ],
+            "ref": 0.0,
+            "candidate": 0.15,
+            "delta": 0.15
+          },
+          {
+            "pair": [
+              5,
+              6
+            ],
+            "ref": 0.5,
+            "candidate": 0.4,
+            "delta": 0.1
+          },
+          {
+            "pair": [
+              6,
+              1
+            ],
+            "ref": 0.0,
+            "candidate": 0.15,
+            "delta": 0.15
+          },
+          {
+            "pair": [
+              6,
+              5
+            ],
+            "ref": 0.5,
+            "candidate": 0.4,
+            "delta": 0.1
+          },
+          {
+            "pair": [
+              6,
+              7
+            ],
+            "ref": 0.5,
+            "candidate": 0.25,
+            "delta": 0.25
+          },
+          {
+            "pair": [
+              7,
+              6
+            ],
+            "ref": 0.5,
+            "candidate": 0.25,
+            "delta": 0.25
+          }
+        ],
+        "W": []
+      },
+      "total_large_deltas": 6,
+      "action_aliasing": []
+    },
+    "wall_record_mismatch": null
+  },
+  "failure_modes": [
+    "controlled constructed variant, not a learned production world model",
+    "identity sector and observable alignment only",
+    "norm-based action responses are insensitive to sign and orientation aliasing"
+  ],
+  "domain": "gridworld"
+}

@@ -1,0 +1,1503 @@
+{
+  "sofrs_version": "2.1",
+  "report_id": "gridworld-f4-target-native-v2",
+  "system": "GridWorld F4 target native strict report",
+  "record_kind": "strict_sof",
+  "strict_reconstruction": {
+    "candidate_status": "not_applicable",
+    "available_requirements": [],
+    "missing_requirements": [],
+    "evaluator_id": "paper13.native-gridworld-structure-validator",
+    "evaluator_version": "2.0",
+    "interpretation": "The report is already admitted as an explicit strict finite realization."
+  },
+  "external_basis_registry": {
+    "registry_version": "1.0",
+    "basis_status": "PARTIAL",
+    "packages": [
+      {
+        "basis_id": "basis.source.identity",
+        "level": "source_identity",
+        "status": "SATISFIED",
+        "method": "digest-bound-native-source",
+        "scope": "The native source, adapter, and structure check are digest-bound.",
+        "evidence_artifacts": [
+          {
+            "uri": "experiments/paper13/results/native/gridworld-f4/sources/gridworld-f4-target.source.json",
+            "digest": {
+              "algorithm": "sha256",
+              "value": "fc8f814ede339bfbfff0b54d3e112193628f4d0aaee8a7a8da86ce19dcb52470"
+            }
+          },
+          {
+            "uri": "experiments/paper13/validation/gridworld_f4_native_v2.py",
+            "digest": {
+              "algorithm": "sha256",
+              "value": "d97955cbdfae68b872a7b9a88da4f30aa26c742f230dc08960101f7ee392e194"
+            }
+          },
+          {
+            "uri": "experiments/paper13/results/native/gridworld-f4/evidence/gridworld-f4.structure-certificate.json",
+            "digest": {
+              "algorithm": "sha256",
+              "value": "fc62ada48b5e375a0bd2e8ee4bd4aaffbffd4da16c0627b881de484d0c16deed"
+            }
+          }
+        ],
+        "constraint_ids": [
+          "source-snapshot-pinned"
+        ],
+        "negative_boundary": [
+          "Digest identity does not establish domain adequacy."
+        ]
+      },
+      {
+        "basis_id": "basis.object.recomputation",
+        "level": "object_level",
+        "status": "NOT_ASSESSED",
+        "method": "comparison-oracle-owned-by-paper13",
+        "scope": "Object-level comparison is certified only in the downstream audit.",
+        "evidence_artifacts": [],
+        "constraint_ids": [
+          "object-level-recomputation"
+        ],
+        "negative_boundary": [
+          "The single report does not borrow the pairwise oracle."
+        ]
+      },
+      {
+        "basis_id": "basis.structure.validation",
+        "level": "structure_level",
+        "status": "SATISFIED",
+        "method": "finite-structure-validation",
+        "scope": "The 25-dimensional coordinate realization and four labelled generators are checked.",
+        "evidence_artifacts": [
+          {
+            "uri": "experiments/paper13/results/native/gridworld-f4/evidence/gridworld-f4.structure-certificate.json",
+            "digest": {
+              "algorithm": "sha256",
+              "value": "fc62ada48b5e375a0bd2e8ee4bd4aaffbffd4da16c0627b881de484d0c16deed"
+            }
+          }
+        ],
+        "constraint_ids": [
+          "realization-structure-validation"
+        ],
+        "negative_boundary": [
+          "Structure validation does not establish scientific adequacy."
+        ]
+      },
+      {
+        "basis_id": "basis.semantic.adequacy",
+        "level": "semantic_adequacy",
+        "status": "NOT_ASSESSED",
+        "method": "domain-owner-assessment-not-bound",
+        "scope": "GridWorld adequacy beyond this finite control is not assessed.",
+        "evidence_artifacts": [],
+        "constraint_ids": [
+          "domain-semantic-adequacy"
+        ],
+        "negative_boundary": [
+          "Protocol-valid structure may still be an inadequate domain model."
+        ]
+      }
+    ],
+    "constraints": [
+      {
+        "constraint_id": "source-snapshot-pinned",
+        "basis_id": "basis.source.identity",
+        "status": "SATISFIED",
+        "statement": "The native source closure is digest-bound.",
+        "evidence_artifacts": [
+          {
+            "uri": "experiments/paper13/results/native/gridworld-f4/sources/gridworld-f4-target.source.json",
+            "digest": {
+              "algorithm": "sha256",
+              "value": "fc8f814ede339bfbfff0b54d3e112193628f4d0aaee8a7a8da86ce19dcb52470"
+            }
+          },
+          {
+            "uri": "experiments/paper13/validation/gridworld_f4_native_v2.py",
+            "digest": {
+              "algorithm": "sha256",
+              "value": "d97955cbdfae68b872a7b9a88da4f30aa26c742f230dc08960101f7ee392e194"
+            }
+          },
+          {
+            "uri": "experiments/paper13/results/native/gridworld-f4/evidence/gridworld-f4.structure-certificate.json",
+            "digest": {
+              "algorithm": "sha256",
+              "value": "fc62ada48b5e375a0bd2e8ee4bd4aaffbffd4da16c0627b881de484d0c16deed"
+            }
+          }
+        ]
+      },
+      {
+        "constraint_id": "object-level-recomputation",
+        "basis_id": "basis.object.recomputation",
+        "status": "NOT_ASSESSED",
+        "statement": "Pairwise object recomputation belongs to the audit.",
+        "evidence_artifacts": []
+      },
+      {
+        "constraint_id": "realization-structure-validation",
+        "basis_id": "basis.structure.validation",
+        "status": "SATISFIED",
+        "statement": "The strict finite realization passes its structure check.",
+        "evidence_artifacts": [
+          {
+            "uri": "experiments/paper13/results/native/gridworld-f4/evidence/gridworld-f4.structure-certificate.json",
+            "digest": {
+              "algorithm": "sha256",
+              "value": "fc62ada48b5e375a0bd2e8ee4bd4aaffbffd4da16c0627b881de484d0c16deed"
+            }
+          }
+        ]
+      },
+      {
+        "constraint_id": "domain-semantic-adequacy",
+        "basis_id": "basis.semantic.adequacy",
+        "status": "NOT_ASSESSED",
+        "statement": "Domain adequacy is not assessed by this artifact.",
+        "evidence_artifacts": []
+      }
+    ],
+    "negative_boundary": [
+      "The registry separates source, structure, object, and semantic-adequacy evidence."
+    ]
+  },
+  "compiler_contracts": {
+    "capability_manifest": {
+      "uri": "experiments/paper13/results/native/gridworld-f4/source-reports/manifests/gridworld-f4-target.capabilities.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "80fa32d16440e6bf70ece8833affb9dd2b3121bb40387778edf20d04182b6621"
+      }
+    },
+    "typed_sof_ir": {
+      "uri": "experiments/paper13/results/native/gridworld-f4/source-reports/ir/gridworld-f4-target.ir.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "7237d4f3da81f5ac84b363716e45ca3359c5f6643e0cd1ca2dd2e9ffcbbd1d96"
+      }
+    },
+    "compiler_profile": {
+      "uri": "schemas/sofrs/paper12-strict-compiler-profile-v1.0.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "c80d1d963740a125ec8c0d1338a1d04084095f1d0aa55f708336c5e7a1fbc792"
+      }
+    },
+    "compiler_output": {
+      "uri": "experiments/paper13/results/native/gridworld-f4/source-reports/compiler-output/gridworld-f4-target.compiler-output.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "5851f049659f49ae720c675eec5a686c8c56db904f89a86ab5af1b917469c1aa"
+      }
+    }
+  },
+  "compiler_output_binding": {
+    "artifact_id": "artifact.compiler-output",
+    "artifact": {
+      "uri": "experiments/paper13/results/native/gridworld-f4/source-reports/compiler-output/gridworld-f4-target.compiler-output.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "5851f049659f49ae720c675eec5a686c8c56db904f89a86ab5af1b917469c1aa"
+      }
+    },
+    "compiler_id": "sofcompiler.compile_v1",
+    "compiler_output_version": "1.0",
+    "compiler_profile_id": "paper12.strict.v2"
+  },
+  "assembly_contract": {
+    "schema_id": "sofrs-assembly-v2.0",
+    "version": "2.0",
+    "implementation": {
+      "uri": "experiments/paper13/validation/gridworld_f4_native_v2.py",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "d97955cbdfae68b872a7b9a88da4f30aa26c742f230dc08960101f7ee392e194"
+      }
+    },
+    "assembly_profile": {
+      "uri": "schemas/sofrs/paper12-strict-assembly-profile-v2.0.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "61840c7f29bd62e8ede194c87069aa1b9dc488f4cc93310ba02588468fbae4f1"
+      }
+    },
+    "assembly_profile_id": "paper12.strict.assembly.v2"
+  },
+  "item_bindings": [
+    {
+      "compiler_output_item_id": "compiler.item.0000",
+      "report_item_id": "report.claim-item.0000",
+      "item_kind": "claim",
+      "rendering_status": "rendered"
+    },
+    {
+      "compiler_output_item_id": "compiler.item.0001",
+      "report_item_id": "report.claim-item.0001",
+      "item_kind": "claim",
+      "rendering_status": "rendered"
+    },
+    {
+      "compiler_output_item_id": "compiler.item.0002",
+      "report_item_id": "report.claim-item.0002",
+      "item_kind": "claim",
+      "rendering_status": "rendered"
+    },
+    {
+      "compiler_output_item_id": "compiler.item.0003",
+      "report_item_id": "report.degradation-item.0003",
+      "item_kind": "degradation",
+      "rendering_status": "rendered"
+    },
+    {
+      "compiler_output_item_id": "compiler.item.0004",
+      "report_item_id": "report.degradation-item.0004",
+      "item_kind": "degradation",
+      "rendering_status": "rendered"
+    }
+  ],
+  "alignment_readiness": {
+    "adapter": {
+      "id": "paper13.gridworld-native-v2",
+      "version": "2.0"
+    },
+    "compiler_profile_id": "paper12.strict.v2",
+    "assembly_profile_id": "paper12.strict.assembly.v2",
+    "sector_metadata": {
+      "status": "PRESENT",
+      "labels": [
+        "cell-0",
+        "cell-1",
+        "cell-2",
+        "cell-3",
+        "cell-4",
+        "cell-5",
+        "cell-6",
+        "cell-7",
+        "cell-8",
+        "cell-9",
+        "cell-10",
+        "cell-11",
+        "cell-12",
+        "cell-13",
+        "cell-14",
+        "cell-15",
+        "cell-16",
+        "cell-17",
+        "cell-18",
+        "cell-19",
+        "cell-20",
+        "cell-21",
+        "cell-22",
+        "cell-23",
+        "cell-24"
+      ],
+      "provenance": "experiments/paper13/results/native/gridworld-f4/sources/gridworld-f4-target.source.json",
+      "ranks_or_dimensions": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "semantics": "coordinate singleton sectors"
+    },
+    "observable_metadata": {
+      "status": "PRESENT",
+      "labels": [
+        "N",
+        "S",
+        "E",
+        "W"
+      ],
+      "provenance": "experiments/paper13/results/native/gridworld-f4/sources/gridworld-f4-target.source.json",
+      "ranks_or_dimensions": [],
+      "semantics": "labelled skew transition generators"
+    },
+    "carrier_kinds": [
+      "lie",
+      "operator",
+      "sector",
+      "word"
+    ],
+    "semantic_conventions": [
+      {
+        "id": "semantic.alphabet",
+        "kind": "operative_alphabet"
+      },
+      {
+        "id": "semantic.word",
+        "kind": "word_convention"
+      },
+      {
+        "id": "semantic.projector-letter",
+        "kind": "projector_letter_policy"
+      },
+      {
+        "id": "semantic.direction",
+        "kind": "direction_convention"
+      },
+      {
+        "id": "semantic.depth",
+        "kind": "depth_indexing"
+      },
+      {
+        "id": "semantic.hall",
+        "kind": "hall_convention"
+      }
+    ],
+    "run_policies": [
+      {
+        "id": "policy.threshold",
+        "kind": "threshold"
+      },
+      {
+        "id": "policy.norm",
+        "kind": "norm"
+      },
+      {
+        "id": "policy.tolerance",
+        "kind": "numerical_tolerance"
+      },
+      {
+        "id": "policy.cutoff",
+        "kind": "cutoff"
+      }
+    ],
+    "comparison_keys": [
+      "domain:gridworld",
+      "control:f4",
+      "side:target",
+      "generator:gridworld-skew-actions"
+    ],
+    "source_artifact_digests": [
+      {
+        "uri": "experiments/paper13/results/native/gridworld-f4/sources/gridworld-f4-target.source.json",
+        "digest": {
+          "algorithm": "sha256",
+          "value": "fc8f814ede339bfbfff0b54d3e112193628f4d0aaee8a7a8da86ce19dcb52470"
+        }
+      },
+      {
+        "uri": "experiments/paper13/validation/gridworld_f4_native_v2.py",
+        "digest": {
+          "algorithm": "sha256",
+          "value": "d97955cbdfae68b872a7b9a88da4f30aa26c742f230dc08960101f7ee392e194"
+        }
+      },
+      {
+        "uri": "experiments/paper13/results/native/gridworld-f4/evidence/gridworld-f4.structure-certificate.json",
+        "digest": {
+          "algorithm": "sha256",
+          "value": "fc62ada48b5e375a0bd2e8ee4bd4aaffbffd4da16c0627b881de484d0c16deed"
+        }
+      }
+    ]
+  },
+  "source_mapping": {
+    "status": "native",
+    "construction": "Direct adapter construction from digest-bound sparse transition matrices.",
+    "adapter_id": "paper13.gridworld-native-v2",
+    "adapter_version": "2.0",
+    "justification": "The complete finite space, sectors, and labelled matrices are explicitly retained.",
+    "limitations": [
+      "This finite GridWorld control is not a learned production-world model."
+    ]
+  },
+  "source_artifacts": [
+    {
+      "uri": "experiments/paper13/results/native/gridworld-f4/sources/gridworld-f4-target.source.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "fc8f814ede339bfbfff0b54d3e112193628f4d0aaee8a7a8da86ce19dcb52470"
+      }
+    },
+    {
+      "uri": "experiments/paper13/validation/gridworld_f4_native_v2.py",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "d97955cbdfae68b872a7b9a88da4f30aa26c742f230dc08960101f7ee392e194"
+      }
+    },
+    {
+      "uri": "experiments/paper13/results/native/gridworld-f4/evidence/gridworld-f4.structure-certificate.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "fc62ada48b5e375a0bd2e8ee4bd4aaffbffd4da16c0627b881de484d0c16deed"
+      }
+    }
+  ],
+  "modules": [
+    {
+      "module_id": "sof-basic",
+      "status": "ENABLED",
+      "carrier_kinds": [
+        "operator"
+      ],
+      "finding_ids": [
+        "finding.direct-support"
+      ],
+      "claim_ids": [
+        "claim.direct-support"
+      ],
+      "output_sections": [
+        "Declared finite realization",
+        "Labelled operator support",
+        "Evidence and boundary"
+      ]
+    },
+    {
+      "module_id": "associative",
+      "status": "ENABLED",
+      "carrier_kinds": [
+        "route",
+        "word"
+      ],
+      "finding_ids": [
+        "finding.word-length-two"
+      ],
+      "claim_ids": [
+        "claim.word-length-two"
+      ],
+      "output_sections": [
+        "Declared associative convention",
+        "Finite-depth findings",
+        "Cutoff boundary"
+      ]
+    },
+    {
+      "module_id": "lie-hall",
+      "status": "ENABLED",
+      "carrier_kinds": [
+        "lie",
+        "hall"
+      ],
+      "finding_ids": [
+        "finding.lie-simple-commutator"
+      ],
+      "claim_ids": [
+        "claim.lie-simple-commutator"
+      ],
+      "output_sections": [
+        "Declared Lie family",
+        "Hall filtration",
+        "Cutoff-qualified Lie depth"
+      ]
+    },
+    {
+      "module_id": "proxy",
+      "status": "UNAVAILABLE",
+      "carrier_kinds": [
+        "proxy"
+      ],
+      "finding_ids": [],
+      "claim_ids": [],
+      "output_sections": [
+        "Proxy definition",
+        "Observed values",
+        "Negative promotion boundary"
+      ],
+      "reason": "missing all_of: proxy_diagnostic; missing all_of: proxy"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "finding.direct-support",
+      "kind": "boolean_support",
+      "result_state": "OBSERVED",
+      "value": {
+        "pairs": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            9
+          ],
+          [
+            5,
+            0
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            5,
+            10
+          ],
+          [
+            6,
+            1
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            6,
+            11
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            7,
+            6
+          ],
+          [
+            7,
+            8
+          ],
+          [
+            8,
+            3
+          ],
+          [
+            8,
+            7
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            8,
+            13
+          ],
+          [
+            9,
+            4
+          ],
+          [
+            9,
+            8
+          ],
+          [
+            9,
+            14
+          ],
+          [
+            10,
+            5
+          ],
+          [
+            10,
+            11
+          ],
+          [
+            10,
+            15
+          ],
+          [
+            11,
+            6
+          ],
+          [
+            11,
+            10
+          ],
+          [
+            11,
+            16
+          ],
+          [
+            13,
+            8
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            13,
+            18
+          ],
+          [
+            14,
+            9
+          ],
+          [
+            14,
+            13
+          ],
+          [
+            14,
+            19
+          ],
+          [
+            15,
+            10
+          ],
+          [
+            15,
+            16
+          ],
+          [
+            15,
+            20
+          ],
+          [
+            16,
+            11
+          ],
+          [
+            16,
+            15
+          ],
+          [
+            16,
+            17
+          ],
+          [
+            16,
+            21
+          ],
+          [
+            17,
+            16
+          ],
+          [
+            17,
+            18
+          ],
+          [
+            17,
+            22
+          ],
+          [
+            18,
+            13
+          ],
+          [
+            18,
+            17
+          ],
+          [
+            18,
+            19
+          ],
+          [
+            18,
+            23
+          ],
+          [
+            19,
+            14
+          ],
+          [
+            19,
+            18
+          ],
+          [
+            19,
+            24
+          ],
+          [
+            20,
+            15
+          ],
+          [
+            20,
+            21
+          ],
+          [
+            21,
+            16
+          ],
+          [
+            21,
+            20
+          ],
+          [
+            21,
+            22
+          ],
+          [
+            22,
+            17
+          ],
+          [
+            22,
+            21
+          ],
+          [
+            22,
+            23
+          ],
+          [
+            23,
+            18
+          ],
+          [
+            23,
+            22
+          ],
+          [
+            23,
+            24
+          ],
+          [
+            24,
+            19
+          ],
+          [
+            24,
+            23
+          ]
+        ],
+        "pair_count": 72
+      }
+    },
+    {
+      "finding_id": "finding.word-length-two",
+      "kind": "boolean_support",
+      "result_state": "OBSERVED",
+      "value": {
+        "pairs": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            0,
+            10
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            1,
+            11
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            2,
+            8
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            13
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            8
+          ],
+          [
+            4,
+            14
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            5,
+            11
+          ],
+          [
+            5,
+            15
+          ],
+          [
+            6,
+            0
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            6,
+            10
+          ],
+          [
+            6,
+            16
+          ],
+          [
+            7,
+            1
+          ],
+          [
+            7,
+            3
+          ],
+          [
+            7,
+            5
+          ],
+          [
+            7,
+            9
+          ],
+          [
+            7,
+            11
+          ],
+          [
+            7,
+            13
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            8,
+            4
+          ],
+          [
+            8,
+            6
+          ],
+          [
+            8,
+            14
+          ],
+          [
+            8,
+            18
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            9,
+            7
+          ],
+          [
+            9,
+            13
+          ],
+          [
+            9,
+            19
+          ],
+          [
+            10,
+            0
+          ],
+          [
+            10,
+            6
+          ],
+          [
+            10,
+            16
+          ],
+          [
+            10,
+            20
+          ],
+          [
+            11,
+            1
+          ],
+          [
+            11,
+            5
+          ],
+          [
+            11,
+            7
+          ],
+          [
+            11,
+            15
+          ],
+          [
+            11,
+            17
+          ],
+          [
+            11,
+            21
+          ],
+          [
+            13,
+            3
+          ],
+          [
+            13,
+            7
+          ],
+          [
+            13,
+            9
+          ],
+          [
+            13,
+            17
+          ],
+          [
+            13,
+            19
+          ],
+          [
+            13,
+            23
+          ],
+          [
+            14,
+            4
+          ],
+          [
+            14,
+            8
+          ],
+          [
+            14,
+            18
+          ],
+          [
+            14,
+            24
+          ],
+          [
+            15,
+            5
+          ],
+          [
+            15,
+            11
+          ],
+          [
+            15,
+            17
+          ],
+          [
+            15,
+            21
+          ],
+          [
+            16,
+            6
+          ],
+          [
+            16,
+            10
+          ],
+          [
+            16,
+            18
+          ],
+          [
+            16,
+            20
+          ],
+          [
+            16,
+            22
+          ],
+          [
+            17,
+            11
+          ],
+          [
+            17,
+            13
+          ],
+          [
+            17,
+            15
+          ],
+          [
+            17,
+            19
+          ],
+          [
+            17,
+            21
+          ],
+          [
+            17,
+            23
+          ],
+          [
+            18,
+            8
+          ],
+          [
+            18,
+            14
+          ],
+          [
+            18,
+            16
+          ],
+          [
+            18,
+            22
+          ],
+          [
+            18,
+            24
+          ],
+          [
+            19,
+            9
+          ],
+          [
+            19,
+            13
+          ],
+          [
+            19,
+            17
+          ],
+          [
+            19,
+            23
+          ],
+          [
+            20,
+            10
+          ],
+          [
+            20,
+            16
+          ],
+          [
+            20,
+            22
+          ],
+          [
+            21,
+            11
+          ],
+          [
+            21,
+            15
+          ],
+          [
+            21,
+            17
+          ],
+          [
+            21,
+            23
+          ],
+          [
+            22,
+            16
+          ],
+          [
+            22,
+            18
+          ],
+          [
+            22,
+            20
+          ],
+          [
+            22,
+            24
+          ],
+          [
+            23,
+            13
+          ],
+          [
+            23,
+            17
+          ],
+          [
+            23,
+            19
+          ],
+          [
+            23,
+            21
+          ],
+          [
+            24,
+            14
+          ],
+          [
+            24,
+            18
+          ],
+          [
+            24,
+            22
+          ]
+        ],
+        "pair_count": 104
+      }
+    },
+    {
+      "finding_id": "finding.lie-simple-commutator",
+      "kind": "boolean_support",
+      "result_state": "OBSERVED",
+      "value": {
+        "pairs": [
+          [
+            0,
+            2
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            7,
+            5
+          ],
+          [
+            7,
+            11
+          ],
+          [
+            7,
+            13
+          ],
+          [
+            11,
+            7
+          ],
+          [
+            11,
+            17
+          ],
+          [
+            13,
+            7
+          ],
+          [
+            13,
+            17
+          ],
+          [
+            15,
+            17
+          ],
+          [
+            17,
+            11
+          ],
+          [
+            17,
+            13
+          ],
+          [
+            17,
+            15
+          ],
+          [
+            20,
+            22
+          ],
+          [
+            22,
+            20
+          ]
+        ],
+        "pair_count": 16
+      }
+    }
+  ],
+  "claims": [
+    {
+      "report_item_id": "report.claim-item.0000",
+      "source_output_item_id": "compiler.item.0000",
+      "claim_id": "claim.direct-support",
+      "statement": "The native snapshot records direct support of the labelled skew generators.",
+      "result_state": "OBSERVED",
+      "claim_status": "Computational Observation",
+      "claim_target": "representation_interface",
+      "certificate_class": null,
+      "classification_source": "domain_adapter",
+      "external_basis_refs": [
+        "basis.source.identity",
+        "basis.structure.validation"
+      ],
+      "external_constraint_ids": [
+        "source-snapshot-pinned",
+        "realization-structure-validation"
+      ],
+      "carrier_kinds": [
+        "operator"
+      ],
+      "scope": "Native GridWorld F4 target snapshot under tol=1e-08.",
+      "negative_boundary": "This single-report observation does not compare two reports or establish domain adequacy."
+    },
+    {
+      "report_item_id": "report.claim-item.0001",
+      "source_output_item_id": "compiler.item.0001",
+      "claim_id": "claim.word-length-two",
+      "statement": "The native snapshot records ordered positive-word support at length two.",
+      "result_state": "OBSERVED",
+      "claim_status": "Computational Observation",
+      "claim_target": "representation_interface",
+      "certificate_class": null,
+      "classification_source": "domain_adapter",
+      "external_basis_refs": [
+        "basis.source.identity",
+        "basis.structure.validation"
+      ],
+      "external_constraint_ids": [
+        "source-snapshot-pinned",
+        "realization-structure-validation"
+      ],
+      "carrier_kinds": [
+        "word"
+      ],
+      "scope": "Native GridWorld F4 target snapshot under tol=1e-08.",
+      "negative_boundary": "This single-report observation does not compare two reports or establish domain adequacy."
+    },
+    {
+      "report_item_id": "report.claim-item.0002",
+      "source_output_item_id": "compiler.item.0002",
+      "claim_id": "claim.lie-simple-commutator",
+      "statement": "The native snapshot records simple-commutator support at depth two.",
+      "result_state": "OBSERVED",
+      "claim_status": "Computational Observation",
+      "claim_target": "representation_interface",
+      "certificate_class": null,
+      "classification_source": "domain_adapter",
+      "external_basis_refs": [
+        "basis.source.identity",
+        "basis.structure.validation"
+      ],
+      "external_constraint_ids": [
+        "source-snapshot-pinned",
+        "realization-structure-validation"
+      ],
+      "carrier_kinds": [
+        "lie"
+      ],
+      "scope": "Native GridWorld F4 target snapshot under tol=1e-08.",
+      "negative_boundary": "This single-report observation does not compare two reports or establish domain adequacy."
+    }
+  ],
+  "degradation_items": [
+    {
+      "report_item_id": "report.degradation-item.0003",
+      "source_output_item_id": "compiler.item.0003",
+      "module_id": "proxy",
+      "action": "emit_unavailable",
+      "reason_kind": "unsatisfied_capability_requirements",
+      "details": [
+        "missing all_of: proxy_diagnostic"
+      ]
+    },
+    {
+      "report_item_id": "report.degradation-item.0004",
+      "source_output_item_id": "compiler.item.0004",
+      "module_id": "proxy",
+      "action": "emit_unavailable",
+      "reason_kind": "unsatisfied_object_kind_requirements",
+      "details": [
+        "missing all_of: proxy"
+      ]
+    }
+  ],
+  "failure_modes": [
+    "The control uses exact finite matrices and a declared numerical support threshold.",
+    "The single report does not assign correctness to either side."
+  ],
+  "provenance": {
+    "kind": "native_generation",
+    "producer": {
+      "uri": "experiments/paper13/validation/gridworld_f4_native_v2.py",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "d97955cbdfae68b872a7b9a88da4f30aa26c742f230dc08960101f7ee392e194"
+      }
+    },
+    "source_snapshot": {
+      "uri": "experiments/paper13/results/native/gridworld-f4/sources/gridworld-f4-target.source.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "fc8f814ede339bfbfff0b54d3e112193628f4d0aaee8a7a8da86ce19dcb52470"
+      }
+    },
+    "adapter": {
+      "uri": "experiments/paper13/validation/gridworld_f4_native_v2.py",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "d97955cbdfae68b872a7b9a88da4f30aa26c742f230dc08960101f7ee392e194"
+      }
+    },
+    "compiler_profile_ref": {
+      "uri": "schemas/sofrs/paper12-strict-compiler-profile-v1.0.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "c80d1d963740a125ec8c0d1338a1d04084095f1d0aa55f708336c5e7a1fbc792"
+      }
+    },
+    "compiler_output_ref": {
+      "uri": "experiments/paper13/results/native/gridworld-f4/source-reports/compiler-output/gridworld-f4-target.compiler-output.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "5851f049659f49ae720c675eec5a686c8c56db904f89a86ab5af1b917469c1aa"
+      }
+    },
+    "assembly_profile_ref": {
+      "uri": "schemas/sofrs/paper12-strict-assembly-profile-v2.0.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "61840c7f29bd62e8ede194c87069aa1b9dc488f4cc93310ba02588468fbae4f1"
+      }
+    }
+  },
+  "revision_provenance": {
+    "kind": "explicit_v2_0_to_v2_1_migration",
+    "source_version": "2.0",
+    "source_artifact": {
+      "uri": "experiments/paper13/results/native/gridworld-f4/source-reports/reports/gridworld-f4-target.sofreport.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "5088aafe17b283bc3be1c62919ecd9ba11dcbcda09df81676c2d2cf72fd32c9f"
+      }
+    },
+    "source_validation_receipt": {
+      "uri": "experiments/paper13/results/native/gridworld-f4/source-reports/receipts/gridworld-f4-target.validation-receipt.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "1d785730ed0dda2bfbbd0014dd6ed472375e53b5e1a8a235136bf037b9cde0f1"
+      }
+    },
+    "migration_implementation": {
+      "uri": "experiments/paper12/validation/migrate_sofrs_v2_to_v2_1.py",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "b800f6f0362e98cf24b4c81e1faaa54714fac7e814fb7dcb9c522cd0a2ebecb4"
+      }
+    }
+  },
+  "object_transition_boundary": {
+    "artifact_role": "INFORMATIONAL_REPORT",
+    "intervention_semantics": "NONE",
+    "source_state_transition_authority": "NONE",
+    "implementation_purity_status": "NOT_ESTABLISHED_BY_SOFRS"
+  }
+}

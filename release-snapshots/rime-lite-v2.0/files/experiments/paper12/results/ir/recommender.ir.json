@@ -1,0 +1,1450 @@
+{
+  "ir_version": "1.0",
+  "record_id": "paper12.recommender.v2",
+  "record_kind": "diagnostic_analogue",
+  "manifest_ref": {
+    "manifest_id": "paper12.recommender.v2",
+    "manifest_version": "1.0",
+    "artifact_id": "artifact.manifest",
+    "digest": {
+      "algorithm": "sha256",
+      "value": "52dfa812916194c2122499503977bad5e5acb0f7e8a05169cb86bd0eadc9f2d6"
+    }
+  },
+  "source": {
+    "adapter_id": "paper12-v1-to-v2",
+    "adapter_version": "2.0",
+    "source_id": "paper12.recommender.v1",
+    "artifact_ids": [
+      "artifact.legacy",
+      "artifact.producer"
+    ]
+  },
+  "objects": [
+    {
+      "id": "analogue.record",
+      "kind": "diagnostic_analogue",
+      "label": "Provenance-bound diagnostic analogue",
+      "provenance_artifact_ids": [
+        "artifact.legacy"
+      ],
+      "carrier_id": "carrier.analogue",
+      "data": {
+        "sector_descriptor": {
+          "origin": "four user clusters and four item clusters",
+          "space": "finite bipartite user-item space",
+          "labels": [
+            "UserCluster0",
+            "UserCluster1",
+            "UserCluster2",
+            "UserCluster3",
+            "ItemCluster0",
+            "ItemCluster1",
+            "ItemCluster2",
+            "ItemCluster3"
+          ],
+          "strict_sof_realization": true
+        },
+        "observable_descriptor": {
+          "interaction": "symmetric bipartite interaction propagation operator"
+        },
+        "support_descriptor": {
+          "kind": "direct cluster support",
+          "initial": [
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "after_intervention": [
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "initial_ordered_edges": 8,
+          "after_ordered_edges": 10
+        },
+        "bridge_descriptor": {
+          "kind": "length-two cluster support",
+          "initial": [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "after_intervention": [
+            [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "initial_ordered_edges": 0,
+          "after_ordered_edges": 4
+        },
+        "repair_descriptor": {
+          "kind": "targeted interaction coverage repair",
+          "intervention": {
+            "user_cluster": 0,
+            "item_cluster": 1,
+            "added_interactions": 25
+          },
+          "initial_dead_zones": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "final_dead_zones": [
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "repaired_dead_zones": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "dead_zone_count": [
+            12,
+            10
+          ],
+          "initial_depth_matrix": [
+            [
+              0,
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              1,
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF"
+            ],
+            [
+              "UNREACHED_AT_CUTOFF",
+              0,
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              1,
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF"
+            ],
+            [
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              0,
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              1,
+              "UNREACHED_AT_CUTOFF"
+            ],
+            [
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              0,
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              1
+            ],
+            [
+              1,
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              0,
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF"
+            ],
+            [
+              "UNREACHED_AT_CUTOFF",
+              1,
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              0,
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF"
+            ],
+            [
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              1,
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              0,
+              "UNREACHED_AT_CUTOFF"
+            ],
+            [
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              1,
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              0
+            ]
+          ],
+          "final_depth_matrix": [
+            [
+              0,
+              2,
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              1,
+              1,
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF"
+            ],
+            [
+              2,
+              0,
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              3,
+              1,
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF"
+            ],
+            [
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              0,
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              1,
+              "UNREACHED_AT_CUTOFF"
+            ],
+            [
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              0,
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              1
+            ],
+            [
+              1,
+              3,
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              0,
+              2,
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF"
+            ],
+            [
+              1,
+              1,
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              2,
+              0,
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF"
+            ],
+            [
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              1,
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              0,
+              "UNREACHED_AT_CUTOFF"
+            ],
+            [
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              1,
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              0
+            ]
+          ]
+        },
+        "wall_descriptor": {
+          "status": "discrete_intervention_comparison",
+          "trajectory_summary": {
+            "dead_zone_path": [
+              12,
+              10
+            ],
+            "support_edge_path": [
+              8,
+              10
+            ]
+          },
+          "claim_note": "single intervention comparison, not a continuous wall map"
+        },
+        "analogue_mapping": "The frozen v1 envelope records user/item clusters and derived coverage shadows, but it does not bind the before/after operative matrices as explicit reconstruction artifacts."
+      }
+    }
+  ],
+  "carriers": [
+    {
+      "id": "carrier.analogue",
+      "kind": "analogue",
+      "capability_id": "diagnostic_analogue",
+      "semantics": "Descriptor-level support, bridge, repair, and wall analogues.",
+      "object_ids": [
+        "analogue.record"
+      ],
+      "semantic_convention_ids": []
+    }
+  ],
+  "semantic_conventions": [],
+  "run_policies": [
+    {
+      "id": "policy.cutoff",
+      "kind": "cutoff",
+      "specification": {
+        "maximum_depth": 8,
+        "source": "recommender_sof.py",
+        "unreached_value": "UNREACHED_AT_CUTOFF"
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "artifact.manifest",
+      "uri": "experiments/paper12/results/manifests/recommender.capabilities.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "52dfa812916194c2122499503977bad5e5acb0f7e8a05169cb86bd0eadc9f2d6"
+      },
+      "media_type": "application/json",
+      "schema_version": "1.0",
+      "role": "manifest"
+    },
+    {
+      "id": "artifact.legacy",
+      "uri": "experiments/paper12/archive/results/recommender.sofreport",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "a83a729ddee49b6b0e8c26c0b403f9e3a8047228bd49da88b600ccf4a9cee22a"
+      },
+      "media_type": "application/json",
+      "schema_version": "1.0",
+      "role": "source-input"
+    },
+    {
+      "id": "artifact.producer",
+      "uri": "experiments/paper12/recommender_sof.py",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "8b70faab95c3870797ffd537213a0abbbbb46e0955ca5eeee8ccbc4f0bf11e6d"
+      },
+      "media_type": "text/x-python",
+      "schema_version": "1.0",
+      "role": "proof-reference"
+    }
+  ],
+  "certificates": [],
+  "findings": [
+    {
+      "id": "finding.analogue",
+      "kind": "status_only",
+      "carrier_id": "carrier.analogue",
+      "subject_object_ids": [
+        "analogue.record"
+      ],
+      "value": {
+        "sector_descriptor": {
+          "origin": "four user clusters and four item clusters",
+          "space": "finite bipartite user-item space",
+          "labels": [
+            "UserCluster0",
+            "UserCluster1",
+            "UserCluster2",
+            "UserCluster3",
+            "ItemCluster0",
+            "ItemCluster1",
+            "ItemCluster2",
+            "ItemCluster3"
+          ],
+          "strict_sof_realization": true
+        },
+        "observable_descriptor": {
+          "interaction": "symmetric bipartite interaction propagation operator"
+        },
+        "support_descriptor": {
+          "kind": "direct cluster support",
+          "initial": [
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "after_intervention": [
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "initial_ordered_edges": 8,
+          "after_ordered_edges": 10
+        },
+        "bridge_descriptor": {
+          "kind": "length-two cluster support",
+          "initial": [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "after_intervention": [
+            [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "initial_ordered_edges": 0,
+          "after_ordered_edges": 4
+        },
+        "repair_descriptor": {
+          "kind": "targeted interaction coverage repair",
+          "intervention": {
+            "user_cluster": 0,
+            "item_cluster": 1,
+            "added_interactions": 25
+          },
+          "initial_dead_zones": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "final_dead_zones": [
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "repaired_dead_zones": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "dead_zone_count": [
+            12,
+            10
+          ],
+          "initial_depth_matrix": [
+            [
+              0,
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              1,
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF"
+            ],
+            [
+              "UNREACHED_AT_CUTOFF",
+              0,
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              1,
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF"
+            ],
+            [
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              0,
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              1,
+              "UNREACHED_AT_CUTOFF"
+            ],
+            [
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              0,
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              1
+            ],
+            [
+              1,
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              0,
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF"
+            ],
+            [
+              "UNREACHED_AT_CUTOFF",
+              1,
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              0,
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF"
+            ],
+            [
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              1,
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              0,
+              "UNREACHED_AT_CUTOFF"
+            ],
+            [
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              1,
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              0
+            ]
+          ],
+          "final_depth_matrix": [
+            [
+              0,
+              2,
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              1,
+              1,
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF"
+            ],
+            [
+              2,
+              0,
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              3,
+              1,
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF"
+            ],
+            [
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              0,
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              1,
+              "UNREACHED_AT_CUTOFF"
+            ],
+            [
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              0,
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              1
+            ],
+            [
+              1,
+              3,
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              0,
+              2,
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF"
+            ],
+            [
+              1,
+              1,
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              2,
+              0,
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF"
+            ],
+            [
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              1,
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              0,
+              "UNREACHED_AT_CUTOFF"
+            ],
+            [
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              1,
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              "UNREACHED_AT_CUTOFF",
+              0
+            ]
+          ]
+        },
+        "wall_descriptor": {
+          "status": "discrete_intervention_comparison",
+          "trajectory_summary": {
+            "dead_zone_path": [
+              12,
+              10
+            ],
+            "support_edge_path": [
+              8,
+              10
+            ]
+          },
+          "claim_note": "single intervention comparison, not a continuous wall map"
+        },
+        "analogue_mapping": "The frozen v1 envelope records user/item clusters and derived coverage shadows, but it does not bind the before/after operative matrices as explicit reconstruction artifacts."
+      },
+      "unit": null,
+      "result_state": "OBSERVED",
+      "semantic_convention_ids": [],
+      "run_policy_ids": [
+        "policy.cutoff"
+      ],
+      "certificate_ids": [],
+      "artifact_ids": [
+        "artifact.legacy"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim.analogue",
+      "statement": "The source artifact supports a provenance-bound structurally analogous diagnostic under the declared mapping.",
+      "result_state": "OBSERVED",
+      "claim_status": "Computational Observation",
+      "capability_ids": [
+        "diagnostic_analogue"
+      ],
+      "carrier_ids": [
+        "carrier.analogue"
+      ],
+      "object_ids": [
+        "analogue.record"
+      ],
+      "finding_ids": [
+        "finding.analogue"
+      ],
+      "semantic_convention_ids": [],
+      "run_policy_ids": [
+        "policy.cutoff"
+      ],
+      "hypotheses": [
+        "The frozen v1 report, adapter classification, and declared policies are fixed."
+      ],
+      "certificate_ids": [],
+      "artifact_ids": [
+        "artifact.legacy"
+      ],
+      "scope": "Descriptor-level Paper XII control recommender.sofreport.",
+      "negative_boundary": "Strict admission requires a new source-addressed reconstruction of the complete (V,Q,Y) data. Cutoff reachability and the discrete intervention comparison are not a continuous wall or causal result."
+    }
+  ],
+  "derivations": []
+}
