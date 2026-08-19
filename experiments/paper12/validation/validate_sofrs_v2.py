@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import subprocess
 import sys
 from copy import deepcopy
 from pathlib import Path
@@ -42,10 +43,7 @@ from schemas.contract_api import (  # noqa: E402
     resolve_artifact_path,
     schema_errors,
 )
-from schemas.sofrs.api import (  # noqa: E402
-    build_v2_report_validation_receipt,
-    v2_report_validation_receipt_errors,
-)
+from schemas.sofrs.api import v2_report_validation_receipt_errors  # noqa: E402
 
 
 V2_DIR = PAPER_DIR / "results"
@@ -60,7 +58,7 @@ REPORT_SCHEMA_PATH = ROOT / "schemas" / "sofrs" / "v2.0.schema.json"
 RECEIPT_SCHEMA_PATH = ROOT / "schemas" / "sofrs" / "report-validation-receipt-v2.0.schema.json"
 RECEIPT_DIR = V2_DIR / "report-validation-receipts" / "paper12-v2"
 VALIDATION_INDEX_PATH = RECEIPT_DIR / "validation-index.json"
-VALIDATOR_URI = "experiments/paper12/validation/validate_sofrs_v2.py"
+PUBLISHED_RELEASE_COMMIT = "c58633494257757e3316f31d8a7cfedc2e75af4e"
 EXTERNAL_CONSTRAINT_IDS = {
     "source-snapshot-pinned",
     "object-level-recomputation",
@@ -120,14 +118,6 @@ CLAIM_COMPATIBILITY = {
 
 def repo_uri(path: Path) -> str:
     return path.resolve().relative_to(ROOT.resolve()).as_posix()
-
-
-def write_json(path: Path, payload: dict[str, Any]) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(
-        json.dumps(payload, indent=2, ensure_ascii=False) + "\n",
-        encoding="utf-8",
-    )
 
 
 def artifact_reference(path: Path) -> dict[str, Any]:
@@ -1129,20 +1119,16 @@ def standalone_report_errors(report_path: Path) -> list[str]:
     return errors
 
 
-def issue_validation_receipt(
+def validate_existing_receipt(
     index_entry: dict[str, Any],
 ) -> tuple[Path, list[str]]:
     report_path = ROOT / index_entry["report"]
     report = load_json(report_path)
     stem = report_path.name.removesuffix(".sofreport.json")
     receipt_path = RECEIPT_DIR / f"{stem}.validation-receipt.json"
-    receipt = build_v2_report_validation_receipt(
-        report_path,
-        report_uri=repo_uri(report_path),
-        validator_path=Path(__file__),
-        validator_uri=VALIDATOR_URI,
-    )
-    write_json(receipt_path, receipt)
+    if not receipt_path.is_file():
+        return receipt_path, ["published v2 validation receipt is missing"]
+    receipt = load_json(receipt_path)
     expected_report_reference = {
         "report_id": report["report_id"],
         "sofrs_version": report["sofrs_version"],
@@ -1186,7 +1172,7 @@ def main() -> None:
         errors = validate_record(entry, schemas, rule_registry)
         receipt_path = None
         if not errors:
-            receipt_path, receipt_errors = issue_validation_receipt(entry)
+            receipt_path, receipt_errors = validate_existing_receipt(entry)
             errors.extend(f"validation receipt: {error}" for error in receipt_errors)
         if errors:
             failures += 1
@@ -1217,24 +1203,33 @@ def main() -> None:
             f"SOFRS v2 receipt set mismatch: extra={extra or 'none'}, "
             f"missing={missing or 'none'}"
         )
-    validation_index = {
-        "validation_version": "2.0",
-        "validator": artifact_reference(Path(__file__)),
-        "receipt_contract": artifact_reference(RECEIPT_SCHEMA_PATH),
-        "report_count": len(receipt_paths),
-        "receipts": [
-            {
-                "report": entry["report"],
-                "receipt": repo_uri(path),
-                "receipt_digest": {
-                    "algorithm": "sha256",
-                    "value": file_digest(path),
-                },
-            }
-            for entry, path in zip(index["records"], receipt_paths, strict=True)
-        ],
-    }
-    write_json(VALIDATION_INDEX_PATH, validation_index)
+    if not VALIDATION_INDEX_PATH.is_file():
+        raise SystemExit("SOFRS v2 validation index is missing")
+    validation_index = load_json(VALIDATION_INDEX_PATH)
+    expected_index_rows = [
+        {
+            "report": entry["report"],
+            "receipt": repo_uri(path),
+            "receipt_digest": {
+                "algorithm": "sha256",
+                "value": file_digest(path),
+            },
+        }
+        for entry, path in zip(index["records"], receipt_paths, strict=True)
+    ]
+    if validation_index.get("validation_version") != "2.0":
+        raise SystemExit("SOFRS v2 validation index has the wrong version")
+    if validation_index.get("report_count") != len(receipt_paths):
+        raise SystemExit("SOFRS v2 validation index has the wrong report count")
+    if validation_index.get("receipts") != expected_index_rows:
+        raise SystemExit("SOFRS v2 validation index differs from frozen receipts")
+    index_uri = repo_uri(VALIDATION_INDEX_PATH)
+    frozen_check = subprocess.run(
+        ["git", "diff", "--quiet", PUBLISHED_RELEASE_COMMIT, "--", index_uri],
+        cwd=ROOT,
+    )
+    if frozen_check.returncode != 0:
+        raise SystemExit("SOFRS v2 validation index differs from the published release")
     print(
         f"Validated 9 SOFRS v2 reports: "
         f"{strict_count} strict_sof, {analogue_count} diagnostic_analogue; "

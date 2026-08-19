@@ -2,12 +2,18 @@
 .gitattributes text eol=lf
 pyproject.toml text eol=lf
 rime/**/*.py text eol=lf
+registry/**/*.json text eol=lf
+registry/**/*.py text eol=lf
 schemas/**/*.json text eol=lf
 schemas/**/*.py text eol=lf
 experiments/**/*.json text eol=lf
 experiments/**/*.md text eol=lf
 experiments/**/*.py text eol=lf
 experiments/**/*.txt text eol=lf
+# SOFRS v2.0 receipts bind the published Windows materialization. Preserve
+# that historical checkout contract while keeping the v2.1 revision canonical LF.
+experiments/paper12/results/**/*.json text eol=crlf
+experiments/paper12/results/v2.1/**/*.json text eol=lf
 figures/**/*.py text eol=lf
 tests/**/*.py text eol=lf
 tests/**/*.json text eol=lf

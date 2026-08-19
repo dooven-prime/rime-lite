@@ -8,7 +8,7 @@ import tempfile
 
 from verification_state import (
     changed_tracked_paths,
-    copy_visible_worktree,
+    create_verification_checkout,
     snapshot_tracked_state,
     verification_exit_code,
 )
@@ -34,7 +34,15 @@ def test_tracked_mutation_is_detected() -> None:
         assert before == snapshot_tracked_state(root)
         with tempfile.TemporaryDirectory() as scratch_directory:
             scratch = Path(scratch_directory) / "repository"
-            copy_visible_worktree(root, scratch)
+            create_verification_checkout(root, scratch)
+            assert (scratch / ".git").is_dir()
+            assert subprocess.run(
+                ["git", "show", f"HEAD:{tracked.name}"],
+                cwd=scratch,
+                check=True,
+                capture_output=True,
+                text=True,
+            ).stdout == '{"state":"frozen"}\n'
             (scratch / tracked.name).write_text(
                 '{"state":"scratch-only"}\n', encoding="utf-8"
             )

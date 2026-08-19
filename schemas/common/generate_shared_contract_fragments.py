@@ -25,6 +25,14 @@ TARGETS = {
         "digest": "digest",
         "artifact_reference": "artifact_reference",
     },
+    ROOT / "schemas" / "sofrs" / "v2.1.schema.json": {
+        "digest": "digest",
+        "artifact_reference": "artifact_reference",
+    },
+    ROOT / "schemas" / "sofrs" / "report-validation-receipt-v2.1.schema.json": {
+        "digest": "digest",
+        "artifact_reference": "artifact_reference",
+    },
     ROOT / "schemas" / "sofaudit" / "v2.0.schema.json": {
         "digest": "digest",
         "artifact_reference": "artifact_reference",

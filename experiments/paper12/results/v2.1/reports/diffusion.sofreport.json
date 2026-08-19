@@ -1,0 +1,650 @@
+{
+  "sofrs_version": "2.1",
+  "report_id": "diffusion-denoising",
+  "system": "finite latent diffusion probe",
+  "record_kind": "diagnostic_analogue",
+  "strict_reconstruction": {
+    "candidate_status": "no",
+    "available_requirements": [],
+    "missing_requirements": [
+      "bounded_strict_reconstruction_obligation_not_declared"
+    ],
+    "evaluator_id": "paper12.strict-reconstruction-obligation-audit",
+    "evaluator_version": "1.0",
+    "interpretation": "No bounded strict-reconstruction obligation is declared for this migration row."
+  },
+  "external_basis_registry": {
+    "registry_version": "1.0",
+    "basis_status": "PARTIAL",
+    "packages": [
+      {
+        "basis_id": "basis.source.identity",
+        "level": "source_identity",
+        "constraint_ids": [
+          "source-snapshot-pinned"
+        ],
+        "status": "SATISFIED",
+        "method": "source-and-producer-digest-binding",
+        "scope": "The frozen source envelope and its declared producer are source-addressed.",
+        "evidence_artifacts": [
+          {
+            "uri": "experiments/paper12/archive/results/diffusion.sofreport",
+            "digest": {
+              "algorithm": "sha256",
+              "value": "d35940d2dc1f89e40da832c082ed08c5df36798662eebd51a06bc9caa8279615"
+            }
+          },
+          {
+            "uri": "experiments/paper12/diffusion_denoising_sof.py",
+            "digest": {
+              "algorithm": "sha256",
+              "value": "d2b712dcab60e6c1cd438c18d6ed518719b77c0ddcd228ecba85be5b15faeaff"
+            }
+          }
+        ],
+        "negative_boundary": [
+          "Digest binding identifies inputs and producer provenance; it does not establish scientific adequacy."
+        ]
+      },
+      {
+        "basis_id": "basis.object.recomputation",
+        "level": "object_level",
+        "constraint_ids": [
+          "object-level-recomputation"
+        ],
+        "status": "NOT_ASSESSED",
+        "method": "no-independent-object-recomputation",
+        "scope": "No matrix, graph, depth, trajectory, or domain fact is independently recertified by this migration.",
+        "evidence_artifacts": [],
+        "negative_boundary": [
+          "Migration consistency is not an Object Certificate."
+        ]
+      },
+      {
+        "basis_id": "basis.structure.validation",
+        "level": "structure_level",
+        "constraint_ids": [
+          "realization-structure-validation"
+        ],
+        "status": "NOT_APPLICABLE",
+        "method": "analogue-negative-boundary",
+        "scope": "The aggregate analogue does not claim a complete strict (V,Q,Y) realization.",
+        "evidence_artifacts": [],
+        "negative_boundary": [
+          "This field does not authorize strict admission or carrier promotion."
+        ]
+      },
+      {
+        "basis_id": "basis.semantic.adequacy",
+        "level": "semantic_adequacy",
+        "constraint_ids": [
+          "domain-semantic-adequacy"
+        ],
+        "status": "NOT_ASSESSED",
+        "method": "domain-owner-assessment-not-bound",
+        "scope": "The migration does not determine whether the adapter answers the source domain question adequately.",
+        "evidence_artifacts": [],
+        "negative_boundary": [
+          "A protocol-valid analogue may remain scientifically misleading."
+        ]
+      }
+    ],
+    "constraints": [
+      {
+        "constraint_id": "source-snapshot-pinned",
+        "basis_id": "basis.source.identity",
+        "status": "SATISFIED",
+        "statement": "The source envelope and producer identity are bound by digests.",
+        "evidence_artifacts": [
+          {
+            "uri": "experiments/paper12/archive/results/diffusion.sofreport",
+            "digest": {
+              "algorithm": "sha256",
+              "value": "d35940d2dc1f89e40da832c082ed08c5df36798662eebd51a06bc9caa8279615"
+            }
+          },
+          {
+            "uri": "experiments/paper12/diffusion_denoising_sof.py",
+            "digest": {
+              "algorithm": "sha256",
+              "value": "d2b712dcab60e6c1cd438c18d6ed518719b77c0ddcd228ecba85be5b15faeaff"
+            }
+          }
+        ]
+      },
+      {
+        "constraint_id": "object-level-recomputation",
+        "basis_id": "basis.object.recomputation",
+        "status": "NOT_ASSESSED",
+        "statement": "An independent object-level recomputation is not part of this migration.",
+        "evidence_artifacts": []
+      },
+      {
+        "constraint_id": "realization-structure-validation",
+        "basis_id": "basis.structure.validation",
+        "status": "NOT_APPLICABLE",
+        "statement": "The migrated analogue does not assert a complete strict realization.",
+        "evidence_artifacts": []
+      },
+      {
+        "constraint_id": "domain-semantic-adequacy",
+        "basis_id": "basis.semantic.adequacy",
+        "status": "NOT_ASSESSED",
+        "statement": "Domain adequacy remains the adapter owner's responsibility.",
+        "evidence_artifacts": []
+      }
+    ],
+    "negative_boundary": [
+      "The external basis records what has and has not been checked; it does not turn protocol conformance into scientific confirmation.",
+      "Object-level claims require a satisfied object-level basis and independently checkable evidence."
+    ]
+  },
+  "compiler_contracts": {
+    "capability_manifest": {
+      "uri": "experiments/paper12/results/manifests/diffusion.capabilities.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "e1b71af8a96e8c22fbb2d931f12c791ec342a95f99c3135d5a35ecc1ea34ccf5"
+      }
+    },
+    "typed_sof_ir": {
+      "uri": "experiments/paper12/results/ir/diffusion.ir.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "9098d83ab70d57310b50f533b31b0dec8d29152c5a0b37a67882c256c6ee226b"
+      }
+    },
+    "compiler_profile": {
+      "uri": "schemas/sofrs/paper12-analogue-compiler-profile-v1.0.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "facc293462a79d93a00ece68e42951c49e8cfe8b141147bdfd6333bbb2b430b5"
+      }
+    },
+    "compiler_output": {
+      "uri": "experiments/paper12/results/compiler-output/diffusion.compiler-output.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "7d76c89d85ff631eda7448e6516a848348ccf6a0f0b2fe222901c129586af01d"
+      }
+    }
+  },
+  "compiler_output_binding": {
+    "artifact_id": "artifact.compiler-output",
+    "artifact": {
+      "uri": "experiments/paper12/results/compiler-output/diffusion.compiler-output.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "7d76c89d85ff631eda7448e6516a848348ccf6a0f0b2fe222901c129586af01d"
+      }
+    },
+    "compiler_id": "sofcompiler.compile_v1",
+    "compiler_output_version": "1.0",
+    "compiler_profile_id": "paper12.analogue.v2"
+  },
+  "assembly_contract": {
+    "schema_id": "sofrs-assembly-v2.0",
+    "version": "2.0",
+    "implementation": {
+      "uri": "experiments/paper12/validation/migrate_sofrs_v1_to_v2.py",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "d0905b3647dddd67c30815f4062fdd0e4266e62c7fa5cde2e72f43840cab6252"
+      }
+    },
+    "assembly_profile": {
+      "uri": "schemas/sofrs/paper12-analogue-assembly-profile-v2.0.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "936a80b0bcc238d47739ec5bac3aabcfb422feac2fed159739342189e678aaf1"
+      }
+    },
+    "assembly_profile_id": "paper12.analogue.assembly.v2"
+  },
+  "item_bindings": [
+    {
+      "compiler_output_item_id": "compiler.item.0000",
+      "report_item_id": "report.claim-item.0000",
+      "item_kind": "claim",
+      "rendering_status": "rendered"
+    }
+  ],
+  "alignment_readiness": {
+    "adapter": {
+      "id": "paper12-v1-to-v2",
+      "version": "2.0"
+    },
+    "compiler_profile_id": "paper12.analogue.v2",
+    "assembly_profile_id": "paper12.analogue.assembly.v2",
+    "sector_metadata": {
+      "status": "NOT_DECLARED",
+      "labels": [],
+      "provenance": null,
+      "ranks_or_dimensions": [],
+      "semantics": null
+    },
+    "observable_metadata": {
+      "status": "NOT_DECLARED",
+      "labels": [],
+      "provenance": null,
+      "ranks_or_dimensions": [],
+      "semantics": null
+    },
+    "carrier_kinds": [
+      "analogue"
+    ],
+    "semantic_conventions": [],
+    "run_policies": [],
+    "comparison_keys": [
+      "report:diffusion-denoising",
+      "system:finite-latent-diffusion-probe",
+      "record-kind:diagnostic_analogue"
+    ],
+    "source_artifact_digests": [
+      {
+        "uri": "experiments/paper12/archive/results/diffusion.sofreport",
+        "digest": {
+          "algorithm": "sha256",
+          "value": "d35940d2dc1f89e40da832c082ed08c5df36798662eebd51a06bc9caa8279615"
+        }
+      },
+      {
+        "uri": "experiments/paper12/diffusion_denoising_sof.py",
+        "digest": {
+          "algorithm": "sha256",
+          "value": "d2b712dcab60e6c1cd438c18d6ed518719b77c0ddcd228ecba85be5b15faeaff"
+        }
+      }
+    ]
+  },
+  "source_mapping": {
+    "status": "migrated",
+    "construction": "v1-to-v2-adapter",
+    "adapter_id": "paper12-v1-to-v2",
+    "adapter_version": "2.0",
+    "justification": "The report is assembled by the versioned Paper XII adapter from a frozen SOFRS v1 envelope and declared v2 contracts.",
+    "limitations": [
+      "The mapping preserves the v1 source envelope and does not promote missing strict (V,Q,Y) data."
+    ]
+  },
+  "source_artifacts": [
+    {
+      "uri": "experiments/paper12/archive/results/diffusion.sofreport",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "d35940d2dc1f89e40da832c082ed08c5df36798662eebd51a06bc9caa8279615"
+      }
+    },
+    {
+      "uri": "experiments/paper12/diffusion_denoising_sof.py",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "d2b712dcab60e6c1cd438c18d6ed518719b77c0ddcd228ecba85be5b15faeaff"
+      }
+    }
+  ],
+  "modules": [
+    {
+      "module_id": "diagnostic-analogue",
+      "status": "ENABLED",
+      "carrier_kinds": [
+        "analogue"
+      ],
+      "finding_ids": [
+        "finding.analogue"
+      ],
+      "claim_ids": [
+        "claim.analogue"
+      ],
+      "output_sections": [
+        "Source and evaluator provenance",
+        "Analogue mapping",
+        "Support, bridge, repair, or wall descriptors",
+        "Negative SOF boundary"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "finding.analogue",
+      "kind": "status_only",
+      "result_state": "OBSERVED",
+      "value": {
+        "sector_descriptor": {
+          "origin": "PCA-sign partition on a fixed probe window",
+          "space": "finite feature coordinates",
+          "time_dependent": true,
+          "strict_sof_realization": true
+        },
+        "observable_descriptor": {
+          "data_noise_commutator": "feature-space Gram commutator",
+          "fixed_skew_probe": "seeded skew-symmetric feature operator"
+        },
+        "support_descriptor": {
+          "kind": "R1 edge-count trajectory",
+          "samples": [
+            {
+              "t": 0,
+              "R1_edges": 0
+            },
+            {
+              "t": 1,
+              "R1_edges": 0
+            },
+            {
+              "t": 2,
+              "R1_edges": 0
+            },
+            {
+              "t": 3,
+              "R1_edges": 0
+            },
+            {
+              "t": 4,
+              "R1_edges": 0
+            },
+            {
+              "t": 5,
+              "R1_edges": 0
+            },
+            {
+              "t": 6,
+              "R1_edges": 0
+            },
+            {
+              "t": 7,
+              "R1_edges": 0
+            },
+            {
+              "t": 8,
+              "R1_edges": 0
+            },
+            {
+              "t": 9,
+              "R1_edges": 0
+            },
+            {
+              "t": 10,
+              "R1_edges": 0
+            },
+            {
+              "t": 11,
+              "R1_edges": 6
+            },
+            {
+              "t": 12,
+              "R1_edges": 8
+            },
+            {
+              "t": 13,
+              "R1_edges": 6
+            },
+            {
+              "t": 14,
+              "R1_edges": 8
+            },
+            {
+              "t": 15,
+              "R1_edges": 8
+            },
+            {
+              "t": 16,
+              "R1_edges": 8
+            },
+            {
+              "t": 17,
+              "R1_edges": 8
+            },
+            {
+              "t": 18,
+              "R1_edges": 8
+            },
+            {
+              "t": 19,
+              "R1_edges": 8
+            }
+          ]
+        },
+        "bridge_descriptor": null,
+        "repair_descriptor": {
+          "kind": "reverse-time restoration of the clean observable signature",
+          "event": {
+            "direction": "reverse_denoising",
+            "from_step": 11,
+            "to_step": 10,
+            "restored_sector_count": 1
+          },
+          "claim_note": "registered denoising repair, not fixed-sector Lie-depth D-repair"
+        },
+        "wall_descriptor": {
+          "wall_type": "sampled sector-schema transition",
+          "first_wall": {
+            "direction": "forward_noise",
+            "step": 11,
+            "sector_count_before": 1,
+            "sector_count_after": 2,
+            "alpha_bar": 0.1296357522650524
+          },
+          "trajectory_summary": {
+            "parameter": "diffusion time",
+            "rows": [
+              {
+                "t": 0,
+                "alpha_bar": 0.99,
+                "sectors": 1,
+                "R1_edges": 0
+              },
+              {
+                "t": 1,
+                "alpha_bar": 0.9545684210526316,
+                "sectors": 1,
+                "R1_edges": 0
+              },
+              {
+                "t": 2,
+                "alpha_bar": 0.8957871024930748,
+                "sectors": 1,
+                "R1_edges": 0
+              },
+              {
+                "t": 3,
+                "alpha_bar": 0.817523597748943,
+                "sectors": 1,
+                "R1_edges": 0
+              },
+              {
+                "t": 4,
+                "alpha_bar": 0.7250143485299837,
+                "sectors": 1,
+                "R1_edges": 0
+              },
+              {
+                "t": 5,
+                "alpha_bar": 0.6242755127342386,
+                "sectors": 1,
+                "R1_edges": 0
+              },
+              {
+                "t": 6,
+                "alpha_bar": 0.5214343361627561,
+                "sectors": 1,
+                "R1_edges": 0
+              },
+              {
+                "t": 7,
+                "alpha_bar": 0.4220873731675363,
+                "sectors": 1,
+                "R1_edges": 0
+              },
+              {
+                "t": 8,
+                "alpha_bar": 0.3307832098139271,
+                "sectors": 1,
+                "R1_edges": 0
+              },
+              {
+                "t": 9,
+                "alpha_bar": 0.2506988537537132,
+                "sectors": 1,
+                "R1_edges": 0
+              },
+              {
+                "t": 10,
+                "alpha_bar": 0.1835379503007448,
+                "sectors": 1,
+                "R1_edges": 0
+              },
+              {
+                "t": 11,
+                "alpha_bar": 0.1296357522650524,
+                "sectors": 2,
+                "R1_edges": 6
+              },
+              {
+                "t": 12,
+                "alpha_bar": 0.08822054088353301,
+                "sectors": 2,
+                "R1_edges": 8
+              },
+              {
+                "t": 13,
+                "alpha_bar": 0.057761238346902666,
+                "sectors": 2,
+                "R1_edges": 6
+              },
+              {
+                "t": 14,
+                "alpha_bar": 0.036328778855025626,
+                "sectors": 2,
+                "R1_edges": 8
+              },
+              {
+                "t": 15,
+                "alpha_bar": 0.021911989772557563,
+                "sectors": 2,
+                "R1_edges": 8
+              },
+              {
+                "t": 16,
+                "alpha_bar": 0.01265129093710297,
+                "sectors": 2,
+                "R1_edges": 8
+              },
+              {
+                "t": 17,
+                "alpha_bar": 0.006978185737938901,
+                "sectors": 2,
+                "R1_edges": 8
+              },
+              {
+                "t": 18,
+                "alpha_bar": 0.0036690566064215596,
+                "sectors": 2,
+                "R1_edges": 8
+              },
+              {
+                "t": 19,
+                "alpha_bar": 0.0018345283032107798,
+                "sectors": 2,
+                "R1_edges": 8
+              }
+            ]
+          }
+        },
+        "analogue_mapping": "The report aggregates pointwise finite audits while the sector count and projector family change along the sampled path."
+      }
+    }
+  ],
+  "claims": [
+    {
+      "report_item_id": "report.claim-item.0000",
+      "source_output_item_id": "compiler.item.0000",
+      "claim_id": "claim.analogue",
+      "statement": "The source artifact supports a provenance-bound structurally analogous diagnostic under the declared mapping.",
+      "result_state": "OBSERVED",
+      "claim_status": "Computational Observation",
+      "claim_target": "representation_interface",
+      "certificate_class": null,
+      "classification_source": "migration_adapter",
+      "external_basis_refs": [
+        "basis.source.identity"
+      ],
+      "external_constraint_ids": [
+        "source-snapshot-pinned"
+      ],
+      "carrier_kinds": [
+        "analogue"
+      ],
+      "scope": "Descriptor-level Paper XII control diffusion.sofreport.",
+      "negative_boundary": "Pointwise strict snapshots do not produce a typed deformation chart without fixed labels, comparison maps, and continuity data."
+    }
+  ],
+  "degradation_items": [],
+  "failure_modes": [
+    "toy finite probe rather than a trained diffusion model",
+    "PCA-sign sectors depend on the chosen probe chart",
+    "reverse denoising repair is not identified with Lie-depth D-repair",
+    "Pointwise strict snapshots do not produce a typed deformation chart without fixed labels, comparison maps, and continuity data."
+  ],
+  "provenance": {
+    "kind": "migration",
+    "source_artifact": {
+      "uri": "experiments/paper12/archive/results/diffusion.sofreport",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "d35940d2dc1f89e40da832c082ed08c5df36798662eebd51a06bc9caa8279615"
+      }
+    },
+    "source_sofrs_version": "1.0",
+    "migration_adapter_ref": {
+      "uri": "experiments/paper12/validation/migrate_sofrs_v1_to_v2.py",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "d0905b3647dddd67c30815f4062fdd0e4266e62c7fa5cde2e72f43840cab6252"
+      }
+    },
+    "migration_ruleset_version": "2.0",
+    "migration_receipt_ref": {
+      "uri": "schemas/sofrs/migration-receipt-v2.0.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "5b6f098b8b7657eed3810abccd2c2b99f96213739d9f2e03909e2023a4a168af"
+      }
+    },
+    "normalized_legacy_sentinels": [],
+    "semantic_normalizations": [
+      "wall label -> sampled sector-schema transition"
+    ]
+  },
+  "revision_provenance": {
+    "kind": "explicit_v2_0_to_v2_1_migration",
+    "source_version": "2.0",
+    "source_artifact": {
+      "uri": "experiments/paper12/results/reports/diffusion.sofreport.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "814117c21187ca066367888ea25e7da52a1c9cf314dd2ca90cbd5e9d1fc5546c"
+      }
+    },
+    "source_validation_receipt": {
+      "uri": "experiments/paper12/results/report-validation-receipts/paper12-v2/diffusion.validation-receipt.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "521c980c2a096c299ef423b4effa2782f24966b70fef34062a439f34eaf0ebb6"
+      }
+    },
+    "migration_implementation": {
+      "uri": "experiments/paper12/validation/migrate_sofrs_v2_to_v2_1.py",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "0c6eec82b760b1173bf9b494c77365ce607edf4228a36938a6583b720c995b46"
+      }
+    }
+  },
+  "object_transition_boundary": {
+    "artifact_role": "INFORMATIONAL_REPORT",
+    "intervention_semantics": "NONE",
+    "source_state_transition_authority": "NONE",
+    "implementation_purity_status": "NOT_ESTABLISHED_BY_SOFRS"
+  }
+}

@@ -9,6 +9,26 @@ The canonical publication list is the root
 their declared artifacts remain the authority for mathematical and
 computational claims.
 
+## 2026-08-19: Paper XII Version 2.1
+
+Paper XII was released as the non-intervention and semantic-migration revision
+of the realization-relative single-report protocol. Version 2.1:
+
+- makes report compilation, assembly, serialization, and validation explicitly
+  non-intervening at the protocol level;
+- adds explicit migration from frozen SOFRS v2.0 reports while preserving their
+  normative projections;
+- admits native v2.1 generation only with a digest-bound producer and nonempty
+  input closure;
+- binds nine migrated reports to their source receipts, migration
+  implementation, v2.1 contracts, validator, and boundary helper;
+- keeps implementation purity, adapter adequacy, report alignment, causal
+  attribution, action correctness, outcome, and effect outside receipt
+  conformance.
+
+The public release is DOI
+<https://doi.org/10.5281/zenodo.22006816>.
+
 ## 2026-08-18: CCS Version 2.1
 
 CCS v2.1 was released as a correction to the optional RIME Computational
