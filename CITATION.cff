@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: >-
+  If you use this repository snapshot, please cite the archived RIME v2.0
+  release and the specific paper or contract used.
+title: "RIME: Representation-Induced Mechanics and Evolution"
+version: "2.0"
+date-released: 2026-08-11
+type: software
+authors:
+  - family-names: Chen
+    given-names: WuJun
+    affiliation: Independent Researcher
+    orcid: https://orcid.org/0009-0005-4090-7557
+repository-code: https://github.com/dooven-prime/rime-lite
+license: MIT
+identifiers:
+  - type: other
+    value: 28711f67aee03b02786c8e9f451156576c0f65ef
+    description: Immutable v2.0 source snapshot base commit
+keywords:
+  - Sectorized Observable Framework
+  - represented systems
+  - spectral structure
+  - transport
+  - accessibility
+  - typed scientific reports
+  - reproducible research
+abstract: >-
+  RIME studies spectral, transport, accessibility, deformation, reporting,
+  alignment, and bounded interpretation structures in finite-dimensional
+  represented systems. This v2.0 repository snapshot contains the public
+  Papers I-XIV contracts, manuscripts, accepted evidence, figures, and
+  source-addressed validation material as of commit
+  28711f67aee03b02786c8e9f451156576c0f65ef. Later v2.1 manuscript revisions,
+  experiments, figures, tests, and contract candidates are excluded from this
+  snapshot.
