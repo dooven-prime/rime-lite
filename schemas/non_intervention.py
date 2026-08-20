@@ -89,6 +89,12 @@ def file_digest(path: Path) -> str:
 
 
 def artifact_reference(path: Path, root: Path) -> dict[str, Any]:
+    try:
+        from schemas.release_snapshot import canonical_reference_for_path
+
+        return canonical_reference_for_path(path, repository_root=root)
+    except (ImportError, OSError, TypeError, ValueError):
+        pass
     return {
         "uri": path.resolve().relative_to(root.resolve()).as_posix(),
         "digest": {"algorithm": "sha256", "value": file_digest(path)},
@@ -120,8 +126,21 @@ def resolve_reference(
     if not path.is_file():
         return None, [f"{label} does not exist: {uri}"]
     digest = reference.get("digest", {}).get("value")
-    if digest != file_digest(path):
-        errors.append(f"{label} digest does not match artifact")
+    if digest == file_digest(path):
+        return path, errors
+
+    # Historical references may resolve to an explicitly pinned byte snapshot
+    # when the materialized checkout has since changed line endings or content.
+    try:
+        from schemas.release_snapshot import snapshot_path_for_reference
+
+        snapshot = snapshot_path_for_reference(reference, repository_root=root)
+    except (ImportError, OSError, TypeError, ValueError):
+        snapshot = None
+    if snapshot is not None:
+        return snapshot, errors
+
+    errors.append(f"{label} digest does not match artifact")
     return path, errors
 
 

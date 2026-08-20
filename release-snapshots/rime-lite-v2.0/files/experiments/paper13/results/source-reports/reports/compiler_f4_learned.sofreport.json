@@ -1,0 +1,561 @@
+{
+  "sofrs_version": "2.0",
+  "report_id": "compiler-f4-learned",
+  "system": "5-block IR (lost def-use)",
+  "record_kind": "diagnostic_analogue",
+  "strict_reconstruction": {
+    "candidate_status": "no",
+    "available_requirements": [],
+    "missing_requirements": [
+      "bounded_strict_reconstruction_obligation_not_declared"
+    ],
+    "evaluator_id": "paper12.strict-reconstruction-obligation-audit",
+    "evaluator_version": "1.0",
+    "interpretation": "No bounded strict-reconstruction obligation is declared for this migration row."
+  },
+  "external_basis_registry": {
+    "registry_version": "1.0",
+    "basis_status": "PARTIAL",
+    "packages": [
+      {
+        "basis_id": "basis.source.identity",
+        "level": "source_identity",
+        "constraint_ids": [
+          "source-snapshot-pinned"
+        ],
+        "status": "SATISFIED",
+        "method": "source-and-producer-digest-binding",
+        "scope": "The frozen source envelope and its declared producer are source-addressed.",
+        "evidence_artifacts": [
+          {
+            "uri": "experiments/paper13/archive/results/compiler_f4_learned.sofreport",
+            "digest": {
+              "algorithm": "sha256",
+              "value": "4bc8410eb9c0588f0057fd808cb0b51aa0374d18beeafd9ef380d829babd1878"
+            }
+          },
+          {
+            "uri": "experiments/paper13/compiler_ir_sof.py",
+            "digest": {
+              "algorithm": "sha256",
+              "value": "6a66b111c047137a7690176c7395c8fcdef19e46106f6172aa903d24cdc9e3e8"
+            }
+          }
+        ],
+        "negative_boundary": [
+          "Digest binding identifies inputs and producer provenance; it does not establish scientific adequacy."
+        ]
+      },
+      {
+        "basis_id": "basis.object.recomputation",
+        "level": "object_level",
+        "constraint_ids": [
+          "object-level-recomputation"
+        ],
+        "status": "NOT_ASSESSED",
+        "method": "no-independent-object-recomputation",
+        "scope": "No matrix, graph, depth, trajectory, or domain fact is independently recertified by this migration.",
+        "evidence_artifacts": [],
+        "negative_boundary": [
+          "Migration consistency is not an Object Certificate."
+        ]
+      },
+      {
+        "basis_id": "basis.structure.validation",
+        "level": "structure_level",
+        "constraint_ids": [
+          "realization-structure-validation"
+        ],
+        "status": "NOT_APPLICABLE",
+        "method": "analogue-negative-boundary",
+        "scope": "The aggregate analogue does not claim a complete strict (V,Q,Y) realization.",
+        "evidence_artifacts": [],
+        "negative_boundary": [
+          "This field does not authorize strict admission or carrier promotion."
+        ]
+      },
+      {
+        "basis_id": "basis.semantic.adequacy",
+        "level": "semantic_adequacy",
+        "constraint_ids": [
+          "domain-semantic-adequacy"
+        ],
+        "status": "NOT_ASSESSED",
+        "method": "domain-owner-assessment-not-bound",
+        "scope": "The migration does not determine whether the adapter answers the source domain question adequately.",
+        "evidence_artifacts": [],
+        "negative_boundary": [
+          "A protocol-valid analogue may remain scientifically misleading."
+        ]
+      }
+    ],
+    "constraints": [
+      {
+        "constraint_id": "source-snapshot-pinned",
+        "basis_id": "basis.source.identity",
+        "status": "SATISFIED",
+        "statement": "The source envelope and producer identity are bound by digests.",
+        "evidence_artifacts": [
+          {
+            "uri": "experiments/paper13/archive/results/compiler_f4_learned.sofreport",
+            "digest": {
+              "algorithm": "sha256",
+              "value": "4bc8410eb9c0588f0057fd808cb0b51aa0374d18beeafd9ef380d829babd1878"
+            }
+          },
+          {
+            "uri": "experiments/paper13/compiler_ir_sof.py",
+            "digest": {
+              "algorithm": "sha256",
+              "value": "6a66b111c047137a7690176c7395c8fcdef19e46106f6172aa903d24cdc9e3e8"
+            }
+          }
+        ]
+      },
+      {
+        "constraint_id": "object-level-recomputation",
+        "basis_id": "basis.object.recomputation",
+        "status": "NOT_ASSESSED",
+        "statement": "An independent object-level recomputation is not part of this migration.",
+        "evidence_artifacts": []
+      },
+      {
+        "constraint_id": "realization-structure-validation",
+        "basis_id": "basis.structure.validation",
+        "status": "NOT_APPLICABLE",
+        "statement": "The migrated analogue does not assert a complete strict realization.",
+        "evidence_artifacts": []
+      },
+      {
+        "constraint_id": "domain-semantic-adequacy",
+        "basis_id": "basis.semantic.adequacy",
+        "status": "NOT_ASSESSED",
+        "statement": "Domain adequacy remains the adapter owner's responsibility.",
+        "evidence_artifacts": []
+      }
+    ],
+    "negative_boundary": [
+      "The external basis records what has and has not been checked; it does not turn protocol conformance into scientific confirmation.",
+      "Object-level claims require a satisfied object-level basis and independently checkable evidence."
+    ]
+  },
+  "compiler_contracts": {
+    "capability_manifest": {
+      "uri": "experiments/paper13/results/source-reports/manifests/compiler_f4_learned.capabilities.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "788418b87e2a2d079bca251d5a54bc1e579a7335bc2104f97cef8742b28c4ac2"
+      }
+    },
+    "typed_sof_ir": {
+      "uri": "experiments/paper13/results/source-reports/ir/compiler_f4_learned.ir.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "4b56f1e50599d5468d681df9a443c1048c6f83be13b524241001fb2b3b5add70"
+      }
+    },
+    "compiler_profile": {
+      "uri": "schemas/sofrs/paper12-analogue-compiler-profile-v1.0.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "facc293462a79d93a00ece68e42951c49e8cfe8b141147bdfd6333bbb2b430b5"
+      }
+    },
+    "compiler_output": {
+      "uri": "experiments/paper13/results/source-reports/compiler-output/compiler_f4_learned.compiler-output.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "80cf1ee0c739ff8e3bb6d086b2a66413245d94eeda6ea956b57fd71f06efb655"
+      }
+    }
+  },
+  "compiler_output_binding": {
+    "artifact_id": "artifact.compiler-output",
+    "artifact": {
+      "uri": "experiments/paper13/results/source-reports/compiler-output/compiler_f4_learned.compiler-output.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "80cf1ee0c739ff8e3bb6d086b2a66413245d94eeda6ea956b57fd71f06efb655"
+      }
+    },
+    "compiler_id": "sofcompiler.compile_v1",
+    "compiler_output_version": "1.0",
+    "compiler_profile_id": "paper12.analogue.v2"
+  },
+  "assembly_contract": {
+    "schema_id": "sofrs-assembly-v2.0",
+    "version": "2.0",
+    "implementation": {
+      "uri": "experiments/paper12/validation/migrate_sofrs_v1_to_v2.py",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "d0905b3647dddd67c30815f4062fdd0e4266e62c7fa5cde2e72f43840cab6252"
+      }
+    },
+    "assembly_profile": {
+      "uri": "schemas/sofrs/paper12-analogue-assembly-profile-v2.0.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "936a80b0bcc238d47739ec5bac3aabcfb422feac2fed159739342189e678aaf1"
+      }
+    },
+    "assembly_profile_id": "paper12.analogue.assembly.v2"
+  },
+  "item_bindings": [
+    {
+      "compiler_output_item_id": "compiler.item.0000",
+      "report_item_id": "report.claim-item.0000",
+      "item_kind": "claim",
+      "rendering_status": "rendered"
+    }
+  ],
+  "alignment_readiness": {
+    "adapter": {
+      "id": "paper12-v1-to-v2",
+      "version": "2.0"
+    },
+    "compiler_profile_id": "paper12.analogue.v2",
+    "assembly_profile_id": "paper12.analogue.assembly.v2",
+    "sector_metadata": {
+      "status": "NOT_DECLARED",
+      "labels": [],
+      "provenance": null,
+      "ranks_or_dimensions": [],
+      "semantics": null
+    },
+    "observable_metadata": {
+      "status": "NOT_DECLARED",
+      "labels": [],
+      "provenance": null,
+      "ranks_or_dimensions": [],
+      "semantics": null
+    },
+    "carrier_kinds": [
+      "analogue"
+    ],
+    "semantic_conventions": [],
+    "run_policies": [],
+    "comparison_keys": [
+      "report:compiler-f4-learned",
+      "system:5-block-ir-lost-def-use",
+      "record-kind:diagnostic_analogue"
+    ],
+    "source_artifact_digests": [
+      {
+        "uri": "experiments/paper13/archive/results/compiler_f4_learned.sofreport",
+        "digest": {
+          "algorithm": "sha256",
+          "value": "4bc8410eb9c0588f0057fd808cb0b51aa0374d18beeafd9ef380d829babd1878"
+        }
+      },
+      {
+        "uri": "experiments/paper13/compiler_ir_sof.py",
+        "digest": {
+          "algorithm": "sha256",
+          "value": "6a66b111c047137a7690176c7395c8fcdef19e46106f6172aa903d24cdc9e3e8"
+        }
+      }
+    ]
+  },
+  "source_mapping": {
+    "status": "migrated",
+    "construction": "v1-to-v2-adapter",
+    "adapter_id": "paper12-v1-to-v2",
+    "adapter_version": "2.0",
+    "justification": "The report is assembled by the versioned Paper XII adapter from a frozen SOFRS v1 envelope and declared v2 contracts.",
+    "limitations": [
+      "The mapping preserves the v1 source envelope and does not promote missing strict (V,Q,Y) data."
+    ]
+  },
+  "source_artifacts": [
+    {
+      "uri": "experiments/paper13/archive/results/compiler_f4_learned.sofreport",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "4bc8410eb9c0588f0057fd808cb0b51aa0374d18beeafd9ef380d829babd1878"
+      }
+    },
+    {
+      "uri": "experiments/paper13/compiler_ir_sof.py",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "6a66b111c047137a7690176c7395c8fcdef19e46106f6172aa903d24cdc9e3e8"
+      }
+    }
+  ],
+  "modules": [
+    {
+      "module_id": "diagnostic-analogue",
+      "status": "ENABLED",
+      "carrier_kinds": [
+        "analogue"
+      ],
+      "finding_ids": [
+        "finding.analogue"
+      ],
+      "claim_ids": [
+        "claim.analogue"
+      ],
+      "output_sections": [
+        "Source and evaluator provenance",
+        "Analogue mapping",
+        "Support, bridge, repair, or wall descriptors",
+        "Negative SOF boundary"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "finding.analogue",
+      "kind": "status_only",
+      "result_state": "OBSERVED",
+      "value": {
+        "sector_descriptor": {
+          "origin": "one-hot basic-block sectors",
+          "blocks": [
+            "B0(entry)",
+            "B1",
+            "B2",
+            "B3(side)",
+            "B4(exit)"
+          ],
+          "sector_count": 5,
+          "strict_sof_realization": true
+        },
+        "observable_descriptor": {
+          "observables": [
+            "X_cfg (intact)",
+            "X_defuse (B3->B4 removed)"
+          ]
+        },
+        "support_descriptor": {
+          "kind": "word-generator direct support",
+          "matrix": [
+            [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              1,
+              1,
+              0
+            ]
+          ],
+          "offdiag_count": 12
+        },
+        "bridge_descriptor": {
+          "word": {
+            "matrix": [
+              [
+                0,
+                0,
+                1,
+                1,
+                1
+              ],
+              [
+                0,
+                0,
+                1,
+                1,
+                1
+              ],
+              [
+                1,
+                1,
+                0,
+                1,
+                1
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1
+              ],
+              [
+                1,
+                1,
+                1,
+                1,
+                0
+              ]
+            ],
+            "offdiag_count": 18
+          },
+          "lie": {
+            "matrix": [
+              [
+                0,
+                0,
+                0,
+                1,
+                1
+              ],
+              [
+                0,
+                0,
+                1,
+                1,
+                1
+              ],
+              [
+                0,
+                1,
+                0,
+                1,
+                1
+              ],
+              [
+                1,
+                1,
+                1,
+                0,
+                1
+              ],
+              [
+                1,
+                1,
+                1,
+                1,
+                0
+              ]
+            ],
+            "offdiag_count": 16
+          },
+          "claim_note": "word and Lie bridge channels are recorded separately"
+        },
+        "repair_descriptor": {
+          "kind": "word-depth accessibility summary",
+          "depth_matrix": [
+            [
+              0,
+              1,
+              2,
+              2,
+              2
+            ],
+            [
+              1,
+              0,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              0,
+              2,
+              1
+            ],
+            [
+              2,
+              1,
+              2,
+              0,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1,
+              0
+            ]
+          ],
+          "max_finite_depth": 2,
+          "frozen_R1": 8,
+          "frozen_D_word": 0,
+          "frozen_D_lie": 0
+        },
+        "wall_descriptor": null,
+        "analogue_mapping": "The report is migrated from a frozen Paper XIII SOFRS v1 envelope into the Paper XII v2 CompilerOutput-bound report contract."
+      }
+    }
+  ],
+  "claims": [
+    {
+      "report_item_id": "report.claim-item.0000",
+      "source_output_item_id": "compiler.item.0000",
+      "claim_id": "claim.analogue",
+      "statement": "The source artifact supports a provenance-bound structurally analogous diagnostic under the declared mapping.",
+      "result_state": "OBSERVED",
+      "claim_status": "Computational Observation",
+      "claim_target": "representation_interface",
+      "certificate_class": null,
+      "classification_source": "migration_adapter",
+      "external_basis_refs": [
+        "basis.source.identity"
+      ],
+      "external_constraint_ids": [
+        "source-snapshot-pinned"
+      ],
+      "carrier_kinds": [
+        "analogue"
+      ],
+      "scope": "Descriptor-level Paper XII control compiler_f4_learned.sofreport.",
+      "negative_boundary": "This v2 source report preserves the finite source envelope; it does not establish an independent object-level oracle or cross-report semantic alignment."
+    }
+  ],
+  "degradation_items": [],
+  "failure_modes": [
+    "B3->B4 def-use removed, CFG intact -- per-channel diagnostic",
+    "This v2 source report preserves the finite source envelope; it does not establish an independent object-level oracle or cross-report semantic alignment."
+  ],
+  "provenance": {
+    "kind": "migration",
+    "source_artifact": {
+      "uri": "experiments/paper13/archive/results/compiler_f4_learned.sofreport",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "4bc8410eb9c0588f0057fd808cb0b51aa0374d18beeafd9ef380d829babd1878"
+      }
+    },
+    "source_sofrs_version": "1.0",
+    "migration_adapter_ref": {
+      "uri": "experiments/paper12/validation/migrate_sofrs_v1_to_v2.py",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "d0905b3647dddd67c30815f4062fdd0e4266e62c7fa5cde2e72f43840cab6252"
+      }
+    },
+    "migration_ruleset_version": "2.0",
+    "migration_receipt_ref": {
+      "uri": "schemas/sofrs/migration-receipt-v2.0.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "5b6f098b8b7657eed3810abccd2c2b99f96213739d9f2e03909e2023a4a168af"
+      }
+    },
+    "normalized_legacy_sentinels": [],
+    "semantic_normalizations": []
+  }
+}

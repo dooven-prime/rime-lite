@@ -1,0 +1,601 @@
+{
+  "schema": "rime.exploratory.bch-composition-control-bundle.v1",
+  "bundle_id": "bch.heisenberg-order-control.v1",
+  "artifact_role": "EXPLORATORY_CONTROL_BUNDLE",
+  "claim_status": "Computational Certificate",
+  "paper_evidence_status": "NOT_PROMOTED",
+  "implementation": {
+    "implementation_id": "rime.bch.heisenberg3.class2.rational.v1",
+    "implementation_sha256": "385ead83e08a07c2d5a77dd43577c08dae5052717ed3ace2d3cbd077f03d681b",
+    "language": "Python",
+    "arithmetic": "fractions.Fraction"
+  },
+  "carrier_definition": {
+    "carrier_id": "heisenberg3.class2.rational.v1",
+    "coefficient_domain": "Q",
+    "basis": [
+      {
+        "label": "X",
+        "degree": 1
+      },
+      {
+        "label": "Y",
+        "degree": 1
+      },
+      {
+        "label": "Z",
+        "degree": 2
+      }
+    ],
+    "ordered_basis_labels": [
+      "X",
+      "Y",
+      "Z"
+    ],
+    "bracket_table": [
+      {
+        "left": "X",
+        "right": "Y",
+        "result": {
+          "Z": "1"
+        }
+      },
+      {
+        "left": "Y",
+        "right": "X",
+        "result": {
+          "Z": "-1"
+        }
+      }
+    ],
+    "zero_brackets": [
+      [
+        "X",
+        "Z"
+      ],
+      [
+        "Z",
+        "X"
+      ],
+      [
+        "Y",
+        "Z"
+      ],
+      [
+        "Z",
+        "Y"
+      ]
+    ],
+    "nilpotency_class": 2,
+    "quotient_relations": [
+      "[X,Y]=Z",
+      "[X,Z]=0",
+      "[Y,Z]=0"
+    ],
+    "mathematical_scope": "finite rational class-two Lie algebra",
+    "carrier_definition_sha256": "5c1b62a608bcc2f4f98547966d5bdf5e0da784909a9c8b7fa14e00163c362f0d"
+  },
+  "generator_alignments": {
+    "identity": {
+      "schema": "rime.exploratory.bch-generator-alignment.v1",
+      "alignment_id": "heisenberg3.identity-generators.v1",
+      "alignment_kind": "EXPLICIT_GENERATOR_BIJECTION",
+      "reference": {
+        "carrier_id": "heisenberg3.class2.rational.v1",
+        "carrier_definition_sha256": "5c1b62a608bcc2f4f98547966d5bdf5e0da784909a9c8b7fa14e00163c362f0d",
+        "generator_registration_sha256": "d8b14cbebb2d4d2a279d91cce94caddbe764e34c9cc12239b6f1385a7f6d0d02"
+      },
+      "target": {
+        "carrier_id": "heisenberg3.class2.rational.v1",
+        "carrier_definition_sha256": "5c1b62a608bcc2f4f98547966d5bdf5e0da784909a9c8b7fa14e00163c362f0d",
+        "generator_registration_sha256": "d8b14cbebb2d4d2a279d91cce94caddbe764e34c9cc12239b6f1385a7f6d0d02"
+      },
+      "generator_map": [
+        {
+          "reference_generator_id": "generator.X",
+          "target_generator_id": "generator.X",
+          "reference_basis_label": "X",
+          "target_basis_label": "X",
+          "coefficient": "1"
+        },
+        {
+          "reference_generator_id": "generator.Y",
+          "target_generator_id": "generator.Y",
+          "reference_basis_label": "Y",
+          "target_basis_label": "Y",
+          "coefficient": "1"
+        }
+      ],
+      "induced_hall_basis_map": [
+        {
+          "reference_basis_label": "X",
+          "target_basis_label": "X",
+          "alignment_origin": "REGISTERED_GENERATOR"
+        },
+        {
+          "reference_basis_label": "Y",
+          "target_basis_label": "Y",
+          "alignment_origin": "REGISTERED_GENERATOR"
+        },
+        {
+          "reference_basis_label": "Z",
+          "target_basis_label": "Z",
+          "alignment_origin": "INDUCED_BY_BRACKET_PRESERVATION"
+        }
+      ],
+      "bracket_preservation": "EXACT_IDENTITY_ON_FROZEN_CARRIER",
+      "generator_alignment_sha256": "9330d043382ec300962cadbd039f1f1fbe9f2c138b7554a0b31a4ef42f3c1b75"
+    }
+  },
+  "signatures": {
+    "XY": {
+      "schema": "rime.exploratory.bch-composition-signature.v1",
+      "sequence": [
+        {
+          "X": "1"
+        },
+        {
+          "Y": "1"
+        }
+      ],
+      "carrier_declaration": {
+        "implementation_id": "rime.bch.heisenberg3.class2.rational.v1",
+        "implementation_sha256": "385ead83e08a07c2d5a77dd43577c08dae5052717ed3ace2d3cbd077f03d681b",
+        "carrier_id": "heisenberg3.class2.rational.v1",
+        "carrier_definition_sha256": "5c1b62a608bcc2f4f98547966d5bdf5e0da784909a9c8b7fa14e00163c362f0d",
+        "generator_registration": {
+          "registration_id": "heisenberg3.X-Y-generators.v1",
+          "registration_role": "SIGNATURE_LOCAL_GENERATOR_REGISTRATION",
+          "carrier_id": "heisenberg3.class2.rational.v1",
+          "generators": [
+            {
+              "generator_id": "generator.X",
+              "basis_label": "X"
+            },
+            {
+              "generator_id": "generator.Y",
+              "basis_label": "Y"
+            }
+          ],
+          "generated_hall_basis": [
+            "X",
+            "Y",
+            "Z"
+          ],
+          "derived_basis_labels": [
+            "Z"
+          ],
+          "generator_registration_sha256": "d8b14cbebb2d4d2a279d91cce94caddbe764e34c9cc12239b6f1385a7f6d0d02"
+        },
+        "composition_convention": {
+          "product_form": "exp(x_1)...exp(x_m)",
+          "sequence_order": "left_to_right"
+        },
+        "hall_basis": {
+          "basis_id": "hall.heisenberg.X-Y-Z.v1",
+          "ordered_labels": [
+            "X",
+            "Y",
+            "Z"
+          ],
+          "bracket_orientation": "[X,Y]=Z"
+        },
+        "coefficient_domain": "Q",
+        "quotient_relation_id": "heisenberg3.class2.quotient.v1",
+        "truncation_order": 2,
+        "logarithm_semantics": "finite_nilpotent_bch_polynomial",
+        "matrix_logarithm_chart": "NOT_APPLICABLE",
+        "remainder_status": "ZERO_BY_NILPOTENCY"
+      },
+      "homogeneous_coefficients": {
+        "1": {
+          "X": "1",
+          "Y": "1"
+        },
+        "2": {
+          "Z": "1/2"
+        }
+      },
+      "nilpotency_class": 2,
+      "completion_status": "EXACT_FINITE_BCH",
+      "signature_sha256": "a93c95f586692ecde7389ff6917fb6948c1b3e4399b4ddd83d2726e4e8eeddd0"
+    },
+    "YX": {
+      "schema": "rime.exploratory.bch-composition-signature.v1",
+      "sequence": [
+        {
+          "Y": "1"
+        },
+        {
+          "X": "1"
+        }
+      ],
+      "carrier_declaration": {
+        "implementation_id": "rime.bch.heisenberg3.class2.rational.v1",
+        "implementation_sha256": "385ead83e08a07c2d5a77dd43577c08dae5052717ed3ace2d3cbd077f03d681b",
+        "carrier_id": "heisenberg3.class2.rational.v1",
+        "carrier_definition_sha256": "5c1b62a608bcc2f4f98547966d5bdf5e0da784909a9c8b7fa14e00163c362f0d",
+        "generator_registration": {
+          "registration_id": "heisenberg3.X-Y-generators.v1",
+          "registration_role": "SIGNATURE_LOCAL_GENERATOR_REGISTRATION",
+          "carrier_id": "heisenberg3.class2.rational.v1",
+          "generators": [
+            {
+              "generator_id": "generator.X",
+              "basis_label": "X"
+            },
+            {
+              "generator_id": "generator.Y",
+              "basis_label": "Y"
+            }
+          ],
+          "generated_hall_basis": [
+            "X",
+            "Y",
+            "Z"
+          ],
+          "derived_basis_labels": [
+            "Z"
+          ],
+          "generator_registration_sha256": "d8b14cbebb2d4d2a279d91cce94caddbe764e34c9cc12239b6f1385a7f6d0d02"
+        },
+        "composition_convention": {
+          "product_form": "exp(x_1)...exp(x_m)",
+          "sequence_order": "left_to_right"
+        },
+        "hall_basis": {
+          "basis_id": "hall.heisenberg.X-Y-Z.v1",
+          "ordered_labels": [
+            "X",
+            "Y",
+            "Z"
+          ],
+          "bracket_orientation": "[X,Y]=Z"
+        },
+        "coefficient_domain": "Q",
+        "quotient_relation_id": "heisenberg3.class2.quotient.v1",
+        "truncation_order": 2,
+        "logarithm_semantics": "finite_nilpotent_bch_polynomial",
+        "matrix_logarithm_chart": "NOT_APPLICABLE",
+        "remainder_status": "ZERO_BY_NILPOTENCY"
+      },
+      "homogeneous_coefficients": {
+        "1": {
+          "X": "1",
+          "Y": "1"
+        },
+        "2": {
+          "Z": "-1/2"
+        }
+      },
+      "nilpotency_class": 2,
+      "completion_status": "EXACT_FINITE_BCH",
+      "signature_sha256": "a0c3f74d2e9059cfd11d201ba2f4d0b721b422377a2825508922b9ebdfc10cd3"
+    },
+    "XY_copy": {
+      "schema": "rime.exploratory.bch-composition-signature.v1",
+      "sequence": [
+        {
+          "X": "1"
+        },
+        {
+          "Y": "1"
+        }
+      ],
+      "carrier_declaration": {
+        "implementation_id": "rime.bch.heisenberg3.class2.rational.v1",
+        "implementation_sha256": "385ead83e08a07c2d5a77dd43577c08dae5052717ed3ace2d3cbd077f03d681b",
+        "carrier_id": "heisenberg3.class2.rational.v1",
+        "carrier_definition_sha256": "5c1b62a608bcc2f4f98547966d5bdf5e0da784909a9c8b7fa14e00163c362f0d",
+        "generator_registration": {
+          "registration_id": "heisenberg3.X-Y-generators.v1",
+          "registration_role": "SIGNATURE_LOCAL_GENERATOR_REGISTRATION",
+          "carrier_id": "heisenberg3.class2.rational.v1",
+          "generators": [
+            {
+              "generator_id": "generator.X",
+              "basis_label": "X"
+            },
+            {
+              "generator_id": "generator.Y",
+              "basis_label": "Y"
+            }
+          ],
+          "generated_hall_basis": [
+            "X",
+            "Y",
+            "Z"
+          ],
+          "derived_basis_labels": [
+            "Z"
+          ],
+          "generator_registration_sha256": "d8b14cbebb2d4d2a279d91cce94caddbe764e34c9cc12239b6f1385a7f6d0d02"
+        },
+        "composition_convention": {
+          "product_form": "exp(x_1)...exp(x_m)",
+          "sequence_order": "left_to_right"
+        },
+        "hall_basis": {
+          "basis_id": "hall.heisenberg.X-Y-Z.v1",
+          "ordered_labels": [
+            "X",
+            "Y",
+            "Z"
+          ],
+          "bracket_orientation": "[X,Y]=Z"
+        },
+        "coefficient_domain": "Q",
+        "quotient_relation_id": "heisenberg3.class2.quotient.v1",
+        "truncation_order": 2,
+        "logarithm_semantics": "finite_nilpotent_bch_polynomial",
+        "matrix_logarithm_chart": "NOT_APPLICABLE",
+        "remainder_status": "ZERO_BY_NILPOTENCY"
+      },
+      "homogeneous_coefficients": {
+        "1": {
+          "X": "1",
+          "Y": "1"
+        },
+        "2": {
+          "Z": "1/2"
+        }
+      },
+      "nilpotency_class": 2,
+      "completion_status": "EXACT_FINITE_BCH",
+      "signature_sha256": "a93c95f586692ecde7389ff6917fb6948c1b3e4399b4ddd83d2726e4e8eeddd0"
+    },
+    "XY_degree_one": {
+      "schema": "rime.exploratory.bch-composition-signature.v1",
+      "sequence": [
+        {
+          "X": "1"
+        },
+        {
+          "Y": "1"
+        }
+      ],
+      "carrier_declaration": {
+        "implementation_id": "rime.bch.heisenberg3.class2.rational.v1",
+        "implementation_sha256": "385ead83e08a07c2d5a77dd43577c08dae5052717ed3ace2d3cbd077f03d681b",
+        "carrier_id": "heisenberg3.class2.rational.v1",
+        "carrier_definition_sha256": "5c1b62a608bcc2f4f98547966d5bdf5e0da784909a9c8b7fa14e00163c362f0d",
+        "generator_registration": {
+          "registration_id": "heisenberg3.X-Y-generators.v1",
+          "registration_role": "SIGNATURE_LOCAL_GENERATOR_REGISTRATION",
+          "carrier_id": "heisenberg3.class2.rational.v1",
+          "generators": [
+            {
+              "generator_id": "generator.X",
+              "basis_label": "X"
+            },
+            {
+              "generator_id": "generator.Y",
+              "basis_label": "Y"
+            }
+          ],
+          "generated_hall_basis": [
+            "X",
+            "Y",
+            "Z"
+          ],
+          "derived_basis_labels": [
+            "Z"
+          ],
+          "generator_registration_sha256": "d8b14cbebb2d4d2a279d91cce94caddbe764e34c9cc12239b6f1385a7f6d0d02"
+        },
+        "composition_convention": {
+          "product_form": "exp(x_1)...exp(x_m)",
+          "sequence_order": "left_to_right"
+        },
+        "hall_basis": {
+          "basis_id": "hall.heisenberg.X-Y-Z.v1",
+          "ordered_labels": [
+            "X",
+            "Y",
+            "Z"
+          ],
+          "bracket_orientation": "[X,Y]=Z"
+        },
+        "coefficient_domain": "Q",
+        "quotient_relation_id": "heisenberg3.class2.quotient.v1",
+        "truncation_order": 1,
+        "logarithm_semantics": "finite_nilpotent_bch_polynomial",
+        "matrix_logarithm_chart": "NOT_APPLICABLE",
+        "remainder_status": "NOT_INCLUDED"
+      },
+      "homogeneous_coefficients": {
+        "1": {
+          "X": "1",
+          "Y": "1"
+        }
+      },
+      "nilpotency_class": 2,
+      "completion_status": "FORMAL_TRUNCATION",
+      "signature_sha256": "bdb5230e119adfc79e23a7bc504243aac1c6463534f07c0c5346ea8b36aa0ba1"
+    },
+    "XY_degree_one_copy": {
+      "schema": "rime.exploratory.bch-composition-signature.v1",
+      "sequence": [
+        {
+          "X": "1"
+        },
+        {
+          "Y": "1"
+        }
+      ],
+      "carrier_declaration": {
+        "implementation_id": "rime.bch.heisenberg3.class2.rational.v1",
+        "implementation_sha256": "385ead83e08a07c2d5a77dd43577c08dae5052717ed3ace2d3cbd077f03d681b",
+        "carrier_id": "heisenberg3.class2.rational.v1",
+        "carrier_definition_sha256": "5c1b62a608bcc2f4f98547966d5bdf5e0da784909a9c8b7fa14e00163c362f0d",
+        "generator_registration": {
+          "registration_id": "heisenberg3.X-Y-generators.v1",
+          "registration_role": "SIGNATURE_LOCAL_GENERATOR_REGISTRATION",
+          "carrier_id": "heisenberg3.class2.rational.v1",
+          "generators": [
+            {
+              "generator_id": "generator.X",
+              "basis_label": "X"
+            },
+            {
+              "generator_id": "generator.Y",
+              "basis_label": "Y"
+            }
+          ],
+          "generated_hall_basis": [
+            "X",
+            "Y",
+            "Z"
+          ],
+          "derived_basis_labels": [
+            "Z"
+          ],
+          "generator_registration_sha256": "d8b14cbebb2d4d2a279d91cce94caddbe764e34c9cc12239b6f1385a7f6d0d02"
+        },
+        "composition_convention": {
+          "product_form": "exp(x_1)...exp(x_m)",
+          "sequence_order": "left_to_right"
+        },
+        "hall_basis": {
+          "basis_id": "hall.heisenberg.X-Y-Z.v1",
+          "ordered_labels": [
+            "X",
+            "Y",
+            "Z"
+          ],
+          "bracket_orientation": "[X,Y]=Z"
+        },
+        "coefficient_domain": "Q",
+        "quotient_relation_id": "heisenberg3.class2.quotient.v1",
+        "truncation_order": 1,
+        "logarithm_semantics": "finite_nilpotent_bch_polynomial",
+        "matrix_logarithm_chart": "NOT_APPLICABLE",
+        "remainder_status": "NOT_INCLUDED"
+      },
+      "homogeneous_coefficients": {
+        "1": {
+          "X": "1",
+          "Y": "1"
+        }
+      },
+      "nilpotency_class": 2,
+      "completion_status": "FORMAL_TRUNCATION",
+      "signature_sha256": "bdb5230e119adfc79e23a7bc504243aac1c6463534f07c0c5346ea8b36aa0ba1"
+    }
+  },
+  "comparisons": {
+    "XY_vs_YX": {
+      "bch_status": "CERTIFIED_MISMATCH",
+      "lowest_differing_degree": 2,
+      "basis_label": "Z",
+      "left_coefficient": "1/2",
+      "right_coefficient": "-1/2",
+      "checked_through_degree": 2,
+      "generator_alignment_id": "heisenberg3.identity-generators.v1",
+      "generator_alignment_sha256": "9330d043382ec300962cadbd039f1f1fbe9f2c138b7554a0b31a4ef42f3c1b75",
+      "sofaudit_projection": {
+        "projection_status": "EXPLORATORY_NOT_ADMITTED",
+        "coordinate_family_candidate": "bch_composition",
+        "value_schema_id_candidate": "rime.exploratory.bch-composition-signature.v1",
+        "comparison_state": "MISMATCH",
+        "comparison_scope": "full_bch"
+      }
+    },
+    "XY_vs_copy": {
+      "bch_status": "EXACT_MATCH",
+      "checked_through_degree": 2,
+      "completion_certificate": "ZERO_REMAINDER_BY_CLASS_TWO_NILPOTENCY",
+      "generator_alignment_id": "heisenberg3.identity-generators.v1",
+      "generator_alignment_sha256": "9330d043382ec300962cadbd039f1f1fbe9f2c138b7554a0b31a4ef42f3c1b75",
+      "sofaudit_projection": {
+        "projection_status": "EXPLORATORY_NOT_ADMITTED",
+        "coordinate_family_candidate": "bch_composition",
+        "value_schema_id_candidate": "rime.exploratory.bch-composition-signature.v1",
+        "comparison_state": "ALIGNED",
+        "comparison_scope": "full_bch"
+      }
+    },
+    "degree_one_bounded_match": {
+      "bch_status": "TRUNCATED_MATCH",
+      "checked_through_degree": 1,
+      "reason": "retained homogeneous coefficients agree only through the declared degree",
+      "generator_alignment_id": "heisenberg3.identity-generators.v1",
+      "generator_alignment_sha256": "9330d043382ec300962cadbd039f1f1fbe9f2c138b7554a0b31a4ef42f3c1b75",
+      "sofaudit_projection": {
+        "projection_status": "EXPLORATORY_NOT_ADMITTED",
+        "coordinate_family_candidate": "bch_composition",
+        "value_schema_id_candidate": "rime.exploratory.bch-composition-signature.v1",
+        "comparison_state": "ALIGNED",
+        "comparison_scope": "through_degree",
+        "full_bch_comparison_state": "UNRESOLVED"
+      }
+    },
+    "degree_one_full_bch": {
+      "bch_status": "UNRESOLVED",
+      "checked_through_degree": 1,
+      "bounded_status": "TRUNCATED_MATCH",
+      "reason": "a truncated match does not establish full BCH equality",
+      "generator_alignment_id": "heisenberg3.identity-generators.v1",
+      "generator_alignment_sha256": "9330d043382ec300962cadbd039f1f1fbe9f2c138b7554a0b31a4ef42f3c1b75",
+      "sofaudit_projection": {
+        "projection_status": "EXPLORATORY_NOT_ADMITTED",
+        "coordinate_family_candidate": "bch_composition",
+        "value_schema_id_candidate": "rime.exploratory.bch-composition-signature.v1",
+        "comparison_state": "UNRESOLVED",
+        "comparison_scope": "full_bch",
+        "full_bch_comparison_state": "UNRESOLVED"
+      }
+    },
+    "missing_capability": {
+      "bch_status": "NOT_DECLARED",
+      "reason": "bch_composition capability is absent on at least one side",
+      "sofaudit_projection": {
+        "projection_status": "EXPLORATORY_NOT_ADMITTED",
+        "coordinate_family_candidate": "bch_composition",
+        "value_schema_id_candidate": "rime.exploratory.bch-composition-signature.v1",
+        "comparison_state": "NOT_DECLARED",
+        "comparison_scope": "full_bch"
+      }
+    },
+    "missing_alignment": {
+      "bch_status": "INCOMPARABLE",
+      "reason": "an explicit registered generator alignment is required",
+      "sofaudit_projection": {
+        "projection_status": "EXPLORATORY_NOT_ADMITTED",
+        "coordinate_family_candidate": "bch_composition",
+        "value_schema_id_candidate": "rime.exploratory.bch-composition-signature.v1",
+        "comparison_state": "INCOMPARABLE",
+        "comparison_scope": "full_bch"
+      }
+    },
+    "unregistered_implementation": {
+      "bch_status": "INCOMPARABLE",
+      "reason": "no common locally registered BCH evaluator implementation",
+      "implementation_ids": [
+        "rime.bch.heisenberg3.class2.rational.v1",
+        "external.unregistered.bch.v1"
+      ],
+      "sofaudit_projection": {
+        "projection_status": "EXPLORATORY_NOT_ADMITTED",
+        "coordinate_family_candidate": "bch_composition",
+        "value_schema_id_candidate": "rime.exploratory.bch-composition-signature.v1",
+        "comparison_state": "INCOMPARABLE",
+        "comparison_scope": "full_bch"
+      }
+    }
+  },
+  "candidate_sof_interface": {
+    "paper_xii_role": "retain a validated BCH signature and evidence reference in an optional report module",
+    "paper_xiii_role": "compare retained signatures through an optional Audit Profile coordinate",
+    "paper_xiii_nonrole": "derive BCH coefficients from raw generators inside SOFAUDIT",
+    "runtime_destination": "future digest-registered evaluator and replay closure in sof-runtime"
+  },
+  "negative_boundaries": [
+    "This bundle is not a SOFRS report or a SOFAUDIT artifact.",
+    "BCH equality is relative to the frozen carrier, basis, quotient, order, and truncation scope.",
+    "TRUNCATED_MATCH does not establish full BCH equality.",
+    "The Heisenberg control does not establish a generic BCH convergence or matrix-logarithm theorem.",
+    "Directory placement does not promote this control into Paper XIII evidence."
+  ],
+  "content_sha256": "d4b4fead7a6eeb1ef46ca603b7864c5581af60116a9c26389b9ee078837242d3"
+}

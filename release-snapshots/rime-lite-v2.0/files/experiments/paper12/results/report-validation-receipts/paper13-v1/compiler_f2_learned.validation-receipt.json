@@ -1,0 +1,46 @@
+{
+  "receipt_version": "1.0",
+  "artifact_type": "sofrs_report_validation_receipt",
+  "receipt_id": "receipt.compiler_f2_learned.sofrs-v1",
+  "report": {
+    "report_id": "compiler_f2_learned",
+    "sofrs_version": "1.0",
+    "record_kind": "strict_sof",
+    "artifact": {
+      "uri": "experiments/paper13/results/compiler_f2_learned.sofreport",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "82c86d0911e723ee3f895ded6706b0064fce81637eaf1b6f2bef5d6b5505815a"
+      }
+    }
+  },
+  "validator": {
+    "validator_id": "sofrs.report-validator.v1",
+    "validator_version": "1.0",
+    "contract": {
+      "uri": "schemas/sofrs/v1.0.schema.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "f51baaa06676c165b891a1ff9fdc7d0a58c8534b83f10adbde3d833379351c8a"
+      }
+    }
+  },
+  "status": "PASS",
+  "checks": [
+    {
+      "check_id": "protocol-ownership-boundary",
+      "status": "PASS"
+    },
+    {
+      "check_id": "record-kind-admission",
+      "status": "PASS"
+    },
+    {
+      "check_id": "schema-validation",
+      "status": "PASS"
+    }
+  ],
+  "negative_boundaries": [
+    "This receipt validates the frozen SOFRS v1 envelope, ownership boundary, and legacy strict-admission marker; it does not reconstruct native SOFRS v2 compiler contracts or establish adapter adequacy."
+  ]
+}

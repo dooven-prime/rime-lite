@@ -1,0 +1,158 @@
+{
+  "sofrs_version": "1.0",
+  "report_id": "traffic_rho20_after",
+  "system": "Traffic signal after legitimate retiming",
+  "sectorization": {
+    "origin": "one-hot intersection-node sectors",
+    "labels": [
+      "NW",
+      "NE",
+      "SW",
+      "SE"
+    ],
+    "sector_count": 4,
+    "strict_sof_realization": true
+  },
+  "observable_family": {
+    "observables": [
+      "phase_A",
+      "phase_B"
+    ],
+    "generator_type": "skew-symmetrised directed phase matrices"
+  },
+  "support_matrix": {
+    "kind": "word-generator direct support",
+    "matrix": [
+      [
+        0,
+        1,
+        1,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        1,
+        0
+      ]
+    ],
+    "offdiag_count": 8
+  },
+  "bridge_matrix": {
+    "word": {
+      "matrix": [
+        [
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0
+        ]
+      ],
+      "offdiag_count": 4
+    },
+    "lie": {
+      "matrix": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "offdiag_count": 0
+    },
+    "claim_note": "word and Lie bridge channels are recorded separately"
+  },
+  "repair_matrix": {
+    "kind": "word-depth accessibility summary",
+    "depth_matrix": [
+      [
+        0,
+        1,
+        1,
+        2
+      ],
+      [
+        1,
+        0,
+        2,
+        1
+      ],
+      [
+        1,
+        2,
+        0,
+        1
+      ],
+      [
+        2,
+        1,
+        1,
+        0
+      ]
+    ],
+    "max_finite_depth": 2,
+    "frozen_R1": 4,
+    "frozen_D_word": 0,
+    "frozen_D_lie": 4
+  },
+  "wall_record": null,
+  "claim_status": "evidence",
+  "claim_note": "controlled legitimate-transformation configuration",
+  "failure_modes": [
+    "controlled finite configuration",
+    "legitimacy is relative to the declared transformation contract"
+  ],
+  "configuration": {
+    "rho": 2.0,
+    "response_order": "phase_A > phase_B"
+  }
+}

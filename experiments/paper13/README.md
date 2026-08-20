@@ -15,7 +15,8 @@ paper13/
 
 ## Current Contract
 
-SOFAUDIT v2 uses:
+The published SOFAUDIT v2.0 corpus remains the immutable migration source.
+The published v2.1 release uses:
 
 ```text
 two SOFRS v2 alignment-ready reports
@@ -86,6 +87,10 @@ infer Paper IX admission or Paper XI morphology from a path difference.
   finite AB/BC/AC control under `results/controls/`; its independent validator
   is `validation/validate_contextual_descent_control.py`. This is the only
   Paper XIII promotion from `experiments/exploratory/comparison_geometry/`.
+- `release-snapshots/rime-lite-v2.0/` preserves the exact historical bytes
+  required by the published v2.0 closure when a checkout normalizes text
+  files. It is an explicit historical input, not a regenerated result or a
+  fallback that permits report/input digest drift.
 - The census is 20 F1-F4 source payloads + 5 F5 compatibility payloads + 3
   transformation controls = 28 legacy/control cases, plus one separate native
   GridWorld F4 factual audit, giving 29 current SOFAUDIT v2 artifacts.
@@ -120,19 +125,39 @@ infer Paper IX admission or Paper XI morphology from a path difference.
   explicit cutoff.
 - Legacy F5 path payloads remain source-addressed but are not promoted to wall
   comparisons without retained Paper XI inputs.
+- `validation/migrate_sofaudit_v2_to_v2_1.py` migrates all 29 v2.0 audits and
+  their 38 deduplicated source-report stacks into the v2.1 boundary contract.
+- `validation/validate_sofaudit_v2_1.py` checks the exact v2.0 projection,
+  report and audit receipt closure, and the required no-attribution boundary.
+- `results/v2.1/` contains 29 SOFAUDIT v2.1 artifacts, 29 comparison-only
+  validation receipts, and the bound SOFRS v2.1 source-report closures.
+
+SOFAUDIT v2.1 may localize differences only in aligned report coordinates.
+Its fixed `attribution_boundary` keeps diagnostic interpretation downstream,
+places defect and causal attribution out of scope, and keeps the reference as
+a comparison role rather than ground truth, a control group, or a causal
+baseline. A future causal artifact must consume a separate model and evidence;
+it cannot promote `SOFAUDIT.causal_status` in place.
+
+The v2.1 schema and validator also admit native audits with a bound generation
+implementation and nonempty input closure. The current 29-artifact candidate
+corpus uses the explicit migration branch; native generation receives a
+different receipt provenance and exact check set.
 
 Run:
 
 ```bash
-python experiments/paper13/validation/migrate_sofrs_v1_to_v2.py
-python experiments/paper13/validation/migrate_sofaudit_v1_to_v2.py
-python experiments/paper13/validation/emit_migration_audit_receipts.py
-python experiments/paper13/validation/gridworld_f4_native_v2.py --prepare
-python experiments/paper13/validation/gridworld_f4_object_certificate.py --write
-python experiments/paper13/validation/gridworld_f4_native_v2.py --write
+python tools/validate_release_snapshot.py release-snapshots/rime-lite-v2.0/manifest.json
 python experiments/paper13/validation/validate_sofaudit_v2.py
+python experiments/paper13/validation/migrate_sofaudit_v2_to_v2_1.py
+python experiments/paper13/validation/validate_sofaudit_v2_1.py --write-receipts
 python tests/test_sofaudit_v2.py
 ```
+
+The omitted v1-to-v2 migrators, receipt emitter, and native GridWorld `--write`
+commands are historical v2.0 producers. They are not routine validation
+commands and must not be used to refresh the immutable published corpus in the
+current worktree. The v2.1 producer and receipt writer use `results/v2.1/`.
 
 JSON Schema establishes shape only. The semantic validator executes the
 cross-field invariants above and the hostile fixtures mutate each boundary to

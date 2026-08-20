@@ -1,0 +1,310 @@
+{
+  "sofaudit_version": "1.0",
+  "report_type": "sofaudit",
+  "comparison_object": "SOFReportComparison",
+  "audit_id": "compiler_f2",
+  "system": "5-block IR dead branch audit",
+  "claim_status": "evidence",
+  "claim_note": "controlled protocol validation",
+  "regime": "A",
+  "failure_mode": "f2_dead_branch",
+  "reference": {
+    "report_id": "compiler_ref",
+    "artifact": "compiler_ref.sofreport",
+    "label": "IR(cfg=5e, defuse=4e)"
+  },
+  "target": {
+    "report_id": "compiler_f2_learned",
+    "artifact": "compiler_f2_learned.sofreport",
+    "label": "B3 dead"
+  },
+  "alignment": {
+    "sector_alignment": {
+      "kind": "identity"
+    },
+    "observable_alignment": {
+      "kind": "identity"
+    }
+  },
+  "comparison_specification": {
+    "specification_id": "paper13-coordinatewise-v1",
+    "normalization": {
+      "ordered_pairs": 20,
+      "action_opportunities": 20,
+      "constraint_opportunities": 10
+    },
+    "metric": {
+      "signature": "coordinatewise mismatch records and counts",
+      "fixed_fiber_structural": "weighted Hamming when explicitly invoked"
+    },
+    "depth_semantics": "inherited from linked SOF Reports",
+    "thresholds": {
+      "source": "linked SOF Reports or coordinate defaults"
+    },
+    "parameter_synchronization": {
+      "mode": "not_applicable"
+    },
+    "aggregation": {
+      "mode": "coordinatewise",
+      "scalarization": "none"
+    }
+  },
+  "signature": {
+    "support_mismatch": {
+      "extra": [],
+      "extra_count": 0,
+      "missing": [
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          3
+        ]
+      ],
+      "missing_count": 4,
+      "total_mismatch": 4,
+      "ref_offdiag": 12,
+      "candidate_offdiag": 8
+    },
+    "bridge_word_mismatch": {
+      "extra": [],
+      "extra_count": 0,
+      "missing": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          3
+        ]
+      ],
+      "missing_count": 8,
+      "total_mismatch": 8,
+      "ref_offdiag": 18,
+      "candidate_offdiag": 10
+    },
+    "bridge_lie_mismatch": {
+      "extra": [
+        [
+          1,
+          4
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      "extra_count": 2,
+      "missing": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          3
+        ]
+      ],
+      "missing_count": 6,
+      "total_mismatch": 8,
+      "ref_offdiag": 12,
+      "candidate_offdiag": 8
+    },
+    "depth_distortion": {
+      "total_mismatch": 8,
+      "depth_distortions": [],
+      "distortion_count": 0,
+      "ref_frozen_candidate_not": [],
+      "ref_frozen_candidate_not_count": 0,
+      "candidate_frozen_ref_not": [
+        [
+          0,
+          3,
+          2
+        ],
+        [
+          1,
+          3,
+          1
+        ],
+        [
+          2,
+          3,
+          2
+        ],
+        [
+          3,
+          0,
+          2
+        ],
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          3,
+          2,
+          2
+        ],
+        [
+          3,
+          4,
+          1
+        ],
+        [
+          4,
+          3,
+          1
+        ]
+      ],
+      "candidate_frozen_ref_not_count": 8
+    },
+    "frozen_disagreement": {
+      "frozen_R1": {
+        "ref": 8,
+        "candidate": 12,
+        "delta": 4
+      },
+      "frozen_D_word": {
+        "ref": 0,
+        "candidate": 8,
+        "delta": 8
+      },
+      "frozen_D_lie": {
+        "ref": 0,
+        "candidate": 8,
+        "delta": 8
+      }
+    },
+    "constraint_violations": {
+      "violations": [],
+      "count": 0
+    },
+    "action_response_failure": {
+      "per_action_deltas": {
+        "X_cfg": [
+          {
+            "pair": [
+              "B1",
+              "B3(side)"
+            ],
+            "ref": 0.5,
+            "candidate": 0.0,
+            "delta": 0.5
+          },
+          {
+            "pair": [
+              "B3(side)",
+              "B1"
+            ],
+            "ref": 0.5,
+            "candidate": 0.0,
+            "delta": 0.5
+          },
+          {
+            "pair": [
+              "B3(side)",
+              "B4(exit)"
+            ],
+            "ref": 0.5,
+            "candidate": 0.0,
+            "delta": 0.5
+          },
+          {
+            "pair": [
+              "B4(exit)",
+              "B3(side)"
+            ],
+            "ref": 0.5,
+            "candidate": 0.0,
+            "delta": 0.5
+          }
+        ],
+        "X_defuse": [
+          {
+            "pair": [
+              "B3(side)",
+              "B4(exit)"
+            ],
+            "ref": 0.5,
+            "candidate": 0.0,
+            "delta": 0.5
+          },
+          {
+            "pair": [
+              "B4(exit)",
+              "B3(side)"
+            ],
+            "ref": 0.5,
+            "candidate": 0.0,
+            "delta": 0.5
+          }
+        ]
+      },
+      "total_large_deltas": 6,
+      "action_aliasing": [],
+      "response_sep": {
+        "ref": 1.224745,
+        "candidate": 1.0
+      }
+    },
+    "wall_record_mismatch": null
+  },
+  "failure_modes": [
+    "controlled constructed variant, not a production candidate system",
+    "identity alignment only",
+    "audit sensitivity is relative to the declared observable family"
+  ]
+}

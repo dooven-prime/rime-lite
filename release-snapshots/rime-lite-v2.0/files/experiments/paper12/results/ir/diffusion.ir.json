@@ -1,0 +1,622 @@
+{
+  "ir_version": "1.0",
+  "record_id": "paper12.diffusion.v2",
+  "record_kind": "diagnostic_analogue",
+  "manifest_ref": {
+    "manifest_id": "paper12.diffusion.v2",
+    "manifest_version": "1.0",
+    "artifact_id": "artifact.manifest",
+    "digest": {
+      "algorithm": "sha256",
+      "value": "e1b71af8a96e8c22fbb2d931f12c791ec342a95f99c3135d5a35ecc1ea34ccf5"
+    }
+  },
+  "source": {
+    "adapter_id": "paper12-v1-to-v2",
+    "adapter_version": "2.0",
+    "source_id": "paper12.diffusion.v1",
+    "artifact_ids": [
+      "artifact.legacy",
+      "artifact.producer"
+    ]
+  },
+  "objects": [
+    {
+      "id": "analogue.record",
+      "kind": "diagnostic_analogue",
+      "label": "Provenance-bound diagnostic analogue",
+      "provenance_artifact_ids": [
+        "artifact.legacy"
+      ],
+      "carrier_id": "carrier.analogue",
+      "data": {
+        "sector_descriptor": {
+          "origin": "PCA-sign partition on a fixed probe window",
+          "space": "finite feature coordinates",
+          "time_dependent": true,
+          "strict_sof_realization": true
+        },
+        "observable_descriptor": {
+          "data_noise_commutator": "feature-space Gram commutator",
+          "fixed_skew_probe": "seeded skew-symmetric feature operator"
+        },
+        "support_descriptor": {
+          "kind": "R1 edge-count trajectory",
+          "samples": [
+            {
+              "t": 0,
+              "R1_edges": 0
+            },
+            {
+              "t": 1,
+              "R1_edges": 0
+            },
+            {
+              "t": 2,
+              "R1_edges": 0
+            },
+            {
+              "t": 3,
+              "R1_edges": 0
+            },
+            {
+              "t": 4,
+              "R1_edges": 0
+            },
+            {
+              "t": 5,
+              "R1_edges": 0
+            },
+            {
+              "t": 6,
+              "R1_edges": 0
+            },
+            {
+              "t": 7,
+              "R1_edges": 0
+            },
+            {
+              "t": 8,
+              "R1_edges": 0
+            },
+            {
+              "t": 9,
+              "R1_edges": 0
+            },
+            {
+              "t": 10,
+              "R1_edges": 0
+            },
+            {
+              "t": 11,
+              "R1_edges": 6
+            },
+            {
+              "t": 12,
+              "R1_edges": 8
+            },
+            {
+              "t": 13,
+              "R1_edges": 6
+            },
+            {
+              "t": 14,
+              "R1_edges": 8
+            },
+            {
+              "t": 15,
+              "R1_edges": 8
+            },
+            {
+              "t": 16,
+              "R1_edges": 8
+            },
+            {
+              "t": 17,
+              "R1_edges": 8
+            },
+            {
+              "t": 18,
+              "R1_edges": 8
+            },
+            {
+              "t": 19,
+              "R1_edges": 8
+            }
+          ]
+        },
+        "bridge_descriptor": null,
+        "repair_descriptor": {
+          "kind": "reverse-time restoration of the clean observable signature",
+          "event": {
+            "direction": "reverse_denoising",
+            "from_step": 11,
+            "to_step": 10,
+            "restored_sector_count": 1
+          },
+          "claim_note": "registered denoising repair, not fixed-sector Lie-depth D-repair"
+        },
+        "wall_descriptor": {
+          "wall_type": "sampled sector-schema transition",
+          "first_wall": {
+            "direction": "forward_noise",
+            "step": 11,
+            "sector_count_before": 1,
+            "sector_count_after": 2,
+            "alpha_bar": 0.1296357522650524
+          },
+          "trajectory_summary": {
+            "parameter": "diffusion time",
+            "rows": [
+              {
+                "t": 0,
+                "alpha_bar": 0.99,
+                "sectors": 1,
+                "R1_edges": 0
+              },
+              {
+                "t": 1,
+                "alpha_bar": 0.9545684210526316,
+                "sectors": 1,
+                "R1_edges": 0
+              },
+              {
+                "t": 2,
+                "alpha_bar": 0.8957871024930748,
+                "sectors": 1,
+                "R1_edges": 0
+              },
+              {
+                "t": 3,
+                "alpha_bar": 0.817523597748943,
+                "sectors": 1,
+                "R1_edges": 0
+              },
+              {
+                "t": 4,
+                "alpha_bar": 0.7250143485299837,
+                "sectors": 1,
+                "R1_edges": 0
+              },
+              {
+                "t": 5,
+                "alpha_bar": 0.6242755127342386,
+                "sectors": 1,
+                "R1_edges": 0
+              },
+              {
+                "t": 6,
+                "alpha_bar": 0.5214343361627561,
+                "sectors": 1,
+                "R1_edges": 0
+              },
+              {
+                "t": 7,
+                "alpha_bar": 0.4220873731675363,
+                "sectors": 1,
+                "R1_edges": 0
+              },
+              {
+                "t": 8,
+                "alpha_bar": 0.3307832098139271,
+                "sectors": 1,
+                "R1_edges": 0
+              },
+              {
+                "t": 9,
+                "alpha_bar": 0.2506988537537132,
+                "sectors": 1,
+                "R1_edges": 0
+              },
+              {
+                "t": 10,
+                "alpha_bar": 0.1835379503007448,
+                "sectors": 1,
+                "R1_edges": 0
+              },
+              {
+                "t": 11,
+                "alpha_bar": 0.1296357522650524,
+                "sectors": 2,
+                "R1_edges": 6
+              },
+              {
+                "t": 12,
+                "alpha_bar": 0.08822054088353301,
+                "sectors": 2,
+                "R1_edges": 8
+              },
+              {
+                "t": 13,
+                "alpha_bar": 0.057761238346902666,
+                "sectors": 2,
+                "R1_edges": 6
+              },
+              {
+                "t": 14,
+                "alpha_bar": 0.036328778855025626,
+                "sectors": 2,
+                "R1_edges": 8
+              },
+              {
+                "t": 15,
+                "alpha_bar": 0.021911989772557563,
+                "sectors": 2,
+                "R1_edges": 8
+              },
+              {
+                "t": 16,
+                "alpha_bar": 0.01265129093710297,
+                "sectors": 2,
+                "R1_edges": 8
+              },
+              {
+                "t": 17,
+                "alpha_bar": 0.006978185737938901,
+                "sectors": 2,
+                "R1_edges": 8
+              },
+              {
+                "t": 18,
+                "alpha_bar": 0.0036690566064215596,
+                "sectors": 2,
+                "R1_edges": 8
+              },
+              {
+                "t": 19,
+                "alpha_bar": 0.0018345283032107798,
+                "sectors": 2,
+                "R1_edges": 8
+              }
+            ]
+          }
+        },
+        "analogue_mapping": "The report aggregates pointwise finite audits while the sector count and projector family change along the sampled path."
+      }
+    }
+  ],
+  "carriers": [
+    {
+      "id": "carrier.analogue",
+      "kind": "analogue",
+      "capability_id": "diagnostic_analogue",
+      "semantics": "Descriptor-level support, bridge, repair, and wall analogues.",
+      "object_ids": [
+        "analogue.record"
+      ],
+      "semantic_convention_ids": []
+    }
+  ],
+  "semantic_conventions": [],
+  "run_policies": [],
+  "artifacts": [
+    {
+      "id": "artifact.manifest",
+      "uri": "experiments/paper12/results/manifests/diffusion.capabilities.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "e1b71af8a96e8c22fbb2d931f12c791ec342a95f99c3135d5a35ecc1ea34ccf5"
+      },
+      "media_type": "application/json",
+      "schema_version": "1.0",
+      "role": "manifest"
+    },
+    {
+      "id": "artifact.legacy",
+      "uri": "experiments/paper12/archive/results/diffusion.sofreport",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "d35940d2dc1f89e40da832c082ed08c5df36798662eebd51a06bc9caa8279615"
+      },
+      "media_type": "application/json",
+      "schema_version": "1.0",
+      "role": "source-input"
+    },
+    {
+      "id": "artifact.producer",
+      "uri": "experiments/paper12/diffusion_denoising_sof.py",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "d2b712dcab60e6c1cd438c18d6ed518719b77c0ddcd228ecba85be5b15faeaff"
+      },
+      "media_type": "text/x-python",
+      "schema_version": "1.0",
+      "role": "proof-reference"
+    }
+  ],
+  "certificates": [],
+  "findings": [
+    {
+      "id": "finding.analogue",
+      "kind": "status_only",
+      "carrier_id": "carrier.analogue",
+      "subject_object_ids": [
+        "analogue.record"
+      ],
+      "value": {
+        "sector_descriptor": {
+          "origin": "PCA-sign partition on a fixed probe window",
+          "space": "finite feature coordinates",
+          "time_dependent": true,
+          "strict_sof_realization": true
+        },
+        "observable_descriptor": {
+          "data_noise_commutator": "feature-space Gram commutator",
+          "fixed_skew_probe": "seeded skew-symmetric feature operator"
+        },
+        "support_descriptor": {
+          "kind": "R1 edge-count trajectory",
+          "samples": [
+            {
+              "t": 0,
+              "R1_edges": 0
+            },
+            {
+              "t": 1,
+              "R1_edges": 0
+            },
+            {
+              "t": 2,
+              "R1_edges": 0
+            },
+            {
+              "t": 3,
+              "R1_edges": 0
+            },
+            {
+              "t": 4,
+              "R1_edges": 0
+            },
+            {
+              "t": 5,
+              "R1_edges": 0
+            },
+            {
+              "t": 6,
+              "R1_edges": 0
+            },
+            {
+              "t": 7,
+              "R1_edges": 0
+            },
+            {
+              "t": 8,
+              "R1_edges": 0
+            },
+            {
+              "t": 9,
+              "R1_edges": 0
+            },
+            {
+              "t": 10,
+              "R1_edges": 0
+            },
+            {
+              "t": 11,
+              "R1_edges": 6
+            },
+            {
+              "t": 12,
+              "R1_edges": 8
+            },
+            {
+              "t": 13,
+              "R1_edges": 6
+            },
+            {
+              "t": 14,
+              "R1_edges": 8
+            },
+            {
+              "t": 15,
+              "R1_edges": 8
+            },
+            {
+              "t": 16,
+              "R1_edges": 8
+            },
+            {
+              "t": 17,
+              "R1_edges": 8
+            },
+            {
+              "t": 18,
+              "R1_edges": 8
+            },
+            {
+              "t": 19,
+              "R1_edges": 8
+            }
+          ]
+        },
+        "bridge_descriptor": null,
+        "repair_descriptor": {
+          "kind": "reverse-time restoration of the clean observable signature",
+          "event": {
+            "direction": "reverse_denoising",
+            "from_step": 11,
+            "to_step": 10,
+            "restored_sector_count": 1
+          },
+          "claim_note": "registered denoising repair, not fixed-sector Lie-depth D-repair"
+        },
+        "wall_descriptor": {
+          "wall_type": "sampled sector-schema transition",
+          "first_wall": {
+            "direction": "forward_noise",
+            "step": 11,
+            "sector_count_before": 1,
+            "sector_count_after": 2,
+            "alpha_bar": 0.1296357522650524
+          },
+          "trajectory_summary": {
+            "parameter": "diffusion time",
+            "rows": [
+              {
+                "t": 0,
+                "alpha_bar": 0.99,
+                "sectors": 1,
+                "R1_edges": 0
+              },
+              {
+                "t": 1,
+                "alpha_bar": 0.9545684210526316,
+                "sectors": 1,
+                "R1_edges": 0
+              },
+              {
+                "t": 2,
+                "alpha_bar": 0.8957871024930748,
+                "sectors": 1,
+                "R1_edges": 0
+              },
+              {
+                "t": 3,
+                "alpha_bar": 0.817523597748943,
+                "sectors": 1,
+                "R1_edges": 0
+              },
+              {
+                "t": 4,
+                "alpha_bar": 0.7250143485299837,
+                "sectors": 1,
+                "R1_edges": 0
+              },
+              {
+                "t": 5,
+                "alpha_bar": 0.6242755127342386,
+                "sectors": 1,
+                "R1_edges": 0
+              },
+              {
+                "t": 6,
+                "alpha_bar": 0.5214343361627561,
+                "sectors": 1,
+                "R1_edges": 0
+              },
+              {
+                "t": 7,
+                "alpha_bar": 0.4220873731675363,
+                "sectors": 1,
+                "R1_edges": 0
+              },
+              {
+                "t": 8,
+                "alpha_bar": 0.3307832098139271,
+                "sectors": 1,
+                "R1_edges": 0
+              },
+              {
+                "t": 9,
+                "alpha_bar": 0.2506988537537132,
+                "sectors": 1,
+                "R1_edges": 0
+              },
+              {
+                "t": 10,
+                "alpha_bar": 0.1835379503007448,
+                "sectors": 1,
+                "R1_edges": 0
+              },
+              {
+                "t": 11,
+                "alpha_bar": 0.1296357522650524,
+                "sectors": 2,
+                "R1_edges": 6
+              },
+              {
+                "t": 12,
+                "alpha_bar": 0.08822054088353301,
+                "sectors": 2,
+                "R1_edges": 8
+              },
+              {
+                "t": 13,
+                "alpha_bar": 0.057761238346902666,
+                "sectors": 2,
+                "R1_edges": 6
+              },
+              {
+                "t": 14,
+                "alpha_bar": 0.036328778855025626,
+                "sectors": 2,
+                "R1_edges": 8
+              },
+              {
+                "t": 15,
+                "alpha_bar": 0.021911989772557563,
+                "sectors": 2,
+                "R1_edges": 8
+              },
+              {
+                "t": 16,
+                "alpha_bar": 0.01265129093710297,
+                "sectors": 2,
+                "R1_edges": 8
+              },
+              {
+                "t": 17,
+                "alpha_bar": 0.006978185737938901,
+                "sectors": 2,
+                "R1_edges": 8
+              },
+              {
+                "t": 18,
+                "alpha_bar": 0.0036690566064215596,
+                "sectors": 2,
+                "R1_edges": 8
+              },
+              {
+                "t": 19,
+                "alpha_bar": 0.0018345283032107798,
+                "sectors": 2,
+                "R1_edges": 8
+              }
+            ]
+          }
+        },
+        "analogue_mapping": "The report aggregates pointwise finite audits while the sector count and projector family change along the sampled path."
+      },
+      "unit": null,
+      "result_state": "OBSERVED",
+      "semantic_convention_ids": [],
+      "run_policy_ids": [],
+      "certificate_ids": [],
+      "artifact_ids": [
+        "artifact.legacy"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim.analogue",
+      "statement": "The source artifact supports a provenance-bound structurally analogous diagnostic under the declared mapping.",
+      "result_state": "OBSERVED",
+      "claim_status": "Computational Observation",
+      "capability_ids": [
+        "diagnostic_analogue"
+      ],
+      "carrier_ids": [
+        "carrier.analogue"
+      ],
+      "object_ids": [
+        "analogue.record"
+      ],
+      "finding_ids": [
+        "finding.analogue"
+      ],
+      "semantic_convention_ids": [],
+      "run_policy_ids": [],
+      "hypotheses": [
+        "The frozen v1 report, adapter classification, and declared policies are fixed."
+      ],
+      "certificate_ids": [],
+      "artifact_ids": [
+        "artifact.legacy"
+      ],
+      "scope": "Descriptor-level Paper XII control diffusion.sofreport.",
+      "negative_boundary": "Pointwise strict snapshots do not produce a typed deformation chart without fixed labels, comparison maps, and continuity data."
+    }
+  ],
+  "derivations": []
+}

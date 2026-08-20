@@ -1,0 +1,161 @@
+{
+  "receipt_version": "2.0",
+  "artifact_type": "sofaudit_validation_receipt",
+  "receipt_id": "receipt.sir_f4.sofaudit-v2",
+  "audit": {
+    "audit_id": "sir_f4",
+    "sofaudit_version": "2.0",
+    "artifact": {
+      "uri": "experiments/paper13/results/audits/sir_f4.sofaudit.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "8410508a2ada2e22767567f6f13e78c959bbf9256a83569f51e6e0a03cc754e2"
+      }
+    }
+  },
+  "validator": {
+    "validator_id": "sofaudit.semantic-validator.v2",
+    "validator_version": "2.0",
+    "implementation": {
+      "uri": "experiments/paper13/validation/validate_sofaudit_v2.py",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "74b24b9485292d9e475849907abc9cb681ede7eda7743987e2d869121de4908d"
+      }
+    },
+    "receipt_contract": {
+      "uri": "schemas/sofaudit/validation-receipt-v2.0.schema.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "eca21b885a7ae80b8d306501b4a36118f041a579ee0033a6a311266cd2f4a452"
+      }
+    }
+  },
+  "artifact_closure": {
+    "artifact_count": 8,
+    "ordered_artifacts": [
+      {
+        "role": "audit",
+        "artifact": {
+          "uri": "experiments/paper13/results/audits/sir_f4.sofaudit.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "8410508a2ada2e22767567f6f13e78c959bbf9256a83569f51e6e0a03cc754e2"
+          }
+        }
+      },
+      {
+        "role": "source-audit",
+        "artifact": {
+          "uri": "experiments/paper13/archive/results/sir_f4.sofaudit",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "8c0dae3d728123a76135cc0c39185ea0a11d11ba9422dfdae7ad2e0cb61c0410"
+          }
+        }
+      },
+      {
+        "role": "reference-report",
+        "artifact": {
+          "uri": "experiments/paper13/results/source-reports/reports/sir_ref.sofreport.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "45a944ca6c0b62e19f74584ab1a8d3bc81e385c66d5071f12841d84bf26c7eac"
+          }
+        }
+      },
+      {
+        "role": "target-report",
+        "artifact": {
+          "uri": "experiments/paper13/results/source-reports/reports/sir_f4_learned.sofreport.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "40300a52ce8660c14509b9c5a0a4de5a7b2e99d8fa60081e36eb4b98c4787635"
+          }
+        }
+      },
+      {
+        "role": "reference-report-validation-receipt",
+        "artifact": {
+          "uri": "experiments/paper13/results/source-reports/receipts/sir_ref.validation-receipt.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "3e86157a012bfbdc60db1563a3e474602f95ccd265e9e060e6c2196b340519ac"
+          }
+        }
+      },
+      {
+        "role": "target-report-validation-receipt",
+        "artifact": {
+          "uri": "experiments/paper13/results/source-reports/receipts/sir_f4_learned.validation-receipt.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "cfeba16cf2b488dc774a70d3d2f61a402474493d13f9fb075679ecc2da346759"
+          }
+        }
+      },
+      {
+        "role": "audit-profile",
+        "artifact": {
+          "uri": "schemas/sofaudit/paper13-standard-regime-a-profile-v2.0.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "25a59d8f5897620deaa69a660b3160d32df43030b097830a0668c9eb8a5a20ee"
+          }
+        }
+      },
+      {
+        "role": "coordinate-semantics-registry",
+        "artifact": {
+          "uri": "schemas/sofaudit/coordinate-semantics-registry-v1.0.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "1d2dc24ae56cfb364b02bccf8c0c3068138e6d07682cf4b0561ec75f765c6d48"
+          }
+        }
+      }
+    ],
+    "closure_digest": {
+      "algorithm": "sha256",
+      "value": "734551d48379d97f8487dd7abe6d72ade812e64f01ee12f2d986a75907ed30f2"
+    }
+  },
+  "status": "PASS",
+  "checks": [
+    {
+      "check_id": "alignment-property-recomputation",
+      "status": "PASS"
+    },
+    {
+      "check_id": "artifact-digest-closure",
+      "status": "PASS"
+    },
+    {
+      "check_id": "claim-certificate-compatibility",
+      "status": "PASS"
+    },
+    {
+      "check_id": "comparison-basis-recomputation",
+      "status": "PASS"
+    },
+    {
+      "check_id": "guard-coordinate-coupling",
+      "status": "PASS"
+    },
+    {
+      "check_id": "role-regime-profile-closure",
+      "status": "PASS"
+    },
+    {
+      "check_id": "schema-validation",
+      "status": "PASS"
+    },
+    {
+      "check_id": "source-report-receipt-validation",
+      "status": "PASS"
+    }
+  ],
+  "negative_boundaries": [
+    "This receipt certifies SOFAUDIT v2 protocol conformance and the bound artifact closure; it is not an Object Certificate and does not assign correctness or action."
+  ]
+}

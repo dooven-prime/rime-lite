@@ -88,8 +88,20 @@ def _source_receipt_errors(
     if receipt_path is None:
         return errors
     stem = source_path.name.removesuffix(".sofreport.json")
-    expected_path = PAPER_DIR / "results" / "report-validation-receipts" / "paper12-v2" / f"{stem}.validation-receipt.json"
-    if receipt_path != expected_path:
+    expected_paths = {
+        PAPER_DIR
+        / "results"
+        / "report-validation-receipts"
+        / "paper12-v2"
+        / f"{stem}.validation-receipt.json"
+    }
+    # Paper-owned source-report bundles keep their receipts beside the bundle,
+    # while native Paper XII reports use the historical paper12-v2 directory.
+    if source_path.parent.name == "reports" and source_path.parent.parent.name == "source-reports":
+        expected_paths.add(
+            source_path.parent.parent / "receipts" / f"{stem}.validation-receipt.json"
+        )
+    if receipt_path not in expected_paths:
         errors.append("v2.1 migration binds a non-canonical v2.0 source receipt")
     receipt = load_json(receipt_path)
     source = load_json(source_path)

@@ -27,6 +27,10 @@ from schemas.contract_api import (  # noqa: E402
     result_claim_status_error,
     schema_errors,
 )
+from schemas.release_snapshot import (  # noqa: E402
+    canonical_reference_for_path,
+    resolve_release_reference,
+)
 from schemas.sofrs.api import v2_report_validation_receipt_errors  # noqa: E402
 from experiments.paper12.validation.validate_sofrs_v2 import (  # noqa: E402
     standalone_report_errors,
@@ -85,10 +89,7 @@ def sha256(path: Path) -> str:
 
 
 def repo_reference(path: Path) -> dict[str, Any]:
-    return {
-        "uri": path.resolve().relative_to(ROOT.resolve()).as_posix(),
-        "digest": {"algorithm": "sha256", "value": sha256(path)},
-    }
+    return canonical_reference_for_path(path, repository_root=ROOT)
 
 
 def closure_digest(ordered_artifacts: list[dict[str, Any]]) -> dict[str, str]:
@@ -158,8 +159,8 @@ def epistemic_classification_error(item: dict[str, Any], *, label: str) -> str |
 
 def resolve_artifact(base: Path, artifact: dict[str, Any]) -> tuple[Path, list[str]]:
     try:
-        path = resolve_artifact_path(
-            artifact["uri"],
+        path = resolve_release_reference(
+            artifact,
             repository_root=ROOT,
             base_directory=base,
         )
@@ -366,7 +367,14 @@ def comparison_specification_errors(
     return errors
 
 
-def semantic_errors(payload: dict[str, Any], path: Path) -> list[str]:
+def semantic_errors(
+    payload: dict[str, Any],
+    path: Path,
+    *,
+    expected_sofrs_version: str = "2.0",
+    report_validator=None,
+    report_receipt_validator=None,
+) -> list[str]:
     errors: list[str] = []
     provenance = payload["provenance"]
     artifacts = payload["source_artifacts"]
@@ -429,19 +437,28 @@ def semantic_errors(payload: dict[str, Any], path: Path) -> list[str]:
             )
         if receipt_path.is_file():
             receipt = load_json(receipt_path)
-            receipt_errors = v2_report_validation_receipt_errors(
-                receipt,
-                repository_root=ROOT,
-                expected_report_reference=report_ref,
-                expected_report_base_directory=path.parent,
-            )
+            if report_receipt_validator is None:
+                receipt_errors = v2_report_validation_receipt_errors(
+                    receipt,
+                    repository_root=ROOT,
+                    expected_report_reference=report_ref,
+                    expected_report_base_directory=path.parent,
+                )
+            else:
+                receipt_errors = report_receipt_validator(receipt)
+                receipt_report = receipt.get("report", {})
+                if receipt_report.get("artifact") != report_ref["artifact"]:
+                    errors.append(f"{side} validation receipt binds a different report artifact")
+                if receipt_report.get("report_id") != report_ref["report_id"]:
+                    errors.append(f"{side} validation receipt binds a different report ID")
             errors.extend(f"{side} receipt: {error}" for error in receipt_errors)
         if report_path.is_file():
             report = load_json(report_path)
             linked_reports[side] = report
+            validate_report = report_validator or standalone_report_errors
             errors.extend(
                 f"{side} SOFRS validation: {error}"
-                for error in standalone_report_errors(report_path)
+                for error in validate_report(report_path)
             )
             if report.get("report_id") != report_ref["report_id"]:
                 errors.append(f"{side} report_id does not match linked artifact")
@@ -449,8 +466,10 @@ def semantic_errors(payload: dict[str, Any], path: Path) -> list[str]:
                 errors.append(f"{side} sofrs_version does not match linked artifact")
             if report.get("record_kind") != report_ref["record_kind"]:
                 errors.append(f"{side} record_kind does not match linked SOFRS v2 report")
-            if report.get("sofrs_version") != "2.0":
-                errors.append(f"{side} SOFAUDIT v2 input must bind a SOFRS v2 report")
+            if report.get("sofrs_version") != expected_sofrs_version:
+                errors.append(
+                    f"{side} audit input must bind SOFRS {expected_sofrs_version}"
+                )
         basis_artifacts = set(report_ref["comparison_role_basis"]["evidence_artifacts"])
         if not basis_artifacts.issubset(artifact_id_set):
             errors.append(f"{side} comparison role basis references unknown artifacts")
@@ -1118,19 +1137,20 @@ def validation_receipt_errors(receipt_path: Path) -> list[str]:
                 repository_root=ROOT,
             )
         )
-    for label, reference in (
-        ("SOFAUDIT validator implementation", receipt["validator"]["implementation"]),
-        ("SOFAUDIT receipt contract", receipt["validator"]["receipt_contract"]),
-    ):
-        errors.extend(
-            artifact_reference_errors(
-                reference, label=label, repository_root=ROOT
-            )
+    errors.extend(
+        artifact_reference_errors(
+            receipt["validator"]["implementation"],
+            label="SOFAUDIT receipt validator implementation",
+            repository_root=ROOT,
         )
-    if receipt["validator"]["implementation"] != repo_reference(Path(__file__)):
-        errors.append("SOFAUDIT receipt binds a different validator implementation")
-    if receipt["validator"]["receipt_contract"] != repo_reference(RECEIPT_SCHEMA):
-        errors.append("SOFAUDIT receipt binds a different receipt contract")
+    )
+    errors.extend(
+        artifact_reference_errors(
+            receipt["validator"]["receipt_contract"],
+            label="SOFAUDIT receipt contract",
+            repository_root=ROOT,
+        )
+    )
     if ordered[0]["role"] != "audit":
         errors.append("SOFAUDIT receipt closure does not begin with the audit")
         return errors
@@ -1138,10 +1158,8 @@ def validation_receipt_errors(receipt_path: Path) -> list[str]:
     if receipt["audit"]["artifact"] != audit_ref:
         errors.append("SOFAUDIT receipt audit reference differs from its closure")
     try:
-        audit_path = resolve_artifact_path(
-            audit_ref["uri"], repository_root=ROOT
-        )
-    except ValueError as exc:
+        audit_path = resolve_release_reference(audit_ref, repository_root=ROOT)
+    except (KeyError, ValueError) as exc:
         errors.append(str(exc))
         return errors
     audit = load_json(audit_path)
@@ -1212,16 +1230,28 @@ def index_errors(index_path: Path, paths: list[Path]) -> list[str]:
         item["receipt_uri"]: item
         for item in index.get("source_report_receipts", [])
     }
-    expected_receipt_uris = {
-        receipt_path.relative_to(ROOT).as_posix()
-        for receipt_path in expected_receipt_paths
-    }
+    expected_receipt_uris: set[str] = set()
+    for path in paths:
+        payload = load_json(path)
+        for side in ("reference", "target"):
+            try:
+                normalized = resolve_artifact_path(
+                    payload["source_reports"][side]["validation_receipt"]["uri"],
+                    repository_root=ROOT,
+                    base_directory=path.parent,
+                )
+            except ValueError:
+                continue
+            expected_receipt_uris.add(normalized.relative_to(ROOT).as_posix())
     if index.get("source_report_receipt_count") != len(expected_receipt_paths):
         errors.append("migration index source-report receipt census is inconsistent")
     if set(indexed_receipts) != expected_receipt_uris:
         errors.append("migration index source-report receipt set is inconsistent")
     for uri, item in indexed_receipts.items():
-        receipt_path = ROOT / uri
+        receipt_path = resolve_release_reference(
+            {"uri": uri, "digest": item["receipt_digest"]},
+            repository_root=ROOT,
+        )
         if not receipt_path.is_file():
             errors.append(f"migration index receipt is missing: {uri}")
         elif item["receipt_digest"]["value"].lower() != sha256(receipt_path):
@@ -1233,8 +1263,18 @@ def index_errors(index_path: Path, paths: list[Path]) -> list[str]:
         record = records.get(uri)
         if record is None:
             errors.append(f"migration index lacks {uri}")
-        elif record["output_digest"]["value"].lower() != sha256(path):
-            errors.append(f"migration index output digest mismatch: {uri}")
+        else:
+            audit_path = resolve_release_reference(
+                {
+                    "uri": record["output_uri"].replace(
+                        "audits/", "experiments/paper13/results/audits/", 1
+                    ),
+                    "digest": record["output_digest"],
+                },
+                repository_root=ROOT,
+            )
+            if record["output_digest"]["value"].lower() != sha256(audit_path):
+                errors.append(f"migration index output digest mismatch: {uri}")
     if set(records) != {f"audits/{path.name}" for path in paths}:
         errors.append("migration index contains an unmatched output record")
     return errors

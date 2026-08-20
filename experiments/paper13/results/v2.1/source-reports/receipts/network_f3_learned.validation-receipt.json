@@ -1,0 +1,306 @@
+{
+  "receipt_version": "2.1",
+  "artifact_type": "sofrs_report_validation_receipt",
+  "receipt_kind": "SOFRS_VALIDATION_RECEIPT",
+  "receipt_scope": "SOFRS_PROTOCOL_CONFORMANCE_ONLY",
+  "receipt_id": "receipt.network-f3-learned.sofrs-v2_1",
+  "report": {
+    "report_id": "network-f3-learned",
+    "sofrs_version": "2.1",
+    "record_kind": "diagnostic_analogue",
+    "artifact": {
+      "uri": "experiments/paper13/results/v2.1/source-reports/reports/network_f3_learned.sofreport.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "da428dc56fcc70d1dc7b49dd0680b7bb6fe7892e197f3526e081dbee49fbaa53"
+      }
+    }
+  },
+  "validator": {
+    "validator_id": "sofrs.report-validator.v2_1",
+    "validator_version": "2.1",
+    "implementation": {
+      "uri": "experiments/paper12/validation/validate_sofrs_v2_1.py",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "bd4a49eac44659c6f07e17899ebc72964f23fa7509a702107eca5ace769c7c4e"
+      }
+    },
+    "report_contract": {
+      "uri": "schemas/sofrs/v2.1.schema.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "cb7803deff08d7f93e36d2d1157e2bcf9563048ccf5ee28fd9a16d82cb1993da"
+      }
+    },
+    "receipt_contract": {
+      "uri": "schemas/sofrs/report-validation-receipt-v2.1.schema.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "defd2bcaaac9d5f1a1ff2907494b35dfb853ca729244dced733a6329e69f6820"
+      }
+    }
+  },
+  "generation": {
+    "kind": "migration",
+    "class": "boundary_annotation",
+    "source_version": "2.0",
+    "source_artifact": {
+      "uri": "experiments/paper13/results/source-reports/reports/network_f3_learned.sofreport.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "77e87a25c567cf70bc831b59f37512712e2cdba559f82d582d9138a2073fd81d"
+      }
+    },
+    "source_validation_receipt": {
+      "uri": "experiments/paper13/results/source-reports/receipts/network_f3_learned.validation-receipt.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "c5f17297edbc17a3cac51ca9e747cdd6a18b561d719ea82178c3344665b059ff"
+      }
+    },
+    "implementation": {
+      "uri": "experiments/paper12/validation/migrate_sofrs_v2_to_v2_1.py",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "b800f6f0362e98cf24b4c81e1faaa54714fac7e814fb7dcb9c522cd0a2ebecb4"
+      }
+    }
+  },
+  "artifact_closure": {
+    "artifact_count": 18,
+    "ordered_artifacts": [
+      {
+        "role": "report",
+        "artifact": {
+          "uri": "experiments/paper13/results/v2.1/source-reports/reports/network_f3_learned.sofreport.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "da428dc56fcc70d1dc7b49dd0680b7bb6fe7892e197f3526e081dbee49fbaa53"
+          }
+        }
+      },
+      {
+        "role": "revision-source-report-v2.0",
+        "artifact": {
+          "uri": "experiments/paper13/results/source-reports/reports/network_f3_learned.sofreport.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "77e87a25c567cf70bc831b59f37512712e2cdba559f82d582d9138a2073fd81d"
+          }
+        }
+      },
+      {
+        "role": "source-validation-receipt-v2.0",
+        "artifact": {
+          "uri": "experiments/paper13/results/source-reports/receipts/network_f3_learned.validation-receipt.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "c5f17297edbc17a3cac51ca9e747cdd6a18b561d719ea82178c3344665b059ff"
+          }
+        }
+      },
+      {
+        "role": "migration-implementation",
+        "artifact": {
+          "uri": "experiments/paper12/validation/migrate_sofrs_v2_to_v2_1.py",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "b800f6f0362e98cf24b4c81e1faaa54714fac7e814fb7dcb9c522cd0a2ebecb4"
+          }
+        }
+      },
+      {
+        "role": "legacy-v2-validator",
+        "artifact": {
+          "uri": "experiments/paper12/validation/validate_sofrs_v2.py",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "e3b21ed183acd489a4d925c4cd8ec127121c70ba3b10f0e13689baa47900173f"
+          }
+        }
+      },
+      {
+        "role": "legacy-v2-report-contract",
+        "artifact": {
+          "uri": "schemas/sofrs/v2.0.schema.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "8a751bd62a2746b334c81a394e6dce1cb1a9251c978aa723aef69c602dce098e"
+          }
+        }
+      },
+      {
+        "role": "legacy-v2-receipt-contract",
+        "artifact": {
+          "uri": "schemas/sofrs/report-validation-receipt-v2.0.schema.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "84254cf908ce21a5d8ab6267e7e5c9a0b06bca3aa8caaa9246e1f9b492855647"
+          }
+        }
+      },
+      {
+        "role": "v2-receipt-api",
+        "artifact": {
+          "uri": "schemas/sofrs/api.py",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "5f4e7f5e55944aa826a8c1977f501452f0680b4b9adec22f9e8ae16bed249e78"
+          }
+        }
+      },
+      {
+        "role": "boundary-helper",
+        "artifact": {
+          "uri": "schemas/non_intervention.py",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "0e161d1450b310ac099ed62a7ad2914110a403a9bdd2aa37ec1d2b1a8335c857"
+          }
+        }
+      },
+      {
+        "role": "report-contract",
+        "artifact": {
+          "uri": "schemas/sofrs/v2.1.schema.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "cb7803deff08d7f93e36d2d1157e2bcf9563048ccf5ee28fd9a16d82cb1993da"
+          }
+        }
+      },
+      {
+        "role": "capability-manifest",
+        "artifact": {
+          "uri": "experiments/paper13/results/source-reports/manifests/network_f3_learned.capabilities.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "9f98ca6f9fd0c8a99c303ede007d7bef8c35b4de13047d538e313c7217735b0f"
+          }
+        }
+      },
+      {
+        "role": "typed-sof-ir",
+        "artifact": {
+          "uri": "experiments/paper13/results/source-reports/ir/network_f3_learned.ir.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "c445a4fe944dc261a4a238be34f2f083d82a9212df298427cda452b8abe232df"
+          }
+        }
+      },
+      {
+        "role": "compiler-profile",
+        "artifact": {
+          "uri": "schemas/sofrs/paper12-analogue-compiler-profile-v1.0.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "facc293462a79d93a00ece68e42951c49e8cfe8b141147bdfd6333bbb2b430b5"
+          }
+        }
+      },
+      {
+        "role": "compiler-output",
+        "artifact": {
+          "uri": "experiments/paper13/results/source-reports/compiler-output/network_f3_learned.compiler-output.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "224b9df8514caede522c6e2f351196c58192a040534286c175383e5b1e1b1a96"
+          }
+        }
+      },
+      {
+        "role": "assembly-profile",
+        "artifact": {
+          "uri": "schemas/sofrs/paper12-analogue-assembly-profile-v2.0.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "936a80b0bcc238d47739ec5bac3aabcfb422feac2fed159739342189e678aaf1"
+          }
+        }
+      },
+      {
+        "role": "assembly-implementation",
+        "artifact": {
+          "uri": "experiments/paper12/validation/migrate_sofrs_v1_to_v2.py",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "d0905b3647dddd67c30815f4062fdd0e4266e62c7fa5cde2e72f43840cab6252"
+          }
+        }
+      },
+      {
+        "role": "validator-implementation",
+        "artifact": {
+          "uri": "experiments/paper12/validation/validate_sofrs_v2_1.py",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "bd4a49eac44659c6f07e17899ebc72964f23fa7509a702107eca5ace769c7c4e"
+          }
+        }
+      },
+      {
+        "role": "validation-receipt-contract",
+        "artifact": {
+          "uri": "schemas/sofrs/report-validation-receipt-v2.1.schema.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "defd2bcaaac9d5f1a1ff2907494b35dfb853ca729244dced733a6329e69f6820"
+          }
+        }
+      }
+    ],
+    "closure_digest": {
+      "algorithm": "sha256",
+      "value": "e2b7a27797d3171caa4fb6f32c8b72fcf22e7d941fda72dcd8ace8567c297800"
+    }
+  },
+  "status": "PASS",
+  "checks": [
+    {
+      "check_id": "artifact-closure",
+      "status": "PASS"
+    },
+    {
+      "check_id": "assembly-faithfulness",
+      "status": "PASS"
+    },
+    {
+      "check_id": "claim-compatibility",
+      "status": "PASS"
+    },
+    {
+      "check_id": "degradation-semantics",
+      "status": "PASS"
+    },
+    {
+      "check_id": "explicit-v2.0-to-v2.1-migration",
+      "status": "PASS"
+    },
+    {
+      "check_id": "forbidden-semantic-role-scan",
+      "status": "PASS"
+    },
+    {
+      "check_id": "report-non-intervention",
+      "status": "PASS"
+    },
+    {
+      "check_id": "schema-validation",
+      "status": "PASS"
+    },
+    {
+      "check_id": "v2.0-source-validation",
+      "status": "PASS"
+    }
+  ],
+  "object_transition_boundary": {
+    "intervention_semantics": "NONE",
+    "source_state_transition_authority": "NONE",
+    "implementation_purity_status": "NOT_ESTABLISHED_BY_SOFRS"
+  },
+  "negative_boundaries": [
+    "This receipt establishes SOFRS protocol conformance only; it neither induces nor authorizes an object-state transition, and it does not establish implementation purity."
+  ]
+}

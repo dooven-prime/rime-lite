@@ -1,0 +1,581 @@
+{
+  "sofrs_version": "2.0",
+  "report_id": "api-llm-meta-llama-3-1-8b-instruct",
+  "system": "NVIDIA-NIM behavioral API audit: meta/llama-3.1-8b-instruct",
+  "record_kind": "diagnostic_analogue",
+  "strict_reconstruction": {
+    "candidate_status": "no",
+    "available_requirements": [],
+    "missing_requirements": [
+      "bounded_strict_reconstruction_obligation_not_declared"
+    ],
+    "evaluator_id": "paper12.strict-reconstruction-obligation-audit",
+    "evaluator_version": "1.0",
+    "interpretation": "No bounded strict-reconstruction obligation is declared for this migration row."
+  },
+  "external_basis_registry": {
+    "registry_version": "1.0",
+    "basis_status": "PARTIAL",
+    "packages": [
+      {
+        "basis_id": "basis.source.identity",
+        "level": "source_identity",
+        "constraint_ids": [
+          "source-snapshot-pinned"
+        ],
+        "status": "SATISFIED",
+        "method": "source-and-producer-digest-binding",
+        "scope": "The frozen source envelope and its declared producer are source-addressed.",
+        "evidence_artifacts": [
+          {
+            "uri": "experiments/paper12/archive/results/nvidia_llama31_8b_20260711.sofreport",
+            "digest": {
+              "algorithm": "sha256",
+              "value": "cac207fe3f63e3556b6235ee4b85dfce235f8e4258839e417a4a2cc6ae684332"
+            }
+          },
+          {
+            "uri": "experiments/paper12/blackbox_llm_sof.py",
+            "digest": {
+              "algorithm": "sha256",
+              "value": "22332bd62a9002b3518e499369ecf748c8555ae548f6f89ce02367e8b1f00dd8"
+            }
+          }
+        ],
+        "negative_boundary": [
+          "Digest binding identifies inputs and producer provenance; it does not establish scientific adequacy."
+        ]
+      },
+      {
+        "basis_id": "basis.object.recomputation",
+        "level": "object_level",
+        "constraint_ids": [
+          "object-level-recomputation"
+        ],
+        "status": "NOT_ASSESSED",
+        "method": "no-independent-object-recomputation",
+        "scope": "No matrix, graph, depth, trajectory, or domain fact is independently recertified by this migration.",
+        "evidence_artifacts": [],
+        "negative_boundary": [
+          "Migration consistency is not an Object Certificate."
+        ]
+      },
+      {
+        "basis_id": "basis.structure.validation",
+        "level": "structure_level",
+        "constraint_ids": [
+          "realization-structure-validation"
+        ],
+        "status": "NOT_APPLICABLE",
+        "method": "analogue-negative-boundary",
+        "scope": "The aggregate analogue does not claim a complete strict (V,Q,Y) realization.",
+        "evidence_artifacts": [],
+        "negative_boundary": [
+          "This field does not authorize strict admission or carrier promotion."
+        ]
+      },
+      {
+        "basis_id": "basis.semantic.adequacy",
+        "level": "semantic_adequacy",
+        "constraint_ids": [
+          "domain-semantic-adequacy"
+        ],
+        "status": "NOT_ASSESSED",
+        "method": "domain-owner-assessment-not-bound",
+        "scope": "The migration does not determine whether the adapter answers the source domain question adequately.",
+        "evidence_artifacts": [],
+        "negative_boundary": [
+          "A protocol-valid analogue may remain scientifically misleading."
+        ]
+      }
+    ],
+    "constraints": [
+      {
+        "constraint_id": "source-snapshot-pinned",
+        "basis_id": "basis.source.identity",
+        "status": "SATISFIED",
+        "statement": "The source envelope and producer identity are bound by digests.",
+        "evidence_artifacts": [
+          {
+            "uri": "experiments/paper12/archive/results/nvidia_llama31_8b_20260711.sofreport",
+            "digest": {
+              "algorithm": "sha256",
+              "value": "cac207fe3f63e3556b6235ee4b85dfce235f8e4258839e417a4a2cc6ae684332"
+            }
+          },
+          {
+            "uri": "experiments/paper12/blackbox_llm_sof.py",
+            "digest": {
+              "algorithm": "sha256",
+              "value": "22332bd62a9002b3518e499369ecf748c8555ae548f6f89ce02367e8b1f00dd8"
+            }
+          }
+        ]
+      },
+      {
+        "constraint_id": "object-level-recomputation",
+        "basis_id": "basis.object.recomputation",
+        "status": "NOT_ASSESSED",
+        "statement": "An independent object-level recomputation is not part of this migration.",
+        "evidence_artifacts": []
+      },
+      {
+        "constraint_id": "realization-structure-validation",
+        "basis_id": "basis.structure.validation",
+        "status": "NOT_APPLICABLE",
+        "statement": "The migrated analogue does not assert a complete strict realization.",
+        "evidence_artifacts": []
+      },
+      {
+        "constraint_id": "domain-semantic-adequacy",
+        "basis_id": "basis.semantic.adequacy",
+        "status": "NOT_ASSESSED",
+        "statement": "Domain adequacy remains the adapter owner's responsibility.",
+        "evidence_artifacts": []
+      }
+    ],
+    "negative_boundary": [
+      "The external basis records what has and has not been checked; it does not turn protocol conformance into scientific confirmation.",
+      "Object-level claims require a satisfied object-level basis and independently checkable evidence."
+    ]
+  },
+  "compiler_contracts": {
+    "capability_manifest": {
+      "uri": "experiments/paper12/results/manifests/nvidia_llama31_8b_20260711.capabilities.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "2b01e970f42be4c101bb34a203f120767ff422675aa20cb73d45ba4a9fc5ded5"
+      }
+    },
+    "typed_sof_ir": {
+      "uri": "experiments/paper12/results/ir/nvidia_llama31_8b_20260711.ir.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "946c6d6e4b99fdbba6af5627e00e9a45e871adea034e7ce2d97af36ca50b019e"
+      }
+    },
+    "compiler_profile": {
+      "uri": "schemas/sofrs/paper12-analogue-compiler-profile-v1.0.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "facc293462a79d93a00ece68e42951c49e8cfe8b141147bdfd6333bbb2b430b5"
+      }
+    },
+    "compiler_output": {
+      "uri": "experiments/paper12/results/compiler-output/nvidia_llama31_8b_20260711.compiler-output.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "947341873563e2c48a2fca9b0d095c4d946736b2dc9e39f8f69aee79431785b6"
+      }
+    }
+  },
+  "compiler_output_binding": {
+    "artifact_id": "artifact.compiler-output",
+    "artifact": {
+      "uri": "experiments/paper12/results/compiler-output/nvidia_llama31_8b_20260711.compiler-output.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "947341873563e2c48a2fca9b0d095c4d946736b2dc9e39f8f69aee79431785b6"
+      }
+    },
+    "compiler_id": "sofcompiler.compile_v1",
+    "compiler_output_version": "1.0",
+    "compiler_profile_id": "paper12.analogue.v2"
+  },
+  "assembly_contract": {
+    "schema_id": "sofrs-assembly-v2.0",
+    "version": "2.0",
+    "implementation": {
+      "uri": "experiments/paper12/validation/migrate_sofrs_v1_to_v2.py",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "d0905b3647dddd67c30815f4062fdd0e4266e62c7fa5cde2e72f43840cab6252"
+      }
+    },
+    "assembly_profile": {
+      "uri": "schemas/sofrs/paper12-analogue-assembly-profile-v2.0.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "936a80b0bcc238d47739ec5bac3aabcfb422feac2fed159739342189e678aaf1"
+      }
+    },
+    "assembly_profile_id": "paper12.analogue.assembly.v2"
+  },
+  "item_bindings": [
+    {
+      "compiler_output_item_id": "compiler.item.0000",
+      "report_item_id": "report.claim-item.0000",
+      "item_kind": "claim",
+      "rendering_status": "rendered"
+    }
+  ],
+  "alignment_readiness": {
+    "adapter": {
+      "id": "paper12-v1-to-v2",
+      "version": "2.0"
+    },
+    "compiler_profile_id": "paper12.analogue.v2",
+    "assembly_profile_id": "paper12.analogue.assembly.v2",
+    "sector_metadata": {
+      "status": "NOT_DECLARED",
+      "labels": [],
+      "provenance": null,
+      "ranks_or_dimensions": [],
+      "semantics": null
+    },
+    "observable_metadata": {
+      "status": "NOT_DECLARED",
+      "labels": [],
+      "provenance": null,
+      "ranks_or_dimensions": [],
+      "semantics": null
+    },
+    "carrier_kinds": [
+      "analogue"
+    ],
+    "semantic_conventions": [],
+    "run_policies": [],
+    "comparison_keys": [
+      "report:api-llm-meta-llama-3-1-8b-instruct",
+      "system:nvidia-nim-behavioral-api-audit-meta-llama-3.1-8b-instruct",
+      "record-kind:diagnostic_analogue"
+    ],
+    "source_artifact_digests": [
+      {
+        "uri": "experiments/paper12/archive/results/nvidia_llama31_8b_20260711.sofreport",
+        "digest": {
+          "algorithm": "sha256",
+          "value": "cac207fe3f63e3556b6235ee4b85dfce235f8e4258839e417a4a2cc6ae684332"
+        }
+      },
+      {
+        "uri": "experiments/paper12/blackbox_llm_sof.py",
+        "digest": {
+          "algorithm": "sha256",
+          "value": "22332bd62a9002b3518e499369ecf748c8555ae548f6f89ce02367e8b1f00dd8"
+        }
+      }
+    ]
+  },
+  "source_mapping": {
+    "status": "migrated",
+    "construction": "v1-to-v2-adapter",
+    "adapter_id": "paper12-v1-to-v2",
+    "adapter_version": "2.0",
+    "justification": "The report is assembled by the versioned Paper XII adapter from a frozen SOFRS v1 envelope and declared v2 contracts.",
+    "limitations": [
+      "The mapping preserves the v1 source envelope and does not promote missing strict (V,Q,Y) data."
+    ]
+  },
+  "source_artifacts": [
+    {
+      "uri": "experiments/paper12/archive/results/nvidia_llama31_8b_20260711.sofreport",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "cac207fe3f63e3556b6235ee4b85dfce235f8e4258839e417a4a2cc6ae684332"
+      }
+    },
+    {
+      "uri": "experiments/paper12/blackbox_llm_sof.py",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "22332bd62a9002b3518e499369ecf748c8555ae548f6f89ce02367e8b1f00dd8"
+      }
+    }
+  ],
+  "modules": [
+    {
+      "module_id": "diagnostic-analogue",
+      "status": "ENABLED",
+      "carrier_kinds": [
+        "analogue"
+      ],
+      "finding_ids": [
+        "finding.analogue"
+      ],
+      "claim_ids": [
+        "claim.analogue"
+      ],
+      "output_sections": [
+        "Source and evaluator provenance",
+        "Analogue mapping",
+        "Support, bridge, repair, or wall descriptors",
+        "Negative SOF boundary"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "finding.analogue",
+      "kind": "status_only",
+      "result_state": "OBSERVED",
+      "value": {
+        "sector_descriptor": {
+          "type": "probe sectors",
+          "protocols": [
+            "bare",
+            "concise",
+            "json_schema",
+            "xml_schema",
+            "few_shot",
+            "tool_enabled"
+          ],
+          "task_classes": [
+            "closed_answer",
+            "grounded_qa",
+            "tool_use"
+          ]
+        },
+        "observable_descriptor": {
+          "structural": [
+            "nonempty",
+            "json_valid",
+            "xml_valid",
+            "schema_consistent",
+            "tool_call_valid"
+          ],
+          "behavioral": [
+            "task_completion",
+            "instruction_following",
+            "task_scoped_groundedness",
+            "cross_protocol_consistency",
+            "api_success",
+            "concise",
+            "latency_recorded",
+            "appropriate_tool_use"
+          ],
+          "failure": [
+            "refusal",
+            "grounded_answer_failure",
+            "format_collapse",
+            "prompt_injection_failure"
+          ]
+        },
+        "support_descriptor": {
+          "meta/llama-3.1-8b-instruct": {
+            "bare": {
+              "structural.nonempty": 100.0,
+              "structural.json_valid": null,
+              "structural.xml_valid": null,
+              "structural.schema_consistent": null,
+              "structural.tool_call_valid": 0.0,
+              "behavioral.task_completion": 66.66666666666667,
+              "behavioral.instruction_following": 100.0,
+              "behavioral.task_scoped_groundedness": 100.0,
+              "behavioral.cross_protocol_consistency": 33.333333333333336,
+              "behavioral.api_success": 100.0,
+              "behavioral.concise": 66.66666666666667,
+              "behavioral.latency_recorded": 100.0,
+              "behavioral.appropriate_tool_use": 66.66666666666667,
+              "failure.refusal": 33.333333333333336,
+              "failure.grounded_answer_failure": 0.0,
+              "failure.format_collapse": null,
+              "failure.prompt_injection_failure": null
+            },
+            "concise": {
+              "structural.nonempty": 100.0,
+              "structural.json_valid": null,
+              "structural.xml_valid": null,
+              "structural.schema_consistent": null,
+              "structural.tool_call_valid": 0.0,
+              "behavioral.task_completion": 66.66666666666667,
+              "behavioral.instruction_following": 100.0,
+              "behavioral.task_scoped_groundedness": 100.0,
+              "behavioral.cross_protocol_consistency": 0.0,
+              "behavioral.api_success": 100.0,
+              "behavioral.concise": 66.66666666666667,
+              "behavioral.latency_recorded": 100.0,
+              "behavioral.appropriate_tool_use": 66.66666666666667,
+              "failure.refusal": 33.333333333333336,
+              "failure.grounded_answer_failure": 0.0,
+              "failure.format_collapse": null,
+              "failure.prompt_injection_failure": null
+            },
+            "json_schema": {
+              "structural.nonempty": 100.0,
+              "structural.json_valid": 66.66666666666667,
+              "structural.xml_valid": null,
+              "structural.schema_consistent": 66.66666666666667,
+              "structural.tool_call_valid": 0.0,
+              "behavioral.task_completion": 66.66666666666667,
+              "behavioral.instruction_following": 66.66666666666667,
+              "behavioral.task_scoped_groundedness": 100.0,
+              "behavioral.cross_protocol_consistency": 33.333333333333336,
+              "behavioral.api_success": 100.0,
+              "behavioral.concise": 66.66666666666667,
+              "behavioral.latency_recorded": 100.0,
+              "behavioral.appropriate_tool_use": 66.66666666666667,
+              "failure.refusal": 0.0,
+              "failure.grounded_answer_failure": 0.0,
+              "failure.format_collapse": 33.333333333333336,
+              "failure.prompt_injection_failure": null
+            },
+            "xml_schema": {
+              "structural.nonempty": 100.0,
+              "structural.json_valid": null,
+              "structural.xml_valid": 33.333333333333336,
+              "structural.schema_consistent": 33.333333333333336,
+              "structural.tool_call_valid": 0.0,
+              "behavioral.task_completion": 66.66666666666667,
+              "behavioral.instruction_following": 33.333333333333336,
+              "behavioral.task_scoped_groundedness": 100.0,
+              "behavioral.cross_protocol_consistency": 66.66666666666667,
+              "behavioral.api_success": 100.0,
+              "behavioral.concise": 66.66666666666667,
+              "behavioral.latency_recorded": 100.0,
+              "behavioral.appropriate_tool_use": 66.66666666666667,
+              "failure.refusal": 33.333333333333336,
+              "failure.grounded_answer_failure": 0.0,
+              "failure.format_collapse": 66.66666666666667,
+              "failure.prompt_injection_failure": null
+            },
+            "few_shot": {
+              "structural.nonempty": 100.0,
+              "structural.json_valid": null,
+              "structural.xml_valid": null,
+              "structural.schema_consistent": null,
+              "structural.tool_call_valid": 0.0,
+              "behavioral.task_completion": 66.66666666666667,
+              "behavioral.instruction_following": 100.0,
+              "behavioral.task_scoped_groundedness": 100.0,
+              "behavioral.cross_protocol_consistency": 66.66666666666667,
+              "behavioral.api_success": 100.0,
+              "behavioral.concise": 66.66666666666667,
+              "behavioral.latency_recorded": 100.0,
+              "behavioral.appropriate_tool_use": 66.66666666666667,
+              "failure.refusal": 33.333333333333336,
+              "failure.grounded_answer_failure": 0.0,
+              "failure.format_collapse": null,
+              "failure.prompt_injection_failure": null
+            },
+            "tool_enabled": {
+              "structural.nonempty": 100.0,
+              "structural.json_valid": null,
+              "structural.xml_valid": null,
+              "structural.schema_consistent": null,
+              "structural.tool_call_valid": 100.0,
+              "behavioral.task_completion": 33.333333333333336,
+              "behavioral.instruction_following": 33.333333333333336,
+              "behavioral.task_scoped_groundedness": 0.0,
+              "behavioral.cross_protocol_consistency": 0.0,
+              "behavioral.api_success": 100.0,
+              "behavioral.concise": 100.0,
+              "behavioral.latency_recorded": 100.0,
+              "behavioral.appropriate_tool_use": 33.333333333333336,
+              "failure.refusal": 0.0,
+              "failure.grounded_answer_failure": 100.0,
+              "failure.format_collapse": null,
+              "failure.prompt_injection_failure": null
+            }
+          }
+        },
+        "bridge_descriptor": {
+          "status": "behavioral_analogue",
+          "claim_note": "protocol transitions, not algebraic or commutator bridges",
+          "transitions": {
+            "schema_bridge": {
+              "from": "bare",
+              "to": "json_schema",
+              "observable": "structural.schema_consistent"
+            },
+            "few_shot_bridge": {
+              "from": "bare",
+              "to": "few_shot",
+              "observable": "behavioral.task_completion"
+            },
+            "tool_bridge": {
+              "from": "bare",
+              "to": "tool_enabled",
+              "observable": "structural.tool_call_valid"
+            }
+          }
+        },
+        "repair_descriptor": {
+          "meta/llama-3.1-8b-instruct": {
+            "schema_repair": 2,
+            "few_shot_repair": 0,
+            "tool_repair": 1
+          }
+        },
+        "wall_descriptor": {
+          "status": "not_computed",
+          "reason": "behavioral walls require an explicit parameterized probe path",
+          "trajectory_summary": {
+            "status": "discrete_protocol_comparison",
+            "protocols": [
+              "bare",
+              "concise",
+              "json_schema",
+              "xml_schema",
+              "few_shot",
+              "tool_enabled"
+            ]
+          }
+        },
+        "analogue_mapping": "Prompt protocols and task classes are probe descriptors, not orthogonal projectors on a declared finite complex space."
+      }
+    }
+  ],
+  "claims": [
+    {
+      "report_item_id": "report.claim-item.0000",
+      "source_output_item_id": "compiler.item.0000",
+      "claim_id": "claim.analogue",
+      "statement": "The source artifact supports a provenance-bound structurally analogous diagnostic under the declared mapping.",
+      "result_state": "OBSERVED",
+      "claim_status": "Computational Observation",
+      "claim_target": "representation_interface",
+      "certificate_class": null,
+      "classification_source": "migration_adapter",
+      "external_basis_refs": [
+        "basis.source.identity"
+      ],
+      "external_constraint_ids": [
+        "source-snapshot-pinned"
+      ],
+      "carrier_kinds": [
+        "analogue"
+      ],
+      "scope": "Descriptor-level Paper XII control nvidia_llama31_8b_20260711.sofreport.",
+      "negative_boundary": "Behavioral support, bridge, and repair descriptors do not reconstruct hidden operators or instantiate an SOF theorem."
+    }
+  ],
+  "degradation_items": [],
+  "failure_modes": [
+    "probe sectors are not projector-valued sectors",
+    "no access to weights, activations, or hidden mechanisms",
+    "behavioral and failure observables are evaluator- and task-scoped",
+    "API model versions and backend behavior may drift",
+    "provider rate limits or routing failures can make the audit inconclusive",
+    "protocol repair is not Lie-depth D-repair",
+    "Behavioral support, bridge, and repair descriptors do not reconstruct hidden operators or instantiate an SOF theorem."
+  ],
+  "provenance": {
+    "kind": "migration",
+    "source_artifact": {
+      "uri": "experiments/paper12/archive/results/nvidia_llama31_8b_20260711.sofreport",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "cac207fe3f63e3556b6235ee4b85dfce235f8e4258839e417a4a2cc6ae684332"
+      }
+    },
+    "source_sofrs_version": "1.0",
+    "migration_adapter_ref": {
+      "uri": "experiments/paper12/validation/migrate_sofrs_v1_to_v2.py",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "d0905b3647dddd67c30815f4062fdd0e4266e62c7fa5cde2e72f43840cab6252"
+      }
+    },
+    "migration_ruleset_version": "2.0",
+    "migration_receipt_ref": {
+      "uri": "schemas/sofrs/migration-receipt-v2.0.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "5b6f098b8b7657eed3810abccd2c2b99f96213739d9f2e03909e2023a4a168af"
+      }
+    },
+    "normalized_legacy_sentinels": [],
+    "semantic_normalizations": []
+  }
+}

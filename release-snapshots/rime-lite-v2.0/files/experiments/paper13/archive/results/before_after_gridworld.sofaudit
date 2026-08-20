@@ -1,0 +1,1174 @@
+{
+  "sofaudit_version": "1.0",
+  "report_type": "sofaudit",
+  "comparison_object": "SOFReportComparison",
+  "audit_id": "before_after_gridworld_obstacle",
+  "system": "GridWorld legitimate obstacle-relocation alignment",
+  "claim_status": "evidence",
+  "claim_note": "controlled legitimate reconfiguration; structural change with zero contract residual",
+  "regime": "A",
+  "failure_mode": "legitimate_transformation_control",
+  "reference": {
+    "report_id": "gridworld_obs22_before",
+    "artifact": "gridworld_obs22_before.sofreport",
+    "label": "obstacle=(2,2) before relocation"
+  },
+  "target": {
+    "report_id": "gridworld_obs00_after",
+    "artifact": "gridworld_obs00_after.sofreport",
+    "label": "obstacle=(0,0) transformed target"
+  },
+  "alignment": {
+    "sector_alignment": {
+      "kind": "identity",
+      "basis": "fixed 5x5 cell coordinates"
+    },
+    "observable_alignment": {
+      "kind": "identity_by_semantic_label",
+      "mapping": {
+        "N": "N",
+        "S": "S",
+        "E": "E",
+        "W": "W"
+      }
+    }
+  },
+  "comparison_specification": {
+    "specification_id": "paper13-coordinatewise-v1",
+    "normalization": {
+      "ordered_pairs": 600,
+      "action_opportunities": 2400,
+      "constraint_opportunities": 12,
+      "path_samples": 1
+    },
+    "metric": {
+      "signature": "coordinatewise mismatch records and counts",
+      "fixed_fiber_structural": "weighted Hamming when explicitly invoked"
+    },
+    "depth_semantics": "inherited from linked SOF Reports",
+    "thresholds": {
+      "source": "linked SOF Reports or coordinate defaults"
+    },
+    "parameter_synchronization": {
+      "mode": "index_aligned",
+      "path_samples": 1
+    },
+    "aggregation": {
+      "mode": "coordinatewise",
+      "scalarization": "none"
+    }
+  },
+  "signature": {
+    "support_mismatch": {
+      "extra_support": [
+        [
+          7,
+          12
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          12,
+          7
+        ],
+        [
+          12,
+          11
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          12,
+          17
+        ],
+        [
+          13,
+          12
+        ],
+        [
+          17,
+          12
+        ]
+      ],
+      "extra_count": 8,
+      "missing_support": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          5,
+          0
+        ]
+      ],
+      "missing_count": 4,
+      "total_mismatch": 12,
+      "ref_offdiag": 72,
+      "candidate_offdiag": 76
+    },
+    "bridge_word_mismatch": {
+      "extra_bridge": [
+        [
+          2,
+          12
+        ],
+        [
+          6,
+          12
+        ],
+        [
+          7,
+          17
+        ],
+        [
+          8,
+          12
+        ],
+        [
+          10,
+          12
+        ],
+        [
+          11,
+          13
+        ],
+        [
+          12,
+          2
+        ],
+        [
+          12,
+          6
+        ],
+        [
+          12,
+          8
+        ],
+        [
+          12,
+          10
+        ],
+        [
+          12,
+          14
+        ],
+        [
+          12,
+          16
+        ],
+        [
+          12,
+          18
+        ],
+        [
+          12,
+          22
+        ],
+        [
+          13,
+          11
+        ],
+        [
+          14,
+          12
+        ],
+        [
+          16,
+          12
+        ],
+        [
+          17,
+          7
+        ],
+        [
+          18,
+          12
+        ],
+        [
+          22,
+          12
+        ]
+      ],
+      "extra_count": 20,
+      "missing_bridge": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          10
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          10,
+          0
+        ]
+      ],
+      "missing_count": 6,
+      "total_mismatch": 26,
+      "ref_offdiag": 104,
+      "candidate_offdiag": 118
+    },
+    "bridge_lie_mismatch": {
+      "extra_bridge": [
+        [
+          1,
+          5
+        ],
+        [
+          5,
+          1
+        ]
+      ],
+      "extra_count": 2,
+      "missing_bridge": [
+        [
+          7,
+          11
+        ],
+        [
+          7,
+          13
+        ],
+        [
+          11,
+          7
+        ],
+        [
+          11,
+          17
+        ],
+        [
+          13,
+          7
+        ],
+        [
+          13,
+          17
+        ],
+        [
+          17,
+          11
+        ],
+        [
+          17,
+          13
+        ]
+      ],
+      "missing_count": 8,
+      "total_mismatch": 10,
+      "ref_offdiag": 8,
+      "candidate_offdiag": 2
+    },
+    "depth_distortion": {
+      "depth_distortions": [
+        [
+          2,
+          17,
+          5,
+          3
+        ],
+        [
+          2,
+          22,
+          6,
+          4
+        ],
+        [
+          7,
+          17,
+          4,
+          2
+        ],
+        [
+          7,
+          22,
+          5,
+          3
+        ],
+        [
+          10,
+          13,
+          5,
+          3
+        ],
+        [
+          10,
+          14,
+          6,
+          4
+        ],
+        [
+          11,
+          13,
+          4,
+          2
+        ],
+        [
+          11,
+          14,
+          5,
+          3
+        ],
+        [
+          13,
+          10,
+          5,
+          3
+        ],
+        [
+          13,
+          11,
+          4,
+          2
+        ],
+        [
+          14,
+          10,
+          6,
+          4
+        ],
+        [
+          14,
+          11,
+          5,
+          3
+        ],
+        [
+          17,
+          2,
+          5,
+          3
+        ],
+        [
+          17,
+          7,
+          4,
+          2
+        ],
+        [
+          22,
+          2,
+          6,
+          4
+        ],
+        [
+          22,
+          7,
+          5,
+          3
+        ]
+      ],
+      "distortion_count": 16,
+      "ref_frozen_candidate_not": [
+        [
+          1,
+          12,
+          3
+        ],
+        [
+          2,
+          12,
+          2
+        ],
+        [
+          3,
+          12,
+          3
+        ],
+        [
+          4,
+          12,
+          4
+        ],
+        [
+          5,
+          12,
+          3
+        ],
+        [
+          6,
+          12,
+          2
+        ],
+        [
+          7,
+          12,
+          1
+        ],
+        [
+          8,
+          12,
+          2
+        ],
+        [
+          9,
+          12,
+          3
+        ],
+        [
+          10,
+          12,
+          2
+        ],
+        [
+          11,
+          12,
+          1
+        ],
+        [
+          12,
+          1,
+          3
+        ],
+        [
+          12,
+          2,
+          2
+        ],
+        [
+          12,
+          3,
+          3
+        ],
+        [
+          12,
+          4,
+          4
+        ],
+        [
+          12,
+          5,
+          3
+        ],
+        [
+          12,
+          6,
+          2
+        ],
+        [
+          12,
+          7,
+          1
+        ],
+        [
+          12,
+          8,
+          2
+        ],
+        [
+          12,
+          9,
+          3
+        ],
+        [
+          12,
+          10,
+          2
+        ],
+        [
+          12,
+          11,
+          1
+        ],
+        [
+          12,
+          13,
+          1
+        ],
+        [
+          12,
+          14,
+          2
+        ],
+        [
+          12,
+          15,
+          3
+        ],
+        [
+          12,
+          16,
+          2
+        ],
+        [
+          12,
+          17,
+          1
+        ],
+        [
+          12,
+          18,
+          2
+        ],
+        [
+          12,
+          19,
+          3
+        ],
+        [
+          12,
+          20,
+          4
+        ],
+        [
+          12,
+          21,
+          3
+        ],
+        [
+          12,
+          22,
+          2
+        ],
+        [
+          12,
+          23,
+          3
+        ],
+        [
+          12,
+          24,
+          4
+        ],
+        [
+          13,
+          12,
+          1
+        ],
+        [
+          14,
+          12,
+          2
+        ],
+        [
+          15,
+          12,
+          3
+        ],
+        [
+          16,
+          12,
+          2
+        ],
+        [
+          17,
+          12,
+          1
+        ],
+        [
+          18,
+          12,
+          2
+        ],
+        [
+          19,
+          12,
+          3
+        ],
+        [
+          20,
+          12,
+          4
+        ],
+        [
+          21,
+          12,
+          3
+        ],
+        [
+          22,
+          12,
+          2
+        ],
+        [
+          23,
+          12,
+          3
+        ],
+        [
+          24,
+          12,
+          4
+        ]
+      ],
+      "ref_frozen_candidate_not_count": 46,
+      "candidate_frozen_ref_not": [
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          2,
+          2
+        ],
+        [
+          0,
+          3,
+          3
+        ],
+        [
+          0,
+          4,
+          4
+        ],
+        [
+          0,
+          5,
+          1
+        ],
+        [
+          0,
+          6,
+          2
+        ],
+        [
+          0,
+          7,
+          3
+        ],
+        [
+          0,
+          8,
+          4
+        ],
+        [
+          0,
+          9,
+          5
+        ],
+        [
+          0,
+          10,
+          2
+        ],
+        [
+          0,
+          11,
+          3
+        ],
+        [
+          0,
+          13,
+          5
+        ],
+        [
+          0,
+          14,
+          6
+        ],
+        [
+          0,
+          15,
+          3
+        ],
+        [
+          0,
+          16,
+          4
+        ],
+        [
+          0,
+          17,
+          5
+        ],
+        [
+          0,
+          18,
+          6
+        ],
+        [
+          0,
+          20,
+          4
+        ],
+        [
+          0,
+          21,
+          5
+        ],
+        [
+          0,
+          22,
+          6
+        ],
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          2,
+          0,
+          2
+        ],
+        [
+          3,
+          0,
+          3
+        ],
+        [
+          4,
+          0,
+          4
+        ],
+        [
+          5,
+          0,
+          1
+        ],
+        [
+          6,
+          0,
+          2
+        ],
+        [
+          7,
+          0,
+          3
+        ],
+        [
+          8,
+          0,
+          4
+        ],
+        [
+          9,
+          0,
+          5
+        ],
+        [
+          10,
+          0,
+          2
+        ],
+        [
+          11,
+          0,
+          3
+        ],
+        [
+          13,
+          0,
+          5
+        ],
+        [
+          14,
+          0,
+          6
+        ],
+        [
+          15,
+          0,
+          3
+        ],
+        [
+          16,
+          0,
+          4
+        ],
+        [
+          17,
+          0,
+          5
+        ],
+        [
+          18,
+          0,
+          6
+        ],
+        [
+          20,
+          0,
+          4
+        ],
+        [
+          21,
+          0,
+          5
+        ],
+        [
+          22,
+          0,
+          6
+        ]
+      ],
+      "candidate_frozen_ref_not_count": 40,
+      "total_mismatch": 102
+    },
+    "frozen_disagreement": {
+      "frozen_R1": {
+        "ref": 528,
+        "candidate": 524,
+        "delta": -4
+      },
+      "frozen_D_word": {
+        "ref": 68,
+        "candidate": 62,
+        "delta": -6
+      },
+      "frozen_D_lie": {
+        "ref": 184,
+        "candidate": 416,
+        "delta": 232
+      }
+    },
+    "constraint_violations": {
+      "violations": [],
+      "count": 0
+    },
+    "action_response_failure": {
+      "per_action_deltas": {
+        "N": [
+          {
+            "pair": [
+              0,
+              5
+            ],
+            "ref": 0.5,
+            "candidate": 0.0,
+            "delta": 0.5
+          },
+          {
+            "pair": [
+              5,
+              0
+            ],
+            "ref": 0.5,
+            "candidate": 0.0,
+            "delta": 0.5
+          },
+          {
+            "pair": [
+              7,
+              12
+            ],
+            "ref": 0.0,
+            "candidate": 0.5,
+            "delta": 0.5
+          },
+          {
+            "pair": [
+              12,
+              7
+            ],
+            "ref": 0.0,
+            "candidate": 0.5,
+            "delta": 0.5
+          },
+          {
+            "pair": [
+              12,
+              17
+            ],
+            "ref": 0.0,
+            "candidate": 0.5,
+            "delta": 0.5
+          },
+          {
+            "pair": [
+              17,
+              12
+            ],
+            "ref": 0.0,
+            "candidate": 0.5,
+            "delta": 0.5
+          }
+        ],
+        "S": [
+          {
+            "pair": [
+              0,
+              5
+            ],
+            "ref": 0.5,
+            "candidate": 0.0,
+            "delta": 0.5
+          },
+          {
+            "pair": [
+              5,
+              0
+            ],
+            "ref": 0.5,
+            "candidate": 0.0,
+            "delta": 0.5
+          },
+          {
+            "pair": [
+              7,
+              12
+            ],
+            "ref": 0.0,
+            "candidate": 0.5,
+            "delta": 0.5
+          },
+          {
+            "pair": [
+              12,
+              7
+            ],
+            "ref": 0.0,
+            "candidate": 0.5,
+            "delta": 0.5
+          },
+          {
+            "pair": [
+              12,
+              17
+            ],
+            "ref": 0.0,
+            "candidate": 0.5,
+            "delta": 0.5
+          },
+          {
+            "pair": [
+              17,
+              12
+            ],
+            "ref": 0.0,
+            "candidate": 0.5,
+            "delta": 0.5
+          }
+        ],
+        "E": [
+          {
+            "pair": [
+              0,
+              1
+            ],
+            "ref": 0.5,
+            "candidate": 0.0,
+            "delta": 0.5
+          },
+          {
+            "pair": [
+              1,
+              0
+            ],
+            "ref": 0.5,
+            "candidate": 0.0,
+            "delta": 0.5
+          },
+          {
+            "pair": [
+              11,
+              12
+            ],
+            "ref": 0.0,
+            "candidate": 0.5,
+            "delta": 0.5
+          },
+          {
+            "pair": [
+              12,
+              11
+            ],
+            "ref": 0.0,
+            "candidate": 0.5,
+            "delta": 0.5
+          },
+          {
+            "pair": [
+              12,
+              13
+            ],
+            "ref": 0.0,
+            "candidate": 0.5,
+            "delta": 0.5
+          },
+          {
+            "pair": [
+              13,
+              12
+            ],
+            "ref": 0.0,
+            "candidate": 0.5,
+            "delta": 0.5
+          }
+        ],
+        "W": [
+          {
+            "pair": [
+              0,
+              1
+            ],
+            "ref": 0.5,
+            "candidate": 0.0,
+            "delta": 0.5
+          },
+          {
+            "pair": [
+              1,
+              0
+            ],
+            "ref": 0.5,
+            "candidate": 0.0,
+            "delta": 0.5
+          },
+          {
+            "pair": [
+              11,
+              12
+            ],
+            "ref": 0.0,
+            "candidate": 0.5,
+            "delta": 0.5
+          },
+          {
+            "pair": [
+              12,
+              11
+            ],
+            "ref": 0.0,
+            "candidate": 0.5,
+            "delta": 0.5
+          },
+          {
+            "pair": [
+              12,
+              13
+            ],
+            "ref": 0.0,
+            "candidate": 0.5,
+            "delta": 0.5
+          },
+          {
+            "pair": [
+              13,
+              12
+            ],
+            "ref": 0.0,
+            "candidate": 0.5,
+            "delta": 0.5
+          }
+        ]
+      },
+      "total_large_deltas": 24,
+      "action_aliasing": []
+    },
+    "wall_record_mismatch": null
+  },
+  "failure_modes": [
+    "legitimacy is relative to the declared transformation contract",
+    "single before/after comparison is not a sampled wall-evolution law"
+  ],
+  "comparison_role": "legitimate_transformation_control",
+  "transformation_contract": {
+    "contract_id": "gridworld-obstacle-relocation-v1",
+    "intent": "relocate the single absorbing obstacle from (2,2) to (0,0)",
+    "allowed_changes": [
+      "transitions incident to the old obstacle sector",
+      "transitions incident to the new obstacle sector"
+    ],
+    "preserved_invariants": [
+      "5x5 cell sectorization",
+      "action labels N, S, E, W",
+      "all transitions outside the old/new obstacle incidence neighborhoods"
+    ],
+    "required_postconditions": [
+      "exactly one absorbing obstacle at (0,0)"
+    ],
+    "boundary": "controlled reconfiguration, not a path-planning optimality claim"
+  },
+  "contract_evaluation": {
+    "status": "conforming",
+    "residual_violation_count": 0,
+    "residual_violations": [],
+    "observed_changed_transitions": [
+      {
+        "observable": "E",
+        "source": "cell(0,0)",
+        "target": "cell(0,1)"
+      },
+      {
+        "observable": "E",
+        "source": "cell(2,1)",
+        "target": "cell(2,2)"
+      },
+      {
+        "observable": "E",
+        "source": "cell(2,2)",
+        "target": "cell(2,3)"
+      },
+      {
+        "observable": "N",
+        "source": "cell(1,0)",
+        "target": "cell(0,0)"
+      },
+      {
+        "observable": "N",
+        "source": "cell(2,2)",
+        "target": "cell(1,2)"
+      },
+      {
+        "observable": "N",
+        "source": "cell(3,2)",
+        "target": "cell(2,2)"
+      },
+      {
+        "observable": "S",
+        "source": "cell(0,0)",
+        "target": "cell(1,0)"
+      },
+      {
+        "observable": "S",
+        "source": "cell(1,2)",
+        "target": "cell(2,2)"
+      },
+      {
+        "observable": "S",
+        "source": "cell(2,2)",
+        "target": "cell(3,2)"
+      },
+      {
+        "observable": "W",
+        "source": "cell(0,1)",
+        "target": "cell(0,0)"
+      },
+      {
+        "observable": "W",
+        "source": "cell(2,2)",
+        "target": "cell(2,1)"
+      },
+      {
+        "observable": "W",
+        "source": "cell(2,3)",
+        "target": "cell(2,2)"
+      }
+    ],
+    "raw_change_summary": {
+      "support_mismatch": 12,
+      "bridge_word_mismatch": 26,
+      "bridge_lie_mismatch": 10,
+      "depth_distortion": 102,
+      "action_response_changes": 24
+    }
+  }
+}

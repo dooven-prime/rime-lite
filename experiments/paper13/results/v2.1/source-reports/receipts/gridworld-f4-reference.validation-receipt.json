@@ -1,0 +1,306 @@
+{
+  "receipt_version": "2.1",
+  "artifact_type": "sofrs_report_validation_receipt",
+  "receipt_kind": "SOFRS_VALIDATION_RECEIPT",
+  "receipt_scope": "SOFRS_PROTOCOL_CONFORMANCE_ONLY",
+  "receipt_id": "receipt.gridworld-f4-reference-native-v2.sofrs-v2_1",
+  "report": {
+    "report_id": "gridworld-f4-reference-native-v2",
+    "sofrs_version": "2.1",
+    "record_kind": "strict_sof",
+    "artifact": {
+      "uri": "experiments/paper13/results/v2.1/source-reports/reports/gridworld-f4-reference.sofreport.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "4fbc1b609006ac1c8f92c1595434253eb1f3751dc11f4971c2e51f265e45cbef"
+      }
+    }
+  },
+  "validator": {
+    "validator_id": "sofrs.report-validator.v2_1",
+    "validator_version": "2.1",
+    "implementation": {
+      "uri": "experiments/paper12/validation/validate_sofrs_v2_1.py",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "bd4a49eac44659c6f07e17899ebc72964f23fa7509a702107eca5ace769c7c4e"
+      }
+    },
+    "report_contract": {
+      "uri": "schemas/sofrs/v2.1.schema.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "cb7803deff08d7f93e36d2d1157e2bcf9563048ccf5ee28fd9a16d82cb1993da"
+      }
+    },
+    "receipt_contract": {
+      "uri": "schemas/sofrs/report-validation-receipt-v2.1.schema.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "defd2bcaaac9d5f1a1ff2907494b35dfb853ca729244dced733a6329e69f6820"
+      }
+    }
+  },
+  "generation": {
+    "kind": "migration",
+    "class": "boundary_annotation",
+    "source_version": "2.0",
+    "source_artifact": {
+      "uri": "experiments/paper13/results/native/gridworld-f4/source-reports/reports/gridworld-f4-reference.sofreport.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "936c15d26052d110474a0e157ec7e5b9037b7c80f3671914ed5e5f8656ab1e0f"
+      }
+    },
+    "source_validation_receipt": {
+      "uri": "experiments/paper13/results/native/gridworld-f4/source-reports/receipts/gridworld-f4-reference.validation-receipt.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "ec695e60d4f4c59d68068090028c6d1997cb41d1cbf727941a088827640f6ed2"
+      }
+    },
+    "implementation": {
+      "uri": "experiments/paper12/validation/migrate_sofrs_v2_to_v2_1.py",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "b800f6f0362e98cf24b4c81e1faaa54714fac7e814fb7dcb9c522cd0a2ebecb4"
+      }
+    }
+  },
+  "artifact_closure": {
+    "artifact_count": 18,
+    "ordered_artifacts": [
+      {
+        "role": "report",
+        "artifact": {
+          "uri": "experiments/paper13/results/v2.1/source-reports/reports/gridworld-f4-reference.sofreport.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "4fbc1b609006ac1c8f92c1595434253eb1f3751dc11f4971c2e51f265e45cbef"
+          }
+        }
+      },
+      {
+        "role": "revision-source-report-v2.0",
+        "artifact": {
+          "uri": "experiments/paper13/results/native/gridworld-f4/source-reports/reports/gridworld-f4-reference.sofreport.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "936c15d26052d110474a0e157ec7e5b9037b7c80f3671914ed5e5f8656ab1e0f"
+          }
+        }
+      },
+      {
+        "role": "source-validation-receipt-v2.0",
+        "artifact": {
+          "uri": "experiments/paper13/results/native/gridworld-f4/source-reports/receipts/gridworld-f4-reference.validation-receipt.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "ec695e60d4f4c59d68068090028c6d1997cb41d1cbf727941a088827640f6ed2"
+          }
+        }
+      },
+      {
+        "role": "migration-implementation",
+        "artifact": {
+          "uri": "experiments/paper12/validation/migrate_sofrs_v2_to_v2_1.py",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "b800f6f0362e98cf24b4c81e1faaa54714fac7e814fb7dcb9c522cd0a2ebecb4"
+          }
+        }
+      },
+      {
+        "role": "legacy-v2-validator",
+        "artifact": {
+          "uri": "experiments/paper12/validation/validate_sofrs_v2.py",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "e3b21ed183acd489a4d925c4cd8ec127121c70ba3b10f0e13689baa47900173f"
+          }
+        }
+      },
+      {
+        "role": "legacy-v2-report-contract",
+        "artifact": {
+          "uri": "schemas/sofrs/v2.0.schema.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "8a751bd62a2746b334c81a394e6dce1cb1a9251c978aa723aef69c602dce098e"
+          }
+        }
+      },
+      {
+        "role": "legacy-v2-receipt-contract",
+        "artifact": {
+          "uri": "schemas/sofrs/report-validation-receipt-v2.0.schema.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "84254cf908ce21a5d8ab6267e7e5c9a0b06bca3aa8caaa9246e1f9b492855647"
+          }
+        }
+      },
+      {
+        "role": "v2-receipt-api",
+        "artifact": {
+          "uri": "schemas/sofrs/api.py",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "5f4e7f5e55944aa826a8c1977f501452f0680b4b9adec22f9e8ae16bed249e78"
+          }
+        }
+      },
+      {
+        "role": "boundary-helper",
+        "artifact": {
+          "uri": "schemas/non_intervention.py",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "0e161d1450b310ac099ed62a7ad2914110a403a9bdd2aa37ec1d2b1a8335c857"
+          }
+        }
+      },
+      {
+        "role": "report-contract",
+        "artifact": {
+          "uri": "schemas/sofrs/v2.1.schema.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "cb7803deff08d7f93e36d2d1157e2bcf9563048ccf5ee28fd9a16d82cb1993da"
+          }
+        }
+      },
+      {
+        "role": "capability-manifest",
+        "artifact": {
+          "uri": "experiments/paper13/results/native/gridworld-f4/source-reports/manifests/gridworld-f4-reference.capabilities.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "0a8a9b27c64ccddf0700fe857dbf4bc1bb4ce66e573ebd7a0839f677e55e226a"
+          }
+        }
+      },
+      {
+        "role": "typed-sof-ir",
+        "artifact": {
+          "uri": "experiments/paper13/results/native/gridworld-f4/source-reports/ir/gridworld-f4-reference.ir.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "e5d7fadce19bc1bb2afe44bd2dacb07adbe184e1cbbda9459a36278e885c2da8"
+          }
+        }
+      },
+      {
+        "role": "compiler-profile",
+        "artifact": {
+          "uri": "schemas/sofrs/paper12-strict-compiler-profile-v1.0.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "c80d1d963740a125ec8c0d1338a1d04084095f1d0aa55f708336c5e7a1fbc792"
+          }
+        }
+      },
+      {
+        "role": "compiler-output",
+        "artifact": {
+          "uri": "experiments/paper13/results/native/gridworld-f4/source-reports/compiler-output/gridworld-f4-reference.compiler-output.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "e5f1a1f7199c0ebf16d3161ee33619db278c63b7adee5080bd0af96bff09cc2d"
+          }
+        }
+      },
+      {
+        "role": "assembly-profile",
+        "artifact": {
+          "uri": "schemas/sofrs/paper12-strict-assembly-profile-v2.0.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "61840c7f29bd62e8ede194c87069aa1b9dc488f4cc93310ba02588468fbae4f1"
+          }
+        }
+      },
+      {
+        "role": "assembly-implementation",
+        "artifact": {
+          "uri": "experiments/paper13/validation/gridworld_f4_native_v2.py",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "d97955cbdfae68b872a7b9a88da4f30aa26c742f230dc08960101f7ee392e194"
+          }
+        }
+      },
+      {
+        "role": "validator-implementation",
+        "artifact": {
+          "uri": "experiments/paper12/validation/validate_sofrs_v2_1.py",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "bd4a49eac44659c6f07e17899ebc72964f23fa7509a702107eca5ace769c7c4e"
+          }
+        }
+      },
+      {
+        "role": "validation-receipt-contract",
+        "artifact": {
+          "uri": "schemas/sofrs/report-validation-receipt-v2.1.schema.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "defd2bcaaac9d5f1a1ff2907494b35dfb853ca729244dced733a6329e69f6820"
+          }
+        }
+      }
+    ],
+    "closure_digest": {
+      "algorithm": "sha256",
+      "value": "ff1848b66f9511e5b2f559de2d1d7d5f493d17cc2c51c7e8fb9683a40cd29f7a"
+    }
+  },
+  "status": "PASS",
+  "checks": [
+    {
+      "check_id": "artifact-closure",
+      "status": "PASS"
+    },
+    {
+      "check_id": "assembly-faithfulness",
+      "status": "PASS"
+    },
+    {
+      "check_id": "claim-compatibility",
+      "status": "PASS"
+    },
+    {
+      "check_id": "degradation-semantics",
+      "status": "PASS"
+    },
+    {
+      "check_id": "explicit-v2.0-to-v2.1-migration",
+      "status": "PASS"
+    },
+    {
+      "check_id": "forbidden-semantic-role-scan",
+      "status": "PASS"
+    },
+    {
+      "check_id": "report-non-intervention",
+      "status": "PASS"
+    },
+    {
+      "check_id": "schema-validation",
+      "status": "PASS"
+    },
+    {
+      "check_id": "v2.0-source-validation",
+      "status": "PASS"
+    }
+  ],
+  "object_transition_boundary": {
+    "intervention_semantics": "NONE",
+    "source_state_transition_authority": "NONE",
+    "implementation_purity_status": "NOT_ESTABLISHED_BY_SOFRS"
+  },
+  "negative_boundaries": [
+    "This receipt establishes SOFRS protocol conformance only; it neither induces nor authorizes an object-state transition, and it does not establish implementation purity."
+  ]
+}

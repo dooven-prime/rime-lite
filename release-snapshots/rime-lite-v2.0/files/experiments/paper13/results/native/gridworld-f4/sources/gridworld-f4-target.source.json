@@ -1,0 +1,552 @@
+{
+  "source_version": "1.0",
+  "source_id": "gridworld-f4-target",
+  "domain": "finite deterministic GridWorld",
+  "dimension": 25,
+  "sector_labels": [
+    "cell-0",
+    "cell-1",
+    "cell-2",
+    "cell-3",
+    "cell-4",
+    "cell-5",
+    "cell-6",
+    "cell-7",
+    "cell-8",
+    "cell-9",
+    "cell-10",
+    "cell-11",
+    "cell-12",
+    "cell-13",
+    "cell-14",
+    "cell-15",
+    "cell-16",
+    "cell-17",
+    "cell-18",
+    "cell-19",
+    "cell-20",
+    "cell-21",
+    "cell-22",
+    "cell-23",
+    "cell-24"
+  ],
+  "observable_labels": [
+    "N",
+    "S",
+    "E",
+    "W"
+  ],
+  "matrix_convention": "T[row,column] maps source column to target row",
+  "generator_convention": "X=(T-T^T)/2",
+  "threshold": 1e-08,
+  "action_matrices": {
+    "N": [
+      {
+        "row": 0,
+        "column": 0,
+        "value": 1.0
+      },
+      {
+        "row": 0,
+        "column": 5,
+        "value": 1.0
+      },
+      {
+        "row": 1,
+        "column": 1,
+        "value": 1.0
+      },
+      {
+        "row": 1,
+        "column": 6,
+        "value": 1.0
+      },
+      {
+        "row": 2,
+        "column": 2,
+        "value": 1.0
+      },
+      {
+        "row": 2,
+        "column": 7,
+        "value": 1.0
+      },
+      {
+        "row": 3,
+        "column": 3,
+        "value": 1.0
+      },
+      {
+        "row": 3,
+        "column": 8,
+        "value": 1.0
+      },
+      {
+        "row": 4,
+        "column": 4,
+        "value": 1.0
+      },
+      {
+        "row": 4,
+        "column": 9,
+        "value": 1.0
+      },
+      {
+        "row": 5,
+        "column": 10,
+        "value": 1.0
+      },
+      {
+        "row": 6,
+        "column": 11,
+        "value": 1.0
+      },
+      {
+        "row": 8,
+        "column": 13,
+        "value": 1.0
+      },
+      {
+        "row": 9,
+        "column": 14,
+        "value": 1.0
+      },
+      {
+        "row": 10,
+        "column": 15,
+        "value": 1.0
+      },
+      {
+        "row": 11,
+        "column": 16,
+        "value": 1.0
+      },
+      {
+        "row": 12,
+        "column": 12,
+        "value": 1.0
+      },
+      {
+        "row": 13,
+        "column": 18,
+        "value": 1.0
+      },
+      {
+        "row": 14,
+        "column": 19,
+        "value": 1.0
+      },
+      {
+        "row": 15,
+        "column": 20,
+        "value": 1.0
+      },
+      {
+        "row": 16,
+        "column": 21,
+        "value": 1.0
+      },
+      {
+        "row": 17,
+        "column": 17,
+        "value": 1.0
+      },
+      {
+        "row": 17,
+        "column": 22,
+        "value": 1.0
+      },
+      {
+        "row": 18,
+        "column": 23,
+        "value": 1.0
+      },
+      {
+        "row": 19,
+        "column": 24,
+        "value": 1.0
+      }
+    ],
+    "S": [
+      {
+        "row": 5,
+        "column": 0,
+        "value": 1.0
+      },
+      {
+        "row": 6,
+        "column": 1,
+        "value": 1.0
+      },
+      {
+        "row": 7,
+        "column": 2,
+        "value": 1.0
+      },
+      {
+        "row": 7,
+        "column": 7,
+        "value": 1.0
+      },
+      {
+        "row": 8,
+        "column": 3,
+        "value": 1.0
+      },
+      {
+        "row": 9,
+        "column": 4,
+        "value": 1.0
+      },
+      {
+        "row": 10,
+        "column": 5,
+        "value": 1.0
+      },
+      {
+        "row": 11,
+        "column": 6,
+        "value": 1.0
+      },
+      {
+        "row": 12,
+        "column": 12,
+        "value": 1.0
+      },
+      {
+        "row": 13,
+        "column": 8,
+        "value": 1.0
+      },
+      {
+        "row": 14,
+        "column": 9,
+        "value": 1.0
+      },
+      {
+        "row": 15,
+        "column": 10,
+        "value": 1.0
+      },
+      {
+        "row": 16,
+        "column": 11,
+        "value": 1.0
+      },
+      {
+        "row": 18,
+        "column": 13,
+        "value": 1.0
+      },
+      {
+        "row": 19,
+        "column": 14,
+        "value": 1.0
+      },
+      {
+        "row": 20,
+        "column": 15,
+        "value": 1.0
+      },
+      {
+        "row": 20,
+        "column": 20,
+        "value": 1.0
+      },
+      {
+        "row": 21,
+        "column": 16,
+        "value": 1.0
+      },
+      {
+        "row": 21,
+        "column": 21,
+        "value": 1.0
+      },
+      {
+        "row": 22,
+        "column": 17,
+        "value": 1.0
+      },
+      {
+        "row": 22,
+        "column": 22,
+        "value": 1.0
+      },
+      {
+        "row": 23,
+        "column": 18,
+        "value": 1.0
+      },
+      {
+        "row": 23,
+        "column": 23,
+        "value": 1.0
+      },
+      {
+        "row": 24,
+        "column": 19,
+        "value": 1.0
+      },
+      {
+        "row": 24,
+        "column": 24,
+        "value": 1.0
+      }
+    ],
+    "E": [
+      {
+        "row": 0,
+        "column": 0,
+        "value": 1.0
+      },
+      {
+        "row": 2,
+        "column": 1,
+        "value": 1.0
+      },
+      {
+        "row": 3,
+        "column": 2,
+        "value": 1.0
+      },
+      {
+        "row": 4,
+        "column": 3,
+        "value": 1.0
+      },
+      {
+        "row": 4,
+        "column": 4,
+        "value": 1.0
+      },
+      {
+        "row": 5,
+        "column": 5,
+        "value": 1.0
+      },
+      {
+        "row": 7,
+        "column": 6,
+        "value": 1.0
+      },
+      {
+        "row": 8,
+        "column": 7,
+        "value": 1.0
+      },
+      {
+        "row": 9,
+        "column": 8,
+        "value": 1.0
+      },
+      {
+        "row": 9,
+        "column": 9,
+        "value": 1.0
+      },
+      {
+        "row": 10,
+        "column": 10,
+        "value": 1.0
+      },
+      {
+        "row": 11,
+        "column": 11,
+        "value": 1.0
+      },
+      {
+        "row": 12,
+        "column": 12,
+        "value": 1.0
+      },
+      {
+        "row": 14,
+        "column": 13,
+        "value": 1.0
+      },
+      {
+        "row": 14,
+        "column": 14,
+        "value": 1.0
+      },
+      {
+        "row": 15,
+        "column": 15,
+        "value": 1.0
+      },
+      {
+        "row": 17,
+        "column": 16,
+        "value": 1.0
+      },
+      {
+        "row": 18,
+        "column": 17,
+        "value": 1.0
+      },
+      {
+        "row": 19,
+        "column": 18,
+        "value": 1.0
+      },
+      {
+        "row": 19,
+        "column": 19,
+        "value": 1.0
+      },
+      {
+        "row": 20,
+        "column": 20,
+        "value": 1.0
+      },
+      {
+        "row": 22,
+        "column": 21,
+        "value": 1.0
+      },
+      {
+        "row": 23,
+        "column": 22,
+        "value": 1.0
+      },
+      {
+        "row": 24,
+        "column": 23,
+        "value": 1.0
+      },
+      {
+        "row": 24,
+        "column": 24,
+        "value": 1.0
+      }
+    ],
+    "W": [
+      {
+        "row": 0,
+        "column": 0,
+        "value": 1.0
+      },
+      {
+        "row": 0,
+        "column": 1,
+        "value": 1.0
+      },
+      {
+        "row": 1,
+        "column": 2,
+        "value": 1.0
+      },
+      {
+        "row": 2,
+        "column": 3,
+        "value": 1.0
+      },
+      {
+        "row": 3,
+        "column": 4,
+        "value": 1.0
+      },
+      {
+        "row": 5,
+        "column": 5,
+        "value": 1.0
+      },
+      {
+        "row": 5,
+        "column": 6,
+        "value": 1.0
+      },
+      {
+        "row": 6,
+        "column": 7,
+        "value": 1.0
+      },
+      {
+        "row": 7,
+        "column": 8,
+        "value": 1.0
+      },
+      {
+        "row": 8,
+        "column": 9,
+        "value": 1.0
+      },
+      {
+        "row": 10,
+        "column": 10,
+        "value": 1.0
+      },
+      {
+        "row": 10,
+        "column": 11,
+        "value": 1.0
+      },
+      {
+        "row": 12,
+        "column": 12,
+        "value": 1.0
+      },
+      {
+        "row": 13,
+        "column": 13,
+        "value": 1.0
+      },
+      {
+        "row": 13,
+        "column": 14,
+        "value": 1.0
+      },
+      {
+        "row": 15,
+        "column": 15,
+        "value": 1.0
+      },
+      {
+        "row": 15,
+        "column": 16,
+        "value": 1.0
+      },
+      {
+        "row": 16,
+        "column": 17,
+        "value": 1.0
+      },
+      {
+        "row": 17,
+        "column": 18,
+        "value": 1.0
+      },
+      {
+        "row": 18,
+        "column": 19,
+        "value": 1.0
+      },
+      {
+        "row": 20,
+        "column": 20,
+        "value": 1.0
+      },
+      {
+        "row": 20,
+        "column": 21,
+        "value": 1.0
+      },
+      {
+        "row": 21,
+        "column": 22,
+        "value": 1.0
+      },
+      {
+        "row": 22,
+        "column": 23,
+        "value": 1.0
+      },
+      {
+        "row": 23,
+        "column": 24,
+        "value": 1.0
+      }
+    ]
+  }
+}

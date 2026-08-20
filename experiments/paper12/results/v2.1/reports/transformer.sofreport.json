@@ -502,7 +502,7 @@
       "uri": "experiments/paper12/validation/migrate_sofrs_v2_to_v2_1.py",
       "digest": {
         "algorithm": "sha256",
-        "value": "0c6eec82b760b1173bf9b494c77365ce607edf4228a36938a6583b720c995b46"
+        "value": "b800f6f0362e98cf24b4c81e1faaa54714fac7e814fb7dcb9c522cd0a2ebecb4"
       }
     }
   },

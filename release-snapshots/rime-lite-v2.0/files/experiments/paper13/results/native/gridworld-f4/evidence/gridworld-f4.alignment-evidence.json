@@ -1,0 +1,132 @@
+{
+  "alignment_version": "1.0",
+  "alignment_id": "paper13.gridworld-f4.identity",
+  "sector_pairs": [
+    [
+      "cell-0",
+      "cell-0"
+    ],
+    [
+      "cell-1",
+      "cell-1"
+    ],
+    [
+      "cell-2",
+      "cell-2"
+    ],
+    [
+      "cell-3",
+      "cell-3"
+    ],
+    [
+      "cell-4",
+      "cell-4"
+    ],
+    [
+      "cell-5",
+      "cell-5"
+    ],
+    [
+      "cell-6",
+      "cell-6"
+    ],
+    [
+      "cell-7",
+      "cell-7"
+    ],
+    [
+      "cell-8",
+      "cell-8"
+    ],
+    [
+      "cell-9",
+      "cell-9"
+    ],
+    [
+      "cell-10",
+      "cell-10"
+    ],
+    [
+      "cell-11",
+      "cell-11"
+    ],
+    [
+      "cell-12",
+      "cell-12"
+    ],
+    [
+      "cell-13",
+      "cell-13"
+    ],
+    [
+      "cell-14",
+      "cell-14"
+    ],
+    [
+      "cell-15",
+      "cell-15"
+    ],
+    [
+      "cell-16",
+      "cell-16"
+    ],
+    [
+      "cell-17",
+      "cell-17"
+    ],
+    [
+      "cell-18",
+      "cell-18"
+    ],
+    [
+      "cell-19",
+      "cell-19"
+    ],
+    [
+      "cell-20",
+      "cell-20"
+    ],
+    [
+      "cell-21",
+      "cell-21"
+    ],
+    [
+      "cell-22",
+      "cell-22"
+    ],
+    [
+      "cell-23",
+      "cell-23"
+    ],
+    [
+      "cell-24",
+      "cell-24"
+    ]
+  ],
+  "observable_pairs": [
+    [
+      "N",
+      "N"
+    ],
+    [
+      "S",
+      "S"
+    ],
+    [
+      "E",
+      "E"
+    ],
+    [
+      "W",
+      "W"
+    ]
+  ],
+  "policy": {
+    "generator_convention": "X=(T-T^T)/2",
+    "threshold": 1e-08
+  },
+  "status": "PASS",
+  "negative_boundary": [
+    "Identity alignment applies only to this shared retained frame."
+  ]
+}

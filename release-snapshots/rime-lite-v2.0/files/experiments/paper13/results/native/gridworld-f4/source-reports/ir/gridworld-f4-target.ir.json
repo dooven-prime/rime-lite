@@ -1,0 +1,2165 @@
+{
+  "ir_version": "1.0",
+  "record_id": "paper13.gridworld-f4.target.native-v2",
+  "record_kind": "strict_sof",
+  "manifest_ref": {
+    "manifest_id": "paper13.gridworld-f4.target.native-v2",
+    "manifest_version": "1.0",
+    "artifact_id": "artifact.manifest",
+    "digest": {
+      "algorithm": "sha256",
+      "value": "80fa32d16440e6bf70ece8833affb9dd2b3121bb40387778edf20d04182b6621"
+    }
+  },
+  "source": {
+    "adapter_id": "paper13.gridworld-native-v2",
+    "adapter_version": "2.0",
+    "source_id": "gridworld-f4-target",
+    "artifact_ids": [
+      "artifact.raw-source",
+      "artifact.adapter",
+      "artifact.structure"
+    ]
+  },
+  "objects": [
+    {
+      "id": "space.v",
+      "kind": "finite_space",
+      "label": "V=C^25",
+      "provenance_artifact_ids": [
+        "artifact.raw-source"
+      ],
+      "data": {
+        "dimension": 25,
+        "scalar_field": "complex"
+      }
+    },
+    {
+      "id": "sectorization.q",
+      "kind": "sectorization",
+      "label": "25 coordinate sectors",
+      "carrier_id": "carrier.sector",
+      "provenance_artifact_ids": [
+        "artifact.raw-source",
+        "artifact.structure"
+      ],
+      "data": {
+        "labels": [
+          "cell-0",
+          "cell-1",
+          "cell-2",
+          "cell-3",
+          "cell-4",
+          "cell-5",
+          "cell-6",
+          "cell-7",
+          "cell-8",
+          "cell-9",
+          "cell-10",
+          "cell-11",
+          "cell-12",
+          "cell-13",
+          "cell-14",
+          "cell-15",
+          "cell-16",
+          "cell-17",
+          "cell-18",
+          "cell-19",
+          "cell-20",
+          "cell-21",
+          "cell-22",
+          "cell-23",
+          "cell-24"
+        ],
+        "complete": true
+      }
+    },
+    {
+      "id": "alphabet.y",
+      "kind": "labelled_alphabet",
+      "label": "Y={N,S,E,W}",
+      "carrier_id": "carrier.operator",
+      "provenance_artifact_ids": [
+        "artifact.raw-source"
+      ],
+      "data": {
+        "labels": [
+          "N",
+          "S",
+          "E",
+          "W"
+        ],
+        "generator_convention": "(T-T^T)/2"
+      }
+    },
+    {
+      "id": "shadow.r1",
+      "kind": "support_shadow",
+      "label": "Direct support",
+      "carrier_id": "carrier.operator",
+      "provenance_artifact_ids": [
+        "artifact.raw-source"
+      ],
+      "data": {
+        "pairs": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            9
+          ],
+          [
+            5,
+            0
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            5,
+            10
+          ],
+          [
+            6,
+            1
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            6,
+            11
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            7,
+            6
+          ],
+          [
+            7,
+            8
+          ],
+          [
+            8,
+            3
+          ],
+          [
+            8,
+            7
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            8,
+            13
+          ],
+          [
+            9,
+            4
+          ],
+          [
+            9,
+            8
+          ],
+          [
+            9,
+            14
+          ],
+          [
+            10,
+            5
+          ],
+          [
+            10,
+            11
+          ],
+          [
+            10,
+            15
+          ],
+          [
+            11,
+            6
+          ],
+          [
+            11,
+            10
+          ],
+          [
+            11,
+            16
+          ],
+          [
+            13,
+            8
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            13,
+            18
+          ],
+          [
+            14,
+            9
+          ],
+          [
+            14,
+            13
+          ],
+          [
+            14,
+            19
+          ],
+          [
+            15,
+            10
+          ],
+          [
+            15,
+            16
+          ],
+          [
+            15,
+            20
+          ],
+          [
+            16,
+            11
+          ],
+          [
+            16,
+            15
+          ],
+          [
+            16,
+            17
+          ],
+          [
+            16,
+            21
+          ],
+          [
+            17,
+            16
+          ],
+          [
+            17,
+            18
+          ],
+          [
+            17,
+            22
+          ],
+          [
+            18,
+            13
+          ],
+          [
+            18,
+            17
+          ],
+          [
+            18,
+            19
+          ],
+          [
+            18,
+            23
+          ],
+          [
+            19,
+            14
+          ],
+          [
+            19,
+            18
+          ],
+          [
+            19,
+            24
+          ],
+          [
+            20,
+            15
+          ],
+          [
+            20,
+            21
+          ],
+          [
+            21,
+            16
+          ],
+          [
+            21,
+            20
+          ],
+          [
+            21,
+            22
+          ],
+          [
+            22,
+            17
+          ],
+          [
+            22,
+            21
+          ],
+          [
+            22,
+            23
+          ],
+          [
+            23,
+            18
+          ],
+          [
+            23,
+            22
+          ],
+          [
+            23,
+            24
+          ],
+          [
+            24,
+            19
+          ],
+          [
+            24,
+            23
+          ]
+        ],
+        "pair_count": 72
+      }
+    },
+    {
+      "id": "word-space.depth-2",
+      "kind": "word_space",
+      "label": "Positive words of length two",
+      "carrier_id": "carrier.word",
+      "provenance_artifact_ids": [
+        "artifact.raw-source"
+      ],
+      "data": {
+        "pairs": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            0,
+            10
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            1,
+            11
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            2,
+            8
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            13
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            8
+          ],
+          [
+            4,
+            14
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            5,
+            11
+          ],
+          [
+            5,
+            15
+          ],
+          [
+            6,
+            0
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            6,
+            10
+          ],
+          [
+            6,
+            16
+          ],
+          [
+            7,
+            1
+          ],
+          [
+            7,
+            3
+          ],
+          [
+            7,
+            5
+          ],
+          [
+            7,
+            9
+          ],
+          [
+            7,
+            11
+          ],
+          [
+            7,
+            13
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            8,
+            4
+          ],
+          [
+            8,
+            6
+          ],
+          [
+            8,
+            14
+          ],
+          [
+            8,
+            18
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            9,
+            7
+          ],
+          [
+            9,
+            13
+          ],
+          [
+            9,
+            19
+          ],
+          [
+            10,
+            0
+          ],
+          [
+            10,
+            6
+          ],
+          [
+            10,
+            16
+          ],
+          [
+            10,
+            20
+          ],
+          [
+            11,
+            1
+          ],
+          [
+            11,
+            5
+          ],
+          [
+            11,
+            7
+          ],
+          [
+            11,
+            15
+          ],
+          [
+            11,
+            17
+          ],
+          [
+            11,
+            21
+          ],
+          [
+            13,
+            3
+          ],
+          [
+            13,
+            7
+          ],
+          [
+            13,
+            9
+          ],
+          [
+            13,
+            17
+          ],
+          [
+            13,
+            19
+          ],
+          [
+            13,
+            23
+          ],
+          [
+            14,
+            4
+          ],
+          [
+            14,
+            8
+          ],
+          [
+            14,
+            18
+          ],
+          [
+            14,
+            24
+          ],
+          [
+            15,
+            5
+          ],
+          [
+            15,
+            11
+          ],
+          [
+            15,
+            17
+          ],
+          [
+            15,
+            21
+          ],
+          [
+            16,
+            6
+          ],
+          [
+            16,
+            10
+          ],
+          [
+            16,
+            18
+          ],
+          [
+            16,
+            20
+          ],
+          [
+            16,
+            22
+          ],
+          [
+            17,
+            11
+          ],
+          [
+            17,
+            13
+          ],
+          [
+            17,
+            15
+          ],
+          [
+            17,
+            19
+          ],
+          [
+            17,
+            21
+          ],
+          [
+            17,
+            23
+          ],
+          [
+            18,
+            8
+          ],
+          [
+            18,
+            14
+          ],
+          [
+            18,
+            16
+          ],
+          [
+            18,
+            22
+          ],
+          [
+            18,
+            24
+          ],
+          [
+            19,
+            9
+          ],
+          [
+            19,
+            13
+          ],
+          [
+            19,
+            17
+          ],
+          [
+            19,
+            23
+          ],
+          [
+            20,
+            10
+          ],
+          [
+            20,
+            16
+          ],
+          [
+            20,
+            22
+          ],
+          [
+            21,
+            11
+          ],
+          [
+            21,
+            15
+          ],
+          [
+            21,
+            17
+          ],
+          [
+            21,
+            23
+          ],
+          [
+            22,
+            16
+          ],
+          [
+            22,
+            18
+          ],
+          [
+            22,
+            20
+          ],
+          [
+            22,
+            24
+          ],
+          [
+            23,
+            13
+          ],
+          [
+            23,
+            17
+          ],
+          [
+            23,
+            19
+          ],
+          [
+            23,
+            21
+          ],
+          [
+            24,
+            14
+          ],
+          [
+            24,
+            18
+          ],
+          [
+            24,
+            22
+          ]
+        ],
+        "pair_count": 104
+      }
+    },
+    {
+      "id": "depth.word",
+      "kind": "depth_field",
+      "label": "Word audit cutoff",
+      "carrier_id": "carrier.word",
+      "provenance_artifact_ids": [
+        "artifact.raw-source"
+      ],
+      "data": {
+        "maximum_depth": 2
+      }
+    },
+    {
+      "id": "lie-family.x",
+      "kind": "lie_family",
+      "label": "Skew action generators",
+      "carrier_id": "carrier.lie",
+      "provenance_artifact_ids": [
+        "artifact.raw-source"
+      ],
+      "data": {
+        "labels": [
+          "N",
+          "S",
+          "E",
+          "W"
+        ]
+      }
+    },
+    {
+      "id": "hall.depth-2",
+      "kind": "hall_filtration",
+      "label": "Simple commutator layer",
+      "carrier_id": "carrier.lie",
+      "provenance_artifact_ids": [
+        "artifact.raw-source"
+      ],
+      "data": {
+        "pairs": [
+          [
+            0,
+            2
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            7,
+            5
+          ],
+          [
+            7,
+            11
+          ],
+          [
+            7,
+            13
+          ],
+          [
+            11,
+            7
+          ],
+          [
+            11,
+            17
+          ],
+          [
+            13,
+            7
+          ],
+          [
+            13,
+            17
+          ],
+          [
+            15,
+            17
+          ],
+          [
+            17,
+            11
+          ],
+          [
+            17,
+            13
+          ],
+          [
+            17,
+            15
+          ],
+          [
+            20,
+            22
+          ],
+          [
+            22,
+            20
+          ]
+        ],
+        "pair_count": 16
+      }
+    },
+    {
+      "id": "depth.lie",
+      "kind": "depth_field",
+      "label": "Lie audit cutoff",
+      "carrier_id": "carrier.lie",
+      "provenance_artifact_ids": [
+        "artifact.raw-source"
+      ],
+      "data": {
+        "maximum_depth": 2
+      }
+    }
+  ],
+  "carriers": [
+    {
+      "id": "carrier.sector",
+      "kind": "sector",
+      "capability_id": "sectorization",
+      "semantics": "Complete coordinate singleton sectorization.",
+      "object_ids": [
+        "sectorization.q"
+      ],
+      "semantic_convention_ids": [
+        "semantic.direction"
+      ]
+    },
+    {
+      "id": "carrier.operator",
+      "kind": "operator",
+      "capability_id": "operator_carrier",
+      "semantics": "Labelled skew transition generators.",
+      "object_ids": [
+        "alphabet.y",
+        "shadow.r1"
+      ],
+      "semantic_convention_ids": [
+        "semantic.alphabet",
+        "semantic.word",
+        "semantic.projector-letter",
+        "semantic.direction"
+      ]
+    },
+    {
+      "id": "carrier.word",
+      "kind": "word",
+      "capability_id": "word_carrier",
+      "semantics": "Ordered positive words.",
+      "object_ids": [
+        "word-space.depth-2",
+        "depth.word"
+      ],
+      "semantic_convention_ids": [
+        "semantic.alphabet",
+        "semantic.word",
+        "semantic.projector-letter",
+        "semantic.direction",
+        "semantic.depth"
+      ]
+    },
+    {
+      "id": "carrier.lie",
+      "kind": "lie",
+      "capability_id": "lie_hall_carrier",
+      "semantics": "Independently declared simple-commutator family.",
+      "object_ids": [
+        "lie-family.x",
+        "hall.depth-2",
+        "depth.lie"
+      ],
+      "semantic_convention_ids": [
+        "semantic.alphabet",
+        "semantic.direction",
+        "semantic.depth",
+        "semantic.hall"
+      ]
+    }
+  ],
+  "semantic_conventions": [
+    {
+      "id": "semantic.alphabet",
+      "kind": "operative_alphabet",
+      "specification": {
+        "alphabet_id": "gridworld-skew-actions",
+        "labels": [
+          "N",
+          "S",
+          "E",
+          "W"
+        ]
+      }
+    },
+    {
+      "id": "semantic.word",
+      "kind": "word_convention",
+      "specification": {
+        "type": "positive"
+      }
+    },
+    {
+      "id": "semantic.projector-letter",
+      "kind": "projector_letter_policy",
+      "specification": {
+        "projectors_are_letters": false
+      }
+    },
+    {
+      "id": "semantic.direction",
+      "kind": "direction_convention",
+      "specification": {
+        "direction": "column-source-to-row-target"
+      }
+    },
+    {
+      "id": "semantic.depth",
+      "kind": "depth_indexing",
+      "specification": {
+        "generator_depth": 1,
+        "simple_commutator_depth": 2
+      }
+    },
+    {
+      "id": "semantic.hall",
+      "kind": "hall_convention",
+      "specification": {
+        "family": "simple-pair-commutators",
+        "pair_order": "a<b"
+      }
+    }
+  ],
+  "run_policies": [
+    {
+      "id": "policy.threshold",
+      "kind": "threshold",
+      "specification": {
+        "absolute": 1e-08,
+        "comparison": "strictly-greater-than"
+      }
+    },
+    {
+      "id": "policy.norm",
+      "kind": "norm",
+      "specification": {
+        "name": "entrywise-absolute-support"
+      }
+    },
+    {
+      "id": "policy.tolerance",
+      "kind": "numerical_tolerance",
+      "specification": {
+        "absolute": 1e-08
+      }
+    },
+    {
+      "id": "policy.cutoff",
+      "kind": "cutoff",
+      "specification": {
+        "maximum_depth": 2,
+        "unreached_value": "UNREACHED_AT_CUTOFF"
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "artifact.manifest",
+      "uri": "experiments/paper13/results/native/gridworld-f4/source-reports/manifests/gridworld-f4-target.capabilities.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "80fa32d16440e6bf70ece8833affb9dd2b3121bb40387778edf20d04182b6621"
+      },
+      "media_type": "application/json",
+      "schema_version": "1.0",
+      "role": "manifest"
+    },
+    {
+      "id": "artifact.raw-source",
+      "uri": "experiments/paper13/results/native/gridworld-f4/sources/gridworld-f4-target.source.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "fc8f814ede339bfbfff0b54d3e112193628f4d0aaee8a7a8da86ce19dcb52470"
+      },
+      "media_type": "application/json",
+      "schema_version": "1.0",
+      "role": "source-input"
+    },
+    {
+      "id": "artifact.adapter",
+      "uri": "experiments/paper13/validation/gridworld_f4_native_v2.py",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "d97955cbdfae68b872a7b9a88da4f30aa26c742f230dc08960101f7ee392e194"
+      },
+      "media_type": "text/x-python",
+      "schema_version": "1.0",
+      "role": "adapter-output"
+    },
+    {
+      "id": "artifact.structure",
+      "uri": "experiments/paper13/results/native/gridworld-f4/evidence/gridworld-f4.structure-certificate.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "fc62ada48b5e375a0bd2e8ee4bd4aaffbffd4da16c0627b881de484d0c16deed"
+      },
+      "media_type": "application/json",
+      "schema_version": "1.0",
+      "role": "validator-output"
+    },
+    {
+      "id": "artifact.rule-registry",
+      "uri": "schemas/sofcompiler/rule-registry-v1.0.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "12e987288ff4263f6c4e493850bf7ca8e32ebf89d01c6635c04f7f430bd9bef4"
+      },
+      "media_type": "application/json",
+      "schema_version": "1.0",
+      "role": "proof-reference"
+    }
+  ],
+  "certificates": [
+    {
+      "id": "cert.strict-admission",
+      "validator_id": "paper13.gridworld-structure-validator",
+      "status": "PASS",
+      "scope": "Finite dimension, complete coordinate sectorization, labelled matrices, and declared word/Lie conventions.",
+      "artifact_ids": [
+        "artifact.structure"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "finding.direct-support",
+      "kind": "boolean_support",
+      "carrier_id": "carrier.operator",
+      "subject_object_ids": [
+        "shadow.r1"
+      ],
+      "value": {
+        "pairs": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            9
+          ],
+          [
+            5,
+            0
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            5,
+            10
+          ],
+          [
+            6,
+            1
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            6,
+            11
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            7,
+            6
+          ],
+          [
+            7,
+            8
+          ],
+          [
+            8,
+            3
+          ],
+          [
+            8,
+            7
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            8,
+            13
+          ],
+          [
+            9,
+            4
+          ],
+          [
+            9,
+            8
+          ],
+          [
+            9,
+            14
+          ],
+          [
+            10,
+            5
+          ],
+          [
+            10,
+            11
+          ],
+          [
+            10,
+            15
+          ],
+          [
+            11,
+            6
+          ],
+          [
+            11,
+            10
+          ],
+          [
+            11,
+            16
+          ],
+          [
+            13,
+            8
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            13,
+            18
+          ],
+          [
+            14,
+            9
+          ],
+          [
+            14,
+            13
+          ],
+          [
+            14,
+            19
+          ],
+          [
+            15,
+            10
+          ],
+          [
+            15,
+            16
+          ],
+          [
+            15,
+            20
+          ],
+          [
+            16,
+            11
+          ],
+          [
+            16,
+            15
+          ],
+          [
+            16,
+            17
+          ],
+          [
+            16,
+            21
+          ],
+          [
+            17,
+            16
+          ],
+          [
+            17,
+            18
+          ],
+          [
+            17,
+            22
+          ],
+          [
+            18,
+            13
+          ],
+          [
+            18,
+            17
+          ],
+          [
+            18,
+            19
+          ],
+          [
+            18,
+            23
+          ],
+          [
+            19,
+            14
+          ],
+          [
+            19,
+            18
+          ],
+          [
+            19,
+            24
+          ],
+          [
+            20,
+            15
+          ],
+          [
+            20,
+            21
+          ],
+          [
+            21,
+            16
+          ],
+          [
+            21,
+            20
+          ],
+          [
+            21,
+            22
+          ],
+          [
+            22,
+            17
+          ],
+          [
+            22,
+            21
+          ],
+          [
+            22,
+            23
+          ],
+          [
+            23,
+            18
+          ],
+          [
+            23,
+            22
+          ],
+          [
+            23,
+            24
+          ],
+          [
+            24,
+            19
+          ],
+          [
+            24,
+            23
+          ]
+        ],
+        "pair_count": 72
+      },
+      "unit": null,
+      "result_state": "OBSERVED",
+      "semantic_convention_ids": [
+        "semantic.alphabet",
+        "semantic.direction"
+      ],
+      "run_policy_ids": [
+        "policy.threshold",
+        "policy.norm",
+        "policy.tolerance",
+        "policy.cutoff"
+      ],
+      "certificate_ids": [
+        "cert.strict-admission"
+      ],
+      "artifact_ids": [
+        "artifact.raw-source",
+        "artifact.structure"
+      ]
+    },
+    {
+      "id": "finding.word-length-two",
+      "kind": "boolean_support",
+      "carrier_id": "carrier.word",
+      "subject_object_ids": [
+        "word-space.depth-2"
+      ],
+      "value": {
+        "pairs": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            0,
+            10
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            1,
+            11
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            2,
+            8
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            13
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            8
+          ],
+          [
+            4,
+            14
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            5,
+            11
+          ],
+          [
+            5,
+            15
+          ],
+          [
+            6,
+            0
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            6,
+            10
+          ],
+          [
+            6,
+            16
+          ],
+          [
+            7,
+            1
+          ],
+          [
+            7,
+            3
+          ],
+          [
+            7,
+            5
+          ],
+          [
+            7,
+            9
+          ],
+          [
+            7,
+            11
+          ],
+          [
+            7,
+            13
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            8,
+            4
+          ],
+          [
+            8,
+            6
+          ],
+          [
+            8,
+            14
+          ],
+          [
+            8,
+            18
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            9,
+            7
+          ],
+          [
+            9,
+            13
+          ],
+          [
+            9,
+            19
+          ],
+          [
+            10,
+            0
+          ],
+          [
+            10,
+            6
+          ],
+          [
+            10,
+            16
+          ],
+          [
+            10,
+            20
+          ],
+          [
+            11,
+            1
+          ],
+          [
+            11,
+            5
+          ],
+          [
+            11,
+            7
+          ],
+          [
+            11,
+            15
+          ],
+          [
+            11,
+            17
+          ],
+          [
+            11,
+            21
+          ],
+          [
+            13,
+            3
+          ],
+          [
+            13,
+            7
+          ],
+          [
+            13,
+            9
+          ],
+          [
+            13,
+            17
+          ],
+          [
+            13,
+            19
+          ],
+          [
+            13,
+            23
+          ],
+          [
+            14,
+            4
+          ],
+          [
+            14,
+            8
+          ],
+          [
+            14,
+            18
+          ],
+          [
+            14,
+            24
+          ],
+          [
+            15,
+            5
+          ],
+          [
+            15,
+            11
+          ],
+          [
+            15,
+            17
+          ],
+          [
+            15,
+            21
+          ],
+          [
+            16,
+            6
+          ],
+          [
+            16,
+            10
+          ],
+          [
+            16,
+            18
+          ],
+          [
+            16,
+            20
+          ],
+          [
+            16,
+            22
+          ],
+          [
+            17,
+            11
+          ],
+          [
+            17,
+            13
+          ],
+          [
+            17,
+            15
+          ],
+          [
+            17,
+            19
+          ],
+          [
+            17,
+            21
+          ],
+          [
+            17,
+            23
+          ],
+          [
+            18,
+            8
+          ],
+          [
+            18,
+            14
+          ],
+          [
+            18,
+            16
+          ],
+          [
+            18,
+            22
+          ],
+          [
+            18,
+            24
+          ],
+          [
+            19,
+            9
+          ],
+          [
+            19,
+            13
+          ],
+          [
+            19,
+            17
+          ],
+          [
+            19,
+            23
+          ],
+          [
+            20,
+            10
+          ],
+          [
+            20,
+            16
+          ],
+          [
+            20,
+            22
+          ],
+          [
+            21,
+            11
+          ],
+          [
+            21,
+            15
+          ],
+          [
+            21,
+            17
+          ],
+          [
+            21,
+            23
+          ],
+          [
+            22,
+            16
+          ],
+          [
+            22,
+            18
+          ],
+          [
+            22,
+            20
+          ],
+          [
+            22,
+            24
+          ],
+          [
+            23,
+            13
+          ],
+          [
+            23,
+            17
+          ],
+          [
+            23,
+            19
+          ],
+          [
+            23,
+            21
+          ],
+          [
+            24,
+            14
+          ],
+          [
+            24,
+            18
+          ],
+          [
+            24,
+            22
+          ]
+        ],
+        "pair_count": 104
+      },
+      "unit": null,
+      "result_state": "OBSERVED",
+      "semantic_convention_ids": [
+        "semantic.alphabet",
+        "semantic.word",
+        "semantic.depth"
+      ],
+      "run_policy_ids": [
+        "policy.threshold",
+        "policy.norm",
+        "policy.tolerance",
+        "policy.cutoff"
+      ],
+      "certificate_ids": [
+        "cert.strict-admission"
+      ],
+      "artifact_ids": [
+        "artifact.raw-source",
+        "artifact.structure"
+      ]
+    },
+    {
+      "id": "finding.lie-simple-commutator",
+      "kind": "boolean_support",
+      "carrier_id": "carrier.lie",
+      "subject_object_ids": [
+        "hall.depth-2"
+      ],
+      "value": {
+        "pairs": [
+          [
+            0,
+            2
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            7,
+            5
+          ],
+          [
+            7,
+            11
+          ],
+          [
+            7,
+            13
+          ],
+          [
+            11,
+            7
+          ],
+          [
+            11,
+            17
+          ],
+          [
+            13,
+            7
+          ],
+          [
+            13,
+            17
+          ],
+          [
+            15,
+            17
+          ],
+          [
+            17,
+            11
+          ],
+          [
+            17,
+            13
+          ],
+          [
+            17,
+            15
+          ],
+          [
+            20,
+            22
+          ],
+          [
+            22,
+            20
+          ]
+        ],
+        "pair_count": 16
+      },
+      "unit": null,
+      "result_state": "OBSERVED",
+      "semantic_convention_ids": [
+        "semantic.alphabet",
+        "semantic.hall",
+        "semantic.depth"
+      ],
+      "run_policy_ids": [
+        "policy.threshold",
+        "policy.norm",
+        "policy.tolerance",
+        "policy.cutoff"
+      ],
+      "certificate_ids": [
+        "cert.strict-admission"
+      ],
+      "artifact_ids": [
+        "artifact.raw-source",
+        "artifact.structure"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim.direct-support",
+      "statement": "The native snapshot records direct support of the labelled skew generators.",
+      "result_state": "OBSERVED",
+      "claim_status": "Computational Observation",
+      "capability_ids": [
+        "sectorization",
+        "operator_carrier"
+      ],
+      "carrier_ids": [
+        "carrier.operator"
+      ],
+      "object_ids": [
+        "space.v",
+        "sectorization.q",
+        "alphabet.y",
+        "shadow.r1"
+      ],
+      "finding_ids": [
+        "finding.direct-support"
+      ],
+      "semantic_convention_ids": [
+        "semantic.alphabet",
+        "semantic.direction"
+      ],
+      "run_policy_ids": [
+        "policy.threshold",
+        "policy.norm",
+        "policy.tolerance",
+        "policy.cutoff"
+      ],
+      "hypotheses": [
+        "The digest-bound native GridWorld source and declared generator convention are fixed."
+      ],
+      "certificate_ids": [
+        "cert.strict-admission"
+      ],
+      "artifact_ids": [
+        "artifact.raw-source",
+        "artifact.structure"
+      ],
+      "scope": "Native GridWorld F4 target snapshot under tol=1e-08.",
+      "negative_boundary": "This single-report observation does not compare two reports or establish domain adequacy."
+    },
+    {
+      "id": "claim.word-length-two",
+      "statement": "The native snapshot records ordered positive-word support at length two.",
+      "result_state": "OBSERVED",
+      "claim_status": "Computational Observation",
+      "capability_ids": [
+        "sectorization",
+        "word_carrier"
+      ],
+      "carrier_ids": [
+        "carrier.word"
+      ],
+      "object_ids": [
+        "word-space.depth-2",
+        "depth.word"
+      ],
+      "finding_ids": [
+        "finding.word-length-two"
+      ],
+      "semantic_convention_ids": [
+        "semantic.alphabet",
+        "semantic.word",
+        "semantic.depth"
+      ],
+      "run_policy_ids": [
+        "policy.threshold",
+        "policy.norm",
+        "policy.tolerance",
+        "policy.cutoff"
+      ],
+      "hypotheses": [
+        "The digest-bound native GridWorld source and declared generator convention are fixed."
+      ],
+      "certificate_ids": [
+        "cert.strict-admission"
+      ],
+      "artifact_ids": [
+        "artifact.raw-source",
+        "artifact.structure"
+      ],
+      "scope": "Native GridWorld F4 target snapshot under tol=1e-08.",
+      "negative_boundary": "This single-report observation does not compare two reports or establish domain adequacy."
+    },
+    {
+      "id": "claim.lie-simple-commutator",
+      "statement": "The native snapshot records simple-commutator support at depth two.",
+      "result_state": "OBSERVED",
+      "claim_status": "Computational Observation",
+      "capability_ids": [
+        "sectorization",
+        "lie_hall_carrier"
+      ],
+      "carrier_ids": [
+        "carrier.lie"
+      ],
+      "object_ids": [
+        "lie-family.x",
+        "hall.depth-2",
+        "depth.lie"
+      ],
+      "finding_ids": [
+        "finding.lie-simple-commutator"
+      ],
+      "semantic_convention_ids": [
+        "semantic.alphabet",
+        "semantic.hall",
+        "semantic.depth"
+      ],
+      "run_policy_ids": [
+        "policy.threshold",
+        "policy.norm",
+        "policy.tolerance",
+        "policy.cutoff"
+      ],
+      "hypotheses": [
+        "The digest-bound native GridWorld source and declared generator convention are fixed."
+      ],
+      "certificate_ids": [
+        "cert.strict-admission"
+      ],
+      "artifact_ids": [
+        "artifact.raw-source",
+        "artifact.structure"
+      ],
+      "scope": "Native GridWorld F4 target snapshot under tol=1e-08.",
+      "negative_boundary": "This single-report observation does not compare two reports or establish domain adequacy."
+    }
+  ],
+  "derivations": []
+}

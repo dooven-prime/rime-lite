@@ -1,0 +1,135 @@
+{
+  "manifest_version": "1.0",
+  "manifest_id": "paper13.gridworld-f4.reference.native-v2",
+  "record_kind": "strict_sof",
+  "sof_semantics_version": "2.0",
+  "adapter": {
+    "id": "paper13.gridworld-native-v2",
+    "version": "2.0",
+    "domain": "finite deterministic GridWorld",
+    "source_type": "digest-bound sparse transition matrices"
+  },
+  "space": {
+    "dimension": 25,
+    "scalar_field": "complex"
+  },
+  "capabilities": {
+    "sectorization": {
+      "availability": "DECLARED",
+      "description": "Complete exact coordinate-sector realization of the 25 retained cells.",
+      "configuration": {
+        "origin": "coordinate singleton sectors",
+        "realization_status": "exact finite construction",
+        "complete": true,
+        "labels": [
+          "cell-0",
+          "cell-1",
+          "cell-2",
+          "cell-3",
+          "cell-4",
+          "cell-5",
+          "cell-6",
+          "cell-7",
+          "cell-8",
+          "cell-9",
+          "cell-10",
+          "cell-11",
+          "cell-12",
+          "cell-13",
+          "cell-14",
+          "cell-15",
+          "cell-16",
+          "cell-17",
+          "cell-18",
+          "cell-19",
+          "cell-20",
+          "cell-21",
+          "cell-22",
+          "cell-23",
+          "cell-24"
+        ],
+        "provenance": "native GridWorld reference source snapshot"
+      }
+    },
+    "operator_carrier": {
+      "availability": "DECLARED",
+      "description": "Four labelled skew transition generators.",
+      "configuration": {
+        "alphabet_id": "gridworld-skew-actions",
+        "word_convention": "positive",
+        "adjoint_closed": true,
+        "projectors_are_letters": false
+      }
+    },
+    "operator_system": {
+      "availability": "NOT_DECLARED",
+      "description": "Capability is not used by this native control."
+    },
+    "route_carrier": {
+      "availability": "NOT_DECLARED",
+      "description": "Capability is not used by this native control."
+    },
+    "word_carrier": {
+      "availability": "DECLARED",
+      "description": "Exact-length positive words through length two.",
+      "configuration": {
+        "semantics": "ordered positive products of the four labelled generators"
+      }
+    },
+    "positive_associative_closure": {
+      "availability": "NOT_DECLARED",
+      "description": "Capability is not used by this native control."
+    },
+    "observable_star_closure": {
+      "availability": "NOT_DECLARED",
+      "description": "Capability is not used by this native control."
+    },
+    "sector_enriched_star_closure": {
+      "availability": "NOT_DECLARED",
+      "description": "Capability is not used by this native control."
+    },
+    "lie_hall_carrier": {
+      "availability": "DECLARED",
+      "description": "Independently declared skew generators with simple commutators at depth two.",
+      "configuration": {
+        "family_id": "gridworld-skew-actions",
+        "hall_convention_id": "simple-pair-commutators",
+        "registration_method": "X=(T-T^T)/2 from digest-bound matrices",
+        "semantics": "simple commutators [X_a,X_b] for a<b"
+      }
+    },
+    "deformation_chart": {
+      "availability": "NOT_APPLICABLE",
+      "description": "The F4 control compares two static snapshots."
+    },
+    "proxy_diagnostic": {
+      "availability": "NOT_APPLICABLE",
+      "description": "No proxy carrier is used."
+    },
+    "diagnostic_analogue": {
+      "availability": "NOT_APPLICABLE",
+      "description": "This is an explicit strict finite realization."
+    }
+  },
+  "semantic_convention_requirements": {
+    "operative_alphabet": "required",
+    "word_convention": "required",
+    "projector_letter_policy": "required",
+    "direction_convention": "required",
+    "depth_indexing": "required",
+    "hall_convention": "required"
+  },
+  "run_policy_requirements": {
+    "threshold": "required",
+    "cutoff": "required",
+    "norm": "required",
+    "numerical_tolerance": "required",
+    "saturation_audit": "not_applicable",
+    "sampling_grid": "not_applicable",
+    "trajectory_parameterization": "not_applicable"
+  },
+  "notes": [
+    "The native adapter binds explicit finite source matrices rather than a migrated report envelope.",
+    "Object-level comparison certification is supplied separately by the Paper XIII oracle."
+  ]
+}

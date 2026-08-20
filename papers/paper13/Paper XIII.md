@@ -6,10 +6,10 @@
 
 Independent Researcher | RIME Program | 2026
 
-*This paper is Paper XIII of the RIME program. It consumes versioned SOF Reports
-from Paper XII and owns explicit semantic alignment, partial comparability,
-typed Audit Signatures, and fixed-frame structural pseudodistance. A report
-pair is input evidence, not yet a comparison object.*
+*This paper (Paper XIII of the RIME program) consumes versioned SOF Reports from
+Paper XII and owns explicit semantic alignment, partial comparability, typed
+Audit Signatures, and fixed-frame structural pseudodistance. A report pair is
+input evidence until alignment and comparison semantics are fixed.*
 
 ***
 
@@ -70,40 +70,16 @@ fix comparison semantics, and the audit map is an output rather than the
 comparison object. Each requested coordinate carries a typed aligned,
 mismatched, unavailable, incomparable, or unresolved state.
 
-**Results.** The **No Comparison Without Alignment** proposition states that a
-report pair does not induce an Audit Signature before both the alignment
-evidence $\Phi$ and comparison semantics $\Theta$ are fixed. The
-**Alignment-Relative Audit Faithfulness** invariant requires every emitted
-coordinate to retain its report-item bindings, carrier, policy, evidence, and
-provenance, or to record an explicit unmatched, incomparable, or unresolved
-state. On each fixed comparison frame of aligned structural representations, the
-structural signatures carry weighted Hamming pseudometrics; strictly positive weights
-give a metric after quotienting by equality of the retained structural
-signature. This is a fixed-frame structural pseudodistance, not a metric on a universal
-audit vector. The eight historical channels are retained as the Standard
-Regime-A Audit Profile rather than imposed on every comparison. The controlled
-source corpus contains 20 F1--F4 snapshot payloads across GridWorld, SIR,
-Traffic, Compiler IR, and the additional Network Routing domain. These are
-retained as bounded source-addressed observations pending object-level
-revalidation. The fixed census is $20$ F1--F4 source payloads plus $5$ F5
-compatibility payloads plus $3$ transformation controls, hence $28$ legacy/control
-cases, together with one separate native GridWorld F4 factual v2 audit: $29$
-SOFAUDIT v2 artifacts in the reported corpus. Five
-frozen F5 path payloads are retained as source-addressed compatibility
-observations, but their wall coordinates remain `UNRESOLVED` because the v1
-audit payloads do not bind two Paper XI wall signatures. In the GridWorld F4 control, the Lie
-channel changes on 8 ordered pairs while the word channel remains unchanged.
-Three legitimate before/after transformations have nonzero raw signatures but
-zero residual contract violations. A Migration/Assembly Certificate upgrades 28 frozen
-`.sofaudit` v1 records to the v2 sparse-profile contract, including typed
-unavailability and explicit cutoff normalization; it does not recertify their
-source-level comparison values. A separate native-v2 GridWorld F4 audit binds
-two native SOFRS v2 reports, explicit sector and observable alignments, a
-complete comparison specification, report-item bindings, and an independent
-oracle. Its Object Certificate recomputes the selected finite support, word,
-and Lie coordinates from frozen source matrices and obtains factual states
-`ALIGNED`, `ALIGNED`, and `MISMATCH` with mismatch counts $0,0,8$. The migrated
-F4 audit remains unresolved.
+**Results.** The **No Comparison Without Alignment** proposition shows that a
+report pair does not induce an Audit Signature until alignment evidence $\Phi$
+and comparison semantics $\Theta$ are fixed. The
+**Alignment-Relative Audit Faithfulness** invariant preserves report-item
+bindings, carriers, policies, evidence, and provenance, or records an explicit
+unavailable, incomparable, or unresolved state. On a fixed comparison frame,
+the retained structural signatures carry weighted Hamming pseudometrics. The
+finite controls include one native GridWorld F4 audit whose selected support,
+word, and Lie coordinates are `ALIGNED`, `ALIGNED`, and `MISMATCH`, with counts
+$0,0,8$.
 
 **Implications.** This paper introduces alignment-relative Audit Signatures,
 not a generic report-diff protocol. Comparison is undefined before inherited
@@ -112,7 +88,9 @@ three, report differences become structured coordinates rather than aggregate
 scores. A nonzero signature records change, not defect. Diagnostic analogues
 remain descriptor-level unless an explicit comparison map is declared.
 Interpretation and policy-relative disposition belong to Paper XIV, and
-cross-frame transport remains open.
+cross-frame transport remains open. SOFAUDIT establishes aligned difference,
+not diagnostic interpretation, defect attribution, or causal attribution,
+without a separately supplied causal or intervention model.
 
 ***
 
@@ -172,6 +150,10 @@ several of these at once. This paper does not infer which source-level cause
 produced a report difference. Instead, it requires the referenced reports to
 retain their respective provenance and requires the comparison object to
 declare which report-level fields are eligible and how they are aligned.
+Thus a localized report difference is a statement about retained coordinates
+under the declared observation and comparison semantics, not an identified
+source mechanism. The sampled location or first observed mismatch time does
+not by itself identify what produced the underlying change.
 
 Report relativity does not make comparison impossible. It identifies the
 additional data that comparison must not hide. In particular, alignment cannot
@@ -183,7 +165,7 @@ strict SOF theorem instance.
 
 This paper does not define a third admission system. It inherits record kinds,
 carrier declarations, policy and evidence requirements, unavailable-state
-semantics, and promotion rules from Paper X and the SOFRS v2 reports of Paper
+semantics, and promotion rules from Paper X and the SOFRS v2.1 reports of Paper
 XII. Its new datum is the explicit pairwise alignment
 $\Phi=(\Phi_{\mathrm{sec}},\Phi_{\mathrm{obs}})$ together with the comparison
 specification $\Theta$.
@@ -274,7 +256,8 @@ This paper makes four contributions:
 3. It defines a common retained comparison frame and equips representations
    embedded in that frame with a weighted structural pseudometric.
 4. It separates protocol and migration conformance from a selected
-   first-principles Object Certificate. A native-v2 GridWorld F4 audit closes
+    first-principles Object Certificate. A native-v2.0 GridWorld F4 audit and
+    its v2.1 boundary-preserving revision close
    the object-to-report-to-comparison chain, while the remaining F1--F4
    payloads in GridWorld, SIR, Traffic, Compiler IR, and Network Routing remain
    bounded source observations. The corpus also includes
@@ -289,17 +272,14 @@ difference; interpretation and Action Semantics remain downstream.](../../figure
 
 The theory developed here is local. The paper does not define comparison
 between different retained frames, infer alignments automatically, prove a
-metric on a universal audit map, mutate the frozen `.sofaudit` v1 corpus, or
-turn difference into defect or action. The v2 corpus is a source-addressed
-migration rather than a historical rewrite. Single-report production
-belongs to Paper XII, aligned comparison to Paper XIII, and context-indexed
-interpretation and action semantics to Paper XIV.
+metric on a universal audit map, or turn difference into defect or action.
+Single-report production belongs to Paper XII, aligned comparison to Paper
+XIII, and context-indexed interpretation and action semantics to Paper XIV.
 
 The paper proceeds from the comparison object to the induced audit signature,
-its fixed-frame structural pseudodistance, and word/Lie separation. It then presents the
-native object control, bounded source observations, portability analysis, and failure boundaries. The
-appendices state the machine-readable alignment contract, reproducibility map,
-and geometric boundary; broader alignment regimes are deferred to the Outlook.
+its fixed-frame structural pseudodistance, word/Lie separation, native object
+control, bounded observations, and failure boundaries. Broader alignment
+regimes remain in the Outlook.
 
 ---
 
@@ -392,6 +372,11 @@ $$
 > is a formal specification, exact recomputation, certified measurement,
 > consensus standard, or declared baseline only. It is the minimal geometric
 > datum required before a domain-independent report comparison can be specified.
+
+The reference role is a comparison role only. Even when its basis is a formal
+specification, exact recomputation, certified measurement, consensus standard,
+or declared baseline, it is not thereby a ground-truth oracle, a control group,
+or a causal baseline for the target system.
 
 The comparison specification is written schematically as
 
@@ -629,7 +614,7 @@ wall signatures is therefore `UNRESOLVED`, even when its sampled values differ.
 
 The displayed coordinate $\Delta_{\mathrm{ctrl}}$ concerns native system
 controls such as GridWorld moves, epidemiological rates, or traffic phases. It
-does not denote a downstream intervention action. SOFAUDIT v2 serializes it as
+does not denote a downstream intervention action. SOFAUDIT v2.1 serializes it as
 the descriptive coordinate `response`; the frozen v1 records retain
 `action_response_failure` only as historical provenance.
 
@@ -827,21 +812,53 @@ $\mathfrak C_{\mathrm{cmp}}=(\mathcal R^\star,\widehat{\mathcal R},
 \Phi;\Theta)$, inherited Paper X guard checks, an Audit Profile, the induced
 sparse `coordinates` map, and its factual claim boundary. It is a companion
 comparison contract rather than a revision of SOFRS. Appendix A states the
-v2 contract and Migration/Assembly Certificate; the frozen v1 artifacts remain
-source-addressed provenance.
+contract boundary; earlier artifacts remain provenance.
 
-Each positive coordinate carries both an evidence strength and an epistemic
-target. The `claim_target` field distinguishes external mathematical objects,
-empirical domain systems, representation interfaces, protocol conformance, and
-migration consistency; an ordinary SOFAUDIT claim targets the alignment-relative
-`comparison_relation`. A certificate additionally declares `certificate_class`
-as `object`, `comparison_audit`, `protocol_conformance`, or
-`migration_assembly`. The `comparison_audit` class establishes faithful
-calculation relative to declared $\Phi$ and $\Theta$; it does not establish
-external-object truth. Schema validation, digest closure, and a conformance
-receipt cannot be relabeled as an Object Certificate. Object-level promotion
-additionally requires a bound comparison basis linking raw sources,
-independent recomputation, an oracle result, and the audit result.
+Each positive coordinate carries an evidence strength and epistemic target.
+Certificate classes distinguish object evidence, comparison-audit evidence,
+protocol conformance, and migration/assembly preservation. Comparison-audit
+evidence establishes faithful calculation relative to $\Phi$ and $\Theta$;
+schema validation and digest closure do not establish external-object truth.
+Object-level evidence additionally requires a bound comparison basis linking
+raw sources, independent recomputation, an oracle result, and the audit result.
+
+### Difference and Attribution Boundary
+
+> **Proposition (No Attribution Without a Causal Model).** Given validated
+> reports, explicit alignment $\Phi$, comparison semantics $\Theta$, and an
+> Audit Profile, SOFAUDIT may establish an aligned difference relation. In the
+> absence of a separately supplied causal or intervention model, that relation
+> does not identify the process, mechanism, component, or intervention that
+> produced an underlying source-level difference.
+
+**Argument.** The comparison object has inputs
+
+$$
+(\mathcal R^\star,\widehat{\mathcal R},\Phi,\Theta,P_{\mathrm{audit}})
+$$
+
+and an audit-signature codomain. None of these inputs specifies an object-level
+dynamics, intervention assignment, or identification criterion. Distinct
+source processes, adapters, observation maps, or profile choices can induce
+the same retained aligned relation. Attribution is therefore not identified by
+the audit map. $\square$
+
+In particular,
+
+$$
+\begin{aligned}
+\text{aligned difference}
+&\not\Rightarrow \text{diagnostic interpretation},\\
+\text{diagnostic interpretation}
+&\not\Rightarrow \text{defect attribution},\\
+\text{defect attribution}
+&\not\Rightarrow \text{causal attribution}.
+\end{aligned}
+$$
+
+Coordinate localization is not attribution. An audit may state that a retained
+coordinate mismatches, or that a mismatch is first registered between two
+declared samples, without identifying a component or mechanism as its cause.
 
 ### Downstream Interpretation Boundary
 
@@ -867,7 +884,7 @@ $$
 The raw $\Delta_{\mathrm{audit}}$ remains unchanged. A separately typed contract
 evaluation may record residual changes not licensed by $\mathcal T$. Thus a
 large structural signature may still be conforming, while a small signature may
-violate a required invariant. SOFAUDIT v2 does not provide free-form
+violate a required invariant. SOFAUDIT v2.1 does not provide free-form
 `transformation_contract` or `contract_evaluation` escape fields; such evidence
 must be bound through a versioned external artifact and an admitted coordinate
 or future extension contract.
@@ -909,13 +926,13 @@ $(2,2)\to(2,1)\to(2,0)\to(1,0)\to(0,0)$. The target remains fixed at
 obstacle=(2,1). The path records support, bridge, depth, and frozen-set changes;
 equal net frozen counts at some steps still conceal different frozen pairs.
 The payload does not bind two Paper XI wall signatures and declares no usable
-parameter synchronization, so SOFAUDIT v2 retains it as an unresolved path
+parameter synchronization, so SOFAUDIT v2.1 retains it as an unresolved path
 observation rather than a wall-record mismatch.
 
 ### GridWorld Legacy Source-Payload Observations
 
 The frozen F1--F5 vectors remain source-addressed in the legacy results indexed
-by `experiments/paper13/README.md`; they are not factual SOFAUDIT v2
+by `experiments/paper13/README.md`; they are not factual SOFAUDIT v2.1
 coordinates. Migrated source-present values are `UNRESOLVED`, and absent values
 are `NOT_DECLARED`, until native report alignment and item bindings are
 supplied.
@@ -926,11 +943,11 @@ $\Delta_{\mathrm{brl}}=8$. This bounded observation motivates separate word
 and Lie channels but does not itself recertify a v2 comparison or imply a
 universal sensitivity ordering.
 
-### Native v2 End-to-End GridWorld F4 Validation
+### Native v2.0 End-to-End GridWorld F4 Validation and v2.1 Boundary Migration
 
 The native F4 control is a separate execution path, not an upgrade of the
 migrated record. It freezes two sparse GridWorld source snapshots, constructs
-two strict native SOFRS v2 reports with validation receipts, declares identity
+two strict native SOFRS v2.0 reports with validation receipts, declares identity
 sector and observable alignments, fixes the complete comparison specification
 $\Theta$, and binds each factual coordinate to report items. An independent
 validator reconstructs the matrices from the frozen sparse sources, computes
@@ -947,8 +964,9 @@ independent oracle. Its three requested factual coordinates are:
 | ordered length-two word support | `ALIGNED` | 0 |
 | simple-commutator support | `MISMATCH` | 8 |
 
-Thus the object-level result and the SOFAUDIT v2 factual comparison now form
-one digest-bound chain. The old migrated F4 artifact deliberately remains an
+Thus the object-level result, the SOFAUDIT v2.0 factual comparison, and its
+projection-preserving v2.1 revision form a digest-bound chain. The old migrated
+F4 artifact deliberately remains an
 `UNRESOLVED` preservation artifact; migration never borrows the new oracle.
 The native audit validation receipt certifies protocol conformance of the
 artifact closure, while the separately bound independent recomputation carries
@@ -962,7 +980,7 @@ Each frozen domain producer supplies its own sectorization, observable family,
 and legacy comparison payload while retaining the same source-table grammar.
 No equivalence of the native dynamics or failure mechanisms is assumed. Except
 for the native GridWorld F4 chain above, these payloads remain bounded
-observations pending object-level revalidation and native-v2 item bindings.
+observations pending object-level revalidation and native-v2.0 item bindings.
 
 ### SIR Compartmental Model
 
@@ -1020,7 +1038,7 @@ The complete frozen vectors remain in the source-addressed legacy results. The
 distinguishing bounded pattern is that binary coordinates change at
 $\beta=0$, whereas for every sampled $\beta>0$ the frozen-count delta is zero
 and rate changes remain continuous-response observations. These are not
-factual SOFAUDIT v2 coordinates.
+factual SOFAUDIT v2.1 coordinates.
 
 #### Candidate Support Boundary and Response Crossing
 
@@ -1066,7 +1084,7 @@ reference is $\rho=1$. Five constructed variants are compared:
 #### Traffic Legacy Source-Payload Observations
 
 The complete frozen vectors remain in the source-addressed legacy results and
-are not factual SOFAUDIT v2 coordinates. They separate phase aliasing, missing
+are not factual SOFAUDIT v2.1 coordinates. They separate phase aliasing, missing
 phase, forbidden-edge, and timing-response patterns without promoting the F5
 path to a wall comparison.
 
@@ -1115,7 +1133,7 @@ Five constructed variants are compared:
 #### Compiler IR Legacy Source-Payload Observations
 
 The complete frozen vectors remain in the source-addressed legacy results and
-are not factual SOFAUDIT v2 coordinates. They retain separate CFG and def-use
+are not factual SOFAUDIT v2.1 coordinates. They retain separate CFG and def-use
 channels and keep the F5 pass-pipeline path unresolved as a wall comparison.
 
 F4 is the cleanest compiler-specific diagnostic: aggregate support and word
@@ -1136,20 +1154,11 @@ checking or a verified compiler proof.
 
 ### Portability Criterion
 
-A target domain follows the same construction when the required SOF
-realization and alignment contract can be made explicit:
-
-1. identify a domain-justified sectorization;
-2. identify the observable family and its semantics;
-3. construct or designate a reference report;
-4. construct or observe a target report;
-5. form the admissible comparison object
-   $\mathfrak C_{\mathrm{cmp}}=(\mathcal R^\star,
-   \widehat{\mathcal R},\Phi;\Theta)$;
-6. compute the induced
-   $\Delta_{\mathrm{audit}}=\operatorname{Compare}(\mathfrak C_{\mathrm{cmp}})$;
-   and
-7. record the comparison and its claim boundary.
+A target domain follows the same construction when it supplies a
+domain-justified sectorization, a declared observable family, reference and
+target reports, and an admissible comparison object
+$\mathfrak C_{\mathrm{cmp}}=(\mathcal R^\star,\widehat{\mathcal R},\Phi;\Theta)$
+whose sparse output and claim boundary are retained.
 
 ### Cross-Domain Synthesis
 
@@ -1199,7 +1208,7 @@ The source-addressed vectors cover a Compiler $\mathrm{O0}$-like to
 $\mathrm{O2}$-like transformation, Traffic $\rho:0.5\to2.0$, and a GridWorld
 obstacle relocation. All three have zero declared contract residual despite
 nonzero raw differences; the complete legacy vectors remain outside the
-factual SOFAUDIT v2 coordinate surface.
+factual SOFAUDIT v2.1 coordinate surface.
 
 The Compiler control uses a common five-block ambient realization with B3 marked
 as a retired target sector; its sector alignment is therefore explicit rather
@@ -1227,7 +1236,7 @@ $X_{\mathrm{external}}$ for gateway routes.
 #### Network Routing Legacy Source-Payload Observations
 
 The complete frozen vectors remain in the source-addressed legacy results and
-are not factual SOFAUDIT v2 coordinates. The retained qualitative contrast is
+are not factual SOFAUDIT v2.1 coordinates. The retained qualitative contrast is
 between F2 edge removal and F3 bridge/constraint activation.
 
 Two signatures are especially useful. F2 is a pure ACL edge-removal pattern:
@@ -1258,39 +1267,25 @@ three paired-comparison boundaries:
   indistinguishable from noise, threshold crossings may change discrete
   support, and unresolved finite depth remains `UNREACHED_AT_CUTOFF`.
 
-### Hostile Alignment Tests
+### Failure Controls
 
-Positive controlled comparisons do not test non-fabrication by themselves.
-The hostile suite rejects missing $\Phi$ or $\Theta$, inconsistent carrier or
-policy guards, source-report receipt drift, analogue-to-strict promotion,
-unavailable-to-zero promotion, and unbound signature coordinates. Partial
-evidence must produce an unmatched, incomparable, or unresolved state rather
-than an invented coordinate.
+Positive comparisons do not establish non-fabrication. The boundary controls
+reject missing $\Phi$ or $\Theta$, incompatible carrier or policy guards,
+receipt drift, analogue-to-strict promotion, unavailable-to-zero promotion,
+unbound coordinates, incomplete alignment, and external-object claims without
+an independent comparison basis. Partial evidence remains unmatched,
+incomparable, or unresolved.
 
-A receipt cannot authenticate its own validator. A false `PASS` can be rejected
-only when the validator identity and implementation are bound to a trusted
-reference or when an independent validator reruns the checks. SOFAUDIT v2 does
-not consume the frozen v1 compatibility receipts: each legacy source report is
-first migrated through the Paper XII SOFRS v2 contract and receives a v2
-validation receipt binding its CompilerOutput and assembly closure. That `PASS`
-still establishes protocol conformance rather than object-level truth.
-
-A schema-valid but scientifically misleading alignment cannot be detected from
-schema shape alone. Such an alignment may receive protocol conformance but not
-an Object Certificate. Object-level promotion requires an independent domain
-baseline or a first-principles recomputation capable of falsifying the declared
-map.
-
-The hostile suite also rejects free-form alignment objects, unconstrained
-metrics hidden inside $\Theta$, an `ALIGNED` coordinate with a missing required
-alignment component, affirmative coordinates under rejected or unresolved
-compiler guards, and an external-object claim without a complete comparison
-oracle. A declared reference supports only difference from the selected
-baseline unless its role basis establishes stronger authority.
+A receipt does not authenticate its own validator, and a conformance `PASS`
+does not establish object-level truth. A schema-valid but scientifically
+misleading alignment therefore requires an independent domain baseline or
+first-principles recomputation before Object Certificate status is available.
+A declared reference remains a comparison role unless its role basis supplies
+stronger authority.
 
 The cross-domain distance study is a separate computational boundary, not a
 fourth alignment failure class. It is a legacy source-payload diagnostic, not
-a factual SOFAUDIT v2 coordinate study. Across the 25 failure-mode comparisons, the
+a factual SOFAUDIT v2.1 coordinate study. Across the 25 failure-mode comparisons, the
 normalized seven-coordinate structural vectors have same-label and
 different-label mean distances $1.0915$ and $1.3991$, a separation ratio of
 $1.2818$. This is weak, domain-dominated separation. There is only one
@@ -1310,12 +1305,13 @@ invariants are not promoted into external scientific results.
 |-----------------|------------------------------|----------------------|
 | SOF comparison object $(\mathfrak A_{\mathrm{align}},\Theta)$ and Audit Profile | owned typed definitions; representation interface | not an independent evidence claim |
 | No Comparison Without Alignment | domain-of-definition proposition; representation interface | Theorem |
+| No Attribution Without a Causal Model | aligned-difference boundary; no source-mechanism identification without an external model | Theorem |
 | Alignment-Relative Audit Faithfulness | executable invariant; implementation checked by a Comparison Audit Certificate | not an independent evidence claim |
 | Fixed-frame structural pseudometric | mathematical proposition under one retained frame and weights fixed by $\Theta$ | Theorem |
 | GridWorld F4 first-principles oracle and native SOFAUDIT | finite end-to-end comparison; external-object target and Object Certificate | Computational Certificate |
-| 28-record v1-to-v2 conversion | finite preservation audit; Migration/Assembly Certificate | Computational Certificate |
+| versioned boundary-preserving migration | finite preservation audit; Migration/Assembly Certificate | Computational Certificate |
 | finite AB/BC/AC contextual-descent control | promoted bounded candidate-space witness only | Computational Certificate |
-| remaining controlled F1--F4 legacy source payloads | source-payload diagnostics pending object-level revalidation; not factual v2 coordinates | Computational Observation |
+| remaining controlled F1--F4 legacy source payloads | source-payload diagnostics pending object-level revalidation; not factual v2.1 coordinates | Computational Observation |
 | cross-frame transport, generalized descent, and inferred semantic alignment | open targets; no certificate is claimed here | Research Program |
 
 The `.sofaudit` validation receipt is a Protocol Conformance Certificate only.
@@ -1346,6 +1342,8 @@ Within the RIME program, Paper XII owns reporting. Paper XIII owns
 alignment-relative comparison and fixed-frame pseudodistance. Paper XIV owns
 context-indexed interpretation and policy-relative disposition. Their objects
 remain distinct: difference, interpretation, and bounded candidate generation.
+An aligned difference may localize a retained coordinate or declared sample
+window, but it does not identify the source mechanism that produced it.
 
 ---
 
@@ -1377,11 +1375,9 @@ results.](../../figures/paper13/fig6_alignment_regimes.png)
 
 ### Comparison Tooling
 
-A software implementation should preserve the mathematical order of
-operations: declare the report pair, record $\Phi$ and $\Theta$, compute the
-signature, and only then apply domain-specific interpretation. Automatic
-alignment inference must remain distinguishable from a declared alignment,
-and trajectory comparison must retain parameter synchronization explicitly.
+Implementations must distinguish declared alignment from inferred alignment
+and retain parameter synchronization for trajectory comparisons. Interpretation
+is downstream of the audit signature.
 
 ### Presheaf and Descent Outlook
 
@@ -1486,10 +1482,10 @@ the paper's evidence surface.
 ## Appendix A: Alignment Artifact and Schema Validation
 
 The canonical machine-readable contract is
-`schemas/sofaudit/v2.0.schema.json`. A conforming `.sofaudit` record encodes
+`schemas/sofaudit/v2.1.schema.json`. A conforming `.sofaudit` record encodes
 an aligned comparison, not a second single-system SOF Report and not a
 deployment decision. The separate
-`schemas/sofaudit/validation-receipt-v2.0.schema.json` binds one audit to the
+`schemas/sofaudit/validation-receipt-v2.1.schema.json` binds one audit to the
 validator and digest-closed artifacts that were checked; the receipt is a
 Protocol Conformance Certificate, not object-level evidence.
 
@@ -1506,68 +1502,64 @@ imply defect. `NOT_DECLARED`, `NOT_APPLICABLE`, `INCOMPARABLE`, and
 `UNRESOLVED` coordinates have null values and cannot be replaced by zero.
 Interpretation and action fields belong to Paper XIV.
 
-The schema fixes object shapes, while the semantic validator recomputes their
-relations. It verifies reference and target roles, derives the regime from the
-two report kinds, closes the Audit Profile against the coordinate keys,
-recomputes alignment coverage and total/injective/surjective properties from
-the declared pair maps and report universes, and derives inherited guard state.
-It then enforces coupling among guards, alignment, and coordinates. It
-recomputes comparison-basis completeness, checks claim/result/certificate compatibility, and resolves every
-artifact identifier, role, and digest. An external-object claim is rejected
-unless its comparison basis binds an independent object oracle over raw source,
-independent recomputation, oracle result, and audit result artifacts. Hostile
-fixtures exercise these cross-field failures; they are not consequences of JSON
-Schema validation alone.
+The `attribution_boundary` is fixed as follows:
 
-The frozen `schemas/sofaudit/v1.0.schema.json` and its 28 records remain
-immutable provenance. The migration adapter preserves their source payloads
-and unavailable states; it does not manufacture factual v2 `ALIGNED` or
-`MISMATCH` coordinates. The separate native GridWorld F4 chain binds two
-native SOFRS v2 reports, complete alignment and comparison semantics, and an
-independent oracle, while the migrated F4 artifact remains `UNRESOLVED`.
-The census, source/output digests, profile references, and receipt paths are
-indexed in `experiments/paper13/README.md`,
-`results/migration-index.json`, and the source-addressed `results/native/`,
-`results/object-certificates/`, and `results/receipts/` directories.
+| Field | Required value |
+|---|---|
+| `localization_scope` | `ALIGNED_REPORT_COORDINATES` |
+| `interpretation_status` | `DOWNSTREAM` |
+| `defect_attribution_status` | `OUT_OF_SCOPE_FOR_SOFAUDIT` |
+| `causal_status` | `OUT_OF_SCOPE_FOR_SOFAUDIT` |
+| `reference_role` | `COMPARISON_ROLE_ONLY` |
+| `reference_causal_role` | `NOT_A_CAUSAL_BASELINE` |
 
-Those records distinguish Migration/Assembly Certificates from the native
-Object Certificate. No migration field or status is copied into the native
-chain, and no native oracle result is copied back into a migrated artifact.
+The corresponding receipt fixes
+`receipt_kind = SOFAUDIT_VALIDATION_RECEIPT` and
+`receipt_scope = SOFAUDIT_PROTOCOL_CONFORMANCE_ONLY`. Its `PASS` status does
+not establish interpretation, defect attribution, causal attribution, or a
+causal baseline.
+
+The schema fixes object shapes; the semantic validator checks the role, regime,
+profile, alignment, guard, coordinate, comparison-basis, claim-status, and
+artifact-closure relations. An external-object claim requires an independent
+object oracle over raw source, recomputation, oracle result, and audit result.
+These are semantic checks beyond JSON Schema shape validation.
+
+The frozen v1/v2.0 records remain immutable provenance. Migration preserves
+their projections and unavailable states; it does not manufacture factual
+coordinates or transfer the native Object Certificate to migrated records.
+The detailed census, digests, and receipt index are maintained with the paper's
+experiment record.
 
 ## Appendix B: Computational Artifacts
 
-The following source-addressed artifacts implement the v2 comparison
+The following source-addressed artifacts implement the v2.1 comparison
 contract and finite controls. Full inventories, digests, and generated outputs
 remain indexed in `experiments/paper13/README.md` rather than duplicated here.
 
 | Artifact | Role | Source-addressed path |
 |----------|------|-----------------------|
-| B1 | SOFAUDIT v2 object and receipt schemas | `schemas/sofaudit/v2.0.schema.json`; `schemas/sofaudit/validation-receipt-v2.0.schema.json` |
-| B2 | coordinate semantics registry and Standard Regime-A profile | `schemas/sofaudit/coordinate-semantics-registry-v1.0.json`; `schemas/sofaudit/paper13-standard-regime-a-profile-v2.0.json` |
-| B3 | semantic validator and receipt checks | `experiments/paper13/validation/validate_sofaudit_v2.py` |
-| B4 | v1-to-v2 migration adapter and index | `experiments/paper13/validation/migrate_sofaudit_v1_to_v2.py`; `experiments/paper13/results/migration-index.json` |
-| B5 | native GridWorld F4 producer and factual audit chain | `experiments/paper13/validation/gridworld_f4_native_v2.py`; `experiments/paper13/results/native/gridworld-f4/` |
-| B6 | independent GridWorld F4 object control | `experiments/paper13/validation/gridworld_f4_object_certificate.py`; `experiments/paper13/results/object-certificates/gridworld_f4.object-certificate.json` |
-| B7 | promoted finite AB/BC/AC control and validator | `experiments/paper13/validation/contextual_descent_control.py`; `experiments/paper13/validation/validate_contextual_descent_control.py`; `experiments/paper13/results/controls/` |
-| B8 | focused migration, native-chain, and hostile regressions | `tests/test_sofaudit_v2.py` |
+| B1 | SOFAUDIT v2.1 schemas | `schemas/sofaudit/` |
+| B2 | coordinate registry and Standard Regime-A profile | `schemas/sofaudit/` |
+| B3 | semantic validator and receipt checks | `experiments/paper13/validation/` |
+| B4 | v1-to-v2 migration and index | `experiments/paper13/` |
+| B5 | native GridWorld F4 audit chain | `experiments/paper13/results/native/` |
+| B6 | independent GridWorld F4 object control | `experiments/paper13/results/object-certificates/` |
+| B7 | promoted finite AB/BC/AC control | `experiments/paper13/results/controls/` |
+| B8 | focused protocol regression | `tests/test_sofaudit_v2.py` |
+| B9 | v2.0-to-v2.1 audit migration | `experiments/paper13/validation/` |
+| B10 | v2.1 semantic and receipt validator | `experiments/paper13/validation/` |
+| B11 | v2.1 audit and source-report closure | `experiments/paper13/results/v2.1/` |
 
 The artifact census is 20 F1--F4 source payloads, five F5 compatibility
 payloads, and three transformation controls, giving 28 migrated records, plus
 one separate native GridWorld F4 audit. This count is a corpus definition, not
 a generalization claim.
 
-The result directories index the executable artifacts: `results/audits/`
-and `results/receipts/` hold migrated comparison records and receipts;
-`results/native/` and `results/object-certificates/` hold the factual native
-chain; and `results/controls/` holds the separately promoted finite descent
-control. The archived v1 tables and producers remain under `archive/` and are
-not factual v2 evidence.
-
-B1--B8 establish only their declared finite targets. Migrated records are not
-factual v2 comparisons, and the AB/BC/AC control is not a general descent
-theorem. The artifact map and runnable contract checks are listed in
-`experiments/paper13/README.md`; all listed artifacts are available in the
-[RIME repository](https://github.com/dooven-prime/rime-lite).
+B1--B11 establish only their declared finite targets. Migrated records are not
+factual v2.1 comparisons, and the AB/BC/AC control is not a general descent
+theorem. The full artifact map is maintained with the paper's experiment
+record.
 
 ## Appendix C: Geometric Boundary and Outlook
 
