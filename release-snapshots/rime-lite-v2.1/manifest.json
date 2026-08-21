@@ -1,0 +1,243 @@
+{
+  "schema_version": "repository-release-byte-manifest-1.0",
+  "release": {
+    "tag": "rime-lite-v2.1",
+    "version": "2.1",
+    "date": "2026-08-22",
+    "status": "repository_accepted",
+    "release_content_commit_sha": "005e2453d508ba5e12136bf9005050ac72185ae5",
+    "release_content_tree_oid": "3c3f3d08f4cb2b66a0ef10e0a3c69ec6e5ac9144"
+  },
+  "digest_scope": "Exact Git blob bytes at release_content_commit_sha.",
+  "artifact_inventory_scope": "selected_release_review_surface",
+  "full_tree_anchor": "release_content_commit_sha",
+  "authority_boundary": "The commit and manifest anchor released bytes. They do not establish semantic correctness, scientific adequacy, validator independence, or causal truth.",
+  "verification": {
+    "active_tests": "22/22 passed",
+    "internal_gates": "13/13 passed",
+    "shared_contract_fragments": "12/12 passed",
+    "evidence_graph_receipts": "67 passed",
+    "historical_snapshot_files": "427 passed",
+    "paper_renderers": "5/5 scratch passed",
+    "tracked_tree_after_active_verify": "unchanged",
+    "tracked_tree_after_internal_verify": "unchanged"
+  },
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "b7ec787eb6e85e4c77450d66c9993a860a736b1637620c26af025e340840f89d",
+      "size_bytes": 13037,
+      "role": "publication_index",
+      "contract_version": "repository-v2.1",
+      "evidence_status": "reviewed"
+    },
+    {
+      "path": "ccs/ccs_arxiv.pdf",
+      "sha256": "a6bd819008696083733d24865169d72098d66d17ea2b5f5090288b4c943696d0",
+      "size_bytes": 433912,
+      "role": "reader_artifact",
+      "contract_version": "repository-v2.1",
+      "evidence_status": "tracked_release_artifact"
+    },
+    {
+      "path": "papers/paper1/paper1_arxiv.pdf",
+      "sha256": "aba992c421bc6181a09498ff6a346876c4db60f0c5446df89b91920ac5439274",
+      "size_bytes": 185526,
+      "role": "reader_artifact",
+      "contract_version": "repository-v2.1",
+      "evidence_status": "tracked_release_artifact"
+    },
+    {
+      "path": "papers/paper2/paper2_arxiv.pdf",
+      "sha256": "115eb58c76a3de073f343e48c5dbcd8ba8bd1e1fc104b4c3f9b64dc44a075c75",
+      "size_bytes": 129934,
+      "role": "reader_artifact",
+      "contract_version": "repository-v2.1",
+      "evidence_status": "tracked_release_artifact"
+    },
+    {
+      "path": "papers/paper3/paper3_arxiv.pdf",
+      "sha256": "b5ff073480212052ac4fdcf71e8c390400add44e557eacca37cb73aa7f1e30d6",
+      "size_bytes": 131977,
+      "role": "reader_artifact",
+      "contract_version": "repository-v2.1",
+      "evidence_status": "tracked_release_artifact"
+    },
+    {
+      "path": "papers/paper4/paper4_arxiv.pdf",
+      "sha256": "38273a5bf85db4d9ddb4393258f1d8baea08df19c89a5608a612324028526292",
+      "size_bytes": 188758,
+      "role": "reader_artifact",
+      "contract_version": "repository-v2.1",
+      "evidence_status": "tracked_release_artifact"
+    },
+    {
+      "path": "papers/paper5/paper5_arxiv.pdf",
+      "sha256": "8e6557811241014583ca652330c5602d1678e210511d822e58d2897dfcbedbe8",
+      "size_bytes": 156238,
+      "role": "reader_artifact",
+      "contract_version": "repository-v2.1",
+      "evidence_status": "tracked_release_artifact"
+    },
+    {
+      "path": "papers/paper6/paper6_arxiv.pdf",
+      "sha256": "d2ef6b5968362d0af31471fe4914d293426e6d78dc62baeee91586a55584fe66",
+      "size_bytes": 168962,
+      "role": "reader_artifact",
+      "contract_version": "repository-v2.1",
+      "evidence_status": "tracked_release_artifact"
+    },
+    {
+      "path": "papers/paper7/paper7_arxiv.pdf",
+      "sha256": "dfacb659722507e48be8b2a2b2795f0acbc1af05cf27374d64d9fe92f76cdadc",
+      "size_bytes": 217558,
+      "role": "reader_artifact",
+      "contract_version": "repository-v2.1",
+      "evidence_status": "tracked_release_artifact"
+    },
+    {
+      "path": "papers/paper8/paper8_arxiv.pdf",
+      "sha256": "9130afb61e7a1681c64c3a0cf8fe5b85fd16a740a64854bc4264191b8e496fb7",
+      "size_bytes": 253052,
+      "role": "reader_artifact",
+      "contract_version": "repository-v2.1",
+      "evidence_status": "tracked_release_artifact"
+    },
+    {
+      "path": "papers/paper9/paper9_arxiv.pdf",
+      "sha256": "7b4878ede988d7f655f4d8636eb1d5d2cea59b8a64e58db980e9e27b28d1cb10",
+      "size_bytes": 281342,
+      "role": "reader_artifact",
+      "contract_version": "repository-v2.1",
+      "evidence_status": "tracked_release_artifact"
+    },
+    {
+      "path": "papers/paper10/paper10_arxiv.pdf",
+      "sha256": "1aeb00b421d648e6631c845348b9dab2e4cca86c0fda6bd363096097abc58eae",
+      "size_bytes": 305521,
+      "role": "reader_artifact",
+      "contract_version": "repository-v2.1",
+      "evidence_status": "tracked_release_artifact"
+    },
+    {
+      "path": "papers/paper11/paper11_arxiv.pdf",
+      "sha256": "43db6e38414b41dd6d08a05f797b0ed0be260865a4aa872d212e5fefc4527fa0",
+      "size_bytes": 237398,
+      "role": "reader_artifact",
+      "contract_version": "repository-v2.1",
+      "evidence_status": "tracked_release_artifact"
+    },
+    {
+      "path": "papers/paper12/paper12_arxiv.pdf",
+      "sha256": "94587c6383e78dae8550c29568d93d43d28998cb3a06ce6e90b1e59e396129e4",
+      "size_bytes": 240184,
+      "role": "reader_artifact",
+      "contract_version": "repository-v2.1",
+      "evidence_status": "tracked_release_artifact"
+    },
+    {
+      "path": "papers/paper13/paper13_arxiv.pdf",
+      "sha256": "db8d03676fa9aed3cbae950363743113080e97302203c1ce76aeac334bd07d8b",
+      "size_bytes": 302498,
+      "role": "reader_artifact",
+      "contract_version": "repository-v2.1",
+      "evidence_status": "tracked_release_artifact"
+    },
+    {
+      "path": "papers/paper14/paper14_arxiv.pdf",
+      "sha256": "e277525fc0d3ac18c2cfd642e0c46b22b82e7e7f9c3afc08d1dd8b14f3692409",
+      "size_bytes": 224097,
+      "role": "reader_artifact",
+      "contract_version": "repository-v2.1",
+      "evidence_status": "tracked_release_artifact"
+    },
+    {
+      "path": "papers/paper15/paper15_arxiv.pdf",
+      "sha256": "ccc4116571670569e7550d2b1212e2384ff953a006f224eeef22244f79d4fbc2",
+      "size_bytes": 173659,
+      "role": "reader_artifact",
+      "contract_version": "repository-v2.1",
+      "evidence_status": "tracked_release_artifact"
+    },
+    {
+      "path": "schemas/registry/v2.1.schema.json",
+      "sha256": "3afb87442c671ea56de454aaef6f63656f5cfea6f06c8dffd750884d1ea868ab",
+      "size_bytes": 45014,
+      "role": "normative_contract",
+      "contract_version": "v2.1",
+      "evidence_status": "schema_fragment_gate_passed"
+    },
+    {
+      "path": "schemas/sofaction/v2.1.schema.json",
+      "sha256": "7ed0a07203dda73992a4b2cced8acb4b9d2bdf5f8afd1d405539929342155b95",
+      "size_bytes": 29602,
+      "role": "normative_contract",
+      "contract_version": "v2.1",
+      "evidence_status": "schema_fragment_gate_passed"
+    },
+    {
+      "path": "schemas/sofaction/validation-receipt-v2.1.schema.json",
+      "sha256": "403f85cbf99083260ad59177ec3e8fbb16f43ad2f0823ba5c624a0589c4c2514",
+      "size_bytes": 6174,
+      "role": "normative_contract",
+      "contract_version": "v2.1",
+      "evidence_status": "schema_fragment_gate_passed"
+    },
+    {
+      "path": "schemas/sofaudit/v2.1.schema.json",
+      "sha256": "c7d307bbd9f1e69e026deb7fe3f1eeeca25f745d652399bf8c4c374ba10935fe",
+      "size_bytes": 42878,
+      "role": "normative_contract",
+      "contract_version": "v2.1",
+      "evidence_status": "schema_fragment_gate_passed"
+    },
+    {
+      "path": "schemas/sofaudit/validation-receipt-v2.1.schema.json",
+      "sha256": "cdb8a32277a2e5d4f5eb30a9f72ce6450642e661d502ce141954dfed4e3b4ad6",
+      "size_bytes": 5991,
+      "role": "normative_contract",
+      "contract_version": "v2.1",
+      "evidence_status": "schema_fragment_gate_passed"
+    },
+    {
+      "path": "schemas/sofrs/v2.1.schema.json",
+      "sha256": "cb7803deff08d7f93e36d2d1157e2bcf9563048ccf5ee28fd9a16d82cb1993da",
+      "size_bytes": 29462,
+      "role": "normative_contract",
+      "contract_version": "v2.1",
+      "evidence_status": "schema_fragment_gate_passed"
+    },
+    {
+      "path": "schemas/sofrs/report-validation-receipt-v2.1.schema.json",
+      "sha256": "defd2bcaaac9d5f1a1ff2907494b35dfb853ca729244dced733a6329e69f6820",
+      "size_bytes": 6200,
+      "role": "normative_contract",
+      "contract_version": "v2.1",
+      "evidence_status": "schema_fragment_gate_passed"
+    },
+    {
+      "path": "registry/paper10-typed-v2.1.registry.json",
+      "sha256": "52f1b2075c6c1f0e823b0437b95ab63c14e2769b54fbdf187fcf52b54cf67ec6",
+      "size_bytes": 287476,
+      "role": "normative_registry",
+      "contract_version": "v2.1",
+      "evidence_status": "registry_validation_passed"
+    },
+    {
+      "path": "experiments/paper10/results/registry_evidence_v2_1.json",
+      "sha256": "83671fb54476a5b1b6e024341876681297fd8a082fdbca5d893498259b95be1b",
+      "size_bytes": 11452,
+      "role": "accepted_evidence",
+      "contract_version": "v2.1",
+      "evidence_status": "canonical_rebuild_passed"
+    },
+    {
+      "path": "release-snapshots/rime-lite-v2.0/manifest.json",
+      "sha256": "88c2fff54cb92acf4780a7144ee8d0b29a18a1b9b41d6f32aa9cd8a93f453dfc",
+      "size_bytes": 154276,
+      "role": "historical_byte_manifest",
+      "contract_version": "snapshot-v1.4",
+      "evidence_status": "427_file_digest_gate_passed"
+    }
+  ]
+}

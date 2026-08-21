@@ -14,6 +14,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 SHA_RE = re.compile(r"^[0-9a-f]{40}$")
 PLACEHOLDERS = ("<release_", "OPTIONAL_", "SOURCE_SHA256", "YYYY-MM-DD")
+REPOSITORY_MANIFEST_VERSION = "repository-release-byte-manifest-1.0"
 
 
 def digest(path: Path, algorithm: str = "sha256") -> str:
@@ -66,6 +67,34 @@ def require_file(
     return content
 
 
+def validate_repository_manifest(manifest: dict) -> None:
+    release = manifest["release"]
+    commit = release["release_content_commit_sha"]
+    assert SHA_RE.fullmatch(commit), "invalid release-content commit SHA"
+    git("cat-file", "-e", f"{commit}^{{commit}}")
+    assert git("merge-base", "--is-ancestor", commit, "HEAD", check=False).returncode == 0
+    tree = git("rev-parse", f"{commit}^{{tree}}").stdout.strip()
+    assert tree == release["release_content_tree_oid"], "content tree OID mismatch"
+
+    paths: set[str] = set()
+    for artifact in manifest["artifacts"]:
+        path = artifact["path"]
+        assert path not in paths, f"duplicate release artifact: {path}"
+        paths.add(path)
+        content = require_file(path, artifact["sha256"], commit, strict_hash=True)
+        assert len(content) == artifact["size_bytes"], f"size mismatch: {path}"
+        assert artifact["role"], f"missing role: {path}"
+        assert artifact["contract_version"], f"missing contract version: {path}"
+        assert artifact["evidence_status"], f"missing evidence status: {path}"
+
+    assert manifest["artifact_inventory_scope"] == "selected_release_review_surface"
+    assert manifest["full_tree_anchor"] == "release_content_commit_sha"
+    print(
+        f"PASS {manifest['release']['tag']}: repository byte manifest "
+        f"({len(paths)} selected artifacts; full tree commit-anchored)"
+    )
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("manifest", type=Path)
@@ -82,6 +111,9 @@ def main() -> None:
     assert not any(token in serialized for token in PLACEHOLDERS), (
         "manifest contains an unresolved template placeholder"
     )
+    if manifest.get("schema_version") == REPOSITORY_MANIFEST_VERSION:
+        validate_repository_manifest(manifest)
+        return
     assert manifest["schema_version"] == "paper-release-manifest-1.1"
     assert manifest["release"]["status"] == "repository_accepted"
 
