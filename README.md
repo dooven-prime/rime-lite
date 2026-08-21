@@ -8,7 +8,7 @@ finite representation laboratory, not as a puzzle-solving problem.
 
 ## Public Release
 
-The current public release contains Papers I--XIV. CCS v2.1 is published
+The current public release contains Papers I--XV. CCS v2.1 is published
 separately as an optional non-paper Computational Companion Archive; the
 immutable first combined record retains its historical predecessor.
 
@@ -28,12 +28,13 @@ immutable first combined record retains its historical predecessor.
 | Paper XII | SOF diagnostic protocol and report specification | <https://doi.org/10.5281/zenodo.22006816> |
 | Paper XIII | Audit Profiles, SOF Report Alignment, and sparse typed comparison maps | <https://doi.org/10.5281/zenodo.22010220> |
 | Paper XIV | context- and policy-relative interpretation and bounded candidate dispositions | <https://doi.org/10.5281/zenodo.22024158> |
+| Paper XV | evidence-bound revision, supersession, and revalidation of current commitments | <https://doi.org/10.5281/zenodo.22043124> |
 | CCS v2.1 | optional reproducibility, observation, open-problem, and history archive | <https://doi.org/10.5281/zenodo.21988041> |
 | Historical combined Papers I--III + CCS release | immutable first-version archive; current papers are maintained independently | <https://doi.org/10.5281/zenodo.21108197> |
 
 This is the repository's canonical DOI index. It identifies immutable
 published records; other public documents link here instead of duplicating the
-list. Papers VII--XIV now match their published versioned records. Their
+list. Papers VII--XV now match their published versioned records. Their
 listed DOIs identify immutable published versions, and frozen historical
 contracts remain unchanged.
 
@@ -71,6 +72,7 @@ contracts remain unchanged.
 | XII | [`paper12_arxiv.pdf`](papers/paper12/paper12_arxiv.pdf) | [`Paper XII.md`](papers/paper12/Paper%20XII.md) | What does a compiled report represent, and where do adapter adequacy and reporting authority end? |
 | XIII | [`paper13_arxiv.pdf`](papers/paper13/paper13_arxiv.pdf) | [`Paper XIII.md`](papers/paper13/Paper%20XIII.md) | How can two SOF Reports be aligned and compared without conflating difference with defect? |
 | XIV | [`paper14_arxiv.pdf`](papers/paper14/paper14_arxiv.pdf) | [`Paper XIV.md`](papers/paper14/Paper%20XIV.md) | How can an immutable audit be interpreted under admitted context and policy without promoting candidates into decisions or effects? |
+| XV | [`paper15_arxiv.pdf`](papers/paper15/paper15_arxiv.pdf) | [`Paper XV.md`](papers/paper15/Paper%20XV.md) | How can current commitments be revised without rewriting historical artifacts or granting feedback operational authority? |
 | CCS v2.1 Archive | [`ccs_arxiv.pdf`](ccs/ccs_arxiv.pdf) | [`canonical_specification.md`](ccs/canonical_specification.md) | Optional Paper I--III reproducibility pointers, computational observations, open problems, and historical records |
 
 Thematic index, not a paper dependency order:
@@ -90,6 +92,7 @@ Typed wall morphology and multi-label taxonomy
 SOF diagnostic reporting
 SOF Report Alignment and comparison geometry
 Context- and policy-relative interpretation and bounded candidate semantics
+Corrigible structural interfaces and evidence-bound epistemic revision
 ```
 
 Papers I--VII are independently readable. Their neighboring results connect

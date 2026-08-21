@@ -71,9 +71,11 @@ Protocol validation establishes only the declared contract and artifact
 closure. Object-level or scientific claims require their own admitted evidence
 and certificate class.
 
-The current public protocol stops at bounded candidates. `.sofplan`,
-`.sofauth`, `.sofoutcome`, and `.sofeffect` are reserved downstream vocabulary,
-not published contracts in this repository.
+The current public machine protocol stops at bounded candidates. `.sofplan`,
+`.sofauth`, `.sofexec`, `.sofoutcome`, and `.sofeffect` are not published
+contracts, and their names do not announce successor stages in this
+repository. Paper XV closes the numbered protocol line through an epistemic
+revision position interface; it is not another wire-contract stage.
 
 ## Runtime and Transport Boundary
 

@@ -45,6 +45,7 @@ Paper-facing computations write generated records under the owning
 | XII | [paper12/README.md](paper12/README.md) | SOFRS v2 assembly, validation receipts, and diagnostic probes |
 | XIII | [paper13/README.md](paper13/README.md) | Audit Profiles, aligned comparison, 28-record SOFAUDIT migration, and a separate native-v2 GridWorld factual audit |
 | XIV | [paper14/README.md](paper14/README.md) | 29-object SOFAction workbench, closed predicate replay, bounded candidate dispositions, and validation receipts |
+| XV | [paper15/README.md](paper15/README.md) | artifact and claim map for the five revision-interface propositions; no computational evidence claim |
 
 Where a paper-local README is not yet present, the owning manuscript and
 script docstrings define the release-local scope. A future versioned reopening

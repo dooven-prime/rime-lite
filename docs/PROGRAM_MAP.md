@@ -2,7 +2,7 @@
 
 This document is the public navigation map for the Representation-Induced
 Mechanics and Evolution (RIME) program. It identifies semantic ownership,
-typed interfaces, and promotion boundaries across Papers I--XIV. It is not a
+typed interfaces, and promotion boundaries across Papers I--XV. It is not a
 proof document, release ledger, result record, or substitute for an owning
 manuscript.
 
@@ -61,7 +61,7 @@ Every cross-layer promotion requires an explicit certificate.
 No line asserts a profile-independent observable invariant or a universal law
 that uniquely determines behavior.
 
-## 3. Public Paper Arc: Papers I--XIV
+## 3. Public Paper Arc: Papers I--XV
 
 | Paper | Owned layer | Core object | Reader question |
 |-------|-------------|-------------|-----------------|
@@ -79,6 +79,7 @@ that uniquely determines behavior.
 | XII | single-report protocol | realization-relative `.sofreport` record | What does one typed report assert, and where does adapter responsibility remain? |
 | XIII | alignment and comparison | Audit Profile, alignment contract, and sparse `.sofaudit` comparison | How do two aligned reports differ? |
 | XIV | interpretation and bounded candidate semantics | `ActionContext`, `PolicyProfile`, `InterpretationRecord`, and bounded `CandidateActionSet` | What can admitted context and policy legitimately support from an aligned difference? |
+| XV | corrigible structural interfaces | `EpistemicState`, `EvidenceUpdate`, `RevisionRecord`, `SupersessionMap`, and `RevalidationObligation` | How can current commitments be revised without rewriting historical artifacts or granting feedback operational authority? |
 
 This table is thematic rather than sequential. A paper may import an object or
 certificate from another paper while retaining its own hypotheses and claim
@@ -138,7 +139,8 @@ binary support or depth transition without a proxy-to-shadow theorem.
 
 ## 5. The Post-Paper-VII SOF Stack
 
-The SOF stack has seven ownership layers:
+The SOF arc has seven typed ownership layers followed by a closing
+epistemic-revision position layer:
 
 ```text
 Paper VIII   static marked object and carrier-qualified morphisms
@@ -148,6 +150,7 @@ Paper XI     wall records, coordinate profiles, and taxonomy
 Paper XII    realization-relative single-report protocol
 Paper XIII   aligned sparse comparison
 Paper XIV    ActionContext/PolicyProfile interpretation and bounded candidates
+Paper XV     evidence-bound revision, supersession, and revalidation
 ```
 
 ### D1. Spectral admissibility and pointwise registration: Paper VI
@@ -202,7 +205,13 @@ bounded candidate-action records. Difference alone is not defect, and no
 candidate follows from a Paper XIII mismatch without an admitted
 `ActionContext` and applicable `PolicyProfile`. That `PolicyProfile` is the
 sole normative rule input in the current contract; selection and authorization
-remain downstream.
+remain external to the published SOF protocol.
+
+Paper XV closes the numbered SOF protocol line without adding another machine
+contract. It distinguishes immutable history from defeasible current-use
+commitments, requires admitted evidence and an active revision policy, and
+keeps proposal, conformance validation, and activation separate. Its revision
+records do not select, authorize, execute, or evaluate an object-level action.
 
 ## 6. Pre-SOF Input Families
 
