@@ -6,7 +6,7 @@ finite-dimensional represented systems. The Rubik cube provides a concrete,
 reproducible, and highly noncommutative laboratory. It is used as a
 representation-theoretic testbed, not as a puzzle-solving problem.
 
-The public program arc covers Papers I--XIV. Public release identities,
+The public program arc covers Papers I--XV. Public release identities,
 current versions, and DOIs are maintained
 only in the root [Public Release table](../README.md#public-release). This
 overview describes semantic ownership rather than repository migration status.
@@ -84,7 +84,7 @@ These are neighboring self-contained interfaces. Paper IV keeps its
 arrangement fixed; Paper VI treats moving spectral fields only as a gated
 research target; Paper VII does not assert a generic completion theorem.
 
-### Papers VIII--XIV: Sectorized Observable Framework
+### Papers VIII--XV: Sectorized Observable Framework and Corrigibility
 
 - **Paper VIII** introduces the static SOF object language, marked sector
   algebra, labelled operator alphabet, optional Lie/Hall enrichment, and
@@ -108,6 +108,10 @@ research target; Paper VII does not assert a generic completion theorem.
   `CandidateActionSet` records. The `.sofaction` contract does not select,
   authorize, execute, or certify the effect of a candidate. Difference alone
   does not determine intervention.
+- **Paper XV** closes the numbered protocol line with an evidence-bound
+  epistemic-revision interface. It preserves immutable history while allowing
+  current-use commitments to be superseded and revalidated, and it adds no
+  selection, authorization, execution, outcome, or effect contract.
 
 ## Claim Discipline
 

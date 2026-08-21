@@ -9,6 +9,23 @@ The canonical publication list is the root
 their declared artifacts remain the authority for mathematical and
 computational claims.
 
+## 2026-08-21: Paper XV Version 1.0
+
+Paper XV was released as the closing position paper of the numbered SOF
+protocol line. It defines evidence-bound revision, supersession, and
+revalidation through five typed interface objects and five propositions under
+the declared construction. Provenance history remains append-only while
+current-use commitments may be revised, and a proposal becomes current only
+after conformance validation and a separate activation basis.
+
+The paper does not define a successor execution protocol, wire schema, runtime
+certificate, action selection, authorization, execution, repair, outcome, or
+effect semantics. Later contextual and descent mathematics is independently
+scoped.
+
+The public release is DOI
+<https://doi.org/10.5281/zenodo.22043124>.
+
 ## 2026-08-20: Paper XIV Version 2.1
 
 Paper XIV was released as the candidate non-execution and attribution-boundary

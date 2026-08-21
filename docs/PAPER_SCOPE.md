@@ -4,7 +4,7 @@ This file is the public ownership and scope ledger for the RIME paper series.
 It identifies the object and reader question owned by each paper without
 repeating manuscript definitions, numerical tables, or release metadata.
 
-The current public release contains Papers I--XIV. CCS v2.1 is an optional
+The current public release contains Papers I--XV. CCS v2.1 is an optional
 non-paper archive. Publication identities and DOIs are maintained only in the
 root [Public Release table](../README.md#public-release).
 
@@ -36,6 +36,7 @@ invariants are maintained in [CORE_INVARIANTS.md](CORE_INVARIANTS.md).
 | XII | versioned single-report protocol and epistemic boundary (`SOFRS`) | What does a compiled report represent, and what remains the adapter's responsibility? |
 | XIII | Audit Profiles, explicit alignment, sparse comparison maps, and fixed-frame pseudometrics (`SOFAUDIT`) | How can two reports be compared without manufacturing unavailable coordinates or treating difference as defect? |
 | XIV | admitted context/policy interpretation and bounded candidate dispositions (`SOFAction`) | Which interpretations and candidates follow under one explicit `ActionContext` and `PolicyProfile`? |
+| XV | evidence-bound revision, supersession, and revalidation of current commitments | How can current commitments change without rewriting historical artifacts or granting feedback operational authority? |
 
 The matrix is thematic, not a theorem dependency order. A neighboring result
 can be reused only after the receiving paper redeclares its object, hypotheses,
@@ -58,10 +59,15 @@ comparison. Paper XIV owns policy-relative interpretation and bounded
 candidates. The detailed machine handoff is summarized in
 [SOF_PROTOCOL_STACK.md](SOF_PROTOCOL_STACK.md).
 
+Paper XV is not a successor machine-contract stage. It defines a typed
+epistemic-revision interface around admitted evidence and current-use
+commitments while preserving the Paper XIV stop before selection,
+authorization, execution, outcome, and effect.
+
 A `.sofaction` does not own selection, recommendation, authorization,
-execution, outcome observation, or causal effect. Those concepts require
-separate downstream contracts and cannot be imported backward into SOFAction,
-SOFAUDIT, or SOFRS.
+execution, outcome observation, or causal effect. Those concepts remain
+external to the published SOF protocol and cannot be imported backward into
+SOFAction, SOFAUDIT, or SOFRS.
 
 ## Promotion Boundaries
 
@@ -82,7 +88,7 @@ SOFAUDIT, or SOFRS.
 
 CCS v2.1 is optional reproducibility, observation, open-problem, and historical
 archive material. It is not a paper, theorem source, semantic authority,
-executable certificate, or prerequisite for Papers I--XIV. Its canonical
+executable certificate, or prerequisite for Papers I--XV. Its canonical
 public source is [ccs/canonical_specification.md](../ccs/canonical_specification.md).
 
 ## Out of Scope
