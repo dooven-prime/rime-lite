@@ -86,8 +86,5 @@ are intentionally excluded from the public CCS interface.
 
 The CCS does not study cube solving, search heuristics, pruning tables,
 sticker rendering, or neural solvers. The cube is used as a finite
-representation-theoretic testbed. Published release metadata and the file
-certificate are recorded in the
-[Zenodo metadata snapshot](../docs/archive/dois/21988041.json). The historical
-combined DOI is provenance only; CCS v2.1 is published independently at
-`10.5281/zenodo.21988041`.
+representation-theoretic testbed. The historical combined DOI is provenance
+only; CCS v2.1 is published independently at `10.5281/zenodo.21988041`.

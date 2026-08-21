@@ -1,12 +1,43 @@
 {
   "snapshot_id": "rime-lite-v2.0-byte-snapshot",
-  "snapshot_version": "1.0",
+  "snapshot_version": "1.4",
   "release_tag": "rime-lite-v2.0",
   "release_commit": "de572e942a4e0f9ac5edc4180e997bfd1f069e8a",
   "historical_content_commit": "c58633494257757e3316f31d8a7cfedc2e75af4e",
   "byte_policy": "Exact file bytes. Text conversion is disabled for snapshot payloads.",
-  "file_count": 412,
+  "amendment_note": "Version 1.4 adds the exact three-file Paper I figure source closure to the Paper II--IV and Paper XI amendments; all added bytes match previously recorded artifact digests, and no historical artifact or receipt was rewritten.",
+  "file_count": 427,
   "files": [
+    {
+      "source_uri": "experiments/observation.py",
+      "snapshot_uri": "files/experiments/observation.py",
+      "digest": "da4d556972862faece732316f1d3950600f06858865e61af6a8cc282ba24b4b5",
+      "origin": "recovered-declared-digest-from-20260725-full-backup"
+    },
+    {
+      "source_uri": "experiments/paper1/validation/spectral_ladder.py",
+      "snapshot_uri": "files/experiments/paper1/validation/spectral_ladder.py",
+      "digest": "ab99d08653fb5d832a7874948d61cbce580a0652985b94e8746a087cc94c5e0d",
+      "origin": "recovered-declared-digest-from-20260821-backup"
+    },
+    {
+      "source_uri": "experiments/paper1/validation/block_composition.py",
+      "snapshot_uri": "files/experiments/paper1/validation/block_composition.py",
+      "digest": "d7771773139291bdbdca9c78537eedc818b67d8c517ab6fda7c7891969713268",
+      "origin": "recovered-declared-digest-from-20260821-backup"
+    },
+    {
+      "source_uri": "experiments/paper1/validation/symmetry_breaking.py",
+      "snapshot_uri": "files/experiments/paper1/validation/symmetry_breaking.py",
+      "digest": "293f9d8d67e80ba489e43823dfe61808b7438b830ecc4bd2e004cb84162f56a4",
+      "origin": "recovered-declared-digest-from-20260821-backup"
+    },
+    {
+      "source_uri": "experiments/paper11/archive/results/wall_record_census_v2.json",
+      "snapshot_uri": "files/experiments/paper11/archive/results/wall_record_census_v2.json",
+      "digest": "988d0fb807ac1deb239ccfd59d0e743fe6c7ab76caf18ea9fb1a033727a8cf79",
+      "origin": "recovered-declared-digest-from-20260821-backup"
+    },
     {
       "source_uri": "experiments/paper12/results/compiler-output/diffusion.compiler-output.json",
       "snapshot_uri": "files/experiments/paper12/results/compiler-output/diffusion.compiler-output.json",
@@ -2454,6 +2485,66 @@
       "snapshot_uri": "files/experiments/paper13/validation/validate_sofaudit_v2.py",
       "digest": "74b24b9485292d9e475849907abc9cb681ede7eda7743987e2d869121de4908d",
       "origin": "published-release-blob"
+    },
+    {
+      "source_uri": "experiments/paper2/validation/transport_graph.py",
+      "snapshot_uri": "files/experiments/paper2/validation/transport_graph.py",
+      "digest": "70a8c26bb451bfb8cea3130ff8f71e3491ee836e2957bb10c7553edb3f65859f",
+      "origin": "recovered-declared-digest-from-20260821-backup"
+    },
+    {
+      "source_uri": "experiments/paper3/validation/composition_obstruction.py",
+      "snapshot_uri": "files/experiments/paper3/validation/composition_obstruction.py",
+      "digest": "c4a2ab527b3af35c6fd891bfb3ec8312317711d2a2b255da4e00d0b3b99086d1",
+      "origin": "recovered-declared-digest-from-20260725-full-backup"
+    },
+    {
+      "source_uri": "experiments/paper4/results/rubik_joint_spectrum_registration.observation.json",
+      "snapshot_uri": "files/experiments/paper4/results/rubik_joint_spectrum_registration.observation.json",
+      "digest": "dc3729809f75e66f58d6750849ec28d5cd4a33bc05ea4a8d24f364eb3c655e9a",
+      "origin": "recovered-declared-digest-from-20260821-backup"
+    },
+    {
+      "source_uri": "pyproject.toml",
+      "snapshot_uri": "files/pyproject.toml",
+      "digest": "0dad94363942d0695f55e637406024e733ae1979478d466f36c9164643a6e2bf",
+      "origin": "recovered-declared-digest-from-20260725-full-backup"
+    },
+    {
+      "source_uri": "rime/base.py",
+      "snapshot_uri": "files/rime/base.py",
+      "digest": "fead279b5631625050b0ee1f24a2bc47c19acac864b9c717a7917398bc4d0d30",
+      "origin": "recovered-declared-digest-from-20260725-full-backup"
+    },
+    {
+      "source_uri": "rime/cube.py",
+      "snapshot_uri": "files/rime/cube.py",
+      "digest": "6cfc68516f7aee5049b8124b8848d17f5a488bb67399d414d3442f0415ef2365",
+      "origin": "recovered-declared-digest-from-20260725-full-backup"
+    },
+    {
+      "source_uri": "rime/cubie.py",
+      "snapshot_uri": "files/rime/cubie.py",
+      "digest": "8bc21b4035c579bc4ed6a3867b2bd53989c1e38f2f4b76c6ebc00bcb4d43c029",
+      "origin": "recovered-declared-digest-from-20260725-full-backup"
+    },
+    {
+      "source_uri": "rime/cubieoperator.py",
+      "snapshot_uri": "files/rime/cubieoperator.py",
+      "digest": "9b4b87038048b869e196ae586f28a38093f442e69d1826ef41be5a6f38127dfc",
+      "origin": "recovered-declared-digest-from-20260725-full-backup"
+    },
+    {
+      "source_uri": "rime/helpers.py",
+      "snapshot_uri": "files/rime/helpers.py",
+      "digest": "0aa95428c5763ab41dce9cb25072c956b837bbdc07fa7347d07412995bf47887",
+      "origin": "recovered-declared-digest-from-20260725-full-backup"
+    },
+    {
+      "source_uri": "rime/spectral_utils.py",
+      "snapshot_uri": "files/rime/spectral_utils.py",
+      "digest": "36a1d7e7a6a369583c3fe6f72751aa5e7cc4a8db6fd219e68b3448d124fa0c9c",
+      "origin": "recovered-declared-digest-from-20260725-full-backup"
     },
     {
       "source_uri": "schemas/sofaudit/v2.0.schema.json",

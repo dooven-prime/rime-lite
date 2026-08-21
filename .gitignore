@@ -22,12 +22,14 @@ data/
 backup/
 notebooks/
 tmp/
+tmp*/
 docs/archive/
 docs/internal/
 figures/archive/
 figures/ccs/*.pdf
 figures/paper*/*.pdf
-
+output/
+experiments/exploratory/archive/
 
 # CCS frozen snapshots
 ccs/canonical_specification - *.md
@@ -42,14 +44,9 @@ papers/tex/
 experiments/* - v*.md
 
 # Unreleased paper-stage material
-schemas/sofdecision/
-tests/test_sof_decision.py
 tests/internal/
 
 # Local review scratch files
-/_check_appendix.py
-/_headers.txt
-/_tmp_pdf_review/
 /tmp_*.txt
 /output/
 
@@ -59,6 +56,7 @@ tests/internal/
 *.bak
 .DS_Store
 backup.py
+backup_modified_papers.py
 Thumbs.db
 
 AGENTS.md

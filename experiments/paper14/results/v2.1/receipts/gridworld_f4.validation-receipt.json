@@ -29,14 +29,14 @@
       "uri": "schemas/sofaction/v2.1.schema.json",
       "digest": {
         "algorithm": "sha256",
-        "value": "350833dc91e7e5e38be1cec35d4b179d4e6f40008b01b165cc2c5a81bc66cd92"
+        "value": "7ed0a07203dda73992a4b2cced8acb4b9d2bdf5f8afd1d405539929342155b95"
       }
     },
     "receipt_contract": {
       "uri": "schemas/sofaction/validation-receipt-v2.1.schema.json",
       "digest": {
         "algorithm": "sha256",
-        "value": "da988e8002e52c4bc8fd1d923c4c02f3fe746d5653c7464f322698b3191a6b39"
+        "value": "403f85cbf99083260ad59177ec3e8fbb16f43ad2f0823ba5c624a0589c4c2514"
       }
     }
   },
@@ -98,7 +98,7 @@
           "uri": "schemas/sofaction/v2.1.schema.json",
           "digest": {
             "algorithm": "sha256",
-            "value": "350833dc91e7e5e38be1cec35d4b179d4e6f40008b01b165cc2c5a81bc66cd92"
+            "value": "7ed0a07203dda73992a4b2cced8acb4b9d2bdf5f8afd1d405539929342155b95"
           }
         }
       },
@@ -158,14 +158,14 @@
           "uri": "schemas/sofaction/validation-receipt-v2.1.schema.json",
           "digest": {
             "algorithm": "sha256",
-            "value": "da988e8002e52c4bc8fd1d923c4c02f3fe746d5653c7464f322698b3191a6b39"
+            "value": "403f85cbf99083260ad59177ec3e8fbb16f43ad2f0823ba5c624a0589c4c2514"
           }
         }
       }
     ],
     "closure_digest": {
       "algorithm": "sha256",
-      "value": "87ae04a3f2b717a25c027603f3484ab231c57a567f55ef29c9ab677dccaf92a0"
+      "value": "209531ea1a5f543418e785fa6d9df47ae233351431b203d5f79c36500c84060c"
     }
   },
   "status": "PASS",

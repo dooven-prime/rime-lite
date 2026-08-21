@@ -1,9 +1,9 @@
 # Paper X Experiments
 
-This directory supports the capability-aware admission examples and Registry
-v2.0 evidence used by Paper X. It does not establish one common dynamics across
-species, and no script may populate a carrier that its realization does not
-declare.
+This directory supports the capability-aware admission examples, frozen
+Registry v2.0 evidence, and the separate Registry v2.1 candidate used by Paper
+X. It does not establish one common dynamics across species, and no script may
+populate a carrier that its realization does not declare.
 
 ## Current Evidence
 
@@ -17,37 +17,40 @@ declare.
 | `markov_graph_sof.py` | registers a three-state Markov operator and six-vertex path graph with positive-word support and exact word depth | Computational Certificates; no Lie/Hall carrier |
 | `tau_quantum_graph_yang.py` | audits declared quantum, graph, and Yang-like proxy trajectories | boundary Computational Observations; no proxy-to-shadow promotion |
 | `validation/build_results.py` | compiles six source fixtures into `results/registry_evidence_v2.json` | versioned source-data producer |
+| `validation/build_results_v2_1.py` | compiles the current source closure into `results/registry_evidence_v2_1.json` without rewriting v2.0 evidence | Registry v2.1 candidate producer |
 | `validation/build_legacy_certificate_imports.py` | imports two source-addressed certificate values from the immutable v1 snapshot and freezes the quantum carrier registration | migration certificate producer, not a fresh scientific recomputation |
 | `validation/validate_results.py` | checks current finite invariants and the Registry v2.0 artifact binding | release validator |
 
-The Paper X result builder consumes six paper-local Registry probes plus the
+The Paper X result builders consume six paper-local Registry probes plus the
 Paper IX calibrated-response fixture. The authoritative machine-readable
-cross-species record is
-`registry/paper10-typed-v2.0.registry.json`. The paper-local result JSON is not
-a second Registry catalogue: it is the source-data record injected into that
-snapshot. Registry findings point to the result artifact, whose provenance
-points back to `validation/build_results.py` and the seven source-fixture hashes.
+cross-species records are the frozen
+`registry/paper10-typed-v2.0.registry.json` and the separate v2.1 candidate.
+The paper-local result JSON files are source-data records injected into those
+snapshots, not second Registry catalogues. The v2.1 builder writes a separate
+candidate result so current source digests never rewrite v2.0 evidence.
 
-## Validation
+## Verification
 
-Rebuild the versioned evidence record and Registry snapshot from the repository
-root:
+Read-only validation checks the immutable v1 and v2.0 snapshots and the current
+v2.1 candidate:
 
 ```bash
-python experiments/paper10/validation/build_results.py
-python experiments/paper10/validation/build_legacy_certificate_imports.py
-python registry/migrate_v1_to_v2.py
+python registry/validate_snapshot.py
+python tests/test_registry_migration.py
 ```
 
-Then run the current artifact-chain release audit:
+The migration regression binds the frozen predecessor bytes, rebuilds the
+v2.1 object in memory, and requires canonical equality with the committed
+candidate. It does not rewrite a Registry snapshot.
+
+The older Paper X scientific audit remains scoped to the frozen v2.0 evidence
+record:
 
 ```bash
 python experiments/paper10/validation/validate_results.py
 ```
 
-The default audit checks both result records, their source digests, and the
-Registry snapshot without rerunning the long finite computations. Recompute
-the finite scientific fixtures explicitly:
+Recompute its finite scientific fixtures explicitly with:
 
 ```bash
 python experiments/paper10/validation/validate_results.py --recompute
@@ -59,10 +62,15 @@ The proxy-boundary recomputation is a further opt-in:
 python experiments/paper10/validation/validate_results.py --include-slow
 ```
 
-`python registry/validate_snapshot.py` validates both the immutable published
-v1 and frozen repository v2.0 snapshots.
-`python tests/test_registry_migration.py` verifies that the committed v2.0
-snapshot is exactly reproducible from its declared inputs.
+## Candidate Rebuild
+
+Rebuilding is a separate mutating operation. It writes only the v2.1 candidate
+paths and never rewrites the frozen v1, v2.0, or legacy-import artifacts:
+
+```bash
+python experiments/paper10/validation/build_results_v2_1.py
+python registry/migrate_v1_to_v2.py
+```
 
 Individual scripts remain executable for claim-facing output. All response
 times are relative to their declared trajectory, normalization, norm, and

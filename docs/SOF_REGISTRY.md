@@ -41,8 +41,17 @@ The finding census contains 1 Theorem, 13 Computational Certificates, and 14
 Computational Observations. These are Registry counts, not claims that every
 row implements every carrier.
 
-The v1 snapshot remains immutable. Regeneration of v2.0 always begins from the
-v1 source plus explicit migration inputs:
+The v1 and published v2.0 snapshots remain immutable. Current source changes
+are compiled into the separate v2.1 candidate snapshot:
+
+```text
+registry/paper10-typed-v2.1.registry.json
+```
+
+Registry schema v2.1 preserves the v2.0 object shape while making the snapshot
+and bound SOF semantics versions explicit. It is not valid to rewrite the
+published v2.0 snapshot under the newer evidence closure. Build v2.1 from the
+frozen inputs plus current versioned evidence with:
 
 ```bash
 python registry/migrate_v1_to_v2.py
@@ -183,12 +192,21 @@ finding.
 Paper X evidence is built through:
 
 ```text
+frozen v2.0 evidence:
 experiments/paper10/validation/build_results.py
   -> experiments/paper10/results/registry_evidence_v2.json
+
+v2.1 candidate evidence:
+experiments/paper10/validation/build_results_v2_1.py
+  -> experiments/paper10/results/registry_evidence_v2_1.json
+
+immutable migration inputs:
+registry/paper10-release-v1.0.registry.json
+registry/paper10-typed-v2.0.registry.json
 experiments/paper10/validation/build_legacy_certificate_imports.py
   -> experiments/paper10/results/legacy_certificate_imports_v2.json
   -> registry/migrate_v1_to_v2.py
-  -> registry/paper10-typed-v2.0.registry.json
+  -> registry/paper10-typed-v2.1.registry.json
 ```
 
 The legacy-import record is explicitly a migration certificate from the
@@ -243,22 +261,30 @@ typed objects and findings
 Each downstream stage adds a new contract and cannot silently revise upstream
 carrier semantics. `.sofaction` does not contain a selected plan,
 authorization receipt, outcome observation, or action-effect certificate;
-those remain separate future artifacts.
+the numbered SOF protocol line assigns no downstream wire contracts for those
+external objects.
 
 ## Validation
 
-Validate the immutable published v1 snapshot and frozen repository v2.0
-snapshot:
+Validate the immutable published v1 and v2.0 snapshots together with the v2.1
+candidate:
 
 ```bash
 python registry/validate_snapshot.py
 ```
 
-Rebuild and validate the Paper X source record:
+Verify that the committed v2.1 candidate is canonically reproducible from its
+declared inputs without writing tracked files:
 
 ```bash
-python experiments/paper10/validation/build_results.py
-python experiments/paper10/validation/validate_results.py
+python tests/test_registry_migration.py
+```
+
+Rebuilding is a separate candidate operation:
+
+```bash
+python experiments/paper10/validation/build_results_v2_1.py
+python registry/migrate_v1_to_v2.py
 ```
 
 The validator checks schema version, admission, capabilities, policies,

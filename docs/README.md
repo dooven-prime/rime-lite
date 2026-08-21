@@ -46,7 +46,9 @@ and Lie depth remain typed separately.
 | [experiments/README.md](../experiments/README.md) | paper-owned scripts, result artifacts, and claim boundaries |
 | [figures/README.md](../figures/README.md) | presentation renderers and manuscript image assets |
 | [schemas/README.md](../schemas/README.md) | published compiler, SOFRS, SOFAUDIT, SOFAction, and Registry contracts |
-| [registry/](../registry/) | frozen versioned Registry snapshots |
+| [registry/](../registry/) | immutable Registry releases and the separately versioned v2.1 candidate |
+| [release-snapshots/](../release-snapshots/) | exact-byte historical inputs used by version-aware validators |
+| [tools/README.md](../tools/README.md) | read-only snapshot, evidence-graph, release-manifest, and external-anchor checks |
 | [CCS v2.1](../ccs/canonical_specification.md) | optional computational companion archive |
 
 Presentation renderers are not scientific certificates. Cached observations

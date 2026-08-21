@@ -20,6 +20,26 @@ from rime.cubieoperator import CubieSpectralOperator
 
 TOL = 1e-10
 
+
+def test_n16_generator_family_identity():
+    """Lock the labelled family and its distinct layer/sector registrations."""
+    full_keys = set(CubieMove.rho_moves)
+    selected_keys = set(CubieSpectralOperator.rho_moves(16))
+    removed_keys = full_keys - selected_keys
+
+    assert len(selected_keys) == 16
+    assert removed_keys == {(0, -1, 2), (0, 1, 2)}
+    assert {CubieMove.move_label(key) for key in removed_keys} == {'L2', 'R2'}
+
+    operator = CubieSpectralOperator(n=16)
+    decomposition = operator.center_decomposition()
+    assert len(operator.layer_keys) == 9
+    assert decomposition['n_sectors'] == 13
+    assert [sector['dim'] for sector in decomposition['sectors']] == [
+        20, 2, 26, 13, 26, 44, 1, 13, 22, 26, 18, 8, 9,
+    ]
+
+
 # ═══════════════════════════════════════════════════════════════════════════
 # Level 1 — Spectral theorem invariants
 # ═══════════════════════════════════════════════════════════════════════════

@@ -55,7 +55,7 @@ def _closure_digest(ordered_artifacts: list[dict[str, Any]]) -> dict[str, str]:
     }
 
 
-def _release_blob_digest(uri: str) -> str | None:
+def _release_blob_bytes(uri: str) -> bytes | None:
     completed = subprocess.run(
         ["git", "show", f"{PUBLISHED_RELEASE_COMMIT}:{uri}"],
         cwd=ROOT,
@@ -64,24 +64,67 @@ def _release_blob_digest(uri: str) -> str | None:
     )
     if completed.returncode != 0:
         return None
-    return hashlib.sha256(completed.stdout).hexdigest()
+    return completed.stdout
 
 
-def _digest_matches_current_or_release(uri: str, expected: str) -> bool:
-    path = ROOT / uri
-    if path.is_file() and _sha256(path) == expected:
+def _release_blob_digest_matches(
+    uri: str,
+    expected: str,
+    *,
+    allow_windows_materialization: bool = False,
+) -> bool:
+    release_bytes = _release_blob_bytes(uri)
+    if release_bytes is None:
+        return False
+    if hashlib.sha256(release_bytes).hexdigest() == expected:
         return True
-    return _release_blob_digest(uri) == expected
+    if not allow_windows_materialization:
+        return False
+    normalized = release_bytes.replace(b"\r\n", b"\n")
+    materialized = normalized.replace(b"\n", b"\r\n")
+    return hashlib.sha256(materialized).hexdigest() == expected
 
 
-def _artifact_reference_errors(reference: dict[str, Any], label: str) -> list[str]:
+def _digest_matches_registered_bytes(
+    uri: str,
+    expected: str,
+    *,
+    allow_release_blob: bool = False,
+    allow_windows_materialization: bool = False,
+) -> bool:
+    reference = {
+        "uri": uri,
+        "digest": {"algorithm": "sha256", "value": expected},
+    }
+    resolved = resolve_release_reference(reference, repository_root=ROOT)
+    if resolved.is_file() and _sha256(resolved) == expected:
+        return True
+    if not allow_release_blob:
+        return False
+    return _release_blob_digest_matches(
+        uri,
+        expected,
+        allow_windows_materialization=allow_windows_materialization,
+    )
+
+
+def _artifact_reference_errors(
+    reference: dict[str, Any],
+    label: str,
+    *,
+    allow_release_blob: bool = False,
+) -> list[str]:
     errors: list[str] = []
     uri = reference.get("uri", "")
     if not isinstance(uri, str) or not uri.startswith("artifact://"):
         return [f"{label}: artifact URI is not repository-addressable"]
     relative = unquote(uri.removeprefix("artifact://"))
     expected = reference.get("digest", {}).get("value")
-    if not _digest_matches_current_or_release(relative, expected):
+    if not _digest_matches_registered_bytes(
+        relative,
+        expected,
+        allow_release_blob=allow_release_blob,
+    ):
         errors.append(f"{label}: artifact digest matches neither the current file nor the frozen v2.0 release")
     return errors
 
@@ -475,7 +518,13 @@ def contract_errors(
 
     errors.extend(_policy_semantic_errors(policy))
     for index, basis in enumerate(policy.get("normative_basis", [])):
-        errors.extend(_artifact_reference_errors(basis.get("source_ref", {}), f"normative basis {index}"))
+        errors.extend(
+            _artifact_reference_errors(
+                basis.get("source_ref", {}),
+                f"normative basis {index}",
+                allow_release_blob=True,
+            )
+        )
     for index, reference in enumerate(context.get("transformation_contract_refs", [])):
         errors.extend(_artifact_reference_errors(reference, f"transformation contract {index}"))
     errors.extend(_evidence_reference_errors(record_basis.get("evidence_refs", []), source_ref, "record basis"))
@@ -709,10 +758,23 @@ def validation_receipt_errors(receipt: dict[str, Any]) -> list[str]:
     if len(roles) != len(set(roles)):
         errors.append("receipt artifact roles are not unique")
     for index, item in enumerate(ordered):
+        role = item.get("role")
         reference = item.get("artifact", {})
         uri = reference.get("uri", "")
         expected = reference.get("digest", {}).get("value")
-        if not _digest_matches_current_or_release(uri, expected):
+        implementation_role = role in {
+            "validator-implementation",
+            "validation-receipt-contract",
+        }
+        normative_role = isinstance(role, str) and role.startswith(
+            "normative-basis-"
+        )
+        if not _digest_matches_registered_bytes(
+            uri,
+            expected,
+            allow_release_blob=implementation_role or normative_role,
+            allow_windows_materialization=implementation_role,
+        ):
             errors.append(f"receipt artifact {index} digest matches neither current nor frozen release content")
     role_map = {item.get("role"): item.get("artifact") for item in ordered}
     if receipt.get("action", {}).get("artifact") != role_map.get("action"):

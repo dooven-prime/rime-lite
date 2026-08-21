@@ -1,8 +1,9 @@
-"""Compile the frozen Paper X Registry v1 snapshot into Registry v2.0.
+"""Compile frozen Registry inputs into the active Registry v2.1 candidate.
 
-The v1 snapshot is immutable input.  Legacy row-splitting declarations below
-are used only as migration source data; :func:`build` emits the capability-
-aware Registry v2.0 contract owned by ``schemas/registry/v2.0.schema.json``.
+The v1 and published v2.0 snapshots are immutable inputs. Legacy row-splitting
+declarations below are used only as migration source data; :func:`build` emits
+a separate snapshot under the Registry v2.1 schema. The script never
+overwrites either published predecessor.
 """
 
 from __future__ import annotations
@@ -18,10 +19,11 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 V1_PATH = ROOT / "registry" / "paper10-release-v1.0.registry.json"
 V2_PATH = ROOT / "registry" / "paper10-typed-v2.0.registry.json"
+V2_1_PATH = ROOT / "registry" / "paper10-typed-v2.1.registry.json"
 PAPER10_RESULT_PATH = (
-    ROOT / "experiments" / "paper10" / "results" / "registry_evidence_v2.json"
+    ROOT / "experiments" / "paper10" / "results" / "registry_evidence_v2_1.json"
 )
-PAPER10_RESULT_RELATIVE = "experiments/paper10/results/registry_evidence_v2.json"
+PAPER10_RESULT_RELATIVE = "experiments/paper10/results/registry_evidence_v2_1.json"
 LEGACY_IMPORT_PATH = (
     ROOT
     / "experiments"
@@ -32,7 +34,7 @@ LEGACY_IMPORT_PATH = (
 LEGACY_IMPORT_RELATIVE = (
     "experiments/paper10/results/legacy_certificate_imports_v2.json"
 )
-VALIDATOR_VERSION = "registry-validator-v2.0"
+VALIDATOR_VERSION = "registry-validator-v2.1"
 
 STATUS = {
     "theorem": "Theorem",
@@ -47,7 +49,7 @@ PUBLIC_STATUSES = set(STATUS.values())
 
 RESULT_PRODUCERS = {
     PAPER10_RESULT_RELATIVE: (
-        "experiments/paper10/validation/build_results.py"
+        "experiments/paper10/validation/build_results_v2_1.py"
     ),
     LEGACY_IMPORT_RELATIVE: (
         "experiments/paper10/validation/build_legacy_certificate_imports.py"
@@ -55,7 +57,7 @@ RESULT_PRODUCERS = {
     "experiments/paper2/results/direct_transport.json": (
         "experiments/paper2/validation/transport_graph.py"
     ),
-    "experiments/paper4/results/rubik_joint_spectrum_registration.observation.json": (
+    "experiments/paper4/results/rubik_joint_spectrum_registration_v2_1.observation.json": (
         "experiments/paper4/validation/rubik_joint_spectrum_registration.py"
     ),
     "experiments/paper7/results/incidence_geometry.json": (
@@ -724,10 +726,10 @@ def _build_legacy_candidate() -> dict:
         "Rubik QT/HT spectral realization",
         "represented spectral system",
         "Nine numerical QT/HT joint-spectral sectors.",
-        [{"name": "joint-spectral sectors", "value": 9, "channel_ids": ["joint-spectrum"], "claim_status": "Computational Certificate", "source": "experiments/paper4/results/rubik_joint_spectrum_registration.observation.json", "qualification": "Numerical registration in the declared finite complex realization; not an exact spectrum theorem."}],
+        [{"name": "joint-spectral sectors", "value": 9, "channel_ids": ["joint-spectrum"], "claim_status": "Computational Certificate", "source": "experiments/paper4/results/rubik_joint_spectrum_registration_v2_1.observation.json", "qualification": "Numerical registration in the declared finite complex realization; not an exact spectrum theorem."}],
         [
             "experiments/paper4/validation/rubik_joint_spectrum_registration.py",
-            "experiments/paper4/results/rubik_joint_spectrum_registration.observation.json",
+            "experiments/paper4/results/rubik_joint_spectrum_registration_v2_1.observation.json",
         ],
         ["Split from the v1 Rubik row; this entry records spectral registration only."],
     ))
@@ -1001,7 +1003,7 @@ def _build_legacy_candidate() -> dict:
             )
 
     return {
-        "registry_schema_version": "2.0",
+        "registry_schema_version": "2.1",
         "snapshot": {
             "id": "paper10-typed-v2.0",
             "title": "Paper X Typed SOF Registry Migration Snapshot",
@@ -2271,7 +2273,7 @@ def _migration_assertions(payload: dict) -> None:
     ]
     paper10_producers = paper10_data[0]["generated_by_artifact_ids"]
     assert [artifacts[artifact_id]["uri"] for artifact_id in paper10_producers] == [
-        "experiments/paper10/validation/build_results.py"
+        "experiments/paper10/validation/build_results_v2_1.py"
     ]
     for finding in entries["quantum-gates"]["findings"]:
         assert set(finding["channel_ids"]) == {"channel.r1-lie", "channel.d-lie"}
@@ -2334,7 +2336,7 @@ def build() -> dict:
     artifacts = ArtifactRegistry()
     entries = [_compile_entry(entry, artifacts) for entry in legacy["entries"]]
     schema_artifact_id = artifacts.add(
-        "schemas/registry/v2.0.schema.json", role="source-input"
+        "schemas/registry/v2.1.schema.json", role="source-input"
     )
     validator_artifact_id = artifacts.add(
         "registry/validate_snapshot.py", role="script"
@@ -2345,22 +2347,25 @@ def build() -> dict:
     v1_artifact_id = artifacts.add(
         "registry/paper10-release-v1.0.registry.json", role="source-input"
     )
+    v2_artifact_id = artifacts.add(
+        "registry/paper10-typed-v2.0.registry.json", role="source-input"
+    )
     payload = {
-        "registry_schema_version": "2.0",
-        "sof_semantics_version": "2.0",
+        "registry_schema_version": "2.1",
+        "sof_semantics_version": "2.1",
         "snapshot": {
-            "id": "paper10-typed-v2.0",
-            "title": "Paper X Capability-Aware Typed SOF Registry",
-            "release_date": "2026-07-30",
-            "status": "release",
+            "id": "paper10-typed-v2.1",
+            "title": "Paper X Capability-Aware Typed SOF Registry v2.1 Candidate",
+            "release_date": "2026-08-17",
+            "status": "draft",
             "source": "papers/paper10/Paper X.md",
-            "predecessor": {"id": "paper10-release-v1.0", "schema_version": "1.0"},
+            "predecessor": {"id": "paper10-typed-v2.0", "schema_version": "2.0"},
             "entry_count": len(entries),
             "scope_note": (
-                "Frozen Registry v2.0 release snapshot. Each row declares strict-SOF "
+                "Registry v2.1 revision candidate. Each row declares strict-SOF "
                 "or diagnostic-analogue admission, capabilities, typed carriers, "
                 "policies, structured findings, evidence, and negative boundaries. "
-                "Registry v1.0 remains immutable."
+                "Registry v1.0 and the published v2.0 snapshot remain immutable."
             ),
         },
         "census_certificate": {},
@@ -2374,7 +2379,7 @@ def build() -> dict:
             "canonical JSON of the complete Registry payload excluding "
             "census_certificate"
         ),
-        "schema_version": "2.0",
+        "schema_version": "2.1",
         "schema_artifact_id": schema_artifact_id,
         "validator_id": "registry.validate_snapshot",
         "validator_version": VALIDATOR_VERSION,
@@ -2386,6 +2391,7 @@ def build() -> dict:
             validator_artifact_id,
             migrator_artifact_id,
             v1_artifact_id,
+            v2_artifact_id,
         ],
     }
     _migration_assertions(payload)
@@ -2394,8 +2400,8 @@ def build() -> dict:
 
 def main() -> None:
     payload = build()
-    V2_PATH.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    print(f"Wrote {V2_PATH} ({len(payload['entries'])} entries)")
+    V2_1_PATH.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    print(f"Wrote {V2_1_PATH} ({len(payload['entries'])} entries)")
 
 
 if __name__ == "__main__":

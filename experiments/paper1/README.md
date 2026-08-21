@@ -16,6 +16,14 @@ validation and withdrawn first-version interpretations.
 The last two scripts are finite controls or qualified block reductions; they
 do not establish universal theorems.
 
+## Presentation
+
+`results/figure_data.json` records the registered spectral census, exact phase
+identity, and broken-face control used for display. `figures/paper1/render.py`
+verifies the owning source hashes and renders the three manuscript figures. It
+does not rerun the spectral computations or promote numerical registration to
+an exact classification theorem.
+
 ## Archive
 
 Scripts under `archive/` preserve calculations tied to withdrawn or unresolved

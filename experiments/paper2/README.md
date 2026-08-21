@@ -21,6 +21,10 @@
 The collision, joint-spectrum, and generator-family controls retain their
 explicitly finite or conditional computational scope.
 
+`figures/paper2/render.py` reads the frozen registered transport census and
+resolves its declared sources through the registered release-byte snapshot.
+It performs presentation work only and does not rerun the audit.
+
 ## Archive
 
 `archive/` contains calculations whose object definitions depend on the

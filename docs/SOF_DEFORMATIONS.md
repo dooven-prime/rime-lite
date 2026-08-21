@@ -1,20 +1,59 @@
 # SOF Deformations
 
-**Status:** public dynamic-layer companion to Paper IX, published as version
-2.0 under DOI
-[10.5281/zenodo.21713306](https://doi.org/10.5281/zenodo.21713306). Paper IX
-remains the canonical source for its release-local definitions and theorems.
-This companion summarizes the typed deformation charts, trajectories,
-response policies, wall pullbacks, and claim boundaries of that release.
+**Status:** public dynamic-layer companion to Paper IX. Version 2.0 remains
+the published release under DOI
+[10.5281/zenodo.21713306](https://doi.org/10.5281/zenodo.21713306); version 2.1
+is a release candidate for the Non-Intervention and Attribution Boundary
+Revision. Paper IX remains the canonical source for release-local definitions
+and theorems. This companion summarizes the typed deformation charts,
+trajectories, response policies, wall pullbacks, and claim boundaries of the
+current revision candidate.
 
 Paper IX owns typed deformation charts, observable trajectories,
 parameterization-relative response diagnostics, and wall pullbacks. It does
 not own the static SOF object language, compiler contracts, wall-record
 taxonomy, or report serialization.
 
+## Object Deformation and Deformation Record
+
+Paper IX separates a supplied object deformation, its ordered-path
+trajectory specialization, and the resulting observation record:
+
+```text
+xi: T -> S,  t |-> S_t                 ObjectDeformation
+xi_gamma = xi o gamma: I_gamma -> S    ObjectTrajectory on an ordered path
+F_t = Observe_(eta,t)(S_t)             SOFObservationRecord
+D_eta(xi) = (F_t)_(t in T)             DeformationRecord
+```
+
+External dynamics, parameter updates, environmental processes, or
+interventions supply `xi`. A general parameter space `T` need not be ordered;
+only the pullback along a declared ordered path `gamma` is an
+`ObjectTrajectory`. Paper IX studies what the supplied deformation or
+trajectory looks like through a declared SOF observation interface. It does
+not infer or generate either source-side object.
+
+Formation, differentiation, comparison, or serialization of `D_eta(xi)` has no
+object-layer intervention semantics. This is the Deformation-Record
+Non-Intervention Principle. It is a protocol and type boundary, not a claim
+that arbitrary software implementations are side-effect free.
+
+A mechanism-labelled record is indexed by a declared source-side mechanism
+label or partition. The label does not causally identify that mechanism from
+the observed response.
+
+The v2.1 migration is therefore a semantic-type migration, not a boundary-only
+annotation. Its ledger is validated against
+`schemas/sofdeformation/deformation-record-migration-v2.1.schema.json`. A
+legacy sampled trajectory may be retained as a `DeformationRecord`, but the
+migration records `LEGACY_RECORD_ONLY`, `NOT_DECLARED`, and
+`NOT_ESTABLISHED` when the historical evidence does not supply an underlying
+`ObjectDeformation`, `ObjectTrajectory`, transition model, or causal
+mechanism. Migration never invents those missing objects.
+
 ## Typed Deformation Chart
 
-A static SOF record has the form
+A static SOF object has the form
 
 ```text
 F = (V, {Q_i}, Y; X, H_Hall),
@@ -33,7 +72,7 @@ fixed word and Hall/depth conventions
 comparison map Theta_kappa into one target space E_kappa
 ```
 
-The associated field is
+The associated observed field is
 
 ```text
 J_kappa(t) = Theta_kappa(fibre data at t).
@@ -89,8 +128,8 @@ unaudited, and `UNREACHED_AT_CUTOFF`; the last state is not exact infinity.
 
 ## Trajectories and Response
 
-A general deformation family is not automatically a time trajectory.
-Response time is defined only after selecting
+A general object deformation and its observed record are not automatically a
+time trajectory. Response time is defined only after selecting
 
 ```text
 gamma: I_gamma -> U,  I_gamma subset R.
@@ -193,5 +232,7 @@ Paper IX does not claim:
 - an intrinsic response-time invariant;
 - a universal ordering of operator, commutator, word, or Lie-depth rates;
 - coherent moving sectors across a schema transition without comparison data.
+- generation of an object trajectory by its deformation record;
+- causal identification from a mechanism-labelled observation.
 
 These remain branch-qualified research problems.

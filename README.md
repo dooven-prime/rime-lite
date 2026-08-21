@@ -110,7 +110,9 @@ rime-lite/
 |-- ccs/                  Computational Companion and Status Archive source
 |-- docs/                 public overview, program map, and companion notes
 |-- schemas/              versioned SOFRS, SOFAUDIT, SOFAction, and Registry contracts
-|-- registry/             immutable v1 and frozen typed v2 Registry snapshots
+|-- registry/             immutable Registry releases and versioned candidates
+|-- release-snapshots/    exact-byte historical release inputs
+|-- tools/                read-only release and evidence-closure verification
 `-- figures/              manuscript figures and presentation-only renderers
 ```
 
@@ -146,7 +148,16 @@ The runner executes in a temporary copy and fails with
 `VERIFICATION_SIDE_EFFECT` if the source checkout's tracked state changes.
 Artifact rebuilding and promotion are separate explicit operations; active
 verification does not rewrite historical result directories. See
-[`tests/README.md`](tests/README.md) for baseline and external-anchor handling.
+[`tests/README.md`](tests/README.md) for active-test handling and
+[`tools/README.md`](tools/README.md) for snapshot, evidence-graph, release
+manifest, and external-anchor checks.
+
+Validate the frozen v2.0 snapshot and the current v2.1 receipt graph with:
+
+```bash
+python tools/validate_release_snapshot.py release-snapshots/rime-lite-v2.0/manifest.json
+python tools/release/validate_evidence_graph.py
+```
 
 Representative support scripts:
 

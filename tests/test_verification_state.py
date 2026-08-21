@@ -4,7 +4,13 @@ from __future__ import annotations
 
 from pathlib import Path
 import subprocess
+import sys
 import tempfile
+
+
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 
 from verification_state import (
     changed_tracked_paths,
@@ -12,7 +18,7 @@ from verification_state import (
     snapshot_tracked_state,
     verification_exit_code,
 )
-from verify_zenodo_anchor import record_id
+from tools.release.verify_zenodo_anchor import record_id
 
 
 def _git(root: Path, *args: str) -> None:

@@ -45,14 +45,21 @@ schemas/
   sofaudit/v2.0.schema.json   capability-aligned profile-selected comparison
   sofaudit/validation-receipt-v2.0.schema.json
                                digest-bound SOFAUDIT protocol receipt
+  sofaudit/v2.1.schema.json   non-intervention and attribution-boundary revision
+  sofaudit/validation-receipt-v2.1.schema.json
+                               conformance-only SOFAUDIT v2.1 receipt
   sofaudit/*profile-v2.0.json versioned Paper XIII Audit Profile inputs
   sofaudit/coordinate-semantics-registry-v1.0.json
                                coordinate family/value semantics registry
   sofaction/v2.0.schema.json   policy-relative interpretation and bounded candidates
   sofaction/validation-receipt-v2.0.schema.json
                                digest-bound SOFAction protocol receipt
+  sofaction/v2.1.schema.json   non-intervention action-semantics revision
+  sofaction/validation-receipt-v2.1.schema.json
+                               conformance-only SOFAction v2.1 receipt
   registry/v1.0.schema.json   one frozen five-layer Registry snapshot
   registry/v2.0.schema.json   typed Registry snapshot contract
+  registry/v2.1.schema.json   separate Registry v2.1 candidate contract
 ```
 
 The contracts are deliberately separate:
@@ -190,6 +197,12 @@ The contracts are deliberately separate:
   `python experiments/paper13/validation/migrate_sofrs_v1_to_v2.py`,
   `python experiments/paper13/validation/migrate_sofaudit_v1_to_v2.py`, and
   `python experiments/paper13/validation/validate_sofaudit_v2.py`.
+- **SOFAUDIT v2.1** adds the fixed attribution boundary and separates explicit
+  v2.0 migration from native v2.1 generation. Migration preserves the
+  comparison projection and binds the frozen source audit and receipt; native
+  generation binds its own producer and input closure. Neither branch promotes
+  an aligned difference into defect, causal attribution, or intervention.
+  Run `python experiments/paper13/validation/validate_sofaudit_v2_1.py`.
 - **SOFAction v2.0** validates a `.sofaction` artifact that binds an immutable
   SOFAUDIT projection and its receipt to an independently supplied
   `ActionContext` and the sole normative `PolicyProfile`. Policy Predicate
@@ -206,6 +219,11 @@ The contracts are deliberately separate:
   class selects, recommends, authorizes, executes, observes, or certifies the
   effect of an action. Run `python experiments/paper14/action_workbench.py` and
   `python experiments/paper14/validate_sofaction.py`.
+- **SOFAction v2.1** adds a fixed execution boundary and distinct migration and
+  native-generation provenance. Its 29 validation receipts bind the active
+  v2.1 closure; historical v2.0 receipts remain immutable and use their own
+  version-aware validation path. Run
+  `python experiments/paper14/validate_sofaction_v2_1.py`.
 - **SOF Registry Schema** validates a versioned collection of evidence entries.
   v1 retains the frozen five-layer Paper X release shape. v2.0 instead declares
   strict-SOF or diagnostic-analogue admission, capabilities, typed objects and
@@ -223,10 +241,13 @@ The contracts are deliberately separate:
   denotes a truncated field with `unreached` beyond the cutoff, never exact
   infinity. Claim status remains distinct from result state. Registry v2.0 is
   semantically compatible with the compiler contracts but is not yet
-  translated into Manifest/IR records by a versioned adapter.
+  translated into Manifest/IR records by a versioned adapter. Registry v2.1
+  preserves the v2.0 object shape in a separate candidate schema and binds the
+  frozen v2.0 predecessor, current evidence result, producer, migrator, and
+  validator without rewriting either published predecessor.
 
 Published schema versions are immutable. A change to required fields,
 controlled vocabularies, or field meaning requires a new versioned file.
-Published contracts end at SOFAction's bounded candidates. Reserved downstream
-stages such as `.sofplan`, `.sofauth`, `.sofoutcome`, and `.sofeffect` are not
-part of this public schema index.
+Published contracts end at SOFAction's bounded candidates. The numbered SOF
+protocol line allocates no `.sofplan`, `.sofauth`, `.sofexec`, `.sofoutcome`,
+or `.sofeffect` wire contract.

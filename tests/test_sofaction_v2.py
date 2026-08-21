@@ -3,8 +3,10 @@
 from __future__ import annotations
 
 import importlib.util
+import hashlib
 import json
 from pathlib import Path
+import subprocess
 import sys
 
 from jsonschema import Draft202012Validator
@@ -70,5 +72,40 @@ for receipt_path in receipt_paths:
     receipt = json.loads(receipt_path.read_text(encoding="utf-8"))
     errors = validate_sofaction.validation_receipt_errors(receipt)
     assert not errors, f"{receipt_path}: {'; '.join(errors)}"
+
+# Historical report/input bytes require an exact registered snapshot. A pinned
+# release blob is not a general fallback for inputs whose current bytes drift.
+historical_input_uri = "papers/paper13/Paper XIII.md"
+historical_input = subprocess.run(
+    [
+        "git",
+        "show",
+        f"{validate_sofaction.PUBLISHED_RELEASE_COMMIT}:{historical_input_uri}",
+    ],
+    cwd=ROOT,
+    check=True,
+    capture_output=True,
+).stdout
+historical_input_digest = hashlib.sha256(historical_input).hexdigest()
+assert not validate_sofaction._digest_matches_registered_bytes(
+    historical_input_uri,
+    historical_input_digest,
+)
+
+# The legacy Windows materialization fallback is confined to implementation
+# closure roles such as the validator and receipt contract.
+receipt_contract_uri = "schemas/sofaction/validation-receipt-v2.0.schema.json"
+receipt_contract_digest = (
+    "01c5aa155d84fe9df45d5c9629c205f8801019fc2c47983015b1beaeefcf6f1b"
+)
+assert not validate_sofaction._release_blob_digest_matches(
+    receipt_contract_uri,
+    receipt_contract_digest,
+)
+assert validate_sofaction._release_blob_digest_matches(
+    receipt_contract_uri,
+    receipt_contract_digest,
+    allow_windows_materialization=True,
+)
 
 print("test_sofaction_v2.py: OK")

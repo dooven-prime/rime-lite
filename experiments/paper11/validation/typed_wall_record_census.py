@@ -41,6 +41,7 @@ FROZEN_V2_CENSUS_SHA256 = (
 sys.path.insert(0, str(ROOT))
 
 from experiments.observation import check_experiment_observation  # noqa: E402
+from schemas.release_snapshot import resolve_release_reference  # noqa: E402
 
 OBSERVATION_EVIDENCE_BY_ID = {
     "C-markov-absorbing-endpoint": (
@@ -160,9 +161,19 @@ def file_sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
-if file_sha256(FROZEN_V2_CENSUS_PATH) != FROZEN_V2_CENSUS_SHA256:
+FROZEN_V2_CENSUS_RESOLVED_PATH = resolve_release_reference(
+    {
+        "uri": FROZEN_V2_CENSUS_PATH.relative_to(ROOT).as_posix(),
+        "digest": {
+            "algorithm": "sha256",
+            "value": FROZEN_V2_CENSUS_SHA256,
+        },
+    },
+    repository_root=ROOT,
+)
+if file_sha256(FROZEN_V2_CENSUS_RESOLVED_PATH) != FROZEN_V2_CENSUS_SHA256:
     raise RuntimeError("frozen Paper XI v1.1 census digest mismatch")
-FROZEN_V2_CENSUS = load_json(FROZEN_V2_CENSUS_PATH)
+FROZEN_V2_CENSUS = load_json(FROZEN_V2_CENSUS_RESOLVED_PATH)
 
 
 INCLUSION_LEDGER = load_json(INCLUSION_LEDGER_PATH)

@@ -6,26 +6,43 @@ import argparse
 import hashlib
 import json
 from pathlib import Path, PurePosixPath
+import subprocess
+import sys
 from typing import Any, Iterable
 
 from jsonschema import Draft202012Validator, FormatChecker
 
-
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from schemas.release_snapshot import resolve_release_reference  # noqa: E402
+
+
 SCHEMAS = {
     "1.0": ROOT / "schemas" / "registry" / "v1.0.schema.json",
     "2.0": ROOT / "schemas" / "registry" / "v2.0.schema.json",
+    "2.1": ROOT / "schemas" / "registry" / "v2.1.schema.json",
 }
 RULE_REGISTRY_PATH = ROOT / "schemas" / "sofcompiler" / "rule-registry-v1.0.json"
 RULE_REGISTRY = json.loads(RULE_REGISTRY_PATH.read_text(encoding="utf-8"))
 RULES = {rule["id"]: rule for rule in RULE_REGISTRY["rules"]}
 VALIDATOR_VERSION = "registry-validator-v2.0"
+VALIDATOR_VERSIONS = {
+    "2.0": "registry-validator-v2.0",
+    "2.1": "registry-validator-v2.1",
+}
 
 DEFAULT_SNAPSHOTS = [
     HERE / "paper10-release-v1.0.registry.json",
     HERE / "paper10-typed-v2.0.registry.json",
+    HERE / "paper10-typed-v2.1.registry.json",
 ]
+
+FROZEN_RELEASE_COMMITS = {
+    "paper10-typed-v2.0": "6274b7b387e8f5b84a39afe1d5c1082edebc3792",
+}
 
 # Resolve repository-only moves while preserving the immutable v1 payload.
 RELOCATED_EVIDENCE_PATHS = {
@@ -140,6 +157,42 @@ def digest_matches(path: Path, digest: dict[str, str]) -> bool:
     return hasher.hexdigest().lower() == digest["value"].lower()
 
 
+def _release_blob(uri: str, release_commit: str | None) -> bytes | None:
+    if release_commit is None:
+        return None
+    completed = subprocess.run(
+        ["git", "show", f"{release_commit}:{uri}"],
+        cwd=ROOT,
+        capture_output=True,
+        check=False,
+    )
+    return completed.stdout if completed.returncode == 0 else None
+
+
+def _verified_artifact_bytes(
+    uri: str, digest: dict[str, str], release_commit: str | None
+) -> bytes | None:
+    reference = {"uri": uri, "digest": digest}
+    path = resolve_release_reference(reference, repository_root=ROOT)
+    if path.is_file() and digest_matches(path, digest):
+        return path.read_bytes()
+    frozen = _release_blob(uri, release_commit)
+    if frozen is None:
+        return None
+    candidates = [frozen]
+    if PurePosixPath(uri).suffix.lower() in {".json", ".md", ".py", ".txt"}:
+        # Registry v2.0 was hashed from a Windows CRLF checkout before its
+        # evidence paths acquired explicit LF attributes. The release blob and
+        # this one declared checkout materialization are the only fallbacks.
+        candidates.append(frozen.replace(b"\n", b"\r\n"))
+    for candidate in candidates:
+        hasher = hashlib.new(digest["algorithm"])
+        hasher.update(candidate)
+        if hasher.hexdigest().lower() == digest["value"].lower():
+            return candidate
+    return None
+
+
 def registry_content_digest(payload: dict[str, Any]) -> dict[str, str]:
     canonical = dict(payload)
     canonical.pop("census_certificate", None)
@@ -162,7 +215,10 @@ def census_errors(
         errors.append("census_certificate.snapshot_id does not match snapshot.id")
     if census["content_digest"] != registry_content_digest(payload):
         errors.append("census_certificate.content_digest does not match Registry content")
-    if census["validator_version"] != VALIDATOR_VERSION:
+    expected_validator_version = VALIDATOR_VERSIONS.get(
+        payload["registry_schema_version"], VALIDATOR_VERSION
+    )
+    if census["validator_version"] != expected_validator_version:
         errors.append(
             "census_certificate.validator_version does not match active validator"
         )
@@ -204,8 +260,14 @@ def census_errors(
     schema_artifact = artifacts.get(census["schema_artifact_id"])
     if schema_artifact is None:
         errors.append("census_certificate.schema_artifact_id is unknown")
-    elif schema_artifact["uri"] != "schemas/registry/v2.0.schema.json":
-        errors.append("census certificate does not reference Registry schema v2.0")
+    else:
+        expected_schema_uri = (
+            f"schemas/registry/v{payload['registry_schema_version']}.schema.json"
+        )
+        if schema_artifact["uri"] != expected_schema_uri:
+            errors.append(
+                "census certificate does not reference its declared Registry schema"
+            )
     validator_artifacts = [
         artifacts[artifact_id]
         for artifact_id in census["artifact_ids"]
@@ -217,7 +279,9 @@ def census_errors(
     return errors
 
 
-def artifact_errors(artifacts: dict[str, dict[str, Any]]) -> list[str]:
+def artifact_errors(
+    artifacts: dict[str, dict[str, Any]], *, release_commit: str | None = None
+) -> list[str]:
     errors: list[str] = []
     root = ROOT.resolve()
     for artifact_id, artifact in artifacts.items():
@@ -252,14 +316,16 @@ def artifact_errors(artifacts: dict[str, dict[str, Any]]) -> list[str]:
         except ValueError:
             errors.append(f"artifact {artifact_id}: path escapes repository root")
             continue
-        if not path.is_file():
-            errors.append(f"artifact {artifact_id}: path does not exist: {uri}")
+        artifact_bytes = _verified_artifact_bytes(uri, artifact["digest"], release_commit)
+        if artifact_bytes is None:
+            errors.append(
+                f"artifact {artifact_id}: digest matches neither current nor "
+                f"declared frozen release content: {uri}"
+            )
             continue
-        if not digest_matches(path, artifact["digest"]):
-            errors.append(f"artifact {artifact_id}: digest mismatch: {uri}")
         if artifact["role"] == "source-data" and path.suffix.lower() == ".json":
             try:
-                payload = json.loads(path.read_text(encoding="utf-8"))
+                payload = json.loads(artifact_bytes.decode("utf-8"))
             except (OSError, UnicodeDecodeError, json.JSONDecodeError):
                 errors.append(f"artifact {artifact_id}: source-data is not valid JSON")
                 continue
@@ -307,14 +373,12 @@ def artifact_errors(artifacts: dict[str, dict[str, Any]]) -> list[str]:
                         f"repository root: {source_uri}"
                     )
                     continue
-                if not source_path.is_file():
-                    errors.append(
-                        f"artifact {artifact_id}: declared source does not exist: "
-                        f"{source_uri}"
-                    )
-                    continue
-                actual_digest = hashlib.sha256(source_path.read_bytes()).hexdigest()
-                if actual_digest.lower() != expected_digest.lower():
+                source_bytes = _verified_artifact_bytes(
+                    source_uri,
+                    {"algorithm": "sha256", "value": expected_digest},
+                    release_commit,
+                )
+                if source_bytes is None:
                     errors.append(
                         f"artifact {artifact_id}: stale declared source digest: "
                         f"{source_uri}"
@@ -1162,11 +1226,13 @@ def contract_ref_errors(
     return errors
 
 
-def v2_contract_errors(payload: dict[str, Any]) -> list[str]:
+def v2_contract_errors(
+    payload: dict[str, Any], *, release_commit: str | None = None
+) -> list[str]:
     errors: list[str] = []
     artifacts, duplicate_errors = indexed(payload["artifacts"], "artifact")
     errors.extend(duplicate_errors)
-    errors.extend(artifact_errors(artifacts))
+    errors.extend(artifact_errors(artifacts, release_commit=release_commit))
     errors.extend(census_errors(payload, artifacts))
 
     for source_entry in payload["entries"]:
@@ -1220,8 +1286,9 @@ def contract_errors(payload: dict[str, Any]) -> list[str]:
     version = payload.get("registry_schema_version")
     if version == "1.0":
         errors.extend(v1_contract_errors(payload))
-    elif version == "2.0":
-        errors.extend(v2_contract_errors(payload))
+    elif version in {"2.0", "2.1"}:
+        release_commit = FROZEN_RELEASE_COMMITS.get(snapshot.get("id"))
+        errors.extend(v2_contract_errors(payload, release_commit=release_commit))
     return errors
 
 
@@ -1251,7 +1318,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--include-migration-candidate",
         action="store_true",
-        help="Deprecated compatibility flag; v2.0 is validated by default.",
+        help="Deprecated compatibility flag; all registered snapshots are validated by default.",
     )
     return parser.parse_args()
 

@@ -29,7 +29,7 @@ invariants are maintained in [CORE_INVARIANTS.md](CORE_INVARIANTS.md).
 | V | direct support, projected products, commutator support, and cutoff Lie depth | Why does Boolean support fail to determine commutator accessibility? |
 | VI | linearized commutativity/normality constraints and pointwise typed registrations | Which tangent directions preserve the declared constraints, and which samples pass the spectral gates? |
 | VII | incidence geometry, rank protection, and promotion limits | When do nonzero projected factors compose? |
-| VIII | marked static SOF objects, typed filtrations, and strict morphisms | What is the sectorized observable object, and what is preserved under strict morphisms? |
+| VIII | marked static SOF objects, exact finite-permutation realizations, typed filtrations, and strict morphisms | What is the sectorized observable object, how can a finite action conform to it, and what is preserved under strict morphisms? |
 | IX | typed dynamic fields, deformation charts, and observable trajectories | Which typed SOF fields can be compared continuously, and where can their walls occur? |
 | X | capability-aware compilation theory and Registry evidence | Which claims may be compiled without manufacturing evidence or crossing carrier boundaries? |
 | XI | typed wall records, profile-relative coordinates, multi-label taxonomy, and local-model eligibility | How can admitted wall data be organized without redefining walls or assigning an intrinsic type to the source system? |

@@ -1,0 +1,462 @@
+{
+  "barrier_option": {
+    "claim_status": "Computational Observation",
+    "labelled_direct_support_count": 3,
+    "labelled_direct_support_pct": 75.0,
+    "labelled_direct_support_possible": 4,
+    "mean_first_hit_time": 6.591461595663347
+  },
+  "claim_scope": "source-addressed finite certificates and observations for the Registry v2.1 candidate; no cross-carrier promotion or common dynamics theorem",
+  "finite_spectral_triple": {
+    "central_lipschitz_zero": true,
+    "cross_block_distance": "infinite",
+    "dimension": 6,
+    "ordered_routed_bridge_count": 2,
+    "sector_count": 3
+  },
+  "markov_graph_static": {
+    "graph": {
+      "boundaries": [
+        "positive-word accessibility only",
+        "no Lie/Hall family is declared",
+        "graph paths agree with words here because the single operator is entrywise nonnegative",
+        "the certificate is specific to the displayed finite matrices"
+      ],
+      "capabilities": {
+        "deformation_chart": false,
+        "lie_hall_carrier": false,
+        "operator_carrier": true,
+        "sectorization": true,
+        "word_carrier": true
+      },
+      "claim_status": "Computational Certificate",
+      "findings": {
+        "direct_support_count": 10,
+        "direct_support_edges": [
+          "v1->v0",
+          "v0->v1",
+          "v2->v1",
+          "v1->v2",
+          "v3->v2",
+          "v2->v3",
+          "v4->v3",
+          "v3->v4",
+          "v5->v4",
+          "v4->v5"
+        ],
+        "direct_support_possible": 30,
+        "exact_word_depth": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            1,
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            1,
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            3,
+            2,
+            1,
+            0,
+            1,
+            2
+          ],
+          [
+            4,
+            3,
+            2,
+            1,
+            0,
+            1
+          ],
+          [
+            5,
+            4,
+            3,
+            2,
+            1,
+            0
+          ]
+        ],
+        "maximum_finite_word_depth": 5,
+        "reachable_off_diagonal_count": 30,
+        "unreachable_off_diagonal_count": 0,
+        "word_two_support_count": 8,
+        "word_two_support_edges": [
+          "v2->v0",
+          "v3->v1",
+          "v0->v2",
+          "v4->v2",
+          "v1->v3",
+          "v5->v3",
+          "v2->v4",
+          "v3->v5"
+        ]
+      },
+      "id": "graph-path-6",
+      "matrix": [
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "operative_alphabet": {
+        "adjoint_closed": true,
+        "labels": [
+          "A"
+        ],
+        "projectors_are_letters": false,
+        "semantics": "undirected path-graph adjacency operator",
+        "word_convention": "positive"
+      },
+      "record_kind": "strict_sof",
+      "saturation_certificate": {
+        "entrywise_nonnegative": true,
+        "method": "entrywise-nonnegative support graph and finite shortest paths",
+        "search_bound": 5,
+        "status": "PASS",
+        "word_depth_matches_support_graph": true
+      },
+      "sectorization": {
+        "complete": true,
+        "labels": [
+          "v0",
+          "v1",
+          "v2",
+          "v3",
+          "v4",
+          "v5"
+        ],
+        "origin": "vertex sectors",
+        "sector_dimensions": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "space": {
+        "dimension": 6,
+        "scalar_field": "complex"
+      },
+      "species": "Graph"
+    },
+    "markov": {
+      "boundaries": [
+        "positive-word accessibility only",
+        "no Lie/Hall family is declared",
+        "graph paths agree with words here because the single operator is entrywise nonnegative",
+        "the certificate is specific to the displayed finite matrices"
+      ],
+      "capabilities": {
+        "deformation_chart": false,
+        "lie_hall_carrier": false,
+        "operator_carrier": true,
+        "sectorization": true,
+        "word_carrier": true
+      },
+      "claim_status": "Computational Certificate",
+      "findings": {
+        "direct_support_count": 3,
+        "direct_support_edges": [
+          "state2->state0",
+          "state0->state1",
+          "state1->state2"
+        ],
+        "direct_support_possible": 6,
+        "exact_word_depth": [
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            2
+          ],
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "maximum_finite_word_depth": 2,
+        "reachable_off_diagonal_count": 6,
+        "unreachable_off_diagonal_count": 0,
+        "word_two_support_count": 6,
+        "word_two_support_edges": [
+          "state1->state0",
+          "state2->state0",
+          "state0->state1",
+          "state2->state1",
+          "state0->state2",
+          "state1->state2"
+        ]
+      },
+      "id": "markov-lazy-cycle-3",
+      "matrix": [
+        [
+          0.5,
+          0.0,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.0
+        ],
+        [
+          0.0,
+          0.5,
+          0.5
+        ]
+      ],
+      "operative_alphabet": {
+        "adjoint_closed": false,
+        "labels": [
+          "P"
+        ],
+        "projectors_are_letters": false,
+        "semantics": "column-stochastic transition operator; matrix entry P_ij carries state j to state i",
+        "word_convention": "positive"
+      },
+      "record_kind": "strict_sof",
+      "saturation_certificate": {
+        "entrywise_nonnegative": true,
+        "method": "entrywise-nonnegative support graph and finite shortest paths",
+        "search_bound": 2,
+        "status": "PASS",
+        "word_depth_matches_support_graph": true
+      },
+      "sectorization": {
+        "complete": true,
+        "labels": [
+          "state0",
+          "state1",
+          "state2"
+        ],
+        "origin": "coordinate state sectors",
+        "sector_dimensions": [
+          1,
+          1,
+          1
+        ]
+      },
+      "space": {
+        "dimension": 3,
+        "scalar_field": "complex"
+      },
+      "species": "Markov"
+    }
+  },
+  "portability": {
+    "combinatorial": {
+      "inter_color_edges": 4,
+      "same_color_conflicts": 2
+    },
+    "control": {
+      "depth_cutoff": 3,
+      "kalman_ranks": [
+        1,
+        2,
+        3
+      ],
+      "terminal_word_depth": 2
+    },
+    "pde": {
+      "depth_cutoff": 4,
+      "left_to_right_word_depth": 2
+    }
+  },
+  "proxy_boundaries": {
+    "claim_status": "Computational Observation",
+    "graph": {
+      "status": "DEGENERATE",
+      "taus": [
+        {
+          "end": 0.07453559924999299,
+          "maximum": 0.5,
+          "start": 0.5,
+          "status": "decreasing_or_nonresponsive",
+          "tau": null
+        },
+        {
+          "end": 0.0,
+          "maximum": 0.0,
+          "start": 0.0,
+          "status": "zero",
+          "tau": null
+        }
+      ]
+    },
+    "negative_boundary": "No proxy-to-shadow, mechanism-sufficiency, or universal rate claim is inferred.",
+    "quantum": [
+      {
+        "name": "Clifford+CNOT",
+        "status": "DEGENERATE",
+        "taus": [
+          {
+            "end": 1.5707963267948957,
+            "maximum": 1.591571997310794,
+            "start": 1.591571997310794,
+            "status": "decreasing_or_nonresponsive",
+            "tau": null
+          },
+          {
+            "end": 1.744716049909719,
+            "maximum": 3.6203315403221943,
+            "start": 3.6203315403221943,
+            "status": "decreasing_or_nonresponsive",
+            "tau": null
+          },
+          {
+            "end": 2.740593562498287,
+            "maximum": 8.346681642043235,
+            "start": 8.346681642043235,
+            "status": "decreasing_or_nonresponsive",
+            "tau": null
+          }
+        ]
+      },
+      {
+        "name": "Pauli {X,Z}",
+        "status": "DEGENERATE",
+        "taus": [
+          {
+            "end": 1.5707963267948957,
+            "maximum": 1.5894674868858902,
+            "start": 1.5894674868858902,
+            "status": "decreasing_or_nonresponsive",
+            "tau": null
+          },
+          {
+            "end": 4.934802200544674,
+            "maximum": 4.934802200544674,
+            "start": 3.8662287704432052,
+            "status": "valid",
+            "tau": 95
+          },
+          {
+            "end": 0.0,
+            "maximum": 0.0,
+            "start": 0.0,
+            "status": "zero",
+            "tau": null
+          }
+        ]
+      }
+    ],
+    "yang_like": {
+      "status": "DEGENERATE",
+      "taus": [
+        {
+          "end": 1.3298176709449581e-15,
+          "maximum": 0.002236751686410318,
+          "start": 3.906989845258137e-05,
+          "status": "decreasing_or_nonresponsive",
+          "tau": null
+        },
+        {
+          "end": 1.553103598891526e-16,
+          "maximum": 0.0009436336339356592,
+          "start": 9.630114055731078e-27,
+          "status": "decreasing_or_nonresponsive",
+          "tau": null
+        }
+      ]
+    }
+  },
+  "response_control": {
+    "claim_status": "Computational Certificate",
+    "policy": "normalized displacement with common half-response threshold",
+    "ratio": 46.0,
+    "tau_fast": 30,
+    "tau_slow": 1380
+  },
+  "rubik_low_order": {
+    "claim_status": "Computational Certificate",
+    "commutator_cancellation_count": 288,
+    "lie_generator_count": 18,
+    "routed_image_kernel_incidence_count": 528,
+    "sector_count": 9
+  },
+  "runtime": {
+    "builder": "experiments/paper10/validation/build_results_v2_1.py",
+    "numpy": "2.1.3",
+    "python": "3.13.0",
+    "source_sha256": {
+      "experiments/paper10/barrier_option_sof.py": "a7e733fb1736d7a871de3770733bb29ffb0ac136a928f548f9941d39aa00e5fc",
+      "experiments/paper10/control_pde_combinatorial_sof.py": "b155d8ca0ae88d56e1b5e3dc540f5d1ac360a60ded01257f217791b37d4d4d49",
+      "experiments/paper10/markov_graph_sof.py": "ba58fe72aaf193382bae45115180be4ecd4edc12704d0be15651505789278b10",
+      "experiments/paper10/ncg_spectral_triple_sof.py": "732b62f74f32970500c7565feb830cb0ae413634ca7661202c4701a63cda9948",
+      "experiments/paper10/rubik_wild_type34_audit.py": "1454c4fcb3bf94812bdd870200a4d5d1309dd0baee79f204c415f19868730150",
+      "experiments/paper10/tau_quantum_graph_yang.py": "3f1660c5e2710c2e71dcbfc0a191e8edf9f21fb6b097d3f22b9bed3dd0344f42",
+      "experiments/paper9/calibrated_response.py": "42ba82fc2d8a7022ad758fb3040338737a9f34196258e36859b6d8beeb0c2f87"
+    }
+  },
+  "schema": "paper10.registry-evidence.v2.1"
+}

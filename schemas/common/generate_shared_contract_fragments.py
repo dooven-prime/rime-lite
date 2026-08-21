@@ -41,11 +41,27 @@ TARGETS = {
         "digest": "digest",
         "artifact_reference": "artifact_reference",
     },
+    ROOT / "schemas" / "sofaudit" / "v2.1.schema.json": {
+        "digest": "digest",
+        "artifact_reference": "artifact_reference",
+    },
+    ROOT / "schemas" / "sofaudit" / "validation-receipt-v2.1.schema.json": {
+        "digest": "digest",
+        "artifact_reference": "artifact_reference",
+    },
     ROOT / "schemas" / "sofaction" / "v2.0.schema.json": {
         "digest": "digest",
         "validationReceiptRef": "validation_receipt_reference",
     },
     ROOT / "schemas" / "sofaction" / "validation-receipt-v2.0.schema.json": {
+        "digest": "digest",
+        "artifact_reference": "artifact_reference",
+    },
+    ROOT / "schemas" / "sofaction" / "v2.1.schema.json": {
+        "digest": "digest",
+        "validationReceiptRef": "validation_receipt_reference",
+    },
+    ROOT / "schemas" / "sofaction" / "validation-receipt-v2.1.schema.json": {
         "digest": "digest",
         "artifact_reference": "artifact_reference",
     },

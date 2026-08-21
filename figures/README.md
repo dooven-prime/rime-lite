@@ -54,7 +54,7 @@ An active renderer:
 Run a migrated renderer from the repository root, for example:
 
 ```bash
-python figures/paper2/render.py
+python figures/paper4/render.py
 ```
 
 The owning paper and `experiments/paperN/README.md` identify the scientific

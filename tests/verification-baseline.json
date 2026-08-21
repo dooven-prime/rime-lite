@@ -1,9 +1,6 @@
 {
-  "baseline_version": "1.0",
-  "scope": "active regression suite at 6de77a70cf01ba4338d1320fb61186da9a1a0fe3",
-  "expected_failures": {
-    "test_registry_migration.py": "Frozen Registry v2.0 differs from current migrator output.",
-    "test_sofaction_v2.py": "Paper XIV receipts bind the frozen pre-reopening source-audit bytes."
-  },
+  "baseline_version": "1.1",
+  "scope": "v2.1 snapshot candidate after Registry v2.1 reconciliation and Paper XIV historical byte-resolution hardening",
+  "expected_failures": {},
   "policy": "Known failures remain unresolved evidence. Verification must not rewrite or re-sign their artifacts."
 }

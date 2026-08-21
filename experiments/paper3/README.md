@@ -61,5 +61,9 @@ The current manuscript cites `validation/composition_obstruction.py` and
 `tests/test_transport.py` as executable scientific support artifacts. The
 cached JSON observation is a review aid for those artifacts.
 
+`figures/paper3/render.py` consumes that frozen observation through its
+declared release-byte closure. Rendering does not replace the full audit or
+change the observation's evidence status.
+
 Only the `validation/` path is active; historical releases retain their own
 source snapshots.

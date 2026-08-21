@@ -290,6 +290,17 @@ def test_hostile_authorized_action_without_receipt_is_rejected():
     assert validator.validation_errors(record, action_schema())
 
 
+def test_verified_authority_does_not_authorize_candidates():
+    record = record_for(native_audit())
+    record["action_context"]["authority"]["status"] = "verified"
+    assert validator.validation_errors(record, action_schema()) == []
+    assert validator.contract_errors(record) == []
+    assert all(
+        action["authorization_state"] != "authorized"
+        for action in record["candidate_action_set"]["actions"]
+    )
+
+
 def test_hostile_outcome_observation_cannot_be_action_effect_certificate():
     record = record_for(native_audit())
     record["record_class"] = "outcome_observation"
@@ -425,6 +436,12 @@ def test_canonical_action_object_rejects_embedded_selection():
     record["selection"] = {"selected_action_ids": []}
     schema = json.loads((ROOT / "schemas" / "sofaction" / "v2.0.schema.json").read_text(encoding="utf-8"))
     assert any("selection" in item for item in validator.validation_errors(record, schema))
+
+
+def test_canonical_action_object_rejects_embedded_execution():
+    record = record_for(native_audit())
+    record["execution"] = {"status": "executed", "target_state": "changed"}
+    assert any("execution" in item for item in validator.validation_errors(record, action_schema()))
 
 
 def test_hostile_actor_outside_authority_scope_is_rejected():

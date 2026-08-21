@@ -87,8 +87,9 @@ research target; Paper VII does not assert a generic completion theorem.
 ### Papers VIII--XV: Sectorized Observable Framework and Corrigibility
 
 - **Paper VIII** introduces the static SOF object language, marked sector
-  algebra, labelled operator alphabet, optional Lie/Hall enrichment, and
-  strict carrier-qualified morphisms.
+  algebra, possibly noninjective labelled operator map, optional Lie/Hall
+  enrichment, strict carrier-qualified morphisms, and an exact marked
+  finite-permutation conformance family.
 - **Paper IX** studies typed deformation charts, one-parameter observable
   trajectories, pullback walls, and policy-relative response diagnostics.
 - **Paper X** defines capability-aware compilation contracts, proves
@@ -143,6 +144,13 @@ degradation rules without importing every SOF carrier or theorem. Domain
 experts retain responsibility for domain conclusions. New stable semantics
 enter the normative repository only through an explicit source-addressed
 promotion and versioned contract update.
+
+Release verification is a separate, non-intervening layer. Public tools check
+historical snapshot bytes, acyclic receipt binding, declared release
+manifests, and exact deposited files without rewriting tracked artifacts. Such
+checks establish their stated integrity properties only: receipt closure is
+not validator trust, and a Git or DOI anchor covers only the bytes actually
+committed or deposited. See the [release verification tools](../tools/README.md).
 
 ## Rubik and General Theory
 

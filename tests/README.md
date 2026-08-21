@@ -97,7 +97,7 @@ does not confer mutation authority.
 For a Zenodo file-byte check, run:
 
 ```bash
-python tests/verify_zenodo_anchor.py \
+python tools/release/verify_zenodo_anchor.py \
   --doi 10.5281/zenodo.RECORD_ID \
   --local path/to/release-artifact.pdf \
   --remote-name deposited-file.pdf
@@ -110,6 +110,15 @@ claims.
 Slow tests (each constructs a full CubieSpectralOperator):
   `test_cubieoperator.py` -- canonical engine: spectral-calculus checks, polynomial span, k-set registration
   `test_transport.py` -- direct graph and projected-composition obstruction
+
+## Author-Side Release Gates
+
+Paper-version release gates, migration checks, hostile fixtures, and internal
+publication-surface audits are intentionally excluded from the public test
+inventory. Their local results are engineering and release-control evidence;
+the owning paper, accepted release manifest, and published record remain the
+authority for public scientific claims. Reusable read-only release checks are
+documented under [`tools/`](../tools/README.md).
 
 Withdrawn claim-path tests live under `tests/archive/` and are never executed
 by the default fast or slow runners.
