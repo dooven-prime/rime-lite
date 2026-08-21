@@ -661,7 +661,7 @@
       "uri": "experiments/paper13/results/audits/compiler_f2.sofaudit.json",
       "digest": {
         "algorithm": "sha256",
-        "value": "daba5914b9b9b29b18cabc0611d65f66aa00207e134b15be075af104b5fdf27a"
+        "value": "719b173c8583e9cc335abe3edcdc25d6c0a847b303465f5d987b6b2579ca9f6d"
       }
     },
     "migration_implementation": {

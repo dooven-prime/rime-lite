@@ -7,8 +7,8 @@ Independent Researcher | RIME Program | 2026
 
 *This paper is Paper XIV of the RIME program. It consumes sparse typed audit
 signatures from Paper XIII and owns context- and policy-relative interpretation
-and bounded candidate dispositions. Selection, authorization, outcome, and
-effect remain downstream.*
+and bounded candidate dispositions. Selection, authorization, execution,
+outcome, and effect remain downstream.*
 
 ---
 
@@ -41,23 +41,18 @@ $A_{\mathrm{cand}}$ contains bounded Candidate Actions. Missing context or an
 inapplicable policy produces `NoDisposition`, an empty Candidate Action Set,
 and no Interpretation Record or affirmative candidate.
 
-**Results.** Four protocol propositions are stated: No Action Without Context and
-Policy, Interpretation Relativity, Action Non-Fabrication, and Audit
-Preservation. The controlled validation preserves the Paper XIII
-projection, rejects
-unresolved or undeclared coordinates as action support, binds every candidate
-to audit coordinates, carrier, context, policy rules, preconditions,
-declared risk considerations,
-reversibility, evidence, and authorization state, and keeps selection
-downstream. The controlled workbench validates 29 v2 objects: 28 migrated Paper
-XIII records remain unresolved, while one native GridWorld F4 audit yields
-only policy-relative review candidates.
+**Results.** Five protocol propositions separate context admission,
+interpretation, candidate formation, execution, and audit preservation. The
+controlled validation preserves the Paper XIII projection, rejects unresolved
+or undeclared coordinates as action support, and binds each candidate to its
+declared context, policy, evidence, carrier, and non-authorizing state. The
+29-object workbench retains 28 unresolved migrated records; one native
+GridWorld F4 audit yields only policy-relative review candidates.
 
-**Implications.** This paper does not provide a universal repair theorem, a
-decision engine, or an action-effect certificate. It defines a reusable SOF
-action object in which difference is interpreted only under explicit context
-and policy. Causal effect estimation, feasibility, cost, authorization, and
-final policy choice remain separate downstream problems.
+**Implications.** Difference acquires action meaning only under explicit
+context and policy. Feasibility, causal effect, authorization, selection, and
+execution remain separate downstream problems; no candidate artifact has
+object-layer execution semantics.
 
 ## Introduction
 
@@ -104,10 +99,10 @@ This paper makes four contributions.
 1. It defines the typed objects $K_{\mathrm{ctx}}$, $\Pi_{\mathrm{policy}}$,
    $I_{\mathrm{interp}}$, and $A_{\mathrm{cand}}$.
 2. It states No Action Without Context and Policy and Interpretation Relativity.
-3. It states Action Non-Fabrication and Audit Preservation as executable
+3. It states Action Non-Fabrication and Audit Preservation as checkable
    invariants.
-4. It provides a schema, validator, hostile fixtures, and a controlled
-   workbench whose unresolved inputs remain unresolved.
+4. It provides a versioned contract and controlled conformance corpus whose
+   unresolved inputs remain unresolved.
 
 ![SOFActionObject factorization. The Paper XIII audit projection is retained,
 then interpreted under independently admitted ActionContext and PolicyProfile
@@ -129,14 +124,14 @@ families; it is not an executed or selected plan.
 |--------|--------------------|
 | $\Delta_{\mathrm{audit}}$ | immutable sparse typed audit projection consumed from Paper XIII |
 | $K_{\mathrm{ctx}}$ | `ActionContext`, independently admitted and never derived from the audit |
-| $\Pi_{\mathrm{policy}}$ | `PolicyProfile`, the sole normative rule input in the v2 contract |
+| $\Pi_{\mathrm{policy}}$ | `PolicyProfile`, the sole normative rule input in the v2.1 contract |
 | $I_{\mathrm{interp}}$ | `InterpretationRecord` output relative to the admitted context and policy |
 | $A_{\mathrm{cand}}$ | bounded `CandidateActionSet` output |
 | `DispositionResult` | result class closing the interpretation and candidate sets |
-| selected plan, authorization, outcome, and effect | downstream reserved contracts, not fields or conclusions of `.sofaction` |
+| selection, authorization, execution, outcome, and effect | external roles, not fields or conclusions of `.sofaction` |
 
 The table names the objects owned here or consumed as typed inputs;
-selection and external authority approval remain downstream contracts.
+selection and external authority approval remain outside this contract.
 
 ## Related Work and Novelty Boundary
 
@@ -243,7 +238,7 @@ evidence of failure.
 
 ### Policy Predicate Language
 
-SOFAction v2 freezes Policy Predicate Language v1.0 as a closed, recursively
+SOFAction v2.1 freezes Policy Predicate Language v1.0 as a closed, recursively
 typed expression language. Boolean nodes are `all`, `any`, and `not`. Leaf
 nodes are limited to coordinate existence, state, carrier, and relation;
 comparison role and contract status; authority and uncertainty status;
@@ -258,9 +253,8 @@ false or zero. A typed exception has its own predicate and an explicit set of
 rules that it suppresses. `precedence_edges` is the sole precedence source. If
 several active rules match and no one rule precedes all other matches, the
 interpreter emits `policy_conflict` rather than selecting by declaration order.
-Deterministic replay re-executes the predicate tree and recomputes both the
-selected rule and the assessment kind from the frozen audit, context, and
-policy.
+Deterministic evaluation recomputes the predicate tree, selected rule, and
+assessment kind from the frozen audit, context, and policy.
 Uncertainty handling is itself a versioned machine object, not a free-text
 instruction. Policy Predicate Language v1.0 uses
 $\mathbb T_3=\{\mathrm{TRUE},\mathrm{FALSE},\mathrm{UNRESOLVED}\}$ with
@@ -330,10 +324,10 @@ negative boundary.
 
 These are reusable types, not a universal operational vocabulary. A candidate
 is not an execution command, a recommendation, a feasibility proof, a causal
-effect, or an authorization receipt. The v2 contract permits candidates to record
+effect, or an authorization receipt. The v2.1 contract permits candidates to record
 `not_requested`, `required`, `pending`, or `denied`; they cannot declare
-themselves authorized. Authorization is reserved for a future external
-`.sofauth` contract.
+themselves authorized. Authorization requires a separate external,
+system-specific interface.
 
 ### The Executable Factorization
 
@@ -368,14 +362,14 @@ Every candidate stores the audit coordinate, carrier, context, policy rule,
 preconditions, declared risk considerations, reversibility, evidence
 references, and authorization state that support it.
 
-The v2 contract claims phase separation, not a fully split semantic
+The v2.1 contract claims phase separation, not a fully split semantic
 rulebook and action-generation profile. The same admitted `PolicyProfile` is
 therefore carried into both phases: `Interpret` evaluates its predicate and
 precedence semantics, while `Generate` uses the resulting rule references and
 allowed disposition closure to bind candidates. `Generate` does not re-interpret
 the audit or select an action. A future split into a semantic `Rulebook` and a
 candidate-generation profile is a Research Program item, not a property of the
-v2 artifact contract.
+v2.1 artifact contract.
 
 ## Core Propositions
 
@@ -393,10 +387,9 @@ v2 artifact contract.
 > $$
 
 **Proof.** The Action Object contract requires context and policy admission
-before an Interpretation Record can be emitted. The candidate validator
-requires each candidate to reference both objects. A missing or inapplicable
-input therefore yields `NoDisposition` and an empty Candidate Action Set rather
-than a default action.
+before an Interpretation Record can be emitted, and every candidate must
+reference both objects. A missing or inapplicable input therefore yields
+`NoDisposition` and an empty Candidate Action Set rather than a default action.
 $\square$
 
 > **Proposition (Interpretation Relativity).** For one retained audit signature,
@@ -421,6 +414,53 @@ audit coordinate and cite their own context and policy rule. $\square$
 > state, and a negative boundary. No candidate is generated from a missing,
 > `UNRESOLVED`, or `NOT_DECLARED` coordinate alone.
 
+> **Proposition (Candidate Non-Execution).** Creation, validation,
+> serialization, ranking, or downstream selection of a Candidate Action does
+> not execute that action and does not by itself induce a transition of the
+> target system. Object-layer intervention requires a separately typed plan,
+> authorization decision, and external executor path.
+
+**Argument.** `Interpret` and `Generate` have informational codomains, and the
+optional selector has codomain $\mathsf{SelectedActionPlan}$. None has an
+object-state codomain. A possible downstream chain is
+
+$$
+\begin{aligned}
+A_{\mathrm{cand}}
+&\longrightarrow \mathsf{SelectedActionPlan}
+\longrightarrow \mathsf{Authorization}\\
+&\longrightarrow \mathsf{ExternalExecutor}
+\xrightarrow{\operatorname{Intervene}(\cdot,S_t)} S_{t+1}\\
+&\xrightarrow{\operatorname{Observe}}
+\mathsf{NewReport}
+\longrightarrow \mathsf{NewAudit}
+\longrightarrow \mathsf{Outcome/EffectAnalysis}.
+\end{aligned}
+$$
+
+Only the explicitly supplied executor/intervention map re-enters the object
+layer. The preceding transformations remain in the information and artifact
+layers. $\square$
+
+Authority identity and candidate authorization are also different predicates.
+The context statement
+
+$$
+\operatorname{AuthorityVerified}(a,s)
+$$
+
+records that actor $a$ has verified authority within scope $s$; it does not
+imply
+
+$$
+\operatorname{Authorize}(a,c,s,k)=\mathrm{Granted}
+$$
+
+for candidate $c$ under conditions $k$. Accordingly,
+`authority.status = verified` does not authorize a candidate. The v2
+CandidateAction contract has no `authorized` state and requires a separate
+external authorization decision.
+
 > **Proposition (Audit Preservation).** For every valid
 > $S=(\Delta_{\mathrm{audit}},K_{\mathrm{ctx}},\Pi_{\mathrm{policy}},
 > I_{\mathrm{interp}},A_{\mathrm{cand}})$,
@@ -431,7 +471,7 @@ audit coordinate and cite their own context and policy rule. $\square$
 > semantic fields, but may not rewrite comparison state, reference authority,
 > evidence level, or source provenance.
 
-**Proof.** The v2 artifact embeds the sparse Paper XIII coordinate projection,
+**Proof.** The v2.1 artifact embeds the sparse Paper XIII coordinate projection,
 binds the source audit and its Paper XIII validation receipt by SHA-256, and
 compares decoded projections for structural equality. Canonical JSON encoding
 then gives a distinct artifact-level byte comparison; these two equality
@@ -497,7 +537,7 @@ into a generic bridge score.
 frozen depth, and wall records retain distinct meanings and candidate families
 through semantic interpretation and action generation.](../../figures/paper14/fig4_channel_semantics.png)
 
-The GridWorld F4 control provides a strict implementation witness: a Lie-channel
+The GridWorld F4 control provides a finite conformance witness: a Lie-channel
 difference generates a Lie-carrier candidate without a word-bridge insertion
 candidate. This is compatible with the static word/Lie carrier separation owned
 by Paper VIII and preserved by Paper XIII's aligned comparison contract; it is
@@ -505,9 +545,9 @@ not a universal claim that every domain realizes both channels.
 
 ### Empty and Inconclusive Cases
 
-![Semantic admission and empty-set boundary. Missing context and admitted zero
-signatures both produce empty Action Sets. No default retain, deploy, or rollback
-decision is generated.](../../figures/paper14/fig6_admission_boundary.png)
+![Semantic admission and empty-set boundary. Missing context and unresolved
+migrated signatures produce no affirmative candidates. No default retain,
+deploy, or rollback decision is generated.](../../figures/paper14/fig6_admission_boundary.png)
 
 Three result states are distinguished.
 
@@ -525,7 +565,7 @@ no candidate action was formed.
 
 ## The SOF Action Contract
 
-The canonical machine-readable contract is the versioned SOFAction v2 schema
+The canonical machine-readable contract is the versioned SOFAction v2.1 schema
 (Artifact A1). Its principal fields are:
 
 | Field | Role |
@@ -536,33 +576,61 @@ The canonical machine-readable contract is the versioned SOFAction v2 schema
 | Interpretations | coordinate, context, and policy references with assessment and negative boundary |
 | Candidate set | zero or more bounded CandidateAction records |
 | Disposition result | explicit `NoDisposition`, `UnresolvedDisposition`, `NoActionDisposition`, or Candidate Action Set state |
-| Record class / basis | v2 policy-conformance or decision-trace class with source-addressed protocol basis |
+| Execution boundary | fixed candidate-only role; selection, authorization, execution, outcome, and effect semantics out of scope |
+| Record class / basis | v2.1 policy-conformance or decision-trace class with source-addressed protocol basis |
 | Failure modes | non-implication, applicability, and epistemic boundaries |
 
 The schema is closed: unknown predicate, context, policy, interpretation, and
 candidate fields are rejected. Normative evidence cannot be a bare string.
 Semantic conformance additionally requires source-receipt and digest closure,
 exact Audit Projection preservation, context and policy admission,
-deterministic predicate and precedence replay, interpretation and candidate
+deterministic predicate and precedence evaluation, interpretation and candidate
 closure, authority-scope closure, and disposition consistency. Appendix A
-indexes the corresponding executable controls.
+indexes the corresponding conformance controls.
 
-The `.sofaction` v2 contract has only two record classes:
+The `.sofaction` v2.1 contract has only two record classes:
 
 | Class | What it can establish | What it cannot establish |
 |-------|------------------------|---------------------------|
 | Policy Conformance Certificate | typed policy predicates were applied under the declared contract and revision | policy validity or action correctness |
 | Decision Trace Certificate | audit, context, policy, interpretation, and candidate links are complete | feasibility, safety, causal effect, authorization, or optimality |
 
-Four related concepts remain reserved for separate contracts rather than
-labels inside `.sofaction`: `.sofplan` for a selected plan, `.sofauth` for an
-authorization receipt, `.sofoutcome` for a post-action observation, and
-`.sofeffect` for an independently validated intervention effect. In particular,
-an Outcome Observation cannot be relabelled as an Action Effect Certificate,
-and an authorization receipt is not a scientific evidence level.
+Selected plans, authorization receipts, executor records, post-action
+observations, and independently validated effects remain external artifacts.
+Their wire names and contracts are not defined here. In particular, an Outcome
+Observation cannot be relabelled as an Action Effect Certificate, and an
+authorization receipt is not a scientific evidence level.
+
+SOFAction v2.1 fixes the following boundary:
+
+| Boundary field | Required value |
+|----------------|----------------|
+| artifact role | Candidate Set only |
+| selection semantics | out of scope |
+| authorization semantics | out of scope |
+| execution semantics | out of scope |
+| outcome semantics | out of scope |
+| effect semantics | out of scope |
+
+A candidate may retain `not_requested`, `required`, `pending`, or `denied` as
+a non-authorizing process state. Such a field is not authorization evidence,
+and `authority.status = verified` does not imply candidate-specific grant.
+
+The validation receipt is explicitly scoped to SOFAction protocol conformance,
+with authorization, execution, outcome, and effect semantics absent. A `PASS`
+receipt cannot be consumed as authorization or execution evidence. The semantic validator
+therefore rejects downstream plan, authorization, execution, post-action
+observation, outcome, and effect roles even when they are smuggled through
+generic evidence or closure references.
+
+A v2.0 artifact does not validate directly as v2.1. The explicit migration
+preserves the v2.0 action projection, rebinds the source audit to its validated
+v2.1 counterpart, adds revision provenance and the fixed execution boundary,
+and emits a new receipt. It does not rerun policy as a new decision, authorize
+a candidate, or infer an execution event.
 
 Canonical `.sofaction` artifacts stop at the Candidate Action Set. An optional
-selector consumes that set and emits a separate downstream plan artifact; it
+external selector may consume that set and emit a separate selection result; it
 cannot modify the audit projection, interpretations, or candidate set:
 
 $$
@@ -587,7 +655,8 @@ effectiveness.
 | `SOFActionObject`, `ActionContext`, `PolicyProfile`, `InterpretationRecord`, and `DispositionResult` | owned type definitions; representation interface | not an independent evidence claim |
 | No Action Without Context and Policy | domain-of-definition proposition; representation interface | Theorem |
 | Interpretation Relativity | context/policy-relative proposition; bounded fixtures provide a controlled witness | Theorem |
-| Action Non-Fabrication and Audit Preservation | exact representation-interface propositions under the v2 contract | Theorem |
+| Action Non-Fabrication and Audit Preservation | exact representation-interface propositions under the v2.1 contract | Theorem |
+| Candidate Non-Execution | type-level separation of candidate artifacts from external object intervention | Theorem |
 | Versioned Predicate Replay | finite protocol-conformance replay under one normalized input and version closure; not policy correctness | Computational Certificate |
 | 29-object workbench | finite schema and semantic validation; Policy Conformance / Decision Trace Certificate | Computational Certificate |
 | Native GridWorld F4 candidates | policy-relative bounded outputs; no feasibility, authorization, selection, or effect claim | Computational Observation |
@@ -600,7 +669,7 @@ safety, or authorization.
 
 ## Controlled Validation
 
-The controlled v2 workbench consumes 28 migrated Paper XIII SOFAUDIT records and
+The controlled workbench consumes 28 migrated Paper XIII SOFAUDIT records and
 one native GridWorld F4 factual audit. All 29 objects retain an exact audit
 projection, an explicit ActionContext, and an applicable PolicyProfile. The
 migrated records contain only unresolved or not-declared coordinate states and
@@ -626,7 +695,7 @@ authorization, causal effect, and safety are not tested by this workbench.
 
 ## Claim Boundary
 
-This paper establishes the typed Action Object and four protocol propositions.
+This paper establishes the typed Action Object and five protocol propositions.
 It does not claim:
 
 - a universal repair theorem,
@@ -653,11 +722,15 @@ The protocol boundary is now:
 | XII | single-system diagnostic report | .sofreport | What was measured? |
 | XIII | aligned comparison object and factual signature | .sofaudit | How do two reports differ? |
 | XIV | `SOFActionObject = (Delta_audit, K_ctx, Pi_policy, I_interp, A_cand)` | .sofaction | Under which context and policy can a difference be interpreted and which bounded candidates are supported? |
-| Downstream selector | objective-relative selector | reserved .sofplan | Which candidate should be chosen? |
+| External selector | objective-relative selector | external artifact | Which candidate should be chosen? |
+| External authorization | candidate-specific permission under actor, scope, and conditions | external artifact | Is this selected plan authorized? |
+| External executor | separately supplied intervention interface | external system | Was an authorized plan executed against the object? |
 
 This separation allows the same factual audit record to be interpreted under
 different admissible contexts or policies without rewriting Paper XIII
 evidence. It does not turn the selected reference into ground truth.
+Verified authority in an ActionContext does not authorize any particular
+candidate, and neither selection nor authorization constitutes execution.
 
 ## Outlook
 
@@ -700,46 +773,43 @@ $$
 
 An audit is preserved, context and policy are explicit, interpretation is
 relative to those inputs, and candidates remain bounded records rather than
-execution commands. This is the stable interface required before SOF
-diagnostics can participate in intervention workflows.
+execution commands. Only a separately authorized external executor can carry a
+selected plan back into an object-state intervention. This is the stable
+interface required before SOF diagnostics can participate in intervention
+workflows.
 
 ## Appendix A: Computational Artifacts
 
-### A.1 Contract and Reference Implementation
+The following source-addressed locations contain the v2.1 contracts and finite
+conformance corpus. Full inventories, digests, and validation entry points
+remain in the paper-local experiment README rather than being duplicated here.
 
-The following source-addressed artifacts implement or validate the v2
-`.sofaction` contract. The schema is the normative machine-readable shape;
-the engine, workbench, and validator are reference implementations and
-evidence producers, not semantic authorities.
-
-| Artifact | Role | Source-addressed path |
-|----------|------|-----------------------|
-| A1 | SOFActionObject schema and record-class contract | `schemas/sofaction/v2.0.schema.json` |
-| A2 | ActionContext/PolicyProfile admission, interpretation, and candidate engine | `experiments/paper14/action_engine.py` |
-| A3 | controlled 29-object workbench | `experiments/paper14/action_workbench.py` |
-| A4 | semantic validator and receipt producer | `experiments/paper14/validate_sofaction.py` |
-| A5 | optional downstream selector; excluded from canonical `.sofaction` evidence | `experiments/paper14/policy_selector.py` |
-| A6 | generated v2 action artifacts and validation receipts | `experiments/paper14/results/` |
-| A7 | focused hostile tests and checked-artifact/receipt closure | `tests/test_sof_action.py`; `tests/test_sofaction_v2.py` |
-| A8 | public reference runtime, wheel-install external-adopter workflow, and Level 3 conformance surface | [`sof-runtime` v0.1.0](https://github.com/dooven-prime/sof-runtime/tree/v0.1.0) |
+| Artifact | Role | Short path |
+|----------|------|------------|
+| A1 | SOFAction and validation-receipt contracts | `schemas/sofaction/` |
+| A2 | interpretation engine, workbench, migrator, and validators | `experiments/paper14/` |
+| A3 | immutable v2.0 action corpus | `results/` under A2 |
+| A4 | v2.1 candidate artifacts and conformance receipts | `results/v2.1/` under A2 |
+| A5 | runtime reference and transport projection | [`sof-runtime`](https://github.com/dooven-prime/sof-runtime) |
 
 Validation checks include schema closure, source digest closure, exact Audit
 Projection preservation, Paper XIII validation-receipt binding, context and
-policy admission, policy applicability, independent predicate replay,
+policy admission, policy applicability, separate predicate replay,
 precedence graph acyclicity, typed exception coverage, one-to-one coordinate
 interpretation coverage, hostile unresolved support rejection, candidate-to-
 interpretation and carrier references, authority actor/scope closure, and
 canonical omission of downstream selection.
 
-### A.2 Experimental Reproduction
+### A.1 Corpus and Migration
 
-The workbench reads the 28 migrated Paper XIII audits plus the native
-GridWorld F4 audit and regenerates 29 v2 Action Objects. The runnable
-reproduction entry points are indexed in `experiments/paper14/README.md`.
-Figures summarize the formal factorization and controlled outputs; they are not
-independent evidence.
+The release corpus contains 28 migrated Paper XIII audits and one native
+GridWorld F4 audit. The explicit v2.1 migration preserves the source
+projection and candidate semantics while rebinding each source audit to its
+validated v2.1 counterpart and adding the fixed execution boundary. Figures
+summarize the formal factorization and corpus outputs; they are not validation
+receipts or independent evidence.
 
-### A.3 Boundary Controls
+### A.2 Boundary Controls
 
 The automated controls include:
 
@@ -758,12 +828,10 @@ The automated controls include:
   workbench artifacts.
 
 The tagged runtime release is a public reference implementation, not a
-normative definition source; its vendored contracts are independently bound to
-the upstream release-content commit or isolated as explicit candidates. These
-controls establish implementation fidelity to the formal interface. They do
-not establish domain intervention effectiveness. A1--A8 establish only
-their declared schema, protocol-conformance, replay, and bounded-output
-targets; they do not establish policy correctness, feasibility, authorization,
-selection, post-action outcome, or causal effect. Full generated paths and
-digests are indexed in `experiments/paper14/README.md`; all listed artifacts are
+normative definition source; its vendored contracts are bound to the declared
+upstream release-content commit or isolated as explicit candidates. These
+controls establish only the declared contract, closure, replay, and
+bounded-output targets. They do not establish policy correctness, feasibility,
+authorization, selection, post-action outcome, or causal effect. Full paths and
+digests are indexed in `experiments/paper14/README.md`; the listed artifacts are
 available in the [RIME repository](https://github.com/dooven-prime/rime-lite).

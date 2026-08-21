@@ -9,7 +9,12 @@ schemas/**/*.py text eol=lf
 experiments/**/*.json text eol=lf
 experiments/**/*.md text eol=lf
 experiments/**/*.py text eol=lf
+experiments/**/*.sofaction text eol=lf
 experiments/**/*.txt text eol=lf
+# SOFAction v2.0 source digests bind the published Windows materialization.
+# Preserve those root result files while keeping the v2.1 corpus canonical LF.
+experiments/paper14/results/*.sofaction text eol=crlf
+experiments/paper14/results/v2.1/**/*.sofaction text eol=lf
 # SOFRS v2.0 receipts bind the published Windows materialization. Preserve
 # that historical checkout contract while keeping the v2.1 revision canonical LF.
 experiments/paper12/results/**/*.json text eol=crlf

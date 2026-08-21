@@ -11,7 +11,7 @@
       "uri": "experiments/paper13/results/v2.1/audits/traffic_f3.sofaudit.json",
       "digest": {
         "algorithm": "sha256",
-        "value": "78653f494d282b0052e190bfb418444700c9f72e010ae2dc8e43af955fb30f03"
+        "value": "fccc812dfad86f436a355c7f5eaa1cc54be9295f477b9f93cf186ca8b7c4cb6b"
       }
     }
   },
@@ -36,7 +36,7 @@
       "uri": "schemas/sofaudit/validation-receipt-v2.1.schema.json",
       "digest": {
         "algorithm": "sha256",
-        "value": "7d89e689eea44255e09937cb0746771c69a9592a8245dd6867c9093eb7104d57"
+        "value": "cdb8a32277a2e5d4f5eb30a9f72ce6450642e661d502ce141954dfed4e3b4ad6"
       }
     }
   },
@@ -48,7 +48,7 @@
       "uri": "experiments/paper13/results/audits/traffic_f3.sofaudit.json",
       "digest": {
         "algorithm": "sha256",
-        "value": "35e03c5cfc53451db2ac4e7912c68e40ed96603e05c1443137ed51dc022d3a57"
+        "value": "d98426ed72cd8afca98fe789c751073eb9623ef249b362457c3fc7502c69ca0d"
       }
     },
     "implementation": {
@@ -68,7 +68,7 @@
           "uri": "experiments/paper13/results/v2.1/audits/traffic_f3.sofaudit.json",
           "digest": {
             "algorithm": "sha256",
-            "value": "78653f494d282b0052e190bfb418444700c9f72e010ae2dc8e43af955fb30f03"
+            "value": "fccc812dfad86f436a355c7f5eaa1cc54be9295f477b9f93cf186ca8b7c4cb6b"
           }
         }
       },
@@ -78,7 +78,7 @@
           "uri": "experiments/paper13/results/audits/traffic_f3.sofaudit.json",
           "digest": {
             "algorithm": "sha256",
-            "value": "35e03c5cfc53451db2ac4e7912c68e40ed96603e05c1443137ed51dc022d3a57"
+            "value": "d98426ed72cd8afca98fe789c751073eb9623ef249b362457c3fc7502c69ca0d"
           }
         }
       },
@@ -188,14 +188,14 @@
           "uri": "schemas/sofaudit/validation-receipt-v2.1.schema.json",
           "digest": {
             "algorithm": "sha256",
-            "value": "7d89e689eea44255e09937cb0746771c69a9592a8245dd6867c9093eb7104d57"
+            "value": "cdb8a32277a2e5d4f5eb30a9f72ce6450642e661d502ce141954dfed4e3b4ad6"
           }
         }
       }
     ],
     "closure_digest": {
       "algorithm": "sha256",
-      "value": "ba0c8dbaa173e0a5af2f75f1e429adff75b6c92b7dc56d10e63b87208372598e"
+      "value": "eea9ac8251e8b4ec6349147fb7b0e55334dd7e14f035c625ce4c76b4055e727e"
     }
   },
   "status": "PASS",

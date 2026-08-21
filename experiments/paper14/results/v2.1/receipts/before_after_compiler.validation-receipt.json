@@ -1,0 +1,217 @@
+{
+  "receipt_version": "2.1",
+  "artifact_type": "sofaction_validation_receipt",
+  "receipt_kind": "SOFACTION_VALIDATION_RECEIPT",
+  "receipt_scope": "SOFACTION_PROTOCOL_CONFORMANCE_ONLY",
+  "receipt_id": "receipt.before_after_compiler-actions-v2.sofaction-v2_1",
+  "action": {
+    "action_record_id": "before_after_compiler-actions-v2",
+    "sofaction_version": "2.1",
+    "artifact": {
+      "uri": "experiments/paper14/results/v2.1/actions/before_after_compiler.sofaction",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "c07889ca63285bbff766ffad6fd42927bef2df68b4fe3663eb91337467c1e054"
+      }
+    }
+  },
+  "validator": {
+    "validator_id": "paper14.sofaction-validator.v2_1",
+    "validator_version": "2.1",
+    "implementation": {
+      "uri": "experiments/paper14/validate_sofaction_v2_1.py",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "08d0032e2d970726f767b21f76a164f23c5d56034c3939c995ca91db3263b8d2"
+      }
+    },
+    "action_contract": {
+      "uri": "schemas/sofaction/v2.1.schema.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "350833dc91e7e5e38be1cec35d4b179d4e6f40008b01b165cc2c5a81bc66cd92"
+      }
+    },
+    "receipt_contract": {
+      "uri": "schemas/sofaction/validation-receipt-v2.1.schema.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "da988e8002e52c4bc8fd1d923c4c02f3fe746d5653c7464f322698b3191a6b39"
+      }
+    }
+  },
+  "generation": {
+    "kind": "migration",
+    "class": "boundary_annotation",
+    "source_version": "2.0",
+    "source_artifact": {
+      "uri": "experiments/paper14/results/before_after_compiler.sofaction",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "06f28acc1c5e98d45d98af99dff8378e36a18116911a64d43ee9797288814ba5"
+      }
+    },
+    "implementation": {
+      "uri": "experiments/paper14/migrate_sofaction_v2_to_v2_1.py",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "a7111da7efbe44eeb2a72d5b82785af29d75aa5403c69c79c6e83760048a0a6f"
+      }
+    }
+  },
+  "artifact_closure": {
+    "artifact_count": 10,
+    "ordered_artifacts": [
+      {
+        "role": "action",
+        "artifact": {
+          "uri": "experiments/paper14/results/v2.1/actions/before_after_compiler.sofaction",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "c07889ca63285bbff766ffad6fd42927bef2df68b4fe3663eb91337467c1e054"
+          }
+        }
+      },
+      {
+        "role": "revision-source-action-v2.0",
+        "artifact": {
+          "uri": "experiments/paper14/results/before_after_compiler.sofaction",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "06f28acc1c5e98d45d98af99dff8378e36a18116911a64d43ee9797288814ba5"
+          }
+        }
+      },
+      {
+        "role": "migration-implementation",
+        "artifact": {
+          "uri": "experiments/paper14/migrate_sofaction_v2_to_v2_1.py",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "a7111da7efbe44eeb2a72d5b82785af29d75aa5403c69c79c6e83760048a0a6f"
+          }
+        }
+      },
+      {
+        "role": "action-contract",
+        "artifact": {
+          "uri": "schemas/sofaction/v2.1.schema.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "350833dc91e7e5e38be1cec35d4b179d4e6f40008b01b165cc2c5a81bc66cd92"
+          }
+        }
+      },
+      {
+        "role": "source-audit",
+        "artifact": {
+          "uri": "experiments/paper13/results/v2.1/audits/before_after_compiler.sofaudit.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "2b0ca8fd5c9b4922ccc8183a7fe8bd918950b8b0aef4a6791e08ec69b0f679cb"
+          }
+        }
+      },
+      {
+        "role": "source-audit-validation-receipt",
+        "artifact": {
+          "uri": "experiments/paper13/results/v2.1/receipts/before_after_compiler.validation-receipt.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "3381c1d46b058e738d33b9db34478e336fc14505c49a28e92122004f64bf4196"
+          }
+        }
+      },
+      {
+        "role": "normative-basis-0",
+        "artifact": {
+          "uri": "papers/paper14/Paper XIV.md",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "a8d2ca367aa1a3e58a5579e3bbf88380b29cf61a506f3433503f5184505d74e3"
+          }
+        }
+      },
+      {
+        "role": "normative-basis-1",
+        "artifact": {
+          "uri": "papers/paper14/Paper XIV.md",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "a8d2ca367aa1a3e58a5579e3bbf88380b29cf61a506f3433503f5184505d74e3"
+          }
+        }
+      },
+      {
+        "role": "validator-implementation",
+        "artifact": {
+          "uri": "experiments/paper14/validate_sofaction_v2_1.py",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "08d0032e2d970726f767b21f76a164f23c5d56034c3939c995ca91db3263b8d2"
+          }
+        }
+      },
+      {
+        "role": "validation-receipt-contract",
+        "artifact": {
+          "uri": "schemas/sofaction/validation-receipt-v2.1.schema.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "da988e8002e52c4bc8fd1d923c4c02f3fe746d5653c7464f322698b3191a6b39"
+          }
+        }
+      }
+    ],
+    "closure_digest": {
+      "algorithm": "sha256",
+      "value": "a8cb2e7559accf77b23c551c3604cea477edfb62acdea5403b7ea92f5ef8315e"
+    }
+  },
+  "status": "PASS",
+  "checks": [
+    {
+      "check_id": "artifact-digest-closure",
+      "status": "PASS"
+    },
+    {
+      "check_id": "audit-projection-preservation",
+      "status": "PASS"
+    },
+    {
+      "check_id": "candidate-non-execution",
+      "status": "PASS"
+    },
+    {
+      "check_id": "candidate-set-regeneration",
+      "status": "PASS"
+    },
+    {
+      "check_id": "downstream-artifact-role-isolation",
+      "status": "PASS"
+    },
+    {
+      "check_id": "explicit-v2.0-to-v2.1-migration",
+      "status": "PASS"
+    },
+    {
+      "check_id": "schema-validation",
+      "status": "PASS"
+    },
+    {
+      "check_id": "v2.0-source-validation",
+      "status": "PASS"
+    },
+    {
+      "check_id": "verified-authority-non-authorization",
+      "status": "PASS"
+    }
+  ],
+  "authorization_semantics": "NONE",
+  "execution_semantics": "NONE",
+  "outcome_semantics": "NONE",
+  "effect_semantics": "NONE",
+  "negative_boundaries": [
+    "PASS certifies SOFAction candidate-protocol conformance only; it is not selection, authorization, execution, outcome, or effect evidence."
+  ]
+}

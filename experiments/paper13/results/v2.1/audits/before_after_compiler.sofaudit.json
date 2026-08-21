@@ -660,7 +660,7 @@
       "uri": "experiments/paper13/results/audits/before_after_compiler.sofaudit.json",
       "digest": {
         "algorithm": "sha256",
-        "value": "44a13605462ef50595f9f96348a6b95a0efc54c889dea62841072256d42f82c9"
+        "value": "bb48ddcfb863432b7ec41bb4060fc0bff40240a8128087d01328699fcd70e0fb"
       }
     },
     "migration_implementation": {

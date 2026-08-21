@@ -663,7 +663,7 @@
       "uri": "experiments/paper13/results/audits/sir_f2.sofaudit.json",
       "digest": {
         "algorithm": "sha256",
-        "value": "99e72e6f0114201855339eac57016febe6067aef94c7c6bcb668f9400ea0e6b8"
+        "value": "89caedef60b9856819df0533850358311d60c6a330b7bfe36f1888945780a616"
       }
     },
     "migration_implementation": {

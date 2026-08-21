@@ -1,4 +1,4 @@
-"""Render current Paper XIV v2 presentation figures."""
+"""Render current Paper XIV v2.1 candidate-release figures."""
 
 from __future__ import annotations
 
@@ -132,7 +132,7 @@ def fig5_workbench() -> None:
         ax.bar(x + (i - 1.5) * width, counts[:, i], width, label=disposition, color=colors[i])
     ax.set_xticks(x, labels)
     ax.set_ylabel("cases producing candidate disposition")
-    ax.set_title("Paper XIV v2 Action Workbench", fontsize=18, fontweight="bold", pad=16)
+    ax.set_title("Paper XIV Candidate Workbench", fontsize=18, fontweight="bold", pad=16)
     ax.text(0.5, 1.00, "28 migrated unresolved records plus one native factual audit; counts are not severity", transform=ax.transAxes, ha="center", fontsize=10, color=GRAY_2)
     ax.legend(frameon=False, ncol=4, loc="upper right")
     ax.spines[["top", "right"]].set_visible(False)
@@ -154,7 +154,7 @@ def fig6_boundary() -> None:
     for x, head, mid, bottom, color in cases:
         box(ax, x, 0.30, 0.265, 0.43, head, f"{mid}\n\n{bottom}", edge=color, body_size=10)
     ax.text(0.5, 0.18, "No retain / deploy / rollback command is generated.", ha="center", fontsize=12, fontweight="bold", color=ORANGE)
-    ax.text(0.5, 0.105, "Post-action facts require a new Paper XIII audit.", ha="center", fontsize=11, color=GRAY_2)
+    ax.text(0.5, 0.105, "Post-action comparison requires a new report and audit.", ha="center", fontsize=11, color=GRAY_2)
     save(fig, OUT, "fig6_admission_boundary")
 
 

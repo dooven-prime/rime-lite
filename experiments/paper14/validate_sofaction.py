@@ -7,6 +7,8 @@ from enum import Enum
 import hashlib
 import json
 from pathlib import Path
+import subprocess
+import sys
 from typing import Any
 from urllib.parse import unquote
 
@@ -15,8 +17,16 @@ from jsonschema import Draft202012Validator
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 DEFAULT_SCHEMA = ROOT / "schemas" / "sofaction" / "v2.0.schema.json"
 RECEIPT_SCHEMA = ROOT / "schemas" / "sofaction" / "validation-receipt-v2.0.schema.json"
+PUBLISHED_RELEASE_COMMIT = "c58633494257757e3316f31d8a7cfedc2e75af4e"
+
+# The current tree may carry successor artifacts at a v2.0 URI. Historical
+# SOFAction records therefore resolve their declared digest through the pinned
+# release snapshot instead of treating the materialized path as authoritative.
+from schemas.release_snapshot import resolve_release_reference
 
 
 def _sha256(path: Path) -> str:
@@ -45,16 +55,34 @@ def _closure_digest(ordered_artifacts: list[dict[str, Any]]) -> dict[str, str]:
     }
 
 
+def _release_blob_digest(uri: str) -> str | None:
+    completed = subprocess.run(
+        ["git", "show", f"{PUBLISHED_RELEASE_COMMIT}:{uri}"],
+        cwd=ROOT,
+        capture_output=True,
+        check=False,
+    )
+    if completed.returncode != 0:
+        return None
+    return hashlib.sha256(completed.stdout).hexdigest()
+
+
+def _digest_matches_current_or_release(uri: str, expected: str) -> bool:
+    path = ROOT / uri
+    if path.is_file() and _sha256(path) == expected:
+        return True
+    return _release_blob_digest(uri) == expected
+
+
 def _artifact_reference_errors(reference: dict[str, Any], label: str) -> list[str]:
     errors: list[str] = []
     uri = reference.get("uri", "")
     if not isinstance(uri, str) or not uri.startswith("artifact://"):
         return [f"{label}: artifact URI is not repository-addressable"]
-    path = ROOT / unquote(uri.removeprefix("artifact://"))
-    if not path.is_file():
-        errors.append(f"{label}: artifact does not exist")
-    elif reference.get("digest", {}).get("value") != _sha256(path):
-        errors.append(f"{label}: artifact digest does not match")
+    relative = unquote(uri.removeprefix("artifact://"))
+    expected = reference.get("digest", {}).get("value")
+    if not _digest_matches_current_or_release(relative, expected):
+        errors.append(f"{label}: artifact digest matches neither the current file nor the frozen v2.0 release")
     return errors
 
 
@@ -85,12 +113,21 @@ def validation_errors(payload: dict[str, Any], schema: dict[str, Any]) -> list[s
     ]
 
 
-def _audit_path(payload: dict[str, Any]) -> Path | None:
-    artifact = payload.get("source_audit", {}).get("artifact")
+def _source_closure_path(reference: dict[str, Any]) -> Path | None:
+    artifact = reference.get("artifact")
     if not isinstance(artifact, str):
         return None
-    path = ROOT / artifact
-    return path if path.is_file() else None
+    try:
+        return resolve_release_reference(
+            {"uri": artifact, "digest": reference.get("digest", {})},
+            repository_root=ROOT,
+        )
+    except (KeyError, TypeError, ValueError):
+        return None
+
+
+def _audit_path(payload: dict[str, Any]) -> Path | None:
+    return _source_closure_path(payload.get("source_audit", {}))
 
 
 def _policy_semantic_errors(policy: dict[str, Any]) -> list[str]:
@@ -319,7 +356,9 @@ def _check_disposition_result(
         errors.append("no_action_disposition references an interpretation without NoAction support")
 
 
-def contract_errors(payload: dict[str, Any]) -> list[str]:
+def contract_errors(
+    payload: dict[str, Any], *, expected_sofaudit_version: str = "2.0"
+) -> list[str]:
     errors: list[str] = []
     source_ref = payload.get("source_audit", {})
     path = _audit_path(payload)
@@ -328,16 +367,16 @@ def contract_errors(payload: dict[str, Any]) -> list[str]:
         return errors
 
     source = json.loads(path.read_text(encoding="utf-8"))
-    if source.get("sofaudit_version") != "2.0":
-        errors.append("source audit must be SOFAUDIT v2")
+    if source.get("sofaudit_version") != expected_sofaudit_version:
+        errors.append(f"source audit must be SOFAUDIT {expected_sofaudit_version}")
     if source_ref.get("audit_id") != source.get("audit_id"):
         errors.append("source_audit.audit_id does not match source artifact")
     actual_digest = _sha256(path)
     if source_ref.get("digest", {}).get("value") != actual_digest:
         errors.append("source_audit digest does not match source artifact")
     receipt_ref = source_ref.get("validation_receipt", {})
-    receipt_path = ROOT / receipt_ref.get("artifact", "")
-    if not receipt_ref or not receipt_path.is_file():
+    receipt_path = _source_closure_path(receipt_ref)
+    if not receipt_ref or receipt_path is None or not receipt_path.is_file():
         errors.append("source_audit must bind an existing Paper XIII validation receipt")
     else:
         receipt_digest = _sha256(receipt_path)
@@ -560,7 +599,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--write-receipts",
         action="store_true",
-        help="write one v2 validation receipt for each passing action artifact",
+        help="disabled for the immutable v2.0 release corpus",
     )
     return parser.parse_args()
 
@@ -572,8 +611,12 @@ def build_validation_receipt(path: Path) -> dict[str, Any]:
     if errors:
         raise ValueError(f"{path}: " + "; ".join(errors))
 
-    source_audit = ROOT / payload["source_audit"]["artifact"]
-    source_receipt = ROOT / payload["source_audit"]["validation_receipt"]["artifact"]
+    source_audit = _audit_path(payload)
+    source_receipt = _source_closure_path(
+        payload["source_audit"]["validation_receipt"]
+    )
+    if source_audit is None or source_receipt is None:
+        raise ValueError(f"{path}: source audit closure cannot be resolved")
     ordered_artifacts = [
         {"role": "action", "artifact": _repo_reference(path)},
         {"role": "source-audit", "artifact": _repo_reference(source_audit)},
@@ -667,11 +710,10 @@ def validation_receipt_errors(receipt: dict[str, Any]) -> list[str]:
         errors.append("receipt artifact roles are not unique")
     for index, item in enumerate(ordered):
         reference = item.get("artifact", {})
-        artifact_path = ROOT / reference.get("uri", "")
-        if not artifact_path.is_file():
-            errors.append(f"receipt artifact {index} does not exist")
-        elif reference.get("digest", {}).get("value") != _sha256(artifact_path):
-            errors.append(f"receipt artifact {index} digest does not match")
+        uri = reference.get("uri", "")
+        expected = reference.get("digest", {}).get("value")
+        if not _digest_matches_current_or_release(uri, expected):
+            errors.append(f"receipt artifact {index} digest matches neither current nor frozen release content")
     role_map = {item.get("role"): item.get("artifact") for item in ordered}
     if receipt.get("action", {}).get("artifact") != role_map.get("action"):
         errors.append("receipt action differs from artifact closure")
@@ -705,16 +747,10 @@ def main() -> None:
     if failures:
         raise SystemExit(f"{failures} SOF action artifact(s) failed validation.")
     if args.write_receipts:
-        receipt_dir = HERE / "results" / "receipts"
-        receipt_dir.mkdir(parents=True, exist_ok=True)
-        for path in paths:
-            receipt = build_validation_receipt(path)
-            receipt_path = receipt_dir / f"{path.stem}.validation-receipt.json"
-            receipt_path.write_text(
-                json.dumps(receipt, indent=2, ensure_ascii=False) + "\n",
-                encoding="utf-8",
-            )
-        print(f"Wrote {len(paths)} SOFAction validation receipt(s) to {receipt_dir}.")
+        raise SystemExit(
+            "Paper XIV v2.0 receipts are immutable; v2.1 receipts are emitted "
+            "by validate_sofaction_v2_1.py"
+        )
     print(f"Validated {len(paths)} SOF action artifact(s).")
 
 

@@ -660,7 +660,7 @@
       "uri": "experiments/paper13/results/audits/before_after_traffic.sofaudit.json",
       "digest": {
         "algorithm": "sha256",
-        "value": "d7c507dfde14c4ab8d707518f5839fc5322b5a6e14c970a224ca67ab38ab97d0"
+        "value": "13f8a8523aaf00728c8003c2cd6bc91576971f77390a4b6da4d1eccb5c853fa7"
       }
     },
     "migration_implementation": {

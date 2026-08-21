@@ -661,7 +661,7 @@
       "uri": "experiments/paper13/results/audits/traffic_f1.sofaudit.json",
       "digest": {
         "algorithm": "sha256",
-        "value": "b725ab4c872d74e34dd6bf7a1cd4730dfc40b1d21e1d17bdefb0c11e9b9e1bbb"
+        "value": "1472f624d9414c1438d42df0d2ca60b36a425d39d1e9a1fd7b6875d2b66be0a3"
       }
     },
     "migration_implementation": {
