@@ -1,0 +1,59 @@
+{
+  "schema_version": "repository-publication-receipt-1.0",
+  "release": {
+    "version": "2.1",
+    "tag": "rime-lite-v2.1",
+    "release_content_commit_sha": "005e2453d508ba5e12136bf9005050ac72185ae5",
+    "release_manifest_commit_sha": "69b33d60ac729eeff45dfe42e79e68197cdd7f68",
+    "annotated_tag_object_oid": "e7d6be894685d9716f29ff12dbb4e1dc7258256c",
+    "release_manifest_path": "release-snapshots/rime-lite-v2.1/manifest.json",
+    "release_manifest_sha256": "09db352d3b6b0f65737752bfe590912be31ab0e3d86152dcad8e731db047e86b"
+  },
+  "github_anchor": {
+    "release_url": "https://github.com/dooven-prime/rime-lite/releases/tag/rime-lite-v2.1",
+    "redownloaded_archive": {
+      "filename": "rime-lite-rime-lite-v2.1.zip",
+      "size_bytes": 21927703,
+      "md5": "da4c40215e212ebe361949c012a95b8f",
+      "sha256": "f652667b3d0086b5b29e26219bf57efb11843347b0e76087a5b7a090bef8e183",
+      "top_level_prefix": "rime-lite-rime-lite-v2.1"
+    }
+  },
+  "zenodo_anchor": {
+    "doi": "10.5281/zenodo.22048358",
+    "concept_doi": "10.5281/zenodo.22004682",
+    "record_id": "22048358",
+    "record_revision": 5,
+    "record_url": "https://zenodo.org/records/22048358",
+    "deposited_file": {
+      "filename": "dooven-prime/rime-lite-rime-lite-v2.1.zip",
+      "size_bytes": 21951127,
+      "declared_md5": "b103d6eb1b4fcacb90621eaafc04c826",
+      "downloaded_md5": "b103d6eb1b4fcacb90621eaafc04c826",
+      "downloaded_sha256": "da87ca8438b31ee37e867aa266118851f2c88735eeef670cd804110298ea9d21",
+      "top_level_prefix": "dooven-prime-rime-lite-e7d6be8"
+    },
+    "metadata": {
+      "title": "dooven-prime/rime-lite: RIME Lite v2.1",
+      "version": "2.1",
+      "publication_date": "2026-08-21",
+      "description_sha256": "3eada9dacad8356b51cef61288fa5e1ecfffd41961e4d47ffdb8d271e248470d",
+      "resource_type": "software",
+      "related_identifier": "https://github.com/dooven-prime/rime-lite/tree/rime-lite-v2.1",
+      "relation": "isSupplementTo"
+    }
+  },
+  "closure_comparison": {
+    "method": "Remove each ZIP top-level directory, compare normalized relative path sets, then compare SHA-256 of every exact file payload.",
+    "github_file_count": 1727,
+    "zenodo_file_count": 1727,
+    "github_uncompressed_bytes": 46982554,
+    "zenodo_uncompressed_bytes": 46982554,
+    "github_only_paths": 0,
+    "zenodo_only_paths": 0,
+    "byte_mismatch_paths": 0,
+    "status": "PASS_IDENTICAL_FILE_CLOSURE"
+  },
+  "observed_at_utc": "2026-08-21T16:47:53Z",
+  "authority_boundary": "This receipt records observed byte identity between the two downloaded release closures. It does not establish semantic correctness, scientific adequacy, validator independence, or causal truth."
+}

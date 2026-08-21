@@ -30,6 +30,7 @@ immutable first combined record retains its historical predecessor.
 | Paper XIV | context- and policy-relative interpretation and bounded candidate dispositions | <https://doi.org/10.5281/zenodo.22024158> |
 | Paper XV | evidence-bound revision, supersession, and revalidation of current commitments | <https://doi.org/10.5281/zenodo.22043124> |
 | CCS v2.1 | optional reproducibility, observation, open-problem, and history archive | <https://doi.org/10.5281/zenodo.21988041> |
+| RIME Lite v2.1 repository snapshot | accepted papers, contracts, Registry evidence, release tools, and exact-byte historical inputs | [Zenodo DOI](https://doi.org/10.5281/zenodo.22048358) / [GitHub Release](https://github.com/dooven-prime/rime-lite/releases/tag/rime-lite-v2.1) |
 | Historical combined Papers I--III + CCS release | immutable first-version archive; current papers are maintained independently | <https://doi.org/10.5281/zenodo.21108197> |
 
 This is the repository's canonical DOI index. It identifies immutable
@@ -37,6 +38,12 @@ published records; other public documents link here instead of duplicating the
 list. Papers VII--XV now match their published versioned records. Their
 listed DOIs identify immutable published versions, and frozen historical
 contracts remain unchanged.
+
+The repository v2.1 release content is commit
+`005e2453d508ba5e12136bf9005050ac72185ae5`. The annotated tag points to the
+release-manifest commit `69b33d60ac729eeff45dfe42e79e68197cdd7f68`.
+This DOI propagation is a later metadata-only update and is not part of the
+tagged release closure.
 
 ## Start Here
 
