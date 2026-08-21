@@ -1,0 +1,197 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rime-project.local/schemas/sofaction/validation-receipt-v2.1.schema.json",
+  "title": "SOFAction v2.1 Validation Receipt",
+  "description": "Source-addressed conformance receipt for one SOFAction v2.1 candidate artifact. PASS is neither authorization nor execution evidence.",
+  "type": "object",
+  "required": [
+    "receipt_version",
+    "artifact_type",
+    "receipt_kind",
+    "receipt_scope",
+    "receipt_id",
+    "action",
+    "validator",
+    "generation",
+    "artifact_closure",
+    "status",
+    "checks",
+    "authorization_semantics",
+    "execution_semantics",
+    "outcome_semantics",
+    "effect_semantics",
+    "negative_boundaries"
+  ],
+  "properties": {
+    "receipt_version": {"const": "2.1"},
+    "artifact_type": {"const": "sofaction_validation_receipt"},
+    "receipt_kind": {"const": "SOFACTION_VALIDATION_RECEIPT"},
+    "receipt_scope": {"const": "SOFACTION_PROTOCOL_CONFORMANCE_ONLY"},
+    "receipt_id": {"$ref": "#/$defs/id"},
+    "action": {
+      "type": "object",
+      "required": ["action_record_id", "sofaction_version", "artifact"],
+      "properties": {
+        "action_record_id": {"$ref": "#/$defs/id"},
+        "sofaction_version": {"const": "2.1"},
+        "artifact": {"$ref": "#/$defs/artifact_reference"}
+      },
+      "additionalProperties": false
+    },
+    "validator": {
+      "type": "object",
+      "required": ["validator_id", "validator_version", "implementation", "action_contract", "receipt_contract"],
+      "properties": {
+        "validator_id": {"const": "paper14.sofaction-validator.v2_1"},
+        "validator_version": {"const": "2.1"},
+        "implementation": {"$ref": "#/$defs/artifact_reference"},
+        "action_contract": {"$ref": "#/$defs/artifact_reference"},
+        "receipt_contract": {"$ref": "#/$defs/artifact_reference"}
+      },
+      "additionalProperties": false
+    },
+    "generation": {"$ref": "#/$defs/generation_provenance"},
+    "artifact_closure": {"$ref": "#/$defs/artifact_closure"},
+    "status": {"const": "PASS"},
+    "checks": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "required": ["check_id", "status"],
+        "properties": {
+          "check_id": {
+            "enum": [
+              "artifact-digest-closure",
+              "audit-projection-preservation",
+              "candidate-non-execution",
+              "candidate-set-regeneration",
+              "downstream-artifact-role-isolation",
+              "explicit-v2.0-to-v2.1-migration",
+              "generation-input-closure",
+              "native-v2.1-generation",
+              "schema-validation",
+              "v2.0-source-validation",
+              "verified-authority-non-authorization"
+            ]
+          },
+          "status": {"const": "PASS"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "authorization_semantics": {"const": "NONE"},
+    "execution_semantics": {"const": "NONE"},
+    "outcome_semantics": {"const": "NONE"},
+    "effect_semantics": {"const": "NONE"},
+    "negative_boundaries": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    }
+  },
+  "$defs": {
+    "generation_provenance": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": ["kind", "class", "source_version", "source_artifact", "implementation"],
+          "properties": {
+            "kind": {"const": "migration"},
+            "class": {"const": "boundary_annotation"},
+            "source_version": {"const": "2.0"},
+            "source_artifact": {"$ref": "#/$defs/artifact_reference"},
+            "implementation": {"$ref": "#/$defs/artifact_reference"}
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": ["kind", "implementation", "input_artifacts"],
+          "properties": {
+            "kind": {"const": "native"},
+            "implementation": {"$ref": "#/$defs/artifact_reference"},
+            "input_artifacts": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {"$ref": "#/$defs/artifact_reference"}
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "id": {"type": "string", "minLength": 1},
+    "digest": {
+      "type": "object",
+      "required": [
+        "algorithm",
+        "value"
+      ],
+      "properties": {
+        "algorithm": {
+          "const": "sha256"
+        },
+        "value": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "artifact_reference": {
+      "type": "object",
+      "required": [
+        "uri",
+        "digest"
+      ],
+      "properties": {
+        "uri": {
+          "type": "string",
+          "minLength": 1
+        },
+        "digest": {
+          "$ref": "#/$defs/digest"
+        }
+      },
+      "additionalProperties": false
+    },
+    "closure_item": {
+      "type": "object",
+      "required": ["role", "artifact"],
+      "properties": {
+        "role": {
+          "type": "string",
+          "minLength": 1,
+          "not": {
+            "enum": [
+              "selected-plan",
+              "authorization-receipt",
+              "execution-receipt",
+              "executor-result",
+              "post-action-observation",
+              "outcome-record",
+              "effect-certificate"
+            ]
+          }
+        },
+        "artifact": {"$ref": "#/$defs/artifact_reference"}
+      },
+      "additionalProperties": false
+    },
+    "artifact_closure": {
+      "type": "object",
+      "required": ["artifact_count", "ordered_artifacts", "closure_digest"],
+      "properties": {
+        "artifact_count": {"type": "integer", "minimum": 1},
+        "ordered_artifacts": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/closure_item"}},
+        "closure_digest": {"$ref": "#/$defs/digest"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

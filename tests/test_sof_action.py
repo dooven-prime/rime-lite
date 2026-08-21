@@ -10,6 +10,7 @@ import sys
 
 
 ROOT = Path(__file__).resolve().parents[1]
+V2_SNAPSHOT_ROOT = ROOT / "release-snapshots" / "rime-lite-v2.0" / "files"
 
 
 def load_module(name: str, path: Path):
@@ -28,20 +29,20 @@ validator = load_module("paper14_sofaction_validator", ROOT / "experiments" / "p
 
 
 def audit(stem: str) -> dict:
-    path = ROOT / "experiments" / "paper13" / "results" / "audits" / f"{stem}.sofaudit.json"
+    path = V2_SNAPSHOT_ROOT / "experiments" / "paper13" / "results" / "audits" / f"{stem}.sofaudit.json"
     return json.loads(path.read_text(encoding="utf-8"))
 
 
 def native_audit() -> dict:
-    path = ROOT / "experiments" / "paper13" / "results" / "native" / "gridworld-f4" / "audits" / "gridworld-f4-native-v2.sofaudit.json"
+    path = V2_SNAPSHOT_ROOT / "experiments" / "paper13" / "results" / "native" / "gridworld-f4" / "audits" / "gridworld-f4-native-v2.sofaudit.json"
     return json.loads(path.read_text(encoding="utf-8"))
 
 
 def source_path(audit_payload: dict) -> str:
     if audit_payload["audit_id"] == "gridworld-f4-native-v2":
-        path = ROOT / "experiments" / "paper13" / "results" / "native" / "gridworld-f4" / "audits" / "gridworld-f4-native-v2.sofaudit.json"
+        path = V2_SNAPSHOT_ROOT / "experiments" / "paper13" / "results" / "native" / "gridworld-f4" / "audits" / "gridworld-f4-native-v2.sofaudit.json"
     else:
-        path = ROOT / "experiments" / "paper13" / "results" / "audits" / f"{audit_payload['audit_id']}.sofaudit.json"
+        path = V2_SNAPSHOT_ROOT / "experiments" / "paper13" / "results" / "audits" / f"{audit_payload['audit_id']}.sofaudit.json"
     return path.relative_to(ROOT).as_posix()
 
 

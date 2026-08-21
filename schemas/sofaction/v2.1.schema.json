@@ -1,0 +1,761 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rime-project.local/schemas/sofaction/v2.1.schema.json",
+  "title": "SOF Action Object v2.1",
+  "description": "Semantic revision of SOFAction v2.0 that preserves contextual interpretation and candidate dispositions while making non-execution and downstream artifact isolation explicit. A v2.0 artifact requires explicit migration and a new v2.1 validation receipt.",
+  "type": "object",
+  "required": [
+    "sofaction_version",
+    "revision_provenance",
+    "execution_boundary",
+    "record_type",
+    "action_record_id",
+    "claim_status",
+    "record_class",
+    "record_basis",
+    "claim_note",
+    "source_audit",
+    "audit_projection",
+    "context_admission",
+    "policy_admission",
+    "action_context",
+    "policy_profile",
+    "interpretation_records",
+    "candidate_action_set",
+    "disposition_result",
+    "failure_modes"
+  ],
+  "properties": {
+    "sofaction_version": {"const": "2.1"},
+    "revision_provenance": {"$ref": "#/$defs/revisionProvenance"},
+    "execution_boundary": {
+      "type": "object",
+      "required": [
+        "artifact_role",
+        "selection_semantics",
+        "authorization_semantics",
+        "execution_semantics",
+        "outcome_semantics",
+        "effect_semantics"
+      ],
+      "properties": {
+        "artifact_role": {"const": "CANDIDATE_SET_ONLY"},
+        "selection_semantics": {"const": "OUT_OF_SCOPE_FOR_SOFACTION"},
+        "authorization_semantics": {"const": "OUT_OF_SCOPE_FOR_SOFACTION"},
+        "execution_semantics": {"const": "OUT_OF_SCOPE_FOR_SOFACTION"},
+        "outcome_semantics": {"const": "OUT_OF_SCOPE_FOR_SOFACTION"},
+        "effect_semantics": {"const": "OUT_OF_SCOPE_FOR_SOFACTION"}
+      },
+      "additionalProperties": false
+    },
+    "record_type": {"const": "sofaction"},
+    "action_record_id": {"type": "string", "minLength": 1},
+    "claim_status": {
+      "enum": ["Theorem", "Computational Certificate", "Computational Observation", "Research Program"]
+    },
+    "record_class": {
+      "enum": [
+        "policy_conformance_certificate",
+        "decision_trace_certificate"
+      ]
+    },
+    "record_basis": {"$ref": "#/$defs/recordBasis"},
+    "claim_note": {"type": "string", "minLength": 1},
+    "source_audit": {"$ref": "#/$defs/auditReference"},
+    "audit_projection": {
+      "type": "object",
+      "required": ["audit_id", "signature"],
+      "properties": {
+        "audit_id": {"type": "string", "minLength": 1},
+        "signature": {"type": "object"}
+      },
+      "additionalProperties": false
+    },
+    "context_admission": {"$ref": "#/$defs/admission"},
+    "policy_admission": {"$ref": "#/$defs/admission"},
+    "action_context": {
+      "oneOf": [{"type": "null"}, {"$ref": "#/$defs/actionContext"}]
+    },
+    "policy_profile": {
+      "oneOf": [{"type": "null"}, {"$ref": "#/$defs/policyProfile"}]
+    },
+    "interpretation_records": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/interpretationRecord"}
+    },
+    "candidate_action_set": {"$ref": "#/$defs/candidateActionSet"},
+    "disposition_result": {"$ref": "#/$defs/dispositionResult"},
+    "failure_modes": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "minItems": 1,
+      "uniqueItems": true
+    }
+  },
+  "$defs": {
+    "revisionProvenance": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": ["kind", "source_version", "source_artifact", "migration_implementation"],
+          "properties": {
+            "kind": {"const": "explicit_v2_0_to_v2_1_migration"},
+            "source_version": {"const": "2.0"},
+            "source_artifact": {"$ref": "#/$defs/revisionArtifactReference"},
+            "migration_implementation": {"$ref": "#/$defs/revisionArtifactReference"}
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": ["kind", "generation_implementation", "generation_inputs"],
+          "properties": {
+            "kind": {"const": "native_v2_1_generation"},
+            "generation_implementation": {"$ref": "#/$defs/revisionArtifactReference"},
+            "generation_inputs": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {"$ref": "#/$defs/revisionArtifactReference"}
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "revisionArtifactReference": {
+      "type": "object",
+      "required": ["uri", "digest"],
+      "properties": {
+        "uri": {"type": "string", "minLength": 1},
+        "digest": {
+      "type": "object",
+      "required": [
+        "algorithm",
+        "value"
+      ],
+      "properties": {
+        "algorithm": {
+          "const": "sha256"
+        },
+        "value": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "additionalProperties": false
+    }
+      },
+      "additionalProperties": false
+    },
+    "digest": {
+      "type": "object",
+      "required": [
+        "algorithm",
+        "value"
+      ],
+      "properties": {
+        "algorithm": {
+          "const": "sha256"
+        },
+        "value": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "auditReference": {
+      "type": "object",
+      "required": ["audit_id", "artifact", "sofaudit_version", "digest", "validation_receipt"],
+      "properties": {
+        "audit_id": {"type": "string", "minLength": 1},
+        "artifact": {"type": "string", "minLength": 1},
+        "sofaudit_version": {"const": "2.1"},
+        "digest": {"$ref": "#/$defs/digest"},
+        "validation_receipt": {"$ref": "#/$defs/validationReceiptRef"}
+      },
+      "additionalProperties": false
+    },
+    "artifactReference": {
+      "type": "object",
+      "required": ["artifact_id", "role", "uri", "digest", "producer", "contract_version"],
+      "properties": {
+        "artifact_id": {"type": "string", "minLength": 1},
+        "role": {"type": "string", "minLength": 1},
+        "uri": {"type": "string", "pattern": "^artifact://.+"},
+        "digest": {"$ref": "#/$defs/digest"},
+        "producer": {"type": "string", "minLength": 1},
+        "contract_version": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "validationReceiptRef": {
+      "type": "object",
+      "required": [
+        "receipt_id",
+        "artifact",
+        "digest",
+        "validator_id",
+        "validator_version"
+      ],
+      "properties": {
+        "receipt_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "artifact": {
+          "type": "string",
+          "minLength": 1
+        },
+        "digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "validator_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "validator_version": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "admission": {
+      "type": "object",
+      "required": ["status", "contract_validation", "applicability", "completeness", "missing_fields", "rationale"],
+      "properties": {
+        "status": {"enum": ["admitted", "inconclusive"]},
+        "contract_validation": {"enum": ["admitted", "rejected"]},
+        "applicability": {"enum": ["applicable", "not_applicable", "unresolved"]},
+        "completeness": {"enum": ["complete", "incomplete"]},
+        "missing_fields": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        },
+        "rationale": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false,
+      "allOf": [
+        {"if": {"properties": {"status": {"const": "admitted"}}}, "then": {"properties": {
+          "contract_validation": {"const": "admitted"},
+          "applicability": {"const": "applicable"},
+          "completeness": {"const": "complete"},
+          "missing_fields": {"maxItems": 0}
+        }}},
+        {"if": {"properties": {"status": {"const": "inconclusive"}}}, "then": {"properties": {"missing_fields": {"minItems": 1}}}}
+      ]
+    },
+    "actionContext": {
+      "type": "object",
+      "required": [
+        "context_id",
+        "context_contract_version",
+        "context_revision",
+        "actor",
+        "scope",
+        "objective",
+        "constraints",
+        "time",
+        "authority",
+        "uncertainty_conditions",
+        "comparison_role",
+        "mismatch_direction",
+        "contract_status",
+        "evaluator_qualification_note",
+        "transformation_contract_refs",
+        "negative_boundary"
+      ],
+      "properties": {
+        "context_id": {"type": "string", "minLength": 1},
+        "context_contract_version": {"const": "2.0"},
+        "context_revision": {"type": "string", "minLength": 1},
+        "actor": {"$ref": "#/$defs/actor"},
+        "scope": {"$ref": "#/$defs/scope"},
+        "objective": {"$ref": "#/$defs/objective"},
+        "constraints": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/constraint"},
+          "minItems": 1
+        },
+        "time": {"$ref": "#/$defs/timeScope"},
+        "authority": {"$ref": "#/$defs/authority"},
+        "uncertainty_conditions": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "minItems": 1
+        },
+        "comparison_role": {
+          "enum": [
+            "failure_mode_control",
+            "legitimate_transformation_control",
+            "model_comparison",
+            "diagnostic_comparison"
+          ]
+        },
+        "mismatch_direction": {
+          "enum": ["reference_to_target", "target_to_reference", "symmetric"]
+        },
+        "contract_status": {
+          "enum": ["conforming", "nonconforming", "inconclusive", "not_applicable"]
+        },
+        "evaluator_qualification_note": {"type": "string", "minLength": 1},
+        "transformation_contract_refs": {"type": "array", "items": {"$ref": "#/$defs/artifactReference"}},
+        "negative_boundary": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "minItems": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "actor": {
+      "type": "object",
+      "required": ["actor_id", "role", "description"],
+      "properties": {
+        "actor_id": {"type": "string", "minLength": 1},
+        "role": {"type": "string", "minLength": 1},
+        "description": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "scope": {
+      "type": "object",
+      "required": ["scope_id", "description", "audit_id"],
+      "properties": {
+        "scope_id": {"type": "string", "minLength": 1},
+        "description": {"type": "string", "minLength": 1},
+        "audit_id": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "objective": {
+      "type": "object",
+      "required": ["objective_id", "statement"],
+      "properties": {
+        "objective_id": {"type": "string", "minLength": 1},
+        "statement": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "constraint": {
+      "type": "object",
+      "required": ["constraint_id", "statement", "status"],
+      "properties": {
+        "constraint_id": {"type": "string", "minLength": 1},
+        "statement": {"type": "string", "minLength": 1},
+        "status": {"enum": ["binding", "declared", "unresolved", "not_applicable"]}
+      },
+      "additionalProperties": false
+    },
+    "timeScope": {
+      "type": "object",
+      "required": ["kind", "start", "end", "timezone", "basis"],
+      "properties": {
+        "kind": {"enum": ["source_snapshot", "interval", "event_window", "unresolved"]},
+        "start": {"type": ["string", "null"]},
+        "end": {"type": ["string", "null"]},
+        "timezone": {"type": ["string", "null"]},
+        "basis": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "authority": {
+      "type": "object",
+      "required": ["authority_id", "status", "description", "actor_ids", "scope_ids"],
+      "properties": {
+        "authority_id": {"type": "string", "minLength": 1},
+        "status": {"enum": ["not_authorized", "declared", "verified", "pending", "denied"]},
+        "description": {"type": "string", "minLength": 1},
+        "actor_ids": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 1, "uniqueItems": true},
+        "scope_ids": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 1, "uniqueItems": true}
+      },
+      "additionalProperties": false
+    },
+    "policyProfile": {
+      "type": "object",
+      "required": [
+        "policy_id",
+        "policy_contract_version",
+        "policy_revision",
+        "applicability",
+        "normative_basis",
+        "rules",
+        "exceptions",
+        "precedence_edges",
+        "uncertainty_policy",
+        "candidate_families",
+        "selection_status"
+      ],
+      "properties": {
+        "policy_id": {"type": "string", "minLength": 1},
+        "policy_contract_version": {"const": "2.0"},
+        "policy_revision": {"type": "string", "minLength": 1},
+        "applicability": {"$ref": "#/$defs/applicability"},
+        "normative_basis": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/normativeBasis"},
+          "minItems": 1
+        },
+        "rules": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/policyRule"},
+          "minItems": 1
+        },
+        "exceptions": {"type": "array", "items": {"$ref": "#/$defs/policyException"}},
+        "precedence_edges": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/precedenceEdge"},
+          "minItems": 0
+        },
+        "uncertainty_policy": {"$ref": "#/$defs/uncertaintyPolicy"},
+        "candidate_families": {
+          "type": "array",
+          "items": {"enum": ["Investigate", "RequestEvidence", "Mitigate", "Rollback", "Escalate"]},
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "selection_status": {"const": "downstream"}
+      },
+      "additionalProperties": false
+    },
+    "applicability": {
+      "type": "object",
+      "required": ["regimes", "comparison_roles"],
+      "properties": {
+        "regimes": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 1},
+        "comparison_roles": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 1}
+      },
+      "additionalProperties": false
+    },
+    "uncertaintyPolicy": {
+      "type": "object",
+      "required": [
+        "version",
+        "unresolved_predicate",
+        "unavailable_coordinate",
+        "not_declared",
+        "incomparable",
+        "rule_conflict",
+        "no_applicable_rule"
+      ],
+      "properties": {
+        "version": {"const": "1.0"},
+        "unresolved_predicate": {"const": "propagate_unresolved"},
+        "unavailable_coordinate": {"enum": ["non_satisfying", "propagate_unresolved"]},
+        "not_declared": {"enum": ["non_satisfying", "propagate_unresolved"]},
+        "incomparable": {"enum": ["non_satisfying", "propagate_unresolved"]},
+        "rule_conflict": {"const": "unresolved_disposition"},
+        "no_applicable_rule": {"enum": ["no_disposition", "unresolved_disposition"]}
+      },
+      "additionalProperties": false
+    },
+    "normativeBasis": {
+      "type": "object",
+      "required": ["basis_id", "statement", "source_ref"],
+      "properties": {
+        "basis_id": {"type": "string", "minLength": 1},
+        "statement": {"type": "string", "minLength": 1},
+        "source_ref": {"$ref": "#/$defs/artifactReference"}
+      },
+      "additionalProperties": false
+    },
+    "policyRule": {
+      "type": "object",
+      "required": ["rule_id", "when", "assessment_kind", "assessment_note", "uncertainty_status", "allowed_dispositions", "negative_boundary"],
+      "properties": {
+        "rule_id": {"type": "string", "minLength": 1},
+        "when": {"$ref": "#/$defs/predicate"},
+        "assessment_kind": {"$ref": "#/$defs/assessmentKind"},
+        "assessment_note": {"type": "string", "minLength": 1},
+        "uncertainty_status": {"enum": ["bounded", "unresolved", "not_assessed"]},
+        "allowed_dispositions": {
+          "type": "array",
+          "items": {"enum": ["NoAction", "Investigate", "RequestEvidence", "Mitigate", "Rollback", "Escalate", "Unresolved"]},
+          "uniqueItems": true
+        },
+        "negative_boundary": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 1}
+      },
+      "additionalProperties": false
+    },
+    "assessmentKind": {
+      "enum": ["licensed_change", "defect_candidate", "no_action_indicated", "evidence_insufficient", "policy_conflict", "inconclusive"]
+    },
+    "predicate": {
+      "oneOf": [
+        {"$ref": "#/$defs/predicateBoolean"},
+        {"$ref": "#/$defs/predicateNot"},
+        {"$ref": "#/$defs/predicateCoordinate"},
+        {"$ref": "#/$defs/predicateContext"},
+        {"$ref": "#/$defs/predicateConstraint"},
+        {"$ref": "#/$defs/predicatePolicyBasis"}
+      ]
+    },
+    "predicateBoolean": {
+      "type": "object",
+      "required": ["predicate_version", "op", "args"],
+      "properties": {
+        "predicate_version": {"const": "1.0"},
+        "op": {"enum": ["all", "any"]},
+        "args": {"type": "array", "items": {"$ref": "#/$defs/predicate"}, "minItems": 1}
+      },
+      "additionalProperties": false
+    },
+    "predicateNot": {
+      "type": "object",
+      "required": ["predicate_version", "op", "args"],
+      "properties": {
+        "predicate_version": {"const": "1.0"},
+        "op": {"const": "not"},
+        "args": {"type": "array", "items": {"$ref": "#/$defs/predicate"}, "minItems": 1, "maxItems": 1}
+      },
+      "additionalProperties": false
+    },
+    "predicateCoordinate": {
+      "type": "object",
+      "required": ["predicate_version", "op", "coordinate_id"],
+      "properties": {
+        "predicate_version": {"const": "1.0"},
+        "op": {"enum": ["coordinate_exists", "coordinate_state_is", "coordinate_carrier_is", "coordinate_relation_is"]},
+        "coordinate_id": {"type": "string", "minLength": 1},
+        "value": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false,
+      "allOf": [
+        {"if": {"properties": {"op": {"enum": ["coordinate_state_is", "coordinate_carrier_is", "coordinate_relation_is"]}}}, "then": {"required": ["value"]}},
+        {"if": {"properties": {"op": {"const": "coordinate_exists"}}}, "then": {"not": {"required": ["value"]}}},
+        {"if": {"properties": {"op": {"const": "coordinate_state_is"}}}, "then": {"properties": {"value": {"enum": ["ALIGNED", "MISMATCH", "INCOMPARABLE", "UNRESOLVED", "NOT_DECLARED", "NOT_APPLICABLE"]}}}},
+        {"if": {"properties": {"op": {"const": "coordinate_relation_is"}}}, "then": {"properties": {"value": {"enum": ["equal", "increased", "decreased", "mismatch", "unmatched", "incomparable"]}}}}
+      ]
+    },
+    "predicateContext": {
+      "type": "object",
+      "required": ["predicate_version", "op"],
+      "properties": {
+        "predicate_version": {"const": "1.0"},
+        "op": {"enum": ["comparison_role_is", "contract_status_is", "authority_status_in", "uncertainty_status_is", "transformation_contract_present"]},
+        "value": {"type": "string", "minLength": 1},
+        "values": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 1, "uniqueItems": true}
+      },
+      "additionalProperties": false,
+      "allOf": [
+        {"if": {"properties": {"op": {"const": "authority_status_in"}}}, "then": {"required": ["values"], "not": {"required": ["value"]}}},
+        {"if": {"properties": {"op": {"enum": ["comparison_role_is", "contract_status_is", "uncertainty_status_is"]}}}, "then": {"required": ["value"], "not": {"required": ["values"]}}},
+        {"if": {"properties": {"op": {"const": "transformation_contract_present"}}}, "then": {"not": {"anyOf": [{"required": ["value"]}, {"required": ["values"]}]}}}
+      ]
+    },
+    "predicateConstraint": {
+      "type": "object",
+      "required": ["predicate_version", "op", "constraint_id", "value"],
+      "properties": {
+        "predicate_version": {"const": "1.0"},
+        "op": {"const": "context_constraint_has_status"},
+        "constraint_id": {"type": "string", "minLength": 1},
+        "value": {"enum": ["binding", "declared", "unresolved", "not_applicable"]}
+      },
+      "additionalProperties": false
+    },
+    "predicatePolicyBasis": {
+      "type": "object",
+      "required": ["predicate_version", "op"],
+      "properties": {
+        "predicate_version": {"const": "1.0"},
+        "op": {"const": "policy_basis_present"}
+      },
+      "additionalProperties": false
+    },
+    "policyException": {
+      "type": "object",
+      "required": ["exception_id", "when", "overrides_rule_ids", "negative_boundary"],
+      "properties": {
+        "exception_id": {"type": "string", "minLength": 1},
+        "when": {"$ref": "#/$defs/predicate"},
+        "overrides_rule_ids": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 1, "uniqueItems": true},
+        "negative_boundary": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 1}
+      },
+      "additionalProperties": false
+    },
+    "precedenceEdge": {
+      "type": "object",
+      "required": ["before", "after"],
+      "properties": {
+        "before": {"type": "string", "minLength": 1},
+        "after": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "coordinateRef": {
+      "type": "object",
+      "required": ["coordinate_id", "comparison_state", "carrier"],
+      "properties": {
+        "coordinate_id": {"type": "string", "minLength": 1},
+        "comparison_state": {"enum": ["ALIGNED", "MISMATCH", "INCOMPARABLE", "UNRESOLVED", "NOT_DECLARED", "NOT_APPLICABLE"]},
+        "carrier": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "uncertainty": {
+      "type": "object",
+      "required": ["status", "reasons"],
+      "properties": {
+        "status": {"enum": ["bounded", "unresolved", "not_assessed"]},
+        "reasons": {"type": "array", "items": {"type": "string", "minLength": 1}}
+      },
+      "additionalProperties": false
+    },
+    "interpretationRecord": {
+      "type": "object",
+      "required": [
+        "interpretation_id",
+        "audit_coordinate_refs",
+        "context_refs",
+        "policy_rule_refs",
+        "assessment_kind",
+        "assessment_note",
+        "uncertainty",
+        "rationale",
+        "supported_dispositions",
+        "evidence_refs",
+        "negative_boundary"
+      ],
+      "properties": {
+        "interpretation_id": {"type": "string", "minLength": 1},
+        "audit_coordinate_refs": {"type": "array", "items": {"$ref": "#/$defs/coordinateRef"}, "minItems": 1},
+        "context_refs": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 1, "uniqueItems": true},
+        "policy_rule_refs": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+        "assessment_kind": {"$ref": "#/$defs/assessmentKind"},
+        "assessment_note": {"type": "string", "minLength": 1},
+        "uncertainty": {"$ref": "#/$defs/uncertainty"},
+        "rationale": {"type": "string", "minLength": 1},
+        "supported_dispositions": {"type": "array", "items": {"enum": ["NoAction", "Investigate", "RequestEvidence", "Mitigate", "Rollback", "Escalate"]}, "uniqueItems": true},
+        "evidence_refs": {"type": "array", "items": {"oneOf": [{"$ref": "#/$defs/artifactReference"}, {"$ref": "#/$defs/auditReference"}]}},
+        "negative_boundary": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 1}
+      },
+      "additionalProperties": false
+    },
+    "candidateActionSet": {
+      "type": "object",
+      "required": ["count", "actions"],
+      "properties": {
+        "count": {"type": "integer", "minimum": 0},
+        "actions": {"type": "array", "items": {"$ref": "#/$defs/candidateAction"}}
+      },
+      "additionalProperties": false
+    },
+    "candidateAction": {
+      "type": "object",
+      "required": [
+        "action_id",
+        "disposition",
+        "target",
+        "carrier",
+        "supported_by_interpretations",
+        "audit_coordinate_refs",
+        "context_ref",
+        "policy_rule_refs",
+        "preconditions",
+        "intended_diagnostic_consequence",
+        "declared_risk_considerations",
+        "reversibility",
+        "evidence_refs",
+        "authorization_state",
+        "negative_boundary"
+      ],
+      "properties": {
+        "action_id": {"type": "string", "minLength": 1},
+        "disposition": {"enum": ["Investigate", "RequestEvidence", "Mitigate", "Rollback", "Escalate"]},
+        "target": {"type": "string", "minLength": 1},
+        "carrier": {"type": "string", "minLength": 1},
+        "supported_by_interpretations": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 1, "uniqueItems": true},
+        "audit_coordinate_refs": {"type": "array", "items": {"$ref": "#/$defs/coordinateRef"}, "minItems": 1},
+        "context_ref": {"type": "string", "minLength": 1},
+        "policy_rule_refs": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 1, "uniqueItems": true},
+        "preconditions": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 1},
+        "intended_diagnostic_consequence": {
+          "type": "object",
+          "required": ["status", "statements"],
+          "properties": {
+            "status": {"const": "intended_diagnostic_consequence"},
+            "statements": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 1}
+          },
+          "additionalProperties": false
+        },
+        "declared_risk_considerations": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 1},
+        "reversibility": {"enum": ["reversible", "partially_reversible", "irreversible", "unknown"]},
+        "evidence_refs": {"type": "array", "items": {"oneOf": [{"$ref": "#/$defs/artifactReference"}, {"$ref": "#/$defs/auditReference"}]}, "minItems": 1},
+        "authorization_state": {"enum": ["not_requested", "required", "pending", "denied"]},
+        "negative_boundary": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 1}
+      },
+      "additionalProperties": false
+    },
+    "recordBasis": {
+      "type": "object",
+      "required": ["basis_kind", "evidence_refs", "causal_status", "negative_boundary"],
+      "properties": {
+        "basis_kind": {"const": "protocol_trace"},
+        "evidence_refs": {"type": "array", "items": {"oneOf": [{"$ref": "#/$defs/artifactReference"}, {"$ref": "#/$defs/auditReference"}]}, "minItems": 1},
+        "causal_status": {"const": "OUT_OF_SCOPE_FOR_SOFACTION"},
+        "negative_boundary": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 1}
+      },
+      "additionalProperties": false
+    },
+    "dispositionResult": {
+      "type": "object",
+      "required": ["kind", "reason", "interpretation_ids", "candidate_action_ids"],
+      "properties": {
+        "kind": {"enum": ["no_disposition", "unresolved_disposition", "no_action_disposition", "candidate_action_set"]},
+        "reason": {"type": "string", "minLength": 1},
+        "interpretation_ids": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+        "candidate_action_ids": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true}
+      },
+      "additionalProperties": false
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "context_admission": {"properties": {"status": {"const": "admitted"}}, "required": ["status"]},
+          "policy_admission": {"properties": {"status": {"const": "admitted"}}, "required": ["status"]}
+        },
+        "required": ["context_admission", "policy_admission"]
+      },
+      "then": {
+        "properties": {
+          "action_context": {"$ref": "#/$defs/actionContext"},
+          "policy_profile": {"$ref": "#/$defs/policyProfile"}
+        }
+      },
+      "else": {
+        "properties": {
+          "action_context": {"type": "null"},
+          "policy_profile": {"type": "null"},
+          "interpretation_records": {"maxItems": 0},
+          "candidate_action_set": {"properties": {"count": {"const": 0}, "actions": {"maxItems": 0}}},
+          "disposition_result": {"properties": {"kind": {"const": "no_disposition"}}}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"record_class": {"const": "decision_trace_certificate"}}, "required": ["record_class"]},
+      "then": {
+        "properties": {
+          "claim_status": {"const": "Computational Certificate"},
+          "record_basis": {"properties": {"basis_kind": {"const": "protocol_trace"}}}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"record_class": {"const": "policy_conformance_certificate"}}, "required": ["record_class"]},
+      "then": {
+        "properties": {
+          "claim_status": {"const": "Computational Certificate"},
+          "record_basis": {"properties": {"basis_kind": {"const": "protocol_trace"}}}
+        }
+      }
+    }
+  ],
+  "additionalProperties": false
+}

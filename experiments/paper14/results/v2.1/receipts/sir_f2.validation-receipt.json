@@ -1,0 +1,217 @@
+{
+  "receipt_version": "2.1",
+  "artifact_type": "sofaction_validation_receipt",
+  "receipt_kind": "SOFACTION_VALIDATION_RECEIPT",
+  "receipt_scope": "SOFACTION_PROTOCOL_CONFORMANCE_ONLY",
+  "receipt_id": "receipt.sir_f2-actions-v2.sofaction-v2_1",
+  "action": {
+    "action_record_id": "sir_f2-actions-v2",
+    "sofaction_version": "2.1",
+    "artifact": {
+      "uri": "experiments/paper14/results/v2.1/actions/sir_f2.sofaction",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "870bc63d32580cfaf196bc646b09f49fac633f10a759c4e88a4941c892eb3e1e"
+      }
+    }
+  },
+  "validator": {
+    "validator_id": "paper14.sofaction-validator.v2_1",
+    "validator_version": "2.1",
+    "implementation": {
+      "uri": "experiments/paper14/validate_sofaction_v2_1.py",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "08d0032e2d970726f767b21f76a164f23c5d56034c3939c995ca91db3263b8d2"
+      }
+    },
+    "action_contract": {
+      "uri": "schemas/sofaction/v2.1.schema.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "350833dc91e7e5e38be1cec35d4b179d4e6f40008b01b165cc2c5a81bc66cd92"
+      }
+    },
+    "receipt_contract": {
+      "uri": "schemas/sofaction/validation-receipt-v2.1.schema.json",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "da988e8002e52c4bc8fd1d923c4c02f3fe746d5653c7464f322698b3191a6b39"
+      }
+    }
+  },
+  "generation": {
+    "kind": "migration",
+    "class": "boundary_annotation",
+    "source_version": "2.0",
+    "source_artifact": {
+      "uri": "experiments/paper14/results/sir_f2.sofaction",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "f13092ae7e969bed580e84102189a70e3ebeebed5bf2472bd93437b7d3f7f12b"
+      }
+    },
+    "implementation": {
+      "uri": "experiments/paper14/migrate_sofaction_v2_to_v2_1.py",
+      "digest": {
+        "algorithm": "sha256",
+        "value": "a7111da7efbe44eeb2a72d5b82785af29d75aa5403c69c79c6e83760048a0a6f"
+      }
+    }
+  },
+  "artifact_closure": {
+    "artifact_count": 10,
+    "ordered_artifacts": [
+      {
+        "role": "action",
+        "artifact": {
+          "uri": "experiments/paper14/results/v2.1/actions/sir_f2.sofaction",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "870bc63d32580cfaf196bc646b09f49fac633f10a759c4e88a4941c892eb3e1e"
+          }
+        }
+      },
+      {
+        "role": "revision-source-action-v2.0",
+        "artifact": {
+          "uri": "experiments/paper14/results/sir_f2.sofaction",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "f13092ae7e969bed580e84102189a70e3ebeebed5bf2472bd93437b7d3f7f12b"
+          }
+        }
+      },
+      {
+        "role": "migration-implementation",
+        "artifact": {
+          "uri": "experiments/paper14/migrate_sofaction_v2_to_v2_1.py",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "a7111da7efbe44eeb2a72d5b82785af29d75aa5403c69c79c6e83760048a0a6f"
+          }
+        }
+      },
+      {
+        "role": "action-contract",
+        "artifact": {
+          "uri": "schemas/sofaction/v2.1.schema.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "350833dc91e7e5e38be1cec35d4b179d4e6f40008b01b165cc2c5a81bc66cd92"
+          }
+        }
+      },
+      {
+        "role": "source-audit",
+        "artifact": {
+          "uri": "experiments/paper13/results/v2.1/audits/sir_f2.sofaudit.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "aa3e04236946dd61ae3d2dd7d7f7bac515083f79e11941de53a5650516bbf754"
+          }
+        }
+      },
+      {
+        "role": "source-audit-validation-receipt",
+        "artifact": {
+          "uri": "experiments/paper13/results/v2.1/receipts/sir_f2.validation-receipt.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "3593ac83c0777562ad7e5de9650b85c93c4b7a0d58ef67e651fbde9fb5fc335a"
+          }
+        }
+      },
+      {
+        "role": "normative-basis-0",
+        "artifact": {
+          "uri": "papers/paper14/Paper XIV.md",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "a8d2ca367aa1a3e58a5579e3bbf88380b29cf61a506f3433503f5184505d74e3"
+          }
+        }
+      },
+      {
+        "role": "normative-basis-1",
+        "artifact": {
+          "uri": "papers/paper14/Paper XIV.md",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "a8d2ca367aa1a3e58a5579e3bbf88380b29cf61a506f3433503f5184505d74e3"
+          }
+        }
+      },
+      {
+        "role": "validator-implementation",
+        "artifact": {
+          "uri": "experiments/paper14/validate_sofaction_v2_1.py",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "08d0032e2d970726f767b21f76a164f23c5d56034c3939c995ca91db3263b8d2"
+          }
+        }
+      },
+      {
+        "role": "validation-receipt-contract",
+        "artifact": {
+          "uri": "schemas/sofaction/validation-receipt-v2.1.schema.json",
+          "digest": {
+            "algorithm": "sha256",
+            "value": "da988e8002e52c4bc8fd1d923c4c02f3fe746d5653c7464f322698b3191a6b39"
+          }
+        }
+      }
+    ],
+    "closure_digest": {
+      "algorithm": "sha256",
+      "value": "47a10ee42a133dfd54dc01d4a87f0b1d76b7819bc34620c896b704c0aafb486b"
+    }
+  },
+  "status": "PASS",
+  "checks": [
+    {
+      "check_id": "artifact-digest-closure",
+      "status": "PASS"
+    },
+    {
+      "check_id": "audit-projection-preservation",
+      "status": "PASS"
+    },
+    {
+      "check_id": "candidate-non-execution",
+      "status": "PASS"
+    },
+    {
+      "check_id": "candidate-set-regeneration",
+      "status": "PASS"
+    },
+    {
+      "check_id": "downstream-artifact-role-isolation",
+      "status": "PASS"
+    },
+    {
+      "check_id": "explicit-v2.0-to-v2.1-migration",
+      "status": "PASS"
+    },
+    {
+      "check_id": "schema-validation",
+      "status": "PASS"
+    },
+    {
+      "check_id": "v2.0-source-validation",
+      "status": "PASS"
+    },
+    {
+      "check_id": "verified-authority-non-authorization",
+      "status": "PASS"
+    }
+  ],
+  "authorization_semantics": "NONE",
+  "execution_semantics": "NONE",
+  "outcome_semantics": "NONE",
+  "effect_semantics": "NONE",
+  "negative_boundaries": [
+    "PASS certifies SOFAction candidate-protocol conformance only; it is not selection, authorization, execution, outcome, or effect evidence."
+  ]
+}

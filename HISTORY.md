@@ -9,6 +9,27 @@ The canonical publication list is the root
 their declared artifacts remain the authority for mathematical and
 computational claims.
 
+## 2026-08-20: Paper XIV Version 2.1
+
+Paper XIV was released as the candidate non-execution and attribution-boundary
+revision of SOF Action Semantics. Version 2.1 adds explicit migration from the
+frozen SOFAction v2.0 corpus, a fixed candidate-only execution boundary, closed
+policy-predicate evaluation, and conformance-only validation receipts. The
+29-object corpus preserves the Paper XIII audit projection and stops before
+selection, authorization, execution, outcome, or causal effect.
+
+The public release is DOI
+<https://doi.org/10.5281/zenodo.22024158>.
+
+## 2026-08-20: Paper XIII v2.1 Evidence Closure Correction
+
+The 29 SOFAUDIT v2.1 audit and receipt pairs were regenerated from the exact
+registered v2.0 byte snapshot. This corrects migration provenance that had
+followed successor bytes at reused materialized paths and refreshes receipts
+against the released v2.1 receipt schema. The Paper XIII manuscript, DOI, and
+scientific claim surface are unchanged. The correction is limited to the
+machine-readable GitHub evidence closure consumed downstream by Paper XIV.
+
 ## 2026-08-19: Paper XII Version 2.1
 
 Paper XII was released as the non-intervention and semantic-migration revision

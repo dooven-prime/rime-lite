@@ -27,7 +27,7 @@ immutable first combined record retains its historical predecessor.
 | Paper XI | typed wall morphology for Sectorized Observable Frameworks | <https://doi.org/10.5281/zenodo.21801722> |
 | Paper XII | SOF diagnostic protocol and report specification | <https://doi.org/10.5281/zenodo.22006816> |
 | Paper XIII | Audit Profiles, SOF Report Alignment, and sparse typed comparison maps | <https://doi.org/10.5281/zenodo.22010220> |
-| Paper XIV | context- and policy-relative interpretation and bounded candidate dispositions | <https://doi.org/10.5281/zenodo.21880943> |
+| Paper XIV | context- and policy-relative interpretation and bounded candidate dispositions | <https://doi.org/10.5281/zenodo.22024158> |
 | CCS v2.1 | optional reproducibility, observation, open-problem, and history archive | <https://doi.org/10.5281/zenodo.21988041> |
 | Historical combined Papers I--III + CCS release | immutable first-version archive; current papers are maintained independently | <https://doi.org/10.5281/zenodo.21108197> |
 
@@ -158,10 +158,9 @@ python experiments/paper7/validation/rank_protected_bridge_audit.py
 python experiments/paper9/validation/validate_results.py
 python experiments/paper10/validation/validate_results.py
 python experiments/paper11/validation/typed_wall_record_census.py
-python experiments/paper12/validation/validate_sofrs_v2.py
-python experiments/paper13/validation/validate_sofaudit_v2.py
-python experiments/paper14/action_workbench.py
-python experiments/paper14/validate_sofaction.py
+python experiments/paper12/validation/validate_sofrs_v2_1.py
+python experiments/paper13/validation/validate_sofaudit_v2_1.py
+python experiments/paper14/validate_sofaction_v2_1.py
 ```
 
 For the full experiment map, see [`experiments/README.md`](experiments/README.md).

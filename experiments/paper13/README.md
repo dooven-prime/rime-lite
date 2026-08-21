@@ -132,6 +132,14 @@ infer Paper IX admission or Paper XI morphology from a path difference.
 - `results/v2.1/` contains 29 SOFAUDIT v2.1 artifacts, 29 comparison-only
   validation receipts, and the bound SOFRS v2.1 source-report closures.
 
+The 2026-08-20 evidence correction regenerated those 29 audit/receipt pairs
+from the exact registered v2.0 byte snapshot. It replaces an earlier GitHub
+candidate closure whose migration provenance followed successor bytes at the
+same materialized paths and whose receipts retained a pre-release receipt-
+schema digest. The Paper XIII manuscript and Zenodo PDF are unchanged; the
+correction affects only the machine-readable GitHub evidence closure consumed
+by Paper XIV.
+
 SOFAUDIT v2.1 may localize differences only in aligned report coordinates.
 Its fixed `attribution_boundary` keeps diagnostic interpretation downstream,
 places defect and causal attribution out of scope, and keeps the reference as

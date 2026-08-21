@@ -670,7 +670,7 @@
       "uri": "experiments/paper13/results/audits/gridworld_f5.sofaudit.json",
       "digest": {
         "algorithm": "sha256",
-        "value": "f33beda8709146513d239c695cc944177e83005006bfcb9bafeedc2c2ee0e3e3"
+        "value": "dc4c1e7fedba4f41b64a9dae3bcb66b18c9a55a95ef75659cacfe4164960602b"
       }
     },
     "migration_implementation": {

@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import argparse
 from copy import deepcopy
 import hashlib
 import json
@@ -183,8 +184,14 @@ def _markdown(rows: list[dict[str, Any]]) -> str:
     return "\n".join(lines)
 
 
-def run() -> list[dict[str, Any]]:
-    RESULT_DIR.mkdir(parents=True, exist_ok=True)
+def run(output_dir: Path) -> list[dict[str, Any]]:
+    output_dir = output_dir.resolve()
+    if output_dir == RESULT_DIR.resolve():
+        raise ValueError(
+            "the published Paper XIV v2.0 result directory is immutable; "
+            "choose an explicit replay directory"
+        )
+    output_dir.mkdir(parents=True, exist_ok=True)
     specs = [
         (stem, AUDIT_DIR / f"{stem}.sofaudit.json", f"{stem}.sofaction")
         for stem in MIGRATION_STEMS
@@ -204,16 +211,16 @@ def run() -> list[dict[str, Any]]:
             action_context=context,
             policy_profile=policy,
         )
-        _write_json(record, RESULT_DIR / output_name)
+        _write_json(record, output_dir / output_name)
         records.append(record)
         rows.append(_summary_row(record))
 
     summary = _markdown(rows)
-    (RESULT_DIR / "action_summary.md").write_text(summary, encoding="utf-8")
+    (output_dir / "action_summary.md").write_text(summary, encoding="utf-8")
     source_artifacts = [
         {
             "case": row["case"],
-            **_artifact_reference(RESULT_DIR / output_name),
+            **_artifact_reference(output_dir / output_name),
         }
         for row, (_, _, output_name) in zip(rows, specs, strict=True)
     ]
@@ -223,12 +230,19 @@ def run() -> list[dict[str, Any]]:
             "source_artifacts": source_artifacts,
             "records": rows,
         },
-        RESULT_DIR / "action_summary.json",
+        output_dir / "action_summary.json",
     )
     print(summary)
-    print(f"Wrote {len(records)} v2 .sofaction artifacts to {RESULT_DIR}")
+    print(f"Wrote {len(records)} v2 replay .sofaction artifacts to {output_dir}")
     return records
 
 
 if __name__ == "__main__":
-    run()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--output-dir",
+        type=Path,
+        required=True,
+        help="explicit non-release directory for a v2 replay",
+    )
+    run(parser.parse_args().output_dir)

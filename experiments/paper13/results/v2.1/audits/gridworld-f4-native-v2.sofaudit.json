@@ -4026,7 +4026,7 @@
       "uri": "experiments/paper13/results/native/gridworld-f4/audits/gridworld-f4-native-v2.sofaudit.json",
       "digest": {
         "algorithm": "sha256",
-        "value": "65efd43d647c0db30974225927f29e8261219e09c901b10b96bdb7431af27f97"
+        "value": "b35e74218ac71d4009e806743d9241d5b4af2fc9df62009c3e4eac493764303f"
       }
     },
     "migration_implementation": {
