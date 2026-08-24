@@ -8,9 +8,10 @@ finite representation laboratory, not as a puzzle-solving problem.
 
 ## Public Release
 
-The current public release contains Papers I--XV. CCS v2.1 is published
-separately as an optional non-paper Computational Companion Archive; the
-immutable first combined record retains its historical predecessor.
+The current public release contains Papers I--XV and the independently scoped
+Paper XX mathematical line. CCS v2.1 is published separately as an optional
+non-paper Computational Companion Archive; the immutable first combined
+record retains its historical predecessor.
 
 | Component | Topic | DOI / source |
 |-----------|-------|--------------|
@@ -29,13 +30,14 @@ immutable first combined record retains its historical predecessor.
 | Paper XIII | Audit Profiles, SOF Report Alignment, and sparse typed comparison maps | <https://doi.org/10.5281/zenodo.22010220> |
 | Paper XIV | context- and policy-relative interpretation and bounded candidate dispositions | <https://doi.org/10.5281/zenodo.22024158> |
 | Paper XV | evidence-bound revision, supersession, and revalidation of current commitments | <https://doi.org/10.5281/zenodo.22043124> |
+| Paper XX | all-depth carrier accessibility, survivor recursion, and image--kernel obstructions | <https://doi.org/10.5281/zenodo.22076736> |
 | CCS v2.1 | optional reproducibility, observation, open-problem, and history archive | <https://doi.org/10.5281/zenodo.21988041> |
 | RIME Lite v2.1 repository snapshot | accepted papers, contracts, Registry evidence, release tools, and exact-byte historical inputs | [Zenodo DOI](https://doi.org/10.5281/zenodo.22048358) / [GitHub Release](https://github.com/dooven-prime/rime-lite/releases/tag/rime-lite-v2.1) |
 | Historical combined Papers I--III + CCS release | immutable first-version archive; current papers are maintained independently | <https://doi.org/10.5281/zenodo.21108197> |
 
 This is the repository's canonical DOI index. It identifies immutable
 published records; other public documents link here instead of duplicating the
-list. Papers VII--XV now match their published versioned records. Their
+list. Papers VII--XV and Paper XX now match their published records. Their
 listed DOIs identify immutable published versions, and frozen historical
 contracts remain unchanged.
 
@@ -82,6 +84,17 @@ tagged release closure.
 | XV | [`paper15_arxiv.pdf`](papers/paper15/paper15_arxiv.pdf) | [`Paper XV.md`](papers/paper15/Paper%20XV.md) | How can current commitments be revised without rewriting historical artifacts or granting feedback operational authority? |
 | CCS v2.1 Archive | [`ccs_arxiv.pdf`](ccs/ccs_arxiv.pdf) | [`canonical_specification.md`](ccs/canonical_specification.md) | Optional Paper I--III reproducibility pointers, computational observations, open problems, and historical records |
 
+### Post-Protocol Mathematical Line
+
+Papers XVI--XIX are intentionally unused in the public numbered sequence;
+Paper XX begins an independently scoped post-protocol mathematical line. It
+does not continue the SOF protocol authority chain. Paper XX v1.0 is published
+at <https://doi.org/10.5281/zenodo.22076736>.
+
+| Paper | Manuscript | Evidence | Scope |
+|---|---|---|---|
+| XX | [`Paper XX.md`](papers/paper20/Paper%20XX.md) | [`experiments/paper20/`](experiments/paper20/) | all-depth carrier accessibility, survivor recursion, and exact shared-carrier controls |
+
 Thematic index, not a paper dependency order:
 
 ```text
@@ -100,6 +113,7 @@ SOF diagnostic reporting
 SOF Report Alignment and comparison geometry
 Context- and policy-relative interpretation and bounded candidate semantics
 Corrigible structural interfaces and evidence-bound epistemic revision
+All-depth carrierwise route obstruction
 ```
 
 Papers I--VII are independently readable. Their neighboring results connect

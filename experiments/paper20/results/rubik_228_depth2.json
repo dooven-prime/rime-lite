@@ -1,0 +1,616 @@
+{
+  "schema_version": "rime.carrier-accessibility-census.v1",
+  "model": "rubik",
+  "dimension": 228,
+  "sector_count": 9,
+  "transport_count": 18,
+  "max_depth_enumerated": 2,
+  "tolerance": 1e-10,
+  "support_tolerance": 0.05,
+  "runtime": {
+    "python": "3.13.0",
+    "numpy": "2.1.3",
+    "scipy": "1.18.0",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "arithmetic": "complex128_with_declared_thresholds"
+  },
+  "claim_status": "computational_observation",
+  "claim_boundary": "Finite enumeration through max_depth_enumerated; null minimum depth does not imply all-depth inaccessibility without the carrier theorem.",
+  "enumeration_policy": "all ordered transport words and all intermediate sector routes",
+  "source_artifacts": [
+    {
+      "uri": "experiments/paper20/engine.py",
+      "sha256": "8f65afc40783b45e8fafe7e221177ef4669be3d32f5fda0b0e2ef7bcfffff5f3"
+    },
+    {
+      "uri": "experiments/paper20/adapters.py",
+      "sha256": "6232d711a2597075b262e2baced930ff369deac99d15d4b2396f75d5da5b34d0"
+    },
+    {
+      "uri": "experiments/paper20/census.py",
+      "sha256": "14bb07d4ff9bdf8ea1f71a22fd9c14d96ef3b00c84dc3f915589a785b2f6fa8e"
+    },
+    {
+      "uri": "rime/base.py",
+      "sha256": "c10377864a1335635b646b686866e0c97661f49b1bfd1d092616b73a0b5446ce"
+    },
+    {
+      "uri": "rime/cube.py",
+      "sha256": "5adbf4596f2f82f83f4d373bd1a57279b4128911c75d45fbf9d2e905260a4304"
+    },
+    {
+      "uri": "rime/cubie.py",
+      "sha256": "5120fd2688153bb7f8ad6f0bd77844fbdf9352ee430ec3e4166e3d991db60730"
+    },
+    {
+      "uri": "rime/cubieoperator.py",
+      "sha256": "559a6dbde4a3f239e260c603fa6c544007400d76d1efcf88f2c5d19d1f77c3df"
+    },
+    {
+      "uri": "rime/helpers.py",
+      "sha256": "20247dad40d503913cb20a4b8cbde923c12187460c584e55d770308cc3d7bd12"
+    },
+    {
+      "uri": "rime/spectral_utils.py",
+      "sha256": "5e456b904d75e93a373ad5d1ec3b846303a498d8e45d6ae0b2548f3040917799"
+    }
+  ],
+  "result": {
+    "carrier_profiles": [
+      {
+        "sector": 0,
+        "rank": 20,
+        "carrier_ranks": [
+          8,
+          12,
+          0,
+          0
+        ],
+        "carrier_support": [
+          0,
+          1
+        ],
+        "profile_kind": "hybrid"
+      },
+      {
+        "sector": 1,
+        "rank": 2,
+        "carrier_ranks": [
+          0,
+          0,
+          0,
+          2
+        ],
+        "carrier_support": [
+          3
+        ],
+        "profile_kind": "pure"
+      },
+      {
+        "sector": 2,
+        "rank": 39,
+        "carrier_ranks": [
+          0,
+          36,
+          0,
+          3
+        ],
+        "carrier_support": [
+          1,
+          3
+        ],
+        "profile_kind": "hybrid"
+      },
+      {
+        "sector": 3,
+        "rank": 26,
+        "carrier_ranks": [
+          0,
+          24,
+          2,
+          0
+        ],
+        "carrier_support": [
+          1,
+          2
+        ],
+        "profile_kind": "hybrid"
+      },
+      {
+        "sector": 4,
+        "rank": 1,
+        "carrier_ranks": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "carrier_support": [
+          3
+        ],
+        "profile_kind": "pure"
+      },
+      {
+        "sector": 5,
+        "rank": 39,
+        "carrier_ranks": [
+          0,
+          36,
+          0,
+          3
+        ],
+        "carrier_support": [
+          1,
+          3
+        ],
+        "profile_kind": "hybrid"
+      },
+      {
+        "sector": 6,
+        "rank": 66,
+        "carrier_ranks": [
+          24,
+          36,
+          3,
+          3
+        ],
+        "carrier_support": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "profile_kind": "hybrid"
+      },
+      {
+        "sector": 7,
+        "rank": 8,
+        "carrier_ranks": [
+          8,
+          0,
+          0,
+          0
+        ],
+        "carrier_support": [
+          0
+        ],
+        "profile_kind": "pure"
+      },
+      {
+        "sector": 8,
+        "rank": 27,
+        "carrier_ranks": [
+          24,
+          0,
+          3,
+          0
+        ],
+        "carrier_support": [
+          0,
+          2
+        ],
+        "profile_kind": "hybrid"
+      }
+    ],
+    "direct_support": [
+      [
+        4.4721359549995805,
+        1.2690977966570583e-16,
+        3.703913045618831e-15,
+        2.2737450317796292e-15,
+        0.0,
+        3.608273339151836e-15,
+        6.46494093889687e-15,
+        1.6279560449459031e-15,
+        3.4733654029533094e-15
+      ],
+      [
+        1.2690977966570583e-16,
+        1.4142135623730954,
+        2.413906803902185e-15,
+        2.5741136918138945e-31,
+        0.47140452079103307,
+        0.5773502691896263,
+        3.734996140842223e-15,
+        1.6221140570265882e-16,
+        2.62166306864294e-16
+      ],
+      [
+        3.732129711552524e-15,
+        2.4275852178424486e-15,
+        5.408326913195984,
+        2.553117342656642e-14,
+        2.9834402911403692e-15,
+        2.5495097567963936,
+        3.6055512754639896,
+        1.1464791439657322e-15,
+        2.042583291086324e-15
+      ],
+      [
+        2.2682550873616693e-15,
+        2.5741136918138945e-31,
+        2.553213349292427e-14,
+        5.099019513592785,
+        0.0,
+        3.4641016151377553,
+        3.701758608097411e-14,
+        1.0106636984804847e-15,
+        1.0
+      ],
+      [
+        0.0,
+        0.4714045207910331,
+        2.9916352490433952e-15,
+        0.0,
+        1.0000000000000002,
+        0.8164965809277268,
+        3.487726865569712e-15,
+        0.0,
+        0.0
+      ],
+      [
+        3.6201678095226794e-15,
+        0.5773502691896263,
+        2.5495097567963936,
+        3.4641016151377557,
+        0.8164965809277267,
+        4.4158804331639265,
+        3.6055512754639905,
+        1.1074728418005714e-15,
+        1.9434514959132936e-15
+      ],
+      [
+        6.4620700622231975e-15,
+        3.7470437754987435e-15,
+        3.6055512754639887,
+        3.7028685898079535e-14,
+        3.4900671803361554e-15,
+        3.6055512754639905,
+        6.689544080129828,
+        5.00209180037677e-15,
+        4.06201920231798
+      ],
+      [
+        1.6258573248217808e-15,
+        1.6221140570265882e-16,
+        1.1464791439657322e-15,
+        1.0106636984804847e-15,
+        0.0,
+        1.1074728418005716e-15,
+        4.983632737825576e-15,
+        2.82842712474619,
+        2.8284271247461903
+      ],
+      [
+        3.4783938003376406e-15,
+        2.62166306864294e-16,
+        2.0425832910863237e-15,
+        1.0,
+        0.0,
+        1.9434514959132932e-15,
+        4.062019202317981,
+        2.8284271247461903,
+        3.24037034920393
+      ]
+    ],
+    "support_edge_count": 29,
+    "routed_counts": {
+      "1": 1458,
+      "2": 236196
+    },
+    "active_route_counts": {
+      "1": 438,
+      "2": 20556
+    },
+    "support_path_pair_counts": {
+      "1": 29,
+      "2": 53
+    },
+    "carrier_path_pair_counts": {
+      "1": 29,
+      "2": 43
+    },
+    "composition_pair_counts": {
+      "1": 29,
+      "2": 43
+    },
+    "obstructed_pair_counts": {
+      "1": 0,
+      "2": 10
+    },
+    "obstructed_pairs": {
+      "1": [],
+      "2": [
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          7,
+          3
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          5
+        ]
+      ]
+    },
+    "cross_carrier_stitch_pair_counts": {
+      "1": 0,
+      "2": 10
+    },
+    "cross_carrier_stitch_pairs": {
+      "1": [],
+      "2": [
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          7,
+          3
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          5
+        ]
+      ]
+    },
+    "within_carrier_obstructed_pair_counts": {
+      "1": 0,
+      "2": 0
+    },
+    "within_carrier_obstructed_pairs": {
+      "1": [],
+      "2": []
+    },
+    "carrier_disjoint_pair_count": 26,
+    "carrier_disjoint_pairs": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        2,
+        7
+      ],
+      [
+        2,
+        8
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        3,
+        7
+      ],
+      [
+        4,
+        0
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        4,
+        7
+      ],
+      [
+        4,
+        8
+      ],
+      [
+        5,
+        7
+      ],
+      [
+        5,
+        8
+      ],
+      [
+        7,
+        1
+      ],
+      [
+        7,
+        2
+      ],
+      [
+        7,
+        3
+      ],
+      [
+        7,
+        4
+      ],
+      [
+        7,
+        5
+      ],
+      [
+        8,
+        1
+      ],
+      [
+        8,
+        2
+      ],
+      [
+        8,
+        4
+      ],
+      [
+        8,
+        5
+      ]
+    ],
+    "unresolved_overlapping_pair_count": 12,
+    "minimum_active_depth_within_bound": {
+      "0->0": 1,
+      "1->0": null,
+      "2->0": null,
+      "3->0": null,
+      "4->0": null,
+      "5->0": null,
+      "6->0": null,
+      "7->0": null,
+      "8->0": null,
+      "0->1": null,
+      "1->1": 1,
+      "2->1": 2,
+      "3->1": null,
+      "4->1": 1,
+      "5->1": 1,
+      "6->1": 2,
+      "7->1": null,
+      "8->1": null,
+      "0->2": null,
+      "1->2": 2,
+      "2->2": 1,
+      "3->2": 2,
+      "4->2": 2,
+      "5->2": 1,
+      "6->2": 1,
+      "7->2": null,
+      "8->2": null,
+      "0->3": null,
+      "1->3": null,
+      "2->3": 2,
+      "3->3": 1,
+      "4->3": null,
+      "5->3": 1,
+      "6->3": 2,
+      "7->3": null,
+      "8->3": 1,
+      "0->4": null,
+      "1->4": 1,
+      "2->4": 2,
+      "3->4": null,
+      "4->4": 1,
+      "5->4": 1,
+      "6->4": 2,
+      "7->4": null,
+      "8->4": null,
+      "0->5": null,
+      "1->5": 1,
+      "2->5": 1,
+      "3->5": 1,
+      "4->5": 1,
+      "5->5": 1,
+      "6->5": 1,
+      "7->5": null,
+      "8->5": null,
+      "0->6": null,
+      "1->6": 2,
+      "2->6": 1,
+      "3->6": 2,
+      "4->6": 2,
+      "5->6": 1,
+      "6->6": 1,
+      "7->6": 2,
+      "8->6": 1,
+      "0->7": null,
+      "1->7": null,
+      "2->7": null,
+      "3->7": null,
+      "4->7": null,
+      "5->7": null,
+      "6->7": 2,
+      "7->7": 1,
+      "8->7": 1,
+      "0->8": null,
+      "1->8": null,
+      "2->8": null,
+      "3->8": 1,
+      "4->8": null,
+      "5->8": null,
+      "6->8": 1,
+      "7->8": 1,
+      "8->8": 1
+    }
+  },
+  "content_sha256": "1390611b456feff3b6148a498748be886b893fddd3ad88098d00935e9ac584dd"
+}

@@ -1,0 +1,626 @@
+{
+  "aggregate": {
+    "all_depth_exact_status": "NOT_ESTABLISHED",
+    "conclusion": "ALL_DEPTH_TWO_ROUTES_FACTOR_ZERO_WITHIN_TOLERANCE",
+    "max_min_factor_norm": 6.46494093889687e-15,
+    "max_product_norm": 6.464940938896871e-15,
+    "nontrivial_image_kernel_annihilation_count": 0,
+    "pair_count": 12,
+    "route_audit_count": 34992,
+    "route_categories": {
+      "active_product": 0,
+      "both_factors_zero": 19008,
+      "nontrivial_image_kernel_annihilation": 0,
+      "prefix_zero_only": 7992,
+      "suffix_zero_only": 7992
+    },
+    "shared_carrier_route_audit_count": 40824,
+    "shared_carrier_route_categories": {
+      "active_product": 0,
+      "both_factors_zero": 25272,
+      "nontrivial_image_kernel_annihilation": 0,
+      "prefix_zero_only": 7776,
+      "suffix_zero_only": 7776
+    }
+  },
+  "artifact_id": "RUBIK-DEPTH2-SHARED-CARRIER-IMAGE-KERNEL-V1",
+  "audited_depth": 2,
+  "claim_boundary": "Finite route-index coverage is certified exactly, while factor/product zero classifications are bounded complex128 observations. Thresholded direct-support isolation is not an exact all-depth zero theorem.",
+  "claim_status": "mixed_evidence_bundle",
+  "claim_status_by_component": {
+    "exact_all_depth_zero": "Not Established",
+    "exact_projected_factor_zero": "Not Established",
+    "factor_and_product_norms": "Computational Observation",
+    "finite_route_space_enumeration": "Computational Certificate"
+  },
+  "content_sha256": "ddac3ff99a7c44cfd2b46d995289d2b80a9fcd7096fcfb0e6962c5ca93f0262a",
+  "cut_after_transport": 1,
+  "dimension": 228,
+  "evidence_layers": {
+    "enumeration_certificate": {
+      "does_not_certify": "Exact zero or nonzero status of any projected matrix.",
+      "pair_count": 12,
+      "route_audit_count_formula": "12 * 2916 = 34992",
+      "route_count_per_pair_formula": "9 * 18^2 = 2916",
+      "scope": "Exhaustive index coverage for the twelve pairs selected by the frozen bounded numerical source census.",
+      "selection_basis": "BOUNDED_NUMERICAL_SOURCE_CENSUS",
+      "shared_carrier_route_audit_count": 40824,
+      "status": "EXACT_FINITE_ENUMERATION_CERTIFICATE"
+    },
+    "exact_zero_status": {
+      "all_depth_zero": "NOT_ESTABLISHED",
+      "nontrivial_image_kernel_absence": "NOT_ESTABLISHED_AS_EXACT",
+      "projected_factor_zero": "NOT_ESTABLISHED",
+      "status": "NOT_ESTABLISHED"
+    },
+    "numerical_observation": {
+      "activity_tolerance": 1e-10,
+      "coefficient_backend": "complex128",
+      "scope": "Factor norms and product norms at routed depth two.",
+      "status": "BOUNDED_NUMERICAL_OBSERVATION",
+      "support_tolerance": 0.05
+    }
+  },
+  "model": "rubik",
+  "pair_audits": [
+    {
+      "carrier_numerical_maxima": {
+        "1": {
+          "max_min_factor_norm": 4.784172600916315e-15,
+          "max_product_norm": 3.5247946730935786e-15
+        }
+      },
+      "carrier_route_categories": {
+        "1": {
+          "active_product": 0,
+          "both_factors_zero": 1620,
+          "nontrivial_image_kernel_annihilation": 0,
+          "prefix_zero_only": 972,
+          "suffix_zero_only": 324
+        }
+      },
+      "depth_two_status": "BOUNDED_FACTOR_ZERO_OBSERVATION",
+      "display_pair": "S1->S3",
+      "max_min_factor_norm": 6.4620700622231975e-15,
+      "max_product_norm": 3.732129711552525e-15,
+      "route_categories": {
+        "active_product": 0,
+        "both_factors_zero": 1620,
+        "nontrivial_image_kernel_annihilation": 0,
+        "prefix_zero_only": 972,
+        "suffix_zero_only": 324
+      },
+      "route_count": 2916,
+      "shared_carriers": [
+        1
+      ],
+      "source_sector": 0,
+      "target_sector": 2
+    },
+    {
+      "carrier_numerical_maxima": {
+        "1": {
+          "max_min_factor_norm": 4.784172600916315e-15,
+          "max_product_norm": 2.579352323776858e-15
+        }
+      },
+      "carrier_route_categories": {
+        "1": {
+          "active_product": 0,
+          "both_factors_zero": 2052,
+          "nontrivial_image_kernel_annihilation": 0,
+          "prefix_zero_only": 540,
+          "suffix_zero_only": 324
+        }
+      },
+      "depth_two_status": "BOUNDED_FACTOR_ZERO_OBSERVATION",
+      "display_pair": "S1->S4",
+      "max_min_factor_norm": 6.4620700622231975e-15,
+      "max_product_norm": 2.642374415313224e-15,
+      "route_categories": {
+        "active_product": 0,
+        "both_factors_zero": 1836,
+        "nontrivial_image_kernel_annihilation": 0,
+        "prefix_zero_only": 756,
+        "suffix_zero_only": 324
+      },
+      "route_count": 2916,
+      "shared_carriers": [
+        1
+      ],
+      "source_sector": 0,
+      "target_sector": 3
+    },
+    {
+      "carrier_numerical_maxima": {
+        "1": {
+          "max_min_factor_norm": 4.784172600916315e-15,
+          "max_product_norm": 3.4231498691815517e-15
+        }
+      },
+      "carrier_route_categories": {
+        "1": {
+          "active_product": 0,
+          "both_factors_zero": 1404,
+          "nontrivial_image_kernel_annihilation": 0,
+          "prefix_zero_only": 1188,
+          "suffix_zero_only": 324
+        }
+      },
+      "depth_two_status": "BOUNDED_FACTOR_ZERO_OBSERVATION",
+      "display_pair": "S1->S6",
+      "max_min_factor_norm": 6.4620700622231975e-15,
+      "max_product_norm": 3.62016780952268e-15,
+      "route_categories": {
+        "active_product": 0,
+        "both_factors_zero": 972,
+        "nontrivial_image_kernel_annihilation": 0,
+        "prefix_zero_only": 1620,
+        "suffix_zero_only": 324
+      },
+      "route_count": 2916,
+      "shared_carriers": [
+        1
+      ],
+      "source_sector": 0,
+      "target_sector": 5
+    },
+    {
+      "carrier_numerical_maxima": {
+        "0": {
+          "max_min_factor_norm": 3.602136634803758e-15,
+          "max_product_norm": 3.602136634803759e-15
+        },
+        "1": {
+          "max_min_factor_norm": 4.784172600916315e-15,
+          "max_product_norm": 4.78417260091632e-15
+        }
+      },
+      "carrier_route_categories": {
+        "0": {
+          "active_product": 0,
+          "both_factors_zero": 1944,
+          "nontrivial_image_kernel_annihilation": 0,
+          "prefix_zero_only": 648,
+          "suffix_zero_only": 324
+        },
+        "1": {
+          "active_product": 0,
+          "both_factors_zero": 1620,
+          "nontrivial_image_kernel_annihilation": 0,
+          "prefix_zero_only": 972,
+          "suffix_zero_only": 324
+        }
+      },
+      "depth_two_status": "BOUNDED_FACTOR_ZERO_OBSERVATION",
+      "display_pair": "S1->S7",
+      "max_min_factor_norm": 6.4620700622231975e-15,
+      "max_product_norm": 6.462070062223198e-15,
+      "route_categories": {
+        "active_product": 0,
+        "both_factors_zero": 1296,
+        "nontrivial_image_kernel_annihilation": 0,
+        "prefix_zero_only": 1296,
+        "suffix_zero_only": 324
+      },
+      "route_count": 2916,
+      "shared_carriers": [
+        0,
+        1
+      ],
+      "source_sector": 0,
+      "target_sector": 6
+    },
+    {
+      "carrier_numerical_maxima": {
+        "0": {
+          "max_min_factor_norm": 3.602136634803758e-15,
+          "max_product_norm": 2.196218028522256e-15
+        }
+      },
+      "carrier_route_categories": {
+        "0": {
+          "active_product": 0,
+          "both_factors_zero": 2268,
+          "nontrivial_image_kernel_annihilation": 0,
+          "prefix_zero_only": 324,
+          "suffix_zero_only": 324
+        }
+      },
+      "depth_two_status": "BOUNDED_FACTOR_ZERO_OBSERVATION",
+      "display_pair": "S1->S8",
+      "max_min_factor_norm": 4.983632737825576e-15,
+      "max_product_norm": 2.3398220689305427e-15,
+      "route_categories": {
+        "active_product": 0,
+        "both_factors_zero": 2268,
+        "nontrivial_image_kernel_annihilation": 0,
+        "prefix_zero_only": 324,
+        "suffix_zero_only": 324
+      },
+      "route_count": 2916,
+      "shared_carriers": [
+        0
+      ],
+      "source_sector": 0,
+      "target_sector": 7
+    },
+    {
+      "carrier_numerical_maxima": {
+        "0": {
+          "max_min_factor_norm": 3.602136634803758e-15,
+          "max_product_norm": 3.4100518055091154e-15
+        }
+      },
+      "carrier_route_categories": {
+        "0": {
+          "active_product": 0,
+          "both_factors_zero": 1728,
+          "nontrivial_image_kernel_annihilation": 0,
+          "prefix_zero_only": 864,
+          "suffix_zero_only": 324
+        }
+      },
+      "depth_two_status": "BOUNDED_FACTOR_ZERO_OBSERVATION",
+      "display_pair": "S1->S9",
+      "max_min_factor_norm": 6.4620700622231975e-15,
+      "max_product_norm": 3.666219820623548e-15,
+      "route_categories": {
+        "active_product": 0,
+        "both_factors_zero": 1512,
+        "nontrivial_image_kernel_annihilation": 0,
+        "prefix_zero_only": 1080,
+        "suffix_zero_only": 324
+      },
+      "route_count": 2916,
+      "shared_carriers": [
+        0
+      ],
+      "source_sector": 0,
+      "target_sector": 8
+    },
+    {
+      "carrier_numerical_maxima": {
+        "1": {
+          "max_min_factor_norm": 4.784271993670065e-15,
+          "max_product_norm": 3.499129625191592e-15
+        }
+      },
+      "carrier_route_categories": {
+        "1": {
+          "active_product": 0,
+          "both_factors_zero": 1620,
+          "nontrivial_image_kernel_annihilation": 0,
+          "prefix_zero_only": 324,
+          "suffix_zero_only": 972
+        }
+      },
+      "depth_two_status": "BOUNDED_FACTOR_ZERO_OBSERVATION",
+      "display_pair": "S3->S1",
+      "max_min_factor_norm": 6.46494093889687e-15,
+      "max_product_norm": 3.7039130456188315e-15,
+      "route_categories": {
+        "active_product": 0,
+        "both_factors_zero": 1620,
+        "nontrivial_image_kernel_annihilation": 0,
+        "prefix_zero_only": 324,
+        "suffix_zero_only": 972
+      },
+      "route_count": 2916,
+      "shared_carriers": [
+        1
+      ],
+      "source_sector": 2,
+      "target_sector": 0
+    },
+    {
+      "carrier_numerical_maxima": {
+        "1": {
+          "max_min_factor_norm": 4.784271993670065e-15,
+          "max_product_norm": 2.5750255964416488e-15
+        }
+      },
+      "carrier_route_categories": {
+        "1": {
+          "active_product": 0,
+          "both_factors_zero": 2052,
+          "nontrivial_image_kernel_annihilation": 0,
+          "prefix_zero_only": 324,
+          "suffix_zero_only": 540
+        }
+      },
+      "depth_two_status": "BOUNDED_FACTOR_ZERO_OBSERVATION",
+      "display_pair": "S4->S1",
+      "max_min_factor_norm": 6.46494093889687e-15,
+      "max_product_norm": 2.6371238484385104e-15,
+      "route_categories": {
+        "active_product": 0,
+        "both_factors_zero": 1836,
+        "nontrivial_image_kernel_annihilation": 0,
+        "prefix_zero_only": 324,
+        "suffix_zero_only": 756
+      },
+      "route_count": 2916,
+      "shared_carriers": [
+        1
+      ],
+      "source_sector": 3,
+      "target_sector": 0
+    },
+    {
+      "carrier_numerical_maxima": {
+        "1": {
+          "max_min_factor_norm": 4.784271993670065e-15,
+          "max_product_norm": 3.410850007531704e-15
+        }
+      },
+      "carrier_route_categories": {
+        "1": {
+          "active_product": 0,
+          "both_factors_zero": 1404,
+          "nontrivial_image_kernel_annihilation": 0,
+          "prefix_zero_only": 324,
+          "suffix_zero_only": 1188
+        }
+      },
+      "depth_two_status": "BOUNDED_FACTOR_ZERO_OBSERVATION",
+      "display_pair": "S6->S1",
+      "max_min_factor_norm": 6.46494093889687e-15,
+      "max_product_norm": 3.6082733391518364e-15,
+      "route_categories": {
+        "active_product": 0,
+        "both_factors_zero": 972,
+        "nontrivial_image_kernel_annihilation": 0,
+        "prefix_zero_only": 324,
+        "suffix_zero_only": 1620
+      },
+      "route_count": 2916,
+      "shared_carriers": [
+        1
+      ],
+      "source_sector": 5,
+      "target_sector": 0
+    },
+    {
+      "carrier_numerical_maxima": {
+        "0": {
+          "max_min_factor_norm": 3.607638097357052e-15,
+          "max_product_norm": 3.6076380973570524e-15
+        },
+        "1": {
+          "max_min_factor_norm": 4.784271993670065e-15,
+          "max_product_norm": 4.784271993670069e-15
+        }
+      },
+      "carrier_route_categories": {
+        "0": {
+          "active_product": 0,
+          "both_factors_zero": 1944,
+          "nontrivial_image_kernel_annihilation": 0,
+          "prefix_zero_only": 324,
+          "suffix_zero_only": 648
+        },
+        "1": {
+          "active_product": 0,
+          "both_factors_zero": 1620,
+          "nontrivial_image_kernel_annihilation": 0,
+          "prefix_zero_only": 324,
+          "suffix_zero_only": 972
+        }
+      },
+      "depth_two_status": "BOUNDED_FACTOR_ZERO_OBSERVATION",
+      "display_pair": "S7->S1",
+      "max_min_factor_norm": 6.46494093889687e-15,
+      "max_product_norm": 6.464940938896871e-15,
+      "route_categories": {
+        "active_product": 0,
+        "both_factors_zero": 1296,
+        "nontrivial_image_kernel_annihilation": 0,
+        "prefix_zero_only": 324,
+        "suffix_zero_only": 1296
+      },
+      "route_count": 2916,
+      "shared_carriers": [
+        0,
+        1
+      ],
+      "source_sector": 6,
+      "target_sector": 0
+    },
+    {
+      "carrier_numerical_maxima": {
+        "0": {
+          "max_min_factor_norm": 3.607638097357052e-15,
+          "max_product_norm": 2.1957490183613722e-15
+        }
+      },
+      "carrier_route_categories": {
+        "0": {
+          "active_product": 0,
+          "both_factors_zero": 2268,
+          "nontrivial_image_kernel_annihilation": 0,
+          "prefix_zero_only": 324,
+          "suffix_zero_only": 324
+        }
+      },
+      "depth_two_status": "BOUNDED_FACTOR_ZERO_OBSERVATION",
+      "display_pair": "S8->S1",
+      "max_min_factor_norm": 5.00209180037677e-15,
+      "max_product_norm": 2.338473897462409e-15,
+      "route_categories": {
+        "active_product": 0,
+        "both_factors_zero": 2268,
+        "nontrivial_image_kernel_annihilation": 0,
+        "prefix_zero_only": 324,
+        "suffix_zero_only": 324
+      },
+      "route_count": 2916,
+      "shared_carriers": [
+        0
+      ],
+      "source_sector": 7,
+      "target_sector": 0
+    },
+    {
+      "carrier_numerical_maxima": {
+        "0": {
+          "max_min_factor_norm": 3.607638097357052e-15,
+          "max_product_norm": 3.4117797617636725e-15
+        }
+      },
+      "carrier_route_categories": {
+        "0": {
+          "active_product": 0,
+          "both_factors_zero": 1728,
+          "nontrivial_image_kernel_annihilation": 0,
+          "prefix_zero_only": 324,
+          "suffix_zero_only": 864
+        }
+      },
+      "depth_two_status": "BOUNDED_FACTOR_ZERO_OBSERVATION",
+      "display_pair": "S9->S1",
+      "max_min_factor_norm": 6.46494093889687e-15,
+      "max_product_norm": 3.669291210787159e-15,
+      "route_categories": {
+        "active_product": 0,
+        "both_factors_zero": 1512,
+        "nontrivial_image_kernel_annihilation": 0,
+        "prefix_zero_only": 324,
+        "suffix_zero_only": 1080
+      },
+      "route_count": 2916,
+      "shared_carriers": [
+        0
+      ],
+      "source_sector": 8,
+      "target_sector": 0
+    }
+  ],
+  "route_count_per_pair": 2916,
+  "runtime": {
+    "arithmetic": "complex128_with_declared_thresholds",
+    "numpy": "2.1.3",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.13.0",
+    "scipy": "1.18.0"
+  },
+  "schema_version": "rime.carrier-accessibility.rubik-depth2-image-kernel.v1",
+  "sector_count": 9,
+  "selection": {
+    "pair_count": 12,
+    "pairs": [
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        5
+      ],
+      [
+        0,
+        6
+      ],
+      [
+        0,
+        7
+      ],
+      [
+        0,
+        8
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        5,
+        0
+      ],
+      [
+        6,
+        0
+      ],
+      [
+        7,
+        0
+      ],
+      [
+        8,
+        0
+      ]
+    ],
+    "rule": "minimum_active_depth_within_bound is null and endpoint carrier supports overlap"
+  },
+  "source_artifacts": [
+    {
+      "sha256": "8f65afc40783b45e8fafe7e221177ef4669be3d32f5fda0b0e2ef7bcfffff5f3",
+      "uri": "experiments/paper20/engine.py"
+    },
+    {
+      "sha256": "6232d711a2597075b262e2baced930ff369deac99d15d4b2396f75d5da5b34d0",
+      "uri": "experiments/paper20/adapters.py"
+    },
+    {
+      "sha256": "ef4b4509a478d9be2052f69cb337dc29d0ca22e0adf51b4b33401282a644e67a",
+      "uri": "experiments/paper20/image_kernel_census.py"
+    },
+    {
+      "sha256": "e337ac2a5e40e328f44cec1eb41e060ff3e63cc117d460ced838f22ce6907f20",
+      "uri": "experiments/paper20/results/rubik_228_depth2.json"
+    },
+    {
+      "sha256": "14bb07d4ff9bdf8ea1f71a22fd9c14d96ef3b00c84dc3f915589a785b2f6fa8e",
+      "uri": "experiments/paper20/census.py"
+    },
+    {
+      "sha256": "c10377864a1335635b646b686866e0c97661f49b1bfd1d092616b73a0b5446ce",
+      "uri": "rime/base.py"
+    },
+    {
+      "sha256": "5adbf4596f2f82f83f4d373bd1a57279b4128911c75d45fbf9d2e905260a4304",
+      "uri": "rime/cube.py"
+    },
+    {
+      "sha256": "5120fd2688153bb7f8ad6f0bd77844fbdf9352ee430ec3e4166e3d991db60730",
+      "uri": "rime/cubie.py"
+    },
+    {
+      "sha256": "559a6dbde4a3f239e260c603fa6c544007400d76d1efcf88f2c5d19d1f77c3df",
+      "uri": "rime/cubieoperator.py"
+    },
+    {
+      "sha256": "20247dad40d503913cb20a4b8cbde923c12187460c584e55d770308cc3d7bd12",
+      "uri": "rime/helpers.py"
+    },
+    {
+      "sha256": "5e456b904d75e93a373ad5d1ec3b846303a498d8e45d6ae0b2548f3040917799",
+      "uri": "rime/spectral_utils.py"
+    }
+  ],
+  "source_census": {
+    "artifact": {
+      "sha256": "e337ac2a5e40e328f44cec1eb41e060ff3e63cc117d460ced838f22ce6907f20",
+      "uri": "experiments/paper20/results/rubik_228_depth2.json"
+    },
+    "content_sha256": "1390611b456feff3b6148a498748be886b893fddd3ad88098d00935e9ac584dd"
+  },
+  "support_tolerance": 0.05,
+  "thresholded_support_graph": {
+    "all_selected_pairs_absent_from_transitive_closure": true,
+    "isolated_self_loop_sectors": [
+      0
+    ],
+    "status": "NUMERICAL_SUPPORT_REGISTRATION_ONLY"
+  },
+  "tolerance": 1e-10,
+  "transport_count": 18
+}

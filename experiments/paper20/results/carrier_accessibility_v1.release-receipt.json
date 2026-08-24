@@ -1,0 +1,347 @@
+{
+  "artifact_closure": {
+    "artifact_count": 31,
+    "closure_digest": "eecca10fe115d9a12be2b250021aa3ba9aba6c82c7124ea9db21fdebc57aee1b",
+    "ordered_artifacts": [
+      {
+        "artifact": {
+          "sha256": "a54655ba6ef55795bdf0bebc57c13973aeb2f27e4438cbde4468ea11ba9feeeb",
+          "uri": "papers/paper20/Paper XX.md"
+        },
+        "role": "manuscript"
+      },
+      {
+        "artifact": {
+          "sha256": "61dad21fdd6f2d9eb81deceb352328259a7989744867393c25ef0ce736f55755",
+          "uri": "papers/paper20/paper20_arxiv.pdf"
+        },
+        "role": "paper-pdf"
+      },
+      {
+        "artifact": {
+          "sha256": "9eb6cdcfd7e7f6fe518489b330d846ace3cc6b1117892b4e35b8c59c987981f5",
+          "uri": "papers/tex/trilogy.bib"
+        },
+        "role": "bibliography"
+      },
+      {
+        "artifact": {
+          "sha256": "1626d304fee2171e60b0ed575bb9c3b47e906dd207099a353794525dd690749c",
+          "uri": "figures/paper20/render.py"
+        },
+        "role": "figure-renderer"
+      },
+      {
+        "artifact": {
+          "sha256": "cea67f9c0e02e9bae7d6aee9e4ce34af3fa209cef66cdd35c8b01fe2727bfee9",
+          "uri": "figures/sof_figure_utils.py"
+        },
+        "role": "figure-style-helper"
+      },
+      {
+        "artifact": {
+          "sha256": "4cc034085e20659f9899c3276c74fb13b89db02f1754628d6f770a64364fced2",
+          "uri": "figures/paper20/fig1_carrier_survivor_gate.png"
+        },
+        "role": "carrier-survivor-figure"
+      },
+      {
+        "artifact": {
+          "sha256": "e7d556318d472427e2cca63c4b0d97652a5ca6e4c665cdac61e48758c60ba137",
+          "uri": "experiments/paper20/release-environment.json"
+        },
+        "role": "release-environment"
+      },
+      {
+        "artifact": {
+          "sha256": "8ff5b6ef3d9bd584ebc7d23ab515dddd7a6690b20a209fcf88ed418a105d3318",
+          "uri": "experiments/paper20/validation/validate_release.py"
+        },
+        "role": "release-validator"
+      },
+      {
+        "artifact": {
+          "sha256": "bc4a7697c7c2a0c406672f51d7a06236655e4433b6429f43a84deca90d3c6b6e",
+          "uri": "experiments/paper20/__init__.py"
+        },
+        "role": "experiment-package"
+      },
+      {
+        "artifact": {
+          "sha256": "8f65afc40783b45e8fafe7e221177ef4669be3d32f5fda0b0e2ef7bcfffff5f3",
+          "uri": "experiments/paper20/engine.py"
+        },
+        "role": "experiment-engine"
+      },
+      {
+        "artifact": {
+          "sha256": "6232d711a2597075b262e2baced930ff369deac99d15d4b2396f75d5da5b34d0",
+          "uri": "experiments/paper20/adapters.py"
+        },
+        "role": "experiment-adapters"
+      },
+      {
+        "artifact": {
+          "sha256": "14bb07d4ff9bdf8ea1f71a22fd9c14d96ef3b00c84dc3f915589a785b2f6fa8e",
+          "uri": "experiments/paper20/census.py"
+        },
+        "role": "experiment-producer"
+      },
+      {
+        "artifact": {
+          "sha256": "f8920b76a400181d7d7c90c953ae0131fb7f70cdbba8adf2b4d665f95b882680",
+          "uri": "experiments/paper20/validate_results.py"
+        },
+        "role": "experiment-validator"
+      },
+      {
+        "artifact": {
+          "sha256": "ef4b4509a478d9be2052f69cb337dc29d0ca22e0adf51b4b33401282a644e67a",
+          "uri": "experiments/paper20/image_kernel_census.py"
+        },
+        "role": "image-kernel-producer"
+      },
+      {
+        "artifact": {
+          "sha256": "ab1b193160b8857176dcb0b1026c19c0e8a8bc715e8143548582eb6395bc4a4f",
+          "uri": "experiments/paper20/validate_image_kernel.py"
+        },
+        "role": "image-kernel-validator"
+      },
+      {
+        "artifact": {
+          "sha256": "ad369cd49bc2642c9900408185a569ce970024addd9bc3b1f02f163c15c12903",
+          "uri": "experiments/paper20/results/image_kernel/rubik_depth2_shared_carrier_v1.json"
+        },
+        "role": "image-kernel-result"
+      },
+      {
+        "artifact": {
+          "sha256": "614aa6542a6f0a61a5b93352f634d83544f50462b9d5178a6d4fe60cfb1acc58",
+          "uri": "experiments/paper20/within_carrier_census.py"
+        },
+        "role": "within-carrier-producer"
+      },
+      {
+        "artifact": {
+          "sha256": "01a26c6548d63b4065357fe28a28e2a6c2d34fac78b2668b475bb758ba621d80",
+          "uri": "experiments/paper20/validate_within_carrier_census.py"
+        },
+        "role": "within-carrier-validator"
+      },
+      {
+        "artifact": {
+          "sha256": "24d5f5e58163587815b5aa32d425d52e6ce018c76a03a785e2b67acb762cb73a",
+          "uri": "experiments/paper20/results/within_carrier_obstruction_v1.json"
+        },
+        "role": "within-carrier-result"
+      },
+      {
+        "artifact": {
+          "sha256": "5acbe710110963bb59e3883093809b7e8320165921beccfd757545930a29256e",
+          "uri": "experiments/paper20/results/README.md"
+        },
+        "role": "experiment-results-readme"
+      },
+      {
+        "artifact": {
+          "sha256": "73ef7e9185d60f3a09f1bb3555a5c80cd939f06d4f7738a866725c15a18e525f",
+          "uri": "experiments/paper20/results/z2_double_regular_depth3.json"
+        },
+        "role": "z2-result"
+      },
+      {
+        "artifact": {
+          "sha256": "66dd2dcceff48864cbf6f5d5410e23f13153478efb59ac0ce286ea33471af914",
+          "uri": "experiments/paper20/results/s3_natural_regular_depth2.json"
+        },
+        "role": "s3-result"
+      },
+      {
+        "artifact": {
+          "sha256": "e337ac2a5e40e328f44cec1eb41e060ff3e63cc117d460ced838f22ce6907f20",
+          "uri": "experiments/paper20/results/rubik_228_depth2.json"
+        },
+        "role": "rubik-result"
+      },
+      {
+        "artifact": {
+          "sha256": "c10377864a1335635b646b686866e0c97661f49b1bfd1d092616b73a0b5446ce",
+          "uri": "rime/base.py"
+        },
+        "role": "rubik-runtime-base"
+      },
+      {
+        "artifact": {
+          "sha256": "5adbf4596f2f82f83f4d373bd1a57279b4128911c75d45fbf9d2e905260a4304",
+          "uri": "rime/cube.py"
+        },
+        "role": "rubik-runtime-cube"
+      },
+      {
+        "artifact": {
+          "sha256": "5120fd2688153bb7f8ad6f0bd77844fbdf9352ee430ec3e4166e3d991db60730",
+          "uri": "rime/cubie.py"
+        },
+        "role": "rubik-runtime-cubie"
+      },
+      {
+        "artifact": {
+          "sha256": "559a6dbde4a3f239e260c603fa6c544007400d76d1efcf88f2c5d19d1f77c3df",
+          "uri": "rime/cubieoperator.py"
+        },
+        "role": "rubik-runtime-operator"
+      },
+      {
+        "artifact": {
+          "sha256": "20247dad40d503913cb20a4b8cbde923c12187460c584e55d770308cc3d7bd12",
+          "uri": "rime/helpers.py"
+        },
+        "role": "rubik-runtime-helpers"
+      },
+      {
+        "artifact": {
+          "sha256": "5e456b904d75e93a373ad5d1ec3b846303a498d8e45d6ae0b2548f3040917799",
+          "uri": "rime/spectral_utils.py"
+        },
+        "role": "rubik-runtime-spectral-utils"
+      },
+      {
+        "artifact": {
+          "sha256": "5b01afa1ce23701c2459c97ef1d66d79c475a5e42c13c1ae13536d93fcf10091",
+          "uri": "tests/test_paper20_carrier_accessibility.py"
+        },
+        "role": "hostile-regression"
+      },
+      {
+        "artifact": {
+          "sha256": "f58c8c34165bffada306070750571b31da297435f3a16d647f4f5515155f552d",
+          "uri": "experiments/paper20/release-manifest.json"
+        },
+        "role": "release-manifest"
+      }
+    ]
+  },
+  "checks": [
+    "release manifest constants and unique role/path registry",
+    "paper-owned artifact byte and closure digests",
+    "manuscript theorem and claim-boundary anchors",
+    "retained census content and source-closure validation",
+    "Rubik shared-carrier depth-two image-kernel audit",
+    "exact one-carrier depth-two obstruction census",
+    "full producer replay at receipt generation",
+    "floating/exact evidence boundary",
+    "formalization explicitly not required",
+    "acyclic receipt exclusion and downstream exact-digest index"
+  ],
+  "claim_boundary": {
+    "certifies": "the declared release bytes, source closure, retained census conformance, and producer replay under the recorded environment",
+    "does_not_certify": [
+      "machine-checked or independent proof of the manuscript theorems",
+      "exact arithmetic for the complex128 S3 or Rubik census",
+      "exact arithmetic for the retained complex128 Z2 replay",
+      "frequency or genericity beyond the declared exact one-carrier model",
+      "all-depth activity for endpoints with overlapping carrier support",
+      "exact all-depth zero for the twelve numerically support-isolated Rubik pairs",
+      "a canonical carrier decomposition or canonical sectorization"
+    ]
+  },
+  "content_sha256": "ad746f6ff7626b0e6a3a2b74d08f31bf50be952dfed354dd35c7dbabbb54ba7d",
+  "environment": {
+    "sha256": "e7d556318d472427e2cca63c4b0d97652a5ca6e4c665cdac61e48758c60ba137",
+    "uri": "experiments/paper20/release-environment.json"
+  },
+  "formalization": {
+    "boundary": "Lean formalization is optional and is not represented by this receipt.",
+    "required_for_release": false,
+    "status": "NOT_INCLUDED"
+  },
+  "receipt_id": "PAPER20-V1.0-RELEASE-CLOSURE",
+  "receipt_kind": "CARRIER_ACCESSIBILITY_RELEASE_CLOSURE_RECEIPT",
+  "receipt_scope": "PAPER_OWNED_RELEASE_CLOSURE_ONLY",
+  "release_id": "PAPER20-V1.0",
+  "result_validation": {
+    "exact_within_carrier_census": {
+      "active_product_count": 16,
+      "arithmetic": "exact_integer_permutation_and_projector_matrices",
+      "artifact": {
+        "sha256": "24d5f5e58163587815b5aa32d425d52e6ce018c76a03a785e2b67acb762cb73a",
+        "uri": "experiments/paper20/results/within_carrier_obstruction_v1.json"
+      },
+      "claim_status": "Computational Certificate",
+      "content_sha256": "b086ed37b8fbb31af2c06d89ba5ed02eea55b70e6f5db63c4a5ce1ecd0d26b4a",
+      "strict_within_carrier_obstruction_count": 8,
+      "support_candidate_count": 24,
+      "total_labelled_route_count": 108
+    },
+    "generation_mode": "FULL_PRODUCER_REPLAY",
+    "image_kernel_audit": {
+      "all_depth_exact_status": "NOT_ESTABLISHED",
+      "artifact": {
+        "sha256": "ad369cd49bc2642c9900408185a569ce970024addd9bc3b1f02f163c15c12903",
+        "uri": "experiments/paper20/results/image_kernel/rubik_depth2_shared_carrier_v1.json"
+      },
+      "audited_depth": 2,
+      "bounded_conclusion": "ALL_DEPTH_TWO_ROUTES_FACTOR_ZERO_WITHIN_TOLERANCE",
+      "claim_status": "mixed_evidence_bundle",
+      "content_sha256": "ddac3ff99a7c44cfd2b46d995289d2b80a9fcd7096fcfb0e6962c5ca93f0262a",
+      "enumeration_status": "EXACT_FINITE_ENUMERATION_CERTIFICATE",
+      "exact_zero_status": "NOT_ESTABLISHED",
+      "nontrivial_image_kernel_annihilation_count": 0,
+      "numerical_status": "BOUNDED_NUMERICAL_OBSERVATION",
+      "pair_count": 12,
+      "route_audit_count": 34992
+    },
+    "results": [
+      {
+        "artifact": {
+          "sha256": "73ef7e9185d60f3a09f1bb3555a5c80cd939f06d4f7738a866725c15a18e525f",
+          "uri": "experiments/paper20/results/z2_double_regular_depth3.json"
+        },
+        "carrier_path_pairs": 7,
+        "claim_status": "computational_observation",
+        "composition_pairs": 7,
+        "content_sha256": "59e7af8e9fc86c149456d471ce5bdcc4bf8b54d2de4e32bc764cbbf27f05fd9b",
+        "max_depth_enumerated": 3,
+        "model": "z2",
+        "support_path_pairs": 9
+      },
+      {
+        "artifact": {
+          "sha256": "66dd2dcceff48864cbf6f5d5410e23f13153478efb59ac0ce286ea33471af914",
+          "uri": "experiments/paper20/results/s3_natural_regular_depth2.json"
+        },
+        "carrier_path_pairs": 28,
+        "claim_status": "computational_observation",
+        "composition_pairs": 28,
+        "content_sha256": "536ffe391f52d3a0d429057293727993b1f186096ea5bbe9d964ecf6510d926b",
+        "max_depth_enumerated": 2,
+        "model": "s3",
+        "support_path_pairs": 36
+      },
+      {
+        "artifact": {
+          "sha256": "e337ac2a5e40e328f44cec1eb41e060ff3e63cc117d460ced838f22ce6907f20",
+          "uri": "experiments/paper20/results/rubik_228_depth2.json"
+        },
+        "carrier_path_pairs": 43,
+        "claim_status": "computational_observation",
+        "composition_pairs": 43,
+        "content_sha256": "1390611b456feff3b6148a498748be886b893fddd3ad88098d00935e9ac584dd",
+        "max_depth_enumerated": 2,
+        "model": "rubik",
+        "support_path_pairs": 53
+      }
+    ]
+  },
+  "schema": "paper.carrier-accessibility.release-receipt.v1",
+  "status": "PASS",
+  "validator": {
+    "implementation": {
+      "sha256": "8ff5b6ef3d9bd584ebc7d23ab515dddd7a6690b20a209fcf88ed418a105d3318",
+      "uri": "experiments/paper20/validation/validate_release.py"
+    },
+    "validation_scope": "LOCAL_RELEASE_CLOSURE_AND_OPTIONAL_PRODUCER_REPLAY",
+    "validator_id": "paper.carrier-accessibility.release-validator.python.v1"
+  }
+}
