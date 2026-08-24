@@ -1,0 +1,122 @@
+{
+  "schema": "rime.claim-surface-map.v1",
+  "map_id": "paper21-finite-field-route-claim-surface-v1",
+  "workflow": [
+    "EXPLORE",
+    "EXACTIFY",
+    "PROVE",
+    "FORMALIZE"
+  ],
+  "manuscript_path": "papers/paper21/Paper XXI.md",
+  "promotion_certificate_path": "experiments/paper21/results/route_profile_promotion_v1.json",
+  "lean_manifest_path": "experiments/paper21/lean/formalization-manifest.json",
+  "historical_artifacts": [
+    {
+      "role": "FINITE_OBSERVATION_CENSUS",
+      "path": "experiments/exploratory/carrier_realizations/fuchsian_schreier/results/modular_p1_census_v2.json",
+      "sha256": "4b3b5a60d88fd9106dd2a724d3a67f94fdfce592399dbc52181164f92f9f5616"
+    },
+    {
+      "role": "DEPTH_TWO_EXACTIFICATION",
+      "path": "experiments/exploratory/carrier_realizations/fuchsian_schreier/results/uniform_modular_zero_route_classification_v1.json",
+      "sha256": "7f3cb60db0ab1b00eadf77234da9a829f08a5bcf8440c8fc308f0c335fcb72a4"
+    },
+    {
+      "role": "DEPTH_THREE_EXCEPTIONAL_REGIMES",
+      "path": "experiments/exploratory/carrier_realizations/fuchsian_schreier/results/depth_three_zero_route_classification_v1.json",
+      "sha256": "432da4599fc1491b6e617c15926f8e88264ca3ff3b9cbfdce40c5f8975a4b99e"
+    }
+  ],
+  "active_evidence": [
+    {
+      "role": "ARBITRARY_DEPTH_EXACT_REPLAY",
+      "path": "experiments/paper21/results/arbitrary_depth_semantic_v1.json",
+      "sha256": "7c685cae2668d9f76ac74fabf25688d46e0c792cfe8e409d349a9fa14dfc5514"
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "RPF-V1-THM-02",
+      "completed_stages": ["EXPLORE", "EXACTIFY", "PROVE", "FORMALIZE"],
+      "manuscript_markers": ["### Theorem 3.2: Uniform Modular Zero-Route Classification"],
+      "certificate_status": "EXACT_THEOREM_SOURCE_REPLAYED",
+      "formalization_status": "FORMALIZED",
+      "lean_declarations": ["finite_field_depth_two_semantic_classification"]
+    },
+    {
+      "claim_id": "RPF-V1-THM-03",
+      "completed_stages": ["EXPLORE", "EXACTIFY", "PROVE", "FORMALIZE"],
+      "manuscript_markers": ["### Theorem 4.2: Characteristic-Aware Count"],
+      "certificate_status": "EXACT_THEOREM_SOURCE_REPLAYED",
+      "formalization_status": "FORMALIZED",
+      "lean_declarations": ["uniform_finite_field_depth_three_zero_route_count"]
+    },
+    {
+      "claim_id": "RPF-V1-PROFILE",
+      "completed_stages": ["EXPLORE", "EXACTIFY"],
+      "manuscript_markers": ["### Computational Certificate 5.8: Sampled Profiles"],
+      "certificate_status": "COMPUTATIONAL_CERTIFICATE",
+      "formalization_status": "NOT_APPLICABLE",
+      "lean_declarations": []
+    },
+    {
+      "claim_id": "RPF-V1-CANDIDATES",
+      "completed_stages": ["PROVE", "FORMALIZE"],
+      "manuscript_markers": ["### Proposition 5.4: Boolean Candidate Count"],
+      "certificate_status": "EXACT_COMBINATORIAL_PROPOSITION",
+      "formalization_status": "FORMALIZED",
+      "lean_declarations": ["boolean_candidate_count_eq"]
+    },
+    {
+      "claim_id": "RPF-V1-PREFIX-POLE",
+      "completed_stages": ["EXPLORE", "EXACTIFY", "PROVE"],
+      "manuscript_markers": ["### Theorem 5.1: Arbitrary-Depth Prefix-Pole Classification"],
+      "certificate_status": "EXACT_MANUSCRIPT_THEOREM_WITH_PAPER_OWNED_REPLAY",
+      "formalization_status": "OPEN",
+      "lean_declarations": [],
+      "lean_excluded_scope": "arbitrary-depth prefix-pole, generic profile/determinant spectrum, fixed-field automaton, rationality, stabilization, and determinant-spectrum monotonicity theorem package"
+    },
+    {
+      "claim_id": "RPF-V1-GENERIC",
+      "completed_stages": [
+        "EXPLORE",
+        "EXACTIFY",
+        "PROVE"
+      ],
+      "manuscript_markers": [
+        "### Generic Depth-$d$ Profile"
+      ],
+      "certificate_status": "EXACT_MANUSCRIPT_THEOREM_WITH_DETERMINANT_SPECTRUM_REPLAY",
+      "formalization_status": "OPEN",
+      "lean_declarations": [],
+      "lean_excluded_scope": "arbitrary-depth prefix-pole, generic profile/determinant spectrum, fixed-field automaton, rationality, stabilization, and determinant-spectrum monotonicity theorem package"
+    },
+    {
+      "claim_id": "RPF-V1-RATIONALITY",
+      "completed_stages": ["EXPLORE", "EXACTIFY", "PROVE"],
+      "manuscript_markers": ["### Corollary 5.3: Transfer Counts and Rational Generating Functions"],
+      "certificate_status": "EXACT_MANUSCRIPT_THEOREM_WITH_PAPER_OWNED_CONSTRUCTION",
+      "formalization_status": "OPEN",
+      "lean_declarations": [],
+      "lean_excluded_scope": "arbitrary-depth prefix-pole, generic profile/determinant spectrum, fixed-field automaton, rationality, stabilization, and determinant-spectrum monotonicity theorem package"
+    },
+    {
+      "claim_id": "RPF-V1-STABILIZATION",
+      "completed_stages": ["EXPLORE", "EXACTIFY", "PROVE"],
+      "manuscript_markers": ["### Theorem 5.5: Fixed-Depth Large-Field Stabilization"],
+      "certificate_status": "EXACT_MANUSCRIPT_THEOREM_WITH_EXCEPTIONAL_SET_REPLAY",
+      "formalization_status": "OPEN",
+      "lean_declarations": [],
+      "lean_excluded_scope": "arbitrary-depth prefix-pole, generic profile/determinant spectrum, fixed-field automaton, rationality, stabilization, and determinant-spectrum monotonicity theorem package"
+    },
+    {
+      "claim_id": "RPF-V1-MONOTONICITY",
+      "completed_stages": ["PROVE"],
+      "manuscript_markers": ["### Corollary 5.6: Monotonicity of Exceptional Characteristics"],
+      "certificate_status": "EXACT_MANUSCRIPT_COROLLARY_FROM_PREFIX_EXTENSION",
+      "formalization_status": "OPEN",
+      "lean_declarations": [],
+      "lean_excluded_scope": "arbitrary-depth prefix-pole, generic profile/determinant spectrum, fixed-field automaton, rationality, stabilization, and determinant-spectrum monotonicity theorem package"
+    }
+  ]
+}

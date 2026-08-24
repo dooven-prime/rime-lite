@@ -1,0 +1,44 @@
+{
+  "artifact_id": "ROUTE-PROFILES-V1-REPLAY",
+  "certificate": {
+    "artifact_sha256": "dae1edd60de4292daf472eae86fa96447fc7061a603497c48098a5acb0186dd6",
+    "content_sha256": "836fabc1567352efa636ada27b120530102601823b2f5709cc33459da05b43d1",
+    "path": "experiments/paper21/results/route_profile_promotion_v1.json"
+  },
+  "checks": [
+    "certificate content digest",
+    "source artifacts remain NOT_PROMOTED",
+    "three-source implementation closure",
+    "depth-two and depth-three theorem scope",
+    "fixed-depth sample scope",
+    "arbitrary-depth prefix-pole and transfer scope",
+    "generic depth profile and prefix determinant spectrum",
+    "fixed-depth exceptional-characteristic stabilization scope",
+    "manuscript source digest",
+    "excluded-theory boundary",
+    "Paper XX nondependency boundary",
+    "Lean source and compilation-receipt boundary",
+    "coordinated result-and-digest tamper rejection"
+  ],
+  "claim_boundary": {
+    "certifies": "paper-owned source replay, arbitrary-depth construction replay, digest closure, and declared theorem/certificate scope",
+    "does_not_certify": [
+      "a proof beyond the manuscript theorem hypotheses",
+      "Lean formalization of the arbitrary-depth theorem package",
+      "a field-independent automaton or one rational function for every field",
+      "an all-depth scalar zero-count formula or asymptotic convergence",
+      "presentation-only or marked-partition-independent invariance",
+      "Hecke, modular-form, RG, spectral, or causal interpretation"
+    ]
+  },
+  "content_sha256": "9d9303bb13ab85b0f11f01a10d40078089c423da082116a050f8b9ae9af79a86",
+  "receipt_kind": "ROUTE_PROFILES_VALIDATION_RECEIPT",
+  "receipt_scope": "PAPER_OWNED_ROUTE_PROFILE_CONFORMANCE_ONLY",
+  "schema": "paper.route-profiles.validation-receipt.v1",
+  "status": "PASS",
+  "validator": {
+    "path": "experiments/paper21/validation/validate_route_profiles.py",
+    "sha256": "5f2c1705f4b179d668951881c7d4e00e40d17cee8760d1c0bc5ff6613883571e",
+    "validator_id": "paper.route-profiles.validator.python.v1"
+  }
+}

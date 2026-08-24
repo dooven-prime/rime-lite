@@ -1,0 +1,207 @@
+{
+  "artifact_id": "ROUTE-PROFILES-V1-CONFORMANCE",
+  "artifact_role": "PAPER_OWNED_PROMOTED_ROUTE_PROFILE_CERTIFICATE",
+  "certificate_id": "paper.route-profiles.promotion.v1",
+  "claim_status": "Exact theorem layers plus Computational Certificate layer",
+  "content_sha256": "836fabc1567352efa636ada27b120530102601823b2f5709cc33459da05b43d1",
+  "implementation": {
+    "arbitrary_depth_replay": {
+      "artifact": {
+        "artifact_id": "ROUTE-PROFILES-ARBITRARY-DEPTH-V1",
+        "artifact_sha256": "7c685cae2668d9f76ac74fabf25688d46e0c792cfe8e409d349a9fa14dfc5514",
+        "content_sha256": "8d5485b9118b75cb756c09cc797373556be934a80187a241cd6aece532a02a4b",
+        "path": "experiments/paper21/results/arbitrary_depth_semantic_v1.json"
+      },
+      "proof_owner": "MANUSCRIPT",
+      "receipt": {
+        "artifact_id": "ROUTE-PROFILES-ARBITRARY-DEPTH-V1-REPLAY",
+        "artifact_sha256": "e237edff47ec8e15545d41280b19d142e5e8395ff4a1d3289e7aefd9889b82bc",
+        "content_sha256": "7fb79633f79997ddab074cc4d1724713460d26c296c2ee634d5527d38f037c08",
+        "path": "experiments/paper21/results/arbitrary_depth_semantic_v1.validation-receipt.json"
+      },
+      "status": "PAPER_OWNED_EXACT_REPLAY_NOT_INDEPENDENT_PROOF"
+    },
+    "arithmetic": "exact finite permutations, prime fields, polynomial extension fields, and Python integers",
+    "files": {
+      "experiments/exploratory/carrier_realizations/fuchsian_schreier/core.py": "f84c18f5ce35f9b0ab05169a783012a0e33b378ecb5058f52c2c6f6b5a7d500b",
+      "experiments/exploratory/carrier_realizations/fuchsian_schreier/depth_three_zero_route_classification.py": "705b8d668925e318bda59520d1c84eef8edca3033182149babb9f3811d21696b",
+      "experiments/exploratory/carrier_realizations/fuchsian_schreier/uniform_finite_field_route_profile.py": "4307fc0a869a6470067699684c9143290131e71728bc309573ac4304184dd0e2",
+      "experiments/exploratory/carrier_realizations/fuchsian_schreier/uniform_modular_zero_route_classification.py": "1df5856d4325019d7f2232f569703acb26a2b7e6856061b6065fa680d92b452a",
+      "experiments/paper21/arbitrary_depth_semantic.py": "e3a7d435bd07ac5dabbd47c25162c11dcd1a48033feee958f5d8bdf823fb2961",
+      "experiments/paper21/validation/promote_route_profiles.py": "6321ccf8931aae46a90d088f24039363de8caaff01b589d0030aea37c7417371",
+      "experiments/paper21/validation/validate_arbitrary_depth_semantic.py": "13f97eb1a8aaabbeb69a0f2990869a2c79f6e514de604a46a5b053071ad82f33",
+      "experiments/paper21/validation/validate_lean_formalization.py": "1e1f01a526273d6dea59d24997e5c30ab03753a3b57323d64b0d42f6e64e1cac",
+      "experiments/paper21/validation/validate_route_profiles.py": "5f2c1705f4b179d668951881c7d4e00e40d17cee8760d1c0bc5ff6613883571e"
+    },
+    "formalization": {
+      "compilation_receipt": {
+        "artifact_id": "ROUTE-PROFILES-LEAN-V1-COMPILED",
+        "artifact_sha256": "65be1141e1a56a0c338c23c391046ed2dd3368dbd734d6eac8a1114e501a7656",
+        "content_sha256": "172b1ef801a738328e6aa4b95cbb0b06db98927ef2810423ee4680001feb6ba4",
+        "path": "experiments/paper21/results/route_profiles_lean_v1.validation-receipt.json"
+      },
+      "entrypoint": "experiments/paper21/lean/FiniteFieldRouteProfiles.lean",
+      "files": {
+        "experiments/paper21/lean/FiniteFieldRouteProfiles.lean": "1edfc860edccae87a84ba712b482bf73a912277f79ab04a95bd672d371883e5c",
+        "experiments/paper21/lean/Formalization/UniformModularZeroRoute.lean": "15b053439a508c3dc7b1ea313c98e2d3fc652d73efe6507d3e6e09202cc797d9",
+        "experiments/paper21/lean/Formalization/UniformModularZeroRouteField.lean": "f115ede26e4eb03c8eb77c96388dfa5cb816fe5af663364bd171acf0de9fd711",
+        "experiments/paper21/lean/formalization-manifest.json": "d2f95593750ebd4583d6d83456567a4030ef8753d3b89b62eac85ce9e666a629",
+        "experiments/paper21/lean/lake-manifest.json": "ac06447ed3051f56abb8f58cb6992f45713ab2b5aa7c284059e22fd56267ce73",
+        "experiments/paper21/lean/lakefile.toml": "eccc0fbe79d9ea3cab550639c0947154d2ed0d23d75ef8c93520a9669e62794b",
+        "experiments/paper21/lean/lean-toolchain": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b"
+      },
+      "formalization_sha256": "1c28e5f7113f353b2283c9d62419da0fe8a42aed3080e0690803fe4700cdaff5",
+      "language": "Lean",
+      "manifest": "experiments/paper21/lean/formalization-manifest.json",
+      "not_claimed": [
+        "arbitrary-depth prefix-pole, generic profile/determinant spectrum, fixed-field automaton, rationality, stabilization, and determinant-spectrum monotonicity theorem package",
+        "formal coverage of every manuscript theorem"
+      ],
+      "proof_scope": [
+        "complete depth-two finite-field semantic classification",
+        "arbitrary-depth Boolean candidate count",
+        "depth-three supported-shape enumeration",
+        "all eight depth-three semantic shape criteria",
+        "all-finite depth-three witness for field cardinality at least four",
+        "F2/F3 exact finite exceptional enumeration",
+        "general characteristic-aware first-seven-shape count",
+        "complete characteristic-aware depth-three zero-route count theorem"
+      ],
+      "status": "COMPILED_PAPER_OWNED_SOURCE_CLOSURE"
+    },
+    "implementation_sha256": "59b5948b5c620e1484ef9ac60d5928e88d511681b153de70dfa26763ad51ce40",
+    "language": "Python",
+    "producer_id": "paper.route-profiles.promotion.python.v1"
+  },
+  "manuscript": {
+    "path": "papers/paper21/Paper XXI.md",
+    "sha256": "00e220b36daed9d0c3bba13f87cb987c66bbf25cfbf99c6b2ef4b91f0eb090ef"
+  },
+  "negative_boundaries": [
+    "No abstract presentation-only invariance is promoted.",
+    "No arbitrary representation or marked-partition invariance is promoted.",
+    "No logical dependence on Paper XX is promoted without explicit carrier-hypothesis registration.",
+    "No field-independent finite automaton, uniform state bound, or single rational function for every field is promoted.",
+    "No all-depth closed scalar zero-count formula, depth-asymptotic convergence, or growth constant is promoted.",
+    "A zero route is not a spectral zero mode or operator-kernel theorem.",
+    "No RG, Hecke, modular-form, Selberg, Teichmuller, or causal claim is promoted.",
+    "The exploratory source bundles remain provenance inputs, not paper-owned theorem proofs."
+  ],
+  "paper": "Paper XXI: Uniform Finite-Field Route Profiles",
+  "promoted_claims": [
+    {
+      "claim_id": "RPF-V1-THM-02",
+      "statement": "Depth-two fixed-contract zero-route classification is 14/45 for every finite field of cardinality at least 3.",
+      "status": "EXACT_THEOREM_SOURCE_REPLAYED"
+    },
+    {
+      "claim_id": "RPF-V1-THM-03",
+      "statement": "Depth-three zero-route counts split into four characteristic/cardinality regimes under the declared contract.",
+      "status": "EXACT_THEOREM_SOURCE_REPLAYED"
+    },
+    {
+      "claim_id": "RPF-V1-PROFILE",
+      "statement": "The sampled fixed-depth route profiles are replayable exact finite computation under the declared source closure.",
+      "status": "COMPUTATIONAL_CERTIFICATE"
+    },
+    {
+      "claim_id": "RPF-V1-CANDIDATES",
+      "statement": "The supported candidate count has the exact formula B_d = 3^d F_(d+3).",
+      "status": "EXACT_COMBINATORIAL_PROPOSITION"
+    },
+    {
+      "claim_id": "RPF-V1-PREFIX-POLE",
+      "statement": "Every arbitrary-depth route survivor set is exactly classified by its forced and forbidden prefix poles.",
+      "status": "EXACT_MANUSCRIPT_THEOREM_WITH_PAPER_OWNED_REPLAY"
+    },
+    {
+      "claim_id": "RPF-V1-GENERIC",
+      "statement": "The generic depth-d zero-route profile is determined by the integral prefix-pole equality relation and the pole-class count identity.",
+      "status": "EXACT_MANUSCRIPT_THEOREM_WITH_DETERMINANT_SPECTRUM_REPLAY"
+    },
+    {
+      "claim_id": "RPF-V1-RATIONALITY",
+      "statement": "For each fixed finite field, candidate, nonzero, and zero-route counts have rational reachable-subset transfer series.",
+      "status": "EXACT_MANUSCRIPT_THEOREM_WITH_PAPER_OWNED_CONSTRUCTION"
+    },
+    {
+      "claim_id": "RPF-V1-STABILIZATION",
+      "statement": "At fixed depth d, the complete labelled zero-route set equals Z_d^gen for |F|>d outside the finite exceptional characteristic set E_d.",
+      "status": "EXACT_MANUSCRIPT_THEOREM_WITH_EXCEPTIONAL_SET_REPLAY"
+    },
+    {
+      "claim_id": "RPF-V1-MONOTONICITY",
+      "statement": "Prefix determinant spectra and exceptional-characteristic sets are monotone under depth extension.",
+      "status": "EXACT_MANUSCRIPT_COROLLARY_FROM_PREFIX_EXTENSION"
+    }
+  ],
+  "promoted_scope": {
+    "arbitrary_depth_semantic_classification": "ALL_POSITIVE_DEPTHS",
+    "depth_three_candidate_count": 216,
+    "depth_three_regime_count": 4,
+    "depth_two_candidate_count": 45,
+    "depth_two_field_condition": "finite fields of cardinality at least 3",
+    "depth_two_legacy_replay_primes": [
+      3,
+      5,
+      7,
+      11,
+      13,
+      17,
+      19,
+      23,
+      29
+    ],
+    "depth_two_zero_route_count": 14,
+    "exceptional_characteristic_replay_max_depth": 10,
+    "fixed_field_generating_function_status": "RATIONAL_TRANSFER_MATRIX_THEOREM",
+    "generic_depth_profile": "Z_d^gen FROM INTEGRAL PREFIX-POLE EQUALITY",
+    "prefix_determinant_spectrum_replay_max_depth": 10,
+    "profile_max_depth": 5,
+    "profile_sample_primes": [
+      2,
+      3,
+      5,
+      7,
+      11,
+      13
+    ],
+    "stabilization_condition": "field cardinality greater than depth and characteristic outside E_d"
+  },
+  "promotion_decision": "ACCEPTED_FOR_PAPER_XXI_V1_EVIDENCE_CLOSURE",
+  "release_status": "PAPER_XXI_V1_RELEASE_EVIDENCE",
+  "schema": "paper.route-profiles.promotion.v1",
+  "source_artifacts": [
+    {
+      "artifact_sha256": "7f3cb60db0ab1b00eadf77234da9a829f08a5bcf8440c8fc308f0c335fcb72a4",
+      "bundle_id": "fuchsian-schreier.uniform-modular-zero-route-classification.v1",
+      "content_digest_status": "LEGACY_NOT_EMITTED",
+      "content_sha256": null,
+      "path": "experiments/exploratory/carrier_realizations/fuchsian_schreier/results/uniform_modular_zero_route_classification_v1.json",
+      "promotion_role": "SOURCE_PROVENANCE_AND_REPLAY_INPUT",
+      "schema": "rime.exploratory.fuchsian-schreier.uniform-modular-zero-route-classification.v1",
+      "upstream_paper_evidence_status": "NOT_PROMOTED"
+    },
+    {
+      "artifact_sha256": "432da4599fc1491b6e617c15926f8e88264ca3ff3b9cbfdce40c5f8975a4b99e",
+      "bundle_id": "fuchsian-schreier.depth-three-zero-route-classification.v1",
+      "content_digest_status": "PRESENT",
+      "content_sha256": "ab5d3df79bbd31fa76275996660906d182a07f9cafb03900406c6695eadfe9a5",
+      "path": "experiments/exploratory/carrier_realizations/fuchsian_schreier/results/depth_three_zero_route_classification_v1.json",
+      "promotion_role": "SOURCE_PROVENANCE_AND_REPLAY_INPUT",
+      "schema": "rime.exploratory.fuchsian-schreier.depth-three-zero-route-classification.v1",
+      "upstream_paper_evidence_status": "NOT_PROMOTED"
+    },
+    {
+      "artifact_sha256": "01a32c8629ec21fb5142e7cdd218b6a6ce9f50b50fb8a6b4c761fec26bf99a97",
+      "bundle_id": "fuchsian-schreier.uniform-finite-field-route-profile.v1",
+      "content_digest_status": "PRESENT",
+      "content_sha256": "4b8a08ad61e3e52af21cb78c963cf3c6efb31fe4048802bda62051263a7d382c",
+      "path": "experiments/exploratory/carrier_realizations/fuchsian_schreier/results/uniform_finite_field_route_profile_v1.json",
+      "promotion_role": "SOURCE_PROVENANCE_AND_REPLAY_INPUT",
+      "schema": "rime.exploratory.fuchsian-schreier.uniform-finite-field-route-profile.v1",
+      "upstream_paper_evidence_status": "NOT_PROMOTED"
+    }
+  ],
+  "theorem_relationship": "CERTIFICATE_REPLAYS_SOURCE_AND_DOES_NOT_REPLACE_PROOF"
+}

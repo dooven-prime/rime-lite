@@ -12,6 +12,10 @@ experiments/**/*.py text eol=lf
 experiments/**/*.sofaction text eol=lf
 experiments/**/*.txt text eol=lf
 papers/**/*.md text eol=lf
+papers/tex/*.bib text eol=lf
+experiments/**/*.lean text eol=lf
+experiments/**/*.toml text eol=lf
+experiments/**/lean-toolchain text eol=lf
 # SOFAction v2.0 source digests bind the published Windows materialization.
 # Preserve those root result files while keeping the v2.1 corpus canonical LF.
 experiments/paper14/results/*.sofaction text eol=crlf
@@ -23,3 +27,5 @@ experiments/paper12/results/v2.1/**/*.json text eol=lf
 figures/**/*.py text eol=lf
 tests/**/*.py text eol=lf
 tests/**/*.json text eol=lf
+tools/**/*.py text eol=lf
+tools/**/*.md text eol=lf

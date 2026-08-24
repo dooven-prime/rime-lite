@@ -1,0 +1,37 @@
+{
+  "schema": "paper.route-profiles.lean-formalization-manifest.v1",
+  "status": "COMPILED_PAPER_OWNED_SOURCE_CLOSURE",
+  "entrypoint": "experiments/paper21/lean/FiniteFieldRouteProfiles.lean",
+  "build": {
+    "project_root": "experiments/paper21/lean",
+    "command": "lake build Formalization.UniformModularZeroRouteField && lake env lean FiniteFieldRouteProfiles.lean",
+    "lean": "4.33.0",
+    "lake": "5.0.0",
+    "mathlib_revision": "db584cd6d46c92f209a44c0f1c829460d327499d"
+  },
+  "source_sha256": {
+    "FiniteFieldRouteProfiles.lean": "1edfc860edccae87a84ba712b482bf73a912277f79ab04a95bd672d371883e5c",
+    "Formalization/UniformModularZeroRoute.lean": "15b053439a508c3dc7b1ea313c98e2d3fc652d73efe6507d3e6e09202cc797d9",
+    "Formalization/UniformModularZeroRouteField.lean": "f115ede26e4eb03c8eb77c96388dfa5cb816fe5af663364bd171acf0de9fd711",
+    "lake-manifest.json": "ac06447ed3051f56abb8f58cb6992f45713ab2b5aa7c284059e22fd56267ce73",
+    "lakefile.toml": "eccc0fbe79d9ea3cab550639c0947154d2ed0d23d75ef8c93520a9669e62794b",
+    "lean-toolchain": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b"
+  },
+  "formalized_scope": [
+    "depth-two finite-field semantic classification",
+    "B_d = 3^d * Nat.fib (d + 3)",
+    "eight depth-three supported shapes and 216 candidates",
+    "labelled pole/preimage definitions",
+    "all eight depth-three semantic shape criteria",
+    "all-finite depth-three realization for finite fields of cardinality at least four",
+    "F2/F3 exact finite exceptional enumeration",
+    "general characteristic-aware first-seven-shape count",
+    "complete characteristic-aware depth-three zero-route count theorem"
+  ],
+  "excluded_scope": [
+    "arbitrary-depth prefix-pole, generic profile/determinant spectrum, fixed-field automaton, rationality, stabilization, and determinant-spectrum monotonicity theorem package",
+    "RG, Hecke, modular-form, spectral, and causal interpretations",
+    "equivalence between Python replay certificates and Lean theorem proofs"
+  ],
+  "evidence_boundary": "Compilation and theorem typing for the declared paper-owned source closure under pinned Lean and Mathlib versions."
+}

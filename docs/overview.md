@@ -114,14 +114,16 @@ research target; Paper VII does not assert a generic completion theorem.
   current-use commitments to be superseded and revalidated, and it adds no
   selection, authorization, execution, outcome, or effect contract.
 
-### Paper XX: Independent Post-Protocol Mathematics
+### Papers XX--XXI: Independent Post-Protocol Mathematics
 
 Papers XVI--XIX are intentionally unused in the public numbered sequence.
 Paper XX begins a separately scoped mathematical line with all-depth
 carrierwise factorization, survivor recursion, and exact image--kernel tests
-for routed composition. It consumes no protocol authority and does not reopen
-Papers VIII--XV. Version 1.0 is published under the repository's canonical DOI
-index.
+for routed composition. Paper XXI develops the finite-field route branch
+through prefix-pole classification, fixed-field survivor automata, and
+fixed-depth characteristic-aware stability. They consume no protocol
+authority and do not reopen Papers VIII--XV. Their published version-1
+identities are maintained in the repository's canonical DOI index.
 
 ## Claim Discipline
 
