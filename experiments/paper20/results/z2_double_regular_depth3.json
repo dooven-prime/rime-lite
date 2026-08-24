@@ -1,0 +1,208 @@
+{
+  "schema_version": "rime.carrier-accessibility-census.v1",
+  "model": "z2",
+  "dimension": 4,
+  "sector_count": 3,
+  "transport_count": 2,
+  "max_depth_enumerated": 3,
+  "tolerance": 1e-10,
+  "support_tolerance": 1e-10,
+  "runtime": {
+    "python": "3.13.0",
+    "numpy": "2.1.3",
+    "scipy": "1.18.0",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "arithmetic": "complex128_with_declared_thresholds"
+  },
+  "claim_status": "computational_observation",
+  "claim_boundary": "Finite enumeration through max_depth_enumerated; null minimum depth does not imply all-depth inaccessibility without the carrier theorem.",
+  "enumeration_policy": "all ordered transport words and all intermediate sector routes",
+  "source_artifacts": [
+    {
+      "uri": "experiments/paper20/engine.py",
+      "sha256": "8f65afc40783b45e8fafe7e221177ef4669be3d32f5fda0b0e2ef7bcfffff5f3"
+    },
+    {
+      "uri": "experiments/paper20/adapters.py",
+      "sha256": "6232d711a2597075b262e2baced930ff369deac99d15d4b2396f75d5da5b34d0"
+    },
+    {
+      "uri": "experiments/paper20/census.py",
+      "sha256": "14bb07d4ff9bdf8ea1f71a22fd9c14d96ef3b00c84dc3f915589a785b2f6fa8e"
+    }
+  ],
+  "result": {
+    "carrier_profiles": [
+      {
+        "sector": 0,
+        "rank": 1,
+        "carrier_ranks": [
+          1,
+          0
+        ],
+        "carrier_support": [
+          0
+        ],
+        "profile_kind": "pure"
+      },
+      {
+        "sector": 1,
+        "rank": 2,
+        "carrier_ranks": [
+          1,
+          1
+        ],
+        "carrier_support": [
+          0,
+          1
+        ],
+        "profile_kind": "hybrid"
+      },
+      {
+        "sector": 2,
+        "rank": 1,
+        "carrier_ranks": [
+          0,
+          1
+        ],
+        "carrier_support": [
+          1
+        ],
+        "profile_kind": "pure"
+      }
+    ],
+    "direct_support": [
+      [
+        1.0,
+        1.0,
+        0.0
+      ],
+      [
+        1.0,
+        1.4142135623730951,
+        1.0
+      ],
+      [
+        0.0,
+        1.0,
+        1.0
+      ]
+    ],
+    "support_edge_count": 7,
+    "routed_counts": {
+      "1": 18,
+      "2": 108,
+      "3": 648
+    },
+    "active_route_counts": {
+      "1": 7,
+      "2": 15,
+      "3": 31
+    },
+    "support_path_pair_counts": {
+      "1": 7,
+      "2": 9,
+      "3": 9
+    },
+    "carrier_path_pair_counts": {
+      "1": 7,
+      "2": 7,
+      "3": 7
+    },
+    "composition_pair_counts": {
+      "1": 7,
+      "2": 7,
+      "3": 7
+    },
+    "obstructed_pair_counts": {
+      "1": 0,
+      "2": 2,
+      "3": 2
+    },
+    "obstructed_pairs": {
+      "1": [],
+      "2": [
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "3": [
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          0
+        ]
+      ]
+    },
+    "cross_carrier_stitch_pair_counts": {
+      "1": 0,
+      "2": 2,
+      "3": 2
+    },
+    "cross_carrier_stitch_pairs": {
+      "1": [],
+      "2": [
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "3": [
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          0
+        ]
+      ]
+    },
+    "within_carrier_obstructed_pair_counts": {
+      "1": 0,
+      "2": 0,
+      "3": 0
+    },
+    "within_carrier_obstructed_pairs": {
+      "1": [],
+      "2": [],
+      "3": []
+    },
+    "carrier_disjoint_pair_count": 2,
+    "carrier_disjoint_pairs": [
+      [
+        0,
+        2
+      ],
+      [
+        2,
+        0
+      ]
+    ],
+    "unresolved_overlapping_pair_count": 0,
+    "minimum_active_depth_within_bound": {
+      "0->0": 1,
+      "1->0": 1,
+      "2->0": null,
+      "0->1": 1,
+      "1->1": 1,
+      "2->1": 1,
+      "0->2": null,
+      "1->2": 1,
+      "2->2": 1
+    }
+  },
+  "content_sha256": "59e7af8e9fc86c149456d471ce5bdcc4bf8b54d2de4e32bc764cbbf27f05fd9b"
+}

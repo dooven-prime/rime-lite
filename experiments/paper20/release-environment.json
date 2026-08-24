@@ -1,0 +1,10 @@
+{
+  "schema": "paper.carrier-accessibility.environment.v1",
+  "status": "RECORDED_DEVELOPMENT_ENVIRONMENT_NOT_INSTALLER_LOCK",
+  "python": "3.13.0",
+  "numpy": "2.1.3",
+  "scipy": "1.18.0",
+  "matplotlib": "3.9.2",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "arithmetic_boundary": "Census computations use complex128 with declared thresholds; exact all-depth claims come only from the manuscript theorem and exact mathematical constructions."
+}

@@ -1,0 +1,190 @@
+{
+  "arithmetic": "exact_integer_permutation_and_projector_matrices",
+  "artifact_id": "PAPER20-EXACT-WITHIN-CARRIER-OBSTRUCTION-V1",
+  "claim_status": "Computational Certificate",
+  "content_sha256": "b086ed37b8fbb31af2c06d89ba5ed02eea55b70e6f5db63c4a5ce1ecd0d26b4a",
+  "enumeration": {
+    "active_product_count": 16,
+    "depth": 2,
+    "disjoint_endpoint_carrier_obstruction_count": 0,
+    "obstructions": [
+      {
+        "endpoint_carrier_intersection": [
+          "b"
+        ],
+        "incoming_rank": 1,
+        "mechanism": "STRICT_WITHIN_CARRIER_IMAGE_KERNEL_CONTAINMENT",
+        "outgoing_rank": 1,
+        "product_rank": 0,
+        "route": {
+          "first_label": "g01",
+          "middle": 1,
+          "second_label": "g01",
+          "source": 0,
+          "target": 1
+        }
+      },
+      {
+        "endpoint_carrier_intersection": [
+          "b"
+        ],
+        "incoming_rank": 1,
+        "mechanism": "STRICT_WITHIN_CARRIER_IMAGE_KERNEL_CONTAINMENT",
+        "outgoing_rank": 1,
+        "product_rank": 0,
+        "route": {
+          "first_label": "g01",
+          "middle": 1,
+          "second_label": "h23",
+          "source": 0,
+          "target": 2
+        }
+      },
+      {
+        "endpoint_carrier_intersection": [
+          "b"
+        ],
+        "incoming_rank": 1,
+        "mechanism": "STRICT_WITHIN_CARRIER_IMAGE_KERNEL_CONTAINMENT",
+        "outgoing_rank": 1,
+        "product_rank": 0,
+        "route": {
+          "first_label": "g01",
+          "middle": 1,
+          "second_label": "g01",
+          "source": 1,
+          "target": 0
+        }
+      },
+      {
+        "endpoint_carrier_intersection": [
+          "b"
+        ],
+        "incoming_rank": 1,
+        "mechanism": "STRICT_WITHIN_CARRIER_IMAGE_KERNEL_CONTAINMENT",
+        "outgoing_rank": 1,
+        "product_rank": 0,
+        "route": {
+          "first_label": "g01",
+          "middle": 1,
+          "second_label": "h23",
+          "source": 1,
+          "target": 1
+        }
+      },
+      {
+        "endpoint_carrier_intersection": [
+          "b"
+        ],
+        "incoming_rank": 1,
+        "mechanism": "STRICT_WITHIN_CARRIER_IMAGE_KERNEL_CONTAINMENT",
+        "outgoing_rank": 1,
+        "product_rank": 0,
+        "route": {
+          "first_label": "h23",
+          "middle": 1,
+          "second_label": "g01",
+          "source": 1,
+          "target": 1
+        }
+      },
+      {
+        "endpoint_carrier_intersection": [
+          "b"
+        ],
+        "incoming_rank": 1,
+        "mechanism": "STRICT_WITHIN_CARRIER_IMAGE_KERNEL_CONTAINMENT",
+        "outgoing_rank": 1,
+        "product_rank": 0,
+        "route": {
+          "first_label": "h23",
+          "middle": 1,
+          "second_label": "h23",
+          "source": 1,
+          "target": 2
+        }
+      },
+      {
+        "endpoint_carrier_intersection": [
+          "b"
+        ],
+        "incoming_rank": 1,
+        "mechanism": "STRICT_WITHIN_CARRIER_IMAGE_KERNEL_CONTAINMENT",
+        "outgoing_rank": 1,
+        "product_rank": 0,
+        "route": {
+          "first_label": "h23",
+          "middle": 1,
+          "second_label": "g01",
+          "source": 2,
+          "target": 0
+        }
+      },
+      {
+        "endpoint_carrier_intersection": [
+          "b"
+        ],
+        "incoming_rank": 1,
+        "mechanism": "STRICT_WITHIN_CARRIER_IMAGE_KERNEL_CONTAINMENT",
+        "outgoing_rank": 1,
+        "product_rank": 0,
+        "route": {
+          "first_label": "h23",
+          "middle": 1,
+          "second_label": "h23",
+          "source": 2,
+          "target": 1
+        }
+      }
+    ],
+    "route_policy": "all source/middle/target sectors and all ordered transport-label pairs",
+    "strict_within_carrier_obstruction_count": 8,
+    "support_candidate_count": 24,
+    "total_labelled_route_count": 108
+  },
+  "known_nonclaims": [
+    "No frequency or genericity claim beyond the declared finite model.",
+    "No all-depth classification is inferred from the depth-two census.",
+    "No Rubik or finite-field route claim is certified by this artifact."
+  ],
+  "model": {
+    "carrier_count": 1,
+    "carrier_labels": [
+      "b"
+    ],
+    "dimension": 4,
+    "field": "Z interpreted in every field without coefficient collapse",
+    "sector_carrier_supports": [
+      [
+        "b"
+      ],
+      [
+        "b"
+      ],
+      [
+        "b"
+      ]
+    ],
+    "sector_dimensions": [
+      1,
+      2,
+      1
+    ],
+    "transport_labels": [
+      "g01",
+      "h23"
+    ],
+    "transport_semantics": {
+      "g01": "coordinate transposition (0 1)",
+      "h23": "coordinate transposition (2 3)"
+    }
+  },
+  "schema": "rime.carrier-accessibility.within-carrier-obstruction.v1",
+  "source_artifacts": [
+    {
+      "sha256": "614aa6542a6f0a61a5b93352f634d83544f50462b9d5178a6d4fe60cfb1acc58",
+      "uri": "experiments/paper20/within_carrier_census.py"
+    }
+  ],
+  "strongest_claim": "Complete exact depth-two census for the declared one-carrier model; every recorded obstruction has nonzero adjacent factors, shared endpoint carrier support, and exactly zero routed product."
+}

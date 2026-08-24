@@ -79,7 +79,8 @@ moving fields, or represented genericity.
 
 ## Repository Boundary
 
-The public documentation covers the Papers I--XV architecture. Author-side
-planning, exploratory research routing,
+The public documentation covers the published Papers I--XV architecture and
+the independently scoped Paper XX v1.0 mathematical line. Author-side planning,
+exploratory research routing,
 release migration status, and historical working notes are outside this public
 documentation index.

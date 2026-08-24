@@ -2,7 +2,8 @@
 
 This document is the public navigation map for the Representation-Induced
 Mechanics and Evolution (RIME) program. It identifies semantic ownership,
-typed interfaces, and promotion boundaries across Papers I--XV. It is not a
+typed interfaces and promotion boundaries across published Papers I--XV and
+the independently scoped Paper XX v1.0 theorem paper. It is not a
 proof document, release ledger, result record, or substitute for an owning
 manuscript.
 
@@ -84,6 +85,16 @@ that uniquely determines behavior.
 This table is thematic rather than sequential. A paper may import an object or
 certificate from another paper while retaining its own hypotheses and claim
 status.
+
+### Active post-protocol mathematics
+
+| Paper | Mathematical owner | Evidence boundary |
+|---|---|---|
+| XX | all-depth carrierwise factorization, survivor recursion, and arbitrary-depth image--kernel promotion and obstruction criteria | exact one-carrier census is a Computational Certificate; thresholded censuses remain bounded Computational Observations |
+
+Papers XVI--XIX are intentionally unused in the public numbered sequence;
+Paper XX begins an independently scoped mathematical line and does not extend
+the SOF protocol authority chain.
 
 ## 4. Active Typing and Promotion Rules
 
