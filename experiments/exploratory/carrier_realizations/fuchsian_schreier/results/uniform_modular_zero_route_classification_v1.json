@@ -1,0 +1,334 @@
+{
+  "schema": "rime.exploratory.fuchsian-schreier.uniform-modular-zero-route-classification.v1",
+  "bundle_id": "fuchsian-schreier.uniform-modular-zero-route-classification.v1",
+  "artifact_role": "EXPLORATORY_SYMBOLIC_FINITE_FIELD_CERTIFICATE",
+  "claim_status": "Computational Certificate plus symbolic proof record",
+  "paper_evidence_status": "NOT_PROMOTED",
+  "scope": {
+    "typed_contract": "(P^1(F_p), {S,R,R_inv}, {C0,C1}, label order (S,R,R_inv), two-step route semantics)",
+    "domain": "all odd primes, with exact replay sample",
+    "carrier": "P^1(F_p)",
+    "partition": "{infinity} disjoint union F_p, induced by T-orbits",
+    "alphabet": [
+      "S",
+      "R",
+      "R_inv"
+    ],
+    "metric": "length-two zero routed products among Boolean-supported routes"
+  },
+  "shape_exhaustion": {
+    "ordered_letter_pair_count": 9,
+    "candidate_shapes": [
+      [
+        1,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        1,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1
+      ]
+    ],
+    "candidate_count_factorization": "9 * 5 = 45",
+    "nonzero_shapes": [
+      [
+        1,
+        0,
+        1
+      ],
+      [
+        1,
+        1,
+        1
+      ]
+    ],
+    "potentially_zero_shapes": [
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        1,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        1
+      ]
+    ],
+    "zero_shape_contributions": {
+      "(0,1,0)": 4,
+      "(1,1,0)": 5,
+      "(0,1,1)": 5
+    },
+    "zero_count_decomposition": "4 + 5 + 5 = 14"
+  },
+  "modular_formulas": {
+    "S": {
+      "infinity": "0",
+      "finite": "S(x)=-x^{-1} for x != 0; S(0)=infinity"
+    },
+    "R": {
+      "infinity": "0",
+      "finite": "R(x)=-(x+1)^{-1} for x != -1; R(-1)=infinity"
+    },
+    "R_inv": {
+      "infinity": "-1",
+      "finite": "R_inv(x)=-1-x^{-1} for x != 0; R_inv(0)=infinity"
+    },
+    "poles": {
+      "S": "0",
+      "R": "-1",
+      "R_inv": "0"
+    }
+  },
+  "symbolic_zero_route_table": [
+    {
+      "word": [
+        "S",
+        "R"
+      ],
+      "route": [
+        0,
+        1,
+        0
+      ],
+      "condition": "R(S(infinity)) = R(0) = -1 in F_p; target infinity is missed"
+    },
+    {
+      "word": [
+        "R",
+        "R"
+      ],
+      "route": [
+        0,
+        1,
+        0
+      ],
+      "condition": "R(R(infinity)) = R(0) = -1 in F_p; target infinity is missed"
+    },
+    {
+      "word": [
+        "R_inv",
+        "S"
+      ],
+      "route": [
+        0,
+        1,
+        0
+      ],
+      "condition": "S(R_inv(infinity)) = S(-1) = 1 in F_p; target infinity is missed"
+    },
+    {
+      "word": [
+        "R_inv",
+        "R_inv"
+      ],
+      "route": [
+        0,
+        1,
+        0
+      ],
+      "condition": "R_inv(R_inv(infinity)) = R_inv(-1) = 0 in F_p; target infinity is missed"
+    },
+    {
+      "word": [
+        "S",
+        "S"
+      ],
+      "route": [
+        1,
+        1,
+        0
+      ],
+      "condition": "S(S(infinity)) = S(0) = infinity; finite target is missed"
+    },
+    {
+      "word": [
+        "S",
+        "R_inv"
+      ],
+      "route": [
+        1,
+        1,
+        0
+      ],
+      "condition": "R_inv(S(infinity)) = R_inv(0) = infinity; finite target is missed"
+    },
+    {
+      "word": [
+        "R",
+        "S"
+      ],
+      "route": [
+        1,
+        1,
+        0
+      ],
+      "condition": "S(R(infinity)) = S(0) = infinity; finite target is missed"
+    },
+    {
+      "word": [
+        "R",
+        "R_inv"
+      ],
+      "route": [
+        1,
+        1,
+        0
+      ],
+      "condition": "R_inv(R(infinity)) = R_inv(0) = infinity; finite target is missed"
+    },
+    {
+      "word": [
+        "R_inv",
+        "R"
+      ],
+      "route": [
+        1,
+        1,
+        0
+      ],
+      "condition": "R(R_inv(infinity)) = R(-1) = infinity; finite target is missed"
+    },
+    {
+      "word": [
+        "S",
+        "S"
+      ],
+      "route": [
+        0,
+        1,
+        1
+      ],
+      "condition": "S(x) = pole(S) = 0 has no x in F_p minus {0}"
+    },
+    {
+      "word": [
+        "S",
+        "R_inv"
+      ],
+      "route": [
+        0,
+        1,
+        1
+      ],
+      "condition": "S(x) = pole(R_inv) = 0 has no x in F_p minus {0}"
+    },
+    {
+      "word": [
+        "R",
+        "S"
+      ],
+      "route": [
+        0,
+        1,
+        1
+      ],
+      "condition": "R(x) = pole(S) = 0 has no x in F_p minus {-1}"
+    },
+    {
+      "word": [
+        "R",
+        "R_inv"
+      ],
+      "route": [
+        0,
+        1,
+        1
+      ],
+      "condition": "R(x) = pole(R_inv) = 0 has no x in F_p minus {-1}"
+    },
+    {
+      "word": [
+        "R_inv",
+        "R"
+      ],
+      "route": [
+        0,
+        1,
+        1
+      ],
+      "condition": "R_inv(x) = pole(R) = -1 reduces to 1/x = 0; no finite solution"
+    }
+  ],
+  "exact_replay_checks": [
+    {
+      "prime": 3,
+      "zero_count": 14,
+      "signature_matches_symbolic_table": true
+    },
+    {
+      "prime": 5,
+      "zero_count": 14,
+      "signature_matches_symbolic_table": true
+    },
+    {
+      "prime": 7,
+      "zero_count": 14,
+      "signature_matches_symbolic_table": true
+    },
+    {
+      "prime": 11,
+      "zero_count": 14,
+      "signature_matches_symbolic_table": true
+    },
+    {
+      "prime": 13,
+      "zero_count": 14,
+      "signature_matches_symbolic_table": true
+    },
+    {
+      "prime": 17,
+      "zero_count": 14,
+      "signature_matches_symbolic_table": true
+    },
+    {
+      "prime": 19,
+      "zero_count": 14,
+      "signature_matches_symbolic_table": true
+    },
+    {
+      "prime": 23,
+      "zero_count": 14,
+      "signature_matches_symbolic_table": true
+    },
+    {
+      "prime": 29,
+      "zero_count": 14,
+      "signature_matches_symbolic_table": true
+    }
+  ],
+  "all_replay_checks_pass": true,
+  "proof_boundary": [
+    "The symbolic classification proves p-independence for this declared carrier, partition, alphabet, and route semantics.",
+    "It does not prove p-independence for another representation or marked partition.",
+    "It does not identify an RG fixed point or an asymptotic limit."
+  ],
+  "implementation": {
+    "files": {
+      "experiments/exploratory/carrier_realizations/fuchsian_schreier/core.py": "f84c18f5ce35f9b0ab05169a783012a0e33b378ecb5058f52c2c6f6b5a7d500b",
+      "experiments/exploratory/carrier_realizations/fuchsian_schreier/uniform_modular_zero_route_classification.py": "1df5856d4325019d7f2232f569703acb26a2b7e6856061b6065fa680d92b452a"
+    },
+    "implementation_sha256": "516fece77773f4ffb706a68752d4c32c6281e7447da85dd04e43caa6d7e91447"
+  }
+}

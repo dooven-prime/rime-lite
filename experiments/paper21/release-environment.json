@@ -1,0 +1,11 @@
+{
+  "arithmetic_boundary": "Exact finite-field, integer, polynomial, and finite-enumeration computations; no floating-point result enters the theorem certificates.",
+  "environment_role": "RECORDED_RELEASE_REPLAY_ENVIRONMENT",
+  "lake": "5.0.0",
+  "lean": "4.33.0",
+  "lean_toolchain": "leanprover/lean4:v4.33.0",
+  "mathlib_revision": "db584cd6d46c92f209a44c0f1c829460d327499d",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": "3.13.0",
+  "status": "PINNED_FORMAL_TOOLCHAIN_AND_RECORDED_PYTHON_ENVIRONMENT"
+}

@@ -1,0 +1,259 @@
+{
+  "schema": "rime.exploratory.fuchsian-schreier.depth-three-zero-route-classification.v1",
+  "bundle_id": "fuchsian-schreier.depth-three-zero-route-classification.v1",
+  "artifact_role": "EXPLORATORY_SYMBOLIC_CLASSIFICATION_CERTIFICATE",
+  "claim_status": "Symbolic Classification plus Computational Certificate",
+  "paper_evidence_status": "NOT_PROMOTED",
+  "contract": "(P^1(F), (S,R,R_inv), {infinity} disjoint union F, source-to-target depth-three route semantics)",
+  "candidate_count": {
+    "ordered_word_count": 27,
+    "candidate_sector_shapes": [
+      "0101",
+      "0110",
+      "0111",
+      "1010",
+      "1011",
+      "1101",
+      "1110",
+      "1111"
+    ],
+    "candidate_count": 216,
+    "closed_form": "3^3 * F_6 = 27 * 8 = 216"
+  },
+  "closed_form_nonzero_criteria": {
+    "notation": {
+      "v_a": "a(infinity)",
+      "pi_a": "a^(-1)(infinity), the pole of a",
+      "e_ab": "b(v_a)"
+    },
+    "0101": "v_a = pi_b",
+    "0110": "v_a != pi_b and e_ab = pi_c",
+    "0111": "v_a != pi_b and e_ab != pi_c",
+    "1010": "v_b = pi_c",
+    "1011": "v_b != pi_c",
+    "1101": "v_a != pi_b",
+    "1110": "v_b != pi_c and e_ab != pi_c",
+    "1111": "there exists finite x with x != pi_a, a(x) != pi_b, and b(a(x)) != pi_c"
+  },
+  "classification": {
+    "F2": {
+      "zero_shape_histogram": {
+        "0101": 12,
+        "0110": 22,
+        "0111": 20,
+        "1010": 12,
+        "1011": 15,
+        "1101": 15,
+        "1110": 20,
+        "1111": 19
+      },
+      "zero_route_count": 135
+    },
+    "F3": {
+      "zero_shape_histogram": {
+        "0101": 12,
+        "0110": 23,
+        "0111": 19,
+        "1010": 12,
+        "1011": 15,
+        "1101": 15,
+        "1110": 19,
+        "1111": 1
+      },
+      "zero_route_count": 116
+    },
+    "CHARACTERISTIC_TWO_CARDINALITY_AT_LEAST_FOUR": {
+      "zero_shape_histogram": {
+        "0101": 12,
+        "0110": 22,
+        "0111": 20,
+        "1010": 12,
+        "1011": 15,
+        "1101": 15,
+        "1110": 20,
+        "1111": 0
+      },
+      "zero_route_count": 116
+    },
+    "ODD_CARDINALITY_AT_LEAST_FIVE": {
+      "zero_shape_histogram": {
+        "0101": 12,
+        "0110": 23,
+        "0111": 19,
+        "1010": 12,
+        "1011": 15,
+        "1101": 15,
+        "1110": 19,
+        "1111": 0
+      },
+      "zero_route_count": 115
+    }
+  },
+  "zero_route_count_closed_form": {
+    "formula": "|Z_3(F)| = 115 + 1_{char(F)=2} + 19*1_{|F|=2} + 1_{|F|=3}",
+    "candidate_denominator": 216,
+    "warning": "the scalar total does not determine the shape histogram"
+  },
+  "all_bulk_exception": {
+    "F3_unique_zero_word": [
+      "R_inv",
+      "S",
+      "R"
+    ],
+    "sector_path": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "reason": "the three forbidden finite preimages exhaust F3",
+    "cardinality_at_least_four": "at most three finite inputs are forbidden, so at least one witness remains",
+    "F2_nonzero_words": [
+      [
+        "S",
+        "S",
+        "S"
+      ],
+      [
+        "S",
+        "S",
+        "R_inv"
+      ],
+      [
+        "S",
+        "R_inv",
+        "R"
+      ],
+      [
+        "R",
+        "S",
+        "S"
+      ],
+      [
+        "R",
+        "S",
+        "R_inv"
+      ],
+      [
+        "R",
+        "R_inv",
+        "R"
+      ],
+      [
+        "R_inv",
+        "R",
+        "S"
+      ],
+      [
+        "R_inv",
+        "R",
+        "R_inv"
+      ]
+    ]
+  },
+  "exact_controls": {
+    "F2": {
+      "0101": 12,
+      "0110": 22,
+      "0111": 20,
+      "1010": 12,
+      "1011": 15,
+      "1101": 15,
+      "1110": 20,
+      "1111": 19
+    },
+    "F3": {
+      "0101": 12,
+      "0110": 23,
+      "0111": 19,
+      "1010": 12,
+      "1011": 15,
+      "1101": 15,
+      "1110": 19,
+      "1111": 1
+    },
+    "F5": {
+      "0101": 12,
+      "0110": 23,
+      "0111": 19,
+      "1010": 12,
+      "1011": 15,
+      "1101": 15,
+      "1110": 19,
+      "1111": 0
+    },
+    "F7": {
+      "0101": 12,
+      "0110": 23,
+      "0111": 19,
+      "1010": 12,
+      "1011": 15,
+      "1101": 15,
+      "1110": 19,
+      "1111": 0
+    },
+    "F4": {
+      "0101": 12,
+      "0110": 22,
+      "0111": 20,
+      "1010": 12,
+      "1011": 15,
+      "1101": 15,
+      "1110": 20,
+      "1111": 0
+    },
+    "F8": {
+      "0101": 12,
+      "0110": 22,
+      "0111": 20,
+      "1010": 12,
+      "1011": 15,
+      "1101": 15,
+      "1110": 20,
+      "1111": 0
+    },
+    "F9": {
+      "0101": 12,
+      "0110": 23,
+      "0111": 19,
+      "1010": 12,
+      "1011": 15,
+      "1101": 15,
+      "1110": 19,
+      "1111": 0
+    }
+  },
+  "all_exact_controls_pass": true,
+  "odd_prime_closed_form_replays": [
+    {
+      "prime": 3,
+      "checked_word_shape_pairs": 216,
+      "status": "PASS"
+    },
+    {
+      "prime": 5,
+      "checked_word_shape_pairs": 216,
+      "status": "PASS"
+    },
+    {
+      "prime": 7,
+      "checked_word_shape_pairs": 216,
+      "status": "PASS"
+    }
+  ],
+  "implementation": {
+    "arithmetic": "exact prime and polynomial finite-field arithmetic; no floating point",
+    "files": {
+      "experiments/exploratory/carrier_realizations/fuchsian_schreier/core.py": "f84c18f5ce35f9b0ab05169a783012a0e33b378ecb5058f52c2c6f6b5a7d500b",
+      "experiments/exploratory/carrier_realizations/fuchsian_schreier/uniform_finite_field_route_profile.py": "4307fc0a869a6470067699684c9143290131e71728bc309573ac4304184dd0e2",
+      "experiments/exploratory/carrier_realizations/fuchsian_schreier/depth_three_zero_route_classification.py": "705b8d668925e318bda59520d1c84eef8edca3033182149babb9f3811d21696b"
+    },
+    "implementation_sha256": "c64ce4982030ea5c6fab844572854a260a1e53ea2c42978c4606aa5985dd6bfc"
+  },
+  "boundary": [
+    "The classification is relative to the complete marked route contract.",
+    "The result is not an abstract group-presentation invariant.",
+    "No RG, Hecke, modular-form, or spectral zero-mode claim is made."
+  ],
+  "content_sha256": "ab5d3df79bbd31fa76275996660906d182a07f9cafb03900406c6695eadfe9a5"
+}

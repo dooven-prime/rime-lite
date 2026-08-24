@@ -1,0 +1,38 @@
+{
+  "artifact_id": "ROUTE-PROFILES-LEAN-V1-COMPILED",
+  "claim_boundary": {
+    "certifies": "source elaboration and theorem type checking for the declared paper-owned closure under pinned Lean and Mathlib versions",
+    "does_not_certify": [
+      "equivalence between Python replay and Lean theorem proofs",
+      "formal coverage of every manuscript theorem"
+    ]
+  },
+  "compiler_diagnostics": {
+    "error_count": 0,
+    "warning_count": 59
+  },
+  "content_sha256": "172b1ef801a738328e6aa4b95cbb0b06db98927ef2810423ee4680001feb6ba4",
+  "environment": {
+    "formalization_root_role": "PAPER_OWNED_SOURCE_CLOSURE",
+    "lake": "5.0.0",
+    "lean_toolchain": "leanprover/lean4:v4.33.0",
+    "mathlib_revision": "db584cd6d46c92f209a44c0f1c829460d327499d"
+  },
+  "receipt_kind": "LEAN_COMPILATION_RECEIPT",
+  "receipt_scope": "PAPER_OWNED_ROUTE_PROFILE_FORMALIZATION_COMPILATION",
+  "schema": "paper.route-profiles.lean-validation-receipt.v1",
+  "source_closure": {
+    "experiments/paper21/lean/FiniteFieldRouteProfiles.lean": "1edfc860edccae87a84ba712b482bf73a912277f79ab04a95bd672d371883e5c",
+    "experiments/paper21/lean/Formalization/UniformModularZeroRoute.lean": "15b053439a508c3dc7b1ea313c98e2d3fc652d73efe6507d3e6e09202cc797d9",
+    "experiments/paper21/lean/Formalization/UniformModularZeroRouteField.lean": "f115ede26e4eb03c8eb77c96388dfa5cb816fe5af663364bd171acf0de9fd711",
+    "experiments/paper21/lean/formalization-manifest.json": "d2f95593750ebd4583d6d83456567a4030ef8753d3b89b62eac85ce9e666a629",
+    "experiments/paper21/lean/lake-manifest.json": "ac06447ed3051f56abb8f58cb6992f45713ab2b5aa7c284059e22fd56267ce73",
+    "experiments/paper21/lean/lakefile.toml": "eccc0fbe79d9ea3cab550639c0947154d2ed0d23d75ef8c93520a9669e62794b",
+    "experiments/paper21/lean/lean-toolchain": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b"
+  },
+  "status": "PASS",
+  "validator": {
+    "path": "experiments/paper21/validation/validate_lean_formalization.py",
+    "sha256": "1e1f01a526273d6dea59d24997e5c30ab03753a3b57323d64b0d42f6e64e1cac"
+  }
+}

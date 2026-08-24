@@ -1,0 +1,46 @@
+{
+  "artifact": {
+    "artifact_sha256": "7c685cae2668d9f76ac74fabf25688d46e0c792cfe8e409d349a9fa14dfc5514",
+    "content_sha256": "8d5485b9118b75cb756c09cc797373556be934a80187a241cd6aece532a02a4b",
+    "path": "experiments/paper21/results/arbitrary_depth_semantic_v1.json"
+  },
+  "artifact_id": "ROUTE-PROFILES-ARBITRARY-DEPTH-V1-REPLAY",
+  "checks": [
+    "artifact identity and digest",
+    "arbitrary-depth theorem contract",
+    "prefix-pole semantic replay",
+    "legacy fixed-depth zero-route signature bridge",
+    "reachable-subset automaton closure",
+    "transfer counts and rational-series examples",
+    "finite exceptional-characteristic table",
+    "prefix determinant spectrum and generic profile",
+    "large-field stabilization count shadow",
+    "manuscript theorem anchors",
+    "nonclaim boundary",
+    "full producer replay",
+    "coordinated tamper rejection"
+  ],
+  "claim_boundary": {
+    "certifies": "exact artifact replay and declared finite construction checks",
+    "does_not_certify": [
+      "an independent proof of the manuscript theorems",
+      "Lean formalization of the arbitrary-depth theorem package",
+      "a universal field-independent automaton or rational function",
+      "an all-depth scalar zero-count formula or asymptotic growth law"
+    ]
+  },
+  "content_sha256": "7fb79633f79997ddab074cc4d1724713460d26c296c2ee634d5527d38f037c08",
+  "receipt_kind": "ARBITRARY_DEPTH_SEMANTIC_VALIDATION_RECEIPT",
+  "receipt_scope": "PAPER_OWNED_EXACT_REPLAY_NOT_INDEPENDENT_PROOF",
+  "schema": "paper.route-profiles.arbitrary-depth-validation-receipt.v1",
+  "source_closure": {
+    "experiments/paper21/arbitrary_depth_semantic.py": "e3a7d435bd07ac5dabbd47c25162c11dcd1a48033feee958f5d8bdf823fb2961",
+    "experiments/paper21/validation/validate_arbitrary_depth_semantic.py": "13f97eb1a8aaabbeb69a0f2990869a2c79f6e514de604a46a5b053071ad82f33",
+    "papers/paper21/Paper XXI.md": "00e220b36daed9d0c3bba13f87cb987c66bbf25cfbf99c6b2ef4b91f0eb090ef"
+  },
+  "status": "PASS",
+  "validator": {
+    "path": "experiments/paper21/validation/validate_arbitrary_depth_semantic.py",
+    "validator_id": "paper.route-profiles.arbitrary-depth-validator.python.v1"
+  }
+}

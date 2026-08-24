@@ -1,0 +1,1406 @@
+{
+  "artifact_id": "ROUTE-PROFILES-ARBITRARY-DEPTH-V1",
+  "artifact_role": "PAPER_OWNED_ARBITRARY_DEPTH_SEMANTIC_REPLAY",
+  "claim_boundary": {
+    "certifies": "exact replay of the declared finite checks and construction data; the manuscript owns the general proofs",
+    "does_not_certify": [
+      "a field-independent finite automaton or uniform state bound",
+      "a single rational generating function valid for every finite field",
+      "an all-depth closed scalar formula for zero routes",
+      "a closed form or recurrence for the prefix determinant spectra",
+      "depth-asymptotic convergence or a growth constant",
+      "RG, Hecke, modular-form, spectral, or causal interpretation"
+    ]
+  },
+  "claim_status": "MANUSCRIPT_THEOREMS_WITH_EXACT_FINITE_REPLAY",
+  "content_sha256": "8d5485b9118b75cb756c09cc797373556be934a80187a241cd6aece532a02a4b",
+  "exceptional_characteristics": [
+    {
+      "depth": 1,
+      "distinct_prefix_pole_class_sum": 6,
+      "exceptional_characteristics": [],
+      "generic_nonzero_route_count": 9,
+      "generic_zero_route_count": 0,
+      "maximum_integral_matrix_entry": 1,
+      "nonzero_determinants_factored": 3,
+      "prefix_determinant_spectrum": [
+        1
+      ],
+      "prefix_determinant_spectrum_cardinality": 1,
+      "prefix_pole_determinants_checked": 3,
+      "word_count": 3
+    },
+    {
+      "depth": 2,
+      "distinct_prefix_pole_class_sum": 22,
+      "exceptional_characteristics": [],
+      "generic_nonzero_route_count": 31,
+      "generic_zero_route_count": 14,
+      "maximum_integral_matrix_entry": 1,
+      "nonzero_determinants_factored": 22,
+      "prefix_determinant_spectrum": [
+        1
+      ],
+      "prefix_determinant_spectrum_cardinality": 1,
+      "prefix_pole_determinants_checked": 27,
+      "word_count": 9
+    },
+    {
+      "depth": 3,
+      "distinct_prefix_pole_class_sum": 74,
+      "exceptional_characteristics": [
+        2
+      ],
+      "generic_nonzero_route_count": 101,
+      "generic_zero_route_count": 115,
+      "maximum_integral_matrix_entry": 2,
+      "nonzero_determinants_factored": 128,
+      "prefix_determinant_spectrum": [
+        1,
+        2
+      ],
+      "prefix_determinant_spectrum_cardinality": 2,
+      "prefix_pole_determinants_checked": 162,
+      "word_count": 27
+    },
+    {
+      "depth": 4,
+      "distinct_prefix_pole_class_sum": 240,
+      "exceptional_characteristics": [
+        2
+      ],
+      "generic_nonzero_route_count": 321,
+      "generic_zero_route_count": 732,
+      "maximum_integral_matrix_entry": 2,
+      "nonzero_determinants_factored": 620,
+      "prefix_determinant_spectrum": [
+        1,
+        2
+      ],
+      "prefix_determinant_spectrum_cardinality": 2,
+      "prefix_pole_determinants_checked": 810,
+      "word_count": 81
+    },
+    {
+      "depth": 5,
+      "distinct_prefix_pole_class_sum": 766,
+      "exceptional_characteristics": [
+        2,
+        3
+      ],
+      "generic_nonzero_route_count": 1009,
+      "generic_zero_route_count": 4094,
+      "maximum_integral_matrix_entry": 3,
+      "nonzero_determinants_factored": 2763,
+      "prefix_determinant_spectrum": [
+        1,
+        2,
+        3
+      ],
+      "prefix_determinant_spectrum_cardinality": 3,
+      "prefix_pole_determinants_checked": 3645,
+      "word_count": 243
+    },
+    {
+      "depth": 6,
+      "distinct_prefix_pole_class_sum": 2422,
+      "exceptional_characteristics": [
+        2,
+        3
+      ],
+      "generic_nonzero_route_count": 3151,
+      "generic_zero_route_count": 21635,
+      "maximum_integral_matrix_entry": 3,
+      "nonzero_determinants_factored": 11512,
+      "prefix_determinant_spectrum": [
+        1,
+        2,
+        3
+      ],
+      "prefix_determinant_spectrum_cardinality": 3,
+      "prefix_pole_determinants_checked": 15309,
+      "word_count": 729
+    },
+    {
+      "depth": 7,
+      "distinct_prefix_pole_class_sum": 7612,
+      "exceptional_characteristics": [
+        2,
+        3,
+        5
+      ],
+      "generic_nonzero_route_count": 9799,
+      "generic_zero_route_count": 110486,
+      "maximum_integral_matrix_entry": 5,
+      "nonzero_determinants_factored": 45938,
+      "prefix_determinant_spectrum": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "prefix_determinant_spectrum_cardinality": 5,
+      "prefix_pole_determinants_checked": 61236,
+      "word_count": 2187
+    },
+    {
+      "depth": 8,
+      "distinct_prefix_pole_class_sum": 23818,
+      "exceptional_characteristics": [
+        2,
+        3,
+        5
+      ],
+      "generic_nonzero_route_count": 30379,
+      "generic_zero_route_count": 553550,
+      "maximum_integral_matrix_entry": 5,
+      "nonzero_determinants_factored": 176970,
+      "prefix_determinant_spectrum": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "prefix_determinant_spectrum_cardinality": 5,
+      "prefix_pole_determinants_checked": 236196,
+      "word_count": 6561
+    },
+    {
+      "depth": 9,
+      "distinct_prefix_pole_class_sum": 74274,
+      "exceptional_characteristics": [
+        2,
+        3,
+        5,
+        7
+      ],
+      "generic_nonzero_route_count": 93957,
+      "generic_zero_route_count": 2740395,
+      "maximum_integral_matrix_entry": 8,
+      "nonzero_determinants_factored": 664083,
+      "prefix_determinant_spectrum": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8
+      ],
+      "prefix_determinant_spectrum_cardinality": 7,
+      "prefix_pole_determinants_checked": 885735,
+      "word_count": 19683
+    },
+    {
+      "depth": 10,
+      "distinct_prefix_pole_class_sum": 230980,
+      "exceptional_characteristics": [
+        2,
+        3,
+        5,
+        7
+      ],
+      "generic_nonzero_route_count": 290029,
+      "generic_zero_route_count": 13468388,
+      "maximum_integral_matrix_entry": 8,
+      "nonzero_determinants_factored": 2438152,
+      "prefix_determinant_spectrum": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8
+      ],
+      "prefix_determinant_spectrum_cardinality": 7,
+      "prefix_pole_determinants_checked": 3247695,
+      "word_count": 59049
+    }
+  ],
+  "fixed_depth_signature_bridge": {
+    "max_depth": 5,
+    "primes": [
+      2,
+      3,
+      5,
+      7,
+      11,
+      13
+    ],
+    "profiles": [
+      {
+        "prime": 2,
+        "profiles": [
+          {
+            "candidate_count": 9,
+            "depth": 1,
+            "nonzero_count": 9,
+            "zero_count": 0,
+            "zero_route_signature": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+          },
+          {
+            "candidate_count": 45,
+            "depth": 2,
+            "nonzero_count": 27,
+            "zero_count": 18,
+            "zero_route_signature": "9c5558171c308481c535cc11efbb997d620bf72848e74a33747930feb01231ca"
+          },
+          {
+            "candidate_count": 216,
+            "depth": 3,
+            "nonzero_count": 81,
+            "zero_count": 135,
+            "zero_route_signature": "6bcc47a3788b480399ace3e3b6f37355beedb960c904c65d9a171b962f1f1ee5"
+          },
+          {
+            "candidate_count": 1053,
+            "depth": 4,
+            "nonzero_count": 243,
+            "zero_count": 810,
+            "zero_route_signature": "ae00dd323f1a2953eb758ed48390e9a22f01059df393f8e0d04ba1228f1c4213"
+          },
+          {
+            "candidate_count": 5103,
+            "depth": 5,
+            "nonzero_count": 729,
+            "zero_count": 4374,
+            "zero_route_signature": "bf807aedfc609a9479384600c130eaa4549a4568165f6e834f48425dd2e71749"
+          }
+        ]
+      },
+      {
+        "prime": 3,
+        "profiles": [
+          {
+            "candidate_count": 9,
+            "depth": 1,
+            "nonzero_count": 9,
+            "zero_count": 0,
+            "zero_route_signature": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+          },
+          {
+            "candidate_count": 45,
+            "depth": 2,
+            "nonzero_count": 31,
+            "zero_count": 14,
+            "zero_route_signature": "da89f9e844f8d006862dd1a27315655faa1a85c75c97d35f9d1c478b9fd0a5c8"
+          },
+          {
+            "candidate_count": 216,
+            "depth": 3,
+            "nonzero_count": 100,
+            "zero_count": 116,
+            "zero_route_signature": "b26b345e872d383a8e8e7274aea97db19facde76fc66843cdf7758008de1dba2"
+          },
+          {
+            "candidate_count": 1053,
+            "depth": 4,
+            "nonzero_count": 311,
+            "zero_count": 742,
+            "zero_route_signature": "2976f29df2794241cb0d6a1b6c6782934a8c58de146f0e91fbf4006bde906442"
+          },
+          {
+            "candidate_count": 5103,
+            "depth": 5,
+            "nonzero_count": 951,
+            "zero_count": 4152,
+            "zero_route_signature": "9291d084ddf589969c12fca2d8fc6e921d13354cb6f2bd1092a24666916eeefc"
+          }
+        ]
+      },
+      {
+        "prime": 5,
+        "profiles": [
+          {
+            "candidate_count": 9,
+            "depth": 1,
+            "nonzero_count": 9,
+            "zero_count": 0,
+            "zero_route_signature": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+          },
+          {
+            "candidate_count": 45,
+            "depth": 2,
+            "nonzero_count": 31,
+            "zero_count": 14,
+            "zero_route_signature": "da89f9e844f8d006862dd1a27315655faa1a85c75c97d35f9d1c478b9fd0a5c8"
+          },
+          {
+            "candidate_count": 216,
+            "depth": 3,
+            "nonzero_count": 101,
+            "zero_count": 115,
+            "zero_route_signature": "fcd067f09a482c655734ae6e599943d21bc95bcaa890e59a84d016a362ca1912"
+          },
+          {
+            "candidate_count": 1053,
+            "depth": 4,
+            "nonzero_count": 321,
+            "zero_count": 732,
+            "zero_route_signature": "0e3bf03e02ea7a35e084efb5cae4585a88519d2085b7ea4bda40e38c050aa9db"
+          },
+          {
+            "candidate_count": 5103,
+            "depth": 5,
+            "nonzero_count": 1009,
+            "zero_count": 4094,
+            "zero_route_signature": "288f324b54560426faaeb6b223185f7ea1d74e46f68e0aa2eb6fe00f7dd76ed5"
+          }
+        ]
+      },
+      {
+        "prime": 7,
+        "profiles": [
+          {
+            "candidate_count": 9,
+            "depth": 1,
+            "nonzero_count": 9,
+            "zero_count": 0,
+            "zero_route_signature": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+          },
+          {
+            "candidate_count": 45,
+            "depth": 2,
+            "nonzero_count": 31,
+            "zero_count": 14,
+            "zero_route_signature": "da89f9e844f8d006862dd1a27315655faa1a85c75c97d35f9d1c478b9fd0a5c8"
+          },
+          {
+            "candidate_count": 216,
+            "depth": 3,
+            "nonzero_count": 101,
+            "zero_count": 115,
+            "zero_route_signature": "fcd067f09a482c655734ae6e599943d21bc95bcaa890e59a84d016a362ca1912"
+          },
+          {
+            "candidate_count": 1053,
+            "depth": 4,
+            "nonzero_count": 321,
+            "zero_count": 732,
+            "zero_route_signature": "0e3bf03e02ea7a35e084efb5cae4585a88519d2085b7ea4bda40e38c050aa9db"
+          },
+          {
+            "candidate_count": 5103,
+            "depth": 5,
+            "nonzero_count": 1009,
+            "zero_count": 4094,
+            "zero_route_signature": "288f324b54560426faaeb6b223185f7ea1d74e46f68e0aa2eb6fe00f7dd76ed5"
+          }
+        ]
+      },
+      {
+        "prime": 11,
+        "profiles": [
+          {
+            "candidate_count": 9,
+            "depth": 1,
+            "nonzero_count": 9,
+            "zero_count": 0,
+            "zero_route_signature": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+          },
+          {
+            "candidate_count": 45,
+            "depth": 2,
+            "nonzero_count": 31,
+            "zero_count": 14,
+            "zero_route_signature": "da89f9e844f8d006862dd1a27315655faa1a85c75c97d35f9d1c478b9fd0a5c8"
+          },
+          {
+            "candidate_count": 216,
+            "depth": 3,
+            "nonzero_count": 101,
+            "zero_count": 115,
+            "zero_route_signature": "fcd067f09a482c655734ae6e599943d21bc95bcaa890e59a84d016a362ca1912"
+          },
+          {
+            "candidate_count": 1053,
+            "depth": 4,
+            "nonzero_count": 321,
+            "zero_count": 732,
+            "zero_route_signature": "0e3bf03e02ea7a35e084efb5cae4585a88519d2085b7ea4bda40e38c050aa9db"
+          },
+          {
+            "candidate_count": 5103,
+            "depth": 5,
+            "nonzero_count": 1009,
+            "zero_count": 4094,
+            "zero_route_signature": "288f324b54560426faaeb6b223185f7ea1d74e46f68e0aa2eb6fe00f7dd76ed5"
+          }
+        ]
+      },
+      {
+        "prime": 13,
+        "profiles": [
+          {
+            "candidate_count": 9,
+            "depth": 1,
+            "nonzero_count": 9,
+            "zero_count": 0,
+            "zero_route_signature": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+          },
+          {
+            "candidate_count": 45,
+            "depth": 2,
+            "nonzero_count": 31,
+            "zero_count": 14,
+            "zero_route_signature": "da89f9e844f8d006862dd1a27315655faa1a85c75c97d35f9d1c478b9fd0a5c8"
+          },
+          {
+            "candidate_count": 216,
+            "depth": 3,
+            "nonzero_count": 101,
+            "zero_count": 115,
+            "zero_route_signature": "fcd067f09a482c655734ae6e599943d21bc95bcaa890e59a84d016a362ca1912"
+          },
+          {
+            "candidate_count": 1053,
+            "depth": 4,
+            "nonzero_count": 321,
+            "zero_count": 732,
+            "zero_route_signature": "0e3bf03e02ea7a35e084efb5cae4585a88519d2085b7ea4bda40e38c050aa9db"
+          },
+          {
+            "candidate_count": 5103,
+            "depth": 5,
+            "nonzero_count": 1009,
+            "zero_count": 4094,
+            "zero_route_signature": "288f324b54560426faaeb6b223185f7ea1d74e46f68e0aa2eb6fe00f7dd76ed5"
+          }
+        ]
+      }
+    ]
+  },
+  "fixed_field_automata": [
+    {
+      "ambient_state_bound": 6,
+      "prime": 2,
+      "profiles": [
+        {
+          "candidate_count": 2,
+          "depth": 0,
+          "nonzero_count": 2,
+          "zero_count": 0
+        },
+        {
+          "candidate_count": 9,
+          "depth": 1,
+          "nonzero_count": 9,
+          "zero_count": 0
+        },
+        {
+          "candidate_count": 45,
+          "depth": 2,
+          "nonzero_count": 27,
+          "zero_count": 18
+        },
+        {
+          "candidate_count": 216,
+          "depth": 3,
+          "nonzero_count": 81,
+          "zero_count": 135
+        },
+        {
+          "candidate_count": 1053,
+          "depth": 4,
+          "nonzero_count": 243,
+          "zero_count": 810
+        },
+        {
+          "candidate_count": 5103,
+          "depth": 5,
+          "nonzero_count": 729,
+          "zero_count": 4374
+        },
+        {
+          "candidate_count": 24786,
+          "depth": 6,
+          "nonzero_count": 2187,
+          "zero_count": 22599
+        },
+        {
+          "candidate_count": 120285,
+          "depth": 7,
+          "nonzero_count": 6561,
+          "zero_count": 113724
+        },
+        {
+          "candidate_count": 583929,
+          "depth": 8,
+          "nonzero_count": 19683,
+          "zero_count": 564246
+        },
+        {
+          "candidate_count": 2834352,
+          "depth": 9,
+          "nonzero_count": 59049,
+          "zero_count": 2775303
+        },
+        {
+          "candidate_count": 13758417,
+          "depth": 10,
+          "nonzero_count": 177147,
+          "zero_count": 13581270
+        }
+      ],
+      "reachable_state_count": 6,
+      "state_histogram": {
+        "sector_0_card_0": 1,
+        "sector_0_card_1": 1,
+        "sector_1_card_0": 1,
+        "sector_1_card_1": 2,
+        "sector_1_card_2": 1
+      }
+    },
+    {
+      "ambient_state_bound": 10,
+      "prime": 3,
+      "profiles": [
+        {
+          "candidate_count": 2,
+          "depth": 0,
+          "nonzero_count": 2,
+          "zero_count": 0
+        },
+        {
+          "candidate_count": 9,
+          "depth": 1,
+          "nonzero_count": 9,
+          "zero_count": 0
+        },
+        {
+          "candidate_count": 45,
+          "depth": 2,
+          "nonzero_count": 31,
+          "zero_count": 14
+        },
+        {
+          "candidate_count": 216,
+          "depth": 3,
+          "nonzero_count": 100,
+          "zero_count": 116
+        },
+        {
+          "candidate_count": 1053,
+          "depth": 4,
+          "nonzero_count": 311,
+          "zero_count": 742
+        },
+        {
+          "candidate_count": 5103,
+          "depth": 5,
+          "nonzero_count": 951,
+          "zero_count": 4152
+        },
+        {
+          "candidate_count": 24786,
+          "depth": 6,
+          "nonzero_count": 2882,
+          "zero_count": 21904
+        },
+        {
+          "candidate_count": 120285,
+          "depth": 7,
+          "nonzero_count": 8693,
+          "zero_count": 111592
+        },
+        {
+          "candidate_count": 583929,
+          "depth": 8,
+          "nonzero_count": 26155,
+          "zero_count": 557774
+        },
+        {
+          "candidate_count": 2834352,
+          "depth": 9,
+          "nonzero_count": 78588,
+          "zero_count": 2755764
+        },
+        {
+          "candidate_count": 13758417,
+          "depth": 10,
+          "nonzero_count": 235963,
+          "zero_count": 13522454
+        }
+      ],
+      "reachable_state_count": 9,
+      "state_histogram": {
+        "sector_0_card_0": 1,
+        "sector_0_card_1": 1,
+        "sector_1_card_0": 1,
+        "sector_1_card_1": 3,
+        "sector_1_card_2": 2,
+        "sector_1_card_3": 1
+      }
+    },
+    {
+      "ambient_state_bound": 34,
+      "prime": 5,
+      "profiles": [
+        {
+          "candidate_count": 2,
+          "depth": 0,
+          "nonzero_count": 2,
+          "zero_count": 0
+        },
+        {
+          "candidate_count": 9,
+          "depth": 1,
+          "nonzero_count": 9,
+          "zero_count": 0
+        },
+        {
+          "candidate_count": 45,
+          "depth": 2,
+          "nonzero_count": 31,
+          "zero_count": 14
+        },
+        {
+          "candidate_count": 216,
+          "depth": 3,
+          "nonzero_count": 101,
+          "zero_count": 115
+        },
+        {
+          "candidate_count": 1053,
+          "depth": 4,
+          "nonzero_count": 321,
+          "zero_count": 732
+        },
+        {
+          "candidate_count": 5103,
+          "depth": 5,
+          "nonzero_count": 1009,
+          "zero_count": 4094
+        },
+        {
+          "candidate_count": 24786,
+          "depth": 6,
+          "nonzero_count": 3151,
+          "zero_count": 21635
+        },
+        {
+          "candidate_count": 120285,
+          "depth": 7,
+          "nonzero_count": 9795,
+          "zero_count": 110490
+        },
+        {
+          "candidate_count": 583929,
+          "depth": 8,
+          "nonzero_count": 30331,
+          "zero_count": 553598
+        },
+        {
+          "candidate_count": 2834352,
+          "depth": 9,
+          "nonzero_count": 93609,
+          "zero_count": 2740743
+        },
+        {
+          "candidate_count": 13758417,
+          "depth": 10,
+          "nonzero_count": 288035,
+          "zero_count": 13470382
+        }
+      ],
+      "reachable_state_count": 21,
+      "state_histogram": {
+        "sector_0_card_0": 1,
+        "sector_0_card_1": 1,
+        "sector_1_card_0": 1,
+        "sector_1_card_1": 5,
+        "sector_1_card_2": 7,
+        "sector_1_card_3": 3,
+        "sector_1_card_4": 2,
+        "sector_1_card_5": 1
+      }
+    },
+    {
+      "ambient_state_bound": 130,
+      "prime": 7,
+      "profiles": [
+        {
+          "candidate_count": 2,
+          "depth": 0,
+          "nonzero_count": 2,
+          "zero_count": 0
+        },
+        {
+          "candidate_count": 9,
+          "depth": 1,
+          "nonzero_count": 9,
+          "zero_count": 0
+        },
+        {
+          "candidate_count": 45,
+          "depth": 2,
+          "nonzero_count": 31,
+          "zero_count": 14
+        },
+        {
+          "candidate_count": 216,
+          "depth": 3,
+          "nonzero_count": 101,
+          "zero_count": 115
+        },
+        {
+          "candidate_count": 1053,
+          "depth": 4,
+          "nonzero_count": 321,
+          "zero_count": 732
+        },
+        {
+          "candidate_count": 5103,
+          "depth": 5,
+          "nonzero_count": 1009,
+          "zero_count": 4094
+        },
+        {
+          "candidate_count": 24786,
+          "depth": 6,
+          "nonzero_count": 3151,
+          "zero_count": 21635
+        },
+        {
+          "candidate_count": 120285,
+          "depth": 7,
+          "nonzero_count": 9799,
+          "zero_count": 110486
+        },
+        {
+          "candidate_count": 583929,
+          "depth": 8,
+          "nonzero_count": 30379,
+          "zero_count": 553550
+        },
+        {
+          "candidate_count": 2834352,
+          "depth": 9,
+          "nonzero_count": 93953,
+          "zero_count": 2740399
+        },
+        {
+          "candidate_count": 13758417,
+          "depth": 10,
+          "nonzero_count": 289977,
+          "zero_count": 13468440
+        }
+      ],
+      "reachable_state_count": 60,
+      "state_histogram": {
+        "sector_0_card_0": 1,
+        "sector_0_card_1": 1,
+        "sector_1_card_0": 1,
+        "sector_1_card_1": 7,
+        "sector_1_card_2": 18,
+        "sector_1_card_3": 19,
+        "sector_1_card_4": 7,
+        "sector_1_card_5": 3,
+        "sector_1_card_6": 2,
+        "sector_1_card_7": 1
+      }
+    },
+    {
+      "ambient_state_bound": 2050,
+      "prime": 11,
+      "profiles": [
+        {
+          "candidate_count": 2,
+          "depth": 0,
+          "nonzero_count": 2,
+          "zero_count": 0
+        },
+        {
+          "candidate_count": 9,
+          "depth": 1,
+          "nonzero_count": 9,
+          "zero_count": 0
+        },
+        {
+          "candidate_count": 45,
+          "depth": 2,
+          "nonzero_count": 31,
+          "zero_count": 14
+        },
+        {
+          "candidate_count": 216,
+          "depth": 3,
+          "nonzero_count": 101,
+          "zero_count": 115
+        },
+        {
+          "candidate_count": 1053,
+          "depth": 4,
+          "nonzero_count": 321,
+          "zero_count": 732
+        },
+        {
+          "candidate_count": 5103,
+          "depth": 5,
+          "nonzero_count": 1009,
+          "zero_count": 4094
+        },
+        {
+          "candidate_count": 24786,
+          "depth": 6,
+          "nonzero_count": 3151,
+          "zero_count": 21635
+        },
+        {
+          "candidate_count": 120285,
+          "depth": 7,
+          "nonzero_count": 9799,
+          "zero_count": 110486
+        },
+        {
+          "candidate_count": 583929,
+          "depth": 8,
+          "nonzero_count": 30379,
+          "zero_count": 553550
+        },
+        {
+          "candidate_count": 2834352,
+          "depth": 9,
+          "nonzero_count": 93957,
+          "zero_count": 2740395
+        },
+        {
+          "candidate_count": 13758417,
+          "depth": 10,
+          "nonzero_count": 290029,
+          "zero_count": 13468388
+        }
+      ],
+      "reachable_state_count": 606,
+      "state_histogram": {
+        "sector_0_card_0": 1,
+        "sector_0_card_1": 1,
+        "sector_1_card_0": 1,
+        "sector_1_card_1": 11,
+        "sector_1_card_10": 2,
+        "sector_1_card_11": 1,
+        "sector_1_card_2": 52,
+        "sector_1_card_3": 137,
+        "sector_1_card_4": 189,
+        "sector_1_card_5": 126,
+        "sector_1_card_6": 56,
+        "sector_1_card_7": 19,
+        "sector_1_card_8": 7,
+        "sector_1_card_9": 3
+      }
+    },
+    {
+      "ambient_state_bound": 8194,
+      "prime": 13,
+      "profiles": [
+        {
+          "candidate_count": 2,
+          "depth": 0,
+          "nonzero_count": 2,
+          "zero_count": 0
+        },
+        {
+          "candidate_count": 9,
+          "depth": 1,
+          "nonzero_count": 9,
+          "zero_count": 0
+        },
+        {
+          "candidate_count": 45,
+          "depth": 2,
+          "nonzero_count": 31,
+          "zero_count": 14
+        },
+        {
+          "candidate_count": 216,
+          "depth": 3,
+          "nonzero_count": 101,
+          "zero_count": 115
+        },
+        {
+          "candidate_count": 1053,
+          "depth": 4,
+          "nonzero_count": 321,
+          "zero_count": 732
+        },
+        {
+          "candidate_count": 5103,
+          "depth": 5,
+          "nonzero_count": 1009,
+          "zero_count": 4094
+        },
+        {
+          "candidate_count": 24786,
+          "depth": 6,
+          "nonzero_count": 3151,
+          "zero_count": 21635
+        },
+        {
+          "candidate_count": 120285,
+          "depth": 7,
+          "nonzero_count": 9799,
+          "zero_count": 110486
+        },
+        {
+          "candidate_count": 583929,
+          "depth": 8,
+          "nonzero_count": 30379,
+          "zero_count": 553550
+        },
+        {
+          "candidate_count": 2834352,
+          "depth": 9,
+          "nonzero_count": 93957,
+          "zero_count": 2740395
+        },
+        {
+          "candidate_count": 13758417,
+          "depth": 10,
+          "nonzero_count": 290029,
+          "zero_count": 13468388
+        }
+      ],
+      "reachable_state_count": 1918,
+      "state_histogram": {
+        "sector_0_card_0": 1,
+        "sector_0_card_1": 1,
+        "sector_1_card_0": 1,
+        "sector_1_card_1": 13,
+        "sector_1_card_10": 7,
+        "sector_1_card_11": 3,
+        "sector_1_card_12": 2,
+        "sector_1_card_13": 1,
+        "sector_1_card_2": 75,
+        "sector_1_card_3": 252,
+        "sector_1_card_4": 479,
+        "sector_1_card_5": 519,
+        "sector_1_card_6": 339,
+        "sector_1_card_7": 150,
+        "sector_1_card_8": 56,
+        "sector_1_card_9": 19
+      }
+    },
+    {
+      "ambient_state_bound": 131074,
+      "prime": 17,
+      "profiles": [
+        {
+          "candidate_count": 2,
+          "depth": 0,
+          "nonzero_count": 2,
+          "zero_count": 0
+        },
+        {
+          "candidate_count": 9,
+          "depth": 1,
+          "nonzero_count": 9,
+          "zero_count": 0
+        },
+        {
+          "candidate_count": 45,
+          "depth": 2,
+          "nonzero_count": 31,
+          "zero_count": 14
+        },
+        {
+          "candidate_count": 216,
+          "depth": 3,
+          "nonzero_count": 101,
+          "zero_count": 115
+        },
+        {
+          "candidate_count": 1053,
+          "depth": 4,
+          "nonzero_count": 321,
+          "zero_count": 732
+        },
+        {
+          "candidate_count": 5103,
+          "depth": 5,
+          "nonzero_count": 1009,
+          "zero_count": 4094
+        },
+        {
+          "candidate_count": 24786,
+          "depth": 6,
+          "nonzero_count": 3151,
+          "zero_count": 21635
+        },
+        {
+          "candidate_count": 120285,
+          "depth": 7,
+          "nonzero_count": 9799,
+          "zero_count": 110486
+        },
+        {
+          "candidate_count": 583929,
+          "depth": 8,
+          "nonzero_count": 30379,
+          "zero_count": 553550
+        },
+        {
+          "candidate_count": 2834352,
+          "depth": 9,
+          "nonzero_count": 93957,
+          "zero_count": 2740395
+        },
+        {
+          "candidate_count": 13758417,
+          "depth": 10,
+          "nonzero_count": 290029,
+          "zero_count": 13468388
+        }
+      ],
+      "reachable_state_count": 24518,
+      "state_histogram": {
+        "sector_0_card_0": 1,
+        "sector_0_card_1": 1,
+        "sector_1_card_0": 1,
+        "sector_1_card_1": 17,
+        "sector_1_card_10": 503,
+        "sector_1_card_11": 174,
+        "sector_1_card_12": 56,
+        "sector_1_card_13": 19,
+        "sector_1_card_14": 7,
+        "sector_1_card_15": 3,
+        "sector_1_card_16": 2,
+        "sector_1_card_17": 1,
+        "sector_1_card_2": 133,
+        "sector_1_card_3": 634,
+        "sector_1_card_4": 2050,
+        "sector_1_card_5": 4679,
+        "sector_1_card_6": 6670,
+        "sector_1_card_7": 5342,
+        "sector_1_card_8": 2924,
+        "sector_1_card_9": 1301
+      }
+    },
+    {
+      "ambient_state_bound": 524290,
+      "prime": 19,
+      "profiles": [
+        {
+          "candidate_count": 2,
+          "depth": 0,
+          "nonzero_count": 2,
+          "zero_count": 0
+        },
+        {
+          "candidate_count": 9,
+          "depth": 1,
+          "nonzero_count": 9,
+          "zero_count": 0
+        },
+        {
+          "candidate_count": 45,
+          "depth": 2,
+          "nonzero_count": 31,
+          "zero_count": 14
+        },
+        {
+          "candidate_count": 216,
+          "depth": 3,
+          "nonzero_count": 101,
+          "zero_count": 115
+        },
+        {
+          "candidate_count": 1053,
+          "depth": 4,
+          "nonzero_count": 321,
+          "zero_count": 732
+        },
+        {
+          "candidate_count": 5103,
+          "depth": 5,
+          "nonzero_count": 1009,
+          "zero_count": 4094
+        },
+        {
+          "candidate_count": 24786,
+          "depth": 6,
+          "nonzero_count": 3151,
+          "zero_count": 21635
+        },
+        {
+          "candidate_count": 120285,
+          "depth": 7,
+          "nonzero_count": 9799,
+          "zero_count": 110486
+        },
+        {
+          "candidate_count": 583929,
+          "depth": 8,
+          "nonzero_count": 30379,
+          "zero_count": 553550
+        },
+        {
+          "candidate_count": 2834352,
+          "depth": 9,
+          "nonzero_count": 93957,
+          "zero_count": 2740395
+        },
+        {
+          "candidate_count": 13758417,
+          "depth": 10,
+          "nonzero_count": 290029,
+          "zero_count": 13468388
+        }
+      ],
+      "reachable_state_count": 85185,
+      "state_histogram": {
+        "sector_0_card_0": 1,
+        "sector_0_card_1": 1,
+        "sector_1_card_0": 1,
+        "sector_1_card_1": 19,
+        "sector_1_card_10": 3616,
+        "sector_1_card_11": 1403,
+        "sector_1_card_12": 503,
+        "sector_1_card_13": 174,
+        "sector_1_card_14": 56,
+        "sector_1_card_15": 19,
+        "sector_1_card_16": 7,
+        "sector_1_card_17": 3,
+        "sector_1_card_18": 2,
+        "sector_1_card_19": 1,
+        "sector_1_card_2": 168,
+        "sector_1_card_3": 917,
+        "sector_1_card_4": 3451,
+        "sector_1_card_5": 9452,
+        "sector_1_card_6": 18416,
+        "sector_1_card_7": 22601,
+        "sector_1_card_8": 16040,
+        "sector_1_card_9": 8334
+      }
+    }
+  ],
+  "generating_function_examples": {
+    "F2_nonzero": {
+      "checked": true,
+      "denominator": [
+        1,
+        -3
+      ],
+      "numerator": [
+        2,
+        3
+      ]
+    },
+    "F3_nonzero": {
+      "checked": true,
+      "denominator": [
+        1,
+        -4,
+        2,
+        3
+      ],
+      "numerator": [
+        2,
+        1,
+        -1
+      ]
+    },
+    "candidate": {
+      "checked": true,
+      "denominator": [
+        1,
+        -3,
+        -9
+      ],
+      "numerator": [
+        2,
+        3
+      ]
+    },
+    "coefficient_check_max_depth": 10,
+    "coefficient_order": "ascending powers of z"
+  },
+  "implementation": {
+    "arithmetic": "exact finite permutations and Python bigint integral matrix lifts",
+    "language": "Python",
+    "producer": {
+      "path": "experiments/paper21/arbitrary_depth_semantic.py",
+      "sha256": "e3a7d435bd07ac5dabbd47c25162c11dcd1a48033feee958f5d8bdf823fb2961"
+    }
+  },
+  "schema": "paper.route-profiles.arbitrary-depth-semantic.v1",
+  "semantic_replay": {
+    "checks": [
+      {
+        "max_depth": 5,
+        "prime": 2,
+        "status": "PASS",
+        "word_path_pairs_checked": 18660
+      },
+      {
+        "max_depth": 5,
+        "prime": 3,
+        "status": "PASS",
+        "word_path_pairs_checked": 18660
+      },
+      {
+        "max_depth": 5,
+        "prime": 5,
+        "status": "PASS",
+        "word_path_pairs_checked": 18660
+      },
+      {
+        "max_depth": 5,
+        "prime": 7,
+        "status": "PASS",
+        "word_path_pairs_checked": 18660
+      }
+    ],
+    "max_depth": 5,
+    "primes": [
+      2,
+      3,
+      5,
+      7
+    ]
+  },
+  "stabilization_count_shadow": [
+    {
+      "common_zero_count": 0,
+      "depth": 1,
+      "eligible_sample_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19
+      ],
+      "generic_zero_count": 0,
+      "status": "PASS_COUNT_SHADOW"
+    },
+    {
+      "common_zero_count": 14,
+      "depth": 2,
+      "eligible_sample_primes": [
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19
+      ],
+      "generic_zero_count": 14,
+      "status": "PASS_COUNT_SHADOW"
+    },
+    {
+      "common_zero_count": 115,
+      "depth": 3,
+      "eligible_sample_primes": [
+        5,
+        7,
+        11,
+        13,
+        17,
+        19
+      ],
+      "generic_zero_count": 115,
+      "status": "PASS_COUNT_SHADOW"
+    },
+    {
+      "common_zero_count": 732,
+      "depth": 4,
+      "eligible_sample_primes": [
+        5,
+        7,
+        11,
+        13,
+        17,
+        19
+      ],
+      "generic_zero_count": 732,
+      "status": "PASS_COUNT_SHADOW"
+    },
+    {
+      "common_zero_count": 4094,
+      "depth": 5,
+      "eligible_sample_primes": [
+        7,
+        11,
+        13,
+        17,
+        19
+      ],
+      "generic_zero_count": 4094,
+      "status": "PASS_COUNT_SHADOW"
+    },
+    {
+      "common_zero_count": 21635,
+      "depth": 6,
+      "eligible_sample_primes": [
+        7,
+        11,
+        13,
+        17,
+        19
+      ],
+      "generic_zero_count": 21635,
+      "status": "PASS_COUNT_SHADOW"
+    },
+    {
+      "common_zero_count": 110486,
+      "depth": 7,
+      "eligible_sample_primes": [
+        11,
+        13,
+        17,
+        19
+      ],
+      "generic_zero_count": 110486,
+      "status": "PASS_COUNT_SHADOW"
+    },
+    {
+      "common_zero_count": 553550,
+      "depth": 8,
+      "eligible_sample_primes": [
+        11,
+        13,
+        17,
+        19
+      ],
+      "generic_zero_count": 553550,
+      "status": "PASS_COUNT_SHADOW"
+    },
+    {
+      "common_zero_count": 2740395,
+      "depth": 9,
+      "eligible_sample_primes": [
+        11,
+        13,
+        17,
+        19
+      ],
+      "generic_zero_count": 2740395,
+      "status": "PASS_COUNT_SHADOW"
+    },
+    {
+      "common_zero_count": 13468388,
+      "depth": 10,
+      "eligible_sample_primes": [
+        11,
+        13,
+        17,
+        19
+      ],
+      "generic_zero_count": 13468388,
+      "status": "PASS_COUNT_SHADOW"
+    }
+  ],
+  "theorem_contract": {
+    "fixed_depth_stabilization": "At fixed depth d, the labelled zero-route set equals the generic integral prefix-pole profile for |F|>d outside E_d.",
+    "fixed_field_automaton": "For each fixed finite field, reachable survivor subsets form a finite deterministic weighted automaton.",
+    "generic_profile": "The generic depth-d zero-route set is determined by the rational prefix-pole equality relation; its count is candidate count minus the sum over words of one plus the number of pole classes.",
+    "prefix_pole_classification": "A route survivor set is the intersection of forced prefix-pole singletons at zero sectors and prefix-pole complements at one sectors.",
+    "rational_generating_functions": "For each fixed finite field F, B_F(z), N_F(z), and Z_F(z) are rational transfer-matrix series."
+  }
+}

@@ -16,6 +16,7 @@ dist/
 .codex/
 .agents/
 .pytest_cache/
+**/.lake/
 
 # Generated
 data/

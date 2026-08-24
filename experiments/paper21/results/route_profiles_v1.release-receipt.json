@@ -1,0 +1,357 @@
+{
+  "artifact_closure": {
+    "artifact_count": 39,
+    "closure_digest": "55fc30e7b12aa34a9fe3078320c3c40617489ca71b86e28473b3ce2d6e5ecbc8",
+    "ordered_artifacts": [
+      {
+        "artifact": {
+          "path": ".gitattributes",
+          "sha256": "1880a2dfd7ef9bd859f827f4154a85e5efcd34899b83970501a4df7ce767c488"
+        },
+        "role": "line-ending-policy"
+      },
+      {
+        "artifact": {
+          "path": "papers/paper21/Paper XXI.md",
+          "sha256": "00e220b36daed9d0c3bba13f87cb987c66bbf25cfbf99c6b2ef4b91f0eb090ef"
+        },
+        "role": "manuscript"
+      },
+      {
+        "artifact": {
+          "path": "papers/paper21/paper21_arxiv.pdf",
+          "sha256": "60faccf8bf53b72e0a81ac0f4a8fc0c95210923762b22af93ee0864a13fb19b9"
+        },
+        "role": "paper-pdf"
+      },
+      {
+        "artifact": {
+          "path": "papers/tex/trilogy.bib",
+          "sha256": "dd2712e9a8ff26dff513921b0725895f5ee039ac9ba40c0b5ac9a9c5559b35f0"
+        },
+        "role": "bibliography"
+      },
+      {
+        "artifact": {
+          "path": "figures/paper21/render.py",
+          "sha256": "334fd6d50118645fd24a94adfb1be590b29d84dc3cdc2f2e896b3aca89f7d56c"
+        },
+        "role": "figure-renderer"
+      },
+      {
+        "artifact": {
+          "path": "figures/sof_figure_utils.py",
+          "sha256": "cea67f9c0e02e9bae7d6aee9e4ce34af3fa209cef66cdd35c8b01fe2727bfee9"
+        },
+        "role": "figure-style-helper"
+      },
+      {
+        "artifact": {
+          "path": "figures/paper21/fig1_prefix_pole_semantics.png",
+          "sha256": "14be8f7a3648b0db9a7bf9c2f122fc0fe145c72c9ceb4bd1f7b7f8c6946722de"
+        },
+        "role": "prefix-pole-figure"
+      },
+      {
+        "artifact": {
+          "path": "experiments/paper21/release-environment.json",
+          "sha256": "52f6f47e3e10db00ccc24cb8b3a3796a66c69e8474780057855badeb6120a4ec"
+        },
+        "role": "release-environment"
+      },
+      {
+        "artifact": {
+          "path": "experiments/paper21/validation/validate_release.py",
+          "sha256": "aa932ca010802ef6347917118514aababfeaefbd5331577210f67a12cccf01df"
+        },
+        "role": "release-validator"
+      },
+      {
+        "artifact": {
+          "path": "experiments/paper21/claim-surface-map.json",
+          "sha256": "d7dd3a839578b96a1a602ec9d875502a61f27a3895394c6b925fa0d1e08e45aa"
+        },
+        "role": "claim-surface-map"
+      },
+      {
+        "artifact": {
+          "path": "tools/research/validate_claim_surface.py",
+          "sha256": "9522171bf121382ee1453edf69fc78bd3928c01f84d5abfbe4c77a4de3c17019"
+        },
+        "role": "claim-surface-validator"
+      },
+      {
+        "artifact": {
+          "path": "experiments/paper21/arbitrary_depth_semantic.py",
+          "sha256": "e3a7d435bd07ac5dabbd47c25162c11dcd1a48033feee958f5d8bdf823fb2961"
+        },
+        "role": "arbitrary-depth-producer"
+      },
+      {
+        "artifact": {
+          "path": "experiments/paper21/validation/validate_arbitrary_depth_semantic.py",
+          "sha256": "13f97eb1a8aaabbeb69a0f2990869a2c79f6e514de604a46a5b053071ad82f33"
+        },
+        "role": "arbitrary-depth-validator"
+      },
+      {
+        "artifact": {
+          "path": "experiments/paper21/results/arbitrary_depth_semantic_v1.json",
+          "sha256": "7c685cae2668d9f76ac74fabf25688d46e0c792cfe8e409d349a9fa14dfc5514"
+        },
+        "role": "arbitrary-depth-result"
+      },
+      {
+        "artifact": {
+          "path": "experiments/paper21/results/arbitrary_depth_semantic_v1.validation-receipt.json",
+          "sha256": "e237edff47ec8e15545d41280b19d142e5e8395ff4a1d3289e7aefd9889b82bc"
+        },
+        "role": "arbitrary-depth-receipt"
+      },
+      {
+        "artifact": {
+          "path": "experiments/paper21/validation/promote_route_profiles.py",
+          "sha256": "6321ccf8931aae46a90d088f24039363de8caaff01b589d0030aea37c7417371"
+        },
+        "role": "promotion-producer"
+      },
+      {
+        "artifact": {
+          "path": "experiments/paper21/validation/validate_route_profiles.py",
+          "sha256": "5f2c1705f4b179d668951881c7d4e00e40d17cee8760d1c0bc5ff6613883571e"
+        },
+        "role": "promotion-validator"
+      },
+      {
+        "artifact": {
+          "path": "experiments/paper21/results/route_profile_promotion_v1.json",
+          "sha256": "dae1edd60de4292daf472eae86fa96447fc7061a603497c48098a5acb0186dd6"
+        },
+        "role": "promotion-result"
+      },
+      {
+        "artifact": {
+          "path": "experiments/paper21/results/route_profile_promotion_v1.validation-receipt.json",
+          "sha256": "7e7c91b0bc97c9c3e5ab6cd1fd83f009728e10235ffa1af925399b8483a14bc9"
+        },
+        "role": "promotion-receipt"
+      },
+      {
+        "artifact": {
+          "path": "experiments/paper21/validation/validate_lean_formalization.py",
+          "sha256": "1e1f01a526273d6dea59d24997e5c30ab03753a3b57323d64b0d42f6e64e1cac"
+        },
+        "role": "lean-validator"
+      },
+      {
+        "artifact": {
+          "path": "experiments/paper21/lean/FiniteFieldRouteProfiles.lean",
+          "sha256": "1edfc860edccae87a84ba712b482bf73a912277f79ab04a95bd672d371883e5c"
+        },
+        "role": "lean-entrypoint"
+      },
+      {
+        "artifact": {
+          "path": "experiments/paper21/lean/Formalization/UniformModularZeroRoute.lean",
+          "sha256": "15b053439a508c3dc7b1ea313c98e2d3fc652d73efe6507d3e6e09202cc797d9"
+        },
+        "role": "lean-depth-two-module"
+      },
+      {
+        "artifact": {
+          "path": "experiments/paper21/lean/Formalization/UniformModularZeroRouteField.lean",
+          "sha256": "f115ede26e4eb03c8eb77c96388dfa5cb816fe5af663364bd171acf0de9fd711"
+        },
+        "role": "lean-depth-three-module"
+      },
+      {
+        "artifact": {
+          "path": "experiments/paper21/lean/formalization-manifest.json",
+          "sha256": "d2f95593750ebd4583d6d83456567a4030ef8753d3b89b62eac85ce9e666a629"
+        },
+        "role": "lean-formalization-manifest"
+      },
+      {
+        "artifact": {
+          "path": "experiments/paper21/lean/lake-manifest.json",
+          "sha256": "ac06447ed3051f56abb8f58cb6992f45713ab2b5aa7c284059e22fd56267ce73"
+        },
+        "role": "lean-lake-manifest"
+      },
+      {
+        "artifact": {
+          "path": "experiments/paper21/lean/lakefile.toml",
+          "sha256": "eccc0fbe79d9ea3cab550639c0947154d2ed0d23d75ef8c93520a9669e62794b"
+        },
+        "role": "lean-lakefile"
+      },
+      {
+        "artifact": {
+          "path": "experiments/paper21/lean/lean-toolchain",
+          "sha256": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b"
+        },
+        "role": "lean-toolchain"
+      },
+      {
+        "artifact": {
+          "path": "experiments/paper21/results/route_profiles_lean_v1.validation-receipt.json",
+          "sha256": "65be1141e1a56a0c338c23c391046ed2dd3368dbd734d6eac8a1114e501a7656"
+        },
+        "role": "lean-compilation-receipt"
+      },
+      {
+        "artifact": {
+          "path": "experiments/exploratory/carrier_realizations/fuchsian_schreier/core.py",
+          "sha256": "f84c18f5ce35f9b0ab05169a783012a0e33b378ecb5058f52c2c6f6b5a7d500b"
+        },
+        "role": "exploratory-core"
+      },
+      {
+        "artifact": {
+          "path": "experiments/exploratory/carrier_realizations/fuchsian_schreier/modular_census.py",
+          "sha256": "db9570e28c9838543fbfc5d5c4e821813a2590d803f8aea1c490ff831d09ca28"
+        },
+        "role": "historical-census-producer"
+      },
+      {
+        "artifact": {
+          "path": "experiments/exploratory/carrier_realizations/fuchsian_schreier/uniform_modular_zero_route_classification.py",
+          "sha256": "1df5856d4325019d7f2232f569703acb26a2b7e6856061b6065fa680d92b452a"
+        },
+        "role": "depth-two-source-producer"
+      },
+      {
+        "artifact": {
+          "path": "experiments/exploratory/carrier_realizations/fuchsian_schreier/depth_three_zero_route_classification.py",
+          "sha256": "705b8d668925e318bda59520d1c84eef8edca3033182149babb9f3811d21696b"
+        },
+        "role": "depth-three-source-producer"
+      },
+      {
+        "artifact": {
+          "path": "experiments/exploratory/carrier_realizations/fuchsian_schreier/uniform_finite_field_route_profile.py",
+          "sha256": "4307fc0a869a6470067699684c9143290131e71728bc309573ac4304184dd0e2"
+        },
+        "role": "fixed-depth-profile-producer"
+      },
+      {
+        "artifact": {
+          "path": "experiments/exploratory/carrier_realizations/fuchsian_schreier/results/modular_p1_census_v2.json",
+          "sha256": "4b3b5a60d88fd9106dd2a724d3a67f94fdfce592399dbc52181164f92f9f5616"
+        },
+        "role": "historical-finite-observation"
+      },
+      {
+        "artifact": {
+          "path": "experiments/exploratory/carrier_realizations/fuchsian_schreier/results/uniform_modular_zero_route_classification_v1.json",
+          "sha256": "7f3cb60db0ab1b00eadf77234da9a829f08a5bcf8440c8fc308f0c335fcb72a4"
+        },
+        "role": "depth-two-source-result"
+      },
+      {
+        "artifact": {
+          "path": "experiments/exploratory/carrier_realizations/fuchsian_schreier/results/depth_three_zero_route_classification_v1.json",
+          "sha256": "432da4599fc1491b6e617c15926f8e88264ca3ff3b9cbfdce40c5f8975a4b99e"
+        },
+        "role": "depth-three-source-result"
+      },
+      {
+        "artifact": {
+          "path": "experiments/exploratory/carrier_realizations/fuchsian_schreier/results/uniform_finite_field_route_profile_v1.json",
+          "sha256": "01a32c8629ec21fb5142e7cdd218b6a6ce9f50b50fb8a6b4c761fec26bf99a97"
+        },
+        "role": "fixed-depth-profile-result"
+      },
+      {
+        "artifact": {
+          "path": "experiments/paper21/validation/validate_hostile_controls.py",
+          "sha256": "2fb2874b80b789f120868d55b1fe7ff0a9684b4902b7930634fceb82c4f0ea8c"
+        },
+        "role": "hostile-regression"
+      },
+      {
+        "artifact": {
+          "path": "experiments/paper21/release-manifest.json",
+          "sha256": "159c5d827bd116c5512f8ae3ee54ffd042c9f74d640dc482212014352a95eac7"
+        },
+        "role": "release-manifest"
+      }
+    ],
+    "receipt_included_in_own_closure": false
+  },
+  "checks": [
+    "release manifest identity and unique role/path registry",
+    "exact ordered artifact byte closure",
+    "acyclic evidence references and release-receipt self-exclusion",
+    "manuscript structure, theorem, and claim-boundary anchors",
+    "arbitrary-depth artifact and source-closure receipt",
+    "promoted route-profile certificate and replay receipt",
+    "pinned Lean source closure and compilation receipt",
+    "claim-surface map conformance",
+    "exact-arithmetic and formalization-scope boundaries",
+    "full component replay at receipt generation"
+  ],
+  "claim_boundary": {
+    "certifies": "exact release bytes, component receipt bindings, declared replay, and pinned Lean compilation for the listed subset",
+    "does_not_certify": [
+      "independent validation or scientific truth",
+      "Lean coverage of every manuscript theorem",
+      "a field-independent finite automaton or uniform state bound",
+      "an all-depth scalar zero-count formula or asymptotic growth law",
+      "logical dependence on Paper XX"
+    ]
+  },
+  "component_receipts": [
+    {
+      "artifact": {
+        "path": "experiments/paper21/results/arbitrary_depth_semantic_v1.validation-receipt.json",
+        "sha256": "e237edff47ec8e15545d41280b19d142e5e8395ff4a1d3289e7aefd9889b82bc"
+      },
+      "content_sha256": "7fb79633f79997ddab074cc4d1724713460d26c296c2ee634d5527d38f037c08",
+      "receipt_kind": "ARBITRARY_DEPTH_SEMANTIC_VALIDATION_RECEIPT",
+      "receipt_scope": "PAPER_OWNED_EXACT_REPLAY_NOT_INDEPENDENT_PROOF",
+      "status": "PASS"
+    },
+    {
+      "artifact": {
+        "path": "experiments/paper21/results/route_profile_promotion_v1.validation-receipt.json",
+        "sha256": "7e7c91b0bc97c9c3e5ab6cd1fd83f009728e10235ffa1af925399b8483a14bc9"
+      },
+      "content_sha256": "9d9303bb13ab85b0f11f01a10d40078089c423da082116a050f8b9ae9af79a86",
+      "receipt_kind": "ROUTE_PROFILES_VALIDATION_RECEIPT",
+      "receipt_scope": "PAPER_OWNED_ROUTE_PROFILE_CONFORMANCE_ONLY",
+      "status": "PASS"
+    },
+    {
+      "artifact": {
+        "path": "experiments/paper21/results/route_profiles_lean_v1.validation-receipt.json",
+        "sha256": "65be1141e1a56a0c338c23c391046ed2dd3368dbd734d6eac8a1114e501a7656"
+      },
+      "content_sha256": "172b1ef801a738328e6aa4b95cbb0b06db98927ef2810423ee4680001feb6ba4",
+      "receipt_kind": "LEAN_COMPILATION_RECEIPT",
+      "receipt_scope": "PAPER_OWNED_ROUTE_PROFILE_FORMALIZATION_COMPILATION",
+      "status": "PASS"
+    }
+  ],
+  "content_sha256": "fa9186ee943ba601d723e59a0ef319101cac839b38c9aac02927fb5755942ca4",
+  "formalization": {
+    "covered_surface": "Theorem 3.2, Theorems 4.1--4.2, Proposition 5.4, and their declared supporting lemmas",
+    "excluded_surface": "Theorem 5.1, Corollaries 5.2--5.3 and 5.6, and Theorem 5.5",
+    "status": "PINNED_COMPILED_SUBSET"
+  },
+  "independent_validation": false,
+  "receipt_id": "PAPER21-V1.0-RELEASE-CLOSURE",
+  "receipt_kind": "ROUTE_PROFILES_RELEASE_CLOSURE_RECEIPT",
+  "receipt_scope": "PAPER_OWNED_RELEASE_CLOSURE_LOCAL_VERIFICATION_ONLY",
+  "release_id": "PAPER21-V1.0",
+  "schema": "paper.route-profiles.release-receipt.v1",
+  "status": "PASS",
+  "validation_mode": "LOCAL_CLOSURE_VERIFICATION",
+  "validator": {
+    "implementation": {
+      "path": "experiments/paper21/validation/validate_release.py",
+      "sha256": "aa932ca010802ef6347917118514aababfeaefbd5331577210f67a12cccf01df"
+    },
+    "validator_id": "paper.route-profiles.release-validator.python.v1"
+  }
+}
