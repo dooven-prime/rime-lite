@@ -39,7 +39,7 @@ input family, arithmetic mode, and claim status.
 | `test_transport.py` | Direct graph, sector non-invariance, and graph/operator composition obstruction | Paper II / revised Paper III |
 | `test_experiment_observation.py` | Cached-observation manifest integrity and stale-source detection | Reproducibility infrastructure |
 | `test_verification_state.py` | Tracked-tree mutation detection and Zenodo record-ID parsing | Release verification infrastructure |
-| `test_paper20_carrier_accessibility.py` | carrier-path containment, exact and bounded evidence boundaries, receipt tampering, and shared-carrier hostile controls | Paper XX release closure |
+| `../experiments/paper20/validation/validate_hostile_controls.py` | active carrier-path, default-discovery, evidence-boundary, and shared-carrier controls | Paper XX post-release maintenance |
 | `test_contract_api.py` | Shared digest, repository-bound artifact, status-axis, and CompilerOutput schema mechanics | Cross-paper contract infrastructure |
 | `test_accessibility_engine.py` | Typed direct/routed/word/Lie separation, incidence, rank protection, cutoff semantics | General API / Papers III, V, VII |
 | `test_registry_v2.py` | Registry v2.0 schema, evidence, depth, repair, and promotion guards | Paper X Registry contract |

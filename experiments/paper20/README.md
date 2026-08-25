@@ -89,6 +89,21 @@ Validate the retained census artifacts and their declared source digests:
 python experiments/paper20/validate_results.py
 ```
 
+With no explicit paths, the validator checks only the registered Z2, S3, and
+Rubik census artifacts. The exact within-carrier obstruction and image--kernel
+artifacts retain their dedicated validators below.
+
+Run the active post-release hostile controls with:
+
+```text
+python experiments/paper20/validation/validate_hostile_controls.py
+```
+
+The historical `tests/test_paper20_carrier_accessibility.py` bytes remain
+available at their published path in the `paper20-v1.0` release tree. The
+active maintenance gate above replaces that top-level test in current HEAD; it
+is not retroactively inserted into the published closure.
+
 Add `--recompute` to replay every retained artifact from its registered
 producer closure. The Rubik depth-2 replay is intentionally slower.
 
@@ -137,17 +152,18 @@ elementary block-factorization paper. The release receipt binds the manuscript,
 declared environment, implementation, retained results, Rubik source closure,
 the exhaustive depth-two image--kernel audit, and hostile regression tests.
 
-Generate the receipt only after replaying all three producers:
-
-```text
-python experiments/paper20/validation/validate_release.py \
-  --write-receipt --recompute-results
-```
-
-Validate frozen bytes without rerunning the slower Rubik census:
+The v1.0 receipt was generated after replaying all registered producers and is
+now immutable. Validate its published artifact closure with:
 
 ```text
 python experiments/paper20/validation/validate_release.py
+```
+
+To run the current producer implementations as a separate maintenance replay,
+use:
+
+```text
+python experiments/paper20/validation/validate_release.py --recompute-results
 ```
 
 Receipt `PASS` establishes the declared local release closure and conformance
