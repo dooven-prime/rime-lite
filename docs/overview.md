@@ -163,6 +163,18 @@ checks establish their stated integrity properties only: receipt closure is
 not validator trust, and a Git or DOI anchor covers only the bytes actually
 committed or deposited. See the [release verification tools](../tools/README.md).
 
+A paper release binds only the semantic and build subclosure actually consumed
+by that paper. Selecting entries from a shared bibliography, Registry, or
+other aggregate source does not make every unrelated entry a permanent release
+dependency. Prefer a paper-owned slice that binds the selected entries and the
+selection basis. Historical verification must then resolve
+`receipt -> release identity -> exact path bytes` at the declared tag or
+content commit; it must never substitute the same path from current HEAD.
+Paper-local dependency slices and release-aware historical resolution are
+complementary controls. Any historical byte-materialization exception must be
+explicitly limited by release identity and artifact path and otherwise fail
+closed.
+
 ## Rubik and General Theory
 
 Rubik-specific represented operators, registered averaging layers, compatible

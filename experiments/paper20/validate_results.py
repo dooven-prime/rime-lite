@@ -51,6 +51,12 @@ EXPECTED = {
     },
 }
 
+DEFAULT_CENSUS_ARTIFACTS = (
+    HERE / "results" / "z2_double_regular_depth3.json",
+    HERE / "results" / "s3_natural_regular_depth2.json",
+    HERE / "results" / "rubik_228_depth2.json",
+)
+
 
 def _canonical_pairs(value: object, label: str, errors: list[str]) -> set[tuple[int, int]]:
     if not isinstance(value, list):
@@ -271,7 +277,7 @@ def main() -> int:
     args = parser.parse_args()
     paths = args.paths
     if not paths:
-        paths = sorted((HERE / "results").glob("*.json"))
+        paths = list(DEFAULT_CENSUS_ARTIFACTS)
     failures = 0
     for path in paths:
         resolved = path if path.is_absolute() else ROOT / path

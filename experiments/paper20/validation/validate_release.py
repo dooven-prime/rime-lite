@@ -7,8 +7,9 @@ import argparse
 from copy import deepcopy
 import hashlib
 import json
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 import platform
+import subprocess
 import sys
 
 import numpy as np
@@ -23,6 +24,22 @@ MANIFEST_PATH = EVIDENCE_DIR / "release-manifest.json"
 ENVIRONMENT_PATH = EVIDENCE_DIR / "release-environment.json"
 README_PATH = EVIDENCE_DIR / "README.md"
 DEFAULT_RECEIPT = EVIDENCE_DIR / "results" / "carrier_accessibility_v1.release-receipt.json"
+# The v1.0 receipt bound the Windows checkout bytes for this shared text file.
+# Keep this compatibility rule release- and path-specific; never infer it from
+# an arbitrary digest mismatch.
+PUBLISHED_RELEASES = {
+    "PAPER20-V1.0": {
+        "release_ref": "paper20-v1.0",
+        "release_commit": "f098ad8be79b5bab224d47b0ff8a470b4f8f7c43",
+        "path_materializations": {
+            "papers/tex/trilogy.bib": "CRLF_TEXT",
+        },
+    }
+}
+PUBLISHED_RELEASE_REFS = {
+    release_id: profile["release_ref"]
+    for release_id, profile in PUBLISHED_RELEASES.items()
+}
 RESULT_PATHS = (
     EVIDENCE_DIR / "results" / "z2_double_regular_depth3.json",
     EVIDENCE_DIR / "results" / "s3_natural_regular_depth2.json",
@@ -111,6 +128,71 @@ def artifact_reference(path: Path) -> dict:
 
 def load_json(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def safe_repo_uri(uri: object) -> str:
+    if not isinstance(uri, str) or not uri or "\\" in uri:
+        raise ValueError(f"invalid repository artifact URI: {uri!r}")
+    path = PurePosixPath(uri)
+    if path.is_absolute() or any(part in {"", ".", ".."} for part in path.parts):
+        raise ValueError(f"invalid repository artifact URI: {uri!r}")
+    return uri
+
+
+def git_blob(release_ref: str, uri: str) -> bytes:
+    safe_repo_uri(uri)
+    completed = subprocess.run(
+        ["git", "show", f"{release_ref}:{uri}"],
+        cwd=ROOT,
+        check=False,
+        capture_output=True,
+    )
+    if completed.returncode != 0:
+        detail = completed.stderr.decode("utf-8", errors="replace").strip()
+        raise ValueError(
+            f"cannot resolve historical artifact {release_ref}:{uri}: {detail}"
+        )
+    return completed.stdout
+
+
+def git_release_commit(release_ref: str) -> str:
+    completed = subprocess.run(
+        ["git", "rev-parse", "--verify", f"{release_ref}^{{commit}}"],
+        cwd=ROOT,
+        check=False,
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+    )
+    if completed.returncode != 0:
+        raise ValueError(f"cannot resolve historical release ref: {release_ref}")
+    commit = completed.stdout.strip()
+    if len(commit) != 40 or any(
+        character not in "0123456789abcdef" for character in commit
+    ):
+        raise ValueError(
+            f"historical release ref did not resolve to a commit: {release_ref}"
+        )
+    return commit
+
+
+def historical_artifact_bytes(release_id: str, uri: str) -> bytes:
+    profile = PUBLISHED_RELEASES.get(release_id)
+    if profile is None:
+        raise ValueError(f"no historical release profile for: {release_id}")
+    payload = git_blob(profile["release_ref"], uri)
+    mode = profile["path_materializations"].get(uri, "GIT_BLOB")
+    if mode == "GIT_BLOB":
+        return payload
+    if mode == "CRLF_TEXT":
+        if b"\x00" in payload:
+            raise ValueError(
+                f"CRLF materialization is invalid for binary artifact: {uri}"
+            )
+        return payload.replace(b"\r\n", b"\n").replace(b"\n", b"\r\n")
+    raise ValueError(
+        f"unsupported historical materialization mode for {uri}: {mode}"
+    )
 
 
 def validate_manifest(manifest: dict) -> None:
@@ -402,10 +484,131 @@ def build_receipt(*, recompute_results: bool) -> dict:
     return receipt
 
 
+def historical_receipt_errors(receipt: dict, release_ref: str) -> list[str]:
+    errors: list[str] = []
+    release_id = receipt.get("release_id")
+    receipt_uri = repo_path(DEFAULT_RECEIPT)
+    try:
+        resolved_commit = git_release_commit(release_ref)
+        expected_commit = PUBLISHED_RELEASES[release_id]["release_commit"]
+        if resolved_commit != expected_commit:
+            raise ValueError(
+                f"historical release ref moved: {release_ref} resolves to "
+                f"{resolved_commit}, expected {expected_commit}"
+            )
+        tagged_receipt = json.loads(
+            historical_artifact_bytes(release_id, receipt_uri).decode("utf-8")
+        )
+    except (UnicodeDecodeError, ValueError, json.JSONDecodeError) as exc:
+        return [str(exc)]
+
+    if receipt != tagged_receipt:
+        errors.append(
+            "release receipt differs from the current paper-owned closure "
+            f"for its declared release identity ({release_ref}:{receipt_uri})"
+        )
+        return errors
+
+    closure = receipt.get("artifact_closure")
+    if not isinstance(closure, dict):
+        return errors + ["release receipt artifact closure is missing"]
+    rows = closure.get("ordered_artifacts")
+    if not isinstance(rows, list):
+        return errors + ["release receipt ordered artifact closure is missing"]
+    if closure.get("artifact_count") != len(rows):
+        errors.append("release receipt artifact count mismatch")
+    if closure.get("closure_digest") != closure_digest(rows):
+        errors.append("release receipt artifact closure digest mismatch")
+
+    seen_roles: set[str] = set()
+    seen_uris: set[str] = set()
+    manifest_payload: dict | None = None
+    actual_role_paths: list[tuple[str, str]] = []
+    for index, row in enumerate(rows):
+        if not isinstance(row, dict):
+            errors.append(f"artifact closure row {index} is not an object")
+            continue
+        role = row.get("role")
+        artifact = row.get("artifact")
+        if not isinstance(role, str) or not isinstance(artifact, dict):
+            errors.append(f"artifact closure row {index} is malformed")
+            continue
+        uri = artifact.get("uri")
+        expected_digest = artifact.get("sha256")
+        try:
+            uri = safe_repo_uri(uri)
+        except ValueError as exc:
+            errors.append(str(exc))
+            continue
+        if role in seen_roles or uri in seen_uris:
+            errors.append(f"duplicate artifact role or URI in closure: {role}, {uri}")
+        seen_roles.add(role)
+        seen_uris.add(uri)
+        actual_role_paths.append((role, uri))
+        if uri == receipt_uri or uri.endswith(".release-receipt.json"):
+            errors.append("receipt is included in its own artifact closure")
+        if not isinstance(expected_digest, str) or len(expected_digest) != 64:
+            errors.append(f"invalid artifact digest in closure: {uri}")
+            continue
+        try:
+            blob = historical_artifact_bytes(release_id, uri)
+        except ValueError as exc:
+            errors.append(str(exc))
+            continue
+        if hashlib.sha256(blob).hexdigest() != expected_digest:
+            errors.append(f"historical artifact digest mismatch: {release_ref}:{uri}")
+        if role == "release-manifest":
+            try:
+                manifest_payload = json.loads(blob.decode("utf-8"))
+            except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+                errors.append(f"historical release manifest is invalid: {exc}")
+
+    if manifest_payload is None:
+        errors.append("historical release manifest is absent from the artifact closure")
+        return errors
+    try:
+        validate_manifest(manifest_payload)
+    except (KeyError, TypeError, ValueError) as exc:
+        errors.append(f"historical release manifest failed validation: {exc}")
+        return errors
+    expected_role_paths = [
+        (item["role"], safe_repo_uri(item["path"]))
+        for item in manifest_payload["artifacts"]
+    ]
+    expected_role_paths.append(("release-manifest", repo_path(MANIFEST_PATH)))
+    if actual_role_paths != expected_role_paths:
+        errors.append("historical manifest registry differs from receipt artifact order")
+    return errors
+
+
+def historical_receipt_file_errors(
+    receipt_path: Path, release_id: str, release_ref: str
+) -> list[str]:
+    try:
+        tagged_bytes = historical_artifact_bytes(
+            release_id, repo_path(DEFAULT_RECEIPT)
+        )
+    except ValueError as exc:
+        return [str(exc)]
+    if receipt_path.read_bytes() != tagged_bytes:
+        return [f"receipt file bytes differ from the {release_ref} release bytes"]
+    return []
+
+
 def receipt_errors(receipt: dict, *, recompute_results: bool = False) -> list[str]:
     errors: list[str] = []
     if receipt.get("content_sha256") != content_digest(receipt):
         errors.append("release receipt content digest mismatch")
+    release_ref = PUBLISHED_RELEASE_REFS.get(receipt.get("release_id"))
+    if release_ref is not None:
+        errors.extend(historical_receipt_errors(receipt, release_ref))
+        if recompute_results:
+            try:
+                validate_environment_against_results(verify_current=True)
+                validate_results(recompute=True)
+            except (KeyError, TypeError, ValueError, json.JSONDecodeError) as exc:
+                errors.append(f"current maintenance replay failed: {exc}")
+        return errors
     try:
         expected = build_receipt(recompute_results=recompute_results)
     except (KeyError, TypeError, ValueError, json.JSONDecodeError) as exc:
@@ -425,6 +628,12 @@ def main() -> int:
     if args.write_receipt:
         if not args.recompute_results:
             parser.error("--write-receipt requires --recompute-results")
+        manifest = load_json(MANIFEST_PATH)
+        if (
+            manifest.get("status") == "PUBLISHED_RELEASE"
+            or manifest.get("release_id") in PUBLISHED_RELEASE_REFS
+        ):
+            parser.error("a published release receipt is immutable and cannot be rewritten")
         receipt = build_receipt(recompute_results=True)
         args.receipt.parent.mkdir(parents=True, exist_ok=True)
         args.receipt.write_text(
@@ -438,6 +647,13 @@ def main() -> int:
         return 1
     receipt = load_json(args.receipt)
     errors = receipt_errors(receipt, recompute_results=args.recompute_results)
+    release_ref = PUBLISHED_RELEASE_REFS.get(receipt.get("release_id"))
+    if release_ref is not None:
+        errors.extend(
+            historical_receipt_file_errors(
+                args.receipt, receipt["release_id"], release_ref
+            )
+        )
     if args.receipt.resolve() == DEFAULT_RECEIPT.resolve():
         errors.extend(receipt_index_errors(args.receipt, receipt))
     if errors:
@@ -445,8 +661,9 @@ def main() -> int:
         for error in errors:
             print(f"  - {error}")
         return 1
-    replay = " with full producer replay" if args.recompute_results else ""
-    print(f"PASS {receipt['receipt_id']}: {len(CHECKS)} checks{replay}")
+    replay = " with current maintenance replay" if args.recompute_results else ""
+    anchor = f" against {release_ref}" if release_ref is not None else ""
+    print(f"PASS {receipt['receipt_id']}: {len(CHECKS)} checks{anchor}{replay}")
     return 0
 
 
