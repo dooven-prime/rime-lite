@@ -3,7 +3,7 @@
 This document is the public navigation map for the Representation-Induced
 Mechanics and Evolution (RIME) program. It identifies semantic ownership,
 typed interfaces and promotion boundaries across published Papers I--XV and
-the independently scoped Papers XX--XXI theorem line. It is not a
+the independently scoped Papers XX--XXII theorem line. It is not a
 proof document, release ledger, result record, or substitute for an owning
 manuscript.
 
@@ -92,11 +92,13 @@ status.
 |---|---|---|
 | XX | all-depth carrierwise factorization, survivor recursion, and arbitrary-depth image--kernel promotion and obstruction criteria | exact one-carrier census is a Computational Certificate; thresholded censuses remain bounded Computational Observations |
 | XXI | finite-field route profiles, prefix-pole semantics, fixed-field survivor automata, and characteristic-aware fixed-depth stability | exact finite arithmetic and a pinned Lean subset support distinct declared theorem surfaces |
+| XXII | fixed-deficit rational dynamics, anchored Farey classification, Catalan enumeration, and Fibonacci envelopes | exact finite certificates support the theorem surface without replacing its proofs |
 
 Papers XVI--XIX are intentionally unused in the public numbered sequence;
 Paper XX begins an independently scoped mathematical line, and Paper XXI
-develops its finite-field route branch. Neither extends the SOF protocol
-authority chain.
+develops its finite-field route branch. Paper XXII develops the fixed-deficit
+rational branch and treats Paper XXI as a precursor rather than a theorem
+premise. None extends the SOF protocol authority chain.
 
 ## 4. Active Typing and Promotion Rules
 

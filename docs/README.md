@@ -80,7 +80,7 @@ moving fields, or represented genericity.
 ## Repository Boundary
 
 The public documentation covers the published Papers I--XV architecture and
-the independently scoped Papers XX--XXI mathematical line. Author-side planning,
+the independently scoped Papers XX--XXII mathematical line. Author-side planning,
 exploratory research routing,
 release migration status, and historical working notes are outside this public
 documentation index.

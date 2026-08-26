@@ -1,0 +1,41 @@
+{
+  "artifact_id": "ROUTE-PROFILES-EXACT-RATIONAL-C-LE-8-REPLAY-V1",
+  "checks": [
+    "exact rational state and transition replay",
+    "p=23 reduction and finite-field BFS replay",
+    "declared C_0 through C_8 cardinalities",
+    "deficit monotonicity and transition closure",
+    "global state and one-step guard determinant registries",
+    "p=23 1859-to-1723 global state collision",
+    "configuration-local versus global-registry hostile boundary",
+    "explicit cross-state determinant divisibility witness"
+  ],
+  "content_sha256": "8db018b05e467f34c367e33aa1ca55ec67050914ca28f3f337f4828f1b643e16",
+  "receipt_kind": "LOCAL_EXACT_REPLAY_AND_SOURCE_CLOSURE_RECEIPT",
+  "schema": "paper.route-profiles.exact-rational-low-deficit-validation-receipt.v1",
+  "status": "PASS",
+  "validated_artifacts": [
+    {
+      "artifact_id": "ROUTE-PROFILES-EXACT-RATIONAL-C-LE-8-V1",
+      "content_sha256": "c67e550e39375da9e8e5de6198507a3bf047982472b7f50979369706054ef054",
+      "file_sha256": "3612fac87cec93949bee85807e617a4faefeb5c84e3fac279e6550ed4229f385",
+      "uri": "experiments/paper22/results/exact_rational_low_deficit_k8_v1.json"
+    },
+    {
+      "artifact_id": "ROUTE-PROFILES-P23-GLOBAL-REGISTRY-HOSTILE-V1",
+      "content_sha256": "9528cdd486135e7e79dd6a595dc0d591b85f22578b2237601345a9de08908818",
+      "file_sha256": "e18d50e70f565fd662f307d53ec24039988eff1d796d79c3fd605318462afd12",
+      "uri": "experiments/paper22/results/p23_global_registry_hostile_v1.json"
+    }
+  ],
+  "validation_boundary": [
+    "PASS proves exact replay agreement under the declared local source closure",
+    "PASS is not an independent validation of the validator implementation",
+    "the finite k<=8 certificate does not replace the general manuscript finiteness proof",
+    "the sufficient determinant threshold is not claimed to be sharp"
+  ],
+  "validator": {
+    "sha256": "968a1b7374a642848780531a2e58431bd691da5bce67e31c40dd66509a2d0ca0",
+    "uri": "experiments/paper22/validation/validate_exact_rational_low_deficit.py"
+  }
+}

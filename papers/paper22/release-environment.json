@@ -1,0 +1,21 @@
+{
+  "schema": "rime.paper-release-environment.v1",
+  "paper": "Paper XXII",
+  "release_version": "1.0",
+  "build_pipeline": "local Pandoc -> XeLaTeX -> BibTeX -> XeLaTeX authoring pipeline",
+  "canonical_source": "papers/paper22/Paper XXII.md",
+  "bibliography_slice": "papers/paper22/references-v1.0.bib",
+  "reader_pdf": "papers/paper22/paper22_arxiv.pdf",
+  "toolchain": {
+    "python": "3.13.0",
+    "pandoc": "3.6.4",
+    "xelatex": "MiKTeX-XeTeX 4.18 (MiKTeX 26.5)",
+    "bibtex": "MiKTeX-BibTeX 4.2 (MiKTeX 26.5)"
+  },
+  "boundary": [
+    "This record binds the declared authoring pipeline and toolchain environment; it is not scientific claim evidence.",
+    "The paper-local bibliography slice is part of the release identity; the shared bibliography is not.",
+    "The accepted PDF bytes are bound by the release receipt; the local renderer is not represented as a public replay entrypoint or semantic dependency.",
+    "Generated TeX, auxiliary files, and logs are local build products rather than release artifacts."
+  ]
+}

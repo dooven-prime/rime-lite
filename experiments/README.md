@@ -47,13 +47,15 @@ Paper-facing computations write generated records under the owning
 | XIV | [paper14/README.md](paper14/README.md) | 29-object SOFAction workbench, closed predicate replay, bounded candidate dispositions, and validation receipts |
 | XV | [paper15/README.md](paper15/README.md) | artifact and claim map for the five revision-interface propositions; no computational evidence claim |
 | XX | [paper20/README.md](paper20/README.md) | carrier census, all-depth theorem controls, image--kernel audit, and local closure receipt |
+| XXI | [paper21/README.md](paper21/README.md) | arbitrary-depth route semantics, fixed-field transfer automata, finite-field profiles, Lean closure, and replay receipts |
+| XXII | [paper22/README.md](paper22/README.md) | rational fixed-deficit closure, anchored Farey certificates, and Catalan-Fibonacci controls |
 
 Where a paper-local README is not yet present, the owning manuscript and
 script docstrings define the release-local scope. A future versioned reopening
 should add the standard local README before changing artifact semantics.
 
-Papers VIII--XIV retain their published or release-local terminology. Paper XX
-begins a separate theorem line and does not extend the protocol stack. Bare
+Papers VIII--XIV retain their published or release-local terminology. Papers
+XX--XXII form a separate mathematical line and do not extend the protocol stack. Bare
 `R1`/`R2`/`D`, ladder, repair, and wall labels in those artifacts must not be
 read as a completed migration to the separate operator, routed-composition,
 full-word, commutator, and Lie-depth branches. The frozen Paper X Registry v1

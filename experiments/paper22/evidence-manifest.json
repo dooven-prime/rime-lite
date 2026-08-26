@@ -1,0 +1,59 @@
+{
+  "schema": "paper.route-profiles.farey-catalan-paper22-evidence-manifest.v1",
+  "evidence_id": "PAPER22-FAREY-CATALAN-EVIDENCE-V1",
+  "status": "PAPER22_RELEASE_EVIDENCE",
+  "ownership": "PAPER22_INDEPENDENT_THEOREM_PACKAGE",
+  "max_deficit": 10,
+  "generation_boundary": {
+    "transition_path": "exact_rational_low_deficit.py::enumerate_states",
+    "anchored_boundary_path": "farey_catalan_structure.py::anchored_farey_candidates",
+    "shared_primitives": "canonical primitive cusp encoding, integral Mobius action, and determinant arithmetic",
+    "membership_logic_shared": false
+  },
+  "artifacts": [
+    {
+      "role": "theorem-manuscript",
+      "path": "papers/paper22/Paper XXII.md"
+    },
+    {
+      "role": "reader-pdf",
+      "path": "papers/paper22/paper22_arxiv.pdf"
+    },
+    {
+      "role": "bibliography-slice",
+      "path": "papers/paper22/references-v1.0.bib"
+    },
+    {
+      "role": "build-environment",
+      "path": "papers/paper22/release-environment.json"
+    },
+    {
+      "role": "farey-catalan-producer",
+      "path": "experiments/paper22/farey_catalan_structure.py"
+    },
+    {
+      "role": "shared-rational-transition-core",
+      "path": "experiments/paper22/exact_rational_low_deficit.py"
+    },
+    {
+      "role": "exact-rational-result",
+      "path": "experiments/paper22/results/exact_rational_low_deficit_k8_v1.json"
+    },
+    {
+      "role": "hostile-reduction-result",
+      "path": "experiments/paper22/results/p23_global_registry_hostile_v1.json"
+    },
+    {
+      "role": "exact-rational-validator",
+      "path": "experiments/paper22/validation/validate_exact_rational_low_deficit.py"
+    },
+    {
+      "role": "farey-catalan-result",
+      "path": "experiments/paper22/results/farey_catalan_fibonacci_k10_v1.json"
+    },
+    {
+      "role": "farey-catalan-validator",
+      "path": "experiments/paper22/validation/validate_farey_catalan_structure.py"
+    }
+  ]
+}

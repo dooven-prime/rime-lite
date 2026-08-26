@@ -1,0 +1,167 @@
+{
+  "artifact_id": "ROUTE-PROFILES-P23-GLOBAL-REGISTRY-HOSTILE-V1",
+  "artifact_role": "HOSTILE_FIXTURE_GLOBAL_VERSUS_CONFIGURATION_LOCAL_DETERMINANT_BOUND",
+  "boundary": [
+    "p=23 is a counterexample to the configuration-local determinant threshold, not to eventual stability",
+    "the global M_k criterion is sufficient and deliberately non-sharp",
+    "the finite-field equality is an exact replay at the declared prime and deficit"
+  ],
+  "claim_status": "exact_computational_certificate",
+  "collision_multiplicity_histogram": {
+    "1": 1616,
+    "2": 78,
+    "3": 29
+  },
+  "configuration_local_bound": {
+    "conclusion": "INSUFFICIENT_FOR_CROSS_STATE_INJECTIVITY",
+    "max_abs_determinant": 21,
+    "prime_exceeds_bound": true
+  },
+  "content_sha256": "9528cdd486135e7e79dd6a595dc0d591b85f22578b2237601345a9de08908818",
+  "deficit": 8,
+  "distinct_reduced_rational_state_count": 1723,
+  "finite_field_bfs_exact_layer_state_count": 1723,
+  "global_registry_bound": {
+    "conclusion": "CORRECTLY_DOES_NOT_CERTIFY_P23",
+    "cusp_count": 320,
+    "max_abs_determinant": 987,
+    "nonzero_determinant_pairs_divisible_by_23": 2088,
+    "prime_exceeds_bound": false
+  },
+  "hostile_invariant": "injectivity inside every individual configuration does not imply injectivity of the reduction map on the global C_{<=k} state registry",
+  "prime": 23,
+  "rational_exact_layer_state_count": 1859,
+  "reduced_rational_layer_equals_finite_bfs_layer": true,
+  "schema": "paper.route-profiles.p23-global-registry-hostile.v1",
+  "source_certificate": {
+    "artifact_id": "ROUTE-PROFILES-EXACT-RATIONAL-C-LE-8-V1",
+    "content_sha256": "c67e550e39375da9e8e5de6198507a3bf047982472b7f50979369706054ef054"
+  },
+  "witness": {
+    "common_reduced_defect": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      8,
+      12
+    ],
+    "cross_state_cusp_collisions": [
+      {
+        "determinant": -23,
+        "determinant_divisible_by_23": true,
+        "left_cusp": "2/5",
+        "left_vector": [
+          2,
+          5
+        ],
+        "residue": 5,
+        "right_cusp": "5",
+        "right_vector": [
+          5,
+          1
+        ]
+      }
+    ],
+    "left_state": {
+      "configuration_internal_max_abs_determinant": 18,
+      "defect_cusps": [
+        "0",
+        "1",
+        "1/2",
+        "1/3",
+        "2",
+        "2/5",
+        "3",
+        "4"
+      ],
+      "deficit": 8,
+      "primitive_vectors": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      "state_id": -1
+    },
+    "right_state": {
+      "configuration_internal_max_abs_determinant": 14,
+      "defect_cusps": [
+        "0",
+        "1",
+        "1/2",
+        "1/3",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "deficit": 8,
+      "primitive_vectors": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          5,
+          1
+        ]
+      ],
+      "state_id": -1
+    }
+  }
+}
