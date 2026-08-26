@@ -1,0 +1,134 @@
+{
+  "artifact_closure": [
+    {
+      "artifact": {
+        "sha256": "ef93869454ebee26d501ffffd2972db1c3fd2261ff7d43e01f5713ab4fe1f326",
+        "uri": "papers/paper22/Paper XXII.md"
+      },
+      "role": "theorem-manuscript"
+    },
+    {
+      "artifact": {
+        "sha256": "0afd692acbbad36c5a0b6d2a84370f941c0cd5530d24fc6e10c0ee2937463408",
+        "uri": "papers/paper22/paper22_arxiv.pdf"
+      },
+      "role": "reader-pdf"
+    },
+    {
+      "artifact": {
+        "sha256": "c82406118d3d93ee5f09bf63b31484fb02443f71062733a34617236475310a7e",
+        "uri": "papers/paper22/references-v1.0.bib"
+      },
+      "role": "bibliography-slice"
+    },
+    {
+      "artifact": {
+        "sha256": "66220424a64081dee7f111a3269a541ffb9f42467ecf88636b5ace40ccc7b0d2",
+        "uri": "papers/paper22/release-environment.json"
+      },
+      "role": "build-environment"
+    },
+    {
+      "artifact": {
+        "sha256": "4226019f2ab3f9080fb11ee88ccea466dd1b5634d24d2f4a4bfd9feccb8e2f5c",
+        "uri": "experiments/paper22/farey_catalan_structure.py"
+      },
+      "role": "farey-catalan-producer"
+    },
+    {
+      "artifact": {
+        "sha256": "7798fd17a3619d066081f8df60672af4a9034209348783198149b6dd9cc76098",
+        "uri": "experiments/paper22/exact_rational_low_deficit.py"
+      },
+      "role": "shared-rational-transition-core"
+    },
+    {
+      "artifact": {
+        "sha256": "3612fac87cec93949bee85807e617a4faefeb5c84e3fac279e6550ed4229f385",
+        "uri": "experiments/paper22/results/exact_rational_low_deficit_k8_v1.json"
+      },
+      "role": "exact-rational-result"
+    },
+    {
+      "artifact": {
+        "sha256": "e18d50e70f565fd662f307d53ec24039988eff1d796d79c3fd605318462afd12",
+        "uri": "experiments/paper22/results/p23_global_registry_hostile_v1.json"
+      },
+      "role": "hostile-reduction-result"
+    },
+    {
+      "artifact": {
+        "sha256": "968a1b7374a642848780531a2e58431bd691da5bce67e31c40dd66509a2d0ca0",
+        "uri": "experiments/paper22/validation/validate_exact_rational_low_deficit.py"
+      },
+      "role": "exact-rational-validator"
+    },
+    {
+      "artifact": {
+        "sha256": "dd9ec5e0b4478bb2b0b71f898b47f9cce925afd18be729703d8a3aa9822c6eee",
+        "uri": "experiments/paper22/results/farey_catalan_fibonacci_k10_v1.json"
+      },
+      "role": "farey-catalan-result"
+    },
+    {
+      "artifact": {
+        "sha256": "17f17796c749bab09407c5f8dd1909fd8dc5726e6077459b7d2ec79dd790a1df",
+        "uri": "experiments/paper22/validation/validate_farey_catalan_structure.py"
+      },
+      "role": "farey-catalan-validator"
+    },
+    {
+      "artifact": {
+        "sha256": "436e21698d039f1b9f608aabfd2d569e58095affc3d3d2f4857c77506f9ce5ae",
+        "uri": "experiments/paper22/evidence-manifest.json"
+      },
+      "role": "evidence-manifest"
+    }
+  ],
+  "artifact_id": "ROUTE-PROFILES-FAREY-CATALAN-FIBONACCI-K10-REPLAY-V1",
+  "checks": [
+    "complete exact replay through the declared maximum deficit",
+    "adjacent-Catalan state sequence through deficit ten",
+    "independently generated anchored-Farey state-set equality",
+    "cyclic Farey boundary and anchor invariants",
+    "three Catalan category counts",
+    "Fibonacci coordinate and determinant extrema",
+    "typed global and guard registry decompositions",
+    "explicit Fibonacci equality witnesses",
+    "deficit-ten category and extremal witness profile",
+    "oriented-patch same-level component hostile profiles",
+    "typed continuant envelope grid through path depth seven",
+    "Paper XXII-owned evidence manifest and byte closure",
+    "independent transition-versus-anchored-membership generation boundary"
+  ],
+  "content_sha256": "c2aa02224c425eb47716f97cc6721a0d2fb0e8e56d799c3efee989bb84349536",
+  "evidence_manifest": {
+    "sha256": "436e21698d039f1b9f608aabfd2d569e58095affc3d3d2f4857c77506f9ce5ae",
+    "uri": "experiments/paper22/evidence-manifest.json"
+  },
+  "generation_boundary": {
+    "anchored_boundary_path": "farey_catalan_structure.py::anchored_farey_candidates",
+    "membership_logic_shared": false,
+    "shared_primitives": "canonical primitive cusp encoding, integral Mobius action, and determinant arithmetic",
+    "transition_path": "exact_rational_low_deficit.py::enumerate_states"
+  },
+  "receipt_kind": "LOCAL_EXACT_REPLAY_AND_SOURCE_CLOSURE_RECEIPT",
+  "schema": "paper.route-profiles.farey-catalan-fibonacci-validation-receipt.v1",
+  "status": "PASS",
+  "validated_artifact": {
+    "artifact_id": "ROUTE-PROFILES-FAREY-CATALAN-FIBONACCI-K10-V1",
+    "content_sha256": "b397d74124cbf610b2149e0920277abf0374991645c396e2206ef38ba175a61f",
+    "file_sha256": "dd9ec5e0b4478bb2b0b71f898b47f9cce925afd18be729703d8a3aa9822c6eee",
+    "uri": "experiments/paper22/results/farey_catalan_fibonacci_k10_v1.json"
+  },
+  "validation_boundary": [
+    "PASS proves exact finite replay agreement through deficit ten",
+    "PASS does not independently prove the manuscript all-deficit Farey classification",
+    "PASS does not independently prove the manuscript all-deficit Fibonacci envelope",
+    "PASS is not independent validation of the validator implementation"
+  ],
+  "validator": {
+    "sha256": "17f17796c749bab09407c5f8dd1909fd8dc5726e6077459b7d2ec79dd790a1df",
+    "uri": "experiments/paper22/validation/validate_farey_catalan_structure.py"
+  }
+}

@@ -1,0 +1,2165 @@
+{
+  "all_declared_finite_checks_passed": true,
+  "artifact_id": "ROUTE-PROFILES-FAREY-CATALAN-FIBONACCI-K10-V1",
+  "artifact_role": "FINITE_EXACT_CERTIFICATE_FOR_FAREY_CATALAN_AND_FIBONACCI_THEOREMS",
+  "candidate_definition": {
+    "both_anchors": "three Farey paths attached to the sides of the base triangle {infinity,-1,0}",
+    "negative_one_only": "negative cyclic Farey boundary containing the base edge {infinity,-1}",
+    "positive_path_recursion": "split uniquely at cusp 1 and embed two smaller 0-to-infinity paths",
+    "zero_only": "positive cyclic Farey boundary containing the base edge {0,infinity}"
+  },
+  "claim_status": "computational_certificate_supporting_manuscript_theorems",
+  "content_sha256": "b397d74124cbf610b2149e0920277abf0374991645c396e2206ef38ba175a61f",
+  "independent_generation_boundary": {
+    "anchored_boundary_path": "farey_catalan_structure.py::anchored_farey_candidates",
+    "membership_logic_shared": false,
+    "not_shared": "reachable-state membership and anchored-boundary membership logic",
+    "shared_primitives": "canonical primitive cusp encoding, integral Mobius action, and determinant arithmetic",
+    "transition_path": "exact_rational_low_deficit.py::enumerate_states"
+  },
+  "max_deficit": 10,
+  "oeis_cross_reference": {
+    "id": "A167422",
+    "role": "sequence identification only; not evidence for the state bijection",
+    "uri": "https://oeis.org/A167422"
+  },
+  "rows": [
+    {
+      "category_counts": {
+        "both_anchors": 0,
+        "empty": 1,
+        "negative_one_only": 0,
+        "zero_only": 0
+      },
+      "checks": {
+        "catalan_category_counts": true,
+        "catalan_total_count": true,
+        "every_reachable_hatted_state_is_cyclic_farey_boundary": true,
+        "every_reachable_state_has_declared_anchor": true,
+        "fibonacci_equality_witnesses": true,
+        "fibonacci_extrema": true,
+        "reachable_equals_independent_farey_candidates": true,
+        "reachable_registry_digest_equals_candidate_registry_digest": true,
+        "typed_global_registry_decomposition": true,
+        "typed_guard_registry_decomposition": true
+      },
+      "deficit": 0,
+      "expected_adjacent_catalan_sum": 1,
+      "expected_category_counts": {
+        "both_anchors": 0,
+        "empty": 1,
+        "negative_one_only": 0,
+        "zero_only": 0
+      },
+      "expected_fibonacci_extrema": {
+        "exact_layer_max_primitive_coordinate": 0,
+        "global_state_registry_max_abs_determinant": 0,
+        "max_configuration_internal_abs_determinant": 0,
+        "transition_guard_registry_max_abs_determinant": 1
+      },
+      "fibonacci_witness_checks": {
+        "global_witness": true,
+        "guard_witness": true,
+        "height_witness": true,
+        "internal_witness": true
+      },
+      "independent_candidate_registry_sha256": "cf1cbb66a638b4860a516671fb74850e6ccf787fe6c4c8d29e9c04efe880bd05",
+      "observed_extrema": {
+        "exact_layer_max_primitive_coordinate": 0,
+        "global_state_registry_max_abs_determinant": 0,
+        "max_configuration_internal_abs_determinant": 0,
+        "transition_guard_registry_max_abs_determinant": 1
+      },
+      "reachable_registry_sha256": "cf1cbb66a638b4860a516671fb74850e6ccf787fe6c4c8d29e9c04efe880bd05",
+      "reachable_state_count": 1,
+      "same_level_component_sizes": [
+        1
+      ],
+      "typed_registry_counts": {
+        "global": 1,
+        "guard": 3
+      }
+    },
+    {
+      "category_counts": {
+        "both_anchors": 0,
+        "empty": 0,
+        "negative_one_only": 1,
+        "zero_only": 1
+      },
+      "checks": {
+        "catalan_category_counts": true,
+        "catalan_total_count": true,
+        "every_reachable_hatted_state_is_cyclic_farey_boundary": true,
+        "every_reachable_state_has_declared_anchor": true,
+        "fibonacci_equality_witnesses": true,
+        "fibonacci_extrema": true,
+        "reachable_equals_independent_farey_candidates": true,
+        "reachable_registry_digest_equals_candidate_registry_digest": true,
+        "typed_global_registry_decomposition": true,
+        "typed_guard_registry_decomposition": true
+      },
+      "deficit": 1,
+      "expected_adjacent_catalan_sum": 2,
+      "expected_category_counts": {
+        "both_anchors": 0,
+        "empty": 0,
+        "negative_one_only": 1,
+        "zero_only": 1
+      },
+      "expected_fibonacci_extrema": {
+        "exact_layer_max_primitive_coordinate": 1,
+        "global_state_registry_max_abs_determinant": 1,
+        "max_configuration_internal_abs_determinant": 1,
+        "transition_guard_registry_max_abs_determinant": 2
+      },
+      "fibonacci_witness_checks": {
+        "global_witness": true,
+        "guard_witness": true,
+        "height_witness": true,
+        "internal_witness": true
+      },
+      "independent_candidate_registry_sha256": "a0d836c7c6e3b5119460d4e46dfceb2866ca7fa6e2ad229e2816a147db393d57",
+      "observed_extrema": {
+        "exact_layer_max_primitive_coordinate": 1,
+        "global_state_registry_max_abs_determinant": 1,
+        "max_configuration_internal_abs_determinant": 1,
+        "transition_guard_registry_max_abs_determinant": 2
+      },
+      "reachable_registry_sha256": "a0d836c7c6e3b5119460d4e46dfceb2866ca7fa6e2ad229e2816a147db393d57",
+      "reachable_state_count": 2,
+      "same_level_component_sizes": [
+        2
+      ],
+      "typed_registry_counts": {
+        "global": 3,
+        "guard": 4
+      }
+    },
+    {
+      "category_counts": {
+        "both_anchors": 1,
+        "empty": 0,
+        "negative_one_only": 1,
+        "zero_only": 1
+      },
+      "checks": {
+        "catalan_category_counts": true,
+        "catalan_total_count": true,
+        "every_reachable_hatted_state_is_cyclic_farey_boundary": true,
+        "every_reachable_state_has_declared_anchor": true,
+        "fibonacci_equality_witnesses": true,
+        "fibonacci_extrema": true,
+        "reachable_equals_independent_farey_candidates": true,
+        "reachable_registry_digest_equals_candidate_registry_digest": true,
+        "typed_global_registry_decomposition": true,
+        "typed_guard_registry_decomposition": true
+      },
+      "deficit": 2,
+      "expected_adjacent_catalan_sum": 3,
+      "expected_category_counts": {
+        "both_anchors": 1,
+        "empty": 0,
+        "negative_one_only": 1,
+        "zero_only": 1
+      },
+      "expected_fibonacci_extrema": {
+        "exact_layer_max_primitive_coordinate": 2,
+        "global_state_registry_max_abs_determinant": 3,
+        "max_configuration_internal_abs_determinant": 1,
+        "transition_guard_registry_max_abs_determinant": 5
+      },
+      "fibonacci_witness_checks": {
+        "global_witness": true,
+        "guard_witness": true,
+        "height_witness": true,
+        "internal_witness": true
+      },
+      "independent_candidate_registry_sha256": "791715e503b071823aeac18e87f1514216f099df7efd0af8e4ff9fadcc09cede",
+      "observed_extrema": {
+        "exact_layer_max_primitive_coordinate": 2,
+        "global_state_registry_max_abs_determinant": 3,
+        "max_configuration_internal_abs_determinant": 1,
+        "transition_guard_registry_max_abs_determinant": 5
+      },
+      "reachable_registry_sha256": "791715e503b071823aeac18e87f1514216f099df7efd0af8e4ff9fadcc09cede",
+      "reachable_state_count": 3,
+      "same_level_component_sizes": [
+        3
+      ],
+      "typed_registry_counts": {
+        "global": 5,
+        "guard": 7
+      }
+    },
+    {
+      "category_counts": {
+        "both_anchors": 3,
+        "empty": 0,
+        "negative_one_only": 2,
+        "zero_only": 2
+      },
+      "checks": {
+        "catalan_category_counts": true,
+        "catalan_total_count": true,
+        "every_reachable_hatted_state_is_cyclic_farey_boundary": true,
+        "every_reachable_state_has_declared_anchor": true,
+        "fibonacci_equality_witnesses": true,
+        "fibonacci_extrema": true,
+        "reachable_equals_independent_farey_candidates": true,
+        "reachable_registry_digest_equals_candidate_registry_digest": true,
+        "typed_global_registry_decomposition": true,
+        "typed_guard_registry_decomposition": true
+      },
+      "deficit": 3,
+      "expected_adjacent_catalan_sum": 7,
+      "expected_category_counts": {
+        "both_anchors": 3,
+        "empty": 0,
+        "negative_one_only": 2,
+        "zero_only": 2
+      },
+      "expected_fibonacci_extrema": {
+        "exact_layer_max_primitive_coordinate": 3,
+        "global_state_registry_max_abs_determinant": 8,
+        "max_configuration_internal_abs_determinant": 2,
+        "transition_guard_registry_max_abs_determinant": 13
+      },
+      "fibonacci_witness_checks": {
+        "global_witness": true,
+        "guard_witness": true,
+        "height_witness": true,
+        "internal_witness": true
+      },
+      "independent_candidate_registry_sha256": "242a4d307c66c2a99480089e690e60f202da2d6d0dd304355012299066917534",
+      "observed_extrema": {
+        "exact_layer_max_primitive_coordinate": 3,
+        "global_state_registry_max_abs_determinant": 8,
+        "max_configuration_internal_abs_determinant": 2,
+        "transition_guard_registry_max_abs_determinant": 13
+      },
+      "reachable_registry_sha256": "242a4d307c66c2a99480089e690e60f202da2d6d0dd304355012299066917534",
+      "reachable_state_count": 7,
+      "same_level_component_sizes": [
+        7
+      ],
+      "typed_registry_counts": {
+        "global": 10,
+        "guard": 14
+      }
+    },
+    {
+      "category_counts": {
+        "both_anchors": 9,
+        "empty": 0,
+        "negative_one_only": 5,
+        "zero_only": 5
+      },
+      "checks": {
+        "catalan_category_counts": true,
+        "catalan_total_count": true,
+        "every_reachable_hatted_state_is_cyclic_farey_boundary": true,
+        "every_reachable_state_has_declared_anchor": true,
+        "fibonacci_equality_witnesses": true,
+        "fibonacci_extrema": true,
+        "reachable_equals_independent_farey_candidates": true,
+        "reachable_registry_digest_equals_candidate_registry_digest": true,
+        "typed_global_registry_decomposition": true,
+        "typed_guard_registry_decomposition": true
+      },
+      "deficit": 4,
+      "expected_adjacent_catalan_sum": 19,
+      "expected_category_counts": {
+        "both_anchors": 9,
+        "empty": 0,
+        "negative_one_only": 5,
+        "zero_only": 5
+      },
+      "expected_fibonacci_extrema": {
+        "exact_layer_max_primitive_coordinate": 5,
+        "global_state_registry_max_abs_determinant": 21,
+        "max_configuration_internal_abs_determinant": 3,
+        "transition_guard_registry_max_abs_determinant": 34
+      },
+      "fibonacci_witness_checks": {
+        "global_witness": true,
+        "guard_witness": true,
+        "height_witness": true,
+        "internal_witness": true
+      },
+      "independent_candidate_registry_sha256": "570669b98f38bb71a21ab38d62cee2ed29ff1dd338a5f6ac6c342324cf6140b8",
+      "observed_extrema": {
+        "exact_layer_max_primitive_coordinate": 5,
+        "global_state_registry_max_abs_determinant": 21,
+        "max_configuration_internal_abs_determinant": 3,
+        "transition_guard_registry_max_abs_determinant": 34
+      },
+      "reachable_registry_sha256": "570669b98f38bb71a21ab38d62cee2ed29ff1dd338a5f6ac6c342324cf6140b8",
+      "reachable_state_count": 19,
+      "same_level_component_sizes": [
+        19
+      ],
+      "typed_registry_counts": {
+        "global": 20,
+        "guard": 28
+      }
+    },
+    {
+      "category_counts": {
+        "both_anchors": 28,
+        "empty": 0,
+        "negative_one_only": 14,
+        "zero_only": 14
+      },
+      "checks": {
+        "catalan_category_counts": true,
+        "catalan_total_count": true,
+        "every_reachable_hatted_state_is_cyclic_farey_boundary": true,
+        "every_reachable_state_has_declared_anchor": true,
+        "fibonacci_equality_witnesses": true,
+        "fibonacci_extrema": true,
+        "reachable_equals_independent_farey_candidates": true,
+        "reachable_registry_digest_equals_candidate_registry_digest": true,
+        "typed_global_registry_decomposition": true,
+        "typed_guard_registry_decomposition": true
+      },
+      "deficit": 5,
+      "expected_adjacent_catalan_sum": 56,
+      "expected_category_counts": {
+        "both_anchors": 28,
+        "empty": 0,
+        "negative_one_only": 14,
+        "zero_only": 14
+      },
+      "expected_fibonacci_extrema": {
+        "exact_layer_max_primitive_coordinate": 8,
+        "global_state_registry_max_abs_determinant": 55,
+        "max_configuration_internal_abs_determinant": 5,
+        "transition_guard_registry_max_abs_determinant": 89
+      },
+      "fibonacci_witness_checks": {
+        "global_witness": true,
+        "guard_witness": true,
+        "height_witness": true,
+        "internal_witness": true
+      },
+      "independent_candidate_registry_sha256": "86148cce9762a975398da850b017f4493d1f9aa4737fdd27b66462b465948a00",
+      "observed_extrema": {
+        "exact_layer_max_primitive_coordinate": 8,
+        "global_state_registry_max_abs_determinant": 55,
+        "max_configuration_internal_abs_determinant": 5,
+        "transition_guard_registry_max_abs_determinant": 89
+      },
+      "reachable_registry_sha256": "86148cce9762a975398da850b017f4493d1f9aa4737fdd27b66462b465948a00",
+      "reachable_state_count": 56,
+      "same_level_component_sizes": [
+        8,
+        12,
+        12,
+        24
+      ],
+      "typed_registry_counts": {
+        "global": 40,
+        "guard": 56
+      }
+    },
+    {
+      "category_counts": {
+        "both_anchors": 90,
+        "empty": 0,
+        "negative_one_only": 42,
+        "zero_only": 42
+      },
+      "checks": {
+        "catalan_category_counts": true,
+        "catalan_total_count": true,
+        "every_reachable_hatted_state_is_cyclic_farey_boundary": true,
+        "every_reachable_state_has_declared_anchor": true,
+        "fibonacci_equality_witnesses": true,
+        "fibonacci_extrema": true,
+        "reachable_equals_independent_farey_candidates": true,
+        "reachable_registry_digest_equals_candidate_registry_digest": true,
+        "typed_global_registry_decomposition": true,
+        "typed_guard_registry_decomposition": true
+      },
+      "deficit": 6,
+      "expected_adjacent_catalan_sum": 174,
+      "expected_category_counts": {
+        "both_anchors": 90,
+        "empty": 0,
+        "negative_one_only": 42,
+        "zero_only": 42
+      },
+      "expected_fibonacci_extrema": {
+        "exact_layer_max_primitive_coordinate": 13,
+        "global_state_registry_max_abs_determinant": 144,
+        "max_configuration_internal_abs_determinant": 8,
+        "transition_guard_registry_max_abs_determinant": 233
+      },
+      "fibonacci_witness_checks": {
+        "global_witness": true,
+        "guard_witness": true,
+        "height_witness": true,
+        "internal_witness": true
+      },
+      "independent_candidate_registry_sha256": "21ccd0c47b75faa31e0863012bc31166de316ae03c7f417db0946415853ab30b",
+      "observed_extrema": {
+        "exact_layer_max_primitive_coordinate": 13,
+        "global_state_registry_max_abs_determinant": 144,
+        "max_configuration_internal_abs_determinant": 8,
+        "transition_guard_registry_max_abs_determinant": 233
+      },
+      "reachable_registry_sha256": "21ccd0c47b75faa31e0863012bc31166de316ae03c7f417db0946415853ab30b",
+      "reachable_state_count": 174,
+      "same_level_component_sizes": [
+        29,
+        29,
+        29,
+        29,
+        29,
+        29
+      ],
+      "typed_registry_counts": {
+        "global": 80,
+        "guard": 112
+      }
+    },
+    {
+      "category_counts": {
+        "both_anchors": 297,
+        "empty": 0,
+        "negative_one_only": 132,
+        "zero_only": 132
+      },
+      "checks": {
+        "catalan_category_counts": true,
+        "catalan_total_count": true,
+        "every_reachable_hatted_state_is_cyclic_farey_boundary": true,
+        "every_reachable_state_has_declared_anchor": true,
+        "fibonacci_equality_witnesses": true,
+        "fibonacci_extrema": true,
+        "reachable_equals_independent_farey_candidates": true,
+        "reachable_registry_digest_equals_candidate_registry_digest": true,
+        "typed_global_registry_decomposition": true,
+        "typed_guard_registry_decomposition": true
+      },
+      "deficit": 7,
+      "expected_adjacent_catalan_sum": 561,
+      "expected_category_counts": {
+        "both_anchors": 297,
+        "empty": 0,
+        "negative_one_only": 132,
+        "zero_only": 132
+      },
+      "expected_fibonacci_extrema": {
+        "exact_layer_max_primitive_coordinate": 21,
+        "global_state_registry_max_abs_determinant": 377,
+        "max_configuration_internal_abs_determinant": 13,
+        "transition_guard_registry_max_abs_determinant": 610
+      },
+      "fibonacci_witness_checks": {
+        "global_witness": true,
+        "guard_witness": true,
+        "height_witness": true,
+        "internal_witness": true
+      },
+      "independent_candidate_registry_sha256": "e6157c13630a9e7f2c8962e360e6468f09bb61feb7ddba0e8c5f2bc4ae39889e",
+      "observed_extrema": {
+        "exact_layer_max_primitive_coordinate": 21,
+        "global_state_registry_max_abs_determinant": 377,
+        "max_configuration_internal_abs_determinant": 13,
+        "transition_guard_registry_max_abs_determinant": 610
+      },
+      "reachable_registry_sha256": "e6157c13630a9e7f2c8962e360e6468f09bb61feb7ddba0e8c5f2bc4ae39889e",
+      "reachable_state_count": 561,
+      "same_level_component_sizes": [
+        17,
+        17,
+        17,
+        17,
+        17,
+        34,
+        34,
+        34,
+        34,
+        34,
+        34,
+        34,
+        34,
+        34,
+        34,
+        34,
+        34,
+        34,
+        34
+      ],
+      "typed_registry_counts": {
+        "global": 160,
+        "guard": 224
+      }
+    },
+    {
+      "category_counts": {
+        "both_anchors": 1001,
+        "empty": 0,
+        "negative_one_only": 429,
+        "zero_only": 429
+      },
+      "checks": {
+        "catalan_category_counts": true,
+        "catalan_total_count": true,
+        "every_reachable_hatted_state_is_cyclic_farey_boundary": true,
+        "every_reachable_state_has_declared_anchor": true,
+        "fibonacci_equality_witnesses": true,
+        "fibonacci_extrema": true,
+        "reachable_equals_independent_farey_candidates": true,
+        "reachable_registry_digest_equals_candidate_registry_digest": true,
+        "typed_global_registry_decomposition": true,
+        "typed_guard_registry_decomposition": true
+      },
+      "deficit": 8,
+      "expected_adjacent_catalan_sum": 1859,
+      "expected_category_counts": {
+        "both_anchors": 1001,
+        "empty": 0,
+        "negative_one_only": 429,
+        "zero_only": 429
+      },
+      "expected_fibonacci_extrema": {
+        "exact_layer_max_primitive_coordinate": 34,
+        "global_state_registry_max_abs_determinant": 987,
+        "max_configuration_internal_abs_determinant": 21,
+        "transition_guard_registry_max_abs_determinant": 1597
+      },
+      "fibonacci_witness_checks": {
+        "global_witness": true,
+        "guard_witness": true,
+        "height_witness": true,
+        "internal_witness": true
+      },
+      "independent_candidate_registry_sha256": "d03efc5ba20f57590aa682493130cf25aed6de38ca818219545b4957a8cd4109",
+      "observed_extrema": {
+        "exact_layer_max_primitive_coordinate": 34,
+        "global_state_registry_max_abs_determinant": 987,
+        "max_configuration_internal_abs_determinant": 21,
+        "transition_guard_registry_max_abs_determinant": 1597
+      },
+      "reachable_registry_sha256": "d03efc5ba20f57590aa682493130cf25aed6de38ca818219545b4957a8cd4109",
+      "reachable_state_count": 1859,
+      "same_level_component_sizes": [
+        13,
+        13,
+        39,
+        39,
+        39,
+        39,
+        39,
+        39,
+        39,
+        39,
+        39,
+        39,
+        39,
+        39,
+        39,
+        39,
+        39,
+        39,
+        39,
+        39,
+        39,
+        39,
+        39,
+        39,
+        39,
+        39,
+        39,
+        39,
+        39,
+        39,
+        39,
+        39,
+        39,
+        39,
+        39,
+        39,
+        39,
+        39,
+        39,
+        39,
+        39,
+        39,
+        39,
+        39,
+        39,
+        39,
+        39,
+        39,
+        39
+      ],
+      "typed_registry_counts": {
+        "global": 320,
+        "guard": 448
+      }
+    },
+    {
+      "category_counts": {
+        "both_anchors": 3432,
+        "empty": 0,
+        "negative_one_only": 1430,
+        "zero_only": 1430
+      },
+      "checks": {
+        "catalan_category_counts": true,
+        "catalan_total_count": true,
+        "every_reachable_hatted_state_is_cyclic_farey_boundary": true,
+        "every_reachable_state_has_declared_anchor": true,
+        "fibonacci_equality_witnesses": true,
+        "fibonacci_extrema": true,
+        "reachable_equals_independent_farey_candidates": true,
+        "reachable_registry_digest_equals_candidate_registry_digest": true,
+        "typed_global_registry_decomposition": true,
+        "typed_guard_registry_decomposition": true
+      },
+      "deficit": 9,
+      "expected_adjacent_catalan_sum": 6292,
+      "expected_category_counts": {
+        "both_anchors": 3432,
+        "empty": 0,
+        "negative_one_only": 1430,
+        "zero_only": 1430
+      },
+      "expected_fibonacci_extrema": {
+        "exact_layer_max_primitive_coordinate": 55,
+        "global_state_registry_max_abs_determinant": 2584,
+        "max_configuration_internal_abs_determinant": 34,
+        "transition_guard_registry_max_abs_determinant": 4181
+      },
+      "fibonacci_witness_checks": {
+        "global_witness": true,
+        "guard_witness": true,
+        "height_witness": true,
+        "internal_witness": true
+      },
+      "independent_candidate_registry_sha256": "497c5df9dcd040ebe63102d37362181aef254bd554a9265446197c862afdf1bf",
+      "observed_extrema": {
+        "exact_layer_max_primitive_coordinate": 55,
+        "global_state_registry_max_abs_determinant": 2584,
+        "max_configuration_internal_abs_determinant": 34,
+        "transition_guard_registry_max_abs_determinant": 4181
+      },
+      "reachable_registry_sha256": "497c5df9dcd040ebe63102d37362181aef254bd554a9265446197c862afdf1bf",
+      "reachable_state_count": 6292,
+      "same_level_component_sizes": [
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44
+      ],
+      "typed_registry_counts": {
+        "global": 640,
+        "guard": 896
+      }
+    },
+    {
+      "category_counts": {
+        "both_anchors": 11934,
+        "empty": 0,
+        "negative_one_only": 4862,
+        "zero_only": 4862
+      },
+      "checks": {
+        "catalan_category_counts": true,
+        "catalan_total_count": true,
+        "every_reachable_hatted_state_is_cyclic_farey_boundary": true,
+        "every_reachable_state_has_declared_anchor": true,
+        "fibonacci_equality_witnesses": true,
+        "fibonacci_extrema": true,
+        "reachable_equals_independent_farey_candidates": true,
+        "reachable_registry_digest_equals_candidate_registry_digest": true,
+        "typed_global_registry_decomposition": true,
+        "typed_guard_registry_decomposition": true
+      },
+      "deficit": 10,
+      "expected_adjacent_catalan_sum": 21658,
+      "expected_category_counts": {
+        "both_anchors": 11934,
+        "empty": 0,
+        "negative_one_only": 4862,
+        "zero_only": 4862
+      },
+      "expected_fibonacci_extrema": {
+        "exact_layer_max_primitive_coordinate": 89,
+        "global_state_registry_max_abs_determinant": 6765,
+        "max_configuration_internal_abs_determinant": 55,
+        "transition_guard_registry_max_abs_determinant": 10946
+      },
+      "fibonacci_witness_checks": {
+        "global_witness": true,
+        "guard_witness": true,
+        "height_witness": true,
+        "internal_witness": true
+      },
+      "independent_candidate_registry_sha256": "b69adf3e9e5d4bdecebf4e6e317c25b6900dc013935a166b7fa2dac6b9ee1d00",
+      "observed_extrema": {
+        "exact_layer_max_primitive_coordinate": 89,
+        "global_state_registry_max_abs_determinant": 6765,
+        "max_configuration_internal_abs_determinant": 55,
+        "transition_guard_registry_max_abs_determinant": 10946
+      },
+      "reachable_registry_sha256": "b69adf3e9e5d4bdecebf4e6e317c25b6900dc013935a166b7fa2dac6b9ee1d00",
+      "reachable_state_count": 21658,
+      "same_level_component_sizes": [
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49,
+        49
+      ],
+      "typed_registry_counts": {
+        "global": 1280,
+        "guard": 1792
+      }
+    }
+  ],
+  "schema": "paper.route-profiles.farey-catalan-fibonacci-certificate.v1",
+  "source_closure": [
+    {
+      "sha256": "4226019f2ab3f9080fb11ee88ccea466dd1b5634d24d2f4a4bfd9feccb8e2f5c",
+      "uri": "experiments/paper22/farey_catalan_structure.py"
+    },
+    {
+      "sha256": "ef93869454ebee26d501ffffd2972db1c3fd2261ff7d43e01f5713ab4fe1f326",
+      "uri": "papers/paper22/Paper XXII.md"
+    },
+    {
+      "role": "shared canonical cusp encoding, determinant arithmetic, and transition closure only",
+      "sha256": "7798fd17a3619d066081f8df60672af4a9034209348783198149b6dd9cc76098",
+      "uri": "experiments/paper22/exact_rational_low_deficit.py"
+    }
+  ],
+  "theorem_boundary": [
+    "set equality is replayed only through max_deficit",
+    "the all-k anchored Farey classification is a manuscript proof, not a consequence of this finite replay",
+    "the all-k Catalan enumeration is a manuscript corollary, not a sequence-fit claim",
+    "the all-k Fibonacci envelope is a manuscript theorem, not a consequence of this finite replay",
+    "no sharper finite-field stabilization threshold is inferred from sampled primes"
+  ],
+  "typed_continuant_envelope_replay": {
+    "all_checks_passed": true,
+    "max_depth": 7,
+    "records": [
+      {
+        "checks": {
+          "M_L_upper": true,
+          "N_L_exact": true,
+          "P_L_exact": true,
+          "distinct_base_exact": true,
+          "same_type_exact": true
+        },
+        "maxima": {
+          "L-L": 1,
+          "M-L": 4,
+          "M-M": 1,
+          "M-P": 3,
+          "N-L": 5,
+          "N-M": 3,
+          "N-N": 1,
+          "N-P": 3,
+          "P-L": 2,
+          "P-P": 1
+        },
+        "r": 2,
+        "s": 2
+      },
+      {
+        "checks": {
+          "M_L_upper": true,
+          "N_L_exact": true,
+          "P_L_exact": true,
+          "distinct_base_exact": true,
+          "same_type_exact": true
+        },
+        "maxima": {
+          "L-L": 2,
+          "M-L": 7,
+          "M-M": 2,
+          "M-P": 5,
+          "N-L": 8,
+          "N-M": 5,
+          "N-N": 2,
+          "N-P": 5,
+          "P-L": 3,
+          "P-P": 2
+        },
+        "r": 2,
+        "s": 3
+      },
+      {
+        "checks": {
+          "M_L_upper": true,
+          "N_L_exact": true,
+          "P_L_exact": true,
+          "distinct_base_exact": true,
+          "same_type_exact": true
+        },
+        "maxima": {
+          "L-L": 3,
+          "M-L": 11,
+          "M-M": 3,
+          "M-P": 8,
+          "N-L": 13,
+          "N-M": 8,
+          "N-N": 3,
+          "N-P": 8,
+          "P-L": 5,
+          "P-P": 3
+        },
+        "r": 2,
+        "s": 4
+      },
+      {
+        "checks": {
+          "M_L_upper": true,
+          "N_L_exact": true,
+          "P_L_exact": true,
+          "distinct_base_exact": true,
+          "same_type_exact": true
+        },
+        "maxima": {
+          "L-L": 5,
+          "M-L": 18,
+          "M-M": 5,
+          "M-P": 13,
+          "N-L": 21,
+          "N-M": 13,
+          "N-N": 5,
+          "N-P": 13,
+          "P-L": 8,
+          "P-P": 5
+        },
+        "r": 2,
+        "s": 5
+      },
+      {
+        "checks": {
+          "M_L_upper": true,
+          "N_L_exact": true,
+          "P_L_exact": true,
+          "distinct_base_exact": true,
+          "same_type_exact": true
+        },
+        "maxima": {
+          "L-L": 8,
+          "M-L": 29,
+          "M-M": 8,
+          "M-P": 21,
+          "N-L": 34,
+          "N-M": 21,
+          "N-N": 8,
+          "N-P": 21,
+          "P-L": 13,
+          "P-P": 8
+        },
+        "r": 2,
+        "s": 6
+      },
+      {
+        "checks": {
+          "M_L_upper": true,
+          "N_L_exact": true,
+          "P_L_exact": true,
+          "distinct_base_exact": true,
+          "same_type_exact": true
+        },
+        "maxima": {
+          "L-L": 13,
+          "M-L": 47,
+          "M-M": 13,
+          "M-P": 34,
+          "N-L": 55,
+          "N-M": 34,
+          "N-N": 13,
+          "N-P": 34,
+          "P-L": 21,
+          "P-P": 13
+        },
+        "r": 2,
+        "s": 7
+      },
+      {
+        "checks": {
+          "M_L_upper": true,
+          "N_L_exact": true,
+          "P_L_exact": true,
+          "distinct_base_exact": true,
+          "same_type_exact": true
+        },
+        "maxima": {
+          "L-L": 2,
+          "M-L": 7,
+          "M-M": 2,
+          "M-P": 5,
+          "N-L": 8,
+          "N-M": 5,
+          "N-N": 2,
+          "N-P": 5,
+          "P-L": 3,
+          "P-P": 2
+        },
+        "r": 3,
+        "s": 2
+      },
+      {
+        "checks": {
+          "M_L_upper": true,
+          "N_L_exact": true,
+          "P_L_exact": true,
+          "distinct_base_exact": true,
+          "same_type_exact": true
+        },
+        "maxima": {
+          "L-L": 3,
+          "M-L": 12,
+          "M-M": 3,
+          "M-P": 8,
+          "N-L": 13,
+          "N-M": 8,
+          "N-N": 3,
+          "N-P": 8,
+          "P-L": 5,
+          "P-P": 3
+        },
+        "r": 3,
+        "s": 3
+      },
+      {
+        "checks": {
+          "M_L_upper": true,
+          "N_L_exact": true,
+          "P_L_exact": true,
+          "distinct_base_exact": true,
+          "same_type_exact": true
+        },
+        "maxima": {
+          "L-L": 5,
+          "M-L": 19,
+          "M-M": 5,
+          "M-P": 13,
+          "N-L": 21,
+          "N-M": 13,
+          "N-N": 5,
+          "N-P": 13,
+          "P-L": 8,
+          "P-P": 5
+        },
+        "r": 3,
+        "s": 4
+      },
+      {
+        "checks": {
+          "M_L_upper": true,
+          "N_L_exact": true,
+          "P_L_exact": true,
+          "distinct_base_exact": true,
+          "same_type_exact": true
+        },
+        "maxima": {
+          "L-L": 8,
+          "M-L": 31,
+          "M-M": 8,
+          "M-P": 21,
+          "N-L": 34,
+          "N-M": 21,
+          "N-N": 8,
+          "N-P": 21,
+          "P-L": 13,
+          "P-P": 8
+        },
+        "r": 3,
+        "s": 5
+      },
+      {
+        "checks": {
+          "M_L_upper": true,
+          "N_L_exact": true,
+          "P_L_exact": true,
+          "distinct_base_exact": true,
+          "same_type_exact": true
+        },
+        "maxima": {
+          "L-L": 13,
+          "M-L": 50,
+          "M-M": 13,
+          "M-P": 34,
+          "N-L": 55,
+          "N-M": 34,
+          "N-N": 13,
+          "N-P": 34,
+          "P-L": 21,
+          "P-P": 13
+        },
+        "r": 3,
+        "s": 6
+      },
+      {
+        "checks": {
+          "M_L_upper": true,
+          "N_L_exact": true,
+          "P_L_exact": true,
+          "distinct_base_exact": true,
+          "same_type_exact": true
+        },
+        "maxima": {
+          "L-L": 21,
+          "M-L": 81,
+          "M-M": 21,
+          "M-P": 55,
+          "N-L": 89,
+          "N-M": 55,
+          "N-N": 21,
+          "N-P": 55,
+          "P-L": 34,
+          "P-P": 21
+        },
+        "r": 3,
+        "s": 7
+      },
+      {
+        "checks": {
+          "M_L_upper": true,
+          "N_L_exact": true,
+          "P_L_exact": true,
+          "distinct_base_exact": true,
+          "same_type_exact": true
+        },
+        "maxima": {
+          "L-L": 3,
+          "M-L": 11,
+          "M-M": 3,
+          "M-P": 8,
+          "N-L": 13,
+          "N-M": 8,
+          "N-N": 3,
+          "N-P": 8,
+          "P-L": 5,
+          "P-P": 3
+        },
+        "r": 4,
+        "s": 2
+      },
+      {
+        "checks": {
+          "M_L_upper": true,
+          "N_L_exact": true,
+          "P_L_exact": true,
+          "distinct_base_exact": true,
+          "same_type_exact": true
+        },
+        "maxima": {
+          "L-L": 5,
+          "M-L": 19,
+          "M-M": 5,
+          "M-P": 13,
+          "N-L": 21,
+          "N-M": 13,
+          "N-N": 5,
+          "N-P": 13,
+          "P-L": 8,
+          "P-P": 5
+        },
+        "r": 4,
+        "s": 3
+      },
+      {
+        "checks": {
+          "M_L_upper": true,
+          "N_L_exact": true,
+          "P_L_exact": true,
+          "distinct_base_exact": true,
+          "same_type_exact": true
+        },
+        "maxima": {
+          "L-L": 8,
+          "M-L": 30,
+          "M-M": 8,
+          "M-P": 21,
+          "N-L": 34,
+          "N-M": 21,
+          "N-N": 8,
+          "N-P": 21,
+          "P-L": 13,
+          "P-P": 8
+        },
+        "r": 4,
+        "s": 4
+      },
+      {
+        "checks": {
+          "M_L_upper": true,
+          "N_L_exact": true,
+          "P_L_exact": true,
+          "distinct_base_exact": true,
+          "same_type_exact": true
+        },
+        "maxima": {
+          "L-L": 13,
+          "M-L": 49,
+          "M-M": 13,
+          "M-P": 34,
+          "N-L": 55,
+          "N-M": 34,
+          "N-N": 13,
+          "N-P": 34,
+          "P-L": 21,
+          "P-P": 13
+        },
+        "r": 4,
+        "s": 5
+      },
+      {
+        "checks": {
+          "M_L_upper": true,
+          "N_L_exact": true,
+          "P_L_exact": true,
+          "distinct_base_exact": true,
+          "same_type_exact": true
+        },
+        "maxima": {
+          "L-L": 21,
+          "M-L": 79,
+          "M-M": 21,
+          "M-P": 55,
+          "N-L": 89,
+          "N-M": 55,
+          "N-N": 21,
+          "N-P": 55,
+          "P-L": 34,
+          "P-P": 21
+        },
+        "r": 4,
+        "s": 6
+      },
+      {
+        "checks": {
+          "M_L_upper": true,
+          "N_L_exact": true,
+          "P_L_exact": true,
+          "distinct_base_exact": true,
+          "same_type_exact": true
+        },
+        "maxima": {
+          "L-L": 34,
+          "M-L": 128,
+          "M-M": 34,
+          "M-P": 89,
+          "N-L": 144,
+          "N-M": 89,
+          "N-N": 34,
+          "N-P": 89,
+          "P-L": 55,
+          "P-P": 34
+        },
+        "r": 4,
+        "s": 7
+      },
+      {
+        "checks": {
+          "M_L_upper": true,
+          "N_L_exact": true,
+          "P_L_exact": true,
+          "distinct_base_exact": true,
+          "same_type_exact": true
+        },
+        "maxima": {
+          "L-L": 5,
+          "M-L": 18,
+          "M-M": 5,
+          "M-P": 13,
+          "N-L": 21,
+          "N-M": 13,
+          "N-N": 5,
+          "N-P": 13,
+          "P-L": 8,
+          "P-P": 5
+        },
+        "r": 5,
+        "s": 2
+      },
+      {
+        "checks": {
+          "M_L_upper": true,
+          "N_L_exact": true,
+          "P_L_exact": true,
+          "distinct_base_exact": true,
+          "same_type_exact": true
+        },
+        "maxima": {
+          "L-L": 8,
+          "M-L": 31,
+          "M-M": 8,
+          "M-P": 21,
+          "N-L": 34,
+          "N-M": 21,
+          "N-N": 8,
+          "N-P": 21,
+          "P-L": 13,
+          "P-P": 8
+        },
+        "r": 5,
+        "s": 3
+      },
+      {
+        "checks": {
+          "M_L_upper": true,
+          "N_L_exact": true,
+          "P_L_exact": true,
+          "distinct_base_exact": true,
+          "same_type_exact": true
+        },
+        "maxima": {
+          "L-L": 13,
+          "M-L": 49,
+          "M-M": 13,
+          "M-P": 34,
+          "N-L": 55,
+          "N-M": 34,
+          "N-N": 13,
+          "N-P": 34,
+          "P-L": 21,
+          "P-P": 13
+        },
+        "r": 5,
+        "s": 4
+      },
+      {
+        "checks": {
+          "M_L_upper": true,
+          "N_L_exact": true,
+          "P_L_exact": true,
+          "distinct_base_exact": true,
+          "same_type_exact": true
+        },
+        "maxima": {
+          "L-L": 21,
+          "M-L": 80,
+          "M-M": 21,
+          "M-P": 55,
+          "N-L": 89,
+          "N-M": 55,
+          "N-N": 21,
+          "N-P": 55,
+          "P-L": 34,
+          "P-P": 21
+        },
+        "r": 5,
+        "s": 5
+      },
+      {
+        "checks": {
+          "M_L_upper": true,
+          "N_L_exact": true,
+          "P_L_exact": true,
+          "distinct_base_exact": true,
+          "same_type_exact": true
+        },
+        "maxima": {
+          "L-L": 34,
+          "M-L": 129,
+          "M-M": 34,
+          "M-P": 89,
+          "N-L": 144,
+          "N-M": 89,
+          "N-N": 34,
+          "N-P": 89,
+          "P-L": 55,
+          "P-P": 34
+        },
+        "r": 5,
+        "s": 6
+      },
+      {
+        "checks": {
+          "M_L_upper": true,
+          "N_L_exact": true,
+          "P_L_exact": true,
+          "distinct_base_exact": true,
+          "same_type_exact": true
+        },
+        "maxima": {
+          "L-L": 55,
+          "M-L": 209,
+          "M-M": 55,
+          "M-P": 144,
+          "N-L": 233,
+          "N-M": 144,
+          "N-N": 55,
+          "N-P": 144,
+          "P-L": 89,
+          "P-P": 55
+        },
+        "r": 5,
+        "s": 7
+      },
+      {
+        "checks": {
+          "M_L_upper": true,
+          "N_L_exact": true,
+          "P_L_exact": true,
+          "distinct_base_exact": true,
+          "same_type_exact": true
+        },
+        "maxima": {
+          "L-L": 8,
+          "M-L": 29,
+          "M-M": 8,
+          "M-P": 21,
+          "N-L": 34,
+          "N-M": 21,
+          "N-N": 8,
+          "N-P": 21,
+          "P-L": 13,
+          "P-P": 8
+        },
+        "r": 6,
+        "s": 2
+      },
+      {
+        "checks": {
+          "M_L_upper": true,
+          "N_L_exact": true,
+          "P_L_exact": true,
+          "distinct_base_exact": true,
+          "same_type_exact": true
+        },
+        "maxima": {
+          "L-L": 13,
+          "M-L": 50,
+          "M-M": 13,
+          "M-P": 34,
+          "N-L": 55,
+          "N-M": 34,
+          "N-N": 13,
+          "N-P": 34,
+          "P-L": 21,
+          "P-P": 13
+        },
+        "r": 6,
+        "s": 3
+      },
+      {
+        "checks": {
+          "M_L_upper": true,
+          "N_L_exact": true,
+          "P_L_exact": true,
+          "distinct_base_exact": true,
+          "same_type_exact": true
+        },
+        "maxima": {
+          "L-L": 21,
+          "M-L": 79,
+          "M-M": 21,
+          "M-P": 55,
+          "N-L": 89,
+          "N-M": 55,
+          "N-N": 21,
+          "N-P": 55,
+          "P-L": 34,
+          "P-P": 21
+        },
+        "r": 6,
+        "s": 4
+      },
+      {
+        "checks": {
+          "M_L_upper": true,
+          "N_L_exact": true,
+          "P_L_exact": true,
+          "distinct_base_exact": true,
+          "same_type_exact": true
+        },
+        "maxima": {
+          "L-L": 34,
+          "M-L": 129,
+          "M-M": 34,
+          "M-P": 89,
+          "N-L": 144,
+          "N-M": 89,
+          "N-N": 34,
+          "N-P": 89,
+          "P-L": 55,
+          "P-P": 34
+        },
+        "r": 6,
+        "s": 5
+      },
+      {
+        "checks": {
+          "M_L_upper": true,
+          "N_L_exact": true,
+          "P_L_exact": true,
+          "distinct_base_exact": true,
+          "same_type_exact": true
+        },
+        "maxima": {
+          "L-L": 55,
+          "M-L": 208,
+          "M-M": 55,
+          "M-P": 144,
+          "N-L": 233,
+          "N-M": 144,
+          "N-N": 55,
+          "N-P": 144,
+          "P-L": 89,
+          "P-P": 55
+        },
+        "r": 6,
+        "s": 6
+      },
+      {
+        "checks": {
+          "M_L_upper": true,
+          "N_L_exact": true,
+          "P_L_exact": true,
+          "distinct_base_exact": true,
+          "same_type_exact": true
+        },
+        "maxima": {
+          "L-L": 89,
+          "M-L": 337,
+          "M-M": 89,
+          "M-P": 233,
+          "N-L": 377,
+          "N-M": 233,
+          "N-N": 89,
+          "N-P": 233,
+          "P-L": 144,
+          "P-P": 89
+        },
+        "r": 6,
+        "s": 7
+      },
+      {
+        "checks": {
+          "M_L_upper": true,
+          "N_L_exact": true,
+          "P_L_exact": true,
+          "distinct_base_exact": true,
+          "same_type_exact": true
+        },
+        "maxima": {
+          "L-L": 13,
+          "M-L": 47,
+          "M-M": 13,
+          "M-P": 34,
+          "N-L": 55,
+          "N-M": 34,
+          "N-N": 13,
+          "N-P": 34,
+          "P-L": 21,
+          "P-P": 13
+        },
+        "r": 7,
+        "s": 2
+      },
+      {
+        "checks": {
+          "M_L_upper": true,
+          "N_L_exact": true,
+          "P_L_exact": true,
+          "distinct_base_exact": true,
+          "same_type_exact": true
+        },
+        "maxima": {
+          "L-L": 21,
+          "M-L": 81,
+          "M-M": 21,
+          "M-P": 55,
+          "N-L": 89,
+          "N-M": 55,
+          "N-N": 21,
+          "N-P": 55,
+          "P-L": 34,
+          "P-P": 21
+        },
+        "r": 7,
+        "s": 3
+      },
+      {
+        "checks": {
+          "M_L_upper": true,
+          "N_L_exact": true,
+          "P_L_exact": true,
+          "distinct_base_exact": true,
+          "same_type_exact": true
+        },
+        "maxima": {
+          "L-L": 34,
+          "M-L": 128,
+          "M-M": 34,
+          "M-P": 89,
+          "N-L": 144,
+          "N-M": 89,
+          "N-N": 34,
+          "N-P": 89,
+          "P-L": 55,
+          "P-P": 34
+        },
+        "r": 7,
+        "s": 4
+      },
+      {
+        "checks": {
+          "M_L_upper": true,
+          "N_L_exact": true,
+          "P_L_exact": true,
+          "distinct_base_exact": true,
+          "same_type_exact": true
+        },
+        "maxima": {
+          "L-L": 55,
+          "M-L": 209,
+          "M-M": 55,
+          "M-P": 144,
+          "N-L": 233,
+          "N-M": 144,
+          "N-N": 55,
+          "N-P": 144,
+          "P-L": 89,
+          "P-P": 55
+        },
+        "r": 7,
+        "s": 5
+      },
+      {
+        "checks": {
+          "M_L_upper": true,
+          "N_L_exact": true,
+          "P_L_exact": true,
+          "distinct_base_exact": true,
+          "same_type_exact": true
+        },
+        "maxima": {
+          "L-L": 89,
+          "M-L": 337,
+          "M-M": 89,
+          "M-P": 233,
+          "N-L": 377,
+          "N-M": 233,
+          "N-N": 89,
+          "N-P": 233,
+          "P-L": 144,
+          "P-P": 89
+        },
+        "r": 7,
+        "s": 6
+      },
+      {
+        "checks": {
+          "M_L_upper": true,
+          "N_L_exact": true,
+          "P_L_exact": true,
+          "distinct_base_exact": true,
+          "same_type_exact": true
+        },
+        "maxima": {
+          "L-L": 144,
+          "M-L": 546,
+          "M-M": 144,
+          "M-P": 377,
+          "N-L": 610,
+          "N-M": 377,
+          "N-N": 144,
+          "N-P": 377,
+          "P-L": 233,
+          "P-P": 144
+        },
+        "r": 7,
+        "s": 7
+      }
+    ]
+  }
+}

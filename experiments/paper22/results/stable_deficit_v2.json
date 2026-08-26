@@ -1,0 +1,908 @@
+{
+  "additional_low_deficit_sources": [
+    {
+      "max_deficit": 7,
+      "prime": 23
+    },
+    {
+      "max_deficit": 7,
+      "prime": 29
+    },
+    {
+      "max_deficit": 7,
+      "prime": 31
+    }
+  ],
+  "artifact_role": "COMPUTATIONAL_OBSERVATION_FIXED_DEFICIT_STABILITY",
+  "boundary": [
+    "a stable tail over sampled primes is not eventual stability",
+    "the threshold may depend on deficit and the marking",
+    "recurrence diagnostics are finite-sequence fits, not proofs",
+    "no uniform automaton quotient is asserted"
+  ],
+  "claim_status": "computational_observation",
+  "content_sha256": "6f8342e1254d92521801150057cce9714ef367972ed089ae963b12f9a7946721",
+  "deficit_layers": [
+    {
+      "deficit": 0,
+      "longest_stable_tail": {
+        "length": 11,
+        "primes": [
+          2,
+          3,
+          5,
+          7,
+          11,
+          13,
+          17,
+          19,
+          23,
+          29,
+          31
+        ],
+        "value": 1
+      },
+      "observations": [
+        {
+          "count": 1,
+          "prime": 2
+        },
+        {
+          "count": 1,
+          "prime": 3
+        },
+        {
+          "count": 1,
+          "prime": 5
+        },
+        {
+          "count": 1,
+          "prime": 7
+        },
+        {
+          "count": 1,
+          "prime": 11
+        },
+        {
+          "count": 1,
+          "prime": 13
+        },
+        {
+          "count": 1,
+          "prime": 17
+        },
+        {
+          "count": 1,
+          "prime": 19
+        },
+        {
+          "count": 1,
+          "prime": 23
+        },
+        {
+          "count": 1,
+          "prime": 29
+        },
+        {
+          "count": 1,
+          "prime": 31
+        }
+      ],
+      "observed_stability": {
+        "sample_count": 11,
+        "status": "OBSERVED_STABLE_TAIL",
+        "threshold_prime": 2,
+        "value": 1
+      }
+    },
+    {
+      "deficit": 1,
+      "longest_stable_tail": {
+        "length": 11,
+        "primes": [
+          2,
+          3,
+          5,
+          7,
+          11,
+          13,
+          17,
+          19,
+          23,
+          29,
+          31
+        ],
+        "value": 2
+      },
+      "observations": [
+        {
+          "count": 2,
+          "prime": 2
+        },
+        {
+          "count": 2,
+          "prime": 3
+        },
+        {
+          "count": 2,
+          "prime": 5
+        },
+        {
+          "count": 2,
+          "prime": 7
+        },
+        {
+          "count": 2,
+          "prime": 11
+        },
+        {
+          "count": 2,
+          "prime": 13
+        },
+        {
+          "count": 2,
+          "prime": 17
+        },
+        {
+          "count": 2,
+          "prime": 19
+        },
+        {
+          "count": 2,
+          "prime": 23
+        },
+        {
+          "count": 2,
+          "prime": 29
+        },
+        {
+          "count": 2,
+          "prime": 31
+        }
+      ],
+      "observed_stability": {
+        "sample_count": 11,
+        "status": "OBSERVED_STABLE_TAIL",
+        "threshold_prime": 2,
+        "value": 2
+      }
+    },
+    {
+      "deficit": 2,
+      "longest_stable_tail": {
+        "length": 10,
+        "primes": [
+          3,
+          5,
+          7,
+          11,
+          13,
+          17,
+          19,
+          23,
+          29,
+          31
+        ],
+        "value": 3
+      },
+      "observations": [
+        {
+          "count": 1,
+          "prime": 2
+        },
+        {
+          "count": 3,
+          "prime": 3
+        },
+        {
+          "count": 3,
+          "prime": 5
+        },
+        {
+          "count": 3,
+          "prime": 7
+        },
+        {
+          "count": 3,
+          "prime": 11
+        },
+        {
+          "count": 3,
+          "prime": 13
+        },
+        {
+          "count": 3,
+          "prime": 17
+        },
+        {
+          "count": 3,
+          "prime": 19
+        },
+        {
+          "count": 3,
+          "prime": 23
+        },
+        {
+          "count": 3,
+          "prime": 29
+        },
+        {
+          "count": 3,
+          "prime": 31
+        }
+      ],
+      "observed_stability": {
+        "sample_count": 10,
+        "status": "OBSERVED_STABLE_TAIL",
+        "threshold_prime": 3,
+        "value": 3
+      }
+    },
+    {
+      "deficit": 3,
+      "longest_stable_tail": {
+        "length": 9,
+        "primes": [
+          5,
+          7,
+          11,
+          13,
+          17,
+          19,
+          23,
+          29,
+          31
+        ],
+        "value": 7
+      },
+      "observations": [
+        {
+          "count": 1,
+          "prime": 3
+        },
+        {
+          "count": 7,
+          "prime": 5
+        },
+        {
+          "count": 7,
+          "prime": 7
+        },
+        {
+          "count": 7,
+          "prime": 11
+        },
+        {
+          "count": 7,
+          "prime": 13
+        },
+        {
+          "count": 7,
+          "prime": 17
+        },
+        {
+          "count": 7,
+          "prime": 19
+        },
+        {
+          "count": 7,
+          "prime": 23
+        },
+        {
+          "count": 7,
+          "prime": 29
+        },
+        {
+          "count": 7,
+          "prime": 31
+        }
+      ],
+      "observed_stability": {
+        "sample_count": 9,
+        "status": "OBSERVED_STABLE_TAIL",
+        "threshold_prime": 5,
+        "value": 7
+      }
+    },
+    {
+      "deficit": 4,
+      "longest_stable_tail": {
+        "length": 8,
+        "primes": [
+          7,
+          11,
+          13,
+          17,
+          19,
+          23,
+          29,
+          31
+        ],
+        "value": 19
+      },
+      "observations": [
+        {
+          "count": 5,
+          "prime": 5
+        },
+        {
+          "count": 19,
+          "prime": 7
+        },
+        {
+          "count": 19,
+          "prime": 11
+        },
+        {
+          "count": 19,
+          "prime": 13
+        },
+        {
+          "count": 19,
+          "prime": 17
+        },
+        {
+          "count": 19,
+          "prime": 19
+        },
+        {
+          "count": 19,
+          "prime": 23
+        },
+        {
+          "count": 19,
+          "prime": 29
+        },
+        {
+          "count": 19,
+          "prime": 31
+        }
+      ],
+      "observed_stability": {
+        "sample_count": 8,
+        "status": "OBSERVED_STABLE_TAIL",
+        "threshold_prime": 7,
+        "value": 19
+      }
+    },
+    {
+      "deficit": 5,
+      "longest_stable_tail": {
+        "length": 7,
+        "primes": [
+          11,
+          13,
+          17,
+          19,
+          23,
+          29,
+          31
+        ],
+        "value": 56
+      },
+      "observations": [
+        {
+          "count": 1,
+          "prime": 5
+        },
+        {
+          "count": 18,
+          "prime": 7
+        },
+        {
+          "count": 56,
+          "prime": 11
+        },
+        {
+          "count": 56,
+          "prime": 13
+        },
+        {
+          "count": 56,
+          "prime": 17
+        },
+        {
+          "count": 56,
+          "prime": 19
+        },
+        {
+          "count": 56,
+          "prime": 23
+        },
+        {
+          "count": 56,
+          "prime": 29
+        },
+        {
+          "count": 56,
+          "prime": 31
+        }
+      ],
+      "observed_stability": {
+        "sample_count": 7,
+        "status": "OBSERVED_STABLE_TAIL",
+        "threshold_prime": 11,
+        "value": 56
+      }
+    },
+    {
+      "deficit": 6,
+      "longest_stable_tail": {
+        "length": 5,
+        "primes": [
+          17,
+          19,
+          23,
+          29,
+          31
+        ],
+        "value": 174
+      },
+      "observations": [
+        {
+          "count": 7,
+          "prime": 7
+        },
+        {
+          "count": 126,
+          "prime": 11
+        },
+        {
+          "count": 150,
+          "prime": 13
+        },
+        {
+          "count": 174,
+          "prime": 17
+        },
+        {
+          "count": 174,
+          "prime": 19
+        },
+        {
+          "count": 174,
+          "prime": 23
+        },
+        {
+          "count": 174,
+          "prime": 29
+        },
+        {
+          "count": 174,
+          "prime": 31
+        }
+      ],
+      "observed_stability": {
+        "sample_count": 5,
+        "status": "OBSERVED_STABLE_TAIL",
+        "threshold_prime": 17,
+        "value": 174
+      }
+    },
+    {
+      "deficit": 7,
+      "longest_stable_tail": {
+        "length": 3,
+        "primes": [
+          23,
+          29,
+          31
+        ],
+        "value": 561
+      },
+      "observations": [
+        {
+          "count": 1,
+          "prime": 7
+        },
+        {
+          "count": 189,
+          "prime": 11
+        },
+        {
+          "count": 339,
+          "prime": 13
+        },
+        {
+          "count": 503,
+          "prime": 17
+        },
+        {
+          "count": 503,
+          "prime": 19
+        },
+        {
+          "count": 561,
+          "prime": 23
+        },
+        {
+          "count": 561,
+          "prime": 29
+        },
+        {
+          "count": 561,
+          "prime": 31
+        }
+      ],
+      "observed_stability": {
+        "sample_count": 3,
+        "status": "OBSERVED_STABLE_TAIL",
+        "threshold_prime": 23,
+        "value": 561
+      }
+    },
+    {
+      "deficit": 8,
+      "longest_stable_tail": {
+        "length": 1,
+        "primes": [
+          19
+        ],
+        "value": 1403
+      },
+      "observations": [
+        {
+          "count": 137,
+          "prime": 11
+        },
+        {
+          "count": 519,
+          "prime": 13
+        },
+        {
+          "count": 1301,
+          "prime": 17
+        },
+        {
+          "count": 1403,
+          "prime": 19
+        }
+      ],
+      "observed_stability": {
+        "sample_count": 1,
+        "status": "NO_STABLE_TAIL",
+        "threshold_prime": null,
+        "value": 1403
+      }
+    },
+    {
+      "deficit": 9,
+      "longest_stable_tail": {
+        "length": 1,
+        "primes": [
+          19
+        ],
+        "value": 3616
+      },
+      "observations": [
+        {
+          "count": 52,
+          "prime": 11
+        },
+        {
+          "count": 479,
+          "prime": 13
+        },
+        {
+          "count": 2924,
+          "prime": 17
+        },
+        {
+          "count": 3616,
+          "prime": 19
+        }
+      ],
+      "observed_stability": {
+        "sample_count": 1,
+        "status": "NO_STABLE_TAIL",
+        "threshold_prime": null,
+        "value": 3616
+      }
+    },
+    {
+      "deficit": 10,
+      "longest_stable_tail": {
+        "length": 1,
+        "primes": [
+          19
+        ],
+        "value": 8334
+      },
+      "observations": [
+        {
+          "count": 11,
+          "prime": 11
+        },
+        {
+          "count": 252,
+          "prime": 13
+        },
+        {
+          "count": 5342,
+          "prime": 17
+        },
+        {
+          "count": 8334,
+          "prime": 19
+        }
+      ],
+      "observed_stability": {
+        "sample_count": 1,
+        "status": "NO_STABLE_TAIL",
+        "threshold_prime": null,
+        "value": 8334
+      }
+    },
+    {
+      "deficit": 11,
+      "longest_stable_tail": {
+        "length": 1,
+        "primes": [
+          19
+        ],
+        "value": 16040
+      },
+      "observations": [
+        {
+          "count": 1,
+          "prime": 11
+        },
+        {
+          "count": 75,
+          "prime": 13
+        },
+        {
+          "count": 6670,
+          "prime": 17
+        },
+        {
+          "count": 16040,
+          "prime": 19
+        }
+      ],
+      "observed_stability": {
+        "sample_count": 1,
+        "status": "NO_STABLE_TAIL",
+        "threshold_prime": null,
+        "value": 16040
+      }
+    },
+    {
+      "deficit": 12,
+      "longest_stable_tail": {
+        "length": 1,
+        "primes": [
+          19
+        ],
+        "value": 22601
+      },
+      "observations": [
+        {
+          "count": 13,
+          "prime": 13
+        },
+        {
+          "count": 4679,
+          "prime": 17
+        },
+        {
+          "count": 22601,
+          "prime": 19
+        }
+      ],
+      "observed_stability": {
+        "sample_count": 1,
+        "status": "NO_STABLE_TAIL",
+        "threshold_prime": null,
+        "value": 22601
+      }
+    },
+    {
+      "deficit": 13,
+      "longest_stable_tail": {
+        "length": 1,
+        "primes": [
+          19
+        ],
+        "value": 18416
+      },
+      "observations": [
+        {
+          "count": 1,
+          "prime": 13
+        },
+        {
+          "count": 2050,
+          "prime": 17
+        },
+        {
+          "count": 18416,
+          "prime": 19
+        }
+      ],
+      "observed_stability": {
+        "sample_count": 1,
+        "status": "NO_STABLE_TAIL",
+        "threshold_prime": null,
+        "value": 18416
+      }
+    },
+    {
+      "deficit": 14,
+      "longest_stable_tail": {
+        "length": 1,
+        "primes": [
+          19
+        ],
+        "value": 9452
+      },
+      "observations": [
+        {
+          "count": 634,
+          "prime": 17
+        },
+        {
+          "count": 9452,
+          "prime": 19
+        }
+      ],
+      "observed_stability": {
+        "sample_count": 1,
+        "status": "NO_STABLE_TAIL",
+        "threshold_prime": null,
+        "value": 9452
+      }
+    },
+    {
+      "deficit": 15,
+      "longest_stable_tail": {
+        "length": 1,
+        "primes": [
+          19
+        ],
+        "value": 3451
+      },
+      "observations": [
+        {
+          "count": 133,
+          "prime": 17
+        },
+        {
+          "count": 3451,
+          "prime": 19
+        }
+      ],
+      "observed_stability": {
+        "sample_count": 1,
+        "status": "NO_STABLE_TAIL",
+        "threshold_prime": null,
+        "value": 3451
+      }
+    },
+    {
+      "deficit": 16,
+      "longest_stable_tail": {
+        "length": 1,
+        "primes": [
+          19
+        ],
+        "value": 917
+      },
+      "observations": [
+        {
+          "count": 17,
+          "prime": 17
+        },
+        {
+          "count": 917,
+          "prime": 19
+        }
+      ],
+      "observed_stability": {
+        "sample_count": 1,
+        "status": "NO_STABLE_TAIL",
+        "threshold_prime": null,
+        "value": 917
+      }
+    },
+    {
+      "deficit": 17,
+      "longest_stable_tail": {
+        "length": 1,
+        "primes": [
+          19
+        ],
+        "value": 168
+      },
+      "observations": [
+        {
+          "count": 1,
+          "prime": 17
+        },
+        {
+          "count": 168,
+          "prime": 19
+        }
+      ],
+      "observed_stability": {
+        "sample_count": 1,
+        "status": "NO_STABLE_TAIL",
+        "threshold_prime": null,
+        "value": 168
+      }
+    },
+    {
+      "deficit": 18,
+      "longest_stable_tail": {
+        "length": 1,
+        "primes": [
+          19
+        ],
+        "value": 19
+      },
+      "observations": [
+        {
+          "count": 19,
+          "prime": 19
+        }
+      ],
+      "observed_stability": {
+        "sample_count": 1,
+        "status": "NO_STABLE_TAIL",
+        "threshold_prime": null,
+        "value": 19
+      }
+    },
+    {
+      "deficit": 19,
+      "longest_stable_tail": {
+        "length": 1,
+        "primes": [
+          19
+        ],
+        "value": 1
+      },
+      "observations": [
+        {
+          "count": 1,
+          "prime": 19
+        }
+      ],
+      "observed_stability": {
+        "sample_count": 1,
+        "status": "NO_STABLE_TAIL",
+        "threshold_prime": null,
+        "value": 1
+      }
+    }
+  ],
+  "observed_stable_prefix": [
+    1,
+    2,
+    3,
+    7,
+    19,
+    56,
+    174,
+    561
+  ],
+  "recurrence_diagnostics": [],
+  "sample_primes": [
+    2,
+    3,
+    5,
+    7,
+    11,
+    13,
+    17,
+    19,
+    23,
+    29,
+    31
+  ],
+  "schema": "paper.route-profiles.stable-deficit-analysis.v1",
+  "source_artifact": {
+    "content_sha256": "8d5485b9118b75cb756c09cc797373556be934a80187a241cd6aece532a02a4b",
+    "uri": "experiments/paper21/results/arbitrary_depth_semantic_v1.json"
+  }
+}

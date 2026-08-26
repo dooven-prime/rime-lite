@@ -1,0 +1,70 @@
+{
+  "artifact_role": "COMPUTATIONAL_OBSERVATION_LOW_DEFICIT_LARGE_PRIME_CENSUS",
+  "boundary": [
+    "no full automaton state count is claimed",
+    "no eventual stabilization theorem is claimed",
+    "the truncation argument relies on survivor-set cardinality monotonicity"
+  ],
+  "claim_status": "computational_observation",
+  "content_sha256": "597d41126f1c3050fbd8edd90b53419b6352b1bb52eca6a58bc20b81bfb9b735",
+  "max_deficit": 7,
+  "primes": [
+    23,
+    29,
+    31
+  ],
+  "records": [
+    {
+      "deficit_layer_counts": {
+        "0": 1,
+        "1": 2,
+        "2": 3,
+        "3": 7,
+        "4": 19,
+        "5": 56,
+        "6": 174,
+        "7": 561
+      },
+      "explored_label_transitions": 2469,
+      "max_deficit": 7,
+      "prime": 23,
+      "reachable_sector_1_state_count": 823,
+      "truncation_exactness": "exact for every sector-1 state with deficit <= max_deficit; states outside the truncation cannot return because survivor-set cardinality is nonincreasing"
+    },
+    {
+      "deficit_layer_counts": {
+        "0": 1,
+        "1": 2,
+        "2": 3,
+        "3": 7,
+        "4": 19,
+        "5": 56,
+        "6": 174,
+        "7": 561
+      },
+      "explored_label_transitions": 2469,
+      "max_deficit": 7,
+      "prime": 29,
+      "reachable_sector_1_state_count": 823,
+      "truncation_exactness": "exact for every sector-1 state with deficit <= max_deficit; states outside the truncation cannot return because survivor-set cardinality is nonincreasing"
+    },
+    {
+      "deficit_layer_counts": {
+        "0": 1,
+        "1": 2,
+        "2": 3,
+        "3": 7,
+        "4": 19,
+        "5": 56,
+        "6": 174,
+        "7": 561
+      },
+      "explored_label_transitions": 2469,
+      "max_deficit": 7,
+      "prime": 31,
+      "reachable_sector_1_state_count": 823,
+      "truncation_exactness": "exact for every sector-1 state with deficit <= max_deficit; states outside the truncation cannot return because survivor-set cardinality is nonincreasing"
+    }
+  ],
+  "schema": "paper.route-profiles.low-deficit-census.v1"
+}

@@ -1,0 +1,708 @@
+{
+  "arithmetic": [
+    {
+      "depth": 1,
+      "distinct_prefix_pole_class_sum": 6,
+      "exceptional_characteristics": [],
+      "maximum_integral_matrix_entry": 1,
+      "new_exceptional_characteristics": [],
+      "nonzero_determinants_factored": 3,
+      "prefix_determinant_spectrum": [
+        1
+      ]
+    },
+    {
+      "depth": 2,
+      "distinct_prefix_pole_class_sum": 22,
+      "exceptional_characteristics": [],
+      "maximum_integral_matrix_entry": 1,
+      "new_exceptional_characteristics": [],
+      "nonzero_determinants_factored": 22,
+      "prefix_determinant_spectrum": [
+        1
+      ]
+    },
+    {
+      "depth": 3,
+      "distinct_prefix_pole_class_sum": 74,
+      "exceptional_characteristics": [
+        2
+      ],
+      "maximum_integral_matrix_entry": 2,
+      "new_exceptional_characteristics": [
+        2
+      ],
+      "nonzero_determinants_factored": 128,
+      "prefix_determinant_spectrum": [
+        1,
+        2
+      ]
+    },
+    {
+      "depth": 4,
+      "distinct_prefix_pole_class_sum": 240,
+      "exceptional_characteristics": [
+        2
+      ],
+      "maximum_integral_matrix_entry": 2,
+      "new_exceptional_characteristics": [],
+      "nonzero_determinants_factored": 620,
+      "prefix_determinant_spectrum": [
+        1,
+        2
+      ]
+    },
+    {
+      "depth": 5,
+      "distinct_prefix_pole_class_sum": 766,
+      "exceptional_characteristics": [
+        2,
+        3
+      ],
+      "maximum_integral_matrix_entry": 3,
+      "new_exceptional_characteristics": [
+        3
+      ],
+      "nonzero_determinants_factored": 2763,
+      "prefix_determinant_spectrum": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "depth": 6,
+      "distinct_prefix_pole_class_sum": 2422,
+      "exceptional_characteristics": [
+        2,
+        3
+      ],
+      "maximum_integral_matrix_entry": 3,
+      "new_exceptional_characteristics": [],
+      "nonzero_determinants_factored": 11512,
+      "prefix_determinant_spectrum": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "depth": 7,
+      "distinct_prefix_pole_class_sum": 7612,
+      "exceptional_characteristics": [
+        2,
+        3,
+        5
+      ],
+      "maximum_integral_matrix_entry": 5,
+      "new_exceptional_characteristics": [
+        5
+      ],
+      "nonzero_determinants_factored": 45938,
+      "prefix_determinant_spectrum": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "depth": 8,
+      "distinct_prefix_pole_class_sum": 23818,
+      "exceptional_characteristics": [
+        2,
+        3,
+        5
+      ],
+      "maximum_integral_matrix_entry": 5,
+      "new_exceptional_characteristics": [],
+      "nonzero_determinants_factored": 176970,
+      "prefix_determinant_spectrum": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "depth": 9,
+      "distinct_prefix_pole_class_sum": 74274,
+      "exceptional_characteristics": [
+        2,
+        3,
+        5,
+        7
+      ],
+      "maximum_integral_matrix_entry": 8,
+      "new_exceptional_characteristics": [
+        7
+      ],
+      "nonzero_determinants_factored": 664083,
+      "prefix_determinant_spectrum": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8
+      ]
+    },
+    {
+      "depth": 10,
+      "distinct_prefix_pole_class_sum": 230980,
+      "exceptional_characteristics": [
+        2,
+        3,
+        5,
+        7
+      ],
+      "maximum_integral_matrix_entry": 8,
+      "new_exceptional_characteristics": [],
+      "nonzero_determinants_factored": 2438152,
+      "prefix_determinant_spectrum": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8
+      ]
+    }
+  ],
+  "artifact_role": "COMPUTATIONAL_OBSERVATION_ANALYSIS_OF_PAPER21_PRECURSOR_REPLAY",
+  "claim_status": "computational_observation",
+  "content_sha256": "d70dbaf89c0711643608f754ab0213c6a80eceb294e1d0f12fcf6febe064a365",
+  "fixed_field_automata": [
+    {
+      "ambient_state_bound": 6,
+      "prime": 2,
+      "reachable_state_count": 6,
+      "sector_1_deficit_layers": {
+        "0": 1,
+        "1": 2,
+        "2": 1
+      },
+      "state_bound_fraction": 1.0
+    },
+    {
+      "ambient_state_bound": 10,
+      "prime": 3,
+      "reachable_state_count": 9,
+      "sector_1_deficit_layers": {
+        "0": 1,
+        "1": 2,
+        "2": 3,
+        "3": 1
+      },
+      "state_bound_fraction": 0.9
+    },
+    {
+      "ambient_state_bound": 34,
+      "prime": 5,
+      "reachable_state_count": 21,
+      "sector_1_deficit_layers": {
+        "0": 1,
+        "1": 2,
+        "2": 3,
+        "3": 7,
+        "4": 5,
+        "5": 1
+      },
+      "state_bound_fraction": 0.6176470588235294
+    },
+    {
+      "ambient_state_bound": 130,
+      "prime": 7,
+      "reachable_state_count": 60,
+      "sector_1_deficit_layers": {
+        "0": 1,
+        "1": 2,
+        "2": 3,
+        "3": 7,
+        "4": 19,
+        "5": 18,
+        "6": 7,
+        "7": 1
+      },
+      "state_bound_fraction": 0.46153846153846156
+    },
+    {
+      "ambient_state_bound": 2050,
+      "prime": 11,
+      "reachable_state_count": 606,
+      "sector_1_deficit_layers": {
+        "0": 1,
+        "1": 2,
+        "10": 11,
+        "11": 1,
+        "2": 3,
+        "3": 7,
+        "4": 19,
+        "5": 56,
+        "6": 126,
+        "7": 189,
+        "8": 137,
+        "9": 52
+      },
+      "state_bound_fraction": 0.29560975609756096
+    },
+    {
+      "ambient_state_bound": 8194,
+      "prime": 13,
+      "reachable_state_count": 1918,
+      "sector_1_deficit_layers": {
+        "0": 1,
+        "1": 2,
+        "10": 252,
+        "11": 75,
+        "12": 13,
+        "13": 1,
+        "2": 3,
+        "3": 7,
+        "4": 19,
+        "5": 56,
+        "6": 150,
+        "7": 339,
+        "8": 519,
+        "9": 479
+      },
+      "state_bound_fraction": 0.23407371247254088
+    },
+    {
+      "ambient_state_bound": 131074,
+      "prime": 17,
+      "reachable_state_count": 24518,
+      "sector_1_deficit_layers": {
+        "0": 1,
+        "1": 2,
+        "10": 5342,
+        "11": 6670,
+        "12": 4679,
+        "13": 2050,
+        "14": 634,
+        "15": 133,
+        "16": 17,
+        "17": 1,
+        "2": 3,
+        "3": 7,
+        "4": 19,
+        "5": 56,
+        "6": 174,
+        "7": 503,
+        "8": 1301,
+        "9": 2924
+      },
+      "state_bound_fraction": 0.187054640889879
+    },
+    {
+      "ambient_state_bound": 524290,
+      "prime": 19,
+      "reachable_state_count": 85185,
+      "sector_1_deficit_layers": {
+        "0": 1,
+        "1": 2,
+        "10": 8334,
+        "11": 16040,
+        "12": 22601,
+        "13": 18416,
+        "14": 9452,
+        "15": 3451,
+        "16": 917,
+        "17": 168,
+        "18": 19,
+        "19": 1,
+        "2": 3,
+        "3": 7,
+        "4": 19,
+        "5": 56,
+        "6": 174,
+        "7": 503,
+        "8": 1403,
+        "9": 3616
+      },
+      "state_bound_fraction": 0.1624768734860478
+    }
+  ],
+  "growth": [
+    {
+      "candidate_count": 9,
+      "depth": 1,
+      "empirical_zero_root": null,
+      "generic_nonzero_count": 9,
+      "generic_zero_count": 0,
+      "successive_zero_ratio": null,
+      "zero_fraction_of_candidates": 0.0
+    },
+    {
+      "candidate_count": 45,
+      "depth": 2,
+      "empirical_zero_root": 3.7416573867739413,
+      "generic_nonzero_count": 31,
+      "generic_zero_count": 14,
+      "successive_zero_ratio": null,
+      "zero_fraction_of_candidates": 0.3111111111111111
+    },
+    {
+      "candidate_count": 216,
+      "depth": 3,
+      "empirical_zero_root": 4.862944131094279,
+      "generic_nonzero_count": 101,
+      "generic_zero_count": 115,
+      "successive_zero_ratio": 8.214285714285714,
+      "zero_fraction_of_candidates": 0.5324074074074074
+    },
+    {
+      "candidate_count": 1053,
+      "depth": 4,
+      "empirical_zero_root": 5.201490028533878,
+      "generic_nonzero_count": 321,
+      "generic_zero_count": 732,
+      "successive_zero_ratio": 6.3652173913043475,
+      "zero_fraction_of_candidates": 0.6951566951566952
+    },
+    {
+      "candidate_count": 5103,
+      "depth": 5,
+      "empirical_zero_root": 5.2775161096139644,
+      "generic_nonzero_count": 1009,
+      "generic_zero_count": 4094,
+      "successive_zero_ratio": 5.592896174863388,
+      "zero_fraction_of_candidates": 0.802273172643543
+    },
+    {
+      "candidate_count": 24786,
+      "depth": 6,
+      "empirical_zero_root": 5.278689900948905,
+      "generic_nonzero_count": 3151,
+      "generic_zero_count": 21635,
+      "successive_zero_ratio": 5.284562774792379,
+      "zero_fraction_of_candidates": 0.8728717824578391
+    },
+    {
+      "candidate_count": 120285,
+      "depth": 7,
+      "empirical_zero_root": 5.253787034354903,
+      "generic_nonzero_count": 9799,
+      "generic_zero_count": 110486,
+      "successive_zero_ratio": 5.106817656574994,
+      "zero_fraction_of_candidates": 0.9185351456956395
+    },
+    {
+      "candidate_count": 583929,
+      "depth": 8,
+      "empirical_zero_root": 5.222694310447547,
+      "generic_nonzero_count": 30379,
+      "generic_zero_count": 553550,
+      "successive_zero_ratio": 5.010137030936046,
+      "zero_fraction_of_candidates": 0.9479748394068457
+    },
+    {
+      "candidate_count": 2834352,
+      "depth": 9,
+      "empirical_zero_root": 5.191735684282226,
+      "generic_nonzero_count": 93957,
+      "generic_zero_count": 2740395,
+      "successive_zero_ratio": 4.950582603197543,
+      "zero_fraction_of_candidates": 0.9668506240579857
+    },
+    {
+      "candidate_count": 13758417,
+      "depth": 10,
+      "empirical_zero_root": 5.163349964596331,
+      "generic_nonzero_count": 290029,
+      "generic_zero_count": 13468388,
+      "successive_zero_ratio": 4.914761558096552,
+      "zero_fraction_of_candidates": 0.9789198859142008
+    }
+  ],
+  "interpretation_boundary": [
+    "matching sampled profiles do not prove a field-independent law",
+    "empirical roots and ratios do not establish an asymptotic growth constant",
+    "exceptional-characteristic lists are finite-depth arithmetic observations",
+    "automaton state counts are representation- and marking-relative"
+  ],
+  "schema": "paper22.open-structure-feature-table.v1",
+  "scope": {
+    "depth_range": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "purpose": "baseline for uniformity, growth, and arithmetic-structure research",
+    "sample_primes": [
+      2,
+      3,
+      5,
+      7,
+      11,
+      13,
+      17,
+      19
+    ]
+  },
+  "source_artifact": {
+    "content_sha256": "8d5485b9118b75cb756c09cc797373556be934a80187a241cd6aece532a02a4b",
+    "uri": "experiments/paper21/results/arbitrary_depth_semantic_v1.json"
+  },
+  "uniformity": [
+    {
+      "depth": 1,
+      "eligible_mismatches": [],
+      "eligible_sample_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19
+      ],
+      "exceptional_characteristics": [],
+      "generic_zero_count": 0,
+      "matching_sample_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19
+      ],
+      "sample_status": "MATCHED"
+    },
+    {
+      "depth": 2,
+      "eligible_mismatches": [],
+      "eligible_sample_primes": [
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19
+      ],
+      "exceptional_characteristics": [],
+      "generic_zero_count": 14,
+      "matching_sample_primes": [
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19
+      ],
+      "sample_status": "MATCHED"
+    },
+    {
+      "depth": 3,
+      "eligible_mismatches": [],
+      "eligible_sample_primes": [
+        5,
+        7,
+        11,
+        13,
+        17,
+        19
+      ],
+      "exceptional_characteristics": [
+        2
+      ],
+      "generic_zero_count": 115,
+      "matching_sample_primes": [
+        5,
+        7,
+        11,
+        13,
+        17,
+        19
+      ],
+      "sample_status": "MATCHED"
+    },
+    {
+      "depth": 4,
+      "eligible_mismatches": [],
+      "eligible_sample_primes": [
+        5,
+        7,
+        11,
+        13,
+        17,
+        19
+      ],
+      "exceptional_characteristics": [
+        2
+      ],
+      "generic_zero_count": 732,
+      "matching_sample_primes": [
+        5,
+        7,
+        11,
+        13,
+        17,
+        19
+      ],
+      "sample_status": "MATCHED"
+    },
+    {
+      "depth": 5,
+      "eligible_mismatches": [],
+      "eligible_sample_primes": [
+        7,
+        11,
+        13,
+        17,
+        19
+      ],
+      "exceptional_characteristics": [
+        2,
+        3
+      ],
+      "generic_zero_count": 4094,
+      "matching_sample_primes": [
+        5,
+        7,
+        11,
+        13,
+        17,
+        19
+      ],
+      "sample_status": "MATCHED"
+    },
+    {
+      "depth": 6,
+      "eligible_mismatches": [],
+      "eligible_sample_primes": [
+        7,
+        11,
+        13,
+        17,
+        19
+      ],
+      "exceptional_characteristics": [
+        2,
+        3
+      ],
+      "generic_zero_count": 21635,
+      "matching_sample_primes": [
+        5,
+        7,
+        11,
+        13,
+        17,
+        19
+      ],
+      "sample_status": "MATCHED"
+    },
+    {
+      "depth": 7,
+      "eligible_mismatches": [],
+      "eligible_sample_primes": [
+        11,
+        13,
+        17,
+        19
+      ],
+      "exceptional_characteristics": [
+        2,
+        3,
+        5
+      ],
+      "generic_zero_count": 110486,
+      "matching_sample_primes": [
+        7,
+        11,
+        13,
+        17,
+        19
+      ],
+      "sample_status": "MATCHED"
+    },
+    {
+      "depth": 8,
+      "eligible_mismatches": [],
+      "eligible_sample_primes": [
+        11,
+        13,
+        17,
+        19
+      ],
+      "exceptional_characteristics": [
+        2,
+        3,
+        5
+      ],
+      "generic_zero_count": 553550,
+      "matching_sample_primes": [
+        7,
+        11,
+        13,
+        17,
+        19
+      ],
+      "sample_status": "MATCHED"
+    },
+    {
+      "depth": 9,
+      "eligible_mismatches": [],
+      "eligible_sample_primes": [
+        11,
+        13,
+        17,
+        19
+      ],
+      "exceptional_characteristics": [
+        2,
+        3,
+        5,
+        7
+      ],
+      "generic_zero_count": 2740395,
+      "matching_sample_primes": [
+        11,
+        13,
+        17,
+        19
+      ],
+      "sample_status": "MATCHED"
+    },
+    {
+      "depth": 10,
+      "eligible_mismatches": [],
+      "eligible_sample_primes": [
+        11,
+        13,
+        17,
+        19
+      ],
+      "exceptional_characteristics": [
+        2,
+        3,
+        5,
+        7
+      ],
+      "generic_zero_count": 13468388,
+      "matching_sample_primes": [
+        11,
+        13,
+        17,
+        19
+      ],
+      "sample_status": "MATCHED"
+    }
+  ]
+}
