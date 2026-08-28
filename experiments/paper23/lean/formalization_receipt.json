@@ -1,0 +1,44 @@
+{
+  "schema": "rime.lean-formalization-receipt.v1",
+  "date": "2026-08-26",
+  "status": "pass",
+  "toolchain": {
+    "lean": "4.33.0",
+    "lean_commit": "d8b18978322de05a8f3dba51ef03cf5461676c17",
+    "lake": "5.0.0-src+d8b1897",
+    "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+  },
+  "build": {
+    "command": "lake build",
+    "result": "success",
+    "completed_jobs": 911
+  },
+  "placeholder_scan": {
+    "command": "rg -n \"\\b(sorry|admit)\\b|^\\s*axiom\\b\" -g \"*.lean\" .",
+    "matches": 0
+  },
+  "axiom_audit": {
+    "command": "lake env lean Formalization/AxiomAudit.lean",
+    "pair_hitting_identity": ["propext", "Classical.choice", "Quot.sound"],
+    "parameter_free_cerny_arithmetic": ["propext", "Classical.choice", "Quot.sound"],
+    "unexpected_axioms": []
+  },
+  "formalized": {
+    "manuscript_theorem_2_1": "full pair-hitting identity over WithTop Nat",
+    "manuscript_theorem_5_4": "conditional arithmetic implication only"
+  },
+  "not_formalized": [
+    "the group-action bound s <= floor(n / 2)",
+    "the automata-theoretic bound D_sync <= 1 + (n - 2)(s + 1)",
+    "the remainder of the manuscript"
+  ],
+  "sha256": {
+    "Formalization.lean": "e55d5d6bfbef8ab8f4d16b6a5c0edd841ba93baea3fd3a9e35eae76e42238ef1",
+    "Formalization/AxiomAudit.lean": "b90629068633f38c8fe78e0deab2a8bf091f54bd82cce31744f32bcd25e588f3",
+    "Formalization/PairHitting.lean": "9fd77e50588844370169322810ae97a69f63981be502fe69117d1ee08480a1e0",
+    "Formalization/ParameterFreeArithmetic.lean": "f17c7e6e9ea360f4ed8f5ffdc9e1a1c63b215451033a45623d5864fc457e76fb",
+    "lean-toolchain": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b",
+    "lakefile.toml": "368842db6f1b223b2cfa7520d2f66e944b1057939fd8d5f48a80417f5bdc4931",
+    "lake-manifest.json": "80db85ca0fdb4e9178b2fc73b8c7b10ebb1f5d9a39068f16e19521b0c3c79288"
+  }
+}

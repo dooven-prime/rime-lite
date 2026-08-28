@@ -1,0 +1,7436 @@
+{
+  "schema": "rime.synchronizing-automata.v2",
+  "carrier_contract": {
+    "contract": "rime.rank-collapse-carrier.v1",
+    "base_sets": "Q and alphabet A are finite and nonempty",
+    "evaluation": {
+      "word_action": "left_to_right",
+      "operator_composition": "Eval_Y(uv) = Eval_Y(v) Eval_Y(u)",
+      "typing": "anti_homomorphism_to_End(V); homomorphism_to_End(V)^op"
+    },
+    "depth_domain": "N_0",
+    "theorem_spine": [
+      "dfa_rank_one_equivalence",
+      "kernel_image_monotonicity",
+      "fiber_excess_identity",
+      "plateau_escape_representation",
+      "quotient_internal_composition_bound"
+    ],
+    "exact_propositions": [
+      "transformation_kernel_linear_kernel_bridge",
+      "generator_presentation_separation",
+      "deterministic_coordinate_support_collapse"
+    ],
+    "wait_coordinates": [
+      "selected_witness_max_wait",
+      "selected_witness_max_plateau",
+      "structural_next_drop_distance",
+      "rank_layer_max_escape_distance"
+    ],
+    "path_compatible_fields": [
+      "compatible_escape_budget",
+      "potential_certificate"
+    ],
+    "classical_benchmark": {
+      "name": "Pin-Frankl compression bound",
+      "rank_layer_bound": "Omega_r <= binom(n-r+2,2)",
+      "cubic_bound": "D_sync <= (n^3-n)/6",
+      "ownership": "imported mathematics",
+      "source": "https://www.mathnet.ru/php/archive.phtml?jrnid=rm&option_lang=eng&paperid=10005&wshow=paper"
+    },
+    "research_target": "path-compatible potential for transformation-kernel-preserving, possibly changing image-subset plateaus"
+  },
+  "scope": {
+    "state_count": 2,
+    "alphabet_size": 2,
+    "max_word_depth": 4,
+    "isomorphism": "state relabelling; letter labels fixed"
+  },
+  "enumeration": {
+    "labelled_tables": 16,
+    "isomorphism_classes": 10,
+    "synchronizing_classes": 6
+  },
+  "records": [
+    {
+      "id": "dfa-n2-k2-00000",
+      "transition": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "state_count": 2,
+      "alphabet_size": 2,
+      "partition": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "operator_blocks": [
+        [
+          [
+            [
+              [
+                1
+              ]
+            ],
+            [
+              [
+                1
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                0
+              ]
+            ],
+            [
+              [
+                0
+              ]
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              [
+                1
+              ]
+            ],
+            [
+              [
+                1
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                0
+              ]
+            ],
+            [
+              [
+                0
+              ]
+            ]
+          ]
+        ]
+      ],
+      "direct_support": [
+        [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      ],
+      "block_support_path": [
+        [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      ],
+      "routed_support": [
+        [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      ],
+      "positive_word_support": [
+        [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      ],
+      "deterministic_route_word_agreement": true,
+      "deterministic_coordinate_support_collapse": {
+        "applicable": true,
+        "path_route_word_equal": true
+      },
+      "kernel_type_bridge": {
+        "finite_set_object": "KerPart(t_w)",
+        "linear_object": "ker_C(Y_w)",
+        "linear_kernel_span": "span_C{e_x-e_y : x~_w y}",
+        "rank_identity": "rank(Y_w)=#KerPart(t_w)=|im(t_w)|"
+      },
+      "transition_monoid_size": 2,
+      "transition_monoid": [
+        {
+          "shortest_word": [],
+          "minimal_depth": 0,
+          "map": [
+            0,
+            1
+          ],
+          "image_subset": [
+            0,
+            1
+          ],
+          "transformation_kernel_partition": [
+            [
+              0
+            ],
+            [
+              1
+            ]
+          ],
+          "rank": 2
+        },
+        {
+          "shortest_word": [
+            0
+          ],
+          "minimal_depth": 1,
+          "map": [
+            0,
+            0
+          ],
+          "image_subset": [
+            0
+          ],
+          "transformation_kernel_partition": [
+            [
+              0,
+              1
+            ]
+          ],
+          "rank": 1
+        }
+      ],
+      "transition_monoid_rank_histogram": {
+        "1": 1,
+        "2": 1
+      },
+      "sector_quotients": [
+        {
+          "partition": [
+            [
+              0,
+              1
+            ]
+          ],
+          "state_count": 1,
+          "transition": [
+            [
+              0
+            ],
+            [
+              0
+            ]
+          ],
+          "selected_shortest_quotient_reset_depth": 0,
+          "selected_shortest_quotient_reset_word": [],
+          "selected_reached_subset": [
+            0,
+            1
+          ],
+          "selected_target_class": [
+            0,
+            1
+          ],
+          "selected_reached_subset_internal_depth": 1,
+          "selected_shortest_witness_composition_bound": 1,
+          "internal_compression_depths": [
+            {
+              "block": [
+                0,
+                1
+              ],
+              "depth": 1,
+              "status": "EXACT_FIRST_HIT"
+            }
+          ],
+          "uniform_internal_compression_depth": 1,
+          "fixed_congruence_uniform_bound": 1,
+          "fixed_congruence_target_specific_bound": 1,
+          "target_specific_bound_semantics": "exact but self-referential unless the quotient-reset witness class is restricted; a full reset word is always eligible",
+          "target_specific_optimizing_witness": {
+            "bound": 1,
+            "quotient_reset_word": [],
+            "quotient_reset_depth": 0,
+            "reached_subset": [
+              0,
+              1
+            ],
+            "reached_subset_internal_depth": 1
+          }
+        },
+        {
+          "partition": [
+            [
+              0
+            ],
+            [
+              1
+            ]
+          ],
+          "state_count": 2,
+          "transition": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "selected_shortest_quotient_reset_depth": 1,
+          "selected_shortest_quotient_reset_word": [
+            0
+          ],
+          "selected_reached_subset": [
+            0
+          ],
+          "selected_target_class": [
+            0
+          ],
+          "selected_reached_subset_internal_depth": 0,
+          "selected_shortest_witness_composition_bound": 1,
+          "internal_compression_depths": [
+            {
+              "block": [
+                0
+              ],
+              "depth": 0,
+              "status": "EXACT_FIRST_HIT"
+            },
+            {
+              "block": [
+                1
+              ],
+              "depth": 0,
+              "status": "EXACT_FIRST_HIT"
+            }
+          ],
+          "uniform_internal_compression_depth": 0,
+          "fixed_congruence_uniform_bound": 1,
+          "fixed_congruence_target_specific_bound": 1,
+          "target_specific_bound_semantics": "exact but self-referential unless the quotient-reset witness class is restricted; a full reset word is always eligible",
+          "target_specific_optimizing_witness": {
+            "bound": 1,
+            "quotient_reset_word": [
+              0
+            ],
+            "quotient_reset_depth": 1,
+            "reached_subset": [
+              0
+            ],
+            "reached_subset_internal_depth": 0
+          }
+        }
+      ],
+      "rank_incidence_profile": [
+        {
+          "word": [
+            0,
+            0
+          ],
+          "input_rank": 1,
+          "product_rank": 1,
+          "fiber_excess": 0,
+          "strict_rank_drop": false
+        },
+        {
+          "word": [
+            0,
+            1
+          ],
+          "input_rank": 1,
+          "product_rank": 1,
+          "fiber_excess": 0,
+          "strict_rank_drop": false
+        },
+        {
+          "word": [
+            1,
+            0
+          ],
+          "input_rank": 1,
+          "product_rank": 1,
+          "fiber_excess": 0,
+          "strict_rank_drop": false
+        },
+        {
+          "word": [
+            1,
+            1
+          ],
+          "input_rank": 1,
+          "product_rank": 1,
+          "fiber_excess": 0,
+          "strict_rank_drop": false
+        }
+      ],
+      "pair_collision_profile": {
+        "carrier": "unordered_state_pair_merge",
+        "collision_pair_sets": [
+          {
+            "letter": 0,
+            "pairs": [
+              [
+                0,
+                1
+              ]
+            ]
+          },
+          {
+            "letter": 1,
+            "pairs": [
+              [
+                0,
+                1
+              ]
+            ]
+          }
+        ],
+        "pair_merge_distances": [
+          {
+            "pair": [
+              0,
+              1
+            ],
+            "distance": 1,
+            "mathematical_value": 1
+          }
+        ]
+      },
+      "rank_collapse": {
+        "carrier": "image_rank_collapse",
+        "notation": "Img_d[Y]",
+        "depth_domain": "N_0",
+        "exact_depth_reachable_image_subsets": [
+          {
+            "depth": 0,
+            "images": [
+              [
+                0,
+                1
+              ]
+            ],
+            "minimum_rank": 2
+          },
+          {
+            "depth": 1,
+            "images": [
+              [
+                0
+              ]
+            ],
+            "minimum_rank": 1
+          },
+          {
+            "depth": 2,
+            "images": [
+              [
+                0
+              ]
+            ],
+            "minimum_rank": 1
+          },
+          {
+            "depth": 3,
+            "images": [
+              [
+                0
+              ]
+            ],
+            "minimum_rank": 1
+          },
+          {
+            "depth": 4,
+            "images": [
+              [
+                0
+              ]
+            ],
+            "minimum_rank": 1
+          }
+        ],
+        "reachable_subset_orbit": [
+          {
+            "subset": [
+              0
+            ],
+            "minimal_depth": 1,
+            "shortest_word": [
+              0
+            ]
+          },
+          {
+            "subset": [
+              0,
+              1
+            ],
+            "minimal_depth": 0,
+            "shortest_word": []
+          }
+        ],
+        "reachable_subset_orbit_size": 2,
+        "first_hit_depth_by_rank_threshold": [
+          {
+            "rank_threshold": 1,
+            "status": "EXACT_FIRST_HIT",
+            "depth": 1
+          },
+          {
+            "rank_threshold": 2,
+            "status": "EXACT_FIRST_HIT",
+            "depth": 0
+          }
+        ],
+        "subset_orbit_exhausted": true
+      },
+      "rank_preserving_escape": {
+        "carrier": "rank_preserving_subset_escape",
+        "subset_action": "M_Y acts on 2^Q by S . w = delta(S,w)",
+        "layers": [
+          {
+            "rank": 2,
+            "reachable_subsets": [
+              [
+                0,
+                1
+              ]
+            ],
+            "rank_preserving_edges": [],
+            "collision_exits": [
+              {
+                "source": [
+                  0,
+                  1
+                ],
+                "letter": 0,
+                "target": [
+                  0
+                ],
+                "fiber_excess": 1,
+                "collision_fibers": [
+                  [
+                    0,
+                    1
+                  ]
+                ]
+              },
+              {
+                "source": [
+                  0,
+                  1
+                ],
+                "letter": 1,
+                "target": [
+                  0
+                ],
+                "fiber_excess": 1,
+                "collision_fibers": [
+                  [
+                    0,
+                    1
+                  ]
+                ]
+              }
+            ],
+            "collision_boundary": [
+              [
+                0,
+                1
+              ]
+            ],
+            "rank_preserving_sccs": [
+              [
+                [
+                  0,
+                  1
+                ]
+              ]
+            ],
+            "largest_rank_preserving_scc_size": 1,
+            "escape_records": [
+              {
+                "subset": [
+                  0,
+                  1
+                ],
+                "boundary_distance": 0,
+                "directed_distance_convention": "shortest directed path in the rank-preserving graph",
+                "structural_next_drop_distance": 1,
+                "mathematical_value": 1,
+                "shortest_rank_drop_word": [
+                  0
+                ],
+                "rank_drop_target_subset": [
+                  0
+                ],
+                "minimum_pair_merge_distance": 1,
+                "pair_merge_upper_bound_holds": true,
+                "omega_symbol": "omega(S)",
+                "status": "EXACT_ESCAPE_DISTANCE",
+                "rank_layer_potential_before": 1,
+                "rank_layer_potential_after": 0,
+                "local_potential_lhs": 1,
+                "local_potential_inequality_holds": true
+              }
+            ],
+            "rank_layer_max_escape_distance": 1,
+            "Omega_r_symbol": "Omega_2",
+            "pin_frankl_compression_benchmark": 1,
+            "pin_frankl_benchmark_holds": true
+          }
+        ],
+        "sync_upper_bound_sum_Omega_r": 1,
+        "compatible_escape_budget": {
+          "construction": "rank_layer_max_potential_baseline",
+          "value": 1,
+          "path_compatible": true,
+          "not_equivalent_to_cerny_target": true
+        },
+        "potential_certificate": {
+          "formula": "Phi(S)=sum_{2<=r<=|S|} Omega_r over reachable ranks",
+          "local_descent_inequalities_verified": true,
+          "claim_status": "Theorem"
+        },
+        "classical_compression_benchmark": {
+          "owner": "Pin-Frankl compression argument",
+          "rank_layer_formula": "Omega_r <= binom(n-r+2,2)",
+          "cubic_reset_bound": 1,
+          "registered_layer_checks_hold": true,
+          "claim_status": "Imported Theorem"
+        },
+        "bound_status": "EXACT_FINITE_REDUCTION"
+      },
+      "reset": {
+        "is_synchronizing": true,
+        "shortest_word": [
+          0
+        ],
+        "shortest_length": 1
+      },
+      "witness_transformation": {
+        "word": [
+          0
+        ],
+        "map": [
+          0,
+          0
+        ],
+        "image_subset": [
+          0
+        ],
+        "transformation_kernel_partition": [
+          [
+            0,
+            1
+          ]
+        ],
+        "rank": 1
+      },
+      "reset_rank_drop_filtration": [
+        {
+          "depth": 1,
+          "letter": 0,
+          "rank_before": 2,
+          "rank_after": 1,
+          "image_subset_before": [
+            0,
+            1
+          ],
+          "image_subset_after": [
+            0
+          ],
+          "transformation_kernel_partition_before": [
+            [
+              0
+            ],
+            [
+              1
+            ]
+          ],
+          "transformation_kernel_partition_after": [
+            [
+              0,
+              1
+            ]
+          ],
+          "kernel_coarsening": true,
+          "kernel_unchanged": false,
+          "strict_drop": true,
+          "drop_size": 1,
+          "fiber_excess": 1,
+          "collision_fibers_on_current_image": [
+            [
+              0,
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dfa-n2-k2-00001",
+      "transition": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "state_count": 2,
+      "alphabet_size": 2,
+      "partition": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "operator_blocks": [
+        [
+          [
+            [
+              [
+                1
+              ]
+            ],
+            [
+              [
+                1
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                0
+              ]
+            ],
+            [
+              [
+                0
+              ]
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              [
+                1
+              ]
+            ],
+            [
+              [
+                0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                0
+              ]
+            ],
+            [
+              [
+                1
+              ]
+            ]
+          ]
+        ]
+      ],
+      "direct_support": [
+        [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      ],
+      "block_support_path": [
+        [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      ],
+      "routed_support": [
+        [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      ],
+      "positive_word_support": [
+        [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      ],
+      "deterministic_route_word_agreement": true,
+      "deterministic_coordinate_support_collapse": {
+        "applicable": true,
+        "path_route_word_equal": true
+      },
+      "kernel_type_bridge": {
+        "finite_set_object": "KerPart(t_w)",
+        "linear_object": "ker_C(Y_w)",
+        "linear_kernel_span": "span_C{e_x-e_y : x~_w y}",
+        "rank_identity": "rank(Y_w)=#KerPart(t_w)=|im(t_w)|"
+      },
+      "transition_monoid_size": 2,
+      "transition_monoid": [
+        {
+          "shortest_word": [],
+          "minimal_depth": 0,
+          "map": [
+            0,
+            1
+          ],
+          "image_subset": [
+            0,
+            1
+          ],
+          "transformation_kernel_partition": [
+            [
+              0
+            ],
+            [
+              1
+            ]
+          ],
+          "rank": 2
+        },
+        {
+          "shortest_word": [
+            0
+          ],
+          "minimal_depth": 1,
+          "map": [
+            0,
+            0
+          ],
+          "image_subset": [
+            0
+          ],
+          "transformation_kernel_partition": [
+            [
+              0,
+              1
+            ]
+          ],
+          "rank": 1
+        }
+      ],
+      "transition_monoid_rank_histogram": {
+        "1": 1,
+        "2": 1
+      },
+      "sector_quotients": [
+        {
+          "partition": [
+            [
+              0,
+              1
+            ]
+          ],
+          "state_count": 1,
+          "transition": [
+            [
+              0
+            ],
+            [
+              0
+            ]
+          ],
+          "selected_shortest_quotient_reset_depth": 0,
+          "selected_shortest_quotient_reset_word": [],
+          "selected_reached_subset": [
+            0,
+            1
+          ],
+          "selected_target_class": [
+            0,
+            1
+          ],
+          "selected_reached_subset_internal_depth": 1,
+          "selected_shortest_witness_composition_bound": 1,
+          "internal_compression_depths": [
+            {
+              "block": [
+                0,
+                1
+              ],
+              "depth": 1,
+              "status": "EXACT_FIRST_HIT"
+            }
+          ],
+          "uniform_internal_compression_depth": 1,
+          "fixed_congruence_uniform_bound": 1,
+          "fixed_congruence_target_specific_bound": 1,
+          "target_specific_bound_semantics": "exact but self-referential unless the quotient-reset witness class is restricted; a full reset word is always eligible",
+          "target_specific_optimizing_witness": {
+            "bound": 1,
+            "quotient_reset_word": [],
+            "quotient_reset_depth": 0,
+            "reached_subset": [
+              0,
+              1
+            ],
+            "reached_subset_internal_depth": 1
+          }
+        },
+        {
+          "partition": [
+            [
+              0
+            ],
+            [
+              1
+            ]
+          ],
+          "state_count": 2,
+          "transition": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "selected_shortest_quotient_reset_depth": 1,
+          "selected_shortest_quotient_reset_word": [
+            0
+          ],
+          "selected_reached_subset": [
+            0
+          ],
+          "selected_target_class": [
+            0
+          ],
+          "selected_reached_subset_internal_depth": 0,
+          "selected_shortest_witness_composition_bound": 1,
+          "internal_compression_depths": [
+            {
+              "block": [
+                0
+              ],
+              "depth": 0,
+              "status": "EXACT_FIRST_HIT"
+            },
+            {
+              "block": [
+                1
+              ],
+              "depth": 0,
+              "status": "EXACT_FIRST_HIT"
+            }
+          ],
+          "uniform_internal_compression_depth": 0,
+          "fixed_congruence_uniform_bound": 1,
+          "fixed_congruence_target_specific_bound": 1,
+          "target_specific_bound_semantics": "exact but self-referential unless the quotient-reset witness class is restricted; a full reset word is always eligible",
+          "target_specific_optimizing_witness": {
+            "bound": 1,
+            "quotient_reset_word": [
+              0
+            ],
+            "quotient_reset_depth": 1,
+            "reached_subset": [
+              0
+            ],
+            "reached_subset_internal_depth": 0
+          }
+        }
+      ],
+      "rank_incidence_profile": [
+        {
+          "word": [
+            0,
+            0
+          ],
+          "input_rank": 1,
+          "product_rank": 1,
+          "fiber_excess": 0,
+          "strict_rank_drop": false
+        },
+        {
+          "word": [
+            0,
+            1
+          ],
+          "input_rank": 1,
+          "product_rank": 1,
+          "fiber_excess": 0,
+          "strict_rank_drop": false
+        },
+        {
+          "word": [
+            1,
+            0
+          ],
+          "input_rank": 2,
+          "product_rank": 1,
+          "fiber_excess": 1,
+          "strict_rank_drop": true
+        },
+        {
+          "word": [
+            1,
+            1
+          ],
+          "input_rank": 2,
+          "product_rank": 2,
+          "fiber_excess": 0,
+          "strict_rank_drop": false
+        }
+      ],
+      "pair_collision_profile": {
+        "carrier": "unordered_state_pair_merge",
+        "collision_pair_sets": [
+          {
+            "letter": 0,
+            "pairs": [
+              [
+                0,
+                1
+              ]
+            ]
+          },
+          {
+            "letter": 1,
+            "pairs": []
+          }
+        ],
+        "pair_merge_distances": [
+          {
+            "pair": [
+              0,
+              1
+            ],
+            "distance": 1,
+            "mathematical_value": 1
+          }
+        ]
+      },
+      "rank_collapse": {
+        "carrier": "image_rank_collapse",
+        "notation": "Img_d[Y]",
+        "depth_domain": "N_0",
+        "exact_depth_reachable_image_subsets": [
+          {
+            "depth": 0,
+            "images": [
+              [
+                0,
+                1
+              ]
+            ],
+            "minimum_rank": 2
+          },
+          {
+            "depth": 1,
+            "images": [
+              [
+                0
+              ],
+              [
+                0,
+                1
+              ]
+            ],
+            "minimum_rank": 1
+          },
+          {
+            "depth": 2,
+            "images": [
+              [
+                0
+              ],
+              [
+                0,
+                1
+              ]
+            ],
+            "minimum_rank": 1
+          },
+          {
+            "depth": 3,
+            "images": [
+              [
+                0
+              ],
+              [
+                0,
+                1
+              ]
+            ],
+            "minimum_rank": 1
+          },
+          {
+            "depth": 4,
+            "images": [
+              [
+                0
+              ],
+              [
+                0,
+                1
+              ]
+            ],
+            "minimum_rank": 1
+          }
+        ],
+        "reachable_subset_orbit": [
+          {
+            "subset": [
+              0
+            ],
+            "minimal_depth": 1,
+            "shortest_word": [
+              0
+            ]
+          },
+          {
+            "subset": [
+              0,
+              1
+            ],
+            "minimal_depth": 0,
+            "shortest_word": []
+          }
+        ],
+        "reachable_subset_orbit_size": 2,
+        "first_hit_depth_by_rank_threshold": [
+          {
+            "rank_threshold": 1,
+            "status": "EXACT_FIRST_HIT",
+            "depth": 1
+          },
+          {
+            "rank_threshold": 2,
+            "status": "EXACT_FIRST_HIT",
+            "depth": 0
+          }
+        ],
+        "subset_orbit_exhausted": true
+      },
+      "rank_preserving_escape": {
+        "carrier": "rank_preserving_subset_escape",
+        "subset_action": "M_Y acts on 2^Q by S . w = delta(S,w)",
+        "layers": [
+          {
+            "rank": 2,
+            "reachable_subsets": [
+              [
+                0,
+                1
+              ]
+            ],
+            "rank_preserving_edges": [
+              {
+                "source": [
+                  0,
+                  1
+                ],
+                "letter": 1,
+                "target": [
+                  0,
+                  1
+                ]
+              }
+            ],
+            "collision_exits": [
+              {
+                "source": [
+                  0,
+                  1
+                ],
+                "letter": 0,
+                "target": [
+                  0
+                ],
+                "fiber_excess": 1,
+                "collision_fibers": [
+                  [
+                    0,
+                    1
+                  ]
+                ]
+              }
+            ],
+            "collision_boundary": [
+              [
+                0,
+                1
+              ]
+            ],
+            "rank_preserving_sccs": [
+              [
+                [
+                  0,
+                  1
+                ]
+              ]
+            ],
+            "largest_rank_preserving_scc_size": 1,
+            "escape_records": [
+              {
+                "subset": [
+                  0,
+                  1
+                ],
+                "boundary_distance": 0,
+                "directed_distance_convention": "shortest directed path in the rank-preserving graph",
+                "structural_next_drop_distance": 1,
+                "mathematical_value": 1,
+                "shortest_rank_drop_word": [
+                  0
+                ],
+                "rank_drop_target_subset": [
+                  0
+                ],
+                "minimum_pair_merge_distance": 1,
+                "pair_merge_upper_bound_holds": true,
+                "omega_symbol": "omega(S)",
+                "status": "EXACT_ESCAPE_DISTANCE",
+                "rank_layer_potential_before": 1,
+                "rank_layer_potential_after": 0,
+                "local_potential_lhs": 1,
+                "local_potential_inequality_holds": true
+              }
+            ],
+            "rank_layer_max_escape_distance": 1,
+            "Omega_r_symbol": "Omega_2",
+            "pin_frankl_compression_benchmark": 1,
+            "pin_frankl_benchmark_holds": true
+          }
+        ],
+        "sync_upper_bound_sum_Omega_r": 1,
+        "compatible_escape_budget": {
+          "construction": "rank_layer_max_potential_baseline",
+          "value": 1,
+          "path_compatible": true,
+          "not_equivalent_to_cerny_target": true
+        },
+        "potential_certificate": {
+          "formula": "Phi(S)=sum_{2<=r<=|S|} Omega_r over reachable ranks",
+          "local_descent_inequalities_verified": true,
+          "claim_status": "Theorem"
+        },
+        "classical_compression_benchmark": {
+          "owner": "Pin-Frankl compression argument",
+          "rank_layer_formula": "Omega_r <= binom(n-r+2,2)",
+          "cubic_reset_bound": 1,
+          "registered_layer_checks_hold": true,
+          "claim_status": "Imported Theorem"
+        },
+        "bound_status": "EXACT_FINITE_REDUCTION"
+      },
+      "reset": {
+        "is_synchronizing": true,
+        "shortest_word": [
+          0
+        ],
+        "shortest_length": 1
+      },
+      "witness_transformation": {
+        "word": [
+          0
+        ],
+        "map": [
+          0,
+          0
+        ],
+        "image_subset": [
+          0
+        ],
+        "transformation_kernel_partition": [
+          [
+            0,
+            1
+          ]
+        ],
+        "rank": 1
+      },
+      "reset_rank_drop_filtration": [
+        {
+          "depth": 1,
+          "letter": 0,
+          "rank_before": 2,
+          "rank_after": 1,
+          "image_subset_before": [
+            0,
+            1
+          ],
+          "image_subset_after": [
+            0
+          ],
+          "transformation_kernel_partition_before": [
+            [
+              0
+            ],
+            [
+              1
+            ]
+          ],
+          "transformation_kernel_partition_after": [
+            [
+              0,
+              1
+            ]
+          ],
+          "kernel_coarsening": true,
+          "kernel_unchanged": false,
+          "strict_drop": true,
+          "drop_size": 1,
+          "fiber_excess": 1,
+          "collision_fibers_on_current_image": [
+            [
+              0,
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dfa-n2-k2-00002",
+      "transition": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "state_count": 2,
+      "alphabet_size": 2,
+      "partition": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "operator_blocks": [
+        [
+          [
+            [
+              [
+                1
+              ]
+            ],
+            [
+              [
+                1
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                0
+              ]
+            ],
+            [
+              [
+                0
+              ]
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              [
+                0
+              ]
+            ],
+            [
+              [
+                1
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                1
+              ]
+            ],
+            [
+              [
+                0
+              ]
+            ]
+          ]
+        ]
+      ],
+      "direct_support": [
+        [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ]
+      ],
+      "block_support_path": [
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ],
+      "routed_support": [
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ],
+      "positive_word_support": [
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ],
+      "deterministic_route_word_agreement": true,
+      "deterministic_coordinate_support_collapse": {
+        "applicable": true,
+        "path_route_word_equal": true
+      },
+      "kernel_type_bridge": {
+        "finite_set_object": "KerPart(t_w)",
+        "linear_object": "ker_C(Y_w)",
+        "linear_kernel_span": "span_C{e_x-e_y : x~_w y}",
+        "rank_identity": "rank(Y_w)=#KerPart(t_w)=|im(t_w)|"
+      },
+      "transition_monoid_size": 4,
+      "transition_monoid": [
+        {
+          "shortest_word": [],
+          "minimal_depth": 0,
+          "map": [
+            0,
+            1
+          ],
+          "image_subset": [
+            0,
+            1
+          ],
+          "transformation_kernel_partition": [
+            [
+              0
+            ],
+            [
+              1
+            ]
+          ],
+          "rank": 2
+        },
+        {
+          "shortest_word": [
+            0
+          ],
+          "minimal_depth": 1,
+          "map": [
+            0,
+            0
+          ],
+          "image_subset": [
+            0
+          ],
+          "transformation_kernel_partition": [
+            [
+              0,
+              1
+            ]
+          ],
+          "rank": 1
+        },
+        {
+          "shortest_word": [
+            1
+          ],
+          "minimal_depth": 1,
+          "map": [
+            1,
+            0
+          ],
+          "image_subset": [
+            0,
+            1
+          ],
+          "transformation_kernel_partition": [
+            [
+              0
+            ],
+            [
+              1
+            ]
+          ],
+          "rank": 2
+        },
+        {
+          "shortest_word": [
+            0,
+            1
+          ],
+          "minimal_depth": 2,
+          "map": [
+            1,
+            1
+          ],
+          "image_subset": [
+            1
+          ],
+          "transformation_kernel_partition": [
+            [
+              0,
+              1
+            ]
+          ],
+          "rank": 1
+        }
+      ],
+      "transition_monoid_rank_histogram": {
+        "1": 2,
+        "2": 2
+      },
+      "sector_quotients": [
+        {
+          "partition": [
+            [
+              0,
+              1
+            ]
+          ],
+          "state_count": 1,
+          "transition": [
+            [
+              0
+            ],
+            [
+              0
+            ]
+          ],
+          "selected_shortest_quotient_reset_depth": 0,
+          "selected_shortest_quotient_reset_word": [],
+          "selected_reached_subset": [
+            0,
+            1
+          ],
+          "selected_target_class": [
+            0,
+            1
+          ],
+          "selected_reached_subset_internal_depth": 1,
+          "selected_shortest_witness_composition_bound": 1,
+          "internal_compression_depths": [
+            {
+              "block": [
+                0,
+                1
+              ],
+              "depth": 1,
+              "status": "EXACT_FIRST_HIT"
+            }
+          ],
+          "uniform_internal_compression_depth": 1,
+          "fixed_congruence_uniform_bound": 1,
+          "fixed_congruence_target_specific_bound": 1,
+          "target_specific_bound_semantics": "exact but self-referential unless the quotient-reset witness class is restricted; a full reset word is always eligible",
+          "target_specific_optimizing_witness": {
+            "bound": 1,
+            "quotient_reset_word": [],
+            "quotient_reset_depth": 0,
+            "reached_subset": [
+              0,
+              1
+            ],
+            "reached_subset_internal_depth": 1
+          }
+        },
+        {
+          "partition": [
+            [
+              0
+            ],
+            [
+              1
+            ]
+          ],
+          "state_count": 2,
+          "transition": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "selected_shortest_quotient_reset_depth": 1,
+          "selected_shortest_quotient_reset_word": [
+            0
+          ],
+          "selected_reached_subset": [
+            0
+          ],
+          "selected_target_class": [
+            0
+          ],
+          "selected_reached_subset_internal_depth": 0,
+          "selected_shortest_witness_composition_bound": 1,
+          "internal_compression_depths": [
+            {
+              "block": [
+                0
+              ],
+              "depth": 0,
+              "status": "EXACT_FIRST_HIT"
+            },
+            {
+              "block": [
+                1
+              ],
+              "depth": 0,
+              "status": "EXACT_FIRST_HIT"
+            }
+          ],
+          "uniform_internal_compression_depth": 0,
+          "fixed_congruence_uniform_bound": 1,
+          "fixed_congruence_target_specific_bound": 1,
+          "target_specific_bound_semantics": "exact but self-referential unless the quotient-reset witness class is restricted; a full reset word is always eligible",
+          "target_specific_optimizing_witness": {
+            "bound": 1,
+            "quotient_reset_word": [
+              0
+            ],
+            "quotient_reset_depth": 1,
+            "reached_subset": [
+              0
+            ],
+            "reached_subset_internal_depth": 0
+          }
+        }
+      ],
+      "rank_incidence_profile": [
+        {
+          "word": [
+            0,
+            0
+          ],
+          "input_rank": 1,
+          "product_rank": 1,
+          "fiber_excess": 0,
+          "strict_rank_drop": false
+        },
+        {
+          "word": [
+            0,
+            1
+          ],
+          "input_rank": 1,
+          "product_rank": 1,
+          "fiber_excess": 0,
+          "strict_rank_drop": false
+        },
+        {
+          "word": [
+            1,
+            0
+          ],
+          "input_rank": 2,
+          "product_rank": 1,
+          "fiber_excess": 1,
+          "strict_rank_drop": true
+        },
+        {
+          "word": [
+            1,
+            1
+          ],
+          "input_rank": 2,
+          "product_rank": 2,
+          "fiber_excess": 0,
+          "strict_rank_drop": false
+        }
+      ],
+      "pair_collision_profile": {
+        "carrier": "unordered_state_pair_merge",
+        "collision_pair_sets": [
+          {
+            "letter": 0,
+            "pairs": [
+              [
+                0,
+                1
+              ]
+            ]
+          },
+          {
+            "letter": 1,
+            "pairs": []
+          }
+        ],
+        "pair_merge_distances": [
+          {
+            "pair": [
+              0,
+              1
+            ],
+            "distance": 1,
+            "mathematical_value": 1
+          }
+        ]
+      },
+      "rank_collapse": {
+        "carrier": "image_rank_collapse",
+        "notation": "Img_d[Y]",
+        "depth_domain": "N_0",
+        "exact_depth_reachable_image_subsets": [
+          {
+            "depth": 0,
+            "images": [
+              [
+                0,
+                1
+              ]
+            ],
+            "minimum_rank": 2
+          },
+          {
+            "depth": 1,
+            "images": [
+              [
+                0
+              ],
+              [
+                0,
+                1
+              ]
+            ],
+            "minimum_rank": 1
+          },
+          {
+            "depth": 2,
+            "images": [
+              [
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                1
+              ]
+            ],
+            "minimum_rank": 1
+          },
+          {
+            "depth": 3,
+            "images": [
+              [
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                1
+              ]
+            ],
+            "minimum_rank": 1
+          },
+          {
+            "depth": 4,
+            "images": [
+              [
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                1
+              ]
+            ],
+            "minimum_rank": 1
+          }
+        ],
+        "reachable_subset_orbit": [
+          {
+            "subset": [
+              0
+            ],
+            "minimal_depth": 1,
+            "shortest_word": [
+              0
+            ]
+          },
+          {
+            "subset": [
+              0,
+              1
+            ],
+            "minimal_depth": 0,
+            "shortest_word": []
+          },
+          {
+            "subset": [
+              1
+            ],
+            "minimal_depth": 2,
+            "shortest_word": [
+              0,
+              1
+            ]
+          }
+        ],
+        "reachable_subset_orbit_size": 3,
+        "first_hit_depth_by_rank_threshold": [
+          {
+            "rank_threshold": 1,
+            "status": "EXACT_FIRST_HIT",
+            "depth": 1
+          },
+          {
+            "rank_threshold": 2,
+            "status": "EXACT_FIRST_HIT",
+            "depth": 0
+          }
+        ],
+        "subset_orbit_exhausted": true
+      },
+      "rank_preserving_escape": {
+        "carrier": "rank_preserving_subset_escape",
+        "subset_action": "M_Y acts on 2^Q by S . w = delta(S,w)",
+        "layers": [
+          {
+            "rank": 2,
+            "reachable_subsets": [
+              [
+                0,
+                1
+              ]
+            ],
+            "rank_preserving_edges": [
+              {
+                "source": [
+                  0,
+                  1
+                ],
+                "letter": 1,
+                "target": [
+                  0,
+                  1
+                ]
+              }
+            ],
+            "collision_exits": [
+              {
+                "source": [
+                  0,
+                  1
+                ],
+                "letter": 0,
+                "target": [
+                  0
+                ],
+                "fiber_excess": 1,
+                "collision_fibers": [
+                  [
+                    0,
+                    1
+                  ]
+                ]
+              }
+            ],
+            "collision_boundary": [
+              [
+                0,
+                1
+              ]
+            ],
+            "rank_preserving_sccs": [
+              [
+                [
+                  0,
+                  1
+                ]
+              ]
+            ],
+            "largest_rank_preserving_scc_size": 1,
+            "escape_records": [
+              {
+                "subset": [
+                  0,
+                  1
+                ],
+                "boundary_distance": 0,
+                "directed_distance_convention": "shortest directed path in the rank-preserving graph",
+                "structural_next_drop_distance": 1,
+                "mathematical_value": 1,
+                "shortest_rank_drop_word": [
+                  0
+                ],
+                "rank_drop_target_subset": [
+                  0
+                ],
+                "minimum_pair_merge_distance": 1,
+                "pair_merge_upper_bound_holds": true,
+                "omega_symbol": "omega(S)",
+                "status": "EXACT_ESCAPE_DISTANCE",
+                "rank_layer_potential_before": 1,
+                "rank_layer_potential_after": 0,
+                "local_potential_lhs": 1,
+                "local_potential_inequality_holds": true
+              }
+            ],
+            "rank_layer_max_escape_distance": 1,
+            "Omega_r_symbol": "Omega_2",
+            "pin_frankl_compression_benchmark": 1,
+            "pin_frankl_benchmark_holds": true
+          }
+        ],
+        "sync_upper_bound_sum_Omega_r": 1,
+        "compatible_escape_budget": {
+          "construction": "rank_layer_max_potential_baseline",
+          "value": 1,
+          "path_compatible": true,
+          "not_equivalent_to_cerny_target": true
+        },
+        "potential_certificate": {
+          "formula": "Phi(S)=sum_{2<=r<=|S|} Omega_r over reachable ranks",
+          "local_descent_inequalities_verified": true,
+          "claim_status": "Theorem"
+        },
+        "classical_compression_benchmark": {
+          "owner": "Pin-Frankl compression argument",
+          "rank_layer_formula": "Omega_r <= binom(n-r+2,2)",
+          "cubic_reset_bound": 1,
+          "registered_layer_checks_hold": true,
+          "claim_status": "Imported Theorem"
+        },
+        "bound_status": "EXACT_FINITE_REDUCTION"
+      },
+      "reset": {
+        "is_synchronizing": true,
+        "shortest_word": [
+          0
+        ],
+        "shortest_length": 1
+      },
+      "witness_transformation": {
+        "word": [
+          0
+        ],
+        "map": [
+          0,
+          0
+        ],
+        "image_subset": [
+          0
+        ],
+        "transformation_kernel_partition": [
+          [
+            0,
+            1
+          ]
+        ],
+        "rank": 1
+      },
+      "reset_rank_drop_filtration": [
+        {
+          "depth": 1,
+          "letter": 0,
+          "rank_before": 2,
+          "rank_after": 1,
+          "image_subset_before": [
+            0,
+            1
+          ],
+          "image_subset_after": [
+            0
+          ],
+          "transformation_kernel_partition_before": [
+            [
+              0
+            ],
+            [
+              1
+            ]
+          ],
+          "transformation_kernel_partition_after": [
+            [
+              0,
+              1
+            ]
+          ],
+          "kernel_coarsening": true,
+          "kernel_unchanged": false,
+          "strict_drop": true,
+          "drop_size": 1,
+          "fiber_excess": 1,
+          "collision_fibers_on_current_image": [
+            [
+              0,
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dfa-n2-k2-00003",
+      "transition": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "state_count": 2,
+      "alphabet_size": 2,
+      "partition": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "operator_blocks": [
+        [
+          [
+            [
+              [
+                1
+              ]
+            ],
+            [
+              [
+                1
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                0
+              ]
+            ],
+            [
+              [
+                0
+              ]
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              [
+                0
+              ]
+            ],
+            [
+              [
+                0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                1
+              ]
+            ],
+            [
+              [
+                1
+              ]
+            ]
+          ]
+        ]
+      ],
+      "direct_support": [
+        [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ],
+      "block_support_path": [
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ],
+      "routed_support": [
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ],
+      "positive_word_support": [
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ],
+      "deterministic_route_word_agreement": true,
+      "deterministic_coordinate_support_collapse": {
+        "applicable": true,
+        "path_route_word_equal": true
+      },
+      "kernel_type_bridge": {
+        "finite_set_object": "KerPart(t_w)",
+        "linear_object": "ker_C(Y_w)",
+        "linear_kernel_span": "span_C{e_x-e_y : x~_w y}",
+        "rank_identity": "rank(Y_w)=#KerPart(t_w)=|im(t_w)|"
+      },
+      "transition_monoid_size": 3,
+      "transition_monoid": [
+        {
+          "shortest_word": [],
+          "minimal_depth": 0,
+          "map": [
+            0,
+            1
+          ],
+          "image_subset": [
+            0,
+            1
+          ],
+          "transformation_kernel_partition": [
+            [
+              0
+            ],
+            [
+              1
+            ]
+          ],
+          "rank": 2
+        },
+        {
+          "shortest_word": [
+            0
+          ],
+          "minimal_depth": 1,
+          "map": [
+            0,
+            0
+          ],
+          "image_subset": [
+            0
+          ],
+          "transformation_kernel_partition": [
+            [
+              0,
+              1
+            ]
+          ],
+          "rank": 1
+        },
+        {
+          "shortest_word": [
+            1
+          ],
+          "minimal_depth": 1,
+          "map": [
+            1,
+            1
+          ],
+          "image_subset": [
+            1
+          ],
+          "transformation_kernel_partition": [
+            [
+              0,
+              1
+            ]
+          ],
+          "rank": 1
+        }
+      ],
+      "transition_monoid_rank_histogram": {
+        "1": 2,
+        "2": 1
+      },
+      "sector_quotients": [
+        {
+          "partition": [
+            [
+              0,
+              1
+            ]
+          ],
+          "state_count": 1,
+          "transition": [
+            [
+              0
+            ],
+            [
+              0
+            ]
+          ],
+          "selected_shortest_quotient_reset_depth": 0,
+          "selected_shortest_quotient_reset_word": [],
+          "selected_reached_subset": [
+            0,
+            1
+          ],
+          "selected_target_class": [
+            0,
+            1
+          ],
+          "selected_reached_subset_internal_depth": 1,
+          "selected_shortest_witness_composition_bound": 1,
+          "internal_compression_depths": [
+            {
+              "block": [
+                0,
+                1
+              ],
+              "depth": 1,
+              "status": "EXACT_FIRST_HIT"
+            }
+          ],
+          "uniform_internal_compression_depth": 1,
+          "fixed_congruence_uniform_bound": 1,
+          "fixed_congruence_target_specific_bound": 1,
+          "target_specific_bound_semantics": "exact but self-referential unless the quotient-reset witness class is restricted; a full reset word is always eligible",
+          "target_specific_optimizing_witness": {
+            "bound": 1,
+            "quotient_reset_word": [],
+            "quotient_reset_depth": 0,
+            "reached_subset": [
+              0,
+              1
+            ],
+            "reached_subset_internal_depth": 1
+          }
+        },
+        {
+          "partition": [
+            [
+              0
+            ],
+            [
+              1
+            ]
+          ],
+          "state_count": 2,
+          "transition": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "selected_shortest_quotient_reset_depth": 1,
+          "selected_shortest_quotient_reset_word": [
+            0
+          ],
+          "selected_reached_subset": [
+            0
+          ],
+          "selected_target_class": [
+            0
+          ],
+          "selected_reached_subset_internal_depth": 0,
+          "selected_shortest_witness_composition_bound": 1,
+          "internal_compression_depths": [
+            {
+              "block": [
+                0
+              ],
+              "depth": 0,
+              "status": "EXACT_FIRST_HIT"
+            },
+            {
+              "block": [
+                1
+              ],
+              "depth": 0,
+              "status": "EXACT_FIRST_HIT"
+            }
+          ],
+          "uniform_internal_compression_depth": 0,
+          "fixed_congruence_uniform_bound": 1,
+          "fixed_congruence_target_specific_bound": 1,
+          "target_specific_bound_semantics": "exact but self-referential unless the quotient-reset witness class is restricted; a full reset word is always eligible",
+          "target_specific_optimizing_witness": {
+            "bound": 1,
+            "quotient_reset_word": [
+              0
+            ],
+            "quotient_reset_depth": 1,
+            "reached_subset": [
+              0
+            ],
+            "reached_subset_internal_depth": 0
+          }
+        }
+      ],
+      "rank_incidence_profile": [
+        {
+          "word": [
+            0,
+            0
+          ],
+          "input_rank": 1,
+          "product_rank": 1,
+          "fiber_excess": 0,
+          "strict_rank_drop": false
+        },
+        {
+          "word": [
+            0,
+            1
+          ],
+          "input_rank": 1,
+          "product_rank": 1,
+          "fiber_excess": 0,
+          "strict_rank_drop": false
+        },
+        {
+          "word": [
+            1,
+            0
+          ],
+          "input_rank": 1,
+          "product_rank": 1,
+          "fiber_excess": 0,
+          "strict_rank_drop": false
+        },
+        {
+          "word": [
+            1,
+            1
+          ],
+          "input_rank": 1,
+          "product_rank": 1,
+          "fiber_excess": 0,
+          "strict_rank_drop": false
+        }
+      ],
+      "pair_collision_profile": {
+        "carrier": "unordered_state_pair_merge",
+        "collision_pair_sets": [
+          {
+            "letter": 0,
+            "pairs": [
+              [
+                0,
+                1
+              ]
+            ]
+          },
+          {
+            "letter": 1,
+            "pairs": [
+              [
+                0,
+                1
+              ]
+            ]
+          }
+        ],
+        "pair_merge_distances": [
+          {
+            "pair": [
+              0,
+              1
+            ],
+            "distance": 1,
+            "mathematical_value": 1
+          }
+        ]
+      },
+      "rank_collapse": {
+        "carrier": "image_rank_collapse",
+        "notation": "Img_d[Y]",
+        "depth_domain": "N_0",
+        "exact_depth_reachable_image_subsets": [
+          {
+            "depth": 0,
+            "images": [
+              [
+                0,
+                1
+              ]
+            ],
+            "minimum_rank": 2
+          },
+          {
+            "depth": 1,
+            "images": [
+              [
+                0
+              ],
+              [
+                1
+              ]
+            ],
+            "minimum_rank": 1
+          },
+          {
+            "depth": 2,
+            "images": [
+              [
+                0
+              ],
+              [
+                1
+              ]
+            ],
+            "minimum_rank": 1
+          },
+          {
+            "depth": 3,
+            "images": [
+              [
+                0
+              ],
+              [
+                1
+              ]
+            ],
+            "minimum_rank": 1
+          },
+          {
+            "depth": 4,
+            "images": [
+              [
+                0
+              ],
+              [
+                1
+              ]
+            ],
+            "minimum_rank": 1
+          }
+        ],
+        "reachable_subset_orbit": [
+          {
+            "subset": [
+              0
+            ],
+            "minimal_depth": 1,
+            "shortest_word": [
+              0
+            ]
+          },
+          {
+            "subset": [
+              0,
+              1
+            ],
+            "minimal_depth": 0,
+            "shortest_word": []
+          },
+          {
+            "subset": [
+              1
+            ],
+            "minimal_depth": 1,
+            "shortest_word": [
+              1
+            ]
+          }
+        ],
+        "reachable_subset_orbit_size": 3,
+        "first_hit_depth_by_rank_threshold": [
+          {
+            "rank_threshold": 1,
+            "status": "EXACT_FIRST_HIT",
+            "depth": 1
+          },
+          {
+            "rank_threshold": 2,
+            "status": "EXACT_FIRST_HIT",
+            "depth": 0
+          }
+        ],
+        "subset_orbit_exhausted": true
+      },
+      "rank_preserving_escape": {
+        "carrier": "rank_preserving_subset_escape",
+        "subset_action": "M_Y acts on 2^Q by S . w = delta(S,w)",
+        "layers": [
+          {
+            "rank": 2,
+            "reachable_subsets": [
+              [
+                0,
+                1
+              ]
+            ],
+            "rank_preserving_edges": [],
+            "collision_exits": [
+              {
+                "source": [
+                  0,
+                  1
+                ],
+                "letter": 0,
+                "target": [
+                  0
+                ],
+                "fiber_excess": 1,
+                "collision_fibers": [
+                  [
+                    0,
+                    1
+                  ]
+                ]
+              },
+              {
+                "source": [
+                  0,
+                  1
+                ],
+                "letter": 1,
+                "target": [
+                  1
+                ],
+                "fiber_excess": 1,
+                "collision_fibers": [
+                  [
+                    0,
+                    1
+                  ]
+                ]
+              }
+            ],
+            "collision_boundary": [
+              [
+                0,
+                1
+              ]
+            ],
+            "rank_preserving_sccs": [
+              [
+                [
+                  0,
+                  1
+                ]
+              ]
+            ],
+            "largest_rank_preserving_scc_size": 1,
+            "escape_records": [
+              {
+                "subset": [
+                  0,
+                  1
+                ],
+                "boundary_distance": 0,
+                "directed_distance_convention": "shortest directed path in the rank-preserving graph",
+                "structural_next_drop_distance": 1,
+                "mathematical_value": 1,
+                "shortest_rank_drop_word": [
+                  0
+                ],
+                "rank_drop_target_subset": [
+                  0
+                ],
+                "minimum_pair_merge_distance": 1,
+                "pair_merge_upper_bound_holds": true,
+                "omega_symbol": "omega(S)",
+                "status": "EXACT_ESCAPE_DISTANCE",
+                "rank_layer_potential_before": 1,
+                "rank_layer_potential_after": 0,
+                "local_potential_lhs": 1,
+                "local_potential_inequality_holds": true
+              }
+            ],
+            "rank_layer_max_escape_distance": 1,
+            "Omega_r_symbol": "Omega_2",
+            "pin_frankl_compression_benchmark": 1,
+            "pin_frankl_benchmark_holds": true
+          }
+        ],
+        "sync_upper_bound_sum_Omega_r": 1,
+        "compatible_escape_budget": {
+          "construction": "rank_layer_max_potential_baseline",
+          "value": 1,
+          "path_compatible": true,
+          "not_equivalent_to_cerny_target": true
+        },
+        "potential_certificate": {
+          "formula": "Phi(S)=sum_{2<=r<=|S|} Omega_r over reachable ranks",
+          "local_descent_inequalities_verified": true,
+          "claim_status": "Theorem"
+        },
+        "classical_compression_benchmark": {
+          "owner": "Pin-Frankl compression argument",
+          "rank_layer_formula": "Omega_r <= binom(n-r+2,2)",
+          "cubic_reset_bound": 1,
+          "registered_layer_checks_hold": true,
+          "claim_status": "Imported Theorem"
+        },
+        "bound_status": "EXACT_FINITE_REDUCTION"
+      },
+      "reset": {
+        "is_synchronizing": true,
+        "shortest_word": [
+          0
+        ],
+        "shortest_length": 1
+      },
+      "witness_transformation": {
+        "word": [
+          0
+        ],
+        "map": [
+          0,
+          0
+        ],
+        "image_subset": [
+          0
+        ],
+        "transformation_kernel_partition": [
+          [
+            0,
+            1
+          ]
+        ],
+        "rank": 1
+      },
+      "reset_rank_drop_filtration": [
+        {
+          "depth": 1,
+          "letter": 0,
+          "rank_before": 2,
+          "rank_after": 1,
+          "image_subset_before": [
+            0,
+            1
+          ],
+          "image_subset_after": [
+            0
+          ],
+          "transformation_kernel_partition_before": [
+            [
+              0
+            ],
+            [
+              1
+            ]
+          ],
+          "transformation_kernel_partition_after": [
+            [
+              0,
+              1
+            ]
+          ],
+          "kernel_coarsening": true,
+          "kernel_unchanged": false,
+          "strict_drop": true,
+          "drop_size": 1,
+          "fiber_excess": 1,
+          "collision_fibers_on_current_image": [
+            [
+              0,
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dfa-n2-k2-00004",
+      "transition": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "state_count": 2,
+      "alphabet_size": 2,
+      "partition": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "operator_blocks": [
+        [
+          [
+            [
+              [
+                1
+              ]
+            ],
+            [
+              [
+                0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                0
+              ]
+            ],
+            [
+              [
+                1
+              ]
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              [
+                1
+              ]
+            ],
+            [
+              [
+                1
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                0
+              ]
+            ],
+            [
+              [
+                0
+              ]
+            ]
+          ]
+        ]
+      ],
+      "direct_support": [
+        [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      ],
+      "block_support_path": [
+        [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      ],
+      "routed_support": [
+        [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      ],
+      "positive_word_support": [
+        [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      ],
+      "deterministic_route_word_agreement": true,
+      "deterministic_coordinate_support_collapse": {
+        "applicable": true,
+        "path_route_word_equal": true
+      },
+      "kernel_type_bridge": {
+        "finite_set_object": "KerPart(t_w)",
+        "linear_object": "ker_C(Y_w)",
+        "linear_kernel_span": "span_C{e_x-e_y : x~_w y}",
+        "rank_identity": "rank(Y_w)=#KerPart(t_w)=|im(t_w)|"
+      },
+      "transition_monoid_size": 2,
+      "transition_monoid": [
+        {
+          "shortest_word": [],
+          "minimal_depth": 0,
+          "map": [
+            0,
+            1
+          ],
+          "image_subset": [
+            0,
+            1
+          ],
+          "transformation_kernel_partition": [
+            [
+              0
+            ],
+            [
+              1
+            ]
+          ],
+          "rank": 2
+        },
+        {
+          "shortest_word": [
+            1
+          ],
+          "minimal_depth": 1,
+          "map": [
+            0,
+            0
+          ],
+          "image_subset": [
+            0
+          ],
+          "transformation_kernel_partition": [
+            [
+              0,
+              1
+            ]
+          ],
+          "rank": 1
+        }
+      ],
+      "transition_monoid_rank_histogram": {
+        "1": 1,
+        "2": 1
+      },
+      "sector_quotients": [
+        {
+          "partition": [
+            [
+              0,
+              1
+            ]
+          ],
+          "state_count": 1,
+          "transition": [
+            [
+              0
+            ],
+            [
+              0
+            ]
+          ],
+          "selected_shortest_quotient_reset_depth": 0,
+          "selected_shortest_quotient_reset_word": [],
+          "selected_reached_subset": [
+            0,
+            1
+          ],
+          "selected_target_class": [
+            0,
+            1
+          ],
+          "selected_reached_subset_internal_depth": 1,
+          "selected_shortest_witness_composition_bound": 1,
+          "internal_compression_depths": [
+            {
+              "block": [
+                0,
+                1
+              ],
+              "depth": 1,
+              "status": "EXACT_FIRST_HIT"
+            }
+          ],
+          "uniform_internal_compression_depth": 1,
+          "fixed_congruence_uniform_bound": 1,
+          "fixed_congruence_target_specific_bound": 1,
+          "target_specific_bound_semantics": "exact but self-referential unless the quotient-reset witness class is restricted; a full reset word is always eligible",
+          "target_specific_optimizing_witness": {
+            "bound": 1,
+            "quotient_reset_word": [],
+            "quotient_reset_depth": 0,
+            "reached_subset": [
+              0,
+              1
+            ],
+            "reached_subset_internal_depth": 1
+          }
+        },
+        {
+          "partition": [
+            [
+              0
+            ],
+            [
+              1
+            ]
+          ],
+          "state_count": 2,
+          "transition": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "selected_shortest_quotient_reset_depth": 1,
+          "selected_shortest_quotient_reset_word": [
+            1
+          ],
+          "selected_reached_subset": [
+            0
+          ],
+          "selected_target_class": [
+            0
+          ],
+          "selected_reached_subset_internal_depth": 0,
+          "selected_shortest_witness_composition_bound": 1,
+          "internal_compression_depths": [
+            {
+              "block": [
+                0
+              ],
+              "depth": 0,
+              "status": "EXACT_FIRST_HIT"
+            },
+            {
+              "block": [
+                1
+              ],
+              "depth": 0,
+              "status": "EXACT_FIRST_HIT"
+            }
+          ],
+          "uniform_internal_compression_depth": 0,
+          "fixed_congruence_uniform_bound": 1,
+          "fixed_congruence_target_specific_bound": 1,
+          "target_specific_bound_semantics": "exact but self-referential unless the quotient-reset witness class is restricted; a full reset word is always eligible",
+          "target_specific_optimizing_witness": {
+            "bound": 1,
+            "quotient_reset_word": [
+              1
+            ],
+            "quotient_reset_depth": 1,
+            "reached_subset": [
+              0
+            ],
+            "reached_subset_internal_depth": 0
+          }
+        }
+      ],
+      "rank_incidence_profile": [
+        {
+          "word": [
+            0,
+            0
+          ],
+          "input_rank": 2,
+          "product_rank": 2,
+          "fiber_excess": 0,
+          "strict_rank_drop": false
+        },
+        {
+          "word": [
+            0,
+            1
+          ],
+          "input_rank": 2,
+          "product_rank": 1,
+          "fiber_excess": 1,
+          "strict_rank_drop": true
+        },
+        {
+          "word": [
+            1,
+            0
+          ],
+          "input_rank": 1,
+          "product_rank": 1,
+          "fiber_excess": 0,
+          "strict_rank_drop": false
+        },
+        {
+          "word": [
+            1,
+            1
+          ],
+          "input_rank": 1,
+          "product_rank": 1,
+          "fiber_excess": 0,
+          "strict_rank_drop": false
+        }
+      ],
+      "pair_collision_profile": {
+        "carrier": "unordered_state_pair_merge",
+        "collision_pair_sets": [
+          {
+            "letter": 0,
+            "pairs": []
+          },
+          {
+            "letter": 1,
+            "pairs": [
+              [
+                0,
+                1
+              ]
+            ]
+          }
+        ],
+        "pair_merge_distances": [
+          {
+            "pair": [
+              0,
+              1
+            ],
+            "distance": 1,
+            "mathematical_value": 1
+          }
+        ]
+      },
+      "rank_collapse": {
+        "carrier": "image_rank_collapse",
+        "notation": "Img_d[Y]",
+        "depth_domain": "N_0",
+        "exact_depth_reachable_image_subsets": [
+          {
+            "depth": 0,
+            "images": [
+              [
+                0,
+                1
+              ]
+            ],
+            "minimum_rank": 2
+          },
+          {
+            "depth": 1,
+            "images": [
+              [
+                0
+              ],
+              [
+                0,
+                1
+              ]
+            ],
+            "minimum_rank": 1
+          },
+          {
+            "depth": 2,
+            "images": [
+              [
+                0
+              ],
+              [
+                0,
+                1
+              ]
+            ],
+            "minimum_rank": 1
+          },
+          {
+            "depth": 3,
+            "images": [
+              [
+                0
+              ],
+              [
+                0,
+                1
+              ]
+            ],
+            "minimum_rank": 1
+          },
+          {
+            "depth": 4,
+            "images": [
+              [
+                0
+              ],
+              [
+                0,
+                1
+              ]
+            ],
+            "minimum_rank": 1
+          }
+        ],
+        "reachable_subset_orbit": [
+          {
+            "subset": [
+              0
+            ],
+            "minimal_depth": 1,
+            "shortest_word": [
+              1
+            ]
+          },
+          {
+            "subset": [
+              0,
+              1
+            ],
+            "minimal_depth": 0,
+            "shortest_word": []
+          }
+        ],
+        "reachable_subset_orbit_size": 2,
+        "first_hit_depth_by_rank_threshold": [
+          {
+            "rank_threshold": 1,
+            "status": "EXACT_FIRST_HIT",
+            "depth": 1
+          },
+          {
+            "rank_threshold": 2,
+            "status": "EXACT_FIRST_HIT",
+            "depth": 0
+          }
+        ],
+        "subset_orbit_exhausted": true
+      },
+      "rank_preserving_escape": {
+        "carrier": "rank_preserving_subset_escape",
+        "subset_action": "M_Y acts on 2^Q by S . w = delta(S,w)",
+        "layers": [
+          {
+            "rank": 2,
+            "reachable_subsets": [
+              [
+                0,
+                1
+              ]
+            ],
+            "rank_preserving_edges": [
+              {
+                "source": [
+                  0,
+                  1
+                ],
+                "letter": 0,
+                "target": [
+                  0,
+                  1
+                ]
+              }
+            ],
+            "collision_exits": [
+              {
+                "source": [
+                  0,
+                  1
+                ],
+                "letter": 1,
+                "target": [
+                  0
+                ],
+                "fiber_excess": 1,
+                "collision_fibers": [
+                  [
+                    0,
+                    1
+                  ]
+                ]
+              }
+            ],
+            "collision_boundary": [
+              [
+                0,
+                1
+              ]
+            ],
+            "rank_preserving_sccs": [
+              [
+                [
+                  0,
+                  1
+                ]
+              ]
+            ],
+            "largest_rank_preserving_scc_size": 1,
+            "escape_records": [
+              {
+                "subset": [
+                  0,
+                  1
+                ],
+                "boundary_distance": 0,
+                "directed_distance_convention": "shortest directed path in the rank-preserving graph",
+                "structural_next_drop_distance": 1,
+                "mathematical_value": 1,
+                "shortest_rank_drop_word": [
+                  1
+                ],
+                "rank_drop_target_subset": [
+                  0
+                ],
+                "minimum_pair_merge_distance": 1,
+                "pair_merge_upper_bound_holds": true,
+                "omega_symbol": "omega(S)",
+                "status": "EXACT_ESCAPE_DISTANCE",
+                "rank_layer_potential_before": 1,
+                "rank_layer_potential_after": 0,
+                "local_potential_lhs": 1,
+                "local_potential_inequality_holds": true
+              }
+            ],
+            "rank_layer_max_escape_distance": 1,
+            "Omega_r_symbol": "Omega_2",
+            "pin_frankl_compression_benchmark": 1,
+            "pin_frankl_benchmark_holds": true
+          }
+        ],
+        "sync_upper_bound_sum_Omega_r": 1,
+        "compatible_escape_budget": {
+          "construction": "rank_layer_max_potential_baseline",
+          "value": 1,
+          "path_compatible": true,
+          "not_equivalent_to_cerny_target": true
+        },
+        "potential_certificate": {
+          "formula": "Phi(S)=sum_{2<=r<=|S|} Omega_r over reachable ranks",
+          "local_descent_inequalities_verified": true,
+          "claim_status": "Theorem"
+        },
+        "classical_compression_benchmark": {
+          "owner": "Pin-Frankl compression argument",
+          "rank_layer_formula": "Omega_r <= binom(n-r+2,2)",
+          "cubic_reset_bound": 1,
+          "registered_layer_checks_hold": true,
+          "claim_status": "Imported Theorem"
+        },
+        "bound_status": "EXACT_FINITE_REDUCTION"
+      },
+      "reset": {
+        "is_synchronizing": true,
+        "shortest_word": [
+          1
+        ],
+        "shortest_length": 1
+      },
+      "witness_transformation": {
+        "word": [
+          1
+        ],
+        "map": [
+          0,
+          0
+        ],
+        "image_subset": [
+          0
+        ],
+        "transformation_kernel_partition": [
+          [
+            0,
+            1
+          ]
+        ],
+        "rank": 1
+      },
+      "reset_rank_drop_filtration": [
+        {
+          "depth": 1,
+          "letter": 1,
+          "rank_before": 2,
+          "rank_after": 1,
+          "image_subset_before": [
+            0,
+            1
+          ],
+          "image_subset_after": [
+            0
+          ],
+          "transformation_kernel_partition_before": [
+            [
+              0
+            ],
+            [
+              1
+            ]
+          ],
+          "transformation_kernel_partition_after": [
+            [
+              0,
+              1
+            ]
+          ],
+          "kernel_coarsening": true,
+          "kernel_unchanged": false,
+          "strict_drop": true,
+          "drop_size": 1,
+          "fiber_excess": 1,
+          "collision_fibers_on_current_image": [
+            [
+              0,
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dfa-n2-k2-00005",
+      "transition": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "state_count": 2,
+      "alphabet_size": 2,
+      "partition": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "operator_blocks": [
+        [
+          [
+            [
+              [
+                1
+              ]
+            ],
+            [
+              [
+                0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                0
+              ]
+            ],
+            [
+              [
+                1
+              ]
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              [
+                1
+              ]
+            ],
+            [
+              [
+                0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                0
+              ]
+            ],
+            [
+              [
+                1
+              ]
+            ]
+          ]
+        ]
+      ],
+      "direct_support": [
+        [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      ],
+      "block_support_path": [
+        [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      ],
+      "routed_support": [
+        [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      ],
+      "positive_word_support": [
+        [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      ],
+      "deterministic_route_word_agreement": true,
+      "deterministic_coordinate_support_collapse": {
+        "applicable": true,
+        "path_route_word_equal": true
+      },
+      "kernel_type_bridge": {
+        "finite_set_object": "KerPart(t_w)",
+        "linear_object": "ker_C(Y_w)",
+        "linear_kernel_span": "span_C{e_x-e_y : x~_w y}",
+        "rank_identity": "rank(Y_w)=#KerPart(t_w)=|im(t_w)|"
+      },
+      "transition_monoid_size": 1,
+      "transition_monoid": [
+        {
+          "shortest_word": [],
+          "minimal_depth": 0,
+          "map": [
+            0,
+            1
+          ],
+          "image_subset": [
+            0,
+            1
+          ],
+          "transformation_kernel_partition": [
+            [
+              0
+            ],
+            [
+              1
+            ]
+          ],
+          "rank": 2
+        }
+      ],
+      "transition_monoid_rank_histogram": {
+        "2": 1
+      },
+      "sector_quotients": [
+        {
+          "partition": [
+            [
+              0,
+              1
+            ]
+          ],
+          "state_count": 1,
+          "transition": [
+            [
+              0
+            ],
+            [
+              0
+            ]
+          ],
+          "selected_shortest_quotient_reset_depth": 0,
+          "selected_shortest_quotient_reset_word": [],
+          "selected_reached_subset": [
+            0,
+            1
+          ],
+          "selected_target_class": [
+            0,
+            1
+          ],
+          "selected_reached_subset_internal_depth": null,
+          "selected_shortest_witness_composition_bound": null,
+          "internal_compression_depths": [
+            {
+              "block": [
+                0,
+                1
+              ],
+              "depth": null,
+              "status": "UNREACHABLE_IN_SUBSET_ORBIT"
+            }
+          ],
+          "uniform_internal_compression_depth": null,
+          "fixed_congruence_uniform_bound": null,
+          "fixed_congruence_target_specific_bound": null,
+          "target_specific_bound_semantics": "exact but self-referential unless the quotient-reset witness class is restricted; a full reset word is always eligible",
+          "target_specific_optimizing_witness": null
+        },
+        {
+          "partition": [
+            [
+              0
+            ],
+            [
+              1
+            ]
+          ],
+          "state_count": 2,
+          "transition": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "selected_shortest_quotient_reset_depth": null,
+          "selected_shortest_quotient_reset_word": null,
+          "selected_reached_subset": null,
+          "selected_target_class": null,
+          "selected_reached_subset_internal_depth": null,
+          "selected_shortest_witness_composition_bound": null,
+          "internal_compression_depths": [
+            {
+              "block": [
+                0
+              ],
+              "depth": 0,
+              "status": "EXACT_FIRST_HIT"
+            },
+            {
+              "block": [
+                1
+              ],
+              "depth": 0,
+              "status": "EXACT_FIRST_HIT"
+            }
+          ],
+          "uniform_internal_compression_depth": 0,
+          "fixed_congruence_uniform_bound": null,
+          "fixed_congruence_target_specific_bound": null,
+          "target_specific_bound_semantics": "exact but self-referential unless the quotient-reset witness class is restricted; a full reset word is always eligible",
+          "target_specific_optimizing_witness": null
+        }
+      ],
+      "rank_incidence_profile": [
+        {
+          "word": [
+            0,
+            0
+          ],
+          "input_rank": 2,
+          "product_rank": 2,
+          "fiber_excess": 0,
+          "strict_rank_drop": false
+        },
+        {
+          "word": [
+            0,
+            1
+          ],
+          "input_rank": 2,
+          "product_rank": 2,
+          "fiber_excess": 0,
+          "strict_rank_drop": false
+        },
+        {
+          "word": [
+            1,
+            0
+          ],
+          "input_rank": 2,
+          "product_rank": 2,
+          "fiber_excess": 0,
+          "strict_rank_drop": false
+        },
+        {
+          "word": [
+            1,
+            1
+          ],
+          "input_rank": 2,
+          "product_rank": 2,
+          "fiber_excess": 0,
+          "strict_rank_drop": false
+        }
+      ],
+      "pair_collision_profile": {
+        "carrier": "unordered_state_pair_merge",
+        "collision_pair_sets": [
+          {
+            "letter": 0,
+            "pairs": []
+          },
+          {
+            "letter": 1,
+            "pairs": []
+          }
+        ],
+        "pair_merge_distances": [
+          {
+            "pair": [
+              0,
+              1
+            ],
+            "distance": null,
+            "mathematical_value": "infinity"
+          }
+        ]
+      },
+      "rank_collapse": {
+        "carrier": "image_rank_collapse",
+        "notation": "Img_d[Y]",
+        "depth_domain": "N_0",
+        "exact_depth_reachable_image_subsets": [
+          {
+            "depth": 0,
+            "images": [
+              [
+                0,
+                1
+              ]
+            ],
+            "minimum_rank": 2
+          },
+          {
+            "depth": 1,
+            "images": [
+              [
+                0,
+                1
+              ]
+            ],
+            "minimum_rank": 2
+          },
+          {
+            "depth": 2,
+            "images": [
+              [
+                0,
+                1
+              ]
+            ],
+            "minimum_rank": 2
+          },
+          {
+            "depth": 3,
+            "images": [
+              [
+                0,
+                1
+              ]
+            ],
+            "minimum_rank": 2
+          },
+          {
+            "depth": 4,
+            "images": [
+              [
+                0,
+                1
+              ]
+            ],
+            "minimum_rank": 2
+          }
+        ],
+        "reachable_subset_orbit": [
+          {
+            "subset": [
+              0,
+              1
+            ],
+            "minimal_depth": 0,
+            "shortest_word": []
+          }
+        ],
+        "reachable_subset_orbit_size": 1,
+        "first_hit_depth_by_rank_threshold": [
+          {
+            "rank_threshold": 1,
+            "status": "UNREACHABLE_IN_SUBSET_ORBIT",
+            "depth": null
+          },
+          {
+            "rank_threshold": 2,
+            "status": "EXACT_FIRST_HIT",
+            "depth": 0
+          }
+        ],
+        "subset_orbit_exhausted": true
+      },
+      "rank_preserving_escape": {
+        "carrier": "rank_preserving_subset_escape",
+        "subset_action": "M_Y acts on 2^Q by S . w = delta(S,w)",
+        "layers": [
+          {
+            "rank": 2,
+            "reachable_subsets": [
+              [
+                0,
+                1
+              ]
+            ],
+            "rank_preserving_edges": [
+              {
+                "source": [
+                  0,
+                  1
+                ],
+                "letter": 0,
+                "target": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "source": [
+                  0,
+                  1
+                ],
+                "letter": 1,
+                "target": [
+                  0,
+                  1
+                ]
+              }
+            ],
+            "collision_exits": [],
+            "collision_boundary": [],
+            "rank_preserving_sccs": [
+              [
+                [
+                  0,
+                  1
+                ]
+              ]
+            ],
+            "largest_rank_preserving_scc_size": 1,
+            "escape_records": [
+              {
+                "subset": [
+                  0,
+                  1
+                ],
+                "boundary_distance": null,
+                "directed_distance_convention": "shortest directed path in the rank-preserving graph",
+                "structural_next_drop_distance": null,
+                "mathematical_value": "infinity",
+                "shortest_rank_drop_word": null,
+                "rank_drop_target_subset": null,
+                "minimum_pair_merge_distance": null,
+                "pair_merge_upper_bound_holds": false,
+                "omega_symbol": "omega(S)",
+                "status": "EXACT_INFINITY_NO_REACHABLE_STRICT_DROP"
+              }
+            ],
+            "rank_layer_max_escape_distance": null,
+            "Omega_r_symbol": "Omega_2",
+            "pin_frankl_compression_benchmark": 1,
+            "pin_frankl_benchmark_holds": false
+          }
+        ],
+        "sync_upper_bound_sum_Omega_r": null,
+        "compatible_escape_budget": {
+          "construction": "rank_layer_max_potential_baseline",
+          "value": null,
+          "path_compatible": false,
+          "not_equivalent_to_cerny_target": true
+        },
+        "potential_certificate": {
+          "formula": "Phi(S)=sum_{2<=r<=|S|} Omega_r over reachable ranks",
+          "local_descent_inequalities_verified": false,
+          "claim_status": "Theorem"
+        },
+        "classical_compression_benchmark": {
+          "owner": "Pin-Frankl compression argument",
+          "rank_layer_formula": "Omega_r <= binom(n-r+2,2)",
+          "cubic_reset_bound": 1,
+          "registered_layer_checks_hold": null,
+          "claim_status": "Imported Theorem"
+        },
+        "bound_status": "NO_GLOBAL_FINITE_ESCAPE_CERTIFICATE"
+      },
+      "reset": {
+        "is_synchronizing": false,
+        "shortest_word": null,
+        "shortest_length": null
+      },
+      "witness_transformation": null,
+      "reset_rank_drop_filtration": null
+    },
+    {
+      "id": "dfa-n2-k2-00006",
+      "transition": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "state_count": 2,
+      "alphabet_size": 2,
+      "partition": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "operator_blocks": [
+        [
+          [
+            [
+              [
+                1
+              ]
+            ],
+            [
+              [
+                0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                0
+              ]
+            ],
+            [
+              [
+                1
+              ]
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              [
+                0
+              ]
+            ],
+            [
+              [
+                1
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                1
+              ]
+            ],
+            [
+              [
+                0
+              ]
+            ]
+          ]
+        ]
+      ],
+      "direct_support": [
+        [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ]
+      ],
+      "block_support_path": [
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ],
+      "routed_support": [
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ],
+      "positive_word_support": [
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ],
+      "deterministic_route_word_agreement": true,
+      "deterministic_coordinate_support_collapse": {
+        "applicable": true,
+        "path_route_word_equal": true
+      },
+      "kernel_type_bridge": {
+        "finite_set_object": "KerPart(t_w)",
+        "linear_object": "ker_C(Y_w)",
+        "linear_kernel_span": "span_C{e_x-e_y : x~_w y}",
+        "rank_identity": "rank(Y_w)=#KerPart(t_w)=|im(t_w)|"
+      },
+      "transition_monoid_size": 2,
+      "transition_monoid": [
+        {
+          "shortest_word": [],
+          "minimal_depth": 0,
+          "map": [
+            0,
+            1
+          ],
+          "image_subset": [
+            0,
+            1
+          ],
+          "transformation_kernel_partition": [
+            [
+              0
+            ],
+            [
+              1
+            ]
+          ],
+          "rank": 2
+        },
+        {
+          "shortest_word": [
+            1
+          ],
+          "minimal_depth": 1,
+          "map": [
+            1,
+            0
+          ],
+          "image_subset": [
+            0,
+            1
+          ],
+          "transformation_kernel_partition": [
+            [
+              0
+            ],
+            [
+              1
+            ]
+          ],
+          "rank": 2
+        }
+      ],
+      "transition_monoid_rank_histogram": {
+        "2": 2
+      },
+      "sector_quotients": [
+        {
+          "partition": [
+            [
+              0,
+              1
+            ]
+          ],
+          "state_count": 1,
+          "transition": [
+            [
+              0
+            ],
+            [
+              0
+            ]
+          ],
+          "selected_shortest_quotient_reset_depth": 0,
+          "selected_shortest_quotient_reset_word": [],
+          "selected_reached_subset": [
+            0,
+            1
+          ],
+          "selected_target_class": [
+            0,
+            1
+          ],
+          "selected_reached_subset_internal_depth": null,
+          "selected_shortest_witness_composition_bound": null,
+          "internal_compression_depths": [
+            {
+              "block": [
+                0,
+                1
+              ],
+              "depth": null,
+              "status": "UNREACHABLE_IN_SUBSET_ORBIT"
+            }
+          ],
+          "uniform_internal_compression_depth": null,
+          "fixed_congruence_uniform_bound": null,
+          "fixed_congruence_target_specific_bound": null,
+          "target_specific_bound_semantics": "exact but self-referential unless the quotient-reset witness class is restricted; a full reset word is always eligible",
+          "target_specific_optimizing_witness": null
+        },
+        {
+          "partition": [
+            [
+              0
+            ],
+            [
+              1
+            ]
+          ],
+          "state_count": 2,
+          "transition": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "selected_shortest_quotient_reset_depth": null,
+          "selected_shortest_quotient_reset_word": null,
+          "selected_reached_subset": null,
+          "selected_target_class": null,
+          "selected_reached_subset_internal_depth": null,
+          "selected_shortest_witness_composition_bound": null,
+          "internal_compression_depths": [
+            {
+              "block": [
+                0
+              ],
+              "depth": 0,
+              "status": "EXACT_FIRST_HIT"
+            },
+            {
+              "block": [
+                1
+              ],
+              "depth": 0,
+              "status": "EXACT_FIRST_HIT"
+            }
+          ],
+          "uniform_internal_compression_depth": 0,
+          "fixed_congruence_uniform_bound": null,
+          "fixed_congruence_target_specific_bound": null,
+          "target_specific_bound_semantics": "exact but self-referential unless the quotient-reset witness class is restricted; a full reset word is always eligible",
+          "target_specific_optimizing_witness": null
+        }
+      ],
+      "rank_incidence_profile": [
+        {
+          "word": [
+            0,
+            0
+          ],
+          "input_rank": 2,
+          "product_rank": 2,
+          "fiber_excess": 0,
+          "strict_rank_drop": false
+        },
+        {
+          "word": [
+            0,
+            1
+          ],
+          "input_rank": 2,
+          "product_rank": 2,
+          "fiber_excess": 0,
+          "strict_rank_drop": false
+        },
+        {
+          "word": [
+            1,
+            0
+          ],
+          "input_rank": 2,
+          "product_rank": 2,
+          "fiber_excess": 0,
+          "strict_rank_drop": false
+        },
+        {
+          "word": [
+            1,
+            1
+          ],
+          "input_rank": 2,
+          "product_rank": 2,
+          "fiber_excess": 0,
+          "strict_rank_drop": false
+        }
+      ],
+      "pair_collision_profile": {
+        "carrier": "unordered_state_pair_merge",
+        "collision_pair_sets": [
+          {
+            "letter": 0,
+            "pairs": []
+          },
+          {
+            "letter": 1,
+            "pairs": []
+          }
+        ],
+        "pair_merge_distances": [
+          {
+            "pair": [
+              0,
+              1
+            ],
+            "distance": null,
+            "mathematical_value": "infinity"
+          }
+        ]
+      },
+      "rank_collapse": {
+        "carrier": "image_rank_collapse",
+        "notation": "Img_d[Y]",
+        "depth_domain": "N_0",
+        "exact_depth_reachable_image_subsets": [
+          {
+            "depth": 0,
+            "images": [
+              [
+                0,
+                1
+              ]
+            ],
+            "minimum_rank": 2
+          },
+          {
+            "depth": 1,
+            "images": [
+              [
+                0,
+                1
+              ]
+            ],
+            "minimum_rank": 2
+          },
+          {
+            "depth": 2,
+            "images": [
+              [
+                0,
+                1
+              ]
+            ],
+            "minimum_rank": 2
+          },
+          {
+            "depth": 3,
+            "images": [
+              [
+                0,
+                1
+              ]
+            ],
+            "minimum_rank": 2
+          },
+          {
+            "depth": 4,
+            "images": [
+              [
+                0,
+                1
+              ]
+            ],
+            "minimum_rank": 2
+          }
+        ],
+        "reachable_subset_orbit": [
+          {
+            "subset": [
+              0,
+              1
+            ],
+            "minimal_depth": 0,
+            "shortest_word": []
+          }
+        ],
+        "reachable_subset_orbit_size": 1,
+        "first_hit_depth_by_rank_threshold": [
+          {
+            "rank_threshold": 1,
+            "status": "UNREACHABLE_IN_SUBSET_ORBIT",
+            "depth": null
+          },
+          {
+            "rank_threshold": 2,
+            "status": "EXACT_FIRST_HIT",
+            "depth": 0
+          }
+        ],
+        "subset_orbit_exhausted": true
+      },
+      "rank_preserving_escape": {
+        "carrier": "rank_preserving_subset_escape",
+        "subset_action": "M_Y acts on 2^Q by S . w = delta(S,w)",
+        "layers": [
+          {
+            "rank": 2,
+            "reachable_subsets": [
+              [
+                0,
+                1
+              ]
+            ],
+            "rank_preserving_edges": [
+              {
+                "source": [
+                  0,
+                  1
+                ],
+                "letter": 0,
+                "target": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "source": [
+                  0,
+                  1
+                ],
+                "letter": 1,
+                "target": [
+                  0,
+                  1
+                ]
+              }
+            ],
+            "collision_exits": [],
+            "collision_boundary": [],
+            "rank_preserving_sccs": [
+              [
+                [
+                  0,
+                  1
+                ]
+              ]
+            ],
+            "largest_rank_preserving_scc_size": 1,
+            "escape_records": [
+              {
+                "subset": [
+                  0,
+                  1
+                ],
+                "boundary_distance": null,
+                "directed_distance_convention": "shortest directed path in the rank-preserving graph",
+                "structural_next_drop_distance": null,
+                "mathematical_value": "infinity",
+                "shortest_rank_drop_word": null,
+                "rank_drop_target_subset": null,
+                "minimum_pair_merge_distance": null,
+                "pair_merge_upper_bound_holds": false,
+                "omega_symbol": "omega(S)",
+                "status": "EXACT_INFINITY_NO_REACHABLE_STRICT_DROP"
+              }
+            ],
+            "rank_layer_max_escape_distance": null,
+            "Omega_r_symbol": "Omega_2",
+            "pin_frankl_compression_benchmark": 1,
+            "pin_frankl_benchmark_holds": false
+          }
+        ],
+        "sync_upper_bound_sum_Omega_r": null,
+        "compatible_escape_budget": {
+          "construction": "rank_layer_max_potential_baseline",
+          "value": null,
+          "path_compatible": false,
+          "not_equivalent_to_cerny_target": true
+        },
+        "potential_certificate": {
+          "formula": "Phi(S)=sum_{2<=r<=|S|} Omega_r over reachable ranks",
+          "local_descent_inequalities_verified": false,
+          "claim_status": "Theorem"
+        },
+        "classical_compression_benchmark": {
+          "owner": "Pin-Frankl compression argument",
+          "rank_layer_formula": "Omega_r <= binom(n-r+2,2)",
+          "cubic_reset_bound": 1,
+          "registered_layer_checks_hold": null,
+          "claim_status": "Imported Theorem"
+        },
+        "bound_status": "NO_GLOBAL_FINITE_ESCAPE_CERTIFICATE"
+      },
+      "reset": {
+        "is_synchronizing": false,
+        "shortest_word": null,
+        "shortest_length": null
+      },
+      "witness_transformation": null,
+      "reset_rank_drop_filtration": null
+    },
+    {
+      "id": "dfa-n2-k2-00007",
+      "transition": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "state_count": 2,
+      "alphabet_size": 2,
+      "partition": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "operator_blocks": [
+        [
+          [
+            [
+              [
+                0
+              ]
+            ],
+            [
+              [
+                1
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                1
+              ]
+            ],
+            [
+              [
+                0
+              ]
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              [
+                1
+              ]
+            ],
+            [
+              [
+                1
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                0
+              ]
+            ],
+            [
+              [
+                0
+              ]
+            ]
+          ]
+        ]
+      ],
+      "direct_support": [
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      ],
+      "block_support_path": [
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ],
+      "routed_support": [
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ],
+      "positive_word_support": [
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ],
+      "deterministic_route_word_agreement": true,
+      "deterministic_coordinate_support_collapse": {
+        "applicable": true,
+        "path_route_word_equal": true
+      },
+      "kernel_type_bridge": {
+        "finite_set_object": "KerPart(t_w)",
+        "linear_object": "ker_C(Y_w)",
+        "linear_kernel_span": "span_C{e_x-e_y : x~_w y}",
+        "rank_identity": "rank(Y_w)=#KerPart(t_w)=|im(t_w)|"
+      },
+      "transition_monoid_size": 4,
+      "transition_monoid": [
+        {
+          "shortest_word": [],
+          "minimal_depth": 0,
+          "map": [
+            0,
+            1
+          ],
+          "image_subset": [
+            0,
+            1
+          ],
+          "transformation_kernel_partition": [
+            [
+              0
+            ],
+            [
+              1
+            ]
+          ],
+          "rank": 2
+        },
+        {
+          "shortest_word": [
+            0
+          ],
+          "minimal_depth": 1,
+          "map": [
+            1,
+            0
+          ],
+          "image_subset": [
+            0,
+            1
+          ],
+          "transformation_kernel_partition": [
+            [
+              0
+            ],
+            [
+              1
+            ]
+          ],
+          "rank": 2
+        },
+        {
+          "shortest_word": [
+            1
+          ],
+          "minimal_depth": 1,
+          "map": [
+            0,
+            0
+          ],
+          "image_subset": [
+            0
+          ],
+          "transformation_kernel_partition": [
+            [
+              0,
+              1
+            ]
+          ],
+          "rank": 1
+        },
+        {
+          "shortest_word": [
+            1,
+            0
+          ],
+          "minimal_depth": 2,
+          "map": [
+            1,
+            1
+          ],
+          "image_subset": [
+            1
+          ],
+          "transformation_kernel_partition": [
+            [
+              0,
+              1
+            ]
+          ],
+          "rank": 1
+        }
+      ],
+      "transition_monoid_rank_histogram": {
+        "1": 2,
+        "2": 2
+      },
+      "sector_quotients": [
+        {
+          "partition": [
+            [
+              0,
+              1
+            ]
+          ],
+          "state_count": 1,
+          "transition": [
+            [
+              0
+            ],
+            [
+              0
+            ]
+          ],
+          "selected_shortest_quotient_reset_depth": 0,
+          "selected_shortest_quotient_reset_word": [],
+          "selected_reached_subset": [
+            0,
+            1
+          ],
+          "selected_target_class": [
+            0,
+            1
+          ],
+          "selected_reached_subset_internal_depth": 1,
+          "selected_shortest_witness_composition_bound": 1,
+          "internal_compression_depths": [
+            {
+              "block": [
+                0,
+                1
+              ],
+              "depth": 1,
+              "status": "EXACT_FIRST_HIT"
+            }
+          ],
+          "uniform_internal_compression_depth": 1,
+          "fixed_congruence_uniform_bound": 1,
+          "fixed_congruence_target_specific_bound": 1,
+          "target_specific_bound_semantics": "exact but self-referential unless the quotient-reset witness class is restricted; a full reset word is always eligible",
+          "target_specific_optimizing_witness": {
+            "bound": 1,
+            "quotient_reset_word": [],
+            "quotient_reset_depth": 0,
+            "reached_subset": [
+              0,
+              1
+            ],
+            "reached_subset_internal_depth": 1
+          }
+        },
+        {
+          "partition": [
+            [
+              0
+            ],
+            [
+              1
+            ]
+          ],
+          "state_count": 2,
+          "transition": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "selected_shortest_quotient_reset_depth": 1,
+          "selected_shortest_quotient_reset_word": [
+            1
+          ],
+          "selected_reached_subset": [
+            0
+          ],
+          "selected_target_class": [
+            0
+          ],
+          "selected_reached_subset_internal_depth": 0,
+          "selected_shortest_witness_composition_bound": 1,
+          "internal_compression_depths": [
+            {
+              "block": [
+                0
+              ],
+              "depth": 0,
+              "status": "EXACT_FIRST_HIT"
+            },
+            {
+              "block": [
+                1
+              ],
+              "depth": 0,
+              "status": "EXACT_FIRST_HIT"
+            }
+          ],
+          "uniform_internal_compression_depth": 0,
+          "fixed_congruence_uniform_bound": 1,
+          "fixed_congruence_target_specific_bound": 1,
+          "target_specific_bound_semantics": "exact but self-referential unless the quotient-reset witness class is restricted; a full reset word is always eligible",
+          "target_specific_optimizing_witness": {
+            "bound": 1,
+            "quotient_reset_word": [
+              1
+            ],
+            "quotient_reset_depth": 1,
+            "reached_subset": [
+              0
+            ],
+            "reached_subset_internal_depth": 0
+          }
+        }
+      ],
+      "rank_incidence_profile": [
+        {
+          "word": [
+            0,
+            0
+          ],
+          "input_rank": 2,
+          "product_rank": 2,
+          "fiber_excess": 0,
+          "strict_rank_drop": false
+        },
+        {
+          "word": [
+            0,
+            1
+          ],
+          "input_rank": 2,
+          "product_rank": 1,
+          "fiber_excess": 1,
+          "strict_rank_drop": true
+        },
+        {
+          "word": [
+            1,
+            0
+          ],
+          "input_rank": 1,
+          "product_rank": 1,
+          "fiber_excess": 0,
+          "strict_rank_drop": false
+        },
+        {
+          "word": [
+            1,
+            1
+          ],
+          "input_rank": 1,
+          "product_rank": 1,
+          "fiber_excess": 0,
+          "strict_rank_drop": false
+        }
+      ],
+      "pair_collision_profile": {
+        "carrier": "unordered_state_pair_merge",
+        "collision_pair_sets": [
+          {
+            "letter": 0,
+            "pairs": []
+          },
+          {
+            "letter": 1,
+            "pairs": [
+              [
+                0,
+                1
+              ]
+            ]
+          }
+        ],
+        "pair_merge_distances": [
+          {
+            "pair": [
+              0,
+              1
+            ],
+            "distance": 1,
+            "mathematical_value": 1
+          }
+        ]
+      },
+      "rank_collapse": {
+        "carrier": "image_rank_collapse",
+        "notation": "Img_d[Y]",
+        "depth_domain": "N_0",
+        "exact_depth_reachable_image_subsets": [
+          {
+            "depth": 0,
+            "images": [
+              [
+                0,
+                1
+              ]
+            ],
+            "minimum_rank": 2
+          },
+          {
+            "depth": 1,
+            "images": [
+              [
+                0
+              ],
+              [
+                0,
+                1
+              ]
+            ],
+            "minimum_rank": 1
+          },
+          {
+            "depth": 2,
+            "images": [
+              [
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                1
+              ]
+            ],
+            "minimum_rank": 1
+          },
+          {
+            "depth": 3,
+            "images": [
+              [
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                1
+              ]
+            ],
+            "minimum_rank": 1
+          },
+          {
+            "depth": 4,
+            "images": [
+              [
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                1
+              ]
+            ],
+            "minimum_rank": 1
+          }
+        ],
+        "reachable_subset_orbit": [
+          {
+            "subset": [
+              0
+            ],
+            "minimal_depth": 1,
+            "shortest_word": [
+              1
+            ]
+          },
+          {
+            "subset": [
+              0,
+              1
+            ],
+            "minimal_depth": 0,
+            "shortest_word": []
+          },
+          {
+            "subset": [
+              1
+            ],
+            "minimal_depth": 2,
+            "shortest_word": [
+              1,
+              0
+            ]
+          }
+        ],
+        "reachable_subset_orbit_size": 3,
+        "first_hit_depth_by_rank_threshold": [
+          {
+            "rank_threshold": 1,
+            "status": "EXACT_FIRST_HIT",
+            "depth": 1
+          },
+          {
+            "rank_threshold": 2,
+            "status": "EXACT_FIRST_HIT",
+            "depth": 0
+          }
+        ],
+        "subset_orbit_exhausted": true
+      },
+      "rank_preserving_escape": {
+        "carrier": "rank_preserving_subset_escape",
+        "subset_action": "M_Y acts on 2^Q by S . w = delta(S,w)",
+        "layers": [
+          {
+            "rank": 2,
+            "reachable_subsets": [
+              [
+                0,
+                1
+              ]
+            ],
+            "rank_preserving_edges": [
+              {
+                "source": [
+                  0,
+                  1
+                ],
+                "letter": 0,
+                "target": [
+                  0,
+                  1
+                ]
+              }
+            ],
+            "collision_exits": [
+              {
+                "source": [
+                  0,
+                  1
+                ],
+                "letter": 1,
+                "target": [
+                  0
+                ],
+                "fiber_excess": 1,
+                "collision_fibers": [
+                  [
+                    0,
+                    1
+                  ]
+                ]
+              }
+            ],
+            "collision_boundary": [
+              [
+                0,
+                1
+              ]
+            ],
+            "rank_preserving_sccs": [
+              [
+                [
+                  0,
+                  1
+                ]
+              ]
+            ],
+            "largest_rank_preserving_scc_size": 1,
+            "escape_records": [
+              {
+                "subset": [
+                  0,
+                  1
+                ],
+                "boundary_distance": 0,
+                "directed_distance_convention": "shortest directed path in the rank-preserving graph",
+                "structural_next_drop_distance": 1,
+                "mathematical_value": 1,
+                "shortest_rank_drop_word": [
+                  1
+                ],
+                "rank_drop_target_subset": [
+                  0
+                ],
+                "minimum_pair_merge_distance": 1,
+                "pair_merge_upper_bound_holds": true,
+                "omega_symbol": "omega(S)",
+                "status": "EXACT_ESCAPE_DISTANCE",
+                "rank_layer_potential_before": 1,
+                "rank_layer_potential_after": 0,
+                "local_potential_lhs": 1,
+                "local_potential_inequality_holds": true
+              }
+            ],
+            "rank_layer_max_escape_distance": 1,
+            "Omega_r_symbol": "Omega_2",
+            "pin_frankl_compression_benchmark": 1,
+            "pin_frankl_benchmark_holds": true
+          }
+        ],
+        "sync_upper_bound_sum_Omega_r": 1,
+        "compatible_escape_budget": {
+          "construction": "rank_layer_max_potential_baseline",
+          "value": 1,
+          "path_compatible": true,
+          "not_equivalent_to_cerny_target": true
+        },
+        "potential_certificate": {
+          "formula": "Phi(S)=sum_{2<=r<=|S|} Omega_r over reachable ranks",
+          "local_descent_inequalities_verified": true,
+          "claim_status": "Theorem"
+        },
+        "classical_compression_benchmark": {
+          "owner": "Pin-Frankl compression argument",
+          "rank_layer_formula": "Omega_r <= binom(n-r+2,2)",
+          "cubic_reset_bound": 1,
+          "registered_layer_checks_hold": true,
+          "claim_status": "Imported Theorem"
+        },
+        "bound_status": "EXACT_FINITE_REDUCTION"
+      },
+      "reset": {
+        "is_synchronizing": true,
+        "shortest_word": [
+          1
+        ],
+        "shortest_length": 1
+      },
+      "witness_transformation": {
+        "word": [
+          1
+        ],
+        "map": [
+          0,
+          0
+        ],
+        "image_subset": [
+          0
+        ],
+        "transformation_kernel_partition": [
+          [
+            0,
+            1
+          ]
+        ],
+        "rank": 1
+      },
+      "reset_rank_drop_filtration": [
+        {
+          "depth": 1,
+          "letter": 1,
+          "rank_before": 2,
+          "rank_after": 1,
+          "image_subset_before": [
+            0,
+            1
+          ],
+          "image_subset_after": [
+            0
+          ],
+          "transformation_kernel_partition_before": [
+            [
+              0
+            ],
+            [
+              1
+            ]
+          ],
+          "transformation_kernel_partition_after": [
+            [
+              0,
+              1
+            ]
+          ],
+          "kernel_coarsening": true,
+          "kernel_unchanged": false,
+          "strict_drop": true,
+          "drop_size": 1,
+          "fiber_excess": 1,
+          "collision_fibers_on_current_image": [
+            [
+              0,
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dfa-n2-k2-00008",
+      "transition": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "state_count": 2,
+      "alphabet_size": 2,
+      "partition": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "operator_blocks": [
+        [
+          [
+            [
+              [
+                0
+              ]
+            ],
+            [
+              [
+                1
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                1
+              ]
+            ],
+            [
+              [
+                0
+              ]
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              [
+                1
+              ]
+            ],
+            [
+              [
+                0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                0
+              ]
+            ],
+            [
+              [
+                1
+              ]
+            ]
+          ]
+        ]
+      ],
+      "direct_support": [
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      ],
+      "block_support_path": [
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ],
+      "routed_support": [
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ],
+      "positive_word_support": [
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ],
+      "deterministic_route_word_agreement": true,
+      "deterministic_coordinate_support_collapse": {
+        "applicable": true,
+        "path_route_word_equal": true
+      },
+      "kernel_type_bridge": {
+        "finite_set_object": "KerPart(t_w)",
+        "linear_object": "ker_C(Y_w)",
+        "linear_kernel_span": "span_C{e_x-e_y : x~_w y}",
+        "rank_identity": "rank(Y_w)=#KerPart(t_w)=|im(t_w)|"
+      },
+      "transition_monoid_size": 2,
+      "transition_monoid": [
+        {
+          "shortest_word": [],
+          "minimal_depth": 0,
+          "map": [
+            0,
+            1
+          ],
+          "image_subset": [
+            0,
+            1
+          ],
+          "transformation_kernel_partition": [
+            [
+              0
+            ],
+            [
+              1
+            ]
+          ],
+          "rank": 2
+        },
+        {
+          "shortest_word": [
+            0
+          ],
+          "minimal_depth": 1,
+          "map": [
+            1,
+            0
+          ],
+          "image_subset": [
+            0,
+            1
+          ],
+          "transformation_kernel_partition": [
+            [
+              0
+            ],
+            [
+              1
+            ]
+          ],
+          "rank": 2
+        }
+      ],
+      "transition_monoid_rank_histogram": {
+        "2": 2
+      },
+      "sector_quotients": [
+        {
+          "partition": [
+            [
+              0,
+              1
+            ]
+          ],
+          "state_count": 1,
+          "transition": [
+            [
+              0
+            ],
+            [
+              0
+            ]
+          ],
+          "selected_shortest_quotient_reset_depth": 0,
+          "selected_shortest_quotient_reset_word": [],
+          "selected_reached_subset": [
+            0,
+            1
+          ],
+          "selected_target_class": [
+            0,
+            1
+          ],
+          "selected_reached_subset_internal_depth": null,
+          "selected_shortest_witness_composition_bound": null,
+          "internal_compression_depths": [
+            {
+              "block": [
+                0,
+                1
+              ],
+              "depth": null,
+              "status": "UNREACHABLE_IN_SUBSET_ORBIT"
+            }
+          ],
+          "uniform_internal_compression_depth": null,
+          "fixed_congruence_uniform_bound": null,
+          "fixed_congruence_target_specific_bound": null,
+          "target_specific_bound_semantics": "exact but self-referential unless the quotient-reset witness class is restricted; a full reset word is always eligible",
+          "target_specific_optimizing_witness": null
+        },
+        {
+          "partition": [
+            [
+              0
+            ],
+            [
+              1
+            ]
+          ],
+          "state_count": 2,
+          "transition": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "selected_shortest_quotient_reset_depth": null,
+          "selected_shortest_quotient_reset_word": null,
+          "selected_reached_subset": null,
+          "selected_target_class": null,
+          "selected_reached_subset_internal_depth": null,
+          "selected_shortest_witness_composition_bound": null,
+          "internal_compression_depths": [
+            {
+              "block": [
+                0
+              ],
+              "depth": 0,
+              "status": "EXACT_FIRST_HIT"
+            },
+            {
+              "block": [
+                1
+              ],
+              "depth": 0,
+              "status": "EXACT_FIRST_HIT"
+            }
+          ],
+          "uniform_internal_compression_depth": 0,
+          "fixed_congruence_uniform_bound": null,
+          "fixed_congruence_target_specific_bound": null,
+          "target_specific_bound_semantics": "exact but self-referential unless the quotient-reset witness class is restricted; a full reset word is always eligible",
+          "target_specific_optimizing_witness": null
+        }
+      ],
+      "rank_incidence_profile": [
+        {
+          "word": [
+            0,
+            0
+          ],
+          "input_rank": 2,
+          "product_rank": 2,
+          "fiber_excess": 0,
+          "strict_rank_drop": false
+        },
+        {
+          "word": [
+            0,
+            1
+          ],
+          "input_rank": 2,
+          "product_rank": 2,
+          "fiber_excess": 0,
+          "strict_rank_drop": false
+        },
+        {
+          "word": [
+            1,
+            0
+          ],
+          "input_rank": 2,
+          "product_rank": 2,
+          "fiber_excess": 0,
+          "strict_rank_drop": false
+        },
+        {
+          "word": [
+            1,
+            1
+          ],
+          "input_rank": 2,
+          "product_rank": 2,
+          "fiber_excess": 0,
+          "strict_rank_drop": false
+        }
+      ],
+      "pair_collision_profile": {
+        "carrier": "unordered_state_pair_merge",
+        "collision_pair_sets": [
+          {
+            "letter": 0,
+            "pairs": []
+          },
+          {
+            "letter": 1,
+            "pairs": []
+          }
+        ],
+        "pair_merge_distances": [
+          {
+            "pair": [
+              0,
+              1
+            ],
+            "distance": null,
+            "mathematical_value": "infinity"
+          }
+        ]
+      },
+      "rank_collapse": {
+        "carrier": "image_rank_collapse",
+        "notation": "Img_d[Y]",
+        "depth_domain": "N_0",
+        "exact_depth_reachable_image_subsets": [
+          {
+            "depth": 0,
+            "images": [
+              [
+                0,
+                1
+              ]
+            ],
+            "minimum_rank": 2
+          },
+          {
+            "depth": 1,
+            "images": [
+              [
+                0,
+                1
+              ]
+            ],
+            "minimum_rank": 2
+          },
+          {
+            "depth": 2,
+            "images": [
+              [
+                0,
+                1
+              ]
+            ],
+            "minimum_rank": 2
+          },
+          {
+            "depth": 3,
+            "images": [
+              [
+                0,
+                1
+              ]
+            ],
+            "minimum_rank": 2
+          },
+          {
+            "depth": 4,
+            "images": [
+              [
+                0,
+                1
+              ]
+            ],
+            "minimum_rank": 2
+          }
+        ],
+        "reachable_subset_orbit": [
+          {
+            "subset": [
+              0,
+              1
+            ],
+            "minimal_depth": 0,
+            "shortest_word": []
+          }
+        ],
+        "reachable_subset_orbit_size": 1,
+        "first_hit_depth_by_rank_threshold": [
+          {
+            "rank_threshold": 1,
+            "status": "UNREACHABLE_IN_SUBSET_ORBIT",
+            "depth": null
+          },
+          {
+            "rank_threshold": 2,
+            "status": "EXACT_FIRST_HIT",
+            "depth": 0
+          }
+        ],
+        "subset_orbit_exhausted": true
+      },
+      "rank_preserving_escape": {
+        "carrier": "rank_preserving_subset_escape",
+        "subset_action": "M_Y acts on 2^Q by S . w = delta(S,w)",
+        "layers": [
+          {
+            "rank": 2,
+            "reachable_subsets": [
+              [
+                0,
+                1
+              ]
+            ],
+            "rank_preserving_edges": [
+              {
+                "source": [
+                  0,
+                  1
+                ],
+                "letter": 0,
+                "target": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "source": [
+                  0,
+                  1
+                ],
+                "letter": 1,
+                "target": [
+                  0,
+                  1
+                ]
+              }
+            ],
+            "collision_exits": [],
+            "collision_boundary": [],
+            "rank_preserving_sccs": [
+              [
+                [
+                  0,
+                  1
+                ]
+              ]
+            ],
+            "largest_rank_preserving_scc_size": 1,
+            "escape_records": [
+              {
+                "subset": [
+                  0,
+                  1
+                ],
+                "boundary_distance": null,
+                "directed_distance_convention": "shortest directed path in the rank-preserving graph",
+                "structural_next_drop_distance": null,
+                "mathematical_value": "infinity",
+                "shortest_rank_drop_word": null,
+                "rank_drop_target_subset": null,
+                "minimum_pair_merge_distance": null,
+                "pair_merge_upper_bound_holds": false,
+                "omega_symbol": "omega(S)",
+                "status": "EXACT_INFINITY_NO_REACHABLE_STRICT_DROP"
+              }
+            ],
+            "rank_layer_max_escape_distance": null,
+            "Omega_r_symbol": "Omega_2",
+            "pin_frankl_compression_benchmark": 1,
+            "pin_frankl_benchmark_holds": false
+          }
+        ],
+        "sync_upper_bound_sum_Omega_r": null,
+        "compatible_escape_budget": {
+          "construction": "rank_layer_max_potential_baseline",
+          "value": null,
+          "path_compatible": false,
+          "not_equivalent_to_cerny_target": true
+        },
+        "potential_certificate": {
+          "formula": "Phi(S)=sum_{2<=r<=|S|} Omega_r over reachable ranks",
+          "local_descent_inequalities_verified": false,
+          "claim_status": "Theorem"
+        },
+        "classical_compression_benchmark": {
+          "owner": "Pin-Frankl compression argument",
+          "rank_layer_formula": "Omega_r <= binom(n-r+2,2)",
+          "cubic_reset_bound": 1,
+          "registered_layer_checks_hold": null,
+          "claim_status": "Imported Theorem"
+        },
+        "bound_status": "NO_GLOBAL_FINITE_ESCAPE_CERTIFICATE"
+      },
+      "reset": {
+        "is_synchronizing": false,
+        "shortest_word": null,
+        "shortest_length": null
+      },
+      "witness_transformation": null,
+      "reset_rank_drop_filtration": null
+    },
+    {
+      "id": "dfa-n2-k2-00009",
+      "transition": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "state_count": 2,
+      "alphabet_size": 2,
+      "partition": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "operator_blocks": [
+        [
+          [
+            [
+              [
+                0
+              ]
+            ],
+            [
+              [
+                1
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                1
+              ]
+            ],
+            [
+              [
+                0
+              ]
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              [
+                0
+              ]
+            ],
+            [
+              [
+                1
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                1
+              ]
+            ],
+            [
+              [
+                0
+              ]
+            ]
+          ]
+        ]
+      ],
+      "direct_support": [
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ]
+      ],
+      "block_support_path": [
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      ],
+      "routed_support": [
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      ],
+      "positive_word_support": [
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      ],
+      "deterministic_route_word_agreement": true,
+      "deterministic_coordinate_support_collapse": {
+        "applicable": true,
+        "path_route_word_equal": true
+      },
+      "kernel_type_bridge": {
+        "finite_set_object": "KerPart(t_w)",
+        "linear_object": "ker_C(Y_w)",
+        "linear_kernel_span": "span_C{e_x-e_y : x~_w y}",
+        "rank_identity": "rank(Y_w)=#KerPart(t_w)=|im(t_w)|"
+      },
+      "transition_monoid_size": 2,
+      "transition_monoid": [
+        {
+          "shortest_word": [],
+          "minimal_depth": 0,
+          "map": [
+            0,
+            1
+          ],
+          "image_subset": [
+            0,
+            1
+          ],
+          "transformation_kernel_partition": [
+            [
+              0
+            ],
+            [
+              1
+            ]
+          ],
+          "rank": 2
+        },
+        {
+          "shortest_word": [
+            0
+          ],
+          "minimal_depth": 1,
+          "map": [
+            1,
+            0
+          ],
+          "image_subset": [
+            0,
+            1
+          ],
+          "transformation_kernel_partition": [
+            [
+              0
+            ],
+            [
+              1
+            ]
+          ],
+          "rank": 2
+        }
+      ],
+      "transition_monoid_rank_histogram": {
+        "2": 2
+      },
+      "sector_quotients": [
+        {
+          "partition": [
+            [
+              0,
+              1
+            ]
+          ],
+          "state_count": 1,
+          "transition": [
+            [
+              0
+            ],
+            [
+              0
+            ]
+          ],
+          "selected_shortest_quotient_reset_depth": 0,
+          "selected_shortest_quotient_reset_word": [],
+          "selected_reached_subset": [
+            0,
+            1
+          ],
+          "selected_target_class": [
+            0,
+            1
+          ],
+          "selected_reached_subset_internal_depth": null,
+          "selected_shortest_witness_composition_bound": null,
+          "internal_compression_depths": [
+            {
+              "block": [
+                0,
+                1
+              ],
+              "depth": null,
+              "status": "UNREACHABLE_IN_SUBSET_ORBIT"
+            }
+          ],
+          "uniform_internal_compression_depth": null,
+          "fixed_congruence_uniform_bound": null,
+          "fixed_congruence_target_specific_bound": null,
+          "target_specific_bound_semantics": "exact but self-referential unless the quotient-reset witness class is restricted; a full reset word is always eligible",
+          "target_specific_optimizing_witness": null
+        },
+        {
+          "partition": [
+            [
+              0
+            ],
+            [
+              1
+            ]
+          ],
+          "state_count": 2,
+          "transition": [
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "selected_shortest_quotient_reset_depth": null,
+          "selected_shortest_quotient_reset_word": null,
+          "selected_reached_subset": null,
+          "selected_target_class": null,
+          "selected_reached_subset_internal_depth": null,
+          "selected_shortest_witness_composition_bound": null,
+          "internal_compression_depths": [
+            {
+              "block": [
+                0
+              ],
+              "depth": 0,
+              "status": "EXACT_FIRST_HIT"
+            },
+            {
+              "block": [
+                1
+              ],
+              "depth": 0,
+              "status": "EXACT_FIRST_HIT"
+            }
+          ],
+          "uniform_internal_compression_depth": 0,
+          "fixed_congruence_uniform_bound": null,
+          "fixed_congruence_target_specific_bound": null,
+          "target_specific_bound_semantics": "exact but self-referential unless the quotient-reset witness class is restricted; a full reset word is always eligible",
+          "target_specific_optimizing_witness": null
+        }
+      ],
+      "rank_incidence_profile": [
+        {
+          "word": [
+            0,
+            0
+          ],
+          "input_rank": 2,
+          "product_rank": 2,
+          "fiber_excess": 0,
+          "strict_rank_drop": false
+        },
+        {
+          "word": [
+            0,
+            1
+          ],
+          "input_rank": 2,
+          "product_rank": 2,
+          "fiber_excess": 0,
+          "strict_rank_drop": false
+        },
+        {
+          "word": [
+            1,
+            0
+          ],
+          "input_rank": 2,
+          "product_rank": 2,
+          "fiber_excess": 0,
+          "strict_rank_drop": false
+        },
+        {
+          "word": [
+            1,
+            1
+          ],
+          "input_rank": 2,
+          "product_rank": 2,
+          "fiber_excess": 0,
+          "strict_rank_drop": false
+        }
+      ],
+      "pair_collision_profile": {
+        "carrier": "unordered_state_pair_merge",
+        "collision_pair_sets": [
+          {
+            "letter": 0,
+            "pairs": []
+          },
+          {
+            "letter": 1,
+            "pairs": []
+          }
+        ],
+        "pair_merge_distances": [
+          {
+            "pair": [
+              0,
+              1
+            ],
+            "distance": null,
+            "mathematical_value": "infinity"
+          }
+        ]
+      },
+      "rank_collapse": {
+        "carrier": "image_rank_collapse",
+        "notation": "Img_d[Y]",
+        "depth_domain": "N_0",
+        "exact_depth_reachable_image_subsets": [
+          {
+            "depth": 0,
+            "images": [
+              [
+                0,
+                1
+              ]
+            ],
+            "minimum_rank": 2
+          },
+          {
+            "depth": 1,
+            "images": [
+              [
+                0,
+                1
+              ]
+            ],
+            "minimum_rank": 2
+          },
+          {
+            "depth": 2,
+            "images": [
+              [
+                0,
+                1
+              ]
+            ],
+            "minimum_rank": 2
+          },
+          {
+            "depth": 3,
+            "images": [
+              [
+                0,
+                1
+              ]
+            ],
+            "minimum_rank": 2
+          },
+          {
+            "depth": 4,
+            "images": [
+              [
+                0,
+                1
+              ]
+            ],
+            "minimum_rank": 2
+          }
+        ],
+        "reachable_subset_orbit": [
+          {
+            "subset": [
+              0,
+              1
+            ],
+            "minimal_depth": 0,
+            "shortest_word": []
+          }
+        ],
+        "reachable_subset_orbit_size": 1,
+        "first_hit_depth_by_rank_threshold": [
+          {
+            "rank_threshold": 1,
+            "status": "UNREACHABLE_IN_SUBSET_ORBIT",
+            "depth": null
+          },
+          {
+            "rank_threshold": 2,
+            "status": "EXACT_FIRST_HIT",
+            "depth": 0
+          }
+        ],
+        "subset_orbit_exhausted": true
+      },
+      "rank_preserving_escape": {
+        "carrier": "rank_preserving_subset_escape",
+        "subset_action": "M_Y acts on 2^Q by S . w = delta(S,w)",
+        "layers": [
+          {
+            "rank": 2,
+            "reachable_subsets": [
+              [
+                0,
+                1
+              ]
+            ],
+            "rank_preserving_edges": [
+              {
+                "source": [
+                  0,
+                  1
+                ],
+                "letter": 0,
+                "target": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "source": [
+                  0,
+                  1
+                ],
+                "letter": 1,
+                "target": [
+                  0,
+                  1
+                ]
+              }
+            ],
+            "collision_exits": [],
+            "collision_boundary": [],
+            "rank_preserving_sccs": [
+              [
+                [
+                  0,
+                  1
+                ]
+              ]
+            ],
+            "largest_rank_preserving_scc_size": 1,
+            "escape_records": [
+              {
+                "subset": [
+                  0,
+                  1
+                ],
+                "boundary_distance": null,
+                "directed_distance_convention": "shortest directed path in the rank-preserving graph",
+                "structural_next_drop_distance": null,
+                "mathematical_value": "infinity",
+                "shortest_rank_drop_word": null,
+                "rank_drop_target_subset": null,
+                "minimum_pair_merge_distance": null,
+                "pair_merge_upper_bound_holds": false,
+                "omega_symbol": "omega(S)",
+                "status": "EXACT_INFINITY_NO_REACHABLE_STRICT_DROP"
+              }
+            ],
+            "rank_layer_max_escape_distance": null,
+            "Omega_r_symbol": "Omega_2",
+            "pin_frankl_compression_benchmark": 1,
+            "pin_frankl_benchmark_holds": false
+          }
+        ],
+        "sync_upper_bound_sum_Omega_r": null,
+        "compatible_escape_budget": {
+          "construction": "rank_layer_max_potential_baseline",
+          "value": null,
+          "path_compatible": false,
+          "not_equivalent_to_cerny_target": true
+        },
+        "potential_certificate": {
+          "formula": "Phi(S)=sum_{2<=r<=|S|} Omega_r over reachable ranks",
+          "local_descent_inequalities_verified": false,
+          "claim_status": "Theorem"
+        },
+        "classical_compression_benchmark": {
+          "owner": "Pin-Frankl compression argument",
+          "rank_layer_formula": "Omega_r <= binom(n-r+2,2)",
+          "cubic_reset_bound": 1,
+          "registered_layer_checks_hold": null,
+          "claim_status": "Imported Theorem"
+        },
+        "bound_status": "NO_GLOBAL_FINITE_ESCAPE_CERTIFICATE"
+      },
+      "reset": {
+        "is_synchronizing": false,
+        "shortest_word": null,
+        "shortest_length": null
+      },
+      "witness_transformation": null,
+      "reset_rank_drop_filtration": null
+    }
+  ],
+  "analysis": {
+    "feature_rows": [
+      {
+        "automaton_id": "dfa-n2-k2-00000",
+        "state_count": 2,
+        "alphabet_size": 2,
+        "reset_length": 1,
+        "transition_monoid_size": 2,
+        "nonconstant_monoid_elements": 1,
+        "minimum_letter_rank": 1,
+        "maximum_letter_rank_drop": 1,
+        "rank_drop_incidence_count": 0,
+        "nontrivial_congruence_quotient_count": 0,
+        "minimum_nontrivial_quotient_size": null,
+        "minimum_quotient_reset_depth": null,
+        "best_nontrivial_congruence_uniform_bound": null,
+        "best_nontrivial_congruence_target_specific_bound": null,
+        "best_nontrivial_congruence_shortest_witness_bound": null,
+        "selected_witness_strict_rank_drop_count": 1,
+        "selected_witness_strict_rank_drop_depths": [
+          1
+        ],
+        "selected_witness_first_rank_drop_depth": 1,
+        "selected_witness_max_wait": 1,
+        "selected_witness_max_plateau": 0,
+        "rank_layer_max_escape_distance": {
+          "2": 1
+        },
+        "maximum_rank_layer_escape_distance": 1,
+        "sum_rank_layer_escape_bound": 1,
+        "compatible_escape_budget": 1,
+        "potential_certificate_verified": true,
+        "largest_rank_preserving_scc_size": 1,
+        "state_graph_strongly_connected": false,
+        "simple_hard_core_candidate": false
+      },
+      {
+        "automaton_id": "dfa-n2-k2-00001",
+        "state_count": 2,
+        "alphabet_size": 2,
+        "reset_length": 1,
+        "transition_monoid_size": 2,
+        "nonconstant_monoid_elements": 1,
+        "minimum_letter_rank": 1,
+        "maximum_letter_rank_drop": 1,
+        "rank_drop_incidence_count": 1,
+        "nontrivial_congruence_quotient_count": 0,
+        "minimum_nontrivial_quotient_size": null,
+        "minimum_quotient_reset_depth": null,
+        "best_nontrivial_congruence_uniform_bound": null,
+        "best_nontrivial_congruence_target_specific_bound": null,
+        "best_nontrivial_congruence_shortest_witness_bound": null,
+        "selected_witness_strict_rank_drop_count": 1,
+        "selected_witness_strict_rank_drop_depths": [
+          1
+        ],
+        "selected_witness_first_rank_drop_depth": 1,
+        "selected_witness_max_wait": 1,
+        "selected_witness_max_plateau": 0,
+        "rank_layer_max_escape_distance": {
+          "2": 1
+        },
+        "maximum_rank_layer_escape_distance": 1,
+        "sum_rank_layer_escape_bound": 1,
+        "compatible_escape_budget": 1,
+        "potential_certificate_verified": true,
+        "largest_rank_preserving_scc_size": 1,
+        "state_graph_strongly_connected": false,
+        "simple_hard_core_candidate": false
+      },
+      {
+        "automaton_id": "dfa-n2-k2-00002",
+        "state_count": 2,
+        "alphabet_size": 2,
+        "reset_length": 1,
+        "transition_monoid_size": 4,
+        "nonconstant_monoid_elements": 2,
+        "minimum_letter_rank": 1,
+        "maximum_letter_rank_drop": 1,
+        "rank_drop_incidence_count": 1,
+        "nontrivial_congruence_quotient_count": 0,
+        "minimum_nontrivial_quotient_size": null,
+        "minimum_quotient_reset_depth": null,
+        "best_nontrivial_congruence_uniform_bound": null,
+        "best_nontrivial_congruence_target_specific_bound": null,
+        "best_nontrivial_congruence_shortest_witness_bound": null,
+        "selected_witness_strict_rank_drop_count": 1,
+        "selected_witness_strict_rank_drop_depths": [
+          1
+        ],
+        "selected_witness_first_rank_drop_depth": 1,
+        "selected_witness_max_wait": 1,
+        "selected_witness_max_plateau": 0,
+        "rank_layer_max_escape_distance": {
+          "2": 1
+        },
+        "maximum_rank_layer_escape_distance": 1,
+        "sum_rank_layer_escape_bound": 1,
+        "compatible_escape_budget": 1,
+        "potential_certificate_verified": true,
+        "largest_rank_preserving_scc_size": 1,
+        "state_graph_strongly_connected": true,
+        "simple_hard_core_candidate": true
+      },
+      {
+        "automaton_id": "dfa-n2-k2-00003",
+        "state_count": 2,
+        "alphabet_size": 2,
+        "reset_length": 1,
+        "transition_monoid_size": 3,
+        "nonconstant_monoid_elements": 1,
+        "minimum_letter_rank": 1,
+        "maximum_letter_rank_drop": 1,
+        "rank_drop_incidence_count": 0,
+        "nontrivial_congruence_quotient_count": 0,
+        "minimum_nontrivial_quotient_size": null,
+        "minimum_quotient_reset_depth": null,
+        "best_nontrivial_congruence_uniform_bound": null,
+        "best_nontrivial_congruence_target_specific_bound": null,
+        "best_nontrivial_congruence_shortest_witness_bound": null,
+        "selected_witness_strict_rank_drop_count": 1,
+        "selected_witness_strict_rank_drop_depths": [
+          1
+        ],
+        "selected_witness_first_rank_drop_depth": 1,
+        "selected_witness_max_wait": 1,
+        "selected_witness_max_plateau": 0,
+        "rank_layer_max_escape_distance": {
+          "2": 1
+        },
+        "maximum_rank_layer_escape_distance": 1,
+        "sum_rank_layer_escape_bound": 1,
+        "compatible_escape_budget": 1,
+        "potential_certificate_verified": true,
+        "largest_rank_preserving_scc_size": 1,
+        "state_graph_strongly_connected": true,
+        "simple_hard_core_candidate": true
+      },
+      {
+        "automaton_id": "dfa-n2-k2-00004",
+        "state_count": 2,
+        "alphabet_size": 2,
+        "reset_length": 1,
+        "transition_monoid_size": 2,
+        "nonconstant_monoid_elements": 1,
+        "minimum_letter_rank": 1,
+        "maximum_letter_rank_drop": 1,
+        "rank_drop_incidence_count": 1,
+        "nontrivial_congruence_quotient_count": 0,
+        "minimum_nontrivial_quotient_size": null,
+        "minimum_quotient_reset_depth": null,
+        "best_nontrivial_congruence_uniform_bound": null,
+        "best_nontrivial_congruence_target_specific_bound": null,
+        "best_nontrivial_congruence_shortest_witness_bound": null,
+        "selected_witness_strict_rank_drop_count": 1,
+        "selected_witness_strict_rank_drop_depths": [
+          1
+        ],
+        "selected_witness_first_rank_drop_depth": 1,
+        "selected_witness_max_wait": 1,
+        "selected_witness_max_plateau": 0,
+        "rank_layer_max_escape_distance": {
+          "2": 1
+        },
+        "maximum_rank_layer_escape_distance": 1,
+        "sum_rank_layer_escape_bound": 1,
+        "compatible_escape_budget": 1,
+        "potential_certificate_verified": true,
+        "largest_rank_preserving_scc_size": 1,
+        "state_graph_strongly_connected": false,
+        "simple_hard_core_candidate": false
+      },
+      {
+        "automaton_id": "dfa-n2-k2-00007",
+        "state_count": 2,
+        "alphabet_size": 2,
+        "reset_length": 1,
+        "transition_monoid_size": 4,
+        "nonconstant_monoid_elements": 2,
+        "minimum_letter_rank": 1,
+        "maximum_letter_rank_drop": 1,
+        "rank_drop_incidence_count": 1,
+        "nontrivial_congruence_quotient_count": 0,
+        "minimum_nontrivial_quotient_size": null,
+        "minimum_quotient_reset_depth": null,
+        "best_nontrivial_congruence_uniform_bound": null,
+        "best_nontrivial_congruence_target_specific_bound": null,
+        "best_nontrivial_congruence_shortest_witness_bound": null,
+        "selected_witness_strict_rank_drop_count": 1,
+        "selected_witness_strict_rank_drop_depths": [
+          1
+        ],
+        "selected_witness_first_rank_drop_depth": 1,
+        "selected_witness_max_wait": 1,
+        "selected_witness_max_plateau": 0,
+        "rank_layer_max_escape_distance": {
+          "2": 1
+        },
+        "maximum_rank_layer_escape_distance": 1,
+        "sum_rank_layer_escape_bound": 1,
+        "compatible_escape_budget": 1,
+        "potential_certificate_verified": true,
+        "largest_rank_preserving_scc_size": 1,
+        "state_graph_strongly_connected": true,
+        "simple_hard_core_candidate": true
+      }
+    ],
+    "candidate_inequalities": [
+      {
+        "statement": "reset_length <= (n-1)^2",
+        "holds_for_all_registered_synchronizing_automata": true,
+        "equality_case_count": 6,
+        "claim_status": "Research Program",
+        "candidate_kind": "conjecture"
+      },
+      {
+        "statement": "reset_length <= number_of_nonconstant_transition_monoid_elements",
+        "holds_for_all_registered_synchronizing_automata": true,
+        "equality_case_count": 4,
+        "claim_status": "Research Program",
+        "candidate_kind": "proof_target"
+      }
+    ]
+  },
+  "producer": {
+    "script": "experiments/paper23/registry.py",
+    "script_sha256": "179f3663e025bb4ef0e3e32e148bbda8f850a31a5039a897c25a154df610125e"
+  },
+  "claim_boundary": "Finite complete enumeration and exact BFS/monoid certificates for registered DFAs; candidate inequalities are Research Program items, not general theorems, and no general Cerny theorem is claimed.",
+  "content_sha256": "130843718c7dbb667162ce9b782645b068763bbcd03618fd4322be92405e94cf"
+}

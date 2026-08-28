@@ -1,0 +1,348 @@
+{
+  "schema": "rime.synchronizing-automata.binary-clean-exhaustion.v1",
+  "scope": {
+    "minimum_state_count": 2,
+    "maximum_state_count": 6,
+    "permutation_letters": "all involutions",
+    "nonpermutation_letters": "all rank-(n-1) transformations",
+    "clean_exit_test": "on every reachable nonsingleton subset, the defect-one letter either drops rank or fixes the subset",
+    "isomorphism_reduction": "none; exhaustive labelled pairs"
+  },
+  "rows": [
+    {
+      "state_count": 2,
+      "involution_count": 2,
+      "defect_one_map_count": 2,
+      "examined_pair_count": 4,
+      "clean_synchronizing_pair_count": 4,
+      "reset_depth_histogram": {
+        "1": 4
+      },
+      "genuine_wait_number_histogram": {
+        "0": 4
+      },
+      "one_wait_theorem_failure_count": 0,
+      "maximum_reset_depth": 1,
+      "theorem_extremal_reset_depth": 1,
+      "theorem_extremal_depth_verified": true,
+      "old_2n_minus_3_bound": 1,
+      "old_bound_attained": true,
+      "candidate_n_bound": 2,
+      "candidate_n_bound_holds_in_enumeration": true,
+      "candidate_n_bound_attained": false,
+      "selected_maximum_witness": {
+        "permutation": [
+          0,
+          1
+        ],
+        "defect_one": [
+          0,
+          0
+        ],
+        "reset_depth": 1,
+        "shortest_reset_word": [
+          1
+        ],
+        "reachable_subset_count": 2
+      },
+      "explicit_depth_n_witness": null
+    },
+    {
+      "state_count": 3,
+      "involution_count": 4,
+      "defect_one_map_count": 18,
+      "examined_pair_count": 72,
+      "clean_synchronizing_pair_count": 24,
+      "reset_depth_histogram": {
+        "2": 12,
+        "3": 12
+      },
+      "genuine_wait_number_histogram": {
+        "0": 12,
+        "1": 12
+      },
+      "one_wait_theorem_failure_count": 0,
+      "maximum_reset_depth": 3,
+      "theorem_extremal_reset_depth": 3,
+      "theorem_extremal_depth_verified": true,
+      "old_2n_minus_3_bound": 3,
+      "old_bound_attained": true,
+      "candidate_n_bound": 3,
+      "candidate_n_bound_holds_in_enumeration": true,
+      "candidate_n_bound_attained": true,
+      "selected_maximum_witness": {
+        "permutation": [
+          0,
+          2,
+          1
+        ],
+        "defect_one": [
+          0,
+          0,
+          2
+        ],
+        "reset_depth": 3,
+        "shortest_reset_word": [
+          1,
+          0,
+          1
+        ],
+        "reachable_subset_count": 4
+      },
+      "explicit_depth_n_witness": {
+        "state_count": 3,
+        "permutation": [
+          0,
+          2,
+          1
+        ],
+        "defect_one": [
+          0,
+          0,
+          2
+        ],
+        "reset_depth": 3,
+        "shortest_reset_word": [
+          1,
+          0,
+          1
+        ],
+        "reachable_subset_count": 4
+      }
+    },
+    {
+      "state_count": 4,
+      "involution_count": 10,
+      "defect_one_map_count": 144,
+      "examined_pair_count": 1440,
+      "clean_synchronizing_pair_count": 96,
+      "reset_depth_histogram": {
+        "3": 48,
+        "4": 48
+      },
+      "genuine_wait_number_histogram": {
+        "0": 48,
+        "1": 48
+      },
+      "one_wait_theorem_failure_count": 0,
+      "maximum_reset_depth": 4,
+      "theorem_extremal_reset_depth": 4,
+      "theorem_extremal_depth_verified": true,
+      "old_2n_minus_3_bound": 5,
+      "old_bound_attained": false,
+      "candidate_n_bound": 4,
+      "candidate_n_bound_holds_in_enumeration": true,
+      "candidate_n_bound_attained": true,
+      "selected_maximum_witness": {
+        "permutation": [
+          0,
+          1,
+          3,
+          2
+        ],
+        "defect_one": [
+          0,
+          2,
+          0,
+          3
+        ],
+        "reset_depth": 4,
+        "shortest_reset_word": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "reachable_subset_count": 5
+      },
+      "explicit_depth_n_witness": {
+        "state_count": 4,
+        "permutation": [
+          0,
+          1,
+          3,
+          2
+        ],
+        "defect_one": [
+          0,
+          2,
+          0,
+          3
+        ],
+        "reset_depth": 4,
+        "shortest_reset_word": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "reachable_subset_count": 5
+      }
+    },
+    {
+      "state_count": 5,
+      "involution_count": 26,
+      "defect_one_map_count": 1200,
+      "examined_pair_count": 31200,
+      "clean_synchronizing_pair_count": 600,
+      "reset_depth_histogram": {
+        "4": 240,
+        "5": 360
+      },
+      "genuine_wait_number_histogram": {
+        "0": 240,
+        "1": 360
+      },
+      "one_wait_theorem_failure_count": 0,
+      "maximum_reset_depth": 5,
+      "theorem_extremal_reset_depth": 5,
+      "theorem_extremal_depth_verified": true,
+      "old_2n_minus_3_bound": 7,
+      "old_bound_attained": false,
+      "candidate_n_bound": 5,
+      "candidate_n_bound_holds_in_enumeration": true,
+      "candidate_n_bound_attained": true,
+      "selected_maximum_witness": {
+        "permutation": [
+          0,
+          1,
+          2,
+          4,
+          3
+        ],
+        "defect_one": [
+          0,
+          2,
+          3,
+          0,
+          4
+        ],
+        "reset_depth": 5,
+        "shortest_reset_word": [
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "reachable_subset_count": 6
+      },
+      "explicit_depth_n_witness": {
+        "state_count": 5,
+        "permutation": [
+          0,
+          1,
+          2,
+          4,
+          3
+        ],
+        "defect_one": [
+          0,
+          2,
+          3,
+          0,
+          4
+        ],
+        "reset_depth": 5,
+        "shortest_reset_word": [
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "reachable_subset_count": 6
+      }
+    },
+    {
+      "state_count": 6,
+      "involution_count": 76,
+      "defect_one_map_count": 10800,
+      "examined_pair_count": 820800,
+      "clean_synchronizing_pair_count": 3600,
+      "reset_depth_histogram": {
+        "5": 1440,
+        "6": 2160
+      },
+      "genuine_wait_number_histogram": {
+        "0": 1440,
+        "1": 2160
+      },
+      "one_wait_theorem_failure_count": 0,
+      "maximum_reset_depth": 6,
+      "theorem_extremal_reset_depth": 6,
+      "theorem_extremal_depth_verified": true,
+      "old_2n_minus_3_bound": 9,
+      "old_bound_attained": false,
+      "candidate_n_bound": 6,
+      "candidate_n_bound_holds_in_enumeration": true,
+      "candidate_n_bound_attained": true,
+      "selected_maximum_witness": {
+        "permutation": [
+          0,
+          1,
+          2,
+          3,
+          5,
+          4
+        ],
+        "defect_one": [
+          0,
+          2,
+          3,
+          4,
+          0,
+          5
+        ],
+        "reset_depth": 6,
+        "shortest_reset_word": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "reachable_subset_count": 7
+      },
+      "explicit_depth_n_witness": {
+        "state_count": 6,
+        "permutation": [
+          0,
+          1,
+          2,
+          3,
+          5,
+          4
+        ],
+        "defect_one": [
+          0,
+          2,
+          3,
+          4,
+          0,
+          5
+        ],
+        "reset_depth": 6,
+        "shortest_reset_word": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "reachable_subset_count": 7
+      }
+    }
+  ],
+  "claim_boundary": {
+    "enumeration_completeness": "Exact finite theorem",
+    "explicit_depth_n_family": "Exact constructive theorem",
+    "binary_clean_one_wait_bound": "Exact class theorem",
+    "bound_D_at_most_n": "Exact class theorem",
+    "extremal_depth_n_for_n_at_least_3": "Exact class theorem",
+    "sharpness_of_2n_minus_3": "Exact: attained only at n=2,3 in the binary clean class"
+  },
+  "content_sha256": "af6c3c4badb863639f799c300ce71c8e04312e4b663656b21ceed1e92754947b"
+}
