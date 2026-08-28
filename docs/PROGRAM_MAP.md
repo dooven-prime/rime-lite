@@ -3,7 +3,7 @@
 This document is the public navigation map for the Representation-Induced
 Mechanics and Evolution (RIME) program. It identifies semantic ownership,
 typed interfaces and promotion boundaries across published Papers I--XV and
-the independently scoped Papers XX--XXII theorem line. It is not a
+the independently scoped Papers XX--XXIII theorem lines. It is not a
 proof document, release ledger, result record, or substitute for an owning
 manuscript.
 
@@ -93,12 +93,15 @@ status.
 | XX | all-depth carrierwise factorization, survivor recursion, and arbitrary-depth image--kernel promotion and obstruction criteria | exact one-carrier census is a Computational Certificate; thresholded censuses remain bounded Computational Observations |
 | XXI | finite-field route profiles, prefix-pole semantics, fixed-field survivor automata, and characteristic-aware fixed-depth stability | exact finite arithmetic and a pinned Lean subset support distinct declared theorem surfaces |
 | XXII | fixed-deficit rational dynamics, anchored Farey classification, Catalan enumeration, and Fibonacci envelopes | exact finite certificates support the theorem surface without replacing its proofs |
+| XXIII | pair hitting, marked-kernel corridors, Schreier normalization, commuting-involution bounds, and exact binary clean depth | exact finite certificates and a limited Lean surface support but do not replace the manuscript proofs |
 
 Papers XVI--XIX are intentionally unused in the public numbered sequence;
 Paper XX begins an independently scoped mathematical line, and Paper XXI
 develops its finite-field route branch. Paper XXII develops the fixed-deficit
 rational branch and treats Paper XXI as a precursor rather than a theorem
-premise. None extends the SOF protocol authority chain.
+premise. Paper XXIII begins a separate synchronizing-automata/Schreier line;
+its rankwise accounting interface is not a universal Černý potential. None
+extends the SOF protocol authority chain.
 
 ## 4. Active Typing and Promotion Rules
 

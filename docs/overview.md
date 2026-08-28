@@ -114,7 +114,7 @@ research target; Paper VII does not assert a generic completion theorem.
   current-use commitments to be superseded and revalidated, and it adds no
   selection, authorization, execution, outcome, or effect contract.
 
-### Papers XX--XXII: Independent Post-Protocol Mathematics
+### Papers XX--XXIII: Independent Post-Protocol Mathematics
 
 Papers XVI--XIX are intentionally unused in the public numbered sequence.
 Paper XX begins a separately scoped mathematical line with all-depth
@@ -125,6 +125,10 @@ fixed-depth characteristic-aware stability. Paper XXII develops its
 fixed-deficit rational branch through anchored Farey classification, Catalan
 enumeration, Fibonacci envelopes, and guarded finite-field stabilization.
 Paper XXII treats Paper XXI as a precursor rather than a theorem premise.
+Paper XXIII begins a separate synchronizing-automata line built from pair
+hitting, marked-kernel corridors, and Schreier waiting. Its structured classes
+normalize rank-preserving transport by declared permutation actions; outside
+that setting, path-compatible mass and transport accounting remains open.
 These papers consume no protocol authority and do not reopen Papers VIII--XV.
 Published version-1 identities are maintained in the repository's canonical
 DOI index.

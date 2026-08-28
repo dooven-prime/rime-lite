@@ -9,7 +9,7 @@ finite representation laboratory, not as a puzzle-solving problem.
 ## Public Release
 
 The current public release contains Papers I--XV and the independently scoped
-Papers XX--XXII mathematical line. CCS v2.1 is published separately as an optional
+Papers XX--XXIII mathematical lines. CCS v2.1 is published separately as an optional
 non-paper Computational Companion Archive; the immutable first combined
 record retains its historical predecessor.
 
@@ -33,13 +33,14 @@ record retains its historical predecessor.
 | Paper XX | all-depth carrier accessibility, survivor recursion, and image--kernel obstructions | <https://doi.org/10.5281/zenodo.22076736> |
 | Paper XXI | finite-field route profiles, prefix-pole semantics, and characteristic-aware stability | <https://doi.org/10.5281/zenodo.22078884> |
 | Paper XXII | fixed-deficit rational dynamics, anchored Farey classification, and Catalan-Fibonacci envelopes | <https://doi.org/10.5281/zenodo.22109140> |
+| Paper XXIII | pair hitting, marked-kernel corridors, Schreier waiting, and exact binary clean depth | <https://doi.org/10.5281/zenodo.22136087> |
 | CCS v2.1 | optional reproducibility, observation, open-problem, and history archive | <https://doi.org/10.5281/zenodo.21988041> |
 | RIME Lite v2.1 repository snapshot | accepted papers, contracts, Registry evidence, release tools, and exact-byte historical inputs | [Zenodo DOI](https://doi.org/10.5281/zenodo.22048358) / [GitHub Release](https://github.com/dooven-prime/rime-lite/releases/tag/rime-lite-v2.1) |
 | Historical combined Papers I--III + CCS release | immutable first-version archive; current papers are maintained independently | <https://doi.org/10.5281/zenodo.21108197> |
 
 This is the repository's canonical DOI index. It identifies immutable
 published records; other public documents link here instead of duplicating the
-list. Papers VII--XV and Papers XX--XXII now match their published records. Their
+list. Papers VII--XV and Papers XX--XXIII now match their published records. Their
 listed DOIs identify immutable published versions, and frozen historical
 contracts remain unchanged.
 
@@ -92,7 +93,9 @@ Papers XVI--XIX are intentionally unused in the public numbered sequence;
 Paper XX begins an independently scoped post-protocol mathematical line, and
 Paper XXI develops its finite-field route branch. Paper XXII develops the
 fixed-deficit rational branch through anchored Farey classification and
-Catalan-Fibonacci envelopes. None continues the SOF protocol authority chain.
+Catalan-Fibonacci envelopes. Paper XXIII begins a separate synchronizing-
+automata line built from rank escape, marked-kernel corridors, and Schreier
+waiting. None continues the SOF protocol authority chain.
 Published release identities are maintained in the canonical DOI index above.
 
 | Paper | Manuscript | Evidence | Scope |
@@ -100,6 +103,7 @@ Published release identities are maintained in the canonical DOI index above.
 | XX | [`Paper XX.md`](papers/paper20/Paper%20XX.md) | [`experiments/paper20/`](experiments/paper20/) | all-depth carrier accessibility, survivor recursion, and exact shared-carrier controls |
 | XXI | [`Paper XXI.md`](papers/paper21/Paper%20XXI.md) | [`experiments/paper21/`](experiments/paper21/) | prefix-pole route classification, finite-field automata, and characteristic-aware stability |
 | XXII | [`Paper XXII.md`](papers/paper22/Paper%20XXII.md) | [`experiments/paper22/`](experiments/paper22/) | fixed-deficit rational dynamics, anchored Farey classification, and Catalan-Fibonacci envelopes |
+| XXIII | [`Paper XXIII.md`](papers/paper23/Paper%20XXIII.md) | [`experiments/paper23/`](experiments/paper23/) | pair hitting, marked-kernel corridors, Schreier waiting, and exact binary clean depth |
 
 Thematic index, not a paper dependency order:
 
@@ -122,6 +126,7 @@ Corrigible structural interfaces and evidence-bound epistemic revision
 All-depth carrierwise route obstruction
 Finite-field route profiles and prefix-pole stability
 Fixed-deficit rational dynamics and anchored Farey classification
+Rank escape, marked-kernel corridors, and Schreier waiting
 ```
 
 Papers I--VII are independently readable. Their neighboring results connect
