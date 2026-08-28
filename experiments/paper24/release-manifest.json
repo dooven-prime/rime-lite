@@ -1,0 +1,21 @@
+{
+  "schema": "paper.contextual-descent.release-manifest.v1",
+  "release_id": "PAPER-XXIV-V1-RELEASE-CANDIDATE",
+  "status": "RELEASE_CANDIDATE",
+  "validation_mode": "LOCAL_CLOSURE_VERIFICATION",
+  "artifacts": [
+    {"role": "manuscript", "path": "papers/paper24/Paper XXIV.md"},
+    {"role": "reader-pdf", "path": "papers/paper24/paper24_arxiv.pdf"},
+    {"role": "bibliography", "path": "papers/paper24/references-v1.0.bib"},
+    {"role": "evidence-readme", "path": "experiments/paper24/README.md"},
+    {"role": "lean-entrypoint", "path": "experiments/paper24/lean/FiniteTypedContextDescent.lean"},
+    {"role": "lean-formalization-manifest", "path": "experiments/paper24/lean/formalization-manifest.json"},
+    {"role": "lean-lake-manifest", "path": "experiments/paper24/lean/lake-manifest.json"},
+    {"role": "lean-project", "path": "experiments/paper24/lean/lakefile.toml"},
+    {"role": "lean-toolchain", "path": "experiments/paper24/lean/lean-toolchain"},
+    {"role": "lean-validator", "path": "experiments/paper24/validation/validate_lean_formalization.py"},
+    {"role": "hostile-fixture-validator", "path": "experiments/paper24/validation/validate_descent_fixtures.py"},
+    {"role": "hostile-fixture-result", "path": "experiments/paper24/results/descent_hostile_fixtures_v1.json"},
+    {"role": "release-validator", "path": "experiments/paper24/validation/validate_release.py"}
+  ]
+}

@@ -1,0 +1,184 @@
+{
+  "artifact_closure": {
+    "artifact_count": 14,
+    "closure_digest": "8b69aaf5f9dd2ee31374e217079402a03786b0fae771edec50fafb41c69f9741",
+    "ordered_artifacts": [
+      {
+        "artifact": {
+          "sha256": "6b4b086f6498b1fc3c51d0fa56c5cdd976cca51f8a05bc44d60f98547e4ff015",
+          "uri": "papers/paper24/Paper XXIV.md"
+        },
+        "role": "manuscript"
+      },
+      {
+        "artifact": {
+          "sha256": "97b23f717c7c04d46097e789d1d1a2def1c4083332d62b2075a3849b2d98a8c0",
+          "uri": "papers/paper24/paper24_arxiv.pdf"
+        },
+        "role": "reader-pdf"
+      },
+      {
+        "artifact": {
+          "sha256": "cd6f06e5655bb04ebefd8f990e64350782aea341d7412a7ffd356faef1306a94",
+          "uri": "papers/paper24/references-v1.0.bib"
+        },
+        "role": "bibliography"
+      },
+      {
+        "artifact": {
+          "sha256": "758fdfbfa9193c56bf4b63538ad5cb8538a1b7d2b6e9dcd51f55705213b656eb",
+          "uri": "experiments/paper24/README.md"
+        },
+        "role": "evidence-readme"
+      },
+      {
+        "artifact": {
+          "sha256": "88bcf49fdce70fc8f2a3176523c33f79653ad78e17124cd92d9c42f69c1b6429",
+          "uri": "experiments/paper24/lean/FiniteTypedContextDescent.lean"
+        },
+        "role": "lean-entrypoint"
+      },
+      {
+        "artifact": {
+          "sha256": "39e9102e3037c9c784fd80c399e8ccba0849db5e152a3a77bd9ce3d70e780d09",
+          "uri": "experiments/paper24/lean/formalization-manifest.json"
+        },
+        "role": "lean-formalization-manifest"
+      },
+      {
+        "artifact": {
+          "sha256": "ac06447ed3051f56abb8f58cb6992f45713ab2b5aa7c284059e22fd56267ce73",
+          "uri": "experiments/paper24/lean/lake-manifest.json"
+        },
+        "role": "lean-lake-manifest"
+      },
+      {
+        "artifact": {
+          "sha256": "048e2960b61c7ac3b1efc5efe7b8fd2673a03ec74f22a1027b55e5db3ab33fe4",
+          "uri": "experiments/paper24/lean/lakefile.toml"
+        },
+        "role": "lean-project"
+      },
+      {
+        "artifact": {
+          "sha256": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b",
+          "uri": "experiments/paper24/lean/lean-toolchain"
+        },
+        "role": "lean-toolchain"
+      },
+      {
+        "artifact": {
+          "sha256": "bd161c6fb383d7a1a6ddbcd690a63e34e83a2a76db152fd0bb56de3665779dd9",
+          "uri": "experiments/paper24/validation/validate_lean_formalization.py"
+        },
+        "role": "lean-validator"
+      },
+      {
+        "artifact": {
+          "sha256": "66a9b71ecc4fa20309460d5fce71de48fe158c4bd99f05822f9c12d5e7adfff2",
+          "uri": "experiments/paper24/validation/validate_descent_fixtures.py"
+        },
+        "role": "hostile-fixture-validator"
+      },
+      {
+        "artifact": {
+          "sha256": "467d9af104e1252c9ac92f9de3e404fb781abc485de1f7cd6c8678d9aa85f1e5",
+          "uri": "experiments/paper24/results/descent_hostile_fixtures_v1.json"
+        },
+        "role": "hostile-fixture-result"
+      },
+      {
+        "artifact": {
+          "sha256": "e9d8086b6edeb945954c7100ff0a6867f1158d9fd92a9f9dbff30c847c024e3f",
+          "uri": "experiments/paper24/validation/validate_release.py"
+        },
+        "role": "release-validator"
+      },
+      {
+        "artifact": {
+          "sha256": "a93db5832acb39a10bdca5ab39007a1a55c04559de4bbf7b17237b4757e57017",
+          "uri": "experiments/paper24/release-manifest.json"
+        },
+        "role": "release-manifest"
+      }
+    ],
+    "receipt_in_own_closure": false
+  },
+  "claim_boundary": {
+    "certifies": "declared release bytes, pinned Lean/Mathlib manifest closure, local Lean compilation, and exact hostile-fixture replay",
+    "does_not_certify": [
+      "independent proof of manuscript Theorems 5, 7, or 8",
+      "a new sheaf or relational-acyclicity theorem",
+      "independent validation of the release validator implementation",
+      "vendored Mathlib source bytes beyond the pinned revision manifest",
+      "a concrete Paper XIII comparison or audit"
+    ]
+  },
+  "content_sha256": "cb396ba2c103a558eaea172a4fb02fc8d3769c394058f1e8b69a07046141ce95",
+  "date": "2026-08-28",
+  "mathlib_closure": {
+    "formalization_manifest": {
+      "sha256": "39e9102e3037c9c784fd80c399e8ccba0849db5e152a3a77bd9ce3d70e780d09",
+      "uri": "experiments/paper24/lean/formalization-manifest.json"
+    },
+    "lake_manifest": {
+      "sha256": "ac06447ed3051f56abb8f58cb6992f45713ab2b5aa7c284059e22fd56267ce73",
+      "uri": "experiments/paper24/lean/lake-manifest.json"
+    },
+    "lean_toolchain": {
+      "sha256": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b",
+      "uri": "experiments/paper24/lean/lean-toolchain"
+    },
+    "mathlib_revision": "db584cd6d46c92f209a44c0f1c829460d327499d",
+    "status": "PINNED_REVISION_CLOSURE_NOT_VENDORED_SOURCE",
+    "transitive_package_count": 9
+  },
+  "receipt_id": "PAPER-XXIV-V1-LOCAL-RELEASE-CLOSURE",
+  "receipt_kind": "PAPER_XXIV_LOCAL_RELEASE_CLOSURE_RECEIPT",
+  "release_id": "PAPER-XXIV-V1-RELEASE-CANDIDATE",
+  "replay": {
+    "finite_hostile_fixtures": {
+      "boundary": "two exact finite controls; not a proof of general relational acyclicity",
+      "output": "PASS Paper XXIV hostile fixtures: 2 exact typed controls",
+      "result": {
+        "sha256": "467d9af104e1252c9ac92f9de3e404fb781abc485de1f7cd6c8678d9aa85f1e5",
+        "uri": "experiments/paper24/results/descent_hostile_fixtures_v1.json"
+      },
+      "status": "PASS",
+      "validator": {
+        "sha256": "66a9b71ecc4fa20309460d5fce71de48fe158c4bd99f05822f9c12d5e7adfff2",
+        "uri": "experiments/paper24/validation/validate_descent_fixtures.py"
+      }
+    },
+    "lean": {
+      "excluded_surface": [
+        "Theorem 5 and Corollary 5.1",
+        "Imported Theorem 6",
+        "Theorem 7",
+        "Theorem 8"
+      ],
+      "formalized_surface": [
+        "free coverage and separatedness",
+        "free gluing of compatible local sections",
+        "three-label missing-coordinate nonseparation witness"
+      ],
+      "output": "PASS Paper XXIV Lean core: declared free-signature scope compiled",
+      "status": "PASS",
+      "validator": {
+        "sha256": "bd161c6fb383d7a1a6ddbcd690a63e34e83a2a76db152fd0bb56de3665779dd9",
+        "uri": "experiments/paper24/validation/validate_lean_formalization.py"
+      }
+    }
+  },
+  "schema": "paper.contextual-descent.release-receipt.v1",
+  "status": "PASS",
+  "validation_mode": "LOCAL_CLOSURE_VERIFICATION",
+  "validator": {
+    "boundary": "self-bound local validator; implementation trust is not independently established",
+    "implementation": {
+      "sha256": "e9d8086b6edeb945954c7100ff0a6867f1158d9fd92a9f9dbff30c847c024e3f",
+      "uri": "experiments/paper24/validation/validate_release.py"
+    },
+    "validator_id": "paper.contextual-descent.release-validator.python.v1"
+  }
+}

@@ -114,7 +114,7 @@ research target; Paper VII does not assert a generic completion theorem.
   current-use commitments to be superseded and revalidated, and it adds no
   selection, authorization, execution, outcome, or effect contract.
 
-### Papers XX--XXIII: Independent Post-Protocol Mathematics
+### Papers XX--XXIV: Independent Post-Protocol Mathematics
 
 Papers XVI--XIX are intentionally unused in the public numbered sequence.
 Paper XX begins a separately scoped mathematical line with all-depth
@@ -129,7 +129,11 @@ Paper XXIII begins a separate synchronizing-automata line built from pair
 hitting, marked-kernel corridors, and Schreier waiting. Its structured classes
 normalize rank-preserving transport by declared permutation actions; outside
 that setting, path-compatible mass and transport accounting remains open.
-These papers consume no protocol authority and do not reopen Papers VIII--XV.
+Paper XXIV begins a separate finite contextual/descent line. It distinguishes
+section-valued semantic visibility from relation-valued acyclicity and carries
+the resulting reconstruction gates into fixed-alignment comparison. Paper XIII
+is an application source, not a theorem premise. These papers consume no
+protocol authority and do not reopen Papers VIII--XV.
 Published version-1 identities are maintained in the repository's canonical
 DOI index.
 

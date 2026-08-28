@@ -1,0 +1,74 @@
+{
+  "claim_boundary": {
+    "cyclic_context_core": "relation-valued global-consistency failure",
+    "general_acyclicity_theorem": "IMPORTED_NOT_REPROVED_BY_THIS_FIXTURE",
+    "unseen_scope": "section-valued semantic-entailment failure"
+  },
+  "fixtures": {
+    "CYCLIC_CONTEXT_CORE": {
+      "attributes": [
+        "A",
+        "B",
+        "C"
+      ],
+      "contexts": [
+        "AB",
+        "BC",
+        "AC"
+      ],
+      "globally_consistent": false,
+      "natural_join": [],
+      "natural_join_count": 0,
+      "overlap_projections": {
+        "AB/AC": [
+          0,
+          1
+        ],
+        "AB/BC": [
+          0,
+          1
+        ],
+        "BC/AC": [
+          0,
+          1
+        ]
+      },
+      "pairwise_consistent": true,
+      "relation_cardinalities": {
+        "AB": 2,
+        "AC": 2,
+        "BC": 2
+      }
+    },
+    "UNSEEN_SCOPE": {
+      "coordinates": [
+        "AB",
+        "BC",
+        "AC"
+      ],
+      "free_gluing_count": 1,
+      "global_assignment": {
+        "AB": 1,
+        "AC": 1,
+        "BC": 1
+      },
+      "global_constraint": "AB xor BC xor AC = 0",
+      "globally_admissible": false,
+      "locally_admissible": true,
+      "patches": [
+        [
+          "AB"
+        ],
+        [
+          "BC"
+        ],
+        [
+          "AC"
+        ]
+      ],
+      "visible_constraints": []
+    }
+  },
+  "schema": "paper.contextual-descent.hostile-fixtures.v1",
+  "status": "PASS"
+}
