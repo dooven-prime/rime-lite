@@ -95,7 +95,8 @@ Paper XXI develops its finite-field route branch. Paper XXII develops the
 fixed-deficit rational branch through anchored Farey classification and
 Catalan-Fibonacci envelopes. Paper XXIII begins a separate synchronizing-
 automata line built from rank escape, marked-kernel corridors, and Schreier
-waiting. None continues the SOF protocol authority chain.
+waiting. Paper XXIV begins a separate finite contextual/descent line. None
+continues the SOF protocol authority chain.
 Published release identities are maintained in the canonical DOI index above.
 
 | Paper | Manuscript | Evidence | Scope |
@@ -104,6 +105,7 @@ Published release identities are maintained in the canonical DOI index above.
 | XXI | [`Paper XXI.md`](papers/paper21/Paper%20XXI.md) | [`experiments/paper21/`](experiments/paper21/) | prefix-pole route classification, finite-field automata, and characteristic-aware stability |
 | XXII | [`Paper XXII.md`](papers/paper22/Paper%20XXII.md) | [`experiments/paper22/`](experiments/paper22/) | fixed-deficit rational dynamics, anchored Farey classification, and Catalan-Fibonacci envelopes |
 | XXIII | [`Paper XXIII.md`](papers/paper23/Paper%20XXIII.md) | [`experiments/paper23/`](experiments/paper23/) | pair hitting, marked-kernel corridors, Schreier waiting, and exact binary clean depth |
+| XXIV | [`Paper XXIV.md`](papers/paper24/Paper%20XXIV.md) | [`experiments/paper24/`](experiments/paper24/) | semantic visibility for typed section descent, imported relational acyclicity, and fixed-alignment comparison reconstruction |
 
 Thematic index, not a paper dependency order:
 

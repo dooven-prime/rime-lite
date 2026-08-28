@@ -50,13 +50,14 @@ Paper-facing computations write generated records under the owning
 | XXI | [paper21/README.md](paper21/README.md) | arbitrary-depth route semantics, fixed-field transfer automata, finite-field profiles, Lean closure, and replay receipts |
 | XXII | [paper22/README.md](paper22/README.md) | rational fixed-deficit closure, anchored Farey certificates, and Catalan-Fibonacci controls |
 | XXIII | [paper23/README.md](paper23/README.md) | pair-hitting and packing-area replay, marked-kernel corridor audits, binary clean exhaustion, and limited Lean closure |
+| XXIV | [paper24/README.md](paper24/README.md) | free-signature Lean core plus exact unseen-scope and cyclic-relation hostile fixtures |
 
 Where a paper-local README is not yet present, the owning manuscript and
 script docstrings define the release-local scope. A future versioned reopening
 should add the standard local README before changing artifact semantics.
 
 Papers VIII--XIV retain their published or release-local terminology. Papers
-XX--XXIII form separate mathematical lines and do not extend the protocol stack. Bare
+XX--XXIV form separate mathematical lines and do not extend the protocol stack. Bare
 `R1`/`R2`/`D`, ladder, repair, and wall labels in those artifacts must not be
 read as a completed migration to the separate operator, routed-composition,
 full-word, commutator, and Lie-depth branches. The frozen Paper X Registry v1

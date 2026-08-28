@@ -1,0 +1,30 @@
+{
+  "schema": "paper.contextual-descent.lean-formalization-manifest.v1",
+  "status": "COMPILED_PAPER_OWNED_SOURCE_CLOSURE",
+  "entrypoint": "experiments/paper24/lean/FiniteTypedContextDescent.lean",
+  "build": {
+    "project_root": "experiments/paper24/lean",
+    "command": "lake build FiniteTypedContextDescent",
+    "lean": "4.33.0",
+    "mathlib_revision": "db584cd6d46c92f209a44c0f1c829460d327499d"
+  },
+  "source_sha256": {
+    "FiniteTypedContextDescent.lean": "88bcf49fdce70fc8f2a3176523c33f79653ad78e17124cd92d9c42f69c1b6429",
+    "lake-manifest.json": "ac06447ed3051f56abb8f58cb6992f45713ab2b5aa7c284059e22fd56267ce73",
+    "lakefile.toml": "048e2960b61c7ac3b1efc5efe7b8fd2673a03ec74f22a1027b55e5db3ab33fe4",
+    "lean-toolchain": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b"
+  },
+  "formalized_scope": [
+    "coverage and jointly separating finite free signatures",
+    "free gluing for compatible local signatures",
+    "finite AB/BC/AC nonuniqueness witness"
+  ],
+  "excluded_scope": [
+    "exact visible-package admissible-section characterization",
+    "universal scope-visibility characterization",
+    "imported relational acyclicity theorem",
+    "typed relational admissible-descent characterization",
+    "fixed-comparator comparison reconstruction",
+    "formal coverage of every manuscript theorem"
+  ]
+}
