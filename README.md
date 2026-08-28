@@ -9,7 +9,7 @@ finite representation laboratory, not as a puzzle-solving problem.
 ## Public Release
 
 The current public release contains Papers I--XV and the independently scoped
-Papers XX--XXII mathematical line. CCS v2.1 is published separately as an optional
+Papers XX--XXIII mathematical lines. CCS v2.1 is published separately as an optional
 non-paper Computational Companion Archive; the immutable first combined
 record retains its historical predecessor.
 
@@ -33,13 +33,14 @@ record retains its historical predecessor.
 | Paper XX | all-depth carrier accessibility, survivor recursion, and image--kernel obstructions | <https://doi.org/10.5281/zenodo.22076736> |
 | Paper XXI | finite-field route profiles, prefix-pole semantics, and characteristic-aware stability | <https://doi.org/10.5281/zenodo.22078884> |
 | Paper XXII | fixed-deficit rational dynamics, anchored Farey classification, and Catalan-Fibonacci envelopes | <https://doi.org/10.5281/zenodo.22109140> |
+| Paper XXIII | pair hitting, marked-kernel corridors, Schreier waiting, and exact binary clean depth | <https://doi.org/10.5281/zenodo.22136087> |
 | CCS v2.1 | optional reproducibility, observation, open-problem, and history archive | <https://doi.org/10.5281/zenodo.21988041> |
 | RIME Lite v2.1 repository snapshot | accepted papers, contracts, Registry evidence, release tools, and exact-byte historical inputs | [Zenodo DOI](https://doi.org/10.5281/zenodo.22048358) / [GitHub Release](https://github.com/dooven-prime/rime-lite/releases/tag/rime-lite-v2.1) |
 | Historical combined Papers I--III + CCS release | immutable first-version archive; current papers are maintained independently | <https://doi.org/10.5281/zenodo.21108197> |
 
 This is the repository's canonical DOI index. It identifies immutable
 published records; other public documents link here instead of duplicating the
-list. Papers VII--XV and Papers XX--XXII now match their published records. Their
+list. Papers VII--XV and Papers XX--XXIII now match their published records. Their
 listed DOIs identify immutable published versions, and frozen historical
 contracts remain unchanged.
 
