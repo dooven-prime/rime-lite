@@ -1,0 +1,2000 @@
+{
+  "schema": "rime.paper25.nonnormal-markov-stability.v1",
+  "bundle_id": "numerical-representation-diagnostics.nonnormal-markov-stability.v1",
+  "artifact_role": "PAPER25_NONNORMAL_MARKOV_STABILITY_EVIDENCE",
+  "claim_status": "BOUNDED_NUMERICAL_OBSERVATION",
+  "paper_evidence_status": "REGISTERED_SUPPORT_NOT_THEOREM_PROOF",
+  "environment": {
+    "python": "3.13.0",
+    "numpy": "2.1.3",
+    "arithmetic": "float64/complex128"
+  },
+  "carrier": {
+    "source_case_id": "non_normal_markov",
+    "description": "positive row-stochastic Markov operator with coordinate sectors",
+    "dimension": 2,
+    "transition_convention": "P[source,target] is row-stochastic",
+    "nominal_transition": [
+      [
+        0.9,
+        0.1
+      ],
+      [
+        0.2,
+        0.8
+      ]
+    ],
+    "nominal_operator_norm": 1.009583201304739,
+    "nominal_sectorization": "coordinate singleton state partition {{0},{1}}"
+  },
+  "perturbation_model": {
+    "operator": "E = epsilon [[-1,1],[0,0]]/sqrt(2)",
+    "operator_constraints": [
+      "||E||_2 = ||E||_F = epsilon",
+      "every row sum of E is zero",
+      "P+E remains nonnegative on the retained sweep"
+    ],
+    "sectorization": "Q'_i = W_eta Q_i W_eta*"
+  },
+  "stability_bound": {
+    "global": "||Q'_i P' Q'_j-Q_i P Q_j||_F <= ||Delta_i||_F ||P||_2+||E||_F+||P||_2||Delta_j||_F",
+    "localized": "||Q'_i P' Q'_j-Q_i P Q_j||_F <= ||Delta_i P Q'_j||_F+||Q'_i E Q'_j||_F+||Q_i P Delta_j||_F",
+    "unitarity_assumed": false,
+    "comparison_tolerance": 2e-12
+  },
+  "block_activity_policy": {
+    "threshold": 0.15,
+    "meaning": "operator block-strength diagnostic, not Markov positive support",
+    "stable_active": "reference_norm - bound > threshold",
+    "stable_inactive": "reference_norm + bound <= threshold",
+    "unresolved": "otherwise"
+  },
+  "markov_positive_support_policy": {
+    "threshold": 1e-12,
+    "meaning": "strictly positive transition entries above numerical tolerance"
+  },
+  "sweep_levels": [
+    0.0,
+    0.001,
+    0.01,
+    0.03,
+    0.05,
+    0.08,
+    0.1
+  ],
+  "records": [
+    {
+      "sweep_axis": "OPERATOR_ONLY",
+      "level_index": 0,
+      "epsilon_operator_norm": 0.0,
+      "epsilon_operator_frobenius": 0.0,
+      "eta_sector_rotation_radians": 0.0,
+      "state_level_transition_matrix": [
+        [
+          0.9,
+          0.1
+        ],
+        [
+          0.2,
+          0.8
+        ]
+      ],
+      "projector_delta_frobenius": [
+        0.0,
+        0.0
+      ],
+      "sector_semantics": "COORDINATE_STATE_PARTITION",
+      "kernel_checks": {
+        "row_stochastic_residual_max_abs": 0.0,
+        "minimum_entry": 0.1,
+        "nonnegative": true,
+        "positive_support_edge_count": 4,
+        "normality_residual_frobenius": 0.04472135954999581,
+        "normality_status": "FAIL"
+      },
+      "probability_observations": {
+        "claim_status": "BOUNDED_COMPUTATIONAL_OBSERVATION",
+        "state_level_only": true,
+        "stationary_distribution": [
+          0.6666666666666666,
+          0.3333333333333334
+        ],
+        "stationary_eigenvalue_separation": 0.30000000000000004,
+        "eventual_hit_probability_state_0_to_state_1": 1.0,
+        "expected_hitting_time_state_0_to_state_1": 10.000000000000002
+      },
+      "directed_offdiagonal_blocks": [
+        {
+          "source_sector": 0,
+          "target_sector": 1,
+          "reference_block_frobenius": 0.1,
+          "perturbed_block_frobenius": 0.1,
+          "actual_ambient_block_difference": 0.0,
+          "global_bound": 0.0,
+          "localized_bound": 0.0,
+          "global_margin_status": "STABLE_INACTIVE",
+          "localized_margin_status": "STABLE_INACTIVE"
+        },
+        {
+          "source_sector": 1,
+          "target_sector": 0,
+          "reference_block_frobenius": 0.2,
+          "perturbed_block_frobenius": 0.2,
+          "actual_ambient_block_difference": 0.0,
+          "global_bound": 0.0,
+          "localized_bound": 0.0,
+          "global_margin_status": "STABLE_ACTIVE",
+          "localized_margin_status": "STABLE_ACTIVE"
+        }
+      ],
+      "global_bound": {
+        "maximum": 0.0,
+        "maximum_actual_to_bound_ratio": 0.0,
+        "bound_violation_count": 0,
+        "directed_margin_counts": {
+          "STABLE_ACTIVE": 1,
+          "STABLE_INACTIVE": 1,
+          "UNRESOLVED": 0
+        },
+        "directed_status_violation_count": 0,
+        "aggregate_undirected_status": "STABLE_ACTIVE",
+        "aggregate_status_violation_count": 0
+      },
+      "localized_bound": {
+        "maximum": 0.0,
+        "maximum_actual_to_bound_ratio": 0.0,
+        "bound_violation_count": 0,
+        "directed_margin_counts": {
+          "STABLE_ACTIVE": 1,
+          "STABLE_INACTIVE": 1,
+          "UNRESOLVED": 0
+        },
+        "directed_status_violation_count": 0,
+        "aggregate_undirected_status": "STABLE_ACTIVE",
+        "aggregate_status_violation_count": 0
+      }
+    },
+    {
+      "sweep_axis": "OPERATOR_ONLY",
+      "level_index": 1,
+      "epsilon_operator_norm": 0.001,
+      "epsilon_operator_frobenius": 0.001,
+      "eta_sector_rotation_radians": 0.0,
+      "state_level_transition_matrix": [
+        [
+          0.8992928932188134,
+          0.10070710678118655
+        ],
+        [
+          0.2,
+          0.8
+        ]
+      ],
+      "projector_delta_frobenius": [
+        0.0,
+        0.0
+      ],
+      "sector_semantics": "COORDINATE_STATE_PARTITION",
+      "kernel_checks": {
+        "row_stochastic_residual_max_abs": 0.0,
+        "minimum_entry": 0.10070710678118655,
+        "nonnegative": true,
+        "positive_support_edge_count": 4,
+        "normality_residual_frobenius": 0.044468107492921634,
+        "normality_status": "FAIL"
+      },
+      "probability_observations": {
+        "claim_status": "BOUNDED_COMPUTATIONAL_OBSERVATION",
+        "state_level_only": true,
+        "stationary_distribution": [
+          0.6650990132585479,
+          0.334900986741452
+        ],
+        "stationary_eigenvalue_separation": 0.3007071067811865,
+        "eventual_hit_probability_state_0_to_state_1": 1.0,
+        "expected_hitting_time_state_0_to_state_1": 9.929785811171904
+      },
+      "directed_offdiagonal_blocks": [
+        {
+          "source_sector": 0,
+          "target_sector": 1,
+          "reference_block_frobenius": 0.1,
+          "perturbed_block_frobenius": 0.10070710678118655,
+          "actual_ambient_block_difference": 0.000707106781186545,
+          "global_bound": 0.001,
+          "localized_bound": 0.0007071067811865475,
+          "global_margin_status": "STABLE_INACTIVE",
+          "localized_margin_status": "STABLE_INACTIVE"
+        },
+        {
+          "source_sector": 1,
+          "target_sector": 0,
+          "reference_block_frobenius": 0.2,
+          "perturbed_block_frobenius": 0.2,
+          "actual_ambient_block_difference": 0.0,
+          "global_bound": 0.001,
+          "localized_bound": 0.0,
+          "global_margin_status": "STABLE_ACTIVE",
+          "localized_margin_status": "STABLE_ACTIVE"
+        }
+      ],
+      "global_bound": {
+        "maximum": 0.001,
+        "maximum_actual_to_bound_ratio": 0.707106781186545,
+        "bound_violation_count": 0,
+        "directed_margin_counts": {
+          "STABLE_ACTIVE": 1,
+          "STABLE_INACTIVE": 1,
+          "UNRESOLVED": 0
+        },
+        "directed_status_violation_count": 0,
+        "aggregate_undirected_status": "STABLE_ACTIVE",
+        "aggregate_status_violation_count": 0
+      },
+      "localized_bound": {
+        "maximum": 0.0007071067811865475,
+        "maximum_actual_to_bound_ratio": 0.9999999999999964,
+        "bound_violation_count": 0,
+        "directed_margin_counts": {
+          "STABLE_ACTIVE": 1,
+          "STABLE_INACTIVE": 1,
+          "UNRESOLVED": 0
+        },
+        "directed_status_violation_count": 0,
+        "aggregate_undirected_status": "STABLE_ACTIVE",
+        "aggregate_status_violation_count": 0
+      }
+    },
+    {
+      "sweep_axis": "OPERATOR_ONLY",
+      "level_index": 2,
+      "epsilon_operator_norm": 0.01,
+      "epsilon_operator_frobenius": 0.01,
+      "eta_sector_rotation_radians": 0.0,
+      "state_level_transition_matrix": [
+        [
+          0.8929289321881345,
+          0.10707106781186548
+        ],
+        [
+          0.2,
+          0.8
+        ]
+      ],
+      "projector_delta_frobenius": [
+        0.0,
+        0.0
+      ],
+      "sector_semantics": "COORDINATE_STATE_PARTITION",
+      "kernel_checks": {
+        "row_stochastic_residual_max_abs": 0.0,
+        "minimum_entry": 0.10707106781186548,
+        "nonnegative": true,
+        "positive_support_edge_count": 4,
+        "normality_residual_frobenius": 0.04216320469343265,
+        "normality_status": "FAIL"
+      },
+      "probability_observations": {
+        "claim_status": "BOUNDED_COMPUTATIONAL_OBSERVATION",
+        "state_level_only": true,
+        "stationary_distribution": [
+          0.6513150243204768,
+          0.34868497567952306
+        ],
+        "stationary_eigenvalue_separation": 0.30707106781186544,
+        "eventual_hit_probability_state_0_to_state_1": 1.0,
+        "expected_hitting_time_state_0_to_state_1": 9.339591174686886
+      },
+      "directed_offdiagonal_blocks": [
+        {
+          "source_sector": 0,
+          "target_sector": 1,
+          "reference_block_frobenius": 0.1,
+          "perturbed_block_frobenius": 0.10707106781186548,
+          "actual_ambient_block_difference": 0.007071067811865478,
+          "global_bound": 0.01,
+          "localized_bound": 0.0070710678118654745,
+          "global_margin_status": "STABLE_INACTIVE",
+          "localized_margin_status": "STABLE_INACTIVE"
+        },
+        {
+          "source_sector": 1,
+          "target_sector": 0,
+          "reference_block_frobenius": 0.2,
+          "perturbed_block_frobenius": 0.2,
+          "actual_ambient_block_difference": 0.0,
+          "global_bound": 0.01,
+          "localized_bound": 0.0,
+          "global_margin_status": "STABLE_ACTIVE",
+          "localized_margin_status": "STABLE_ACTIVE"
+        }
+      ],
+      "global_bound": {
+        "maximum": 0.01,
+        "maximum_actual_to_bound_ratio": 0.7071067811865478,
+        "bound_violation_count": 0,
+        "directed_margin_counts": {
+          "STABLE_ACTIVE": 1,
+          "STABLE_INACTIVE": 1,
+          "UNRESOLVED": 0
+        },
+        "directed_status_violation_count": 0,
+        "aggregate_undirected_status": "STABLE_ACTIVE",
+        "aggregate_status_violation_count": 0
+      },
+      "localized_bound": {
+        "maximum": 0.0070710678118654745,
+        "maximum_actual_to_bound_ratio": 1.0000000000000004,
+        "bound_violation_count": 0,
+        "directed_margin_counts": {
+          "STABLE_ACTIVE": 1,
+          "STABLE_INACTIVE": 1,
+          "UNRESOLVED": 0
+        },
+        "directed_status_violation_count": 0,
+        "aggregate_undirected_status": "STABLE_ACTIVE",
+        "aggregate_status_violation_count": 0
+      }
+    },
+    {
+      "sweep_axis": "OPERATOR_ONLY",
+      "level_index": 3,
+      "epsilon_operator_norm": 0.03,
+      "epsilon_operator_frobenius": 0.03,
+      "eta_sector_rotation_radians": 0.0,
+      "state_level_transition_matrix": [
+        [
+          0.8787867965644036,
+          0.12121320343559643
+        ],
+        [
+          0.2,
+          0.8
+        ]
+      ],
+      "projector_delta_frobenius": [
+        0.0,
+        0.0
+      ],
+      "sector_semantics": "COORDINATE_STATE_PARTITION",
+      "kernel_checks": {
+        "row_stochastic_residual_max_abs": 0.0,
+        "minimum_entry": 0.12121320343559643,
+        "nonnegative": true,
+        "positive_support_edge_count": 4,
+        "normality_residual_frobenius": 0.03685088180845761,
+        "normality_status": "FAIL"
+      },
+      "probability_observations": {
+        "claim_status": "BOUNDED_COMPUTATIONAL_OBSERVATION",
+        "state_level_only": true,
+        "stationary_distribution": [
+          0.6226394116457924,
+          0.37736058835420755
+        ],
+        "stationary_eigenvalue_separation": 0.32121320343559634,
+        "eventual_hit_probability_state_0_to_state_1": 1.0,
+        "expected_hitting_time_state_0_to_state_1": 8.249926341822366
+      },
+      "directed_offdiagonal_blocks": [
+        {
+          "source_sector": 0,
+          "target_sector": 1,
+          "reference_block_frobenius": 0.1,
+          "perturbed_block_frobenius": 0.12121320343559643,
+          "actual_ambient_block_difference": 0.02121320343559642,
+          "global_bound": 0.03,
+          "localized_bound": 0.021213203435596423,
+          "global_margin_status": "STABLE_INACTIVE",
+          "localized_margin_status": "STABLE_INACTIVE"
+        },
+        {
+          "source_sector": 1,
+          "target_sector": 0,
+          "reference_block_frobenius": 0.2,
+          "perturbed_block_frobenius": 0.2,
+          "actual_ambient_block_difference": 0.0,
+          "global_bound": 0.03,
+          "localized_bound": 0.0,
+          "global_margin_status": "STABLE_ACTIVE",
+          "localized_margin_status": "STABLE_ACTIVE"
+        }
+      ],
+      "global_bound": {
+        "maximum": 0.03,
+        "maximum_actual_to_bound_ratio": 0.7071067811865474,
+        "bound_violation_count": 0,
+        "directed_margin_counts": {
+          "STABLE_ACTIVE": 1,
+          "STABLE_INACTIVE": 1,
+          "UNRESOLVED": 0
+        },
+        "directed_status_violation_count": 0,
+        "aggregate_undirected_status": "STABLE_ACTIVE",
+        "aggregate_status_violation_count": 0
+      },
+      "localized_bound": {
+        "maximum": 0.021213203435596423,
+        "maximum_actual_to_bound_ratio": 0.9999999999999999,
+        "bound_violation_count": 0,
+        "directed_margin_counts": {
+          "STABLE_ACTIVE": 1,
+          "STABLE_INACTIVE": 1,
+          "UNRESOLVED": 0
+        },
+        "directed_status_violation_count": 0,
+        "aggregate_undirected_status": "STABLE_ACTIVE",
+        "aggregate_status_violation_count": 0
+      }
+    },
+    {
+      "sweep_axis": "OPERATOR_ONLY",
+      "level_index": 4,
+      "epsilon_operator_norm": 0.05,
+      "epsilon_operator_frobenius": 0.05,
+      "eta_sector_rotation_radians": 0.0,
+      "state_level_transition_matrix": [
+        [
+          0.8646446609406726,
+          0.1353553390593274
+        ],
+        [
+          0.2,
+          0.8
+        ]
+      ],
+      "projector_delta_frobenius": [
+        0.0,
+        0.0
+      ],
+      "sector_semantics": "COORDINATE_STATE_PARTITION",
+      "kernel_checks": {
+        "row_stochastic_residual_max_abs": 0.0,
+        "minimum_entry": 0.1353553390593274,
+        "nonnegative": true,
+        "positive_support_edge_count": 4,
+        "normality_residual_frobenius": 0.031223054784910557,
+        "normality_status": "FAIL"
+      },
+      "probability_observations": {
+        "claim_status": "BOUNDED_COMPUTATIONAL_OBSERVATION",
+        "state_level_only": true,
+        "stationary_distribution": [
+          0.5963823345141916,
+          0.40361766548580824
+        ],
+        "stationary_eigenvalue_separation": 0.33535533905932735,
+        "eventual_hit_probability_state_0_to_state_1": 1.0,
+        "expected_hitting_time_state_0_to_state_1": 7.387961250362585
+      },
+      "directed_offdiagonal_blocks": [
+        {
+          "source_sector": 0,
+          "target_sector": 1,
+          "reference_block_frobenius": 0.1,
+          "perturbed_block_frobenius": 0.1353553390593274,
+          "actual_ambient_block_difference": 0.03535533905932739,
+          "global_bound": 0.05,
+          "localized_bound": 0.035355339059327376,
+          "global_margin_status": "UNRESOLVED",
+          "localized_margin_status": "STABLE_INACTIVE"
+        },
+        {
+          "source_sector": 1,
+          "target_sector": 0,
+          "reference_block_frobenius": 0.2,
+          "perturbed_block_frobenius": 0.2,
+          "actual_ambient_block_difference": 0.0,
+          "global_bound": 0.05,
+          "localized_bound": 0.0,
+          "global_margin_status": "STABLE_ACTIVE",
+          "localized_margin_status": "STABLE_ACTIVE"
+        }
+      ],
+      "global_bound": {
+        "maximum": 0.05,
+        "maximum_actual_to_bound_ratio": 0.7071067811865478,
+        "bound_violation_count": 0,
+        "directed_margin_counts": {
+          "STABLE_ACTIVE": 1,
+          "STABLE_INACTIVE": 0,
+          "UNRESOLVED": 1
+        },
+        "directed_status_violation_count": 0,
+        "aggregate_undirected_status": "STABLE_ACTIVE",
+        "aggregate_status_violation_count": 0
+      },
+      "localized_bound": {
+        "maximum": 0.035355339059327376,
+        "maximum_actual_to_bound_ratio": 1.0000000000000004,
+        "bound_violation_count": 0,
+        "directed_margin_counts": {
+          "STABLE_ACTIVE": 1,
+          "STABLE_INACTIVE": 1,
+          "UNRESOLVED": 0
+        },
+        "directed_status_violation_count": 0,
+        "aggregate_undirected_status": "STABLE_ACTIVE",
+        "aggregate_status_violation_count": 0
+      }
+    },
+    {
+      "sweep_axis": "OPERATOR_ONLY",
+      "level_index": 5,
+      "epsilon_operator_norm": 0.08,
+      "epsilon_operator_frobenius": 0.08,
+      "eta_sector_rotation_radians": 0.0,
+      "state_level_transition_matrix": [
+        [
+          0.8434314575050762,
+          0.1565685424949238
+        ],
+        [
+          0.2,
+          0.8
+        ]
+      ],
+      "projector_delta_frobenius": [
+        0.0,
+        0.0
+      ],
+      "sector_semantics": "COORDINATE_STATE_PARTITION",
+      "kernel_checks": {
+        "row_stochastic_residual_max_abs": 0.0,
+        "minimum_entry": 0.1565685424949238,
+        "nonnegative": true,
+        "positive_support_edge_count": 4,
+        "normality_residual_frobenius": 0.022062788585363365,
+        "normality_status": "FAIL"
+      },
+      "probability_observations": {
+        "claim_status": "BOUNDED_COMPUTATIONAL_OBSERVATION",
+        "state_level_only": true,
+        "stationary_distribution": [
+          0.5609019758181479,
+          0.4390980241818521
+        ],
+        "stationary_eigenvalue_separation": 0.35656854249492376,
+        "eventual_hit_probability_state_0_to_state_1": 1.0,
+        "expected_hitting_time_state_0_to_state_1": 6.386979044864146
+      },
+      "directed_offdiagonal_blocks": [
+        {
+          "source_sector": 0,
+          "target_sector": 1,
+          "reference_block_frobenius": 0.1,
+          "perturbed_block_frobenius": 0.1565685424949238,
+          "actual_ambient_block_difference": 0.056568542494923796,
+          "global_bound": 0.08,
+          "localized_bound": 0.056568542494923796,
+          "global_margin_status": "UNRESOLVED",
+          "localized_margin_status": "UNRESOLVED"
+        },
+        {
+          "source_sector": 1,
+          "target_sector": 0,
+          "reference_block_frobenius": 0.2,
+          "perturbed_block_frobenius": 0.2,
+          "actual_ambient_block_difference": 0.0,
+          "global_bound": 0.08,
+          "localized_bound": 0.0,
+          "global_margin_status": "UNRESOLVED",
+          "localized_margin_status": "STABLE_ACTIVE"
+        }
+      ],
+      "global_bound": {
+        "maximum": 0.08,
+        "maximum_actual_to_bound_ratio": 0.7071067811865475,
+        "bound_violation_count": 0,
+        "directed_margin_counts": {
+          "STABLE_ACTIVE": 0,
+          "STABLE_INACTIVE": 0,
+          "UNRESOLVED": 2
+        },
+        "directed_status_violation_count": 0,
+        "aggregate_undirected_status": "UNRESOLVED",
+        "aggregate_status_violation_count": 0
+      },
+      "localized_bound": {
+        "maximum": 0.056568542494923796,
+        "maximum_actual_to_bound_ratio": 1.0,
+        "bound_violation_count": 0,
+        "directed_margin_counts": {
+          "STABLE_ACTIVE": 1,
+          "STABLE_INACTIVE": 0,
+          "UNRESOLVED": 1
+        },
+        "directed_status_violation_count": 0,
+        "aggregate_undirected_status": "STABLE_ACTIVE",
+        "aggregate_status_violation_count": 0
+      }
+    },
+    {
+      "sweep_axis": "OPERATOR_ONLY",
+      "level_index": 6,
+      "epsilon_operator_norm": 0.1,
+      "epsilon_operator_frobenius": 0.1,
+      "eta_sector_rotation_radians": 0.0,
+      "state_level_transition_matrix": [
+        [
+          0.8292893218813453,
+          0.17071067811865476
+        ],
+        [
+          0.2,
+          0.8
+        ]
+      ],
+      "projector_delta_frobenius": [
+        0.0,
+        0.0
+      ],
+      "sector_semantics": "COORDINATE_STATE_PARTITION",
+      "kernel_checks": {
+        "row_stochastic_residual_max_abs": 0.0,
+        "minimum_entry": 0.17071067811865476,
+        "nonnegative": true,
+        "positive_support_edge_count": 4,
+        "normality_residual_frobenius": 0.015403191234385447,
+        "normality_status": "FAIL"
+      },
+      "probability_observations": {
+        "claim_status": "BOUNDED_COMPUTATIONAL_OBSERVATION",
+        "state_level_only": true,
+        "stationary_distribution": [
+          0.5395042867796359,
+          0.46049571322036414
+        ],
+        "stationary_eigenvalue_separation": 0.37071067811865466,
+        "eventual_hit_probability_state_0_to_state_1": 1.0,
+        "expected_hitting_time_state_0_to_state_1": 5.857864376269052
+      },
+      "directed_offdiagonal_blocks": [
+        {
+          "source_sector": 0,
+          "target_sector": 1,
+          "reference_block_frobenius": 0.1,
+          "perturbed_block_frobenius": 0.17071067811865476,
+          "actual_ambient_block_difference": 0.07071067811865475,
+          "global_bound": 0.1,
+          "localized_bound": 0.07071067811865475,
+          "global_margin_status": "UNRESOLVED",
+          "localized_margin_status": "UNRESOLVED"
+        },
+        {
+          "source_sector": 1,
+          "target_sector": 0,
+          "reference_block_frobenius": 0.2,
+          "perturbed_block_frobenius": 0.2,
+          "actual_ambient_block_difference": 0.0,
+          "global_bound": 0.1,
+          "localized_bound": 0.0,
+          "global_margin_status": "UNRESOLVED",
+          "localized_margin_status": "STABLE_ACTIVE"
+        }
+      ],
+      "global_bound": {
+        "maximum": 0.1,
+        "maximum_actual_to_bound_ratio": 0.7071067811865475,
+        "bound_violation_count": 0,
+        "directed_margin_counts": {
+          "STABLE_ACTIVE": 0,
+          "STABLE_INACTIVE": 0,
+          "UNRESOLVED": 2
+        },
+        "directed_status_violation_count": 0,
+        "aggregate_undirected_status": "UNRESOLVED",
+        "aggregate_status_violation_count": 0
+      },
+      "localized_bound": {
+        "maximum": 0.07071067811865475,
+        "maximum_actual_to_bound_ratio": 1.0,
+        "bound_violation_count": 0,
+        "directed_margin_counts": {
+          "STABLE_ACTIVE": 1,
+          "STABLE_INACTIVE": 0,
+          "UNRESOLVED": 1
+        },
+        "directed_status_violation_count": 0,
+        "aggregate_undirected_status": "STABLE_ACTIVE",
+        "aggregate_status_violation_count": 0
+      }
+    },
+    {
+      "sweep_axis": "SECTORIZATION_ONLY",
+      "level_index": 0,
+      "epsilon_operator_norm": 0.0,
+      "epsilon_operator_frobenius": 0.0,
+      "eta_sector_rotation_radians": 0.0,
+      "state_level_transition_matrix": [
+        [
+          0.9,
+          0.1
+        ],
+        [
+          0.2,
+          0.8
+        ]
+      ],
+      "projector_delta_frobenius": [
+        0.0,
+        0.0
+      ],
+      "sector_semantics": "COORDINATE_STATE_PARTITION",
+      "kernel_checks": {
+        "row_stochastic_residual_max_abs": 0.0,
+        "minimum_entry": 0.1,
+        "nonnegative": true,
+        "positive_support_edge_count": 4,
+        "normality_residual_frobenius": 0.04472135954999581,
+        "normality_status": "FAIL"
+      },
+      "probability_observations": {
+        "claim_status": "BOUNDED_COMPUTATIONAL_OBSERVATION",
+        "state_level_only": true,
+        "stationary_distribution": [
+          0.6666666666666666,
+          0.3333333333333334
+        ],
+        "stationary_eigenvalue_separation": 0.30000000000000004,
+        "eventual_hit_probability_state_0_to_state_1": 1.0,
+        "expected_hitting_time_state_0_to_state_1": 10.000000000000002
+      },
+      "directed_offdiagonal_blocks": [
+        {
+          "source_sector": 0,
+          "target_sector": 1,
+          "reference_block_frobenius": 0.1,
+          "perturbed_block_frobenius": 0.1,
+          "actual_ambient_block_difference": 0.0,
+          "global_bound": 0.0,
+          "localized_bound": 0.0,
+          "global_margin_status": "STABLE_INACTIVE",
+          "localized_margin_status": "STABLE_INACTIVE"
+        },
+        {
+          "source_sector": 1,
+          "target_sector": 0,
+          "reference_block_frobenius": 0.2,
+          "perturbed_block_frobenius": 0.2,
+          "actual_ambient_block_difference": 0.0,
+          "global_bound": 0.0,
+          "localized_bound": 0.0,
+          "global_margin_status": "STABLE_ACTIVE",
+          "localized_margin_status": "STABLE_ACTIVE"
+        }
+      ],
+      "global_bound": {
+        "maximum": 0.0,
+        "maximum_actual_to_bound_ratio": 0.0,
+        "bound_violation_count": 0,
+        "directed_margin_counts": {
+          "STABLE_ACTIVE": 1,
+          "STABLE_INACTIVE": 1,
+          "UNRESOLVED": 0
+        },
+        "directed_status_violation_count": 0,
+        "aggregate_undirected_status": "STABLE_ACTIVE",
+        "aggregate_status_violation_count": 0
+      },
+      "localized_bound": {
+        "maximum": 0.0,
+        "maximum_actual_to_bound_ratio": 0.0,
+        "bound_violation_count": 0,
+        "directed_margin_counts": {
+          "STABLE_ACTIVE": 1,
+          "STABLE_INACTIVE": 1,
+          "UNRESOLVED": 0
+        },
+        "directed_status_violation_count": 0,
+        "aggregate_undirected_status": "STABLE_ACTIVE",
+        "aggregate_status_violation_count": 0
+      }
+    },
+    {
+      "sweep_axis": "SECTORIZATION_ONLY",
+      "level_index": 1,
+      "epsilon_operator_norm": 0.0,
+      "epsilon_operator_frobenius": 0.0,
+      "eta_sector_rotation_radians": 0.001,
+      "state_level_transition_matrix": [
+        [
+          0.9,
+          0.1
+        ],
+        [
+          0.2,
+          0.8
+        ]
+      ],
+      "projector_delta_frobenius": [
+        0.0014142133266708465,
+        0.0014142133266708465
+      ],
+      "sector_semantics": "HILBERT_FRAME_ONLY_NOT_STATE_PARTITION",
+      "kernel_checks": {
+        "row_stochastic_residual_max_abs": 0.0,
+        "minimum_entry": 0.1,
+        "nonnegative": true,
+        "positive_support_edge_count": 4,
+        "normality_residual_frobenius": 0.04472135954999581,
+        "normality_status": "FAIL"
+      },
+      "probability_observations": {
+        "claim_status": "BOUNDED_COMPUTATIONAL_OBSERVATION",
+        "state_level_only": true,
+        "stationary_distribution": [
+          0.6666666666666666,
+          0.3333333333333334
+        ],
+        "stationary_eigenvalue_separation": 0.30000000000000004,
+        "eventual_hit_probability_state_0_to_state_1": 1.0,
+        "expected_hitting_time_state_0_to_state_1": 10.000000000000002
+      },
+      "directed_offdiagonal_blocks": [
+        {
+          "source_sector": 0,
+          "target_sector": 1,
+          "reference_block_frobenius": 0.1,
+          "perturbed_block_frobenius": 0.09989970006676666,
+          "actual_ambient_block_difference": 0.00017332054107920247,
+          "global_bound": 0.002855532035336356,
+          "localized_bound": 0.001711453981198955,
+          "global_margin_status": "STABLE_INACTIVE",
+          "localized_margin_status": "STABLE_INACTIVE"
+        },
+        {
+          "source_sector": 1,
+          "target_sector": 0,
+          "reference_block_frobenius": 0.2,
+          "perturbed_block_frobenius": 0.19989970006676666,
+          "actual_ambient_block_difference": 0.00030003321479467993,
+          "global_bound": 0.002855532035336356,
+          "localized_bound": 0.0017468462943047896,
+          "global_margin_status": "STABLE_ACTIVE",
+          "localized_margin_status": "STABLE_ACTIVE"
+        }
+      ],
+      "global_bound": {
+        "maximum": 0.002855532035336356,
+        "maximum_actual_to_bound_ratio": 0.10507086283111466,
+        "bound_violation_count": 0,
+        "directed_margin_counts": {
+          "STABLE_ACTIVE": 1,
+          "STABLE_INACTIVE": 1,
+          "UNRESOLVED": 0
+        },
+        "directed_status_violation_count": 0,
+        "aggregate_undirected_status": "STABLE_ACTIVE",
+        "aggregate_status_violation_count": 0
+      },
+      "localized_bound": {
+        "maximum": 0.0017468462943047896,
+        "maximum_actual_to_bound_ratio": 0.17175707775370544,
+        "bound_violation_count": 0,
+        "directed_margin_counts": {
+          "STABLE_ACTIVE": 1,
+          "STABLE_INACTIVE": 1,
+          "UNRESOLVED": 0
+        },
+        "directed_status_violation_count": 0,
+        "aggregate_undirected_status": "STABLE_ACTIVE",
+        "aggregate_status_violation_count": 0
+      }
+    },
+    {
+      "sweep_axis": "SECTORIZATION_ONLY",
+      "level_index": 2,
+      "epsilon_operator_norm": 0.0,
+      "epsilon_operator_frobenius": 0.0,
+      "eta_sector_rotation_radians": 0.01,
+      "state_level_transition_matrix": [
+        [
+          0.9,
+          0.1
+        ],
+        [
+          0.2,
+          0.8
+        ]
+      ],
+      "projector_delta_frobenius": [
+        0.014141899922649064,
+        0.014141899922649064
+      ],
+      "sector_semantics": "HILBERT_FRAME_ONLY_NOT_STATE_PARTITION",
+      "kernel_checks": {
+        "row_stochastic_residual_max_abs": 0.0,
+        "minimum_entry": 0.1,
+        "nonnegative": true,
+        "positive_support_edge_count": 4,
+        "normality_residual_frobenius": 0.04472135954999581,
+        "normality_status": "FAIL"
+      },
+      "probability_observations": {
+        "claim_status": "BOUNDED_COMPUTATIONAL_OBSERVATION",
+        "state_level_only": true,
+        "stationary_distribution": [
+          0.6666666666666666,
+          0.3333333333333334
+        ],
+        "stationary_eigenvalue_separation": 0.30000000000000004,
+        "eventual_hit_probability_state_0_to_state_1": 1.0,
+        "expected_hitting_time_state_0_to_state_1": 10.000000000000002
+      },
+      "directed_offdiagonal_blocks": [
+        {
+          "source_sector": 0,
+          "target_sector": 1,
+          "reference_block_frobenius": 0.1,
+          "perturbed_block_frobenius": 0.09897006766532002,
+          "actual_ambient_block_difference": 0.0017435871036918103,
+          "global_bound": 0.028554849192878567,
+          "localized_bound": 0.017086416147931494,
+          "global_margin_status": "STABLE_INACTIVE",
+          "localized_margin_status": "STABLE_INACTIVE"
+        },
+        {
+          "source_sector": 1,
+          "target_sector": 0,
+          "reference_block_frobenius": 0.2,
+          "perturbed_block_frobenius": 0.19897006766532002,
+          "actual_ambient_block_difference": 0.0030032146161647955,
+          "global_bound": 0.028554849192878567,
+          "localized_bound": 0.017492430764687643,
+          "global_margin_status": "STABLE_ACTIVE",
+          "localized_margin_status": "STABLE_ACTIVE"
+        }
+      ],
+      "global_bound": {
+        "maximum": 0.028554849192878567,
+        "maximum_actual_to_bound_ratio": 0.10517354148428779,
+        "bound_violation_count": 0,
+        "directed_margin_counts": {
+          "STABLE_ACTIVE": 1,
+          "STABLE_INACTIVE": 1,
+          "UNRESOLVED": 0
+        },
+        "directed_status_violation_count": 0,
+        "aggregate_undirected_status": "STABLE_ACTIVE",
+        "aggregate_status_violation_count": 0
+      },
+      "localized_bound": {
+        "maximum": 0.017492430764687643,
+        "maximum_actual_to_bound_ratio": 0.17168652296326084,
+        "bound_violation_count": 0,
+        "directed_margin_counts": {
+          "STABLE_ACTIVE": 1,
+          "STABLE_INACTIVE": 1,
+          "UNRESOLVED": 0
+        },
+        "directed_status_violation_count": 0,
+        "aggregate_undirected_status": "STABLE_ACTIVE",
+        "aggregate_status_violation_count": 0
+      }
+    },
+    {
+      "sweep_axis": "SECTORIZATION_ONLY",
+      "level_index": 3,
+      "epsilon_operator_norm": 0.0,
+      "epsilon_operator_frobenius": 0.0,
+      "eta_sector_rotation_radians": 0.03,
+      "state_level_transition_matrix": [
+        [
+          0.9,
+          0.1
+        ],
+        [
+          0.2,
+          0.8
+        ]
+      ],
+      "projector_delta_frobenius": [
+        0.042420043196534286,
+        0.042420043196534286
+      ],
+      "sector_semantics": "HILBERT_FRAME_ONLY_NOT_STATE_PARTITION",
+      "kernel_checks": {
+        "row_stochastic_residual_max_abs": 0.0,
+        "minimum_entry": 0.1,
+        "nonnegative": true,
+        "positive_support_edge_count": 4,
+        "normality_residual_frobenius": 0.04472135954999581,
+        "normality_status": "FAIL"
+      },
+      "probability_observations": {
+        "claim_status": "BOUNDED_COMPUTATIONAL_OBSERVATION",
+        "state_level_only": true,
+        "stationary_distribution": [
+          0.6666666666666666,
+          0.3333333333333334
+        ],
+        "stationary_eigenvalue_separation": 0.30000000000000004,
+        "eventual_hit_probability_state_0_to_state_1": 1.0,
+        "expected_hitting_time_state_0_to_state_1": 10.000000000000002
+      },
+      "directed_offdiagonal_blocks": [
+        {
+          "source_sector": 0,
+          "target_sector": 1,
+          "reference_block_frobenius": 0.1,
+          "perturbed_block_frobenius": 0.0967318806663084,
+          "actual_ambient_block_difference": 0.005299728257600628,
+          "global_bound": 0.08565312601968479,
+          "localized_bound": 0.051068116931274714,
+          "global_margin_status": "UNRESOLVED",
+          "localized_margin_status": "UNRESOLVED"
+        },
+        {
+          "source_sector": 1,
+          "target_sector": 0,
+          "reference_block_frobenius": 0.2,
+          "perturbed_block_frobenius": 0.19673188066630842,
+          "actual_ambient_block_difference": 0.009026784395646598,
+          "global_bound": 0.08565312601968479,
+          "localized_bound": 0.05262930390536469,
+          "global_margin_status": "UNRESOLVED",
+          "localized_margin_status": "UNRESOLVED"
+        }
+      ],
+      "global_bound": {
+        "maximum": 0.08565312601968479,
+        "maximum_actual_to_bound_ratio": 0.10538768186431473,
+        "bound_violation_count": 0,
+        "directed_margin_counts": {
+          "STABLE_ACTIVE": 0,
+          "STABLE_INACTIVE": 0,
+          "UNRESOLVED": 2
+        },
+        "directed_status_violation_count": 0,
+        "aggregate_undirected_status": "UNRESOLVED",
+        "aggregate_status_violation_count": 0
+      },
+      "localized_bound": {
+        "maximum": 0.05262930390536469,
+        "maximum_actual_to_bound_ratio": 0.1715163174469892,
+        "bound_violation_count": 0,
+        "directed_margin_counts": {
+          "STABLE_ACTIVE": 0,
+          "STABLE_INACTIVE": 0,
+          "UNRESOLVED": 2
+        },
+        "directed_status_violation_count": 0,
+        "aggregate_undirected_status": "UNRESOLVED",
+        "aggregate_status_violation_count": 0
+      }
+    },
+    {
+      "sweep_axis": "SECTORIZATION_ONLY",
+      "level_index": 4,
+      "epsilon_operator_norm": 0.0,
+      "epsilon_operator_frobenius": 0.0,
+      "eta_sector_rotation_radians": 0.05,
+      "state_level_transition_matrix": [
+        [
+          0.9,
+          0.1
+        ],
+        [
+          0.2,
+          0.8
+        ]
+      ],
+      "projector_delta_frobenius": [
+        0.07068121901873392,
+        0.07068121901873392
+      ],
+      "sector_semantics": "HILBERT_FRAME_ONLY_NOT_STATE_PARTITION",
+      "kernel_checks": {
+        "row_stochastic_residual_max_abs": 0.0,
+        "minimum_entry": 0.1,
+        "nonnegative": true,
+        "positive_support_edge_count": 4,
+        "normality_residual_frobenius": 0.04472135954999581,
+        "normality_status": "FAIL"
+      },
+      "probability_observations": {
+        "claim_status": "BOUNDED_COMPUTATIONAL_OBSERVATION",
+        "state_level_only": true,
+        "stationary_distribution": [
+          0.6666666666666666,
+          0.3333333333333334
+        ],
+        "stationary_eigenvalue_separation": 0.30000000000000004,
+        "eventual_hit_probability_state_0_to_state_1": 1.0,
+        "expected_hitting_time_state_0_to_state_1": 10.000000000000002
+      },
+      "directed_offdiagonal_blocks": [
+        {
+          "source_sector": 0,
+          "target_sector": 1,
+          "reference_block_frobenius": 0.1,
+          "perturbed_block_frobenius": 0.09425895395936246,
+          "actual_ambient_block_difference": 0.008947056786755931,
+          "global_bound": 0.1427171427381096,
+          "localized_bound": 0.08478716961862348,
+          "global_margin_status": "UNRESOLVED",
+          "localized_margin_status": "UNRESOLVED"
+        },
+        {
+          "source_sector": 1,
+          "target_sector": 0,
+          "reference_block_frobenius": 0.2,
+          "perturbed_block_frobenius": 0.1942589539593625,
+          "actual_ambient_block_difference": 0.015068401875767553,
+          "global_bound": 0.1427171427381096,
+          "localized_bound": 0.0879506495963095,
+          "global_margin_status": "UNRESOLVED",
+          "localized_margin_status": "UNRESOLVED"
+        }
+      ],
+      "global_bound": {
+        "maximum": 0.1427171427381096,
+        "maximum_actual_to_bound_ratio": 0.10558228385652689,
+        "bound_violation_count": 0,
+        "directed_margin_counts": {
+          "STABLE_ACTIVE": 0,
+          "STABLE_INACTIVE": 0,
+          "UNRESOLVED": 2
+        },
+        "directed_status_violation_count": 0,
+        "aggregate_undirected_status": "UNRESOLVED",
+        "aggregate_status_violation_count": 0
+      },
+      "localized_bound": {
+        "maximum": 0.0879506495963095,
+        "maximum_actual_to_bound_ratio": 0.171327920202193,
+        "bound_violation_count": 0,
+        "directed_margin_counts": {
+          "STABLE_ACTIVE": 0,
+          "STABLE_INACTIVE": 0,
+          "UNRESOLVED": 2
+        },
+        "directed_status_violation_count": 0,
+        "aggregate_undirected_status": "UNRESOLVED",
+        "aggregate_status_violation_count": 0
+      }
+    },
+    {
+      "sweep_axis": "SECTORIZATION_ONLY",
+      "level_index": 5,
+      "epsilon_operator_norm": 0.0,
+      "epsilon_operator_frobenius": 0.0,
+      "eta_sector_rotation_radians": 0.08,
+      "state_level_transition_matrix": [
+        [
+          0.9,
+          0.1
+        ],
+        [
+          0.2,
+          0.8
+        ]
+      ],
+      "projector_delta_frobenius": [
+        0.1130164440440994,
+        0.1130164440440994
+      ],
+      "sector_semantics": "HILBERT_FRAME_ONLY_NOT_STATE_PARTITION",
+      "kernel_checks": {
+        "row_stochastic_residual_max_abs": 0.0,
+        "minimum_entry": 0.1,
+        "nonnegative": true,
+        "positive_support_edge_count": 4,
+        "normality_residual_frobenius": 0.04472135954999581,
+        "normality_status": "FAIL"
+      },
+      "probability_observations": {
+        "claim_status": "BOUNDED_COMPUTATIONAL_OBSERVATION",
+        "state_level_only": true,
+        "stationary_distribution": [
+          0.6666666666666666,
+          0.3333333333333334
+        ],
+        "stationary_eigenvalue_separation": 0.30000000000000004,
+        "eventual_hit_probability_state_0_to_state_1": 1.0,
+        "expected_hitting_time_state_0_to_state_1": 10.000000000000002
+      },
+      "directed_offdiagonal_blocks": [
+        {
+          "source_sector": 0,
+          "target_sector": 1,
+          "reference_block_frobenius": 0.1,
+          "perturbed_block_frobenius": 0.09011818217563176,
+          "actual_ambient_block_difference": 0.014586148356481867,
+          "global_bound": 0.22819900675623955,
+          "localized_bound": 0.13485522614181517,
+          "global_margin_status": "UNRESOLVED",
+          "localized_margin_status": "UNRESOLVED"
+        },
+        {
+          "source_sector": 1,
+          "target_sector": 0,
+          "reference_block_frobenius": 0.2,
+          "perturbed_block_frobenius": 0.19011818217563176,
+          "actual_ambient_block_difference": 0.024151924493258436,
+          "global_bound": 0.22819900675623955,
+          "localized_bound": 0.1412293736555901,
+          "global_margin_status": "UNRESOLVED",
+          "localized_margin_status": "UNRESOLVED"
+        }
+      ],
+      "global_bound": {
+        "maximum": 0.22819900675623955,
+        "maximum_actual_to_bound_ratio": 0.10583711487866965,
+        "bound_violation_count": 0,
+        "directed_margin_counts": {
+          "STABLE_ACTIVE": 0,
+          "STABLE_INACTIVE": 0,
+          "UNRESOLVED": 2
+        },
+        "directed_status_violation_count": 0,
+        "aggregate_undirected_status": "UNRESOLVED",
+        "aggregate_status_violation_count": 0
+      },
+      "localized_bound": {
+        "maximum": 0.1412293736555901,
+        "maximum_actual_to_bound_ratio": 0.17101204847198911,
+        "bound_violation_count": 0,
+        "directed_margin_counts": {
+          "STABLE_ACTIVE": 0,
+          "STABLE_INACTIVE": 0,
+          "UNRESOLVED": 2
+        },
+        "directed_status_violation_count": 0,
+        "aggregate_undirected_status": "UNRESOLVED",
+        "aggregate_status_violation_count": 0
+      }
+    },
+    {
+      "sweep_axis": "SECTORIZATION_ONLY",
+      "level_index": 6,
+      "epsilon_operator_norm": 0.0,
+      "epsilon_operator_frobenius": 0.0,
+      "eta_sector_rotation_radians": 0.1,
+      "state_level_transition_matrix": [
+        [
+          0.9,
+          0.1
+        ],
+        [
+          0.2,
+          0.8
+        ]
+      ],
+      "projector_delta_frobenius": [
+        0.1411857717999883,
+        0.1411857717999883
+      ],
+      "sector_semantics": "HILBERT_FRAME_ONLY_NOT_STATE_PARTITION",
+      "kernel_checks": {
+        "row_stochastic_residual_max_abs": 0.0,
+        "minimum_entry": 0.1,
+        "nonnegative": true,
+        "positive_support_edge_count": 4,
+        "normality_residual_frobenius": 0.04472135954999581,
+        "normality_status": "FAIL"
+      },
+      "probability_observations": {
+        "claim_status": "BOUNDED_COMPUTATIONAL_OBSERVATION",
+        "state_level_only": true,
+        "stationary_distribution": [
+          0.6666666666666666,
+          0.3333333333333334
+        ],
+        "stationary_eigenvalue_separation": 0.30000000000000004,
+        "eventual_hit_probability_state_0_to_state_1": 1.0,
+        "expected_hitting_time_state_0_to_state_1": 10.000000000000002
+      },
+      "directed_offdiagonal_blocks": [
+        {
+          "source_sector": 0,
+          "target_sector": 1,
+          "reference_block_frobenius": 0.1,
+          "perturbed_block_frobenius": 0.08707652013643322,
+          "actual_ambient_block_difference": 0.01845507072279948,
+          "global_bound": 0.28507756694502506,
+          "localized_bound": 0.167883383916833,
+          "global_margin_status": "UNRESOLVED",
+          "localized_margin_status": "UNRESOLVED"
+        },
+        {
+          "source_sector": 1,
+          "target_sector": 0,
+          "reference_block_frobenius": 0.2,
+          "perturbed_block_frobenius": 0.18707652013643322,
+          "actual_ambient_block_difference": 0.030213099512599043,
+          "global_bound": 0.28507756694502506,
+          "localized_bound": 0.17691257289338252,
+          "global_margin_status": "UNRESOLVED",
+          "localized_margin_status": "UNRESOLVED"
+        }
+      ],
+      "global_bound": {
+        "maximum": 0.28507756694502506,
+        "maximum_actual_to_bound_ratio": 0.10598203091310023,
+        "bound_violation_count": 0,
+        "directed_margin_counts": {
+          "STABLE_ACTIVE": 0,
+          "STABLE_INACTIVE": 0,
+          "UNRESOLVED": 2
+        },
+        "directed_status_violation_count": 0,
+        "aggregate_undirected_status": "UNRESOLVED",
+        "aggregate_status_violation_count": 0
+      },
+      "localized_bound": {
+        "maximum": 0.17691257289338252,
+        "maximum_actual_to_bound_ratio": 0.170779832198852,
+        "bound_violation_count": 0,
+        "directed_margin_counts": {
+          "STABLE_ACTIVE": 0,
+          "STABLE_INACTIVE": 0,
+          "UNRESOLVED": 2
+        },
+        "directed_status_violation_count": 0,
+        "aggregate_undirected_status": "UNRESOLVED",
+        "aggregate_status_violation_count": 0
+      }
+    },
+    {
+      "sweep_axis": "COUPLED",
+      "level_index": 0,
+      "epsilon_operator_norm": 0.0,
+      "epsilon_operator_frobenius": 0.0,
+      "eta_sector_rotation_radians": 0.0,
+      "state_level_transition_matrix": [
+        [
+          0.9,
+          0.1
+        ],
+        [
+          0.2,
+          0.8
+        ]
+      ],
+      "projector_delta_frobenius": [
+        0.0,
+        0.0
+      ],
+      "sector_semantics": "COORDINATE_STATE_PARTITION",
+      "kernel_checks": {
+        "row_stochastic_residual_max_abs": 0.0,
+        "minimum_entry": 0.1,
+        "nonnegative": true,
+        "positive_support_edge_count": 4,
+        "normality_residual_frobenius": 0.04472135954999581,
+        "normality_status": "FAIL"
+      },
+      "probability_observations": {
+        "claim_status": "BOUNDED_COMPUTATIONAL_OBSERVATION",
+        "state_level_only": true,
+        "stationary_distribution": [
+          0.6666666666666666,
+          0.3333333333333334
+        ],
+        "stationary_eigenvalue_separation": 0.30000000000000004,
+        "eventual_hit_probability_state_0_to_state_1": 1.0,
+        "expected_hitting_time_state_0_to_state_1": 10.000000000000002
+      },
+      "directed_offdiagonal_blocks": [
+        {
+          "source_sector": 0,
+          "target_sector": 1,
+          "reference_block_frobenius": 0.1,
+          "perturbed_block_frobenius": 0.1,
+          "actual_ambient_block_difference": 0.0,
+          "global_bound": 0.0,
+          "localized_bound": 0.0,
+          "global_margin_status": "STABLE_INACTIVE",
+          "localized_margin_status": "STABLE_INACTIVE"
+        },
+        {
+          "source_sector": 1,
+          "target_sector": 0,
+          "reference_block_frobenius": 0.2,
+          "perturbed_block_frobenius": 0.2,
+          "actual_ambient_block_difference": 0.0,
+          "global_bound": 0.0,
+          "localized_bound": 0.0,
+          "global_margin_status": "STABLE_ACTIVE",
+          "localized_margin_status": "STABLE_ACTIVE"
+        }
+      ],
+      "global_bound": {
+        "maximum": 0.0,
+        "maximum_actual_to_bound_ratio": 0.0,
+        "bound_violation_count": 0,
+        "directed_margin_counts": {
+          "STABLE_ACTIVE": 1,
+          "STABLE_INACTIVE": 1,
+          "UNRESOLVED": 0
+        },
+        "directed_status_violation_count": 0,
+        "aggregate_undirected_status": "STABLE_ACTIVE",
+        "aggregate_status_violation_count": 0
+      },
+      "localized_bound": {
+        "maximum": 0.0,
+        "maximum_actual_to_bound_ratio": 0.0,
+        "bound_violation_count": 0,
+        "directed_margin_counts": {
+          "STABLE_ACTIVE": 1,
+          "STABLE_INACTIVE": 1,
+          "UNRESOLVED": 0
+        },
+        "directed_status_violation_count": 0,
+        "aggregate_undirected_status": "STABLE_ACTIVE",
+        "aggregate_status_violation_count": 0
+      }
+    },
+    {
+      "sweep_axis": "COUPLED",
+      "level_index": 1,
+      "epsilon_operator_norm": 0.001,
+      "epsilon_operator_frobenius": 0.001,
+      "eta_sector_rotation_radians": 0.001,
+      "state_level_transition_matrix": [
+        [
+          0.8992928932188134,
+          0.10070710678118655
+        ],
+        [
+          0.2,
+          0.8
+        ]
+      ],
+      "projector_delta_frobenius": [
+        0.0014142133266708465,
+        0.0014142133266708465
+      ],
+      "sector_semantics": "HILBERT_FRAME_ONLY_NOT_STATE_PARTITION",
+      "kernel_checks": {
+        "row_stochastic_residual_max_abs": 0.0,
+        "minimum_entry": 0.10070710678118655,
+        "nonnegative": true,
+        "positive_support_edge_count": 4,
+        "normality_residual_frobenius": 0.044468107492921634,
+        "normality_status": "FAIL"
+      },
+      "probability_observations": {
+        "claim_status": "BOUNDED_COMPUTATIONAL_OBSERVATION",
+        "state_level_only": true,
+        "stationary_distribution": [
+          0.6650990132585479,
+          0.334900986741452
+        ],
+        "stationary_eigenvalue_separation": 0.3007071067811865,
+        "eventual_hit_probability_state_0_to_state_1": 1.0,
+        "expected_hitting_time_state_0_to_state_1": 9.929785811171904
+      },
+      "directed_offdiagonal_blocks": [
+        {
+          "source_sector": 0,
+          "target_sector": 1,
+          "reference_block_frobenius": 0.1,
+          "perturbed_block_frobenius": 0.10060751324715646,
+          "actual_ambient_block_difference": 0.0006238540225187658,
+          "global_bound": 0.003855532035336356,
+          "localized_bound": 0.002419267161588739,
+          "global_margin_status": "STABLE_INACTIVE",
+          "localized_margin_status": "STABLE_INACTIVE"
+        },
+        {
+          "source_sector": 1,
+          "target_sector": 0,
+          "reference_block_frobenius": 0.2,
+          "perturbed_block_frobenius": 0.19990040646596988,
+          "actual_ambient_block_difference": 0.0002997982787702698,
+          "global_bound": 0.003855532035336356,
+          "localized_bound": 0.001747552693508026,
+          "global_margin_status": "STABLE_ACTIVE",
+          "localized_margin_status": "STABLE_ACTIVE"
+        }
+      ],
+      "global_bound": {
+        "maximum": 0.003855532035336356,
+        "maximum_actual_to_bound_ratio": 0.16180750589051737,
+        "bound_violation_count": 0,
+        "directed_margin_counts": {
+          "STABLE_ACTIVE": 1,
+          "STABLE_INACTIVE": 1,
+          "UNRESOLVED": 0
+        },
+        "directed_status_violation_count": 0,
+        "aggregate_undirected_status": "STABLE_ACTIVE",
+        "aggregate_status_violation_count": 0
+      },
+      "localized_bound": {
+        "maximum": 0.002419267161588739,
+        "maximum_actual_to_bound_ratio": 0.2578690077821249,
+        "bound_violation_count": 0,
+        "directed_margin_counts": {
+          "STABLE_ACTIVE": 1,
+          "STABLE_INACTIVE": 1,
+          "UNRESOLVED": 0
+        },
+        "directed_status_violation_count": 0,
+        "aggregate_undirected_status": "STABLE_ACTIVE",
+        "aggregate_status_violation_count": 0
+      }
+    },
+    {
+      "sweep_axis": "COUPLED",
+      "level_index": 2,
+      "epsilon_operator_norm": 0.01,
+      "epsilon_operator_frobenius": 0.01,
+      "eta_sector_rotation_radians": 0.01,
+      "state_level_transition_matrix": [
+        [
+          0.8929289321881345,
+          0.10707106781186548
+        ],
+        [
+          0.2,
+          0.8
+        ]
+      ],
+      "projector_delta_frobenius": [
+        0.014141899922649064,
+        0.014141899922649064
+      ],
+      "sector_semantics": "HILBERT_FRAME_ONLY_NOT_STATE_PARTITION",
+      "kernel_checks": {
+        "row_stochastic_residual_max_abs": 0.0,
+        "minimum_entry": 0.10707106781186548,
+        "nonnegative": true,
+        "positive_support_edge_count": 4,
+        "normality_residual_frobenius": 0.04216320469343265,
+        "normality_status": "FAIL"
+      },
+      "probability_observations": {
+        "claim_status": "BOUNDED_COMPUTATIONAL_OBSERVATION",
+        "state_level_only": true,
+        "stationary_distribution": [
+          0.6513150243204768,
+          0.34868497567952306
+        ],
+        "stationary_eigenvalue_separation": 0.30707106781186544,
+        "eventual_hit_probability_state_0_to_state_1": 1.0,
+        "expected_hitting_time_state_0_to_state_1": 9.339591174686886
+      },
+      "directed_offdiagonal_blocks": [
+        {
+          "source_sector": 0,
+          "target_sector": 1,
+          "reference_block_frobenius": 0.1,
+          "perturbed_block_frobenius": 0.10611113435814196,
+          "actual_ambient_block_difference": 0.0062823654056901965,
+          "global_bound": 0.03855484919287857,
+          "localized_bound": 0.02422748284075342,
+          "global_margin_status": "STABLE_INACTIVE",
+          "localized_margin_status": "STABLE_INACTIVE"
+        },
+        {
+          "source_sector": 1,
+          "target_sector": 0,
+          "reference_block_frobenius": 0.2,
+          "perturbed_block_frobenius": 0.19904006654627648,
+          "actual_ambient_block_difference": 0.0029804042534883977,
+          "global_bound": 0.03855484919287857,
+          "localized_bound": 0.017562429645644095,
+          "global_margin_status": "STABLE_ACTIVE",
+          "localized_margin_status": "STABLE_ACTIVE"
+        }
+      ],
+      "global_bound": {
+        "maximum": 0.03855484919287857,
+        "maximum_actual_to_bound_ratio": 0.16294618023951724,
+        "bound_violation_count": 0,
+        "directed_margin_counts": {
+          "STABLE_ACTIVE": 1,
+          "STABLE_INACTIVE": 1,
+          "UNRESOLVED": 0
+        },
+        "directed_status_violation_count": 0,
+        "aggregate_undirected_status": "STABLE_ACTIVE",
+        "aggregate_status_violation_count": 0
+      },
+      "localized_bound": {
+        "maximum": 0.02422748284075342,
+        "maximum_actual_to_bound_ratio": 0.25930739264099417,
+        "bound_violation_count": 0,
+        "directed_margin_counts": {
+          "STABLE_ACTIVE": 1,
+          "STABLE_INACTIVE": 1,
+          "UNRESOLVED": 0
+        },
+        "directed_status_violation_count": 0,
+        "aggregate_undirected_status": "STABLE_ACTIVE",
+        "aggregate_status_violation_count": 0
+      }
+    },
+    {
+      "sweep_axis": "COUPLED",
+      "level_index": 3,
+      "epsilon_operator_norm": 0.03,
+      "epsilon_operator_frobenius": 0.03,
+      "eta_sector_rotation_radians": 0.03,
+      "state_level_transition_matrix": [
+        [
+          0.8787867965644036,
+          0.12121320343559643
+        ],
+        [
+          0.2,
+          0.8
+        ]
+      ],
+      "projector_delta_frobenius": [
+        0.042420043196534286,
+        0.042420043196534286
+      ],
+      "sector_semantics": "HILBERT_FRAME_ONLY_NOT_STATE_PARTITION",
+      "kernel_checks": {
+        "row_stochastic_residual_max_abs": 0.0,
+        "minimum_entry": 0.12121320343559643,
+        "nonnegative": true,
+        "positive_support_edge_count": 4,
+        "normality_residual_frobenius": 0.03685088180845761,
+        "normality_status": "FAIL"
+      },
+      "probability_observations": {
+        "claim_status": "BOUNDED_COMPUTATIONAL_OBSERVATION",
+        "state_level_only": true,
+        "stationary_distribution": [
+          0.6226394116457924,
+          0.37736058835420755
+        ],
+        "stationary_eigenvalue_separation": 0.32121320343559634,
+        "eventual_hit_probability_state_0_to_state_1": 1.0,
+        "expected_hitting_time_state_0_to_state_1": 8.249926341822366
+      },
+      "directed_offdiagonal_blocks": [
+        {
+          "source_sector": 0,
+          "target_sector": 1,
+          "reference_block_frobenius": 0.1,
+          "perturbed_block_frobenius": 0.11856201227982137,
+          "actual_ambient_block_difference": 0.019128069962915138,
+          "global_bound": 0.11565312601968479,
+          "localized_bound": 0.07289824854478771,
+          "global_margin_status": "UNRESOLVED",
+          "localized_margin_status": "UNRESOLVED"
+        },
+        {
+          "source_sector": 1,
+          "target_sector": 0,
+          "reference_block_frobenius": 0.2,
+          "perturbed_block_frobenius": 0.19734880884422498,
+          "actual_ambient_block_difference": 0.008834765113714211,
+          "global_bound": 0.11565312601968479,
+          "localized_bound": 0.05324623208328125,
+          "global_margin_status": "UNRESOLVED",
+          "localized_margin_status": "UNRESOLVED"
+        }
+      ],
+      "global_bound": {
+        "maximum": 0.11565312601968479,
+        "maximum_actual_to_bound_ratio": 0.16539172455796342,
+        "bound_violation_count": 0,
+        "directed_margin_counts": {
+          "STABLE_ACTIVE": 0,
+          "STABLE_INACTIVE": 0,
+          "UNRESOLVED": 2
+        },
+        "directed_status_violation_count": 0,
+        "aggregate_undirected_status": "UNRESOLVED",
+        "aggregate_status_violation_count": 0
+      },
+      "localized_bound": {
+        "maximum": 0.07289824854478771,
+        "maximum_actual_to_bound_ratio": 0.26239409512236916,
+        "bound_violation_count": 0,
+        "directed_margin_counts": {
+          "STABLE_ACTIVE": 0,
+          "STABLE_INACTIVE": 0,
+          "UNRESOLVED": 2
+        },
+        "directed_status_violation_count": 0,
+        "aggregate_undirected_status": "UNRESOLVED",
+        "aggregate_status_violation_count": 0
+      }
+    },
+    {
+      "sweep_axis": "COUPLED",
+      "level_index": 4,
+      "epsilon_operator_norm": 0.05,
+      "epsilon_operator_frobenius": 0.05,
+      "eta_sector_rotation_radians": 0.05,
+      "state_level_transition_matrix": [
+        [
+          0.8646446609406726,
+          0.1353553390593274
+        ],
+        [
+          0.2,
+          0.8
+        ]
+      ],
+      "projector_delta_frobenius": [
+        0.07068121901873392,
+        0.07068121901873392
+      ],
+      "sector_semantics": "HILBERT_FRAME_ONLY_NOT_STATE_PARTITION",
+      "kernel_checks": {
+        "row_stochastic_residual_max_abs": 0.0,
+        "minimum_entry": 0.1353553390593274,
+        "nonnegative": true,
+        "positive_support_edge_count": 4,
+        "normality_residual_frobenius": 0.031223054784910557,
+        "normality_status": "FAIL"
+      },
+      "probability_observations": {
+        "claim_status": "BOUNDED_COMPUTATIONAL_OBSERVATION",
+        "state_level_only": true,
+        "stationary_distribution": [
+          0.5963823345141916,
+          0.40361766548580824
+        ],
+        "stationary_eigenvalue_separation": 0.33535533905932735,
+        "eventual_hit_probability_state_0_to_state_1": 1.0,
+        "expected_hitting_time_state_0_to_state_1": 7.387961250362585
+      },
+      "directed_offdiagonal_blocks": [
+        {
+          "source_sector": 0,
+          "target_sector": 1,
+          "reference_block_frobenius": 0.1,
+          "perturbed_block_frobenius": 0.13129080045094987,
+          "actual_ambient_block_difference": 0.032321895161299394,
+          "global_bound": 0.19271714273810958,
+          "localized_bound": 0.12181901611021084,
+          "global_margin_status": "UNRESOLVED",
+          "localized_margin_status": "UNRESOLVED"
+        },
+        {
+          "source_sector": 1,
+          "target_sector": 0,
+          "reference_block_frobenius": 0.2,
+          "perturbed_block_frobenius": 0.19593546139162246,
+          "actual_ambient_block_difference": 0.01457026802623251,
+          "global_bound": 0.19271714273810958,
+          "localized_bound": 0.08962715702856947,
+          "global_margin_status": "UNRESOLVED",
+          "localized_margin_status": "UNRESOLVED"
+        }
+      ],
+      "global_bound": {
+        "maximum": 0.19271714273810958,
+        "maximum_actual_to_bound_ratio": 0.16771676199674052,
+        "bound_violation_count": 0,
+        "directed_margin_counts": {
+          "STABLE_ACTIVE": 0,
+          "STABLE_INACTIVE": 0,
+          "UNRESOLVED": 2
+        },
+        "directed_status_violation_count": 0,
+        "aggregate_undirected_status": "UNRESOLVED",
+        "aggregate_status_violation_count": 0
+      },
+      "localized_bound": {
+        "maximum": 0.12181901611021084,
+        "maximum_actual_to_bound_ratio": 0.265327172992905,
+        "bound_violation_count": 0,
+        "directed_margin_counts": {
+          "STABLE_ACTIVE": 0,
+          "STABLE_INACTIVE": 0,
+          "UNRESOLVED": 2
+        },
+        "directed_status_violation_count": 0,
+        "aggregate_undirected_status": "UNRESOLVED",
+        "aggregate_status_violation_count": 0
+      }
+    },
+    {
+      "sweep_axis": "COUPLED",
+      "level_index": 5,
+      "epsilon_operator_norm": 0.08,
+      "epsilon_operator_frobenius": 0.08,
+      "eta_sector_rotation_radians": 0.08,
+      "state_level_transition_matrix": [
+        [
+          0.8434314575050762,
+          0.1565685424949238
+        ],
+        [
+          0.2,
+          0.8
+        ]
+      ],
+      "projector_delta_frobenius": [
+        0.1130164440440994,
+        0.1130164440440994
+      ],
+      "sector_semantics": "HILBERT_FRAME_ONLY_NOT_STATE_PARTITION",
+      "kernel_checks": {
+        "row_stochastic_residual_max_abs": 0.0,
+        "minimum_entry": 0.1565685424949238,
+        "nonnegative": true,
+        "positive_support_edge_count": 4,
+        "normality_residual_frobenius": 0.022062788585363365,
+        "normality_status": "FAIL"
+      },
+      "probability_observations": {
+        "claim_status": "BOUNDED_COMPUTATIONAL_OBSERVATION",
+        "state_level_only": true,
+        "stationary_distribution": [
+          0.5609019758181479,
+          0.4390980241818521
+        ],
+        "stationary_eigenvalue_separation": 0.35656854249492376,
+        "eventual_hit_probability_state_0_to_state_1": 1.0,
+        "expected_hitting_time_state_0_to_state_1": 6.386979044864146
+      },
+      "directed_offdiagonal_blocks": [
+        {
+          "source_sector": 0,
+          "target_sector": 1,
+          "reference_block_frobenius": 0.1,
+          "perturbed_block_frobenius": 0.15083165705952134,
+          "actual_ambient_block_difference": 0.052692602524238415,
+          "global_bound": 0.30819900675623957,
+          "localized_bound": 0.19556870102570476,
+          "global_margin_status": "UNRESOLVED",
+          "localized_margin_status": "UNRESOLVED"
+        },
+        {
+          "source_sector": 1,
+          "target_sector": 0,
+          "reference_block_frobenius": 0.2,
+          "perturbed_block_frobenius": 0.19426311456459758,
+          "actual_ambient_block_difference": 0.02300359530767477,
+          "global_bound": 0.30819900675623957,
+          "localized_bound": 0.14537430604455587,
+          "global_margin_status": "UNRESOLVED",
+          "localized_margin_status": "UNRESOLVED"
+        }
+      ],
+      "global_bound": {
+        "maximum": 0.30819900675623957,
+        "maximum_actual_to_bound_ratio": 0.17096941057280562,
+        "bound_violation_count": 0,
+        "directed_margin_counts": {
+          "STABLE_ACTIVE": 0,
+          "STABLE_INACTIVE": 0,
+          "UNRESOLVED": 2
+        },
+        "directed_status_violation_count": 0,
+        "aggregate_undirected_status": "UNRESOLVED",
+        "aggregate_status_violation_count": 0
+      },
+      "localized_bound": {
+        "maximum": 0.19556870102570476,
+        "maximum_actual_to_bound_ratio": 0.2694326967857332,
+        "bound_violation_count": 0,
+        "directed_margin_counts": {
+          "STABLE_ACTIVE": 0,
+          "STABLE_INACTIVE": 0,
+          "UNRESOLVED": 2
+        },
+        "directed_status_violation_count": 0,
+        "aggregate_undirected_status": "UNRESOLVED",
+        "aggregate_status_violation_count": 0
+      }
+    },
+    {
+      "sweep_axis": "COUPLED",
+      "level_index": 6,
+      "epsilon_operator_norm": 0.1,
+      "epsilon_operator_frobenius": 0.1,
+      "eta_sector_rotation_radians": 0.1,
+      "state_level_transition_matrix": [
+        [
+          0.8292893218813453,
+          0.17071067811865476
+        ],
+        [
+          0.2,
+          0.8
+        ]
+      ],
+      "projector_delta_frobenius": [
+        0.1411857717999883,
+        0.1411857717999883
+      ],
+      "sector_semantics": "HILBERT_FRAME_ONLY_NOT_STATE_PARTITION",
+      "kernel_checks": {
+        "row_stochastic_residual_max_abs": 0.0,
+        "minimum_entry": 0.17071067811865476,
+        "nonnegative": true,
+        "positive_support_edge_count": 4,
+        "normality_residual_frobenius": 0.015403191234385447,
+        "normality_status": "FAIL"
+      },
+      "probability_observations": {
+        "claim_status": "BOUNDED_COMPUTATIONAL_OBSERVATION",
+        "state_level_only": true,
+        "stationary_distribution": [
+          0.5395042867796359,
+          0.46049571322036414
+        ],
+        "stationary_eigenvalue_separation": 0.37071067811865466,
+        "eventual_hit_probability_state_0_to_state_1": 1.0,
+        "expected_hitting_time_state_0_to_state_1": 5.857864376269052
+      },
+      "directed_offdiagonal_blocks": [
+        {
+          "source_sector": 0,
+          "target_sector": 1,
+          "reference_block_frobenius": 0.1,
+          "perturbed_block_frobenius": 0.16410646690700137,
+          "actual_ambient_block_difference": 0.06660900425379755,
+          "global_bound": 0.38507756694502504,
+          "localized_bound": 0.24491333068740118,
+          "global_margin_status": "UNRESOLVED",
+          "localized_margin_status": "UNRESOLVED"
+        },
+        {
+          "source_sector": 1,
+          "target_sector": 0,
+          "reference_block_frobenius": 0.2,
+          "perturbed_block_frobenius": 0.19339578878834668,
+          "actual_ambient_block_difference": 0.028541611483183005,
+          "global_bound": 0.38507756694502504,
+          "localized_bound": 0.18323184154529595,
+          "global_margin_status": "UNRESOLVED",
+          "localized_margin_status": "UNRESOLVED"
+        }
+      ],
+      "global_bound": {
+        "maximum": 0.38507756694502504,
+        "maximum_actual_to_bound_ratio": 0.17297555082793717,
+        "bound_violation_count": 0,
+        "directed_margin_counts": {
+          "STABLE_ACTIVE": 0,
+          "STABLE_INACTIVE": 0,
+          "UNRESOLVED": 2
+        },
+        "directed_status_violation_count": 0,
+        "aggregate_undirected_status": "UNRESOLVED",
+        "aggregate_status_violation_count": 0
+      },
+      "localized_bound": {
+        "maximum": 0.24491333068740118,
+        "maximum_actual_to_bound_ratio": 0.2719696966549157,
+        "bound_violation_count": 0,
+        "directed_margin_counts": {
+          "STABLE_ACTIVE": 0,
+          "STABLE_INACTIVE": 0,
+          "UNRESOLVED": 2
+        },
+        "directed_status_violation_count": 0,
+        "aggregate_undirected_status": "UNRESOLVED",
+        "aggregate_status_violation_count": 0
+      }
+    }
+  ],
+  "negative_boundaries": [
+    "The block-activity threshold is not the Markov positive-support threshold.",
+    "A rotated Hilbert sector frame is not a set-valued Markov state partition.",
+    "The probability diagnostics concern the state-level kernel only.",
+    "Block stability does not imply spectral or pseudospectral stability for a nonnormal operator.",
+    "UNRESOLVED is a margin status, not an exact-zero or exact-nonzero claim.",
+    "This finite sweep is not a universal Markov robustness theorem."
+  ],
+  "source_artifacts": [
+    {
+      "uri": "experiments/paper25/markov_stability.py",
+      "sha256": "66ec067f97e070c89622bbf5f07f143f007a410f7b8348d0d82ff66cd4d904d3"
+    },
+    {
+      "uri": "experiments/paper25/markov_helpers.py",
+      "sha256": "4a4136257c13a6b712a2877f19a69500ef9b0c37910e2d72d558c726494b484a"
+    },
+    {
+      "uri": "experiments/paper25/perturbation_sweep.py",
+      "sha256": "2984541512b968d508bd5e90a999b8f4afc5281cd6c61c12bbfa912fb154248d"
+    }
+  ]
+}

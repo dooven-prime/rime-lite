@@ -1,0 +1,138 @@
+{
+  "schema": "rime.paper25.transformation-laws.v1",
+  "bundle_id": "numerical-representation-diagnostics.transformation-laws.v1",
+  "artifact_role": "PAPER25_TRANSFORMATION_LAW_EVIDENCE",
+  "claim_status": "EXACT_FINITE_CERTIFICATE_AND_BOUNDED_NUMERICAL_OBSERVATION",
+  "paper_evidence_status": "REGISTERED_SUPPORT_NOT_THEOREM_PROOF",
+  "diagnostic_registry": [
+    {
+      "diagnostic": "commutant_dimension",
+      "ownership": "REPRESENTATION_INTRINSIC",
+      "required_bindings": [
+        "representation_carrier",
+        "represented_action_or_generator_completeness_witness"
+      ],
+      "law": "invariant under representation equivalence"
+    },
+    {
+      "diagnostic": "weighted_generator_average_similarity_class",
+      "ownership": "GENERATOR_MEASURE_RELATIVE",
+      "required_bindings": [
+        "labelled_generator_family",
+        "label_alignment",
+        "weight_measure"
+      ],
+      "law": "equivariant under simultaneous labelled transport with fixed measure"
+    },
+    {
+      "diagnostic": "generator_resolved_block_norms",
+      "ownership": "SECTORIZATION_RELATIVE",
+      "required_bindings": [
+        "labelled_generator_family",
+        "labelled_projectors",
+        "unitary_transport",
+        "norm"
+      ],
+      "law": "invariant only under simultaneous unitary transport of operators and projectors"
+    },
+    {
+      "diagnostic": "support_or_activity_graph",
+      "ownership": "SECTORIZATION_AND_ZERO_POLICY_RELATIVE",
+      "required_bindings": [
+        "labelled_generator_family",
+        "labelled_projectors",
+        "zero_or_error_policy"
+      ],
+      "law": "transported only with the sectorization and declared exact-zero or threshold policy"
+    }
+  ],
+  "exact_finite_certificate": {
+    "fixture": "C4_regular_labelled_generators_with_coordinate_sectorization",
+    "arithmetic": "Python integer matrices and Fraction trace moments",
+    "generator_completeness_witness": "label r generates the represented C4 action",
+    "commutant_dimension": {
+      "base": 4,
+      "transported": 4,
+      "invariant": true
+    },
+    "fixed_measure_average": {
+      "weights": {
+        "r": 2,
+        "r_inv": 1
+      },
+      "exact_conjugation_residual_max_abs": 0,
+      "base_normalized_trace_moments_1_to_4": [
+        "0/1",
+        "16/9",
+        "0/1",
+        "164/81"
+      ],
+      "transported_normalized_trace_moments_1_to_4": [
+        "0/1",
+        "16/9",
+        "0/1",
+        "164/81"
+      ]
+    },
+    "changed_measure_control": {
+      "alternate_weights": {
+        "r": 1,
+        "r_inv": 1
+      },
+      "alternate_normalized_trace_moments_1_to_4": [
+        "0/1",
+        "2/1",
+        "0/1",
+        "2/1"
+      ],
+      "differs_from_declared_measure": true
+    },
+    "transported_sectorization": {
+      "block_profile_equal": true,
+      "exact_support_graph_equal": true
+    },
+    "untransported_sectorization_hostile_control": {
+      "block_profile_equal": false,
+      "exact_support_graph_equal": false
+    },
+    "nonunitary_similarity_boundary": {
+      "transform_kind": "invertible_unimodular_shear",
+      "commutant_dimension": 4,
+      "fixed_measure_average_similarity_residual_max_abs": 0,
+      "transported_idempotents_remain_idempotent": true,
+      "transported_idempotents_remain_self_adjoint": false,
+      "frobenius_block_profile_equal": false,
+      "boundary": "general similarity preserves the algebraic transport law but does not preserve orthogonal sectorization or Frobenius block norms"
+    }
+  },
+  "bounded_numerical_observation": {
+    "fixture": "dense_continuous_orthogonal_change_of_basis",
+    "arithmetic": "float64 bounded observation",
+    "declared_tolerance": 1e-10,
+    "orthogonality_residual_frobenius": 2.247052143456941e-16,
+    "generator_conjugation_residual_frobenius_max": 0.0,
+    "transported_block_norm_difference_max": 4.440892098500626e-16,
+    "near_zero_policy_control": {
+      "declared_error_bound": 1e-09,
+      "error_bound_status": "INPUT_REQUIRING_OWN_CERTIFICATION",
+      "small_value": 5e-10,
+      "small_value_status": "UNRESOLVED",
+      "resolved_value": 2e-08,
+      "resolved_value_status": "BOUNDED_NONZERO_UNDER_DECLARED_BOUND",
+      "exact_zero_status_reserved_for_exact_arithmetic": true
+    }
+  },
+  "negative_boundaries": [
+    "No concatenated diagnostic vector is declared a representation invariant.",
+    "No reconstruction, tomography, identifiability, or representation-equivalence completeness claim is made.",
+    "A spectral layer is not treated as a subrepresentation without a full-action invariance witness.",
+    "Numerical near-zero blocks remain unresolved unless a separately justified error bound proves nonzero or exact arithmetic proves zero.",
+    "Finite discretization diagnostics do not establish convergence to or reconstruction of an underlying continuous object."
+  ],
+  "source_artifacts": [
+    {
+      "uri": "experiments/paper25/transformation_laws.py",
+      "sha256": "e9ef2eff1ddd8e6d5bd21d4a29d50c8f1e944c442ba655fda68ebc04f34ff554"
+    }
+  ]
+}

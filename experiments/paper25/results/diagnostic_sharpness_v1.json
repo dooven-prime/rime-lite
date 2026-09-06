@@ -1,0 +1,430 @@
+{
+  "schema": "rime.paper25.diagnostic-sharpness-certificate.v1",
+  "artifact_id": "PAPER25-DIAGNOSTIC-SHARPNESS-V1",
+  "evidence_layer": "EXACT_INTEGER_FRACTION_CERTIFICATE",
+  "claim_status": "EXACT_FINITE_CERTIFICATE",
+  "paper_evidence_status": "REGISTERED_THEOREM_SUPPORT_NOT_PROOF",
+  "arithmetic": "fractions.Fraction exact rational arithmetic",
+  "frozen_protocol": {
+    "integer_backend": "Python int",
+    "rational_backend": "fractions.Fraction",
+    "floating_point": false,
+    "norms": {
+      "primary": "exact Frobenius norm via squared entries",
+      "operator_norm": "exact witness identities; squared values recorded"
+    },
+    "threshold_policy": {
+      "reference_norm": "1/1",
+      "error_radius": "1/1",
+      "threshold": "1/1",
+      "unresolved": "n-b <= tau < n+b"
+    },
+    "zero_policy": {
+      "exact_zero": "literal Fraction(0)",
+      "near_zero": "not applicable; no tolerance substitution"
+    },
+    "numerical_environment": {
+      "python": "3.13.0",
+      "encoding": "UTF-8",
+      "line_endings": "LF"
+    }
+  },
+  "claim_surface": [
+    "Theorem 3.3",
+    "Theorem 3.4",
+    "Definition 3.6",
+    "Theorem 3.7",
+    "Theorem 3.8",
+    "Corollary 3.9",
+    "Theorem 3.10",
+    "Theorem 4.2"
+  ],
+  "one_axis_sharpness": {
+    "operator_axis": {
+      "epsilon_frobenius": "7/5",
+      "actual_difference_squared": "49/25",
+      "global_bound_squared": "49/25",
+      "equality": true
+    },
+    "left_projector_axis": {
+      "operator_norm": "7/4",
+      "projector_delta_squared": "18/25",
+      "actual_difference_squared": "441/200",
+      "global_bound_squared": "441/200",
+      "equality": true
+    },
+    "right_projector_axis": {
+      "operator_norm": "7/4",
+      "projector_delta_squared": "18/25",
+      "actual_difference_squared": "441/200",
+      "global_bound_squared": "441/200",
+      "equality": true
+    }
+  },
+  "fixed_global_data_localization_family": [
+    {
+      "alpha": "0/1",
+      "operator_norm_squared": "25/9",
+      "frobenius_norm_squared": "25/9",
+      "localized_error_squared": "0/1",
+      "localized_to_global_ratio_squared": "0/1"
+    },
+    {
+      "alpha": "3/5",
+      "operator_norm_squared": "25/9",
+      "frobenius_norm_squared": "25/9",
+      "localized_error_squared": "1/1",
+      "localized_to_global_ratio_squared": "9/25"
+    },
+    {
+      "alpha": "1/1",
+      "operator_norm_squared": "25/9",
+      "frobenius_norm_squared": "25/9",
+      "localized_error_squared": "25/9",
+      "localized_to_global_ratio_squared": "1/1"
+    }
+  ],
+  "carrier_information_lattice": {
+    "hasse_edges": [
+      [
+        "I_G",
+        "I_L"
+      ],
+      [
+        "I_G",
+        "I_R"
+      ],
+      [
+        "I_L",
+        "I_LR"
+      ],
+      [
+        "I_R",
+        "I_LR"
+      ],
+      [
+        "I_LR",
+        "I_loc"
+      ]
+    ],
+    "rank_one_rational_grid": [
+      {
+        "left_coordinate": "0/1",
+        "right_coordinate": "0/1",
+        "global_operator_norm": "1/1",
+        "global_frobenius_norm": "1/1",
+        "left_semilocal_norm": "0/1",
+        "right_semilocal_norm": "0/1",
+        "local_norm": "0/1",
+        "U_G": "1/1",
+        "U_L": "0/1",
+        "U_R": "0/1",
+        "U_LR": "0/1",
+        "U_loc": "0/1"
+      },
+      {
+        "left_coordinate": "0/1",
+        "right_coordinate": "3/5",
+        "global_operator_norm": "1/1",
+        "global_frobenius_norm": "1/1",
+        "left_semilocal_norm": "0/1",
+        "right_semilocal_norm": "3/5",
+        "local_norm": "0/1",
+        "U_G": "1/1",
+        "U_L": "0/1",
+        "U_R": "3/5",
+        "U_LR": "0/1",
+        "U_loc": "0/1"
+      },
+      {
+        "left_coordinate": "0/1",
+        "right_coordinate": "4/5",
+        "global_operator_norm": "1/1",
+        "global_frobenius_norm": "1/1",
+        "left_semilocal_norm": "0/1",
+        "right_semilocal_norm": "4/5",
+        "local_norm": "0/1",
+        "U_G": "1/1",
+        "U_L": "0/1",
+        "U_R": "4/5",
+        "U_LR": "0/1",
+        "U_loc": "0/1"
+      },
+      {
+        "left_coordinate": "0/1",
+        "right_coordinate": "1/1",
+        "global_operator_norm": "1/1",
+        "global_frobenius_norm": "1/1",
+        "left_semilocal_norm": "0/1",
+        "right_semilocal_norm": "1/1",
+        "local_norm": "0/1",
+        "U_G": "1/1",
+        "U_L": "0/1",
+        "U_R": "1/1",
+        "U_LR": "0/1",
+        "U_loc": "0/1"
+      },
+      {
+        "left_coordinate": "3/5",
+        "right_coordinate": "0/1",
+        "global_operator_norm": "1/1",
+        "global_frobenius_norm": "1/1",
+        "left_semilocal_norm": "3/5",
+        "right_semilocal_norm": "0/1",
+        "local_norm": "0/1",
+        "U_G": "1/1",
+        "U_L": "3/5",
+        "U_R": "0/1",
+        "U_LR": "0/1",
+        "U_loc": "0/1"
+      },
+      {
+        "left_coordinate": "3/5",
+        "right_coordinate": "3/5",
+        "global_operator_norm": "1/1",
+        "global_frobenius_norm": "1/1",
+        "left_semilocal_norm": "3/5",
+        "right_semilocal_norm": "3/5",
+        "local_norm": "9/25",
+        "U_G": "1/1",
+        "U_L": "3/5",
+        "U_R": "3/5",
+        "U_LR": "3/5",
+        "U_loc": "9/25"
+      },
+      {
+        "left_coordinate": "3/5",
+        "right_coordinate": "4/5",
+        "global_operator_norm": "1/1",
+        "global_frobenius_norm": "1/1",
+        "left_semilocal_norm": "3/5",
+        "right_semilocal_norm": "4/5",
+        "local_norm": "12/25",
+        "U_G": "1/1",
+        "U_L": "3/5",
+        "U_R": "4/5",
+        "U_LR": "3/5",
+        "U_loc": "12/25"
+      },
+      {
+        "left_coordinate": "3/5",
+        "right_coordinate": "1/1",
+        "global_operator_norm": "1/1",
+        "global_frobenius_norm": "1/1",
+        "left_semilocal_norm": "3/5",
+        "right_semilocal_norm": "1/1",
+        "local_norm": "3/5",
+        "U_G": "1/1",
+        "U_L": "3/5",
+        "U_R": "1/1",
+        "U_LR": "3/5",
+        "U_loc": "3/5"
+      },
+      {
+        "left_coordinate": "4/5",
+        "right_coordinate": "0/1",
+        "global_operator_norm": "1/1",
+        "global_frobenius_norm": "1/1",
+        "left_semilocal_norm": "4/5",
+        "right_semilocal_norm": "0/1",
+        "local_norm": "0/1",
+        "U_G": "1/1",
+        "U_L": "4/5",
+        "U_R": "0/1",
+        "U_LR": "0/1",
+        "U_loc": "0/1"
+      },
+      {
+        "left_coordinate": "4/5",
+        "right_coordinate": "3/5",
+        "global_operator_norm": "1/1",
+        "global_frobenius_norm": "1/1",
+        "left_semilocal_norm": "4/5",
+        "right_semilocal_norm": "3/5",
+        "local_norm": "12/25",
+        "U_G": "1/1",
+        "U_L": "4/5",
+        "U_R": "3/5",
+        "U_LR": "3/5",
+        "U_loc": "12/25"
+      },
+      {
+        "left_coordinate": "4/5",
+        "right_coordinate": "4/5",
+        "global_operator_norm": "1/1",
+        "global_frobenius_norm": "1/1",
+        "left_semilocal_norm": "4/5",
+        "right_semilocal_norm": "4/5",
+        "local_norm": "16/25",
+        "U_G": "1/1",
+        "U_L": "4/5",
+        "U_R": "4/5",
+        "U_LR": "4/5",
+        "U_loc": "16/25"
+      },
+      {
+        "left_coordinate": "4/5",
+        "right_coordinate": "1/1",
+        "global_operator_norm": "1/1",
+        "global_frobenius_norm": "1/1",
+        "left_semilocal_norm": "4/5",
+        "right_semilocal_norm": "1/1",
+        "local_norm": "4/5",
+        "U_G": "1/1",
+        "U_L": "4/5",
+        "U_R": "1/1",
+        "U_LR": "4/5",
+        "U_loc": "4/5"
+      },
+      {
+        "left_coordinate": "1/1",
+        "right_coordinate": "0/1",
+        "global_operator_norm": "1/1",
+        "global_frobenius_norm": "1/1",
+        "left_semilocal_norm": "1/1",
+        "right_semilocal_norm": "0/1",
+        "local_norm": "0/1",
+        "U_G": "1/1",
+        "U_L": "1/1",
+        "U_R": "0/1",
+        "U_LR": "0/1",
+        "U_loc": "0/1"
+      },
+      {
+        "left_coordinate": "1/1",
+        "right_coordinate": "3/5",
+        "global_operator_norm": "1/1",
+        "global_frobenius_norm": "1/1",
+        "left_semilocal_norm": "1/1",
+        "right_semilocal_norm": "3/5",
+        "local_norm": "3/5",
+        "U_G": "1/1",
+        "U_L": "1/1",
+        "U_R": "3/5",
+        "U_LR": "3/5",
+        "U_loc": "3/5"
+      },
+      {
+        "left_coordinate": "1/1",
+        "right_coordinate": "4/5",
+        "global_operator_norm": "1/1",
+        "global_frobenius_norm": "1/1",
+        "left_semilocal_norm": "1/1",
+        "right_semilocal_norm": "4/5",
+        "local_norm": "4/5",
+        "U_G": "1/1",
+        "U_L": "1/1",
+        "U_R": "4/5",
+        "U_LR": "4/5",
+        "U_loc": "4/5"
+      },
+      {
+        "left_coordinate": "1/1",
+        "right_coordinate": "1/1",
+        "global_operator_norm": "1/1",
+        "global_frobenius_norm": "1/1",
+        "left_semilocal_norm": "1/1",
+        "right_semilocal_norm": "1/1",
+        "local_norm": "1/1",
+        "U_G": "1/1",
+        "U_L": "1/1",
+        "U_R": "1/1",
+        "U_LR": "1/1",
+        "U_loc": "1/1"
+      }
+    ],
+    "semilocal_incomparability": {
+      "E_11": {
+        "global_2": "1/1",
+        "global_F": "1/1",
+        "left": "1/1",
+        "right": "1/1",
+        "local": "1/1"
+      },
+      "E_12": {
+        "global_2": "1/1",
+        "global_F": "1/1",
+        "left": "1/1",
+        "right": "0/1",
+        "local": "0/1"
+      },
+      "E_21": {
+        "global_2": "1/1",
+        "global_F": "1/1",
+        "left": "0/1",
+        "right": "1/1",
+        "local": "0/1"
+      }
+    },
+    "bilateral_semilocal_nonidentifiability": {
+      "identity": {
+        "global_2": "1/1",
+        "global_F_squared": "2/1",
+        "left": "1/1",
+        "right": "1/1",
+        "local": "1/1"
+      },
+      "swap": {
+        "global_2": "1/1",
+        "global_F_squared": "2/1",
+        "left": "1/1",
+        "right": "1/1",
+        "local": "0/1"
+      }
+    }
+  },
+  "three_axis_joint_strictness": {
+    "cosine": "4/5",
+    "sine": "3/5",
+    "epsilon_frobenius": "1/2",
+    "left_projector_delta_squared": "18/25",
+    "right_projector_delta_squared": "18/25",
+    "carrier_error_parallel_squared": "0/1",
+    "carrier_error_perpendicular_squared": "369/625",
+    "left_localized_term_squared": "144/625",
+    "right_localized_term_squared": "9/25",
+    "exact_additive_supremum_squared": "2101/2500",
+    "localized_three_term_sum": "79/50",
+    "localized_sum_squared": "6241/2500",
+    "global_sum": "6*sqrt(2)/5+1/2",
+    "strictly_below_localized_sum": true,
+    "strictly_below_global_sum": true
+  },
+  "localized_triangle_equality": {
+    "dimension": 3,
+    "left_term_squared": "1/1",
+    "additive_term_squared": "1/1",
+    "right_term_squared": "0/1",
+    "actual_difference_squared": "4/1",
+    "localized_bound": "2/1",
+    "equality": true,
+    "active_term_count": 2
+  },
+  "unresolved_two_sided_realization": {
+    "reference_norm": "1/1",
+    "error_budget": "1/1",
+    "threshold": "1/1",
+    "policy_status": "UNRESOLVED",
+    "inactive_realization": {
+      "perturbed_norm": "0/1",
+      "error_norm": "1/1",
+      "status": "INACTIVE"
+    },
+    "active_realization": {
+      "perturbed_norm": "2/1",
+      "error_norm": "1/1",
+      "status": "ACTIVE"
+    }
+  },
+  "source_artifacts": [
+    {
+      "path": "experiments/paper25/sharpness_controls.py",
+      "sha256": "2c95400fa01271cea949c774e105d71631c913e2ce9eaefdcc33c0686e53e0ec"
+    },
+    {
+      "path": "papers/paper25/Paper XXV.md",
+      "sha256": "55d530da99725c33f6c04a3083939c94f5375ed48151d18d059c7e7ac1cee415"
+    }
+  ],
+  "content_sha256": "04de9d455594964ac9a0b6980451d1b2fa5a386bdbe24da154916fa1d21bcc59"
+}

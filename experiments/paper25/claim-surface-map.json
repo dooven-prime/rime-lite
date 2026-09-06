@@ -1,0 +1,81 @@
+{
+  "schema": "rime.paper25.claim-surface-map.v2",
+  "map_id": "PAPER25-CLAIM-SURFACE-V2",
+  "manuscript": "papers/paper25/Paper XXV.md",
+  "evidence_layers": [
+    "EXACT_INTEGER_FRACTION_CERTIFICATE",
+    "BOUNDED_FLOAT64_OBSERVATION"
+  ],
+  "claims": [
+    {
+      "claim_id": "C1",
+      "surface": "Theorem 2.1, Corollary 2.2, and Boundary 2.3",
+      "manuscript_markers": ["**Theorem 2.1", "**Corollary 2.2", "**Boundary 2.3"],
+      "authority": "manuscript proof",
+      "support_scope": "The exact component checks finite integer/Fraction transport identities. The Rubik float64 observation tests simultaneous transport and a hostile fixed-frame control.",
+      "support": [
+        {
+          "path": "experiments/paper25/results/transformation_laws_v1.json",
+          "component": "exact_finite_certificate",
+          "evidence_layer": "EXACT_INTEGER_FRACTION_CERTIFICATE"
+        },
+        {
+          "path": "experiments/paper25/results/transformation_laws_v1.json",
+          "component": "bounded_numerical_observation",
+          "evidence_layer": "BOUNDED_FLOAT64_OBSERVATION"
+        },
+        {
+          "path": "experiments/paper25/results/rubik_qh_transport_v1.json",
+          "component": "whole_artifact",
+          "evidence_layer": "BOUNDED_FLOAT64_OBSERVATION"
+        }
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "surface": "Theorem 3.1, Extension 3.1a, and Corollaries 4.1 and 4.3",
+      "manuscript_markers": ["**Theorem 3.1", "**Extension 3.1a", "**Corollary 4.1", "**Corollary 4.3"],
+      "authority": "manuscript proof",
+      "support_scope": "The Rubik observation exercises the orthogonal specialization; Extension 3.1a is a proof-only consequence.",
+      "support": [
+        {
+          "path": "experiments/paper25/results/rubik_perturbation_sweep_v1.json",
+          "component": "whole_artifact",
+          "evidence_layer": "BOUNDED_FLOAT64_OBSERVATION"
+        }
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "surface": "Definition 3.6; Theorems 3.3, 3.4, 3.7, 3.8, 3.10; Corollary 3.9; Theorem 4.2",
+      "manuscript_markers": ["**Theorem 3.3", "**Theorem 3.4", "**Definition 3.6", "**Theorem 3.7", "**Theorem 3.8", "**Corollary 3.9", "**Theorem 3.10", "**Theorem 4.2"],
+      "authority": "manuscript proof",
+      "support": [
+        {
+          "path": "experiments/paper25/results/diagnostic_sharpness_v1.json",
+          "component": "whole_artifact",
+          "evidence_layer": "EXACT_INTEGER_FRACTION_CERTIFICATE"
+        }
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "surface": "Corollary 5.1",
+      "manuscript_markers": ["**Corollary 5.1"],
+      "authority": "manuscript proof",
+      "support_scope": "The Markov records are a two-state portability and cross-layer example; they do not support a general Markov stability claim.",
+      "support": [
+        {
+          "path": "experiments/paper25/results/nonnormal_markov_stability_v1.json",
+          "component": "whole_artifact",
+          "evidence_layer": "BOUNDED_FLOAT64_OBSERVATION"
+        },
+        {
+          "path": "experiments/paper25/results/markov_probability_alignment_v1.json",
+          "component": "whole_artifact",
+          "evidence_layer": "BOUNDED_FLOAT64_OBSERVATION"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,386 @@
+{
+  "schema": "rime.paper25.release-receipt.v1",
+  "artifact_id": "PAPER25-V1-RELEASE-CLOSURE",
+  "status": "PASS",
+  "validation_mode": "LOCAL_CLOSURE_VERIFICATION",
+  "scope": "Exact release-byte closure; not independent validation or theorem proof",
+  "receipt_self_exclusion": true,
+  "artifact_closure": {
+    "artifact_count": 53,
+    "closure_digest": "23a49d8195bacdf7c0c1e3926d65b85f6515a11c394bde224dd59f06dd71e791",
+    "ordered_artifacts": [
+      {
+        "role": "manuscript",
+        "artifact": {
+          "uri": "papers/paper25/Paper XXV.md",
+          "sha256": "55d530da99725c33f6c04a3083939c94f5375ed48151d18d059c7e7ac1cee415"
+        }
+      },
+      {
+        "role": "reader-pdf",
+        "artifact": {
+          "uri": "papers/paper25/paper25_arxiv.pdf",
+          "sha256": "56145156ebd81e4cd3d2ef94daafb8ffd434a17beb7d1156fc23f8e2bd20399e"
+        }
+      },
+      {
+        "role": "bibliography",
+        "artifact": {
+          "uri": "papers/paper25/references-v1.bib",
+          "sha256": "a1ae80f97ec7bba1c5557769e6b3266f5686a1d423848237d6d4619772d60d17"
+        }
+      },
+      {
+        "role": "figure-source",
+        "artifact": {
+          "uri": "figures/paper25/render.py",
+          "sha256": "81605f24cbdbab4409ab44189e1153eae479da6ccc72780afe80d224bd959d3d"
+        }
+      },
+      {
+        "role": "figure-style-helper",
+        "artifact": {
+          "uri": "figures/sof_figure_utils.py",
+          "sha256": "cea67f9c0e02e9bae7d6aee9e4ce34af3fa209cef66cdd35c8b01fe2727bfee9"
+        }
+      },
+      {
+        "role": "figure",
+        "artifact": {
+          "uri": "figures/paper25/fig1_transport_information_lattice.png",
+          "sha256": "d0cf21775586fe6e59571d5f33fbb28fe30d58da84c8b2dcdd87ae2d75eb4844"
+        }
+      },
+      {
+        "role": "supplement-note",
+        "artifact": {
+          "uri": "experiments/paper25/notes/proportional_markov_semantic_lift/NOTE.md",
+          "sha256": "7e33da69629949331bf9e064dc13b0ed6fea69f5f9080245a2cc3bf05bcc04bb"
+        }
+      },
+      {
+        "role": "supplement-claim-surface-map",
+        "artifact": {
+          "uri": "experiments/paper25/notes/proportional_markov_semantic_lift/claim-surface-map.json",
+          "sha256": "31160fa13f7ba3aaaf654eaa3efb69bd694b4fa1e270433b5a15a70ecd1c7f4b"
+        }
+      },
+      {
+        "role": "supplement-audit",
+        "artifact": {
+          "uri": "experiments/paper25/notes/proportional_markov_semantic_lift/markov_nstate_lift_v2.json",
+          "sha256": "3c726e538c761be3035f1b799b84313ac5e4a8888b3a33449594eb3f09cc8de9"
+        }
+      },
+      {
+        "role": "supplement-validator",
+        "artifact": {
+          "uri": "experiments/paper25/notes/proportional_markov_semantic_lift/validate_note.py",
+          "sha256": "45584574084a05216ebe6cf0b1245c04260838b5d8c2ddc1220b4808e7aed603"
+        }
+      },
+      {
+        "role": "supplement-validator",
+        "artifact": {
+          "uri": "experiments/paper25/notes/proportional_markov_semantic_lift/validate_nstate_audit.py",
+          "sha256": "da4238763e6435f4384f44c942902979af50dbb0896f7514327718350c549a8a"
+        }
+      },
+      {
+        "role": "lean-formalization-readme",
+        "artifact": {
+          "uri": "experiments/paper25/lean/README.md",
+          "sha256": "b1df217bb712f4091ae15adf1a3a10a95bee08ed788368c661993345bc62bf7e"
+        }
+      },
+      {
+        "role": "lean-formalization-manifest",
+        "artifact": {
+          "uri": "experiments/paper25/lean/formalization-manifest.json",
+          "sha256": "13ae4874bd9914c60d5082090388f5f63c137ed4647ec8394cc9e2c64807ab9b"
+        }
+      },
+      {
+        "role": "lean-toolchain",
+        "artifact": {
+          "uri": "experiments/paper25/lean/lean-toolchain",
+          "sha256": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b"
+        }
+      },
+      {
+        "role": "lean-lakefile",
+        "artifact": {
+          "uri": "experiments/paper25/lean/lakefile.toml",
+          "sha256": "6540e595c1a2b5e4ded97aa419a36129ddc229e352fcdf7b5643525f04b01cf2"
+        }
+      },
+      {
+        "role": "lean-lock",
+        "artifact": {
+          "uri": "experiments/paper25/lean/lake-manifest.json",
+          "sha256": "7910e312d3fab5e25884c03ea83235afe74068c3e4a27047881657674750ec09"
+        }
+      },
+      {
+        "role": "lean-entrypoint",
+        "artifact": {
+          "uri": "experiments/paper25/lean/Formalization.lean",
+          "sha256": "8932eec77d1256a5fa8b5c40301dc87106c5d577ff86c6e0cf78918ea03a645b"
+        }
+      },
+      {
+        "role": "lean-source",
+        "artifact": {
+          "uri": "experiments/paper25/lean/Formalization/Transport.lean",
+          "sha256": "d5a25a48f8eb81a16447097a68573cc7e11cd10306554a95872897346a848884"
+        }
+      },
+      {
+        "role": "lean-source",
+        "artifact": {
+          "uri": "experiments/paper25/lean/Formalization/Margin.lean",
+          "sha256": "b7225f139e084abc4767dc851db5b92d9f43e9d66cffce20d0d0bac241889fc5"
+        }
+      },
+      {
+        "role": "lean-validator",
+        "artifact": {
+          "uri": "experiments/paper25/validation/validate_lean_formalization.py",
+          "sha256": "bc512a7d069f553ff7a494ce7ec6e45ff7bc9d97b901b49c1bd485f5011d7693"
+        }
+      },
+      {
+        "role": "lean-validation-receipt",
+        "artifact": {
+          "uri": "experiments/paper25/results/paper25_lean_formalization_v1.receipt.json",
+          "sha256": "37f8324db0ac5857401b20a98be875f4cf09f29489712c417e670ff4cf0c2900"
+        }
+      },
+      {
+        "role": "release-environment",
+        "artifact": {
+          "uri": "experiments/paper25/release-environment.json",
+          "sha256": "9301e53f9dfbda175148cfe29fe223d09b1103e4e759a1ca3c470c6aaef48d08"
+        }
+      },
+      {
+        "role": "evidence-readme",
+        "artifact": {
+          "uri": "experiments/paper25/README.md",
+          "sha256": "ee7c0371e29896cb0f2cf2c9ee5b277e3c970b1a0bdd071fa47224d4bf18c7e1"
+        }
+      },
+      {
+        "role": "claim-surface-map",
+        "artifact": {
+          "uri": "experiments/paper25/claim-surface-map.json",
+          "sha256": "a534576c975132af6e18630b4c9fdba8f23bd590a088dba9a1e5a85bb1bc76db"
+        }
+      },
+      {
+        "role": "claim-surface-validator",
+        "artifact": {
+          "uri": "experiments/paper25/validation/validate_claim_surface.py",
+          "sha256": "448d0a0f17a4ed4f46cb23d8d6c5d92e8e81bcd7fd99a2afa8b87c2d55914969"
+        }
+      },
+      {
+        "role": "exact-producer",
+        "artifact": {
+          "uri": "experiments/paper25/sharpness_controls.py",
+          "sha256": "2c95400fa01271cea949c774e105d71631c913e2ce9eaefdcc33c0686e53e0ec"
+        }
+      },
+      {
+        "role": "observation-producer",
+        "artifact": {
+          "uri": "experiments/paper25/generate_observations.py",
+          "sha256": "ce3d9b7c6b57d15165db99c0c41d969e8b054807c2867f0d4e9abd101c326650"
+        }
+      },
+      {
+        "role": "implementation",
+        "artifact": {
+          "uri": "experiments/paper25/transformation_laws.py",
+          "sha256": "e9ef2eff1ddd8e6d5bd21d4a29d50c8f1e944c442ba655fda68ebc04f34ff554"
+        }
+      },
+      {
+        "role": "implementation",
+        "artifact": {
+          "uri": "experiments/paper25/rubik_transport.py",
+          "sha256": "1f3596c0a071497612e61f16e78b57a8d62d07c40eca4ba9ad8ebef3778fcb0c"
+        }
+      },
+      {
+        "role": "implementation",
+        "artifact": {
+          "uri": "experiments/paper25/perturbation_sweep.py",
+          "sha256": "2984541512b968d508bd5e90a999b8f4afc5281cd6c61c12bbfa912fb154248d"
+        }
+      },
+      {
+        "role": "implementation",
+        "artifact": {
+          "uri": "experiments/paper25/markov_helpers.py",
+          "sha256": "4a4136257c13a6b712a2877f19a69500ef9b0c37910e2d72d558c726494b484a"
+        }
+      },
+      {
+        "role": "implementation",
+        "artifact": {
+          "uri": "experiments/paper25/markov_stability.py",
+          "sha256": "66ec067f97e070c89622bbf5f07f143f007a410f7b8348d0d82ff66cd4d904d3"
+        }
+      },
+      {
+        "role": "implementation",
+        "artifact": {
+          "uri": "experiments/paper25/markov_probability_alignment.py",
+          "sha256": "62501a977e2b9d7b8b5ca615ce90c18f22f4f618afd5da5121a626225625b2de"
+        }
+      },
+      {
+        "role": "runtime-source",
+        "artifact": {
+          "uri": "rime/base.py",
+          "sha256": "c10377864a1335635b646b686866e0c97661f49b1bfd1d092616b73a0b5446ce"
+        }
+      },
+      {
+        "role": "runtime-source",
+        "artifact": {
+          "uri": "rime/cube.py",
+          "sha256": "5adbf4596f2f82f83f4d373bd1a57279b4128911c75d45fbf9d2e905260a4304"
+        }
+      },
+      {
+        "role": "runtime-source",
+        "artifact": {
+          "uri": "rime/cubie.py",
+          "sha256": "5120fd2688153bb7f8ad6f0bd77844fbdf9352ee430ec3e4166e3d991db60730"
+        }
+      },
+      {
+        "role": "runtime-source",
+        "artifact": {
+          "uri": "rime/cubieoperator.py",
+          "sha256": "559a6dbde4a3f239e260c603fa6c544007400d76d1efcf88f2c5d19d1f77c3df"
+        }
+      },
+      {
+        "role": "runtime-source",
+        "artifact": {
+          "uri": "rime/helpers.py",
+          "sha256": "20247dad40d503913cb20a4b8cbde923c12187460c584e55d770308cc3d7bd12"
+        }
+      },
+      {
+        "role": "runtime-source",
+        "artifact": {
+          "uri": "rime/spectral_utils.py",
+          "sha256": "5e456b904d75e93a373ad5d1ec3b846303a498d8e45d6ae0b2548f3040917799"
+        }
+      },
+      {
+        "role": "exact-certificate",
+        "artifact": {
+          "uri": "experiments/paper25/results/diagnostic_sharpness_v1.json",
+          "sha256": "cc7f17a4908440e9f218132f01d9bc1834d9c5d0ab97a40616bee7e5cf926268"
+        }
+      },
+      {
+        "role": "exact-validator",
+        "artifact": {
+          "uri": "experiments/paper25/validation/validate_sharpness.py",
+          "sha256": "61e89c9a276d90f296449cebd0c41e1bbe60b5396820995fd2eaec9afc131447"
+        }
+      },
+      {
+        "role": "validation-receipt",
+        "artifact": {
+          "uri": "experiments/paper25/results/diagnostic_sharpness_v1.validation-receipt.json",
+          "sha256": "c2a1e883292d07f5980a5dfe9982ba61e62173dd432a1e2a342386a5e8bfa6fd"
+        }
+      },
+      {
+        "role": "bounded-observation-registry-producer",
+        "artifact": {
+          "uri": "experiments/paper25/register_bounded_observations.py",
+          "sha256": "ae2344f678a45ca6e20a41d9aee195d6af5d2b238aef2d4f8ca8d3055f668b21"
+        }
+      },
+      {
+        "role": "bounded-observation-registry",
+        "artifact": {
+          "uri": "experiments/paper25/results/bounded_observation_registry_v1.json",
+          "sha256": "7cde0617f1e1f3438fd2a6aa3f37d19b53450dd603b555ac05b87046358b703a"
+        }
+      },
+      {
+        "role": "bounded-observation-registry-validator",
+        "artifact": {
+          "uri": "experiments/paper25/validation/validate_bounded_observations.py",
+          "sha256": "b3fddd6bec00f0efb8c6b8a2c841879e8dd3c4663ed6da2159c54e961967681b"
+        }
+      },
+      {
+        "role": "bounded-observation-registry-receipt",
+        "artifact": {
+          "uri": "experiments/paper25/results/bounded_observation_registry_v1.validation-receipt.json",
+          "sha256": "257aacd87bcfed535f3bed62c01a49437d06d29823c46e7ae43009bedac6d1de"
+        }
+      },
+      {
+        "role": "release-validator",
+        "artifact": {
+          "uri": "experiments/paper25/validation/validate_release.py",
+          "sha256": "ec45cd488c7d5c1940bc100b7c954f4079c0657da984187a585ba2c9bbbc7983"
+        }
+      },
+      {
+        "role": "bounded-rubik-observation",
+        "artifact": {
+          "uri": "experiments/paper25/results/transformation_laws_v1.json",
+          "sha256": "6a19a6a4a453ddfa65f9b89b38ada8cf2af0ab57ce9d3035590c092453743d8b"
+        }
+      },
+      {
+        "role": "bounded-rubik-observation",
+        "artifact": {
+          "uri": "experiments/paper25/results/rubik_qh_transport_v1.json",
+          "sha256": "196b0e26c479a34adec116c9dff5d827b05c54e5664ce731d652a4ffd799e07c"
+        }
+      },
+      {
+        "role": "bounded-rubik-observation",
+        "artifact": {
+          "uri": "experiments/paper25/results/rubik_perturbation_sweep_v1.json",
+          "sha256": "0f75989bbe9c670c37a1d796c78701c7c9d22f0174c40fc6ca2ab71b12d3f831"
+        }
+      },
+      {
+        "role": "bounded-markov-observation",
+        "artifact": {
+          "uri": "experiments/paper25/results/nonnormal_markov_stability_v1.json",
+          "sha256": "39ecb5db58cf823f2163c43a46136972faca3af9cbf253f2cba16c734e3d3411"
+        }
+      },
+      {
+        "role": "bounded-markov-observation",
+        "artifact": {
+          "uri": "experiments/paper25/results/markov_probability_alignment_v1.json",
+          "sha256": "8f2aa7f4f5a41d8faf9d256f15228b905b3de15c1dc3a2f5de79ecd764d5e8a9"
+        }
+      },
+      {
+        "role": "release-manifest",
+        "artifact": {
+          "uri": "experiments/paper25/release-manifest.json",
+          "sha256": "2aaacb7adcbaa65a334566175622c98b54f3ca6a1816ee5c9044de44833dd19a"
+        }
+      }
+    ]
+  },
+  "content_sha256": "05c2b83aee1c883a8061d15e0074fed444121c152e7174bf3a2efbfdb14e104e"
+}

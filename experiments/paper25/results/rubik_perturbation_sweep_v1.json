@@ -1,0 +1,1258 @@
+{
+  "schema": "rime.paper25.rubik-perturbation-sweep.v1",
+  "bundle_id": "numerical-representation-diagnostics.rubik-perturbation-sweep.v1",
+  "artifact_role": "PAPER25_PERTURBATION_STABILITY_EVIDENCE",
+  "claim_status": "BOUNDED_NUMERICAL_OBSERVATION",
+  "paper_evidence_status": "REGISTERED_SUPPORT_NOT_THEOREM_PROOF",
+  "environment": {
+    "python": "3.13.0",
+    "numpy": "2.1.3",
+    "scipy": "1.18.0",
+    "arithmetic": "complex128/float64"
+  },
+  "carrier": {
+    "carrier_id": "canonical_cubie_representation_228d",
+    "generator_count": 18,
+    "generator_labels": [
+      "axis0:side-1:turn-1",
+      "axis0:side-1:turn+1",
+      "axis0:side-1:turn+2",
+      "axis0:side+1:turn-1",
+      "axis0:side+1:turn+1",
+      "axis0:side+1:turn+2",
+      "axis1:side-1:turn-1",
+      "axis1:side-1:turn+1",
+      "axis1:side-1:turn+2",
+      "axis1:side+1:turn-1",
+      "axis1:side+1:turn+1",
+      "axis1:side+1:turn+2",
+      "axis2:side-1:turn-1",
+      "axis2:side-1:turn+1",
+      "axis2:side-1:turn+2",
+      "axis2:side+1:turn-1",
+      "axis2:side+1:turn+1",
+      "axis2:side+1:turn+2"
+    ],
+    "sector_dimensions": [
+      20,
+      2,
+      39,
+      26,
+      1,
+      39,
+      66,
+      8,
+      27
+    ],
+    "nominal_transport": "rubik_qh_transport_v1 two-plane rotation at theta=0.43"
+  },
+  "perturbation_model": {
+    "operator": "E_a = sign(a) epsilon |S1:0><S2:0| in nominal transported coordinates",
+    "sectorization": "Q'_i = W_eta Q_i W_eta* with W_eta rotating S1:0 and S2:0",
+    "operator_norms": "||E_a||_2 = ||E_a||_F = epsilon",
+    "projector_delta": "Delta_i = Q'_i - Q_i; recorded in Frobenius norm"
+  },
+  "stability_bound": {
+    "global_block_difference": "||Q'_i Y'_a Q'_j - Q_i Y_a Q_j||_F <= ||Delta_i||_F (1 + epsilon_a) + epsilon_a + ||Delta_j||_F",
+    "carrier_localized_block_difference": "||Q'_i Y'_a Q'_j - Q_i Y_a Q_j||_F <= ||Delta_i Y'_a Q'_j||_F + ||Q_i E_a Q'_j||_F + ||Q_i Y_a Delta_j||_F",
+    "premises": [
+      "Y_a is unitary, hence ||Y_a||_2 = 1",
+      "Q_i and Q'_i are orthogonal projectors",
+      "||E_a||_2 = ||E_a||_F = epsilon_a"
+    ],
+    "localized_data_requirement": "carrier-localized perturbation actions must be available; the localized bound is not inferred from global norms alone",
+    "comparison_tolerance": 2e-10
+  },
+  "support_margin_policy": {
+    "threshold": 0.05,
+    "stable_active": "reference_norm - bound > threshold",
+    "stable_inactive": "reference_norm + bound <= threshold",
+    "unresolved": "otherwise",
+    "inactive_is_exact_zero": false,
+    "comparison": "the same policy is evaluated with global and carrier-localized bounds"
+  },
+  "sweep_levels": [
+    0.0,
+    1e-06,
+    0.0001,
+    0.001,
+    0.01,
+    0.05
+  ],
+  "records": [
+    {
+      "sweep_axis": "OPERATOR_ONLY",
+      "level_index": 0,
+      "epsilon_operator_frobenius": 0.0,
+      "epsilon_operator_norm": 0.0,
+      "eta_sector_rotation_radians": 0.0,
+      "projector_delta_frobenius": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_projector_delta_frobenius": 0.0,
+      "maximum_actual_block_difference": 0.0,
+      "maximum_declared_bound": 0.0,
+      "minimum_positive_declared_bound": 0.0,
+      "maximum_actual_to_bound_ratio": 0.0,
+      "bound_violation_count": 0,
+      "generator_coordinate_margin_counts": {
+        "STABLE_ACTIVE": 288,
+        "STABLE_INACTIVE": 1008,
+        "UNRESOLVED": 0
+      },
+      "generator_coordinate_status_violation_count": 0,
+      "aggregate_undirected_margin_counts": {
+        "STABLE_ACTIVE": 10,
+        "STABLE_INACTIVE": 26,
+        "UNRESOLVED": 0
+      },
+      "aggregate_status_violation_count": 0,
+      "localized_bound": {
+        "maximum": 0.0,
+        "minimum_positive": 0.0,
+        "maximum_actual_to_bound_ratio": 0.0,
+        "bound_violation_count": 0,
+        "generator_coordinate_margin_counts": {
+          "STABLE_ACTIVE": 288,
+          "STABLE_INACTIVE": 1008,
+          "UNRESOLVED": 0
+        },
+        "generator_coordinate_status_violation_count": 0,
+        "aggregate_undirected_margin_counts": {
+          "STABLE_ACTIVE": 10,
+          "STABLE_INACTIVE": 26,
+          "UNRESOLVED": 0
+        },
+        "aggregate_status_violation_count": 0
+      },
+      "localized_to_global_summary": {
+        "positive_global_coordinate_count": 0,
+        "zero_ratio_count": 0,
+        "minimum": 0.0,
+        "median": 0.0,
+        "mean": 0.0,
+        "maximum": 0.0,
+        "zero_tolerance": 2e-10
+      }
+    },
+    {
+      "sweep_axis": "OPERATOR_ONLY",
+      "level_index": 1,
+      "epsilon_operator_frobenius": 1e-06,
+      "epsilon_operator_norm": 1e-06,
+      "eta_sector_rotation_radians": 0.0,
+      "projector_delta_frobenius": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_projector_delta_frobenius": 0.0,
+      "maximum_actual_block_difference": 1e-06,
+      "maximum_declared_bound": 1e-06,
+      "minimum_positive_declared_bound": 1e-06,
+      "maximum_actual_to_bound_ratio": 1.0,
+      "bound_violation_count": 0,
+      "generator_coordinate_margin_counts": {
+        "STABLE_ACTIVE": 288,
+        "STABLE_INACTIVE": 1008,
+        "UNRESOLVED": 0
+      },
+      "generator_coordinate_status_violation_count": 0,
+      "aggregate_undirected_margin_counts": {
+        "STABLE_ACTIVE": 10,
+        "STABLE_INACTIVE": 26,
+        "UNRESOLVED": 0
+      },
+      "aggregate_status_violation_count": 0,
+      "localized_bound": {
+        "maximum": 1e-06,
+        "minimum_positive": 1e-06,
+        "maximum_actual_to_bound_ratio": 1.0,
+        "bound_violation_count": 0,
+        "generator_coordinate_margin_counts": {
+          "STABLE_ACTIVE": 288,
+          "STABLE_INACTIVE": 1008,
+          "UNRESOLVED": 0
+        },
+        "generator_coordinate_status_violation_count": 0,
+        "aggregate_undirected_margin_counts": {
+          "STABLE_ACTIVE": 10,
+          "STABLE_INACTIVE": 26,
+          "UNRESOLVED": 0
+        },
+        "aggregate_status_violation_count": 0
+      },
+      "localized_to_global_summary": {
+        "positive_global_coordinate_count": 1458,
+        "zero_ratio_count": 1440,
+        "minimum": 0.0,
+        "median": 0.0,
+        "mean": 0.012345679012345678,
+        "maximum": 1.0,
+        "zero_tolerance": 2e-10
+      }
+    },
+    {
+      "sweep_axis": "OPERATOR_ONLY",
+      "level_index": 2,
+      "epsilon_operator_frobenius": 0.0001,
+      "epsilon_operator_norm": 0.0001,
+      "eta_sector_rotation_radians": 0.0,
+      "projector_delta_frobenius": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_projector_delta_frobenius": 0.0,
+      "maximum_actual_block_difference": 0.0001,
+      "maximum_declared_bound": 0.0001,
+      "minimum_positive_declared_bound": 0.0001,
+      "maximum_actual_to_bound_ratio": 1.0,
+      "bound_violation_count": 0,
+      "generator_coordinate_margin_counts": {
+        "STABLE_ACTIVE": 288,
+        "STABLE_INACTIVE": 1008,
+        "UNRESOLVED": 0
+      },
+      "generator_coordinate_status_violation_count": 0,
+      "aggregate_undirected_margin_counts": {
+        "STABLE_ACTIVE": 10,
+        "STABLE_INACTIVE": 26,
+        "UNRESOLVED": 0
+      },
+      "aggregate_status_violation_count": 0,
+      "localized_bound": {
+        "maximum": 0.0001,
+        "minimum_positive": 0.0001,
+        "maximum_actual_to_bound_ratio": 1.0,
+        "bound_violation_count": 0,
+        "generator_coordinate_margin_counts": {
+          "STABLE_ACTIVE": 288,
+          "STABLE_INACTIVE": 1008,
+          "UNRESOLVED": 0
+        },
+        "generator_coordinate_status_violation_count": 0,
+        "aggregate_undirected_margin_counts": {
+          "STABLE_ACTIVE": 10,
+          "STABLE_INACTIVE": 26,
+          "UNRESOLVED": 0
+        },
+        "aggregate_status_violation_count": 0
+      },
+      "localized_to_global_summary": {
+        "positive_global_coordinate_count": 1458,
+        "zero_ratio_count": 1440,
+        "minimum": 0.0,
+        "median": 0.0,
+        "mean": 0.012345679012345678,
+        "maximum": 1.0,
+        "zero_tolerance": 2e-10
+      }
+    },
+    {
+      "sweep_axis": "OPERATOR_ONLY",
+      "level_index": 3,
+      "epsilon_operator_frobenius": 0.001,
+      "epsilon_operator_norm": 0.001,
+      "eta_sector_rotation_radians": 0.0,
+      "projector_delta_frobenius": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_projector_delta_frobenius": 0.0,
+      "maximum_actual_block_difference": 0.001,
+      "maximum_declared_bound": 0.001,
+      "minimum_positive_declared_bound": 0.001,
+      "maximum_actual_to_bound_ratio": 1.0,
+      "bound_violation_count": 0,
+      "generator_coordinate_margin_counts": {
+        "STABLE_ACTIVE": 288,
+        "STABLE_INACTIVE": 1008,
+        "UNRESOLVED": 0
+      },
+      "generator_coordinate_status_violation_count": 0,
+      "aggregate_undirected_margin_counts": {
+        "STABLE_ACTIVE": 10,
+        "STABLE_INACTIVE": 26,
+        "UNRESOLVED": 0
+      },
+      "aggregate_status_violation_count": 0,
+      "localized_bound": {
+        "maximum": 0.001,
+        "minimum_positive": 0.001,
+        "maximum_actual_to_bound_ratio": 1.0,
+        "bound_violation_count": 0,
+        "generator_coordinate_margin_counts": {
+          "STABLE_ACTIVE": 288,
+          "STABLE_INACTIVE": 1008,
+          "UNRESOLVED": 0
+        },
+        "generator_coordinate_status_violation_count": 0,
+        "aggregate_undirected_margin_counts": {
+          "STABLE_ACTIVE": 10,
+          "STABLE_INACTIVE": 26,
+          "UNRESOLVED": 0
+        },
+        "aggregate_status_violation_count": 0
+      },
+      "localized_to_global_summary": {
+        "positive_global_coordinate_count": 1458,
+        "zero_ratio_count": 1440,
+        "minimum": 0.0,
+        "median": 0.0,
+        "mean": 0.012345679012345678,
+        "maximum": 1.0,
+        "zero_tolerance": 2e-10
+      }
+    },
+    {
+      "sweep_axis": "OPERATOR_ONLY",
+      "level_index": 4,
+      "epsilon_operator_frobenius": 0.01,
+      "epsilon_operator_norm": 0.01,
+      "eta_sector_rotation_radians": 0.0,
+      "projector_delta_frobenius": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_projector_delta_frobenius": 0.0,
+      "maximum_actual_block_difference": 0.01,
+      "maximum_declared_bound": 0.01,
+      "minimum_positive_declared_bound": 0.01,
+      "maximum_actual_to_bound_ratio": 1.0,
+      "bound_violation_count": 0,
+      "generator_coordinate_margin_counts": {
+        "STABLE_ACTIVE": 288,
+        "STABLE_INACTIVE": 1008,
+        "UNRESOLVED": 0
+      },
+      "generator_coordinate_status_violation_count": 0,
+      "aggregate_undirected_margin_counts": {
+        "STABLE_ACTIVE": 10,
+        "STABLE_INACTIVE": 26,
+        "UNRESOLVED": 0
+      },
+      "aggregate_status_violation_count": 0,
+      "localized_bound": {
+        "maximum": 0.01,
+        "minimum_positive": 0.01,
+        "maximum_actual_to_bound_ratio": 1.0,
+        "bound_violation_count": 0,
+        "generator_coordinate_margin_counts": {
+          "STABLE_ACTIVE": 288,
+          "STABLE_INACTIVE": 1008,
+          "UNRESOLVED": 0
+        },
+        "generator_coordinate_status_violation_count": 0,
+        "aggregate_undirected_margin_counts": {
+          "STABLE_ACTIVE": 10,
+          "STABLE_INACTIVE": 26,
+          "UNRESOLVED": 0
+        },
+        "aggregate_status_violation_count": 0
+      },
+      "localized_to_global_summary": {
+        "positive_global_coordinate_count": 1458,
+        "zero_ratio_count": 1440,
+        "minimum": 0.0,
+        "median": 0.0,
+        "mean": 0.012345679012345678,
+        "maximum": 1.0,
+        "zero_tolerance": 2e-10
+      }
+    },
+    {
+      "sweep_axis": "OPERATOR_ONLY",
+      "level_index": 5,
+      "epsilon_operator_frobenius": 0.05,
+      "epsilon_operator_norm": 0.05,
+      "eta_sector_rotation_radians": 0.0,
+      "projector_delta_frobenius": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_projector_delta_frobenius": 0.0,
+      "maximum_actual_block_difference": 0.05,
+      "maximum_declared_bound": 0.05,
+      "minimum_positive_declared_bound": 0.05,
+      "maximum_actual_to_bound_ratio": 1.0,
+      "bound_violation_count": 0,
+      "generator_coordinate_margin_counts": {
+        "STABLE_ACTIVE": 288,
+        "STABLE_INACTIVE": 72,
+        "UNRESOLVED": 936
+      },
+      "generator_coordinate_status_violation_count": 0,
+      "aggregate_undirected_margin_counts": {
+        "STABLE_ACTIVE": 10,
+        "STABLE_INACTIVE": 2,
+        "UNRESOLVED": 24
+      },
+      "aggregate_status_violation_count": 0,
+      "localized_bound": {
+        "maximum": 0.05,
+        "minimum_positive": 0.05,
+        "maximum_actual_to_bound_ratio": 1.0,
+        "bound_violation_count": 0,
+        "generator_coordinate_margin_counts": {
+          "STABLE_ACTIVE": 288,
+          "STABLE_INACTIVE": 990,
+          "UNRESOLVED": 18
+        },
+        "generator_coordinate_status_violation_count": 0,
+        "aggregate_undirected_margin_counts": {
+          "STABLE_ACTIVE": 10,
+          "STABLE_INACTIVE": 25,
+          "UNRESOLVED": 1
+        },
+        "aggregate_status_violation_count": 0
+      },
+      "localized_to_global_summary": {
+        "positive_global_coordinate_count": 1458,
+        "zero_ratio_count": 1440,
+        "minimum": 0.0,
+        "median": 0.0,
+        "mean": 0.012345679012345678,
+        "maximum": 1.0,
+        "zero_tolerance": 2e-10
+      }
+    },
+    {
+      "sweep_axis": "SECTORIZATION_ONLY",
+      "level_index": 0,
+      "epsilon_operator_frobenius": 0.0,
+      "epsilon_operator_norm": 0.0,
+      "eta_sector_rotation_radians": 0.0,
+      "projector_delta_frobenius": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_projector_delta_frobenius": 0.0,
+      "maximum_actual_block_difference": 0.0,
+      "maximum_declared_bound": 0.0,
+      "minimum_positive_declared_bound": 0.0,
+      "maximum_actual_to_bound_ratio": 0.0,
+      "bound_violation_count": 0,
+      "generator_coordinate_margin_counts": {
+        "STABLE_ACTIVE": 288,
+        "STABLE_INACTIVE": 1008,
+        "UNRESOLVED": 0
+      },
+      "generator_coordinate_status_violation_count": 0,
+      "aggregate_undirected_margin_counts": {
+        "STABLE_ACTIVE": 10,
+        "STABLE_INACTIVE": 26,
+        "UNRESOLVED": 0
+      },
+      "aggregate_status_violation_count": 0,
+      "localized_bound": {
+        "maximum": 0.0,
+        "minimum_positive": 0.0,
+        "maximum_actual_to_bound_ratio": 0.0,
+        "bound_violation_count": 0,
+        "generator_coordinate_margin_counts": {
+          "STABLE_ACTIVE": 288,
+          "STABLE_INACTIVE": 1008,
+          "UNRESOLVED": 0
+        },
+        "generator_coordinate_status_violation_count": 0,
+        "aggregate_undirected_margin_counts": {
+          "STABLE_ACTIVE": 10,
+          "STABLE_INACTIVE": 26,
+          "UNRESOLVED": 0
+        },
+        "aggregate_status_violation_count": 0
+      },
+      "localized_to_global_summary": {
+        "positive_global_coordinate_count": 0,
+        "zero_ratio_count": 0,
+        "minimum": 0.0,
+        "median": 0.0,
+        "mean": 0.0,
+        "maximum": 0.0,
+        "zero_tolerance": 2e-10
+      }
+    },
+    {
+      "sweep_axis": "SECTORIZATION_ONLY",
+      "level_index": 1,
+      "epsilon_operator_frobenius": 0.0,
+      "epsilon_operator_norm": 0.0,
+      "eta_sector_rotation_radians": 1e-06,
+      "projector_delta_frobenius": [
+        1.4142135623728595e-06,
+        1.4142135623728595e-06,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_projector_delta_frobenius": 1.4142135623728595e-06,
+      "maximum_actual_block_difference": 1.4142135623728597e-06,
+      "maximum_declared_bound": 2.828427124745719e-06,
+      "minimum_positive_declared_bound": 1.4142135623728595e-06,
+      "maximum_actual_to_bound_ratio": 0.5000000000000001,
+      "bound_violation_count": 0,
+      "generator_coordinate_margin_counts": {
+        "STABLE_ACTIVE": 288,
+        "STABLE_INACTIVE": 1008,
+        "UNRESOLVED": 0
+      },
+      "generator_coordinate_status_violation_count": 0,
+      "aggregate_undirected_margin_counts": {
+        "STABLE_ACTIVE": 10,
+        "STABLE_INACTIVE": 26,
+        "UNRESOLVED": 0
+      },
+      "aggregate_status_violation_count": 0,
+      "localized_bound": {
+        "maximum": 1.9999999999996674e-06,
+        "minimum_positive": 1.5228178094288907e-22,
+        "maximum_actual_to_bound_ratio": 1.0000000000000002,
+        "bound_violation_count": 0,
+        "generator_coordinate_margin_counts": {
+          "STABLE_ACTIVE": 288,
+          "STABLE_INACTIVE": 1008,
+          "UNRESOLVED": 0
+        },
+        "generator_coordinate_status_violation_count": 0,
+        "aggregate_undirected_margin_counts": {
+          "STABLE_ACTIVE": 10,
+          "STABLE_INACTIVE": 26,
+          "UNRESOLVED": 0
+        },
+        "aggregate_status_violation_count": 0
+      },
+      "localized_to_global_summary": {
+        "positive_global_coordinate_count": 576,
+        "zero_ratio_count": 408,
+        "minimum": 0.0,
+        "median": 9.8948304167367e-16,
+        "mean": 0.11971919001136658,
+        "maximum": 0.7071067811865478,
+        "zero_tolerance": 2e-10
+      }
+    },
+    {
+      "sweep_axis": "SECTORIZATION_ONLY",
+      "level_index": 2,
+      "epsilon_operator_frobenius": 0.0,
+      "epsilon_operator_norm": 0.0,
+      "eta_sector_rotation_radians": 0.0001,
+      "projector_delta_frobenius": [
+        0.00014142135600160726,
+        0.00014142135600160726,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_projector_delta_frobenius": 0.00014142135600160726,
+      "maximum_actual_block_difference": 0.0001414213560016073,
+      "maximum_declared_bound": 0.0002828427120032145,
+      "minimum_positive_declared_bound": 0.00014142135600160726,
+      "maximum_actual_to_bound_ratio": 0.5000000000000001,
+      "bound_violation_count": 0,
+      "generator_coordinate_margin_counts": {
+        "STABLE_ACTIVE": 288,
+        "STABLE_INACTIVE": 1008,
+        "UNRESOLVED": 0
+      },
+      "generator_coordinate_status_violation_count": 0,
+      "aggregate_undirected_margin_counts": {
+        "STABLE_ACTIVE": 10,
+        "STABLE_INACTIVE": 26,
+        "UNRESOLVED": 0
+      },
+      "aggregate_status_violation_count": 0,
+      "localized_bound": {
+        "maximum": 0.00019999999966666674,
+        "minimum_positive": 1.522817806911896e-20,
+        "maximum_actual_to_bound_ratio": 1.0000000000000002,
+        "bound_violation_count": 0,
+        "generator_coordinate_margin_counts": {
+          "STABLE_ACTIVE": 288,
+          "STABLE_INACTIVE": 1008,
+          "UNRESOLVED": 0
+        },
+        "generator_coordinate_status_violation_count": 0,
+        "aggregate_undirected_margin_counts": {
+          "STABLE_ACTIVE": 10,
+          "STABLE_INACTIVE": 26,
+          "UNRESOLVED": 0
+        },
+        "aggregate_status_violation_count": 0
+      },
+      "localized_to_global_summary": {
+        "positive_global_coordinate_count": 576,
+        "zero_ratio_count": 408,
+        "minimum": 0.0,
+        "median": 9.89483041672022e-16,
+        "mean": 0.11971919001801228,
+        "maximum": 0.7071067811865477,
+        "zero_tolerance": 2e-10
+      }
+    },
+    {
+      "sweep_axis": "SECTORIZATION_ONLY",
+      "level_index": 3,
+      "epsilon_operator_frobenius": 0.0,
+      "epsilon_operator_norm": 0.0,
+      "eta_sector_rotation_radians": 0.001,
+      "projector_delta_frobenius": [
+        0.0014142133266708463,
+        0.0014142133266708463,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_projector_delta_frobenius": 0.0014142133266708463,
+      "maximum_actual_block_difference": 0.0014142133266708465,
+      "maximum_declared_bound": 0.0028284266533416926,
+      "minimum_positive_declared_bound": 0.0014142133266708463,
+      "maximum_actual_to_bound_ratio": 0.5000000000000001,
+      "bound_violation_count": 0,
+      "generator_coordinate_margin_counts": {
+        "STABLE_ACTIVE": 288,
+        "STABLE_INACTIVE": 1008,
+        "UNRESOLVED": 0
+      },
+      "generator_coordinate_status_violation_count": 0,
+      "aggregate_undirected_margin_counts": {
+        "STABLE_ACTIVE": 10,
+        "STABLE_INACTIVE": 26,
+        "UNRESOLVED": 0
+      },
+      "aggregate_status_violation_count": 0,
+      "localized_bound": {
+        "maximum": 0.0019999996666666834,
+        "minimum_positive": 1.5228175556469914e-19,
+        "maximum_actual_to_bound_ratio": 1.0000000000000002,
+        "bound_violation_count": 0,
+        "generator_coordinate_margin_counts": {
+          "STABLE_ACTIVE": 288,
+          "STABLE_INACTIVE": 1008,
+          "UNRESOLVED": 0
+        },
+        "generator_coordinate_status_violation_count": 0,
+        "aggregate_undirected_margin_counts": {
+          "STABLE_ACTIVE": 10,
+          "STABLE_INACTIVE": 26,
+          "UNRESOLVED": 0
+        },
+        "aggregate_status_violation_count": 0
+      },
+      "localized_to_global_summary": {
+        "positive_global_coordinate_count": 576,
+        "zero_ratio_count": 408,
+        "minimum": 0.0,
+        "median": 9.894830416720214e-16,
+        "mean": 0.11971919067600029,
+        "maximum": 0.7071067811865476,
+        "zero_tolerance": 2e-10
+      }
+    },
+    {
+      "sweep_axis": "SECTORIZATION_ONLY",
+      "level_index": 4,
+      "epsilon_operator_frobenius": 0.0,
+      "epsilon_operator_norm": 0.0,
+      "eta_sector_rotation_radians": 0.01,
+      "projector_delta_frobenius": [
+        0.014141899922649064,
+        0.014141899922649064,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_projector_delta_frobenius": 0.014141899922649064,
+      "maximum_actual_block_difference": 0.014141899922649068,
+      "maximum_declared_bound": 0.02828379984529813,
+      "minimum_positive_declared_bound": 0.014141899922649064,
+      "maximum_actual_to_bound_ratio": 0.5000000000000001,
+      "bound_violation_count": 0,
+      "generator_coordinate_margin_counts": {
+        "STABLE_ACTIVE": 288,
+        "STABLE_INACTIVE": 1008,
+        "UNRESOLVED": 0
+      },
+      "generator_coordinate_status_violation_count": 0,
+      "aggregate_undirected_margin_counts": {
+        "STABLE_ACTIVE": 10,
+        "STABLE_INACTIVE": 26,
+        "UNRESOLVED": 0
+      },
+      "aggregate_status_violation_count": 0,
+      "localized_bound": {
+        "maximum": 0.019999666668333332,
+        "minimum_positive": 1.522792429280054e-18,
+        "maximum_actual_to_bound_ratio": 1.0000000000000002,
+        "bound_violation_count": 0,
+        "generator_coordinate_margin_counts": {
+          "STABLE_ACTIVE": 288,
+          "STABLE_INACTIVE": 1008,
+          "UNRESOLVED": 0
+        },
+        "generator_coordinate_status_violation_count": 0,
+        "aggregate_undirected_margin_counts": {
+          "STABLE_ACTIVE": 10,
+          "STABLE_INACTIVE": 26,
+          "UNRESOLVED": 0
+        },
+        "aggregate_status_violation_count": 0
+      },
+      "localized_to_global_summary": {
+        "positive_global_coordinate_count": 576,
+        "zero_ratio_count": 408,
+        "minimum": 0.0,
+        "median": 9.894830416720206e-16,
+        "mean": 0.11971925646505646,
+        "maximum": 0.7071067811865476,
+        "zero_tolerance": 2e-10
+      }
+    },
+    {
+      "sweep_axis": "SECTORIZATION_ONLY",
+      "level_index": 5,
+      "epsilon_operator_frobenius": 0.0,
+      "epsilon_operator_norm": 0.0,
+      "eta_sector_rotation_radians": 0.05,
+      "projector_delta_frobenius": [
+        0.07068121901873392,
+        0.07068121901873392,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_projector_delta_frobenius": 0.07068121901873392,
+      "maximum_actual_block_difference": 0.07068121901873395,
+      "maximum_declared_bound": 0.14136243803746784,
+      "minimum_positive_declared_bound": 0.07068121901873392,
+      "maximum_actual_to_bound_ratio": 0.5000000000000002,
+      "bound_violation_count": 0,
+      "generator_coordinate_margin_counts": {
+        "STABLE_ACTIVE": 288,
+        "STABLE_INACTIVE": 516,
+        "UNRESOLVED": 492
+      },
+      "generator_coordinate_status_violation_count": 0,
+      "aggregate_undirected_margin_counts": {
+        "STABLE_ACTIVE": 10,
+        "STABLE_INACTIVE": 13,
+        "UNRESOLVED": 13
+      },
+      "aggregate_status_violation_count": 0,
+      "localized_bound": {
+        "maximum": 0.09995833854135669,
+        "minimum_positive": 7.610916906690402e-18,
+        "maximum_actual_to_bound_ratio": 1.0000000000000002,
+        "bound_violation_count": 0,
+        "generator_coordinate_margin_counts": {
+          "STABLE_ACTIVE": 288,
+          "STABLE_INACTIVE": 972,
+          "UNRESOLVED": 36
+        },
+        "generator_coordinate_status_violation_count": 0,
+        "aggregate_undirected_margin_counts": {
+          "STABLE_ACTIVE": 10,
+          "STABLE_INACTIVE": 25,
+          "UNRESOLVED": 1
+        },
+        "aggregate_status_violation_count": 0
+      },
+      "localized_to_global_summary": {
+        "positive_global_coordinate_count": 576,
+        "zero_ratio_count": 408,
+        "minimum": 0.0,
+        "median": 9.894830416720204e-16,
+        "mean": 0.11972084545931322,
+        "maximum": 0.7071067811865478,
+        "zero_tolerance": 2e-10
+      }
+    },
+    {
+      "sweep_axis": "COUPLED",
+      "level_index": 0,
+      "epsilon_operator_frobenius": 0.0,
+      "epsilon_operator_norm": 0.0,
+      "eta_sector_rotation_radians": 0.0,
+      "projector_delta_frobenius": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_projector_delta_frobenius": 0.0,
+      "maximum_actual_block_difference": 0.0,
+      "maximum_declared_bound": 0.0,
+      "minimum_positive_declared_bound": 0.0,
+      "maximum_actual_to_bound_ratio": 0.0,
+      "bound_violation_count": 0,
+      "generator_coordinate_margin_counts": {
+        "STABLE_ACTIVE": 288,
+        "STABLE_INACTIVE": 1008,
+        "UNRESOLVED": 0
+      },
+      "generator_coordinate_status_violation_count": 0,
+      "aggregate_undirected_margin_counts": {
+        "STABLE_ACTIVE": 10,
+        "STABLE_INACTIVE": 26,
+        "UNRESOLVED": 0
+      },
+      "aggregate_status_violation_count": 0,
+      "localized_bound": {
+        "maximum": 0.0,
+        "minimum_positive": 0.0,
+        "maximum_actual_to_bound_ratio": 0.0,
+        "bound_violation_count": 0,
+        "generator_coordinate_margin_counts": {
+          "STABLE_ACTIVE": 288,
+          "STABLE_INACTIVE": 1008,
+          "UNRESOLVED": 0
+        },
+        "generator_coordinate_status_violation_count": 0,
+        "aggregate_undirected_margin_counts": {
+          "STABLE_ACTIVE": 10,
+          "STABLE_INACTIVE": 26,
+          "UNRESOLVED": 0
+        },
+        "aggregate_status_violation_count": 0
+      },
+      "localized_to_global_summary": {
+        "positive_global_coordinate_count": 0,
+        "zero_ratio_count": 0,
+        "minimum": 0.0,
+        "median": 0.0,
+        "mean": 0.0,
+        "maximum": 0.0,
+        "zero_tolerance": 2e-10
+      }
+    },
+    {
+      "sweep_axis": "COUPLED",
+      "level_index": 1,
+      "epsilon_operator_frobenius": 1e-06,
+      "epsilon_operator_norm": 1e-06,
+      "eta_sector_rotation_radians": 1e-06,
+      "projector_delta_frobenius": [
+        1.4142135623728595e-06,
+        1.4142135623728595e-06,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_projector_delta_frobenius": 1.4142135623728595e-06,
+      "maximum_actual_block_difference": 1.4142135623739204e-06,
+      "maximum_declared_bound": 3.828428538959281e-06,
+      "minimum_positive_declared_bound": 1e-06,
+      "maximum_actual_to_bound_ratio": 0.3693979260635121,
+      "bound_violation_count": 0,
+      "generator_coordinate_margin_counts": {
+        "STABLE_ACTIVE": 288,
+        "STABLE_INACTIVE": 1008,
+        "UNRESOLVED": 0
+      },
+      "generator_coordinate_status_violation_count": 0,
+      "aggregate_undirected_margin_counts": {
+        "STABLE_ACTIVE": 10,
+        "STABLE_INACTIVE": 26,
+        "UNRESOLVED": 0
+      },
+      "aggregate_status_violation_count": 0,
+      "localized_bound": {
+        "maximum": 3.0000000000006646e-06,
+        "minimum_positive": 1.5228178094288907e-22,
+        "maximum_actual_to_bound_ratio": 1.0000000000000002,
+        "bound_violation_count": 0,
+        "generator_coordinate_margin_counts": {
+          "STABLE_ACTIVE": 288,
+          "STABLE_INACTIVE": 1008,
+          "UNRESOLVED": 0
+        },
+        "generator_coordinate_status_violation_count": 0,
+        "aggregate_undirected_margin_counts": {
+          "STABLE_ACTIVE": 10,
+          "STABLE_INACTIVE": 26,
+          "UNRESOLVED": 0
+        },
+        "aggregate_status_violation_count": 0
+      },
+      "localized_to_global_summary": {
+        "positive_global_coordinate_count": 1458,
+        "zero_ratio_count": 1290,
+        "minimum": 0.0,
+        "median": 0.0,
+        "mean": 0.035992789519007196,
+        "maximum": 0.7836113354269852,
+        "zero_tolerance": 2e-10
+      }
+    },
+    {
+      "sweep_axis": "COUPLED",
+      "level_index": 2,
+      "epsilon_operator_frobenius": 0.0001,
+      "epsilon_operator_norm": 0.0001,
+      "eta_sector_rotation_radians": 0.0001,
+      "projector_delta_frobenius": [
+        0.00014142135600160726,
+        0.00014142135600160726,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_projector_delta_frobenius": 0.00014142135600160726,
+      "maximum_actual_block_difference": 0.00014142135706226748,
+      "maximum_declared_bound": 0.0003828568541388147,
+      "minimum_positive_declared_bound": 0.0001,
+      "maximum_actual_to_bound_ratio": 0.3693844201388948,
+      "bound_violation_count": 0,
+      "generator_coordinate_margin_counts": {
+        "STABLE_ACTIVE": 288,
+        "STABLE_INACTIVE": 1008,
+        "UNRESOLVED": 0
+      },
+      "generator_coordinate_status_violation_count": 0,
+      "aggregate_undirected_margin_counts": {
+        "STABLE_ACTIVE": 10,
+        "STABLE_INACTIVE": 26,
+        "UNRESOLVED": 0
+      },
+      "aggregate_status_violation_count": 0,
+      "localized_bound": {
+        "maximum": 0.0003000000006666665,
+        "minimum_positive": 1.522817806911896e-20,
+        "maximum_actual_to_bound_ratio": 1.0000000000000002,
+        "bound_violation_count": 0,
+        "generator_coordinate_margin_counts": {
+          "STABLE_ACTIVE": 288,
+          "STABLE_INACTIVE": 1008,
+          "UNRESOLVED": 0
+        },
+        "generator_coordinate_status_violation_count": 0,
+        "aggregate_undirected_margin_counts": {
+          "STABLE_ACTIVE": 10,
+          "STABLE_INACTIVE": 26,
+          "UNRESOLVED": 0
+        },
+        "aggregate_status_violation_count": 0
+      },
+      "localized_to_global_summary": {
+        "positive_global_coordinate_count": 1458,
+        "zero_ratio_count": 1290,
+        "minimum": 0.0,
+        "median": 0.0,
+        "mean": 0.03599185559655476,
+        "maximum": 0.7835826822050147,
+        "zero_tolerance": 2e-10
+      }
+    },
+    {
+      "sweep_axis": "COUPLED",
+      "level_index": 3,
+      "epsilon_operator_frobenius": 0.001,
+      "epsilon_operator_norm": 0.001,
+      "eta_sector_rotation_radians": 0.001,
+      "projector_delta_frobenius": [
+        0.0014142133266708463,
+        0.0014142133266708463,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_projector_delta_frobenius": 0.0014142133266708463,
+      "maximum_actual_block_difference": 0.0014142143873296191,
+      "maximum_declared_bound": 0.0038298408666683635,
+      "minimum_positive_declared_bound": 0.001,
+      "maximum_actual_to_bound_ratio": 0.36926191885352816,
+      "bound_violation_count": 0,
+      "generator_coordinate_margin_counts": {
+        "STABLE_ACTIVE": 288,
+        "STABLE_INACTIVE": 1008,
+        "UNRESOLVED": 0
+      },
+      "generator_coordinate_status_violation_count": 0,
+      "aggregate_undirected_margin_counts": {
+        "STABLE_ACTIVE": 10,
+        "STABLE_INACTIVE": 26,
+        "UNRESOLVED": 0
+      },
+      "aggregate_status_violation_count": 0,
+      "localized_bound": {
+        "maximum": 0.0030000006666641814,
+        "minimum_positive": 1.5228175556469914e-19,
+        "maximum_actual_to_bound_ratio": 1.0000000000000002,
+        "bound_violation_count": 0,
+        "generator_coordinate_margin_counts": {
+          "STABLE_ACTIVE": 288,
+          "STABLE_INACTIVE": 1008,
+          "UNRESOLVED": 0
+        },
+        "generator_coordinate_status_violation_count": 0,
+        "aggregate_undirected_margin_counts": {
+          "STABLE_ACTIVE": 10,
+          "STABLE_INACTIVE": 26,
+          "UNRESOLVED": 0
+        },
+        "aggregate_status_violation_count": 0
+      },
+      "localized_to_global_summary": {
+        "positive_global_coordinate_count": 1458,
+        "zero_ratio_count": 1290,
+        "minimum": 0.0,
+        "median": 0.0,
+        "mean": 0.03598336990463548,
+        "maximum": 0.7833225376995696,
+        "zero_tolerance": 2e-10
+      }
+    },
+    {
+      "sweep_axis": "COUPLED",
+      "level_index": 4,
+      "epsilon_operator_frobenius": 0.01,
+      "epsilon_operator_norm": 0.01,
+      "eta_sector_rotation_radians": 0.01,
+      "projector_delta_frobenius": [
+        0.014141899922649064,
+        0.014141899922649064,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_projector_delta_frobenius": 0.014141899922649064,
+      "maximum_actual_block_difference": 0.014142960442886045,
+      "maximum_declared_bound": 0.038425218844524614,
+      "minimum_positive_declared_bound": 0.01,
+      "maximum_actual_to_bound_ratio": 0.3680645385550313,
+      "bound_violation_count": 0,
+      "generator_coordinate_margin_counts": {
+        "STABLE_ACTIVE": 288,
+        "STABLE_INACTIVE": 1008,
+        "UNRESOLVED": 0
+      },
+      "generator_coordinate_status_violation_count": 0,
+      "aggregate_undirected_margin_counts": {
+        "STABLE_ACTIVE": 10,
+        "STABLE_INACTIVE": 26,
+        "UNRESOLVED": 0
+      },
+      "aggregate_status_violation_count": 0,
+      "localized_bound": {
+        "maximum": 0.030000666418374608,
+        "minimum_positive": 1.522792429280054e-18,
+        "maximum_actual_to_bound_ratio": 1.0000000000000002,
+        "bound_violation_count": 0,
+        "generator_coordinate_margin_counts": {
+          "STABLE_ACTIVE": 288,
+          "STABLE_INACTIVE": 1008,
+          "UNRESOLVED": 0
+        },
+        "generator_coordinate_status_violation_count": 0,
+        "aggregate_undirected_margin_counts": {
+          "STABLE_ACTIVE": 10,
+          "STABLE_INACTIVE": 26,
+          "UNRESOLVED": 0
+        },
+        "aggregate_status_violation_count": 0
+      },
+      "localized_to_global_summary": {
+        "positive_global_coordinate_count": 1458,
+        "zero_ratio_count": 1290,
+        "minimum": 0.0,
+        "median": 0.0,
+        "mean": 0.03589895848902796,
+        "maximum": 0.7807546012883552,
+        "zero_tolerance": 2e-10
+      }
+    },
+    {
+      "sweep_axis": "COUPLED",
+      "level_index": 5,
+      "epsilon_operator_frobenius": 0.05,
+      "epsilon_operator_norm": 0.05,
+      "eta_sector_rotation_radians": 0.05,
+      "projector_delta_frobenius": [
+        0.07068121901873392,
+        0.07068121901873392,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_projector_delta_frobenius": 0.07068121901873392,
+      "maximum_actual_block_difference": 0.07081336524718543,
+      "maximum_declared_bound": 0.19489649898840455,
+      "minimum_positive_declared_bound": 0.05,
+      "maximum_actual_to_bound_ratio": 0.36333831348811707,
+      "bound_violation_count": 0,
+      "generator_coordinate_margin_counts": {
+        "STABLE_ACTIVE": 288,
+        "STABLE_INACTIVE": 72,
+        "UNRESOLVED": 936
+      },
+      "generator_coordinate_status_violation_count": 0,
+      "aggregate_undirected_margin_counts": {
+        "STABLE_ACTIVE": 10,
+        "STABLE_INACTIVE": 2,
+        "UNRESOLVED": 24
+      },
+      "aggregate_status_violation_count": 0,
+      "localized_bound": {
+        "maximum": 0.1500825605010606,
+        "minimum_positive": 7.610916906690402e-18,
+        "maximum_actual_to_bound_ratio": 1.0000000000000002,
+        "bound_violation_count": 0,
+        "generator_coordinate_margin_counts": {
+          "STABLE_ACTIVE": 288,
+          "STABLE_INACTIVE": 972,
+          "UNRESOLVED": 36
+        },
+        "generator_coordinate_status_violation_count": 0,
+        "aggregate_undirected_margin_counts": {
+          "STABLE_ACTIVE": 10,
+          "STABLE_INACTIVE": 25,
+          "UNRESOLVED": 1
+        },
+        "aggregate_status_violation_count": 0
+      },
+      "localized_to_global_summary": {
+        "positive_global_coordinate_count": 1458,
+        "zero_ratio_count": 1290,
+        "minimum": 0.0,
+        "median": 0.0,
+        "mean": 0.035533364879959756,
+        "maximum": 0.770062886096224,
+        "zero_tolerance": 2e-10
+      }
+    }
+  ],
+  "negative_boundaries": [
+    "The sweep validates the stated bound on a declared finite perturbation family; it is not a universal optimality theorem.",
+    "UNRESOLVED is a margin status, not evidence that a block is zero or nonzero.",
+    "Additive E_a operators need not form a group representation or preserve unitarity.",
+    "No Paper I/II support edge or exact-zero claim is revised by this bounded sweep."
+  ],
+  "source_artifacts": [
+    {
+      "uri": "experiments/paper25/perturbation_sweep.py",
+      "sha256": "2984541512b968d508bd5e90a999b8f4afc5281cd6c61c12bbfa912fb154248d"
+    },
+    {
+      "uri": "experiments/paper25/rubik_transport.py",
+      "sha256": "1f3596c0a071497612e61f16e78b57a8d62d07c40eca4ba9ad8ebef3778fcb0c"
+    },
+    {
+      "uri": "rime/base.py",
+      "sha256": "c10377864a1335635b646b686866e0c97661f49b1bfd1d092616b73a0b5446ce"
+    },
+    {
+      "uri": "rime/cube.py",
+      "sha256": "5adbf4596f2f82f83f4d373bd1a57279b4128911c75d45fbf9d2e905260a4304"
+    },
+    {
+      "uri": "rime/cubie.py",
+      "sha256": "5120fd2688153bb7f8ad6f0bd77844fbdf9352ee430ec3e4166e3d991db60730"
+    },
+    {
+      "uri": "rime/cubieoperator.py",
+      "sha256": "559a6dbde4a3f239e260c603fa6c544007400d76d1efcf88f2c5d19d1f77c3df"
+    },
+    {
+      "uri": "rime/helpers.py",
+      "sha256": "20247dad40d503913cb20a4b8cbde923c12187460c584e55d770308cc3d7bd12"
+    },
+    {
+      "uri": "rime/spectral_utils.py",
+      "sha256": "5e456b904d75e93a373ad5d1ec3b846303a498d8e45d6ae0b2548f3040917799"
+    }
+  ]
+}

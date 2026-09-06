@@ -1,0 +1,174 @@
+{
+  "schema": "rime.paper25.evidence-manifest.v1",
+  "paper_id": "PAPER25",
+  "release_version": "1.0",
+  "status": "RELEASE_CANDIDATE",
+  "release_identity_claimed": false,
+  "validation_mode": "LOCAL_CLOSURE_VERIFICATION",
+  "supplementary_surfaces": {
+    "PAPER25-S1": {
+      "title": "Proportional Scaling and Semantic Lifts for Finite Markov Diagnostics",
+      "claim_authority": "supplementary-note proof",
+      "release_identity": "inherits Paper XXV package; no independent DOI or paper number",
+      "negative_boundary": "absolute spectral gap need not be monotone under proportional row scaling"
+    }
+  },
+  "formalization": {
+    "formalization_id": "PAPER25-TYPED-TRANSPORT-SCALAR-MARGIN-V1",
+    "status": "PARTIAL_FORMALIZATION",
+    "validation_mode": "LOCAL_CLOSURE_VERIFICATION"
+  },
+  "evidence_layers": {
+    "EXACT_INTEGER_FRACTION_CERTIFICATE": {
+      "claim_status": "EXACT_FINITE_CERTIFICATE",
+      "arithmetic": "Python int and fractions.Fraction; no floating-point arithmetic",
+      "norms": {
+        "primary": "exact Frobenius norm via squared entries",
+        "operator_norm": "exact witness identities; squared values recorded"
+      },
+      "threshold_policy": {
+        "reference_norm": "1/1",
+        "error_radius": "1/1",
+        "threshold": "1/1",
+        "unresolved": "n-b <= tau < n+b"
+      },
+      "zero_policy": {
+        "exact_zero": "literal Fraction(0)",
+        "near_zero": "not applicable; no tolerance substitution"
+      },
+      "numerical_environment": {
+        "python": "3.13.0",
+        "encoding": "UTF-8",
+        "line_endings": "LF"
+      },
+      "registered_components": [
+        {
+          "path": "experiments/paper25/results/diagnostic_sharpness_v1.json",
+          "component": "whole_artifact"
+        },
+        {
+          "path": "experiments/paper25/results/transformation_laws_v1.json",
+          "component": "exact_finite_certificate"
+        }
+      ],
+      "receipt": "experiments/paper25/results/diagnostic_sharpness_v1.validation-receipt.json"
+    },
+    "BOUNDED_FLOAT64_OBSERVATION": {
+      "claim_status": "BOUNDED_NUMERICAL_OBSERVATION",
+      "common_numerical_environment": {
+        "python": "3.13.0",
+        "numpy": "2.1.3",
+        "arithmetic": "float64/complex128",
+        "encoding": "UTF-8",
+        "line_endings": "LF"
+      },
+      "rubik_simultaneous_transport": {
+        "scope": "aligned simultaneous transport and hostile fixed-frame control",
+        "runtime_dependencies": {
+          "scipy": "1.18.0"
+        },
+        "norms": {
+          "block": "Frobenius",
+          "operator": "spectral 2",
+          "projector_delta": "Frobenius"
+        },
+        "support_thresholds": [1e-10, 1e-6, 0.05],
+        "activity_threshold": 0.05,
+        "transport_residual_tolerance": 1e-10,
+        "perturbation_comparison_tolerance": 2e-10,
+        "transformation_near_zero_error_bound": 1e-9,
+        "zero_policy": "localized/global ratio <= perturbation comparison tolerance is reported as zero; inactive threshold values are not exact-zero claims",
+        "registered_components": [
+          {
+            "path": "experiments/paper25/results/transformation_laws_v1.json",
+            "component": "bounded_numerical_observation"
+          },
+          {
+            "path": "experiments/paper25/results/rubik_qh_transport_v1.json",
+            "component": "whole_artifact"
+          },
+          {
+            "path": "experiments/paper25/results/rubik_perturbation_sweep_v1.json",
+            "component": "whole_artifact"
+          }
+        ]
+      },
+      "markov_portability_example": {
+        "scope": "two-state singleton-partition portability and cross-layer comparison",
+        "norms": {
+          "block": "Frobenius",
+          "operator": "spectral 2",
+          "projector_delta": "Frobenius"
+        },
+        "block_activity_threshold": 0.15,
+        "positive_support_threshold": 1e-12,
+        "comparison_tolerance": 2e-12,
+        "zero_policy": "positive support uses entries above the declared threshold; UNRESOLVED is not exact zero",
+        "registered_components": [
+          {
+            "path": "experiments/paper25/results/nonnormal_markov_stability_v1.json",
+            "component": "whole_artifact"
+          },
+          {
+            "path": "experiments/paper25/results/markov_probability_alignment_v1.json",
+            "component": "whole_artifact"
+          }
+        ]
+      }
+    }
+  },
+  "artifacts": [
+    {"role": "manuscript", "path": "papers/paper25/Paper XXV.md"},
+    {"role": "reader-pdf", "path": "papers/paper25/paper25_arxiv.pdf"},
+    {"role": "bibliography", "path": "papers/paper25/references-v1.bib"},
+    {"role": "figure-source", "path": "figures/paper25/render.py"},
+    {"role": "figure-style-helper", "path": "figures/sof_figure_utils.py"},
+    {"role": "figure", "path": "figures/paper25/fig1_transport_information_lattice.png"},
+    {"role": "supplement-note", "path": "experiments/paper25/notes/proportional_markov_semantic_lift/NOTE.md"},
+    {"role": "supplement-claim-surface-map", "path": "experiments/paper25/notes/proportional_markov_semantic_lift/claim-surface-map.json"},
+    {"role": "supplement-audit", "path": "experiments/paper25/notes/proportional_markov_semantic_lift/markov_nstate_lift_v2.json"},
+    {"role": "supplement-validator", "path": "experiments/paper25/notes/proportional_markov_semantic_lift/validate_note.py"},
+    {"role": "supplement-validator", "path": "experiments/paper25/notes/proportional_markov_semantic_lift/validate_nstate_audit.py"},
+    {"role": "lean-formalization-readme", "path": "experiments/paper25/lean/README.md"},
+    {"role": "lean-formalization-manifest", "path": "experiments/paper25/lean/formalization-manifest.json"},
+    {"role": "lean-toolchain", "path": "experiments/paper25/lean/lean-toolchain"},
+    {"role": "lean-lakefile", "path": "experiments/paper25/lean/lakefile.toml"},
+    {"role": "lean-lock", "path": "experiments/paper25/lean/lake-manifest.json"},
+    {"role": "lean-entrypoint", "path": "experiments/paper25/lean/Formalization.lean"},
+    {"role": "lean-source", "path": "experiments/paper25/lean/Formalization/Transport.lean"},
+    {"role": "lean-source", "path": "experiments/paper25/lean/Formalization/Margin.lean"},
+    {"role": "lean-validator", "path": "experiments/paper25/validation/validate_lean_formalization.py"},
+    {"role": "lean-validation-receipt", "path": "experiments/paper25/results/paper25_lean_formalization_v1.receipt.json"},
+    {"role": "release-environment", "path": "experiments/paper25/release-environment.json"},
+    {"role": "evidence-readme", "path": "experiments/paper25/README.md"},
+    {"role": "claim-surface-map", "path": "experiments/paper25/claim-surface-map.json"},
+    {"role": "claim-surface-validator", "path": "experiments/paper25/validation/validate_claim_surface.py"},
+    {"role": "exact-producer", "path": "experiments/paper25/sharpness_controls.py"},
+    {"role": "observation-producer", "path": "experiments/paper25/generate_observations.py"},
+    {"role": "implementation", "path": "experiments/paper25/transformation_laws.py"},
+    {"role": "implementation", "path": "experiments/paper25/rubik_transport.py"},
+    {"role": "implementation", "path": "experiments/paper25/perturbation_sweep.py"},
+    {"role": "implementation", "path": "experiments/paper25/markov_helpers.py"},
+    {"role": "implementation", "path": "experiments/paper25/markov_stability.py"},
+    {"role": "implementation", "path": "experiments/paper25/markov_probability_alignment.py"},
+    {"role": "runtime-source", "path": "rime/base.py"},
+    {"role": "runtime-source", "path": "rime/cube.py"},
+    {"role": "runtime-source", "path": "rime/cubie.py"},
+    {"role": "runtime-source", "path": "rime/cubieoperator.py"},
+    {"role": "runtime-source", "path": "rime/helpers.py"},
+    {"role": "runtime-source", "path": "rime/spectral_utils.py"},
+    {"role": "exact-certificate", "path": "experiments/paper25/results/diagnostic_sharpness_v1.json"},
+    {"role": "exact-validator", "path": "experiments/paper25/validation/validate_sharpness.py"},
+    {"role": "validation-receipt", "path": "experiments/paper25/results/diagnostic_sharpness_v1.validation-receipt.json"},
+    {"role": "bounded-observation-registry-producer", "path": "experiments/paper25/register_bounded_observations.py"},
+    {"role": "bounded-observation-registry", "path": "experiments/paper25/results/bounded_observation_registry_v1.json"},
+    {"role": "bounded-observation-registry-validator", "path": "experiments/paper25/validation/validate_bounded_observations.py"},
+    {"role": "bounded-observation-registry-receipt", "path": "experiments/paper25/results/bounded_observation_registry_v1.validation-receipt.json"},
+    {"role": "release-validator", "path": "experiments/paper25/validation/validate_release.py"},
+    {"role": "bounded-rubik-observation", "path": "experiments/paper25/results/transformation_laws_v1.json"},
+    {"role": "bounded-rubik-observation", "path": "experiments/paper25/results/rubik_qh_transport_v1.json"},
+    {"role": "bounded-rubik-observation", "path": "experiments/paper25/results/rubik_perturbation_sweep_v1.json"},
+    {"role": "bounded-markov-observation", "path": "experiments/paper25/results/nonnormal_markov_stability_v1.json"},
+    {"role": "bounded-markov-observation", "path": "experiments/paper25/results/markov_probability_alignment_v1.json"}
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "schema": "rime.paper25.lean-formalization-manifest.v1",
+  "formalization_id": "PAPER25-TYPED-TRANSPORT-SCALAR-MARGIN-V1",
+  "status": "PARTIAL_FORMALIZATION",
+  "validation_mode": "LOCAL_CLOSURE_VERIFICATION",
+  "entry_point": "experiments/paper25/lean/Formalization.lean",
+  "lean_toolchain": "leanprover/lean4:v4.33.0",
+  "mathlib_revision": "db584cd6d46c92f209a44c0f1c829460d327499d",
+  "source_files": [
+    "experiments/paper25/lean/Formalization.lean",
+    "experiments/paper25/lean/Formalization/Transport.lean",
+    "experiments/paper25/lean/Formalization/Margin.lean"
+  ],
+  "manuscript_coverage": [
+    "Theorem 2.1 algebraic and abstract-diagnostic core",
+    "Corollary 4.1 scalar order core",
+    "Theorem 4.2 scalar interval equivalence and scalar witnesses"
+  ],
+  "explicit_noncoverage": [
+    "concrete Frobenius implementation and derivation of invariance from unitarity",
+    "Corollary 2.2 full Boolean aggregate activity",
+    "Theorem 3.1 carrier-localized perturbation bound and later minimax results",
+    "Theorem 4.2 finite-dimensional operator realizations",
+    "Rubik and Markov application results",
+    "Supplementary Technical Note S1"
+  ]
+}

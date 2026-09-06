@@ -1,0 +1,17 @@
+{
+  "schema": "rime.paper25.diagnostic-sharpness-receipt.v1",
+  "artifact_id": "PAPER25-DIAGNOSTIC-SHARPNESS-V1-VALIDATED",
+  "status": "PASS",
+  "scope": "local exact replay and source-closure validation; not independent proof",
+  "artifact": {
+    "path": "experiments/paper25/results/diagnostic_sharpness_v1.json",
+    "sha256": "cc7f17a4908440e9f218132f01d9bc1834d9c5d0ab97a40616bee7e5cf926268",
+    "content_sha256": "04de9d455594964ac9a0b6980451d1b2fa5a386bdbe24da154916fa1d21bcc59"
+  },
+  "source_closure": {
+    "experiments/paper25/validation/validate_sharpness.py": "61e89c9a276d90f296449cebd0c41e1bbe60b5396820995fd2eaec9afc131447",
+    "experiments/paper25/sharpness_controls.py": "2c95400fa01271cea949c774e105d71631c913e2ce9eaefdcc33c0686e53e0ec",
+    "papers/paper25/Paper XXV.md": "55d530da99725c33f6c04a3083939c94f5375ed48151d18d059c7e7ac1cee415"
+  },
+  "content_sha256": "c9f39821d3f13fef71ddb409ac3d28dbbc800d835ad0670c29c94d1fd8e6a6f3"
+}

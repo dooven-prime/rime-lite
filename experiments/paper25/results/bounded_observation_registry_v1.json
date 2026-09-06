@@ -1,0 +1,67 @@
+{
+  "schema": "rime.paper25.bounded-observation-registry.v1",
+  "artifact_id": "PAPER25-BOUNDED-OBSERVATION-REGISTRY-V1",
+  "evidence_layer": "BOUNDED_FLOAT64_OBSERVATION",
+  "claim_status": "BOUNDED_OBSERVATION_REGISTRY",
+  "scope": "Registers selected float64 observations on the Paper XXV claim surface without changing their source status or treating them as theorem proofs.",
+  "artifacts": [
+    {
+      "path": "experiments/paper25/results/transformation_laws_v1.json",
+      "sha256": "6a19a6a4a453ddfa65f9b89b38ada8cf2af0ab57ce9d3035590c092453743d8b",
+      "evidence_layer": "BOUNDED_FLOAT64_OBSERVATION",
+      "registered_component": "bounded_numerical_observation",
+      "source_claim_status": "EXACT_FINITE_CERTIFICATE_AND_BOUNDED_NUMERICAL_OBSERVATION",
+      "registered_role": "BOUNDED_SUPPORT_NOT_THEOREM_PROOF",
+      "supports": [
+        "Theorem 2.1"
+      ]
+    },
+    {
+      "path": "experiments/paper25/results/rubik_qh_transport_v1.json",
+      "sha256": "196b0e26c479a34adec116c9dff5d827b05c54e5664ce731d652a4ffd799e07c",
+      "evidence_layer": "BOUNDED_FLOAT64_OBSERVATION",
+      "registered_component": "whole_artifact",
+      "source_claim_status": "BOUNDED_NUMERICAL_OBSERVATION",
+      "registered_role": "BOUNDED_SUPPORT_NOT_THEOREM_PROOF",
+      "supports": [
+        "Theorem 2.1",
+        "Boundary 2.3"
+      ]
+    },
+    {
+      "path": "experiments/paper25/results/rubik_perturbation_sweep_v1.json",
+      "sha256": "0f75989bbe9c670c37a1d796c78701c7c9d22f0174c40fc6ca2ab71b12d3f831",
+      "evidence_layer": "BOUNDED_FLOAT64_OBSERVATION",
+      "registered_component": "whole_artifact",
+      "source_claim_status": "BOUNDED_NUMERICAL_OBSERVATION",
+      "registered_role": "BOUNDED_SUPPORT_NOT_THEOREM_PROOF",
+      "supports": [
+        "Theorem 3.1",
+        "Corollaries 4.1 and 4.3"
+      ]
+    },
+    {
+      "path": "experiments/paper25/results/nonnormal_markov_stability_v1.json",
+      "sha256": "39ecb5db58cf823f2163c43a46136972faca3af9cbf253f2cba16c734e3d3411",
+      "evidence_layer": "BOUNDED_FLOAT64_OBSERVATION",
+      "registered_component": "whole_artifact",
+      "source_claim_status": "BOUNDED_NUMERICAL_OBSERVATION",
+      "registered_role": "BOUNDED_SUPPORT_NOT_THEOREM_PROOF",
+      "supports": [
+        "Corollary 5.1"
+      ]
+    },
+    {
+      "path": "experiments/paper25/results/markov_probability_alignment_v1.json",
+      "sha256": "8f2aa7f4f5a41d8faf9d256f15228b905b3de15c1dc3a2f5de79ecd764d5e8a9",
+      "evidence_layer": "BOUNDED_FLOAT64_OBSERVATION",
+      "registered_component": "whole_artifact",
+      "source_claim_status": "BOUNDED_NUMERICAL_OBSERVATION",
+      "registered_role": "BOUNDED_SUPPORT_NOT_THEOREM_PROOF",
+      "supports": [
+        "Corollary 5.1"
+      ]
+    }
+  ],
+  "content_sha256": "f510f22020d3191627789b2d1371663b54ce90f7e54e7b638ef4bfcd3896d210"
+}

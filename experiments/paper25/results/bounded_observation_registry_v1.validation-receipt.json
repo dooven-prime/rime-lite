@@ -1,0 +1,19 @@
+{
+  "schema": "rime.paper25.bounded-observation-receipt.v1",
+  "artifact_id": "PAPER25-BOUNDED-OBSERVATION-REGISTRY-V1-VALIDATED",
+  "status": "PASS",
+  "scope": "local hash/status validation of bounded support; not independent proof",
+  "bounded_observation_registry": {
+    "path": "experiments/paper25/results/bounded_observation_registry_v1.json",
+    "sha256": "7cde0617f1e1f3438fd2a6aa3f37d19b53450dd603b555ac05b87046358b703a",
+    "content_sha256": "f510f22020d3191627789b2d1371663b54ce90f7e54e7b638ef4bfcd3896d210"
+  },
+  "source_closure": {
+    "experiments/paper25/results/transformation_laws_v1.json": "6a19a6a4a453ddfa65f9b89b38ada8cf2af0ab57ce9d3035590c092453743d8b",
+    "experiments/paper25/results/rubik_qh_transport_v1.json": "196b0e26c479a34adec116c9dff5d827b05c54e5664ce731d652a4ffd799e07c",
+    "experiments/paper25/results/rubik_perturbation_sweep_v1.json": "0f75989bbe9c670c37a1d796c78701c7c9d22f0174c40fc6ca2ab71b12d3f831",
+    "experiments/paper25/results/nonnormal_markov_stability_v1.json": "39ecb5db58cf823f2163c43a46136972faca3af9cbf253f2cba16c734e3d3411",
+    "experiments/paper25/results/markov_probability_alignment_v1.json": "8f2aa7f4f5a41d8faf9d256f15228b905b3de15c1dc3a2f5de79ecd764d5e8a9"
+  },
+  "content_sha256": "be531f253c1b8f2040c4771ab8024d8878ad21e803cbd3c301e36a4bffbfdbb1"
+}

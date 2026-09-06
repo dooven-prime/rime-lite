@@ -1,0 +1,82 @@
+{
+  "schema": "rime.paper25.lean-formalization-receipt.v1",
+  "artifact_id": "PAPER25-TYPED-TRANSPORT-SCALAR-MARGIN-V1-ELABORATED",
+  "formalization_id": "PAPER25-TYPED-TRANSPORT-SCALAR-MARGIN-V1",
+  "status": "PASS",
+  "validation_mode": "LOCAL_CLOSURE_VERIFICATION",
+  "receipt_self_exclusion": true,
+  "elaboration_commands": [
+    "lake build",
+    "lake env lean Formalization.lean"
+  ],
+  "artifact_closure": {
+    "artifact_count": 9,
+    "closure_digest": "9cb00b802770c5bec4d475c7af5e0da7ea2ad2d7a4322113b2c893f377e39987",
+    "ordered_artifacts": [
+      {
+        "role": "formalization-manifest",
+        "artifact": {
+          "uri": "experiments/paper25/lean/formalization-manifest.json",
+          "sha256": "13ae4874bd9914c60d5082090388f5f63c137ed4647ec8394cc9e2c64807ab9b"
+        }
+      },
+      {
+        "role": "formalization-readme",
+        "artifact": {
+          "uri": "experiments/paper25/lean/README.md",
+          "sha256": "b1df217bb712f4091ae15adf1a3a10a95bee08ed788368c661993345bc62bf7e"
+        }
+      },
+      {
+        "role": "lean-toolchain",
+        "artifact": {
+          "uri": "experiments/paper25/lean/lean-toolchain",
+          "sha256": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b"
+        }
+      },
+      {
+        "role": "lake-project",
+        "artifact": {
+          "uri": "experiments/paper25/lean/lakefile.toml",
+          "sha256": "6540e595c1a2b5e4ded97aa419a36129ddc229e352fcdf7b5643525f04b01cf2"
+        }
+      },
+      {
+        "role": "lake-lock",
+        "artifact": {
+          "uri": "experiments/paper25/lean/lake-manifest.json",
+          "sha256": "7910e312d3fab5e25884c03ea83235afe74068c3e4a27047881657674750ec09"
+        }
+      },
+      {
+        "role": "lean-source",
+        "artifact": {
+          "uri": "experiments/paper25/lean/Formalization.lean",
+          "sha256": "8932eec77d1256a5fa8b5c40301dc87106c5d577ff86c6e0cf78918ea03a645b"
+        }
+      },
+      {
+        "role": "lean-source",
+        "artifact": {
+          "uri": "experiments/paper25/lean/Formalization/Transport.lean",
+          "sha256": "d5a25a48f8eb81a16447097a68573cc7e11cd10306554a95872897346a848884"
+        }
+      },
+      {
+        "role": "lean-source",
+        "artifact": {
+          "uri": "experiments/paper25/lean/Formalization/Margin.lean",
+          "sha256": "b7225f139e084abc4767dc851db5b92d9f43e9d66cffce20d0d0bac241889fc5"
+        }
+      },
+      {
+        "role": "formalization-validator",
+        "artifact": {
+          "uri": "experiments/paper25/validation/validate_lean_formalization.py",
+          "sha256": "bc512a7d069f553ff7a494ce7ec6e45ff7bc9d97b901b49c1bd485f5011d7693"
+        }
+      }
+    ]
+  },
+  "content_sha256": "71d0e629771a5d03758fca52bca0db47bb61412e6530bfbee132a281768e6379"
+}

@@ -1,0 +1,39 @@
+{
+  "schema": "rime.paper25.companion-note.claim-surface.v1",
+  "paper_id": "PAPER25_COMPANION_NOTE",
+  "supplement_id": "PAPER25-S1",
+  "release_identity_claimed": false,
+  "manuscript": "experiments/paper25/notes/proportional_markov_semantic_lift/NOTE.md",
+  "claims": [
+    {
+      "id": "A3_FIRST_STEP_LOWER_BOUND",
+      "status": "THEOREM",
+      "statement": "E_i[T_j] >= 2-P[i,j]"
+    },
+    {
+      "id": "A4_HITTING_TIME_PROPORTIONAL_LIFT",
+      "status": "THEOREM",
+      "proof": "experiments/paper25/notes/proportional_markov_semantic_lift/NOTE.md"
+    },
+    {
+      "id": "A5_STATIONARY_MASS_PROPORTIONAL_LIFT",
+      "status": "THEOREM",
+      "proof": "experiments/paper25/notes/proportional_markov_semantic_lift/NOTE.md"
+    },
+    {
+      "id": "SINGLE_EDGE_HITTING_FAILURES",
+      "status": "EXPLICIT_NEGATIVE_BOUNDARY",
+      "audit": "experiments/paper25/notes/proportional_markov_semantic_lift/markov_nstate_lift_v2.json"
+    },
+    {
+      "id": "ABSOLUTE_GAP_NONMONOTONICITY",
+      "status": "EXPLICIT_NEGATIVE_BOUNDARY",
+      "audit": "experiments/paper25/notes/proportional_markov_semantic_lift/markov_nstate_lift_v2.json"
+    },
+    {
+      "id": "SUBSET_TO_PAIR_COMPARISON",
+      "status": "OPEN",
+      "statement": "No A4-type carrier projection has been established"
+    }
+  ]
+}

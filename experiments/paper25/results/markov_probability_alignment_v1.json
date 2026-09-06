@@ -1,0 +1,987 @@
+{
+  "schema": "rime.paper25.markov-probability-alignment.v1",
+  "bundle_id": "numerical-representation-diagnostics.markov-probability-alignment.v1",
+  "artifact_role": "PAPER25_MARKOV_ALIGNMENT_EVIDENCE",
+  "claim_status": "BOUNDED_NUMERICAL_OBSERVATION",
+  "paper_evidence_status": "REGISTERED_SUPPORT_NOT_THEOREM_PROOF",
+  "environment": {
+    "python": "3.13.0",
+    "numpy": "2.1.3",
+    "arithmetic": "float64"
+  },
+  "parent_bundle": {
+    "bundle_id": "numerical-representation-diagnostics.nonnormal-markov-stability.v1",
+    "schema": "rime.paper25.nonnormal-markov-stability.v1"
+  },
+  "typed_alignment_rule": "For coordinate singleton sectors, ||Q_i P Q_j||_F = P[i,j] because P[i,j] is nonnegative. Rotated Hilbert frames do not admit this Markov probability interpretation.",
+  "two_state_probability_model": {
+    "form": "P=[[1-a,a],[b,1-b]]",
+    "fixed_reverse_probability_b": 0.2,
+    "identities": {
+      "expected_hitting_time_0_to_1": "1/a for a>0",
+      "stationary_target_mass": "a/(a+b)",
+      "stationary_eigenvalue_separation": "sep_1=|1-lambda_2|=a+b",
+      "eventual_hit_probability_0_to_1": "1 for a>0"
+    }
+  },
+  "records": [
+    {
+      "sweep_axis": "OPERATOR_ONLY",
+      "level_index": 0,
+      "epsilon_operator_norm": 0.0,
+      "eta_sector_rotation_radians": 0.0,
+      "alignment_status": "ALIGNED_SINGLETON_STATE_PARTITION",
+      "probability_lift_status": "ADMITTED",
+      "forward_coordinate": {
+        "source_state": 0,
+        "target_state": 1,
+        "transition_probability": 0.1,
+        "operator_block_frobenius": 0.1,
+        "block_probability_equality_residual": 0.0,
+        "markov_positive_support": true,
+        "block_activity_above_threshold": false,
+        "positive_support_equals_block_activity": false
+      },
+      "probability_observations": {
+        "stationary_distribution": [
+          0.6666666666666666,
+          0.3333333333333334
+        ],
+        "positive_support_reachable_state_0_to_state_1": true,
+        "eventual_hit_probability_state_0_to_state_1": 1.0,
+        "expected_hitting_time_state_0_to_state_1": 10.000000000000002,
+        "stationary_eigenvalue_separation": 0.30000000000000004
+      },
+      "global_probability_lift": {
+        "transition_probability_interval": [
+          0.1,
+          0.1
+        ],
+        "positive_edge_persistence": "CERTIFIED",
+        "eventual_hit_probability_one": "CERTIFIED_FOR_DECLARED_TWO_STATE_FAMILY",
+        "expected_hitting_time_interval": [
+          10.0,
+          10.0
+        ],
+        "stationary_target_mass_interval": [
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "stationary_eigenvalue_separation_interval": [
+          0.30000000000000004,
+          0.30000000000000004
+        ],
+        "actual_probability_contained": true,
+        "actual_expected_hitting_time_contained": true,
+        "actual_stationary_target_mass_contained": true,
+        "actual_stationary_eigenvalue_separation_contained": true
+      },
+      "localized_probability_lift": {
+        "transition_probability_interval": [
+          0.1,
+          0.1
+        ],
+        "positive_edge_persistence": "CERTIFIED",
+        "eventual_hit_probability_one": "CERTIFIED_FOR_DECLARED_TWO_STATE_FAMILY",
+        "expected_hitting_time_interval": [
+          10.0,
+          10.0
+        ],
+        "stationary_target_mass_interval": [
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "stationary_eigenvalue_separation_interval": [
+          0.30000000000000004,
+          0.30000000000000004
+        ],
+        "actual_probability_contained": true,
+        "actual_expected_hitting_time_contained": true,
+        "actual_stationary_target_mass_contained": true,
+        "actual_stationary_eigenvalue_separation_contained": true
+      }
+    },
+    {
+      "sweep_axis": "OPERATOR_ONLY",
+      "level_index": 1,
+      "epsilon_operator_norm": 0.001,
+      "eta_sector_rotation_radians": 0.0,
+      "alignment_status": "ALIGNED_SINGLETON_STATE_PARTITION",
+      "probability_lift_status": "ADMITTED",
+      "forward_coordinate": {
+        "source_state": 0,
+        "target_state": 1,
+        "transition_probability": 0.10070710678118655,
+        "operator_block_frobenius": 0.10070710678118655,
+        "block_probability_equality_residual": 0.0,
+        "markov_positive_support": true,
+        "block_activity_above_threshold": false,
+        "positive_support_equals_block_activity": false
+      },
+      "probability_observations": {
+        "stationary_distribution": [
+          0.6650990132585479,
+          0.334900986741452
+        ],
+        "positive_support_reachable_state_0_to_state_1": true,
+        "eventual_hit_probability_state_0_to_state_1": 1.0,
+        "expected_hitting_time_state_0_to_state_1": 9.929785811171904,
+        "stationary_eigenvalue_separation": 0.3007071067811865
+      },
+      "global_probability_lift": {
+        "transition_probability_interval": [
+          0.099,
+          0.101
+        ],
+        "positive_edge_persistence": "CERTIFIED",
+        "eventual_hit_probability_one": "CERTIFIED_FOR_DECLARED_TWO_STATE_FAMILY",
+        "expected_hitting_time_interval": [
+          9.900990099009901,
+          10.1010101010101
+        ],
+        "stationary_target_mass_interval": [
+          0.33110367892976583,
+          0.33554817275747506
+        ],
+        "stationary_eigenvalue_separation_interval": [
+          0.29900000000000004,
+          0.30100000000000005
+        ],
+        "actual_probability_contained": true,
+        "actual_expected_hitting_time_contained": true,
+        "actual_stationary_target_mass_contained": true,
+        "actual_stationary_eigenvalue_separation_contained": true
+      },
+      "localized_probability_lift": {
+        "transition_probability_interval": [
+          0.09929289321881346,
+          0.10070710678118655
+        ],
+        "positive_edge_persistence": "CERTIFIED",
+        "eventual_hit_probability_one": "CERTIFIED_FOR_DECLARED_TWO_STATE_FAMILY",
+        "expected_hitting_time_interval": [
+          9.929785811171904,
+          10.071214238830596
+        ],
+        "stationary_target_mass_interval": [
+          0.3317582724766548,
+          0.334900986741452
+        ],
+        "stationary_eigenvalue_separation_interval": [
+          0.29929289321881347,
+          0.30070710678118656
+        ],
+        "actual_probability_contained": true,
+        "actual_expected_hitting_time_contained": true,
+        "actual_stationary_target_mass_contained": true,
+        "actual_stationary_eigenvalue_separation_contained": true
+      }
+    },
+    {
+      "sweep_axis": "OPERATOR_ONLY",
+      "level_index": 2,
+      "epsilon_operator_norm": 0.01,
+      "eta_sector_rotation_radians": 0.0,
+      "alignment_status": "ALIGNED_SINGLETON_STATE_PARTITION",
+      "probability_lift_status": "ADMITTED",
+      "forward_coordinate": {
+        "source_state": 0,
+        "target_state": 1,
+        "transition_probability": 0.10707106781186548,
+        "operator_block_frobenius": 0.10707106781186548,
+        "block_probability_equality_residual": 0.0,
+        "markov_positive_support": true,
+        "block_activity_above_threshold": false,
+        "positive_support_equals_block_activity": false
+      },
+      "probability_observations": {
+        "stationary_distribution": [
+          0.6513150243204768,
+          0.34868497567952306
+        ],
+        "positive_support_reachable_state_0_to_state_1": true,
+        "eventual_hit_probability_state_0_to_state_1": 1.0,
+        "expected_hitting_time_state_0_to_state_1": 9.339591174686886,
+        "stationary_eigenvalue_separation": 0.30707106781186544
+      },
+      "global_probability_lift": {
+        "transition_probability_interval": [
+          0.09000000000000001,
+          0.11
+        ],
+        "positive_edge_persistence": "CERTIFIED",
+        "eventual_hit_probability_one": "CERTIFIED_FOR_DECLARED_TWO_STATE_FAMILY",
+        "expected_hitting_time_interval": [
+          9.090909090909092,
+          11.111111111111109
+        ],
+        "stationary_target_mass_interval": [
+          0.3103448275862069,
+          0.3548387096774194
+        ],
+        "stationary_eigenvalue_separation_interval": [
+          0.29000000000000004,
+          0.31
+        ],
+        "actual_probability_contained": true,
+        "actual_expected_hitting_time_contained": true,
+        "actual_stationary_target_mass_contained": true,
+        "actual_stationary_eigenvalue_separation_contained": true
+      },
+      "localized_probability_lift": {
+        "transition_probability_interval": [
+          0.09292893218813453,
+          0.10707106781186548
+        ],
+        "positive_edge_persistence": "CERTIFIED",
+        "eventual_hit_probability_one": "CERTIFIED_FOR_DECLARED_TWO_STATE_FAMILY",
+        "expected_hitting_time_interval": [
+          9.339591174686886,
+          10.760911337875926
+        ],
+        "stationary_target_mass_interval": [
+          0.3172405384950184,
+          0.348684975679523
+        ],
+        "stationary_eigenvalue_separation_interval": [
+          0.29292893218813454,
+          0.3070710678118655
+        ],
+        "actual_probability_contained": true,
+        "actual_expected_hitting_time_contained": true,
+        "actual_stationary_target_mass_contained": true,
+        "actual_stationary_eigenvalue_separation_contained": true
+      }
+    },
+    {
+      "sweep_axis": "OPERATOR_ONLY",
+      "level_index": 3,
+      "epsilon_operator_norm": 0.03,
+      "eta_sector_rotation_radians": 0.0,
+      "alignment_status": "ALIGNED_SINGLETON_STATE_PARTITION",
+      "probability_lift_status": "ADMITTED",
+      "forward_coordinate": {
+        "source_state": 0,
+        "target_state": 1,
+        "transition_probability": 0.12121320343559643,
+        "operator_block_frobenius": 0.12121320343559643,
+        "block_probability_equality_residual": 0.0,
+        "markov_positive_support": true,
+        "block_activity_above_threshold": false,
+        "positive_support_equals_block_activity": false
+      },
+      "probability_observations": {
+        "stationary_distribution": [
+          0.6226394116457924,
+          0.37736058835420755
+        ],
+        "positive_support_reachable_state_0_to_state_1": true,
+        "eventual_hit_probability_state_0_to_state_1": 1.0,
+        "expected_hitting_time_state_0_to_state_1": 8.249926341822366,
+        "stationary_eigenvalue_separation": 0.32121320343559634
+      },
+      "global_probability_lift": {
+        "transition_probability_interval": [
+          0.07,
+          0.13
+        ],
+        "positive_edge_persistence": "CERTIFIED",
+        "eventual_hit_probability_one": "CERTIFIED_FOR_DECLARED_TWO_STATE_FAMILY",
+        "expected_hitting_time_interval": [
+          7.692307692307692,
+          14.285714285714285
+        ],
+        "stationary_target_mass_interval": [
+          0.25925925925925924,
+          0.3939393939393939
+        ],
+        "stationary_eigenvalue_separation_interval": [
+          0.27,
+          0.33
+        ],
+        "actual_probability_contained": true,
+        "actual_expected_hitting_time_contained": true,
+        "actual_stationary_target_mass_contained": true,
+        "actual_stationary_eigenvalue_separation_contained": true
+      },
+      "localized_probability_lift": {
+        "transition_probability_interval": [
+          0.07878679656440359,
+          0.12121320343559643
+        ],
+        "positive_edge_persistence": "CERTIFIED",
+        "eventual_hit_probability_one": "CERTIFIED_FOR_DECLARED_TWO_STATE_FAMILY",
+        "expected_hitting_time_interval": [
+          8.249926341822365,
+          12.692482035140985
+        ],
+        "stationary_target_mass_interval": [
+          0.2826059108082716,
+          0.3773605883542075
+        ],
+        "stationary_eigenvalue_separation_interval": [
+          0.2787867965644036,
+          0.32121320343559645
+        ],
+        "actual_probability_contained": true,
+        "actual_expected_hitting_time_contained": true,
+        "actual_stationary_target_mass_contained": true,
+        "actual_stationary_eigenvalue_separation_contained": true
+      }
+    },
+    {
+      "sweep_axis": "OPERATOR_ONLY",
+      "level_index": 4,
+      "epsilon_operator_norm": 0.05,
+      "eta_sector_rotation_radians": 0.0,
+      "alignment_status": "ALIGNED_SINGLETON_STATE_PARTITION",
+      "probability_lift_status": "ADMITTED",
+      "forward_coordinate": {
+        "source_state": 0,
+        "target_state": 1,
+        "transition_probability": 0.1353553390593274,
+        "operator_block_frobenius": 0.1353553390593274,
+        "block_probability_equality_residual": 0.0,
+        "markov_positive_support": true,
+        "block_activity_above_threshold": false,
+        "positive_support_equals_block_activity": false
+      },
+      "probability_observations": {
+        "stationary_distribution": [
+          0.5963823345141916,
+          0.40361766548580824
+        ],
+        "positive_support_reachable_state_0_to_state_1": true,
+        "eventual_hit_probability_state_0_to_state_1": 1.0,
+        "expected_hitting_time_state_0_to_state_1": 7.387961250362585,
+        "stationary_eigenvalue_separation": 0.33535533905932735
+      },
+      "global_probability_lift": {
+        "transition_probability_interval": [
+          0.05,
+          0.15000000000000002
+        ],
+        "positive_edge_persistence": "CERTIFIED",
+        "eventual_hit_probability_one": "CERTIFIED_FOR_DECLARED_TWO_STATE_FAMILY",
+        "expected_hitting_time_interval": [
+          6.666666666666666,
+          20.0
+        ],
+        "stationary_target_mass_interval": [
+          0.2,
+          0.4285714285714286
+        ],
+        "stationary_eigenvalue_separation_interval": [
+          0.25,
+          0.35000000000000003
+        ],
+        "actual_probability_contained": true,
+        "actual_expected_hitting_time_contained": true,
+        "actual_stationary_target_mass_contained": true,
+        "actual_stationary_eigenvalue_separation_contained": true
+      },
+      "localized_probability_lift": {
+        "transition_probability_interval": [
+          0.06464466094067263,
+          0.1353553390593274
+        ],
+        "positive_edge_persistence": "CERTIFIED",
+        "eventual_hit_probability_one": "CERTIFIED_FOR_DECLARED_TWO_STATE_FAMILY",
+        "expected_hitting_time_interval": [
+          7.387961250362585,
+          15.46918160678027
+        ],
+        "stationary_target_mass_interval": [
+          0.2442696584578538,
+          0.4036176654858082
+        ],
+        "stationary_eigenvalue_separation_interval": [
+          0.2646446609406726,
+          0.3353553390593274
+        ],
+        "actual_probability_contained": true,
+        "actual_expected_hitting_time_contained": true,
+        "actual_stationary_target_mass_contained": true,
+        "actual_stationary_eigenvalue_separation_contained": true
+      }
+    },
+    {
+      "sweep_axis": "OPERATOR_ONLY",
+      "level_index": 5,
+      "epsilon_operator_norm": 0.08,
+      "eta_sector_rotation_radians": 0.0,
+      "alignment_status": "ALIGNED_SINGLETON_STATE_PARTITION",
+      "probability_lift_status": "ADMITTED",
+      "forward_coordinate": {
+        "source_state": 0,
+        "target_state": 1,
+        "transition_probability": 0.1565685424949238,
+        "operator_block_frobenius": 0.1565685424949238,
+        "block_probability_equality_residual": 0.0,
+        "markov_positive_support": true,
+        "block_activity_above_threshold": true,
+        "positive_support_equals_block_activity": true
+      },
+      "probability_observations": {
+        "stationary_distribution": [
+          0.5609019758181479,
+          0.4390980241818521
+        ],
+        "positive_support_reachable_state_0_to_state_1": true,
+        "eventual_hit_probability_state_0_to_state_1": 1.0,
+        "expected_hitting_time_state_0_to_state_1": 6.386979044864146,
+        "stationary_eigenvalue_separation": 0.35656854249492376
+      },
+      "global_probability_lift": {
+        "transition_probability_interval": [
+          0.020000000000000004,
+          0.18
+        ],
+        "positive_edge_persistence": "CERTIFIED",
+        "eventual_hit_probability_one": "CERTIFIED_FOR_DECLARED_TWO_STATE_FAMILY",
+        "expected_hitting_time_interval": [
+          5.555555555555555,
+          49.99999999999999
+        ],
+        "stationary_target_mass_interval": [
+          0.09090909090909091,
+          0.47368421052631576
+        ],
+        "stationary_eigenvalue_separation_interval": [
+          0.22000000000000003,
+          0.38
+        ],
+        "actual_probability_contained": true,
+        "actual_expected_hitting_time_contained": true,
+        "actual_stationary_target_mass_contained": true,
+        "actual_stationary_eigenvalue_separation_contained": true
+      },
+      "localized_probability_lift": {
+        "transition_probability_interval": [
+          0.04343145750507621,
+          0.1565685424949238
+        ],
+        "positive_edge_persistence": "CERTIFIED",
+        "eventual_hit_probability_one": "CERTIFIED_FOR_DECLARED_TWO_STATE_FAMILY",
+        "expected_hitting_time_interval": [
+          6.386979044864146,
+          23.0247856610182
+        ],
+        "stationary_target_mass_interval": [
+          0.17841349655547514,
+          0.43909802418185206
+        ],
+        "stationary_eigenvalue_separation_interval": [
+          0.24343145750507622,
+          0.3565685424949238
+        ],
+        "actual_probability_contained": true,
+        "actual_expected_hitting_time_contained": true,
+        "actual_stationary_target_mass_contained": true,
+        "actual_stationary_eigenvalue_separation_contained": true
+      }
+    },
+    {
+      "sweep_axis": "OPERATOR_ONLY",
+      "level_index": 6,
+      "epsilon_operator_norm": 0.1,
+      "eta_sector_rotation_radians": 0.0,
+      "alignment_status": "ALIGNED_SINGLETON_STATE_PARTITION",
+      "probability_lift_status": "ADMITTED",
+      "forward_coordinate": {
+        "source_state": 0,
+        "target_state": 1,
+        "transition_probability": 0.17071067811865476,
+        "operator_block_frobenius": 0.17071067811865476,
+        "block_probability_equality_residual": 0.0,
+        "markov_positive_support": true,
+        "block_activity_above_threshold": true,
+        "positive_support_equals_block_activity": true
+      },
+      "probability_observations": {
+        "stationary_distribution": [
+          0.5395042867796359,
+          0.46049571322036414
+        ],
+        "positive_support_reachable_state_0_to_state_1": true,
+        "eventual_hit_probability_state_0_to_state_1": 1.0,
+        "expected_hitting_time_state_0_to_state_1": 5.857864376269052,
+        "stationary_eigenvalue_separation": 0.37071067811865466
+      },
+      "global_probability_lift": {
+        "transition_probability_interval": [
+          0.0,
+          0.2
+        ],
+        "positive_edge_persistence": "UNRESOLVED",
+        "eventual_hit_probability_one": "UNRESOLVED",
+        "expected_hitting_time_interval": [
+          5.0,
+          null
+        ],
+        "stationary_target_mass_interval": [
+          0.0,
+          0.5
+        ],
+        "stationary_eigenvalue_separation_interval": [
+          0.2,
+          0.4
+        ],
+        "actual_probability_contained": true,
+        "actual_expected_hitting_time_contained": true,
+        "actual_stationary_target_mass_contained": true,
+        "actual_stationary_eigenvalue_separation_contained": true
+      },
+      "localized_probability_lift": {
+        "transition_probability_interval": [
+          0.029289321881345254,
+          0.17071067811865476
+        ],
+        "positive_edge_persistence": "CERTIFIED",
+        "eventual_hit_probability_one": "CERTIFIED_FOR_DECLARED_TWO_STATE_FAMILY",
+        "expected_hitting_time_interval": [
+          5.857864376269049,
+          34.142135623730944
+        ],
+        "stationary_target_mass_interval": [
+          0.12773958089728296,
+          0.4604957132203641
+        ],
+        "stationary_eigenvalue_separation_interval": [
+          0.22928932188134526,
+          0.37071067811865477
+        ],
+        "actual_probability_contained": true,
+        "actual_expected_hitting_time_contained": true,
+        "actual_stationary_target_mass_contained": true,
+        "actual_stationary_eigenvalue_separation_contained": true
+      }
+    },
+    {
+      "sweep_axis": "SECTORIZATION_ONLY",
+      "level_index": 0,
+      "epsilon_operator_norm": 0.0,
+      "eta_sector_rotation_radians": 0.0,
+      "alignment_status": "ALIGNED_SINGLETON_STATE_PARTITION",
+      "probability_lift_status": "ADMITTED",
+      "forward_coordinate": {
+        "source_state": 0,
+        "target_state": 1,
+        "transition_probability": 0.1,
+        "operator_block_frobenius": 0.1,
+        "block_probability_equality_residual": 0.0,
+        "markov_positive_support": true,
+        "block_activity_above_threshold": false,
+        "positive_support_equals_block_activity": false
+      },
+      "probability_observations": {
+        "stationary_distribution": [
+          0.6666666666666666,
+          0.3333333333333334
+        ],
+        "positive_support_reachable_state_0_to_state_1": true,
+        "eventual_hit_probability_state_0_to_state_1": 1.0,
+        "expected_hitting_time_state_0_to_state_1": 10.000000000000002,
+        "stationary_eigenvalue_separation": 0.30000000000000004
+      },
+      "global_probability_lift": {
+        "transition_probability_interval": [
+          0.1,
+          0.1
+        ],
+        "positive_edge_persistence": "CERTIFIED",
+        "eventual_hit_probability_one": "CERTIFIED_FOR_DECLARED_TWO_STATE_FAMILY",
+        "expected_hitting_time_interval": [
+          10.0,
+          10.0
+        ],
+        "stationary_target_mass_interval": [
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "stationary_eigenvalue_separation_interval": [
+          0.30000000000000004,
+          0.30000000000000004
+        ],
+        "actual_probability_contained": true,
+        "actual_expected_hitting_time_contained": true,
+        "actual_stationary_target_mass_contained": true,
+        "actual_stationary_eigenvalue_separation_contained": true
+      },
+      "localized_probability_lift": {
+        "transition_probability_interval": [
+          0.1,
+          0.1
+        ],
+        "positive_edge_persistence": "CERTIFIED",
+        "eventual_hit_probability_one": "CERTIFIED_FOR_DECLARED_TWO_STATE_FAMILY",
+        "expected_hitting_time_interval": [
+          10.0,
+          10.0
+        ],
+        "stationary_target_mass_interval": [
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "stationary_eigenvalue_separation_interval": [
+          0.30000000000000004,
+          0.30000000000000004
+        ],
+        "actual_probability_contained": true,
+        "actual_expected_hitting_time_contained": true,
+        "actual_stationary_target_mass_contained": true,
+        "actual_stationary_eigenvalue_separation_contained": true
+      }
+    },
+    {
+      "sweep_axis": "SECTORIZATION_ONLY",
+      "level_index": 1,
+      "epsilon_operator_norm": 0.0,
+      "eta_sector_rotation_radians": 0.001,
+      "alignment_status": "INCOMPARABLE_ROTATED_HILBERT_FRAME",
+      "probability_lift_status": "NOT_ADMITTED",
+      "reason": "the rotated orthogonal projectors are not a set-valued partition of the Markov states",
+      "probability_observations": {
+        "stationary_distribution": [
+          0.6666666666666666,
+          0.3333333333333334
+        ],
+        "positive_support_reachable_state_0_to_state_1": true,
+        "eventual_hit_probability_state_0_to_state_1": 1.0,
+        "expected_hitting_time_state_0_to_state_1": 10.000000000000002,
+        "stationary_eigenvalue_separation": 0.30000000000000004
+      },
+      "global_probability_lift": null,
+      "localized_probability_lift": null
+    },
+    {
+      "sweep_axis": "SECTORIZATION_ONLY",
+      "level_index": 2,
+      "epsilon_operator_norm": 0.0,
+      "eta_sector_rotation_radians": 0.01,
+      "alignment_status": "INCOMPARABLE_ROTATED_HILBERT_FRAME",
+      "probability_lift_status": "NOT_ADMITTED",
+      "reason": "the rotated orthogonal projectors are not a set-valued partition of the Markov states",
+      "probability_observations": {
+        "stationary_distribution": [
+          0.6666666666666666,
+          0.3333333333333334
+        ],
+        "positive_support_reachable_state_0_to_state_1": true,
+        "eventual_hit_probability_state_0_to_state_1": 1.0,
+        "expected_hitting_time_state_0_to_state_1": 10.000000000000002,
+        "stationary_eigenvalue_separation": 0.30000000000000004
+      },
+      "global_probability_lift": null,
+      "localized_probability_lift": null
+    },
+    {
+      "sweep_axis": "SECTORIZATION_ONLY",
+      "level_index": 3,
+      "epsilon_operator_norm": 0.0,
+      "eta_sector_rotation_radians": 0.03,
+      "alignment_status": "INCOMPARABLE_ROTATED_HILBERT_FRAME",
+      "probability_lift_status": "NOT_ADMITTED",
+      "reason": "the rotated orthogonal projectors are not a set-valued partition of the Markov states",
+      "probability_observations": {
+        "stationary_distribution": [
+          0.6666666666666666,
+          0.3333333333333334
+        ],
+        "positive_support_reachable_state_0_to_state_1": true,
+        "eventual_hit_probability_state_0_to_state_1": 1.0,
+        "expected_hitting_time_state_0_to_state_1": 10.000000000000002,
+        "stationary_eigenvalue_separation": 0.30000000000000004
+      },
+      "global_probability_lift": null,
+      "localized_probability_lift": null
+    },
+    {
+      "sweep_axis": "SECTORIZATION_ONLY",
+      "level_index": 4,
+      "epsilon_operator_norm": 0.0,
+      "eta_sector_rotation_radians": 0.05,
+      "alignment_status": "INCOMPARABLE_ROTATED_HILBERT_FRAME",
+      "probability_lift_status": "NOT_ADMITTED",
+      "reason": "the rotated orthogonal projectors are not a set-valued partition of the Markov states",
+      "probability_observations": {
+        "stationary_distribution": [
+          0.6666666666666666,
+          0.3333333333333334
+        ],
+        "positive_support_reachable_state_0_to_state_1": true,
+        "eventual_hit_probability_state_0_to_state_1": 1.0,
+        "expected_hitting_time_state_0_to_state_1": 10.000000000000002,
+        "stationary_eigenvalue_separation": 0.30000000000000004
+      },
+      "global_probability_lift": null,
+      "localized_probability_lift": null
+    },
+    {
+      "sweep_axis": "SECTORIZATION_ONLY",
+      "level_index": 5,
+      "epsilon_operator_norm": 0.0,
+      "eta_sector_rotation_radians": 0.08,
+      "alignment_status": "INCOMPARABLE_ROTATED_HILBERT_FRAME",
+      "probability_lift_status": "NOT_ADMITTED",
+      "reason": "the rotated orthogonal projectors are not a set-valued partition of the Markov states",
+      "probability_observations": {
+        "stationary_distribution": [
+          0.6666666666666666,
+          0.3333333333333334
+        ],
+        "positive_support_reachable_state_0_to_state_1": true,
+        "eventual_hit_probability_state_0_to_state_1": 1.0,
+        "expected_hitting_time_state_0_to_state_1": 10.000000000000002,
+        "stationary_eigenvalue_separation": 0.30000000000000004
+      },
+      "global_probability_lift": null,
+      "localized_probability_lift": null
+    },
+    {
+      "sweep_axis": "SECTORIZATION_ONLY",
+      "level_index": 6,
+      "epsilon_operator_norm": 0.0,
+      "eta_sector_rotation_radians": 0.1,
+      "alignment_status": "INCOMPARABLE_ROTATED_HILBERT_FRAME",
+      "probability_lift_status": "NOT_ADMITTED",
+      "reason": "the rotated orthogonal projectors are not a set-valued partition of the Markov states",
+      "probability_observations": {
+        "stationary_distribution": [
+          0.6666666666666666,
+          0.3333333333333334
+        ],
+        "positive_support_reachable_state_0_to_state_1": true,
+        "eventual_hit_probability_state_0_to_state_1": 1.0,
+        "expected_hitting_time_state_0_to_state_1": 10.000000000000002,
+        "stationary_eigenvalue_separation": 0.30000000000000004
+      },
+      "global_probability_lift": null,
+      "localized_probability_lift": null
+    },
+    {
+      "sweep_axis": "COUPLED",
+      "level_index": 0,
+      "epsilon_operator_norm": 0.0,
+      "eta_sector_rotation_radians": 0.0,
+      "alignment_status": "ALIGNED_SINGLETON_STATE_PARTITION",
+      "probability_lift_status": "ADMITTED",
+      "forward_coordinate": {
+        "source_state": 0,
+        "target_state": 1,
+        "transition_probability": 0.1,
+        "operator_block_frobenius": 0.1,
+        "block_probability_equality_residual": 0.0,
+        "markov_positive_support": true,
+        "block_activity_above_threshold": false,
+        "positive_support_equals_block_activity": false
+      },
+      "probability_observations": {
+        "stationary_distribution": [
+          0.6666666666666666,
+          0.3333333333333334
+        ],
+        "positive_support_reachable_state_0_to_state_1": true,
+        "eventual_hit_probability_state_0_to_state_1": 1.0,
+        "expected_hitting_time_state_0_to_state_1": 10.000000000000002,
+        "stationary_eigenvalue_separation": 0.30000000000000004
+      },
+      "global_probability_lift": {
+        "transition_probability_interval": [
+          0.1,
+          0.1
+        ],
+        "positive_edge_persistence": "CERTIFIED",
+        "eventual_hit_probability_one": "CERTIFIED_FOR_DECLARED_TWO_STATE_FAMILY",
+        "expected_hitting_time_interval": [
+          10.0,
+          10.0
+        ],
+        "stationary_target_mass_interval": [
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "stationary_eigenvalue_separation_interval": [
+          0.30000000000000004,
+          0.30000000000000004
+        ],
+        "actual_probability_contained": true,
+        "actual_expected_hitting_time_contained": true,
+        "actual_stationary_target_mass_contained": true,
+        "actual_stationary_eigenvalue_separation_contained": true
+      },
+      "localized_probability_lift": {
+        "transition_probability_interval": [
+          0.1,
+          0.1
+        ],
+        "positive_edge_persistence": "CERTIFIED",
+        "eventual_hit_probability_one": "CERTIFIED_FOR_DECLARED_TWO_STATE_FAMILY",
+        "expected_hitting_time_interval": [
+          10.0,
+          10.0
+        ],
+        "stationary_target_mass_interval": [
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "stationary_eigenvalue_separation_interval": [
+          0.30000000000000004,
+          0.30000000000000004
+        ],
+        "actual_probability_contained": true,
+        "actual_expected_hitting_time_contained": true,
+        "actual_stationary_target_mass_contained": true,
+        "actual_stationary_eigenvalue_separation_contained": true
+      }
+    },
+    {
+      "sweep_axis": "COUPLED",
+      "level_index": 1,
+      "epsilon_operator_norm": 0.001,
+      "eta_sector_rotation_radians": 0.001,
+      "alignment_status": "INCOMPARABLE_ROTATED_HILBERT_FRAME",
+      "probability_lift_status": "NOT_ADMITTED",
+      "reason": "the rotated orthogonal projectors are not a set-valued partition of the Markov states",
+      "probability_observations": {
+        "stationary_distribution": [
+          0.6650990132585479,
+          0.334900986741452
+        ],
+        "positive_support_reachable_state_0_to_state_1": true,
+        "eventual_hit_probability_state_0_to_state_1": 1.0,
+        "expected_hitting_time_state_0_to_state_1": 9.929785811171904,
+        "stationary_eigenvalue_separation": 0.3007071067811865
+      },
+      "global_probability_lift": null,
+      "localized_probability_lift": null
+    },
+    {
+      "sweep_axis": "COUPLED",
+      "level_index": 2,
+      "epsilon_operator_norm": 0.01,
+      "eta_sector_rotation_radians": 0.01,
+      "alignment_status": "INCOMPARABLE_ROTATED_HILBERT_FRAME",
+      "probability_lift_status": "NOT_ADMITTED",
+      "reason": "the rotated orthogonal projectors are not a set-valued partition of the Markov states",
+      "probability_observations": {
+        "stationary_distribution": [
+          0.6513150243204768,
+          0.34868497567952306
+        ],
+        "positive_support_reachable_state_0_to_state_1": true,
+        "eventual_hit_probability_state_0_to_state_1": 1.0,
+        "expected_hitting_time_state_0_to_state_1": 9.339591174686886,
+        "stationary_eigenvalue_separation": 0.30707106781186544
+      },
+      "global_probability_lift": null,
+      "localized_probability_lift": null
+    },
+    {
+      "sweep_axis": "COUPLED",
+      "level_index": 3,
+      "epsilon_operator_norm": 0.03,
+      "eta_sector_rotation_radians": 0.03,
+      "alignment_status": "INCOMPARABLE_ROTATED_HILBERT_FRAME",
+      "probability_lift_status": "NOT_ADMITTED",
+      "reason": "the rotated orthogonal projectors are not a set-valued partition of the Markov states",
+      "probability_observations": {
+        "stationary_distribution": [
+          0.6226394116457924,
+          0.37736058835420755
+        ],
+        "positive_support_reachable_state_0_to_state_1": true,
+        "eventual_hit_probability_state_0_to_state_1": 1.0,
+        "expected_hitting_time_state_0_to_state_1": 8.249926341822366,
+        "stationary_eigenvalue_separation": 0.32121320343559634
+      },
+      "global_probability_lift": null,
+      "localized_probability_lift": null
+    },
+    {
+      "sweep_axis": "COUPLED",
+      "level_index": 4,
+      "epsilon_operator_norm": 0.05,
+      "eta_sector_rotation_radians": 0.05,
+      "alignment_status": "INCOMPARABLE_ROTATED_HILBERT_FRAME",
+      "probability_lift_status": "NOT_ADMITTED",
+      "reason": "the rotated orthogonal projectors are not a set-valued partition of the Markov states",
+      "probability_observations": {
+        "stationary_distribution": [
+          0.5963823345141916,
+          0.40361766548580824
+        ],
+        "positive_support_reachable_state_0_to_state_1": true,
+        "eventual_hit_probability_state_0_to_state_1": 1.0,
+        "expected_hitting_time_state_0_to_state_1": 7.387961250362585,
+        "stationary_eigenvalue_separation": 0.33535533905932735
+      },
+      "global_probability_lift": null,
+      "localized_probability_lift": null
+    },
+    {
+      "sweep_axis": "COUPLED",
+      "level_index": 5,
+      "epsilon_operator_norm": 0.08,
+      "eta_sector_rotation_radians": 0.08,
+      "alignment_status": "INCOMPARABLE_ROTATED_HILBERT_FRAME",
+      "probability_lift_status": "NOT_ADMITTED",
+      "reason": "the rotated orthogonal projectors are not a set-valued partition of the Markov states",
+      "probability_observations": {
+        "stationary_distribution": [
+          0.5609019758181479,
+          0.4390980241818521
+        ],
+        "positive_support_reachable_state_0_to_state_1": true,
+        "eventual_hit_probability_state_0_to_state_1": 1.0,
+        "expected_hitting_time_state_0_to_state_1": 6.386979044864146,
+        "stationary_eigenvalue_separation": 0.35656854249492376
+      },
+      "global_probability_lift": null,
+      "localized_probability_lift": null
+    },
+    {
+      "sweep_axis": "COUPLED",
+      "level_index": 6,
+      "epsilon_operator_norm": 0.1,
+      "eta_sector_rotation_radians": 0.1,
+      "alignment_status": "INCOMPARABLE_ROTATED_HILBERT_FRAME",
+      "probability_lift_status": "NOT_ADMITTED",
+      "reason": "the rotated orthogonal projectors are not a set-valued partition of the Markov states",
+      "probability_observations": {
+        "stationary_distribution": [
+          0.5395042867796359,
+          0.46049571322036414
+        ],
+        "positive_support_reachable_state_0_to_state_1": true,
+        "eventual_hit_probability_state_0_to_state_1": 1.0,
+        "expected_hitting_time_state_0_to_state_1": 5.857864376269052,
+        "stationary_eigenvalue_separation": 0.37071067811865466
+      },
+      "global_probability_lift": null,
+      "localized_probability_lift": null
+    }
+  ],
+  "negative_boundaries": [
+    "Positive Markov support is not the same as thresholded block activity.",
+    "Support reachability alone does not imply almost-sure hitting for an arbitrary Markov chain.",
+    "The probability lift uses the declared two-state family and singleton state partition.",
+    "No probability lift is admitted from a rotated Hilbert sector frame.",
+    "A block perturbation bound does not generally bound stationary or hitting diagnostics without additional model structure.",
+    "The stationary-eigenvalue separation interval is not a general nonnormal spectral-stability theorem."
+  ],
+  "source_artifacts": [
+    {
+      "uri": "experiments/paper25/markov_probability_alignment.py",
+      "sha256": "62501a977e2b9d7b8b5ca615ce90c18f22f4f618afd5da5121a626225625b2de"
+    },
+    {
+      "uri": "experiments/paper25/markov_helpers.py",
+      "sha256": "4a4136257c13a6b712a2877f19a69500ef9b0c37910e2d72d558c726494b484a"
+    },
+    {
+      "uri": "experiments/paper25/markov_stability.py",
+      "sha256": "66ec067f97e070c89622bbf5f07f143f007a410f7b8348d0d82ff66cd4d904d3"
+    }
+  ]
+}
