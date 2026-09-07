@@ -3,7 +3,7 @@
 This document is the public navigation map for the Representation-Induced
 Mechanics and Evolution (RIME) program. It identifies semantic ownership,
 typed interfaces and promotion boundaries across published Papers I--XV and
-the independently scoped Papers XX--XXIV theorem lines. It is not a
+the independently scoped Papers XX--XXVI theorem lines. It is not a
 proof document, release ledger, result record, or substitute for an owning
 manuscript.
 
@@ -95,6 +95,8 @@ status.
 | XXII | fixed-deficit rational dynamics, anchored Farey classification, Catalan enumeration, and Fibonacci envelopes | exact finite certificates support the theorem surface without replacing its proofs |
 | XXIII | pair hitting, marked-kernel corridors, Schreier normalization, commuting-involution bounds, and exact binary clean depth | exact finite certificates and a limited Lean surface support but do not replace the manuscript proofs |
 | XXIV | finite typed-context separation, gluing, semantic visibility, relational descent, and fixed-comparator reconstruction | the Lean closure covers the free-signature core; exact fixtures separate unseen-scope and cyclic-relation failures |
+| XXV | aligned generator-resolved diagnostic transport, carrier-local perturbation, minimax information bounds, and semantic-lift boundaries | exact finite-dimensional proofs and bounded diagnostics remain separated by field-level evidence status |
+| XXVI | pair-chain transfer operators, random pair absorption, Cerny Perron asymptotics, rare-run extremal behavior, and sharp reset-word waiting envelopes | exact proofs and finite replay are separated from float64 spectral observations; the Lean closure covers only declared TA-III arithmetic and conditional certificate chains |
 
 Papers XVI--XIX are intentionally unused in the public numbered sequence;
 Paper XX begins an independently scoped mathematical line, and Paper XXI
@@ -103,8 +105,11 @@ rational branch and treats Paper XXI as a precursor rather than a theorem
 premise. Paper XXIII begins a separate synchronizing-automata/Schreier line;
 its rankwise accounting interface is not a universal Černý potential. Paper
 XXIV begins a separate local-to-global contextual/descent line, with Paper XIII
-as an application source rather than a theorem premise. None extends the SOF
-protocol authority chain.
+as an application source rather than a theorem premise. Paper XXV develops an
+independent finite-dimensional diagnostic methods layer. Paper XXVI develops
+the stochastic pair-transfer branch and treats Paper XXIII as a deterministic
+precursor and comparison point rather than a theorem premise. None extends
+the SOF protocol authority chain.
 
 ## 4. Active Typing and Promotion Rules
 

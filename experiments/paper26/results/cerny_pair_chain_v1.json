@@ -1,0 +1,167 @@
+{
+  "schema": "rime.paper26.cerny-pair-chain.v1",
+  "evidence": {
+    "exact_fields": {
+      "status": "COMPUTATIONAL_REPRODUCTION_OF_PROVED_FORMULAS",
+      "fields": [
+        "n",
+        "reset_length",
+        "expected_H2"
+      ]
+    },
+    "numerical_fields": {
+      "status": "BOUNDED_FLOAT64_OBSERVATION",
+      "fields": [
+        "H2",
+        "gap",
+        "n3_gap",
+        "gap_times_H2"
+      ],
+      "absolute_replay_tolerance": 1e-09,
+      "arithmetic": "NumPy float64 linear algebra"
+    },
+    "attribution": {
+      "expected_H2": "uniform-input specialization of Gusev 2014",
+      "perron_fields": "Paper XXVI finite reproductions"
+    }
+  },
+  "pi_squared_over_8": 1.2337005501361697,
+  "rows": [
+    {
+      "n": 3,
+      "reset_length": 4,
+      "H2": 14.0,
+      "expected_H2": 14.0,
+      "gap": 0.08035662239291952,
+      "n3_gap": 2.169628804608827,
+      "gap_times_H2": 1.1249927135008733
+    },
+    {
+      "n": 4,
+      "reset_length": 9,
+      "H2": 40.0,
+      "expected_H2": 40.0,
+      "gap": 0.029143482860680248,
+      "n3_gap": 1.8651829030835358,
+      "gap_times_H2": 1.16573931442721
+    },
+    {
+      "n": 5,
+      "reset_length": 16,
+      "H2": 88.0,
+      "expected_H2": 88.0,
+      "gap": 0.013670409870082723,
+      "n3_gap": 1.7088012337603402,
+      "gap_times_H2": 1.2029960685672796
+    },
+    {
+      "n": 6,
+      "reset_length": 25,
+      "H2": 162.0,
+      "expected_H2": 162.0,
+      "gap": 0.0074709747027978946,
+      "n3_gap": 1.6137305358043452,
+      "gap_times_H2": 1.210297901853259
+    },
+    {
+      "n": 7,
+      "reset_length": 36,
+      "H2": 270.0,
+      "expected_H2": 270.0,
+      "gap": 0.00451898014020502,
+      "n3_gap": 1.5500101880903219,
+      "gap_times_H2": 1.2201246378553554
+    },
+    {
+      "n": 8,
+      "reset_length": 49,
+      "H2": 416.0,
+      "expected_H2": 416.0,
+      "gap": 0.002938311801925386,
+      "n3_gap": 1.5044156425857977,
+      "gap_times_H2": 1.2223377096009607
+    },
+    {
+      "n": 9,
+      "reset_length": 64,
+      "H2": 608.0,
+      "expected_H2": 608.0,
+      "gap": 0.0020167588237240963,
+      "n3_gap": 1.4702171824948662,
+      "gap_times_H2": 1.2261893648242506
+    },
+    {
+      "n": 10,
+      "reset_length": 81,
+      "H2": 850.0,
+      "expected_H2": 850.0,
+      "gap": 0.0014436375759543374,
+      "n3_gap": 1.4436375759543374,
+      "gap_times_H2": 1.2270919395611868
+    },
+    {
+      "n": 11,
+      "reset_length": 100,
+      "H2": 1150.0,
+      "expected_H2": 1150.0,
+      "gap": 0.001068667938569856,
+      "n3_gap": 1.4223970262364785,
+      "gap_times_H2": 1.2289681293553345
+    },
+    {
+      "n": 12,
+      "reset_length": 121,
+      "H2": 1512.0,
+      "expected_H2": 1512.0,
+      "gap": 0.000813101797685345,
+      "n3_gap": 1.405039906400276,
+      "gap_times_H2": 1.2294099181002416
+    },
+    {
+      "n": 13,
+      "reset_length": 144,
+      "H2": 1944.0,
+      "expected_H2": 1944.0,
+      "gap": 0.0006329513414145005,
+      "n3_gap": 1.3905940970876576,
+      "gap_times_H2": 1.230457407709789
+    },
+    {
+      "n": 14,
+      "reset_length": 169,
+      "H2": 2450.0,
+      "expected_H2": 2450.0,
+      "gap": 0.0005023272888026176,
+      "n3_gap": 1.3783860804743826,
+      "gap_times_H2": 1.230701857566413
+    },
+    {
+      "n": 15,
+      "reset_length": 196,
+      "H2": 3038.0,
+      "expected_H2": 3038.0,
+      "gap": 0.0004053139878996692,
+      "n3_gap": 1.3679347091613836,
+      "gap_times_H2": 1.231343895239195
+    },
+    {
+      "n": 16,
+      "reset_length": 225,
+      "H2": 3712.0,
+      "expected_H2": 3712.0,
+      "gap": 0.0003317595794228856,
+      "n3_gap": 1.3588872373161394,
+      "gap_times_H2": 1.2314915588177513
+    }
+  ],
+  "source_artifacts": [
+    {
+      "path": "experiments/paper26/pair_chain.py",
+      "sha256": "9fdb9e63540b6055b6879e4661c668a18cdba1711b97d1e4bd5feecfcaaaff70"
+    },
+    {
+      "path": "experiments/paper26/generate_family_results.py",
+      "sha256": "e0ee1aaee772e37a4151890c25820f2309f2ff170b54dee7dcbf7c141c07dce1"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "schema": "rime.paper26.lean-formalization-manifest.v1",
+  "formalization_id": "PAPER26-TAIII-RESET-WORD-ENVELOPE-V1",
+  "status": "PARTIAL_FORMALIZATION",
+  "validation_mode": "LOCAL_CLOSURE_VERIFICATION",
+  "entry_point": "experiments/paper26/lean/Formalization.lean",
+  "lean_toolchain": "leanprover/lean4:v4.33.0",
+  "mathlib_revision": "db584cd6d46c92f209a44c0f1c829460d327499d",
+  "source_files": [
+    "experiments/paper26/lean/Formalization.lean",
+    "experiments/paper26/lean/Formalization/TAIII.lean"
+  ],
+  "manuscript_coverage": [
+    "finite border-sum monotonicity and closed geometric envelope in Theorem 6.1",
+    "conditional pair/global comparison chain in Theorem 6.1",
+    "arithmetic complete-border sharpness supporting Proposition 6.2"
+  ],
+  "explicit_noncoverage": [
+    "probability spaces and the exact pattern-waiting identity",
+    "pair-chain transition operators and absorption equations",
+    "Cerny family expectation and Perron asymptotics",
+    "rare-run automaton construction and spectral asymptotics",
+    "Proposition 6.3 autocorrelation and equality characterization"
+  ]
+}

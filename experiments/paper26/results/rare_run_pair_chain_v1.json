@@ -1,0 +1,155 @@
+{
+  "schema": "rime.paper26.rare-run-pair-chain.v1",
+  "evidence": {
+    "exact_fields": {
+      "status": "COMPUTATIONAL_REPRODUCTION_OF_PROVED_FORMULAS",
+      "fields": [
+        "n",
+        "reset_length",
+        "expected_H2"
+      ]
+    },
+    "numerical_fields": {
+      "status": "BOUNDED_FLOAT64_OBSERVATION",
+      "fields": [
+        "H2",
+        "gap",
+        "gap_times_H2"
+      ],
+      "absolute_replay_tolerance": 1e-09,
+      "arithmetic": "NumPy float64 linear algebra"
+    }
+  },
+  "rows": [
+    {
+      "n": 2,
+      "reset_length": 1,
+      "H2": 2.0,
+      "expected_H2": 2,
+      "gap": 0.5,
+      "gap_times_H2": 1.0
+    },
+    {
+      "n": 3,
+      "reset_length": 2,
+      "H2": 6.0,
+      "expected_H2": 6,
+      "gap": 0.19098300562505255,
+      "gap_times_H2": 1.1458980337503153
+    },
+    {
+      "n": 4,
+      "reset_length": 3,
+      "H2": 14.0,
+      "expected_H2": 14,
+      "gap": 0.08035662239291952,
+      "gap_times_H2": 1.1249927135008733
+    },
+    {
+      "n": 5,
+      "reset_length": 4,
+      "H2": 30.0,
+      "expected_H2": 30,
+      "gap": 0.03621901225853663,
+      "gap_times_H2": 1.086570367756099
+    },
+    {
+      "n": 6,
+      "reset_length": 5,
+      "H2": 62.0,
+      "expected_H2": 62,
+      "gap": 0.01702588167725616,
+      "gap_times_H2": 1.055604663989882
+    },
+    {
+      "n": 7,
+      "reset_length": 6,
+      "H2": 126.0,
+      "expected_H2": 126,
+      "gap": 0.008208578287836277,
+      "gap_times_H2": 1.0342808642673709
+    },
+    {
+      "n": 8,
+      "reset_length": 7,
+      "H2": 254.0,
+      "expected_H2": 254,
+      "gap": 0.004017901697482618,
+      "gap_times_H2": 1.0205470311605849
+    },
+    {
+      "n": 9,
+      "reset_length": 8,
+      "H2": 510.0,
+      "expected_H2": 510,
+      "gap": 0.0019844101322923358,
+      "gap_times_H2": 1.0120491674690912
+    },
+    {
+      "n": 10,
+      "reset_length": 9,
+      "H2": 1022.0,
+      "expected_H2": 1022,
+      "gap": 0.0009852648688579713,
+      "gap_times_H2": 1.0069406959728466
+    },
+    {
+      "n": 11,
+      "reset_length": 10,
+      "H2": 2046.0,
+      "expected_H2": 2046,
+      "gap": 0.000490683644949641,
+      "gap_times_H2": 1.0039387375669655
+    },
+    {
+      "n": 12,
+      "reset_length": 11,
+      "H2": 4094.0,
+      "expected_H2": 4094,
+      "gap": 0.00024479901085561195,
+      "gap_times_H2": 1.0022071504428753
+    },
+    {
+      "n": 13,
+      "reset_length": 12,
+      "H2": 8190.0,
+      "expected_H2": 8190,
+      "gap": 0.00012224953134110095,
+      "gap_times_H2": 1.0012236616836168
+    },
+    {
+      "n": 14,
+      "reset_length": 13,
+      "H2": 16382.0,
+      "expected_H2": 16382,
+      "gap": 6.108364422630075e-05,
+      "gap_times_H2": 1.0006722597152589
+    },
+    {
+      "n": 15,
+      "reset_length": 14,
+      "H2": 32766.0,
+      "expected_H2": 32766,
+      "gap": 3.0530625202196404e-05,
+      "gap_times_H2": 1.0003664653751674
+    },
+    {
+      "n": 16,
+      "reset_length": 15,
+      "H2": 65534.0,
+      "expected_H2": 65534,
+      "gap": 1.5262282747396938e-05,
+      "gap_times_H2": 1.000198437567911
+    }
+  ],
+  "source_artifacts": [
+    {
+      "path": "experiments/paper26/pair_chain.py",
+      "sha256": "9fdb9e63540b6055b6879e4661c668a18cdba1711b97d1e4bd5feecfcaaaff70"
+    },
+    {
+      "path": "experiments/paper26/generate_family_results.py",
+      "sha256": "e0ee1aaee772e37a4151890c25820f2309f2ff170b54dee7dcbf7c141c07dce1"
+    }
+  ]
+}

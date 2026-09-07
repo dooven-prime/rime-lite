@@ -1,0 +1,80 @@
+{
+  "schema": "rime.paper26.claim-surface-map.v1",
+  "paper_id": "PAPER26",
+  "release_identity_claimed": false,
+  "manuscript": "papers/paper26/Paper XXVI.md",
+  "claims": [
+    {
+      "id": "PAIR_CHAIN_EXACTNESS",
+      "status": "THEOREM",
+      "ownership": "paper26",
+      "source": "papers/paper26/Paper XXVI.md",
+      "implementation": "experiments/paper26/pair_chain.py"
+    },
+    {
+      "id": "CERNY_UNIFORM_MEAN_RECOVERY",
+      "status": "THEOREM",
+      "ownership": "prior_result_recovered_in_paper26_coordinates",
+      "attribution": "Vladimir V. Gusev, 2014, doi:10.1007/978-3-319-09698-8_7",
+      "source": "papers/paper26/Paper XXVI.md",
+      "reproduction": "experiments/paper26/results/cerny_pair_chain_v1.json"
+    },
+    {
+      "id": "CERNY_LEADING_PERRON_ASYMPTOTIC",
+      "status": "THEOREM",
+      "ownership": "paper26",
+      "source": "papers/paper26/Paper XXVI.md",
+      "reproduction": "experiments/paper26/results/cerny_pair_chain_v1.json"
+    },
+    {
+      "id": "CERNY_SECOND_ORDER_REFINEMENT",
+      "status": "THEOREM",
+      "ownership": "paper26",
+      "theorem": "Theorem A.1",
+      "source": "papers/paper26/Paper XXVI.md",
+      "supplementary_verification": "experiments/paper26/u3-proof.md"
+    },
+    {
+      "id": "RARE_RUN_EXTREMAL_REALIZATION",
+      "status": "THEOREM",
+      "ownership": "paper26",
+      "source": "papers/paper26/Paper XXVI.md",
+      "reproduction": "experiments/paper26/results/rare_run_pair_chain_v1.json",
+      "boundary": "the qualitative existence of linear-reset exponential-random families is prior work"
+    },
+    {
+      "id": "RESET_WORD_WAITING_ENVELOPE",
+      "status": "THEOREM",
+      "ownership": "paper26",
+      "source": "papers/paper26/Paper XXVI.md",
+      "partial_formalization": "experiments/paper26/lean/formalization-manifest.json"
+    },
+    {
+      "id": "RESET_WORD_ENVELOPE_EQUALITY_MECHANISM",
+      "status": "THEOREM",
+      "ownership": "paper26",
+      "source": "papers/paper26/Paper XXVI.md"
+    }
+  ],
+  "formalization_boundary": {
+    "status": "PARTIAL_FORMALIZATION",
+    "covered": [
+      "TA-III finite border-sum arithmetic",
+      "conditional pair/global comparison chain",
+      "complete-border arithmetic sharpness"
+    ],
+    "not_covered": [
+      "probability spaces",
+      "pair-chain transfer operators",
+      "Cerny Perron asymptotics",
+      "rare-run spectral asymptotics",
+      "autocorrelation equality characterization"
+    ]
+  },
+  "negative_boundaries": [
+    "No unconditional polynomial bridge from deterministic reset threshold to random-word absorption",
+    "No implication to Forced-FFS or General FFS",
+    "No RH-style zero claim for the finite rational accessibility zeta function",
+    "No priority claim for Gusev's exact Cerny mean or qualitative exponential random synchronization phenomenon"
+  ]
+}
