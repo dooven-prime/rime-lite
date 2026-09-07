@@ -114,7 +114,7 @@ research target; Paper VII does not assert a generic completion theorem.
   current-use commitments to be superseded and revalidated, and it adds no
   selection, authorization, execution, outcome, or effect contract.
 
-### Papers XX--XXIV: Independent Post-Protocol Mathematics
+### Papers XX--XXVI: Independent Post-Protocol Mathematics
 
 Papers XVI--XIX are intentionally unused in the public numbered sequence.
 Paper XX begins a separately scoped mathematical line with all-depth
@@ -132,8 +132,13 @@ that setting, path-compatible mass and transport accounting remains open.
 Paper XXIV begins a separate finite contextual/descent line. It distinguishes
 section-valued semantic visibility from relation-valued acyclicity and carries
 the resulting reconstruction gates into fixed-alignment comparison. Paper XIII
-is an application source, not a theorem premise. These papers consume no
-protocol authority and do not reopen Papers VIII--XV.
+is an application source, not a theorem premise. Paper XXV develops aligned
+generator-resolved diagnostic transport, carrier-local perturbation, and
+minimax information boundaries. Paper XXVI develops an exact stochastic
+unordered-pair carrier, contrasting deterministic reset scales with random
+pair absorption and proving a sharp reset-word waiting envelope. Paper XXIII
+is its deterministic precursor and comparison point, not a theorem premise.
+These papers consume no protocol authority and do not reopen Papers VIII--XV.
 Published version-1 identities are maintained in the repository's canonical
 DOI index.
 
