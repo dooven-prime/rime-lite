@@ -1,0 +1,14 @@
+{
+  "schema": "rime.paper26.release-environment.v1",
+  "operating_system": "Windows 11",
+  "python": "3.13.0",
+  "numpy": "2.1.3",
+  "pandoc": "3.6.4",
+  "xelatex": "MiKTeX-XeTeX 4.18 (MiKTeX 26.5)",
+  "lean": "4.33.0",
+  "mathlib_revision": "db584cd6d46c92f209a44c0f1c829460d327499d",
+  "text_encoding": "UTF-8",
+  "repository_line_endings": "LF",
+  "numerical_arithmetic": "NumPy float64",
+  "numerical_replay_absolute_tolerance": 1e-9
+}

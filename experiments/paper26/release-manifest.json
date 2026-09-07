@@ -1,0 +1,181 @@
+{
+  "schema": "rime.paper26.release-manifest.v1",
+  "paper_id": "PAPER26",
+  "release_version": "1.0",
+  "status": "RELEASE_CANDIDATE",
+  "release_identity_claimed": false,
+  "validation_mode": "LOCAL_CLOSURE_VERIFICATION",
+  "receipt_self_exclusion": true,
+  "digest_policy": {
+    "algorithm": "sha256",
+    "scope": "exact_file_bytes",
+    "path_resolution": "release identity plus exact repository path",
+    "wildcards_allowed": false,
+    "absolute_paths_allowed": false,
+    "current_head_fallback_allowed": false
+  },
+  "evidence_layers": {
+    "exact": {
+      "status": "COMPUTATIONAL_REPRODUCTION_OF_PROVED_FORMULAS",
+      "fields": [
+        "family parameters",
+        "shortest reset lengths",
+        "declared exact expectation formulas"
+      ]
+    },
+    "numerical": {
+      "status": "BOUNDED_FLOAT64_OBSERVATION",
+      "fields": [
+        "computed fundamental-matrix expectations",
+        "Perron gaps",
+        "scaled Perron diagnostics"
+      ],
+      "absolute_replay_tolerance": 1e-9
+    },
+    "formal": {
+      "status": "PARTIAL_FORMALIZATION",
+      "scope": "TA-III finite-sum arithmetic and conditional certificate chain"
+    }
+  },
+  "artifacts": [
+    {
+      "role": "manuscript",
+      "path": "papers/paper26/Paper XXVI.md",
+      "sha256": "91cbaf1698901094f1f5ef09593af38b303c73b15b0fed65a42fe23e0f1502ba"
+    },
+    {
+      "role": "reader-pdf",
+      "path": "papers/paper26/paper26_arxiv.pdf",
+      "sha256": "fbe14856a4458d5982a88d64638fcae628048f80dc7929944d59c89f278613cf"
+    },
+    {
+      "role": "bibliography",
+      "path": "papers/paper26/references-v1.bib",
+      "sha256": "78c149609c4194b9ad69c8863c9110c3633593440dcd196d190f7323169d1fab"
+    },
+    {
+      "role": "figure-source",
+      "path": "figures/paper26/render.py",
+      "sha256": "792b9b8f2a8531aef9c1cb0056a51802dad2fa89eaf96723b5bc951d8eace555"
+    },
+    {
+      "role": "figure-style-helper",
+      "path": "figures/sof_figure_utils.py",
+      "sha256": "cea67f9c0e02e9bae7d6aee9e4ce34af3fa209cef66cdd35c8b01fe2727bfee9"
+    },
+    {
+      "role": "figure",
+      "path": "figures/paper26/fig1_deterministic_stochastic_separation.png",
+      "sha256": "4be08d843eed97baf8e396b3a284bbd94c8d28bfa2cb1e9c9d986e8f29a9aaa2"
+    },
+    {
+      "role": "evidence-readme",
+      "path": "experiments/paper26/README.md",
+      "sha256": "1caa31354266386fb29b1bffbe5396792b83923248c03c74b8e829061570b239"
+    },
+    {
+      "role": "claim-surface-map",
+      "path": "experiments/paper26/claim-surface-map.json",
+      "sha256": "c32b995582dd56ee7412f43b7260127259934f319f0ac33b3a3a22ce969f3bb1"
+    },
+    {
+      "role": "release-environment",
+      "path": "experiments/paper26/release-environment.json",
+      "sha256": "88ea7fdd12f33b00a235fb992fa06bc543960d70e9dba5845cb5b62f0a75a6aa"
+    },
+    {
+      "role": "analytic-supplement",
+      "path": "experiments/paper26/u3-proof.md",
+      "sha256": "27ead004ea4138759e65d6b276f823efa1cf3aad8b8cc67c1d5d2d4f7570dfbd"
+    },
+    {
+      "role": "pair-chain-implementation",
+      "path": "experiments/paper26/pair_chain.py",
+      "sha256": "9fdb9e63540b6055b6879e4661c668a18cdba1711b97d1e4bd5feecfcaaaff70"
+    },
+    {
+      "role": "family-result-producer",
+      "path": "experiments/paper26/generate_family_results.py",
+      "sha256": "e0ee1aaee772e37a4151890c25820f2309f2ff170b54dee7dcbf7c141c07dce1"
+    },
+    {
+      "role": "cerny-family-result",
+      "path": "experiments/paper26/results/cerny_pair_chain_v1.json",
+      "sha256": "20a8944fae32628cfcdff502b48f313a7e188d23cc4eff7a904d5c8eda3bb253"
+    },
+    {
+      "role": "rare-run-family-result",
+      "path": "experiments/paper26/results/rare_run_pair_chain_v1.json",
+      "sha256": "0fa83bc050d18f808f098832a52d70c871db789d1fa9644dd61ef9399fd2e79b"
+    },
+    {
+      "role": "lean-formalization-readme",
+      "path": "experiments/paper26/lean/README.md",
+      "sha256": "a5ca1e3dae85411797ed41ac7b9bbe2624d88b5650710ad48e9bdaa26b696889"
+    },
+    {
+      "role": "lean-formalization-manifest",
+      "path": "experiments/paper26/lean/formalization-manifest.json",
+      "sha256": "eac1944a3fd2097b6c03e04c7fa926bb89e6bd90c9ce4720ed3b2ca4cb881e3f"
+    },
+    {
+      "role": "lean-toolchain",
+      "path": "experiments/paper26/lean/lean-toolchain",
+      "sha256": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b"
+    },
+    {
+      "role": "lean-project",
+      "path": "experiments/paper26/lean/lakefile.toml",
+      "sha256": "713b16008b846bf2763da66a06997e9162de09464d5f1cf24965c7229605eb37"
+    },
+    {
+      "role": "lean-lock",
+      "path": "experiments/paper26/lean/lake-manifest.json",
+      "sha256": "1a87a4681f2a6632ffa5b49898921f839bfdd6017f589af908650df21ca6cb63"
+    },
+    {
+      "role": "lean-entrypoint",
+      "path": "experiments/paper26/lean/Formalization.lean",
+      "sha256": "fa0ba31de0d7f69ec66e9c60d436d313307c332a1ac9a69b319c6e18b5c771d0"
+    },
+    {
+      "role": "lean-source",
+      "path": "experiments/paper26/lean/Formalization/TAIII.lean",
+      "sha256": "82b141cca408a88bfe0f6480a0bd8420e0588ecdc3b68a1fc4c47faf2d7ac7fe"
+    },
+    {
+      "role": "lean-validator",
+      "path": "experiments/paper26/validation/validate_lean_formalization.py",
+      "sha256": "4a8403e186b4b02ba56a969c2ab62c59b936817bcf9ddfcb5ed063aa7101014a"
+    },
+    {
+      "role": "lean-validation-receipt",
+      "path": "experiments/paper26/results/paper26_lean_formalization_v1.receipt.json",
+      "sha256": "dbedbbdbeb44eb58074448802cc2ef7f428e75f88f851441952061bc8667c55a"
+    },
+    {
+      "role": "public-package-validator",
+      "path": "experiments/paper26/validation/validate_public_package.py",
+      "sha256": "c2bf9375364287c4a3c6524fd49a095f7eb086d6cca628d8c696d887d36535cb"
+    }
+  ],
+  "excluded_release_paths": [
+    "papers/paper26/PAIR_CHAIN_PAPER_REVISION_MEMO.md",
+    "papers/paper26/RELATED_WORK_AUDIT.md",
+    "papers/paper26/README.md",
+    "papers/paper26/Pair-Chain Transfer Operators and Random Synchronization.md",
+    "papers/paper26/Pair-Chain_Transfer_Operators_and_Random_Synchronization_v0.2.md",
+    "papers/paper26/Pair-Chain_Transfer_Operators_and_Random_Synchronization_v0.3.md",
+    "papers/paper26/Paper XXVI - 260904.md",
+    "experiments/paper26/results/README.md",
+    "experiments/paper26/validation/validate_draft.py",
+    "experiments/paper26/lean/Paper26.lean"
+  ],
+  "authority_boundary": [
+    "local closure verification is not independent mathematical validation",
+    "numerical reproduction does not replace analytic proof",
+    "the validation receipt is downstream of and excluded from its own closure",
+    "the reader PDF and declared build environment are bound; the ignored local rendering implementation is not part of the public evidence closure",
+    "a future DOI anchors only the files actually deposited"
+  ]
+}
