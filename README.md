@@ -207,25 +207,9 @@ python tools/validate_release_snapshot.py release-snapshots/rime-lite-v2.0/manif
 python tools/release/validate_evidence_graph.py
 ```
 
-Representative support scripts:
-
-```bash
-python experiments/paper1/validation/spectral_ladder.py
-python experiments/paper2/validation/primitive_sectors.py
-python experiments/paper3/validation/composition_obstruction.py
-python experiments/paper4/validation/rubik_collision_quotient.py
-python experiments/paper5/validation/matrix_nondegeneracy.py
-python experiments/paper6/validation/tangent_commutator_map.py
-python experiments/paper7/validation/rank_protected_bridge_audit.py
-python experiments/paper9/validation/validate_results.py
-python experiments/paper10/validation/validate_results.py
-python experiments/paper11/validation/typed_wall_record_census.py
-python experiments/paper12/validation/validate_sofrs_v2_1.py
-python experiments/paper13/validation/validate_sofaudit_v2_1.py
-python experiments/paper14/validate_sofaction_v2_1.py
-```
-
-For the full experiment map, see [`experiments/README.md`](experiments/README.md).
+Paper-local validation commands are maintained with their owning evidence
+packages. See the [`experiments/` routing index](experiments/README.md) and the
+corresponding `experiments/paperN/README.md`.
 
 ## Scope
 
