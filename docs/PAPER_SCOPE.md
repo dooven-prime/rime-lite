@@ -4,9 +4,10 @@ This file is the public ownership and scope ledger for the RIME paper series.
 It identifies the object and reader question owned by each paper without
 repeating manuscript definitions, numerical tables, or release metadata.
 
-The current public release contains Papers I--XV. CCS v2.1 is an optional
-non-paper archive. Publication identities and DOIs are maintained only in the
-root [Public Release table](../README.md#public-release).
+The current public release contains Papers I--XV and the independently scoped
+Papers XX--XXVI mathematical lines. CCS v2.1 is an optional non-paper archive.
+Publication identities and DOIs are maintained only in the root
+[Public Release table](../README.md#public-release).
 
 The current typed stack includes the frozen Registry v2.0 snapshot and the
 published SOFRS v2.0, SOFAUDIT v2.0, and SOFAction v2.0 contracts. Retained v1
@@ -41,6 +42,21 @@ invariants are maintained in [CORE_INVARIANTS.md](CORE_INVARIANTS.md).
 The matrix is thematic, not a theorem dependency order. A neighboring result
 can be reused only after the receiving paper redeclares its object, hypotheses,
 realization, and claim status.
+
+## Independent Mathematical Scope
+
+Papers XVI--XIX are intentionally unused. Papers XX--XXVI do not continue the
+SOF protocol authority chain.
+
+| Paper | Owned object or interface | Reader question |
+|-------|---------------------------|-----------------|
+| XX | all-depth carrier-resolved routed composition | When does Boolean support survive as a nonzero routed product at arbitrary depth? |
+| XXI | finite-field route profiles and prefix-pole semantics | How do labelled zero routes depend on field size, characteristic, and depth? |
+| XXII | fixed-deficit rational dynamics and anchored Farey patches | How do exact rational deficit layers admit Catalan classification and Fibonacci envelopes? |
+| XXIII | pair hitting, marked-kernel corridors, and Schreier waiting | When can rank-preserving transport be normalized, and what exact reset-depth consequences follow? |
+| XXIV | finite typed-context descent | Which local typed data admit existence or uniqueness of a global reconstruction? |
+| XXV | aligned generator-resolved diagnostics | Which diagnostic quantities transport exactly, remain carrier-local, or require additional semantic assumptions? |
+| XXVI | unordered-pair transfer operators and random synchronization | How do deterministic reset scales, random pair absorption, and global random synchronization separate? |
 
 ## Protocol Ownership
 
@@ -125,6 +141,7 @@ transport tests cannot promote a claim or mutate a published contract.
 | Paper VIII static object layer | [SOF_OBJECTS.md](SOF_OBJECTS.md) |
 | Paper IX deformation layer | [SOF_DEFORMATIONS.md](SOF_DEFORMATIONS.md) |
 | Paper X Registry evidence architecture | [SOF_REGISTRY.md](SOF_REGISTRY.md) |
+| Application admission and adapter routing | [SOF_APPLICATIONS.md](SOF_APPLICATIONS.md) |
 | Papers X--XIV machine-contract handoff | [SOF_PROTOCOL_STACK.md](SOF_PROTOCOL_STACK.md) |
 
 These companions are navigation and explanation layers. They do not replace

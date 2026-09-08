@@ -216,7 +216,8 @@ Paper II result JSON directly.
 
 The detailed fixture and claim map is maintained in
 [experiments/paper10/README.md](../experiments/paper10/README.md), not repeated
-here.
+here. The stable admission and adapter-routing boundary is summarized in
+[SOF_APPLICATIONS.md](SOF_APPLICATIONS.md).
 
 ## Repair and External Ratios
 

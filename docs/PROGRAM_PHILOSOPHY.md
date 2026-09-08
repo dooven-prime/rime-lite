@@ -1,9 +1,10 @@
 # Program Philosophy
 
 **Status:** public philosophy note for the RIME program. This file explains the
-Rubik-as-laboratory stance and the sectorization bridge from the early papers to
-Papers VIII--XIV. It is not a proof source; paper manuscripts and
-[PROGRAM_MAP.md](PROGRAM_MAP.md) control theorem boundaries.
+Rubik-as-laboratory stance, the sectorization bridge into the closed protocol
+line, and the research method carried into post-protocol mathematics. It is not
+a proof source; paper manuscripts and [PROGRAM_MAP.md](PROGRAM_MAP.md) control
+theorem boundaries.
 
 Program invariant:
 
@@ -66,6 +67,31 @@ systems can expose comparable, verifiable, and source-addressed structural
 information without requiring shared native mechanisms. A shared typed
 interface is not a shared native mechanism; sectorized observable geometry and
 accessibility provide the interface rather than replacing domain structure.
+
+## Explore, Exactify, Prove, Formalize
+
+RIME also uses a non-protocol research workflow:
+
+```text
+finite exploration
+  -> exceptional-regime separation and exact certificates
+  -> hypothesis-explicit theorem
+  -> source-addressed formalization
+```
+
+An earlier observation is not rewritten when a stronger claim is established.
+Its exact bytes and bounded status remain historical evidence; the theorem or
+formalization supersedes only its current claim role. The finite-field route
+line is the clearest example: a finite `14/45` observation led to an odd-prime
+statement, then a finite-field theorem, and finally semantic-set equality and
+the characteristic-aware depth-three count in a pinned Lean closure.
+
+The durable tooling targets are finite counterexample search,
+exceptional-regime partition, exact certificate generation, claim/evidence
+surface diff, and explicit manuscript-theorem to Lean-declaration alignment.
+These tools check declared transitions and boundaries. They do not infer
+theorem truth from a successful computation, equate a certificate with a
+proof, or create a new numbered protocol layer.
 
 ---
 
@@ -152,6 +178,8 @@ This is the current clean separation:
 | Reporting Protocol | Paper XII contribution | serializes one declared realization as a versioned, alignment-ready SOF Report |
 | Audit Comparison | Paper XIII contribution | aligns two reports and emits a sparse typed comparison object |
 | Action Semantics | Paper XIV contribution | interprets immutable audit coordinates under an admitted `ActionContext` and `PolicyProfile` and stops at bounded candidates |
+| Corrigible Interface | Paper XV contribution | revises current-use commitments without rewriting immutable history or adding execution authority |
+| Post-Protocol Mathematics | Papers XX--XXVI | develops independently scoped carrier, route, arithmetic, descent, diagnostic, and stochastic-transfer theorems without extending protocol authority |
 
 The novelty of RIME is not the existence of a semisimple block decomposition.
 That is the classical input for representation-derived examples. The novelty

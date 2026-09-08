@@ -32,6 +32,7 @@ Publication identities and DOIs are maintained only in the root
 | [SOF_OBJECTS.md](SOF_OBJECTS.md) | static Sectorized Observable Framework object layer |
 | [SOF_DEFORMATIONS.md](SOF_DEFORMATIONS.md) | deformation geometry, trajectories, and wall diagnostics |
 | [SOF_REGISTRY.md](SOF_REGISTRY.md) | Registry evidence architecture and cross-species routing |
+| [SOF_APPLICATIONS.md](SOF_APPLICATIONS.md) | application admission, sparse capability declaration, and adapter routing |
 | [SOF_PROTOCOL_STACK.md](SOF_PROTOCOL_STACK.md) | compiler-to-report-to-audit-to-interpretation contracts and authority boundaries |
 
 The companion documents explain the public SOF arc. They do not silently
@@ -80,7 +81,7 @@ moving fields, or represented genericity.
 ## Repository Boundary
 
 The public documentation covers the published Papers I--XV architecture and
-the independently scoped Papers XX--XXIV mathematical lines. Author-side planning,
+the independently scoped Papers XX--XXVI mathematical lines. Author-side planning,
 exploratory research routing,
 release migration status, and historical working notes are outside this public
 documentation index.
