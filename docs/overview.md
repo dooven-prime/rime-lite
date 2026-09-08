@@ -173,6 +173,11 @@ experts retain responsibility for domain conclusions. New stable semantics
 enter the normative repository only through an explicit source-addressed
 promotion and versioned contract update.
 
+The public [application admission guide](SOF_APPLICATIONS.md) separates stable
+adapter and capability rules from changing experiment inventories. Concrete
+application code and quantitative evidence remain in their owning experiment
+packages or in `sof-runtime`.
+
 Release verification is a separate, non-intervening layer. Public tools check
 historical snapshot bytes, acyclic receipt binding, declared release
 manifests, and exact deposited files without rewriting tracked artifacts. Such
