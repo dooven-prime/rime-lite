@@ -9,7 +9,7 @@ finite representation laboratory, not as a puzzle-solving problem.
 ## Public Release
 
 The current public release contains Papers I--XV and the independently scoped
-Papers XX--XXVI mathematical lines. CCS v2.1 is published separately as an optional
+Papers XX--XXVII mathematical lines. CCS v2.1 is published separately as an optional
 non-paper Computational Companion Archive; the immutable first combined
 record retains its historical predecessor.
 
@@ -37,13 +37,14 @@ record retains its historical predecessor.
 | Paper XXIV | finite typed-context descent, semantic visibility, relational acyclicity, and comparison reconstruction | <https://doi.org/10.5281/zenodo.22140377> |
 | Paper XXV | aligned diagnostic transport, carrier-local perturbation, and minimax information bounds | <https://doi.org/10.5281/zenodo.22429890> |
 | Paper XXVI | pair-chain transfer operators, random synchronization, and sharp reset-word waiting envelopes | <https://doi.org/10.5281/zenodo.22637317> |
+| Paper XXVII | entry sections, source-addressed completion relations, and fixed-scope relation-valued descent | <https://doi.org/10.5281/zenodo.22853891> |
 | CCS v2.1 | optional reproducibility, observation, open-problem, and history archive | <https://doi.org/10.5281/zenodo.21988041> |
 | RIME Lite v2.1 repository snapshot | accepted papers, contracts, Registry evidence, release tools, and exact-byte historical inputs | [Zenodo DOI](https://doi.org/10.5281/zenodo.22048358) / [GitHub Release](https://github.com/dooven-prime/rime-lite/releases/tag/rime-lite-v2.1) |
 | Historical combined Papers I--III + CCS release | immutable first-version archive; current papers are maintained independently | <https://doi.org/10.5281/zenodo.21108197> |
 
 This is the repository's canonical DOI index. It identifies immutable
 published records; other public documents link here instead of duplicating the
-list. Papers VII--XV and Papers XX--XXVI now match their published records. Their
+list. Papers VII--XV and Papers XX--XXVII now match their published records. Their
 listed DOIs identify immutable published versions, and frozen historical
 contracts remain unchanged.
 
@@ -104,6 +105,8 @@ finite-dimensional methods layer for aligned generator-resolved diagnostics.
 Paper XXVI develops the stochastic pair-transfer branch, separating
 deterministic reset scales from random pair absorption and proving a sharp
 reset-word waiting envelope.
+Paper XXVII develops fixed-scope entry sections and source-addressed
+relation-valued completion interfaces for single-defect circular automata.
 Published release identities are maintained in the canonical DOI index above.
 
 | Paper | Manuscript | Evidence | Scope |
@@ -115,6 +118,7 @@ Published release identities are maintained in the canonical DOI index above.
 | XXIV | [`Paper XXIV.md`](papers/paper24/Paper%20XXIV.md) | [`experiments/paper24/`](experiments/paper24/) | semantic visibility for typed section descent, imported relational acyclicity, and fixed-alignment comparison reconstruction |
 | XXV | [`Paper XXV.md`](papers/paper25/Paper%20XXV.md) | [`experiments/paper25/`](experiments/paper25/) | aligned unitary transport, carrier-local perturbation, minimax information bounds, and typed semantic-lift boundaries |
 | XXVI | [`Paper XXVI.md`](papers/paper26/Paper%20XXVI.md) | [`experiments/paper26/`](experiments/paper26/) | pair-chain transfer operators, random pair absorption, Perron asymptotics, and sharp reset-word waiting envelopes |
+| XXVII | [`Paper XXVII.md`](papers/paper27/Paper%20XXVII.md) | [`experiments/paper27/`](experiments/paper27/) | intrinsic entry sections, source-addressed completion relations, and fixed-scope relation-valued descent |
 
 Thematic index, not a paper dependency order:
 
@@ -141,6 +145,7 @@ Rank escape, marked-kernel corridors, and Schreier waiting
 Finite typed-context descent and comparison reconstruction
 Aligned diagnostic transport and carrier-local stability
 Pair-chain transfer operators and random synchronization
+Entry sections and source-addressed relation-valued descent
 ```
 
 Papers I--VII are independently readable. Their neighboring results connect

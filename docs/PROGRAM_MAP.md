@@ -3,7 +3,7 @@
 This document is the public navigation map for the Representation-Induced
 Mechanics and Evolution (RIME) program. It identifies semantic ownership,
 typed interfaces and promotion boundaries across published Papers I--XV and
-the independently scoped Papers XX--XXVI theorem lines. It is not a
+the independently scoped Papers XX--XXVII theorem lines. It is not a
 proof document, release ledger, result record, or substitute for an owning
 manuscript.
 
@@ -97,6 +97,7 @@ status.
 | XXIV | finite typed-context separation, gluing, semantic visibility, relational descent, and fixed-comparator reconstruction | the Lean closure covers the free-signature core; exact fixtures separate unseen-scope and cyclic-relation failures |
 | XXV | aligned generator-resolved diagnostic transport, carrier-local perturbation, minimax information bounds, and semantic-lift boundaries | exact finite-dimensional proofs and bounded diagnostics remain separated by field-level evidence status |
 | XXVI | pair-chain transfer operators, random pair absorption, Cerny Perron asymptotics, rare-run extremal behavior, and sharp reset-word waiting envelopes | exact proofs and finite replay are separated from float64 spectral observations; the Lean closure covers only declared TA-III arithmetic and conditional certificate chains |
+| XXVII | fixed-scope entry sections, source-addressed completion relations, and relation-valued descent in single-defect circular automata | exact finite classifications and symbolic elimination support only the declared n=6 and n=7 scopes; local closure verification is not an all-n theorem or independent validation |
 
 Papers XVI--XIX are intentionally unused in the public numbered sequence;
 Paper XX begins an independently scoped mathematical line, and Paper XXI
@@ -108,8 +109,10 @@ XXIV begins a separate local-to-global contextual/descent line, with Paper XIII
 as an application source rather than a theorem premise. Paper XXV develops an
 independent finite-dimensional diagnostic methods layer. Paper XXVI develops
 the stochastic pair-transfer branch and treats Paper XXIII as a deterministic
-precursor and comparison point rather than a theorem premise. None extends
-the SOF protocol authority chain.
+precursor and comparison point rather than a theorem premise. Paper XXVII
+returns to the deterministic synchronizing-automata line with fixed-scope
+entry sections and source-addressed relation-valued completion interfaces.
+None extends the SOF protocol authority chain.
 
 ## 4. Active Typing and Promotion Rules
 
