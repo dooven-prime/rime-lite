@@ -1,0 +1,602 @@
+{
+  "artifact_id": "PAPER27-V1-PUBLIC-EVIDENCE-VALIDATED",
+  "closure_classes": {
+    "normative-manuscript-build": {
+      "artifact_count": 5,
+      "closure_digest": "0f072c72d17a81682830775258623076217dbd734d00fc457b36d7829ed499a6",
+      "ordered_artifacts": [
+        {
+          "path": "figures/paper27/fig1_entry_relation_interface.png",
+          "sha256": "b94e592fec2aea2ae38643de8ea01c0fd071e5f03da67b687e79953c6d4b4eb9"
+        },
+        {
+          "path": "figures/paper27/render.py",
+          "sha256": "d4c47f1b1e4d00842870c45471fb7b17ce38bf13a458836a974080200905ab30"
+        },
+        {
+          "path": "papers/paper27/Paper XXVII.md",
+          "sha256": "5c354764e8eff08a03c2d26838ddb9d80a5c2e60692f01c8e3b88bcc7a49b419"
+        },
+        {
+          "path": "papers/paper27/paper27_arxiv.pdf",
+          "sha256": "b8054ea6e02c5cf4d64ba3516d1523d140a1eb1c3843378386ec23b416d16a81"
+        },
+        {
+          "path": "papers/paper27/references-v1.bib",
+          "sha256": "9f4faadf626ca84430b929e4f58ec116367b6fe0f4f7065409f3b2dd9ac62238"
+        }
+      ]
+    },
+    "public-package-documentation": {
+      "artifact_count": 1,
+      "closure_digest": "f975c454b9701b3c9ac45bfd8ea0a597eeb64b768d52e412d5fb93397e0fefed",
+      "ordered_artifacts": [
+        {
+          "path": "experiments/paper27/README.md",
+          "sha256": "283e03fbe954f5ae6e5f1b853174b29385b5680f1cbd819573c0f6f894b2f2e2"
+        }
+      ]
+    },
+    "theorem-facing-computational": {
+      "artifact_count": 39,
+      "closure_digest": "479a9ba6e52b809df912fd8e6d1afbae2806e2b7829179505356b42467af3868",
+      "ordered_artifacts": [
+        {
+          "path": "experiments/paper27/N7_LOW_TRANSPORT_PAPER_TABLES.md",
+          "sha256": "bfdfe5504ae81fd49b27cf030b2ef187a64cc21607a15ca835af0e7f2af73c2d"
+        },
+        {
+          "path": "experiments/paper27/analyze_n6_entry_section_image.py",
+          "sha256": "600228acbc6b6b071ed9dd5bc1a3e70a30f4e916eff57eb53ffee65021a70117"
+        },
+        {
+          "path": "experiments/paper27/analyze_n6_low_rank_obstruction_peeling.py",
+          "sha256": "d14290ac07f6bf53f9a850fac6df8e5b98abad6d7255e9f6039a1c750641d1df"
+        },
+        {
+          "path": "experiments/paper27/analyze_n6_rank4_checkpoint_section.py",
+          "sha256": "3771d590cbe72f0768b7594bb4c666afbb93e5711dbc64fcbb1f3cd2f3a7a3d1"
+        },
+        {
+          "path": "experiments/paper27/analyze_n6_rank4_matched_exposure.py",
+          "sha256": "e7c3fc377c5cffba23845a26ea85017654842b87cf0b552399ccad012b1f41ee"
+        },
+        {
+          "path": "experiments/paper27/analyze_n6_rank4_structural_descent.py",
+          "sha256": "27f9330caef66711cc35c248863f6a9c25cca9cc9115a0457733d313cf0e1724"
+        },
+        {
+          "path": "experiments/paper27/analyze_n6_type_ii_only_section.py",
+          "sha256": "bb363b8de9c32374989cde51b32ad7a4d46d965070fbecc02e0e55977520ffe4"
+        },
+        {
+          "path": "experiments/paper27/analyze_n7_extremal_colored_obstructions.py",
+          "sha256": "9cd2daaf56ed40b4441cd0124639d14bf1de4818a0649759990a0818a7189584"
+        },
+        {
+          "path": "experiments/paper27/analyze_n7_extremal_direct_complement.py",
+          "sha256": "81f7851d349fe5460ed88b533718a5e9e06e7d352db46ce80d696487311493b0"
+        },
+        {
+          "path": "experiments/paper27/analyze_n7_extremal_edge_germs.py",
+          "sha256": "bcf3a0efdaff341c94bab606cfcfe89cfce81af465aa0fc6df63c9afe4daa269"
+        },
+        {
+          "path": "experiments/paper27/analyze_n7_extremal_failure_equations.py",
+          "sha256": "34bb3fa3795f1137d0eaeca07eb5ea4da17e9bd43297777517d4f0aceb82eee1"
+        },
+        {
+          "path": "experiments/paper27/analyze_n7_extremal_moved_slot_menu.py",
+          "sha256": "1b8f9ba382aaaf846d902def399cd575a17000af1a6a6ef37ce334c38af39ca9"
+        },
+        {
+          "path": "experiments/paper27/analyze_n7_extremal_negative_cell_exhaustion.py",
+          "sha256": "626b839a3884e6ef263a163de4a7d2691aacc94bcc5ade4d72829f4e1e5860f2"
+        },
+        {
+          "path": "experiments/paper27/audit_n6_rank4_activated_entry_exhaustiveness.py",
+          "sha256": "f9fcba977f724a68d129f5427640028100f0653b361c03ae6770602d2aaa5552"
+        },
+        {
+          "path": "experiments/paper27/costed_endpoint_diagnostic.py",
+          "sha256": "1f03ce89b988bbd495fdd6facd48321f75ef05408f03596caefaec34500e792e"
+        },
+        {
+          "path": "experiments/paper27/kernel_mass_potential.py",
+          "sha256": "3886199238b6f58beab8312b6b9474526883d2191c72a043d283b56682096805"
+        },
+        {
+          "path": "experiments/paper27/mass_maturity_legacy.py",
+          "sha256": "9a76ddc408667f65cf00bdf6101161ab7197123254f7edf8bc78188bbc4610f0"
+        },
+        {
+          "path": "experiments/paper27/mass_rank_debt_n6.py",
+          "sha256": "aaf0818ad36a4c806a759f287de540431e3a325dca020ecf7be85338f5a487c4"
+        },
+        {
+          "path": "experiments/paper27/rank2_safety_floor_geometry.py",
+          "sha256": "c31bf4d0122bedc24ac12bf0722e0c9dbdc3fb873ec2aafb30fa7a0954787a25"
+        },
+        {
+          "path": "experiments/paper27/release-environment.json",
+          "sha256": "4723069f8564ddc02248addc104f78dca291a72cce0f241478e7ff1e829745d0"
+        },
+        {
+          "path": "experiments/paper27/reproduce.py",
+          "sha256": "b732bdabfd9330cd722a202c0ae581d62cf7eb2dd899c0bedb7a77fe7c9c3f25"
+        },
+        {
+          "path": "experiments/paper27/results/single_defect_n6_entry_section_image_v1.json",
+          "sha256": "169fe4433ba510c29c4540ff92814fc5f242112dd7fed46fb90480470298ec51"
+        },
+        {
+          "path": "experiments/paper27/results/single_defect_n6_rank4_activated_entry_exhaustiveness_v1.json",
+          "sha256": "e52a2dbad23ee8c86c18779de97e9bd129f45fe2f984a3772f89a2cb963deaa9"
+        },
+        {
+          "path": "experiments/paper27/results/single_defect_n6_type_ii_only_section_v1.json",
+          "sha256": "c883758a4eea5a6b4fee5e754a1e7b8b2ff333208b386357d23ac8e076f6e8bf"
+        },
+        {
+          "path": "experiments/paper27/results/single_defect_n7_extremal_carrier_input_v1.json",
+          "sha256": "129cbcbbe97e9af95673ce9e5716bfeea9e1a29f1a6c56e716ba135561142f65"
+        },
+        {
+          "path": "experiments/paper27/results/single_defect_n7_extremal_direct_complement_v1.json",
+          "sha256": "6f4de72c2b1ab34cb8c70fa2f385494007164ed58d53d9a3b4dbdf75f94b56fd"
+        },
+        {
+          "path": "experiments/paper27/results/single_defect_n7_extremal_edge_germs_v1.json",
+          "sha256": "382d4888c0be6817bc1dffb25dee8aa2fa993492132b4b9d112d564822b7bd60"
+        },
+        {
+          "path": "experiments/paper27/results/single_defect_n7_extremal_failure_equations_v1.json",
+          "sha256": "293f406b0d898c8d4f9d845e3b36742d0068a119a9c61ed742cb016a5ff0e408"
+        },
+        {
+          "path": "experiments/paper27/results/single_defect_n7_extremal_moved_slot_menu_v1.json",
+          "sha256": "64170410691d3ecf950a7f8d6e34a851cd71a1fda85a94fb91f4218b5919cb7e"
+        },
+        {
+          "path": "experiments/paper27/results/single_defect_n7_extremal_negative_cell_exhaustion_v1.json",
+          "sha256": "06599a229843b6acf26edff55818de0f572d1bc94a9aec3e89b7c682992bc8ab"
+        },
+        {
+          "path": "experiments/paper27/section_return_core.py",
+          "sha256": "3e829799ae9df8fe77850813d8253f8a6f857182ac30b70dbd39e3a619d03df7"
+        },
+        {
+          "path": "experiments/paper27/single_defect_low_rank_base.py",
+          "sha256": "44fd0f1cfcfe14ef5a1578095db911b03ff322e0f095153bfcf70c3c8a028e2d"
+        },
+        {
+          "path": "experiments/paper27/single_defect_macro_trap.py",
+          "sha256": "8529bff9ceb766b200863de4eadecdf1e6c525006b21c57c7bfae700ac8c4a4a"
+        },
+        {
+          "path": "experiments/paper27/single_defect_transport.py",
+          "sha256": "30c5db7d83090aec856c25b59650ad350f27b0e719ae741158cef665544d9b87"
+        },
+        {
+          "path": "experiments/paper27/validation/refresh_release_manifest.py",
+          "sha256": "95e95f659d016bc2e26fccaecb64c0761688b548c411782c4c635fad4121143b"
+        },
+        {
+          "path": "experiments/paper27/validation/validate_n6_entry_section_image.py",
+          "sha256": "e501f0d4c26ef4948d5bde817a37f9b0761c541133106a7f9e3a3183f7a46c74"
+        },
+        {
+          "path": "experiments/paper27/validation/validate_n6_type_ii_only_section.py",
+          "sha256": "8e30a9fa14beeba3838e85ad6f99e0fffda799b56587649fd0865419b401da5b"
+        },
+        {
+          "path": "experiments/paper27/validation/validate_n7_extremal_negative_cell_exhaustion.py",
+          "sha256": "cab422a878b5fe7d8be4fd829a15948d1216509961ab94dee01c90a7c60ebcea"
+        },
+        {
+          "path": "experiments/paper27/validation/validate_public_package.py",
+          "sha256": "c4d2c279b6cd72da956e63cf60298aff0ad20080ece0a1a1541513a29ca35ddc"
+        }
+      ]
+    }
+  },
+  "content_sha256": "b672d1f842007b0dd3a6c29a89a74be353901370d62bdc35b8f1f337c5f4c0f7",
+  "manifest_binding": {
+    "path": "experiments/paper27/release-manifest.json",
+    "sha256": "4b2f3fffa926d0aca1473d56253de9b0463d478fcc64f459ab362762c26f8375"
+  },
+  "package_inventory": {
+    "artifact_count": 46,
+    "closure_digest": "a7f4bcd602ef8462b2528516503b984b922a33f1a5a8340f1fb9957f038b6aa0",
+    "ordered_artifacts": [
+      {
+        "path": "experiments/paper27/release-manifest.json",
+        "sha256": "4b2f3fffa926d0aca1473d56253de9b0463d478fcc64f459ab362762c26f8375"
+      },
+      {
+        "path": "experiments/paper27/N7_LOW_TRANSPORT_PAPER_TABLES.md",
+        "sha256": "bfdfe5504ae81fd49b27cf030b2ef187a64cc21607a15ca835af0e7f2af73c2d"
+      },
+      {
+        "path": "experiments/paper27/README.md",
+        "sha256": "283e03fbe954f5ae6e5f1b853174b29385b5680f1cbd819573c0f6f894b2f2e2"
+      },
+      {
+        "path": "experiments/paper27/analyze_n6_entry_section_image.py",
+        "sha256": "600228acbc6b6b071ed9dd5bc1a3e70a30f4e916eff57eb53ffee65021a70117"
+      },
+      {
+        "path": "experiments/paper27/analyze_n6_low_rank_obstruction_peeling.py",
+        "sha256": "d14290ac07f6bf53f9a850fac6df8e5b98abad6d7255e9f6039a1c750641d1df"
+      },
+      {
+        "path": "experiments/paper27/analyze_n6_rank4_checkpoint_section.py",
+        "sha256": "3771d590cbe72f0768b7594bb4c666afbb93e5711dbc64fcbb1f3cd2f3a7a3d1"
+      },
+      {
+        "path": "experiments/paper27/analyze_n6_rank4_matched_exposure.py",
+        "sha256": "e7c3fc377c5cffba23845a26ea85017654842b87cf0b552399ccad012b1f41ee"
+      },
+      {
+        "path": "experiments/paper27/analyze_n6_rank4_structural_descent.py",
+        "sha256": "27f9330caef66711cc35c248863f6a9c25cca9cc9115a0457733d313cf0e1724"
+      },
+      {
+        "path": "experiments/paper27/analyze_n6_type_ii_only_section.py",
+        "sha256": "bb363b8de9c32374989cde51b32ad7a4d46d965070fbecc02e0e55977520ffe4"
+      },
+      {
+        "path": "experiments/paper27/analyze_n7_extremal_colored_obstructions.py",
+        "sha256": "9cd2daaf56ed40b4441cd0124639d14bf1de4818a0649759990a0818a7189584"
+      },
+      {
+        "path": "experiments/paper27/analyze_n7_extremal_direct_complement.py",
+        "sha256": "81f7851d349fe5460ed88b533718a5e9e06e7d352db46ce80d696487311493b0"
+      },
+      {
+        "path": "experiments/paper27/analyze_n7_extremal_edge_germs.py",
+        "sha256": "bcf3a0efdaff341c94bab606cfcfe89cfce81af465aa0fc6df63c9afe4daa269"
+      },
+      {
+        "path": "experiments/paper27/analyze_n7_extremal_failure_equations.py",
+        "sha256": "34bb3fa3795f1137d0eaeca07eb5ea4da17e9bd43297777517d4f0aceb82eee1"
+      },
+      {
+        "path": "experiments/paper27/analyze_n7_extremal_moved_slot_menu.py",
+        "sha256": "1b8f9ba382aaaf846d902def399cd575a17000af1a6a6ef37ce334c38af39ca9"
+      },
+      {
+        "path": "experiments/paper27/analyze_n7_extremal_negative_cell_exhaustion.py",
+        "sha256": "626b839a3884e6ef263a163de4a7d2691aacc94bcc5ade4d72829f4e1e5860f2"
+      },
+      {
+        "path": "experiments/paper27/audit_n6_rank4_activated_entry_exhaustiveness.py",
+        "sha256": "f9fcba977f724a68d129f5427640028100f0653b361c03ae6770602d2aaa5552"
+      },
+      {
+        "path": "experiments/paper27/costed_endpoint_diagnostic.py",
+        "sha256": "1f03ce89b988bbd495fdd6facd48321f75ef05408f03596caefaec34500e792e"
+      },
+      {
+        "path": "experiments/paper27/kernel_mass_potential.py",
+        "sha256": "3886199238b6f58beab8312b6b9474526883d2191c72a043d283b56682096805"
+      },
+      {
+        "path": "experiments/paper27/mass_maturity_legacy.py",
+        "sha256": "9a76ddc408667f65cf00bdf6101161ab7197123254f7edf8bc78188bbc4610f0"
+      },
+      {
+        "path": "experiments/paper27/mass_rank_debt_n6.py",
+        "sha256": "aaf0818ad36a4c806a759f287de540431e3a325dca020ecf7be85338f5a487c4"
+      },
+      {
+        "path": "experiments/paper27/rank2_safety_floor_geometry.py",
+        "sha256": "c31bf4d0122bedc24ac12bf0722e0c9dbdc3fb873ec2aafb30fa7a0954787a25"
+      },
+      {
+        "path": "experiments/paper27/release-environment.json",
+        "sha256": "4723069f8564ddc02248addc104f78dca291a72cce0f241478e7ff1e829745d0"
+      },
+      {
+        "path": "experiments/paper27/reproduce.py",
+        "sha256": "b732bdabfd9330cd722a202c0ae581d62cf7eb2dd899c0bedb7a77fe7c9c3f25"
+      },
+      {
+        "path": "experiments/paper27/results/single_defect_n6_entry_section_image_v1.json",
+        "sha256": "169fe4433ba510c29c4540ff92814fc5f242112dd7fed46fb90480470298ec51"
+      },
+      {
+        "path": "experiments/paper27/results/single_defect_n6_rank4_activated_entry_exhaustiveness_v1.json",
+        "sha256": "e52a2dbad23ee8c86c18779de97e9bd129f45fe2f984a3772f89a2cb963deaa9"
+      },
+      {
+        "path": "experiments/paper27/results/single_defect_n6_type_ii_only_section_v1.json",
+        "sha256": "c883758a4eea5a6b4fee5e754a1e7b8b2ff333208b386357d23ac8e076f6e8bf"
+      },
+      {
+        "path": "experiments/paper27/results/single_defect_n7_extremal_carrier_input_v1.json",
+        "sha256": "129cbcbbe97e9af95673ce9e5716bfeea9e1a29f1a6c56e716ba135561142f65"
+      },
+      {
+        "path": "experiments/paper27/results/single_defect_n7_extremal_direct_complement_v1.json",
+        "sha256": "6f4de72c2b1ab34cb8c70fa2f385494007164ed58d53d9a3b4dbdf75f94b56fd"
+      },
+      {
+        "path": "experiments/paper27/results/single_defect_n7_extremal_edge_germs_v1.json",
+        "sha256": "382d4888c0be6817bc1dffb25dee8aa2fa993492132b4b9d112d564822b7bd60"
+      },
+      {
+        "path": "experiments/paper27/results/single_defect_n7_extremal_failure_equations_v1.json",
+        "sha256": "293f406b0d898c8d4f9d845e3b36742d0068a119a9c61ed742cb016a5ff0e408"
+      },
+      {
+        "path": "experiments/paper27/results/single_defect_n7_extremal_moved_slot_menu_v1.json",
+        "sha256": "64170410691d3ecf950a7f8d6e34a851cd71a1fda85a94fb91f4218b5919cb7e"
+      },
+      {
+        "path": "experiments/paper27/results/single_defect_n7_extremal_negative_cell_exhaustion_v1.json",
+        "sha256": "06599a229843b6acf26edff55818de0f572d1bc94a9aec3e89b7c682992bc8ab"
+      },
+      {
+        "path": "experiments/paper27/section_return_core.py",
+        "sha256": "3e829799ae9df8fe77850813d8253f8a6f857182ac30b70dbd39e3a619d03df7"
+      },
+      {
+        "path": "experiments/paper27/single_defect_low_rank_base.py",
+        "sha256": "44fd0f1cfcfe14ef5a1578095db911b03ff322e0f095153bfcf70c3c8a028e2d"
+      },
+      {
+        "path": "experiments/paper27/single_defect_macro_trap.py",
+        "sha256": "8529bff9ceb766b200863de4eadecdf1e6c525006b21c57c7bfae700ac8c4a4a"
+      },
+      {
+        "path": "experiments/paper27/single_defect_transport.py",
+        "sha256": "30c5db7d83090aec856c25b59650ad350f27b0e719ae741158cef665544d9b87"
+      },
+      {
+        "path": "experiments/paper27/validation/refresh_release_manifest.py",
+        "sha256": "95e95f659d016bc2e26fccaecb64c0761688b548c411782c4c635fad4121143b"
+      },
+      {
+        "path": "experiments/paper27/validation/validate_n6_entry_section_image.py",
+        "sha256": "e501f0d4c26ef4948d5bde817a37f9b0761c541133106a7f9e3a3183f7a46c74"
+      },
+      {
+        "path": "experiments/paper27/validation/validate_n6_type_ii_only_section.py",
+        "sha256": "8e30a9fa14beeba3838e85ad6f99e0fffda799b56587649fd0865419b401da5b"
+      },
+      {
+        "path": "experiments/paper27/validation/validate_n7_extremal_negative_cell_exhaustion.py",
+        "sha256": "cab422a878b5fe7d8be4fd829a15948d1216509961ab94dee01c90a7c60ebcea"
+      },
+      {
+        "path": "experiments/paper27/validation/validate_public_package.py",
+        "sha256": "c4d2c279b6cd72da956e63cf60298aff0ad20080ece0a1a1541513a29ca35ddc"
+      },
+      {
+        "path": "figures/paper27/fig1_entry_relation_interface.png",
+        "sha256": "b94e592fec2aea2ae38643de8ea01c0fd071e5f03da67b687e79953c6d4b4eb9"
+      },
+      {
+        "path": "figures/paper27/render.py",
+        "sha256": "d4c47f1b1e4d00842870c45471fb7b17ce38bf13a458836a974080200905ab30"
+      },
+      {
+        "path": "papers/paper27/Paper XXVII.md",
+        "sha256": "5c354764e8eff08a03c2d26838ddb9d80a5c2e60692f01c8e3b88bcc7a49b419"
+      },
+      {
+        "path": "papers/paper27/paper27_arxiv.pdf",
+        "sha256": "b8054ea6e02c5cf4d64ba3516d1523d140a1eb1c3843378386ec23b416d16a81"
+      },
+      {
+        "path": "papers/paper27/references-v1.bib",
+        "sha256": "9f4faadf626ca84430b929e4f58ec116367b6fe0f4f7065409f3b2dd9ac62238"
+      }
+    ]
+  },
+  "receipt_self_exclusion": true,
+  "release_identity": {
+    "artifact_count": 44,
+    "closure_classes": [
+      "normative-manuscript-build",
+      "theorem-facing-computational"
+    ],
+    "closure_digest": "6ef270a4e70cb0d603d4f93d23aab625cdcd764231bcab6975694dfef4001dc1",
+    "ordered_artifacts": [
+      {
+        "path": "experiments/paper27/N7_LOW_TRANSPORT_PAPER_TABLES.md",
+        "sha256": "bfdfe5504ae81fd49b27cf030b2ef187a64cc21607a15ca835af0e7f2af73c2d"
+      },
+      {
+        "path": "experiments/paper27/analyze_n6_entry_section_image.py",
+        "sha256": "600228acbc6b6b071ed9dd5bc1a3e70a30f4e916eff57eb53ffee65021a70117"
+      },
+      {
+        "path": "experiments/paper27/analyze_n6_low_rank_obstruction_peeling.py",
+        "sha256": "d14290ac07f6bf53f9a850fac6df8e5b98abad6d7255e9f6039a1c750641d1df"
+      },
+      {
+        "path": "experiments/paper27/analyze_n6_rank4_checkpoint_section.py",
+        "sha256": "3771d590cbe72f0768b7594bb4c666afbb93e5711dbc64fcbb1f3cd2f3a7a3d1"
+      },
+      {
+        "path": "experiments/paper27/analyze_n6_rank4_matched_exposure.py",
+        "sha256": "e7c3fc377c5cffba23845a26ea85017654842b87cf0b552399ccad012b1f41ee"
+      },
+      {
+        "path": "experiments/paper27/analyze_n6_rank4_structural_descent.py",
+        "sha256": "27f9330caef66711cc35c248863f6a9c25cca9cc9115a0457733d313cf0e1724"
+      },
+      {
+        "path": "experiments/paper27/analyze_n6_type_ii_only_section.py",
+        "sha256": "bb363b8de9c32374989cde51b32ad7a4d46d965070fbecc02e0e55977520ffe4"
+      },
+      {
+        "path": "experiments/paper27/analyze_n7_extremal_colored_obstructions.py",
+        "sha256": "9cd2daaf56ed40b4441cd0124639d14bf1de4818a0649759990a0818a7189584"
+      },
+      {
+        "path": "experiments/paper27/analyze_n7_extremal_direct_complement.py",
+        "sha256": "81f7851d349fe5460ed88b533718a5e9e06e7d352db46ce80d696487311493b0"
+      },
+      {
+        "path": "experiments/paper27/analyze_n7_extremal_edge_germs.py",
+        "sha256": "bcf3a0efdaff341c94bab606cfcfe89cfce81af465aa0fc6df63c9afe4daa269"
+      },
+      {
+        "path": "experiments/paper27/analyze_n7_extremal_failure_equations.py",
+        "sha256": "34bb3fa3795f1137d0eaeca07eb5ea4da17e9bd43297777517d4f0aceb82eee1"
+      },
+      {
+        "path": "experiments/paper27/analyze_n7_extremal_moved_slot_menu.py",
+        "sha256": "1b8f9ba382aaaf846d902def399cd575a17000af1a6a6ef37ce334c38af39ca9"
+      },
+      {
+        "path": "experiments/paper27/analyze_n7_extremal_negative_cell_exhaustion.py",
+        "sha256": "626b839a3884e6ef263a163de4a7d2691aacc94bcc5ade4d72829f4e1e5860f2"
+      },
+      {
+        "path": "experiments/paper27/audit_n6_rank4_activated_entry_exhaustiveness.py",
+        "sha256": "f9fcba977f724a68d129f5427640028100f0653b361c03ae6770602d2aaa5552"
+      },
+      {
+        "path": "experiments/paper27/costed_endpoint_diagnostic.py",
+        "sha256": "1f03ce89b988bbd495fdd6facd48321f75ef05408f03596caefaec34500e792e"
+      },
+      {
+        "path": "experiments/paper27/kernel_mass_potential.py",
+        "sha256": "3886199238b6f58beab8312b6b9474526883d2191c72a043d283b56682096805"
+      },
+      {
+        "path": "experiments/paper27/mass_maturity_legacy.py",
+        "sha256": "9a76ddc408667f65cf00bdf6101161ab7197123254f7edf8bc78188bbc4610f0"
+      },
+      {
+        "path": "experiments/paper27/mass_rank_debt_n6.py",
+        "sha256": "aaf0818ad36a4c806a759f287de540431e3a325dca020ecf7be85338f5a487c4"
+      },
+      {
+        "path": "experiments/paper27/rank2_safety_floor_geometry.py",
+        "sha256": "c31bf4d0122bedc24ac12bf0722e0c9dbdc3fb873ec2aafb30fa7a0954787a25"
+      },
+      {
+        "path": "experiments/paper27/release-environment.json",
+        "sha256": "4723069f8564ddc02248addc104f78dca291a72cce0f241478e7ff1e829745d0"
+      },
+      {
+        "path": "experiments/paper27/reproduce.py",
+        "sha256": "b732bdabfd9330cd722a202c0ae581d62cf7eb2dd899c0bedb7a77fe7c9c3f25"
+      },
+      {
+        "path": "experiments/paper27/results/single_defect_n6_entry_section_image_v1.json",
+        "sha256": "169fe4433ba510c29c4540ff92814fc5f242112dd7fed46fb90480470298ec51"
+      },
+      {
+        "path": "experiments/paper27/results/single_defect_n6_rank4_activated_entry_exhaustiveness_v1.json",
+        "sha256": "e52a2dbad23ee8c86c18779de97e9bd129f45fe2f984a3772f89a2cb963deaa9"
+      },
+      {
+        "path": "experiments/paper27/results/single_defect_n6_type_ii_only_section_v1.json",
+        "sha256": "c883758a4eea5a6b4fee5e754a1e7b8b2ff333208b386357d23ac8e076f6e8bf"
+      },
+      {
+        "path": "experiments/paper27/results/single_defect_n7_extremal_carrier_input_v1.json",
+        "sha256": "129cbcbbe97e9af95673ce9e5716bfeea9e1a29f1a6c56e716ba135561142f65"
+      },
+      {
+        "path": "experiments/paper27/results/single_defect_n7_extremal_direct_complement_v1.json",
+        "sha256": "6f4de72c2b1ab34cb8c70fa2f385494007164ed58d53d9a3b4dbdf75f94b56fd"
+      },
+      {
+        "path": "experiments/paper27/results/single_defect_n7_extremal_edge_germs_v1.json",
+        "sha256": "382d4888c0be6817bc1dffb25dee8aa2fa993492132b4b9d112d564822b7bd60"
+      },
+      {
+        "path": "experiments/paper27/results/single_defect_n7_extremal_failure_equations_v1.json",
+        "sha256": "293f406b0d898c8d4f9d845e3b36742d0068a119a9c61ed742cb016a5ff0e408"
+      },
+      {
+        "path": "experiments/paper27/results/single_defect_n7_extremal_moved_slot_menu_v1.json",
+        "sha256": "64170410691d3ecf950a7f8d6e34a851cd71a1fda85a94fb91f4218b5919cb7e"
+      },
+      {
+        "path": "experiments/paper27/results/single_defect_n7_extremal_negative_cell_exhaustion_v1.json",
+        "sha256": "06599a229843b6acf26edff55818de0f572d1bc94a9aec3e89b7c682992bc8ab"
+      },
+      {
+        "path": "experiments/paper27/section_return_core.py",
+        "sha256": "3e829799ae9df8fe77850813d8253f8a6f857182ac30b70dbd39e3a619d03df7"
+      },
+      {
+        "path": "experiments/paper27/single_defect_low_rank_base.py",
+        "sha256": "44fd0f1cfcfe14ef5a1578095db911b03ff322e0f095153bfcf70c3c8a028e2d"
+      },
+      {
+        "path": "experiments/paper27/single_defect_macro_trap.py",
+        "sha256": "8529bff9ceb766b200863de4eadecdf1e6c525006b21c57c7bfae700ac8c4a4a"
+      },
+      {
+        "path": "experiments/paper27/single_defect_transport.py",
+        "sha256": "30c5db7d83090aec856c25b59650ad350f27b0e719ae741158cef665544d9b87"
+      },
+      {
+        "path": "experiments/paper27/validation/refresh_release_manifest.py",
+        "sha256": "95e95f659d016bc2e26fccaecb64c0761688b548c411782c4c635fad4121143b"
+      },
+      {
+        "path": "experiments/paper27/validation/validate_n6_entry_section_image.py",
+        "sha256": "e501f0d4c26ef4948d5bde817a37f9b0761c541133106a7f9e3a3183f7a46c74"
+      },
+      {
+        "path": "experiments/paper27/validation/validate_n6_type_ii_only_section.py",
+        "sha256": "8e30a9fa14beeba3838e85ad6f99e0fffda799b56587649fd0865419b401da5b"
+      },
+      {
+        "path": "experiments/paper27/validation/validate_n7_extremal_negative_cell_exhaustion.py",
+        "sha256": "cab422a878b5fe7d8be4fd829a15948d1216509961ab94dee01c90a7c60ebcea"
+      },
+      {
+        "path": "experiments/paper27/validation/validate_public_package.py",
+        "sha256": "c4d2c279b6cd72da956e63cf60298aff0ad20080ece0a1a1541513a29ca35ddc"
+      },
+      {
+        "path": "figures/paper27/fig1_entry_relation_interface.png",
+        "sha256": "b94e592fec2aea2ae38643de8ea01c0fd071e5f03da67b687e79953c6d4b4eb9"
+      },
+      {
+        "path": "figures/paper27/render.py",
+        "sha256": "d4c47f1b1e4d00842870c45471fb7b17ce38bf13a458836a974080200905ab30"
+      },
+      {
+        "path": "papers/paper27/Paper XXVII.md",
+        "sha256": "5c354764e8eff08a03c2d26838ddb9d80a5c2e60692f01c8e3b88bcc7a49b419"
+      },
+      {
+        "path": "papers/paper27/paper27_arxiv.pdf",
+        "sha256": "b8054ea6e02c5cf4d64ba3516d1523d140a1eb1c3843378386ec23b416d16a81"
+      },
+      {
+        "path": "papers/paper27/references-v1.bib",
+        "sha256": "9f4faadf626ca84430b929e4f58ec116367b6fe0f4f7065409f3b2dd9ac62238"
+      }
+    ]
+  },
+  "replay": [
+    {
+      "replay": false,
+      "validator": "experiments/paper27/validation/validate_n6_entry_section_image.py"
+    },
+    {
+      "replay": false,
+      "validator": "experiments/paper27/validation/validate_n6_type_ii_only_section.py"
+    },
+    {
+      "replay": false,
+      "validator": "experiments/paper27/validation/validate_n7_extremal_negative_cell_exhaustion.py"
+    }
+  ],
+  "schema": "rime.paper27.public-package-receipt.v3",
+  "status": "PASS",
+  "validation_mode": "LOCAL_CLOSURE_VERIFICATION"
+}

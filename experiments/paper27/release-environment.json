@@ -1,0 +1,15 @@
+{
+  "schema": "rime.paper27.release-environment.v1",
+  "paper_id": "PAPER27",
+  "captured_at": "2026-09-20",
+  "repository_commit": "8bc31631ca1db05e9d6679278e85dcc288261b28",
+  "branch": "codex/paper27-v1-release",
+  "operating_system": "Microsoft Windows NT 10.0.26200.0",
+  "python": "3.13.0",
+  "powershell": "7.6.5",
+  "timezone": "Asia/Shanghai",
+  "notes": [
+    "The release candidate was assembled in a clean worktree based on origin/master at the recorded commit.",
+    "Exact repository-relative paths and file hashes bind the package; local closure verification does not imply independent mathematical validation."
+  ]
+}
