@@ -114,7 +114,7 @@ research target; Paper VII does not assert a generic completion theorem.
   current-use commitments to be superseded and revalidated, and it adds no
   selection, authorization, execution, outcome, or effect contract.
 
-### Papers XX--XXVI: Independent Post-Protocol Mathematics
+### Papers XX--XXVII: Independent Post-Protocol Mathematics
 
 Papers XVI--XIX are intentionally unused in the public numbered sequence.
 Paper XX begins a separately scoped mathematical line with all-depth
@@ -138,6 +138,8 @@ minimax information boundaries. Paper XXVI develops an exact stochastic
 unordered-pair carrier, contrasting deterministic reset scales with random
 pair absorption and proving a sharp reset-word waiting envelope. Paper XXIII
 is its deterministic precursor and comparison point, not a theorem premise.
+Paper XXVII develops fixed-scope entry sections and source-addressed
+relation-valued completion interfaces for single-defect circular automata.
 These papers consume no protocol authority and do not reopen Papers VIII--XV.
 Published version-1 identities are maintained in the repository's canonical
 DOI index.
