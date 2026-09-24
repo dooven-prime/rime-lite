@@ -12,6 +12,7 @@ artifacts.
 | `python tools/release/validate_evidence_graph.py` | Raw-byte receipt references, receipt-cycle exclusion, and the artifact-to-receipt direction for current SOFRS, SOFAUDIT, and SOFAction receipts |
 | `python tools/release/validate_release_manifest.py PATH` | Release identity, content commit, PDF bytes, declared validators, figures, and result bindings in a paper release manifest |
 | `python tools/release/verify_zenodo_anchor.py --doi DOI --local FILE --remote-name NAME` | Equality between one local file and the named file actually deposited in a Zenodo record |
+| `python tools/release/audit_paper16_v1_materialization.py` | Release- and path-specific audit of the frozen Paper XVI v1.0 LF/CRLF materialization mismatch; reports explanation rather than closure PASS |
 
 Use `--strict-snapshot` with `validate_release_manifest.py` to check all
 declared evidence digests, including private submission metadata when it is
@@ -31,6 +32,8 @@ These checks establish only their declared integrity properties:
 - A Git commit, signed tag, or DOI anchors only the bytes it actually covers.
   A DOI deposit containing only a PDF does not anchor unuploaded artifacts,
   producers, validators, or receipts.
+- A historical materialization audit can explain a frozen byte mismatch but
+  cannot repair, re-sign, or retroactively validate the original closure.
 
 Verification must leave the tracked repository unchanged. Rebuild and replay
 write to scratch or candidate staging locations; only an explicit paper-owned
