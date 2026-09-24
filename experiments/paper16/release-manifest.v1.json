@@ -1,0 +1,709 @@
+{
+  "schema": "rime.paper16.release-manifest.v1",
+  "status": "RELEASE_CLOSURE_PENDING_CONTENT_COMMIT_AND_EXTERNAL_ANCHOR",
+  "publication_line": "MaleCNS Representation Loss and Dynamic Descent",
+  "claim_ids": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C5",
+    "C6",
+    "C7",
+    "C8"
+  ],
+  "release_identity": {
+    "canonical_manuscript": {
+      "path": "papers/paper16/Paper XVI.md",
+      "sha256": "4d5503a27545cc0f4bbfaf80e71aed1ed680b1db7a456bc3b4edb220f265dcf3"
+    },
+    "reader_pdf": {
+      "path": "papers/paper16/paper16_arxiv.pdf",
+      "sha256": "4a58f0bc9d5927491207c94b5efa6a67ac4628b2343582004c1355722ef4e13a"
+    },
+    "release_content_commit": null,
+    "external_anchor": null,
+    "claim_authority": "papers/paper16/Paper XVI.md"
+  },
+  "ordered_closure": [
+    {
+      "path": "papers/paper16/references-v1.bib",
+      "path_base": "REPOSITORY_ROOT",
+      "role": "BIBLIOGRAPHY_SLICE",
+      "claims": [],
+      "size": 4649,
+      "sha256": "a3b30a6ea8d08456d4d5745e3063c1d18110a2cc9e1fa0cabf211ec9aea6ccc4"
+    },
+    {
+      "path": "papers/paper16/Paper XVI.md",
+      "path_base": "REPOSITORY_ROOT",
+      "role": "CANONICAL_MANUSCRIPT",
+      "claims": [
+        "C1-C8"
+      ],
+      "size": 36106,
+      "sha256": "4d5503a27545cc0f4bbfaf80e71aed1ed680b1db7a456bc3b4edb220f265dcf3"
+    },
+    {
+      "path": "digital_fly_v0/results/carrier_v0_manifest.json",
+      "path_base": "PAPER16_SOURCE_ROOT",
+      "role": "CARRIER_MANIFEST",
+      "claims": [
+        "C3-C8"
+      ],
+      "size": 4945,
+      "sha256": "e01f7a25b8a83b8613c17dec71370143a443b9d1ce841628fc64baf4b036ce1f"
+    },
+    {
+      "path": "digital_fly_v0/scripts/build_annotation_intersection_carrier.py",
+      "path_base": "PAPER16_SOURCE_ROOT",
+      "role": "CARRIER_PRODUCER",
+      "claims": [
+        "C3-C8"
+      ],
+      "size": 11804,
+      "sha256": "779bf36adbf417fc94e248d7d1c87d9b6c4ea6385a3e7e270663c9e842d61a64"
+    },
+    {
+      "path": "replay/large_artifact_closure.v1.json",
+      "path_base": "PAPER16_SOURCE_ROOT",
+      "role": "CARRIER_REPLAY_CLOSURE",
+      "claims": [
+        "C3-C8"
+      ],
+      "size": 2792,
+      "sha256": "62aa21e4a7384a5e1af54a9f36b2893fddaabb8a27abb1960b03b22a6b265d61"
+    },
+    {
+      "path": "replay/replay_large_artifacts.py",
+      "path_base": "PAPER16_SOURCE_ROOT",
+      "role": "CARRIER_REPLAY_IMPLEMENTATION",
+      "claims": [
+        "C3-C8"
+      ],
+      "size": 8648,
+      "sha256": "aadf1c629c0e9367b9ace2401e3b553803b1e027d0eebf0269db165906d5b220"
+    },
+    {
+      "path": "replay/results/large_artifact_replay.v1.receipt.json",
+      "path_base": "PAPER16_SOURCE_ROOT",
+      "role": "CARRIER_REPLAY_RECEIPT",
+      "claims": [
+        "C3-C8"
+      ],
+      "size": 985,
+      "sha256": "b8b62e619a775ab9c68207ed6d9be7e243954ab4e45080d80df9fa471314241c"
+    },
+    {
+      "path": "experiments/paper16/validation/validate_release_closure.py",
+      "path_base": "REPOSITORY_ROOT",
+      "role": "CLOSURE_VALIDATOR",
+      "claims": [],
+      "size": 19815,
+      "sha256": "53cbcc8e0b6928796cb8ce57a91080b210a5ed7f4040521401ceee30a09f4f45"
+    },
+    {
+      "path": "followups/d2_2_named_sector_followup.design-v1.json",
+      "path_base": "PAPER16_SOURCE_ROOT",
+      "role": "DESIGN",
+      "claims": [
+        "C6"
+      ],
+      "size": 3294,
+      "sha256": "152af0a595b7531048557e349f1e12e7e832f8a796710be432201bbcda726ec4"
+    },
+    {
+      "path": "followups/y_known_pm_route_audit.design-v1.json",
+      "path_base": "PAPER16_SOURCE_ROOT",
+      "role": "DESIGN",
+      "claims": [
+        "C8"
+      ],
+      "size": 3401,
+      "sha256": "f0f0a7544c21da95f54cd74b8977fa78fbebd4cf1a345f6d9e49882cf85b5209"
+    },
+    {
+      "path": "figures/paper16/render.py",
+      "path_base": "REPOSITORY_ROOT",
+      "role": "FIGURE_PRODUCER",
+      "claims": [
+        "C1-C8"
+      ],
+      "size": 5506,
+      "sha256": "d47c6d085167d10c144160d06b43d2ceb9af122f04178be5f93dd7c392b48d0b"
+    },
+    {
+      "path": "requirements/followups.txt",
+      "path_base": "PAPER16_SOURCE_ROOT",
+      "role": "FOLLOWUP_RUNTIME_LOCK",
+      "claims": [
+        "C6",
+        "C8"
+      ],
+      "size": 121,
+      "sha256": "ed67304564c9a0551b5180115ad5606fd8ecfcdaa9dc0107394e1e2c0e27a6b4"
+    },
+    {
+      "path": "followups/results/d2_2_named_sector_followup.v1.validation-receipt.json",
+      "path_base": "PAPER16_SOURCE_ROOT",
+      "role": "LOCAL_VALIDATION_RECEIPT",
+      "claims": [
+        "C6"
+      ],
+      "size": 1878,
+      "sha256": "b04baabf0f8432e79034b1063711d10a8df5121377fbe7a77753f7f5101720cc"
+    },
+    {
+      "path": "followups/results/y_known_pm_route_audit.v1.validation-receipt.json",
+      "path_base": "PAPER16_SOURCE_ROOT",
+      "role": "LOCAL_VALIDATION_RECEIPT",
+      "claims": [
+        "C8"
+      ],
+      "size": 1569,
+      "sha256": "84749357e39367a7ff2f8d7fa8d7c33a34b135dc259d4004ef9e5df123cb4ae0"
+    },
+    {
+      "path": "followups/validation/validate_d2_2_named_sector_followup.py",
+      "path_base": "PAPER16_SOURCE_ROOT",
+      "role": "LOCAL_VALIDATOR",
+      "claims": [
+        "C6"
+      ],
+      "size": 4831,
+      "sha256": "bf6ab791ea3330b71de4ab1fa6f78c48ee1fb90d0608684bd4d1130ce535c410"
+    },
+    {
+      "path": "followups/validation/validate_y_known_pm_route_audit.py",
+      "path_base": "PAPER16_SOURCE_ROOT",
+      "role": "LOCAL_VALIDATOR",
+      "claims": [
+        "C8"
+      ],
+      "size": 5638,
+      "sha256": "4aa87bba3db485d2a72481f9ade754f2d139e0b7914fd7cd598d8432b724dfad"
+    },
+    {
+      "path": "experiments/paper16/README.md",
+      "path_base": "REPOSITORY_ROOT",
+      "role": "PACKAGE_README",
+      "claims": [],
+      "size": 3556,
+      "sha256": "f39b2eb8130b9daaf4cf0ef687fe7997ef85f9530984fce82da9914185d89542"
+    },
+    {
+      "path": "digital_fly_v0_1/results/o1_observation_resolution_v0_1.json",
+      "path_base": "PAPER16_SOURCE_ROOT",
+      "role": "PORTABLE_SCIENTIFIC_ARTIFACT",
+      "claims": [
+        "C4"
+      ],
+      "size": 75186,
+      "sha256": "7691c94fb9c4cc62e4b1116456a76cfe5ae763cf6ef3bdde8668c47775813580"
+    },
+    {
+      "path": "digital_fly_v0_1/results/sd1_dynamics_v0_1.json",
+      "path_base": "PAPER16_SOURCE_ROOT",
+      "role": "PORTABLE_SCIENTIFIC_ARTIFACT",
+      "claims": [
+        "C3"
+      ],
+      "size": 1491492,
+      "sha256": "68e95e686270ecbe32289bb7334fde138d5b311235ac895c4f391900478163d9"
+    },
+    {
+      "path": "digital_fly_v0_1/results/sd1_operator_admission_v0_1.json",
+      "path_base": "PAPER16_SOURCE_ROOT",
+      "role": "PORTABLE_SCIENTIFIC_ARTIFACT",
+      "claims": [
+        "C3"
+      ],
+      "size": 7589,
+      "sha256": "75efbf24b3592ae1f88d7a72e1cf082854389be2d8d1a5e30da88945f57f2ec4"
+    },
+    {
+      "path": "digital_fly_v0_2/results/d2_1_markov_closure_v0_2.json",
+      "path_base": "PAPER16_SOURCE_ROOT",
+      "role": "PORTABLE_SCIENTIFIC_ARTIFACT",
+      "claims": [
+        "C5"
+      ],
+      "size": 69129,
+      "sha256": "379e01a9fbb18f6e3b973f385eb363e488fd0b21507601f4c17a23d76f0de63b"
+    },
+    {
+      "path": "digital_fly_v0_1/scripts/run_o1_observation_resolution.py",
+      "path_base": "PAPER16_SOURCE_ROOT",
+      "role": "PRODUCER",
+      "claims": [
+        "C4"
+      ],
+      "size": 16966,
+      "sha256": "201ab0b97d46e2d0a97cc43dd7c4c8557e9f4d795955f90c57837c3a20c97add"
+    },
+    {
+      "path": "digital_fly_v0_1/scripts/run_sd1_dynamics.py",
+      "path_base": "PAPER16_SOURCE_ROOT",
+      "role": "PRODUCER",
+      "claims": [
+        "C3"
+      ],
+      "size": 20200,
+      "sha256": "d03d1d8fd458e1b7bb40691948f9f16b79fcdce1ad012ede4e88ddedbf331de9"
+    },
+    {
+      "path": "digital_fly_v0_1/scripts/run_sd1_operator_admission.py",
+      "path_base": "PAPER16_SOURCE_ROOT",
+      "role": "PRODUCER",
+      "claims": [
+        "C3"
+      ],
+      "size": 14803,
+      "sha256": "37e20acc537f5a5ce74deff53c5228472b5bc51a22197661ebc37b00b73ca1c8"
+    },
+    {
+      "path": "digital_fly_v0_2/scripts/run_d2_1_markov_closure.py",
+      "path_base": "PAPER16_SOURCE_ROOT",
+      "role": "PRODUCER",
+      "claims": [
+        "C5"
+      ],
+      "size": 14441,
+      "sha256": "1c7a031447a65d200452de529972949ea8d7a026d036d8a175abb415e49bba0f"
+    },
+    {
+      "path": "digital_fly_v0_2/scripts/run_d2_2_memory_closure.py",
+      "path_base": "PAPER16_SOURCE_ROOT",
+      "role": "PRODUCER",
+      "claims": [
+        "C6"
+      ],
+      "size": 16571,
+      "sha256": "f76125aca9c93ad9b6824d6d33dd0c20b2d542cbe915ca249efedd0ae8793419"
+    },
+    {
+      "path": "digital_fly_v0_2/scripts/run_d2_3_partition_comparison.py",
+      "path_base": "PAPER16_SOURCE_ROOT",
+      "role": "PRODUCER",
+      "claims": [
+        "C7",
+        "C8"
+      ],
+      "size": 15550,
+      "sha256": "7d9f377916e207bdbe95ceb82d78b998c832e9034f8200f813d0b650f97fd99a"
+    },
+    {
+      "path": "followups/run_d2_2_named_sector_followup.py",
+      "path_base": "PAPER16_SOURCE_ROOT",
+      "role": "PRODUCER",
+      "claims": [
+        "C6"
+      ],
+      "size": 16494,
+      "sha256": "ccaf2d36018e09a7a6bfe58100bcf6d9399bee02c67684a7174cff3727f54a82"
+    },
+    {
+      "path": "followups/run_y_known_pm_route_audit.py",
+      "path_base": "PAPER16_SOURCE_ROOT",
+      "role": "PRODUCER",
+      "claims": [
+        "C8"
+      ],
+      "size": 26524,
+      "sha256": "61cf91a1cdae4efd0f87ca5613f15c58183d9b2b5b2d70ceb496dbaa874bcab5"
+    },
+    {
+      "path": "scripts/path_lifting_audit.py",
+      "path_base": "PAPER16_SOURCE_ROOT",
+      "role": "PRODUCER",
+      "claims": [
+        "C1",
+        "C2"
+      ],
+      "size": 13852,
+      "sha256": "1b62e539e42dea1058f36de71ca5c37ac4dfd4f4ac0ab2142c1eb6700af1d40a"
+    },
+    {
+      "path": "scripts/path_lifting_depth3_audit.py",
+      "path_base": "PAPER16_SOURCE_ROOT",
+      "role": "PRODUCER",
+      "claims": [
+        "C1",
+        "C2"
+      ],
+      "size": 13773,
+      "sha256": "4f3c1564a016c8de497b186db34c12dc761394a1ead81b7bf3e0cd5404e89fac"
+    },
+    {
+      "path": "scripts/sectorization_comparison_report.py",
+      "path_base": "PAPER16_SOURCE_ROOT",
+      "role": "PRODUCER",
+      "claims": [
+        "C1",
+        "C2"
+      ],
+      "size": 4095,
+      "sha256": "be42db8b835ec1dde9f554729025f185af10c1ef3f22d536b8b5872adb5b31ce"
+    },
+    {
+      "path": "scripts/sectorization_field_audit.py",
+      "path_base": "PAPER16_SOURCE_ROOT",
+      "role": "PRODUCER",
+      "claims": [
+        "C1",
+        "C2"
+      ],
+      "size": 4808,
+      "sha256": "0c31755630f4d6dcb5df59c3b583413e11e519d7b4ad8a0870278f7afd5e3274"
+    },
+    {
+      "path": "experiments/paper16/validation/replay_dynamic_descent.py",
+      "path_base": "REPOSITORY_ROOT",
+      "role": "PRODUCER_REPLAY_IMPLEMENTATION",
+      "claims": [
+        "C3-C8"
+      ],
+      "size": 7758,
+      "sha256": "7254d25d48f7744d78492f2fffc217b31a29f401149c153872485177a6d7a915"
+    },
+    {
+      "path": "experiments/paper16/validation/replay_exact_followups.py",
+      "path_base": "REPOSITORY_ROOT",
+      "role": "PRODUCER_REPLAY_IMPLEMENTATION",
+      "claims": [
+        "C6",
+        "C8"
+      ],
+      "size": 6151,
+      "sha256": "cb9cbb0b223c96feb345dc9502b29475f31c7cfb9de82bd1d0a90a80d0ffc448"
+    },
+    {
+      "path": "experiments/paper16/validation/replay_static_audits.py",
+      "path_base": "REPOSITORY_ROOT",
+      "role": "PRODUCER_REPLAY_IMPLEMENTATION",
+      "claims": [
+        "C1",
+        "C2"
+      ],
+      "size": 7989,
+      "sha256": "bb54359af5f17f09f186e3b85cf2aa2b10c3d2924420dda2b3b0d6f34232d50c"
+    },
+    {
+      "path": "experiments/paper16/results/a1-a2-exact-replay.v1.receipt.json",
+      "path_base": "REPOSITORY_ROOT",
+      "role": "PRODUCER_REPLAY_RECEIPT",
+      "claims": [
+        "C6",
+        "C8"
+      ],
+      "size": 4330,
+      "sha256": "afd08f14e3a8b0aa9b81a4daf1c1496a7d77f523bab908bc0b089988cf41ddd7"
+    },
+    {
+      "path": "experiments/paper16/results/dynamic-descent-replay.v1.receipt.json",
+      "path_base": "REPOSITORY_ROOT",
+      "role": "PRODUCER_REPLAY_RECEIPT",
+      "claims": [
+        "C3-C8"
+      ],
+      "size": 6793,
+      "sha256": "100b89f583f4aa18ec008191959fbad330898a29b32edbfdaf9b665b50279a79"
+    },
+    {
+      "path": "experiments/paper16/results/static-audits-replay.v1.receipt.json",
+      "path_base": "REPOSITORY_ROOT",
+      "role": "PRODUCER_REPLAY_RECEIPT",
+      "claims": [
+        "C1",
+        "C2"
+      ],
+      "size": 6344,
+      "sha256": "7a6e2d663814fbdc8afc663d8960cdb6acd81b8c6aaf983b55ffcad80f5f1c11"
+    },
+    {
+      "path": "figures/paper16/fig1_descent_stack.png",
+      "path_base": "REPOSITORY_ROOT",
+      "role": "READER_FIGURE",
+      "claims": [
+        "C1-C8"
+      ],
+      "size": 161388,
+      "sha256": "9512d8589f0762afa04b6934f1fa671f885ace2a9c049bf1feb1d0521125fdad"
+    },
+    {
+      "path": "figures/paper16/fig2_registered_contrasts.png",
+      "path_base": "REPOSITORY_ROOT",
+      "role": "READER_FIGURE",
+      "claims": [
+        "C1-C8"
+      ],
+      "size": 204235,
+      "sha256": "38d3a43ba5ffa8ef3bcd6169d02ed59ab594a917412ee31a72a1d7c32b49c43e"
+    },
+    {
+      "path": "papers/paper16/paper16_arxiv.pdf",
+      "path_base": "REPOSITORY_ROOT",
+      "role": "READER_PDF",
+      "claims": [
+        "C1-C8"
+      ],
+      "size": 160888,
+      "sha256": "4a58f0bc9d5927491207c94b5efa6a67ac4628b2343582004c1355722ef4e13a"
+    },
+    {
+      "path": "followups/d2_2_named_sector_followup.registration-v1.1.json",
+      "path_base": "PAPER16_SOURCE_ROOT",
+      "role": "REGISTRATION",
+      "claims": [
+        "C6"
+      ],
+      "size": 2716,
+      "sha256": "4562fc445bf6d8a50cc36c132f4bb9039210dacf10d5bef338908136f114e28d"
+    },
+    {
+      "path": "followups/y_known_pm_route_audit.registration-v1.2.json",
+      "path_base": "PAPER16_SOURCE_ROOT",
+      "role": "REGISTRATION",
+      "claims": [
+        "C8"
+      ],
+      "size": 3190,
+      "sha256": "56d0305cb0ec2dec28fa41a7ecfd0a153c403ec8efde1eaf0b52eca30c6b8bb4"
+    },
+    {
+      "path": "requirements/static.txt",
+      "path_base": "PAPER16_SOURCE_ROOT",
+      "role": "REPLAY_RUNTIME_LOCK",
+      "claims": [
+        "C1-C8"
+      ],
+      "size": 219,
+      "sha256": "cd9679b6c32b260b6d9bc3a87e7558f1a7881b45bd2baacda3131c982f136414"
+    },
+    {
+      "path": "digital_fly_v0_2/results/d2_2_memory_closure_v0_2.json",
+      "path_base": "PAPER16_SOURCE_ROOT",
+      "role": "SCIENTIFIC_ARTIFACT",
+      "claims": [
+        "C6"
+      ],
+      "size": 8004,
+      "sha256": "9ce4ce11afe91907beca97dbf556201e40eb0c8cc0b1030f21ac9084e0649a7c"
+    },
+    {
+      "path": "digital_fly_v0_2/results/d2_3_partition_comparison_v0_2.json",
+      "path_base": "PAPER16_SOURCE_ROOT",
+      "role": "SCIENTIFIC_ARTIFACT",
+      "claims": [
+        "C7",
+        "C8"
+      ],
+      "size": 84262,
+      "sha256": "a9d139af4154514bfc18934c55b37896508fb853d76198fb3cd2e45fd86affde"
+    },
+    {
+      "path": "followups/results/d2_2_named_sector_followup.v1.json",
+      "path_base": "PAPER16_SOURCE_ROOT",
+      "role": "SCIENTIFIC_ARTIFACT",
+      "claims": [
+        "C6"
+      ],
+      "size": 8271,
+      "sha256": "3a45ac96e142b144a7bcdf7a7cf1c2aaf01cf064b240a7ca08ca2dfd1dd5957a"
+    },
+    {
+      "path": "followups/results/y_known_pm_route_audit.v1.json",
+      "path_base": "PAPER16_SOURCE_ROOT",
+      "role": "SCIENTIFIC_ARTIFACT",
+      "claims": [
+        "C8"
+      ],
+      "size": 46712293,
+      "sha256": "28d8cc511d447002b32cc218a8410d1f815a481f138f2e6b9f29500cd69fadf4"
+    },
+    {
+      "path": "results/path_lifting_audit_full_v3.json",
+      "path_base": "PAPER16_SOURCE_ROOT",
+      "role": "SCIENTIFIC_ARTIFACT",
+      "claims": [
+        "C1",
+        "C2"
+      ],
+      "size": 3936481,
+      "sha256": "cfef3ba32a57919be01f039705a29ed4831edcc984b32e7eea1ff14c0c82112e"
+    },
+    {
+      "path": "results/path_lifting_audit_full_v3_somaSide.json",
+      "path_base": "PAPER16_SOURCE_ROOT",
+      "role": "SCIENTIFIC_ARTIFACT",
+      "claims": [
+        "C1",
+        "C2"
+      ],
+      "size": 50608,
+      "sha256": "1f63eb9d44a180b12b81b86eb5493d1fee7677fe288d481168325d9dfdbb058f"
+    },
+    {
+      "path": "results/path_lifting_depth3_audit_full_somaSide_v1.json",
+      "path_base": "PAPER16_SOURCE_ROOT",
+      "role": "SCIENTIFIC_ARTIFACT",
+      "claims": [
+        "C1",
+        "C2"
+      ],
+      "size": 4539,
+      "sha256": "a0d52bb616a3d80c88a559977d101383a191153393027638a5241fe8ec27d4f1"
+    },
+    {
+      "path": "results/path_lifting_depth3_audit_full_v1.json",
+      "path_base": "PAPER16_SOURCE_ROOT",
+      "role": "SCIENTIFIC_ARTIFACT",
+      "claims": [
+        "C1",
+        "C2"
+      ],
+      "size": 5553,
+      "sha256": "33ff1f6988e1d2c81791381d686ef5d89e22e1c3855f22192ceb1fbecf3a0964"
+    },
+    {
+      "path": "results/sectorization_comparison_v1.json",
+      "path_base": "PAPER16_SOURCE_ROOT",
+      "role": "SCIENTIFIC_ARTIFACT",
+      "claims": [
+        "C1",
+        "C2"
+      ],
+      "size": 33562,
+      "sha256": "b010f2ff4d8bb8bfa663856cf036bad782008a808863fe92e58af5aefdc79283"
+    },
+    {
+      "path": "results/sectorization_field_audit_v1.json",
+      "path_base": "PAPER16_SOURCE_ROOT",
+      "role": "SCIENTIFIC_ARTIFACT",
+      "claims": [
+        "C1",
+        "C2"
+      ],
+      "size": 21590,
+      "sha256": "df0c9e699ae00412fe0c23c594501e98898e0c2d9dec3f80c3fcece6c882b5ff"
+    },
+    {
+      "path": "experiments/paper16/upstream-provenance.v1.json",
+      "path_base": "REPOSITORY_ROOT",
+      "role": "UPSTREAM_PROVENANCE",
+      "claims": [
+        "C1-C8"
+      ],
+      "size": 3081,
+      "sha256": "0b90db879b51ee6fe6e37fe443c58be9e572e3b202221958d33c487199345a55"
+    }
+  ],
+  "upstream_dataset": {
+    "name": "MaleCNS",
+    "release": "v1.0",
+    "neuprint_dataset": "male-cns:v1.0",
+    "official_download_page": "https://male-cns.janelia.org/download/",
+    "publication_doi": "10.1016/j.cell.2026.08.015",
+    "preprint_doi": "10.1101/2025.10.09.680999",
+    "publication_date": "2026-09-03",
+    "journal": "Cell",
+    "license": {
+      "spdx": "CC-BY-4.0",
+      "source": "official MaleCNS download page",
+      "source_url": "https://male-cns.janelia.org/download/",
+      "verification_date": "2026-09-23",
+      "redistribution_note": "The dataset license is distinct from the repository code license; attribution must accompany any deposited source data."
+    },
+    "attribution": "MaleCNS v1.0, a collaboration of HHMI Janelia FlyEM, the University of Cambridge Department of Zoology, the MRC Laboratory of Molecular Biology, and Google Research."
+  },
+  "external_inputs": [
+    {
+      "path": "data/body-annotations-male-cns-v1.0-minconf-0.5.feather",
+      "url": "https://storage.googleapis.com/flyem-male-cns/v1.0/connectome-data/flat-connectome/body-annotations-male-cns-v1.0-minconf-0.5.feather",
+      "role": "annotations_and_sector_labels",
+      "consumed_by": [
+        "static LP2/LP3 and sectorization producers (C1-C2)",
+        "carrier and dynamic-descent producers (C3-C8)"
+      ],
+      "size": 14483314,
+      "sha256": "2177e246113e4cfbf1e7772ec37c6da1955ff22e8063d0b1f833101f99a9a3b2"
+    },
+    {
+      "path": "data/body-neurotransmitters-male-cns-v1.0.feather",
+      "url": "https://storage.googleapis.com/flyem-male-cns/v1.0/connectome-data/flat-connectome/body-neurotransmitters-male-cns-v1.0.feather",
+      "role": "neurotransmitter_proxy_labels",
+      "consumed_by": [
+        "carrier and dynamic-descent producers (C3-C8)"
+      ],
+      "size": 43282834,
+      "sha256": "95c9289220663abeb3409f3ad9e5a7f8a53f8093f5139d15502cd08da8879621"
+    },
+    {
+      "path": "data/connectome-weights-male-cns-v1.0-minconf-0.5.feather",
+      "url": "https://storage.googleapis.com/flyem-male-cns/v1.0/connectome-data/flat-connectome/connectome-weights-male-cns-v1.0-minconf-0.5.feather",
+      "role": "directed_body_pair_detected_connection_counts",
+      "consumed_by": [
+        "static LP2/LP3 producers (C1-C2)",
+        "carrier and dynamic-descent producers (C3-C8)"
+      ],
+      "size": 1051241946,
+      "sha256": "e35da783d1c686b2b58b3b87cd6a403ae43bfcfba8bff28e08ef752c1a56afc1"
+    }
+  ],
+  "selected_replay_binding": {
+    "selection_rule": "Paper XVI carrier-only clean-clone replay closure",
+    "identity_scope": "three derived carrier outputs consumed by the theorem-facing follow-ups",
+    "closure_path": "replay/large_artifact_closure.v1.json",
+    "closure_sha256": "0047809acacf0a6a05896d71359c81c05911ce60ad4c73905e22bee7ece70cf1",
+    "clean_clone_receipt_path": "replay/results/large_artifact_replay.v1.receipt.json",
+    "clean_clone_receipt_sha256": "b8b62e619a775ab9c68207ed6d9be7e243954ab4e45080d80df9fa471314241c",
+    "producer_replay_performed": true,
+    "independent_validation": false,
+    "selected_outputs": [
+      {
+        "path": "digital_fly_v0/results/carrier_v0_edges.npz",
+        "size": 312341374,
+        "sha256": "c94e885cc2e8cde78012ed0a68a4beb42eccfe1b64607bdc90ac46e675d6966d"
+      },
+      {
+        "path": "digital_fly_v0/results/carrier_v0_manifest.json",
+        "size": 4945,
+        "sha256": "e01f7a25b8a83b8613c17dec71370143a443b9d1ce841628fc64baf4b036ce1f"
+      },
+      {
+        "path": "digital_fly_v0/results/carrier_v0_nodes.parquet",
+        "size": 3008738,
+        "sha256": "87aa46280d68a210f6c8ef4a044282fbbb62342bbeeaab8393b0fd7fa770515e"
+      }
+    ],
+    "unrelated_sidecar_outputs_in_closure": false
+  },
+  "exclusion_boundary": {
+    "paths_or_surfaces": [
+      "public_projection/manifest.v1.json",
+      "digital_fly_v1/results/e0_3_*",
+      "digital_fly_e1/",
+      "followups/results/y_known_pm_route_audit.execution-attempt-v1.json",
+      "experiments/paper16/results/release-closure.v1.validation-receipt.json"
+    ],
+    "historical_public_projection_is_release_identity": false,
+    "digital_fly_e0_3_included": false,
+    "digital_fly_e1_included": false,
+    "receipt_in_own_closure": false
+  },
+  "closure_sha256": "9077abae3effc7230c107c491cad5d496a57e3983fcd4e4c3b4e7529197357c8",
+  "claim_boundary": {
+    "validation_mode": "LOCAL_CLOSURE_VERIFICATION",
+    "independent_validation": false,
+    "producer_replay_scope": "static LP2/LP3 artifacts, selected carrier outputs, v0.1-v0.2 dynamic-descent artifacts, and the corrected A1/A2 producers have passed bound replay; the local artifact validators themselves remain non-replay closure checks",
+    "same_carrier_result": "somaSide exact LP2=LP3=1 and deterministic first-order closure failure on registered normalized Y_known_pm",
+    "named_sector_result": "one exact D2.2 history-fiber witness in cb_intrinsic; no claim for memory orders k>=2",
+    "not_supported": [
+      "all-depth liftability",
+      "biological mechanism or causal attribution",
+      "Digital Fly embodied competence",
+      "E0.3 finite-null structural contrast",
+      "E1 inverse identifiability"
+    ]
+  }
+}

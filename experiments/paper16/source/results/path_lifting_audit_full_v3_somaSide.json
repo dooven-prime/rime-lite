@@ -1,0 +1,1858 @@
+{
+  "schema": "rime.exploratory.male-cns-path-lifting-audit.v3",
+  "scope": {
+    "mode": "full",
+    "rows_scanned": 151856684
+  },
+  "universe": {
+    "annotated_body_ids": 211577,
+    "candidate_middle_bodies": 1834661,
+    "sector_field": "somaSide",
+    "sector_count_including_missing": 5
+  },
+  "typed_core": {
+    "macro_triple_count": 64,
+    "lifted_triple_count": 64,
+    "lift_precision_2": 1.0,
+    "nonliftable_macro_triple_count": 0,
+    "nonliftable_macro_fraction": 0.0,
+    "nonliftable_macro_examples": [],
+    "universe_rule": "exclude <unannotated> from source, relay, and target",
+    "witness_multiplicity": [
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "<missing>",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 22340
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "<missing>",
+        "target_sector": "L",
+        "witness_multiplicity": 18256
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "<missing>",
+        "target_sector": "M",
+        "witness_multiplicity": 5069
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "<missing>",
+        "target_sector": "R",
+        "witness_multiplicity": 19283
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "L",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 29642
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "L",
+        "target_sector": "L",
+        "witness_multiplicity": 45860
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "L",
+        "target_sector": "M",
+        "witness_multiplicity": 10692
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "L",
+        "target_sector": "R",
+        "witness_multiplicity": 35401
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "M",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 290
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "M",
+        "target_sector": "L",
+        "witness_multiplicity": 376
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "M",
+        "target_sector": "M",
+        "witness_multiplicity": 373
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "M",
+        "target_sector": "R",
+        "witness_multiplicity": 374
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "R",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 24254
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "R",
+        "target_sector": "L",
+        "witness_multiplicity": 31719
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "R",
+        "target_sector": "M",
+        "witness_multiplicity": 10576
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "R",
+        "target_sector": "R",
+        "witness_multiplicity": 40749
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "<missing>",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 17103
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "<missing>",
+        "target_sector": "L",
+        "witness_multiplicity": 23074
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "<missing>",
+        "target_sector": "M",
+        "witness_multiplicity": 5329
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "<missing>",
+        "target_sector": "R",
+        "witness_multiplicity": 17345
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "L",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 38513
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "L",
+        "target_sector": "L",
+        "witness_multiplicity": 73624
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "L",
+        "target_sector": "M",
+        "witness_multiplicity": 12254
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "L",
+        "target_sector": "R",
+        "witness_multiplicity": 55740
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "M",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 293
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "M",
+        "target_sector": "L",
+        "witness_multiplicity": 387
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "M",
+        "target_sector": "M",
+        "witness_multiplicity": 384
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "M",
+        "target_sector": "R",
+        "witness_multiplicity": 385
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "R",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 28435
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "R",
+        "target_sector": "L",
+        "witness_multiplicity": 54406
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "R",
+        "target_sector": "M",
+        "witness_multiplicity": 12316
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "R",
+        "target_sector": "R",
+        "witness_multiplicity": 64270
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "<missing>",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 2826
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "<missing>",
+        "target_sector": "L",
+        "witness_multiplicity": 3185
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "<missing>",
+        "target_sector": "M",
+        "witness_multiplicity": 2206
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "<missing>",
+        "target_sector": "R",
+        "witness_multiplicity": 3187
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "L",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 12542
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "L",
+        "target_sector": "L",
+        "witness_multiplicity": 18179
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "L",
+        "target_sector": "M",
+        "witness_multiplicity": 11064
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "L",
+        "target_sector": "R",
+        "witness_multiplicity": 17943
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "M",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 293
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "M",
+        "target_sector": "L",
+        "witness_multiplicity": 387
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "M",
+        "target_sector": "M",
+        "witness_multiplicity": 384
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "M",
+        "target_sector": "R",
+        "witness_multiplicity": 385
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "R",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 12624
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "R",
+        "target_sector": "L",
+        "witness_multiplicity": 18444
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "R",
+        "target_sector": "M",
+        "witness_multiplicity": 11198
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "R",
+        "target_sector": "R",
+        "witness_multiplicity": 18640
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "<missing>",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 18212
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "<missing>",
+        "target_sector": "L",
+        "witness_multiplicity": 17467
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "<missing>",
+        "target_sector": "M",
+        "witness_multiplicity": 5250
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "<missing>",
+        "target_sector": "R",
+        "witness_multiplicity": 23233
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "L",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 34517
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "L",
+        "target_sector": "L",
+        "witness_multiplicity": 63569
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "L",
+        "target_sector": "M",
+        "witness_multiplicity": 12246
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "L",
+        "target_sector": "R",
+        "witness_multiplicity": 53605
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "M",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 293
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "M",
+        "target_sector": "L",
+        "witness_multiplicity": 387
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "M",
+        "target_sector": "M",
+        "witness_multiplicity": 384
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "M",
+        "target_sector": "R",
+        "witness_multiplicity": 385
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "R",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 31654
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "R",
+        "target_sector": "L",
+        "witness_multiplicity": 56519
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "R",
+        "target_sector": "M",
+        "witness_multiplicity": 12324
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "R",
+        "target_sector": "R",
+        "witness_multiplicity": 73854
+      }
+    ],
+    "witness_multiplicity_summary": {
+      "triple_count": 64,
+      "positive_count": 64,
+      "minimum": 290,
+      "maximum": 73854,
+      "mean": 19320.28125
+    }
+  },
+  "relay_strict": {
+    "macro_triple_count": 100,
+    "lifted_triple_count": 100,
+    "lift_precision_2": 1.0,
+    "nonliftable_macro_triple_count": 0,
+    "nonliftable_macro_fraction": 0.0,
+    "nonliftable_macro_examples": [],
+    "universe_rule": "allow boundary <unannotated> endpoints but exclude <unannotated> as relay",
+    "witness_multiplicity": [
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "<missing>",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 22340
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "<missing>",
+        "target_sector": "<unannotated>",
+        "witness_multiplicity": 24205
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "<missing>",
+        "target_sector": "L",
+        "witness_multiplicity": 18256
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "<missing>",
+        "target_sector": "M",
+        "witness_multiplicity": 5069
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "<missing>",
+        "target_sector": "R",
+        "witness_multiplicity": 19283
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "L",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 29642
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "L",
+        "target_sector": "<unannotated>",
+        "witness_multiplicity": 45829
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "L",
+        "target_sector": "L",
+        "witness_multiplicity": 45860
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "L",
+        "target_sector": "M",
+        "witness_multiplicity": 10692
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "L",
+        "target_sector": "R",
+        "witness_multiplicity": 35401
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "M",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 290
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "M",
+        "target_sector": "<unannotated>",
+        "witness_multiplicity": 380
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "M",
+        "target_sector": "L",
+        "witness_multiplicity": 376
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "M",
+        "target_sector": "M",
+        "witness_multiplicity": 373
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "M",
+        "target_sector": "R",
+        "witness_multiplicity": 374
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "R",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 24254
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "R",
+        "target_sector": "<unannotated>",
+        "witness_multiplicity": 40663
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "R",
+        "target_sector": "L",
+        "witness_multiplicity": 31719
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "R",
+        "target_sector": "M",
+        "witness_multiplicity": 10576
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "R",
+        "target_sector": "R",
+        "witness_multiplicity": 40749
+      },
+      {
+        "source_sector": "<unannotated>",
+        "relay_sector": "<missing>",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 23363
+      },
+      {
+        "source_sector": "<unannotated>",
+        "relay_sector": "<missing>",
+        "target_sector": "<unannotated>",
+        "witness_multiplicity": 30614
+      },
+      {
+        "source_sector": "<unannotated>",
+        "relay_sector": "<missing>",
+        "target_sector": "L",
+        "witness_multiplicity": 22426
+      },
+      {
+        "source_sector": "<unannotated>",
+        "relay_sector": "<missing>",
+        "target_sector": "M",
+        "witness_multiplicity": 5397
+      },
+      {
+        "source_sector": "<unannotated>",
+        "relay_sector": "<missing>",
+        "target_sector": "R",
+        "witness_multiplicity": 22807
+      },
+      {
+        "source_sector": "<unannotated>",
+        "relay_sector": "L",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 38426
+      },
+      {
+        "source_sector": "<unannotated>",
+        "relay_sector": "L",
+        "target_sector": "<unannotated>",
+        "witness_multiplicity": 73154
+      },
+      {
+        "source_sector": "<unannotated>",
+        "relay_sector": "L",
+        "target_sector": "L",
+        "witness_multiplicity": 73195
+      },
+      {
+        "source_sector": "<unannotated>",
+        "relay_sector": "L",
+        "target_sector": "M",
+        "witness_multiplicity": 12253
+      },
+      {
+        "source_sector": "<unannotated>",
+        "relay_sector": "L",
+        "target_sector": "R",
+        "witness_multiplicity": 55555
+      },
+      {
+        "source_sector": "<unannotated>",
+        "relay_sector": "M",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 293
+      },
+      {
+        "source_sector": "<unannotated>",
+        "relay_sector": "M",
+        "target_sector": "<unannotated>",
+        "witness_multiplicity": 391
+      },
+      {
+        "source_sector": "<unannotated>",
+        "relay_sector": "M",
+        "target_sector": "L",
+        "witness_multiplicity": 387
+      },
+      {
+        "source_sector": "<unannotated>",
+        "relay_sector": "M",
+        "target_sector": "M",
+        "witness_multiplicity": 384
+      },
+      {
+        "source_sector": "<unannotated>",
+        "relay_sector": "M",
+        "target_sector": "R",
+        "witness_multiplicity": 385
+      },
+      {
+        "source_sector": "<unannotated>",
+        "relay_sector": "R",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 31418
+      },
+      {
+        "source_sector": "<unannotated>",
+        "relay_sector": "R",
+        "target_sector": "<unannotated>",
+        "witness_multiplicity": 72642
+      },
+      {
+        "source_sector": "<unannotated>",
+        "relay_sector": "R",
+        "target_sector": "L",
+        "witness_multiplicity": 55940
+      },
+      {
+        "source_sector": "<unannotated>",
+        "relay_sector": "R",
+        "target_sector": "M",
+        "witness_multiplicity": 12322
+      },
+      {
+        "source_sector": "<unannotated>",
+        "relay_sector": "R",
+        "target_sector": "R",
+        "witness_multiplicity": 72751
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "<missing>",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 17103
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "<missing>",
+        "target_sector": "<unannotated>",
+        "witness_multiplicity": 24156
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "<missing>",
+        "target_sector": "L",
+        "witness_multiplicity": 23074
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "<missing>",
+        "target_sector": "M",
+        "witness_multiplicity": 5329
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "<missing>",
+        "target_sector": "R",
+        "witness_multiplicity": 17345
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "L",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 38513
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "L",
+        "target_sector": "<unannotated>",
+        "witness_multiplicity": 73551
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "L",
+        "target_sector": "L",
+        "witness_multiplicity": 73624
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "L",
+        "target_sector": "M",
+        "witness_multiplicity": 12254
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "L",
+        "target_sector": "R",
+        "witness_multiplicity": 55740
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "M",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 293
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "M",
+        "target_sector": "<unannotated>",
+        "witness_multiplicity": 391
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "M",
+        "target_sector": "L",
+        "witness_multiplicity": 387
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "M",
+        "target_sector": "M",
+        "witness_multiplicity": 384
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "M",
+        "target_sector": "R",
+        "witness_multiplicity": 385
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "R",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 28435
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "R",
+        "target_sector": "<unannotated>",
+        "witness_multiplicity": 64274
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "R",
+        "target_sector": "L",
+        "witness_multiplicity": 54406
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "R",
+        "target_sector": "M",
+        "witness_multiplicity": 12316
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "R",
+        "target_sector": "R",
+        "witness_multiplicity": 64270
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "<missing>",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 2826
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "<missing>",
+        "target_sector": "<unannotated>",
+        "witness_multiplicity": 3297
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "<missing>",
+        "target_sector": "L",
+        "witness_multiplicity": 3185
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "<missing>",
+        "target_sector": "M",
+        "witness_multiplicity": 2206
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "<missing>",
+        "target_sector": "R",
+        "witness_multiplicity": 3187
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "L",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 12542
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "L",
+        "target_sector": "<unannotated>",
+        "witness_multiplicity": 18184
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "L",
+        "target_sector": "L",
+        "witness_multiplicity": 18179
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "L",
+        "target_sector": "M",
+        "witness_multiplicity": 11064
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "L",
+        "target_sector": "R",
+        "witness_multiplicity": 17943
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "M",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 293
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "M",
+        "target_sector": "<unannotated>",
+        "witness_multiplicity": 391
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "M",
+        "target_sector": "L",
+        "witness_multiplicity": 387
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "M",
+        "target_sector": "M",
+        "witness_multiplicity": 384
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "M",
+        "target_sector": "R",
+        "witness_multiplicity": 385
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "R",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 12624
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "R",
+        "target_sector": "<unannotated>",
+        "witness_multiplicity": 18655
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "R",
+        "target_sector": "L",
+        "witness_multiplicity": 18444
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "R",
+        "target_sector": "M",
+        "witness_multiplicity": 11198
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "R",
+        "target_sector": "R",
+        "witness_multiplicity": 18640
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "<missing>",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 18212
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "<missing>",
+        "target_sector": "<unannotated>",
+        "witness_multiplicity": 24526
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "<missing>",
+        "target_sector": "L",
+        "witness_multiplicity": 17467
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "<missing>",
+        "target_sector": "M",
+        "witness_multiplicity": 5250
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "<missing>",
+        "target_sector": "R",
+        "witness_multiplicity": 23233
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "L",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 34517
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "L",
+        "target_sector": "<unannotated>",
+        "witness_multiplicity": 63574
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "L",
+        "target_sector": "L",
+        "witness_multiplicity": 63569
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "L",
+        "target_sector": "M",
+        "witness_multiplicity": 12246
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "L",
+        "target_sector": "R",
+        "witness_multiplicity": 53605
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "M",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 293
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "M",
+        "target_sector": "<unannotated>",
+        "witness_multiplicity": 391
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "M",
+        "target_sector": "L",
+        "witness_multiplicity": 387
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "M",
+        "target_sector": "M",
+        "witness_multiplicity": 384
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "M",
+        "target_sector": "R",
+        "witness_multiplicity": 385
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "R",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 31654
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "R",
+        "target_sector": "<unannotated>",
+        "witness_multiplicity": 73731
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "R",
+        "target_sector": "L",
+        "witness_multiplicity": 56519
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "R",
+        "target_sector": "M",
+        "witness_multiplicity": 12324
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "R",
+        "target_sector": "R",
+        "witness_multiplicity": 73854
+      }
+    ],
+    "witness_multiplicity_summary": {
+      "triple_count": 100,
+      "positive_count": 100,
+      "minimum": 290,
+      "maximum": 73854,
+      "mean": 23167.99
+    }
+  },
+  "coverage_inclusive": {
+    "macro_triple_count": 125,
+    "lifted_triple_count": 125,
+    "lift_precision_2": 1.0,
+    "nonliftable_macro_triple_count": 0,
+    "nonliftable_macro_fraction": 0.0,
+    "nonliftable_macro_examples": [],
+    "universe_rule": "retain every release-native label, including concrete bodies grouped as <unannotated>",
+    "witness_multiplicity": [
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "<missing>",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 22340
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "<missing>",
+        "target_sector": "<unannotated>",
+        "witness_multiplicity": 24205
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "<missing>",
+        "target_sector": "L",
+        "witness_multiplicity": 18256
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "<missing>",
+        "target_sector": "M",
+        "witness_multiplicity": 5069
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "<missing>",
+        "target_sector": "R",
+        "witness_multiplicity": 19283
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "<unannotated>",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 83173
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "<unannotated>",
+        "target_sector": "<unannotated>",
+        "witness_multiplicity": 118370
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "<unannotated>",
+        "target_sector": "L",
+        "witness_multiplicity": 75790
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "<unannotated>",
+        "target_sector": "M",
+        "witness_multiplicity": 2920
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "<unannotated>",
+        "target_sector": "R",
+        "witness_multiplicity": 69874
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "L",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 29642
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "L",
+        "target_sector": "<unannotated>",
+        "witness_multiplicity": 45829
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "L",
+        "target_sector": "L",
+        "witness_multiplicity": 45860
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "L",
+        "target_sector": "M",
+        "witness_multiplicity": 10692
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "L",
+        "target_sector": "R",
+        "witness_multiplicity": 35401
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "M",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 290
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "M",
+        "target_sector": "<unannotated>",
+        "witness_multiplicity": 380
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "M",
+        "target_sector": "L",
+        "witness_multiplicity": 376
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "M",
+        "target_sector": "M",
+        "witness_multiplicity": 373
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "M",
+        "target_sector": "R",
+        "witness_multiplicity": 374
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "R",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 24254
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "R",
+        "target_sector": "<unannotated>",
+        "witness_multiplicity": 40663
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "R",
+        "target_sector": "L",
+        "witness_multiplicity": 31719
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "R",
+        "target_sector": "M",
+        "witness_multiplicity": 10576
+      },
+      {
+        "source_sector": "<missing>",
+        "relay_sector": "R",
+        "target_sector": "R",
+        "witness_multiplicity": 40749
+      },
+      {
+        "source_sector": "<unannotated>",
+        "relay_sector": "<missing>",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 23363
+      },
+      {
+        "source_sector": "<unannotated>",
+        "relay_sector": "<missing>",
+        "target_sector": "<unannotated>",
+        "witness_multiplicity": 30614
+      },
+      {
+        "source_sector": "<unannotated>",
+        "relay_sector": "<missing>",
+        "target_sector": "L",
+        "witness_multiplicity": 22426
+      },
+      {
+        "source_sector": "<unannotated>",
+        "relay_sector": "<missing>",
+        "target_sector": "M",
+        "witness_multiplicity": 5397
+      },
+      {
+        "source_sector": "<unannotated>",
+        "relay_sector": "<missing>",
+        "target_sector": "R",
+        "witness_multiplicity": 22807
+      },
+      {
+        "source_sector": "<unannotated>",
+        "relay_sector": "<unannotated>",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 61637
+      },
+      {
+        "source_sector": "<unannotated>",
+        "relay_sector": "<unannotated>",
+        "target_sector": "<unannotated>",
+        "witness_multiplicity": 283948
+      },
+      {
+        "source_sector": "<unannotated>",
+        "relay_sector": "<unannotated>",
+        "target_sector": "L",
+        "witness_multiplicity": 172286
+      },
+      {
+        "source_sector": "<unannotated>",
+        "relay_sector": "<unannotated>",
+        "target_sector": "M",
+        "witness_multiplicity": 6558
+      },
+      {
+        "source_sector": "<unannotated>",
+        "relay_sector": "<unannotated>",
+        "target_sector": "R",
+        "witness_multiplicity": 145534
+      },
+      {
+        "source_sector": "<unannotated>",
+        "relay_sector": "L",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 38426
+      },
+      {
+        "source_sector": "<unannotated>",
+        "relay_sector": "L",
+        "target_sector": "<unannotated>",
+        "witness_multiplicity": 73154
+      },
+      {
+        "source_sector": "<unannotated>",
+        "relay_sector": "L",
+        "target_sector": "L",
+        "witness_multiplicity": 73195
+      },
+      {
+        "source_sector": "<unannotated>",
+        "relay_sector": "L",
+        "target_sector": "M",
+        "witness_multiplicity": 12253
+      },
+      {
+        "source_sector": "<unannotated>",
+        "relay_sector": "L",
+        "target_sector": "R",
+        "witness_multiplicity": 55555
+      },
+      {
+        "source_sector": "<unannotated>",
+        "relay_sector": "M",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 293
+      },
+      {
+        "source_sector": "<unannotated>",
+        "relay_sector": "M",
+        "target_sector": "<unannotated>",
+        "witness_multiplicity": 391
+      },
+      {
+        "source_sector": "<unannotated>",
+        "relay_sector": "M",
+        "target_sector": "L",
+        "witness_multiplicity": 387
+      },
+      {
+        "source_sector": "<unannotated>",
+        "relay_sector": "M",
+        "target_sector": "M",
+        "witness_multiplicity": 384
+      },
+      {
+        "source_sector": "<unannotated>",
+        "relay_sector": "M",
+        "target_sector": "R",
+        "witness_multiplicity": 385
+      },
+      {
+        "source_sector": "<unannotated>",
+        "relay_sector": "R",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 31418
+      },
+      {
+        "source_sector": "<unannotated>",
+        "relay_sector": "R",
+        "target_sector": "<unannotated>",
+        "witness_multiplicity": 72642
+      },
+      {
+        "source_sector": "<unannotated>",
+        "relay_sector": "R",
+        "target_sector": "L",
+        "witness_multiplicity": 55940
+      },
+      {
+        "source_sector": "<unannotated>",
+        "relay_sector": "R",
+        "target_sector": "M",
+        "witness_multiplicity": 12322
+      },
+      {
+        "source_sector": "<unannotated>",
+        "relay_sector": "R",
+        "target_sector": "R",
+        "witness_multiplicity": 72751
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "<missing>",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 17103
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "<missing>",
+        "target_sector": "<unannotated>",
+        "witness_multiplicity": 24156
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "<missing>",
+        "target_sector": "L",
+        "witness_multiplicity": 23074
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "<missing>",
+        "target_sector": "M",
+        "witness_multiplicity": 5329
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "<missing>",
+        "target_sector": "R",
+        "witness_multiplicity": 17345
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "<unannotated>",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 35036
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "<unannotated>",
+        "target_sector": "<unannotated>",
+        "witness_multiplicity": 371975
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "<unannotated>",
+        "target_sector": "L",
+        "witness_multiplicity": 332585
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "<unannotated>",
+        "target_sector": "M",
+        "witness_multiplicity": 8408
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "<unannotated>",
+        "target_sector": "R",
+        "witness_multiplicity": 139662
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "L",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 38513
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "L",
+        "target_sector": "<unannotated>",
+        "witness_multiplicity": 73551
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "L",
+        "target_sector": "L",
+        "witness_multiplicity": 73624
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "L",
+        "target_sector": "M",
+        "witness_multiplicity": 12254
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "L",
+        "target_sector": "R",
+        "witness_multiplicity": 55740
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "M",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 293
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "M",
+        "target_sector": "<unannotated>",
+        "witness_multiplicity": 391
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "M",
+        "target_sector": "L",
+        "witness_multiplicity": 387
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "M",
+        "target_sector": "M",
+        "witness_multiplicity": 384
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "M",
+        "target_sector": "R",
+        "witness_multiplicity": 385
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "R",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 28435
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "R",
+        "target_sector": "<unannotated>",
+        "witness_multiplicity": 64274
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "R",
+        "target_sector": "L",
+        "witness_multiplicity": 54406
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "R",
+        "target_sector": "M",
+        "witness_multiplicity": 12316
+      },
+      {
+        "source_sector": "L",
+        "relay_sector": "R",
+        "target_sector": "R",
+        "witness_multiplicity": 64270
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "<missing>",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 2826
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "<missing>",
+        "target_sector": "<unannotated>",
+        "witness_multiplicity": 3297
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "<missing>",
+        "target_sector": "L",
+        "witness_multiplicity": 3185
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "<missing>",
+        "target_sector": "M",
+        "witness_multiplicity": 2206
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "<missing>",
+        "target_sector": "R",
+        "witness_multiplicity": 3187
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "<unannotated>",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 1125
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "<unannotated>",
+        "target_sector": "<unannotated>",
+        "witness_multiplicity": 11306
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "<unannotated>",
+        "target_sector": "L",
+        "witness_multiplicity": 7904
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "<unannotated>",
+        "target_sector": "M",
+        "witness_multiplicity": 3801
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "<unannotated>",
+        "target_sector": "R",
+        "witness_multiplicity": 8046
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "L",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 12542
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "L",
+        "target_sector": "<unannotated>",
+        "witness_multiplicity": 18184
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "L",
+        "target_sector": "L",
+        "witness_multiplicity": 18179
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "L",
+        "target_sector": "M",
+        "witness_multiplicity": 11064
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "L",
+        "target_sector": "R",
+        "witness_multiplicity": 17943
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "M",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 293
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "M",
+        "target_sector": "<unannotated>",
+        "witness_multiplicity": 391
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "M",
+        "target_sector": "L",
+        "witness_multiplicity": 387
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "M",
+        "target_sector": "M",
+        "witness_multiplicity": 384
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "M",
+        "target_sector": "R",
+        "witness_multiplicity": 385
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "R",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 12624
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "R",
+        "target_sector": "<unannotated>",
+        "witness_multiplicity": 18655
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "R",
+        "target_sector": "L",
+        "witness_multiplicity": 18444
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "R",
+        "target_sector": "M",
+        "witness_multiplicity": 11198
+      },
+      {
+        "source_sector": "M",
+        "relay_sector": "R",
+        "target_sector": "R",
+        "witness_multiplicity": 18640
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "<missing>",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 18212
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "<missing>",
+        "target_sector": "<unannotated>",
+        "witness_multiplicity": 24526
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "<missing>",
+        "target_sector": "L",
+        "witness_multiplicity": 17467
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "<missing>",
+        "target_sector": "M",
+        "witness_multiplicity": 5250
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "<missing>",
+        "target_sector": "R",
+        "witness_multiplicity": 23233
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "<unannotated>",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 31845
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "<unannotated>",
+        "target_sector": "<unannotated>",
+        "witness_multiplicity": 319020
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "<unannotated>",
+        "target_sector": "L",
+        "witness_multiplicity": 142080
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "<unannotated>",
+        "target_sector": "M",
+        "witness_multiplicity": 7904
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "<unannotated>",
+        "target_sector": "R",
+        "witness_multiplicity": 279802
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "L",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 34517
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "L",
+        "target_sector": "<unannotated>",
+        "witness_multiplicity": 63574
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "L",
+        "target_sector": "L",
+        "witness_multiplicity": 63569
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "L",
+        "target_sector": "M",
+        "witness_multiplicity": 12246
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "L",
+        "target_sector": "R",
+        "witness_multiplicity": 53605
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "M",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 293
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "M",
+        "target_sector": "<unannotated>",
+        "witness_multiplicity": 391
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "M",
+        "target_sector": "L",
+        "witness_multiplicity": 387
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "M",
+        "target_sector": "M",
+        "witness_multiplicity": 384
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "M",
+        "target_sector": "R",
+        "witness_multiplicity": 385
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "R",
+        "target_sector": "<missing>",
+        "witness_multiplicity": 31654
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "R",
+        "target_sector": "<unannotated>",
+        "witness_multiplicity": 73731
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "R",
+        "target_sector": "L",
+        "witness_multiplicity": 56519
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "R",
+        "target_sector": "M",
+        "witness_multiplicity": 12324
+      },
+      {
+        "source_sector": "R",
+        "relay_sector": "R",
+        "target_sector": "R",
+        "witness_multiplicity": 73854
+      }
+    ],
+    "witness_multiplicity_summary": {
+      "triple_count": 125,
+      "positive_count": 125,
+      "minimum": 290,
+      "maximum": 371975,
+      "mean": 40299.104
+    }
+  },
+  "pair_depth_discrepancy": {
+    "typed_core": {
+      "cutoff_depth": 2,
+      "eligible_quotient_pairs": 12,
+      "quotient_distance_histogram": {
+        "1": 12
+      },
+      "route_distance_at_cutoff_histogram": {
+        "1": 12
+      },
+      "delta_histogram_for_resolved_pairs": {
+        "0": 12
+      },
+      "unreached_at_cutoff_pairs": 0,
+      "semantics": "direct body-level edges count as depth 1; depth 2 requires a shared concrete middle body; larger microscopic depths are not computed"
+    },
+    "relay_strict": {
+      "cutoff_depth": 2,
+      "eligible_quotient_pairs": 16,
+      "quotient_distance_histogram": {
+        "1": 16
+      },
+      "route_distance_at_cutoff_histogram": {
+        "1": 16
+      },
+      "delta_histogram_for_resolved_pairs": {
+        "0": 16
+      },
+      "unreached_at_cutoff_pairs": 0,
+      "semantics": "direct body-level edges count as depth 1; depth 2 requires a shared concrete middle body; larger microscopic depths are not computed"
+    },
+    "coverage_inclusive": {
+      "cutoff_depth": 2,
+      "eligible_quotient_pairs": 20,
+      "quotient_distance_histogram": {
+        "1": 20
+      },
+      "route_distance_at_cutoff_histogram": {
+        "1": 20
+      },
+      "delta_histogram_for_resolved_pairs": {
+        "0": 20
+      },
+      "unreached_at_cutoff_pairs": 0,
+      "semantics": "direct body-level edges count as depth 1; depth 2 requires a shared concrete middle body; larger microscopic depths are not computed"
+    }
+  },
+  "semantics": {
+    "M_ijk": "A_ij > 0 and A_jk > 0 in the observed sector support",
+    "L_ijk": "exists one concrete middle body with an incoming i edge and outgoing k edge",
+    "Path_2_quotient": "Boolean support of the sector product A^2; existential edges may use different concrete middle bodies",
+    "Route_2[Y_MaleCNS]": "support of the projected product Q_k Y_MaleCNS Q_j Y_MaleCNS Q_i; for the declared nonnegative node-basis carrier this is witnessed by one concrete middle body v",
+    "D_quotient_support": "shortest directed-path distance on the sector support graph; this is the quantity formerly labelled D_route in the baseline aggregate",
+    "D_route[Y_MaleCNS]": "only a depth-2 cutoff comparison is computed here; larger depths are UNREACHED_AT_CUTOFF rather than infinity",
+    "descent_claim": "A sector path does not imply a liftable microscopic path without a shared-intermediate witness or an explicit lumpability theorem",
+    "sector_field": "somaSide"
+  }
+}

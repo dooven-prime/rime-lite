@@ -1,0 +1,139 @@
+{
+  "schema": "rime.exploratory.digital-fly-carrier-manifest.v0",
+  "status": "validated_for_pilot",
+  "release": "MaleCNS v1.0",
+  "source_artifact": {
+    "weights": "data\\connectome-weights-male-cns-v1.0-minconf-0.5.feather",
+    "annotations": "data\\body-annotations-male-cns-v1.0-minconf-0.5.feather",
+    "neurotransmitters": "data\\body-neurotransmitters-male-cns-v1.0.feather",
+    "weights_sha256": "e35da783d1c686b2b58b3b87cd6a403ae43bfcfba8bff28e08ef752c1a56afc1",
+    "annotations_sha256": "2177e246113e4cfbf1e7772ec37c6da1955ff22e8063d0b1f833101f99a9a3b2",
+    "neurotransmitters_sha256": "95c9289220663abeb3409f3ad9e5a7f8a53f8093f5139d15502cd08da8879621"
+  },
+  "carrier_basis": "annotation_intersection_structural",
+  "node_universe": {
+    "definition": "all curated annotation body IDs; admitted edges require both endpoints in this universe",
+    "count": 211577,
+    "endpoint_inclusion_rule": "body_pre and body_post both present in body-annotations bodyId",
+    "isolated_nodes_included": true
+  },
+  "edge_universe": {
+    "raw_rows_scanned": 151856684,
+    "admitted_rows": 26028386,
+    "admitted_fraction": 0.17140099015990629,
+    "raw_weight_sum_scanned": 311833243,
+    "duplicate_body_pairs": 0,
+    "orientation": "source_row_target_column"
+  },
+  "artifacts": {
+    "edges": "digital_fly_v0\\results\\carrier_v0_edges.npz",
+    "nodes": "digital_fly_v0\\results\\carrier_v0_nodes.parquet"
+  },
+  "sectorization": {
+    "observation_fields": [
+      "superclass",
+      "somaSide",
+      "rootSide",
+      "type"
+    ],
+    "mapping_sha256": "e92fb5a32f667223e27cf4be955a8c1ed6f796475eedc0c6f6d213b31867f100",
+    "missing_label": "<missing>",
+    "unannotated_endpoint_policy": "not_a_relay_witness"
+  },
+  "operator_family": {
+    "labels": [
+      "single_Y",
+      "presynaptic_consensus_nt_masked"
+    ],
+    "neurotransmitter_semantics": "structural_identity_only",
+    "unclear_policy": "retain_explicit_label",
+    "decomposition_identity": "Y_admitted = sum_a Y^(a) + Y^(unclear) + Y^(nt_missing); missing and unclear are distinct labels",
+    "decomposition_receipt": {
+      "axis": "presynaptic source node consensus_nt",
+      "labels_including_unclear_and_nt_missing": [
+        "acetylcholine",
+        "dopamine",
+        "gaba",
+        "glutamate",
+        "histamine",
+        "nt_missing",
+        "octopamine",
+        "serotonin",
+        "unclear"
+      ],
+      "node_count_by_label": {
+        "acetylcholine": 104173,
+        "dopamine": 396,
+        "gaba": 22186,
+        "glutamate": 29443,
+        "histamine": 8024,
+        "nt_missing": 24561,
+        "octopamine": 101,
+        "serotonin": 48,
+        "unclear": 22645
+      },
+      "nt_missing_node_count": 24561,
+      "unclear_node_count": 22645,
+      "edge_count_by_label": {
+        "acetylcholine": 14875726,
+        "dopamine": 243358,
+        "gaba": 4972922,
+        "glutamate": 4829818,
+        "histamine": 97020,
+        "nt_missing": 0,
+        "octopamine": 149420,
+        "serotonin": 45794,
+        "unclear": 814328
+      },
+      "weight_sum_by_label": {
+        "acetylcholine": 73861957,
+        "dopamine": 585766,
+        "gaba": 25838003,
+        "glutamate": 21139743,
+        "histamine": 742030,
+        "nt_missing": 0,
+        "octopamine": 469190,
+        "serotonin": 133463,
+        "unclear": 2595781
+      },
+      "edge_class_count_sum": 26028386,
+      "edge_class_weight_sum": 125365933,
+      "edge_count_identity_holds": true,
+      "weight_sum_identity_holds": true,
+      "exact_one_source_label_per_admitted_edge": true
+    }
+  },
+  "weight_variants": {
+    "binary": "1 for each admitted edge",
+    "raw": "release weight (detected synapse-count measurement)",
+    "log": "log2(1 + release weight)"
+  },
+  "normalization": {
+    "name": "outgoing_row_l1",
+    "formula": "Y_norm[i,j] = Y[i,j] / sum_j Y[i,j]",
+    "zero_row_policy": "retain zero row",
+    "incoming_update": "Y_norm.T @ x"
+  },
+  "route_audit": {
+    "depth2_artifact": "results/path_lifting_audit_full_v3.json",
+    "depth3_artifact": "results/path_lifting_depth3_audit_full_v1.json",
+    "coverage_receipt": "results/superclass_aggregate_full_v3.json"
+  },
+  "dynamic_model": {
+    "state_basis": "admitted annotation-intersection node basis",
+    "sector_role": "observation map C only; never D0 state carrier",
+    "activation": "clipped_relu(phi(z)=min(x_max,max(0,z)), phi(0)=0)",
+    "gain_semantics": "direct dimensionless gamma under outgoing_row_l1; spectral_radius is diagnostic only",
+    "noise": "zero or seeded Gaussian"
+  },
+  "claim_boundary": {
+    "supports": [
+      "model-relative structural response experiments"
+    ],
+    "does_not_support": [
+      "neuron reconstruction",
+      "physiological capacity",
+      "causal or in-vivo claims"
+    ]
+  }
+}

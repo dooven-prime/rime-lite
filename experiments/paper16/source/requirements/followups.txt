@@ -1,0 +1,6 @@
+# Python 3.13.0
+# Exact A1/A2 route and history-fiber follow-ups.
+numpy==2.1.3
+pandas==3.0.3
+scipy==1.18.0
+numba==0.64.0

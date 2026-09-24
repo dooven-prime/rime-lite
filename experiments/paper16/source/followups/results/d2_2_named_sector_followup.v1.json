@@ -1,0 +1,175 @@
+{
+  "schema": "rime.exploratory.digital-fly-d2-2-named-sector-followup.v1",
+  "status": "COMPLETED",
+  "evidence_level": "Computational Certificate",
+  "design": {
+    "path": "d2_2_named_sector_followup.design-v1.json",
+    "sha256": "152af0a595b7531048557e349f1e12e7e832f8a796710be432201bbcda726ec4"
+  },
+  "registration": {
+    "path": "d2_2_named_sector_followup.registration-v1.1.json",
+    "sha256": "4562fc445bf6d8a50cc36c132f4bb9039210dacf10d5bef338908136f114e28d"
+  },
+  "producer": {
+    "path": "run_d2_2_named_sector_followup.py",
+    "sha256": "ccaf2d36018e09a7a6bfe58100bcf6d9399bee02c67684a7174cff3727f54a82"
+  },
+  "carrier": {
+    "name": "Y_known_pm",
+    "raw_operator_sha256": "89b9c50a424677cc5bcdcb14dd55528ff0465b81156af04cf35e9a2bbe316066",
+    "normalized_operator_sha256": "7b761fdb1f816bb4ca9045d27397f58d35bbb0a72739cf0726b9abd548e03073"
+  },
+  "typed_named": {
+    "outcome": "EXACT_NAMED_SECTOR_WITNESS_FOUND",
+    "named_collision_group_count": 5739,
+    "groups_examined": 3,
+    "candidate_pairs_examined": 5367,
+    "witness": {
+      "sector": "cb_intrinsic",
+      "node_a_index": 370,
+      "node_b_index": 58241,
+      "node_a_body_id": 10396,
+      "node_b_body_id": 75880,
+      "exact_history_signature": {
+        "source_sector": "cb_intrinsic",
+        "reduced_denominator": 269,
+        "nonzero_positive_mass_numerators_by_target_sector": {
+          "<missing>": 4,
+          "cb_intrinsic": 265
+        }
+      },
+      "exact_z2_difference": {
+        "<missing>": {
+          "numerator": "42900312911706747796799240398328868821718674842337441085991115643838251097779342956733919945208841897703931059605969772870437330667348165618314456645882469444032164475185664232493989531495716395065210387896719911474534860459749602928530424891926356554408594772536980749625715702946138940496955756236710581827666714350784767178825405982480943287259468617209819537332727",
+          "denominator": "36217045100402664466021132867231495947628688816176965496535418823248710341313930537601845477106034887224677086649878568212074384499231298748748015758456935225041810963430076389981194672007050178512539249993997754079646354935252801239015311865725593121347783797402679371809537805039692154693412461935967325335072852713977774586502824429996505673101312870061331989192839164000000",
+          "decimal": 1.1845337683617315e-09
+        },
+        "ascending_neuron": {
+          "numerator": "224155163498370129606489138455932649",
+          "denominator": "1250941602033181305963134478179502216535701000",
+          "decimal": 1.7918915090364417e-10
+        },
+        "cb_endocrine": {
+          "numerator": "-142263470371663",
+          "denominator": "29353182203038226472000",
+          "decimal": -4.846611498120224e-09
+        },
+        "cb_intrinsic": {
+          "numerator": "-1032393185011745636691856955188227985152529290251095835332975115096574374433876428259766137888103774639266150285841240300443564568266622153450622551400176456093527688394422391250275493090027747919614711491900787176956286754919041418899081537002623635722365827263271443432859814964377302204628788292811200885298918550445022262813409733142876572501556871188715038699858555316433",
+          "denominator": "3638113757015813197649851795221592429995193563044995001513079178408089166980091961740145379150331407201045660646207189726055377973108652031651206302587745460683101674955493724473635056126705324386395371501448521912798567934965502056932923792313756541361078233361693933294939936705098555916641511068326451512048338390906456363075149808571989370808122600527795794618104193462418560000",
+          "decimal": -2.837715514037618e-07
+        },
+        "cb_sensory": {
+          "numerator": "76819",
+          "denominator": "614597106229200",
+          "decimal": 1.2499082605727745e-10
+        },
+        "descending_neuron": {
+          "numerator": "10807932475875813110386309143047965227974132060232747198050454613191415428817559906941831708878598827330625907",
+          "denominator": "851462413788847137479806957824613373091759461375663807077803215948261200770846681145526524190712553831678972284300000",
+          "decimal": 1.2693375891699731e-08
+        },
+        "ol_intrinsic": {
+          "numerator": "3896211744211",
+          "denominator": "605256885411568115814450",
+          "decimal": 6.437286114575332e-12
+        },
+        "visual_centrifugal": {
+          "numerator": "863369930798218228150827079684687166598049",
+          "denominator": "875921241422935443790790857427262964643768932800000",
+          "decimal": 9.856707315325205e-10
+        },
+        "visual_projection": {
+          "numerator": "-81808415281720766888806395667556905948202350967",
+          "denominator": "137229565835628318281811282229061173570007138700934694400",
+          "decimal": -5.961427829605594e-10
+        }
+      },
+      "nonzero_sector_count": 9,
+      "exact_future_separation": true
+    }
+  },
+  "missing_bucket": {
+    "outcome": "FROZEN_CONTROL_WITNESS_RECONFIRMED",
+    "collision_group_count": 6,
+    "frozen_witness_exact_replay": {
+      "sector": "<missing>",
+      "node_a_index": 110671,
+      "node_b_index": 122868,
+      "node_a_body_id": 150379,
+      "node_b_body_id": 186165,
+      "exact_history_signature": {
+        "source_sector": "<missing>",
+        "reduced_denominator": 27,
+        "nonzero_positive_mass_numerators_by_target_sector": {
+          "<missing>": 11,
+          "ol_intrinsic": 16
+        }
+      },
+      "exact_z2_difference": {
+        "<missing>": {
+          "numerator": "-2619892590234065896609235264396399383",
+          "denominator": "185291365900526872370260553802945496052376000",
+          "decimal": -1.4139312846560522e-08
+        },
+        "ol_intrinsic": {
+          "numerator": "-3025668083420202865465029565500779968185232800846156131320802219023",
+          "denominator": "61824416968847361578784993565841444817460401475816952313320566360344480000",
+          "decimal": -4.8939694569943193e-08
+        },
+        "ol_sensory": {
+          "numerator": "7954879320733455092126876887",
+          "denominator": "45067951015558874583461381580480000",
+          "decimal": 1.7650856410106553e-07
+        },
+        "visual_centrifugal": {
+          "numerator": "-14869311341",
+          "denominator": "14935464342852150240",
+          "decimal": -9.955707435447891e-10
+        },
+        "visual_projection": {
+          "numerator": "-130735602375223498406391913911413",
+          "denominator": "8091004596374856475991096215085964240000",
+          "decimal": -1.61581421463781e-08
+        }
+      },
+      "nonzero_sector_count": 5,
+      "exact_future_separation": true
+    }
+  },
+  "exact_dynamics": {
+    "alpha": "1/5",
+    "gamma": 1,
+    "x_max": 1,
+    "activation": "exact clipped ReLU over Fraction values",
+    "history_identity": "exact reduced integer signature of positive normalized row mass by target sector plus identical source sector",
+    "row_abs_accumulation": "int64 np.add.at over nonnegative integer weights",
+    "row_abs_int64_overflow_upper_bound": 65329624278,
+    "floating_future_separation_tolerance_used": false
+  },
+  "selection_order": {
+    "surface_order": [
+      "typed_named",
+      "missing_bucket"
+    ],
+    "sector_order": "lexicographic label order",
+    "signature_group_order": "first member node index, ascending",
+    "within_group_rule": "first member is reference; compare every remaining member in ascending node index",
+    "search_all_named_sectors_before_reporting_no_witness": true
+  },
+  "immutability": {
+    "rewrite_frozen_d2_2": false,
+    "replace_original_first_witness": false,
+    "followup_is_additive": true
+  },
+  "claim_boundary": {
+    "named_no_witness_is_closure": false,
+    "supports": "bounded exact history-fiber witness status separated by annotation surface",
+    "does_not_support": [
+      "biological mechanism",
+      "all finite memory orders",
+      "closure outside the registered unit-state domain"
+    ]
+  },
+  "result_content_sha256": "cf37b6864dba330ea7ea91b14316b2163d533deb9ff6eca002e83db5f6dad4b2"
+}

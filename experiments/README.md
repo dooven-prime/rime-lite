@@ -46,6 +46,7 @@ Paper-facing computations write generated records under the owning
 | XIII | [paper13/README.md](paper13/README.md) | Audit Profiles, aligned comparison, 28-record SOFAUDIT migration, and a separate native-v2 GridWorld factual audit |
 | XIV | [paper14/README.md](paper14/README.md) | 29-object SOFAction workbench, closed predicate replay, bounded candidate dispositions, and validation receipts |
 | XV | [paper15/README.md](paper15/README.md) | artifact and claim map for the five revision-interface propositions; no computational evidence claim |
+| XVI | [paper16/README.md](paper16/README.md) | source-addressed MaleCNS route audits, signed dynamics, observation visibility, and deterministic coarse-state closure tests |
 | XX | [paper20/README.md](paper20/README.md) | carrier census, all-depth theorem controls, image--kernel audit, and local closure receipt |
 | XXI | [paper21/README.md](paper21/README.md) | arbitrary-depth route semantics, fixed-field transfer automata, finite-field profiles, Lean closure, and replay receipts |
 | XXII | [paper22/README.md](paper22/README.md) | rational fixed-deficit closure, anchored Farey certificates, and Catalan-Fibonacci controls |
@@ -53,17 +54,19 @@ Paper-facing computations write generated records under the owning
 | XXIV | [paper24/README.md](paper24/README.md) | free-signature Lean core plus exact unseen-scope and cyclic-relation hostile fixtures |
 | XXV | [paper25/README.md](paper25/README.md) | exact transport and perturbation controls, bounded numerical diagnostics, hostile information-refinement witnesses, and supplementary semantic-lift evidence |
 | XXVI | [paper26/README.md](paper26/README.md) | pair-chain replay, Cerny and rare-run family records, float64 spectral observations, sharp waiting-envelope controls, and limited Lean closure |
+| XXVII | [paper27/README.md](paper27/README.md) | fixed-scope entry-section classification, source-addressed completion relations, symbolic elimination, and local release-closure verification |
 
 Where a paper-local README is not yet present, the owning manuscript and
 script docstrings define the release-local scope. A future versioned reopening
 should add the standard local README before changing artifact semantics.
 
-Papers VIII--XIV retain their published or release-local terminology. Papers
-XX--XXVI form separate mathematical lines and do not extend the protocol stack. Bare
-`R1`/`R2`/`D`, ladder, repair, and wall labels in those artifacts must not be
-read as a completed migration to the separate operator, routed-composition,
-full-word, commutator, and Lie-depth branches. The frozen Paper X Registry v1
-snapshot is not backfilled during later migration.
+Papers VIII--XIV retain their published or release-local terminology. Paper
+XVI is an independent case study, and Papers XX--XXVII form separate
+mathematical lines; neither extends the protocol stack. Bare `R1`/`R2`/`D`,
+ladder, repair, and wall labels in those artifacts must not be read as a
+completed migration to the separate operator, routed-composition, full-word,
+commutator, and Lie-depth branches. The frozen Paper X Registry v1 snapshot is
+not backfilled during later migration.
 
 ## Shared Diagnostics
 

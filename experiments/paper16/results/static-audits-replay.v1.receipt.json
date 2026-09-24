@@ -1,0 +1,166 @@
+{
+  "schema": "rime.paper16.static-audits-replay-receipt.v1",
+  "status": "PASS",
+  "validation_mode": "PRODUCER_REPLAY_AND_EXACT_BYTE_COMPARISON",
+  "producer_replay_performed": true,
+  "independent_validation": false,
+  "canonical_results_modified": false,
+  "runtime": {
+    "python": "3.12.6",
+    "executable": "<EXECUTION_PYTHON>/python.exe",
+    "executable_sha256": "3470f7919170d235d7e6079691462c4b217745ec67ee612e745730e46d98f238",
+    "packages": {
+      "numpy": "2.5.3",
+      "pandas": "3.0.5",
+      "scipy": "1.18.1",
+      "pyarrow": "25.0.1",
+      "networkx": "3.6.1"
+    }
+  },
+  "input_bindings": [
+    {
+      "name": "body-annotations-male-cns-v1.0-minconf-0.5.feather",
+      "size": 14483314,
+      "sha256": "2177e246113e4cfbf1e7772ec37c6da1955ff22e8063d0b1f833101f99a9a3b2",
+      "scratch_materialization": "hardlink"
+    },
+    {
+      "name": "body-neurotransmitters-male-cns-v1.0.feather",
+      "size": 43282834,
+      "sha256": "95c9289220663abeb3409f3ad9e5a7f8a53f8093f5139d15502cd08da8879621",
+      "scratch_materialization": "hardlink"
+    },
+    {
+      "name": "connectome-weights-male-cns-v1.0-minconf-0.5.feather",
+      "size": 1051241946,
+      "sha256": "e35da783d1c686b2b58b3b87cd6a403ae43bfcfba8bff28e08ef752c1a56afc1",
+      "scratch_materialization": "hardlink"
+    }
+  ],
+  "producer_bindings": [
+    {
+      "path": "source/scripts/path_lifting_audit.py",
+      "sha256": "1b62e539e42dea1058f36de71ca5c37ac4dfd4f4ac0ab2142c1eb6700af1d40a"
+    },
+    {
+      "path": "source/scripts/path_lifting_depth3_audit.py",
+      "sha256": "4f3c1564a016c8de497b186db34c12dc761394a1ead81b7bf3e0cd5404e89fac"
+    },
+    {
+      "path": "source/scripts/sectorization_comparison_report.py",
+      "sha256": "be42db8b835ec1dde9f554729025f185af10c1ef3f22d536b8b5872adb5b31ce"
+    },
+    {
+      "path": "source/scripts/sectorization_field_audit.py",
+      "sha256": "0c31755630f4d6dcb5df59c3b583413e11e519d7b4ad8a0870278f7afd5e3274"
+    }
+  ],
+  "commands": [
+    {
+      "script": "sectorization_field_audit.py",
+      "arguments": [],
+      "exit_code": 0,
+      "stdout_sha256": "7fe3b998ae3142408fa2125d8dab5bf9bc9680d70521a4b8de90339c020b971c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "script": "path_lifting_audit.py",
+      "arguments": [
+        "--full"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "fd4549d30bef41eefbc210dfbc0a259dcdf73d54dbfd60f5b2dca443daa6fdae",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "script": "path_lifting_audit.py",
+      "arguments": [
+        "--full",
+        "--sector-field",
+        "somaSide"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "1eee53a0651f2c24927a4fb76f3c55b4744bf8e27d2c7ddf278c56b7dd8b4a1b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "script": "path_lifting_depth3_audit.py",
+      "arguments": [
+        "--full"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "a084ae563bc524646afcfc7fd2737216eacb6565dbf43711297feddf08e302e0",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "script": "path_lifting_depth3_audit.py",
+      "arguments": [
+        "--full",
+        "--sector-field",
+        "somaSide"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "e5170f28a1a464e45226cdf9c5a99c96375f46e0386d1c878f54567a1aedcd32",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "script": "sectorization_comparison_report.py",
+      "arguments": [],
+      "exit_code": 0,
+      "stdout_sha256": "46e4c87de563afa2684a9a3541a91c9f68805c5d6d23dc748e8a0452501f5eab",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "source/results/path_lifting_audit_full_v3.json",
+      "generated_size": 3936481,
+      "canonical_size": 3936481,
+      "generated_sha256": "cfef3ba32a57919be01f039705a29ed4831edcc984b32e7eea1ff14c0c82112e",
+      "canonical_sha256": "cfef3ba32a57919be01f039705a29ed4831edcc984b32e7eea1ff14c0c82112e",
+      "exact_bytes_equal": true
+    },
+    {
+      "path": "source/results/path_lifting_audit_full_v3_somaSide.json",
+      "generated_size": 50608,
+      "canonical_size": 50608,
+      "generated_sha256": "1f63eb9d44a180b12b81b86eb5493d1fee7677fe288d481168325d9dfdbb058f",
+      "canonical_sha256": "1f63eb9d44a180b12b81b86eb5493d1fee7677fe288d481168325d9dfdbb058f",
+      "exact_bytes_equal": true
+    },
+    {
+      "path": "source/results/path_lifting_depth3_audit_full_v1.json",
+      "generated_size": 5553,
+      "canonical_size": 5553,
+      "generated_sha256": "33ff1f6988e1d2c81791381d686ef5d89e22e1c3855f22192ceb1fbecf3a0964",
+      "canonical_sha256": "33ff1f6988e1d2c81791381d686ef5d89e22e1c3855f22192ceb1fbecf3a0964",
+      "exact_bytes_equal": true
+    },
+    {
+      "path": "source/results/path_lifting_depth3_audit_full_somaSide_v1.json",
+      "generated_size": 4539,
+      "canonical_size": 4539,
+      "generated_sha256": "a0d52bb616a3d80c88a559977d101383a191153393027638a5241fe8ec27d4f1",
+      "canonical_sha256": "a0d52bb616a3d80c88a559977d101383a191153393027638a5241fe8ec27d4f1",
+      "exact_bytes_equal": true
+    },
+    {
+      "path": "source/results/sectorization_field_audit_v1.json",
+      "generated_size": 21590,
+      "canonical_size": 21590,
+      "generated_sha256": "df0c9e699ae00412fe0c23c594501e98898e0c2d9dec3f80c3fcece6c882b5ff",
+      "canonical_sha256": "df0c9e699ae00412fe0c23c594501e98898e0c2d9dec3f80c3fcece6c882b5ff",
+      "exact_bytes_equal": true
+    },
+    {
+      "path": "source/results/sectorization_comparison_v1.json",
+      "generated_size": 33562,
+      "canonical_size": 33562,
+      "generated_sha256": "b010f2ff4d8bb8bfa663856cf036bad782008a808863fe92e58af5aefdc79283",
+      "canonical_sha256": "b010f2ff4d8bb8bfa663856cf036bad782008a808863fe92e58af5aefdc79283",
+      "exact_bytes_equal": true
+    }
+  ],
+  "all_replayed_bytes_equal": true,
+  "receipt_in_own_closure": false
+}

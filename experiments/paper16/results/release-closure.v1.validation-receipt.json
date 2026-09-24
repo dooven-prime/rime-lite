@@ -1,0 +1,22 @@
+{
+  "schema": "rime.paper16.release-closure-validation.v1",
+  "status": "PASS",
+  "validation_mode": "LOCAL_CLOSURE_VERIFICATION",
+  "independent_validation": false,
+  "producer_replay_performed_by_this_validator": false,
+  "manifest_path": "experiments/paper16/release-manifest.v1.json",
+  "manifest_sha256": "cd72da498142337f2b234e011326d7fb0c970eb8f2ba7859a900991427440e4c",
+  "closure_sha256": "9077abae3effc7230c107c491cad5d496a57e3983fcd4e4c3b4e7529197357c8",
+  "ordered_closure_entries": 56,
+  "paper_owned_portable_artifacts": 4,
+  "selected_clean_clone_replay_outputs": 3,
+  "receipt_in_own_closure": false,
+  "failures": [],
+  "release_readiness": {
+    "release_closure_validated": true,
+    "canonical_manuscript_bound": true,
+    "reader_pdf_bound": true,
+    "release_commit_bound": false,
+    "external_anchor_bound": false
+  }
+}

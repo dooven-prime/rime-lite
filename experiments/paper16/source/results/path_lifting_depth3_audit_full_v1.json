@@ -1,0 +1,150 @@
+{
+  "schema": "rime.exploratory.male-cns-depth3-route-audit.v1",
+  "scope": {
+    "mode": "full",
+    "rows_scanned": 151856684,
+    "extension_rows_scanned": 151856684,
+    "extension_candidate_edges": 30771000,
+    "unique_extension_patterns": 905197
+  },
+  "universe": {
+    "annotation_body_ids": 211577,
+    "candidate_relay_bodies": 1834661,
+    "sector_count": 29,
+    "sector_labels": [
+      "<missing>",
+      "<unannotated>",
+      "ENS",
+      "ascending_neuron",
+      "cb_efferent",
+      "cb_endocrine",
+      "cb_intrinsic",
+      "cb_motor",
+      "cb_sensory",
+      "cb_sensory_tbc",
+      "descending_neuron",
+      "descending_neuron_tbc",
+      "efferent_ascending",
+      "efferent_descending",
+      "ol_intrinsic",
+      "ol_sensory",
+      "sensory_ascending",
+      "sensory_ascending_tbc",
+      "sensory_descending",
+      "visual_centrifugal",
+      "visual_projection",
+      "visual_projection_tbc",
+      "vnc_efferent",
+      "vnc_endocrine",
+      "vnc_intrinsic",
+      "vnc_motor",
+      "vnc_sensory",
+      "vnc_sensory_tbc",
+      "vnc_tbc"
+    ],
+    "sector_field": "superclass"
+  },
+  "carrier_rules": {
+    "typed_core": {
+      "quotient_word_count": 99305,
+      "lifted_word_count": 64876,
+      "LP3": 0.6533004380444086,
+      "C3": 0.6533004380444086,
+      "C3_equals_LP3_by_design": true,
+      "depth2_prefix_route_word_count": 83279,
+      "inherited_depth2_failure_count": 16026,
+      "newly_appended_step_failure_count": 18403,
+      "h3": 0.2209800790115155,
+      "h3_denominator": 83279,
+      "multiplicity_conditioned_survival": {
+        "1": {
+          "prefix_route2_word_count": 13518,
+          "survived_route3_word_count": 7321,
+          "conditional_survival": 0.5415741973664744
+        },
+        "2-5": {
+          "prefix_route2_word_count": 18712,
+          "survived_route3_word_count": 12775,
+          "conditional_survival": 0.6827169730654126
+        },
+        ">5": {
+          "prefix_route2_word_count": 51049,
+          "survived_route3_word_count": 44780,
+          "conditional_survival": 0.8771964191267214
+        }
+      },
+      "route_semantics": "Route_3[Y_MaleCNS] support witnessed by one concrete v->w relay edge and concrete incoming/outgoing edges",
+      "quotient_semantics": "Path_3^quot support from three adjacent existential sector edges"
+    },
+    "relay_strict": {
+      "quotient_word_count": 112063,
+      "lifted_word_count": 75116,
+      "LP3": 0.6703015268197353,
+      "C3": 0.6703015268197353,
+      "C3_equals_LP3_by_design": true,
+      "depth2_prefix_route_word_count": 94754,
+      "inherited_depth2_failure_count": 17309,
+      "newly_appended_step_failure_count": 19638,
+      "h3": 0.20725246427591448,
+      "h3_denominator": 94754,
+      "multiplicity_conditioned_survival": {
+        "1": {
+          "prefix_route2_word_count": 15060,
+          "survived_route3_word_count": 8530,
+          "conditional_survival": 0.5664010624169987
+        },
+        "2-5": {
+          "prefix_route2_word_count": 21116,
+          "survived_route3_word_count": 14773,
+          "conditional_survival": 0.6996116688766811
+        },
+        ">5": {
+          "prefix_route2_word_count": 58578,
+          "survived_route3_word_count": 51813,
+          "conditional_survival": 0.8845129570828639
+        }
+      },
+      "route_semantics": "Route_3[Y_MaleCNS] support witnessed by one concrete v->w relay edge and concrete incoming/outgoing edges",
+      "quotient_semantics": "Path_3^quot support from three adjacent existential sector edges"
+    },
+    "coverage_inclusive": {
+      "quotient_word_count": 135929,
+      "lifted_word_count": 85097,
+      "LP3": 0.6260400650339516,
+      "C3": 0.6260400650339516,
+      "C3_equals_LP3_by_design": true,
+      "depth2_prefix_route_word_count": 112999,
+      "inherited_depth2_failure_count": 22930,
+      "newly_appended_step_failure_count": 27902,
+      "h3": 0.2469225391375145,
+      "h3_denominator": 112999,
+      "multiplicity_conditioned_survival": {
+        "1": {
+          "prefix_route2_word_count": 16907,
+          "survived_route3_word_count": 9130,
+          "conditional_survival": 0.5400130123617437
+        },
+        "2-5": {
+          "prefix_route2_word_count": 24012,
+          "survived_route3_word_count": 15715,
+          "conditional_survival": 0.6544644344494419
+        },
+        ">5": {
+          "prefix_route2_word_count": 72080,
+          "survived_route3_word_count": 60252,
+          "conditional_survival": 0.835904550499445
+        }
+      },
+      "route_semantics": "Route_3[Y_MaleCNS] support witnessed by one concrete v->w relay edge and concrete incoming/outgoing edges",
+      "quotient_semantics": "Path_3^quot support from three adjacent existential sector edges"
+    }
+  },
+  "semantics": {
+    "depth": 3,
+    "stop_rule": "fixed depth-3 audit only; do not extend to d=4+ unless a new structure is predeclared",
+    "support": "all positive release-native body-pair rows; weight is not used as a physiological probability",
+    "multiplicity": "depth-2 concrete middle-body witness count, not reliability or signal strength",
+    "unreached_status": "not applicable to exact declared depth-3 word scan; no unresolved word is treated as infinity",
+    "carrier_nesting": "typed_core excludes <unannotated> everywhere; relay_strict excludes it only as a relay; coverage_inclusive retains it"
+  }
+}

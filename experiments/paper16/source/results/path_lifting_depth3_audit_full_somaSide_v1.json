@@ -1,0 +1,126 @@
+{
+  "schema": "rime.exploratory.male-cns-depth3-route-audit.v1",
+  "scope": {
+    "mode": "full",
+    "rows_scanned": 151856684,
+    "extension_rows_scanned": 151856684,
+    "extension_candidate_edges": 30771000,
+    "unique_extension_patterns": 4439
+  },
+  "universe": {
+    "annotation_body_ids": 211577,
+    "candidate_relay_bodies": 1834661,
+    "sector_count": 5,
+    "sector_labels": [
+      "<missing>",
+      "<unannotated>",
+      "L",
+      "M",
+      "R"
+    ],
+    "sector_field": "somaSide"
+  },
+  "carrier_rules": {
+    "typed_core": {
+      "quotient_word_count": 256,
+      "lifted_word_count": 256,
+      "LP3": 1.0,
+      "C3": 1.0,
+      "C3_equals_LP3_by_design": true,
+      "depth2_prefix_route_word_count": 256,
+      "inherited_depth2_failure_count": 0,
+      "newly_appended_step_failure_count": 0,
+      "h3": 0.0,
+      "h3_denominator": 256,
+      "multiplicity_conditioned_survival": {
+        "1": {
+          "prefix_route2_word_count": 0,
+          "survived_route3_word_count": 0,
+          "conditional_survival": null
+        },
+        "2-5": {
+          "prefix_route2_word_count": 0,
+          "survived_route3_word_count": 0,
+          "conditional_survival": null
+        },
+        ">5": {
+          "prefix_route2_word_count": 256,
+          "survived_route3_word_count": 256,
+          "conditional_survival": 1.0
+        }
+      },
+      "route_semantics": "Route_3[Y_MaleCNS] support witnessed by one concrete v->w relay edge and concrete incoming/outgoing edges",
+      "quotient_semantics": "Path_3^quot support from three adjacent existential sector edges"
+    },
+    "relay_strict": {
+      "quotient_word_count": 400,
+      "lifted_word_count": 400,
+      "LP3": 1.0,
+      "C3": 1.0,
+      "C3_equals_LP3_by_design": true,
+      "depth2_prefix_route_word_count": 400,
+      "inherited_depth2_failure_count": 0,
+      "newly_appended_step_failure_count": 0,
+      "h3": 0.0,
+      "h3_denominator": 400,
+      "multiplicity_conditioned_survival": {
+        "1": {
+          "prefix_route2_word_count": 0,
+          "survived_route3_word_count": 0,
+          "conditional_survival": null
+        },
+        "2-5": {
+          "prefix_route2_word_count": 0,
+          "survived_route3_word_count": 0,
+          "conditional_survival": null
+        },
+        ">5": {
+          "prefix_route2_word_count": 400,
+          "survived_route3_word_count": 400,
+          "conditional_survival": 1.0
+        }
+      },
+      "route_semantics": "Route_3[Y_MaleCNS] support witnessed by one concrete v->w relay edge and concrete incoming/outgoing edges",
+      "quotient_semantics": "Path_3^quot support from three adjacent existential sector edges"
+    },
+    "coverage_inclusive": {
+      "quotient_word_count": 625,
+      "lifted_word_count": 625,
+      "LP3": 1.0,
+      "C3": 1.0,
+      "C3_equals_LP3_by_design": true,
+      "depth2_prefix_route_word_count": 625,
+      "inherited_depth2_failure_count": 0,
+      "newly_appended_step_failure_count": 0,
+      "h3": 0.0,
+      "h3_denominator": 625,
+      "multiplicity_conditioned_survival": {
+        "1": {
+          "prefix_route2_word_count": 0,
+          "survived_route3_word_count": 0,
+          "conditional_survival": null
+        },
+        "2-5": {
+          "prefix_route2_word_count": 0,
+          "survived_route3_word_count": 0,
+          "conditional_survival": null
+        },
+        ">5": {
+          "prefix_route2_word_count": 625,
+          "survived_route3_word_count": 625,
+          "conditional_survival": 1.0
+        }
+      },
+      "route_semantics": "Route_3[Y_MaleCNS] support witnessed by one concrete v->w relay edge and concrete incoming/outgoing edges",
+      "quotient_semantics": "Path_3^quot support from three adjacent existential sector edges"
+    }
+  },
+  "semantics": {
+    "depth": 3,
+    "stop_rule": "fixed depth-3 audit only; do not extend to d=4+ unless a new structure is predeclared",
+    "support": "all positive release-native body-pair rows; weight is not used as a physiological probability",
+    "multiplicity": "depth-2 concrete middle-body witness count, not reliability or signal strength",
+    "unreached_status": "not applicable to exact declared depth-3 word scan; no unresolved word is treated as infinity",
+    "carrier_nesting": "typed_core excludes <unannotated> everywhere; relay_strict excludes it only as a relay; coverage_inclusive retains it"
+  }
+}

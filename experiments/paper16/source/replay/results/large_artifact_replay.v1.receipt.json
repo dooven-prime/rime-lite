@@ -1,0 +1,36 @@
+{
+  "closure_sha256": "0047809acacf0a6a05896d71359c81c05911ce60ad4c73905e22bee7ece70cf1",
+  "environment": {
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "pyarrow": "25.0.1",
+    "python": "3.12.6"
+  },
+  "historical_result_mutation": false,
+  "independent_validation": false,
+  "mode": "CLEAN_CLONE_EXACT_BYTE_REPLAY",
+  "outputs": [
+    {
+      "exists": true,
+      "path": "digital_fly_v0/results/carrier_v0_edges.npz",
+      "sha256_matches": true,
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "path": "digital_fly_v0/results/carrier_v0_manifest.json",
+      "sha256_matches": true,
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "path": "digital_fly_v0/results/carrier_v0_nodes.parquet",
+      "sha256_matches": true,
+      "size_matches": true
+    }
+  ],
+  "outputs_materialized_after_verification": false,
+  "producer_replay_performed": true,
+  "scratch_retained": false,
+  "status": "PASS"
+}

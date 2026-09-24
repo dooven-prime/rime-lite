@@ -1,0 +1,104 @@
+{
+  "schema": "rime.paper16.a1-a2-exact-producer-replay.v1",
+  "status": "PASS",
+  "validation_mode": "PRODUCER_REPLAY_AND_EXACT_BYTE_COMPARISON",
+  "independent_validation": false,
+  "producer_replay_performed": true,
+  "execution_python": {
+    "version": "3.13.0",
+    "path": "<EXECUTION_PYTHON>/python.exe",
+    "sha256": "62ebc90a2884bb63a0cd67e789cafdd51e771eee043587e2354327b4ccc9bb05"
+  },
+  "replays": [
+    {
+      "id": "A1_EXACT_SIGNED_ROUTE_AUDIT",
+      "producer": {
+        "path": "experiments/paper16/source/followups/run_y_known_pm_route_audit.py",
+        "sha256": "61cf91a1cdae4efd0f87ca5613f15c58183d9b2b5b2d70ceb496dbaa874bcab5"
+      },
+      "registration": {
+        "path": "experiments/paper16/source/followups/y_known_pm_route_audit.registration-v1.2.json",
+        "sha256": "56d0305cb0ec2dec28fa41a7ecfd0a153c403ec8efde1eaf0b52eca30c6b8bb4"
+      },
+      "canonical_result": {
+        "path": "experiments/paper16/source/followups/results/y_known_pm_route_audit.v1.json",
+        "size": 46712293,
+        "sha256": "28d8cc511d447002b32cc218a8410d1f815a481f138f2e6b9f29500cd69fadf4"
+      },
+      "replay_result": {
+        "exists": true,
+        "size": 46712293,
+        "sha256": "28d8cc511d447002b32cc218a8410d1f815a481f138f2e6b9f29500cd69fadf4"
+      },
+      "exit_code": 0,
+      "exact_byte_equal": true
+    },
+    {
+      "id": "A2_NAMED_SECTOR_FOLLOWUP",
+      "producer": {
+        "path": "experiments/paper16/source/followups/run_d2_2_named_sector_followup.py",
+        "sha256": "ccaf2d36018e09a7a6bfe58100bcf6d9399bee02c67684a7174cff3727f54a82"
+      },
+      "registration": {
+        "path": "experiments/paper16/source/followups/d2_2_named_sector_followup.registration-v1.1.json",
+        "sha256": "4562fc445bf6d8a50cc36c132f4bb9039210dacf10d5bef338908136f114e28d"
+      },
+      "canonical_result": {
+        "path": "experiments/paper16/source/followups/results/d2_2_named_sector_followup.v1.json",
+        "size": 8271,
+        "sha256": "3a45ac96e142b144a7bcdf7a7cf1c2aaf01cf064b240a7ca08ca2dfd1dd5957a"
+      },
+      "replay_result": {
+        "exists": true,
+        "size": 8271,
+        "sha256": "3a45ac96e142b144a7bcdf7a7cf1c2aaf01cf064b240a7ca08ca2dfd1dd5957a"
+      },
+      "exit_code": 0,
+      "exact_byte_equal": true
+    }
+  ],
+  "all_replayed_bytes_equal": true,
+  "ordered_closure": [
+    {
+      "role": "REPLAY_IMPLEMENTATION",
+      "path": "experiments/paper16/validation/replay_exact_followups.py",
+      "sha256": "cb9cbb0b223c96feb345dc9502b29475f31c7cfb9de82bd1d0a90a80d0ffc448"
+    },
+    {
+      "role": "PRODUCER",
+      "path": "experiments/paper16/source/followups/run_y_known_pm_route_audit.py",
+      "sha256": "61cf91a1cdae4efd0f87ca5613f15c58183d9b2b5b2d70ceb496dbaa874bcab5"
+    },
+    {
+      "role": "REGISTRATION",
+      "path": "experiments/paper16/source/followups/y_known_pm_route_audit.registration-v1.2.json",
+      "sha256": "56d0305cb0ec2dec28fa41a7ecfd0a153c403ec8efde1eaf0b52eca30c6b8bb4"
+    },
+    {
+      "role": "CANONICAL_RESULT",
+      "path": "experiments/paper16/source/followups/results/y_known_pm_route_audit.v1.json",
+      "size": 46712293,
+      "sha256": "28d8cc511d447002b32cc218a8410d1f815a481f138f2e6b9f29500cd69fadf4"
+    },
+    {
+      "role": "PRODUCER",
+      "path": "experiments/paper16/source/followups/run_d2_2_named_sector_followup.py",
+      "sha256": "ccaf2d36018e09a7a6bfe58100bcf6d9399bee02c67684a7174cff3727f54a82"
+    },
+    {
+      "role": "REGISTRATION",
+      "path": "experiments/paper16/source/followups/d2_2_named_sector_followup.registration-v1.1.json",
+      "sha256": "4562fc445bf6d8a50cc36c132f4bb9039210dacf10d5bef338908136f114e28d"
+    },
+    {
+      "role": "CANONICAL_RESULT",
+      "path": "experiments/paper16/source/followups/results/d2_2_named_sector_followup.v1.json",
+      "size": 8271,
+      "sha256": "3a45ac96e142b144a7bcdf7a7cf1c2aaf01cf064b240a7ca08ca2dfd1dd5957a"
+    }
+  ],
+  "closure_sha256": "596e9c8f1c53ca545cb32a8f9b1ce0645536ec762602230b527cf41acaafe71f",
+  "receipt_in_own_closure": false,
+  "failures": [],
+  "claim_boundary": "clean scratch producer replay and exact-byte comparison; not independent scientific validation and not a biological claim"
+}

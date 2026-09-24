@@ -1,0 +1,75 @@
+{
+  "schema": "rime.paper16.malecns-y-known-pm-route-audit-registration.v1.2",
+  "status": "REGISTERED_READY_TO_EXECUTE",
+  "execution_authority": "A1_EXACT_SIGNED_ROUTE_AUDIT_ONLY",
+  "scoped_correction": {
+    "date": "2026-09-24",
+    "reason": "separate portable runtime compatibility from machine-local executable provenance for the public Paper XVI closure",
+    "scientific_selection_rule_changed": false,
+    "scientific_payload_expected_to_change": false
+  },
+  "supersedes": {
+    "schema": "rime.exploratory.malecns-y-known-pm-route-audit-registration.v1.1",
+    "sha256": "3faaa611208c48ca435f09b63e1a8426d04d9fe992b9be75d97ec696e4c458c1",
+    "reason": "the historical execution path remains provenance but is not a cross-machine replay gate"
+  },
+  "design": "y_known_pm_route_audit.design-v1.json",
+  "design_sha256": "f0f0a7544c21da95f54cd74b8977fa78fbebd4cf1a345f6d9e49882cf85b5209",
+  "producer": {
+    "path": "run_y_known_pm_route_audit.py",
+    "sha256": "61cf91a1cdae4efd0f87ca5613f15c58183d9b2b5b2d70ceb496dbaa874bcab5"
+  },
+  "validator": {
+    "path": "validation/validate_y_known_pm_route_audit.py",
+    "sha256": "4aa87bba3db485d2a72481f9ade754f2d139e0b7914fd7cd598d8432b724dfad"
+  },
+  "runtime": {
+    "python_version": "3.13.0",
+    "numpy_version": "2.1.3",
+    "scipy_version": "1.18.0",
+    "pandas_version": "3.0.3",
+    "numba_version": "0.64.0"
+  },
+  "runtime_lock": {
+    "path": "../requirements/followups.txt",
+    "sha256": "ed67304564c9a0551b5180115ad5606fd8ecfcdaa9dc0107394e1e2c0e27a6b4"
+  },
+  "historical_execution_python": {
+    "path": "<EXECUTION_PYTHON>/python.exe",
+    "sha256": "62ebc90a2884bb63a0cd67e789cafdd51e771eee043587e2354327b4ccc9bb05",
+    "normative_for_portable_replay": false
+  },
+  "exact_arithmetic": {
+    "prime": 140909,
+    "row_denominator_accumulation": "bounded int64 np.add.at over nonnegative integer weights",
+    "prime_exceeds_registered_maximum_row_denominator": true,
+    "finite_field_nonzero_is_exact_rational_nonzero_certificate": true,
+    "fraction_fallback_required_for_modular_zero_with_microscopic_paths": true,
+    "floating_nonzero_threshold_allowed": false
+  },
+  "support_preclassification": {
+    "semantics": "exact integer Boolean microscopic-route existence at depths two and three",
+    "no_route_result": "EXACT_ZERO_BY_CANCELLATION_OR_ABSENCE/NO_MICROSCOPIC_ROUTE",
+    "effect_on_signed_certificate": "none; every route-bearing word still requires a nonzero exact signed-product certificate or Fraction zero proof"
+  },
+  "execution_order": [
+    "somaSide/depth2",
+    "somaSide/depth3",
+    "superclass/depth2",
+    "superclass/depth3"
+  ],
+  "completion_rule": "all registered fields and depths must be classified before the result may be COMPLETED",
+  "partial_result_claim_authority": "NONE",
+  "output": "results/y_known_pm_route_audit.v1.json",
+  "historical_artifact_mutation_authority": "NONE",
+  "authorized_side_effects": [
+    "write the registered A1 result",
+    "write its downstream local validation receipt"
+  ],
+  "not_authorized": [
+    "rewrite historical LP2 or LP3 artifacts",
+    "rewrite D2.3",
+    "run A2",
+    "run any Digital Fly simulator or E1 search"
+  ]
+}

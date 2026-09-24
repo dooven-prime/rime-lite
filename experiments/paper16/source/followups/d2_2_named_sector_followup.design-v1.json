@@ -1,0 +1,90 @@
+{
+  "schema": "rime.exploratory.digital-fly-d2-2-named-sector-followup.design-v1",
+  "status": "DESIGN_FROZEN_NOT_REGISTERED",
+  "execution_authority": "NONE",
+  "producer": null,
+  "validator": null,
+  "carrier": {
+    "name": "Y_known_pm",
+    "normalized_operator_sha256": "7b761fdb1f816bb4ca9045d27397f58d35bbb0a72739cf0726b9abd548e03073"
+  },
+  "bound_inputs": [
+    {
+      "role": "CARRIER_MANIFEST",
+      "path": "../digital_fly_v0/results/carrier_v0_manifest.json",
+      "sha256": "e01f7a25b8a83b8613c17dec71370143a443b9d1ce841628fc64baf4b036ce1f"
+    },
+    {
+      "role": "CARRIER_EDGES",
+      "path": "../digital_fly_v0/results/carrier_v0_edges.npz",
+      "sha256": "c94e885cc2e8cde78012ed0a68a4beb42eccfe1b64607bdc90ac46e675d6966d"
+    },
+    {
+      "role": "CARRIER_NODES_AND_SECTORS",
+      "path": "../digital_fly_v0/results/carrier_v0_nodes.parquet",
+      "sha256": "87aa46280d68a210f6c8ef4a044282fbbb62342bbeeaab8393b0fd7fa770515e"
+    },
+    {
+      "role": "OPERATOR_ADMISSION",
+      "path": "../digital_fly_v0_1/results/sd1_operator_admission_v0_1.json",
+      "sha256": "75efbf24b3592ae1f88d7a72e1cf082854389be2d8d1a5e30da88945f57f2ec4"
+    },
+    {
+      "role": "D2_1_PREREQUISITE",
+      "path": "../digital_fly_v0_2/results/d2_1_markov_closure_v0_2.json",
+      "sha256": "379e01a9fbb18f6e3b973f385eb363e488fd0b21507601f4c17a23d76f0de63b"
+    },
+    {
+      "role": "FROZEN_D2_2_CONTROL",
+      "path": "../digital_fly_v0_2/results/d2_2_memory_closure_v0_2.json",
+      "sha256": "9ce4ce11afe91907beca97dbf556201e40eb0c8cc0b1030f21ac9084e0649a7c"
+    },
+    {
+      "role": "FROZEN_D2_2_PRODUCER",
+      "path": "../digital_fly_v0_2/scripts/run_d2_2_memory_closure.py",
+      "sha256": "f76125aca9c93ad9b6824d6d33dd0c20b2d542cbe915ca249efedd0ae8793419"
+    }
+  ],
+  "observation": "O_mean over superclass",
+  "memory_order": 1,
+  "history_identity": "exact reduced integer signature of positive normalized row mass by target sector plus identical source sector",
+  "surfaces": {
+    "typed_named": "all superclass labels except <missing>",
+    "missing_bucket": "the exact <missing> superclass label retained as a separate control"
+  },
+  "selection_order": {
+    "surface_order": [
+      "typed_named",
+      "missing_bucket"
+    ],
+    "sector_order": "lexicographic label order",
+    "signature_group_order": "first member node index, ascending",
+    "within_group_rule": "first member is reference; compare every remaining member in ascending node index",
+    "search_all_named_sectors_before_reporting_no_witness": true
+  },
+  "outcomes": {
+    "typed_named": [
+      "EXACT_NAMED_SECTOR_WITNESS_FOUND",
+      "NO_NAMED_SECTOR_WITNESS_FOUND_ON_REGISTERED_DOMAIN",
+      "UNRESOLVED"
+    ],
+    "missing_bucket": [
+      "FROZEN_CONTROL_WITNESS_RECONFIRMED",
+      "FROZEN_CONTROL_MISMATCH"
+    ]
+  },
+  "immutability": {
+    "rewrite_frozen_d2_2": false,
+    "replace_original_first_witness": false,
+    "followup_is_additive": true
+  },
+  "claim_boundary": {
+    "named_no_witness_is_closure": false,
+    "supports": "bounded exact history-fiber witness status separated by annotation surface",
+    "does_not_support": [
+      "biological mechanism",
+      "all finite memory orders",
+      "closure outside the registered unit-state domain"
+    ]
+  }
+}

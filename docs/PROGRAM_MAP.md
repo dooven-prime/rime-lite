@@ -2,8 +2,9 @@
 
 This document is the public navigation map for the Representation-Induced
 Mechanics and Evolution (RIME) program. It identifies semantic ownership,
-typed interfaces and promotion boundaries across published Papers I--XV and
-the independently scoped Papers XX--XXVII theorem lines. It is not a
+typed interfaces and promotion boundaries across published Papers I--XV, the
+independently scoped Paper XVI computational case study, and Papers XX--XXVII
+theorem lines. It is not a
 proof document, release ledger, result record, or substitute for an owning
 manuscript.
 
@@ -86,6 +87,16 @@ This table is thematic rather than sequential. A paper may import an object or
 certificate from another paper while retaining its own hypotheses and claim
 status.
 
+### Independent computational case study
+
+| Paper | Case-study owner | Evidence boundary |
+|---|---|---|
+| XVI | source-addressed MaleCNS audits of structural liftability, signed operator semantics, observation visibility, and deterministic coarse-state closure | exact finite route and history-fiber certificates are separated from bounded numerical dynamics; no physiological, causal, behavioral, or protocol-authority claim follows |
+
+Paper XVI is not a successor to the Paper VIII--XV protocol architecture. It
+applies the program's typed descent discipline to one declared computational
+carrier under its own hypotheses, evidence records, and publication identity.
+
 ### Active post-protocol mathematics
 
 | Paper | Mathematical owner | Evidence boundary |
@@ -99,7 +110,7 @@ status.
 | XXVI | pair-chain transfer operators, random pair absorption, Cerny Perron asymptotics, rare-run extremal behavior, and sharp reset-word waiting envelopes | exact proofs and finite replay are separated from float64 spectral observations; the Lean closure covers only declared TA-III arithmetic and conditional certificate chains |
 | XXVII | fixed-scope entry sections, source-addressed completion relations, and relation-valued descent in single-defect circular automata | exact finite classifications and symbolic elimination support only the declared n=6 and n=7 scopes; local closure verification is not an all-n theorem or independent validation |
 
-Papers XVI--XIX are intentionally unused in the public numbered sequence;
+Papers XVII--XIX are intentionally unused in the public numbered sequence.
 Paper XX begins an independently scoped mathematical line, and Paper XXI
 develops its finite-field route branch. Paper XXII develops the fixed-deficit
 rational branch and treats Paper XXI as a precursor rather than a theorem
@@ -113,6 +124,12 @@ precursor and comparison point rather than a theorem premise. Paper XXVII
 returns to the deterministic synchronizing-automata line with fixed-scope
 entry sections and source-addressed relation-valued completion interfaces.
 None extends the SOF protocol authority chain.
+
+The synchronizing-automata papers share a research domain, not one inherited
+theorem surface. Paper XXIII owns deterministic pair-hitting and corridor
+geometry, Paper XXVI owns stochastic pair-transfer dynamics, and Paper XXVII
+owns fixed-scope entry and completion interfaces. Each retains its own
+hypotheses, evidence closure, and nonclaims.
 
 ## 4. Active Typing and Promotion Rules
 

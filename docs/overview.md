@@ -113,10 +113,14 @@ research target; Paper VII does not assert a generic completion theorem.
   epistemic-revision interface. It preserves immutable history while allowing
   current-use commitments to be superseded and revalidated, and it adds no
   selection, authorization, execution, outcome, or effect contract.
+- **Paper XVI** is an independently scoped computational connectome case study.
+  It audits structural liftability, signed dynamics, observation visibility,
+  and coarse-state closure on a source-addressed MaleCNS carrier. It does not
+  inherit or extend the SOF protocol authority chain.
 
 ### Papers XX--XXVII: Independent Post-Protocol Mathematics
 
-Papers XVI--XIX are intentionally unused in the public numbered sequence.
+Papers XVII--XIX are intentionally unused in the public numbered sequence.
 Paper XX begins a separately scoped mathematical line with all-depth
 carrierwise factorization, survivor recursion, and exact image--kernel tests
 for routed composition. Paper XXI develops the finite-field route branch
@@ -143,6 +147,14 @@ relation-valued completion interfaces for single-defect circular automata.
 These papers consume no protocol authority and do not reopen Papers VIII--XV.
 Published version-1 identities are maintained in the repository's canonical
 DOI index.
+
+Within the synchronizing-automata line, ownership remains paper-local. Paper
+XXIII owns deterministic pair hitting, marked-kernel corridors, and Schreier
+waiting in its declared structured classes. Paper XXVI owns stochastic
+unordered-pair transfer, absorption scales, and reset-word waiting envelopes.
+Paper XXVII owns only its fixed `n=6` entry-section and `n=7` completion-
+relation classifications. Results or evidence do not transfer between these
+owners without an explicit theorem or source-addressed import.
 
 ## Claim Discipline
 
