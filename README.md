@@ -31,6 +31,7 @@ predecessor.
 | Paper XIII | Audit Profiles, SOF Report Alignment, and sparse typed comparison maps | <https://doi.org/10.5281/zenodo.22010220> |
 | Paper XIV | context- and policy-relative interpretation and bounded candidate dispositions | <https://doi.org/10.5281/zenodo.22024158> |
 | Paper XV | evidence-bound revision, supersession, and revalidation of current commitments | <https://doi.org/10.5281/zenodo.22043124> |
+| Paper XVI | structural and dynamic descent in the Male Drosophila CNS | <https://doi.org/10.5281/zenodo.22931881> |
 | Paper XX | all-depth carrier accessibility, survivor recursion, and image--kernel obstructions | <https://doi.org/10.5281/zenodo.22076736> |
 | Paper XXI | finite-field route profiles, prefix-pole semantics, and characteristic-aware stability | <https://doi.org/10.5281/zenodo.22078884> |
 | Paper XXII | fixed-deficit rational dynamics, anchored Farey classification, and Catalan-Fibonacci envelopes | <https://doi.org/10.5281/zenodo.22109140> |
@@ -45,7 +46,7 @@ predecessor.
 
 This is the repository's canonical DOI index. It identifies immutable
 published records; other public documents link here instead of duplicating the
-list. Papers VII--XV and Papers XX--XXVII now match their published records. Their
+list. Papers VII--XVI and Papers XX--XXVII now match their published records. Their
 listed DOIs identify immutable published versions, and frozen historical
 contracts remain unchanged.
 
