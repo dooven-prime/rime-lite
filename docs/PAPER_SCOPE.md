@@ -4,8 +4,8 @@ This file is the public ownership and scope ledger for the RIME paper series.
 It identifies the object and reader question owned by each paper without
 repeating manuscript definitions, numerical tables, or release metadata.
 
-The current public release contains Papers I--XV and the independently scoped
-Papers XX--XXVI mathematical lines. CCS v2.1 is an optional non-paper archive.
+The current public release contains Papers I--XVI and the independently scoped
+Papers XX--XXVII mathematical lines. CCS v2.1 is an optional non-paper archive.
 Publication identities and DOIs are maintained only in the root
 [Public Release table](../README.md#public-release).
 

@@ -4,27 +4,31 @@ This file is a non-normative human navigation layer. It does not define a
 claim, contract, release identity, or evidence closure. The tagged manuscript,
 paper-owned manifest, and receipts remain authoritative.
 
-## Paper XVI: shortest path
+## Paper XVI v1.0: shortest audit path
 
-For most readers, the complete verification path is:
+From a current checkout with release tags available, run:
 
 ```text
-git checkout paper16-v1.0
-python experiments/paper16/validation/validate_release_closure.py
+python tools/release/audit_paper16_v1_materialization.py
 ```
 
-Success is a JSON result with:
+The expected status is:
 
 ```text
-status: PASS
+status: HISTORICAL_MATERIALIZATION_EXPLAINED
 ordered_closure_entries: 56
-receipt_in_own_closure: false
-failures: []
+materialization_exceptions: 21
+all_exception_json_semantics_equal: true
 ```
 
-This command checks the committed manuscript, PDF, producers, artifacts,
-receipts, source bindings, and closure digests. It does not rerun the MaleCNS
-computation and does not modify tracked files.
+Paper XVI v1.0 was frozen with 21 JSON digests taken from historical Windows
+CRLF or mixed-EOL materializations. Git stores and checks out those paths as
+LF. Consequently, the original closure validator returns `FAIL` in a clean
+checkout of `paper16-v1.0`. The audit above is locked to the published tag,
+release commit, manifest blob, and exact affected paths. It verifies that the
+registered bytes are deterministic historical materializations of the same
+JSON objects. It does not rewrite the tag, repair the receipt, or turn the
+original clean-checkout result into `PASS`.
 
 ## What to open
 
@@ -33,7 +37,8 @@ computation and does not modify tracked files.
 | What does the paper claim? | `papers/paper16/Paper XVI.md` |
 | What was uploaded for readers? | `papers/paper16/paper16_arxiv.pdf` |
 | What is in the machine closure? | `experiments/paper16/release-manifest.v1.json` |
-| Did local closure verification pass? | `experiments/paper16/results/release-closure.v1.validation-receipt.json` |
+| What did the original local validator record? | `experiments/paper16/results/release-closure.v1.validation-receipt.json` |
+| Why does a clean tag checkout now fail? | `tools/release/audit_paper16_v1_materialization.py` |
 | Which external MaleCNS bytes are required? | `experiments/paper16/upstream-provenance.v1.json` |
 | Which command owns each replay? | `experiments/paper16/README.md` |
 
@@ -123,7 +128,8 @@ python experiments/paper16/validation/replay_exact_followups.py \
 Success requires `status: PASS`, two replay records, and
 `all_replayed_bytes_equal: true`.
 
-Finally rerun the read-only closure check from the shortest path.
+Finally rerun the historical materialization audit from the shortest path.
+Fresh replay results remain separate from the frozen v1.0 closure result.
 
 ## Common failures
 
@@ -134,7 +140,8 @@ Finally rerun the read-only closure check from the shortest path.
 | Python/package mismatch | The wrong replay environment is active. |
 | missing carrier NPZ/Parquet | Step 3 has not completed successfully. |
 | replay bytes differ | A producer, dependency, input, or serialization result has drifted. |
-| manifest does not match | The checkout differs from the tagged release closure or a bound file was edited. |
+| v1.0 direct validator reports JSON byte mismatches | The frozen manifest records historical Windows text materializations while Git materializes LF; use the release-specific audit above. |
+| materialization audit is `UNRESOLVED` | The tag, manifest, exception set, or an affected JSON object differs from the frozen v1.0 profile. |
 
 On a historical tag, do not use `--refresh`, `--write-receipt`, or a default
 receipt output path. Those are maintainer operations that can rewrite
@@ -143,7 +150,8 @@ generated carrier paths.
 
 ## Boundary
 
-A passing closure check establishes release integrity under the declared local
-validator. A passing producer replay additionally establishes exact-byte
-reproduction for the declared producers and inputs. Neither is independent
+The Paper XVI v1.0 audit explains a historical byte-materialization mismatch;
+it is not local closure verification and does not establish a clean-checkout
+closure `PASS`. A successful producer replay separately establishes the
+properties declared by that replay receipt. Neither result is independent
 scientific validation, physiological validation, or a causal claim.
