@@ -1,0 +1,1009 @@
+{
+  "schema": "rime.exploratory.male-cns-sectorization-field-audit.v1",
+  "release": "MaleCNS v1.0",
+  "input": "body-annotations-male-cns-v1.0-minconf-0.5.feather",
+  "annotation_rows": 211577,
+  "body_id_unique": true,
+  "fields": {
+    "superclass": {
+      "rows": 211577,
+      "nonmissing_rows": 166700,
+      "missing_rows": 44877,
+      "coverage": 0.7878928238891751,
+      "distinct_nonmissing_labels": 27,
+      "top_labels": [
+        {
+          "label": "ol_intrinsic",
+          "count": 89403
+        },
+        {
+          "label": "<missing>",
+          "count": 44877
+        },
+        {
+          "label": "cb_intrinsic",
+          "count": 32164
+        },
+        {
+          "label": "vnc_intrinsic",
+          "count": 13161
+        },
+        {
+          "label": "visual_projection",
+          "count": 9201
+        },
+        {
+          "label": "vnc_sensory",
+          "count": 6370
+        },
+        {
+          "label": "ol_sensory",
+          "count": 6098
+        },
+        {
+          "label": "cb_sensory",
+          "count": 4868
+        },
+        {
+          "label": "ascending_neuron",
+          "count": 1846
+        },
+        {
+          "label": "descending_neuron",
+          "count": 1314
+        },
+        {
+          "label": "vnc_motor",
+          "count": 708
+        },
+        {
+          "label": "visual_centrifugal",
+          "count": 563
+        },
+        {
+          "label": "sensory_ascending",
+          "count": 537
+        },
+        {
+          "label": "cb_motor",
+          "count": 107
+        },
+        {
+          "label": "vnc_efferent",
+          "count": 94
+        },
+        {
+          "label": "cb_endocrine",
+          "count": 72
+        },
+        {
+          "label": "ENS",
+          "count": 50
+        },
+        {
+          "label": "vnc_tbc",
+          "count": 38
+        },
+        {
+          "label": "vnc_sensory_tbc",
+          "count": 36
+        },
+        {
+          "label": "vnc_endocrine",
+          "count": 22
+        }
+      ],
+      "comparison_role": "baseline_broad",
+      "universe_rule": "all annotation bodies; retain <missing> explicitly"
+    },
+    "type": {
+      "rows": 211577,
+      "nonmissing_rows": 164506,
+      "missing_rows": 47071,
+      "coverage": 0.7775230767049348,
+      "distinct_nonmissing_labels": 11751,
+      "top_labels": [
+        {
+          "label": "<missing>",
+          "count": 47071
+        },
+        {
+          "label": "R1-R6",
+          "count": 3377
+        },
+        {
+          "label": "Tm3",
+          "count": 2054
+        },
+        {
+          "label": "T3",
+          "count": 1940
+        },
+        {
+          "label": "T2a",
+          "count": 1872
+        },
+        {
+          "label": "L5",
+          "count": 1787
+        },
+        {
+          "label": "L2",
+          "count": 1779
+        },
+        {
+          "label": "C3",
+          "count": 1779
+        },
+        {
+          "label": "T4c",
+          "count": 1778
+        },
+        {
+          "label": "T1",
+          "count": 1777
+        },
+        {
+          "label": "Tm1",
+          "count": 1777
+        },
+        {
+          "label": "L1",
+          "count": 1776
+        },
+        {
+          "label": "Mi9",
+          "count": 1775
+        },
+        {
+          "label": "Mi1",
+          "count": 1773
+        },
+        {
+          "label": "L3",
+          "count": 1772
+        },
+        {
+          "label": "Mi4",
+          "count": 1772
+        },
+        {
+          "label": "Tm9",
+          "count": 1771
+        },
+        {
+          "label": "L4",
+          "count": 1770
+        },
+        {
+          "label": "Tm2",
+          "count": 1766
+        },
+        {
+          "label": "Tm20",
+          "count": 1762
+        }
+      ],
+      "comparison_role": "finer_partition",
+      "universe_rule": "all annotation bodies only with high-cardinality warning"
+    },
+    "flywireType": {
+      "rows": 211577,
+      "nonmissing_rows": 143156,
+      "missing_rows": 68421,
+      "coverage": 0.676614187742524,
+      "distinct_nonmissing_labels": 8199,
+      "top_labels": [
+        {
+          "label": "<missing>",
+          "count": 68421
+        },
+        {
+          "label": "R1-6",
+          "count": 3377
+        },
+        {
+          "label": "Tm3",
+          "count": 2054
+        },
+        {
+          "label": "T3",
+          "count": 1940
+        },
+        {
+          "label": "T2a",
+          "count": 1872
+        },
+        {
+          "label": "L5",
+          "count": 1788
+        },
+        {
+          "label": "L2",
+          "count": 1779
+        },
+        {
+          "label": "C3",
+          "count": 1779
+        },
+        {
+          "label": "T4c",
+          "count": 1778
+        },
+        {
+          "label": "T1",
+          "count": 1777
+        },
+        {
+          "label": "Tm1",
+          "count": 1777
+        },
+        {
+          "label": "L1",
+          "count": 1776
+        },
+        {
+          "label": "Mi9",
+          "count": 1775
+        },
+        {
+          "label": "Mi1",
+          "count": 1773
+        },
+        {
+          "label": "L3",
+          "count": 1772
+        },
+        {
+          "label": "Mi4",
+          "count": 1772
+        },
+        {
+          "label": "Tm9",
+          "count": 1771
+        },
+        {
+          "label": "L4",
+          "count": 1770
+        },
+        {
+          "label": "Tm2",
+          "count": 1766
+        },
+        {
+          "label": "Tm20",
+          "count": 1762
+        }
+      ],
+      "comparison_role": "finer_partition",
+      "universe_rule": "all annotation bodies only with high-cardinality warning"
+    },
+    "somaSide": {
+      "rows": 211577,
+      "nonmissing_rows": 150726,
+      "missing_rows": 60851,
+      "coverage": 0.7123931240163156,
+      "distinct_nonmissing_labels": 3,
+      "top_labels": [
+        {
+          "label": "L",
+          "count": 75215
+        },
+        {
+          "label": "R",
+          "count": 75119
+        },
+        {
+          "label": "<missing>",
+          "count": 60851
+        },
+        {
+          "label": "M",
+          "count": 392
+        }
+      ],
+      "comparison_role": "secondary_axis",
+      "universe_rule": "all annotation bodies; retain <missing> explicitly"
+    },
+    "itoleeHl": {
+      "rows": 211577,
+      "nonmissing_rows": 37754,
+      "missing_rows": 173823,
+      "coverage": 0.1784409458495016,
+      "distinct_nonmissing_labels": 203,
+      "top_labels": [
+        {
+          "label": "<missing>",
+          "count": 173823
+        },
+        {
+          "label": "putative_primary",
+          "count": 3915
+        },
+        {
+          "label": "MBp3",
+          "count": 1038
+        },
+        {
+          "label": "MBp4",
+          "count": 1018
+        },
+        {
+          "label": "MBp2",
+          "count": 1012
+        },
+        {
+          "label": "MBp1",
+          "count": 996
+        },
+        {
+          "label": "VPNd2",
+          "count": 953
+        },
+        {
+          "label": "VPNd1",
+          "count": 529
+        },
+        {
+          "label": "VLPl1_or_VLPl5",
+          "count": 503
+        },
+        {
+          "label": "EBa1",
+          "count": 449
+        },
+        {
+          "label": "LB3",
+          "count": 392
+        },
+        {
+          "label": "DL1_ventral",
+          "count": 380
+        },
+        {
+          "label": "VPNp&v1_posterior",
+          "count": 374
+        },
+        {
+          "label": "LHp2",
+          "count": 369
+        },
+        {
+          "label": "VLPl&p2_lateral",
+          "count": 356
+        },
+        {
+          "label": "VPNv1",
+          "count": 353
+        },
+        {
+          "label": "DM4_dorsal",
+          "count": 349
+        },
+        {
+          "label": "DL1_dorsal",
+          "count": 344
+        },
+        {
+          "label": "VPNd3",
+          "count": 343
+        },
+        {
+          "label": "ALl1_ventral",
+          "count": 318
+        }
+      ],
+      "comparison_role": "restricted_sensitivity",
+      "universe_rule": "complete-case or explicitly restricted universe"
+    },
+    "trumanHl": {
+      "rows": 211577,
+      "nonmissing_rows": 19753,
+      "missing_rows": 191824,
+      "coverage": 0.0933608095397893,
+      "distinct_nonmissing_labels": 76,
+      "top_labels": [
+        {
+          "label": "<missing>",
+          "count": 191824
+        },
+        {
+          "label": "TBD",
+          "count": 1604
+        },
+        {
+          "label": "07B",
+          "count": 954
+        },
+        {
+          "label": "20A.22A",
+          "count": 817
+        },
+        {
+          "label": "19A",
+          "count": 642
+        },
+        {
+          "label": "06A",
+          "count": 611
+        },
+        {
+          "label": "03A",
+          "count": 580
+        },
+        {
+          "label": "19B",
+          "count": 570
+        },
+        {
+          "label": "04B",
+          "count": 568
+        },
+        {
+          "label": "12B",
+          "count": 560
+        },
+        {
+          "label": "09A",
+          "count": 551
+        },
+        {
+          "label": "12A",
+          "count": 535
+        },
+        {
+          "label": "14A",
+          "count": 518
+        },
+        {
+          "label": "16B",
+          "count": 518
+        },
+        {
+          "label": "08B",
+          "count": 505
+        },
+        {
+          "label": "03B",
+          "count": 503
+        },
+        {
+          "label": "01B",
+          "count": 501
+        },
+        {
+          "label": "23B",
+          "count": 492
+        },
+        {
+          "label": "10B",
+          "count": 455
+        },
+        {
+          "label": "13B",
+          "count": 455
+        }
+      ],
+      "comparison_role": "restricted_sensitivity",
+      "universe_rule": "complete-case or explicitly restricted universe"
+    },
+    "class": {
+      "rows": 211577,
+      "nonmissing_rows": 26513,
+      "missing_rows": 185064,
+      "coverage": 0.12531135236816857,
+      "distinct_nonmissing_labels": 21,
+      "top_labels": [
+        {
+          "label": "<missing>",
+          "count": 185064
+        },
+        {
+          "label": "visual",
+          "count": 6091
+        },
+        {
+          "label": "Kenyon_Cell",
+          "count": 4064
+        },
+        {
+          "label": "CX",
+          "count": 2950
+        },
+        {
+          "label": "olfactory",
+          "count": 2639
+        },
+        {
+          "label": "mechanosensory_tactile",
+          "count": 2558
+        },
+        {
+          "label": "mechanosensory",
+          "count": 1733
+        },
+        {
+          "label": "unknown_sensory",
+          "count": 1712
+        },
+        {
+          "label": "mechanosensory_proprioceptive",
+          "count": 1454
+        },
+        {
+          "label": "gustatory",
+          "count": 1428
+        },
+        {
+          "label": "ALPN",
+          "count": 686
+        },
+        {
+          "label": "ALLN",
+          "count": 420
+        },
+        {
+          "label": "DAN",
+          "count": 340
+        },
+        {
+          "label": "ol_bilateral",
+          "count": 116
+        },
+        {
+          "label": "MBON",
+          "count": 97
+        },
+        {
+          "label": "hygrosensory",
+          "count": 66
+        },
+        {
+          "label": "chemosensory",
+          "count": 58
+        },
+        {
+          "label": "SEZPN",
+          "count": 27
+        },
+        {
+          "label": "thermosensory",
+          "count": 25
+        },
+        {
+          "label": "ALIN",
+          "count": 24
+        }
+      ],
+      "comparison_role": "restricted_sensitivity",
+      "universe_rule": "complete-case or explicitly restricted universe"
+    },
+    "subclass": {
+      "rows": 211577,
+      "nonmissing_rows": 21930,
+      "missing_rows": 189647,
+      "coverage": 0.1036502077257925,
+      "distinct_nonmissing_labels": 49,
+      "top_labels": [
+        {
+          "label": "<missing>",
+          "count": 189647
+        },
+        {
+          "label": "BI",
+          "count": 3336
+        },
+        {
+          "label": "IR",
+          "count": 3048
+        },
+        {
+          "label": "mechanosensory bristle",
+          "count": 2206
+        },
+        {
+          "label": "BR",
+          "count": 1883
+        },
+        {
+          "label": "BA",
+          "count": 1336
+        },
+        {
+          "label": "abdomen",
+          "count": 1145
+        },
+        {
+          "label": "CR",
+          "count": 1039
+        },
+        {
+          "label": "leg",
+          "count": 873
+        },
+        {
+          "label": "II",
+          "count": 838
+        },
+        {
+          "label": "leg bristle",
+          "count": 768
+        },
+        {
+          "label": "wind_gravity",
+          "count": 475
+        },
+        {
+          "label": "xn",
+          "count": 441
+        },
+        {
+          "label": "campaniform sensilla",
+          "count": 426
+        },
+        {
+          "label": "chordotonal organ",
+          "count": 425
+        },
+        {
+          "label": "wing bristle",
+          "count": 385
+        },
+        {
+          "label": "ut",
+          "count": 276
+        },
+        {
+          "label": "xl",
+          "count": 275
+        },
+        {
+          "label": "fl",
+          "count": 250
+        },
+        {
+          "label": "ad",
+          "count": 241
+        }
+      ],
+      "comparison_role": "restricted_sensitivity",
+      "universe_rule": "complete-case or explicitly restricted universe"
+    },
+    "somaNeuromere": {
+      "rows": 211577,
+      "nonmissing_rows": 21820,
+      "missing_rows": 189757,
+      "coverage": 0.10313030244308219,
+      "distinct_nonmissing_labels": 21,
+      "top_labels": [
+        {
+          "label": "<missing>",
+          "count": 189757
+        },
+        {
+          "label": "T2",
+          "count": 5076
+        },
+        {
+          "label": "T1",
+          "count": 4296
+        },
+        {
+          "label": "T3",
+          "count": 3976
+        },
+        {
+          "label": "CG",
+          "count": 2401
+        },
+        {
+          "label": "LB",
+          "count": 1313
+        },
+        {
+          "label": "A1",
+          "count": 933
+        },
+        {
+          "label": "TC",
+          "count": 729
+        },
+        {
+          "label": "DC",
+          "count": 568
+        },
+        {
+          "label": "MX",
+          "count": 500
+        },
+        {
+          "label": "MD",
+          "count": 372
+        },
+        {
+          "label": "A2",
+          "count": 273
+        },
+        {
+          "label": "A3",
+          "count": 241
+        },
+        {
+          "label": "A4",
+          "count": 212
+        },
+        {
+          "label": "A8",
+          "count": 198
+        },
+        {
+          "label": "A5",
+          "count": 179
+        },
+        {
+          "label": "A6",
+          "count": 164
+        },
+        {
+          "label": "A9",
+          "count": 143
+        },
+        {
+          "label": "A7",
+          "count": 116
+        },
+        {
+          "label": "GNG",
+          "count": 89
+        }
+      ],
+      "comparison_role": "restricted_sensitivity",
+      "universe_rule": "complete-case or explicitly restricted universe"
+    },
+    "entryNerve": {
+      "rows": 211577,
+      "nonmissing_rows": 11835,
+      "missing_rows": 199742,
+      "coverage": 0.05593708200796873,
+      "distinct_nonmissing_labels": 21,
+      "top_labels": [
+        {
+          "label": "<missing>",
+          "count": 199742
+        },
+        {
+          "label": "AN",
+          "count": 3332
+        },
+        {
+          "label": "MetaLN",
+          "count": 1522
+        },
+        {
+          "label": "MxLbN",
+          "count": 1410
+        },
+        {
+          "label": "MesoLN",
+          "count": 1403
+        },
+        {
+          "label": "ADMN",
+          "count": 1000
+        },
+        {
+          "label": "ProLN",
+          "count": 992
+        },
+        {
+          "label": "AbN4",
+          "count": 617
+        },
+        {
+          "label": "DMetaN",
+          "count": 439
+        },
+        {
+          "label": "PDMN",
+          "count": 282
+        },
+        {
+          "label": "AbN3",
+          "count": 234
+        },
+        {
+          "label": "AbNT",
+          "count": 213
+        },
+        {
+          "label": "AbN2",
+          "count": 88
+        },
+        {
+          "label": "aPhN",
+          "count": 80
+        },
+        {
+          "label": "PhN",
+          "count": 47
+        },
+        {
+          "label": "ON",
+          "count": 39
+        },
+        {
+          "label": "PrN",
+          "count": 37
+        },
+        {
+          "label": "ProCN",
+          "count": 37
+        },
+        {
+          "label": "DProN",
+          "count": 32
+        },
+        {
+          "label": "VProN",
+          "count": 19
+        }
+      ],
+      "comparison_role": "restricted_sensitivity",
+      "universe_rule": "complete-case or explicitly restricted universe"
+    },
+    "exitNerve": {
+      "rows": 211577,
+      "nonmissing_rows": 1005,
+      "missing_rows": 210572,
+      "coverage": 0.004750043719307864,
+      "distinct_nonmissing_labels": 28,
+      "top_labels": [
+        {
+          "label": "<missing>",
+          "count": 210572
+        },
+        {
+          "label": "MetaLN",
+          "count": 123
+        },
+        {
+          "label": "MesoLN",
+          "count": 117
+        },
+        {
+          "label": "AbNT",
+          "count": 102
+        },
+        {
+          "label": "AbN4",
+          "count": 98
+        },
+        {
+          "label": "ProLN",
+          "count": 82
+        },
+        {
+          "label": "NCC",
+          "count": 71
+        },
+        {
+          "label": "AbN2",
+          "count": 53
+        },
+        {
+          "label": "PhN",
+          "count": 42
+        },
+        {
+          "label": "AbN3",
+          "count": 35
+        },
+        {
+          "label": "DProN",
+          "count": 33
+        },
+        {
+          "label": "ADMN",
+          "count": 32
+        },
+        {
+          "label": "AbN1",
+          "count": 31
+        },
+        {
+          "label": "MxLbN",
+          "count": 26
+        },
+        {
+          "label": "CvN",
+          "count": 25
+        },
+        {
+          "label": "ProAN",
+          "count": 24
+        },
+        {
+          "label": "VProN",
+          "count": 22
+        },
+        {
+          "label": "MesoAN",
+          "count": 19
+        },
+        {
+          "label": "PDMNa",
+          "count": 18
+        },
+        {
+          "label": "AN",
+          "count": 15
+        }
+      ],
+      "comparison_role": "restricted_sensitivity",
+      "universe_rule": "complete-case or explicitly restricted universe"
+    },
+    "rootSide": {
+      "rows": 211577,
+      "nonmissing_rows": 17939,
+      "missing_rows": 193638,
+      "coverage": 0.08478709878673013,
+      "distinct_nonmissing_labels": 3,
+      "top_labels": [
+        {
+          "label": "<missing>",
+          "count": 193638
+        },
+        {
+          "label": "R",
+          "count": 9723
+        },
+        {
+          "label": "L",
+          "count": 7802
+        },
+        {
+          "label": "unknown",
+          "count": 414
+        }
+      ],
+      "comparison_role": "restricted_sensitivity",
+      "universe_rule": "complete-case or explicitly restricted universe"
+    }
+  },
+  "comparison_contract": {
+    "primary_partition": "superclass",
+    "secondary_candidates": [
+      "somaSide",
+      "type",
+      "flywireType"
+    ],
+    "restricted_candidates": [
+      "itoleeHl",
+      "trumanHl",
+      "class",
+      "subclass",
+      "somaNeuromere",
+      "entryNerve",
+      "exitNerve",
+      "rootSide"
+    ],
+    "missing_label": "<missing>",
+    "unannotated_endpoint_label": "<unannotated>",
+    "no_native_binary_modality_field": true,
+    "modality_policy": "do not infer motor/sensory sectors from regex labels; any derived map requires a versioned rule",
+    "comparison_metrics": [
+      "sector_count",
+      "sector_size_profile",
+      "support_density",
+      "LP2",
+      "LP3",
+      "C2",
+      "C3",
+      "h2",
+      "h3",
+      "witness_multiplicity"
+    ],
+    "null_requirement": "fixed graph with label permutation preserving sector-size profile, or another predeclared matched null",
+    "scope": "field audit only; no graph-level sector comparison is claimed by this artifact"
+  }
+}

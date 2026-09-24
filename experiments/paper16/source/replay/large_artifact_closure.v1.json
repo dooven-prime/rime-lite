@@ -1,0 +1,84 @@
+{
+  "schema": "rime.paper16.malecns-carrier-replay-closure.v1",
+  "status": "REPLAY_CLOSURE_DECLARED",
+  "replay_implementation": [
+    {
+      "path": "replay/replay_large_artifacts.py",
+      "size": 8648,
+      "sha256": "aadf1c629c0e9367b9ace2401e3b553803b1e027d0eebf0269db165906d5b220"
+    }
+  ],
+  "external_inputs": [
+    {
+      "path": "data/body-annotations-male-cns-v1.0-minconf-0.5.feather",
+      "size": 14483314,
+      "sha256": "2177e246113e4cfbf1e7772ec37c6da1955ff22e8063d0b1f833101f99a9a3b2"
+    },
+    {
+      "path": "data/body-neurotransmitters-male-cns-v1.0.feather",
+      "size": 43282834,
+      "sha256": "95c9289220663abeb3409f3ad9e5a7f8a53f8093f5139d15502cd08da8879621"
+    },
+    {
+      "path": "data/connectome-weights-male-cns-v1.0-minconf-0.5.feather",
+      "size": 1051241946,
+      "sha256": "e35da783d1c686b2b58b3b87cd6a403ae43bfcfba8bff28e08ef752c1a56afc1"
+    }
+  ],
+  "producers": [
+    {
+      "path": "digital_fly_v0/scripts/build_annotation_intersection_carrier.py",
+      "size": 11804,
+      "sha256": "779bf36adbf417fc94e248d7d1c87d9b6c4ea6385a3e7e270663c9e842d61a64"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "digital_fly_v0/results/carrier_v0_edges.npz",
+      "size": 312341374,
+      "sha256": "c94e885cc2e8cde78012ed0a68a4beb42eccfe1b64607bdc90ac46e675d6966d"
+    },
+    {
+      "path": "digital_fly_v0/results/carrier_v0_manifest.json",
+      "size": 4945,
+      "sha256": "e01f7a25b8a83b8613c17dec71370143a443b9d1ce841628fc64baf4b036ce1f"
+    },
+    {
+      "path": "digital_fly_v0/results/carrier_v0_nodes.parquet",
+      "size": 3008738,
+      "sha256": "87aa46280d68a210f6c8ef4a044282fbbb62342bbeeaab8393b0fd7fa770515e"
+    }
+  ],
+  "commands": [
+    {
+      "order": 1,
+      "script": "digital_fly_v0/scripts/build_annotation_intersection_carrier.py",
+      "arguments": []
+    }
+  ],
+  "runtime": {
+    "python_prefix": "3.12",
+    "packages": {
+      "numpy": "2.5.3",
+      "pandas": "3.0.5",
+      "pyarrow": "25.0.1"
+    },
+    "requirements_path": "requirements/static.txt",
+    "requirements_sha256": "cd9679b6c32b260b6d9bc3a87e7558f1a7881b45bd2baacda3131c982f136414"
+  },
+  "replay_policy": {
+    "workspace": "fresh mirrored scratch tree",
+    "external_input_materialization": "verified hard link or symbolic link",
+    "historical_result_mutation": false,
+    "comparison": "exact file size and SHA-256",
+    "environment_mismatch": "FAIL_CLOSED",
+    "receipt_in_own_closure": false
+  },
+  "claim_boundary": {
+    "local_digest_preflight_is_replay": false,
+    "exact_byte_replay_is_independent_validation": false,
+    "external_deposit_is_scientific_validation": false,
+    "unrelated_digital_fly_sidecars_included": false
+  },
+  "closure_sha256": "0047809acacf0a6a05896d71359c81c05911ce60ad4c73905e22bee7ece70cf1"
+}

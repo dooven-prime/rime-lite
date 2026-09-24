@@ -1,0 +1,63 @@
+{
+  "schema": "rime.paper16.digital-fly-d2-2-named-sector-followup-registration.v1.1",
+  "status": "REGISTERED_READY_TO_EXECUTE",
+  "execution_authority": "A2_NAMED_SECTOR_FOLLOWUP_ONLY",
+  "scoped_correction": {
+    "date": "2026-09-24",
+    "reason": "separate portable runtime compatibility from machine-local executable provenance for the public Paper XVI closure",
+    "scientific_selection_rule_changed": false,
+    "scientific_payload_expected_to_change": false
+  },
+  "supersedes": {
+    "schema": "rime.exploratory.digital-fly-d2-2-named-sector-followup-registration.v1",
+    "sha256": "47e74c26578420310f8f1a1603fd30c6fcd9b26fa1bd7cd93d4c86b7fbb8e396",
+    "reason": "the historical execution path remains provenance but is not a cross-machine replay gate"
+  },
+  "design": "d2_2_named_sector_followup.design-v1.json",
+  "design_sha256": "152af0a595b7531048557e349f1e12e7e832f8a796710be432201bbcda726ec4",
+  "producer": {
+    "path": "run_d2_2_named_sector_followup.py",
+    "sha256": "ccaf2d36018e09a7a6bfe58100bcf6d9399bee02c67684a7174cff3727f54a82"
+  },
+  "validator": {
+    "path": "validation/validate_d2_2_named_sector_followup.py",
+    "sha256": "bf6ab791ea3330b71de4ab1fa6f78c48ee1fb90d0608684bd4d1130ce535c410"
+  },
+  "runtime": {
+    "python_version": "3.13.0",
+    "numpy_version": "2.1.3",
+    "scipy_version": "1.18.0",
+    "pandas_version": "3.0.3"
+  },
+  "runtime_lock": {
+    "path": "../requirements/followups.txt",
+    "sha256": "ed67304564c9a0551b5180115ad5606fd8ecfcdaa9dc0107394e1e2c0e27a6b4"
+  },
+  "historical_execution_python": {
+    "path": "<EXECUTION_PYTHON>/python.exe",
+    "sha256": "62ebc90a2884bb63a0cd67e789cafdd51e771eee043587e2354327b4ccc9bb05",
+    "normative_for_portable_replay": false
+  },
+  "exact_execution": {
+    "row_denominator_accumulation": "bounded int64 np.add.at over nonnegative integer weights",
+    "history_identity": "reduced integer positive-mass signature plus identical source sector",
+    "future_state": "two exact Fraction-valued clipped-ReLU steps aggregated by superclass",
+    "floating_future_separation_tolerance_allowed": false,
+    "surface_order": [
+      "typed_named",
+      "missing_bucket"
+    ],
+    "stop_rule": "stop at the first exact named-sector witness after exhaustively checking every preceding group and pair in registered order"
+  },
+  "output": "results/d2_2_named_sector_followup.v1.json",
+  "historical_artifact_mutation_authority": "NONE",
+  "authorized_side_effects": [
+    "write the additive A2 result",
+    "write its downstream local validation receipt"
+  ],
+  "not_authorized": [
+    "rewrite the frozen D2.2 result",
+    "replace the original first witness",
+    "run Digital Fly simulation or E1 search"
+  ]
+}

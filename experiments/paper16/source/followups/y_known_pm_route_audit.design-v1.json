@@ -1,0 +1,96 @@
+{
+  "schema": "rime.exploratory.malecns-y-known-pm-route-audit.design-v1",
+  "status": "DESIGN_FROZEN_NOT_REGISTERED",
+  "execution_authority": "NONE",
+  "producer": null,
+  "validator": null,
+  "carrier": {
+    "name": "Y_known_pm",
+    "variant": "signed_outgoing_row_l1_normalized",
+    "raw_operator_sha256": "89b9c50a424677cc5bcdcb14dd55528ff0465b81156af04cf35e9a2bbe316066",
+    "normalized_operator_sha256": "7b761fdb1f816bb4ca9045d27397f58d35bbb0a72739cf0726b9abd548e03073",
+    "orientation": "source_row_target_column",
+    "edge_count": 25214058
+  },
+  "bound_inputs": [
+    {
+      "role": "CARRIER_MANIFEST",
+      "path": "../digital_fly_v0/results/carrier_v0_manifest.json",
+      "sha256": "e01f7a25b8a83b8613c17dec71370143a443b9d1ce841628fc64baf4b036ce1f"
+    },
+    {
+      "role": "CARRIER_EDGES",
+      "path": "../digital_fly_v0/results/carrier_v0_edges.npz",
+      "sha256": "c94e885cc2e8cde78012ed0a68a4beb42eccfe1b64607bdc90ac46e675d6966d"
+    },
+    {
+      "role": "CARRIER_NODES_AND_SECTORS",
+      "path": "../digital_fly_v0/results/carrier_v0_nodes.parquet",
+      "sha256": "87aa46280d68a210f6c8ef4a044282fbbb62342bbeeaab8393b0fd7fa770515e"
+    },
+    {
+      "role": "OPERATOR_ADMISSION",
+      "path": "../digital_fly_v0_1/results/sd1_operator_admission_v0_1.json",
+      "sha256": "75efbf24b3592ae1f88d7a72e1cf082854389be2d8d1a5e30da88945f57f2ec4"
+    },
+    {
+      "role": "D2_3_DYNAMIC_COMPARISON",
+      "path": "../digital_fly_v0_2/results/d2_3_partition_comparison_v0_2.json",
+      "sha256": "a9d139af4154514bfc18934c55b37896508fb853d76198fb3cd2e45fd86affde"
+    },
+    {
+      "role": "HISTORICAL_NONNEGATIVE_LP2_CONTROL",
+      "path": "../results/path_lifting_audit_full_v3_somaSide.json",
+      "sha256": "1f63eb9d44a180b12b81b86eb5493d1fee7677fe288d481168325d9dfdbb058f"
+    },
+    {
+      "role": "HISTORICAL_NONNEGATIVE_LP3_CONTROL",
+      "path": "../results/path_lifting_depth3_audit_full_somaSide_v1.json",
+      "sha256": "a0d52bb616a3d80c88a559977d101383a191153393027638a5241fe8ec27d4f1"
+    }
+  ],
+  "sector_fields": [
+    "somaSide",
+    "superclass"
+  ],
+  "depths": [
+    2,
+    3
+  ],
+  "classification": {
+    "unit": "ordered sector word at exact declared depth",
+    "macro_support": "Boolean support of the sector quotient induced by the same Y_known_pm support",
+    "route_support": "nonzero exact projected product on signed normalized Y_known_pm",
+    "statuses": [
+      "EXACT_NONZERO_PROJECTED_PRODUCT",
+      "EXACT_ZERO_BY_CANCELLATION_OR_ABSENCE",
+      "UNRESOLVED_EXACT_ARITHMETIC"
+    ],
+    "floating_nonzero_tolerance_allowed": false,
+    "shared_relay_existence_is_sufficient": false,
+    "exact_witness_hierarchy": [
+      "UNIQUE_MICROSCOPIC_ROUTE",
+      "SIGN_HOMOGENEOUS_ROUTE_FAMILY",
+      "EXACT_RATIONAL_ACCUMULATION"
+    ]
+  },
+  "outcomes": [
+    "SAME_CARRIER_CONTRAST_CONFIRMED",
+    "SIGNED_STATIC_OBSTRUCTION_FOUND",
+    "UNRESOLVED"
+  ],
+  "immutability": {
+    "rewrite_historical_lp_artifacts": false,
+    "rewrite_d2_3_artifact": false,
+    "followup_is_additive": true
+  },
+  "claim_boundary": {
+    "supports_if_confirmed": "bounded same-carrier static/dynamic contrast on normalized Y_known_pm and the declared sectors/depths",
+    "does_not_support": [
+      "all-depth liftability",
+      "general implication theorem",
+      "physiological route validity",
+      "biological causal law"
+    ]
+  }
+}

@@ -1,0 +1,205 @@
+{
+  "schema": "rime.exploratory.digital-fly-sd1-operator-admission.v0_1",
+  "status": "COMPLETED + VALIDATED",
+  "evidence_level": "Computational Observation",
+  "purpose": "matched-support sign admission only; signed dynamics not run",
+  "v0_artifact_boundary": "frozen v0 carrier is read-only; this is a new v0.1 receipt",
+  "dynamics_status": "NOT_RUN",
+  "carrier_manifest": "digital_fly_v0/results/carrier_v0_manifest.json",
+  "source_provenance": {
+    "carrier_manifest_sha256": "e01f7a25b8a83b8613c17dec71370143a443b9d1ce841628fc64baf4b036ce1f",
+    "edge_artifact_sha256": "c94e885cc2e8cde78012ed0a68a4beb42eccfe1b64607bdc90ac46e675d6966d",
+    "node_artifact_sha256": "87aa46280d68a210f6c8ef4a044282fbbb62342bbeeaab8393b0fd7fa770515e",
+    "source_manifest_declared_hashes": {
+      "weights": "data\\connectome-weights-male-cns-v1.0-minconf-0.5.feather",
+      "annotations": "data\\body-annotations-male-cns-v1.0-minconf-0.5.feather",
+      "neurotransmitters": "data\\body-neurotransmitters-male-cns-v1.0.feather",
+      "weights_sha256": "e35da783d1c686b2b58b3b87cd6a403ae43bfcfba8bff28e08ef752c1a56afc1",
+      "annotations_sha256": "2177e246113e4cfbf1e7772ec37c6da1955ff22e8063d0b1f833101f99a9a3b2",
+      "neurotransmitters_sha256": "95c9289220663abeb3409f3ad9e5a7f8a53f8093f5139d15502cd08da8879621"
+    }
+  },
+  "node_universe_count": 211577,
+  "operator_orientation": "source_row_target_column; incoming=Y.T@x",
+  "registration": {
+    "sigma_semantics": "neurotransmitter_proxy",
+    "physiological_sign_claim": false,
+    "sign_context": "transmitter-only proxy; receptor evidence not present in frozen S1 carrier",
+    "proxy_sign_map": {
+      "acetylcholine": 1,
+      "dopamine": 1,
+      "gaba": -1,
+      "glutamate": 1,
+      "histamine": 1,
+      "octopamine": 1,
+      "serotonin": 1
+    },
+    "unknown_labels": [
+      "nt_missing",
+      "unclear"
+    ],
+    "absolute_row_l1_normalization": "Y_norm[i,j] = Y[i,j] / sum_j |Y[i,j]|",
+    "admission_tolerance": 1e-12
+  },
+  "operators": {
+    "Y_full_plus": {
+      "name": "Y_full_plus",
+      "shape": [
+        211577,
+        211577
+      ],
+      "edge_count": 26028386,
+      "nonzero_rows": 184762,
+      "zero_rows": 26815,
+      "raw_weight_sum": 125365933,
+      "raw_abs_weight_sum": 125365933,
+      "raw_abs_row_l1_max": 140897.0,
+      "normalized_abs_row_l1_max": 1.00000000000025,
+      "normalized_abs_row_l1_closure": true,
+      "raw_operator_sha256": "b3f98c44b4d46a185d8667d0109788d7cfdb88d08bce805b853c89381cbe046b",
+      "normalized_operator_sha256": "be02afb7700a568151163eb7cbbfa894426985038364855d8431a81ba4cb3de6"
+    },
+    "Y_known_plus": {
+      "name": "Y_known_plus",
+      "shape": [
+        211577,
+        211577
+      ],
+      "edge_count": 25214058,
+      "nonzero_rows": 163439,
+      "zero_rows": 48138,
+      "raw_weight_sum": 122770152,
+      "raw_abs_weight_sum": 122770152,
+      "raw_abs_row_l1_max": 140897.0,
+      "normalized_abs_row_l1_max": 1.00000000000025,
+      "normalized_abs_row_l1_closure": true,
+      "raw_operator_sha256": "b6868603b41c94eb7558bd1fc897da07e4fce169981444763a0983e52cd630b0",
+      "normalized_operator_sha256": "979f51d8b6d3368b92348200161a613b0183da2164f723d624f6bb1aac75e02d"
+    },
+    "Y_known_pm": {
+      "name": "Y_known_pm",
+      "shape": [
+        211577,
+        211577
+      ],
+      "edge_count": 25214058,
+      "nonzero_rows": 163439,
+      "zero_rows": 48138,
+      "raw_weight_sum": 71094146,
+      "raw_abs_weight_sum": 122770152,
+      "raw_abs_row_l1_max": 140897.0,
+      "normalized_abs_row_l1_max": 1.00000000000025,
+      "normalized_abs_row_l1_closure": true,
+      "raw_operator_sha256": "89b9c50a424677cc5bcdcb14dd55528ff0465b81156af04cf35e9a2bbe316066",
+      "normalized_operator_sha256": "7b761fdb1f816bb4ca9045d27397f58d35bbb0a72739cf0726b9abd548e03073"
+    }
+  },
+  "coverage": {
+    "full_edge_count": 26028386,
+    "known_sign_edge_count": 25214058,
+    "unresolved_edge_count": 814328,
+    "known_sign_edge_fraction": 0.9687138495640875,
+    "unresolved_edge_fraction": 0.03128615043591255,
+    "full_raw_abs_weight_mass": 125365933,
+    "known_sign_raw_abs_weight_mass": 122770152,
+    "unresolved_raw_abs_weight_mass": 2595781,
+    "known_sign_weight_mass_fraction": 0.9792943669952187,
+    "unresolved_weight_mass_fraction": 0.02070563300478129,
+    "zero_rows_full_plus": 26815,
+    "zero_rows_known_plus": 48138,
+    "zero_row_delta_known_minus_full": 21323,
+    "known_sign_labels": [
+      "acetylcholine",
+      "dopamine",
+      "gaba",
+      "glutamate",
+      "histamine",
+      "octopamine",
+      "serotonin"
+    ],
+    "node_count_by_nt_label": {
+      "acetylcholine": 104173,
+      "dopamine": 396,
+      "gaba": 22186,
+      "glutamate": 29443,
+      "histamine": 8024,
+      "nt_missing": 24561,
+      "octopamine": 101,
+      "serotonin": 48,
+      "unclear": 22645
+    },
+    "nt_missing_node_count": 24561,
+    "unclear_node_count": 22645,
+    "edge_count_by_nt_label": {
+      "acetylcholine": 14875726,
+      "dopamine": 243358,
+      "gaba": 4972922,
+      "glutamate": 4829818,
+      "histamine": 97020,
+      "nt_missing": 0,
+      "octopamine": 149420,
+      "serotonin": 45794,
+      "unclear": 814328
+    },
+    "weight_sum_by_nt_label": {
+      "acetylcholine": 73861957,
+      "dopamine": 585766,
+      "gaba": 25838003,
+      "glutamate": 21139743,
+      "histamine": 742030,
+      "nt_missing": 0,
+      "octopamine": 469190,
+      "serotonin": 133463,
+      "unclear": 2595781
+    },
+    "node_vs_edge_scope_note": "node counts describe the admitted node universe; edge and weight counts describe outgoing support carried by admitted edges",
+    "unknown_source_label_counts": {
+      "nt_missing": 0,
+      "unclear": 814328
+    }
+  },
+  "matched_support": {
+    "known_plus_support_equals_known_pm": true,
+    "known_plus_raw_magnitude_equals_known_pm": true,
+    "known_plus_normalized_magnitude_max_abs_delta": 0.0,
+    "known_plus_normalized_magnitude_equals_known_pm": true,
+    "signed_value_counts": {
+      "positive": 20241136,
+      "negative": 4972922,
+      "zero": 0
+    },
+    "sign_changes_from_plus": 4972922
+  },
+  "nt_decomposition_receipt": {
+    "identity": "Y_admitted = sum_a Y^(a) + Y^(unclear) + Y^(nt_missing)",
+    "missing_and_unclear_are_distinct_labels": true,
+    "edge_count_identity_holds": true,
+    "weight_sum_identity_holds": true,
+    "exact_one_source_label_per_admitted_edge": true
+  },
+  "checks": {
+    "known_plus_support_equals_known_pm": true,
+    "known_plus_raw_magnitudes_equal_known_pm": true,
+    "known_plus_normalized_magnitudes_equal_known_pm": true,
+    "known_plus_and_known_pm_edge_count_equal": true,
+    "full_plus_absolute_row_l1_closed": true,
+    "known_plus_absolute_row_l1_closed": true,
+    "known_pm_absolute_row_l1_closed": true
+  },
+  "comparison_roles": {
+    "Y_full_plus_vs_Y_known_plus": "sign-coverage loss",
+    "Y_known_plus_vs_Y_known_pm": "sign effect on identical support and magnitudes"
+  },
+  "claim_boundary": {
+    "supports": [
+      "matched-support operator admission",
+      "registered sign-coverage and raw-weight-mass accounting",
+      "absolute-row-L1 normalization closure"
+    ],
+    "does_not_support": [
+      "signed dynamics or reachable-regime claim",
+      "physiological excitation/inhibition claim",
+      "causal, behavioral, or in-vivo claim"
+    ]
+  }
+}

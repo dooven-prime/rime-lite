@@ -62,3 +62,9 @@ Thumbs.db
 
 AGENTS.md
 CLAUDE.md
+# Paper XVI external inputs, generated carrier arrays, and local replay runtimes.
+.paper16-runtime/
+.paper16-replay-work/
+experiments/paper16/source/data/
+experiments/paper16/source/digital_fly_v0/results/*.npz
+experiments/paper16/source/digital_fly_v0/results/*.parquet

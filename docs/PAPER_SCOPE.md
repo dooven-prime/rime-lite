@@ -43,13 +43,15 @@ The matrix is thematic, not a theorem dependency order. A neighboring result
 can be reused only after the receiving paper redeclares its object, hypotheses,
 realization, and claim status.
 
-## Independent Mathematical Scope
+## Independent Case-Study and Mathematical Scope
 
-Papers XVI--XIX are intentionally unused. Papers XX--XXVI do not continue the
-SOF protocol authority chain.
+Paper XVI is an independently scoped computational connectome case study, not
+a successor SOF protocol. Papers XVII--XIX are intentionally unused. Papers
+XX--XXVII do not continue the SOF protocol authority chain.
 
 | Paper | Owned object or interface | Reader question |
 |-------|---------------------------|-----------------|
+| XVI | source-addressed MaleCNS structural and dynamic descent audit | Which structural and dynamic properties survive the declared connectome representations? |
 | XX | all-depth carrier-resolved routed composition | When does Boolean support survive as a nonzero routed product at arbitrary depth? |
 | XXI | finite-field route profiles and prefix-pole semantics | How do labelled zero routes depend on field size, characteristic, and depth? |
 | XXII | fixed-deficit rational dynamics and anchored Farey patches | How do exact rational deficit layers admit Catalan classification and Fibonacci envelopes? |
@@ -57,6 +59,7 @@ SOF protocol authority chain.
 | XXIV | finite typed-context descent | Which local typed data admit existence or uniqueness of a global reconstruction? |
 | XXV | aligned generator-resolved diagnostics | Which diagnostic quantities transport exactly, remain carrier-local, or require additional semantic assumptions? |
 | XXVI | unordered-pair transfer operators and random synchronization | How do deterministic reset scales, random pair absorption, and global random synchronization separate? |
+| XXVII | fixed-scope entry sections and source-addressed completion relations | Which finite proof contexts admit a declared completion section without quotienting away source identity? |
 
 ## Protocol Ownership
 

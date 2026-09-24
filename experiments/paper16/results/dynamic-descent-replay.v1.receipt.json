@@ -1,0 +1,162 @@
+{
+  "schema": "rime.paper16.dynamic-descent-replay-receipt.v1",
+  "status": "PASS",
+  "validation_mode": "PRODUCER_REPLAY_AND_EXACT_BYTE_COMPARISON",
+  "producer_replay_performed": true,
+  "independent_validation": false,
+  "canonical_results_modified": false,
+  "runtime": {
+    "python": "3.12.6",
+    "executable": "<EXECUTION_PYTHON>/python.exe",
+    "executable_sha256": "3470f7919170d235d7e6079691462c4b217745ec67ee612e745730e46d98f238",
+    "packages": {
+      "numpy": "2.5.3",
+      "pandas": "3.0.5",
+      "scipy": "1.18.1",
+      "pyarrow": "25.0.1",
+      "networkx": "3.6.1"
+    }
+  },
+  "carrier_bindings": [
+    {
+      "path": "source/digital_fly_v0/results/carrier_v0_edges.npz",
+      "size": 312341374,
+      "sha256": "c94e885cc2e8cde78012ed0a68a4beb42eccfe1b64607bdc90ac46e675d6966d",
+      "scratch_materialization": "hardlink"
+    },
+    {
+      "path": "source/digital_fly_v0/results/carrier_v0_manifest.json",
+      "size": 4945,
+      "sha256": "e01f7a25b8a83b8613c17dec71370143a443b9d1ce841628fc64baf4b036ce1f",
+      "scratch_materialization": "hardlink"
+    },
+    {
+      "path": "source/digital_fly_v0/results/carrier_v0_nodes.parquet",
+      "size": 3008738,
+      "sha256": "87aa46280d68a210f6c8ef4a044282fbbb62342bbeeaab8393b0fd7fa770515e",
+      "scratch_materialization": "hardlink"
+    }
+  ],
+  "producer_bindings": [
+    {
+      "path": "source/digital_fly_v0_1/scripts/run_sd1_operator_admission.py",
+      "sha256": "37e20acc537f5a5ce74deff53c5228472b5bc51a22197661ebc37b00b73ca1c8"
+    },
+    {
+      "path": "source/digital_fly_v0_1/scripts/run_sd1_dynamics.py",
+      "sha256": "d03d1d8fd458e1b7bb40691948f9f16b79fcdce1ad012ede4e88ddedbf331de9"
+    },
+    {
+      "path": "source/digital_fly_v0_1/scripts/run_o1_observation_resolution.py",
+      "sha256": "201ab0b97d46e2d0a97cc43dd7c4c8557e9f4d795955f90c57837c3a20c97add"
+    },
+    {
+      "path": "source/digital_fly_v0_2/scripts/run_d2_1_markov_closure.py",
+      "sha256": "1c7a031447a65d200452de529972949ea8d7a026d036d8a175abb415e49bba0f"
+    },
+    {
+      "path": "source/digital_fly_v0_2/scripts/run_d2_2_memory_closure.py",
+      "sha256": "f76125aca9c93ad9b6824d6d33dd0c20b2d542cbe915ca249efedd0ae8793419"
+    },
+    {
+      "path": "source/digital_fly_v0_2/scripts/run_d2_3_partition_comparison.py",
+      "sha256": "7d9f377916e207bdbe95ceb82d78b998c832e9034f8200f813d0b650f97fd99a"
+    }
+  ],
+  "commands": [
+    {
+      "script": "digital_fly_v0_1/scripts/run_sd1_operator_admission.py",
+      "arguments": [],
+      "exit_code": 0,
+      "stdout_sha256": "79af5f02556766d2c11617eb4f7d59ecdae9cd3f3cebad4c4771367c6c6e9f3b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "script": "digital_fly_v0_1/scripts/run_sd1_dynamics.py",
+      "arguments": [],
+      "exit_code": 0,
+      "stdout_sha256": "060f8e23ddaa01b31e63d6f6c39424fa9e6ad0be5bc0b98a43816b83312f9d3b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "script": "digital_fly_v0_1/scripts/run_o1_observation_resolution.py",
+      "arguments": [],
+      "exit_code": 0,
+      "stdout_sha256": "b01587bc6383a6424647ad8ed59ff74dcff62fb4bf2b2fcafa1d796774641840",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "script": "digital_fly_v0_2/scripts/run_d2_1_markov_closure.py",
+      "arguments": [],
+      "exit_code": 0,
+      "stdout_sha256": "0380ffdaf66a1aa7e0a79bd158e6951e7f84640132932e035d6bcba3078a1691",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "script": "digital_fly_v0_2/scripts/run_d2_2_memory_closure.py",
+      "arguments": [],
+      "exit_code": 0,
+      "stdout_sha256": "d9893bd9ec29861c124f1fa26486754e8be3841a3715e3a75babfe417bf43191",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "script": "digital_fly_v0_2/scripts/run_d2_3_partition_comparison.py",
+      "arguments": [],
+      "exit_code": 0,
+      "stdout_sha256": "7c9efcb7038030715676fc3c4accb50729e8db5c982d627c1e5a984798e553ab",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "source/digital_fly_v0_1/results/sd1_operator_admission_v0_1.json",
+      "generated_size": 7589,
+      "canonical_size": 7589,
+      "generated_sha256": "75efbf24b3592ae1f88d7a72e1cf082854389be2d8d1a5e30da88945f57f2ec4",
+      "canonical_sha256": "75efbf24b3592ae1f88d7a72e1cf082854389be2d8d1a5e30da88945f57f2ec4",
+      "exact_bytes_equal": true
+    },
+    {
+      "path": "source/digital_fly_v0_1/results/sd1_dynamics_v0_1.json",
+      "generated_size": 1491492,
+      "canonical_size": 1491492,
+      "generated_sha256": "68e95e686270ecbe32289bb7334fde138d5b311235ac895c4f391900478163d9",
+      "canonical_sha256": "68e95e686270ecbe32289bb7334fde138d5b311235ac895c4f391900478163d9",
+      "exact_bytes_equal": true
+    },
+    {
+      "path": "source/digital_fly_v0_1/results/o1_observation_resolution_v0_1.json",
+      "generated_size": 75186,
+      "canonical_size": 75186,
+      "generated_sha256": "7691c94fb9c4cc62e4b1116456a76cfe5ae763cf6ef3bdde8668c47775813580",
+      "canonical_sha256": "7691c94fb9c4cc62e4b1116456a76cfe5ae763cf6ef3bdde8668c47775813580",
+      "exact_bytes_equal": true
+    },
+    {
+      "path": "source/digital_fly_v0_2/results/d2_1_markov_closure_v0_2.json",
+      "generated_size": 69129,
+      "canonical_size": 69129,
+      "generated_sha256": "379e01a9fbb18f6e3b973f385eb363e488fd0b21507601f4c17a23d76f0de63b",
+      "canonical_sha256": "379e01a9fbb18f6e3b973f385eb363e488fd0b21507601f4c17a23d76f0de63b",
+      "exact_bytes_equal": true
+    },
+    {
+      "path": "source/digital_fly_v0_2/results/d2_2_memory_closure_v0_2.json",
+      "generated_size": 8004,
+      "canonical_size": 8004,
+      "generated_sha256": "9ce4ce11afe91907beca97dbf556201e40eb0c8cc0b1030f21ac9084e0649a7c",
+      "canonical_sha256": "9ce4ce11afe91907beca97dbf556201e40eb0c8cc0b1030f21ac9084e0649a7c",
+      "exact_bytes_equal": true
+    },
+    {
+      "path": "source/digital_fly_v0_2/results/d2_3_partition_comparison_v0_2.json",
+      "generated_size": 84262,
+      "canonical_size": 84262,
+      "generated_sha256": "a9d139af4154514bfc18934c55b37896508fb853d76198fb3cd2e45fd86affde",
+      "canonical_sha256": "a9d139af4154514bfc18934c55b37896508fb853d76198fb3cd2e45fd86affde",
+      "exact_bytes_equal": true
+    }
+  ],
+  "all_replayed_bytes_equal": true,
+  "receipt_in_own_closure": false
+}

@@ -1,0 +1,49 @@
+{
+  "schema": "rime.exploratory.digital-fly-d2-2-named-sector-followup-validation.v1",
+  "status": "PASS",
+  "validation_mode": "LOCAL_CLOSURE_AND_CERTIFICATE_STRUCTURE_VERIFICATION",
+  "independent_validation": false,
+  "producer_replay_performed": false,
+  "experiment_executed_by_validator": false,
+  "typed_named_outcome": "EXACT_NAMED_SECTOR_WITNESS_FOUND",
+  "missing_bucket_outcome": "FROZEN_CONTROL_WITNESS_RECONFIRMED",
+  "ordered_closure": [
+    {
+      "role": "DESIGN",
+      "path": "d2_2_named_sector_followup.design-v1.json",
+      "sha256": "152af0a595b7531048557e349f1e12e7e832f8a796710be432201bbcda726ec4"
+    },
+    {
+      "role": "REGISTRATION",
+      "path": "d2_2_named_sector_followup.registration-v1.1.json",
+      "sha256": "4562fc445bf6d8a50cc36c132f4bb9039210dacf10d5bef338908136f114e28d"
+    },
+    {
+      "role": "PRODUCER",
+      "path": "run_d2_2_named_sector_followup.py",
+      "sha256": "ccaf2d36018e09a7a6bfe58100bcf6d9399bee02c67684a7174cff3727f54a82"
+    },
+    {
+      "role": "VALIDATOR",
+      "path": "validation/validate_d2_2_named_sector_followup.py",
+      "sha256": "bf6ab791ea3330b71de4ab1fa6f78c48ee1fb90d0608684bd4d1130ce535c410"
+    },
+    {
+      "role": "RESULT",
+      "path": "results/d2_2_named_sector_followup.v1.json",
+      "sha256": "3a45ac96e142b144a7bcdf7a7cf1c2aaf01cf064b240a7ca08ca2dfd1dd5957a"
+    }
+  ],
+  "closure_sha256": "417fa09d14ed21d0317c8b6e067d043e2a2240d8fef2280d1f362e87c2904842",
+  "receipt_in_own_closure": false,
+  "failures": [],
+  "claim_boundary": {
+    "named_no_witness_is_closure": false,
+    "supports": "bounded exact history-fiber witness status separated by annotation surface",
+    "does_not_support": [
+      "biological mechanism",
+      "all finite memory orders",
+      "closure outside the registered unit-state domain"
+    ]
+  }
+}

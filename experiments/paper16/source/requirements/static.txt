@@ -1,0 +1,8 @@
+# Python 3.12.x
+# Offline MaleCNS table audits and Digital Fly v0-v0.2 analysis.
+# Versions are pinned to the recorded audit/runtime environment.
+numpy==2.5.3
+pandas==3.0.5
+scipy==1.18.1
+pyarrow==25.0.1
+networkx==3.6.1

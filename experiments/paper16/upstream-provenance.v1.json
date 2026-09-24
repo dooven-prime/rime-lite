@@ -1,0 +1,67 @@
+{
+  "schema": "rime.paper16.upstream-provenance.v1",
+  "dataset": {
+    "name": "MaleCNS",
+    "release": "v1.0",
+    "neuprint_dataset": "male-cns:v1.0",
+    "official_download_page": "https://male-cns.janelia.org/download/",
+    "publication_doi": "10.1016/j.cell.2026.08.015",
+    "preprint_doi": "10.1101/2025.10.09.680999",
+    "publication_date": "2026-09-03",
+    "journal": "Cell",
+    "license": {
+      "spdx": "CC-BY-4.0",
+      "source": "official MaleCNS download page",
+      "source_url": "https://male-cns.janelia.org/download/",
+      "verification_date": "2026-09-23",
+      "redistribution_note": "The dataset license is distinct from the repository code license; attribution must accompany any deposited source data."
+    },
+    "attribution": "MaleCNS v1.0, a collaboration of HHMI Janelia FlyEM, the University of Cambridge Department of Zoology, the MRC Laboratory of Molecular Biology, and Google Research."
+  },
+  "exact_inputs": [
+    {
+      "path": "data/body-annotations-male-cns-v1.0-minconf-0.5.feather",
+      "url": "https://storage.googleapis.com/flyem-male-cns/v1.0/connectome-data/flat-connectome/body-annotations-male-cns-v1.0-minconf-0.5.feather",
+      "role": "annotations_and_sector_labels",
+      "consumed_by": [
+        "static LP2/LP3 and sectorization producers (C1-C2)",
+        "carrier and dynamic-descent producers (C3-C8)"
+      ],
+      "size": 14483314,
+      "sha256": "2177e246113e4cfbf1e7772ec37c6da1955ff22e8063d0b1f833101f99a9a3b2"
+    },
+    {
+      "path": "data/body-neurotransmitters-male-cns-v1.0.feather",
+      "url": "https://storage.googleapis.com/flyem-male-cns/v1.0/connectome-data/flat-connectome/body-neurotransmitters-male-cns-v1.0.feather",
+      "role": "neurotransmitter_proxy_labels",
+      "consumed_by": [
+        "carrier and dynamic-descent producers (C3-C8)"
+      ],
+      "size": 43282834,
+      "sha256": "95c9289220663abeb3409f3ad9e5a7f8a53f8093f5139d15502cd08da8879621"
+    },
+    {
+      "path": "data/connectome-weights-male-cns-v1.0-minconf-0.5.feather",
+      "url": "https://storage.googleapis.com/flyem-male-cns/v1.0/connectome-data/flat-connectome/connectome-weights-male-cns-v1.0-minconf-0.5.feather",
+      "role": "directed_body_pair_detected_connection_counts",
+      "consumed_by": [
+        "static LP2/LP3 producers (C1-C2)",
+        "carrier and dynamic-descent producers (C3-C8)"
+      ],
+      "size": 1051241946,
+      "sha256": "e35da783d1c686b2b58b3b87cd6a403ae43bfcfba8bff28e08ef752c1a56afc1"
+    }
+  ],
+  "materialization": {
+    "repository_distribution": "excluded_by_project_gitignore",
+    "portable_basis": "official source plus exact size/SHA-256 and clean-clone producer replay",
+    "external_deposit_status": "NOT_CREATED",
+    "digest_alone_is_portability": false
+  },
+  "claim_boundary": {
+    "weight_semantics": "release-relative detected connection count",
+    "neurotransmitter_semantics": "proxy sign label, not receptor-validated physiological sign",
+    "license_is_scientific_validation": false,
+    "source_identity_is_biological_adequacy": false
+  }
+}

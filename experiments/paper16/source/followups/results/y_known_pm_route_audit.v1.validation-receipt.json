@@ -1,0 +1,40 @@
+{
+  "schema": "rime.exploratory.malecns-y-known-pm-route-audit-validation.v1",
+  "status": "PASS",
+  "validation_mode": "LOCAL_CLOSURE_AND_CERTIFICATE_STRUCTURE_VERIFICATION",
+  "independent_validation": false,
+  "producer_replay_performed": false,
+  "experiment_executed_by_validator": false,
+  "outcome": "SAME_CARRIER_CONTRAST_CONFIRMED",
+  "ordered_closure": [
+    {
+      "role": "DESIGN",
+      "path": "y_known_pm_route_audit.design-v1.json",
+      "sha256": "f0f0a7544c21da95f54cd74b8977fa78fbebd4cf1a345f6d9e49882cf85b5209"
+    },
+    {
+      "role": "REGISTRATION",
+      "path": "y_known_pm_route_audit.registration-v1.2.json",
+      "sha256": "56d0305cb0ec2dec28fa41a7ecfd0a153c403ec8efde1eaf0b52eca30c6b8bb4"
+    },
+    {
+      "role": "PRODUCER",
+      "path": "run_y_known_pm_route_audit.py",
+      "sha256": "61cf91a1cdae4efd0f87ca5613f15c58183d9b2b5b2d70ceb496dbaa874bcab5"
+    },
+    {
+      "role": "VALIDATOR",
+      "path": "validation/validate_y_known_pm_route_audit.py",
+      "sha256": "4aa87bba3db485d2a72481f9ade754f2d139e0b7914fd7cd598d8432b724dfad"
+    },
+    {
+      "role": "RESULT",
+      "path": "results/y_known_pm_route_audit.v1.json",
+      "sha256": "28d8cc511d447002b32cc218a8410d1f815a481f138f2e6b9f29500cd69fadf4"
+    }
+  ],
+  "closure_sha256": "2301a1add2ba30dfe061123dcca847bff1a1c3d0001bec0efcdc335b359c2f73",
+  "receipt_in_own_closure": false,
+  "failures": [],
+  "claim_boundary": "exact result/closure validation; not independent mathematical validation and not a biological claim"
+}
