@@ -27,6 +27,11 @@ LEAN_RECEIPT = (
 
 MANIFEST_SCHEMA = "rime.paper28.release-manifest.v1"
 RECEIPT_SCHEMA = "rime.paper28.public-package-receipt.v1"
+CANONICAL_RELEASE_REPLAY = {
+    "finite_mirror_verified": True,
+    "finite_root_validators_replayed": True,
+    "lean_elaboration_replayed": True,
+}
 CLOSURE_CLASSES = (
     "normative-manuscript-build",
     "theorem-facing-computational",
@@ -376,7 +381,14 @@ def validate_receipt(
     if not isinstance(replay, dict):
         errors.append("public package receipt replay block is missing")
         return
-    if receipt != receipt_payload(manifest, finite_rows, formal_rows, replay):
+    if replay != CANONICAL_RELEASE_REPLAY:
+        errors.append(
+            "public package receipt replay block is not the canonical release replay state"
+        )
+        return
+    if receipt != receipt_payload(
+        manifest, finite_rows, formal_rows, CANONICAL_RELEASE_REPLAY
+    ):
         errors.append("public package receipt is stale or not bound to current closure")
 
 
@@ -430,15 +442,12 @@ def main() -> None:
             print(f"ERROR: {error}", file=sys.stderr)
         raise SystemExit(1)
 
-    replay = {
-        "finite_mirror_verified": True,
-        "finite_root_validators_replayed": args.replay,
-        "lean_elaboration_replayed": args.replay,
-    }
     if args.write_receipt:
         write_json(
             PUBLIC_RECEIPT,
-            receipt_payload(manifest, finite_rows, formal_rows, replay),
+            receipt_payload(
+                manifest, finite_rows, formal_rows, CANONICAL_RELEASE_REPLAY
+            ),
         )
         print(f"wrote {PUBLIC_RECEIPT.relative_to(ROOT).as_posix()}")
     else:

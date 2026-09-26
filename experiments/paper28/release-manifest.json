@@ -85,13 +85,13 @@
       "role": "public-package-validator",
       "closure_class": "theorem-facing-computational",
       "path": "experiments/paper28/validation/validate_public_package.py",
-      "sha256": "debeb6e8d58f15470caf3218ab192a38797f3d16457658bf2f22de4c6a5132cb"
+      "sha256": "0bd8bf7f875233147f2955087fefcf4ad518512369e17aaa029da36aeefff490"
     },
     {
       "role": "evidence-readme",
       "closure_class": "public-package-documentation",
       "path": "experiments/paper28/README.md",
-      "sha256": "c38d28b2e12462243d57343d57e6b91523b419929f1b24c848ec011eb96f832f"
+      "sha256": "80f3407b88f7a372f43847426194ff616d197bafde2bbc5afb45d5f1bc933e11"
     },
     {
       "role": "mirror-staging-tool",

@@ -66,9 +66,11 @@ python experiments/paper28/validation/validate_lean_formalization.py --replay
 
 `validate_public_package.py` is the outer release gate. It verifies the
 manuscript/PDF/build closure, the nested finite mirror and Lean receipts, the
-package inventory, and the self-excluding public receipt. Release preparation
-uses its explicit `--write-manifest --write-receipt --replay` mode; ordinary
-verification is read-only.
+package inventory, and the self-excluding public receipt. The retained receipt
+is accepted only when its exact three-key replay block records successful
+mirror verification, finite-root replay, and Lean elaboration replay. Release
+preparation uses the explicit `--write-manifest --write-receipt --replay` mode;
+ordinary verification is read-only and rejects altered or extra replay claims.
 
 `validate_mirror.py` checks only packaged bytes, original receipt bindings,
 mapped input edges, the three upstream input digests, and the immutable

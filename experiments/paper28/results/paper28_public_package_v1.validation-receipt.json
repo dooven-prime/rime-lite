@@ -11,7 +11,7 @@
   },
   "manifest_binding": {
     "path": "experiments/paper28/release-manifest.json",
-    "sha256": "1a6c6f815f699841bfd9b599572d369a9e4cc393694130488573d91ec418907f"
+    "sha256": "d4795661fd555d5562eaaced947da0a841cbeb2c18b5221ac5c3c64c834fc1fd"
   },
   "nested_closures": {
     "finite_mirror": {
@@ -941,7 +941,7 @@
   },
   "release_identity": {
     "artifact_count": 240,
-    "closure_digest": "a3250bf46d48e0ae174ed05861238dcd277f302e4f24df362aeeba4106ebb994",
+    "closure_digest": "169afe7070c0d64645dc06240e0cdae9b45e7ec0dcff381c93b363a3c5d338ad",
     "ordered_artifacts": [
       {
         "path": "experiments/paper28/artifacts/P28_1B_BOUNDARY_LIFTABILITY_RESULTS.md",
@@ -1873,7 +1873,7 @@
       },
       {
         "path": "experiments/paper28/validation/validate_public_package.py",
-        "sha256": "debeb6e8d58f15470caf3218ab192a38797f3d16457658bf2f22de4c6a5132cb"
+        "sha256": "0bd8bf7f875233147f2955087fefcf4ad518512369e17aaa029da36aeefff490"
       },
       {
         "path": "experiments/paper28/validation/validate_release.py",
@@ -1907,11 +1907,11 @@
   },
   "package_inventory": {
     "artifact_count": 243,
-    "closure_digest": "6ace339c988b45030702457478caf298956cef1c99df674f4a202f591f1d3478",
+    "closure_digest": "74d2a24672d97915a79416a80a02a7e6d7d16d7a2b1fae5272b46e547ffff21a",
     "ordered_artifacts": [
       {
         "path": "experiments/paper28/README.md",
-        "sha256": "c38d28b2e12462243d57343d57e6b91523b419929f1b24c848ec011eb96f832f"
+        "sha256": "80f3407b88f7a372f43847426194ff616d197bafde2bbc5afb45d5f1bc933e11"
       },
       {
         "path": "experiments/paper28/artifacts/P28_1B_BOUNDARY_LIFTABILITY_RESULTS.md",
@@ -2283,7 +2283,7 @@
       },
       {
         "path": "experiments/paper28/release-manifest.json",
-        "sha256": "1a6c6f815f699841bfd9b599572d369a9e4cc393694130488573d91ec418907f"
+        "sha256": "d4795661fd555d5562eaaced947da0a841cbeb2c18b5221ac5c3c64c834fc1fd"
       },
       {
         "path": "experiments/paper28/results/paper28_boundary_generator_factorization_v1.json.gz",
@@ -2851,7 +2851,7 @@
       },
       {
         "path": "experiments/paper28/validation/validate_public_package.py",
-        "sha256": "debeb6e8d58f15470caf3218ab192a38797f3d16457658bf2f22de4c6a5132cb"
+        "sha256": "0bd8bf7f875233147f2955087fefcf4ad518512369e17aaa029da36aeefff490"
       },
       {
         "path": "experiments/paper28/validation/validate_release.py",
@@ -2888,5 +2888,5 @@
     "the release receipt does not certify an all-rank theorem",
     "the receipt does not occur in its own closure"
   ],
-  "content_sha256": "c34a88e7a56917ff7bf437cc81096948b86b4654a7b1576847aae5ec7f89e575"
+  "content_sha256": "ae53d663f39f4196ce1a755ea4cb007d7e10b8adb55095b26dffcba86e18e4a1"
 }
