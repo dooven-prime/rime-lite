@@ -51,6 +51,15 @@ def source_relative(reference: str) -> str:
     return reference
 
 
+def validator_environment(release_root: Path | None = None) -> dict[str, str]:
+    env = dict(os.environ)
+    env.pop("PYTHONOPTIMIZE", None)
+    env["PYTHONDONTWRITEBYTECODE"] = "1"
+    if release_root is not None:
+        env["RIME_PAPER27_RELEASE_ROOT"] = str(release_root)
+    return env
+
+
 def root_validators(manifest: dict) -> list[tuple[str, str]]:
     copied_sources = {item["source"] for item in manifest["files"]}
     result = []
@@ -85,9 +94,7 @@ def copy_layout(root: Path, manifest: dict) -> None:
 
 
 def run_validators(root: Path, validators: list[tuple[str, str]]) -> list[dict]:
-    env = dict(os.environ)
-    env["RIME_PAPER27_RELEASE_ROOT"] = str(root)
-    env["PYTHONDONTWRITEBYTECODE"] = "1"
+    env = validator_environment(root)
     checks = []
     for stem, relative in validators:
         print(f"CHECK {stem}", flush=True)
@@ -123,7 +130,7 @@ def main() -> None:
 
     mirror = subprocess.run(
         [sys.executable, str(MIRROR_VALIDATOR)], cwd=REPO,
-        capture_output=True, text=True, check=True,
+        env=validator_environment(), capture_output=True, text=True, check=True,
     )
     print(mirror.stdout.strip(), flush=True)
     manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))

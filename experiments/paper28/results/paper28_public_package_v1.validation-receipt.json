@@ -11,7 +11,7 @@
   },
   "manifest_binding": {
     "path": "experiments/paper28/release-manifest.json",
-    "sha256": "d4795661fd555d5562eaaced947da0a841cbeb2c18b5221ac5c3c64c834fc1fd"
+    "sha256": "ffb70062e2f5fc7314de1ad7c7b1a1f514fdd7d361351640ef963032c1626690"
   },
   "nested_closures": {
     "finite_mirror": {
@@ -941,7 +941,7 @@
   },
   "release_identity": {
     "artifact_count": 240,
-    "closure_digest": "169afe7070c0d64645dc06240e0cdae9b45e7ec0dcff381c93b363a3c5d338ad",
+    "closure_digest": "2c7dfda8f6b24a050cb1c27a6da92573fcf98b830a5dcd94b3ec7402c235afc0",
     "ordered_artifacts": [
       {
         "path": "experiments/paper28/artifacts/P28_1B_BOUNDARY_LIFTABILITY_RESULTS.md",
@@ -1689,7 +1689,7 @@
       },
       {
         "path": "experiments/paper28/validation/paper28_release_validation_v1.receipt.json",
-        "sha256": "73031a92ac50db7a11910bc05807e38fce2769c26c88384d154245e282038478"
+        "sha256": "a6130df2f8f4ea59c17438f7be20dc085d8286662f97094de64722f15ffaffc6"
       },
       {
         "path": "experiments/paper28/validation/validate_lean_formalization.py",
@@ -1877,7 +1877,7 @@
       },
       {
         "path": "experiments/paper28/validation/validate_release.py",
-        "sha256": "500abb4e833c8abd3beab6c9317b9ac8eda4f1eacb253af0dc01c3d5bf1ad02d"
+        "sha256": "41f00dbf80af14c80a97e3ac55c79e8ec4a64d2954e79d28de91b95a03587d4c"
       },
       {
         "path": "figures/paper28/fig1_finite_mechanism_structure.dot",
@@ -1907,7 +1907,7 @@
   },
   "package_inventory": {
     "artifact_count": 243,
-    "closure_digest": "74d2a24672d97915a79416a80a02a7e6d7d16d7a2b1fae5272b46e547ffff21a",
+    "closure_digest": "3bd6d1b765e690ebf5e6b511773f6dc27ba4b5448925f7ce89121b2c98ef1caf",
     "ordered_artifacts": [
       {
         "path": "experiments/paper28/README.md",
@@ -2283,7 +2283,7 @@
       },
       {
         "path": "experiments/paper28/release-manifest.json",
-        "sha256": "d4795661fd555d5562eaaced947da0a841cbeb2c18b5221ac5c3c64c834fc1fd"
+        "sha256": "ffb70062e2f5fc7314de1ad7c7b1a1f514fdd7d361351640ef963032c1626690"
       },
       {
         "path": "experiments/paper28/results/paper28_boundary_generator_factorization_v1.json.gz",
@@ -2663,7 +2663,7 @@
       },
       {
         "path": "experiments/paper28/validation/paper28_release_validation_v1.receipt.json",
-        "sha256": "73031a92ac50db7a11910bc05807e38fce2769c26c88384d154245e282038478"
+        "sha256": "a6130df2f8f4ea59c17438f7be20dc085d8286662f97094de64722f15ffaffc6"
       },
       {
         "path": "experiments/paper28/validation/stage_mirror.py",
@@ -2855,7 +2855,7 @@
       },
       {
         "path": "experiments/paper28/validation/validate_release.py",
-        "sha256": "500abb4e833c8abd3beab6c9317b9ac8eda4f1eacb253af0dc01c3d5bf1ad02d"
+        "sha256": "41f00dbf80af14c80a97e3ac55c79e8ec4a64d2954e79d28de91b95a03587d4c"
       },
       {
         "path": "figures/paper28/fig1_finite_mechanism_structure.dot",
@@ -2888,5 +2888,5 @@
     "the release receipt does not certify an all-rank theorem",
     "the receipt does not occur in its own closure"
   ],
-  "content_sha256": "ae53d663f39f4196ce1a755ea4cb007d7e10b8adb55095b26dffcba86e18e4a1"
+  "content_sha256": "719fd00a90d5ca32a7c5ca97dd68051339de4025384576780fd12a7142fd759c"
 }

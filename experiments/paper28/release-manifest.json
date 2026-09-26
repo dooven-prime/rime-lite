@@ -61,7 +61,7 @@
       "role": "finite-validation-receipt",
       "closure_class": "theorem-facing-computational",
       "path": "experiments/paper28/validation/paper28_release_validation_v1.receipt.json",
-      "sha256": "73031a92ac50db7a11910bc05807e38fce2769c26c88384d154245e282038478"
+      "sha256": "a6130df2f8f4ea59c17438f7be20dc085d8286662f97094de64722f15ffaffc6"
     },
     {
       "role": "lean-validation-receipt",
@@ -79,7 +79,7 @@
       "role": "finite-replay-validator",
       "closure_class": "theorem-facing-computational",
       "path": "experiments/paper28/validation/validate_release.py",
-      "sha256": "500abb4e833c8abd3beab6c9317b9ac8eda4f1eacb253af0dc01c3d5bf1ad02d"
+      "sha256": "41f00dbf80af14c80a97e3ac55c79e8ec4a64d2954e79d28de91b95a03587d4c"
     },
     {
       "role": "public-package-validator",
