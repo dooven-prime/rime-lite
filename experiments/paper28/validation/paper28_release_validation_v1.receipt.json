@@ -1,0 +1,174 @@
+{
+  "schema": "paper28-local-release-validation-receipt-v1",
+  "status": "LOCAL_CLOSURE_VERIFICATION",
+  "scope": "20 manuscript-level finite result anchors",
+  "manifest_sha256": "14487f65db34466bd00bca8886ad193f6b0ef526e33cedd490c0403df16257e9",
+  "validator_sha256": "500abb4e833c8abd3beab6c9317b9ac8eda4f1eacb253af0dc01c3d5bf1ad02d",
+  "mirror_validator_sha256": "4dfa9638fd827d2de3bd685ee94a302b54690d5a447909a7e506f3d38fd5eb4a",
+  "upstream_inputs": [
+    {
+      "mirror": "experiments/paper28/inputs/single_defect_n7_extremal_carrier_input_v1.json",
+      "sha256": "129cbcbbe97e9af95673ce9e5716bfeea9e1a29f1a6c56e716ba135561142f65",
+      "source": "git:paper27-v1.0:experiments/paper27/results/single_defect_n7_extremal_carrier_input_v1.json"
+    },
+    {
+      "mirror": "experiments/paper28/inputs/single_defect_n6_rank4_activated_entry_exhaustiveness_v1.json",
+      "sha256": "e52a2dbad23ee8c86c18779de97e9bd129f45fe2f984a3772f89a2cb963deaa9",
+      "source": "git:paper27-v1.0:experiments/paper27/results/single_defect_n6_rank4_activated_entry_exhaustiveness_v1.json"
+    },
+    {
+      "mirror": "experiments/paper28/inputs/single_defect_n7_inherited_section_pilot_complete_v1.json",
+      "sha256": "fd6045934b8585d748d8684e1062e71ddc25bdf0865e154dae6eab16a1563182",
+      "source": "experiments/synchronizing_automata/results/single_defect_n7_inherited_section_pilot_complete_v1.json"
+    }
+  ],
+  "checks": [
+    {
+      "artifact_stem": "paper28_seed_mechanism_catalog_v1",
+      "validator_source": "experiments/synchronizing_automata/validation/validate_paper28_seed_mechanism_catalog.py",
+      "validator_sha256": "511a908dff56bb02da8bbe62511dcebc180bdf573042dcd59b2f4a564f8de6b3",
+      "input_options": [],
+      "status": "PASS"
+    },
+    {
+      "artifact_stem": "paper28_boundary_liftability_audit_v1",
+      "validator_source": "experiments/synchronizing_automata/validation/validate_paper28_boundary_liftability_audit.py",
+      "validator_sha256": "5702dd4ab175d3c2cbf9d92c37d4cc6944c7ba1498a6d405ea525456e1bb7219",
+      "input_options": [],
+      "status": "PASS"
+    },
+    {
+      "artifact_stem": "paper28_credit_composition_audit_v1",
+      "validator_source": "experiments/synchronizing_automata/validation/validate_paper28_credit_composition_audit.py",
+      "validator_sha256": "0d731d68259140560d79c2f71cb6d4218da1970079f31e836213ec85214bd425",
+      "input_options": [],
+      "status": "PASS"
+    },
+    {
+      "artifact_stem": "paper28_boundary_generator_factorization_v1",
+      "validator_source": "experiments/synchronizing_automata/validation/validate_paper28_boundary_generator_factorization.py",
+      "validator_sha256": "4a65ff8849a9c21070fe4d8c47db8951c10b1f540f786419d19f70ebc06cd337",
+      "input_options": [],
+      "status": "PASS"
+    },
+    {
+      "artifact_stem": "paper28_section_return_menu_audit_v1",
+      "validator_source": "experiments/synchronizing_automata/validation/validate_paper28_section_return_menu.py",
+      "validator_sha256": "14cf82c6db7dd66ce8eac3de91107c70926db5fcb582b2dae8039db419850edd",
+      "input_options": [],
+      "status": "PASS"
+    },
+    {
+      "artifact_stem": "paper28_rank5_section_return_evaluation_v1",
+      "validator_source": "experiments/synchronizing_automata/validation/validate_paper28_rank5_section_return.py",
+      "validator_sha256": "42348f376de2221bb98b37876c78b2b8863cb927aca7ea544456aed1d225fda9",
+      "input_options": [
+        "--n7-extremal-input=paper27-v1.0"
+      ],
+      "status": "PASS"
+    },
+    {
+      "artifact_stem": "paper28_second_rank4_section_return_evaluation_v1",
+      "validator_source": "experiments/synchronizing_automata/validation/validate_paper28_second_rank4_section_return.py",
+      "validator_sha256": "23524af03367e62b43d188f85f740e24f190d3cc624498cfb88493c7e4abeed8",
+      "input_options": [],
+      "status": "PASS"
+    },
+    {
+      "artifact_stem": "paper28_second_rank5_section_return_evaluation_v1",
+      "validator_source": "experiments/synchronizing_automata/validation/validate_paper28_second_rank5_section_return.py",
+      "validator_sha256": "72735afe1fb49b2d57f94330026c16cc46e23bca8686f0cc0f78e7c3aff0771b",
+      "input_options": [],
+      "status": "PASS"
+    },
+    {
+      "artifact_stem": "paper28_third_rank4_section_return_evaluation_v1",
+      "validator_source": "experiments/synchronizing_automata/validation/validate_paper28_third_rank4_section_return.py",
+      "validator_sha256": "24c19133cbb10974b340b1424cce87e9b54e3f6e5ebddba55e1150c6cfa5b428",
+      "input_options": [],
+      "status": "PASS"
+    },
+    {
+      "artifact_stem": "paper28_third_rank5_section_return_evaluation_v1",
+      "validator_source": "experiments/synchronizing_automata/validation/validate_paper28_third_rank5_section_return.py",
+      "validator_sha256": "286c173d597304154eaa7d0f30206caa0ac5a43762f3f681e9104d8f606686d7",
+      "input_options": [],
+      "status": "PASS"
+    },
+    {
+      "artifact_stem": "paper28_fourth_rank4_section_return_evaluation_v1",
+      "validator_source": "experiments/synchronizing_automata/validation/validate_paper28_fourth_rank4_section_return.py",
+      "validator_sha256": "d6b95afa7b2cf0ebe6f4824d807a798550561166a4d805d2f5b396107d3d1562",
+      "input_options": [],
+      "status": "PASS"
+    },
+    {
+      "artifact_stem": "paper28_fourth_rank5_section_return_evaluation_v1",
+      "validator_source": "experiments/synchronizing_automata/validation/validate_paper28_fourth_rank5_section_return.py",
+      "validator_sha256": "dba7a6eef0cc95be7661ba0d051a8cdf48528cc216f53c9f10d027b3d637be15",
+      "input_options": [],
+      "status": "PASS"
+    },
+    {
+      "artifact_stem": "paper28_fifth_rank4_section_return_evaluation_v1",
+      "validator_source": "experiments/synchronizing_automata/validation/validate_paper28_fifth_rank4_section_return.py",
+      "validator_sha256": "41654f8adbc7a792d8f172860c4502eb65322730290e7b99477f95bb03005d30",
+      "input_options": [],
+      "status": "PASS"
+    },
+    {
+      "artifact_stem": "paper28_fifth_rank5_section_return_evaluation_v1",
+      "validator_source": "experiments/synchronizing_automata/validation/validate_paper28_fifth_rank5_section_return.py",
+      "validator_sha256": "e6cd30747e7674f080d5df279f2cffff06dac495af3e6639c44aa54692d6d3cf",
+      "input_options": [],
+      "status": "PASS"
+    },
+    {
+      "artifact_stem": "paper28_fourth_mechanism_schema_declaration_v1",
+      "validator_source": "experiments/synchronizing_automata/validation/validate_paper28_fourth_mechanism_schema.py",
+      "validator_sha256": "19b8649c4daad553c39581e286153caa1129f385f64414cd87441702209252ef",
+      "input_options": [],
+      "status": "PASS"
+    },
+    {
+      "artifact_stem": "paper28_third_mechanism_schema_declaration_v1",
+      "validator_source": "experiments/synchronizing_automata/validation/validate_paper28_third_mechanism_schema.py",
+      "validator_sha256": "3038b82cf6e60173705ac079129313e2ab7a5e17a1bac9e468d067a3e93188f3",
+      "input_options": [],
+      "status": "PASS"
+    },
+    {
+      "artifact_stem": "paper28_gfpc_component_completion_v1",
+      "validator_source": "experiments/synchronizing_automata/validation/validate_paper28_gfpc_component_completion.py",
+      "validator_sha256": "cc9f271133b20c7319fe4664016dd94d4e8047b08ff92d3683d8fb4d234be38a",
+      "input_options": [],
+      "status": "PASS"
+    },
+    {
+      "artifact_stem": "paper28_pec_component_completion_v1",
+      "validator_source": "experiments/synchronizing_automata/validation/validate_paper28_pec_component_completion.py",
+      "validator_sha256": "ad54717357a0c5f4fc183b38c88508aec8d7ba3a1c69068ca8dfff726a5360c7",
+      "input_options": [],
+      "status": "PASS"
+    },
+    {
+      "artifact_stem": "paper28_fixed_scope_mechanism_cover_closure_v1",
+      "validator_source": "experiments/synchronizing_automata/validation/validate_paper28_fixed_scope_mechanism_cover.py",
+      "validator_sha256": "438091ae6a334980369d745374e520fad1fe5874249f4356e3ccf1c9b69a80af",
+      "input_options": [],
+      "status": "PASS"
+    },
+    {
+      "artifact_stem": "paper28_canonical_return_certificate_alignment_v1",
+      "validator_source": "experiments/synchronizing_automata/validation/validate_paper28_canonical_return_certificate_alignment.py",
+      "validator_sha256": "8dc8d289d58aa057f8327ae2646362319e8f94ca3a4cdd54e1acdd660388a6f6",
+      "input_options": [],
+      "status": "PASS"
+    }
+  ],
+  "nonclaims": [
+    "No original artifact or receipt was rewritten or re-signed.",
+    "This is local closure verification, not an independent implementation or publication receipt.",
+    "All-n projectable-origin supply and general admission remain open."
+  ]
+}

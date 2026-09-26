@@ -1,0 +1,70 @@
+{
+  "artifact": {
+    "construction_payload_sha256": "b66100175be1122d89abc8379195c9b5801389b3fe2acdd8f709aaa3a5481182",
+    "content_sha256": "50e9eac485e062dc46989026fcc1e4a5dbb6d578341581f149065c7e0b49db97",
+    "name": "paper28_third_rank5_section_candidate_v1.json.gz",
+    "sha256": "7a7cda86530c0f67e56527fbe7ea132920fb0dcab2700757e74075b35a70c0f2"
+  },
+  "inputs": {
+    "future_free_source_selection": {
+      "name": "paper28_third_rank5_return_candidate_selection_v1.json.gz",
+      "sha256": "a4349259f0deca744dc2ff54657851e909b973537a345e2f2295fdb73d20e6c5"
+    },
+    "lower_section_authority": {
+      "name": "paper28_third_rank4_section_return_evaluation_v1.json.gz",
+      "sha256": "8da85162ef764e3727937acc12e974b35b20b6c561f620ce5a74808dfc84c992"
+    }
+  },
+  "schema": "paper28-third-rank5-section-candidate-receipt-v1",
+  "source_closure": [
+    {
+      "path": "experiments/synchronizing_automata/paper28_prepare_third_rank5_section_candidate.py",
+      "sha256": "6b2cc97ff797d966882098df271761adf49df40dc25bd21ee58576e7d2542b0d"
+    },
+    {
+      "path": "experiments/synchronizing_automata/paper28_evaluate_third_rank4_section_return.py",
+      "sha256": "868d72c5a4a838bca09af5064db9d4c58e7117069217e1decf9cf66821d1d858"
+    },
+    {
+      "path": "experiments/synchronizing_automata/paper28_prepare_rank5_section_candidate.py",
+      "sha256": "9c38330a3a5c18870007dd7b6759f9d64de24f9ef58f0d33119f688083bbb0fb"
+    },
+    {
+      "path": "experiments/synchronizing_automata/paper28_select_third_rank5_return_candidate.py",
+      "sha256": "eabaa1dabc9de5906c23ca96a276be405dcfed22acd2655c280dde30a4e6d7aa"
+    },
+    {
+      "path": "experiments/synchronizing_automata/paper28_project_seed_mechanisms.py",
+      "sha256": "e0ae5c33710206edfb4c1b47c579d0ef7ba7ab73b62123f742199adaf3804739"
+    },
+    {
+      "path": "experiments/synchronizing_automata/paper28_factor_boundary_generators.py",
+      "sha256": "8f286c560d972192f842505ca7b0ec4623c51f13a134e658340b9cc32f3a9d5f"
+    },
+    {
+      "path": "experiments/synchronizing_automata/paper28_mechanism_schema.py",
+      "sha256": "6a54e1484219b452a611bdc8644870a2abb64a84d5624f2931c2d071395a30b3"
+    },
+    {
+      "path": "experiments/synchronizing_automata/section_return_core.py",
+      "sha256": "3e829799ae9df8fe77850813d8253f8a6f857182ac30b70dbd39e3a619d03df7"
+    },
+    {
+      "path": "experiments/synchronizing_automata/costed_endpoint_diagnostic.py",
+      "sha256": "65e094cd5a359df51b8cad7e2fd30c83d0361f9de39394d6c2de6884e91894b4"
+    },
+    {
+      "path": "experiments/synchronizing_automata/single_defect_macro_trap.py",
+      "sha256": "8529bff9ceb766b200863de4eadecdf1e6c525006b21c57c7bfae700ac8c4a4a"
+    },
+    {
+      "path": "experiments/synchronizing_automata/mass_maturity_legacy.py",
+      "sha256": "421bf7aaac0f0544f1401731ee3474dd4b8146e6b422889a91fc69af3726324b"
+    },
+    {
+      "path": "experiments/synchronizing_automata/validation/validate_paper28_third_rank5_section_candidate.py",
+      "sha256": "8bea1b2624cfa2723a1bc9704339f59795495e56b2ccec71ffda622eef2e1289"
+    }
+  ],
+  "verification_mode": "PRE_EVALUATION_WITH_BOUND_AUTHORITIES"
+}

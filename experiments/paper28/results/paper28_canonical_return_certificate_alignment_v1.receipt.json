@@ -1,0 +1,94 @@
+{
+  "artifact": {
+    "content_sha256": "60b206608883494e76f8124c4ab35c714088edcb8d79c7fc52abdee470f9a8ac",
+    "frozen_alignment_core_sha256": "969c59b14051c347fdf8da33a2c23e6d839abde9f2d521722c736c1e5b5901b6",
+    "name": "paper28_canonical_return_certificate_alignment_v1.json.gz",
+    "sha256": "69564521589c51f99dd3e29d96c554be19253ac73741c418ea1fa723c201e6f9"
+  },
+  "inputs": [
+    {
+      "name": "paper28_fixed_scope_projectability_support_separation_v1.json.gz",
+      "sha256": "f2e8274478cad6e6309a77f825fa15207873ca7f2f5960c5839c22224adcd7ad"
+    },
+    {
+      "name": "paper28_expanded_family_support_separation_v1.json.gz",
+      "sha256": "e40accb37fc3ad5aac42944ba9c09ec0c9c9127d396da8c979bdee1fd96a5069"
+    },
+    {
+      "name": "paper28_extremal_carrier_support_separation_v1.json.gz",
+      "sha256": "dd0dc64a4d31e600fa23b343d41faf4a1ed639d58891aa6f8b016e2dfdea982f"
+    },
+    {
+      "name": "paper28_ext_rank4_section_candidate_v1.json.gz",
+      "sha256": "af418987768e22c1dce097e69d6f0e267d8fb98eb7c68d8795b8097783cd1cb3"
+    },
+    {
+      "name": "paper28_second_rank4_section_candidate_v1.json.gz",
+      "sha256": "0fad98bbedbd54403b7e64acf05d61e0f8d6e3d6909ad109ed945b1f4a774b9f"
+    },
+    {
+      "name": "paper28_third_rank4_section_candidate_v1.json.gz",
+      "sha256": "c27f2d9ccdda192173afedcb52a0a94d5fbcf45e03f4a9932fd3b0d66a286171"
+    },
+    {
+      "name": "paper28_fourth_rank4_section_candidate_v1.json.gz",
+      "sha256": "42f1bc3591fab372f41698bcf2ff7a189ba5e90bc3f8623de8cce058f2ec5628"
+    },
+    {
+      "name": "paper28_fifth_rank4_section_candidate_v1.json.gz",
+      "sha256": "1912c43d9ea9644a9fae10fac947d871fd00c8eb6328aaf1ea61bba97f081fa7"
+    },
+    {
+      "name": "paper28_rank5_section_candidate_v1.json.gz",
+      "sha256": "62dd04f9625fab85fff6c15c8c9bb2871fa18a2b25625c179424d7053ee5225f"
+    },
+    {
+      "name": "paper28_second_rank5_section_candidate_v1.json.gz",
+      "sha256": "106f87b804f4a07b647e17a8d6a9c3d82bd711c076a20146cdb3ce817a8b5e0e"
+    },
+    {
+      "name": "paper28_third_rank5_section_candidate_v1.json.gz",
+      "sha256": "7a7cda86530c0f67e56527fbe7ea132920fb0dcab2700757e74075b35a70c0f2"
+    },
+    {
+      "name": "paper28_fourth_rank5_section_candidate_v1.json.gz",
+      "sha256": "3aeeb813467d97dd3d9df0bf9fda9bf9893e36492e783c1c6d4ba9af23549973"
+    },
+    {
+      "name": "paper28_fifth_rank5_section_candidate_v1.json.gz",
+      "sha256": "1eaec0e9bc82220383b6fe7d0364d7817c9f229106132decd7abdfbb8a912db6"
+    },
+    {
+      "name": "paper28_gfpc_component_completion_v1.json.gz",
+      "sha256": "59de702c5285d7739a70eac3f3f0bdcfafc7a72e14517b39454bea49bb5ab3af"
+    },
+    {
+      "name": "paper28_pec_component_completion_v1.json.gz",
+      "sha256": "3f6e4bc7758f518a956b3bc07021202b049af3f34a4132f8cb71f45b6edf48fd"
+    }
+  ],
+  "schema": "paper28-canonical-return-certificate-alignment-receipt-v1",
+  "source_closure": [
+    {
+      "name": "paper28_audit_canonical_return_certificate_alignment.py",
+      "sha256": "dfc87c24bbf4d0a9e60a2bfc460fc892a38cf35f91a27b6ec5d2c983ec76f186"
+    },
+    {
+      "name": "paper28_prepare_second_rank4_section_candidate.py",
+      "sha256": "18c4913ef5f228ae158e71b81ed24600ddbeca37b48e27ddd1d388a73f6a265b"
+    },
+    {
+      "name": "paper28_project_seed_mechanisms.py",
+      "sha256": "e0ae5c33710206edfb4c1b47c579d0ef7ba7ab73b62123f742199adaf3804739"
+    },
+    {
+      "name": "section_return_core.py",
+      "sha256": "3e829799ae9df8fe77850813d8253f8a6f857182ac30b70dbd39e3a619d03df7"
+    },
+    {
+      "name": "validation/validate_paper28_canonical_return_certificate_alignment.py",
+      "sha256": "8dc8d289d58aa057f8327ae2646362319e8f94ca3a4cdd54e1acdd660388a6f6"
+    }
+  ],
+  "verification_mode": "FULL_CANONICAL_REPLAY_THEN_POST_FREEZE_COMPONENT_TRANSPORT"
+}

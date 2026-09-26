@@ -1,0 +1,34 @@
+{
+  "artifact": {
+    "content_sha256": "fa6cea5cdaf60d6c279dc250453adc1f3fc296d44b69ca691b5c0acf7449b4c4",
+    "name": "paper28_rank5_section_return_evaluation_v1.json.gz",
+    "sha256": "e6012755d76a3c884f50d1f4ba5d528b18f34e6cca36af61e8950cd70d5f820a"
+  },
+  "inputs": {
+    "candidate": {
+      "construction_payload_sha256": "8256ead5e362bbdb03ee80014d1a369eaaa112770fe7e5d9f73f604fd2f0f2c9",
+      "content_sha256": "d0c82be3ae6f052f357c6ef6b3e34448c3465c4611f9f151a99e731aadbd0615",
+      "name": "paper28_rank5_section_candidate_v1.json.gz",
+      "schema": "paper28-rank5-section-return-candidate-v1",
+      "sha256": "62dd04f9625fab85fff6c15c8c9bb2871fa18a2b25625c179424d7053ee5225f"
+    },
+    "lower_section": {
+      "name": "single_defect_n7_extremal_carrier_input_v1.json",
+      "schema": "SINGLE_DEFECT_N7_EXTREMAL_CHANNEL_COVER_V1",
+      "section_keys_sha256": "fbb13eaf2bb075c1f5ce89bf094218b6c2d65cc432eccf0df69e9593697f001a",
+      "sha256": "129cbcbbe97e9af95673ce9e5716bfeea9e1a29f1a6c56e716ba135561142f65"
+    }
+  },
+  "schema": "paper28-rank5-section-return-evaluation-receipt-v1",
+  "source_closure": [
+    {
+      "path": "experiments/synchronizing_automata/paper28_evaluate_rank5_section_return.py",
+      "sha256": "5760bbe1bb5f70b13686e2cebe7992a4ffd8ea6f0551d2febfba9685cf947c9d"
+    },
+    {
+      "path": "experiments/synchronizing_automata/validation/validate_paper28_rank5_section_return.py",
+      "sha256": "42348f376de2221bb98b37876c78b2b8863cb927aca7ea544456aed1d225fda9"
+    }
+  ],
+  "verification_mode": "LOCAL_REPLAY_FROM_FROZEN_CANDIDATE"
+}

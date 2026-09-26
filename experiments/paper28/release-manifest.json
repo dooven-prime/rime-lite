@@ -1,0 +1,143 @@
+{
+  "schema": "rime.paper28.release-manifest.v1",
+  "paper_id": "PAPER28",
+  "release_version": "1.0",
+  "status": "RELEASE_CANDIDATE",
+  "release_identity_claimed": false,
+  "validation_mode": "LOCAL_CLOSURE_VERIFICATION",
+  "receipt_self_exclusion": true,
+  "digest_policy": {
+    "algorithm": "sha256",
+    "scope": "exact_file_bytes",
+    "path_resolution": "exact repository-relative path",
+    "wildcards_allowed": false,
+    "absolute_paths_allowed": false,
+    "current_head_fallback_allowed": false
+  },
+  "artifacts": [
+    {
+      "role": "manuscript",
+      "closure_class": "normative-manuscript-build",
+      "path": "papers/paper28/Paper XXVIII.md",
+      "sha256": "685228a90e10d95732193d078163934094715e04b7a043a68a298c39350e4042"
+    },
+    {
+      "role": "reader-pdf",
+      "closure_class": "normative-manuscript-build",
+      "path": "papers/paper28/paper28_arxiv.pdf",
+      "sha256": "9285c6b30aafb4b5737fc1f4672541980bfce44239b8a86a114a4753f8fa32b2"
+    },
+    {
+      "role": "bibliography",
+      "closure_class": "normative-manuscript-build",
+      "path": "papers/paper28/references-v1.bib",
+      "sha256": "e151aa2763e3c67b414ec8fb7191145c8fd057b02aee2d344c122d9ae6adfa1f"
+    },
+    {
+      "role": "reader-figure",
+      "closure_class": "normative-manuscript-build",
+      "path": "figures/paper28/fig1_finite_mechanism_structure.png",
+      "sha256": "6c03a72a9fa49a1568d59ffc1b76499be40e2e6ad0cdbe3a6ae5602b29b17a76"
+    },
+    {
+      "role": "figure-source",
+      "closure_class": "normative-manuscript-build",
+      "path": "figures/paper28/fig1_finite_mechanism_structure.dot",
+      "sha256": "c1a45f99f584a2d99799db811212514d21d971f6a1caf83c07b60f77f6fc0733"
+    },
+    {
+      "role": "figure-renderer",
+      "closure_class": "normative-manuscript-build",
+      "path": "figures/paper28/render.py",
+      "sha256": "424a9ed9f517f3f2cdab9c9f88c7f071aa4c940f51cd8e60bba67e5a9dff4afe"
+    },
+    {
+      "role": "finite-mirror-manifest",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper28/dependency-manifest.json",
+      "sha256": "14487f65db34466bd00bca8886ad193f6b0ef526e33cedd490c0403df16257e9"
+    },
+    {
+      "role": "finite-validation-receipt",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper28/validation/paper28_release_validation_v1.receipt.json",
+      "sha256": "73031a92ac50db7a11910bc05807e38fce2769c26c88384d154245e282038478"
+    },
+    {
+      "role": "lean-validation-receipt",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper28/results/paper28_lean_formalization_v1.receipt.json",
+      "sha256": "6a96249ca5699c1e0aa6343a9fa0e22cad9919272570eaceb5a5d8432ec2959d"
+    },
+    {
+      "role": "finite-mirror-validator",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper28/validation/validate_mirror.py",
+      "sha256": "4dfa9638fd827d2de3bd685ee94a302b54690d5a447909a7e506f3d38fd5eb4a"
+    },
+    {
+      "role": "finite-replay-validator",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper28/validation/validate_release.py",
+      "sha256": "500abb4e833c8abd3beab6c9317b9ac8eda4f1eacb253af0dc01c3d5bf1ad02d"
+    },
+    {
+      "role": "public-package-validator",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper28/validation/validate_public_package.py",
+      "sha256": "debeb6e8d58f15470caf3218ab192a38797f3d16457658bf2f22de4c6a5132cb"
+    },
+    {
+      "role": "evidence-readme",
+      "closure_class": "public-package-documentation",
+      "path": "experiments/paper28/README.md",
+      "sha256": "c38d28b2e12462243d57343d57e6b91523b419929f1b24c848ec011eb96f832f"
+    },
+    {
+      "role": "mirror-staging-tool",
+      "closure_class": "public-package-documentation",
+      "path": "experiments/paper28/validation/stage_mirror.py",
+      "sha256": "eaf0882c017d640bd42cfc268a02c9b44db7ad706714d28003e6cd205fb34f57"
+    }
+  ],
+  "nested_closures": {
+    "finite_mirror": {
+      "manifest": "experiments/paper28/dependency-manifest.json",
+      "validation_receipt": "experiments/paper28/validation/paper28_release_validation_v1.receipt.json"
+    },
+    "lean_formalization": {
+      "validation_receipt": "experiments/paper28/results/paper28_lean_formalization_v1.receipt.json"
+    }
+  },
+  "claim_boundary": [
+    "fixed finite n=6 and n=7 carriers only",
+    "no all-rank projectable-origin theorem",
+    "no uniform mechanism selector",
+    "no universal reset bound",
+    "local closure verification is not independent mathematical validation"
+  ],
+  "release_candidate_date": "2026-09-27",
+  "excluded_from_package_inventory": [
+    "experiments/paper28/results/paper28_public_package_v1.validation-receipt.json",
+    "experiments/paper28/lean/.lake/**",
+    "**/__pycache__/**",
+    "**/*.pyc"
+  ],
+  "closure_policy": {
+    "classes": [
+      "normative-manuscript-build",
+      "theorem-facing-computational",
+      "public-package-documentation"
+    ],
+    "release_identity_classes": [
+      "normative-manuscript-build",
+      "theorem-facing-computational"
+    ],
+    "package_inventory_classes": [
+      "normative-manuscript-build",
+      "theorem-facing-computational",
+      "public-package-documentation"
+    ],
+    "note": "The finite mirror and Lean receipt are nested source-addressed closures. Public documentation is integrity-checked but excluded from release identity."
+  }
+}

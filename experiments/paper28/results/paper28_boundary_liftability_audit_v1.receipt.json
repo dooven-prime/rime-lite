@@ -1,0 +1,28 @@
+{
+  "artifact": {
+    "content_sha256": "6e6fe5e06b0548290858cecbeb9a6256ffd3f969e806f00e41e30162ba088b5e",
+    "path": "experiments/synchronizing_automata/results/paper28_boundary_liftability_audit_v1.json",
+    "sha256": "84433e7b5af15e269583ab19bae0807bc230f7a4e8f7f83e13624363d4442186"
+  },
+  "input": {
+    "content_sha256": "05d85532787185631536d16f406587166751dbea59618e6942637af0b432b8a7",
+    "path": "experiments/synchronizing_automata/results/paper28_seed_mechanism_catalog_v1.json.gz",
+    "sha256": "e2391bcaab167e8a0892068312a711a39e353bc96ae66649e8f7707691745b57"
+  },
+  "schema": "paper28-boundary-liftability-audit-receipt-v1",
+  "source_closure": [
+    {
+      "path": "experiments/synchronizing_automata/paper28_audit_boundary_liftability.py",
+      "sha256": "f20e458018a28b78d0d586622e262f43124078bb24d58a44e756cf29b06ec2d9"
+    },
+    {
+      "path": "experiments/synchronizing_automata/paper28_mechanism_schema.py",
+      "sha256": "6a54e1484219b452a611bdc8644870a2abb64a84d5624f2931c2d071395a30b3"
+    },
+    {
+      "path": "experiments/synchronizing_automata/validation/validate_paper28_boundary_liftability_audit.py",
+      "sha256": "5702dd4ab175d3c2cbf9d92c37d4cc6944c7ba1498a6d405ea525456e1bb7219"
+    }
+  ],
+  "verification_mode": "LOCAL_REPLAY_FROM_BOUND_CANONICAL_CATALOG"
+}

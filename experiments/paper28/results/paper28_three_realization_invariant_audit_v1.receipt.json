@@ -1,0 +1,49 @@
+{
+  "artifact": {
+    "content_sha256": "892e350d9f33117043d6a701dd3a4f3d3cd916da70568e38b6047bd99cf032cf",
+    "name": "paper28_three_realization_invariant_audit_v1.json",
+    "sha256": "d41101c9eb917c0368488e92b5d23245942161a19e6c7ea95a781d3552036707"
+  },
+  "inputs": {
+    "third_overlap": {
+      "name": "paper28_third_rank4_section_overlap_audit_v1.json",
+      "sha256": "879c5cbf11c340905e3dc7c8ca4de2bcb9edca698b1da35c4d4947ad3935c6ba"
+    },
+    "third_rank4_candidate": {
+      "name": "paper28_third_rank4_section_candidate_v1.json.gz",
+      "sha256": "c27f2d9ccdda192173afedcb52a0a94d5fbcf45e03f4a9932fd3b0d66a286171"
+    },
+    "third_rank4_evaluation": {
+      "name": "paper28_third_rank4_section_return_evaluation_v1.json.gz",
+      "sha256": "8da85162ef764e3727937acc12e974b35b20b6c561f620ce5a74808dfc84c992"
+    },
+    "third_rank5_candidate": {
+      "name": "paper28_third_rank5_section_candidate_v1.json.gz",
+      "sha256": "7a7cda86530c0f67e56527fbe7ea132920fb0dcab2700757e74075b35a70c0f2"
+    },
+    "third_rank5_evaluation": {
+      "name": "paper28_third_rank5_section_return_evaluation_v1.json.gz",
+      "sha256": "1e3bc0501c5af31815784996396820f6f52fc7b8edb6b8c3cbf96f166173649c"
+    },
+    "third_selection": {
+      "name": "paper28_third_rank5_return_candidate_selection_v1.json.gz",
+      "sha256": "a4349259f0deca744dc2ff54657851e909b973537a345e2f2295fdb73d20e6c5"
+    },
+    "two_chain_audit": {
+      "name": "paper28_cross_realization_invariant_audit_v1.json",
+      "sha256": "88da2ab2378b17f9b01e64200d144d33b86a2e5be61fdd967cfc441f0ac72412"
+    }
+  },
+  "schema": "paper28-three-realization-invariant-audit-receipt-v1",
+  "source_closure": [
+    {
+      "path": "experiments/synchronizing_automata/paper28_three_realization_invariant_audit.py",
+      "sha256": "e5877950c9d2d5d5092dfc646852bbf7d799b47a599d7d6613217bf67ef2903c"
+    },
+    {
+      "path": "experiments/synchronizing_automata/validation/validate_paper28_three_realization_invariant_audit.py",
+      "sha256": "f9f25d193f1c294a63d43df87d69f6243265960bf2bb194ca7cdc090834f28a8"
+    }
+  ],
+  "verification_mode": "THREE_REALIZATION_CROSS_ARTIFACT_REPLAY"
+}

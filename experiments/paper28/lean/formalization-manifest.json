@@ -1,0 +1,28 @@
+{
+  "schema": "rime.paper28.lean-formalization-manifest.v1",
+  "formalization_id": "PAPER28-DATA-INDEPENDENT-SPINE-V1",
+  "status": "PARTIAL_FORMALIZATION",
+  "validation_mode": "LOCAL_CLOSURE_VERIFICATION",
+  "entry_point": "experiments/paper28/lean/Paper28.lean",
+  "lean_toolchain": "leanprover/lean4:v4.33.0",
+  "dependencies": "Lean standard library only",
+  "source_files": [
+    "experiments/paper28/lean/Paper28.lean",
+    "experiments/paper28/lean/Paper28/Credit.lean",
+    "experiments/paper28/lean/Paper28/Return.lean",
+    "experiments/paper28/lean/Paper28/Alignment.lean"
+  ],
+  "build_command": "cd experiments/paper28/lean && lake build",
+  "manuscript_coverage": [
+    "Proposition 4.1 conditional surplus-to-credit and compatible composition algebra",
+    "Theorem 5.1 existential return composition after its finite hypotheses are supplied",
+    "Theorem 6.2 observable-preserving return transport after finite alignment is supplied",
+    "same-witness and non-surjectivity negative controls"
+  ],
+  "explicit_noncoverage": [
+    "F1 future-free construction and concrete F2-F4 exact replay or handoff proofs",
+    "finite source declarations, menus, lift fibers, and return coverage",
+    "11,252 receipt checks, 26,995 alignment checks, and finite JSON artifacts",
+    "Projectable-Origin Supply, Cover/Admission, all-rank F5, Forced FFS, General FFS"
+  ]
+}

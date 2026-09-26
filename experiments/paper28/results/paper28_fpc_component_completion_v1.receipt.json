@@ -1,0 +1,54 @@
+{
+  "artifact": {
+    "content_sha256": "d8e9a18f613ad9320df2b2086d42a6caab4568a361e6ef14fc50b5de0b849851",
+    "frozen_completion_input_sha256": "5bec75ffb2812431b45509836236d5f617425fe82a48043b6e2d3543527cd9da",
+    "name": "paper28_fpc_component_completion_v1.json.gz",
+    "sha256": "67a4b4b7ab2815d5746f7961283fad43c3b5e5c7a599f7e58ff78adf0ff86a7a"
+  },
+  "inputs": [
+    {
+      "name": "paper28_second_mechanism_schema_declaration_v1.json.gz",
+      "sha256": "6b11f9594207cbe9561936470ba1ff44499d0e4470b00e64fa231c12b56cac25"
+    },
+    {
+      "name": "paper28_fixed_scope_projectability_support_separation_v1.json.gz",
+      "sha256": "f2e8274478cad6e6309a77f825fa15207873ca7f2f5960c5839c22224adcd7ad"
+    },
+    {
+      "name": "paper28_second_rank4_section_candidate_v1.json.gz",
+      "sha256": "0fad98bbedbd54403b7e64acf05d61e0f8d6e3d6909ad109ed945b1f4a774b9f"
+    }
+  ],
+  "schema": "paper28-fpc-component-completion-receipt-v1",
+  "source_closure": [
+    {
+      "name": "paper28_evaluate_fpc_component_completion.py",
+      "sha256": "a116677a59e8c2b9bb7c9c1be8b60f6209b1283bd3ccf461013088402ad8deae"
+    },
+    {
+      "name": "paper28_prepare_second_rank4_section_candidate.py",
+      "sha256": "18c4913ef5f228ae158e71b81ed24600ddbeca37b48e27ddd1d388a73f6a265b"
+    },
+    {
+      "name": "section_return_core.py",
+      "sha256": "3e829799ae9df8fe77850813d8253f8a6f857182ac30b70dbd39e3a619d03df7"
+    },
+    {
+      "name": "costed_endpoint_diagnostic.py",
+      "sha256": "65e094cd5a359df51b8cad7e2fd30c83d0361f9de39394d6c2de6884e91894b4"
+    },
+    {
+      "name": "single_defect_macro_trap.py",
+      "sha256": "8529bff9ceb766b200863de4eadecdf1e6c525006b21c57c7bfae700ac8c4a4a"
+    },
+    {
+      "name": "mass_maturity_legacy.py",
+      "sha256": "421bf7aaac0f0544f1401731ee3474dd4b8146e6b422889a91fc69af3726324b"
+    },
+    {
+      "name": "validation/validate_paper28_fpc_component_completion.py",
+      "sha256": "4d1b0cb482eda810feda5e26589dfc4abfa9c647f6d564e835f3ecac52193e1e"
+    }
+  ],
+  "verification_mode": "POST_DECLARATION_GENERIC_LOCAL_RETURN_EVALUATION"
+}

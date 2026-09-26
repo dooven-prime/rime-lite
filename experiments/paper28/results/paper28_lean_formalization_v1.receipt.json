@@ -1,0 +1,89 @@
+{
+  "schema": "rime.paper28.lean-formalization-receipt.v1",
+  "artifact_id": "PAPER28-DATA-INDEPENDENT-SPINE-V1-ELABORATED",
+  "formalization_id": "PAPER28-DATA-INDEPENDENT-SPINE-V1",
+  "status": "PASS",
+  "validation_mode": "LOCAL_CLOSURE_VERIFICATION",
+  "receipt_self_exclusion": true,
+  "elaboration_commands": [
+    "lake build",
+    "lake env lean Paper28.lean"
+  ],
+  "artifact_closure": {
+    "artifact_count": 10,
+    "closure_digest": "4d511110e76653ed66a39a6ced3d1a91dc3d870664623692bc7cf95283aa4b76",
+    "ordered_artifacts": [
+      {
+        "role": "formalization-manifest",
+        "artifact": {
+          "uri": "experiments/paper28/lean/formalization-manifest.json",
+          "sha256": "88a4e360d78edbe3307eeddf081d7e3464d179dc63b8c86248db5cbeb630fb62"
+        }
+      },
+      {
+        "role": "formalization-readme",
+        "artifact": {
+          "uri": "experiments/paper28/lean/README.md",
+          "sha256": "82cd908d8b27a40732bf857696cadb5b91cf8e81751ba1dd54d237f1d2c56b77"
+        }
+      },
+      {
+        "role": "lean-toolchain",
+        "artifact": {
+          "uri": "experiments/paper28/lean/lean-toolchain",
+          "sha256": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b"
+        }
+      },
+      {
+        "role": "lake-project",
+        "artifact": {
+          "uri": "experiments/paper28/lean/lakefile.toml",
+          "sha256": "da5c2ecea01e11157e00e66416d53deb9e87cfc99f747cd7fa82198fb8f70e17"
+        }
+      },
+      {
+        "role": "lake-lock",
+        "artifact": {
+          "uri": "experiments/paper28/lean/lake-manifest.json",
+          "sha256": "1c6ecf661d3cab9205a141e71c8b2019d8655a192954207678abb9b9e08cd322"
+        }
+      },
+      {
+        "role": "lean-source",
+        "artifact": {
+          "uri": "experiments/paper28/lean/Paper28.lean",
+          "sha256": "1effcdf124256abc2f19c07c9f104bd11d9cc8007435266ae68931d88cf8902a"
+        }
+      },
+      {
+        "role": "lean-source",
+        "artifact": {
+          "uri": "experiments/paper28/lean/Paper28/Credit.lean",
+          "sha256": "43dc051b272a7737add795fa356c6712f5e5280d61befad9be0b3ecbf4c60593"
+        }
+      },
+      {
+        "role": "lean-source",
+        "artifact": {
+          "uri": "experiments/paper28/lean/Paper28/Return.lean",
+          "sha256": "f27e51b993efa744a93c79ca6f2892b3f39af763f26200b17c4b2a5828ed98e8"
+        }
+      },
+      {
+        "role": "lean-source",
+        "artifact": {
+          "uri": "experiments/paper28/lean/Paper28/Alignment.lean",
+          "sha256": "41ae33c296a81fe47cf918f6a2d512be1e0e890548c8301763e374488cc84d88"
+        }
+      },
+      {
+        "role": "formalization-validator",
+        "artifact": {
+          "uri": "experiments/paper28/validation/validate_lean_formalization.py",
+          "sha256": "f181e7fa0107c6145b97ed8ace7545b2b903c025be323781ac85d0491fd78c91"
+        }
+      }
+    ]
+  },
+  "content_sha256": "25c46052835d0fc96cc8310cd2bf8d059e5c0278e179fcf9243fb6d2699abbed"
+}

@@ -25,6 +25,25 @@ experiments/paper14/results/v2.1/**/*.sofaction text eol=lf
 # that historical checkout contract while keeping the v2.1 revision canonical LF.
 experiments/paper12/results/**/*.json text eol=crlf
 experiments/paper12/results/v2.1/**/*.json text eol=lf
+# Paper XXVIII imports thirteen registered exact-byte JSON materializations.
+# Store their CRLF bytes verbatim so checkouts and source archives preserve the
+# paper-owned mirror closure; all other Paper XXVIII JSON remains canonical LF.
+experiments/paper28/inputs/single_defect_n7_inherited_section_pilot_complete_v1.json -text whitespace=cr-at-eol
+experiments/paper28/results/paper28_canonical_return_certificate_alignment_v1.receipt.json -text whitespace=cr-at-eol
+experiments/paper28/results/paper28_expanded_family_support_separation_v1.receipt.json -text whitespace=cr-at-eol
+experiments/paper28/results/paper28_ext_rank4_section_candidate_v1.receipt.json -text whitespace=cr-at-eol
+experiments/paper28/results/paper28_extremal_carrier_support_separation_v1.receipt.json -text whitespace=cr-at-eol
+experiments/paper28/results/paper28_fixed_scope_mechanism_cover_closure_v1.receipt.json -text whitespace=cr-at-eol
+experiments/paper28/results/paper28_fixed_scope_projectability_support_separation_v1.receipt.json -text whitespace=cr-at-eol
+experiments/paper28/results/paper28_fourth_mechanism_schema_declaration_v1.receipt.json -text whitespace=cr-at-eol
+experiments/paper28/results/paper28_fpc_component_completion_v1.receipt.json -text whitespace=cr-at-eol
+experiments/paper28/results/paper28_gfpc_component_completion_v1.receipt.json -text whitespace=cr-at-eol
+experiments/paper28/results/paper28_pec_component_completion_v1.receipt.json -text whitespace=cr-at-eol
+experiments/paper28/results/paper28_second_mechanism_schema_declaration_v1.receipt.json -text whitespace=cr-at-eol
+experiments/paper28/results/paper28_third_mechanism_schema_declaration_v1.receipt.json -text whitespace=cr-at-eol
+experiments/paper28/artifacts/P28_3_BOUNDARY_GENERATOR_RESULTS.md whitespace=-blank-at-eof
+experiments/paper28/artifacts/P28_5K_THIRD_RANK5_SECTION_RETURN_RESULTS.md whitespace=-blank-at-eof
+figures/paper28/*.dot text eol=lf
 figures/**/*.py text eol=lf
 tests/**/*.py text eol=lf
 tests/**/*.json text eol=lf

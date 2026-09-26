@@ -1,0 +1,44 @@
+{
+  "claim_boundary": {
+    "not_claimed": [
+      "third carrier section authority",
+      "Good_4 success for the third carrier",
+      "absence of a coarser typed isomorphism"
+    ],
+    "proved": "exact typed identity overlap of the two frozen rank-four surfaces"
+  },
+  "content_sha256": "001284ad9c3efbbc5ead70414e57e0ecd6eaeaf92984d453b269d10244ecad5e",
+  "inputs": {
+    "second_section_authority": {
+      "authority_status": "GRANTED_BY_FIXED_SCOPE_GOOD4_EVALUATION",
+      "content_sha256": "84e5af3ceb31c555323b01e3d632463ce461447ddc56ee45c1450df1f797b60e",
+      "name": "paper28_second_rank4_section_return_evaluation_v1.json.gz",
+      "schema": "paper28-second-rank4-section-return-evaluation-v1",
+      "sha256": "a82c3ba7719995ecbc6ec44178836ffdd1c406ac145803a852252db5016377f9"
+    },
+    "third_candidate": {
+      "candidate_payload_sha256": "db15ca4ce24f43e40a91fc505ebbebe37d9f7cd6d95231f7473fe02284631891",
+      "content_sha256": "40d5cd37c4a771518966ba7427db29e9beb66b2ac6fd5eb1eb53f935f24d60d2",
+      "name": "paper28_third_rank5_return_candidate_selection_v1.json.gz",
+      "schema": "paper28-third-rank5-return-candidate-selection-v1",
+      "sha256": "a4349259f0deca744dc2ff54657851e909b973537a345e2f2295fdb73d20e6c5"
+    }
+  },
+  "overlap": {
+    "classification": "DISJOINT_TYPED_CONTEXTS",
+    "intersection_context_ids": [],
+    "intersection_count": 0,
+    "second_only_count": 48,
+    "second_section_context_count": 48,
+    "third_candidate_context_count": 36,
+    "third_only_count": 36
+  },
+  "schema": "paper28-third-rank4-section-overlap-audit-v1",
+  "scope": {
+    "ambient_n": 7,
+    "candidate_membership_mutated": false,
+    "good_4_evaluated": false,
+    "menu_constructed": false
+  },
+  "typed_identity": "canonical context id computed from ambient n, rooted action, labelled packet placement, and distinguished packet"
+}

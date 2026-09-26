@@ -1,0 +1,36 @@
+{
+  "artifact": {
+    "content_sha256": "1e68721fb8326016f07a32f58c8c22ab1c4085172fd731db1c419b78af9e9e6c",
+    "name": "paper28_boundary_generator_factorization_v1.json.gz",
+    "sha256": "014768a1d2d1a63c7f88f506a69fdda645b8f2beda4ead74d6494a0a1a551f26"
+  },
+  "input": {
+    "content_sha256": "05d85532787185631536d16f406587166751dbea59618e6942637af0b432b8a7",
+    "name": "paper28_seed_mechanism_catalog_v1.json.gz",
+    "sha256": "e2391bcaab167e8a0892068312a711a39e353bc96ae66649e8f7707691745b57"
+  },
+  "schema": "paper28-boundary-generator-factorization-receipt-v1",
+  "source_closure": [
+    {
+      "path": "experiments/synchronizing_automata/paper28_factor_boundary_generators.py",
+      "sha256": "8f286c560d972192f842505ca7b0ec4623c51f13a134e658340b9cc32f3a9d5f"
+    },
+    {
+      "path": "experiments/synchronizing_automata/paper28_mechanism_schema.py",
+      "sha256": "6a54e1484219b452a611bdc8644870a2abb64a84d5624f2931c2d071395a30b3"
+    },
+    {
+      "path": "experiments/synchronizing_automata/section_return_core.py",
+      "sha256": "3e829799ae9df8fe77850813d8253f8a6f857182ac30b70dbd39e3a619d03df7"
+    },
+    {
+      "path": "experiments/synchronizing_automata/mass_maturity_legacy.py",
+      "sha256": "421bf7aaac0f0544f1401731ee3474dd4b8146e6b422889a91fc69af3726324b"
+    },
+    {
+      "path": "experiments/synchronizing_automata/validation/validate_paper28_boundary_generator_factorization.py",
+      "sha256": "4a65ff8849a9c21070fe4d8c47db8951c10b1f540f786419d19f70ebc06cd337"
+    }
+  ],
+  "verification_mode": "FULL_RECOMPUTATION_FROM_CANONICAL_SEED_CATALOG"
+}

@@ -1,0 +1,86 @@
+{
+  "artifact": {
+    "content_sha256": "91015e4632a6992d2bdf6db2bfbb9bfdf83d7ea7f275fc48a93128321fa33636",
+    "name": "paper28_fifth_rank4_section_return_evaluation_v1.json.gz",
+    "sha256": "23961258aff1ebf976ad67c148229b4506852a56fffb3bb1035eca6079e246de"
+  },
+  "input": {
+    "construction_payload_sha256": "1083f60d5c08e086d9e37c1d79f7d9c92705038d7305296f8521d514bdeb7d8d",
+    "content_sha256": "880f26f18b030e9092381a97bbc3b20fafbd68f78c9de4acbacde85d8d2947f9",
+    "name": "paper28_fifth_rank4_section_candidate_v1.json.gz",
+    "schema": "paper28-fifth-rank4-section-candidate-v1",
+    "sha256": "1912c43d9ea9644a9fae10fac947d871fd00c8eb6328aaf1ea61bba97f081fa7"
+  },
+  "schema": "paper28-fifth-rank4-section-return-evaluation-receipt-v1",
+  "source_closure": [
+    {
+      "path": "experiments/synchronizing_automata/paper28_evaluate_fifth_rank4_section_return.py",
+      "sha256": "9a6f1e671d8db156243601fb942cfd064287ffff591d5b40b20c2f71577def67"
+    },
+    {
+      "path": "experiments/synchronizing_automata/paper28_prepare_fifth_rank4_section_candidate.py",
+      "sha256": "0c6122855d3f5ecdc238ca0ccc03ae0fb8b630c0f894c185d376bb5910874945"
+    },
+    {
+      "path": "experiments/synchronizing_automata/paper28_select_non_length_three_hostile.py",
+      "sha256": "adcafeda717383f08e7eea2d8fc9e52df096c63c26f40dbe1ea7b3cfc1ad6191"
+    },
+    {
+      "path": "experiments/synchronizing_automata/paper28_audit_fifth_rank4_section_overlap.py",
+      "sha256": "c46f64733acace1a4faf45dbe92a253642f005572808adc8648a6f937b9193dc"
+    },
+    {
+      "path": "experiments/synchronizing_automata/paper28_prepare_fourth_rank4_section_candidate.py",
+      "sha256": "679bb13799c29cb2a8a2df893be96c65aeefc403af96762b7786aa2e31a417cb"
+    },
+    {
+      "path": "experiments/synchronizing_automata/paper28_prepare_third_rank4_section_candidate.py",
+      "sha256": "f1ea2b0a0edd6837e2821ecaedf284094297a3f1b21ceccb98fa3241f7901c61"
+    },
+    {
+      "path": "experiments/synchronizing_automata/paper28_prepare_second_rank4_section_candidate.py",
+      "sha256": "18c4913ef5f228ae158e71b81ed24600ddbeca37b48e27ddd1d388a73f6a265b"
+    },
+    {
+      "path": "experiments/synchronizing_automata/paper28_select_second_rank5_return_candidate.py",
+      "sha256": "6244b411f782d313b9947432e9de1084a1d6d7a88e4e761b9ae2d73849367ff4"
+    },
+    {
+      "path": "experiments/synchronizing_automata/paper28_project_seed_mechanisms.py",
+      "sha256": "e0ae5c33710206edfb4c1b47c579d0ef7ba7ab73b62123f742199adaf3804739"
+    },
+    {
+      "path": "experiments/synchronizing_automata/paper28_factor_boundary_generators.py",
+      "sha256": "8f286c560d972192f842505ca7b0ec4623c51f13a134e658340b9cc32f3a9d5f"
+    },
+    {
+      "path": "experiments/synchronizing_automata/paper28_mechanism_schema.py",
+      "sha256": "6a54e1484219b452a611bdc8644870a2abb64a84d5624f2931c2d071395a30b3"
+    },
+    {
+      "path": "experiments/synchronizing_automata/section_return_core.py",
+      "sha256": "3e829799ae9df8fe77850813d8253f8a6f857182ac30b70dbd39e3a619d03df7"
+    },
+    {
+      "path": "experiments/synchronizing_automata/costed_endpoint_diagnostic.py",
+      "sha256": "65e094cd5a359df51b8cad7e2fd30c83d0361f9de39394d6c2de6884e91894b4"
+    },
+    {
+      "path": "experiments/synchronizing_automata/single_defect_macro_trap.py",
+      "sha256": "8529bff9ceb766b200863de4eadecdf1e6c525006b21c57c7bfae700ac8c4a4a"
+    },
+    {
+      "path": "experiments/synchronizing_automata/mass_maturity_legacy.py",
+      "sha256": "421bf7aaac0f0544f1401731ee3474dd4b8146e6b422889a91fc69af3726324b"
+    },
+    {
+      "path": "experiments/synchronizing_automata/single_defect_transport.py",
+      "sha256": "a2a4ba0ca5ddaf8744eb8a736d8510ce138baaf0097791504d2baa03a2f01c0b"
+    },
+    {
+      "path": "experiments/synchronizing_automata/validation/validate_paper28_fifth_rank4_section_return.py",
+      "sha256": "41654f8adbc7a792d8f172860c4502eb65322730290e7b99477f95bb03005d30"
+    }
+  ],
+  "verification_mode": "POST_FREEZE_EXACT_LOW_RANK_EVALUATION"
+}

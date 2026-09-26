@@ -1,0 +1,1468 @@
+{
+  "claim_boundary": {
+    "not_claimed": [
+      "any quadrant has section authority",
+      "the preferred hostile class has a successful return",
+      "a fourth carrier has been selected",
+      "length or fresh participation is all-rank structural",
+      "an all-rank return theorem"
+    ],
+    "proved": "the exact two-by-two source-local feasibility partition of the existing 562-cell fixed-n=7 carrier"
+  },
+  "content_sha256": "31afd4a80ffbbbc9817eb80649b002b553644ede23ac5b60d8a181efa4e88a6d",
+  "derived_feasibility": {
+    "length_3_fresh_consumed_context_count": 1224,
+    "length_3_fresh_consumed_nonempty": true,
+    "length_3_fresh_consumed_signature_cell_count": 74,
+    "recommended_next_attack": "hold sigma5_length == 3 and require fusion_contains_inherited_fresh == true"
+  },
+  "fresh_participation_checksum": {
+    "consumed_context_count": 6256,
+    "not_consumed_context_count": 8864
+  },
+  "inputs": {
+    "P28_5l_rule": {
+      "content_sha256": "892e350d9f33117043d6a701dd3a4f3d3cd916da70568e38b6047bd99cf032cf",
+      "name": "paper28_three_realization_invariant_audit_v1.json",
+      "schema": "paper28-three-realization-invariant-audit-v1",
+      "sha256": "d41101c9eb917c0368488e92b5d23245942161a19e6c7ea95a781d3552036707"
+    },
+    "inherited_pilot": {
+      "name": "single_defect_n7_inherited_section_pilot_complete_v1.json",
+      "rows_digest": "21ec5e620782d98902ac89d26dd2bd6f971507d36b346a4256226aa98549d5cd",
+      "schema": "SINGLE_DEFECT_N7_INHERITED_SECTION_PILOT_V1",
+      "sha256": "fd6045934b8585d748d8684e1062e71ddc25bdf0865e154dae6eab16a1563182"
+    }
+  },
+  "next_stage_gate": {
+    "forbidden_selection_inputs": [
+      "Good_4",
+      "Good_5",
+      "exact low-rank base membership",
+      "lower-section membership",
+      "winning or Bellman labels"
+    ],
+    "fourth_candidate_selected": false,
+    "hard_constraint": "fusion_contains_inherited_fresh == true",
+    "permitted_distance_fields": [
+      "rank5_partition",
+      "rank4_partition",
+      "fusion_parent_sizes",
+      "sigma5_surplus",
+      "binary_kernel_mass_multiset",
+      "cyclic_offsets_F4_to_kernel",
+      "action_relative_mass_placement"
+    ],
+    "preferred_control": "sigma5_length == 3",
+    "status": "HOSTILE_CLASS_FEASIBLE_CARRIER_NOT_SELECTED"
+  },
+  "projection": {
+    "feature_distributions": [
+      "family",
+      "rank5_partition",
+      "rank4_partition",
+      "fusion_parent_sizes",
+      "sigma5_length",
+      "sigma5_surplus",
+      "binary_kernel_mass_multiset",
+      "cyclic_offsets_F4_to_kernel"
+    ],
+    "key_fields": [
+      "family",
+      "fusion_contains_inherited_fresh",
+      "fusion_parent_sizes",
+      "rank4_partition",
+      "rank5_partition",
+      "sigma5_length",
+      "sigma5_surplus",
+      "binary_kernel_mass_multiset",
+      "cyclic_offsets_F4_to_kernel"
+    ],
+    "quadrant_axes": {
+      "fresh_participation": [
+        "fusion_contains_inherited_fresh == true",
+        "fusion_contains_inherited_fresh == false"
+      ],
+      "length": [
+        "sigma5_length == 3",
+        "sigma5_length != 3"
+      ]
+    },
+    "selection_or_success_fields_used": []
+  },
+  "quadrants": [
+    {
+      "context_count": 1224,
+      "nonempty": true,
+      "quadrant": "length_3__fresh_consumed",
+      "signature_cell_count": 74,
+      "source_local_distributions": {
+        "binary_kernel_mass_multiset": [
+          {
+            "context_count": 294,
+            "signature_cell_count": 22,
+            "value": [
+              0,
+              0
+            ]
+          },
+          {
+            "context_count": 513,
+            "signature_cell_count": 23,
+            "value": [
+              0,
+              1
+            ]
+          },
+          {
+            "context_count": 129,
+            "signature_cell_count": 10,
+            "value": [
+              0,
+              2
+            ]
+          },
+          {
+            "context_count": 36,
+            "signature_cell_count": 1,
+            "value": [
+              0,
+              3
+            ]
+          },
+          {
+            "context_count": 60,
+            "signature_cell_count": 2,
+            "value": [
+              0,
+              4
+            ]
+          },
+          {
+            "context_count": 76,
+            "signature_cell_count": 10,
+            "value": [
+              1,
+              1
+            ]
+          },
+          {
+            "context_count": 68,
+            "signature_cell_count": 5,
+            "value": [
+              1,
+              2
+            ]
+          },
+          {
+            "context_count": 48,
+            "signature_cell_count": 1,
+            "value": [
+              1,
+              4
+            ]
+          }
+        ],
+        "cyclic_offsets_F4_to_kernel": [
+          {
+            "context_count": 48,
+            "signature_cell_count": 1,
+            "value": [
+              0,
+              1
+            ]
+          },
+          {
+            "context_count": 96,
+            "signature_cell_count": 3,
+            "value": [
+              0,
+              2
+            ]
+          },
+          {
+            "context_count": 192,
+            "signature_cell_count": 10,
+            "value": [
+              1,
+              2
+            ]
+          },
+          {
+            "context_count": 24,
+            "signature_cell_count": 2,
+            "value": [
+              1,
+              6
+            ]
+          },
+          {
+            "context_count": 240,
+            "signature_cell_count": 10,
+            "value": [
+              2,
+              3
+            ]
+          },
+          {
+            "context_count": 120,
+            "signature_cell_count": 8,
+            "value": [
+              2,
+              4
+            ]
+          },
+          {
+            "context_count": 192,
+            "signature_cell_count": 8,
+            "value": [
+              2,
+              5
+            ]
+          },
+          {
+            "context_count": 192,
+            "signature_cell_count": 8,
+            "value": [
+              2,
+              6
+            ]
+          },
+          {
+            "context_count": 36,
+            "signature_cell_count": 5,
+            "value": [
+              3,
+              4
+            ]
+          },
+          {
+            "context_count": 12,
+            "signature_cell_count": 4,
+            "value": [
+              3,
+              5
+            ]
+          },
+          {
+            "context_count": 24,
+            "signature_cell_count": 5,
+            "value": [
+              4,
+              5
+            ]
+          },
+          {
+            "context_count": 12,
+            "signature_cell_count": 5,
+            "value": [
+              4,
+              6
+            ]
+          },
+          {
+            "context_count": 36,
+            "signature_cell_count": 5,
+            "value": [
+              5,
+              6
+            ]
+          }
+        ],
+        "family": [
+          {
+            "context_count": 672,
+            "signature_cell_count": 41,
+            "value": "22111__12_TO_3211"
+          },
+          {
+            "context_count": 216,
+            "signature_cell_count": 25,
+            "value": "22111__22_TO_4111"
+          },
+          {
+            "context_count": 336,
+            "signature_cell_count": 8,
+            "value": "31111__13_TO_4111"
+          }
+        ],
+        "fusion_parent_sizes": [
+          {
+            "context_count": 672,
+            "signature_cell_count": 41,
+            "value": [
+              1,
+              2
+            ]
+          },
+          {
+            "context_count": 336,
+            "signature_cell_count": 8,
+            "value": [
+              1,
+              3
+            ]
+          },
+          {
+            "context_count": 216,
+            "signature_cell_count": 25,
+            "value": [
+              2,
+              2
+            ]
+          }
+        ],
+        "rank4_partition": [
+          {
+            "context_count": 672,
+            "signature_cell_count": 41,
+            "value": [
+              3,
+              2,
+              1,
+              1
+            ]
+          },
+          {
+            "context_count": 552,
+            "signature_cell_count": 33,
+            "value": [
+              4,
+              1,
+              1,
+              1
+            ]
+          }
+        ],
+        "rank5_partition": [
+          {
+            "context_count": 888,
+            "signature_cell_count": 66,
+            "value": [
+              2,
+              2,
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "context_count": 336,
+            "signature_cell_count": 8,
+            "value": [
+              3,
+              1,
+              1,
+              1,
+              1
+            ]
+          }
+        ],
+        "sigma5_length": [
+          {
+            "context_count": 1224,
+            "signature_cell_count": 74,
+            "value": 3
+          }
+        ],
+        "sigma5_surplus": [
+          {
+            "context_count": 672,
+            "signature_cell_count": 41,
+            "value": 2
+          },
+          {
+            "context_count": 336,
+            "signature_cell_count": 8,
+            "value": 4
+          },
+          {
+            "context_count": 216,
+            "signature_cell_count": 25,
+            "value": 6
+          }
+        ]
+      }
+    },
+    {
+      "context_count": 1751,
+      "nonempty": true,
+      "quadrant": "length_3__fresh_not_consumed",
+      "signature_cell_count": 126,
+      "source_local_distributions": {
+        "binary_kernel_mass_multiset": [
+          {
+            "context_count": 390,
+            "signature_cell_count": 26,
+            "value": [
+              0,
+              0
+            ]
+          },
+          {
+            "context_count": 401,
+            "signature_cell_count": 26,
+            "value": [
+              0,
+              1
+            ]
+          },
+          {
+            "context_count": 536,
+            "signature_cell_count": 29,
+            "value": [
+              0,
+              2
+            ]
+          },
+          {
+            "context_count": 112,
+            "signature_cell_count": 7,
+            "value": [
+              0,
+              3
+            ]
+          },
+          {
+            "context_count": 24,
+            "signature_cell_count": 6,
+            "value": [
+              1,
+              1
+            ]
+          },
+          {
+            "context_count": 218,
+            "signature_cell_count": 23,
+            "value": [
+              1,
+              2
+            ]
+          },
+          {
+            "context_count": 22,
+            "signature_cell_count": 7,
+            "value": [
+              2,
+              2
+            ]
+          },
+          {
+            "context_count": 48,
+            "signature_cell_count": 2,
+            "value": [
+              2,
+              3
+            ]
+          }
+        ],
+        "cyclic_offsets_F4_to_kernel": [
+          {
+            "context_count": 96,
+            "signature_cell_count": 4,
+            "value": [
+              0,
+              3
+            ]
+          },
+          {
+            "context_count": 96,
+            "signature_cell_count": 4,
+            "value": [
+              0,
+              4
+            ]
+          },
+          {
+            "context_count": 42,
+            "signature_cell_count": 3,
+            "value": [
+              0,
+              5
+            ]
+          },
+          {
+            "context_count": 167,
+            "signature_cell_count": 5,
+            "value": [
+              0,
+              6
+            ]
+          },
+          {
+            "context_count": 18,
+            "signature_cell_count": 5,
+            "value": [
+              1,
+              2
+            ]
+          },
+          {
+            "context_count": 48,
+            "signature_cell_count": 8,
+            "value": [
+              1,
+              3
+            ]
+          },
+          {
+            "context_count": 96,
+            "signature_cell_count": 11,
+            "value": [
+              1,
+              4
+            ]
+          },
+          {
+            "context_count": 96,
+            "signature_cell_count": 10,
+            "value": [
+              1,
+              5
+            ]
+          },
+          {
+            "context_count": 66,
+            "signature_cell_count": 11,
+            "value": [
+              1,
+              6
+            ]
+          },
+          {
+            "context_count": 12,
+            "signature_cell_count": 5,
+            "value": [
+              2,
+              3
+            ]
+          },
+          {
+            "context_count": 12,
+            "signature_cell_count": 4,
+            "value": [
+              2,
+              4
+            ]
+          },
+          {
+            "context_count": 186,
+            "signature_cell_count": 8,
+            "value": [
+              3,
+              4
+            ]
+          },
+          {
+            "context_count": 120,
+            "signature_cell_count": 10,
+            "value": [
+              3,
+              5
+            ]
+          },
+          {
+            "context_count": 192,
+            "signature_cell_count": 9,
+            "value": [
+              3,
+              6
+            ]
+          },
+          {
+            "context_count": 198,
+            "signature_cell_count": 9,
+            "value": [
+              4,
+              5
+            ]
+          },
+          {
+            "context_count": 120,
+            "signature_cell_count": 10,
+            "value": [
+              4,
+              6
+            ]
+          },
+          {
+            "context_count": 186,
+            "signature_cell_count": 10,
+            "value": [
+              5,
+              6
+            ]
+          }
+        ],
+        "family": [
+          {
+            "context_count": 695,
+            "signature_cell_count": 55,
+            "value": "22111__11_TO_2221"
+          },
+          {
+            "context_count": 696,
+            "signature_cell_count": 52,
+            "value": "22111__12_TO_3211"
+          },
+          {
+            "context_count": 360,
+            "signature_cell_count": 19,
+            "value": "31111__11_TO_3211"
+          }
+        ],
+        "fusion_parent_sizes": [
+          {
+            "context_count": 1055,
+            "signature_cell_count": 74,
+            "value": [
+              1,
+              1
+            ]
+          },
+          {
+            "context_count": 696,
+            "signature_cell_count": 52,
+            "value": [
+              1,
+              2
+            ]
+          }
+        ],
+        "rank4_partition": [
+          {
+            "context_count": 695,
+            "signature_cell_count": 55,
+            "value": [
+              2,
+              2,
+              2,
+              1
+            ]
+          },
+          {
+            "context_count": 1056,
+            "signature_cell_count": 71,
+            "value": [
+              3,
+              2,
+              1,
+              1
+            ]
+          }
+        ],
+        "rank5_partition": [
+          {
+            "context_count": 1391,
+            "signature_cell_count": 107,
+            "value": [
+              2,
+              2,
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "context_count": 360,
+            "signature_cell_count": 19,
+            "value": [
+              3,
+              1,
+              1,
+              1,
+              1
+            ]
+          }
+        ],
+        "sigma5_length": [
+          {
+            "context_count": 1751,
+            "signature_cell_count": 126,
+            "value": 3
+          }
+        ],
+        "sigma5_surplus": [
+          {
+            "context_count": 1055,
+            "signature_cell_count": 74,
+            "value": 0
+          },
+          {
+            "context_count": 696,
+            "signature_cell_count": 52,
+            "value": 2
+          }
+        ]
+      }
+    },
+    {
+      "context_count": 5032,
+      "nonempty": true,
+      "quadrant": "length_not_3__fresh_consumed",
+      "signature_cell_count": 142,
+      "source_local_distributions": {
+        "binary_kernel_mass_multiset": [
+          {
+            "context_count": 480,
+            "signature_cell_count": 35,
+            "value": [
+              0,
+              0
+            ]
+          },
+          {
+            "context_count": 967,
+            "signature_cell_count": 42,
+            "value": [
+              0,
+              1
+            ]
+          },
+          {
+            "context_count": 150,
+            "signature_cell_count": 16,
+            "value": [
+              0,
+              2
+            ]
+          },
+          {
+            "context_count": 10,
+            "signature_cell_count": 1,
+            "value": [
+              0,
+              3
+            ]
+          },
+          {
+            "context_count": 863,
+            "signature_cell_count": 11,
+            "value": [
+              0,
+              4
+            ]
+          },
+          {
+            "context_count": 168,
+            "signature_cell_count": 18,
+            "value": [
+              1,
+              1
+            ]
+          },
+          {
+            "context_count": 134,
+            "signature_cell_count": 10,
+            "value": [
+              1,
+              2
+            ]
+          },
+          {
+            "context_count": 2260,
+            "signature_cell_count": 9,
+            "value": [
+              1,
+              4
+            ]
+          }
+        ],
+        "cyclic_offsets_F4_to_kernel": [
+          {
+            "context_count": 672,
+            "signature_cell_count": 4,
+            "value": [
+              0,
+              1
+            ]
+          },
+          {
+            "context_count": 480,
+            "signature_cell_count": 2,
+            "value": [
+              0,
+              2
+            ]
+          },
+          {
+            "context_count": 480,
+            "signature_cell_count": 2,
+            "value": [
+              0,
+              3
+            ]
+          },
+          {
+            "context_count": 480,
+            "signature_cell_count": 2,
+            "value": [
+              0,
+              4
+            ]
+          },
+          {
+            "context_count": 506,
+            "signature_cell_count": 4,
+            "value": [
+              0,
+              5
+            ]
+          },
+          {
+            "context_count": 515,
+            "signature_cell_count": 7,
+            "value": [
+              0,
+              6
+            ]
+          },
+          {
+            "context_count": 222,
+            "signature_cell_count": 13,
+            "value": [
+              1,
+              2
+            ]
+          },
+          {
+            "context_count": 384,
+            "signature_cell_count": 18,
+            "value": [
+              1,
+              3
+            ]
+          },
+          {
+            "context_count": 336,
+            "signature_cell_count": 10,
+            "value": [
+              1,
+              4
+            ]
+          },
+          {
+            "context_count": 336,
+            "signature_cell_count": 10,
+            "value": [
+              1,
+              5
+            ]
+          },
+          {
+            "context_count": 340,
+            "signature_cell_count": 13,
+            "value": [
+              1,
+              6
+            ]
+          },
+          {
+            "context_count": 36,
+            "signature_cell_count": 5,
+            "value": [
+              2,
+              3
+            ]
+          },
+          {
+            "context_count": 36,
+            "signature_cell_count": 8,
+            "value": [
+              2,
+              4
+            ]
+          },
+          {
+            "context_count": 56,
+            "signature_cell_count": 9,
+            "value": [
+              3,
+              4
+            ]
+          },
+          {
+            "context_count": 50,
+            "signature_cell_count": 10,
+            "value": [
+              3,
+              5
+            ]
+          },
+          {
+            "context_count": 37,
+            "signature_cell_count": 11,
+            "value": [
+              4,
+              5
+            ]
+          },
+          {
+            "context_count": 36,
+            "signature_cell_count": 8,
+            "value": [
+              4,
+              6
+            ]
+          },
+          {
+            "context_count": 30,
+            "signature_cell_count": 6,
+            "value": [
+              5,
+              6
+            ]
+          }
+        ],
+        "family": [
+          {
+            "context_count": 723,
+            "signature_cell_count": 66,
+            "value": "22111__12_TO_3211"
+          },
+          {
+            "context_count": 252,
+            "signature_cell_count": 41,
+            "value": "22111__22_TO_4111"
+          },
+          {
+            "context_count": 4057,
+            "signature_cell_count": 35,
+            "value": "31111__13_TO_4111"
+          }
+        ],
+        "fusion_parent_sizes": [
+          {
+            "context_count": 723,
+            "signature_cell_count": 66,
+            "value": [
+              1,
+              2
+            ]
+          },
+          {
+            "context_count": 4057,
+            "signature_cell_count": 35,
+            "value": [
+              1,
+              3
+            ]
+          },
+          {
+            "context_count": 252,
+            "signature_cell_count": 41,
+            "value": [
+              2,
+              2
+            ]
+          }
+        ],
+        "rank4_partition": [
+          {
+            "context_count": 723,
+            "signature_cell_count": 66,
+            "value": [
+              3,
+              2,
+              1,
+              1
+            ]
+          },
+          {
+            "context_count": 4309,
+            "signature_cell_count": 76,
+            "value": [
+              4,
+              1,
+              1,
+              1
+            ]
+          }
+        ],
+        "rank5_partition": [
+          {
+            "context_count": 975,
+            "signature_cell_count": 107,
+            "value": [
+              2,
+              2,
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "context_count": 4057,
+            "signature_cell_count": 35,
+            "value": [
+              3,
+              1,
+              1,
+              1,
+              1
+            ]
+          }
+        ],
+        "sigma5_length": [
+          {
+            "context_count": 2880,
+            "signature_cell_count": 12,
+            "value": 1
+          },
+          {
+            "context_count": 1728,
+            "signature_cell_count": 51,
+            "value": 2
+          },
+          {
+            "context_count": 233,
+            "signature_cell_count": 39,
+            "value": 4
+          },
+          {
+            "context_count": 141,
+            "signature_cell_count": 31,
+            "value": 5
+          },
+          {
+            "context_count": 37,
+            "signature_cell_count": 5,
+            "value": 6
+          },
+          {
+            "context_count": 9,
+            "signature_cell_count": 1,
+            "value": 7
+          },
+          {
+            "context_count": 1,
+            "signature_cell_count": 1,
+            "value": 8
+          },
+          {
+            "context_count": 3,
+            "signature_cell_count": 2,
+            "value": 9
+          }
+        ],
+        "sigma5_surplus": [
+          {
+            "context_count": 91,
+            "signature_cell_count": 21,
+            "value": 0
+          },
+          {
+            "context_count": 175,
+            "signature_cell_count": 27,
+            "value": 1
+          },
+          {
+            "context_count": 30,
+            "signature_cell_count": 3,
+            "value": 2
+          },
+          {
+            "context_count": 555,
+            "signature_cell_count": 31,
+            "value": 3
+          },
+          {
+            "context_count": 32,
+            "signature_cell_count": 10,
+            "value": 4
+          },
+          {
+            "context_count": 1101,
+            "signature_cell_count": 24,
+            "value": 5
+          },
+          {
+            "context_count": 2880,
+            "signature_cell_count": 12,
+            "value": 6
+          },
+          {
+            "context_count": 168,
+            "signature_cell_count": 14,
+            "value": 7
+          }
+        ]
+      }
+    },
+    {
+      "context_count": 7113,
+      "nonempty": true,
+      "quadrant": "length_not_3__fresh_not_consumed",
+      "signature_cell_count": 220,
+      "source_local_distributions": {
+        "binary_kernel_mass_multiset": [
+          {
+            "context_count": 589,
+            "signature_cell_count": 27,
+            "value": [
+              0,
+              0
+            ]
+          },
+          {
+            "context_count": 1343,
+            "signature_cell_count": 43,
+            "value": [
+              0,
+              1
+            ]
+          },
+          {
+            "context_count": 2255,
+            "signature_cell_count": 63,
+            "value": [
+              0,
+              2
+            ]
+          },
+          {
+            "context_count": 210,
+            "signature_cell_count": 8,
+            "value": [
+              0,
+              3
+            ]
+          },
+          {
+            "context_count": 56,
+            "signature_cell_count": 11,
+            "value": [
+              1,
+              1
+            ]
+          },
+          {
+            "context_count": 2536,
+            "signature_cell_count": 57,
+            "value": [
+              1,
+              2
+            ]
+          },
+          {
+            "context_count": 52,
+            "signature_cell_count": 8,
+            "value": [
+              2,
+              2
+            ]
+          },
+          {
+            "context_count": 72,
+            "signature_cell_count": 3,
+            "value": [
+              2,
+              3
+            ]
+          }
+        ],
+        "cyclic_offsets_F4_to_kernel": [
+          {
+            "context_count": 144,
+            "signature_cell_count": 4,
+            "value": [
+              0,
+              2
+            ]
+          },
+          {
+            "context_count": 144,
+            "signature_cell_count": 5,
+            "value": [
+              0,
+              3
+            ]
+          },
+          {
+            "context_count": 144,
+            "signature_cell_count": 5,
+            "value": [
+              0,
+              4
+            ]
+          },
+          {
+            "context_count": 172,
+            "signature_cell_count": 6,
+            "value": [
+              0,
+              5
+            ]
+          },
+          {
+            "context_count": 38,
+            "signature_cell_count": 2,
+            "value": [
+              0,
+              6
+            ]
+          },
+          {
+            "context_count": 288,
+            "signature_cell_count": 5,
+            "value": [
+              1,
+              2
+            ]
+          },
+          {
+            "context_count": 288,
+            "signature_cell_count": 5,
+            "value": [
+              1,
+              3
+            ]
+          },
+          {
+            "context_count": 288,
+            "signature_cell_count": 5,
+            "value": [
+              1,
+              4
+            ]
+          },
+          {
+            "context_count": 288,
+            "signature_cell_count": 5,
+            "value": [
+              1,
+              5
+            ]
+          },
+          {
+            "context_count": 290,
+            "signature_cell_count": 6,
+            "value": [
+              1,
+              6
+            ]
+          },
+          {
+            "context_count": 432,
+            "signature_cell_count": 15,
+            "value": [
+              2,
+              3
+            ]
+          },
+          {
+            "context_count": 552,
+            "signature_cell_count": 19,
+            "value": [
+              2,
+              4
+            ]
+          },
+          {
+            "context_count": 528,
+            "signature_cell_count": 14,
+            "value": [
+              2,
+              5
+            ]
+          },
+          {
+            "context_count": 528,
+            "signature_cell_count": 15,
+            "value": [
+              2,
+              6
+            ]
+          },
+          {
+            "context_count": 442,
+            "signature_cell_count": 18,
+            "value": [
+              3,
+              4
+            ]
+          },
+          {
+            "context_count": 538,
+            "signature_cell_count": 17,
+            "value": [
+              3,
+              5
+            ]
+          },
+          {
+            "context_count": 528,
+            "signature_cell_count": 15,
+            "value": [
+              3,
+              6
+            ]
+          },
+          {
+            "context_count": 461,
+            "signature_cell_count": 18,
+            "value": [
+              4,
+              5
+            ]
+          },
+          {
+            "context_count": 552,
+            "signature_cell_count": 20,
+            "value": [
+              4,
+              6
+            ]
+          },
+          {
+            "context_count": 468,
+            "signature_cell_count": 21,
+            "value": [
+              5,
+              6
+            ]
+          }
+        ],
+        "family": [
+          {
+            "context_count": 3312,
+            "signature_cell_count": 97,
+            "value": "22111__11_TO_2221"
+          },
+          {
+            "context_count": 3513,
+            "signature_cell_count": 113,
+            "value": "22111__12_TO_3211"
+          },
+          {
+            "context_count": 288,
+            "signature_cell_count": 10,
+            "value": "31111__11_TO_3211"
+          }
+        ],
+        "fusion_parent_sizes": [
+          {
+            "context_count": 3600,
+            "signature_cell_count": 107,
+            "value": [
+              1,
+              1
+            ]
+          },
+          {
+            "context_count": 3513,
+            "signature_cell_count": 113,
+            "value": [
+              1,
+              2
+            ]
+          }
+        ],
+        "rank4_partition": [
+          {
+            "context_count": 3312,
+            "signature_cell_count": 97,
+            "value": [
+              2,
+              2,
+              2,
+              1
+            ]
+          },
+          {
+            "context_count": 3801,
+            "signature_cell_count": 123,
+            "value": [
+              3,
+              2,
+              1,
+              1
+            ]
+          }
+        ],
+        "rank5_partition": [
+          {
+            "context_count": 6825,
+            "signature_cell_count": 210,
+            "value": [
+              2,
+              2,
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "context_count": 288,
+            "signature_cell_count": 10,
+            "value": [
+              3,
+              1,
+              1,
+              1,
+              1
+            ]
+          }
+        ],
+        "sigma5_length": [
+          {
+            "context_count": 4320,
+            "signature_cell_count": 75,
+            "value": 1
+          },
+          {
+            "context_count": 2592,
+            "signature_cell_count": 116,
+            "value": 2
+          },
+          {
+            "context_count": 147,
+            "signature_cell_count": 20,
+            "value": 4
+          },
+          {
+            "context_count": 54,
+            "signature_cell_count": 9,
+            "value": 5
+          }
+        ],
+        "sigma5_surplus": [
+          {
+            "context_count": 54,
+            "signature_cell_count": 9,
+            "value": 0
+          },
+          {
+            "context_count": 1587,
+            "signature_cell_count": 82,
+            "value": 1
+          },
+          {
+            "context_count": 2160,
+            "signature_cell_count": 45,
+            "value": 2
+          },
+          {
+            "context_count": 1152,
+            "signature_cell_count": 54,
+            "value": 3
+          },
+          {
+            "context_count": 2160,
+            "signature_cell_count": 30,
+            "value": 4
+          }
+        ]
+      }
+    }
+  ],
+  "schema": "paper28-remaining-anatomy-feasibility-audit-v1",
+  "scope": {
+    "ambient_n": 7,
+    "fourth_candidate_selected": false,
+    "future_free_signature_cell_count": 562,
+    "good_or_success_field_read": false,
+    "new_oracle_evaluation": false,
+    "rooted_context_count": 15120
+  }
+}

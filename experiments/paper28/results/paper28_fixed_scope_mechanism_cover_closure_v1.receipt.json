@@ -1,0 +1,30 @@
+{
+  "artifact": {
+    "content_sha256": "c8ef198a5c461d48f4ec6de0c94827ec14e9c3103cd8b6ace0688e5f4613133d",
+    "frozen_closure_input_sha256": "596cf08bba67416b76b46e519c09331069350d78500ab039841d63375e3c0ebf",
+    "name": "paper28_fixed_scope_mechanism_cover_closure_v1.json.gz",
+    "sha256": "20073b8c096be4085ef28d6199ebe009d3333cd75078e029c003a1b670edb46f"
+  },
+  "inputs": [
+    {
+      "name": "paper28_gfpc_component_completion_v1.json.gz",
+      "sha256": "59de702c5285d7739a70eac3f3f0bdcfafc7a72e14517b39454bea49bb5ab3af"
+    },
+    {
+      "name": "paper28_pec_component_completion_v1.json.gz",
+      "sha256": "3f6e4bc7758f518a956b3bc07021202b049af3f34a4132f8cb71f45b6edf48fd"
+    }
+  ],
+  "schema": "paper28-fixed-scope-mechanism-cover-closure-receipt-v1",
+  "source_closure": [
+    {
+      "name": "paper28_close_fixed_scope_mechanism_cover.py",
+      "sha256": "2b1543b4dfaa8b4fb017a9685312eb247f4e5d5576d27070406433e29a8ddb3c"
+    },
+    {
+      "name": "validation/validate_paper28_fixed_scope_mechanism_cover.py",
+      "sha256": "438091ae6a334980369d745374e520fad1fe5874249f4356e3ccf1c9b69a80af"
+    }
+  ],
+  "verification_mode": "DETERMINISTIC_TAGGED_THEOREM_COMPOSITION"
+}

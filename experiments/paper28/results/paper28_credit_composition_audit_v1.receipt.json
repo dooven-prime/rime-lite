@@ -1,0 +1,32 @@
+{
+  "artifact": {
+    "content_sha256": "41051131a18544589b218181816b7d2704c41a14a814b818d5e86d740f6bcdfd",
+    "path": "experiments/synchronizing_automata/results/paper28_credit_composition_audit_v1.json",
+    "sha256": "f5a24618732fe4fb4fd393906272964a79c3dbfb28ed79b1bc5295a7d40d74c2"
+  },
+  "input": {
+    "content_sha256": "05d85532787185631536d16f406587166751dbea59618e6942637af0b432b8a7",
+    "path": "experiments/synchronizing_automata/results/paper28_seed_mechanism_catalog_v1.json.gz",
+    "sha256": "e2391bcaab167e8a0892068312a711a39e353bc96ae66649e8f7707691745b57"
+  },
+  "schema": "paper28-credit-composition-audit-receipt-v1",
+  "source_closure": [
+    {
+      "path": "experiments/synchronizing_automata/paper28_audit_credit_composition.py",
+      "sha256": "b551e41ae5dbacdac3d9fe33b729a4ba3066741b89c53486e68f0c36a296b889"
+    },
+    {
+      "path": "experiments/synchronizing_automata/paper28_mechanism_schema.py",
+      "sha256": "6a54e1484219b452a611bdc8644870a2abb64a84d5624f2931c2d071395a30b3"
+    },
+    {
+      "path": "experiments/synchronizing_automata/mass_maturity_legacy.py",
+      "sha256": "421bf7aaac0f0544f1401731ee3474dd4b8146e6b422889a91fc69af3726324b"
+    },
+    {
+      "path": "experiments/synchronizing_automata/validation/validate_paper28_credit_composition_audit.py",
+      "sha256": "0d731d68259140560d79c2f71cb6d4218da1970079f31e836213ec85214bd425"
+    }
+  ],
+  "verification_mode": "LOCAL_REPLAY_FROM_BOUND_CANONICAL_CATALOG"
+}
