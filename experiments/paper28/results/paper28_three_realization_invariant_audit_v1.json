@@ -1,0 +1,574 @@
+{
+  "F3_decision": {
+    "observed_handoffs": [
+      "IDENTITY",
+      "ATOM_BIJECTION"
+    ],
+    "schema_change": "NONE_KEEP_WITHIN_F3",
+    "statement": "exact-lift soundness certifies preservation of every typed observable used by the lower theorem"
+  },
+  "claim_boundary": {
+    "not_claimed": [
+      "length three or distinguished-packet avoidance is structural",
+      "T/R/F is all-rank complete",
+      "a rank-controlled or uniform menu bound",
+      "a fourth return realization",
+      "an all-rank return theorem"
+    ],
+    "proved": "the displayed comparison and contract audit on the three frozen fixed-n=7 composed chains"
+  },
+  "content_sha256": "892e350d9f33117043d6a701dd3a4f3d3cd916da70568e38b6047bd99cf032cf",
+  "contract_audit": {
+    "exact_compatible_accounting_present": true,
+    "exact_lift_fibers_retained": true,
+    "existential_return": true,
+    "future_free_construction": true,
+    "internal_boundaries_excluded": true,
+    "typed_lower_observables_preserved": true,
+    "winner_selection_absent": true
+  },
+  "derived_conclusions": {
+    "add_F6_handoff_contract": false,
+    "fusion_1_plus_1_is_necessary": false,
+    "generator_vocabulary_survives_all_three": true,
+    "incoming_distinguished_unused_common_but_unproved": true,
+    "kernel_mass_0_2_is_necessary": false,
+    "length_three_common_but_unproved": true,
+    "menu_size_bound_claimed": false,
+    "nonidentity_handoff_is_universal": false,
+    "typed_observable_preservation_required": true,
+    "zero_surplus_is_necessary": false
+  },
+  "inputs": {
+    "third_overlap": {
+      "content_sha256": "001284ad9c3efbbc5ead70414e57e0ecd6eaeaf92984d453b269d10244ecad5e",
+      "name": "paper28_third_rank4_section_overlap_audit_v1.json",
+      "schema": "paper28-third-rank4-section-overlap-audit-v1",
+      "sha256": "879c5cbf11c340905e3dc7c8ca4de2bcb9edca698b1da35c4d4947ad3935c6ba"
+    },
+    "third_rank4_candidate": {
+      "content_sha256": "f67126e731f07a733365b9e32d1b0ac132e74f0100f986d5dd83c841993981cf",
+      "name": "paper28_third_rank4_section_candidate_v1.json.gz",
+      "schema": "paper28-third-rank4-section-candidate-v1",
+      "sha256": "c27f2d9ccdda192173afedcb52a0a94d5fbcf45e03f4a9932fd3b0d66a286171"
+    },
+    "third_rank4_evaluation": {
+      "content_sha256": "f3abcbe5da8e06a0b4df0c297cc7b6dc81b645f64a4083f425735b5a0dbf0037",
+      "name": "paper28_third_rank4_section_return_evaluation_v1.json.gz",
+      "schema": "paper28-third-rank4-section-return-evaluation-v1",
+      "sha256": "8da85162ef764e3727937acc12e974b35b20b6c561f620ce5a74808dfc84c992"
+    },
+    "third_rank5_candidate": {
+      "content_sha256": "50e9eac485e062dc46989026fcc1e4a5dbb6d578341581f149065c7e0b49db97",
+      "name": "paper28_third_rank5_section_candidate_v1.json.gz",
+      "schema": "paper28-third-rank5-section-candidate-v1",
+      "sha256": "7a7cda86530c0f67e56527fbe7ea132920fb0dcab2700757e74075b35a70c0f2"
+    },
+    "third_rank5_evaluation": {
+      "content_sha256": "b6e822be11b3c51e2c397f542f61232f363253e71e7ef7e3941f474d92277440",
+      "name": "paper28_third_rank5_section_return_evaluation_v1.json.gz",
+      "schema": "paper28-third-rank5-section-return-evaluation-v1",
+      "sha256": "1e3bc0501c5af31815784996396820f6f52fc7b8edb6b8c3cbf96f166173649c"
+    },
+    "third_selection": {
+      "content_sha256": "40d5cd37c4a771518966ba7427db29e9beb66b2ac6fd5eb1eb53f935f24d60d2",
+      "name": "paper28_third_rank5_return_candidate_selection_v1.json.gz",
+      "schema": "paper28-third-rank5-return-candidate-selection-v1",
+      "sha256": "a4349259f0deca744dc2ff54657851e909b973537a345e2f2295fdb73d20e6c5"
+    },
+    "two_chain_audit": {
+      "content_sha256": "76a8541f6cd2540094c38e3892111dac3d64756ed6edef278f2e5f11260d308a",
+      "name": "paper28_cross_realization_invariant_audit_v1.json",
+      "schema": "paper28-cross-realization-invariant-audit-v1",
+      "sha256": "88da2ab2378b17f9b01e64200d144d33b86a2e5be61fdd967cfc441f0ac72412"
+    }
+  },
+  "invariant_matrix": [
+    {
+      "first": [
+        [
+          2,
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "second": [
+        [
+          3,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "ACCIDENTAL",
+      "surface": "rank5_source_partition",
+      "third": [
+        [
+          2,
+          2,
+          1,
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "first": [
+        [
+          2,
+          2,
+          2,
+          1
+        ]
+      ],
+      "second": [
+        [
+          3,
+          2,
+          1,
+          1
+        ]
+      ],
+      "status": "ACCIDENTAL",
+      "surface": "rank4_section_partition",
+      "third": [
+        [
+          3,
+          2,
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "first": [
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "second": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "status": "ACCIDENTAL",
+      "surface": "successful_rank5_word",
+      "third": [
+        [
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "first": {
+        "ATOM_BIJECTION": 35
+      },
+      "second": {
+        "IDENTITY": 48
+      },
+      "status": "IMPLEMENTATION_DEPENDENT",
+      "surface": "handoff_mode",
+      "third": {
+        "IDENTITY": 36
+      }
+    },
+    {
+      "first": 8,
+      "second": 11,
+      "status": "NO_STABLE_NUMERICAL_BOUND",
+      "surface": "rank4_menu_max",
+      "third": 7
+    },
+    {
+      "first": false,
+      "second": true,
+      "status": "NOT_STRUCTURAL",
+      "surface": "rank4_all_channels_good",
+      "third": false
+    },
+    {
+      "first": [
+        [
+          1,
+          1
+        ]
+      ],
+      "second": [
+        [
+          1,
+          1
+        ]
+      ],
+      "status": "ONE_PLUS_ONE_NOT_NECESSARY",
+      "surface": "rank5_fusion_parent_masses",
+      "third": [
+        [
+          1,
+          2
+        ]
+      ]
+    },
+    {
+      "first": [
+        [
+          3
+        ]
+      ],
+      "second": [
+        [
+          3
+        ]
+      ],
+      "status": "COMMON_UNTESTED_ACCIDENTAL",
+      "surface": "rank5_length",
+      "third": [
+        [
+          3
+        ]
+      ]
+    },
+    {
+      "first": [
+        0
+      ],
+      "second": [
+        0
+      ],
+      "status": "ZERO_SURPLUS_NOT_NECESSARY",
+      "surface": "rank5_total_surplus",
+      "third": [
+        2
+      ]
+    },
+    {
+      "first": [
+        0,
+        2
+      ],
+      "second": [
+        0,
+        2
+      ],
+      "status": "ZERO_TWO_NOT_NECESSARY",
+      "surface": "binary_kernel_mass_multiset",
+      "third": [
+        0,
+        3
+      ]
+    },
+    {
+      "first": [
+        "NONE"
+      ],
+      "second": [
+        "NONE"
+      ],
+      "status": "COMMON_STRUCTURAL_CANDIDATE_NOT_PROVED",
+      "surface": "incoming_distinguished_consumed",
+      "third": [
+        "NONE"
+      ]
+    },
+    {
+      "first": [
+        "FUSION",
+        "RETURN",
+        "TRANSPORT"
+      ],
+      "second": [
+        "FUSION",
+        "RETURN",
+        "TRANSPORT"
+      ],
+      "status": "SURVIVES_ALL_THREE",
+      "surface": "generator_vocabulary",
+      "third": [
+        "FUSION",
+        "RETURN",
+        "TRANSPORT"
+      ]
+    },
+    {
+      "first": true,
+      "second": true,
+      "status": "SURVIVES_ALL_THREE",
+      "surface": "F1_F5_discipline",
+      "third": true
+    }
+  ],
+  "realizations": {
+    "first": {
+      "name": "extremal_35_context_chain",
+      "rank4": {
+        "channel_count": 173,
+        "failed_channel_count": 4,
+        "failed_exact_lift_count": 1853,
+        "menu_max": 8,
+        "source_count": 35,
+        "successful_channel_count": 169,
+        "successful_exact_lift_count": 2329
+      },
+      "rank5": {
+        "all_sources_have_good_channel": true,
+        "channel_count": 87,
+        "construction_evaluation_status": "NOT_RUN",
+        "failed_channel_count": 52,
+        "failed_exact_lift_count": 179,
+        "generator_vocabulary": [
+          "FUSION",
+          "RETURN",
+          "TRANSPORT"
+        ],
+        "handoff_type_histogram": {
+          "ATOM_BIJECTION": 35
+        },
+        "incoming_distinguished_participation": [
+          "NONE"
+        ],
+        "internal_boundaries_exported_as_checkpoints": 0,
+        "source_count": 35,
+        "source_partition_set": [
+          [
+            2,
+            2,
+            1,
+            1,
+            1
+          ]
+        ],
+        "successful_channel_count": 35,
+        "successful_exact_lift_count": 35,
+        "successful_fusion_parent_masses": [
+          [
+            1,
+            1
+          ]
+        ],
+        "successful_lengths": [
+          [
+            3
+          ]
+        ],
+        "successful_rank5_words": [
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "successful_total_surpluses": [
+          0
+        ],
+        "target_partition_set": [
+          [
+            2,
+            2,
+            2,
+            1
+          ]
+        ],
+        "upstream_sigma6_words": [
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "winner_selected": false
+      }
+    },
+    "second": {
+      "name": "second_48_context_chain",
+      "rank4": {
+        "channel_count": 401,
+        "failed_channel_count": 0,
+        "failed_exact_lift_count": 102,
+        "menu_max": 11,
+        "source_count": 48,
+        "successful_channel_count": 401,
+        "successful_exact_lift_count": 9498
+      },
+      "rank5": {
+        "all_sources_have_good_channel": true,
+        "channel_count": 96,
+        "construction_evaluation_status": "NOT_RUN",
+        "failed_channel_count": 48,
+        "failed_exact_lift_count": 147,
+        "generator_vocabulary": [
+          "FUSION",
+          "RETURN",
+          "TRANSPORT"
+        ],
+        "handoff_type_histogram": {
+          "IDENTITY": 48
+        },
+        "incoming_distinguished_participation": [
+          "NONE"
+        ],
+        "internal_boundaries_exported_as_checkpoints": 0,
+        "source_count": 48,
+        "source_partition_set": [
+          [
+            3,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "successful_channel_count": 48,
+        "successful_exact_lift_count": 48,
+        "successful_fusion_parent_masses": [
+          [
+            1,
+            1
+          ]
+        ],
+        "successful_lengths": [
+          [
+            3
+          ]
+        ],
+        "successful_rank5_words": [
+          [
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "successful_total_surpluses": [
+          0
+        ],
+        "target_partition_set": [
+          [
+            3,
+            2,
+            1,
+            1
+          ]
+        ],
+        "upstream_sigma6_words": [
+          [
+            1
+          ]
+        ],
+        "winner_selected": false
+      }
+    },
+    "third": {
+      "name": "third_36_context_chain",
+      "rank4": {
+        "channel_count": 172,
+        "failed_channel_count": 1,
+        "failed_exact_lift_count": 1031,
+        "menu_max": 7,
+        "source_count": 36,
+        "successful_channel_count": 171,
+        "successful_exact_lift_count": 4208,
+        "typed_overlap_with_second": 0
+      },
+      "rank5": {
+        "all_sources_have_good_channel": true,
+        "channel_count": 70,
+        "construction_evaluation_status": "NOT_RUN",
+        "failed_channel_count": 34,
+        "failed_exact_lift_count": 173,
+        "generator_vocabulary": [
+          "FUSION",
+          "RETURN",
+          "TRANSPORT"
+        ],
+        "handoff_type_histogram": {
+          "IDENTITY": 36
+        },
+        "incoming_distinguished_participation": [
+          "NONE"
+        ],
+        "internal_boundaries_exported_as_checkpoints": 0,
+        "source_count": 36,
+        "source_partition_set": [
+          [
+            2,
+            2,
+            1,
+            1,
+            1
+          ]
+        ],
+        "successful_channel_count": 36,
+        "successful_exact_lift_count": 36,
+        "successful_fusion_parent_masses": [
+          [
+            1,
+            2
+          ]
+        ],
+        "successful_lengths": [
+          [
+            3
+          ]
+        ],
+        "successful_rank5_words": [
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "successful_total_surpluses": [
+          2
+        ],
+        "target_partition_set": [
+          [
+            3,
+            2,
+            1,
+            1
+          ]
+        ],
+        "upstream_sigma6_words": [
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "winner_selected": false
+      }
+    }
+  },
+  "remaining_hostile_targets": {
+    "common_unproved_anatomy": [
+      "successful rank-five length equals 3",
+      "incoming distinguished packet is not consumed"
+    ],
+    "fourth_candidate_status": "NOT_SELECTED",
+    "selection_rule_status": "NOT_PREREGISTERED_BY_THIS_AUDIT"
+  },
+  "schema": "paper28-three-realization-invariant-audit-v1",
+  "scope": {
+    "ambient_n": 7,
+    "fourth_candidate_selected": false,
+    "new_oracle_evaluation": false,
+    "realization_count": 3
+  }
+}

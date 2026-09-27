@@ -5,7 +5,7 @@ It identifies the object and reader question owned by each paper without
 repeating manuscript definitions, numerical tables, or release metadata.
 
 The current public release contains Papers I--XVI and the independently scoped
-Papers XX--XXVII mathematical lines. CCS v2.1 is an optional non-paper archive.
+Papers XX--XXVIII mathematical lines. CCS v2.1 is an optional non-paper archive.
 Publication identities and DOIs are maintained only in the root
 [Public Release table](../README.md#public-release).
 
@@ -47,7 +47,7 @@ realization, and claim status.
 
 Paper XVI is an independently scoped computational connectome case study, not
 a successor SOF protocol. Papers XVII--XIX are intentionally unused. Papers
-XX--XXVII do not continue the SOF protocol authority chain.
+XX--XXVIII do not continue the SOF protocol authority chain.
 
 | Paper | Owned object or interface | Reader question |
 |-------|---------------------------|-----------------|
@@ -60,6 +60,7 @@ XX--XXVII do not continue the SOF protocol authority chain.
 | XXV | aligned generator-resolved diagnostics | Which diagnostic quantities transport exactly, remain carrier-local, or require additional semantic assumptions? |
 | XXVI | unordered-pair transfer operators and random synchronization | How do deterministic reset scales, random pair absorption, and global random synchronization separate? |
 | XXVII | fixed-scope entry sections and source-addressed completion relations | Which finite proof contexts admit a declared completion section without quotienting away source identity? |
+| XXVIII | finite mechanism structure and fixed-scope recursive return | Which exact realization fibers compose, return, and align without quotienting away typed source information? |
 
 ## Protocol Ownership
 

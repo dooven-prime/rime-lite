@@ -1,0 +1,47 @@
+{
+  "artifact": {
+    "content_sha256": "31d3f27b6becd42eda3c76fb86aef71a7b802194748fd86f061d4437d0ed33ae",
+    "name": "paper28_section_return_menu_audit_v1.json.gz",
+    "sha256": "bc7d314fdca72dd7cbc6da9add74a55fd63afdb59090ddea30c7c07184e58b47"
+  },
+  "inputs": {
+    "catalog": {
+      "content_sha256": "05d85532787185631536d16f406587166751dbea59618e6942637af0b432b8a7",
+      "name": "paper28_seed_mechanism_catalog_v1.json.gz",
+      "sha256": "e2391bcaab167e8a0892068312a711a39e353bc96ae66649e8f7707691745b57"
+    },
+    "generator_factorization": {
+      "content_sha256": "1e68721fb8326016f07a32f58c8c22ab1c4085172fd731db1c419b78af9e9e6c",
+      "name": "paper28_boundary_generator_factorization_v1.json.gz",
+      "sha256": "014768a1d2d1a63c7f88f506a69fdda645b8f2beda4ead74d6494a0a1a551f26"
+    }
+  },
+  "schema": "paper28-section-return-menu-audit-receipt-v1",
+  "source_closure": [
+    {
+      "path": "experiments/synchronizing_automata/paper28_audit_section_return_menu.py",
+      "sha256": "8c38abff5872f71b6dfcaf964e36da3d046166439dd5fda94a58c3740be4ea77"
+    },
+    {
+      "path": "experiments/synchronizing_automata/paper28_factor_boundary_generators.py",
+      "sha256": "8f286c560d972192f842505ca7b0ec4623c51f13a134e658340b9cc32f3a9d5f"
+    },
+    {
+      "path": "experiments/synchronizing_automata/paper28_mechanism_schema.py",
+      "sha256": "6a54e1484219b452a611bdc8644870a2abb64a84d5624f2931c2d071395a30b3"
+    },
+    {
+      "path": "experiments/synchronizing_automata/section_return_core.py",
+      "sha256": "3e829799ae9df8fe77850813d8253f8a6f857182ac30b70dbd39e3a619d03df7"
+    },
+    {
+      "path": "experiments/synchronizing_automata/mass_maturity_legacy.py",
+      "sha256": "421bf7aaac0f0544f1401731ee3474dd4b8146e6b422889a91fc69af3726324b"
+    },
+    {
+      "path": "experiments/synchronizing_automata/validation/validate_paper28_section_return_menu.py",
+      "sha256": "14cf82c6db7dd66ce8eac3de91107c70926db5fcb582b2dae8039db419850edd"
+    }
+  ],
+  "verification_mode": "FULL_RECOMPUTATION_FROM_BOUND_CANONICAL_ARTIFACTS"
+}

@@ -1,0 +1,55 @@
+{
+  "artifact": {
+    "construction_payload_sha256": "8256ead5e362bbdb03ee80014d1a369eaaa112770fe7e5d9f73f604fd2f0f2c9",
+    "content_sha256": "d0c82be3ae6f052f357c6ef6b3e34448c3465c4611f9f151a99e731aadbd0615",
+    "name": "paper28_rank5_section_candidate_v1.json.gz",
+    "sha256": "62dd04f9625fab85fff6c15c8c9bb2871fa18a2b25625c179424d7053ee5225f"
+  },
+  "inputs": {
+    "paper27_lower_section": {
+      "name": "single_defect_n7_extremal_carrier_input_v1.json",
+      "schema": "SINGLE_DEFECT_N7_EXTREMAL_CHANNEL_COVER_V1",
+      "sha256": "129cbcbbe97e9af95673ce9e5716bfeea9e1a29f1a6c56e716ba135561142f65"
+    }
+  },
+  "schema": "paper28-rank5-section-return-candidate-receipt-v1",
+  "source_closure": [
+    {
+      "path": "experiments/synchronizing_automata/paper28_prepare_rank5_section_candidate.py",
+      "sha256": "9c38330a3a5c18870007dd7b6759f9d64de24f9ef58f0d33119f688083bbb0fb"
+    },
+    {
+      "path": "experiments/synchronizing_automata/paper28_project_seed_mechanisms.py",
+      "sha256": "e0ae5c33710206edfb4c1b47c579d0ef7ba7ab73b62123f742199adaf3804739"
+    },
+    {
+      "path": "experiments/synchronizing_automata/paper28_factor_boundary_generators.py",
+      "sha256": "8f286c560d972192f842505ca7b0ec4623c51f13a134e658340b9cc32f3a9d5f"
+    },
+    {
+      "path": "experiments/synchronizing_automata/paper28_mechanism_schema.py",
+      "sha256": "6a54e1484219b452a611bdc8644870a2abb64a84d5624f2931c2d071395a30b3"
+    },
+    {
+      "path": "experiments/synchronizing_automata/section_return_core.py",
+      "sha256": "3e829799ae9df8fe77850813d8253f8a6f857182ac30b70dbd39e3a619d03df7"
+    },
+    {
+      "path": "experiments/synchronizing_automata/costed_endpoint_diagnostic.py",
+      "sha256": "65e094cd5a359df51b8cad7e2fd30c83d0361f9de39394d6c2de6884e91894b4"
+    },
+    {
+      "path": "experiments/synchronizing_automata/single_defect_macro_trap.py",
+      "sha256": "8529bff9ceb766b200863de4eadecdf1e6c525006b21c57c7bfae700ac8c4a4a"
+    },
+    {
+      "path": "experiments/synchronizing_automata/mass_maturity_legacy.py",
+      "sha256": "421bf7aaac0f0544f1401731ee3474dd4b8146e6b422889a91fc69af3726324b"
+    },
+    {
+      "path": "experiments/synchronizing_automata/validation/validate_paper28_rank5_section_candidate.py",
+      "sha256": "3488af55207d001a30596b501b3ae287f17f5a8639b1c3f0dad97e2f21d181b0"
+    }
+  ],
+  "verification_mode": "LOCAL_REPLAY_WITH_BOUND_RELEASE_INPUT"
+}

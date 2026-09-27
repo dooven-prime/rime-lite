@@ -1,0 +1,57 @@
+{
+  "artifact": {
+    "content_sha256": "c078940ecf44f65b3b4b45fca76743f0d8e2e0bf45d7ab374e6e9554cd575f95",
+    "name": "paper28_expanded_family_support_separation_v1.json.gz",
+    "projectability_payload_sha256": "351a7cfb48179dcc4f9eae57e4f538e6aa11cd580ce2c9e83460dc2def1c1109",
+    "sha256": "e40accb37fc3ad5aac42944ba9c09ec0c9c9127d396da8c979bdee1fd96a5069"
+  },
+  "inputs": [
+    {
+      "name": "paper28_third_rank4_section_candidate_v1.json.gz",
+      "sha256": "c27f2d9ccdda192173afedcb52a0a94d5fbcf45e03f4a9932fd3b0d66a286171"
+    },
+    {
+      "name": "paper28_third_rank4_section_return_evaluation_v1.json.gz",
+      "sha256": "8da85162ef764e3727937acc12e974b35b20b6c561f620ce5a74808dfc84c992"
+    },
+    {
+      "name": "paper28_third_rank5_section_candidate_v1.json.gz",
+      "sha256": "7a7cda86530c0f67e56527fbe7ea132920fb0dcab2700757e74075b35a70c0f2"
+    },
+    {
+      "name": "paper28_fourth_rank4_section_candidate_v1.json.gz",
+      "sha256": "42f1bc3591fab372f41698bcf2ff7a189ba5e90bc3f8623de8cce058f2ec5628"
+    },
+    {
+      "name": "paper28_fourth_rank4_section_return_evaluation_v1.json.gz",
+      "sha256": "ed330003880427ebaf252d6dccb8e42c76dae3e9661340641f0c7c4054744ef7"
+    },
+    {
+      "name": "paper28_fourth_rank5_section_candidate_v1.json.gz",
+      "sha256": "3aeeb813467d97dd3d9df0bf9fda9bf9893e36492e783c1c6d4ba9af23549973"
+    },
+    {
+      "name": "paper28_fifth_rank4_section_candidate_v1.json.gz",
+      "sha256": "1912c43d9ea9644a9fae10fac947d871fd00c8eb6328aaf1ea61bba97f081fa7"
+    },
+    {
+      "name": "paper28_fifth_rank4_section_return_evaluation_v1.json.gz",
+      "sha256": "23961258aff1ebf976ad67c148229b4506852a56fffb3bb1035eca6079e246de"
+    },
+    {
+      "name": "paper28_fifth_rank5_section_candidate_v1.json.gz",
+      "sha256": "1eaec0e9bc82220383b6fe7d0364d7817c9f229106132decd7abdfbb8a912db6"
+    },
+    {
+      "name": "paper28_second_mechanism_schema_declaration_v1.json.gz",
+      "sha256": "6b11f9594207cbe9561936470ba1ff44499d0e4470b00e64fa231c12b56cac25"
+    }
+  ],
+  "schema": "paper28-expanded-family-support-separation-receipt-v1",
+  "source_closure": {
+    "script": {
+      "name": "paper28_audit_expanded_family_support.py",
+      "sha256": "43d9eb76b99cc55f7a14497db320f4fa10d0fe07bb6e1dc64da8cd013c6c4d9b"
+    }
+  }
+}

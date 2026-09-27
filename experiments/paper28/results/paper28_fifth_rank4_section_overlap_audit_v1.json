@@ -1,0 +1,70 @@
+{
+  "claim_boundary": {
+    "not_claimed": [
+      "fifth carrier section authority",
+      "Good_4 success for the fifth carrier",
+      "absence of a coarser typed isomorphism"
+    ],
+    "proved": "exact typed identity overlap of the fifth frozen carrier with the certified second, third, and fourth rank-four sections"
+  },
+  "content_sha256": "ceac8e7497a314826eaa2a9413ab24d4c3a1a935d92cb30b729812b67ce3e666",
+  "inputs": {
+    "fifth_candidate": {
+      "candidate_payload_sha256": "124a14abce155fa91c576839524707890c363e9000097b774cbf0a345f26daae",
+      "content_sha256": "d8a7b47400899688a7287f73f9000268b48ef3d6a344acbe49cc7595fac4fc16",
+      "name": "paper28_non_length_three_hostile_selection_v1.json.gz",
+      "schema": "paper28-non-length-three-hostile-selection-v1",
+      "sha256": "4dafb1644b1f2c4f7fb519d01c513fd995caa93a548ee23d4f74ac813f58c5f4"
+    },
+    "fourth_section_authority": {
+      "content_sha256": "df1c0ba3a134aefefaf8690c53cfb9331244db68e76220b5e0329a8ec69b974e",
+      "name": "paper28_fourth_rank4_section_return_evaluation_v1.json.gz",
+      "schema": "paper28-fourth-rank4-section-return-evaluation-v1",
+      "sha256": "ed330003880427ebaf252d6dccb8e42c76dae3e9661340641f0c7c4054744ef7"
+    },
+    "second_section_authority": {
+      "content_sha256": "84e5af3ceb31c555323b01e3d632463ce461447ddc56ee45c1450df1f797b60e",
+      "name": "paper28_second_rank4_section_return_evaluation_v1.json.gz",
+      "schema": "paper28-second-rank4-section-return-evaluation-v1",
+      "sha256": "a82c3ba7719995ecbc6ec44178836ffdd1c406ac145803a852252db5016377f9"
+    },
+    "third_section_authority": {
+      "content_sha256": "f3abcbe5da8e06a0b4df0c297cc7b6dc81b645f64a4083f425735b5a0dbf0037",
+      "name": "paper28_third_rank4_section_return_evaluation_v1.json.gz",
+      "schema": "paper28-third-rank4-section-return-evaluation-v1",
+      "sha256": "8da85162ef764e3727937acc12e974b35b20b6c561f620ce5a74808dfc84c992"
+    }
+  },
+  "overlap": {
+    "certified_union_intersection_context_ids": [],
+    "certified_union_intersection_count": 0,
+    "classification": "DISJOINT_FROM_CERTIFIED_RANK4_SECTIONS",
+    "fifth_candidate_context_count": 10,
+    "fifth_only_count": 10,
+    "sections": {
+      "fourth": {
+        "intersection_context_ids": [],
+        "intersection_count": 0,
+        "section_context_count": 36
+      },
+      "second": {
+        "intersection_context_ids": [],
+        "intersection_count": 0,
+        "section_context_count": 48
+      },
+      "third": {
+        "intersection_context_ids": [],
+        "intersection_count": 0,
+        "section_context_count": 36
+      }
+    }
+  },
+  "schema": "paper28-fifth-rank4-section-overlap-audit-v1",
+  "scope": {
+    "ambient_n": 7,
+    "candidate_membership_mutated": false,
+    "good_4_evaluated": false,
+    "menu_constructed": false
+  },
+  "typed_identity": "canonical context id computed from ambient n, rooted action, labelled packet placement, and distinguished packet"
+}

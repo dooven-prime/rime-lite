@@ -1,0 +1,463 @@
+{
+  "F3_refinement": {
+    "allowed_realizations": [
+      "IDENTITY",
+      "ATOM_BIJECTION"
+    ],
+    "preserved_observables": [
+      "rooted action",
+      "occupied coordinates",
+      "packet masses and roles",
+      "distinguished ancestry",
+      "normalization semantics",
+      "accounting semantics"
+    ],
+    "schema_change": "NONE_KEEP_WITHIN_F3",
+    "statement": "exact-lift soundness certifies a target view preserving every typed observable used by the lower theorem"
+  },
+  "claim_boundary": {
+    "not_claimed": [
+      "the common 1+1 length-three zero-surplus anatomy is structural",
+      "a rank-controlled or uniform menu bound",
+      "a third return realization",
+      "an all-rank return theorem"
+    ],
+    "proved": "the displayed comparison and F3 decision on the two frozen fixed-n=7 composed chains"
+  },
+  "content_sha256": "76a8541f6cd2540094c38e3892111dac3d64756ed6edef278f2e5f11260d308a",
+  "contract_audit": {
+    "exact_compatible_accounting_present": true,
+    "exact_lift_fibers_retained": true,
+    "existential_return": true,
+    "future_free_construction": true,
+    "internal_boundaries_excluded": true,
+    "winner_selection_absent": true
+  },
+  "derived_conclusions": {
+    "add_F6_handoff_contract": false,
+    "fusion_1_plus_1_common_but_unproved": true,
+    "generator_vocabulary_survives": true,
+    "incoming_distinguished_unused_common_but_unproved": true,
+    "length_3_surplus_0_common_but_unproved": true,
+    "menu_size_le_8_survives": false,
+    "nonidentity_handoff_is_universal": false,
+    "typed_observable_preservation_required": true
+  },
+  "inputs": {
+    "first_rank4": {
+      "content_sha256": "31d3f27b6becd42eda3c76fb86aef71a7b802194748fd86f061d4437d0ed33ae",
+      "name": "paper28_section_return_menu_audit_v1.json.gz",
+      "schema": "paper28-section-return-menu-audit-v1",
+      "sha256": "bc7d314fdca72dd7cbc6da9add74a55fd63afdb59090ddea30c7c07184e58b47"
+    },
+    "first_rank5_candidate": {
+      "content_sha256": "d0c82be3ae6f052f357c6ef6b3e34448c3465c4611f9f151a99e731aadbd0615",
+      "name": "paper28_rank5_section_candidate_v1.json.gz",
+      "schema": "paper28-rank5-section-return-candidate-v1",
+      "sha256": "62dd04f9625fab85fff6c15c8c9bb2871fa18a2b25625c179424d7053ee5225f"
+    },
+    "first_rank5_evaluation": {
+      "content_sha256": "fa6cea5cdaf60d6c279dc250453adc1f3fc296d44b69ca691b5c0acf7449b4c4",
+      "name": "paper28_rank5_section_return_evaluation_v1.json.gz",
+      "schema": "paper28-rank5-section-return-evaluation-v1",
+      "sha256": "e6012755d76a3c884f50d1f4ba5d528b18f34e6cca36af61e8950cd70d5f820a"
+    },
+    "second_rank4_candidate": {
+      "content_sha256": "7a2a1ad00c689980469b3a90c8da6ae3cd9c8d1e19434bc8d318449f4143982c",
+      "name": "paper28_second_rank4_section_candidate_v1.json.gz",
+      "schema": "paper28-second-rank4-section-candidate-v1",
+      "sha256": "0fad98bbedbd54403b7e64acf05d61e0f8d6e3d6909ad109ed945b1f4a774b9f"
+    },
+    "second_rank4_evaluation": {
+      "content_sha256": "84e5af3ceb31c555323b01e3d632463ce461447ddc56ee45c1450df1f797b60e",
+      "name": "paper28_second_rank4_section_return_evaluation_v1.json.gz",
+      "schema": "paper28-second-rank4-section-return-evaluation-v1",
+      "sha256": "a82c3ba7719995ecbc6ec44178836ffdd1c406ac145803a852252db5016377f9"
+    },
+    "second_rank5_candidate": {
+      "content_sha256": "d6389423143082fd468ee6e22f43dcbf7e5508244bb260205cc6125bce53e1cb",
+      "name": "paper28_second_rank5_section_candidate_v1.json.gz",
+      "schema": "paper28-second-rank5-section-candidate-v1",
+      "sha256": "106f87b804f4a07b647e17a8d6a9c3d82bd711c076a20146cdb3ce817a8b5e0e"
+    },
+    "second_rank5_evaluation": {
+      "content_sha256": "aed6806f738f0207c04da3544029e6730562c9c64e53b64d27042f137feb3896",
+      "name": "paper28_second_rank5_section_return_evaluation_v1.json.gz",
+      "schema": "paper28-second-rank5-section-return-evaluation-v1",
+      "sha256": "e2990ba262a09e9d985e2f968ee9c0af76f8192d8b1f5d93cd8db0ec9876ec56"
+    },
+    "second_selection": {
+      "content_sha256": "7dcccb380744cb59e52be0e5069a74e3b8879a9f600eb61657cd06990fab8aec",
+      "name": "paper28_second_rank5_return_candidate_selection_v1.json.gz",
+      "schema": "paper28-second-rank5-return-candidate-selection-v1",
+      "sha256": "a719106b32ff32d7b1f9ba1d5635f7419e08befd28049495e13e2acf581d22b1"
+    }
+  },
+  "invariant_matrix": [
+    {
+      "first": [
+        [
+          2,
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "second": [
+        [
+          3,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "ACCIDENTAL",
+      "surface": "rank5_source_partition"
+    },
+    {
+      "first": [
+        [
+          2,
+          2,
+          2,
+          1
+        ]
+      ],
+      "second": [
+        [
+          3,
+          2,
+          1,
+          1
+        ]
+      ],
+      "status": "ACCIDENTAL",
+      "surface": "rank4_section_partition"
+    },
+    {
+      "first": [
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "second": [
+        [
+          1
+        ]
+      ],
+      "status": "ACCIDENTAL",
+      "surface": "upstream_Sigma6_word"
+    },
+    {
+      "first": [
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "second": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "status": "ACCIDENTAL",
+      "surface": "successful_rank5_word"
+    },
+    {
+      "first": {
+        "ATOM_BIJECTION": 35
+      },
+      "second": {
+        "IDENTITY": 48
+      },
+      "status": "IMPLEMENTATION_DEPENDENT",
+      "surface": "handoff_mode"
+    },
+    {
+      "first": 8,
+      "second": 11,
+      "status": "NO_STABLE_NUMERICAL_BOUND",
+      "surface": "rank4_menu_max"
+    },
+    {
+      "first": false,
+      "second": true,
+      "status": "NOT_STRUCTURAL",
+      "surface": "rank4_all_channels_good"
+    },
+    {
+      "first": true,
+      "second": true,
+      "status": "SURVIVES_BOTH",
+      "surface": "rank5_existential_return"
+    },
+    {
+      "first": [
+        "FUSION",
+        "RETURN",
+        "TRANSPORT"
+      ],
+      "second": [
+        "FUSION",
+        "RETURN",
+        "TRANSPORT"
+      ],
+      "status": "SURVIVES_BOTH",
+      "surface": "generator_vocabulary"
+    },
+    {
+      "first": [
+        [
+          1,
+          1
+        ]
+      ],
+      "second": [
+        [
+          1,
+          1
+        ]
+      ],
+      "status": "COMMON_UNTESTED_ACCIDENTAL",
+      "surface": "rank5_fusion_parent_masses"
+    },
+    {
+      "first": {
+        "lengths": [
+          [
+            3
+          ]
+        ],
+        "surpluses": [
+          0
+        ]
+      },
+      "second": {
+        "lengths": [
+          [
+            3
+          ]
+        ],
+        "surpluses": [
+          0
+        ]
+      },
+      "status": "COMMON_UNTESTED_ACCIDENTAL",
+      "surface": "rank5_length_surplus"
+    },
+    {
+      "first": [
+        "NONE"
+      ],
+      "second": [
+        "NONE"
+      ],
+      "status": "COMMON_STRUCTURAL_CANDIDATE_NOT_PROVED",
+      "surface": "incoming_distinguished_consumed"
+    },
+    {
+      "first": true,
+      "second": true,
+      "status": "SURVIVES_BOTH",
+      "surface": "F1_F5_discipline"
+    }
+  ],
+  "next_hostile_selection": {
+    "ambient_n": 7,
+    "carrier": "future-free 562-cell space",
+    "evaluation_forbidden_during_selection": [
+      "Good_4",
+      "Good_5",
+      "lower-section success",
+      "winning or Bellman labels"
+    ],
+    "hard_constraint": "fusion_parent_type != 1+1",
+    "preferred_type": "1+2",
+    "secondary_objective": "minimize distance from the closed realizations on fresh participation, length, surplus, kernel mass, and F4-relative offsets",
+    "status": "PREREGISTERED_NOT_RUN"
+  },
+  "realizations": {
+    "first": {
+      "name": "extremal_35_context_chain",
+      "rank4": {
+        "channel_count": 173,
+        "failed_channel_count": 4,
+        "failed_exact_lift_count": 1853,
+        "menu_max": 8,
+        "source_count": 35,
+        "successful_channel_count": 169,
+        "successful_exact_lift_count": 2329
+      },
+      "rank5": {
+        "all_sources_have_good_channel": true,
+        "channel_count": 87,
+        "construction_evaluation_status": "NOT_RUN",
+        "failed_channel_count": 52,
+        "failed_exact_lift_count": 179,
+        "generator_vocabulary": [
+          "FUSION",
+          "RETURN",
+          "TRANSPORT"
+        ],
+        "handoff_type_histogram": {
+          "ATOM_BIJECTION": 35
+        },
+        "incoming_distinguished_participation": [
+          "NONE"
+        ],
+        "internal_boundaries_exported_as_checkpoints": 0,
+        "source_count": 35,
+        "source_partition_set": [
+          [
+            2,
+            2,
+            1,
+            1,
+            1
+          ]
+        ],
+        "successful_channel_count": 35,
+        "successful_exact_lift_count": 35,
+        "successful_fusion_parent_masses": [
+          [
+            1,
+            1
+          ]
+        ],
+        "successful_lengths": [
+          [
+            3
+          ]
+        ],
+        "successful_rank5_words": [
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "successful_total_surpluses": [
+          0
+        ],
+        "target_partition_set": [
+          [
+            2,
+            2,
+            2,
+            1
+          ]
+        ],
+        "upstream_sigma6_words": [
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "winner_selected": false
+      }
+    },
+    "second": {
+      "name": "second_48_context_chain",
+      "rank4": {
+        "channel_count": 401,
+        "failed_channel_count": 0,
+        "failed_exact_lift_count": 102,
+        "menu_max": 11,
+        "source_count": 48,
+        "successful_channel_count": 401,
+        "successful_exact_lift_count": 9498
+      },
+      "rank5": {
+        "all_sources_have_good_channel": true,
+        "channel_count": 96,
+        "construction_evaluation_status": "NOT_RUN",
+        "failed_channel_count": 48,
+        "failed_exact_lift_count": 147,
+        "generator_vocabulary": [
+          "FUSION",
+          "RETURN",
+          "TRANSPORT"
+        ],
+        "handoff_type_histogram": {
+          "IDENTITY": 48
+        },
+        "incoming_distinguished_participation": [
+          "NONE"
+        ],
+        "internal_boundaries_exported_as_checkpoints": 0,
+        "source_count": 48,
+        "source_partition_set": [
+          [
+            3,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "successful_channel_count": 48,
+        "successful_exact_lift_count": 48,
+        "successful_fusion_parent_masses": [
+          [
+            1,
+            1
+          ]
+        ],
+        "successful_lengths": [
+          [
+            3
+          ]
+        ],
+        "successful_rank5_words": [
+          [
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "successful_total_surpluses": [
+          0
+        ],
+        "target_partition_set": [
+          [
+            3,
+            2,
+            1,
+            1
+          ]
+        ],
+        "upstream_sigma6_words": [
+          [
+            1
+          ]
+        ],
+        "winner_selected": false
+      }
+    }
+  },
+  "schema": "paper28-cross-realization-invariant-audit-v1",
+  "scope": {
+    "ambient_n": 7,
+    "new_oracle_evaluation": false,
+    "realization_count": 2,
+    "third_candidate_selected": false
+  }
+}

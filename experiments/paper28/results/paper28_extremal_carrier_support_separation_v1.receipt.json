@@ -1,0 +1,34 @@
+{
+  "artifact": {
+    "content_sha256": "33c48f4978e227c3cf52242bca7e3b4880f16275ba4362e5aaeb8b10a4937935",
+    "name": "paper28_extremal_carrier_support_separation_v1.json.gz",
+    "projectability_payload_sha256": "ae528500378f989283889d349c0a6c48404a22025526e09b13595d9009526b16",
+    "sha256": "dd0dc64a4d31e600fa23b343d41faf4a1ed639d58891aa6f8b016e2dfdea982f"
+  },
+  "inputs": [
+    {
+      "name": "paper28_section_return_menu_audit_v1.json.gz",
+      "sha256": "bc7d314fdca72dd7cbc6da9add74a55fd63afdb59090ddea30c7c07184e58b47"
+    },
+    {
+      "name": "paper28_rank5_section_candidate_v1.json.gz",
+      "sha256": "62dd04f9625fab85fff6c15c8c9bb2871fa18a2b25625c179424d7053ee5225f"
+    },
+    {
+      "name": "paper28_third_mechanism_schema_declaration_v1.json.gz",
+      "sha256": "888708418730727d2ce32468db53c1d1fb952b8dbca7bd41e4e78550496f56dc"
+    }
+  ],
+  "schema": "paper28-extremal-carrier-support-separation-receipt-v1",
+  "source_closure": [
+    {
+      "name": "paper28_audit_extremal_carrier_support.py",
+      "sha256": "fd0b2afc5014dd7c7c2679d1bde68aaf9f4df729347036818ccbe7a1d767f33b"
+    },
+    {
+      "name": "validation/validate_paper28_extremal_family_support.py",
+      "sha256": "0b5765ddee00b23e3a6497af31383323a64e1b5ab8837e6220561c241057c29a"
+    }
+  ],
+  "verification_mode": "PROJECTABILITY_FREEZE_THEN_POST_DECLARATION_SUPPORT_EVALUATION"
+}

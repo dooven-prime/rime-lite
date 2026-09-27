@@ -1,0 +1,48 @@
+digraph Paper28FiniteMechanismStructure {
+  graph [
+    rankdir=TB,
+    bgcolor="white",
+    pad="0.14",
+    nodesep="0.48",
+    ranksep="0.58",
+    splines=polyline,
+    outputorder=edgesfirst
+  ];
+  node [
+    shape=box,
+    style="rounded,filled",
+    fillcolor="#f3f5f5",
+    color="#31434f",
+    fontcolor="#17232b",
+    fontname="Arial",
+    fontsize=12,
+    penwidth=1.4,
+    margin="0.17,0.10"
+  ];
+  edge [color="#52636d", arrowsize=0.72, penwidth=1.25];
+
+  imported [label="Imported typed entry and completion interface\nPaper XXVII", fillcolor="#dce9ee"];
+  exact [label="Exact finite relation\n11,252 source-addressed receipts"];
+  quotient [label="Quotient obstruction and\nboundary generator cover"];
+  credit [label="Exact credit composition\n13,054 compatible pairs"];
+  returns [label="Five fixed-scope return surfaces\nrank 5 to rank 4 to the exact base"];
+  cover [label="GFPC / PEC sufficient cover\n165 tagged contexts", fillcolor="#e5efe7"];
+  align [label="Canonical first-exit alignment\n26,995 macro lifts", fillcolor="#e5efe7"];
+  open [
+    label="Projectable-Origin Supply at arbitrary n\nOPEN",
+    style="rounded,dashed",
+    fillcolor="white",
+    color="#a45d43",
+    fontcolor="#7f422f"
+  ];
+
+  imported -> exact;
+  exact -> quotient;
+  exact -> credit;
+  { rank=same; quotient; credit; }
+  exact -> returns;
+  credit -> returns;
+  returns -> cover;
+  cover -> align;
+  align -> open [style=dashed, color="#a45d43"];
+}

@@ -1,0 +1,62 @@
+{
+  "artifact": {
+    "content_sha256": "46cec3e66eabf8bfd0c9b350055718bd081610a9750975901fc458a3c89fb58e",
+    "frozen_completion_input_sha256": "1b0604cca68070e046b0eb6b0f0cdd17609b450edbe950fb46d15fc9cde2aa13",
+    "name": "paper28_pec_component_completion_v1.json.gz",
+    "sha256": "3f6e4bc7758f518a956b3bc07021202b049af3f34a4132f8cb71f45b6edf48fd"
+  },
+  "inputs": [
+    {
+      "name": "paper28_third_mechanism_schema_declaration_v1.json.gz",
+      "sha256": "888708418730727d2ce32468db53c1d1fb952b8dbca7bd41e4e78550496f56dc"
+    },
+    {
+      "name": "paper28_expanded_family_support_separation_v1.json.gz",
+      "sha256": "e40accb37fc3ad5aac42944ba9c09ec0c9c9127d396da8c979bdee1fd96a5069"
+    },
+    {
+      "name": "paper28_third_rank4_section_candidate_v1.json.gz",
+      "sha256": "c27f2d9ccdda192173afedcb52a0a94d5fbcf45e03f4a9932fd3b0d66a286171"
+    },
+    {
+      "name": "paper28_fourth_rank4_section_candidate_v1.json.gz",
+      "sha256": "42f1bc3591fab372f41698bcf2ff7a189ba5e90bc3f8623de8cce058f2ec5628"
+    },
+    {
+      "name": "paper28_fifth_rank4_section_candidate_v1.json.gz",
+      "sha256": "1912c43d9ea9644a9fae10fac947d871fd00c8eb6328aaf1ea61bba97f081fa7"
+    }
+  ],
+  "schema": "paper28-pec-component-completion-receipt-v1",
+  "source_closure": [
+    {
+      "name": "paper28_evaluate_pec_component_completion.py",
+      "sha256": "506e24f871424ea01437647461631e2a0921e5b7b96adb99c52d24dc45e73921"
+    },
+    {
+      "name": "paper28_prepare_second_rank4_section_candidate.py",
+      "sha256": "18c4913ef5f228ae158e71b81ed24600ddbeca37b48e27ddd1d388a73f6a265b"
+    },
+    {
+      "name": "section_return_core.py",
+      "sha256": "3e829799ae9df8fe77850813d8253f8a6f857182ac30b70dbd39e3a619d03df7"
+    },
+    {
+      "name": "costed_endpoint_diagnostic.py",
+      "sha256": "65e094cd5a359df51b8cad7e2fd30c83d0361f9de39394d6c2de6884e91894b4"
+    },
+    {
+      "name": "single_defect_macro_trap.py",
+      "sha256": "8529bff9ceb766b200863de4eadecdf1e6c525006b21c57c7bfae700ac8c4a4a"
+    },
+    {
+      "name": "mass_maturity_legacy.py",
+      "sha256": "421bf7aaac0f0544f1401731ee3474dd4b8146e6b422889a91fc69af3726324b"
+    },
+    {
+      "name": "validation/validate_paper28_pec_component_completion.py",
+      "sha256": "ad54717357a0c5f4fc183b38c88508aec8d7ba3a1c69068ca8dfff726a5360c7"
+    }
+  ],
+  "verification_mode": "TAGGED_POST_DECLARATION_GENERIC_LOCAL_RETURN_EVALUATION"
+}

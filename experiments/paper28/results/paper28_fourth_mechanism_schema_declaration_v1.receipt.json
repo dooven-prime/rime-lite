@@ -1,0 +1,33 @@
+{
+  "artifact": {
+    "anonymous_profile_payload_sha256": "0ab1d2993b9770938d13fcdd9c04abdc98be59c001311c18399f7cbb0627d094",
+    "content_sha256": "310ac7807aa483819ef252b5a80bbe7860481f33c216ca11e65f9fdb424a0bb8",
+    "name": "paper28_fourth_mechanism_schema_declaration_v1.json.gz",
+    "sha256": "6c2cc844832d8285c64a4380a77234d4f6788d6e8779c20f4c6a4adc3e7704c1"
+  },
+  "inputs": {
+    "cand2_projectability": {
+      "name": "paper28_fixed_scope_projectability_support_separation_v1.json.gz",
+      "sha256": "f2e8274478cad6e6309a77f825fa15207873ca7f2f5960c5839c22224adcd7ad"
+    },
+    "ext_support": {
+      "name": "paper28_extremal_carrier_support_separation_v1.json.gz",
+      "sha256": "dd0dc64a4d31e600fa23b343d41faf4a1ed639d58891aa6f8b016e2dfdea982f"
+    },
+    "fpc_declaration": {
+      "name": "paper28_second_mechanism_schema_declaration_v1.json.gz",
+      "sha256": "6b11f9594207cbe9561936470ba1ff44499d0e4470b00e64fa231c12b56cac25"
+    },
+    "prior_family": {
+      "name": "paper28_third_mechanism_schema_declaration_v1.json.gz",
+      "sha256": "888708418730727d2ce32468db53c1d1fb952b8dbca7bd41e4e78550496f56dc"
+    }
+  },
+  "schema": "paper28-fourth-mechanism-schema-declaration-receipt-v1",
+  "source_closure": {
+    "script": {
+      "name": "paper28_declare_fourth_mechanism_schema.py",
+      "sha256": "8767a26f07db10d7d70128e7410888634052f55f2b2bbdcf860711fe8c81ca64"
+    }
+  }
+}

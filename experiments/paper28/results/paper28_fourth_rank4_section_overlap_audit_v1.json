@@ -1,0 +1,53 @@
+{
+  "claim_boundary": {
+    "not_claimed": [
+      "fourth carrier section authority",
+      "Good_4 success for the fourth carrier",
+      "absence of a coarser typed isomorphism"
+    ],
+    "proved": "exact typed identity overlap of the fourth frozen carrier with the certified second and third rank-four sections"
+  },
+  "content_sha256": "748839230cedd35781e6a23276690da8e50c1814774b88cf2188a73d013f861c",
+  "inputs": {
+    "fourth_candidate": {
+      "candidate_payload_sha256": "b5f9ebbbdea418621b14984601a36a30263e3eda614a7daf23d97a9e29fb080e",
+      "content_sha256": "58e68cec4fd84461bec7b58fb4b739eb7aa3012174bfddd272bea354605d087b",
+      "name": "paper28_fresh_consumption_hostile_selection_v1.json.gz",
+      "schema": "paper28-fresh-consumption-hostile-selection-v1",
+      "sha256": "01ee8936f3a733e26ea0f8094be25fc9ca9aea2d76ccebe632ef6a9eb5e4b969"
+    },
+    "second_section_authority": {
+      "content_sha256": "84e5af3ceb31c555323b01e3d632463ce461447ddc56ee45c1450df1f797b60e",
+      "name": "paper28_second_rank4_section_return_evaluation_v1.json.gz",
+      "schema": "paper28-second-rank4-section-return-evaluation-v1",
+      "sha256": "a82c3ba7719995ecbc6ec44178836ffdd1c406ac145803a852252db5016377f9"
+    },
+    "third_section_authority": {
+      "content_sha256": "f3abcbe5da8e06a0b4df0c297cc7b6dc81b645f64a4083f425735b5a0dbf0037",
+      "name": "paper28_third_rank4_section_return_evaluation_v1.json.gz",
+      "schema": "paper28-third-rank4-section-return-evaluation-v1",
+      "sha256": "8da85162ef764e3727937acc12e974b35b20b6c561f620ce5a74808dfc84c992"
+    }
+  },
+  "overlap": {
+    "certified_union_intersection_context_ids": [],
+    "certified_union_intersection_count": 0,
+    "classification": "DISJOINT_FROM_CERTIFIED_RANK4_SECTIONS",
+    "fourth_candidate_context_count": 36,
+    "fourth_only_count": 36,
+    "second_intersection_context_ids": [],
+    "second_intersection_count": 0,
+    "second_section_context_count": 48,
+    "third_intersection_context_ids": [],
+    "third_intersection_count": 0,
+    "third_section_context_count": 36
+  },
+  "schema": "paper28-fourth-rank4-section-overlap-audit-v1",
+  "scope": {
+    "ambient_n": 7,
+    "candidate_membership_mutated": false,
+    "good_4_evaluated": false,
+    "menu_constructed": false
+  },
+  "typed_identity": "canonical context id computed from ambient n, rooted action, labelled packet placement, and distinguished packet"
+}

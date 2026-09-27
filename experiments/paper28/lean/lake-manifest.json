@@ -1,0 +1,6 @@
+{"version": "1.2.0",
+ "packagesDir": ".lake/packages",
+ "packages": [],
+ "name": "rime_paper28_spine",
+ "lakeDir": ".lake",
+ "fixedToolchain": false}

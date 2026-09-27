@@ -1,0 +1,43 @@
+{
+  "artifact": {
+    "content_sha256": "31afd4a80ffbbbc9817eb80649b002b553644ede23ac5b60d8a181efa4e88a6d",
+    "name": "paper28_remaining_anatomy_feasibility_audit_v1.json",
+    "sha256": "1a43e6f10be8b4b424d9dc4316ac51b4aec051fe966ae2ee030262a938a80fe9"
+  },
+  "inputs": {
+    "P28_5l_rule": {
+      "content_sha256": "892e350d9f33117043d6a701dd3a4f3d3cd916da70568e38b6047bd99cf032cf",
+      "name": "paper28_three_realization_invariant_audit_v1.json",
+      "sha256": "d41101c9eb917c0368488e92b5d23245942161a19e6c7ea95a781d3552036707"
+    },
+    "inherited_pilot": {
+      "name": "single_defect_n7_inherited_section_pilot_complete_v1.json",
+      "rows_digest": "21ec5e620782d98902ac89d26dd2bd6f971507d36b346a4256226aa98549d5cd",
+      "sha256": "fd6045934b8585d748d8684e1062e71ddc25bdf0865e154dae6eab16a1563182"
+    }
+  },
+  "schema": "paper28-remaining-anatomy-feasibility-audit-receipt-v1",
+  "source_closure": [
+    {
+      "path": "experiments/synchronizing_automata/paper28_remaining_anatomy_feasibility_audit.py",
+      "sha256": "bd35831469f42cb1510123b151cb472745c0933d6168c323a71c801d014f4bfb"
+    },
+    {
+      "path": "experiments/synchronizing_automata/paper28_select_second_rank5_return_candidate.py",
+      "sha256": "6244b411f782d313b9947432e9de1084a1d6d7a88e4e761b9ae2d73849367ff4"
+    },
+    {
+      "path": "experiments/synchronizing_automata/section_return_core.py",
+      "sha256": "3e829799ae9df8fe77850813d8253f8a6f857182ac30b70dbd39e3a619d03df7"
+    },
+    {
+      "path": "experiments/synchronizing_automata/single_defect_transport.py",
+      "sha256": "a2a4ba0ca5ddaf8744eb8a736d8510ce138baaf0097791504d2baa03a2f01c0b"
+    },
+    {
+      "path": "experiments/synchronizing_automata/validation/validate_paper28_remaining_anatomy_feasibility_audit.py",
+      "sha256": "33a8bf066c3a31fc2185332e35a679938a3e39e9d9849bc2c333c137403b2310"
+    }
+  ],
+  "verification_mode": "SOURCE_LOCAL_FEASIBILITY_REPLAY"
+}

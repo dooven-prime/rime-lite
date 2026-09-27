@@ -1,0 +1,42 @@
+{
+  "artifact": {
+    "construction_payload_sha256": "ccfce9e783ae84ebf4f3458c57847cd41b70d52ff5b3b850e53f9fc1bcfe5822",
+    "content_sha256": "a75030402c065aceb5dfc40acba1caa31f844ecb8b892ee3a020c08ab62655eb",
+    "name": "paper28_ext_rank4_section_candidate_v1.json.gz",
+    "sha256": "af418987768e22c1dce097e69d6f0e267d8fb98eb7c68d8795b8097783cd1cb3"
+  },
+  "inputs": [
+    {
+      "name": "paper28_seed_mechanism_catalog_v1.json.gz",
+      "sha256": "e2391bcaab167e8a0892068312a711a39e353bc96ae66649e8f7707691745b57"
+    },
+    {
+      "name": "paper28_boundary_generator_factorization_v1.json.gz",
+      "sha256": "014768a1d2d1a63c7f88f506a69fdda645b8f2beda4ead74d6494a0a1a551f26"
+    }
+  ],
+  "schema": "paper28-ext-rank4-section-candidate-receipt-v1",
+  "source_closure": [
+    {
+      "name": "paper28_prepare_ext_rank4_section_candidate.py",
+      "sha256": "29df6ef70c5837adb1ff84a242328548566357d83e527672b0e24792feb18f17"
+    },
+    {
+      "name": "paper28_audit_section_return_menu.py",
+      "sha256": "8c38abff5872f71b6dfcaf964e36da3d046166439dd5fda94a58c3740be4ea77"
+    },
+    {
+      "name": "paper28_factor_boundary_generators.py",
+      "sha256": "8f286c560d972192f842505ca7b0ec4623c51f13a134e658340b9cc32f3a9d5f"
+    },
+    {
+      "name": "paper28_mechanism_schema.py",
+      "sha256": "6a54e1484219b452a611bdc8644870a2abb64a84d5624f2931c2d071395a30b3"
+    },
+    {
+      "name": "validation/validate_paper28_ext_rank4_section_candidate.py",
+      "sha256": "6c02a19df6c6e5ca761dc9146f39bf069325695127cc04ce634f5106e6360e40"
+    }
+  ],
+  "verification_mode": "FULL_SUCCESS_FREE_PROJECTION_REPLAY"
+}

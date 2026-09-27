@@ -1,0 +1,6 @@
+name = "rime_paper28_spine"
+version = "0.1.0"
+defaultTargets = ["Paper28"]
+
+[[lean_lib]]
+name = "Paper28"

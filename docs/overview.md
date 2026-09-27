@@ -118,7 +118,7 @@ research target; Paper VII does not assert a generic completion theorem.
   and coarse-state closure on a source-addressed MaleCNS carrier. It does not
   inherit or extend the SOF protocol authority chain.
 
-### Papers XX--XXVII: Independent Post-Protocol Mathematics
+### Papers XX--XXVIII: Independent Post-Protocol Mathematics
 
 Papers XVII--XIX are intentionally unused in the public numbered sequence.
 Paper XX begins a separately scoped mathematical line with all-depth
@@ -144,6 +144,11 @@ pair absorption and proving a sharp reset-word waiting envelope. Paper XXIII
 is its deterministic precursor and comparison point, not a theorem premise.
 Paper XXVII develops fixed-scope entry sections and source-addressed
 relation-valued completion interfaces for single-defect circular automata.
+Paper XXVIII inherits that typed interface without enlarging or re-owning
+Paper XXVII's theorem scope. It develops finite mechanism quotients, exact
+credit composition, five fixed-scope recursive-return surfaces, a sufficient
+GFPC/PEC cover, and canonical first-exit path alignment. Projectable-Origin
+Supply remains open at arbitrary ambient size.
 These papers consume no protocol authority and do not reopen Papers VIII--XV.
 Published version-1 identities are maintained in the repository's canonical
 DOI index.
@@ -153,8 +158,10 @@ XXIII owns deterministic pair hitting, marked-kernel corridors, and Schreier
 waiting in its declared structured classes. Paper XXVI owns stochastic
 unordered-pair transfer, absorption scales, and reset-word waiting envelopes.
 Paper XXVII owns only its fixed `n=6` entry-section and `n=7` completion-
-relation classifications. Results or evidence do not transfer between these
-owners without an explicit theorem or source-addressed import.
+relation classifications. Paper XXVIII owns its declared finite mechanism,
+credit, return, cover, and alignment results; it owns no all-rank selector or
+reset bound. Results or evidence do not transfer between these owners without
+an explicit theorem or source-addressed import.
 
 ## Claim Discipline
 

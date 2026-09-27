@@ -55,13 +55,14 @@ Paper-facing computations write generated records under the owning
 | XXV | [paper25/README.md](paper25/README.md) | exact transport and perturbation controls, bounded numerical diagnostics, hostile information-refinement witnesses, and supplementary semantic-lift evidence |
 | XXVI | [paper26/README.md](paper26/README.md) | pair-chain replay, Cerny and rare-run family records, float64 spectral observations, sharp waiting-envelope controls, and limited Lean closure |
 | XXVII | [paper27/README.md](paper27/README.md) | fixed-scope entry-section classification, source-addressed completion relations, symbolic elimination, and local release-closure verification |
+| XXVIII | [paper28/README.md](paper28/README.md) | finite mechanism quotient audits, exact credit composition, five fixed-scope return surfaces, reduced-cover certificates, and canonical alignment |
 
 Where a paper-local README is not yet present, the owning manuscript and
 script docstrings define the release-local scope. A future versioned reopening
 should add the standard local README before changing artifact semantics.
 
 Papers VIII--XIV retain their published or release-local terminology. Paper
-XVI is an independent case study, and Papers XX--XXVII form separate
+XVI is an independent case study, and Papers XX--XXVIII form separate
 mathematical lines; neither extends the protocol stack. Bare `R1`/`R2`/`D`,
 ladder, repair, and wall labels in those artifacts must not be read as a
 completed migration to the separate operator, routed-composition, full-word,

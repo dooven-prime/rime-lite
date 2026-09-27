@@ -1,0 +1,29 @@
+{
+  "artifact": {
+    "content_sha256": "2bb1ca33834a8e0b64a8cd03062b743e6f95a782c61b5eed2e78be739e0e518d",
+    "name": "paper28_fixed_scope_projectability_support_separation_v1.json.gz",
+    "projectability_payload_sha256": "89dbf3f1dfe677889cebafac29479793d1d9949888a72a8ea0af32e26836827e",
+    "sha256": "f2e8274478cad6e6309a77f825fa15207873ca7f2f5960c5839c22224adcd7ad"
+  },
+  "inputs": [
+    {
+      "name": "paper28_second_rank4_section_candidate_v1.json.gz",
+      "sha256": "0fad98bbedbd54403b7e64acf05d61e0f8d6e3d6909ad109ed945b1f4a774b9f"
+    },
+    {
+      "name": "paper28_second_rank4_section_return_evaluation_v1.json.gz",
+      "sha256": "a82c3ba7719995ecbc6ec44178836ffdd1c406ac145803a852252db5016377f9"
+    },
+    {
+      "name": "paper28_second_rank5_section_candidate_v1.json.gz",
+      "sha256": "106f87b804f4a07b647e17a8d6a9c3d82bd711c076a20146cdb3ce817a8b5e0e"
+    }
+  ],
+  "schema": "paper28-fixed-scope-projectability-support-separation-receipt-v1",
+  "source_closure": {
+    "script": {
+      "name": "paper28_audit_fixed_scope_projectability_support.py",
+      "sha256": "131de379edf31ec0580afbe3c46a58e225768facd895fe51955886ce4ff92b5a"
+    }
+  }
+}

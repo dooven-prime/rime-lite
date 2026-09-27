@@ -1,0 +1,53 @@
+{
+  "artifact": {
+    "content_sha256": "76a8541f6cd2540094c38e3892111dac3d64756ed6edef278f2e5f11260d308a",
+    "name": "paper28_cross_realization_invariant_audit_v1.json",
+    "sha256": "88da2ab2378b17f9b01e64200d144d33b86a2e5be61fdd967cfc441f0ac72412"
+  },
+  "inputs": {
+    "first_rank4": {
+      "name": "paper28_section_return_menu_audit_v1.json.gz",
+      "sha256": "bc7d314fdca72dd7cbc6da9add74a55fd63afdb59090ddea30c7c07184e58b47"
+    },
+    "first_rank5_candidate": {
+      "name": "paper28_rank5_section_candidate_v1.json.gz",
+      "sha256": "62dd04f9625fab85fff6c15c8c9bb2871fa18a2b25625c179424d7053ee5225f"
+    },
+    "first_rank5_evaluation": {
+      "name": "paper28_rank5_section_return_evaluation_v1.json.gz",
+      "sha256": "e6012755d76a3c884f50d1f4ba5d528b18f34e6cca36af61e8950cd70d5f820a"
+    },
+    "second_rank4_candidate": {
+      "name": "paper28_second_rank4_section_candidate_v1.json.gz",
+      "sha256": "0fad98bbedbd54403b7e64acf05d61e0f8d6e3d6909ad109ed945b1f4a774b9f"
+    },
+    "second_rank4_evaluation": {
+      "name": "paper28_second_rank4_section_return_evaluation_v1.json.gz",
+      "sha256": "a82c3ba7719995ecbc6ec44178836ffdd1c406ac145803a852252db5016377f9"
+    },
+    "second_rank5_candidate": {
+      "name": "paper28_second_rank5_section_candidate_v1.json.gz",
+      "sha256": "106f87b804f4a07b647e17a8d6a9c3d82bd711c076a20146cdb3ce817a8b5e0e"
+    },
+    "second_rank5_evaluation": {
+      "name": "paper28_second_rank5_section_return_evaluation_v1.json.gz",
+      "sha256": "e2990ba262a09e9d985e2f968ee9c0af76f8192d8b1f5d93cd8db0ec9876ec56"
+    },
+    "second_selection": {
+      "name": "paper28_second_rank5_return_candidate_selection_v1.json.gz",
+      "sha256": "a719106b32ff32d7b1f9ba1d5635f7419e08befd28049495e13e2acf581d22b1"
+    }
+  },
+  "schema": "paper28-cross-realization-invariant-audit-receipt-v1",
+  "source_closure": [
+    {
+      "path": "experiments/synchronizing_automata/paper28_cross_realization_invariant_audit.py",
+      "sha256": "89ceffa1bda19cb040ad50ddf8150690fe0faf8c6da8623ef902fb4e12cab540"
+    },
+    {
+      "path": "experiments/synchronizing_automata/validation/validate_paper28_cross_realization_invariant_audit.py",
+      "sha256": "21ca7d11d677d0de619b6c16eeb10aed57d2147a59f5d197e2d8d8edcaef07e0"
+    }
+  ],
+  "verification_mode": "CROSS_ARTIFACT_INVARIANT_REPLAY"
+}
