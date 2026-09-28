@@ -1,0 +1,98 @@
+{
+  "schema": "rime.exploratory.male-cns-dynamic-compression.finite-history-preflight.v1",
+  "status": "PASS",
+  "validation_scope": "STATIC_RUNNER_ARCHITECTURE_PREFLIGHT",
+  "independent_validation": false,
+  "scope": {
+    "role": "SCOPE",
+    "path": "finite_history_scope.v1.json",
+    "bytes": 3262,
+    "sha256": "25e3ace08d1e83675f5b21b32cff7d69c2073fd87b25c5a9000043022663aefb"
+  },
+  "runner_contract": {
+    "source_count": 711,
+    "H": 2,
+    "T": 4,
+    "records_per_source": 5,
+    "worker_count": 4,
+    "one_exact_orbit_per_source": true,
+    "merged_binary_copy_created": false
+  },
+  "storage": {
+    "canonical_record_byte_cap": 8388608,
+    "maximum_shard_bytes": 41943074,
+    "all_shards_upper_bound_bytes": 29821525614,
+    "per_source_metadata_upper_bound_bytes": 1048576,
+    "all_metadata_upper_bound_bytes": 745537536,
+    "compact_inventory_upper_bound_bytes": 536870912,
+    "concurrent_temporary_upper_bound_bytes": 167772296,
+    "architecture_upper_bound_bytes": 31271706358,
+    "hard_cap_bytes": 107374182400,
+    "pass": true
+  },
+  "memory": {
+    "measured_max_worker_peak_bytes": 790634496,
+    "worker_peak_safety_factor": 8,
+    "all_workers_policy_bound_bytes": 25300303872,
+    "read_only_mmap_bytes": 407234314,
+    "record_buffer_bound_bytes": 167772160,
+    "parent_and_classifier_bound_bytes": 2147483648,
+    "architecture_policy_bound_bytes": 28022793994,
+    "hard_cap_bytes": 34359738368,
+    "pass": true,
+    "boundary": "The worker multiplier is a preregistered architecture allowance, not a population memory theorem; the sampled process-tree hard cap remains normative."
+  },
+  "runtime_enforcement": {
+    "process_tree_rss_polled": true,
+    "incremental_run_storage_polled": true,
+    "poll_interval_seconds_maximum": 5,
+    "cap_violation": "UNRESOLVED_WITHOUT_D0_RESIZE"
+  },
+  "backend": {
+    "cache_manifest": {
+      "role": "CACHE_MANIFEST",
+      "path": ".runtime-work/optimized-cache/manifest.json",
+      "bytes": 4130,
+      "sha256": "e8a04330d1133f4537faf679a3f59c294a1ebb15c221691d0ac6baf394edabd8"
+    },
+    "compiled_kernel": {
+      "role": "COMPILED_KERNEL",
+      "path": ".runtime-work/k/optimized_exact_sparse_kernel.cp312-win_amd64.pyd",
+      "bytes": 65536,
+      "sha256": "898b3200835766ca7e6a9ce7d0d0cb5de9f0a6cbfcf1521d693fcb9e5c708591"
+    },
+    "benchmark": {
+      "role": "OPTIMIZED_BENCHMARK",
+      "path": "results/optimized_exact_implementation_benchmark.v1.json",
+      "bytes": 18152,
+      "sha256": "b048a3ea8d490a2163cc08c71675a92a9960626e0ca50a4af879edfa576e7d9b"
+    }
+  },
+  "implementation": {
+    "binary_codec": {
+      "role": "BINARY_CODEC",
+      "path": "finite_history_binary.py",
+      "bytes": 7287,
+      "sha256": "dcfb87d9351a1fea3a7c080db4ca75e205bf4025bb83fbdd81876576510e753b"
+    },
+    "execution_common": {
+      "role": "EXECUTION_COMMON",
+      "path": "finite_history_execution_common.py",
+      "bytes": 5725,
+      "sha256": "553d14beebdaaf869226dd29e4b64e15fb8db1e23a43123ba33653a53d7257c7"
+    },
+    "runner": {
+      "role": "EXPERIMENT_RUNNER",
+      "path": "run_finite_history_closure_v1.py",
+      "bytes": 22901,
+      "sha256": "9ada38423597b20213e076f9e1d629901a8d620f649a44bb5ffb868e10f20eff"
+    }
+  },
+  "claim_boundary": {
+    "orbit_generated": false,
+    "history_grouping_performed": false,
+    "closure_classified": false,
+    "future_exact_state_memory_proved_for_all_sources": false,
+    "D0_resize_allowed": false
+  }
+}

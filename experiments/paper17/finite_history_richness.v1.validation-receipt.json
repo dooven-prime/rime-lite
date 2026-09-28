@@ -1,0 +1,26 @@
+{
+  "schema": "rime.exploratory.male-cns-dynamic-compression.finite-history-richness.validation-receipt-v1",
+  "status": "PASS",
+  "validation_mode": "LOCAL_STATIC_RICHNESS_CONTRACT_VERIFICATION",
+  "independent_validation": false,
+  "richness": {
+    "path": "finite_history_richness.v1.json",
+    "bytes": 1846,
+    "sha256": "a39692b22585d750d07ffacdc26cf16accb2914ce6fa63ab6d776a34becfae79"
+  },
+  "validator": {
+    "path": "validation/validate_finite_history_richness.py",
+    "sha256": "ad5ca3bdcf1e86c777eded7d2a89d7dfd43b017f74bc97a51c24d404642ca25a"
+  },
+  "verified": {
+    "W_min": 2,
+    "S_min": 1,
+    "R": 2,
+    "baseline_H_floor": 2,
+    "baseline_T_floor": 4,
+    "internal_shift_count_minimum": 1,
+    "dual_resource_gate": true,
+    "scientific_scope_selected": false
+  },
+  "execution_authority": "NONE_SCOPE_DERIVATION_ONLY"
+}

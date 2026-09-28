@@ -1,0 +1,222 @@
+{
+  "$schema": "schemas/finite_history_closure.design-v1.schema.json",
+  "schema": "rime.exploratory.male-cns-dynamic-compression.finite-history.design-v1",
+  "status": "DESIGN_FROZEN_NOT_REGISTERED",
+  "execution_authority": "NONE",
+  "program_identity": {
+    "name": "MaleCNS Dynamic Compression / Constructive State Descent",
+    "question": "which representation preserves evolution?",
+    "separate_from": {
+      "name": "Digital Fly E1.2 Active Structural Identifiability",
+      "question": "which experiment reveals structure?",
+      "shared_directory": false,
+      "shared_schema": false,
+      "shared_evidence_surface": false
+    }
+  },
+  "representation_family": {
+    "name": "FINITE_OBSERVATION_HISTORY",
+    "observation": "O_mean over superclass",
+    "history": "Psi_h(x)=(O(F^h x),O(F^(h-1) x),...,O(x))",
+    "target": "T_(h+1)(x)=O(F^(h+1) x)",
+    "complexity_parameter": "memory_order_h",
+    "complexity_order": "h_1 <= h_2",
+    "mixed_representation_families_forbidden": true
+  },
+  "registered_system_ancestry": {
+    "carrier": "Y_known_pm",
+    "normalized_operator_sha256": "7b761fdb1f816bb4ca9045d27397f58d35bbb0a72739cf0726b9abd548e03073",
+    "dynamics": {
+      "alpha": 0.2,
+      "gamma": 1.0,
+      "x_max": 1.0,
+      "input": "zero",
+      "activation": "clipped_relu(phi(z)=min(x_max,max(0,z)))",
+      "normalization": "absolute outgoing-row-L1"
+    },
+    "historical_domain": "same-sector unit basis states with nonzero admitted outgoing rows"
+  },
+  "criteria": {
+    "prefix_factorization": "equal Psi_h histories imply equal T_(h+1) on the registered prefix domain",
+    "orbit_window_closure": "one time-homogeneous G_h factors every registered cross-source and cross-time history window",
+    "iterable_state_requires": [
+      "ORBIT_WINDOW_CLOSURE",
+      "registered history-image shift invariance"
+    ],
+    "primary_criterion": "ORBIT_WINDOW_CLOSURE",
+    "orbit_window_universe": "Omega_(h,T)={(x,t):x in D_0 and h<=t<T}",
+    "history_map": "H_h(x,t)=(z_t(x),z_(t-1)(x),...,z_(t-h)(x))",
+    "successor_map": "S_h(x,t)=z_(t+1)(x)",
+    "primary_fiber_criterion": "equal H_h values imply equal S_h values for every cross-source and cross-time pair in Omega_(h,T)",
+    "horizon_bounded_shift": "sigma_h(H_(h,T)^-) is a subset of H_(h,T), where H_(h,T)^- contains only histories with a next registered window",
+    "indefinite_forward_invariance_claimed": false,
+    "history_equality": "EXACT_CANONICAL_RATIONAL_IDENTITY",
+    "successor_equality": "EXACT_CANONICAL_RATIONAL_IDENTITY",
+    "floating_point_role": "CROSS_CHECK_ONLY",
+    "hash_role": "INDEX_ONLY_CANONICAL_RATIONAL_PAYLOAD_COMPARISON_REQUIRED",
+    "modular_fingerprint_role": "PREFILTER_ONLY"
+  },
+  "outcomes": [
+    "EXACT_CLOSED_NONINJECTIVE",
+    "EXACT_CLOSED_BY_INJECTIVITY",
+    "FAILED_EXACT_CLOSURE",
+    "UNRESOLVED"
+  ],
+  "minimality_rules": {
+    "minimal_closing_order": "all lower orders have exact witnesses and the reported order has exhaustive exact closure on the same domain",
+    "minimal_compressed_state_order": "minimal closing order with at least one non-singleton history fiber",
+    "singleton_closure_is_nontrivial_compression": false,
+    "failure_through_H_implies_infinite_memory": false,
+    "paper_xvi_h0_h1_can_establish_orbit_window_minimality": false,
+    "lower_orders_must_share_D0_T_encoding_and_window_universe": true
+  },
+  "compression_profile": {
+    "N_h": "cardinality of Omega_(h,T)",
+    "K_h": "cardinality of image H_h",
+    "M_h": "maximum exact history-fiber cardinality",
+    "redundancy": "N_h-K_h",
+    "rho_h": "K_h/N_h; descriptive only and not an admission criterion"
+  },
+  "source_domain_policy": {
+    "preferred_domain": "complete source universe of the corresponding Paper XVI closure line",
+    "same_domain_required_for_same_domain_minimal_order": true,
+    "reduced_domain_allowed_only_if": "selected by a preregistered structure-only or index-only rule",
+    "reduced_domain_claim": "minimal order on the registered reduced domain"
+  },
+  "execution_architecture": {
+    "exact_orbit_generation_count": 1,
+    "orders_derived_from_same_orbit": "h=0,...,H",
+    "microscopic_state_retention": "STREAMING_ALLOWED_AFTER_EXACT_OBSERVATION_AND_REQUIRED_DIGEST_BINDING",
+    "persistent_surface": [
+      "exact z_0 through z_T per source",
+      "source and time identity",
+      "required microscopic state digests or checkpoints",
+      "replay provenance"
+    ],
+    "per_order_orbit_regeneration_forbidden": true
+  },
+  "richness_semantics": {
+    "windows_per_source_at_H": "T-H",
+    "shift_valid_windows_per_source_at_H": "T-H-1",
+    "window_gate": "T-H >= W_min",
+    "shift_gate": "T-H-1 >= S_min"
+  },
+  "backend_policy": {
+    "normative_backend": "EXACT_REDUCED_RATIONAL",
+    "gpu_allowed_roles": [
+      "structural preprocessing",
+      "support propagation",
+      "modular or hash prefiltering"
+    ],
+    "gpu_or_modular_equality_certificate": false,
+    "canonical_rational_payload_comparison_required": true,
+    "cpu_exact_replay_path_required_for_theorem_facing_equality": true
+  },
+  "modular_filter_contract": {
+    "exact_domain": "Z[S^-1] for the fixed static denominator set S",
+    "safe_prime_rule": "p must divide no element of S",
+    "modular_mismatch_certifies_exact_inequality": true,
+    "modular_match_certifies_exact_equality": false,
+    "clipped_relu_branch_from_finite_field_forbidden": true,
+    "allowed_branch_certificates": [
+      "exact reduced rational sign and threshold comparison",
+      "rigorous interval or MPFR enclosure strictly separated from every clipping threshold"
+    ],
+    "potential_collision_requires_canonical_rational_replay": true
+  },
+  "resource_extrapolation_policy": {
+    "completed_benchmark_max_depth": 4,
+    "direct_benchmark_cost_use_requires": "T<=4",
+    "T_above_4_requires": "preregistered resource-only depth-growth calibration funded from the frozen gross budget",
+    "calibration_may_group_fibers_or_read_closure": false,
+    "richness_reduction": "R=max(W_min,S_min+1) and T>=H+R"
+  },
+  "gross_budget_dimensions": [
+    "CPU core-hours",
+    "wall-clock safety cap",
+    "peak RAM",
+    "disk allowance",
+    "maximum workers"
+  ],
+  "canonical_binary_semantics": {
+    "record_fields": [
+      "source_id",
+      "time",
+      "dimension",
+      "ordered nonzero coordinates",
+      "numerator sign",
+      "numerator unsigned big-endian magnitude",
+      "positive denominator unsigned big-endian magnitude"
+    ],
+    "integer_length_encoding": "fixed versioned unsigned length fields",
+    "fraction_requirements": "reduced with positive denominator",
+    "semantic_digest_scope": "uncompressed canonical record bytes",
+    "compression_role": "storage layer only with a separate compressed-file digest"
+  },
+  "resource_prior_evidence": [
+    {
+      "role": "EXACT_RESOURCE_BENCHMARK_RESULT",
+      "path": "results/exact_arithmetic_resource_benchmark.v1.json",
+      "bytes": 27578,
+      "sha256": "005ac2f180e03e19e9d23f6655df7ca50a9ea4b159b6ad428c9fc0f7a16f9e58"
+    },
+    {
+      "role": "EXACT_RESOURCE_BENCHMARK_VALIDATION_RECEIPT",
+      "path": "results/exact_arithmetic_resource_benchmark.v1.validation-receipt.json",
+      "bytes": 2974,
+      "sha256": "c8b4d554e4523525a5482c95f8dc75efafb58278c5c5013e95cd2ab762860f37"
+    }
+  ],
+  "read_only_prior_evidence": [
+    {
+      "role": "PAPER_XVI_CANONICAL_MANUSCRIPT",
+      "path": "../../../../papers/paper16/Paper XVI.md",
+      "bytes": 36106,
+      "sha256": "4d5503a27545cc0f4bbfaf80e71aed1ed680b1db7a456bc3b4edb220f265dcf3",
+      "doi": "10.5281/zenodo.22931881"
+    },
+    {
+      "role": "ORDER_0_REGISTERED_FAILURE",
+      "path": "../digital_fly_v0_2/results/d2_1_markov_closure_v0_2.json",
+      "bytes": 69279,
+      "sha256": "3524ad7eabe40176b92ed02ca045d51e747bb952664666cae0feb205edf6766e"
+    },
+    {
+      "role": "ORDER_1_REGISTERED_FAILURE",
+      "path": "../digital_fly_v0_2/results/d2_2_memory_closure_v0_2.json",
+      "bytes": 8004,
+      "sha256": "dea05805299b492acf550e96cdf72a4e67a25f3cc45a461148609f6e42a12b99"
+    },
+    {
+      "role": "ORDER_1_NAMED_SECTOR_EXACT_WITNESS",
+      "path": "../followups/results/d2_2_named_sector_followup.v1.json",
+      "bytes": 8269,
+      "sha256": "0b65f0d8e4c676bb0613e9a100ede917f49598816e748bf009b6fb20aa767924"
+    }
+  ],
+  "registration_parameters": {
+    "maximum_history_order_H": null,
+    "orbit_horizon_T": null,
+    "source_domain": null,
+    "exact_encoding": null,
+    "producer": null,
+    "validator": null,
+    "resource_contract": null,
+    "receipt_contract": null,
+    "minimum_window_richness_rule": null,
+    "minimum_shift_richness_rule": null,
+    "gross_compute_budget": null,
+    "overhead_reserve": null,
+    "execution_backend": null,
+    "depth_growth_calibration": null,
+    "canonical_binary_format": null,
+    "parallel_worker_count": null
+  },
+  "claim_boundaries": {
+    "prefix_factorization_is_iterable_state": false,
+    "predictive_accuracy_is_exact_closure": false,
+    "no_witness_in_incomplete_scan_is_closure": false,
+    "no_failure_through_finite_H_is_infinite_memory": false,
+    "paper_xvi_is_rewritten": false
+  }
+}

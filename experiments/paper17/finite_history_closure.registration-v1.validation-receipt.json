@@ -1,0 +1,26 @@
+{
+  "schema": "rime.exploratory.male-cns-dynamic-compression.finite-history-registration-validation-receipt.v1",
+  "status": "PASS",
+  "validation_mode": "LOCAL_REGISTRATION_CLOSURE_VERIFICATION",
+  "independent_validation": false,
+  "scientific_execution_performed": false,
+  "registration": {
+    "path": "finite_history_closure.registration-v1.json",
+    "bytes": 7089,
+    "sha256": "af2eee34c506f23bdf559c1a0be243143aeea6934b62f80b144ed84187494d70"
+  },
+  "validator": {
+    "path": "validation/validate_finite_history_closure_registration.py",
+    "sha256": "4933f7d13dbc4154bf9e6ed54900bbcf454aa75d353e42a1a9e1d03510c03212"
+  },
+  "verified": {
+    "static_preflight": "PASS",
+    "source_count": 711,
+    "H": 2,
+    "T": 4,
+    "worker_count": 4,
+    "runtime_identity_bound": true,
+    "artifact_closure_bound": true,
+    "execution_authority": "FINITE_HISTORY_ORBIT_WINDOW_V1_ONLY"
+  }
+}

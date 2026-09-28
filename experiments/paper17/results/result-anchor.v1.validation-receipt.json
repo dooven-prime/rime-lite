@@ -1,0 +1,24 @@
+{
+  "schema": "rime.paper17.result-anchor-validation-receipt.v1",
+  "status": "PASS",
+  "validation_mode": "LOCAL_RESULT_OWNED_EXACT_REPLAY_CLOSURE",
+  "independent_validation": false,
+  "producer_replayed": false,
+  "manifest": {
+    "path": "result-anchor.v1.json",
+    "bytes": 21711,
+    "sha256": "95a98918aff335cdce4469f40ddc0aa8a07629cbd5b663703e8ddb54fb31715d"
+  },
+  "validator": {
+    "path": "validation/validate_result_anchor.py",
+    "sha256": "487e7a844046e4d89af001a19840bb47530443e8fa8287121f6391487af5ec29"
+  },
+  "verified": {
+    "artifact_count": 49,
+    "sidecar_member_count": 1425,
+    "common_support_correction_bound": true,
+    "transient_fiber_decomposition_bound": true,
+    "minimal_memory_order_claimed": false,
+    "mechanism_identified": false
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schema": "rime.exploratory.male-cns-dynamic-compression.finite-history-transient-fiber-audit-validation-receipt.v1",
+  "status": "PASS",
+  "validation_mode": "LOCAL_RESULT_OWNED_TRANSIENT_FIBER_REPLAY",
+  "independent_validation": false,
+  "producer_replayed": false,
+  "audit": {
+    "path": "results/finite_history_transient_fiber_audit.v1.json",
+    "bytes": 15022,
+    "sha256": "9eeb3e5cc3ec3599ee7f7fe54efb0248c2471b36d322f2038409bd9656cad75a"
+  },
+  "validator": {
+    "path": "validation/validate_finite_history_transient_fiber_audit.py",
+    "sha256": "f78d0bf8b4bd6de61e7842a4640b08b0ed1f22e5d706cbeaa9baac9411a92aa9"
+  },
+  "verified": {
+    "t1_failure_fibers": 6,
+    "offending_sources": 51,
+    "all_offending_sources_globally_singleton_at_t2": true,
+    "persistent_cohort_count": 5,
+    "persistent_cohort_sizes": [
+      51,
+      25,
+      19,
+      4,
+      3
+    ],
+    "persistent_membership_equal_at_t2_t3": true,
+    "offender_persistent_cohort_overlap": 0,
+    "mechanism_identified": false
+  }
+}

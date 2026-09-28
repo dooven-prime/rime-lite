@@ -1,0 +1,34 @@
+{
+  "schema": "rime.exploratory.male-cns-dynamic-compression.D0-admission-validation-receipt.v1",
+  "status": "PASS",
+  "validation_mode": "LOCAL_CLOSURE_VERIFICATION",
+  "independent_validation": false,
+  "result": {
+    "path": "results/finite_history_D0_admission.v1.json",
+    "bytes": 2957,
+    "sha256": "c1735202657b3ee92449eacdbbf32a401e475eeb77b70e8f63c4e34b3b9dbf0e"
+  },
+  "D0_index": {
+    "path": "results/finite_history_D0.v1.npy",
+    "bytes": 5816,
+    "sha256": "ca12e0e36e925cbb408f79e01979f0e0ee94407631b9eb269fe11171de2a733b",
+    "source_count": 711
+  },
+  "producer": {
+    "path": "derive_finite_history_d0_admission.py",
+    "sha256": "f00352c94a7118c0b8983f8e296d890be7276738dee5844454070a0b3f42b7f9"
+  },
+  "validator": {
+    "path": "validation/validate_finite_history_d0_admission.py",
+    "sha256": "97882ebd94a3d153380c12beeb08908164ba2d4c97d59f6e80b0c3d68171701c"
+  },
+  "checks": {
+    "frozen_cost_envelope": true,
+    "dual_resource_gate_replayed": true,
+    "deterministic_membership_replayed": true,
+    "stratum_quotas_replayed": true,
+    "orbit_generated": false,
+    "closure_grouping_performed": false,
+    "H_or_T_finalized": false
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "schema": "rime.exploratory.male-cns-dynamic-compression.finite-history-validation-receipt.v1",
+  "status": "PASS",
+  "validation_mode": "LOCAL_EXACT_SIDECAR_CLASSIFICATION_REPLAY",
+  "independent_validation": false,
+  "producer_replayed": false,
+  "result": {
+    "path": "results/finite_history_closure.v1.json",
+    "bytes": 4421,
+    "sha256": "1e64ecd07a529b553854f31a381dbf1c15d238055a120dd8db65d483fbff2705"
+  },
+  "validator": {
+    "path": "validation/validate_finite_history_closure_v1.py",
+    "sha256": "b27146b9bffb26fd64f609419ee9525da00ab5225a5f4f0881e5e17878973aa0"
+  },
+  "verified": {
+    "source_count": 711,
+    "orders": [
+      0,
+      1,
+      2
+    ],
+    "exact_payload_comparison_after_hash_match": true,
+    "classification_replayed": true,
+    "resource_caps_satisfied": true,
+    "D0_resized": false
+  }
+}
