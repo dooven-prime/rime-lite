@@ -1,0 +1,180 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/dooven-prime/rime-lite/tools/release/post-release-anchor.v1.schema.json",
+  "title": "RIME paper post-release anchor v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "paper_id",
+    "release_version",
+    "publication_status",
+    "release_identity_claimed",
+    "anchor_role",
+    "release_tag",
+    "pre_release_evidence",
+    "post_release_supplements",
+    "external_anchor",
+    "versioned_repin_policy",
+    "authority_boundary",
+    "notes"
+  ],
+  "properties": {
+    "schema": {"const": "rime.paper-post-release-anchor.v1"},
+    "paper_id": {"type": "string", "pattern": "^PAPER[1-9][0-9]*$"},
+    "release_version": {
+      "type": "string",
+      "pattern": "^[0-9]+(?:\\.[0-9]+){1,2}$"
+    },
+    "publication_status": {"const": "PUBLISHED"},
+    "release_identity_claimed": {"const": true},
+    "anchor_role": {"const": "DOWNSTREAM_PUBLICATION_METADATA"},
+    "release_tag": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "tag_object_sha", "target_commit_sha"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "pattern": "^paper[1-9][0-9]*-v[0-9]+(?:\\.[0-9]+){1,2}$"
+        },
+        "tag_object_sha": {"$ref": "#/$defs/git_sha"},
+        "target_commit_sha": {"$ref": "#/$defs/git_sha"}
+      }
+    },
+    "pre_release_evidence": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"$ref": "#/$defs/evidence_row"}
+    },
+    "post_release_supplements": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"$ref": "#/$defs/supplement_row"}
+    },
+    "external_anchor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "provider",
+        "doi",
+        "record_id",
+        "record_url",
+        "publication_date",
+        "deposited_files"
+      ],
+      "properties": {
+        "provider": {"const": "Zenodo"},
+        "doi": {
+          "type": "string",
+          "pattern": "^10\\.5281/zenodo\\.[0-9]+$"
+        },
+        "record_id": {"type": "string", "pattern": "^[0-9]+$"},
+        "record_url": {
+          "type": "string",
+          "pattern": "^https://zenodo\\.org/records/[0-9]+$"
+        },
+        "publication_date": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+        },
+        "deposited_files": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/deposit_row"}
+        }
+      }
+    },
+    "versioned_repin_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "pre_release_manifest_mutation_allowed",
+        "pre_release_receipt_mutation_allowed",
+        "current_head_fallback_allowed",
+        "owner_change_requires_new_owner_version",
+        "consumer_change_requires_new_consumer_version_and_repin",
+        "shared_file_in_place_update_allowed"
+      ],
+      "properties": {
+        "pre_release_manifest_mutation_allowed": {"const": false},
+        "pre_release_receipt_mutation_allowed": {"const": false},
+        "current_head_fallback_allowed": {"const": false},
+        "owner_change_requires_new_owner_version": {"const": true},
+        "consumer_change_requires_new_consumer_version_and_repin": {"const": true},
+        "shared_file_in_place_update_allowed": {"const": false}
+      }
+    },
+    "authority_boundary": {
+      "const": [
+        "The anchor establishes release-tag, evidence-root, and deposited-file byte identity only.",
+        "A DOI anchors only files actually deposited in that record.",
+        "Local closure verification is not independent mathematical validation.",
+        "Publication anchoring does not establish theorem truth or scientific adequacy.",
+        "The anchor is downstream metadata and is not part of the release tag it records."
+      ]
+    },
+    "notes": {
+      "type": "array",
+      "items": {"type": "string"}
+    }
+  },
+  "$defs": {
+    "git_sha": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "nonempty_string": {"type": "string", "minLength": 1},
+    "relative_path": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?!/)(?![A-Za-z]:)(?!.*\\\\)(?!.*(?:^|/)\\.\\.(?:/|$))[^\\r\\n]+$"
+    },
+    "evidence_row": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "role",
+        "path",
+        "sha256_at_tag",
+        "size_at_tag",
+        "mutation_policy"
+      ],
+      "properties": {
+        "role": {"$ref": "#/$defs/nonempty_string"},
+        "path": {"$ref": "#/$defs/relative_path"},
+        "sha256_at_tag": {"$ref": "#/$defs/sha256"},
+        "size_at_tag": {"type": "integer", "minimum": 0},
+        "mutation_policy": {"const": "IMMUTABLE_TAG_BYTES"},
+        "declared_state_at_tag": {
+          "type": "object",
+          "minProperties": 1
+        }
+      }
+    },
+    "supplement_row": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["role", "path", "sha256", "size", "release_role"],
+      "properties": {
+        "role": {"$ref": "#/$defs/nonempty_string"},
+        "path": {"$ref": "#/$defs/relative_path"},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "size": {"type": "integer", "minimum": 0},
+        "release_role": {"const": "POST_RELEASE_SUPPLEMENT_NOT_IN_RELEASE_TAG"}
+      }
+    },
+    "deposit_row": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["remote_name", "source_path_at_tag", "sha256", "size"],
+      "properties": {
+        "remote_name": {"$ref": "#/$defs/nonempty_string"},
+        "source_path_at_tag": {"$ref": "#/$defs/relative_path"},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "size": {"type": "integer", "minimum": 0}
+      }
+    }
+  }
+}

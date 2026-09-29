@@ -1,0 +1,56 @@
+{
+  "schema": "rime.paper27.claim-surface-map.v1",
+  "paper_id": "PAPER27",
+  "release_role": "POST_RELEASE_SUPPLEMENT_NOT_IN_RELEASE_TAG",
+  "claims": [
+    {
+      "id": "N6_ENTRY_SECTION",
+      "status": "COMPUTER_ASSISTED_FIXED_SCOPE_THEOREM",
+      "statement": "The intrinsic fixed-n=6 section selects a descending activated rank-four entry for every synchronizing rooted binary defect.",
+      "boundary": "No all-n Entry-section theorem is claimed."
+    },
+    {
+      "id": "N6_INDEXED_IMAGE",
+      "status": "COMPUTER_ASSISTED_FIXED_SCOPE_THEOREM",
+      "statement": "The indexed section graph has 1700 Type-I-admitting and four Type-II-only instances.",
+      "boundary": "Counts are indexed by rooted actions; they are not asserted to be counts of distinct unindexed mass endpoints."
+    },
+    {
+      "id": "N7_INHERITED_PILOT",
+      "status": "COMPUTATIONAL_EVIDENCE",
+      "statement": "All 15120 selected inherited contexts admit a local completion.",
+      "boundary": "The source-rank-five selector uses one-drop blocks; Type-I and Type-II labels refer to the post-selection rank-four completion relation. The pilot is not a full rank-five census or an all-rank return theorem."
+    },
+    {
+      "id": "N7_LOW_TRANSPORT",
+      "status": "FINITE_SYMBOLIC_EXHAUSTION",
+      "statement": "The declared extremal carrier satisfies the Low-Transport conclusion through the five-cell elimination and its positive constructors.",
+      "boundary": "The theorem is fixed at ambient n=7."
+    },
+    {
+      "id": "N7_ADMISSION_GATE",
+      "status": "FINITE_SYMBOLIC_EXHAUSTION",
+      "statement": "On the declared five-cell surface, return admission equals endpoint normalization intersected with accounting.",
+      "boundary": "No general-rank or all-n admission theorem is claimed."
+    },
+    {
+      "id": "SUFFICIENT_PROOF_INTERFACE",
+      "status": "FIXED_SCOPE_CONTRACT",
+      "statement": "The fixed-scope interface is bounded, future-free, relation-valued, and descent-certified.",
+      "boundary": "The design objective is to reduce retained proof state without re-encoding the full context; no mathematical minimality claim is made."
+    },
+    {
+      "id": "PROOF_INTERFACE_PRINCIPLE",
+      "status": "DESIGN_PRINCIPLE",
+      "statement": "Compress proof-relevant information only through quotients on which the required observable is proved to descend.",
+      "boundary": "The fixed-scope coarse/fine comparison does not prove a universal order on representations."
+    }
+  ],
+  "nonclaims": [
+    "Cerny conjecture",
+    "Forced FFS",
+    "General FFS",
+    "all-rank section return",
+    "uniform all-n bounded relation menu"
+  ]
+}

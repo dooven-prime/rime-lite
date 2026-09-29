@@ -49,3 +49,5 @@ tests/**/*.py text eol=lf
 tests/**/*.json text eol=lf
 tools/**/*.py text eol=lf
 tools/**/*.md text eol=lf
+tools/release/*.json text eol=lf
+docs/release-anchors/**/*.json text eol=lf

@@ -1,0 +1,82 @@
+{
+  "schema": "rime.paper-post-release-anchor.v1",
+  "paper_id": "PAPER27",
+  "release_version": "1.0",
+  "publication_status": "PUBLISHED",
+  "release_identity_claimed": true,
+  "anchor_role": "DOWNSTREAM_PUBLICATION_METADATA",
+  "release_tag": {
+    "name": "paper27-v1.0",
+    "tag_object_sha": "3d8c12747867a153cba552ee144cab5d85618175",
+    "target_commit_sha": "ca63244216538085b89162b728474fe502c33a08"
+  },
+  "pre_release_evidence": [
+    {
+      "role": "release-manifest",
+      "path": "experiments/paper27/release-manifest.json",
+      "sha256_at_tag": "4b2f3fffa926d0aca1473d56253de9b0463d478fcc64f459ab362762c26f8375",
+      "size_at_tag": 13054,
+      "mutation_policy": "IMMUTABLE_TAG_BYTES",
+      "declared_state_at_tag": {
+        "schema": "rime.paper27.release-manifest.v3",
+        "status": "RELEASE_CANDIDATE",
+        "release_identity_claimed": false,
+        "validation_mode": "LOCAL_CLOSURE_VERIFICATION"
+      }
+    },
+    {
+      "role": "validation-receipt",
+      "path": "experiments/paper27/results/paper27_public_package_v1.validation-receipt.json",
+      "sha256_at_tag": "bf5d933db7df7416d386ecc4f9aa0fe9004458b4c0f5413a686fbc898a6ee43b",
+      "size_at_tag": 26400,
+      "mutation_policy": "IMMUTABLE_TAG_BYTES",
+      "declared_state_at_tag": {
+        "schema": "rime.paper27.public-package-receipt.v3",
+        "status": "PASS",
+        "validation_mode": "LOCAL_CLOSURE_VERIFICATION"
+      }
+    }
+  ],
+  "post_release_supplements": [
+    {
+      "role": "claim-surface-map",
+      "path": "docs/release-anchors/supplements/paper27-claim-surface-map.v1.json",
+      "sha256": "a425a2aff1797760060120c120a4806d72701fe561480b4a4ff545652e5f6e81",
+      "size": 2676,
+      "release_role": "POST_RELEASE_SUPPLEMENT_NOT_IN_RELEASE_TAG"
+    }
+  ],
+  "external_anchor": {
+    "provider": "Zenodo",
+    "doi": "10.5281/zenodo.22853891",
+    "record_id": "22853891",
+    "record_url": "https://zenodo.org/records/22853891",
+    "publication_date": "2026-09-20",
+    "deposited_files": [
+      {
+        "remote_name": "paper27_arxiv.pdf",
+        "source_path_at_tag": "papers/paper27/paper27_arxiv.pdf",
+        "sha256": "b8054ea6e02c5cf4d64ba3516d1523d140a1eb1c3843378386ec23b416d16a81",
+        "size": 445096
+      }
+    ]
+  },
+  "versioned_repin_policy": {
+    "pre_release_manifest_mutation_allowed": false,
+    "pre_release_receipt_mutation_allowed": false,
+    "current_head_fallback_allowed": false,
+    "owner_change_requires_new_owner_version": true,
+    "consumer_change_requires_new_consumer_version_and_repin": true,
+    "shared_file_in_place_update_allowed": false
+  },
+  "authority_boundary": [
+    "The anchor establishes release-tag, evidence-root, and deposited-file byte identity only.",
+    "A DOI anchors only files actually deposited in that record.",
+    "Local closure verification is not independent mathematical validation.",
+    "Publication anchoring does not establish theorem truth or scientific adequacy.",
+    "The anchor is downstream metadata and is not part of the release tag it records."
+  ],
+  "notes": [
+    "The release-tag README names experiments/paper27/claim-surface-map.json, but that file was absent at the tag. The frozen package is not rewritten. This downstream anchor binds a separately located post-release claim-surface supplement."
+  ]
+}
