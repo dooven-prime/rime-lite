@@ -165,6 +165,20 @@ def assignment(value: str, kind: str) -> tuple[str, str]:
     return key, checked_relative_path(path)
 
 
+def validate_unique_declarations(
+    declarations: list[tuple[str, str]], kind: str
+) -> None:
+    names: set[str] = set()
+    paths: set[str] = set()
+    for name, path in declarations:
+        if name in names:
+            raise ValueError(f"duplicate {kind} name: {name}")
+        if path in paths:
+            raise ValueError(f"duplicate {kind} path: {path}")
+        names.add(name)
+        paths.add(path)
+
+
 def zenodo_record_id(value: str) -> str:
     candidate = value.rstrip("/").split("/")[-1]
     if candidate.isdigit():
@@ -319,6 +333,9 @@ def write_anchor(args: argparse.Namespace) -> int:
     evidence = [assignment(value, "--evidence") for value in args.evidence]
     deposits = [assignment(value, "--deposit") for value in args.deposit]
     supplements = [assignment(value, "--supplement") for value in args.supplement]
+    validate_unique_declarations(evidence, "--evidence")
+    validate_unique_declarations(deposits, "--deposit")
+    validate_unique_declarations(supplements, "--supplement")
     if not evidence:
         raise ValueError("at least one --evidence root is required")
     bound_paths = {path for _, path in evidence + deposits + supplements}

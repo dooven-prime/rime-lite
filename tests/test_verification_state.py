@@ -9,7 +9,7 @@ import sys
 import tempfile
 from pathlib import Path
 
-from jsonschema import Draft202012Validator
+from jsonschema import Draft202012Validator, FormatChecker
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 if str(PROJECT_ROOT) not in sys.path:
@@ -28,6 +28,7 @@ from tools.release.post_release_anchor import (
     tag_identity,
     validate_release_identity,
     validate_remote_publication_date,
+    validate_unique_declarations,
     validated_publication_date,
     zenodo_record_id,
 )
@@ -182,11 +183,27 @@ def test_post_release_anchor_identity_matches_release_tag() -> None:
             )
 
 
+def test_post_release_anchor_create_rejects_duplicate_declarations() -> None:
+    validate_unique_declarations(
+        [("manifest", "release.json"), ("receipt", "receipt.json")], "--evidence"
+    )
+    for declarations in (
+        [("manifest", "first.json"), ("manifest", "second.json")],
+        [("first", "same.json"), ("second", "same.json")],
+    ):
+        try:
+            validate_unique_declarations(declarations, "--evidence")
+        except ValueError:
+            pass
+        else:
+            raise AssertionError(f"duplicate declaration accepted: {declarations}")
+
+
 def test_post_release_anchor_schema_enforces_nested_contracts() -> None:
     schema_path = PROJECT_ROOT / "tools/release/post-release-anchor.v1.schema.json"
     schema = json.loads(schema_path.read_text(encoding="utf-8"))
     Draft202012Validator.check_schema(schema)
-    validator = Draft202012Validator(schema)
+    validator = Draft202012Validator(schema, format_checker=FormatChecker())
 
     anchors = sorted((PROJECT_ROOT / "docs/release-anchors").glob("paper*-v1.0.json"))
     assert anchors
@@ -211,6 +228,9 @@ def test_post_release_anchor_schema_enforces_nested_contracts() -> None:
     hostile = copy.deepcopy(canonical)
     hostile["external_anchor"]["deposited_files"] = []
     hostile_mutations.append(hostile)
+    hostile = copy.deepcopy(canonical)
+    hostile["external_anchor"]["publication_date"] = "2026-02-30"
+    hostile_mutations.append(hostile)
 
     for hostile in hostile_mutations:
         assert list(validator.iter_errors(hostile)), hostile
@@ -223,5 +243,6 @@ if __name__ == "__main__":
     test_post_release_anchor_requires_exact_tag_and_downstream_supplement()
     test_post_release_anchor_publication_date_is_fail_closed()
     test_post_release_anchor_identity_matches_release_tag()
+    test_post_release_anchor_create_rejects_duplicate_declarations()
     test_post_release_anchor_schema_enforces_nested_contracts()
     print("test_verification_state.py: OK")
