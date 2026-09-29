@@ -118,7 +118,7 @@ research target; Paper VII does not assert a generic completion theorem.
   and coarse-state closure on a source-addressed MaleCNS carrier. It does not
   inherit or extend the SOF protocol authority chain.
 
-### Papers XX--XXIX: Independent Post-Protocol Mathematics
+### Papers XX--XXX: Independent Post-Protocol Mathematics
 
 Papers XVII--XIX are intentionally unused in the public numbered sequence.
 Paper XX begins a separately scoped mathematical line with all-depth
@@ -154,6 +154,13 @@ first-exit frontier in the canonical single-defect circular family. It proves
 an all-`n` consecutive-lineage criterion and complete survivor-placement
 spectrum, while leaving the typed transfer and projectability bridge to Paper
 XXVIII open.
+Paper XXX passes from the canonical defect to an arbitrary labelled binary-
+kernel rank-`(n-1)` defect. It constructs two global section returns, proves
+exact relation-valued reduction by their orbit group, identifies the relative
+return as a punctured rotation, and classifies the freedom and cycle-gluing
+effects of the remaining branch. Survivor incidence, Safe-Hit, typed
+projectability, recursive return, credit settlement, and reset bounds remain
+outside its theorem surface.
 These papers consume no protocol authority and do not reopen Papers VIII--XV.
 Published version-1 identities are maintained in the repository's canonical
 DOI index.
@@ -167,8 +174,11 @@ relation classifications. Paper XXVIII owns its declared finite mechanism,
 credit, return, cover, and alignment results; it owns no all-rank selector or
 reset bound. Paper XXIX owns raw packet-lineage first-exit geometry and does
 not inherit Paper XXVIII's transfer membership, authorization, handoff, or
-recursive-return claims. Results or evidence do not transfer between these
-owners without an explicit theorem or source-addressed import.
+recursive-return claims. Paper XXX owns general-defect universal returns,
+punctured-rotation structure, and exact orbit reduction; it does not inherit
+Paper XXIX's canonical frontier law or promote orbit reachability to typed
+projectability. Results or evidence do not transfer between these owners
+without an explicit theorem or source-addressed import.
 
 ## Claim Discipline
 

@@ -1,0 +1,18 @@
+{
+  "schema": "rime.paper30.release-environment.v1",
+  "captured_date": "2026-09-29",
+  "platform": "Windows x86_64",
+  "python": "3.13.0",
+  "pandoc": "3.6.4",
+  "xelatex": "MiKTeX-XeTeX 4.18 (MiKTeX 26.5)",
+  "lean": "4.33.0",
+  "lean_commit": "d8b18978322de05a8f3dba51ef03cf5461676c17",
+  "lake": "5.0.0-src+d8b1897",
+  "digest_scope": "exact file bytes after repository checkout",
+  "notes": [
+    "The finite audit uses the Python standard library only.",
+    "The Lean project pins its toolchain and Mathlib revision in paper-owned files.",
+    "The PDF uses the repository-local Markdown-to-LaTeX build convention; generated TeX is not part of the release identity.",
+    "This record describes the release build environment; it is not a portability guarantee."
+  ]
+}

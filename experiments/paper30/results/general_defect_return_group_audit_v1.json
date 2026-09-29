@@ -1,0 +1,459 @@
+{
+  "claim_boundary": [
+    "finite replay is not the all-n proof",
+    "point orbits on D are not coloring orbits on the section",
+    "return-group reachability does not imply Safe-Hit or typed projectability"
+  ],
+  "records": [
+    {
+      "deltas": [
+        {
+          "branch_completion_exact": true,
+          "branch_permutations": 120,
+          "cycle_gluing_exact": true,
+          "cycle_partition_count": 1,
+          "delta": 1,
+          "fixed_collision_exact": true,
+          "fixed_collision_fiber_size": 24,
+          "fixed_collision_fibers": 5,
+          "fixed_collision_partition_counts": {
+            "1": 1,
+            "2": 1,
+            "3": 1,
+            "4": 1,
+            "5": 1
+          },
+          "gcd": 1,
+          "punctured_cycle_type": [
+            5
+          ],
+          "relative_return_exact": true
+        },
+        {
+          "branch_completion_exact": true,
+          "branch_permutations": 120,
+          "cycle_gluing_exact": true,
+          "cycle_partition_count": 2,
+          "delta": 2,
+          "fixed_collision_exact": true,
+          "fixed_collision_fiber_size": 24,
+          "fixed_collision_fibers": 5,
+          "fixed_collision_partition_counts": {
+            "1": 1,
+            "2": 2,
+            "3": 1,
+            "4": 2,
+            "5": 1
+          },
+          "gcd": 2,
+          "punctured_cycle_type": [
+            2,
+            3
+          ],
+          "relative_return_exact": true
+        },
+        {
+          "branch_completion_exact": true,
+          "branch_permutations": 120,
+          "cycle_gluing_exact": true,
+          "cycle_partition_count": 5,
+          "delta": 3,
+          "fixed_collision_exact": true,
+          "fixed_collision_fiber_size": 24,
+          "fixed_collision_fibers": 5,
+          "fixed_collision_partition_counts": {
+            "1": 2,
+            "2": 2,
+            "3": 2,
+            "4": 2,
+            "5": 2
+          },
+          "gcd": 3,
+          "punctured_cycle_type": [
+            1,
+            2,
+            2
+          ],
+          "relative_return_exact": true
+        },
+        {
+          "branch_completion_exact": true,
+          "branch_permutations": 120,
+          "cycle_gluing_exact": true,
+          "cycle_partition_count": 2,
+          "delta": 4,
+          "fixed_collision_exact": true,
+          "fixed_collision_fiber_size": 24,
+          "fixed_collision_fibers": 5,
+          "fixed_collision_partition_counts": {
+            "1": 1,
+            "2": 2,
+            "3": 1,
+            "4": 2,
+            "5": 1
+          },
+          "gcd": 2,
+          "punctured_cycle_type": [
+            2,
+            3
+          ],
+          "relative_return_exact": true
+        },
+        {
+          "branch_completion_exact": true,
+          "branch_permutations": 120,
+          "cycle_gluing_exact": true,
+          "cycle_partition_count": 1,
+          "delta": 5,
+          "fixed_collision_exact": true,
+          "fixed_collision_fiber_size": 24,
+          "fixed_collision_fibers": 5,
+          "fixed_collision_partition_counts": {
+            "1": 1,
+            "2": 1,
+            "3": 1,
+            "4": 1,
+            "5": 1
+          },
+          "gcd": 1,
+          "punctured_cycle_type": [
+            5
+          ],
+          "relative_return_exact": true
+        }
+      ],
+      "n": 6
+    },
+    {
+      "deltas": [
+        {
+          "branch_completion_exact": true,
+          "branch_permutations": 720,
+          "cycle_gluing_exact": true,
+          "cycle_partition_count": 1,
+          "delta": 1,
+          "fixed_collision_exact": true,
+          "fixed_collision_fiber_size": 120,
+          "fixed_collision_fibers": 6,
+          "fixed_collision_partition_counts": {
+            "1": 1,
+            "2": 1,
+            "3": 1,
+            "4": 1,
+            "5": 1,
+            "6": 1
+          },
+          "gcd": 1,
+          "punctured_cycle_type": [
+            6
+          ],
+          "relative_return_exact": true
+        },
+        {
+          "branch_completion_exact": true,
+          "branch_permutations": 720,
+          "cycle_gluing_exact": true,
+          "cycle_partition_count": 1,
+          "delta": 2,
+          "fixed_collision_exact": true,
+          "fixed_collision_fiber_size": 120,
+          "fixed_collision_fibers": 6,
+          "fixed_collision_partition_counts": {
+            "1": 1,
+            "2": 1,
+            "3": 1,
+            "4": 1,
+            "5": 1,
+            "6": 1
+          },
+          "gcd": 1,
+          "punctured_cycle_type": [
+            6
+          ],
+          "relative_return_exact": true
+        },
+        {
+          "branch_completion_exact": true,
+          "branch_permutations": 720,
+          "cycle_gluing_exact": true,
+          "cycle_partition_count": 1,
+          "delta": 3,
+          "fixed_collision_exact": true,
+          "fixed_collision_fiber_size": 120,
+          "fixed_collision_fibers": 6,
+          "fixed_collision_partition_counts": {
+            "1": 1,
+            "2": 1,
+            "3": 1,
+            "4": 1,
+            "5": 1,
+            "6": 1
+          },
+          "gcd": 1,
+          "punctured_cycle_type": [
+            6
+          ],
+          "relative_return_exact": true
+        },
+        {
+          "branch_completion_exact": true,
+          "branch_permutations": 720,
+          "cycle_gluing_exact": true,
+          "cycle_partition_count": 1,
+          "delta": 4,
+          "fixed_collision_exact": true,
+          "fixed_collision_fiber_size": 120,
+          "fixed_collision_fibers": 6,
+          "fixed_collision_partition_counts": {
+            "1": 1,
+            "2": 1,
+            "3": 1,
+            "4": 1,
+            "5": 1,
+            "6": 1
+          },
+          "gcd": 1,
+          "punctured_cycle_type": [
+            6
+          ],
+          "relative_return_exact": true
+        },
+        {
+          "branch_completion_exact": true,
+          "branch_permutations": 720,
+          "cycle_gluing_exact": true,
+          "cycle_partition_count": 1,
+          "delta": 5,
+          "fixed_collision_exact": true,
+          "fixed_collision_fiber_size": 120,
+          "fixed_collision_fibers": 6,
+          "fixed_collision_partition_counts": {
+            "1": 1,
+            "2": 1,
+            "3": 1,
+            "4": 1,
+            "5": 1,
+            "6": 1
+          },
+          "gcd": 1,
+          "punctured_cycle_type": [
+            6
+          ],
+          "relative_return_exact": true
+        },
+        {
+          "branch_completion_exact": true,
+          "branch_permutations": 720,
+          "cycle_gluing_exact": true,
+          "cycle_partition_count": 1,
+          "delta": 6,
+          "fixed_collision_exact": true,
+          "fixed_collision_fiber_size": 120,
+          "fixed_collision_fibers": 6,
+          "fixed_collision_partition_counts": {
+            "1": 1,
+            "2": 1,
+            "3": 1,
+            "4": 1,
+            "5": 1,
+            "6": 1
+          },
+          "gcd": 1,
+          "punctured_cycle_type": [
+            6
+          ],
+          "relative_return_exact": true
+        }
+      ],
+      "n": 7
+    },
+    {
+      "deltas": [
+        {
+          "branch_completion_exact": true,
+          "branch_permutations": 5040,
+          "cycle_gluing_exact": true,
+          "cycle_partition_count": 1,
+          "delta": 1,
+          "fixed_collision_exact": true,
+          "fixed_collision_fiber_size": 720,
+          "fixed_collision_fibers": 7,
+          "fixed_collision_partition_counts": {
+            "1": 1,
+            "2": 1,
+            "3": 1,
+            "4": 1,
+            "5": 1,
+            "6": 1,
+            "7": 1
+          },
+          "gcd": 1,
+          "punctured_cycle_type": [
+            7
+          ],
+          "relative_return_exact": true
+        },
+        {
+          "branch_completion_exact": true,
+          "branch_permutations": 5040,
+          "cycle_gluing_exact": true,
+          "cycle_partition_count": 2,
+          "delta": 2,
+          "fixed_collision_exact": true,
+          "fixed_collision_fiber_size": 720,
+          "fixed_collision_fibers": 7,
+          "fixed_collision_partition_counts": {
+            "1": 1,
+            "2": 2,
+            "3": 1,
+            "4": 2,
+            "5": 1,
+            "6": 2,
+            "7": 1
+          },
+          "gcd": 2,
+          "punctured_cycle_type": [
+            3,
+            4
+          ],
+          "relative_return_exact": true
+        },
+        {
+          "branch_completion_exact": true,
+          "branch_permutations": 5040,
+          "cycle_gluing_exact": true,
+          "cycle_partition_count": 1,
+          "delta": 3,
+          "fixed_collision_exact": true,
+          "fixed_collision_fiber_size": 720,
+          "fixed_collision_fibers": 7,
+          "fixed_collision_partition_counts": {
+            "1": 1,
+            "2": 1,
+            "3": 1,
+            "4": 1,
+            "5": 1,
+            "6": 1,
+            "7": 1
+          },
+          "gcd": 1,
+          "punctured_cycle_type": [
+            7
+          ],
+          "relative_return_exact": true
+        },
+        {
+          "branch_completion_exact": true,
+          "branch_permutations": 5040,
+          "cycle_gluing_exact": true,
+          "cycle_partition_count": 15,
+          "delta": 4,
+          "fixed_collision_exact": true,
+          "fixed_collision_fiber_size": 720,
+          "fixed_collision_fibers": 7,
+          "fixed_collision_partition_counts": {
+            "1": 5,
+            "2": 5,
+            "3": 5,
+            "4": 5,
+            "5": 5,
+            "6": 5,
+            "7": 5
+          },
+          "gcd": 4,
+          "punctured_cycle_type": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "relative_return_exact": true
+        },
+        {
+          "branch_completion_exact": true,
+          "branch_permutations": 5040,
+          "cycle_gluing_exact": true,
+          "cycle_partition_count": 1,
+          "delta": 5,
+          "fixed_collision_exact": true,
+          "fixed_collision_fiber_size": 720,
+          "fixed_collision_fibers": 7,
+          "fixed_collision_partition_counts": {
+            "1": 1,
+            "2": 1,
+            "3": 1,
+            "4": 1,
+            "5": 1,
+            "6": 1,
+            "7": 1
+          },
+          "gcd": 1,
+          "punctured_cycle_type": [
+            7
+          ],
+          "relative_return_exact": true
+        },
+        {
+          "branch_completion_exact": true,
+          "branch_permutations": 5040,
+          "cycle_gluing_exact": true,
+          "cycle_partition_count": 2,
+          "delta": 6,
+          "fixed_collision_exact": true,
+          "fixed_collision_fiber_size": 720,
+          "fixed_collision_fibers": 7,
+          "fixed_collision_partition_counts": {
+            "1": 1,
+            "2": 2,
+            "3": 1,
+            "4": 2,
+            "5": 1,
+            "6": 2,
+            "7": 1
+          },
+          "gcd": 2,
+          "punctured_cycle_type": [
+            3,
+            4
+          ],
+          "relative_return_exact": true
+        },
+        {
+          "branch_completion_exact": true,
+          "branch_permutations": 5040,
+          "cycle_gluing_exact": true,
+          "cycle_partition_count": 1,
+          "delta": 7,
+          "fixed_collision_exact": true,
+          "fixed_collision_fiber_size": 720,
+          "fixed_collision_fibers": 7,
+          "fixed_collision_partition_counts": {
+            "1": 1,
+            "2": 1,
+            "3": 1,
+            "4": 1,
+            "5": 1,
+            "6": 1,
+            "7": 1
+          },
+          "gcd": 1,
+          "punctured_cycle_type": [
+            7
+          ],
+          "relative_return_exact": true
+        }
+      ],
+      "n": 8
+    }
+  ],
+  "schema": "rime.paper30.general-defect-return-group-audit.v1",
+  "scope": {
+    "max_n": 8,
+    "min_n": 6
+  },
+  "status": "FINITE_SANITY_CHECK_NOT_ALL_N_PROOF",
+  "totals": {
+    "branch_completion_cases": 40200,
+    "fixed_collision_fibers": 110
+  }
+}

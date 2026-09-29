@@ -1,0 +1,112 @@
+{
+  "schema": "rime.paper30.development-manifest.v1",
+  "package_id": "PAPER30-GENERAL-DEFECT-RETURN-GROUP-DEVELOPMENT-V1",
+  "status": "DRAFT_PAPER_OWNED_CLOSURE",
+  "release_identity_claimed": false,
+  "validation_mode": "LOCAL_CLOSURE_VERIFICATION",
+  "digest_policy": {
+    "algorithm": "sha256",
+    "scope": "exact_file_bytes",
+    "path_resolution": "repository-relative",
+    "absolute_paths_allowed": false,
+    "wildcards_allowed": false
+  },
+  "artifacts": [
+    {
+      "role": "manuscript",
+      "path": "papers/paper30/Paper XXX.md",
+      "sha256": "86632fe8d31d2b52c9c0d693b0d2d897ac033057cad3425ee5cee0e4c0403b13"
+    },
+    {
+      "role": "bibliography",
+      "path": "papers/paper30/references-v1.bib",
+      "sha256": "c40d357276d74af0bd086794654116e7ae3ed03b1d22844969d1e9287090476f"
+    },
+    {
+      "role": "package-readme",
+      "path": "experiments/paper30/README.md",
+      "sha256": "dd452161cd54f6ac0e8c3af4159cd20c792211be923872e67a8273e0d8f9942e"
+    },
+    {
+      "role": "finite-producer",
+      "path": "experiments/paper30/return_group_audit.py",
+      "sha256": "886e44cc4de80de8aadf121d2d38cdc9d1140c2f565a6ee24096ff5971136271"
+    },
+    {
+      "role": "finite-result",
+      "path": "experiments/paper30/results/general_defect_return_group_audit_v1.json",
+      "sha256": "53725a96125c27e55bab2939f57820df175e791af1258bcd5c674d568b40ee31"
+    },
+    {
+      "role": "finite-validator",
+      "path": "experiments/paper30/validation/validate_return_group_audit.py",
+      "sha256": "de05f6ab8c1c947f9c432cec6c83ebdec5a2cd923ce776d555990b89eb0fcdc3"
+    },
+    {
+      "role": "lean-readme",
+      "path": "experiments/paper30/lean/README.md",
+      "sha256": "8bfae118ebcaa75743384e31a2326b4eba26cb1f62eee271edb3234b7707786f"
+    },
+    {
+      "role": "lean-entrypoint",
+      "path": "experiments/paper30/lean/Paper30.lean",
+      "sha256": "29890a23736897f58489c0fb113c86c383338fe01c6bde2e06830128b6356472"
+    },
+    {
+      "role": "lean-source",
+      "path": "experiments/paper30/lean/Paper30/OrbitReduction.lean",
+      "sha256": "38a07ac536b0f4ce2e0c50c76aecf55aae65387671860f2330db2fcc1b0306fd"
+    },
+    {
+      "role": "lean-source",
+      "path": "experiments/paper30/lean/Paper30/CycleGluing.lean",
+      "sha256": "f3b435e5465f202f3dcc5aa395c6db11fd163c1b8ed365a8d7f7fcd0628f4ea3"
+    },
+    {
+      "role": "lean-source",
+      "path": "experiments/paper30/lean/Paper30/BranchFiber.lean",
+      "sha256": "5df946b88e410c13642f98f1fadee387040959780dbc478c888f4d83ad0a296a"
+    },
+    {
+      "role": "lean-scope-manifest",
+      "path": "experiments/paper30/lean/formalization-manifest.json",
+      "sha256": "a67a78df0ed5a46f04a255dcd36f598a302928bb883a0ea476c240ebe02c5cbd"
+    },
+    {
+      "role": "lean-project",
+      "path": "experiments/paper30/lean/lakefile.toml",
+      "sha256": "27aa2488d1f9dabec8afb85fbdfabe0f25bef2b9c0722402dd783331383edf09"
+    },
+    {
+      "role": "lean-lock",
+      "path": "experiments/paper30/lean/lake-manifest.json",
+      "sha256": "4aa88c7c92bdde09553487748c67dfbd0a262d80530150006641f4017bb331e7"
+    },
+    {
+      "role": "lean-toolchain",
+      "path": "experiments/paper30/lean/lean-toolchain",
+      "sha256": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b"
+    },
+    {
+      "role": "lean-validator",
+      "path": "experiments/paper30/validation/validate_lean_formalization.py",
+      "sha256": "730c5de76b01b75fdf12eebe797799efb980f4f374317d35e316dd91b157d8af"
+    },
+    {
+      "role": "package-validator",
+      "path": "experiments/paper30/validation/validate_package.py",
+      "sha256": "23646aae716670b174197ba330964d10a0346f3d9de8eff4fdaf3c57e345d3ca"
+    }
+  ],
+  "validation_commands": [
+    "python experiments/paper30/validation/validate_package.py",
+    "python experiments/paper30/validation/validate_package.py --replay"
+  ],
+  "claim_boundary": [
+    "finite replay is not the all-n proof",
+    "Lean formalizes only the data-independent implication spine",
+    "point-orbit classification does not classify section coloring orbits",
+    "raw return-group reachability does not imply Safe-Hit or typed projectability",
+    "this draft manifest is not a release receipt or publication identity"
+  ]
+}

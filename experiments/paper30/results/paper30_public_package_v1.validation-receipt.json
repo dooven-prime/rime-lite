@@ -1,0 +1,223 @@
+{
+  "schema": "rime.paper30.public-package-receipt.v1",
+  "artifact_id": "PAPER30-V1-PUBLIC-PACKAGE-VALIDATED",
+  "status": "PASS",
+  "validation_mode": "LOCAL_CLOSURE_VERIFICATION",
+  "receipt_self_exclusion": true,
+  "replay": {
+    "development_closure_verified": true,
+    "finite_bounded_replay": true,
+    "lean_elaboration_replayed": true
+  },
+  "manifest_binding": {
+    "path": "experiments/paper30/release-manifest.json",
+    "sha256": "2d3f199156db99af7f29c2a20db8520f1407985a9429a07802da8053288627cb"
+  },
+  "nested_closures": {
+    "development_evidence": {
+      "artifact_count": 17,
+      "closure_digest": "6adecd80fa31b5e68d51f22e448704f4ee83e902eeed432e22e0384da647201b",
+      "ordered_artifacts": [
+        {
+          "path": "experiments/paper30/README.md",
+          "sha256": "dd452161cd54f6ac0e8c3af4159cd20c792211be923872e67a8273e0d8f9942e"
+        },
+        {
+          "path": "experiments/paper30/lean/Paper30.lean",
+          "sha256": "29890a23736897f58489c0fb113c86c383338fe01c6bde2e06830128b6356472"
+        },
+        {
+          "path": "experiments/paper30/lean/Paper30/BranchFiber.lean",
+          "sha256": "5df946b88e410c13642f98f1fadee387040959780dbc478c888f4d83ad0a296a"
+        },
+        {
+          "path": "experiments/paper30/lean/Paper30/CycleGluing.lean",
+          "sha256": "f3b435e5465f202f3dcc5aa395c6db11fd163c1b8ed365a8d7f7fcd0628f4ea3"
+        },
+        {
+          "path": "experiments/paper30/lean/Paper30/OrbitReduction.lean",
+          "sha256": "38a07ac536b0f4ce2e0c50c76aecf55aae65387671860f2330db2fcc1b0306fd"
+        },
+        {
+          "path": "experiments/paper30/lean/README.md",
+          "sha256": "8bfae118ebcaa75743384e31a2326b4eba26cb1f62eee271edb3234b7707786f"
+        },
+        {
+          "path": "experiments/paper30/lean/formalization-manifest.json",
+          "sha256": "a67a78df0ed5a46f04a255dcd36f598a302928bb883a0ea476c240ebe02c5cbd"
+        },
+        {
+          "path": "experiments/paper30/lean/lake-manifest.json",
+          "sha256": "4aa88c7c92bdde09553487748c67dfbd0a262d80530150006641f4017bb331e7"
+        },
+        {
+          "path": "experiments/paper30/lean/lakefile.toml",
+          "sha256": "27aa2488d1f9dabec8afb85fbdfabe0f25bef2b9c0722402dd783331383edf09"
+        },
+        {
+          "path": "experiments/paper30/lean/lean-toolchain",
+          "sha256": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b"
+        },
+        {
+          "path": "experiments/paper30/results/general_defect_return_group_audit_v1.json",
+          "sha256": "53725a96125c27e55bab2939f57820df175e791af1258bcd5c674d568b40ee31"
+        },
+        {
+          "path": "experiments/paper30/return_group_audit.py",
+          "sha256": "886e44cc4de80de8aadf121d2d38cdc9d1140c2f565a6ee24096ff5971136271"
+        },
+        {
+          "path": "experiments/paper30/validation/validate_lean_formalization.py",
+          "sha256": "730c5de76b01b75fdf12eebe797799efb980f4f374317d35e316dd91b157d8af"
+        },
+        {
+          "path": "experiments/paper30/validation/validate_package.py",
+          "sha256": "23646aae716670b174197ba330964d10a0346f3d9de8eff4fdaf3c57e345d3ca"
+        },
+        {
+          "path": "experiments/paper30/validation/validate_return_group_audit.py",
+          "sha256": "de05f6ab8c1c947f9c432cec6c83ebdec5a2cd923ce776d555990b89eb0fcdc3"
+        },
+        {
+          "path": "papers/paper30/Paper XXX.md",
+          "sha256": "86632fe8d31d2b52c9c0d693b0d2d897ac033057cad3425ee5cee0e4c0403b13"
+        },
+        {
+          "path": "papers/paper30/references-v1.bib",
+          "sha256": "c40d357276d74af0bd086794654116e7ae3ed03b1d22844969d1e9287090476f"
+        }
+      ]
+    }
+  },
+  "release_identity": {
+    "artifact_count": 6,
+    "closure_digest": "8450e514ec38043b47b44db7d999fc0413a399ef42191c373172e073b9217369",
+    "ordered_artifacts": [
+      {
+        "path": "experiments/paper30/development-manifest.json",
+        "sha256": "b63e0794ef01a5b4a86713cba23fd5bc857ceb0595ae761825240ae3c434478a"
+      },
+      {
+        "path": "experiments/paper30/release-environment.json",
+        "sha256": "8ba10ec6ee5c65bd68c8fed4e1be50dba97e4fa97e9503a2d42b58b11c2bd1ac"
+      },
+      {
+        "path": "experiments/paper30/validation/validate_public_package.py",
+        "sha256": "773a26c4dc26af0311e21d504755c05f85e2fd178553557b7499e5454f524f11"
+      },
+      {
+        "path": "papers/paper30/Paper XXX.md",
+        "sha256": "86632fe8d31d2b52c9c0d693b0d2d897ac033057cad3425ee5cee0e4c0403b13"
+      },
+      {
+        "path": "papers/paper30/paper30_arxiv.pdf",
+        "sha256": "6301ec4f3947d84393acdf4dcf7c64dfac9eb6ac7e52671aa8ad7d981ba77059"
+      },
+      {
+        "path": "papers/paper30/references-v1.bib",
+        "sha256": "c40d357276d74af0bd086794654116e7ae3ed03b1d22844969d1e9287090476f"
+      }
+    ]
+  },
+  "package_inventory": {
+    "artifact_count": 22,
+    "closure_digest": "e85a5e805f9ff6d18348bced0f5192f011e171d351ed870ef48f686ae5470abd",
+    "ordered_artifacts": [
+      {
+        "path": "experiments/paper30/README.md",
+        "sha256": "dd452161cd54f6ac0e8c3af4159cd20c792211be923872e67a8273e0d8f9942e"
+      },
+      {
+        "path": "experiments/paper30/development-manifest.json",
+        "sha256": "b63e0794ef01a5b4a86713cba23fd5bc857ceb0595ae761825240ae3c434478a"
+      },
+      {
+        "path": "experiments/paper30/lean/Paper30.lean",
+        "sha256": "29890a23736897f58489c0fb113c86c383338fe01c6bde2e06830128b6356472"
+      },
+      {
+        "path": "experiments/paper30/lean/Paper30/BranchFiber.lean",
+        "sha256": "5df946b88e410c13642f98f1fadee387040959780dbc478c888f4d83ad0a296a"
+      },
+      {
+        "path": "experiments/paper30/lean/Paper30/CycleGluing.lean",
+        "sha256": "f3b435e5465f202f3dcc5aa395c6db11fd163c1b8ed365a8d7f7fcd0628f4ea3"
+      },
+      {
+        "path": "experiments/paper30/lean/Paper30/OrbitReduction.lean",
+        "sha256": "38a07ac536b0f4ce2e0c50c76aecf55aae65387671860f2330db2fcc1b0306fd"
+      },
+      {
+        "path": "experiments/paper30/lean/README.md",
+        "sha256": "8bfae118ebcaa75743384e31a2326b4eba26cb1f62eee271edb3234b7707786f"
+      },
+      {
+        "path": "experiments/paper30/lean/formalization-manifest.json",
+        "sha256": "a67a78df0ed5a46f04a255dcd36f598a302928bb883a0ea476c240ebe02c5cbd"
+      },
+      {
+        "path": "experiments/paper30/lean/lake-manifest.json",
+        "sha256": "4aa88c7c92bdde09553487748c67dfbd0a262d80530150006641f4017bb331e7"
+      },
+      {
+        "path": "experiments/paper30/lean/lakefile.toml",
+        "sha256": "27aa2488d1f9dabec8afb85fbdfabe0f25bef2b9c0722402dd783331383edf09"
+      },
+      {
+        "path": "experiments/paper30/lean/lean-toolchain",
+        "sha256": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b"
+      },
+      {
+        "path": "experiments/paper30/release-environment.json",
+        "sha256": "8ba10ec6ee5c65bd68c8fed4e1be50dba97e4fa97e9503a2d42b58b11c2bd1ac"
+      },
+      {
+        "path": "experiments/paper30/release-manifest.json",
+        "sha256": "2d3f199156db99af7f29c2a20db8520f1407985a9429a07802da8053288627cb"
+      },
+      {
+        "path": "experiments/paper30/results/general_defect_return_group_audit_v1.json",
+        "sha256": "53725a96125c27e55bab2939f57820df175e791af1258bcd5c674d568b40ee31"
+      },
+      {
+        "path": "experiments/paper30/return_group_audit.py",
+        "sha256": "886e44cc4de80de8aadf121d2d38cdc9d1140c2f565a6ee24096ff5971136271"
+      },
+      {
+        "path": "experiments/paper30/validation/validate_lean_formalization.py",
+        "sha256": "730c5de76b01b75fdf12eebe797799efb980f4f374317d35e316dd91b157d8af"
+      },
+      {
+        "path": "experiments/paper30/validation/validate_package.py",
+        "sha256": "23646aae716670b174197ba330964d10a0346f3d9de8eff4fdaf3c57e345d3ca"
+      },
+      {
+        "path": "experiments/paper30/validation/validate_public_package.py",
+        "sha256": "773a26c4dc26af0311e21d504755c05f85e2fd178553557b7499e5454f524f11"
+      },
+      {
+        "path": "experiments/paper30/validation/validate_return_group_audit.py",
+        "sha256": "de05f6ab8c1c947f9c432cec6c83ebdec5a2cd923ce776d555990b89eb0fcdc3"
+      },
+      {
+        "path": "papers/paper30/Paper XXX.md",
+        "sha256": "86632fe8d31d2b52c9c0d693b0d2d897ac033057cad3425ee5cee0e4c0403b13"
+      },
+      {
+        "path": "papers/paper30/paper30_arxiv.pdf",
+        "sha256": "6301ec4f3947d84393acdf4dcf7c64dfac9eb6ac7e52671aa8ad7d981ba77059"
+      },
+      {
+        "path": "papers/paper30/references-v1.bib",
+        "sha256": "c40d357276d74af0bd086794654116e7ae3ed03b1d22844969d1e9287090476f"
+      }
+    ]
+  },
+  "nonclaims": [
+    "local closure verification is not independent validation",
+    "finite replay is not the all-n proof",
+    "Lean does not formalize the punctured-rotation arithmetic or constructive branch realizations",
+    "the receipt does not occur in its own closure"
+  ],
+  "content_sha256": "2d4aba86e2fbb38b8bc0499d9051b9a2ec5e9d91230a1848d180f2dda622e2f1"
+}

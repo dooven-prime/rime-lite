@@ -1,0 +1,40 @@
+{
+  "schema": "rime.paper30.lean-formalization-manifest.v1",
+  "formalization_id": "PAPER30-RETURN-GROUP-SPINE-V1",
+  "status": "COMPILED_PAPER_OWNED_PARTIAL_FORMALIZATION",
+  "validation_mode": "LOCAL_CLOSURE_VERIFICATION",
+  "entrypoint": "experiments/paper30/lean/Paper30.lean",
+  "build": {
+    "project_root": "experiments/paper30/lean",
+    "command": "lake build",
+    "lean": "4.33.0",
+    "mathlib_revision": "db584cd6d46c92f209a44c0f1c829460d327499d"
+  },
+  "source_sha256": {
+    "Paper30.lean": "29890a23736897f58489c0fb113c86c383338fe01c6bde2e06830128b6356472",
+    "Paper30/OrbitReduction.lean": "38a07ac536b0f4ce2e0c50c76aecf55aae65387671860f2330db2fcc1b0306fd",
+    "Paper30/CycleGluing.lean": "f3b435e5465f202f3dcc5aa395c6db11fd163c1b8ed365a8d7f7fcd0628f4ea3",
+    "Paper30/BranchFiber.lean": "5df946b88e410c13642f98f1fadee387040959780dbc478c888f4d83ad0a296a",
+    "README.md": "8bfae118ebcaa75743384e31a2326b4eba26cb1f62eee271edb3234b7707786f",
+    "lakefile.toml": "27aa2488d1f9dabec8afb85fbdfabe0f25bef2b9c0722402dd783331383edf09",
+    "lake-manifest.json": "4aa88c7c92bdde09553487748c67dfbd0a262d80530150006641f4017bb331e7",
+    "lean-toolchain": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b"
+  },
+  "formalized_scope": [
+    "exact relation-valued quotient reachability under internal fiber controllability",
+    "cycle-gluing reachability as an exact quotient of point dynamics",
+    "restriction of a supplied branch equivalence to a fixed readout fiber",
+    "forced cycle join from one fixed branch arrow",
+    "forced isolation of a fixed singleton relative-return cycle",
+    "point-orbit versus coloring-orbit nonpromotion boundary"
+  ],
+  "excluded_scope": [
+    "construction of universal returns from a labelled defect",
+    "punctured-rotation conjugacy and gcd-dependent cycle type",
+    "concrete free branch-completion equivalence",
+    "factorial fixed-collision fiber cardinality",
+    "constructive realization of every admissible cycle partition",
+    "finite Python audit",
+    "coloring orbits, guarded Safe-Hit, survivor incidence, typed transfer, projectability, return, settlement, and reset bounds"
+  ]
+}
