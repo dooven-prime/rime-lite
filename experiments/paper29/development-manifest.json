@@ -1,0 +1,111 @@
+{
+  "schema": "rime.paper29.development-manifest.v1",
+  "package_id": "PAPER29-CANONICAL-RANK5-FRONTIER-DEVELOPMENT-V1",
+  "status": "DRAFT_PAPER_OWNED_CLOSURE",
+  "release_identity_claimed": false,
+  "validation_mode": "LOCAL_CLOSURE_VERIFICATION",
+  "digest_policy": {
+    "algorithm": "sha256",
+    "scope": "exact_file_bytes",
+    "path_resolution": "repository-relative",
+    "absolute_paths_allowed": false,
+    "wildcards_allowed": false
+  },
+  "artifacts": [
+    {
+      "role": "manuscript",
+      "path": "papers/paper29/Paper XXIX.md",
+      "sha256": "c4964b85e665af74f470b092d1675d2478817ab5f718722c0a1b58ae5c3bb11e"
+    },
+    {
+      "role": "bibliography",
+      "path": "papers/paper29/references-v1.bib",
+      "sha256": "63a6be20cbd32a34d6b5e81ec460085d34caf9f5edf506b89c5f6861e881915d"
+    },
+    {
+      "role": "package-readme",
+      "path": "experiments/paper29/README.md",
+      "sha256": "8433b544f16ecf4b6b056180a8504ae3857c800f5b1cec2e39cada50c741c7b8"
+    },
+    {
+      "role": "finite-producer",
+      "path": "experiments/paper29/canonical_frontier.py",
+      "sha256": "98bb6f5fad4129fd76b121c504e535e4aaf85349bb58942b910cdda67db64f92"
+    },
+    {
+      "role": "finite-result",
+      "path": "experiments/paper29/results/canonical_frontier_audit_v1.json",
+      "sha256": "5e42d74ec50aae96a57b170677ae6f39f57baa194ed5c5119dd097d3ce763f25"
+    },
+    {
+      "role": "finite-validator",
+      "path": "experiments/paper29/validation/validate_canonical_frontier.py",
+      "sha256": "31f96ae0c646131e44cdf20f7e1de762eda5c4db88363bc6dc893966bbcced2d"
+    },
+    {
+      "role": "lean-readme",
+      "path": "experiments/paper29/lean/README.md",
+      "sha256": "bbc8e787970301aa844e85014ba2f648a14f009a2652148e324d04a6061c64ec"
+    },
+    {
+      "role": "lean-entrypoint",
+      "path": "experiments/paper29/lean/Paper29.lean",
+      "sha256": "7452cb777b550d48bdffc0bd52957fd70bfe9f9e3c650275ea815c9ae8deb31e"
+    },
+    {
+      "role": "lean-source",
+      "path": "experiments/paper29/lean/Paper29/Incidence.lean",
+      "sha256": "77edabc1005a75ec9b135e6451712b65d2b8b98c10e3584d04672785fcfdbf03"
+    },
+    {
+      "role": "lean-source",
+      "path": "experiments/paper29/lean/Paper29/Quotient.lean",
+      "sha256": "086d2feb8adf870f35335bf7d2e26928339821bae26d1f23d89eaebd7d487cce"
+    },
+    {
+      "role": "lean-source",
+      "path": "experiments/paper29/lean/Paper29/Classification.lean",
+      "sha256": "ce6d13695f82ca042db6b460cd7d3c601bb142a3161168bf35714bd9707b9453"
+    },
+    {
+      "role": "lean-scope-manifest",
+      "path": "experiments/paper29/lean/formalization-manifest.json",
+      "sha256": "4599257b1a44ed208efc37337cfb0a4b2c49b7dc03da97a86ff2c4b9080ea195"
+    },
+    {
+      "role": "lean-project",
+      "path": "experiments/paper29/lean/lakefile.toml",
+      "sha256": "e0cdfc62967a1030a7576bdccf4e02830851b617f025b43db8e1deaf6e2edeff"
+    },
+    {
+      "role": "lean-lock",
+      "path": "experiments/paper29/lean/lake-manifest.json",
+      "sha256": "230caccb16faad2fc34d99c4727989e77248a63c939c9ccbeb6b681bb102ed2d"
+    },
+    {
+      "role": "lean-toolchain",
+      "path": "experiments/paper29/lean/lean-toolchain",
+      "sha256": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b"
+    },
+    {
+      "role": "lean-validator",
+      "path": "experiments/paper29/validation/validate_lean_formalization.py",
+      "sha256": "ee8efc436bbb3c0264958d21c072abaa1b316a11c7725c63add896239ebcd235"
+    },
+    {
+      "role": "package-validator",
+      "path": "experiments/paper29/validation/validate_package.py",
+      "sha256": "3eb4fa07a2a395cca29ebaa65d847980a75f8ed7389706fda134e41611ffcf7d"
+    }
+  ],
+  "validation_commands": [
+    "python experiments/paper29/validation/validate_package.py",
+    "python experiments/paper29/validation/validate_package.py --replay"
+  ],
+  "claim_boundary": [
+    "finite replay is not the all-n proof",
+    "Lean formalizes only the data-independent implication spine",
+    "raw first-exit geometry does not imply typed transfer or projectability",
+    "this draft manifest is not a release receipt or publication identity"
+  ]
+}

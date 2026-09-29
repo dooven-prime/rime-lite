@@ -3,7 +3,7 @@
 This document is the public navigation map for the Representation-Induced
 Mechanics and Evolution (RIME) program. It identifies semantic ownership,
 typed interfaces and promotion boundaries across published Papers I--XV, the
-independently scoped Paper XVI computational case study, and Papers XX--XXVIII
+independently scoped Paper XVI computational case study, and Papers XX--XXIX
 theorem lines. It is not a
 proof document, release ledger, result record, or substitute for an owning
 manuscript.
@@ -110,6 +110,7 @@ carrier under its own hypotheses, evidence records, and publication identity.
 | XXVI | pair-chain transfer operators, random pair absorption, Cerny Perron asymptotics, rare-run extremal behavior, and sharp reset-word waiting envelopes | exact proofs and finite replay are separated from float64 spectral observations; the Lean closure covers only declared TA-III arithmetic and conditional certificate chains |
 | XXVII | fixed-scope entry sections, source-addressed completion relations, and relation-valued descent in single-defect circular automata | exact finite classifications and symbolic elimination support only the declared n=6 and n=7 scopes; local closure verification is not an all-n theorem or independent validation |
 | XXVIII | finite mechanism quotients, exact credit composition, fixed-scope recursive return, and canonical first-exit path alignment | exact finite certificates support the declared 4+35 and 165-context scopes; Projectable-Origin Supply, an all-rank selector, and a reset bound remain outside the theorem surface |
+| XXIX | cyclic packet-lineage dynamics and the all-n raw rank-five first-exit frontier | the manuscript proof owns the all-n result; finite replay for n=5 through n=12 and a partial Lean spine support but do not replace it, and no typed transfer or projectability claim follows |
 
 Papers XVII--XIX are intentionally unused in the public numbered sequence.
 Paper XX begins an independently scoped mathematical line, and Paper XXI
@@ -126,13 +127,18 @@ returns to the deterministic synchronizing-automata line with fixed-scope
 entry sections and source-addressed relation-valued completion interfaces.
 Paper XXVIII continues the finite mechanism analysis inside that typed
 interface without enlarging or re-owning Paper XXVII's theorem scope.
+Paper XXIX returns to intrinsic raw geometry and classifies the canonical
+rank-five first-exit frontier without importing Paper XXVIII's typed transfer
+or recursive-return contracts as theorem premises.
 None extends the SOF protocol authority chain.
 
 The synchronizing-automata papers share a research domain, not one inherited
 theorem surface. Paper XXIII owns deterministic pair-hitting and corridor
 geometry, Paper XXVI owns stochastic pair-transfer dynamics, and Paper XXVII
 owns fixed-scope entry and completion interfaces. Paper XXVIII owns its finite
-mechanism, credit, recursive-return, cover, and alignment statements. Each
+mechanism, credit, recursive-return, cover, and alignment statements. Paper
+XXIX owns raw packet-lineage reachability and the canonical all-n first-exit
+classification. Each
 retains its own hypotheses, evidence closure, and nonclaims.
 
 ## 4. Active Typing and Promotion Rules

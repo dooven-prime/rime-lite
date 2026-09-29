@@ -118,7 +118,7 @@ research target; Paper VII does not assert a generic completion theorem.
   and coarse-state closure on a source-addressed MaleCNS carrier. It does not
   inherit or extend the SOF protocol authority chain.
 
-### Papers XX--XXVIII: Independent Post-Protocol Mathematics
+### Papers XX--XXIX: Independent Post-Protocol Mathematics
 
 Papers XVII--XIX are intentionally unused in the public numbered sequence.
 Paper XX begins a separately scoped mathematical line with all-depth
@@ -149,6 +149,11 @@ Paper XXVII's theorem scope. It develops finite mechanism quotients, exact
 credit composition, five fixed-scope recursive-return surfaces, a sufficient
 GFPC/PEC cover, and canonical first-exit path alignment. Projectable-Origin
 Supply remains open at arbitrary ambient size.
+Paper XXIX develops a separate intrinsic classification of the raw rank-five
+first-exit frontier in the canonical single-defect circular family. It proves
+an all-`n` consecutive-lineage criterion and complete survivor-placement
+spectrum, while leaving the typed transfer and projectability bridge to Paper
+XXVIII open.
 These papers consume no protocol authority and do not reopen Papers VIII--XV.
 Published version-1 identities are maintained in the repository's canonical
 DOI index.
@@ -160,8 +165,10 @@ unordered-pair transfer, absorption scales, and reset-word waiting envelopes.
 Paper XXVII owns only its fixed `n=6` entry-section and `n=7` completion-
 relation classifications. Paper XXVIII owns its declared finite mechanism,
 credit, return, cover, and alignment results; it owns no all-rank selector or
-reset bound. Results or evidence do not transfer between these owners without
-an explicit theorem or source-addressed import.
+reset bound. Paper XXIX owns raw packet-lineage first-exit geometry and does
+not inherit Paper XXVIII's transfer membership, authorization, handoff, or
+recursive-return claims. Results or evidence do not transfer between these
+owners without an explicit theorem or source-addressed import.
 
 ## Claim Discipline
 

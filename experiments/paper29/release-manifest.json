@@ -1,0 +1,97 @@
+{
+  "schema": "rime.paper29.release-manifest.v1",
+  "paper_id": "PAPER29",
+  "release_version": "1.0",
+  "status": "RELEASE_CANDIDATE",
+  "release_identity_claimed": false,
+  "validation_mode": "LOCAL_CLOSURE_VERIFICATION",
+  "receipt_self_exclusion": true,
+  "digest_policy": {
+    "algorithm": "sha256",
+    "scope": "exact_file_bytes",
+    "path_resolution": "exact repository-relative path",
+    "wildcards_allowed": false,
+    "absolute_paths_allowed": false,
+    "current_head_fallback_allowed": false
+  },
+  "artifacts": [
+    {
+      "role": "manuscript",
+      "closure_class": "normative-manuscript-build",
+      "path": "papers/paper29/Paper XXIX.md",
+      "sha256": "c4964b85e665af74f470b092d1675d2478817ab5f718722c0a1b58ae5c3bb11e"
+    },
+    {
+      "role": "reader-pdf",
+      "closure_class": "normative-manuscript-build",
+      "path": "papers/paper29/paper29_arxiv.pdf",
+      "sha256": "def7bf3d92e12efbb2df73a398ba2e200e2f4750c54af79753bd66e7326a3634"
+    },
+    {
+      "role": "bibliography",
+      "closure_class": "normative-manuscript-build",
+      "path": "papers/paper29/references-v1.bib",
+      "sha256": "63a6be20cbd32a34d6b5e81ec460085d34caf9f5edf506b89c5f6861e881915d"
+    },
+    {
+      "role": "development-manifest",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper29/development-manifest.json",
+      "sha256": "99f332c3ca8696c1296fc1566246c7cf2e3fc430ec5fe084113f29d8dd6f6db5"
+    },
+    {
+      "role": "release-environment",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper29/release-environment.json",
+      "sha256": "7ad94d84d4bff1190ba96d81261bc7ba52bf82f891543d878051e06e03170966"
+    },
+    {
+      "role": "public-package-validator",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper29/validation/validate_public_package.py",
+      "sha256": "57e74449492cc19c37f8caf9680b2bcc2551aba759cb993747abc35b51fd570f"
+    },
+    {
+      "role": "evidence-readme",
+      "closure_class": "public-package-documentation",
+      "path": "experiments/paper29/README.md",
+      "sha256": "8433b544f16ecf4b6b056180a8504ae3857c800f5b1cec2e39cada50c741c7b8"
+    }
+  ],
+  "nested_closures": {
+    "development_evidence": {
+      "manifest": "experiments/paper29/development-manifest.json",
+      "release_identity_claimed": false
+    }
+  },
+  "claim_boundary": [
+    "finite replay is not the all-n proof",
+    "Lean formalizes only the data-independent implication spine",
+    "raw first-exit geometry does not imply typed transfer or projectability",
+    "local closure verification is not independent mathematical validation"
+  ],
+  "release_candidate_date": "2026-09-29",
+  "excluded_from_package_inventory": [
+    "experiments/paper29/results/paper29_public_package_v1.validation-receipt.json",
+    "experiments/paper29/lean/.lake/**",
+    "**/__pycache__/**",
+    "**/*.pyc"
+  ],
+  "closure_policy": {
+    "classes": [
+      "normative-manuscript-build",
+      "theorem-facing-computational",
+      "public-package-documentation"
+    ],
+    "release_identity_classes": [
+      "normative-manuscript-build",
+      "theorem-facing-computational"
+    ],
+    "package_inventory_classes": [
+      "normative-manuscript-build",
+      "theorem-facing-computational",
+      "public-package-documentation"
+    ],
+    "note": "The paper-owned development manifest is a nested exact-byte evidence closure. Public documentation is integrity-checked but excluded from release identity."
+  }
+}

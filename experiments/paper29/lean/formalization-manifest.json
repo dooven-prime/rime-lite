@@ -1,0 +1,37 @@
+{
+  "schema": "rime.paper29.lean-formalization-manifest.v1",
+  "formalization_id": "PAPER29-RANK5-FRONTIER-SPINE-V1",
+  "status": "COMPILED_PAPER_OWNED_PARTIAL_FORMALIZATION",
+  "validation_mode": "LOCAL_CLOSURE_VERIFICATION",
+  "entrypoint": "experiments/paper29/lean/Paper29.lean",
+  "build": {
+    "project_root": "experiments/paper29/lean",
+    "command": "lake build",
+    "lean": "4.33.0",
+    "mathlib_revision": "db584cd6d46c92f209a44c0f1c829460d327499d"
+  },
+  "source_sha256": {
+    "Paper29.lean": "7452cb777b550d48bdffc0bd52957fd70bfe9f9e3c650275ea815c9ae8deb31e",
+    "Paper29/Incidence.lean": "77edabc1005a75ec9b135e6451712b65d2b8b98c10e3584d04672785fcfdbf03",
+    "Paper29/Quotient.lean": "086d2feb8adf870f35335bf7d2e26928339821bae26d1f23d89eaebd7d487cce",
+    "Paper29/Classification.lean": "ce6d13695f82ca042db6b460cd7d3c601bb142a3161168bf35714bd9707b9453",
+    "README.md": "bbc8e787970301aa844e85014ba2f648a14f009a2652148e324d04a6061c64ec",
+    "lakefile.toml": "e0cdfc62967a1030a7576bdccf4e02830851b617f025b43db8e1deaf6e2edeff",
+    "lake-manifest.json": "230caccb16faad2fc34d99c4727989e77248a63c939c9ccbeb6b681bb102ed2d",
+    "lean-toolchain": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b"
+  },
+  "formalized_scope": [
+    "boundary incidence extensionality from one fused fiber and survivor placement",
+    "same-lineage naturality of the pair/spectator quotient",
+    "frontier product count conditional on the manuscript classification equivalence",
+    "endpoint equivalence through one common incidence carrier",
+    "raw-existence versus typed-origin logical boundary"
+  ],
+  "excluded_scope": [
+    "canonical defect and section dynamics",
+    "safe-hit reachability and hole-slide normalization",
+    "all-n fused-pair and survivor classification proofs",
+    "finite graph artifacts",
+    "typed transfer fibers, authorization, handoff, projectability, return, settlement, and reset bounds"
+  ]
+}
