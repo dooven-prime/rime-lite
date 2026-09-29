@@ -9,7 +9,7 @@ finite representation laboratory, not as a puzzle-solving problem.
 ## Public Release
 
 The current public release contains Papers I--XV, the independently scoped
-Paper XVI computational case study, and Papers XX--XXVIII mathematical lines.
+Paper XVI computational case study, and Papers XX--XXIX mathematical lines.
 CCS v2.1 is published separately as an optional non-paper Computational
 Companion Archive; the immutable first combined record retains its historical
 predecessor.
@@ -41,13 +41,14 @@ predecessor.
 | Paper XXVI | pair-chain transfer operators, random synchronization, and sharp reset-word waiting envelopes | <https://doi.org/10.5281/zenodo.22637317> |
 | Paper XXVII | entry sections, source-addressed completion relations, and fixed-scope relation-valued descent | <https://doi.org/10.5281/zenodo.22853891> |
 | Paper XXVIII | finite mechanism structure, exact credit composition, and fixed-scope recursive return | <https://doi.org/10.5281/zenodo.22980858> |
+| Paper XXIX | cyclic lineage dynamics and rank-five raw first-exit frontiers | <https://doi.org/10.5281/zenodo.23028361> |
 | CCS v2.1 | optional reproducibility, observation, open-problem, and history archive | <https://doi.org/10.5281/zenodo.21988041> |
 | RIME Lite v2.1 repository snapshot | accepted papers, contracts, Registry evidence, release tools, and exact-byte historical inputs | [Zenodo DOI](https://doi.org/10.5281/zenodo.22048358) / [GitHub Release](https://github.com/dooven-prime/rime-lite/releases/tag/rime-lite-v2.1) |
 | Historical combined Papers I--III + CCS release | immutable first-version archive; current papers are maintained independently | <https://doi.org/10.5281/zenodo.21108197> |
 
 This is the repository's canonical DOI index. It identifies immutable
 published records; other public documents link here instead of duplicating the
-list. Papers VII--XVI and Papers XX--XXVIII now match their published records. Their
+list. Papers VII--XVI and Papers XX--XXIX now match their published records. Their
 listed DOIs identify immutable published versions, and frozen historical
 contracts remain unchanged.
 
@@ -116,6 +117,10 @@ relation-valued completion interfaces for single-defect circular automata.
 Paper XXVIII develops finite mechanism quotients, exact credit composition,
 five fixed-scope recursive-return surfaces, and canonical path alignment while
 leaving Projectable-Origin Supply open at arbitrary ambient size.
+Paper XXIX develops an independent all-`n` classification of the raw rank-five
+first-exit frontier for the canonical single-defect circular family. Its raw
+lineage geometry does not establish the typed transfer or projectability bridge
+left open by Paper XXVIII.
 Published release identities are maintained in the canonical DOI index above.
 
 | Paper | Manuscript | Evidence | Scope |
@@ -130,6 +135,7 @@ Published release identities are maintained in the canonical DOI index above.
 | XXVI | [`Paper XXVI.md`](papers/paper26/Paper%20XXVI.md) | [`experiments/paper26/`](experiments/paper26/) | pair-chain transfer operators, random pair absorption, Perron asymptotics, and sharp reset-word waiting envelopes |
 | XXVII | [`Paper XXVII.md`](papers/paper27/Paper%20XXVII.md) | [`experiments/paper27/`](experiments/paper27/) | intrinsic entry sections, source-addressed completion relations, and fixed-scope relation-valued descent |
 | XXVIII | [`Paper XXVIII.md`](papers/paper28/Paper%20XXVIII.md) | [`experiments/paper28/`](experiments/paper28/) | finite mechanism quotients, exact credit composition, fixed-scope recursive return, and canonical path alignment |
+| XXIX | [`Paper XXIX.md`](papers/paper29/Paper%20XXIX.md) | [`experiments/paper29/`](experiments/paper29/) | cyclic lineage dynamics, spectator-safe reachability, and the all-`n` raw rank-five first-exit frontier |
 
 Thematic index, not a paper dependency order:
 
@@ -157,6 +163,7 @@ Finite typed-context descent and comparison reconstruction
 Aligned diagnostic transport and carrier-local stability
 Pair-chain transfer operators and random synchronization
 Entry sections and source-addressed relation-valued descent
+Raw packet-lineage dynamics and rank-five first-exit frontiers
 ```
 
 Papers I--VII are independently readable. Their neighboring results connect
