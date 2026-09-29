@@ -2,10 +2,14 @@
 
 from __future__ import annotations
 
+import copy
+import json
 import subprocess
 import sys
 import tempfile
 from pathlib import Path
+
+from jsonschema import Draft202012Validator
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 if str(PROJECT_ROOT) not in sys.path:
@@ -22,6 +26,7 @@ from tools.release.post_release_anchor import (
     checked_relative_path,
     supplement_rows,
     tag_identity,
+    validate_release_identity,
     validate_remote_publication_date,
     validated_publication_date,
     zenodo_record_id,
@@ -160,10 +165,63 @@ def test_post_release_anchor_publication_date_is_fail_closed() -> None:
         raise AssertionError("remote publication-date mismatch was accepted")
 
 
+def test_post_release_anchor_identity_matches_release_tag() -> None:
+    validate_release_identity("PAPER28", "1.0", "paper28-v1.0")
+    for paper_id, version, tag in (
+        ("PAPER27", "1.0", "paper28-v1.0"),
+        ("PAPER28", "2.0", "paper28-v1.0"),
+        ("PAPER28", "1.0", "HEAD"),
+    ):
+        try:
+            validate_release_identity(paper_id, version, tag)
+        except ValueError:
+            pass
+        else:
+            raise AssertionError(
+                f"release identity mismatch accepted: {paper_id}, {version}, {tag}"
+            )
+
+
+def test_post_release_anchor_schema_enforces_nested_contracts() -> None:
+    schema_path = PROJECT_ROOT / "tools/release/post-release-anchor.v1.schema.json"
+    schema = json.loads(schema_path.read_text(encoding="utf-8"))
+    Draft202012Validator.check_schema(schema)
+    validator = Draft202012Validator(schema)
+
+    anchors = sorted((PROJECT_ROOT / "docs/release-anchors").glob("paper*-v1.0.json"))
+    assert anchors
+    for path in anchors:
+        anchor = json.loads(path.read_text(encoding="utf-8"))
+        assert list(validator.iter_errors(anchor)) == [], path
+
+    canonical = json.loads(anchors[0].read_text(encoding="utf-8"))
+    hostile_mutations = []
+    for field, value in (
+        ("pre_release_evidence", []),
+        ("external_anchor", {}),
+        ("versioned_repin_policy", {}),
+    ):
+        hostile = copy.deepcopy(canonical)
+        hostile[field] = value
+        hostile_mutations.append(hostile)
+
+    hostile = copy.deepcopy(canonical)
+    hostile["post_release_supplements"] = [{}]
+    hostile_mutations.append(hostile)
+    hostile = copy.deepcopy(canonical)
+    hostile["external_anchor"]["deposited_files"] = []
+    hostile_mutations.append(hostile)
+
+    for hostile in hostile_mutations:
+        assert list(validator.iter_errors(hostile)), hostile
+
+
 if __name__ == "__main__":
     test_tracked_mutation_is_detected()
     test_zenodo_record_id_forms()
     test_post_release_anchor_inputs_are_fail_closed()
     test_post_release_anchor_requires_exact_tag_and_downstream_supplement()
     test_post_release_anchor_publication_date_is_fail_closed()
+    test_post_release_anchor_identity_matches_release_tag()
+    test_post_release_anchor_schema_enforces_nested_contracts()
     print("test_verification_state.py: OK")

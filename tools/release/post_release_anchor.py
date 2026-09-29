@@ -22,6 +22,9 @@ from urllib.error import URLError
 from urllib.request import urlopen
 
 SCHEMA = "rime.paper-post-release-anchor.v1"
+RELEASE_TAG_PATTERN = re.compile(
+    r"^paper(?P<paper_number>[1-9][0-9]*)-v(?P<version>[0-9]+(?:\.[0-9]+){1,2})$"
+)
 POLICY = {
     "pre_release_manifest_mutation_allowed": False,
     "pre_release_receipt_mutation_allowed": False,
@@ -118,6 +121,24 @@ def validated_publication_date(value: object) -> str:
     if parsed.isoformat() != value:
         raise ValueError("publication_date must be an ISO calendar date")
     return value
+
+
+def validate_release_identity(paper_id: object, release_version: object, tag: object) -> None:
+    if not isinstance(tag, str):
+        raise TypeError("release tag name must be a string")
+    match = RELEASE_TAG_PATTERN.fullmatch(tag)
+    if match is None:
+        raise ValueError("release tag must use paper<N>-v<version> naming")
+    expected_paper = f"PAPER{match.group('paper_number')}"
+    expected_version = match.group("version")
+    if paper_id != expected_paper:
+        raise ValueError(
+            f"paper_id does not match release tag: expected {expected_paper}"
+        )
+    if release_version != expected_version:
+        raise ValueError(
+            f"release_version does not match release tag: expected {expected_version}"
+        )
 
 
 def validate_remote_publication_date(record: dict[str, Any], expected: str) -> None:
@@ -294,6 +315,7 @@ def write_anchor(args: argparse.Namespace) -> int:
     if output.exists() and not args.force:
         raise ValueError(f"anchor already exists; pass --force to replace it: {output}")
 
+    validate_release_identity(args.paper, args.version, args.tag)
     evidence = [assignment(value, "--evidence") for value in args.evidence]
     deposits = [assignment(value, "--deposit") for value in args.deposit]
     supplements = [assignment(value, "--supplement") for value in args.supplement]
@@ -375,16 +397,17 @@ def validate_anchor(args: argparse.Namespace) -> int:
         raise ValueError("versioned re-pin policy differs from the frozen policy")
     if anchor.get("authority_boundary") != BOUNDARY:
         raise ValueError("authority boundary differs from the frozen boundary")
-    if not isinstance(anchor.get("paper_id"), str) or not anchor["paper_id"]:
-        raise ValueError("paper_id is missing")
-    if not isinstance(anchor.get("release_version"), str) or not anchor["release_version"]:
-        raise ValueError("release_version is missing")
     if not isinstance(anchor.get("notes"), list) or not all(
         isinstance(item, str) for item in anchor["notes"]
     ):
         raise ValueError("notes must be a string array")
 
     release_tag = anchor["release_tag"]
+    if not isinstance(release_tag, dict):
+        raise TypeError("release_tag must be an object")
+    validate_release_identity(
+        anchor.get("paper_id"), anchor.get("release_version"), release_tag.get("name")
+    )
     actual_tag = tag_identity(root, release_tag["name"])
     if release_tag != actual_tag:
         raise ValueError("release tag identity mismatch")
@@ -524,7 +547,7 @@ def main() -> int:
     args = parser().parse_args()
     try:
         return args.handler(args)
-    except (KeyError, OSError, ValueError, subprocess.CalledProcessError) as error:
+    except (KeyError, OSError, TypeError, ValueError, subprocess.CalledProcessError) as error:
         raise SystemExit(f"FAIL: {error}") from error
 
 

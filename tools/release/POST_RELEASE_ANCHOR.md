@@ -10,6 +10,10 @@ The second record does not rewrite the first. A manifest that truthfully said
 `RELEASE_CANDIDATE` at the release-content commit remains frozen in that state.
 The post-release anchor records that those exact tagged bytes were published.
 
+The release identity tuple is exact: `PAPER<N>`, `<version>`, and
+`paper<N>-v<version>` must agree. A branch, raw commit, differently numbered
+paper, or differently versioned tag cannot stand in for that identity.
+
 ## Fixed Action
 
 Run the following sequence after publication:
