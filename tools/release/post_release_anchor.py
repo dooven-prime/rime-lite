@@ -12,14 +12,14 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
-from pathlib import Path, PurePosixPath
 import re
 import subprocess
 import time
+from datetime import date
+from pathlib import Path, PurePosixPath
 from typing import Any
 from urllib.error import URLError
 from urllib.request import urlopen
-
 
 SCHEMA = "rime.paper-post-release-anchor.v1"
 POLICY = {
@@ -78,7 +78,54 @@ def git_text(root: Path, *args: str) -> str:
 
 
 def git_blob(root: Path, tag: str, path: str) -> bytes:
-    return bytes(git_output(root, "show", f"{tag}:{path}"))
+    return bytes(git_output(root, "show", f"refs/tags/{tag}:{path}"))
+
+
+def tag_ref_sha(root: Path, tag: str) -> str:
+    if not isinstance(tag, str) or not tag:
+        raise ValueError("release tag name is missing")
+    result = subprocess.run(
+        ["git", "show-ref", "--verify", "--hash", f"refs/tags/{tag}"],
+        cwd=root,
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    if result.returncode != 0:
+        raise ValueError(f"release tag does not exist as an exact tag ref: {tag}")
+    return result.stdout.strip()
+
+
+def git_tag_path_exists(root: Path, tag: str, path: str) -> bool:
+    result = subprocess.run(
+        ["git", "ls-tree", "-z", "--name-only", f"refs/tags/{tag}", "--", path],
+        cwd=root,
+        check=False,
+        capture_output=True,
+    )
+    if result.returncode != 0:
+        raise ValueError(f"could not inspect release tag path: {tag}:{path}")
+    return bool(result.stdout)
+
+
+def validated_publication_date(value: object) -> str:
+    if not isinstance(value, str) or re.fullmatch(r"\d{4}-\d{2}-\d{2}", value) is None:
+        raise ValueError("publication_date must be an ISO calendar date")
+    try:
+        parsed = date.fromisoformat(value)
+    except ValueError as exc:
+        raise ValueError("publication_date must be an ISO calendar date") from exc
+    if parsed.isoformat() != value:
+        raise ValueError("publication_date must be an ISO calendar date")
+    return value
+
+
+def validate_remote_publication_date(record: dict[str, Any], expected: str) -> None:
+    remote = validated_publication_date(
+        (record.get("metadata") or {}).get("publication_date")
+    )
+    if remote != expected:
+        raise ValueError("remote Zenodo publication date differs from the stored anchor")
 
 
 def checked_relative_path(value: str) -> str:
@@ -153,10 +200,13 @@ def json_status(data: bytes) -> dict[str, Any]:
 
 
 def tag_identity(root: Path, tag: str) -> dict[str, str]:
+    ref_sha = tag_ref_sha(root, tag)
     return {
         "name": tag,
-        "tag_object_sha": git_text(root, "rev-parse", tag),
-        "target_commit_sha": git_text(root, "rev-parse", f"{tag}^{{commit}}"),
+        "tag_object_sha": ref_sha,
+        "target_commit_sha": git_text(
+            root, "rev-parse", f"refs/tags/{tag}^{{commit}}"
+        ),
     }
 
 
@@ -181,13 +231,15 @@ def evidence_rows(
 
 
 def supplement_rows(
-    root: Path, declarations: list[tuple[str, str]]
+    root: Path, tag: str, declarations: list[tuple[str, str]]
 ) -> list[dict[str, Any]]:
     rows = []
     for role, path in declarations:
         local = (root / path).resolve()
         if not local.is_file() or root not in local.parents:
             raise ValueError(f"post-release supplement is missing or unsafe: {path}")
+        if git_tag_path_exists(root, tag, path):
+            raise ValueError(f"post-release supplement already exists in release tag: {path}")
         rows.append(
             {
                 "role": role,
@@ -258,6 +310,7 @@ def write_anchor(args: argparse.Namespace) -> int:
         raise ValueError("Zenodo record has no DOI")
     record_id = str(record["id"])
     metadata = record.get("metadata", {})
+    publication_date = validated_publication_date(metadata.get("publication_date"))
     anchor = {
         "schema": SCHEMA,
         "paper_id": args.paper,
@@ -267,13 +320,13 @@ def write_anchor(args: argparse.Namespace) -> int:
         "anchor_role": "DOWNSTREAM_PUBLICATION_METADATA",
         "release_tag": tag_identity(root, args.tag),
         "pre_release_evidence": evidence_rows(root, args.tag, evidence),
-        "post_release_supplements": supplement_rows(root, supplements),
+        "post_release_supplements": supplement_rows(root, args.tag, supplements),
         "external_anchor": {
             "provider": "Zenodo",
             "doi": canonical_doi,
             "record_id": record_id,
             "record_url": f"https://zenodo.org/records/{record_id}",
-            "publication_date": metadata.get("publication_date"),
+            "publication_date": publication_date,
             "deposited_files": deposit_rows(root, args.tag, record, deposits),
         },
         "versioned_repin_policy": dict(POLICY),
@@ -376,6 +429,8 @@ def validate_anchor(args: argparse.Namespace) -> int:
         path = checked_relative_path(row["path"])
         if path == anchor_relative:
             raise ValueError("post-release anchor binds itself")
+        if git_tag_path_exists(root, release_tag["name"], path):
+            raise ValueError(f"post-release supplement already exists in release tag: {path}")
         local = (root / path).resolve()
         if digest_file(local) != row["sha256"] or local.stat().st_size != row["size"]:
             raise ValueError(f"post-release supplement mismatch: {path}")
@@ -399,9 +454,14 @@ def validate_anchor(args: argparse.Namespace) -> int:
         raise ValueError("Zenodo record ID does not match DOI")
     if external["record_url"] != f"https://zenodo.org/records/{record_id}":
         raise ValueError("Zenodo record URL does not match DOI")
+    publication_date = validated_publication_date(external["publication_date"])
     if not external["deposited_files"]:
         raise ValueError("anchor has no deposited files")
     record = fetch_record(doi) if args.check_remote else None
+    if record is not None:
+        if record.get("doi") != doi:
+            raise ValueError("remote Zenodo DOI differs from the stored anchor")
+        validate_remote_publication_date(record, publication_date)
     remote_names: set[str] = set()
     source_paths: set[str] = set()
     for row in external["deposited_files"]:
@@ -417,8 +477,6 @@ def validate_anchor(args: argparse.Namespace) -> int:
         if digest_bytes(source) != row["sha256"] or len(source) != row["size"]:
             raise ValueError(f"tagged deposit source mismatch: {source_path}")
         if record is not None:
-            if record.get("doi") != doi:
-                raise ValueError("remote Zenodo DOI differs from the stored anchor")
             matches = [item for item in record.get("files", []) if item.get("key") == row["remote_name"]]
             if len(matches) != 1:
                 raise ValueError(f"remote deposit is missing: {row['remote_name']}")
