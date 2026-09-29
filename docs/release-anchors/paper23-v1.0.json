@@ -1,0 +1,60 @@
+{
+  "schema": "rime.paper-post-release-anchor.v1",
+  "paper_id": "PAPER23",
+  "release_version": "1.0",
+  "publication_status": "PUBLISHED",
+  "release_identity_claimed": true,
+  "anchor_role": "DOWNSTREAM_PUBLICATION_METADATA",
+  "release_tag": {
+    "name": "paper23-v1.0",
+    "tag_object_sha": "2497d263d7c55359ca38c3397184fab2351993ff",
+    "target_commit_sha": "4f314ad1ffad08823d8c620002eafd7adda8b427"
+  },
+  "pre_release_evidence": [
+    {
+      "role": "release-receipt",
+      "path": "experiments/paper23/results/paper23_release_receipt_v1.json",
+      "sha256_at_tag": "66266abe3be9e99e66d0370ccf8828aa2e43a380f4f36d8b749c4ddf0cc26735",
+      "size_at_tag": 7666,
+      "mutation_policy": "IMMUTABLE_TAG_BYTES",
+      "declared_state_at_tag": {
+        "schema": "rime.paper23.release-receipt.v1",
+        "status": "PASS"
+      }
+    }
+  ],
+  "post_release_supplements": [],
+  "external_anchor": {
+    "provider": "Zenodo",
+    "doi": "10.5281/zenodo.22136087",
+    "record_id": "22136087",
+    "record_url": "https://zenodo.org/records/22136087",
+    "publication_date": "2026-08-28",
+    "deposited_files": [
+      {
+        "remote_name": "paper23_arxiv.pdf",
+        "source_path_at_tag": "papers/paper23/paper23_arxiv.pdf",
+        "sha256": "1131f672ee151dd8ff7b5bf7bc689b0c5f31557b1120b70ca1179b58916a00ec",
+        "size": 146402
+      }
+    ]
+  },
+  "versioned_repin_policy": {
+    "pre_release_manifest_mutation_allowed": false,
+    "pre_release_receipt_mutation_allowed": false,
+    "current_head_fallback_allowed": false,
+    "owner_change_requires_new_owner_version": true,
+    "consumer_change_requires_new_consumer_version_and_repin": true,
+    "shared_file_in_place_update_allowed": false
+  },
+  "authority_boundary": [
+    "The anchor establishes release-tag, evidence-root, and deposited-file byte identity only.",
+    "A DOI anchors only files actually deposited in that record.",
+    "Local closure verification is not independent mathematical validation.",
+    "Publication anchoring does not establish theorem truth or scientific adequacy.",
+    "The anchor is downstream metadata and is not part of the release tag it records."
+  ],
+  "notes": [
+    "Paper XXIII predates the common release-manifest format; its release receipt is the frozen pre-release evidence root."
+  ]
+}

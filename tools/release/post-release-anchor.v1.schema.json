@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/dooven-prime/rime-lite/tools/release/post-release-anchor.v1.schema.json",
+  "title": "RIME paper post-release anchor v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "paper_id",
+    "release_version",
+    "publication_status",
+    "release_identity_claimed",
+    "anchor_role",
+    "release_tag",
+    "pre_release_evidence",
+    "post_release_supplements",
+    "external_anchor",
+    "versioned_repin_policy",
+    "authority_boundary",
+    "notes"
+  ],
+  "properties": {
+    "schema": {"const": "rime.paper-post-release-anchor.v1"},
+    "paper_id": {"type": "string", "minLength": 1},
+    "release_version": {"type": "string", "minLength": 1},
+    "publication_status": {"const": "PUBLISHED"},
+    "release_identity_claimed": {"const": true},
+    "anchor_role": {"const": "DOWNSTREAM_PUBLICATION_METADATA"},
+    "release_tag": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "tag_object_sha", "target_commit_sha"],
+      "properties": {
+        "name": {"type": "string"},
+        "tag_object_sha": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "target_commit_sha": {"type": "string", "pattern": "^[0-9a-f]{40}$"}
+      }
+    },
+    "pre_release_evidence": {"type": "array", "items": {"type": "object"}},
+    "post_release_supplements": {"type": "array", "items": {"type": "object"}},
+    "external_anchor": {"type": "object"},
+    "versioned_repin_policy": {"type": "object"},
+    "authority_boundary": {"type": "array", "items": {"type": "string"}},
+    "notes": {"type": "array", "items": {"type": "string"}}
+  }
+}

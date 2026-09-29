@@ -85,3 +85,7 @@ independently scoped Paper XVI computational case study, and Papers XX--XXIX
 mathematical lines. Author-side planning, exploratory research routing,
 release migration status, and historical working notes are outside this
 public documentation index.
+
+Post-release tag/DOI byte bindings are indexed separately under
+[`release-anchors/`](release-anchors/). They are downstream metadata, not
+members of the owning papers' frozen evidence closures.

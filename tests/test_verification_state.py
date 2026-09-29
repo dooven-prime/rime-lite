@@ -19,6 +19,10 @@ from verification_state import (
     verification_exit_code,
 )
 from tools.release.verify_zenodo_anchor import record_id
+from tools.release.post_release_anchor import (
+    checked_relative_path,
+    zenodo_record_id,
+)
 
 
 def _git(root: Path, *args: str) -> None:
@@ -67,7 +71,22 @@ def test_zenodo_record_id_forms() -> None:
     assert record_id("https://doi.org/10.5281/zenodo.21988041") == "21988041"
 
 
+def test_post_release_anchor_inputs_are_fail_closed() -> None:
+    assert zenodo_record_id("10.5281/zenodo.22980858") == "22980858"
+    assert checked_relative_path("experiments/paper28/release-manifest.json") == (
+        "experiments/paper28/release-manifest.json"
+    )
+    for unsafe in ("../release-manifest.json", "/tmp/release.json", "C:\\release.json"):
+        try:
+            checked_relative_path(unsafe)
+        except ValueError:
+            pass
+        else:
+            raise AssertionError(f"unsafe path accepted: {unsafe}")
+
+
 if __name__ == "__main__":
     test_tracked_mutation_is_detected()
     test_zenodo_record_id_forms()
+    test_post_release_anchor_inputs_are_fail_closed()
     print("test_verification_state.py: OK")
