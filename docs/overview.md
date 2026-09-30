@@ -118,7 +118,7 @@ research target; Paper VII does not assert a generic completion theorem.
   and coarse-state closure on a source-addressed MaleCNS carrier. It does not
   inherit or extend the SOF protocol authority chain.
 
-### Papers XX--XXX: Independent Post-Protocol Mathematics
+### Papers XX--XXXI: Independent Post-Protocol Mathematics
 
 Papers XVII--XIX are intentionally unused in the public numbered sequence.
 Paper XX begins a separately scoped mathematical line with all-depth
@@ -161,6 +161,13 @@ return as a punctured rotation, and classifies the freedom and cycle-gluing
 effects of the remaining branch. Survivor incidence, Safe-Hit, typed
 projectability, recursive return, credit settlement, and reset bounds remain
 outside its theorem surface.
+Paper XXXI conjugates the full labelled partial-return system to a normalized
+`(n, Delta, a)` form. It proves cyclic-branch exponent elimination, the
+multi-lane Safe-Hit classification, an exact normalizer skew quotient and
+affine lane form, and the orientation-compatible normalizer classification.
+The remaining skew multipliers, survivor incidence, typed projectability,
+recursive return, credit settlement, and reset bounds remain outside its
+theorem surface.
 These papers consume no protocol authority and do not reopen Papers VIII--XV.
 Published version-1 identities are maintained in the repository's canonical
 DOI index.
@@ -177,8 +184,11 @@ not inherit Paper XXVIII's transfer membership, authorization, handoff, or
 recursive-return claims. Paper XXX owns general-defect universal returns,
 punctured-rotation structure, and exact orbit reduction; it does not inherit
 Paper XXIX's canonical frontier law or promote orbit reachability to typed
-projectability. Results or evidence do not transfer between these owners
-without an explicit theorem or source-addressed import.
+projectability. Paper XXXI owns branch-normalized partial returns and its
+cyclic and normalizer Safe-Hit classifications; it does not inherit typed
+transfer, recursive-return, or reset authority. Results or evidence do not
+transfer between these owners without an explicit theorem or source-addressed
+import.
 
 ## Claim Discipline
 

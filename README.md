@@ -9,7 +9,7 @@ finite representation laboratory, not as a puzzle-solving problem.
 ## Public Release
 
 The current public release contains Papers I--XV, the independently scoped
-Paper XVI computational case study, and Papers XX--XXX mathematical lines.
+Paper XVI computational case study, and Papers XX--XXXI mathematical lines.
 CCS v2.1 is published separately as an optional non-paper Computational
 Companion Archive; the immutable first combined record retains its historical
 predecessor.
@@ -43,13 +43,14 @@ predecessor.
 | Paper XXVIII | finite mechanism structure, exact credit composition, and fixed-scope recursive return | <https://doi.org/10.5281/zenodo.22980858> |
 | Paper XXIX | cyclic lineage dynamics and rank-five raw first-exit frontiers | <https://doi.org/10.5281/zenodo.23028361> |
 | Paper XXX | universal return groups, exact orbit reduction, and punctured rotations | <https://doi.org/10.5281/zenodo.23034428> |
+| Paper XXXI | branch-normalized partial returns, multi-lane Safe-Hit classification, and a normalizer extension | <https://doi.org/10.5281/zenodo.23050809> |
 | CCS v2.1 | optional reproducibility, observation, open-problem, and history archive | <https://doi.org/10.5281/zenodo.21988041> |
 | RIME Lite v2.1 repository snapshot | accepted papers, contracts, Registry evidence, release tools, and exact-byte historical inputs | [Zenodo DOI](https://doi.org/10.5281/zenodo.22048358) / [GitHub Release](https://github.com/dooven-prime/rime-lite/releases/tag/rime-lite-v2.1) |
 | Historical combined Papers I--III + CCS release | immutable first-version archive; current papers are maintained independently | <https://doi.org/10.5281/zenodo.21108197> |
 
 This is the repository's canonical DOI index. It identifies immutable
 published records; other public documents link here instead of duplicating the
-list. Papers VII--XVI and Papers XX--XXX now match their published records. Their
+list. Papers VII--XVI and Papers XX--XXXI now match their published records. Their
 listed DOIs identify immutable published versions, and frozen historical
 contracts remain unchanged.
 
@@ -127,6 +128,11 @@ rank-`(n-1)` defects. It proves universal section returns, exact relation-valued
 orbit reduction, punctured-rotation cycle structure, and the precise freedom
 of the remaining branch without claiming survivor incidence, Safe-Hit, typed
 projectability, recursive return, or a reset bound.
+Paper XXXI conjugates the labelled partial-return system to an `(n, Delta, a)`
+normal form. It classifies the cyclic-branch Safe-Hit regime by lane adjacency,
+gives the exact normalizer skew quotient and affine lane form, and closes the
+orientation-compatible multipliers without claiming the remaining skew
+multipliers, survivor placement, typed projectability, or a reset bound.
 Published release identities are maintained in the canonical DOI index above.
 
 | Paper | Manuscript | Evidence | Scope |
@@ -143,6 +149,7 @@ Published release identities are maintained in the canonical DOI index above.
 | XXVIII | [`Paper XXVIII.md`](papers/paper28/Paper%20XXVIII.md) | [`experiments/paper28/`](experiments/paper28/) | finite mechanism quotients, exact credit composition, fixed-scope recursive return, and canonical path alignment |
 | XXIX | [`Paper XXIX.md`](papers/paper29/Paper%20XXIX.md) | [`experiments/paper29/`](experiments/paper29/) | cyclic lineage dynamics, spectator-safe reachability, and the all-`n` raw rank-five first-exit frontier |
 | XXX | [`Paper XXX.md`](papers/paper30/Paper%20XXX.md) | [`experiments/paper30/`](experiments/paper30/) | universal section returns, exact relation-valued orbit reduction, punctured rotations, and branch freedom for general labelled defects |
+| XXXI | [`Paper XXXI.md`](papers/paper31/Paper%20XXXI.md) | [`experiments/paper31/`](experiments/paper31/) | branch-normalized partial returns, cyclic-branch lane classification, normalizer skew reduction, and orientation-compatible Safe-Hit |
 
 Thematic index, not a paper dependency order:
 
@@ -172,6 +179,7 @@ Pair-chain transfer operators and random synchronization
 Entry sections and source-addressed relation-valued descent
 Raw packet-lineage dynamics and rank-five first-exit frontiers
 Universal return groups and punctured-rotation orbit reduction
+Branch-normalized partial returns and multi-lane Safe-Hit classification
 ```
 
 Papers I--VII are independently readable. Their neighboring results connect
