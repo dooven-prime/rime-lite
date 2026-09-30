@@ -50,4 +50,5 @@ tests/**/*.json text eol=lf
 tools/**/*.py text eol=lf
 tools/**/*.md text eol=lf
 tools/release/*.json text eol=lf
-docs/release-anchors/**/*.json text eol=lf
+docs/**/*.md text eol=lf
+docs/**/*.json text eol=lf
