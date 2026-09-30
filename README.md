@@ -194,6 +194,7 @@ Raw packet-lineage dynamics and rank-five first-exit frontiers
 Universal return groups and punctured-rotation orbit reduction
 Branch-normalized partial returns and multi-lane Safe-Hit classification
 Lane-wise dihedral closure and single-lane permutation dynamics
+Source-addressed stabilizer incidence and capacity-isolated promotion obstruction
 ```
 
 Papers I--VII are independently readable. Their neighboring results connect
