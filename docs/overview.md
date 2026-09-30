@@ -118,7 +118,7 @@ research target; Paper VII does not assert a generic completion theorem.
   and coarse-state closure on a source-addressed MaleCNS carrier. It does not
   inherit or extend the SOF protocol authority chain.
 
-### Papers XX--XXXI: Independent Post-Protocol Mathematics
+### Papers XX--XXXII: Independent Post-Protocol Mathematics
 
 Papers XVII--XIX are intentionally unused in the public numbered sequence.
 Paper XX begins a separately scoped mathematical line with all-depth
@@ -168,6 +168,13 @@ affine lane form, and the orientation-compatible normalizer classification.
 The remaining skew multipliers, survivor incidence, typed projectability,
 recursive return, credit settlement, and reset bounds remain outside its
 theorem surface.
+Paper XXXII separates lane-wise cycle-graph symmetry from global normalizer
+membership. It proves that lane-wise dihedral branches introduce no new
+Safe-Hit states and gives a complete one-lane dichotomy for every branch
+permutation using guarded weak-composition mobility. The full multi-lane
+promotion problem, survivor incidence, typed projectability, recursive
+return, credit settlement, and reset bounds remain outside its theorem
+surface.
 These papers consume no protocol authority and do not reopen Papers VIII--XV.
 Published version-1 identities are maintained in the repository's canonical
 DOI index.
@@ -186,9 +193,11 @@ punctured-rotation structure, and exact orbit reduction; it does not inherit
 Paper XXIX's canonical frontier law or promote orbit reachability to typed
 projectability. Paper XXXI owns branch-normalized partial returns and its
 cyclic and normalizer Safe-Hit classifications; it does not inherit typed
-transfer, recursive-return, or reset authority. Results or evidence do not
-transfer between these owners without an explicit theorem or source-addressed
-import.
+transfer, recursive-return, or reset authority. Paper XXXII owns lane-wise
+dihedral closure and the complete one-lane branch-permutation dichotomy; it
+does not inherit typed transfer, recursive-return, or reset authority. Results
+or evidence do not transfer between these owners without an explicit theorem
+or source-addressed import.
 
 ## Claim Discipline
 
