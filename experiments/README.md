@@ -59,13 +59,14 @@ Paper-facing computations write generated records under the owning
 | XXIX | [paper29/README.md](paper29/README.md) | canonical raw rank-five first-exit replay, partial Lean implication spine, and paper-owned release-closure validation |
 | XXX | [paper30/README.md](paper30/README.md) | general-defect return-group replay, partial Lean implication spine, and paper-owned release-closure validation |
 | XXXI | [paper31/README.md](paper31/README.md) | branch-normalized partial-return replay, normalizer hostile controls, partial Lean spine, and paper-owned release-closure validation |
+| XXXII | [paper32/README.md](paper32/README.md) | affine and arbitrary-permutation five-token replay, multi-lane hostile controls, and paper-owned release-closure validation |
 
 Where a paper-local README is not yet present, the owning manuscript and
 script docstrings define the release-local scope. A future versioned reopening
 should add the standard local README before changing artifact semantics.
 
 Papers VIII--XIV retain their published or release-local terminology. Paper
-XVI is an independent case study, and Papers XX--XXXI form separate
+XVI is an independent case study, and Papers XX--XXXII form separate
 mathematical lines; neither extends the protocol stack. Bare `R1`/`R2`/`D`,
 ladder, repair, and wall labels in those artifacts must not be read as a
 completed migration to the separate operator, routed-composition, full-word,

@@ -1,0 +1,69 @@
+{
+  "schema": "rime.paper32.development-manifest.v1",
+  "package_id": "PAPER32-PERMUTATION-FIVE-TOKEN-DEVELOPMENT-V1",
+  "status": "DRAFT_PAPER_OWNED_CLOSURE",
+  "release_identity_claimed": false,
+  "validation_mode": "LOCAL_CLOSURE_VERIFICATION",
+  "digest_policy": {
+    "algorithm": "sha256",
+    "scope": "exact_file_bytes",
+    "path_resolution": "repository-relative",
+    "absolute_paths_allowed": false,
+    "wildcards_allowed": false
+  },
+  "artifacts": [
+    {
+      "role": "manuscript",
+      "path": "papers/paper32/Paper XXXII.md",
+      "sha256": "fe08b5d39811084e6e9e14db59b9cc7f82489248c3aea9e2991edf1565dfb30d"
+    },
+    {
+      "role": "bibliography",
+      "path": "papers/paper32/references-v1.bib",
+      "sha256": "55fea20f7a731b4859154d5afa57cb7fca89a7a208d82ea266e400939f33f26c"
+    },
+    {
+      "role": "package-readme",
+      "path": "experiments/paper32/README.md",
+      "sha256": "516d88bcd378c7a507323aef2663802dcc025a5de69774e14aedd0dc1943cb75"
+    },
+    {
+      "role": "finite-producer",
+      "path": "experiments/paper32/affine_five_token_audit.py",
+      "sha256": "6a7d1ef485988f7b5582c2acf3d1420b29dec7143ac0ba2d301f051bf7d64410"
+    },
+    {
+      "role": "finite-result",
+      "path": "experiments/paper32/results/affine_five_token_audit_v1.json",
+      "sha256": "fb3225a440a69c75b1dd14e6e1d093ab296c36c45ab88d626c7520a9de500a72"
+    },
+    {
+      "role": "source-validator",
+      "path": "experiments/paper32/validation/validate_source.py",
+      "sha256": "054454ec4600e225c4731c2c9f711f858a47b5279e38e9fd1422ad9b7d5b9b80"
+    },
+    {
+      "role": "finite-validator",
+      "path": "experiments/paper32/validation/validate_affine_five_token_audit.py",
+      "sha256": "bf63bcb08788953b896463a1fe30cc227039a4d5932aa45648b2e973be46a257"
+    },
+    {
+      "role": "package-validator",
+      "path": "experiments/paper32/validation/validate_package.py",
+      "sha256": "3c27aaa4c6cab8680cdd5918eb0ffa41bc36b43dbec37d9601c3227f0942c007"
+    }
+  ],
+  "validation_commands": [
+    "python experiments/paper32/validation/validate_package.py",
+    "python experiments/paper32/validation/validate_package.py --replay"
+  ],
+  "claim_boundary": [
+    "the all-n theorem spine is manuscript mathematics, not a finite census result",
+    "the retained finite replay is a bounded consistency control, not an independent Computational Certificate",
+    "the initial package claims no Paper XXXII Lean formalization",
+    "the full lane-stabilizer promotion dichotomy and affine multiplier-only descent remain open",
+    "marked-pair Safe-Hit does not establish survivor incidence or typed projectability",
+    "papers/paper32/DIRECTION_DRAFT.md is excluded from the development closure",
+    "this working manifest is not a release receipt or publication identity"
+  ]
+}

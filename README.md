@@ -9,7 +9,7 @@ finite representation laboratory, not as a puzzle-solving problem.
 ## Public Release
 
 The current public release contains Papers I--XV, the independently scoped
-Paper XVI computational case study, and Papers XX--XXXI mathematical lines.
+Paper XVI computational case study, and Papers XX--XXXII mathematical lines.
 CCS v2.1 is published separately as an optional non-paper Computational
 Companion Archive; the immutable first combined record retains its historical
 predecessor.
@@ -44,13 +44,14 @@ predecessor.
 | Paper XXIX | cyclic lineage dynamics and rank-five raw first-exit frontiers | <https://doi.org/10.5281/zenodo.23028361> |
 | Paper XXX | universal return groups, exact orbit reduction, and punctured rotations | <https://doi.org/10.5281/zenodo.23034428> |
 | Paper XXXI | branch-normalized partial returns, multi-lane Safe-Hit classification, and a normalizer extension | <https://doi.org/10.5281/zenodo.23050809> |
+| Paper XXXII | lane-wise dihedral closure and a complete single-lane branch-permutation dichotomy | <https://doi.org/10.5281/zenodo.23053169> |
 | CCS v2.1 | optional reproducibility, observation, open-problem, and history archive | <https://doi.org/10.5281/zenodo.21988041> |
 | RIME Lite v2.1 repository snapshot | accepted papers, contracts, Registry evidence, release tools, and exact-byte historical inputs | [Zenodo DOI](https://doi.org/10.5281/zenodo.22048358) / [GitHub Release](https://github.com/dooven-prime/rime-lite/releases/tag/rime-lite-v2.1) |
 | Historical combined Papers I--III + CCS release | immutable first-version archive; current papers are maintained independently | <https://doi.org/10.5281/zenodo.21108197> |
 
 This is the repository's canonical DOI index. It identifies immutable
 published records; other public documents link here instead of duplicating the
-list. Papers VII--XVI and Papers XX--XXXI now match their published records. Their
+list. Papers VII--XVI and Papers XX--XXXII now match their published records. Their
 listed DOIs identify immutable published versions, and frozen historical
 contracts remain unchanged.
 
@@ -133,6 +134,10 @@ normal form. It classifies the cyclic-branch Safe-Hit regime by lane adjacency,
 gives the exact normalizer skew quotient and affine lane form, and closes the
 orientation-compatible multipliers without claiming the remaining skew
 multipliers, survivor placement, typed projectability, or a reset bound.
+Paper XXXII separates the lane-local obstruction from global normalizer
+membership and proves a complete one-lane branch-permutation dichotomy using
+guarded weak-composition mobility. The multi-lane promotion problem, survivor
+placement, typed projectability, and reset bounds remain open.
 Published release identities are maintained in the canonical DOI index above.
 
 | Paper | Manuscript | Evidence | Scope |
@@ -150,6 +155,7 @@ Published release identities are maintained in the canonical DOI index above.
 | XXIX | [`Paper XXIX.md`](papers/paper29/Paper%20XXIX.md) | [`experiments/paper29/`](experiments/paper29/) | cyclic lineage dynamics, spectator-safe reachability, and the all-`n` raw rank-five first-exit frontier |
 | XXX | [`Paper XXX.md`](papers/paper30/Paper%20XXX.md) | [`experiments/paper30/`](experiments/paper30/) | universal section returns, exact relation-valued orbit reduction, punctured rotations, and branch freedom for general labelled defects |
 | XXXI | [`Paper XXXI.md`](papers/paper31/Paper%20XXXI.md) | [`experiments/paper31/`](experiments/paper31/) | branch-normalized partial returns, cyclic-branch lane classification, normalizer skew reduction, and orientation-compatible Safe-Hit |
+| XXXII | [`Paper XXXII.md`](papers/paper32/Paper%20XXXII.md) | [`experiments/paper32/`](experiments/paper32/) | lane-wise dihedral closure, guarded five-token mobility, and the complete one-lane branch-permutation Safe-Hit dichotomy |
 
 Thematic index, not a paper dependency order:
 
@@ -180,6 +186,7 @@ Entry sections and source-addressed relation-valued descent
 Raw packet-lineage dynamics and rank-five first-exit frontiers
 Universal return groups and punctured-rotation orbit reduction
 Branch-normalized partial returns and multi-lane Safe-Hit classification
+Lane-wise dihedral closure and single-lane permutation dynamics
 ```
 
 Papers I--VII are independently readable. Their neighboring results connect

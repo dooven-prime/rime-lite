@@ -1,0 +1,151 @@
+{
+  "schema": "rime.paper32.public-package-receipt.v1",
+  "artifact_id": "PAPER32-V1-PUBLIC-PACKAGE-VALIDATED",
+  "status": "PASS",
+  "validation_mode": "LOCAL_CLOSURE_VERIFICATION",
+  "receipt_self_exclusion": true,
+  "replay": {
+    "development_closure_verified": true,
+    "source_audit_replayed": true,
+    "finite_bounded_replay": true
+  },
+  "manifest_binding": {
+    "path": "experiments/paper32/release-manifest.json",
+    "sha256": "f37a6d8f8efc5ab34bfa3054acd796bac59fba13dcba62b98490e9bf72b7ba16"
+  },
+  "nested_closures": {
+    "development_evidence": {
+      "artifact_count": 8,
+      "closure_digest": "aac44449ddf652dd7ce68abb52fc6e36fd2d3d54baee6ea4bc84ee343386b13a",
+      "ordered_artifacts": [
+        {
+          "path": "experiments/paper32/README.md",
+          "sha256": "516d88bcd378c7a507323aef2663802dcc025a5de69774e14aedd0dc1943cb75"
+        },
+        {
+          "path": "experiments/paper32/affine_five_token_audit.py",
+          "sha256": "6a7d1ef485988f7b5582c2acf3d1420b29dec7143ac0ba2d301f051bf7d64410"
+        },
+        {
+          "path": "experiments/paper32/results/affine_five_token_audit_v1.json",
+          "sha256": "fb3225a440a69c75b1dd14e6e1d093ab296c36c45ab88d626c7520a9de500a72"
+        },
+        {
+          "path": "experiments/paper32/validation/validate_affine_five_token_audit.py",
+          "sha256": "bf63bcb08788953b896463a1fe30cc227039a4d5932aa45648b2e973be46a257"
+        },
+        {
+          "path": "experiments/paper32/validation/validate_package.py",
+          "sha256": "3c27aaa4c6cab8680cdd5918eb0ffa41bc36b43dbec37d9601c3227f0942c007"
+        },
+        {
+          "path": "experiments/paper32/validation/validate_source.py",
+          "sha256": "054454ec4600e225c4731c2c9f711f858a47b5279e38e9fd1422ad9b7d5b9b80"
+        },
+        {
+          "path": "papers/paper32/Paper XXXII.md",
+          "sha256": "fe08b5d39811084e6e9e14db59b9cc7f82489248c3aea9e2991edf1565dfb30d"
+        },
+        {
+          "path": "papers/paper32/references-v1.bib",
+          "sha256": "55fea20f7a731b4859154d5afa57cb7fca89a7a208d82ea266e400939f33f26c"
+        }
+      ]
+    }
+  },
+  "release_identity": {
+    "artifact_count": 6,
+    "closure_digest": "8260d44aa10accba40f79bcaeb06c3928602dd95b1306f504b18da09607e37ea",
+    "ordered_artifacts": [
+      {
+        "path": "experiments/paper32/development-manifest.json",
+        "sha256": "216293d37effa3a2e8371cccc0046b7a35e34378b7113546a8e303f3901ac99d"
+      },
+      {
+        "path": "experiments/paper32/release-environment.json",
+        "sha256": "ca3144c347fe4cdfa447fba7c0231c8fff8a5c8085e65f52e057587dd9fdd5b0"
+      },
+      {
+        "path": "experiments/paper32/validation/validate_public_package.py",
+        "sha256": "3a75c2af008a26e6b613d7e9a600a8d24584ffce25754e2ef2492c469e3bb85d"
+      },
+      {
+        "path": "papers/paper32/Paper XXXII.md",
+        "sha256": "fe08b5d39811084e6e9e14db59b9cc7f82489248c3aea9e2991edf1565dfb30d"
+      },
+      {
+        "path": "papers/paper32/paper32_arxiv.pdf",
+        "sha256": "ac1176e3602813df056487ad6e28efd2a2597c9371c783a6423427c63c25ee69"
+      },
+      {
+        "path": "papers/paper32/references-v1.bib",
+        "sha256": "55fea20f7a731b4859154d5afa57cb7fca89a7a208d82ea266e400939f33f26c"
+      }
+    ]
+  },
+  "package_inventory": {
+    "artifact_count": 13,
+    "closure_digest": "0ff0da1ec8a20bd79c8c882a376b8802e0f23a20af0b60ef45b74dc1393c65d3",
+    "ordered_artifacts": [
+      {
+        "path": "experiments/paper32/README.md",
+        "sha256": "516d88bcd378c7a507323aef2663802dcc025a5de69774e14aedd0dc1943cb75"
+      },
+      {
+        "path": "experiments/paper32/affine_five_token_audit.py",
+        "sha256": "6a7d1ef485988f7b5582c2acf3d1420b29dec7143ac0ba2d301f051bf7d64410"
+      },
+      {
+        "path": "experiments/paper32/development-manifest.json",
+        "sha256": "216293d37effa3a2e8371cccc0046b7a35e34378b7113546a8e303f3901ac99d"
+      },
+      {
+        "path": "experiments/paper32/release-environment.json",
+        "sha256": "ca3144c347fe4cdfa447fba7c0231c8fff8a5c8085e65f52e057587dd9fdd5b0"
+      },
+      {
+        "path": "experiments/paper32/release-manifest.json",
+        "sha256": "f37a6d8f8efc5ab34bfa3054acd796bac59fba13dcba62b98490e9bf72b7ba16"
+      },
+      {
+        "path": "experiments/paper32/results/affine_five_token_audit_v1.json",
+        "sha256": "fb3225a440a69c75b1dd14e6e1d093ab296c36c45ab88d626c7520a9de500a72"
+      },
+      {
+        "path": "experiments/paper32/validation/validate_affine_five_token_audit.py",
+        "sha256": "bf63bcb08788953b896463a1fe30cc227039a4d5932aa45648b2e973be46a257"
+      },
+      {
+        "path": "experiments/paper32/validation/validate_package.py",
+        "sha256": "3c27aaa4c6cab8680cdd5918eb0ffa41bc36b43dbec37d9601c3227f0942c007"
+      },
+      {
+        "path": "experiments/paper32/validation/validate_public_package.py",
+        "sha256": "3a75c2af008a26e6b613d7e9a600a8d24584ffce25754e2ef2492c469e3bb85d"
+      },
+      {
+        "path": "experiments/paper32/validation/validate_source.py",
+        "sha256": "054454ec4600e225c4731c2c9f711f858a47b5279e38e9fd1422ad9b7d5b9b80"
+      },
+      {
+        "path": "papers/paper32/Paper XXXII.md",
+        "sha256": "fe08b5d39811084e6e9e14db59b9cc7f82489248c3aea9e2991edf1565dfb30d"
+      },
+      {
+        "path": "papers/paper32/paper32_arxiv.pdf",
+        "sha256": "ac1176e3602813df056487ad6e28efd2a2597c9371c783a6423427c63c25ee69"
+      },
+      {
+        "path": "papers/paper32/references-v1.bib",
+        "sha256": "55fea20f7a731b4859154d5afa57cb7fca89a7a208d82ea266e400939f33f26c"
+      }
+    ]
+  },
+  "nonclaims": [
+    "local closure verification is not independent validation",
+    "finite replay is not an all-n proof",
+    "the package contains no Paper XXXII Lean formalization",
+    "the receipt does not occur in its own closure"
+  ],
+  "content_sha256": "4a5b37e613213a08c818d9b8099bf2bfb84415806bd679df9eac7b2a0b0e57e9"
+}
