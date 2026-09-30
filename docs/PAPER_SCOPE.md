@@ -5,7 +5,7 @@ It identifies the object and reader question owned by each paper without
 repeating manuscript definitions, numerical tables, or release metadata.
 
 The current public release contains Papers I--XVI and the independently scoped
-Papers XX--XXXII mathematical lines. CCS v2.1 is an optional non-paper archive.
+Papers XX--XXXIII mathematical lines. CCS v2.1 is an optional non-paper archive.
 Publication identities and DOIs are maintained only in the root
 [Public Release table](../README.md#public-release).
 
@@ -47,7 +47,7 @@ realization, and claim status.
 
 Paper XVI is an independently scoped computational connectome case study, not
 a successor SOF protocol. Papers XVII--XIX are intentionally unused. Papers
-XX--XXXII do not continue the SOF protocol authority chain.
+XX--XXXIII do not continue the SOF protocol authority chain.
 
 | Paper | Owned object or interface | Reader question |
 |-------|---------------------------|-----------------|
@@ -65,6 +65,7 @@ XX--XXXII do not continue the SOF protocol authority chain.
 | XXX | universal return groups and relation-valued orbit reduction | How do arbitrary labelled binary-kernel defects induce global section returns, punctured rotations, and exact orbit relations? |
 | XXXI | branch-normalized partial-return systems and multi-lane Safe-Hit | Which cyclic and normalizer branches admit guarded partial returns after exact branch normalization? |
 | XXXII | lane-wise branch geometry and one-lane five-token dynamics | Which branch permutations preserve the adjacency Safe-Hit set, and which make every one-lane state target-reachable? |
+| XXXIII | source-addressed stabilizer incidence and capacity-isolated order breaking | Which concrete intermediate witnesses make orbit returns composable, and why can lane-order breaking fail to promote every same-lane context? |
 
 ## Protocol Ownership
 

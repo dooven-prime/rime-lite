@@ -118,7 +118,7 @@ research target; Paper VII does not assert a generic completion theorem.
   and coarse-state closure on a source-addressed MaleCNS carrier. It does not
   inherit or extend the SOF protocol authority chain.
 
-### Papers XX--XXXII: Independent Post-Protocol Mathematics
+### Papers XX--XXXIII: Independent Post-Protocol Mathematics
 
 Papers XVII--XIX are intentionally unused in the public numbered sequence.
 Paper XX begins a separately scoped mathematical line with all-depth
@@ -175,6 +175,13 @@ permutation using guarded weak-composition mobility. The full multi-lane
 promotion problem, survivor incidence, typed projectability, recursive
 return, credit settlement, and reset bounds remain outside its theorem
 surface.
+Paper XXXIII replaces composable orbit-level existence claims by
+source-addressed incidence in the full lane-partition stabilizer. It proves
+exact same-witness factorization and an all-`g` capacity obstruction showing
+that order breaking confined to the punctured lane need not promote complete
+ordinary-lane contexts. Break-set quotient non-descent, typed projectability,
+recursive return, credit settlement, and reset bounds remain outside its
+theorem surface.
 These papers consume no protocol authority and do not reopen Papers VIII--XV.
 Published version-1 identities are maintained in the repository's canonical
 DOI index.
@@ -195,7 +202,10 @@ projectability. Paper XXXI owns branch-normalized partial returns and its
 cyclic and normalizer Safe-Hit classifications; it does not inherit typed
 transfer, recursive-return, or reset authority. Paper XXXII owns lane-wise
 dihedral closure and the complete one-lane branch-permutation dichotomy; it
-does not inherit typed transfer, recursive-return, or reset authority. Results
+does not inherit typed transfer, recursive-return, or reset authority. Paper
+XXXIII owns source-addressed stabilizer incidence and its capacity-isolated
+promotion obstruction; it does not promote separate existential witnesses or
+inherit typed transfer, recursive-return, or reset authority. Results
 or evidence do not transfer between these owners without an explicit theorem
 or source-addressed import.
 
