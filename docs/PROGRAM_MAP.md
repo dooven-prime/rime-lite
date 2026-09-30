@@ -3,7 +3,7 @@
 This document is the public navigation map for the Representation-Induced
 Mechanics and Evolution (RIME) program. It identifies semantic ownership,
 typed interfaces and promotion boundaries across published Papers I--XV, the
-independently scoped Paper XVI computational case study, and Papers XX--XXXII
+independently scoped Paper XVI computational case study, and Papers XX--XXXIII
 theorem lines. It is not a
 proof document, release ledger, result record, or substitute for an owning
 manuscript.
@@ -114,6 +114,7 @@ carrier under its own hypotheses, evidence records, and publication identity.
 | XXX | universal section returns, relation-valued orbit reduction, punctured rotations, and general-defect branch freedom | the manuscript proof owns the all-n results; finite replay for n=6 through n=8 and a partial Lean spine support but do not replace them, and no Safe-Hit, survivor-incidence, typed-projectability, or reset-bound claim follows |
 | XXXI | branch-normalized partial returns, multi-lane Safe-Hit, exact normalizer skew reduction, and orientation-compatible classification | the manuscript proof owns the all-n results; bounded hostile replay and a partial Lean spine support but do not replace them, and the remaining skew multipliers, survivor placement, typed projectability, and reset bounds remain open |
 | XXXII | lane-wise dihedral closure, guarded five-token mobility, and the complete one-lane branch-permutation dichotomy | the manuscript proof owns the all-n one-lane result; bounded affine, arbitrary-permutation, and multi-lane hostile controls support but do not replace it, and the full multi-lane promotion classification remains open |
+| XXXIII | source-addressed stabilizer incidence, exact same-witness factorization, and capacity-isolated order breaking | the manuscript proof owns the all-g obstruction; bounded full-stabilizer replay and a partial Lean implication spine support but do not replace it, and break-set quotient non-descent remains open |
 
 Papers XVII--XIX are intentionally unused in the public numbered sequence.
 Paper XX begins an independently scoped mathematical line, and Paper XXI
@@ -144,6 +145,10 @@ recursive-return authority.
 Paper XXXII isolates lane-wise cycle-graph symmetry from global normalizer
 membership and closes every one-lane branch permutation without importing
 typed transfer, recursive-return, or reset authority.
+Paper XXXIII replaces orbit-level existential composition by source-addressed
+incidence in the full lane-partition stabilizer and proves a capacity-isolated
+failure of full same-lane promotion without importing typed transfer,
+recursive-return, or reset authority.
 None extends the SOF protocol authority chain.
 
 The synchronizing-automata papers share a research domain, not one inherited
@@ -156,7 +161,9 @@ classification. Paper XXX owns general-defect return groups and exact orbit
 reduction. Paper XXXI owns branch-normalized partial returns and its declared
 cyclic and normalizer Safe-Hit classifications. Paper XXXII owns lane-wise
 dihedral closure and the complete one-lane branch-permutation Safe-Hit
-dichotomy. Each retains its own hypotheses, evidence closure, and nonclaims.
+dichotomy. Paper XXXIII owns source-addressed stabilizer incidence and its
+capacity-isolated promotion obstruction. Each retains its own hypotheses,
+evidence closure, and nonclaims.
 
 ## 4. Active Typing and Promotion Rules
 

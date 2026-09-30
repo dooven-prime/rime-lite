@@ -15,12 +15,19 @@ not rewrite manifests or receipts that accurately recorded a candidate state.
 | Paper XXX v1.0 | [paper30-v1.0.json](paper30-v1.0.json) |
 | Paper XXXI v1.0 | [paper31-v1.0.json](paper31-v1.0.json) |
 | Paper XXXII v1.0 | [paper32-v1.0.json](paper32-v1.0.json) |
+| Paper XXXIII v1.0 | [paper33-v1.0.json](paper33-v1.0.json) |
 
 Paper XXVII's tagged README names a `claim-surface-map.json` that was absent
 from the release tag. The historical package remains unchanged. Its anchor
 records that defect and binds a separately located
 [post-release supplement](supplements/paper27-claim-surface-map.v1.json); the
 supplement is not represented as original release content.
+
+A paper may place reader figures and their renderers in its tagged release
+identity when its manifest names their exact paths and digests. The Git tag
+then anchors those bytes. A Zenodo DOI anchors only files actually deposited
+in that record; depositing a reader PDF does not separately anchor an
+undeployed PNG, source renderer, or broader figure directory.
 
 Create and validate later records with
 [`tools/release/post_release_anchor.py`](../../tools/release/post_release_anchor.py).
