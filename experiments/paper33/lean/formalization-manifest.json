@@ -1,0 +1,37 @@
+{
+  "schema": "rime.paper33.lean-formalization-manifest.v1",
+  "formalization_id": "PAPER33-CAPACITY-OBSTRUCTION-SPINE-V1",
+  "status": "COMPILED_PAPER_OWNED_PARTIAL_FORMALIZATION",
+  "validation_mode": "LOCAL_CLOSURE_VERIFICATION",
+  "entrypoint": "experiments/paper33/lean/Paper33.lean",
+  "build": {
+    "project_root": "experiments/paper33/lean",
+    "command": "lake build",
+    "lean": "4.33.0",
+    "mathlib_revision": "db584cd6d46c92f209a44c0f1c829460d327499d"
+  },
+  "source_sha256": {
+    "Paper33.lean": "ff58206ce67ccab22e0b2bdaa6320a19cd96460e12351a95bb4b9b83f80a86a7",
+    "Paper33/CapacityObstruction.lean": "865ed66e11c33efdcef0e619a3bfb7edfaa4bec01c05f8a4b444bb0824b42fb8",
+    "README.md": "2a24d9fff8a9b0a6d3abb7e1d63695caa384ed915c7d43ded2dac5205b3415df",
+    "lakefile.toml": "4d093d11f1c6f978b0e40009b285ccf400e8964fbee5e78a4084e3db1511296b",
+    "lake-manifest.json": "077dfe02fe3746d31699c56078ae7c6710fdf8f0e85e87f7f521f23860e5b0e8",
+    "lean-toolchain": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b"
+  },
+  "formalized_scope": [
+    "one-step invariants persist along explicit finite reachability paths",
+    "a rank-five output cannot occupy a capacity-four punctured lane",
+    "one enabled lane-shaped return preserves the declared ordinary-lane nonedge family",
+    "the ordinary-lane nonedge family is forward invariant and target-disjoint",
+    "no state in that family reaches the edge target",
+    "one hostile state yields a strict Safe-Hit-versus-SameLane witness under the inherited implication"
+  ],
+  "excluded_scope": [
+    "construction of the concrete branch family a_g",
+    "cyclic lane arithmetic and the all-g lane-shape dichotomy",
+    "derivation of ordinary-lane nonedge preservation from normalized returns",
+    "source-addressed orbit incidence and cyclic phase compression",
+    "finite graph artifacts and JSON databases",
+    "survivor incidence, typed transfer membership, projectability, recursive return, settlement, and reset bounds"
+  ]
+}

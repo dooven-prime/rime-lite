@@ -1,0 +1,113 @@
+{
+  "schema": "rime.paper33.release-manifest.v1",
+  "paper_id": "PAPER33",
+  "release_version": "1.0",
+  "status": "RELEASE_CANDIDATE",
+  "release_identity_claimed": false,
+  "validation_mode": "LOCAL_CLOSURE_VERIFICATION",
+  "receipt_self_exclusion": true,
+  "digest_policy": {
+    "algorithm": "sha256",
+    "scope": "exact_file_bytes",
+    "path_resolution": "exact repository-relative path",
+    "wildcards_allowed": false,
+    "absolute_paths_allowed": false,
+    "current_head_fallback_allowed": false
+  },
+  "artifacts": [
+    {
+      "role": "manuscript",
+      "closure_class": "normative-manuscript-build",
+      "path": "papers/paper33/Paper XXXIII.md",
+      "sha256": "7e12c0450391519a800161c6640395f1bc3e0b521ff7274abb563d02116c4c66"
+    },
+    {
+      "role": "reader-pdf",
+      "closure_class": "normative-manuscript-build",
+      "path": "papers/paper33/paper33_arxiv.pdf",
+      "sha256": "3b2b106df87b0ef7c874589a5d60bc6db3250ea97206465d9494594a5b4e043b"
+    },
+    {
+      "role": "bibliography",
+      "closure_class": "normative-manuscript-build",
+      "path": "papers/paper33/references-v1.bib",
+      "sha256": "5df1d313c6ca64384fb53d8ddf491e391fb7c2d5094c22074628dac76cb52a62"
+    },
+    {
+      "role": "figure-renderer",
+      "closure_class": "normative-manuscript-build",
+      "path": "figures/paper33/render.py",
+      "sha256": "e7c1a037cc76ab74c09261410ac6ad5b37c077d104def83e4f071284c2bdfbbc"
+    },
+    {
+      "role": "reader-figure",
+      "closure_class": "normative-manuscript-build",
+      "path": "figures/paper33/fig1_source_addressed_incidence.png",
+      "sha256": "4d3a6eee5abc110dddbc86c6d6dccc100eab3502b5bea1c20c0e30fc8bd5c167"
+    },
+    {
+      "role": "development-manifest",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper33/development-manifest.json",
+      "sha256": "71e2dc41f98c8a175265bb90584352467d5ef1be239acaf44772a56860e3890d"
+    },
+    {
+      "role": "release-environment",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper33/release-environment.json",
+      "sha256": "54a8d1d7951a3d9aea26f0976020986665ad56e4700de34b5ececa72661d15b3"
+    },
+    {
+      "role": "public-package-validator",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper33/validation/validate_public_package.py",
+      "sha256": "8d29983a6d8eed0bcfb45c0062928fe0905b84d0aa9bf42f590a258fe48f01cf"
+    },
+    {
+      "role": "evidence-readme",
+      "closure_class": "public-package-documentation",
+      "path": "experiments/paper33/README.md",
+      "sha256": "7c39342c8fa493a2bdda5c8f86b541f118e12262913eb6cce66c6f0cbacc1250"
+    }
+  ],
+  "nested_closures": {
+    "development_evidence": {
+      "manifest": "experiments/paper33/development-manifest.json",
+      "release_identity_claimed": false
+    }
+  },
+  "claim_boundary": [
+    "the source-addressed incidence factorization and capacity-isolation family are manuscript proofs",
+    "Lean formalizes the abstract capacity-obstruction implication spine, not the concrete all-g branch construction",
+    "finite replay is not an all-n proof",
+    "nonempty break data does not force full same-lane promotion",
+    "the retained controls do not prove break-set quotient non-descent",
+    "raw Safe-Hit does not imply typed transfer membership or projectability",
+    "local closure verification is not independent mathematical validation"
+  ],
+  "release_candidate_date": "2026-09-30",
+  "excluded_from_package_inventory": [
+    "experiments/paper33/results/paper33_public_package_v1.validation-receipt.json",
+    "papers/paper33/DIRECTION_DRAFT.md",
+    "experiments/paper33/lean/.lake/**",
+    "**/__pycache__/**",
+    "**/*.pyc"
+  ],
+  "closure_policy": {
+    "classes": [
+      "normative-manuscript-build",
+      "theorem-facing-computational",
+      "public-package-documentation"
+    ],
+    "release_identity_classes": [
+      "normative-manuscript-build",
+      "theorem-facing-computational"
+    ],
+    "package_inventory_classes": [
+      "normative-manuscript-build",
+      "theorem-facing-computational",
+      "public-package-documentation"
+    ],
+    "note": "The paper-owned development manifest is a nested exact-byte evidence closure. Public documentation is integrity-checked but excluded from release identity."
+  }
+}

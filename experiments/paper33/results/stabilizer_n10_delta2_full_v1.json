@@ -1,0 +1,189 @@
+{
+  "schema": "rime.paper33.stabilizer-hostile-audit.v1",
+  "status": "FINITE_THEOREM_DISCOVERY_CONTROL",
+  "scope": {
+    "min_n": 10,
+    "max_n": 10,
+    "domain_rule": "gcd(n, delta) > 1; full lane-partition stabilizer",
+    "selected_domains": [
+      [
+        10,
+        2
+      ]
+    ],
+    "factorization_limit_per_domain": 8
+  },
+  "totals": {
+    "break_set_non_descent_domains": 0,
+    "domains": 1,
+    "incidence_factorization_checks": 8,
+    "stabilizer_branches": 2880,
+    "strong_coarse_non_descent_domains": 0,
+    "x3_failures": 1
+  },
+  "domains": [
+    {
+      "n": 10,
+      "delta": 2,
+      "lane_lengths": [
+        4,
+        5
+      ],
+      "states": 1260,
+      "orbits": 69,
+      "adjacent_states": 505,
+      "same_lane_states": 560,
+      "stabilizer_branches": 2880,
+      "incidence_factorization_checks": 8,
+      "outcomes": {
+        "ADJ": 80,
+        "INTERMEDIATE": 160,
+        "SAME": 2640
+      },
+      "x3_holds_on_retained_domain": false,
+      "first_x3_failure": {
+        "punctured_map": [
+          0,
+          1,
+          3,
+          2
+        ],
+        "ordinary_lane_permutation": [
+          0
+        ],
+        "ordinary_maps": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        ],
+        "break_pattern": [
+          0
+        ],
+        "restriction_cycle_types": [
+          [
+            1,
+            1,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "safe_hit_states": 555,
+        "safe_hit_digest": "6b2f9ee92ff80248df48adc36c447caf522bb225cc37213a13b83defbf10360b"
+      },
+      "break_set_non_descent": [],
+      "strong_coarse_non_descent": []
+    }
+  ],
+  "capacity_isolated_family_control": {
+    "min_g": 2,
+    "max_g": 12,
+    "family": "n=5g, delta=g; break only on the punctured four-cycle",
+    "rows": [
+      {
+        "g": 2,
+        "n": 10,
+        "delta": 2,
+        "states_checked": 5,
+        "enabled_edges": 25,
+        "disabled_edges": 25
+      },
+      {
+        "g": 3,
+        "n": 15,
+        "delta": 3,
+        "states_checked": 10,
+        "enabled_edges": 100,
+        "disabled_edges": 50
+      },
+      {
+        "g": 4,
+        "n": 20,
+        "delta": 4,
+        "states_checked": 15,
+        "enabled_edges": 225,
+        "disabled_edges": 75
+      },
+      {
+        "g": 5,
+        "n": 25,
+        "delta": 5,
+        "states_checked": 20,
+        "enabled_edges": 400,
+        "disabled_edges": 100
+      },
+      {
+        "g": 6,
+        "n": 30,
+        "delta": 6,
+        "states_checked": 25,
+        "enabled_edges": 625,
+        "disabled_edges": 125
+      },
+      {
+        "g": 7,
+        "n": 35,
+        "delta": 7,
+        "states_checked": 30,
+        "enabled_edges": 900,
+        "disabled_edges": 150
+      },
+      {
+        "g": 8,
+        "n": 40,
+        "delta": 8,
+        "states_checked": 35,
+        "enabled_edges": 1225,
+        "disabled_edges": 175
+      },
+      {
+        "g": 9,
+        "n": 45,
+        "delta": 9,
+        "states_checked": 40,
+        "enabled_edges": 1600,
+        "disabled_edges": 200
+      },
+      {
+        "g": 10,
+        "n": 50,
+        "delta": 10,
+        "states_checked": 45,
+        "enabled_edges": 2025,
+        "disabled_edges": 225
+      },
+      {
+        "g": 11,
+        "n": 55,
+        "delta": 11,
+        "states_checked": 50,
+        "enabled_edges": 2500,
+        "disabled_edges": 250
+      },
+      {
+        "g": 12,
+        "n": 60,
+        "delta": 12,
+        "states_checked": 55,
+        "enabled_edges": 3025,
+        "disabled_edges": 275
+      }
+    ],
+    "status": "BOUNDED_CONTROL_OF_SYMBOLIC_OBSTRUCTION_NOT_PROOF"
+  },
+  "claim_boundary": [
+    "the incidence identity is algebraic; finite replay is only a control",
+    "absence of a retained X3 failure is not an all-n theorem",
+    "a finite matched pair proves non-descent only for the named quotient",
+    "raw Safe-Hit does not establish typed transfer membership"
+  ]
+}

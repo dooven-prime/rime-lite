@@ -1,0 +1,125 @@
+{
+  "schema": "rime.paper33.development-manifest.v1",
+  "paper_id": "PAPER33",
+  "status": "DRAFT_PAPER_OWNED_CLOSURE",
+  "release_identity_claimed": false,
+  "validation_mode": "LOCAL_CLOSURE_VERIFICATION",
+  "digest_policy": {
+    "algorithm": "sha256",
+    "scope": "exact_file_bytes",
+    "path_resolution": "exact repository-relative path",
+    "wildcards_allowed": false,
+    "absolute_paths_allowed": false
+  },
+  "artifacts": [
+    {
+      "role": "working-manuscript",
+      "path": "papers/paper33/Paper XXXIII.md",
+      "sha256": "7e12c0450391519a800161c6640395f1bc3e0b521ff7274abb563d02116c4c66"
+    },
+    {
+      "role": "bibliography",
+      "path": "papers/paper33/references-v1.bib",
+      "sha256": "5df1d313c6ca64384fb53d8ddf491e391fb7c2d5094c22074628dac76cb52a62"
+    },
+    {
+      "role": "figure-renderer",
+      "path": "figures/paper33/render.py",
+      "sha256": "e7c1a037cc76ab74c09261410ac6ad5b37c077d104def83e4f071284c2bdfbbc"
+    },
+    {
+      "role": "reader-figure",
+      "path": "figures/paper33/fig1_source_addressed_incidence.png",
+      "sha256": "4d3a6eee5abc110dddbc86c6d6dccc100eab3502b5bea1c20c0e30fc8bd5c167"
+    },
+    {
+      "role": "package-documentation",
+      "path": "experiments/paper33/README.md",
+      "sha256": "7c39342c8fa493a2bdda5c8f86b541f118e12262913eb6cce66c6f0cbacc1250"
+    },
+    {
+      "role": "finite-control-producer",
+      "path": "experiments/paper33/stabilizer_hostile_audit.py",
+      "sha256": "a9434a5e13de42ecdaebfd34003ed629c87b78097fd0563913df86ca9439961c"
+    },
+    {
+      "role": "small-full-stabilizer-control",
+      "path": "experiments/paper33/results/stabilizer_hostile_audit_v1.json",
+      "sha256": "fbfeb9122e6adfa41273769426f6080c2d07e6e8cf658deca582dd7e82f5824e"
+    },
+    {
+      "role": "first-hostile-domain-control",
+      "path": "experiments/paper33/results/stabilizer_n10_delta2_full_v1.json",
+      "sha256": "599ec8aeb5f8ac636e511ae151ad74ccd8c384583944934e7201515d87d856ec"
+    },
+    {
+      "role": "lean-documentation",
+      "path": "experiments/paper33/lean/README.md",
+      "sha256": "2a24d9fff8a9b0a6d3abb7e1d63695caa384ed915c7d43ded2dac5205b3415df"
+    },
+    {
+      "role": "lean-entrypoint",
+      "path": "experiments/paper33/lean/Paper33.lean",
+      "sha256": "ff58206ce67ccab22e0b2bdaa6320a19cd96460e12351a95bb4b9b83f80a86a7"
+    },
+    {
+      "role": "lean-capacity-obstruction-spine",
+      "path": "experiments/paper33/lean/Paper33/CapacityObstruction.lean",
+      "sha256": "865ed66e11c33efdcef0e619a3bfb7edfaa4bec01c05f8a4b444bb0824b42fb8"
+    },
+    {
+      "role": "lean-formalization-manifest",
+      "path": "experiments/paper33/lean/formalization-manifest.json",
+      "sha256": "1503bd9519254320be5b12a8c4cc8fabf20f3fddfd7800649a396c9d837ff5d5"
+    },
+    {
+      "role": "lean-project",
+      "path": "experiments/paper33/lean/lakefile.toml",
+      "sha256": "4d093d11f1c6f978b0e40009b285ccf400e8964fbee5e78a4084e3db1511296b"
+    },
+    {
+      "role": "lean-dependency-lock",
+      "path": "experiments/paper33/lean/lake-manifest.json",
+      "sha256": "077dfe02fe3746d31699c56078ae7c6710fdf8f0e85e87f7f521f23860e5b0e8"
+    },
+    {
+      "role": "lean-toolchain",
+      "path": "experiments/paper33/lean/lean-toolchain",
+      "sha256": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b"
+    },
+    {
+      "role": "lean-formalization-validator",
+      "path": "experiments/paper33/validation/validate_lean_formalization.py",
+      "sha256": "b096764cac944052103f655233e064930c63297a22afc7a295946e3355223522"
+    },
+    {
+      "role": "source-validator",
+      "path": "experiments/paper33/validation/validate_source.py",
+      "sha256": "331901da3a0ae8564ee622fe24cb406f7d74d0981331e394e1025331413874b7"
+    },
+    {
+      "role": "finite-control-validator",
+      "path": "experiments/paper33/validation/validate_stabilizer_hostile_audit.py",
+      "sha256": "eaf9e17c77fe1b65712a78261a344ed1180e9f1ed6dff4f7416811d6294a6e54"
+    },
+    {
+      "role": "package-validator",
+      "path": "experiments/paper33/validation/validate_package.py",
+      "sha256": "c67632b6e3754525b8f84e07e8c2cd4aa4777ebe71c6f2ec496540c993e0be06"
+    }
+  ],
+  "claim_boundary": [
+    "the source-addressed incidence factorization and capacity-isolation family are manuscript proofs",
+    "Lean formalizes the abstract capacity-obstruction implication spine, not the concrete all-g branch construction",
+    "finite replay is not an all-n proof",
+    "nonempty break data does not force full same-lane promotion",
+    "the retained controls do not prove break-set quotient non-descent",
+    "raw Safe-Hit does not imply typed transfer membership or projectability"
+  ],
+  "excluded_from_closure": [
+    "papers/paper33/DIRECTION_DRAFT.md",
+    "experiments/paper33/lean/.lake/**",
+    "**/__pycache__/**",
+    "**/*.pyc"
+  ]
+}
