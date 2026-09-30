@@ -1,0 +1,98 @@
+{
+  "schema": "rime.paper32.release-manifest.v1",
+  "paper_id": "PAPER32",
+  "release_version": "1.0",
+  "status": "RELEASE_CANDIDATE",
+  "release_identity_claimed": false,
+  "validation_mode": "LOCAL_CLOSURE_VERIFICATION",
+  "receipt_self_exclusion": true,
+  "digest_policy": {
+    "algorithm": "sha256",
+    "scope": "exact_file_bytes",
+    "path_resolution": "exact repository-relative path",
+    "wildcards_allowed": false,
+    "absolute_paths_allowed": false,
+    "current_head_fallback_allowed": false
+  },
+  "artifacts": [
+    {
+      "role": "manuscript",
+      "closure_class": "normative-manuscript-build",
+      "path": "papers/paper32/Paper XXXII.md",
+      "sha256": "fe08b5d39811084e6e9e14db59b9cc7f82489248c3aea9e2991edf1565dfb30d"
+    },
+    {
+      "role": "reader-pdf",
+      "closure_class": "normative-manuscript-build",
+      "path": "papers/paper32/paper32_arxiv.pdf",
+      "sha256": "ac1176e3602813df056487ad6e28efd2a2597c9371c783a6423427c63c25ee69"
+    },
+    {
+      "role": "bibliography",
+      "closure_class": "normative-manuscript-build",
+      "path": "papers/paper32/references-v1.bib",
+      "sha256": "55fea20f7a731b4859154d5afa57cb7fca89a7a208d82ea266e400939f33f26c"
+    },
+    {
+      "role": "development-manifest",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper32/development-manifest.json",
+      "sha256": "216293d37effa3a2e8371cccc0046b7a35e34378b7113546a8e303f3901ac99d"
+    },
+    {
+      "role": "release-environment",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper32/release-environment.json",
+      "sha256": "ca3144c347fe4cdfa447fba7c0231c8fff8a5c8085e65f52e057587dd9fdd5b0"
+    },
+    {
+      "role": "public-package-validator",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper32/validation/validate_public_package.py",
+      "sha256": "3a75c2af008a26e6b613d7e9a600a8d24584ffce25754e2ef2492c469e3bb85d"
+    },
+    {
+      "role": "evidence-readme",
+      "closure_class": "public-package-documentation",
+      "path": "experiments/paper32/README.md",
+      "sha256": "516d88bcd378c7a507323aef2663802dcc025a5de69774e14aedd0dc1943cb75"
+    }
+  ],
+  "nested_closures": {
+    "development_evidence": {
+      "manifest": "experiments/paper32/development-manifest.json",
+      "release_identity_claimed": false
+    }
+  },
+  "claim_boundary": [
+    "finite replay is not an all-n proof",
+    "arbitrary-permutation replay is a bounded one-lane control, not an all-n proof",
+    "the lane-wise dihedral and single-lane permutation classifications are manuscript theorems",
+    "the full multi-lane promotion classification remains open",
+    "raw Safe-Hit does not imply survivor incidence or typed projectability",
+    "local closure verification is not independent mathematical validation"
+  ],
+  "release_candidate_date": "2026-09-30",
+  "excluded_from_package_inventory": [
+    "experiments/paper32/results/paper32_public_package_v1.validation-receipt.json",
+    "**/__pycache__/**",
+    "**/*.pyc"
+  ],
+  "closure_policy": {
+    "classes": [
+      "normative-manuscript-build",
+      "theorem-facing-computational",
+      "public-package-documentation"
+    ],
+    "release_identity_classes": [
+      "normative-manuscript-build",
+      "theorem-facing-computational"
+    ],
+    "package_inventory_classes": [
+      "normative-manuscript-build",
+      "theorem-facing-computational",
+      "public-package-documentation"
+    ],
+    "note": "The paper-owned development manifest is a nested exact-byte evidence closure. Public documentation is integrity-checked but excluded from release identity."
+  }
+}

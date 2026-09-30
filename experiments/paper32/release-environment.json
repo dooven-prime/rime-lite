@@ -1,0 +1,14 @@
+{
+  "schema": "rime.paper32.release-environment.v1",
+  "captured_date": "2026-09-30",
+  "platform": "Windows x86_64",
+  "python": "3.13.0",
+  "pandoc": "3.6.4",
+  "xelatex": "MiKTeX-XeTeX 4.18 (MiKTeX 26.5)",
+  "digest_scope": "exact file bytes after repository checkout",
+  "notes": [
+    "The finite audit uses the Python standard library only.",
+    "The PDF uses the repository-local Markdown-to-LaTeX build convention; generated TeX is not part of the release identity.",
+    "This record describes the release build environment; it is not a portability guarantee."
+  ]
+}

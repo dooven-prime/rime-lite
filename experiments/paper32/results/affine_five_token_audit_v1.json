@@ -1,0 +1,2446 @@
+{
+  "claim_boundary": [
+    "finite replay is not the all-n proof",
+    "the single-lane replay covers only the affine normalizer subfamily",
+    "the full single-lane permutation theorem is proved in the manuscript",
+    "the multi-lane scan does not prove multiplier descent or X3",
+    "raw Safe-Hit does not imply survivor incidence or typed projectability"
+  ],
+  "multilane_hostile": {
+    "records": [
+      {
+        "deltas": [
+          {
+            "adjacent_states": 4,
+            "delta": 2,
+            "lane_lengths": [
+              2,
+              3
+            ],
+            "multiplier_modulus": 6,
+            "multipliers": [
+              {
+                "branch_count": 6,
+                "distinct_safe_hit_sets": 1,
+                "local_dihedral": true,
+                "multiplier": 1,
+                "outcomes": [
+                  "ADJ"
+                ],
+                "same_multiplier_variation": false,
+                "witnesses": [
+                  {
+                    "ordinary_permutation": [
+                      0
+                    ],
+                    "ordinary_phases": [
+                      0
+                    ],
+                    "outcome": "ADJ",
+                    "punctured_phase": 0,
+                    "safe_hit_digest": "66913ba38adae42cb9613f64ff103ce2d45a07b1a2356a4b1641d5116ac6dff1",
+                    "safe_hit_states": 4
+                  }
+                ]
+              },
+              {
+                "branch_count": 6,
+                "distinct_safe_hit_sets": 1,
+                "local_dihedral": true,
+                "multiplier": 5,
+                "outcomes": [
+                  "ADJ"
+                ],
+                "same_multiplier_variation": false,
+                "witnesses": [
+                  {
+                    "ordinary_permutation": [
+                      0
+                    ],
+                    "ordinary_phases": [
+                      0
+                    ],
+                    "outcome": "ADJ",
+                    "punctured_phase": 0,
+                    "safe_hit_digest": "66913ba38adae42cb9613f64ff103ce2d45a07b1a2356a4b1641d5116ac6dff1",
+                    "safe_hit_states": 4
+                  }
+                ]
+              }
+            ],
+            "same_lane_states": 4,
+            "states": 10
+          },
+          {
+            "adjacent_states": 2,
+            "delta": 3,
+            "lane_lengths": [
+              1,
+              2,
+              2
+            ],
+            "multiplier_modulus": 2,
+            "multipliers": [
+              {
+                "branch_count": 8,
+                "distinct_safe_hit_sets": 1,
+                "local_dihedral": true,
+                "multiplier": 1,
+                "outcomes": [
+                  "ADJ"
+                ],
+                "same_multiplier_variation": false,
+                "witnesses": [
+                  {
+                    "ordinary_permutation": [
+                      0,
+                      1
+                    ],
+                    "ordinary_phases": [
+                      0,
+                      0
+                    ],
+                    "outcome": "ADJ",
+                    "punctured_phase": 0,
+                    "safe_hit_digest": "a44c8a6613d94e89f7fb311a14e8974d8241991be084a4fe993659f33ac0da6f",
+                    "safe_hit_states": 2
+                  }
+                ]
+              }
+            ],
+            "same_lane_states": 2,
+            "states": 10
+          },
+          {
+            "adjacent_states": 4,
+            "delta": 4,
+            "lane_lengths": [
+              2,
+              3
+            ],
+            "multiplier_modulus": 6,
+            "multipliers": [
+              {
+                "branch_count": 6,
+                "distinct_safe_hit_sets": 1,
+                "local_dihedral": true,
+                "multiplier": 1,
+                "outcomes": [
+                  "ADJ"
+                ],
+                "same_multiplier_variation": false,
+                "witnesses": [
+                  {
+                    "ordinary_permutation": [
+                      0
+                    ],
+                    "ordinary_phases": [
+                      0
+                    ],
+                    "outcome": "ADJ",
+                    "punctured_phase": 0,
+                    "safe_hit_digest": "66913ba38adae42cb9613f64ff103ce2d45a07b1a2356a4b1641d5116ac6dff1",
+                    "safe_hit_states": 4
+                  }
+                ]
+              },
+              {
+                "branch_count": 6,
+                "distinct_safe_hit_sets": 1,
+                "local_dihedral": true,
+                "multiplier": 5,
+                "outcomes": [
+                  "ADJ"
+                ],
+                "same_multiplier_variation": false,
+                "witnesses": [
+                  {
+                    "ordinary_permutation": [
+                      0
+                    ],
+                    "ordinary_phases": [
+                      0
+                    ],
+                    "outcome": "ADJ",
+                    "punctured_phase": 0,
+                    "safe_hit_digest": "66913ba38adae42cb9613f64ff103ce2d45a07b1a2356a4b1641d5116ac6dff1",
+                    "safe_hit_states": 4
+                  }
+                ]
+              }
+            ],
+            "same_lane_states": 4,
+            "states": 10
+          }
+        ],
+        "n": 6
+      },
+      {
+        "deltas": [],
+        "n": 7
+      },
+      {
+        "deltas": [
+          {
+            "adjacent_states": 84,
+            "delta": 2,
+            "lane_lengths": [
+              3,
+              4
+            ],
+            "multiplier_modulus": 12,
+            "multipliers": [
+              {
+                "branch_count": 12,
+                "distinct_safe_hit_sets": 1,
+                "local_dihedral": true,
+                "multiplier": 1,
+                "outcomes": [
+                  "ADJ"
+                ],
+                "same_multiplier_variation": false,
+                "witnesses": [
+                  {
+                    "ordinary_permutation": [
+                      0
+                    ],
+                    "ordinary_phases": [
+                      0
+                    ],
+                    "outcome": "ADJ",
+                    "punctured_phase": 0,
+                    "safe_hit_digest": "cd18c29ae3d47f2dee2bbaca0e36067594e18a0f11073f36ffaf4a6737c040b0",
+                    "safe_hit_states": 84
+                  }
+                ]
+              },
+              {
+                "branch_count": 12,
+                "distinct_safe_hit_sets": 1,
+                "local_dihedral": true,
+                "multiplier": 5,
+                "outcomes": [
+                  "ADJ"
+                ],
+                "same_multiplier_variation": false,
+                "witnesses": [
+                  {
+                    "ordinary_permutation": [
+                      0
+                    ],
+                    "ordinary_phases": [
+                      0
+                    ],
+                    "outcome": "ADJ",
+                    "punctured_phase": 0,
+                    "safe_hit_digest": "cd18c29ae3d47f2dee2bbaca0e36067594e18a0f11073f36ffaf4a6737c040b0",
+                    "safe_hit_states": 84
+                  }
+                ]
+              },
+              {
+                "branch_count": 12,
+                "distinct_safe_hit_sets": 1,
+                "local_dihedral": true,
+                "multiplier": 7,
+                "outcomes": [
+                  "ADJ"
+                ],
+                "same_multiplier_variation": false,
+                "witnesses": [
+                  {
+                    "ordinary_permutation": [
+                      0
+                    ],
+                    "ordinary_phases": [
+                      0
+                    ],
+                    "outcome": "ADJ",
+                    "punctured_phase": 0,
+                    "safe_hit_digest": "cd18c29ae3d47f2dee2bbaca0e36067594e18a0f11073f36ffaf4a6737c040b0",
+                    "safe_hit_states": 84
+                  }
+                ]
+              },
+              {
+                "branch_count": 12,
+                "distinct_safe_hit_sets": 1,
+                "local_dihedral": true,
+                "multiplier": 11,
+                "outcomes": [
+                  "ADJ"
+                ],
+                "same_multiplier_variation": false,
+                "witnesses": [
+                  {
+                    "ordinary_permutation": [
+                      0
+                    ],
+                    "ordinary_phases": [
+                      0
+                    ],
+                    "outcome": "ADJ",
+                    "punctured_phase": 0,
+                    "safe_hit_digest": "cd18c29ae3d47f2dee2bbaca0e36067594e18a0f11073f36ffaf4a6737c040b0",
+                    "safe_hit_states": 84
+                  }
+                ]
+              }
+            ],
+            "same_lane_states": 90,
+            "states": 210
+          },
+          {
+            "adjacent_states": 30,
+            "delta": 4,
+            "lane_lengths": [
+              1,
+              2,
+              2,
+              2
+            ],
+            "multiplier_modulus": 2,
+            "multipliers": [
+              {
+                "branch_count": 48,
+                "distinct_safe_hit_sets": 1,
+                "local_dihedral": true,
+                "multiplier": 1,
+                "outcomes": [
+                  "ADJ"
+                ],
+                "same_multiplier_variation": false,
+                "witnesses": [
+                  {
+                    "ordinary_permutation": [
+                      0,
+                      1,
+                      2
+                    ],
+                    "ordinary_phases": [
+                      0,
+                      0,
+                      0
+                    ],
+                    "outcome": "ADJ",
+                    "punctured_phase": 0,
+                    "safe_hit_digest": "1f11cb6971f799f7624180743856725a45b823dda62a471bbae22c639e7bd3c6",
+                    "safe_hit_states": 30
+                  }
+                ]
+              }
+            ],
+            "same_lane_states": 30,
+            "states": 210
+          },
+          {
+            "adjacent_states": 84,
+            "delta": 6,
+            "lane_lengths": [
+              3,
+              4
+            ],
+            "multiplier_modulus": 12,
+            "multipliers": [
+              {
+                "branch_count": 12,
+                "distinct_safe_hit_sets": 1,
+                "local_dihedral": true,
+                "multiplier": 1,
+                "outcomes": [
+                  "ADJ"
+                ],
+                "same_multiplier_variation": false,
+                "witnesses": [
+                  {
+                    "ordinary_permutation": [
+                      0
+                    ],
+                    "ordinary_phases": [
+                      0
+                    ],
+                    "outcome": "ADJ",
+                    "punctured_phase": 0,
+                    "safe_hit_digest": "cd18c29ae3d47f2dee2bbaca0e36067594e18a0f11073f36ffaf4a6737c040b0",
+                    "safe_hit_states": 84
+                  }
+                ]
+              },
+              {
+                "branch_count": 12,
+                "distinct_safe_hit_sets": 1,
+                "local_dihedral": true,
+                "multiplier": 5,
+                "outcomes": [
+                  "ADJ"
+                ],
+                "same_multiplier_variation": false,
+                "witnesses": [
+                  {
+                    "ordinary_permutation": [
+                      0
+                    ],
+                    "ordinary_phases": [
+                      0
+                    ],
+                    "outcome": "ADJ",
+                    "punctured_phase": 0,
+                    "safe_hit_digest": "cd18c29ae3d47f2dee2bbaca0e36067594e18a0f11073f36ffaf4a6737c040b0",
+                    "safe_hit_states": 84
+                  }
+                ]
+              },
+              {
+                "branch_count": 12,
+                "distinct_safe_hit_sets": 1,
+                "local_dihedral": true,
+                "multiplier": 7,
+                "outcomes": [
+                  "ADJ"
+                ],
+                "same_multiplier_variation": false,
+                "witnesses": [
+                  {
+                    "ordinary_permutation": [
+                      0
+                    ],
+                    "ordinary_phases": [
+                      0
+                    ],
+                    "outcome": "ADJ",
+                    "punctured_phase": 0,
+                    "safe_hit_digest": "cd18c29ae3d47f2dee2bbaca0e36067594e18a0f11073f36ffaf4a6737c040b0",
+                    "safe_hit_states": 84
+                  }
+                ]
+              },
+              {
+                "branch_count": 12,
+                "distinct_safe_hit_sets": 1,
+                "local_dihedral": true,
+                "multiplier": 11,
+                "outcomes": [
+                  "ADJ"
+                ],
+                "same_multiplier_variation": false,
+                "witnesses": [
+                  {
+                    "ordinary_permutation": [
+                      0
+                    ],
+                    "ordinary_phases": [
+                      0
+                    ],
+                    "outcome": "ADJ",
+                    "punctured_phase": 0,
+                    "safe_hit_digest": "cd18c29ae3d47f2dee2bbaca0e36067594e18a0f11073f36ffaf4a6737c040b0",
+                    "safe_hit_states": 84
+                  }
+                ]
+              }
+            ],
+            "same_lane_states": 90,
+            "states": 210
+          }
+        ],
+        "n": 8
+      },
+      {
+        "deltas": [
+          {
+            "adjacent_states": 140,
+            "delta": 3,
+            "lane_lengths": [
+              2,
+              3,
+              3
+            ],
+            "multiplier_modulus": 6,
+            "multipliers": [
+              {
+                "branch_count": 36,
+                "distinct_safe_hit_sets": 1,
+                "local_dihedral": true,
+                "multiplier": 1,
+                "outcomes": [
+                  "ADJ"
+                ],
+                "same_multiplier_variation": false,
+                "witnesses": [
+                  {
+                    "ordinary_permutation": [
+                      0,
+                      1
+                    ],
+                    "ordinary_phases": [
+                      0,
+                      0
+                    ],
+                    "outcome": "ADJ",
+                    "punctured_phase": 0,
+                    "safe_hit_digest": "531096c36776a5f37880f75e264f99ae8c38d65a5fdbc3ad7d59c165558346f3",
+                    "safe_hit_states": 140
+                  }
+                ]
+              },
+              {
+                "branch_count": 36,
+                "distinct_safe_hit_sets": 1,
+                "local_dihedral": true,
+                "multiplier": 5,
+                "outcomes": [
+                  "ADJ"
+                ],
+                "same_multiplier_variation": false,
+                "witnesses": [
+                  {
+                    "ordinary_permutation": [
+                      0,
+                      1
+                    ],
+                    "ordinary_phases": [
+                      0,
+                      0
+                    ],
+                    "outcome": "ADJ",
+                    "punctured_phase": 0,
+                    "safe_hit_digest": "531096c36776a5f37880f75e264f99ae8c38d65a5fdbc3ad7d59c165558346f3",
+                    "safe_hit_states": 140
+                  }
+                ]
+              }
+            ],
+            "same_lane_states": 140,
+            "states": 560
+          },
+          {
+            "adjacent_states": 140,
+            "delta": 6,
+            "lane_lengths": [
+              2,
+              3,
+              3
+            ],
+            "multiplier_modulus": 6,
+            "multipliers": [
+              {
+                "branch_count": 36,
+                "distinct_safe_hit_sets": 1,
+                "local_dihedral": true,
+                "multiplier": 1,
+                "outcomes": [
+                  "ADJ"
+                ],
+                "same_multiplier_variation": false,
+                "witnesses": [
+                  {
+                    "ordinary_permutation": [
+                      0,
+                      1
+                    ],
+                    "ordinary_phases": [
+                      0,
+                      0
+                    ],
+                    "outcome": "ADJ",
+                    "punctured_phase": 0,
+                    "safe_hit_digest": "531096c36776a5f37880f75e264f99ae8c38d65a5fdbc3ad7d59c165558346f3",
+                    "safe_hit_states": 140
+                  }
+                ]
+              },
+              {
+                "branch_count": 36,
+                "distinct_safe_hit_sets": 1,
+                "local_dihedral": true,
+                "multiplier": 5,
+                "outcomes": [
+                  "ADJ"
+                ],
+                "same_multiplier_variation": false,
+                "witnesses": [
+                  {
+                    "ordinary_permutation": [
+                      0,
+                      1
+                    ],
+                    "ordinary_phases": [
+                      0,
+                      0
+                    ],
+                    "outcome": "ADJ",
+                    "punctured_phase": 0,
+                    "safe_hit_digest": "531096c36776a5f37880f75e264f99ae8c38d65a5fdbc3ad7d59c165558346f3",
+                    "safe_hit_states": 140
+                  }
+                ]
+              }
+            ],
+            "same_lane_states": 140,
+            "states": 560
+          }
+        ],
+        "n": 9
+      }
+    ],
+    "totals": {
+      "branch_cells": 320,
+      "delta_cells": 8,
+      "intermediate_multiplier_cells": 0,
+      "mixed_sign_multiplier_cells": 4,
+      "multiplier_cells": 18,
+      "same_multiplier_variation_cells": 0
+    }
+  },
+  "schema": "rime.paper32.affine-five-token-audit.v1",
+  "scope": {
+    "hostile_max_n": 9,
+    "hostile_min_n": 6,
+    "hostile_rule": "gcd(n, delta) > 1; all affine normalizer parameters",
+    "permutation_max_n": 7,
+    "permutation_min_n": 6,
+    "permutation_rule": "gcd(n, delta) = 1; every branch permutation",
+    "single_lane_rule": "gcd(n, delta) = 1",
+    "single_max_n": 12,
+    "single_min_n": 6
+  },
+  "single_lane": {
+    "records": [
+      {
+        "deltas": [
+          {
+            "adjacent_states": 5,
+            "delta": 1,
+            "identity_edges": 20,
+            "local_gap_transfer_checks": 0,
+            "states": 10,
+            "token_order_fiber_sizes": [
+              5,
+              5
+            ],
+            "token_order_fibers": 2,
+            "units": [
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 1,
+                "safe_hit_digest": "24edcec69dd5ac812ac6ef696d94b67b90332b6a4a3447a7233e3b0a894b2b86",
+                "safe_hit_states": 5
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 2,
+                "safe_hit_digest": "f4972c7d08e0c80337aff8d177d66062c2be8a625f71e02b927f3c9aa3a2f48e",
+                "safe_hit_states": 10
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 3,
+                "safe_hit_digest": "f4972c7d08e0c80337aff8d177d66062c2be8a625f71e02b927f3c9aa3a2f48e",
+                "safe_hit_states": 10
+              },
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 4,
+                "safe_hit_digest": "24edcec69dd5ac812ac6ef696d94b67b90332b6a4a3447a7233e3b0a894b2b86",
+                "safe_hit_states": 5
+              }
+            ]
+          },
+          {
+            "adjacent_states": 5,
+            "delta": 5,
+            "identity_edges": 20,
+            "local_gap_transfer_checks": 0,
+            "states": 10,
+            "token_order_fiber_sizes": [
+              5,
+              5
+            ],
+            "token_order_fibers": 2,
+            "units": [
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 1,
+                "safe_hit_digest": "24edcec69dd5ac812ac6ef696d94b67b90332b6a4a3447a7233e3b0a894b2b86",
+                "safe_hit_states": 5
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 2,
+                "safe_hit_digest": "f4972c7d08e0c80337aff8d177d66062c2be8a625f71e02b927f3c9aa3a2f48e",
+                "safe_hit_states": 10
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 3,
+                "safe_hit_digest": "f4972c7d08e0c80337aff8d177d66062c2be8a625f71e02b927f3c9aa3a2f48e",
+                "safe_hit_states": 10
+              },
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 4,
+                "safe_hit_digest": "24edcec69dd5ac812ac6ef696d94b67b90332b6a4a3447a7233e3b0a894b2b86",
+                "safe_hit_states": 5
+              }
+            ]
+          }
+        ],
+        "n": 6
+      },
+      {
+        "deltas": [
+          {
+            "adjacent_states": 30,
+            "delta": 1,
+            "identity_edges": 220,
+            "local_gap_transfer_checks": 60,
+            "states": 60,
+            "token_order_fiber_sizes": [
+              30,
+              30
+            ],
+            "token_order_fibers": 2,
+            "units": [
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 1,
+                "safe_hit_digest": "32e8f58100df814b1b57177c30ec45c08177b206a832ddea931f801382d74104",
+                "safe_hit_states": 30
+              },
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 5,
+                "safe_hit_digest": "32e8f58100df814b1b57177c30ec45c08177b206a832ddea931f801382d74104",
+                "safe_hit_states": 30
+              }
+            ]
+          },
+          {
+            "adjacent_states": 30,
+            "delta": 2,
+            "identity_edges": 220,
+            "local_gap_transfer_checks": 60,
+            "states": 60,
+            "token_order_fiber_sizes": [
+              30,
+              30
+            ],
+            "token_order_fibers": 2,
+            "units": [
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 1,
+                "safe_hit_digest": "9bc1a4d126c922f7cfbfdbfa987726ac787947130ad26398801cd96e9737c52b",
+                "safe_hit_states": 30
+              },
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 5,
+                "safe_hit_digest": "9bc1a4d126c922f7cfbfdbfa987726ac787947130ad26398801cd96e9737c52b",
+                "safe_hit_states": 30
+              }
+            ]
+          },
+          {
+            "adjacent_states": 30,
+            "delta": 3,
+            "identity_edges": 220,
+            "local_gap_transfer_checks": 60,
+            "states": 60,
+            "token_order_fiber_sizes": [
+              30,
+              30
+            ],
+            "token_order_fibers": 2,
+            "units": [
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 1,
+                "safe_hit_digest": "0d0f8b1c7b330f5e1d96b9bcd5612aa5fcbce0b1afaee22ccf86e2112c3353bd",
+                "safe_hit_states": 30
+              },
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 5,
+                "safe_hit_digest": "0d0f8b1c7b330f5e1d96b9bcd5612aa5fcbce0b1afaee22ccf86e2112c3353bd",
+                "safe_hit_states": 30
+              }
+            ]
+          },
+          {
+            "adjacent_states": 30,
+            "delta": 4,
+            "identity_edges": 220,
+            "local_gap_transfer_checks": 60,
+            "states": 60,
+            "token_order_fiber_sizes": [
+              30,
+              30
+            ],
+            "token_order_fibers": 2,
+            "units": [
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 1,
+                "safe_hit_digest": "0d0f8b1c7b330f5e1d96b9bcd5612aa5fcbce0b1afaee22ccf86e2112c3353bd",
+                "safe_hit_states": 30
+              },
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 5,
+                "safe_hit_digest": "0d0f8b1c7b330f5e1d96b9bcd5612aa5fcbce0b1afaee22ccf86e2112c3353bd",
+                "safe_hit_states": 30
+              }
+            ]
+          },
+          {
+            "adjacent_states": 30,
+            "delta": 5,
+            "identity_edges": 220,
+            "local_gap_transfer_checks": 60,
+            "states": 60,
+            "token_order_fiber_sizes": [
+              30,
+              30
+            ],
+            "token_order_fibers": 2,
+            "units": [
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 1,
+                "safe_hit_digest": "9bc1a4d126c922f7cfbfdbfa987726ac787947130ad26398801cd96e9737c52b",
+                "safe_hit_states": 30
+              },
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 5,
+                "safe_hit_digest": "9bc1a4d126c922f7cfbfdbfa987726ac787947130ad26398801cd96e9737c52b",
+                "safe_hit_states": 30
+              }
+            ]
+          },
+          {
+            "adjacent_states": 30,
+            "delta": 6,
+            "identity_edges": 220,
+            "local_gap_transfer_checks": 60,
+            "states": 60,
+            "token_order_fiber_sizes": [
+              30,
+              30
+            ],
+            "token_order_fibers": 2,
+            "units": [
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 1,
+                "safe_hit_digest": "32e8f58100df814b1b57177c30ec45c08177b206a832ddea931f801382d74104",
+                "safe_hit_states": 30
+              },
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 5,
+                "safe_hit_digest": "32e8f58100df814b1b57177c30ec45c08177b206a832ddea931f801382d74104",
+                "safe_hit_states": 30
+              }
+            ]
+          }
+        ],
+        "n": 7
+      },
+      {
+        "deltas": [
+          {
+            "adjacent_states": 105,
+            "delta": 1,
+            "identity_edges": 1080,
+            "local_gap_transfer_checks": 350,
+            "states": 210,
+            "token_order_fiber_sizes": [
+              105,
+              105
+            ],
+            "token_order_fibers": 2,
+            "units": [
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 1,
+                "safe_hit_digest": "131795f816a2a005e59b12a5b7e51ac902af68ddeac9bdf978eef392960ddb25",
+                "safe_hit_states": 105
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 2,
+                "safe_hit_digest": "3650531c906b3aa809fb91416e38a9a5ccc2384e4d032b3fa713fe4eae0254b0",
+                "safe_hit_states": 210
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 3,
+                "safe_hit_digest": "3650531c906b3aa809fb91416e38a9a5ccc2384e4d032b3fa713fe4eae0254b0",
+                "safe_hit_states": 210
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 4,
+                "safe_hit_digest": "3650531c906b3aa809fb91416e38a9a5ccc2384e4d032b3fa713fe4eae0254b0",
+                "safe_hit_states": 210
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 5,
+                "safe_hit_digest": "3650531c906b3aa809fb91416e38a9a5ccc2384e4d032b3fa713fe4eae0254b0",
+                "safe_hit_states": 210
+              },
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 6,
+                "safe_hit_digest": "131795f816a2a005e59b12a5b7e51ac902af68ddeac9bdf978eef392960ddb25",
+                "safe_hit_states": 105
+              }
+            ]
+          },
+          {
+            "adjacent_states": 105,
+            "delta": 3,
+            "identity_edges": 1080,
+            "local_gap_transfer_checks": 350,
+            "states": 210,
+            "token_order_fiber_sizes": [
+              105,
+              105
+            ],
+            "token_order_fibers": 2,
+            "units": [
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 1,
+                "safe_hit_digest": "f3b6faa90dc588f6280124dd13ec1131dda64b18c345face0d6a9c98c829a0ae",
+                "safe_hit_states": 105
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 2,
+                "safe_hit_digest": "3650531c906b3aa809fb91416e38a9a5ccc2384e4d032b3fa713fe4eae0254b0",
+                "safe_hit_states": 210
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 3,
+                "safe_hit_digest": "3650531c906b3aa809fb91416e38a9a5ccc2384e4d032b3fa713fe4eae0254b0",
+                "safe_hit_states": 210
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 4,
+                "safe_hit_digest": "3650531c906b3aa809fb91416e38a9a5ccc2384e4d032b3fa713fe4eae0254b0",
+                "safe_hit_states": 210
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 5,
+                "safe_hit_digest": "3650531c906b3aa809fb91416e38a9a5ccc2384e4d032b3fa713fe4eae0254b0",
+                "safe_hit_states": 210
+              },
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 6,
+                "safe_hit_digest": "f3b6faa90dc588f6280124dd13ec1131dda64b18c345face0d6a9c98c829a0ae",
+                "safe_hit_states": 105
+              }
+            ]
+          },
+          {
+            "adjacent_states": 105,
+            "delta": 5,
+            "identity_edges": 1080,
+            "local_gap_transfer_checks": 350,
+            "states": 210,
+            "token_order_fiber_sizes": [
+              105,
+              105
+            ],
+            "token_order_fibers": 2,
+            "units": [
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 1,
+                "safe_hit_digest": "f3b6faa90dc588f6280124dd13ec1131dda64b18c345face0d6a9c98c829a0ae",
+                "safe_hit_states": 105
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 2,
+                "safe_hit_digest": "3650531c906b3aa809fb91416e38a9a5ccc2384e4d032b3fa713fe4eae0254b0",
+                "safe_hit_states": 210
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 3,
+                "safe_hit_digest": "3650531c906b3aa809fb91416e38a9a5ccc2384e4d032b3fa713fe4eae0254b0",
+                "safe_hit_states": 210
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 4,
+                "safe_hit_digest": "3650531c906b3aa809fb91416e38a9a5ccc2384e4d032b3fa713fe4eae0254b0",
+                "safe_hit_states": 210
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 5,
+                "safe_hit_digest": "3650531c906b3aa809fb91416e38a9a5ccc2384e4d032b3fa713fe4eae0254b0",
+                "safe_hit_states": 210
+              },
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 6,
+                "safe_hit_digest": "f3b6faa90dc588f6280124dd13ec1131dda64b18c345face0d6a9c98c829a0ae",
+                "safe_hit_states": 105
+              }
+            ]
+          },
+          {
+            "adjacent_states": 105,
+            "delta": 7,
+            "identity_edges": 1080,
+            "local_gap_transfer_checks": 350,
+            "states": 210,
+            "token_order_fiber_sizes": [
+              105,
+              105
+            ],
+            "token_order_fibers": 2,
+            "units": [
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 1,
+                "safe_hit_digest": "131795f816a2a005e59b12a5b7e51ac902af68ddeac9bdf978eef392960ddb25",
+                "safe_hit_states": 105
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 2,
+                "safe_hit_digest": "3650531c906b3aa809fb91416e38a9a5ccc2384e4d032b3fa713fe4eae0254b0",
+                "safe_hit_states": 210
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 3,
+                "safe_hit_digest": "3650531c906b3aa809fb91416e38a9a5ccc2384e4d032b3fa713fe4eae0254b0",
+                "safe_hit_states": 210
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 4,
+                "safe_hit_digest": "3650531c906b3aa809fb91416e38a9a5ccc2384e4d032b3fa713fe4eae0254b0",
+                "safe_hit_states": 210
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 5,
+                "safe_hit_digest": "3650531c906b3aa809fb91416e38a9a5ccc2384e4d032b3fa713fe4eae0254b0",
+                "safe_hit_states": 210
+              },
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 6,
+                "safe_hit_digest": "131795f816a2a005e59b12a5b7e51ac902af68ddeac9bdf978eef392960ddb25",
+                "safe_hit_states": 105
+              }
+            ]
+          }
+        ],
+        "n": 8
+      },
+      {
+        "deltas": [
+          {
+            "adjacent_states": 280,
+            "delta": 1,
+            "identity_edges": 3640,
+            "local_gap_transfer_checks": 1200,
+            "states": 560,
+            "token_order_fiber_sizes": [
+              280,
+              280
+            ],
+            "token_order_fibers": 2,
+            "units": [
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 1,
+                "safe_hit_digest": "017c1996cb6455c48b5fa89810199596ec5de603647c4a272b950029a896b294",
+                "safe_hit_states": 280
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 3,
+                "safe_hit_digest": "467dda1cedb369355fa579a4976ad6f9f04922b44b13b03db35f32bf9f745e6e",
+                "safe_hit_states": 560
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 5,
+                "safe_hit_digest": "467dda1cedb369355fa579a4976ad6f9f04922b44b13b03db35f32bf9f745e6e",
+                "safe_hit_states": 560
+              },
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 7,
+                "safe_hit_digest": "017c1996cb6455c48b5fa89810199596ec5de603647c4a272b950029a896b294",
+                "safe_hit_states": 280
+              }
+            ]
+          },
+          {
+            "adjacent_states": 280,
+            "delta": 2,
+            "identity_edges": 3640,
+            "local_gap_transfer_checks": 1200,
+            "states": 560,
+            "token_order_fiber_sizes": [
+              280,
+              280
+            ],
+            "token_order_fibers": 2,
+            "units": [
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 1,
+                "safe_hit_digest": "28287bfa5c97659c7e1ae9c05d336d973df5ed5a947e127be586e199aa108892",
+                "safe_hit_states": 280
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 3,
+                "safe_hit_digest": "467dda1cedb369355fa579a4976ad6f9f04922b44b13b03db35f32bf9f745e6e",
+                "safe_hit_states": 560
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 5,
+                "safe_hit_digest": "467dda1cedb369355fa579a4976ad6f9f04922b44b13b03db35f32bf9f745e6e",
+                "safe_hit_states": 560
+              },
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 7,
+                "safe_hit_digest": "28287bfa5c97659c7e1ae9c05d336d973df5ed5a947e127be586e199aa108892",
+                "safe_hit_states": 280
+              }
+            ]
+          },
+          {
+            "adjacent_states": 280,
+            "delta": 4,
+            "identity_edges": 3640,
+            "local_gap_transfer_checks": 1200,
+            "states": 560,
+            "token_order_fiber_sizes": [
+              280,
+              280
+            ],
+            "token_order_fibers": 2,
+            "units": [
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 1,
+                "safe_hit_digest": "550f66d93993b46b370a1453cccd5812ae17643462dc264e032b834f83896257",
+                "safe_hit_states": 280
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 3,
+                "safe_hit_digest": "467dda1cedb369355fa579a4976ad6f9f04922b44b13b03db35f32bf9f745e6e",
+                "safe_hit_states": 560
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 5,
+                "safe_hit_digest": "467dda1cedb369355fa579a4976ad6f9f04922b44b13b03db35f32bf9f745e6e",
+                "safe_hit_states": 560
+              },
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 7,
+                "safe_hit_digest": "550f66d93993b46b370a1453cccd5812ae17643462dc264e032b834f83896257",
+                "safe_hit_states": 280
+              }
+            ]
+          },
+          {
+            "adjacent_states": 280,
+            "delta": 5,
+            "identity_edges": 3640,
+            "local_gap_transfer_checks": 1200,
+            "states": 560,
+            "token_order_fiber_sizes": [
+              280,
+              280
+            ],
+            "token_order_fibers": 2,
+            "units": [
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 1,
+                "safe_hit_digest": "550f66d93993b46b370a1453cccd5812ae17643462dc264e032b834f83896257",
+                "safe_hit_states": 280
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 3,
+                "safe_hit_digest": "467dda1cedb369355fa579a4976ad6f9f04922b44b13b03db35f32bf9f745e6e",
+                "safe_hit_states": 560
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 5,
+                "safe_hit_digest": "467dda1cedb369355fa579a4976ad6f9f04922b44b13b03db35f32bf9f745e6e",
+                "safe_hit_states": 560
+              },
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 7,
+                "safe_hit_digest": "550f66d93993b46b370a1453cccd5812ae17643462dc264e032b834f83896257",
+                "safe_hit_states": 280
+              }
+            ]
+          },
+          {
+            "adjacent_states": 280,
+            "delta": 7,
+            "identity_edges": 3640,
+            "local_gap_transfer_checks": 1200,
+            "states": 560,
+            "token_order_fiber_sizes": [
+              280,
+              280
+            ],
+            "token_order_fibers": 2,
+            "units": [
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 1,
+                "safe_hit_digest": "28287bfa5c97659c7e1ae9c05d336d973df5ed5a947e127be586e199aa108892",
+                "safe_hit_states": 280
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 3,
+                "safe_hit_digest": "467dda1cedb369355fa579a4976ad6f9f04922b44b13b03db35f32bf9f745e6e",
+                "safe_hit_states": 560
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 5,
+                "safe_hit_digest": "467dda1cedb369355fa579a4976ad6f9f04922b44b13b03db35f32bf9f745e6e",
+                "safe_hit_states": 560
+              },
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 7,
+                "safe_hit_digest": "28287bfa5c97659c7e1ae9c05d336d973df5ed5a947e127be586e199aa108892",
+                "safe_hit_states": 280
+              }
+            ]
+          },
+          {
+            "adjacent_states": 280,
+            "delta": 8,
+            "identity_edges": 3640,
+            "local_gap_transfer_checks": 1200,
+            "states": 560,
+            "token_order_fiber_sizes": [
+              280,
+              280
+            ],
+            "token_order_fibers": 2,
+            "units": [
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 1,
+                "safe_hit_digest": "017c1996cb6455c48b5fa89810199596ec5de603647c4a272b950029a896b294",
+                "safe_hit_states": 280
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 3,
+                "safe_hit_digest": "467dda1cedb369355fa579a4976ad6f9f04922b44b13b03db35f32bf9f745e6e",
+                "safe_hit_states": 560
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 5,
+                "safe_hit_digest": "467dda1cedb369355fa579a4976ad6f9f04922b44b13b03db35f32bf9f745e6e",
+                "safe_hit_states": 560
+              },
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 7,
+                "safe_hit_digest": "017c1996cb6455c48b5fa89810199596ec5de603647c4a272b950029a896b294",
+                "safe_hit_states": 280
+              }
+            ]
+          }
+        ],
+        "n": 9
+      },
+      {
+        "deltas": [
+          {
+            "adjacent_states": 630,
+            "delta": 1,
+            "identity_edges": 9800,
+            "local_gap_transfer_checks": 3150,
+            "states": 1260,
+            "token_order_fiber_sizes": [
+              630,
+              630
+            ],
+            "token_order_fibers": 2,
+            "units": [
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 1,
+                "safe_hit_digest": "da3bdc7f7e0251ffecd819d98494546d0ccb8604f4971d695891e0ac84bb5e2a",
+                "safe_hit_states": 630
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 2,
+                "safe_hit_digest": "9afef87ce7bda877503d01939fc4b5a72c710a519f05343bff936568bc570573",
+                "safe_hit_states": 1260
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 4,
+                "safe_hit_digest": "9afef87ce7bda877503d01939fc4b5a72c710a519f05343bff936568bc570573",
+                "safe_hit_states": 1260
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 5,
+                "safe_hit_digest": "9afef87ce7bda877503d01939fc4b5a72c710a519f05343bff936568bc570573",
+                "safe_hit_states": 1260
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 7,
+                "safe_hit_digest": "9afef87ce7bda877503d01939fc4b5a72c710a519f05343bff936568bc570573",
+                "safe_hit_states": 1260
+              },
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 8,
+                "safe_hit_digest": "da3bdc7f7e0251ffecd819d98494546d0ccb8604f4971d695891e0ac84bb5e2a",
+                "safe_hit_states": 630
+              }
+            ]
+          },
+          {
+            "adjacent_states": 630,
+            "delta": 3,
+            "identity_edges": 9800,
+            "local_gap_transfer_checks": 3150,
+            "states": 1260,
+            "token_order_fiber_sizes": [
+              630,
+              630
+            ],
+            "token_order_fibers": 2,
+            "units": [
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 1,
+                "safe_hit_digest": "dd85a30db52c2998e13882eca241ef5bb46b7a66d8a6369cda20ea60be33c57d",
+                "safe_hit_states": 630
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 2,
+                "safe_hit_digest": "9afef87ce7bda877503d01939fc4b5a72c710a519f05343bff936568bc570573",
+                "safe_hit_states": 1260
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 4,
+                "safe_hit_digest": "9afef87ce7bda877503d01939fc4b5a72c710a519f05343bff936568bc570573",
+                "safe_hit_states": 1260
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 5,
+                "safe_hit_digest": "9afef87ce7bda877503d01939fc4b5a72c710a519f05343bff936568bc570573",
+                "safe_hit_states": 1260
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 7,
+                "safe_hit_digest": "9afef87ce7bda877503d01939fc4b5a72c710a519f05343bff936568bc570573",
+                "safe_hit_states": 1260
+              },
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 8,
+                "safe_hit_digest": "dd85a30db52c2998e13882eca241ef5bb46b7a66d8a6369cda20ea60be33c57d",
+                "safe_hit_states": 630
+              }
+            ]
+          },
+          {
+            "adjacent_states": 630,
+            "delta": 7,
+            "identity_edges": 9800,
+            "local_gap_transfer_checks": 3150,
+            "states": 1260,
+            "token_order_fiber_sizes": [
+              630,
+              630
+            ],
+            "token_order_fibers": 2,
+            "units": [
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 1,
+                "safe_hit_digest": "dd85a30db52c2998e13882eca241ef5bb46b7a66d8a6369cda20ea60be33c57d",
+                "safe_hit_states": 630
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 2,
+                "safe_hit_digest": "9afef87ce7bda877503d01939fc4b5a72c710a519f05343bff936568bc570573",
+                "safe_hit_states": 1260
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 4,
+                "safe_hit_digest": "9afef87ce7bda877503d01939fc4b5a72c710a519f05343bff936568bc570573",
+                "safe_hit_states": 1260
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 5,
+                "safe_hit_digest": "9afef87ce7bda877503d01939fc4b5a72c710a519f05343bff936568bc570573",
+                "safe_hit_states": 1260
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 7,
+                "safe_hit_digest": "9afef87ce7bda877503d01939fc4b5a72c710a519f05343bff936568bc570573",
+                "safe_hit_states": 1260
+              },
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 8,
+                "safe_hit_digest": "dd85a30db52c2998e13882eca241ef5bb46b7a66d8a6369cda20ea60be33c57d",
+                "safe_hit_states": 630
+              }
+            ]
+          },
+          {
+            "adjacent_states": 630,
+            "delta": 9,
+            "identity_edges": 9800,
+            "local_gap_transfer_checks": 3150,
+            "states": 1260,
+            "token_order_fiber_sizes": [
+              630,
+              630
+            ],
+            "token_order_fibers": 2,
+            "units": [
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 1,
+                "safe_hit_digest": "da3bdc7f7e0251ffecd819d98494546d0ccb8604f4971d695891e0ac84bb5e2a",
+                "safe_hit_states": 630
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 2,
+                "safe_hit_digest": "9afef87ce7bda877503d01939fc4b5a72c710a519f05343bff936568bc570573",
+                "safe_hit_states": 1260
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 4,
+                "safe_hit_digest": "9afef87ce7bda877503d01939fc4b5a72c710a519f05343bff936568bc570573",
+                "safe_hit_states": 1260
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 5,
+                "safe_hit_digest": "9afef87ce7bda877503d01939fc4b5a72c710a519f05343bff936568bc570573",
+                "safe_hit_states": 1260
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 7,
+                "safe_hit_digest": "9afef87ce7bda877503d01939fc4b5a72c710a519f05343bff936568bc570573",
+                "safe_hit_states": 1260
+              },
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 8,
+                "safe_hit_digest": "da3bdc7f7e0251ffecd819d98494546d0ccb8604f4971d695891e0ac84bb5e2a",
+                "safe_hit_states": 630
+              }
+            ]
+          }
+        ],
+        "n": 10
+      },
+      {
+        "deltas": [
+          {
+            "adjacent_states": 1260,
+            "delta": 1,
+            "identity_edges": 22680,
+            "local_gap_transfer_checks": 7000,
+            "states": 2520,
+            "token_order_fiber_sizes": [
+              1260,
+              1260
+            ],
+            "token_order_fibers": 2,
+            "units": [
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 1,
+                "safe_hit_digest": "0c57876a863e6094146ac006bf9be925eb79b82c7f457986b3ea6c1690876120",
+                "safe_hit_states": 1260
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 3,
+                "safe_hit_digest": "6232cbac7e36cf6e644efc362c4b5a2b663cbe9b2ab88b3b3a75c14b7001b61f",
+                "safe_hit_states": 2520
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 7,
+                "safe_hit_digest": "6232cbac7e36cf6e644efc362c4b5a2b663cbe9b2ab88b3b3a75c14b7001b61f",
+                "safe_hit_states": 2520
+              },
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 9,
+                "safe_hit_digest": "0c57876a863e6094146ac006bf9be925eb79b82c7f457986b3ea6c1690876120",
+                "safe_hit_states": 1260
+              }
+            ]
+          },
+          {
+            "adjacent_states": 1260,
+            "delta": 2,
+            "identity_edges": 22680,
+            "local_gap_transfer_checks": 7000,
+            "states": 2520,
+            "token_order_fiber_sizes": [
+              1260,
+              1260
+            ],
+            "token_order_fibers": 2,
+            "units": [
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 1,
+                "safe_hit_digest": "ffbff368a40225f01fb45371d574eb93b13b8819f9d5d08a5628c3cab99fb0b8",
+                "safe_hit_states": 1260
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 3,
+                "safe_hit_digest": "6232cbac7e36cf6e644efc362c4b5a2b663cbe9b2ab88b3b3a75c14b7001b61f",
+                "safe_hit_states": 2520
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 7,
+                "safe_hit_digest": "6232cbac7e36cf6e644efc362c4b5a2b663cbe9b2ab88b3b3a75c14b7001b61f",
+                "safe_hit_states": 2520
+              },
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 9,
+                "safe_hit_digest": "ffbff368a40225f01fb45371d574eb93b13b8819f9d5d08a5628c3cab99fb0b8",
+                "safe_hit_states": 1260
+              }
+            ]
+          },
+          {
+            "adjacent_states": 1260,
+            "delta": 3,
+            "identity_edges": 22680,
+            "local_gap_transfer_checks": 7000,
+            "states": 2520,
+            "token_order_fiber_sizes": [
+              1260,
+              1260
+            ],
+            "token_order_fibers": 2,
+            "units": [
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 1,
+                "safe_hit_digest": "ad0877ec64a703b28742aa5678faff0b8ba7529bbb3098b18d0b43b8884ae3ba",
+                "safe_hit_states": 1260
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 3,
+                "safe_hit_digest": "6232cbac7e36cf6e644efc362c4b5a2b663cbe9b2ab88b3b3a75c14b7001b61f",
+                "safe_hit_states": 2520
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 7,
+                "safe_hit_digest": "6232cbac7e36cf6e644efc362c4b5a2b663cbe9b2ab88b3b3a75c14b7001b61f",
+                "safe_hit_states": 2520
+              },
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 9,
+                "safe_hit_digest": "ad0877ec64a703b28742aa5678faff0b8ba7529bbb3098b18d0b43b8884ae3ba",
+                "safe_hit_states": 1260
+              }
+            ]
+          },
+          {
+            "adjacent_states": 1260,
+            "delta": 4,
+            "identity_edges": 22680,
+            "local_gap_transfer_checks": 7000,
+            "states": 2520,
+            "token_order_fiber_sizes": [
+              1260,
+              1260
+            ],
+            "token_order_fibers": 2,
+            "units": [
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 1,
+                "safe_hit_digest": "81eb621c070faa6a568187a5757703b0de8916f1638902c6ca8a066ea6beea58",
+                "safe_hit_states": 1260
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 3,
+                "safe_hit_digest": "6232cbac7e36cf6e644efc362c4b5a2b663cbe9b2ab88b3b3a75c14b7001b61f",
+                "safe_hit_states": 2520
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 7,
+                "safe_hit_digest": "6232cbac7e36cf6e644efc362c4b5a2b663cbe9b2ab88b3b3a75c14b7001b61f",
+                "safe_hit_states": 2520
+              },
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 9,
+                "safe_hit_digest": "81eb621c070faa6a568187a5757703b0de8916f1638902c6ca8a066ea6beea58",
+                "safe_hit_states": 1260
+              }
+            ]
+          },
+          {
+            "adjacent_states": 1260,
+            "delta": 5,
+            "identity_edges": 22680,
+            "local_gap_transfer_checks": 7000,
+            "states": 2520,
+            "token_order_fiber_sizes": [
+              1260,
+              1260
+            ],
+            "token_order_fibers": 2,
+            "units": [
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 1,
+                "safe_hit_digest": "8d015f5c0916e45ff5088e270f621383503c6dfde84bdd36eb47d108064787f7",
+                "safe_hit_states": 1260
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 3,
+                "safe_hit_digest": "6232cbac7e36cf6e644efc362c4b5a2b663cbe9b2ab88b3b3a75c14b7001b61f",
+                "safe_hit_states": 2520
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 7,
+                "safe_hit_digest": "6232cbac7e36cf6e644efc362c4b5a2b663cbe9b2ab88b3b3a75c14b7001b61f",
+                "safe_hit_states": 2520
+              },
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 9,
+                "safe_hit_digest": "8d015f5c0916e45ff5088e270f621383503c6dfde84bdd36eb47d108064787f7",
+                "safe_hit_states": 1260
+              }
+            ]
+          },
+          {
+            "adjacent_states": 1260,
+            "delta": 6,
+            "identity_edges": 22680,
+            "local_gap_transfer_checks": 7000,
+            "states": 2520,
+            "token_order_fiber_sizes": [
+              1260,
+              1260
+            ],
+            "token_order_fibers": 2,
+            "units": [
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 1,
+                "safe_hit_digest": "8d015f5c0916e45ff5088e270f621383503c6dfde84bdd36eb47d108064787f7",
+                "safe_hit_states": 1260
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 3,
+                "safe_hit_digest": "6232cbac7e36cf6e644efc362c4b5a2b663cbe9b2ab88b3b3a75c14b7001b61f",
+                "safe_hit_states": 2520
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 7,
+                "safe_hit_digest": "6232cbac7e36cf6e644efc362c4b5a2b663cbe9b2ab88b3b3a75c14b7001b61f",
+                "safe_hit_states": 2520
+              },
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 9,
+                "safe_hit_digest": "8d015f5c0916e45ff5088e270f621383503c6dfde84bdd36eb47d108064787f7",
+                "safe_hit_states": 1260
+              }
+            ]
+          },
+          {
+            "adjacent_states": 1260,
+            "delta": 7,
+            "identity_edges": 22680,
+            "local_gap_transfer_checks": 7000,
+            "states": 2520,
+            "token_order_fiber_sizes": [
+              1260,
+              1260
+            ],
+            "token_order_fibers": 2,
+            "units": [
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 1,
+                "safe_hit_digest": "81eb621c070faa6a568187a5757703b0de8916f1638902c6ca8a066ea6beea58",
+                "safe_hit_states": 1260
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 3,
+                "safe_hit_digest": "6232cbac7e36cf6e644efc362c4b5a2b663cbe9b2ab88b3b3a75c14b7001b61f",
+                "safe_hit_states": 2520
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 7,
+                "safe_hit_digest": "6232cbac7e36cf6e644efc362c4b5a2b663cbe9b2ab88b3b3a75c14b7001b61f",
+                "safe_hit_states": 2520
+              },
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 9,
+                "safe_hit_digest": "81eb621c070faa6a568187a5757703b0de8916f1638902c6ca8a066ea6beea58",
+                "safe_hit_states": 1260
+              }
+            ]
+          },
+          {
+            "adjacent_states": 1260,
+            "delta": 8,
+            "identity_edges": 22680,
+            "local_gap_transfer_checks": 7000,
+            "states": 2520,
+            "token_order_fiber_sizes": [
+              1260,
+              1260
+            ],
+            "token_order_fibers": 2,
+            "units": [
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 1,
+                "safe_hit_digest": "ad0877ec64a703b28742aa5678faff0b8ba7529bbb3098b18d0b43b8884ae3ba",
+                "safe_hit_states": 1260
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 3,
+                "safe_hit_digest": "6232cbac7e36cf6e644efc362c4b5a2b663cbe9b2ab88b3b3a75c14b7001b61f",
+                "safe_hit_states": 2520
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 7,
+                "safe_hit_digest": "6232cbac7e36cf6e644efc362c4b5a2b663cbe9b2ab88b3b3a75c14b7001b61f",
+                "safe_hit_states": 2520
+              },
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 9,
+                "safe_hit_digest": "ad0877ec64a703b28742aa5678faff0b8ba7529bbb3098b18d0b43b8884ae3ba",
+                "safe_hit_states": 1260
+              }
+            ]
+          },
+          {
+            "adjacent_states": 1260,
+            "delta": 9,
+            "identity_edges": 22680,
+            "local_gap_transfer_checks": 7000,
+            "states": 2520,
+            "token_order_fiber_sizes": [
+              1260,
+              1260
+            ],
+            "token_order_fibers": 2,
+            "units": [
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 1,
+                "safe_hit_digest": "ffbff368a40225f01fb45371d574eb93b13b8819f9d5d08a5628c3cab99fb0b8",
+                "safe_hit_states": 1260
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 3,
+                "safe_hit_digest": "6232cbac7e36cf6e644efc362c4b5a2b663cbe9b2ab88b3b3a75c14b7001b61f",
+                "safe_hit_states": 2520
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 7,
+                "safe_hit_digest": "6232cbac7e36cf6e644efc362c4b5a2b663cbe9b2ab88b3b3a75c14b7001b61f",
+                "safe_hit_states": 2520
+              },
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 9,
+                "safe_hit_digest": "ffbff368a40225f01fb45371d574eb93b13b8819f9d5d08a5628c3cab99fb0b8",
+                "safe_hit_states": 1260
+              }
+            ]
+          },
+          {
+            "adjacent_states": 1260,
+            "delta": 10,
+            "identity_edges": 22680,
+            "local_gap_transfer_checks": 7000,
+            "states": 2520,
+            "token_order_fiber_sizes": [
+              1260,
+              1260
+            ],
+            "token_order_fibers": 2,
+            "units": [
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 1,
+                "safe_hit_digest": "0c57876a863e6094146ac006bf9be925eb79b82c7f457986b3ea6c1690876120",
+                "safe_hit_states": 1260
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 3,
+                "safe_hit_digest": "6232cbac7e36cf6e644efc362c4b5a2b663cbe9b2ab88b3b3a75c14b7001b61f",
+                "safe_hit_states": 2520
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 7,
+                "safe_hit_digest": "6232cbac7e36cf6e644efc362c4b5a2b663cbe9b2ab88b3b3a75c14b7001b61f",
+                "safe_hit_states": 2520
+              },
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 9,
+                "safe_hit_digest": "0c57876a863e6094146ac006bf9be925eb79b82c7f457986b3ea6c1690876120",
+                "safe_hit_states": 1260
+              }
+            ]
+          }
+        ],
+        "n": 11
+      },
+      {
+        "deltas": [
+          {
+            "adjacent_states": 2310,
+            "delta": 1,
+            "identity_edges": 47040,
+            "local_gap_transfer_checks": 13860,
+            "states": 4620,
+            "token_order_fiber_sizes": [
+              2310,
+              2310
+            ],
+            "token_order_fibers": 2,
+            "units": [
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 1,
+                "safe_hit_digest": "d5f86fd14ae5c0781ece0452f53fcc39342eb7f0869d177e0e702d7187e37acb",
+                "safe_hit_states": 2310
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 2,
+                "safe_hit_digest": "a3306e0f2eb09606bab3cc426a72f1fbaf01e56d1c3d7a9a810ffb38a37c4510",
+                "safe_hit_states": 4620
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 3,
+                "safe_hit_digest": "a3306e0f2eb09606bab3cc426a72f1fbaf01e56d1c3d7a9a810ffb38a37c4510",
+                "safe_hit_states": 4620
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 4,
+                "safe_hit_digest": "a3306e0f2eb09606bab3cc426a72f1fbaf01e56d1c3d7a9a810ffb38a37c4510",
+                "safe_hit_states": 4620
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 5,
+                "safe_hit_digest": "a3306e0f2eb09606bab3cc426a72f1fbaf01e56d1c3d7a9a810ffb38a37c4510",
+                "safe_hit_states": 4620
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 6,
+                "safe_hit_digest": "a3306e0f2eb09606bab3cc426a72f1fbaf01e56d1c3d7a9a810ffb38a37c4510",
+                "safe_hit_states": 4620
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 7,
+                "safe_hit_digest": "a3306e0f2eb09606bab3cc426a72f1fbaf01e56d1c3d7a9a810ffb38a37c4510",
+                "safe_hit_states": 4620
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 8,
+                "safe_hit_digest": "a3306e0f2eb09606bab3cc426a72f1fbaf01e56d1c3d7a9a810ffb38a37c4510",
+                "safe_hit_states": 4620
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 9,
+                "safe_hit_digest": "a3306e0f2eb09606bab3cc426a72f1fbaf01e56d1c3d7a9a810ffb38a37c4510",
+                "safe_hit_states": 4620
+              },
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 10,
+                "safe_hit_digest": "d5f86fd14ae5c0781ece0452f53fcc39342eb7f0869d177e0e702d7187e37acb",
+                "safe_hit_states": 2310
+              }
+            ]
+          },
+          {
+            "adjacent_states": 2310,
+            "delta": 5,
+            "identity_edges": 47040,
+            "local_gap_transfer_checks": 13860,
+            "states": 4620,
+            "token_order_fiber_sizes": [
+              2310,
+              2310
+            ],
+            "token_order_fibers": 2,
+            "units": [
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 1,
+                "safe_hit_digest": "6fb05f8656be9a535cf55e0a5c99907b6c095bb5d3d48412d464f8d43a1f4450",
+                "safe_hit_states": 2310
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 2,
+                "safe_hit_digest": "a3306e0f2eb09606bab3cc426a72f1fbaf01e56d1c3d7a9a810ffb38a37c4510",
+                "safe_hit_states": 4620
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 3,
+                "safe_hit_digest": "a3306e0f2eb09606bab3cc426a72f1fbaf01e56d1c3d7a9a810ffb38a37c4510",
+                "safe_hit_states": 4620
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 4,
+                "safe_hit_digest": "a3306e0f2eb09606bab3cc426a72f1fbaf01e56d1c3d7a9a810ffb38a37c4510",
+                "safe_hit_states": 4620
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 5,
+                "safe_hit_digest": "a3306e0f2eb09606bab3cc426a72f1fbaf01e56d1c3d7a9a810ffb38a37c4510",
+                "safe_hit_states": 4620
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 6,
+                "safe_hit_digest": "a3306e0f2eb09606bab3cc426a72f1fbaf01e56d1c3d7a9a810ffb38a37c4510",
+                "safe_hit_states": 4620
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 7,
+                "safe_hit_digest": "a3306e0f2eb09606bab3cc426a72f1fbaf01e56d1c3d7a9a810ffb38a37c4510",
+                "safe_hit_states": 4620
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 8,
+                "safe_hit_digest": "a3306e0f2eb09606bab3cc426a72f1fbaf01e56d1c3d7a9a810ffb38a37c4510",
+                "safe_hit_states": 4620
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 9,
+                "safe_hit_digest": "a3306e0f2eb09606bab3cc426a72f1fbaf01e56d1c3d7a9a810ffb38a37c4510",
+                "safe_hit_states": 4620
+              },
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 10,
+                "safe_hit_digest": "6fb05f8656be9a535cf55e0a5c99907b6c095bb5d3d48412d464f8d43a1f4450",
+                "safe_hit_states": 2310
+              }
+            ]
+          },
+          {
+            "adjacent_states": 2310,
+            "delta": 7,
+            "identity_edges": 47040,
+            "local_gap_transfer_checks": 13860,
+            "states": 4620,
+            "token_order_fiber_sizes": [
+              2310,
+              2310
+            ],
+            "token_order_fibers": 2,
+            "units": [
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 1,
+                "safe_hit_digest": "6fb05f8656be9a535cf55e0a5c99907b6c095bb5d3d48412d464f8d43a1f4450",
+                "safe_hit_states": 2310
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 2,
+                "safe_hit_digest": "a3306e0f2eb09606bab3cc426a72f1fbaf01e56d1c3d7a9a810ffb38a37c4510",
+                "safe_hit_states": 4620
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 3,
+                "safe_hit_digest": "a3306e0f2eb09606bab3cc426a72f1fbaf01e56d1c3d7a9a810ffb38a37c4510",
+                "safe_hit_states": 4620
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 4,
+                "safe_hit_digest": "a3306e0f2eb09606bab3cc426a72f1fbaf01e56d1c3d7a9a810ffb38a37c4510",
+                "safe_hit_states": 4620
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 5,
+                "safe_hit_digest": "a3306e0f2eb09606bab3cc426a72f1fbaf01e56d1c3d7a9a810ffb38a37c4510",
+                "safe_hit_states": 4620
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 6,
+                "safe_hit_digest": "a3306e0f2eb09606bab3cc426a72f1fbaf01e56d1c3d7a9a810ffb38a37c4510",
+                "safe_hit_states": 4620
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 7,
+                "safe_hit_digest": "a3306e0f2eb09606bab3cc426a72f1fbaf01e56d1c3d7a9a810ffb38a37c4510",
+                "safe_hit_states": 4620
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 8,
+                "safe_hit_digest": "a3306e0f2eb09606bab3cc426a72f1fbaf01e56d1c3d7a9a810ffb38a37c4510",
+                "safe_hit_states": 4620
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 9,
+                "safe_hit_digest": "a3306e0f2eb09606bab3cc426a72f1fbaf01e56d1c3d7a9a810ffb38a37c4510",
+                "safe_hit_states": 4620
+              },
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 10,
+                "safe_hit_digest": "6fb05f8656be9a535cf55e0a5c99907b6c095bb5d3d48412d464f8d43a1f4450",
+                "safe_hit_states": 2310
+              }
+            ]
+          },
+          {
+            "adjacent_states": 2310,
+            "delta": 11,
+            "identity_edges": 47040,
+            "local_gap_transfer_checks": 13860,
+            "states": 4620,
+            "token_order_fiber_sizes": [
+              2310,
+              2310
+            ],
+            "token_order_fibers": 2,
+            "units": [
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 1,
+                "safe_hit_digest": "d5f86fd14ae5c0781ece0452f53fcc39342eb7f0869d177e0e702d7187e37acb",
+                "safe_hit_states": 2310
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 2,
+                "safe_hit_digest": "a3306e0f2eb09606bab3cc426a72f1fbaf01e56d1c3d7a9a810ffb38a37c4510",
+                "safe_hit_states": 4620
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 3,
+                "safe_hit_digest": "a3306e0f2eb09606bab3cc426a72f1fbaf01e56d1c3d7a9a810ffb38a37c4510",
+                "safe_hit_states": 4620
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 4,
+                "safe_hit_digest": "a3306e0f2eb09606bab3cc426a72f1fbaf01e56d1c3d7a9a810ffb38a37c4510",
+                "safe_hit_states": 4620
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 5,
+                "safe_hit_digest": "a3306e0f2eb09606bab3cc426a72f1fbaf01e56d1c3d7a9a810ffb38a37c4510",
+                "safe_hit_states": 4620
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 6,
+                "safe_hit_digest": "a3306e0f2eb09606bab3cc426a72f1fbaf01e56d1c3d7a9a810ffb38a37c4510",
+                "safe_hit_states": 4620
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 7,
+                "safe_hit_digest": "a3306e0f2eb09606bab3cc426a72f1fbaf01e56d1c3d7a9a810ffb38a37c4510",
+                "safe_hit_states": 4620
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 8,
+                "safe_hit_digest": "a3306e0f2eb09606bab3cc426a72f1fbaf01e56d1c3d7a9a810ffb38a37c4510",
+                "safe_hit_states": 4620
+              },
+              {
+                "classification": "ALL",
+                "dihedral": false,
+                "multiplier": 9,
+                "safe_hit_digest": "a3306e0f2eb09606bab3cc426a72f1fbaf01e56d1c3d7a9a810ffb38a37c4510",
+                "safe_hit_states": 4620
+              },
+              {
+                "classification": "ADJ",
+                "dihedral": true,
+                "multiplier": 10,
+                "safe_hit_digest": "d5f86fd14ae5c0781ece0452f53fcc39342eb7f0869d177e0e702d7187e37acb",
+                "safe_hit_states": 2310
+              }
+            ]
+          }
+        ],
+        "n": 12
+      }
+    ],
+    "totals": {
+      "delta_cells": 36,
+      "identity_edges": 481680,
+      "local_gap_transfer_checks": 147000,
+      "state_cases": 53300,
+      "unit_cells": 172
+    }
+  },
+  "single_lane_permutation_control": {
+    "records": [
+      {
+        "deltas": [
+          {
+            "adjacent_states": 5,
+            "branches": 120,
+            "cycle_automorphisms": 10,
+            "delta": 1,
+            "nonautomorphisms": 110,
+            "states": 10
+          },
+          {
+            "adjacent_states": 5,
+            "branches": 120,
+            "cycle_automorphisms": 10,
+            "delta": 5,
+            "nonautomorphisms": 110,
+            "states": 10
+          }
+        ],
+        "n": 6
+      },
+      {
+        "deltas": [
+          {
+            "adjacent_states": 30,
+            "branches": 720,
+            "cycle_automorphisms": 12,
+            "delta": 1,
+            "nonautomorphisms": 708,
+            "states": 60
+          },
+          {
+            "adjacent_states": 30,
+            "branches": 720,
+            "cycle_automorphisms": 12,
+            "delta": 2,
+            "nonautomorphisms": 708,
+            "states": 60
+          },
+          {
+            "adjacent_states": 30,
+            "branches": 720,
+            "cycle_automorphisms": 12,
+            "delta": 3,
+            "nonautomorphisms": 708,
+            "states": 60
+          },
+          {
+            "adjacent_states": 30,
+            "branches": 720,
+            "cycle_automorphisms": 12,
+            "delta": 4,
+            "nonautomorphisms": 708,
+            "states": 60
+          },
+          {
+            "adjacent_states": 30,
+            "branches": 720,
+            "cycle_automorphisms": 12,
+            "delta": 5,
+            "nonautomorphisms": 708,
+            "states": 60
+          },
+          {
+            "adjacent_states": 30,
+            "branches": 720,
+            "cycle_automorphisms": 12,
+            "delta": 6,
+            "nonautomorphisms": 708,
+            "states": 60
+          }
+        ],
+        "n": 7
+      }
+    ],
+    "totals": {
+      "branch_cells": 4560,
+      "cycle_automorphism_cells": 92,
+      "delta_cells": 8,
+      "nonautomorphism_cells": 4468
+    }
+  },
+  "status": "FINITE_SANITY_CHECK_NOT_ALL_N_PROOF"
+}
