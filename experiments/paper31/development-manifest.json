@@ -1,0 +1,113 @@
+{
+  "schema": "rime.paper31.development-manifest.v1",
+  "package_id": "PAPER31-PARTIAL-RETURN-DEVELOPMENT-V1",
+  "status": "DRAFT_PAPER_OWNED_CLOSURE",
+  "release_identity_claimed": false,
+  "validation_mode": "LOCAL_CLOSURE_VERIFICATION",
+  "digest_policy": {
+    "algorithm": "sha256",
+    "scope": "exact_file_bytes",
+    "path_resolution": "repository-relative",
+    "absolute_paths_allowed": false,
+    "wildcards_allowed": false
+  },
+  "artifacts": [
+    {
+      "role": "manuscript",
+      "path": "papers/paper31/Paper XXXI.md",
+      "sha256": "96b62a0c3e5c9df76d7e883571930cf7d2737087c47a1daac988b34d1d9689fb"
+    },
+    {
+      "role": "bibliography",
+      "path": "papers/paper31/references-v1.bib",
+      "sha256": "623be92ce2da341733caeaa798492d89b26a6b55871455c5b2d9e72f89204c2d"
+    },
+    {
+      "role": "package-readme",
+      "path": "experiments/paper31/README.md",
+      "sha256": "f0ab93d862271265bb4b675d4ffef9851e06892d809adbd11497261577af26c0"
+    },
+    {
+      "role": "finite-producer",
+      "path": "experiments/paper31/partial_return_audit.py",
+      "sha256": "f89a4803572bde51c4140c7f6d0289c3c435c9bdba28f7406949597f3268bdac"
+    },
+    {
+      "role": "finite-result",
+      "path": "experiments/paper31/results/partial_return_hostile_audit_v1.json",
+      "sha256": "6d5cc912d8593d5744a0eb89ac0f17ce5d0891d01c1007073b2e18ab7db6def8"
+    },
+    {
+      "role": "finite-validator",
+      "path": "experiments/paper31/validation/validate_partial_return_audit.py",
+      "sha256": "e0350a6d7bd0adbb97ee7a8ebc645bb0e23e5bbb97c7701fce34297c168008d2"
+    },
+    {
+      "role": "lean-readme",
+      "path": "experiments/paper31/lean/README.md",
+      "sha256": "d3779c24dcce0d7cdc6716669263caac15de1c96c269c80be378cf9c621add6c"
+    },
+    {
+      "role": "lean-entrypoint",
+      "path": "experiments/paper31/lean/Paper31.lean",
+      "sha256": "5644aa138a7b20db101af38258bd9303049c48cc8bf0455dc8621d97ad601e45"
+    },
+    {
+      "role": "lean-source",
+      "path": "experiments/paper31/lean/Paper31/Reachability.lean",
+      "sha256": "58e9574e03116e889c6875f47609c45cd97d37f4b86bc2a99cbef620f2d3ea02"
+    },
+    {
+      "role": "lean-source",
+      "path": "experiments/paper31/lean/Paper31/PartialConjugacy.lean",
+      "sha256": "86f5fe3baed58845f84d0bfeeed4839d61524862ba5c36591e39160df1ff666e"
+    },
+    {
+      "role": "lean-source",
+      "path": "experiments/paper31/lean/Paper31/SkewBoundary.lean",
+      "sha256": "619df8f12025ca8c47ad84f145a49a90028d68f73a79e6d2edd6d412adef8b31"
+    },
+    {
+      "role": "lean-scope-manifest",
+      "path": "experiments/paper31/lean/formalization-manifest.json",
+      "sha256": "e3c7f45c0328deba8f089195a0e15e0cc633800dd4e102385d43cbcd04443aff"
+    },
+    {
+      "role": "lean-project",
+      "path": "experiments/paper31/lean/lakefile.toml",
+      "sha256": "e3aa1a987bdb353533778b18615e647dbe3f204775613e4f9aec646f7451a93f"
+    },
+    {
+      "role": "lean-lock",
+      "path": "experiments/paper31/lean/lake-manifest.json",
+      "sha256": "1c5b0eff4c6c56e7813884164218429574304f34f9a30d29139658cd3bd2804f"
+    },
+    {
+      "role": "lean-toolchain",
+      "path": "experiments/paper31/lean/lean-toolchain",
+      "sha256": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b"
+    },
+    {
+      "role": "lean-validator",
+      "path": "experiments/paper31/validation/validate_lean_formalization.py",
+      "sha256": "63759678497798df13cbc94a7815adcd522aecbe424c6baf3bdd4a1818fd09a9"
+    },
+    {
+      "role": "package-validator",
+      "path": "experiments/paper31/validation/validate_package.py",
+      "sha256": "ad9079f88a51512149c9254eb4227184cf3335aec99dbae1192dcdf867e47b7b"
+    }
+  ],
+  "validation_commands": [
+    "python experiments/paper31/validation/validate_package.py",
+    "python experiments/paper31/validation/validate_package.py --replay"
+  ],
+  "claim_boundary": [
+    "finite replay is not the all-n proof",
+    "Lean formalizes only the data-independent implication spine",
+    "the Lean spine consumes rather than proves the concrete lane and guard hypotheses",
+    "normalizer multipliers outside u = +/-1 remain open",
+    "raw Safe-Hit does not imply survivor incidence or typed projectability",
+    "this working manifest is not a release receipt or publication identity"
+  ]
+}

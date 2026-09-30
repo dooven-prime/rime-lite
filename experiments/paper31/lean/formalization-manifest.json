@@ -1,0 +1,39 @@
+{
+  "schema": "rime.paper31.lean-formalization-manifest.v1",
+  "formalization_id": "PAPER31-PARTIAL-RETURN-SPINE-V1",
+  "status": "COMPILED_PAPER_OWNED_PARTIAL_FORMALIZATION",
+  "validation_mode": "LOCAL_CLOSURE_VERIFICATION",
+  "entrypoint": "experiments/paper31/lean/Paper31.lean",
+  "build": {
+    "project_root": "experiments/paper31/lean",
+    "command": "lake build",
+    "lean": "4.33.0",
+    "mathlib_revision": "db584cd6d46c92f209a44c0f1c829460d327499d"
+  },
+  "source_sha256": {
+    "Paper31.lean": "5644aa138a7b20db101af38258bd9303049c48cc8bf0455dc8621d97ad601e45",
+    "Paper31/Reachability.lean": "58e9574e03116e889c6875f47609c45cd97d37f4b86bc2a99cbef620f2d3ea02",
+    "Paper31/PartialConjugacy.lean": "86f5fe3baed58845f84d0bfeeed4839d61524862ba5c36591e39160df1ff666e",
+    "Paper31/SkewBoundary.lean": "619df8f12025ca8c47ad84f145a49a90028d68f73a79e6d2edd6d412adef8b31",
+    "README.md": "d3779c24dcce0d7cdc6716669263caac15de1c96c269c80be378cf9c621add6c",
+    "lakefile.toml": "e3aa1a987bdb353533778b18615e647dbe3f204775613e4f9aec646f7451a93f",
+    "lake-manifest.json": "1c5b0eff4c6c56e7813884164218429574304f34f9a30d29139658cd3bd2804f",
+    "lean-toolchain": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b"
+  },
+  "formalized_scope": [
+    "same-labelled-path transport and reflection under an exact partial-system equivalence",
+    "exact Safe-Hit reduction through an existential quotient with internal fiber controllability",
+    "Safe-Hit equality from equal exact quotient edge and target relations",
+    "skew quotient edge and target transport under an equivariant deterministic twist",
+    "normalizer sandwich implication spine",
+    "same-witness quantifier firewall"
+  ],
+  "excluded_scope": [
+    "concrete construction of the branch bijection and normalized collision guard",
+    "punctured-rotation arithmetic and affine normalizer coordinates",
+    "lane-order preservation and the constructive hole-slide",
+    "the all-n Safe-Hit classification proof",
+    "finite graph artifacts",
+    "survivor incidence, typed transfer membership, projectability, recursive return, settlement, and reset bounds"
+  ]
+}
