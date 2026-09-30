@@ -1,5 +1,6 @@
 # Keep source-addressed contracts, evidence, and implementations byte-stable.
 .gitattributes text eol=lf
+.gitignore text eol=lf
 pyproject.toml text eol=lf
 rime/**/*.py text eol=lf
 registry/**/*.json text eol=lf
@@ -12,6 +13,8 @@ experiments/**/*.py text eol=lf
 experiments/**/*.sofaction text eol=lf
 experiments/**/*.txt text eol=lf
 papers/**/*.md text eol=lf
+papers/tex/*.py text eol=lf
+papers/tex/README.md text eol=lf
 papers/tex/*.bib text eol=lf
 papers/paper*/*.bib text eol=lf
 experiments/**/*.lean text eol=lf

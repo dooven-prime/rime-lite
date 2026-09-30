@@ -30,6 +30,7 @@ figures/archive/
 figures/ccs/*.pdf
 figures/paper*/*.pdf
 output/
+scripts/
 experiments/exploratory/archive/
 
 # CCS frozen snapshots
@@ -41,7 +42,19 @@ papers/paper*/* - *.md
 papers/paper*/* - v*.pdf
 papers/paper*/Paper * Position.md
 ccs/* - v*.pdf
-papers/tex/
+# TeX build sources under papers/tex/ are versioned. Generated products must
+# remain in output/; retain narrow guards for accidental legacy in-place builds.
+papers/tex/*.tex
+papers/tex/*.pdf
+papers/tex/*.aux
+papers/tex/*.bbl
+papers/tex/*.blg
+papers/tex/*.fdb_latexmk
+papers/tex/*.fls
+papers/tex/*.log
+papers/tex/*.out
+papers/tex/arxiv/
+papers/tex/reverse/
 experiments/* - v*.md
 
 # Unreleased paper-stage material
@@ -49,7 +62,6 @@ tests/internal/
 
 # Local review scratch files
 /tmp_*.txt
-/output/
 
 # Temp / misc
 *.tmp
