@@ -69,6 +69,7 @@
     "The anchor is downstream metadata and is not part of the release tag it records."
   ],
   "notes": [
-    "The tagged v1.0 producer exposes --delta values in 1..n-1, but its canonical recovery and retained family controls are implemented only for delta=1. Non-unit delta invocations fail before producing an artifact. This is a CLI admission defect, not a change to the published theorem surface or retained delta=1 result. The tagged producer, manifest, and receipt remain immutable; correcting the option contract requires a new owner version."
+    "The tagged v1.0 producer exposes --delta values in 1..n-1, but its canonical recovery and retained family controls are implemented only for delta=1. Non-unit delta invocations fail before producing an artifact. This is a CLI admission defect, not a change to the published theorem surface or retained delta=1 result. The tagged producer, manifest, and receipt remain immutable; correcting the option contract requires a new owner version.",
+    "The tagged v1.0 producer accepts nonpositive --branch-limit values, which create an empty scan and end in an unhandled StopIteration before any artifact is produced. The retained release result uses the complete positive branch domain, so this CLI admission defect does not alter the published result. A corrected lower-bound check requires a new owner version rather than mutation of the tagged producer."
   ]
 }
