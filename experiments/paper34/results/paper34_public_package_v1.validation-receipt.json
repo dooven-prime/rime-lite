@@ -1,0 +1,233 @@
+{
+  "schema": "rime.paper34.public-package-receipt.v1",
+  "artifact_id": "PAPER34-V1-PUBLIC-PACKAGE-VALIDATED",
+  "status": "PASS",
+  "validation_mode": "LOCAL_CLOSURE_VERIFICATION",
+  "receipt_self_exclusion": true,
+  "replay": {
+    "development_closure_verified": true,
+    "source_audit_replayed": true,
+    "finite_survivor_incidence_replayed": true,
+    "lean_formalization_compiled": true
+  },
+  "manifest_binding": {
+    "path": "experiments/paper34/release-manifest.json",
+    "sha256": "07ec7ada4026c0aca7c43736d5b387f548053c525f9ca8431e748887e1c4663b"
+  },
+  "nested_closures": {
+    "development_evidence": {
+      "artifact_count": 18,
+      "closure_digest": "45619dbe487efa2e2d94d82da27b847e8bb20b43292b5eb47b8f6c6a3ce3e05a",
+      "ordered_artifacts": [
+        {
+          "path": "experiments/paper34/ONE_LANE_DIHEDRAL_SURVIVOR_CLASSIFICATION.md",
+          "sha256": "d7fee5544d81e34859ac6aa4035d273077fa83e55f8cc9bc853b9b40147606ca"
+        },
+        {
+          "path": "experiments/paper34/README.md",
+          "sha256": "959c7ecf56856fb92216507ed0b41449a58239b59e918f669ca5db3bb214bcbe"
+        },
+        {
+          "path": "experiments/paper34/lean/Paper34.lean",
+          "sha256": "7ea6d71ab5b6978b5d766b1040139e3f9ab8050a785a9e167a11839b53dde510"
+        },
+        {
+          "path": "experiments/paper34/lean/Paper34/Incidence.lean",
+          "sha256": "6a1caff5a4ea05ba2e1f04fd124ddaff968b9c7b5c10da96121182450f82be13"
+        },
+        {
+          "path": "experiments/paper34/lean/Paper34/OrientationSpectrum.lean",
+          "sha256": "d9994dfce13394aa811131eef3bce4472f3104ff4fb86f7a3dd74aad827895e8"
+        },
+        {
+          "path": "experiments/paper34/lean/README.md",
+          "sha256": "3d6c3a0c94e0e9cffa1d3bba9df066722fe9b60e0d305179ba610847b7c563ce"
+        },
+        {
+          "path": "experiments/paper34/lean/formalization-manifest.json",
+          "sha256": "6795cf3840c979a8d77ff984648b4f62517abad42f81a6a0ef189319115f6a73"
+        },
+        {
+          "path": "experiments/paper34/lean/lake-manifest.json",
+          "sha256": "b23f233a8b0e61fdaebb0da65db213fbf40836302efe854994f7001ec6ea5db9"
+        },
+        {
+          "path": "experiments/paper34/lean/lakefile.toml",
+          "sha256": "496617f3a4e953452dc66eb896d3dd79d58a7bb2870946f262389286c03bf7ef"
+        },
+        {
+          "path": "experiments/paper34/lean/lean-toolchain",
+          "sha256": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b"
+        },
+        {
+          "path": "experiments/paper34/results/survivor_incidence_n6_v2.json",
+          "sha256": "bb65990f4934f06c1a5e825bc7de658780a6201bb82192b9bc70691bf57995a2"
+        },
+        {
+          "path": "experiments/paper34/survivor_incidence_audit.py",
+          "sha256": "af87d272308bf78a8f4049a4b6dc232670c58f1dacfe98541f318fd571d09489"
+        },
+        {
+          "path": "experiments/paper34/validation/validate_lean_formalization.py",
+          "sha256": "b6781b50b3fe3f5adac6e9dbb6c5ea2942034aba95bc4b5381a2432289895308"
+        },
+        {
+          "path": "experiments/paper34/validation/validate_package.py",
+          "sha256": "9b8a10350a0d0dd75d1f6dcf6e8d79517674b20a2cf8c2fec152be3df3347754"
+        },
+        {
+          "path": "experiments/paper34/validation/validate_source.py",
+          "sha256": "8e4383d102c4e262abf143fa9113d2c6cba34d556941a5eac96a5cda5925eb76"
+        },
+        {
+          "path": "experiments/paper34/validation/validate_survivor_incidence_audit.py",
+          "sha256": "2e0937bd915c1f0c7bde49d644a6544f3fc5c085aec254c5b38726f9cdc0b1d6"
+        },
+        {
+          "path": "papers/paper34/Paper XXXIV.md",
+          "sha256": "327e139a221458add8c909f4f091ba9fe730ee39c520419b137dfd9253e3215f"
+        },
+        {
+          "path": "papers/paper34/references-v1.bib",
+          "sha256": "464416747bc2f1c4641d1abbfb1e9585a8fe1bcc22a479dfedd37a4ddfd81d8c"
+        }
+      ]
+    }
+  },
+  "release_identity": {
+    "artifact_count": 6,
+    "closure_digest": "7e4e2d0f446bf9c20ad9fe61bf48c6c76ca7566c52ae40a4570fe5cc72fb4d32",
+    "ordered_artifacts": [
+      {
+        "path": "experiments/paper34/development-manifest.json",
+        "sha256": "73c407b967b76c6f68356b08fe055f37389b7cac0995e83f7b5c652010d2258f"
+      },
+      {
+        "path": "experiments/paper34/release-environment.json",
+        "sha256": "6d615b459caa062d0ae22ab9b2876e6cf1d8011016e1276c082728b0a4cbdc35"
+      },
+      {
+        "path": "experiments/paper34/validation/validate_public_package.py",
+        "sha256": "e16f5f3a6e1deae4a47c5b2e98d5aa392d5df5c6ea57edd495b80329d719b61c"
+      },
+      {
+        "path": "papers/paper34/Paper XXXIV.md",
+        "sha256": "327e139a221458add8c909f4f091ba9fe730ee39c520419b137dfd9253e3215f"
+      },
+      {
+        "path": "papers/paper34/paper34_arxiv.pdf",
+        "sha256": "13d9b0e86d40c5d2656e3b569d2caa2a0a0d3209ae8f83cda155d545a301ed96"
+      },
+      {
+        "path": "papers/paper34/references-v1.bib",
+        "sha256": "464416747bc2f1c4641d1abbfb1e9585a8fe1bcc22a479dfedd37a4ddfd81d8c"
+      }
+    ]
+  },
+  "package_inventory": {
+    "artifact_count": 23,
+    "closure_digest": "560e759840950c767c824f69b01c4d2f1867f4e344430a1ea8bbbc3ed6046286",
+    "ordered_artifacts": [
+      {
+        "path": "experiments/paper34/ONE_LANE_DIHEDRAL_SURVIVOR_CLASSIFICATION.md",
+        "sha256": "d7fee5544d81e34859ac6aa4035d273077fa83e55f8cc9bc853b9b40147606ca"
+      },
+      {
+        "path": "experiments/paper34/README.md",
+        "sha256": "959c7ecf56856fb92216507ed0b41449a58239b59e918f669ca5db3bb214bcbe"
+      },
+      {
+        "path": "experiments/paper34/development-manifest.json",
+        "sha256": "73c407b967b76c6f68356b08fe055f37389b7cac0995e83f7b5c652010d2258f"
+      },
+      {
+        "path": "experiments/paper34/lean/Paper34.lean",
+        "sha256": "7ea6d71ab5b6978b5d766b1040139e3f9ab8050a785a9e167a11839b53dde510"
+      },
+      {
+        "path": "experiments/paper34/lean/Paper34/Incidence.lean",
+        "sha256": "6a1caff5a4ea05ba2e1f04fd124ddaff968b9c7b5c10da96121182450f82be13"
+      },
+      {
+        "path": "experiments/paper34/lean/Paper34/OrientationSpectrum.lean",
+        "sha256": "d9994dfce13394aa811131eef3bce4472f3104ff4fb86f7a3dd74aad827895e8"
+      },
+      {
+        "path": "experiments/paper34/lean/README.md",
+        "sha256": "3d6c3a0c94e0e9cffa1d3bba9df066722fe9b60e0d305179ba610847b7c563ce"
+      },
+      {
+        "path": "experiments/paper34/lean/formalization-manifest.json",
+        "sha256": "6795cf3840c979a8d77ff984648b4f62517abad42f81a6a0ef189319115f6a73"
+      },
+      {
+        "path": "experiments/paper34/lean/lake-manifest.json",
+        "sha256": "b23f233a8b0e61fdaebb0da65db213fbf40836302efe854994f7001ec6ea5db9"
+      },
+      {
+        "path": "experiments/paper34/lean/lakefile.toml",
+        "sha256": "496617f3a4e953452dc66eb896d3dd79d58a7bb2870946f262389286c03bf7ef"
+      },
+      {
+        "path": "experiments/paper34/lean/lean-toolchain",
+        "sha256": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b"
+      },
+      {
+        "path": "experiments/paper34/release-environment.json",
+        "sha256": "6d615b459caa062d0ae22ab9b2876e6cf1d8011016e1276c082728b0a4cbdc35"
+      },
+      {
+        "path": "experiments/paper34/release-manifest.json",
+        "sha256": "07ec7ada4026c0aca7c43736d5b387f548053c525f9ca8431e748887e1c4663b"
+      },
+      {
+        "path": "experiments/paper34/results/survivor_incidence_n6_v2.json",
+        "sha256": "bb65990f4934f06c1a5e825bc7de658780a6201bb82192b9bc70691bf57995a2"
+      },
+      {
+        "path": "experiments/paper34/survivor_incidence_audit.py",
+        "sha256": "af87d272308bf78a8f4049a4b6dc232670c58f1dacfe98541f318fd571d09489"
+      },
+      {
+        "path": "experiments/paper34/validation/validate_lean_formalization.py",
+        "sha256": "b6781b50b3fe3f5adac6e9dbb6c5ea2942034aba95bc4b5381a2432289895308"
+      },
+      {
+        "path": "experiments/paper34/validation/validate_package.py",
+        "sha256": "9b8a10350a0d0dd75d1f6dcf6e8d79517674b20a2cf8c2fec152be3df3347754"
+      },
+      {
+        "path": "experiments/paper34/validation/validate_public_package.py",
+        "sha256": "e16f5f3a6e1deae4a47c5b2e98d5aa392d5df5c6ea57edd495b80329d719b61c"
+      },
+      {
+        "path": "experiments/paper34/validation/validate_source.py",
+        "sha256": "8e4383d102c4e262abf143fa9113d2c6cba34d556941a5eac96a5cda5925eb76"
+      },
+      {
+        "path": "experiments/paper34/validation/validate_survivor_incidence_audit.py",
+        "sha256": "2e0937bd915c1f0c7bde49d644a6544f3fc5c085aec254c5b38726f9cdc0b1d6"
+      },
+      {
+        "path": "papers/paper34/Paper XXXIV.md",
+        "sha256": "327e139a221458add8c909f4f091ba9fe730ee39c520419b137dfd9253e3215f"
+      },
+      {
+        "path": "papers/paper34/paper34_arxiv.pdf",
+        "sha256": "13d9b0e86d40c5d2656e3b569d2caa2a0a0d3209ae8f83cda155d545a301ed96"
+      },
+      {
+        "path": "papers/paper34/references-v1.bib",
+        "sha256": "464416747bc2f1c4641d1abbfb1e9585a8fe1bcc22a479dfedd37a4ddfd81d8c"
+      }
+    ]
+  },
+  "nonclaims": [
+    "local closure verification is not independent validation",
+    "finite replay is not an all-n proof",
+    "Lean does not prove guarded all-n reachability or dihedral orientation classification",
+    "the receipt does not establish arbitrary-branch or multiple-lane survivor classification",
+    "the receipt does not occur in its own closure"
+  ],
+  "content_sha256": "80c1a52b23a797d4bb4c981f9ab3c10963a198140b6318480d09bf34e3304c0e"
+}

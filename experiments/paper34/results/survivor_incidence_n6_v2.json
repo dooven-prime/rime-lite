@@ -1,0 +1,339 @@
+{
+  "schema": "rime.paper34.survivor-incidence-audit.v2",
+  "status": "FINITE_THEOREM_DISCOVERY_CONTROL",
+  "scope": {
+    "n": 6,
+    "delta": 1,
+    "source": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "branches_checked": 120,
+    "branch_fiber_size": 120,
+    "branch_scan_complete": true
+  },
+  "normalized_incidence_identity": {
+    "formula": "beta = epsilon_delta o p^u o a o lambda",
+    "same_witness_required": true
+  },
+  "identity_branch": {
+    "branch": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "reachable_lineage_states": 5,
+    "terminal_witnesses": 20,
+    "hittable_pairs": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        4
+      ]
+    ],
+    "survivor_spectrum_sizes": {
+      "0-1": 4,
+      "0-2": 0,
+      "0-3": 0,
+      "0-4": 4,
+      "1-2": 4,
+      "1-3": 0,
+      "1-4": 0,
+      "2-3": 4,
+      "2-4": 0,
+      "3-4": 4
+    },
+    "boundary_spectrum_sizes": {
+      "0-1": 4,
+      "0-2": 0,
+      "0-3": 0,
+      "0-4": 4,
+      "1-2": 4,
+      "1-3": 0,
+      "1-4": 0,
+      "2-3": 4,
+      "2-4": 0,
+      "3-4": 4
+    },
+    "survivor_digest": "995fac02ba3fc9bc764b6d15a271e8fbb4ac558d0bf228e56b9732a210a035b3"
+  },
+  "canonical_recovery": {
+    "source": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "consecutive_pairs": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        4
+      ]
+    ],
+    "survivors_per_pair": 4,
+    "total_boundary_incidences": 20,
+    "paper29_expected_total": 20,
+    "status": "MATCHED_CANONICAL_RECOVERY_CONTROL"
+  },
+  "identity_reflection_control": {
+    "left_branch": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "right_branch": [
+      1,
+      5,
+      4,
+      3,
+      2
+    ],
+    "same_hittable_pairs": true,
+    "hittable_pairs": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        4
+      ]
+    ],
+    "different_survivor_spectra": true,
+    "differing_pairs": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        4
+      ]
+    ],
+    "left_spectrum_sizes": {
+      "0-1": 4,
+      "0-4": 4,
+      "1-2": 4,
+      "2-3": 4,
+      "3-4": 4
+    },
+    "right_spectrum_sizes": {
+      "0-1": 8,
+      "0-4": 8,
+      "1-2": 8,
+      "2-3": 8,
+      "3-4": 8
+    },
+    "status": "BOUNDED_MATCHED_DIHEDRAL_CONTROL"
+  },
+  "identity_reflection_family_control": {
+    "min_n": 6,
+    "max_n": 9,
+    "rows": [
+      {
+        "n": 6,
+        "delta": 1,
+        "hittable_pairs": 5,
+        "identity_survivors_per_pair": 4,
+        "reflection_survivors_per_pair": 8
+      },
+      {
+        "n": 7,
+        "delta": 1,
+        "hittable_pairs": 5,
+        "identity_survivors_per_pair": 10,
+        "reflection_survivors_per_pair": 20
+      },
+      {
+        "n": 8,
+        "delta": 1,
+        "hittable_pairs": 5,
+        "identity_survivors_per_pair": 20,
+        "reflection_survivors_per_pair": 40
+      },
+      {
+        "n": 9,
+        "delta": 1,
+        "hittable_pairs": 5,
+        "identity_survivors_per_pair": 35,
+        "reflection_survivors_per_pair": 70
+      }
+    ],
+    "status": "BOUNDED_CONTROL_OF_SYMBOLIC_NONDESCENT_NOT_PROOF"
+  },
+  "one_lane_dihedral_family_control": {
+    "min_n": 6,
+    "max_n": 9,
+    "orientation_character": {
+      "rotation": "+1",
+      "reflection": "-1"
+    },
+    "rows": [
+      {
+        "n": 6,
+        "delta": 1,
+        "dihedral_branches_checked": 10,
+        "rotations_checked": 5,
+        "reflections_checked": 5,
+        "hittable_pairs": 5,
+        "positive_survivors_per_pair": 4,
+        "reflection_survivors_per_pair": 8,
+        "exact_orientation_spectra_matched": true
+      },
+      {
+        "n": 7,
+        "delta": 1,
+        "dihedral_branches_checked": 12,
+        "rotations_checked": 6,
+        "reflections_checked": 6,
+        "hittable_pairs": 5,
+        "positive_survivors_per_pair": 10,
+        "reflection_survivors_per_pair": 20,
+        "exact_orientation_spectra_matched": true
+      },
+      {
+        "n": 8,
+        "delta": 1,
+        "dihedral_branches_checked": 14,
+        "rotations_checked": 7,
+        "reflections_checked": 7,
+        "hittable_pairs": 5,
+        "positive_survivors_per_pair": 20,
+        "reflection_survivors_per_pair": 40,
+        "exact_orientation_spectra_matched": true
+      },
+      {
+        "n": 9,
+        "delta": 1,
+        "dihedral_branches_checked": 16,
+        "rotations_checked": 8,
+        "reflections_checked": 8,
+        "hittable_pairs": 5,
+        "positive_survivors_per_pair": 35,
+        "reflection_survivors_per_pair": 70,
+        "exact_orientation_spectra_matched": true
+      }
+    ],
+    "status": "BOUNDED_CONTROL_OF_DIHEDRAL_CLASSIFICATION_NOT_PROOF"
+  },
+  "pair_summary_non_descent": {
+    "same_hittable_pairs": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        4
+      ]
+    ],
+    "left_branch": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "right_branch": [
+      1,
+      5,
+      4,
+      3,
+      2
+    ],
+    "differing_pair": [
+      0,
+      1
+    ],
+    "left_spectrum_size": 4,
+    "right_spectrum_size": 8,
+    "first_only_left": null,
+    "first_only_right": [
+      4,
+      3,
+      2
+    ],
+    "status": "FINITE_MATCHED_NON_DESCENT_WITNESS"
+  },
+  "claim_boundary": [
+    "the normalized incidence identity is algebraic; finite replay is only a control",
+    "a finite matched pair proves non-descent only on the declared branch domain",
+    "absence of a matched pair is OPEN, not a descent theorem",
+    "raw survivor incidence does not establish typed transfer membership"
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "schema": "rime.paper-post-release-anchor.v1",
+  "paper_id": "PAPER34",
+  "release_version": "1.0",
+  "publication_status": "PUBLISHED",
+  "release_identity_claimed": true,
+  "anchor_role": "DOWNSTREAM_PUBLICATION_METADATA",
+  "release_tag": {
+    "name": "paper34-v1.0",
+    "tag_object_sha": "c70feae8b9e4ff2af4d92582829811980bc9ffe0",
+    "target_commit_sha": "9549fac962d5f2df6b911be2e2e46a5ade49620f"
+  },
+  "pre_release_evidence": [
+    {
+      "role": "release-manifest",
+      "path": "experiments/paper34/release-manifest.json",
+      "sha256_at_tag": "07ec7ada4026c0aca7c43736d5b387f548053c525f9ca8431e748887e1c4663b",
+      "size_at_tag": 3936,
+      "mutation_policy": "IMMUTABLE_TAG_BYTES",
+      "declared_state_at_tag": {
+        "schema": "rime.paper34.release-manifest.v1",
+        "status": "RELEASE_CANDIDATE",
+        "release_identity_claimed": false,
+        "validation_mode": "LOCAL_CLOSURE_VERIFICATION"
+      }
+    },
+    {
+      "role": "validation-receipt",
+      "path": "experiments/paper34/results/paper34_public_package_v1.validation-receipt.json",
+      "sha256_at_tag": "fc6ffff964a7ed2d8ba2b8d725f149203b0a7fa272b783aa81d05967533722e0",
+      "size_at_tag": 9601,
+      "mutation_policy": "IMMUTABLE_TAG_BYTES",
+      "declared_state_at_tag": {
+        "schema": "rime.paper34.public-package-receipt.v1",
+        "status": "PASS",
+        "validation_mode": "LOCAL_CLOSURE_VERIFICATION"
+      }
+    }
+  ],
+  "post_release_supplements": [],
+  "external_anchor": {
+    "provider": "Zenodo",
+    "doi": "10.5281/zenodo.23072915",
+    "record_id": "23072915",
+    "record_url": "https://zenodo.org/records/23072915",
+    "publication_date": "2026-10-01",
+    "deposited_files": [
+      {
+        "remote_name": "paper34_arxiv.pdf",
+        "source_path_at_tag": "papers/paper34/paper34_arxiv.pdf",
+        "sha256": "13d9b0e86d40c5d2656e3b569d2caa2a0a0d3209ae8f83cda155d545a301ed96",
+        "size": 110974
+      }
+    ]
+  },
+  "versioned_repin_policy": {
+    "pre_release_manifest_mutation_allowed": false,
+    "pre_release_receipt_mutation_allowed": false,
+    "current_head_fallback_allowed": false,
+    "owner_change_requires_new_owner_version": true,
+    "consumer_change_requires_new_consumer_version_and_repin": true,
+    "shared_file_in_place_update_allowed": false
+  },
+  "authority_boundary": [
+    "The anchor establishes release-tag, evidence-root, and deposited-file byte identity only.",
+    "A DOI anchors only files actually deposited in that record.",
+    "Local closure verification is not independent mathematical validation.",
+    "Publication anchoring does not establish theorem truth or scientific adequacy.",
+    "The anchor is downstream metadata and is not part of the release tag it records."
+  ],
+  "notes": [
+    "The tagged v1.0 producer exposes --delta values in 1..n-1, but its canonical recovery and retained family controls are implemented only for delta=1. Non-unit delta invocations fail before producing an artifact. This is a CLI admission defect, not a change to the published theorem surface or retained delta=1 result. The tagged producer, manifest, and receipt remain immutable; correcting the option contract requires a new owner version."
+  ]
+}

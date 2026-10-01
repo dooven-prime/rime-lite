@@ -118,7 +118,7 @@ research target; Paper VII does not assert a generic completion theorem.
   and coarse-state closure on a source-addressed MaleCNS carrier. It does not
   inherit or extend the SOF protocol authority chain.
 
-### Papers XX--XXXIII: Independent Post-Protocol Mathematics
+### Papers XX--XXXIV: Independent Post-Protocol Mathematics
 
 Papers XVII--XIX are intentionally unused in the public numbered sequence.
 Paper XX begins a separately scoped mathematical line with all-depth
@@ -182,6 +182,12 @@ that order breaking confined to the punctured lane need not promote complete
 ordinary-lane contexts. Break-set quotient non-descent, typed projectability,
 recursive return, credit settlement, and reset bounds remain outside its
 theorem surface.
+Paper XXXIV retains the complete labelled terminal incidence after the first
+strict exit. In the one-lane dihedral family, rotation and reflection branches
+have the same hittable source pairs but different survivor-orientation
+spectra. Arbitrary-branch and multiple-lane survivor classification, typed
+projectability, recursive return, credit settlement, and reset bounds remain
+outside its theorem surface.
 These papers consume no protocol authority and do not reopen Papers VIII--XV.
 Published version-1 identities are maintained in the repository's canonical
 DOI index.
@@ -205,7 +211,10 @@ dihedral closure and the complete one-lane branch-permutation dichotomy; it
 does not inherit typed transfer, recursive-return, or reset authority. Paper
 XXXIII owns source-addressed stabilizer incidence and its capacity-isolated
 promotion obstruction; it does not promote separate existential witnesses or
-inherit typed transfer, recursive-return, or reset authority. Results
+inherit typed transfer, recursive-return, or reset authority. Paper XXXIV
+owns terminal orientation and the one-lane dihedral survivor-incidence
+classification; it does not infer survivor placement from pair data outside
+that declared family. Results
 or evidence do not transfer between these owners without an explicit theorem
 or source-addressed import.
 

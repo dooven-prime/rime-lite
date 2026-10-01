@@ -1,0 +1,102 @@
+{
+  "schema": "rime.paper34.release-manifest.v1",
+  "paper_id": "PAPER34",
+  "release_version": "1.0",
+  "status": "RELEASE_CANDIDATE",
+  "release_identity_claimed": false,
+  "validation_mode": "LOCAL_CLOSURE_VERIFICATION",
+  "receipt_self_exclusion": true,
+  "digest_policy": {
+    "algorithm": "sha256",
+    "scope": "exact_file_bytes",
+    "path_resolution": "exact repository-relative path",
+    "wildcards_allowed": false,
+    "absolute_paths_allowed": false,
+    "current_head_fallback_allowed": false
+  },
+  "artifacts": [
+    {
+      "role": "manuscript",
+      "closure_class": "normative-manuscript-build",
+      "path": "papers/paper34/Paper XXXIV.md",
+      "sha256": "327e139a221458add8c909f4f091ba9fe730ee39c520419b137dfd9253e3215f"
+    },
+    {
+      "role": "reader-pdf",
+      "closure_class": "normative-manuscript-build",
+      "path": "papers/paper34/paper34_arxiv.pdf",
+      "sha256": "13d9b0e86d40c5d2656e3b569d2caa2a0a0d3209ae8f83cda155d545a301ed96"
+    },
+    {
+      "role": "bibliography",
+      "closure_class": "normative-manuscript-build",
+      "path": "papers/paper34/references-v1.bib",
+      "sha256": "464416747bc2f1c4641d1abbfb1e9585a8fe1bcc22a479dfedd37a4ddfd81d8c"
+    },
+    {
+      "role": "development-manifest",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper34/development-manifest.json",
+      "sha256": "73c407b967b76c6f68356b08fe055f37389b7cac0995e83f7b5c652010d2258f"
+    },
+    {
+      "role": "release-environment",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper34/release-environment.json",
+      "sha256": "6d615b459caa062d0ae22ab9b2876e6cf1d8011016e1276c082728b0a4cbdc35"
+    },
+    {
+      "role": "public-package-validator",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper34/validation/validate_public_package.py",
+      "sha256": "e16f5f3a6e1deae4a47c5b2e98d5aa392d5df5c6ea57edd495b80329d719b61c"
+    },
+    {
+      "role": "evidence-readme",
+      "closure_class": "public-package-documentation",
+      "path": "experiments/paper34/README.md",
+      "sha256": "959c7ecf56856fb92216507ed0b41449a58239b59e918f669ca5db3bb214bcbe"
+    }
+  ],
+  "nested_closures": {
+    "development_evidence": {
+      "manifest": "experiments/paper34/development-manifest.json",
+      "release_identity_claimed": false
+    }
+  },
+  "claim_boundary": [
+    "the all-n one-lane dihedral survivor classification is a manuscript proof",
+    "finite replay is a bounded consistency control, not an all-n proof",
+    "Lean consumes rather than proves guarded all-n reachability and dihedral orientation classification",
+    "equal Safe-Hit and fused-pair data do not determine survivor incidence",
+    "no arbitrary-branch or multiple-lane survivor classification is claimed",
+    "raw survivor incidence does not imply typed transfer membership or projectability",
+    "local closure verification is not independent mathematical validation"
+  ],
+  "release_candidate_date": "2026-10-01",
+  "excluded_from_package_inventory": [
+    "experiments/paper34/results/paper34_public_package_v1.validation-receipt.json",
+    "papers/paper34/DIRECTION_DRAFT.md",
+    "papers/paper34/Paper XXXIV - 260930.md",
+    "experiments/paper34/lean/.lake/**",
+    "**/__pycache__/**",
+    "**/*.pyc"
+  ],
+  "closure_policy": {
+    "classes": [
+      "normative-manuscript-build",
+      "theorem-facing-computational",
+      "public-package-documentation"
+    ],
+    "release_identity_classes": [
+      "normative-manuscript-build",
+      "theorem-facing-computational"
+    ],
+    "package_inventory_classes": [
+      "normative-manuscript-build",
+      "theorem-facing-computational",
+      "public-package-documentation"
+    ],
+    "note": "The paper-owned development manifest is a nested exact-byte evidence closure. Public documentation is integrity-checked but excluded from release identity."
+  }
+}
