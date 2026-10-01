@@ -71,6 +71,35 @@ def exact_tag_sha(root: Path, tag: str) -> str:
     return result.stdout.strip()
 
 
+def anchored_tag_commit(root: Path, paper_id: str, tag: str) -> str:
+    anchor_path = root / "docs" / "release-anchors" / f"{tag}.json"
+    if not anchor_path.is_file():
+        raise ValueError(f"release anchor is missing for {paper_id}: {anchor_path}")
+    try:
+        anchor = json.loads(anchor_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as error:
+        raise ValueError(f"release anchor is unreadable for {paper_id}: {error}") from error
+    release_tag = anchor.get("release_tag")
+    if anchor.get("paper_id") != paper_id or not isinstance(release_tag, dict):
+        raise ValueError(f"release anchor identity is invalid for {paper_id}")
+    if release_tag.get("name") != tag:
+        raise ValueError(f"release anchor tag name mismatch for {paper_id}")
+
+    actual_tag_sha = exact_tag_sha(root, tag)
+    actual_commit = subprocess.run(
+        ["git", "rev-parse", f"refs/tags/{tag}^{{commit}}"],
+        cwd=root,
+        check=True,
+        capture_output=True,
+        text=True,
+    ).stdout.strip()
+    if release_tag.get("tag_object_sha") != actual_tag_sha:
+        raise ValueError(f"release tag object identity mismatch for {paper_id}")
+    if release_tag.get("target_commit_sha") != actual_commit:
+        raise ValueError(f"release tag target identity mismatch for {paper_id}")
+    return actual_commit
+
+
 def file_digest(path: Path) -> str:
     digest = hashlib.sha256()
     with path.open("rb") as stream:
@@ -87,10 +116,9 @@ def tracked_snapshot(root: Path) -> dict[str, str]:
     }
 
 
-def materialize_tag(root: Path, tag: str, destination: Path) -> None:
-    exact_tag_sha(root, tag)
+def materialize_commit(root: Path, commit_sha: str, destination: Path) -> None:
     archive = subprocess.run(
-        ["git", "archive", "--format=tar", f"refs/tags/{tag}"],
+        ["git", "archive", "--format=tar", commit_sha],
         cwd=root,
         check=True,
         capture_output=True,
@@ -156,10 +184,10 @@ def validate_gate(payload: object) -> dict[str, Any]:
 
 def replay_source(repository: Path, source: dict[str, Any], timeout: int) -> None:
     tag = source["release_tag"]
-    exact_tag_sha(repository, tag)
+    commit_sha = anchored_tag_commit(repository, source["paper_id"], tag)
     with tempfile.TemporaryDirectory(prefix=f"rime-{tag}-") as directory:
         checkout = Path(directory) / "repository"
-        materialize_tag(repository, tag, checkout)
+        materialize_commit(repository, commit_sha, checkout)
         before = tracked_snapshot(checkout)
 
         receipt_path = checkout / checked_relative_path(source["receipt"])

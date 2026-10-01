@@ -14,6 +14,16 @@ def git(root: Path, *args: str) -> None:
     subprocess.run(["git", *args], cwd=root, check=True, capture_output=True)
 
 
+def git_text(root: Path, *args: str) -> str:
+    return subprocess.run(
+        ["git", *args],
+        cwd=root,
+        check=True,
+        capture_output=True,
+        text=True,
+    ).stdout.strip()
+
+
 def source() -> dict[str, object]:
     return {
         "paper_id": "PAPER31",
@@ -53,7 +63,20 @@ def make_repository(root: Path, validator_body: str) -> None:
     (root / "validator.py").write_text(validator_body, encoding="utf-8")
     git(root, "add", ".")
     git(root, "commit", "-m", "release fixture")
-    git(root, "tag", "paper31-v1.0")
+    git(root, "tag", "-a", "paper31-v1.0", "-m", "Paper XXXI v1.0")
+    anchor = {
+        "paper_id": "PAPER31",
+        "release_tag": {
+            "name": "paper31-v1.0",
+            "tag_object_sha": git_text(root, "rev-parse", "refs/tags/paper31-v1.0"),
+            "target_commit_sha": git_text(
+                root, "rev-parse", "refs/tags/paper31-v1.0^{commit}"
+            ),
+        },
+    }
+    anchor_path = root / "docs" / "release-anchors" / "paper31-v1.0.json"
+    anchor_path.parent.mkdir(parents=True)
+    anchor_path.write_text(json.dumps(anchor) + "\n", encoding="utf-8")
 
 
 def test_gate_uses_tagged_bytes_and_clears_pythonoptimize(monkeypatch) -> None:
@@ -116,6 +139,36 @@ print(\"PASS finite truth\")
             assert "modified tagged source bytes" in str(error)
         else:
             raise AssertionError("tagged-source intervention was accepted")
+
+
+def test_gate_rejects_force_moved_tag() -> None:
+    with tempfile.TemporaryDirectory() as directory:
+        root = Path(directory)
+        make_repository(root, "print('PASS finite truth')\n")
+        (root / "later.txt").write_text("later\n", encoding="utf-8")
+        git(root, "add", "later.txt")
+        git(root, "commit", "-m", "later commit")
+        git(root, "tag", "-f", "-a", "paper31-v1.0", "-m", "moved tag")
+        try:
+            replay_source(root, source(), timeout=30)
+        except ValueError as error:
+            assert "release tag object identity mismatch" in str(error)
+        else:
+            raise AssertionError("force-moved release tag was accepted")
+
+
+def test_gate_rejects_lightweight_tag_recreation() -> None:
+    with tempfile.TemporaryDirectory() as directory:
+        root = Path(directory)
+        make_repository(root, "print('PASS finite truth')\n")
+        git(root, "tag", "-d", "paper31-v1.0")
+        git(root, "tag", "paper31-v1.0")
+        try:
+            replay_source(root, source(), timeout=30)
+        except ValueError as error:
+            assert "release tag object identity mismatch" in str(error)
+        else:
+            raise AssertionError("lightweight release-tag recreation was accepted")
 
 
 def test_gate_semantic_constraints_are_fail_closed() -> None:

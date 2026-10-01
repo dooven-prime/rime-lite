@@ -2,9 +2,11 @@
 
 A consuming paper must not inherit a historical receipt's `replay: true`
 field as if the current verification run had reproduced that result. The
-inheritance gate materializes each declared owner tag in an isolated temporary
-directory, checks the exact tagged receipt, runs the tagged validator with its
-replay option, and requires explicit truth markers from the nested checks.
+inheritance gate compares each declared tag object and target commit with the
+paper's post-release anchor, materializes the verified commit SHA in an
+isolated temporary directory, checks the exact tagged receipt, runs the tagged
+validator with its replay option, and requires explicit truth markers from the
+nested checks. A moved tag or a tag recreated as a lightweight ref is rejected.
 
 The gate clears `PYTHONOPTIMIZE`, keeps current-HEAD bytes out of the historical
 checkout, and rejects any replay that changes files present in the tag. New
@@ -19,8 +21,8 @@ python tools/release/verify_inheritance_gate.py \
 ```
 
 This verifies the bounded computational and formalization controls of Papers
-XXXI and XXXII. It does not import their theorem scope automatically. The
-consumer must still bind the exact owner releases and state a paper-local
+XXIX, XXXI, and XXXII. It does not import their theorem scope automatically.
+The consumer must still bind the exact owner releases and state a paper-local
 mathematical dependency.
 
 The Paper XXXIV semantic gate is also fail closed: every theorem-facing domain

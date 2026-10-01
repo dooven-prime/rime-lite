@@ -4,6 +4,24 @@
   "status": "PRE_INHERITANCE_GATE",
   "sources": [
     {
+      "paper_id": "PAPER29",
+      "release_tag": "paper29-v1.0",
+      "validator": "experiments/paper29/validation/validate_public_package.py",
+      "arguments": ["--replay"],
+      "receipt": "experiments/paper29/results/paper29_public_package_v1.validation-receipt.json",
+      "required_replay": {
+        "development_closure_verified": true,
+        "finite_exact_replay": true,
+        "lean_elaboration_replayed": true
+      },
+      "required_stdout": [
+        "PASS Paper XXIX canonical raw audit",
+        "PASS Paper XXIX Lean spine: compiled",
+        "PASS Paper XXIX development package: full replay",
+        "PASS Paper XXIX public package"
+      ]
+    },
+    {
       "paper_id": "PAPER31",
       "release_tag": "paper31-v1.0",
       "validator": "experiments/paper31/validation/validate_public_package.py",
