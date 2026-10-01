@@ -68,5 +68,7 @@
     "Publication anchoring does not establish theorem truth or scientific adequacy.",
     "The anchor is downstream metadata and is not part of the release tag it records."
   ],
-  "notes": []
+  "notes": [
+    "The tagged v1.0 producer exposes --delta values in 1..n-1, but its canonical recovery and retained family controls are implemented only for delta=1. Non-unit delta invocations fail before producing an artifact. This is a CLI admission defect, not a change to the published theorem surface or retained delta=1 result. The tagged producer, manifest, and receipt remain immutable; correcting the option contract requires a new owner version."
+  ]
 }
