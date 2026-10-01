@@ -1,0 +1,120 @@
+{
+  "schema": "rime.paper34.development-manifest.v1",
+  "paper_id": "PAPER34",
+  "status": "DRAFT_PAPER_OWNED_CLOSURE",
+  "release_identity_claimed": false,
+  "validation_mode": "LOCAL_CLOSURE_VERIFICATION",
+  "digest_policy": {
+    "algorithm": "sha256",
+    "scope": "exact_file_bytes",
+    "path_resolution": "exact repository-relative path",
+    "wildcards_allowed": false,
+    "absolute_paths_allowed": false
+  },
+  "artifacts": [
+    {
+      "role": "canonical-manuscript",
+      "path": "papers/paper34/Paper XXXIV.md",
+      "sha256": "327e139a221458add8c909f4f091ba9fe730ee39c520419b137dfd9253e3215f"
+    },
+    {
+      "role": "bibliography",
+      "path": "papers/paper34/references-v1.bib",
+      "sha256": "464416747bc2f1c4641d1abbfb1e9585a8fe1bcc22a479dfedd37a4ddfd81d8c"
+    },
+    {
+      "role": "package-documentation",
+      "path": "experiments/paper34/README.md",
+      "sha256": "959c7ecf56856fb92216507ed0b41449a58239b59e918f669ca5db3bb214bcbe"
+    },
+    {
+      "role": "finite-control-producer",
+      "path": "experiments/paper34/survivor_incidence_audit.py",
+      "sha256": "af87d272308bf78a8f4049a4b6dc232670c58f1dacfe98541f318fd571d09489"
+    },
+    {
+      "role": "finite-control-result",
+      "path": "experiments/paper34/results/survivor_incidence_n6_v2.json",
+      "sha256": "bb65990f4934f06c1a5e825bc7de658780a6201bb82192b9bc70691bf57995a2"
+    },
+    {
+      "role": "formal-theorem-note",
+      "path": "experiments/paper34/ONE_LANE_DIHEDRAL_SURVIVOR_CLASSIFICATION.md",
+      "sha256": "d7fee5544d81e34859ac6aa4035d273077fa83e55f8cc9bc853b9b40147606ca"
+    },
+    {
+      "role": "lean-documentation",
+      "path": "experiments/paper34/lean/README.md",
+      "sha256": "3d6c3a0c94e0e9cffa1d3bba9df066722fe9b60e0d305179ba610847b7c563ce"
+    },
+    {
+      "role": "lean-entrypoint",
+      "path": "experiments/paper34/lean/Paper34.lean",
+      "sha256": "7ea6d71ab5b6978b5d766b1040139e3f9ab8050a785a9e167a11839b53dde510"
+    },
+    {
+      "role": "lean-incidence-spine",
+      "path": "experiments/paper34/lean/Paper34/Incidence.lean",
+      "sha256": "6a1caff5a4ea05ba2e1f04fd124ddaff968b9c7b5c10da96121182450f82be13"
+    },
+    {
+      "role": "lean-orientation-spectrum-spine",
+      "path": "experiments/paper34/lean/Paper34/OrientationSpectrum.lean",
+      "sha256": "d9994dfce13394aa811131eef3bce4472f3104ff4fb86f7a3dd74aad827895e8"
+    },
+    {
+      "role": "lean-formalization-manifest",
+      "path": "experiments/paper34/lean/formalization-manifest.json",
+      "sha256": "6795cf3840c979a8d77ff984648b4f62517abad42f81a6a0ef189319115f6a73"
+    },
+    {
+      "role": "lean-project",
+      "path": "experiments/paper34/lean/lakefile.toml",
+      "sha256": "496617f3a4e953452dc66eb896d3dd79d58a7bb2870946f262389286c03bf7ef"
+    },
+    {
+      "role": "lean-dependency-lock",
+      "path": "experiments/paper34/lean/lake-manifest.json",
+      "sha256": "b23f233a8b0e61fdaebb0da65db213fbf40836302efe854994f7001ec6ea5db9"
+    },
+    {
+      "role": "lean-toolchain",
+      "path": "experiments/paper34/lean/lean-toolchain",
+      "sha256": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b"
+    },
+    {
+      "role": "lean-formalization-validator",
+      "path": "experiments/paper34/validation/validate_lean_formalization.py",
+      "sha256": "b6781b50b3fe3f5adac6e9dbb6c5ea2942034aba95bc4b5381a2432289895308"
+    },
+    {
+      "role": "source-validator",
+      "path": "experiments/paper34/validation/validate_source.py",
+      "sha256": "8e4383d102c4e262abf143fa9113d2c6cba34d556941a5eac96a5cda5925eb76"
+    },
+    {
+      "role": "finite-control-validator",
+      "path": "experiments/paper34/validation/validate_survivor_incidence_audit.py",
+      "sha256": "2e0937bd915c1f0c7bde49d644a6544f3fc5c085aec254c5b38726f9cdc0b1d6"
+    },
+    {
+      "role": "package-validator",
+      "path": "experiments/paper34/validation/validate_package.py",
+      "sha256": "9b8a10350a0d0dd75d1f6dcf6e8d79517674b20a2cf8c2fec152be3df3347754"
+    }
+  ],
+  "claim_boundary": [
+    "the normalized incidence transport and dihedral survivor classification are manuscript proofs",
+    "Lean formalizes only the data-independent incidence, counting, and quotient-non-descent spine",
+    "finite replay is not an all-n proof",
+    "the original raw-event transport requires supplied Paper XXXI branch-realization data",
+    "pair-level Safe-Hit does not determine survivor incidence",
+    "raw survivor incidence does not imply typed transfer membership or projectability"
+  ],
+  "excluded_from_closure": [
+    "papers/paper34/DIRECTION_DRAFT.md",
+    "experiments/paper34/lean/.lake/**",
+    "**/__pycache__/**",
+    "**/*.pyc"
+  ]
+}
