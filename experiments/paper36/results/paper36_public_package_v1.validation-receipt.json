@@ -1,0 +1,140 @@
+{
+  "schema": "rime.paper36.public-package-receipt.v1",
+  "artifact_id": "PAPER36-V1-PUBLIC-PACKAGE-VALIDATED",
+  "status": "PASS",
+  "validation_mode": "LOCAL_CLOSURE_VERIFICATION",
+  "receipt_self_exclusion": true,
+  "replay": {
+    "development_closure_verified": true,
+    "manuscript_source_audited": true,
+    "finite_signed_lane_control_replayed": true,
+    "external_zenodo_anchor_checked": false
+  },
+  "manifest_binding": {
+    "path": "experiments/paper36/release-manifest.json",
+    "sha256": "a741786fc47012f6aeeac213e0318a8db9505227e25feaf23b206f6e7d6b01b6"
+  },
+  "nested_closures": {
+    "development_evidence": {
+      "artifact_count": 6,
+      "closure_digest": "f87bdc27e264538ccf7b446ddf8950293c05c2e4ee082c5bdf2b0c162af99e23",
+      "ordered_artifacts": [
+        {
+          "path": "experiments/paper36/results/signed_lane_audit_v1.json",
+          "sha256": "ed50a1c861dfdd392afef45181d67d0d4bf28743f10913983909c83f92cef601"
+        },
+        {
+          "path": "experiments/paper36/seal_manifest.py",
+          "sha256": "5de4b6dff96bd64ec8dbbb7bd3fab82cf6441575b769ec7c3942f04b48a4fe6c"
+        },
+        {
+          "path": "experiments/paper36/signed_lane_audit.py",
+          "sha256": "bd08f7686eb9487a0574812d878122cb49d4285dd2c9dcaa1b4535801252a64d"
+        },
+        {
+          "path": "experiments/paper36/validation/validate_package.py",
+          "sha256": "ce262346bb19347c6262751f77a146402733efe284d55da1f81e40d309f47ab9"
+        },
+        {
+          "path": "papers/paper36/Paper XXXVI.md",
+          "sha256": "614f0808875f8ee1df37e9ab22ea2af2f49eb7dd26e2b65235caf64c402db28a"
+        },
+        {
+          "path": "papers/paper36/references-v1.bib",
+          "sha256": "b4ae8c0f228cc3dd69700cbb87c668db659a1c5378004ab67e5bdefdda5d6f11"
+        }
+      ]
+    }
+  },
+  "release_identity": {
+    "artifact_count": 6,
+    "closure_digest": "133ae844ac294bbd6f4196d53f158d5221892899964ed7c618500e29514227d9",
+    "ordered_artifacts": [
+      {
+        "path": "experiments/paper36/development-manifest.json",
+        "sha256": "45bd6c516113db50dbc23adfa7392e0e5e6149e5ecea865ce464d732c03e8ae4"
+      },
+      {
+        "path": "experiments/paper36/release-environment.json",
+        "sha256": "493a11baf2b43b63ea7ddfad0c739d2b614aae6d15f5735ad50da068eb861640"
+      },
+      {
+        "path": "experiments/paper36/validation/validate_release.py",
+        "sha256": "b6365ea5c5b8538eff27468b0c1b3dd80a315df76fd1f4614fafe84864f63edb"
+      },
+      {
+        "path": "papers/paper36/Paper XXXVI.md",
+        "sha256": "614f0808875f8ee1df37e9ab22ea2af2f49eb7dd26e2b65235caf64c402db28a"
+      },
+      {
+        "path": "papers/paper36/paper36_arxiv.pdf",
+        "sha256": "af8df652bb4ff20303a7d8083fd5f4e6e722d0a732e46ae47147e4c57e081167"
+      },
+      {
+        "path": "papers/paper36/references-v1.bib",
+        "sha256": "b4ae8c0f228cc3dd69700cbb87c668db659a1c5378004ab67e5bdefdda5d6f11"
+      }
+    ]
+  },
+  "package_inventory": {
+    "artifact_count": 12,
+    "closure_digest": "4eafe4a68a3c3e30976594e29e0bf87d87a8bd8f2c99428dedf5bcf584b13b09",
+    "ordered_artifacts": [
+      {
+        "path": "experiments/paper36/README.md",
+        "sha256": "a7557714428476e5b1a59fc441bfda02b571c70929fc2e321daff6b1505693b8"
+      },
+      {
+        "path": "experiments/paper36/development-manifest.json",
+        "sha256": "45bd6c516113db50dbc23adfa7392e0e5e6149e5ecea865ce464d732c03e8ae4"
+      },
+      {
+        "path": "experiments/paper36/release-environment.json",
+        "sha256": "493a11baf2b43b63ea7ddfad0c739d2b614aae6d15f5735ad50da068eb861640"
+      },
+      {
+        "path": "experiments/paper36/release-manifest.json",
+        "sha256": "a741786fc47012f6aeeac213e0318a8db9505227e25feaf23b206f6e7d6b01b6"
+      },
+      {
+        "path": "experiments/paper36/results/signed_lane_audit_v1.json",
+        "sha256": "ed50a1c861dfdd392afef45181d67d0d4bf28743f10913983909c83f92cef601"
+      },
+      {
+        "path": "experiments/paper36/seal_manifest.py",
+        "sha256": "5de4b6dff96bd64ec8dbbb7bd3fab82cf6441575b769ec7c3942f04b48a4fe6c"
+      },
+      {
+        "path": "experiments/paper36/signed_lane_audit.py",
+        "sha256": "bd08f7686eb9487a0574812d878122cb49d4285dd2c9dcaa1b4535801252a64d"
+      },
+      {
+        "path": "experiments/paper36/validation/validate_package.py",
+        "sha256": "ce262346bb19347c6262751f77a146402733efe284d55da1f81e40d309f47ab9"
+      },
+      {
+        "path": "experiments/paper36/validation/validate_release.py",
+        "sha256": "b6365ea5c5b8538eff27468b0c1b3dd80a315df76fd1f4614fafe84864f63edb"
+      },
+      {
+        "path": "papers/paper36/Paper XXXVI.md",
+        "sha256": "614f0808875f8ee1df37e9ab22ea2af2f49eb7dd26e2b65235caf64c402db28a"
+      },
+      {
+        "path": "papers/paper36/paper36_arxiv.pdf",
+        "sha256": "af8df652bb4ff20303a7d8083fd5f4e6e722d0a732e46ae47147e4c57e081167"
+      },
+      {
+        "path": "papers/paper36/references-v1.bib",
+        "sha256": "b4ae8c0f228cc3dd69700cbb87c668db659a1c5378004ab67e5bdefdda5d6f11"
+      }
+    ]
+  },
+  "nonclaims": [
+    "receipt validation is local closure verification, not independent validation",
+    "bounded replay does not prove the all-g theorems",
+    "the receipt does not depend on itself",
+    "Zenodo deposit integrity is checked separately from this local receipt"
+  ],
+  "content_sha256": "a7446627fa8c9194f1b5ed51b20855d062d4d460f9c65cdfc23a5f70e8a02adf"
+}

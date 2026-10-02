@@ -118,7 +118,7 @@ research target; Paper VII does not assert a generic completion theorem.
   and coarse-state closure on a source-addressed MaleCNS carrier. It does not
   inherit or extend the SOF protocol authority chain.
 
-### Papers XX--XXXV: Independent Post-Protocol Mathematics
+### Papers XX--XXXVI: Independent Post-Protocol Mathematics
 
 Papers XVII--XIX are intentionally unused in the public numbered sequence.
 Paper XX begins a separately scoped mathematical line with all-depth
@@ -192,6 +192,10 @@ Paper XXXV identifies the one-lane order-phase survivor frontier for declared
 branch returns. Its six-point finite audit and partial Lean spine support the
 all-`n` manuscript proof without replacing it; typed transfer and reset
 authority remain outside its theorem surface.
+Paper XXXVI works in a declared multi-lane full-lane regime. A signed lane-exit
+graph determines concrete source-consecutive exits and survivor placements.
+Finite checks for two small values of the lane parameter do not establish the
+all-`g` theorem or a typed-transfer conclusion.
 These papers consume no protocol authority and do not reopen Papers VIII--XV.
 Published version-1 identities are maintained in the repository's canonical
 DOI index.
@@ -219,7 +223,9 @@ inherit typed transfer, recursive-return, or reset authority. Paper XXXIV
 owns terminal orientation and the one-lane dihedral survivor-incidence
 classification; it does not infer survivor placement from pair data outside
 that declared family. Paper XXXV owns its order-phase survivor classification
-without re-owning the preceding lane-order or dihedral theorems. Results
+without re-owning the preceding lane-order or dihedral theorems. Paper XXXVI
+owns the signed exit and survivor frontier in its full-lane multi-lane regime.
+Results
 or evidence do not transfer between these owners without an explicit theorem
 or source-addressed import.
 
