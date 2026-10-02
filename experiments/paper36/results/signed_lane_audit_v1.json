@@ -1,0 +1,60 @@
+{
+  "checks": [
+    "full-support guard",
+    "reachable signed phase classes",
+    "source-addressed survivor spectra",
+    "matched unsigned labelled graph and terminal spectra"
+  ],
+  "claim_boundary": "Bounded exact consistency control; manuscript proofs own all-g theorems.",
+  "domains": [
+    {
+      "branch_count": 240,
+      "delta": 2,
+      "exit_sign_cases": {
+        "both": 120,
+        "positive_only": 120
+      },
+      "g": 2,
+      "matched_identity_reflection": {
+        "same_fused_pairs": true,
+        "survivors_per_consecutive_pair": {
+          "identity": 1,
+          "reflection": 2
+        },
+        "unsigned_labelled_graph_equal": true
+      },
+      "n": 10,
+      "source_cases": 240
+    },
+    {
+      "branch_count": 4800,
+      "delta": 3,
+      "exit_sign_cases": {
+        "both": 7200,
+        "positive_only": 2400
+      },
+      "g": 3,
+      "matched_identity_reflection": {
+        "same_fused_pairs": true,
+        "survivors_per_consecutive_pair": {
+          "identity": 1,
+          "reflection": 2
+        },
+        "unsigned_labelled_graph_equal": true
+      },
+      "n": 15,
+      "source_cases": 9600
+    }
+  ],
+  "schema": "rime.paper36.signed-lane-audit.v1",
+  "scope": {
+    "branch_family": "all ordinary-lane permutations, signs, phases, and punctured-lane permutations",
+    "g_values": [
+      2,
+      3
+    ],
+    "source_policy": "every complete ordinary lane as C_src, five labels in positive order",
+    "word_length_budget": null
+  },
+  "status": "BOUNDED_EXHAUSTIVE_G2_G3_CONSISTENCY_CONTROL"
+}

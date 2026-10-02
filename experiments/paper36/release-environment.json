@@ -1,0 +1,15 @@
+{
+  "schema": "rime.paper36.release-environment.v1",
+  "captured_date": "2026-10-02",
+  "platform": "Windows x86_64",
+  "python": "3.13.0",
+  "pandoc": "3.6.4",
+  "xelatex": "MiKTeX-XeTeX 4.18 (MiKTeX 26.5)",
+  "bibtex": "MiKTeX-BibTeX 4.2 (MiKTeX 26.5)",
+  "digest_scope": "exact file bytes after repository checkout",
+  "notes": [
+    "The bounded producer and replay validator use the Python standard library only.",
+    "The PDF uses the repository-local Markdown-to-LaTeX build; generated TeX is excluded from release identity.",
+    "This record describes the build environment, not a portability guarantee."
+  ]
+}

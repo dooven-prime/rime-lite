@@ -1,0 +1,46 @@
+{
+  "artifacts": [
+    {
+      "path": "papers/paper36/Paper XXXVI.md",
+      "role": "canonical-manuscript",
+      "sha256": "614f0808875f8ee1df37e9ab22ea2af2f49eb7dd26e2b65235caf64c402db28a"
+    },
+    {
+      "path": "papers/paper36/references-v1.bib",
+      "role": "paper-local-bibliography",
+      "sha256": "b4ae8c0f228cc3dd69700cbb87c668db659a1c5378004ab67e5bdefdda5d6f11"
+    },
+    {
+      "path": "experiments/paper36/signed_lane_audit.py",
+      "role": "finite-producer",
+      "sha256": "bd08f7686eb9487a0574812d878122cb49d4285dd2c9dcaa1b4535801252a64d"
+    },
+    {
+      "path": "experiments/paper36/results/signed_lane_audit_v1.json",
+      "role": "bounded-result",
+      "sha256": "ed50a1c861dfdd392afef45181d67d0d4bf28743f10913983909c83f92cef601"
+    },
+    {
+      "path": "experiments/paper36/seal_manifest.py",
+      "role": "manifest-sealer",
+      "sha256": "5de4b6dff96bd64ec8dbbb7bd3fab82cf6441575b769ec7c3942f04b48a4fe6c"
+    },
+    {
+      "path": "experiments/paper36/validation/validate_package.py",
+      "role": "local-validator",
+      "sha256": "ce262346bb19347c6262751f77a146402733efe284d55da1f81e40d309f47ab9"
+    }
+  ],
+  "digest_policy": {
+    "absolute_paths_allowed": false,
+    "algorithm": "sha256",
+    "path_resolution": "exact repository-relative path",
+    "scope": "exact_file_bytes",
+    "wildcards_allowed": false
+  },
+  "paper_id": "PAPER36",
+  "release_identity_claimed": false,
+  "schema": "rime.paper36.development-manifest.v1",
+  "status": "DRAFT_PAPER_OWNED_CLOSURE",
+  "validation_mode": "LOCAL_CLOSURE_VERIFICATION"
+}
