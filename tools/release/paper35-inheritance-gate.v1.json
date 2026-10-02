@@ -1,0 +1,52 @@
+{
+  "schema": "rime.paper-inheritance-gate.v1",
+  "consumer": "PAPER35",
+  "status": "PRE_INHERITANCE_GATE",
+  "sources": [
+    {
+      "paper_id": "PAPER32",
+      "release_tag": "paper32-v1.0",
+      "validator": "experiments/paper32/validation/validate_public_package.py",
+      "arguments": ["--replay"],
+      "receipt": "experiments/paper32/results/paper32_public_package_v1.validation-receipt.json",
+      "required_replay": {
+        "development_closure_verified": true,
+        "source_audit_replayed": true,
+        "finite_bounded_replay": true
+      },
+      "required_stdout": [
+        "PASS Paper XXXII source audit",
+        "PASS Paper XXXII affine five-token audit: replayed",
+        "PASS Paper XXXII development package: full replay",
+        "PASS Paper XXXII public package"
+      ]
+    },
+    {
+      "paper_id": "PAPER34",
+      "release_tag": "paper34-v1.0",
+      "validator": "experiments/paper34/validation/validate_public_package.py",
+      "arguments": ["--replay"],
+      "receipt": "experiments/paper34/results/paper34_public_package_v1.validation-receipt.json",
+      "required_replay": {
+        "development_closure_verified": true,
+        "source_audit_replayed": true,
+        "finite_survivor_incidence_replayed": true,
+        "lean_formalization_compiled": true
+      },
+      "required_stdout": [
+        "PASS: Paper XXXIV manuscript source",
+        "PASS: Paper XXXIV survivor-incidence control (replayed)",
+        "PASS Paper XXXIV Lean incidence spine: compiled",
+        "PASS: Paper XXXIV paper-owned package",
+        "PASS Paper XXXIV public package"
+      ]
+    }
+  ],
+  "semantic_constraints": {
+    "domain_objects_must_reference_declared_concrete_state_space": true,
+    "abstract_witness_only_statement_sufficient": false,
+    "forbidden_as_admission_evidence": [
+      "separate_witnesses_do_not_combine"
+    ]
+  }
+}

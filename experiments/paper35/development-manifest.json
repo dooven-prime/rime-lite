@@ -1,0 +1,121 @@
+{
+  "schema": "rime.paper35.development-manifest.v1",
+  "paper_id": "PAPER35",
+  "status": "DRAFT_PAPER_OWNED_CLOSURE",
+  "release_identity_claimed": false,
+  "validation_mode": "LOCAL_CLOSURE_VERIFICATION",
+  "digest_policy": {
+    "algorithm": "sha256",
+    "scope": "exact_file_bytes",
+    "path_resolution": "exact repository-relative path",
+    "wildcards_allowed": false,
+    "absolute_paths_allowed": false
+  },
+  "artifacts": [
+    {
+      "role": "versioned-manuscript-candidate",
+      "path": "papers/paper35/Paper XXXV.md",
+      "sha256": "40682691a73d611cf1e080f0ab629adf2fc93d0d302d984bb8baed28c27afabf"
+    },
+    {
+      "role": "paper-local-bibliography",
+      "path": "papers/paper35/references-v1.bib",
+      "sha256": "e3bc57c738d58a2085e96bb5573c5e98a4278efe7b593f63ebbb88dd0c15a6e6"
+    },
+    {
+      "role": "supplementary-proof-artifact",
+      "path": "experiments/paper35/ONE_LANE_ORDER_PHASE_SURVIVOR_THEOREM.md",
+      "sha256": "b52d8c1399c891279c439aa01529e4148d5e62575045ee7b7c7aabdef87eeaf3"
+    },
+    {
+      "role": "lean-documentation",
+      "path": "experiments/paper35/lean/README.md",
+      "sha256": "c54f37594c73166bfc8ab5d1c2161396466bb8db8856a4f1155b1d55281d43f7"
+    },
+    {
+      "role": "lean-entrypoint",
+      "path": "experiments/paper35/lean/Paper35.lean",
+      "sha256": "dcb5d6a20a82ae1aba1971ccd51027d06bf53e5db9185182e0c4d8f771c42195"
+    },
+    {
+      "role": "lean-phase-collapse-spine",
+      "path": "experiments/paper35/lean/Paper35/PhaseCollapse.lean",
+      "sha256": "15d535f82cbfb920abd8f10a7381fad71c2ffe0e0dc8fb62043c42b7fd52adf1"
+    },
+    {
+      "role": "lean-left-coset-spine",
+      "path": "experiments/paper35/lean/Paper35/LeftCosets.lean",
+      "sha256": "f96e2857b5ecd7ccd13a92cf70f833570798da99335f96c92f748b2e6912b151"
+    },
+    {
+      "role": "lean-survivor-frontier-spine",
+      "path": "experiments/paper35/lean/Paper35/SurvivorFrontier.lean",
+      "sha256": "87db6e86eb6beb7524eaf186e2a5622360dc2814dc9eec7669ce5724032a18de"
+    },
+    {
+      "role": "lean-formalization-manifest",
+      "path": "experiments/paper35/lean/formalization-manifest.json",
+      "sha256": "1bc85566a04c6e6d20431d106ca9da5254995844cb977a60cadb5f44b15f4ad7"
+    },
+    {
+      "role": "lean-project",
+      "path": "experiments/paper35/lean/lakefile.toml",
+      "sha256": "f8c022adcd87331d118a38b1136456103f78799110de6c5a21820cb8feb069a1"
+    },
+    {
+      "role": "lean-dependency-lock",
+      "path": "experiments/paper35/lean/lake-manifest.json",
+      "sha256": "d0f2fce54a1440b4f978255671a0c1c07e2ef57b925ac63a6760e1e9d177a6a5"
+    },
+    {
+      "role": "lean-toolchain",
+      "path": "experiments/paper35/lean/lean-toolchain",
+      "sha256": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b"
+    },
+    {
+      "role": "finite-control-producer",
+      "path": "experiments/paper35/order_phase_audit.py",
+      "sha256": "3a284f43bf505153f7d9044429ba3b4d78039a46cbed00267424a3b1a32a1abc"
+    },
+    {
+      "role": "finite-control-result",
+      "path": "experiments/paper35/results/order_phase_n6_v2.json",
+      "sha256": "03a65adecbf0790e10c74362a87f58f1c7106ed4bc28faf8e444c62127f532a6"
+    },
+    {
+      "role": "lean-formalization-validator",
+      "path": "experiments/paper35/validation/validate_lean_formalization.py",
+      "sha256": "8278b13c6944a29b6fa835479daaac344fc6a03dd32e4fbd999a0c05800d2a4c"
+    },
+    {
+      "role": "manuscript-source-validator",
+      "path": "experiments/paper35/validation/validate_source.py",
+      "sha256": "3a8908b74b13d82939fa984978efaaad4bba84ab2c07b3659c4b3d9dcd86d35d"
+    },
+    {
+      "role": "finite-control-validator",
+      "path": "experiments/paper35/validation/validate_order_phase_audit.py",
+      "sha256": "fb129e51f16ceb8767a602b16da5f69d5b08577b66d6a5ce538c21bb25caa4ef"
+    },
+    {
+      "role": "package-validator",
+      "path": "experiments/paper35/validation/validate_package.py",
+      "sha256": "552f02919b81667a497fed285a542b7ccc779f35f50287f750cd34e128ccf94d"
+    }
+  ],
+  "claim_boundary": [
+    "the package exhausts only the declared six-point branch fiber",
+    "the eight double-coset classes and all replay checks are finite controls",
+    "the manuscript owns the all-n phase-collapse and survivor theorems; the theorem note is a digest-bound supplementary proof artifact",
+    "Lean formalizes only the data-independent phase logic, left-coset type boundary, survivor-product count, and forward invariant implication",
+    "the subgroup collapse uses the six-point no-internal-hole identification and is not the general order-subgroup theorem",
+    "the finite audit is not promoted as proof of an all-n theorem",
+    "raw terminal incidence does not imply typed transfer membership or projectability"
+  ],
+  "excluded_from_closure": [
+    "papers/paper35/DIRECTION_DRAFT.md",
+    "experiments/paper35/lean/.lake/**",
+    "**/__pycache__/**",
+    "**/*.pyc"
+  ]
+}
