@@ -1,0 +1,92 @@
+{
+  "schema": "rime.paper36.release-manifest.v1",
+  "paper_id": "PAPER36",
+  "release_version": "1.0",
+  "intended_release_tag": "paper36-v1.0",
+  "status": "RELEASE_CONTENT",
+  "release_identity_claimed": true,
+  "external_anchor_claimed": false,
+  "validation_mode": "LOCAL_CLOSURE_VERIFICATION",
+  "receipt_self_exclusion": true,
+  "digest_policy": {
+    "algorithm": "sha256",
+    "scope": "exact_file_bytes",
+    "path_resolution": "exact repository-relative path",
+    "wildcards_allowed": false,
+    "absolute_paths_allowed": false,
+    "current_head_fallback_allowed": false
+  },
+  "artifacts": [
+    {
+      "role": "manuscript",
+      "closure_class": "normative-manuscript-build",
+      "path": "papers/paper36/Paper XXXVI.md",
+      "sha256": "614f0808875f8ee1df37e9ab22ea2af2f49eb7dd26e2b65235caf64c402db28a"
+    },
+    {
+      "role": "reader-pdf",
+      "closure_class": "normative-manuscript-build",
+      "path": "papers/paper36/paper36_arxiv.pdf",
+      "sha256": "af8df652bb4ff20303a7d8083fd5f4e6e722d0a732e46ae47147e4c57e081167"
+    },
+    {
+      "role": "bibliography",
+      "closure_class": "normative-manuscript-build",
+      "path": "papers/paper36/references-v1.bib",
+      "sha256": "b4ae8c0f228cc3dd69700cbb87c668db659a1c5378004ab67e5bdefdda5d6f11"
+    },
+    {
+      "role": "development-manifest",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper36/development-manifest.json",
+      "sha256": "45bd6c516113db50dbc23adfa7392e0e5e6149e5ecea865ce464d732c03e8ae4"
+    },
+    {
+      "role": "release-environment",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper36/release-environment.json",
+      "sha256": "493a11baf2b43b63ea7ddfad0c739d2b614aae6d15f5735ad50da068eb861640"
+    },
+    {
+      "role": "release-validator",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper36/validation/validate_release.py",
+      "sha256": "b6365ea5c5b8538eff27468b0c1b3dd80a315df76fd1f4614fafe84864f63edb"
+    },
+    {
+      "role": "evidence-readme",
+      "closure_class": "public-package-documentation",
+      "path": "experiments/paper36/README.md",
+      "sha256": "a7557714428476e5b1a59fc441bfda02b571c70929fc2e321daff6b1505693b8"
+    }
+  ],
+  "nested_closures": {
+    "development_evidence": {
+      "manifest": "experiments/paper36/development-manifest.json",
+      "release_identity_claimed": false
+    }
+  },
+  "closure_policy": {
+    "classes": [
+      "normative-manuscript-build",
+      "theorem-facing-computational",
+      "public-package-documentation"
+    ],
+    "release_identity_classes": [
+      "normative-manuscript-build",
+      "theorem-facing-computational"
+    ],
+    "package_inventory_classes": [
+      "normative-manuscript-build",
+      "theorem-facing-computational",
+      "public-package-documentation"
+    ]
+  },
+  "claim_boundary": [
+    "all-g signed phase descent and survivor incidence are manuscript proofs",
+    "the g=2,3 replay is a bounded consistency control, not an all-g proof",
+    "full-stabilizer and partial-lane frontiers are not classified",
+    "raw incidence gives no typed transfer or recursive-return authority",
+    "local closure verification is not independent mathematical validation"
+  ]
+}

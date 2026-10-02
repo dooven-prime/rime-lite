@@ -63,13 +63,14 @@ Paper-facing computations write generated records under the owning
 | XXXIII | [paper33/README.md](paper33/README.md) | source-addressed incidence replay, full-stabilizer hostile controls, capacity-obstruction Lean spine, and paper-owned release-closure validation |
 | XXXIV | [paper34/README.md](paper34/README.md) | survivor-incidence replay, one-lane dihedral controls, partial Lean implication spine, and paper-owned release-closure validation |
 | XXXV | [paper35/README.md](paper35/README.md) | six-point order-phase replay, partial Lean theorem spine, versioned inheritance gate, and paper-owned release-closure validation |
+| XXXVI | [paper36/README.md](paper36/README.md) | signed lane-exit control for two finite domains and paper-owned release-closure validation |
 
 Where a paper-local README is not yet present, the owning manuscript and
 script docstrings define the release-local scope. A future versioned reopening
 should add the standard local README before changing artifact semantics.
 
 Papers VIII--XIV retain their published or release-local terminology. Paper
-XVI is an independent case study, and Papers XX--XXXV form separate
+XVI is an independent case study, and Papers XX--XXXVI form separate
 mathematical lines; neither extends the protocol stack. Bare `R1`/`R2`/`D`,
 ladder, repair, and wall labels in those artifacts must not be read as a
 completed migration to the separate operator, routed-composition, full-word,
