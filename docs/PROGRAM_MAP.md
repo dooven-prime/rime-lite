@@ -3,7 +3,7 @@
 This document is the public navigation map for the Representation-Induced
 Mechanics and Evolution (RIME) program. It identifies semantic ownership,
 typed interfaces and promotion boundaries across published Papers I--XV, the
-independently scoped Paper XVI computational case study, and Papers XX--XXXIV
+independently scoped Paper XVI computational case study, and Papers XX--XXXV
 theorem lines. It is not a
 proof document, release ledger, result record, or substitute for an owning
 manuscript.
@@ -116,6 +116,7 @@ carrier under its own hypotheses, evidence records, and publication identity.
 | XXXII | lane-wise dihedral closure, guarded five-token mobility, and the complete one-lane branch-permutation dichotomy | the manuscript proof owns the all-n one-lane result; bounded affine, arbitrary-permutation, and multi-lane hostile controls support but do not replace it, and the full multi-lane promotion classification remains open |
 | XXXIII | source-addressed stabilizer incidence, exact same-witness factorization, and capacity-isolated order breaking | the manuscript proof owns the all-g obstruction; bounded full-stabilizer replay and a partial Lean implication spine support but do not replace it, and break-set quotient non-descent remains open |
 | XXXIV | terminal orientation, source-addressed survivor incidence, and pair-level non-descent | the manuscript proof owns the all-n one-lane dihedral classification; bounded finite replay and a partial Lean implication spine support but do not replace it, and arbitrary-branch and multiple-lane survivor classification remain open |
+| XXXV | one-lane order-phase survivor classification and left-coset structure | the manuscript owns the all-n result; a six-point finite control, partial Lean spine, and versioned upstream inheritance replay support but do not replace its proof |
 
 Papers XVII--XIX are intentionally unused in the public numbered sequence.
 Paper XX begins an independently scoped mathematical line, and Paper XXI
@@ -153,6 +154,9 @@ recursive-return, or reset authority.
 Paper XXXIV retains complete strict-exit incidence and proves that equal
 Safe-Hit and fused-pair data can hide distinct terminal orientation spectra,
 without importing typed transfer, recursive-return, or reset authority.
+Paper XXXV identifies the one-lane order-phase survivor frontier while keeping
+the six-point control, partial formalization, and inherited owner theorems at
+their declared scopes. It does not establish typed transfer or a reset bound.
 None extends the SOF protocol authority chain.
 
 The synchronizing-automata papers share a research domain, not one inherited
@@ -168,7 +172,9 @@ dihedral closure and the complete one-lane branch-permutation Safe-Hit
 dichotomy. Paper XXXIII owns source-addressed stabilizer incidence and its
 capacity-isolated promotion obstruction. Paper XXXIV owns terminal
 orientation and the one-lane dihedral survivor-incidence classification. Each
-retains its own hypotheses, evidence closure, and nonclaims.
+retains its own hypotheses, evidence closure, and nonclaims. Paper XXXV owns
+the one-lane order-phase and survivor classification rather than re-owning
+Paper XXXII's lane-order result or Paper XXXIV's dihedral result.
 
 ## 4. Active Typing and Promotion Rules
 

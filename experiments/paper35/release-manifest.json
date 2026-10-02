@@ -1,0 +1,106 @@
+{
+  "schema": "rime.paper35.release-manifest.v1",
+  "paper_id": "PAPER35",
+  "release_version": "1.0",
+  "intended_release_tag": "paper35-v1.0",
+  "status": "RELEASE_CONTENT",
+  "release_identity_claimed": true,
+  "external_anchor_claimed": false,
+  "validation_mode": "LOCAL_CLOSURE_VERIFICATION",
+  "receipt_self_exclusion": true,
+  "digest_policy": {
+    "algorithm": "sha256",
+    "scope": "exact_file_bytes",
+    "path_resolution": "exact repository-relative path",
+    "wildcards_allowed": false,
+    "absolute_paths_allowed": false,
+    "current_head_fallback_allowed": false
+  },
+  "artifacts": [
+    {
+      "role": "manuscript",
+      "closure_class": "normative-manuscript-build",
+      "path": "papers/paper35/Paper XXXV.md",
+      "sha256": "40682691a73d611cf1e080f0ab629adf2fc93d0d302d984bb8baed28c27afabf"
+    },
+    {
+      "role": "reader-pdf",
+      "closure_class": "normative-manuscript-build",
+      "path": "papers/paper35/paper35_arxiv.pdf",
+      "sha256": "f5eb9a57b444548a47a8c66e4851bd736d8e1e6063e0ef54f93cd001c7b8c305"
+    },
+    {
+      "role": "bibliography",
+      "closure_class": "normative-manuscript-build",
+      "path": "papers/paper35/references-v1.bib",
+      "sha256": "e3bc57c738d58a2085e96bb5573c5e98a4278efe7b593f63ebbb88dd0c15a6e6"
+    },
+    {
+      "role": "development-manifest",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper35/development-manifest.json",
+      "sha256": "1128d0ae139d58fe8c90d0f6be1c8a3f003cc53ff1983a93f7b69061b4c09288"
+    },
+    {
+      "role": "release-environment",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper35/release-environment.json",
+      "sha256": "fb9c0cb37c249181df942d11b28a8cfc238d48016e5c89923391e959acd3a800"
+    },
+    {
+      "role": "release-validator",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper35/validation/validate_release.py",
+      "sha256": "aa7ffd4cf88b4a7ba8b77b4bad0f3a2418c6ff92ce8c08dcf4c7e748650726a6"
+    },
+    {
+      "role": "inheritance-gate",
+      "closure_class": "theorem-facing-computational",
+      "path": "tools/release/paper35-inheritance-gate.v1.json",
+      "sha256": "7453038472f834be0d4ebcc8db1d929740d76e685b5f15d034d5df311b731571"
+    },
+    {
+      "role": "inheritance-validator",
+      "closure_class": "theorem-facing-computational",
+      "path": "tools/release/verify_inheritance_gate.py",
+      "sha256": "ddf0f77b73db5e5f5cffce62927dcd9d8ee615cde906f1c1d40c6ba64dd5f446"
+    },
+    {
+      "role": "evidence-readme",
+      "closure_class": "public-package-documentation",
+      "path": "experiments/paper35/README.md",
+      "sha256": "96af1502b193506cb7b1465cbb30eb9f421165bcc760ab0224ee118aca232d38"
+    }
+  ],
+  "nested_closures": {
+    "development_evidence": {
+      "manifest": "experiments/paper35/development-manifest.json",
+      "release_identity_claimed": false
+    }
+  },
+  "closure_policy": {
+    "classes": [
+      "normative-manuscript-build",
+      "theorem-facing-computational",
+      "public-package-documentation"
+    ],
+    "release_identity_classes": [
+      "normative-manuscript-build",
+      "theorem-facing-computational"
+    ],
+    "package_inventory_classes": [
+      "normative-manuscript-build",
+      "theorem-facing-computational",
+      "public-package-documentation"
+    ]
+  },
+  "claim_boundary": [
+    "the all-n one-lane theorem is proved in the manuscript",
+    "the six-point replay is a bounded consistency control, not an all-n proof",
+    "Lean formalizes a partial theorem spine, not the full guarded geometry",
+    "the theorem note is supplementary provenance, not a second theorem authority",
+    "upstream inheritance replay does not enlarge owner theorem scopes",
+    "raw incidence gives no typed transfer or recursive-return authority",
+    "local closure verification is not independent mathematical validation"
+  ]
+}
