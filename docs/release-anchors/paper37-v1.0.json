@@ -1,0 +1,72 @@
+{
+  "schema": "rime.paper-post-release-anchor.v1",
+  "paper_id": "PAPER37",
+  "release_version": "1.0",
+  "publication_status": "PUBLISHED",
+  "release_identity_claimed": true,
+  "anchor_role": "DOWNSTREAM_PUBLICATION_METADATA",
+  "release_tag": {
+    "name": "paper37-v1.0",
+    "tag_object_sha": "2e18924b40b154d161a4db2a9412906da96e38cf",
+    "target_commit_sha": "71723bdd67d92013ad285bc27994d18fe019fa6e"
+  },
+  "pre_release_evidence": [
+    {
+      "role": "release-manifest",
+      "path": "experiments/paper37/release-manifest.json",
+      "sha256_at_tag": "b3366455f77cf8c6840831ad683454ded42e9de8a063e718583228b1754198cb",
+      "size_at_tag": 3297,
+      "mutation_policy": "IMMUTABLE_TAG_BYTES",
+      "declared_state_at_tag": {
+        "schema": "rime.paper37.release-manifest.v1",
+        "status": "RELEASE_CONTENT",
+        "release_identity_claimed": true,
+        "validation_mode": "LOCAL_CLOSURE_VERIFICATION"
+      }
+    },
+    {
+      "role": "validation-receipt",
+      "path": "experiments/paper37/results/paper37_public_package_v1.validation-receipt.json",
+      "sha256_at_tag": "ce587d7fdceac7cb0c3d9a72ff19a970a014aec33ad153fe49545e51519ef051",
+      "size_at_tag": 10865,
+      "mutation_policy": "IMMUTABLE_TAG_BYTES",
+      "declared_state_at_tag": {
+        "schema": "rime.paper37.public-package-receipt.v1",
+        "status": "PASS",
+        "validation_mode": "LOCAL_CLOSURE_VERIFICATION"
+      }
+    }
+  ],
+  "post_release_supplements": [],
+  "external_anchor": {
+    "provider": "Zenodo",
+    "doi": "10.5281/zenodo.23227579",
+    "record_id": "23227579",
+    "record_url": "https://zenodo.org/records/23227579",
+    "publication_date": "2026-10-08",
+    "deposited_files": [
+      {
+        "remote_name": "paper37_arxiv.pdf",
+        "source_path_at_tag": "papers/paper37/paper37_arxiv.pdf",
+        "sha256": "649289bcdca04234eda2b3d9fad77c855effcbcd41027ae42cec9e3ffa68be56",
+        "size": 119544
+      }
+    ]
+  },
+  "versioned_repin_policy": {
+    "pre_release_manifest_mutation_allowed": false,
+    "pre_release_receipt_mutation_allowed": false,
+    "current_head_fallback_allowed": false,
+    "owner_change_requires_new_owner_version": true,
+    "consumer_change_requires_new_consumer_version_and_repin": true,
+    "shared_file_in_place_update_allowed": false
+  },
+  "authority_boundary": [
+    "The anchor establishes release-tag, evidence-root, and deposited-file byte identity only.",
+    "A DOI anchors only files actually deposited in that record.",
+    "Local closure verification is not independent mathematical validation.",
+    "Publication anchoring does not establish theorem truth or scientific adequacy.",
+    "The anchor is downstream metadata and is not part of the release tag it records."
+  ],
+  "notes": []
+}

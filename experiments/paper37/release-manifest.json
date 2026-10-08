@@ -1,0 +1,92 @@
+{
+  "schema": "rime.paper37.release-manifest.v1",
+  "paper_id": "PAPER37",
+  "release_version": "1.0",
+  "intended_release_tag": "paper37-v1.0",
+  "status": "RELEASE_CONTENT",
+  "release_identity_claimed": true,
+  "external_anchor_claimed": false,
+  "validation_mode": "LOCAL_CLOSURE_VERIFICATION",
+  "receipt_self_exclusion": true,
+  "digest_policy": {
+    "algorithm": "sha256",
+    "scope": "exact_file_bytes",
+    "path_resolution": "exact repository-relative path",
+    "wildcards_allowed": false,
+    "absolute_paths_allowed": false,
+    "current_head_fallback_allowed": false
+  },
+  "artifacts": [
+    {
+      "role": "manuscript",
+      "closure_class": "normative-manuscript-build",
+      "path": "papers/paper37/Paper XXXVII.md",
+      "sha256": "5ef584777bb0453b6b76b0bd320fcf038eb98a07a77b66ff41a794d446bbc9af"
+    },
+    {
+      "role": "reader-pdf",
+      "closure_class": "normative-manuscript-build",
+      "path": "papers/paper37/paper37_arxiv.pdf",
+      "sha256": "649289bcdca04234eda2b3d9fad77c855effcbcd41027ae42cec9e3ffa68be56"
+    },
+    {
+      "role": "bibliography",
+      "closure_class": "normative-manuscript-build",
+      "path": "papers/paper37/references-v1.bib",
+      "sha256": "b1b0802b66fdae5e81626c35ae8147035979e323bf2e66a1d581bba180be89a7"
+    },
+    {
+      "role": "development-manifest",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper37/development-manifest.json",
+      "sha256": "0c86e3a7609b0d256775513eda917e5e58b9446eac0465260f089a992de6ef31"
+    },
+    {
+      "role": "release-environment",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper37/release-environment.json",
+      "sha256": "594afe5ececd418f488d69dd634d97853fe0ad5cefc8c2929baf854a3693c528"
+    },
+    {
+      "role": "release-validator",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper37/validation/validate_release.py",
+      "sha256": "d7e6044d21a56b3735c337c15cb4be62a233846bab976de88cad177ef58cc21a"
+    },
+    {
+      "role": "evidence-readme",
+      "closure_class": "public-package-documentation",
+      "path": "experiments/paper37/README.md",
+      "sha256": "02ec9609e5911a0d55e07cf09ec28efdf9f63a25621a1841a04e8b99cd2e1a27"
+    }
+  ],
+  "nested_closures": {
+    "development_evidence": {
+      "manifest": "experiments/paper37/development-manifest.json",
+      "release_identity_claimed": false
+    }
+  },
+  "closure_policy": {
+    "classes": [
+      "normative-manuscript-build",
+      "theorem-facing-computational",
+      "public-package-documentation"
+    ],
+    "release_identity_classes": [
+      "normative-manuscript-build",
+      "theorem-facing-computational"
+    ],
+    "package_inventory_classes": [
+      "normative-manuscript-build",
+      "theorem-facing-computational",
+      "public-package-documentation"
+    ]
+  },
+  "claim_boundary": [
+    "all-g ordinary-lane and survivor statements are manuscript proofs",
+    "the g=2,3 finite replay is a bounded consistency control, not an all-g proof",
+    "the Lean spine is partial and does not formalize the full manuscript",
+    "no typed transfer, projectability, settlement, or reset bound is established",
+    "local closure verification is not independent mathematical validation"
+  ]
+}

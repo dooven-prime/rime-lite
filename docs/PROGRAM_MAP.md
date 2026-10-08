@@ -3,7 +3,7 @@
 This document is the public navigation map for the Representation-Induced
 Mechanics and Evolution (RIME) program. It identifies semantic ownership,
 typed interfaces and promotion boundaries across published Papers I--XV, the
-independently scoped Paper XVI computational case study, and Papers XX--XXXVI
+independently scoped Paper XVI computational case study, and Papers XX--XXXVII
 theorem lines. It is not a
 proof document, release ledger, result record, or substitute for an owning
 manuscript.
@@ -118,6 +118,7 @@ carrier under its own hypotheses, evidence records, and publication identity.
 | XXXIV | terminal orientation, source-addressed survivor incidence, and pair-level non-descent | the manuscript proof owns the all-n one-lane dihedral classification; bounded finite replay and a partial Lean implication spine support but do not replace it, and arbitrary-branch and multiple-lane survivor classification remain open |
 | XXXV | one-lane order-phase survivor classification and left-coset structure | the manuscript owns the all-n result; a six-point finite control, partial Lean spine, and versioned upstream inheritance replay support but do not replace its proof |
 | XXXVI | signed lane-exit graphs and complete source-addressed survivor frontiers | the manuscript owns the all-g result under declared full-lane guards; finite replay for g=2,3 is only a bounded consistency control, not a proof of arbitrary-g statements |
+| XXXVII | guarded lineage permutation groups and complete ordinary-lane survivor frontiers | the manuscript owns the all-g classification with arbitrary within-lane permutations; bounded replay and the partial Lean spine do not replace its proof or establish typed transfer |
 
 Papers XVII--XIX are intentionally unused in the public numbered sequence.
 Paper XX begins an independently scoped mathematical line, and Paper XXI
@@ -161,6 +162,10 @@ their declared scopes. It does not establish typed transfer or a reset bound.
 Paper XXXVI treats a declared multi-lane full-lane regime through signed exit
 graphs and concrete survivor placements. It does not promote raw incidence to
 typed transfer, recursive compatibility, or reset authority.
+Paper XXXVII extends the full ordinary-lane raw classification to arbitrary
+within-lane permutations. Its reachable phase-coset set does not by itself
+give deterministic labelled phase descent, and its survivor frontier remains
+outside typed transfer and reset authority.
 None extends the SOF protocol authority chain.
 
 The synchronizing-automata papers share a research domain, not one inherited
@@ -180,7 +185,8 @@ retains its own hypotheses, evidence closure, and nonclaims. Paper XXXV owns
 the one-lane order-phase and survivor classification rather than re-owning
 Paper XXXII's lane-order result or Paper XXXIV's dihedral result. Paper XXXVI
 owns the signed multi-lane exit and survivor classification in its separately
-declared full-lane setting.
+declared full-lane setting. Paper XXXVII owns the arbitrary-permutation
+lineage-group and survivor classification under its full ordinary-lane guards.
 
 ## 4. Active Typing and Promotion Rules
 
