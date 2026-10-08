@@ -1,0 +1,133 @@
+{
+  "artifacts": [
+    {
+      "path": "papers/paper37/Paper XXXVII.md",
+      "role": "canonical-manuscript",
+      "sha256": "5ef584777bb0453b6b76b0bd320fcf038eb98a07a77b66ff41a794d446bbc9af"
+    },
+    {
+      "path": "papers/paper37/references-v1.bib",
+      "role": "paper-local-bibliography",
+      "sha256": "b1b0802b66fdae5e81626c35ae8147035979e323bf2e66a1d581bba180be89a7"
+    },
+    {
+      "path": "experiments/paper37/README.md",
+      "role": "package-documentation",
+      "sha256": "02ec9609e5911a0d55e07cf09ec28efdf9f63a25621a1841a04e8b99cd2e1a27"
+    },
+    {
+      "path": "experiments/paper37/audit_scope.py",
+      "role": "fixed-audit-contract",
+      "sha256": "0b90bbebbc2838e8232adc4d550a1b59da58c588ed55db1d0ffed071d8e7ceff"
+    },
+    {
+      "path": "experiments/paper37/ordinary_lane_audit.py",
+      "role": "finite-producer",
+      "sha256": "8b28a5b144a5303ba98f1c0f813187a8ae6c5215b04fda060f68e63995a89864"
+    },
+    {
+      "path": "experiments/paper37/results/ordinary_lane_audit_v1.json",
+      "role": "bounded-result",
+      "sha256": "4672666546c632a4550b3e22bc94357d64e435711d829485d6a16290d0ae3083"
+    },
+    {
+      "path": "experiments/paper37/seal_manifest.py",
+      "role": "manifest-sealer",
+      "sha256": "9965f85ea95cd53443e469bb78fcf40a982ce4e793b3de1f9da929cf38558e13"
+    },
+    {
+      "path": "experiments/paper37/validation/validate_source.py",
+      "role": "source-validator",
+      "sha256": "79fad55bcd9c9fa2406256a8906535a88891470983b637d73a58274fa3c4f9b1"
+    },
+    {
+      "path": "experiments/paper37/validation/validate_ordinary_lane_audit.py",
+      "role": "finite-validator",
+      "sha256": "5db80b5e89c4e89ba75fb7b00d2cf15c04e3cb3773c58501aa59e3fec28acafa"
+    },
+    {
+      "path": "experiments/paper37/validation/validate_package.py",
+      "role": "package-validator",
+      "sha256": "ad799b331b50a2a11b2ea1754e3bb7af72ba9a768f9c4df2bb2d1b611911101e"
+    },
+    {
+      "path": "experiments/paper37/validation/test_contract.py",
+      "role": "negative-contract-tests",
+      "sha256": "4035e6d331aa53e202dabc253fdf1eb97ba61588b302baaedcf7a4219cd0fd24"
+    },
+    {
+      "path": "experiments/paper37/validation/validate_lean_formalization.py",
+      "role": "lean-validator",
+      "sha256": "fac4df05cb16d5240307477c9606cd0bfc7022b7d0f2d75b5358283f38a54bb5"
+    },
+    {
+      "path": "experiments/paper37/lean/Paper37.lean",
+      "role": "lean-entrypoint",
+      "sha256": "43574349bb72bb5d84543d8cda3dcf731f3fd1e149b8f6e36544a47c36911369"
+    },
+    {
+      "path": "experiments/paper37/lean/Paper37/GuardedControl.lean",
+      "role": "lean-guarded-control",
+      "sha256": "4e9389dcbfa8e2a6bbe94ac3169e9cbddc01d4b10a247e191a18318358e856ab"
+    },
+    {
+      "path": "experiments/paper37/lean/Paper37/PhaseCosets.lean",
+      "role": "lean-phase-cosets",
+      "sha256": "954ffc0be178a072fbae656855c6b6265d5ad2c90ab9461cc91dcae6f77b602a"
+    },
+    {
+      "path": "experiments/paper37/lean/Paper37/SurvivorRestriction.lean",
+      "role": "lean-survivor-restriction",
+      "sha256": "8a16daa70c3c7a1322dc066c7cb22f0c61061946c08a62b61d2e58c7373c444c"
+    },
+    {
+      "path": "experiments/paper37/lean/AxiomAudit.lean",
+      "role": "lean-axiom-audit",
+      "sha256": "1949ea430e83eb10727a0feb1b3d0ac7067f4f1e8aa887e576c7412ef9c7543a"
+    },
+    {
+      "path": "experiments/paper37/lean/README.md",
+      "role": "lean-scope-readme",
+      "sha256": "018f991548207a12ad052e65e0f8598ccc364497e17a2e3ab1a883ef07dc4033"
+    },
+    {
+      "path": "experiments/paper37/lean/lakefile.toml",
+      "role": "lean-project-config",
+      "sha256": "664f4d9e2012077c3849c01f46c9bfc48b4879657290c1fe224efaf7a7c6d063"
+    },
+    {
+      "path": "experiments/paper37/lean/lake-manifest.json",
+      "role": "lean-dependency-lock",
+      "sha256": "a4212b9562518c494a5eb89c86e3f27cfcf07a7938ff2ba87e89fd8fb64a7753"
+    },
+    {
+      "path": "experiments/paper37/lean/lean-toolchain",
+      "role": "lean-toolchain",
+      "sha256": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b"
+    },
+    {
+      "path": "experiments/paper37/lean/formalization-manifest.json",
+      "role": "lean-formalization-manifest",
+      "sha256": "7de4cecb1f1df59143e8df11326be1ed1978ac0a36eb0e1f1534e0be6dd44cf2"
+    }
+  ],
+  "digest_policy": {
+    "absolute_paths_allowed": false,
+    "algorithm": "sha256",
+    "path_resolution": "exact repository-relative path",
+    "scope": "exact_file_bytes",
+    "wildcards_allowed": false
+  },
+  "evidence_boundary": "Bounded consistency controls and a partial Lean spine; manuscript owns the all-g proofs.",
+  "excluded_dependencies": [
+    "experiments/exploratory/",
+    "experiments/synchronizing_automata/",
+    "papers/unnumbered/",
+    "published paper-owned experiment packages"
+  ],
+  "paper_id": "PAPER37",
+  "release_identity_claimed": false,
+  "schema": "rime.paper37.development-manifest.v1",
+  "status": "DRAFT_PAPER_OWNED_CLOSURE",
+  "validation_mode": "LOCAL_CLOSURE_VERIFICATION"
+}

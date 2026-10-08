@@ -9,7 +9,7 @@ finite representation laboratory, not as a puzzle-solving problem.
 ## Public Release
 
 The current public release contains Papers I--XV, the independently scoped
-Paper XVI computational case study, and Papers XX--XXXVI mathematical lines.
+Paper XVI computational case study, and Papers XX--XXXVII mathematical lines.
 CCS v2.1 is published separately as an optional non-paper Computational
 Companion Archive; the immutable first combined record retains its historical
 predecessor.
@@ -49,13 +49,14 @@ predecessor.
 | Paper XXXIV | terminal orientation and survivor incidence in five-token return dynamics | <https://doi.org/10.5281/zenodo.23072915> |
 | Paper XXXV | order-phase survivor frontiers and left-coset classification in one-lane returns | <https://doi.org/10.5281/zenodo.23085408> |
 | Paper XXXVI | signed lane-exit graphs and complete survivor frontiers in a declared multi-lane regime | <https://doi.org/10.5281/zenodo.23093673> |
+| Paper XXXVII | lineage permutation groups and complete ordinary-lane survivor frontiers | <https://doi.org/10.5281/zenodo.23227579> |
 | CCS v2.1 | optional reproducibility, observation, open-problem, and history archive | <https://doi.org/10.5281/zenodo.21988041> |
 | RIME Lite v2.1 repository snapshot | accepted papers, contracts, Registry evidence, release tools, and exact-byte historical inputs | [Zenodo DOI](https://doi.org/10.5281/zenodo.22048358) / [GitHub Release](https://github.com/dooven-prime/rime-lite/releases/tag/rime-lite-v2.1) |
 | Historical combined Papers I--III + CCS release | immutable first-version archive; current papers are maintained independently | <https://doi.org/10.5281/zenodo.21108197> |
 
 This is the repository's canonical DOI index. It identifies immutable
 published records; other public documents link here instead of duplicating the
-list. Papers VII--XVI and Papers XX--XXXVI now match their published records. Their
+list. Papers VII--XVI and Papers XX--XXXVII now match their published records. Their
 listed DOIs identify immutable published versions, and frozen historical
 contracts remain unchanged.
 
@@ -158,6 +159,10 @@ transfer and reset authority.
 Paper XXXVI passes to a declared multi-lane regime. It gives a signed lane-exit
 graph and source-addressed survivor placements, while keeping its finite
 controls separate from the all-`g` manuscript proofs and from typed transfer.
+Paper XXXVII classifies reachable source-labelled injections and complete
+survivor placements in full ordinary lanes with arbitrary within-lane
+permutations. Its phase-coset state set and labelled phase descent have
+different hypotheses; bounded controls do not replace the all-`g` proofs.
 Published release identities are maintained in the canonical DOI index above.
 
 | Paper | Manuscript | Evidence | Scope |
@@ -180,6 +185,7 @@ Published release identities are maintained in the canonical DOI index above.
 | XXXIV | [`Paper XXXIV.md`](papers/paper34/Paper%20XXXIV.md) | [`experiments/paper34/`](experiments/paper34/) | terminal orientation, source-addressed survivor incidence, and pair-level non-descent in one-lane dihedral dynamics |
 | XXXV | [`Paper XXXV.md`](papers/paper35/Paper%20XXXV.md) | [`experiments/paper35/`](experiments/paper35/) | one-lane order-phase survivor classification, left-coset structure, and bounded six-point controls |
 | XXXVI | [`Paper XXXVI.md`](papers/paper36/Paper%20XXXVI.md) | [`experiments/paper36/`](experiments/paper36/) | signed lane-exit graph, complete source-addressed survivor frontier, and bounded multi-lane controls |
+| XXXVII | [`Paper XXXVII.md`](papers/paper37/Paper%20XXXVII.md) | [`experiments/paper37/`](experiments/paper37/) | guarded lineage permutation groups, phase-coset reachability, and complete ordinary-lane survivor frontiers |
 
 Thematic index, not a paper dependency order:
 
@@ -215,6 +221,7 @@ Source-addressed stabilizer incidence and capacity-isolated promotion obstructio
 Terminal orientation and source-addressed survivor incidence
 One-lane order-phase survivor frontiers and left-coset classification
 Signed multi-lane exits and complete survivor frontiers
+Guarded lineage permutation groups and ordinary-lane survivor frontiers
 ```
 
 Papers I--VII are independently readable. Their neighboring results connect

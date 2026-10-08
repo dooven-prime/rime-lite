@@ -118,7 +118,7 @@ research target; Paper VII does not assert a generic completion theorem.
   and coarse-state closure on a source-addressed MaleCNS carrier. It does not
   inherit or extend the SOF protocol authority chain.
 
-### Papers XX--XXXVI: Independent Post-Protocol Mathematics
+### Papers XX--XXXVII: Independent Post-Protocol Mathematics
 
 Papers XVII--XIX are intentionally unused in the public numbered sequence.
 Paper XX begins a separately scoped mathematical line with all-depth
@@ -196,6 +196,10 @@ Paper XXXVI works in a declared multi-lane full-lane regime. A signed lane-exit
 graph determines concrete source-consecutive exits and survivor placements.
 Finite checks for two small values of the lane parameter do not establish the
 all-`g` theorem or a typed-transfer conclusion.
+Paper XXXVII allows arbitrary within-lane permutations under full ordinary-lane
+guards. A lineage permutation group classifies reachable source-labelled
+injections and complete survivor placements. Bounded controls and a partial
+Lean spine do not establish the all-`g` result or typed transfer.
 These papers consume no protocol authority and do not reopen Papers VIII--XV.
 Published version-1 identities are maintained in the repository's canonical
 DOI index.
@@ -225,8 +229,9 @@ classification; it does not infer survivor placement from pair data outside
 that declared family. Paper XXXV owns its order-phase survivor classification
 without re-owning the preceding lane-order or dihedral theorems. Paper XXXVI
 owns the signed exit and survivor frontier in its full-lane multi-lane regime.
-Results
-or evidence do not transfer between these owners without an explicit theorem
+Paper XXXVII owns the arbitrary-permutation frontier under its separately
+declared full ordinary-lane guards.
+Results or evidence do not transfer between these owners without an explicit theorem
 or source-addressed import.
 
 ## Claim Discipline

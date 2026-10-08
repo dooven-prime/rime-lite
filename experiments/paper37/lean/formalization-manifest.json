@@ -1,0 +1,134 @@
+{
+  "audited_declarations": [
+    "Rime.Paper37.runWord_append",
+    "Rime.Paper37.guardedReach_trans",
+    "Rime.Paper37.loopControl_inv",
+    "Rime.Paper37.generated_loop_control",
+    "Rime.Paper37.guardedReach_iff_mem_generated",
+    "Rime.Paper37.rightPhaseClass_eq_iff",
+    "Rime.Paper37.lanePhaseMap_bijective",
+    "Rime.Paper37.lanePhaseEquiv",
+    "Rime.Paper37.phaseDeterministic_iff_mem_normalizer",
+    "Rime.Paper37.phase_non_descent_witness",
+    "Rime.Paper37.survivorRestriction_eq_iff",
+    "Rime.Paper37.restrictionFiber_card",
+    "Rime.Paper37.terminal_card_eq_frontier_card_mul",
+    "Rime.Paper37.survivorFrontier_card_eq_div",
+    "Rime.Paper37.alternating_survivorFrontier_eq_full"
+  ],
+  "build": {
+    "commands": [
+      "lake build",
+      "lake env lean AxiomAudit.lean"
+    ],
+    "lean": "4.33.0",
+    "mathlib_revision": "db584cd6d46c92f209a44c0f1c829460d327499d",
+    "project_root": "experiments/paper37/lean"
+  },
+  "coverage": [
+    {
+      "checked": "word concatenation at one successor; positive inverse loops; subgroup control",
+      "declarations": [
+        "runWord_append",
+        "guardedReach_trans",
+        "loopControl_inv",
+        "generated_loop_control"
+      ],
+      "inputs": [
+        "supplied uniform actual generator loops",
+        "finite group"
+      ],
+      "manuscript_role": "Lemmas 3.2--3.3; actual-word logical spine"
+    },
+    {
+      "checked": "actual guarded reachability iff membership in the generated subgroup",
+      "declarations": [
+        "guardedReach_iff_mem_generated"
+      ],
+      "inputs": [
+        "geometric edge soundness",
+        "actual lane relocation",
+        "uniform generator-loop realization"
+      ],
+      "manuscript_role": "Theorem 4.1; conditional reachability reduction"
+    },
+    {
+      "checked": "lane quotient is lane times right-coset space without normality",
+      "declarations": [
+        "rightPhaseClass_eq_iff",
+        "lanePhaseMap_bijective",
+        "lanePhaseEquiv"
+      ],
+      "inputs": [
+        "phase equivalence acts by left multiplication"
+      ],
+      "manuscript_role": "Corollary 4.2; abstract state-set phase quotient"
+    },
+    {
+      "checked": "normalizer iff deterministic left update; concrete-class non-descent witness",
+      "declarations": [
+        "phaseDeterministic_iff_mem_normalizer",
+        "phase_non_descent_witness"
+      ],
+      "inputs": [
+        "finite phase subgroup"
+      ],
+      "manuscript_role": "Proposition 4.3; exact deterministic-descent condition"
+    },
+    {
+      "checked": "one or two extensions; exact terminal/frontier cardinality relation",
+      "declarations": [
+        "survivorRestriction_eq_iff",
+        "restrictionFiber_card",
+        "terminal_card_eq_frontier_card_mul",
+        "survivorFrontier_card_eq_div"
+      ],
+      "inputs": [
+        "five-position permutation subgroup",
+        "terminal kernel indices zero and one"
+      ],
+      "manuscript_role": "Corollary 5.3; survivor restriction multiplicity"
+    },
+    {
+      "checked": "the complete finite-position survivor sets coincide",
+      "declarations": [
+        "alternating_survivorFrontier_eq_full"
+      ],
+      "inputs": [
+        "alternating subgroup is the sign kernel"
+      ],
+      "manuscript_role": "Theorem 6.3; algebraic A5/S5 survivor projection"
+    }
+  ],
+  "entrypoint": "experiments/paper37/lean/Paper37.lean",
+  "excluded_scope": [
+    "concrete normalized circular guard and full ordinary-lane confinement",
+    "geometric legality of explicit relocation and local-generator words",
+    "physical terminal-placement equality and its actual-witness converse",
+    "coordinate embedding by Delta",
+    "concrete F20/S5 and A5/S5 branch-generation claims",
+    "finite JSON catalogue or an exhaustive subgroup classification",
+    "partial occupancy, shortest or budgeted words",
+    "old typed source, authorization, handoff, B0, POS, settlement, and reset bounds"
+  ],
+  "formalization_id": "PAPER37-GUARDED-GROUP-SPINE-V1",
+  "permitted_axiom_footprint": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "schema": "rime.paper37.lean-formalization-manifest.v1",
+  "source_sha256": {
+    "AxiomAudit.lean": "1949ea430e83eb10727a0feb1b3d0ac7067f4f1e8aa887e576c7412ef9c7543a",
+    "Paper37.lean": "43574349bb72bb5d84543d8cda3dcf731f3fd1e149b8f6e36544a47c36911369",
+    "Paper37/GuardedControl.lean": "4e9389dcbfa8e2a6bbe94ac3169e9cbddc01d4b10a247e191a18318358e856ab",
+    "Paper37/PhaseCosets.lean": "954ffc0be178a072fbae656855c6b6265d5ad2c90ab9461cc91dcae6f77b602a",
+    "Paper37/SurvivorRestriction.lean": "8a16daa70c3c7a1322dc066c7cb22f0c61061946c08a62b61d2e58c7373c444c",
+    "README.md": "018f991548207a12ad052e65e0f8598ccc364497e17a2e3ab1a883ef07dc4033",
+    "lake-manifest.json": "a4212b9562518c494a5eb89c86e3f27cfcf07a7938ff2ba87e89fd8fb64a7753",
+    "lakefile.toml": "664f4d9e2012077c3849c01f46c9bfc48b4879657290c1fe224efaf7a7c6d063",
+    "lean-toolchain": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b"
+  },
+  "status": "COMPILED_PAPER_OWNED_PARTIAL_FORMALIZATION",
+  "validation_mode": "LOCAL_CLOSURE_VERIFICATION"
+}
