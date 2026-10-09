@@ -1,0 +1,32 @@
+import Paper38
+
+#print axioms Rime.Paper38.exactLayer_eq_power
+#print axioms Rime.Paper38.mem_exactLayer_iff_product_word
+#print axioms Rime.Paper38.mem_cumulativeLayer_iff
+#print axioms Rime.Paper38.cumulativeLayer_eq_union
+#print axioms Rime.Paper38.cumulativeLayer_mono
+#print axioms Rime.Paper38.cumulativeLayer_nonempty
+#print axioms Rime.Paper38.cumulativeLayer_leftStable
+#print axioms Rime.Paper38.positiveClosure_eq_subgroup
+#print axioms Rime.Paper38.no_premature_stall
+#print axioms Rime.Paper38.cumulative_stall_iff_full
+#print axioms Rime.Paper38.phaseCoset_card
+#print axioms Rime.Paper38.phaseCoset_subset
+#print axioms Rime.Paper38.phaseCoset_leftStable
+#print axioms Rime.Paper38.phaseAggregate_leftStable
+#print axioms Rime.Paper38.local_mem_phaseAggregate
+#print axioms Rime.Paper38.phaseAggregate_closure
+#print axioms Rime.Paper38.phaseCoset_disjoint
+#print axioms Rime.Paper38.stable_strict_growth
+#print axioms Rime.Paper38.cumulative_card_growth
+#print axioms Rime.Paper38.cumulative_card_lower_bound
+#print axioms Rime.Paper38.cumulative_full_at_index
+#print axioms Rime.Paper38.at_most_index_product_word
+#print axioms Rime.Paper38.five_phase_index_le_twentyFour
+#print axioms Rime.Paper38.uniform_twentyFour_product_word
+#print axioms Rime.Paper38.initial_layers_disjoint
+#print axioms Rime.Paper38.initial_layers_equal_card
+#print axioms Rime.Paper38.initial_layers_differ
+#print axioms Rime.Paper38.full_aggregate_mul_nonempty
+#print axioms Rime.Paper38.initial_separation_second_recovery
+#print axioms Rime.Paper38.matched_survivor_reads_differ

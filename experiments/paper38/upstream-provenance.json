@@ -1,0 +1,24 @@
+{
+  "schema": "rime.paper38.upstream-provenance.v1",
+  "consumer": "PAPER38",
+  "status": "PUBLISHED_THEOREM_INPUT_BINDING",
+  "owner": "PAPER37",
+  "version": "1.0",
+  "release_tag": "paper37-v1.0",
+  "release_content_commit": "71723bdd67d92013ad285bc27994d18fe019fa6e",
+  "doi": "10.5281/zenodo.23227579",
+  "source": {
+    "path": "papers/paper37/Paper XXXVII.md",
+    "sha256_at_tag": "5ef584777bb0453b6b76b0bd320fcf038eb98a07a77b66ff41a794d446bbc9af"
+  },
+  "imported_results": [
+    "Lemma 3.1 and equation (3.2): uniform full ordinary-lane edge law",
+    "Theorem 4.1: complete unbudgeted reachable injections",
+    "Theorem 5.1: actual pre-collapse terminal placements",
+    "Theorem 5.2: same-permutation survivor restriction"
+  ],
+  "finite_artifacts_imported": [],
+  "head_fallback_allowed": false,
+  "default_requires_upstream_workspace": false,
+  "boundary": "The manuscript owns the inherited theorem; this record binds its published bytes. No Paper37 finite evidence is reused as Paper38 budget evidence."
+}

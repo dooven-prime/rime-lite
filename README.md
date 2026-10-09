@@ -9,7 +9,7 @@ finite representation laboratory, not as a puzzle-solving problem.
 ## Public Release
 
 The current public release contains Papers I--XV, the independently scoped
-Paper XVI computational case study, and Papers XX--XXXVII mathematical lines.
+Paper XVI computational case study, and Papers XX--XXXVIII mathematical lines.
 CCS v2.1 is published separately as an optional non-paper Computational
 Companion Archive; the immutable first combined record retains its historical
 predecessor.
@@ -50,13 +50,14 @@ predecessor.
 | Paper XXXV | order-phase survivor frontiers and left-coset classification in one-lane returns | <https://doi.org/10.5281/zenodo.23085408> |
 | Paper XXXVI | signed lane-exit graphs and complete survivor frontiers in a declared multi-lane regime | <https://doi.org/10.5281/zenodo.23093673> |
 | Paper XXXVII | lineage permutation groups and complete ordinary-lane survivor frontiers | <https://doi.org/10.5281/zenodo.23227579> |
+| Paper XXXVIII | source-relative return layers and budgeted survivor frontiers | <https://doi.org/10.5281/zenodo.23255825> |
 | CCS v2.1 | optional reproducibility, observation, open-problem, and history archive | <https://doi.org/10.5281/zenodo.21988041> |
 | RIME Lite v2.1 repository snapshot | accepted papers, contracts, Registry evidence, release tools, and exact-byte historical inputs | [Zenodo DOI](https://doi.org/10.5281/zenodo.22048358) / [GitHub Release](https://github.com/dooven-prime/rime-lite/releases/tag/rime-lite-v2.1) |
 | Historical combined Papers I--III + CCS release | immutable first-version archive; current papers are maintained independently | <https://doi.org/10.5281/zenodo.21108197> |
 
 This is the repository's canonical DOI index. It identifies immutable
 published records; other public documents link here instead of duplicating the
-list. Papers VII--XVI and Papers XX--XXXVII now match their published records. Their
+list. Papers VII--XVI and Papers XX--XXXVIII now match their published records. Their
 listed DOIs identify immutable published versions, and frozen historical
 contracts remain unchanged.
 
@@ -163,6 +164,10 @@ Paper XXXVII classifies reachable source-labelled injections and complete
 survivor placements in full ordinary lanes with arbitrary within-lane
 permutations. Its phase-coset state set and labelled phase descent have
 different hypotheses; bounded controls do not replace the all-`g` proofs.
+Paper XXXVIII classifies exact and cumulative return-count layers from a
+supplied local full-lane source. Its budget includes the terminal return;
+neither the local source nor its first exit asserts whole-image entry from
+the complete initial carrier.
 Published release identities are maintained in the canonical DOI index above.
 
 | Paper | Manuscript | Evidence | Scope |
@@ -186,6 +191,7 @@ Published release identities are maintained in the canonical DOI index above.
 | XXXV | [`Paper XXXV.md`](papers/paper35/Paper%20XXXV.md) | [`experiments/paper35/`](experiments/paper35/) | one-lane order-phase survivor classification, left-coset structure, and bounded six-point controls |
 | XXXVI | [`Paper XXXVI.md`](papers/paper36/Paper%20XXXVI.md) | [`experiments/paper36/`](experiments/paper36/) | signed lane-exit graph, complete source-addressed survivor frontier, and bounded multi-lane controls |
 | XXXVII | [`Paper XXXVII.md`](papers/paper37/Paper%20XXXVII.md) | [`experiments/paper37/`](experiments/paper37/) | guarded lineage permutation groups, phase-coset reachability, and complete ordinary-lane survivor frontiers |
+| XXXVIII | [`Paper XXXVIII.md`](papers/paper38/Paper%20XXXVIII.md) | [`experiments/paper38/`](experiments/paper38/) | source-relative return layers, finite budget saturation, and matched survivor-frontier separation |
 
 Thematic index, not a paper dependency order:
 
@@ -222,6 +228,7 @@ Terminal orientation and source-addressed survivor incidence
 One-lane order-phase survivor frontiers and left-coset classification
 Signed multi-lane exits and complete survivor frontiers
 Guarded lineage permutation groups and ordinary-lane survivor frontiers
+Source-relative return counts and budgeted survivor frontiers
 ```
 
 Papers I--VII are independently readable. Their neighboring results connect

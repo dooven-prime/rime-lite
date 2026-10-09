@@ -1,0 +1,160 @@
+{
+  "artifacts": [
+    {
+      "path": "papers/paper38/Paper XXXVIII.md",
+      "role": "canonical-manuscript",
+      "sha256": "b20df9f1c6c2bcff9424a79cfd2a61082d892270d9e264ada1da5e1273957872",
+      "size": 31928
+    },
+    {
+      "path": "papers/paper38/references-v1.bib",
+      "role": "paper-local-bibliography",
+      "sha256": "0b6c2964c02d0b26be2229f0b8d3e3151251bba0838911c50ba05fdc3bffe7a8",
+      "size": 2297
+    },
+    {
+      "path": "experiments/paper38/README.md",
+      "role": "package-documentation",
+      "sha256": "03036af6b79662e747d09556e0a6fec243d7d64068fddfa06f099eb8f1b07531",
+      "size": 8722
+    },
+    {
+      "path": "experiments/paper38/audit_scope.py",
+      "role": "fixed-audit-contract",
+      "sha256": "659c7699ec8fda8586229d0e464d2d945b77e69466787fcd2dc8a7e48bcfb12e",
+      "size": 5099
+    },
+    {
+      "path": "experiments/paper38/return_budget_audit.py",
+      "role": "finite-producer",
+      "sha256": "5ff0c076838f70ea314b328c98be47cf013cb0c59d990e4c303537d51f96191e",
+      "size": 7716
+    },
+    {
+      "path": "experiments/paper38/results/return_budget_audit_v1.json",
+      "role": "bounded-result",
+      "sha256": "5d6a05535e84b7aa1a3e6fdc3538e65ce4ef70e26728ab70001c95bc69240eb6",
+      "size": 2943928
+    },
+    {
+      "path": "experiments/paper38/upstream-provenance.json",
+      "role": "published-theorem-binding",
+      "sha256": "8063b7ea3b027de23a3e786e3c1b76baf648aab92ae92ece94e8eb15b936aca6",
+      "size": 1023
+    },
+    {
+      "path": "experiments/paper38/seal_manifest.py",
+      "role": "manifest-sealer",
+      "sha256": "a82ca6b85ce66af3c3c075ce78eb5b7368cffd13230078c0348ffb85ae35ca61",
+      "size": 1661
+    },
+    {
+      "path": "experiments/paper38/validation/validate_source.py",
+      "role": "source-validator",
+      "sha256": "3e0c2b6a67cd4bf354e786d9dfc58a01b8d3ed884ece4eea2737685b66c67730",
+      "size": 6240
+    },
+    {
+      "path": "experiments/paper38/validation/validate_return_budget.py",
+      "role": "finite-validator",
+      "sha256": "8512b802183889cd048881c9cb01bde60baaa946ca783e076fb43000fb7cb55a",
+      "size": 12855
+    },
+    {
+      "path": "experiments/paper38/validation/validate_package.py",
+      "role": "package-validator",
+      "sha256": "004e556dc208781700300af7e32146dc687e25ec387b72ea23624ee006b46881",
+      "size": 7633
+    },
+    {
+      "path": "experiments/paper38/validation/test_contract.py",
+      "role": "negative-contract-tests",
+      "sha256": "267e482d26b9c044883bf32633d97ec0a03f7d2d1181ac2e74bcb80685dfff7a",
+      "size": 4377
+    },
+    {
+      "path": "experiments/paper38/validation/validate_lean_formalization.py",
+      "role": "lean-validator",
+      "sha256": "16f32e5e93dc6406ead53c0bfc66461b2c46b2eeb8ebc711f2a053a2b1bdaf85",
+      "size": 9773
+    },
+    {
+      "path": "experiments/paper38/lean/Paper38.lean",
+      "role": "lean-entrypoint",
+      "sha256": "cac8c7d0e8dbe3b736baa1480bd25ab82eeede6fc7d5493a65f116d73cda7b40",
+      "size": 89
+    },
+    {
+      "path": "experiments/paper38/lean/Paper38/ReturnLayers.lean",
+      "role": "lean-product-layers",
+      "sha256": "b57ab20a50ba39280a73efa818ad532e0f9ff9498164eb80ba9bf49113821c3f",
+      "size": 4767
+    },
+    {
+      "path": "experiments/paper38/lean/Paper38/Saturation.lean",
+      "role": "lean-saturation",
+      "sha256": "91afa78c443f27b9c5768ee56d282dfb40b80601f64a6f280924a50e044f956e",
+      "size": 10221
+    },
+    {
+      "path": "experiments/paper38/lean/Paper38/InitialLayerControl.lean",
+      "role": "lean-initial-control",
+      "sha256": "064c863e9a04abca715fe1ff3a2920388c5835d6830b02c12c6415dce47c7060",
+      "size": 2823
+    },
+    {
+      "path": "experiments/paper38/lean/AxiomAudit.lean",
+      "role": "lean-axiom-audit",
+      "sha256": "b42a2ce49147086968c9932b66e761a12e2bf1968a82b20ea97697229c0a3c5e",
+      "size": 1575
+    },
+    {
+      "path": "experiments/paper38/lean/README.md",
+      "role": "lean-scope-readme",
+      "sha256": "be8b8670947c497f1c9175c483be6fd08265090e666b577e61d6dfa8a20621ac",
+      "size": 4012
+    },
+    {
+      "path": "experiments/paper38/lean/lakefile.toml",
+      "role": "lean-project-config",
+      "sha256": "7de26258acb250c5197146907f1aee0ec8bdebada41bc45996a335900e73c842",
+      "size": 260
+    },
+    {
+      "path": "experiments/paper38/lean/lake-manifest.json",
+      "role": "lean-dependency-lock",
+      "sha256": "3ba2d12618060eb47aa1a355be95b6341c14af50aabf94fafa303d253b00e933",
+      "size": 3566
+    },
+    {
+      "path": "experiments/paper38/lean/lean-toolchain",
+      "role": "lean-toolchain",
+      "sha256": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b",
+      "size": 25
+    },
+    {
+      "path": "experiments/paper38/lean/formalization-manifest.json",
+      "role": "lean-formalization-manifest",
+      "sha256": "44ef1773b7dcadbbdf9bcd46d19a820db7eda00962b5a4e2f34f3ac019f8ffa6",
+      "size": 5997
+    }
+  ],
+  "digest_policy": {
+    "algorithm": "sha256",
+    "scope": "exact_file_bytes",
+    "text_eol": "LF"
+  },
+  "excluded_dependencies": [
+    "experiments/exploratory/",
+    "experiments/synchronizing_automata/",
+    "papers/unnumbered/",
+    "upstream experiment workspaces"
+  ],
+  "formalization_claimed": "PARTIAL_ALGEBRAIC_SPINE",
+  "paper_id": "PAPER38",
+  "proof_ownership": "The manuscript owns the data-independent theorems; finite controls are supplementary.",
+  "release_identity_claimed": false,
+  "schema": "rime.paper38.development-manifest.v1",
+  "status": "DRAFT_PAPER_OWNED_CLOSURE",
+  "validation_mode": "LOCAL_CLOSURE_VERIFICATION"
+}
