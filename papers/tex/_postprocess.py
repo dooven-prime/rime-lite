@@ -294,7 +294,7 @@ def _find_thm_heading(line):
     m = re.match(
         r'\\subsection{('
         r'(?:Theorem|Lemma|Corollary|Definition|Remark|Proposition|Example)'
-        r')\s+(\d+(?:\.\d+)*)'
+        r')\s+([A-Z]\.\d+|\d+(?:\.\d+)*)'
         r'([^}]*)\}',
         s,
     )
@@ -411,11 +411,13 @@ def match_thm(line):
     return _find_bold_thm(line)
 
 
-def end_here(line):
+def end_here(line, stop_at_proof=False):
     """Should a theorem environment end before this line?"""
     s = line.strip()
     if not s:
         return False
+    if stop_at_proof and re.match(r'\\textbf\{Proof(?:\.|:)', s):
+        return True
     stops = [
         r'\subsection', r'\section', r'\subsubsection',
         r'\begin{center}\rule', r'\begin{longtable}',
@@ -430,6 +432,24 @@ def end_here(line):
             if s.startswith(r'\textbf{' + t):
                 return True
     return False
+
+
+def split_explicit_proofs(body):
+    """Separate Paper XXXVIII's bold Markdown proofs from theorem statements."""
+    pattern = re.compile(
+        r'(?ms)^(\\textbf\{Proof(?:\.|:[^}]*)\})(.*?)\\\(\\square\\\)'
+    )
+
+    def replace(match):
+        heading, content = match.group(1, 2)
+        lead = heading.replace('Proof: ', '', 1) if 'Proof:' in heading else ''
+        content = re.sub(r'\\textbf\{Proof:\s*', r'\\textbf{', content)
+        return '\\begin{proof}\n' + (lead + '\n' if lead else '') + content.strip() + '\n\\end{proof}'
+
+    body, count = pattern.subn(replace, body)
+    if count != 10 or re.search(r'\\textbf\{Proof(?:\.|:)|\\\(\\square\\\)', body):
+        raise ValueError('Paper XXXVIII proof boundaries are incomplete')
+    return body
 
 
 def _convert_heading_math(text):
@@ -1531,7 +1551,7 @@ def process(input_path, output_path, title, author='WuJun Chen'):
     is_paper27 = 'paper27' in input_path.lower()
     is_paper29 = 'paper29' in input_path.lower()
     title_block = None
-    m_abs = re.search(r'\\subsection\{Abstract\}', body)
+    m_abs = re.search(r'\\subsection\*?\{Abstract\}', body)
     if not is_ccs and m_abs:
         header = body[:m_abs.start()]
         title_block = {
@@ -1759,10 +1779,10 @@ def process(input_path, output_path, title, author='WuJun Chen'):
                         out.append(lines[i])
                         i += 1
                         break
-                if list_depth == 0 and end_here(lines[i]):
+                if list_depth == 0 and end_here(lines[i], stop_at_proof=paper_number == 38):
                     break
                 if list_depth == 0 and (not lines[i].strip() and i+1 < len(lines) and
-                    (end_here(lines[i+1]) or match_thm(lines[i+1]))):
+                    (end_here(lines[i+1], stop_at_proof=paper_number == 38) or match_thm(lines[i+1]))):
                     break
                 out.append(lines[i])
                 i += 1
@@ -1838,10 +1858,10 @@ def process(input_path, output_path, title, author='WuJun Chen'):
                                     out.append(lines[i])
                                     i += 1
                                     break
-                            if list_depth == 0 and end_here(lines[i]):
+                            if list_depth == 0 and end_here(lines[i], stop_at_proof=paper_number == 38):
                                 break
                             if list_depth == 0 and (not lines[i].strip() and i+1 < len(lines) and
-                                (end_here(lines[i+1]) or match_thm(lines[i+1]))):
+                                (end_here(lines[i+1], stop_at_proof=paper_number == 38) or match_thm(lines[i+1]))):
                                 break
                             out.append(lines[i])
                             i += 1
@@ -1854,6 +1874,8 @@ def process(input_path, output_path, title, author='WuJun Chen'):
             i += 1
 
     body = '\n'.join(out)
+    if paper_number == 38:
+        body = split_explicit_proofs(body)
 
     # ── Cross-reference: unnumbered subsections as implicit theorems ──
     # Detect \subsection{N.M Name} and \label{name-slug}, then
@@ -1905,7 +1927,8 @@ def process(input_path, output_path, title, author='WuJun Chen'):
     _numbered = {k: v for k, v in xref_map.items() if k[1]}
 
     for (env_type, number), label in sorted(
-        _numbered.items(), key=lambda x: -int(x[0][1].split('.')[0])
+        _numbered.items(),
+        key=lambda x: -int(x[0][1].split('.')[0]) if x[0][1][0].isdigit() else 0,
     ):
         display = env_type.capitalize()
         pattern = (r'(?<![\\{])' + re.escape(display) +
@@ -1914,6 +1937,12 @@ def process(input_path, output_path, title, author='WuJun Chen'):
 
     # ── Section numbering restructure (before labels, so stripping is clean) ──
     body = _restructure_sections(body, is_ccs=is_ccs)
+    if paper_number == 38:
+        body = body.replace(
+            r'\appendix',
+            r'\appendix' + '\n' + r'\renewcommand{\thetheorem}{\Alph{section}.\arabic{theorem}}',
+            1,
+        )
 
     # ── Section label generation ──
     body = add_section_labels(body)

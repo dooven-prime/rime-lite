@@ -1,0 +1,148 @@
+{
+  "audited_declarations": [
+    "Rime.Paper38.exactLayer_eq_power",
+    "Rime.Paper38.mem_exactLayer_iff_product_word",
+    "Rime.Paper38.mem_cumulativeLayer_iff",
+    "Rime.Paper38.cumulativeLayer_eq_union",
+    "Rime.Paper38.cumulativeLayer_mono",
+    "Rime.Paper38.cumulativeLayer_nonempty",
+    "Rime.Paper38.cumulativeLayer_leftStable",
+    "Rime.Paper38.positiveClosure_eq_subgroup",
+    "Rime.Paper38.no_premature_stall",
+    "Rime.Paper38.cumulative_stall_iff_full",
+    "Rime.Paper38.phaseCoset_card",
+    "Rime.Paper38.phaseCoset_subset",
+    "Rime.Paper38.phaseCoset_leftStable",
+    "Rime.Paper38.phaseAggregate_leftStable",
+    "Rime.Paper38.local_mem_phaseAggregate",
+    "Rime.Paper38.phaseAggregate_closure",
+    "Rime.Paper38.phaseCoset_disjoint",
+    "Rime.Paper38.stable_strict_growth",
+    "Rime.Paper38.cumulative_card_growth",
+    "Rime.Paper38.cumulative_card_lower_bound",
+    "Rime.Paper38.cumulative_full_at_index",
+    "Rime.Paper38.at_most_index_product_word",
+    "Rime.Paper38.five_phase_index_le_twentyFour",
+    "Rime.Paper38.uniform_twentyFour_product_word",
+    "Rime.Paper38.initial_layers_disjoint",
+    "Rime.Paper38.initial_layers_equal_card",
+    "Rime.Paper38.initial_layers_differ",
+    "Rime.Paper38.full_aggregate_mul_nonempty",
+    "Rime.Paper38.initial_separation_second_recovery",
+    "Rime.Paper38.matched_survivor_reads_differ"
+  ],
+  "build": {
+    "commands": [
+      "lake build",
+      "lake env lean AxiomAudit.lean"
+    ],
+    "lean": "4.33.0",
+    "mathlib_revision": "db584cd6d46c92f209a44c0f1c829460d327499d",
+    "project_root": "experiments/paper38/lean"
+  },
+  "coverage": [
+    {
+      "checked": "positive exact layers, cumulative union, retained initial factor, and left stability",
+      "declarations": [
+        "exactLayer_eq_power",
+        "mem_exactLayer_iff_product_word",
+        "mem_cumulativeLayer_iff",
+        "cumulativeLayer_eq_union",
+        "cumulativeLayer_mono",
+        "cumulativeLayer_nonempty",
+        "cumulativeLayer_leftStable"
+      ],
+      "inputs": [
+        "finite factor sets A and B",
+        "index n counts n+1 charged factors"
+      ],
+      "manuscript_role": "Theorem 3.1: algebraic layer and product-word part"
+    },
+    {
+      "checked": "positive closure, aggregate generation, no stall, and whole-phase-block growth",
+      "declarations": [
+        "positiveClosure_eq_subgroup",
+        "no_premature_stall",
+        "cumulative_stall_iff_full",
+        "phaseCoset_card",
+        "phaseCoset_subset",
+        "phaseCoset_leftStable",
+        "phaseAggregate_leftStable",
+        "local_mem_phaseAggregate",
+        "phaseAggregate_closure",
+        "phaseCoset_disjoint",
+        "stable_strict_growth",
+        "cumulative_card_growth",
+        "cumulative_card_lower_bound"
+      ],
+      "inputs": [
+        "finite ambient generated group",
+        "A generates that group",
+        "nonempty B",
+        "A and B invariant under left phase multiplication"
+      ],
+      "manuscript_role": "Lemmas 4.1--4.3: closure and cumulative growth"
+    },
+    {
+      "checked": "index saturation and an algebraic product witness with at most 24 charged factors",
+      "declarations": [
+        "cumulative_full_at_index",
+        "at_most_index_product_word",
+        "five_phase_index_le_twentyFour",
+        "uniform_twentyFour_product_word"
+      ],
+      "inputs": [
+        "finite generated group",
+        "nonempty left-phase-stable initial factor",
+        "order-five phase subgroup of a subgroup of S5"
+      ],
+      "manuscript_role": "Theorem 4.4: algebraic cumulative budget"
+    },
+    {
+      "checked": "distinct equal-size first layers, full second cumulative layers, and distinct fixed survivor reads",
+      "declarations": [
+        "initial_layers_disjoint",
+        "initial_layers_equal_card",
+        "initial_layers_differ",
+        "full_aggregate_mul_nonempty",
+        "initial_separation_second_recovery",
+        "matched_survivor_reads_differ"
+      ],
+      "inputs": [
+        "abstract DihedralGroup 5",
+        "common full aggregate"
+      ],
+      "manuscript_role": "Theorem 5.1: finite D10 initial-layer control"
+    }
+  ],
+  "entrypoint": "experiments/paper38/lean/Paper38.lean",
+  "excluded_scope": [
+    "concrete normalized circular actions and full ordinary-lane guard geometry",
+    "actual chronological label words and same-representative raw path realization",
+    "complete survivor restriction theorem and physical coordinate embedding",
+    "all-g reflection-location family",
+    "conditional 24n original-letter corollary and Appendix A controls",
+    "finite JSON catalogue, sharp constant, exact-24 padding, and shortest raw words",
+    "typed source, authorization, transfer, handoff, B0, POS, settlement, and reset bounds"
+  ],
+  "formalization_id": "PAPER38-RETURN-BUDGET-ALGEBRA-SPINE-V1",
+  "permitted_axiom_footprint": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "schema": "rime.paper38.lean-formalization-manifest.v1",
+  "source_sha256": {
+    "AxiomAudit.lean": "b42a2ce49147086968c9932b66e761a12e2bf1968a82b20ea97697229c0a3c5e",
+    "Paper38.lean": "cac8c7d0e8dbe3b736baa1480bd25ab82eeede6fc7d5493a65f116d73cda7b40",
+    "Paper38/InitialLayerControl.lean": "064c863e9a04abca715fe1ff3a2920388c5835d6830b02c12c6415dce47c7060",
+    "Paper38/ReturnLayers.lean": "b57ab20a50ba39280a73efa818ad532e0f9ff9498164eb80ba9bf49113821c3f",
+    "Paper38/Saturation.lean": "91afa78c443f27b9c5768ee56d282dfb40b80601f64a6f280924a50e044f956e",
+    "README.md": "be8b8670947c497f1c9175c483be6fd08265090e666b577e61d6dfa8a20621ac",
+    "lake-manifest.json": "3ba2d12618060eb47aa1a355be95b6341c14af50aabf94fafa303d253b00e933",
+    "lakefile.toml": "7de26258acb250c5197146907f1aee0ec8bdebada41bc45996a335900e73c842",
+    "lean-toolchain": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b"
+  },
+  "status": "COMPILED_PAPER_OWNED_PARTIAL_FORMALIZATION",
+  "validation_mode": "LOCAL_CLOSURE_VERIFICATION"
+}

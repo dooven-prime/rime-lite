@@ -81,7 +81,7 @@ moving fields, or represented genericity.
 ## Repository Boundary
 
 The public documentation covers the published Papers I--XV architecture, the
-independently scoped Paper XVI computational case study, and Papers XX--XXXVII
+independently scoped Paper XVI computational case study, and Papers XX--XXXVIII
 mathematical lines. Author-side planning, exploratory research routing,
 release migration status, and historical working notes are outside this
 public documentation index.

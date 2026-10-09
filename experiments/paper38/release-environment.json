@@ -1,0 +1,19 @@
+{
+  "schema": "rime.paper38.release-environment.v1",
+  "captured_date": "2026-10-09",
+  "platform": "Windows x86_64",
+  "python": "3.13.0",
+  "pandoc": "3.6.4",
+  "xelatex": "MiKTeX-XeTeX 4.18 (MiKTeX 26.5)",
+  "bibtex": "MiKTeX-BibTeX 4.2 (MiKTeX 26.5)",
+  "lean_toolchain_declared": "4.33.0",
+  "mathlib_revision_declared": "db584cd6d46c92f209a44c0f1c829460d327499d",
+  "lean_compiler_replayed_for_this_release": false,
+  "digest_scope": "exact file bytes after repository checkout",
+  "notes": [
+    "The finite producer and independent coordinate replay use the Python standard library only.",
+    "The partial Lean spine is source-addressed and statically checked; this release verification does not replay the Lean compiler.",
+    "The reader PDF uses the repository-local Markdown-to-LaTeX builder, whose source files are bound in the release manifest; generated TeX is excluded.",
+    "This record describes the observed build environment, not a portability guarantee."
+  ]
+}

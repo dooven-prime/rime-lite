@@ -5,7 +5,7 @@ It identifies the object and reader question owned by each paper without
 repeating manuscript definitions, numerical tables, or release metadata.
 
 The current public release contains Papers I--XVI and the independently scoped
-Papers XX--XXXVII mathematical lines. CCS v2.1 is an optional non-paper archive.
+Papers XX--XXXVIII mathematical lines. CCS v2.1 is an optional non-paper archive.
 Publication identities and DOIs are maintained only in the root
 [Public Release table](../README.md#public-release).
 
@@ -47,7 +47,7 @@ realization, and claim status.
 
 Paper XVI is an independently scoped computational connectome case study, not
 a successor SOF protocol. Papers XVII--XIX are intentionally unused. Papers
-XX--XXXVII do not continue the SOF protocol authority chain.
+XX--XXXVIII do not continue the SOF protocol authority chain.
 
 | Paper | Owned object or interface | Reader question |
 |-------|---------------------------|-----------------|
@@ -70,6 +70,7 @@ XX--XXXVII do not continue the SOF protocol authority chain.
 | XXXV | one-lane order-phase survivor frontier | Which phase and survivor data are determined by a branch's cyclic-order orbit under the declared one-lane construction? |
 | XXXVI | signed multi-lane exit graph and survivor frontier | Which source-consecutive pairs and surviving placements are reachable under the declared full-lane guards? |
 | XXXVII | guarded lineage permutation group and ordinary-lane survivor frontier | Which source-labelled injections and terminal survivor placements are reachable with arbitrary within-lane permutations under full ordinary-lane guards? |
+| XXXVIII | source-relative return-count layers and budgeted survivor frontier | Which terminal placements and survivor maps are reachable within a return budget from a supplied local full-lane configuration? |
 
 ## Protocol Ownership
 
