@@ -14,12 +14,43 @@ not edit them or rerun their one-time registration producers to tidy prose.
 | Read the claim and its limits | [Manuscript](../../papers/paper17/Paper%20XVII.md), [reader PDF](../../papers/paper17/paper17_arxiv.pdf) |
 | Map manuscript claims to exact records | [Evidence table v2](manuscript-evidence-table.v2.json) |
 | Check reduced-domain admission and the frozen primary output | [D0 admission](results/finite_history_D0_admission.v1.json), [primary output](results/finite_history_closure.v1.json) |
+| Reinspect the retained exact orbits, not only their summary | [finite-history sidecar](results/finite_history_closure.v1.sidecar.tar), [sidecar inventory](results/finite_history_closure.v1.sidecar-inventory.json) |
 | Check the common-support correction and two fiber fates | [Common support](results/finite_history_common_support_audit.v1.json), [fiber decomposition](results/finite_history_transient_fiber_audit.v1.json) |
 | Check the terminal-image limit | [Terminal-image audit](results/finite_history_terminal_image_audit.v1.json) |
 | Check the MTS-1 finite classification and global pair quantifier | [Classification](mechanism/results/mts1-v1/validation/mechanism_classification.v1.json), [global tally](mechanism/results/mts1-v1.global-pair-tally.v1.json) |
 | Check the external data deposit binding | [Zenodo sidecar anchor](mechanism/results/mts1-v1.zenodo-anchor.v1.json) |
 | Check the complete persistent effective-drive boundary | [Readout](mechanism/post_result_audits/EFFECTIVE_DRIVE_BOUNDARY.md), [exact cache audit](mechanism/post_result_audits/persistent_safe_effective_drive.v1.json) |
 | Check current package membership and validation status | [Manifest v2](release-manifest.v2.json), [local receipt v2](results/release.v2.validation-receipt.json) |
+
+## Reopen from Exact Sources
+
+The evidence table and manifest locate claims and bytes; neither replaces the
+retained observations. Three routes let a later reader ask a different question:
+
+1. For history order, fiber membership, or terminal-image questions, begin with
+   `results/finite_history_closure.v1.sidecar.tar` and its inventory. The
+   `finite_history_binary.py` codec and the three `audit_finite_history_*_v1.py`
+   scripts read the retained exact orbit records. The summary JSON is a result
+   of those records, not the only surviving representation.
+2. For a different transition predicate or an initial-split hypothesis, begin
+   with the [MTS-1 inventory](mechanism/results/mts1-v1/inventory.json) and
+   the exact sidecar at the
+   [data-deposit DOI](https://doi.org/10.5281/zenodo.23234143). The
+   source-transition caches and pair shards are not in this Git checkout.
+   `mechanism/audit_global_pair_tally_v1.py` is one read-only derivation from
+   them; the default compact gate does not read those payloads.
+3. To inspect why the earlier history-order interpretation changed, compare
+   the [candidate-1 snapshot](../../release-snapshots/paper17/1.0-candidate-1/)
+   with the current manuscript and v2 manifest. The snapshot preserves an
+   earlier interpretation and both earlier figure renderings; it is not a
+   second authority for the current claim.
+
+The local sidecar starts from retained exact orbits, not a fresh reconstruction
+from the upstream connectome. Changing the carrier or dynamics requires the
+[Paper XVI source provenance](../paper16/upstream-provenance.v1.json) and a
+separately declared computation. A release commit freezes one public evidence
+closure, not the questions that may be asked of its retained sources; new
+results require new records rather than rewriting the frozen bytes.
 
 The paper-owned public gate is read-only. From the repository root, run with
 the Python 3.12.6 environment and dependency versions in
@@ -31,6 +62,11 @@ if (-not $py) { throw 'Set RIME_PY312 to the pinned Python 3.12 executable.' }
 & $py experiments/paper17/validation/validate_public_package.py
 & $py experiments/paper17/validation/validate_release_v2.py
 ```
+
+Both commands should emit `status: PASS`; the v2 result reports 129 bound
+artifacts and 70 release-identity entries. A missing pinned dependency fails
+before the evidence check; a path or digest mismatch fails the closure check.
+The default commands do not require the external MTS-1 sidecar.
 
 The first command checks nine retained local receipts and tests. The second
 also checks the current manifest, the compact drive-audit bindings and

@@ -22,6 +22,14 @@ CLASSIFICATION = (
     / "mechanism_classification.v1.json"
 )
 OUTPUT = Path(__file__).with_name("fig2_internal_transition_layer_contrast.png")
+DRIVE_AUDIT = (
+    REPO
+    / "experiments"
+    / "paper17"
+    / "mechanism"
+    / "post_result_audits"
+    / "persistent_safe_effective_drive.v1.json"
+)
 
 RED = "#B33A3A"
 RED_LIGHT = "#F2D9D5"
@@ -91,6 +99,7 @@ def main() -> int:
     data = json.loads(CLASSIFICATION.read_text(encoding="utf-8"))
     result = data["classification"]
     separators = result["exact_separators"]
+    drive_audit = json.loads(DRIVE_AUDIT.read_text(encoding="utf-8"))
 
     assert data["status"] == "PASS"
     assert result["outcome"] == "EXACT_TRANSITION_LAYER_LOCALIZATION"
@@ -107,6 +116,8 @@ def main() -> int:
         entry["direction"] == "TRANSIENT_ALL__PERSISTENT_NONE"
         for entry in separators
     )
+    assert drive_audit["status"] == "PASS"
+    assert drive_audit["summary"]["nonzero_clipped_drive_source_times"] == 0
 
     plt.rcParams.update(
         {
@@ -184,10 +195,10 @@ def main() -> int:
 
     ax_bottom.add_patch(Rectangle((0.02, 0.015), 0.94, 0.14, transform=ax_bottom.transAxes, facecolor="#F1F3F5", edgecolor=LINE, linewidth=1.2))
     ax_bottom.text(0.49, 0.105, "Complete exact finite census", ha="center", color=INK, weight="bold", transform=ax_bottom.transAxes)
-    ax_bottom.text(0.49, 0.05, "153 sources | 459 transitions | 6,975 pair records | 15/15 histograms differ", ha="center", color=MUTED, fontsize=11.5, transform=ax_bottom.transAxes)
+    ax_bottom.text(0.49, 0.05, "153 sources | 459 transitions | 6,975 pairs | 15/15 joint TO-vs-PS contrasts", ha="center", color=MUTED, fontsize=11.5, transform=ax_bottom.transAxes)
 
     fig.suptitle(
-        "Stable internal transition-layer contrast after transient separation",
+        "Exact transition-layer contrast at two audited later steps",
         x=0.04,
         y=0.985,
         ha="left",
@@ -198,7 +209,7 @@ def main() -> int:
     fig.text(
         0.04,
         0.935,
-        "TO = transient-obstruction pairs; PS = persistent-safe pairs. Exact finite-census comparison.",
+        "TO = transient-obstruction pairs; PS = persistent pairs with zero clipped drive at t=2,3.",
         color=MUTED,
         fontsize=12,
     )

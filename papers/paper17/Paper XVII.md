@@ -1,5 +1,5 @@
 # Exact Post-Transient Coarse Factorization in a Reduced Male Drosophila CNS Model
-### Reached-Set Restriction, Safe Forgetting, and Internal Transition-Layer Contrast
+### Reached-Set Restriction, Drive-Off Fibers, and Internal Transition-Layer Contrast
 
 **WuJun Chen**
 
@@ -7,9 +7,9 @@ Independent Researcher | RIME Program | 2026
 
 **Paper XVII**
 
-*This paper is Paper XVII of the RIME program, an independently scoped
-computational follow-up to Paper XVI. It does not extend the SOF protocol line
-and does not reopen Paper XVI's published claim surface.*
+*This paper is Paper XVII of the RIME program. It studies post-transient coarse
+factorization on a reduced domain of Paper XVI's signed MaleCNS model. Its
+claims are finite and model-relative.*
 
 ---
 
@@ -45,11 +45,10 @@ their clipped network drive is zero, so common linear leakage suffices to
 preserve their one-step coarse equality.
 
 **Boundary.** The result is an exact finite Computational Certificate on a
-reduced domain and horizon $T=4$. It does not establish a coarse endomap,
-minimal memory, full-domain closure, a causal trigger for the initial split,
-or physiological brain-state dynamics. Validation is local exact replay, not
-independent replication. The noninjective factorization does not demonstrate
-active compensation or nonzero-drive dynamic compression.
+reduced domain and horizon $T=4$. It establishes neither a coarse endomap nor
+minimal memory, full-domain closure, a cause of the initial split, or
+physiological brain-state dynamics. The noninjective factorization does not
+demonstrate active compensation or nonzero-drive dynamic compression.
 
 **Keywords.** connectome; coarse-graining; coarse factorization; reached set;
 quotient dynamics; exact rational computation; transient separation; clipping;
@@ -69,7 +68,7 @@ MaleCNS
 | $z_{a,t}=O(x_{a,t})$ | exact coarse observation |
 | $H_h(a,t)$ | newest-first history $(z_{a,t},\ldots,z_{a,t-h})$ |
 | $S(a,t)$ | exact successor observation $z_{a,t+1}$ |
-| $\Omega_h$ | original order-specific source-time window domain |
+| $\Omega_h$ | order-specific source-time window domain |
 | $\Omega^{\rm com}$ | common support $D_0\times\{2,3\}$ |
 | $\Pi_h$ | partition of the selected source-time support into equal-$H_h$ fibers |
 | $N_h$ | number of registered windows |
@@ -97,16 +96,16 @@ historical domains \cite{paper16}. That result established a negative boundary:
 an anatomically meaningful and reproducible observation need not determine its
 own future.
 
-The natural constructive response is to add memory. For a coarse history
+One possible response is to add memory. For a coarse history
 
 $$
 H_h(x,t)=\bigl(O(F^t x),O(F^{t-1}x),\ldots,O(F^{t-h}x)\bigr),
 \tag{1.1}
 $$
 
-one asks whether equal histories have equal observed successors. The first
-registered experiment in this line evaluated orders $h=0,1,2$ over a four-step
-exact orbit. Its frozen output appeared to give the desired transition:
+one asks whether equal histories have equal observed successors. An
+order-specific comparison evaluated $h=0,1,2$ over a four-step exact orbit.
+It appeared to give the transition:
 
 $$
 h=0,1:\ \text{failure},
@@ -115,12 +114,12 @@ h=2:\ \text{historically labelled exact closed noninjective}.
 \tag{1.2}
 $$
 
-That interpretation was wrong. The three orders in (1.2) were evaluated on
-different left boundaries. Order zero included $t=0$, order one began at
-$t=1$, and order two began at $t=2$. A hostile common-support audit showed
-that, once all orders are restricted to the same source-time points
-$t\in\{2,3\}$, they induce exactly the same successor-compatible partition. The past two
-observations add no distinction on that support.
+This contrast does not establish a memory effect. The three orders in (1.2)
+were evaluated on different left boundaries. Order zero included $t=0$,
+order one began at $t=1$, and order two began at $t=2$. On the common
+source-time support $t\in\{2,3\}$, all three induce the same
+successor-compatible partition. The past two observations add no distinction
+there.
 
 The actual result is more structural than finite-memory restoration. The
 initial coarse equivalence relation contains classes that are incompatible
@@ -140,25 +139,11 @@ but its identified windows do not demonstrate compensation between nonzero
 effective drives. This distinction separates a valid finite factorization
 from a stronger interpretation of the dynamics that realizes it.
 
-A second registered computation asks what exact internal transition-layer
-features distinguish the two fiber fates. It does not recover one universal
-trigger at the defining $1\to2$ transition. It does find a stable exact regime
-contrast afterward: at $2\to3$ and $3\to4$, two predeclared clipping-sensitive
-predicates hold for every transient-obstruction pair and for no
-persistent-safe pair in every shared-stratum comparison cell. The result
-therefore separates an unresolved, potentially heterogeneous initial trigger
-from a sharply different post-separation internal signature.
-
-The two fiber fates can be stated together:
-
-> **The transient does not repair the original ambiguous fibers. It
-> eliminates them. Exact noninjective coarse factorization is then carried by a
-> disjoint family of persistent successor-consistent fibers.**
-
-Here elimination is fiber-relative. It means that the original unsafe
-equivalence classes do not survive as equivalence classes on the later
-registered slices because their members become coarsely distinguishable. It
-does not mean that microscopic states disappear or converge.
+An exact pair census distinguishes the two fiber fates at later transition
+layers. At $2\to3$ and $3\to4$, two registered clipping-sensitive predicates
+hold for every transient-obstruction pair and for no persistent-safe pair in
+each shared-stratum comparison cell. Neither predicate identifies the cause
+of the defining $1\to2$ split.
 
 ### 1.1 Contributions
 
@@ -213,23 +198,13 @@ fiber geometry after restricting the same registered observation to later
 reached-set slices, together with an exact internal transition-layer census of
 the two resulting fiber fates.
 
-The novelty boundary is consequently narrow:
-
-> This paper provides a source-addressed exact finite certificate that a
-> lossy coarse observation, invalid as a one-step factor during an initial
-> transient, supports an exact noninjective factorization after restriction to
-> declared later reached-set slices, and it decomposes that transition into
-> transient separation and disjoint persistent safe forgetting. It further
-> gives an exact post-separation layer contrast between the two declared pair
-> families without identifying a universal trigger for the initial split.
-> A complete persistent-cohort cache audit establishes that all non-singleton
-> fibers on the common support have zero clipped drive; their one-step
-> equality is consequently explained by the common leak.
-
-It does not provide a general eventual-lumpability theorem, a causal mechanism,
-or a new principle of clipping or scalar leakage. The exact coverage and its
-interpretive consequence are case-study results, not claims of active
-compensation, learning, or biological forgetting.
+The case-specific contribution is an exact finite certificate for
+post-transient, noninjective factorization under a fixed observation, together
+with a decomposition of the unsafe and persistent fibers. The pair census
+locates a later internal contrast, while the persistent-cohort audit supplies
+a common-leak explanation for the retained equality. These results provide
+neither a general eventual-lumpability theorem nor a causal mechanism,
+learning process, or biological account of forgetting.
 
 ---
 
@@ -350,10 +325,24 @@ This requirement is central to the correction below.
 
 ### 4.1 Signed Dynamics and Observation
 
-The model uses the same node basis and signed normalized
-$Y_{\rm known\pm}$ carrier as the dynamic line of Paper XVI. The stored carrier
-uses source rows and target columns; state propagation uses the registered
-incoming action $Y^{\mathsf T}x$. The exact deterministic update is
+The model uses the node basis and signed known-transmitter proxy carrier of
+Paper XVI \cite{paper16}: 211,577 nodes and 26,028,386 directed edges in the
+full support, of which 25,214,058 have the registered known-sign labels.
+These signs are not receptor-validated physiological effects. If $W$ is the
+frozen signed-weight matrix, its absolute outgoing-row-$L^1$ normalization is
+
+$$
+s_v=\sum_w|W_{vw}|,
+\qquad
+Y_{vw}=\begin{cases}
+W_{vw}/s_v,&s_v>0,\\
+0,&s_v=0.
+\end{cases}
+$$
+
+The stored carrier uses source rows and target columns; state propagation
+uses the registered incoming action $Y^{\mathsf T}x$. The exact deterministic
+update is
 
 $$
 F_Y(x)=(1-\alpha)x+\alpha\,\phi(\gamma Y^{\mathsf T}x),
@@ -363,7 +352,8 @@ F_Y(x)=(1-\alpha)x+\alpha\,\phi(\gamma Y^{\mathsf T}x),
 $$
 
 with $\alpha=1/5$, $\gamma=1$, zero external input, and no stochastic noise.
-All registered coefficients and states are represented as reduced rationals.
+Write $C=\phi$ for this clipping map below. All registered coefficients and
+states are represented as reduced rationals.
 
 The observation $O$ is the superclass-mean vector. For the declared partition
 $V=\bigsqcup_iV_i$,
@@ -373,14 +363,16 @@ O_i(x)=\frac{1}{|V_i|}\sum_{v\in V_i}x_v.
 \tag{4.2}
 $$
 
-The observation is an operational annotation aggregate, not an assumed
-biological state. The computational evidence starts from the retained exact
-orbit sidecar; microscopic orbit generation is not replayed by this package.
+The observation has 28 superclass coordinates. It is an operational annotation
+aggregate, not an assumed biological state. The computational evidence starts
+from the retained exact orbit sidecar; microscopic orbit generation is not
+replayed by this package.
 
 ### 4.2 Reduced Domain and Selection
 
-The complete eligible source universe contains 163,439 rows across 25
-nonempty superclass strata. A declared resource model selected 711 sources.
+Of the 28 observation coordinates, 25 have eligible unit-state sources. The
+complete eligible source universe contains 163,439 rows across those 25
+strata. A declared resource model selected 711 sources.
 One source was first assigned to every nonempty stratum; the
 remaining seats used largest-remainder apportionment on remaining stratum
 capacity, and SHA-256 rank selected members within each stratum. The declared
@@ -388,8 +380,7 @@ selection rule does not read trajectories, factorization, or candidate
 outcomes.
 
 The reduced domain is a declared computational domain, not a random sample or
-a prevalence estimator. The retained immutable record does not independently
-establish that the scope record preceded the computed outcome.
+a prevalence estimator.
 
 ### 4.3 Exact Horizon
 
@@ -409,15 +400,11 @@ orders $0,1,2$ are derived. Rational values are serialized canonically with
 positive reduced denominators. SHA-256 is an index and integrity mechanism;
 every potential equality is resolved by canonical payload comparison.
 
-The resource gates were satisfied by the completed run. The scope, exact
-sidecar, and subsequent audits are bound in the paper-owned evidence package
-described in Appendix A.
-
 ---
 
-## 5. Frozen Primary Result
+## 5. Order-Specific Baseline
 
-The original order-specific classification is:
+The order-specific classification is:
 
 | order $h$ | source-time support | $(N_h,K_h,M_h)$ | successor-fiber test |
 | ---: | --- | --- | --- |
@@ -425,13 +412,10 @@ The original order-specific classification is:
 | 1 | $1\le t\le3$ | $(2133,1797,51)$ | 6 conflicts |
 | 2 | $2\le t\le3$ | $(1422,1228,51)$ | exact, noninjective |
 
-The original classification called order two minimal on these
-order-specific domains. The next section tests whether that interpretation
-survives a common source-time support.
-
-The left boundary moves with $h$. In particular, all six order-one failure
-fibers occur at $t=1$, a time omitted from the order-two domain. The frozen
-table therefore mixes two changes:
+Read alone, the table suggests that order two is the first successful history
+order. But its left boundary moves with $h$: all six order-one failure fibers
+occur at $t=1$, which the order-two domain omits. The table therefore mixes
+two changes:
 
 $$
 \text{history representation}
@@ -440,7 +424,7 @@ $$
 \tag{5.1}
 $$
 
-The next section separates them.
+Section 6 compares the orders on one support.
 
 ---
 
@@ -497,15 +481,33 @@ support, equal current observations already force equal one- and two-lag
 history tuples. The past coordinates are redundant for discrimination on the
 registered points.
 
-Third, the factorization remains genuinely lossy. Since
+Third, the factorization remains genuinely lossy at the microscopic-state
+level. The count
 
 $$
 K_0=1228<1422=N_0,
 \tag{6.5}
 $$
 
-factorization is not obtained by assigning a unique code to every source-time
-point. The finite-domain window-count reduction is
+shows that distinct source-time addresses share observations, but does not
+alone prove that their microscopic states differ. That follows directly from
+(4.1). Put $\beta=1-\alpha=4/5$. Clipping keeps every coordinate in $[0,1]$;
+for distinct unit-state sources $a\ne b$ and either $t=2$ or $t=3$,
+
+$$
+(x_{a,t})_a\ge\beta^t>\frac12,
+\qquad
+(x_{b,t})_a\le 1-\beta^t<\frac12,
+\quad
+\beta^2=\frac{16}{25},\quad\beta^3=\frac{64}{125}.
+\tag{6.5a}
+$$
+
+Thus $x_{a,t}\ne x_{b,t}$ at each of those times. The registered non-singleton
+cohorts in Certificate 7.2 contain distinct sources with equal observations
+on each slice, so $O|_{R_{\{2,3\}}(D_0)}$ is noninjective. This concerns the
+observation restricted to the reached set, not injectivity of the factor map
+$\overline F$. The finite-domain window-count reduction is
 
 $$
 \frac{N_0-K_0}{N_0}
@@ -634,14 +636,14 @@ $$
 Equations (7.5) and (7.6) distinguish transient separation from persistent
 safe forgetting.
 
-![Exact finite fiber evolution. The six unsafe $t=1$ fibers separate into singleton observations at $t=2$, while five disjoint cohorts retain membership and successor compatibility from $t=2$ to $t=3$. The common-support partitions agree, but the terminal $t=4$ image leaves the verified coarse image. Arrows denote only registered finite transitions.](../../figures/paper17/fig1_transient_separation_and_safe_forgetting.png)
+![Exact finite fiber evolution. The six unsafe $t=1$ fibers separate into singleton observations at $t=2$, while five disjoint cohorts retain membership and successor compatibility from $t=2$ to $t=3$. On the audited $t=2,3$ slices, persistent fibers have zero clipped drive. The terminal $t=4$ image leaves the verified coarse image. Arrows denote only registered finite transitions.](../../figures/paper17/fig1_transient_separation_and_safe_forgetting.png)
 
 ### 7.4 Effective-Drive Boundary
 
-A post-result audit reads all 306 saved caches of the five persistent
-cohorts: 102 sources at $t=1,2,3$. It verifies their frozen inventory
-bindings and recomputes clipping from the exact raw-drive payloads, without
-regenerating $Y^{\mathsf T}x_t$ or microscopic orbits.
+A source-addressed audit covers 306 saved caches of the five persistent
+cohorts: 102 sources at $t=1,2,3$. Its exact cache replay checks clipping from
+the retained raw-drive payloads; it does not regenerate $Y^{\mathsf T}x_t$
+or microscopic orbits.
 
 > **Computational Certificate 7.3 (persistent effective-drive boundary).**
 > Every saved raw drive is nonzero and coordinatewise nonpositive; every
@@ -735,9 +737,11 @@ transient cohort, persistent cohort, and shared initial anatomical stratum
 explicit, producing 15 nonpooled comparison cells.
 
 The comparison uses seven fixed exact predicates. Write $d_x$ and
-$d_u$ for the exact microscopic-state and raw-drive $L^1$ differences, and
-$N_{\rm offdiag}^{\rm fate}$ for the number of coordinates with differing
-clipping-fate labels. In the registered bit order, its predicates are:
+$d_u$ for the exact microscopic-state and raw-drive $L^1$ differences. A raw
+coordinate $u$ has clipping fate $\mathrm{LOWER}$ when $u\le0$,
+$\mathrm{INTERIOR}$ when $0<u<1$, and $\mathrm{UPPER}$ when $u\ge1$.
+Let $N_{\rm offdiag}^{\rm fate}$ count coordinates with differing fate labels
+in an oriented pair. In the registered bit order, the predicates are:
 
 | bit | predicate | exact condition |
 | ---: | --- | --- |
@@ -766,16 +770,19 @@ P_{\rm fate}
 $$
 
 These are conjunctions of registered exact quantities. Neither a residual
-quadrant alone nor the identity relating
-$r_{\rm clip}$ to the observed successor can award the mechanism outcome.
+quadrant alone nor the identity relating $r_{\rm clip}$ to the observed
+successor establishes the finite contrast below.
 
 ### 8.2 Exact Finite Contrast
 
-> **Computational Certificate 8.1 (complete registered contrast).** The 15
-> cells, indexed by transition and stratum, have distinct exact normalized
-> histograms of the seven predicates. Equality is checked by integer cross
-> multiplication. No floating tolerance, prevalence threshold, majority rule,
-> or hypothesis test is used.
+> **Computational Certificate 8.1 (complete registered contrast).** In each
+> of the 15 predeclared comparison cells, the transient-obstruction and
+> persistent-safe pair sets have different exact normalized histograms of the
+> ordered seven-bit joint-predicate signature. Each cell retains the
+> transition, both cohort identities, and their shared initial stratum.
+> Histogram equality is checked by integer cross multiplication, without
+> pooling across cells. No floating tolerance, prevalence threshold,
+> majority rule, or hypothesis test is used.
 
 > **Computational Certificate 8.2 (post-separation layer localization).** At
 > each of $2\to3$ and $3\to4$, both $P_{\rm mod}$ and $P_{\rm fate}$ hold for
@@ -796,14 +803,18 @@ An exact full-cohort tally gives the global counts:
 The global tally also includes three transient and 180 persistent pairs outside
 the shared-stratum cells.
 
-The result is a stable exact internal regime contrast. The former obstruction
-pairs continue to exhibit clipping modification of a nonzero coarse residual
-and clipping-fate disagreement with nonzero correction. The persistent-safe
-pairs exhibit neither registered predicate on those two transitions. This
-statement is relative to the declared finite pair universes and exact feature
-families; it is not a population or causal claim.
+Certificate 7.3 explains the persistent side of this contrast. At the
+audited current times $t=2,3$, both members of every persistent pair have
+zero clipped drive, forcing $r_{\rm clip}=0$ and $P_{\rm mod}$ to be false.
+Their coordinatewise nonpositive raw drives also put every clipping fate in
+$\mathrm{LOWER}$, so $N_{\rm offdiag}^{\rm fate}=0$ and $P_{\rm fate}$ is
+false. The exact transition-layer contrast on the two audited later
+transitions therefore compares the transient signatures with a drive-off
+persistent family; it does not show compensation between nonzero effective
+drives. This is a finite pair-universe statement, not a population or causal
+claim.
 
-![Exact registered transition-layer contrast. At $2\to3$ and $3\to4$, clipping modification of a nonzero coarse residual and fate disagreement with nonzero clipping correction hold for every transient-obstruction pair and no persistent-safe pair. The $1\to2$ histograms differ, but no single registered primary predicate separates the cohorts there; later signatures do not identify the initial trigger.](../../figures/paper17/fig2_internal_transition_layer_contrast.png)
+![Exact registered transition-layer contrast. At $2\to3$ and $3\to4$, clipping modification of a nonzero coarse residual and fate disagreement with nonzero clipping correction hold for every transient-obstruction pair and no persistent-safe pair. The persistent side has zero clipped drive at current times $t=2,3$; the contrast does not show nonzero-drive compensation. At $1\to2$, no single registered primary predicate separates the cohorts, so later signatures do not identify the initial trigger.](../../figures/paper17/fig2_internal_transition_layer_contrast.png)
 
 ### 8.3 Initial-Trigger Boundary
 
@@ -823,102 +834,66 @@ is possible, but this census does not establish one.
 | Certificate 6.3: terminal-image boundary | Computational Certificate | Saved $t=2,3,4$ observation sets |
 | Certificates 7.1--7.2: two fiber fates | Computational Certificate | 51 obstruction sources and five disjoint cohorts |
 | Certificate 7.3: effective-drive boundary | Computational Certificate | 102 sources; saved $t=1,2,3$ caches |
-| Certificates 8.1--8.2: transition-layer contrast | Computational Certificate | Frozen pair census and global tally |
+| Certificates 8.1--8.2: transition-layer contrast | Computational Certificate | Registered pair census and global tally |
 | Cause of the defining initial split | Research Program | Not established by the retained contrast |
 
-The factorization, fiber decomposition, and transition-layer contrast are
-local exact computational certificates. They concern 711 selected sources and
-the registered horizon through $t=4$; the 194-window reduction counts finite
-source-time identifications, not information bits. The later transition-layer
-separators identify a contrast between two declared pair families, not the
-cause of the initial $1\to2$ split.
+These certificates concern 711 selected sources and a horizon through $t=4$.
+The 194-window reduction counts finite source-time identifications, not
+information bits. The later predicates distinguish two declared pair
+families, not the cause of the initial $1\to2$ split. On the common-support
+non-singleton fibers, (7.7)--(7.8) give a sufficient common-leak explanation;
+they do not demonstrate active compensation or nonzero-drive compression.
 
-The effective-drive audit covers all ten non-singleton fibers on the common
-support. Their one-step equality has the sufficient pure-leak explanation
-in (7.7)--(7.8); the paper does not demonstrate active compensation, learned
-equivalence correction, or rich nonzero-drive compression there. The
-$t=1$ readout and later intervention studies do not enlarge the declared
-factorization domain.
-
-No full-domain closure, coarse endomap, minimal memory order, eventual
-invariance, microscopic convergence, or physiological state claim follows.
-Local exact replay is not independent replication, and the retained record
-does not independently authenticate the scope record's temporal precedence.
-Appendix A identifies the source-addressed claim and evidence closure.
+Neither the $t=1$ drive readout nor separate intervention studies enlarge the
+factorization domain. No full-domain closure, coarse endomap, minimal memory
+order, eventual invariance, microscopic convergence, or physiological state
+claim follows. Local validation is not independent replication, and the
+retained record does not independently authenticate the scope record's
+temporal precedence.
 
 ---
 
 ## 10. Conclusion
 
 The registered superclass mean fails one-step factorization during the initial
-transient but supports an exact noninjective factorization on the later
-registered slices. This is not a demonstrated memory effect: zero-, one-, and
-two-lag representations induce the same common-support partition. The six
-unsafe $t=1$ classes disappear by coarse separation of their 51 members,
-whereas a disjoint family of five cohorts remains non-singleton and
-successor-compatible. The terminal $t=4$ image leaves the verified common
-coarse image, so the certificate supplies one internal shift rather than a
-closed autonomous system.
+transient but supports exact noninjective factorization on later reached-set
+slices. Zero-, one-, and two-lag histories induce the same common-support
+partition: the change comes from domain restriction, not demonstrated memory
+restoration. The 51 sources in unsafe $t=1$ fibers become coarsely singleton,
+while five disjoint cohorts remain non-singleton and successor-compatible.
+The terminal $t=4$ image leaves the verified coarse image, so the certificate
+supplies one internal shift rather than an autonomous coarse endomap.
 
-The quotient thus becomes successor-compatible only after restriction to the
-registered reached set; neither history augmentation nor recovery of
-microscopic identity establishes this finite factorization. Its domain is part
-of the claim, not an incidental choice of sample.
-
-The pair census adds a second exact result. All 15 comparison-cell histograms
-differ. At both later transitions, two clipping predicates hold for every
-obstruction pair and no persistent-safe pair. This establishes a stable
-internal contrast after separation. Neither predicate uniformly separates
-these families at $1\to2$, so the initial split remains unexplained. The
-remaining question is which internal routes first expose unsafe distinctions
-at the defining transition. This paper does not identify that initial cause.
-
-The persistent side has a more definite interpretation. The exact drive
-audit covers the whole noninjective part of the common-support partition:
-every member has zero clipped network drive, so common leakage preserves
-one-step equality. The valid finite quotient therefore records reached-set
-restriction and drive-off persistence, not a demonstrated mechanism of
-active compensation or nonzero-drive dynamic compression.
+The pair census finds a later clipping-sensitive contrast, but not the cause
+of the defining $1\to2$ split. Every member of the persistent non-singleton
+fibers has zero clipped network drive; common leakage suffices to preserve
+their one-step equality. The result is a finite, model-relative example of
+reached-set factorization, not evidence of active compensation or sustained
+coarse dynamics.
 
 ---
 
+\newpage
+
 ## Appendix A: Computational Artifacts
 
-The paper-owned evidence package is indexed at
-[RIME Lite, experiments/paper17](https://github.com/dooven-prime/rime-lite/tree/master/experiments/paper17).
-It binds the reduced-domain scope, exact orbit sidecar, common-support and
-fiber audits, transition-layer census, manuscript claim table, release manifest,
-and local validation receipts. The exact MTS-1 sidecar is deposited separately
-at [Zenodo DOI 10.5281/zenodo.23234143](https://doi.org/10.5281/zenodo.23234143);
-this is a data-deposit DOI, not a DOI for the manuscript.
+The paper-owned evidence package is under `experiments/paper17/` in the
+[RIME repository](https://github.com/dooven-prime/rime-lite). Its
+`00_START_HERE.md` gives exact paths and replay instructions.
+The MTS-1 sidecar has a separate [data-deposit DOI](https://doi.org/10.5281/zenodo.23234143);
+that DOI does not identify this manuscript.
 
-| artifact | role | short path |
-| --- | --- | --- |
-| A1: common-support audit | Exact partition and successor counts | `results/` |
-| A2: fiber audit | Fixed cohort membership | `results/` |
-| A3: effective-drive audit | Bound readout of 306 saved caches | `mechanism/` |
-| A4: evidence table v2 | Includes Certificate 7.3 | Package root |
-| A5: manifest v2 | Current publication byte closure | Package root |
+| role | short path |
+| --- | --- |
+| Exact orbit and finite-history audits | `results/` |
+| Pair census and effective-drive audit | `mechanism/` |
+| Claim map and versioned manifest | package root |
+| Primary local receipts | `results/` |
+| Mechanism local receipts | `mechanism/` |
 
-The drive audit replays inventory-bound raw and clipped payloads without
-recomputing the operator action. Its optional full cache replay uses the
-deposited MTS-1 sidecar. The default publication gate checks compact
-bindings and coverage, not the remote sidecar bytes. Later intervention
-studies are separate research records, not additional claims of this paper.
-
-All listed artifacts are available in the RIME repository. From its root,
-run the publication gate with the pinned Python 3.12.6 environment:
-
-```text
-python experiments/paper17/validation/validate_release_v2.py
-```
-
-The default publication gate replays the retained finite-history classifications
-and checks compact MTS-1 and effective-drive bindings; it does not open the
-deposited source-cache or pair shards. With that sidecar materialized, separate
-read-only validators rederive all MTS-1 pair records, compare predicted
-successors with historical exact observations, and replay the 306 drive caches.
-These checks do not rerun microscopic
-orbit generation, independently replicate the study, or authenticate the
-temporal precedence of the declared scope record. The Zenodo binding checks
-deposit metadata and local reconstruction, not a remote full-byte download.
+The default gate checks retained finite-history results and compact MTS-1 and
+drive-audit bindings; it does not open the deposited pair shards or regenerate
+microscopic orbits. Optional full sidecar replay checks exact pair and cache
+payloads without recomputing the operator action. Neither mode establishes
+independent replication or authenticates the temporal precedence of the
+declared scope record; the deposit binding is not a remote full-byte download.

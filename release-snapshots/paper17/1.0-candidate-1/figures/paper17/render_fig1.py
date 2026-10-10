@@ -12,7 +12,6 @@ from matplotlib.patches import FancyArrowPatch, Rectangle
 
 REPO = Path(__file__).resolve().parents[2]
 RESULTS = REPO / "experiments" / "paper17" / "results"
-DRIVE_AUDIT = REPO / "experiments" / "paper17" / "mechanism" / "post_result_audits" / "persistent_safe_effective_drive.v1.json"
 OUTPUT = Path(__file__).with_name("fig1_transient_separation_and_safe_forgetting.png")
 
 RED = "#B33A3A"
@@ -50,7 +49,6 @@ def main() -> int:
     common = load("finite_history_common_support_audit.v1.json")
     transient = load("finite_history_transient_fiber_audit.v1.json")
     terminal = load("finite_history_terminal_image_audit.v1.json")
-    drive_audit = json.loads(DRIVE_AUDIT.read_text(encoding="utf-8"))
 
     failure_sizes = [item["member_count"] for item in transient["transient_separation"]["failure_fibers"]]
     cohort_sizes = transient["persistent_safe_forgetting"]["cohort_sizes"]
@@ -67,8 +65,6 @@ def main() -> int:
     assert profile["failure_fiber_count"] == 0
     assert terminal["classification"]["registered_internal_shift_count"] == 1
     assert image["t4_intersection_with_common_image_size"] == 0
-    assert drive_audit["status"] == "PASS"
-    assert drive_audit["summary"]["nonzero_clipped_drive_source_times"] == 0
 
     plt.rcParams.update(
         {
@@ -104,7 +100,7 @@ def main() -> int:
         for j in range(3):
             ax_left.plot(0.16 + i * 0.042, 0.075 + j * 0.028, marker="o", markersize=3.4, color=RED, transform=ax_left.transAxes)
 
-    ax_right.set_title("B  Persistent drive-off fibers", loc="left", color=INK, pad=8)
+    ax_right.set_title("B  Persistent safe forgetting", loc="left", color=INK, pad=8)
     ax_right.text(0.27, 0.88, r"$t=2$ cohorts", ha="center", color=TEAL, weight="bold", transform=ax_right.transAxes)
     ax_right.text(0.73, 0.88, r"$t=3$ same members", ha="center", color=TEAL, weight="bold", transform=ax_right.transAxes)
     y_positions = [0.73, 0.59, 0.45, 0.31, 0.17]
@@ -118,7 +114,7 @@ def main() -> int:
             ax_right.add_patch(rect)
             ax_right.text(x + width / 2, y, str(size), ha="center", va="center", color=INK, weight="bold", transform=ax_right.transAxes)
         arrow(ax_right, (left_x + width + 0.015, y), (right_x - 0.015, y), TEAL, width=1.35, mutation=11)
-    ax_right.text(0.5, 0.035, "Five successor-compatible cohorts; clipped drive = 0", ha="center", color=INK, transform=ax_right.transAxes)
+    ax_right.text(0.5, 0.035, "Five disjoint cohorts remain successor-consistent", ha="center", color=INK, transform=ax_right.transAxes)
 
     ax_bottom.set_title("C  Common-support factorization and terminal-image boundary", loc="left", color=INK, pad=8)
     ax_bottom.add_patch(Rectangle((0.02, 0.56), 0.96, 0.29, transform=ax_bottom.transAxes, facecolor=BLUE_LIGHT, edgecolor=BLUE, linewidth=1.4))
@@ -134,7 +130,7 @@ def main() -> int:
     ax_bottom.text(0.5, 0.02, "No endomap on the verified common coarse image", ha="center", color=RED, weight="bold", transform=ax_bottom.transAxes)
 
     fig.suptitle("Exact finite fiber evolution", x=0.07, y=0.975, ha="left", color=INK, fontsize=17, weight="bold")
-    fig.text(0.07, 0.939, "Registered 711-source domain | unsafe fibers separate; persistent fibers have zero clipped drive", color=MUTED, fontsize=11)
+    fig.text(0.07, 0.939, "Registered 711-source domain | unsafe fibers separate; disjoint cohorts remain safely noninjective", color=MUTED, fontsize=11)
     fig.savefig(OUTPUT, dpi=300, bbox_inches="tight", facecolor="white")
     print(OUTPUT)
     return 0

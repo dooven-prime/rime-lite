@@ -24,6 +24,8 @@ REPLACED = (
     "papers/paper17/paper17_arxiv.pdf",
     "experiments/paper17/00_START_HERE.md",
     "experiments/paper17/release-environment.json",
+    "figures/paper17/render_fig1.py",
+    "figures/paper17/fig1_transient_separation_and_safe_forgetting.png",
     "figures/paper17/render_fig2.py",
     "figures/paper17/fig2_internal_transition_layer_contrast.png",
     "figures/paper17/requirements.txt",

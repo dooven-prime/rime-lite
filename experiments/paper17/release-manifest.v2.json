@@ -20,7 +20,7 @@
     "release_content_commit": null,
     "external_anchor": null,
     "ordered_artifact_count": 70,
-    "ordered_closure_sha256": "0c94adb3ea2d6354b2fe413a07abbc9625dbe66320a0cbf4802340d81c832be6"
+    "ordered_closure_sha256": "e59013d34db91f212b84fe1d8144957abd5cb9df4616f762eb6ca591ad81ad23"
   },
   "generation_closure": {
     "status": "INCOMPLETE_NOT_CLAIMED",
@@ -75,9 +75,9 @@
     "mechanism_universal_separator_at_1_to_2": false,
     "complete_persistent_effective_drive_boundary_bound": true
   },
-  "artifact_count": 127,
+  "artifact_count": 129,
   "artifact_count_by_closure_class": {
-    "historical-candidate-input": 12,
+    "historical-candidate-input": 14,
     "package-only-historical-production-context": 39,
     "public-package-documentation": 6,
     "release-validation": 25,
@@ -90,15 +90,15 @@
       "role": "canonical-manuscript",
       "closure_class": "theorem-facing-manuscript",
       "path": "papers/paper17/Paper XVII.md",
-      "bytes": 37360,
-      "sha256": "53705be27cdc40e40c5653c4cdd6507b0bf1a5b30d48066d72bbf2ab25a7172d"
+      "bytes": 35066,
+      "sha256": "deb0efa6eb682042835865d9ad8047b5acddbfb92beb5a80d09977380bc4bed8"
     },
     {
       "role": "reader-pdf",
       "closure_class": "theorem-facing-manuscript",
       "path": "papers/paper17/paper17_arxiv.pdf",
-      "bytes": 764056,
-      "sha256": "baef7b837773d99b92103b464eb566b42a6c7cdcd4a4ca77af8f21373f0a5a93"
+      "bytes": 759343,
+      "sha256": "47a7b65d7df4813f1d388dd57117f62734b83d0bc76b488ed1bd124ec833a866"
     },
     {
       "role": "bibliography-slice",
@@ -111,29 +111,29 @@
       "role": "figure",
       "closure_class": "theorem-facing-presentation",
       "path": "figures/paper17/fig1_transient_separation_and_safe_forgetting.png",
-      "bytes": 345944,
-      "sha256": "1be1568f452f80908512b10ed84d1b430ffbf8404e1bfcbc8be000576fccf82a"
+      "bytes": 315043,
+      "sha256": "1045eab371e3e636544c1964d7abd33b06a54c72c248a798e2517a7713f4a1a0"
     },
     {
       "role": "figure-producer",
       "closure_class": "theorem-facing-presentation",
       "path": "figures/paper17/render_fig1.py",
-      "bytes": 7045,
-      "sha256": "9889338f8ed352210d6c128d5d6eadb0326e25d36f9d89690f415069bfaf2487"
+      "bytes": 7365,
+      "sha256": "4e2f0068815230e8fce0e4b695a5e242867e64b4c990425805a0b297ad8142be"
     },
     {
       "role": "mechanism-figure",
       "closure_class": "theorem-facing-presentation",
       "path": "figures/paper17/fig2_internal_transition_layer_contrast.png",
-      "bytes": 366906,
-      "sha256": "68e2eb76881ad247b1b613f2020dd5b3b8f121799ae2cd4d31cc7994c6452584"
+      "bytes": 323175,
+      "sha256": "d4cb133db1693d53628bc4189060ffdc00e94f4d5c51fdf789d4dba2d8350d43"
     },
     {
       "role": "mechanism-figure-producer",
       "closure_class": "theorem-facing-presentation",
       "path": "figures/paper17/render_fig2.py",
-      "bytes": 6764,
-      "sha256": "b9453a1227ed7dc5f739a283f4cbf490856494447717876899b1a3268515d974"
+      "bytes": 7096,
+      "sha256": "5afb292097ecb30c48cd627dd679c5e5984e97660ec09e60c262028a55c9b737"
     },
     {
       "role": "figure-runtime-lock",
@@ -538,8 +538,8 @@
       "role": "current-evidence-guide",
       "closure_class": "public-package-documentation",
       "path": "experiments/paper17/00_START_HERE.md",
-      "bytes": 7586,
-      "sha256": "2f6b1bec4fe9e3b4a36f3b2de64becc3d39c2de5c561b3fc3aef35e695e6c23a"
+      "bytes": 9928,
+      "sha256": "c6dfdeb943313d325a150241ff3a25803e88a2f2c4221b85724e0d2b2a21812b"
     },
     {
       "role": "result-anchor",
@@ -879,8 +879,8 @@
     },
     {
       "path": "experiments/paper17/build_publication_candidate_v2.py",
-      "bytes": 9602,
-      "sha256": "d9089d4b0f14ba0ad76820595c514dff351ff30d02d55f620aa85d9699d105aa",
+      "bytes": 9713,
+      "sha256": "7b9757a3e740a5f80be0a98e9b6c1503c261ce36f4884afe4e4ce39dc5016e8f",
       "role": "candidate-2-builder",
       "closure_class": "release-validation"
     },
@@ -955,6 +955,20 @@
       "closure_class": "historical-candidate-input"
     },
     {
+      "path": "release-snapshots/paper17/1.0-candidate-1/figures/paper17/render_fig1.py",
+      "bytes": 7045,
+      "sha256": "9889338f8ed352210d6c128d5d6eadb0326e25d36f9d89690f415069bfaf2487",
+      "role": "prior-candidate-replaced-artifact",
+      "closure_class": "historical-candidate-input"
+    },
+    {
+      "path": "release-snapshots/paper17/1.0-candidate-1/figures/paper17/fig1_transient_separation_and_safe_forgetting.png",
+      "bytes": 345944,
+      "sha256": "1be1568f452f80908512b10ed84d1b430ffbf8404e1bfcbc8be000576fccf82a",
+      "role": "prior-candidate-replaced-artifact",
+      "closure_class": "historical-candidate-input"
+    },
+    {
       "path": "release-snapshots/paper17/1.0-candidate-1/figures/paper17/render_fig2.py",
       "bytes": 6748,
       "sha256": "661c90fd37001926f928a12a7a3a7c98971b514c9f7e5a2fd839fa093afbec11",
@@ -993,6 +1007,8 @@
       "papers/paper17/paper17_arxiv.pdf": "release-snapshots/paper17/1.0-candidate-1/papers/paper17/paper17_arxiv.pdf",
       "experiments/paper17/00_START_HERE.md": "release-snapshots/paper17/1.0-candidate-1/experiments/paper17/00_START_HERE.md",
       "experiments/paper17/release-environment.json": "release-snapshots/paper17/1.0-candidate-1/experiments/paper17/release-environment.json",
+      "figures/paper17/render_fig1.py": "release-snapshots/paper17/1.0-candidate-1/figures/paper17/render_fig1.py",
+      "figures/paper17/fig1_transient_separation_and_safe_forgetting.png": "release-snapshots/paper17/1.0-candidate-1/figures/paper17/fig1_transient_separation_and_safe_forgetting.png",
       "figures/paper17/render_fig2.py": "release-snapshots/paper17/1.0-candidate-1/figures/paper17/render_fig2.py",
       "figures/paper17/fig2_internal_transition_layer_contrast.png": "release-snapshots/paper17/1.0-candidate-1/figures/paper17/fig2_internal_transition_layer_contrast.png",
       "figures/paper17/requirements.txt": "release-snapshots/paper17/1.0-candidate-1/figures/paper17/requirements.txt"
