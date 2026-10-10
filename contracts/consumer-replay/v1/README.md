@@ -17,6 +17,7 @@ other admission rule is included.
 | [CONSUMER_SPEC.md](CONSUMER_SPEC.md) | Log oracle, registration, report, and `Carry`/`Absorb` domains and updates |
 | [FOREST_MODEL.md](FOREST_MODEL.md) | Placed forest state, generator updates, and event-ancestor decoder |
 | [UFE_ADAPTER.md](UFE_ADAPTER.md) | Placed forward-UFE state, ordered-port calls, prefix decoder, and command correspondence |
+| [candidate-reports.schema.json](candidate-reports.schema.json) | Structural JSON contract for optional complete Case reports |
 | [examples/witness.json](examples/witness.json) | One finite data witness, not a certificate or expected result blob |
 | [manifest.json](manifest.json) | Exact-byte inventory and editorial scope record |
 
@@ -40,7 +41,28 @@ data even when it leaves the unordered packet partition unchanged.
 | `prefix` | Chronological word over `p,d` from the singleton seed |
 | `selected_block` | Fixed nonempty `F`, which must equal an actual logged fresh block |
 | `commands` | Requested `Carry(a)` or `Absorb(a)` steps after `prefix` |
-| `candidate_reports` | Optional complete reports, one at registration and after each command |
+| `candidate_reports` | May be omitted or `null`; otherwise an array of complete Case reports: one after `prefix` registration and one after each command |
+
+A non-null `candidate_reports` value follows
+[candidate-reports.schema.json](candidate-reports.schema.json). Each report has
+exactly `partition`, `selected_block`, `origin`, `absorptions`, and `carrier`:
+
+| Report field | JSON encoding |
+|---|---|
+| `partition` | Complete placed partition `[{"q": q, "block": [atoms]}, ...]`, ordered by increasing `q` |
+| `selected_block` | The fixed registered atom block `F` |
+| `origin` | `{"letter": "d", "ports": [k_0, k_1], "input_blocks": [B_0, B_1], "collision_image": c, "fresh_block": F}`; blocks follow port order |
+| `absorptions` | Chronological array of `{"letter": "d", "carrier_port": q_e, "carrier_before": C_e, "other_port": s_e, "other_block": B_e, "collision_image": c, "carrier_after": C_e union B_e}` |
+| `carrier` | Current placed packet `{"q": q_h, "block": C_h}` containing `F` |
+
+All atom blocks are sorted lists of distinct integer labels. A non-null
+array has exactly `1 + len(commands)` reports, including the state reached by
+the entire prefix before the first command. The schema fixes field names,
+types, and required presence; replay checks the remaining semantic
+constraints: positions are in `Q`, partition blocks are disjoint and cover
+`omega`, `origin` is the logged registration event, each absorption is an
+actual later event, and the carrier agrees with the placed partition. The
+reports are supplied comparisons, never sources for state reconstruction.
 
 An adapter may wrap this data with its own contract/checker identity obtained
 from the deployment. Such an envelope is not a premise of the mathematical
