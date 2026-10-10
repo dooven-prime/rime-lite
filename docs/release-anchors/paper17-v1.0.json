@@ -69,6 +69,7 @@
     "The anchor is downstream metadata and is not part of the release tag it records."
   ],
   "notes": [
-    "The tagged manifest retains its pre-publication RELEASE_CANDIDATE state; this downstream anchor records the later DOI publication."
+    "The tagged manifest retains its pre-publication RELEASE_CANDIDATE state; this downstream anchor records the later DOI publication.",
+    "The manuscript evidence table requires historical commit 99e2ac5a57afed27e5f213f658ddd5c3e6e93932, published on codex/paper17-draft but outside the paper17-v1.0 ancestry. A tag-only checkout must fetch that historical Git object before validation; current HEAD is not a fallback."
   ]
 }
