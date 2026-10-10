@@ -1,0 +1,18 @@
+{
+  "environment": {
+    "q_size": 7,
+    "p": "successor_mod_n",
+    "d": [0, 3, 2, 5, 1, 4, 0],
+    "omega": [0, 1, 2, 3, 4, 5, 6],
+    "iota": [0, 1, 2, 3, 4, 5, 6],
+    "ufe_enumeration": [0, 1, 2, 3, 4, 5, 6],
+    "kernel_ports": [0, 6],
+    "collision_image": 0
+  },
+  "prefix": "dpp",
+  "selected_block": [0, 6],
+  "commands": [
+    {"kind": "Carry", "letter": "d"}
+  ],
+  "candidate_reports": null
+}

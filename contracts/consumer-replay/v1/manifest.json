@@ -1,0 +1,52 @@
+{
+  "schema": "rime.event-anchored-consumer.contract-manifest.v1",
+  "contract_version": "rime.consumer-replay.v1",
+  "snapshot_kind": "FINITE_CONSUMER_REPLAY_CASE_SPECIFICATION",
+  "claim_boundary": "SPECIFICATION_ONLY_NOT_THEOREM_CERTIFICATE_OR_KNOWLEDGE_AUTHORITY",
+  "digest_scope": "SHA256_OF_EXACT_FILE_BYTES",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "role": "BYTE_MATERIALIZATION_POLICY",
+      "size": 64,
+      "sha256": "6966d0bc0169072d3f2c6341ebfd973e3a9c98c98c3941ca8459f077850f934d"
+    },
+    {
+      "path": "README.md",
+      "role": "SCOPE_AND_CASE_DECISIONS",
+      "size": 4861,
+      "sha256": "e8c8842afdd813c1ce57ce29c66c50659430db1e7f92ea1bd7db84211e3d2a95"
+    },
+    {
+      "path": "CONSUMER_SPEC.md",
+      "role": "INDEPENDENT_LOG_ORACLE",
+      "size": 3880,
+      "sha256": "184a507d1ad54004fec0b195db952ce1a18d949f6264f6c2f07b2a56b77bf0e1"
+    },
+    {
+      "path": "FOREST_MODEL.md",
+      "role": "PLACED_FOREST_REPRESENTATION",
+      "size": 3098,
+      "sha256": "7ee153f68238a436d973f254bb16857ba78e6a853a85e127cb5eee9e66535c48"
+    },
+    {
+      "path": "UFE_ADAPTER.md",
+      "role": "PLACED_FORWARD_UFE_REPRESENTATION",
+      "size": 4265,
+      "sha256": "bbd47dbaca39c2828f3e9a92fd536adb26730c63be3bf92c9a6def4c374fd35c"
+    },
+    {
+      "path": "examples/witness.json",
+      "role": "FINITE_DATA_WITNESS",
+      "size": 408,
+      "sha256": "af7ecdc1c4d4dd38a6236f58684ec8fe7d3e7e3d00baa2a7d381b98859b3115d"
+    }
+  ],
+  "editorial_record": [
+    "The log oracle retains registration by a logged fresh block, the full placed partition, fixed F, and exact Carry/Absorb guards and updates.",
+    "The forest update and ancestor decoder are selected without importing a full foundation manuscript or claiming its proof has been machine checked.",
+    "The placed forward-UFE adapter retains ordered kernel-port calls, effective union history, current placement, and the seed-generated domain.",
+    "The finite JSON encoding and decision labels are Case interfaces; deployment hashes and resource limits are excluded from mathematical semantics."
+  ],
+  "anchoring_rule": "The publishing Git commit binds this manifest. The manifest does not include its own bytes or any downstream receipt."
+}
