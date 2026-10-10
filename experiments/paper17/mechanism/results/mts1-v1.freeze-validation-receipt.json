@@ -1,0 +1,30 @@
+{
+  "freeze_manifest": {
+    "bytes": 5412,
+    "path": "experiments/paper17/mechanism/results/mts1-v1.freeze-manifest.json",
+    "sha256": "5cd64cf91073fa77006d8f8d718f9daf5554330fd8abbb7e12429796307b21fe"
+  },
+  "independent_validation": false,
+  "producer_replayed": false,
+  "schema": "rime.paper17.mts1-result-freeze-validation-receipt.v1",
+  "scientific_classification_replayed": false,
+  "status": "PASS",
+  "validation_mode": "LOCAL_COMPACT_CLOSURE_VERIFICATION",
+  "validator": {
+    "path": "experiments/paper17/mechanism/validation/validate_mts1_result_freeze_v1.py",
+    "sha256": "3ff4e83997f1abae3e1aa5ad284befadb0953343e9a06432884c2c11414cf0c3"
+  },
+  "verified": {
+    "comparison_cell_count": 15,
+    "exact_separator_count": 4,
+    "exact_sidecar_bytes_rehashed_during_freeze": false,
+    "exact_sidecar_inventory_bound": true,
+    "external_immutable_sidecar_anchor": false,
+    "ordered_compact_closure_sha256": "f03016dcc6806dbd729dfb4fb716a061d535bf13d9627f647f70af5a814c9403",
+    "outcome": "EXACT_TRANSITION_LAYER_LOCALIZATION",
+    "pair_transition_record_count": 6975,
+    "prior_exhaustive_validation_receipt_bound": true,
+    "source_count": 153,
+    "source_transition_cache_record_count": 459
+  }
+}

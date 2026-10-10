@@ -1,0 +1,208 @@
+{
+  "schema": "rime.exploratory.male-cns-dynamic-compression.finite-history-registration.v1",
+  "status": "REGISTERED_READY_TO_EXECUTE",
+  "execution_authority": "FINITE_HISTORY_ORBIT_WINDOW_V1_ONLY",
+  "run_once_scope": "REGISTERED_REDUCED_D0_H2_T4",
+  "runtime": {
+    "python_version": "3.12.6",
+    "numpy_version": "2.5.3",
+    "scipy_version": "1.18.0",
+    "pyarrow_version": "18.0.0",
+    "gmpy2_version": "2.2.1",
+    "psutil_version": "7.0.0",
+    "cython_version": "3.2.4",
+    "setuptools_version": "80.9.0",
+    "sys_executable_sha256": "3470f7919170d235d7e6079691462c4b217745ec67ee612e745730e46d98f238"
+  },
+  "scope": {
+    "D0_mode": "REDUCED_STRATIFIED_HASH_D0",
+    "source_count": 711,
+    "D0_sha256": "ca12e0e36e925cbb408f79e01979f0e0ee94407631b9eb269fe11171de2a733b",
+    "H": 2,
+    "T": 4,
+    "orders": [
+      0,
+      1,
+      2
+    ],
+    "W_min": 2,
+    "S_min": 1,
+    "D0_resize_allowed": false
+  },
+  "execution": {
+    "run_id": "finite-history-v1",
+    "worker_count": 4,
+    "start_method": "spawn",
+    "one_exact_orbit_generation_per_source": true,
+    "per_order_orbit_regeneration_forbidden": true,
+    "run_root": ".runtime-work/finite-history/v1/finite-history-v1",
+    "resume_requires_exact_shard_and_metadata_validation": true
+  },
+  "resource_caps": {
+    "maximum_workers": 4,
+    "peak_process_tree_rss_bytes": 34359738368,
+    "incremental_run_storage_bytes": 107374182400,
+    "primary_cpu_seconds": 120960.0,
+    "primary_wall_seconds": 30240.0,
+    "poll_interval_seconds": 5
+  },
+  "outcomes": [
+    "FAILED_EXACT_CLOSURE",
+    "EXACT_CLOSED_NONINJECTIVE",
+    "EXACT_CLOSED_BY_INJECTIVITY",
+    "UNRESOLVED"
+  ],
+  "exact_identity": {
+    "canonical_binary_version": 1,
+    "hash_role": "INDEX_ONLY",
+    "hash_match_requires_canonical_payload_comparison": true,
+    "floating_tolerance_allowed": false
+  },
+  "outputs": {
+    "compact_result": "results/finite_history_closure.v1.json",
+    "validation_receipt": "results/finite_history_closure.v1.validation-receipt.json",
+    "sidecar_inventory": ".runtime-work/finite-history/v1/finite-history-v1/sidecar-inventory.json"
+  },
+  "artifact_closure": [
+    {
+      "role": "SCOPE",
+      "path": "finite_history_scope.v1.json",
+      "bytes": 3262,
+      "sha256": "25e3ace08d1e83675f5b21b32cff7d69c2073fd87b25c5a9000043022663aefb"
+    },
+    {
+      "role": "SCOPE_RECEIPT",
+      "path": "finite_history_scope.v1.validation-receipt.json",
+      "bytes": 817,
+      "sha256": "460e5249413dbbd3a8996117354b6f5ed4d47e0100c806da03c65095f52900d6"
+    },
+    {
+      "role": "D0_INDEX",
+      "path": "results/finite_history_D0.v1.npy",
+      "bytes": 5816,
+      "sha256": "ca12e0e36e925cbb408f79e01979f0e0ee94407631b9eb269fe11171de2a733b"
+    },
+    {
+      "role": "D0_ADMISSION",
+      "path": "results/finite_history_D0_admission.v1.json",
+      "bytes": 2957,
+      "sha256": "c1735202657b3ee92449eacdbbf32a401e475eeb77b70e8f63c4e34b3b9dbf0e"
+    },
+    {
+      "role": "D0_ADMISSION_RECEIPT",
+      "path": "results/finite_history_D0_admission.v1.validation-receipt.json",
+      "bytes": 1180,
+      "sha256": "83c2353ce68848df4b68e706223c06707b9bd9101573ca5bce8c3816c01acf8c"
+    },
+    {
+      "role": "GROSS_BUDGET",
+      "path": "gross_compute_budget.v1.json",
+      "bytes": 2682,
+      "sha256": "6b16936bcabc80a91ee000a282bcf0f77b97deb6f19ff4cb3a84c31caaaa3bed"
+    },
+    {
+      "role": "RICHNESS",
+      "path": "finite_history_richness.v1.json",
+      "bytes": 1846,
+      "sha256": "a39692b22585d750d07ffacdc26cf16accb2914ce6fa63ab6d776a34becfae79"
+    },
+    {
+      "role": "COST_ENVELOPE",
+      "path": "finite_history_d0_cost_envelope.v1.json",
+      "bytes": 4329,
+      "sha256": "0dc1844f939cc2b9c978f1fd00d87b66d74ae24584e5194b003fb542560802cd"
+    },
+    {
+      "role": "STATIC_PREFLIGHT",
+      "path": "finite_history_closure.preflight-v1.json",
+      "bytes": 3471,
+      "sha256": "369f521b910787d071dd12b8d627a74e4e0e30eeb25969732efb9c987f57528a"
+    },
+    {
+      "role": "STATIC_PREFLIGHT_RECEIPT",
+      "path": "finite_history_closure.preflight-v1.validation-receipt.json",
+      "bytes": 763,
+      "sha256": "f2e94ef47885c40f45ae4f4a313364b83ae4d4c08d9b7137c7e33416775c12bb"
+    },
+    {
+      "role": "BINARY_CODEC",
+      "path": "finite_history_binary.py",
+      "bytes": 7287,
+      "sha256": "dcfb87d9351a1fea3a7c080db4ca75e205bf4025bb83fbdd81876576510e753b"
+    },
+    {
+      "role": "EXECUTION_COMMON",
+      "path": "finite_history_execution_common.py",
+      "bytes": 5725,
+      "sha256": "553d14beebdaaf869226dd29e4b64e15fb8db1e23a43123ba33653a53d7257c7"
+    },
+    {
+      "role": "EXPERIMENT_RUNNER",
+      "path": "run_finite_history_closure_v1.py",
+      "bytes": 22901,
+      "sha256": "9ada38423597b20213e076f9e1d629901a8d620f649a44bb5ffb868e10f20eff"
+    },
+    {
+      "role": "RESULT_VALIDATOR",
+      "path": "validation/validate_finite_history_closure_v1.py",
+      "bytes": 5043,
+      "sha256": "b27146b9bffb26fd64f609419ee9525da00ab5225a5f4f0881e5e17878973aa0"
+    },
+    {
+      "role": "REGISTRATION_VALIDATOR",
+      "path": "validation/validate_finite_history_closure_registration.py",
+      "bytes": 3506,
+      "sha256": "4933f7d13dbc4154bf9e6ed54900bbcf454aa75d353e42a1a9e1d03510c03212"
+    },
+    {
+      "role": "BINARY_CODEC_TEST",
+      "path": "validation/test_finite_history_binary.py",
+      "bytes": 1465,
+      "sha256": "2e8dfc2e19ea495788805cbf5659b2956852ed6006c57243f17bd1af2c41bdd3"
+    },
+    {
+      "role": "CLASSIFICATION_TEST",
+      "path": "validation/test_finite_history_classification.py",
+      "bytes": 963,
+      "sha256": "80c2d05c9bf76418d3b5f3f00129fbe4d865c3cf101faaee44b7c394544eac7d"
+    },
+    {
+      "role": "OPTIMIZED_COMMON",
+      "path": "optimized_exact_common.py",
+      "bytes": 6735,
+      "sha256": "5c85dbe5d12fdac9018e3e06a212e7697d8e7623826caf30b721c673f382edb3"
+    },
+    {
+      "role": "CYTHON_KERNEL_SOURCE",
+      "path": "optimized_exact_sparse_kernel.pyx",
+      "bytes": 3742,
+      "sha256": "67088247972f1c292d5a11b8f9952be92692c441231d851738bd83b74aa6c67f"
+    },
+    {
+      "role": "OPTIMIZED_BACKEND_REGISTRATION",
+      "path": "optimized_exact_implementation_benchmark.registration-v1.json",
+      "bytes": 4368,
+      "sha256": "3c2b575bd5f93cefff3d3f4d345cdc12446f3603b671905ad3b910f90b287829"
+    },
+    {
+      "role": "CACHE_MANIFEST",
+      "path": ".runtime-work/optimized-cache/manifest.json",
+      "bytes": 4130,
+      "sha256": "e8a04330d1133f4537faf679a3f59c294a1ebb15c221691d0ac6baf394edabd8"
+    },
+    {
+      "role": "COMPILED_KERNEL",
+      "path": ".runtime-work/k/optimized_exact_sparse_kernel.cp312-win_amd64.pyd",
+      "bytes": 65536,
+      "sha256": "898b3200835766ca7e6a9ce7d0d0cb5de9f0a6cbfcf1521d693fcb9e5c708591"
+    }
+  ],
+  "claim_boundary": {
+    "registered_reduced_domain_only": true,
+    "full_domain_claim": false,
+    "finite_H_failure_implies_infinite_memory": false,
+    "indefinite_forward_invariance": false,
+    "independent_validation": false,
+    "cap_violation_action": "UNRESOLVED_WITHOUT_D0_RESIZE"
+  }
+}

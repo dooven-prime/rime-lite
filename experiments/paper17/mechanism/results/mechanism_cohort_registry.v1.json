@@ -1,0 +1,472 @@
+{
+  "schema": "rime.exploratory.male-cns.transient-separation-mechanism.cohort-registry.v1",
+  "status": "FROZEN",
+  "evidence_role": "POST_RESULT_EXACT_COHORT_AND_PAIR_REGISTRY",
+  "source_domain": {
+    "parent_D0_count": 711,
+    "selected_source_count": 153,
+    "selection_rule": "EXACT_MEMBERSHIP_IN_PAPER17_TRANSIENT_OR_PERSISTENT_FIBER",
+    "all_selected_sources_in_parent_D0": true
+  },
+  "transient_obstruction": {
+    "source_count": 51,
+    "cohort_count": 6,
+    "unordered_pair_count": 570,
+    "ordered_pair_sha256": "692d7d8a92248c84c1d2e60f203d1a13d928380ad653bb008562ac44871b894d",
+    "all_pairs_are_exact_successor_conflicts": true,
+    "cohorts": [
+      {
+        "cohort_id": "TO-01",
+        "role": "TRANSIENT_OBSTRUCTION_FIBER",
+        "defining_transition": "1_TO_2",
+        "history_observation_ids": [
+          0,
+          0
+        ],
+        "initial_sector_labels": [
+          "cb_intrinsic"
+        ],
+        "source_ids": [
+          5302,
+          27363,
+          64543,
+          79312,
+          110108,
+          115084,
+          125948,
+          129105,
+          150528
+        ],
+        "source_count": 9,
+        "unordered_pair_count": 36,
+        "ordered_pair_sha256": "35fc88ddf8975b419437fe13b89168ab12e5f7c041427170479c086b959fa431",
+        "exact_relation": "EQUAL_Z0_AND_Z1__PAIRWISE_DISTINCT_Z2"
+      },
+      {
+        "cohort_id": "TO-02",
+        "role": "TRANSIENT_OBSTRUCTION_FIBER",
+        "defining_transition": "1_TO_2",
+        "history_observation_ids": [
+          102,
+          102
+        ],
+        "initial_sector_labels": [
+          "ol_intrinsic"
+        ],
+        "source_ids": [
+          15807,
+          23713,
+          26202,
+          31527,
+          34845,
+          52896,
+          60976,
+          73737,
+          85215,
+          89478,
+          89627,
+          106999,
+          108853,
+          109299,
+          109652,
+          110813,
+          112501,
+          115137,
+          116575,
+          118933,
+          121231,
+          125772,
+          126359,
+          126374,
+          129390,
+          151321,
+          157304,
+          160683,
+          162071,
+          162218,
+          162973,
+          163281,
+          163948
+        ],
+        "source_count": 33,
+        "unordered_pair_count": 528,
+        "ordered_pair_sha256": "3be13a49c157f2ec310587952055e4e303778ca009fb00b815d796090a632c1f",
+        "exact_relation": "EQUAL_Z0_AND_Z1__PAIRWISE_DISTINCT_Z2"
+      },
+      {
+        "cohort_id": "TO-03",
+        "role": "TRANSIENT_OBSTRUCTION_FIBER",
+        "defining_transition": "1_TO_2",
+        "history_observation_ids": [
+          384,
+          102
+        ],
+        "initial_sector_labels": [
+          "ol_intrinsic"
+        ],
+        "source_ids": [
+          30023,
+          121562
+        ],
+        "source_count": 2,
+        "unordered_pair_count": 1,
+        "ordered_pair_sha256": "085127fd0ab420febd8e93b37c18fa7182d4aae439b51de5d68257cfcb278040",
+        "exact_relation": "EQUAL_Z0_AND_Z1__PAIRWISE_DISTINCT_Z2"
+      },
+      {
+        "cohort_id": "TO-04",
+        "role": "TRANSIENT_OBSTRUCTION_FIBER",
+        "defining_transition": "1_TO_2",
+        "history_observation_ids": [
+          988,
+          0
+        ],
+        "initial_sector_labels": [
+          "cb_intrinsic"
+        ],
+        "source_ids": [
+          79998,
+          111692
+        ],
+        "source_count": 2,
+        "unordered_pair_count": 1,
+        "ordered_pair_sha256": "d844e2e0c3a2ba596011cc929525cc9d45892e353313ea03adc9341f24be66fc",
+        "exact_relation": "EQUAL_Z0_AND_Z1__PAIRWISE_DISTINCT_Z2"
+      },
+      {
+        "cohort_id": "TO-05",
+        "role": "TRANSIENT_OBSTRUCTION_FIBER",
+        "defining_transition": "1_TO_2",
+        "history_observation_ids": [
+          1218,
+          102
+        ],
+        "initial_sector_labels": [
+          "ol_intrinsic"
+        ],
+        "source_ids": [
+          94095,
+          122823
+        ],
+        "source_count": 2,
+        "unordered_pair_count": 1,
+        "ordered_pair_sha256": "9275c3a3edbfaead82c1da8faa6b89182d57d1a2ee22a64a814e67fe28074fb9",
+        "exact_relation": "EQUAL_Z0_AND_Z1__PAIRWISE_DISTINCT_Z2"
+      },
+      {
+        "cohort_id": "TO-06",
+        "role": "TRANSIENT_OBSTRUCTION_FIBER",
+        "defining_transition": "1_TO_2",
+        "history_observation_ids": [
+          1278,
+          238
+        ],
+        "initial_sector_labels": [
+          "ol_sensory"
+        ],
+        "source_ids": [
+          99355,
+          140077,
+          163381
+        ],
+        "source_count": 3,
+        "unordered_pair_count": 3,
+        "ordered_pair_sha256": "3641d824211884abef5621a43e4f1c93af6a648cc5f5b1a99cff77a87e721810",
+        "exact_relation": "EQUAL_Z0_AND_Z1__PAIRWISE_DISTINCT_Z2"
+      }
+    ]
+  },
+  "persistent_safe": {
+    "source_count": 102,
+    "cohort_count": 5,
+    "cohort_sizes": [
+      51,
+      25,
+      19,
+      4,
+      3
+    ],
+    "unordered_pair_count": 1755,
+    "pair_transition_instance_count_on_defining_grid": 3510,
+    "ordered_pair_sha256": "2bd508d45a719fe3cf634fd66b219e230b2f509f8924f71e6daa692f13eb949b",
+    "cohorts": [
+      {
+        "cohort_id": "PS-01",
+        "role": "PERSISTENT_SAFE_COHORT",
+        "defining_transitions": [
+          "2_TO_3",
+          "3_TO_4"
+        ],
+        "initial_sector_labels": [
+          "ol_intrinsic"
+        ],
+        "source_ids": [
+          6772,
+          7347,
+          7802,
+          10410,
+          10715,
+          12444,
+          20870,
+          22270,
+          28108,
+          37063,
+          37857,
+          38393,
+          39202,
+          39448,
+          40772,
+          41516,
+          46173,
+          48267,
+          48925,
+          51308,
+          51965,
+          52381,
+          54667,
+          55478,
+          56507,
+          57533,
+          62578,
+          64949,
+          67121,
+          74015,
+          74157,
+          75354,
+          76289,
+          82021,
+          82327,
+          87372,
+          87496,
+          94686,
+          97036,
+          100086,
+          109700,
+          113017,
+          113430,
+          113518,
+          115786,
+          116490,
+          120552,
+          120757,
+          160738,
+          162306,
+          166473
+        ],
+        "source_count": 51,
+        "unordered_pair_count": 1275,
+        "ordered_pair_sha256": "c5390841516a21f6c50b4c003e8a2912ec4ff7fa4299817637d44f92e0f69dec",
+        "observation_ids": {
+          "t2": 116,
+          "t3": 117,
+          "t4": 118
+        },
+        "exact_relation": "PAIRWISE_EQUAL_Z2_Z3_AND_Z4"
+      },
+      {
+        "cohort_id": "PS-02",
+        "role": "PERSISTENT_SAFE_COHORT",
+        "defining_transitions": [
+          "2_TO_3",
+          "3_TO_4"
+        ],
+        "initial_sector_labels": [
+          "cb_intrinsic"
+        ],
+        "source_ids": [
+          1364,
+          2956,
+          4685,
+          4979,
+          5681,
+          6265,
+          6405,
+          6583,
+          14273,
+          14558,
+          15411,
+          19295,
+          20578,
+          29499,
+          29897,
+          37636,
+          43140,
+          48992,
+          93352,
+          103272,
+          150008,
+          150141,
+          150531,
+          154802,
+          155940
+        ],
+        "source_count": 25,
+        "unordered_pair_count": 300,
+        "ordered_pair_sha256": "f21ae0452ab30f577f21a268a698ab9364d3521616656e8d6aded812e0716445",
+        "observation_ids": {
+          "t2": 21,
+          "t3": 22,
+          "t4": 23
+        },
+        "exact_relation": "PAIRWISE_EQUAL_Z2_Z3_AND_Z4"
+      },
+      {
+        "cohort_id": "PS-03",
+        "role": "PERSISTENT_SAFE_COHORT",
+        "defining_transitions": [
+          "2_TO_3",
+          "3_TO_4"
+        ],
+        "initial_sector_labels": [
+          "vnc_intrinsic"
+        ],
+        "source_ids": [
+          547,
+          169595,
+          171529,
+          172458,
+          172838,
+          174052,
+          174087,
+          174786,
+          178218,
+          179336,
+          180401,
+          181934,
+          182640,
+          184784,
+          187159,
+          187284,
+          188816,
+          191419,
+          207122
+        ],
+        "source_count": 19,
+        "unordered_pair_count": 171,
+        "ordered_pair_sha256": "32531fbd11ae6bfbb85b7455cd621bdb69b511c688f17dc5af59b1d3b6087464",
+        "observation_ids": {
+          "t2": 12,
+          "t3": 13,
+          "t4": 14
+        },
+        "exact_relation": "PAIRWISE_EQUAL_Z2_Z3_AND_Z4"
+      },
+      {
+        "cohort_id": "PS-04",
+        "role": "PERSISTENT_SAFE_COHORT",
+        "defining_transitions": [
+          "2_TO_3",
+          "3_TO_4"
+        ],
+        "initial_sector_labels": [
+          "ascending_neuron"
+        ],
+        "source_ids": [
+          584,
+          19732,
+          152784,
+          171644
+        ],
+        "source_count": 4,
+        "unordered_pair_count": 6,
+        "ordered_pair_sha256": "2cb60804f1c6b6f17df8f00d3c64ef2603171065292594679c05f45805763711",
+        "observation_ids": {
+          "t2": 17,
+          "t3": 18,
+          "t4": 19
+        },
+        "exact_relation": "PAIRWISE_EQUAL_Z2_Z3_AND_Z4"
+      },
+      {
+        "cohort_id": "PS-05",
+        "role": "PERSISTENT_SAFE_COHORT",
+        "defining_transitions": [
+          "2_TO_3",
+          "3_TO_4"
+        ],
+        "initial_sector_labels": [
+          "visual_centrifugal"
+        ],
+        "source_ids": [
+          446,
+          19116,
+          30055
+        ],
+        "source_count": 3,
+        "unordered_pair_count": 3,
+        "ordered_pair_sha256": "f7666b653bffd14ab9cab183a9fef14f6bb56ddd17afdc00c234e5e8c6341272",
+        "observation_ids": {
+          "t2": 7,
+          "t3": 8,
+          "t4": 9
+        },
+        "exact_relation": "PAIRWISE_EQUAL_Z2_Z3_AND_Z4"
+      }
+    ]
+  },
+  "cross_role": {
+    "source_sets_disjoint": true,
+    "shared_initial_strata": [
+      "cb_intrinsic",
+      "ol_intrinsic"
+    ],
+    "unmatched_transient_strata": [
+      "ol_sensory"
+    ],
+    "unmatched_persistent_strata": [
+      "ascending_neuron",
+      "visual_centrifugal",
+      "vnc_intrinsic"
+    ],
+    "common_transition_grid": [
+      "1_TO_2",
+      "2_TO_3",
+      "3_TO_4"
+    ]
+  },
+  "inputs": [
+    {
+      "role": "PAPER17_TRANSIENT_FIBER_AUDIT",
+      "path": "experiments/paper17/results/finite_history_transient_fiber_audit.v1.json",
+      "bytes": 15022,
+      "sha256": "9eeb3e5cc3ec3599ee7f7fe54efb0248c2471b36d322f2038409bd9656cad75a"
+    },
+    {
+      "role": "PAPER17_COMMON_SUPPORT_AUDIT",
+      "path": "experiments/paper17/results/finite_history_common_support_audit.v1.json",
+      "bytes": 5771,
+      "sha256": "e7268eec14d77a53502d969266b158675614fcc9580ebaebfd8130eabb48db10"
+    },
+    {
+      "role": "PAPER17_RESULT_OWNED_EXACT_SIDECAR",
+      "path": "experiments/paper17/results/finite_history_closure.v1.sidecar.tar",
+      "bytes": 34621440,
+      "sha256": "5ed5853b43901d927fb43d2ff1926f6bcb79343d95e15e62df8f770259c52ad9"
+    },
+    {
+      "role": "PAPER17_D0_INDEX",
+      "path": "experiments/paper17/results/finite_history_D0.v1.npy",
+      "bytes": 5816,
+      "sha256": "ca12e0e36e925cbb408f79e01979f0e0ee94407631b9eb269fe11171de2a733b"
+    },
+    {
+      "role": "PAPER17_SECTOR_LABELS",
+      "path": "experiments/paper17/results/finite_history_closure.v1.sector-labels.json",
+      "bytes": 555,
+      "sha256": "bc0f247ad9e3b203d5d6797d35097f557807b9badee67d5a5e83f1911c9d2dbf"
+    },
+    {
+      "role": "PAPER17_FREEZE_MANIFEST",
+      "path": "experiments/paper17/results/finite_history_closure.v1.freeze-manifest.json",
+      "bytes": 227998,
+      "sha256": "da8d94d619faf02727f9edc65872be391580847fd369d01da787278045bbd903"
+    }
+  ],
+  "boundaries": {
+    "mechanism_identified": false,
+    "population_inference": false,
+    "independent_samples_claimed": false,
+    "full_domain_claimed": false,
+    "beyond_horizon_claimed": false
+  }
+}

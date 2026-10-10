@@ -1,0 +1,136 @@
+{
+  "artifact_closure": [
+    {
+      "bytes": 10062,
+      "path": "experiments/paper17/mechanism/mechanism_mts1_execution_authority.v1.json",
+      "role": "EXECUTION_AUTHORITY",
+      "sha256": "6a220e4fefdc95908d5c1a17b7e68c72f7c53f220a29a886106d6f93cdabf5b9"
+    },
+    {
+      "bytes": 976,
+      "path": "experiments/paper17/mechanism/results/mechanism_mts1_execution_authority.v1.validation-receipt.json",
+      "role": "EXECUTION_AUTHORITY_RECEIPT",
+      "sha256": "f23e4babd3d330c61fbc05dff476a3347fa49d965d4ba706bb2b685f5ac60ba7"
+    },
+    {
+      "bytes": 951,
+      "path": "experiments/paper17/mechanism/results/mts1-v1/resource-execution-receipt.json",
+      "role": "CAPPED_EXECUTION_RECEIPT",
+      "sha256": "8bf0835d0a3211aab361b9c51330810ee54ff5c70e769d13663c8f546fd47b44"
+    },
+    {
+      "bytes": 434936,
+      "path": "experiments/paper17/mechanism/results/mts1-v1/inventory.json",
+      "role": "EXACT_SIDECAR_INVENTORY",
+      "sha256": "80460b331f748e56ab3aba1f93e58dbc111b92dee087018acda79fe32c38709c"
+    },
+    {
+      "bytes": 5308,
+      "path": "experiments/paper17/mechanism/results/mts1-v1/validation/mechanism_classification.v1.json",
+      "role": "VALIDATOR_DERIVED_CLASSIFICATION",
+      "sha256": "2af999d9455cda234864ba9ce9243647e12f2440ef165425e3fcc1a9c47f031c"
+    },
+    {
+      "bytes": 1627,
+      "path": "experiments/paper17/mechanism/results/mts1-v1/validation/mechanism_validation.v1.receipt.json",
+      "role": "EXHAUSTIVE_VALIDATION_RECEIPT",
+      "sha256": "ff1868a8db3a77324f36268faa7c31163b5e2201da992a9f6e2c2a251ccd540a"
+    },
+    {
+      "bytes": 10729,
+      "path": "experiments/paper17/mechanism/mechanism_nontrivial_contrast.registration-v1.json",
+      "role": "FROZEN_CONTRAST_POLICY",
+      "sha256": "4690bd80a9ab619fcfd78d4e5af6c5e4e2862c41ed525c7b548ff6f653da207e"
+    },
+    {
+      "bytes": 9378,
+      "path": "experiments/paper17/mechanism/run_mts1_source_production_capped_v1.py",
+      "role": "CAPPED_EXECUTION_RUNNER",
+      "sha256": "1a923b7b55df8a74c0317b128b640b40e7ff47837a283215962cba244ba94b11"
+    },
+    {
+      "bytes": 40101,
+      "path": "experiments/paper17/mechanism/source_addressed_mechanism_producer_v1.py",
+      "role": "SOURCE_ADDRESSED_PRODUCER",
+      "sha256": "82511e5fbcbca628fd6aae3dc36cc1f92698e4884ef5ed12051b20b37d7c779d"
+    },
+    {
+      "bytes": 28992,
+      "path": "experiments/paper17/mechanism/mechanism_result_validation_v1.py",
+      "role": "EXHAUSTIVE_RESULT_VALIDATOR",
+      "sha256": "6ca40a4223bc2dbdf428385c5d5a7b6e1534c3155d35bc5e07b9aa7267f8c45f"
+    },
+    {
+      "bytes": 8425,
+      "path": "experiments/paper17/mechanism/freeze_mts1_result_v1.py",
+      "role": "RESULT_FREEZE_BUILDER",
+      "sha256": "fb1a2ec35ad651fd9dc07d849afad3cb55112a610aa74de24509c8ae47da0861"
+    },
+    {
+      "bytes": 4476,
+      "path": "experiments/paper17/mechanism/validation/validate_mts1_result_freeze_v1.py",
+      "role": "RESULT_FREEZE_VALIDATOR",
+      "sha256": "3ff4e83997f1abae3e1aa5ad284befadb0953343e9a06432884c2c11414cf0c3"
+    }
+  ],
+  "claim_boundary": {
+    "causal_attribution": "NONE",
+    "declared_finite_cohorts_and_transition_grid_only": true,
+    "external_sidecar_durability_claimed": false,
+    "external_world_input": "NONE",
+    "identity_layer_replay_is_mechanism_finding": false,
+    "independent_replication_claimed": false,
+    "population_prevalence_claimed": false,
+    "quadrant_labels_are_mechanism_labels": false,
+    "statistical_inference": "NONE"
+  },
+  "evidence_level": "Computational Certificate",
+  "exact_sidecar_identity": {
+    "all_pair_records_byte_equal_rederivation": true,
+    "artifact_count": 2481,
+    "external_immutable_anchor": null,
+    "inventory_sha256": "80460b331f748e56ab3aba1f93e58dbc111b92dee087018acda79fe32c38709c",
+    "ordered_artifact_closure_sha256": "ea6725ad7acdb493ca2ccbe629b477e902f62563b00d25953735961237d86096",
+    "storage_role": "LOCAL_RESULT_SIDECAR",
+    "total_bytes": 4837598145,
+    "tracked_in_git": false
+  },
+  "execution_authority": "NONE_COMPLETED",
+  "independent_validation": false,
+  "ordered_compact_closure_sha256": "f03016dcc6806dbd729dfb4fb716a061d535bf13d9627f647f70af5a814c9403",
+  "primary_result": {
+    "comparison_cell_count": 15,
+    "differing_comparison_cell_count": 15,
+    "exact_separators": [
+      {
+        "direction": "TRANSIENT_ALL__PERSISTENT_NONE",
+        "predicate": "CLIPPING_MODIFIES_NONZERO_COARSE_RESIDUAL",
+        "transition": "2_TO_3"
+      },
+      {
+        "direction": "TRANSIENT_ALL__PERSISTENT_NONE",
+        "predicate": "FATE_DISAGREEMENT_WITH_NONZERO_CLIP_CORRECTION",
+        "transition": "2_TO_3"
+      },
+      {
+        "direction": "TRANSIENT_ALL__PERSISTENT_NONE",
+        "predicate": "CLIPPING_MODIFIES_NONZERO_COARSE_RESIDUAL",
+        "transition": "3_TO_4"
+      },
+      {
+        "direction": "TRANSIENT_ALL__PERSISTENT_NONE",
+        "predicate": "FATE_DISAGREEMENT_WITH_NONZERO_CLIP_CORRECTION",
+        "transition": "3_TO_4"
+      }
+    ],
+    "outcome": "EXACT_TRANSITION_LAYER_LOCALIZATION",
+    "pair_count": 2325,
+    "pair_transition_record_count": 6975,
+    "source_count": 153,
+    "source_transition_cache_record_count": 459
+  },
+  "producer_replayed_by_validator": false,
+  "schema": "rime.paper17.mts1-result-freeze-manifest.v1",
+  "status": "POST_EXECUTION_FROZEN",
+  "validation_mode": "LOCAL_EXHAUSTIVE_EXACT_REDERIVATION"
+}

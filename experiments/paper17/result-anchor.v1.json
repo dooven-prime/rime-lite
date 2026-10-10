@@ -1,0 +1,826 @@
+{
+  "schema": "rime.paper17.result-anchor.v1",
+  "status": "RESULT_OWNED_ANCHOR_READY",
+  "candidate_identity": {
+    "paper": "Paper XVII",
+    "title": "Exact Post-Transient Coarse Factorization in a Reduced Male Drosophila CNS Model",
+    "publication_status": "UNPUBLISHED_CANDIDATE"
+  },
+  "scope": {
+    "source_count": 711,
+    "D0_mode": "REDUCED_STRATIFIED_HASH_D0",
+    "T": 4,
+    "common_support_times": [
+      2,
+      3
+    ],
+    "full_domain_claimed": false,
+    "indefinite_invariance_claimed": false
+  },
+  "evidence_authority": {
+    "historical_primary_result": "ORDER_SPECIFIC_DOMAINS_RETAINED_NOT_MINIMAL_MEMORY_AUTHORITY",
+    "common_support_correction": "THEOREM_FACING_FINITE_CLASSIFICATION",
+    "transient_fiber_decomposition": "THEOREM_FACING_POSTHOC_DESCRIPTIVE_LOCALIZATION",
+    "terminal_image_boundary": "THEOREM_FACING_NEGATIVE_PROMOTION_GATE",
+    "post_separation_transition_layer_contrast": "THEOREM_FACING_FINITE_EXACT_CLASSIFICATION",
+    "producer_replayed": false,
+    "clean_clone_microscopic_generation_verified": false,
+    "independent_validation": false
+  },
+  "canonical_claims": {
+    "common_support_one_step_factorization_noninjective": true,
+    "common_support_partitions_identical_across_h_0_1_2": true,
+    "coarse_endomap_verified": false,
+    "registered_internal_shift_count": 1,
+    "minimal_memory_order_identified": false,
+    "t1_obstruction_fiber_count": 6,
+    "t1_obstruction_source_count": 51,
+    "all_obstruction_sources_globally_singleton_at_t2": true,
+    "persistent_cohort_sizes": [
+      51,
+      25,
+      19,
+      4,
+      3
+    ],
+    "persistent_membership_equal_at_t2_t3": true,
+    "post_separation_transition_layer_contrast_verified": true,
+    "mts1_source_count": 153,
+    "mts1_source_transition_cache_record_count": 459,
+    "mts1_pair_transition_record_count": 6975,
+    "mts1_comparison_cell_count": 15,
+    "mts1_differing_comparison_cell_count": 15,
+    "mts1_exact_separator_count": 4,
+    "initial_separation_trigger_identified": false,
+    "causal_mechanism_identified": false
+  },
+  "closure_policy": {
+    "default_build_uses_only_paper_owned_bytes": true,
+    "exploratory_source_comparison_performed": false,
+    "historical_production_documents_are_package_only": true,
+    "microscopic_generation_closure": "INCOMPLETE_NOT_CLAIMED",
+    "exact_result_replay_starts_from": "results/finite_history_closure.v1.sidecar.tar",
+    "mts1_compact_result_closure_bound": true,
+    "mts1_exact_sidecar_external_anchor": null
+  },
+  "exact_sidecar": {
+    "path": "results/finite_history_closure.v1.sidecar.tar",
+    "bytes": 34621440,
+    "sha256": "5ed5853b43901d927fb43d2ff1926f6bcb79343d95e15e62df8f770259c52ad9",
+    "member_count": 1425,
+    "ordered_files_sha256": "f8f315329ef93196048341e40ef0dcdb44f784bdd7095d4655e0ec3d3d15c785"
+  },
+  "mts1_exact_sidecar": {
+    "inventory_path": "mechanism/results/mts1-v1/inventory.json",
+    "inventory_sha256": "80460b331f748e56ab3aba1f93e58dbc111b92dee087018acda79fe32c38709c",
+    "ordered_artifact_closure_sha256": "ea6725ad7acdb493ca2ccbe629b477e902f62563b00d25953735961237d86096",
+    "artifact_count": 2481,
+    "total_bytes": 4837598145,
+    "external_immutable_anchor": null,
+    "tracked_in_git": false
+  },
+  "artifact_count": 85,
+  "artifact_count_by_closure_class": {
+    "theorem_facing_result_replay": 42,
+    "package_only_historical_production_context": 19,
+    "package_only_release_support": 24
+  },
+  "artifacts": [
+    {
+      "path": "audit_finite_history_common_support_v1.py",
+      "bytes": 9058,
+      "sha256": "ad2a635ee9a8016541aa4f3eefca4e717fd930cc0533eabbd059ea7ae2a7bc60",
+      "closure_class": "theorem_facing_result_replay",
+      "import_source": {
+        "path": "experiments/exploratory/male_cns_connectome/dynamic_compression/audit_finite_history_common_support_v1.py",
+        "expected_sha256": "ad2a635ee9a8016541aa4f3eefca4e717fd930cc0533eabbd059ea7ae2a7bc60",
+        "comparison_required_for_default_build": false
+      }
+    },
+    {
+      "path": "audit_finite_history_transient_fibers_v1.py",
+      "bytes": 11670,
+      "sha256": "55b18ada120dfba21eddd8264ce2f8c8cb5be27c7b6aa979a8a7dbb44fe20b04",
+      "closure_class": "theorem_facing_result_replay",
+      "import_source": {
+        "path": "experiments/exploratory/male_cns_connectome/dynamic_compression/audit_finite_history_transient_fibers_v1.py",
+        "expected_sha256": "55b18ada120dfba21eddd8264ce2f8c8cb5be27c7b6aa979a8a7dbb44fe20b04",
+        "comparison_required_for_default_build": false
+      }
+    },
+    {
+      "path": "finite_history_binary.py",
+      "bytes": 7287,
+      "sha256": "dcfb87d9351a1fea3a7c080db4ca75e205bf4025bb83fbdd81876576510e753b",
+      "closure_class": "theorem_facing_result_replay",
+      "import_source": {
+        "path": "experiments/exploratory/male_cns_connectome/dynamic_compression/finite_history_binary.py",
+        "expected_sha256": "dcfb87d9351a1fea3a7c080db4ca75e205bf4025bb83fbdd81876576510e753b",
+        "comparison_required_for_default_build": false
+      }
+    },
+    {
+      "path": "freeze_finite_history_closure_v1.py",
+      "bytes": 7217,
+      "sha256": "bc193b8b3e645ec588ea1b837d070988d7de13776fe26b729ea15d898fb41d58",
+      "closure_class": "theorem_facing_result_replay",
+      "import_source": {
+        "path": "experiments/exploratory/male_cns_connectome/dynamic_compression/freeze_finite_history_closure_v1.py",
+        "expected_sha256": "bc193b8b3e645ec588ea1b837d070988d7de13776fe26b729ea15d898fb41d58",
+        "comparison_required_for_default_build": false
+      }
+    },
+    {
+      "path": "results/finite_history_D0.v1.npy",
+      "bytes": 5816,
+      "sha256": "ca12e0e36e925cbb408f79e01979f0e0ee94407631b9eb269fe11171de2a733b",
+      "closure_class": "theorem_facing_result_replay",
+      "import_source": {
+        "path": "experiments/exploratory/male_cns_connectome/dynamic_compression/results/finite_history_D0.v1.npy",
+        "expected_sha256": "ca12e0e36e925cbb408f79e01979f0e0ee94407631b9eb269fe11171de2a733b",
+        "comparison_required_for_default_build": false
+      }
+    },
+    {
+      "path": "results/finite_history_D0_admission.v1.json",
+      "bytes": 2957,
+      "sha256": "c1735202657b3ee92449eacdbbf32a401e475eeb77b70e8f63c4e34b3b9dbf0e",
+      "closure_class": "theorem_facing_result_replay",
+      "import_source": {
+        "path": "experiments/exploratory/male_cns_connectome/dynamic_compression/results/finite_history_D0_admission.v1.json",
+        "expected_sha256": "c1735202657b3ee92449eacdbbf32a401e475eeb77b70e8f63c4e34b3b9dbf0e",
+        "comparison_required_for_default_build": false
+      }
+    },
+    {
+      "path": "results/finite_history_D0_admission.v1.validation-receipt.json",
+      "bytes": 1180,
+      "sha256": "83c2353ce68848df4b68e706223c06707b9bd9101573ca5bce8c3816c01acf8c",
+      "closure_class": "theorem_facing_result_replay",
+      "import_source": {
+        "path": "experiments/exploratory/male_cns_connectome/dynamic_compression/results/finite_history_D0_admission.v1.validation-receipt.json",
+        "expected_sha256": "83c2353ce68848df4b68e706223c06707b9bd9101573ca5bce8c3816c01acf8c",
+        "comparison_required_for_default_build": false
+      }
+    },
+    {
+      "path": "results/finite_history_closure.v1.freeze-manifest.json",
+      "bytes": 227998,
+      "sha256": "da8d94d619faf02727f9edc65872be391580847fd369d01da787278045bbd903",
+      "closure_class": "theorem_facing_result_replay",
+      "import_source": {
+        "path": "experiments/exploratory/male_cns_connectome/dynamic_compression/results/finite_history_closure.v1.freeze-manifest.json",
+        "expected_sha256": "da8d94d619faf02727f9edc65872be391580847fd369d01da787278045bbd903",
+        "comparison_required_for_default_build": false
+      }
+    },
+    {
+      "path": "results/finite_history_closure.v1.freeze-validation-receipt.json",
+      "bytes": 971,
+      "sha256": "f60d0dc726a3cc9aa48a8a2bd7ec37706275a1840b9b0466229ba2113450a4c2",
+      "closure_class": "theorem_facing_result_replay",
+      "import_source": {
+        "path": "experiments/exploratory/male_cns_connectome/dynamic_compression/results/finite_history_closure.v1.freeze-validation-receipt.json",
+        "expected_sha256": "f60d0dc726a3cc9aa48a8a2bd7ec37706275a1840b9b0466229ba2113450a4c2",
+        "comparison_required_for_default_build": false
+      }
+    },
+    {
+      "path": "results/finite_history_closure.v1.json",
+      "bytes": 4421,
+      "sha256": "1e64ecd07a529b553854f31a381dbf1c15d238055a120dd8db65d483fbff2705",
+      "closure_class": "theorem_facing_result_replay",
+      "import_source": {
+        "path": "experiments/exploratory/male_cns_connectome/dynamic_compression/results/finite_history_closure.v1.json",
+        "expected_sha256": "1e64ecd07a529b553854f31a381dbf1c15d238055a120dd8db65d483fbff2705",
+        "comparison_required_for_default_build": false
+      }
+    },
+    {
+      "path": "results/finite_history_closure.v1.sector-labels.json",
+      "bytes": 555,
+      "sha256": "bc0f247ad9e3b203d5d6797d35097f557807b9badee67d5a5e83f1911c9d2dbf",
+      "closure_class": "theorem_facing_result_replay",
+      "import_source": {
+        "path": "experiments/exploratory/male_cns_connectome/dynamic_compression/results/finite_history_closure.v1.sector-labels.json",
+        "expected_sha256": "bc0f247ad9e3b203d5d6797d35097f557807b9badee67d5a5e83f1911c9d2dbf",
+        "comparison_required_for_default_build": false
+      }
+    },
+    {
+      "path": "results/finite_history_closure.v1.sidecar-inventory.json",
+      "bytes": 812627,
+      "sha256": "d539f3ba713175e1e4b09b65382349dfb4836e7a85ff413578963e0903229892",
+      "closure_class": "theorem_facing_result_replay",
+      "import_source": {
+        "path": "experiments/exploratory/male_cns_connectome/dynamic_compression/results/finite_history_closure.v1.sidecar-inventory.json",
+        "expected_sha256": "d539f3ba713175e1e4b09b65382349dfb4836e7a85ff413578963e0903229892",
+        "comparison_required_for_default_build": false
+      }
+    },
+    {
+      "path": "results/finite_history_closure.v1.sidecar.tar",
+      "bytes": 34621440,
+      "sha256": "5ed5853b43901d927fb43d2ff1926f6bcb79343d95e15e62df8f770259c52ad9",
+      "closure_class": "theorem_facing_result_replay",
+      "import_source": {
+        "path": "experiments/exploratory/male_cns_connectome/dynamic_compression/results/finite_history_closure.v1.sidecar.tar",
+        "expected_sha256": "5ed5853b43901d927fb43d2ff1926f6bcb79343d95e15e62df8f770259c52ad9",
+        "comparison_required_for_default_build": false
+      }
+    },
+    {
+      "path": "results/finite_history_closure.v1.validation-receipt.json",
+      "bytes": 840,
+      "sha256": "970106c0cc60c82d486d803ec9533a7a18c8679b1e7fef927688ee15abf92c16",
+      "closure_class": "theorem_facing_result_replay",
+      "import_source": {
+        "path": "experiments/exploratory/male_cns_connectome/dynamic_compression/results/finite_history_closure.v1.validation-receipt.json",
+        "expected_sha256": "970106c0cc60c82d486d803ec9533a7a18c8679b1e7fef927688ee15abf92c16",
+        "comparison_required_for_default_build": false
+      }
+    },
+    {
+      "path": "results/finite_history_common_support_audit.v1.json",
+      "bytes": 5771,
+      "sha256": "e7268eec14d77a53502d969266b158675614fcc9580ebaebfd8130eabb48db10",
+      "closure_class": "theorem_facing_result_replay",
+      "import_source": {
+        "path": "experiments/exploratory/male_cns_connectome/dynamic_compression/results/finite_history_common_support_audit.v1.json",
+        "expected_sha256": "e7268eec14d77a53502d969266b158675614fcc9580ebaebfd8130eabb48db10",
+        "comparison_required_for_default_build": false
+      }
+    },
+    {
+      "path": "results/finite_history_common_support_audit.v1.validation-receipt.json",
+      "bytes": 987,
+      "sha256": "34f2753f467e7bf33c01079751f17d2d011f3a24446510bcd4261776331aa209",
+      "closure_class": "theorem_facing_result_replay",
+      "import_source": {
+        "path": "experiments/exploratory/male_cns_connectome/dynamic_compression/results/finite_history_common_support_audit.v1.validation-receipt.json",
+        "expected_sha256": "34f2753f467e7bf33c01079751f17d2d011f3a24446510bcd4261776331aa209",
+        "comparison_required_for_default_build": false
+      }
+    },
+    {
+      "path": "results/finite_history_source_universe.v1.json",
+      "bytes": 3497,
+      "sha256": "fc36036774240bf5ce52e2168e0a07af934c63d94ea9338bbb7a2c3da0e2e351",
+      "closure_class": "theorem_facing_result_replay",
+      "import_source": {
+        "path": "experiments/exploratory/male_cns_connectome/dynamic_compression/results/finite_history_source_universe.v1.json",
+        "expected_sha256": "fc36036774240bf5ce52e2168e0a07af934c63d94ea9338bbb7a2c3da0e2e351",
+        "comparison_required_for_default_build": false
+      }
+    },
+    {
+      "path": "results/finite_history_source_universe.v1.npy",
+      "bytes": 1307640,
+      "sha256": "88232dcf8ef3575bfd24199bdd07839b93451e48a530d982e936af4379625fef",
+      "closure_class": "theorem_facing_result_replay",
+      "import_source": {
+        "path": "experiments/exploratory/male_cns_connectome/dynamic_compression/results/finite_history_source_universe.v1.npy",
+        "expected_sha256": "88232dcf8ef3575bfd24199bdd07839b93451e48a530d982e936af4379625fef",
+        "comparison_required_for_default_build": false
+      }
+    },
+    {
+      "path": "results/finite_history_transient_fiber_audit.v1.json",
+      "bytes": 15022,
+      "sha256": "9eeb3e5cc3ec3599ee7f7fe54efb0248c2471b36d322f2038409bd9656cad75a",
+      "closure_class": "theorem_facing_result_replay",
+      "import_source": {
+        "path": "experiments/exploratory/male_cns_connectome/dynamic_compression/results/finite_history_transient_fiber_audit.v1.json",
+        "expected_sha256": "9eeb3e5cc3ec3599ee7f7fe54efb0248c2471b36d322f2038409bd9656cad75a",
+        "comparison_required_for_default_build": false
+      }
+    },
+    {
+      "path": "results/finite_history_transient_fiber_audit.v1.validation-receipt.json",
+      "bytes": 1027,
+      "sha256": "0507e6938266e8b3ec4c8fe3abc739fb3ac98d32bfb563240658033346292769",
+      "closure_class": "theorem_facing_result_replay",
+      "import_source": {
+        "path": "experiments/exploratory/male_cns_connectome/dynamic_compression/results/finite_history_transient_fiber_audit.v1.validation-receipt.json",
+        "expected_sha256": "0507e6938266e8b3ec4c8fe3abc739fb3ac98d32bfb563240658033346292769",
+        "comparison_required_for_default_build": false
+      }
+    },
+    {
+      "path": "validation/test_finite_history_binary.py",
+      "bytes": 1821,
+      "sha256": "9148880d58eca7a0bc47219e459c65eec8b55785f35355fb07349f45902e7390",
+      "closure_class": "theorem_facing_result_replay",
+      "import_source": {
+        "path": "experiments/exploratory/male_cns_connectome/dynamic_compression/validation/test_finite_history_binary.py",
+        "expected_sha256": "9148880d58eca7a0bc47219e459c65eec8b55785f35355fb07349f45902e7390",
+        "comparison_required_for_default_build": false
+      }
+    },
+    {
+      "path": "validation/test_finite_history_classification.py",
+      "bytes": 1342,
+      "sha256": "39e9f06058d11d3690c53c8a0439fc3deca982b0ed56c53ee0c333ff87e1d7a9",
+      "closure_class": "theorem_facing_result_replay",
+      "import_source": {
+        "path": "experiments/exploratory/male_cns_connectome/dynamic_compression/validation/test_finite_history_classification.py",
+        "expected_sha256": "39e9f06058d11d3690c53c8a0439fc3deca982b0ed56c53ee0c333ff87e1d7a9",
+        "comparison_required_for_default_build": false
+      }
+    },
+    {
+      "path": "validation/validate_finite_history_closure_freeze.py",
+      "bytes": 6624,
+      "sha256": "6aaa36476eab0358961d450b5fec1d69ee530e48c7d5ebb2105699b967d83079",
+      "closure_class": "theorem_facing_result_replay",
+      "import_source": {
+        "path": "experiments/exploratory/male_cns_connectome/dynamic_compression/validation/validate_finite_history_closure_freeze.py",
+        "expected_sha256": "6aaa36476eab0358961d450b5fec1d69ee530e48c7d5ebb2105699b967d83079",
+        "comparison_required_for_default_build": false
+      }
+    },
+    {
+      "path": "validation/validate_finite_history_closure_v1.py",
+      "bytes": 5043,
+      "sha256": "b27146b9bffb26fd64f609419ee9525da00ab5225a5f4f0881e5e17878973aa0",
+      "closure_class": "theorem_facing_result_replay",
+      "import_source": {
+        "path": "experiments/exploratory/male_cns_connectome/dynamic_compression/validation/validate_finite_history_closure_v1.py",
+        "expected_sha256": "b27146b9bffb26fd64f609419ee9525da00ab5225a5f4f0881e5e17878973aa0",
+        "comparison_required_for_default_build": false
+      }
+    },
+    {
+      "path": "validation/validate_finite_history_common_support_audit.py",
+      "bytes": 2454,
+      "sha256": "2c4ed998feb2687c22141539492420b75c529734adb3964ddb0a9b42b7152f8e",
+      "closure_class": "theorem_facing_result_replay",
+      "import_source": {
+        "path": "experiments/exploratory/male_cns_connectome/dynamic_compression/validation/validate_finite_history_common_support_audit.py",
+        "expected_sha256": "2c4ed998feb2687c22141539492420b75c529734adb3964ddb0a9b42b7152f8e",
+        "comparison_required_for_default_build": false
+      }
+    },
+    {
+      "path": "validation/validate_finite_history_transient_fiber_audit.py",
+      "bytes": 2502,
+      "sha256": "f78d0bf8b4bd6de61e7842a4640b08b0ed1f22e5d706cbeaa9baac9411a92aa9",
+      "closure_class": "theorem_facing_result_replay",
+      "import_source": {
+        "path": "experiments/exploratory/male_cns_connectome/dynamic_compression/validation/validate_finite_history_transient_fiber_audit.py",
+        "expected_sha256": "f78d0bf8b4bd6de61e7842a4640b08b0ed1f22e5d706cbeaa9baac9411a92aa9",
+        "comparison_required_for_default_build": false
+      }
+    },
+    {
+      "path": "FINITE_HISTORY_CLOSURE.md",
+      "bytes": 10703,
+      "sha256": "4f69bf0ed1e388ca357041a0e9198082c62d69ca135a9f1491ce26b7e3933163",
+      "closure_class": "package_only_historical_production_context",
+      "import_source": {
+        "path": "experiments/exploratory/male_cns_connectome/dynamic_compression/FINITE_HISTORY_CLOSURE.md",
+        "expected_sha256": "4f69bf0ed1e388ca357041a0e9198082c62d69ca135a9f1491ce26b7e3933163",
+        "comparison_required_for_default_build": false
+      }
+    },
+    {
+      "path": "GROSS_BUDGET_RICHNESS_SCOPE.md",
+      "bytes": 6881,
+      "sha256": "3a5d86f8359e4daf3230bfbb7f34d1bb18b09ceef6b8073e34f5261e98a44424",
+      "closure_class": "package_only_historical_production_context",
+      "import_source": {
+        "path": "experiments/exploratory/male_cns_connectome/dynamic_compression/GROSS_BUDGET_RICHNESS_SCOPE.md",
+        "expected_sha256": "3a5d86f8359e4daf3230bfbb7f34d1bb18b09ceef6b8073e34f5261e98a44424",
+        "comparison_required_for_default_build": false
+      }
+    },
+    {
+      "path": "finite_history_closure.design-v1.json",
+      "bytes": 9175,
+      "sha256": "a33087a569d394665829acdc0c53fd7bd80a15a4ff011d4fdfeee14125216d27",
+      "closure_class": "package_only_historical_production_context",
+      "import_source": {
+        "path": "experiments/exploratory/male_cns_connectome/dynamic_compression/finite_history_closure.design-v1.json",
+        "expected_sha256": "a33087a569d394665829acdc0c53fd7bd80a15a4ff011d4fdfeee14125216d27",
+        "comparison_required_for_default_build": false
+      }
+    },
+    {
+      "path": "finite_history_closure.preflight-v1.json",
+      "bytes": 3471,
+      "sha256": "369f521b910787d071dd12b8d627a74e4e0e30eeb25969732efb9c987f57528a",
+      "closure_class": "package_only_historical_production_context",
+      "import_source": {
+        "path": "experiments/exploratory/male_cns_connectome/dynamic_compression/finite_history_closure.preflight-v1.json",
+        "expected_sha256": "369f521b910787d071dd12b8d627a74e4e0e30eeb25969732efb9c987f57528a",
+        "comparison_required_for_default_build": false
+      }
+    },
+    {
+      "path": "finite_history_closure.preflight-v1.validation-receipt.json",
+      "bytes": 763,
+      "sha256": "f2e94ef47885c40f45ae4f4a313364b83ae4d4c08d9b7137c7e33416775c12bb",
+      "closure_class": "package_only_historical_production_context",
+      "import_source": {
+        "path": "experiments/exploratory/male_cns_connectome/dynamic_compression/finite_history_closure.preflight-v1.validation-receipt.json",
+        "expected_sha256": "f2e94ef47885c40f45ae4f4a313364b83ae4d4c08d9b7137c7e33416775c12bb",
+        "comparison_required_for_default_build": false
+      }
+    },
+    {
+      "path": "finite_history_closure.registration-v1.json",
+      "bytes": 7089,
+      "sha256": "af2eee34c506f23bdf559c1a0be243143aeea6934b62f80b144ed84187494d70",
+      "closure_class": "package_only_historical_production_context",
+      "import_source": {
+        "path": "experiments/exploratory/male_cns_connectome/dynamic_compression/finite_history_closure.registration-v1.json",
+        "expected_sha256": "af2eee34c506f23bdf559c1a0be243143aeea6934b62f80b144ed84187494d70",
+        "comparison_required_for_default_build": false
+      }
+    },
+    {
+      "path": "finite_history_closure.registration-v1.validation-receipt.json",
+      "bytes": 899,
+      "sha256": "ca28efa6c31b531d60e6abebf140a939488a0926fd9fecbcaffec0440cb57e26",
+      "closure_class": "package_only_historical_production_context",
+      "import_source": {
+        "path": "experiments/exploratory/male_cns_connectome/dynamic_compression/finite_history_closure.registration-v1.validation-receipt.json",
+        "expected_sha256": "ca28efa6c31b531d60e6abebf140a939488a0926fd9fecbcaffec0440cb57e26",
+        "comparison_required_for_default_build": false
+      }
+    },
+    {
+      "path": "finite_history_d0_cost_envelope.v1.json",
+      "bytes": 4329,
+      "sha256": "0dc1844f939cc2b9c978f1fd00d87b66d74ae24584e5194b003fb542560802cd",
+      "closure_class": "package_only_historical_production_context",
+      "import_source": {
+        "path": "experiments/exploratory/male_cns_connectome/dynamic_compression/finite_history_d0_cost_envelope.v1.json",
+        "expected_sha256": "0dc1844f939cc2b9c978f1fd00d87b66d74ae24584e5194b003fb542560802cd",
+        "comparison_required_for_default_build": false
+      }
+    },
+    {
+      "path": "finite_history_d0_cost_envelope.v1.validation-receipt.json",
+      "bytes": 1201,
+      "sha256": "d206b52ec24799ec338ea20a54093cadbf2e945976c803f94784a7d0b43d450e",
+      "closure_class": "package_only_historical_production_context",
+      "import_source": {
+        "path": "experiments/exploratory/male_cns_connectome/dynamic_compression/finite_history_d0_cost_envelope.v1.validation-receipt.json",
+        "expected_sha256": "d206b52ec24799ec338ea20a54093cadbf2e945976c803f94784a7d0b43d450e",
+        "comparison_required_for_default_build": false
+      }
+    },
+    {
+      "path": "finite_history_execution_common.py",
+      "bytes": 5725,
+      "sha256": "553d14beebdaaf869226dd29e4b64e15fb8db1e23a43123ba33653a53d7257c7",
+      "closure_class": "package_only_historical_production_context",
+      "import_source": {
+        "path": "experiments/exploratory/male_cns_connectome/dynamic_compression/finite_history_execution_common.py",
+        "expected_sha256": "553d14beebdaaf869226dd29e4b64e15fb8db1e23a43123ba33653a53d7257c7",
+        "comparison_required_for_default_build": false
+      }
+    },
+    {
+      "path": "finite_history_richness.v1.json",
+      "bytes": 1846,
+      "sha256": "a39692b22585d750d07ffacdc26cf16accb2914ce6fa63ab6d776a34becfae79",
+      "closure_class": "package_only_historical_production_context",
+      "import_source": {
+        "path": "experiments/exploratory/male_cns_connectome/dynamic_compression/finite_history_richness.v1.json",
+        "expected_sha256": "a39692b22585d750d07ffacdc26cf16accb2914ce6fa63ab6d776a34becfae79",
+        "comparison_required_for_default_build": false
+      }
+    },
+    {
+      "path": "finite_history_richness.v1.validation-receipt.json",
+      "bytes": 850,
+      "sha256": "d6e46a5f52405e67000f9dbe9efd836a17c2e38d88589ac6947dd0cfe130fcdd",
+      "closure_class": "package_only_historical_production_context",
+      "import_source": {
+        "path": "experiments/exploratory/male_cns_connectome/dynamic_compression/finite_history_richness.v1.validation-receipt.json",
+        "expected_sha256": "d6e46a5f52405e67000f9dbe9efd836a17c2e38d88589ac6947dd0cfe130fcdd",
+        "comparison_required_for_default_build": false
+      }
+    },
+    {
+      "path": "finite_history_scope.v1.json",
+      "bytes": 3262,
+      "sha256": "25e3ace08d1e83675f5b21b32cff7d69c2073fd87b25c5a9000043022663aefb",
+      "closure_class": "package_only_historical_production_context",
+      "import_source": {
+        "path": "experiments/exploratory/male_cns_connectome/dynamic_compression/finite_history_scope.v1.json",
+        "expected_sha256": "25e3ace08d1e83675f5b21b32cff7d69c2073fd87b25c5a9000043022663aefb",
+        "comparison_required_for_default_build": false
+      }
+    },
+    {
+      "path": "finite_history_scope.v1.validation-receipt.json",
+      "bytes": 817,
+      "sha256": "460e5249413dbbd3a8996117354b6f5ed4d47e0100c806da03c65095f52900d6",
+      "closure_class": "package_only_historical_production_context",
+      "import_source": {
+        "path": "experiments/exploratory/male_cns_connectome/dynamic_compression/finite_history_scope.v1.validation-receipt.json",
+        "expected_sha256": "460e5249413dbbd3a8996117354b6f5ed4d47e0100c806da03c65095f52900d6",
+        "comparison_required_for_default_build": false
+      }
+    },
+    {
+      "path": "gross_compute_budget.v1.json",
+      "bytes": 2682,
+      "sha256": "6b16936bcabc80a91ee000a282bcf0f77b97deb6f19ff4cb3a84c31caaaa3bed",
+      "closure_class": "package_only_historical_production_context",
+      "import_source": {
+        "path": "experiments/exploratory/male_cns_connectome/dynamic_compression/gross_compute_budget.v1.json",
+        "expected_sha256": "6b16936bcabc80a91ee000a282bcf0f77b97deb6f19ff4cb3a84c31caaaa3bed",
+        "comparison_required_for_default_build": false
+      }
+    },
+    {
+      "path": "gross_compute_budget.v1.validation-receipt.json",
+      "bytes": 900,
+      "sha256": "62c5b3f9bf7d8b4f81ca4240f6495df6153e85fdb9e7bbe7245a60bb9c1d78f9",
+      "closure_class": "package_only_historical_production_context",
+      "import_source": {
+        "path": "experiments/exploratory/male_cns_connectome/dynamic_compression/gross_compute_budget.v1.validation-receipt.json",
+        "expected_sha256": "62c5b3f9bf7d8b4f81ca4240f6495df6153e85fdb9e7bbe7245a60bb9c1d78f9",
+        "comparison_required_for_default_build": false
+      }
+    },
+    {
+      "path": "optimized_exact_common.py",
+      "bytes": 6735,
+      "sha256": "5c85dbe5d12fdac9018e3e06a212e7697d8e7623826caf30b721c673f382edb3",
+      "closure_class": "package_only_historical_production_context",
+      "import_source": {
+        "path": "experiments/exploratory/male_cns_connectome/dynamic_compression/optimized_exact_common.py",
+        "expected_sha256": "5c85dbe5d12fdac9018e3e06a212e7697d8e7623826caf30b721c673f382edb3",
+        "comparison_required_for_default_build": false
+      }
+    },
+    {
+      "path": "requirements-exact-optimized-v1.txt",
+      "bytes": 103,
+      "sha256": "4a2140673ba59af30ae95ecb1e67b8fb9f0fdbb5ac0b40d9fe23b76e1b1b55ec",
+      "closure_class": "package_only_historical_production_context",
+      "import_source": {
+        "path": "experiments/exploratory/male_cns_connectome/dynamic_compression/requirements-exact-optimized-v1.txt",
+        "expected_sha256": "4a2140673ba59af30ae95ecb1e67b8fb9f0fdbb5ac0b40d9fe23b76e1b1b55ec",
+        "comparison_required_for_default_build": false
+      }
+    },
+    {
+      "path": "run_finite_history_closure_v1.py",
+      "bytes": 22901,
+      "sha256": "9ada38423597b20213e076f9e1d629901a8d620f649a44bb5ffb868e10f20eff",
+      "closure_class": "package_only_historical_production_context",
+      "import_source": {
+        "path": "experiments/exploratory/male_cns_connectome/dynamic_compression/run_finite_history_closure_v1.py",
+        "expected_sha256": "9ada38423597b20213e076f9e1d629901a8d620f649a44bb5ffb868e10f20eff",
+        "comparison_required_for_default_build": false
+      }
+    },
+    {
+      "path": "audit_finite_history_terminal_image_v1.py",
+      "bytes": 4753,
+      "sha256": "abf9950097ea8f2fd60e8f030a97001a8a3edba41437b116748d81f9c3c99dd7",
+      "closure_class": "theorem_facing_result_replay"
+    },
+    {
+      "path": "results/finite_history_terminal_image_audit.v1.json",
+      "bytes": 2191,
+      "sha256": "1fef1226ac638a37762bc96bc4656c184760b9bfb87e6ece37eb83b9670e50ec",
+      "closure_class": "theorem_facing_result_replay"
+    },
+    {
+      "path": "results/finite_history_terminal_image_audit.v1.validation-receipt.json",
+      "bytes": 890,
+      "sha256": "b2589cbf66c12325e4b40e12ba04307bc4ac10deb67fed6c4cdb0640b7e4eaaf",
+      "closure_class": "theorem_facing_result_replay"
+    },
+    {
+      "path": "validation/validate_finite_history_terminal_image_audit.py",
+      "bytes": 2901,
+      "sha256": "b21d0baedae9f925e925b4ea1b406a10a8b650ea1d00729b1322e767b80d2527",
+      "closure_class": "theorem_facing_result_replay"
+    },
+    {
+      "path": "mechanism/results/mechanism_cohort_registry.v1.json",
+      "bytes": 12061,
+      "sha256": "a5f3ba6b6d5368f42dd713ecf0851d90819604841ea574bf4450f12eb2c9f011",
+      "closure_class": "theorem_facing_result_replay"
+    },
+    {
+      "path": "mechanism/mechanism_nontrivial_contrast.registration-v1.json",
+      "bytes": 10729,
+      "sha256": "4690bd80a9ab619fcfd78d4e5af6c5e4e2862c41ed525c7b548ff6f653da207e",
+      "closure_class": "theorem_facing_result_replay"
+    },
+    {
+      "path": "mechanism/nontrivial_contrast_v1.py",
+      "bytes": 14364,
+      "sha256": "1d930f799a1e39130213a2d11e3685ccc424d0d2ece50c77cc0b32f8ef03cb04",
+      "closure_class": "theorem_facing_result_replay"
+    },
+    {
+      "path": "mechanism/mechanism_result_validation_v1.py",
+      "bytes": 28992,
+      "sha256": "6ca40a4223bc2dbdf428385c5d5a7b6e1534c3155d35bc5e07b9aa7267f8c45f",
+      "closure_class": "theorem_facing_result_replay"
+    },
+    {
+      "path": "mechanism/freeze_mts1_result_v1.py",
+      "bytes": 8425,
+      "sha256": "fb1a2ec35ad651fd9dc07d849afad3cb55112a610aa74de24509c8ae47da0861",
+      "closure_class": "theorem_facing_result_replay"
+    },
+    {
+      "path": "mechanism/validation/validate_mts1_result_freeze_v1.py",
+      "bytes": 4476,
+      "sha256": "3ff4e83997f1abae3e1aa5ad284befadb0953343e9a06432884c2c11414cf0c3",
+      "closure_class": "theorem_facing_result_replay"
+    },
+    {
+      "path": "mechanism/results/mts1-v1/inventory.json",
+      "bytes": 434936,
+      "sha256": "80460b331f748e56ab3aba1f93e58dbc111b92dee087018acda79fe32c38709c",
+      "closure_class": "theorem_facing_result_replay"
+    },
+    {
+      "path": "mechanism/results/mts1-v1/resource-execution-receipt.json",
+      "bytes": 951,
+      "sha256": "8bf0835d0a3211aab361b9c51330810ee54ff5c70e769d13663c8f546fd47b44",
+      "closure_class": "theorem_facing_result_replay"
+    },
+    {
+      "path": "mechanism/results/mts1-v1/validation/mechanism_classification.v1.json",
+      "bytes": 5308,
+      "sha256": "2af999d9455cda234864ba9ce9243647e12f2440ef165425e3fcc1a9c47f031c",
+      "closure_class": "theorem_facing_result_replay"
+    },
+    {
+      "path": "mechanism/results/mts1-v1/validation/mechanism_validation.v1.receipt.json",
+      "bytes": 1627,
+      "sha256": "ff1868a8db3a77324f36268faa7c31163b5e2201da992a9f6e2c2a251ccd540a",
+      "closure_class": "theorem_facing_result_replay"
+    },
+    {
+      "path": "mechanism/results/mts1-v1.freeze-manifest.json",
+      "bytes": 5412,
+      "sha256": "5cd64cf91073fa77006d8f8d718f9daf5554330fd8abbb7e12429796307b21fe",
+      "closure_class": "theorem_facing_result_replay"
+    },
+    {
+      "path": "mechanism/results/mts1-v1.freeze-validation-receipt.json",
+      "bytes": 1230,
+      "sha256": "237a5088d940a3d6ae1620f5317cb994d4dd59be67a7b85fcc6ecc48bab39ca3",
+      "closure_class": "theorem_facing_result_replay"
+    },
+    {
+      "path": ".gitattributes",
+      "bytes": 46,
+      "sha256": "c3afc963bfe93ed004f14026ab16fa2a81893f89102b6336529a62b607402dcc",
+      "closure_class": "package_only_release_support"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6891,
+      "sha256": "3f27481fb9f36efcd216d5527b5fc7e03e45ed1a4a5b1aca3f947076d8ba5512",
+      "closure_class": "package_only_release_support"
+    },
+    {
+      "path": "build_result_anchor.py",
+      "bytes": 12179,
+      "sha256": "c738c5f46b82b7ae14d8fe911ac0cc82f5bbc6c681b03973f806ff6a86a3bbf6",
+      "closure_class": "package_only_release_support"
+    },
+    {
+      "path": "validation/validate_public_package.py",
+      "bytes": 4422,
+      "sha256": "50f8a443b2065e128849530812a339f2ef8f626b165cc6ca45b05ab0e5f2ece8",
+      "closure_class": "package_only_release_support"
+    },
+    {
+      "path": "validation/validate_result_anchor.py",
+      "bytes": 9694,
+      "sha256": "2d2dd02f3db12005fbb91ec9af39e5225daf1a82d0a6efda6a9b8d9ebb326f7a",
+      "closure_class": "package_only_release_support"
+    },
+    {
+      "path": "mechanism/README.md",
+      "bytes": 8575,
+      "sha256": "ca6c8a8ef01f1b0dfcc633a2249ed0a6c29237863971b74224ada04cf3ae6661",
+      "closure_class": "package_only_release_support"
+    },
+    {
+      "path": "mechanism/MECHANISM_OF_TRANSIENT_SEPARATION.md",
+      "bytes": 13403,
+      "sha256": "85a43e06ea526de04c79f10892f31b5232be3d86a41da5ec5e6884ba29e4127f",
+      "closure_class": "package_only_release_support"
+    },
+    {
+      "path": "mechanism/MTS1_SCOPED_EXECUTION_AMENDMENT.md",
+      "bytes": 4328,
+      "sha256": "5d45119072b0886eb88b5209f3508a452483e30cd17269f98453924eeae94bc2",
+      "closure_class": "package_only_release_support"
+    },
+    {
+      "path": "mechanism/MTS1_RECORD_SCHEMAS.md",
+      "bytes": 2389,
+      "sha256": "07bd241b9e09b093e18f459233a659c7ab48a74806d74daa6e6bee64ca4d20a1",
+      "closure_class": "package_only_release_support"
+    },
+    {
+      "path": "mechanism/MTS1_EXACT_TRANSITION_PAYLOAD_CODECS.md",
+      "bytes": 2391,
+      "sha256": "f40246d176ad4a90b6422b858b51196ea621f5e4f1626b22eb6ec03ab95f7b2f",
+      "closure_class": "package_only_release_support"
+    },
+    {
+      "path": "mechanism/MTS1_NONTRIVIAL_CONTRAST.md",
+      "bytes": 3391,
+      "sha256": "7d54ac34a31539b03f721b8d90e63f1a9923e826fb1ddfaa579ac7f3aa651966",
+      "closure_class": "package_only_release_support"
+    },
+    {
+      "path": "mechanism/mechanism_of_transient_separation.registration-v1.json",
+      "bytes": 11902,
+      "sha256": "57e4e9d56b73b05af884f44860c472854a45897ec54f68e3ffbe41c8cbfcfadf",
+      "closure_class": "package_only_release_support"
+    },
+    {
+      "path": "mechanism/mechanism_of_transient_separation.execution-amendment-v1.json",
+      "bytes": 8244,
+      "sha256": "ba94b05d17c3f6ffab3e52f2749a52e6733617ed602d80090293c953a91c9d35",
+      "closure_class": "package_only_release_support"
+    },
+    {
+      "path": "mechanism/mechanism_record_schema.registration-v1.json",
+      "bytes": 4639,
+      "sha256": "ea24a50afcc3ad319ed443e55317669a29c32b91863c1eb2eccfef68f4436408",
+      "closure_class": "package_only_release_support"
+    },
+    {
+      "path": "mechanism/mechanism_payload_codecs.registration-v1.json",
+      "bytes": 4829,
+      "sha256": "f5cbb2e2c07ecb81bd66a2d004929ab2e59896aba63012d195cdc6ff2b312e55",
+      "closure_class": "package_only_release_support"
+    },
+    {
+      "path": "mechanism/mechanism_source_addressed_producer.registration-v1.json",
+      "bytes": 8596,
+      "sha256": "efe8f2d44367a03970e4c7a905e1ec201b88c85238e9cfa0b94755bb04fe8e18",
+      "closure_class": "package_only_release_support"
+    },
+    {
+      "path": "mechanism/mechanism_resource_contract.v1.json",
+      "bytes": 2424,
+      "sha256": "743b5c3d7813acf6a3cfcb1273021d90b8713fe800c5fe54660341590251086b",
+      "closure_class": "package_only_release_support"
+    },
+    {
+      "path": "mechanism/mechanism_validation_resource_gate.registration-v1.json",
+      "bytes": 7766,
+      "sha256": "5d30fad3aad9c045c3383d929f7a13afaa5133b26763c9907d5fc7ad09c2e907",
+      "closure_class": "package_only_release_support"
+    },
+    {
+      "path": "mechanism/mechanism_mts1_execution_authority.v1.json",
+      "bytes": 10062,
+      "sha256": "6a220e4fefdc95908d5c1a17b7e68c72f7c53f220a29a886106d6f93cdabf5b9",
+      "closure_class": "package_only_release_support"
+    },
+    {
+      "path": "mechanism/source_addressed_mechanism_producer_v1.py",
+      "bytes": 40101,
+      "sha256": "82511e5fbcbca628fd6aae3dc36cc1f92698e4884ef5ed12051b20b37d7c779d",
+      "closure_class": "package_only_release_support"
+    },
+    {
+      "path": "mechanism/run_mts1_source_production_capped_v1.py",
+      "bytes": 9378,
+      "sha256": "1a923b7b55df8a74c0317b128b640b40e7ff47837a283215962cba244ba94b11",
+      "closure_class": "package_only_release_support"
+    },
+    {
+      "path": "mechanism/exact_state_payload_v1.py",
+      "bytes": 7990,
+      "sha256": "619b34064a060eb4bc634b9579131d5faa2380f2ef320a79de661094007bdf74",
+      "closure_class": "package_only_release_support"
+    },
+    {
+      "path": "mechanism/exact_transition_payloads_v1.py",
+      "bytes": 13197,
+      "sha256": "87793b824c284d97b05cd5d9f0c10ff781d1f3383120efc11fbc9dcf86279bab",
+      "closure_class": "package_only_release_support"
+    },
+    {
+      "path": "mechanism/mechanism_records_v1.py",
+      "bytes": 19293,
+      "sha256": "195e71f6bd4709e4a3cf917a82aee69a58de82b2aa1dbb8f03cbb06524716ca0",
+      "closure_class": "package_only_release_support"
+    }
+  ],
+  "receipt_path": "results/result-anchor.v1.validation-receipt.json"
+}

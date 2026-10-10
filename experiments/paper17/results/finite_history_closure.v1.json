@@ -1,0 +1,154 @@
+{
+  "schema": "rime.exploratory.male-cns-dynamic-compression.finite-history-result.v1",
+  "status": "COMPLETED",
+  "evidence_level": "Computational Certificate",
+  "run_id": "finite-history-v1",
+  "scope": {
+    "domain": "REGISTERED_REDUCED_D0",
+    "source_count": 711,
+    "H": 2,
+    "T": 4,
+    "orders": [
+      0,
+      1,
+      2
+    ],
+    "D0_resized": false
+  },
+  "classification": {
+    "orders": [
+      {
+        "h": 0,
+        "outcome": "FAILED_EXACT_CLOSURE",
+        "N_h": 2844,
+        "K_h": 1819,
+        "M_h": 406,
+        "redundancy_N_minus_K": 1025,
+        "rho_h": {
+          "numerator": 1819,
+          "denominator": 2844
+        },
+        "non_singleton_fiber_count": 32,
+        "maximum_distinct_sources_in_one_fiber": 373,
+        "failure_fiber_count": 16,
+        "first_failure_witness": {
+          "history_observation_ids": [
+            0
+          ],
+          "first": {
+            "successor_observation_id": 1,
+            "source_id": 358,
+            "time": 0
+          },
+          "second": {
+            "successor_observation_id": 20,
+            "source_id": 1364,
+            "time": 0
+          }
+        },
+        "horizon_bounded_shift_checks": 2133
+      },
+      {
+        "h": 1,
+        "outcome": "FAILED_EXACT_CLOSURE",
+        "N_h": 2133,
+        "K_h": 1797,
+        "M_h": 51,
+        "redundancy_N_minus_K": 336,
+        "rho_h": {
+          "numerator": 1797,
+          "denominator": 2133
+        },
+        "non_singleton_fiber_count": 21,
+        "maximum_distinct_sources_in_one_fiber": 51,
+        "failure_fiber_count": 6,
+        "first_failure_witness": {
+          "history_observation_ids": [
+            0,
+            0
+          ],
+          "first": {
+            "successor_observation_id": 95,
+            "source_id": 5302,
+            "time": 1
+          },
+          "second": {
+            "successor_observation_id": 349,
+            "source_id": 27363,
+            "time": 1
+          }
+        },
+        "horizon_bounded_shift_checks": 1422
+      },
+      {
+        "h": 2,
+        "outcome": "EXACT_CLOSED_NONINJECTIVE",
+        "N_h": 1422,
+        "K_h": 1228,
+        "M_h": 51,
+        "redundancy_N_minus_K": 194,
+        "rho_h": {
+          "numerator": 1228,
+          "denominator": 1422
+        },
+        "non_singleton_fiber_count": 10,
+        "maximum_distinct_sources_in_one_fiber": 51,
+        "failure_fiber_count": 0,
+        "first_failure_witness": null,
+        "horizon_bounded_shift_checks": 711
+      }
+    ],
+    "primary_outcome_at_H": "EXACT_CLOSED_NONINJECTIVE",
+    "minimal_closing_order_on_registered_domain": 2,
+    "minimality_claim_allowed": true
+  },
+  "exact_identity": {
+    "hash_role": "INDEX_ONLY",
+    "hash_match_followed_by_canonical_payload_comparison": true,
+    "exact_payload_comparisons": 1122,
+    "distinct_exact_observations": 2433
+  },
+  "sidecar_inventory": {
+    "path": ".runtime-work/finite-history/v1/finite-history-v1/sidecar-inventory.json",
+    "bytes": 812627,
+    "sha256": "d539f3ba713175e1e4b09b65382349dfb4836e7a85ff413578963e0903229892"
+  },
+  "registration": {
+    "role": "REGISTRATION",
+    "path": "finite_history_closure.registration-v1.json",
+    "bytes": 7089,
+    "sha256": "af2eee34c506f23bdf559c1a0be243143aeea6934b62f80b144ed84187494d70"
+  },
+  "runtime": {
+    "python_version": "3.12.6",
+    "numpy_version": "2.5.3",
+    "scipy_version": "1.18.0",
+    "pyarrow_version": "18.0.0",
+    "gmpy2_version": "2.2.1",
+    "psutil_version": "7.0.0",
+    "cython_version": "3.2.4",
+    "setuptools_version": "80.9.0",
+    "sys_executable_sha256": "3470f7919170d235d7e6079691462c4b217745ec67ee612e745730e46d98f238"
+  },
+  "resources": {
+    "cumulative_wall_seconds": 18476.640999999945,
+    "cumulative_cpu_seconds_sampled": 73247.8125,
+    "peak_process_tree_rss_bytes": 3361595392,
+    "peak_incremental_storage_bytes": 32607066,
+    "caps": {
+      "maximum_workers": 4,
+      "peak_process_tree_rss_bytes": 34359738368,
+      "incremental_run_storage_bytes": 107374182400,
+      "primary_cpu_seconds": 120960.0,
+      "primary_wall_seconds": 30240.0,
+      "poll_interval_seconds": 5
+    }
+  },
+  "claim_boundary": {
+    "registered_reduced_domain_only": true,
+    "full_domain_claimed": false,
+    "finite_H_failure_implies_infinite_memory": false,
+    "indefinite_forward_invariance_claimed": false,
+    "independent_validation": false
+  }
+}

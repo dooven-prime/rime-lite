@@ -1,0 +1,24 @@
+{
+  "schema": "rime.exploratory.male-cns.mts-execution-authority-validation-receipt.v1",
+  "status": "PASS",
+  "validation_mode": "LOCAL_PRE_EXECUTION_CLOSURE_VERIFICATION",
+  "independent_validation": false,
+  "scientific_payload_generated": false,
+  "authority": {
+    "path": "experiments/paper17/mechanism/mechanism_mts1_execution_authority.v1.json",
+    "bytes": 10062,
+    "sha256": "6a220e4fefdc95908d5c1a17b7e68c72f7c53f220a29a886106d6f93cdabf5b9"
+  },
+  "validator": {
+    "path": "experiments/paper17/mechanism/validation/validate_mts1_execution_authority_v1.py",
+    "sha256": "2a938a2b207a029d820feea27b8d0ab66371be33b72f6e4fb771e97a83593d67"
+  },
+  "verified": {
+    "artifact_count": 16,
+    "ordered_execution_closure_sha256": "099299a02ddfad183641be952dc0c017e4042d8da3f469e74b7b9f064db1864d",
+    "runtime_identity_bound": true,
+    "compiled_kernel_bytes_bound": true,
+    "result_root_absent_pre_execution": true,
+    "single_purpose_authority": true
+  }
+}

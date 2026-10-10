@@ -1,0 +1,101 @@
+{
+  "schema": "rime.exploratory.male-cns-dynamic-compression.source-universe-audit.v1",
+  "status": "SOURCE_UNIVERSE_AUDITED_NOT_ADMITTED",
+  "execution_authority": "NONE",
+  "scientific_inference": "NONE_SOURCE_DOMAIN_ACCOUNTING_ONLY",
+  "producer": {
+    "path": "audit_finite_history_source_universe.py",
+    "sha256": "8010bde9cf4de48a41850e9b51979f37330d5120c7e9b929acd275b1d15b9a53"
+  },
+  "reference_design": {
+    "path": "exact_arithmetic_resource_benchmark.design-v1.json",
+    "sha256": "8b317593590d683a6f5660bc55477efb92071243b8e419e70c69f30991070db4"
+  },
+  "bound_inputs": [
+    {
+      "role": "CARRIER_EDGES",
+      "path": "../digital_fly_v0/results/carrier_v0_edges.npz",
+      "bytes": 312341374,
+      "sha256": "c94e885cc2e8cde78012ed0a68a4beb42eccfe1b64607bdc90ac46e675d6966d"
+    },
+    {
+      "role": "CARRIER_NODES_AND_SECTORS",
+      "path": "../digital_fly_v0/results/carrier_v0_nodes.parquet",
+      "bytes": 3008738,
+      "sha256": "87aa46280d68a210f6c8ef4a044282fbbb62342bbeeaab8393b0fd7fa770515e"
+    },
+    {
+      "role": "KNOWN_SIGN_LABELS",
+      "path": "../digital_fly_v1/results/e0_1_carrier_nt_labels_v1_1.npz",
+      "bytes": 52655,
+      "sha256": "f6c531b38af1674783a77bb43a6e27179a42b0380f6051d62eb9e7db1bded8e7"
+    },
+    {
+      "role": "OPERATOR_ADMISSION",
+      "path": "../digital_fly_v0_1/results/sd1_operator_admission_v0_1.json",
+      "bytes": 7664,
+      "sha256": "8f57a2e9bce7b2fea95d1c526e8584a6def63e850b324ff1c1d73d6cc9202b7c"
+    }
+  ],
+  "source_rule": {
+    "carrier": "Y_known_pm",
+    "initial_state": "unit basis state e_i",
+    "admission": "source row i has at least one known-sign outgoing edge and therefore positive exact outgoing absolute mass",
+    "ordering": "ascending node index",
+    "outcome_or_behavior_used": false
+  },
+  "counts": {
+    "carrier_node_count": 211577,
+    "admissible_source_count": 163439,
+    "excluded_zero_known_sign_outgoing_row_count": 48138,
+    "superclass_stratum_count": 28,
+    "nonempty_superclass_stratum_count": 25,
+    "per_superclass": {
+      "<missing>": 845,
+      "ENS": 0,
+      "ascending_neuron": 1809,
+      "cb_efferent": 0,
+      "cb_endocrine": 1,
+      "cb_intrinsic": 31365,
+      "cb_motor": 27,
+      "cb_sensory": 4650,
+      "cb_sensory_tbc": 7,
+      "descending_neuron": 1278,
+      "descending_neuron_tbc": 1,
+      "efferent_ascending": 3,
+      "efferent_descending": 4,
+      "ol_intrinsic": 88519,
+      "ol_sensory": 6029,
+      "sensory_ascending": 516,
+      "sensory_ascending_tbc": 1,
+      "sensory_descending": 8,
+      "visual_centrifugal": 513,
+      "visual_projection": 8719,
+      "visual_projection_tbc": 2,
+      "vnc_efferent": 49,
+      "vnc_endocrine": 0,
+      "vnc_intrinsic": 12966,
+      "vnc_motor": 298,
+      "vnc_sensory": 5791,
+      "vnc_sensory_tbc": 11,
+      "vnc_tbc": 27
+    }
+  },
+  "source_index_artifact": {
+    "path": "results/finite_history_source_universe.v1.npy",
+    "bytes": 1307640,
+    "sha256": "88232dcf8ef3575bfd24199bdd07839b93451e48a530d982e936af4379625fef",
+    "semantic_sha256": "ca87822c10857ecd003ef9ae72c8028494a834efeb54e8a0816ba100d67f6991",
+    "dtype": "int64",
+    "shape": [
+      163439
+    ]
+  },
+  "claim_boundary": {
+    "complete_candidate_universe_for_same_domain_registration": true,
+    "source_domain_admitted": false,
+    "reduced_domain_selected": false,
+    "H_or_T_selected": false
+  },
+  "result_content_sha256": "2d60cdf1536ff155f08f95c48ee01a534c51d705d3c9937ae1070b6a4c3ae36a"
+}

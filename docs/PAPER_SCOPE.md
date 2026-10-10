@@ -46,12 +46,14 @@ realization, and claim status.
 ## Independent Case-Study and Mathematical Scope
 
 Paper XVI is an independently scoped computational connectome case study, not
-a successor SOF protocol. Papers XVII--XIX are intentionally unused. Papers
+a successor SOF protocol. Paper XVII is an unpublished independent computational
+follow-up; Papers XVIII--XIX remain unused. Papers
 XX--XXXVIII do not continue the SOF protocol authority chain.
 
 | Paper | Owned object or interface | Reader question |
 |-------|---------------------------|-----------------|
 | XVI | source-addressed MaleCNS structural and dynamic descent audit | Which structural and dynamic properties survive the declared connectome representations? |
+| XVII (release candidate) | finite post-transient coarse factorization and effective-drive boundary | When does a reduced reached set support a lossy one-step factor, and what suffices to explain its noninjective fibers? |
 | XX | all-depth carrier-resolved routed composition | When does Boolean support survive as a nonzero routed product at arbitrary depth? |
 | XXI | finite-field route profiles and prefix-pole semantics | How do labelled zero routes depend on field size, characteristic, and depth? |
 | XXII | fixed-deficit rational dynamics and anchored Farey patches | How do exact rational deficit layers admit Catalan classification and Fibonacci envelopes? |

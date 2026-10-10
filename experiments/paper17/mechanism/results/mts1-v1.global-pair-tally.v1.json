@@ -1,0 +1,691 @@
+{
+  "schema": "rime.paper17.mts1-global-pair-tally.v1",
+  "status": "PASS",
+  "validation_mode": "LOCAL_EXACT_PAIR_SHARD_REPLAY",
+  "independent_validation": false,
+  "source_producer_replayed": false,
+  "inputs": [
+    {
+      "path": "experiments/paper17/mechanism/results/mts1-v1.freeze-manifest.json",
+      "bytes": 5412,
+      "sha256": "5cd64cf91073fa77006d8f8d718f9daf5554330fd8abbb7e12429796307b21fe"
+    },
+    {
+      "path": "experiments/paper17/mechanism/results/mts1-v1/inventory.json",
+      "bytes": 434936,
+      "sha256": "80460b331f748e56ab3aba1f93e58dbc111b92dee087018acda79fe32c38709c"
+    },
+    {
+      "path": "experiments/paper17/mechanism/results/mechanism_cohort_registry.v1.json",
+      "bytes": 12061,
+      "sha256": "a5f3ba6b6d5368f42dd713ecf0851d90819604841ea574bf4450f12eb2c9f011"
+    },
+    {
+      "path": "experiments/paper17/mechanism/results/mts1-v1/validation/mechanism_classification.v1.json",
+      "bytes": 5308,
+      "sha256": "2af999d9455cda234864ba9ce9243647e12f2440ef165425e3fcc1a9c47f031c"
+    }
+  ],
+  "pair_shard_count": 33,
+  "pair_transition_record_count": 6975,
+  "primary_predicate_order": [
+    "CLIPPING_CREATES_COARSE_RESIDUAL",
+    "CLIPPING_ELIMINATES_COARSE_RAW_RESIDUAL",
+    "CLIPPING_MODIFIES_NONZERO_COARSE_RESIDUAL",
+    "RAW_RESIDUAL_PERSISTS_UNCHANGED",
+    "RAW_DRIVE_DIFFERENCE_COARSE_ANNIHILATED",
+    "MICROSCOPIC_DIFFERENCE_RAW_DRIVE_IDENTICAL",
+    "FATE_DISAGREEMENT_WITH_NONZERO_CLIP_CORRECTION"
+  ],
+  "cohort_counts": [
+    {
+      "transition": "1_TO_2",
+      "cohort_id": "PS-01",
+      "pair_role": "PERSISTENT_SAFE",
+      "initial_sector_label": "ol_intrinsic",
+      "in_shared_stratum_cells": true,
+      "pair_count": 1275,
+      "true_counts": {
+        "CLIPPING_CREATES_COARSE_RESIDUAL": 0,
+        "CLIPPING_ELIMINATES_COARSE_RAW_RESIDUAL": 1265,
+        "CLIPPING_MODIFIES_NONZERO_COARSE_RESIDUAL": 0,
+        "RAW_RESIDUAL_PERSISTS_UNCHANGED": 0,
+        "RAW_DRIVE_DIFFERENCE_COARSE_ANNIHILATED": 10,
+        "MICROSCOPIC_DIFFERENCE_RAW_DRIVE_IDENTICAL": 0,
+        "FATE_DISAGREEMENT_WITH_NONZERO_CLIP_CORRECTION": 0
+      }
+    },
+    {
+      "transition": "1_TO_2",
+      "cohort_id": "PS-02",
+      "pair_role": "PERSISTENT_SAFE",
+      "initial_sector_label": "cb_intrinsic",
+      "in_shared_stratum_cells": true,
+      "pair_count": 300,
+      "true_counts": {
+        "CLIPPING_CREATES_COARSE_RESIDUAL": 0,
+        "CLIPPING_ELIMINATES_COARSE_RAW_RESIDUAL": 300,
+        "CLIPPING_MODIFIES_NONZERO_COARSE_RESIDUAL": 0,
+        "RAW_RESIDUAL_PERSISTS_UNCHANGED": 0,
+        "RAW_DRIVE_DIFFERENCE_COARSE_ANNIHILATED": 0,
+        "MICROSCOPIC_DIFFERENCE_RAW_DRIVE_IDENTICAL": 0,
+        "FATE_DISAGREEMENT_WITH_NONZERO_CLIP_CORRECTION": 0
+      }
+    },
+    {
+      "transition": "1_TO_2",
+      "cohort_id": "PS-03",
+      "pair_role": "PERSISTENT_SAFE",
+      "initial_sector_label": "vnc_intrinsic",
+      "in_shared_stratum_cells": false,
+      "pair_count": 171,
+      "true_counts": {
+        "CLIPPING_CREATES_COARSE_RESIDUAL": 0,
+        "CLIPPING_ELIMINATES_COARSE_RAW_RESIDUAL": 171,
+        "CLIPPING_MODIFIES_NONZERO_COARSE_RESIDUAL": 0,
+        "RAW_RESIDUAL_PERSISTS_UNCHANGED": 0,
+        "RAW_DRIVE_DIFFERENCE_COARSE_ANNIHILATED": 0,
+        "MICROSCOPIC_DIFFERENCE_RAW_DRIVE_IDENTICAL": 0,
+        "FATE_DISAGREEMENT_WITH_NONZERO_CLIP_CORRECTION": 0
+      }
+    },
+    {
+      "transition": "1_TO_2",
+      "cohort_id": "PS-04",
+      "pair_role": "PERSISTENT_SAFE",
+      "initial_sector_label": "ascending_neuron",
+      "in_shared_stratum_cells": false,
+      "pair_count": 6,
+      "true_counts": {
+        "CLIPPING_CREATES_COARSE_RESIDUAL": 0,
+        "CLIPPING_ELIMINATES_COARSE_RAW_RESIDUAL": 6,
+        "CLIPPING_MODIFIES_NONZERO_COARSE_RESIDUAL": 0,
+        "RAW_RESIDUAL_PERSISTS_UNCHANGED": 0,
+        "RAW_DRIVE_DIFFERENCE_COARSE_ANNIHILATED": 0,
+        "MICROSCOPIC_DIFFERENCE_RAW_DRIVE_IDENTICAL": 0,
+        "FATE_DISAGREEMENT_WITH_NONZERO_CLIP_CORRECTION": 0
+      }
+    },
+    {
+      "transition": "1_TO_2",
+      "cohort_id": "PS-05",
+      "pair_role": "PERSISTENT_SAFE",
+      "initial_sector_label": "visual_centrifugal",
+      "in_shared_stratum_cells": false,
+      "pair_count": 3,
+      "true_counts": {
+        "CLIPPING_CREATES_COARSE_RESIDUAL": 0,
+        "CLIPPING_ELIMINATES_COARSE_RAW_RESIDUAL": 3,
+        "CLIPPING_MODIFIES_NONZERO_COARSE_RESIDUAL": 0,
+        "RAW_RESIDUAL_PERSISTS_UNCHANGED": 0,
+        "RAW_DRIVE_DIFFERENCE_COARSE_ANNIHILATED": 0,
+        "MICROSCOPIC_DIFFERENCE_RAW_DRIVE_IDENTICAL": 0,
+        "FATE_DISAGREEMENT_WITH_NONZERO_CLIP_CORRECTION": 0
+      }
+    },
+    {
+      "transition": "1_TO_2",
+      "cohort_id": "TO-01",
+      "pair_role": "TRANSIENT_OBSTRUCTION",
+      "initial_sector_label": "cb_intrinsic",
+      "in_shared_stratum_cells": true,
+      "pair_count": 36,
+      "true_counts": {
+        "CLIPPING_CREATES_COARSE_RESIDUAL": 0,
+        "CLIPPING_ELIMINATES_COARSE_RAW_RESIDUAL": 0,
+        "CLIPPING_MODIFIES_NONZERO_COARSE_RESIDUAL": 26,
+        "RAW_RESIDUAL_PERSISTS_UNCHANGED": 10,
+        "RAW_DRIVE_DIFFERENCE_COARSE_ANNIHILATED": 0,
+        "MICROSCOPIC_DIFFERENCE_RAW_DRIVE_IDENTICAL": 0,
+        "FATE_DISAGREEMENT_WITH_NONZERO_CLIP_CORRECTION": 26
+      }
+    },
+    {
+      "transition": "1_TO_2",
+      "cohort_id": "TO-02",
+      "pair_role": "TRANSIENT_OBSTRUCTION",
+      "initial_sector_label": "ol_intrinsic",
+      "in_shared_stratum_cells": true,
+      "pair_count": 528,
+      "true_counts": {
+        "CLIPPING_CREATES_COARSE_RESIDUAL": 0,
+        "CLIPPING_ELIMINATES_COARSE_RAW_RESIDUAL": 0,
+        "CLIPPING_MODIFIES_NONZERO_COARSE_RESIDUAL": 507,
+        "RAW_RESIDUAL_PERSISTS_UNCHANGED": 21,
+        "RAW_DRIVE_DIFFERENCE_COARSE_ANNIHILATED": 0,
+        "MICROSCOPIC_DIFFERENCE_RAW_DRIVE_IDENTICAL": 0,
+        "FATE_DISAGREEMENT_WITH_NONZERO_CLIP_CORRECTION": 507
+      }
+    },
+    {
+      "transition": "1_TO_2",
+      "cohort_id": "TO-03",
+      "pair_role": "TRANSIENT_OBSTRUCTION",
+      "initial_sector_label": "ol_intrinsic",
+      "in_shared_stratum_cells": true,
+      "pair_count": 1,
+      "true_counts": {
+        "CLIPPING_CREATES_COARSE_RESIDUAL": 0,
+        "CLIPPING_ELIMINATES_COARSE_RAW_RESIDUAL": 0,
+        "CLIPPING_MODIFIES_NONZERO_COARSE_RESIDUAL": 1,
+        "RAW_RESIDUAL_PERSISTS_UNCHANGED": 0,
+        "RAW_DRIVE_DIFFERENCE_COARSE_ANNIHILATED": 0,
+        "MICROSCOPIC_DIFFERENCE_RAW_DRIVE_IDENTICAL": 0,
+        "FATE_DISAGREEMENT_WITH_NONZERO_CLIP_CORRECTION": 1
+      }
+    },
+    {
+      "transition": "1_TO_2",
+      "cohort_id": "TO-04",
+      "pair_role": "TRANSIENT_OBSTRUCTION",
+      "initial_sector_label": "cb_intrinsic",
+      "in_shared_stratum_cells": true,
+      "pair_count": 1,
+      "true_counts": {
+        "CLIPPING_CREATES_COARSE_RESIDUAL": 0,
+        "CLIPPING_ELIMINATES_COARSE_RAW_RESIDUAL": 0,
+        "CLIPPING_MODIFIES_NONZERO_COARSE_RESIDUAL": 1,
+        "RAW_RESIDUAL_PERSISTS_UNCHANGED": 0,
+        "RAW_DRIVE_DIFFERENCE_COARSE_ANNIHILATED": 0,
+        "MICROSCOPIC_DIFFERENCE_RAW_DRIVE_IDENTICAL": 0,
+        "FATE_DISAGREEMENT_WITH_NONZERO_CLIP_CORRECTION": 1
+      }
+    },
+    {
+      "transition": "1_TO_2",
+      "cohort_id": "TO-05",
+      "pair_role": "TRANSIENT_OBSTRUCTION",
+      "initial_sector_label": "ol_intrinsic",
+      "in_shared_stratum_cells": true,
+      "pair_count": 1,
+      "true_counts": {
+        "CLIPPING_CREATES_COARSE_RESIDUAL": 0,
+        "CLIPPING_ELIMINATES_COARSE_RAW_RESIDUAL": 0,
+        "CLIPPING_MODIFIES_NONZERO_COARSE_RESIDUAL": 1,
+        "RAW_RESIDUAL_PERSISTS_UNCHANGED": 0,
+        "RAW_DRIVE_DIFFERENCE_COARSE_ANNIHILATED": 0,
+        "MICROSCOPIC_DIFFERENCE_RAW_DRIVE_IDENTICAL": 0,
+        "FATE_DISAGREEMENT_WITH_NONZERO_CLIP_CORRECTION": 1
+      }
+    },
+    {
+      "transition": "1_TO_2",
+      "cohort_id": "TO-06",
+      "pair_role": "TRANSIENT_OBSTRUCTION",
+      "initial_sector_label": "ol_sensory",
+      "in_shared_stratum_cells": false,
+      "pair_count": 3,
+      "true_counts": {
+        "CLIPPING_CREATES_COARSE_RESIDUAL": 0,
+        "CLIPPING_ELIMINATES_COARSE_RAW_RESIDUAL": 0,
+        "CLIPPING_MODIFIES_NONZERO_COARSE_RESIDUAL": 3,
+        "RAW_RESIDUAL_PERSISTS_UNCHANGED": 0,
+        "RAW_DRIVE_DIFFERENCE_COARSE_ANNIHILATED": 0,
+        "MICROSCOPIC_DIFFERENCE_RAW_DRIVE_IDENTICAL": 0,
+        "FATE_DISAGREEMENT_WITH_NONZERO_CLIP_CORRECTION": 3
+      }
+    },
+    {
+      "transition": "2_TO_3",
+      "cohort_id": "PS-01",
+      "pair_role": "PERSISTENT_SAFE",
+      "initial_sector_label": "ol_intrinsic",
+      "in_shared_stratum_cells": true,
+      "pair_count": 1275,
+      "true_counts": {
+        "CLIPPING_CREATES_COARSE_RESIDUAL": 0,
+        "CLIPPING_ELIMINATES_COARSE_RAW_RESIDUAL": 1265,
+        "CLIPPING_MODIFIES_NONZERO_COARSE_RESIDUAL": 0,
+        "RAW_RESIDUAL_PERSISTS_UNCHANGED": 0,
+        "RAW_DRIVE_DIFFERENCE_COARSE_ANNIHILATED": 10,
+        "MICROSCOPIC_DIFFERENCE_RAW_DRIVE_IDENTICAL": 0,
+        "FATE_DISAGREEMENT_WITH_NONZERO_CLIP_CORRECTION": 0
+      }
+    },
+    {
+      "transition": "2_TO_3",
+      "cohort_id": "PS-02",
+      "pair_role": "PERSISTENT_SAFE",
+      "initial_sector_label": "cb_intrinsic",
+      "in_shared_stratum_cells": true,
+      "pair_count": 300,
+      "true_counts": {
+        "CLIPPING_CREATES_COARSE_RESIDUAL": 0,
+        "CLIPPING_ELIMINATES_COARSE_RAW_RESIDUAL": 300,
+        "CLIPPING_MODIFIES_NONZERO_COARSE_RESIDUAL": 0,
+        "RAW_RESIDUAL_PERSISTS_UNCHANGED": 0,
+        "RAW_DRIVE_DIFFERENCE_COARSE_ANNIHILATED": 0,
+        "MICROSCOPIC_DIFFERENCE_RAW_DRIVE_IDENTICAL": 0,
+        "FATE_DISAGREEMENT_WITH_NONZERO_CLIP_CORRECTION": 0
+      }
+    },
+    {
+      "transition": "2_TO_3",
+      "cohort_id": "PS-03",
+      "pair_role": "PERSISTENT_SAFE",
+      "initial_sector_label": "vnc_intrinsic",
+      "in_shared_stratum_cells": false,
+      "pair_count": 171,
+      "true_counts": {
+        "CLIPPING_CREATES_COARSE_RESIDUAL": 0,
+        "CLIPPING_ELIMINATES_COARSE_RAW_RESIDUAL": 171,
+        "CLIPPING_MODIFIES_NONZERO_COARSE_RESIDUAL": 0,
+        "RAW_RESIDUAL_PERSISTS_UNCHANGED": 0,
+        "RAW_DRIVE_DIFFERENCE_COARSE_ANNIHILATED": 0,
+        "MICROSCOPIC_DIFFERENCE_RAW_DRIVE_IDENTICAL": 0,
+        "FATE_DISAGREEMENT_WITH_NONZERO_CLIP_CORRECTION": 0
+      }
+    },
+    {
+      "transition": "2_TO_3",
+      "cohort_id": "PS-04",
+      "pair_role": "PERSISTENT_SAFE",
+      "initial_sector_label": "ascending_neuron",
+      "in_shared_stratum_cells": false,
+      "pair_count": 6,
+      "true_counts": {
+        "CLIPPING_CREATES_COARSE_RESIDUAL": 0,
+        "CLIPPING_ELIMINATES_COARSE_RAW_RESIDUAL": 6,
+        "CLIPPING_MODIFIES_NONZERO_COARSE_RESIDUAL": 0,
+        "RAW_RESIDUAL_PERSISTS_UNCHANGED": 0,
+        "RAW_DRIVE_DIFFERENCE_COARSE_ANNIHILATED": 0,
+        "MICROSCOPIC_DIFFERENCE_RAW_DRIVE_IDENTICAL": 0,
+        "FATE_DISAGREEMENT_WITH_NONZERO_CLIP_CORRECTION": 0
+      }
+    },
+    {
+      "transition": "2_TO_3",
+      "cohort_id": "PS-05",
+      "pair_role": "PERSISTENT_SAFE",
+      "initial_sector_label": "visual_centrifugal",
+      "in_shared_stratum_cells": false,
+      "pair_count": 3,
+      "true_counts": {
+        "CLIPPING_CREATES_COARSE_RESIDUAL": 0,
+        "CLIPPING_ELIMINATES_COARSE_RAW_RESIDUAL": 3,
+        "CLIPPING_MODIFIES_NONZERO_COARSE_RESIDUAL": 0,
+        "RAW_RESIDUAL_PERSISTS_UNCHANGED": 0,
+        "RAW_DRIVE_DIFFERENCE_COARSE_ANNIHILATED": 0,
+        "MICROSCOPIC_DIFFERENCE_RAW_DRIVE_IDENTICAL": 0,
+        "FATE_DISAGREEMENT_WITH_NONZERO_CLIP_CORRECTION": 0
+      }
+    },
+    {
+      "transition": "2_TO_3",
+      "cohort_id": "TO-01",
+      "pair_role": "TRANSIENT_OBSTRUCTION",
+      "initial_sector_label": "cb_intrinsic",
+      "in_shared_stratum_cells": true,
+      "pair_count": 36,
+      "true_counts": {
+        "CLIPPING_CREATES_COARSE_RESIDUAL": 0,
+        "CLIPPING_ELIMINATES_COARSE_RAW_RESIDUAL": 0,
+        "CLIPPING_MODIFIES_NONZERO_COARSE_RESIDUAL": 36,
+        "RAW_RESIDUAL_PERSISTS_UNCHANGED": 0,
+        "RAW_DRIVE_DIFFERENCE_COARSE_ANNIHILATED": 0,
+        "MICROSCOPIC_DIFFERENCE_RAW_DRIVE_IDENTICAL": 0,
+        "FATE_DISAGREEMENT_WITH_NONZERO_CLIP_CORRECTION": 36
+      }
+    },
+    {
+      "transition": "2_TO_3",
+      "cohort_id": "TO-02",
+      "pair_role": "TRANSIENT_OBSTRUCTION",
+      "initial_sector_label": "ol_intrinsic",
+      "in_shared_stratum_cells": true,
+      "pair_count": 528,
+      "true_counts": {
+        "CLIPPING_CREATES_COARSE_RESIDUAL": 0,
+        "CLIPPING_ELIMINATES_COARSE_RAW_RESIDUAL": 0,
+        "CLIPPING_MODIFIES_NONZERO_COARSE_RESIDUAL": 528,
+        "RAW_RESIDUAL_PERSISTS_UNCHANGED": 0,
+        "RAW_DRIVE_DIFFERENCE_COARSE_ANNIHILATED": 0,
+        "MICROSCOPIC_DIFFERENCE_RAW_DRIVE_IDENTICAL": 0,
+        "FATE_DISAGREEMENT_WITH_NONZERO_CLIP_CORRECTION": 528
+      }
+    },
+    {
+      "transition": "2_TO_3",
+      "cohort_id": "TO-03",
+      "pair_role": "TRANSIENT_OBSTRUCTION",
+      "initial_sector_label": "ol_intrinsic",
+      "in_shared_stratum_cells": true,
+      "pair_count": 1,
+      "true_counts": {
+        "CLIPPING_CREATES_COARSE_RESIDUAL": 0,
+        "CLIPPING_ELIMINATES_COARSE_RAW_RESIDUAL": 0,
+        "CLIPPING_MODIFIES_NONZERO_COARSE_RESIDUAL": 1,
+        "RAW_RESIDUAL_PERSISTS_UNCHANGED": 0,
+        "RAW_DRIVE_DIFFERENCE_COARSE_ANNIHILATED": 0,
+        "MICROSCOPIC_DIFFERENCE_RAW_DRIVE_IDENTICAL": 0,
+        "FATE_DISAGREEMENT_WITH_NONZERO_CLIP_CORRECTION": 1
+      }
+    },
+    {
+      "transition": "2_TO_3",
+      "cohort_id": "TO-04",
+      "pair_role": "TRANSIENT_OBSTRUCTION",
+      "initial_sector_label": "cb_intrinsic",
+      "in_shared_stratum_cells": true,
+      "pair_count": 1,
+      "true_counts": {
+        "CLIPPING_CREATES_COARSE_RESIDUAL": 0,
+        "CLIPPING_ELIMINATES_COARSE_RAW_RESIDUAL": 0,
+        "CLIPPING_MODIFIES_NONZERO_COARSE_RESIDUAL": 1,
+        "RAW_RESIDUAL_PERSISTS_UNCHANGED": 0,
+        "RAW_DRIVE_DIFFERENCE_COARSE_ANNIHILATED": 0,
+        "MICROSCOPIC_DIFFERENCE_RAW_DRIVE_IDENTICAL": 0,
+        "FATE_DISAGREEMENT_WITH_NONZERO_CLIP_CORRECTION": 1
+      }
+    },
+    {
+      "transition": "2_TO_3",
+      "cohort_id": "TO-05",
+      "pair_role": "TRANSIENT_OBSTRUCTION",
+      "initial_sector_label": "ol_intrinsic",
+      "in_shared_stratum_cells": true,
+      "pair_count": 1,
+      "true_counts": {
+        "CLIPPING_CREATES_COARSE_RESIDUAL": 0,
+        "CLIPPING_ELIMINATES_COARSE_RAW_RESIDUAL": 0,
+        "CLIPPING_MODIFIES_NONZERO_COARSE_RESIDUAL": 1,
+        "RAW_RESIDUAL_PERSISTS_UNCHANGED": 0,
+        "RAW_DRIVE_DIFFERENCE_COARSE_ANNIHILATED": 0,
+        "MICROSCOPIC_DIFFERENCE_RAW_DRIVE_IDENTICAL": 0,
+        "FATE_DISAGREEMENT_WITH_NONZERO_CLIP_CORRECTION": 1
+      }
+    },
+    {
+      "transition": "2_TO_3",
+      "cohort_id": "TO-06",
+      "pair_role": "TRANSIENT_OBSTRUCTION",
+      "initial_sector_label": "ol_sensory",
+      "in_shared_stratum_cells": false,
+      "pair_count": 3,
+      "true_counts": {
+        "CLIPPING_CREATES_COARSE_RESIDUAL": 0,
+        "CLIPPING_ELIMINATES_COARSE_RAW_RESIDUAL": 0,
+        "CLIPPING_MODIFIES_NONZERO_COARSE_RESIDUAL": 3,
+        "RAW_RESIDUAL_PERSISTS_UNCHANGED": 0,
+        "RAW_DRIVE_DIFFERENCE_COARSE_ANNIHILATED": 0,
+        "MICROSCOPIC_DIFFERENCE_RAW_DRIVE_IDENTICAL": 0,
+        "FATE_DISAGREEMENT_WITH_NONZERO_CLIP_CORRECTION": 3
+      }
+    },
+    {
+      "transition": "3_TO_4",
+      "cohort_id": "PS-01",
+      "pair_role": "PERSISTENT_SAFE",
+      "initial_sector_label": "ol_intrinsic",
+      "in_shared_stratum_cells": true,
+      "pair_count": 1275,
+      "true_counts": {
+        "CLIPPING_CREATES_COARSE_RESIDUAL": 0,
+        "CLIPPING_ELIMINATES_COARSE_RAW_RESIDUAL": 1265,
+        "CLIPPING_MODIFIES_NONZERO_COARSE_RESIDUAL": 0,
+        "RAW_RESIDUAL_PERSISTS_UNCHANGED": 0,
+        "RAW_DRIVE_DIFFERENCE_COARSE_ANNIHILATED": 10,
+        "MICROSCOPIC_DIFFERENCE_RAW_DRIVE_IDENTICAL": 0,
+        "FATE_DISAGREEMENT_WITH_NONZERO_CLIP_CORRECTION": 0
+      }
+    },
+    {
+      "transition": "3_TO_4",
+      "cohort_id": "PS-02",
+      "pair_role": "PERSISTENT_SAFE",
+      "initial_sector_label": "cb_intrinsic",
+      "in_shared_stratum_cells": true,
+      "pair_count": 300,
+      "true_counts": {
+        "CLIPPING_CREATES_COARSE_RESIDUAL": 0,
+        "CLIPPING_ELIMINATES_COARSE_RAW_RESIDUAL": 300,
+        "CLIPPING_MODIFIES_NONZERO_COARSE_RESIDUAL": 0,
+        "RAW_RESIDUAL_PERSISTS_UNCHANGED": 0,
+        "RAW_DRIVE_DIFFERENCE_COARSE_ANNIHILATED": 0,
+        "MICROSCOPIC_DIFFERENCE_RAW_DRIVE_IDENTICAL": 0,
+        "FATE_DISAGREEMENT_WITH_NONZERO_CLIP_CORRECTION": 0
+      }
+    },
+    {
+      "transition": "3_TO_4",
+      "cohort_id": "PS-03",
+      "pair_role": "PERSISTENT_SAFE",
+      "initial_sector_label": "vnc_intrinsic",
+      "in_shared_stratum_cells": false,
+      "pair_count": 171,
+      "true_counts": {
+        "CLIPPING_CREATES_COARSE_RESIDUAL": 0,
+        "CLIPPING_ELIMINATES_COARSE_RAW_RESIDUAL": 171,
+        "CLIPPING_MODIFIES_NONZERO_COARSE_RESIDUAL": 0,
+        "RAW_RESIDUAL_PERSISTS_UNCHANGED": 0,
+        "RAW_DRIVE_DIFFERENCE_COARSE_ANNIHILATED": 0,
+        "MICROSCOPIC_DIFFERENCE_RAW_DRIVE_IDENTICAL": 0,
+        "FATE_DISAGREEMENT_WITH_NONZERO_CLIP_CORRECTION": 0
+      }
+    },
+    {
+      "transition": "3_TO_4",
+      "cohort_id": "PS-04",
+      "pair_role": "PERSISTENT_SAFE",
+      "initial_sector_label": "ascending_neuron",
+      "in_shared_stratum_cells": false,
+      "pair_count": 6,
+      "true_counts": {
+        "CLIPPING_CREATES_COARSE_RESIDUAL": 0,
+        "CLIPPING_ELIMINATES_COARSE_RAW_RESIDUAL": 6,
+        "CLIPPING_MODIFIES_NONZERO_COARSE_RESIDUAL": 0,
+        "RAW_RESIDUAL_PERSISTS_UNCHANGED": 0,
+        "RAW_DRIVE_DIFFERENCE_COARSE_ANNIHILATED": 0,
+        "MICROSCOPIC_DIFFERENCE_RAW_DRIVE_IDENTICAL": 0,
+        "FATE_DISAGREEMENT_WITH_NONZERO_CLIP_CORRECTION": 0
+      }
+    },
+    {
+      "transition": "3_TO_4",
+      "cohort_id": "PS-05",
+      "pair_role": "PERSISTENT_SAFE",
+      "initial_sector_label": "visual_centrifugal",
+      "in_shared_stratum_cells": false,
+      "pair_count": 3,
+      "true_counts": {
+        "CLIPPING_CREATES_COARSE_RESIDUAL": 0,
+        "CLIPPING_ELIMINATES_COARSE_RAW_RESIDUAL": 3,
+        "CLIPPING_MODIFIES_NONZERO_COARSE_RESIDUAL": 0,
+        "RAW_RESIDUAL_PERSISTS_UNCHANGED": 0,
+        "RAW_DRIVE_DIFFERENCE_COARSE_ANNIHILATED": 0,
+        "MICROSCOPIC_DIFFERENCE_RAW_DRIVE_IDENTICAL": 0,
+        "FATE_DISAGREEMENT_WITH_NONZERO_CLIP_CORRECTION": 0
+      }
+    },
+    {
+      "transition": "3_TO_4",
+      "cohort_id": "TO-01",
+      "pair_role": "TRANSIENT_OBSTRUCTION",
+      "initial_sector_label": "cb_intrinsic",
+      "in_shared_stratum_cells": true,
+      "pair_count": 36,
+      "true_counts": {
+        "CLIPPING_CREATES_COARSE_RESIDUAL": 0,
+        "CLIPPING_ELIMINATES_COARSE_RAW_RESIDUAL": 0,
+        "CLIPPING_MODIFIES_NONZERO_COARSE_RESIDUAL": 36,
+        "RAW_RESIDUAL_PERSISTS_UNCHANGED": 0,
+        "RAW_DRIVE_DIFFERENCE_COARSE_ANNIHILATED": 0,
+        "MICROSCOPIC_DIFFERENCE_RAW_DRIVE_IDENTICAL": 0,
+        "FATE_DISAGREEMENT_WITH_NONZERO_CLIP_CORRECTION": 36
+      }
+    },
+    {
+      "transition": "3_TO_4",
+      "cohort_id": "TO-02",
+      "pair_role": "TRANSIENT_OBSTRUCTION",
+      "initial_sector_label": "ol_intrinsic",
+      "in_shared_stratum_cells": true,
+      "pair_count": 528,
+      "true_counts": {
+        "CLIPPING_CREATES_COARSE_RESIDUAL": 0,
+        "CLIPPING_ELIMINATES_COARSE_RAW_RESIDUAL": 0,
+        "CLIPPING_MODIFIES_NONZERO_COARSE_RESIDUAL": 528,
+        "RAW_RESIDUAL_PERSISTS_UNCHANGED": 0,
+        "RAW_DRIVE_DIFFERENCE_COARSE_ANNIHILATED": 0,
+        "MICROSCOPIC_DIFFERENCE_RAW_DRIVE_IDENTICAL": 0,
+        "FATE_DISAGREEMENT_WITH_NONZERO_CLIP_CORRECTION": 528
+      }
+    },
+    {
+      "transition": "3_TO_4",
+      "cohort_id": "TO-03",
+      "pair_role": "TRANSIENT_OBSTRUCTION",
+      "initial_sector_label": "ol_intrinsic",
+      "in_shared_stratum_cells": true,
+      "pair_count": 1,
+      "true_counts": {
+        "CLIPPING_CREATES_COARSE_RESIDUAL": 0,
+        "CLIPPING_ELIMINATES_COARSE_RAW_RESIDUAL": 0,
+        "CLIPPING_MODIFIES_NONZERO_COARSE_RESIDUAL": 1,
+        "RAW_RESIDUAL_PERSISTS_UNCHANGED": 0,
+        "RAW_DRIVE_DIFFERENCE_COARSE_ANNIHILATED": 0,
+        "MICROSCOPIC_DIFFERENCE_RAW_DRIVE_IDENTICAL": 0,
+        "FATE_DISAGREEMENT_WITH_NONZERO_CLIP_CORRECTION": 1
+      }
+    },
+    {
+      "transition": "3_TO_4",
+      "cohort_id": "TO-04",
+      "pair_role": "TRANSIENT_OBSTRUCTION",
+      "initial_sector_label": "cb_intrinsic",
+      "in_shared_stratum_cells": true,
+      "pair_count": 1,
+      "true_counts": {
+        "CLIPPING_CREATES_COARSE_RESIDUAL": 0,
+        "CLIPPING_ELIMINATES_COARSE_RAW_RESIDUAL": 0,
+        "CLIPPING_MODIFIES_NONZERO_COARSE_RESIDUAL": 1,
+        "RAW_RESIDUAL_PERSISTS_UNCHANGED": 0,
+        "RAW_DRIVE_DIFFERENCE_COARSE_ANNIHILATED": 0,
+        "MICROSCOPIC_DIFFERENCE_RAW_DRIVE_IDENTICAL": 0,
+        "FATE_DISAGREEMENT_WITH_NONZERO_CLIP_CORRECTION": 1
+      }
+    },
+    {
+      "transition": "3_TO_4",
+      "cohort_id": "TO-05",
+      "pair_role": "TRANSIENT_OBSTRUCTION",
+      "initial_sector_label": "ol_intrinsic",
+      "in_shared_stratum_cells": true,
+      "pair_count": 1,
+      "true_counts": {
+        "CLIPPING_CREATES_COARSE_RESIDUAL": 0,
+        "CLIPPING_ELIMINATES_COARSE_RAW_RESIDUAL": 0,
+        "CLIPPING_MODIFIES_NONZERO_COARSE_RESIDUAL": 1,
+        "RAW_RESIDUAL_PERSISTS_UNCHANGED": 0,
+        "RAW_DRIVE_DIFFERENCE_COARSE_ANNIHILATED": 0,
+        "MICROSCOPIC_DIFFERENCE_RAW_DRIVE_IDENTICAL": 0,
+        "FATE_DISAGREEMENT_WITH_NONZERO_CLIP_CORRECTION": 1
+      }
+    },
+    {
+      "transition": "3_TO_4",
+      "cohort_id": "TO-06",
+      "pair_role": "TRANSIENT_OBSTRUCTION",
+      "initial_sector_label": "ol_sensory",
+      "in_shared_stratum_cells": false,
+      "pair_count": 3,
+      "true_counts": {
+        "CLIPPING_CREATES_COARSE_RESIDUAL": 0,
+        "CLIPPING_ELIMINATES_COARSE_RAW_RESIDUAL": 0,
+        "CLIPPING_MODIFIES_NONZERO_COARSE_RESIDUAL": 3,
+        "RAW_RESIDUAL_PERSISTS_UNCHANGED": 0,
+        "RAW_DRIVE_DIFFERENCE_COARSE_ANNIHILATED": 0,
+        "MICROSCOPIC_DIFFERENCE_RAW_DRIVE_IDENTICAL": 0,
+        "FATE_DISAGREEMENT_WITH_NONZERO_CLIP_CORRECTION": 3
+      }
+    }
+  ],
+  "global_counts": [
+    {
+      "transition": "1_TO_2",
+      "pair_role": "TRANSIENT_OBSTRUCTION",
+      "pair_count": 570,
+      "true_counts": {
+        "CLIPPING_CREATES_COARSE_RESIDUAL": 0,
+        "CLIPPING_ELIMINATES_COARSE_RAW_RESIDUAL": 0,
+        "CLIPPING_MODIFIES_NONZERO_COARSE_RESIDUAL": 539,
+        "RAW_RESIDUAL_PERSISTS_UNCHANGED": 31,
+        "RAW_DRIVE_DIFFERENCE_COARSE_ANNIHILATED": 0,
+        "MICROSCOPIC_DIFFERENCE_RAW_DRIVE_IDENTICAL": 0,
+        "FATE_DISAGREEMENT_WITH_NONZERO_CLIP_CORRECTION": 539
+      }
+    },
+    {
+      "transition": "1_TO_2",
+      "pair_role": "PERSISTENT_SAFE",
+      "pair_count": 1755,
+      "true_counts": {
+        "CLIPPING_CREATES_COARSE_RESIDUAL": 0,
+        "CLIPPING_ELIMINATES_COARSE_RAW_RESIDUAL": 1745,
+        "CLIPPING_MODIFIES_NONZERO_COARSE_RESIDUAL": 0,
+        "RAW_RESIDUAL_PERSISTS_UNCHANGED": 0,
+        "RAW_DRIVE_DIFFERENCE_COARSE_ANNIHILATED": 10,
+        "MICROSCOPIC_DIFFERENCE_RAW_DRIVE_IDENTICAL": 0,
+        "FATE_DISAGREEMENT_WITH_NONZERO_CLIP_CORRECTION": 0
+      }
+    },
+    {
+      "transition": "2_TO_3",
+      "pair_role": "TRANSIENT_OBSTRUCTION",
+      "pair_count": 570,
+      "true_counts": {
+        "CLIPPING_CREATES_COARSE_RESIDUAL": 0,
+        "CLIPPING_ELIMINATES_COARSE_RAW_RESIDUAL": 0,
+        "CLIPPING_MODIFIES_NONZERO_COARSE_RESIDUAL": 570,
+        "RAW_RESIDUAL_PERSISTS_UNCHANGED": 0,
+        "RAW_DRIVE_DIFFERENCE_COARSE_ANNIHILATED": 0,
+        "MICROSCOPIC_DIFFERENCE_RAW_DRIVE_IDENTICAL": 0,
+        "FATE_DISAGREEMENT_WITH_NONZERO_CLIP_CORRECTION": 570
+      }
+    },
+    {
+      "transition": "2_TO_3",
+      "pair_role": "PERSISTENT_SAFE",
+      "pair_count": 1755,
+      "true_counts": {
+        "CLIPPING_CREATES_COARSE_RESIDUAL": 0,
+        "CLIPPING_ELIMINATES_COARSE_RAW_RESIDUAL": 1745,
+        "CLIPPING_MODIFIES_NONZERO_COARSE_RESIDUAL": 0,
+        "RAW_RESIDUAL_PERSISTS_UNCHANGED": 0,
+        "RAW_DRIVE_DIFFERENCE_COARSE_ANNIHILATED": 10,
+        "MICROSCOPIC_DIFFERENCE_RAW_DRIVE_IDENTICAL": 0,
+        "FATE_DISAGREEMENT_WITH_NONZERO_CLIP_CORRECTION": 0
+      }
+    },
+    {
+      "transition": "3_TO_4",
+      "pair_role": "TRANSIENT_OBSTRUCTION",
+      "pair_count": 570,
+      "true_counts": {
+        "CLIPPING_CREATES_COARSE_RESIDUAL": 0,
+        "CLIPPING_ELIMINATES_COARSE_RAW_RESIDUAL": 0,
+        "CLIPPING_MODIFIES_NONZERO_COARSE_RESIDUAL": 570,
+        "RAW_RESIDUAL_PERSISTS_UNCHANGED": 0,
+        "RAW_DRIVE_DIFFERENCE_COARSE_ANNIHILATED": 0,
+        "MICROSCOPIC_DIFFERENCE_RAW_DRIVE_IDENTICAL": 0,
+        "FATE_DISAGREEMENT_WITH_NONZERO_CLIP_CORRECTION": 570
+      }
+    },
+    {
+      "transition": "3_TO_4",
+      "pair_role": "PERSISTENT_SAFE",
+      "pair_count": 1755,
+      "true_counts": {
+        "CLIPPING_CREATES_COARSE_RESIDUAL": 0,
+        "CLIPPING_ELIMINATES_COARSE_RAW_RESIDUAL": 1745,
+        "CLIPPING_MODIFIES_NONZERO_COARSE_RESIDUAL": 0,
+        "RAW_RESIDUAL_PERSISTS_UNCHANGED": 0,
+        "RAW_DRIVE_DIFFERENCE_COARSE_ANNIHILATED": 10,
+        "MICROSCOPIC_DIFFERENCE_RAW_DRIVE_IDENTICAL": 0,
+        "FATE_DISAGREEMENT_WITH_NONZERO_CLIP_CORRECTION": 0
+      }
+    }
+  ],
+  "global_post_separation_separator": true,
+  "boundary": "Finite registered pair universe only; the later separator does not identify the initial trigger."
+}

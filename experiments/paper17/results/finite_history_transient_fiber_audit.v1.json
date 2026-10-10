@@ -1,0 +1,629 @@
+{
+  "schema": "rime.exploratory.male-cns-dynamic-compression.finite-history-transient-fiber-audit.v1",
+  "status": "PASS",
+  "evidence_role": "POSTHOC_DESCRIPTIVE_MECHANISM_LOCALIZATION",
+  "independent_validation": false,
+  "producer_replayed": false,
+  "inputs": [
+    {
+      "role": "FREEZE_MANIFEST",
+      "path": "results/finite_history_closure.v1.freeze-manifest.json",
+      "bytes": 227998,
+      "sha256": "da8d94d619faf02727f9edc65872be391580847fd369d01da787278045bbd903"
+    },
+    {
+      "role": "RESULT_OWNED_EXACT_SIDECAR",
+      "path": "results/finite_history_closure.v1.sidecar.tar",
+      "bytes": 34621440,
+      "sha256": "5ed5853b43901d927fb43d2ff1926f6bcb79343d95e15e62df8f770259c52ad9"
+    },
+    {
+      "role": "COMMON_SUPPORT_DIAGNOSTIC",
+      "path": "results/finite_history_common_support_audit.v1.json",
+      "bytes": 5771,
+      "sha256": "e7268eec14d77a53502d969266b158675614fcc9580ebaebfd8130eabb48db10"
+    },
+    {
+      "role": "D0_INDEX",
+      "path": "results/finite_history_D0.v1.npy",
+      "bytes": 5816,
+      "sha256": "ca12e0e36e925cbb408f79e01979f0e0ee94407631b9eb269fe11171de2a733b"
+    },
+    {
+      "role": "SECTOR_LABELS",
+      "path": "results/finite_history_closure.v1.sector-labels.json",
+      "bytes": 555,
+      "sha256": "bc0f247ad9e3b203d5d6797d35097f557807b9badee67d5a5e83f1911c9d2dbf"
+    }
+  ],
+  "transient_separation": {
+    "t1_failure_fiber_count": 6,
+    "offending_source_count": 51,
+    "all_offending_sources_globally_singleton_at_t2": true,
+    "offending_sources_in_post_transient_non_singleton_cohorts": 0,
+    "failure_fibers": [
+      {
+        "history_observation_ids": [
+          0,
+          0
+        ],
+        "source_ids": [
+          5302,
+          27363,
+          64543,
+          79312,
+          110108,
+          115084,
+          125948,
+          129105,
+          150528
+        ],
+        "member_count": 9,
+        "initial_sector_labels": [
+          "cb_intrinsic"
+        ],
+        "distinct_z2_observation_count": 9,
+        "all_z2_observations_globally_singleton": true,
+        "varying_z2_coordinates": [
+          {
+            "coordinate": 0,
+            "label": "<missing>"
+          },
+          {
+            "coordinate": 2,
+            "label": "ascending_neuron"
+          },
+          {
+            "coordinate": 4,
+            "label": "cb_endocrine"
+          },
+          {
+            "coordinate": 5,
+            "label": "cb_intrinsic"
+          },
+          {
+            "coordinate": 6,
+            "label": "cb_motor"
+          },
+          {
+            "coordinate": 7,
+            "label": "cb_sensory"
+          },
+          {
+            "coordinate": 9,
+            "label": "descending_neuron"
+          },
+          {
+            "coordinate": 13,
+            "label": "ol_intrinsic"
+          },
+          {
+            "coordinate": 15,
+            "label": "sensory_ascending"
+          },
+          {
+            "coordinate": 18,
+            "label": "visual_centrifugal"
+          },
+          {
+            "coordinate": 19,
+            "label": "visual_projection"
+          }
+        ],
+        "step_1_to_2_state_support_range": [
+          1896,
+          15487
+        ],
+        "distinct_step_1_to_2_clip_summary_count": 9
+      },
+      {
+        "history_observation_ids": [
+          102,
+          102
+        ],
+        "source_ids": [
+          15807,
+          23713,
+          26202,
+          31527,
+          34845,
+          52896,
+          60976,
+          73737,
+          85215,
+          89478,
+          89627,
+          106999,
+          108853,
+          109299,
+          109652,
+          110813,
+          112501,
+          115137,
+          116575,
+          118933,
+          121231,
+          125772,
+          126359,
+          126374,
+          129390,
+          151321,
+          157304,
+          160683,
+          162071,
+          162218,
+          162973,
+          163281,
+          163948
+        ],
+        "member_count": 33,
+        "initial_sector_labels": [
+          "ol_intrinsic"
+        ],
+        "distinct_z2_observation_count": 33,
+        "all_z2_observations_globally_singleton": true,
+        "varying_z2_coordinates": [
+          {
+            "coordinate": 0,
+            "label": "<missing>"
+          },
+          {
+            "coordinate": 2,
+            "label": "ascending_neuron"
+          },
+          {
+            "coordinate": 5,
+            "label": "cb_intrinsic"
+          },
+          {
+            "coordinate": 9,
+            "label": "descending_neuron"
+          },
+          {
+            "coordinate": 13,
+            "label": "ol_intrinsic"
+          },
+          {
+            "coordinate": 14,
+            "label": "ol_sensory"
+          },
+          {
+            "coordinate": 18,
+            "label": "visual_centrifugal"
+          },
+          {
+            "coordinate": 19,
+            "label": "visual_projection"
+          },
+          {
+            "coordinate": 20,
+            "label": "visual_projection_tbc"
+          }
+        ],
+        "step_1_to_2_state_support_range": [
+          42,
+          10706
+        ],
+        "distinct_step_1_to_2_clip_summary_count": 33
+      },
+      {
+        "history_observation_ids": [
+          384,
+          102
+        ],
+        "source_ids": [
+          30023,
+          121562
+        ],
+        "member_count": 2,
+        "initial_sector_labels": [
+          "ol_intrinsic"
+        ],
+        "distinct_z2_observation_count": 2,
+        "all_z2_observations_globally_singleton": true,
+        "varying_z2_coordinates": [
+          {
+            "coordinate": 0,
+            "label": "<missing>"
+          },
+          {
+            "coordinate": 2,
+            "label": "ascending_neuron"
+          },
+          {
+            "coordinate": 5,
+            "label": "cb_intrinsic"
+          },
+          {
+            "coordinate": 6,
+            "label": "cb_motor"
+          },
+          {
+            "coordinate": 9,
+            "label": "descending_neuron"
+          },
+          {
+            "coordinate": 13,
+            "label": "ol_intrinsic"
+          },
+          {
+            "coordinate": 18,
+            "label": "visual_centrifugal"
+          },
+          {
+            "coordinate": 19,
+            "label": "visual_projection"
+          }
+        ],
+        "step_1_to_2_state_support_range": [
+          3763,
+          4884
+        ],
+        "distinct_step_1_to_2_clip_summary_count": 2
+      },
+      {
+        "history_observation_ids": [
+          988,
+          0
+        ],
+        "source_ids": [
+          79998,
+          111692
+        ],
+        "member_count": 2,
+        "initial_sector_labels": [
+          "cb_intrinsic"
+        ],
+        "distinct_z2_observation_count": 2,
+        "all_z2_observations_globally_singleton": true,
+        "varying_z2_coordinates": [
+          {
+            "coordinate": 0,
+            "label": "<missing>"
+          },
+          {
+            "coordinate": 2,
+            "label": "ascending_neuron"
+          },
+          {
+            "coordinate": 4,
+            "label": "cb_endocrine"
+          },
+          {
+            "coordinate": 5,
+            "label": "cb_intrinsic"
+          },
+          {
+            "coordinate": 7,
+            "label": "cb_sensory"
+          },
+          {
+            "coordinate": 9,
+            "label": "descending_neuron"
+          },
+          {
+            "coordinate": 13,
+            "label": "ol_intrinsic"
+          },
+          {
+            "coordinate": 18,
+            "label": "visual_centrifugal"
+          },
+          {
+            "coordinate": 19,
+            "label": "visual_projection"
+          }
+        ],
+        "step_1_to_2_state_support_range": [
+          6095,
+          11589
+        ],
+        "distinct_step_1_to_2_clip_summary_count": 2
+      },
+      {
+        "history_observation_ids": [
+          1218,
+          102
+        ],
+        "source_ids": [
+          94095,
+          122823
+        ],
+        "member_count": 2,
+        "initial_sector_labels": [
+          "ol_intrinsic"
+        ],
+        "distinct_z2_observation_count": 2,
+        "all_z2_observations_globally_singleton": true,
+        "varying_z2_coordinates": [
+          {
+            "coordinate": 0,
+            "label": "<missing>"
+          },
+          {
+            "coordinate": 2,
+            "label": "ascending_neuron"
+          },
+          {
+            "coordinate": 5,
+            "label": "cb_intrinsic"
+          },
+          {
+            "coordinate": 6,
+            "label": "cb_motor"
+          },
+          {
+            "coordinate": 9,
+            "label": "descending_neuron"
+          },
+          {
+            "coordinate": 13,
+            "label": "ol_intrinsic"
+          },
+          {
+            "coordinate": 18,
+            "label": "visual_centrifugal"
+          },
+          {
+            "coordinate": 19,
+            "label": "visual_projection"
+          }
+        ],
+        "step_1_to_2_state_support_range": [
+          3913,
+          5067
+        ],
+        "distinct_step_1_to_2_clip_summary_count": 2
+      },
+      {
+        "history_observation_ids": [
+          1278,
+          238
+        ],
+        "source_ids": [
+          99355,
+          140077,
+          163381
+        ],
+        "member_count": 3,
+        "initial_sector_labels": [
+          "ol_sensory"
+        ],
+        "distinct_z2_observation_count": 3,
+        "all_z2_observations_globally_singleton": true,
+        "varying_z2_coordinates": [
+          {
+            "coordinate": 0,
+            "label": "<missing>"
+          },
+          {
+            "coordinate": 13,
+            "label": "ol_intrinsic"
+          },
+          {
+            "coordinate": 14,
+            "label": "ol_sensory"
+          },
+          {
+            "coordinate": 18,
+            "label": "visual_centrifugal"
+          },
+          {
+            "coordinate": 19,
+            "label": "visual_projection"
+          }
+        ],
+        "step_1_to_2_state_support_range": [
+          108,
+          156
+        ],
+        "distinct_step_1_to_2_clip_summary_count": 3
+      }
+    ]
+  },
+  "persistent_safe_forgetting": {
+    "cohort_count_per_time_slice": 5,
+    "cohort_sizes": [
+      51,
+      25,
+      19,
+      4,
+      3
+    ],
+    "same_cohort_collection_at_t2_and_t3": true,
+    "total_redundancy_per_time_slice": 97,
+    "total_redundancy_across_t2_t3": 194,
+    "cohorts": [
+      {
+        "source_ids": [
+          6772,
+          7347,
+          7802,
+          10410,
+          10715,
+          12444,
+          20870,
+          22270,
+          28108,
+          37063,
+          37857,
+          38393,
+          39202,
+          39448,
+          40772,
+          41516,
+          46173,
+          48267,
+          48925,
+          51308,
+          51965,
+          52381,
+          54667,
+          55478,
+          56507,
+          57533,
+          62578,
+          64949,
+          67121,
+          74015,
+          74157,
+          75354,
+          76289,
+          82021,
+          82327,
+          87372,
+          87496,
+          94686,
+          97036,
+          100086,
+          109700,
+          113017,
+          113430,
+          113518,
+          115786,
+          116490,
+          120552,
+          120757,
+          160738,
+          162306,
+          166473
+        ],
+        "size": 51,
+        "initial_sector_labels": [
+          "ol_intrinsic"
+        ],
+        "same_source_membership_at_t3": true,
+        "z2_observation_id": 116,
+        "z3_observation_id": 117,
+        "z4_successor_observation_id": 118,
+        "overlap_with_t1_offending_sources": 0
+      },
+      {
+        "source_ids": [
+          1364,
+          2956,
+          4685,
+          4979,
+          5681,
+          6265,
+          6405,
+          6583,
+          14273,
+          14558,
+          15411,
+          19295,
+          20578,
+          29499,
+          29897,
+          37636,
+          43140,
+          48992,
+          93352,
+          103272,
+          150008,
+          150141,
+          150531,
+          154802,
+          155940
+        ],
+        "size": 25,
+        "initial_sector_labels": [
+          "cb_intrinsic"
+        ],
+        "same_source_membership_at_t3": true,
+        "z2_observation_id": 21,
+        "z3_observation_id": 22,
+        "z4_successor_observation_id": 23,
+        "overlap_with_t1_offending_sources": 0
+      },
+      {
+        "source_ids": [
+          547,
+          169595,
+          171529,
+          172458,
+          172838,
+          174052,
+          174087,
+          174786,
+          178218,
+          179336,
+          180401,
+          181934,
+          182640,
+          184784,
+          187159,
+          187284,
+          188816,
+          191419,
+          207122
+        ],
+        "size": 19,
+        "initial_sector_labels": [
+          "vnc_intrinsic"
+        ],
+        "same_source_membership_at_t3": true,
+        "z2_observation_id": 12,
+        "z3_observation_id": 13,
+        "z4_successor_observation_id": 14,
+        "overlap_with_t1_offending_sources": 0
+      },
+      {
+        "source_ids": [
+          584,
+          19732,
+          152784,
+          171644
+        ],
+        "size": 4,
+        "initial_sector_labels": [
+          "ascending_neuron"
+        ],
+        "same_source_membership_at_t3": true,
+        "z2_observation_id": 17,
+        "z3_observation_id": 18,
+        "z4_successor_observation_id": 19,
+        "overlap_with_t1_offending_sources": 0
+      },
+      {
+        "source_ids": [
+          446,
+          19116,
+          30055
+        ],
+        "size": 3,
+        "initial_sector_labels": [
+          "visual_centrifugal"
+        ],
+        "same_source_membership_at_t3": true,
+        "z2_observation_id": 7,
+        "z3_observation_id": 8,
+        "z4_successor_observation_id": 9,
+        "overlap_with_t1_offending_sources": 0
+      }
+    ]
+  },
+  "exact_identity": {
+    "hash_role": "INDEX_ONLY",
+    "exact_payload_comparisons_after_hash_match": 1122
+  },
+  "diagnosis": {
+    "outcome": "TRANSIENT_SEPARATION_PLUS_PERSISTENT_SAFE_FORGETTING",
+    "safe_statement": "Every source participating in a t=1 closure obstruction has a globally singleton coarse observation at t=2. The remaining post-transient noninjectivity consists of five disjoint source cohorts whose membership persists from t=2 to t=3 and whose registered successors agree.",
+    "mechanism_identified": false
+  },
+  "claim_boundary": {
+    "clipping_causes_separation_claimed": false,
+    "microscopic_convergence_claimed": false,
+    "slow_mode_claimed": false,
+    "recurrent_input_mechanism_claimed": false,
+    "full_domain_claimed": false,
+    "beyond_horizon_persistence_claimed": false
+  },
+  "producer": {
+    "role": "AUDIT_PRODUCER",
+    "path": "audit_finite_history_transient_fibers_v1.py",
+    "bytes": 11670,
+    "sha256": "55b18ada120dfba21eddd8264ce2f8c8cb5be27c7b6aa979a8a7dbb44fe20b04"
+  }
+}

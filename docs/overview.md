@@ -117,10 +117,13 @@ research target; Paper VII does not assert a generic completion theorem.
   It audits structural liftability, signed dynamics, observation visibility,
   and coarse-state closure on a source-addressed MaleCNS carrier. It does not
   inherit or extend the SOF protocol authority chain.
+- **Paper XVII (release candidate)** studies exact one-step factorization on a
+  reduced post-transient reached set and audits its effective-drive boundary.
+  It is an independent computational follow-up, not a protocol stage.
 
 ### Papers XX--XXXVIII: Independent Post-Protocol Mathematics
 
-Papers XVII--XIX are intentionally unused in the public numbered sequence.
+Papers XVIII--XIX are intentionally unused in the public numbered sequence.
 Paper XX begins a separately scoped mathematical line with all-depth
 carrierwise factorization, survivor recursion, and exact image--kernel tests
 for routed composition. Paper XXI develops the finite-field route branch

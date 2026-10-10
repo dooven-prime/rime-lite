@@ -47,6 +47,7 @@ Paper-facing computations write generated records under the owning
 | XIV | [paper14/README.md](paper14/README.md) | 29-object SOFAction workbench, closed predicate replay, bounded candidate dispositions, and validation receipts |
 | XV | [paper15/README.md](paper15/README.md) | artifact and claim map for the five revision-interface propositions; no computational evidence claim |
 | XVI | [paper16/README.md](paper16/README.md) | source-addressed MaleCNS route audits, signed dynamics, observation visibility, and deterministic coarse-state closure tests |
+| XVII (release candidate) | [paper17/00_START_HERE.md](paper17/00_START_HERE.md) | finite post-transient factorization, exact cohort audits, and effective-drive boundary |
 | XX | [paper20/README.md](paper20/README.md) | carrier census, all-depth theorem controls, image--kernel audit, and local closure receipt |
 | XXI | [paper21/README.md](paper21/README.md) | arbitrary-depth route semantics, fixed-field transfer automata, finite-field profiles, Lean closure, and replay receipts |
 | XXII | [paper22/README.md](paper22/README.md) | rational fixed-deficit closure, anchored Farey certificates, and Catalan-Fibonacci controls |

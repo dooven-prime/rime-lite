@@ -1,0 +1,188 @@
+{
+  "schema": "rime.exploratory.male-cns.mts-validation-resource-gate-registration.v1",
+  "status": "VALIDATOR_AND_RESOURCE_GATES_IMPLEMENTED_AWAITING_FINAL_EXECUTION_AUTHORITY",
+  "execution_authority": "NONE",
+  "scientific_payload_generated": false,
+  "historical_successor_anchor": {
+    "historical_source": "PAPER17_CANONICAL_OBSERVATION_BYTES_AT_T_PLUS_1",
+    "predicted_equation": "delta_z_next=(4/5)delta_z_t+(1/5)r_clip",
+    "required_exact_equality": true,
+    "current_equal_reduction": "r_clip=5*delta_z_next_historical",
+    "pair_schema_modified": false,
+    "identity_layer_replay_promotes_scientific_outcome": false
+  },
+  "exhaustive_result_validation": {
+    "canonical_pair_universe_rebuilt_from_cohort_registry": true,
+    "source_payloads_redecoded": true,
+    "source_observations_recomputed_from_exact_payloads": true,
+    "pair_records_rederived_from_459_source_cache_records": true,
+    "producer_pair_records_compared_by_canonical_byte_equality": true,
+    "residuals_geometry_fate_table_quadrant_rederived": true,
+    "seven_bit_primary_signature_rederived": true,
+    "comparison_cell_count": 15,
+    "normalized_histograms_use_integer_cross_multiplication": true,
+    "highest_outcome_rule_executed_by_validator_only": true
+  },
+  "resource_gate": {
+    "caps": {
+      "cpu_core_hours": "12.000000",
+      "monotonic_wall_hours": "12.000000",
+      "process_tree_rss_gib": "32.000000",
+      "incremental_result_storage_gib": "100.000000",
+      "max_source_workers": 1
+    },
+    "preflight_mode": "STATIC_AND_SYNTHETIC_ONLY",
+    "scientific_sources_read_during_preflight": false,
+    "cap_violation": "UNRESOLVED",
+    "source_cohort_pair_dropping": false,
+    "adaptive_smaller_surface_retry": false,
+    "four_worker_speedup_assumed": false
+  },
+  "hostile_tests": {
+    "historical_successor_tamper_rejected": true,
+    "producer_pair_field_tamper_detected": true,
+    "source_observation_field_tamper_detected": true,
+    "missing_execution_authority_rejected": true,
+    "scientific_sources_read": false
+  },
+  "remaining_execution_gates": [
+    "PIN_COMPILED_TRANSITION_KERNEL_BYTES",
+    "CREATE_FINAL_EXECUTION_CLOSURE",
+    "ISSUE_SINGLE_PURPOSE_EXECUTION_AUTHORITY"
+  ],
+  "artifact_closure": [
+    {
+      "role": "SOURCE_PRODUCER_REGISTRATION",
+      "path": "experiments/paper17/mechanism/mechanism_source_addressed_producer.registration-v1.json",
+      "bytes": 8596,
+      "sha256": "efe8f2d44367a03970e4c7a905e1ec201b88c85238e9cfa0b94755bb04fe8e18"
+    },
+    {
+      "role": "NONTRIVIAL_CONTRAST_REGISTRATION",
+      "path": "experiments/paper17/mechanism/mechanism_nontrivial_contrast.registration-v1.json",
+      "bytes": 10729,
+      "sha256": "4690bd80a9ab619fcfd78d4e5af6c5e4e2862c41ed525c7b548ff6f653da207e"
+    },
+    {
+      "role": "RESOURCE_CONTRACT",
+      "path": "experiments/paper17/mechanism/mechanism_resource_contract.v1.json",
+      "bytes": 2424,
+      "sha256": "743b5c3d7813acf6a3cfcb1273021d90b8713fe800c5fe54660341590251086b"
+    },
+    {
+      "role": "RESOURCE_PREFLIGHT_RECEIPT",
+      "path": "experiments/paper17/mechanism/results/mechanism_resource_preflight.v1.json",
+      "bytes": 2885,
+      "sha256": "9a8ac20ee5f215c995f9917bfee0bf9b385049592b67dc416c8d29227cc68f13"
+    },
+    {
+      "role": "SOURCE_ADDRESSED_PRODUCER",
+      "path": "experiments/paper17/mechanism/source_addressed_mechanism_producer_v1.py",
+      "bytes": 40101,
+      "sha256": "82511e5fbcbca628fd6aae3dc36cc1f92698e4884ef5ed12051b20b37d7c779d"
+    },
+    {
+      "role": "EXHAUSTIVE_RESULT_VALIDATOR",
+      "path": "experiments/paper17/mechanism/mechanism_result_validation_v1.py",
+      "bytes": 28992,
+      "sha256": "6ca40a4223bc2dbdf428385c5d5a7b6e1534c3155d35bc5e07b9aa7267f8c45f"
+    },
+    {
+      "role": "FINITE_CENSUS_CLASSIFIER",
+      "path": "experiments/paper17/mechanism/nontrivial_contrast_v1.py",
+      "bytes": 14364,
+      "sha256": "1d930f799a1e39130213a2d11e3685ccc424d0d2ece50c77cc0b32f8ef03cb04"
+    },
+    {
+      "role": "RECORD_SEMANTIC_VALIDATOR",
+      "path": "experiments/paper17/mechanism/mechanism_records_v1.py",
+      "bytes": 19293,
+      "sha256": "195e71f6bd4709e4a3cf917a82aee69a58de82b2aa1dbb8f03cbb06524716ca0"
+    },
+    {
+      "role": "MICROSTATE_CODEC",
+      "path": "experiments/paper17/mechanism/exact_state_payload_v1.py",
+      "bytes": 7990,
+      "sha256": "619b34064a060eb4bc634b9579131d5faa2380f2ef320a79de661094007bdf74"
+    },
+    {
+      "role": "TRANSITION_PAYLOAD_CODECS",
+      "path": "experiments/paper17/mechanism/exact_transition_payloads_v1.py",
+      "bytes": 13197,
+      "sha256": "87793b824c284d97b05cd5d9f0c10ff781d1f3383120efc11fbc9dcf86279bab"
+    },
+    {
+      "role": "COHORT_REGISTRY",
+      "path": "experiments/paper17/mechanism/results/mechanism_cohort_registry.v1.json",
+      "bytes": 12061,
+      "sha256": "a5f3ba6b6d5368f42dd713ecf0851d90819604841ea574bf4450f12eb2c9f011"
+    },
+    {
+      "role": "CAPPED_EXECUTION_WRAPPER",
+      "path": "experiments/paper17/mechanism/run_mts1_source_production_capped_v1.py",
+      "bytes": 9378,
+      "sha256": "1a923b7b55df8a74c0317b128b640b40e7ff47837a283215962cba244ba94b11"
+    },
+    {
+      "role": "RESOURCE_PREFLIGHT_PRODUCER",
+      "path": "experiments/paper17/mechanism/run_mechanism_resource_preflight_v1.py",
+      "bytes": 6008,
+      "sha256": "1cb02e50f0d75fa4809c867db5d3af3c8c3c3adf15e2fb376b533b8d97498023"
+    },
+    {
+      "role": "RESULT_VALIDATOR_HOSTILE_TEST",
+      "path": "experiments/paper17/mechanism/validation/test_mechanism_result_validation_v1.py",
+      "bytes": 6735,
+      "sha256": "e501a8b4fc86db03b3768288f59031563a9476a477db3b35eda0db8cffc90b5f"
+    },
+    {
+      "role": "CAPPED_WRAPPER_HOSTILE_TEST",
+      "path": "experiments/paper17/mechanism/validation/test_mts1_capped_runner_v1.py",
+      "bytes": 1414,
+      "sha256": "7fccb4d3d13666c81da5094142b8ac3fc59183cb85e73f3b70845a37c5380212"
+    },
+    {
+      "role": "RESOURCE_CONTRACT_PRODUCER",
+      "path": "experiments/paper17/mechanism/create_mechanism_resource_contract_v1.py",
+      "bytes": 3442,
+      "sha256": "324e0a753a9d58d512e82c1c65db9a5706cbca3219eb652e50dc158277bdcdbd"
+    },
+    {
+      "role": "GATE_REGISTRATION_PRODUCER",
+      "path": "experiments/paper17/mechanism/create_mechanism_validation_resource_gate_v1.py",
+      "bytes": 6423,
+      "sha256": "6bd5c70380d973fc13593c3cc06c875a102087b57e499ba42698fd12aa59038f"
+    },
+    {
+      "role": "GATE_REGISTRATION_VALIDATOR",
+      "path": "experiments/paper17/mechanism/validation/validate_mechanism_validation_resource_gate_v1.py",
+      "bytes": 5629,
+      "sha256": "194aac7168e7e87d7f40a2e560f93577a83ec600db2e91758c0302c47d305b67"
+    },
+    {
+      "role": "PAPER17_OBSERVATION_CODEC",
+      "path": "experiments/paper17/finite_history_binary.py",
+      "bytes": 7287,
+      "sha256": "dcfb87d9351a1fea3a7c080db4ca75e205bf4025bb83fbdd81876576510e753b"
+    },
+    {
+      "role": "EXACT_OBSERVATION_IMPLEMENTATION",
+      "path": "experiments/paper17/optimized_exact_common.py",
+      "bytes": 6735,
+      "sha256": "5c85dbe5d12fdac9018e3e06a212e7697d8e7623826caf30b721c673f382edb3"
+    },
+    {
+      "role": "PAPER17_EXACT_SIDECAR",
+      "path": "experiments/paper17/results/finite_history_closure.v1.sidecar.tar",
+      "bytes": 34621440,
+      "sha256": "5ed5853b43901d927fb43d2ff1926f6bcb79343d95e15e62df8f770259c52ad9"
+    },
+    {
+      "role": "PAPER17_SIDECAR_INVENTORY",
+      "path": "experiments/paper17/results/finite_history_closure.v1.sidecar-inventory.json",
+      "bytes": 812627,
+      "sha256": "d539f3ba713175e1e4b09b65382349dfb4836e7a85ff413578963e0903229892"
+    }
+  ],
+  "ordered_artifact_closure_sha256": "a72cd1e6e381ec4fc4d65493e4df43a3b6b5d4eff5c3454800fb3bab50e907c4"
+}

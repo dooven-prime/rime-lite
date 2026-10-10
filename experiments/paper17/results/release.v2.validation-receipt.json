@@ -1,0 +1,37 @@
+{
+  "schema": "rime.paper17.release-validation-receipt.v2",
+  "status": "PASS",
+  "validation_mode": "LOCAL_CLOSURE_VERIFICATION_WITH_COMPACT_DRIVE_AUDIT",
+  "independent_validation": false,
+  "producer_replayed": false,
+  "manifest": {
+    "path": "experiments/paper17/release-manifest.v2.json",
+    "bytes": 43760,
+    "sha256": "cb5c86e1c6f7ecc97a50dba5b7578c5eb8586bdb912a1a95bbdb882cb18d58c4"
+  },
+  "validator": {
+    "path": "experiments/paper17/validation/validate_release_v2.py",
+    "bytes": 10349,
+    "sha256": "e9e64522287d7271d71c707ff8f2a97cf7b90655e6d4e8738c3abf1be1217d66"
+  },
+  "verified": {
+    "artifact_count": 127,
+    "release_identity_artifact_count": 70,
+    "ordered_closure_sha256": "0c94adb3ea2d6354b2fe413a07abbc9625dbe66320a0cbf4802340d81c832be6",
+    "previous_candidate_artifacts_preserved": 109,
+    "public_package_checks": 9,
+    "compact_gate_hostile_tests": 5,
+    "mts1_compact_evidence_interface_verified": true,
+    "persistent_drive": {
+      "status": "PASS",
+      "source_times": 306,
+      "common_support_points": 204,
+      "redundant_windows": 194,
+      "source_payloads_replayed": false,
+      "operator_action_recomputed": false
+    },
+    "coarse_endomap_verified": false,
+    "clean_clone_microscopic_generation_verified": false,
+    "remote_sidecar_bytes_downloaded": false
+  }
+}

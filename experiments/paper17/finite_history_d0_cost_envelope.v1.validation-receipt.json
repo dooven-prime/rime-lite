@@ -1,0 +1,34 @@
+{
+  "schema": "rime.exploratory.male-cns-dynamic-compression.d0-cost-envelope-validation-receipt.v1",
+  "status": "PASS",
+  "validation_mode": "LOCAL_STATIC_RESOURCE_ALLOCATION_CONTRACT_VERIFICATION",
+  "independent_validation": false,
+  "envelope": {
+    "path": "finite_history_d0_cost_envelope.v1.json",
+    "bytes": 4329,
+    "sha256": "0dc1844f939cc2b9c978f1fd00d87b66d74ae24584e5194b003fb542560802cd"
+  },
+  "validator": {
+    "path": "validation/validate_finite_history_d0_cost_envelope.py",
+    "sha256": "f8adfd445c659ffd8590d27d4e4dc8209648895d0d2926b8885bc4ec6e8097ae"
+  },
+  "verified": {
+    "baseline_scope": {
+      "H_floor": 2,
+      "T_floor": 4
+    },
+    "cost_envelope": {
+      "per_source_core_seconds_ceiling": "120.000000",
+      "parallel_efficiency_floor": "0.750000",
+      "fixed_primary_core_hours": "0.500000",
+      "fixed_primary_wall_hours": "0.500000"
+    },
+    "binding_count": 8,
+    "decimal_only_capacity_derivation": true,
+    "core_and_wall_modeled": true,
+    "ram_and_storage_runtime_caps_only": true,
+    "post_derivation_D0_resize_allowed": false,
+    "population_runtime_theorem_claimed": false
+  },
+  "execution_authority": "D0_SCOPE_DERIVATION_ONLY"
+}

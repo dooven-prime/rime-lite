@@ -1,0 +1,25 @@
+{
+  "schema": "rime.exploratory.male-cns-dynamic-compression.gross-compute-budget.validation-receipt-v1",
+  "status": "PASS",
+  "validation_mode": "LOCAL_STATIC_RESOURCE_CONTRACT_VERIFICATION",
+  "independent_validation": false,
+  "budget": {
+    "path": "gross_compute_budget.v1.json",
+    "bytes": 2682,
+    "sha256": "6b16936bcabc80a91ee000a282bcf0f77b97deb6f19ff4cb3a84c31caaaa3bed"
+  },
+  "validator": {
+    "path": "validation/validate_gross_compute_budget.py",
+    "sha256": "21b895b1d622f7aa32276cf10d7ed5f495ca0abb0ce366295a2582304e3e4a99"
+  },
+  "verified": {
+    "gross_cpu_core_hours": 48.0,
+    "gross_wall_clock_hours": 12.0,
+    "primary_scientific_cpu_core_hours": 33.6,
+    "primary_scientific_nominal_wall_hours": 8.4,
+    "maximum_workers": 4,
+    "pool_transfer_forbidden": true,
+    "scientific_scope_selected": false
+  },
+  "execution_authority": "NONE_SCOPE_DERIVATION_ONLY"
+}

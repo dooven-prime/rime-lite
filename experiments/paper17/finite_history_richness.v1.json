@@ -1,0 +1,51 @@
+{
+  "schema": "rime.exploratory.male-cns-dynamic-compression.finite-history-richness.v1",
+  "status": "FROZEN",
+  "execution_authority": "NONE_SCOPE_DERIVATION_ONLY",
+  "purpose": "MINIMUM_NONDEGENERATE_ORBIT_WINDOW_AND_SHIFT_SURFACE",
+  "richness": {
+    "W_min": 2,
+    "S_min": 1,
+    "R": 2,
+    "R_definition": "max(W_min,S_min+1)",
+    "window_gate": "T-H >= 2",
+    "shift_gate": "T-H-1 >= 1"
+  },
+  "object_semantics": {
+    "maximum_order_windows": [
+      "H_h(x,H)",
+      "H_h(x,H+1)"
+    ],
+    "minimum_internal_shift": "H_h(x,H) -> H_h(x,H+1)",
+    "why_not_W1_S0": "one terminal history window permits successor factorization but exposes no registered history-to-history shift",
+    "resource_convenience_is_rationale": false
+  },
+  "baseline_scope": {
+    "first_new_history_order_H_floor": 2,
+    "T_floor": 4,
+    "derivation": "T_floor=H_floor+R=2+2",
+    "depth_above_four_calibration_required": false,
+    "final_H_selected": false,
+    "final_T_selected": false
+  },
+  "resource_admission_boundary": {
+    "requires_core_hour_cap": true,
+    "requires_monotonic_wall_clock_cap": true,
+    "four_worker_perfect_linear_scaling_assumed": false,
+    "primary_core_hour_cap": 33.6,
+    "gross_wall_clock_cap_hours": 12.0,
+    "closure_wall_reserve_nominal_hours": 1.2,
+    "if_T_above_4": "primary wall allowance is bounded by gross wall cap minus actual registered calibration wall time minus reserved closure wall time",
+    "if_T_equals_4": "calibration pool remains unused and nontransferable",
+    "admission_rule": "CORE_HOUR_ADMISSIBLE_AND_WALL_CLOCK_ADMISSIBLE"
+  },
+  "scope_boundary": {
+    "D0_admitted": false,
+    "reduced_D0_size": null,
+    "H_selected": false,
+    "T_selected": false,
+    "calibration_authorized": false,
+    "orbit_generation_authorized": false,
+    "next_step": "D0_RESOURCE_ADMISSION"
+  }
+}

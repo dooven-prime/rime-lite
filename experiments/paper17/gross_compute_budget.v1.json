@@ -1,0 +1,62 @@
+{
+  "schema": "rime.exploratory.male-cns-dynamic-compression.gross-compute-budget.v1",
+  "status": "FROZEN",
+  "execution_authority": "NONE_SCOPE_DERIVATION_ONLY",
+  "purpose": "RESOURCE_BOUNDARY_FOR_FIRST_FINITE_HISTORY_REGISTRATION",
+  "gross_caps": {
+    "cpu_core_hours": 48.0,
+    "wall_clock_hours": 12.0,
+    "peak_process_tree_rss_gib": 32.0,
+    "incremental_run_storage_gib": 100.0,
+    "maximum_workers": 4
+  },
+  "nonfungible_pools": {
+    "resource_only_depth_calibration": {
+      "fraction": 0.2,
+      "cpu_core_hours": 9.6,
+      "nominal_wall_hours_at_four_workers": 2.4,
+      "may_group_histories_or_read_closure": false
+    },
+    "primary_scientific_computation": {
+      "fraction": 0.7,
+      "cpu_core_hours": 33.6,
+      "nominal_wall_hours_at_four_workers": 8.4,
+      "scope": "exact orbit generation and exhaustive registered order audits only"
+    },
+    "orchestration_serialization_and_closure": {
+      "fraction": 0.1,
+      "cpu_core_hours": 4.8,
+      "nominal_wall_hours_at_four_workers": 1.2,
+      "scope": "source materialization, canonical serialization, manifests, receipts, and closure validation"
+    }
+  },
+  "pool_transfer_policy": {
+    "unused_resources_transfer_between_pools": false,
+    "outcome_dependent_budget_extension": false,
+    "underfilled_or_incomplete_scope_status": "UNRESOLVED",
+    "larger_incomplete_scope_may_replace_smaller_complete_scope": false
+  },
+  "accounting": {
+    "cpu_core_hours": "sum of user plus system CPU seconds over the registered process tree divided by 3600",
+    "wall_clock": "monotonic elapsed time from the first registered calibration or execution process until final local closure validation",
+    "peak_ram": "maximum sampled sum of resident working-set bytes over the registered process tree; shared mmap pages may be conservatively double-counted",
+    "incremental_storage": "maximum bytes created beneath the registered run and scratch roots, excluding immutable pre-existing source inputs and the pre-existing read-only CSR cache",
+    "poll_interval_seconds_maximum": 5,
+    "cap_violation": "FAIL_CLOSED_AND_PRESERVE_PARTIAL_PROVENANCE"
+  },
+  "scope_boundary": {
+    "richness_frozen": false,
+    "D0_admitted": false,
+    "H_selected": false,
+    "T_selected": false,
+    "full_D0_expected_to_fit": "NOT_ASSUMED",
+    "reduced_D0_size": null,
+    "next_step": "FREEZE_RICHNESS"
+  },
+  "claim_boundary": {
+    "budget_does_not_select_scientific_scope": true,
+    "budget_does_not_authorize_orbit_generation": true,
+    "budget_does_not_support_closure_or_minimality": true,
+    "first_run_target": "complete, replayable, and closable within one overnight 12-hour wall cap"
+  }
+}

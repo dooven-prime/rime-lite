@@ -1,0 +1,29 @@
+{
+  "schema": "rime.exploratory.male-cns.mts-capped-execution-receipt.v1",
+  "status": "PASS",
+  "failure": null,
+  "producer_return_code": 0,
+  "caps": {
+    "cpu_core_hours": "12.000000",
+    "monotonic_wall_hours": "12.000000",
+    "process_tree_rss_gib": "32.000000",
+    "incremental_result_storage_gib": "100.000000",
+    "max_source_workers": 1
+  },
+  "observed": {
+    "cpu_core_hours_peak_sampled": "2.094309895833333333333333333",
+    "monotonic_wall_hours": "2.155668333333334166666666667",
+    "process_tree_rss_gib_peak_sampled": "0.989376068115234375",
+    "incremental_result_storage_gib_peak_sampled": "4.505769425071775913238525391"
+  },
+  "surface_policy": {
+    "source_dropped": false,
+    "cohort_dropped": false,
+    "pair_dropped": false,
+    "adaptive_smaller_surface_retry": false,
+    "max_source_workers": 1
+  },
+  "result_promoted": true,
+  "failed_staging_retained": false,
+  "runtime_logs_are_package_artifacts": false
+}

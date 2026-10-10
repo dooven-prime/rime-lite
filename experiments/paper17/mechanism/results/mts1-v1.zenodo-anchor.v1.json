@@ -1,0 +1,154 @@
+{
+  "exact_sidecar_identity": {
+    "artifact_count": 2481,
+    "inventory_sha256": "80460b331f748e56ab3aba1f93e58dbc111b92dee087018acda79fe32c38709c",
+    "ordered_artifact_closure_sha256": "ea6725ad7acdb493ca2ccbe629b477e902f62563b00d25953735961237d86096",
+    "total_artifact_bytes": 4837598145
+  },
+  "files": [
+    {
+      "bytes": 500000000,
+      "local_sha256": "1ed7db7c24d5cf85747f85593a637147622e6f022bbc6743dd2dcceefdc7dfea",
+      "name": "paper17-mts1-exact-sidecar-v1.tar.part001",
+      "zenodo_md5": "md5:8d896720c93bc8e2decd46caef458766"
+    },
+    {
+      "bytes": 500000000,
+      "local_sha256": "345f5d26a14ca21e9fdbeb6539c1921e9db93b6cfb2e83e9cb69254e439b2bf5",
+      "name": "paper17-mts1-exact-sidecar-v1.tar.part002",
+      "zenodo_md5": "md5:da33483137f9e88e8b008239012cde8b"
+    },
+    {
+      "bytes": 500000000,
+      "local_sha256": "43f7107c69900c6b06e4cb80f570c436dd05c3ea036738ac5ac02e71a2cd7e91",
+      "name": "paper17-mts1-exact-sidecar-v1.tar.part003",
+      "zenodo_md5": "md5:ae796215ef8108ba6d4eacf262858c7a"
+    },
+    {
+      "bytes": 500000000,
+      "local_sha256": "dc5355e87adb8c86cd656a06702d7a03c4854776ea947dfad34ec4c7f518fd83",
+      "name": "paper17-mts1-exact-sidecar-v1.tar.part004",
+      "zenodo_md5": "md5:40b1741a7ebabb9d3c1d81355ae71114"
+    },
+    {
+      "bytes": 500000000,
+      "local_sha256": "30c27c881bedea7581b12115c613dcf44e09601f5a78adb7173ee7789ba4ca17",
+      "name": "paper17-mts1-exact-sidecar-v1.tar.part005",
+      "zenodo_md5": "md5:30021a023d4705f76c260bc026d5b633"
+    },
+    {
+      "bytes": 500000000,
+      "local_sha256": "6f8400e637db0f7bc217f132a3a22c82704f81d474fe3d972f120919c4f6ea20",
+      "name": "paper17-mts1-exact-sidecar-v1.tar.part006",
+      "zenodo_md5": "md5:f93240dd2217c76013c6e6384f25799b"
+    },
+    {
+      "bytes": 500000000,
+      "local_sha256": "5ed8b46e7cfcf142555b12fbe993e20f128cec27ac7cc0280341d8daccb976ed",
+      "name": "paper17-mts1-exact-sidecar-v1.tar.part007",
+      "zenodo_md5": "md5:8ffb87febae3ce01894ff98af4fec030"
+    },
+    {
+      "bytes": 500000000,
+      "local_sha256": "27a00b9481cce75028527b72dcb4921436620ec3756ac21e984d677c48af290c",
+      "name": "paper17-mts1-exact-sidecar-v1.tar.part008",
+      "zenodo_md5": "md5:e1111d44f91523ac007caebbef9c431a"
+    },
+    {
+      "bytes": 500000000,
+      "local_sha256": "bd02fabbd1b16fb5e8001d55465457c0fba0b143a4a296c21e6379fa56f7a1bf",
+      "name": "paper17-mts1-exact-sidecar-v1.tar.part009",
+      "zenodo_md5": "md5:03e66c00fcc0cc0a09ee973e0b3240b2"
+    },
+    {
+      "bytes": 340130560,
+      "local_sha256": "0986652d7b36d3c2cf7dd5689ae24e9a71832c9a60bcd8f655cad097426c4e2f",
+      "name": "paper17-mts1-exact-sidecar-v1.tar.part010",
+      "zenodo_md5": "md5:4d396141187ca33421d37de1236dacbe"
+    },
+    {
+      "bytes": 1096,
+      "local_sha256": "f9b8dcebca38742d8fb9286a0aef5dcf22543eaf0f38f014992cb5772a600d20",
+      "name": "README.txt",
+      "zenodo_md5": "md5:082e697d8a4401194e11783ff083c861"
+    },
+    {
+      "bytes": 1750,
+      "local_sha256": "0047184805c0864320a9170abcbaae8e1cd64f8ebb090fb96b719947e235f234",
+      "name": "SHA256SUMS",
+      "zenodo_md5": "md5:5e773dda23a82fa466db401f3d1b6058"
+    },
+    {
+      "bytes": 880,
+      "local_sha256": "9393a28bc671484531b858b05317452a81f32c62d9c0ed90e90f46f4f8c4f61a",
+      "name": "paper17-mts1-exact-sidecar-v1.bundle-validation-receipt.json",
+      "zenodo_md5": "md5:2a1736b8e89365c1101b5c597347ab97"
+    },
+    {
+      "bytes": 1680,
+      "local_sha256": "a9082ae71915996d3f7be4acb860e3484ee11878453c451404ac4b90310c3b4f",
+      "name": "paper17-mts1-exact-sidecar-v1.deposit-manifest.json",
+      "zenodo_md5": "md5:ec170359a0bce93752f78a18f0e10c35"
+    },
+    {
+      "bytes": 3377,
+      "local_sha256": "22f782d0fcd3fe94c75647fd83782051a9a8170692dba2e836386cdfff382e79",
+      "name": "paper17-mts1-exact-sidecar-v1.split-manifest.json",
+      "zenodo_md5": "md5:e877ea64653dd1e7e6587f55fd2490a1"
+    },
+    {
+      "bytes": 894,
+      "local_sha256": "0bccdac9d58248e2c9b9d4f274001d969f8221d6d717c1826134ec1f611fe38a",
+      "name": "paper17-mts1-exact-sidecar-v1.zenodo-metadata.json",
+      "zenodo_md5": "md5:7495ddb6d931530783e5928089df4a88"
+    },
+    {
+      "bytes": 14392,
+      "local_sha256": "856dcc40eb06c1ea7dd495564b87a2f1db3dbea7e5d0920799f84fd9d8e90088",
+      "name": "split_mts1_external_anchor_v1.py",
+      "zenodo_md5": "md5:ccfe8c00dea3d5a799adabf0f6e74da0"
+    }
+  ],
+  "logical_archive": {
+    "bytes": 4840130560,
+    "format": "DETERMINISTIC_GNU_TAR_UNCOMPRESSED",
+    "member_count": 2491,
+    "path": "paper17-mts1-exact-sidecar-v1.tar",
+    "sha256": "ef835d38d8e39b6176bd2f59b697f191eb8b8c93aeec67fcb9d3b9a164af71a5"
+  },
+  "ordered_part_names": [
+    "paper17-mts1-exact-sidecar-v1.tar.part001",
+    "paper17-mts1-exact-sidecar-v1.tar.part002",
+    "paper17-mts1-exact-sidecar-v1.tar.part003",
+    "paper17-mts1-exact-sidecar-v1.tar.part004",
+    "paper17-mts1-exact-sidecar-v1.tar.part005",
+    "paper17-mts1-exact-sidecar-v1.tar.part006",
+    "paper17-mts1-exact-sidecar-v1.tar.part007",
+    "paper17-mts1-exact-sidecar-v1.tar.part008",
+    "paper17-mts1-exact-sidecar-v1.tar.part009",
+    "paper17-mts1-exact-sidecar-v1.tar.part010"
+  ],
+  "published_record": {
+    "api_url": "https://zenodo.org/api/records/23234143",
+    "doi": "10.5281/zenodo.23234143",
+    "record_id": 23234143,
+    "revision_at_binding": 3,
+    "status": "published",
+    "url": "https://zenodo.org/records/23234143"
+  },
+  "schema": "rime.paper17.mts1-public-split-deposit-anchor.v1",
+  "split_manifest": {
+    "bytes": 3377,
+    "name": "paper17-mts1-exact-sidecar-v1.split-manifest.json",
+    "sha256": "22f782d0fcd3fe94c75647fd83782051a9a8170692dba2e836386cdfff382e79"
+  },
+  "status": "PUBLIC_DEPOSIT_VERIFIED",
+  "verification": {
+    "independent_validation": false,
+    "local_reassembly_status": "PASS",
+    "mode": "PUBLIC_ZENODO_MD5_METADATA_MATCH_AND_LOCAL_SHA256_REASSEMBLY",
+    "remote_file_bytes_downloaded_for_sha256": false,
+    "scientific_producer_replayed": false,
+    "zenodo_file_count": 17
+  }
+}

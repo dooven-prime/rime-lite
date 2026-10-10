@@ -1,0 +1,201 @@
+{
+  "schema": "rime.exploratory.male-cns-dynamic-compression.finite-history-common-support-audit.v1",
+  "status": "PASS",
+  "evidence_role": "POSTHOC_SCOPE_DIAGNOSTIC",
+  "independent_validation": false,
+  "producer_replayed": false,
+  "inputs": [
+    {
+      "role": "FROZEN_PRIMARY_RESULT",
+      "path": "results/finite_history_closure.v1.json",
+      "bytes": 4421,
+      "sha256": "1e64ecd07a529b553854f31a381dbf1c15d238055a120dd8db65d483fbff2705"
+    },
+    {
+      "role": "FREEZE_MANIFEST",
+      "path": "results/finite_history_closure.v1.freeze-manifest.json",
+      "bytes": 227998,
+      "sha256": "da8d94d619faf02727f9edc65872be391580847fd369d01da787278045bbd903"
+    },
+    {
+      "role": "RESULT_OWNED_EXACT_SIDECAR",
+      "path": "results/finite_history_closure.v1.sidecar.tar",
+      "bytes": 34621440,
+      "sha256": "5ed5853b43901d927fb43d2ff1926f6bcb79343d95e15e62df8f770259c52ad9"
+    },
+    {
+      "role": "D0_INDEX",
+      "path": "results/finite_history_D0.v1.npy",
+      "bytes": 5816,
+      "sha256": "ca12e0e36e925cbb408f79e01979f0e0ee94407631b9eb269fe11171de2a733b"
+    }
+  ],
+  "registered_order_specific_result": {
+    "h1_failure_fiber_count": 6,
+    "h2_outcome": "EXACT_CLOSED_NONINJECTIVE",
+    "order_specific_domains": {
+      "h0": "t in {0,1,2,3}",
+      "h1": "t in {1,2,3}",
+      "h2": "t in {2,3}"
+    }
+  },
+  "h1_failure_localization": {
+    "failure_fiber_count": 6,
+    "failure_member_count": 51,
+    "all_failure_members_at_t1": true,
+    "failures": [
+      {
+        "history_observation_ids": [
+          0,
+          0
+        ],
+        "member_count": 9,
+        "member_times": {
+          "1": 9
+        },
+        "distinct_source_count": 9,
+        "distinct_successor_count": 9
+      },
+      {
+        "history_observation_ids": [
+          102,
+          102
+        ],
+        "member_count": 33,
+        "member_times": {
+          "1": 33
+        },
+        "distinct_source_count": 33,
+        "distinct_successor_count": 33
+      },
+      {
+        "history_observation_ids": [
+          384,
+          102
+        ],
+        "member_count": 2,
+        "member_times": {
+          "1": 2
+        },
+        "distinct_source_count": 2,
+        "distinct_successor_count": 2
+      },
+      {
+        "history_observation_ids": [
+          988,
+          0
+        ],
+        "member_count": 2,
+        "member_times": {
+          "1": 2
+        },
+        "distinct_source_count": 2,
+        "distinct_successor_count": 2
+      },
+      {
+        "history_observation_ids": [
+          1218,
+          102
+        ],
+        "member_count": 2,
+        "member_times": {
+          "1": 2
+        },
+        "distinct_source_count": 2,
+        "distinct_successor_count": 2
+      },
+      {
+        "history_observation_ids": [
+          1278,
+          238
+        ],
+        "member_count": 3,
+        "member_times": {
+          "1": 3
+        },
+        "distinct_source_count": 3,
+        "distinct_successor_count": 3
+      }
+    ]
+  },
+  "common_support_audit": {
+    "source_count": 711,
+    "times": [
+      2,
+      3
+    ],
+    "window_count": 1422,
+    "profiles": [
+      {
+        "h": 0,
+        "N_h": 1422,
+        "K_h": 1228,
+        "M_h": 51,
+        "redundancy_N_minus_K": 194,
+        "rho_h": {
+          "numerator": 1228,
+          "denominator": 1422
+        },
+        "non_singleton_fiber_count": 10,
+        "failure_fiber_count": 0,
+        "outcome": "EXACT_CLOSED_NONINJECTIVE",
+        "partition_sha256": "503d068b565cd73178671dd8330645bbb7132fe92c3843f23d9136d3bface752"
+      },
+      {
+        "h": 1,
+        "N_h": 1422,
+        "K_h": 1228,
+        "M_h": 51,
+        "redundancy_N_minus_K": 194,
+        "rho_h": {
+          "numerator": 1228,
+          "denominator": 1422
+        },
+        "non_singleton_fiber_count": 10,
+        "failure_fiber_count": 0,
+        "outcome": "EXACT_CLOSED_NONINJECTIVE",
+        "partition_sha256": "503d068b565cd73178671dd8330645bbb7132fe92c3843f23d9136d3bface752"
+      },
+      {
+        "h": 2,
+        "N_h": 1422,
+        "K_h": 1228,
+        "M_h": 51,
+        "redundancy_N_minus_K": 194,
+        "rho_h": {
+          "numerator": 1228,
+          "denominator": 1422
+        },
+        "non_singleton_fiber_count": 10,
+        "failure_fiber_count": 0,
+        "outcome": "EXACT_CLOSED_NONINJECTIVE",
+        "partition_sha256": "503d068b565cd73178671dd8330645bbb7132fe92c3843f23d9136d3bface752"
+      }
+    ],
+    "all_orders_closed": true,
+    "all_order_partitions_identical": true,
+    "common_partition_sha256": "503d068b565cd73178671dd8330645bbb7132fe92c3843f23d9136d3bface752",
+    "exact_payload_comparisons_after_hash_match": 1122
+  },
+  "diagnosis": {
+    "outcome": "REGISTERED_ORDER_EFFECT_CONFOUNDED_WITH_LEFT_BOUNDARY",
+    "minimal_memory_order_identified": false,
+    "second_lag_resolves_ambiguity_supported": false,
+    "safe_positive_result": "On the common registered t>=2 support, the current coarse observation is already an exact noninjective closed state, and orders 0, 1, and 2 induce the same fiber partition.",
+    "required_future_design": "Compare every history order on one common source-time universe Omega_(H_max,T), rather than on order-dependent left boundaries."
+  },
+  "claim_boundary": {
+    "frozen_primary_result_modified": false,
+    "new_orbit_generated": false,
+    "minimal_h_equals_2_claim_supported": false,
+    "observation_plus_two_lags_required_claim_supported": false,
+    "full_domain_claimed": false,
+    "indefinite_forward_invariance_claimed": false
+  },
+  "producer": {
+    "role": "AUDIT_PRODUCER",
+    "path": "audit_finite_history_common_support_v1.py",
+    "bytes": 9058,
+    "sha256": "ad2a635ee9a8016541aa4f3eefca4e717fd930cc0533eabbd059ea7ae2a7bc60"
+  }
+}

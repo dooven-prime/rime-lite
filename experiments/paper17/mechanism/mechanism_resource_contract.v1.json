@@ -1,0 +1,68 @@
+{
+  "schema": "rime.exploratory.male-cns.mts-resource-contract.v1",
+  "status": "FROZEN_AWAITING_STATIC_SYNTHETIC_PREFLIGHT",
+  "execution_authority": "NONE",
+  "scientific_payload_generated": false,
+  "caps": {
+    "cpu_core_hours": "12.000000",
+    "monotonic_wall_hours": "12.000000",
+    "process_tree_rss_gib": "32.000000",
+    "incremental_result_storage_gib": "100.000000",
+    "max_source_workers": 1
+  },
+  "cap_semantics": {
+    "cpu_core_hours": "SUM_OF_USER_AND_SYSTEM_CPU_TIME_OVER_PRODUCER_PROCESS_TREE",
+    "monotonic_wall_hours": "ELAPSED_MONOTONIC_TIME_OF_CAPPED_EXECUTION_WRAPPER",
+    "process_tree_rss_gib": "SUM_OF_CURRENT_RSS_OVER_PRODUCER_PROCESS_TREE",
+    "incremental_result_storage_gib": "BYTES_UNDER_AUTHORIZED_RESULT_ROOT_AND_STAGING_ROOT",
+    "max_source_workers": "SEQUENTIAL_SOURCE_PRODUCER; NO PARALLEL_SPEEDUP_ASSUMED"
+  },
+  "registered_surface": {
+    "source_count": 153,
+    "current_times": [
+      1,
+      2,
+      3
+    ],
+    "source_transition_cache_record_count": 459,
+    "pair_count": 2325,
+    "pair_transition_record_count": 6975,
+    "surface_may_be_reduced_after_execution_starts": false
+  },
+  "static_storage_allocation_envelope": {
+    "source_transition_record_reserve_mib_each": "160.000000",
+    "pair_transition_record_reserve_mib_each": "1.000000",
+    "orchestration_and_validation_reserve_gib": "10.000000",
+    "semantics": "PREREGISTERED_ALLOCATION_ENVELOPE_NOT_A_POPULATION_RUNTIME_UPPER_BOUND"
+  },
+  "preflight_boundary": {
+    "allowed": [
+      "SYNTHETIC_EXACT_STATES",
+      "FIXED_CODEC_FIXTURES",
+      "NON_COHORT_ENGINEERING_BENCHMARK_SOURCES",
+      "STATIC_CSR_AND_OPERATOR_METADATA",
+      "REGISTERED_ENVELOPE_STORAGE_ARITHMETIC"
+    ],
+    "forbidden": [
+      "ANY_OF_THE_153_REGISTERED_SCIENTIFIC_SOURCES",
+      "PAIR_RESOLVED_MECHANISM_FEATURES",
+      "COHORT_COMPARISON",
+      "SCIENTIFIC_OUTCOME_CLASSIFICATION"
+    ]
+  },
+  "failure_policy": {
+    "cap_violation": "UNRESOLVED",
+    "drop_source": false,
+    "drop_cohort": false,
+    "drop_pair": false,
+    "adaptive_retry_with_smaller_surface": false,
+    "adaptive_cap_increase": false,
+    "retain_failed_staging_for_audit": true
+  },
+  "boundary": {
+    "resource_model_admission_is_execution_completion": false,
+    "static_storage_envelope_is_population_theorem": false,
+    "four_worker_speedup_assumed": false,
+    "scientific_result_accessed_during_preflight": false
+  }
+}

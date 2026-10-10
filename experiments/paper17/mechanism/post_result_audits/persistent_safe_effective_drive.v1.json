@@ -1,0 +1,266 @@
+{
+  "audit_script": {
+    "bytes": 12973,
+    "path": "mechanism/validation/audit_persistent_safe_effective_drive_v1.py",
+    "sha256": "a85f0bfe5b7e5e6726135047ab790d75d06804559743f3dad2bc5abb23429c34"
+  },
+  "boundary": "The five non-singleton successor-compatible cohorts on times 2,3 are inherited from the frozen Paper XVII exact audit. This read-only audit verifies MTS-1 cached raw/clipped payloads and their inventory bindings at times 1,2,3. The time-1 cohort readout does not enlarge Paper XVII's common-support factorization. The audit does not recompute Y^T x, extend cached time, validate independently, or alter a frozen outcome.",
+  "by_cohort_time": [
+    {
+      "cohort_id": "PS-01",
+      "nonzero_clipped_drive_sources": 0,
+      "pair_count": 1275,
+      "pair_modes": {
+        "BOTH_DRIVES_ZERO": 1275
+      },
+      "raw_drive_sign_counts": {
+        "NONZERO_NONPOSITIVE": 51
+      },
+      "source_count": 51,
+      "time": 1
+    },
+    {
+      "cohort_id": "PS-01",
+      "nonzero_clipped_drive_sources": 0,
+      "pair_count": 1275,
+      "pair_modes": {
+        "BOTH_DRIVES_ZERO": 1275
+      },
+      "raw_drive_sign_counts": {
+        "NONZERO_NONPOSITIVE": 51
+      },
+      "source_count": 51,
+      "time": 2
+    },
+    {
+      "cohort_id": "PS-01",
+      "nonzero_clipped_drive_sources": 0,
+      "pair_count": 1275,
+      "pair_modes": {
+        "BOTH_DRIVES_ZERO": 1275
+      },
+      "raw_drive_sign_counts": {
+        "NONZERO_NONPOSITIVE": 51
+      },
+      "source_count": 51,
+      "time": 3
+    },
+    {
+      "cohort_id": "PS-02",
+      "nonzero_clipped_drive_sources": 0,
+      "pair_count": 300,
+      "pair_modes": {
+        "BOTH_DRIVES_ZERO": 300
+      },
+      "raw_drive_sign_counts": {
+        "NONZERO_NONPOSITIVE": 25
+      },
+      "source_count": 25,
+      "time": 1
+    },
+    {
+      "cohort_id": "PS-02",
+      "nonzero_clipped_drive_sources": 0,
+      "pair_count": 300,
+      "pair_modes": {
+        "BOTH_DRIVES_ZERO": 300
+      },
+      "raw_drive_sign_counts": {
+        "NONZERO_NONPOSITIVE": 25
+      },
+      "source_count": 25,
+      "time": 2
+    },
+    {
+      "cohort_id": "PS-02",
+      "nonzero_clipped_drive_sources": 0,
+      "pair_count": 300,
+      "pair_modes": {
+        "BOTH_DRIVES_ZERO": 300
+      },
+      "raw_drive_sign_counts": {
+        "NONZERO_NONPOSITIVE": 25
+      },
+      "source_count": 25,
+      "time": 3
+    },
+    {
+      "cohort_id": "PS-03",
+      "nonzero_clipped_drive_sources": 0,
+      "pair_count": 171,
+      "pair_modes": {
+        "BOTH_DRIVES_ZERO": 171
+      },
+      "raw_drive_sign_counts": {
+        "NONZERO_NONPOSITIVE": 19
+      },
+      "source_count": 19,
+      "time": 1
+    },
+    {
+      "cohort_id": "PS-03",
+      "nonzero_clipped_drive_sources": 0,
+      "pair_count": 171,
+      "pair_modes": {
+        "BOTH_DRIVES_ZERO": 171
+      },
+      "raw_drive_sign_counts": {
+        "NONZERO_NONPOSITIVE": 19
+      },
+      "source_count": 19,
+      "time": 2
+    },
+    {
+      "cohort_id": "PS-03",
+      "nonzero_clipped_drive_sources": 0,
+      "pair_count": 171,
+      "pair_modes": {
+        "BOTH_DRIVES_ZERO": 171
+      },
+      "raw_drive_sign_counts": {
+        "NONZERO_NONPOSITIVE": 19
+      },
+      "source_count": 19,
+      "time": 3
+    },
+    {
+      "cohort_id": "PS-04",
+      "nonzero_clipped_drive_sources": 0,
+      "pair_count": 6,
+      "pair_modes": {
+        "BOTH_DRIVES_ZERO": 6
+      },
+      "raw_drive_sign_counts": {
+        "NONZERO_NONPOSITIVE": 4
+      },
+      "source_count": 4,
+      "time": 1
+    },
+    {
+      "cohort_id": "PS-04",
+      "nonzero_clipped_drive_sources": 0,
+      "pair_count": 6,
+      "pair_modes": {
+        "BOTH_DRIVES_ZERO": 6
+      },
+      "raw_drive_sign_counts": {
+        "NONZERO_NONPOSITIVE": 4
+      },
+      "source_count": 4,
+      "time": 2
+    },
+    {
+      "cohort_id": "PS-04",
+      "nonzero_clipped_drive_sources": 0,
+      "pair_count": 6,
+      "pair_modes": {
+        "BOTH_DRIVES_ZERO": 6
+      },
+      "raw_drive_sign_counts": {
+        "NONZERO_NONPOSITIVE": 4
+      },
+      "source_count": 4,
+      "time": 3
+    },
+    {
+      "cohort_id": "PS-05",
+      "nonzero_clipped_drive_sources": 0,
+      "pair_count": 3,
+      "pair_modes": {
+        "BOTH_DRIVES_ZERO": 3
+      },
+      "raw_drive_sign_counts": {
+        "NONZERO_NONPOSITIVE": 3
+      },
+      "source_count": 3,
+      "time": 1
+    },
+    {
+      "cohort_id": "PS-05",
+      "nonzero_clipped_drive_sources": 0,
+      "pair_count": 3,
+      "pair_modes": {
+        "BOTH_DRIVES_ZERO": 3
+      },
+      "raw_drive_sign_counts": {
+        "NONZERO_NONPOSITIVE": 3
+      },
+      "source_count": 3,
+      "time": 2
+    },
+    {
+      "cohort_id": "PS-05",
+      "nonzero_clipped_drive_sources": 0,
+      "pair_count": 3,
+      "pair_modes": {
+        "BOTH_DRIVES_ZERO": 3
+      },
+      "raw_drive_sign_counts": {
+        "NONZERO_NONPOSITIVE": 3
+      },
+      "source_count": 3,
+      "time": 3
+    }
+  ],
+  "coverage": {
+    "cohorts": 5,
+    "distinct_sources": 102,
+    "paper17_common_support_times": [
+      2,
+      3
+    ],
+    "source_time_records": 306,
+    "times": [
+      1,
+      2,
+      3
+    ],
+    "within_cohort_pairs_across_cached_times": 5265
+  },
+  "evidence_role": "POST_RESULT_READ_ONLY_EXACT_CACHE_AUDIT",
+  "independent_validation": false,
+  "inputs": [
+    {
+      "bytes": 15022,
+      "path": "results/finite_history_transient_fiber_audit.v1.json",
+      "sha256": "9eeb3e5cc3ec3599ee7f7fe54efb0248c2471b36d322f2038409bd9656cad75a"
+    },
+    {
+      "bytes": 5771,
+      "path": "results/finite_history_common_support_audit.v1.json",
+      "sha256": "e7268eec14d77a53502d969266b158675614fcc9580ebaebfd8130eabb48db10"
+    },
+    {
+      "bytes": 12061,
+      "path": "mechanism/results/mechanism_cohort_registry.v1.json",
+      "sha256": "a5f3ba6b6d5368f42dd713ecf0851d90819604841ea574bf4450f12eb2c9f011"
+    },
+    {
+      "bytes": 5412,
+      "path": "mechanism/results/mts1-v1.freeze-manifest.json",
+      "sha256": "5cd64cf91073fa77006d8f8d718f9daf5554330fd8abbb7e12429796307b21fe"
+    },
+    {
+      "bytes": 434936,
+      "path": "mechanism/results/mts1-v1/inventory.json",
+      "sha256": "80460b331f748e56ab3aba1f93e58dbc111b92dee087018acda79fe32c38709c"
+    },
+    {
+      "bytes": 1627,
+      "path": "mechanism/results/mts1-v1/validation/mechanism_validation.v1.receipt.json",
+      "sha256": "ff1868a8db3a77324f36268faa7c31163b5e2201da992a9f6e2c2a251ccd540a"
+    }
+  ],
+  "microscopic_producer_replayed": false,
+  "schema": "rime.paper17.post-result-persistent-safe-effective-drive-audit.v1",
+  "status": "PASS",
+  "summary": {
+    "all_selected_updates_are_pure_leak": true,
+    "nonzero_clipped_drive_fiber_exists": false,
+    "nonzero_clipped_drive_source_times": 0,
+    "raw_drive_sign_counts": {
+      "NONZERO_NONPOSITIVE": 306
+    }
+  },
+  "validation_mode": "LOCAL_BOUND_PAYLOAD_REPLAY_NO_OPERATOR_TRAVERSAL"
+}

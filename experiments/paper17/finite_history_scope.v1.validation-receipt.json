@@ -1,0 +1,29 @@
+{
+  "schema": "rime.exploratory.male-cns-dynamic-compression.finite-history-scope-validation-receipt.v1",
+  "status": "PASS",
+  "validation_mode": "LOCAL_STATIC_SCOPE_INSTANTIATION_VERIFICATION",
+  "independent_validation": false,
+  "scope": {
+    "path": "finite_history_scope.v1.json",
+    "bytes": 3262,
+    "sha256": "25e3ace08d1e83675f5b21b32cff7d69c2073fd87b25c5a9000043022663aefb"
+  },
+  "validator": {
+    "path": "validation/validate_finite_history_scope.py",
+    "sha256": "117454bb3b5297347d1232ee1e25ad2ed170f64873820e1a565d7fdd2df9a73a"
+  },
+  "verified": {
+    "D0_mode": "REDUCED_STRATIFIED_HASH_D0",
+    "D0_source_count": 711,
+    "H": 2,
+    "T": 4,
+    "orders": [
+      0,
+      1,
+      2
+    ],
+    "RAM_preflight": false,
+    "storage_preflight": false,
+    "execution_authority": "NONE"
+  }
+}

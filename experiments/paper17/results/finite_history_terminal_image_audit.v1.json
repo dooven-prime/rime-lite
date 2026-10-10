@@ -1,0 +1,68 @@
+{
+  "schema": "rime.paper17.finite-history-terminal-image-audit.v1",
+  "status": "PASS",
+  "evidence_role": "POSTHOC_TERMINAL_IMAGE_BOUNDARY_AUDIT",
+  "independent_validation": false,
+  "producer_replayed": false,
+  "inputs": [
+    {
+      "role": "FREEZE_MANIFEST",
+      "path": "results/finite_history_closure.v1.freeze-manifest.json",
+      "bytes": 227998,
+      "sha256": "da8d94d619faf02727f9edc65872be391580847fd369d01da787278045bbd903"
+    },
+    {
+      "role": "RESULT_OWNED_EXACT_SIDECAR",
+      "path": "results/finite_history_closure.v1.sidecar.tar",
+      "bytes": 34621440,
+      "sha256": "5ed5853b43901d927fb43d2ff1926f6bcb79343d95e15e62df8f770259c52ad9"
+    },
+    {
+      "role": "D0_INDEX",
+      "path": "results/finite_history_D0.v1.npy",
+      "bytes": 5816,
+      "sha256": "ca12e0e36e925cbb408f79e01979f0e0ee94407631b9eb269fe11171de2a733b"
+    }
+  ],
+  "registered_support": {
+    "source_count": 711,
+    "common_support_times": [
+      2,
+      3
+    ],
+    "terminal_successor_time": 4
+  },
+  "exact_image_profile": {
+    "distinct_observations_by_time": {
+      "2": 614,
+      "3": 614,
+      "4": 614
+    },
+    "common_image_size": 1228,
+    "t2_t3_intersection_size": 0,
+    "t4_intersection_with_common_image_size": 0,
+    "all_t2_successors_in_common_image": true,
+    "all_t3_successors_in_common_image": false,
+    "t3_successors_outside_common_image_count": 614,
+    "exact_payload_comparisons_after_hash_match": 1122
+  },
+  "classification": {
+    "one_step_factorization_on_common_support": true,
+    "registered_internal_shift_count": 1,
+    "coarse_endomap_on_common_image_verified": false,
+    "indefinite_iteration_verified": false,
+    "safe_outcome": "HORIZON_BOUNDED_ONE_STEP_FACTORIZATION_WITH_ONE_INTERNAL_SHIFT"
+  },
+  "claim_boundary": {
+    "autonomous_closed_dynamical_system_claimed": false,
+    "terminal_successor_in_verified_state_image_claimed": false,
+    "full_domain_claimed": false,
+    "producer_replayed": false
+  },
+  "producer": {
+    "role": "AUDIT_PRODUCER",
+    "path": "audit_finite_history_terminal_image_v1.py",
+    "bytes": 4753,
+    "sha256": "abf9950097ea8f2fd60e8f030a97001a8a3edba41437b116748d81f9c3c99dd7"
+  }
+}

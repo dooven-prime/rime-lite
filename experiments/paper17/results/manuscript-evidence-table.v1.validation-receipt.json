@@ -1,0 +1,24 @@
+{
+  "schema": "rime.paper17.manuscript-evidence-table-validation-receipt.v1",
+  "status": "PASS",
+  "validation_mode": "HISTORICAL_GIT_ANCHOR_RESOLUTION",
+  "independent_validation": false,
+  "producer_replayed": false,
+  "table": {
+    "path": "manuscript-evidence-table.v1.json",
+    "bytes": 13926,
+    "sha256": "996b7d5902fb132fc5a022584d1981db8909ea995d59afe3e8d428fd086d18be"
+  },
+  "anchor_commit": "99e2ac5a57afed27e5f213f658ddd5c3e6e93932",
+  "verified": {
+    "claim_count": 10,
+    "historical_artifact_count": 8,
+    "current_paper_owned_artifact_count": 11,
+    "minimal_memory_order_claimed": false,
+    "exact_post_separation_transition_layer_contrast_bound": true,
+    "initial_separation_trigger_identified": false,
+    "causal_mechanism_identified": false,
+    "coarse_endomap_verified": false,
+    "current_head_substitution_used": false
+  }
+}

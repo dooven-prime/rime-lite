@@ -1,0 +1,30 @@
+{
+  "schema": "rime.paper17.release-validation-receipt.v1",
+  "status": "PASS",
+  "validation_mode": "LOCAL_CLOSURE_VERIFICATION",
+  "independent_validation": false,
+  "producer_replayed": false,
+  "manifest": {
+    "path": "experiments/paper17/release-manifest.v1.json",
+    "bytes": 36066,
+    "sha256": "f6e8dae5b28e357f99f659878cf81bba7a5cefe13a4e3ec40cbe4523acb24854"
+  },
+  "validator": {
+    "path": "experiments/paper17/validation/validate_release.py",
+    "sha256": "4749b4c7a1fc3cd4e852d817848a928f9c7bbab8666d21961b48ba7bd6501ed7"
+  },
+  "verified": {
+    "artifact_count": 109,
+    "release_identity_artifact_count": 63,
+    "ordered_closure_sha256": "2eb557e232e0958f7250d1335ad6854f5c0a0f70515b1e0a6ca625017ffe8847",
+    "public_package_checks": 9,
+    "mts1_compact_evidence_interface_verified": true,
+    "receipt_excluded_from_own_closure": true,
+    "coarse_endomap_verified": false,
+    "post_separation_transition_layer_contrast_verified": true,
+    "initial_separation_trigger_identified": false,
+    "mechanism_exact_sidecar_external_anchor": true,
+    "clean_clone_microscopic_generation_verified": false,
+    "preexecution_temporal_order_independently_anchored": false
+  }
+}

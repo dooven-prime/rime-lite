@@ -1,0 +1,120 @@
+{
+  "schema": "rime.exploratory.male-cns.transient-separation-mechanism.payload-codec-registration.v1",
+  "status": "EXACT_TRANSITION_PAYLOAD_CODECS_FROZEN_AWAITING_PRODUCER_PREFLIGHT",
+  "execution_authority": "NONE",
+  "scientific_payload_generated": false,
+  "historical_record_schema_status_preserved": true,
+  "shared_contract": {
+    "format_version": 1,
+    "registered_dimension": 211577,
+    "accepted_exact_scalar_types": [
+      "builtins.int",
+      "gmpy2.mpz",
+      "gmpy2.mpq"
+    ],
+    "public_dimension_override": "REJECT_UNLESS_EQUAL_TO_REGISTERED_DIMENSION",
+    "coordinate_order": "STRICTLY_INCREASING",
+    "integer_encoding": "MINIMAL_UNSIGNED_BIG_ENDIAN_MAGNITUDE",
+    "rational_encoding": "REDUCED_WITH_POSITIVE_DENOMINATOR",
+    "semantic_identity": "STRICTLY_VALIDATED_CANONICAL_UNCOMPRESSED_PAYLOAD_BYTES",
+    "digest_algorithm": "SHA-256",
+    "digest_role": "BINDING_AND_INDEX_ONLY"
+  },
+  "codecs": {
+    "RIME-MTS-RAW-DRIVE-V1": {
+      "domain_tag_ascii_nul": "RIME-MTS-RAW-DRIVE-V1\\0",
+      "schema": "rime.exploratory.male-cns.mts-raw-drive-payload.v1",
+      "semantic_role": "RAW_SIGNED_DRIVE",
+      "entry_semantics": "NONZERO_EXACT_RATIONAL_COORDINATES",
+      "fixed_vector_sha256": "61cba04847ba8410748af1d75005fb115a3065efcebd881f48ec079cd881a8ba"
+    },
+    "RIME-MTS-CLIPPED-DRIVE-V1": {
+      "domain_tag_ascii_nul": "RIME-MTS-CLIPPED-DRIVE-V1\\0",
+      "schema": "rime.exploratory.male-cns.mts-clipped-drive-payload.v1",
+      "semantic_role": "CLIPPED_DRIVE",
+      "mathematical_range": "0<=value<=1",
+      "encoded_entry_range": "0<value<=1",
+      "fixed_vector_sha256": "fbbfaa1ab39281e7421e53772b9d60d2a62421f68a1be94fc12f8c786f4a4ad6"
+    },
+    "RIME-MTS-CLIPPING-FATE-V1": {
+      "domain_tag_ascii_nul": "RIME-MTS-CLIPPING-FATE-V1\\0",
+      "schema": "rime.exploratory.male-cns.mts-clipping-fate-payload.v1",
+      "semantic_role": "TOUCHED_TARGET_CLIPPING_FATE",
+      "entry_semantics": "ONE_CLOSED_FATE_LABEL_PER_TOUCHED_TARGET",
+      "fate_codes": {
+        "LOWER": 1,
+        "INTERIOR": 2,
+        "UPPER": 3
+      },
+      "fate_boundaries": {
+        "LOWER": "u<=0",
+        "INTERIOR": "0<u<1",
+        "UPPER": "u>=1"
+      },
+      "fixed_vector_sha256": "80a510b569cdfdb184f596e729bb91be312f64ca6802ffb11c16720fd583e672"
+    }
+  },
+  "cross_codec_firewalls": {
+    "domain_tags_pairwise_distinct": true,
+    "cross_domain_decode": "REJECT",
+    "microscopic_state_codec_interchangeable": false,
+    "fate_codec_certifies_raw_drive_consistency": false
+  },
+  "discharged_record_schema_gates": [
+    "RAW_DRIVE_PAYLOAD_CODEC",
+    "CLIPPED_DRIVE_PAYLOAD_CODEC",
+    "CLIPPING_FATE_PAYLOAD_CODEC"
+  ],
+  "remaining_execution_gates": [
+    "SOURCE_ADDRESSED_EXACT_MECHANISM_PRODUCER",
+    "RESOURCE_PREFLIGHT_AND_CAPS",
+    "RESULT_VALIDATOR",
+    "RECEIPT_CONTRACT",
+    "NONTRIVIAL_CONTRAST_FINITE_CLASSIFICATION"
+  ],
+  "artifact_closure": [
+    {
+      "role": "RECORD_SCHEMA_REGISTRATION",
+      "path": "experiments/paper17/mechanism/mechanism_record_schema.registration-v1.json",
+      "bytes": 4639,
+      "sha256": "ea24a50afcc3ad319ed443e55317669a29c32b91863c1eb2eccfef68f4436408"
+    },
+    {
+      "role": "RECORD_SCHEMA_VALIDATION_RECEIPT",
+      "path": "experiments/paper17/mechanism/results/mechanism_record_schemas.v1.validation-receipt.json",
+      "bytes": 1946,
+      "sha256": "cd5a4efa2fec089536be2ad9d8aae134efbc9e46cf784eff0327dc1374cd5dd9"
+    },
+    {
+      "role": "CODEC_CONTRACT_NOTE",
+      "path": "experiments/paper17/mechanism/MTS1_EXACT_TRANSITION_PAYLOAD_CODECS.md",
+      "bytes": 2391,
+      "sha256": "f40246d176ad4a90b6422b858b51196ea621f5e4f1626b22eb6ec03ab95f7b2f"
+    },
+    {
+      "role": "EXACT_TRANSITION_PAYLOAD_CODECS",
+      "path": "experiments/paper17/mechanism/exact_transition_payloads_v1.py",
+      "bytes": 13197,
+      "sha256": "87793b824c284d97b05cd5d9f0c10ff781d1f3383120efc11fbc9dcf86279bab"
+    },
+    {
+      "role": "CODEC_HOSTILE_TEST",
+      "path": "experiments/paper17/mechanism/validation/test_exact_transition_payloads_v1.py",
+      "bytes": 9522,
+      "sha256": "9ce440b82423e86c832087963fa36658b575933745efaf650b2b161d7d2597de"
+    },
+    {
+      "role": "CODEC_REGISTRATION_PRODUCER",
+      "path": "experiments/paper17/mechanism/create_exact_transition_payload_codecs_registration_v1.py",
+      "bytes": 6565,
+      "sha256": "9f089375991946f2c2211900747bc656c01e901a11519e20b12a37a16472df72"
+    },
+    {
+      "role": "CODEC_REGISTRATION_VALIDATOR",
+      "path": "experiments/paper17/mechanism/validation/validate_exact_transition_payload_codecs_v1.py",
+      "bytes": 9599,
+      "sha256": "b95e341b54552104b6eae1b2ac3d85c4990e8d6132ef77c8eb81bb5ada9f726e"
+    }
+  ],
+  "ordered_artifact_closure_sha256": "ce0cda5008bb65e8c24271eef759b34e356b15d2d0cf3378b6eb7da968445cd2"
+}

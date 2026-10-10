@@ -1,0 +1,1024 @@
+{
+  "schema": "rime.paper17.release-manifest.v2",
+  "paper_id": "PAPER17",
+  "release_version": "1.0-candidate-2",
+  "status": "RELEASE_CANDIDATE",
+  "release_identity_claimed": false,
+  "validation_mode": "LOCAL_CLOSURE_VERIFICATION",
+  "receipt_self_exclusion": true,
+  "digest_policy": {
+    "algorithm": "sha256",
+    "scope": "exact_file_bytes",
+    "path_resolution": "exact repository-relative path",
+    "wildcards_allowed": false,
+    "absolute_paths_allowed": false
+  },
+  "release_identity": {
+    "canonical_manuscript": "papers/paper17/Paper XVII.md",
+    "reader_pdf": "papers/paper17/paper17_arxiv.pdf",
+    "historical_evidence_commit": "99e2ac5a57afed27e5f213f658ddd5c3e6e93932",
+    "release_content_commit": null,
+    "external_anchor": null,
+    "ordered_artifact_count": 70,
+    "ordered_closure_sha256": "0c94adb3ea2d6354b2fe413a07abbc9625dbe66320a0cbf4802340d81c832be6"
+  },
+  "generation_closure": {
+    "status": "INCOMPLETE_NOT_CLAIMED",
+    "exact_result_replay_starts_from": "experiments/paper17/results/finite_history_closure.v1.sidecar.tar",
+    "microscopic_producer_replayed": false,
+    "clean_clone_generation_verified": false,
+    "missing_historical_execution_dependencies": [
+      "validation/validate_finite_history_closure_registration.py",
+      "optimized_exact_sparse_kernel.pyx",
+      "optimized_exact_implementation_benchmark.registration-v1.json",
+      ".runtime-work/optimized-cache/manifest.json",
+      ".runtime-work/k/optimized_exact_sparse_kernel.cp312-win_amd64.pyd"
+    ],
+    "mechanism_production": {
+      "status": "LOCAL_EXECUTION_COMPLETED_COMPACT_CLOSURE_ONLY",
+      "execution_authority": "NONE_COMPLETED",
+      "source_producer_executed": true,
+      "exhaustive_validator_completed": true,
+      "clean_clone_producer_replay_verified": false,
+      "exact_sidecar_tracked_in_git": false,
+      "exact_sidecar_external_immutable_anchor": {
+        "doi": "10.5281/zenodo.23234143",
+        "binding": "experiments/paper17/mechanism/results/mts1-v1.zenodo-anchor.v1.json",
+        "binding_mode": "POST_FREEZE_PUBLIC_SPLIT_DEPOSIT"
+      },
+      "compact_freeze_manifest": "experiments/paper17/mechanism/results/mts1-v1.freeze-manifest.json"
+    }
+  },
+  "registration_timing_boundary": {
+    "declared_preexecution_record": true,
+    "independently_anchored_before_execution": false,
+    "first_joint_git_commit": "99e2ac5a57afed27e5f213f658ddd5c3e6e93932"
+  },
+  "claim_boundaries": {
+    "coarse_endomap_verified": false,
+    "indefinite_iteration_verified": false,
+    "full_domain_claimed": false,
+    "minimal_memory_order_claimed": false,
+    "causal_mechanism_identified": false,
+    "initial_separation_trigger_identified": false,
+    "independent_validation": false
+  },
+  "verified_claims": {
+    "post_separation_transition_layer_contrast": true,
+    "mechanism_source_count": 153,
+    "mechanism_source_transition_cache_record_count": 459,
+    "mechanism_pair_transition_record_count": 6975,
+    "mechanism_comparison_cell_count": 15,
+    "mechanism_differing_comparison_cell_count": 15,
+    "mechanism_exact_separator_count": 4,
+    "mechanism_global_post_separation_pair_tally_bound": true,
+    "mechanism_universal_separator_at_1_to_2": false,
+    "complete_persistent_effective_drive_boundary_bound": true
+  },
+  "artifact_count": 127,
+  "artifact_count_by_closure_class": {
+    "historical-candidate-input": 12,
+    "package-only-historical-production-context": 39,
+    "public-package-documentation": 6,
+    "release-validation": 25,
+    "theorem-facing-computational": 37,
+    "theorem-facing-manuscript": 3,
+    "theorem-facing-presentation": 5
+  },
+  "artifacts": [
+    {
+      "role": "canonical-manuscript",
+      "closure_class": "theorem-facing-manuscript",
+      "path": "papers/paper17/Paper XVII.md",
+      "bytes": 37360,
+      "sha256": "53705be27cdc40e40c5653c4cdd6507b0bf1a5b30d48066d72bbf2ab25a7172d"
+    },
+    {
+      "role": "reader-pdf",
+      "closure_class": "theorem-facing-manuscript",
+      "path": "papers/paper17/paper17_arxiv.pdf",
+      "bytes": 764056,
+      "sha256": "baef7b837773d99b92103b464eb566b42a6c7cdcd4a4ca77af8f21373f0a5a93"
+    },
+    {
+      "role": "bibliography-slice",
+      "closure_class": "theorem-facing-manuscript",
+      "path": "papers/paper17/references-v1.bib",
+      "bytes": 2962,
+      "sha256": "1b04076a841ef00a4513d9137f4cb44868a95e886b9a2e2df253c5ff147bcf7c"
+    },
+    {
+      "role": "figure",
+      "closure_class": "theorem-facing-presentation",
+      "path": "figures/paper17/fig1_transient_separation_and_safe_forgetting.png",
+      "bytes": 345944,
+      "sha256": "1be1568f452f80908512b10ed84d1b430ffbf8404e1bfcbc8be000576fccf82a"
+    },
+    {
+      "role": "figure-producer",
+      "closure_class": "theorem-facing-presentation",
+      "path": "figures/paper17/render_fig1.py",
+      "bytes": 7045,
+      "sha256": "9889338f8ed352210d6c128d5d6eadb0326e25d36f9d89690f415069bfaf2487"
+    },
+    {
+      "role": "mechanism-figure",
+      "closure_class": "theorem-facing-presentation",
+      "path": "figures/paper17/fig2_internal_transition_layer_contrast.png",
+      "bytes": 366906,
+      "sha256": "68e2eb76881ad247b1b613f2020dd5b3b8f121799ae2cd4d31cc7994c6452584"
+    },
+    {
+      "role": "mechanism-figure-producer",
+      "closure_class": "theorem-facing-presentation",
+      "path": "figures/paper17/render_fig2.py",
+      "bytes": 6764,
+      "sha256": "b9453a1227ed7dc5f739a283f4cbf490856494447717876899b1a3268515d974"
+    },
+    {
+      "role": "figure-runtime-lock",
+      "closure_class": "theorem-facing-presentation",
+      "path": "figures/paper17/requirements.txt",
+      "bytes": 18,
+      "sha256": "2279f0cdad44211740ad3c5aa8ffb93e43e63caffc39b5274b6ca4a793cc32f2"
+    },
+    {
+      "role": "release-environment",
+      "closure_class": "release-validation",
+      "path": "experiments/paper17/release-environment.json",
+      "bytes": 733,
+      "sha256": "42770d2aa8629257ba65625305fcdc66f5a7f1ca6e416d3eb852087301fd28bf"
+    },
+    {
+      "role": "candidate-1-evidence-table",
+      "closure_class": "historical-candidate-input",
+      "path": "experiments/paper17/manuscript-evidence-table.v1.json",
+      "bytes": 13926,
+      "sha256": "996b7d5902fb132fc5a022584d1981db8909ea995d59afe3e8d428fd086d18be"
+    },
+    {
+      "role": "evidence-table-receipt",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper17/results/manuscript-evidence-table.v1.validation-receipt.json",
+      "bytes": 864,
+      "sha256": "04332889e1ec1b6522d15a13782d6e93eb00e5714c539245ad62350d99ebfc8c"
+    },
+    {
+      "role": "evidence-table-validator",
+      "closure_class": "release-validation",
+      "path": "experiments/paper17/validation/validate_manuscript_evidence_table.py",
+      "bytes": 5945,
+      "sha256": "aea4463a2f3a5107129daed7621d2390a484e3bf8d5b980a9f8dd76f63b780ba"
+    },
+    {
+      "role": "registered-scope",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper17/finite_history_scope.v1.json",
+      "bytes": 3262,
+      "sha256": "25e3ace08d1e83675f5b21b32cff7d69c2073fd87b25c5a9000043022663aefb"
+    },
+    {
+      "role": "D0-admission",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper17/results/finite_history_D0_admission.v1.json",
+      "bytes": 2957,
+      "sha256": "c1735202657b3ee92449eacdbbf32a401e475eeb77b70e8f63c4e34b3b9dbf0e"
+    },
+    {
+      "role": "D0-admission-receipt",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper17/results/finite_history_D0_admission.v1.validation-receipt.json",
+      "bytes": 1180,
+      "sha256": "83c2353ce68848df4b68e706223c06707b9bd9101573ca5bce8c3816c01acf8c"
+    },
+    {
+      "role": "D0-index",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper17/results/finite_history_D0.v1.npy",
+      "bytes": 5816,
+      "sha256": "ca12e0e36e925cbb408f79e01979f0e0ee94407631b9eb269fe11171de2a733b"
+    },
+    {
+      "role": "source-universe",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper17/results/finite_history_source_universe.v1.json",
+      "bytes": 3497,
+      "sha256": "fc36036774240bf5ce52e2168e0a07af934c63d94ea9338bbb7a2c3da0e2e351"
+    },
+    {
+      "role": "source-universe-index",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper17/results/finite_history_source_universe.v1.npy",
+      "bytes": 1307640,
+      "sha256": "88232dcf8ef3575bfd24199bdd07839b93451e48a530d982e936af4379625fef"
+    },
+    {
+      "role": "sector-labels",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper17/results/finite_history_closure.v1.sector-labels.json",
+      "bytes": 555,
+      "sha256": "bc0f247ad9e3b203d5d6797d35097f557807b9badee67d5a5e83f1911c9d2dbf"
+    },
+    {
+      "role": "primary-result",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper17/results/finite_history_closure.v1.json",
+      "bytes": 4421,
+      "sha256": "1e64ecd07a529b553854f31a381dbf1c15d238055a120dd8db65d483fbff2705"
+    },
+    {
+      "role": "primary-result-receipt",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper17/results/finite_history_closure.v1.validation-receipt.json",
+      "bytes": 840,
+      "sha256": "970106c0cc60c82d486d803ec9533a7a18c8679b1e7fef927688ee15abf92c16"
+    },
+    {
+      "role": "exact-sidecar",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper17/results/finite_history_closure.v1.sidecar.tar",
+      "bytes": 34621440,
+      "sha256": "5ed5853b43901d927fb43d2ff1926f6bcb79343d95e15e62df8f770259c52ad9"
+    },
+    {
+      "role": "sidecar-inventory",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper17/results/finite_history_closure.v1.sidecar-inventory.json",
+      "bytes": 812627,
+      "sha256": "d539f3ba713175e1e4b09b65382349dfb4836e7a85ff413578963e0903229892"
+    },
+    {
+      "role": "sidecar-freeze-manifest",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper17/results/finite_history_closure.v1.freeze-manifest.json",
+      "bytes": 227998,
+      "sha256": "da8d94d619faf02727f9edc65872be391580847fd369d01da787278045bbd903"
+    },
+    {
+      "role": "sidecar-freeze-receipt",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper17/results/finite_history_closure.v1.freeze-validation-receipt.json",
+      "bytes": 971,
+      "sha256": "f60d0dc726a3cc9aa48a8a2bd7ec37706275a1840b9b0466229ba2113450a4c2"
+    },
+    {
+      "role": "binary-codec",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper17/finite_history_binary.py",
+      "bytes": 7287,
+      "sha256": "dcfb87d9351a1fea3a7c080db4ca75e205bf4025bb83fbdd81876576510e753b"
+    },
+    {
+      "role": "common-support-producer",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper17/audit_finite_history_common_support_v1.py",
+      "bytes": 9058,
+      "sha256": "ad2a635ee9a8016541aa4f3eefca4e717fd930cc0533eabbd059ea7ae2a7bc60"
+    },
+    {
+      "role": "common-support-result",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper17/results/finite_history_common_support_audit.v1.json",
+      "bytes": 5771,
+      "sha256": "e7268eec14d77a53502d969266b158675614fcc9580ebaebfd8130eabb48db10"
+    },
+    {
+      "role": "common-support-receipt",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper17/results/finite_history_common_support_audit.v1.validation-receipt.json",
+      "bytes": 987,
+      "sha256": "34f2753f467e7bf33c01079751f17d2d011f3a24446510bcd4261776331aa209"
+    },
+    {
+      "role": "common-support-validator",
+      "closure_class": "release-validation",
+      "path": "experiments/paper17/validation/validate_finite_history_common_support_audit.py",
+      "bytes": 2454,
+      "sha256": "2c4ed998feb2687c22141539492420b75c529734adb3964ddb0a9b42b7152f8e"
+    },
+    {
+      "role": "transient-fiber-producer",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper17/audit_finite_history_transient_fibers_v1.py",
+      "bytes": 11670,
+      "sha256": "55b18ada120dfba21eddd8264ce2f8c8cb5be27c7b6aa979a8a7dbb44fe20b04"
+    },
+    {
+      "role": "transient-fiber-result",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper17/results/finite_history_transient_fiber_audit.v1.json",
+      "bytes": 15022,
+      "sha256": "9eeb3e5cc3ec3599ee7f7fe54efb0248c2471b36d322f2038409bd9656cad75a"
+    },
+    {
+      "role": "transient-fiber-receipt",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper17/results/finite_history_transient_fiber_audit.v1.validation-receipt.json",
+      "bytes": 1027,
+      "sha256": "0507e6938266e8b3ec4c8fe3abc739fb3ac98d32bfb563240658033346292769"
+    },
+    {
+      "role": "transient-fiber-validator",
+      "closure_class": "release-validation",
+      "path": "experiments/paper17/validation/validate_finite_history_transient_fiber_audit.py",
+      "bytes": 2502,
+      "sha256": "f78d0bf8b4bd6de61e7842a4640b08b0ed1f22e5d706cbeaa9baac9411a92aa9"
+    },
+    {
+      "role": "terminal-image-producer",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper17/audit_finite_history_terminal_image_v1.py",
+      "bytes": 4753,
+      "sha256": "abf9950097ea8f2fd60e8f030a97001a8a3edba41437b116748d81f9c3c99dd7"
+    },
+    {
+      "role": "terminal-image-result",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper17/results/finite_history_terminal_image_audit.v1.json",
+      "bytes": 2191,
+      "sha256": "1fef1226ac638a37762bc96bc4656c184760b9bfb87e6ece37eb83b9670e50ec"
+    },
+    {
+      "role": "terminal-image-receipt",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper17/results/finite_history_terminal_image_audit.v1.validation-receipt.json",
+      "bytes": 890,
+      "sha256": "b2589cbf66c12325e4b40e12ba04307bc4ac10deb67fed6c4cdb0640b7e4eaaf"
+    },
+    {
+      "role": "terminal-image-validator",
+      "closure_class": "release-validation",
+      "path": "experiments/paper17/validation/validate_finite_history_terminal_image_audit.py",
+      "bytes": 2901,
+      "sha256": "b21d0baedae9f925e925b4ea1b406a10a8b650ea1d00729b1322e767b80d2527"
+    },
+    {
+      "role": "mechanism-cohort-registry",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper17/mechanism/results/mechanism_cohort_registry.v1.json",
+      "bytes": 12061,
+      "sha256": "a5f3ba6b6d5368f42dd713ecf0851d90819604841ea574bf4450f12eb2c9f011"
+    },
+    {
+      "role": "mechanism-contrast-policy",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper17/mechanism/mechanism_nontrivial_contrast.registration-v1.json",
+      "bytes": 10729,
+      "sha256": "4690bd80a9ab619fcfd78d4e5af6c5e4e2862c41ed525c7b548ff6f653da207e"
+    },
+    {
+      "role": "mechanism-sidecar-inventory",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper17/mechanism/results/mts1-v1/inventory.json",
+      "bytes": 434936,
+      "sha256": "80460b331f748e56ab3aba1f93e58dbc111b92dee087018acda79fe32c38709c"
+    },
+    {
+      "role": "mechanism-resource-receipt",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper17/mechanism/results/mts1-v1/resource-execution-receipt.json",
+      "bytes": 951,
+      "sha256": "8bf0835d0a3211aab361b9c51330810ee54ff5c70e769d13663c8f546fd47b44"
+    },
+    {
+      "role": "mechanism-classification",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper17/mechanism/results/mts1-v1/validation/mechanism_classification.v1.json",
+      "bytes": 5308,
+      "sha256": "2af999d9455cda234864ba9ce9243647e12f2440ef165425e3fcc1a9c47f031c"
+    },
+    {
+      "role": "mechanism-validation-receipt",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper17/mechanism/results/mts1-v1/validation/mechanism_validation.v1.receipt.json",
+      "bytes": 1627,
+      "sha256": "ff1868a8db3a77324f36268faa7c31163b5e2201da992a9f6e2c2a251ccd540a"
+    },
+    {
+      "role": "mechanism-freeze-manifest",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper17/mechanism/results/mts1-v1.freeze-manifest.json",
+      "bytes": 5412,
+      "sha256": "5cd64cf91073fa77006d8f8d718f9daf5554330fd8abbb7e12429796307b21fe"
+    },
+    {
+      "role": "mechanism-freeze-receipt",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper17/mechanism/results/mts1-v1.freeze-validation-receipt.json",
+      "bytes": 1230,
+      "sha256": "237a5088d940a3d6ae1620f5317cb994d4dd59be67a7b85fcc6ecc48bab39ca3"
+    },
+    {
+      "role": "mechanism-global-pair-tally",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper17/mechanism/results/mts1-v1.global-pair-tally.v1.json",
+      "bytes": 25544,
+      "sha256": "6c5bc297fc5f238e8bcd73bf6d53ae538db708537c7abeabf505f0d752a8bdf2"
+    },
+    {
+      "role": "mechanism-global-pair-tally-receipt",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper17/mechanism/results/mts1-v1.global-pair-tally.v1.validation-receipt.json",
+      "bytes": 752,
+      "sha256": "6f56f420570e7a8532b7e4daa235a212a2d893b9093ffa76ee9a0565dc2edda6"
+    },
+    {
+      "role": "mechanism-zenodo-sidecar-anchor",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper17/mechanism/results/mts1-v1.zenodo-anchor.v1.json",
+      "bytes": 6095,
+      "sha256": "e760621354f993c5210c3ae3324632ff95d744bc3b47d3090db71df30dc63c59"
+    },
+    {
+      "role": "mechanism-global-pair-tally-validator",
+      "closure_class": "release-validation",
+      "path": "experiments/paper17/mechanism/audit_global_pair_tally_v1.py",
+      "bytes": 9540,
+      "sha256": "dbc7c1ef0aaa665848c035e4d274b7c3634479029b427de2e9869343c1c34191"
+    },
+    {
+      "role": "mechanism-evidence-interface-validator",
+      "closure_class": "release-validation",
+      "path": "experiments/paper17/validation/validate_mts1_evidence_interface_v1.py",
+      "bytes": 5759,
+      "sha256": "2dbc0ca5080170a1596e170fdac2335ca8a9a74cb05079336c3bf396ed208b66"
+    },
+    {
+      "role": "mechanism-zenodo-anchor-binder",
+      "closure_class": "release-validation",
+      "path": "experiments/paper17/mechanism/bind_mts1_zenodo_anchor_v1.py",
+      "bytes": 5403,
+      "sha256": "6b5fd8559e6e5f20332f69e3894230d695724815256336e3f43e9bc0e1717fe3"
+    },
+    {
+      "role": "mechanism-contrast-logic",
+      "closure_class": "release-validation",
+      "path": "experiments/paper17/mechanism/nontrivial_contrast_v1.py",
+      "bytes": 14364,
+      "sha256": "1d930f799a1e39130213a2d11e3685ccc424d0d2ece50c77cc0b32f8ef03cb04"
+    },
+    {
+      "role": "mechanism-result-validator",
+      "closure_class": "release-validation",
+      "path": "experiments/paper17/mechanism/mechanism_result_validation_v1.py",
+      "bytes": 28992,
+      "sha256": "6ca40a4223bc2dbdf428385c5d5a7b6e1534c3155d35bc5e07b9aa7267f8c45f"
+    },
+    {
+      "role": "mechanism-freeze-builder",
+      "closure_class": "release-validation",
+      "path": "experiments/paper17/mechanism/freeze_mts1_result_v1.py",
+      "bytes": 8425,
+      "sha256": "fb1a2ec35ad651fd9dc07d849afad3cb55112a610aa74de24509c8ae47da0861"
+    },
+    {
+      "role": "mechanism-freeze-validator",
+      "closure_class": "release-validation",
+      "path": "experiments/paper17/mechanism/validation/validate_mts1_result_freeze_v1.py",
+      "bytes": 4476,
+      "sha256": "3ff4e83997f1abae3e1aa5ad284befadb0953343e9a06432884c2c11414cf0c3"
+    },
+    {
+      "role": "freeze-validator",
+      "closure_class": "release-validation",
+      "path": "experiments/paper17/validation/validate_finite_history_closure_freeze.py",
+      "bytes": 6624,
+      "sha256": "6aaa36476eab0358961d450b5fec1d69ee530e48c7d5ebb2105699b967d83079"
+    },
+    {
+      "role": "result-validator",
+      "closure_class": "release-validation",
+      "path": "experiments/paper17/validation/validate_finite_history_closure_v1.py",
+      "bytes": 5043,
+      "sha256": "b27146b9bffb26fd64f609419ee9525da00ab5225a5f4f0881e5e17878973aa0"
+    },
+    {
+      "role": "binary-codec-test",
+      "closure_class": "release-validation",
+      "path": "experiments/paper17/validation/test_finite_history_binary.py",
+      "bytes": 1821,
+      "sha256": "9148880d58eca7a0bc47219e459c65eec8b55785f35355fb07349f45902e7390"
+    },
+    {
+      "role": "classification-test",
+      "closure_class": "release-validation",
+      "path": "experiments/paper17/validation/test_finite_history_classification.py",
+      "bytes": 1342,
+      "sha256": "39e9f06058d11d3690c53c8a0439fc3deca982b0ed56c53ee0c333ff87e1d7a9"
+    },
+    {
+      "role": "public-package-validator",
+      "closure_class": "release-validation",
+      "path": "experiments/paper17/validation/validate_public_package.py",
+      "bytes": 4422,
+      "sha256": "50f8a443b2065e128849530812a339f2ef8f626b165cc6ca45b05ab0e5f2ece8"
+    },
+    {
+      "role": "candidate-1-release-validator",
+      "closure_class": "historical-candidate-input",
+      "path": "experiments/paper17/validation/validate_release.py",
+      "bytes": 9871,
+      "sha256": "4749b4c7a1fc3cd4e852d817848a928f9c7bbab8666d21961b48ba7bd6501ed7"
+    },
+    {
+      "role": "candidate-1-release-manifest-builder",
+      "closure_class": "historical-candidate-input",
+      "path": "experiments/paper17/build_release_manifest.py",
+      "bytes": 21542,
+      "sha256": "02f9b4c08a5c9146bd8231adda3666918c658f6cf0983970f22d9d027520f45b"
+    },
+    {
+      "role": "historical-package-readme",
+      "closure_class": "package-only-historical-production-context",
+      "path": "experiments/paper17/README.md",
+      "bytes": 6891,
+      "sha256": "3f27481fb9f36efcd216d5527b5fc7e03e45ed1a4a5b1aca3f947076d8ba5512"
+    },
+    {
+      "role": "current-evidence-guide",
+      "closure_class": "public-package-documentation",
+      "path": "experiments/paper17/00_START_HERE.md",
+      "bytes": 7586,
+      "sha256": "2f6b1bec4fe9e3b4a36f3b2de64becc3d39c2de5c561b3fc3aef35e695e6c23a"
+    },
+    {
+      "role": "result-anchor",
+      "closure_class": "public-package-documentation",
+      "path": "experiments/paper17/result-anchor.v1.json",
+      "bytes": 37974,
+      "sha256": "724a500de5d06e497529caf633cdd0a31a2de61b2da28d2a59dd684188f84f06"
+    },
+    {
+      "role": "result-anchor-receipt",
+      "closure_class": "public-package-documentation",
+      "path": "experiments/paper17/results/result-anchor.v1.validation-receipt.json",
+      "bytes": 1188,
+      "sha256": "9255b9e8f8daf203f60fffefe2c549123b53b74b4028b55b5674f7a2da4f75f9"
+    },
+    {
+      "role": "result-anchor-builder",
+      "closure_class": "public-package-documentation",
+      "path": "experiments/paper17/build_result_anchor.py",
+      "bytes": 12179,
+      "sha256": "c738c5f46b82b7ae14d8fe911ac0cc82f5bbc6c681b03973f806ff6a86a3bbf6"
+    },
+    {
+      "role": "result-anchor-validator",
+      "closure_class": "public-package-documentation",
+      "path": "experiments/paper17/validation/validate_result_anchor.py",
+      "bytes": 9694,
+      "sha256": "2d2dd02f3db12005fbb91ec9af39e5225daf1a82d0a6efda6a9b8d9ebb326f7a"
+    },
+    {
+      "role": "historical-design-note",
+      "closure_class": "package-only-historical-production-context",
+      "path": "experiments/paper17/FINITE_HISTORY_CLOSURE.md",
+      "bytes": 10703,
+      "sha256": "4f69bf0ed1e388ca357041a0e9198082c62d69ca135a9f1491ce26b7e3933163"
+    },
+    {
+      "role": "historical-scope-note",
+      "closure_class": "package-only-historical-production-context",
+      "path": "experiments/paper17/GROSS_BUDGET_RICHNESS_SCOPE.md",
+      "bytes": 6881,
+      "sha256": "3a5d86f8359e4daf3230bfbb7f34d1bb18b09ceef6b8073e34f5261e98a44424"
+    },
+    {
+      "role": "historical-design-record",
+      "closure_class": "package-only-historical-production-context",
+      "path": "experiments/paper17/finite_history_closure.design-v1.json",
+      "bytes": 9175,
+      "sha256": "a33087a569d394665829acdc0c53fd7bd80a15a4ff011d4fdfeee14125216d27"
+    },
+    {
+      "role": "historical-preflight",
+      "closure_class": "package-only-historical-production-context",
+      "path": "experiments/paper17/finite_history_closure.preflight-v1.json",
+      "bytes": 3471,
+      "sha256": "369f521b910787d071dd12b8d627a74e4e0e30eeb25969732efb9c987f57528a"
+    },
+    {
+      "role": "historical-preflight-receipt",
+      "closure_class": "package-only-historical-production-context",
+      "path": "experiments/paper17/finite_history_closure.preflight-v1.validation-receipt.json",
+      "bytes": 763,
+      "sha256": "f2e94ef47885c40f45ae4f4a313364b83ae4d4c08d9b7137c7e33416775c12bb"
+    },
+    {
+      "role": "historical-registration",
+      "closure_class": "package-only-historical-production-context",
+      "path": "experiments/paper17/finite_history_closure.registration-v1.json",
+      "bytes": 7089,
+      "sha256": "af2eee34c506f23bdf559c1a0be243143aeea6934b62f80b144ed84187494d70"
+    },
+    {
+      "role": "historical-registration-receipt",
+      "closure_class": "package-only-historical-production-context",
+      "path": "experiments/paper17/finite_history_closure.registration-v1.validation-receipt.json",
+      "bytes": 899,
+      "sha256": "ca28efa6c31b531d60e6abebf140a939488a0926fd9fecbcaffec0440cb57e26"
+    },
+    {
+      "role": "historical-cost-envelope",
+      "closure_class": "package-only-historical-production-context",
+      "path": "experiments/paper17/finite_history_d0_cost_envelope.v1.json",
+      "bytes": 4329,
+      "sha256": "0dc1844f939cc2b9c978f1fd00d87b66d74ae24584e5194b003fb542560802cd"
+    },
+    {
+      "role": "historical-cost-envelope-receipt",
+      "closure_class": "package-only-historical-production-context",
+      "path": "experiments/paper17/finite_history_d0_cost_envelope.v1.validation-receipt.json",
+      "bytes": 1201,
+      "sha256": "d206b52ec24799ec338ea20a54093cadbf2e945976c803f94784a7d0b43d450e"
+    },
+    {
+      "role": "historical-richness",
+      "closure_class": "package-only-historical-production-context",
+      "path": "experiments/paper17/finite_history_richness.v1.json",
+      "bytes": 1846,
+      "sha256": "a39692b22585d750d07ffacdc26cf16accb2914ce6fa63ab6d776a34becfae79"
+    },
+    {
+      "role": "historical-richness-receipt",
+      "closure_class": "package-only-historical-production-context",
+      "path": "experiments/paper17/finite_history_richness.v1.validation-receipt.json",
+      "bytes": 850,
+      "sha256": "d6e46a5f52405e67000f9dbe9efd836a17c2e38d88589ac6947dd0cfe130fcdd"
+    },
+    {
+      "role": "historical-scope-receipt",
+      "closure_class": "package-only-historical-production-context",
+      "path": "experiments/paper17/finite_history_scope.v1.validation-receipt.json",
+      "bytes": 817,
+      "sha256": "460e5249413dbbd3a8996117354b6f5ed4d47e0100c806da03c65095f52900d6"
+    },
+    {
+      "role": "historical-gross-budget",
+      "closure_class": "package-only-historical-production-context",
+      "path": "experiments/paper17/gross_compute_budget.v1.json",
+      "bytes": 2682,
+      "sha256": "6b16936bcabc80a91ee000a282bcf0f77b97deb6f19ff4cb3a84c31caaaa3bed"
+    },
+    {
+      "role": "historical-gross-budget-receipt",
+      "closure_class": "package-only-historical-production-context",
+      "path": "experiments/paper17/gross_compute_budget.v1.validation-receipt.json",
+      "bytes": 900,
+      "sha256": "62c5b3f9bf7d8b4f81ca4240f6495df6153e85fdb9e7bbe7245a60bb9c1d78f9"
+    },
+    {
+      "role": "historical-freeze-builder",
+      "closure_class": "package-only-historical-production-context",
+      "path": "experiments/paper17/freeze_finite_history_closure_v1.py",
+      "bytes": 7217,
+      "sha256": "bc193b8b3e645ec588ea1b837d070988d7de13776fe26b729ea15d898fb41d58"
+    },
+    {
+      "role": "historical-byte-policy",
+      "closure_class": "package-only-historical-production-context",
+      "path": "experiments/paper17/.gitattributes",
+      "bytes": 46,
+      "sha256": "c3afc963bfe93ed004f14026ab16fa2a81893f89102b6336529a62b607402dcc"
+    },
+    {
+      "role": "historical-runner",
+      "closure_class": "package-only-historical-production-context",
+      "path": "experiments/paper17/run_finite_history_closure_v1.py",
+      "bytes": 22901,
+      "sha256": "9ada38423597b20213e076f9e1d629901a8d620f649a44bb5ffb868e10f20eff"
+    },
+    {
+      "role": "historical-execution-common",
+      "closure_class": "package-only-historical-production-context",
+      "path": "experiments/paper17/finite_history_execution_common.py",
+      "bytes": 5725,
+      "sha256": "553d14beebdaaf869226dd29e4b64e15fb8db1e23a43123ba33653a53d7257c7"
+    },
+    {
+      "role": "historical-optimized-common",
+      "closure_class": "package-only-historical-production-context",
+      "path": "experiments/paper17/optimized_exact_common.py",
+      "bytes": 6735,
+      "sha256": "5c85dbe5d12fdac9018e3e06a212e7697d8e7623826caf30b721c673f382edb3"
+    },
+    {
+      "role": "historical-runtime-lock",
+      "closure_class": "package-only-historical-production-context",
+      "path": "experiments/paper17/requirements-exact-optimized-v1.txt",
+      "bytes": 103,
+      "sha256": "4a2140673ba59af30ae95ecb1e67b8fb9f0fdbb5ac0b40d9fe23b76e1b1b55ec"
+    },
+    {
+      "role": "mechanism-readme",
+      "closure_class": "package-only-historical-production-context",
+      "path": "experiments/paper17/mechanism/README.md",
+      "bytes": 8575,
+      "sha256": "ca6c8a8ef01f1b0dfcc633a2249ed0a6c29237863971b74224ada04cf3ae6661"
+    },
+    {
+      "role": "mechanism-design-note",
+      "closure_class": "package-only-historical-production-context",
+      "path": "experiments/paper17/mechanism/MECHANISM_OF_TRANSIENT_SEPARATION.md",
+      "bytes": 13403,
+      "sha256": "85a43e06ea526de04c79f10892f31b5232be3d86a41da5ec5e6884ba29e4127f"
+    },
+    {
+      "role": "mechanism-execution-note",
+      "closure_class": "package-only-historical-production-context",
+      "path": "experiments/paper17/mechanism/MTS1_SCOPED_EXECUTION_AMENDMENT.md",
+      "bytes": 4328,
+      "sha256": "5d45119072b0886eb88b5209f3508a452483e30cd17269f98453924eeae94bc2"
+    },
+    {
+      "role": "mechanism-record-note",
+      "closure_class": "package-only-historical-production-context",
+      "path": "experiments/paper17/mechanism/MTS1_RECORD_SCHEMAS.md",
+      "bytes": 2389,
+      "sha256": "07bd241b9e09b093e18f459233a659c7ab48a74806d74daa6e6bee64ca4d20a1"
+    },
+    {
+      "role": "mechanism-codec-note",
+      "closure_class": "package-only-historical-production-context",
+      "path": "experiments/paper17/mechanism/MTS1_EXACT_TRANSITION_PAYLOAD_CODECS.md",
+      "bytes": 2391,
+      "sha256": "f40246d176ad4a90b6422b858b51196ea621f5e4f1626b22eb6ec03ab95f7b2f"
+    },
+    {
+      "role": "mechanism-contrast-note",
+      "closure_class": "package-only-historical-production-context",
+      "path": "experiments/paper17/mechanism/MTS1_NONTRIVIAL_CONTRAST.md",
+      "bytes": 3391,
+      "sha256": "7d54ac34a31539b03f721b8d90e63f1a9923e826fb1ddfaa579ac7f3aa651966"
+    },
+    {
+      "role": "mechanism-registration",
+      "closure_class": "package-only-historical-production-context",
+      "path": "experiments/paper17/mechanism/mechanism_of_transient_separation.registration-v1.json",
+      "bytes": 11902,
+      "sha256": "57e4e9d56b73b05af884f44860c472854a45897ec54f68e3ffbe41c8cbfcfadf"
+    },
+    {
+      "role": "mechanism-execution-amendment",
+      "closure_class": "package-only-historical-production-context",
+      "path": "experiments/paper17/mechanism/mechanism_of_transient_separation.execution-amendment-v1.json",
+      "bytes": 8244,
+      "sha256": "ba94b05d17c3f6ffab3e52f2749a52e6733617ed602d80090293c953a91c9d35"
+    },
+    {
+      "role": "mechanism-record-registration",
+      "closure_class": "package-only-historical-production-context",
+      "path": "experiments/paper17/mechanism/mechanism_record_schema.registration-v1.json",
+      "bytes": 4639,
+      "sha256": "ea24a50afcc3ad319ed443e55317669a29c32b91863c1eb2eccfef68f4436408"
+    },
+    {
+      "role": "mechanism-codec-registration",
+      "closure_class": "package-only-historical-production-context",
+      "path": "experiments/paper17/mechanism/mechanism_payload_codecs.registration-v1.json",
+      "bytes": 4829,
+      "sha256": "f5cbb2e2c07ecb81bd66a2d004929ab2e59896aba63012d195cdc6ff2b312e55"
+    },
+    {
+      "role": "mechanism-producer-registration",
+      "closure_class": "package-only-historical-production-context",
+      "path": "experiments/paper17/mechanism/mechanism_source_addressed_producer.registration-v1.json",
+      "bytes": 8596,
+      "sha256": "efe8f2d44367a03970e4c7a905e1ec201b88c85238e9cfa0b94755bb04fe8e18"
+    },
+    {
+      "role": "mechanism-resource-contract",
+      "closure_class": "package-only-historical-production-context",
+      "path": "experiments/paper17/mechanism/mechanism_resource_contract.v1.json",
+      "bytes": 2424,
+      "sha256": "743b5c3d7813acf6a3cfcb1273021d90b8713fe800c5fe54660341590251086b"
+    },
+    {
+      "role": "mechanism-resource-gate",
+      "closure_class": "package-only-historical-production-context",
+      "path": "experiments/paper17/mechanism/mechanism_validation_resource_gate.registration-v1.json",
+      "bytes": 7766,
+      "sha256": "5d30fad3aad9c045c3383d929f7a13afaa5133b26763c9907d5fc7ad09c2e907"
+    },
+    {
+      "role": "mechanism-execution-authority",
+      "closure_class": "package-only-historical-production-context",
+      "path": "experiments/paper17/mechanism/mechanism_mts1_execution_authority.v1.json",
+      "bytes": 10062,
+      "sha256": "6a220e4fefdc95908d5c1a17b7e68c72f7c53f220a29a886106d6f93cdabf5b9"
+    },
+    {
+      "role": "mechanism-execution-authority-receipt",
+      "closure_class": "package-only-historical-production-context",
+      "path": "experiments/paper17/mechanism/results/mechanism_mts1_execution_authority.v1.validation-receipt.json",
+      "bytes": 976,
+      "sha256": "f23e4babd3d330c61fbc05dff476a3347fa49d965d4ba706bb2b685f5ac60ba7"
+    },
+    {
+      "role": "mechanism-source-producer",
+      "closure_class": "package-only-historical-production-context",
+      "path": "experiments/paper17/mechanism/source_addressed_mechanism_producer_v1.py",
+      "bytes": 40101,
+      "sha256": "82511e5fbcbca628fd6aae3dc36cc1f92698e4884ef5ed12051b20b37d7c779d"
+    },
+    {
+      "role": "mechanism-capped-runner",
+      "closure_class": "package-only-historical-production-context",
+      "path": "experiments/paper17/mechanism/run_mts1_source_production_capped_v1.py",
+      "bytes": 9378,
+      "sha256": "1a923b7b55df8a74c0317b128b640b40e7ff47837a283215962cba244ba94b11"
+    },
+    {
+      "role": "mechanism-state-codec",
+      "closure_class": "release-validation",
+      "path": "experiments/paper17/mechanism/exact_state_payload_v1.py",
+      "bytes": 7990,
+      "sha256": "619b34064a060eb4bc634b9579131d5faa2380f2ef320a79de661094007bdf74"
+    },
+    {
+      "role": "mechanism-transition-codecs",
+      "closure_class": "release-validation",
+      "path": "experiments/paper17/mechanism/exact_transition_payloads_v1.py",
+      "bytes": 13197,
+      "sha256": "87793b824c284d97b05cd5d9f0c10ff781d1f3383120efc11fbc9dcf86279bab"
+    },
+    {
+      "role": "mechanism-record-codec",
+      "closure_class": "package-only-historical-production-context",
+      "path": "experiments/paper17/mechanism/mechanism_records_v1.py",
+      "bytes": 19293,
+      "sha256": "195e71f6bd4709e4a3cf917a82aee69a58de82b2aa1dbb8f03cbb06524716ca0"
+    },
+    {
+      "path": "experiments/paper17/manuscript-evidence-table.v2.json",
+      "bytes": 15732,
+      "sha256": "da2956c58f9f94dffaec98f1227b3d2661bbc3cca254be52fa31450b0461cc60",
+      "role": "current-evidence-table",
+      "closure_class": "theorem-facing-computational"
+    },
+    {
+      "path": "experiments/paper17/mechanism/post_result_audits/persistent_safe_effective_drive.v1.json",
+      "bytes": 6930,
+      "sha256": "5543abac4214f957656706d33c97698bd85e4c1deed284938ba7ebf8fb590218",
+      "role": "persistent-drive-readout",
+      "closure_class": "theorem-facing-computational"
+    },
+    {
+      "path": "experiments/paper17/mechanism/validation/audit_persistent_safe_effective_drive_v1.py",
+      "bytes": 12973,
+      "sha256": "a85f0bfe5b7e5e6726135047ab790d75d06804559743f3dad2bc5abb23429c34",
+      "role": "persistent-drive-replay",
+      "closure_class": "release-validation"
+    },
+    {
+      "path": "experiments/paper17/mechanism/post_result_audits/EFFECTIVE_DRIVE_BOUNDARY.md",
+      "bytes": 2383,
+      "sha256": "781db76e4ad3bb89612f99e6dbb061cffcc2d60528efc4c7ab5f9586918141a6",
+      "role": "persistent-drive-note",
+      "closure_class": "public-package-documentation"
+    },
+    {
+      "path": "experiments/paper17/build_publication_candidate_v2.py",
+      "bytes": 9602,
+      "sha256": "d9089d4b0f14ba0ad76820595c514dff351ff30d02d55f620aa85d9699d105aa",
+      "role": "candidate-2-builder",
+      "closure_class": "release-validation"
+    },
+    {
+      "path": "experiments/paper17/validation/validate_release_v2.py",
+      "bytes": 10349,
+      "sha256": "e9e64522287d7271d71c707ff8f2a97cf7b90655e6d4e8738c3abf1be1217d66",
+      "role": "candidate-2-validator",
+      "closure_class": "release-validation"
+    },
+    {
+      "path": "experiments/paper17/validation/test_publication_candidate_v2.py",
+      "bytes": 2272,
+      "sha256": "36753075badac70eeaf619fc69623d17246084c7c96a52cc494861a5cd5646c2",
+      "role": "candidate-2-hostile-tests",
+      "closure_class": "release-validation"
+    },
+    {
+      "path": "figures/paper17/.gitattributes",
+      "bytes": 29,
+      "sha256": "685013dcd999099acba8b6b0b914b51c7da3c0ebe477baac8190eac1f66fe243",
+      "role": "figure-line-ending-policy",
+      "closure_class": "release-validation"
+    },
+    {
+      "path": "release-snapshots/paper17/.gitattributes",
+      "bytes": 9,
+      "sha256": "48747480eddba024928d03be9bf83dc579e5515768647507a767e8187a85c9ab",
+      "role": "historical-snapshot-byte-policy",
+      "closure_class": "release-validation"
+    },
+    {
+      "path": "experiments/paper17/release-manifest.v1.json",
+      "bytes": 36066,
+      "sha256": "f6e8dae5b28e357f99f659878cf81bba7a5cefe13a4e3ec40cbe4523acb24854",
+      "role": "candidate-1-manifest",
+      "closure_class": "historical-candidate-input"
+    },
+    {
+      "path": "experiments/paper17/results/release.v1.validation-receipt.json",
+      "bytes": 1199,
+      "sha256": "aef5b0cb83ebb9075d3a4ac0e7c076630f48dbf1be7c1701eb3fbdd2ca79f982",
+      "role": "candidate-1-receipt",
+      "closure_class": "historical-candidate-input"
+    },
+    {
+      "path": "release-snapshots/paper17/1.0-candidate-1/papers/paper17/Paper XVII.md",
+      "bytes": 31134,
+      "sha256": "7e233f46527604ea03b0712ef1aa031c402131dd6178399fa43bc910d587c834",
+      "role": "prior-candidate-replaced-artifact",
+      "closure_class": "historical-candidate-input"
+    },
+    {
+      "path": "release-snapshots/paper17/1.0-candidate-1/papers/paper17/paper17_arxiv.pdf",
+      "bytes": 746367,
+      "sha256": "3cbc8a5905fd11794ee9f2838f3a91b515c486613339c7fa17fb02f7bef8e2a3",
+      "role": "prior-candidate-replaced-artifact",
+      "closure_class": "historical-candidate-input"
+    },
+    {
+      "path": "release-snapshots/paper17/1.0-candidate-1/experiments/paper17/00_START_HERE.md",
+      "bytes": 5682,
+      "sha256": "b2fd7c44f47db1b2d42738dae58955c14f4a1f29e41b8b8f35fea727cbe23468",
+      "role": "prior-candidate-replaced-artifact",
+      "closure_class": "historical-candidate-input"
+    },
+    {
+      "path": "release-snapshots/paper17/1.0-candidate-1/experiments/paper17/release-environment.json",
+      "bytes": 733,
+      "sha256": "f266f881dd046d215518fb0a93faa5f054205af4f514210fe39708f48f69164c",
+      "role": "prior-candidate-replaced-artifact",
+      "closure_class": "historical-candidate-input"
+    },
+    {
+      "path": "release-snapshots/paper17/1.0-candidate-1/figures/paper17/render_fig2.py",
+      "bytes": 6748,
+      "sha256": "661c90fd37001926f928a12a7a3a7c98971b514c9f7e5a2fd839fa093afbec11",
+      "role": "prior-candidate-replaced-artifact",
+      "closure_class": "historical-candidate-input"
+    },
+    {
+      "path": "release-snapshots/paper17/1.0-candidate-1/figures/paper17/fig2_internal_transition_layer_contrast.png",
+      "bytes": 357503,
+      "sha256": "4e7a5839c3acc31b7218519010a09f524ea22f64d5d6e28552aed308276d8de1",
+      "role": "prior-candidate-replaced-artifact",
+      "closure_class": "historical-candidate-input"
+    },
+    {
+      "path": "release-snapshots/paper17/1.0-candidate-1/figures/paper17/requirements.txt",
+      "bytes": 19,
+      "sha256": "7317f7fb709c712c444ae9c5bc1f0c94cf801f6b178138a87acd0d334ab2c9b7",
+      "role": "prior-candidate-replaced-artifact",
+      "closure_class": "historical-candidate-input"
+    }
+  ],
+  "receipt_path": "experiments/paper17/results/release.v2.validation-receipt.json",
+  "prior_candidate": {
+    "manifest": {
+      "path": "experiments/paper17/release-manifest.v1.json",
+      "bytes": 36066,
+      "sha256": "f6e8dae5b28e357f99f659878cf81bba7a5cefe13a4e3ec40cbe4523acb24854"
+    },
+    "receipt": {
+      "path": "experiments/paper17/results/release.v1.validation-receipt.json",
+      "bytes": 1199,
+      "sha256": "aef5b0cb83ebb9075d3a4ac0e7c076630f48dbf1be7c1701eb3fbdd2ca79f982"
+    },
+    "replaced_artifacts": {
+      "papers/paper17/Paper XVII.md": "release-snapshots/paper17/1.0-candidate-1/papers/paper17/Paper XVII.md",
+      "papers/paper17/paper17_arxiv.pdf": "release-snapshots/paper17/1.0-candidate-1/papers/paper17/paper17_arxiv.pdf",
+      "experiments/paper17/00_START_HERE.md": "release-snapshots/paper17/1.0-candidate-1/experiments/paper17/00_START_HERE.md",
+      "experiments/paper17/release-environment.json": "release-snapshots/paper17/1.0-candidate-1/experiments/paper17/release-environment.json",
+      "figures/paper17/render_fig2.py": "release-snapshots/paper17/1.0-candidate-1/figures/paper17/render_fig2.py",
+      "figures/paper17/fig2_internal_transition_layer_contrast.png": "release-snapshots/paper17/1.0-candidate-1/figures/paper17/fig2_internal_transition_layer_contrast.png",
+      "figures/paper17/requirements.txt": "release-snapshots/paper17/1.0-candidate-1/figures/paper17/requirements.txt"
+    },
+    "old_scientific_outcomes_rewritten": false
+  },
+  "supplementary_promotion": {
+    "claim": "P17-C10",
+    "audit": {
+      "path": "experiments/paper17/mechanism/post_result_audits/persistent_safe_effective_drive.v1.json",
+      "bytes": 6930,
+      "sha256": "5543abac4214f957656706d33c97698bd85e4c1deed284938ba7ebf8fb590218"
+    },
+    "default_validation": "COMPACT_BINDINGS_AND_AGGREGATE_CONSISTENCY",
+    "default_source_payload_replay": false,
+    "optional_full_cache_replay": "python experiments/paper17/mechanism/validation/audit_persistent_safe_effective_drive_v1.py --check",
+    "operator_action_recomputed": false,
+    "common_support_times": [
+      2,
+      3
+    ],
+    "additional_saved_time_is_not_domain_extension": 1,
+    "excluded_research_results": [
+      "MTS-1.1",
+      "MTS-1.2",
+      "negative-drive invariant-region note"
+    ]
+  }
+}

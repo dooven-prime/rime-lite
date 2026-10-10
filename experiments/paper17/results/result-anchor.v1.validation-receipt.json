@@ -1,0 +1,32 @@
+{
+  "schema": "rime.paper17.result-anchor-validation-receipt.v1",
+  "status": "PASS",
+  "validation_mode": "LOCAL_RESULT_OWNED_EXACT_AND_COMPACT_MECHANISM_CLOSURE",
+  "independent_validation": false,
+  "producer_replayed": false,
+  "manifest": {
+    "path": "result-anchor.v1.json",
+    "bytes": 37974,
+    "sha256": "724a500de5d06e497529caf633cdd0a31a2de61b2da28d2a59dd684188f84f06"
+  },
+  "validator": {
+    "path": "validation/validate_result_anchor.py",
+    "sha256": "2d2dd02f3db12005fbb91ec9af39e5225daf1a82d0a6efda6a9b8d9ebb326f7a"
+  },
+  "verified": {
+    "artifact_count": 85,
+    "sidecar_member_count": 1425,
+    "common_support_correction_bound": true,
+    "transient_fiber_decomposition_bound": true,
+    "terminal_image_boundary_bound": true,
+    "post_separation_transition_layer_contrast_bound": true,
+    "mts1_pair_transition_record_count": 6975,
+    "mts1_differing_comparison_cell_count": 15,
+    "mts1_exact_separator_count": 4,
+    "minimal_memory_order_claimed": false,
+    "initial_separation_trigger_identified": false,
+    "causal_mechanism_identified": false,
+    "coarse_endomap_verified": false,
+    "clean_clone_microscopic_generation_verified": false
+  }
+}
