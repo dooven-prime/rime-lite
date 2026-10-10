@@ -81,11 +81,10 @@ moving fields, or represented genericity.
 ## Repository Boundary
 
 The public documentation covers the published Papers I--XV architecture, the
-independently scoped Paper XVI case study, the unpublished Paper XVII
-computational follow-up, and Papers XX--XXXVIII mathematical lines.
-Author-side planning, exploratory research routing,
-release migration status, and historical working notes are outside this
-public documentation index.
+independently scoped Papers XVI--XVII computational studies, and Papers
+XX--XXXVIII mathematical lines. Author-side planning, exploratory research
+routing, release migration status, and historical working notes are outside
+this public documentation index.
 
 Post-release tag/DOI byte bindings are indexed separately under
 [`release-anchors/`](release-anchors/). They are downstream metadata, not

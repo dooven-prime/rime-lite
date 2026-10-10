@@ -3,8 +3,8 @@
 This document is the public navigation map for the Representation-Induced
 Mechanics and Evolution (RIME) program. It identifies semantic ownership,
 typed interfaces and promotion boundaries across published Papers I--XV, the
-independently scoped Paper XVI case study, the unpublished Paper XVII
-computational follow-up, and Papers XX--XXXVIII theorem lines. It is not a
+independently scoped Papers XVI--XVII computational studies, and Papers
+XX--XXXVIII theorem lines. It is not a
 proof document, release ledger, result record, or substitute for an owning
 manuscript.
 
@@ -92,11 +92,11 @@ status.
 | Paper | Case-study owner | Evidence boundary |
 |---|---|---|
 | XVI | source-addressed MaleCNS audits of structural liftability, signed operator semantics, observation visibility, and deterministic coarse-state closure | exact finite route and history-fiber certificates are separated from bounded numerical dynamics; no physiological, causal, behavioral, or protocol-authority claim follows |
-| XVII (release candidate) | post-transient exact coarse factorization on a reduced MaleCNS domain | the finite one-step factorization and noninjective fibers do not establish an endomap or active correction; zero clipped drive on all non-singleton fibers admits a common-leak explanation |
+| XVII | post-transient exact coarse factorization on a reduced MaleCNS domain | the finite one-step factorization and noninjective fibers do not establish an endomap or active correction; zero clipped drive on all non-singleton fibers admits a common-leak explanation |
 
-Papers XVI and XVII do not succeed the Paper VIII--XV protocol architecture.
-Each uses a declared computational carrier under its own hypotheses and
-evidence records; Paper XVII remains an unpublished release candidate.
+Papers XVI and XVII use declared computational carriers under their own
+hypotheses and evidence records; neither extends the Paper VIII--XV protocol
+authority chain.
 
 ### Active post-protocol mathematics
 

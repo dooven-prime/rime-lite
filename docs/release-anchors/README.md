@@ -8,6 +8,7 @@ not rewrite manifests or receipts that accurately recorded a candidate state.
 | Paper release | Anchor |
 |---|---|
 | Paper XVI v1.0 | [paper16-v1.0.json](paper16-v1.0.json) |
+| Paper XVII v1.0 | [paper17-v1.0.json](paper17-v1.0.json) |
 | Paper XXIII v1.0 | [paper23-v1.0.json](paper23-v1.0.json) |
 | Paper XXVII v1.0 | [paper27-v1.0.json](paper27-v1.0.json) |
 | Paper XXVIII v1.0 | [paper28-v1.0.json](paper28-v1.0.json) |
