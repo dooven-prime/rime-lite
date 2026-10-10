@@ -14,8 +14,14 @@
     {
       "path": "README.md",
       "role": "SCOPE_AND_CASE_DECISIONS",
-      "size": 4861,
-      "sha256": "e8c8842afdd813c1ce57ce29c66c50659430db1e7f92ea1bd7db84211e3d2a95"
+      "size": 6480,
+      "sha256": "76525a11d3cd814c84d319af683c715065b7e8056fc5bb2a87f6f5cb1938908c"
+    },
+    {
+      "path": "candidate-reports.schema.json",
+      "role": "OPTIONAL_CASE_REPORT_JSON_SHAPE",
+      "size": 2693,
+      "sha256": "90b8c9ca530e59e4321a7ebc11dba0efed7b36f4faec3bbeff28a0339f4a8076"
     },
     {
       "path": "CONSUMER_SPEC.md",
@@ -46,7 +52,7 @@
     "The log oracle retains registration by a logged fresh block, the full placed partition, fixed F, and exact Carry/Absorb guards and updates.",
     "The forest update and ancestor decoder are selected without importing a full foundation manuscript or claiming its proof has been machine checked.",
     "The placed forward-UFE adapter retains ordered kernel-port calls, effective union history, current placement, and the seed-generated domain.",
-    "The finite JSON encoding and decision labels are Case interfaces; deployment hashes and resource limits are excluded from mathematical semantics."
+    "The finite JSON encoding, complete candidate-report shape, and decision labels are Case interfaces; the report schema adds no mathematical read or result claim. Deployment hashes and resource limits are excluded from mathematical semantics."
   ],
   "anchoring_rule": "The publishing Git commit binds this manifest. The manifest does not include its own bytes or any downstream receipt."
 }

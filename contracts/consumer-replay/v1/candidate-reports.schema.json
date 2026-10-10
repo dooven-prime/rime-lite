@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Consumer replay candidate reports v1",
+  "description": "The candidate_reports value in a finite Case witness. Semantic consistency with the declared environment and replayed log is checked separately.",
+  "type": ["array", "null"],
+  "minItems": 1,
+  "items": {"$ref": "#/$defs/report"},
+  "$defs": {
+    "block": {
+      "type": "array",
+      "items": {"type": "integer"},
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "position": {"type": "integer", "minimum": 0},
+    "placed_packet": {
+      "type": "object",
+      "required": ["q", "block"],
+      "properties": {
+        "q": {"$ref": "#/$defs/position"},
+        "block": {"$ref": "#/$defs/block"}
+      },
+      "additionalProperties": false
+    },
+    "origin": {
+      "type": "object",
+      "required": ["letter", "ports", "input_blocks", "collision_image", "fresh_block"],
+      "properties": {
+        "letter": {"const": "d"},
+        "ports": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/position"},
+          "minItems": 2,
+          "maxItems": 2,
+          "uniqueItems": true
+        },
+        "input_blocks": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/block"},
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "collision_image": {"$ref": "#/$defs/position"},
+        "fresh_block": {"$ref": "#/$defs/block"}
+      },
+      "additionalProperties": false
+    },
+    "absorption": {
+      "type": "object",
+      "required": ["letter", "carrier_port", "carrier_before", "other_port", "other_block", "collision_image", "carrier_after"],
+      "properties": {
+        "letter": {"const": "d"},
+        "carrier_port": {"$ref": "#/$defs/position"},
+        "carrier_before": {"$ref": "#/$defs/block"},
+        "other_port": {"$ref": "#/$defs/position"},
+        "other_block": {"$ref": "#/$defs/block"},
+        "collision_image": {"$ref": "#/$defs/position"},
+        "carrier_after": {"$ref": "#/$defs/block"}
+      },
+      "additionalProperties": false
+    },
+    "report": {
+      "type": "object",
+      "required": ["partition", "selected_block", "origin", "absorptions", "carrier"],
+      "properties": {
+        "partition": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/placed_packet"},
+          "minItems": 1
+        },
+        "selected_block": {"$ref": "#/$defs/block"},
+        "origin": {"$ref": "#/$defs/origin"},
+        "absorptions": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/absorption"}
+        },
+        "carrier": {"$ref": "#/$defs/placed_packet"}
+      },
+      "additionalProperties": false
+    }
+  }
+}
