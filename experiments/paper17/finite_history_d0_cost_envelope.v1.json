@@ -1,0 +1,100 @@
+{
+  "schema": "rime.exploratory.male-cns-dynamic-compression.d0-cost-envelope.v1",
+  "status": "FROZEN",
+  "execution_authority": "D0_SCOPE_DERIVATION_ONLY",
+  "baseline_scope": {
+    "H_floor": 2,
+    "T_floor": 4
+  },
+  "cost_envelope": {
+    "per_source_core_seconds_ceiling": "120.000000",
+    "parallel_efficiency_floor": "0.750000",
+    "fixed_primary_core_hours": "0.500000",
+    "fixed_primary_wall_hours": "0.500000"
+  },
+  "policy_rationale": "The registered accounting unit exceeds twice the largest observed optimized four-step source cost and includes a conservative allowance for unmeasured primary audit work; it is a preregistered allocation choice, not a measured population runtime theorem.",
+  "value_encoding": {
+    "cost_fields": "canonical nonnegative decimal strings without exponent notation",
+    "predicted_resource_outputs": "canonical decimal strings",
+    "binary_float_permitted_in_capacity_derivation": false
+  },
+  "accounting_semantics": {
+    "per_source_core_seconds_ceiling": "preregistered accounting ceiling used for scope derivation; not a proved worst-case runtime over the source universe",
+    "parallel_efficiency_floor": "preregistered scheduling assumption used for admission; not a theorem about future worker utilization",
+    "resource_model_admission": "permission to attempt the frozen scope under the gross caps",
+    "scope_completion": "established only by completed execution and a closure receipt"
+  },
+  "capacity_formulas": {
+    "N_core": "floor(((C_primary-C_fixed)*3600)/c_source)",
+    "N_wall": "floor(((T_primary-T_fixed)*3600*W*eta)/c_source)",
+    "D0_size": "min(163439,N_core,N_wall)"
+  },
+  "bindings": [
+    {
+      "role": "EXACT_RESOURCE_BENCHMARK",
+      "path": "results/exact_arithmetic_resource_benchmark.v1.json",
+      "bytes": 27578,
+      "sha256": "005ac2f180e03e19e9d23f6655df7ca50a9ea4b159b6ad428c9fc0f7a16f9e58"
+    },
+    {
+      "role": "EXACT_RESOURCE_BENCHMARK_RECEIPT",
+      "path": "results/exact_arithmetic_resource_benchmark.v1.validation-receipt.json",
+      "bytes": 2974,
+      "sha256": "c8b4d554e4523525a5482c95f8dc75efafb58278c5c5013e95cd2ab762860f37"
+    },
+    {
+      "role": "OPTIMIZED_EXACT_BENCHMARK",
+      "path": "results/optimized_exact_implementation_benchmark.v1.json",
+      "bytes": 18152,
+      "sha256": "b048a3ea8d490a2163cc08c71675a92a9960626e0ca50a4af879edfa576e7d9b"
+    },
+    {
+      "role": "OPTIMIZED_EXACT_BENCHMARK_RECEIPT",
+      "path": "results/optimized_exact_implementation_benchmark.v1.validation-receipt.json",
+      "bytes": 2208,
+      "sha256": "25597d20530a7d557537dade82bc38d1256ffbae976f1c2560e257768f6256c9"
+    },
+    {
+      "role": "RUNTIME_IDENTITY",
+      "path": "exact_arithmetic_resource_benchmark.registration-v1.json",
+      "bytes": 1785,
+      "sha256": "e5e9d172c79db0cdbd21163e1440e8f215d3cfc392bd15c7ac612feb6bb4e5cc"
+    },
+    {
+      "role": "BACKEND_IDENTITY",
+      "path": "optimized_exact_implementation_benchmark.registration-v1.json",
+      "bytes": 4368,
+      "sha256": "3c2b575bd5f93cefff3d3f4d345cdc12446f3603b671905ad3b910f90b287829"
+    },
+    {
+      "role": "GROSS_BUDGET",
+      "path": "gross_compute_budget.v1.json",
+      "bytes": 2682,
+      "sha256": "6b16936bcabc80a91ee000a282bcf0f77b97deb6f19ff4cb3a84c31caaaa3bed"
+    },
+    {
+      "role": "RICHNESS",
+      "path": "finite_history_richness.v1.json",
+      "bytes": 1846,
+      "sha256": "a39692b22585d750d07ffacdc26cf16accb2914ce6fa63ab6d776a34becfae79"
+    }
+  ],
+  "resource_coverage": {
+    "core_hours": "MODELED_DURING_D0_ADMISSION",
+    "wall_clock": "MODELED_DURING_D0_ADMISSION",
+    "peak_ram": "HARD_RUNTIME_CAP_NOT_USED_TO_DERIVE_D0_COUNT",
+    "incremental_storage": "HARD_RUNTIME_CAP_NOT_USED_TO_DERIVE_D0_COUNT",
+    "ram_storage_preflight_required_before_execution_authority": true,
+    "D0_compute_admissible_implies_all_caps_proved": false
+  },
+  "claim_boundary": {
+    "may_read_closure_outcome": false,
+    "may_use_behavioral_performance": false,
+    "may_expand_budget": false,
+    "may_admit_D0_while_status_is_template": false,
+    "not_a_population_worst_case_theorem": true,
+    "resource_model_admission_is_execution_completion": false,
+    "scope_completion_requires_completed_execution_and_closure_receipt": true,
+    "post_derivation_D0_resize_allowed": false
+  }
+}

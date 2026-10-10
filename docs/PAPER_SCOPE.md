@@ -4,8 +4,9 @@ This file is the public ownership and scope ledger for the RIME paper series.
 It identifies the object and reader question owned by each paper without
 repeating manuscript definitions, numerical tables, or release metadata.
 
-The current public release contains Papers I--XVI and the independently scoped
-Papers XX--XXXVIII mathematical lines. CCS v2.1 is an optional non-paper archive.
+The current public release contains Papers I--XV, the independently scoped
+Papers XVI--XVII computational studies, and Papers XX--XXXVIII mathematical
+lines. CCS v2.1 is an optional non-paper archive.
 Publication identities and DOIs are maintained only in the root
 [Public Release table](../README.md#public-release).
 
@@ -46,12 +47,14 @@ realization, and claim status.
 ## Independent Case-Study and Mathematical Scope
 
 Paper XVI is an independently scoped computational connectome case study, not
-a successor SOF protocol. Papers XVII--XIX are intentionally unused. Papers
+a successor SOF protocol. Paper XVII is a published independent computational
+follow-up; Papers XVIII--XIX remain unused. Papers
 XX--XXXVIII do not continue the SOF protocol authority chain.
 
 | Paper | Owned object or interface | Reader question |
 |-------|---------------------------|-----------------|
 | XVI | source-addressed MaleCNS structural and dynamic descent audit | Which structural and dynamic properties survive the declared connectome representations? |
+| XVII | finite post-transient coarse factorization and effective-drive boundary | When does a reduced reached set support a lossy one-step factor, and what suffices to explain its noninjective fibers? |
 | XX | all-depth carrier-resolved routed composition | When does Boolean support survive as a nonzero routed product at arbitrary depth? |
 | XXI | finite-field route profiles and prefix-pole semantics | How do labelled zero routes depend on field size, characteristic, and depth? |
 | XXII | fixed-deficit rational dynamics and anchored Farey patches | How do exact rational deficit layers admit Catalan classification and Fibonacci envelopes? |

@@ -1,0 +1,75 @@
+{
+  "schema": "rime.paper-post-release-anchor.v1",
+  "paper_id": "PAPER17",
+  "release_version": "1.0",
+  "publication_status": "PUBLISHED",
+  "release_identity_claimed": true,
+  "anchor_role": "DOWNSTREAM_PUBLICATION_METADATA",
+  "release_tag": {
+    "name": "paper17-v1.0",
+    "tag_object_sha": "0730180a9e7fe9772d0defafe11ae3b9cd9fb3fa",
+    "target_commit_sha": "5a6ff3422d014663cf2d442c29054ad9f1889388"
+  },
+  "pre_release_evidence": [
+    {
+      "role": "release-manifest",
+      "path": "experiments/paper17/release-manifest.v2.json",
+      "sha256_at_tag": "ca7f6712f55abd60cfc4841a133cb16a6ef489c07423c101cbc5e3227538eb3d",
+      "size_at_tag": 44721,
+      "mutation_policy": "IMMUTABLE_TAG_BYTES",
+      "declared_state_at_tag": {
+        "schema": "rime.paper17.release-manifest.v2",
+        "status": "RELEASE_CANDIDATE",
+        "release_identity_claimed": false,
+        "validation_mode": "LOCAL_CLOSURE_VERIFICATION"
+      }
+    },
+    {
+      "role": "validation-receipt",
+      "path": "experiments/paper17/results/release.v2.validation-receipt.json",
+      "sha256_at_tag": "0ec50edd4ab419423cb5e12df8cd3765942e41fe9ffe6774a1adb613f985b3f4",
+      "size_at_tag": 1335,
+      "mutation_policy": "IMMUTABLE_TAG_BYTES",
+      "declared_state_at_tag": {
+        "schema": "rime.paper17.release-validation-receipt.v2",
+        "status": "PASS",
+        "validation_mode": "LOCAL_CLOSURE_VERIFICATION_WITH_COMPACT_DRIVE_AUDIT"
+      }
+    }
+  ],
+  "post_release_supplements": [],
+  "external_anchor": {
+    "provider": "Zenodo",
+    "doi": "10.5281/zenodo.23275058",
+    "record_id": "23275058",
+    "record_url": "https://zenodo.org/records/23275058",
+    "publication_date": "2026-10-10",
+    "deposited_files": [
+      {
+        "remote_name": "paper17_arxiv.pdf",
+        "source_path_at_tag": "papers/paper17/paper17_arxiv.pdf",
+        "sha256": "47a7b65d7df4813f1d388dd57117f62734b83d0bc76b488ed1bd124ec833a866",
+        "size": 759343
+      }
+    ]
+  },
+  "versioned_repin_policy": {
+    "pre_release_manifest_mutation_allowed": false,
+    "pre_release_receipt_mutation_allowed": false,
+    "current_head_fallback_allowed": false,
+    "owner_change_requires_new_owner_version": true,
+    "consumer_change_requires_new_consumer_version_and_repin": true,
+    "shared_file_in_place_update_allowed": false
+  },
+  "authority_boundary": [
+    "The anchor establishes release-tag, evidence-root, and deposited-file byte identity only.",
+    "A DOI anchors only files actually deposited in that record.",
+    "Local closure verification is not independent mathematical validation.",
+    "Publication anchoring does not establish theorem truth or scientific adequacy.",
+    "The anchor is downstream metadata and is not part of the release tag it records."
+  ],
+  "notes": [
+    "The tagged manifest retains its pre-publication RELEASE_CANDIDATE state; this downstream anchor records the later DOI publication.",
+    "The manuscript evidence table requires historical commit 99e2ac5a57afed27e5f213f658ddd5c3e6e93932, published on codex/paper17-draft but outside the paper17-v1.0 ancestry. A tag-only checkout must fetch that historical Git object before validation; current HEAD is not a fallback."
+  ]
+}

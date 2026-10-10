@@ -1,0 +1,21 @@
+{
+  "schema": "rime.exploratory.male-cns-dynamic-compression.finite-history-preflight-validation-receipt.v1",
+  "status": "PASS",
+  "validation_mode": "LOCAL_STATIC_PREFLIGHT_REPLAY",
+  "independent_validation": false,
+  "preflight": {
+    "path": "finite_history_closure.preflight-v1.json",
+    "bytes": 3471,
+    "sha256": "369f521b910787d071dd12b8d627a74e4e0e30eeb25969732efb9c987f57528a"
+  },
+  "validator": {
+    "path": "validation/validate_finite_history_closure_preflight.py",
+    "sha256": "c27a3a5a0618aa0a64497428cfbb36d91e789c26cfb91e60c53266e7cf4c5e0e"
+  },
+  "verified": {
+    "storage_bound_below_cap": true,
+    "architecture_memory_bound_below_cap": true,
+    "runtime_hard_caps_required": true,
+    "scientific_execution_performed": false
+  }
+}

@@ -1,0 +1,235 @@
+{
+  "schema": "rime.exploratory.male-cns.mts-source-addressed-execution-authority.v1",
+  "status": "AUTHORIZED",
+  "execution_authority": "MTS1_SOURCE_ADDRESSED_PRODUCER_V1_ONLY",
+  "scientific_payload_generated": false,
+  "single_use": true,
+  "result_root": "experiments/paper17/mechanism/results/mts1-v1",
+  "runtime": {
+    "python_version": "3.12.6",
+    "numpy_version": "2.5.3",
+    "scipy_version": "1.18.0",
+    "pyarrow_version": "18.0.0",
+    "gmpy2_version": "2.2.1",
+    "psutil_version": "7.0.0",
+    "cython_version": "3.2.4",
+    "setuptools_version": "80.9.0",
+    "sys_executable_sha256": "3470f7919170d235d7e6079691462c4b217745ec67ee612e745730e46d98f238"
+  },
+  "artifacts": {
+    "PRODUCER_REGISTRATION": {
+      "role": "PRODUCER_REGISTRATION",
+      "path": "experiments/paper17/mechanism/mechanism_source_addressed_producer.registration-v1.json",
+      "bytes": 8596,
+      "sha256": "efe8f2d44367a03970e4c7a905e1ec201b88c85238e9cfa0b94755bb04fe8e18"
+    },
+    "COMPILED_TRANSITION_KERNEL": {
+      "role": "COMPILED_TRANSITION_KERNEL",
+      "path": "experiments/paper17/.runtime-work/mts1-kernel/mts1_exact_transition_kernel.cp312-win_amd64.pyd",
+      "bytes": 67072,
+      "sha256": "b6e2baf6e3ed8b047d8e3c5323941affdd847a0ae1ff61d42e7293cc11072934"
+    },
+    "OPTIMIZED_BACKEND_REGISTRATION": {
+      "role": "OPTIMIZED_BACKEND_REGISTRATION",
+      "path": "experiments/paper17/finite_history_closure.registration-v1.json",
+      "bytes": 7089,
+      "sha256": "af2eee34c506f23bdf559c1a0be243143aeea6934b62f80b144ed84187494d70"
+    },
+    "OPTIMIZED_CACHE_MANIFEST": {
+      "role": "OPTIMIZED_CACHE_MANIFEST",
+      "path": "experiments/paper17/.runtime-work/optimized-cache/manifest.json",
+      "bytes": 4130,
+      "sha256": "e8a04330d1133f4537faf679a3f59c294a1ebb15c221691d0ac6baf394edabd8"
+    },
+    "PAPER17_EXACT_SIDECAR": {
+      "role": "PAPER17_EXACT_SIDECAR",
+      "path": "experiments/paper17/results/finite_history_closure.v1.sidecar.tar",
+      "bytes": 34621440,
+      "sha256": "5ed5853b43901d927fb43d2ff1926f6bcb79343d95e15e62df8f770259c52ad9"
+    },
+    "PAPER17_SIDECAR_INVENTORY": {
+      "role": "PAPER17_SIDECAR_INVENTORY",
+      "path": "experiments/paper17/results/finite_history_closure.v1.sidecar-inventory.json",
+      "bytes": 812627,
+      "sha256": "d539f3ba713175e1e4b09b65382349dfb4836e7a85ff413578963e0903229892"
+    },
+    "COHORT_REGISTRY": {
+      "role": "COHORT_REGISTRY",
+      "path": "experiments/paper17/mechanism/results/mechanism_cohort_registry.v1.json",
+      "bytes": 12061,
+      "sha256": "a5f3ba6b6d5368f42dd713ecf0851d90819604841ea574bf4450f12eb2c9f011"
+    },
+    "RESOURCE_CONTRACT": {
+      "role": "RESOURCE_CONTRACT",
+      "path": "experiments/paper17/mechanism/mechanism_resource_contract.v1.json",
+      "bytes": 2424,
+      "sha256": "743b5c3d7813acf6a3cfcb1273021d90b8713fe800c5fe54660341590251086b"
+    },
+    "CAPPED_EXECUTION_WRAPPER": {
+      "role": "CAPPED_EXECUTION_WRAPPER",
+      "path": "experiments/paper17/mechanism/run_mts1_source_production_capped_v1.py",
+      "bytes": 9378,
+      "sha256": "1a923b7b55df8a74c0317b128b640b40e7ff47837a283215962cba244ba94b11"
+    },
+    "SOURCE_ADDRESSED_PRODUCER": {
+      "role": "SOURCE_ADDRESSED_PRODUCER",
+      "path": "experiments/paper17/mechanism/source_addressed_mechanism_producer_v1.py",
+      "bytes": 40101,
+      "sha256": "82511e5fbcbca628fd6aae3dc36cc1f92698e4884ef5ed12051b20b37d7c779d"
+    },
+    "EXHAUSTIVE_RESULT_VALIDATOR": {
+      "role": "EXHAUSTIVE_RESULT_VALIDATOR",
+      "path": "experiments/paper17/mechanism/mechanism_result_validation_v1.py",
+      "bytes": 28992,
+      "sha256": "6ca40a4223bc2dbdf428385c5d5a7b6e1534c3155d35bc5e07b9aa7267f8c45f"
+    },
+    "NONTRIVIAL_CONTRAST_REGISTRATION": {
+      "role": "NONTRIVIAL_CONTRAST_REGISTRATION",
+      "path": "experiments/paper17/mechanism/mechanism_nontrivial_contrast.registration-v1.json",
+      "bytes": 10729,
+      "sha256": "4690bd80a9ab619fcfd78d4e5af6c5e4e2862c41ed525c7b548ff6f653da207e"
+    },
+    "VALIDATION_RESOURCE_GATE": {
+      "role": "VALIDATION_RESOURCE_GATE",
+      "path": "experiments/paper17/mechanism/mechanism_validation_resource_gate.registration-v1.json",
+      "bytes": 7766,
+      "sha256": "5d30fad3aad9c045c3383d929f7a13afaa5133b26763c9907d5fc7ad09c2e907"
+    },
+    "VALIDATION_RESOURCE_GATE_RECEIPT": {
+      "role": "VALIDATION_RESOURCE_GATE_RECEIPT",
+      "path": "experiments/paper17/mechanism/results/mechanism_validation_resource_gate.v1.validation-receipt.json",
+      "bytes": 1706,
+      "sha256": "702e8a3fbcf68e02a69ecc594adc71c81609057126f4df60b660257b071a75f5"
+    },
+    "RESOURCE_PREFLIGHT_RECEIPT": {
+      "role": "RESOURCE_PREFLIGHT_RECEIPT",
+      "path": "experiments/paper17/mechanism/results/mechanism_resource_preflight.v1.json",
+      "bytes": 2885,
+      "sha256": "9a8ac20ee5f215c995f9917bfee0bf9b385049592b67dc416c8d29227cc68f13"
+    },
+    "PAPER17_RESULT_FREEZE": {
+      "role": "PAPER17_RESULT_FREEZE",
+      "path": "experiments/paper17/results/finite_history_closure.v1.freeze-manifest.json",
+      "bytes": 227998,
+      "sha256": "da8d94d619faf02727f9edc65872be391580847fd369d01da787278045bbd903"
+    }
+  },
+  "ordered_execution_closure": [
+    {
+      "role": "PRODUCER_REGISTRATION",
+      "path": "experiments/paper17/mechanism/mechanism_source_addressed_producer.registration-v1.json",
+      "bytes": 8596,
+      "sha256": "efe8f2d44367a03970e4c7a905e1ec201b88c85238e9cfa0b94755bb04fe8e18"
+    },
+    {
+      "role": "COMPILED_TRANSITION_KERNEL",
+      "path": "experiments/paper17/.runtime-work/mts1-kernel/mts1_exact_transition_kernel.cp312-win_amd64.pyd",
+      "bytes": 67072,
+      "sha256": "b6e2baf6e3ed8b047d8e3c5323941affdd847a0ae1ff61d42e7293cc11072934"
+    },
+    {
+      "role": "OPTIMIZED_BACKEND_REGISTRATION",
+      "path": "experiments/paper17/finite_history_closure.registration-v1.json",
+      "bytes": 7089,
+      "sha256": "af2eee34c506f23bdf559c1a0be243143aeea6934b62f80b144ed84187494d70"
+    },
+    {
+      "role": "OPTIMIZED_CACHE_MANIFEST",
+      "path": "experiments/paper17/.runtime-work/optimized-cache/manifest.json",
+      "bytes": 4130,
+      "sha256": "e8a04330d1133f4537faf679a3f59c294a1ebb15c221691d0ac6baf394edabd8"
+    },
+    {
+      "role": "PAPER17_EXACT_SIDECAR",
+      "path": "experiments/paper17/results/finite_history_closure.v1.sidecar.tar",
+      "bytes": 34621440,
+      "sha256": "5ed5853b43901d927fb43d2ff1926f6bcb79343d95e15e62df8f770259c52ad9"
+    },
+    {
+      "role": "PAPER17_SIDECAR_INVENTORY",
+      "path": "experiments/paper17/results/finite_history_closure.v1.sidecar-inventory.json",
+      "bytes": 812627,
+      "sha256": "d539f3ba713175e1e4b09b65382349dfb4836e7a85ff413578963e0903229892"
+    },
+    {
+      "role": "COHORT_REGISTRY",
+      "path": "experiments/paper17/mechanism/results/mechanism_cohort_registry.v1.json",
+      "bytes": 12061,
+      "sha256": "a5f3ba6b6d5368f42dd713ecf0851d90819604841ea574bf4450f12eb2c9f011"
+    },
+    {
+      "role": "RESOURCE_CONTRACT",
+      "path": "experiments/paper17/mechanism/mechanism_resource_contract.v1.json",
+      "bytes": 2424,
+      "sha256": "743b5c3d7813acf6a3cfcb1273021d90b8713fe800c5fe54660341590251086b"
+    },
+    {
+      "role": "CAPPED_EXECUTION_WRAPPER",
+      "path": "experiments/paper17/mechanism/run_mts1_source_production_capped_v1.py",
+      "bytes": 9378,
+      "sha256": "1a923b7b55df8a74c0317b128b640b40e7ff47837a283215962cba244ba94b11"
+    },
+    {
+      "role": "SOURCE_ADDRESSED_PRODUCER",
+      "path": "experiments/paper17/mechanism/source_addressed_mechanism_producer_v1.py",
+      "bytes": 40101,
+      "sha256": "82511e5fbcbca628fd6aae3dc36cc1f92698e4884ef5ed12051b20b37d7c779d"
+    },
+    {
+      "role": "EXHAUSTIVE_RESULT_VALIDATOR",
+      "path": "experiments/paper17/mechanism/mechanism_result_validation_v1.py",
+      "bytes": 28992,
+      "sha256": "6ca40a4223bc2dbdf428385c5d5a7b6e1534c3155d35bc5e07b9aa7267f8c45f"
+    },
+    {
+      "role": "NONTRIVIAL_CONTRAST_REGISTRATION",
+      "path": "experiments/paper17/mechanism/mechanism_nontrivial_contrast.registration-v1.json",
+      "bytes": 10729,
+      "sha256": "4690bd80a9ab619fcfd78d4e5af6c5e4e2862c41ed525c7b548ff6f653da207e"
+    },
+    {
+      "role": "VALIDATION_RESOURCE_GATE",
+      "path": "experiments/paper17/mechanism/mechanism_validation_resource_gate.registration-v1.json",
+      "bytes": 7766,
+      "sha256": "5d30fad3aad9c045c3383d929f7a13afaa5133b26763c9907d5fc7ad09c2e907"
+    },
+    {
+      "role": "VALIDATION_RESOURCE_GATE_RECEIPT",
+      "path": "experiments/paper17/mechanism/results/mechanism_validation_resource_gate.v1.validation-receipt.json",
+      "bytes": 1706,
+      "sha256": "702e8a3fbcf68e02a69ecc594adc71c81609057126f4df60b660257b071a75f5"
+    },
+    {
+      "role": "RESOURCE_PREFLIGHT_RECEIPT",
+      "path": "experiments/paper17/mechanism/results/mechanism_resource_preflight.v1.json",
+      "bytes": 2885,
+      "sha256": "9a8ac20ee5f215c995f9917bfee0bf9b385049592b67dc416c8d29227cc68f13"
+    },
+    {
+      "role": "PAPER17_RESULT_FREEZE",
+      "path": "experiments/paper17/results/finite_history_closure.v1.freeze-manifest.json",
+      "bytes": 227998,
+      "sha256": "da8d94d619faf02727f9edc65872be391580847fd369d01da787278045bbd903"
+    }
+  ],
+  "ordered_execution_closure_sha256": "099299a02ddfad183641be952dc0c017e4042d8da3f469e74b7b9f064db1864d",
+  "authorized_actions": [
+    "ONE_CAPPED_153_SOURCE_REPLAY",
+    "DERIVE_459_SOURCE_TRANSITION_CACHE_RECORDS",
+    "DERIVE_6975_PAIR_TRANSITION_RECORDS",
+    "POST_EXECUTION_EXHAUSTIVE_READ_ONLY_VALIDATION"
+  ],
+  "forbidden_actions": [
+    "DROP_SOURCE_COHORT_OR_PAIR",
+    "ADAPTIVE_SMALLER_SURFACE_RETRY",
+    "CHANGE_NONTRIVIAL_CONTRAST_POLICY",
+    "MTS2_EXTERNAL_INPUT_EXECUTION",
+    "PRODUCER_SIDE_SCIENTIFIC_CLASSIFICATION"
+  ],
+  "claim_boundary": {
+    "paper17_historical_result_modified": false,
+    "preflight_is_scientific_execution": false,
+    "local_validation_is_independent_replication": false,
+    "world_or_external_input_present": false
+  }
+}

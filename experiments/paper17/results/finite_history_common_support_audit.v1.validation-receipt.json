@@ -1,0 +1,32 @@
+{
+  "schema": "rime.exploratory.male-cns-dynamic-compression.finite-history-common-support-audit-validation-receipt.v1",
+  "status": "PASS",
+  "validation_mode": "LOCAL_RESULT_OWNED_COMMON_SUPPORT_REPLAY",
+  "independent_validation": false,
+  "producer_replayed": false,
+  "audit": {
+    "path": "results/finite_history_common_support_audit.v1.json",
+    "bytes": 5771,
+    "sha256": "e7268eec14d77a53502d969266b158675614fcc9580ebaebfd8130eabb48db10"
+  },
+  "validator": {
+    "path": "validation/validate_finite_history_common_support_audit.py",
+    "sha256": "2c4ed998feb2687c22141539492420b75c529734adb3964ddb0a9b42b7152f8e"
+  },
+  "verified": {
+    "h1_failure_fibers": 6,
+    "all_h1_failure_members_at_t1": true,
+    "common_support_times": [
+      2,
+      3
+    ],
+    "common_support_orders": [
+      0,
+      1,
+      2
+    ],
+    "all_common_support_orders_closed": true,
+    "all_common_support_partitions_identical": true,
+    "minimal_memory_order_identified": false
+  }
+}

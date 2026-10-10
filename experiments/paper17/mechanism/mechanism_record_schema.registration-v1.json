@@ -1,0 +1,118 @@
+{
+  "schema": "rime.exploratory.male-cns.transient-separation-mechanism.record-schema-registration.v1",
+  "status": "RECORD_SCHEMAS_FROZEN_AWAITING_PRODUCER_IMPLEMENTATION",
+  "execution_authority": "NONE",
+  "scientific_payload_generated": false,
+  "record_surface": {
+    "source_transition_cache_records": 459,
+    "pair_transition_records": 6975,
+    "source_count": 153,
+    "pair_count": 2325,
+    "current_times": [
+      1,
+      2,
+      3
+    ],
+    "coarse_dimension": 28,
+    "node_dimension": 211577
+  },
+  "storage_policy": {
+    "final_root": "RESULT_OWNED_PORTABLE_RELATIVE_TREE",
+    "temporary_runtime_root_in_final_identity": false,
+    "absolute_paths_allowed": false,
+    "parent_traversal_allowed": false,
+    "source_records_before_pair_records": true,
+    "pair_operator_recomputation_allowed": false,
+    "source_record_path_template": "source-cache/{source_id}/{current_time}.json",
+    "pair_shard_path_template": "pair-records/{cohort_id}/{transition}.jsonl",
+    "json_encoding": "UTF-8_LF_SORTED_KEYS_COMPACT",
+    "payload_identity": "UNCOMPRESSED_CANONICAL_BYTES",
+    "storage_compression_affects_semantic_identity": false,
+    "final_ordered_inventory_required": true
+  },
+  "payload_codec_status": {
+    "RIME-MTS-MICROSTATE-V1": "IMPLEMENTED_AND_VALIDATED",
+    "RIME-MTS-RAW-DRIVE-V1": "REQUIRED_NOT_IMPLEMENTED",
+    "RIME-MTS-CLIPPED-DRIVE-V1": "REQUIRED_NOT_IMPLEMENTED",
+    "RIME-MTS-CLIPPING-FATE-V1": "REQUIRED_NOT_IMPLEMENTED"
+  },
+  "remaining_execution_gates": [
+    "RAW_DRIVE_PAYLOAD_CODEC",
+    "CLIPPED_DRIVE_PAYLOAD_CODEC",
+    "CLIPPING_FATE_PAYLOAD_CODEC",
+    "SOURCE_ADDRESSED_EXACT_MECHANISM_PRODUCER",
+    "RESOURCE_PREFLIGHT_AND_CAPS",
+    "RESULT_VALIDATOR",
+    "RECEIPT_CONTRACT",
+    "NONTRIVIAL_CONTRAST_FINITE_CLASSIFICATION"
+  ],
+  "artifact_closure": [
+    {
+      "role": "SCOPED_EXECUTION_AMENDMENT",
+      "path": "experiments/paper17/mechanism/mechanism_of_transient_separation.execution-amendment-v1.json",
+      "bytes": 8244,
+      "sha256": "ba94b05d17c3f6ffab3e52f2749a52e6733617ed602d80090293c953a91c9d35"
+    },
+    {
+      "role": "SCOPED_EXECUTION_AMENDMENT_RECEIPT",
+      "path": "experiments/paper17/mechanism/results/mechanism_of_transient_separation.execution-amendment-v1.validation-receipt.json",
+      "bytes": 1398,
+      "sha256": "2a760bb5d542c75411df33112c41ee1a413c136d8270d115779ce13863515f56"
+    },
+    {
+      "role": "COHORT_REGISTRY",
+      "path": "experiments/paper17/mechanism/results/mechanism_cohort_registry.v1.json",
+      "bytes": 12061,
+      "sha256": "a5f3ba6b6d5368f42dd713ecf0851d90819604841ea574bf4450f12eb2c9f011"
+    },
+    {
+      "role": "RECORD_SCHEMA_NOTE",
+      "path": "experiments/paper17/mechanism/MTS1_RECORD_SCHEMAS.md",
+      "bytes": 2389,
+      "sha256": "07bd241b9e09b093e18f459233a659c7ab48a74806d74daa6e6bee64ca4d20a1"
+    },
+    {
+      "role": "JSON_SCHEMA_BUNDLE",
+      "path": "experiments/paper17/mechanism/schemas/mechanism_record_schemas.v1.json",
+      "bytes": 8285,
+      "sha256": "aa3ee0763e4351fc78427103cf05711cc38da6716cb0e63edea4a4fc2f3542ac"
+    },
+    {
+      "role": "SEMANTIC_RECORD_VALIDATOR",
+      "path": "experiments/paper17/mechanism/mechanism_records_v1.py",
+      "bytes": 19293,
+      "sha256": "195e71f6bd4709e4a3cf917a82aee69a58de82b2aa1dbb8f03cbb06524716ca0"
+    },
+    {
+      "role": "RECORD_SCHEMA_PRODUCER",
+      "path": "experiments/paper17/mechanism/create_mechanism_record_schemas_v1.py",
+      "bytes": 12173,
+      "sha256": "1244d082ad05a7fcb30d3ed0a1dd293ad47e132b703c317f706c69253fb371d8"
+    },
+    {
+      "role": "RECORD_SCHEMA_VALIDATOR",
+      "path": "experiments/paper17/mechanism/validation/validate_mechanism_record_schemas_v1.py",
+      "bytes": 16041,
+      "sha256": "dbc39d6b22140940fadc43496c722665f07383fcbe20b8cd13b3b7cc44927a98"
+    },
+    {
+      "role": "MICROSCOPIC_STATE_CODEC",
+      "path": "experiments/paper17/mechanism/exact_state_payload_v1.py",
+      "bytes": 7990,
+      "sha256": "619b34064a060eb4bc634b9579131d5faa2380f2ef320a79de661094007bdf74"
+    },
+    {
+      "role": "PAPER17_OBSERVATION_CODEC",
+      "path": "experiments/paper17/finite_history_binary.py",
+      "bytes": 7287,
+      "sha256": "dcfb87d9351a1fea3a7c080db4ca75e205bf4025bb83fbdd81876576510e753b"
+    },
+    {
+      "role": "PAPER17_SECTOR_LABELS",
+      "path": "experiments/paper17/results/finite_history_closure.v1.sector-labels.json",
+      "bytes": 555,
+      "sha256": "bc0f247ad9e3b203d5d6797d35097f557807b9badee67d5a5e83f1911c9d2dbf"
+    }
+  ],
+  "ordered_artifact_closure_sha256": "22e3bdd6a1823da57ba0e27e12f855bca7dd4fa50fb22697649490d3b3438f10"
+}

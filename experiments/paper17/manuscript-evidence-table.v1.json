@@ -1,0 +1,253 @@
+{
+  "schema": "rime.paper17.manuscript-evidence-table.v1",
+  "status": "FROZEN_FOR_RELEASE_CANDIDATE",
+  "candidate_identity": {
+    "paper": "Paper XVII",
+    "title": "Exact Post-Transient Coarse Factorization in a Reduced Male Drosophila CNS Model",
+    "subtitle": "Reached-Set Restriction, Safe Forgetting, and Internal Transition-Layer Contrast",
+    "publication_status": "UNPUBLISHED_CANDIDATE"
+  },
+  "evidence_anchor": {
+    "commit": "99e2ac5a57afed27e5f213f658ddd5c3e6e93932",
+    "branch_at_creation": "codex/paper17-draft",
+    "remote": "https://github.com/dooven-prime/rime-lite",
+    "anchor_manifest": {
+      "path": "experiments/paper17/result-anchor.v1.json",
+      "bytes": 37974,
+      "sha256": "724a500de5d06e497529caf633cdd0a31a2de61b2da28d2a59dd684188f84f06",
+      "resolution_mode": "current_paper_owned"
+    },
+    "anchor_receipt": {
+      "path": "experiments/paper17/results/result-anchor.v1.validation-receipt.json",
+      "bytes": 1188,
+      "sha256": "9255b9e8f8daf203f60fffefe2c549123b53b74b4028b55b5674f7a2da4f75f9",
+      "resolution_mode": "current_paper_owned"
+    }
+  },
+  "canonical_wording": {
+    "paper_level_statement": "On a declared reduced domain of 711 sources, the registered coarse observation fails one-step factorization during the initial transient but supports exact noninjective one-step factorization on the common t in {2,3} support. The disappearance of factorization obstructions occurs by transient separation of the offending source fibers, while a disjoint family of successor-consistent non-singleton fibers persists. A complete exact mechanism census finds a stable all-versus-none internal transition-layer contrast at 2->3 and 3->4, but no universal registered separator at the defining 1->2 transition. The terminal t=4 image is disjoint from the verified common coarse image, so no coarse endomap is established.",
+    "concept_sentence": "The transient does not repair the original ambiguous fibers. It eliminates them. Exact noninjective coarse factorization is then carried by a disjoint family of persistent successor-consistent fibers.",
+    "quotient_interpretation": "The initial coarse equivalence relation contains classes incompatible with the registered dynamics. On the later reached-set slices, those unsafe classes are absent, while the remaining non-singleton classes are successor-compatible.",
+    "program_sentence": "Dynamics can make a lossy observation support exact one-step factorization by restricting the reached set, without reconstructing microscopic identity."
+  },
+  "claims": [
+    {
+      "id": "P17-C1",
+      "statement": "The declared pre-execution registration record fixes a reduced domain of 711 sources, exact rational identity, H=2, T=4, and no post-outcome resizing of D0.",
+      "reader_facing_status": "Computational Certificate",
+      "role": "REGISTERED_SCOPE",
+      "evidence": [
+        {
+          "path": "experiments/paper17/finite_history_scope.v1.json",
+          "bytes": 3262,
+          "sha256": "25e3ace08d1e83675f5b21b32cff7d69c2073fd87b25c5a9000043022663aefb"
+        },
+        {
+          "path": "experiments/paper17/results/finite_history_D0_admission.v1.json",
+          "bytes": 2957,
+          "sha256": "c1735202657b3ee92449eacdbbf32a401e475eeb77b70e8f63c4e34b3b9dbf0e"
+        }
+      ],
+      "boundary": "The 711-source domain is not the full 163,439-source universe, and the release closure does not independently authenticate that the registration record preceded execution."
+    },
+    {
+      "id": "P17-C2",
+      "statement": "The frozen order-specific classifications are h=0 failed, h=1 failed, and h=2 exact closed noninjective on their respective registered window domains.",
+      "reader_facing_status": "Computational Certificate",
+      "role": "HISTORICAL_PRIMARY_OUTPUT",
+      "evidence": [
+        {
+          "path": "experiments/paper17/results/finite_history_closure.v1.json",
+          "bytes": 4421,
+          "sha256": "1e64ecd07a529b553854f31a381dbf1c15d238055a120dd8db65d483fbff2705"
+        },
+        {
+          "path": "experiments/paper17/results/finite_history_closure.v1.freeze-manifest.json",
+          "bytes": 227998,
+          "sha256": "da8d94d619faf02727f9edc65872be391580847fd369d01da787278045bbd903"
+        }
+      ],
+      "boundary": "The order-specific domains have different left boundaries; this row is not authority for a minimal-memory claim."
+    },
+    {
+      "id": "P17-C3",
+      "statement": "On the common support t in {2,3}, orders h=0,1,2 all support exact noninjective one-step factorization and induce the same fiber partition.",
+      "reader_facing_status": "Computational Certificate",
+      "role": "COMMON_SUPPORT_CORRECTION",
+      "evidence": [
+        {
+          "path": "experiments/paper17/results/finite_history_common_support_audit.v1.json",
+          "bytes": 5771,
+          "sha256": "e7268eec14d77a53502d969266b158675614fcc9580ebaebfd8130eabb48db10"
+        },
+        {
+          "path": "experiments/paper17/results/finite_history_common_support_audit.v1.validation-receipt.json",
+          "bytes": 987,
+          "sha256": "34f2753f467e7bf33c01079751f17d2d011f3a24446510bcd4261776331aa209"
+        }
+      ],
+      "boundary": "No minimal history order or coarse endomap is identified."
+    },
+    {
+      "id": "P17-C4",
+      "statement": "The common-support partition has N=1422, K=1228, M=51, ten non-singleton fibers, zero failure fibers, and finite-domain window-count reduction 194/1422.",
+      "reader_facing_status": "Computational Certificate",
+      "role": "EXACT_NONINJECTIVITY_PROFILE",
+      "evidence": [
+        {
+          "path": "experiments/paper17/results/finite_history_common_support_audit.v1.json",
+          "bytes": 5771,
+          "sha256": "e7268eec14d77a53502d969266b158675614fcc9580ebaebfd8130eabb48db10"
+        }
+      ],
+      "boundary": "The 194/1422 quantity is a finite-domain window-count reduction, not a bit-level compression ratio."
+    },
+    {
+      "id": "P17-C5",
+      "statement": "The six t=1 obstruction fibers contain 51 sources, and every one of those sources has a globally singleton coarse observation at t=2.",
+      "reader_facing_status": "Computational Certificate",
+      "role": "TRANSIENT_SEPARATION",
+      "evidence": [
+        {
+          "path": "experiments/paper17/results/finite_history_transient_fiber_audit.v1.json",
+          "bytes": 15022,
+          "sha256": "9eeb3e5cc3ec3599ee7f7fe54efb0248c2471b36d322f2038409bd9656cad75a"
+        },
+        {
+          "path": "experiments/paper17/results/finite_history_transient_fiber_audit.v1.validation-receipt.json",
+          "bytes": 1027,
+          "sha256": "0507e6938266e8b3ec4c8fe3abc739fb3ac98d32bfb563240658033346292769"
+        }
+      ],
+      "boundary": "Coarse separation does not imply microscopic convergence or destruction of microscopic distinctions."
+    },
+    {
+      "id": "P17-C6",
+      "statement": "The post-transient noninjectivity is carried by five cohorts of sizes 51,25,19,4,3 whose source membership is identical at t=2 and t=3, whose registered successors agree, and which are disjoint from the 51 obstruction sources.",
+      "reader_facing_status": "Computational Certificate",
+      "role": "PERSISTENT_SAFE_FORGETTING",
+      "evidence": [
+        {
+          "path": "experiments/paper17/results/finite_history_transient_fiber_audit.v1.json",
+          "bytes": 15022,
+          "sha256": "9eeb3e5cc3ec3599ee7f7fe54efb0248c2471b36d322f2038409bd9656cad75a"
+        }
+      ],
+      "boundary": "Persistence is established only on the registered t=2 and t=3 slices with their registered successors."
+    },
+    {
+      "id": "P17-C7",
+      "statement": "On the registered finite domain, exact one-step factorization arises after restricting the coarse quotient to the post-transient reached-set slices, not from a demonstrated memory enrichment.",
+      "reader_facing_status": "Computational Certificate",
+      "role": "FINITE_DOMAIN_QUOTIENT_INTERPRETATION",
+      "evidence": [
+        {
+          "path": "experiments/paper17/results/finite_history_common_support_audit.v1.json",
+          "bytes": 5771,
+          "sha256": "e7268eec14d77a53502d969266b158675614fcc9580ebaebfd8130eabb48db10"
+        },
+        {
+          "path": "experiments/paper17/results/finite_history_transient_fiber_audit.v1.json",
+          "bytes": 15022,
+          "sha256": "9eeb3e5cc3ec3599ee7f7fe54efb0248c2471b36d322f2038409bd9656cad75a"
+        }
+      ],
+      "boundary": "This is a finite-horizon reached-set statement, not an invariant-manifold, coarse-endomap, or eventual-closure theorem."
+    },
+    {
+      "id": "P17-C8",
+      "statement": "The exact observation sets at t=2, t=3, and t=4 each contain 614 values; the t=4 set is disjoint from the 1228-value common t in {2,3} image, so the certificate contains one registered internal shift but no endomap on the verified coarse image.",
+      "reader_facing_status": "Computational Certificate",
+      "role": "TERMINAL_IMAGE_BOUNDARY",
+      "evidence": [
+        {
+          "path": "experiments/paper17/results/finite_history_terminal_image_audit.v1.json",
+          "bytes": 2191,
+          "sha256": "1fef1226ac638a37762bc96bc4656c184760b9bfb87e6ece37eb83b9670e50ec",
+          "resolution_mode": "current_paper_owned"
+        },
+        {
+          "path": "experiments/paper17/results/finite_history_terminal_image_audit.v1.validation-receipt.json",
+          "bytes": 890,
+          "sha256": "b2589cbf66c12325e4b40e12ba04307bc4ac10deb67fed6c4cdb0640b7e4eaaf",
+          "resolution_mode": "current_paper_owned"
+        }
+      ],
+      "boundary": "The terminal successor image is not contained in the verified common coarse image; no sustained or indefinite coarse iteration is established."
+    },
+    {
+      "id": "P17-C9",
+      "statement": "Across 6,975 exact pair-transition records, all 15 registered comparison-cell signature histograms differ. A separate global tally of all 33 frozen pair shards confirms that at both 2->3 and 3->4, CLIPPING_MODIFIES_NONZERO_COARSE_RESIDUAL and FATE_DISAGREEMENT_WITH_NONZERO_CLIP_CORRECTION hold for 570/570 transient-obstruction pairs and 0/1755 persistent-safe pairs, including cohorts outside the shared-stratum cells.",
+      "reader_facing_status": "Computational Certificate",
+      "role": "EXACT_POST_SEPARATION_TRANSITION_LAYER_CONTRAST",
+      "evidence": [
+        {
+          "path": "experiments/paper17/mechanism/results/mts1-v1/validation/mechanism_classification.v1.json",
+          "bytes": 5308,
+          "sha256": "2af999d9455cda234864ba9ce9243647e12f2440ef165425e3fcc1a9c47f031c",
+          "resolution_mode": "current_paper_owned"
+        },
+        {
+          "path": "experiments/paper17/mechanism/results/mts1-v1/validation/mechanism_validation.v1.receipt.json",
+          "bytes": 1627,
+          "sha256": "ff1868a8db3a77324f36268faa7c31163b5e2201da992a9f6e2c2a251ccd540a",
+          "resolution_mode": "current_paper_owned"
+        },
+        {
+          "path": "experiments/paper17/mechanism/results/mts1-v1.freeze-manifest.json",
+          "bytes": 5412,
+          "sha256": "5cd64cf91073fa77006d8f8d718f9daf5554330fd8abbb7e12429796307b21fe",
+          "resolution_mode": "current_paper_owned"
+        },
+        {
+          "path": "experiments/paper17/mechanism/results/mts1-v1.freeze-validation-receipt.json",
+          "bytes": 1230,
+          "sha256": "237a5088d940a3d6ae1620f5317cb994d4dd59be67a7b85fcc6ecc48bab39ca3",
+          "resolution_mode": "current_paper_owned"
+        },
+        {
+          "path": "experiments/paper17/mechanism/results/mts1-v1.global-pair-tally.v1.json",
+          "bytes": 25544,
+          "sha256": "6c5bc297fc5f238e8bcd73bf6d53ae538db708537c7abeabf505f0d752a8bdf2",
+          "resolution_mode": "current_paper_owned"
+        },
+        {
+          "path": "experiments/paper17/mechanism/results/mts1-v1.global-pair-tally.v1.validation-receipt.json",
+          "bytes": 752,
+          "sha256": "6f56f420570e7a8532b7e4daa235a212a2d893b9093ffa76ee9a0565dc2edda6",
+          "resolution_mode": "current_paper_owned"
+        },
+        {
+          "path": "experiments/paper17/mechanism/results/mts1-v1.zenodo-anchor.v1.json",
+          "bytes": 6095,
+          "sha256": "e760621354f993c5210c3ae3324632ff95d744bc3b47d3090db71df30dc63c59",
+          "resolution_mode": "current_paper_owned"
+        }
+      ],
+      "boundary": "The exact all-versus-none separators occur after the defining split, at 2->3 and 3->4. The original classifier is cell-relative; the append-only tally extends the count to the full registered pair universe. No registered primary predicate is a universal separator at 1->2; the later contrast does not establish the cause of initial separation."
+    },
+    {
+      "id": "P17-O1",
+      "statement": "Identify the heterogeneous or compositional exact trigger of the initial 1->2 separation.",
+      "reader_facing_status": "Research Program",
+      "role": "OPEN_INITIAL_TRIGGER_QUESTION",
+      "evidence": [],
+      "boundary": "The exact later transition-layer contrast does not establish that clipping or fate disagreement caused the defining 1->2 split."
+    }
+  ],
+  "global_boundaries": {
+    "full_domain_claimed": false,
+    "indefinite_forward_invariance_claimed": false,
+    "minimal_memory_order_claimed": false,
+    "causal_mechanism_identified": false,
+    "initial_separation_trigger_identified": false,
+    "producer_replayed_in_paper_package": false,
+    "independent_validation": false,
+    "paper_xvi_reopened": false,
+    "coarse_endomap_verified": false,
+    "clean_clone_microscopic_generation_verified": false,
+    "preexecution_temporal_order_independently_anchored": false
+  },
+  "validator": "validation/validate_manuscript_evidence_table.py",
+  "receipt": "results/manuscript-evidence-table.v1.validation-receipt.json"
+}

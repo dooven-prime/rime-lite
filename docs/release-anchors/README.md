@@ -8,6 +8,7 @@ not rewrite manifests or receipts that accurately recorded a candidate state.
 | Paper release | Anchor |
 |---|---|
 | Paper XVI v1.0 | [paper16-v1.0.json](paper16-v1.0.json) |
+| Paper XVII v1.0 | [paper17-v1.0.json](paper17-v1.0.json) |
 | Paper XXIII v1.0 | [paper23-v1.0.json](paper23-v1.0.json) |
 | Paper XXVII v1.0 | [paper27-v1.0.json](paper27-v1.0.json) |
 | Paper XXVIII v1.0 | [paper28-v1.0.json](paper28-v1.0.json) |
@@ -27,6 +28,22 @@ from the release tag. The historical package remains unchanged. Its anchor
 records that defect and binds a separately located
 [post-release supplement](supplements/paper27-claim-surface-map.v1.json); the
 supplement is not represented as original release content.
+
+Paper XVII's manuscript evidence table resolves historical bytes at commit
+`99e2ac5a57afed27e5f213f658ddd5c3e6e93932`. That commit is published on
+`codex/paper17-draft`, but is not an ancestor of `paper17-v1.0`. A checkout
+fetched only from the release tag must first obtain the historical Git object:
+
+```sh
+git fetch origin refs/heads/codex/paper17-draft:refs/remotes/origin/codex/paper17-draft
+git cat-file -e '99e2ac5a57afed27e5f213f658ddd5c3e6e93932^{commit}'
+python experiments/paper17/validation/validate_manuscript_evidence_table.py
+```
+
+The validator still checks the exact commit and bound file digests. It does
+not substitute the fetched branch tip or current HEAD. An offline checkout
+containing only `paper17-v1.0` cannot run this historical check; this
+post-release note does not make the tagged closure self-contained.
 
 A paper may place reader figures and their renderers in its tagged release
 identity when its manifest names their exact paths and digests. The Git tag

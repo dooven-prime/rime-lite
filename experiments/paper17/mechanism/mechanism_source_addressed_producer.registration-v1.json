@@ -1,0 +1,221 @@
+{
+  "schema": "rime.exploratory.male-cns.mts-source-addressed-producer-registration.v1",
+  "status": "SOURCE_ADDRESSED_PRODUCER_IMPLEMENTED_AWAITING_RESOURCE_PREFLIGHT",
+  "execution_authority": "NONE",
+  "scientific_payload_generated": false,
+  "historical_state_reconciliation": {
+    "historical_record_schema_registration_modified": false,
+    "historical_required_not_implemented_fields_preserved": true,
+    "discharged_by_append_only_codec_registration": [
+      "RAW_DRIVE_PAYLOAD_CODEC",
+      "CLIPPED_DRIVE_PAYLOAD_CODEC",
+      "CLIPPING_FATE_PAYLOAD_CODEC"
+    ],
+    "discharged_by_this_registration": [
+      "SOURCE_ADDRESSED_EXACT_MECHANISM_PRODUCER",
+      "SOURCE_TRANSITION_CACHE_SCHEMA_AND_STORAGE_POLICY",
+      "PAIR_TRANSITION_RECORD_SCHEMA"
+    ]
+  },
+  "source_replay": {
+    "selected_source_count": 153,
+    "initial_state": "x_0=e_source",
+    "replayed_times": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "cached_current_times": [
+      1,
+      2,
+      3
+    ],
+    "source_transition_cache_record_count": 459,
+    "required_gates": [
+      "CANONICAL_OBSERVATION_BYTES_EQUAL_PAPER17_SIDECAR",
+      "PAPER17_LEGACY_STATE_HASH_EQUAL_PAPER17_METADATA",
+      "MTS1_CANONICAL_MICROSTATE_PAYLOAD_GENERATED"
+    ],
+    "all_five_time_gates_must_pass_before_final_result_promotion": true
+  },
+  "transition_semantics": {
+    "operator_orientation": "source_row_target_column; incoming=Y.T@x",
+    "raw_drive": "u_t=Y_known_pm.T@x_t",
+    "clipping": "C(u)=min(1,max(0,u)) by exact rational comparison",
+    "update": "x_(t+1)=(4/5)x_t+(1/5)C(u_t)",
+    "touched_target": "TARGET_RECEIVES_AT_LEAST_ONE_PRE_SUM_EDGE_CONTRIBUTION",
+    "exact_cancellation": "TOUCHED_AND_CLASSIFIED_LOWER",
+    "pair_fate_union_default": "UNTOUCHED_SIDE_HAS_RAW_VALUE_ZERO_AND_FATE_LOWER"
+  },
+  "source_descriptors": {
+    "basis": "REGISTERED_CSR_ROW_AFTER_COALESCING",
+    "pre_csr_edge_count_equals_csr_entry_count": 25214058,
+    "fields_closed_to_registration": true
+  },
+  "pair_derivation": {
+    "registered_pair_count": 2325,
+    "transition_grid": [
+      "1_TO_2",
+      "2_TO_3",
+      "3_TO_4"
+    ],
+    "pair_transition_record_count": 6975,
+    "reads_source_cache_only": true,
+    "operator_access": false,
+    "orientation": "source_a<source_b; signed differences are a-b",
+    "exact_payload_geometry": "STREAMING_CANONICAL_PAYLOAD_MERGE",
+    "classification_performed_by_producer": false
+  },
+  "storage": {
+    "result_owned_portable_relative_tree": true,
+    "single_shot_atomic_staging_promotion": true,
+    "source_records_precede_pair_records": true,
+    "ordered_inventory_required": true,
+    "temporary_runtime_paths_in_final_identity": false
+  },
+  "cli_authority_contract": {
+    "authority_schema": "rime.exploratory.male-cns.mts-source-addressed-execution-authority.v1",
+    "required_value": "MTS1_SOURCE_ADDRESSED_PRODUCER_V1_ONLY",
+    "current_authority_artifact_exists": false,
+    "default_or_ungated_scientific_execution": false
+  },
+  "hostile_test": {
+    "scientific_sources_read": false,
+    "synthetic_source_replays": 2,
+    "pair_operator_recomputation": false,
+    "cases": [
+      "EXACT_CANCELLATION_RETAINED_AS_LOWER_FATE",
+      "REVERSED_PAIR_REJECTED",
+      "MISSING_CACHE_RECORD_REJECTED",
+      "OBSERVATION_BYTE_MISMATCH_REJECTED",
+      "LEGACY_STATE_HASH_MISMATCH_REJECTED",
+      "MISSING_EXECUTION_AUTHORITY_REJECTED"
+    ]
+  },
+  "remaining_execution_gates": [
+    "PINNED_COMPILED_TRANSITION_KERNEL",
+    "RESOURCE_PREFLIGHT_AND_CAPS",
+    "RESULT_VALIDATOR",
+    "RECEIPT_CONTRACT",
+    "FINAL_EXECUTION_CLOSURE_AND_AUTHORITY"
+  ],
+  "artifact_closure": [
+    {
+      "role": "BASE_REGISTRATION",
+      "path": "experiments/paper17/mechanism/mechanism_of_transient_separation.registration-v1.json",
+      "bytes": 11902,
+      "sha256": "57e4e9d56b73b05af884f44860c472854a45897ec54f68e3ffbe41c8cbfcfadf"
+    },
+    {
+      "role": "EXECUTION_SEMANTICS_AMENDMENT",
+      "path": "experiments/paper17/mechanism/mechanism_of_transient_separation.execution-amendment-v1.json",
+      "bytes": 8244,
+      "sha256": "ba94b05d17c3f6ffab3e52f2749a52e6733617ed602d80090293c953a91c9d35"
+    },
+    {
+      "role": "HISTORICAL_RECORD_SCHEMA_REGISTRATION",
+      "path": "experiments/paper17/mechanism/mechanism_record_schema.registration-v1.json",
+      "bytes": 4639,
+      "sha256": "ea24a50afcc3ad319ed443e55317669a29c32b91863c1eb2eccfef68f4436408"
+    },
+    {
+      "role": "PAYLOAD_CODEC_REGISTRATION",
+      "path": "experiments/paper17/mechanism/mechanism_payload_codecs.registration-v1.json",
+      "bytes": 4829,
+      "sha256": "f5cbb2e2c07ecb81bd66a2d004929ab2e59896aba63012d195cdc6ff2b312e55"
+    },
+    {
+      "role": "NONTRIVIAL_CONTRAST_REGISTRATION",
+      "path": "experiments/paper17/mechanism/mechanism_nontrivial_contrast.registration-v1.json",
+      "bytes": 10729,
+      "sha256": "4690bd80a9ab619fcfd78d4e5af6c5e4e2862c41ed525c7b548ff6f653da207e"
+    },
+    {
+      "role": "COHORT_REGISTRY",
+      "path": "experiments/paper17/mechanism/results/mechanism_cohort_registry.v1.json",
+      "bytes": 12061,
+      "sha256": "a5f3ba6b6d5368f42dd713ecf0851d90819604841ea574bf4450f12eb2c9f011"
+    },
+    {
+      "role": "MICROSTATE_CODEC",
+      "path": "experiments/paper17/mechanism/exact_state_payload_v1.py",
+      "bytes": 7990,
+      "sha256": "619b34064a060eb4bc634b9579131d5faa2380f2ef320a79de661094007bdf74"
+    },
+    {
+      "role": "TRANSITION_PAYLOAD_CODECS",
+      "path": "experiments/paper17/mechanism/exact_transition_payloads_v1.py",
+      "bytes": 13197,
+      "sha256": "87793b824c284d97b05cd5d9f0c10ff781d1f3383120efc11fbc9dcf86279bab"
+    },
+    {
+      "role": "RECORD_SEMANTIC_VALIDATOR",
+      "path": "experiments/paper17/mechanism/mechanism_records_v1.py",
+      "bytes": 19293,
+      "sha256": "195e71f6bd4709e4a3cf917a82aee69a58de82b2aa1dbb8f03cbb06524716ca0"
+    },
+    {
+      "role": "EXACT_TRANSITION_KERNEL_SOURCE",
+      "path": "experiments/paper17/mechanism/mts1_exact_transition_kernel.pyx",
+      "bytes": 4516,
+      "sha256": "7894bcf2f201d82eebdfdc8b89044e2076cfceefc5e33a78b3eb1ea752040c7d"
+    },
+    {
+      "role": "EXACT_TRANSITION_KERNEL_BUILD_SCRIPT",
+      "path": "experiments/paper17/mechanism/setup_mts1_exact_transition_kernel.py",
+      "bytes": 1165,
+      "sha256": "403a4c09d3204d58aad3370e5108eeeaf19d3c07222270e165219add6e01282b"
+    },
+    {
+      "role": "SOURCE_ADDRESSED_PRODUCER",
+      "path": "experiments/paper17/mechanism/source_addressed_mechanism_producer_v1.py",
+      "bytes": 40101,
+      "sha256": "82511e5fbcbca628fd6aae3dc36cc1f92698e4884ef5ed12051b20b37d7c779d"
+    },
+    {
+      "role": "SOURCE_ADDRESSED_PRODUCER_HOSTILE_TEST",
+      "path": "experiments/paper17/mechanism/validation/test_source_addressed_mechanism_producer_v1.py",
+      "bytes": 6917,
+      "sha256": "1dcaee7495959cb9091e4c295faf968ccc64c37f60d43efb057f550a75bfcf62"
+    },
+    {
+      "role": "EXACT_TRANSITION_KERNEL_HOSTILE_TEST",
+      "path": "experiments/paper17/mechanism/validation/test_mts1_exact_transition_kernel.py",
+      "bytes": 2371,
+      "sha256": "5a7db0aadcd4c0a96eccba37a3c265b89954c66e9bce0e62bf239c07560c7421"
+    },
+    {
+      "role": "REGISTRATION_PRODUCER",
+      "path": "experiments/paper17/mechanism/create_source_addressed_producer_registration_v1.py",
+      "bytes": 8682,
+      "sha256": "84617d814585fcd05d3888a9b1040b336a186f0b88abdbeb6fd6dab451052c2a"
+    },
+    {
+      "role": "REGISTRATION_VALIDATOR",
+      "path": "experiments/paper17/mechanism/validation/validate_source_addressed_producer_registration_v1.py",
+      "bytes": 6135,
+      "sha256": "4f3d2f112b15af999563edfee1fd107f192a869c949ef9996acf498579da1a58"
+    },
+    {
+      "role": "PAPER17_OBSERVATION_CODEC_EXACT_BYTE_RELOCATION",
+      "path": "experiments/paper17/finite_history_binary.py",
+      "bytes": 7287,
+      "sha256": "dcfb87d9351a1fea3a7c080db4ca75e205bf4025bb83fbdd81876576510e753b"
+    },
+    {
+      "role": "PAPER17_RESULT_OWNED_EXACT_SIDECAR_RELOCATION",
+      "path": "experiments/paper17/results/finite_history_closure.v1.sidecar.tar",
+      "bytes": 34621440,
+      "sha256": "5ed5853b43901d927fb43d2ff1926f6bcb79343d95e15e62df8f770259c52ad9"
+    },
+    {
+      "role": "PAPER17_SIDECAR_INVENTORY_RELOCATION",
+      "path": "experiments/paper17/results/finite_history_closure.v1.sidecar-inventory.json",
+      "bytes": 812627,
+      "sha256": "d539f3ba713175e1e4b09b65382349dfb4836e7a85ff413578963e0903229892"
+    }
+  ],
+  "ordered_artifact_closure_sha256": "7448f7bc65b5dc4a4baef75bc15d0bc22eb016979194b914ec40276a7b78a5ab"
+}

@@ -1,0 +1,27 @@
+{
+  "schema": "rime.paper17.finite-history-terminal-image-audit-validation-receipt.v1",
+  "status": "PASS",
+  "validation_mode": "LOCAL_RESULT_OWNED_TERMINAL_IMAGE_REPLAY",
+  "independent_validation": false,
+  "producer_replayed": false,
+  "audit": {
+    "path": "results/finite_history_terminal_image_audit.v1.json",
+    "bytes": 2191,
+    "sha256": "1fef1226ac638a37762bc96bc4656c184760b9bfb87e6ece37eb83b9670e50ec"
+  },
+  "validator": {
+    "path": "validation/validate_finite_history_terminal_image_audit.py",
+    "sha256": "b21d0baedae9f925e925b4ea1b406a10a8b650ea1d00729b1322e767b80d2527"
+  },
+  "verified": {
+    "distinct_observations_by_time": {
+      "2": 614,
+      "3": 614,
+      "4": 614
+    },
+    "common_image_size": 1228,
+    "registered_internal_shift_count": 1,
+    "t4_intersection_with_common_image_size": 0,
+    "coarse_endomap_on_common_image_verified": false
+  }
+}

@@ -9,7 +9,7 @@ finite representation laboratory, not as a puzzle-solving problem.
 ## Public Release
 
 The current public release contains Papers I--XV, the independently scoped
-Paper XVI computational case study, and Papers XX--XXXVIII mathematical lines.
+Papers XVI--XVII computational studies, and Papers XX--XXXVIII mathematical lines.
 CCS v2.1 is published separately as an optional non-paper Computational
 Companion Archive; the immutable first combined record retains its historical
 predecessor.
@@ -32,6 +32,7 @@ predecessor.
 | Paper XIV | context- and policy-relative interpretation and bounded candidate dispositions | <https://doi.org/10.5281/zenodo.22024158> |
 | Paper XV | evidence-bound revision, supersession, and revalidation of current commitments | <https://doi.org/10.5281/zenodo.22043124> |
 | Paper XVI | structural and dynamic descent in the Male Drosophila CNS | <https://doi.org/10.5281/zenodo.22931881> |
+| Paper XVII | post-transient coarse factorization, drive-off fibers, and transition-layer contrast | <https://doi.org/10.5281/zenodo.23275058> |
 | Paper XX | all-depth carrier accessibility, survivor recursion, and image--kernel obstructions | <https://doi.org/10.5281/zenodo.22076736> |
 | Paper XXI | finite-field route profiles, prefix-pole semantics, and characteristic-aware stability | <https://doi.org/10.5281/zenodo.22078884> |
 | Paper XXII | fixed-deficit rational dynamics, anchored Farey classification, and Catalan-Fibonacci envelopes | <https://doi.org/10.5281/zenodo.22109140> |
@@ -57,9 +58,13 @@ predecessor.
 
 This is the repository's canonical DOI index. It identifies immutable
 published records; other public documents link here instead of duplicating the
-list. Papers VII--XVI and Papers XX--XXXVIII now match their published records. Their
-listed DOIs identify immutable published versions, and frozen historical
-contracts remain unchanged.
+list. Papers VII--XVII and Papers XX--XXXVIII now match their published
+records. Their listed DOIs identify immutable published versions, and frozen
+historical contracts remain unchanged.
+
+Paper XVII's tagged navigation page and manifest retain their accurate
+pre-publication candidate status. Its [post-release anchor](docs/release-anchors/paper17-v1.0.json)
+records the later DOI publication without rewriting those frozen bytes.
 
 The repository v2.1 release content is commit
 `005e2453d508ba5e12136bf9005050ac72185ae5`. The annotated tag points to the
@@ -103,13 +108,15 @@ tagged release closure.
 | XIV | [`paper14_arxiv.pdf`](papers/paper14/paper14_arxiv.pdf) | [`Paper XIV.md`](papers/paper14/Paper%20XIV.md) | How can an immutable audit be interpreted under admitted context and policy without promoting candidates into decisions or effects? |
 | XV | [`paper15_arxiv.pdf`](papers/paper15/paper15_arxiv.pdf) | [`Paper XV.md`](papers/paper15/Paper%20XV.md) | How can current commitments be revised without rewriting historical artifacts or granting feedback operational authority? |
 | XVI | [`paper16_arxiv.pdf`](papers/paper16/paper16_arxiv.pdf) | [`Paper XVI.md`](papers/paper16/Paper%20XVI.md) | Which structural and dynamic properties survive declared coarse representations of the MaleCNS connectome? |
+| XVII | [`paper17_arxiv.pdf`](papers/paper17/paper17_arxiv.pdf) | [`Paper XVII.md`](papers/paper17/Paper%20XVII.md) | When does a lossy coarse observation support exact one-step factorization after a registered transient? |
 | CCS v2.1 Archive | [`ccs_arxiv.pdf`](ccs/ccs_arxiv.pdf) | [`canonical_specification.md`](ccs/canonical_specification.md) | Optional Paper I--III reproducibility pointers, computational observations, open problems, and historical records |
 
 ### Independent Case Study and Post-Protocol Mathematical Lines
 
 Paper XVI is an independently scoped computational connectome case study. It
-does not continue the SOF protocol authority chain closed by Paper XV. Papers
-XVII--XIX remain intentionally unused in the public numbered sequence. Paper
+does not continue the SOF protocol authority chain closed by Paper XV. Paper
+XVII is a published, independently scoped computational follow-up; Papers
+XVIII--XIX remain unused in the public numbered sequence. Paper
 XX begins an independently scoped post-protocol mathematical line, and
 Paper XXI develops its finite-field route branch. Paper XXII develops the
 fixed-deficit rational branch through anchored Farey classification and
@@ -173,6 +180,7 @@ Published release identities are maintained in the canonical DOI index above.
 | Paper | Manuscript | Evidence | Scope |
 |---|---|---|---|
 | XVI | [`Paper XVI.md`](papers/paper16/Paper%20XVI.md) | [`experiments/paper16/`](experiments/paper16/) | source-addressed MaleCNS audits of structural liftability, signed dynamics, observation visibility, and coarse-state closure |
+| XVII | [`Paper XVII.md`](papers/paper17/Paper%20XVII.md) | [`experiments/paper17/00_START_HERE.md`](experiments/paper17/00_START_HERE.md) | finite post-transient coarse factorization and its effective-drive boundary; no SOF protocol succession |
 | XX | [`Paper XX.md`](papers/paper20/Paper%20XX.md) | [`experiments/paper20/`](experiments/paper20/) | all-depth carrier accessibility, survivor recursion, and exact shared-carrier controls |
 | XXI | [`Paper XXI.md`](papers/paper21/Paper%20XXI.md) | [`experiments/paper21/`](experiments/paper21/) | prefix-pole route classification, finite-field automata, and characteristic-aware stability |
 | XXII | [`Paper XXII.md`](papers/paper22/Paper%20XXII.md) | [`experiments/paper22/`](experiments/paper22/) | fixed-deficit rational dynamics, anchored Farey classification, and Catalan-Fibonacci envelopes |

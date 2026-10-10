@@ -1,0 +1,214 @@
+{
+  "schema": "rime.exploratory.male-cns.transient-separation-mechanism.execution-amendment.v1",
+  "status": "SCOPED_EXECUTION_SEMANTICS_FROZEN_AWAITING_IMPLEMENTATION_PREFLIGHT",
+  "execution_authority": "NONE",
+  "scientific_payload_generated": false,
+  "scope": [
+    "RESIDUAL_QUADRANT_INTERPRETATION",
+    "MICROSCOPIC_STATE_PAYLOAD_IDENTITY",
+    "PAIR_RECORD_ORIENTATION"
+  ],
+  "base_registration": {
+    "role": "BASE_REGISTRATION",
+    "path": "experiments/paper17/mechanism/mechanism_of_transient_separation.registration-v1.json",
+    "bytes": 11902,
+    "sha256": "57e4e9d56b73b05af884f44860c472854a45897ec54f68e3ffbe41c8cbfcfadf"
+  },
+  "residual_quadrant_contract": {
+    "vector_zero_semantics": "EXACT_ALL_COORDINATES_ZERO",
+    "labels": [
+      "RAW_ZERO__CLIP_ZERO",
+      "RAW_ZERO__CLIP_NONZERO",
+      "RAW_NONZERO__CLIP_ZERO",
+      "RAW_NONZERO__CLIP_NONZERO"
+    ],
+    "semantic_role": "EXACT_PHENOTYPE_ONLY",
+    "one_to_one_mechanism_mapping": false,
+    "quadrant_alone_may_award_mechanism_reading": false,
+    "registered_conjunctive_predicates": {
+      "CLIPPING_CREATES_COARSE_RESIDUAL": [
+        "r_raw==0",
+        "r_clip!=0",
+        "r_corr==r_clip"
+      ],
+      "CLIPPING_ELIMINATES_COARSE_RAW_RESIDUAL": [
+        "r_raw!=0",
+        "r_clip==0",
+        "r_corr==-r_raw"
+      ],
+      "CLIPPING_MODIFIES_NONZERO_COARSE_RESIDUAL": [
+        "r_raw!=0",
+        "r_clip!=0",
+        "r_corr!=0"
+      ],
+      "RAW_RESIDUAL_PERSISTS_UNCHANGED": [
+        "r_raw!=0",
+        "r_clip==r_raw",
+        "r_corr==0"
+      ],
+      "REGISTERED_SAFE_FORGETTING_GEOMETRY": [
+        "pair_role==PERSISTENT_SAFE",
+        "current_observation_equal==true",
+        "successor_observation_equal==true",
+        "microscopic_state_difference_nonzero_or_raw_drive_difference_nonzero==true"
+      ]
+    },
+    "forbidden_direct_readings": [
+      "RAW_NONZERO__CLIP_NONZERO_IMPLIES_CARRIER_MEDIATED_ONLY",
+      "RAW_ZERO__CLIP_ZERO_IMPLIES_COARSE_PUSHFORWARD_ANNIHILATION",
+      "QUADRANT_IMPLIES_BIOLOGICAL_CAUSE"
+    ]
+  },
+  "state_payload_identity": {
+    "paper17_legacy_compatibility": {
+      "role": "ANCESTRY_COMPATIBILITY_GATE_ONLY",
+      "domain_tag": null,
+      "serialization": "ascending sparse nonzero ASCII rows: coordinate<TAB>numerator<TAB>denominator<LF>",
+      "rational_normalization": "reduced numerator/positive denominator",
+      "digest_algorithm": "SHA-256",
+      "metadata_field": "state_payload_sha256_provenance_only",
+      "canonical_mts1_identity": false,
+      "digest_string_equality_is_exact_payload_proof": false,
+      "fixed_vector_sha256": "967f1b8c15221d70eff70d26047492b9fffb43bc409913e382fde458a39519a9"
+    },
+    "mts1_canonical": {
+      "schema": "rime.exploratory.male-cns.mts-microstate-payload.v1",
+      "domain_tag_ascii_with_terminal_nul": "RIME-MTS-MICROSTATE-V1\u0000",
+      "format_version": 1,
+      "registered_dimension": 211577,
+      "public_dimension_override": "REJECT_UNLESS_EQUAL_TO_REGISTERED_DIMENSION",
+      "accepted_scalar_types": [
+        "builtins.int",
+        "gmpy2.mpz",
+        "gmpy2.mpq"
+      ],
+      "explicitly_rejected_scalar_classes": [
+        "builtins.bool",
+        "builtins.float",
+        "numpy.floating",
+        "numpy.integer",
+        "builtins.str",
+        "undeclared_convertible_object"
+      ],
+      "byte_order": "BIG_ENDIAN",
+      "header": "domain_tag || uint16(version) || uint64(dimension) || uint64(nonzero_count)",
+      "entry": "uint64(coordinate) || uint8(sign) || uint32(numerator_bytes) || uint32(denominator_bytes) || numerator_magnitude || denominator_magnitude",
+      "coordinate_order": "STRICTLY_ASCENDING",
+      "coordinate_range": "0<=coordinate<dimension",
+      "positive_sign_code": 1,
+      "negative_sign_code": 2,
+      "zero_encoding": "OMITTED",
+      "rational_normalization": "gcd(abs(numerator),denominator)==1 and denominator>0",
+      "integer_magnitude_encoding": "MINIMAL_UNSIGNED_BIG_ENDIAN_NO_LEADING_ZERO",
+      "compression_in_semantic_identity": false,
+      "digest_algorithm": "SHA-256",
+      "digest_input": "COMPLETE_UNCOMPRESSED_CANONICAL_PAYLOAD_INCLUDING_DOMAIN_TAG",
+      "semantic_identity": "CANONICAL_PAYLOAD_BYTES",
+      "digest_role": "BINDING_AND_INDEX_ONLY",
+      "strict_decoder_checks": [
+        "DOMAIN_TAG",
+        "FORMAT_VERSION",
+        "REGISTERED_DIMENSION",
+        "DECLARED_NONZERO_COUNT",
+        "STRICTLY_INCREASING_COORDINATES",
+        "SIGN_CODE_IN_1_2",
+        "NONZERO_NUMERATOR_MAGNITUDE",
+        "POSITIVE_DENOMINATOR",
+        "MINIMAL_INTEGER_ENCODING",
+        "REDUCED_RATIONAL",
+        "NO_TRAILING_BYTES"
+      ],
+      "fixed_vector_dimension": 211577,
+      "fixed_vector_sha256": "cab12f802081ac3f539df7103e71275e9bae3261ab65e9636765ea6ad9ab4ae3"
+    },
+    "future_replay_acceptance": [
+      "BOUND_EXACT_PRODUCER_CONTEXT",
+      "CANONICAL_OBSERVATION_BYTES_EQUAL_PAPER17_SIDECAR",
+      "RECOMPUTED_PAPER17_LEGACY_HASH_EQUAL_METADATA",
+      "MTS1_CANONICAL_PAYLOAD_VALIDATED_AND_BOUND"
+    ],
+    "future_exact_state_equality_claim": "REQUIRES_REPLAY_OR_CANONICAL_PAYLOAD_BYTE_COMPARISON_NOT_DIGEST_ONLY"
+  },
+  "pair_orientation_contract": {
+    "input_pair_semantics": "UNORDERED_SOURCE_PAIR",
+    "source_a": "min(source_id_1,source_id_2)",
+    "source_b": "max(source_id_1,source_id_2)",
+    "signed_difference": "value(source_a)-value(source_b)",
+    "applies_to": [
+      "delta_x",
+      "delta_u",
+      "delta_c",
+      "r_raw",
+      "r_clip",
+      "r_corr",
+      "coordinatewise_difference_payloads",
+      "successor_residual"
+    ],
+    "clipping_fate_table": {
+      "rows": "source_a_fate",
+      "columns": "source_b_fate"
+    },
+    "reverse_pair_serialization_allowed": false
+  },
+  "remaining_execution_gates": [
+    "SOURCE_ADDRESSED_EXACT_MECHANISM_PRODUCER",
+    "SOURCE_TRANSITION_CACHE_SCHEMA_AND_STORAGE_POLICY",
+    "PAIR_TRANSITION_RECORD_SCHEMA",
+    "PINNED_RUNTIME_AND_BACKEND",
+    "RESOURCE_PREFLIGHT_AND_CAPS",
+    "RESULT_VALIDATOR",
+    "RECEIPT_CONTRACT",
+    "NONTRIVIAL_CONTRAST_FINITE_CLASSIFICATION"
+  ],
+  "artifact_closure": [
+    {
+      "role": "BASE_REGISTRATION",
+      "path": "experiments/paper17/mechanism/mechanism_of_transient_separation.registration-v1.json",
+      "bytes": 11902,
+      "sha256": "57e4e9d56b73b05af884f44860c472854a45897ec54f68e3ffbe41c8cbfcfadf"
+    },
+    {
+      "role": "BASE_REGISTRATION_VALIDATION_RECEIPT",
+      "path": "experiments/paper17/mechanism/results/mechanism_of_transient_separation.registration-v1.validation-receipt.json",
+      "bytes": 1869,
+      "sha256": "a2e463523e0ab4fc1dc2e776ebefb3b5b6502124ce7d68a6a7f51f405602b9e1"
+    },
+    {
+      "role": "COHORT_REGISTRY",
+      "path": "experiments/paper17/mechanism/results/mechanism_cohort_registry.v1.json",
+      "bytes": 12061,
+      "sha256": "a5f3ba6b6d5368f42dd713ecf0851d90819604841ea574bf4450f12eb2c9f011"
+    },
+    {
+      "role": "AMENDMENT_NOTE",
+      "path": "experiments/paper17/mechanism/MTS1_SCOPED_EXECUTION_AMENDMENT.md",
+      "bytes": 4328,
+      "sha256": "5d45119072b0886eb88b5209f3508a452483e30cd17269f98453924eeae94bc2"
+    },
+    {
+      "role": "CANONICAL_STATE_PAYLOAD_CODEC",
+      "path": "experiments/paper17/mechanism/exact_state_payload_v1.py",
+      "bytes": 7990,
+      "sha256": "619b34064a060eb4bc634b9579131d5faa2380f2ef320a79de661094007bdf74"
+    },
+    {
+      "role": "CANONICAL_STATE_PAYLOAD_TEST",
+      "path": "experiments/paper17/mechanism/validation/test_exact_state_payload_v1.py",
+      "bytes": 4548,
+      "sha256": "f700caee666a05a5a0bc94bacbff7eb613347ceaaee000304f1c159af2677d32"
+    },
+    {
+      "role": "AMENDMENT_PRODUCER",
+      "path": "experiments/paper17/mechanism/create_mechanism_execution_amendment_v1.py",
+      "bytes": 11823,
+      "sha256": "c39ee90ecb4d9e7756e814645115caafacd0466140e9772a1706ca0f4b067b24"
+    },
+    {
+      "role": "AMENDMENT_VALIDATOR",
+      "path": "experiments/paper17/mechanism/validation/validate_mechanism_execution_amendment_v1.py",
+      "bytes": 9597,
+      "sha256": "5898acf37ca8962b0c97148ac4136b9173277ae13a3d15a10dd25d966d56b533"
+    }
+  ],
+  "ordered_artifact_closure_sha256": "6639e981da6085b5733be5c5d778a17c5895a1873808c7ad9c021ae7889c194e"
+}

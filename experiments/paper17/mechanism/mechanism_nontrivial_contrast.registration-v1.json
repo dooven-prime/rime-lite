@@ -1,0 +1,244 @@
+{
+  "schema": "rime.exploratory.male-cns.transient-separation-mechanism.nontrivial-contrast-registration.v1",
+  "status": "NONTRIVIAL_CONTRAST_POLICY_FROZEN_AWAITING_PRODUCER_PREFLIGHT",
+  "execution_authority": "NONE",
+  "scientific_payload_generated": false,
+  "append_only_gate_resolution": {
+    "historical_record_schema_mutated": false,
+    "resolution_rule": "LATER_SOURCE_ADDRESSED_PASSING_REGISTRATION_DISCHARGES_NAMED_GATE_WITHOUT_REWRITING_PRIOR_ARTIFACT",
+    "gate_history": {
+      "RAW_DRIVE_PAYLOAD_CODEC": [
+        {
+          "state": "REQUIRED_NOT_IMPLEMENTED",
+          "artifact_sha256": "ea24a50afcc3ad319ed443e55317669a29c32b91863c1eb2eccfef68f4436408"
+        },
+        {
+          "state": "IMPLEMENTED_AND_VALIDATED",
+          "artifact_sha256": "f5cbb2e2c07ecb81bd66a2d004929ab2e59896aba63012d195cdc6ff2b312e55"
+        }
+      ],
+      "CLIPPED_DRIVE_PAYLOAD_CODEC": [
+        {
+          "state": "REQUIRED_NOT_IMPLEMENTED",
+          "artifact_sha256": "ea24a50afcc3ad319ed443e55317669a29c32b91863c1eb2eccfef68f4436408"
+        },
+        {
+          "state": "IMPLEMENTED_AND_VALIDATED",
+          "artifact_sha256": "f5cbb2e2c07ecb81bd66a2d004929ab2e59896aba63012d195cdc6ff2b312e55"
+        }
+      ],
+      "CLIPPING_FATE_PAYLOAD_CODEC": [
+        {
+          "state": "REQUIRED_NOT_IMPLEMENTED",
+          "artifact_sha256": "ea24a50afcc3ad319ed443e55317669a29c32b91863c1eb2eccfef68f4436408"
+        },
+        {
+          "state": "IMPLEMENTED_AND_VALIDATED",
+          "artifact_sha256": "f5cbb2e2c07ecb81bd66a2d004929ab2e59896aba63012d195cdc6ff2b312e55"
+        }
+      ]
+    },
+    "effective_codec_gate_state": "DISCHARGED_BY_LATER_VALIDATED_REGISTRATION"
+  },
+  "historical_dependency_path_resolution": {
+    "semantic_change": false,
+    "historical_artifacts_mutated": false,
+    "resolution_rule": "CURRENT_PATH_ACCEPTED_ONLY_WHEN_BYTES_AND_SHA256_EQUAL_HISTORICAL_BINDING",
+    "entries": [
+      {
+        "role": "PAPER17_TRANSIENT_FIBER_AUDIT",
+        "resolution": "EXACT_BYTE_RELOCATION_ONLY",
+        "historical_path": "experiments/paper17/results/finite_history_transient_fiber_audit.v1.json",
+        "current_path": "experiments/paper17/results/finite_history_transient_fiber_audit.v1.json",
+        "bytes": 15022,
+        "sha256": "9eeb3e5cc3ec3599ee7f7fe54efb0248c2471b36d322f2038409bd9656cad75a"
+      },
+      {
+        "role": "PAPER17_OBSERVATION_CODEC",
+        "resolution": "EXACT_BYTE_RELOCATION_ONLY",
+        "historical_path": "experiments/paper17/finite_history_binary.py",
+        "current_path": "experiments/paper17/finite_history_binary.py",
+        "bytes": 7287,
+        "sha256": "dcfb87d9351a1fea3a7c080db4ca75e205bf4025bb83fbdd81876576510e753b"
+      },
+      {
+        "role": "PAPER17_SECTOR_LABELS",
+        "resolution": "EXACT_BYTE_RELOCATION_ONLY",
+        "historical_path": "experiments/paper17/results/finite_history_closure.v1.sector-labels.json",
+        "current_path": "experiments/paper17/results/finite_history_closure.v1.sector-labels.json",
+        "bytes": 555,
+        "sha256": "bc0f247ad9e3b203d5d6797d35097f557807b9badee67d5a5e83f1911c9d2dbf"
+      }
+    ]
+  },
+  "predicate_contract": {
+    "primary_order": [
+      "CLIPPING_CREATES_COARSE_RESIDUAL",
+      "CLIPPING_ELIMINATES_COARSE_RAW_RESIDUAL",
+      "CLIPPING_MODIFIES_NONZERO_COARSE_RESIDUAL",
+      "RAW_RESIDUAL_PERSISTS_UNCHANGED",
+      "RAW_DRIVE_DIFFERENCE_COARSE_ANNIHILATED",
+      "MICROSCOPIC_DIFFERENCE_RAW_DRIVE_IDENTICAL",
+      "FATE_DISAGREEMENT_WITH_NONZERO_CLIP_CORRECTION"
+    ],
+    "primary_definitions": {
+      "CLIPPING_CREATES_COARSE_RESIDUAL": "r_raw==0 AND r_clip!=0 AND r_corr==r_clip",
+      "CLIPPING_ELIMINATES_COARSE_RAW_RESIDUAL": "r_raw!=0 AND r_clip==0 AND r_corr==-r_raw",
+      "CLIPPING_MODIFIES_NONZERO_COARSE_RESIDUAL": "r_raw!=0 AND r_clip!=0 AND r_corr!=0",
+      "RAW_RESIDUAL_PERSISTS_UNCHANGED": "r_raw!=0 AND r_clip==r_raw AND r_corr==0",
+      "RAW_DRIVE_DIFFERENCE_COARSE_ANNIHILATED": "raw_drive_exact_l1_difference!=0 AND r_raw==0",
+      "MICROSCOPIC_DIFFERENCE_RAW_DRIVE_IDENTICAL": "microscopic_state_exact_l1_difference!=0 AND raw_drive_exact_l1_difference==0",
+      "FATE_DISAGREEMENT_WITH_NONZERO_CLIP_CORRECTION": "off_diagonal_clipping_fate_count!=0 AND r_corr!=0"
+    },
+    "descriptive_only": {
+      "REGISTERED_SAFE_FORGETTING_GEOMETRY": "(microscopic_state_exact_l1_difference!=0 OR raw_drive_exact_l1_difference!=0) AND r_clip==0"
+    },
+    "forbidden_predicate_inputs": [
+      "pair_role",
+      "known_successor_label",
+      "defining_transition",
+      "residual_quadrant_label"
+    ],
+    "quadrant_alone_can_satisfy_nontrivial_contrast": false,
+    "identity_replay_alone_can_satisfy_nontrivial_contrast": false
+  },
+  "finite_census_contract": {
+    "required_pair_transition_records": 6975,
+    "required_transitions": [
+      "1_TO_2",
+      "2_TO_3",
+      "3_TO_4"
+    ],
+    "pair_membership": "EXACT_ALL_UNORDERED_SOURCE_PAIRS_RECONSTRUCTED_FROM_EACH_FROZEN_COHORT",
+    "comparison_cell": "ONE_TRANSITION_X_ONE_TRANSIENT_COHORT_X_ONE_PERSISTENT_COHORT_WITH_EQUAL_INITIAL_STRATUM",
+    "shared_initial_strata": [
+      "cb_intrinsic",
+      "ol_intrinsic"
+    ],
+    "registered_comparison_cells": 15,
+    "joint_signature": "ORDERED_SEVEN_BIT_PRIMARY_PREDICATE_VECTOR",
+    "distribution_comparison": "EXACT_NORMALIZED_HISTOGRAM_BY_INTEGER_CROSS_MULTIPLICATION",
+    "time_pooling": false,
+    "cohort_pooling": false,
+    "floating_tolerance": false,
+    "prevalence_threshold": null,
+    "majority_rule": null,
+    "hypothesis_test": null,
+    "statistical_significance": null
+  },
+  "outcome_contract": {
+    "EXACT_TRANSITION_LAYER_LOCALIZATION": "EXISTS_ONE_NAMED_PRIMARY_PREDICATE_ONE_TRANSITION_ONE_DIRECTION_THAT_IS_ALL_VS_NONE_IN_EVERY_SHARED_STRATUM_COHORT_COMPARISON_CELL_AT_THAT_TRANSITION",
+    "PARTIAL_REGISTERED_FEATURE_CONTRAST": "NO_EXACT_SEPARATOR_AND_AT_LEAST_ONE_EXACT_NORMALIZED_JOINT_SIGNATURE_HISTOGRAM_DIFFERS",
+    "NO_CONTRAST_IN_DECLARED_FEATURE_FAMILIES": "ALL_EXACT_NORMALIZED_JOINT_SIGNATURE_HISTOGRAMS_EQUAL",
+    "UNRESOLVED": "INCOMPLETE_OR_INVALID_CENSUS_OR_CLOSURE",
+    "highest_outcome_requires_predeclared_conjunction": true,
+    "descriptive_only_predicate_can_award_highest_outcome": false
+  },
+  "discharged_gate": "NONTRIVIAL_CONTRAST_FINITE_CLASSIFICATION",
+  "effective_remaining_execution_gates": [
+    "SOURCE_ADDRESSED_EXACT_MECHANISM_PRODUCER",
+    "PINNED_RUNTIME_AND_BACKEND",
+    "RESOURCE_PREFLIGHT_AND_CAPS",
+    "RESULT_VALIDATOR",
+    "RECEIPT_CONTRACT",
+    "FINAL_EXECUTION_CLOSURE_AND_AUTHORITY_MANIFEST"
+  ],
+  "resource_preflight_boundary": {
+    "registered_scientific_sources_allowed": false,
+    "pair_resolved_scientific_features_allowed": false,
+    "allowed_inputs": [
+      "SYNTHETIC_EXACT_STATES",
+      "FIXED_CODEC_FIXTURES",
+      "NON_COHORT_ENGINEERING_BENCHMARK_SOURCES",
+      "STATIC_CSR_AND_OPERATOR_SIZE",
+      "REGISTERED_ENVELOPE_STORAGE_CALCULATIONS"
+    ]
+  },
+  "artifact_closure": [
+    {
+      "role": "BASE_MECHANISM_REGISTRATION",
+      "path": "experiments/paper17/mechanism/mechanism_of_transient_separation.registration-v1.json",
+      "bytes": 11902,
+      "sha256": "57e4e9d56b73b05af884f44860c472854a45897ec54f68e3ffbe41c8cbfcfadf"
+    },
+    {
+      "role": "HISTORICAL_RECORD_SCHEMA_REGISTRATION",
+      "path": "experiments/paper17/mechanism/mechanism_record_schema.registration-v1.json",
+      "bytes": 4639,
+      "sha256": "ea24a50afcc3ad319ed443e55317669a29c32b91863c1eb2eccfef68f4436408"
+    },
+    {
+      "role": "RECORD_SCHEMA_VALIDATION_RECEIPT",
+      "path": "experiments/paper17/mechanism/results/mechanism_record_schemas.v1.validation-receipt.json",
+      "bytes": 1946,
+      "sha256": "cd5a4efa2fec089536be2ad9d8aae134efbc9e46cf784eff0327dc1374cd5dd9"
+    },
+    {
+      "role": "LATER_CODEC_REGISTRATION",
+      "path": "experiments/paper17/mechanism/mechanism_payload_codecs.registration-v1.json",
+      "bytes": 4829,
+      "sha256": "f5cbb2e2c07ecb81bd66a2d004929ab2e59896aba63012d195cdc6ff2b312e55"
+    },
+    {
+      "role": "CODEC_VALIDATION_RECEIPT",
+      "path": "experiments/paper17/mechanism/results/mechanism_payload_codecs.v1.validation-receipt.json",
+      "bytes": 1583,
+      "sha256": "ade80e8c262b46d070975c81cd7bbeaf80f6ed1b8ccc4a9c3886b6de658a3fe1"
+    },
+    {
+      "role": "COHORT_REGISTRY",
+      "path": "experiments/paper17/mechanism/results/mechanism_cohort_registry.v1.json",
+      "bytes": 12061,
+      "sha256": "a5f3ba6b6d5368f42dd713ecf0851d90819604841ea574bf4450f12eb2c9f011"
+    },
+    {
+      "role": "NONTRIVIAL_CONTRAST_NOTE",
+      "path": "experiments/paper17/mechanism/MTS1_NONTRIVIAL_CONTRAST.md",
+      "bytes": 3391,
+      "sha256": "7d54ac34a31539b03f721b8d90e63f1a9923e826fb1ddfaa579ac7f3aa651966"
+    },
+    {
+      "role": "NONTRIVIAL_CONTRAST_CLASSIFIER",
+      "path": "experiments/paper17/mechanism/nontrivial_contrast_v1.py",
+      "bytes": 14364,
+      "sha256": "1d930f799a1e39130213a2d11e3685ccc424d0d2ece50c77cc0b32f8ef03cb04"
+    },
+    {
+      "role": "NONTRIVIAL_CONTRAST_SYNTHETIC_TEST",
+      "path": "experiments/paper17/mechanism/validation/test_nontrivial_contrast_v1.py",
+      "bytes": 9648,
+      "sha256": "5ab0ef38720a8b726929e7738ff2c6439a975faf7a9cadc8b99b495a62461054"
+    },
+    {
+      "role": "NONTRIVIAL_CONTRAST_REGISTRATION_PRODUCER",
+      "path": "experiments/paper17/mechanism/create_nontrivial_contrast_registration_v1.py",
+      "bytes": 11411,
+      "sha256": "e4d78c1f59f1f5e3137953a3ef2a0b784ba2d90e094933209b93c75a0e2e3c5f"
+    },
+    {
+      "role": "NONTRIVIAL_CONTRAST_REGISTRATION_VALIDATOR",
+      "path": "experiments/paper17/mechanism/validation/validate_nontrivial_contrast_registration_v1.py",
+      "bytes": 11983,
+      "sha256": "87f28ce04f45461d8a2135c4ea552994dac70415c8f3e5ccd6ce9eed25691a98"
+    },
+    {
+      "role": "CURRENT_EXACT_TRANSIENT_FIBER_AUDIT_BYTES",
+      "path": "experiments/paper17/results/finite_history_transient_fiber_audit.v1.json",
+      "bytes": 15022,
+      "sha256": "9eeb3e5cc3ec3599ee7f7fe54efb0248c2471b36d322f2038409bd9656cad75a"
+    },
+    {
+      "role": "CURRENT_EXACT_OBSERVATION_CODEC_BYTES",
+      "path": "experiments/paper17/finite_history_binary.py",
+      "bytes": 7287,
+      "sha256": "dcfb87d9351a1fea3a7c080db4ca75e205bf4025bb83fbdd81876576510e753b"
+    },
+    {
+      "role": "CURRENT_EXACT_SECTOR_LABEL_BYTES",
+      "path": "experiments/paper17/results/finite_history_closure.v1.sector-labels.json",
+      "bytes": 555,
+      "sha256": "bc0f247ad9e3b203d5d6797d35097f557807b9badee67d5a5e83f1911c9d2dbf"
+    }
+  ],
+  "ordered_artifact_closure_sha256": "c26a54e8f51e87dbac39170e3026366fa60cc094d60cb1750f5c45f0a3452773"
+}

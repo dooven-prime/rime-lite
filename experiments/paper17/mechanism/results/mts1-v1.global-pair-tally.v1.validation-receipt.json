@@ -1,0 +1,22 @@
+{
+  "schema": "rime.paper17.mts1-global-pair-tally-validation-receipt.v1",
+  "status": "PASS",
+  "validation_mode": "LOCAL_EXACT_PAIR_SHARD_REPLAY",
+  "independent_validation": false,
+  "source_producer_replayed": false,
+  "result": {
+    "path": "experiments/paper17/mechanism/results/mts1-v1.global-pair-tally.v1.json",
+    "bytes": 25544,
+    "sha256": "6c5bc297fc5f238e8bcd73bf6d53ae538db708537c7abeabf505f0d752a8bdf2"
+  },
+  "validator": {
+    "path": "experiments/paper17/mechanism/audit_global_pair_tally_v1.py",
+    "bytes": 9540,
+    "sha256": "dbc7c1ef0aaa665848c035e4d274b7c3634479029b427de2e9869343c1c34191"
+  },
+  "verified": {
+    "pair_shards": 33,
+    "pair_transition_records": 6975,
+    "global_post_separation_separator": true
+  }
+}

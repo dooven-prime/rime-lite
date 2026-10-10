@@ -1,0 +1,92 @@
+{
+  "schema": "rime.exploratory.male-cns-dynamic-compression.finite-history-scope.v1",
+  "status": "SCOPE_INSTANTIATED_AWAITING_RUNNER_AND_PREFLIGHT",
+  "execution_authority": "NONE",
+  "domain": {
+    "mode": "REDUCED_STRATIFIED_HASH_D0",
+    "source_count": 711,
+    "nonempty_superclass_strata": 25,
+    "claim_scope": "registered reduced domain only"
+  },
+  "orbit_window_rectangle": {
+    "maximum_history_order_H": 2,
+    "orbit_horizon_T": 4,
+    "orders": [0, 1, 2],
+    "maximum_order_window_count_per_source": 2,
+    "maximum_order_internal_shift_count_per_source": 1,
+    "richness_R": 2,
+    "derivation": "H=2 is the frozen baseline new order; T=H+R=4",
+    "depth_above_four_calibration_used": false
+  },
+  "resource_admission": {
+    "core_capacity_sources": 993,
+    "wall_capacity_sources": 711,
+    "selected_source_count": 711,
+    "selected_domain_predicted_core_hours": "24.2",
+    "selected_domain_predicted_wall_hours": "8.4",
+    "core_and_wall_admitted": true,
+    "ram_preflight_complete": false,
+    "storage_preflight_complete": false
+  },
+  "bindings": [
+    {
+      "role": "GROSS_BUDGET",
+      "path": "gross_compute_budget.v1.json",
+      "bytes": 2682,
+      "sha256": "6b16936bcabc80a91ee000a282bcf0f77b97deb6f19ff4cb3a84c31caaaa3bed"
+    },
+    {
+      "role": "RICHNESS",
+      "path": "finite_history_richness.v1.json",
+      "bytes": 1846,
+      "sha256": "a39692b22585d750d07ffacdc26cf16accb2914ce6fa63ab6d776a34becfae79"
+    },
+    {
+      "role": "COST_ENVELOPE",
+      "path": "finite_history_d0_cost_envelope.v1.json",
+      "bytes": 4329,
+      "sha256": "0dc1844f939cc2b9c978f1fd00d87b66d74ae24584e5194b003fb542560802cd"
+    },
+    {
+      "role": "COST_ENVELOPE_RECEIPT",
+      "path": "finite_history_d0_cost_envelope.v1.validation-receipt.json",
+      "bytes": 1201,
+      "sha256": "d206b52ec24799ec338ea20a54093cadbf2e945976c803f94784a7d0b43d450e"
+    },
+    {
+      "role": "D0_ADMISSION",
+      "path": "results/finite_history_D0_admission.v1.json",
+      "bytes": 2957,
+      "sha256": "c1735202657b3ee92449eacdbbf32a401e475eeb77b70e8f63c4e34b3b9dbf0e"
+    },
+    {
+      "role": "D0_ADMISSION_RECEIPT",
+      "path": "results/finite_history_D0_admission.v1.validation-receipt.json",
+      "bytes": 1180,
+      "sha256": "83c2353ce68848df4b68e706223c06707b9bd9101573ca5bce8c3816c01acf8c"
+    },
+    {
+      "role": "D0_INDEX",
+      "path": "results/finite_history_D0.v1.npy",
+      "bytes": 5816,
+      "sha256": "ca12e0e36e925cbb408f79e01979f0e0ee94407631b9eb269fe11171de2a733b"
+    }
+  ],
+  "resource_coverage": {
+    "core_hours": "ADMITTED_BY_FROZEN_MODEL",
+    "wall_clock": "ADMITTED_BY_FROZEN_MODEL",
+    "peak_ram": "PENDING_STATIC_RUNNER_PREFLIGHT_UNDER_32_GIB_HARD_CAP",
+    "incremental_storage": "PENDING_STATIC_RUNNER_PREFLIGHT_UNDER_100_GIB_HARD_CAP",
+    "preflight_failure_action": "UNRESOLVED_WITHOUT_D0_RESIZE"
+  },
+  "claim_boundary": {
+    "orbit_generated": false,
+    "history_grouping_performed": false,
+    "closure_classified": false,
+    "minimal_order_claimed": false,
+    "full_domain_claimed": false,
+    "D0_resize_allowed": false,
+    "runner_may_be_implemented_after_scope_instantiation": true,
+    "execution_requires_runner_preflight_and_separate_registration": true
+  }
+}

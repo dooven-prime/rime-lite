@@ -1,0 +1,89 @@
+{
+  "schema": "rime.exploratory.male-cns-dynamic-compression.D0-admission.v1",
+  "status": "D0_ADMITTED",
+  "execution_authority": "NONE_SCOPE_DERIVATION_ONLY",
+  "mode": "REDUCED_STRATIFIED_HASH_D0",
+  "baseline_scope": {
+    "H_floor": 2,
+    "T_floor": 4
+  },
+  "budget": {
+    "path": "gross_compute_budget.v1.json",
+    "sha256": "6b16936bcabc80a91ee000a282bcf0f77b97deb6f19ff4cb3a84c31caaaa3bed"
+  },
+  "richness": {
+    "path": "finite_history_richness.v1.json",
+    "sha256": "a39692b22585d750d07ffacdc26cf16accb2914ce6fa63ab6d776a34becfae79"
+  },
+  "source_universe": {
+    "path": "results/finite_history_source_universe.v1.json",
+    "sha256": "fc36036774240bf5ce52e2168e0a07af934c63d94ea9338bbb7a2c3da0e2e351"
+  },
+  "cost_envelope": {
+    "path": "finite_history_d0_cost_envelope.v1.json",
+    "sha256": "0dc1844f939cc2b9c978f1fd00d87b66d74ae24584e5194b003fb542560802cd"
+  },
+  "resource_admission": {
+    "core_capacity_sources": 993,
+    "wall_capacity_sources": 711,
+    "selected_source_count": 711,
+    "full_domain_core_hour_admissible": false,
+    "full_domain_wall_clock_admissible": false,
+    "full_domain_admissible": false,
+    "full_domain_predicted_core_hours": "5448.466666666666666666666667",
+    "full_domain_predicted_wall_hours": "1816.488888888888888888888889",
+    "selected_domain_predicted_core_hours": "24.2",
+    "selected_domain_predicted_wall_hours": "8.4"
+  },
+  "selection": {
+    "source_count": 711,
+    "source_order": "ascending node index in materialized artifact",
+    "membership_rule": "superclass-stratified largest-remainder quotas; SHA-256 rank within stratum",
+    "hash_prefix": "RIME_DC_D0_V1|",
+    "stratum_quotas": {
+      "<missing>": 5,
+      "ascending_neuron": 9,
+      "cb_endocrine": 1,
+      "cb_intrinsic": 133,
+      "cb_motor": 1,
+      "cb_sensory": 21,
+      "cb_sensory_tbc": 1,
+      "descending_neuron": 6,
+      "descending_neuron_tbc": 1,
+      "efferent_ascending": 1,
+      "efferent_descending": 1,
+      "ol_intrinsic": 373,
+      "ol_sensory": 26,
+      "sensory_ascending": 3,
+      "sensory_ascending_tbc": 1,
+      "sensory_descending": 1,
+      "visual_centrifugal": 3,
+      "visual_projection": 38,
+      "visual_projection_tbc": 1,
+      "vnc_efferent": 1,
+      "vnc_intrinsic": 55,
+      "vnc_motor": 2,
+      "vnc_sensory": 25,
+      "vnc_sensory_tbc": 1,
+      "vnc_tbc": 1
+    },
+    "outcome_behavior_or_closure_access": false
+  },
+  "D0_index_artifact": {
+    "path": "results/finite_history_D0.v1.npy",
+    "bytes": 5816,
+    "sha256": "ca12e0e36e925cbb408f79e01979f0e0ee94407631b9eb269fe11171de2a733b",
+    "dtype": "int64",
+    "shape": [
+      711
+    ]
+  },
+  "claim_boundary": {
+    "orbit_generated": false,
+    "closure_grouping_performed": false,
+    "H_or_T_finalized": false,
+    "full_domain_claim": false,
+    "reduced_domain_claim_required": true
+  },
+  "result_content_sha256": "d9cbfa6772a2da4e03c1fb7498032f0e72b1a382d1d14ca1299ef6ed88f80061"
+}

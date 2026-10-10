@@ -1,0 +1,29 @@
+{
+  "schema": "rime.exploratory.male-cns-dynamic-compression.finite-history-freeze-validation-receipt.v1",
+  "status": "PASS",
+  "validation_mode": "LOCAL_RESULT_OWNED_EXACT_SIDECAR_REPLAY",
+  "independent_validation": false,
+  "producer_replayed": false,
+  "freeze_manifest": {
+    "path": "results/finite_history_closure.v1.freeze-manifest.json",
+    "bytes": 227998,
+    "sha256": "da8d94d619faf02727f9edc65872be391580847fd369d01da787278045bbd903"
+  },
+  "validator": {
+    "path": "validation/validate_finite_history_closure_freeze.py",
+    "sha256": "6aaa36476eab0358961d450b5fec1d69ee530e48c7d5ebb2105699b967d83079"
+  },
+  "verified": {
+    "archive_member_count": 1425,
+    "source_count": 711,
+    "orders": [
+      0,
+      1,
+      2
+    ],
+    "primary_outcome": "EXACT_CLOSED_NONINJECTIVE",
+    "minimal_closing_order_on_registered_domain": 2,
+    "classification_replayed_from_result_owned_archive": true,
+    "runtime_work_required_for_replay": false
+  }
+}

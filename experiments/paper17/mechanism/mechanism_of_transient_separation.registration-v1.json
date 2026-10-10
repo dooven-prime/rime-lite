@@ -1,0 +1,327 @@
+{
+  "schema": "rime.exploratory.male-cns.transient-separation-mechanism.registration.v1",
+  "status": "REGISTERED_AWAITING_IMPLEMENTATION_PREFLIGHT",
+  "execution_authority": "NONE",
+  "registration_kind": "POST_RESULT_MECHANISM_REGISTRATION",
+  "program": {
+    "name": "Internal Mechanism of Equivalence Remodeling",
+    "short_name": "MTS-1",
+    "question": "Why do the registered unsafe fibers separate while disjoint persistent fibers remain safely indistinguishable?",
+    "paper17_status": "HELD_DRAFT_AWAITING_MECHANISM_INTEGRATION",
+    "paper17_reopened": false,
+    "paper17_evidence_surface_modified": false
+  },
+  "registered_universe": {
+    "cohort_registry": {
+      "role": "MECHANISM_COHORT_REGISTRY",
+      "path": "experiments/paper17/mechanism/results/mechanism_cohort_registry.v1.json",
+      "bytes": 12061,
+      "sha256": "a5f3ba6b6d5368f42dd713ecf0851d90819604841ea574bf4450f12eb2c9f011"
+    },
+    "transient_sources": 51,
+    "transient_fibers": 6,
+    "transient_pairs": 570,
+    "persistent_sources": 102,
+    "persistent_cohorts": 5,
+    "persistent_pairs": 1755,
+    "analysis_unit": "UNORDERED_SOURCE_PAIR_WITHIN_A_REGISTERED_FIBER_OR_COHORT",
+    "statistical_inference": "NONE_FINITE_EXACT_CENSUS",
+    "pair_orientation": {
+      "source_a": "min(source_id_1,source_id_2)",
+      "source_b": "max(source_id_1,source_id_2)",
+      "signed_difference": "value(source_a)-value(source_b)",
+      "clipping_fate_table": "rows=source_a_fate;columns=source_b_fate"
+    }
+  },
+  "dynamics": {
+    "carrier": "Y_known_pm",
+    "normalized_operator_sha256": "7b761fdb1f816bb4ca9045d27397f58d35bbb0a72739cf0726b9abd548e03073",
+    "storage": "SOURCE_ROW_TARGET_COLUMN",
+    "action": "INCOMING_EQUALS_Y_TRANSPOSE_TIMES_X",
+    "equation": "x_next=(4/5)*x+(1/5)*clip(Y_transpose*x)",
+    "clip": "clip(q)=min(1,max(0,q)) coordinatewise",
+    "observation": "superclass mean",
+    "arithmetic": "EXACT_REDUCED_RATIONAL"
+  },
+  "system_boundary": {
+    "environment_state_present": false,
+    "external_input": "EXACT_ZERO",
+    "stochastic_noise": "NONE",
+    "sensory_world_present": false,
+    "action_loop_present": false,
+    "external_feedback_present": false,
+    "allowed_interpretation": "SYSTEM_INTERNAL_EQUIVALENCE_REMODELING",
+    "canonical_statement": "the registered internal dynamics transforms microscopic distinctions into different coarse equivalence fates",
+    "forbidden_interpretations": [
+      "WORLD_CORRECTION",
+      "ENVIRONMENTAL_ADJUDICATION",
+      "EXTERNALLY_INDUCED_SEPARATION",
+      "WORLD_SELECTIVE_STABILIZATION"
+    ]
+  },
+  "comparison_design": {
+    "defining_transient_transition": "1_TO_2",
+    "defining_persistent_transitions": [
+      "2_TO_3",
+      "3_TO_4"
+    ],
+    "common_transition_grid_for_both_roles": [
+      "1_TO_2",
+      "2_TO_3",
+      "3_TO_4"
+    ],
+    "current_observation_equality_recorded_per_pair_transition": true,
+    "direct_cross_role_contrast_requires_shared_initial_stratum": true,
+    "shared_initial_strata": [
+      "cb_intrinsic",
+      "ol_intrinsic"
+    ],
+    "dynamic_time_pooling_forbidden": true,
+    "cohort_pooling_forbidden": true
+  },
+  "exact_layer_equations": {
+    "raw_drive": "u_t=Y_known_pm_transpose*x_t",
+    "clipped_drive": "c_t=clip(u_t)",
+    "state_update": "x_(t+1)=(4/5)*x_t+(1/5)*c_t",
+    "pair_successor": "delta_z_(t+1)=(4/5)*O(delta_x_t)+(1/5)*O(delta_c_t)",
+    "fiber_reduction": "if O(delta_x_t)=0 then delta_z_(t+1)=(1/5)*O(delta_c_t)",
+    "raw_residual": "r_raw=O(delta_u_t)",
+    "clipped_residual": "r_clip=O(delta_c_t)",
+    "clipping_correction": "r_corr=r_clip-r_raw",
+    "registered_raw_clip_classes": [
+      "RAW_ZERO__CLIP_ZERO",
+      "RAW_ZERO__CLIP_NONZERO",
+      "RAW_NONZERO__CLIP_ZERO",
+      "RAW_NONZERO__CLIP_NONZERO"
+    ],
+    "class_semantics": "EXACT_PHENOTYPE_ONLY",
+    "one_to_one_mechanism_mapping": false,
+    "mechanism_reading_requires_registered_conjunction": true
+  },
+  "producer_architecture": {
+    "paper17_sidecar_contains_microscopic_state": false,
+    "paper17_sidecar_role": "EXACT_OBSERVATION_AND_STATE_DIGEST_CROSSCHECK",
+    "selected_source_count": 153,
+    "current_times": [
+      1,
+      2,
+      3
+    ],
+    "source_transition_cache_record_count": 459,
+    "pair_count": 2325,
+    "pair_transition_record_count": 6975,
+    "operator_action_computed_once_per_source_transition": true,
+    "operator_action_recomputed_per_pair": false,
+    "required_replay_checks": [
+      "CANONICAL_OBSERVATION_BYTES_EQUAL_PAPER17_SIDECAR",
+      "PAPER17_LEGACY_STATE_HASH_EQUAL_PAPER17_METADATA",
+      "MTS1_CANONICAL_MICROSTATE_PAYLOAD_GENERATED"
+    ],
+    "paper17_state_hash_role": "ANCESTRY_COMPATIBILITY_GATE_ONLY",
+    "mts1_state_identity_role": "DOMAIN_TAGGED_CANONICAL_PAYLOAD",
+    "source_transition_cache_fields": [
+      "x_t",
+      "u_t",
+      "clip_u_t",
+      "O_x_t",
+      "O_u_t",
+      "O_clip_u_t",
+      "per_target_clipping_fate",
+      "exact_payload_digests"
+    ]
+  },
+  "registered_feature_families": {
+    "MICROSCOPIC_STATE_GEOMETRY": [
+      "support_intersection_count",
+      "support_union_count",
+      "support_symmetric_difference_count",
+      "exact_l1_difference",
+      "target_sector_decomposition"
+    ],
+    "RAW_SIGNED_DRIVE_GEOMETRY": [
+      "support_intersection_count",
+      "support_union_count",
+      "support_symmetric_difference_count",
+      "exact_l1_difference",
+      "r_raw"
+    ],
+    "CLIPPING_FATE_GEOMETRY": [
+      "pairwise_3x3_fate_table",
+      "r_clip",
+      "r_corr"
+    ],
+    "COARSE_PUSHFORWARD_GEOMETRY": [
+      "current_observation",
+      "successor_observation",
+      "differing_coordinate_support",
+      "exact_successor_residual"
+    ],
+    "SOURCE_LOCAL_CARRIER_DESCRIPTORS": [
+      "initial_sector_label",
+      "known_sign_out_degree",
+      "known_sign_positive_out_degree",
+      "known_sign_negative_out_degree",
+      "known_sign_outgoing_positive_mass",
+      "known_sign_outgoing_negative_absolute_mass",
+      "known_sign_outgoing_absolute_mass"
+    ]
+  },
+  "certificate_conditions": {
+    "IDENTITY_LAYER_REPLAY": {
+      "required": true,
+      "identity": "r_clip=5*delta_z_next on every current-observation fiber",
+      "role": "IMPLEMENTATION_AND_CERTIFICATE_CONDITION_ONLY",
+      "scientific_outcome": false
+    },
+    "NONTRIVIAL_REGISTERED_CONTRAST": {
+      "required_for_exact_transition_layer_localization": true,
+      "allowed_inputs": [
+        "r_raw",
+        "r_corr",
+        "MICROSCOPIC_STATE_GEOMETRY",
+        "RAW_SIGNED_DRIVE_GEOMETRY",
+        "pairwise_3x3_fate_table"
+      ],
+      "forbidden_as_sole_basis": [
+        "r_clip",
+        "delta_z_next",
+        "known_successor_label",
+        "any_algebraically_equivalent_encoding_of_these_fields"
+      ],
+      "predicate_or_threshold_must_precede_mechanism_payload_generation": true
+    }
+  },
+  "exactness": {
+    "floating_tolerance_allowed": false,
+    "hash_role": "INDEX_ONLY",
+    "canonical_rational_payload_comparison_required": true,
+    "sign_and_clip_branch": "EXACT_RATIONAL_COMPARISON"
+  },
+  "outcomes": [
+    "EXACT_TRANSITION_LAYER_LOCALIZATION",
+    "PARTIAL_REGISTERED_FEATURE_CONTRAST",
+    "NO_CONTRAST_IN_DECLARED_FEATURE_FAMILIES",
+    "UNRESOLVED"
+  ],
+  "outcome_requirements": {
+    "EXACT_TRANSITION_LAYER_LOCALIZATION": [
+      "IDENTITY_LAYER_REPLAY_PASS",
+      "NONTRIVIAL_REGISTERED_CONTRAST_PASS",
+      "COMPLETE_6975_RECORD_CENSUS"
+    ],
+    "identity_replay_alone_awards_highest_outcome": false,
+    "residual_quadrant_alone_awards_mechanism_reading": false
+  },
+  "required_before_execution": [
+    "SOURCE_ADDRESSED_EXACT_MECHANISM_PRODUCER",
+    "PINNED_RUNTIME_AND_BACKEND",
+    "RESOURCE_PREFLIGHT_AND_CAPS",
+    "OUTPUT_SCHEMA",
+    "RESULT_VALIDATOR",
+    "RECEIPT_CONTRACT",
+    "NONTRIVIAL_CONTRAST_PREDICATE_OR_FINITE_CLASSIFICATION",
+    "SCOPED_EXECUTION_AMENDMENT",
+    "CANONICAL_MICROSTATE_PAYLOAD_CONTRACT"
+  ],
+  "temporal_boundary": {
+    "paper17_outcomes_visible_before_registration": true,
+    "aggregate_support_and_clipping_summaries_visible_before_registration": true,
+    "new_pair_resolved_drive_or_clip_decomposition_generated": false,
+    "outcome_blind_preregistration_claimed": false
+  },
+  "claim_boundaries": {
+    "biological_causal_mechanism": false,
+    "world_correction": false,
+    "external_adjudication": false,
+    "environment_feedback": false,
+    "microscopic_convergence": false,
+    "clipping_biological_cause": false,
+    "slow_mode_or_recurrent_input_mechanism": false,
+    "population_prevalence": false,
+    "statistical_significance": false,
+    "full_domain": false,
+    "beyond_registered_horizon": false,
+    "independent_validation": false
+  },
+  "deferred_program": {
+    "name": "MTS-2: External Adjudication of Equivalence",
+    "status": "NOT_REGISTERED",
+    "execution_authority": "NONE",
+    "minimum_design": "MATCHED_AUTONOMOUS_VS_EXTERNALLY_DRIVEN_DYNAMICS",
+    "inherits_mts1_execution_authority": false
+  },
+  "artifact_closure": [
+    {
+      "role": "README",
+      "path": "experiments/paper17/mechanism/README.md",
+      "bytes": 7165,
+      "sha256": "2c82752ff1f19f5b2a1de311f7022bed4c7adbea59f794f75d4ce7fa8c659909"
+    },
+    {
+      "role": "DESIGN_NOTE",
+      "path": "experiments/paper17/mechanism/MECHANISM_OF_TRANSIENT_SEPARATION.md",
+      "bytes": 13403,
+      "sha256": "85a43e06ea526de04c79f10892f31b5232be3d86a41da5ec5e6884ba29e4127f"
+    },
+    {
+      "role": "REGISTRATION_PRODUCER",
+      "path": "experiments/paper17/mechanism/create_mechanism_registration_v1.py",
+      "bytes": 22347,
+      "sha256": "eb759d6d0f642eda29144905c32982453ea30f40c0539942443bb32b7ec1d745"
+    },
+    {
+      "role": "REGISTRATION_VALIDATOR",
+      "path": "experiments/paper17/mechanism/validation/validate_mechanism_of_transient_separation_registration.py",
+      "bytes": 12250,
+      "sha256": "35a588e20a179b5e957fbee2e6290b45f00dd25026309fa7bffd37943cfea07d"
+    },
+    {
+      "role": "MECHANISM_COHORT_REGISTRY",
+      "path": "experiments/paper17/mechanism/results/mechanism_cohort_registry.v1.json",
+      "bytes": 12061,
+      "sha256": "a5f3ba6b6d5368f42dd713ecf0851d90819604841ea574bf4450f12eb2c9f011"
+    },
+    {
+      "role": "PAPER17_TRANSIENT_FIBER_AUDIT",
+      "path": "experiments/paper17/results/finite_history_transient_fiber_audit.v1.json",
+      "bytes": 15022,
+      "sha256": "9eeb3e5cc3ec3599ee7f7fe54efb0248c2471b36d322f2038409bd9656cad75a"
+    },
+    {
+      "role": "PAPER17_COMMON_SUPPORT_AUDIT",
+      "path": "experiments/paper17/results/finite_history_common_support_audit.v1.json",
+      "bytes": 5771,
+      "sha256": "e7268eec14d77a53502d969266b158675614fcc9580ebaebfd8130eabb48db10"
+    },
+    {
+      "role": "PAPER17_RESULT_OWNED_EXACT_SIDECAR",
+      "path": "experiments/paper17/results/finite_history_closure.v1.sidecar.tar",
+      "bytes": 34621440,
+      "sha256": "5ed5853b43901d927fb43d2ff1926f6bcb79343d95e15e62df8f770259c52ad9"
+    },
+    {
+      "role": "PAPER17_D0_INDEX",
+      "path": "experiments/paper17/results/finite_history_D0.v1.npy",
+      "bytes": 5816,
+      "sha256": "ca12e0e36e925cbb408f79e01979f0e0ee94407631b9eb269fe11171de2a733b"
+    },
+    {
+      "role": "PAPER17_SECTOR_LABELS",
+      "path": "experiments/paper17/results/finite_history_closure.v1.sector-labels.json",
+      "bytes": 555,
+      "sha256": "bc0f247ad9e3b203d5d6797d35097f557807b9badee67d5a5e83f1911c9d2dbf"
+    },
+    {
+      "role": "PAPER17_FREEZE_MANIFEST",
+      "path": "experiments/paper17/results/finite_history_closure.v1.freeze-manifest.json",
+      "bytes": 227998,
+      "sha256": "da8d94d619faf02727f9edc65872be391580847fd369d01da787278045bbd903"
+    },
+    {
+      "role": "PAPER17_CANONICAL_BINARY_CODEC",
+      "path": "experiments/paper17/finite_history_binary.py",
+      "bytes": 7287,
+      "sha256": "dcfb87d9351a1fea3a7c080db4ca75e205bf4025bb83fbdd81876576510e753b"
+    }
+  ]
+}
