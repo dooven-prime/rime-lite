@@ -10,10 +10,11 @@ lines. CCS v2.1 is an optional non-paper archive.
 Publication identities and DOIs are maintained only in the root
 [Public Release table](../README.md#public-release).
 
-The current typed stack includes the frozen Registry v2.0 snapshot and the
-published SOFRS v2.0, SOFAUDIT v2.0, and SOFAction v2.0 contracts. Retained v1
-artifacts remain immutable. Semantic changes to published contracts require a
-versioned reopening rather than a silent documentation edit.
+The current typed stack retains the frozen Registry v2.0 snapshot alongside
+the separately versioned Registry v2.1 candidate. SOFRS, SOFAUDIT, and
+SOFAction have published v2.1 contracts; their v2.0 and earlier artifacts
+remain immutable. Semantic changes to published contracts require a versioned
+reopening rather than a silent documentation edit.
 
 For the narrative architecture, see [PROGRAM_MAP.md](PROGRAM_MAP.md). Detailed
 Papers I--VII interfaces and promotion limits are indexed in

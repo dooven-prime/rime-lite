@@ -17,6 +17,7 @@ Publication identities and DOIs are maintained only in the root
 | Check controlled cross-paper terminology | [PROGRAM_VOCABULARY.md](PROGRAM_VOCABULARY.md) |
 | See which paper owns each object and claim | [PAPER_SCOPE.md](PAPER_SCOPE.md) |
 | Understand why Rubik is used as a finite laboratory | [PROGRAM_PHILOSOPHY.md](PROGRAM_PHILOSOPHY.md) |
+| Audit a proposed cross-type claim strengthening | [PROMOTION_AUDIT.md](PROMOTION_AUDIT.md) |
 
 ## Foundational References
 

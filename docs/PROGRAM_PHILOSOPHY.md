@@ -93,6 +93,10 @@ These tools check declared transitions and boundaries. They do not infer
 theorem truth from a successful computation, equate a certificate with a
 proof, or create a new numbered protocol layer.
 
+The [promotion audit](PROMOTION_AUDIT.md) is the public working record for
+checking a particular cross-type inference. It does not replace the owning
+paper's hypotheses, proof, or claim status.
+
 ---
 
 ## Two-Layer Unity and the Typed Middle
@@ -179,7 +183,7 @@ This is the current clean separation:
 | Audit Comparison | Paper XIII contribution | aligns two reports and emits a sparse typed comparison object |
 | Action Semantics | Paper XIV contribution | interprets immutable audit coordinates under an admitted `ActionContext` and `PolicyProfile` and stops at bounded candidates |
 | Corrigible Interface | Paper XV contribution | revises current-use commitments without rewriting immutable history or adding execution authority |
-| Post-Protocol Mathematics | Papers XX--XXVI | develops independently scoped carrier, route, arithmetic, descent, diagnostic, and stochastic-transfer theorems without extending protocol authority |
+| Post-Protocol Mathematics | Papers XX--XXXVIII | develops independently scoped carrier, route, contextual-descent, diagnostic, and synchronizing-automata theorems without extending protocol authority |
 
 The novelty of RIME is not the existence of a semisimple block decomposition.
 That is the classical input for representation-derived examples. The novelty
