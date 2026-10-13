@@ -1,0 +1,55 @@
+{
+  "schema": "rime.formal-case-lock.v1",
+  "case_id": "fibre-criterion-v1",
+  "status": "CANDIDATE_NOT_RELEASED",
+  "source_relation": "Exact-byte copy of a local ignored draft file; the packaged source is the only candidate input, and the ignored path is not a public dependency.",
+  "toolchain": {
+    "elan_id": "leanprover/lean4:v4.33.0",
+    "lean_version": "4.33.0",
+    "lean_commit": "d8b18978322de05a8f3dba51ef03cf5461676c17",
+    "imports": ["Init"]
+  },
+  "bound_files": [
+    {
+      "path": ".gitattributes",
+      "size": 14,
+      "sha256": "a79691a93b46e49ce460c26ef22afcc03d6eca1e63bf2edbc20e96159510f6c9"
+    },
+    {
+      "path": "lean-toolchain",
+      "size": 25,
+      "sha256": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b"
+    },
+    {
+      "path": "FibreCriterion.lean",
+      "size": 3010,
+      "sha256": "8faff7f358827a405e198c8b0c134758d43e3e5eedc05bd80dc7e3336f90485c"
+    },
+    {
+      "path": "AxiomAudit.lean",
+      "size": 869,
+      "sha256": "525e726fc3b0548370b0112660f4a46697d92db17ea1fb4e6b4ea55f06148720"
+    }
+  ],
+  "declaration_identity": "The exact theorem declarations are the declarations in the bound FibreCriterion.lean bytes; AxiomAudit.lean checks and prints every listed type and axiom set.",
+  "allowed_standard_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "expected_theorem_axioms": [
+    {"name": "AgainstSilentPromotion.factors_iff_fibre_constant", "axioms": ["Classical.choice"]},
+    {"name": "AgainstSilentPromotion.factor_unique", "axioms": ["Quot.sound"]},
+    {"name": "AgainstSilentPromotion.hostile_pair_blocks_factorization", "axioms": []},
+    {"name": "AgainstSilentPromotion.mul_nonzero_iff_basis_survivor", "axioms": ["propext"]},
+    {"name": "AgainstSilentPromotion.same_boolean_support", "axioms": []},
+    {"name": "AgainstSilentPromotion.different_composition", "axioms": []},
+    {"name": "AgainstSilentPromotion.support_does_not_determine_composition", "axioms": []}
+  ],
+  "negative_boundaries": [
+    "No theorem is asserted outside its displayed Lean hypotheses and local definitions.",
+    "No general matrix image/kernel formalization or all-depth routed-product theorem is claimed.",
+    "No published RIME paper theorem, SOF protocol admission, independent validation, or current-use authority is supplied by this case.",
+    "No aigc-lite Case 003 proposition correspondence, replay result, or qualification is implied."
+  ]
+}

@@ -1,0 +1,17 @@
+import FibreCriterion
+
+#check AgainstSilentPromotion.factors_iff_fibre_constant
+#check AgainstSilentPromotion.factor_unique
+#check AgainstSilentPromotion.hostile_pair_blocks_factorization
+#check AgainstSilentPromotion.mul_nonzero_iff_basis_survivor
+#check AgainstSilentPromotion.same_boolean_support
+#check AgainstSilentPromotion.different_composition
+#check AgainstSilentPromotion.support_does_not_determine_composition
+
+#print axioms AgainstSilentPromotion.factors_iff_fibre_constant
+#print axioms AgainstSilentPromotion.factor_unique
+#print axioms AgainstSilentPromotion.hostile_pair_blocks_factorization
+#print axioms AgainstSilentPromotion.mul_nonzero_iff_basis_survivor
+#print axioms AgainstSilentPromotion.same_boolean_support
+#print axioms AgainstSilentPromotion.different_composition
+#print axioms AgainstSilentPromotion.support_does_not_determine_composition
