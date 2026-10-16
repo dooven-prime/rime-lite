@@ -9,7 +9,7 @@ finite representation laboratory, not as a puzzle-solving problem.
 ## Public Release
 
 The current public release contains Papers I--XV, the independently scoped
-Papers XVI--XVII computational studies, and Papers XX--XXXVIII mathematical lines.
+Papers XVI--XVII computational studies, and Papers XX--XXXIX mathematical lines.
 CCS v2.1 is published separately as an optional non-paper Computational
 Companion Archive; the immutable first combined record retains its historical
 predecessor.
@@ -52,13 +52,14 @@ predecessor.
 | Paper XXXVI | signed lane-exit graphs and complete survivor frontiers in a declared multi-lane regime | <https://doi.org/10.5281/zenodo.23093673> |
 | Paper XXXVII | lineage permutation groups and complete ordinary-lane survivor frontiers | <https://doi.org/10.5281/zenodo.23227579> |
 | Paper XXXVIII | source-relative return layers and budgeted survivor frontiers | <https://doi.org/10.5281/zenodo.23255825> |
+| Paper XXXIX | event-anchored fusion ancestry and consumer-adequate continuations | <https://doi.org/10.5281/zenodo.23410022> |
 | CCS v2.1 | optional reproducibility, observation, open-problem, and history archive | <https://doi.org/10.5281/zenodo.21988041> |
 | RIME Lite v2.1 repository snapshot | accepted papers, contracts, Registry evidence, release tools, and exact-byte historical inputs | [Zenodo DOI](https://doi.org/10.5281/zenodo.22048358) / [GitHub Release](https://github.com/dooven-prime/rime-lite/releases/tag/rime-lite-v2.1) |
 | Historical combined Papers I--III + CCS release | immutable first-version archive; current papers are maintained independently | <https://doi.org/10.5281/zenodo.21108197> |
 
 This is the repository's canonical DOI index. It identifies immutable
 published records; other public documents link here instead of duplicating the
-list. Papers VII--XVII and Papers XX--XXXVIII now match their published
+list. Papers VII--XVII and Papers XX--XXXIX now match their published
 records. Their listed DOIs identify immutable published versions, and frozen
 historical contracts remain unchanged.
 
@@ -175,6 +176,10 @@ Paper XXXVIII classifies exact and cumulative return-count layers from a
 supplied local full-lane source. Its budget includes the terminal return;
 neither the local source nor its first exit asserts whole-image entry from
 the complete initial carrier.
+Paper XXXIX realizes an independently specified event-anchored consumer for
+singleton-seed-generated single-defect circular actions. Its finite forest
+and placed forward-UFE adapter establish continuation adequacy, not
+minimality, efficiency, or machine proof of the general result.
 Published release identities are maintained in the canonical DOI index above.
 
 | Paper | Manuscript | Evidence | Scope |
@@ -200,6 +205,7 @@ Published release identities are maintained in the canonical DOI index above.
 | XXXVI | [`Paper XXXVI.md`](papers/paper36/Paper%20XXXVI.md) | [`experiments/paper36/`](experiments/paper36/) | signed lane-exit graph, complete source-addressed survivor frontier, and bounded multi-lane controls |
 | XXXVII | [`Paper XXXVII.md`](papers/paper37/Paper%20XXXVII.md) | [`experiments/paper37/`](experiments/paper37/) | guarded lineage permutation groups, phase-coset reachability, and complete ordinary-lane survivor frontiers |
 | XXXVIII | [`Paper XXXVIII.md`](papers/paper38/Paper%20XXXVIII.md) | [`experiments/paper38/`](experiments/paper38/) | source-relative return layers, finite budget saturation, and matched survivor-frontier separation |
+| XXXIX | [`Paper XXXIX.md`](papers/paper39/Paper%20XXXIX.md) | [`experiments/paper39/`](experiments/paper39/) | event-anchored fusion ancestry, complete absorption reports, and consumer-adequate continuations |
 
 Thematic index, not a paper dependency order:
 
@@ -237,6 +243,7 @@ One-lane order-phase survivor frontiers and left-coset classification
 Signed multi-lane exits and complete survivor frontiers
 Guarded lineage permutation groups and ordinary-lane survivor frontiers
 Source-relative return counts and budgeted survivor frontiers
+Event-anchored fusion ancestry and consumer-adequate continuations
 ```
 
 Papers I--VII are independently readable. Their neighboring results connect

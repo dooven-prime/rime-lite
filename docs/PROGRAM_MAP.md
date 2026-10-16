@@ -4,7 +4,7 @@ This document is the public navigation map for the Representation-Induced
 Mechanics and Evolution (RIME) program. It identifies semantic ownership,
 typed interfaces and promotion boundaries across published Papers I--XV, the
 independently scoped Papers XVI--XVII computational studies, and Papers
-XX--XXXVIII theorem lines. It is not a
+XX--XXXIX theorem lines. It is not a
 proof document, release ledger, result record, or substitute for an owning
 manuscript.
 
@@ -121,6 +121,7 @@ authority chain.
 | XXXVI | signed lane-exit graphs and complete source-addressed survivor frontiers | the manuscript owns the all-g result under declared full-lane guards; finite replay for g=2,3 is only a bounded consistency control, not a proof of arbitrary-g statements |
 | XXXVII | guarded lineage permutation groups and complete ordinary-lane survivor frontiers | the manuscript owns the all-g classification with arbitrary within-lane permutations; bounded replay and the partial Lean spine do not replace its proof or establish typed transfer |
 | XXXVIII | exact source-relative return layers and budgeted survivor frontiers | the manuscript owns the all-g layer and saturation proofs from a supplied local full-lane configuration; finite replay and partial Lean coverage do not establish whole-image entry, typed transfer, or reset bounds |
+| XXXIX | event-anchored fusion ancestry and consumer-adequate continuations | the manuscript owns sufficiency on the declared singleton-seed-generated domain; bounded replay and partial Lean coverage do not prove minimality, efficiency, or the general theorem |
 
 Papers XVIII--XIX are intentionally unused in the public numbered sequence.
 Paper XX begins an independently scoped mathematical line, and Paper XXI
@@ -171,6 +172,10 @@ outside typed transfer and reset authority.
 Paper XXXVIII adds return-count layers from a fixed local full-lane source.
 The terminal return is charged, and its bounded frontier does not supply an
 entrance from a residue-spanning whole image.
+Paper XXXIX specifies a separate event-anchored consumer and realizes its
+complete reports and continuation commands through a finite forest and a
+placed forward-UFE adapter. It does not inherit an imperative UFE refinement
+or a typed-transfer conclusion.
 None extends the SOF protocol authority chain.
 
 The synchronizing-automata papers share a research domain, not one inherited
@@ -194,6 +199,9 @@ declared full-lane setting. Paper XXXVII owns the arbitrary-permutation
 lineage-group and survivor classification under its full ordinary-lane guards.
 Paper XXXVIII owns source-relative return layers and bounded survivor
 incidence under a supplied local full-lane premise, not whole-image entry.
+Paper XXXIX owns its event-anchored consumer and the two finite realizations
+under their generated-domain hypotheses, not a general algorithmic or
+minimality claim.
 
 ## 4. Active Typing and Promotion Rules
 
