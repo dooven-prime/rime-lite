@@ -1,0 +1,6 @@
+name = "paper39"
+version = "0.1.0"
+defaultTargets = ["Paper39"]
+
+[[lean_lib]]
+name = "Paper39"

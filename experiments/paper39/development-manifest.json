@@ -1,0 +1,197 @@
+{
+  "artifacts": [
+    {
+      "path": "papers/paper39/Paper XXXIX.md",
+      "role": "canonical-manuscript",
+      "sha256": "215d4afa46d889ebc9cdd7595220603a03226c41b9eb8711a7b75e0256471e33",
+      "size": 52598
+    },
+    {
+      "path": "experiments/paper39/notes/ABSORPTION_CONSUMER_SPEC.md",
+      "role": "consumer-specification",
+      "sha256": "03128ec342d1834cc39bcd7648acad01677f7747843b078a5bc9cd54df7c49cd",
+      "size": 7367
+    },
+    {
+      "path": "experiments/paper39/notes/ABSORPTION_CONSUMER_ADEQUACY.md",
+      "role": "supplementary-proof",
+      "sha256": "7cb051f23ea4e9557ac87a4956164266dbc0c8daf23bb20fea463a317adc0b65",
+      "size": 13416
+    },
+    {
+      "path": "experiments/paper39/notes/UFE_CORRESPONDENCE.md",
+      "role": "supplementary-correspondence",
+      "sha256": "4d3e004b73217ddf933bcffe3159e2e3c0c1dc6a07d36521d80d4d358d83dbee",
+      "size": 12618
+    },
+    {
+      "path": "papers/paper39/references-v1.bib",
+      "role": "bibliography",
+      "sha256": "cd128b95f71ae292f94a5ce787b376ca11dc2f23b7fc177e295e909966c4067d",
+      "size": 3299
+    },
+    {
+      "path": "experiments/paper39/README.md",
+      "role": "package-documentation",
+      "sha256": "e4e0df1b300d24d1737c84706bad91f8580bb2e05bf999ff057533ef98688a36",
+      "size": 10752
+    },
+    {
+      "path": "experiments/paper39/audit_scope.py",
+      "role": "fixed-audit-contract",
+      "sha256": "cd46a4491d75316d53caa1c18addc72fb5d044dc55321b2888bfdb2c8ff2678b",
+      "size": 3441
+    },
+    {
+      "path": "experiments/paper39/contract.py",
+      "role": "immutable-records",
+      "sha256": "001ce3824a4cde7c2e1e37ba1cebabbdeed49e1e3b57d5664dcdf609d3e909a1",
+      "size": 3126
+    },
+    {
+      "path": "experiments/paper39/log_consumer.py",
+      "role": "independent-log-specification",
+      "sha256": "f0c6786ecdfbd54209487db725340469c4816cae574e55b966d7323955dd2640",
+      "size": 2470
+    },
+    {
+      "path": "experiments/paper39/forest.py",
+      "role": "forest-implementation",
+      "sha256": "ab2d6913f29bb4008f80d9f6d48db7e5b246fe75382ef0b2df2b2f2639d66336",
+      "size": 5097
+    },
+    {
+      "path": "experiments/paper39/placed_ufe.py",
+      "role": "abstract-ufe-adapter",
+      "sha256": "2cdc19125fdfee267a1d256071f27b9d4af581dce9943b3544dc07ed98e4d3b3",
+      "size": 4197
+    },
+    {
+      "path": "experiments/paper39/consumer_audit.py",
+      "role": "bounded-producer",
+      "sha256": "2334247698e707afd685494cc7170adca3cffb9e5d11a8022c63b2ee72e38eb3",
+      "size": 10909
+    },
+    {
+      "path": "experiments/paper39/results/consumer_audit_v1.json",
+      "role": "bounded-result",
+      "sha256": "dc5a6feb6cf85fb3c182afa1b93d9e39a984234537aa3cc6dfad4b79cd7afa2c",
+      "size": 364009
+    },
+    {
+      "path": "experiments/paper39/seal_manifest.py",
+      "role": "manifest-sealer",
+      "sha256": "69be779c3f982a636a8b3cdaf7c98482feaf9775d079953d194aa103c9c9d7b2",
+      "size": 588
+    },
+    {
+      "path": "experiments/paper39/validation/validate_consumer.py",
+      "role": "finite-validator",
+      "sha256": "66b63e05ea4e5bfedf14d1d0ca931cf77d9b97deecb489fe95205ba98cf96dcf",
+      "size": 3479
+    },
+    {
+      "path": "experiments/paper39/validation/validate_source.py",
+      "role": "source-validator",
+      "sha256": "1973fb879d12bd7d1418f1f8584ac3540044eab30b72448874ad63b57ac96e72",
+      "size": 4035
+    },
+    {
+      "path": "experiments/paper39/validation/test_contract.py",
+      "role": "negative-contract-tests",
+      "sha256": "4099f33e665e2c8f337f2dc5320047dae50a003e32d05b1d1c0602ff60366971",
+      "size": 13082
+    },
+    {
+      "path": "experiments/paper39/validation/validate_package.py",
+      "role": "package-validator",
+      "sha256": "a74ce259137fa405e464d319a378b187a429f01fc65bc75c7c1bfb65afe00974",
+      "size": 4565
+    },
+    {
+      "path": "experiments/paper39/validation/validate_lean_formalization.py",
+      "role": "lean-validator",
+      "sha256": "d670f67f2b57c115379bef8caa66fa978b4133cf8e935c174563fb2da43ff01a",
+      "size": 8259
+    },
+    {
+      "path": "experiments/paper39/lean/Paper39.lean",
+      "role": "lean-entrypoint",
+      "sha256": "9d63956d81d597a07dfd1d5ad42413bc5178a05347b084e6d50300ce2a2249b0",
+      "size": 82
+    },
+    {
+      "path": "experiments/paper39/lean/Paper39/PortLookup.lean",
+      "role": "lean-port-lookup",
+      "sha256": "84d5cf208936749c3ab3956cebb0e6ce7f44a3ba91b6e5d2055df3ff6054231b",
+      "size": 3055
+    },
+    {
+      "path": "experiments/paper39/lean/Paper39/ForestCounts.lean",
+      "role": "lean-forest-counts",
+      "sha256": "c6ea372287d49bca47a0dcbd6dea694ab03a90f87aac0ad45fea3b28f0e4e09e",
+      "size": 2463
+    },
+    {
+      "path": "experiments/paper39/lean/Paper39/Continuation.lean",
+      "role": "lean-continuation",
+      "sha256": "857c08b35b0e37f2c7e388996a850996ec28408d318e9db1d567cab0deeba5d2",
+      "size": 2552
+    },
+    {
+      "path": "experiments/paper39/lean/AxiomAudit.lean",
+      "role": "lean-axiom-audit",
+      "sha256": "40349af251a933eba177466cbdb383e09731343079001cad5786a0f40737ffdc",
+      "size": 686
+    },
+    {
+      "path": "experiments/paper39/lean/README.md",
+      "role": "lean-scope",
+      "sha256": "44fc4ca75cc080c407a7cad1ec98ce09a9e7df92feb1d21e493a4cb756c6326e",
+      "size": 3876
+    },
+    {
+      "path": "experiments/paper39/lean/lakefile.toml",
+      "role": "lean-project",
+      "sha256": "d3b77bb51db685f8b6b24a407651c796cad7be967549138f144418badd7baa62",
+      "size": 95
+    },
+    {
+      "path": "experiments/paper39/lean/lake-manifest.json",
+      "role": "lean-lock",
+      "sha256": "57535a07579f09a04ac23cfd89360fba27b406937fcdc5b1bddadf3d081dc25f",
+      "size": 148
+    },
+    {
+      "path": "experiments/paper39/lean/lean-toolchain",
+      "role": "lean-toolchain",
+      "sha256": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b",
+      "size": 25
+    },
+    {
+      "path": "experiments/paper39/lean/formalization-manifest.json",
+      "role": "lean-manifest",
+      "sha256": "5e56a63c234289dcd5a920a2e759b9e6f62530edc6957fdc8e90061c45775dc8",
+      "size": 4707
+    }
+  ],
+  "digest_policy": {
+    "algorithm": "sha256",
+    "scope": "exact_file_bytes",
+    "text_eol": "LF"
+  },
+  "excluded_dependencies": [
+    "broader exploratory source tree",
+    "unnumbered historical drafts",
+    "old B0 certificates",
+    "external UFE implementation",
+    "reader PDF"
+  ],
+  "formalization_claimed": "PARTIAL_IMPLEMENTATION_SPINE",
+  "paper_id": "PAPER39",
+  "proof_ownership": "The manuscript owns the all-N theorems; finite replay is supplementary.",
+  "release_identity_claimed": false,
+  "schema": "rime.paper39.development-manifest.v1",
+  "status": "DRAFT_PAPER_OWNED_CLOSURE",
+  "validation_mode": "LOCAL_CLOSURE_VERIFICATION"
+}

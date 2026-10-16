@@ -1,0 +1,18 @@
+{
+  "schema": "rime.paper39.release-environment.v1",
+  "captured_date": "2026-10-16",
+  "platform": "Windows x86_64",
+  "python": "3.13.0",
+  "pandoc": "3.6.4",
+  "xelatex": "MiKTeX-XeTeX 4.18 (MiKTeX 26.5)",
+  "bibtex": "MiKTeX-BibTeX 4.2 (MiKTeX 26.5)",
+  "lean_toolchain_declared": "4.33.0",
+  "mathlib_used": false,
+  "digest_scope": "exact repository file bytes",
+  "notes": [
+    "The bounded three-model replay uses Python and the standard library.",
+    "The partial Lean spine is compiled and axiom-audited in an isolated temporary project; it does not prove the general manuscript results.",
+    "The reader PDF was built with the repository Markdown-to-LaTeX tools; generated TeX and review renders are excluded.",
+    "This records the observed build environment, not a portability guarantee."
+  ]
+}
