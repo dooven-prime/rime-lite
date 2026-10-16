@@ -1,0 +1,134 @@
+{
+  "schema": "rime.paper39.release-manifest.v1",
+  "paper_id": "PAPER39",
+  "release_version": "1.0",
+  "intended_release_tag": "paper39-v1.0",
+  "status": "RELEASE_CONTENT",
+  "release_identity_claimed": true,
+  "external_anchor_claimed": false,
+  "validation_mode": "LOCAL_CLOSURE_VERIFICATION",
+  "receipt_self_exclusion": true,
+  "digest_policy": {
+    "algorithm": "sha256",
+    "scope": "exact_file_bytes",
+    "path_resolution": "exact repository-relative path",
+    "wildcards_allowed": false,
+    "absolute_paths_allowed": false,
+    "current_head_fallback_allowed": false
+  },
+  "artifacts": [
+    {
+      "role": "manuscript",
+      "closure_class": "normative-manuscript-build",
+      "path": "papers/paper39/Paper XXXIX.md",
+      "sha256": "cd83bd784b036a0ac36ef8e641f749dfe3e8639e6e08637bfe9d1215942729df"
+    },
+    {
+      "role": "reader-pdf",
+      "closure_class": "normative-manuscript-build",
+      "path": "papers/paper39/paper39_arxiv.pdf",
+      "sha256": "94becee15808f0233d842b3618ce2965806709e8ad3816cb8dcee2a8fa51bbd1"
+    },
+    {
+      "role": "consumer-specification",
+      "closure_class": "normative-manuscript-build",
+      "path": "papers/paper39/ABSORPTION_CONSUMER_SPEC.md",
+      "sha256": "bb7ed1fc6f510b43bd78ccc7dd13c5989a08e39dc0ac74da5a92d0d286260c35"
+    },
+    {
+      "role": "supplementary-proof",
+      "closure_class": "normative-manuscript-build",
+      "path": "papers/paper39/ABSORPTION_CONSUMER_ADEQUACY.md",
+      "sha256": "863c99c428d93850fe01c0a9298e113e70d162ae066b0ffa7a572a72ee85332b"
+    },
+    {
+      "role": "supplementary-correspondence",
+      "closure_class": "normative-manuscript-build",
+      "path": "papers/paper39/UFE_CORRESPONDENCE.md",
+      "sha256": "4d3e004b73217ddf933bcffe3159e2e3c0c1dc6a07d36521d80d4d358d83dbee"
+    },
+    {
+      "role": "bibliography",
+      "closure_class": "normative-manuscript-build",
+      "path": "papers/paper39/references-v1.bib",
+      "sha256": "47e8ae45c68a83cfebfb178b5802fda91f5339adbf1fd206a32209261c242182"
+    },
+    {
+      "role": "reader-build-entrypoint",
+      "closure_class": "normative-manuscript-build",
+      "path": "papers/tex/build.py",
+      "sha256": "5fbda3b0bc8bc9538bb18f3c3a55b050eb6df6e02cc3c5d791fd5d306759fd5f"
+    },
+    {
+      "role": "reader-build-driver",
+      "closure_class": "normative-manuscript-build",
+      "path": "papers/tex/_build.py",
+      "sha256": "cf93be2143b2d1af079acad12b4ca41fce7e44e5557026e6a6e9bc90b0b8a835"
+    },
+    {
+      "role": "reader-build-postprocessor",
+      "closure_class": "normative-manuscript-build",
+      "path": "papers/tex/_postprocess.py",
+      "sha256": "b7dce456e2c41e9188667056c8aa159c185e48ee4196f4dee015b8822a81d410"
+    },
+    {
+      "role": "reader-build-hrule-cleaner",
+      "closure_class": "normative-manuscript-build",
+      "path": "papers/tex/_clean_hrule.py",
+      "sha256": "dab41021d86aed7003259972e52e48712aa5d1c9b7a1e501e3607d17c9a72444"
+    },
+    {
+      "role": "development-manifest",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper39/development-manifest.json",
+      "sha256": "94895f5dc3d8bfdadc1ea8b1fef37a4e5a46d492723bb4e1cb15afb70cbcc481"
+    },
+    {
+      "role": "release-environment",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper39/release-environment.json",
+      "sha256": "dc7a9df906982eaa3c2acd1ee6ff5bb79eacf05dd1edeef2e2b13e70020e9fb6"
+    },
+    {
+      "role": "release-validator",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper39/validation/validate_release.py",
+      "sha256": "e5685c45dadb5f1f1da443a82785fb3a9ae6c6015ce1e0043480c731e83de7ff"
+    },
+    {
+      "role": "evidence-readme",
+      "closure_class": "public-package-documentation",
+      "path": "experiments/paper39/README.md",
+      "sha256": "1ab5dc6a3ff1ab543406c18d05260e29542c27d8323b1fd88630224e728503aa"
+    }
+  ],
+  "nested_closures": {
+    "development_evidence": {
+      "manifest": "experiments/paper39/development-manifest.json",
+      "release_identity_claimed": false
+    }
+  },
+  "closure_policy": {
+    "classes": [
+      "normative-manuscript-build",
+      "theorem-facing-computational",
+      "public-package-documentation"
+    ],
+    "release_identity_classes": [
+      "normative-manuscript-build",
+      "theorem-facing-computational"
+    ],
+    "package_inventory_classes": [
+      "normative-manuscript-build",
+      "theorem-facing-computational",
+      "public-package-documentation"
+    ]
+  },
+  "claim_boundary": [
+    "complete consumer adequacy and the UFE correspondence are manuscript proofs",
+    "the 464-case three-model replay is a bounded consistency control, not an all-N proof",
+    "the partial Lean spine does not prove Theorem 4.1 or Proposition 5.1",
+    "no minimality, efficiency, external UFE implementation, or arbitrary ambient-state claim is established",
+    "local closure verification is not independent mathematical validation"
+  ]
+}

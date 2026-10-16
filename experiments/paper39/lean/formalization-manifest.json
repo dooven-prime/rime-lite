@@ -1,0 +1,139 @@
+{
+  "audited_declarations": [
+    "Paper39.lookup_some_mem",
+    "Paper39.lookup_of_mem",
+    "Paper39.keyFunctional_perm",
+    "Paper39.lookup_perm",
+    "Paper39.collisionChildren_perm",
+    "Paper39.reversed_two_root_ports",
+    "Paper39.FusionTree.leaf_eq_fusion_add_one",
+    "Paper39.FusionTree.node_eq_leaf_add_fusion",
+    "Paper39.forest_leaf_fusion_identity",
+    "Paper39.forest_node_identity",
+    "Paper39.forest_node_bound",
+    "Paper39.step_domain_reflection",
+    "Paper39.execute_commutes",
+    "Paper39.execute_domain_reflection",
+    "Paper39.same_representative_path_lift"
+  ],
+  "compiler_axioms": {
+    "Paper39.FusionTree.leaf_eq_fusion_add_one": [
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper39.FusionTree.node_eq_leaf_add_fusion": [
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper39.collisionChildren_perm": [
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper39.execute_commutes": [
+      "propext"
+    ],
+    "Paper39.execute_domain_reflection": [
+      "propext"
+    ],
+    "Paper39.forest_leaf_fusion_identity": [
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper39.forest_node_bound": [
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper39.forest_node_identity": [
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper39.keyFunctional_perm": [
+      "propext"
+    ],
+    "Paper39.lookup_of_mem": [
+      "propext"
+    ],
+    "Paper39.lookup_perm": [
+      "propext"
+    ],
+    "Paper39.lookup_some_mem": [
+      "propext"
+    ],
+    "Paper39.reversed_two_root_ports": [],
+    "Paper39.same_representative_path_lift": [
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper39.step_domain_reflection": [
+      "propext"
+    ]
+  },
+  "coverage": [
+    {
+      "checked": "functional port lookup is invariant under root-list permutations",
+      "declarations": [
+        "Paper39.lookup_some_mem",
+        "Paper39.lookup_of_mem",
+        "Paper39.keyFunctional_perm",
+        "Paper39.lookup_perm",
+        "Paper39.collisionChildren_perm",
+        "Paper39.reversed_two_root_ports"
+      ],
+      "premises": "functional keys; abstract lookup, not Python refinement",
+      "source": "Paper39/PortLookup.lean"
+    },
+    {
+      "checked": "binary-tree and forest occurrence-count identities and node bound",
+      "declarations": [
+        "Paper39.FusionTree.leaf_eq_fusion_add_one",
+        "Paper39.FusionTree.node_eq_leaf_add_fusion",
+        "Paper39.forest_leaf_fusion_identity",
+        "Paper39.forest_node_identity",
+        "Paper39.forest_node_bound"
+      ],
+      "premises": "nonempty forest for inequality; distinct atom interpretation remains external",
+      "source": "Paper39/ForestCounts.lean"
+    },
+    {
+      "checked": "domain reflection, path commutation, and same-representative successor witness",
+      "declarations": [
+        "Paper39.step_domain_reflection",
+        "Paper39.execute_commutes",
+        "Paper39.execute_domain_reflection",
+        "Paper39.same_representative_path_lift"
+      ],
+      "premises": "single-step Option-map commutation on the chosen invocation type",
+      "source": "Paper39/Continuation.lean"
+    }
+  ],
+  "dependencies": "bundled Std and Lean core only",
+  "excluded_scope": [
+    "Python-to-Lean refinement",
+    "complete concrete forest and consumer adequacy",
+    "event/log and ancestor/absorption correspondence",
+    "generated-domain closure",
+    "atom-renaming adequacy",
+    "placed UFE correspondence or external UFE implementation",
+    "old B0, authorization, POS, settlement, and reset bounds"
+  ],
+  "permitted_axiom_footprint": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "schema": "rime.paper39.lean-formalization-manifest.v1",
+  "source_sha256": {
+    "AxiomAudit.lean": "40349af251a933eba177466cbdb383e09731343079001cad5786a0f40737ffdc",
+    "Paper39.lean": "9d63956d81d597a07dfd1d5ad42413bc5178a05347b084e6d50300ce2a2249b0",
+    "Paper39/Continuation.lean": "857c08b35b0e37f2c7e388996a850996ec28408d318e9db1d567cab0deeba5d2",
+    "Paper39/ForestCounts.lean": "c6ea372287d49bca47a0dcbd6dea694ab03a90f87aac0ad45fea3b28f0e4e09e",
+    "Paper39/PortLookup.lean": "84d5cf208936749c3ab3956cebb0e6ce7f44a3ba91b6e5d2055df3ff6054231b",
+    "README.md": "44fc4ca75cc080c407a7cad1ec98ce09a9e7df92feb1d21e493a4cb756c6326e",
+    "lake-manifest.json": "57535a07579f09a04ac23cfd89360fba27b406937fcdc5b1bddadf3d081dc25f",
+    "lakefile.toml": "d3b77bb51db685f8b6b24a407651c796cad7be967549138f144418badd7baa62",
+    "lean-toolchain": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b"
+  },
+  "status": "COMPILED_PAPER_OWNED_PARTIAL_FORMALIZATION",
+  "toolchain": "leanprover/lean4:v4.33.0",
+  "validation_mode": "LOCAL_CLOSURE_VERIFICATION"
+}
