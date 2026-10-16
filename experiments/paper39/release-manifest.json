@@ -27,7 +27,7 @@
       "role": "reader-pdf",
       "closure_class": "normative-manuscript-build",
       "path": "papers/paper39/paper39_arxiv.pdf",
-      "sha256": "45b4480f614bacf7ca1a71b5f8fa9f68b9f77ed9c368e5293ac804192ee09bd1"
+      "sha256": "ee569c724319a532c6481b567c98fc1d0401c48d6c233cf2f5d12d29406e96bb"
     },
     {
       "role": "consumer-specification",
@@ -51,7 +51,7 @@
       "role": "bibliography",
       "closure_class": "normative-manuscript-build",
       "path": "papers/paper39/references-v1.bib",
-      "sha256": "47e8ae45c68a83cfebfb178b5802fda91f5339adbf1fd206a32209261c242182"
+      "sha256": "cd128b95f71ae292f94a5ce787b376ca11dc2f23b7fc177e295e909966c4067d"
     },
     {
       "role": "reader-build-entrypoint",
@@ -81,7 +81,7 @@
       "role": "development-manifest",
       "closure_class": "theorem-facing-computational",
       "path": "experiments/paper39/development-manifest.json",
-      "sha256": "bdcb621eda3c2534e21472c2baea75ff85f829219b70b0a3bd145ae57f6a5d8d"
+      "sha256": "5a84b98b2fe0db43292b5a3c9554487a5931bb7adc03122cc85534f68b10c221"
     },
     {
       "role": "release-environment",
@@ -99,7 +99,7 @@
       "role": "evidence-readme",
       "closure_class": "public-package-documentation",
       "path": "experiments/paper39/README.md",
-      "sha256": "1ac3215b7ecd45a89ab497f2066f83759cb40c006514c25bebac870fabd6f72f"
+      "sha256": "e4e0df1b300d24d1737c84706bad91f8580bb2e05bf999ff057533ef98688a36"
     }
   ],
   "nested_closures": {

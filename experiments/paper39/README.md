@@ -199,4 +199,5 @@ separation, or minimal representation theorem is verified here.
 This is not old B0, target-blind Auth_5, selector identity, transfer membership,
 F3, projectability, POS, recursive settlement, or a reset-bound certificate.
 No semantics or consumer field is added to make any historical bridge work.
-The reader PDF and release environment remain separate publication tasks.
+The reader PDF and release environment are bound by the separate release
+manifest, not by the development seal.

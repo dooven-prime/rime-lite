@@ -27,14 +27,14 @@
     {
       "path": "papers/paper39/references-v1.bib",
       "role": "bibliography",
-      "sha256": "47e8ae45c68a83cfebfb178b5802fda91f5339adbf1fd206a32209261c242182",
-      "size": 3448
+      "sha256": "cd128b95f71ae292f94a5ce787b376ca11dc2f23b7fc177e295e909966c4067d",
+      "size": 3299
     },
     {
       "path": "experiments/paper39/README.md",
       "role": "package-documentation",
-      "sha256": "1ac3215b7ecd45a89ab497f2066f83759cb40c006514c25bebac870fabd6f72f",
-      "size": 10714
+      "sha256": "e4e0df1b300d24d1737c84706bad91f8580bb2e05bf999ff057533ef98688a36",
+      "size": 10752
     },
     {
       "path": "experiments/paper39/audit_scope.py",
