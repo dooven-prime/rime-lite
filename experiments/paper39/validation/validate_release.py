@@ -27,9 +27,9 @@ IDENTITY_CLASSES = CLASSES[:2]
 DIRECT_ARTIFACTS = (
     ("manuscript", CLASSES[0], "papers/paper39/Paper XXXIX.md"),
     ("reader-pdf", CLASSES[0], "papers/paper39/paper39_arxiv.pdf"),
-    ("consumer-specification", CLASSES[0], "papers/paper39/ABSORPTION_CONSUMER_SPEC.md"),
-    ("supplementary-proof", CLASSES[0], "papers/paper39/ABSORPTION_CONSUMER_ADEQUACY.md"),
-    ("supplementary-correspondence", CLASSES[0], "papers/paper39/UFE_CORRESPONDENCE.md"),
+    ("consumer-specification", CLASSES[0], "experiments/paper39/notes/ABSORPTION_CONSUMER_SPEC.md"),
+    ("supplementary-proof", CLASSES[0], "experiments/paper39/notes/ABSORPTION_CONSUMER_ADEQUACY.md"),
+    ("supplementary-correspondence", CLASSES[0], "experiments/paper39/notes/UFE_CORRESPONDENCE.md"),
     ("bibliography", CLASSES[0], "papers/paper39/references-v1.bib"),
     ("reader-build-entrypoint", CLASSES[0], "papers/tex/build.py"),
     ("reader-build-driver", CLASSES[0], "papers/tex/_build.py"),

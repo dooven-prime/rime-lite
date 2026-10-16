@@ -13,18 +13,20 @@ from contract import require
 
 
 def check_reader_surfaces(paper):
-    require("## 7. Computational Artifacts" in paper and "## 8. Claim Status and Boundary" in paper,
+    require("## Computational Artifacts" in paper and "## Claim Status and Boundary" in paper,
             "reader artifact/claim entry missing")
-    artifacts = paper.split("## 7. Computational Artifacts", 1)[1].split("## 8.", 1)[0]
+    artifacts = paper.split("## Computational Artifacts", 1)[1].split("## Claim Status and Boundary", 1)[0]
     for token in ("bounded three-model replay", "partial Lean spine", "LOCAL_CLOSURE_VERIFICATION",
                   "not independent validation", "Neither the bounded replay nor the partial Lean spine is a machine proof",
-                  "The development closure is not a release identity"):
+                  "The development manifest alone is not a release identity"):
         require(token in " ".join(artifacts.split()), f"evidence boundary missing: {token}")
     require(not re.search(r"https://github\.com/dooven-prime/rime-lite/(?:blob|tree)/main(?:/|\b)", paper),
             "nonexistent main-branch source link")
     appendix = paper.split("## Appendix B:", 1)[1]
+    require("`experiments/paper39/notes/`" in appendix,
+            "supplement directory locator missing")
     for filename in ("ABSORPTION_CONSUMER_SPEC.md", "ABSORPTION_CONSUMER_ADEQUACY.md", "UFE_CORRESPONDENCE.md"):
-        require(f"`{filename}`" in appendix and (ROOT / "papers/paper39" / filename).is_file(),
+        require(f"`{filename}`" in appendix and (ROOT / "experiments/paper39/notes" / filename).is_file(),
                 f"supplement locator missing: {filename}")
 
 

@@ -15,20 +15,20 @@
   },
   "manifest_binding": {
     "path": "experiments/paper39/release-manifest.json",
-    "sha256": "12cb06109e218b0fe4823eeb24042eef50ae32448d1ad599c942a7a92e531829"
+    "sha256": "5e4cac7964ffec4f554a402707759881ede19318138f434f3187c65d62fcbf7b"
   },
   "nested_closures": {
     "development_evidence": {
       "artifact_count": 29,
-      "closure_digest": "df754756630b0208c39e60678c7370e656a611d43a71a22d0e95e901bc192e52",
+      "closure_digest": "d0fb89ffa1ce6162bb485f21d9b479f434f4196afc91b63d26b41fc102b2cdb2",
       "ordered_artifacts": [
         {
           "path": "experiments/paper39/README.md",
-          "sha256": "1ab5dc6a3ff1ab543406c18d05260e29542c27d8323b1fd88630224e728503aa"
+          "sha256": "1ac3215b7ecd45a89ab497f2066f83759cb40c006514c25bebac870fabd6f72f"
         },
         {
           "path": "experiments/paper39/audit_scope.py",
-          "sha256": "98c76fe5354379c4389f4ea658c6ae2f50e70cca35900c19bd11e24a8d570f02"
+          "sha256": "cd46a4491d75316d53caa1c18addc72fb5d044dc55321b2888bfdb2c8ff2678b"
         },
         {
           "path": "experiments/paper39/consumer_audit.py",
@@ -87,6 +87,18 @@
           "sha256": "f0c6786ecdfbd54209487db725340469c4816cae574e55b966d7323955dd2640"
         },
         {
+          "path": "experiments/paper39/notes/ABSORPTION_CONSUMER_ADEQUACY.md",
+          "sha256": "7cb051f23ea4e9557ac87a4956164266dbc0c8daf23bb20fea463a317adc0b65"
+        },
+        {
+          "path": "experiments/paper39/notes/ABSORPTION_CONSUMER_SPEC.md",
+          "sha256": "03128ec342d1834cc39bcd7648acad01677f7747843b078a5bc9cd54df7c49cd"
+        },
+        {
+          "path": "experiments/paper39/notes/UFE_CORRESPONDENCE.md",
+          "sha256": "4d3e004b73217ddf933bcffe3159e2e3c0c1dc6a07d36521d80d4d358d83dbee"
+        },
+        {
           "path": "experiments/paper39/placed_ufe.py",
           "sha256": "2cdc19125fdfee267a1d256071f27b9d4af581dce9943b3544dc07ed98e4d3b3"
         },
@@ -116,23 +128,11 @@
         },
         {
           "path": "experiments/paper39/validation/validate_source.py",
-          "sha256": "0fb04810e5e622557b6fa318abf554871375b61b1bdb1d277bd635a9fffdffb8"
-        },
-        {
-          "path": "papers/paper39/ABSORPTION_CONSUMER_ADEQUACY.md",
-          "sha256": "863c99c428d93850fe01c0a9298e113e70d162ae066b0ffa7a572a72ee85332b"
-        },
-        {
-          "path": "papers/paper39/ABSORPTION_CONSUMER_SPEC.md",
-          "sha256": "bb7ed1fc6f510b43bd78ccc7dd13c5989a08e39dc0ac74da5a92d0d286260c35"
+          "sha256": "1973fb879d12bd7d1418f1f8584ac3540044eab30b72448874ad63b57ac96e72"
         },
         {
           "path": "papers/paper39/Paper XXXIX.md",
-          "sha256": "cd83bd784b036a0ac36ef8e641f749dfe3e8639e6e08637bfe9d1215942729df"
-        },
-        {
-          "path": "papers/paper39/UFE_CORRESPONDENCE.md",
-          "sha256": "4d3e004b73217ddf933bcffe3159e2e3c0c1dc6a07d36521d80d4d358d83dbee"
+          "sha256": "215d4afa46d889ebc9cdd7595220603a03226c41b9eb8711a7b75e0256471e33"
         },
         {
           "path": "papers/paper39/references-v1.bib",
@@ -143,11 +143,23 @@
   },
   "release_identity": {
     "artifact_count": 13,
-    "closure_digest": "1df3638d00288089b67bd62946b4f1ee694aee8e98126b9c7a8df8a7271528f3",
+    "closure_digest": "161d2a036e5e331bbed2c7899167ac5583a00afc439af41ed5ccb4ab3b6bd334",
     "ordered_artifacts": [
       {
         "path": "experiments/paper39/development-manifest.json",
-        "sha256": "94895f5dc3d8bfdadc1ea8b1fef37a4e5a46d492723bb4e1cb15afb70cbcc481"
+        "sha256": "bdcb621eda3c2534e21472c2baea75ff85f829219b70b0a3bd145ae57f6a5d8d"
+      },
+      {
+        "path": "experiments/paper39/notes/ABSORPTION_CONSUMER_ADEQUACY.md",
+        "sha256": "7cb051f23ea4e9557ac87a4956164266dbc0c8daf23bb20fea463a317adc0b65"
+      },
+      {
+        "path": "experiments/paper39/notes/ABSORPTION_CONSUMER_SPEC.md",
+        "sha256": "03128ec342d1834cc39bcd7648acad01677f7747843b078a5bc9cd54df7c49cd"
+      },
+      {
+        "path": "experiments/paper39/notes/UFE_CORRESPONDENCE.md",
+        "sha256": "4d3e004b73217ddf933bcffe3159e2e3c0c1dc6a07d36521d80d4d358d83dbee"
       },
       {
         "path": "experiments/paper39/release-environment.json",
@@ -155,27 +167,15 @@
       },
       {
         "path": "experiments/paper39/validation/validate_release.py",
-        "sha256": "e5685c45dadb5f1f1da443a82785fb3a9ae6c6015ce1e0043480c731e83de7ff"
-      },
-      {
-        "path": "papers/paper39/ABSORPTION_CONSUMER_ADEQUACY.md",
-        "sha256": "863c99c428d93850fe01c0a9298e113e70d162ae066b0ffa7a572a72ee85332b"
-      },
-      {
-        "path": "papers/paper39/ABSORPTION_CONSUMER_SPEC.md",
-        "sha256": "bb7ed1fc6f510b43bd78ccc7dd13c5989a08e39dc0ac74da5a92d0d286260c35"
+        "sha256": "6b334efaee4ec59562af1743983239e755955070188aa1f644c0bce3601e08c1"
       },
       {
         "path": "papers/paper39/Paper XXXIX.md",
-        "sha256": "cd83bd784b036a0ac36ef8e641f749dfe3e8639e6e08637bfe9d1215942729df"
-      },
-      {
-        "path": "papers/paper39/UFE_CORRESPONDENCE.md",
-        "sha256": "4d3e004b73217ddf933bcffe3159e2e3c0c1dc6a07d36521d80d4d358d83dbee"
+        "sha256": "215d4afa46d889ebc9cdd7595220603a03226c41b9eb8711a7b75e0256471e33"
       },
       {
         "path": "papers/paper39/paper39_arxiv.pdf",
-        "sha256": "94becee15808f0233d842b3618ce2965806709e8ad3816cb8dcee2a8fa51bbd1"
+        "sha256": "45b4480f614bacf7ca1a71b5f8fa9f68b9f77ed9c368e5293ac804192ee09bd1"
       },
       {
         "path": "papers/paper39/references-v1.bib",
@@ -201,15 +201,15 @@
   },
   "package_inventory": {
     "artifact_count": 38,
-    "closure_digest": "0057cff3229d3685eec0c3ad64b2425b96785b6c4e482c549cc5a5e381581528",
+    "closure_digest": "86e7068f6adb7a9f9b5cecbca8afe7ccd2b77035b6d4e04ef679c398999f01b3",
     "ordered_artifacts": [
       {
         "path": "experiments/paper39/README.md",
-        "sha256": "1ab5dc6a3ff1ab543406c18d05260e29542c27d8323b1fd88630224e728503aa"
+        "sha256": "1ac3215b7ecd45a89ab497f2066f83759cb40c006514c25bebac870fabd6f72f"
       },
       {
         "path": "experiments/paper39/audit_scope.py",
-        "sha256": "98c76fe5354379c4389f4ea658c6ae2f50e70cca35900c19bd11e24a8d570f02"
+        "sha256": "cd46a4491d75316d53caa1c18addc72fb5d044dc55321b2888bfdb2c8ff2678b"
       },
       {
         "path": "experiments/paper39/consumer_audit.py",
@@ -221,7 +221,7 @@
       },
       {
         "path": "experiments/paper39/development-manifest.json",
-        "sha256": "94895f5dc3d8bfdadc1ea8b1fef37a4e5a46d492723bb4e1cb15afb70cbcc481"
+        "sha256": "bdcb621eda3c2534e21472c2baea75ff85f829219b70b0a3bd145ae57f6a5d8d"
       },
       {
         "path": "experiments/paper39/forest.py",
@@ -272,6 +272,18 @@
         "sha256": "f0c6786ecdfbd54209487db725340469c4816cae574e55b966d7323955dd2640"
       },
       {
+        "path": "experiments/paper39/notes/ABSORPTION_CONSUMER_ADEQUACY.md",
+        "sha256": "7cb051f23ea4e9557ac87a4956164266dbc0c8daf23bb20fea463a317adc0b65"
+      },
+      {
+        "path": "experiments/paper39/notes/ABSORPTION_CONSUMER_SPEC.md",
+        "sha256": "03128ec342d1834cc39bcd7648acad01677f7747843b078a5bc9cd54df7c49cd"
+      },
+      {
+        "path": "experiments/paper39/notes/UFE_CORRESPONDENCE.md",
+        "sha256": "4d3e004b73217ddf933bcffe3159e2e3c0c1dc6a07d36521d80d4d358d83dbee"
+      },
+      {
         "path": "experiments/paper39/placed_ufe.py",
         "sha256": "2cdc19125fdfee267a1d256071f27b9d4af581dce9943b3544dc07ed98e4d3b3"
       },
@@ -281,7 +293,7 @@
       },
       {
         "path": "experiments/paper39/release-manifest.json",
-        "sha256": "12cb06109e218b0fe4823eeb24042eef50ae32448d1ad599c942a7a92e531829"
+        "sha256": "5e4cac7964ffec4f554a402707759881ede19318138f434f3187c65d62fcbf7b"
       },
       {
         "path": "experiments/paper39/results/consumer_audit_v1.json",
@@ -309,31 +321,19 @@
       },
       {
         "path": "experiments/paper39/validation/validate_release.py",
-        "sha256": "e5685c45dadb5f1f1da443a82785fb3a9ae6c6015ce1e0043480c731e83de7ff"
+        "sha256": "6b334efaee4ec59562af1743983239e755955070188aa1f644c0bce3601e08c1"
       },
       {
         "path": "experiments/paper39/validation/validate_source.py",
-        "sha256": "0fb04810e5e622557b6fa318abf554871375b61b1bdb1d277bd635a9fffdffb8"
-      },
-      {
-        "path": "papers/paper39/ABSORPTION_CONSUMER_ADEQUACY.md",
-        "sha256": "863c99c428d93850fe01c0a9298e113e70d162ae066b0ffa7a572a72ee85332b"
-      },
-      {
-        "path": "papers/paper39/ABSORPTION_CONSUMER_SPEC.md",
-        "sha256": "bb7ed1fc6f510b43bd78ccc7dd13c5989a08e39dc0ac74da5a92d0d286260c35"
+        "sha256": "1973fb879d12bd7d1418f1f8584ac3540044eab30b72448874ad63b57ac96e72"
       },
       {
         "path": "papers/paper39/Paper XXXIX.md",
-        "sha256": "cd83bd784b036a0ac36ef8e641f749dfe3e8639e6e08637bfe9d1215942729df"
-      },
-      {
-        "path": "papers/paper39/UFE_CORRESPONDENCE.md",
-        "sha256": "4d3e004b73217ddf933bcffe3159e2e3c0c1dc6a07d36521d80d4d358d83dbee"
+        "sha256": "215d4afa46d889ebc9cdd7595220603a03226c41b9eb8711a7b75e0256471e33"
       },
       {
         "path": "papers/paper39/paper39_arxiv.pdf",
-        "sha256": "94becee15808f0233d842b3618ce2965806709e8ad3816cb8dcee2a8fa51bbd1"
+        "sha256": "45b4480f614bacf7ca1a71b5f8fa9f68b9f77ed9c368e5293ac804192ee09bd1"
       },
       {
         "path": "papers/paper39/references-v1.bib",
@@ -363,5 +363,5 @@
     "the receipt does not depend on itself",
     "Zenodo deposit integrity is checked separately from this local receipt"
   ],
-  "content_sha256": "c5a28bf9ab9440d69dc2aa548da4f523050d1042afb7ce6e5259d410a031deb6"
+  "content_sha256": "3794c8bff81c1c26d358407c736ecab0e951439f49ecdead33c6b88e4ba9428a"
 }

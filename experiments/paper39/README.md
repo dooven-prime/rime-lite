@@ -157,6 +157,7 @@ their validation is owned by the separate release gate above.
 
 | Path | Role |
 |---|---|
+| notes/ | Independent consumer specification and supplementary proof notes |
 | audit_scope.py, contract.py | Fixed domain and immutable record formats |
 | log_consumer.py | Independent occurrence-log task implementation |
 | forest.py | Finite placed-fusion realization |
@@ -169,12 +170,15 @@ their validation is owned by the separate release gate above.
 | validation/validate_package.py | Read-only closure entry point |
 | seal_manifest.py | Explicit development digest writer |
 | development-manifest.json | Exact-byte selected development closure |
+| release-manifest.json, release-environment.json | Reader PDF, source, and build-environment binding |
+| results/paper39_public_package_v1.validation-receipt.json | Local release closure and replay status; excluded from its own closure |
 | lean/ | Partial formal source, pinned toolchain, coverage, and axiom manifest |
 | validation/validate_lean_formalization.py | Static formal closure or explicit isolated compiler replay |
+| validation/validate_release.py | Read-only release gate |
 
-The mathematical source inputs are the canonical manuscript, its independent
-consumer specification, supplementary adequacy/correspondence notes, and
-maintained bibliography. No dated snapshot, editorial audit, old B0 artifact,
+The mathematical source inputs are the canonical manuscript, the independent
+consumer specification and supplementary adequacy/correspondence notes in
+`notes/`, and the maintained bibliography. No dated snapshot, editorial audit, old B0 artifact,
 or excluded historical draft is needed for replay.
 
 The broader exploratory source tree contains old packet/B0 controls, not a

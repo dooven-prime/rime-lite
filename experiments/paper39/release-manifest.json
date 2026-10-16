@@ -21,30 +21,30 @@
       "role": "manuscript",
       "closure_class": "normative-manuscript-build",
       "path": "papers/paper39/Paper XXXIX.md",
-      "sha256": "cd83bd784b036a0ac36ef8e641f749dfe3e8639e6e08637bfe9d1215942729df"
+      "sha256": "215d4afa46d889ebc9cdd7595220603a03226c41b9eb8711a7b75e0256471e33"
     },
     {
       "role": "reader-pdf",
       "closure_class": "normative-manuscript-build",
       "path": "papers/paper39/paper39_arxiv.pdf",
-      "sha256": "94becee15808f0233d842b3618ce2965806709e8ad3816cb8dcee2a8fa51bbd1"
+      "sha256": "45b4480f614bacf7ca1a71b5f8fa9f68b9f77ed9c368e5293ac804192ee09bd1"
     },
     {
       "role": "consumer-specification",
       "closure_class": "normative-manuscript-build",
-      "path": "papers/paper39/ABSORPTION_CONSUMER_SPEC.md",
-      "sha256": "bb7ed1fc6f510b43bd78ccc7dd13c5989a08e39dc0ac74da5a92d0d286260c35"
+      "path": "experiments/paper39/notes/ABSORPTION_CONSUMER_SPEC.md",
+      "sha256": "03128ec342d1834cc39bcd7648acad01677f7747843b078a5bc9cd54df7c49cd"
     },
     {
       "role": "supplementary-proof",
       "closure_class": "normative-manuscript-build",
-      "path": "papers/paper39/ABSORPTION_CONSUMER_ADEQUACY.md",
-      "sha256": "863c99c428d93850fe01c0a9298e113e70d162ae066b0ffa7a572a72ee85332b"
+      "path": "experiments/paper39/notes/ABSORPTION_CONSUMER_ADEQUACY.md",
+      "sha256": "7cb051f23ea4e9557ac87a4956164266dbc0c8daf23bb20fea463a317adc0b65"
     },
     {
       "role": "supplementary-correspondence",
       "closure_class": "normative-manuscript-build",
-      "path": "papers/paper39/UFE_CORRESPONDENCE.md",
+      "path": "experiments/paper39/notes/UFE_CORRESPONDENCE.md",
       "sha256": "4d3e004b73217ddf933bcffe3159e2e3c0c1dc6a07d36521d80d4d358d83dbee"
     },
     {
@@ -81,7 +81,7 @@
       "role": "development-manifest",
       "closure_class": "theorem-facing-computational",
       "path": "experiments/paper39/development-manifest.json",
-      "sha256": "94895f5dc3d8bfdadc1ea8b1fef37a4e5a46d492723bb4e1cb15afb70cbcc481"
+      "sha256": "bdcb621eda3c2534e21472c2baea75ff85f829219b70b0a3bd145ae57f6a5d8d"
     },
     {
       "role": "release-environment",
@@ -93,13 +93,13 @@
       "role": "release-validator",
       "closure_class": "theorem-facing-computational",
       "path": "experiments/paper39/validation/validate_release.py",
-      "sha256": "e5685c45dadb5f1f1da443a82785fb3a9ae6c6015ce1e0043480c731e83de7ff"
+      "sha256": "6b334efaee4ec59562af1743983239e755955070188aa1f644c0bce3601e08c1"
     },
     {
       "role": "evidence-readme",
       "closure_class": "public-package-documentation",
       "path": "experiments/paper39/README.md",
-      "sha256": "1ab5dc6a3ff1ab543406c18d05260e29542c27d8323b1fd88630224e728503aa"
+      "sha256": "1ac3215b7ecd45a89ab497f2066f83759cb40c006514c25bebac870fabd6f72f"
     }
   ],
   "nested_closures": {

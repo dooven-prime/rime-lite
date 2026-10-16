@@ -2,10 +2,10 @@
 
 ## Independent specification from execution logs
 
-**Scope:** the named consumer of the Paper XXXIX draft, specified independently
+**Scope:** the named consumer of Paper XXXIX, specified independently
 from its state representations. This specification uses raw executions and occurrence-indexed logs.
 It does not use trees, model markers, or the forest's read table. Its realization
-is proved in [Paper XXXIX Theorem 4.1](Paper%20XXXIX.md), with
+is proved in [Paper XXXIX Theorem 4.1](../../../papers/paper39/Paper%20XXXIX.md), with
 [supplementary proof details](ABSORPTION_CONSUMER_ADEQUACY.md).
 
 ## 1. Task and source domain

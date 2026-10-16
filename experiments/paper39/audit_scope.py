@@ -32,9 +32,9 @@ def cases():
 
 ARTIFACTS = (
     ("canonical-manuscript", "papers/paper39/Paper XXXIX.md"),
-    ("consumer-specification", "papers/paper39/ABSORPTION_CONSUMER_SPEC.md"),
-    ("supplementary-proof", "papers/paper39/ABSORPTION_CONSUMER_ADEQUACY.md"),
-    ("supplementary-correspondence", "papers/paper39/UFE_CORRESPONDENCE.md"),
+    ("consumer-specification", "experiments/paper39/notes/ABSORPTION_CONSUMER_SPEC.md"),
+    ("supplementary-proof", "experiments/paper39/notes/ABSORPTION_CONSUMER_ADEQUACY.md"),
+    ("supplementary-correspondence", "experiments/paper39/notes/UFE_CORRESPONDENCE.md"),
     ("bibliography", "papers/paper39/references-v1.bib"),
     ("package-documentation", "experiments/paper39/README.md"),
     ("fixed-audit-contract", "experiments/paper39/audit_scope.py"),

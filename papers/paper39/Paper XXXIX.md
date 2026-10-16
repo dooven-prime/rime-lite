@@ -5,35 +5,42 @@
 
 Independent Researcher | RIME Program | 2026
 
-*This paper (Paper XXXIX of the RIME program) studies finite representations
-of event-anchored packet histories and proves complete continuation adequacy
-for one consumer on a declared singleton-seed-generated domain.*
+**Paper XXXIX | Version 1.0**
 
-## Abstract {.unnumbered}
+*This paper is Paper XXXIX of the RIME program. It studies finite
+representations of event-anchored packet histories and proves continuation
+adequacy for one consumer on a declared singleton-seed-generated domain.*
 
-An event-anchored consumer of a coalescing packet execution requests a
-selected fusion's origin snapshot, its complete later absorption sequence,
-its current carrier, and legal continuation commands. The current placed
-partition and selected fresh block alone do not determine that origin.
-We specify the task independently from execution logs and realize it by a
-finite placed-fusion forest for labelled single-defect circular actions.
-On singleton-seed-generated domains with $2\le N\le n$, the decoder recovers
-the full consumer state from the current packets and the selected node's
-ancestor path. It reflects command domains and commutes with successors,
-including unrelated fusion during a carrier-preserving command. Every legal
-finite continuation therefore runs on the same actual invocation. For a
-selected fresh block $F$, the absorption sequence has at most $N-|F|$ records,
-while execution length is unrestricted. Atom renaming transports the
-realization. A placed forward union-find-with-explanations (UFE) adapter gives
-a second realization and a surjective decoder to the generated forest, with
-matching registration, reports, command domains, and successors. The results
-establish sufficiency for this consumer on generated forward calls; they
-assert neither minimality nor an efficient or machine-verified implementation.
+## Abstract
+
+**Problem.** An event-anchored consumer requests a selected fusion's origin,
+complete later absorption sequence, current carrier, and legal continuation
+commands. The current placed partition and selected fresh block alone do not
+determine that origin.
+
+**Approach.** We specify the consumer independently from execution logs and
+realize it by a finite placed-fusion forest for labelled single-defect
+circular actions.
+
+**Results.** On singleton-seed-generated domains with $2\le N\le n$, the
+decoder recovers the full consumer state, reflects command domains, and
+commutes with successors, including unrelated fusion during a
+carrier-preserving command. Every legal finite continuation runs on the same
+actual invocation. For a selected fresh block $F$, the absorption sequence
+has at most $N-|F|$ records although execution length is unrestricted. Atom
+renaming transports the realization. A placed forward
+union-find-with-explanations (UFE) adapter gives a second realization and a
+surjective decoder to the generated forest, with matching registration,
+reports, command domains, and successors.
+
+**Boundary.** These are sufficiency results for the declared consumer on
+generated forward calls, not minimality, efficiency, or machine verification
+of the general theorems.
 
 **Keywords.** fusion ancestry; event-anchored consumer; state representation;
 domain reflection; union-find with explanations
 
-## Notation {.unnumbered}
+## Notation Table {.unnumbered}
 
 | Symbol | Meaning |
 |---|---|
@@ -48,7 +55,7 @@ domain reflection; union-find with explanations
 
 \newpage
 
-## 1. The Log Task and Its Realization
+## Introduction
 
 The question is one of state representation and semantic sufficiency:
 **can a representation omit the complete execution history while preserving
@@ -79,7 +86,7 @@ addresses remain fixed. Thus an unplaced merge record alone is not the whole
 requested report. This observation does not imply an expressivity separation
 from an annotated merge-history implementation.
 
-### 1.1 Why the current partition is insufficient
+### Why the current partition is insufficient
 
 A three-state example already separates the current packets from the selected
 event's origin. Take $Q=\Omega=\mathbb Z_3$, keeping position and atom labels
@@ -126,7 +133,7 @@ It also gives no separation from UFE with retained effective-union history:
 those histories distinguish the two executions. Proposition 5.1 supplies
 the positive correspondence with that annotated-history representation.
 
-### 1.2 From specification to continuous realization
+### From specification to continuous realization
 
 Section 2 defines the consumer directly from raw execution logs. Section 3
 constructs its finite forest representation, and Section 4 proves complete
@@ -156,9 +163,9 @@ successors, rather than choosing a new existential representative at every
 step. Proposition 5.1 then shows that an existing effective-union history,
 with declared placement and port bindings, also realizes the same task.
 
-## Related Work and Novelty Boundary {.unnumbered}
+### Related Work and Novelty Boundary
 
-### Semantic and causal background {.unnumbered}
+**Semantic and causal background.**
 
 Explicit transition rules and induction over executions are established
 operational-semantics methods [@plotkin2004sos]. Simulation and refinement
@@ -183,7 +190,7 @@ presented as a full event structure with a conflict/concurrency theory.
 Theorem 4.1 recovers the chronological absorption subsequence along one
 selected lineage, not the ordering of incomparable events.
 
-### Union histories and explanation {.unnumbered}
+**Union histories and explanation.**
 
 Union trees are established objects in disjoint-set algorithms; Gabow and
 Tarjan study a special case with the union structure known in advance
@@ -212,7 +219,7 @@ consumer in that annotated-history system, rather than asserting an
 expressivity separation. Bare-UFE equivalence and rollback are outside the
 comparison.
 
-### Contribution boundary {.unnumbered}
+**Contribution boundary.**
 
 The contribution is the realization proof for the joint consumer obligation:
 an event anchor, changing placement, a complete causal absorption sequence,
@@ -224,7 +231,7 @@ The comparison is selective and establishes no priority or expressivity
 separation for this combination. Minimality, efficiency, and verified code
 are separate questions.
 
-## 2. Execution Logs and the Event-Anchored Consumer
+## Execution Logs and the Event-Anchored Consumer
 
 Let $Q$ and $\Omega$ denote finite nonempty sets of positions and source atoms,
 and let $A$ be a finite set of generator labels. A labelled action is a family
@@ -321,7 +328,7 @@ The commands define deterministic partial actions on the generated summary
 domain, not just on separate histories. Each legal successor is generated by
 extending the same history, and the selected event remains registered.
 
-## 3. A Finite Placed-Fusion-Forest Realization
+## A Finite Placed-Fusion-Forest Realization
 
 Use the labelled action and atoms of Section 2. The state below records
 fusion ancestry and current placement without retaining the complete
@@ -453,7 +460,7 @@ If one restricts to states reachable from a particular initial forest,
 its renamed initial forest must be used on the other side. Arbitrary atom
 renaming need not preserve one fixed labelled initial seed.
 
-## 4. Consumer Adequacy and Exact Continuations
+## Consumer Adequacy and Exact Continuations
 
 ### 4.1 Decoder and generated domain
 
@@ -604,7 +611,7 @@ Theorem 4.1 and its corollaries establish sufficiency for the independently
 specified consumer. Section 5 supplies another realization of the same task
 without enlarging its read or command signature.
 
-## 5. A Placed Forward-UFE Correspondence
+## A Placed Forward-UFE Correspondence
 
 Use the singleton initialization, equivalence-class operations, ordered
 effective-union history, and effective union of the abstract UFE interface
@@ -675,7 +682,7 @@ placement and a proved ordered-port call policy; arbitrary UFE histories do
 not thereby acquire raw-event provenance. Efficient/imperative refinement,
 rollback, and equality-explanation queries are outside this result.
 
-## 6. One Event Through Unrelated Fusion and Later Absorption
+## One Event Through Unrelated Fusion and Later Absorption
 
 Take $\Omega=Q=\mathbb Z_7$ as labelled sets, keeping atom labels and positions
 distinct, and
@@ -755,9 +762,9 @@ This is an equality of full forest states under the declared atom renaming,
 not merely of masses. Both words have one strict drop, but neither
 shortestness nor a separate checkpoint-admission predicate is asserted.
 
-## 7. Computational Artifacts
+## Computational Artifacts
 
-The paper-owned development package is under `experiments/paper39/` in the
+The paper-owned evidence package is under `experiments/paper39/` in the
 [RIME repository](https://github.com/dooven-prime/rime-lite).
 Paths in the table are relative to that directory.
 
@@ -767,7 +774,8 @@ Paths in the table are relative to that directory.
 | Replay | `consumer_audit.py`, `results/` | bounded three-model comparison |
 | Lean | `lean/` | partial spine and coverage manifest |
 | Validation | `validation/` | local replay and contract tests |
-| Closure | `development-manifest.json` | selected development source bytes |
+| Notes | `notes/` | supplementary specification and proof details |
+| Closure | `release-manifest.json` | selected public source and reader PDF bytes |
 
 The bounded three-model replay compares the independently written
 occurrence-log consumer, placed forest, and abstract placed forward-UFE
@@ -782,15 +790,15 @@ lookup, binary-forest counts, and conditional same-representative path
 lifting. The path lemmas assume the single-step commutation that the
 concrete adequacy theorem must supply. The formalization does not prove
 the full forest/log adequacy or placed forward-UFE correspondence, and
-does not verify the Python implementations. Default package validation
-checks the formal source closure; the optional `--lean` mode performs an
-isolated compiler and axiom replay.
+does not verify the Python implementations. The release gate records an
+isolated compiler and axiom replay of this partial spine.
 
 Neither the bounded replay nor the partial Lean spine is a machine proof
 of Theorem 4.1 or Proposition 5.1. Their data-independent proofs are in
-this manuscript. The development closure is not a release identity.
+this manuscript. The development manifest alone is not a release identity;
+the separate release manifest binds the selected public bytes.
 
-## 8. Claim Status and Boundary
+## Claim Status and Boundary
 
 | Item | Mathematical scope |
 |---|---|
@@ -807,7 +815,7 @@ this manuscript. The development closure is not a release identity.
 | Current partition and selected fresh block determine the origin | false on the three-state example in Section 1.1 |
 | Minimal representation, efficient implementation, or full UFE API equivalence | not established |
 
-## Conclusion {.unnumbered}
+## Conclusion
 
 The answer to the opening question is affirmative on the declared
 singleton-seed-generated domain. The forest omits the complete execution
@@ -1109,8 +1117,8 @@ calling its records typed.
 
 The expanded specification and proof notes are available in the
 [RIME repository](https://github.com/dooven-prime/rime-lite), under
-`papers/paper39/`. The manuscript states and proves the central results; these
-notes provide additional definitions, case analysis, and source locators.
+`experiments/paper39/notes/`. The manuscript states and proves the central
+results; these notes provide additional definitions and case analysis.
 
 | Supplement | Short path |
 |---|---|
@@ -1119,8 +1127,7 @@ notes provide additional definitions, case analysis, and source locators.
 | Ordered UFE calls and decoder | `UFE_CORRESPONDENCE.md` |
 
 These short paths and the repository landing link are source locators, not
-immutable release pins. The development manifest in Section 7 binds the
-selected manuscript and supplementary source bytes.
+immutable release pins. The release manifest binds their exact bytes.
 
 The examples in Sections 1.1 and 6 are worked applications of the equations.
 Section 7 distinguishes their bounded replay from the partial formalization;

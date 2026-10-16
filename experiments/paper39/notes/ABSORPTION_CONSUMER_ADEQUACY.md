@@ -1,17 +1,17 @@
 # Adequacy for Event-Anchored Absorption Chains
 
 **Status:** supplementary data-independent proof details for
-[Paper XXXIX Theorem 4.1 and Corollaries 4.2--4.4](Paper%20XXXIX.md), using
+[Paper XXXIX Theorem 4.1 and Corollaries 4.2--4.4](../../../papers/paper39/Paper%20XXXIX.md), using
 the separately declared [consumer specification](ABSORPTION_CONSUMER_SPEC.md).
 The Paper XXXIX manuscript owns the central theorem; this note expands its
 proof and coverage inventory rather than creating a second claim authority.
-The result concerns the declared forest semantics on its seed-generated domain. The numbered draft remains subject to mathematical review.
+The result concerns the declared forest semantics on its seed-generated domain.
 
 ## 1. Declared implementation domain
 
 Use the source, labelled action, and singleton seed of the consumer
 specification. Generate the placed forest by the equations in
-[Paper XXXIX Section 3](Paper%20XXXIX.md). Write
+[Paper XXXIX Section 3](../../../papers/paper39/Paper%20XXXIX.md). Write
 
 $$
  z_h=\delta_h^{\mathfrak F}z_{\iota},\qquad
