@@ -22,6 +22,7 @@ not rewrite manifests or receipts that accurately recorded a candidate state.
 | Paper XXXVI v1.0 | [paper36-v1.0.json](paper36-v1.0.json) |
 | Paper XXXVII v1.0 | [paper37-v1.0.json](paper37-v1.0.json) |
 | Paper XXXVIII v1.0 | [paper38-v1.0.json](paper38-v1.0.json) |
+| Paper XXXIX v1.0 | [paper39-v1.0.json](paper39-v1.0.json) |
 
 Paper XXVII's tagged README names a `claim-surface-map.json` that was absent
 from the release tag. The historical package remains unchanged. Its anchor

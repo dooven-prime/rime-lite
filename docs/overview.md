@@ -121,7 +121,7 @@ research target; Paper VII does not assert a generic completion theorem.
   reduced post-transient reached set and audits its effective-drive boundary.
   It is an independent computational follow-up, not a protocol stage.
 
-### Papers XX--XXXVIII: Independent Post-Protocol Mathematics
+### Papers XX--XXXIX: Independent Post-Protocol Mathematics
 
 Papers XVIII--XIX are intentionally unused in the public numbered sequence.
 Paper XX begins a separately scoped mathematical line with all-depth
@@ -207,6 +207,11 @@ Paper XXXVIII classifies exact return-count layers and budgeted survivor maps
 from a supplied local full-lane configuration. Its first exit is relative to
 those five lineages; the result does not supply whole-image entry from the
 complete initial carrier or a typed-transfer conclusion.
+Paper XXXIX specifies an event-anchored consumer and gives two finite
+realizations on singleton-seed-generated single-defect circular actions. Its
+forest and placed forward-UFE adapter preserve complete reports and legal
+continuations; neither establishes minimality, efficiency, or executable-code
+verification.
 These papers consume no protocol authority and do not reopen Papers VIII--XV.
 Published version-1 identities are maintained in the repository's canonical
 DOI index.
@@ -240,6 +245,8 @@ Paper XXXVII owns the arbitrary-permutation frontier under its separately
 declared full ordinary-lane guards.
 Paper XXXVIII owns source-relative return budgets under a supplied local
 full-lane premise, not a global packet-entry construction.
+Paper XXXIX owns event-anchored consumer realization on its declared generated
+domain, not an inherited typed-transfer or general UFE refinement theorem.
 Results or evidence do not transfer between these owners without an explicit theorem
 or source-addressed import.
 
