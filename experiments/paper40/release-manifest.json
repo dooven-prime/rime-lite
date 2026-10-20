@@ -1,0 +1,190 @@
+{
+  "schema": "rime.paper40.release-manifest.v1",
+  "paper_id": "PAPER40",
+  "release_version": "1.0",
+  "intended_release_tag": "paper40-v1.0",
+  "status": "RELEASE_CONTENT",
+  "release_identity_claimed": true,
+  "external_anchor_claimed": false,
+  "validation_mode": "LOCAL_CLOSURE_VERIFICATION",
+  "receipt_self_exclusion": true,
+  "digest_policy": {
+    "algorithm": "sha256",
+    "scope": "exact_file_bytes",
+    "path_resolution": "exact repository-relative path",
+    "wildcards_allowed": false,
+    "absolute_paths_allowed": false,
+    "current_head_fallback_allowed": false
+  },
+  "artifacts": [
+    {
+      "role": "manuscript",
+      "closure_class": "normative-manuscript-build",
+      "path": "papers/paper40/Paper XL.md",
+      "sha256": "6421ef4778aef46432324933c5cfe0d04a3437f2394c94c73f4465e78f621ee5",
+      "size": 39732
+    },
+    {
+      "role": "reader-pdf",
+      "closure_class": "normative-manuscript-build",
+      "path": "papers/paper40/paper40_arxiv.pdf",
+      "sha256": "605995663dad048a2426e59f5d5b01b3be6ce5a7ca2898714c1f2d61372b0129",
+      "size": 124638
+    },
+    {
+      "role": "bibliography",
+      "closure_class": "normative-manuscript-build",
+      "path": "papers/paper40/references-v1.bib",
+      "sha256": "d64e2fe49c51b93bf7e4c8a8c591c93388a728ee6d16ec3bf698289e30a662aa",
+      "size": 3378
+    },
+    {
+      "role": "reader-build-entrypoint",
+      "closure_class": "normative-manuscript-build",
+      "path": "papers/tex/build.py",
+      "sha256": "5fbda3b0bc8bc9538bb18f3c3a55b050eb6df6e02cc3c5d791fd5d306759fd5f",
+      "size": 367
+    },
+    {
+      "role": "reader-build-driver",
+      "closure_class": "normative-manuscript-build",
+      "path": "papers/tex/_build.py",
+      "sha256": "cf93be2143b2d1af079acad12b4ca41fce7e44e5557026e6a6e9bc90b0b8a835",
+      "size": 18818
+    },
+    {
+      "role": "reader-build-postprocessor",
+      "closure_class": "normative-manuscript-build",
+      "path": "papers/tex/_postprocess.py",
+      "sha256": "e6225f473ff9fe09845224be81d0ef5d853248588ea0ceef180f3f388dcf7554",
+      "size": 90094
+    },
+    {
+      "role": "reader-build-hrule-cleaner",
+      "closure_class": "normative-manuscript-build",
+      "path": "papers/tex/_clean_hrule.py",
+      "sha256": "dab41021d86aed7003259972e52e48712aa5d1c9b7a1e501e3607d17c9a72444",
+      "size": 3084
+    },
+    {
+      "role": "source-archive",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper40/source/q2-source-v1.zip",
+      "sha256": "2f473984c02c7d085d4bbec37fe06823c4399d201a08ed35251be57f3ffe3244",
+      "size": 143519
+    },
+    {
+      "role": "archive-binding",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper40/source/snapshot.v1.json",
+      "sha256": "8e416d6defa996fb39963edc5e762f5e884e3a50819c2a1c1ba3357d122cf6c4",
+      "size": 9664
+    },
+    {
+      "role": "bounded-results",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper40/results/q2-controls.v1.json",
+      "sha256": "065e2c0a3d045488b5620b50a1effead767abc228c3816229d87951411e857f2",
+      "size": 209930
+    },
+    {
+      "role": "producer-environment",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper40/environment.v1.json",
+      "sha256": "9995fd19d931375169a106100c251e04c88a60da32c679e8a033685f202dcd46",
+      "size": 304
+    },
+    {
+      "role": "release-environment",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper40/release-environment.json",
+      "sha256": "821de592b2a3e473038d53856aeefbde21d20fd44f479e09e6f5a6558ea73a24",
+      "size": 526
+    },
+    {
+      "role": "evidence-scope",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper40/artifact_scope.py",
+      "sha256": "5ef1db2de4892e0530e4572eb060bdd1421c7d61b243f75484d91157f3c223d3",
+      "size": 2544
+    },
+    {
+      "role": "snapshot-builder",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper40/build_snapshot.py",
+      "sha256": "def299c3a5e32ac67fc2f4dc0664015dddb8bc4071ac15b2c2050aac0a0dd9b3",
+      "size": 5054
+    },
+    {
+      "role": "development-sealer",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper40/freeze_closure.py",
+      "sha256": "fcf52d1d1ba18e3b22368c332af0e13e8a5ffa32e811a3d26d26383149965e20",
+      "size": 1733
+    },
+    {
+      "role": "development-manifest",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper40/development-manifest.json",
+      "sha256": "8e5d068ac29da33854e13b1df680c75c95dfb03be3628e2528a4a65857c593b4",
+      "size": 2636
+    },
+    {
+      "role": "evidence-validator",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper40/validation/validate_package.py",
+      "sha256": "0f66827dc0e6307c49a40bca09bc7ab06da49827991cd6a32c85b0d8d707342a",
+      "size": 11207
+    },
+    {
+      "role": "package-boundary-tests",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper40/validation/test_package.py",
+      "sha256": "8f9c145440fb6ffaceed559b4e85f7caab02a2a6599506bb584ce298c1bae623",
+      "size": 5608
+    },
+    {
+      "role": "release-validator",
+      "closure_class": "theorem-facing-computational",
+      "path": "experiments/paper40/validation/validate_release.py",
+      "sha256": "d6d4a3bd2377e5c23f07d529f34cf7f995ac6226b01a75fcbed65bc83c72128d",
+      "size": 12208
+    },
+    {
+      "role": "evidence-readme",
+      "closure_class": "public-package-documentation",
+      "path": "experiments/paper40/README.md",
+      "sha256": "e7ccd7e4b123bb7c48683f087cd4f9bd619ad6ff5096973c31898f4a55cfd85c",
+      "size": 9246
+    }
+  ],
+  "nested_closures": {
+    "development_evidence": {
+      "manifest": "experiments/paper40/development-manifest.json",
+      "release_identity_claimed": false
+    }
+  },
+  "closure_policy": {
+    "classes": [
+      "normative-manuscript-build",
+      "theorem-facing-computational",
+      "public-package-documentation"
+    ],
+    "release_identity_classes": [
+      "normative-manuscript-build",
+      "theorem-facing-computational"
+    ],
+    "package_inventory_classes": [
+      "normative-manuscript-build",
+      "theorem-facing-computational",
+      "public-package-documentation"
+    ]
+  },
+  "claim_boundary": [
+    "the manuscript proves the consumer-relative R/G/T criterion and finite checking theorem",
+    "the bounded JSON replay and package tests do not prove implementation correctness",
+    "the release validator verifies retained PDF bytes without rebuilding the PDF",
+    "no minimum-state synthesis, performance advantage or cross-domain utility is established",
+    "local closure verification is not independent validation or public download verification"
+  ]
+}

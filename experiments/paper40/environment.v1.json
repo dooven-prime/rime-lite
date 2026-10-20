@@ -1,0 +1,11 @@
+{
+  "dependencies": "Python standard library only",
+  "git_required": false,
+  "implementation": "CPython",
+  "network_required": false,
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": "3.13.0",
+  "python_hash_seed": "0",
+  "python_optimize": 0,
+  "schema": "rime.paper40.replay-environment.v1"
+}
