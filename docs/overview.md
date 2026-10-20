@@ -121,7 +121,7 @@ research target; Paper VII does not assert a generic completion theorem.
   reduced post-transient reached set and audits its effective-drive boundary.
   It is an independent computational follow-up, not a protocol stage.
 
-### Papers XX--XXXIX: Independent Post-Protocol Mathematics
+### Papers XX--XL: Independent Post-Protocol Mathematics
 
 Papers XVIII--XIX are intentionally unused in the public numbered sequence.
 Paper XX begins a separately scoped mathematical line with all-depth
@@ -212,6 +212,10 @@ realizations on singleton-seed-generated single-defect circular actions. Its
 forest and placed forward-UFE adapter preserve complete reports and legal
 continuations; neither establishes minimality, efficiency, or executable-code
 verification.
+Paper XL checks a supplied compression against a declared event-anchored
+consumer's reports, guards, and enabled successors on a finite generated
+domain. Failed checks return registered history witnesses. Its bounded source
+replay is a consistency control, not a proof of implementation correctness.
 These papers consume no protocol authority and do not reopen Papers VIII--XV.
 Published version-1 identities are maintained in the repository's canonical
 DOI index.
@@ -247,6 +251,8 @@ Paper XXXVIII owns source-relative return budgets under a supplied local
 full-lane premise, not a global packet-entry construction.
 Paper XXXIX owns event-anchored consumer realization on its declared generated
 domain, not an inherited typed-transfer or general UFE refinement theorem.
+Paper XL owns consumer-relative sufficiency checking; it does not re-own Paper
+XXXIX's forest or placed-UFE representation result.
 Results or evidence do not transfer between these owners without an explicit theorem
 or source-addressed import.
 

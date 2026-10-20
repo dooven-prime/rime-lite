@@ -1,0 +1,89 @@
+{
+  "schema": "rime.paper-post-release-anchor.v1",
+  "paper_id": "PAPER40",
+  "release_version": "1.0",
+  "publication_status": "PUBLISHED",
+  "release_identity_claimed": true,
+  "anchor_role": "DOWNSTREAM_PUBLICATION_METADATA",
+  "release_tag": {
+    "name": "paper40-v1.0",
+    "tag_object_sha": "2847653c7273b1e3d1d60baa725eba751c36e49d",
+    "target_commit_sha": "6df0b4aa9357aa67522aa2e47436674aab1bad5f"
+  },
+  "pre_release_evidence": [
+    {
+      "role": "release-manifest",
+      "path": "experiments/paper40/release-manifest.json",
+      "sha256_at_tag": "036a9e7d1ea911eda4d6f92fc915c23f3fbf8ea6877f69003124ce656d7d4cf9",
+      "size_at_tag": 6906,
+      "mutation_policy": "IMMUTABLE_TAG_BYTES",
+      "declared_state_at_tag": {
+        "schema": "rime.paper40.release-manifest.v1",
+        "status": "RELEASE_CONTENT",
+        "release_identity_claimed": true,
+        "validation_mode": "LOCAL_CLOSURE_VERIFICATION"
+      }
+    },
+    {
+      "role": "validation-receipt",
+      "path": "experiments/paper40/results/paper40_public_package_v1.validation-receipt.json",
+      "sha256_at_tag": "a8105ff7726e363bec21a6950da6c7c8a9ffecdd3b6aa9558123608d803ef772",
+      "size_at_tag": 11216,
+      "mutation_policy": "IMMUTABLE_TAG_BYTES",
+      "declared_state_at_tag": {
+        "schema": "rime.paper40.public-package-receipt.v1",
+        "status": "PASS",
+        "validation_mode": "LOCAL_CLOSURE_VERIFICATION"
+      }
+    }
+  ],
+  "post_release_supplements": [
+    {
+      "role": "fixed-controls-audit",
+      "path": "tools/release/verify_paper40_fixed_controls.py",
+      "sha256": "843487988818ddb316284279dda67e497e0a5802e7204f6ed1eee90b3b5067d9",
+      "size": 6875,
+      "release_role": "POST_RELEASE_SUPPLEMENT_NOT_IN_RELEASE_TAG"
+    },
+    {
+      "role": "fixed-controls-audit-tests",
+      "path": "tests/test_paper40_post_release_audit.py",
+      "sha256": "5866fac0d78c69ae2e78d3fc2f77895459c2bfb1d8c973849f106954625186a4",
+      "size": 2044,
+      "release_role": "POST_RELEASE_SUPPLEMENT_NOT_IN_RELEASE_TAG"
+    }
+  ],
+  "external_anchor": {
+    "provider": "Zenodo",
+    "doi": "10.5281/zenodo.23494084",
+    "record_id": "23494084",
+    "record_url": "https://zenodo.org/records/23494084",
+    "publication_date": "2026-10-20",
+    "deposited_files": [
+      {
+        "remote_name": "paper40_arxiv.pdf",
+        "source_path_at_tag": "papers/paper40/paper40_arxiv.pdf",
+        "sha256": "605995663dad048a2426e59f5d5b01b3be6ce5a7ca2898714c1f2d61372b0129",
+        "size": 124638
+      }
+    ]
+  },
+  "versioned_repin_policy": {
+    "pre_release_manifest_mutation_allowed": false,
+    "pre_release_receipt_mutation_allowed": false,
+    "current_head_fallback_allowed": false,
+    "owner_change_requires_new_owner_version": true,
+    "consumer_change_requires_new_consumer_version_and_repin": true,
+    "shared_file_in_place_update_allowed": false
+  },
+  "authority_boundary": [
+    "The anchor establishes release-tag, evidence-root, and deposited-file byte identity only.",
+    "A DOI anchors only files actually deposited in that record.",
+    "Local closure verification is not independent mathematical validation.",
+    "Publication anchoring does not establish theorem truth or scientific adequacy.",
+    "The anchor is downstream metadata and is not part of the release tag it records."
+  ],
+  "notes": [
+    "The fixed-controls audit is a downstream supplement, not a change to the tagged Paper XL closure."
+  ]
+}

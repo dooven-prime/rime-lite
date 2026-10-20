@@ -83,7 +83,7 @@ moving fields, or represented genericity.
 
 The public documentation covers the published Papers I--XV architecture, the
 independently scoped Papers XVI--XVII computational studies, and Papers
-XX--XXXIX mathematical lines. Author-side planning, exploratory research
+XX--XL mathematical lines. Author-side planning, exploratory research
 routing, release migration status, and historical working notes are outside
 this public documentation index.
 
