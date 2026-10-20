@@ -1,0 +1,79 @@
+{
+  "artifacts": [
+    {
+      "path": "papers/paper40/Paper XL.md",
+      "sha256": "6421ef4778aef46432324933c5cfe0d04a3437f2394c94c73f4465e78f621ee5",
+      "size": 39732
+    },
+    {
+      "path": "papers/paper40/references-v1.bib",
+      "sha256": "d64e2fe49c51b93bf7e4c8a8c591c93388a728ee6d16ec3bf698289e30a662aa",
+      "size": 3378
+    },
+    {
+      "path": "experiments/paper40/README.md",
+      "sha256": "e7ccd7e4b123bb7c48683f087cd4f9bd619ad6ff5096973c31898f4a55cfd85c",
+      "size": 9246
+    },
+    {
+      "path": "experiments/paper40/artifact_scope.py",
+      "sha256": "5ef1db2de4892e0530e4572eb060bdd1421c7d61b243f75484d91157f3c223d3",
+      "size": 2544
+    },
+    {
+      "path": "experiments/paper40/build_snapshot.py",
+      "sha256": "def299c3a5e32ac67fc2f4dc0664015dddb8bc4071ac15b2c2050aac0a0dd9b3",
+      "size": 5054
+    },
+    {
+      "path": "experiments/paper40/freeze_closure.py",
+      "sha256": "fcf52d1d1ba18e3b22368c332af0e13e8a5ffa32e811a3d26d26383149965e20",
+      "size": 1733
+    },
+    {
+      "path": "experiments/paper40/validation/validate_package.py",
+      "sha256": "0f66827dc0e6307c49a40bca09bc7ab06da49827991cd6a32c85b0d8d707342a",
+      "size": 11207
+    },
+    {
+      "path": "experiments/paper40/validation/test_package.py",
+      "sha256": "8f9c145440fb6ffaceed559b4e85f7caab02a2a6599506bb584ce298c1bae623",
+      "size": 5608
+    },
+    {
+      "path": "experiments/paper40/source/q2-source-v1.zip",
+      "sha256": "2f473984c02c7d085d4bbec37fe06823c4399d201a08ed35251be57f3ffe3244",
+      "size": 143519
+    },
+    {
+      "path": "experiments/paper40/source/snapshot.v1.json",
+      "sha256": "8e416d6defa996fb39963edc5e762f5e884e3a50819c2a1c1ba3357d122cf6c4",
+      "size": 9664
+    },
+    {
+      "path": "experiments/paper40/results/q2-controls.v1.json",
+      "sha256": "065e2c0a3d045488b5620b50a1effead767abc228c3816229d87951411e857f2",
+      "size": 209930
+    },
+    {
+      "path": "experiments/paper40/environment.v1.json",
+      "sha256": "9995fd19d931375169a106100c251e04c88a60da32c679e8a033685f202dcd46",
+      "size": 304
+    }
+  ],
+  "excluded_dependencies": [
+    "unnumbered working notes",
+    "live sof-runtime checkout",
+    "Git history during replay",
+    "network",
+    "external checking tools",
+    "reader PDF",
+    "validation receipt itself"
+  ],
+  "paper_id": "PAPER40",
+  "proof_ownership": "Manuscript owns the theorems; code and bounded controls are supplementary.",
+  "release_identity_claimed": false,
+  "schema": "rime.paper40.development-manifest.v1",
+  "status": "DRAFT_PAPER_OWNED_CLOSURE",
+  "validation_mode": "LOCAL_CLOSURE_VERIFICATION"
+}

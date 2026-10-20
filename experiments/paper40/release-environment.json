@@ -1,0 +1,12 @@
+{
+  "schema": "rime.paper40.release-environment.v1",
+  "role": "OBSERVED_READER_BUILD_ENVIRONMENT",
+  "reader_build_command": "python papers/tex/build.py paper40",
+  "reader_build_output": "papers/paper40/paper40_arxiv.pdf",
+  "observed_on": "Windows",
+  "python": "3.13.0",
+  "pandoc": "3.6.4",
+  "xelatex": "MiKTeX-XeTeX 4.18 (MiKTeX 26.5)",
+  "bibtex": "MiKTeX-BibTeX 4.2 (MiKTeX 26.5)",
+  "boundary": "The release validator checks the retained PDF bytes; it does not claim cross-platform byte-identical PDF rebuilding."
+}

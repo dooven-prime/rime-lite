@@ -1,0 +1,257 @@
+{
+  "archive": {
+    "filename": "q2-source-v1.zip",
+    "sha256": "2f473984c02c7d085d4bbec37fe06823c4399d201a08ed35251be57f3ffe3244",
+    "size": 143519
+  },
+  "public_anchor": {
+    "immutable_url": null,
+    "status": "PENDING_AUTHOR_PUBLICATION"
+  },
+  "release_identity_claimed": false,
+  "schema": "rime.paper40.snapshot-binding.v1",
+  "snapshot_id": "paper40-q2-source-v1",
+  "source_manifest": {
+    "dependencies": [],
+    "export_policy": "runtime UTF-8 text canonicalized to LF; frozen release blobs exact",
+    "files": [
+      {
+        "origin": {
+          "content_commit": "a4b3e48bd119908494c6d4de8619bffc01c1ecb9",
+          "path": "applications/event_causal_consumers/README.md",
+          "repository": "dooven-prime/sof-runtime"
+        },
+        "path": "APPLICATION_README.md",
+        "sha256": "fde49c21c737cf246f35b82e047209d5a9fe7cc352fd8321a744060379594d91",
+        "size": 9573
+      },
+      {
+        "origin": {
+          "content_commit": "a4b3e48bd119908494c6d4de8619bffc01c1ecb9",
+          "path": "LICENSE",
+          "repository": "dooven-prime/sof-runtime"
+        },
+        "path": "LICENSE",
+        "sha256": "19eebed875a03a38f9f56eb7ea555e6101a68b5fb7c83f757d6a16d59ce1661f",
+        "size": 1067
+      },
+      {
+        "origin": {
+          "content_commit": "a4b3e48bd119908494c6d4de8619bffc01c1ecb9",
+          "path": "applications/event_causal_consumers/Q2_LANGUAGE.md",
+          "repository": "dooven-prime/sof-runtime"
+        },
+        "path": "Q2_LANGUAGE.md",
+        "sha256": "27b6a251f4fdcedee48f6f2bcc6bd7cb1082a7747aca47d60bb891327571af54",
+        "size": 8665
+      },
+      {
+        "origin": {
+          "content_commit": "a4b3e48bd119908494c6d4de8619bffc01c1ecb9",
+          "path": "applications/event_causal_consumers/SNAPSHOT_README.md",
+          "repository": "dooven-prime/sof-runtime"
+        },
+        "path": "README.md",
+        "sha256": "49785178e8d093c6ecf7eabcba22d6f2f58efbaefe0c5ab09fb367835482d16f",
+        "size": 2583
+      },
+      {
+        "origin": {
+          "content_commit": "a4b3e48bd119908494c6d4de8619bffc01c1ecb9",
+          "path": "applications/event_causal_consumers/examples/origin_read_failure.json",
+          "repository": "dooven-prime/sof-runtime"
+        },
+        "path": "examples/origin_read_failure.json",
+        "sha256": "824b390885154cb81b3fd9e028bc3198f71d70a4b5584f2ba1baaad01dfeb488",
+        "size": 667
+      },
+      {
+        "origin": {
+          "content_commit": "a4b3e48bd119908494c6d4de8619bffc01c1ecb9",
+          "path": "applications/event_causal_consumers/fixed_controls.py",
+          "repository": "dooven-prime/sof-runtime"
+        },
+        "path": "fixed_controls.py",
+        "sha256": "8fc2fa3d3ab599236d0b952a430fa2a9028dbdf2f363c03adf19b0c1678e5e25",
+        "size": 18824
+      },
+      {
+        "origin": {
+          "content_commit": "b032b47ec47f28c8b2f65844abbe30dc3b38fef8",
+          "path": "LICENSE",
+          "repository": "dooven-prime/rime-lite"
+        },
+        "path": "frozen/paper39/LICENSE",
+        "sha256": "19eebed875a03a38f9f56eb7ea555e6101a68b5fb7c83f757d6a16d59ce1661f",
+        "size": 1067
+      },
+      {
+        "origin": {
+          "content_commit": "b032b47ec47f28c8b2f65844abbe30dc3b38fef8",
+          "path": "experiments/paper39/contract.py",
+          "repository": "dooven-prime/rime-lite"
+        },
+        "path": "frozen/paper39/contract.py",
+        "sha256": "001ce3824a4cde7c2e1e37ba1cebabbdeed49e1e3b57d5664dcdf609d3e909a1",
+        "size": 3126
+      },
+      {
+        "origin": {
+          "content_commit": "b032b47ec47f28c8b2f65844abbe30dc3b38fef8",
+          "path": "experiments/paper39/forest.py",
+          "repository": "dooven-prime/rime-lite"
+        },
+        "path": "frozen/paper39/forest.py",
+        "sha256": "ab2d6913f29bb4008f80d9f6d48db7e5b246fe75382ef0b2df2b2f2639d66336",
+        "size": 5097
+      },
+      {
+        "origin": {
+          "content_commit": "b032b47ec47f28c8b2f65844abbe30dc3b38fef8",
+          "path": "experiments/paper39/log_consumer.py",
+          "repository": "dooven-prime/rime-lite"
+        },
+        "path": "frozen/paper39/log_consumer.py",
+        "sha256": "f0c6786ecdfbd54209487db725340469c4816cae574e55b966d7323955dd2640",
+        "size": 2470
+      },
+      {
+        "origin": {
+          "content_commit": "a4b3e48bd119908494c6d4de8619bffc01c1ecb9",
+          "path": "applications/event_causal_consumers/q2/__init__.py",
+          "repository": "dooven-prime/sof-runtime"
+        },
+        "path": "q2/__init__.py",
+        "sha256": "e3f6f3c4d741a91cddf548219fe517f94bf38630d944f03e3157d2d777cc104c",
+        "size": 186
+      },
+      {
+        "origin": {
+          "content_commit": "a4b3e48bd119908494c6d4de8619bffc01c1ecb9",
+          "path": "applications/event_causal_consumers/q2/common.py",
+          "repository": "dooven-prime/sof-runtime"
+        },
+        "path": "q2/common.py",
+        "sha256": "53d40324447505674518051c7ab8625027039cf85a9f039fce3e395c7dc8e61d",
+        "size": 2281
+      },
+      {
+        "origin": {
+          "content_commit": "a4b3e48bd119908494c6d4de8619bffc01c1ecb9",
+          "path": "applications/event_causal_consumers/q2/engine.py",
+          "repository": "dooven-prime/sof-runtime"
+        },
+        "path": "q2/engine.py",
+        "sha256": "768931463c6759aba360571780d1a2a0cedafb027d23f617929dd1f4991c4f2f",
+        "size": 4973
+      },
+      {
+        "origin": {
+          "content_commit": "a4b3e48bd119908494c6d4de8619bffc01c1ecb9",
+          "path": "applications/event_causal_consumers/q2/model.py",
+          "repository": "dooven-prime/sof-runtime"
+        },
+        "path": "q2/model.py",
+        "sha256": "8a6bdcadb078375407a88e3bbf080a0c933f14cfb63bb7291f615cf3e6b01ad3",
+        "size": 6883
+      },
+      {
+        "origin": {
+          "content_commit": "a4b3e48bd119908494c6d4de8619bffc01c1ecb9",
+          "path": "applications/event_causal_consumers/q2/replay.py",
+          "repository": "dooven-prime/sof-runtime"
+        },
+        "path": "q2/replay.py",
+        "sha256": "de08a8c57ca4d1e9414a30b8cfad6654154d2ec870e45fd22b032d47b35c24f9",
+        "size": 6343
+      },
+      {
+        "origin": {
+          "content_commit": "a4b3e48bd119908494c6d4de8619bffc01c1ecb9",
+          "path": "applications/event_causal_consumers/q2/request.py",
+          "repository": "dooven-prime/sof-runtime"
+        },
+        "path": "q2/request.py",
+        "sha256": "13f204a98f55aff24e370d4bb02ae4c8700e23c32fffe61a8a2ae0ccbdaff946",
+        "size": 2211
+      },
+      {
+        "origin": {
+          "content_commit": "a4b3e48bd119908494c6d4de8619bffc01c1ecb9",
+          "path": "applications/event_causal_consumers/q2/syntax.py",
+          "repository": "dooven-prime/sof-runtime"
+        },
+        "path": "q2/syntax.py",
+        "sha256": "1588af15baaece48a87aa478b107fcc7ed75364d7cba6beeb113f0ae133c53e5",
+        "size": 10543
+      },
+      {
+        "origin": {
+          "content_commit": "a4b3e48bd119908494c6d4de8619bffc01c1ecb9",
+          "path": "applications/event_causal_consumers/q2/values.py",
+          "repository": "dooven-prime/sof-runtime"
+        },
+        "path": "q2/values.py",
+        "sha256": "e6c342811537ad1157dde286d490388b252f82af2b2fcad8aecb925662994478",
+        "size": 5404
+      },
+      {
+        "origin": {
+          "content_commit": "a4b3e48bd119908494c6d4de8619bffc01c1ecb9",
+          "path": "applications/event_causal_consumers/q2_cli.py",
+          "repository": "dooven-prime/sof-runtime"
+        },
+        "path": "q2_cli.py",
+        "sha256": "bb005bb5bd53add8a3b90425fe8e9d89d034356d9fba7f477ea63103f8064260",
+        "size": 3158
+      },
+      {
+        "origin": {
+          "content_commit": "a4b3e48bd119908494c6d4de8619bffc01c1ecb9",
+          "path": "applications/event_causal_consumers/q2_examples.py",
+          "repository": "dooven-prime/sof-runtime"
+        },
+        "path": "q2_examples.py",
+        "sha256": "721e3b767255a9d2e0e3e51e12e6ca1d40a60cdb671c0359fbb77be6ce51f672",
+        "size": 4420
+      },
+      {
+        "origin": {
+          "content_commit": "a4b3e48bd119908494c6d4de8619bffc01c1ecb9",
+          "path": "applications/event_causal_consumers/run_evidence.py",
+          "repository": "dooven-prime/sof-runtime"
+        },
+        "path": "run_evidence.py",
+        "sha256": "c3a021d4c5a683ac0e16383f73b06854290f022f12ce7868ba5dbcb0bc50ab7a",
+        "size": 5858
+      },
+      {
+        "origin": {
+          "content_commit": "a4b3e48bd119908494c6d4de8619bffc01c1ecb9",
+          "path": "applications/event_causal_consumers/test_fixed_controls.py",
+          "repository": "dooven-prime/sof-runtime"
+        },
+        "path": "test_fixed_controls.py",
+        "sha256": "e91f750b75207191b089e435d98982d470c109e0f7ec344a10a6fb4fa57e334a",
+        "size": 3286
+      },
+      {
+        "origin": {
+          "content_commit": "a4b3e48bd119908494c6d4de8619bffc01c1ecb9",
+          "path": "applications/event_causal_consumers/test_q2.py",
+          "repository": "dooven-prime/sof-runtime"
+        },
+        "path": "test_q2.py",
+        "sha256": "2f5193a9d7911575a130539eb8e461eb333642bd14593433cd9ae519bb018150",
+        "size": 23524
+      }
+    ],
+    "implementation_owner": "dooven-prime/sof-runtime",
+    "license": "MIT",
+    "python_requires": ">=3.11",
+    "runtime_source_binding": "exact Git content commit and explicit file allowlist",
+    "schema": "rime.paper40.q2-source.v1",
+    "snapshot_id": "paper40-q2-source-v1"
+  },
+  "source_manifest_sha256": "6d713fce85c13b20cabffbe84901b9163e994971ac63c2800774fc52b22e1b67"
+}

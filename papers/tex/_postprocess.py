@@ -434,8 +434,8 @@ def end_here(line, stop_at_proof=False):
     return False
 
 
-def split_explicit_proofs(body):
-    """Separate Paper XXXVIII's bold Markdown proofs from theorem statements."""
+def split_explicit_proofs(body, expected_count=10):
+    """Separate explicitly delimited Markdown proofs from theorem statements."""
     pattern = re.compile(
         r'(?ms)^(\\textbf\{Proof(?:\.|:[^}]*)\})(.*?)\\\(\\square\\\)'
     )
@@ -447,8 +447,8 @@ def split_explicit_proofs(body):
         return '\\begin{proof}\n' + (lead + '\n' if lead else '') + content.strip() + '\n\\end{proof}'
 
     body, count = pattern.subn(replace, body)
-    if count != 10 or re.search(r'\\textbf\{Proof(?:\.|:)|\\\(\\square\\\)', body):
-        raise ValueError('Paper XXXVIII proof boundaries are incomplete')
+    if count != expected_count or re.search(r'\\textbf\{Proof(?:\.|:)|\\\(\\square\\\)', body):
+        raise ValueError(f'Explicit proof boundaries are incomplete: expected {expected_count}, found {count}')
     return body
 
 
@@ -1779,10 +1779,10 @@ def process(input_path, output_path, title, author='WuJun Chen'):
                         out.append(lines[i])
                         i += 1
                         break
-                if list_depth == 0 and end_here(lines[i], stop_at_proof=paper_number == 38):
+                if list_depth == 0 and end_here(lines[i], stop_at_proof=paper_number in (38, 40)):
                     break
                 if list_depth == 0 and (not lines[i].strip() and i+1 < len(lines) and
-                    (end_here(lines[i+1], stop_at_proof=paper_number == 38) or match_thm(lines[i+1]))):
+                    (end_here(lines[i+1], stop_at_proof=paper_number in (38, 40)) or match_thm(lines[i+1]))):
                     break
                 out.append(lines[i])
                 i += 1
@@ -1858,10 +1858,10 @@ def process(input_path, output_path, title, author='WuJun Chen'):
                                     out.append(lines[i])
                                     i += 1
                                     break
-                            if list_depth == 0 and end_here(lines[i], stop_at_proof=paper_number == 38):
+                            if list_depth == 0 and end_here(lines[i], stop_at_proof=paper_number in (38, 40)):
                                 break
                             if list_depth == 0 and (not lines[i].strip() and i+1 < len(lines) and
-                                (end_here(lines[i+1], stop_at_proof=paper_number == 38) or match_thm(lines[i+1]))):
+                                (end_here(lines[i+1], stop_at_proof=paper_number in (38, 40)) or match_thm(lines[i+1]))):
                                 break
                             out.append(lines[i])
                             i += 1
@@ -1876,6 +1876,8 @@ def process(input_path, output_path, title, author='WuJun Chen'):
     body = '\n'.join(out)
     if paper_number == 38:
         body = split_explicit_proofs(body)
+    elif paper_number == 40:
+        body = split_explicit_proofs(body, expected_count=9)
 
     # ── Cross-reference: unnumbered subsections as implicit theorems ──
     # Detect \subsection{N.M Name} and \label{name-slug}, then
@@ -1937,7 +1939,7 @@ def process(input_path, output_path, title, author='WuJun Chen'):
 
     # ── Section numbering restructure (before labels, so stripping is clean) ──
     body = _restructure_sections(body, is_ccs=is_ccs)
-    if paper_number == 38:
+    if paper_number in (38, 40):
         body = body.replace(
             r'\appendix',
             r'\appendix' + '\n' + r'\renewcommand{\thetheorem}{\Alph{section}.\arabic{theorem}}',
@@ -2030,13 +2032,12 @@ def process(input_path, output_path, title, author='WuJun Chen'):
                             body[abs_pos + len(r'>{\raggedright\arraybackslash}'):])
 
     # ── Abstract: add \noindent before bold label paragraphs ──
-    # Between \section*{Abstract} and the next \section, add \noindent
+    # Between the Abstract heading and the next section heading, add \noindent
     # before each \textbf{Problem.}, \textbf{Mechanism.}, etc.
-    abs_match = re.search(r'\\section\*\{Abstract\}', body)
+    abs_match = re.search(r'\\(?:sub)?section\*\{Abstract\}', body)
     if abs_match:
-        abs_end = body.find(r'\section', abs_match.end())
-        if abs_end < 0:
-            abs_end = len(body)
+        next_heading = re.search(r'\\(?:sub)?section\*?\{', body[abs_match.end():])
+        abs_end = abs_match.end() + next_heading.start() if next_heading else len(body)
         before = body[:abs_match.end()]
         abstract_zone = body[abs_match.end():abs_end]
         after = body[abs_end:]
