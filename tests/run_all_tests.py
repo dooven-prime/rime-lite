@@ -34,6 +34,7 @@ TESTS = [
     "test_transport.py",
     "test_experiment_observation.py",
     "test_verification_state.py",
+    "test_paper40_post_release_audit.py",
     "test_contract_api.py",
     "test_accessibility_engine.py",
     "test_wall_trajectory.py",

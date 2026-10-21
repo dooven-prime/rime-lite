@@ -4,7 +4,7 @@ This document is the public navigation map for the Representation-Induced
 Mechanics and Evolution (RIME) program. It identifies semantic ownership,
 typed interfaces and promotion boundaries across published Papers I--XV, the
 independently scoped Papers XVI--XVII computational studies, and Papers
-XX--XXXIX theorem lines. It is not a
+XX--XL theorem lines. It is not a
 proof document, release ledger, result record, or substitute for an owning
 manuscript.
 
@@ -122,6 +122,7 @@ authority chain.
 | XXXVII | guarded lineage permutation groups and complete ordinary-lane survivor frontiers | the manuscript owns the all-g classification with arbitrary within-lane permutations; bounded replay and the partial Lean spine do not replace its proof or establish typed transfer |
 | XXXVIII | exact source-relative return layers and budgeted survivor frontiers | the manuscript owns the all-g layer and saturation proofs from a supplied local full-lane configuration; finite replay and partial Lean coverage do not establish whole-image entry, typed transfer, or reset bounds |
 | XXXIX | event-anchored fusion ancestry and consumer-adequate continuations | the manuscript owns sufficiency on the declared singleton-seed-generated domain; bounded replay and partial Lean coverage do not prove minimality, efficiency, or the general theorem |
+| XL | consumer-relative state sufficiency for event-anchored executions | the manuscript owns the read/guard/successor criterion; the finite checker and replay cover declared generated domains, not universal minimal-state synthesis or machine-checked implementation correctness |
 
 Papers XVIII--XIX are intentionally unused in the public numbered sequence.
 Paper XX begins an independently scoped mathematical line, and Paper XXI
@@ -176,6 +177,9 @@ Paper XXXIX specifies a separate event-anchored consumer and realizes its
 complete reports and continuation commands through a finite forest and a
 placed forward-UFE adapter. It does not inherit an imperative UFE refinement
 or a typed-transfer conclusion.
+Paper XL tests whether a further candidate compression supports a supplied
+consumer on the generated event-anchored domain, returning registered history
+witnesses for read, guard, or successor failure.
 None extends the SOF protocol authority chain.
 
 The synchronizing-automata papers share a research domain, not one inherited
@@ -202,6 +206,8 @@ incidence under a supplied local full-lane premise, not whole-image entry.
 Paper XXXIX owns its event-anchored consumer and the two finite realizations
 under their generated-domain hypotheses, not a general algorithmic or
 minimality claim.
+Paper XL owns the consumer-relative checker and its bounded source-addressed
+controls; Paper XXXIX's representation theorem remains separately owned.
 
 ## 4. Active Typing and Promotion Rules
 

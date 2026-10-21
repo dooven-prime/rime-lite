@@ -183,7 +183,7 @@ This is the current clean separation:
 | Audit Comparison | Paper XIII contribution | aligns two reports and emits a sparse typed comparison object |
 | Action Semantics | Paper XIV contribution | interprets immutable audit coordinates under an admitted `ActionContext` and `PolicyProfile` and stops at bounded candidates |
 | Corrigible Interface | Paper XV contribution | revises current-use commitments without rewriting immutable history or adding execution authority |
-| Post-Protocol Mathematics | Papers XX--XXXIX | develops independently scoped carrier, route, contextual-descent, diagnostic, synchronizing-automata, and consumer-realization theorems without extending protocol authority |
+| Post-Protocol Mathematics | Papers XX--XL | develops independently scoped carrier, route, contextual-descent, diagnostic, synchronizing-automata, and consumer-realization theorems without extending protocol authority |
 
 The novelty of RIME is not the existence of a semisimple block decomposition.
 That is the classical input for representation-derived examples. The novelty

@@ -23,6 +23,13 @@ not rewrite manifests or receipts that accurately recorded a candidate state.
 | Paper XXXVII v1.0 | [paper37-v1.0.json](paper37-v1.0.json) |
 | Paper XXXVIII v1.0 | [paper38-v1.0.json](paper38-v1.0.json) |
 | Paper XXXIX v1.0 | [paper39-v1.0.json](paper39-v1.0.json) |
+| Paper XL v1.0 | [paper40-v1.0.json](paper40-v1.0.json) |
+
+The Paper XL anchor binds a [post-release fixed-controls audit](../../tools/release/verify_paper40_fixed_controls.py)
+as a supplement outside its immutable tag. The audit checks the nine retained
+fixed cases, the 84-to-72 comparison, and the seven-position continuation
+against explicit expectations. It does not change the tagged validator or
+upgrade the original local receipt to independent validation.
 
 Paper XXVII's tagged README names a `claim-surface-map.json` that was absent
 from the release tag. The historical package remains unchanged. Its anchor
