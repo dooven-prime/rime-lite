@@ -1,0 +1,67 @@
+{
+  "schema": "rime.malecns-two-source-witness.v1",
+  "version": "1.0",
+  "boundary": "Compact certificate, with source replay against the separately pinned Dataset carrier",
+  "files": [
+    {
+      "path": "ATTRIBUTION.md",
+      "size": 1112,
+      "sha256": "413b7a6337d42e01e96a73068a99d779439f379aa63df6621c5675547616ccfc"
+    },
+    {
+      "path": "LICENSE_CODE.txt",
+      "size": 1067,
+      "sha256": "19eebed875a03a38f9f56eb7ea555e6101a68b5fb7c83f757d6a16d59ce1661f"
+    },
+    {
+      "path": "README.md",
+      "size": 2005,
+      "sha256": "402ebdcdcaeec7ac1266a28adf025744bbd09a9e224f2d55b30ad7de62bc0bd9"
+    },
+    {
+      "path": "experiments/paper16/source/digital_fly_v0/results/carrier_v0_manifest.json",
+      "size": 4806,
+      "sha256": "2eee002364f1f3797d0f62fb50d708c0a91c19bb630102c1bf1cdc21531cdc3f"
+    },
+    {
+      "path": "experiments/paper16/source/digital_fly_v0_1/results/sd1_operator_admission_v0_1.json",
+      "size": 7384,
+      "sha256": "f1dde555c18ff858f143275b5f2fda871a0e8f5c67c79a2aaff3e29e99aee331"
+    },
+    {
+      "path": "experiments/paper16/source/digital_fly_v0_2/results/d2_3_partition_comparison_v0_2.json",
+      "size": 81190,
+      "sha256": "80c39e9e0d7fc0a819195cffa2e7607effac941a25f257fa0dcf2c5156d83b32"
+    },
+    {
+      "path": "experiments/paper16/upstream-provenance.v1.json",
+      "size": 3081,
+      "sha256": "0b90db879b51ee6fe6e37fe443c58be9e572e3b202221958d33c487199345a55"
+    },
+    {
+      "path": "papers/unnumbered/from_support_to_state/evidence/somaside_exact_witness.py",
+      "size": 11362,
+      "sha256": "8d4d54364bf208f91987218a8aa4d12ce019f9640055c952caa88e751b284ef7"
+    },
+    {
+      "path": "papers/unnumbered/from_support_to_state/evidence/somaside_exact_witness.v1.json",
+      "size": 26178,
+      "sha256": "f57a4702387809899fca2e2cfc46b2fa7adb2481154b95c703aa9ce6384425e1"
+    },
+    {
+      "path": "papers/unnumbered/from_support_to_state/evidence/test_somaside_exact_witness.py",
+      "size": 3263,
+      "sha256": "4f6f2079f906c88488dfaa0d4366bb70b551b1ca13e2864230a1760a262e901d"
+    },
+    {
+      "path": "requirements.txt",
+      "size": 43,
+      "sha256": "778f347b1d221ce77b02a92858357672f701120e2c6f9c26c936cb5d68356b5b"
+    },
+    {
+      "path": "verify_witness.py",
+      "size": 8562,
+      "sha256": "861a7efd0e2be1809a35075f0ba73f713a49df19bf4d7029e5fbe4a129f583ad"
+    }
+  ]
+}
