@@ -1,0 +1,116 @@
+{
+  "schema": "rime.malecns-predictive-census-dataset.v1",
+  "version": "1.0",
+  "package_kind": "DATASET_WITH_SOURCE_REPLAY",
+  "boundary": "Local closure and same-implementation replay, not independent replication",
+  "files": [
+    {
+      "path": "ATTRIBUTION.md",
+      "role": "documentation_environment_or_license",
+      "size": 1112,
+      "sha256": "413b7a6337d42e01e96a73068a99d779439f379aa63df6621c5675547616ccfc"
+    },
+    {
+      "path": "LICENSE_CODE.txt",
+      "role": "documentation_environment_or_license",
+      "size": 1067,
+      "sha256": "19eebed875a03a38f9f56eb7ea555e6101a68b5fb7c83f757d6a16d59ce1661f"
+    },
+    {
+      "path": "README.md",
+      "role": "documentation_environment_or_license",
+      "size": 4180,
+      "sha256": "024f009ef7de83aeff7322d50df6c0aebbf4294e6ea4587ebb689b1f304a2a1e"
+    },
+    {
+      "path": "data/carrier/carrier_v0_edges.npz",
+      "role": "derived_carrier_input",
+      "size": 312341374,
+      "sha256": "c94e885cc2e8cde78012ed0a68a4beb42eccfe1b64607bdc90ac46e675d6966d"
+    },
+    {
+      "path": "data/carrier/carrier_v0_nodes.parquet",
+      "role": "derived_carrier_input",
+      "size": 3008738,
+      "sha256": "87aa46280d68a210f6c8ef4a044282fbbb62342bbeeaab8393b0fd7fa770515e"
+    },
+    {
+      "path": "experiments/paper16/source/digital_fly_v0_2/results/d2_2_memory_closure_v0_2.json",
+      "role": "published_paper16_consistency_input",
+      "size": 7690,
+      "sha256": "ce416b76e90ba55ab9f5fcc3e537bb8e7f04b0a3735683a38e5267d6b38179f2"
+    },
+    {
+      "path": "experiments/paper16/upstream-provenance.v1.json",
+      "role": "published_paper16_upstream_provenance",
+      "size": 3081,
+      "sha256": "0b90db879b51ee6fe6e37fe443c58be9e572e3b202221958d33c487199345a55"
+    },
+    {
+      "path": "papers/unnumbered/from_support_to_state/evidence/plot_profile_heterogeneity.py",
+      "role": "producer_or_validator_source",
+      "size": 5562,
+      "sha256": "a5aea525a5afb022c32c49e2ac58e7b2dd7144f1b1dcdce841dd41de802d183e"
+    },
+    {
+      "path": "papers/unnumbered/from_support_to_state/evidence/profile_heterogeneity_census.py",
+      "role": "producer_or_validator_source",
+      "size": 15685,
+      "sha256": "c01c39bb1d8ee7dca4896704072a873dd74fd2f96b787ff694aa91ee8536332a"
+    },
+    {
+      "path": "papers/unnumbered/from_support_to_state/evidence/profile_heterogeneity_census.v1.json",
+      "role": "exact_census_result",
+      "size": 183006,
+      "sha256": "f199ca218039cc5c49ce2e8dbea66d171f3623d84dcf2889682dfc554f7aef32"
+    },
+    {
+      "path": "papers/unnumbered/from_support_to_state/evidence/somaside_exact_witness.py",
+      "role": "producer_or_validator_source",
+      "size": 11362,
+      "sha256": "8d4d54364bf208f91987218a8aa4d12ce019f9640055c952caa88e751b284ef7"
+    },
+    {
+      "path": "papers/unnumbered/from_support_to_state/evidence/test_profile_heterogeneity.py",
+      "role": "producer_or_validator_source",
+      "size": 4493,
+      "sha256": "16b85af79ee635a144b6e275e4bd3ba9bb57ea7f69bd9b6884cbf478c520152c"
+    },
+    {
+      "path": "papers/unnumbered/from_support_to_state/figures/coordinate_profile_splits.png",
+      "role": "presentation_figure",
+      "size": 259240,
+      "sha256": "15336ea4ae8304ece0544cb4d136a181b1ebbdd4c359142aa27fbe55aba33c20"
+    },
+    {
+      "path": "papers/unnumbered/from_support_to_state/figures/coordinate_profile_splits.svg",
+      "role": "presentation_figure",
+      "size": 68374,
+      "sha256": "a1fa8faad8392ca9cfdd12150b55e6ca5759c6a6d1fe02b72beca29b041c2582"
+    },
+    {
+      "path": "papers/unnumbered/from_support_to_state/figures/profile_multiplicity.png",
+      "role": "presentation_figure",
+      "size": 182077,
+      "sha256": "6fc3f5e8fc370c9e4d7e93e10a3cd148c35262ffa7b4512394b3949e23722e98"
+    },
+    {
+      "path": "papers/unnumbered/from_support_to_state/figures/profile_multiplicity.svg",
+      "role": "presentation_figure",
+      "size": 79931,
+      "sha256": "4984a63e4e40aa661ac1ba19c751ed6512918267505b6e9ad46017180edcbe8a"
+    },
+    {
+      "path": "requirements.txt",
+      "role": "documentation_environment_or_license",
+      "size": 100,
+      "sha256": "61f0c8ccb5680b54a4f3419687cf9f0dc66bda7c90160833a6c8a4f73df627d5"
+    },
+    {
+      "path": "verify_dataset.py",
+      "role": "producer_or_validator_source",
+      "size": 10390,
+      "sha256": "b4fba08215930fbfb3d50cad9a5f32270892e6e2c56bef63cef66fced9a43083"
+    }
+  ]
+}

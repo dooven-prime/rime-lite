@@ -86,6 +86,7 @@ tagged release closure.
 | inspect canonical Rubik invariants | [`docs/CORE_INVARIANTS.md`](docs/CORE_INVARIANTS.md) |
 | check geometry and move conventions | [`docs/conventions.md`](docs/conventions.md) |
 | inspect reproducibility scripts | [`experiments/README.md`](experiments/README.md) |
+| read the submitted JCN author preprint and its Dataset guide | [`A Path Is Not a State`](papers/unnumbered/from_support_to_state/README.md) |
 | inspect published SOF data contracts | [`schemas/README.md`](schemas/README.md) |
 | run domain adapters, plugins, and capability-aware compilation | [`sof-runtime`](https://github.com/dooven-prime/sof-runtime) |
 | inspect optional reproducibility data, observations, open problems, and history | [`ccs/canonical_specification.md`](ccs/canonical_specification.md) |

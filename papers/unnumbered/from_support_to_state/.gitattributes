@@ -1,0 +1,14 @@
+*.bib text eol=lf
+*.py text eol=lf
+evidence/*.py text eol=lf
+evidence/*.json text eol=lf
+dataset/*.py text eol=lf
+dataset/*.json text eol=lf
+dataset/*.txt text eol=lf
+witness/*.py text eol=lf
+witness/*.json text eol=lf
+witness/*.txt text eol=lf
+figures/*.svg binary
+figures/*.png -text
+submitted/*.pdf -text
+witness/*.zip -text

@@ -1,0 +1,5042 @@
+{
+  "format": "from-support-to-state.profile-heterogeneity.v1",
+  "model": {
+    "carrier": "Y_known_pm",
+    "storage": "source_row_target_column",
+    "action": "Y_transpose",
+    "normalization": "absolute_outgoing_row_L1",
+    "beta": [
+      4,
+      5
+    ],
+    "gain": 1,
+    "clipping": [
+      0,
+      1
+    ],
+    "external_input": 0,
+    "noise": 0,
+    "observation": "somaSide_sector_mean",
+    "difference_orientation": "a_minus_b"
+  },
+  "domain": "all_eligible_unit_sources_of_Y_known_pm",
+  "source_nodes": 211577,
+  "known_sign_edges": 25214058,
+  "carrier_sha256": {
+    "carrier_v0_edges.npz": "c94e885cc2e8cde78012ed0a68a4beb42eccfe1b64607bdc90ac46e675d6966d",
+    "carrier_v0_nodes.parquet": "87aa46280d68a210f6c8ef4a044282fbbb62342bbeeaab8393b0fd7fa770515e"
+  },
+  "signed_raw_operator_sha256": "89b9c50a424677cc5bcdcb14dd55528ff0465b81156af04cf35e9a2bbe316066",
+  "source_metadata": {
+    "path": "experiments/paper16/source/digital_fly_v0_2/results/d2_2_memory_closure_v0_2.json",
+    "checkout_sha256": "ce416b76e90ba55ab9f5fcc3e537bb8e7f04b0a3735683a38e5267d6b38179f2"
+  },
+  "implementation_sha256": {
+    "profile_heterogeneity_census.py": "c01c39bb1d8ee7dca4896704072a873dd74fd2f96b787ff694aa91ee8536332a",
+    "somaside_exact_witness.py": "8d4d54364bf208f91987218a8aa4d12ce019f9640055c952caa88e751b284ef7"
+  },
+  "prior_total_consistency": {
+    "eligible_sources": {
+      "current": 163439,
+      "published": 163439,
+      "equal": true
+    },
+    "profile_classes": {
+      "current": 119138,
+      "published": 119138,
+      "equal": true
+    },
+    "collision_classes": {
+      "current": 5745,
+      "published": 5745,
+      "equal": true
+    },
+    "collision_sources": {
+      "current": 50046,
+      "published": 50046,
+      "equal": true
+    }
+  },
+  "novel_slice": "per_source_sector_multiplicity_and_target_coordinate_separation",
+  "boundaries": [
+    "Counts are finite-domain class/pair counts, not bits or population estimates.",
+    "A pairwise mismatch needs one differing coordinate; separating all classes is a different task.",
+    "Source-weighted pair counts overlap across target coordinates.",
+    "Replay uses the same implementation and is not independent replication.",
+    "No trajectories or later-time closure are computed."
+  ],
+  "partitions": {
+    "somaSide": {
+      "labels": [
+        "<missing>",
+        "L",
+        "M",
+        "R"
+      ],
+      "eligible_sources": 163439,
+      "profile_classes_with_source_sector_retained": 90148,
+      "collision_profile_classes": 11572,
+      "sources_in_collision_profile_classes": 84863,
+      "canonical_profile_assignment_sha256": "08b7579d6e39cc40b3f3921e89326007dd3342dd5a917ecb6b9565d6340fa2bf",
+      "profile_key": "(source_sector,s/g,p_1/g,...,p_m/g); g=gcd(s,p_1,...,p_m)",
+      "by_source_sector": [
+        {
+          "source_sector": "<missing>",
+          "eligible_sources": 17850,
+          "exact_profile_classes": 14535,
+          "largest_profile_class_sources": 528,
+          "singleton_profile_classes": 13516,
+          "collision_profile_classes": 1019,
+          "sources_in_collision_profile_classes": 4334,
+          "zero_profile_sources": 135,
+          "unordered_same_observation_source_pairs": 159302325,
+          "unequal_profile_source_pairs": 159070856,
+          "coordinates": [
+            {
+              "target_sector": "<missing>",
+              "distinct_exact_coordinate_values": 9783,
+              "separated_unordered_source_pairs": 158464553
+            },
+            {
+              "target_sector": "L",
+              "distinct_exact_coordinate_values": 10737,
+              "separated_unordered_source_pairs": 151292943
+            },
+            {
+              "target_sector": "M",
+              "distinct_exact_coordinate_values": 2910,
+              "separated_unordered_source_pairs": 69526078
+            },
+            {
+              "target_sector": "R",
+              "distinct_exact_coordinate_values": 11037,
+              "separated_unordered_source_pairs": 155605551
+            }
+          ]
+        },
+        {
+          "source_sector": "L",
+          "eligible_sources": 72479,
+          "exact_profile_classes": 38648,
+          "largest_profile_class_sources": 10868,
+          "singleton_profile_classes": 33461,
+          "collision_profile_classes": 5187,
+          "sources_in_collision_profile_classes": 39018,
+          "zero_profile_sources": 10868,
+          "unordered_same_observation_source_pairs": 2626566481,
+          "unequal_profile_source_pairs": 2527937487,
+          "coordinates": [
+            {
+              "target_sector": "<missing>",
+              "distinct_exact_coordinate_values": 10600,
+              "separated_unordered_source_pairs": 1757460595
+            },
+            {
+              "target_sector": "L",
+              "distinct_exact_coordinate_values": 26200,
+              "separated_unordered_source_pairs": 2527706836
+            },
+            {
+              "target_sector": "M",
+              "distinct_exact_coordinate_values": 6663,
+              "separated_unordered_source_pairs": 615355191
+            },
+            {
+              "target_sector": "R",
+              "distinct_exact_coordinate_values": 24706,
+              "separated_unordered_source_pairs": 2299443061
+            }
+          ]
+        },
+        {
+          "source_sector": "M",
+          "eligible_sources": 360,
+          "exact_profile_classes": 69,
+          "largest_profile_class_sources": 291,
+          "singleton_profile_classes": 67,
+          "collision_profile_classes": 2,
+          "sources_in_collision_profile_classes": 293,
+          "zero_profile_sources": 291,
+          "unordered_same_observation_source_pairs": 64620,
+          "unequal_profile_source_pairs": 22424,
+          "coordinates": [
+            {
+              "target_sector": "<missing>",
+              "distinct_exact_coordinate_values": 35,
+              "separated_unordered_source_pairs": 12292
+            },
+            {
+              "target_sector": "L",
+              "distinct_exact_coordinate_values": 59,
+              "separated_unordered_source_pairs": 21534
+            },
+            {
+              "target_sector": "M",
+              "distinct_exact_coordinate_values": 57,
+              "separated_unordered_source_pairs": 20654
+            },
+            {
+              "target_sector": "R",
+              "distinct_exact_coordinate_values": 60,
+              "separated_unordered_source_pairs": 21539
+            }
+          ]
+        },
+        {
+          "source_sector": "R",
+          "eligible_sources": 72750,
+          "exact_profile_classes": 36896,
+          "largest_profile_class_sources": 10890,
+          "singleton_profile_classes": 31532,
+          "collision_profile_classes": 5364,
+          "sources_in_collision_profile_classes": 41218,
+          "zero_profile_sources": 10890,
+          "unordered_same_observation_source_pairs": 2646244875,
+          "unequal_profile_source_pairs": 2538619625,
+          "coordinates": [
+            {
+              "target_sector": "<missing>",
+              "distinct_exact_coordinate_values": 10014,
+              "separated_unordered_source_pairs": 1497215641
+            },
+            {
+              "target_sector": "L",
+              "distinct_exact_coordinate_values": 25968,
+              "separated_unordered_source_pairs": 2329742110
+            },
+            {
+              "target_sector": "M",
+              "distinct_exact_coordinate_values": 6762,
+              "separated_unordered_source_pairs": 622520135
+            },
+            {
+              "target_sector": "R",
+              "distinct_exact_coordinate_values": 27163,
+              "separated_unordered_source_pairs": 2538290059
+            }
+          ]
+        }
+      ],
+      "largest_observation_fiber": "R",
+      "all_unordered_same_observation_source_pairs": 5432178301,
+      "all_unequal_profile_source_pairs": 5225650392,
+      "target_coordinate_splits": [
+        {
+          "target_sector": "<missing>",
+          "source_sectors_split": 4,
+          "separated_unordered_source_pairs": 3413153081,
+          "denominator_all_same_observation_source_pairs": 5432178301
+        },
+        {
+          "target_sector": "L",
+          "source_sectors_split": 4,
+          "separated_unordered_source_pairs": 5008763423,
+          "denominator_all_same_observation_source_pairs": 5432178301
+        },
+        {
+          "target_sector": "M",
+          "source_sectors_split": 4,
+          "separated_unordered_source_pairs": 1307422058,
+          "denominator_all_same_observation_source_pairs": 5432178301
+        },
+        {
+          "target_sector": "R",
+          "source_sectors_split": 4,
+          "separated_unordered_source_pairs": 4993360210,
+          "denominator_all_same_observation_source_pairs": 5432178301
+        }
+      ],
+      "coordinate_separation": {
+        "status": "EXACT_BY_EXHAUSTIVE_SUBSETS",
+        "minimum_coordinate_count": 3,
+        "minimum_coordinate_sets": [
+          [
+            "<missing>",
+            "L",
+            "R"
+          ]
+        ],
+        "mandatory_coordinates": [
+          "<missing>",
+          "L",
+          "R"
+        ],
+        "mandatory_witnesses": [
+          {
+            "coordinate": "<missing>",
+            "source_sector": "<missing>",
+            "source_indices": [
+              19172,
+              3341
+            ],
+            "body_ids": [
+              30930,
+              13535
+            ],
+            "all_other_coordinates_equal": true
+          },
+          {
+            "coordinate": "L",
+            "source_sector": "<missing>",
+            "source_indices": [
+              19172,
+              1065
+            ],
+            "body_ids": [
+              30930,
+              11139
+            ],
+            "all_other_coordinates_equal": true
+          },
+          {
+            "coordinate": "R",
+            "source_sector": "<missing>",
+            "source_indices": [
+              19172,
+              3146
+            ],
+            "body_ids": [
+              30930,
+              13325
+            ],
+            "all_other_coordinates_equal": true
+          }
+        ],
+        "lower_bound": 3,
+        "upper_bound": 3,
+        "scope": "all_profile_classes_within_each_observed_source_sector"
+      },
+      "full_observation_sector_sizes": {
+        "<missing>": 60851,
+        "L": 75215,
+        "M": 392,
+        "R": 75119
+      },
+      "arithmetic_bound": {
+        "accumulator": "int64",
+        "arithmetic_bound": "edge_count_times_max_positive_weight",
+        "edge_count": 26028386,
+        "max_weight": 2591,
+        "partial_sum_upper_bound": 67439548126,
+        "int64_max": 9223372036854775807,
+        "later_pair_counts_and_cross_products": "Python_bigint"
+      }
+    },
+    "superclass": {
+      "labels": [
+        "<missing>",
+        "ENS",
+        "ascending_neuron",
+        "cb_efferent",
+        "cb_endocrine",
+        "cb_intrinsic",
+        "cb_motor",
+        "cb_sensory",
+        "cb_sensory_tbc",
+        "descending_neuron",
+        "descending_neuron_tbc",
+        "efferent_ascending",
+        "efferent_descending",
+        "ol_intrinsic",
+        "ol_sensory",
+        "sensory_ascending",
+        "sensory_ascending_tbc",
+        "sensory_descending",
+        "visual_centrifugal",
+        "visual_projection",
+        "visual_projection_tbc",
+        "vnc_efferent",
+        "vnc_endocrine",
+        "vnc_intrinsic",
+        "vnc_motor",
+        "vnc_sensory",
+        "vnc_sensory_tbc",
+        "vnc_tbc"
+      ],
+      "eligible_sources": 163439,
+      "profile_classes_with_source_sector_retained": 119138,
+      "collision_profile_classes": 5745,
+      "sources_in_collision_profile_classes": 50046,
+      "canonical_profile_assignment_sha256": "db3a251fb95acca58ac047a3e3ab279fbc1b386b48e4d9a079b12a08536b5d0b",
+      "profile_key": "(source_sector,s/g,p_1/g,...,p_m/g); g=gcd(s,p_1,...,p_m)",
+      "by_source_sector": [
+        {
+          "source_sector": "<missing>",
+          "eligible_sources": 845,
+          "exact_profile_classes": 687,
+          "largest_profile_class_sources": 117,
+          "singleton_profile_classes": 681,
+          "collision_profile_classes": 6,
+          "sources_in_collision_profile_classes": 164,
+          "zero_profile_sources": 117,
+          "unordered_same_observation_source_pairs": 356590,
+          "unequal_profile_source_pairs": 349485,
+          "coordinates": [
+            {
+              "target_sector": "<missing>",
+              "distinct_exact_coordinate_values": 395,
+              "separated_unordered_source_pairs": 282809
+            },
+            {
+              "target_sector": "ENS",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ascending_neuron",
+              "distinct_exact_coordinate_values": 267,
+              "separated_unordered_source_pairs": 197245
+            },
+            {
+              "target_sector": "cb_efferent",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_endocrine",
+              "distinct_exact_coordinate_values": 25,
+              "separated_unordered_source_pairs": 19980
+            },
+            {
+              "target_sector": "cb_intrinsic",
+              "distinct_exact_coordinate_values": 230,
+              "separated_unordered_source_pairs": 177394
+            },
+            {
+              "target_sector": "cb_motor",
+              "distinct_exact_coordinate_values": 52,
+              "separated_unordered_source_pairs": 41769
+            },
+            {
+              "target_sector": "cb_sensory",
+              "distinct_exact_coordinate_values": 131,
+              "separated_unordered_source_pairs": 102760
+            },
+            {
+              "target_sector": "cb_sensory_tbc",
+              "distinct_exact_coordinate_values": 2,
+              "separated_unordered_source_pairs": 844
+            },
+            {
+              "target_sector": "descending_neuron",
+              "distinct_exact_coordinate_values": 264,
+              "separated_unordered_source_pairs": 190409
+            },
+            {
+              "target_sector": "descending_neuron_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "efferent_ascending",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "efferent_descending",
+              "distinct_exact_coordinate_values": 5,
+              "separated_unordered_source_pairs": 3370
+            },
+            {
+              "target_sector": "ol_intrinsic",
+              "distinct_exact_coordinate_values": 248,
+              "separated_unordered_source_pairs": 186311
+            },
+            {
+              "target_sector": "ol_sensory",
+              "distinct_exact_coordinate_values": 177,
+              "separated_unordered_source_pairs": 138451
+            },
+            {
+              "target_sector": "sensory_ascending",
+              "distinct_exact_coordinate_values": 16,
+              "separated_unordered_source_pairs": 12555
+            },
+            {
+              "target_sector": "sensory_ascending_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_descending",
+              "distinct_exact_coordinate_values": 6,
+              "separated_unordered_source_pairs": 4210
+            },
+            {
+              "target_sector": "visual_centrifugal",
+              "distinct_exact_coordinate_values": 71,
+              "separated_unordered_source_pairs": 60520
+            },
+            {
+              "target_sector": "visual_projection",
+              "distinct_exact_coordinate_values": 81,
+              "separated_unordered_source_pairs": 64360
+            },
+            {
+              "target_sector": "visual_projection_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_efferent",
+              "distinct_exact_coordinate_values": 8,
+              "separated_unordered_source_pairs": 5887
+            },
+            {
+              "target_sector": "vnc_endocrine",
+              "distinct_exact_coordinate_values": 7,
+              "separated_unordered_source_pairs": 5049
+            },
+            {
+              "target_sector": "vnc_intrinsic",
+              "distinct_exact_coordinate_values": 192,
+              "separated_unordered_source_pairs": 145012
+            },
+            {
+              "target_sector": "vnc_motor",
+              "distinct_exact_coordinate_values": 121,
+              "separated_unordered_source_pairs": 96305
+            },
+            {
+              "target_sector": "vnc_sensory",
+              "distinct_exact_coordinate_values": 88,
+              "separated_unordered_source_pairs": 70443
+            },
+            {
+              "target_sector": "vnc_sensory_tbc",
+              "distinct_exact_coordinate_values": 2,
+              "separated_unordered_source_pairs": 844
+            },
+            {
+              "target_sector": "vnc_tbc",
+              "distinct_exact_coordinate_values": 32,
+              "separated_unordered_source_pairs": 26511
+            }
+          ]
+        },
+        {
+          "source_sector": "ENS",
+          "eligible_sources": 0,
+          "exact_profile_classes": 0,
+          "largest_profile_class_sources": 0,
+          "singleton_profile_classes": 0,
+          "collision_profile_classes": 0,
+          "sources_in_collision_profile_classes": 0,
+          "zero_profile_sources": 0,
+          "unordered_same_observation_source_pairs": 0,
+          "unequal_profile_source_pairs": 0,
+          "coordinates": [
+            {
+              "target_sector": "<missing>",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ENS",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ascending_neuron",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_efferent",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_endocrine",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_intrinsic",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_motor",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_sensory",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_sensory_tbc",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "descending_neuron",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "descending_neuron_tbc",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "efferent_ascending",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "efferent_descending",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ol_intrinsic",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ol_sensory",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_ascending",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_ascending_tbc",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_descending",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "visual_centrifugal",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "visual_projection",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "visual_projection_tbc",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_efferent",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_endocrine",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_intrinsic",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_motor",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_sensory",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_sensory_tbc",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_tbc",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            }
+          ]
+        },
+        {
+          "source_sector": "ascending_neuron",
+          "eligible_sources": 1809,
+          "exact_profile_classes": 1403,
+          "largest_profile_class_sources": 407,
+          "singleton_profile_classes": 1402,
+          "collision_profile_classes": 1,
+          "sources_in_collision_profile_classes": 407,
+          "zero_profile_sources": 407,
+          "unordered_same_observation_source_pairs": 1635336,
+          "unequal_profile_source_pairs": 1552715,
+          "coordinates": [
+            {
+              "target_sector": "<missing>",
+              "distinct_exact_coordinate_values": 849,
+              "separated_unordered_source_pairs": 1186445
+            },
+            {
+              "target_sector": "ENS",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ascending_neuron",
+              "distinct_exact_coordinate_values": 1392,
+              "separated_unordered_source_pairs": 1552704
+            },
+            {
+              "target_sector": "cb_efferent",
+              "distinct_exact_coordinate_values": 16,
+              "separated_unordered_source_pairs": 27015
+            },
+            {
+              "target_sector": "cb_endocrine",
+              "distinct_exact_coordinate_values": 108,
+              "separated_unordered_source_pairs": 189485
+            },
+            {
+              "target_sector": "cb_intrinsic",
+              "distinct_exact_coordinate_values": 1394,
+              "separated_unordered_source_pairs": 1551485
+            },
+            {
+              "target_sector": "cb_motor",
+              "distinct_exact_coordinate_values": 568,
+              "separated_unordered_source_pairs": 869629
+            },
+            {
+              "target_sector": "cb_sensory",
+              "distinct_exact_coordinate_values": 140,
+              "separated_unordered_source_pairs": 241721
+            },
+            {
+              "target_sector": "cb_sensory_tbc",
+              "distinct_exact_coordinate_values": 18,
+              "separated_unordered_source_pairs": 30600
+            },
+            {
+              "target_sector": "descending_neuron",
+              "distinct_exact_coordinate_values": 1366,
+              "separated_unordered_source_pairs": 1542657
+            },
+            {
+              "target_sector": "descending_neuron_tbc",
+              "distinct_exact_coordinate_values": 3,
+              "separated_unordered_source_pairs": 3615
+            },
+            {
+              "target_sector": "efferent_ascending",
+              "distinct_exact_coordinate_values": 212,
+              "separated_unordered_source_pairs": 359333
+            },
+            {
+              "target_sector": "efferent_descending",
+              "distinct_exact_coordinate_values": 29,
+              "separated_unordered_source_pairs": 50246
+            },
+            {
+              "target_sector": "ol_intrinsic",
+              "distinct_exact_coordinate_values": 18,
+              "separated_unordered_source_pairs": 30600
+            },
+            {
+              "target_sector": "ol_sensory",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_ascending",
+              "distinct_exact_coordinate_values": 262,
+              "separated_unordered_source_pairs": 448759
+            },
+            {
+              "target_sector": "sensory_ascending_tbc",
+              "distinct_exact_coordinate_values": 7,
+              "separated_unordered_source_pairs": 10833
+            },
+            {
+              "target_sector": "sensory_descending",
+              "distinct_exact_coordinate_values": 107,
+              "separated_unordered_source_pairs": 186083
+            },
+            {
+              "target_sector": "visual_centrifugal",
+              "distinct_exact_coordinate_values": 959,
+              "separated_unordered_source_pairs": 1286291
+            },
+            {
+              "target_sector": "visual_projection",
+              "distinct_exact_coordinate_values": 308,
+              "separated_unordered_source_pairs": 508085
+            },
+            {
+              "target_sector": "visual_projection_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_efferent",
+              "distinct_exact_coordinate_values": 314,
+              "separated_unordered_source_pairs": 523046
+            },
+            {
+              "target_sector": "vnc_endocrine",
+              "distinct_exact_coordinate_values": 115,
+              "separated_unordered_source_pairs": 199671
+            },
+            {
+              "target_sector": "vnc_intrinsic",
+              "distinct_exact_coordinate_values": 1372,
+              "separated_unordered_source_pairs": 1542663
+            },
+            {
+              "target_sector": "vnc_motor",
+              "distinct_exact_coordinate_values": 851,
+              "separated_unordered_source_pairs": 1179797
+            },
+            {
+              "target_sector": "vnc_sensory",
+              "distinct_exact_coordinate_values": 504,
+              "separated_unordered_source_pairs": 792278
+            },
+            {
+              "target_sector": "vnc_sensory_tbc",
+              "distinct_exact_coordinate_values": 4,
+              "separated_unordered_source_pairs": 5421
+            },
+            {
+              "target_sector": "vnc_tbc",
+              "distinct_exact_coordinate_values": 93,
+              "separated_unordered_source_pairs": 162150
+            }
+          ]
+        },
+        {
+          "source_sector": "cb_efferent",
+          "eligible_sources": 0,
+          "exact_profile_classes": 0,
+          "largest_profile_class_sources": 0,
+          "singleton_profile_classes": 0,
+          "collision_profile_classes": 0,
+          "sources_in_collision_profile_classes": 0,
+          "zero_profile_sources": 0,
+          "unordered_same_observation_source_pairs": 0,
+          "unequal_profile_source_pairs": 0,
+          "coordinates": [
+            {
+              "target_sector": "<missing>",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ENS",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ascending_neuron",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_efferent",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_endocrine",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_intrinsic",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_motor",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_sensory",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_sensory_tbc",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "descending_neuron",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "descending_neuron_tbc",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "efferent_ascending",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "efferent_descending",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ol_intrinsic",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ol_sensory",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_ascending",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_ascending_tbc",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_descending",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "visual_centrifugal",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "visual_projection",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "visual_projection_tbc",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_efferent",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_endocrine",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_intrinsic",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_motor",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_sensory",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_sensory_tbc",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_tbc",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            }
+          ]
+        },
+        {
+          "source_sector": "cb_endocrine",
+          "eligible_sources": 1,
+          "exact_profile_classes": 1,
+          "largest_profile_class_sources": 1,
+          "singleton_profile_classes": 1,
+          "collision_profile_classes": 0,
+          "sources_in_collision_profile_classes": 0,
+          "zero_profile_sources": 0,
+          "unordered_same_observation_source_pairs": 0,
+          "unequal_profile_source_pairs": 0,
+          "coordinates": [
+            {
+              "target_sector": "<missing>",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ENS",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ascending_neuron",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_efferent",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_endocrine",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_intrinsic",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_motor",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_sensory",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_sensory_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "descending_neuron",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "descending_neuron_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "efferent_ascending",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "efferent_descending",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ol_intrinsic",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ol_sensory",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_ascending",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_ascending_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_descending",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "visual_centrifugal",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "visual_projection",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "visual_projection_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_efferent",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_endocrine",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_intrinsic",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_motor",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_sensory",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_sensory_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            }
+          ]
+        },
+        {
+          "source_sector": "cb_intrinsic",
+          "eligible_sources": 31365,
+          "exact_profile_classes": 20798,
+          "largest_profile_class_sources": 4961,
+          "singleton_profile_classes": 19372,
+          "collision_profile_classes": 1426,
+          "sources_in_collision_profile_classes": 11993,
+          "zero_profile_sources": 4961,
+          "unordered_same_observation_source_pairs": 491865930,
+          "unequal_profile_source_pairs": 476454559,
+          "coordinates": [
+            {
+              "target_sector": "<missing>",
+              "distinct_exact_coordinate_values": 8253,
+              "separated_unordered_source_pairs": 395305974
+            },
+            {
+              "target_sector": "ENS",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ascending_neuron",
+              "distinct_exact_coordinate_values": 6031,
+              "separated_unordered_source_pairs": 242668319
+            },
+            {
+              "target_sector": "cb_efferent",
+              "distinct_exact_coordinate_values": 24,
+              "separated_unordered_source_pairs": 721119
+            },
+            {
+              "target_sector": "cb_endocrine",
+              "distinct_exact_coordinate_values": 908,
+              "separated_unordered_source_pairs": 30044214
+            },
+            {
+              "target_sector": "cb_intrinsic",
+              "distinct_exact_coordinate_values": 16320,
+              "separated_unordered_source_pairs": 476438769
+            },
+            {
+              "target_sector": "cb_motor",
+              "distinct_exact_coordinate_values": 1406,
+              "separated_unordered_source_pairs": 44457140
+            },
+            {
+              "target_sector": "cb_sensory",
+              "distinct_exact_coordinate_values": 1409,
+              "separated_unordered_source_pairs": 45533345
+            },
+            {
+              "target_sector": "cb_sensory_tbc",
+              "distinct_exact_coordinate_values": 70,
+              "separated_unordered_source_pairs": 2161770
+            },
+            {
+              "target_sector": "descending_neuron",
+              "distinct_exact_coordinate_values": 12551,
+              "separated_unordered_source_pairs": 364028691
+            },
+            {
+              "target_sector": "descending_neuron_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "efferent_ascending",
+              "distinct_exact_coordinate_values": 30,
+              "separated_unordered_source_pairs": 909150
+            },
+            {
+              "target_sector": "efferent_descending",
+              "distinct_exact_coordinate_values": 80,
+              "separated_unordered_source_pairs": 2505959
+            },
+            {
+              "target_sector": "ol_intrinsic",
+              "distinct_exact_coordinate_values": 405,
+              "separated_unordered_source_pairs": 12992039
+            },
+            {
+              "target_sector": "ol_sensory",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_ascending",
+              "distinct_exact_coordinate_values": 275,
+              "separated_unordered_source_pairs": 8867179
+            },
+            {
+              "target_sector": "sensory_ascending_tbc",
+              "distinct_exact_coordinate_values": 2,
+              "separated_unordered_source_pairs": 31364
+            },
+            {
+              "target_sector": "sensory_descending",
+              "distinct_exact_coordinate_values": 59,
+              "separated_unordered_source_pairs": 1817459
+            },
+            {
+              "target_sector": "visual_centrifugal",
+              "distinct_exact_coordinate_values": 8269,
+              "separated_unordered_source_pairs": 268951717
+            },
+            {
+              "target_sector": "visual_projection",
+              "distinct_exact_coordinate_values": 6569,
+              "separated_unordered_source_pairs": 248196839
+            },
+            {
+              "target_sector": "visual_projection_tbc",
+              "distinct_exact_coordinate_values": 8,
+              "separated_unordered_source_pairs": 219527
+            },
+            {
+              "target_sector": "vnc_efferent",
+              "distinct_exact_coordinate_values": 3,
+              "separated_unordered_source_pairs": 62727
+            },
+            {
+              "target_sector": "vnc_endocrine",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_intrinsic",
+              "distinct_exact_coordinate_values": 4,
+              "separated_unordered_source_pairs": 94089
+            },
+            {
+              "target_sector": "vnc_motor",
+              "distinct_exact_coordinate_values": 2,
+              "separated_unordered_source_pairs": 31364
+            },
+            {
+              "target_sector": "vnc_sensory",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_sensory_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            }
+          ]
+        },
+        {
+          "source_sector": "cb_motor",
+          "eligible_sources": 27,
+          "exact_profile_classes": 27,
+          "largest_profile_class_sources": 1,
+          "singleton_profile_classes": 27,
+          "collision_profile_classes": 0,
+          "sources_in_collision_profile_classes": 0,
+          "zero_profile_sources": 0,
+          "unordered_same_observation_source_pairs": 351,
+          "unequal_profile_source_pairs": 351,
+          "coordinates": [
+            {
+              "target_sector": "<missing>",
+              "distinct_exact_coordinate_values": 25,
+              "separated_unordered_source_pairs": 348
+            },
+            {
+              "target_sector": "ENS",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ascending_neuron",
+              "distinct_exact_coordinate_values": 23,
+              "separated_unordered_source_pairs": 341
+            },
+            {
+              "target_sector": "cb_efferent",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_endocrine",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_intrinsic",
+              "distinct_exact_coordinate_values": 27,
+              "separated_unordered_source_pairs": 351
+            },
+            {
+              "target_sector": "cb_motor",
+              "distinct_exact_coordinate_values": 27,
+              "separated_unordered_source_pairs": 351
+            },
+            {
+              "target_sector": "cb_sensory",
+              "distinct_exact_coordinate_values": 17,
+              "separated_unordered_source_pairs": 296
+            },
+            {
+              "target_sector": "cb_sensory_tbc",
+              "distinct_exact_coordinate_values": 8,
+              "separated_unordered_source_pairs": 161
+            },
+            {
+              "target_sector": "descending_neuron",
+              "distinct_exact_coordinate_values": 27,
+              "separated_unordered_source_pairs": 351
+            },
+            {
+              "target_sector": "descending_neuron_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "efferent_ascending",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "efferent_descending",
+              "distinct_exact_coordinate_values": 5,
+              "separated_unordered_source_pairs": 98
+            },
+            {
+              "target_sector": "ol_intrinsic",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ol_sensory",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_ascending",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_ascending_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_descending",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "visual_centrifugal",
+              "distinct_exact_coordinate_values": 6,
+              "separated_unordered_source_pairs": 120
+            },
+            {
+              "target_sector": "visual_projection",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "visual_projection_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_efferent",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_endocrine",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_intrinsic",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_motor",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_sensory",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_sensory_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            }
+          ]
+        },
+        {
+          "source_sector": "cb_sensory",
+          "eligible_sources": 4650,
+          "exact_profile_classes": 4601,
+          "largest_profile_class_sources": 13,
+          "singleton_profile_classes": 4575,
+          "collision_profile_classes": 26,
+          "sources_in_collision_profile_classes": 75,
+          "zero_profile_sources": 0,
+          "unordered_same_observation_source_pairs": 10808925,
+          "unequal_profile_source_pairs": 10808770,
+          "coordinates": [
+            {
+              "target_sector": "<missing>",
+              "distinct_exact_coordinate_values": 2433,
+              "separated_unordered_source_pairs": 10237818
+            },
+            {
+              "target_sector": "ENS",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ascending_neuron",
+              "distinct_exact_coordinate_values": 1289,
+              "separated_unordered_source_pairs": 5989294
+            },
+            {
+              "target_sector": "cb_efferent",
+              "distinct_exact_coordinate_values": 2,
+              "separated_unordered_source_pairs": 4649
+            },
+            {
+              "target_sector": "cb_endocrine",
+              "distinct_exact_coordinate_values": 15,
+              "separated_unordered_source_pairs": 64995
+            },
+            {
+              "target_sector": "cb_intrinsic",
+              "distinct_exact_coordinate_values": 3935,
+              "separated_unordered_source_pairs": 10807053
+            },
+            {
+              "target_sector": "cb_motor",
+              "distinct_exact_coordinate_values": 233,
+              "separated_unordered_source_pairs": 1078253
+            },
+            {
+              "target_sector": "cb_sensory",
+              "distinct_exact_coordinate_values": 3671,
+              "separated_unordered_source_pairs": 10803815
+            },
+            {
+              "target_sector": "cb_sensory_tbc",
+              "distinct_exact_coordinate_values": 40,
+              "separated_unordered_source_pairs": 180570
+            },
+            {
+              "target_sector": "descending_neuron",
+              "distinct_exact_coordinate_values": 1802,
+              "separated_unordered_source_pairs": 7741509
+            },
+            {
+              "target_sector": "descending_neuron_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "efferent_ascending",
+              "distinct_exact_coordinate_values": 3,
+              "separated_unordered_source_pairs": 9297
+            },
+            {
+              "target_sector": "efferent_descending",
+              "distinct_exact_coordinate_values": 2,
+              "separated_unordered_source_pairs": 4649
+            },
+            {
+              "target_sector": "ol_intrinsic",
+              "distinct_exact_coordinate_values": 3,
+              "separated_unordered_source_pairs": 9297
+            },
+            {
+              "target_sector": "ol_sensory",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_ascending",
+              "distinct_exact_coordinate_values": 38,
+              "separated_unordered_source_pairs": 171347
+            },
+            {
+              "target_sector": "sensory_ascending_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_descending",
+              "distinct_exact_coordinate_values": 61,
+              "separated_unordered_source_pairs": 277170
+            },
+            {
+              "target_sector": "visual_centrifugal",
+              "distinct_exact_coordinate_values": 482,
+              "separated_unordered_source_pairs": 2581175
+            },
+            {
+              "target_sector": "visual_projection",
+              "distinct_exact_coordinate_values": 11,
+              "separated_unordered_source_pairs": 46445
+            },
+            {
+              "target_sector": "visual_projection_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_efferent",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_endocrine",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_intrinsic",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_motor",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_sensory",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_sensory_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            }
+          ]
+        },
+        {
+          "source_sector": "cb_sensory_tbc",
+          "eligible_sources": 7,
+          "exact_profile_classes": 7,
+          "largest_profile_class_sources": 1,
+          "singleton_profile_classes": 7,
+          "collision_profile_classes": 0,
+          "sources_in_collision_profile_classes": 0,
+          "zero_profile_sources": 1,
+          "unordered_same_observation_source_pairs": 21,
+          "unequal_profile_source_pairs": 21,
+          "coordinates": [
+            {
+              "target_sector": "<missing>",
+              "distinct_exact_coordinate_values": 3,
+              "separated_unordered_source_pairs": 11
+            },
+            {
+              "target_sector": "ENS",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ascending_neuron",
+              "distinct_exact_coordinate_values": 4,
+              "separated_unordered_source_pairs": 15
+            },
+            {
+              "target_sector": "cb_efferent",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_endocrine",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_intrinsic",
+              "distinct_exact_coordinate_values": 7,
+              "separated_unordered_source_pairs": 21
+            },
+            {
+              "target_sector": "cb_motor",
+              "distinct_exact_coordinate_values": 3,
+              "separated_unordered_source_pairs": 11
+            },
+            {
+              "target_sector": "cb_sensory",
+              "distinct_exact_coordinate_values": 6,
+              "separated_unordered_source_pairs": 20
+            },
+            {
+              "target_sector": "cb_sensory_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "descending_neuron",
+              "distinct_exact_coordinate_values": 5,
+              "separated_unordered_source_pairs": 18
+            },
+            {
+              "target_sector": "descending_neuron_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "efferent_ascending",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "efferent_descending",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ol_intrinsic",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ol_sensory",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_ascending",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_ascending_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_descending",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "visual_centrifugal",
+              "distinct_exact_coordinate_values": 2,
+              "separated_unordered_source_pairs": 6
+            },
+            {
+              "target_sector": "visual_projection",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "visual_projection_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_efferent",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_endocrine",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_intrinsic",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_motor",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_sensory",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_sensory_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            }
+          ]
+        },
+        {
+          "source_sector": "descending_neuron",
+          "eligible_sources": 1278,
+          "exact_profile_classes": 1038,
+          "largest_profile_class_sources": 241,
+          "singleton_profile_classes": 1037,
+          "collision_profile_classes": 1,
+          "sources_in_collision_profile_classes": 241,
+          "zero_profile_sources": 241,
+          "unordered_same_observation_source_pairs": 816003,
+          "unequal_profile_source_pairs": 787083,
+          "coordinates": [
+            {
+              "target_sector": "<missing>",
+              "distinct_exact_coordinate_values": 591,
+              "separated_unordered_source_pairs": 585812
+            },
+            {
+              "target_sector": "ENS",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ascending_neuron",
+              "distinct_exact_coordinate_values": 1032,
+              "separated_unordered_source_pairs": 787077
+            },
+            {
+              "target_sector": "cb_efferent",
+              "distinct_exact_coordinate_values": 13,
+              "separated_unordered_source_pairs": 15258
+            },
+            {
+              "target_sector": "cb_endocrine",
+              "distinct_exact_coordinate_values": 58,
+              "separated_unordered_source_pairs": 71193
+            },
+            {
+              "target_sector": "cb_intrinsic",
+              "distinct_exact_coordinate_values": 1023,
+              "separated_unordered_source_pairs": 784373
+            },
+            {
+              "target_sector": "cb_motor",
+              "distinct_exact_coordinate_values": 683,
+              "separated_unordered_source_pairs": 639287
+            },
+            {
+              "target_sector": "cb_sensory",
+              "distinct_exact_coordinate_values": 174,
+              "separated_unordered_source_pairs": 207146
+            },
+            {
+              "target_sector": "cb_sensory_tbc",
+              "distinct_exact_coordinate_values": 26,
+              "separated_unordered_source_pairs": 31625
+            },
+            {
+              "target_sector": "descending_neuron",
+              "distinct_exact_coordinate_values": 1031,
+              "separated_unordered_source_pairs": 787076
+            },
+            {
+              "target_sector": "descending_neuron_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "efferent_ascending",
+              "distinct_exact_coordinate_values": 334,
+              "separated_unordered_source_pairs": 372789
+            },
+            {
+              "target_sector": "efferent_descending",
+              "distinct_exact_coordinate_values": 18,
+              "separated_unordered_source_pairs": 21573
+            },
+            {
+              "target_sector": "ol_intrinsic",
+              "distinct_exact_coordinate_values": 34,
+              "separated_unordered_source_pairs": 41613
+            },
+            {
+              "target_sector": "ol_sensory",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_ascending",
+              "distinct_exact_coordinate_values": 146,
+              "separated_unordered_source_pairs": 176986
+            },
+            {
+              "target_sector": "sensory_ascending_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_descending",
+              "distinct_exact_coordinate_values": 63,
+              "separated_unordered_source_pairs": 77283
+            },
+            {
+              "target_sector": "visual_centrifugal",
+              "distinct_exact_coordinate_values": 832,
+              "separated_unordered_source_pairs": 719415
+            },
+            {
+              "target_sector": "visual_projection",
+              "distinct_exact_coordinate_values": 357,
+              "separated_unordered_source_pairs": 393261
+            },
+            {
+              "target_sector": "visual_projection_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_efferent",
+              "distinct_exact_coordinate_values": 341,
+              "separated_unordered_source_pairs": 379355
+            },
+            {
+              "target_sector": "vnc_endocrine",
+              "distinct_exact_coordinate_values": 92,
+              "separated_unordered_source_pairs": 112112
+            },
+            {
+              "target_sector": "vnc_intrinsic",
+              "distinct_exact_coordinate_values": 1031,
+              "separated_unordered_source_pairs": 786353
+            },
+            {
+              "target_sector": "vnc_motor",
+              "distinct_exact_coordinate_values": 877,
+              "separated_unordered_source_pairs": 737787
+            },
+            {
+              "target_sector": "vnc_sensory",
+              "distinct_exact_coordinate_values": 163,
+              "separated_unordered_source_pairs": 194947
+            },
+            {
+              "target_sector": "vnc_sensory_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_tbc",
+              "distinct_exact_coordinate_values": 69,
+              "separated_unordered_source_pairs": 84558
+            }
+          ]
+        },
+        {
+          "source_sector": "descending_neuron_tbc",
+          "eligible_sources": 1,
+          "exact_profile_classes": 1,
+          "largest_profile_class_sources": 1,
+          "singleton_profile_classes": 1,
+          "collision_profile_classes": 0,
+          "sources_in_collision_profile_classes": 0,
+          "zero_profile_sources": 0,
+          "unordered_same_observation_source_pairs": 0,
+          "unequal_profile_source_pairs": 0,
+          "coordinates": [
+            {
+              "target_sector": "<missing>",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ENS",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ascending_neuron",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_efferent",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_endocrine",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_intrinsic",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_motor",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_sensory",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_sensory_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "descending_neuron",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "descending_neuron_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "efferent_ascending",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "efferent_descending",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ol_intrinsic",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ol_sensory",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_ascending",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_ascending_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_descending",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "visual_centrifugal",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "visual_projection",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "visual_projection_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_efferent",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_endocrine",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_intrinsic",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_motor",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_sensory",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_sensory_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            }
+          ]
+        },
+        {
+          "source_sector": "efferent_ascending",
+          "eligible_sources": 3,
+          "exact_profile_classes": 3,
+          "largest_profile_class_sources": 1,
+          "singleton_profile_classes": 3,
+          "collision_profile_classes": 0,
+          "sources_in_collision_profile_classes": 0,
+          "zero_profile_sources": 0,
+          "unordered_same_observation_source_pairs": 3,
+          "unequal_profile_source_pairs": 3,
+          "coordinates": [
+            {
+              "target_sector": "<missing>",
+              "distinct_exact_coordinate_values": 3,
+              "separated_unordered_source_pairs": 3
+            },
+            {
+              "target_sector": "ENS",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ascending_neuron",
+              "distinct_exact_coordinate_values": 3,
+              "separated_unordered_source_pairs": 3
+            },
+            {
+              "target_sector": "cb_efferent",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_endocrine",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_intrinsic",
+              "distinct_exact_coordinate_values": 3,
+              "separated_unordered_source_pairs": 3
+            },
+            {
+              "target_sector": "cb_motor",
+              "distinct_exact_coordinate_values": 3,
+              "separated_unordered_source_pairs": 3
+            },
+            {
+              "target_sector": "cb_sensory",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_sensory_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "descending_neuron",
+              "distinct_exact_coordinate_values": 3,
+              "separated_unordered_source_pairs": 3
+            },
+            {
+              "target_sector": "descending_neuron_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "efferent_ascending",
+              "distinct_exact_coordinate_values": 3,
+              "separated_unordered_source_pairs": 3
+            },
+            {
+              "target_sector": "efferent_descending",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ol_intrinsic",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ol_sensory",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_ascending",
+              "distinct_exact_coordinate_values": 2,
+              "separated_unordered_source_pairs": 2
+            },
+            {
+              "target_sector": "sensory_ascending_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_descending",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "visual_centrifugal",
+              "distinct_exact_coordinate_values": 3,
+              "separated_unordered_source_pairs": 3
+            },
+            {
+              "target_sector": "visual_projection",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "visual_projection_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_efferent",
+              "distinct_exact_coordinate_values": 3,
+              "separated_unordered_source_pairs": 3
+            },
+            {
+              "target_sector": "vnc_endocrine",
+              "distinct_exact_coordinate_values": 3,
+              "separated_unordered_source_pairs": 3
+            },
+            {
+              "target_sector": "vnc_intrinsic",
+              "distinct_exact_coordinate_values": 3,
+              "separated_unordered_source_pairs": 3
+            },
+            {
+              "target_sector": "vnc_motor",
+              "distinct_exact_coordinate_values": 3,
+              "separated_unordered_source_pairs": 3
+            },
+            {
+              "target_sector": "vnc_sensory",
+              "distinct_exact_coordinate_values": 2,
+              "separated_unordered_source_pairs": 2
+            },
+            {
+              "target_sector": "vnc_sensory_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            }
+          ]
+        },
+        {
+          "source_sector": "efferent_descending",
+          "eligible_sources": 4,
+          "exact_profile_classes": 4,
+          "largest_profile_class_sources": 1,
+          "singleton_profile_classes": 4,
+          "collision_profile_classes": 0,
+          "sources_in_collision_profile_classes": 0,
+          "zero_profile_sources": 0,
+          "unordered_same_observation_source_pairs": 6,
+          "unequal_profile_source_pairs": 6,
+          "coordinates": [
+            {
+              "target_sector": "<missing>",
+              "distinct_exact_coordinate_values": 4,
+              "separated_unordered_source_pairs": 6
+            },
+            {
+              "target_sector": "ENS",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ascending_neuron",
+              "distinct_exact_coordinate_values": 4,
+              "separated_unordered_source_pairs": 6
+            },
+            {
+              "target_sector": "cb_efferent",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_endocrine",
+              "distinct_exact_coordinate_values": 4,
+              "separated_unordered_source_pairs": 6
+            },
+            {
+              "target_sector": "cb_intrinsic",
+              "distinct_exact_coordinate_values": 4,
+              "separated_unordered_source_pairs": 6
+            },
+            {
+              "target_sector": "cb_motor",
+              "distinct_exact_coordinate_values": 4,
+              "separated_unordered_source_pairs": 6
+            },
+            {
+              "target_sector": "cb_sensory",
+              "distinct_exact_coordinate_values": 3,
+              "separated_unordered_source_pairs": 5
+            },
+            {
+              "target_sector": "cb_sensory_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "descending_neuron",
+              "distinct_exact_coordinate_values": 4,
+              "separated_unordered_source_pairs": 6
+            },
+            {
+              "target_sector": "descending_neuron_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "efferent_ascending",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "efferent_descending",
+              "distinct_exact_coordinate_values": 4,
+              "separated_unordered_source_pairs": 6
+            },
+            {
+              "target_sector": "ol_intrinsic",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ol_sensory",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_ascending",
+              "distinct_exact_coordinate_values": 2,
+              "separated_unordered_source_pairs": 3
+            },
+            {
+              "target_sector": "sensory_ascending_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_descending",
+              "distinct_exact_coordinate_values": 3,
+              "separated_unordered_source_pairs": 5
+            },
+            {
+              "target_sector": "visual_centrifugal",
+              "distinct_exact_coordinate_values": 2,
+              "separated_unordered_source_pairs": 3
+            },
+            {
+              "target_sector": "visual_projection",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "visual_projection_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_efferent",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_endocrine",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_intrinsic",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_motor",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_sensory",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_sensory_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            }
+          ]
+        },
+        {
+          "source_sector": "ol_intrinsic",
+          "eligible_sources": 88519,
+          "exact_profile_classes": 63331,
+          "largest_profile_class_sources": 10784,
+          "singleton_profile_classes": 59637,
+          "collision_profile_classes": 3694,
+          "sources_in_collision_profile_classes": 28882,
+          "zero_profile_sources": 10784,
+          "unordered_same_observation_source_pairs": 3917762421,
+          "unequal_profile_source_pairs": 3828434226,
+          "coordinates": [
+            {
+              "target_sector": "<missing>",
+              "distinct_exact_coordinate_values": 6635,
+              "separated_unordered_source_pairs": 1825017305
+            },
+            {
+              "target_sector": "ENS",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ascending_neuron",
+              "distinct_exact_coordinate_values": 221,
+              "separated_unordered_source_pairs": 20509367
+            },
+            {
+              "target_sector": "cb_efferent",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_endocrine",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_intrinsic",
+              "distinct_exact_coordinate_values": 1439,
+              "separated_unordered_source_pairs": 175382229
+            },
+            {
+              "target_sector": "cb_motor",
+              "distinct_exact_coordinate_values": 10,
+              "separated_unordered_source_pairs": 796626
+            },
+            {
+              "target_sector": "cb_sensory",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_sensory_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "descending_neuron",
+              "distinct_exact_coordinate_values": 1834,
+              "separated_unordered_source_pairs": 295434972
+            },
+            {
+              "target_sector": "descending_neuron_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "efferent_ascending",
+              "distinct_exact_coordinate_values": 20,
+              "separated_unordered_source_pairs": 1770169
+            },
+            {
+              "target_sector": "efferent_descending",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ol_intrinsic",
+              "distinct_exact_coordinate_values": 36416,
+              "separated_unordered_source_pairs": 3827871598
+            },
+            {
+              "target_sector": "ol_sensory",
+              "distinct_exact_coordinate_values": 3021,
+              "separated_unordered_source_pairs": 477445646
+            },
+            {
+              "target_sector": "sensory_ascending",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_ascending_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_descending",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "visual_centrifugal",
+              "distinct_exact_coordinate_values": 11173,
+              "separated_unordered_source_pairs": 2901539913
+            },
+            {
+              "target_sector": "visual_projection",
+              "distinct_exact_coordinate_values": 34736,
+              "separated_unordered_source_pairs": 3653068232
+            },
+            {
+              "target_sector": "visual_projection_tbc",
+              "distinct_exact_coordinate_values": 45,
+              "separated_unordered_source_pairs": 3893846
+            },
+            {
+              "target_sector": "vnc_efferent",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_endocrine",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_intrinsic",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_motor",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_sensory",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_sensory_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            }
+          ]
+        },
+        {
+          "source_sector": "ol_sensory",
+          "eligible_sources": 6029,
+          "exact_profile_classes": 4083,
+          "largest_profile_class_sources": 759,
+          "singleton_profile_classes": 3521,
+          "collision_profile_classes": 562,
+          "sources_in_collision_profile_classes": 2508,
+          "zero_profile_sources": 0,
+          "unordered_same_observation_source_pairs": 18171406,
+          "unequal_profile_source_pairs": 17880637,
+          "coordinates": [
+            {
+              "target_sector": "<missing>",
+              "distinct_exact_coordinate_values": 1578,
+              "separated_unordered_source_pairs": 14383610
+            },
+            {
+              "target_sector": "ENS",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ascending_neuron",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_efferent",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_endocrine",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_intrinsic",
+              "distinct_exact_coordinate_values": 4,
+              "separated_unordered_source_pairs": 18081
+            },
+            {
+              "target_sector": "cb_motor",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_sensory",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_sensory_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "descending_neuron",
+              "distinct_exact_coordinate_values": 5,
+              "separated_unordered_source_pairs": 24106
+            },
+            {
+              "target_sector": "descending_neuron_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "efferent_ascending",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "efferent_descending",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ol_intrinsic",
+              "distinct_exact_coordinate_values": 2631,
+              "separated_unordered_source_pairs": 17873053
+            },
+            {
+              "target_sector": "ol_sensory",
+              "distinct_exact_coordinate_values": 1712,
+              "separated_unordered_source_pairs": 13639547
+            },
+            {
+              "target_sector": "sensory_ascending",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_ascending_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_descending",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "visual_centrifugal",
+              "distinct_exact_coordinate_values": 201,
+              "separated_unordered_source_pairs": 1562355
+            },
+            {
+              "target_sector": "visual_projection",
+              "distinct_exact_coordinate_values": 1391,
+              "separated_unordered_source_pairs": 9615171
+            },
+            {
+              "target_sector": "visual_projection_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_efferent",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_endocrine",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_intrinsic",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_motor",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_sensory",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_sensory_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            }
+          ]
+        },
+        {
+          "source_sector": "sensory_ascending",
+          "eligible_sources": 516,
+          "exact_profile_classes": 516,
+          "largest_profile_class_sources": 1,
+          "singleton_profile_classes": 516,
+          "collision_profile_classes": 0,
+          "sources_in_collision_profile_classes": 0,
+          "zero_profile_sources": 0,
+          "unordered_same_observation_source_pairs": 132870,
+          "unequal_profile_source_pairs": 132870,
+          "coordinates": [
+            {
+              "target_sector": "<missing>",
+              "distinct_exact_coordinate_values": 181,
+              "separated_unordered_source_pairs": 76590
+            },
+            {
+              "target_sector": "ENS",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ascending_neuron",
+              "distinct_exact_coordinate_values": 511,
+              "separated_unordered_source_pairs": 132865
+            },
+            {
+              "target_sector": "cb_efferent",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_endocrine",
+              "distinct_exact_coordinate_values": 13,
+              "separated_unordered_source_pairs": 6114
+            },
+            {
+              "target_sector": "cb_intrinsic",
+              "distinct_exact_coordinate_values": 503,
+              "separated_unordered_source_pairs": 132836
+            },
+            {
+              "target_sector": "cb_motor",
+              "distinct_exact_coordinate_values": 366,
+              "separated_unordered_source_pairs": 122567
+            },
+            {
+              "target_sector": "cb_sensory",
+              "distinct_exact_coordinate_values": 38,
+              "separated_unordered_source_pairs": 18389
+            },
+            {
+              "target_sector": "cb_sensory_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "descending_neuron",
+              "distinct_exact_coordinate_values": 478,
+              "separated_unordered_source_pairs": 132481
+            },
+            {
+              "target_sector": "descending_neuron_tbc",
+              "distinct_exact_coordinate_values": 2,
+              "separated_unordered_source_pairs": 515
+            },
+            {
+              "target_sector": "efferent_ascending",
+              "distinct_exact_coordinate_values": 97,
+              "separated_unordered_source_pairs": 44880
+            },
+            {
+              "target_sector": "efferent_descending",
+              "distinct_exact_coordinate_values": 4,
+              "separated_unordered_source_pairs": 1542
+            },
+            {
+              "target_sector": "ol_intrinsic",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ol_sensory",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_ascending",
+              "distinct_exact_coordinate_values": 498,
+              "separated_unordered_source_pairs": 132846
+            },
+            {
+              "target_sector": "sensory_ascending_tbc",
+              "distinct_exact_coordinate_values": 7,
+              "separated_unordered_source_pairs": 3075
+            },
+            {
+              "target_sector": "sensory_descending",
+              "distinct_exact_coordinate_values": 6,
+              "separated_unordered_source_pairs": 2565
+            },
+            {
+              "target_sector": "visual_centrifugal",
+              "distinct_exact_coordinate_values": 178,
+              "separated_unordered_source_pairs": 76587
+            },
+            {
+              "target_sector": "visual_projection",
+              "distinct_exact_coordinate_values": 2,
+              "separated_unordered_source_pairs": 515
+            },
+            {
+              "target_sector": "visual_projection_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_efferent",
+              "distinct_exact_coordinate_values": 34,
+              "separated_unordered_source_pairs": 16467
+            },
+            {
+              "target_sector": "vnc_endocrine",
+              "distinct_exact_coordinate_values": 4,
+              "separated_unordered_source_pairs": 1542
+            },
+            {
+              "target_sector": "vnc_intrinsic",
+              "distinct_exact_coordinate_values": 508,
+              "separated_unordered_source_pairs": 132841
+            },
+            {
+              "target_sector": "vnc_motor",
+              "distinct_exact_coordinate_values": 412,
+              "separated_unordered_source_pairs": 127615
+            },
+            {
+              "target_sector": "vnc_sensory",
+              "distinct_exact_coordinate_values": 237,
+              "separated_unordered_source_pairs": 97346
+            },
+            {
+              "target_sector": "vnc_sensory_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_tbc",
+              "distinct_exact_coordinate_values": 9,
+              "separated_unordered_source_pairs": 4092
+            }
+          ]
+        },
+        {
+          "source_sector": "sensory_ascending_tbc",
+          "eligible_sources": 1,
+          "exact_profile_classes": 1,
+          "largest_profile_class_sources": 1,
+          "singleton_profile_classes": 1,
+          "collision_profile_classes": 0,
+          "sources_in_collision_profile_classes": 0,
+          "zero_profile_sources": 0,
+          "unordered_same_observation_source_pairs": 0,
+          "unequal_profile_source_pairs": 0,
+          "coordinates": [
+            {
+              "target_sector": "<missing>",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ENS",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ascending_neuron",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_efferent",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_endocrine",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_intrinsic",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_motor",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_sensory",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_sensory_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "descending_neuron",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "descending_neuron_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "efferent_ascending",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "efferent_descending",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ol_intrinsic",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ol_sensory",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_ascending",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_ascending_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_descending",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "visual_centrifugal",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "visual_projection",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "visual_projection_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_efferent",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_endocrine",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_intrinsic",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_motor",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_sensory",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_sensory_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            }
+          ]
+        },
+        {
+          "source_sector": "sensory_descending",
+          "eligible_sources": 8,
+          "exact_profile_classes": 8,
+          "largest_profile_class_sources": 1,
+          "singleton_profile_classes": 8,
+          "collision_profile_classes": 0,
+          "sources_in_collision_profile_classes": 0,
+          "zero_profile_sources": 0,
+          "unordered_same_observation_source_pairs": 28,
+          "unequal_profile_source_pairs": 28,
+          "coordinates": [
+            {
+              "target_sector": "<missing>",
+              "distinct_exact_coordinate_values": 7,
+              "separated_unordered_source_pairs": 27
+            },
+            {
+              "target_sector": "ENS",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ascending_neuron",
+              "distinct_exact_coordinate_values": 8,
+              "separated_unordered_source_pairs": 28
+            },
+            {
+              "target_sector": "cb_efferent",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_endocrine",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_intrinsic",
+              "distinct_exact_coordinate_values": 8,
+              "separated_unordered_source_pairs": 28
+            },
+            {
+              "target_sector": "cb_motor",
+              "distinct_exact_coordinate_values": 6,
+              "separated_unordered_source_pairs": 25
+            },
+            {
+              "target_sector": "cb_sensory",
+              "distinct_exact_coordinate_values": 7,
+              "separated_unordered_source_pairs": 27
+            },
+            {
+              "target_sector": "cb_sensory_tbc",
+              "distinct_exact_coordinate_values": 2,
+              "separated_unordered_source_pairs": 7
+            },
+            {
+              "target_sector": "descending_neuron",
+              "distinct_exact_coordinate_values": 8,
+              "separated_unordered_source_pairs": 28
+            },
+            {
+              "target_sector": "descending_neuron_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "efferent_ascending",
+              "distinct_exact_coordinate_values": 2,
+              "separated_unordered_source_pairs": 7
+            },
+            {
+              "target_sector": "efferent_descending",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ol_intrinsic",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ol_sensory",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_ascending",
+              "distinct_exact_coordinate_values": 3,
+              "separated_unordered_source_pairs": 13
+            },
+            {
+              "target_sector": "sensory_ascending_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_descending",
+              "distinct_exact_coordinate_values": 8,
+              "separated_unordered_source_pairs": 28
+            },
+            {
+              "target_sector": "visual_centrifugal",
+              "distinct_exact_coordinate_values": 6,
+              "separated_unordered_source_pairs": 25
+            },
+            {
+              "target_sector": "visual_projection",
+              "distinct_exact_coordinate_values": 2,
+              "separated_unordered_source_pairs": 7
+            },
+            {
+              "target_sector": "visual_projection_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_efferent",
+              "distinct_exact_coordinate_values": 3,
+              "separated_unordered_source_pairs": 13
+            },
+            {
+              "target_sector": "vnc_endocrine",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_intrinsic",
+              "distinct_exact_coordinate_values": 8,
+              "separated_unordered_source_pairs": 28
+            },
+            {
+              "target_sector": "vnc_motor",
+              "distinct_exact_coordinate_values": 7,
+              "separated_unordered_source_pairs": 27
+            },
+            {
+              "target_sector": "vnc_sensory",
+              "distinct_exact_coordinate_values": 5,
+              "separated_unordered_source_pairs": 22
+            },
+            {
+              "target_sector": "vnc_sensory_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            }
+          ]
+        },
+        {
+          "source_sector": "visual_centrifugal",
+          "eligible_sources": 513,
+          "exact_profile_classes": 211,
+          "largest_profile_class_sources": 303,
+          "singleton_profile_classes": 210,
+          "collision_profile_classes": 1,
+          "sources_in_collision_profile_classes": 303,
+          "zero_profile_sources": 303,
+          "unordered_same_observation_source_pairs": 131328,
+          "unequal_profile_source_pairs": 85575,
+          "coordinates": [
+            {
+              "target_sector": "<missing>",
+              "distinct_exact_coordinate_values": 181,
+              "separated_unordered_source_pairs": 76381
+            },
+            {
+              "target_sector": "ENS",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ascending_neuron",
+              "distinct_exact_coordinate_values": 98,
+              "separated_unordered_source_pairs": 45008
+            },
+            {
+              "target_sector": "cb_efferent",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_endocrine",
+              "distinct_exact_coordinate_values": 3,
+              "separated_unordered_source_pairs": 1023
+            },
+            {
+              "target_sector": "cb_intrinsic",
+              "distinct_exact_coordinate_values": 200,
+              "separated_unordered_source_pairs": 82187
+            },
+            {
+              "target_sector": "cb_motor",
+              "distinct_exact_coordinate_values": 34,
+              "separated_unordered_source_pairs": 16368
+            },
+            {
+              "target_sector": "cb_sensory",
+              "distinct_exact_coordinate_values": 9,
+              "separated_unordered_source_pairs": 4068
+            },
+            {
+              "target_sector": "cb_sensory_tbc",
+              "distinct_exact_coordinate_values": 2,
+              "separated_unordered_source_pairs": 512
+            },
+            {
+              "target_sector": "descending_neuron",
+              "distinct_exact_coordinate_values": 165,
+              "separated_unordered_source_pairs": 70949
+            },
+            {
+              "target_sector": "descending_neuron_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "efferent_ascending",
+              "distinct_exact_coordinate_values": 6,
+              "separated_unordered_source_pairs": 2550
+            },
+            {
+              "target_sector": "efferent_descending",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ol_intrinsic",
+              "distinct_exact_coordinate_values": 204,
+              "separated_unordered_source_pairs": 83433
+            },
+            {
+              "target_sector": "ol_sensory",
+              "distinct_exact_coordinate_values": 33,
+              "separated_unordered_source_pairs": 15888
+            },
+            {
+              "target_sector": "sensory_ascending",
+              "distinct_exact_coordinate_values": 4,
+              "separated_unordered_source_pairs": 1533
+            },
+            {
+              "target_sector": "sensory_ascending_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_descending",
+              "distinct_exact_coordinate_values": 3,
+              "separated_unordered_source_pairs": 1023
+            },
+            {
+              "target_sector": "visual_centrifugal",
+              "distinct_exact_coordinate_values": 210,
+              "separated_unordered_source_pairs": 85272
+            },
+            {
+              "target_sector": "visual_projection",
+              "distinct_exact_coordinate_values": 210,
+              "separated_unordered_source_pairs": 85272
+            },
+            {
+              "target_sector": "visual_projection_tbc",
+              "distinct_exact_coordinate_values": 3,
+              "separated_unordered_source_pairs": 1023
+            },
+            {
+              "target_sector": "vnc_efferent",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_endocrine",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_intrinsic",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_motor",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_sensory",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_sensory_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            }
+          ]
+        },
+        {
+          "source_sector": "visual_projection",
+          "eligible_sources": 8719,
+          "exact_profile_classes": 8684,
+          "largest_profile_class_sources": 36,
+          "singleton_profile_classes": 8683,
+          "collision_profile_classes": 1,
+          "sources_in_collision_profile_classes": 36,
+          "zero_profile_sources": 36,
+          "unordered_same_observation_source_pairs": 38006121,
+          "unequal_profile_source_pairs": 38005491,
+          "coordinates": [
+            {
+              "target_sector": "<missing>",
+              "distinct_exact_coordinate_values": 2902,
+              "separated_unordered_source_pairs": 28435487
+            },
+            {
+              "target_sector": "ENS",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ascending_neuron",
+              "distinct_exact_coordinate_values": 975,
+              "separated_unordered_source_pairs": 8878460
+            },
+            {
+              "target_sector": "cb_efferent",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_endocrine",
+              "distinct_exact_coordinate_values": 17,
+              "separated_unordered_source_pairs": 139368
+            },
+            {
+              "target_sector": "cb_intrinsic",
+              "distinct_exact_coordinate_values": 8191,
+              "separated_unordered_source_pairs": 38000374
+            },
+            {
+              "target_sector": "cb_motor",
+              "distinct_exact_coordinate_values": 153,
+              "separated_unordered_source_pairs": 1313660
+            },
+            {
+              "target_sector": "cb_sensory",
+              "distinct_exact_coordinate_values": 3,
+              "separated_unordered_source_pairs": 17435
+            },
+            {
+              "target_sector": "cb_sensory_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "descending_neuron",
+              "distinct_exact_coordinate_values": 4271,
+              "separated_unordered_source_pairs": 30722456
+            },
+            {
+              "target_sector": "descending_neuron_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "efferent_ascending",
+              "distinct_exact_coordinate_values": 4,
+              "separated_unordered_source_pairs": 26151
+            },
+            {
+              "target_sector": "efferent_descending",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ol_intrinsic",
+              "distinct_exact_coordinate_values": 7277,
+              "separated_unordered_source_pairs": 37587211
+            },
+            {
+              "target_sector": "ol_sensory",
+              "distinct_exact_coordinate_values": 111,
+              "separated_unordered_source_pairs": 1030411
+            },
+            {
+              "target_sector": "sensory_ascending",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_ascending_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_descending",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "visual_centrifugal",
+              "distinct_exact_coordinate_values": 6057,
+              "separated_unordered_source_pairs": 37625767
+            },
+            {
+              "target_sector": "visual_projection",
+              "distinct_exact_coordinate_values": 7997,
+              "separated_unordered_source_pairs": 38004335
+            },
+            {
+              "target_sector": "visual_projection_tbc",
+              "distinct_exact_coordinate_values": 30,
+              "separated_unordered_source_pairs": 252416
+            },
+            {
+              "target_sector": "vnc_efferent",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_endocrine",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_intrinsic",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_motor",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_sensory",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_sensory_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            }
+          ]
+        },
+        {
+          "source_sector": "visual_projection_tbc",
+          "eligible_sources": 2,
+          "exact_profile_classes": 2,
+          "largest_profile_class_sources": 1,
+          "singleton_profile_classes": 2,
+          "collision_profile_classes": 0,
+          "sources_in_collision_profile_classes": 0,
+          "zero_profile_sources": 0,
+          "unordered_same_observation_source_pairs": 1,
+          "unequal_profile_source_pairs": 1,
+          "coordinates": [
+            {
+              "target_sector": "<missing>",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ENS",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ascending_neuron",
+              "distinct_exact_coordinate_values": 2,
+              "separated_unordered_source_pairs": 1
+            },
+            {
+              "target_sector": "cb_efferent",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_endocrine",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_intrinsic",
+              "distinct_exact_coordinate_values": 2,
+              "separated_unordered_source_pairs": 1
+            },
+            {
+              "target_sector": "cb_motor",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_sensory",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_sensory_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "descending_neuron",
+              "distinct_exact_coordinate_values": 2,
+              "separated_unordered_source_pairs": 1
+            },
+            {
+              "target_sector": "descending_neuron_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "efferent_ascending",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "efferent_descending",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ol_intrinsic",
+              "distinct_exact_coordinate_values": 2,
+              "separated_unordered_source_pairs": 1
+            },
+            {
+              "target_sector": "ol_sensory",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_ascending",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_ascending_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_descending",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "visual_centrifugal",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "visual_projection",
+              "distinct_exact_coordinate_values": 2,
+              "separated_unordered_source_pairs": 1
+            },
+            {
+              "target_sector": "visual_projection_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_efferent",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_endocrine",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_intrinsic",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_motor",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_sensory",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_sensory_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            }
+          ]
+        },
+        {
+          "source_sector": "vnc_efferent",
+          "eligible_sources": 49,
+          "exact_profile_classes": 49,
+          "largest_profile_class_sources": 1,
+          "singleton_profile_classes": 49,
+          "collision_profile_classes": 0,
+          "sources_in_collision_profile_classes": 0,
+          "zero_profile_sources": 0,
+          "unordered_same_observation_source_pairs": 1176,
+          "unequal_profile_source_pairs": 1176,
+          "coordinates": [
+            {
+              "target_sector": "<missing>",
+              "distinct_exact_coordinate_values": 6,
+              "separated_unordered_source_pairs": 230
+            },
+            {
+              "target_sector": "ENS",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ascending_neuron",
+              "distinct_exact_coordinate_values": 22,
+              "separated_unordered_source_pairs": 824
+            },
+            {
+              "target_sector": "cb_efferent",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_endocrine",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_intrinsic",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_motor",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_sensory",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_sensory_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "descending_neuron",
+              "distinct_exact_coordinate_values": 20,
+              "separated_unordered_source_pairs": 796
+            },
+            {
+              "target_sector": "descending_neuron_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "efferent_ascending",
+              "distinct_exact_coordinate_values": 3,
+              "separated_unordered_source_pairs": 95
+            },
+            {
+              "target_sector": "efferent_descending",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ol_intrinsic",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ol_sensory",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_ascending",
+              "distinct_exact_coordinate_values": 2,
+              "separated_unordered_source_pairs": 48
+            },
+            {
+              "target_sector": "sensory_ascending_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_descending",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "visual_centrifugal",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "visual_projection",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "visual_projection_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_efferent",
+              "distinct_exact_coordinate_values": 36,
+              "separated_unordered_source_pairs": 1147
+            },
+            {
+              "target_sector": "vnc_endocrine",
+              "distinct_exact_coordinate_values": 5,
+              "separated_unordered_source_pairs": 186
+            },
+            {
+              "target_sector": "vnc_intrinsic",
+              "distinct_exact_coordinate_values": 39,
+              "separated_unordered_source_pairs": 1164
+            },
+            {
+              "target_sector": "vnc_motor",
+              "distinct_exact_coordinate_values": 32,
+              "separated_unordered_source_pairs": 1112
+            },
+            {
+              "target_sector": "vnc_sensory",
+              "distinct_exact_coordinate_values": 12,
+              "separated_unordered_source_pairs": 509
+            },
+            {
+              "target_sector": "vnc_sensory_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            }
+          ]
+        },
+        {
+          "source_sector": "vnc_endocrine",
+          "eligible_sources": 0,
+          "exact_profile_classes": 0,
+          "largest_profile_class_sources": 0,
+          "singleton_profile_classes": 0,
+          "collision_profile_classes": 0,
+          "sources_in_collision_profile_classes": 0,
+          "zero_profile_sources": 0,
+          "unordered_same_observation_source_pairs": 0,
+          "unequal_profile_source_pairs": 0,
+          "coordinates": [
+            {
+              "target_sector": "<missing>",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ENS",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ascending_neuron",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_efferent",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_endocrine",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_intrinsic",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_motor",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_sensory",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_sensory_tbc",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "descending_neuron",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "descending_neuron_tbc",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "efferent_ascending",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "efferent_descending",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ol_intrinsic",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ol_sensory",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_ascending",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_ascending_tbc",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_descending",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "visual_centrifugal",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "visual_projection",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "visual_projection_tbc",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_efferent",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_endocrine",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_intrinsic",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_motor",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_sensory",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_sensory_tbc",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_tbc",
+              "distinct_exact_coordinate_values": 0,
+              "separated_unordered_source_pairs": 0
+            }
+          ]
+        },
+        {
+          "source_sector": "vnc_intrinsic",
+          "eligible_sources": 12966,
+          "exact_profile_classes": 7648,
+          "largest_profile_class_sources": 5316,
+          "singleton_profile_classes": 7644,
+          "collision_profile_classes": 4,
+          "sources_in_collision_profile_classes": 5322,
+          "zero_profile_sources": 5316,
+          "unordered_same_observation_source_pairs": 84052095,
+          "unequal_profile_source_pairs": 69924822,
+          "coordinates": [
+            {
+              "target_sector": "<missing>",
+              "distinct_exact_coordinate_values": 2167,
+              "separated_unordered_source_pairs": 28774382
+            },
+            {
+              "target_sector": "ENS",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ascending_neuron",
+              "distinct_exact_coordinate_values": 6826,
+              "separated_unordered_source_pairs": 68989372
+            },
+            {
+              "target_sector": "cb_efferent",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_endocrine",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_intrinsic",
+              "distinct_exact_coordinate_values": 7,
+              "separated_unordered_source_pairs": 77775
+            },
+            {
+              "target_sector": "cb_motor",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_sensory",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_sensory_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "descending_neuron",
+              "distinct_exact_coordinate_values": 4424,
+              "separated_unordered_source_pairs": 60261522
+            },
+            {
+              "target_sector": "descending_neuron_tbc",
+              "distinct_exact_coordinate_values": 5,
+              "separated_unordered_source_pairs": 51854
+            },
+            {
+              "target_sector": "efferent_ascending",
+              "distinct_exact_coordinate_values": 559,
+              "separated_unordered_source_pairs": 7537420
+            },
+            {
+              "target_sector": "efferent_descending",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ol_intrinsic",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ol_sensory",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_ascending",
+              "distinct_exact_coordinate_values": 414,
+              "separated_unordered_source_pairs": 5582942
+            },
+            {
+              "target_sector": "sensory_ascending_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_descending",
+              "distinct_exact_coordinate_values": 48,
+              "separated_unordered_source_pairs": 608274
+            },
+            {
+              "target_sector": "visual_centrifugal",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "visual_projection",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "visual_projection_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_efferent",
+              "distinct_exact_coordinate_values": 1355,
+              "separated_unordered_source_pairs": 17310349
+            },
+            {
+              "target_sector": "vnc_endocrine",
+              "distinct_exact_coordinate_values": 366,
+              "separated_unordered_source_pairs": 4766558
+            },
+            {
+              "target_sector": "vnc_intrinsic",
+              "distinct_exact_coordinate_values": 7295,
+              "separated_unordered_source_pairs": 69924209
+            },
+            {
+              "target_sector": "vnc_motor",
+              "distinct_exact_coordinate_values": 6365,
+              "separated_unordered_source_pairs": 64026810
+            },
+            {
+              "target_sector": "vnc_sensory",
+              "distinct_exact_coordinate_values": 2153,
+              "separated_unordered_source_pairs": 30856949
+            },
+            {
+              "target_sector": "vnc_sensory_tbc",
+              "distinct_exact_coordinate_values": 14,
+              "separated_unordered_source_pairs": 168467
+            },
+            {
+              "target_sector": "vnc_tbc",
+              "distinct_exact_coordinate_values": 535,
+              "separated_unordered_source_pairs": 7079043
+            }
+          ]
+        },
+        {
+          "source_sector": "vnc_motor",
+          "eligible_sources": 298,
+          "exact_profile_classes": 235,
+          "largest_profile_class_sources": 29,
+          "singleton_profile_classes": 220,
+          "collision_profile_classes": 15,
+          "sources_in_collision_profile_classes": 78,
+          "zero_profile_sources": 2,
+          "unordered_same_observation_source_pairs": 44253,
+          "unequal_profile_source_pairs": 43758,
+          "coordinates": [
+            {
+              "target_sector": "<missing>",
+              "distinct_exact_coordinate_values": 31,
+              "separated_unordered_source_pairs": 9270
+            },
+            {
+              "target_sector": "ENS",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ascending_neuron",
+              "distinct_exact_coordinate_values": 79,
+              "separated_unordered_source_pairs": 29121
+            },
+            {
+              "target_sector": "cb_efferent",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_endocrine",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_intrinsic",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_motor",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_sensory",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_sensory_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "descending_neuron",
+              "distinct_exact_coordinate_values": 85,
+              "separated_unordered_source_pairs": 29302
+            },
+            {
+              "target_sector": "descending_neuron_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "efferent_ascending",
+              "distinct_exact_coordinate_values": 2,
+              "separated_unordered_source_pairs": 297
+            },
+            {
+              "target_sector": "efferent_descending",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ol_intrinsic",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ol_sensory",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_ascending",
+              "distinct_exact_coordinate_values": 16,
+              "separated_unordered_source_pairs": 4350
+            },
+            {
+              "target_sector": "sensory_ascending_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_descending",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "visual_centrifugal",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "visual_projection",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "visual_projection_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_efferent",
+              "distinct_exact_coordinate_values": 15,
+              "separated_unordered_source_pairs": 4910
+            },
+            {
+              "target_sector": "vnc_endocrine",
+              "distinct_exact_coordinate_values": 8,
+              "separated_unordered_source_pairs": 2347
+            },
+            {
+              "target_sector": "vnc_intrinsic",
+              "distinct_exact_coordinate_values": 149,
+              "separated_unordered_source_pairs": 43400
+            },
+            {
+              "target_sector": "vnc_motor",
+              "distinct_exact_coordinate_values": 135,
+              "separated_unordered_source_pairs": 42630
+            },
+            {
+              "target_sector": "vnc_sensory",
+              "distinct_exact_coordinate_values": 33,
+              "separated_unordered_source_pairs": 9008
+            },
+            {
+              "target_sector": "vnc_sensory_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_tbc",
+              "distinct_exact_coordinate_values": 7,
+              "separated_unordered_source_pairs": 1767
+            }
+          ]
+        },
+        {
+          "source_sector": "vnc_sensory",
+          "eligible_sources": 5791,
+          "exact_profile_classes": 5776,
+          "largest_profile_class_sources": 10,
+          "singleton_profile_classes": 5769,
+          "collision_profile_classes": 7,
+          "sources_in_collision_profile_classes": 22,
+          "zero_profile_sources": 1,
+          "unordered_same_observation_source_pairs": 16764945,
+          "unequal_profile_source_pairs": 16764894,
+          "coordinates": [
+            {
+              "target_sector": "<missing>",
+              "distinct_exact_coordinate_values": 1767,
+              "separated_unordered_source_pairs": 10365061
+            },
+            {
+              "target_sector": "ENS",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ascending_neuron",
+              "distinct_exact_coordinate_values": 5095,
+              "separated_unordered_source_pairs": 16762724
+            },
+            {
+              "target_sector": "cb_efferent",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_endocrine",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_intrinsic",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_motor",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_sensory",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_sensory_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "descending_neuron",
+              "distinct_exact_coordinate_values": 2673,
+              "separated_unordered_source_pairs": 14300448
+            },
+            {
+              "target_sector": "descending_neuron_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "efferent_ascending",
+              "distinct_exact_coordinate_values": 54,
+              "separated_unordered_source_pairs": 305492
+            },
+            {
+              "target_sector": "efferent_descending",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ol_intrinsic",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ol_sensory",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_ascending",
+              "distinct_exact_coordinate_values": 280,
+              "separated_unordered_source_pairs": 1642683
+            },
+            {
+              "target_sector": "sensory_ascending_tbc",
+              "distinct_exact_coordinate_values": 3,
+              "separated_unordered_source_pairs": 11579
+            },
+            {
+              "target_sector": "sensory_descending",
+              "distinct_exact_coordinate_values": 60,
+              "separated_unordered_source_pairs": 339899
+            },
+            {
+              "target_sector": "visual_centrifugal",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "visual_projection",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "visual_projection_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_efferent",
+              "distinct_exact_coordinate_values": 214,
+              "separated_unordered_source_pairs": 1221843
+            },
+            {
+              "target_sector": "vnc_endocrine",
+              "distinct_exact_coordinate_values": 41,
+              "separated_unordered_source_pairs": 230820
+            },
+            {
+              "target_sector": "vnc_intrinsic",
+              "distinct_exact_coordinate_values": 5283,
+              "separated_unordered_source_pairs": 16763852
+            },
+            {
+              "target_sector": "vnc_motor",
+              "distinct_exact_coordinate_values": 1764,
+              "separated_unordered_source_pairs": 9644991
+            },
+            {
+              "target_sector": "vnc_sensory",
+              "distinct_exact_coordinate_values": 4905,
+              "separated_unordered_source_pairs": 16754601
+            },
+            {
+              "target_sector": "vnc_sensory_tbc",
+              "distinct_exact_coordinate_values": 129,
+              "separated_unordered_source_pairs": 761287
+            },
+            {
+              "target_sector": "vnc_tbc",
+              "distinct_exact_coordinate_values": 649,
+              "separated_unordered_source_pairs": 4016112
+            }
+          ]
+        },
+        {
+          "source_sector": "vnc_sensory_tbc",
+          "eligible_sources": 11,
+          "exact_profile_classes": 11,
+          "largest_profile_class_sources": 1,
+          "singleton_profile_classes": 11,
+          "collision_profile_classes": 0,
+          "sources_in_collision_profile_classes": 0,
+          "zero_profile_sources": 0,
+          "unordered_same_observation_source_pairs": 55,
+          "unequal_profile_source_pairs": 55,
+          "coordinates": [
+            {
+              "target_sector": "<missing>",
+              "distinct_exact_coordinate_values": 7,
+              "separated_unordered_source_pairs": 45
+            },
+            {
+              "target_sector": "ENS",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ascending_neuron",
+              "distinct_exact_coordinate_values": 11,
+              "separated_unordered_source_pairs": 55
+            },
+            {
+              "target_sector": "cb_efferent",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_endocrine",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_intrinsic",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_motor",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_sensory",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_sensory_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "descending_neuron",
+              "distinct_exact_coordinate_values": 8,
+              "separated_unordered_source_pairs": 49
+            },
+            {
+              "target_sector": "descending_neuron_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "efferent_ascending",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "efferent_descending",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ol_intrinsic",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ol_sensory",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_ascending",
+              "distinct_exact_coordinate_values": 2,
+              "separated_unordered_source_pairs": 10
+            },
+            {
+              "target_sector": "sensory_ascending_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_descending",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "visual_centrifugal",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "visual_projection",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "visual_projection_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_efferent",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_endocrine",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_intrinsic",
+              "distinct_exact_coordinate_values": 11,
+              "separated_unordered_source_pairs": 55
+            },
+            {
+              "target_sector": "vnc_motor",
+              "distinct_exact_coordinate_values": 3,
+              "separated_unordered_source_pairs": 19
+            },
+            {
+              "target_sector": "vnc_sensory",
+              "distinct_exact_coordinate_values": 11,
+              "separated_unordered_source_pairs": 55
+            },
+            {
+              "target_sector": "vnc_sensory_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_tbc",
+              "distinct_exact_coordinate_values": 2,
+              "separated_unordered_source_pairs": 10
+            }
+          ]
+        },
+        {
+          "source_sector": "vnc_tbc",
+          "eligible_sources": 27,
+          "exact_profile_classes": 13,
+          "largest_profile_class_sources": 15,
+          "singleton_profile_classes": 12,
+          "collision_profile_classes": 1,
+          "sources_in_collision_profile_classes": 15,
+          "zero_profile_sources": 15,
+          "unordered_same_observation_source_pairs": 351,
+          "unequal_profile_source_pairs": 246,
+          "coordinates": [
+            {
+              "target_sector": "<missing>",
+              "distinct_exact_coordinate_values": 11,
+              "separated_unordered_source_pairs": 215
+            },
+            {
+              "target_sector": "ENS",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ascending_neuron",
+              "distinct_exact_coordinate_values": 11,
+              "separated_unordered_source_pairs": 215
+            },
+            {
+              "target_sector": "cb_efferent",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_endocrine",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_intrinsic",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_motor",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_sensory",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "cb_sensory_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "descending_neuron",
+              "distinct_exact_coordinate_values": 7,
+              "separated_unordered_source_pairs": 141
+            },
+            {
+              "target_sector": "descending_neuron_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "efferent_ascending",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "efferent_descending",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ol_intrinsic",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "ol_sensory",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_ascending",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_ascending_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "sensory_descending",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "visual_centrifugal",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "visual_projection",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "visual_projection_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_efferent",
+              "distinct_exact_coordinate_values": 2,
+              "separated_unordered_source_pairs": 26
+            },
+            {
+              "target_sector": "vnc_endocrine",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_intrinsic",
+              "distinct_exact_coordinate_values": 13,
+              "separated_unordered_source_pairs": 246
+            },
+            {
+              "target_sector": "vnc_motor",
+              "distinct_exact_coordinate_values": 11,
+              "separated_unordered_source_pairs": 215
+            },
+            {
+              "target_sector": "vnc_sensory",
+              "distinct_exact_coordinate_values": 3,
+              "separated_unordered_source_pairs": 51
+            },
+            {
+              "target_sector": "vnc_sensory_tbc",
+              "distinct_exact_coordinate_values": 1,
+              "separated_unordered_source_pairs": 0
+            },
+            {
+              "target_sector": "vnc_tbc",
+              "distinct_exact_coordinate_values": 5,
+              "separated_unordered_source_pairs": 98
+            }
+          ]
+        }
+      ],
+      "largest_observation_fiber": "ol_intrinsic",
+      "all_unordered_same_observation_source_pairs": 4580550215,
+      "all_unequal_profile_source_pairs": 4461226772,
+      "target_coordinate_splits": [
+        {
+          "target_sector": "<missing>",
+          "source_sectors_split": 21,
+          "separated_unordered_source_pairs": 2314737829,
+          "denominator_all_same_observation_source_pairs": 4580550215
+        },
+        {
+          "target_sector": "ENS",
+          "source_sectors_split": 0,
+          "separated_unordered_source_pairs": 0,
+          "denominator_all_same_observation_source_pairs": 4580550215
+        },
+        {
+          "target_sector": "ascending_neuron",
+          "source_sectors_split": 21,
+          "separated_unordered_source_pairs": 366543044,
+          "denominator_all_same_observation_source_pairs": 4580550215
+        },
+        {
+          "target_sector": "cb_efferent",
+          "source_sectors_split": 4,
+          "separated_unordered_source_pairs": 768041,
+          "denominator_all_same_observation_source_pairs": 4580550215
+        },
+        {
+          "target_sector": "cb_endocrine",
+          "source_sectors_split": 9,
+          "separated_unordered_source_pairs": 30536378,
+          "denominator_all_same_observation_source_pairs": 4580550215
+        },
+        {
+          "target_sector": "cb_intrinsic",
+          "source_sectors_split": 17,
+          "separated_unordered_source_pairs": 703452966,
+          "denominator_all_same_observation_source_pairs": 4580550215
+        },
+        {
+          "target_sector": "cb_motor",
+          "source_sectors_split": 14,
+          "separated_unordered_source_pairs": 49335695,
+          "denominator_all_same_observation_source_pairs": 4580550215
+        },
+        {
+          "target_sector": "cb_sensory",
+          "source_sectors_split": 12,
+          "separated_unordered_source_pairs": 56929027,
+          "denominator_all_same_observation_source_pairs": 4580550215
+        },
+        {
+          "target_sector": "cb_sensory_tbc",
+          "source_sectors_split": 8,
+          "separated_unordered_source_pairs": 2406089,
+          "denominator_all_same_observation_source_pairs": 4580550215
+        },
+        {
+          "target_sector": "descending_neuron",
+          "source_sectors_split": 22,
+          "separated_unordered_source_pairs": 775267971,
+          "denominator_all_same_observation_source_pairs": 4580550215
+        },
+        {
+          "target_sector": "descending_neuron_tbc",
+          "source_sectors_split": 3,
+          "separated_unordered_source_pairs": 55984,
+          "denominator_all_same_observation_source_pairs": 4580550215
+        },
+        {
+          "target_sector": "efferent_ascending",
+          "source_sectors_split": 14,
+          "separated_unordered_source_pairs": 11337633,
+          "denominator_all_same_observation_source_pairs": 4580550215
+        },
+        {
+          "target_sector": "efferent_descending",
+          "source_sectors_split": 8,
+          "separated_unordered_source_pairs": 2587443,
+          "denominator_all_same_observation_source_pairs": 4580550215
+        },
+        {
+          "target_sector": "ol_intrinsic",
+          "source_sectors_split": 10,
+          "separated_unordered_source_pairs": 3896675156,
+          "denominator_all_same_observation_source_pairs": 4580550215
+        },
+        {
+          "target_sector": "ol_sensory",
+          "source_sectors_split": 5,
+          "separated_unordered_source_pairs": 492269943,
+          "denominator_all_same_observation_source_pairs": 4580550215
+        },
+        {
+          "target_sector": "sensory_ascending",
+          "source_sectors_split": 15,
+          "separated_unordered_source_pairs": 17041256,
+          "denominator_all_same_observation_source_pairs": 4580550215
+        },
+        {
+          "target_sector": "sensory_ascending_tbc",
+          "source_sectors_split": 4,
+          "separated_unordered_source_pairs": 56851,
+          "denominator_all_same_observation_source_pairs": 4580550215
+        },
+        {
+          "target_sector": "sensory_descending",
+          "source_sectors_split": 11,
+          "separated_unordered_source_pairs": 3313999,
+          "denominator_all_same_observation_source_pairs": 4580550215
+        },
+        {
+          "target_sector": "visual_centrifugal",
+          "source_sectors_split": 15,
+          "separated_unordered_source_pairs": 3214489169,
+          "denominator_all_same_observation_source_pairs": 4580550215
+        },
+        {
+          "target_sector": "visual_projection",
+          "source_sectors_split": 12,
+          "separated_unordered_source_pairs": 3949982523,
+          "denominator_all_same_observation_source_pairs": 4580550215
+        },
+        {
+          "target_sector": "visual_projection_tbc",
+          "source_sectors_split": 4,
+          "separated_unordered_source_pairs": 4366812,
+          "denominator_all_same_observation_source_pairs": 4580550215
+        },
+        {
+          "target_sector": "vnc_efferent",
+          "source_sectors_split": 12,
+          "separated_unordered_source_pairs": 19525773,
+          "denominator_all_same_observation_source_pairs": 4580550215
+        },
+        {
+          "target_sector": "vnc_endocrine",
+          "source_sectors_split": 9,
+          "separated_unordered_source_pairs": 5318288,
+          "denominator_all_same_observation_source_pairs": 4580550215
+        },
+        {
+          "target_sector": "vnc_intrinsic",
+          "source_sectors_split": 13,
+          "separated_unordered_source_pairs": 89433915,
+          "denominator_all_same_observation_source_pairs": 4580550215
+        },
+        {
+          "target_sector": "vnc_motor",
+          "source_sectors_split": 13,
+          "separated_unordered_source_pairs": 75888675,
+          "denominator_all_same_observation_source_pairs": 4580550215
+        },
+        {
+          "target_sector": "vnc_sensory",
+          "source_sectors_split": 12,
+          "separated_unordered_source_pairs": 48776211,
+          "denominator_all_same_observation_source_pairs": 4580550215
+        },
+        {
+          "target_sector": "vnc_sensory_tbc",
+          "source_sectors_split": 4,
+          "separated_unordered_source_pairs": 936019,
+          "denominator_all_same_observation_source_pairs": 4580550215
+        },
+        {
+          "target_sector": "vnc_tbc",
+          "source_sectors_split": 9,
+          "separated_unordered_source_pairs": 11374341,
+          "denominator_all_same_observation_source_pairs": 4580550215
+        }
+      ],
+      "coordinate_separation": {
+        "status": "BOUNDED_NOT_SOLVED",
+        "minimum_coordinate_count": null,
+        "mandatory_coordinates": [
+          "<missing>",
+          "ascending_neuron",
+          "cb_intrinsic",
+          "ol_intrinsic",
+          "ol_sensory",
+          "visual_centrifugal",
+          "visual_projection",
+          "vnc_intrinsic",
+          "vnc_motor"
+        ],
+        "mandatory_witnesses": [
+          {
+            "coordinate": "<missing>",
+            "source_sector": "<missing>",
+            "source_indices": [
+              56269,
+              3341
+            ],
+            "body_ids": [
+              73540,
+              13535
+            ],
+            "all_other_coordinates_equal": true
+          },
+          {
+            "coordinate": "ascending_neuron",
+            "source_sector": "vnc_motor",
+            "source_indices": [
+              169643,
+              177591
+            ],
+            "body_ids": [
+              800664,
+              810535
+            ],
+            "all_other_coordinates_equal": true
+          },
+          {
+            "coordinate": "cb_intrinsic",
+            "source_sector": "<missing>",
+            "source_indices": [
+              56269,
+              131697
+            ],
+            "body_ids": [
+              73540,
+              224748
+            ],
+            "all_other_coordinates_equal": true
+          },
+          {
+            "coordinate": "ol_intrinsic",
+            "source_sector": "<missing>",
+            "source_indices": [
+              56269,
+              116384
+            ],
+            "body_ids": [
+              73540,
+              164406
+            ],
+            "all_other_coordinates_equal": true
+          },
+          {
+            "coordinate": "ol_sensory",
+            "source_sector": "ol_intrinsic",
+            "source_indices": [
+              5,
+              21110
+            ],
+            "body_ids": [
+              10009,
+              33113
+            ],
+            "all_other_coordinates_equal": true
+          },
+          {
+            "coordinate": "visual_centrifugal",
+            "source_sector": "ol_intrinsic",
+            "source_indices": [
+              5,
+              4641
+            ],
+            "body_ids": [
+              10009,
+              14948
+            ],
+            "all_other_coordinates_equal": true
+          },
+          {
+            "coordinate": "visual_projection",
+            "source_sector": "ol_intrinsic",
+            "source_indices": [
+              5,
+              26270
+            ],
+            "body_ids": [
+              10009,
+              38852
+            ],
+            "all_other_coordinates_equal": true
+          },
+          {
+            "coordinate": "vnc_intrinsic",
+            "source_sector": "vnc_motor",
+            "source_indices": [
+              169643,
+              170418
+            ],
+            "body_ids": [
+              800664,
+              801693
+            ],
+            "all_other_coordinates_equal": true
+          },
+          {
+            "coordinate": "vnc_motor",
+            "source_sector": "vnc_motor",
+            "source_indices": [
+              169643,
+              176384
+            ],
+            "body_ids": [
+              800664,
+              809085
+            ],
+            "all_other_coordinates_equal": true
+          }
+        ],
+        "lower_bound": 9,
+        "upper_bound": 12,
+        "sufficient_coordinate_set": [
+          "<missing>",
+          "ascending_neuron",
+          "cb_intrinsic",
+          "cb_sensory",
+          "descending_neuron",
+          "ol_intrinsic",
+          "ol_sensory",
+          "visual_centrifugal",
+          "visual_projection",
+          "vnc_intrinsic",
+          "vnc_motor",
+          "vnc_sensory"
+        ],
+        "selection_rule": "delete_nonmandatory_coordinates_in_declared_label_order",
+        "scope": "all_profile_classes_within_each_observed_source_sector"
+      },
+      "full_observation_sector_sizes": {
+        "<missing>": 44877,
+        "ENS": 50,
+        "ascending_neuron": 1846,
+        "cb_efferent": 4,
+        "cb_endocrine": 72,
+        "cb_intrinsic": 32164,
+        "cb_motor": 107,
+        "cb_sensory": 4868,
+        "cb_sensory_tbc": 14,
+        "descending_neuron": 1314,
+        "descending_neuron_tbc": 2,
+        "efferent_ascending": 8,
+        "efferent_descending": 4,
+        "ol_intrinsic": 89403,
+        "ol_sensory": 6098,
+        "sensory_ascending": 537,
+        "sensory_ascending_tbc": 2,
+        "sensory_descending": 12,
+        "visual_centrifugal": 563,
+        "visual_projection": 9201,
+        "visual_projection_tbc": 2,
+        "vnc_efferent": 94,
+        "vnc_endocrine": 22,
+        "vnc_intrinsic": 13161,
+        "vnc_motor": 708,
+        "vnc_sensory": 6370,
+        "vnc_sensory_tbc": 36,
+        "vnc_tbc": 38
+      },
+      "arithmetic_bound": {
+        "accumulator": "int64",
+        "arithmetic_bound": "edge_count_times_max_positive_weight",
+        "edge_count": 26028386,
+        "max_weight": 2591,
+        "partial_sum_upper_bound": 67439548126,
+        "int64_max": 9223372036854775807,
+        "later_pair_counts_and_cross_products": "Python_bigint"
+      }
+    }
+  }
+}
