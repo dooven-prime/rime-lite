@@ -1,0 +1,207 @@
+{
+  "schema": "rime.circular-adjacent-collapse.raw-bfs.v1",
+  "status": "BOUNDED_COMPUTATIONAL_CONSISTENCY_NOT_PROOF",
+  "model": "identity singleton seed; p(q)=q+1 mod n; d(1)=0, d(q)=q otherwise; F={0,1}",
+  "method": "BFS of literal placed partitions and ordered registration/absorption records",
+  "scope": "2<=n<=7",
+  "rows": [
+    {
+      "n": 2,
+      "reachable_states": 6,
+      "registered_summaries": 4,
+      "expected_total": 4,
+      "selected_chains": 1,
+      "chain_length_counts": {
+        "0": 1
+      },
+      "fiber_groups": [
+        {
+          "outside_atoms": 0,
+          "weight_per_chain": 4,
+          "chains": 1
+        }
+      ],
+      "registered_summary_set_sha256": "78bca941cc4387c7b49040c34820ccf2852d490987641b821de8ea985f05770d"
+    },
+    {
+      "n": 3,
+      "reachable_states": 30,
+      "registered_summaries": 12,
+      "expected_total": 12,
+      "selected_chains": 3,
+      "chain_length_counts": {
+        "0": 1,
+        "1": 2
+      },
+      "fiber_groups": [
+        {
+          "outside_atoms": 0,
+          "weight_per_chain": 3,
+          "chains": 2
+        },
+        {
+          "outside_atoms": 1,
+          "weight_per_chain": 6,
+          "chains": 1
+        }
+      ],
+      "registered_summary_set_sha256": "fac1af67f703a051d2d03ff7b2fa6d55757e4e3c024ed2901ae5b1a455194a03"
+    },
+    {
+      "n": 4,
+      "reachable_states": 176,
+      "registered_summaries": 72,
+      "expected_total": 72,
+      "selected_chains": 9,
+      "chain_length_counts": {
+        "0": 1,
+        "1": 4,
+        "2": 4
+      },
+      "fiber_groups": [
+        {
+          "outside_atoms": 0,
+          "weight_per_chain": 4,
+          "chains": 6
+        },
+        {
+          "outside_atoms": 1,
+          "weight_per_chain": 12,
+          "chains": 2
+        },
+        {
+          "outside_atoms": 2,
+          "weight_per_chain": 24,
+          "chains": 1
+        }
+      ],
+      "registered_summary_set_sha256": "12d490aa9c9fee79c26d197f4e0b5f62d96b6e24a772b68c12119ed419e017c8"
+    },
+    {
+      "n": 5,
+      "reachable_states": 920,
+      "registered_summaries": 410,
+      "expected_total": 410,
+      "selected_chains": 27,
+      "chain_length_counts": {
+        "0": 1,
+        "1": 6,
+        "2": 12,
+        "3": 8
+      },
+      "fiber_groups": [
+        {
+          "outside_atoms": 0,
+          "weight_per_chain": 5,
+          "chains": 18
+        },
+        {
+          "outside_atoms": 1,
+          "weight_per_chain": 20,
+          "chains": 6
+        },
+        {
+          "outside_atoms": 2,
+          "weight_per_chain": 50,
+          "chains": 2
+        },
+        {
+          "outside_atoms": 3,
+          "weight_per_chain": 100,
+          "chains": 1
+        }
+      ],
+      "registered_summary_set_sha256": "75c092a7296b7828341e6db03b078c68382cede19e2665eed31e147252f473c2"
+    },
+    {
+      "n": 6,
+      "reachable_states": 4566,
+      "registered_summaries": 2244,
+      "expected_total": 2244,
+      "selected_chains": 81,
+      "chain_length_counts": {
+        "0": 1,
+        "1": 8,
+        "2": 24,
+        "3": 32,
+        "4": 16
+      },
+      "fiber_groups": [
+        {
+          "outside_atoms": 0,
+          "weight_per_chain": 6,
+          "chains": 54
+        },
+        {
+          "outside_atoms": 1,
+          "weight_per_chain": 30,
+          "chains": 18
+        },
+        {
+          "outside_atoms": 2,
+          "weight_per_chain": 90,
+          "chains": 6
+        },
+        {
+          "outside_atoms": 3,
+          "weight_per_chain": 210,
+          "chains": 2
+        },
+        {
+          "outside_atoms": 4,
+          "weight_per_chain": 420,
+          "chains": 1
+        }
+      ],
+      "registered_summary_set_sha256": "b3b608d7b7cdcc0392ab66243ed1f4c1317c5290f5ab790ad274c62fbe04e33f"
+    },
+    {
+      "n": 7,
+      "reachable_states": 22134,
+      "registered_summaries": 11928,
+      "expected_total": 11928,
+      "selected_chains": 243,
+      "chain_length_counts": {
+        "0": 1,
+        "1": 10,
+        "2": 40,
+        "3": 80,
+        "4": 80,
+        "5": 32
+      },
+      "fiber_groups": [
+        {
+          "outside_atoms": 0,
+          "weight_per_chain": 7,
+          "chains": 162
+        },
+        {
+          "outside_atoms": 1,
+          "weight_per_chain": 42,
+          "chains": 54
+        },
+        {
+          "outside_atoms": 2,
+          "weight_per_chain": 147,
+          "chains": 18
+        },
+        {
+          "outside_atoms": 3,
+          "weight_per_chain": 392,
+          "chains": 6
+        },
+        {
+          "outside_atoms": 4,
+          "weight_per_chain": 882,
+          "chains": 2
+        },
+        {
+          "outside_atoms": 5,
+          "weight_per_chain": 1764,
+          "chains": 1
+        }
+      ],
+      "registered_summary_set_sha256": "994507195a606dd619f316f4cb36d7f56c90d104569b93d9fb1b5bd73c456e74"
+    }
+  ]
+}

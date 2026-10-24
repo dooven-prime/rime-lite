@@ -70,6 +70,12 @@ Paper-facing computations write generated records under the owning
 | XXXIX | [paper39/README.md](paper39/README.md) | bounded three-model consumer replay, partial Lean spine, and paper-owned release-closure validation |
 | XL | [paper40/README.md](paper40/README.md) | finite generated-domain checks, exact source snapshot, rejection-witness replay, and paper-owned release-closure validation |
 
+## Unnumbered Preprint Companions
+
+| Preprint | Replay entry | Scope |
+|----------|--------------|-------|
+| [hal-05837829v1](https://hal.science/hal-05837829v1) | [registered_absorption_chains/README.md](registered_absorption_chains/README.md) | independent raw-action BFS for `n=2..7`; bounded consistency only, separate from the HAL manuscript file set |
+
 Where a paper-local README is not yet present, the owning manuscript and
 script docstrings define the release-local scope. A future versioned reopening
 should add the standard local README before changing artifact semantics.
