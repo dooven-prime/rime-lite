@@ -1,0 +1,18 @@
+{
+  "schema": "rime.registered-absorption-chains.replay-lock.v1",
+  "manuscript_hal_version": "hal-05837829v1",
+  "scope": "bounded raw-action replay, 2<=n<=7",
+  "status": "BOUNDED_COMPUTATIONAL_CONSISTENCY_NOT_PROOF",
+  "files": [
+    {
+      "path": "independent_bfs_check.py",
+      "size_bytes": 5150,
+      "sha256": "27d68fa1e96714b4cfe3c1e49ef81250cca6a1c56fb934bd509a40825b648022"
+    },
+    {
+      "path": "results/independent_bfs_n2_n7.v1.json",
+      "size_bytes": 4903,
+      "sha256": "d6d140baaccdb2274856cff7ed2cee1cf9ec069c8127730bc35e805a31437cc0"
+    }
+  ]
+}
