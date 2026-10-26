@@ -1,0 +1,34 @@
+{
+  "schema": "rime.paper18.local-release-receipt.v1",
+  "status": "PASS_LOCAL_RELEASE_CONTENT",
+  "release_identity_claimed": true,
+  "receipt_self_exclusion": true,
+  "replay": {
+    "historical_git_objects_and_checkout_bytes_verified": true,
+    "focused_census_and_witness_controls_replayed": true,
+    "compact_witness_zip_replayed": true,
+    "dataset_carrier_replayed": false,
+    "reader_pdfs_rebuilt": false,
+    "external_zenodo_bytes_checked": false,
+    "paper18_publication_identity_claimed": false
+  },
+  "manifest_binding": {
+    "path": "experiments/paper18/release-manifest.json",
+    "sha256": "d206fc20b592d298f89d349b9e74066f8803a0dc150b89d59eade916edf019a3",
+    "size": 13535
+  },
+  "historical_evidence": {
+    "artifact_count": 33,
+    "closure_sha256": "289a2c7a8f3b151376b05e4821b12707a7522687ea32ba645c735519036a1fbf"
+  },
+  "release_content": {
+    "artifact_count": 53,
+    "closure_sha256": "c6f9468a50581922d7f377d543a9017411f4c8fe0b483b63e6c3826e3380f452"
+  },
+  "nonclaims": [
+    "this receipt does not validate a Paper XVIII DOI; the tag is checked separately",
+    "the Dataset archive is digest-declared but not downloaded or source-replayed by this gate",
+    "the compact witness has no independent DOI"
+  ],
+  "content_sha256": "95853108bcf8a747817b9cc425e658371be0b12c8fb9715e2864399ee840d921"
+}

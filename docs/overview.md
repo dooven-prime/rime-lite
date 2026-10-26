@@ -123,7 +123,8 @@ research target; Paper VII does not assert a generic completion theorem.
 
 ### Papers XX--XL: Independent Post-Protocol Mathematics
 
-Papers XVIII--XIX are intentionally unused in the public numbered sequence.
+Paper XVIII is a published research report on exact unit-source predictive
+refinement; Paper XIX remains unused in the public numbered sequence.
 Paper XX begins a separately scoped mathematical line with all-depth
 carrierwise factorization, survivor recursion, and exact image--kernel tests
 for routed composition. Paper XXI develops the finite-field route branch

@@ -93,6 +93,7 @@ status.
 |---|---|---|
 | XVI | source-addressed MaleCNS audits of structural liftability, signed operator semantics, observation visibility, and deterministic coarse-state closure | exact finite route and history-fiber certificates are separated from bounded numerical dynamics; no physiological, causal, behavioral, or protocol-authority claim follows |
 | XVII | post-transient exact coarse factorization on a reduced MaleCNS domain | the finite one-step factorization and noninjective fibers do not establish an endomap or active correction; zero clipped drive on all non-singleton fibers admits a common-leak explanation |
+| XVIII | exact predictive refinement of fixed MaleCNS partitions on eligible unit sources | the criterion specializes classical block-row-sum reasoning; the 163,439-source census is exact for the declared signed clipped model, while Papers XVI and XVII retain ownership of structural and reached-set comparisons |
 
 Papers XVI and XVII use declared computational carriers under their own
 hypotheses and evidence records; neither extends the Paper VIII--XV protocol
@@ -124,7 +125,9 @@ authority chain.
 | XXXIX | event-anchored fusion ancestry and consumer-adequate continuations | the manuscript owns sufficiency on the declared singleton-seed-generated domain; bounded replay and partial Lean coverage do not prove minimality, efficiency, or the general theorem |
 | XL | consumer-relative state sufficiency for event-anchored executions | the manuscript owns the read/guard/successor criterion; the finite checker and replay cover declared generated domains, not universal minimal-state synthesis or machine-checked implementation correctness |
 
-Papers XVIII--XIX are intentionally unused in the public numbered sequence.
+Paper XVIII is published as a v1.0 research report with an independently
+anchored Zenodo record; its tagged content remains immutable.
+Paper XIX remains unused in the public numbered sequence.
 Paper XX begins an independently scoped mathematical line, and Paper XXI
 develops its finite-field route branch. Paper XXII develops the fixed-deficit
 rational branch and treats Paper XXI as a precursor rather than a theorem
