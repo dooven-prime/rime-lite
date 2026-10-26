@@ -47,6 +47,7 @@ experiments/paper28/results/paper28_third_mechanism_schema_declaration_v1.receip
 experiments/paper28/artifacts/P28_3_BOUNDARY_GENERATOR_RESULTS.md whitespace=-blank-at-eof
 experiments/paper28/artifacts/P28_5K_THIRD_RANK5_SECTION_RETURN_RESULTS.md whitespace=-blank-at-eof
 figures/paper28/*.dot text eol=lf
+figures/paper18/*.svg text eol=lf
 figures/**/*.py text eol=lf
 tests/**/*.py text eol=lf
 tests/**/*.json text eol=lf
