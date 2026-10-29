@@ -55,6 +55,7 @@ papers/tex/*.log
 papers/tex/*.out
 papers/tex/arxiv/
 papers/tex/reverse/
+papers/unnumbered/
 experiments/* - v*.md
 
 # Unreleased paper-stage material
