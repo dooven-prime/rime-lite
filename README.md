@@ -89,6 +89,7 @@ tagged release closure.
 | check geometry and move conventions | [`docs/conventions.md`](docs/conventions.md) |
 | inspect reproducibility scripts | [`experiments/README.md`](experiments/README.md) |
 | read the submitted JCN author preprint and its Dataset guide | [`A Path Is Not a State`](papers/unnumbered/from_support_to_state/README.md) |
+| read the HAL registered-absorption preprint and later Lean companion | [HAL v1 snapshot](papers/unnumbered/circular_coalescence_counts/README.md) |
 | inspect published SOF data contracts | [`schemas/README.md`](schemas/README.md) |
 | run domain adapters, plugins, and capability-aware compilation | [`sof-runtime`](https://github.com/dooven-prime/sof-runtime) |
 | inspect optional reproducibility data, observations, open problems, and history | [`ccs/canonical_specification.md`](ccs/canonical_specification.md) |
