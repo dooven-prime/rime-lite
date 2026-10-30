@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "status": "BOUNDED_LOCAL_CLOSURE",
+  "owner": "unnumbered future-event minimal quotient preprint",
+  "release_identity_claimed": false,
+  "domain": {
+    "n": [3, 4, 5],
+    "selected_pair": [0, 1],
+    "alphabet": ["p", "d"],
+    "seed": "identity_singletons"
+  },
+  "claim_boundary": "Finite graph, two finite right congruences, literal separators, and independent packet-step cross-check only. No all-n theorem or Lean proof is certified.",
+  "sha256": {
+    "README.md": "bd2b2e984291b873745500492facd3466b198618fbc4a074f124796f824c0129",
+    "model.py": "d20714213e3b11e39b5e861693784d0e3dd329468094b9facf1e5d361bb79a28",
+    "audit.py": "5e8b9c0b672e50ae1e63625a9c7ab2ba14802705ee8a070e02c3b3386ad32266",
+    "produce.py": "b2252b245f35a30b4e99c25800a33490c2448a8e2cb2f8d33f53452926fb303d",
+    "validation/validate.py": "9f0e7870f2bf68be787779a223cfb899602784467f16e4f2f13b863620a7417f",
+    "tests/test_controls.py": "08e4c789f211e2d7a79b36e37944b78df5dd57785c1383ccc4750f47b1e8313e",
+    "results/future_event_controls.v1.json": "ffc43f4466a1ee59da60771ddd5627e0ea832361aac81d0b62525ea6fd70aaed"
+  }
+}
