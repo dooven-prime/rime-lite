@@ -1,14 +1,15 @@
 # Future-Event Minimal Quotients
 
-**Status:** HAL v1 submission candidate, not yet deposited. This is an
-unnumbered preprint with a frozen reader PDF and bounded control package;
-it is not a numbered RIME paper or a Lean-verified result. No HAL identifier,
-DOI, or journal acceptance is claimed for this manuscript.
+**Status:** Submitted to HAL as `hal-05844771v1`; public availability is
+pending confirmation. This is an unnumbered preprint with a frozen reader PDF
+and bounded control package; it is not a numbered RIME paper or a
+Lean-verified result. No DOI or journal acceptance is claimed for this
+manuscript.
 
 ## Reader entry
 
 - [Reader PDF](hal-v1/Chen_Future_Event_Minimal_Quotients_HAL_preprint.pdf):
-  twelve-page HAL submission candidate.
+  twelve-page file submitted to HAL as `hal-05844771v1`.
 - [Manuscript](MANUSCRIPT.md): all-parameter future-event right congruence,
   actual distinguishing probes, exact class counts, and observation-contract
   asymptotics for `n>=3`, `F={0,1}`.
