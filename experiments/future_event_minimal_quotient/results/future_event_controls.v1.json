@@ -1,0 +1,112 @@
+{
+  "controls": [
+    {
+      "candidate_class_pairs_checked": 45,
+      "certificate_methods": {
+        "V": 24,
+        "W": 21
+      },
+      "declared_length_bound": 8,
+      "full_classes": 16,
+      "future_classes": 10,
+      "max_certificate_length": 5,
+      "n": 3,
+      "raw_edges": 60,
+      "reachable_retained_states": 30,
+      "refinement_rounds": {
+        "full": 4,
+        "future": 4
+      },
+      "registerable_placements": 3,
+      "registered_nonterminal_placements": 6,
+      "registered_summaries": 12
+    },
+    {
+      "candidate_class_pairs_checked": 2080,
+      "certificate_methods": {
+        "V": 892,
+        "V+W": 12,
+        "W": 1176
+      },
+      "declared_length_bound": 14,
+      "full_classes": 89,
+      "future_classes": 65,
+      "max_certificate_length": 9,
+      "n": 4,
+      "raw_edges": 352,
+      "reachable_retained_states": 176,
+      "refinement_rounds": {
+        "full": 7,
+        "future": 7
+      },
+      "registerable_placements": 16,
+      "registered_nonterminal_placements": 48,
+      "registered_summaries": 72
+    },
+    {
+      "candidate_class_pairs_checked": 56280,
+      "certificate_methods": {
+        "V": 22095,
+        "V+W": 255,
+        "W": 33930
+      },
+      "declared_length_bound": 20,
+      "full_classes": 486,
+      "future_classes": 336,
+      "max_certificate_length": 14,
+      "n": 5,
+      "raw_edges": 1840,
+      "reachable_retained_states": 920,
+      "refinement_rounds": {
+        "full": 10,
+        "future": 10
+      },
+      "registerable_placements": 75,
+      "registered_nonterminal_placements": 260,
+      "registered_summaries": 410
+    }
+  ],
+  "domain": {
+    "F": [
+      0,
+      1
+    ],
+    "letters": [
+      "p",
+      "d"
+    ],
+    "n": [
+      3,
+      4,
+      5
+    ],
+    "seed": "identity_singletons"
+  },
+  "introduction_example": {
+    "n": 5,
+    "placement": [
+      [
+        0,
+        [
+          0,
+          1,
+          2,
+          3
+        ]
+      ],
+      [
+        4,
+        [
+          4
+        ]
+      ]
+    ],
+    "selected_chain_lengths": [
+      1,
+      2
+    ],
+    "word_one": "dpppdpdppppppd",
+    "word_two": "dppppdpdpppdppppppdpd"
+  },
+  "status": "BOUNDED_CONSISTENCY_ONLY"
+}
