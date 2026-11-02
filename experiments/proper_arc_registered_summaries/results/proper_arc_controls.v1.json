@@ -1,0 +1,47 @@
+{
+  "schema": "proper_arc_controls.v1",
+  "status": "BOUNDED_CONSISTENCY_CONTROL",
+  "full_log": [
+    {
+      "n": 3,
+      "log_states": 39,
+      "proper_by_length": [
+        {"r": 2, "arc_count": 3, "summaries_per_arc": 12}
+      ]
+    },
+    {
+      "n": 4,
+      "log_states": 292,
+      "proper_by_length": [
+        {"r": 2, "arc_count": 4, "summaries_per_arc": 72},
+        {"r": 3, "arc_count": 4, "summaries_per_arc": 40}
+      ]
+    },
+    {
+      "n": 5,
+      "log_states": 2505,
+      "proper_by_length": [
+        {"r": 2, "arc_count": 5, "summaries_per_arc": 410},
+        {"r": 3, "arc_count": 5, "summaries_per_arc": 240},
+        {"r": 4, "arc_count": 5, "summaries_per_arc": 90}
+      ]
+    },
+    {
+      "n": 6,
+      "log_states": 24306,
+      "proper_by_length": [
+        {"r": 2, "arc_count": 6, "summaries_per_arc": 2244},
+        {"r": 3, "arc_count": 6, "summaries_per_arc": 1356},
+        {"r": 4, "arc_count": 6, "summaries_per_arc": 558},
+        {"r": 5, "arc_count": 6, "summaries_per_arc": 168}
+      ]
+    }
+  ],
+  "origin_words": [
+    {"n": 3, "origin_cases": 3, "origin_word_sha256": "ecece63111a125d155af70ba73efae475c358e7219f2e07c6606aed779569ba8"},
+    {"n": 4, "origin_cases": 12, "origin_word_sha256": "a4ee8919a17c2febe7cd45f868e0b7153ced7128497dea2e410000177fcdc3a9"},
+    {"n": 5, "origin_cases": 30, "origin_word_sha256": "066957c190d8108bfb88c73800063695545e01ac7484270f0169479da87248df"},
+    {"n": 6, "origin_cases": 60, "origin_word_sha256": "600c11e4ab7e7d92286a190a1d229f9da21e159694a0dc5b81548ecce3758132"},
+    {"n": 7, "origin_cases": 105, "origin_word_sha256": "8daf915eba340f18bae5f30f3f210da7b337e7f98e29ee90e563537bdfe29fb8"}
+  ]
+}
