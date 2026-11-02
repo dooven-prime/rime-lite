@@ -1,6 +1,7 @@
 # Registered Proper-Arc Summaries
 
-**Status:** HAL v1 candidate. No HAL identifier, DOI, journal submission, or
+**Status:** Deposited to HAL as [hal-05848115v1](https://hal.science/hal-05848115v1).
+Public access is pending verification. No DOI, journal submission, or
 all-parameter Lean certification is claimed for this snapshot.
 
 ## Reader and replication
