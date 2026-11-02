@@ -1,0 +1,17 @@
+{
+  "schema": "proper_arc_closure.v1",
+  "status": "LOCAL_CLOSURE_VERIFICATION",
+  "release_identity_claimed": false,
+  "scope": {
+    "model": "identity singleton seed; p(q)=q+1; d(1)=0; fixed proper source arcs",
+    "full_log_n": [3, 4, 5, 6],
+    "origin_word_n": [3, 4, 5, 6, 7]
+  },
+  "sha256": {
+    "core.py": "f6c99d523013d397abcc99bf28a80d2be90424de82c00412e5aa639439c0a7f3",
+    "general_arc_control.py": "12aee5aaf2bd8b4e8b6c557dbd472b60aa1eb96ffb397e877cdbbc67aa44a983",
+    "origin_control.py": "753853f2251f1091ef56e83a69cfc191bf86a07c9a92b888d0decce6cb95f93b",
+    "validate_controls.py": "0c8cb7a9d697fc3b854157f24c00fb74c303e0016b22d417e3163cacdd4eb024",
+    "results/proper_arc_controls.v1.json": "61cb27083874bdbcf116e68560fae78cd6dd242ce2d499784b58b1bbe320c4f8"
+  }
+}
