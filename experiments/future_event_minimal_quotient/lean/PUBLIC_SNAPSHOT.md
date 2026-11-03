@@ -8,8 +8,12 @@ full-summary and asymptotic comparisons. The statements and their source
 locations are indexed in [the theorem map](review/THEOREM_TO_SOURCE.md).
 
 The complete source snapshot is tagged `future-event-lean-companion-v1.0`.
-Its GitHub tag is the source identity; an independent archive record and DOI
-remain **PENDING**. Neither HAL identifier identifies these later Lean files.
+Its GitHub tag is the source identity. The source ZIP is now archived at
+[Zenodo DOI 10.5281/zenodo.23914476](https://doi.org/10.5281/zenodo.23914476);
+the [downstream source anchor](../lean-source-anchor.v1.json) binds the tag,
+ZIP digest, deposited file, and record. The `PENDING` text retained in the
+tagged snapshot and frozen theorem map records their pre-archive state;
+neither HAL identifier identifies these later Lean files.
 
 | Layer | Read-only replay from this directory |
 |---|---|

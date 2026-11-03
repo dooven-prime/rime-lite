@@ -2,9 +2,9 @@
 
 **Status:** Submitted to HAL as `hal-05844771v1`; public availability is
 pending confirmation. This is an unnumbered preprint with a frozen reader PDF
-and bounded control package; it is not a numbered RIME paper or a
-Lean-verified result. No DOI or journal acceptance is claimed for this
-manuscript.
+and bounded control package; it is not a numbered RIME paper. A separately
+archived Lean companion does not change the HAL v1 proof identity. No DOI or
+journal acceptance is claimed for the manuscript itself.
 
 ## Reader entry
 
@@ -19,6 +19,9 @@ manuscript.
   metadata epoch. Requires Pandoc, pdfLaTeX, and BibTeX.
 - [Bounded controls](../../../experiments/future_event_minimal_quotient/README.md):
   self-contained replay for `n=3..5`, not an all-`n` theorem owner.
+- [Lean companion](../../../experiments/future_event_minimal_quotient/lean/PUBLIC_SNAPSHOT.md):
+  separately frozen all-parameter proof layers, archived as
+  [10.5281/zenodo.23914476](https://doi.org/10.5281/zenodo.23914476).
 
 | Frozen candidate file | SHA-256 |
 |---|---|
@@ -51,21 +54,11 @@ Finite tests remain consistency controls. This is a new observation-contract
 result, not an update to the HAL count theorem or the domain-specific Q2
 checker in Paper XL.
 
-## Later formalization boundary
+## Separate Lean Companion
 
-A separate Lean companion could proceed through these typed interfaces:
-
-1. `atomSite_run` and placed-partition recovery, including fused steps.
-2. `gapProbe_preFinal_fibers` and `gapProbe_registers_on_last_letter`.
-3. `gapProbe_coalesces_iff_holeMove`, with actual `E_j` words and the
-   identity case distinct from directed edges.
-4. `registeredSweep_injective`, `firstSelectedEvent_phaseDecoder`, and
-   `outsideAnchor_recovers_carrierSite`.
-5. `futureEvent_equiv_iff_key` and the common-suffix depth bound.
-6. Only after the behavioral spine: finite cardinal identities and
-   asymptotic transfer from the separately owned `s_n` theorem.
-
-This list is a formalization plan, not a Lean completion claim. A future
-package may explicitly import versioned execution definitions from the HAL
-companion, but must keep its new theorems and axiom audit separate from the
-already frozen HAL milestone.
+The [versioned companion](../../../experiments/future_event_minimal_quotient/lean/PUBLIC_SNAPSHOT.md)
+contains four frozen proof layers and a theorem-to-source map. Its
+[source anchor](../../../experiments/future_event_minimal_quotient/lean-source-anchor.v1.json)
+binds the Git tag and deposited ZIP. The `PENDING` wording inside the tagged
+snapshot is its pre-archive status; the companion DOI belongs to the Lean
+source package, not to this HAL manuscript or the bounded Python controls.
