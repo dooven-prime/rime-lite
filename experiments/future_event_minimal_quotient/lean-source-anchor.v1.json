@@ -1,0 +1,22 @@
+{
+  "schema": "rime.future-event-lean-source-anchor.v1",
+  "status": "SOURCE_AND_ARCHIVE_PUBLISHED",
+  "source_tag": {
+    "name": "future-event-lean-companion-v1.0",
+    "tag_object_sha": "1ef64bc0560ae5c04e915350f86046670f698b8c",
+    "target_commit_sha": "547848ce2305daf54f0e2df049a9d5372ffdcbdc"
+  },
+  "source_scope": "experiments/future_event_minimal_quotient/lean",
+  "archive": {
+    "filename": "FutureEvent_Lean_Companion_v1.0_source.zip",
+    "sha256": "9bed34a86dd85bcb45c8cdafe308b6de4aebfd103452a9e56817c3c9547de357",
+    "size_bytes": 8432594,
+    "creation": "git archive --format=zip future-event-lean-companion-v1.0 LICENSE LICENSE-PAPERS experiments/future_event_minimal_quotient/lean",
+    "persistent_record_id": "zenodo:23914476",
+    "doi": "10.5281/zenodo.23914476",
+    "record_url": "https://zenodo.org/records/23914476",
+    "publication_date": "2026-11-03",
+    "deposited_md5": "5c060a4583709d1c80a13648fd3cd246"
+  },
+  "boundary": "Versioned Lean source archive; not a revision of either HAL preprint or a claim of independent cross-host replay."
+}

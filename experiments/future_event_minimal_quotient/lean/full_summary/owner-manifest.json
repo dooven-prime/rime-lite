@@ -1,0 +1,26 @@
+{
+  "schema": "full_summary_count_owner_extension.v1",
+  "commit": "050cf8ec11e3db263830b46ea95e4062b8e08869",
+  "source_directory": "experiments/registered_absorption_chains/lean/RegisteredAbsorptionChains",
+  "mirror_directory": "owner/RegisteredAbsorptionChains",
+  "compile_order": [
+    "OriginClassification",
+    "FullCarrierPlacementEquiv",
+    "TotalSummaryAssembly",
+    "CheckpointCounts",
+    "TotalParameters",
+    "FinitePositiveFiber",
+    "CodeLastCheckpointCount",
+    "TotalCountFormula"
+  ],
+  "sha256": {
+    "OriginClassification.lean": "29f15ed546c70c910882c70cd9ef11ad759c8513ff643d74c7b446fb29be6851",
+    "FullCarrierPlacementEquiv.lean": "59db622c728b4596d1c79dd9cd9f9cade6341283d71615988741e3127eb2fb43",
+    "TotalSummaryAssembly.lean": "94e96389226d24c4c24d0c1f0665bdc81eb94f133b6dcfc25c8cc5a04a26e504",
+    "CheckpointCounts.lean": "efdf3ae2c799301a8c61d01698f9b1240d351b32c29db097733f47efae8f39b1",
+    "TotalParameters.lean": "7b118df23d0a86e8492b8a93ca3074b4bff34a3528093ab44d769ae2f3dddd7e",
+    "FinitePositiveFiber.lean": "2a27979ad0622dc40267bee2b8f3e2adf2ba1e7d72d934ae5cd4ac8b817dfbaf",
+    "CodeLastCheckpointCount.lean": "78c39004bb84e413ec238584a21a92483de56030d60d367d1d2712b2de1c2c3a",
+    "TotalCountFormula.lean": "f6e75f81c4bf2e158823927233eeed29c546a249b16a7c7c701d9841999c0585"
+  }
+}

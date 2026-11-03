@@ -1,0 +1,45 @@
+{
+  "schema": "future_event_wallis_ratio_milestone.v1",
+  "identity": "LOCAL_EXACT_BYTE_ANALYTIC_PROOF_MILESTONE",
+  "release_identity_claimed": false,
+  "hal_v1_proof_identity_changed": false,
+  "lean_executable": "Lean (version 4.33.0, x86_64-w64-windows-gnu, commit d8b18978322de05a8f3dba51ef03cf5461676c17, Release)",
+  "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d",
+  "finite_manifest": "milestones/finite-combinatorial-v1/manifest.json",
+  "finite_manifest_sha256": "f4f2d444828362f2cb95387a8852f5317bc1057f5be71df2351f9d656369576c",
+  "finite_source_files": 81,
+  "source_sha256": {
+    "analysis/WallisAsymptotics.lean": "9e8cfe5b3ae66687be7240dd5d084d5cca08bd871995f0ebd811b45993eaaecb",
+    "analysis/FutureCountAsymptotics.lean": "2cacca37b975d1c0fdfe4ecf9a20ac30d4b89592652c07bfe95678779201ecc5",
+    "analysis/AxiomAudit.lean": "122413054317a05cf8fbe70f8ab52d0b6be026f6d0f0e918a7e051ad70247056",
+    "analysis/validate_analysis.py": "a5757a906fc104e87207ded94e5b6a52e13fe5cdd268e8ff7e9001787440c008",
+    "analysis/tests/test_analysis_audit.py": "f8bf7a97b823acc7f64b8e86fc03be83dcce9f52cc14be3cbe3d7fd4d9f8a28e"
+  },
+  "target_declarations": [
+    "FutureEventAnalysis.tendsto_scaled_central_binomial",
+    "FutureEventAnalysis.tendsto_normalized_remainder",
+    "FutureEventAnalysis.tendsto_futureQuotient_normalized"
+  ],
+  "axiom_audit": [
+    "FutureEventAnalysis.wallis_central_binomial",
+    "FutureEventAnalysis.scaled_central_binomial_sqrt",
+    "FutureEventAnalysis.tendsto_wallis_rational",
+    "FutureEventAnalysis.tendsto_scaled_central_binomial",
+    "FutureEventAnalysis.tendsto_remainder_polynomial",
+    "FutureEventAnalysis.tendsto_normalized_remainder",
+    "FutureEventAnalysis.futureCardReal_formula",
+    "FutureEventAnalysis.tendsto_leading_coefficient",
+    "FutureEventAnalysis.tendsto_sqrt_shift_ratio",
+    "FutureEventAnalysis.tendsto_normalized_leading",
+    "FutureEventAnalysis.normalized_count_decomposition",
+    "FutureEventAnalysis.tendsto_futureQuotient_normalized"
+  ],
+  "report_sha256": "eee38fd15e99f9437b767e1925b3c44a9fdd4d60da046a4b55275d1dd3db8c74",
+  "scope": "Wallis central-binomial limit, vanishing normalized remainder, and actual future-quotient ratio limit on cofinal horizons n=m+3",
+  "excluded_scope": [
+    "Full-summary asymptotics",
+    "Algorithms or complexity bounds",
+    "Changes to the finite milestone"
+  ],
+  "replay_boundary": "Local kernel replay with pinned cached dependencies; not a fresh-machine cold replay claim"
+}

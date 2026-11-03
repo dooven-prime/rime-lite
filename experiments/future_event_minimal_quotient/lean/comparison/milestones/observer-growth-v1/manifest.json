@@ -1,0 +1,52 @@
+{
+  "schema": "observer_growth_milestone.v1",
+  "identity": "LOCAL_EXACT_BYTE_OBSERVER_COMPARISON_MILESTONE",
+  "release_identity_claimed": false,
+  "hal_v1_proof_identity_changed": false,
+  "lean_executable": "Lean (version 4.33.0, x86_64-w64-windows-gnu, commit d8b18978322de05a8f3dba51ef03cf5461676c17, Release)",
+  "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d",
+  "preserved_milestones": {
+    "milestones/finite-combinatorial-v1/manifest.json": "f4f2d444828362f2cb95387a8852f5317bc1057f5be71df2351f9d656369576c",
+    "analysis/milestones/wallis-ratio-v1/manifest.json": "273e87e97bd2f5b779898b1f41c6361efa1debcaeed44fbd5f383f37d3419232",
+    "full_summary/milestones/full-summary-v1/manifest.json": "1bac05ed4a743dff4ce4f07c32237a38207bd2182e404b56c4de29f0b47899aa"
+  },
+  "source_sha256": {
+    "comparison/SummarySeries.lean": "e939dbf2f3a991c7eff09d69a0dee69c304a7b1ce7c323283cf6f0eeff2b4ec4",
+    "comparison/ObserverGrowth.lean": "dde719f25d4fa7700264956de4118b809dc7381ac2e60a7d852fb2272e0c83f5",
+    "comparison/AxiomAudit.lean": "f0264c3637d88e936f47f6d4f19709f39d8481066b4ca81ce6e1de534914b66c",
+    "comparison/validate_comparison.py": "820e029240ab69aebf48907d742dabce224dbe507d69b2dbfef0c92cd3d098fe",
+    "comparison/tests/test_comparison_audit.py": "566411124bd8a099398bd5ba153c8ddd6274659ab129aa8d1f078bbd4b01f6a6"
+  },
+  "target_declarations": [
+    "ObserverComparison.summaryBracket_error",
+    "ObserverComparison.tendsto_fullQuotient_normalized",
+    "ObserverComparison.tendsto_full_div_future_normalized",
+    "ObserverComparison.tendsto_full_div_future_atTop"
+  ],
+  "axiom_audit": [
+    "ObserverComparison.weighted_choose_sum",
+    "ObserverComparison.summaryBracket_truncated",
+    "ObserverComparison.negative_binomial_hasSum",
+    "ObserverComparison.summaryTail_identity",
+    "ObserverComparison.summaryTail_nonneg",
+    "ObserverComparison.summaryTail_le",
+    "ObserverComparison.summaryBracket_error",
+    "ObserverComparison.tendsto_summaryBracket_normalized",
+    "ObserverComparison.fullCardReal_formula",
+    "ObserverComparison.normalized_extra_bound",
+    "ObserverComparison.tendsto_normalized_extra",
+    "ObserverComparison.full_normalized_decomposition",
+    "ObserverComparison.tendsto_fullQuotient_normalized",
+    "ObserverComparison.observer_ratio_identity",
+    "ObserverComparison.tendsto_full_div_future_normalized",
+    "ObserverComparison.tendsto_full_div_future_atTop"
+  ],
+  "report_sha256": "337df320752120b7b850c15802467370d161b99585255c9f080e38881e482cef",
+  "scope": "Negative-binomial error bound; actual full-summary 9/2 limit; actual full/future asymptotic ratio and divergence, on n=m+3",
+  "excluded_scope": [
+    "Reset-word or generic memory lower bounds",
+    "Changes to frozen finite, Wallis or full-summary bridge sources",
+    "HAL v1 proof identity"
+  ],
+  "replay_boundary": "Local kernel replay using pinned cached dependencies, not a fresh-machine cold replay"
+}
