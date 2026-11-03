@@ -1,0 +1,18 @@
+{
+  "schema": "rime.future-event-lean-source-anchor.v1",
+  "status": "PUBLIC_SOURCE_TAG_ARCHIVE_RECORD_PENDING",
+  "source_tag": {
+    "name": "future-event-lean-companion-v1.0",
+    "tag_object_sha": "1ef64bc0560ae5c04e915350f86046670f698b8c",
+    "target_commit_sha": "547848ce2305daf54f0e2df049a9d5372ffdcbdc"
+  },
+  "source_scope": "experiments/future_event_minimal_quotient/lean",
+  "archive": {
+    "filename": "FutureEvent_Lean_Companion_v1.0.zip",
+    "sha256": "4e2c8e711529eadfeac8f78ac36a6a7c504942c19c64798ad55d695151840efb",
+    "size_bytes": 8431595,
+    "creation": "git archive --format=zip future-event-lean-companion-v1.0 experiments/future_event_minimal_quotient/lean",
+    "persistent_record_id": null
+  },
+  "boundary": "Source and local Lean replay identities only; no archive DOI, HAL revision, or independent host replay is claimed."
+}
