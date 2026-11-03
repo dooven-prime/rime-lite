@@ -25,6 +25,10 @@ papers/unnumbered/proper_arc_registered_summaries/*.py text eol=lf
 experiments/**/*.lean text eol=lf
 experiments/**/*.toml text eol=lf
 experiments/**/lean-toolchain text eol=lf
+experiments/future_event_minimal_quotient/lean/analysis/Apache-2.0.txt -text whitespace=cr-at-eol
+experiments/future_event_minimal_quotient/lean/formalization-manifest.v1.json -text whitespace=cr-at-eol
+experiments/future_event_minimal_quotient/lean/full_summary/owner-manifest.json -text whitespace=cr-at-eol
+experiments/future_event_minimal_quotient/lean/upstream-manifest.json -text whitespace=cr-at-eol
 # SOFAction v2.0 source digests bind the published Windows materialization.
 # Preserve those root result files while keeping the v2.1 corpus canonical LF.
 experiments/paper14/results/*.sofaction text eol=crlf
