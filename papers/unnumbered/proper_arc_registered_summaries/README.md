@@ -1,8 +1,9 @@
 # Registered Proper-Arc Summaries
 
 **Status:** Deposited to HAL as [hal-05848115v1](https://hal.science/hal-05848115v1).
-Public access is pending verification. No DOI, journal submission, or
-all-parameter Lean certification is claimed for this snapshot.
+Public access is pending verification. This HAL snapshot has no DOI or
+journal submission; the separately published Lean companion below has its
+own source tag and software DOI.
 
 ## Reader and replication
 
@@ -19,6 +20,13 @@ all-parameter Lean certification is claimed for this snapshot.
   from the repository root. The validator checks its own source/result
   digests and replays complete generated logs for `n=3..6` and the origin
   words for `n=3..7`.
+- [Lean 4 companion](https://github.com/dooven-prime/rime-lite/tree/proper-arc-lean-companion-v1.0/experiments/proper_arc_registered_summaries/lean)
+  ([Zenodo software DOI 10.5281/zenodo.23941878](https://doi.org/10.5281/zenodo.23941878),
+  [source anchor](../../../experiments/proper_arc_registered_summaries/lean-source-anchor.v1.json)):
+  versioned all-parameter origin, chain, placement-fibre, summary, and count
+  proofs with a same-host isolated cold replay. The fixed-pair actual-type
+  specialization and generating-function/asymptotic layer remain outside
+  this Lean version.
 
 The main result is a dependent bijection for all *generated* complete
 summaries of a fixed proper source arc. Each origin cut, selected-chain
@@ -39,6 +47,5 @@ The fixed-pair specialization uses the earlier
 | `experiments/proper_arc_registered_summaries/control-manifest.v1.json` | `4d97871b16f5137858ccd2c5bff49688f02ad4beffa7d4f262cbfbf25afec3de` |
 
 The internal proof review and earlier exploratory directory are not part of
-this candidate's public replication closure. A later Lean companion may
-formalize the all-parameter construction separately; its absence does not
-turn the finite controls into a proof.
+this candidate's public replication closure. The separate Lean release does
+not revise the HAL v1 manuscript or promote the bounded controls to proofs.

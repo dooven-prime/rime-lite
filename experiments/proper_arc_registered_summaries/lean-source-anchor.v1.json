@@ -1,0 +1,45 @@
+{
+  "schema": "rime.proper-arc-lean-source-anchor.v1",
+  "status": "SOURCE_AND_ARCHIVE_PUBLISHED",
+  "source_tag": {
+    "name": "proper-arc-lean-companion-v1.0",
+    "tag_object_sha": "f20a4f1f32c3ebe1eba1c162e50a500c6d9ed327",
+    "target_commit_sha": "b1aa5eb76cd29f1ff26dec14b350b5affeeb45f8"
+  },
+  "source_scope": "experiments/proper_arc_registered_summaries/lean",
+  "archive": {
+    "filename": "proper-arc-lean-companion-v1.0-source.zip",
+    "sha256": "3cb88bd26b91614431986150dc90c4d91c5c21a9d69a4a40e745f05c24eb2b22",
+    "size_bytes": 9880030,
+    "creation": "deterministic package_source.py output from the tagged source",
+    "deposited_md5": "39ecfe7593715d8b5cb2634fb38eda6f"
+  },
+  "external_record": {
+    "provider": "Zenodo",
+    "record_id": "23941878",
+    "doi": "10.5281/zenodo.23941878",
+    "record_url": "https://zenodo.org/records/23941878",
+    "publication_date": "2026-11-04",
+    "deposited_files": [
+      {
+        "filename": "proper-arc-lean-companion-v1.0-source.zip",
+        "sha256": "3cb88bd26b91614431986150dc90c4d91c5c21a9d69a4a40e745f05c24eb2b22",
+        "size_bytes": 9880030,
+        "deposited_md5": "39ecfe7593715d8b5cb2634fb38eda6f"
+      },
+      {
+        "filename": "source-manifest.v1.json",
+        "sha256": "577453ca61abc24b13c4b52939a9a240dc807fc8fa100bbf68a318718f36c415",
+        "size_bytes": 46096,
+        "deposited_md5": "2f553b607fde37f801430d03e3784487"
+      },
+      {
+        "filename": "SHA256SUMS.txt",
+        "sha256": "8574fdc9337efb54bd2788a3c0c00f28e9d6e4615bf2a97e2e2945c2e81c2bf1",
+        "size_bytes": 198,
+        "deposited_md5": "bdab00f696d13c04a266d59c4787be1a"
+      }
+    ]
+  },
+  "boundary": "Versioned Lean source archive with same-host isolated cold replay; not a revision of the HAL preprint or a claim of independent cross-host replay. The tagged source manifest retains its prepublication candidate fields."
+}
