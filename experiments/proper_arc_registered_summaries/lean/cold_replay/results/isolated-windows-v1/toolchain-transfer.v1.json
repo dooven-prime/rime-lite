@@ -1,0 +1,13 @@
+{
+  "schema": "proper_arc_fresh_toolchain_transfer.v1",
+  "url": "https://github.com/leanprover/lean4/releases/download/v4.33.0/lean-4.33.0-windows.zip",
+  "bytes": 842369303,
+  "etag": "\"0x8DEF6A5F8643F64\"",
+  "chunk_bytes": 8388608,
+  "sha256": "301edc4cf03571c839cd7bf73ec850921f36d9451dbec68da557969a845726d9",
+  "zip_crc_passed": true,
+  "publisher_asset_digest_verified": false,
+  "finished_utc": "2026-11-04T04:12:21.749751+00:00",
+  "seconds": 325.3315145999659,
+  "source": "FRESH_HTTPS_DOWNLOAD_NO_LOCAL_TOOLCHAIN_COPY"
+}

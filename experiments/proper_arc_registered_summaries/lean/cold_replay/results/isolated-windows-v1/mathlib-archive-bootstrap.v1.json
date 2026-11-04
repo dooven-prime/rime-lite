@@ -1,0 +1,75 @@
+{
+  "schema": "proper_arc_mathlib_archive_bootstrap.v1",
+  "status": "FAILED",
+  "started_utc": "2026-11-04T07:14:53.091728+00:00",
+  "helper_sha256": "7697dda7a5725d0c3096cc3b01ae4ce57f81f2ce2125d7cdc7fa0b58fcbd9003",
+  "revision": "db584cd6d46c92f209a44c0f1c829460d327499d",
+  "lock_sha256": "1a40688690ef2b536dc9297406625a36b4989fafa5b6e5b1b76390b9a60532ec",
+  "commands": [
+    {
+      "name": "tree-fetch-1",
+      "command": [
+        "git",
+        "fetch",
+        "--filter=blob:none",
+        "--depth",
+        "1",
+        "origin",
+        "db584cd6d46c92f209a44c0f1c829460d327499d"
+      ],
+      "exit_code": 128,
+      "seconds": 5.2021278000902385,
+      "log": "bootstrap-tree-fetch-1.log",
+      "log_sha256": "9aded0c05ea6bebff5962f68eca78e68c789e5636a14cb2c8212d5a651981e32"
+    },
+    {
+      "name": "tree-fetch-2",
+      "command": [
+        "git",
+        "fetch",
+        "--filter=blob:none",
+        "--depth",
+        "1",
+        "origin",
+        "db584cd6d46c92f209a44c0f1c829460d327499d"
+      ],
+      "exit_code": 128,
+      "seconds": 66.00517359992955,
+      "log": "bootstrap-tree-fetch-2.log",
+      "log_sha256": "4c079cf1074bb762ffea1f1e7cbd5db7fe909139b30f9f3f7d24dffaa6c63fb2"
+    },
+    {
+      "name": "tree-fetch-3",
+      "command": [
+        "git",
+        "fetch",
+        "--filter=blob:none",
+        "--depth",
+        "1",
+        "origin",
+        "db584cd6d46c92f209a44c0f1c829460d327499d"
+      ],
+      "exit_code": 128,
+      "seconds": 5.173799500102177,
+      "log": "bootstrap-tree-fetch-3.log",
+      "log_sha256": "9aded0c05ea6bebff5962f68eca78e68c789e5636a14cb2c8212d5a651981e32"
+    },
+    {
+      "name": "tree-fetch-4",
+      "command": [
+        "git",
+        "fetch",
+        "--filter=blob:none",
+        "--depth",
+        "1",
+        "origin",
+        "db584cd6d46c92f209a44c0f1c829460d327499d"
+      ],
+      "exit_code": 128,
+      "seconds": 24.50776519998908,
+      "log": "bootstrap-tree-fetch-4.log",
+      "log_sha256": "2b82f963ee49a1f609f9ab6ae68e162891175dc51907e4156d80f4c393b9302e"
+    }
+  ],
+  "error": "could not acquire the pinned commit/tree"
+}

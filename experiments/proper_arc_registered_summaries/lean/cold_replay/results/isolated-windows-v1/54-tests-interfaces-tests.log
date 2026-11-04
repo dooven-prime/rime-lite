@@ -1,0 +1,10 @@
+test_complete_report (test_interfaces_audit.InterfaceAuditTests.test_complete_report) ... ok
+test_explicit_word_cannot_be_removed (test_interfaces_audit.InterfaceAuditTests.test_explicit_word_cannot_be_removed) ... ok
+test_extra_axiom_rejected (test_interfaces_audit.InterfaceAuditTests.test_extra_axiom_rejected) ... ok
+test_fusion_dependency_cannot_be_removed (test_interfaces_audit.InterfaceAuditTests.test_fusion_dependency_cannot_be_removed) ... ok
+test_origin_freeze_preserved (test_interfaces_audit.InterfaceAuditTests.test_origin_freeze_preserved) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.249s
+
+OK

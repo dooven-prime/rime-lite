@@ -1,0 +1,15 @@
+test_actual_domain_cannot_be_decoder_image (test_summary_audit.SummaryAuditTests.test_actual_domain_cannot_be_decoder_image) ... ok
+test_actual_domain_cannot_have_clean_admission (test_summary_audit.SummaryAuditTests.test_actual_domain_cannot_have_clean_admission) ... ok
+test_complete_report (test_summary_audit.SummaryAuditTests.test_complete_report) ... ok
+test_decoder_must_retain_complete_chain (test_summary_audit.SummaryAuditTests.test_decoder_must_retain_complete_chain) ... ok
+test_extra_axiom_rejected (test_summary_audit.SummaryAuditTests.test_extra_axiom_rejected) ... ok
+test_origin_classification_node_cannot_be_omitted (test_summary_audit.SummaryAuditTests.test_origin_classification_node_cannot_be_omitted) ... ok
+test_parameter_family_cannot_assume_reachability (test_summary_audit.SummaryAuditTests.test_parameter_family_cannot_assume_reachability) ... ok
+test_round_trip_dependency_cannot_be_omitted (test_summary_audit.SummaryAuditTests.test_round_trip_dependency_cannot_be_omitted) ... ok
+test_same_word_certificate_must_include_placement (test_summary_audit.SummaryAuditTests.test_same_word_certificate_must_include_placement) ... ok
+test_six_frozen_layers_preserved (test_summary_audit.SummaryAuditTests.test_six_frozen_layers_preserved) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 5.069s
+
+OK

@@ -1,0 +1,30 @@
+{
+  "schema": "proper_arc_origin_interfaces_milestone.v1",
+  "release_identity_claimed": false,
+  "hal_v1_proof_identity_changed": false,
+  "origin_manifest_sha256": "56769c0fa07686e5431de1f2b667eea8bd46619c979d1fe5d4e308e7c6d00c96",
+  "lean_executable": "Lean (version 4.33.0, x86_64-w64-windows-gnu, commit d8b18978322de05a8f3dba51ef03cf5461676c17, Release)",
+  "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d",
+  "source_sha256": {
+    "interfaces/OriginInterfaces.lean": "05184dbb55913e1724ff217e3e6cde1a7e0db8649d9bb651764ba53417716967",
+    "interfaces/AxiomAudit.lean": "465b01ca27ad21d468cecd01235de062387fb819640d57cdf48563e6e6c145ee",
+    "interfaces/validate_interfaces.py": "10bf99f411468e6ef384e72b04df1245038a2498c4df123357f35b5a0e3076b3",
+    "interfaces/tests/test_interfaces_audit.py": "dc781e4a41ad0dc8fa195b86894a72a7aad8ba7e7d28308dc14564c99c17e2a7"
+  },
+  "report_sha256": "b106edddeb9e6b98a8139a743f727f4c1ff8779a089335633f0056bae5134add",
+  "target_declarations": [
+    "ProperArc.localLetters_fuse_adjacent",
+    "ProperArc.originCut_reaches_common_boundary",
+    "ProperArc.originWords_same_boundary",
+    "ProperArc.originWord_clean"
+  ],
+  "axiom_audit": [
+    "ProperArc.localLetters_fuse_adjacent",
+    "ProperArc.originCut_reaches_common_boundary",
+    "ProperArc.originWords_same_boundary",
+    "ProperArc.originWord_clean",
+    "ProperArc.originWord_reachable"
+  ],
+  "scope": "Derived true-fusion, explicit existence, common-boundary and clean/reachable APIs",
+  "converse_origin_classification_proved": false
+}

@@ -1,0 +1,157 @@
+{
+  "schema": "proper_arc_mathlib_archive_bootstrap.v1",
+  "status": "PASS_VERIFIED_FRESH_NETWORK_SOURCE_BOOTSTRAP",
+  "started_utc": "2026-11-04T07:20:49.321755+00:00",
+  "helper_sha256": "4544727e2afb2fed93ebb84b27c213b187cdda2dd0e20801e2c9b16b897129ae",
+  "revision": "db584cd6d46c92f209a44c0f1c829460d327499d",
+  "lock_sha256": "1a40688690ef2b536dc9297406625a36b4989fafa5b6e5b1b76390b9a60532ec",
+  "commands": [
+    {
+      "name": "api-commit",
+      "command": [
+        "D:\\Program Files\\Git\\mingw64\\bin\\curl.exe",
+        "-4",
+        "--fail",
+        "--location",
+        "--retry",
+        "3",
+        "--retry-all-errors",
+        "--connect-timeout",
+        "20",
+        "--max-time",
+        "180",
+        "--silent",
+        "--show-error",
+        "https://api.github.com/repos/leanprover-community/mathlib4/git/commits/db584cd6d46c92f209a44c0f1c829460d327499d"
+      ],
+      "exit_code": 0,
+      "seconds": 0.7984773999778554,
+      "log": "bootstrap-v3-api-commit.log",
+      "log_sha256": "4514d21663e9333bba650d38de92688fb61d752c53a46649a79c06721cd3dad8"
+    },
+    {
+      "name": "api-tree",
+      "command": [
+        "D:\\Program Files\\Git\\mingw64\\bin\\curl.exe",
+        "-4",
+        "--fail",
+        "--location",
+        "--retry",
+        "3",
+        "--retry-all-errors",
+        "--connect-timeout",
+        "20",
+        "--max-time",
+        "180",
+        "--silent",
+        "--show-error",
+        "https://api.github.com/repos/leanprover-community/mathlib4/git/trees/797420f01ffbca473c4cd972670394965e55208a?recursive=1"
+      ],
+      "exit_code": 0,
+      "seconds": 1.4368660999462008,
+      "log": "bootstrap-v3-api-tree.log",
+      "log_sha256": "28134fd06b4f245e1761e23dbd2deab30c41678ca9cc00a1ece3149014f1338d"
+    },
+    {
+      "name": "source-download",
+      "command": [
+        "D:\\Program Files\\Git\\mingw64\\bin\\curl.exe",
+        "-4",
+        "--fail",
+        "--location",
+        "--retry",
+        "4",
+        "--retry-all-errors",
+        "--connect-timeout",
+        "20",
+        "--max-time",
+        "1200",
+        "--silent",
+        "--show-error",
+        "--output",
+        "E:\\Documents\\worktrees\\proper-arc-lean-cold-replay\\evidence\\mathlib-source.tar.gz",
+        "https://codeload.github.com/leanprover-community/mathlib4/tar.gz/db584cd6d46c92f209a44c0f1c829460d327499d"
+      ],
+      "exit_code": 0,
+      "seconds": 5.708012099959888,
+      "log": "bootstrap-v3-source-download.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "import-verified-blobs",
+      "command": [
+        "git",
+        "hash-object",
+        "-w",
+        "--no-filters",
+        "--stdin-paths"
+      ],
+      "exit_code": 0,
+      "seconds": 172.23103370005265,
+      "log": "bootstrap-v3-import-verified-blobs.log",
+      "log_sha256": "9ba535a81cd0eaa6298543ffd47f7baf082f72f1b67755459ff42b92e722f7fa"
+    },
+    {
+      "name": "windows-symlink-policy",
+      "command": [
+        "git",
+        "config",
+        "core.symlinks",
+        "false"
+      ],
+      "exit_code": 0,
+      "seconds": 0.1081207999959588,
+      "log": "bootstrap-v3-windows-symlink-policy.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "verified-index",
+      "command": [
+        "git",
+        "read-tree",
+        "db584cd6d46c92f209a44c0f1c829460d327499d"
+      ],
+      "exit_code": 0,
+      "seconds": 18.295129199977964,
+      "log": "bootstrap-v3-verified-index.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "checkout",
+      "command": [
+        "git",
+        "checkout",
+        "--detach",
+        "db584cd6d46c92f209a44c0f1c829460d327499d"
+      ],
+      "exit_code": 0,
+      "seconds": 2.117736899992451,
+      "log": "bootstrap-v3-checkout.log",
+      "log_sha256": "0c3846ce543e25ee36664f4a232f74bd7160c051f43483d221e168fafa82a139"
+    },
+    {
+      "name": "tracked-status",
+      "command": [
+        "git",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=no"
+      ],
+      "exit_code": 0,
+      "seconds": 0.21864909993018955,
+      "log": "bootstrap-v3-tracked-status.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "commit_reconstructed_at_exact_sha": true,
+  "root_tree_sha": "797420f01ffbca473c4cd972670394965e55208a",
+  "all_tree_objects_hash_checked": true,
+  "source_url": "https://codeload.github.com/leanprover-community/mathlib4/tar.gz/db584cd6d46c92f209a44c0f1c829460d327499d",
+  "archive_sha256": "963f31efd321dea2e38178eb3b8161ded7f2be5678aa5e3f0954b1372329bd0c",
+  "archive_bytes": 23414518,
+  "verified_tracked_blob_count": 9032,
+  "blob_content_matches_commit_tree": true,
+  "symlinks_stored_as_git_windows_link_text": true,
+  "local_object_or_build_cache_reused": false,
+  "finished_utc": "2026-11-04T07:24:15.847781+00:00"
+}

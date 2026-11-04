@@ -1,0 +1,1 @@
+{"status": "PASS_ORIGIN_CLASSIFICATION", "inputs": 6, "axiom_checks": 23, "targets": 9, "explicit_upstream_closures": 3, "dependency_nodes": 8268}

@@ -1,0 +1,106 @@
+{
+  "schema": "proper_arc_combinatorial_refinements_milestone.v1",
+  "scope_status": "ACTUAL_CHAIN_LENGTH_AND_PLACEMENT_RANK_COUNTS",
+  "release_identity_claimed": false,
+  "hal_v1_proof_identity_changed": false,
+  "lean_executable": "Lean (version 4.33.0, x86_64-w64-windows-gnu, commit d8b18978322de05a8f3dba51ef03cf5461676c17, Release)",
+  "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d",
+  "target_manuscript": {
+    "hal_identifier": "hal-05848115v1",
+    "source_tag": "proper-arc-summaries-source-v1.0",
+    "source_commit": "2a30449b9dc37a36b25b277ebc006515c2addb59",
+    "source_path": "papers/unnumbered/proper_arc_registered_summaries/MANUSCRIPT.md",
+    "reference_copy": "reference/proper-arc-hal-v1.md",
+    "sha256": "057beff05b4a5fb94f3e857298e23b0f5119b3d33fc1e4e6b4dedeb0c08eda48"
+  },
+  "preserved_milestones": {
+    "milestones/origin-realization-v1/manifest.json": "56769c0fa07686e5431de1f2b667eea8bd46619c979d1fe5d4e308e7c6d00c96",
+    "interfaces/milestones/origin-interfaces-v1/manifest.json": "c3725a2407c2af450ad9c095abcbca89ba5cad13f1331d008c05e7134a2202f8",
+    "classification/milestones/origin-classification-v1/manifest.json": "cf0bc343a73e7466b870c36843e072472159779373ad3e85964d17e69acea2d0",
+    "chains/milestones/chain-construction-v1/manifest.json": "5979c315a7a8f534efeb29948cb0f4f8ed151c99a7e06cd6059f3bf58aa9e5fd",
+    "converse/milestones/actual-chain-equivalence-v1/manifest.json": "3dac55c745d644ebb80565fdeb749b411f0ca7e18e0a9c35d4d7b1fc2ee3a731",
+    "fibres/milestones/placement-fibre-v1/manifest.json": "7d85df042a583508908a028e98499b52e7e8d7507d23d5c70f6e210faa21658d",
+    "summary/milestones/dependent-summary-v1/manifest.json": "aef536f33efdd1b114e87f9b96ffdce1ddceec94c9a41d10b572f092a38b95a6",
+    "counting/milestones/summary-count-v1/manifest.json": "6535bd701625f294302f4ecadbb686a1a04cd22e9a6c110fe4d050619aa531ba"
+  },
+  "source_sha256": {
+    "refinements/ChainLength.lean": "9cbf95fcdceaabf775ec05882d15f4aa74d23f0d9c2389d494b2ca9c62e53943",
+    "refinements/RankFibre.lean": "6bc1dcb36e64b2b25b923609668bde7bf27b5114199ea883629737c31b946253",
+    "refinements/AxiomAudit.lean": "abe35fd3c9307b1907d46501ed1054efb1cc7345465c0c17dc397592d391663e",
+    "refinements/validate_refinements.py": "88bf16049f2861d158da5b1fbcf1ae84465a412e99e57472fd9e8469eef99d23",
+    "refinements/tests/test_refinement_audit.py": "e447ae98f690f8e47b1e7f879f4db7f27a1c9a5fd5614b59485f40d5fc04770d"
+  },
+  "target_declarations": [
+    "ProperArc.Chains.coloredCheckpointsEquivCodes",
+    "ProperArc.Chains.card_codes_by_support",
+    "ProperArc.Chains.decodeChain_length",
+    "ProperArc.Chains.actualChainsLengthEquivCodes",
+    "ProperArc.Chains.card_actualSelectedChains_length",
+    "ProperArc.Chains.positiveFiberTarget_rank",
+    "ProperArc.Chains.rankParamsEquivSlice",
+    "ProperArc.Chains.actualRankCodePlacementsEquiv",
+    "ProperArc.Chains.card_actualRankCodePlacements",
+    "ProperArc.Chains.actual_full_carrier_rank",
+    "ProperArc.Chains.actualFullRankCodePlacementsEquiv",
+    "ProperArc.Chains.card_actualFullRankCodePlacements",
+    "ProperArc.Chains.actualSelectedChainsEquivCode",
+    "ProperArc.Chains.positivePlacementFibreEquiv",
+    "ProperArc.Chains.fullPlacementFibreEquiv",
+    "ProperArc.Chains.codeSnocEquiv"
+  ],
+  "axiom_audit": [
+    "ProperArc.Chains.support_codeOfColors",
+    "ProperArc.Chains.codeOfColors_readback",
+    "ProperArc.Chains.card_codes_by_support",
+    "ProperArc.Chains.support_card_snoc",
+    "ProperArc.Chains.keys_snoc_prefix",
+    "ProperArc.Chains.keys_length_support",
+    "ProperArc.Chains.decodeChain_length",
+    "ProperArc.Chains.card_actualSelectedChains_length",
+    "ProperArc.Chains.placedBlocks_renamePlacement",
+    "ProperArc.Chains.renamePlacement_rank",
+    "ProperArc.Chains.positiveFiberTarget_rank",
+    "ProperArc.Chains.card_actualRankCodePlacements",
+    "ProperArc.Chains.placedBlocks_fullCarrier",
+    "ProperArc.Chains.actual_full_carrier_rank",
+    "ProperArc.Chains.card_actualFullRankCodePlacements",
+    "ProperArc.Chains.ColoredCheckpoints",
+    "ProperArc.Chains.codeOfColors",
+    "ProperArc.Chains.coloredCheckpointsEquivCodes",
+    "ProperArc.Chains.actualChainsLengthEquivCodes",
+    "ProperArc.Chains.ActualRankCodePlacements",
+    "ProperArc.Chains.rankIndexSliceEquiv",
+    "ProperArc.Chains.rankParamsEquivSlice",
+    "ProperArc.Chains.actualRankCodePlacementsEquiv",
+    "ProperArc.Chains.actualFullRankCodePlacementsEquiv",
+    "ProperArc.Chains.actualSelectedChainsEquivCode",
+    "ProperArc.Chains.positivePlacementFibreEquiv",
+    "ProperArc.Chains.fullPlacementFibreEquiv",
+    "ProperArc.Chains.codeSnocEquiv"
+  ],
+  "independent_branches": {
+    "chain_length": [
+      "ProperArc.Chains.coloredCheckpointsEquivCodes",
+      "ProperArc.Chains.card_codes_by_support",
+      "ProperArc.Chains.decodeChain_length",
+      "ProperArc.Chains.actualChainsLengthEquivCodes",
+      "ProperArc.Chains.card_actualSelectedChains_length"
+    ],
+    "placement_rank": [
+      "ProperArc.Chains.positiveFiberTarget_rank",
+      "ProperArc.Chains.rankParamsEquivSlice",
+      "ProperArc.Chains.actualRankCodePlacementsEquiv",
+      "ProperArc.Chains.card_actualRankCodePlacements",
+      "ProperArc.Chains.actual_full_carrier_rank",
+      "ProperArc.Chains.actualFullRankCodePlacementsEquiv",
+      "ProperArc.Chains.card_actualFullRankCodePlacements"
+    ]
+  },
+  "report_sha256": "9a039472f4f2cb29ce687359569b98c09be31c3cbb1700c7c7f79ed8d97abb13",
+  "scope": "Theorem 4.2 actual fixed-origin chains with j records; Theorem 5.2 actual fixed-origin/code rank-s placements for k>0, and independent k=0 rank-one phases",
+  "remaining_scope": [
+    "Fixed-pair summary specialization",
+    "Generating functions and asymptotics"
+  ],
+  "replay_boundary": "Local kernel replay with pinned cached dependencies, not fresh-machine cold replay"
+}

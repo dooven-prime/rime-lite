@@ -1,0 +1,71 @@
+{
+  "schema": "proper_arc_origin_classification_milestone.v1",
+  "release_identity_claimed": false,
+  "hal_v1_proof_identity_changed": false,
+  "lean_executable": "Lean (version 4.33.0, x86_64-w64-windows-gnu, commit d8b18978322de05a8f3dba51ef03cf5461676c17, Release)",
+  "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d",
+  "target_manuscript": {
+    "hal_identifier": "hal-05848115v1",
+    "source_tag": "proper-arc-summaries-source-v1.0",
+    "source_commit": "2a30449b9dc37a36b25b277ebc006515c2addb59",
+    "source_path": "papers/unnumbered/proper_arc_registered_summaries/MANUSCRIPT.md",
+    "reference_copy": "reference/proper-arc-hal-v1.md",
+    "sha256": "057beff05b4a5fb94f3e857298e23b0f5119b3d33fc1e4e6b4dedeb0c08eda48"
+  },
+  "preserved_milestones": {
+    "milestones/origin-realization-v1/manifest.json": "56769c0fa07686e5431de1f2b667eea8bd46619c979d1fe5d4e308e7c6d00c96",
+    "interfaces/milestones/origin-interfaces-v1/manifest.json": "c3725a2407c2af450ad9c095abcbca89ba5cad13f1331d008c05e7134a2202f8"
+  },
+  "source_sha256": {
+    "classification/SourceCut.lean": "7d0eefe7cf61f73eee5141645c9fe465e16b1c4656be4809a677bc4509f614c9",
+    "classification/OriginTrace.lean": "3b68abc343762dd042d2cc318f5b9feff3820a91ea3cedc4e0b488e45cc7f5dc",
+    "classification/OriginExhaustive.lean": "b3c9fc1fa325594d3cea33b94e112293b3053bc538d19f603b4652bbf93a6292",
+    "classification/AxiomAudit.lean": "b6b7747da8c0a6a95cfba8b6af70548245c42eeabd544100b440cfb37dc844d9",
+    "classification/validate_classification.py": "dd8739bf179b661030ec9fe9033456c64f56ec5b77223563fbac7d4447125ff1",
+    "classification/tests/test_classification_audit.py": "07142ac0e33a98c62d42ecfb393498c1b859a4b871caa0aefc43ba13defce600"
+  },
+  "target_declarations": [
+    "ProperArc.extract_first_registration",
+    "ProperArc.sourceOrdered_registration_cut",
+    "ProperArc.actual_registered_origin_unique",
+    "ProperArc.actual_registered_origin_unique_nat",
+    "ProperArc.actualRegistrationOriginsEquivCuts",
+    "ProperArc.card_actualRegistrationOrigins",
+    "ProperArc.run_local_unregistered",
+    "ProperArc.run_originWord",
+    "ProperArc.boundary_clean"
+  ],
+  "axiom_audit": [
+    "ProperArc.lift_position_int",
+    "ProperArc.shiftSourceLift_position",
+    "ProperArc.ordered_port_addresses",
+    "ProperArc.sourceOrdered_parent_addresses",
+    "ProperArc.sourceOrdered_registration_cut",
+    "ProperArc.new_origin_step",
+    "ProperArc.extract_first_registration",
+    "ProperArc.sourceOrdered_ports_disjoint",
+    "ProperArc.actual_first_registration",
+    "ProperArc.actual_origin_in_cut_range",
+    "ProperArc.actual_origin_cut_unique",
+    "ProperArc.actual_registered_origin_unique",
+    "ProperArc.actual_registered_origin_unique_nat",
+    "ProperArc.originCutActual_injective",
+    "ProperArc.originCutActual_surjective",
+    "ProperArc.actualRegistrationOriginsEquivCuts_symm_val",
+    "ProperArc.actualRegistrationOriginsEquivCuts_left_card",
+    "ProperArc.finite_actualRegistrationOrigins",
+    "ProperArc.card_actualRegistrationOrigins",
+    "ProperArc.actualRegistrationOriginsEquivCuts",
+    "ProperArc.run_local_unregistered",
+    "ProperArc.run_originWord",
+    "ProperArc.boundary_clean"
+  ],
+  "report_sha256": "dac7179c99634005d50019e73730c8fee62346d4b69c98bd24e4ee57b5bd479a",
+  "scope": "Proposition 3.1: actual first-registration extraction, exhaustive unique origin cut, actual-origin/Fin equivalence and exact origin cardinality",
+  "remaining_scope": [
+    "Proper-arc ternary chain decoder and actual chain bijection",
+    "Actual placement fibers and dependent summary equivalence",
+    "Total summary count and analytic layer"
+  ],
+  "replay_boundary": "Local kernel replay with pinned cached dependencies, not fresh-machine cold replay"
+}

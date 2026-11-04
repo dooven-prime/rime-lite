@@ -1,0 +1,11 @@
+test_actual_run_dependency_cannot_be_removed (test_audit.OriginAuditTests.test_actual_run_dependency_cannot_be_removed) ... ok
+test_complete_frozen_report (test_audit.OriginAuditTests.test_complete_frozen_report) ... ok
+test_extra_axiom_rejected (test_audit.OriginAuditTests.test_extra_axiom_rejected) ... ok
+test_lint_masks_comments_not_proofs (test_audit.OriginAuditTests.test_lint_masks_comments_not_proofs) ... ok
+test_missing_node_rejected (test_audit.OriginAuditTests.test_missing_node_rejected) ... ok
+test_realization_cannot_be_a_reachability_premise (test_audit.OriginAuditTests.test_realization_cannot_be_a_reachability_premise) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.324s
+
+OK
