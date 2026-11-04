@@ -1,0 +1,15 @@
+test_actual_domain_cannot_be_decoder_range (test_converse_audit.ConverseAuditTests.test_actual_domain_cannot_be_decoder_range) ... ok
+test_actual_interval_dependency_cannot_be_removed (test_converse_audit.ConverseAuditTests.test_actual_interval_dependency_cannot_be_removed) ... ok
+test_all_prior_milestones_preserved (test_converse_audit.ConverseAuditTests.test_all_prior_milestones_preserved) ... ok
+test_clean_admission_rejected (test_converse_audit.ConverseAuditTests.test_clean_admission_rejected) ... ok
+test_complete_report (test_converse_audit.ConverseAuditTests.test_complete_report) ... ok
+test_converse_must_retain_actual_seed_history (test_converse_audit.ConverseAuditTests.test_converse_must_retain_actual_seed_history) ... ok
+test_encoder_must_read_port_binding (test_converse_audit.ConverseAuditTests.test_encoder_must_read_port_binding) ... ok
+test_extra_axiom_rejected (test_converse_audit.ConverseAuditTests.test_extra_axiom_rejected) ... ok
+test_full_record_update_node_cannot_be_omitted (test_converse_audit.ConverseAuditTests.test_full_record_update_node_cannot_be_omitted) ... ok
+test_reverse_invariant_cannot_require_cleanliness (test_converse_audit.ConverseAuditTests.test_reverse_invariant_cannot_require_cleanliness) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 3.226s
+
+OK

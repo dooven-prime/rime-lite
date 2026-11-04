@@ -1,0 +1,57 @@
+{
+  "schema": "proper_arc_mathlib_archive_bootstrap.v1",
+  "status": "FAILED",
+  "started_utc": "2026-11-04T07:19:58.805208+00:00",
+  "helper_sha256": "2de44eba0a7df1a2cf68a2bc1d26a0603fe0313408aa1d20514a02566da396b8",
+  "revision": "db584cd6d46c92f209a44c0f1c829460d327499d",
+  "lock_sha256": "1a40688690ef2b536dc9297406625a36b4989fafa5b6e5b1b76390b9a60532ec",
+  "commands": [
+    {
+      "name": "api-commit",
+      "command": [
+        "D:\\Program Files\\Git\\mingw64\\bin\\curl.exe",
+        "-4",
+        "--fail",
+        "--location",
+        "--retry",
+        "3",
+        "--retry-all-errors",
+        "--connect-timeout",
+        "20",
+        "--max-time",
+        "180",
+        "--silent",
+        "--show-error",
+        "https://api.github.com/repos/leanprover-community/mathlib4/git/commits/db584cd6d46c92f209a44c0f1c829460d327499d"
+      ],
+      "exit_code": 0,
+      "seconds": 1.1966910000192001,
+      "log": "bootstrap-v2-api-commit.log",
+      "log_sha256": "4514d21663e9333bba650d38de92688fb61d752c53a46649a79c06721cd3dad8"
+    },
+    {
+      "name": "api-tree",
+      "command": [
+        "D:\\Program Files\\Git\\mingw64\\bin\\curl.exe",
+        "-4",
+        "--fail",
+        "--location",
+        "--retry",
+        "3",
+        "--retry-all-errors",
+        "--connect-timeout",
+        "20",
+        "--max-time",
+        "180",
+        "--silent",
+        "--show-error",
+        "https://api.github.com/repos/leanprover-community/mathlib4/git/trees/797420f01ffbca473c4cd972670394965e55208a?recursive=1"
+      ],
+      "exit_code": 0,
+      "seconds": 2.6488524000160396,
+      "log": "bootstrap-v2-api-tree.log",
+      "log_sha256": "28134fd06b4f245e1761e23dbd2deab30c41678ca9cc00a1ece3149014f1338d"
+    }
+  ],
+  "error": "unsupported Git source entry"
+}

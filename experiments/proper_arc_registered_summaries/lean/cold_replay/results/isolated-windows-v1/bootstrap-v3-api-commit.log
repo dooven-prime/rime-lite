@@ -1,0 +1,35 @@
+{
+  "sha": "db584cd6d46c92f209a44c0f1c829460d327499d",
+  "node_id": "C_kwDOFcwZ1doAKGRiNTg0Y2Q2ZDQ2YzkyZjIwOWE0NGMwZjFjODI5NDYwZDMyNzQ5OWQ",
+  "url": "https://api.github.com/repos/leanprover-community/mathlib4/git/commits/db584cd6d46c92f209a44c0f1c829460d327499d",
+  "html_url": "https://github.com/leanprover-community/mathlib4/commit/db584cd6d46c92f209a44c0f1c829460d327499d",
+  "author": {
+    "name": "Garmelon",
+    "email": "11077553+Garmelon@users.noreply.github.com",
+    "date": "2026-08-10T09:12:31Z"
+  },
+  "committer": {
+    "name": "Garmelon",
+    "email": "11077553+Garmelon@users.noreply.github.com",
+    "date": "2026-08-10T09:12:31Z"
+  },
+  "tree": {
+    "sha": "797420f01ffbca473c4cd972670394965e55208a",
+    "url": "https://api.github.com/repos/leanprover-community/mathlib4/git/trees/797420f01ffbca473c4cd972670394965e55208a"
+  },
+  "message": "chore: bump toolchain to v4.33.0 (#42604)\n\n\n\nCo-authored-by: Joscha <joscha@plugh.de>",
+  "parents": [
+    {
+      "sha": "3ef2c2e23a8b5a46554fa771969b89287972b616",
+      "url": "https://api.github.com/repos/leanprover-community/mathlib4/git/commits/3ef2c2e23a8b5a46554fa771969b89287972b616",
+      "html_url": "https://github.com/leanprover-community/mathlib4/commit/3ef2c2e23a8b5a46554fa771969b89287972b616"
+    }
+  ],
+  "verification": {
+    "verified": false,
+    "reason": "unsigned",
+    "signature": null,
+    "payload": null,
+    "verified_at": null
+  }
+}

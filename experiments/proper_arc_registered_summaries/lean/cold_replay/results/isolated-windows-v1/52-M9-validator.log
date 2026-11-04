@@ -1,0 +1,9 @@
+REPLAY frozen origin library
+REPLAY classification
+REPLAY chains
+REPLAY converse
+REPLAY fibres
+REPLAY counting
+REPLAY refinements
+AUDIT independent chain-length and rank closures
+{"status": "PASS_ACTUAL_COMBINATORIAL_REFINEMENTS", "inputs": 5, "preserved_milestones": 8, "axiom_checks": 28, "targets": 16, "dependency_nodes": 12215}

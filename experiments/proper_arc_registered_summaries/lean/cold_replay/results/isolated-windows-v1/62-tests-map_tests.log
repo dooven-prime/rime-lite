@@ -1,0 +1,15 @@
+test_all_local_links_resolve_and_have_correct_source_line (test_theorem_map.TheoremMapTests.test_all_local_links_resolve_and_have_correct_source_line) ... ok
+test_all_nine_local_freezes_are_present (test_theorem_map.TheoremMapTests.test_all_nine_local_freezes_are_present) ... ok
+test_closure_cannot_be_truncated (test_theorem_map.TheoremMapTests.test_closure_cannot_be_truncated) ... ok
+test_extra_axiom_is_rejected (test_theorem_map.TheoremMapTests.test_extra_axiom_is_rejected) ... ok
+test_generated_map_bytes_match_frozen_inputs (test_theorem_map.TheoremMapTests.test_generated_map_bytes_match_frozen_inputs) ... ok
+test_owner_hash_mismatch_is_rejected (test_theorem_map.TheoremMapTests.test_owner_hash_mismatch_is_rejected) ... ok
+test_pending_analysis_is_not_a_kernel_claim (test_theorem_map.TheoremMapTests.test_pending_analysis_is_not_a_kernel_claim) ... ok
+test_summary_and_refinement_owners_are_distinct (test_theorem_map.TheoremMapTests.test_summary_and_refinement_owners_are_distinct) ... ok
+test_union_scope_covers_every_report_not_only_selected_targets (test_theorem_map.TheoremMapTests.test_union_scope_covers_every_report_not_only_selected_targets) ... ok
+test_wrong_source_owner_is_rejected (test_theorem_map.TheoremMapTests.test_wrong_source_owner_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 5.754s
+
+OK

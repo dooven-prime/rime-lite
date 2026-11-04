@@ -1,0 +1,9 @@
+REPLAY frozen origin library
+REPLAY classification
+REPLAY chains
+REPLAY converse
+REPLAY fibres
+REPLAY summary
+REPLAY counting
+AUDIT Theorem 6.1 and transitive declaration dependencies
+{"status": "PASS_ACTUAL_REGISTERED_SUMMARY_COUNT", "inputs": 5, "preserved_milestones": 7, "axiom_checks": 17, "targets": 12, "dependency_nodes": 13382}

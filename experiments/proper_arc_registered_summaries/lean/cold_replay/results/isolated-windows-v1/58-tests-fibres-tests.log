@@ -1,0 +1,15 @@
+test_actual_carrier_node_cannot_be_omitted (test_fibre_audit.FibreAuditTests.test_actual_carrier_node_cannot_be_omitted) ... ok
+test_actual_cut_schedule_cannot_be_removed (test_fibre_audit.FibreAuditTests.test_actual_cut_schedule_cannot_be_removed) ... ok
+test_actual_domain_cannot_be_formal_targets (test_fibre_audit.FibreAuditTests.test_actual_domain_cannot_be_formal_targets) ... ok
+test_complete_report (test_fibre_audit.FibreAuditTests.test_complete_report) ... ok
+test_extra_axiom_rejected (test_fibre_audit.FibreAuditTests.test_extra_axiom_rejected) ... ok
+test_five_frozen_layers_preserved (test_fibre_audit.FibreAuditTests.test_five_frozen_layers_preserved) ... ok
+test_full_carrier_branch_cannot_be_omitted (test_fibre_audit.FibreAuditTests.test_full_carrier_branch_cannot_be_omitted) ... ok
+test_origin_read_must_be_same_history (test_fibre_audit.FibreAuditTests.test_origin_read_must_be_same_history) ... ok
+test_parameters_cannot_assume_reachability (test_fibre_audit.FibreAuditTests.test_parameters_cannot_assume_reachability) ... ok
+test_reverse_cannot_require_clean_outside (test_fibre_audit.FibreAuditTests.test_reverse_cannot_require_clean_outside) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 3.960s
+
+OK

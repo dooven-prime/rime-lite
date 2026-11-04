@@ -1,0 +1,21 @@
+test_actual_chain_domain_cannot_require_cleanliness (test_refinement_audit.RefinementAuditTests.test_actual_chain_domain_cannot_require_cleanliness) ... ok
+test_actual_chain_equivalence_cannot_be_omitted (test_refinement_audit.RefinementAuditTests.test_actual_chain_equivalence_cannot_be_omitted) ... ok
+test_chain_readback_closure_cannot_be_truncated (test_refinement_audit.RefinementAuditTests.test_chain_readback_closure_cannot_be_truncated) ... ok
+test_chain_type_cannot_be_only_formal_codes (test_refinement_audit.RefinementAuditTests.test_chain_type_cannot_be_only_formal_codes) ... ok
+test_complete_report (test_refinement_audit.RefinementAuditTests.test_complete_report) ... ok
+test_eight_frozen_layers_preserved (test_refinement_audit.RefinementAuditTests.test_eight_frozen_layers_preserved) ... ok
+test_extra_axiom_rejected (test_refinement_audit.RefinementAuditTests.test_extra_axiom_rejected) ... ok
+test_full_carrier_equivalence_cannot_be_omitted (test_refinement_audit.RefinementAuditTests.test_full_carrier_equivalence_cannot_be_omitted) ... ok
+test_full_carrier_zero_complement_must_remain_explicit (test_refinement_audit.RefinementAuditTests.test_full_carrier_zero_complement_must_remain_explicit) ... ok
+test_positive_placement_equivalence_cannot_be_omitted (test_refinement_audit.RefinementAuditTests.test_positive_placement_equivalence_cannot_be_omitted) ... ok
+test_positive_rank_domain_is_checked (test_refinement_audit.RefinementAuditTests.test_positive_rank_domain_is_checked) ... ok
+test_rank_branch_is_independent_of_new_chain_branch (test_refinement_audit.RefinementAuditTests.test_rank_branch_is_independent_of_new_chain_branch) ... ok
+test_rank_filter_must_read_literal_placement (test_refinement_audit.RefinementAuditTests.test_rank_filter_must_read_literal_placement) ... ok
+test_rank_readback_closure_cannot_be_truncated (test_refinement_audit.RefinementAuditTests.test_rank_readback_closure_cannot_be_truncated) ... ok
+test_rank_type_cannot_be_only_formal_params (test_refinement_audit.RefinementAuditTests.test_rank_type_cannot_be_only_formal_params) ... ok
+test_total_count_cannot_substitute_for_refinement (test_refinement_audit.RefinementAuditTests.test_total_count_cannot_substitute_for_refinement) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 10.902s
+
+OK

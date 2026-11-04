@@ -1,0 +1,17 @@
+test_actual_domain_cannot_be_decoder_range (test_counting_audit.CountingAuditTests.test_actual_domain_cannot_be_decoder_range) ... ok
+test_actual_equivalence_cannot_be_omitted (test_counting_audit.CountingAuditTests.test_actual_equivalence_cannot_be_omitted) ... ok
+test_actual_fibre_count_cannot_be_omitted (test_counting_audit.CountingAuditTests.test_actual_fibre_count_cannot_be_omitted) ... ok
+test_actual_left_side_cannot_be_replaced (test_counting_audit.CountingAuditTests.test_actual_left_side_cannot_be_replaced) ... ok
+test_boundary_interface_is_checked (test_counting_audit.CountingAuditTests.test_boundary_interface_is_checked) ... ok
+test_complete_report (test_counting_audit.CountingAuditTests.test_complete_report) ... ok
+test_extra_axiom_rejected (test_counting_audit.CountingAuditTests.test_extra_axiom_rejected) ... ok
+test_fixed_pair_total_shortcut_rejected (test_counting_audit.CountingAuditTests.test_fixed_pair_total_shortcut_rejected) ... ok
+test_full_carrier_branch_cannot_be_omitted (test_counting_audit.CountingAuditTests.test_full_carrier_branch_cannot_be_omitted) ... ok
+test_last_checkpoint_closure_cannot_be_truncated (test_counting_audit.CountingAuditTests.test_last_checkpoint_closure_cannot_be_truncated) ... ok
+test_parameter_family_cannot_assume_reachability (test_counting_audit.CountingAuditTests.test_parameter_family_cannot_assume_reachability) ... ok
+test_seven_frozen_layers_preserved (test_counting_audit.CountingAuditTests.test_seven_frozen_layers_preserved) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 7.000s
+
+OK

@@ -1,0 +1,1169 @@
+{
+  "schema": "proper_arc_isolated_cold_replay.v1",
+  "status": "PASS_ISOLATED_COLD_REPLAY_WITH_FRESH_OFFICIAL_MATHLIB_CACHE",
+  "started_utc": "2026-11-04T06:55:59.617654+00:00",
+  "source_snapshot_sha256": "fdd00a77aaba6999f0cc5745f5e1f707dc743358dd3af9fd9a6142943eb8a1a0",
+  "source_delivery": "LOCAL_HASH_BOUND_OVERLAY_NOT_A_PUBLIC_COMPANION_CONTENT_COMMIT",
+  "toolchain": {
+    "directory": "E:\\Documents\\worktrees\\proper-arc-lean-cold-replay\\runtime\\lean-4.33.0-windows",
+    "archive_sha256": "301edc4cf03571c839cd7bf73ec850921f36d9451dbec68da557969a845726d9",
+    "archive_bytes": 842369303,
+    "lean_exe_sha256": "dd86e9b24990b1da425ea4af910f016e4db8f9a25c9ddad27bc6bee3690e677f",
+    "lake_exe_sha256": "a1aebb13fc502ae9190745c6b3bd2101d0fec39f030cfc07b1993799c2374644",
+    "archive_url": "https://github.com/leanprover/lean4/releases/download/v4.33.0/lean-4.33.0-windows.zip",
+    "publisher_asset_digest_verified": false
+  },
+  "dependency_mode": "official-cache",
+  "initial_project_build_absent": true,
+  "initial_isolated_caches_absent": true,
+  "same_host_separate_environment": true,
+  "mathlib_source_rebuilt": false,
+  "lock_sha256": "1a40688690ef2b536dc9297406625a36b4989fafa5b6e5b1b76390b9a60532ec",
+  "python": "3.13.0 (tags/v3.13.0:60403a5, Oct  7 2024, 09:38:07) [MSC v.1941 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "steps": [
+    {
+      "name": "lean-version",
+      "command": [
+        "E:\\Documents\\worktrees\\proper-arc-lean-cold-replay\\runtime\\lean-4.33.0-windows\\bin\\lean.exe",
+        "--version"
+      ],
+      "exit_code": 0,
+      "seconds": 0.08897180005442351,
+      "log": "01-lean-version.log",
+      "log_sha256": "b8d335ab8351a408bac4208701a6e820c84b47cae026393a5e88ffbd40c5447e"
+    },
+    {
+      "name": "lake-version",
+      "command": [
+        "E:\\Documents\\worktrees\\proper-arc-lean-cold-replay\\runtime\\lean-4.33.0-windows\\bin\\lake.exe",
+        "--version"
+      ],
+      "exit_code": 0,
+      "seconds": 0.10380709997843951,
+      "log": "02-lake-version.log",
+      "log_sha256": "91f4400b78be82a22d826a45a18f024b3121af765a09e1ab07dc76e4f1606676"
+    },
+    {
+      "name": "init-mathlib",
+      "command": [
+        "git",
+        "init",
+        "E:\\Documents\\worktrees\\proper-arc-lean-cold-replay\\rime-lite\\experiments\\proper_arc_registered_summaries\\lean\\.lake\\packages\\mathlib"
+      ],
+      "exit_code": 0,
+      "seconds": 0.3297073000576347,
+      "log": "03-init-mathlib.log",
+      "log_sha256": "0f69bc39199de4b9f5b9eb7ae5845fd0e04b35f2f22556d32c9cce440008504c"
+    },
+    {
+      "name": "origin-mathlib",
+      "command": [
+        "git",
+        "-C",
+        "E:\\Documents\\worktrees\\proper-arc-lean-cold-replay\\rime-lite\\experiments\\proper_arc_registered_summaries\\lean\\.lake\\packages\\mathlib",
+        "remote",
+        "add",
+        "origin",
+        "https://github.com/leanprover-community/mathlib4.git"
+      ],
+      "exit_code": 0,
+      "seconds": 0.11964169994462281,
+      "log": "04-origin-mathlib.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "fetch-mathlib",
+      "command": [
+        "git",
+        "-C",
+        "E:\\Documents\\worktrees\\proper-arc-lean-cold-replay\\rime-lite\\experiments\\proper_arc_registered_summaries\\lean\\.lake\\packages\\mathlib",
+        "fetch",
+        "--depth",
+        "1",
+        "origin",
+        "db584cd6d46c92f209a44c0f1c829460d327499d"
+      ],
+      "exit_code": 1,
+      "seconds": 135.94642639998347,
+      "log": "05-fetch-mathlib.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "fetch-mathlib",
+      "command": [
+        "git",
+        "-C",
+        "E:\\Documents\\worktrees\\proper-arc-lean-cold-replay\\rime-lite\\experiments\\proper_arc_registered_summaries\\lean\\.lake\\packages\\mathlib",
+        "fetch",
+        "--depth",
+        "1",
+        "origin",
+        "db584cd6d46c92f209a44c0f1c829460d327499d"
+      ],
+      "exit_code": 128,
+      "seconds": 21.281004199991003,
+      "log": "06-fetch-mathlib.log",
+      "log_sha256": "49f0b916499bdb8fe2f94d40c074aef980f6dd29c9970cc9f2d16c3ee1698f3e"
+    },
+    {
+      "name": "fetch-mathlib",
+      "command": [
+        "git",
+        "-C",
+        "E:\\Documents\\worktrees\\proper-arc-lean-cold-replay\\rime-lite\\experiments\\proper_arc_registered_summaries\\lean\\.lake\\packages\\mathlib",
+        "fetch",
+        "--depth",
+        "1",
+        "origin",
+        "db584cd6d46c92f209a44c0f1c829460d327499d"
+      ],
+      "exit_code": 128,
+      "seconds": 685.6661553999875,
+      "log": "07-fetch-mathlib.log",
+      "log_sha256": "d406302927814710ee99c574f5d9441d04102f2f033bc8617c2e83de94762acf"
+    },
+    {
+      "name": "fetch-mathlib",
+      "command": [
+        "git",
+        "-C",
+        "E:\\Documents\\worktrees\\proper-arc-lean-cold-replay\\rime-lite\\experiments\\proper_arc_registered_summaries\\lean\\.lake\\packages\\mathlib",
+        "fetch",
+        "--depth",
+        "1",
+        "origin",
+        "db584cd6d46c92f209a44c0f1c829460d327499d"
+      ],
+      "exit_code": 0,
+      "seconds": 169.88922570005525,
+      "log": "08-fetch-mathlib.log",
+      "log_sha256": "6ec49fcdaa2377f3678bfd53e2747d7ef9c8356384c033923b0485cf489a9918"
+    },
+    {
+      "name": "checkout-mathlib",
+      "command": [
+        "git",
+        "-C",
+        "E:\\Documents\\worktrees\\proper-arc-lean-cold-replay\\rime-lite\\experiments\\proper_arc_registered_summaries\\lean\\.lake\\packages\\mathlib",
+        "checkout",
+        "--detach",
+        "db584cd6d46c92f209a44c0f1c829460d327499d"
+      ],
+      "exit_code": 0,
+      "seconds": 0.14372720010578632,
+      "log": "09-checkout-mathlib.log",
+      "log_sha256": "0c3846ce543e25ee36664f4a232f74bd7160c051f43483d221e168fafa82a139"
+    },
+    {
+      "name": "init-plausible",
+      "command": [
+        "git",
+        "init",
+        "E:\\Documents\\worktrees\\proper-arc-lean-cold-replay\\rime-lite\\experiments\\proper_arc_registered_summaries\\lean\\.lake\\packages\\plausible"
+      ],
+      "exit_code": 0,
+      "seconds": 0.10550080006942153,
+      "log": "10-init-plausible.log",
+      "log_sha256": "496fecb8819fadad0a3d99aa61d8f92d9362ac537b727a5bbd4b597e7eae7b41"
+    },
+    {
+      "name": "origin-plausible",
+      "command": [
+        "git",
+        "-C",
+        "E:\\Documents\\worktrees\\proper-arc-lean-cold-replay\\rime-lite\\experiments\\proper_arc_registered_summaries\\lean\\.lake\\packages\\plausible",
+        "remote",
+        "add",
+        "origin",
+        "https://github.com/leanprover-community/plausible"
+      ],
+      "exit_code": 0,
+      "seconds": 0.06052759999874979,
+      "log": "11-origin-plausible.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "fetch-plausible",
+      "command": [
+        "git",
+        "-C",
+        "E:\\Documents\\worktrees\\proper-arc-lean-cold-replay\\rime-lite\\experiments\\proper_arc_registered_summaries\\lean\\.lake\\packages\\plausible",
+        "fetch",
+        "--depth",
+        "1",
+        "origin",
+        "b7eb3304aeae834b12dda98993a37f6a41f6f0bb"
+      ],
+      "exit_code": 0,
+      "seconds": 5.250726000056602,
+      "log": "12-fetch-plausible.log",
+      "log_sha256": "68ffcdb88d722dc91d24ced7854a369a4762d9932118b56f1da06058ec5c34f1"
+    },
+    {
+      "name": "checkout-plausible",
+      "command": [
+        "git",
+        "-C",
+        "E:\\Documents\\worktrees\\proper-arc-lean-cold-replay\\rime-lite\\experiments\\proper_arc_registered_summaries\\lean\\.lake\\packages\\plausible",
+        "checkout",
+        "--detach",
+        "b7eb3304aeae834b12dda98993a37f6a41f6f0bb"
+      ],
+      "exit_code": 0,
+      "seconds": 0.5663914000615478,
+      "log": "13-checkout-plausible.log",
+      "log_sha256": "97a9da65eec54523f2cf944afaf48b4c8ac5d52f40a145156407d9af81cef368"
+    },
+    {
+      "name": "init-LeanSearchClient",
+      "command": [
+        "git",
+        "init",
+        "E:\\Documents\\worktrees\\proper-arc-lean-cold-replay\\rime-lite\\experiments\\proper_arc_registered_summaries\\lean\\.lake\\packages\\LeanSearchClient"
+      ],
+      "exit_code": 0,
+      "seconds": 0.07828959997277707,
+      "log": "14-init-LeanSearchClient.log",
+      "log_sha256": "3897d4e581a408e8b6a3c07bfd9a88dc7a7432d9e33332e2d243e94d47e7fc98"
+    },
+    {
+      "name": "origin-LeanSearchClient",
+      "command": [
+        "git",
+        "-C",
+        "E:\\Documents\\worktrees\\proper-arc-lean-cold-replay\\rime-lite\\experiments\\proper_arc_registered_summaries\\lean\\.lake\\packages\\LeanSearchClient",
+        "remote",
+        "add",
+        "origin",
+        "https://github.com/leanprover-community/LeanSearchClient"
+      ],
+      "exit_code": 0,
+      "seconds": 0.07051400002092123,
+      "log": "15-origin-LeanSearchClient.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "fetch-LeanSearchClient",
+      "command": [
+        "git",
+        "-C",
+        "E:\\Documents\\worktrees\\proper-arc-lean-cold-replay\\rime-lite\\experiments\\proper_arc_registered_summaries\\lean\\.lake\\packages\\LeanSearchClient",
+        "fetch",
+        "--depth",
+        "1",
+        "origin",
+        "5f4d51b81cbd3f6b32b156bfad9056621a040404"
+      ],
+      "exit_code": 0,
+      "seconds": 2.05822700005956,
+      "log": "16-fetch-LeanSearchClient.log",
+      "log_sha256": "da12e1a4e139a7ef73ec1d485f03ddefc150e2d0b1b84086a16036c0c821e856"
+    },
+    {
+      "name": "checkout-LeanSearchClient",
+      "command": [
+        "git",
+        "-C",
+        "E:\\Documents\\worktrees\\proper-arc-lean-cold-replay\\rime-lite\\experiments\\proper_arc_registered_summaries\\lean\\.lake\\packages\\LeanSearchClient",
+        "checkout",
+        "--detach",
+        "5f4d51b81cbd3f6b32b156bfad9056621a040404"
+      ],
+      "exit_code": 0,
+      "seconds": 0.26080059993546456,
+      "log": "17-checkout-LeanSearchClient.log",
+      "log_sha256": "e41add07a44049fb8733c7006631e003a204f0a358c54c1fdc44bbadf3672461"
+    },
+    {
+      "name": "init-importGraph",
+      "command": [
+        "git",
+        "init",
+        "E:\\Documents\\worktrees\\proper-arc-lean-cold-replay\\rime-lite\\experiments\\proper_arc_registered_summaries\\lean\\.lake\\packages\\importGraph"
+      ],
+      "exit_code": 0,
+      "seconds": 0.0770781000610441,
+      "log": "18-init-importGraph.log",
+      "log_sha256": "99091c5b22663163891ec2655b3d7133ce2cf464e8430308b699920781202107"
+    },
+    {
+      "name": "origin-importGraph",
+      "command": [
+        "git",
+        "-C",
+        "E:\\Documents\\worktrees\\proper-arc-lean-cold-replay\\rime-lite\\experiments\\proper_arc_registered_summaries\\lean\\.lake\\packages\\importGraph",
+        "remote",
+        "add",
+        "origin",
+        "https://github.com/leanprover-community/import-graph"
+      ],
+      "exit_code": 0,
+      "seconds": 0.08289259998127818,
+      "log": "19-origin-importGraph.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "fetch-importGraph",
+      "command": [
+        "git",
+        "-C",
+        "E:\\Documents\\worktrees\\proper-arc-lean-cold-replay\\rime-lite\\experiments\\proper_arc_registered_summaries\\lean\\.lake\\packages\\importGraph",
+        "fetch",
+        "--depth",
+        "1",
+        "origin",
+        "16f02aa7642864af59f1ff0e384a015994db9118"
+      ],
+      "exit_code": 0,
+      "seconds": 3.0735323999542743,
+      "log": "20-fetch-importGraph.log",
+      "log_sha256": "9002082d5d2c05916036aaac93dd319d7cd1ec5cb4c090298d9811ec97f154b3"
+    },
+    {
+      "name": "checkout-importGraph",
+      "command": [
+        "git",
+        "-C",
+        "E:\\Documents\\worktrees\\proper-arc-lean-cold-replay\\rime-lite\\experiments\\proper_arc_registered_summaries\\lean\\.lake\\packages\\importGraph",
+        "checkout",
+        "--detach",
+        "16f02aa7642864af59f1ff0e384a015994db9118"
+      ],
+      "exit_code": 0,
+      "seconds": 0.760446900036186,
+      "log": "21-checkout-importGraph.log",
+      "log_sha256": "bafcbf34e1d8c14bc3cde5dd9be4a3f71a64ad3c3d8d0600be81e21a1850f913"
+    },
+    {
+      "name": "init-proofwidgets",
+      "command": [
+        "git",
+        "init",
+        "E:\\Documents\\worktrees\\proper-arc-lean-cold-replay\\rime-lite\\experiments\\proper_arc_registered_summaries\\lean\\.lake\\packages\\proofwidgets"
+      ],
+      "exit_code": 0,
+      "seconds": 0.07216420001350343,
+      "log": "22-init-proofwidgets.log",
+      "log_sha256": "5c1d73716d46e1d67f48e44a6458016970159c92a21906468f9579aaf2752778"
+    },
+    {
+      "name": "origin-proofwidgets",
+      "command": [
+        "git",
+        "-C",
+        "E:\\Documents\\worktrees\\proper-arc-lean-cold-replay\\rime-lite\\experiments\\proper_arc_registered_summaries\\lean\\.lake\\packages\\proofwidgets",
+        "remote",
+        "add",
+        "origin",
+        "https://github.com/leanprover-community/ProofWidgets4"
+      ],
+      "exit_code": 0,
+      "seconds": 0.05220160004682839,
+      "log": "23-origin-proofwidgets.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "fetch-proofwidgets",
+      "command": [
+        "git",
+        "-C",
+        "E:\\Documents\\worktrees\\proper-arc-lean-cold-replay\\rime-lite\\experiments\\proper_arc_registered_summaries\\lean\\.lake\\packages\\proofwidgets",
+        "fetch",
+        "--depth",
+        "1",
+        "origin",
+        "4be2e3d5087eeb272cf5a8853b8f9dd025ef5957"
+      ],
+      "exit_code": 0,
+      "seconds": 4.859837899915874,
+      "log": "24-fetch-proofwidgets.log",
+      "log_sha256": "0a623796ef5e7db5c2bd7493063f5de0dadae427eb16ad689f947352d8601e11"
+    },
+    {
+      "name": "checkout-proofwidgets",
+      "command": [
+        "git",
+        "-C",
+        "E:\\Documents\\worktrees\\proper-arc-lean-cold-replay\\rime-lite\\experiments\\proper_arc_registered_summaries\\lean\\.lake\\packages\\proofwidgets",
+        "checkout",
+        "--detach",
+        "4be2e3d5087eeb272cf5a8853b8f9dd025ef5957"
+      ],
+      "exit_code": 0,
+      "seconds": 0.15977089991793036,
+      "log": "25-checkout-proofwidgets.log",
+      "log_sha256": "de826f20845a91c765748f932243143f1b26f196b5bf82b5c7a13c3556f19420"
+    },
+    {
+      "name": "init-aesop",
+      "command": [
+        "git",
+        "init",
+        "E:\\Documents\\worktrees\\proper-arc-lean-cold-replay\\rime-lite\\experiments\\proper_arc_registered_summaries\\lean\\.lake\\packages\\aesop"
+      ],
+      "exit_code": 0,
+      "seconds": 0.06200329994317144,
+      "log": "26-init-aesop.log",
+      "log_sha256": "c562ff64dc57f1c084b28a911c8288799eb1384dbcaa6b5efc168e8b74e05e8a"
+    },
+    {
+      "name": "origin-aesop",
+      "command": [
+        "git",
+        "-C",
+        "E:\\Documents\\worktrees\\proper-arc-lean-cold-replay\\rime-lite\\experiments\\proper_arc_registered_summaries\\lean\\.lake\\packages\\aesop",
+        "remote",
+        "add",
+        "origin",
+        "https://github.com/leanprover-community/aesop"
+      ],
+      "exit_code": 0,
+      "seconds": 0.05656139994971454,
+      "log": "27-origin-aesop.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "fetch-aesop",
+      "command": [
+        "git",
+        "-C",
+        "E:\\Documents\\worktrees\\proper-arc-lean-cold-replay\\rime-lite\\experiments\\proper_arc_registered_summaries\\lean\\.lake\\packages\\aesop",
+        "fetch",
+        "--depth",
+        "1",
+        "origin",
+        "3448c0bcc5ce01b2d1546e483ec3620e32df3d0e"
+      ],
+      "exit_code": 0,
+      "seconds": 3.56143520004116,
+      "log": "28-fetch-aesop.log",
+      "log_sha256": "10d4e0d957564142f860089514d4c768ab0fe9052d44a6f30cb82e35f144ccb4"
+    },
+    {
+      "name": "checkout-aesop",
+      "command": [
+        "git",
+        "-C",
+        "E:\\Documents\\worktrees\\proper-arc-lean-cold-replay\\rime-lite\\experiments\\proper_arc_registered_summaries\\lean\\.lake\\packages\\aesop",
+        "checkout",
+        "--detach",
+        "3448c0bcc5ce01b2d1546e483ec3620e32df3d0e"
+      ],
+      "exit_code": 0,
+      "seconds": 0.15763559995684773,
+      "log": "29-checkout-aesop.log",
+      "log_sha256": "0c62bec7a7cdbab6974ee4f08afb36f3270c1e436419061aa725379b2fe5112e"
+    },
+    {
+      "name": "init-Qq",
+      "command": [
+        "git",
+        "init",
+        "E:\\Documents\\worktrees\\proper-arc-lean-cold-replay\\rime-lite\\experiments\\proper_arc_registered_summaries\\lean\\.lake\\packages\\Qq"
+      ],
+      "exit_code": 0,
+      "seconds": 0.05984780006110668,
+      "log": "30-init-Qq.log",
+      "log_sha256": "e4513dd00673129773e9e44058ee7560c5a1fa4ad0a5c6623af0c07844ef574d"
+    },
+    {
+      "name": "origin-Qq",
+      "command": [
+        "git",
+        "-C",
+        "E:\\Documents\\worktrees\\proper-arc-lean-cold-replay\\rime-lite\\experiments\\proper_arc_registered_summaries\\lean\\.lake\\packages\\Qq",
+        "remote",
+        "add",
+        "origin",
+        "https://github.com/leanprover-community/quote4"
+      ],
+      "exit_code": 0,
+      "seconds": 0.05726110003888607,
+      "log": "31-origin-Qq.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "fetch-Qq",
+      "command": [
+        "git",
+        "-C",
+        "E:\\Documents\\worktrees\\proper-arc-lean-cold-replay\\rime-lite\\experiments\\proper_arc_registered_summaries\\lean\\.lake\\packages\\Qq",
+        "fetch",
+        "--depth",
+        "1",
+        "origin",
+        "92c15be17b7caf78c2ad767ec40f89052d908d81"
+      ],
+      "exit_code": 0,
+      "seconds": 4.495622900081798,
+      "log": "32-fetch-Qq.log",
+      "log_sha256": "c05301ccb6aafb55d26996ad4a0ae6072c19749883886dbfcdbdfe22ac941800"
+    },
+    {
+      "name": "checkout-Qq",
+      "command": [
+        "git",
+        "-C",
+        "E:\\Documents\\worktrees\\proper-arc-lean-cold-replay\\rime-lite\\experiments\\proper_arc_registered_summaries\\lean\\.lake\\packages\\Qq",
+        "checkout",
+        "--detach",
+        "92c15be17b7caf78c2ad767ec40f89052d908d81"
+      ],
+      "exit_code": 0,
+      "seconds": 0.5040000999579206,
+      "log": "33-checkout-Qq.log",
+      "log_sha256": "46982568d82481327c1a20e4c1099af735f36f0ccd7655f70d020f8a9caca35f"
+    },
+    {
+      "name": "init-batteries",
+      "command": [
+        "git",
+        "init",
+        "E:\\Documents\\worktrees\\proper-arc-lean-cold-replay\\rime-lite\\experiments\\proper_arc_registered_summaries\\lean\\.lake\\packages\\batteries"
+      ],
+      "exit_code": 0,
+      "seconds": 0.06617530004587024,
+      "log": "34-init-batteries.log",
+      "log_sha256": "297a70b56932b32921c254d8cac4798947b40596755e2186faa6c19d26c9972c"
+    },
+    {
+      "name": "origin-batteries",
+      "command": [
+        "git",
+        "-C",
+        "E:\\Documents\\worktrees\\proper-arc-lean-cold-replay\\rime-lite\\experiments\\proper_arc_registered_summaries\\lean\\.lake\\packages\\batteries",
+        "remote",
+        "add",
+        "origin",
+        "https://github.com/leanprover-community/batteries"
+      ],
+      "exit_code": 0,
+      "seconds": 0.056020400021225214,
+      "log": "35-origin-batteries.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "fetch-batteries",
+      "command": [
+        "git",
+        "-C",
+        "E:\\Documents\\worktrees\\proper-arc-lean-cold-replay\\rime-lite\\experiments\\proper_arc_registered_summaries\\lean\\.lake\\packages\\batteries",
+        "fetch",
+        "--depth",
+        "1",
+        "origin",
+        "4488d40d070b9700d4d5a6aa342f0d40c31b2a2d"
+      ],
+      "exit_code": 0,
+      "seconds": 3.062459099921398,
+      "log": "36-fetch-batteries.log",
+      "log_sha256": "38c9fcd43d238fbc18a5563c3d2a4da8e2db3a4e31686cfa4eb52e83c114d87a"
+    },
+    {
+      "name": "checkout-batteries",
+      "command": [
+        "git",
+        "-C",
+        "E:\\Documents\\worktrees\\proper-arc-lean-cold-replay\\rime-lite\\experiments\\proper_arc_registered_summaries\\lean\\.lake\\packages\\batteries",
+        "checkout",
+        "--detach",
+        "4488d40d070b9700d4d5a6aa342f0d40c31b2a2d"
+      ],
+      "exit_code": 0,
+      "seconds": 0.18772120005451143,
+      "log": "37-checkout-batteries.log",
+      "log_sha256": "fb9416f52b3f781e340ec0f32439da3853010679067385dfc08f5207a644aa7a"
+    },
+    {
+      "name": "init-Cli",
+      "command": [
+        "git",
+        "init",
+        "E:\\Documents\\worktrees\\proper-arc-lean-cold-replay\\rime-lite\\experiments\\proper_arc_registered_summaries\\lean\\.lake\\packages\\Cli"
+      ],
+      "exit_code": 0,
+      "seconds": 0.05557780002709478,
+      "log": "38-init-Cli.log",
+      "log_sha256": "d5e0948eeeed96d378ce14dbe5dea3f5d615fbc7c6150db5fa840dc4a4920ee1"
+    },
+    {
+      "name": "origin-Cli",
+      "command": [
+        "git",
+        "-C",
+        "E:\\Documents\\worktrees\\proper-arc-lean-cold-replay\\rime-lite\\experiments\\proper_arc_registered_summaries\\lean\\.lake\\packages\\Cli",
+        "remote",
+        "add",
+        "origin",
+        "https://github.com/leanprover/lean4-cli"
+      ],
+      "exit_code": 0,
+      "seconds": 0.05342840007506311,
+      "log": "39-origin-Cli.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "fetch-Cli",
+      "command": [
+        "git",
+        "-C",
+        "E:\\Documents\\worktrees\\proper-arc-lean-cold-replay\\rime-lite\\experiments\\proper_arc_registered_summaries\\lean\\.lake\\packages\\Cli",
+        "fetch",
+        "--depth",
+        "1",
+        "origin",
+        "6130a47896ce867c6a4a55373441e59e565bad0f"
+      ],
+      "exit_code": 0,
+      "seconds": 2.262908999924548,
+      "log": "40-fetch-Cli.log",
+      "log_sha256": "0a247c2401eac884074c4626041c7fb91ff513f532334cb03f4edb7910737f5f"
+    },
+    {
+      "name": "checkout-Cli",
+      "command": [
+        "git",
+        "-C",
+        "E:\\Documents\\worktrees\\proper-arc-lean-cold-replay\\rime-lite\\experiments\\proper_arc_registered_summaries\\lean\\.lake\\packages\\Cli",
+        "checkout",
+        "--detach",
+        "6130a47896ce867c6a4a55373441e59e565bad0f"
+      ],
+      "exit_code": 0,
+      "seconds": 0.22783629992045462,
+      "log": "41-checkout-Cli.log",
+      "log_sha256": "5f9a80e11f4afc464a5e54e2dafc4876c0d747773da1e2f9b8583a38ff64c07c"
+    },
+    {
+      "name": "fetch-locked-dependencies",
+      "command": [
+        "E:\\Documents\\worktrees\\proper-arc-lean-cold-replay\\runtime\\lean-4.33.0-windows\\bin\\lake.exe",
+        "--no-cache",
+        "env",
+        "lean",
+        "--version"
+      ],
+      "exit_code": 0,
+      "seconds": 106.9580796000082,
+      "log": "42-fetch-locked-dependencies.log",
+      "log_sha256": "b8d335ab8351a408bac4208701a6e820c84b47cae026393a5e88ffbd40c5447e"
+    },
+    {
+      "name": "fresh-official-mathlib-cache",
+      "command": [
+        "E:\\Documents\\worktrees\\proper-arc-lean-cold-replay\\runtime\\lean-4.33.0-windows\\bin\\lake.exe",
+        "--no-cache",
+        "exe",
+        "cache",
+        "get",
+        "--cache-from=master,legacy",
+        "--repo=leanprover-community/mathlib4",
+        "Mathlib.Algebra.BigOperators.Intervals",
+        "Mathlib.Algebra.BigOperators.Option",
+        "Mathlib.Data.Finset.Basic",
+        "Mathlib.Data.Finset.Powerset",
+        "Mathlib.Data.Fintype.Basic",
+        "Mathlib.Data.Fintype.BigOperators",
+        "Mathlib.Data.Fintype.Card",
+        "Mathlib.Data.Fintype.Powerset",
+        "Mathlib.Data.Nat.Choose.Basic",
+        "Mathlib.Data.Nat.Choose.Vandermonde",
+        "Mathlib.Data.ZMod.Basic",
+        "Mathlib.Tactic"
+      ],
+      "exit_code": 0,
+      "seconds": 268.3140129999956,
+      "log": "43-fresh-official-mathlib-cache.log",
+      "log_sha256": "5169a407ae41457764c443bb209a70000df9c1ae900a9b74f1664af2ee00b290"
+    },
+    {
+      "name": "M1-validator",
+      "command": [
+        "D:\\Program Files\\Python\\Python313\\python.exe",
+        "-B",
+        "validate_companion.py"
+      ],
+      "exit_code": 0,
+      "seconds": 192.0709319000598,
+      "log": "44-M1-validator.log",
+      "log_sha256": "a5bcd1d6e1063404d7c632c0365b13325f21e360b88abdfb1402be187b8e7a2f"
+    },
+    {
+      "name": "M2-validator",
+      "command": [
+        "D:\\Program Files\\Python\\Python313\\python.exe",
+        "-B",
+        "interfaces/validate_interfaces.py"
+      ],
+      "exit_code": 0,
+      "seconds": 127.13612689997535,
+      "log": "45-M2-validator.log",
+      "log_sha256": "d143bb5c5f94bf36bc4b1ae0fd118f1f12520342e1e09aa73079942204dff30c"
+    },
+    {
+      "name": "M3-validator",
+      "command": [
+        "D:\\Program Files\\Python\\Python313\\python.exe",
+        "-B",
+        "classification/validate_classification.py"
+      ],
+      "exit_code": 0,
+      "seconds": 76.09695449995343,
+      "log": "46-M3-validator.log",
+      "log_sha256": "f84ecead7d5c40fdbc3251cde82b9725f63b5240e2b019ec45b07a1f3c5e86fa"
+    },
+    {
+      "name": "M4-validator",
+      "command": [
+        "D:\\Program Files\\Python\\Python313\\python.exe",
+        "-B",
+        "chains/validate_chains.py"
+      ],
+      "exit_code": 0,
+      "seconds": 227.03278829995543,
+      "log": "47-M4-validator.log",
+      "log_sha256": "286d4f0646e48cef328b8176d72d0323ee0dece2f7bb9e5b85720a1e6bd12ce8"
+    },
+    {
+      "name": "M5-validator",
+      "command": [
+        "D:\\Program Files\\Python\\Python313\\python.exe",
+        "-B",
+        "converse/validate_converse.py"
+      ],
+      "exit_code": 0,
+      "seconds": 253.3978626000462,
+      "log": "48-M5-validator.log",
+      "log_sha256": "e7fa4aa3524000dd4d10ac95f7fad1f177d721e116def18764cb7c4f0e4ad02d"
+    },
+    {
+      "name": "M6-validator",
+      "command": [
+        "D:\\Program Files\\Python\\Python313\\python.exe",
+        "-B",
+        "fibres/validate_fibres.py"
+      ],
+      "exit_code": 0,
+      "seconds": 337.1311889999779,
+      "log": "49-M6-validator.log",
+      "log_sha256": "4868231690b87335092911edfefa03d74c3a22a8f991076590c4973f1490797e"
+    },
+    {
+      "name": "M7-validator",
+      "command": [
+        "D:\\Program Files\\Python\\Python313\\python.exe",
+        "-B",
+        "summary/validate_summary.py"
+      ],
+      "exit_code": 0,
+      "seconds": 302.12637469999027,
+      "log": "50-M7-validator.log",
+      "log_sha256": "96ef22384995fbfb68d464efceab071b1b1cf16d9feebcec3ed072b642c84f33"
+    },
+    {
+      "name": "M8-validator",
+      "command": [
+        "D:\\Program Files\\Python\\Python313\\python.exe",
+        "-B",
+        "counting/validate_counting.py"
+      ],
+      "exit_code": 0,
+      "seconds": 333.38015879993327,
+      "log": "51-M8-validator.log",
+      "log_sha256": "9ffbec055354ec07252cd46c3a1a2f78b2ccad1a823dfe5a8c1101cd6e32d683"
+    },
+    {
+      "name": "M9-validator",
+      "command": [
+        "D:\\Program Files\\Python\\Python313\\python.exe",
+        "-B",
+        "refinements/validate_refinements.py"
+      ],
+      "exit_code": 0,
+      "seconds": 299.2191192000173,
+      "log": "52-M9-validator.log",
+      "log_sha256": "2c2e168afe447cd52e7ac82f85f99c6aaf024b7bcb0ef7b334c0aaedd0ccd89c"
+    },
+    {
+      "name": "tests-tests",
+      "command": [
+        "D:\\Program Files\\Python\\Python313\\python.exe",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "seconds": 0.5013329000212252,
+      "log": "53-tests-tests.log",
+      "log_sha256": "35ffa3cfa568fa1cc1c646615e95ab1437ceee1d45d1349421022eada59ef0b5"
+    },
+    {
+      "name": "tests-interfaces-tests",
+      "command": [
+        "D:\\Program Files\\Python\\Python313\\python.exe",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "interfaces/tests",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "seconds": 0.4250202999683097,
+      "log": "54-tests-interfaces-tests.log",
+      "log_sha256": "2877ece020202d2c356c4dec67b2d84fac67d6bdba05748595154c5fda02f984"
+    },
+    {
+      "name": "tests-classification-tests",
+      "command": [
+        "D:\\Program Files\\Python\\Python313\\python.exe",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "classification/tests",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "seconds": 1.1650850999867544,
+      "log": "55-tests-classification-tests.log",
+      "log_sha256": "3674c7309fc03a196215c7890affd210cde1b86803f4b23d8bf6d16451536638"
+    },
+    {
+      "name": "tests-chains-tests",
+      "command": [
+        "D:\\Program Files\\Python\\Python313\\python.exe",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "chains/tests",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "seconds": 1.8631160000804812,
+      "log": "56-tests-chains-tests.log",
+      "log_sha256": "f1a34ccabc7b35f02d39f8b7c5b5085e02d52abe8edb540e4a94e33320e6924c"
+    },
+    {
+      "name": "tests-converse-tests",
+      "command": [
+        "D:\\Program Files\\Python\\Python313\\python.exe",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "converse/tests",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "seconds": 3.509511200012639,
+      "log": "57-tests-converse-tests.log",
+      "log_sha256": "6ac23baee3e57e0e9a6f80577bcd4e23dd52598da6f57de988022b88b6f079d2"
+    },
+    {
+      "name": "tests-fibres-tests",
+      "command": [
+        "D:\\Program Files\\Python\\Python313\\python.exe",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "fibres/tests",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "seconds": 4.159669699962251,
+      "log": "58-tests-fibres-tests.log",
+      "log_sha256": "74f0e46b4766da856ac06274e14cc5d179efd2a0de1ba5fe60384c7aceba7940"
+    },
+    {
+      "name": "tests-summary-tests",
+      "command": [
+        "D:\\Program Files\\Python\\Python313\\python.exe",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "summary/tests",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "seconds": 5.322024900000542,
+      "log": "59-tests-summary-tests.log",
+      "log_sha256": "11a4e0ae279300b4bb073ef9d6d6ac0c6bea2af00ccb808ba41af64d198b1a18"
+    },
+    {
+      "name": "tests-counting-tests",
+      "command": [
+        "D:\\Program Files\\Python\\Python313\\python.exe",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "counting/tests",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "seconds": 7.271088499925099,
+      "log": "60-tests-counting-tests.log",
+      "log_sha256": "b4329960018cec66f6bc8e5a0a0a7718dbe4c2ce99822397a9790e6fce90a9ec"
+    },
+    {
+      "name": "tests-refinements-tests",
+      "command": [
+        "D:\\Program Files\\Python\\Python313\\python.exe",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "refinements/tests",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "seconds": 11.142510099918582,
+      "log": "61-tests-refinements-tests.log",
+      "log_sha256": "fd5d9d40c48206b90b5478f3de6cf2c6ee3aa9add51abaeae0638d23cef8b73e"
+    },
+    {
+      "name": "tests-map_tests",
+      "command": [
+        "D:\\Program Files\\Python\\Python313\\python.exe",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "map_tests",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "seconds": 6.077842899947427,
+      "log": "62-tests-map_tests.log",
+      "log_sha256": "b23143232736a282ec3e7dde28b3f6e8dd6ad92a821c66fd3335db3a7b9347ef"
+    },
+    {
+      "name": "final-theorem-map",
+      "command": [
+        "D:\\Program Files\\Python\\Python313\\python.exe",
+        "-B",
+        "theorem_map.py",
+        "--check-upstream-git"
+      ],
+      "exit_code": 0,
+      "seconds": 5.7991287999320775,
+      "log": "63-final-theorem-map.log",
+      "log_sha256": "69318672e178c548140b570585be89701b30a032341eb5d1d19ce47ad8e39f94"
+    }
+  ],
+  "updated_utc": "2026-11-04T08:11:08.355381+00:00",
+  "lean_executable": "Lean (version 4.33.0, x86_64-w64-windows-gnu, commit d8b18978322de05a8f3dba51ef03cf5461676c17, Release)",
+  "previous_failures": [
+    {
+      "error": "cold replay step failed: fetch-mathlib; see E:\\Documents\\worktrees\\proper-arc-lean-cold-replay\\evidence\\05-fetch-mathlib.log",
+      "updated_utc": "2026-11-04T06:58:22.805581+00:00"
+    },
+    {
+      "error": "cold replay step failed: fetch-mathlib; see E:\\Documents\\worktrees\\proper-arc-lean-cold-replay\\evidence\\06-fetch-mathlib.log",
+      "updated_utc": "2026-11-04T06:59:19.379239+00:00"
+    },
+    {
+      "error": "cold replay step failed: fetch-mathlib; see E:\\Documents\\worktrees\\proper-arc-lean-cold-replay\\evidence\\07-fetch-mathlib.log",
+      "updated_utc": "2026-11-04T07:12:16.468099+00:00"
+    }
+  ],
+  "dependency_acquisition": "FRESH_NETWORK_SHALLOW_FETCH_AT_EACH_LOCKED_SHA_NO_LOCAL_OBJECT_REUSE",
+  "packages": [
+    {
+      "name": "mathlib",
+      "url": "https://github.com/leanprover-community/mathlib4.git",
+      "head": "db584cd6d46c92f209a44c0f1c829460d327499d",
+      "tracked_status": ""
+    },
+    {
+      "name": "plausible",
+      "url": "https://github.com/leanprover-community/plausible",
+      "head": "b7eb3304aeae834b12dda98993a37f6a41f6f0bb",
+      "tracked_status": ""
+    },
+    {
+      "name": "LeanSearchClient",
+      "url": "https://github.com/leanprover-community/LeanSearchClient",
+      "head": "5f4d51b81cbd3f6b32b156bfad9056621a040404",
+      "tracked_status": ""
+    },
+    {
+      "name": "importGraph",
+      "url": "https://github.com/leanprover-community/import-graph",
+      "head": "16f02aa7642864af59f1ff0e384a015994db9118",
+      "tracked_status": ""
+    },
+    {
+      "name": "proofwidgets",
+      "url": "https://github.com/leanprover-community/ProofWidgets4",
+      "head": "4be2e3d5087eeb272cf5a8853b8f9dd025ef5957",
+      "tracked_status": ""
+    },
+    {
+      "name": "aesop",
+      "url": "https://github.com/leanprover-community/aesop",
+      "head": "3448c0bcc5ce01b2d1546e483ec3620e32df3d0e",
+      "tracked_status": ""
+    },
+    {
+      "name": "Qq",
+      "url": "https://github.com/leanprover-community/quote4",
+      "head": "92c15be17b7caf78c2ad767ec40f89052d908d81",
+      "tracked_status": ""
+    },
+    {
+      "name": "batteries",
+      "url": "https://github.com/leanprover-community/batteries",
+      "head": "4488d40d070b9700d4d5a6aa342f0d40c31b2a2d",
+      "tracked_status": ""
+    },
+    {
+      "name": "Cli",
+      "url": "https://github.com/leanprover/lean4-cli",
+      "head": "6130a47896ce867c6a4a55373441e59e565bad0f",
+      "tracked_status": ""
+    }
+  ],
+  "mathlib_cache_modules": [
+    "Mathlib.Algebra.BigOperators.Intervals",
+    "Mathlib.Algebra.BigOperators.Option",
+    "Mathlib.Data.Finset.Basic",
+    "Mathlib.Data.Finset.Powerset",
+    "Mathlib.Data.Fintype.Basic",
+    "Mathlib.Data.Fintype.BigOperators",
+    "Mathlib.Data.Fintype.Card",
+    "Mathlib.Data.Fintype.Powerset",
+    "Mathlib.Data.Nat.Choose.Basic",
+    "Mathlib.Data.Nat.Choose.Vandermonde",
+    "Mathlib.Data.ZMod.Basic",
+    "Mathlib.Tactic"
+  ],
+  "mathlib_cache_containers": [
+    "master",
+    "legacy"
+  ],
+  "validators": [
+    {
+      "id": "M1",
+      "status": "PASS",
+      "manifest_sha256": "56769c0fa07686e5431de1f2b667eea8bd46619c979d1fe5d4e308e7c6d00c96",
+      "report_sha256": "05713260569b9f95eb4d68922633c4680417953b47b751ec69a1912335ac3bc1",
+      "target_count": 4
+    },
+    {
+      "id": "M2",
+      "status": "PASS",
+      "manifest_sha256": "c3725a2407c2af450ad9c095abcbca89ba5cad13f1331d008c05e7134a2202f8",
+      "report_sha256": "b106edddeb9e6b98a8139a743f727f4c1ff8779a089335633f0056bae5134add",
+      "target_count": 4
+    },
+    {
+      "id": "M3",
+      "status": "PASS",
+      "manifest_sha256": "cf0bc343a73e7466b870c36843e072472159779373ad3e85964d17e69acea2d0",
+      "report_sha256": "dac7179c99634005d50019e73730c8fee62346d4b69c98bd24e4ee57b5bd479a",
+      "target_count": 9
+    },
+    {
+      "id": "M4",
+      "status": "PASS",
+      "manifest_sha256": "5979c315a7a8f534efeb29948cb0f4f8ed151c99a7e06cd6059f3bf58aa9e5fd",
+      "report_sha256": "f237046fb6eef5fde362efb825a435f3ac48e1bd88007a958ff8d090b7444d94",
+      "target_count": 11
+    },
+    {
+      "id": "M5",
+      "status": "PASS",
+      "manifest_sha256": "3dac55c745d644ebb80565fdeb749b411f0ca7e18e0a9c35d4d7b1fc2ee3a731",
+      "report_sha256": "0e8dfdd89a0bbc3f187477a7060be52663fae5e686a1285ac4bb1446c407b571",
+      "target_count": 15
+    },
+    {
+      "id": "M6",
+      "status": "PASS",
+      "manifest_sha256": "7d85df042a583508908a028e98499b52e7e8d7507d23d5c70f6e210faa21658d",
+      "report_sha256": "e9b56f6fb1cbe661dc0f8da7fdd0412f8063d063b44fe1479921f47ba72f269a",
+      "target_count": 15
+    },
+    {
+      "id": "M7",
+      "status": "PASS",
+      "manifest_sha256": "aef536f33efdd1b114e87f9b96ffdce1ddceec94c9a41d10b572f092a38b95a6",
+      "report_sha256": "6643c334c4bf6f70b7d02ea47ba19be6ffd34eafc77c5e770ea0aadca7fc42e1",
+      "target_count": 15
+    },
+    {
+      "id": "M8",
+      "status": "PASS",
+      "manifest_sha256": "6535bd701625f294302f4ecadbb686a1a04cd22e9a6c110fe4d050619aa531ba",
+      "report_sha256": "df38f0a016ca2f0191d84f37f76b9030a6c390b5583fe3ad073ce1f579372454",
+      "target_count": 12
+    },
+    {
+      "id": "M9",
+      "status": "PASS",
+      "manifest_sha256": "54ac894b75ab88a1eb66058f5bdb6b90d6ced237b3d8c104099777188d1febec",
+      "report_sha256": "9a039472f4f2cb29ce687359569b98c09be31c3cbb1700c7c7f79ed8d97abb13",
+      "target_count": 16
+    }
+  ],
+  "finished_utc": "2026-11-04T08:11:08.355349+00:00",
+  "mapped_theorems": 17,
+  "union_declaration_nodes": 13621,
+  "union_graph_sha256": "ef8b4326ceb91811346672ae41fd577cb089bf0829bb7027464a7d86a85d55da",
+  "pending_formalization": [
+    {
+      "paper": "Proposition 7.1",
+      "status": "PAPER_PROOF_PRESENT_LEAN_NOT_STARTED",
+      "scope": "Identify the actual r=2,c=0 proper-arc summary type with the fixed-pair owner type, then transport its equivalences."
+    },
+    {
+      "paper": "Propositions 8.1 and 8.2; Corollary 8.3",
+      "status": "PAPER_PROOF_PRESENT_LEAN_NOT_STARTED",
+      "scope": "Fixed-n, diagonal fixed-r and unscaled summary-count generating functions, with their distinct coefficient domains."
+    },
+    {
+      "paper": "Theorem 8.4",
+      "status": "PAPER_PROOF_PRESENT_LEAN_NOT_STARTED",
+      "scope": "Fixed-r 9/2 growth, leading coefficient and explicit tail/error estimates for the proper-arc count."
+    }
+  ]
+}

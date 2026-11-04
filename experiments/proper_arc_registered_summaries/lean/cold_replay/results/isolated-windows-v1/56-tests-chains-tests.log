@@ -1,0 +1,13 @@
+test_actual_word_dependency_cannot_be_removed (test_chain_audit.ChainAuditTests.test_actual_word_dependency_cannot_be_removed) ... ok
+test_chain_domain_cannot_be_decoder_range (test_chain_audit.ChainAuditTests.test_chain_domain_cannot_be_decoder_range) ... ok
+test_complete_report (test_chain_audit.ChainAuditTests.test_complete_report) ... ok
+test_embedding_cannot_be_called_equivalence (test_chain_audit.ChainAuditTests.test_embedding_cannot_be_called_equivalence) ... ok
+test_extra_axiom_rejected (test_chain_audit.ChainAuditTests.test_extra_axiom_rejected) ... ok
+test_fixed_pair_length_cannot_replace_proper_arc_length (test_chain_audit.ChainAuditTests.test_fixed_pair_length_cannot_replace_proper_arc_length) ... ok
+test_old_proof_node_cannot_be_omitted (test_chain_audit.ChainAuditTests.test_old_proof_node_cannot_be_omitted) ... ok
+test_previous_milestones_preserved (test_chain_audit.ChainAuditTests.test_previous_milestones_preserved) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 1.680s
+
+OK

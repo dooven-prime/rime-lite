@@ -1,0 +1,16 @@
+{
+  "title": "Proper-Arc Registered Summaries: Lean 4 Companion",
+  "upload_type": "software",
+  "version": "1.0",
+  "creators": [
+    {"name": "Chen, WuJun", "affiliation": "Independent Researcher"}
+  ],
+  "description": "<p>Lean 4 companion to Registered Proper-Arc Chains and Placement Fibers in a Circular Collapse System (hal-05848115v1). For all n >= 3, source offsets c, and 2 <= r < n, the sources prove the classification of actual registration origins, actual selected chains, placement fibres, complete generated summaries, and exact and refined finite counts.</p><p>The archive contains the proof sources, exact generic upstream mirrors, pinned toolchain and Lake lock, nine frozen reports, the theorem-to-source map, and the completed isolated cold-replay evidence. Final acceptance is bound to that cold-replay receipt: all nine owning validators and 94 tests passed with newly acquired sources and a fresh official Mathlib compiled cache. The source manifest records the exact SHA-256 bindings.</p><p>This software companion does not include the later fixed-pair actual-type specialization or the generating-function/asymptotic formalization. It is separate from the HAL paper's publication identity.</p>",
+  "access_right": "open",
+  "license": "mit",
+  "keywords": ["Lean 4", "formalization", "circular packet dynamics", "registered fusion", "proper source arc", "dependent enumeration"],
+  "related_identifiers": [
+    {"identifier": "https://hal.science/hal-05848115v1", "relation": "isSupplementTo", "scheme": "url"},
+    {"identifier": "https://zenodo.org/records/23914476", "relation": "isDerivedFrom", "scheme": "url"}
+  ]
+}
