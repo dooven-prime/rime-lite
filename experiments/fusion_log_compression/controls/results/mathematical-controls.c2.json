@@ -1,0 +1,384 @@
+{
+  "status": "PASS_BOUNDED_MATHEMATICAL_CONTROLS",
+  "evidence": "BOUNDED_CONSISTENCY_ONLY",
+  "costs": {
+    "max_n": 80,
+    "valid_triples_checked": 88556
+  },
+  "cases": [
+    {
+      "n": 3,
+      "joint_objects": 39,
+      "literal_endpoints": 24,
+      "complete_logs": 10,
+      "all_log_and_endpoint_fibres_match": true,
+      "all_right_optimum": {
+        "length": 8,
+        "shortest_word_count": 1,
+        "word": "dppdpdpp",
+        "states_discovered": 12
+      },
+      "history_forgotten_endpoint": {
+        "length": 5,
+        "shortest_word_count": 1,
+        "word": "dpdpp",
+        "states_discovered": 21
+      },
+      "cost_excess_cases": [
+        {
+          "case": "canonical",
+          "ledger": {
+            "rotations": 5,
+            "external_slides": 1,
+            "backslides_by_remaining_outside": {},
+            "unchanged_defects": 0,
+            "rotation_excess": 0
+          }
+        },
+        {
+          "case": "rotation_excess",
+          "ledger": {
+            "rotations": 8,
+            "external_slides": 1,
+            "backslides_by_remaining_outside": {},
+            "unchanged_defects": 0,
+            "rotation_excess": 3
+          }
+        },
+        {
+          "case": "unchanged_defect",
+          "ledger": {
+            "rotations": 5,
+            "external_slides": 1,
+            "backslides_by_remaining_outside": {},
+            "unchanged_defects": 1,
+            "rotation_excess": 0
+          }
+        },
+        {
+          "case": "backslide_with_0_outside",
+          "ledger": {
+            "rotations": 6,
+            "external_slides": 1,
+            "backslides_by_remaining_outside": {
+              "0": 1
+            },
+            "unchanged_defects": 0,
+            "rotation_excess": 0
+          }
+        },
+        {
+          "case": "backslide_with_1_outside",
+          "ledger": {
+            "rotations": 9,
+            "external_slides": 2,
+            "backslides_by_remaining_outside": {
+              "1": 1
+            },
+            "unchanged_defects": 0,
+            "rotation_excess": 3
+          }
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "joint_objects": 292,
+      "literal_endpoints": 128,
+      "complete_logs": 41,
+      "all_log_and_endpoint_fibres_match": true,
+      "all_right_optimum": {
+        "length": 17,
+        "shortest_word_count": 1,
+        "word": "dpppdpdppdpdpdppp",
+        "states_discovered": 32
+      },
+      "history_forgotten_endpoint": {
+        "length": 8,
+        "shortest_word_count": 1,
+        "word": "dpdpdppp",
+        "states_discovered": 85
+      },
+      "cost_excess_cases": [
+        {
+          "case": "canonical",
+          "ledger": {
+            "rotations": 11,
+            "external_slides": 3,
+            "backslides_by_remaining_outside": {},
+            "unchanged_defects": 0,
+            "rotation_excess": 0
+          }
+        },
+        {
+          "case": "rotation_excess",
+          "ledger": {
+            "rotations": 15,
+            "external_slides": 3,
+            "backslides_by_remaining_outside": {},
+            "unchanged_defects": 0,
+            "rotation_excess": 4
+          }
+        },
+        {
+          "case": "unchanged_defect",
+          "ledger": {
+            "rotations": 11,
+            "external_slides": 3,
+            "backslides_by_remaining_outside": {},
+            "unchanged_defects": 1,
+            "rotation_excess": 0
+          }
+        },
+        {
+          "case": "backslide_with_0_outside",
+          "ledger": {
+            "rotations": 12,
+            "external_slides": 3,
+            "backslides_by_remaining_outside": {
+              "0": 1
+            },
+            "unchanged_defects": 0,
+            "rotation_excess": 0
+          }
+        },
+        {
+          "case": "backslide_with_1_outside",
+          "ledger": {
+            "rotations": 16,
+            "external_slides": 4,
+            "backslides_by_remaining_outside": {
+              "1": 1
+            },
+            "unchanged_defects": 0,
+            "rotation_excess": 4
+          }
+        },
+        {
+          "case": "backslide_with_2_outside",
+          "ledger": {
+            "rotations": 20,
+            "external_slides": 5,
+            "backslides_by_remaining_outside": {
+              "2": 1
+            },
+            "unchanged_defects": 0,
+            "rotation_excess": 8
+          }
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "joint_objects": 2505,
+      "literal_endpoints": 610,
+      "complete_logs": 206,
+      "all_log_and_endpoint_fibres_match": true,
+      "all_right_optimum": {
+        "length": 29,
+        "shortest_word_count": 1,
+        "word": "dppppdpdpppdpdpdppdpdpdpdpppp",
+        "states_discovered": 80
+      },
+      "history_forgotten_endpoint": {
+        "length": 11,
+        "shortest_word_count": 1,
+        "word": "dpdpdpdpppp",
+        "states_discovered": 295
+      },
+      "cost_excess_cases": [
+        {
+          "case": "canonical",
+          "ledger": {
+            "rotations": 19,
+            "external_slides": 6,
+            "backslides_by_remaining_outside": {},
+            "unchanged_defects": 0,
+            "rotation_excess": 0
+          }
+        },
+        {
+          "case": "rotation_excess",
+          "ledger": {
+            "rotations": 24,
+            "external_slides": 6,
+            "backslides_by_remaining_outside": {},
+            "unchanged_defects": 0,
+            "rotation_excess": 5
+          }
+        },
+        {
+          "case": "unchanged_defect",
+          "ledger": {
+            "rotations": 19,
+            "external_slides": 6,
+            "backslides_by_remaining_outside": {},
+            "unchanged_defects": 1,
+            "rotation_excess": 0
+          }
+        },
+        {
+          "case": "backslide_with_0_outside",
+          "ledger": {
+            "rotations": 20,
+            "external_slides": 6,
+            "backslides_by_remaining_outside": {
+              "0": 1
+            },
+            "unchanged_defects": 0,
+            "rotation_excess": 0
+          }
+        },
+        {
+          "case": "backslide_with_1_outside",
+          "ledger": {
+            "rotations": 25,
+            "external_slides": 7,
+            "backslides_by_remaining_outside": {
+              "1": 1
+            },
+            "unchanged_defects": 0,
+            "rotation_excess": 5
+          }
+        },
+        {
+          "case": "backslide_with_2_outside",
+          "ledger": {
+            "rotations": 30,
+            "external_slides": 8,
+            "backslides_by_remaining_outside": {
+              "2": 1
+            },
+            "unchanged_defects": 0,
+            "rotation_excess": 10
+          }
+        },
+        {
+          "case": "backslide_with_3_outside",
+          "ledger": {
+            "rotations": 35,
+            "external_slides": 9,
+            "backslides_by_remaining_outside": {
+              "3": 1
+            },
+            "unchanged_defects": 0,
+            "rotation_excess": 15
+          }
+        }
+      ]
+    },
+    {
+      "n": 6,
+      "joint_objects": 24306,
+      "literal_endpoints": 2742,
+      "complete_logs": 1237,
+      "all_log_and_endpoint_fibres_match": true,
+      "all_right_optimum": {
+        "length": 44,
+        "shortest_word_count": 1,
+        "word": "dpppppdpdppppdpdpdpppdpdpdpdppdpdpdpdpdppppp",
+        "states_discovered": 192
+      },
+      "history_forgotten_endpoint": {
+        "length": 14,
+        "shortest_word_count": 1,
+        "word": "dpdpdpdpdppppp",
+        "states_discovered": 941
+      },
+      "cost_excess_cases": [
+        {
+          "case": "canonical",
+          "ledger": {
+            "rotations": 29,
+            "external_slides": 10,
+            "backslides_by_remaining_outside": {},
+            "unchanged_defects": 0,
+            "rotation_excess": 0
+          }
+        },
+        {
+          "case": "rotation_excess",
+          "ledger": {
+            "rotations": 35,
+            "external_slides": 10,
+            "backslides_by_remaining_outside": {},
+            "unchanged_defects": 0,
+            "rotation_excess": 6
+          }
+        },
+        {
+          "case": "unchanged_defect",
+          "ledger": {
+            "rotations": 29,
+            "external_slides": 10,
+            "backslides_by_remaining_outside": {},
+            "unchanged_defects": 1,
+            "rotation_excess": 0
+          }
+        },
+        {
+          "case": "backslide_with_0_outside",
+          "ledger": {
+            "rotations": 30,
+            "external_slides": 10,
+            "backslides_by_remaining_outside": {
+              "0": 1
+            },
+            "unchanged_defects": 0,
+            "rotation_excess": 0
+          }
+        },
+        {
+          "case": "backslide_with_1_outside",
+          "ledger": {
+            "rotations": 36,
+            "external_slides": 11,
+            "backslides_by_remaining_outside": {
+              "1": 1
+            },
+            "unchanged_defects": 0,
+            "rotation_excess": 6
+          }
+        },
+        {
+          "case": "backslide_with_2_outside",
+          "ledger": {
+            "rotations": 42,
+            "external_slides": 12,
+            "backslides_by_remaining_outside": {
+              "2": 1
+            },
+            "unchanged_defects": 0,
+            "rotation_excess": 12
+          }
+        },
+        {
+          "case": "backslide_with_3_outside",
+          "ledger": {
+            "rotations": 48,
+            "external_slides": 13,
+            "backslides_by_remaining_outside": {
+              "3": 1
+            },
+            "unchanged_defects": 0,
+            "rotation_excess": 18
+          }
+        },
+        {
+          "case": "backslide_with_4_outside",
+          "ledger": {
+            "rotations": 54,
+            "external_slides": 14,
+            "backslides_by_remaining_outside": {
+              "4": 1
+            },
+            "unchanged_defects": 0,
+            "rotation_excess": 24
+          }
+        }
+      ]
+    }
+  ],
+  "shared_raw_step_implementation": "controls/core.py",
+  "kernel_formalization_claimed": false
+}

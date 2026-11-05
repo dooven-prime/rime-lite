@@ -1,0 +1,31 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[a4paper,margin=24mm]{geometry}
+\usepackage{fontspec}
+\setmainfont{Latin Modern Roman}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[round]{natbib}
+\usepackage{booktabs,longtable,tabularx,array,enumitem,needspace,microtype,etoolbox}
+\usepackage{xurl}
+\usepackage[hidelinks,hypertexnames=false]{hyperref}
+\setlength{\parindent}{1.2em}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{2em}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\BeforeBeginEnvironment{longtable}{\Needspace{10\baselineskip}}
+@@HEADER_INCLUDES@@
+\hypersetup{pdftitle={@@PDF_TITLE@@},pdfauthor={@@PDF_AUTHOR@@}}
+\title{@@TITLE@@}
+\author{@@AUTHOR@@\\@@AFFILIATION@@}
+\date{@@DATE@@}
+\begin{document}
+\maketitle
+\begin{abstract}
+@@ABSTRACT@@
+\end{abstract}
+\noindent\textbf{Keywords:} @@KEYWORDS@@
+
+@@BODY@@
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}
