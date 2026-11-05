@@ -1,5 +1,10 @@
 # Build Pipeline
 
+New unnumbered HAL reader manuscripts use the separate shared profile in
+[HAL_READER.md](HAL_READER.md). The pipeline below remains the numbered-paper
+and legacy archive pipeline; its title and bibliography rules do not define
+the HAL profile.
+
 ## Scope and Canonical Sources
 
 The Markdown manuscripts under `papers/paperN/` are canonical paper sources;

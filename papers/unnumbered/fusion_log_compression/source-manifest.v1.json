@@ -1,0 +1,29 @@
+{
+  "schema": "rime.fusion-log-hal-source-snapshot.v1",
+  "source_tag_name": "fusion-log-compression-source-v1.0",
+  "hal_deposit": null,
+  "evidence_boundary": "PAPER_PROOFS_AND_BOUNDED_CONSISTENCY_CONTROLS",
+  "sha256": {
+    ".gitattributes": "540c57ace3aa64da17832fe217195070b320ab3026451be4d9e68c82e3f0be75",
+    "papers/tex/README.md": "3f6075acdfa3ef5c498b5e830f2edc82c826f71883fb1f4a598deff15d1c1f41",
+    "papers/tex/HAL_READER.md": "091750dc36c4b31ace02b984286e29a654ada8eaf46b82a3aae70bc201223e99",
+    "papers/tex/build_hal.py": "c4f3b7a5342ff979745b202296ba1868a8e1dd61be580eacb1219cf0d7af04db",
+    "papers/tex/hal-reader-template.tex": "6a844f300b1cb4d5c30da88f2a5a5998634cd4ab020a6220a35c164db9f3496f",
+    "tests/run_all_tests.py": "1d121b91c5a0bf3e7e77539a091cfd7abb37178831403cea9b76ccce5f854f2b",
+    "tests/test_hal_reader_build.py": "3435c05eae3d28564dd106355cdc51c6eda3f4fcc111bd0b1f36b7ba4f4667dd",
+    "papers/unnumbered/fusion_log_compression/README.md": "c7a8a0103978845b0dd2fda9e92217a9e13b495040ae0dc3af27bee49baa786d",
+    "papers/unnumbered/fusion_log_compression/MANUSCRIPT.md": "790188c21e075e37cb2f85a837721c5b1f2be4a913d942e228f63ab97db1b6e3",
+    "papers/unnumbered/fusion_log_compression/references.bib": "84d3a62baf7805422c224389c0a49b91c541b5d6c08c94db09c247e739d10e33",
+    "papers/unnumbered/fusion_log_compression/build_hal.py": "9164225090800d0c5eb28353b122cb12d1ff6e1a1c338af9adf159aae8bc2c99",
+    "papers/unnumbered/fusion_log_compression/hal-reader.json": "911c703f6c0107470aa6d1d9aae30b5877840e1a2f9a999bc5308378aba2ca4f",
+    "papers/unnumbered/fusion_log_compression/hal-v1/Chen_History_Preserving_Quadratic_Normal_Forms_HAL_preprint.pdf": "8b18c887eb869d9926841dccacb5dc4097dbff2d0ac9e37af3e2ba353c21c4b3",
+    "papers/unnumbered/fusion_log_compression/results/reader-build.hal-v1.json": "0d78639e1330f0d872ad0fc1ac0d5e832f305ddc6c6e55f80909619682b2080e",
+    "papers/unnumbered/fusion_log_compression/verify_snapshot.py": "7bfc6d9e2fbb8212872ebe4201c35111ba2ccc3868eeb5679f233940fc1c20d3",
+    "experiments/fusion_log_compression/controls/README.md": "faddf50dfc067bab32469b034493dd1621746f97a8746ea6c6395da9ed2d73ad",
+    "experiments/fusion_log_compression/controls/core.py": "4a8cf76855ff979562bb75cdf688ec4ff9a8c7b35393f0f5f1b888f1563ab39f",
+    "experiments/fusion_log_compression/controls/audit_math.py": "e086893f12021141f63d66ecac1025b038f4e56772645e9d9c0a959b5b7eae1d",
+    "experiments/fusion_log_compression/controls/fusion_log_arbitrary_start_control.py": "dce332ea8efded11db25ffc0819334fcfcd130dbd7e6477b0f8f49cb73d27e25",
+    "experiments/fusion_log_compression/controls/results/arbitrary-start.c2.json": "fb95827060753898bfb2a89c65dfb6a78a86c1d1db6018f409af0de3a5da41fa",
+    "experiments/fusion_log_compression/controls/results/mathematical-controls.c2.json": "38aa008a2bed54d819075d07d91129fa5363d3ec87548e4f16886c0db6dfb7ca"
+  }
+}

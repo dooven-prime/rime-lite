@@ -1,0 +1,17 @@
+{
+  "status": "PASS_HAL_READER_BUILD",
+  "stage": "HAL_V1_CANDIDATE",
+  "inputs": {
+    "MANUSCRIPT.md": "790188c21e075e37cb2f85a837721c5b1f2be4a913d942e228f63ab97db1b6e3",
+    "references.bib": "84d3a62baf7805422c224389c0a49b91c541b5d6c08c94db09c247e739d10e33",
+    "hal-reader.json": "911c703f6c0107470aa6d1d9aae30b5877840e1a2f9a999bc5308378aba2ca4f",
+    "papers/tex/build_hal.py": "c4f3b7a5342ff979745b202296ba1868a8e1dd61be580eacb1219cf0d7af04db",
+    "papers/tex/hal-reader-template.tex": "6a844f300b1cb4d5c30da88f2a5a5998634cd4ab020a6220a35c164db9f3496f"
+  },
+  "reader_pdf": "papers/unnumbered/fusion_log_compression/hal-v1/Chen_History_Preserving_Quadratic_Normal_Forms_HAL_preprint.pdf",
+  "reader_pdf_sha256": "8b18c887eb869d9926841dccacb5dc4097dbff2d0ac9e37af3e2ba353c21c4b3",
+  "max_overfull_pt": 0,
+  "undefined_citations": false,
+  "missing_characters": false,
+  "publication_identity": null
+}

@@ -1,0 +1,1272 @@
+{
+  "status": "PASS_BOUNDED_ARBITRARY_START_CONTROL",
+  "evidence": "BOUNDED_CONSISTENCY_ONLY",
+  "cases": [
+    {
+      "n": 3,
+      "initial_rank": 1,
+      "atom_count": 2,
+      "initial": [
+        [
+          0,
+          [
+            0,
+            1
+          ]
+        ]
+      ],
+      "complete_log_endpoint_pairs": 3,
+      "rank_counts": {
+        "1": 3
+      },
+      "max_constructed_word": 2,
+      "all_logs_endpoints_and_budgets_match": true
+    },
+    {
+      "n": 3,
+      "initial_rank": 1,
+      "atom_count": 2,
+      "initial": [
+        [
+          1,
+          [
+            0,
+            1
+          ]
+        ]
+      ],
+      "complete_log_endpoint_pairs": 3,
+      "rank_counts": {
+        "1": 3
+      },
+      "max_constructed_word": 2,
+      "all_logs_endpoints_and_budgets_match": true
+    },
+    {
+      "n": 3,
+      "initial_rank": 2,
+      "atom_count": 4,
+      "initial": [
+        [
+          0,
+          [
+            0,
+            2
+          ]
+        ],
+        [
+          1,
+          [
+            1,
+            3
+          ]
+        ]
+      ],
+      "complete_log_endpoint_pairs": 12,
+      "rank_counts": {
+        "1": 6,
+        "2": 6
+      },
+      "max_constructed_word": 9,
+      "all_logs_endpoints_and_budgets_match": true
+    },
+    {
+      "n": 3,
+      "initial_rank": 2,
+      "atom_count": 4,
+      "initial": [
+        [
+          1,
+          [
+            0,
+            2
+          ]
+        ],
+        [
+          2,
+          [
+            1,
+            3
+          ]
+        ]
+      ],
+      "complete_log_endpoint_pairs": 12,
+      "rank_counts": {
+        "1": 6,
+        "2": 6
+      },
+      "max_constructed_word": 5,
+      "all_logs_endpoints_and_budgets_match": true
+    },
+    {
+      "n": 3,
+      "initial_rank": 3,
+      "atom_count": 6,
+      "initial": [
+        [
+          0,
+          [
+            0,
+            3
+          ]
+        ],
+        [
+          1,
+          [
+            1,
+            4
+          ]
+        ],
+        [
+          2,
+          [
+            2,
+            5
+          ]
+        ]
+      ],
+      "complete_log_endpoint_pairs": 39,
+      "rank_counts": {
+        "1": 18,
+        "2": 18,
+        "3": 3
+      },
+      "max_constructed_word": 10,
+      "all_logs_endpoints_and_budgets_match": true
+    },
+    {
+      "n": 3,
+      "initial_rank": 3,
+      "atom_count": 6,
+      "initial": [
+        [
+          0,
+          [
+            2,
+            5
+          ]
+        ],
+        [
+          1,
+          [
+            0,
+            3
+          ]
+        ],
+        [
+          2,
+          [
+            1,
+            4
+          ]
+        ]
+      ],
+      "complete_log_endpoint_pairs": 39,
+      "rank_counts": {
+        "1": 18,
+        "2": 18,
+        "3": 3
+      },
+      "max_constructed_word": 10,
+      "all_logs_endpoints_and_budgets_match": true
+    },
+    {
+      "n": 4,
+      "initial_rank": 1,
+      "atom_count": 2,
+      "initial": [
+        [
+          0,
+          [
+            0,
+            1
+          ]
+        ]
+      ],
+      "complete_log_endpoint_pairs": 4,
+      "rank_counts": {
+        "1": 4
+      },
+      "max_constructed_word": 3,
+      "all_logs_endpoints_and_budgets_match": true
+    },
+    {
+      "n": 4,
+      "initial_rank": 1,
+      "atom_count": 2,
+      "initial": [
+        [
+          1,
+          [
+            0,
+            1
+          ]
+        ]
+      ],
+      "complete_log_endpoint_pairs": 4,
+      "rank_counts": {
+        "1": 4
+      },
+      "max_constructed_word": 3,
+      "all_logs_endpoints_and_budgets_match": true
+    },
+    {
+      "n": 4,
+      "initial_rank": 2,
+      "atom_count": 4,
+      "initial": [
+        [
+          0,
+          [
+            0,
+            2
+          ]
+        ],
+        [
+          1,
+          [
+            1,
+            3
+          ]
+        ]
+      ],
+      "complete_log_endpoint_pairs": 20,
+      "rank_counts": {
+        "1": 8,
+        "2": 12
+      },
+      "max_constructed_word": 13,
+      "all_logs_endpoints_and_budgets_match": true
+    },
+    {
+      "n": 4,
+      "initial_rank": 2,
+      "atom_count": 4,
+      "initial": [
+        [
+          1,
+          [
+            0,
+            2
+          ]
+        ],
+        [
+          3,
+          [
+            1,
+            3
+          ]
+        ]
+      ],
+      "complete_log_endpoint_pairs": 20,
+      "rank_counts": {
+        "1": 8,
+        "2": 12
+      },
+      "max_constructed_word": 12,
+      "all_logs_endpoints_and_budgets_match": true
+    },
+    {
+      "n": 4,
+      "initial_rank": 3,
+      "atom_count": 6,
+      "initial": [
+        [
+          0,
+          [
+            0,
+            3
+          ]
+        ],
+        [
+          1,
+          [
+            1,
+            4
+          ]
+        ],
+        [
+          2,
+          [
+            2,
+            5
+          ]
+        ]
+      ],
+      "complete_log_endpoint_pairs": 72,
+      "rank_counts": {
+        "1": 24,
+        "2": 36,
+        "3": 12
+      },
+      "max_constructed_word": 18,
+      "all_logs_endpoints_and_budgets_match": true
+    },
+    {
+      "n": 4,
+      "initial_rank": 3,
+      "atom_count": 6,
+      "initial": [
+        [
+          1,
+          [
+            0,
+            3
+          ]
+        ],
+        [
+          2,
+          [
+            1,
+            4
+          ]
+        ],
+        [
+          3,
+          [
+            2,
+            5
+          ]
+        ]
+      ],
+      "complete_log_endpoint_pairs": 72,
+      "rank_counts": {
+        "1": 24,
+        "2": 36,
+        "3": 12
+      },
+      "max_constructed_word": 15,
+      "all_logs_endpoints_and_budgets_match": true
+    },
+    {
+      "n": 4,
+      "initial_rank": 4,
+      "atom_count": 8,
+      "initial": [
+        [
+          0,
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          1,
+          [
+            1,
+            5
+          ]
+        ],
+        [
+          2,
+          [
+            2,
+            6
+          ]
+        ],
+        [
+          3,
+          [
+            3,
+            7
+          ]
+        ]
+      ],
+      "complete_log_endpoint_pairs": 292,
+      "rank_counts": {
+        "1": 96,
+        "2": 144,
+        "3": 48,
+        "4": 4
+      },
+      "max_constructed_word": 20,
+      "all_logs_endpoints_and_budgets_match": true
+    },
+    {
+      "n": 4,
+      "initial_rank": 4,
+      "atom_count": 8,
+      "initial": [
+        [
+          0,
+          [
+            3,
+            7
+          ]
+        ],
+        [
+          1,
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          2,
+          [
+            1,
+            5
+          ]
+        ],
+        [
+          3,
+          [
+            2,
+            6
+          ]
+        ]
+      ],
+      "complete_log_endpoint_pairs": 292,
+      "rank_counts": {
+        "1": 96,
+        "2": 144,
+        "3": 48,
+        "4": 4
+      },
+      "max_constructed_word": 20,
+      "all_logs_endpoints_and_budgets_match": true
+    },
+    {
+      "n": 5,
+      "initial_rank": 1,
+      "atom_count": 2,
+      "initial": [
+        [
+          0,
+          [
+            0,
+            1
+          ]
+        ]
+      ],
+      "complete_log_endpoint_pairs": 5,
+      "rank_counts": {
+        "1": 5
+      },
+      "max_constructed_word": 4,
+      "all_logs_endpoints_and_budgets_match": true
+    },
+    {
+      "n": 5,
+      "initial_rank": 1,
+      "atom_count": 2,
+      "initial": [
+        [
+          1,
+          [
+            0,
+            1
+          ]
+        ]
+      ],
+      "complete_log_endpoint_pairs": 5,
+      "rank_counts": {
+        "1": 5
+      },
+      "max_constructed_word": 4,
+      "all_logs_endpoints_and_budgets_match": true
+    },
+    {
+      "n": 5,
+      "initial_rank": 2,
+      "atom_count": 4,
+      "initial": [
+        [
+          0,
+          [
+            0,
+            2
+          ]
+        ],
+        [
+          1,
+          [
+            1,
+            3
+          ]
+        ]
+      ],
+      "complete_log_endpoint_pairs": 30,
+      "rank_counts": {
+        "1": 10,
+        "2": 20
+      },
+      "max_constructed_word": 17,
+      "all_logs_endpoints_and_budgets_match": true
+    },
+    {
+      "n": 5,
+      "initial_rank": 2,
+      "atom_count": 4,
+      "initial": [
+        [
+          1,
+          [
+            0,
+            2
+          ]
+        ],
+        [
+          3,
+          [
+            1,
+            3
+          ]
+        ]
+      ],
+      "complete_log_endpoint_pairs": 30,
+      "rank_counts": {
+        "1": 10,
+        "2": 20
+      },
+      "max_constructed_word": 15,
+      "all_logs_endpoints_and_budgets_match": true
+    },
+    {
+      "n": 5,
+      "initial_rank": 3,
+      "atom_count": 6,
+      "initial": [
+        [
+          0,
+          [
+            0,
+            3
+          ]
+        ],
+        [
+          1,
+          [
+            1,
+            4
+          ]
+        ],
+        [
+          2,
+          [
+            2,
+            5
+          ]
+        ]
+      ],
+      "complete_log_endpoint_pairs": 120,
+      "rank_counts": {
+        "1": 30,
+        "2": 60,
+        "3": 30
+      },
+      "max_constructed_word": 24,
+      "all_logs_endpoints_and_budgets_match": true
+    },
+    {
+      "n": 5,
+      "initial_rank": 3,
+      "atom_count": 6,
+      "initial": [
+        [
+          1,
+          [
+            0,
+            3
+          ]
+        ],
+        [
+          2,
+          [
+            1,
+            4
+          ]
+        ],
+        [
+          4,
+          [
+            2,
+            5
+          ]
+        ]
+      ],
+      "complete_log_endpoint_pairs": 120,
+      "rank_counts": {
+        "1": 30,
+        "2": 60,
+        "3": 30
+      },
+      "max_constructed_word": 23,
+      "all_logs_endpoints_and_budgets_match": true
+    },
+    {
+      "n": 5,
+      "initial_rank": 4,
+      "atom_count": 8,
+      "initial": [
+        [
+          0,
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          1,
+          [
+            1,
+            5
+          ]
+        ],
+        [
+          2,
+          [
+            2,
+            6
+          ]
+        ],
+        [
+          3,
+          [
+            3,
+            7
+          ]
+        ]
+      ],
+      "complete_log_endpoint_pairs": 500,
+      "rank_counts": {
+        "1": 120,
+        "2": 240,
+        "3": 120,
+        "4": 20
+      },
+      "max_constructed_word": 30,
+      "all_logs_endpoints_and_budgets_match": true
+    },
+    {
+      "n": 5,
+      "initial_rank": 4,
+      "atom_count": 8,
+      "initial": [
+        [
+          1,
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          2,
+          [
+            1,
+            5
+          ]
+        ],
+        [
+          3,
+          [
+            2,
+            6
+          ]
+        ],
+        [
+          4,
+          [
+            3,
+            7
+          ]
+        ]
+      ],
+      "complete_log_endpoint_pairs": 500,
+      "rank_counts": {
+        "1": 120,
+        "2": 240,
+        "3": 120,
+        "4": 20
+      },
+      "max_constructed_word": 27,
+      "all_logs_endpoints_and_budgets_match": true
+    },
+    {
+      "n": 5,
+      "initial_rank": 5,
+      "atom_count": 10,
+      "initial": [
+        [
+          0,
+          [
+            0,
+            5
+          ]
+        ],
+        [
+          1,
+          [
+            1,
+            6
+          ]
+        ],
+        [
+          2,
+          [
+            2,
+            7
+          ]
+        ],
+        [
+          3,
+          [
+            3,
+            8
+          ]
+        ],
+        [
+          4,
+          [
+            4,
+            9
+          ]
+        ]
+      ],
+      "complete_log_endpoint_pairs": 2505,
+      "rank_counts": {
+        "1": 600,
+        "2": 1200,
+        "3": 600,
+        "4": 100,
+        "5": 5
+      },
+      "max_constructed_word": 33,
+      "all_logs_endpoints_and_budgets_match": true
+    },
+    {
+      "n": 5,
+      "initial_rank": 5,
+      "atom_count": 10,
+      "initial": [
+        [
+          0,
+          [
+            4,
+            9
+          ]
+        ],
+        [
+          1,
+          [
+            0,
+            5
+          ]
+        ],
+        [
+          2,
+          [
+            1,
+            6
+          ]
+        ],
+        [
+          3,
+          [
+            2,
+            7
+          ]
+        ],
+        [
+          4,
+          [
+            3,
+            8
+          ]
+        ]
+      ],
+      "complete_log_endpoint_pairs": 2505,
+      "rank_counts": {
+        "1": 600,
+        "2": 1200,
+        "3": 600,
+        "4": 100,
+        "5": 5
+      },
+      "max_constructed_word": 33,
+      "all_logs_endpoints_and_budgets_match": true
+    },
+    {
+      "n": 6,
+      "initial_rank": 1,
+      "atom_count": 2,
+      "initial": [
+        [
+          0,
+          [
+            0,
+            1
+          ]
+        ]
+      ],
+      "complete_log_endpoint_pairs": 6,
+      "rank_counts": {
+        "1": 6
+      },
+      "max_constructed_word": 5,
+      "all_logs_endpoints_and_budgets_match": true
+    },
+    {
+      "n": 6,
+      "initial_rank": 1,
+      "atom_count": 2,
+      "initial": [
+        [
+          1,
+          [
+            0,
+            1
+          ]
+        ]
+      ],
+      "complete_log_endpoint_pairs": 6,
+      "rank_counts": {
+        "1": 6
+      },
+      "max_constructed_word": 5,
+      "all_logs_endpoints_and_budgets_match": true
+    },
+    {
+      "n": 6,
+      "initial_rank": 2,
+      "atom_count": 4,
+      "initial": [
+        [
+          0,
+          [
+            0,
+            2
+          ]
+        ],
+        [
+          1,
+          [
+            1,
+            3
+          ]
+        ]
+      ],
+      "complete_log_endpoint_pairs": 42,
+      "rank_counts": {
+        "1": 12,
+        "2": 30
+      },
+      "max_constructed_word": 21,
+      "all_logs_endpoints_and_budgets_match": true
+    },
+    {
+      "n": 6,
+      "initial_rank": 2,
+      "atom_count": 4,
+      "initial": [
+        [
+          1,
+          [
+            0,
+            2
+          ]
+        ],
+        [
+          4,
+          [
+            1,
+            3
+          ]
+        ]
+      ],
+      "complete_log_endpoint_pairs": 42,
+      "rank_counts": {
+        "1": 12,
+        "2": 30
+      },
+      "max_constructed_word": 19,
+      "all_logs_endpoints_and_budgets_match": true
+    },
+    {
+      "n": 6,
+      "initial_rank": 3,
+      "atom_count": 6,
+      "initial": [
+        [
+          0,
+          [
+            0,
+            3
+          ]
+        ],
+        [
+          1,
+          [
+            1,
+            4
+          ]
+        ],
+        [
+          2,
+          [
+            2,
+            5
+          ]
+        ]
+      ],
+      "complete_log_endpoint_pairs": 186,
+      "rank_counts": {
+        "1": 36,
+        "2": 90,
+        "3": 60
+      },
+      "max_constructed_word": 30,
+      "all_logs_endpoints_and_budgets_match": true
+    },
+    {
+      "n": 6,
+      "initial_rank": 3,
+      "atom_count": 6,
+      "initial": [
+        [
+          1,
+          [
+            0,
+            3
+          ]
+        ],
+        [
+          3,
+          [
+            1,
+            4
+          ]
+        ],
+        [
+          5,
+          [
+            2,
+            5
+          ]
+        ]
+      ],
+      "complete_log_endpoint_pairs": 186,
+      "rank_counts": {
+        "1": 36,
+        "2": 90,
+        "3": 60
+      },
+      "max_constructed_word": 28,
+      "all_logs_endpoints_and_budgets_match": true
+    },
+    {
+      "n": 6,
+      "initial_rank": 4,
+      "atom_count": 8,
+      "initial": [
+        [
+          0,
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          1,
+          [
+            1,
+            5
+          ]
+        ],
+        [
+          2,
+          [
+            2,
+            6
+          ]
+        ],
+        [
+          3,
+          [
+            3,
+            7
+          ]
+        ]
+      ],
+      "complete_log_endpoint_pairs": 804,
+      "rank_counts": {
+        "1": 144,
+        "2": 360,
+        "3": 240,
+        "4": 60
+      },
+      "max_constructed_word": 38,
+      "all_logs_endpoints_and_budgets_match": true
+    },
+    {
+      "n": 6,
+      "initial_rank": 4,
+      "atom_count": 8,
+      "initial": [
+        [
+          1,
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          2,
+          [
+            1,
+            5
+          ]
+        ],
+        [
+          4,
+          [
+            2,
+            6
+          ]
+        ],
+        [
+          5,
+          [
+            3,
+            7
+          ]
+        ]
+      ],
+      "complete_log_endpoint_pairs": 804,
+      "rank_counts": {
+        "1": 144,
+        "2": 360,
+        "3": 240,
+        "4": 60
+      },
+      "max_constructed_word": 40,
+      "all_logs_endpoints_and_budgets_match": true
+    },
+    {
+      "n": 6,
+      "initial_rank": 5,
+      "atom_count": 10,
+      "initial": [
+        [
+          0,
+          [
+            0,
+            5
+          ]
+        ],
+        [
+          1,
+          [
+            1,
+            6
+          ]
+        ],
+        [
+          2,
+          [
+            2,
+            7
+          ]
+        ],
+        [
+          3,
+          [
+            3,
+            8
+          ]
+        ],
+        [
+          4,
+          [
+            4,
+            9
+          ]
+        ]
+      ],
+      "complete_log_endpoint_pairs": 4050,
+      "rank_counts": {
+        "1": 720,
+        "2": 1800,
+        "3": 1200,
+        "4": 300,
+        "5": 30
+      },
+      "max_constructed_word": 45,
+      "all_logs_endpoints_and_budgets_match": true
+    },
+    {
+      "n": 6,
+      "initial_rank": 5,
+      "atom_count": 10,
+      "initial": [
+        [
+          1,
+          [
+            0,
+            5
+          ]
+        ],
+        [
+          2,
+          [
+            1,
+            6
+          ]
+        ],
+        [
+          3,
+          [
+            2,
+            7
+          ]
+        ],
+        [
+          4,
+          [
+            3,
+            8
+          ]
+        ],
+        [
+          5,
+          [
+            4,
+            9
+          ]
+        ]
+      ],
+      "complete_log_endpoint_pairs": 4050,
+      "rank_counts": {
+        "1": 720,
+        "2": 1800,
+        "3": 1200,
+        "4": 300,
+        "5": 30
+      },
+      "max_constructed_word": 44,
+      "all_logs_endpoints_and_budgets_match": true
+    },
+    {
+      "n": 6,
+      "initial_rank": 6,
+      "atom_count": 12,
+      "initial": [
+        [
+          0,
+          [
+            0,
+            6
+          ]
+        ],
+        [
+          1,
+          [
+            1,
+            7
+          ]
+        ],
+        [
+          2,
+          [
+            2,
+            8
+          ]
+        ],
+        [
+          3,
+          [
+            3,
+            9
+          ]
+        ],
+        [
+          4,
+          [
+            4,
+            10
+          ]
+        ],
+        [
+          5,
+          [
+            5,
+            11
+          ]
+        ]
+      ],
+      "complete_log_endpoint_pairs": 24306,
+      "rank_counts": {
+        "1": 4320,
+        "2": 10800,
+        "3": 7200,
+        "4": 1800,
+        "5": 180,
+        "6": 6
+      },
+      "max_constructed_word": 49,
+      "all_logs_endpoints_and_budgets_match": true
+    },
+    {
+      "n": 6,
+      "initial_rank": 6,
+      "atom_count": 12,
+      "initial": [
+        [
+          0,
+          [
+            5,
+            11
+          ]
+        ],
+        [
+          1,
+          [
+            0,
+            6
+          ]
+        ],
+        [
+          2,
+          [
+            1,
+            7
+          ]
+        ],
+        [
+          3,
+          [
+            2,
+            8
+          ]
+        ],
+        [
+          4,
+          [
+            3,
+            9
+          ]
+        ],
+        [
+          5,
+          [
+            4,
+            10
+          ]
+        ]
+      ],
+      "complete_log_endpoint_pairs": 24306,
+      "rank_counts": {
+        "1": 4320,
+        "2": 10800,
+        "3": 7200,
+        "4": 1800,
+        "5": 180,
+        "6": 6
+      },
+      "max_constructed_word": 49,
+      "all_logs_endpoints_and_budgets_match": true
+    }
+  ],
+  "shared_raw_step_implementation": "core.step",
+  "kernel_formalization_claimed": false
+}
