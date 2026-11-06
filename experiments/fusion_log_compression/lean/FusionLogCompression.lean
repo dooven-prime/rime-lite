@@ -1,0 +1,6 @@
+import FusionLogCompression.FullFusionLog
+import FusionLogCompression.M3BatchPlacement
+import FusionLogCompression.M3GapFlow
+import FusionLogCompression.M3GapBatch
+import FusionLogCompression.M3LinearSchedule
+import FusionLogCompression.M3Placement

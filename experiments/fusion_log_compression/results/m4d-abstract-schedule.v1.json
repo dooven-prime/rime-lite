@@ -1,0 +1,156 @@
+{
+  "status": "PASS_M4D_ABSTRACT_SCHEDULE_CLASSIFICATION",
+  "completed_at_utc": "2026-11-06T00:32:26.669143+00:00",
+  "lean_version": "Lean (version 4.33.0, x86_64-w64-windows-gnu, commit d8b18978322de05a8f3dba51ef03cf5461676c17, Release)",
+  "mathlib_revision": "db584cd6d46c92f209a44c0f1c829460d327499d",
+  "m4d_manifest_sha256": "8a62981066908a78a4085c2977636cd4ffec83c283b5fd38997cc67ba31dc275",
+  "m4c_manifest_sha256": "606e08c94497e48098d8f7c78ad9572ebc6b4614d5c7552f9254743b35d9660d",
+  "build_completed": true,
+  "build_output_sha256": "3d871e0a4525c90630374b45023e3d43cea158c53ed7d117d6b1524554b5712b",
+  "axioms": {
+    "FusionLogSchedule.AbstractTrace.last_eq_fold": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogSchedule.AbstractTrace.last_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogSchedule.abstract_step_realizable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogSchedule.AbstractTrace.realize": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogSchedule.actual_trace_admissible": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogSchedule.realize_index_joint": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogSchedule.index_joint_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogSchedule.actual_joint_certificate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogSchedule.realize_admissible_schedule": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogSchedule.joint_realization_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogSchedule.admissible_compatible_iff_bounded_joint": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogSchedule.index_compatible_iff_named_cycle": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogSchedule.initial_packets_saturated": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogSchedule.merge_packets_saturated": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogSchedule.AbstractTrace.preserves_saturation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogSchedule.restore_expandBlock": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogSchedule.restore_expand_record": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogSchedule.AbstractTrace.restore_records": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogSchedule.AdmissibleSchedule.indexEvents_recover": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogSchedule.AdmissibleSchedule.indexEvents_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogSchedule.AdmissibleSchedule.last_eq_finalPackets": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogSchedule.compatibleEndpoint_iff_forLog": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogSchedule.admissibleAndCompatible_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogSchedule.abstract_schedule_endpoint_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogSchedule.abstract_schedule_bounded_realization": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogSchedule.abstract_schedule_endpoint_iff_bounded": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogSchedule.packetPartition_of_named": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "audit_output": "'FusionLogSchedule.AbstractTrace.last_eq_fold' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogSchedule.AbstractTrace.last_unique' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogSchedule.abstract_step_realizable' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogSchedule.AbstractTrace.realize' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogSchedule.actual_trace_admissible' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogSchedule.realize_index_joint' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogSchedule.index_joint_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogSchedule.actual_joint_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogSchedule.realize_admissible_schedule' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogSchedule.joint_realization_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogSchedule.admissible_compatible_iff_bounded_joint' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogSchedule.index_compatible_iff_named_cycle' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogSchedule.initial_packets_saturated' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogSchedule.merge_packets_saturated' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogSchedule.AbstractTrace.preserves_saturation' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogSchedule.restore_expandBlock' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogSchedule.restore_expand_record' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogSchedule.AbstractTrace.restore_records' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogSchedule.AdmissibleSchedule.indexEvents_recover' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogSchedule.AdmissibleSchedule.indexEvents_unique' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogSchedule.AdmissibleSchedule.last_eq_finalPackets' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogSchedule.compatibleEndpoint_iff_forLog' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogSchedule.admissibleAndCompatible_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogSchedule.abstract_schedule_endpoint_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogSchedule.abstract_schedule_bounded_realization' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogSchedule.abstract_schedule_endpoint_iff_bounded' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogSchedule.packetPartition_of_named' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+  "signatures_output": "@FusionLogSchedule.abstract_schedule_endpoint_iff.{u_1} : \u2200 {n : \u2115} [inst : NeZero.{0} n] {\u03b1 : Type u_1}\n  [inst_1 : DecidableEq.{u_1 + 1} \u03b1] (F : Finset.{u_1} \u03b1) (source : RegisteredAbsorptionChains.Execution.{u_1} n \u03b1)\n  (events : List.{u_1} (RegisteredAbsorptionChains.FusionRecord.{u_1} \u03b1))\n  (target : RegisteredAbsorptionChains.Placement.{u_1} n (Finset.{u_1} \u03b1)),\n  LE.le.{0} 3 n \u2192\n    \u2200\n      (nonempty :\n        Finset.Nonempty.{0}\n          (FusionLogReplay.occupiedSites.{u_1} (RegisteredAbsorptionChains.Execution.placed.{u_1} source))),\n      FusionLogSchedule.PacketPartition.{u_1} (RegisteredAbsorptionChains.Execution.placed.{u_1} source) \u2192\n        (FusionLogSchedule.JointlyAttainable.{u_1} F source events target \u2194\n          FusionLogSchedule.IsAdmissibleSchedule.{u_1} (RegisteredAbsorptionChains.Execution.placed.{u_1} source)\n              nonempty events \u2227\n            FusionLogSchedule.CompatibleForLog.{u_1} (RegisteredAbsorptionChains.Execution.placed.{u_1} source) nonempty\n              events target)\n@FusionLogSchedule.abstract_schedule_bounded_realization.{u_1} : \u2200 {n : \u2115} [inst : NeZero.{0} n] {\u03b1 : Type u_1}\n  [inst_1 : DecidableEq.{u_1 + 1} \u03b1] (F : Finset.{u_1} \u03b1) (source : RegisteredAbsorptionChains.Execution.{u_1} n \u03b1)\n  (events : List.{u_1} (RegisteredAbsorptionChains.FusionRecord.{u_1} \u03b1))\n  (target : RegisteredAbsorptionChains.Placement.{u_1} n (Finset.{u_1} \u03b1)),\n  LE.le.{0} 3 n \u2192\n    \u2200\n      (nonempty :\n        Finset.Nonempty.{0}\n          (FusionLogReplay.occupiedSites.{u_1} (RegisteredAbsorptionChains.Execution.placed.{u_1} source))),\n      FusionLogSchedule.PacketPartition.{u_1} (RegisteredAbsorptionChains.Execution.placed.{u_1} source) \u2192\n        FusionLogSchedule.IsAdmissibleSchedule.{u_1} (RegisteredAbsorptionChains.Execution.placed.{u_1} source) nonempty\n            events \u2192\n          FusionLogSchedule.CompatibleForLog.{u_1} (RegisteredAbsorptionChains.Execution.placed.{u_1} source) nonempty\n              events target \u2192\n            \u2203 word,\n              Eq.{u_1 + 1} (FusionLogReplay.eventTrace.{u_1} F source word) events \u2227\n                Eq.{u_1 + 1}\n                    (RegisteredAbsorptionChains.Execution.placed.{u_1}\n                      (RegisteredAbsorptionChains.run.{u_1} F source word))\n                    target \u2227\n                  LE.le.{0} (List.length.{0} word)\n                    (FusionLogReplay.normalFormBudget n\n                      (Finset.card.{0}\n                        (FusionLogReplay.occupiedSites.{u_1}\n                          (RegisteredAbsorptionChains.Execution.placed.{u_1} source)))\n                      (Finset.card.{0} (FusionLogReplay.occupiedSites.{u_1} target)))\n@FusionLogSchedule.abstract_schedule_endpoint_iff_bounded.{u_1} : \u2200 {n : \u2115} [inst : NeZero.{0} n] {\u03b1 : Type u_1}\n  [inst_1 : DecidableEq.{u_1 + 1} \u03b1] (F : Finset.{u_1} \u03b1) (source : RegisteredAbsorptionChains.Execution.{u_1} n \u03b1)\n  (events : List.{u_1} (RegisteredAbsorptionChains.FusionRecord.{u_1} \u03b1))\n  (target : RegisteredAbsorptionChains.Placement.{u_1} n (Finset.{u_1} \u03b1)),\n  LE.le.{0} 3 n \u2192\n    \u2200\n      (nonempty :\n        Finset.Nonempty.{0}\n          (FusionLogReplay.occupiedSites.{u_1} (RegisteredAbsorptionChains.Execution.placed.{u_1} source))),\n      FusionLogSchedule.PacketPartition.{u_1} (RegisteredAbsorptionChains.Execution.placed.{u_1} source) \u2192\n        (FusionLogSchedule.IsAdmissibleSchedule.{u_1} (RegisteredAbsorptionChains.Execution.placed.{u_1} source)\n              nonempty events \u2227\n            FusionLogSchedule.CompatibleForLog.{u_1} (RegisteredAbsorptionChains.Execution.placed.{u_1} source) nonempty\n              events target \u2194\n          \u2203 word,\n            Eq.{u_1 + 1} (FusionLogReplay.eventTrace.{u_1} F source word) events \u2227\n              Eq.{u_1 + 1}\n                  (RegisteredAbsorptionChains.Execution.placed.{u_1}\n                    (RegisteredAbsorptionChains.run.{u_1} F source word))\n                  target \u2227\n                LE.le.{0} (List.length.{0} word)\n                  (FusionLogReplay.normalFormBudget n\n                    (Finset.card.{0}\n                      (FusionLogReplay.occupiedSites.{u_1} (RegisteredAbsorptionChains.Execution.placed.{u_1} source)))\n                    (Finset.card.{0} (FusionLogReplay.occupiedSites.{u_1} target))))\nstructure FusionLogSchedule.AdmissibleSchedule.{u_1} {n : \u2115} [NeZero n] {\u03b1 : Type u_1} [DecidableEq \u03b1]\n  (initial : RegisteredAbsorptionChains.Placement n (Finset \u03b1))\n  (nonempty : (FusionLogReplay.occupiedSites initial).Nonempty)\n  (events : List (RegisteredAbsorptionChains.FusionRecord \u03b1)) : Type\nnumber of parameters: 7\nfields:\n  FusionLogSchedule.AdmissibleSchedule.indexEvents : List (RegisteredAbsorptionChains.FusionRecord (ZMod n))\n  FusionLogSchedule.AdmissibleSchedule.last : FusionLogSchedule.IndexPackets n\n  FusionLogSchedule.AdmissibleSchedule.abstractTrace : FusionLogSchedule.AbstractTrace\n      (FusionLogReplay.packetSet (FusionLogInterpretation.canonicalPlacement initial nonempty)) self.indexEvents\n      self.last\n  FusionLogSchedule.AdmissibleSchedule.records : List.map\n        (FusionLogInterpretation.expandRecord (FusionLogInterpretation.siteLabels initial)) self.indexEvents =\n      events\nconstructor:\n  FusionLogSchedule.AdmissibleSchedule.mk.{u_1} {n : \u2115} [NeZero n] {\u03b1 : Type u_1} [DecidableEq \u03b1]\n    {initial : RegisteredAbsorptionChains.Placement n (Finset \u03b1)}\n    {nonempty : (FusionLogReplay.occupiedSites initial).Nonempty}\n    {events : List (RegisteredAbsorptionChains.FusionRecord \u03b1)}\n    (indexEvents : List (RegisteredAbsorptionChains.FusionRecord (ZMod n))) (last : FusionLogSchedule.IndexPackets n)\n    (abstractTrace :\n      FusionLogSchedule.AbstractTrace\n        (FusionLogReplay.packetSet (FusionLogInterpretation.canonicalPlacement initial nonempty)) indexEvents last)\n    (records :\n      List.map (FusionLogInterpretation.expandRecord (FusionLogInterpretation.siteLabels initial)) indexEvents =\n        events) :\n    FusionLogSchedule.AdmissibleSchedule initial nonempty events\ndef FusionLogSchedule.CompatibleForLog.{u_1} : {n : \u2115} \u2192\n  [inst : NeZero n] \u2192\n    {\u03b1 : Type u_1} \u2192\n      [DecidableEq \u03b1] \u2192\n        (initial : RegisteredAbsorptionChains.Placement n (Finset \u03b1)) \u2192\n          (FusionLogReplay.occupiedSites initial).Nonempty \u2192\n            List (RegisteredAbsorptionChains.FusionRecord \u03b1) \u2192\n              RegisteredAbsorptionChains.Placement n (Finset \u03b1) \u2192 Prop :=\nfun {n} [NeZero n] {\u03b1} [DecidableEq \u03b1] initial nonempty events target =>\n  \u2203 indexTarget,\n    FusionLogSchedule.IndexCompatible (FusionLogSchedule.finalPackets initial nonempty events) indexTarget \u2227\n      FusionLogInterpretation.expandPlacement (FusionLogInterpretation.siteLabels initial) indexTarget = target\nstructure FusionLogSchedule.PacketPartition.{u_1} {n : \u2115} {\u03b1 : Type u_1}\n  (P : RegisteredAbsorptionChains.Placement n (Finset \u03b1)) : Prop\nnumber of parameters: 3\nfields:\n  FusionLogSchedule.PacketPartition.nonempty : \u2200 (q : ZMod n) (A : Finset \u03b1), P q = some A \u2192 A.Nonempty\n  FusionLogSchedule.PacketPartition.disjoint : \u2200 (q r : ZMod n) (A B : Finset \u03b1),\n      q \u2260 r \u2192 P q = some A \u2192 P r = some B \u2192 Disjoint A B\nconstructor:\n  FusionLogSchedule.PacketPartition.mk.{u_1} {n : \u2115} {\u03b1 : Type u_1}\n    {P : RegisteredAbsorptionChains.Placement n (Finset \u03b1)}\n    (nonempty : \u2200 (q : ZMod n) (A : Finset \u03b1), P q = some A \u2192 A.Nonempty)\n    (disjoint : \u2200 (q r : ZMod n) (A B : Finset \u03b1), q \u2260 r \u2192 P q = some A \u2192 P r = some B \u2192 Disjoint A B) :\n    FusionLogSchedule.PacketPartition P\n",
+  "scope": "All n >= 3, arbitrary decidable atom type and nonempty initial partition into nonempty disjoint packets: abstract admissible schedule and compatible endpoint iff actual complete-log/literal-endpoint realization, with B(n,t,s)",
+  "open_obligations": [
+    "Rank-s joint log/endpoint counts and forgetful endpoint fibres",
+    "All-R exact shortest-word optimality and uniqueness"
+  ],
+  "publication_identity": null,
+  "independent_cold_replay": false
+}

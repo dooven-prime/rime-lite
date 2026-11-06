@@ -1,0 +1,10 @@
+name = "fusion_log_replay"
+version = "0.1.0"
+defaultTargets = ["FusionLogReplay"]
+
+[[require]]
+name = "fusion_log_compression"
+path = "../lean"
+
+[[lean_lib]]
+name = "FusionLogReplay"

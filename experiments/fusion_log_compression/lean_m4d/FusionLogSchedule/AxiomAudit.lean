@@ -1,0 +1,29 @@
+import FusionLogSchedule
+
+#print axioms FusionLogSchedule.AbstractTrace.last_eq_fold
+#print axioms FusionLogSchedule.AbstractTrace.last_unique
+#print axioms FusionLogSchedule.abstract_step_realizable
+#print axioms FusionLogSchedule.AbstractTrace.realize
+#print axioms FusionLogSchedule.actual_trace_admissible
+#print axioms FusionLogSchedule.realize_index_joint
+#print axioms FusionLogSchedule.index_joint_iff
+#print axioms FusionLogSchedule.actual_joint_certificate
+#print axioms FusionLogSchedule.realize_admissible_schedule
+#print axioms FusionLogSchedule.joint_realization_iff
+#print axioms FusionLogSchedule.admissible_compatible_iff_bounded_joint
+#print axioms FusionLogSchedule.index_compatible_iff_named_cycle
+#print axioms FusionLogSchedule.initial_packets_saturated
+#print axioms FusionLogSchedule.merge_packets_saturated
+#print axioms FusionLogSchedule.AbstractTrace.preserves_saturation
+#print axioms FusionLogSchedule.restore_expandBlock
+#print axioms FusionLogSchedule.restore_expand_record
+#print axioms FusionLogSchedule.AbstractTrace.restore_records
+#print axioms FusionLogSchedule.AdmissibleSchedule.indexEvents_recover
+#print axioms FusionLogSchedule.AdmissibleSchedule.indexEvents_unique
+#print axioms FusionLogSchedule.AdmissibleSchedule.last_eq_finalPackets
+#print axioms FusionLogSchedule.compatibleEndpoint_iff_forLog
+#print axioms FusionLogSchedule.admissibleAndCompatible_iff
+#print axioms FusionLogSchedule.abstract_schedule_endpoint_iff
+#print axioms FusionLogSchedule.abstract_schedule_bounded_realization
+#print axioms FusionLogSchedule.abstract_schedule_endpoint_iff_bounded
+#print axioms FusionLogSchedule.packetPartition_of_named

@@ -1,0 +1,10 @@
+name = "fusion_log_schedule"
+version = "0.1.0"
+defaultTargets = ["FusionLogSchedule"]
+
+[[require]]
+name = "fusion_log_interpretation"
+path = "../lean_m4c"
+
+[[lean_lib]]
+name = "FusionLogSchedule"

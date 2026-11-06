@@ -1,0 +1,112 @@
+name: Fusion-log Lean CI
+
+on:
+  pull_request:
+    paths:
+      - ".gitattributes"
+      - ".github/workflows/fusion-log-lean.yml"
+      - "experiments/fusion_log_compression/**"
+      - "papers/unnumbered/fusion_log_compression/**"
+      - "papers/tex/**"
+  push:
+    branches: [master, "codex/**"]
+    paths:
+      - ".gitattributes"
+      - ".github/workflows/fusion-log-lean.yml"
+      - "experiments/fusion_log_compression/**"
+      - "papers/unnumbered/fusion_log_compression/**"
+      - "papers/tex/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: fusion-log-lean-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  m4cd-proof:
+    name: M4-C/M4-D proof and frozen ancestors
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: "3.13"
+
+      - name: Verify HAL tag and pinned M4-B/M4-C source closures
+        working-directory: experiments/fusion_log_compression
+        run: python -B validation/verify_ci_ancestors.py --report "$RUNNER_TEMP/fusion-log-evidence/ancestors.json"
+
+      - name: Test proof validation gates
+        working-directory: experiments/fusion_log_compression
+        run: |
+          python -B -m unittest discover -s validation -p test_replay.py
+          python -B -m unittest discover -s validation -p test_replay_m4.py
+          python -B -m unittest discover -s validation -p test_replay_m4c.py
+
+      - name: Build pinned M4-C Lean package
+        uses: leanprover/lean-action@fe408643ea7367d8c0404a8be3975bb145f5fb64 # v1
+        with:
+          lake-package-directory: experiments/fusion_log_compression/lean_m4c
+          auto-config: "false"
+          build: "true"
+          test: "false"
+          lint: "false"
+          use-mathlib-cache: "true"
+          use-github-cache: "false"
+
+      - name: Replay M4-C and audit 29 transitive axiom targets
+        working-directory: experiments/fusion_log_compression
+        run: python -B validation/replay_m4c.py --report "$RUNNER_TEMP/fusion-log-evidence/m4c-replay.json"
+
+      - name: Verify M4-D frozen inputs
+        working-directory: experiments/fusion_log_compression
+        run: python -B validation/replay_m4d.py --verify-inputs-only
+
+      - name: Test M4-D validation gates
+        working-directory: experiments/fusion_log_compression
+        run: python -B -m unittest discover -s validation -p test_replay_m4d.py
+
+      - name: Share this runner's pinned external dependencies
+        working-directory: experiments/fusion_log_compression
+        run: |
+          mkdir -p lean_m4d/.lake
+          test ! -e lean_m4d/.lake/packages
+          ln -s ../../lean_m4c/.lake/packages lean_m4d/.lake/packages
+
+      - name: Build pinned M4-D Lean package
+        uses: leanprover/lean-action@fe408643ea7367d8c0404a8be3975bb145f5fb64 # v1
+        with:
+          lake-package-directory: experiments/fusion_log_compression/lean_m4d
+          auto-config: "false"
+          build: "true"
+          test: "false"
+          lint: "false"
+          use-mathlib-cache: "true"
+          use-github-cache: "false"
+
+      - name: Replay M4-D and audit 27 axiom targets
+        working-directory: experiments/fusion_log_compression
+        run: python -B validation/replay_m4d.py --report "$RUNNER_TEMP/fusion-log-evidence/m4d-replay.json"
+
+      - name: Cross-check receipts and record runner identity
+        working-directory: experiments/fusion_log_compression
+        env:
+          PROOF_SOURCE_COMMIT: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: python -B validation/collect_ci_receipts.py --directory "$RUNNER_TEMP/fusion-log-evidence"
+
+      - name: Retain source-bound replay receipts
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: fusion-log-proof-receipts-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/fusion-log-evidence/*.json
+          if-no-files-found: warn
+          retention-days: 90

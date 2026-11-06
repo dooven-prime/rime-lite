@@ -1,0 +1,191 @@
+{
+  "status": "PASS_M4_BUDGETED_SOURCE_ORDERED_REPLAY",
+  "completed_at_utc": "2026-11-05T09:57:20.182796+00:00",
+  "lean_version": "Lean (version 4.33.0, x86_64-w64-windows-gnu, commit d8b18978322de05a8f3dba51ef03cf5461676c17, Release)",
+  "m4_manifest_sha256": "69456464ff271024c8ab9e97694d5c8fdf125db3c309aadf98fded7fb07612ed",
+  "mathlib_revision": "db584cd6d46c92f209a44c0f1c829460d327499d",
+  "m3_manifest_sha256": "65bf9a915294891a0b5558a16445f64588cda4db8cd893c579ccd4d294cd4169",
+  "build_completed": true,
+  "axioms": {
+    "FusionLogReplay.eventTrace_eq_nil_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogReplay.runLogged_fullLog": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogReplay.firstFusion_split": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogReplay.packetSet_run_of_fusionFree": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogReplay.packetSet_fusion": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogReplay.firstEvent_route": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogReplay.firstEvent_replay_step": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogReplay.replay_complete_events": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogReplay.align_sourceOrdered_endpoint": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogReplay.sourceOrdered_log_endpoint_representative": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogReplay.packetRank_eq_occupied": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogReplay.gap_le_hole_count": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogReplay.packetRank_fusion_drop": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogReplay.packetRank_step_event": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogReplay.packetRank_run_ledger": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogReplay.prefix_rank_and_holes": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogReplay.FusionStage.gap_le_holes": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogReplay.FusionStage.rank_drop": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogReplay.FusionStage.cost": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogReplay.FusionStage.no_batch_of_zero_gap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogReplay.FusionReplayPlan.run_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogReplay.FusionReplayPlan.trace_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogReplay.FusionReplayPlan.rank_ledger": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogReplay.FusionReplayPlan.batch_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogReplay.FusionReplayPlan.transfer_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogReplay.FusionReplayPlan.sharp_length_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogReplay.replay_complete_events_plan": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogReplay.align_sourceOrdered_endpoint_plan": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogReplay.JointReplayPlan.event_count": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogReplay.JointReplayPlan.execute": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogReplay.JointReplayPlan.length_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogReplay.JointReplayPlan.batch_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogReplay.JointReplayPlan.transfer_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogReplay.sourceOrdered_log_endpoint_budget": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "audit_output": "@FusionLogReplay.replay_complete_events : \u2200 {n : \u2115} [inst : NeZero n] (F : Finset (ZMod n))\n  (reference current : RegisteredAbsorptionChains.Execution n (ZMod n)) (word : List RegisteredAbsorptionChains.Letter),\n  3 \u2264 n \u2192\n    RegisteredAbsorptionChains.SourceOrdered reference.placed \u2192\n      RegisteredAbsorptionChains.SourceOrdered current.placed \u2192\n        FusionLogReplay.packetSet current.placed = FusionLogReplay.packetSet reference.placed \u2192\n          \u2203 route,\n            FusionLogReplay.eventTrace F current route = FusionLogReplay.eventTrace F reference word \u2227\n              RegisteredAbsorptionChains.SourceOrdered (RegisteredAbsorptionChains.run F current route).placed \u2227\n                FusionLogReplay.packetSet (RegisteredAbsorptionChains.run F current route).placed =\n                    FusionLogReplay.packetSet (RegisteredAbsorptionChains.run F reference word).placed \u2227\n                  route.length \u2264 (4 * n - 2) * (FusionLogReplay.eventTrace F reference word).length\n@FusionLogReplay.sourceOrdered_log_endpoint_representative : \u2200 {n : \u2115} [inst : NeZero n] (F : Finset (ZMod n))\n  (s : FusionLogCompression.LoggedExecution n (ZMod n)) (word : List RegisteredAbsorptionChains.Letter),\n  3 \u2264 n \u2192\n    RegisteredAbsorptionChains.SourceOrdered s.state.placed \u2192\n      \u2203 representative,\n        (FusionLogCompression.runLogged F s representative).fullLog =\n            (FusionLogCompression.runLogged F s word).fullLog \u2227\n          (FusionLogCompression.runLogged F s representative).state.placed =\n              (FusionLogCompression.runLogged F s word).state.placed \u2227\n            representative.length \u2264\n              (4 * n - 2) * (FusionLogReplay.eventTrace F s.state word).length +\n                  (3 * n - (FusionLogReplay.packetSet (RegisteredAbsorptionChains.run F s.state word).placed).card) *\n                    ((FusionLogReplay.packetSet (RegisteredAbsorptionChains.run F s.state word).placed).card - 1) +\n                (n - 1)\n@FusionLogReplay.firstEvent_replay_step : \u2200 {n : \u2115} [inst : NeZero n] (F : Finset (ZMod n))\n  (reference current : RegisteredAbsorptionChains.Execution n (ZMod n)) (word : List RegisteredAbsorptionChains.Letter),\n  3 \u2264 n \u2192\n    RegisteredAbsorptionChains.SourceOrdered reference.placed \u2192\n      RegisteredAbsorptionChains.SourceOrdered current.placed \u2192\n        FusionLogReplay.packetSet current.placed = FusionLogReplay.packetSet reference.placed \u2192\n          FusionLogReplay.eventTrace F reference word \u2260 [] \u2192\n            \u2203 u v stage,\n              word = u ++ RegisteredAbsorptionChains.Letter.d :: v \u2227\n                RegisteredAbsorptionChains.FusionFree F reference u \u2227\n                  FusionLogReplay.eventTrace F reference word =\n                      [stage.event] ++\n                        FusionLogReplay.eventTrace F\n                          (RegisteredAbsorptionChains.step F (RegisteredAbsorptionChains.run F reference u)\n                            RegisteredAbsorptionChains.Letter.d)\n                          v \u2227\n                    FusionLogReplay.eventTrace F current stage.word = [stage.event] \u2227\n                      RegisteredAbsorptionChains.SourceOrdered stage.next.placed \u2227\n                        FusionLogReplay.packetSet stage.next.placed =\n                            FusionLogReplay.packetSet\n                              (RegisteredAbsorptionChains.step F (RegisteredAbsorptionChains.run F reference u)\n                                  RegisteredAbsorptionChains.Letter.d).placed \u2227\n                          stage.gap \u2264 n - FusionLogReplay.packetRank current.placed \u2227\n                            stage.word.length \u2264 3 * n + stage.gap \u2227\n                              stage.budget.batches \u2264 1 \u2227\n                                stage.budget.holeTransfers = stage.gap \u2227 (stage.gap = 0 \u2192 stage.budget.batches = 0)\n@FusionLogReplay.packetRank_run_ledger : \u2200 {n : \u2115} [inst : NeZero n] (F : Finset (ZMod n))\n  (s : RegisteredAbsorptionChains.Execution n (ZMod n)) (word : List RegisteredAbsorptionChains.Letter),\n  3 \u2264 n \u2192\n    RegisteredAbsorptionChains.SourceOrdered s.placed \u2192\n      FusionLogReplay.packetRank (RegisteredAbsorptionChains.run F s word).placed +\n          (FusionLogReplay.eventTrace F s word).length =\n        FusionLogReplay.packetRank s.placed\n@FusionLogReplay.prefix_rank_and_holes : \u2200 {n : \u2115} [inst : NeZero n] (F : Finset (ZMod n))\n  (s : RegisteredAbsorptionChains.Execution n (ZMod n)) (word : List RegisteredAbsorptionChains.Letter),\n  3 \u2264 n \u2192\n    RegisteredAbsorptionChains.SourceOrdered s.placed \u2192\n      FusionLogReplay.packetRank (RegisteredAbsorptionChains.run F s word).placed =\n          FusionLogReplay.packetRank s.placed - (FusionLogReplay.eventTrace F s word).length \u2227\n        n - FusionLogReplay.packetRank (RegisteredAbsorptionChains.run F s word).placed =\n          n - FusionLogReplay.packetRank s.placed + (FusionLogReplay.eventTrace F s word).length\n@FusionLogReplay.replay_complete_events_plan : \u2200 {n : \u2115} [inst : NeZero n] (F : Finset (ZMod n))\n  (reference current : RegisteredAbsorptionChains.Execution n (ZMod n)) (word : List RegisteredAbsorptionChains.Letter),\n  3 \u2264 n \u2192\n    RegisteredAbsorptionChains.SourceOrdered reference.placed \u2192\n      RegisteredAbsorptionChains.SourceOrdered current.placed \u2192\n        FusionLogReplay.packetSet current.placed = FusionLogReplay.packetSet reference.placed \u2192\n          \u2203 last plan,\n            plan.events = FusionLogReplay.eventTrace F reference word \u2227\n              RegisteredAbsorptionChains.SourceOrdered last.placed \u2227\n                FusionLogReplay.packetSet last.placed =\n                  FusionLogReplay.packetSet (RegisteredAbsorptionChains.run F reference word).placed\n@FusionLogReplay.sourceOrdered_log_endpoint_budget : \u2200 {n : \u2115} [inst : NeZero n] (F : Finset (ZMod n))\n  (s : FusionLogCompression.LoggedExecution n (ZMod n)) (word : List RegisteredAbsorptionChains.Letter),\n  3 \u2264 n \u2192\n    RegisteredAbsorptionChains.SourceOrdered s.state.placed \u2192\n      \u2203 plan,\n        (FusionLogCompression.runLogged F s plan.word).fullLog = (FusionLogCompression.runLogged F s word).fullLog \u2227\n          (FusionLogCompression.runLogged F s plan.word).state.placed =\n              (FusionLogCompression.runLogged F s word).state.placed \u2227\n            plan.word.length \u2264\n                FusionLogReplay.normalFormBudget n (FusionLogReplay.packetRank s.state.placed)\n                  (FusionLogReplay.packetRank (RegisteredAbsorptionChains.run F s.state word).placed) \u2227\n              plan.batches \u2264 FusionLogReplay.packetRank s.state.placed - 1 \u2227\n                plan.transfers \u2264\n                  FusionLogReplay.normalFormTransferBudget n (FusionLogReplay.packetRank s.state.placed)\n                    (FusionLogReplay.packetRank (RegisteredAbsorptionChains.run F s.state word).placed)\n'FusionLogReplay.eventTrace_eq_nil_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogReplay.runLogged_fullLog' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogReplay.firstFusion_split' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogReplay.packetSet_run_of_fusionFree' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogReplay.packetSet_fusion' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogReplay.firstEvent_route' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogReplay.firstEvent_replay_step' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogReplay.replay_complete_events' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogReplay.align_sourceOrdered_endpoint' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogReplay.sourceOrdered_log_endpoint_representative' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogReplay.packetRank_eq_occupied' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogReplay.gap_le_hole_count' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogReplay.packetRank_fusion_drop' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogReplay.packetRank_step_event' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogReplay.packetRank_run_ledger' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogReplay.prefix_rank_and_holes' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogReplay.FusionStage.gap_le_holes' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogReplay.FusionStage.rank_drop' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogReplay.FusionStage.cost' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogReplay.FusionStage.no_batch_of_zero_gap' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogReplay.FusionReplayPlan.run_eq' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogReplay.FusionReplayPlan.trace_eq' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogReplay.FusionReplayPlan.rank_ledger' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogReplay.FusionReplayPlan.batch_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogReplay.FusionReplayPlan.transfer_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogReplay.FusionReplayPlan.sharp_length_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogReplay.replay_complete_events_plan' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogReplay.align_sourceOrdered_endpoint_plan' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogReplay.JointReplayPlan.event_count' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogReplay.JointReplayPlan.execute' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogReplay.JointReplayPlan.length_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogReplay.JointReplayPlan.batch_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogReplay.JointReplayPlan.transfer_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogReplay.sourceOrdered_log_endpoint_budget' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+  "build_output_sha256": "025e79f9ffa2dd24ad737bc7294f869e892ab9bc1990a34c2af1b4e214008e4f",
+  "scope": "All-n actual complete-event replay, exact endpoint and manuscript B/K/M upper bounds on the frozen SourceOrdered ZMod n atom domain",
+  "open_obligations": [
+    "Arbitrary finite atom labels and eligible arbitrary initial packet cycles",
+    "Admission/converse for independent formal admissible schedules",
+    "Log/endpoint fibre counting and specified shortest-word theorems"
+  ],
+  "publication_identity": null,
+  "independent_cold_replay": false
+}

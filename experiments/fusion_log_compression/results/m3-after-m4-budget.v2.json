@@ -1,0 +1,109 @@
+{
+  "status": "PASS_LOCAL_M3_REPLAY",
+  "lean_version": "Lean (version 4.33.0, x86_64-w64-windows-gnu, commit d8b18978322de05a8f3dba51ef03cf5461676c17, Release)",
+  "completed_at_utc": "2026-11-05T09:57:56.796336+00:00",
+  "python_version": "3.13.0",
+  "mathlib_revision": "db584cd6d46c92f209a44c0f1c829460d327499d",
+  "upstream_pin_sha256": "ab12149fdda5045776d0cfbe2b539dcf5717eddbca98828fe47b08f4c3db5bc7",
+  "proof_manifest_sha256": "65bf9a915294891a0b5558a16445f64588cda4db8cd893c579ccd4d294cd4169",
+  "build_completed": true,
+  "axioms": {
+    "FusionLogCompression.batchWord_spec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogCompression.adjacentFusionWord_spec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogCompression.sourceAtomAdjacent_of_actual_fusion": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogCompression.loggedAdjacentFusionWord_fullLog": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogCompression.gapFlow_exists_normalized": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogCompression.gapFrameLegalPlacementBatch_target": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogCompression.scheduledState_final": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogCompression.frameGapFlow_exists": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogCompression.cutSchedule_prefix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogCompression.gapFramePlacement_plan": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogCompression.gapFramePlacement_phase": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogCompression.gapFramePlacement_short": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogCompression.sameOrderPlacement_short": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogCompression.sameOrderPlacement_logged": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogCompression.oneBlock_phase_only": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogCompression.fullRank_phase_only": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogCompression.BatchPlacementPlan.run_eq_target": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogCompression.batchPlan_gap_budget_with_phase": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "audit_output": "@FusionLogCompression.gapFramePlacement_plan : \u2200 {n r : \u2115} [inst : NeZero n] [inst_1 : NeZero r] {\u03b1 : Type u_1}\n  [DecidableEq \u03b1] (F : Finset \u03b1) (s : RegisteredAbsorptionChains.Execution n \u03b1)\n  (start target : RegisteredAbsorptionChains.GapFrame n r \u03b1),\n  3 \u2264 n \u2192\n    2 \u2264 r \u2192\n      s.placed = start.decode \u2192\n        \u2203 mid plan,\n          mid.gap = target.gap \u2227 mid.block = start.block \u2227 plan.batches \u2264 r - 1 \u2227 plan.transfers \u2264 (n - r) * (r - 1)\n@FusionLogCompression.sameOrderPlacement_short : \u2200 {n r : \u2115} [inst : NeZero n] [inst_1 : NeZero r] {\u03b1 : Type u_1}\n  [inst_2 : DecidableEq \u03b1] (F : Finset \u03b1) (s : RegisteredAbsorptionChains.Execution n \u03b1)\n  (first second : RegisteredAbsorptionChains.NamedCyclicPlacement n r \u03b1),\n  3 \u2264 n \u2192\n    s.placed = first.placed \u2192\n      first.block = second.block \u2192\n        \u2203 word,\n          RegisteredAbsorptionChains.FusionFree F s word \u2227\n            RegisteredAbsorptionChains.run F s word =\n                { placed := second.placed, origin := s.origin, chain := s.chain } \u2227\n              word.length \u2264 (3 * n - r) * (r - 1) + (n - 1)\n@FusionLogCompression.sameOrderPlacement_logged : \u2200 {n r : \u2115} [inst : NeZero n] [inst_1 : NeZero r] {\u03b1 : Type u_1}\n  [inst_2 : DecidableEq \u03b1] (F : Finset \u03b1) (s : FusionLogCompression.LoggedExecution n \u03b1)\n  (first second : RegisteredAbsorptionChains.NamedCyclicPlacement n r \u03b1),\n  3 \u2264 n \u2192\n    s.state.placed = first.placed \u2192\n      first.block = second.block \u2192\n        \u2203 word,\n          RegisteredAbsorptionChains.FusionFree F s.state word \u2227\n            ((FusionLogCompression.runLogged F s word).state =\n                have __src := s.state;\n                { placed := second.placed, origin := __src.origin, chain := __src.chain }) \u2227\n              (FusionLogCompression.runLogged F s word).fullLog = s.fullLog \u2227\n                word.length \u2264 (3 * n - r) * (r - 1) + (n - 1)\n'FusionLogCompression.batchWord_spec' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogCompression.adjacentFusionWord_spec' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogCompression.sourceAtomAdjacent_of_actual_fusion' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogCompression.loggedAdjacentFusionWord_fullLog' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogCompression.gapFlow_exists_normalized' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogCompression.gapFrameLegalPlacementBatch_target' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogCompression.scheduledState_final' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogCompression.frameGapFlow_exists' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogCompression.cutSchedule_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogCompression.gapFramePlacement_plan' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogCompression.gapFramePlacement_phase' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogCompression.gapFramePlacement_short' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogCompression.sameOrderPlacement_short' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogCompression.sameOrderPlacement_logged' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogCompression.oneBlock_phase_only' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogCompression.fullRank_phase_only' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogCompression.BatchPlacementPlan.run_eq_target' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogCompression.batchPlan_gap_budget_with_phase' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+  "replay_scope": "local replay; no independent cold-environment claim",
+  "nonclaims": [
+    "M4 complete-log replay",
+    "shortest-word optimum",
+    "full-paper formalization"
+  ]
+}
