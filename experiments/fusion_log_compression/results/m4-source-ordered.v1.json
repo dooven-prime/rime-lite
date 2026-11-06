@@ -1,0 +1,69 @@
+{
+  "status": "PASS_PARTIAL_M4_SOURCE_ORDERED_REPLAY",
+  "lean_version": "Lean (version 4.33.0, x86_64-w64-windows-gnu, commit d8b18978322de05a8f3dba51ef03cf5461676c17, Release)",
+  "m4_manifest_sha256": "c16fd61641e8878203c5f9f934b4891f8a10fe53c7a344dea1572508ba52229f",
+  "m3_manifest_sha256": "65bf9a915294891a0b5558a16445f64588cda4db8cd893c579ccd4d294cd4169",
+  "build_completed": true,
+  "axioms": {
+    "FusionLogReplay.eventTrace_eq_nil_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogReplay.runLogged_fullLog": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogReplay.firstFusion_split": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogReplay.packetSet_run_of_fusionFree": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogReplay.packetSet_fusion": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogReplay.firstEvent_route": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogReplay.firstEvent_replay_step": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogReplay.replay_complete_events": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogReplay.align_sourceOrdered_endpoint": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogReplay.sourceOrdered_log_endpoint_representative": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "audit_output": "@FusionLogReplay.replay_complete_events : \u2200 {n : \u2115} [inst : NeZero n] (F : Finset (ZMod n))\n  (reference current : RegisteredAbsorptionChains.Execution n (ZMod n)) (word : List RegisteredAbsorptionChains.Letter),\n  3 \u2264 n \u2192\n    RegisteredAbsorptionChains.SourceOrdered reference.placed \u2192\n      RegisteredAbsorptionChains.SourceOrdered current.placed \u2192\n        FusionLogReplay.packetSet current.placed = FusionLogReplay.packetSet reference.placed \u2192\n          \u2203 route,\n            FusionLogReplay.eventTrace F current route = FusionLogReplay.eventTrace F reference word \u2227\n              RegisteredAbsorptionChains.SourceOrdered (RegisteredAbsorptionChains.run F current route).placed \u2227\n                FusionLogReplay.packetSet (RegisteredAbsorptionChains.run F current route).placed =\n                    FusionLogReplay.packetSet (RegisteredAbsorptionChains.run F reference word).placed \u2227\n                  route.length \u2264 (4 * n - 2) * (FusionLogReplay.eventTrace F reference word).length\n@FusionLogReplay.sourceOrdered_log_endpoint_representative : \u2200 {n : \u2115} [inst : NeZero n] (F : Finset (ZMod n))\n  (s : FusionLogCompression.LoggedExecution n (ZMod n)) (word : List RegisteredAbsorptionChains.Letter),\n  3 \u2264 n \u2192\n    RegisteredAbsorptionChains.SourceOrdered s.state.placed \u2192\n      \u2203 representative,\n        (FusionLogCompression.runLogged F s representative).fullLog =\n            (FusionLogCompression.runLogged F s word).fullLog \u2227\n          (FusionLogCompression.runLogged F s representative).state.placed =\n              (FusionLogCompression.runLogged F s word).state.placed \u2227\n            representative.length \u2264\n              (4 * n - 2) * (FusionLogReplay.eventTrace F s.state word).length +\n                  (3 * n - (FusionLogReplay.packetSet (RegisteredAbsorptionChains.run F s.state word).placed).card) *\n                    ((FusionLogReplay.packetSet (RegisteredAbsorptionChains.run F s.state word).placed).card - 1) +\n                (n - 1)\n'FusionLogReplay.eventTrace_eq_nil_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogReplay.runLogged_fullLog' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogReplay.firstFusion_split' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogReplay.packetSet_run_of_fusionFree' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogReplay.packetSet_fusion' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogReplay.firstEvent_route' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogReplay.firstEvent_replay_step' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogReplay.replay_complete_events' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogReplay.align_sourceOrdered_endpoint' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogReplay.sourceOrdered_log_endpoint_representative' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+  "scope": "All-n actual complete-event replay and exact endpoint alignment on the frozen SourceOrdered ZMod n atom domain; preliminary per-event budget",
+  "open_obligations": [
+    "Arbitrary finite atom labels and eligible arbitrary initial packet cycles",
+    "Admission/converse for independent formal admissible schedules",
+    "Manuscript sharp B(n,t,s) and K/M ledgers",
+    "Log/endpoint fibre counting and specified shortest-word theorems"
+  ],
+  "publication_identity": null,
+  "independent_cold_replay": false
+}

@@ -1,0 +1,12 @@
+{
+  "status": "PASS_CI1_CI2_ANCESTOR_IDENTITIES",
+  "hal_source_tag": "fusion-log-compression-source-v1.0",
+  "hal_content_commit": "41cf746a095ecd06d85cb3d1184d58e7bfdd5979",
+  "hal_manifest_sha256": "b130b64cc0410495d8f004a3074df4b568b83ce7c1e1088377e132ea558b5e07",
+  "hal_bound_file_count": 21,
+  "hal_bytes_read_from_fixed_tag_not_current_head": true,
+  "m4b_manifest_sha256": "69456464ff271024c8ab9e97694d5c8fdf125db3c309aadf98fded7fb07612ed",
+  "m4c_manifest_sha256": "606e08c94497e48098d8f7c78ad9572ebc6b4614d5c7552f9254743b35d9660d",
+  "kernel_replayed_by_this_gate": false,
+  "mathematical_controls_reexecuted": false
+}

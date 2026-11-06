@@ -1,0 +1,164 @@
+{
+  "status": "PASS_M4C_ARBITRARY_INITIAL_INTERPRETATION",
+  "completed_at_utc": "2026-11-05T11:09:26.965405+00:00",
+  "lean_version": "Lean (version 4.33.0, x86_64-w64-windows-gnu, commit d8b18978322de05a8f3dba51ef03cf5461676c17, Release)",
+  "mathlib_revision": "db584cd6d46c92f209a44c0f1c829460d327499d",
+  "m4c_manifest_sha256": "606e08c94497e48098d8f7c78ad9572ebc6b4614d5c7552f9254743b35d9660d",
+  "m4b_manifest_sha256": "69456464ff271024c8ab9e97694d5c8fdf125db3c309aadf98fded7fb07612ed",
+  "m4b_archive_doi": "10.5281/zenodo.23976349",
+  "m4b_archive_sha256": "66ce493a68199b965d17ef275c1d4e0e39619a652c543cde6d6429d28d8b60dc",
+  "build_completed": true,
+  "build_output_sha256": "9737c8b1ba6e398f1fb8f7bb47b868084c9342d5f9cce0eaee1f7ac9160faada",
+  "axioms": {
+    "FusionLogInterpretation.expandBlock_union": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogInterpretation.expandPlacement_fusion": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogInterpretation.step_placement_interprets": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogInterpretation.event_interprets": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogInterpretation.run_placement_interprets": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogInterpretation.eventTrace_interprets": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogInterpretation.fusionFree_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogInterpretation.occupiedSites_expand": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogInterpretation.run_support_interprets": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogInterpretation.complete_log_interprets": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogInterpretation.lastAtSite_le": [
+      "propext",
+      "Quot.sound"
+    ],
+    "FusionLogInterpretation.lastAtSite_monotone": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogInterpretation.lastAtSite_periodic": [
+      "propext"
+    ],
+    "FusionLogInterpretation.occupiedRounding_image": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogInterpretation.occupiedRounding_fixed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogInterpretation.canonicalPlacement_ordered": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogInterpretation.initial_placement_interprets": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogInterpretation.batchPlan_interprets": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogInterpretation.admitted_fusion_stage": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogInterpretation.fusionPlan_interprets": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogInterpretation.InterpretedJointPlan.word_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogInterpretation.InterpretedJointPlan.batches_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogInterpretation.InterpretedJointPlan.transfers_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogInterpretation.jointPlan_interprets": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogInterpretation.interpreted_sourceOrdered_budget": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogInterpretation.arbitrary_initial_log_endpoint_budget": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogInterpretation.named_occupied_rank": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogInterpretation.arbitrary_initial_log_endpoint_representative": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogInterpretation.named_initial_log_endpoint_representative": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "audit_output": "@FusionLogInterpretation.initial_placement_interprets : \u2200 {n : \u2115} [inst : NeZero n] {\u03b1 : Type u_1}\n  [inst_1 : DecidableEq \u03b1] (P : RegisteredAbsorptionChains.Placement n (Finset \u03b1))\n  (nonempty : (FusionLogReplay.occupiedSites P).Nonempty),\n  P =\n    FusionLogInterpretation.expandPlacement (FusionLogInterpretation.siteLabels P)\n      (FusionLogInterpretation.canonicalPlacement P nonempty)\n@FusionLogInterpretation.batchPlan_interprets : \u2200 {n : \u2115} [NeZero n] {\u03b9 : Type u_1} {\u03b1 : Type u_2} [DecidableEq \u03b9]\n  [inst : DecidableEq \u03b1] (labels : \u03b9 \u2192 Finset \u03b1) (G : Finset \u03b9) (F : Finset \u03b1)\n  (source : RegisteredAbsorptionChains.Execution n \u03b9) (target : RegisteredAbsorptionChains.Placement n (Finset \u03b9))\n  (plan : FusionLogCompression.BatchPlacementPlan G source target) (actual : RegisteredAbsorptionChains.Execution n \u03b1),\n  actual.placed = FusionLogInterpretation.expandPlacement labels source.placed \u2192\n    \u2203 actualPlan,\n      actualPlan.word = plan.word \u2227 actualPlan.batches = plan.batches \u2227 actualPlan.transfers = plan.transfers\n@FusionLogInterpretation.arbitrary_initial_log_endpoint_budget : \u2200 {n : \u2115} [inst : NeZero n] {\u03b1 : Type u_1}\n  [inst_1 : DecidableEq \u03b1] (F : Finset \u03b1) (actual : FusionLogCompression.LoggedExecution n \u03b1)\n  (word : List RegisteredAbsorptionChains.Letter),\n  3 \u2264 n \u2192\n    \u2200 (nonempty : (FusionLogReplay.occupiedSites actual.state.placed).Nonempty),\n      \u2203 plan,\n        (FusionLogCompression.runLogged F actual plan.word).fullLog =\n            (FusionLogCompression.runLogged F actual word).fullLog \u2227\n          (FusionLogCompression.runLogged F actual plan.word).state.placed =\n              (FusionLogCompression.runLogged F actual word).state.placed \u2227\n            plan.word.length \u2264\n                FusionLogReplay.normalFormBudget n (FusionLogReplay.occupiedSites actual.state.placed).card\n                  (FusionLogReplay.occupiedSites (RegisteredAbsorptionChains.run F actual.state word).placed).card \u2227\n              plan.batches \u2264 (FusionLogReplay.occupiedSites actual.state.placed).card - 1 \u2227\n                plan.transfers \u2264\n                  FusionLogReplay.normalFormTransferBudget n (FusionLogReplay.occupiedSites actual.state.placed).card\n                    (FusionLogReplay.occupiedSites (RegisteredAbsorptionChains.run F actual.state word).placed).card\n@FusionLogInterpretation.arbitrary_initial_log_endpoint_representative : \u2200 {n : \u2115} [inst : NeZero n] {\u03b1 : Type u_1}\n  [inst_1 : DecidableEq \u03b1] (F : Finset \u03b1) (actual : FusionLogCompression.LoggedExecution n \u03b1)\n  (word : List RegisteredAbsorptionChains.Letter),\n  3 \u2264 n \u2192\n    (FusionLogReplay.occupiedSites actual.state.placed).Nonempty \u2192\n      \u2203 representative,\n        (FusionLogCompression.runLogged F actual representative).fullLog =\n            (FusionLogCompression.runLogged F actual word).fullLog \u2227\n          (FusionLogCompression.runLogged F actual representative).state.placed =\n              (FusionLogCompression.runLogged F actual word).state.placed \u2227\n            representative.length \u2264\n              FusionLogReplay.normalFormBudget n (FusionLogReplay.occupiedSites actual.state.placed).card\n                (FusionLogReplay.occupiedSites (RegisteredAbsorptionChains.run F actual.state word).placed).card\n@FusionLogInterpretation.named_initial_log_endpoint_representative : \u2200 {n : \u2115} [inst : NeZero n] {\u03b1 : Type u_1}\n  [inst_1 : DecidableEq \u03b1] {r : \u2115} [inst_2 : NeZero r] (F : Finset \u03b1)\n  (actual : FusionLogCompression.LoggedExecution n \u03b1) (word : List RegisteredAbsorptionChains.Letter),\n  3 \u2264 n \u2192\n    \u2200 (named : RegisteredAbsorptionChains.LegalNamedPlacement n r \u03b1),\n      actual.state.placed = named.placed \u2192\n        \u2203 representative,\n          (FusionLogCompression.runLogged F actual representative).fullLog =\n              (FusionLogCompression.runLogged F actual word).fullLog \u2227\n            (FusionLogCompression.runLogged F actual representative).state.placed =\n                (FusionLogCompression.runLogged F actual word).state.placed \u2227\n              representative.length \u2264\n                FusionLogReplay.normalFormBudget n r\n                  (FusionLogReplay.occupiedSites (RegisteredAbsorptionChains.run F actual.state word).placed).card\n'FusionLogInterpretation.expandBlock_union' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogInterpretation.expandPlacement_fusion' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogInterpretation.step_placement_interprets' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogInterpretation.event_interprets' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogInterpretation.run_placement_interprets' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogInterpretation.eventTrace_interprets' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogInterpretation.fusionFree_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogInterpretation.occupiedSites_expand' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogInterpretation.run_support_interprets' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogInterpretation.complete_log_interprets' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogInterpretation.lastAtSite_le' depends on axioms: [propext, Quot.sound]\n'FusionLogInterpretation.lastAtSite_monotone' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogInterpretation.lastAtSite_periodic' depends on axioms: [propext]\n'FusionLogInterpretation.occupiedRounding_image' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogInterpretation.occupiedRounding_fixed' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogInterpretation.canonicalPlacement_ordered' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogInterpretation.initial_placement_interprets' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogInterpretation.batchPlan_interprets' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogInterpretation.admitted_fusion_stage' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogInterpretation.fusionPlan_interprets' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogInterpretation.InterpretedJointPlan.word_eq' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogInterpretation.InterpretedJointPlan.batches_eq' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogInterpretation.InterpretedJointPlan.transfers_eq' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogInterpretation.jointPlan_interprets' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogInterpretation.interpreted_sourceOrdered_budget' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogInterpretation.arbitrary_initial_log_endpoint_budget' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'FusionLogInterpretation.named_occupied_rank' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogInterpretation.arbitrary_initial_log_endpoint_representative' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'FusionLogInterpretation.named_initial_log_endpoint_representative' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+  "scope": "All n >= 3, arbitrary atom type with decidable equality and arbitrary nonempty occupied initial placement: actual ordered complete-log and literal-endpoint compression, with B/K/M transported from M4-B",
+  "open_obligations": [
+    "Independent formal admissible-schedule and compatible-target iff of manuscript Theorem 4.1",
+    "Joint log/endpoint fibre counting and specified shortest-word theorems"
+  ],
+  "publication_identity": null,
+  "independent_cold_replay": false
+}

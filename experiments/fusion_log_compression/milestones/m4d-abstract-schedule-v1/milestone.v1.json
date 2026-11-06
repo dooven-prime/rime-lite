@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "status": "PASS_LOCAL_M4D_ABSTRACT_SCHEDULE_CLASSIFICATION",
+  "proof_manifest": "m4d-development-manifest.v1.json",
+  "proof_manifest_sha256": "8a62981066908a78a4085c2977636cd4ffec83c283b5fd38997cc67ba31dc275",
+  "replay_receipt": "results/m4d-abstract-schedule.v1.json",
+  "replay_receipt_sha256": "e70b1d03db07e2c1243d5601d245db560ac49aefd5c2927dddf281202c388931",
+  "m4c_manifest_sha256": "606e08c94497e48098d8f7c78ad9572ebc6b4614d5c7552f9254743b35d9660d",
+  "lean_toolchain": "leanprover/lean4:v4.33.0",
+  "lean_commit": "d8b18978322de05a8f3dba51ef03cf5461676c17",
+  "mathlib_revision": "db584cd6d46c92f209a44c0f1c829460d327499d",
+  "own_lean_source_file_count": 9,
+  "bound_input_file_count": 16,
+  "transitive_axiom_target_count": 27,
+  "observed_axiom_union": ["propext", "Classical.choice", "Quot.sound"],
+  "main_declarations": [
+    "FusionLogSchedule.abstract_schedule_endpoint_iff",
+    "FusionLogSchedule.abstract_schedule_bounded_realization",
+    "FusionLogSchedule.abstract_schedule_endpoint_iff_bounded"
+  ],
+  "scope": "Manuscript Theorem 4.1: actual complete-log/literal-endpoint joint classification, including B(n,t,s), for all n >= 3 and arbitrary nonempty partitions into nonempty disjoint finite packets",
+  "excluded_next_milestones": ["Joint-object counts", "Forgetful endpoint fibres", "All-R exact optimality and uniqueness"],
+  "unchanged_ancestor_manifests_verified": true,
+  "independent_cold_replay": false,
+  "hosted_ci_replayed": false,
+  "publication_identity": null
+}

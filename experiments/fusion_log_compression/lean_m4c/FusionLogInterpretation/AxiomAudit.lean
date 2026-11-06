@@ -1,0 +1,37 @@
+import FusionLogInterpretation
+
+#check @FusionLogInterpretation.initial_placement_interprets
+#check @FusionLogInterpretation.batchPlan_interprets
+#check @FusionLogInterpretation.arbitrary_initial_log_endpoint_budget
+#check @FusionLogInterpretation.arbitrary_initial_log_endpoint_representative
+#check @FusionLogInterpretation.named_initial_log_endpoint_representative
+
+#print axioms FusionLogInterpretation.expandBlock_union
+#print axioms FusionLogInterpretation.expandPlacement_fusion
+#print axioms FusionLogInterpretation.step_placement_interprets
+#print axioms FusionLogInterpretation.event_interprets
+#print axioms FusionLogInterpretation.run_placement_interprets
+#print axioms FusionLogInterpretation.eventTrace_interprets
+#print axioms FusionLogInterpretation.fusionFree_iff
+#print axioms FusionLogInterpretation.occupiedSites_expand
+#print axioms FusionLogInterpretation.run_support_interprets
+#print axioms FusionLogInterpretation.complete_log_interprets
+#print axioms FusionLogInterpretation.lastAtSite_le
+#print axioms FusionLogInterpretation.lastAtSite_monotone
+#print axioms FusionLogInterpretation.lastAtSite_periodic
+#print axioms FusionLogInterpretation.occupiedRounding_image
+#print axioms FusionLogInterpretation.occupiedRounding_fixed
+#print axioms FusionLogInterpretation.canonicalPlacement_ordered
+#print axioms FusionLogInterpretation.initial_placement_interprets
+#print axioms FusionLogInterpretation.batchPlan_interprets
+#print axioms FusionLogInterpretation.admitted_fusion_stage
+#print axioms FusionLogInterpretation.fusionPlan_interprets
+#print axioms FusionLogInterpretation.InterpretedJointPlan.word_eq
+#print axioms FusionLogInterpretation.InterpretedJointPlan.batches_eq
+#print axioms FusionLogInterpretation.InterpretedJointPlan.transfers_eq
+#print axioms FusionLogInterpretation.jointPlan_interprets
+#print axioms FusionLogInterpretation.interpreted_sourceOrdered_budget
+#print axioms FusionLogInterpretation.arbitrary_initial_log_endpoint_budget
+#print axioms FusionLogInterpretation.named_occupied_rank
+#print axioms FusionLogInterpretation.arbitrary_initial_log_endpoint_representative
+#print axioms FusionLogInterpretation.named_initial_log_endpoint_representative

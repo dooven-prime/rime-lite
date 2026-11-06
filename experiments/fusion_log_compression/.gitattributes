@@ -1,0 +1,2 @@
+# Preserve exact-byte manifests and historical Windows replay receipts.
+*.json -text whitespace=cr-at-eol

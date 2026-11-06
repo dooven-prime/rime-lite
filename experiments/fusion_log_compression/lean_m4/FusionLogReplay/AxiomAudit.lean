@@ -1,0 +1,44 @@
+import FusionLogReplay
+
+#check @FusionLogReplay.replay_complete_events
+#check @FusionLogReplay.sourceOrdered_log_endpoint_representative
+#check @FusionLogReplay.firstEvent_replay_step
+#check @FusionLogReplay.packetRank_run_ledger
+#check @FusionLogReplay.prefix_rank_and_holes
+#check @FusionLogReplay.replay_complete_events_plan
+#check @FusionLogReplay.sourceOrdered_log_endpoint_budget
+
+#print axioms FusionLogReplay.eventTrace_eq_nil_iff
+#print axioms FusionLogReplay.runLogged_fullLog
+#print axioms FusionLogReplay.firstFusion_split
+#print axioms FusionLogReplay.packetSet_run_of_fusionFree
+#print axioms FusionLogReplay.packetSet_fusion
+#print axioms FusionLogReplay.firstEvent_route
+#print axioms FusionLogReplay.firstEvent_replay_step
+#print axioms FusionLogReplay.replay_complete_events
+#print axioms FusionLogReplay.align_sourceOrdered_endpoint
+#print axioms FusionLogReplay.sourceOrdered_log_endpoint_representative
+#print axioms FusionLogReplay.packetRank_eq_occupied
+#print axioms FusionLogReplay.gap_le_hole_count
+#print axioms FusionLogReplay.packetRank_fusion_drop
+#print axioms FusionLogReplay.packetRank_step_event
+#print axioms FusionLogReplay.packetRank_run_ledger
+#print axioms FusionLogReplay.prefix_rank_and_holes
+#print axioms FusionLogReplay.FusionStage.gap_le_holes
+#print axioms FusionLogReplay.FusionStage.rank_drop
+#print axioms FusionLogReplay.FusionStage.cost
+#print axioms FusionLogReplay.FusionStage.no_batch_of_zero_gap
+#print axioms FusionLogReplay.FusionReplayPlan.run_eq
+#print axioms FusionLogReplay.FusionReplayPlan.trace_eq
+#print axioms FusionLogReplay.FusionReplayPlan.rank_ledger
+#print axioms FusionLogReplay.FusionReplayPlan.batch_bound
+#print axioms FusionLogReplay.FusionReplayPlan.transfer_bound
+#print axioms FusionLogReplay.FusionReplayPlan.sharp_length_bound
+#print axioms FusionLogReplay.replay_complete_events_plan
+#print axioms FusionLogReplay.align_sourceOrdered_endpoint_plan
+#print axioms FusionLogReplay.JointReplayPlan.event_count
+#print axioms FusionLogReplay.JointReplayPlan.execute
+#print axioms FusionLogReplay.JointReplayPlan.length_bound
+#print axioms FusionLogReplay.JointReplayPlan.batch_bound
+#print axioms FusionLogReplay.JointReplayPlan.transfer_bound
+#print axioms FusionLogReplay.sourceOrdered_log_endpoint_budget

@@ -1,0 +1,25 @@
+import FusionLogCompression
+
+-- Print complete public interfaces before checking their transitive axioms.
+#check @FusionLogCompression.gapFramePlacement_plan
+#check @FusionLogCompression.sameOrderPlacement_short
+#check @FusionLogCompression.sameOrderPlacement_logged
+
+#print axioms FusionLogCompression.batchWord_spec
+#print axioms FusionLogCompression.adjacentFusionWord_spec
+#print axioms FusionLogCompression.sourceAtomAdjacent_of_actual_fusion
+#print axioms FusionLogCompression.loggedAdjacentFusionWord_fullLog
+#print axioms FusionLogCompression.gapFlow_exists_normalized
+#print axioms FusionLogCompression.gapFrameLegalPlacementBatch_target
+#print axioms FusionLogCompression.scheduledState_final
+#print axioms FusionLogCompression.frameGapFlow_exists
+#print axioms FusionLogCompression.cutSchedule_prefix
+#print axioms FusionLogCompression.gapFramePlacement_plan
+#print axioms FusionLogCompression.gapFramePlacement_phase
+#print axioms FusionLogCompression.gapFramePlacement_short
+#print axioms FusionLogCompression.sameOrderPlacement_short
+#print axioms FusionLogCompression.sameOrderPlacement_logged
+#print axioms FusionLogCompression.oneBlock_phase_only
+#print axioms FusionLogCompression.fullRank_phase_only
+#print axioms FusionLogCompression.BatchPlacementPlan.run_eq_target
+#print axioms FusionLogCompression.batchPlan_gap_budget_with_phase

@@ -1,0 +1,10 @@
+name = "fusion_log_interpretation"
+version = "0.1.0"
+defaultTargets = ["FusionLogInterpretation"]
+
+[[require]]
+name = "fusion_log_replay"
+path = "../lean_m4"
+
+[[lean_lib]]
+name = "FusionLogInterpretation"
