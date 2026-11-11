@@ -55,23 +55,45 @@ must name the owning edition and the result number valid in that edition.
 
 ## Candidate and release gates
 
-For each edition, check the copied theorem statements against the historical
-source, audit every internal theorem/equation reference, and audit every
-cross-paper citation against the cited version. Build the reader PDF with
-`papers/tex/build.py` in an isolated `output/tex/` directory; inspect the
-pages, bibliography, equations, tables, links, and build log. Replay the
-declared finite and Lean validators from their unchanged owners. Pin the new
-manuscript, bibliography, PDF, evidence map, and validation entry point by
-exact bytes in a candidate manifest and read-only receipt.
+Use one shared five-gate sequence for each edition:
+
+1. **Admit the source once.** Record the historical source tag/commit,
+   manuscript/PDF digests, proof owner and companion archive identity in the
+   new evidence map. Check that the local files still match the historical
+   Git objects. Do not re-audit unchanged historical references or rebuild
+   an inherited companion after every prose edit.
+2. **Edit only the new edition.** Preserve theorem statements and numbering
+   unless a documented mathematical correction requires otherwise. Audit
+   changed cross-paper citations against the cited numbered version. Keep
+   the HAL identifier in provenance, not as the new edition's publication
+   identity.
+3. **Build and inspect once per final text revision.** Use
+   `papers/tex/build.py --output-dir output/tex/paperN paperN`; check the
+   reader PDF visually and check its log and generated bibliography. During
+   iteration, citation and PDF checks are enough; no new result identity is
+   created by each temporary build.
+4. **Freeze one candidate.** Pin manuscript, paper-local bibliography, PDF,
+   evidence map, validator, and necessary build inputs in a candidate
+   manifest. Run inherited finite/Lean validators once at this gate and
+   record separate proof and local-replay status. A source-only/hash check
+   can run in CI on every PR revision; the full owner replay belongs at the
+   freeze gate or when inherited bytes actually change.
+5. **Publish downstream.** Commit and tag the content candidate, deposit
+   that tagged PDF, verify the public Zenodo record and deposited bytes,
+   then add DOI/index/anchor in a descendant metadata commit. The candidate
+   manifest and receipt remain unchanged. Preserve commit ancestry with a
+   merge commit; no squash or rebase of tagged content.
+
+This removes repeated per-paper audit narratives and redundant Lean rebuilds,
+not the byte or claim checks. For the current batch, keep Papers XLI--XLIV
+on one PR and merge only after all four editions and their public anchors
+are ready. A missing DOI leaves that paper at the tagged-candidate gate; it
+does not become a published anchor by inference.
 
 Before a content tag, status is `RELEASE_CANDIDATE` and
-`release_identity_claimed` is false. Commit, tag, push, or upload only with
-the author's explicit instruction. Freeze content first; then deposit the
-exact numbered edition to Zenodo. Record the DOI and deposited-file facts
-in a downstream post-release anchor and preserve tag ancestry on merge.
-Do not backfill publication facts into the tagged candidate or old HAL
-source. A failed replay, unresolved citation, PDF defect, or source-byte
-mismatch blocks release rather than being translated into a PASS.
+`release_identity_claimed` is false. A failed replay, unresolved citation,
+PDF defect, or source-byte mismatch blocks the freeze rather than being
+translated into a PASS.
 
 ## Pilot acceptance
 
