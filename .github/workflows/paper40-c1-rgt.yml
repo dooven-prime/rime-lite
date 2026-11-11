@@ -7,7 +7,7 @@ on:
       - "experiments/paper40/**"
       - "experiments/rgt_bounded_history_certificates/**"
       - "experiments/fusion_log_compression/**"
-      - "formal-cases/rgt-bounded-history/**"
+      - "contracts/formal-cases/rgt-bounded-history/**"
   push:
     branches: [master]
     paths:
@@ -15,7 +15,7 @@ on:
       - "experiments/paper40/**"
       - "experiments/rgt_bounded_history_certificates/**"
       - "experiments/fusion_log_compression/**"
-      - "formal-cases/rgt-bounded-history/**"
+      - "contracts/formal-cases/rgt-bounded-history/**"
   workflow_dispatch:
 
 permissions:
@@ -55,7 +55,7 @@ jobs:
       - name: Replay and audit 68 plus 25 plus 29 declarations
         run: python -B experiments/paper40/lean/validation/replay.py --report "$RUNNER_TEMP/c1-rgt/proof-replay.json"
       - name: Compare fixed released Python consumers with Lean
-        run: python -B formal-cases/rgt-bounded-history/v1/replay.py --report "$RUNNER_TEMP/c1-rgt/consumer-replay.json"
+        run: python -B contracts/formal-cases/rgt-bounded-history/v1/replay.py --report "$RUNNER_TEMP/c1-rgt/consumer-replay.json"
       - name: Bind the actual runner and source commit
         env:
           PROOF_SOURCE_COMMIT: ${{ github.event.pull_request.head.sha || github.sha }}

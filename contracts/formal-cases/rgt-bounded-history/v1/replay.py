@@ -12,7 +12,7 @@ import sys
 import tempfile
 import zipfile
 
-ROOT = Path(__file__).resolve().parents[3]
+ROOT = Path(__file__).resolve().parents[4]
 HERE = Path(__file__).resolve().parent
 LEAN = ROOT / "experiments/paper40/lean"
 ARCHIVE = ROOT / "experiments/paper40/source/q2-source-v1.zip"

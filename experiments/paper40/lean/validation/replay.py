@@ -21,7 +21,7 @@ LEAN_COMMIT = "d8b18978322de05a8f3dba51ef03cf5461676c17"
 MATHLIB = "db584cd6d46c92f209a44c0f1c829460d327499d"
 ALLOWED = {"propext", "Classical.choice", "Quot.sound"}
 SCOPES = ["experiments/paper40/lean", "experiments/rgt_bounded_history_certificates",
-          "formal-cases/rgt-bounded-history/v1"]
+          "contracts/formal-cases/rgt-bounded-history/v1"]
 WORKFLOW = ".github/workflows/paper40-c1-rgt.yml"
 
 
@@ -168,7 +168,7 @@ def collect(directory):
         cwd=LEAN / ".lake/packages/mathlib", text=True).strip()
     if actual_mathlib != MATHLIB or proof["actual_mathlib_revision"] != MATHLIB or LEAN_COMMIT not in proof["lean_version"]:
         raise ValueError("actual toolchain/Mathlib receipt mismatch")
-    catalog = json.loads((ROOT / "formal-cases/rgt-bounded-history/v1/cases.json").read_text())
+    catalog = json.loads((ROOT / "contracts/formal-cases/rgt-bounded-history/v1/cases.json").read_text())
     if runtime["runtime_archive_sha256"] != manifest["owners"]["paper40"]["files"]["experiments/paper40/source/q2-source-v1.zip"]:
         raise ValueError("runtime archive receipt mismatch")
     if [row["id"] for row in runtime["cases"]] != [row["id"] for row in catalog["cases"]]:

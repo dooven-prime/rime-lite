@@ -29,7 +29,12 @@
     }
   },
   "files": {
-    ".github/workflows/paper40-c1-rgt.yml": "8d6073f1dba37df3d6b672d3c5d58855e12621c85c78608e9fc333d8e290f63d",
+    ".github/workflows/paper40-c1-rgt.yml": "326937815dd3a962fc766312b8aabfbaaacc70e32792d4b755ecc4a4bab61fb5",
+    "contracts/formal-cases/rgt-bounded-history/v1/.gitattributes": "a79691a93b46e49ce460c26ef22afcc03d6eca1e63bf2edbc20e96159510f6c9",
+    "contracts/formal-cases/rgt-bounded-history/v1/README.md": "2c553b7f903283cc79d15ad5f8b0a88e0198f5d6dcd60478c88ad8bb4c672e75",
+    "contracts/formal-cases/rgt-bounded-history/v1/build_cases.py": "1bc1a8283879d3397b4f39141d2a05cdafab37dfd93fc9891d7e6cfcfbeea3dc",
+    "contracts/formal-cases/rgt-bounded-history/v1/cases.json": "2dfbcb91c74083cb97deea29adc2854fa77c2fb85e3f3df69c02a0ee87a62e43",
+    "contracts/formal-cases/rgt-bounded-history/v1/replay.py": "cc44d5b4706aa06006797575161cb4b41faee373c6fda22313d437f106e92fc3",
     "experiments/paper40/lean/.gitattributes": "a79691a93b46e49ce460c26ef22afcc03d6eca1e63bf2edbc20e96159510f6c9",
     "experiments/paper40/lean/AxiomAudit.lean": "1d6a496b38919760d0d2e259070dd827c5504254012c2f5a984936ba8d3ef28b",
     "experiments/paper40/lean/Checks.lean": "4c9a053ad10401e5c8acf0299b4898d113c072cc25f165f2a88364f7e25a2aab",
@@ -56,7 +61,7 @@
     "experiments/paper40/lean/PaperXL/FixedPrefixGrowth.lean": "1375f9abad49bea59259cc3b731bdf13f82b9c7d3b5d2cef41888084f9e3b9a9",
     "experiments/paper40/lean/PaperXL/PrefixObserver.lean": "17e385057877c2aacaf04c168dc465cdfbbf897f8e3af634c50f1334d32aa798",
     "experiments/paper40/lean/PrefixObserverChecks.lean": "85eaffd71f678e5bde35449a1cf8a0f15373c0941b6ea4b9f8a9a29617793f62",
-    "experiments/paper40/lean/README.md": "d2130018029da37b1e447846939c62bbbe9a8a7332160759aee3b7ce71640463",
+    "experiments/paper40/lean/README.md": "773c2c1b318693cb24228e3fd8822c3c385062a6a2c93e7490b916aab4505252",
     "experiments/paper40/lean/ReplayC1.lean": "c9e90faf31c76f89d7ca5735b6a142c40235917a07fa47177c8344d2074c5949",
     "experiments/paper40/lean/Signatures.lean": "4a55302abc3a336963da65dfdb150390611649c681108613bc65929f65046d13",
     "experiments/paper40/lean/THEOREM_MAP.md": "3dcce852a420cafa4b4a8808dbf67fb8c1cb42ee7ae8d5a47607ba87c5a78050",
@@ -64,8 +69,8 @@
     "experiments/paper40/lean/lakefile.toml": "d83581b7e1226eb31e530acf5de2a1b2246fd4e9bf314eecb1abd021a0a0b222",
     "experiments/paper40/lean/lean-toolchain": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b",
     "experiments/paper40/lean/validation/freeze.py": "c37e24353392e48fc3c9870bfd678909f64ceb058c64c4de9b29d87a736c7b43",
-    "experiments/paper40/lean/validation/replay.py": "85a65242476e9674c6027b79d35e8bdd5fac4155675da0529132885dfd6411e6",
-    "experiments/paper40/lean/validation/test_companion.py": "5a7f24b0175fd061ff9e32c33183a2c34e9f3acec9474cda773e3a01953609ff",
+    "experiments/paper40/lean/validation/replay.py": "ff59faaaa23b97150c3f0105b7694ad24ec2e968a81a18d86e5c907d40cbf2df",
+    "experiments/paper40/lean/validation/test_companion.py": "91445e8a47658debce4380cf70acaabb14867ac38ec0aff90a9b142442d87c72",
     "experiments/rgt_bounded_history_certificates/.gitattributes": "a79691a93b46e49ce460c26ef22afcc03d6eca1e63bf2edbc20e96159510f6c9",
     "experiments/rgt_bounded_history_certificates/README.md": "b9420b9a77410e5c5c981940fce668472b4f938083e87b2cf23c2692df86b0ed",
     "experiments/rgt_bounded_history_certificates/RGT_BOUNDED_HISTORY_CERTIFICATES.md": "1550512b69ab580407141f7e71bc0ce8acdb7b0ffd7b52253416a315e83836f1",
@@ -80,12 +85,7 @@
     "experiments/rgt_bounded_history_certificates/lean/RGTBoundedHistory/ObservationCompression.lean": "d7bf218810c7db005155b9b993b2f414ba384269c255914c7c05f84f4540a8a6",
     "experiments/rgt_bounded_history_certificates/lean/lake-manifest.json": "bdfd2776d39cca79c0e46e51736ee857ab78292340cce264f26e247207108798",
     "experiments/rgt_bounded_history_certificates/lean/lakefile.toml": "953ee288a1bf9957f75eec3bbec57fd863a91f4104ddd9585d9354d3f05ca048",
-    "experiments/rgt_bounded_history_certificates/lean/lean-toolchain": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b",
-    "formal-cases/rgt-bounded-history/v1/.gitattributes": "a79691a93b46e49ce460c26ef22afcc03d6eca1e63bf2edbc20e96159510f6c9",
-    "formal-cases/rgt-bounded-history/v1/README.md": "db22d9cb89160ff5f122ba60540316c0db53f460aba9c4893580a454e9406223",
-    "formal-cases/rgt-bounded-history/v1/build_cases.py": "db9b4678c8841891322393f00b8561a13160ffbda5d837ee849c4d75a8c07e30",
-    "formal-cases/rgt-bounded-history/v1/cases.json": "2dfbcb91c74083cb97deea29adc2854fa77c2fb85e3f3df69c02a0ee87a62e43",
-    "formal-cases/rgt-bounded-history/v1/replay.py": "eae511a94a8e63e84f1d3f48f73b8b186ef0eec1b5f580587661eadcb472c2f9"
+    "experiments/rgt_bounded_history_certificates/lean/lean-toolchain": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b"
   },
   "axiom_targets": {
     "paper40": [

@@ -150,7 +150,7 @@ The standard all-in-one entry, from the repository root, is:
 ```text
 python -B experiments/paper40/lean/validation/replay.py --verify-inputs-only
 python -B experiments/paper40/lean/validation/replay.py --report output/my-c1-rgt-proof.json
-python -B formal-cases/rgt-bounded-history/v1/replay.py --report output/my-c1-rgt-cases.json
+python -B contracts/formal-cases/rgt-bounded-history/v1/replay.py --report output/my-c1-rgt-cases.json
 ```
 
 `C1RunCorrespondence` proves the per-letter and whole-word correspondence for
@@ -203,7 +203,7 @@ identities are `paper40-v1.0` and `fusion-log-m4d-source-v1.0`, which contains
 the unchanged M4-C theorem. `Signatures.lean` records complete types in every
 proof receipt; the owning audits cover Paper XL, R/G/T and M4-C separately.
 
-The [formal cases](../../../formal-cases/rgt-bounded-history/v1/README.md)
+The [formal cases](../../../contracts/formal-cases/rgt-bounded-history/v1/README.md)
 use the exact Paper XL v1.0 Python ZIP and compare all generated complete
 states and every raw edge for four declared C1 consumers. Lean supplies the
 complete-state execution and concrete reads; the frozen Python supplies

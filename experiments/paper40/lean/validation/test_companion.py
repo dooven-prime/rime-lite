@@ -15,7 +15,7 @@ def load(name, path):
 
 HERE = Path(__file__).resolve().parent
 gate = load("c1_rgt_gate_tests", HERE / "replay.py")
-runtime = load("c1_rgt_runtime_tests", gate.ROOT / "formal-cases/rgt-bounded-history/v1/replay.py")
+runtime = load("c1_rgt_runtime_tests", gate.ROOT / "contracts/formal-cases/rgt-bounded-history/v1/replay.py")
 
 
 class CompanionGates(unittest.TestCase):

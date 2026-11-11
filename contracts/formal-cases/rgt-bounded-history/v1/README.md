@@ -23,7 +23,7 @@ callbacks. The fixed menus and folds are evaluated by the unchanged frozen
 After the companion's `lake build`, from the repository root:
 
 ```text
-python -B formal-cases/rgt-bounded-history/v1/replay.py --report output/my-rgt-cases.json
+python -B contracts/formal-cases/rgt-bounded-history/v1/replay.py --report output/my-rgt-cases.json
 ```
 
 The script verifies and extracts the released runtime ZIP into a temporary
