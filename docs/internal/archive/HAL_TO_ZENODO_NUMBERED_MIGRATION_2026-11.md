@@ -30,6 +30,11 @@ Theorem, Corollary, and Equation references separately for each edition.
 Keep local result numbering stable where possible; a cross-paper citation
 must name the owning edition and the result number valid in that edition.
 
+The current PR batches XLI--XLIII only. XLIV is deferred to a separate PR
+while its all-R Lean work and any corresponding mathematical edits are in
+progress. Do not freeze an XLIV numbered edition from the historical draft
+as if that work had already been accepted.
+
 ## File and claim migration
 
 1. Preserve `papers/unnumbered/` as the historical source. Its submitted
@@ -87,8 +92,8 @@ Use one shared five-gate sequence for each edition:
    merge commit; no squash or rebase of tagged content.
 
 This removes repeated per-paper audit narratives and redundant Lean rebuilds,
-not the byte or claim checks. For the current batch, keep Papers XLI--XLIV
-on one PR and merge only after all four editions and their public anchors
+not the byte or claim checks. For the current batch, keep Papers XLI--XLIII
+on one PR and merge only after all three editions and their public anchors
 are ready. A missing DOI leaves that paper at the tagged-candidate gate; it
 does not become a published anchor by inference.
 

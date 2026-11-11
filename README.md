@@ -10,7 +10,7 @@ finite representation laboratory, not as a puzzle-solving problem.
 
 The current public release contains Papers I--XV, the independently scoped
 Papers XVI--XVIII computational studies and research reports, and Papers
-XX--XLI mathematical lines.
+XX--XLII mathematical lines.
 CCS v2.1 is published separately as an optional non-paper Computational
 Companion Archive; the immutable first combined record retains its historical
 predecessor.
@@ -57,6 +57,7 @@ predecessor.
 | Paper XXXIX | event-anchored fusion ancestry and consumer-adequate continuations | <https://doi.org/10.5281/zenodo.23410022> |
 | Paper XL | consumer-relative state sufficiency, exact quotient checks, and history counterexamples | <https://doi.org/10.5281/zenodo.23494084> |
 | Paper XLI | registered absorption chains and literal placement fibers for a circular adjacent-collapse action | <https://doi.org/10.5281/zenodo.24137725> |
+| Paper XLII | generated proper-arc registration chains and exact dependent placement fibers | <https://doi.org/10.5281/zenodo.24138941> |
 | Fusion-log M5 Lean companion v1.0 | actual joint enumeration and literal-endpoint log fibres | [Zenodo DOI](https://doi.org/10.5281/zenodo.24123627) / [post-release byte binding](docs/release-anchors/fusion-log-m5-source-v1.0.json) |
 | CCS v2.1 | optional reproducibility, observation, open-problem, and history archive | <https://doi.org/10.5281/zenodo.21988041> |
 | RIME Lite v2.1 repository snapshot | accepted papers, contracts, Registry evidence, release tools, and exact-byte historical inputs | [Zenodo DOI](https://doi.org/10.5281/zenodo.22048358) / [GitHub Release](https://github.com/dooven-prime/rime-lite/releases/tag/rime-lite-v2.1) |
@@ -64,7 +65,7 @@ predecessor.
 
 This is the repository's canonical DOI index. It identifies immutable
 published records; other public documents link here instead of duplicating the
-list. Papers VII--XVIII and Papers XX--XLI now match their published
+list. Papers VII--XVIII and Papers XX--XLII now match their published
 records. Their listed DOIs identify immutable published versions, and frozen
 historical contracts remain unchanged.
 
@@ -201,6 +202,11 @@ placement fibers for one fixed circular adjacent-collapse action. Its
 [post-release anchor](docs/release-anchors/paper41-v1.0.json) binds the tagged
 candidate bytes to the deposited reader PDF without retroactively publishing
 the historical HAL submission or the separately owned Lean companion.
+Paper XLII extends the generated-summary classification to every proper
+source arc in the same action. Its
+[post-release anchor](docs/release-anchors/paper42-v1.0.json) binds the
+numbered reader PDF to its tagged candidate; the historical HAL submission
+and separately archived Lean companion retain their own identities.
 Published release identities are maintained in the canonical DOI index above.
 
 | Paper | Manuscript | Evidence | Scope |
@@ -230,6 +236,7 @@ Published release identities are maintained in the canonical DOI index above.
 | XXXIX | [`Paper XXXIX.md`](papers/paper39/Paper%20XXXIX.md) | [`experiments/paper39/`](experiments/paper39/) | event-anchored fusion ancestry, complete absorption reports, and consumer-adequate continuations |
 | XL | [`Paper XL.md`](papers/paper40/Paper%20XL.md) | [`experiments/paper40/`](experiments/paper40/) | generated-domain consumer-sufficiency checks and replayable read, guard, and successor counterexamples |
 | XLI | [`Paper XLI.md`](papers/paper41/Paper%20XLI.md) | [`experiments/paper41/`](experiments/paper41/) | generated registered absorption chains, exact placement fibers, and literal-word reachability for a fixed circular action |
+| XLII | [`Paper XLII.md`](papers/paper42/Paper%20XLII.md) | [`experiments/paper42/`](experiments/paper42/) | actual proper-arc origin cuts, ternary selected chains, dependent placement fibers, and exact enumeration |
 
 Thematic index, not a paper dependency order:
 
@@ -270,6 +277,7 @@ Source-relative return counts and budgeted survivor frontiers
 Event-anchored fusion ancestry and consumer-adequate continuations
 Consumer-relative state sufficiency and history counterexamples
 Registered absorption chains and literal placement fibers
+Proper-arc registered summaries and dependent placement fibers
 ```
 
 Papers I--VII are independently readable. Their neighboring results connect
