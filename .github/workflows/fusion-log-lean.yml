@@ -9,7 +9,7 @@ on:
       - "papers/unnumbered/fusion_log_compression/**"
       - "papers/tex/**"
   push:
-    branches: [master, "codex/**"]
+    branches: [master]
     paths:
       - ".gitattributes"
       - ".github/workflows/fusion-log-lean.yml"
@@ -27,7 +27,7 @@ concurrency:
 
 jobs:
   m4cd-proof:
-    name: M4-C/M4-D proof and frozen ancestors
+    name: M4-C/M4-D/M5 proof and frozen ancestors
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
@@ -96,11 +96,47 @@ jobs:
         working-directory: experiments/fusion_log_compression
         run: python -B validation/replay_m4d.py --report "$RUNNER_TEMP/fusion-log-evidence/m4d-replay.json"
 
+      - name: Verify M5 inputs and frozen M4-D source tag
+        working-directory: experiments/fusion_log_compression
+        run: python -B validation/verify_ci_m5_ancestor.py --report "$RUNNER_TEMP/fusion-log-evidence/m5-ancestor.json"
+
+      - name: Test M5 validation gates
+        working-directory: experiments/fusion_log_compression
+        run: python -B -m unittest discover -s validation -p test_replay_m5.py
+
+      - name: Share pinned external dependencies with the M5 Lake root
+        working-directory: experiments/fusion_log_compression
+        run: |
+          mkdir -p lean_m5/.lake
+          test ! -e lean_m5/.lake/packages
+          ln -s ../../lean_m4c/.lake/packages lean_m5/.lake/packages
+
+      - name: Build pinned M5 Lean package
+        uses: leanprover/lean-action@fe408643ea7367d8c0404a8be3975bb145f5fb64 # v1
+        with:
+          lake-package-directory: experiments/fusion_log_compression/lean_m5
+          auto-config: "false"
+          build: "true"
+          test: "false"
+          lint: "false"
+          use-mathlib-cache: "true"
+          use-github-cache: "false"
+
+      - name: Replay M5 and audit 64 axiom targets
+        working-directory: experiments/fusion_log_compression
+        run: python -B validation/replay_m5.py --report "$RUNNER_TEMP/fusion-log-evidence/m5-replay.json"
+
       - name: Cross-check receipts and record runner identity
         working-directory: experiments/fusion_log_compression
         env:
           PROOF_SOURCE_COMMIT: ${{ github.event.pull_request.head.sha || github.sha }}
         run: python -B validation/collect_ci_receipts.py --directory "$RUNNER_TEMP/fusion-log-evidence"
+
+      - name: Cross-check M5 receipt and bind the ancestor context
+        working-directory: experiments/fusion_log_compression
+        env:
+          PROOF_SOURCE_COMMIT: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: python -B validation/collect_ci_m5_receipts.py --directory "$RUNNER_TEMP/fusion-log-evidence"
 
       - name: Retain source-bound replay receipts
         if: always()
