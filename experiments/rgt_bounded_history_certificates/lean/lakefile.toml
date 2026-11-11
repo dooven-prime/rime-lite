@@ -1,0 +1,6 @@
+name = "rgt_bounded_history_certificates"
+version = "0.1.0"
+defaultTargets = ["RGTBoundedHistory"]
+
+[[lean_lib]]
+name = "RGTBoundedHistory"

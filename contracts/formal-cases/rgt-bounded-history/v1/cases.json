@@ -1,0 +1,1243 @@
+{
+  "schema": "rime.rgt-formal-cases.v1",
+  "cases": [
+    {
+      "id": "R",
+      "name": "forget_origin",
+      "request": {
+        "language": "ECC_SYN_V1",
+        "environment": {
+          "defect": [
+            0,
+            0,
+            2
+          ],
+          "seed": [
+            0,
+            1,
+            2
+          ]
+        },
+        "selected": [
+          0,
+          1,
+          2
+        ],
+        "program": {
+          "q": {
+            "kind": "pair",
+            "left": {
+              "kind": "query",
+              "name": "CurrentPartition"
+            },
+            "right": {
+              "kind": "query",
+              "name": "SelectedBlock"
+            }
+          },
+          "reports": [
+            {
+              "label": "origin_port0",
+              "expr": {
+                "kind": "snd",
+                "value": {
+                  "kind": "fst",
+                  "value": {
+                    "kind": "field",
+                    "value": {
+                      "kind": "query",
+                      "name": "OriginSnapshot"
+                    },
+                    "name": "parents"
+                  }
+                }
+              }
+            }
+          ],
+          "commands": []
+        }
+      },
+      "expected_status": "FAIL_READ",
+      "display_histories": [
+        "dpd",
+        "pdpd"
+      ]
+    },
+    {
+      "id": "G",
+      "name": "forget_partition",
+      "request": {
+        "language": "ECC_SYN_V1",
+        "environment": {
+          "defect": [
+            0,
+            0,
+            2,
+            3
+          ],
+          "seed": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        "selected": [
+          0,
+          1
+        ],
+        "program": {
+          "q": {
+            "kind": "pair",
+            "left": {
+              "kind": "query",
+              "name": "SelectedBlock"
+            },
+            "right": {
+              "kind": "pair",
+              "left": {
+                "kind": "query",
+                "name": "OriginSnapshot"
+              },
+              "right": {
+                "kind": "pair",
+                "left": {
+                  "kind": "query",
+                  "name": "AbsorptionSequence"
+                },
+                "right": {
+                  "kind": "op",
+                  "name": "carrier",
+                  "args": [
+                    {
+                      "kind": "query",
+                      "name": "CurrentPartition"
+                    },
+                    {
+                      "kind": "query",
+                      "name": "SelectedBlock"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "reports": [
+            {
+              "label": "Track",
+              "expr": {
+                "kind": "pair",
+                "left": {
+                  "kind": "query",
+                  "name": "OriginSnapshot"
+                },
+                "right": {
+                  "kind": "pair",
+                  "left": {
+                    "kind": "query",
+                    "name": "AbsorptionSequence"
+                  },
+                  "right": {
+                    "kind": "op",
+                    "name": "carrier",
+                    "args": [
+                      {
+                        "kind": "query",
+                        "name": "CurrentPartition"
+                      },
+                      {
+                        "kind": "query",
+                        "name": "SelectedBlock"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          ],
+          "commands": [
+            {
+              "label": "Carry(p)",
+              "letter": "p",
+              "guard": {
+                "kind": "case",
+                "value": {
+                  "kind": "op",
+                  "name": "carrier",
+                  "args": [
+                    {
+                      "kind": "query",
+                      "name": "CurrentPartition"
+                    },
+                    {
+                      "kind": "query",
+                      "name": "SelectedBlock"
+                    }
+                  ]
+                },
+                "none": {
+                  "kind": "literal",
+                  "type": "Bool",
+                  "value": false
+                },
+                "binder": "selected_carrier",
+                "some": {
+                  "kind": "op",
+                  "name": "eq",
+                  "args": [
+                    {
+                      "kind": "fold",
+                      "list": {
+                        "kind": "op",
+                        "name": "entries",
+                        "args": [
+                          {
+                            "kind": "query",
+                            "name": "CurrentPartition"
+                          }
+                        ]
+                      },
+                      "seed": {
+                        "kind": "literal",
+                        "type": "Nat",
+                        "value": 0
+                      },
+                      "acc": "number",
+                      "item": "entry",
+                      "body": {
+                        "kind": "op",
+                        "name": "add",
+                        "args": [
+                          {
+                            "kind": "var",
+                            "name": "number"
+                          },
+                          {
+                            "kind": "if",
+                            "condition": {
+                              "kind": "op",
+                              "name": "eq",
+                              "args": [
+                                {
+                                  "kind": "op",
+                                  "name": "f_p",
+                                  "args": [
+                                    {
+                                      "kind": "fst",
+                                      "value": {
+                                        "kind": "var",
+                                        "name": "entry"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "kind": "op",
+                                  "name": "f_p",
+                                  "args": [
+                                    {
+                                      "kind": "fst",
+                                      "value": {
+                                        "kind": "var",
+                                        "name": "selected_carrier"
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            "then": {
+                              "kind": "literal",
+                              "type": "Nat",
+                              "value": 1
+                            },
+                            "else": {
+                              "kind": "literal",
+                              "type": "Nat",
+                              "value": 0
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "kind": "literal",
+                      "type": "Nat",
+                      "value": 1
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "label": "Absorb(p)",
+              "letter": "p",
+              "guard": {
+                "kind": "case",
+                "value": {
+                  "kind": "op",
+                  "name": "carrier",
+                  "args": [
+                    {
+                      "kind": "query",
+                      "name": "CurrentPartition"
+                    },
+                    {
+                      "kind": "query",
+                      "name": "SelectedBlock"
+                    }
+                  ]
+                },
+                "none": {
+                  "kind": "literal",
+                  "type": "Bool",
+                  "value": false
+                },
+                "binder": "selected_carrier",
+                "some": {
+                  "kind": "op",
+                  "name": "eq",
+                  "args": [
+                    {
+                      "kind": "fold",
+                      "list": {
+                        "kind": "op",
+                        "name": "entries",
+                        "args": [
+                          {
+                            "kind": "query",
+                            "name": "CurrentPartition"
+                          }
+                        ]
+                      },
+                      "seed": {
+                        "kind": "literal",
+                        "type": "Nat",
+                        "value": 0
+                      },
+                      "acc": "number",
+                      "item": "entry",
+                      "body": {
+                        "kind": "op",
+                        "name": "add",
+                        "args": [
+                          {
+                            "kind": "var",
+                            "name": "number"
+                          },
+                          {
+                            "kind": "if",
+                            "condition": {
+                              "kind": "op",
+                              "name": "eq",
+                              "args": [
+                                {
+                                  "kind": "op",
+                                  "name": "f_p",
+                                  "args": [
+                                    {
+                                      "kind": "fst",
+                                      "value": {
+                                        "kind": "var",
+                                        "name": "entry"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "kind": "op",
+                                  "name": "f_p",
+                                  "args": [
+                                    {
+                                      "kind": "fst",
+                                      "value": {
+                                        "kind": "var",
+                                        "name": "selected_carrier"
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            "then": {
+                              "kind": "literal",
+                              "type": "Nat",
+                              "value": 1
+                            },
+                            "else": {
+                              "kind": "literal",
+                              "type": "Nat",
+                              "value": 0
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "kind": "literal",
+                      "type": "Nat",
+                      "value": 2
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "label": "Carry(d)",
+              "letter": "d",
+              "guard": {
+                "kind": "case",
+                "value": {
+                  "kind": "op",
+                  "name": "carrier",
+                  "args": [
+                    {
+                      "kind": "query",
+                      "name": "CurrentPartition"
+                    },
+                    {
+                      "kind": "query",
+                      "name": "SelectedBlock"
+                    }
+                  ]
+                },
+                "none": {
+                  "kind": "literal",
+                  "type": "Bool",
+                  "value": false
+                },
+                "binder": "selected_carrier",
+                "some": {
+                  "kind": "op",
+                  "name": "eq",
+                  "args": [
+                    {
+                      "kind": "fold",
+                      "list": {
+                        "kind": "op",
+                        "name": "entries",
+                        "args": [
+                          {
+                            "kind": "query",
+                            "name": "CurrentPartition"
+                          }
+                        ]
+                      },
+                      "seed": {
+                        "kind": "literal",
+                        "type": "Nat",
+                        "value": 0
+                      },
+                      "acc": "number",
+                      "item": "entry",
+                      "body": {
+                        "kind": "op",
+                        "name": "add",
+                        "args": [
+                          {
+                            "kind": "var",
+                            "name": "number"
+                          },
+                          {
+                            "kind": "if",
+                            "condition": {
+                              "kind": "op",
+                              "name": "eq",
+                              "args": [
+                                {
+                                  "kind": "op",
+                                  "name": "f_d",
+                                  "args": [
+                                    {
+                                      "kind": "fst",
+                                      "value": {
+                                        "kind": "var",
+                                        "name": "entry"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "kind": "op",
+                                  "name": "f_d",
+                                  "args": [
+                                    {
+                                      "kind": "fst",
+                                      "value": {
+                                        "kind": "var",
+                                        "name": "selected_carrier"
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            "then": {
+                              "kind": "literal",
+                              "type": "Nat",
+                              "value": 1
+                            },
+                            "else": {
+                              "kind": "literal",
+                              "type": "Nat",
+                              "value": 0
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "kind": "literal",
+                      "type": "Nat",
+                      "value": 1
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "label": "Absorb(d)",
+              "letter": "d",
+              "guard": {
+                "kind": "case",
+                "value": {
+                  "kind": "op",
+                  "name": "carrier",
+                  "args": [
+                    {
+                      "kind": "query",
+                      "name": "CurrentPartition"
+                    },
+                    {
+                      "kind": "query",
+                      "name": "SelectedBlock"
+                    }
+                  ]
+                },
+                "none": {
+                  "kind": "literal",
+                  "type": "Bool",
+                  "value": false
+                },
+                "binder": "selected_carrier",
+                "some": {
+                  "kind": "op",
+                  "name": "eq",
+                  "args": [
+                    {
+                      "kind": "fold",
+                      "list": {
+                        "kind": "op",
+                        "name": "entries",
+                        "args": [
+                          {
+                            "kind": "query",
+                            "name": "CurrentPartition"
+                          }
+                        ]
+                      },
+                      "seed": {
+                        "kind": "literal",
+                        "type": "Nat",
+                        "value": 0
+                      },
+                      "acc": "number",
+                      "item": "entry",
+                      "body": {
+                        "kind": "op",
+                        "name": "add",
+                        "args": [
+                          {
+                            "kind": "var",
+                            "name": "number"
+                          },
+                          {
+                            "kind": "if",
+                            "condition": {
+                              "kind": "op",
+                              "name": "eq",
+                              "args": [
+                                {
+                                  "kind": "op",
+                                  "name": "f_d",
+                                  "args": [
+                                    {
+                                      "kind": "fst",
+                                      "value": {
+                                        "kind": "var",
+                                        "name": "entry"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "kind": "op",
+                                  "name": "f_d",
+                                  "args": [
+                                    {
+                                      "kind": "fst",
+                                      "value": {
+                                        "kind": "var",
+                                        "name": "selected_carrier"
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            "then": {
+                              "kind": "literal",
+                              "type": "Nat",
+                              "value": 1
+                            },
+                            "else": {
+                              "kind": "literal",
+                              "type": "Nat",
+                              "value": 0
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "kind": "literal",
+                      "type": "Nat",
+                      "value": 2
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      },
+      "expected_status": "FAIL_GUARD",
+      "display_histories": [
+        "d",
+        "dpppdp"
+      ]
+    },
+    {
+      "id": "T",
+      "name": "parity_only",
+      "request": {
+        "language": "ECC_SYN_V1",
+        "environment": {
+          "defect": [
+            0,
+            0,
+            2,
+            3
+          ],
+          "seed": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        "selected": [
+          0,
+          1
+        ],
+        "program": {
+          "q": {
+            "kind": "op",
+            "name": "mod",
+            "args": [
+              {
+                "kind": "fold",
+                "list": {
+                  "kind": "query",
+                  "name": "AbsorptionSequence"
+                },
+                "seed": {
+                  "kind": "literal",
+                  "type": "Nat",
+                  "value": 0
+                },
+                "acc": "total",
+                "item": "record",
+                "body": {
+                  "kind": "op",
+                  "name": "add",
+                  "args": [
+                    {
+                      "kind": "var",
+                      "name": "total"
+                    },
+                    {
+                      "kind": "literal",
+                      "type": "Nat",
+                      "value": 1
+                    }
+                  ]
+                }
+              }
+            ],
+            "modulus": 2
+          },
+          "reports": [
+            {
+              "label": "parity",
+              "expr": {
+                "kind": "op",
+                "name": "mod",
+                "args": [
+                  {
+                    "kind": "fold",
+                    "list": {
+                      "kind": "query",
+                      "name": "AbsorptionSequence"
+                    },
+                    "seed": {
+                      "kind": "literal",
+                      "type": "Nat",
+                      "value": 0
+                    },
+                    "acc": "total",
+                    "item": "record",
+                    "body": {
+                      "kind": "op",
+                      "name": "add",
+                      "args": [
+                        {
+                          "kind": "var",
+                          "name": "total"
+                        },
+                        {
+                          "kind": "literal",
+                          "type": "Nat",
+                          "value": 1
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "modulus": 2
+              }
+            }
+          ],
+          "commands": [
+            {
+              "label": "Raw(d)",
+              "letter": "d",
+              "guard": {
+                "kind": "literal",
+                "type": "Bool",
+                "value": true
+              }
+            }
+          ]
+        }
+      },
+      "expected_status": "FAIL_SUCCESSOR",
+      "display_histories": [
+        "d",
+        "dp"
+      ]
+    },
+    {
+      "id": "P",
+      "name": "packet_only",
+      "request": {
+        "language": "ECC_SYN_V1",
+        "environment": {
+          "defect": [
+            0,
+            0,
+            2
+          ],
+          "seed": [
+            0,
+            1,
+            2
+          ]
+        },
+        "selected": [
+          0,
+          1,
+          2
+        ],
+        "program": {
+          "q": {
+            "kind": "pair",
+            "left": {
+              "kind": "query",
+              "name": "CurrentPartition"
+            },
+            "right": {
+              "kind": "query",
+              "name": "SelectedBlock"
+            }
+          },
+          "reports": [
+            {
+              "label": "partition",
+              "expr": {
+                "kind": "query",
+                "name": "CurrentPartition"
+              }
+            }
+          ],
+          "commands": [
+            {
+              "label": "Carry(p)",
+              "letter": "p",
+              "guard": {
+                "kind": "case",
+                "value": {
+                  "kind": "op",
+                  "name": "carrier",
+                  "args": [
+                    {
+                      "kind": "query",
+                      "name": "CurrentPartition"
+                    },
+                    {
+                      "kind": "query",
+                      "name": "SelectedBlock"
+                    }
+                  ]
+                },
+                "none": {
+                  "kind": "literal",
+                  "type": "Bool",
+                  "value": false
+                },
+                "binder": "selected_carrier",
+                "some": {
+                  "kind": "op",
+                  "name": "eq",
+                  "args": [
+                    {
+                      "kind": "fold",
+                      "list": {
+                        "kind": "op",
+                        "name": "entries",
+                        "args": [
+                          {
+                            "kind": "query",
+                            "name": "CurrentPartition"
+                          }
+                        ]
+                      },
+                      "seed": {
+                        "kind": "literal",
+                        "type": "Nat",
+                        "value": 0
+                      },
+                      "acc": "number",
+                      "item": "entry",
+                      "body": {
+                        "kind": "op",
+                        "name": "add",
+                        "args": [
+                          {
+                            "kind": "var",
+                            "name": "number"
+                          },
+                          {
+                            "kind": "if",
+                            "condition": {
+                              "kind": "op",
+                              "name": "eq",
+                              "args": [
+                                {
+                                  "kind": "op",
+                                  "name": "f_p",
+                                  "args": [
+                                    {
+                                      "kind": "fst",
+                                      "value": {
+                                        "kind": "var",
+                                        "name": "entry"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "kind": "op",
+                                  "name": "f_p",
+                                  "args": [
+                                    {
+                                      "kind": "fst",
+                                      "value": {
+                                        "kind": "var",
+                                        "name": "selected_carrier"
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            "then": {
+                              "kind": "literal",
+                              "type": "Nat",
+                              "value": 1
+                            },
+                            "else": {
+                              "kind": "literal",
+                              "type": "Nat",
+                              "value": 0
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "kind": "literal",
+                      "type": "Nat",
+                      "value": 1
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "label": "Absorb(p)",
+              "letter": "p",
+              "guard": {
+                "kind": "case",
+                "value": {
+                  "kind": "op",
+                  "name": "carrier",
+                  "args": [
+                    {
+                      "kind": "query",
+                      "name": "CurrentPartition"
+                    },
+                    {
+                      "kind": "query",
+                      "name": "SelectedBlock"
+                    }
+                  ]
+                },
+                "none": {
+                  "kind": "literal",
+                  "type": "Bool",
+                  "value": false
+                },
+                "binder": "selected_carrier",
+                "some": {
+                  "kind": "op",
+                  "name": "eq",
+                  "args": [
+                    {
+                      "kind": "fold",
+                      "list": {
+                        "kind": "op",
+                        "name": "entries",
+                        "args": [
+                          {
+                            "kind": "query",
+                            "name": "CurrentPartition"
+                          }
+                        ]
+                      },
+                      "seed": {
+                        "kind": "literal",
+                        "type": "Nat",
+                        "value": 0
+                      },
+                      "acc": "number",
+                      "item": "entry",
+                      "body": {
+                        "kind": "op",
+                        "name": "add",
+                        "args": [
+                          {
+                            "kind": "var",
+                            "name": "number"
+                          },
+                          {
+                            "kind": "if",
+                            "condition": {
+                              "kind": "op",
+                              "name": "eq",
+                              "args": [
+                                {
+                                  "kind": "op",
+                                  "name": "f_p",
+                                  "args": [
+                                    {
+                                      "kind": "fst",
+                                      "value": {
+                                        "kind": "var",
+                                        "name": "entry"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "kind": "op",
+                                  "name": "f_p",
+                                  "args": [
+                                    {
+                                      "kind": "fst",
+                                      "value": {
+                                        "kind": "var",
+                                        "name": "selected_carrier"
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            "then": {
+                              "kind": "literal",
+                              "type": "Nat",
+                              "value": 1
+                            },
+                            "else": {
+                              "kind": "literal",
+                              "type": "Nat",
+                              "value": 0
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "kind": "literal",
+                      "type": "Nat",
+                      "value": 2
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "label": "Carry(d)",
+              "letter": "d",
+              "guard": {
+                "kind": "case",
+                "value": {
+                  "kind": "op",
+                  "name": "carrier",
+                  "args": [
+                    {
+                      "kind": "query",
+                      "name": "CurrentPartition"
+                    },
+                    {
+                      "kind": "query",
+                      "name": "SelectedBlock"
+                    }
+                  ]
+                },
+                "none": {
+                  "kind": "literal",
+                  "type": "Bool",
+                  "value": false
+                },
+                "binder": "selected_carrier",
+                "some": {
+                  "kind": "op",
+                  "name": "eq",
+                  "args": [
+                    {
+                      "kind": "fold",
+                      "list": {
+                        "kind": "op",
+                        "name": "entries",
+                        "args": [
+                          {
+                            "kind": "query",
+                            "name": "CurrentPartition"
+                          }
+                        ]
+                      },
+                      "seed": {
+                        "kind": "literal",
+                        "type": "Nat",
+                        "value": 0
+                      },
+                      "acc": "number",
+                      "item": "entry",
+                      "body": {
+                        "kind": "op",
+                        "name": "add",
+                        "args": [
+                          {
+                            "kind": "var",
+                            "name": "number"
+                          },
+                          {
+                            "kind": "if",
+                            "condition": {
+                              "kind": "op",
+                              "name": "eq",
+                              "args": [
+                                {
+                                  "kind": "op",
+                                  "name": "f_d",
+                                  "args": [
+                                    {
+                                      "kind": "fst",
+                                      "value": {
+                                        "kind": "var",
+                                        "name": "entry"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "kind": "op",
+                                  "name": "f_d",
+                                  "args": [
+                                    {
+                                      "kind": "fst",
+                                      "value": {
+                                        "kind": "var",
+                                        "name": "selected_carrier"
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            "then": {
+                              "kind": "literal",
+                              "type": "Nat",
+                              "value": 1
+                            },
+                            "else": {
+                              "kind": "literal",
+                              "type": "Nat",
+                              "value": 0
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "kind": "literal",
+                      "type": "Nat",
+                      "value": 1
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "label": "Absorb(d)",
+              "letter": "d",
+              "guard": {
+                "kind": "case",
+                "value": {
+                  "kind": "op",
+                  "name": "carrier",
+                  "args": [
+                    {
+                      "kind": "query",
+                      "name": "CurrentPartition"
+                    },
+                    {
+                      "kind": "query",
+                      "name": "SelectedBlock"
+                    }
+                  ]
+                },
+                "none": {
+                  "kind": "literal",
+                  "type": "Bool",
+                  "value": false
+                },
+                "binder": "selected_carrier",
+                "some": {
+                  "kind": "op",
+                  "name": "eq",
+                  "args": [
+                    {
+                      "kind": "fold",
+                      "list": {
+                        "kind": "op",
+                        "name": "entries",
+                        "args": [
+                          {
+                            "kind": "query",
+                            "name": "CurrentPartition"
+                          }
+                        ]
+                      },
+                      "seed": {
+                        "kind": "literal",
+                        "type": "Nat",
+                        "value": 0
+                      },
+                      "acc": "number",
+                      "item": "entry",
+                      "body": {
+                        "kind": "op",
+                        "name": "add",
+                        "args": [
+                          {
+                            "kind": "var",
+                            "name": "number"
+                          },
+                          {
+                            "kind": "if",
+                            "condition": {
+                              "kind": "op",
+                              "name": "eq",
+                              "args": [
+                                {
+                                  "kind": "op",
+                                  "name": "f_d",
+                                  "args": [
+                                    {
+                                      "kind": "fst",
+                                      "value": {
+                                        "kind": "var",
+                                        "name": "entry"
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "kind": "op",
+                                  "name": "f_d",
+                                  "args": [
+                                    {
+                                      "kind": "fst",
+                                      "value": {
+                                        "kind": "var",
+                                        "name": "selected_carrier"
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            "then": {
+                              "kind": "literal",
+                              "type": "Nat",
+                              "value": 1
+                            },
+                            "else": {
+                              "kind": "literal",
+                              "type": "Nat",
+                              "value": 0
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "kind": "literal",
+                      "type": "Nat",
+                      "value": 2
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      },
+      "expected_status": "PASS_EXACT",
+      "display_histories": null
+    }
+  ]
+}

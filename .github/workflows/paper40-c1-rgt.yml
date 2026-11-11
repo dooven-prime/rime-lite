@@ -1,0 +1,70 @@
+name: Paper XL C1 RGT Companion
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/paper40-c1-rgt.yml"
+      - "experiments/paper40/**"
+      - "experiments/rgt_bounded_history_certificates/**"
+      - "experiments/fusion_log_compression/**"
+      - "contracts/formal-cases/rgt-bounded-history/**"
+  push:
+    branches: [master]
+    paths:
+      - ".github/workflows/paper40-c1-rgt.yml"
+      - "experiments/paper40/**"
+      - "experiments/rgt_bounded_history_certificates/**"
+      - "experiments/fusion_log_compression/**"
+      - "contracts/formal-cases/rgt-bounded-history/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: paper40-c1-rgt-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  proof-and-cases:
+    name: C1 PaperXL RGT proof and fixed consumers
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: "3.13"
+      - name: Verify three source owners and exact inputs
+        run: python -B experiments/paper40/lean/validation/replay.py --verify-inputs-only
+      - name: Test source and finite-replay rejection gates
+        run: python -B -m unittest discover -s experiments/paper40/lean/validation -p test_companion.py
+      - name: Build all four C1 modules and Paper XL consumer proofs
+        uses: leanprover/lean-action@fe408643ea7367d8c0404a8be3975bb145f5fb64
+        with:
+          lake-package-directory: experiments/paper40/lean
+          auto-config: "false"
+          build: "true"
+          test: "false"
+          lint: "false"
+          use-mathlib-cache: "true"
+          use-github-cache: "false"
+      - name: Replay and audit 68 plus 25 plus 29 declarations
+        run: python -B experiments/paper40/lean/validation/replay.py --report "$RUNNER_TEMP/c1-rgt/proof-replay.json"
+      - name: Compare fixed released Python consumers with Lean
+        run: python -B contracts/formal-cases/rgt-bounded-history/v1/replay.py --report "$RUNNER_TEMP/c1-rgt/consumer-replay.json"
+      - name: Bind the actual runner and source commit
+        env:
+          PROOF_SOURCE_COMMIT: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: python -B experiments/paper40/lean/validation/replay.py --collect-ci "$RUNNER_TEMP/c1-rgt"
+      - name: Retain separate proof and runtime receipts
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: paper40-c1-rgt-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/c1-rgt/*.json
+          if-no-files-found: warn
+          retention-days: 90
