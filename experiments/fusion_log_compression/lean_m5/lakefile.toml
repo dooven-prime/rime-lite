@@ -1,0 +1,10 @@
+name = "fusion_log_enumeration"
+version = "0.1.0"
+defaultTargets = ["FusionLogEnumeration"]
+
+[[require]]
+name = "fusion_log_schedule"
+path = "../lean_m4d"
+
+[[lean_lib]]
+name = "FusionLogEnumeration"

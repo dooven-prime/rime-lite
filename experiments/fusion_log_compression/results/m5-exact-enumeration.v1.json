@@ -1,0 +1,340 @@
+{
+  "status": "PASS_M5_ACTUAL_JOINT_AND_LITERAL_LOG_FIBRES",
+  "completed_at_utc": "2026-11-11T02:05:35.592436+00:00",
+  "lean_version": "Lean (version 4.33.0, x86_64-w64-windows-gnu, commit d8b18978322de05a8f3dba51ef03cf5461676c17, Release)",
+  "mathlib_revision": "db584cd6d46c92f209a44c0f1c829460d327499d",
+  "m5_manifest_sha256": "68755263d97b5d9a9cd139e9f4affdc7d9d81889ff3dfc196dcfedb5137ba8ab",
+  "m4d_manifest_sha256": "8a62981066908a78a4085c2977636cd4ffec83c283b5fd38997cc67ba31dc275",
+  "build_completed": true,
+  "build_output_sha256": "db21a675567623d9692693f89d4916e4e949a9c09cf47961fc59a53ab0f612e8",
+  "axioms": {
+    "FusionLogEnumeration.fixedScheduleLiteralEndpointEquiv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.card_actualLiteralEndpointFiber": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.MarkedCircle.BoundarySuccessorInvariant.contract": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.Schedule.terminalCircle_survivors_recover": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.Schedule.terminalCircle_survivors_eq_of_packetAtoms_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.compatibleEndpoint_packetAtoms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.compatibleEndpoint_packetRank": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.survivorsOfLiteralEndpoint_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.survivorsOfLiteralEndpoint_card": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.actualLiteralEndpoint_survivors_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.actualLiteralEndpoint_same_survivors": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.MarkedCircle.homogeneous_mergeFront_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.Schedule.homogeneous_terminalCircle_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.Schedule.terminalCircle_packetAtoms_eq_of_same_survivors": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.Schedule.terminalCircle_packetAtoms_eq_iff_same_survivors": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.schedule_last_eq_of_same_survivors": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.compatibleEndpoint_of_same_survivors": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.compatibleEndpoint_iff_same_survivors": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.actualLiteralEndpoint_iff_same_survivors": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.actualLiteralEndpointFiberEquivOfSameSurvivors": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.jointlyAttainable_iff_same_survivors": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.LiteralPacketStart.initial_indexBlocks_adjacent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.MarkedCircle.IndexedCircle.contract": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.Schedule.indexed_abstractTrace": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.Schedule.indexed_records_expand": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.LiteralPacketStart.indexedCircle": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.LiteralPacketStart.initial_indexPacketSet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.schedule_admissible_of_literalStart": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.schedule_admissible_of_literalStart_records": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.schedule_admissible_of_literalStart_last": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.schedule_admissible_of_literalStart_nonempty": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.logsWithSurvivorsEquivFixedSurvivorDeletionOrders": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.schedule_last_eq_of_rankOne": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.compatibleEndpoint_of_rankOne": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.actualLogFiberEquivFixedSurvivorDeletionOrders": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.card_actualLogFiber": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.actualLogFiberRankOneEquiv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.card_actualLogFiber_rankOne": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.LiteralPacketStart.index_edge_original_boundary": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.MarkedCircle.BoundarySuccessorInvariant.contract_allRanks": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.LiteralPacketStart.indexedTrace_logRun": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.LiteralPacketStart.admissibleSchedule_logRun": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.LiteralPacketStart.jointlyAttainable_logRun": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.jointlyAttainable_length_add_rank": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.rawActualLogFiberEquiv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.rawActualLogFiberEquivFixedSurvivorDeletionOrders": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.card_rawActualLogFiber": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.rawActualLogFiberRankOneEquiv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.card_rawActualLogFiber_rankOne": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.card_rawActualLogFiber_of_reachable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.scheduleEndpointToRawJoint_injective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.scheduleEndpointToRawJoint_surjective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.rawJointEquivSigma": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.rawJointEquivSigma_data": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.fixedScheduleTerminalReference_rank": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.fixedScheduleEndpointChoicesEquiv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.scheduleEndpointSigmaEquivProduct": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.rawJointEquivProduct": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.rawJointEquivCountModel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.card_rawJoint": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.rawJointEquivEndpointLogs": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.card_rawLiteralEndpoints_mul_logFiber": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.card_rawLiteralEndpoints": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FusionLogEnumeration.card_rawLiteralEndpoints_rankOne": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "audit_output": "'FusionLogEnumeration.fixedScheduleLiteralEndpointEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogEnumeration.card_actualLiteralEndpointFiber' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogEnumeration.MarkedCircle.BoundarySuccessorInvariant.contract' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'FusionLogEnumeration.Schedule.terminalCircle_survivors_recover' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'FusionLogEnumeration.Schedule.terminalCircle_survivors_eq_of_packetAtoms_eq' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'FusionLogEnumeration.compatibleEndpoint_packetAtoms' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogEnumeration.compatibleEndpoint_packetRank' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogEnumeration.survivorsOfLiteralEndpoint_eq' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogEnumeration.survivorsOfLiteralEndpoint_card' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogEnumeration.actualLiteralEndpoint_survivors_eq' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogEnumeration.actualLiteralEndpoint_same_survivors' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogEnumeration.MarkedCircle.homogeneous_mergeFront_iff' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'FusionLogEnumeration.Schedule.homogeneous_terminalCircle_iff' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'FusionLogEnumeration.Schedule.terminalCircle_packetAtoms_eq_of_same_survivors' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'FusionLogEnumeration.Schedule.terminalCircle_packetAtoms_eq_iff_same_survivors' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'FusionLogEnumeration.schedule_last_eq_of_same_survivors' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogEnumeration.compatibleEndpoint_of_same_survivors' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogEnumeration.compatibleEndpoint_iff_same_survivors' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogEnumeration.actualLiteralEndpoint_iff_same_survivors' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'FusionLogEnumeration.actualLiteralEndpointFiberEquivOfSameSurvivors' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'FusionLogEnumeration.jointlyAttainable_iff_same_survivors' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogEnumeration.LiteralPacketStart.initial_indexBlocks_adjacent' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'FusionLogEnumeration.MarkedCircle.IndexedCircle.contract' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogEnumeration.Schedule.indexed_abstractTrace' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogEnumeration.Schedule.indexed_records_expand' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogEnumeration.LiteralPacketStart.indexedCircle' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogEnumeration.LiteralPacketStart.initial_indexPacketSet' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'FusionLogEnumeration.schedule_admissible_of_literalStart' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogEnumeration.schedule_admissible_of_literalStart_records' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'FusionLogEnumeration.schedule_admissible_of_literalStart_last' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'FusionLogEnumeration.schedule_admissible_of_literalStart_nonempty' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'FusionLogEnumeration.logsWithSurvivorsEquivFixedSurvivorDeletionOrders' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'FusionLogEnumeration.schedule_last_eq_of_rankOne' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogEnumeration.compatibleEndpoint_of_rankOne' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogEnumeration.actualLogFiberEquivFixedSurvivorDeletionOrders' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'FusionLogEnumeration.card_actualLogFiber' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogEnumeration.actualLogFiberRankOneEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogEnumeration.card_actualLogFiber_rankOne' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogEnumeration.LiteralPacketStart.index_edge_original_boundary' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'FusionLogEnumeration.MarkedCircle.BoundarySuccessorInvariant.contract_allRanks' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'FusionLogEnumeration.LiteralPacketStart.indexedTrace_logRun' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogEnumeration.LiteralPacketStart.admissibleSchedule_logRun' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'FusionLogEnumeration.LiteralPacketStart.jointlyAttainable_logRun' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'FusionLogEnumeration.jointlyAttainable_length_add_rank' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogEnumeration.rawActualLogFiberEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogEnumeration.rawActualLogFiberEquivFixedSurvivorDeletionOrders' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'FusionLogEnumeration.card_rawActualLogFiber' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogEnumeration.rawActualLogFiberRankOneEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogEnumeration.card_rawActualLogFiber_rankOne' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogEnumeration.card_rawActualLogFiber_of_reachable' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogEnumeration.scheduleEndpointToRawJoint_injective' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogEnumeration.scheduleEndpointToRawJoint_surjective' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogEnumeration.rawJointEquivSigma' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogEnumeration.rawJointEquivSigma_data' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogEnumeration.fixedScheduleTerminalReference_rank' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogEnumeration.fixedScheduleEndpointChoicesEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogEnumeration.scheduleEndpointSigmaEquivProduct' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogEnumeration.rawJointEquivProduct' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogEnumeration.rawJointEquivCountModel' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogEnumeration.card_rawJoint' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogEnumeration.rawJointEquivEndpointLogs' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogEnumeration.card_rawLiteralEndpoints_mul_logFiber' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogEnumeration.card_rawLiteralEndpoints' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FusionLogEnumeration.card_rawLiteralEndpoints_rankOne' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+  "signatures_output": "@FusionLogEnumeration.card_rawJoint.{u_1} : \u2200 {\u03b1 : Type u_1} [inst : DecidableEq.{u_1 + 1} \u03b1]\n  {C : FusionLogEnumeration.MarkedCircle.{u_1} \u03b1} {n : \u2115} [inst_1 : NeZero.{0} n]\n  [inst_2 : NeZero.{0} (FusionLogEnumeration.MarkedCircle.rank.{u_1} C)] (F : Finset.{u_1} \u03b1)\n  (start : FusionLogEnumeration.LiteralPacketStart.{u_1} C n) (s : \u2115) (hn : LE.le.{0} 3 n),\n  LE.le.{0} 1 s \u2192\n    \u2200 (bounded : LE.le.{0} s (FusionLogEnumeration.MarkedCircle.rank.{u_1} C)),\n      Eq.{1}\n        (Fintype.card.{u_1}\n          (FusionLogEnumeration.RawJoint.{u_1} F start\n            (HSub.hSub.{0, 0, 0} (FusionLogEnumeration.MarkedCircle.rank.{u_1} C) s)))\n        (HMul.hMul.{0, 0, 0}\n          (HDiv.hDiv.{0, 0, 0} (FusionLogEnumeration.MarkedCircle.rank.{u_1} C).factorial s.factorial)\n          (HMul.hMul.{0, 0, 0} s (n.choose s)))\n@FusionLogEnumeration.card_rawActualLogFiber_of_reachable.{u_1} : \u2200 {\u03b1 : Type u_1} [inst : DecidableEq.{u_1 + 1} \u03b1]\n  {n : \u2115} [inst_1 : NeZero.{0} n] {C : FusionLogEnumeration.MarkedCircle.{u_1} \u03b1}\n  [inst_2 : NeZero.{0} (FusionLogEnumeration.MarkedCircle.rank.{u_1} C)] (F : Finset.{u_1} \u03b1)\n  (start : FusionLogEnumeration.LiteralPacketStart.{u_1} C n)\n  (target : RegisteredAbsorptionChains.Placement.{u_1} n (Finset.{u_1} \u03b1)) (hn : LE.le.{0} 3 n)\n  (reachable : Nonempty.{u_1 + 1} (FusionLogEnumeration.RawActualLogFiber.{u_1} F start target)),\n  Eq.{1} (Fintype.card.{u_1} (FusionLogEnumeration.RawActualLogFiber.{u_1} F start target))\n    (ite.{1} (Eq.{1} (FusionLogReplay.packetRank.{u_1} target) 1)\n      (FusionLogEnumeration.MarkedCircle.rank.{u_1} C).factorial\n      (HSub.hSub.{0, 0, 0} (FusionLogEnumeration.MarkedCircle.rank.{u_1} C)\n          (FusionLogReplay.packetRank.{u_1} target)).factorial)\n@FusionLogEnumeration.card_rawLiteralEndpoints.{u_1} : \u2200 {\u03b1 : Type u_1} [inst : DecidableEq.{u_1 + 1} \u03b1]\n  {C : FusionLogEnumeration.MarkedCircle.{u_1} \u03b1} {n : \u2115} [inst_1 : NeZero.{0} n]\n  [inst_2 : NeZero.{0} (FusionLogEnumeration.MarkedCircle.rank.{u_1} C)] (F : Finset.{u_1} \u03b1)\n  (start : FusionLogEnumeration.LiteralPacketStart.{u_1} C n) (s : \u2115) (hn : LE.le.{0} 3 n),\n  LE.le.{0} 2 s \u2192\n    \u2200 (bounded : LE.le.{0} s (FusionLogEnumeration.MarkedCircle.rank.{u_1} C)),\n      Eq.{1} (Fintype.card.{u_1} (FusionLogEnumeration.RawLiteralEndpoints.{u_1} F start s))\n        (HMul.hMul.{0, 0, 0} ((FusionLogEnumeration.MarkedCircle.rank.{u_1} C).choose s)\n          (HMul.hMul.{0, 0, 0} s (n.choose s)))\n@FusionLogEnumeration.card_rawLiteralEndpoints_rankOne.{u_1} : \u2200 {\u03b1 : Type u_1} [inst : DecidableEq.{u_1 + 1} \u03b1]\n  {C : FusionLogEnumeration.MarkedCircle.{u_1} \u03b1} {n : \u2115} [inst_1 : NeZero.{0} n]\n  [inst_2 : NeZero.{0} (FusionLogEnumeration.MarkedCircle.rank.{u_1} C)] (F : Finset.{u_1} \u03b1)\n  (start : FusionLogEnumeration.LiteralPacketStart.{u_1} C n) (hn : LE.le.{0} 3 n),\n  Eq.{1} (Fintype.card.{u_1} (FusionLogEnumeration.RawLiteralEndpoints.{u_1} F start 1)) n\n@FusionLogEnumeration.rawJointEquivSigma.{u_1} : {\u03b1 : Type u_1} \u2192\n  [inst : DecidableEq.{u_1 + 1} \u03b1] \u2192\n    {C : FusionLogEnumeration.MarkedCircle.{u_1} \u03b1} \u2192\n      {n : \u2115} \u2192\n        [inst_1 : NeZero.{0} n] \u2192\n          [inst_2 : NeZero.{0} (FusionLogEnumeration.MarkedCircle.rank.{u_1} C)] \u2192\n            (F : Finset.{u_1} \u03b1) \u2192\n              (start : FusionLogEnumeration.LiteralPacketStart.{u_1} C n) \u2192\n                (d : \u2115) \u2192\n                  LE.le.{0} 3 n \u2192\n                    Equiv.{u_1 + 1, u_1 + 1} (FusionLogEnumeration.RawJoint.{u_1} F start d)\n                      ((path : FusionLogEnumeration.Schedule.{u_1} C d) \u00d7\n                        FusionLogEnumeration.ActualLiteralEndpointFiber.{u_1} start path)\n@FusionLogEnumeration.rawActualLogFiberEquivFixedSurvivorDeletionOrders.{u_1} : {\u03b1 : Type u_1} \u2192\n  [inst : DecidableEq.{u_1 + 1} \u03b1] \u2192\n    {n : \u2115} \u2192\n      [inst_1 : NeZero.{0} n] \u2192\n        {C : FusionLogEnumeration.MarkedCircle.{u_1} \u03b1} \u2192\n          [inst_2 : NeZero.{0} (FusionLogEnumeration.MarkedCircle.rank.{u_1} C)] \u2192\n            (F : Finset.{u_1} \u03b1) \u2192\n              (start : FusionLogEnumeration.LiteralPacketStart.{u_1} C n) \u2192\n                {d : \u2115} \u2192\n                  (reference : FusionLogEnumeration.Schedule.{u_1} C d) \u2192\n                    {target : RegisteredAbsorptionChains.Placement.{u_1} n (Finset.{u_1} \u03b1)} \u2192\n                      LE.le.{0} 3 n \u2192\n                        FusionLogSchedule.JointlyAttainable.{u_1} F\n                            (FusionLogEnumeration.LiteralPacketStart.execution.{u_1} start)\n                            (FusionLogEnumeration.Schedule.records.{u_1} reference) target \u2192\n                          LE.le.{0} 2\n                              (FusionLogEnumeration.MarkedCircle.rank.{u_1}\n                                (FusionLogEnumeration.Schedule.terminalCircle.{u_1} reference)) \u2192\n                            Equiv.{u_1 + 1, u_1 + 1} (FusionLogEnumeration.RawActualLogFiber.{u_1} F start target)\n                              (FusionLogEnumeration.FixedSurvivorDeletionOrders.{u_1} C\n                                (HSub.hSub.{0, 0, 0} (FusionLogEnumeration.MarkedCircle.rank.{u_1} C) d)\n                                (FusionLogEnumeration.Schedule.survivorChoices.{u_1} reference))\n@[reducible] def FusionLogEnumeration.RawJoint.{u_1} : {\u03b1 : Type u_1} \u2192\n  [inst : DecidableEq \u03b1] \u2192\n    {C : FusionLogEnumeration.MarkedCircle \u03b1} \u2192\n      {n : \u2115} \u2192\n        [inst_1 : NeZero n] \u2192\n          [inst_2 : NeZero C.rank] \u2192 Finset \u03b1 \u2192 FusionLogEnumeration.LiteralPacketStart C n \u2192 \u2115 \u2192 Type (max 0 u_1) :=\nfun {\u03b1} [DecidableEq \u03b1] {C} {n} [NeZero n] [NeZero C.rank] F start d =>\n  { joint // joint.1.length = d \u2227 FusionLogSchedule.JointlyAttainable F start.execution joint.1 joint.2 }\n@[reducible] def FusionLogEnumeration.RawActualLogFiber.{u_1} : {\u03b1 : Type u_1} \u2192\n  [inst : DecidableEq \u03b1] \u2192\n    {n : \u2115} \u2192\n      [inst_1 : NeZero n] \u2192\n        {C : FusionLogEnumeration.MarkedCircle \u03b1} \u2192\n          [inst_2 : NeZero C.rank] \u2192\n            Finset \u03b1 \u2192\n              FusionLogEnumeration.LiteralPacketStart C n \u2192\n                RegisteredAbsorptionChains.Placement n (Finset \u03b1) \u2192 Type (max 0 u_1) :=\nfun {\u03b1} [DecidableEq \u03b1] {n} [NeZero n] {C} [NeZero C.rank] F start target =>\n  { events // FusionLogSchedule.JointlyAttainable F start.execution events target }\nstructure FusionLogEnumeration.LiteralPacketStart.{u_1} {\u03b1 : Type u_1} [DecidableEq \u03b1]\n  (C : FusionLogEnumeration.MarkedCircle \u03b1) (n : \u2115) [NeZero n] [NeZero C.rank] : Type u_1\nnumber of parameters: 6\nfields:\n  FusionLogEnumeration.LiteralPacketStart.initial : RegisteredAbsorptionChains.Placement n (Finset \u03b1)\n  FusionLogEnumeration.LiteralPacketStart.named : RegisteredAbsorptionChains.LegalNamedPlacement n C.rank \u03b1\n  FusionLogEnumeration.LiteralPacketStart.initial_eq_named : self.initial = self.named.placed\n  FusionLogEnumeration.LiteralPacketStart.circleBlocks : \u2200 (i : Fin C.rank), self.named.block \u2191\u2191i = C.packets[i].atoms\n  FusionLogEnumeration.LiteralPacketStart.positiveOrder : self.named.PositivelyOrdered\nconstructor:\n  FusionLogEnumeration.LiteralPacketStart.mk.{u_1} {\u03b1 : Type u_1} [DecidableEq \u03b1]\n    {C : FusionLogEnumeration.MarkedCircle \u03b1} {n : \u2115} [NeZero n] [NeZero C.rank]\n    (initial : RegisteredAbsorptionChains.Placement n (Finset \u03b1))\n    (named : RegisteredAbsorptionChains.LegalNamedPlacement n C.rank \u03b1) (initial_eq_named : initial = named.placed)\n    (circleBlocks : \u2200 (i : Fin C.rank), named.block \u2191\u2191i = C.packets[i].atoms)\n    (positiveOrder : named.PositivelyOrdered) : FusionLogEnumeration.LiteralPacketStart C n\n",
+  "scope": "Section 5: all-parameter admissible-log/boundary-deletion equivalence, actual complete-log/literal-endpoint joint count, and unrestricted actual literal-endpoint log fibres for legal positive packet starts, n >= 3, 1 <= s <= t",
+  "open_obligations": [
+    "Section 6 all-R exact shortest-word optimality and uniqueness"
+  ],
+  "publication_identity": null,
+  "independent_cold_replay": false
+}
