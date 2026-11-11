@@ -1,0 +1,89 @@
+{
+  "schema": "rime.lean-companion-post-release-anchor.v1",
+  "status": "PUBLISHED_DEPOSIT_BYTES_VERIFIED",
+  "checked_at_utc": "2026-11-11T02:44:28.496249+00:00",
+  "companion": "Fusion-log M5",
+  "release_version": "1.0",
+  "source_tag": "fusion-log-m5-source-v1.0",
+  "tag_object": "c36f7e512ec078a844545ce3a72f665d59c2d2c4",
+  "content_commit": "364d088753a736b0bee7fa59492eb7cd7b031326",
+  "merge_commit": "5dae236a14e1de804dd5191e40a913941bc879e9",
+  "doi": "10.5281/zenodo.24123627",
+  "record_url": "https://zenodo.org/records/24123627",
+  "publication_date": "2026-11-11",
+  "title": "Fusion-log M5: Actual Joint Enumeration and Literal-Endpoint Fibres — Lean Companion",
+  "zenodo_record_response_sha256": "cdf2281a0e8d6b2a99e0a4396206e639022ac5a08b97375cc9b2ece29dc3a09a",
+  "deposited_files": [
+    {
+      "filename": "Fusion-log-M5-Source-and-Hosted-CI-v1.0.receipt.json",
+      "bytes": 450,
+      "sha256": "e14bbabad1d272c8c91af7d9e7fafb3656fd17d034fb65b4275e907dc322447e",
+      "zenodo_checksum": "md5:5cf76c8bc67195b2e7e0f400ae0792d6",
+      "download_url": "https://zenodo.org/api/records/24123627/files/Fusion-log-M5-Source-and-Hosted-CI-v1.0.receipt.json/content",
+      "matches_local_frozen_file": true
+    },
+    {
+      "filename": "Fusion-log-M5-Source-and-Hosted-CI-v1.0.sha256",
+      "bytes": 111,
+      "sha256": "ee800473a2bca19cb6a37235ca5d1384fd9e6d97e62fad701e4bf035346b4c52",
+      "zenodo_checksum": "md5:01a68a468a1f831ab53cb7896c089ea9",
+      "download_url": "https://zenodo.org/api/records/24123627/files/Fusion-log-M5-Source-and-Hosted-CI-v1.0.sha256/content",
+      "matches_local_frozen_file": true
+    },
+    {
+      "filename": "Fusion-log-M5-Source-and-Hosted-CI-v1.0.zip",
+      "bytes": 442201,
+      "sha256": "eeea2fadc7e67f8d341551bd6c41fda45883be1e4cfa403a36688f64d292c663",
+      "zenodo_checksum": "md5:af286214ce665f35df672b61c6d034d9",
+      "download_url": "https://zenodo.org/api/records/24123627/files/Fusion-log-M5-Source-and-Hosted-CI-v1.0.zip/content",
+      "matches_local_frozen_file": true
+    }
+  ],
+  "tagged_source_file_count": 190,
+  "tagged_source_bytes_match_deposited_zip": true,
+  "frozen_manifest_sha256": {
+    "proof-manifest.v1.json": "65bf9a915294891a0b5558a16445f64588cda4db8cd893c579ccd4d294cd4169",
+    "m4-development-manifest.v2.json": "69456464ff271024c8ab9e97694d5c8fdf125db3c309aadf98fded7fb07612ed",
+    "m4c-development-manifest.v1.json": "606e08c94497e48098d8f7c78ad9572ebc6b4614d5c7552f9254743b35d9660d",
+    "m4d-development-manifest.v1.json": "8a62981066908a78a4085c2977636cd4ffec83c283b5fd38997cc67ba31dc275",
+    "m5-development-manifest.v1.json": "68755263d97b5d9a9cd139e9f4affdc7d9d81889ff3dfc196dcfedb5137ba8ab"
+  },
+  "hosted_ci": [
+    {
+      "run_id": 42944167440,
+      "attempt": 1,
+      "source_commit": "364d088753a736b0bee7fa59492eb7cd7b031326",
+      "event": "pull_request",
+      "url": "https://github.com/dooven-prime/rime-lite/actions/runs/42944167440",
+      "receipt_sha256": {
+        "ancestors.json": "648f5593d29c6b0263f6a8c50cb9efa4c7cfcd2e42c370778a6fcb0c1e48f934",
+        "github-run.json": "9db896b4854f9ce7d5f992e62009297916df26ac71f4bdd54558d6fece24049f",
+        "m4c-replay.json": "9b852c02a3270f0b827c1148ba3148422f3e970a0bb2face7527affdbb3327cf",
+        "m4d-replay.json": "ebc06d36322256362d0a6ff2cb5a90461c51d1f8b701064d01b3ecb2e93902b1",
+        "m5-ancestor.json": "0e5b762afa0be25e3247dcf2f14a249f62cd8d47d3a9a34985e3f83bcf4737b2",
+        "m5-replay.json": "aae83abf33c181177cf71ee53f29d39161d6f1e083444e768889583f1e1ef348",
+        "m5-runner-context.json": "729d658cbb4369c8f06bb8d1ddf27a0580b3c9cc881b7fd907212af54f7d39f9",
+        "runner-context.json": "8f3c9bf68fca258c2a4dcac22be5243a798fc6e99ec0e661d0999783e643e5fa"
+      }
+    },
+    {
+      "run_id": 42944881584,
+      "attempt": 1,
+      "source_commit": "5dae236a14e1de804dd5191e40a913941bc879e9",
+      "event": "push",
+      "url": "https://github.com/dooven-prime/rime-lite/actions/runs/42944881584",
+      "receipt_sha256": {
+        "ancestors.json": "648f5593d29c6b0263f6a8c50cb9efa4c7cfcd2e42c370778a6fcb0c1e48f934",
+        "github-run.json": "f58ecabe87686e45465bbe157c05908f989ecbebe332c3a9135dfa207552894c",
+        "m4c-replay.json": "6fd189add221b58e728e50855d30510b3220b21a91538498969d778992bf5ebe",
+        "m4d-replay.json": "de1c1ad1dd5bf829f598f0192e8a386f23b9b9a0e158061cd6b052aaddb015fe",
+        "m5-ancestor.json": "0e5b762afa0be25e3247dcf2f14a249f62cd8d47d3a9a34985e3f83bcf4737b2",
+        "m5-replay.json": "b25d6edf7eaf70596fab5e95f7a22da9dc229dd5f7bc16b50b00aed4022aeea3",
+        "m5-runner-context.json": "8c0dd5367f41cdec899e7739560026421800f91409d736606d7bf4fe2b1f69d4",
+        "runner-context.json": "48e5fa75040ceb499cf17ae713f2e2a6b69230f7321657c674d1ed15f5e97af5"
+      }
+    }
+  ],
+  "source_identity_in_archive_sha256": "be9a737ad6f8f1978e85223ac93dfe160e5528976b559f58531c13a9bea47bf7",
+  "boundary": "Post-release publication and byte binding only; frozen candidate manifests and original receipts are unchanged. No new kernel replay or all-R formalization is claimed."
+}
