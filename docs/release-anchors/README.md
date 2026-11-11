@@ -25,6 +25,12 @@ not rewrite manifests or receipts that accurately recorded a candidate state.
 | Paper XXXVIII v1.0 | [paper38-v1.0.json](paper38-v1.0.json) |
 | Paper XXXIX v1.0 | [paper39-v1.0.json](paper39-v1.0.json) |
 | Paper XL v1.0 | [paper40-v1.0.json](paper40-v1.0.json) |
+| Paper XLI v1.0 | [paper41-v1.0.json](paper41-v1.0.json) |
+
+Paper XLI's anchor binds its tagged candidate manifest and local replay
+receipt to the single reader PDF deposited at Zenodo. The historical HAL
+submission and inherited Lean companion remain separately identified; the
+DOI does not assert that those files were deposited.
 
 The Paper XL anchor binds a [post-release fixed-controls audit](../../tools/release/verify_paper40_fixed_controls.py)
 as a supplement outside its immutable tag. The audit checks the nine retained
