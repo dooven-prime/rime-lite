@@ -66,8 +66,8 @@
     {
       "role": "candidate-ci-workflow",
       "path": ".github/workflows/paper41-candidate.yml",
-      "sha256": "1bde7cbfd540c28c730effab9de155867c1faf2358f439e838491b44eb4220dc",
-      "size": 2779
+      "sha256": "edd8aa265a59d29a4c9ecdc2905c69613d42a70e74b4a503abc5ae9d0eb0cec6",
+      "size": 2780
     },
     {
       "role": "checkout-line-ending-policy",

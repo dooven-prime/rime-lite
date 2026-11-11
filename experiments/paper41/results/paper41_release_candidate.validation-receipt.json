@@ -4,7 +4,7 @@
   "paper_id": "PAPER41",
   "release_identity_claimed": false,
   "external_anchor_claimed": false,
-  "manifest_sha256": "562f4fbbaceed9f9cef91c878ac7a6a0e3adfa3ecd8b37f5cef622147f45f967",
+  "manifest_sha256": "63b077fe0eaff1a3d9439dd33c11b24933e13b3a4282d7bec397308a61bddfdb",
   "artifact_count": 15,
   "historical_byte_bindings": 6,
   "lean_source_files": 56,
@@ -17,7 +17,7 @@
     7
   ],
   "lean_axiom_audits": 262,
-  "checked_at_utc": "2026-11-11T08:00:53.047935+00:00",
+  "checked_at_utc": "2026-11-11T12:23:22.073954+00:00",
   "limits": [
     "Local same-source replay, not independent replication",
     "No Zenodo deposit, release tag, or external anchor claimed",
