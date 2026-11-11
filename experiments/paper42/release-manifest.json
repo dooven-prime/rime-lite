@@ -1,0 +1,102 @@
+{
+  "schema": "rime.numbered-migration-candidate.v1",
+  "paper_id": "PAPER42",
+  "release_version": "1.0",
+  "intended_release_tag": "paper42-v1.0",
+  "status": "RELEASE_CANDIDATE",
+  "release_identity_claimed": false,
+  "external_anchor_claimed": false,
+  "receipt_self_exclusion": true,
+  "artifacts": [
+    {
+      "role": "manuscript",
+      "path": "papers/paper42/Paper XLII.md",
+      "sha256": "bde076c42a9e883613e6f06227550af9d59e3a450446b25fbe71fde4da9ae80a",
+      "size": 32803
+    },
+    {
+      "role": "bibliography",
+      "path": "papers/paper42/references-v1.bib",
+      "sha256": "e3a57efbbd16870c2f825d723e93ab4999a4c46e49b8c1c80902e2fd7a637701",
+      "size": 1233
+    },
+    {
+      "role": "reader-pdf",
+      "path": "papers/paper42/paper42_arxiv.pdf",
+      "sha256": "5ff34dcc7638b65f1079e924b8b431f328b2f4143b911935672c151063bda88d",
+      "size": 117419
+    },
+    {
+      "role": "paper-index",
+      "path": "papers/paper42/README.md",
+      "sha256": "92b1e28b3f182834f80cd08db191cccc0cdf4fefba8f10101e4a2332ffc2585e",
+      "size": 1351
+    },
+    {
+      "role": "evidence-map",
+      "path": "experiments/paper42/evidence-map.v1.json",
+      "sha256": "09a0bf3ca6c50fe87ce4486c66fbe36cfa6e0e42179807d652a3a894a9e1799c",
+      "size": 3352
+    },
+    {
+      "role": "experiment-index",
+      "path": "experiments/paper42/README.md",
+      "sha256": "3a6f19e94b950db1face56c5b5cbb72203dcba36f17f53bd88a1c44d9c04df7e",
+      "size": 1651
+    },
+    {
+      "role": "release-environment",
+      "path": "experiments/paper42/release-environment.json",
+      "sha256": "d982ecadfea2ebba64a7b05d97170511276122b83c4ee34940a23947e06f4c65",
+      "size": 910
+    },
+    {
+      "role": "candidate-validator",
+      "path": "tools/release/validate_numbered_migration_candidate.py",
+      "sha256": "306f194fe5b9a69495f96fb052221cca13f16c7b75a8d88975ca8442b0224fe5",
+      "size": 11802
+    },
+    {
+      "role": "candidate-validator-tests",
+      "path": "experiments/paper42/validation/test_release.py",
+      "sha256": "ec0bb70ee59b90d5cc4620661e418a28ffdd304a76ccefe6fd4cb312b3a23ce0",
+      "size": 3784
+    },
+    {
+      "role": "candidate-ci-workflow",
+      "path": ".github/workflows/paper42-candidate.yml",
+      "sha256": "098f471907113d4b94fa0f51c0c55333e6013cdc8f67c007ab9320cb79191852",
+      "size": 2360
+    },
+    {
+      "role": "checkout-line-ending-policy",
+      "path": ".gitattributes",
+      "sha256": "51aab2d02dab37953a11e15416defad761f40873d1739cd2c87015e7474f7540",
+      "size": 4552
+    },
+    {
+      "role": "reader-build-entrypoint",
+      "path": "papers/tex/build.py",
+      "sha256": "5fbda3b0bc8bc9538bb18f3c3a55b050eb6df6e02cc3c5d791fd5d306759fd5f",
+      "size": 367
+    },
+    {
+      "role": "reader-build-driver",
+      "path": "papers/tex/_build.py",
+      "sha256": "cf93be2143b2d1af079acad12b4ca41fce7e44e5557026e6a6e9bc90b0b8a835",
+      "size": 18818
+    },
+    {
+      "role": "reader-build-postprocessor",
+      "path": "papers/tex/_postprocess.py",
+      "sha256": "e6225f473ff9fe09845224be81d0ef5d853248588ea0ceef180f3f388dcf7554",
+      "size": 90094
+    },
+    {
+      "role": "reader-build-hrule-cleaner",
+      "path": "papers/tex/_clean_hrule.py",
+      "sha256": "dab41021d86aed7003259972e52e48712aa5d1c9b7a1e501e3607d17c9a72444",
+      "size": 3084
+    }
+  ]
+}

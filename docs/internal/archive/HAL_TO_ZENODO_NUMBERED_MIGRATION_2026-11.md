@@ -74,10 +74,12 @@ Use one shared five-gate sequence for each edition:
    created by each temporary build.
 4. **Freeze one candidate.** Pin manuscript, paper-local bibliography, PDF,
    evidence map, validator, and necessary build inputs in a candidate
-   manifest. Run inherited finite/Lean validators once at this gate and
-   record separate proof and local-replay status. A source-only/hash check
-   can run in CI on every PR revision; the full owner replay belongs at the
-   freeze gate or when inherited bytes actually change.
+   manifest. Replay bounded controls; for an unchanged published Lean
+   companion, check its frozen sources and acceptance receipt without
+   claiming a new kernel run. A new kernel replay is needed when proof
+   inputs change or a new formalization claim is made. CI can repeat the
+   source/hash checks on every PR revision. Record proof ownership, prior
+   cold acceptance, and current local replay as distinct statuses.
 5. **Publish downstream.** Commit and tag the content candidate, deposit
    that tagged PDF, verify the public Zenodo record and deposited bytes,
    then add DOI/index/anchor in a descendant metadata commit. The candidate

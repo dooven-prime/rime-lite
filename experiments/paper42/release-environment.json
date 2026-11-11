@@ -1,0 +1,20 @@
+{
+  "schema": "rime.numbered-migration-reader-environment.v1",
+  "paper_id": "PAPER42",
+  "build_entry": "python -B papers/tex/build.py --output-dir output/tex/paper42 paper42",
+  "reader_pdf": "papers/paper42/paper42_arxiv.pdf",
+  "local_pdf_review": {
+    "status": "PASS_LOCAL_VISUAL_REVIEW",
+    "pages": 11,
+    "inspected_pages": [1, 7, 10, 11],
+    "build_log": "no overfull boxes, unresolved references, or undefined citations",
+    "bibliography": "generated with the Paper XLII paper-local references-v1.bib"
+  },
+  "inherited_replay": {
+    "finite_controls": "PASS complete logs n=3..6 and registration words n=3..7",
+    "lean_source_only": "PASS 52 frozen source inputs, no new Lean kernel replay",
+    "lean_cold_replay": "accepted in the separately archived companion; not reproduced by this reader build"
+  },
+  "publication_status": "RELEASE_CANDIDATE",
+  "release_identity_claimed": false
+}
