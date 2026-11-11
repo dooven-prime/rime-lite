@@ -56,6 +56,7 @@ predecessor.
 | Paper XXXVIII | source-relative return layers and budgeted survivor frontiers | <https://doi.org/10.5281/zenodo.23255825> |
 | Paper XXXIX | event-anchored fusion ancestry and consumer-adequate continuations | <https://doi.org/10.5281/zenodo.23410022> |
 | Paper XL | consumer-relative state sufficiency, exact quotient checks, and history counterexamples | <https://doi.org/10.5281/zenodo.23494084> |
+| Fusion-log M5 Lean companion v1.0 | actual joint enumeration and literal-endpoint log fibres | [Zenodo DOI](https://doi.org/10.5281/zenodo.24123627) / [post-release byte binding](docs/release-anchors/fusion-log-m5-source-v1.0.json) |
 | CCS v2.1 | optional reproducibility, observation, open-problem, and history archive | <https://doi.org/10.5281/zenodo.21988041> |
 | RIME Lite v2.1 repository snapshot | accepted papers, contracts, Registry evidence, release tools, and exact-byte historical inputs | [Zenodo DOI](https://doi.org/10.5281/zenodo.22048358) / [GitHub Release](https://github.com/dooven-prime/rime-lite/releases/tag/rime-lite-v2.1) |
 | Historical combined Papers I--III + CCS release | immutable first-version archive; current papers are maintained independently | <https://doi.org/10.5281/zenodo.21108197> |
