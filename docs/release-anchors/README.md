@@ -38,6 +38,9 @@ The downstream [BFS-lock audit](../../tools/release/verify_paper41_bfs_lock.py)
 checks the inherited replay script and saved result against the immutable
 tagged lock before running the finite replay. This supplements, but does not
 change, the tagged candidate validator or its local receipt.
+The XLI candidate CI checks that current owner files match `paper41-v1.0`,
+then replays the validator from that tag. Later shared `.gitattributes`
+changes are not substituted into the frozen candidate manifest.
 Paper XLII's anchor follows the same downstream boundary for its proper-arc
 reader PDF; its historical submission and separately archived Lean source
 remain independently versioned.
