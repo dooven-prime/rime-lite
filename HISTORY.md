@@ -9,6 +9,31 @@ The canonical publication list is the root
 their declared artifacts remain the authority for mathematical and
 computational claims.
 
+## 2026-11-12: Papers XLI-XLIII Numbered Editions
+
+The historical unnumbered HAL submissions were retained unchanged. Papers
+XLI, XLII, and XLIII were issued as separate numbered editions with immutable
+content tags and downstream Zenodo anchors: respectively
+<https://doi.org/10.5281/zenodo.24137725>,
+<https://doi.org/10.5281/zenodo.24138941>, and
+<https://doi.org/10.5281/zenodo.24148747>. Their inherited finite controls
+and Lean companions keep their original proof ownership and version identity.
+The post-release Paper XLI BFS-lock audit checks the historical replay source
+before execution without altering the v1.0 tag or candidate receipt.
+
+## 2026-11-05: Fusion-Log Compression Source Snapshot
+
+The historical [fusion-log manuscript](papers/unnumbered/fusion_log_compression/README.md)
+was submitted to HAL as `hal-05852797v1`, as reported by the depositor. Public
+HAL availability has not been confirmed; the identifier is not a publication
+or acceptance claim. The frozen source tag is
+`fusion-log-compression-source-v1.0` (tag object
+`f6310cbbc4e3929b72fe2e87c5111e68981b001f`, target commit
+`41cf746a095ecd06d85cb3d1184d58e7bfdd5979`). Its reader PDF has SHA-256
+`8b18c887eb869d9926841dccacb5dc4097dbff2d0ac9e37af3e2ba353c21c4b3`.
+The tagged [source manifest](papers/unnumbered/fusion_log_compression/source-manifest.v1.json)
+records the pre-deposit state; a future numbered edition will be separate.
+
 ## 2026-08-21: Paper XV Version 1.0
 
 Paper XV was released as the closing position paper of the numbered SOF

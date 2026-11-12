@@ -1,0 +1,46 @@
+name: Paper XLI Post-Release BFS Lock
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/paper41-post-release-bfs-lock.yml"
+      - "tools/release/verify_paper41_bfs_lock.py"
+      - "tests/test_paper41_bfs_lock.py"
+      - "tests/run_all_tests.py"
+      - "experiments/registered_absorption_chains/**"
+      - "docs/release-anchors/paper41-v1.0.json"
+  push:
+    branches: [master]
+    paths:
+      - ".github/workflows/paper41-post-release-bfs-lock.yml"
+      - "tools/release/verify_paper41_bfs_lock.py"
+      - "tests/test_paper41_bfs_lock.py"
+      - "tests/run_all_tests.py"
+      - "experiments/registered_absorption_chains/**"
+      - "docs/release-anchors/paper41-v1.0.json"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit-and-replay:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: "3.13"
+
+      - name: Check immutable BFS source and result bindings
+        run: python -O -B tools/release/verify_paper41_bfs_lock.py
+
+      - name: Test hostile lock mutations under optimized Python
+        run: python -O -B tests/test_paper41_bfs_lock.py
+
+      - name: Replay bounded BFS only after byte audit
+        run: python -O -B experiments/registered_absorption_chains/independent_bfs_check.py --check-result experiments/registered_absorption_chains/results/independent_bfs_n2_n7.v1.json

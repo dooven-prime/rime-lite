@@ -33,6 +33,10 @@ Paper XLI's anchor binds its tagged candidate manifest and local replay
 receipt to the single reader PDF deposited at Zenodo. The historical HAL
 submission and inherited Lean companion remain separately identified; the
 DOI does not assert that those files were deposited.
+The downstream [BFS-lock audit](../../tools/release/verify_paper41_bfs_lock.py)
+checks the inherited replay script and saved result against the immutable
+tagged lock before running the finite replay. This supplements, but does not
+change, the tagged candidate validator or its local receipt.
 Paper XLII's anchor follows the same downstream boundary for its proper-arc
 reader PDF; its historical submission and separately archived Lean source
 remain independently versioned.
