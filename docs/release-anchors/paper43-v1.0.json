@@ -1,0 +1,73 @@
+{
+  "schema": "rime.paper-post-release-anchor.v1",
+  "paper_id": "PAPER43",
+  "release_version": "1.0",
+  "publication_status": "PUBLISHED",
+  "release_identity_claimed": true,
+  "anchor_role": "DOWNSTREAM_PUBLICATION_METADATA",
+  "release_tag": {
+    "name": "paper43-v1.0",
+    "tag_object_sha": "5441b736273c6d03036b5677ac6ccdf172d49cf5",
+    "target_commit_sha": "ad63aa9c0650d224a483a8405b432ff3960c458d"
+  },
+  "pre_release_evidence": [
+    {
+      "role": "release-manifest",
+      "path": "experiments/paper43/release-manifest.json",
+      "sha256_at_tag": "d4bd9b9ecfbd90c0806f6f0b0a7b9aa9d71aa12388813999c27c87b115341a4b",
+      "size_at_tag": 3583,
+      "mutation_policy": "IMMUTABLE_TAG_BYTES",
+      "declared_state_at_tag": {
+        "schema": "rime.numbered-migration-candidate.v1",
+        "status": "RELEASE_CANDIDATE",
+        "release_identity_claimed": false
+      }
+    },
+    {
+      "role": "validation-receipt",
+      "path": "experiments/paper43/results/paper43_candidate.validation-receipt.json",
+      "sha256_at_tag": "4fea97667760f55ae2ede6e698d219c42a1adc07d7a8000299ca16e5f8350100",
+      "size_at_tag": 605,
+      "mutation_policy": "IMMUTABLE_TAG_BYTES",
+      "declared_state_at_tag": {
+        "schema": "rime.numbered-migration-receipt.v1",
+        "status": "PASS_LOCAL_CANDIDATE_CLOSURE",
+        "release_identity_claimed": false
+      }
+    }
+  ],
+  "post_release_supplements": [],
+  "external_anchor": {
+    "provider": "Zenodo",
+    "doi": "10.5281/zenodo.24148747",
+    "record_id": "24148747",
+    "record_url": "https://zenodo.org/records/24148747",
+    "publication_date": "2026-11-12",
+    "deposited_files": [
+      {
+        "remote_name": "paper43_arxiv.pdf",
+        "source_path_at_tag": "papers/paper43/paper43_arxiv.pdf",
+        "sha256": "73f1d959d5cbc20d1222ef95f15ca7e20c797ba675608a1184bd7fff40c5a08c",
+        "size": 114530
+      }
+    ]
+  },
+  "versioned_repin_policy": {
+    "pre_release_manifest_mutation_allowed": false,
+    "pre_release_receipt_mutation_allowed": false,
+    "current_head_fallback_allowed": false,
+    "owner_change_requires_new_owner_version": true,
+    "consumer_change_requires_new_consumer_version_and_repin": true,
+    "shared_file_in_place_update_allowed": false
+  },
+  "authority_boundary": [
+    "The anchor establishes release-tag, evidence-root, and deposited-file byte identity only.",
+    "A DOI anchors only files actually deposited in that record.",
+    "Local closure verification is not independent mathematical validation.",
+    "Publication anchoring does not establish theorem truth or scientific adequacy.",
+    "The anchor is downstream metadata and is not part of the release tag it records."
+  ],
+  "notes": [
+    "Zenodo deposit contains the numbered reader PDF only; historical HAL submission and inherited Lean companion retain separate identities."
+  ]
+}

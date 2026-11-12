@@ -23,17 +23,24 @@ a later publication.
 | Paper XLI | `papers/unnumbered/circular_coalescence_counts/` | Paper XXXIX supplies the event-anchored interpretation; XLI proves its own circular enumeration | `experiments/registered_absorption_chains/` |
 | Paper XLII | `papers/unnumbered/proper_arc_registered_summaries/` | proper-arc extension of XLI's fixed-pair object | `experiments/proper_arc_registered_summaries/` |
 | Paper XLIII | `papers/unnumbered/future_event_minimal_quotient/` | imports XLI's full-summary count and placement control; no theorem premise from XLII | `experiments/future_event_minimal_quotient/` |
-| Paper XLIV | `papers/unnumbered/fusion_log_compression/` | compares complete logs with the registered summaries of XLI and XLII | `experiments/fusion_log_compression/` |
 
 This is publication order, not a blanket implication chain. Record exact
 Theorem, Corollary, and Equation references separately for each edition.
 Keep local result numbering stable where possible; a cross-paper citation
 must name the owning edition and the result number valid in that edition.
 
-The current PR batches XLI--XLIII only. XLIV is deferred to a separate PR
-while its all-R Lean work and any corresponding mathematical edits are in
-progress. Do not freeze an XLIV numbered edition from the historical draft
-as if that work had already been accepted.
+The current PR batches XLI--XLIII only. Their numbered reader PDFs are
+published at `10.5281/zenodo.24137725`, `10.5281/zenodo.24138941`, and
+`10.5281/zenodo.24148747`, respectively; downstream anchors bind each DOI
+to its immutable content tag. The historical HAL identifiers remain separate.
+
+Paper XLIV is planned as a new, previously unpublished prefix-memory observer
+paper, with XLI and XLIII as explicit mathematical inputs. Paper XLV is
+reserved for the separately developed fusion-log compression paper. Neither
+is a fourth HAL-to-Zenodo migration in this batch. Their proofs, current
+source versions, controls, and any later Lean companions require separate
+review and release closure; the ongoing all-R Lean work is not accepted by
+this migration.
 
 ## File and claim migration
 
@@ -104,11 +111,11 @@ translated into a PASS.
 
 ## Pilot acceptance
 
-Paper XLI is the pilot. Its candidate package should demonstrate a checked
+Paper XLI was the pilot. Its candidate package demonstrated a checked
 numbered manuscript, paper-local bibliography, reader PDF, explicit
 historical-source/companion map, bounded BFS replay, Lean closure and axiom
 audit, and a fail-closed candidate manifest/receipt. Its dedicated CI
-must check the inherited byte identity before building the same Lean
-proof owner and must retain a separate runner receipt. A local receipt
-does not stand in for an actual GitHub CI run. No DOI, publication
-anchor, or HAL acceptance is implied by completing this local pilot.
+checked the inherited byte identity and replayed the same Lean proof owner,
+retaining a separate runner receipt. The later DOI and publication anchor
+are recorded downstream; neither follows merely from the local receipt,
+and neither implies HAL acceptance.

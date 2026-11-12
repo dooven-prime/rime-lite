@@ -58,6 +58,7 @@ predecessor.
 | Paper XL | consumer-relative state sufficiency, exact quotient checks, and history counterexamples | <https://doi.org/10.5281/zenodo.23494084> |
 | Paper XLI | registered absorption chains and literal placement fibers for a circular adjacent-collapse action | <https://doi.org/10.5281/zenodo.24137725> |
 | Paper XLII | generated proper-arc registration chains and exact dependent placement fibers | <https://doi.org/10.5281/zenodo.24138941> |
+| Paper XLIII | future-event minimal quotients and constructive distinguishing words for a circular registered-absorption action | <https://doi.org/10.5281/zenodo.24148747> |
 | Fusion-log M5 Lean companion v1.0 | actual joint enumeration and literal-endpoint log fibres | [Zenodo DOI](https://doi.org/10.5281/zenodo.24123627) / [post-release byte binding](docs/release-anchors/fusion-log-m5-source-v1.0.json) |
 | CCS v2.1 | optional reproducibility, observation, open-problem, and history archive | <https://doi.org/10.5281/zenodo.21988041> |
 | RIME Lite v2.1 repository snapshot | accepted papers, contracts, Registry evidence, release tools, and exact-byte historical inputs | [Zenodo DOI](https://doi.org/10.5281/zenodo.22048358) / [GitHub Release](https://github.com/dooven-prime/rime-lite/releases/tag/rime-lite-v2.1) |
@@ -207,6 +208,11 @@ source arc in the same action. Its
 [post-release anchor](docs/release-anchors/paper42-v1.0.json) binds the
 numbered reader PDF to its tagged candidate; the historical HAL submission
 and separately archived Lean companion retain their own identities.
+Paper XLIII classifies the future-event minimal right congruence for the fixed
+registered pair and compares it with the complete-summary observer. Its
+[post-release anchor](docs/release-anchors/paper43-v1.0.json) binds the
+numbered reader PDF to its tagged candidate; the historical HAL submission
+and separately archived Lean companion retain their own identities.
 Published release identities are maintained in the canonical DOI index above.
 
 | Paper | Manuscript | Evidence | Scope |
@@ -237,6 +243,7 @@ Published release identities are maintained in the canonical DOI index above.
 | XL | [`Paper XL.md`](papers/paper40/Paper%20XL.md) | [`experiments/paper40/`](experiments/paper40/) | generated-domain consumer-sufficiency checks and replayable read, guard, and successor counterexamples |
 | XLI | [`Paper XLI.md`](papers/paper41/Paper%20XLI.md) | [`experiments/paper41/`](experiments/paper41/) | generated registered absorption chains, exact placement fibers, and literal-word reachability for a fixed circular action |
 | XLII | [`Paper XLII.md`](papers/paper42/Paper%20XLII.md) | [`experiments/paper42/`](experiments/paper42/) | actual proper-arc origin cuts, ternary selected chains, dependent placement fibers, and exact enumeration |
+| XLIII | [`Paper XLIII.md`](papers/paper43/Paper%20XLIII.md) | [`experiments/paper43/`](experiments/paper43/) | two observation-dependent minimal right congruences, exact state counts, and actual linear-length distinguishing words |
 
 Thematic index, not a paper dependency order:
 
