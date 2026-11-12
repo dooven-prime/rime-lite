@@ -14,6 +14,14 @@ give the earlier local draft a retroactive Git or HAL identity.
 | Fixed-depth and uniform growth, supercritical ratio, Gaussian window | [Paper XLIV manuscript](../../papers/paper44/Paper%20XLIV.md) | Paper proofs; not in the Lean milestone |
 | Finite generated-domain minimization and arithmetic identities | [Bounded controls](controls/README.md) | `n=3..7`, 20 depth cases; not a proof of all-parameter claims |
 
+The [critical-window proof review](review/CRITICAL_WINDOW_REVIEW.md) binds
+the current manuscript, bibliography and reader PDF by SHA-256 and records
+the exact decomposition and local-limit argument. It supersedes the old
+unnumbered C1 review's open-status statement only for this numbered edition.
+The review belongs to the GitHub candidate evidence, not to the Zenodo
+reader PDF. The first-publication [candidate manifest](release-manifest.json)
+binds its bytes along with the edition and its read-only validators.
+
 The Lean milestone was created before this candidate had a public commit.
 Its source-hash inventory is the proof input identity, not the recorded HEAD.
 The copied manifest is at `lean/milestones/structure-count-v1/manifest.json`,
@@ -23,6 +31,15 @@ audit are recorded in the milestone, but this edition has not yet obtained a
 separate clean-host replay or archive DOI.
 
 ## Read-only entry points
+
+From the repository root, check the numbered manuscript, PDF, bibliography,
+published XLI/XLIII inputs, source locks and candidate manifest:
+
+```text
+python -O -B experiments/paper44/validation/validate_candidate.py
+python -B -m unittest discover -s experiments/paper44/validation -p test_candidate.py -v
+python -O -B experiments/paper44/validation/validate_controls.py
+```
 
 From `experiments/paper44/lean`:
 
@@ -41,3 +58,6 @@ The candidate sequence remains: review the numbered mathematics and PDF,
 run the Lean and control gates on a fixed source commit, freeze the content
 tag, then deposit the tagged PDF and add downstream DOI metadata. None of
 those later identities is asserted by this index.
+
+The prospective fusion-log paper is Paper XLV, separate from this first
+numbered Paper XLIV. No HAL migration identity is claimed for XLIV.

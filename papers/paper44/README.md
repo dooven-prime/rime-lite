@@ -26,3 +26,13 @@ The fixed-depth asymptotics, linear-memory spectrum, supercritical comparison,
 and Gaussian critical window are manuscript proofs, not Lean-certified
 results. [Bounded controls](../../experiments/paper44/controls/README.md)
 check the complete partitions for `n=3..7`; they do not prove the limits.
+The numbered [critical-window review](../../experiments/paper44/review/CRITICAL_WINDOW_REVIEW.md)
+binds the current manuscript and PDF; the earlier unnumbered C1 review
+does not describe the new Theorem 6.5.
+
+The review record is included in the GitHub candidate
+[release manifest](../../experiments/paper44/release-manifest.json), not as
+a separate Zenodo reader file. A future content tag will identify the PDF
+and bibliography while retaining this source-level review. Any later Lean
+formalization of the analytic layer requires a separate companion milestone
+or an explicitly versioned new paper edition.
