@@ -27,8 +27,10 @@ Its source-hash inventory is the proof input identity, not the recorded HEAD.
 The copied manifest is at `lean/milestones/structure-count-v1/manifest.json`,
 the path required by its unchanged read-only validator. Source and toolchain
 bytes pass `--check-only` in this worktree. The prior local build and axiom
-audit are recorded in the milestone, but this edition has not yet obtained a
-separate clean-host replay or archive DOI.
+audit are recorded in the milestone. The candidate workflow recompiles the
+pinned same-source package and compares fresh axiom outputs; this is not
+independent cold-start reproduction. No archive DOI is claimed by this
+candidate.
 
 ## Read-only entry points
 
