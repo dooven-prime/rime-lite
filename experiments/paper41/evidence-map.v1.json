@@ -1,0 +1,54 @@
+{
+  "schema": "rime.paper41.evidence-map.v1",
+  "paper_id": "PAPER41",
+  "release_version": "1.0",
+  "historical_submission": {
+    "service": "HAL",
+    "identifier": "hal-05837829v1",
+    "status": "SUBMITTED_MODERATION_NOT_ASSERTED_ACCEPTED",
+    "source_commit": "050cf8ec11e3db263830b46ea95e4062b8e08869",
+    "source_files": [
+      {
+        "path": "papers/unnumbered/circular_coalescence_counts/MANUSCRIPT.md",
+        "sha256": "4fac6e3a1edb4038c4be8e6f39ed2c20197a31547a01a1afd5baa9edbb5723e9"
+      },
+      {
+        "path": "papers/unnumbered/circular_coalescence_counts/references.bib",
+        "sha256": "22759041ce7aab8797025048c876c56121d2d4f48fbc9e9b00e69b8ba3a02f3c"
+      },
+      {
+        "path": "papers/unnumbered/circular_coalescence_counts/hal-v1/Chen_Registered_Absorption_Chains_HAL_preprint.pdf",
+        "sha256": "e1458521b652c6dab20ffcf0454370356abe8760e0cb89dc2b3d22d1ec9b3cb4"
+      }
+    ]
+  },
+  "inherited_companion": {
+    "proof_owner": "experiments/registered_absorption_chains/",
+    "source_commit": "050cf8ec11e3db263830b46ea95e4062b8e08869",
+    "files": [
+      {
+        "path": "experiments/registered_absorption_chains/replay-lock.v1.json",
+        "sha256": "1c12bedb480a031968260200ce53867c00a414bee112ccff0baa09f98462d43e"
+      },
+      {
+        "path": "experiments/registered_absorption_chains/results/independent_bfs_n2_n7.v1.json",
+        "sha256": "d6d140baaccdb2274856cff7ed2cee1cf9ec069c8127730bc35e805a31437cc0"
+      },
+      {
+        "path": "experiments/registered_absorption_chains/lean/formalization-manifest.v1.json",
+        "sha256": "2ecdac2a895ba158f1b938647bd5ca002df9dadc9dcaab76e0eac390e71c0dbb"
+      }
+    ],
+    "finite_scope": "complete reachable summaries for n=2..7",
+    "lean_scope": "exact generated-summary count for n>=2 and supporting construction",
+    "not_formalized": "Corollary 5.2 asymptotic estimate"
+  },
+  "numbered_edition": {
+    "manuscript": "papers/paper41/Paper XLI.md",
+    "bibliography": "papers/paper41/references-v1.bib",
+    "reader_pdf": "papers/paper41/paper41_arxiv.pdf",
+    "publication_status": "RELEASE_CANDIDATE",
+    "release_identity_claimed": false,
+    "external_anchor_claimed": false
+  }
+}

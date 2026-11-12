@@ -1,0 +1,16 @@
+{
+  "schema": "rime.numbered-migration-receipt.v1",
+  "status": "PASS_LOCAL_CANDIDATE_CLOSURE",
+  "paper_id": "PAPER42",
+  "release_identity_claimed": false,
+  "external_anchor_claimed": false,
+  "manifest_sha256": "19dac6f8bd825e4ac1d77ad4575a2ac977b848b85ecfb90803aa1ec9f80ad3aa",
+  "artifact_count": 15,
+  "historical_byte_bindings": 5,
+  "replay_statuses": [
+    "PASS proper-arc closure: exact bytes, full logs n=3..6, origin words n=3..7",
+    "PASS_ORIGIN_SOURCE_ONLY"
+  ],
+  "checked_at_utc": "2026-11-11T14:29:47.661201+00:00",
+  "limits": "Local same-source checks; no publication, DOI, or independent cross-host replay claimed"
+}

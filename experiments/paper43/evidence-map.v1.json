@@ -1,0 +1,83 @@
+{
+  "schema": "rime.numbered-migration-evidence.v2",
+  "paper_id": "PAPER43",
+  "release_version": "1.0",
+  "historical_submission": {
+    "service": "HAL",
+    "identifier": "hal-05844771v1",
+    "status": "SUBMITTED_MODERATION_NOT_ASSERTED_ACCEPTED",
+    "source_commit": "5dd17636ba65060b0a84773fccacbf1505fa6a39",
+    "source_files": [
+      {
+        "path": "papers/unnumbered/future_event_minimal_quotient/MANUSCRIPT.md",
+        "sha256": "5e0adba3542361c4b8227f96507bca40f71a76012389a6d97811cf7658d5dad6"
+      },
+      {
+        "path": "papers/unnumbered/future_event_minimal_quotient/references.bib",
+        "sha256": "a14482d02001eb3d4fb3c8af55bb464d063cc79274aefc4d06069294fb46c62a"
+      },
+      {
+        "path": "papers/unnumbered/future_event_minimal_quotient/hal-v1/Chen_Future_Event_Minimal_Quotients_HAL_preprint.pdf",
+        "sha256": "7b0494b6225fcf28faad95652fd77b1cd846ff04e444e4d01553a30936909d11"
+      },
+      {
+        "path": "experiments/future_event_minimal_quotient/control-manifest.v1.json",
+        "sha256": "81bdd3e94b0b7071f5bf7f70404884347a10303ba22baaa3e30c150820653c3e"
+      }
+    ]
+  },
+  "inherited_companions": [
+    {
+      "kind": "FINITE_CONTROLS",
+      "proof_owner": "experiments/future_event_minimal_quotient/",
+      "source_commit": "5dd17636ba65060b0a84773fccacbf1505fa6a39",
+      "scope": "complete reachable graphs n=3..5; two exact finite right congruences; all quotient-key pairs distinguished"
+    },
+    {
+      "kind": "LEAN_COMPANION",
+      "proof_owner": "experiments/future_event_minimal_quotient/lean/",
+      "source_tag": {
+        "name": "future-event-lean-companion-v1.0",
+        "tag_object_sha": "1ef64bc0560ae5c04e915350f86046670f698b8c",
+        "target_commit_sha": "547848ce2305daf54f0e2df049a9d5372ffdcbdc"
+      },
+      "source_files": [
+        {
+          "path": "experiments/future_event_minimal_quotient/lean/formalization-manifest.v1.json",
+          "sha256": "6eb4dcc02807485dc0a3dae5d6f15512f5d62d9fedd45f62d4d2c67350eb6431"
+        }
+      ],
+      "downstream_anchor": {
+        "path": "experiments/future_event_minimal_quotient/lean-source-anchor.v1.json",
+        "sha256": "1372c377c80b4736fbfb1d105391aa58ce036af6eb93bc539e4de0752f479feb"
+      },
+      "archive_doi": "10.5281/zenodo.23914476",
+      "scope": "all-parameter future-event classification, distinguishing depth, exact quotient count, and separate full-summary and asymptotic comparisons"
+    }
+  ],
+  "numbered_edition": {
+    "manuscript": "papers/paper43/Paper XLIII.md",
+    "bibliography": "papers/paper43/references-v1.bib",
+    "reader_pdf": "papers/paper43/paper43_arxiv.pdf",
+    "publication_status": "RELEASE_CANDIDATE",
+    "release_identity_claimed": false,
+    "external_anchor_claimed": false
+  },
+  "replay_commands": [
+    {
+      "cwd": ".",
+      "argv": ["python", "-B", "experiments/future_event_minimal_quotient/validation/validate.py"],
+      "expected_status": "PASS: n=3..5"
+    },
+    {
+      "cwd": "experiments/future_event_minimal_quotient/lean",
+      "argv": ["python", "-B", "validate_companion.py", "--source-only", "--check-upstream-git"],
+      "expected_status": "PASS_SOURCE_ONLY"
+    },
+    {
+      "cwd": "experiments/future_event_minimal_quotient/lean",
+      "argv": ["python", "-B", "review/build_theorem_map.py", "--check-git"],
+      "expected_status": "PASS_THEOREM_TO_SOURCE_MAP"
+    }
+  ]
+}

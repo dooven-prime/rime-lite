@@ -1,0 +1,21 @@
+{
+  "schema": "rime.numbered-migration-reader-environment.v1",
+  "paper_id": "PAPER43",
+  "build_entry": "python -B papers/tex/build.py --output-dir output/tex/paper43 paper43",
+  "reader_pdf": "papers/paper43/paper43_arxiv.pdf",
+  "local_pdf_review": {
+    "status": "PASS_LOCAL_VISUAL_REVIEW",
+    "pages": 12,
+    "inspected_pages": [1, 8, 11, 12],
+    "build_log": "no overfull boxes, unresolved references, or undefined citations",
+    "bibliography": "generated with the Paper XLIII paper-local references-v1.bib"
+  },
+  "inherited_replay": {
+    "finite_controls": "PASS n=3..5 with 2252 raw edges and all quotient-key pairs checked",
+    "lean_source_only": "PASS 88 frozen source inputs; no new Lean kernel replay",
+    "theorem_to_source_map": "PASS four proof layers, 12 paper rows, and four final signatures; kernel_replayed false",
+    "lean_cold_replay": "acceptance belongs to the separately archived companion; not reproduced by this reader build"
+  },
+  "publication_status": "RELEASE_CANDIDATE",
+  "release_identity_claimed": false
+}

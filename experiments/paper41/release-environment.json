@@ -1,0 +1,25 @@
+{
+  "schema": "rime.paper41.candidate-build-environment.v1",
+  "paper_id": "PAPER41",
+  "status": "LOCAL_CANDIDATE_BUILD",
+  "host_platform": "Windows",
+  "reader_build_command": "python -B papers/tex/build.py --output-dir output/tex/paper41-pilot paper41",
+  "reader_build_tools": {
+    "python": "3.13.0",
+    "pandoc": "3.6.4",
+    "xelatex": "MiKTeX-XeTeX 4.18 (MiKTeX 26.5)",
+    "bibtex": "MiKTeX-BibTeX 4.2 (MiKTeX 26.5)"
+  },
+  "lean_companion": {
+    "toolchain": "4.33.0",
+    "source_manifest": "experiments/registered_absorption_chains/lean/formalization-manifest.v1.json",
+    "replay_kind": "LOCAL_SAME_SOURCE_CACHE_AIDED"
+  },
+  "pdf_check": {
+    "pages": 10,
+    "unresolved_references": 0,
+    "unresolved_citations": 0,
+    "overfull_boxes": 0,
+    "scope": "local build-log and selected-page visual check"
+  }
+}

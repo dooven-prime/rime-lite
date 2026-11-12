@@ -1,0 +1,121 @@
+# HAL-to-Zenodo Numbered Migration (2026-11)
+
+## Reason and status
+
+The author received an HAL eligibility clarification request for
+`hal-05805297v1` and reports the same issue for the recent unnumbered
+submissions. The author has answered without asserting an institutional
+affiliation. A submitted HAL identifier is not evidence of an accepted or
+publicly retrievable record. Do not describe these deposits as published
+unless their public versions are independently checked.
+
+Zenodo is the intended primary archive for new numbered editions. The
+numbered editions are new publication objects, not a retroactive renaming of
+the HAL submissions. The historical source, PDF, Git commit/tag, Lean
+companion, references, and completed CI remain traceable at their existing
+identities. No historical byte is rewritten to make an old receipt describe
+a later publication.
+
+## Dependency order and ownership
+
+| New edition | Historical manuscript | Mathematical dependency | Existing companion |
+|---|---|---|---|
+| Paper XLI | `papers/unnumbered/circular_coalescence_counts/` | Paper XXXIX supplies the event-anchored interpretation; XLI proves its own circular enumeration | `experiments/registered_absorption_chains/` |
+| Paper XLII | `papers/unnumbered/proper_arc_registered_summaries/` | proper-arc extension of XLI's fixed-pair object | `experiments/proper_arc_registered_summaries/` |
+| Paper XLIII | `papers/unnumbered/future_event_minimal_quotient/` | imports XLI's full-summary count and placement control; no theorem premise from XLII | `experiments/future_event_minimal_quotient/` |
+
+This is publication order, not a blanket implication chain. Record exact
+Theorem, Corollary, and Equation references separately for each edition.
+Keep local result numbering stable where possible; a cross-paper citation
+must name the owning edition and the result number valid in that edition.
+
+The current PR batches XLI--XLIII only. Their numbered reader PDFs are
+published at `10.5281/zenodo.24137725`, `10.5281/zenodo.24138941`, and
+`10.5281/zenodo.24148747`, respectively; downstream anchors bind each DOI
+to its immutable content tag. The historical HAL identifiers remain separate.
+
+Paper XLIV is planned as a new, previously unpublished prefix-memory observer
+paper, with XLI and XLIII as explicit mathematical inputs. Paper XLV is
+reserved for the separately developed fusion-log compression paper. Neither
+is a fourth HAL-to-Zenodo migration in this batch. Their proofs, current
+source versions, controls, and any later Lean companions require separate
+review and release closure; the ongoing all-R Lean work is not accepted by
+this migration.
+
+## File and claim migration
+
+1. Preserve `papers/unnumbered/` as the historical source. Its submitted
+   identifiers, HAL reader PDFs, source hashes, and Git anchors remain
+   historical. Do not edit these files to assert Zenodo publication.
+2. Create one `papers/paperN/` directory per numbered edition. Copy the
+   mathematical manuscript, then edit only that copy for title-page
+   identity, local exposition, numbered-paper layout, bibliography, and
+   publication-specific citations. The paper-local `references-v1.bib`
+   must be checked entry by entry against primary publication metadata.
+3. Create `experiments/paperN/` as a versioned publication index. It points
+   to the existing proof owner and source identity; it must not copy or
+   silently alter an already accepted Lean or finite-control input. State
+   exactly which new manuscript results each inherited control covers.
+4. Keep proof status, finite replay status, and publication status separate.
+   The registered-absorption Lean companion checks the exact generated
+   summary count for `n>=2`, but not the asymptotic growth corollary. A
+   numbered edition does not enlarge that formalized theorem surface.
+5. Keep old HAL submission IDs and new Zenodo DOIs in distinct fields or
+   documents. An inaccessible or unmoderated HAL ID is not a public citation
+   or proof source. The new edition cites the owning published DOI only after
+   that DOI is live; earlier dependency citations must remain exact.
+
+## Candidate and release gates
+
+Use one shared five-gate sequence for each edition:
+
+1. **Admit the source once.** Record the historical source tag/commit,
+   manuscript/PDF digests, proof owner and companion archive identity in the
+   new evidence map. Check that the local files still match the historical
+   Git objects. Do not re-audit unchanged historical references or rebuild
+   an inherited companion after every prose edit.
+2. **Edit only the new edition.** Preserve theorem statements and numbering
+   unless a documented mathematical correction requires otherwise. Audit
+   changed cross-paper citations against the cited numbered version. Keep
+   the HAL identifier in provenance, not as the new edition's publication
+   identity.
+3. **Build and inspect once per final text revision.** Use
+   `papers/tex/build.py --output-dir output/tex/paperN paperN`; check the
+   reader PDF visually and check its log and generated bibliography. During
+   iteration, citation and PDF checks are enough; no new result identity is
+   created by each temporary build.
+4. **Freeze one candidate.** Pin manuscript, paper-local bibliography, PDF,
+   evidence map, validator, and necessary build inputs in a candidate
+   manifest. Replay bounded controls; for an unchanged published Lean
+   companion, check its frozen sources and acceptance receipt without
+   claiming a new kernel run. A new kernel replay is needed when proof
+   inputs change or a new formalization claim is made. CI can repeat the
+   source/hash checks on every PR revision. Record proof ownership, prior
+   cold acceptance, and current local replay as distinct statuses.
+5. **Publish downstream.** Commit and tag the content candidate, deposit
+   that tagged PDF, verify the public Zenodo record and deposited bytes,
+   then add DOI/index/anchor in a descendant metadata commit. The candidate
+   manifest and receipt remain unchanged. Preserve commit ancestry with a
+   merge commit; no squash or rebase of tagged content.
+
+This removes repeated per-paper audit narratives and redundant Lean rebuilds,
+not the byte or claim checks. For the current batch, keep Papers XLI--XLIII
+on one PR and merge only after all three editions and their public anchors
+are ready. A missing DOI leaves that paper at the tagged-candidate gate; it
+does not become a published anchor by inference.
+
+Before a content tag, status is `RELEASE_CANDIDATE` and
+`release_identity_claimed` is false. A failed replay, unresolved citation,
+PDF defect, or source-byte mismatch blocks the freeze rather than being
+translated into a PASS.
+
+## Pilot acceptance
+
+Paper XLI was the pilot. Its candidate package demonstrated a checked
+numbered manuscript, paper-local bibliography, reader PDF, explicit
+historical-source/companion map, bounded BFS replay, Lean closure and axiom
+audit, and a fail-closed candidate manifest/receipt. Its dedicated CI
+checked the inherited byte identity and replayed the same Lean proof owner,
+retaining a separate runner receipt. The later DOI and publication anchor
+are recorded downstream; neither follows merely from the local receipt,
+and neither implies HAL acceptance.

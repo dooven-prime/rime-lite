@@ -1,0 +1,77 @@
+name: Paper XLI Candidate Closure
+
+on:
+  pull_request:
+    paths:
+      - ".gitattributes"
+      - ".github/workflows/paper41-candidate.yml"
+      - "papers/paper41/**"
+      - "papers/unnumbered/circular_coalescence_counts/**"
+      - "papers/tex/**"
+      - "experiments/paper41/**"
+      - "experiments/registered_absorption_chains/**"
+  push:
+    branches: [master]
+    paths:
+      - ".gitattributes"
+      - ".github/workflows/paper41-candidate.yml"
+      - "papers/paper41/**"
+      - "papers/unnumbered/circular_coalescence_counts/**"
+      - "papers/tex/**"
+      - "experiments/paper41/**"
+      - "experiments/registered_absorption_chains/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: paper41-candidate-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  candidate-and-inherited-proof:
+    name: Candidate bytes, finite replay, and Lean audit
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: "3.13"
+
+      - name: Verify numbered candidate and unchanged historical bytes
+        run: python -O -B experiments/paper41/validation/validate_release.py
+
+      - name: Test candidate rejection gates
+        run: python -B -m unittest discover -s experiments/paper41/validation -p test_release.py
+
+      - name: Replay complete bounded action controls
+        run: python -O -B experiments/registered_absorption_chains/independent_bfs_check.py --check-result experiments/registered_absorption_chains/results/independent_bfs_n2_n7.v1.json
+
+      - name: Build inherited Lean companion with pinned Mathlib
+        uses: leanprover/lean-action@fe408643ea7367d8c0404a8be3975bb145f5fb64 # v1
+        with:
+          lake-package-directory: experiments/registered_absorption_chains/lean
+          auto-config: "false"
+          build: "true"
+          test: "false"
+          lint: "false"
+          use-mathlib-cache: "true"
+          use-github-cache: "false"
+
+      - name: Replay Lean package and write local runner receipt
+        run: python -B experiments/paper41/validation/validate_release.py --write-receipt
+
+      - name: Retain candidate replay receipt
+        if: success()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: paper41-candidate-${{ github.run_id }}-${{ github.run_attempt }}
+          path: experiments/paper41/results/paper41_release_candidate.validation-receipt.json
+          if-no-files-found: warn
+          retention-days: 90

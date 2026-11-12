@@ -1,6 +1,7 @@
 # Keep source-addressed contracts, evidence, and implementations byte-stable.
 .gitattributes text eol=lf
 .gitignore text eol=lf
+.github/workflows/paper41-candidate.yml text eol=lf
 pyproject.toml text eol=lf
 rime/**/*.py text eol=lf
 registry/**/*.json text eol=lf

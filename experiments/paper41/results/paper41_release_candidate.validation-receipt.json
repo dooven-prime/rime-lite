@@ -1,0 +1,26 @@
+{
+  "schema": "rime.paper41.candidate-validation-receipt.v1",
+  "status": "PASS_LOCAL_CANDIDATE_CLOSURE",
+  "paper_id": "PAPER41",
+  "release_identity_claimed": false,
+  "external_anchor_claimed": false,
+  "manifest_sha256": "63b077fe0eaff1a3d9439dd33c11b24933e13b3a4282d7bec397308a61bddfdb",
+  "artifact_count": 15,
+  "historical_byte_bindings": 6,
+  "lean_source_files": 56,
+  "bounded_bfs_n": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "lean_axiom_audits": 262,
+  "checked_at_utc": "2026-11-11T12:23:22.073954+00:00",
+  "limits": [
+    "Local same-source replay, not independent replication",
+    "No Zenodo deposit, release tag, or external anchor claimed",
+    "Corollary 5.2 asymptotic estimate is manuscript-only"
+  ]
+}

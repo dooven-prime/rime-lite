@@ -1,0 +1,65 @@
+name: Paper XLII Candidate Closure
+
+on:
+  pull_request:
+    paths:
+      - ".gitattributes"
+      - ".github/workflows/paper42-candidate.yml"
+      - "papers/paper42/**"
+      - "papers/unnumbered/proper_arc_registered_summaries/**"
+      - "papers/tex/**"
+      - "experiments/paper42/**"
+      - "experiments/proper_arc_registered_summaries/**"
+      - "tools/release/validate_numbered_migration_candidate.py"
+  push:
+    branches: [master]
+    paths:
+      - ".gitattributes"
+      - ".github/workflows/paper42-candidate.yml"
+      - "papers/paper42/**"
+      - "papers/unnumbered/proper_arc_registered_summaries/**"
+      - "papers/tex/**"
+      - "experiments/paper42/**"
+      - "experiments/proper_arc_registered_summaries/**"
+      - "tools/release/validate_numbered_migration_candidate.py"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: paper42-candidate-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  candidate-and-inherited-source:
+    name: Candidate bytes and inherited controls
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: "3.13"
+
+      - name: Verify numbered edition and historical Git bytes
+        run: python -O -B tools/release/validate_numbered_migration_candidate.py 42 --write-receipt
+
+      - name: Verify archived Lean acceptance evidence
+        run: python -B experiments/proper_arc_registered_summaries/lean/cold_replay/verify_result.py --evidence experiments/proper_arc_registered_summaries/lean/cold_replay/results/isolated-windows-v1
+
+      - name: Test candidate rejection gates
+        run: python -B -m unittest discover -s experiments/paper42/validation -p test_release.py
+
+      - name: Retain candidate receipt
+        if: success()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: paper42-candidate-${{ github.run_id }}-${{ github.run_attempt }}
+          path: experiments/paper42/results/paper42_candidate.validation-receipt.json
+          if-no-files-found: warn
+          retention-days: 90
