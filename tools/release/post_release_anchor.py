@@ -18,8 +18,9 @@ import time
 from datetime import date
 from pathlib import Path, PurePosixPath
 from typing import Any
-from urllib.error import URLError
-from urllib.request import urlopen
+from urllib.error import HTTPError, URLError
+from urllib.parse import quote
+from urllib.request import Request, urlopen
 
 SCHEMA = "rime.paper-post-release-anchor.v1"
 RELEASE_TAG_PATTERN = re.compile(
@@ -204,22 +205,50 @@ def fetch_record(doi: str) -> dict[str, Any]:
     raise OSError(f"failed to load Zenodo record after four attempts: {url}") from last_error
 
 
-def remote_digest(url: str) -> tuple[str, int]:
+def remote_digest(url: str, *, range_end: int | None = None) -> tuple[str, int]:
     last_error: BaseException | None = None
     for attempt in range(4):
         try:
             digest = hashlib.sha256()
             size = 0
-            with urlopen(url, timeout=60) as response:
+            request = (Request(url, headers={"Range": f"bytes=0-{range_end}"})
+                       if range_end is not None else url)
+            with urlopen(request, timeout=60) as response:
                 while chunk := response.read(1024 * 1024):
                     digest.update(chunk)
                     size += len(chunk)
             return digest.hexdigest(), size
         except (URLError, TimeoutError, ConnectionError, OSError) as error:
             last_error = error
+            if isinstance(error, HTTPError) and error.code == 403:
+                break
             if attempt < 3:
                 time.sleep(1 + attempt)
-    raise OSError(f"failed to download Zenodo file after four attempts: {url}") from last_error
+    raise OSError(f"failed to download Zenodo file: {url}") from last_error
+
+
+def zenodo_file_digest(record: dict[str, Any], item: dict[str, Any]) -> tuple[str, int]:
+    link = item.get("links", {}).get("content") or item["links"]["self"]
+    try:
+        return remote_digest(link)
+    except OSError as error:
+        if not isinstance(error.__cause__, HTTPError) or error.__cause__.code != 403:
+            raise
+
+    record_id = str(record["id"])
+    key = item["key"]
+    metadata_url = f"https://zenodo.org/api/records/{record_id}/files/{quote(key, safe='')}"
+    with urlopen(metadata_url, timeout=60) as response:
+        metadata = json.load(response)
+    if (metadata.get("key") != key or metadata.get("size") != item.get("size")
+            or metadata.get("checksum") != item.get("checksum")):
+        raise ValueError(f"Zenodo file metadata differs from record: {key}")
+    bucket_id = metadata.get("bucket_id")
+    if not isinstance(bucket_id, str) or not re.fullmatch(r"[0-9a-fA-F-]{36}", bucket_id):
+        raise ValueError(f"invalid Zenodo file bucket: {key}")
+    legacy_url = f"https://zenodo.org/api/files/{bucket_id}/{quote(key, safe='')}"
+    size = metadata["size"]
+    return remote_digest(legacy_url, range_end=size - 1 if size else None)
 
 
 def json_status(data: bytes) -> dict[str, Any]:
@@ -304,8 +333,7 @@ def deposit_rows(
             )
         source = git_blob(root, tag, source_path)
         source_digest = digest_bytes(source)
-        link = matches[0].get("links", {}).get("content") or matches[0]["links"]["self"]
-        deposited_digest, deposited_size = remote_digest(link)
+        deposited_digest, deposited_size = zenodo_file_digest(record, matches[0])
         if source_digest != deposited_digest or len(source) != deposited_size:
             raise ValueError(
                 f"deposited bytes differ from {tag}:{source_path}: {remote_name}"
@@ -520,8 +548,7 @@ def validate_anchor(args: argparse.Namespace) -> int:
             matches = [item for item in record.get("files", []) if item.get("key") == row["remote_name"]]
             if len(matches) != 1:
                 raise ValueError(f"remote deposit is missing: {row['remote_name']}")
-            link = matches[0].get("links", {}).get("content") or matches[0]["links"]["self"]
-            digest, size = remote_digest(link)
+            digest, size = zenodo_file_digest(record, matches[0])
             if digest != row["sha256"] or size != row["size"]:
                 raise ValueError(f"remote deposit mismatch: {row['remote_name']}")
 
