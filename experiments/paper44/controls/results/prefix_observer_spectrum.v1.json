@@ -1,0 +1,268 @@
+{
+  "status": "PASS_BOUNDED_PREFIX_OBSERVER_CONTROL",
+  "evidence": "BOUNDED_CONSISTENCY_ONLY",
+  "finite_models": [
+    {
+      "n": 3,
+      "reachable_consumer_states": 30,
+      "depths": [
+        {
+          "depth": 1,
+          "classes": 12,
+          "refinement_rounds": 4,
+          "full_partition_matches": true
+        },
+        {
+          "depth": 2,
+          "classes": 12,
+          "refinement_rounds": 4,
+          "full_partition_matches": true
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "reachable_consumer_states": 176,
+      "depths": [
+        {
+          "depth": 1,
+          "classes": 69,
+          "refinement_rounds": 7,
+          "full_partition_matches": true
+        },
+        {
+          "depth": 2,
+          "classes": 71,
+          "refinement_rounds": 7,
+          "full_partition_matches": true
+        },
+        {
+          "depth": 3,
+          "classes": 71,
+          "refinement_rounds": 7,
+          "full_partition_matches": true
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "reachable_consumer_states": 920,
+      "depths": [
+        {
+          "depth": 1,
+          "classes": 402,
+          "refinement_rounds": 10,
+          "full_partition_matches": true
+        },
+        {
+          "depth": 2,
+          "classes": 410,
+          "refinement_rounds": 10,
+          "full_partition_matches": true
+        },
+        {
+          "depth": 3,
+          "classes": 414,
+          "refinement_rounds": 10,
+          "full_partition_matches": true
+        },
+        {
+          "depth": 4,
+          "classes": 414,
+          "refinement_rounds": 10,
+          "full_partition_matches": true
+        }
+      ]
+    },
+    {
+      "n": 6,
+      "reachable_consumer_states": 4566,
+      "depths": [
+        {
+          "depth": 1,
+          "classes": 2085,
+          "refinement_rounds": 13,
+          "full_partition_matches": true
+        },
+        {
+          "depth": 2,
+          "classes": 2283,
+          "refinement_rounds": 13,
+          "full_partition_matches": true
+        },
+        {
+          "depth": 3,
+          "classes": 2303,
+          "refinement_rounds": 13,
+          "full_partition_matches": true
+        },
+        {
+          "depth": 4,
+          "classes": 2311,
+          "refinement_rounds": 13,
+          "full_partition_matches": true
+        },
+        {
+          "depth": 5,
+          "classes": 2311,
+          "refinement_rounds": 13,
+          "full_partition_matches": true
+        }
+      ]
+    },
+    {
+      "n": 7,
+      "reachable_consumer_states": 22134,
+      "depths": [
+        {
+          "depth": 1,
+          "classes": 9965,
+          "refinement_rounds": 16,
+          "full_partition_matches": true
+        },
+        {
+          "depth": 2,
+          "classes": 11803,
+          "refinement_rounds": 16,
+          "full_partition_matches": true
+        },
+        {
+          "depth": 3,
+          "classes": 12363,
+          "refinement_rounds": 16,
+          "full_partition_matches": true
+        },
+        {
+          "depth": 4,
+          "classes": 12411,
+          "refinement_rounds": 16,
+          "full_partition_matches": true
+        },
+        {
+          "depth": 5,
+          "classes": 12427,
+          "refinement_rounds": 16,
+          "full_partition_matches": true
+        },
+        {
+          "depth": 6,
+          "classes": 12427,
+          "refinement_rounds": 16,
+          "full_partition_matches": true
+        }
+      ]
+    }
+  ],
+  "algebra_recovery_range": [
+    3,
+    100
+  ],
+  "growth_samples": [
+    {
+      "theta": "1/12",
+      "proved_rate_in_note": 4.208490876365798,
+      "finite_formula_samples_not_a_limit_proof": [
+        {
+          "n": 64,
+          "depth": 5,
+          "count_root": 4.214513852288617
+        },
+        {
+          "n": 128,
+          "depth": 10,
+          "count_root": 4.2176077930740075
+        },
+        {
+          "n": 256,
+          "depth": 21,
+          "count_root": 4.221835045804649
+        }
+      ]
+    },
+    {
+      "theta": "1/6",
+      "proved_rate_in_note": 4.3662785769267485,
+      "finite_formula_samples_not_a_limit_proof": [
+        {
+          "n": 64,
+          "depth": 10,
+          "count_root": 4.367698197645017
+        },
+        {
+          "n": 128,
+          "depth": 21,
+          "count_root": 4.38440558987429
+        },
+        {
+          "n": 256,
+          "depth": 42,
+          "count_root": 4.3795711512674265
+        }
+      ]
+    },
+    {
+      "theta": "1/4",
+      "proved_rate_in_note": 4.465643261406317,
+      "finite_formula_samples_not_a_limit_proof": [
+        {
+          "n": 64,
+          "depth": 16,
+          "count_root": 4.493257168288731
+        },
+        {
+          "n": 128,
+          "depth": 32,
+          "count_root": 4.494643212412012
+        },
+        {
+          "n": 256,
+          "depth": 64,
+          "count_root": 4.487353909130587
+        }
+      ]
+    },
+    {
+      "theta": "1/3",
+      "proved_rate_in_note": 4.5,
+      "finite_formula_samples_not_a_limit_proof": [
+        {
+          "n": 64,
+          "depth": 21,
+          "count_root": 4.550947163220304
+        },
+        {
+          "n": 128,
+          "depth": 42,
+          "count_root": 4.546484776178945
+        },
+        {
+          "n": 256,
+          "depth": 85,
+          "count_root": 4.535024933294752
+        }
+      ]
+    },
+    {
+      "theta": "1/2",
+      "proved_rate_in_note": 4.5,
+      "finite_formula_samples_not_a_limit_proof": [
+        {
+          "n": 64,
+          "depth": 32,
+          "count_root": 4.581259919249423
+        },
+        {
+          "n": 128,
+          "depth": 64,
+          "count_root": 4.565272411985171
+        },
+        {
+          "n": 256,
+          "depth": 128,
+          "count_root": 4.544817690155732
+        }
+      ]
+    }
+  ],
+  "kernel_formalization_claimed": false
+}

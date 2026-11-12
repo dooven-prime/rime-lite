@@ -1,0 +1,586 @@
+{
+  "schema": "paper44_structure_count_milestone.v1",
+  "identity": "LOCAL_EXACT_BYTE_PROOF_MILESTONE",
+  "release_identity_claimed": false,
+  "independent_cold_reproduction_claimed": false,
+  "repository_head_context": "739a0de67a9b9385b0ea866be309be6f0e88e9c1",
+  "repository_head_is_source_identity": false,
+  "scope": {
+    "n_min": 3,
+    "depth_min": 1,
+    "selected_pair": [
+      0,
+      1
+    ],
+    "milestone": "actual normal forms and Theorem 3.3 finite counts",
+    "analytic_layer_included": false
+  },
+  "lean_version": "Lean (version 4.33.0, x86_64-unknown-linux-gnu, commit d8b18978322de05a8f3dba51ef03cf5461676c17, Release)",
+  "package_revisions": {
+    "mathlib": "db584cd6d46c92f209a44c0f1c829460d327499d",
+    "plausible": "b7eb3304aeae834b12dda98993a37f6a41f6f0bb",
+    "LeanSearchClient": "5f4d51b81cbd3f6b32b156bfad9056621a040404",
+    "importGraph": "16f02aa7642864af59f1ff0e384a015994db9118",
+    "proofwidgets": "4be2e3d5087eeb272cf5a8853b8f9dd025ef5957",
+    "aesop": "3448c0bcc5ce01b2d1546e483ec3620e32df3d0e",
+    "Qq": "92c15be17b7caf78c2ad767ec40f89052d908d81",
+    "batteries": "4488d40d070b9700d4d5a6aa342f0d40c31b2a2d",
+    "Cli": "6130a47896ce867c6a4a55373441e59e565bad0f"
+  },
+  "validation": [
+    {
+      "command": [
+        "rime-lean-cache",
+        "."
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "lake",
+        "--no-cache",
+        "build"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "Checks.lean"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "AxiomAudit.lean"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "audit_kind": "import/source closure plus explicit Lean axiom outputs",
+  "axiom_audit": {
+    "Paper44.prefixObserverEq_iff": [],
+    "Paper44.label_run_eq_of_same_trace_and_label": [
+      "propext"
+    ],
+    "Paper44.prefixLabel_update_registration_positive": [
+      "propext"
+    ],
+    "Paper44.prefixLabel_update_saturated_is_identity": [],
+    "Paper44.prefixLabel_scan_append": [
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.prefixLabel_scan_wellFormed": [
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.retainedLabel_append": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.circularLabel_wellFormed": [
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.selectedEventTag_injective": [
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.circularGenerated_consistent": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.circularLabel_step": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.circularPrefixMachine": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.circular_trace_eq": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.circular_trace_length": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.circular_run_eq": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.circular_label_run": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.circular_observerEq_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.circular_prefix_classification": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.circular_preregistration_observerEq_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.circular_nonterminal_observerEq_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.circular_terminal_observerEq_iff_label": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.card_terminalSaturated": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.card_terminalShort": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.card_terminalPrefixCode": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.terminalPrefixCount_eq_paper": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.card_terminalPrefixCode_paper": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.saturatedSparseEquiv": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.terminalSparseEquiv": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.decodeChain_length": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.take_decodeChain_in_range": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.complete_sparse_prefix": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.decodedCarrier_full_iff_last": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.actual_terminal_code": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.full_code_reachable": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.terminalSparseLabel_injective": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.terminalSparseLabel_reachable": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.terminalSparseLabel_covers": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.terminalPrefixActualEquiv": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.terminalPrefixActualEquiv_value": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.terminalPrefix_actual_history": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.terminalPrefix_encode_decode": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.terminalPrefix_decode_encode": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.card_actualTerminalLabel_paper": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.terminalObserverLabelEquiv": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.terminalObserver_encode_decode": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.terminalObserver_decode_encode": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.card_terminalObserverQuotient_paper": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.properCarrierPrefixActualEquiv": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.properCarrierPrefix_encode_decode": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.properCarrierPrefix_decode_encode": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.properCarrierPrefixFamilyEquiv": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.properCarrierPrefixFamily_encode_decode": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.properCarrierPrefixFamily_decode_encode": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.properPrefixPlacementEquiv": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.card_actualProperPlacements": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.card_actualProperPlacements_paper": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.saturatedCarrierEquiv": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.shortCarrierEquiv": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.padCode_absorbed_eq_last": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.code_nonzero_at_absorbed": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.markedCarrier_marker": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.properCarrierCountEquiv": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.properCarrierCount_encode_decode": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.properCarrierCount_decode_encode": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.card_actualProperLabelsAt": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.card_actualProperLabelsAt_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.card_actualProperFibreAt_all": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.card_actualProperLabelsAt_all": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.prefixObserverNormalEquiv": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.prefixObserver_encode_decode": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.prefixObserver_decode_encode": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.card_actualProperObservation": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.card_prefixObserverQuotient_paper": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.paperTheorem33_formula": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.properCarrier_unique_of_placement": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.properObservation_covers": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.unregistered_dead_state": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.prefixNormalSignature_injective": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.prefixNormalSignature_reachable": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.prefixNormalSignature_covers": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.registeredPrefixObserverNormalEquiv": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.registeredPrefixObserver_encode_decode": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.registeredPrefixObserver_decode_encode": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.card_registeredPrefixObserverQuotient_paper": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.paperTheorem33": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Paper44.prefixQuotient_card_split": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "source_sha256": {
+    "experiments/future_event_minimal_quotient/lean/FutureEvent/ActualSingletonNormalForm.lean": "0fd6e69b0ddaa2cd34d86f3abd93b2717cfd283a89303722d5617d207482af4b",
+    "experiments/future_event_minimal_quotient/lean/FutureEvent/Atomwise.lean": "7170c0f2b96d30e82e4676f684c1bdf13cfcd317228358061082f62474cd3ac6",
+    "experiments/future_event_minimal_quotient/lean/FutureEvent/CarrierCode.lean": "e6107677e96f6a558401a13f3d4952bc8770e3273bcee034f71e53d3f880a623",
+    "experiments/future_event_minimal_quotient/lean/FutureEvent/ClosedQuotientCount.lean": "f584ef7420551b7379a7d1c7bf22e75d897e233a343047bf09b7860c95e3fc60",
+    "experiments/future_event_minimal_quotient/lean/FutureEvent/CrossRegionSeparation.lean": "73e8d11813de10aabdc60133e2db1f4ddb6475963deebd7ba57759b853a9b659",
+    "experiments/future_event_minimal_quotient/lean/FutureEvent/Events.lean": "72954ab097e47bbc3a30c9a03bbab6588c9e1a886542337eba19514992713685",
+    "experiments/future_event_minimal_quotient/lean/FutureEvent/FutureClassification.lean": "fd231366ef8aadc7b9df19965c392e58e27268120cd764fbb8d65ed867784102",
+    "experiments/future_event_minimal_quotient/lean/FutureEvent/FutureQuotient.lean": "482549d967adcd23a00f6f5ec59486cc9f24a7c2d7a033fc1c9f07144c3ce5ed",
+    "experiments/future_event_minimal_quotient/lean/FutureEvent/GapAdmission.lean": "8b91b292638216d6bbee11f219adde9fbe34b77304f220fb1c5f920eaf4a561c",
+    "experiments/future_event_minimal_quotient/lean/FutureEvent/GapProbe.lean": "57f4aa3e7a40cdccc332b28777edf6cbe0271b490c797f477daa58651de51611",
+    "experiments/future_event_minimal_quotient/lean/FutureEvent/GapRegistration.lean": "1a50e1475d5bd30d842b6c331be35cf96c56addf0bf52dc3ad9bdc872f3ec66d",
+    "experiments/future_event_minimal_quotient/lean/FutureEvent/HoleMove.lean": "214c81a58436f8f7740a3e06c88759b56659bfa29fe1c66ea5adcc169c800912",
+    "experiments/future_event_minimal_quotient/lean/FutureEvent/InitialCutEquiv.lean": "55ba1be1862c9b44196fb94850756e1e96645a87f1ae50283b1ab0c21f8beca8",
+    "experiments/future_event_minimal_quotient/lean/FutureEvent/IntervalAssembly.lean": "7e54fb2f82495bd783d6337b12d4d9f22c06ef6f53a7998522b4f35e1973b043",
+    "experiments/future_event_minimal_quotient/lean/FutureEvent/PlacementGeometry.lean": "c6f457ddfa78f05f7c5ad8949739a27edd57136d78c7775bb26bff716d2b4415",
+    "experiments/future_event_minimal_quotient/lean/FutureEvent/PlacementParameters.lean": "be94d6c11b352b9d80378b42f1a1398fb4aa3510c097542c983e0acfa44a6f76",
+    "experiments/future_event_minimal_quotient/lean/FutureEvent/PlacementSums.lean": "b1279200fb3784c639869998e6caafa5eaa0609919931da909be9d9aa5000ac6",
+    "experiments/future_event_minimal_quotient/lean/FutureEvent/PositiveFiberInverse.lean": "3821a5a5f9f9d175a6680a0fc1f146c7e99536777c83c7246bc1ccc4e6e88c9e",
+    "experiments/future_event_minimal_quotient/lean/FutureEvent/ProbeCoalescence.lean": "bd4da58b48718fd7a8f34f2a8663de8e4ecc287bdba8fa3a86419aa829d0fd9e",
+    "experiments/future_event_minimal_quotient/lean/FutureEvent/QuotientCardinality.lean": "45535da18760e8cdcb2d3b364b9923bb584391ba99ca727c1daa91ad6f43d008",
+    "experiments/future_event_minimal_quotient/lean/FutureEvent/RegisterableData.lean": "613363b351fdbf6897867674ae27127f83da6b0372be982445f631f8b26eeb23",
+    "experiments/future_event_minimal_quotient/lean/FutureEvent/RegisterablePlacementEquiv.lean": "5485b5b7bb96ee817dc5ac9feb116f1309948e10dd0b4ddabc068859e99b009a",
+    "experiments/future_event_minimal_quotient/lean/FutureEvent/RegisteredDomain.lean": "d16a6a3155fdcbb0a060936c068b97b6df6b6db1a2ab60771f44652eaa623f04",
+    "experiments/future_event_minimal_quotient/lean/FutureEvent/RegisteredPlacementEquiv.lean": "8a382c2220dd80386b87fbe87ea558a2e37a98c688f2ad1d90474352d22d2d27",
+    "experiments/future_event_minimal_quotient/lean/FutureEvent/RegistrationDomain.lean": "2ff2ff1061c817ceaf18d8940fa27d85d3db56e58441d90c18c272e1f42309ee",
+    "experiments/future_event_minimal_quotient/lean/FutureEvent/SilentRegion.lean": "f09bfbf78b6bd7bfaf9b9817e44d6fa986d7e2ac708008ac456cb1e1b422de23",
+    "experiments/future_event_minimal_quotient/lean/FutureEvent/SingletonPlacementNormalForm.lean": "2199b228168de1fdc3375059733c31a2c6e0110ca187ee2a3fa4f1cc9ca12320",
+    "experiments/future_event_minimal_quotient/lean/FutureEvent/SweepReconstruction.lean": "3727758ae47a21046047d275d19ec5817cbc1a357bb4f0ab640ae626522cb1bb",
+    "experiments/future_event_minimal_quotient/lean/FutureEvent/SweepSeparation.lean": "42a9e34a672a0e1b5017622457ed304e6cfe3a46286b48858456d925cbd83d0f",
+    "experiments/future_event_minimal_quotient/lean/FutureEvent/SweepSites.lean": "ade932cd7c7f15f44e5e7da1da7f897cc2fa7e7673822bcc430ce42d457a90e6",
+    "experiments/future_event_minimal_quotient/lean/FutureEvent/TwoProbeSeparation.lean": "e82ded39122dd957b8006d2a77c7df16c5df3cbf29991354df3c83d8d7b244f8",
+    "experiments/future_event_minimal_quotient/lean/FutureEvent/ZeroCarrierAssembly.lean": "c0fa2b8446f45e96ad2b65eee3d562041a28989d7566633867f9f4b1a1705805",
+    "experiments/future_event_minimal_quotient/lean/full_summary/owner/RegisteredAbsorptionChains/CheckpointCounts.lean": "efdf3ae2c799301a8c61d01698f9b1240d351b32c29db097733f47efae8f39b1",
+    "experiments/future_event_minimal_quotient/lean/full_summary/owner/RegisteredAbsorptionChains/FinitePositiveFiber.lean": "2a27979ad0622dc40267bee2b8f3e2adf2ba1e7d72d934ae5cd4ac8b817dfbaf",
+    "experiments/future_event_minimal_quotient/lean/full_summary/owner/RegisteredAbsorptionChains/FullCarrierPlacementEquiv.lean": "59db622c728b4596d1c79dd9cd9f9cade6341283d71615988741e3127eb2fb43",
+    "experiments/future_event_minimal_quotient/lean/full_summary/owner/RegisteredAbsorptionChains/OriginClassification.lean": "29f15ed546c70c910882c70cd9ef11ad759c8513ff643d74c7b446fb29be6851",
+    "experiments/future_event_minimal_quotient/lean/full_summary/owner/RegisteredAbsorptionChains/TotalParameters.lean": "7b118df23d0a86e8492b8a93ca3074b4bff34a3528093ab44d769ae2f3dddd7e",
+    "experiments/future_event_minimal_quotient/lean/full_summary/owner/RegisteredAbsorptionChains/TotalSummaryAssembly.lean": "94e96389226d24c4c24d0c1f0665bdc81eb94f133b6dcfc25c8cc5a04a26e504",
+    "experiments/future_event_minimal_quotient/lean/full_summary/owner-manifest.json": "d9396421651cb3d13a0a4e54bca2f04112bf17ae0b4c70ba124a68ef86b81d9b",
+    "experiments/future_event_minimal_quotient/lean/upstream/RegisteredAbsorptionChains/ActualChainRange.lean": "acc6547cd1c289d956776d0a215d22d57d4c3b2ff8309468f86fbf43a79c4fa3",
+    "experiments/future_event_minimal_quotient/lean/upstream/RegisteredAbsorptionChains/ActualFiberNormalForm.lean": "bb98ae9af395d75cee11bb36934bbc823aa88677fbff946d659f4a721ad5fe54",
+    "experiments/future_event_minimal_quotient/lean/upstream/RegisteredAbsorptionChains/ActualSelectedFrontier.lean": "8b914600bdee9672afc7680ca8192d0a7d0a204b3b2ad9e7edc39eac7b9780af",
+    "experiments/future_event_minimal_quotient/lean/upstream/RegisteredAbsorptionChains/BalanceExecution.lean": "e6cc7ed712ab3b9acf778e159264fa0924941810a76715968d48e05871292f0b",
+    "experiments/future_event_minimal_quotient/lean/upstream/RegisteredAbsorptionChains/CanonicalBlockNaming.lean": "2fdab40473d255bd9945178e22aff8937f522aa14191d6656455b3437a9a10d4",
+    "experiments/future_event_minimal_quotient/lean/upstream/RegisteredAbsorptionChains/CheckpointPartnerAdmission.lean": "940545e8aedec51240a58a9014e335140e530077bfb3add3f639d45c9eec4784",
+    "experiments/future_event_minimal_quotient/lean/upstream/RegisteredAbsorptionChains/CheckpointPortGeometry.lean": "941150dca67152dc0c43f6f838fd3aca3a3f1e44044ee2ecc707f58ba7325ae1",
+    "experiments/future_event_minimal_quotient/lean/upstream/RegisteredAbsorptionChains/CleanChainWitness.lean": "99b0e4231cf3ed64b6b7596501a2fcc2c2f305aba02da44af7996ef58bd88e89",
+    "experiments/future_event_minimal_quotient/lean/upstream/RegisteredAbsorptionChains/CleanCheckpointStep.lean": "220da27c0a0d0a656e2be01218feb4fa665b27999b8d863d8cd60d4da4109427",
+    "experiments/future_event_minimal_quotient/lean/upstream/RegisteredAbsorptionChains/CleanCodeInduction.lean": "4bc7265ff81b78afd14e5ee5854c51c835f5f0dec439e2b8488810b4adac0ae7",
+    "experiments/future_event_minimal_quotient/lean/upstream/RegisteredAbsorptionChains/CodeChainUniqueness.lean": "4f46b8ee4d63f552c269fd825c81037453cf99775c2d54e64ed99f15f5600006",
+    "experiments/future_event_minimal_quotient/lean/upstream/RegisteredAbsorptionChains/CombinatorialCore.lean": "0605e371cc897706734c6432d8db1fe9dde8e7fb0d4fb636ea08c66ce7bac46d",
+    "experiments/future_event_minimal_quotient/lean/upstream/RegisteredAbsorptionChains/CrossNextBlock.lean": "02dd2f14cf75cad7cdcc2d10065f522b02f569a375ec600dc91e850e3eae2932",
+    "experiments/future_event_minimal_quotient/lean/upstream/RegisteredAbsorptionChains/CutBoundaryLift.lean": "6c1cb49c7c22a478915cf081f4c64c66adfca3a665dd3e41abbebc0b6d191fc9",
+    "experiments/future_event_minimal_quotient/lean/upstream/RegisteredAbsorptionChains/CutBoundaryPlan.lean": "178f1b7b52898444f8f3802a181a8a6a72bbb074b2cdf9ee79ab534d23ad5a40",
+    "experiments/future_event_minimal_quotient/lean/upstream/RegisteredAbsorptionChains/CyclicOrderAdmission.lean": "8e1f17a4c98b589fa6a6e3fb41db22d6df43479f43fc0b45d7c1c33f7c27d179",
+    "experiments/future_event_minimal_quotient/lean/upstream/RegisteredAbsorptionChains/Execution.lean": "d52c1cf26054b2f18d4e5ff7e1cd24763a4c90b821b9080b5764df8f6cf437a4",
+    "experiments/future_event_minimal_quotient/lean/upstream/RegisteredAbsorptionChains/FiberFullSufficiency.lean": "4ff8b7a401978386fe3184b8257ff1d0765f57f5ba8669b935a6e7952193e1c6",
+    "experiments/future_event_minimal_quotient/lean/upstream/RegisteredAbsorptionChains/FiberParamDecode.lean": "de5834798bbb4673ec9ead5389d2b48918e3c3f25af5f1a0b87569ad95b4aa4c",
+    "experiments/future_event_minimal_quotient/lean/upstream/RegisteredAbsorptionChains/FiberParamInverse.lean": "e0fa554655a2e034ed948eb3b7e0cff5b2e6b4c88c2c9474b41853e8901dfff0",
+    "experiments/future_event_minimal_quotient/lean/upstream/RegisteredAbsorptionChains/FiberParameters.lean": "7dc71b5f7296833bf112a6439d7abc86f3edefbf886aadf3db8b8760dccc3c13",
+    "experiments/future_event_minimal_quotient/lean/upstream/RegisteredAbsorptionChains/FiberReachability.lean": "1aec8610abb1c9c7a6429ed274337569a22abd8e31506843810dd81a3d2a4169",
+    "experiments/future_event_minimal_quotient/lean/upstream/RegisteredAbsorptionChains/FiberTargetAdmission.lean": "e0c4f6bd54a3307241816704b2ea5ada7d4e36ebeaa9821a19845f5da428dedf",
+    "experiments/future_event_minimal_quotient/lean/upstream/RegisteredAbsorptionChains/FixedPartnerSchedule.lean": "d74df9cee4f460ab76b60e31fda0f411d6d1feae8f1f5bb013fe3397ef3828d7",
+    "experiments/future_event_minimal_quotient/lean/upstream/RegisteredAbsorptionChains/GapNamedPlacement.lean": "0e4701efdef660324c224f3b6f952552ce6ed8eed39b242f1c6e5d470dbb6d24",
+    "experiments/future_event_minimal_quotient/lean/upstream/RegisteredAbsorptionChains/GapPotential.lean": "5362bd5a54acd98ed130082111857a59805ff03ff5a08527cd4d21a8020847f9",
+    "experiments/future_event_minimal_quotient/lean/upstream/RegisteredAbsorptionChains/LocalMove.lean": "c4b41a9904eb4ea581ebfb5e48a8bbde8c0d07eef08d84729464a2b237ca3310",
+    "experiments/future_event_minimal_quotient/lean/upstream/RegisteredAbsorptionChains/NamedOutsideMerge.lean": "82fa13f048ace1f1392c6c9ab8680a52e7e743f99b70d4d9da3b27d683b8779e",
+    "experiments/future_event_minimal_quotient/lean/upstream/RegisteredAbsorptionChains/NetTransfer.lean": "e60d48fa8be79dd46a2a605e652f9d89cb2caa6f93668e52961b766cf7cb581b",
+    "experiments/future_event_minimal_quotient/lean/upstream/RegisteredAbsorptionChains/NoSplitting.lean": "940c8634a57bf38de220afb09897a3ca80287b80a1692080f73392fe0a0d221f",
+    "experiments/future_event_minimal_quotient/lean/upstream/RegisteredAbsorptionChains/OneCutAssembly.lean": "799c5cab0e9590b79982cd7110aa763e9a0861ba6e5fc0802bbe2321840abca8",
+    "experiments/future_event_minimal_quotient/lean/upstream/RegisteredAbsorptionChains/OutsideBlockAssembly.lean": "12bad5c4bd3a94ee5cb7e7cc3a6f1a06d958e329a729492ab0343c78ad9b619c",
+    "experiments/future_event_minimal_quotient/lean/upstream/RegisteredAbsorptionChains/PackedNamedPlacement.lean": "d38e3db9094c98dac7aa3d41714a0c10432170370d56d36ca0a90bdfdc996c87",
+    "experiments/future_event_minimal_quotient/lean/upstream/RegisteredAbsorptionChains/PartnerScheduleGeometry.lean": "f3b1e980eb1f2a165ec111654afc488aac7cb7ae16a50d8ce1f5a1e35c485bc3",
+    "experiments/future_event_minimal_quotient/lean/upstream/RegisteredAbsorptionChains/PhaseAlignment.lean": "15a1315bbd619558c68926802bc825a626cce20e96f83709fcc5cffbeb7fe0b2",
+    "experiments/future_event_minimal_quotient/lean/upstream/RegisteredAbsorptionChains/PlacementFrame.lean": "3096a570648a4a6fa6358a8da7a571fde259f8aa561a4aac4624acd0afa251ff",
+    "experiments/future_event_minimal_quotient/lean/upstream/RegisteredAbsorptionChains/SourceOrderAdmission.lean": "beff3f9c428f5f4d6f86ebd175c6c0e214bee51fe209e77a750bb7577a962a02",
+    "experiments/future_event_minimal_quotient/lean/upstream/RegisteredAbsorptionChains/SourceOrderInvariant.lean": "333f506bda1376f86b651845497a2b8ff4f42955adbd45fd7ada537ac3232882",
+    "experiments/future_event_minimal_quotient/lean/upstream-manifest.json": "70b2fa8e47aa97a4eebf196c80a3b312704133adfc61335aff773f3f58d6d8bd",
+    "experiments/paper40/lean/PaperXL/Core.lean": "aef452f390df8de9b1d919ba2c17972e7bc72966518fd86599ec8b6147ebc79b",
+    "experiments/paper40/lean/PaperXL/PrefixObserver.lean": "17e385057877c2aacaf04c168dc465cdfbbf897f8e3af634c50f1334d32aa798",
+    "experiments/paper44/lean/AxiomAudit.lean": "07ce6baf29a87ef4bd6469b4f26b85d410a9bf58f6d10eec9d997603747f351a",
+    "experiments/paper44/lean/Checks.lean": "20797a58ab63f1e6f1db620c64762ce5aebbcc629c13606bd1ae11f9b88f4af0",
+    "experiments/paper44/lean/Paper44/CircularPrefixClassification.lean": "b3078bcb64b13c8a0c45eb11553c8c8c8f475b57466ebf22f5f619bf579e4455",
+    "experiments/paper44/lean/Paper44/CircularPrefixCounting.lean": "fbaafcd49a74b81a97595a6b24e284811ad72b65e8a1314b49fea38ededb66a7",
+    "experiments/paper44/lean/Paper44/CircularPrefixInstance.lean": "5c5fceb7ae4626f6cc1a9114089186ce98ae49b442a254489faad729033c6eff",
+    "experiments/paper44/lean/Paper44/CircularPrefixQuotient.lean": "dbe7fb92f3fcb2476925a170b55b63184324169aa33dfc3d2f3e055bc0ddfc4b",
+    "experiments/paper44/lean/Paper44/CircularPrefixTheorem33.lean": "c1281426b52a89793c9e4723eefd2ae068b24e8f5fa26832b076666765e01114",
+    "experiments/paper44/lean/Paper44/ObserverSemantics.lean": "615e066fcd55dc464fdcbf905792c94b413030dc208fbf92772d0b1a3d0e75be",
+    "experiments/paper44/lean/Paper44/ProperCarrierCompletion.lean": "032d7232fdbac7b9b2fdc0209aee22818e5abbc7bf338a7ba940211716421da4",
+    "experiments/paper44/lean/Paper44/ProperCarrierCounting.lean": "29ab4144a22a190d3038a027ac0ab5f0865cf7e5c06dd6b00e0f113da0d3436c",
+    "experiments/paper44/lean/Paper44/ProperCarrierFibre.lean": "48557d1cfd6243b1d2cb64cef6c38e6abbbabf5a29045e86ae21019a5b53c8df",
+    "experiments/paper44/lean/Paper44/ProperCarrierLabels.lean": "707d6cd61842b5970b6aa55c8f3bd7059394a6f36cfa6e8665ab29b3444ef727",
+    "experiments/paper44/lean/Paper44/ProperCarrierPrefix.lean": "62fe9469aae851a4200d2a596073e63967d5fce90913651091b5e4dae3d9b3e8",
+    "experiments/paper44/lean/Paper44/TerminalDecoder.lean": "91f9070044dc3d039c40bb07ef813c54563d7436ab2e69dd24885e93306f7c7b",
+    "experiments/paper44/lean/Paper44/TerminalLabelEquiv.lean": "8c661384ab16ceb9d7560697934ebf616661a529fe3a946cab32aaa709fe851f",
+    "experiments/paper44/lean/Paper44/TerminalObserverQuotient.lean": "6135603d865a2007474403dae61421b458eee109b8d18f5aa3525c711421c0f2",
+    "experiments/paper44/lean/Paper44/TerminalPrefixEncoding.lean": "7ff6a3cef5d17f1ef1c09bc8fcdb1902755e7011413d4e7531b39d99595a6bea",
+    "experiments/paper44/lean/Paper44.lean": "d391387d2f0bb9ab1b95abd0fa7878b146ac2b9b5e6bde1ca84be34537b5c01b",
+    "experiments/paper44/lean/freeze_structure_count.py": "c2d3e18e174ee07ec421137ff2f3ed951251b444c9884b745e7dddc2157ee235",
+    "experiments/paper44/lean/lake-manifest.json": "62328cb7aebc6326cb25f851fb91fb809a2c36268a3cd240537c6711dd9af8cf",
+    "experiments/paper44/lean/lakefile.toml": "cbc39f6b25d89539732b07af63bc338a0ba616ca1b2458d72b8faff50ad92aa5",
+    "experiments/paper44/lean/lean-toolchain": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b"
+  }
+}
