@@ -35,6 +35,7 @@ TESTS = [
     "test_experiment_observation.py",
     "test_verification_state.py",
     "test_paper40_post_release_audit.py",
+    "test_paper41_bfs_lock.py",
     "test_hal_reader_build.py",
     "test_contract_api.py",
     "test_accessibility_engine.py",

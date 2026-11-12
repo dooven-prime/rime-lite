@@ -26,11 +26,6 @@ tmp/
 tmp*/
 docs/archive/
 docs/internal/
-!docs/internal/
-docs/internal/*
-!docs/internal/archive/
-docs/internal/archive/*
-!docs/internal/archive/HAL_TO_ZENODO_NUMBERED_MIGRATION_2026-11.md
 figures/archive/
 figures/ccs/*.pdf
 figures/paper*/*.pdf
