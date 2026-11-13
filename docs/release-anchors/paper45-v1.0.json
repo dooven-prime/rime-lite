@@ -1,0 +1,61 @@
+{
+  "schema": "rime.paper-post-release-anchor.v1",
+  "paper_id": "PAPER45",
+  "release_version": "1.0",
+  "publication_status": "PUBLISHED",
+  "release_identity_claimed": true,
+  "anchor_role": "DOWNSTREAM_PUBLICATION_METADATA",
+  "release_tag": {
+    "name": "paper45-v1.0",
+    "tag_object_sha": "c2e19fcf76376b578f135cbc3216daf962f51fb3",
+    "target_commit_sha": "4d9aaa31a9062c627d7655e3f2085215fe0a3434"
+  },
+  "pre_release_evidence": [
+    {
+      "role": "release-manifest",
+      "path": "experiments/paper45/release-manifest.json",
+      "sha256_at_tag": "87d305c52219d8bc719bacd7e40af2f56c9461b9be7ed6caac9fd373f3c3ab04",
+      "size_at_tag": 11649,
+      "mutation_policy": "IMMUTABLE_TAG_BYTES",
+      "declared_state_at_tag": {
+        "schema": "rime.paper45.first-numbered-candidate.v1",
+        "status": "RELEASE_CANDIDATE",
+        "release_identity_claimed": false
+      }
+    }
+  ],
+  "post_release_supplements": [],
+  "external_anchor": {
+    "provider": "Zenodo",
+    "doi": "10.5281/zenodo.24187197",
+    "record_id": "24187197",
+    "record_url": "https://zenodo.org/records/24187197",
+    "publication_date": "2026-11-13",
+    "deposited_files": [
+      {
+        "remote_name": "paper45_arxiv.pdf",
+        "source_path_at_tag": "papers/paper45/paper45_arxiv.pdf",
+        "sha256": "c18605abc911aa42ae41b42524659a4e0adf1ff7668abba42e3f14408f7a8217",
+        "size": 120352
+      }
+    ]
+  },
+  "versioned_repin_policy": {
+    "pre_release_manifest_mutation_allowed": false,
+    "pre_release_receipt_mutation_allowed": false,
+    "current_head_fallback_allowed": false,
+    "owner_change_requires_new_owner_version": true,
+    "consumer_change_requires_new_consumer_version_and_repin": true,
+    "shared_file_in_place_update_allowed": false
+  },
+  "authority_boundary": [
+    "The anchor establishes release-tag, evidence-root, and deposited-file byte identity only.",
+    "A DOI anchors only files actually deposited in that record.",
+    "Local closure verification is not independent mathematical validation.",
+    "Publication anchoring does not establish theorem truth or scientific adequacy.",
+    "The anchor is downstream metadata and is not part of the release tag it records."
+  ],
+  "notes": [
+    "Zenodo deposit contains the numbered reader PDF only; the tagged Lean sources and bounded controls remain Git source evidence, not separately deposited files."
+  ]
+}
