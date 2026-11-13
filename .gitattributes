@@ -15,6 +15,7 @@ experiments/**/*.py text eol=lf
 experiments/**/*.sofaction text eol=lf
 experiments/**/*.txt text eol=lf
 papers/**/*.md text eol=lf
+papers/paper22/release-environment.json text eol=lf
 papers/tex/*.py text eol=lf
 papers/tex/*.tex text eol=lf
 papers/tex/README.md text eol=lf
