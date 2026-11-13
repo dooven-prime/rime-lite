@@ -10,7 +10,7 @@ finite representation laboratory, not as a puzzle-solving problem.
 
 The current public release contains Papers I--XV, the independently scoped
 Papers XVI--XVIII computational studies and research reports, and Papers
-XX--XLII mathematical lines.
+XX--XLIV mathematical lines.
 CCS v2.1 is published separately as an optional non-paper Computational
 Companion Archive; the immutable first combined record retains its historical
 predecessor.
