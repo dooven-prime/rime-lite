@@ -29,6 +29,7 @@ not rewrite manifests or receipts that accurately recorded a candidate state.
 | Paper XLII v1.0 | [paper42-v1.0.json](paper42-v1.0.json) |
 | Paper XLIII v1.0 | [paper43-v1.0.json](paper43-v1.0.json) |
 | Paper XLIV v1.0 | [paper44-v1.0.json](paper44-v1.0.json) |
+| Paper XLV v1.0 | [paper45-v1.0.json](paper45-v1.0.json) |
 
 Paper XLI's anchor binds its tagged candidate manifest and local replay
 receipt to the single reader PDF deposited at Zenodo. The historical HAL
@@ -60,6 +61,10 @@ is a post-release supplement checked by
 [`verify_paper44_state_search.py`](../../tools/release/verify_paper44_state_search.py).
 It binds a control dependency present in `paper44-v1.0` but omitted from the
 candidate manifest; it does not rewrite or retroactively complete that manifest.
+Paper XLV's anchor binds its first numbered reader PDF and tagged candidate
+manifest to the Zenodo record. The PDF-only DOI does not separately archive
+the Lean sources or finite controls; their source evidence remains at the
+immutable content tag. Pre-release status in tagged files is historical.
 
 The Paper XL anchor binds a [post-release fixed-controls audit](../../tools/release/verify_paper40_fixed_controls.py)
 as a supplement outside its immutable tag. The audit checks the nine retained

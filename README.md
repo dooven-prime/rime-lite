@@ -10,7 +10,7 @@ finite representation laboratory, not as a puzzle-solving problem.
 
 The current public release contains Papers I--XV, the independently scoped
 Papers XVI--XVIII computational studies and research reports, and Papers
-XX--XLII mathematical lines.
+XX--XLV mathematical lines.
 CCS v2.1 is published separately as an optional non-paper Computational
 Companion Archive; the immutable first combined record retains its historical
 predecessor.
@@ -60,6 +60,7 @@ predecessor.
 | Paper XLII | generated proper-arc registration chains and exact dependent placement fibers | <https://doi.org/10.5281/zenodo.24138941> |
 | Paper XLIII | future-event minimal quotients and constructive distinguishing words for a circular registered-absorption action | <https://doi.org/10.5281/zenodo.24148747> |
 | Paper XLIV | prefix-memory event observers, exact behavioral quotients, and their growth spectrum | <https://doi.org/10.5281/zenodo.24156272> |
+| Paper XLV | history-preserving quadratic normal forms, actual joint log--endpoint realizability, and exact surplus rigidity | <https://doi.org/10.5281/zenodo.24187197> |
 | Fusion-log M5 Lean companion v1.0 | actual joint enumeration and literal-endpoint log fibres | [Zenodo DOI](https://doi.org/10.5281/zenodo.24123627) / [post-release byte binding](docs/release-anchors/fusion-log-m5-source-v1.0.json) |
 | CCS v2.1 | optional reproducibility, observation, open-problem, and history archive | <https://doi.org/10.5281/zenodo.21988041> |
 | RIME Lite v2.1 repository snapshot | accepted papers, contracts, Registry evidence, release tools, and exact-byte historical inputs | [Zenodo DOI](https://doi.org/10.5281/zenodo.22048358) / [GitHub Release](https://github.com/dooven-prime/rime-lite/releases/tag/rime-lite-v2.1) |
@@ -67,7 +68,7 @@ predecessor.
 
 This is the repository's canonical DOI index. It identifies immutable
 published records; other public documents link here instead of duplicating the
-list. Papers VII--XVIII and Papers XX--XLIV now match their published
+list. Papers VII--XVIII and Papers XX--XLV now match their published
 records. Their listed DOIs identify immutable published versions, and frozen
 historical contracts remain unchanged.
 
@@ -219,6 +220,11 @@ spectrum. Its [post-release anchor](docs/release-anchors/paper44-v1.0.json)
 binds the numbered reader PDF to the tagged candidate and critical-window
 review; the Lean milestone and bounded controls are Git evidence, not files
 deposited under the paper DOI.
+Paper XLV proves joint realization of complete ordered fusion logs and literal
+endpoints, exact log--endpoint counts, and a sharp all-right normal form. Its
+[post-release anchor](docs/release-anchors/paper45-v1.0.json) binds the numbered
+reader PDF to the immutable content tag. The Lean sources and finite controls
+remain Git evidence, not files deposited under the paper DOI.
 Published release identities are maintained in the canonical DOI index above.
 
 | Paper | Manuscript | Evidence | Scope |
@@ -251,6 +257,7 @@ Published release identities are maintained in the canonical DOI index above.
 | XLII | [`Paper XLII.md`](papers/paper42/Paper%20XLII.md) | [`experiments/paper42/`](experiments/paper42/) | actual proper-arc origin cuts, ternary selected chains, dependent placement fibers, and exact enumeration |
 | XLIII | [`Paper XLIII.md`](papers/paper43/Paper%20XLIII.md) | [`experiments/paper43/`](experiments/paper43/) | two observation-dependent minimal right congruences, exact state counts, and actual linear-length distinguishing words |
 | XLIV | [`Paper XLIV.md`](papers/paper44/Paper%20XLIV.md) | [`experiments/paper44/`](experiments/paper44/) | prefix-memory observer quotients, exact counts, asymptotic growth, and the critical window |
+| XLV | [`Paper XLV.md`](papers/paper45/Paper%20XLV.md) | [`experiments/paper45/`](experiments/paper45/) | actual joint log--endpoint realizability, exact dependent counts, quadratic normal forms, and all-right rigidity |
 
 Thematic index, not a paper dependency order:
 

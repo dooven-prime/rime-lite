@@ -1,0 +1,10 @@
+name = "fusion_log_all_r"
+version = "0.1.0"
+defaultTargets = ["FusionLogAllR"]
+
+[[require]]
+name = "fusion_log_compression"
+path = "../lean"
+
+[[lean_lib]]
+name = "FusionLogAllR"

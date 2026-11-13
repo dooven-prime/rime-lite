@@ -13,6 +13,7 @@ Publication identities and DOIs are maintained only in the root
 |-------------|----------|
 | Read a concise research overview | [overview.md](overview.md) |
 | Understand the full paper architecture and typed interfaces | [PROGRAM_MAP.md](PROGRAM_MAP.md) |
+| Compare circular-action observation, cost and consumer-sufficiency interfaces | [Observation, History, and Cost Interfaces](LAYER_INTERFACES_AND_NON_IMPLICATIONS.md) |
 | Trace Papers I--VII interfaces and promotion limits | [PRE_SOF_INTERFACE_MAP.md](PRE_SOF_INTERFACE_MAP.md) |
 | Check controlled cross-paper terminology | [PROGRAM_VOCABULARY.md](PROGRAM_VOCABULARY.md) |
 | See which paper owns each object and claim | [PAPER_SCOPE.md](PAPER_SCOPE.md) |
@@ -82,8 +83,8 @@ moving fields, or represented genericity.
 ## Repository Boundary
 
 The public documentation covers the published Papers I--XV architecture, the
-independently scoped Papers XVI--XVII computational studies, and Papers
-XX--XL mathematical lines. Author-side planning, exploratory research
+independently scoped Papers XVI--XVIII network studies, and Papers
+XX--XLV mathematical lines. Author-side planning, exploratory research
 routing, release migration status, and historical working notes are outside
 this public documentation index.
 

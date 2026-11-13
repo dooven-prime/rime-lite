@@ -1,0 +1,312 @@
+{
+  "schema": "rime.paper45.first-numbered-candidate.v1",
+  "paper_id": "PAPER45",
+  "release_version": "1.0",
+  "intended_release_tag": "paper45-v1.0",
+  "status": "RELEASE_CANDIDATE",
+  "release_identity_claimed": false,
+  "external_anchor_claimed": false,
+  "independent_cold_reproduction_claimed": false,
+  "artifacts": [
+    {
+      "role": "manuscript",
+      "path": "papers/paper45/Paper XLV.md",
+      "sha256": "9c3114032b18bb0891d9c8c4beacbc44e66e644e94f9a5fe9b9368df70c43e7b",
+      "size": 35234
+    },
+    {
+      "role": "bibliography",
+      "path": "papers/paper45/references-v1.bib",
+      "sha256": "067fffa6449d4e55153ab5afca178b1a8a115827888b43a82787e7e6ec7b545d",
+      "size": 1691
+    },
+    {
+      "role": "reader-pdf",
+      "path": "papers/paper45/paper45_arxiv.pdf",
+      "sha256": "c18605abc911aa42ae41b42524659a4e0adf1ff7668abba42e3f14408f7a8217",
+      "size": 120352
+    },
+    {
+      "role": "paper-index",
+      "path": "papers/paper45/README.md",
+      "sha256": "6f101c7bbdea7eae516d807956fa32de0a4cb69d63671128cfe96a0ed920c169",
+      "size": 641
+    },
+    {
+      "role": "evidence-index",
+      "path": "experiments/paper45/README.md",
+      "sha256": "d1726b68fc39607b9eb2a035f350577e8d485b4c8d731951b32a4a3bab2f1edb",
+      "size": 3358
+    },
+    {
+      "role": "theorem-map",
+      "path": "experiments/paper45/FORMALIZATION_MAP.md",
+      "sha256": "70126768ce7ae7529a230d2a3235eb1e587099d3094e2fc3bf4f4a28e19fdff4",
+      "size": 9489
+    },
+    {
+      "role": "candidate-validator",
+      "path": "experiments/paper45/validation/validate_candidate.py",
+      "sha256": "e07b52015283da3f136c059a9884058b8357184b609d0dc5d41d678ead16b5ab",
+      "size": 10486
+    },
+    {
+      "role": "all-r-audit-validator",
+      "path": "experiments/paper45/validation/validate_all_r_audit.py",
+      "sha256": "1ef279ddfd3b3eed66eed8153573fb137336d80a275e3b0ad3bf914b6791a127",
+      "size": 1290
+    },
+    {
+      "role": "candidate-tests",
+      "path": "experiments/paper45/validation/test_candidate.py",
+      "sha256": "83a89d726f24b438f264f3dad11614f2c6d895ea21ab54d3a9a1ca0416116db1",
+      "size": 3463
+    },
+    {
+      "role": "candidate-workflow",
+      "path": ".github/workflows/paper45-candidate.yml",
+      "sha256": "bbade7c3d39173ff285e31e0a21be583ef0cf260b1308ced70a3f2569698d21b",
+      "size": 2587
+    },
+    {
+      "role": "reader-build-entrypoint",
+      "path": "papers/tex/build.py",
+      "sha256": "5fbda3b0bc8bc9538bb18f3c3a55b050eb6df6e02cc3c5d791fd5d306759fd5f",
+      "size": 367
+    },
+    {
+      "role": "reader-build-driver",
+      "path": "papers/tex/_build.py",
+      "sha256": "cf93be2143b2d1af079acad12b4ca41fce7e44e5557026e6a6e9bc90b0b8a835",
+      "size": 18818
+    },
+    {
+      "role": "reader-build-postprocessor",
+      "path": "papers/tex/_postprocess.py",
+      "sha256": "e6225f473ff9fe09845224be81d0ef5d853248588ea0ceef180f3f388dcf7554",
+      "size": 90094
+    },
+    {
+      "role": "reader-build-hrule-cleaner",
+      "path": "papers/tex/_clean_hrule.py",
+      "sha256": "dab41021d86aed7003259972e52e48712aa5d1c9b7a1e501e3607d17c9a72444",
+      "size": 3084
+    },
+    {
+      "role": "paper41-anchor",
+      "path": "docs/release-anchors/paper41-v1.0.json",
+      "sha256": "de1a6730cac2df49a99a57b51307e81fe57f81a49b6c75c85d2d28a32596a41c",
+      "size": 2868
+    },
+    {
+      "role": "paper42-anchor",
+      "path": "docs/release-anchors/paper42-v1.0.json",
+      "sha256": "8634cc9333490a4d741a73ddf227d92be856376ec79cc9124a271113ff02b4e7",
+      "size": 2866
+    },
+    {
+      "role": "m5-archive-anchor",
+      "path": "docs/release-anchors/fusion-log-m5-source-v1.0.json",
+      "sha256": "a2c252fb9d0ecf4d133804c1f7c7cbac5977ff16d6e319dd6fc23e4192b5b47d",
+      "size": 5116
+    },
+    {
+      "role": "m4d-lock",
+      "path": "experiments/fusion_log_compression/m4d-development-manifest.v1.json",
+      "sha256": "8a62981066908a78a4085c2977636cd4ffec83c283b5fd38997cc67ba31dc275",
+      "size": 4708
+    },
+    {
+      "role": "m5-lock",
+      "path": "experiments/fusion_log_compression/m5-development-manifest.v1.json",
+      "sha256": "68755263d97b5d9a9cd139e9f4affdc7d9d81889ff3dfc196dcfedb5137ba8ab",
+      "size": 9841
+    },
+    {
+      "role": "m4d-validator",
+      "path": "experiments/fusion_log_compression/validation/replay_m4d.py",
+      "sha256": "d41dd77811bc9cd838728cfafcb1edcaf9b0bbf79aa2f55f9636060338e230d6",
+      "size": 5092
+    },
+    {
+      "role": "m5-validator",
+      "path": "experiments/fusion_log_compression/validation/replay_m5.py",
+      "sha256": "af5bffdd9415b70bffc63bef1d1fe2e841515eba82222d8760aa580ac6aae3a6",
+      "size": 5244
+    },
+    {
+      "role": "m3-validator",
+      "path": "experiments/fusion_log_compression/validation/replay.py",
+      "sha256": "bb873effd0d7a5f5b62dbc300996ac35a83ab326f1b002b5d6d3efa26b2c4f92",
+      "size": 7649
+    },
+    {
+      "role": "all-r-index",
+      "path": "experiments/fusion_log_compression/lean_all_r/README.md",
+      "sha256": "e97c10b943eb75bc95be385f425dae4a484bf427f6c652648c49914b05192b02",
+      "size": 10787
+    },
+    {
+      "role": "all-r-lakefile",
+      "path": "experiments/fusion_log_compression/lean_all_r/lakefile.toml",
+      "sha256": "afd0f625d852270c1d0c70f12d6e9726ae797305f1ee43981a4d8a78a37067e1",
+      "size": 178
+    },
+    {
+      "role": "all-r-lock",
+      "path": "experiments/fusion_log_compression/lean_all_r/lake-manifest.json",
+      "sha256": "a16f7fbe743a37d75b974c1ec5711fcd02ab4c3fb75a5ad4fcd3f77418ea76ba",
+      "size": 3773
+    },
+    {
+      "role": "all-r-toolchain",
+      "path": "experiments/fusion_log_compression/lean_all_r/lean-toolchain",
+      "sha256": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b",
+      "size": 25
+    },
+    {
+      "role": "finite-controls-index",
+      "path": "experiments/fusion_log_compression/controls/README.md",
+      "sha256": "faddf50dfc067bab32469b034493dd1621746f97a8746ea6c6395da9ed2d73ad",
+      "size": 1712
+    },
+    {
+      "role": "finite-core",
+      "path": "experiments/fusion_log_compression/controls/core.py",
+      "sha256": "4a8cf76855ff979562bb75cdf688ec4ff9a8c7b35393f0f5f1b888f1563ab39f",
+      "size": 1401
+    },
+    {
+      "role": "finite-arbitrary-control",
+      "path": "experiments/fusion_log_compression/controls/fusion_log_arbitrary_start_control.py",
+      "sha256": "dce332ea8efded11db25ffc0819334fcfcd130dbd7e6477b0f8f49cb73d27e25",
+      "size": 7845
+    },
+    {
+      "role": "finite-math-control",
+      "path": "experiments/fusion_log_compression/controls/audit_math.py",
+      "sha256": "e086893f12021141f63d66ecac1025b038f4e56772645e9d9c0a959b5b7eae1d",
+      "size": 8067
+    },
+    {
+      "role": "finite-arbitrary-result",
+      "path": "experiments/fusion_log_compression/controls/results/arbitrary-start.c2.json",
+      "sha256": "fb95827060753898bfb2a89c65dfb6a78a86c1d1db6018f409af0de3a5da41fa",
+      "size": 20394
+    },
+    {
+      "role": "finite-math-result",
+      "path": "experiments/fusion_log_compression/controls/results/mathematical-controls.c2.json",
+      "sha256": "38aa008a2bed54d819075d07d91129fa5363d3ec87548e4f16886c0db6dfb7ca",
+      "size": 10160
+    },
+    {
+      "role": "all-r-source",
+      "path": "experiments/fusion_log_compression/lean_all_r/FusionLogAllR/AllROptimality.lean",
+      "sha256": "8f007f3ef58fb57c0729835db094b604d38c454e146b86b1f78bb27786de0c0b",
+      "size": 5697
+    },
+    {
+      "role": "all-r-source",
+      "path": "experiments/fusion_log_compression/lean_all_r/FusionLogAllR/AllRSurplusIdentity.lean",
+      "sha256": "8c2f6bc201e443988117a095302a00445287c4f43f415f751514e4ccc0e415ac",
+      "size": 18239
+    },
+    {
+      "role": "all-r-source",
+      "path": "experiments/fusion_log_compression/lean_all_r/FusionLogAllR/AllRTraceExtraction.lean",
+      "sha256": "5bf307abfde7f1627d12fc4e856fce3130f1f578f44458a3e83a691631945067",
+      "size": 15420
+    },
+    {
+      "role": "all-r-source",
+      "path": "experiments/fusion_log_compression/lean_all_r/FusionLogAllR/AxiomAudit.lean",
+      "sha256": "edecbaaf418b9eee6e988da9a25a988af887c2ccf041bb127c2416d7474c3814",
+      "size": 4215
+    },
+    {
+      "role": "all-r-source",
+      "path": "experiments/fusion_log_compression/lean_all_r/FusionLogAllR/CarrierRotation.lean",
+      "sha256": "2e2c782102687f63f39ece1a55a59f56afb90af3b2832c4a4ec2f6c3f54bba13",
+      "size": 16866
+    },
+    {
+      "role": "all-r-source",
+      "path": "experiments/fusion_log_compression/lean_all_r/FusionLogAllR/HoleTrace.lean",
+      "sha256": "91fe0a7ff7c77c4d686873b41a1af6318e038acfaa065daeec71be5747169bdc",
+      "size": 5594
+    },
+    {
+      "role": "all-r-source",
+      "path": "experiments/fusion_log_compression/lean_all_r/FusionLogAllR/MinimalTraceRigidity.lean",
+      "sha256": "de3370890eddb006c1015811aebaf2407fd59ebbdb0ba0cad49c3db5d0f096db",
+      "size": 4014
+    },
+    {
+      "role": "all-r-source",
+      "path": "experiments/fusion_log_compression/lean_all_r/FusionLogAllR/MinimalWordRigidity.lean",
+      "sha256": "9044f0c731fbe929554679132484a06d516a496dbb95dd4706888a7373699b89",
+      "size": 6905
+    },
+    {
+      "role": "all-r-source",
+      "path": "experiments/fusion_log_compression/lean_all_r/FusionLogAllR/PhysicalGapSimulation.lean",
+      "sha256": "1ef546a777472bf592bdef3661ea4f936cbb11898751134bb275f7197d458413",
+      "size": 43301
+    },
+    {
+      "role": "all-r-source",
+      "path": "experiments/fusion_log_compression/lean_all_r/FusionLogAllR/RawAllRBridge.lean",
+      "sha256": "060171fb179f6dcdf027ff73531683bdd0c733c95721df309a202557a2eaf5d3",
+      "size": 11504
+    },
+    {
+      "role": "all-r-source",
+      "path": "experiments/fusion_log_compression/lean_all_r/FusionLogAllR/RawAllRCertificate.lean",
+      "sha256": "fd4949597acd2eedcfba2c9e0b8a4364d4bf583ae78220b849ec8537cc796c51",
+      "size": 13583
+    },
+    {
+      "role": "all-r-source",
+      "path": "experiments/fusion_log_compression/lean_all_r/FusionLogAllR/RawAllRLowerBound.lean",
+      "sha256": "1a6b5f938cc22e707026d611a154c92ce20192576f187f55b6a86c0be17f2ff9",
+      "size": 812
+    },
+    {
+      "role": "all-r-source",
+      "path": "experiments/fusion_log_compression/lean_all_r/FusionLogAllR/RawAllRSegmentation.lean",
+      "sha256": "3791f809cdeb8f1a4ecb103362eae4f4f7571224cf5ca141f1fd8d39c90a9bca",
+      "size": 6883
+    },
+    {
+      "role": "all-r-source",
+      "path": "experiments/fusion_log_compression/lean_all_r/FusionLogAllR/RawAllRUniqueness.lean",
+      "sha256": "15a8cc6369291e0695b06b21e05b2627bfc635f7b7456832ffe384d234175c85",
+      "size": 18705
+    },
+    {
+      "role": "all-r-source",
+      "path": "experiments/fusion_log_compression/lean_all_r/FusionLogAllR/RawAllRUpperExecution.lean",
+      "sha256": "6197f5530b458f9f7a4574cb0ab9631a7054e6bc24292fd9a8cf94c61a6927d4",
+      "size": 15208
+    },
+    {
+      "role": "all-r-source",
+      "path": "experiments/fusion_log_compression/lean_all_r/FusionLogAllR/RawAllRUpperWitness.lean",
+      "sha256": "0c95fa569ec9f858f009066aab1c0d746e1adcdeb771b72840c435048b0cceb9",
+      "size": 2005
+    },
+    {
+      "role": "all-r-source",
+      "path": "experiments/fusion_log_compression/lean_all_r/FusionLogAllR/StageSlideRigidity.lean",
+      "sha256": "f487e4807d40b71c7e2db2da2d12924aedc5546a92f745c7c98f9a24ddc2378e",
+      "size": 27995
+    },
+    {
+      "role": "all-r-source",
+      "path": "experiments/fusion_log_compression/lean_all_r/FusionLogAllR.lean",
+      "sha256": "e9e21423714a3897a72a84e2d66fdb8a70729b83bdf3d9877d1207e0a7a66336",
+      "size": 630
+    }
+  ]
+}
