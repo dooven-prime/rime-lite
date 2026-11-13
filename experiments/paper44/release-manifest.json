@@ -1,0 +1,181 @@
+{
+  "schema": "rime.paper44.first-numbered-candidate.v1",
+  "paper_id": "PAPER44",
+  "release_version": "1.0",
+  "intended_release_tag": "paper44-v1.0",
+  "status": "RELEASE_CANDIDATE",
+  "release_identity_claimed": false,
+  "external_anchor_claimed": false,
+  "independent_cold_reproduction_claimed": false,
+  "receipt_self_exclusion": true,
+  "artifacts": [
+    {
+      "role": "manuscript",
+      "path": "papers/paper44/Paper XLIV.md",
+      "sha256": "ae9e674927ed4d8843dcc2aacbda0bbe86af31f4c4548fd4a9e888a55db0c370",
+      "size": 34159
+    },
+    {
+      "role": "bibliography",
+      "path": "papers/paper44/references-v1.bib",
+      "sha256": "4c580d76c3a56cb0597013d2958e35af94099312217fc7d34f01e9134a63e27c",
+      "size": 2584
+    },
+    {
+      "role": "reader-pdf",
+      "path": "papers/paper44/paper44_arxiv.pdf",
+      "sha256": "db15d29efcfd4a0c24f5dcc28224f39052aeeadef7de5901f3f6a304e4ed9661",
+      "size": 119843
+    },
+    {
+      "role": "paper-index",
+      "path": "papers/paper44/README.md",
+      "sha256": "4db9dc693955c1dc15580d2fc9c43b4d928ec086f93eade32efe4d946d0a7533",
+      "size": 2123
+    },
+    {
+      "role": "evidence-index",
+      "path": "experiments/paper44/README.md",
+      "sha256": "14e6157fae822ff480db8e6711adb2b67fb0be2a16cac05fe0e92d545041eddf",
+      "size": 3432
+    },
+    {
+      "role": "critical-window-review",
+      "path": "experiments/paper44/review/CRITICAL_WINDOW_REVIEW.md",
+      "sha256": "417123be100565d1c887e2eab285a7c566d17aa6df11a461f070e51e762c799f",
+      "size": 3131
+    },
+    {
+      "role": "lean-index",
+      "path": "experiments/paper44/lean/README.md",
+      "sha256": "5810bc69f1956a50693e7076a9a94da374bee9a31eb68a9e2f5fb07d5e772bc8",
+      "size": 15391
+    },
+    {
+      "role": "lean-milestone-index",
+      "path": "experiments/paper44/lean/FINITE_COMBINATORIAL_MILESTONE.md",
+      "sha256": "1b71494fab4e0a22a403d7a69024c78e9a07ee84b6741d0561d8b30ec5463651",
+      "size": 5731
+    },
+    {
+      "role": "lean-milestone",
+      "path": "experiments/paper44/lean/milestones/structure-count-v1/manifest.json",
+      "sha256": "d6100c5025f3c5a4c350e68f7284f07a788dcab55439214b0f0db3f6896350e6",
+      "size": 27776
+    },
+    {
+      "role": "finite-controls-index",
+      "path": "experiments/paper44/controls/README.md",
+      "sha256": "b09d482bc3ef0aa713899697ded74f67b0021b0348b69350ad52aa06200cb042",
+      "size": 1116
+    },
+    {
+      "role": "finite-report",
+      "path": "experiments/paper44/controls/results/prefix_observer_spectrum.v1.json",
+      "sha256": "4b85b2076a88c2fc74219b9d1af8e0c5513f791cf68a0e7446e77820d615b5fa",
+      "size": 5877
+    },
+    {
+      "role": "finite-core",
+      "path": "experiments/paper44/controls/core.py",
+      "sha256": "da84b552cf2a4e02fba4b8922ce0687ae39e5430bc247336f62b22806ff8ce4f",
+      "size": 5778
+    },
+    {
+      "role": "finite-minimizer",
+      "path": "experiments/paper44/controls/minimum_sufficient_quotient.py",
+      "sha256": "edec89e3fda4c4e326b55d8ab2218c3d08970c5e99341ac5847f810a34c503f6",
+      "size": 52612
+    },
+    {
+      "role": "finite-spectrum-control",
+      "path": "experiments/paper44/controls/prefix_observer_spectrum_control.py",
+      "sha256": "d8829a41e1f4d65f40f864a43b9ef67994c5f96ac9d3082a581470ea3e5b3e52",
+      "size": 7299
+    },
+    {
+      "role": "finite-control-tests",
+      "path": "experiments/paper44/controls/test_prefix_label_update.py",
+      "sha256": "e1cbbf1b533f386c440fcd556ef15bb2762191dfa9a610fe45c3a335a6ed7fc5",
+      "size": 4459
+    },
+    {
+      "role": "analytic-control-tests",
+      "path": "experiments/paper44/controls/test_prefix_observer_supercritical.py",
+      "sha256": "b70a89093deeaa5262fce69d588670ed88e7b93016426a7d833c4c65c90c7094",
+      "size": 3850
+    },
+    {
+      "role": "finite-validator",
+      "path": "experiments/paper44/validation/validate_controls.py",
+      "sha256": "0ee0b6fe1bd65d524c3cda1a10b289b6c3bba27b5098c46f93b9f1e4bd204b23",
+      "size": 2231
+    },
+    {
+      "role": "lean-audit-validator",
+      "path": "experiments/paper44/validation/validate_lean_audit.py",
+      "sha256": "7a75f30a1668de531c6e5c7b9b980e5d0f2f1e2766d065cc9198c66daa634849",
+      "size": 1225
+    },
+    {
+      "role": "candidate-validator",
+      "path": "experiments/paper44/validation/validate_candidate.py",
+      "sha256": "687941b93b4e93be964e334e74412eae71fb6e7c9693081260c75813b08c35eb",
+      "size": 10703
+    },
+    {
+      "role": "candidate-tests",
+      "path": "experiments/paper44/validation/test_candidate.py",
+      "sha256": "6eccde9b2fc5270b3549e899556f748a2a20e471567cf68cfa830cddb47a387a",
+      "size": 4176
+    },
+    {
+      "role": "candidate-workflow",
+      "path": ".github/workflows/paper44-candidate.yml",
+      "sha256": "26d1b03d64a5ca4a9c7afffbf9b992b5c110f5a9ccffd51ccb67bd079f373b1d",
+      "size": 2982
+    },
+    {
+      "role": "line-ending-policy",
+      "path": ".gitattributes",
+      "sha256": "a0780d5a25985faed4af70bc6502e03f081e2d74a508f60ed91a974fc93f869f",
+      "size": 4604
+    },
+    {
+      "role": "reader-build-entrypoint",
+      "path": "papers/tex/build.py",
+      "sha256": "5fbda3b0bc8bc9538bb18f3c3a55b050eb6df6e02cc3c5d791fd5d306759fd5f",
+      "size": 367
+    },
+    {
+      "role": "reader-build-driver",
+      "path": "papers/tex/_build.py",
+      "sha256": "cf93be2143b2d1af079acad12b4ca41fce7e44e5557026e6a6e9bc90b0b8a835",
+      "size": 18818
+    },
+    {
+      "role": "reader-build-postprocessor",
+      "path": "papers/tex/_postprocess.py",
+      "sha256": "e6225f473ff9fe09845224be81d0ef5d853248588ea0ceef180f3f388dcf7554",
+      "size": 90094
+    },
+    {
+      "role": "reader-build-hrule-cleaner",
+      "path": "papers/tex/_clean_hrule.py",
+      "sha256": "dab41021d86aed7003259972e52e48712aa5d1c9b7a1e501e3607d17c9a72444",
+      "size": 3084
+    },
+    {
+      "role": "paper41-anchor",
+      "path": "docs/release-anchors/paper41-v1.0.json",
+      "sha256": "de1a6730cac2df49a99a57b51307e81fe57f81a49b6c75c85d2d28a32596a41c",
+      "size": 2868
+    },
+    {
+      "role": "paper43-anchor",
+      "path": "docs/release-anchors/paper43-v1.0.json",
+      "sha256": "6f48fbc823a11563f4b5094f31c2e22eaf5e60ec392a116208db46196ab671cf",
+      "size": 2866
+    }
+  ]
+}

@@ -3,27 +3,15 @@ name: Paper XLIII Candidate Closure
 on:
   pull_request:
     paths:
-      - ".gitattributes"
       - ".github/workflows/paper43-candidate.yml"
       - "papers/paper43/**"
-      - "papers/unnumbered/future_event_minimal_quotient/**"
-      - "papers/tex/**"
       - "experiments/paper43/**"
-      - "experiments/future_event_minimal_quotient/**"
-      - "tools/release/validate_numbered_migration_commit_candidate.py"
-      - "tools/release/validate_numbered_migration_candidate.py"
   push:
     branches: [master]
     paths:
-      - ".gitattributes"
       - ".github/workflows/paper43-candidate.yml"
       - "papers/paper43/**"
-      - "papers/unnumbered/future_event_minimal_quotient/**"
-      - "papers/tex/**"
       - "experiments/paper43/**"
-      - "experiments/future_event_minimal_quotient/**"
-      - "tools/release/validate_numbered_migration_commit_candidate.py"
-      - "tools/release/validate_numbered_migration_candidate.py"
   workflow_dispatch:
 
 permissions:
@@ -43,6 +31,16 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: false
+
+      - name: Reject in-place changes to Paper XLIII owner files
+        run: |
+          if ! git diff --quiet paper43-v1.0 HEAD -- papers/paper43 experiments/paper43; then
+            echo "::error::Paper XLIII owner files differ from the immutable v1.0 tag; publish a new owner version."
+            exit 1
+          fi
+
+      - name: Replay the frozen Paper XLIII candidate
+        run: git switch --detach paper43-v1.0
 
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
         with:

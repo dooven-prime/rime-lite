@@ -28,6 +28,7 @@ not rewrite manifests or receipts that accurately recorded a candidate state.
 | Paper XLI v1.0 | [paper41-v1.0.json](paper41-v1.0.json) |
 | Paper XLII v1.0 | [paper42-v1.0.json](paper42-v1.0.json) |
 | Paper XLIII v1.0 | [paper43-v1.0.json](paper43-v1.0.json) |
+| Paper XLIV v1.0 | [paper44-v1.0.json](paper44-v1.0.json) |
 
 Paper XLI's anchor binds its tagged candidate manifest and local replay
 receipt to the single reader PDF deposited at Zenodo. The historical HAL
@@ -37,12 +38,28 @@ The downstream [BFS-lock audit](../../tools/release/verify_paper41_bfs_lock.py)
 checks the inherited replay script and saved result against the immutable
 tagged lock before running the finite replay. This supplements, but does not
 change, the tagged candidate validator or its local receipt.
+The XLI candidate CI checks that current owner files match `paper41-v1.0`,
+then replays the validator from that tag. Later shared `.gitattributes`
+changes are not substituted into the frozen candidate manifest.
 Paper XLII's anchor follows the same downstream boundary for its proper-arc
 reader PDF; its historical submission and separately archived Lean source
 remain independently versioned.
 Paper XLIII's anchor follows the same downstream boundary for its future-event
 reader PDF. Its historical HAL submission and separately archived Lean source
 remain independently versioned.
+The XLII and XLIII candidate CI workflows likewise reject in-place owner
+changes and replay their immutable content tags; later shared build and
+line-ending policy changes are outside those frozen candidate inputs.
+Paper XLIV's anchor binds its first numbered reader PDF to the immutable
+content tag. The tagged candidate manifest and critical-window review remain
+pre-release evidence; the PDF-only DOI does not separately archive the Lean
+milestone or bounded controls. Pre-release status text in the tagged README
+records the state at content freeze, while this anchor records publication.
+The [state-search source lock](supplements/paper44-state-search-source.v1.json)
+is a post-release supplement checked by
+[`verify_paper44_state_search.py`](../../tools/release/verify_paper44_state_search.py).
+It binds a control dependency present in `paper44-v1.0` but omitted from the
+candidate manifest; it does not rewrite or retroactively complete that manifest.
 
 The Paper XL anchor binds a [post-release fixed-controls audit](../../tools/release/verify_paper40_fixed_controls.py)
 as a supplement outside its immutable tag. The audit checks the nine retained

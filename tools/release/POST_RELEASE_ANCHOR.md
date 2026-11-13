@@ -25,6 +25,11 @@ Run the following sequence after publication:
 5. validate the anchor locally and with `--check-remote`;
 6. commit the anchor as a post-release metadata commit.
 
+If Zenodo's record-scoped content endpoint returns 403, the verifier reads
+that file's metadata from the same record, checks its key, checksum, and size,
+then downloads the corresponding bucket file with an explicit byte range.
+The downloaded bytes must still match the tagged source by SHA-256 and size.
+
 Example:
 
 ```bash

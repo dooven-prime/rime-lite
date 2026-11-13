@@ -1,0 +1,29 @@
+name = "paper44"
+version = "0.1.0"
+defaultTargets = ["Paper44"]
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4.git"
+rev = "db584cd6d46c92f209a44c0f1c829460d327499d"
+
+# Compile only imported source modules, without changing frozen upstream files.
+[[lean_lib]]
+name = "PaperXL"
+srcDir = "../../paper40/lean"
+
+[[lean_lib]]
+name = "RegisteredAbsorptionChains"
+srcDir = "../../future_event_minimal_quotient/lean/upstream"
+
+[[lean_lib]]
+name = "FutureEvent"
+srcDir = "../../future_event_minimal_quotient/lean"
+
+[[lean_lib]]
+name = "FixedPairOrigin"
+srcDir = "../../future_event_minimal_quotient/lean/full_summary/owner"
+roots = ["RegisteredAbsorptionChains.OriginClassification", "RegisteredAbsorptionChains.FullCarrierPlacementEquiv", "RegisteredAbsorptionChains.TotalSummaryAssembly", "RegisteredAbsorptionChains.CheckpointCounts", "RegisteredAbsorptionChains.TotalParameters", "RegisteredAbsorptionChains.FinitePositiveFiber"]
+
+[[lean_lib]]
+name = "Paper44"

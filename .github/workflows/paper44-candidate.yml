@@ -1,0 +1,86 @@
+name: Paper XLIV Finite Candidate
+
+on:
+  pull_request:
+    paths:
+      - ".gitattributes"
+      - ".github/workflows/paper44-candidate.yml"
+      - "docs/release-anchors/paper41-v1.0.json"
+      - "docs/release-anchors/paper43-v1.0.json"
+      - "papers/paper44/**"
+      - "papers/tex/**"
+      - "experiments/paper44/**"
+      - "experiments/paper40/lean/**"
+      - "experiments/future_event_minimal_quotient/lean/**"
+  push:
+    branches: [master]
+    paths:
+      - ".gitattributes"
+      - ".github/workflows/paper44-candidate.yml"
+      - "docs/release-anchors/paper41-v1.0.json"
+      - "docs/release-anchors/paper43-v1.0.json"
+      - "papers/paper44/**"
+      - "papers/tex/**"
+      - "experiments/paper44/**"
+      - "experiments/paper40/lean/**"
+      - "experiments/future_event_minimal_quotient/lean/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: paper44-candidate-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  finite-controls-and-lean:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: "3.13"
+
+      - name: Verify first-numbered candidate bytes and dependencies
+        run: python -O -B experiments/paper44/validation/validate_candidate.py
+
+      - name: Test candidate rejection gates
+        run: python -B -m unittest discover -s experiments/paper44/validation -p test_candidate.py -v
+
+      - name: Verify exact Lean source closure
+        working-directory: experiments/paper44/lean
+        run: python -O -B freeze_structure_count.py --check-only
+
+      - name: Replay retained bounded controls
+        run: python -O -B experiments/paper44/validation/validate_controls.py
+
+      - name: Check finite arithmetic and event-label correspondence
+        working-directory: experiments/paper44/controls
+        run: python -B -m unittest test_prefix_label_update test_prefix_observer_supercritical -v
+
+      - name: Build the pinned Lean companion
+        uses: leanprover/lean-action@fe408643ea7367d8c0404a8be3975bb145f5fb64 # v1
+        with:
+          lake-package-directory: experiments/paper44/lean
+          auto-config: "false"
+          build: "true"
+          test: "false"
+          lint: "false"
+          use-mathlib-cache: "true"
+          use-github-cache: "false"
+
+      - name: Check concrete statements
+        working-directory: experiments/paper44/lean
+        run: lake env lean Checks.lean
+
+      - name: Compare 86 fresh axiom outputs
+        working-directory: experiments/paper44/lean
+        run: |
+          lake env lean AxiomAudit.lean > "$RUNNER_TEMP/paper44-axioms.txt" 2>&1
+          python -O -B ../validation/validate_lean_audit.py "$RUNNER_TEMP/paper44-axioms.txt"
