@@ -1,0 +1,28 @@
+{
+  "schema": "rime.paper44.post-release-state-search-source.v1",
+  "paper_id": "PAPER44",
+  "release_role": "POST_RELEASE_SUPPLEMENT_NOT_IN_RELEASE_TAG",
+  "release_tag": {
+    "name": "paper44-v1.0",
+    "tag_object_sha": "101e065cb1250030bb8d2b32aa9fced1c2645b05",
+    "target_commit_sha": "15c1f4f510190a66b23f732b77a8273b85fd62dc"
+  },
+  "candidate_manifest": {
+    "path": "experiments/paper44/release-manifest.json",
+    "sha256_at_tag": "53624af64d94f1cb57f336f3ca7302abe69cd875c26b60ad742087207c51d30f"
+  },
+  "omitted_source": {
+    "path": "experiments/paper44/controls/shortest_summary_search.py",
+    "sha256_at_tag": "415fe14f14820d7b27aa540f6e0a3606f19c7ea983c08fc06443a5fcd9fdc215",
+    "size_at_tag": 11272
+  },
+  "bound_callers": {
+    "finite-minimizer": "experiments/paper44/controls/minimum_sufficient_quotient.py",
+    "finite-spectrum-control": "experiments/paper44/controls/prefix_observer_spectrum_control.py",
+    "finite-core": "experiments/paper44/controls/core.py"
+  },
+  "boundary": [
+    "The state-search source exists in the immutable tag but was omitted from the original candidate artifact inventory.",
+    "This downstream source lock checks the tagged bytes and current materialization; it does not retroactively repair the candidate manifest or prove the analytic results."
+  ]
+}

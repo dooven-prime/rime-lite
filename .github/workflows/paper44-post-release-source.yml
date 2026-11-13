@@ -1,0 +1,54 @@
+name: Paper XLIV Post-Release Source Lock
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/paper44-post-release-source.yml"
+      - "docs/release-anchors/paper44-v1.0.json"
+      - "docs/release-anchors/supplements/paper44-state-search-source.v1.json"
+      - "experiments/paper44/controls/core.py"
+      - "experiments/paper44/controls/minimum_sufficient_quotient.py"
+      - "experiments/paper44/controls/prefix_observer_spectrum_control.py"
+      - "experiments/paper44/controls/shortest_summary_search.py"
+      - "tests/test_paper44_post_release_source.py"
+      - "tools/release/verify_paper44_state_search.py"
+  push:
+    branches: [master]
+    paths:
+      - ".github/workflows/paper44-post-release-source.yml"
+      - "docs/release-anchors/paper44-v1.0.json"
+      - "docs/release-anchors/supplements/paper44-state-search-source.v1.json"
+      - "experiments/paper44/controls/core.py"
+      - "experiments/paper44/controls/minimum_sufficient_quotient.py"
+      - "experiments/paper44/controls/prefix_observer_spectrum_control.py"
+      - "experiments/paper44/controls/shortest_summary_search.py"
+      - "tests/test_paper44_post_release_source.py"
+      - "tools/release/verify_paper44_state_search.py"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  tagged-source-lock:
+    name: Tagged state-search source and local materialization
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: "3.13"
+
+      - name: Check downstream source lock
+        run: python -O -B tools/release/verify_paper44_state_search.py
+
+      - name: Test hostile source mutations
+        run: python -B tests/test_paper44_post_release_source.py
+
+      - name: Check publication anchor locally
+        run: python -O -B tools/release/post_release_anchor.py validate docs/release-anchors/paper44-v1.0.json
