@@ -69,7 +69,7 @@ predecessor.
 
 This is the repository's canonical DOI index. It identifies immutable
 published records; other public documents link here instead of duplicating the
-list. Papers VII--XVIII and Papers XX--XLV now match their published
+list. Papers VII--XVIII and Papers XX--XLVI now match their published
 records. Their listed DOIs identify immutable published versions, and frozen
 historical contracts remain unchanged.
 

@@ -51,7 +51,7 @@ Paper-facing computations write generated records under the owning
 | XVIII | [paper18/README.md](paper18/README.md) | published research-report evidence index for exact unit-source profile refinement and the MaleCNS census; downstream [DOI anchor](../docs/release-anchors/paper18-v1.0.json) |
 | XX | [paper20/README.md](paper20/README.md) | carrier census, all-depth theorem controls, image--kernel audit, and local closure receipt |
 | XXI | [paper21/README.md](paper21/README.md) | arbitrary-depth route semantics, fixed-field transfer automata, finite-field profiles, Lean closure, and replay receipts |
-| XXII | [paper22/README.md](paper22/README.md) | rational fixed-deficit closure, anchored Farey certificates, and Catalan-Fibonacci controls |
+| XXII | [paper22/README.md](paper22/README.md) | rational fixed-deficit closure, anchored Farey certificates, Catalan-Fibonacci controls, and a separate [Lean follow-up](paper22/lean/README.md) |
 | XXIII | [paper23/README.md](paper23/README.md) | pair-hitting and packing-area replay, marked-kernel corridor audits, binary clean exhaustion, and limited Lean closure |
 | XXIV | [paper24/README.md](paper24/README.md) | free-signature Lean core plus exact unseen-scope and cyclic-relation hostile fixtures |
 | XXV | [paper25/README.md](paper25/README.md) | exact transport and perturbation controls, bounded numerical diagnostics, hostile information-refinement witnesses, and supplementary semantic-lift evidence |
@@ -88,6 +88,12 @@ ladder, repair, and wall labels in those artifacts must not be read as a
 completed migration to the separate operator, routed-composition, full-word,
 commutator, and Lie-depth branches. The frozen Paper X Registry v1 snapshot is
 not backfilled during later migration.
+
+## Unnumbered Mathematical Companions
+
+| Companion | Entry | Role |
+| --- | --- | --- |
+| Fusion-log representation theory | [fusion_log_representation/COMPANION.md](fusion_log_representation/COMPANION.md) | actual log/endpoint modules, prefix-observation towers, and Fourier multiplicities |
 
 ## Shared Diagnostics
 
