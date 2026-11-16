@@ -908,8 +908,8 @@ transfer mass, and the stated literal and antipodal cost bounds. It also
 contains finite-state controls for small instances and a theorem-to-source
 map. The paper's mathematical arguments are given above; the companion
 provides a separate check of the formalized declarations and bounded
-examples. The source location and replay command are specified in the
-companion README.
+examples. The [fixed candidate source snapshot](https://github.com/dooven-prime/rime-lite/tree/79efa61b76d34c3fd1447cf252f328d903a51208/experiments/paper46)
+contains the theorem map and replay instructions.
 
 ## 10. Conclusion
 
