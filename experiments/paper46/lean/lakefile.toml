@@ -1,0 +1,7 @@
+name = "rsr2"
+version = "0.1.0"
+defaultTargets = ["RSR2"]
+
+[[lean_lib]]
+name = "RSR2"
+

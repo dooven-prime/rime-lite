@@ -1,0 +1,297 @@
+{
+  "schema": "rime.paper46.extraction-provenance.v1",
+  "status": "DEVELOPMENT_EXTRACTION",
+  "extracted_on": "2026-11-16",
+  "copied_file_count": 48,
+  "requires_original_directory": false,
+  "files": [
+    {
+      "path": "antipodal_partition_cost.py",
+      "source": "experiments/exploratory/stacked_rings_rsr2/antipodal_partition_cost.py",
+      "bytes": 2996,
+      "sha256": "0bb701f1c0bbc358bced8d528f587ea34ebd87ed63481b7af1b4ca8a5c0ecae3"
+    },
+    {
+      "path": "layer_allocation_geometry.py",
+      "source": "experiments/exploratory/stacked_rings_rsr2/layer_allocation_geometry.py",
+      "bytes": 7504,
+      "sha256": "204bc96cb17f1b9463a05d805f03f88c7c9d2ca172286d90fc8734bd1422ec89"
+    },
+    {
+      "path": "lean/lake-manifest.json",
+      "source": "experiments/exploratory/stacked_rings_rsr2/lean/lake-manifest.json",
+      "bytes": 136,
+      "sha256": "b9007256136745f83c3c4128ef71f81d3ea116602c653c45bb2233f2a76c0053"
+    },
+    {
+      "path": "lean/lakefile.toml",
+      "source": "experiments/exploratory/stacked_rings_rsr2/lean/lakefile.toml",
+      "bytes": 87,
+      "sha256": "3caf13b6886cc6148dcf5069790fb894b1bedd0900d752254fca0da350b33e64"
+    },
+    {
+      "path": "lean/lean-toolchain",
+      "source": "experiments/exploratory/stacked_rings_rsr2/lean/lean-toolchain",
+      "bytes": 25,
+      "sha256": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b"
+    },
+    {
+      "path": "lean/RSR2.lean",
+      "source": "experiments/exploratory/stacked_rings_rsr2/lean/RSR2.lean",
+      "bytes": 6904,
+      "sha256": "02d7bccfb1dc2a6a683ee2ef69abcff7e328049d7b02b384835d48dae92037ea"
+    },
+    {
+      "path": "lean/RSR2/AntipodalFusionGate.lean",
+      "source": "experiments/exploratory/stacked_rings_rsr2/lean/RSR2/AntipodalFusionGate.lean",
+      "bytes": 24467,
+      "sha256": "d4978ba063a09de461ebe8e524362ec4be4fdc05a80b891201d0db98521fd324"
+    },
+    {
+      "path": "lean/RSR2/AntipodalLinearBounds.lean",
+      "source": "experiments/exploratory/stacked_rings_rsr2/lean/RSR2/AntipodalLinearBounds.lean",
+      "bytes": 5537,
+      "sha256": "6d3b055cdbfa61186aa3b7b605754885825e62d3837fe00b2f7d5e1c92c2484a"
+    },
+    {
+      "path": "lean/RSR2/AntipodalLinearWitness.lean",
+      "source": "experiments/exploratory/stacked_rings_rsr2/lean/RSR2/AntipodalLinearWitness.lean",
+      "bytes": 28462,
+      "sha256": "ab66a50d2fd7353fba113da287b9fcce0a441da2d7693312445eee4de5207c26"
+    },
+    {
+      "path": "lean/RSR2/AxiomAudit.lean",
+      "source": "experiments/exploratory/stacked_rings_rsr2/lean/RSR2/AxiomAudit.lean",
+      "bytes": 12772,
+      "sha256": "817c2702f452af6e73a0731ee1723aceddcdfdc6804db36bd6071219403b9c34"
+    },
+    {
+      "path": "lean/RSR2/Bell.lean",
+      "source": "experiments/exploratory/stacked_rings_rsr2/lean/RSR2/Bell.lean",
+      "bytes": 4169,
+      "sha256": "fd2c42cef5a4215ee552998056554270d4652b3b36f8e2fd5aaa29257c832b0b"
+    },
+    {
+      "path": "lean/RSR2/BellProjection.lean",
+      "source": "experiments/exploratory/stacked_rings_rsr2/lean/RSR2/BellProjection.lean",
+      "bytes": 6403,
+      "sha256": "453e94a94f1954470f4408b9bc2b29f9b548a5d8da0f44799d6632203c924c82"
+    },
+    {
+      "path": "lean/RSR2/CanonicalEndpoint.lean",
+      "source": "experiments/exploratory/stacked_rings_rsr2/lean/RSR2/CanonicalEndpoint.lean",
+      "bytes": 19703,
+      "sha256": "5383aef4f3ab4dadecd735c4f7fc645c1300013035f5644261894c20bcdc69b1"
+    },
+    {
+      "path": "lean/RSR2/Construction.lean",
+      "source": "experiments/exploratory/stacked_rings_rsr2/lean/RSR2/Construction.lean",
+      "bytes": 18551,
+      "sha256": "4619d21ffb422bf27ac9bd46107196bd5e18ad6476b43fa9dd4f162a25fc7995"
+    },
+    {
+      "path": "lean/RSR2/Crossing.lean",
+      "source": "experiments/exploratory/stacked_rings_rsr2/lean/RSR2/Crossing.lean",
+      "bytes": 840,
+      "sha256": "bf8d85832e059144c6ac444910e5849c48933f872e4401f597e2b0dd676889a9"
+    },
+    {
+      "path": "lean/RSR2/Executable.lean",
+      "source": "experiments/exploratory/stacked_rings_rsr2/lean/RSR2/Executable.lean",
+      "bytes": 47712,
+      "sha256": "ccab472fb015b15c832c5fd293a153ec653bf2a37f7661330f182292dabbf3af"
+    },
+    {
+      "path": "lean/RSR2/ForcedPreparationDebts.lean",
+      "source": "experiments/exploratory/stacked_rings_rsr2/lean/RSR2/ForcedPreparationDebts.lean",
+      "bytes": 10478,
+      "sha256": "e354b3eff133b8be368c6c2e59d873a5e15feabb8658382025f5a2b91f2873b1"
+    },
+    {
+      "path": "lean/RSR2/LowerPacketLedger.lean",
+      "source": "experiments/exploratory/stacked_rings_rsr2/lean/RSR2/LowerPacketLedger.lean",
+      "bytes": 21541,
+      "sha256": "acc9588d85f7cfb8196076698b801768beffff1705da0ebe65918909f3f2e40c"
+    },
+    {
+      "path": "lean/RSR2/LowerPortGeometry.lean",
+      "source": "experiments/exploratory/stacked_rings_rsr2/lean/RSR2/LowerPortGeometry.lean",
+      "bytes": 23417,
+      "sha256": "ac7b8867a18337b2f1e435d74f8cf157a7367d778bda012ca112f7c3f8bae4f6"
+    },
+    {
+      "path": "lean/RSR2/LowerRestrictedOrder.lean",
+      "source": "experiments/exploratory/stacked_rings_rsr2/lean/RSR2/LowerRestrictedOrder.lean",
+      "bytes": 15027,
+      "sha256": "e219288e9a3e6c524a6deec1c9d82aaa0624416fcaa0efb94dc83669db3c440e"
+    },
+    {
+      "path": "lean/RSR2/MinimumTransferMass.lean",
+      "source": "experiments/exploratory/stacked_rings_rsr2/lean/RSR2/MinimumTransferMass.lean",
+      "bytes": 8512,
+      "sha256": "f332a9d7318ac4856b27beb47154f89f699c206c88669793cf1064c9711997c1"
+    },
+    {
+      "path": "lean/RSR2/Model.lean",
+      "source": "experiments/exploratory/stacked_rings_rsr2/lean/RSR2/Model.lean",
+      "bytes": 4901,
+      "sha256": "0f6b4bc29bc67e486017f900dda029be68887c2a539e59c2c2325959c256c6f2"
+    },
+    {
+      "path": "lean/RSR2/PacketRankLedger.lean",
+      "source": "experiments/exploratory/stacked_rings_rsr2/lean/RSR2/PacketRankLedger.lean",
+      "bytes": 13479,
+      "sha256": "16a691227ab6a40de66b9b931b982a6c62db72935628ba594308a3297f333fec"
+    },
+    {
+      "path": "lean/RSR2/Parameterized.lean",
+      "source": "experiments/exploratory/stacked_rings_rsr2/lean/RSR2/Parameterized.lean",
+      "bytes": 9493,
+      "sha256": "33ccbfc5d849dec447e4bb92e0b335b0c17f1552be0699f0dc26629c1d787a11"
+    },
+    {
+      "path": "lean/RSR2/PartialLoading.lean",
+      "source": "experiments/exploratory/stacked_rings_rsr2/lean/RSR2/PartialLoading.lean",
+      "bytes": 3308,
+      "sha256": "0523db5fe5a97dc90d8c593adf0c38b3f3536a7d78d699969100205ddb0af974"
+    },
+    {
+      "path": "lean/RSR2/PortCostSharpness.lean",
+      "source": "experiments/exploratory/stacked_rings_rsr2/lean/RSR2/PortCostSharpness.lean",
+      "bytes": 23762,
+      "sha256": "f2da730b45deaf0695e1f451518b18aca5f4a2d79180c5e541ba43820b892f69"
+    },
+    {
+      "path": "lean/RSR2/RetentionAssembly.lean",
+      "source": "experiments/exploratory/stacked_rings_rsr2/lean/RSR2/RetentionAssembly.lean",
+      "bytes": 4757,
+      "sha256": "d9a2aa275bd3217af6527350f95dd7ad036fedc9739bf5665401962899c1df0c"
+    },
+    {
+      "path": "lean/RSR2/RetentionIntervals.lean",
+      "source": "experiments/exploratory/stacked_rings_rsr2/lean/RSR2/RetentionIntervals.lean",
+      "bytes": 5045,
+      "sha256": "bdfac4d2e53d3ef8f5e1c857c5b1fa90721de27ab6fbf812ce735229feea338e"
+    },
+    {
+      "path": "lean/RSR2/RetentionNecessity.lean",
+      "source": "experiments/exploratory/stacked_rings_rsr2/lean/RSR2/RetentionNecessity.lean",
+      "bytes": 14266,
+      "sha256": "4038843900b8d8f1de79bfbc713989c2342268ad4ac4d9b48ba586ec5ac6150d"
+    },
+    {
+      "path": "lean/RSR2/RetentionRouting.lean",
+      "source": "experiments/exploratory/stacked_rings_rsr2/lean/RSR2/RetentionRouting.lean",
+      "bytes": 5737,
+      "sha256": "f4bafa4f69773f9643f427b4f2dcaecb9b94326fc565c7fa4841dac94a8eac6c"
+    },
+    {
+      "path": "lean/RSR2/RetentionSufficiency.lean",
+      "source": "experiments/exploratory/stacked_rings_rsr2/lean/RSR2/RetentionSufficiency.lean",
+      "bytes": 16398,
+      "sha256": "e750a7ba72b473e5430c05e4b89abb244624f72b77a873c030ea30a151cc8bea"
+    },
+    {
+      "path": "lean/RSR2/SequentialPreparationDebts.lean",
+      "source": "experiments/exploratory/stacked_rings_rsr2/lean/RSR2/SequentialPreparationDebts.lean",
+      "bytes": 5008,
+      "sha256": "6d147fe39ada4cb61a491077dd0f9fae531cc5c45c92e6295a51e47ae0bf48f1"
+    },
+    {
+      "path": "lean/RSR2/SingletonElevatorSkeleton.lean",
+      "source": "experiments/exploratory/stacked_rings_rsr2/lean/RSR2/SingletonElevatorSkeleton.lean",
+      "bytes": 13654,
+      "sha256": "d56bf74cfc2a63dc976a99929e5ebc3081b85a5d2268a60b3b642d1baadb6fc0"
+    },
+    {
+      "path": "lean/RSR2/SingletonOptimalClassification.lean",
+      "source": "experiments/exploratory/stacked_rings_rsr2/lean/RSR2/SingletonOptimalClassification.lean",
+      "bytes": 12368,
+      "sha256": "6b93afa2f18071d2fbaf6ddd763a7aa01dbf87d81aa6c39e34dd7c03e11bbe94"
+    },
+    {
+      "path": "lean/RSR2/SingletonOptimalCounting.lean",
+      "source": "experiments/exploratory/stacked_rings_rsr2/lean/RSR2/SingletonOptimalCounting.lean",
+      "bytes": 7989,
+      "sha256": "bb5ae5c2f887f92afe34f56872b72850989d046097611017c3b30518ac146749"
+    },
+    {
+      "path": "lean/RSR2/SingletonWordSymmetry.lean",
+      "source": "experiments/exploratory/stacked_rings_rsr2/lean/RSR2/SingletonWordSymmetry.lean",
+      "bytes": 6230,
+      "sha256": "535c132a7b51feef3190290c5b2de4e91107e0c20085884ad5ed8c4cdcd01620"
+    },
+    {
+      "path": "lean/RSR2/SingleVacancyDebt.lean",
+      "source": "experiments/exploratory/stacked_rings_rsr2/lean/RSR2/SingleVacancyDebt.lean",
+      "bytes": 32265,
+      "sha256": "129119af06f004f02f19afc57cf40f1b7e3545d2a30932e01277d59dd8c74cc6"
+    },
+    {
+      "path": "lean/RSR2/SingleVacancyOptimality.lean",
+      "source": "experiments/exploratory/stacked_rings_rsr2/lean/RSR2/SingleVacancyOptimality.lean",
+      "bytes": 17125,
+      "sha256": "84e63e2e41718679dff8616ab6090fe3f412e4349c41a50eee5a197fc74dd522"
+    },
+    {
+      "path": "lean/RSR2/SingleVacancySlideCount.lean",
+      "source": "experiments/exploratory/stacked_rings_rsr2/lean/RSR2/SingleVacancySlideCount.lean",
+      "bytes": 10687,
+      "sha256": "e7ced8fbf513b7817cf21979e031aa4f55aec2950f01b80d88a19836104dd195"
+    },
+    {
+      "path": "lean/RSR2/SingleVacancyWitness.lean",
+      "source": "experiments/exploratory/stacked_rings_rsr2/lean/RSR2/SingleVacancyWitness.lean",
+      "bytes": 9907,
+      "sha256": "3183beb976520256bbc903f449d7f2af17d8e46a4cacd80c7c93d81011c39eec"
+    },
+    {
+      "path": "lean/RSR2/TransferMass.lean",
+      "source": "experiments/exploratory/stacked_rings_rsr2/lean/RSR2/TransferMass.lean",
+      "bytes": 7439,
+      "sha256": "e94e708f0cc6c5ff8d69d8073a64e3ffb5849d2dc8137b5b6b58c064e387fdc5"
+    },
+    {
+      "path": "lean/RSR2/UpperPortVacancy.lean",
+      "source": "experiments/exploratory/stacked_rings_rsr2/lean/RSR2/UpperPortVacancy.lean",
+      "bytes": 6116,
+      "sha256": "e8c39e6ed15b00d45ec448034a3e090fc970935128fcb25665d84708a5adbe89"
+    },
+    {
+      "path": "rsr2_model.py",
+      "source": "experiments/exploratory/stacked_rings_rsr2/rsr2_model.py",
+      "bytes": 11135,
+      "sha256": "ef441eb230103b54841ed4916329e7619f723606fbb39b00f03ac831d32854bb"
+    },
+    {
+      "path": "shortest_singleton_schedule_audit.py",
+      "source": "experiments/exploratory/stacked_rings_rsr2/shortest_singleton_schedule_audit.py",
+      "bytes": 6282,
+      "sha256": "948b1657fe81f84bed9b5d9ee00cf86db92d10859e0b053516394bfe92775eb9"
+    },
+    {
+      "path": "test_antipodal_partition_cost.py",
+      "source": "experiments/exploratory/stacked_rings_rsr2/test_antipodal_partition_cost.py",
+      "bytes": 5477,
+      "sha256": "17d53bcd6d1efac228a11ccbfefbaaa594f9fe66a68e3091e48e92545565d254"
+    },
+    {
+      "path": "test_layer_allocation_geometry.py",
+      "source": "experiments/exploratory/stacked_rings_rsr2/test_layer_allocation_geometry.py",
+      "bytes": 5113,
+      "sha256": "bbe7780a8cb2e13c9dfc698becd6ef34ca2c24775680011792e2189c32e890fc"
+    },
+    {
+      "path": "test_rsr2_model.py",
+      "source": "experiments/exploratory/stacked_rings_rsr2/test_rsr2_model.py",
+      "bytes": 4846,
+      "sha256": "eb081fb6b76dd915f23790eda5479a116eb48be3d4cb4a0208bbc3a3081aa6cf"
+    },
+    {
+      "path": "test_shortest_singleton_schedule_audit.py",
+      "source": "experiments/exploratory/stacked_rings_rsr2/test_shortest_singleton_schedule_audit.py",
+      "bytes": 698,
+      "sha256": "36ea1f4a2c6ae02eda6fbd2f7f1fed5e7b7c61845dfb887324158f61db67defb"
+    }
+  ]
+}
