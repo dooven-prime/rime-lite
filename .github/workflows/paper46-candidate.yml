@@ -1,0 +1,63 @@
+name: Paper XLVI Candidate
+
+on:
+  pull_request:
+    paths:
+      - ".gitattributes"
+      - ".github/workflows/paper46-candidate.yml"
+      - "papers/paper46/**"
+      - "experiments/paper46/**"
+  push:
+    branches: [master, codex/paper46-reader-v1]
+    paths:
+      - ".gitattributes"
+      - ".github/workflows/paper46-candidate.yml"
+      - "papers/paper46/**"
+      - "experiments/paper46/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: paper46-candidate-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  finite-controls-and-lean:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: "3.13"
+
+      - name: Verify candidate bytes and run bounded controls
+        run: python -B experiments/paper46/validation/replay.py
+
+      - name: Install pinned Lean toolchain
+        uses: leanprover/lean-action@fe408643ea7367d8c0404a8be3975bb145f5fb64 # v1
+        with:
+          lake-package-directory: experiments/paper46/lean
+          auto-config: "false"
+          build: "true"
+          test: "false"
+          lint: "false"
+          use-mathlib-cache: "false"
+          use-github-cache: "false"
+
+      - name: Build Lean and audit declared axioms
+        run: python -B experiments/paper46/validation/replay.py --lean --report "$RUNNER_TEMP/paper46-candidate-replay.json"
+
+      - name: Retain fresh successful replay receipt
+        if: success()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: paper46-candidate-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/paper46-candidate-replay.json
+          if-no-files-found: error

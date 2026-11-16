@@ -1,0 +1,11 @@
+# Preserve the extracted CRLF proof bytes when Git is configured with autocrlf.
+.gitattributes text eol=lf
+.gitignore text eol=lf
+*.py -text
+*.lean -text
+lean/lean-toolchain -text
+lean/lakefile.toml -text
+*.md text eol=lf
+*.json text eol=lf
+lean/lake-manifest.json -text
+validation/*.py text eol=lf
