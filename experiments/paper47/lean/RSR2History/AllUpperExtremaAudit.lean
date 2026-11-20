@@ -1,0 +1,28 @@
+import RSR2History.PackedForestRelativeReplay
+
+#print axioms RSR2History.IsAllUpperSingleton
+#print axioms RSR2History.allUpperSingletonObservations
+#print axioms RSR2History.mem_allUpperSingletonObservations
+#print axioms RSR2History.allUpperSingletonTotalPremiumMaximum
+#print axioms RSR2History.allUpperSingleton_totalPremium_le_delayed
+#print axioms RSR2History.delayedUpperChainLog_transfer_card
+#print axioms RSR2History.allUpperSingleton_delayed_maximum_attained
+#print axioms RSR2History.allUpperSingletonTotalPremiumMaximum_eq_delayed
+#print axioms RSR2History.allUpperSingletonTotalPremiumMaximum_eq
+#print axioms RSR2History.delayed_counterexample_has_lower_survivor_or_packed_transfer
+
+#print axioms RSR2History.UpperForestPath.packed_forest_cursor_replay
+#print axioms RSR2History.UpperReservedReplay.packed_forest_terminal_route
+#print axioms RSR2History.allUpper_packed_forest_replay_account
+#print axioms RSR2History.PackedForestReplayAccount.lowerCost_fusion_bound
+#print axioms RSR2History.allUpper_fullTransfer_singletons
+#print axioms RSR2History.PackedCursorSchedule.forest_winding_phase_payment
+#print axioms RSR2History.PackedCursorSchedule.forest_initial_winding_phase_payment
+#print axioms RSR2History.packedForest_fused_budget
+#print axioms RSR2History.packedForest_unfused_budget
+#print axioms RSR2History.PackedForestReplayAccount.length_le_partition_add_delayed
+#print axioms RSR2History.allUpper_totalPremium_le_delayed
+#print axioms RSR2History.mem_allUpperObservations
+#print axioms RSR2History.allUpperTotalPremiumMaximum_eq_delayed
+#print axioms RSR2History.allUpperTotalPremiumMaximum_eq
+#print axioms RSR2History.delayed_counterexample_has_lower_survivor

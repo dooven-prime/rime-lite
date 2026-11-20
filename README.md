@@ -10,7 +10,7 @@ finite representation laboratory, not as a puzzle-solving problem.
 
 The current public release contains Papers I--XV, the independently scoped
 Papers XVI--XVIII computational studies and research reports, and Papers
-XX--XLVI mathematical lines.
+XX--XLVII mathematical lines.
 CCS v2.1 is published separately as an optional non-paper Computational
 Companion Archive; the immutable first combined record retains its historical
 predecessor.
@@ -62,6 +62,7 @@ predecessor.
 | Paper XLIV | prefix-memory event observers, exact behavioral quotients, and their growth spectrum | <https://doi.org/10.5281/zenodo.24156272> |
 | Paper XLV | history-preserving quadratic normal forms, actual joint log--endpoint realizability, and exact surplus rigidity | <https://doi.org/10.5281/zenodo.24187197> |
 | Paper XLVI | guarded two-ring packet fusion, Bell universality, retention geometry, and sharp endpoint costs | <https://doi.org/10.5281/zenodo.24272180> |
+| Paper XLVII | fusion elimination and exact one-block and all-upper history-cost extrema on stacked rings | <https://doi.org/10.5281/zenodo.24404156> |
 | Fusion-log M5 Lean companion v1.0 | actual joint enumeration and literal-endpoint log fibres | [Zenodo DOI](https://doi.org/10.5281/zenodo.24123627) / [post-release byte binding](docs/release-anchors/fusion-log-m5-source-v1.0.json) |
 | CCS v2.1 | optional reproducibility, observation, open-problem, and history archive | <https://doi.org/10.5281/zenodo.21988041> |
 | RIME Lite v2.1 repository snapshot | accepted papers, contracts, Registry evidence, release tools, and exact-byte historical inputs | [Zenodo DOI](https://doi.org/10.5281/zenodo.22048358) / [GitHub Release](https://github.com/dooven-prime/rime-lite/releases/tag/rime-lite-v2.1) |
@@ -69,7 +70,7 @@ predecessor.
 
 This is the repository's canonical DOI index. It identifies immutable
 published records; other public documents link here instead of duplicating the
-list. Papers VII--XVIII and Papers XX--XLVI now match their published
+list. Papers VII--XVIII and Papers XX--XLVII now match their published
 records. Their listed DOIs identify immutable published versions, and frozen
 historical contracts remain unchanged.
 
@@ -231,6 +232,11 @@ and literal endpoint costs. Its
 [post-release anchor](docs/release-anchors/paper46-v1.0.json) binds the numbered
 reader PDF to the immutable content tag. The Lean companion and bounded controls
 remain tagged Git evidence, not files deposited under the paper DOI.
+Paper XLVII gives exact one-block and all-upper history-cost extrema for the
+stacked-ring action. Its
+[post-release anchor](docs/release-anchors/paper47-v1.0.json) binds the numbered
+reader PDF and candidate evidence to the immutable content tag. The DOI
+contains the PDF only; Lean sources remain tagged Git evidence.
 Published release identities are maintained in the canonical DOI index above.
 
 | Paper | Manuscript | Evidence | Scope |
@@ -265,6 +271,7 @@ Published release identities are maintained in the canonical DOI index above.
 | XLIV | [`Paper XLIV.md`](papers/paper44/Paper%20XLIV.md) | [`experiments/paper44/`](experiments/paper44/) | prefix-memory observer quotients, exact counts, asymptotic growth, and the critical window |
 | XLV | [`Paper XLV.md`](papers/paper45/Paper%20XLV.md) | [`experiments/paper45/`](experiments/paper45/) | actual joint log--endpoint realizability, exact dependent counts, quadratic normal forms, and all-right rigidity |
 | XLVI | [`Paper XLVI.md`](papers/paper46/Paper%20XLVI.md) | [`experiments/paper46/`](experiments/paper46/) | Bell endpoint universality, lower-ring retention criterion, and sharp costs in a guarded two-ring action |
+| XLVII | [`Paper XLVII.md`](papers/paper47/Paper%20XLVII.md) | [`experiments/paper47/`](experiments/paper47/) | exact one-block and all-upper history-cost extrema, fusion elimination, and the residual lower-survivor boundary |
 
 Thematic index, not a paper dependency order:
 

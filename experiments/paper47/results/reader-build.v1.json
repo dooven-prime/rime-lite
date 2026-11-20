@@ -1,0 +1,19 @@
+{
+  "status": "LOCAL_READER_BUILD_PASS",
+  "publication_identity": null,
+  "inputs": {
+    "papers/paper47/Paper XLVII.md": "e18bbbfbf0caa11b562dfcf71871a6d9dd8a1742c54cf06ec888e213413a2e95",
+    "papers/paper47/references-v1.bib": "d1eb3039ae14253c48fa2d5236930bd2677f3041d143b207420bf923633c275f",
+    "experiments/paper47/reader-profile.json": "a9a29388f3912df3b4e182a54be5c1d2ab941fdbd2216c800e92ec9a38af105c",
+    "experiments/paper47/validation/build_reader.py": "7c8583b86e3e5f0b80c49f978181b9cf468e7a8147a41411765307fe5c9a1a8a",
+    "papers/tex/_build.py": "cf93be2143b2d1af079acad12b4ca41fce7e44e5557026e6a6e9bc90b0b8a835",
+    "papers/tex/_postprocess.py": "cda092d2109511e2d9570c0a45ae93b2548a6a79154523d226d61c060ba4c0cc",
+    "papers/tex/_clean_hrule.py": "dab41021d86aed7003259972e52e48712aa5d1c9b7a1e501e3607d17c9a72444"
+  },
+  "reader_pdf": "papers/paper47/paper47_arxiv.pdf",
+  "reader_pdf_sha256": "2555360257d3fb95fa6308a3638a4e2082c569ec915f9ece6e755a2996da0794",
+  "max_overfull_pt": 0,
+  "undefined_citations": false,
+  "missing_characters": false,
+  "profile": "Numbered-paper TeX pipeline with 22 mm paper-local margins"
+}
