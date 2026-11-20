@@ -1,0 +1,5 @@
+# Exact-byte mirrors and archived candidate identity must survive Git materialization.
+lean/** -text whitespace=cr-at-eol
+provenance/** -text whitespace=cr-at-eol
+*.json -text whitespace=cr-at-eol
+LICENSE -text whitespace=cr-at-eol

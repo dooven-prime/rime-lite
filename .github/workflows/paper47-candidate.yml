@@ -1,0 +1,72 @@
+name: Paper XLVII Candidate
+
+on:
+  pull_request:
+    paths:
+      - ".gitattributes"
+      - ".github/workflows/paper47-candidate.yml"
+      - "papers/paper47/**"
+      - "papers/tex/_build.py"
+      - "papers/tex/_clean_hrule.py"
+      - "papers/tex/_postprocess.py"
+      - "experiments/paper47/**"
+  push:
+    branches: [master, codex/paper47-all-upper-reader]
+    paths:
+      - ".gitattributes"
+      - ".github/workflows/paper47-candidate.yml"
+      - "papers/paper47/**"
+      - "papers/tex/_build.py"
+      - "papers/tex/_clean_hrule.py"
+      - "papers/tex/_postprocess.py"
+      - "experiments/paper47/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: paper47-candidate-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  reader-and-lean:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: "3.13"
+
+      - name: Verify candidate inputs and reader PDF
+        run: python -O -B experiments/paper47/validation/replay.py --verify-inputs-only
+
+      - name: Exercise candidate rejection tests
+        run: python -B -m unittest discover -s experiments/paper47/validation -p 'test_*.py' -v
+
+      - name: Install and build pinned Lean companion
+        uses: leanprover/lean-action@fe408643ea7367d8c0404a8be3975bb145f5fb64 # v1
+        with:
+          lake-package-directory: experiments/paper47/lean
+          auto-config: "false"
+          build: "true"
+          test: "false"
+          lint: "false"
+          use-mathlib-cache: "true"
+          use-github-cache: "false"
+
+      - name: Replay Lean and audit declared axioms
+        run: python -O -B experiments/paper47/validation/replay.py --lean --report "$RUNNER_TEMP/paper47-candidate-replay.json"
+
+      - name: Retain fresh successful replay receipt
+        if: success()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: paper47-candidate-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/paper47-candidate-replay.json
+          if-no-files-found: error

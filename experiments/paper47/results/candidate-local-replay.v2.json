@@ -1,0 +1,1306 @@
+{
+  "status": "PASS",
+  "scope": "LOCAL_SELECTED_READER_AND_LEAN_REPLAY",
+  "utc": "2026-11-20T17:02:58.760217+00:00",
+  "manifest_sha256": "cf4c94eb5f3b1544349b309ebb4e2dee278589a9f95e8ab636c24eb22bab87bc",
+  "publication_identity": null,
+  "lean_replayed": true,
+  "cache_policy": "pinned installed cache; not a cold independent replay",
+  "mirrored_lean_sources": 195,
+  "local_lean_sources": 196,
+  "preserved_ancestor_lean_sources": 149,
+  "audit_occurrences": 141,
+  "unique_audit_declarations": 141,
+  "tests": {
+    "command": [
+      "D:\\Program Files\\Python\\Python313\\python.exe",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "E:\\Documents\\worktrees\\paper47-all-upper-reader\\rime-lite\\experiments\\paper47\\validation",
+      "-p",
+      "test_*.py"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "...........\n----------------------------------------------------------------------\nRan 11 tests in 0.116s\n\nOK\n"
+  },
+  "lean_version": {
+    "command": [
+      "C:\\Users\\Admin\\.elan\\toolchains\\leanprover--lean4---v4.33.0\\bin\\lake.exe",
+      "--no-cache",
+      "env",
+      "lean",
+      "--version"
+    ],
+    "exit_code": 0,
+    "stdout": "Lean (version 4.33.0, x86_64-w64-windows-gnu, commit d8b18978322de05a8f3dba51ef03cf5461676c17, Release)\n",
+    "stderr": ""
+  },
+  "dependency_revisions": {
+    "mathlib": "db584cd6d46c92f209a44c0f1c829460d327499d",
+    "plausible": "b7eb3304aeae834b12dda98993a37f6a41f6f0bb",
+    "LeanSearchClient": "5f4d51b81cbd3f6b32b156bfad9056621a040404",
+    "importGraph": "16f02aa7642864af59f1ff0e384a015994db9118",
+    "proofwidgets": "4be2e3d5087eeb272cf5a8853b8f9dd025ef5957",
+    "aesop": "3448c0bcc5ce01b2d1546e483ec3620e32df3d0e",
+    "Qq": "92c15be17b7caf78c2ad767ec40f89052d908d81",
+    "batteries": "4488d40d070b9700d4d5a6aa342f0d40c31b2a2d",
+    "Cli": "6130a47896ce867c6a4a55373441e59e565bad0f"
+  },
+  "build": {
+    "command": [
+      "C:\\Users\\Admin\\.elan\\toolchains\\leanprover--lean4---v4.33.0\\bin\\lake.exe",
+      "--no-cache",
+      "build",
+      "Paper47"
+    ],
+    "exit_code": 0,
+    "stdout": "\u26a0 [2/202] Replayed RSR2.Parameterized\nwarning: RSR2/Parameterized.lean:41:10: This simp argument is unused:\n  h\n\nHint: Omit it from the simp argument list.\n  [apply] simp [Nat.mod_eq_of_lt h]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nwarning: RSR2/Parameterized.lean:44:10: This simp argument is unused:\n  h\n\nHint: Omit it from the simp argument list.\n  [apply] simp [heq]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nwarning: RSR2/Parameterized.lean:257:18: This simp argument is unused:\n  hb\n\nHint: Omit it from the simp argument list.\n  [apply] simp [ha, hd]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nwarning: RSR2/Parameterized.lean:261:14: This simp argument is unused:\n  ha\n\nHint: Omit it from the simp argument list.\n  [apply] simp [hb, hd]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n\u26a0 [3024/3196] Replayed FusionLogCompression.M1Batch\nwarning: FusionLogCompression/M1Batch.lean:58:0: automatically included section variable(s) unused in theorem `FusionLogCompression.batchWord_length`:\n  [NeZero n]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [NeZero n] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: FusionLogCompression/M1Batch.lean:134:31: This simp argument is unused:\n  h0\n\nHint: Omit it from the simp argument list.\n  [apply] simp [fusionPlacement, hz0, batchFrame, rotate, eraseSite]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nwarning: FusionLogCompression/M1Batch.lean:148:8: automatically included section variable(s) unused in theorem `_private.FusionLogCompression.M1Batch.0.FusionLogCompression.batchFrame_hole`:\n  [NeZero n]\n  [DecidableEq \u03b1]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [NeZero n] [DecidableEq \u03b1] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: FusionLogCompression/M1Batch.lean:167:8: automatically included section variable(s) unused in theorem `_private.FusionLogCompression.M1Batch.0.FusionLogCompression.batchFrame_rotated_port0`:\n  [NeZero n]\n  [DecidableEq \u03b1]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [NeZero n] [DecidableEq \u03b1] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: FusionLogCompression/M1Batch.lean:168:54: Variable name `hk` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _hk\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\nwarning: FusionLogCompression/M1Batch.lean:185:4: Unused tactic linter: `push_cast` does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`\nwarning: FusionLogCompression/M1Batch.lean:292:33: This simp argument is unused:\n  run\n\nHint: Omit it from the simp argument list.\n  [apply] simp [step]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nwarning: FusionLogCompression/M1Batch.lean:292:38: This simp argument is unused:\n  step\n\nHint: Omit it from the simp argument list.\n  [apply] simp [run]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nwarning: FusionLogCompression/M1Batch.lean:314:31: This simp argument is unused:\n  run\n\nHint: Omit it from the simp argument list.\n  [apply] simp [step]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nwarning: FusionLogCompression/M1Batch.lean:314:36: This simp argument is unused:\n  step\n\nHint: Omit it from the simp argument list.\n  [apply] simp [run]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nwarning: FusionLogCompression/M1Batch.lean:349:8: automatically included section variable(s) unused in theorem `_private.FusionLogCompression.M1Batch.0.FusionLogCompression.q_sub_f_ne`:\n  [NeZero n]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [NeZero n] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: FusionLogCompression/M1Batch.lean:366:8: automatically included section variable(s) unused in theorem `_private.FusionLogCompression.M1Batch.0.FusionLogCompression.batchFrame_final`:\n  [DecidableEq \u03b1]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [DecidableEq \u03b1] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: FusionLogCompression/M1Batch.lean:388:10: This simp argument is unused:\n  hzero\n\nHint: Omit it from the simp argument list.\n  [apply] simp\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nwarning: FusionLogCompression/M1Batch.lean:409:10: This simp argument is unused:\n  htarget\n\nHint: Omit it from the simp argument list.\n  [apply] simp [hz, eraseSite]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nwarning: FusionLogCompression/M1Batch.lean:450:17: This simp argument is unused:\n  batchTarget\n\nHint: Omit it from the simp argument list.\n  [apply] simp only at hplaced \u22a2\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n\u26a0 [3032/3196] Replayed FusionLogCompression.M3GapBatch\nwarning: FusionLogCompression/M3GapBatch.lean:11:8: automatically included section variable(s) unused in theorem `_private.FusionLogCompression.M3GapBatch.0.FusionLogCompression.next_index_ne`:\n  [NeZero r]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [NeZero r] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: FusionLogCompression/M3GapBatch.lean:147:31: This simp argument is unused:\n  next_index_ne i hr\n\nHint: Omit it from the simp argument list.\n  [apply] simp [gapBatchGaps, k]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nwarning: FusionLogCompression/M3GapBatch.lean:174:0: automatically included section variable(s) unused in theorem `FusionLogCompression.gapBatchFrame_gap_donor`:\n  [DecidableEq \u03b1]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [DecidableEq \u03b1] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: FusionLogCompression/M3GapBatch.lean:181:0: automatically included section variable(s) unused in theorem `FusionLogCompression.gapBatchFrame_gap_receiver`:\n  [DecidableEq \u03b1]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [DecidableEq \u03b1] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: FusionLogCompression/M3GapBatch.lean:186:37: This simp argument is unused:\n  Function.update_of_ne\n\nHint: Omit it from the simp argument list.\n  [apply] simp [gapBatchFrame, gapBatchGaps, (next_index_ne i hr).symm]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nwarning: FusionLogCompression/M3GapBatch.lean:187:4: This simp argument is unused:\n  (next_index_ne i hr).symm\n\nHint: Omit it from the simp argument list.\n  [apply] simp [gapBatchFrame, gapBatchGaps, Function.update_of_ne]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nwarning: FusionLogCompression/M3GapBatch.lean:192:0: automatically included section variable(s) unused in theorem `FusionLogCompression.gapBatchFrame_gap_transfer`:\n  [DecidableEq \u03b1]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [DecidableEq \u03b1] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: FusionLogCompression/M3GapBatch.lean:199:0: automatically included section variable(s) unused in theorem `FusionLogCompression.gapBatchFrame_position_moved`:\n  [DecidableEq \u03b1]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [DecidableEq \u03b1] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: FusionLogCompression/M3GapBatch.lean:206:0: automatically included section variable(s) unused in theorem `FusionLogCompression.gapBatchFrame_position_other`:\n  [DecidableEq \u03b1]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [DecidableEq \u03b1] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: FusionLogCompression/M3GapBatch.lean:213:8: automatically included section variable(s) unused in theorem `_private.FusionLogCompression.M3GapBatch.0.FusionLogCompression.gapBatch_site_ne`:\n  [DecidableEq \u03b1]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [DecidableEq \u03b1] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: FusionLogCompression/M3GapBatch.lean:224:8: automatically included section variable(s) unused in theorem `_private.FusionLogCompression.M3GapBatch.0.FusionLogCompression.gapBatch_site_is_hole`:\n  [DecidableEq \u03b1]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [DecidableEq \u03b1] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: FusionLogCompression/M3GapBatch.lean:265:62: This simp argument is unused:\n  newSite\n\nHint: Omit it from the simp argument list.\n  [apply] simp [next, gapBatchFrame, gapBatchPosition, batchTarget, oldSite, frame.decode_at, (Ne.symm holdne)]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nwarning: FusionLogCompression/M3GapBatch.lean:265:71: This simp argument is unused:\n  oldSite\n\nHint: Omit it from the simp argument list.\n  [apply] simp [next, gapBatchFrame, gapBatchPosition, batchTarget, newSite, frame.decode_at, (Ne.symm holdne)]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nwarning: FusionLogCompression/M3GapBatch.lean:266:23: This simp argument is unused:\n  (Ne.symm holdne)\n\nHint: Omit it from the simp argument list.\n  [apply] simp [next, gapBatchFrame, gapBatchPosition, batchTarget, newSite, oldSite, frame.decode_at]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nwarning: FusionLogCompression/M3GapBatch.lean:281:50: This simp argument is unused:\n  frame.decode_at\n\nHint: Omit it from the simp argument list.\n  [apply] simp [batchTarget, oldSite, newSite, holdne']\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nwarning: FusionLogCompression/M3GapBatch.lean:379:8: automatically included section variable(s) unused in theorem `_private.FusionLogCompression.M3GapBatch.0.FusionLogCompression.gapFrame_gap_le_n_sub_rank`:\n  [DecidableEq \u03b1]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [DecidableEq \u03b1] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\n\u26a0 [3034/3196] Replayed FusionLogCompression.M3CyclicSchedule\nwarning: FusionLogCompression/M3CyclicSchedule.lean:23:0: automatically included section variable(s) unused in theorem `FusionLogCompression.BatchPlacementPlan.append_batches`:\n  [NeZero n]\n  [DecidableEq \u03b1]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [NeZero n] [DecidableEq \u03b1] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: FusionLogCompression/M3CyclicSchedule.lean:35:0: automatically included section variable(s) unused in theorem `FusionLogCompression.BatchPlacementPlan.append_transfers`:\n  [NeZero n]\n  [DecidableEq \u03b1]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [NeZero n] [DecidableEq \u03b1] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: FusionLogCompression/M3CyclicSchedule.lean:48:0: automatically included section variable(s) unused in theorem `FusionLogCompression.BatchPlacementPlan.done_at`:\n  [NeZero n]\n  [DecidableEq \u03b1]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [NeZero n] [DecidableEq \u03b1] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: FusionLogCompression/M3CyclicSchedule.lean:60:0: automatically included section variable(s) unused in theorem `FusionLogCompression.cutIndex_next`:\n  [NeZero r]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [NeZero r] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: FusionLogCompression/M3CyclicSchedule.lean:64:0: automatically included section variable(s) unused in theorem `FusionLogCompression.cutIndex_injective_below`:\n  [NeZero r]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [NeZero r] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: FusionLogCompression/M3CyclicSchedule.lean:74:18: This simp argument is unused:\n  ZMod.natCast_zmod_val\n\nHint: Omit it from the simp argument list.\n  [apply] simp [cutIndex]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nwarning: FusionLogCompression/M3CyclicSchedule.lean:110:34: This simp argument is unused:\n  hprev\n\nHint: Omit it from the simp argument list.\n  [apply] simp [cutVector, hk, hzero, hlast, cutIndex_last, zero]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nwarning: FusionLogCompression/M3CyclicSchedule.lean:152:25: This simp argument is unused:\n  hki\n\nHint: Omit it from the simp argument list.\n  [apply] simp [transferGap, hnext]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nwarning: FusionLogCompression/M3CyclicSchedule.lean:176:32: This simp argument is unused:\n  \u2193reduceDIte\n\nHint: Omit it from the simp argument list.\n  [apply] simp only [previousGap, hi, \u2193reduceIte]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nwarning: FusionLogCompression/M3CyclicSchedule.lean:179:32: This simp argument is unused:\n  \u2193reduceDIte\n\nHint: Omit it from the simp argument list.\n  [apply] simp only [previousGap, hi, \u2193reduceIte]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nwarning: FusionLogCompression/M3CyclicSchedule.lean:184:0: automatically included section variable(s) unused in theorem `FusionLogCompression.frameGapFlow_exists`:\n  [DecidableEq \u03b1]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [DecidableEq \u03b1] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\n\u26a0 [3036/3196] Replayed FusionLogCompression.M2AdjacentFusion\nwarning: FusionLogCompression/M2AdjacentFusion.lean:38:8: automatically included section variable(s) unused in theorem `_private.FusionLogCompression.M2AdjacentFusion.0.FusionLogCompression.natCast_ne_zero_of_pos_lt`:\n  [NeZero n]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [NeZero n] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: FusionLogCompression/M2AdjacentFusion.lean:45:8: automatically included section variable(s) unused in theorem `_private.FusionLogCompression.M2AdjacentFusion.0.FusionLogCompression.one_ne_zero_of_three_le`:\n  [NeZero n]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [NeZero n] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: FusionLogCompression/M2AdjacentFusion.lean:103:14: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\nwarning: FusionLogCompression/M2AdjacentFusion.lean:109:8: automatically included section variable(s) unused in theorem `_private.FusionLogCompression.M2AdjacentFusion.0.FusionLogCompression.adjacentBatchTarget_left`:\n  [DecidableEq \u03b1]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [DecidableEq \u03b1] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: FusionLogCompression/M2AdjacentFusion.lean:131:8: automatically included section variable(s) unused in theorem `_private.FusionLogCompression.M2AdjacentFusion.0.FusionLogCompression.adjacentBatchTarget_right`:\n  [DecidableEq \u03b1]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [DecidableEq \u03b1] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: FusionLogCompression/M2AdjacentFusion.lean:256:16: This simp argument is unused:\n  fusionPlacement\n\nHint: Omit it from the simp argument list.\n  [apply] simp [h0, h1]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nwarning: FusionLogCompression/M2AdjacentFusion.lean:265:32: This simp argument is unused:\n  hleft'\n\nHint: Omit it from the simp argument list.\n  [apply] simp [fusionPlacement, h10, hright']\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nwarning: FusionLogCompression/M2AdjacentFusion.lean:265:40: This simp argument is unused:\n  hright'\n\nHint: Omit it from the simp argument list.\n  [apply] simp [fusionPlacement, h10, hleft']\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n\u26a0 [3037/3196] Replayed FusionLogCompression.SourceAdjacentGap\ninfo: FusionLogCompression/SourceAdjacentGap.lean:349:54: Try this:\n  [apply] abel_nf\nwarning: FusionLogCompression/SourceAdjacentGap.lean:349:36: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\nwarning: FusionLogCompression/SourceAdjacentGap.lean:349:50: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\nwarning: FusionLogCompression/SourceAdjacentGap.lean:446:6: try 'simp' instead of 'simpa'\n\nNote: This linter can be disabled with `set_option linter.unnecessarySimpa false`\nwarning: FusionLogCompression/SourceAdjacentGap.lean:440:8: Unused tactic linter: `push_cast` does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`\nwarning: FusionLogCompression/SourceAdjacentGap.lean:444:28: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\nwarning: FusionLogCompression/SourceAdjacentGap.lean:444:42: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n\u26a0 [3038/3196] Replayed FusionLogCompression.FullFusionLog\nwarning: FusionLogCompression/FullFusionLog.lean:31:0: automatically included section variable(s) unused in theorem `FusionLogCompression.loggedStep_state`:\n  [NeZero n]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [NeZero n] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: FusionLogCompression/FullFusionLog.lean:36:24: This simp argument is unused:\n  stepDefect\n\nHint: Omit it from the simp argument list.\n  [apply] simp [loggedStep, h0, h1]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nwarning: FusionLogCompression/FullFusionLog.lean:51:0: automatically included section variable(s) unused in theorem `FusionLogCompression.runLogged_append`:\n  [NeZero n]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [NeZero n] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: FusionLogCompression/FullFusionLog.lean:93:8: Variable name `route` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _route\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\n\u26a0 [3054/3196] Replayed RSR2History.SingletonTransferCursorLift\nwarning: RSR2History/SingletonTransferCursorLift.lean:141:0: automatically included section variable(s) unused in theorem `RSR2History.cursorFusion_preserves_lower`:\n  [NeZero n]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [NeZero n] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\n\u26a0 [3075/3196] Replayed FusionLogAllR.PhysicalGapSimulation\nwarning: FusionLogAllR/PhysicalGapSimulation.lean:674:39: This simp argument is unused:\n  PhysicalPacketRing.sites\n\nHint: Omit it from the simp argument list.\n  [apply] simp [PhysicalPacketRing.gaps, htail, consecutiveGaps]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nwarning: FusionLogAllR/PhysicalGapSimulation.lean:678:10: This simp argument is unused:\n  PhysicalPacketRing.sites\n\nHint: Omit it from the simp argument list.\n  [apply] simp [PhysicalPacketRing.gaps, PhysicalPacketRing.backslide, htail, consecutiveGaps]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nwarning: FusionLogAllR/PhysicalGapSimulation.lean:745:22: try 'simp' instead of 'simpa'\n\nNote: This linter can be disabled with `set_option linter.unnecessarySimpa false`\n\u26a0 [3078/3196] Replayed FusionLogAllR.RawAllRCertificate\nwarning: FusionLogAllR/RawAllRCertificate.lean:56:2: Try this: \n  letI\u0335\n\nThe goal is a proposition, so `let` is preferred over `letI`.\nThe difference between `let` and `letI` is that `letI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\nwarning: FusionLogAllR/RawAllRCertificate.lean:193:10: try 'simp' instead of 'simpa'\n\nNote: This linter can be disabled with `set_option linter.unnecessarySimpa false`\nwarning: FusionLogAllR/RawAllRCertificate.lean:169:35: This simp argument is unused:\n  registeredSite\n\nHint: Omit it from the simp argument list.\n  [apply] simp [consecutiveGaps]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nwarning: FusionLogAllR/RawAllRCertificate.lean:232:8: try 'simp' instead of 'simpa'\n\nNote: This linter can be disabled with `set_option linter.unnecessarySimpa false`\nwarning: FusionLogAllR/RawAllRCertificate.lean:264:14: This simp argument is unused:\n  h0'\n\nHint: Omit it from the simp argument list.\n  [apply] simp [h1']\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nwarning: FusionLogAllR/RawAllRCertificate.lean:264:19: This simp argument is unused:\n  h1'\n\nHint: Omit it from the simp argument list.\n  [apply] simp [h0']\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nwarning: FusionLogAllR/RawAllRCertificate.lean:264:24: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n\u26a0 [3100/3196] Replayed RSR2History.ReverseExtraction\nwarning: RSR2History/ReverseExtraction.lean:292:35: Variable name `hn` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _hn\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\nwarning: RSR2History/ReverseExtraction.lean:344:49: This simp argument is unused:\n  Nat.mod_eq_of_lt (by omega)\n\nHint: Omit it from the simp argument list.\n  [apply] simp [firstAtomDescending, hi0, sweepSite]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nwarning: RSR2History/ReverseExtraction.lean:355:10: This simp argument is unused:\n  Nat.add_mod\n\nHint: Omit it from the simp argument list.\n  [apply] simp [firstAtomDescending, hi0, hia, hsum, sweepSite, Nat.mod_eq_of_lt hlt]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nwarning: RSR2History/ReverseExtraction.lean:420:39: This simp argument is unused:\n  Fin.cast_mk\n\nHint: Omit it from the simp argument list.\n  [apply] simp [rest, firstAtomDescending]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n\u26a0 [3115/3196] Replayed RSR2.Construction\nwarning: RSR2/Construction.lean:64:4: try 'simp' instead of 'simpa'\n\nNote: This linter can be disabled with `set_option linter.unnecessarySimpa false`\nwarning: RSR2/Construction.lean:115:34: This simp argument is unused:\n  Nat.add_assoc\n\nHint: Omit it from the simp argument list.\n  [apply] simp [instructionWord, bitCost, Nat.add_left_comm, Nat.add_comm]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nwarning: RSR2/Construction.lean:169:28: Variable name `hb` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _hb\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\nwarning: RSR2/Construction.lean:285:46: This simp argument is unused:\n  List.length_map\n\nHint: Omit it from the simp argument list.\n  [apply] simp only [List.map_map, Function.comp_def, List.length_reverse]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nwarning: RSR2/Construction.lean:285:63: This simp argument is unused:\n  List.length_reverse\n\nHint: Omit it from the simp argument list.\n  [apply] simp only [List.map_map, Function.comp_def, List.length_map]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nwarning: RSR2/Construction.lean:327:32: This simp argument is unused:\n  ih\n\nHint: Omit it from the simp argument list.\n  [apply] simp [bitCost]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nwarning: RSR2/Construction.lean:423:18: Variable name `hb` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _hb\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\n\u26a0 [3116/3196] Replayed RSR2.Executable\nwarning: RSR2/Executable.lean:56:6: try 'simp' instead of 'simpa'\n\nNote: This linter can be disabled with `set_option linter.unnecessarySimpa false`\nwarning: RSR2/Executable.lean:274:6: try 'simp' instead of 'simpa'\n\nNote: This linter can be disabled with `set_option linter.unnecessarySimpa false`\nwarning: RSR2/Executable.lean:301:8: try 'simp' instead of 'simpa'\n\nNote: This linter can be disabled with `set_option linter.unnecessarySimpa false`\nwarning: RSR2/Executable.lean:337:4: try 'simp' instead of 'simpa'\n\nNote: This linter can be disabled with `set_option linter.unnecessarySimpa false`\nwarning: RSR2/Executable.lean:392:4: try 'simp' instead of 'simpa'\n\nNote: This linter can be disabled with `set_option linter.unnecessarySimpa false`\nwarning: RSR2/Executable.lean:396:27: This simp argument is unused:\n  hcontinue\n\nHint: Omit it from the simp argument list.\n  [apply] simp [P\u2081, P\u2082, bitCost, run, step_d]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nwarning: RSR2/Executable.lean:1142:8: try 'simp' instead of 'simpa'\n\nNote: This linter can be disabled with `set_option linter.unnecessarySimpa false`\n\u26a0 [3122/3196] Replayed RSR2History.PhaseFreeFusionPort\nwarning: RSR2History/PhaseFreeFusionPort.lean:9:0: automatically included section variable(s) unused in theorem `RSR2History.packetAt_mem_cyclicSignature`:\n  [NeZero n]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [NeZero n] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\n\u26a0 [3133/3196] Replayed RSR2History.SingleBlockOneTransfer\nwarning: RSR2History/SingleBlockOneTransfer.lean:23:0: automatically included section variable(s) unused in theorem `RSR2History.singleBlock_oneTransfer_log_decomposition`:\n  [NeZero n]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [NeZero n] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\n\u26a0 [3136/3196] Replayed RSR2History.TwoPacketLoading\nwarning: RSR2History/TwoPacketLoading.lean:72:8: automatically included section variable(s) unused in theorem `_private.RSR2History.TwoPacketLoading.0.RSR2History.complement_iff`:\n  [NeZero n]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [NeZero n] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: RSR2History/TwoPacketLoading.lean:113:67: This simp argument is unused:\n  \u2190 zsite_zero\n\nHint: Omit it from the simp argument list.\n  [apply] simp [packetAt, upperSplit, complement_iff hd hc a, hm, hne]\n\nNote: Simp arguments with `\u2190` have the additional effect of removing the other direction from the simp set, even if the simp argument itself is unused. If the hint above does not work, try replacing `\u2190` with `-` to only get that effect and silence this warning.\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nwarning: RSR2History/TwoPacketLoading.lean:122:38: This simp argument is unused:\n  hne\n\nHint: Omit it from the simp argument list.\n  [apply] simp [collapse, upperSplit, hm, zsite_one hn]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nwarning: RSR2History/TwoPacketLoading.lean:131:0: automatically included section variable(s) unused in theorem `RSR2History.pairArrivalSite_ne_zero`:\n  [NeZero n]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [NeZero n] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\n\u26a0 [3155/3196] Replayed RSR2History.CombPhaseFreeSlide\nwarning: RSR2History/CombPhaseFreeSlide.lean:42:0: automatically included section variable(s) unused in theorem `RSR2History.phaseFreeSlideWord_length`:\n  [NeZero n]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [NeZero n] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\n\u26a0 [3156/3196] Replayed RSR2History.CombTerminalRouting\nwarning: RSR2History/CombTerminalRouting.lean:60:5: Variable name `hi` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _hi\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\nwarning: RSR2History/CombTerminalRouting.lean:69:5: Variable name `hi` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _hi\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\nwarning: RSR2History/CombTerminalRouting.lean:91:5: Variable name `hi` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _hi\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\nwarning: RSR2History/CombTerminalRouting.lean:105:17: This simp argument is unused:\n  combCoordinatePlacement\n\nHint: Omit it from the simp argument list.\n  [apply] simp only [zsite, ZMod.val_natCast, Nat.mod_eq_of_lt (h.intermediate_lt i a), Nat.mod_eq_of_lt hxn] at hval\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nwarning: RSR2History/CombTerminalRouting.lean:197:21: This simp argument is unused:\n  Fin.val_zero\n\nHint: Omit it from the simp argument list.\n  [apply] simp only [zero, Nat.cast_zero, phaseShift_zero, h.start]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n\u26a0 [3159/3196] Replayed RSR2History.ForestDominatingCut\nwarning: RSR2History/ForestDominatingCut.lean:13:0: automatically included section variable(s) unused in theorem `RSR2History.forestCutOffset_lt`:\n  [NeZero n]\n  [NeZero r]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [NeZero n] [NeZero r] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: RSR2History/ForestDominatingCut.lean:27:0: automatically included section variable(s) unused in theorem `RSR2History.forestCutOffset_zero`:\n  [NeZero n]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [NeZero n] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: RSR2History/ForestDominatingCut.lean:27:50: Variable name `hp` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _hp\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\nwarning: RSR2History/ForestDominatingCut.lean:29:0: automatically included section variable(s) unused in theorem `RSR2History.forestCutOffset_strict`:\n  [NeZero n]\n  [NeZero r]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [NeZero n] [NeZero r] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: RSR2History/ForestDominatingCut.lean:74:0: automatically included section variable(s) unused in theorem `RSR2History.forestCutOffset_sub_identity`:\n  [NeZero n]\n  [NeZero r]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [NeZero n] [NeZero r] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: RSR2History/ForestDominatingCut.lean:115:0: automatically included section variable(s) unused in theorem `RSR2History.forestCutOffset_cast`:\n  [NeZero n]\n  [NeZero r]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [NeZero n] [NeZero r] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\n\u26a0 [3161/3196] Replayed RSR2History.ForestDominatingCoordinates\nwarning: RSR2History/ForestDominatingCoordinates.lean:13:27: This simp argument is unused:\n  Nat.mod_eq_of_lt j.isLt\n\nHint: Omit it from the simp argument list.\n  [apply] simp [Fin.ofNat_eq_cast]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\ninfo: RSR2History/ForestDominatingCoordinates.lean:135:4: Try this:\n  [apply] abel_nf\ninfo: RSR2History/ForestDominatingCoordinates.lean:151:4: Try this:\n  [apply] abel_nf\nwarning: RSR2History/ForestDominatingCoordinates.lean:129:38: This simp argument is unused:\n  if_pos rfl\n\nHint: Omit it from the simp argument list.\n  [apply] simp only [phaseShift, h.start a]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nwarning: RSR2History/ForestDominatingCoordinates.lean:146:52: This simp argument is unused:\n  if_pos rfl\n\nHint: Omit it from the simp argument list.\n  [apply] simp only [phaseShift, combCoordinatePlacement, zsite_val_cast]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nwarning: RSR2History/ForestDominatingCoordinates.lean:91:6: Unused tactic linter: `change initial.val = 0 \u2228 source 1 \u2264 initial.val` does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`\n\u26a0 [3176/3196] Replayed RSR2History.PackedForestReplay\nwarning: RSR2History/PackedForestReplay.lean:125:0: automatically included section variable(s) unused in theorem `RSR2History.PackedCursorSchedule.final_cursor_anchor`:\n  [NeZero n]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [NeZero n] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nwarning: RSR2History/PackedForestReplay.lean:249:2: Try this: \n  letI\u0335\n\nThe goal is a proposition, so `let` is preferred over `letI`.\nThe difference between `let` and `letI` is that `letI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n\u26a0 [3178/3196] Replayed RSR2History.ForestGapMomentGeometry\nwarning: RSR2History/ForestGapMomentGeometry.lean:119:21: This simp argument is unused:\n  frameBlocks\n\nHint: Omit it from the simp argument list.\n  [apply] simp [sourceFrame, increasingGapFrame, Nat.mod_eq_of_lt j.isLt]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nwarning: RSR2History/ForestGapMomentGeometry.lean:204:29: This simp argument is unused:\n  Nat.mod_eq_of_lt j.isLt\n\nHint: Omit it from the simp argument list.\n  [apply] simp [Fin.ofNat_eq_cast]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n\u26a0 [3181/3196] Replayed RSR2History.ForestRootGapBridge\nwarning: RSR2History/ForestRootGapBridge.lean:22:0: automatically included section variable(s) unused in theorem `RSR2History.ReservationFrame.root_anchor_strict`:\n  [NeZero n]\n  [NeZero terminal.length]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [NeZero n] [NeZero terminal.length] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nBuild completed successfully (3196 jobs).\n",
+    "stderr": ""
+  },
+  "groups": [
+    {
+      "name": "single_block",
+      "axiom_audit": [
+        {
+          "declaration": "RSR2History.runLogged_project",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.silent_reachable_iff_cyclic_signatures",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.cyclic_event_path_iff_joint_realizable",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.history_fiber_guarded_quadratic_bound",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.history_compression_quadratic_length_le_min",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.singleBlockPartitionDistance_exact",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.delayedChain_history_distance_exact",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.delayedChainTotalPremiumMaximum_eq",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.delayedChainTotalPremiumMaximum_attained",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.LowerExtractionPath.same_prefix_fusion_gap",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.packedLowerFusionWord_spec",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.firstFusionRefinedLog_feasible",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.firstFusionRefinedLog_lift",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.packedLowerCost_first_fusion_elimination",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.packedLowerCost_le_extraction_add_fusions",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.packedLowerCost_le_max_add_fusions",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.singleBlock_packed_minimum_historyDistance",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.singleBlock_prefusion_delayed_slack",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.singleBlock_prefusion_delayed_gap",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.singleBlock_nTransfer_extraction_slack",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.singleBlock_totalPremium_le_delayed",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.singleBlock_partitionTotalPremiumMaximum_eq_delayed",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.singleBlock_delayed_extremal_conditions",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.globalTotalObservationPremium_eq_delayed_max_multiblock",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.globalTotalObservationPremium_eq_delayed_iff_multiblock",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        }
+      ],
+      "audit_output": {
+        "command": [
+          "C:\\Users\\Admin\\.elan\\toolchains\\leanprover--lean4---v4.33.0\\bin\\lake.exe",
+          "--no-cache",
+          "env",
+          "lean",
+          "ClosedAudit.lean"
+        ],
+        "exit_code": 0,
+        "stdout": "'RSR2History.runLogged_project' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.silent_reachable_iff_cyclic_signatures' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.cyclic_event_path_iff_joint_realizable' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.history_fiber_guarded_quadratic_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.history_compression_quadratic_length_le_min' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.singleBlockPartitionDistance_exact' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.delayedChain_history_distance_exact' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.delayedChainTotalPremiumMaximum_eq' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.delayedChainTotalPremiumMaximum_attained' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.LowerExtractionPath.same_prefix_fusion_gap' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.packedLowerFusionWord_spec' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.firstFusionRefinedLog_feasible' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.firstFusionRefinedLog_lift' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.packedLowerCost_first_fusion_elimination' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.packedLowerCost_le_extraction_add_fusions' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.packedLowerCost_le_max_add_fusions' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.singleBlock_packed_minimum_historyDistance' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.singleBlock_prefusion_delayed_slack' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.singleBlock_prefusion_delayed_gap' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.singleBlock_nTransfer_extraction_slack' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.singleBlock_totalPremium_le_delayed' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.singleBlock_partitionTotalPremiumMaximum_eq_delayed' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'RSR2History.singleBlock_delayed_extremal_conditions' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.globalTotalObservationPremium_eq_delayed_max_multiblock' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'RSR2History.globalTotalObservationPremium_eq_delayed_iff_multiblock' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+        "stderr": ""
+      },
+      "signatures": {
+        "command": [
+          "C:\\Users\\Admin\\.elan\\toolchains\\leanprover--lean4---v4.33.0\\bin\\lake.exe",
+          "--no-cache",
+          "env",
+          "lean",
+          "ClosedSignatures.lean"
+        ],
+        "exit_code": 0,
+        "stdout": "RSR2History.runLogged_project (n : \u2115) (hn : LT.lt.{0} 1 n) (P : RSR2.Parametric.Placement n)\n  (word : List.{0} RSR2.Parametric.Letter) :\n  Eq.{1} (Option.map.{0, 0} Prod.fst.{0, 0} (RSR2History.runLogged n hn P word)) (RSR2.Parametric.run n hn P word)\nRSR2History.silent_reachable_iff_cyclic_signatures (n : \u2115) (hn : LT.lt.{0} 1 n) (P Q : RSR2.Parametric.Placement n) :\n  RSR2History.SilentReachable n hn P Q \u2194 RSR2History.SameCyclicSignatures P Q\nRSR2History.cyclic_event_path_iff_joint_realizable (n : \u2115) (hn : LT.lt.{0} 1 n) (P Q : RSR2.Parametric.Placement n)\n  (events : List.{0} (RSR2History.EffectiveEvent n)) :\n  RSR2History.CyclicEventPath P events Q \u2194\n    \u2203 word, Eq.{1} (RSR2History.runLogged n hn P word) (some.{0} (Prod.mk.{0, 0} Q events))\nRSR2History.history_fiber_guarded_quadratic_bound (n : \u2115) (hn : LT.lt.{0} 1 n) {Q : RSR2.Parametric.Placement n}\n  {events : List.{0} (RSR2History.EffectiveEvent n)}\n  (hexec :\n    \u2203 word, Eq.{1} (RSR2History.runLogged n hn (RSR2.Parametric.seed n) word) (some.{0} (Prod.mk.{0, 0} Q events))) :\n  \u2203 short,\n    Eq.{1} (RSR2.Parametric.run n hn (RSR2.Parametric.seed n) short) (some.{0} Q) \u2227\n      Eq.{1} (RSR2History.runLogged n hn (RSR2.Parametric.seed n) short) (some.{0} (Prod.mk.{0, 0} Q events)) \u2227\n        LE.le.{0} (List.length.{0} short)\n          (HSub.hSub.{0, 0, 0}\n            (HSub.hSub.{0, 0, 0} (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} 6 n) n) (HMul.hMul.{0, 0, 0} 2 n)) 1)\nRSR2History.history_compression_quadratic_length_le_min (n : \u2115) (hn : LT.lt.{0} 1 n)\n  (word : List.{0} RSR2.Parametric.Letter) {Q : RSR2.Parametric.Placement n}\n  {events : List.{0} (RSR2History.EffectiveEvent n)}\n  (hexec : Eq.{1} (RSR2History.runLogged n hn (RSR2.Parametric.seed n) word) (some.{0} (Prod.mk.{0, 0} Q events))) :\n  \u2203 short,\n    Eq.{1} (RSR2History.runLogged n hn (RSR2.Parametric.seed n) short) (some.{0} (Prod.mk.{0, 0} Q events)) \u2227\n      LE.le.{0} (List.length.{0} short) (min.{0} (List.length.{0} word) (RSR2History.quadraticHistoryBudget n))\nRSR2History.singleBlockPartitionDistance_exact (n : \u2115) (hn : LT.lt.{0} 1 n) :\n  Eq.{1} (RSR2History.singleBlockPartitionDistance n hn) (HSub.hSub.{0, 0, 0} (HMul.hMul.{0, 0, 0} 2 n) 3)\nRSR2History.delayedChain_history_distance_exact {n : \u2115} [NeZero.{0} n] (hn : LE.le.{0} 3 n) {z : List.{0} (Fin n)}\n  (hlen : Eq.{1} (List.length.{0} z) n) (hnodup : List.Nodup.{0} z) (q : Fin n)\n  (attain :\n    \u2203 word,\n      Eq.{1} (RSR2History.runLogged n \u22ef (RSR2.Parametric.seed n) word)\n        (some.{0} (Prod.mk.{0, 0} (RSR2History.delayedChainEndpoint q) (RSR2History.delayedUpperChainLog z)))) :\n  Eq.{1}\n    (RSR2History.AllRTransfer.historyDistance n \u22ef (RSR2History.delayedChainEndpoint q)\n      (RSR2History.delayedUpperChainLog z) attain)\n    (HAdd.hAdd.{0, 0, 0}\n      (HAdd.hAdd.{0, 0, 0} (RSR2History.lowerExtractionCost n \u22ef z)\n        (HDiv.hDiv.{0, 0, 0} (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} 5 n) (HSub.hSub.{0, 0, 0} n 1)) 2))\n      \u2191q)\nRSR2History.delayedChainTotalPremiumMaximum_eq (n : \u2115) (hn : LE.le.{0} 3 n) :\n  Eq.{1} (RSR2History.delayedChainTotalPremiumMaximum n hn)\n    (HAdd.hAdd.{0, 0, 0}\n      (HSub.hSub.{0, 0, 0}\n        (HAdd.hAdd.{0, 0, 0}\n          (HDiv.hDiv.{0, 0, 0} (HMul.hMul.{0, 0, 0} (HMul.hMul.{0, 0, 0} 5 n) (HSub.hSub.{0, 0, 0} n 1)) 2)\n          (RSR2History.maxLowerExtractionCost n \u22ef))\n        n)\n      2)\nRSR2History.delayedChainTotalPremiumMaximum_attained {n : \u2115} [NeZero.{0} n] (hn : LE.le.{0} 3 n) :\n  \u2203 z,\n    \u2203 (hlen : Eq.{1} (List.length.{0} z) n) (hnodup : List.Nodup.{0} z),\n      Eq.{1}\n        (RSR2History.totalObservationPremium n \u22ef\n          (Subtype.mk.{1}\n            (Prod.mk.{0, 0} (RSR2History.delayedChainEndpoint \u27e8HSub.hSub.{0, 0, 0} n 1, \u22ef\u27e9)\n              (RSR2History.delayedUpperChainLog z))\n            \u22ef))\n        (RSR2History.delayedChainTotalPremiumMaximum n hn)\nRSR2History.LowerExtractionPath.same_prefix_fusion_gap {n : \u2115} {hn : LT.lt.{0} 1 n}\n  {c d : RSR2History.LowerConfiguration n} {z : List.{0} (Fin n)} {k l : \u2115} {a b : Fin n}\n  (first : RSR2History.LowerExtractionPath n hn (RSR2History.lowerExtractionSeed n) z c k)\n  (second : RSR2History.LowerExtractionPath n hn (RSR2History.lowerExtractionSeed n) z d l)\n  (ha : Eq.{1} (c a) (some.{0} (RSR2.Parametric.site0 n \u22ef))) (hb : Eq.{1} (c b) (some.{0} (RSR2.Parametric.site1 n hn)))\n  (db : Eq.{1} (d b) (some.{0} (RSR2.Parametric.site0 n \u22ef))) :\n  \u2203 q,\n    Eq.{1} (d a) (some.{0} q) \u2227\n      Ne.{1} q (RSR2.Parametric.site0 n \u22ef) \u2227\n        \u2200 (site : Fin n), LT.lt.{0} \u2191q \u2191site \u2192 \u2200 (x : Fin n), Ne.{1} (d x) (some.{0} site)\nRSR2History.packedLowerFusionWord_spec {n : \u2115} [NeZero.{0} n] (hn : LT.lt.{0} 1 n)\n  (c : RSR2History.LowerConfiguration n) (q : Fin n) (hq : Ne.{1} (\u2191q) 0)\n  (hleft : Finset.Nonempty.{0} (RSR2History.lowerPacket c q))\n  (hright : Finset.Nonempty.{0} (RSR2History.lowerPacket c (RSR2.Parametric.site0 n \u22ef)))\n  (hholes : \u2200 (r : Fin n), LT.lt.{0} \u2191q \u2191r \u2192 Eq.{1} (RSR2History.lowerPacket c r) EmptyCollection.emptyCollection.{0}) :\n  Eq.{1} (RSR2History.runLogged n hn (RSR2History.lowerPlacement n hn c) (RSR2History.packedLowerFusionWord q))\n    (some.{0}\n      (Prod.mk.{0, 0} (RSR2History.relocateAt (RSR2History.lowerPlacement n hn c) false 0 \u2191\u2191q)\n        (List.cons.{0}\n          (RSR2History.EffectiveEvent.fusion false (RSR2History.lowerPacket c q)\n            (RSR2History.lowerPacket c (RSR2.Parametric.site0 n \u22ef))\n            (Union.union.{0} (RSR2History.lowerPacket c q) (RSR2History.lowerPacket c (RSR2.Parametric.site0 n \u22ef))))\n          List.nil.{0})))\nRSR2History.firstFusionRefinedLog_feasible {n : \u2115} {hn : LT.lt.{0} 1 n} {z : List.{0} (Fin n)}\n  {c : RSR2History.LowerConfiguration n} {a b : Fin n} {tail : List.{0} (RSR2History.EffectiveEvent n)} {prep rest : \u2115}\n  (initialPath : RSR2History.LowerExtractionPath n hn (RSR2History.lowerExtractionSeed n) z c prep)\n  (ha : Eq.{1} (c a) (some.{0} (RSR2.Parametric.site0 n \u22ef))) (hb : Eq.{1} (c b) (some.{0} (RSR2.Parametric.site1 n hn)))\n  (hab : Ne.{1} a b)\n  (after :\n    RSR2History.PackedLowerPath n hn (RSR2History.lowerSlide n hn c) tail (RSR2History.lowerExtractionEmpty n) rest) :\n  \u2203 cost,\n    RSR2History.PackedLowerPath n hn (RSR2History.lowerExtractionSeed n) (RSR2History.firstFusionRefinedLog z b tail)\n      (RSR2History.lowerExtractionEmpty n) cost\nRSR2History.firstFusionRefinedLog_lift {n : \u2115} {hn : LT.lt.{0} 1 n} {z : List.{0} (Fin n)}\n  {c : RSR2History.LowerConfiguration n} {a b : Fin n} {tail : List.{0} (RSR2History.EffectiveEvent n)}\n  {prep rest refinedCost : \u2115}\n  (initialPath : RSR2History.LowerExtractionPath n hn (RSR2History.lowerExtractionSeed n) z c prep)\n  (ha : Eq.{1} (c a) (some.{0} (RSR2.Parametric.site0 n \u22ef))) (hb : Eq.{1} (c b) (some.{0} (RSR2.Parametric.site1 n hn)))\n  (hab : Ne.{1} a b)\n  (after :\n    RSR2History.PackedLowerPath n hn (RSR2History.lowerSlide n hn c) tail (RSR2History.lowerExtractionEmpty n) rest)\n  (refined :\n    RSR2History.PackedLowerPath n hn (RSR2History.lowerExtractionSeed n) (RSR2History.firstFusionRefinedLog z b tail)\n      (RSR2History.lowerExtractionEmpty n) refinedCost) :\n  \u2203 cost,\n    RSR2History.PackedLowerPath n hn (RSR2History.lowerExtractionSeed n)\n        (HAppend.hAppend.{0, 0, 0} (RSR2History.singletonLowerLog z)\n          (List.cons.{0}\n            (RSR2History.EffectiveEvent.fusion false (singleton.{0, 0} a) (singleton.{0, 0} b)\n              (Union.union.{0} (singleton.{0, 0} a) (singleton.{0, 0} b)))\n            tail))\n        (RSR2History.lowerExtractionEmpty n) cost \u2227\n      LE.le.{0} cost (HAdd.hAdd.{0, 0, 0} refinedCost (HSub.hSub.{0, 0, 0} (HMul.hMul.{0, 0, 0} 2 n) 1))\nRSR2History.packedLowerCost_first_fusion_elimination {n : \u2115} {hn : LT.lt.{0} 1 n}\n  {H : List.{0} (RSR2History.EffectiveEvent n)} {cost : \u2115}\n  (path :\n    RSR2History.PackedLowerPath n hn (RSR2History.lowerExtractionSeed n) H (RSR2History.lowerExtractionEmpty n) cost)\n  (positive : LT.lt.{0} 0 (RSR2History.logFusionCount H)) :\n  \u2203 H',\n    (\u2203 c',\n        RSR2History.PackedLowerPath n hn (RSR2History.lowerExtractionSeed n) H' (RSR2History.lowerExtractionEmpty n)\n          c') \u2227\n      Eq.{1} (RSR2History.logFusionCount H) (HAdd.hAdd.{0, 0, 0} (RSR2History.logFusionCount H') 1) \u2227\n        LE.le.{0} (RSR2History.packedLowerCost n hn H)\n          (HAdd.hAdd.{0, 0, 0} (RSR2History.packedLowerCost n hn H') (HSub.hSub.{0, 0, 0} (HMul.hMul.{0, 0, 0} 2 n) 1))\nRSR2History.packedLowerCost_le_extraction_add_fusions {n : \u2115} {hn : LT.lt.{0} 1 n}\n  {H : List.{0} (RSR2History.EffectiveEvent n)} {cost : \u2115}\n  (path :\n    RSR2History.PackedLowerPath n hn (RSR2History.lowerExtractionSeed n) H (RSR2History.lowerExtractionEmpty n) cost) :\n  \u2203 z,\n    Eq.{1} (List.length.{0} z) n \u2227\n      List.Nodup.{0} z \u2227\n        LE.le.{0} (RSR2History.packedLowerCost n hn H)\n          (HAdd.hAdd.{0, 0, 0} (RSR2History.lowerExtractionCost n hn z)\n            (HMul.hMul.{0, 0, 0} (HSub.hSub.{0, 0, 0} (HMul.hMul.{0, 0, 0} 2 n) 1) (RSR2History.logFusionCount H)))\nRSR2History.packedLowerCost_le_max_add_fusions {n : \u2115} {hn : LT.lt.{0} 1 n}\n  {H : List.{0} (RSR2History.EffectiveEvent n)} {cost : \u2115}\n  (path :\n    RSR2History.PackedLowerPath n hn (RSR2History.lowerExtractionSeed n) H (RSR2History.lowerExtractionEmpty n) cost) :\n  LE.le.{0} (RSR2History.packedLowerCost n hn H)\n    (HAdd.hAdd.{0, 0, 0} (RSR2History.maxLowerExtractionCost n hn)\n      (HMul.hMul.{0, 0, 0} (HSub.hSub.{0, 0, 0} (HMul.hMul.{0, 0, 0} 2 n) 1) (RSR2History.logFusionCount H)))\nRSR2History.singleBlock_packed_minimum_historyDistance {n : \u2115} [NeZero.{0} n] (hn : LT.lt.{0} 1 n)\n  {Q : RSR2.Parametric.Placement n} {H : List.{0} (RSR2History.EffectiveEvent n)}\n  (word : List.{0} RSR2.Parametric.Letter)\n  (hexec : Eq.{1} (RSR2History.runLogged n hn (RSR2.Parametric.seed n) word) (some.{0} (Prod.mk.{0, 0} Q H)))\n  (hblocks : Eq.{1} (RSR2History.unorderedPacketBlocks n Q) (singleton.{0, 0} Finset.univ.{0}))\n  (ht : LE.le.{0} 2 (RSR2History.logTransferCount H)) :\n  \u2203 T,\n    RSR2History.UpperForestTrace (RSR2.Parametric.seed n) 0 List.nil.{0} H Q (RSR2History.logTransferCount H)\n        (List.cons.{0} T List.nil.{0}) \u2227\n      LE.le.{0}\n        (HAdd.hAdd.{0, 0, 0}\n          (HAdd.hAdd.{0, 0, 0} (RSR2History.AllRTransfer.historyDistance n hn Q H \u22ef) T.leftBranchDefect)\n          T.initialCursorSlack)\n        (HAdd.hAdd.{0, 0, 0}\n          (HAdd.hAdd.{0, 0, 0} (RSR2History.packedLowerCost n hn (RSR2History.packedLowerLog H))\n            (RSR2History.packedUpperBudget n (RSR2History.logTransferCount H)))\n          (HSub.hSub.{0, 0, 0} n 1))\nRSR2History.singleBlock_prefusion_delayed_slack {n : \u2115} [NeZero.{0} n] (hn : LE.le.{0} 3 n)\n  {Q : RSR2.Parametric.Placement n} {H : List.{0} (RSR2History.EffectiveEvent n)}\n  (word : List.{0} RSR2.Parametric.Letter)\n  (hexec : Eq.{1} (RSR2History.runLogged n \u22ef (RSR2.Parametric.seed n) word) (some.{0} (Prod.mk.{0, 0} Q H)))\n  (hblocks : Eq.{1} (RSR2History.unorderedPacketBlocks n Q) (singleton.{0, 0} Finset.univ.{0}))\n  (ht : LE.le.{0} 2 (RSR2History.logTransferCount H)) :\n  \u2203 T,\n    RSR2History.UpperForestTrace (RSR2.Parametric.seed n) 0 List.nil.{0} H Q (RSR2History.logTransferCount H)\n        (List.cons.{0} T List.nil.{0}) \u2227\n      LE.le.{0}\n        (HAdd.hAdd.{0, 0, 0}\n          (HAdd.hAdd.{0, 0, 0}\n            (HAdd.hAdd.{0, 0, 0} (RSR2History.totalObservationPremium n \u22ef (Subtype.mk.{1} (Prod.mk.{0, 0} Q H) \u22ef))\n              T.leftBranchDefect)\n            T.initialCursorSlack)\n          (HSub.hSub.{0, 0, 0}\n            (HMul.hMul.{0, 0, 0} (HSub.hSub.{0, 0, 0} n (RSR2History.logTransferCount H)) (HAdd.hAdd.{0, 0, 0} n 1))\n            ((HSub.hSub.{0, 0, 0} n (RSR2History.logTransferCount H)).choose 2)))\n        (RSR2History.delayedChainTotalPremiumMaximum n hn)\nRSR2History.singleBlock_prefusion_delayed_gap {n : \u2115} [NeZero.{0} n] (hn : LE.le.{0} 3 n)\n  {Q : RSR2.Parametric.Placement n} {H : List.{0} (RSR2History.EffectiveEvent n)}\n  (word : List.{0} RSR2.Parametric.Letter)\n  (hexec : Eq.{1} (RSR2History.runLogged n \u22ef (RSR2.Parametric.seed n) word) (some.{0} (Prod.mk.{0, 0} Q H)))\n  (hblocks : Eq.{1} (RSR2History.unorderedPacketBlocks n Q) (singleton.{0, 0} Finset.univ.{0}))\n  (ht : LE.le.{0} 2 (RSR2History.logTransferCount H)) (hlt : LT.lt.{0} (RSR2History.logTransferCount H) n) :\n  LE.le.{0}\n    (HAdd.hAdd.{0, 0, 0} (RSR2History.totalObservationPremium n \u22ef (Subtype.mk.{1} (Prod.mk.{0, 0} Q H) \u22ef))\n      (HAdd.hAdd.{0, 0, 0} n 1))\n    (RSR2History.delayedChainTotalPremiumMaximum n hn)\nRSR2History.singleBlock_nTransfer_extraction_slack {n : \u2115} [NeZero.{0} n] (hn : LE.le.{0} 3 n)\n  {Q : RSR2.Parametric.Placement n} {H : List.{0} (RSR2History.EffectiveEvent n)}\n  (word : List.{0} RSR2.Parametric.Letter)\n  (hexec : Eq.{1} (RSR2History.runLogged n \u22ef (RSR2.Parametric.seed n) word) (some.{0} (Prod.mk.{0, 0} Q H)))\n  (hblocks : Eq.{1} (RSR2History.unorderedPacketBlocks n Q) (singleton.{0, 0} Finset.univ.{0}))\n  (ht : Eq.{1} (RSR2History.logTransferCount H) n) :\n  \u2203 T,\n    RSR2History.UpperForestTrace (RSR2.Parametric.seed n) 0 List.nil.{0} H Q n (List.cons.{0} T List.nil.{0}) \u2227\n      LE.le.{0}\n        (HAdd.hAdd.{0, 0, 0}\n          (HAdd.hAdd.{0, 0, 0}\n            (HAdd.hAdd.{0, 0, 0} (RSR2History.totalObservationPremium n \u22ef (Subtype.mk.{1} (Prod.mk.{0, 0} Q H) \u22ef))\n              T.leftBranchDefect)\n            T.initialCursorSlack)\n          (HSub.hSub.{0, 0, 0} (RSR2History.maxLowerExtractionCost n \u22ef)\n            (RSR2History.lowerExtractionCost n \u22ef (RSR2History.singletonTransferOrder H))))\n        (RSR2History.delayedChainTotalPremiumMaximum n hn)\nRSR2History.singleBlock_totalPremium_le_delayed {n : \u2115} [NeZero.{0} n] (hn : LE.le.{0} 3 n)\n  {Q : RSR2.Parametric.Placement n} {H : List.{0} (RSR2History.EffectiveEvent n)}\n  (word : List.{0} RSR2.Parametric.Letter)\n  (hexec : Eq.{1} (RSR2History.runLogged n \u22ef (RSR2.Parametric.seed n) word) (some.{0} (Prod.mk.{0, 0} Q H)))\n  (hblocks : Eq.{1} (RSR2History.unorderedPacketBlocks n Q) (singleton.{0, 0} Finset.univ.{0})) :\n  LE.le.{0} (RSR2History.totalObservationPremium n \u22ef (Subtype.mk.{1} (Prod.mk.{0, 0} Q H) \u22ef))\n    (RSR2History.delayedChainTotalPremiumMaximum n hn)\nRSR2History.singleBlock_partitionTotalPremiumMaximum_eq_delayed {n : \u2115} [NeZero.{0} n] (hn : LE.le.{0} 3 n) :\n  Eq.{1} (RSR2History.partitionTotalPremiumMaximum n \u22ef (RSR2History.singleBlockAttainablePartition n \u22ef))\n    (RSR2History.delayedChainTotalPremiumMaximum n hn)\nRSR2History.singleBlock_delayed_extremal_conditions {n : \u2115} [NeZero.{0} n] (hn : LE.le.{0} 3 n)\n  {Q : RSR2.Parametric.Placement n} {H : List.{0} (RSR2History.EffectiveEvent n)}\n  (word : List.{0} RSR2.Parametric.Letter)\n  (hexec : Eq.{1} (RSR2History.runLogged n \u22ef (RSR2.Parametric.seed n) word) (some.{0} (Prod.mk.{0, 0} Q H)))\n  (hblocks : Eq.{1} (RSR2History.unorderedPacketBlocks n Q) (singleton.{0, 0} Finset.univ.{0}))\n  (hmax :\n    Eq.{1} (RSR2History.totalObservationPremium n \u22ef (Subtype.mk.{1} (Prod.mk.{0, 0} Q H) \u22ef))\n      (RSR2History.delayedChainTotalPremiumMaximum n hn)) :\n  Eq.{1} (RSR2History.logTransferCount H) n \u2227\n    (\u2203 T,\n        RSR2History.UpperForestTrace (RSR2.Parametric.seed n) 0 List.nil.{0} H Q n (List.cons.{0} T List.nil.{0}) \u2227\n          T.IsLeftComb \u2227 Eq.{1} (List.idxOf.{0} 0 T.leaves) 0) \u2227\n      Eq.{1} (RSR2History.lowerExtractionCost n \u22ef (RSR2History.singletonTransferOrder H))\n        (RSR2History.maxLowerExtractionCost n \u22ef)\nRSR2History.globalTotalObservationPremium_eq_delayed_max_multiblock {n : \u2115} [NeZero.{0} n] (hn : LE.le.{0} 3 n) :\n  Eq.{1} (RSR2History.globalTotalObservationPremium n \u22ef)\n    (max.{0} (RSR2History.delayedChainTotalPremiumMaximum n hn) (RSR2History.multiBlockTotalPremiumMaximum n \u22ef))\nRSR2History.globalTotalObservationPremium_eq_delayed_iff_multiblock {n : \u2115} [NeZero.{0} n] (hn : LE.le.{0} 3 n) :\n  Eq.{1} (RSR2History.globalTotalObservationPremium n \u22ef) (RSR2History.delayedChainTotalPremiumMaximum n hn) \u2194\n    LE.le.{0} (RSR2History.multiBlockTotalPremiumMaximum n \u22ef) (RSR2History.delayedChainTotalPremiumMaximum n hn)\n",
+        "stderr": ""
+      }
+    },
+    {
+      "name": "forest_moment",
+      "axiom_audit": [
+        {
+          "declaration": "RSR2History.forestGapMoment_le_weight",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.forestGapMoment_attained",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.forestGapWeight_rotate",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.forestGapMoment_rotate",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.forestGapWeight_eq_named_sum",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.forestGapMoment_eq_zero_iff",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.forestGapWeight_mass_le",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.forestGapMoment_mass_le",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.forestGapMoment_lower_bound",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.forestGapWeight_twoCluster",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.forestGapMoment_twoCluster",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.forestGapMoment_two_unit",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.GapTerminalCoordinates.route_to_target_frame_displacement",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.GapTerminalCoordinates.terminal_route_displacement",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.GapTerminalCoordinates.route_to_target_frame",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.GapTerminalCoordinates.terminal_route",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.ForestTerminalSource.dominating_coordinates_with_cut",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.forestFrameGapProfile_sum",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.forestGapWeight_frame_reindex",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.forestGapOffset_weight_identity",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.forestCutOffset_frame_eq",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.ForestTerminalSource.gapProfile_sum",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.ForestTerminalSource.frame_packetAt",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.ForestTerminalSource.frame_blocks",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.ForestTerminalSource.cut_gap_weight_identity",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.ForestTerminalSource.cut_displacement_gap_balance",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.ForestTerminalSource.cut_displacement_moment_bound",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.ForestTerminalSource.dominating_coordinates_moment",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.forestGapFrame_gap_lt",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.forestGapFrame_gap_eq_of_positions",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.forestGapFrame_profile_eq_of_positions",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.forestGapFrame_moment_eq_of_positions",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.forestRootGapProfile_eq_zero_iff",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.forestRootGapProfile_pos_iff",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.forestRootGapProfile_sum",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.forestRootGapProfile_mass_balance",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.ReservationFrame.root_gap_total",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.ReservationFrame.root_anchor_step",
+          "axioms": [
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.ReservationFrame.root_anchor_prefix",
+          "axioms": [
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.ReservationFrame.root_anchor_last",
+          "axioms": [
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.forestRootGapMoment_eq_zero_iff",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.forestRootGapMoment_pos_of_two_roots",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.ReservationFrame.root_gap_moment_lower_bound",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.forestRootGapMoment_two_binary_roots",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.ReservationFrame.root_anchor_strict",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.ReservationFrame.root_anchor_injective",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.ReservationFrame.root_anchor_zero",
+          "axioms": [
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.ReservationFrame.rootPhysicalGapFrame_profile",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.ReservationFrame.rootPhysicalGapFrame_blocks",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.UpperReservedReplay.rootPhysicalGapFrame_packet_at_position",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.UpperReservedReplay.gapMoment_eq_root",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.ForestTerminalSource.terminal_route_moment",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.ForestTerminalSource.terminal_route_sub_moment",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.UpperReservedReplay.forest_terminal_route_moment",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.UpperReservedReplay.forest_terminal_route_strict_of_two_roots",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.UpperReservedReplay.forest_terminal_route_two_binary_roots",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.forest_terminal_moment_account_of_trace",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        }
+      ],
+      "audit_output": {
+        "command": [
+          "C:\\Users\\Admin\\.elan\\toolchains\\leanprover--lean4---v4.33.0\\bin\\lake.exe",
+          "--no-cache",
+          "env",
+          "lean",
+          "RSR2History/ForestGapMomentAudit.lean"
+        ],
+        "exit_code": 0,
+        "stdout": "'RSR2History.forestGapMoment_le_weight' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.forestGapMoment_attained' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.forestGapWeight_rotate' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.forestGapMoment_rotate' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.forestGapWeight_eq_named_sum' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.forestGapMoment_eq_zero_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.forestGapWeight_mass_le' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.forestGapMoment_mass_le' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.forestGapMoment_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.forestGapWeight_twoCluster' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.forestGapMoment_twoCluster' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.forestGapMoment_two_unit' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.GapTerminalCoordinates.route_to_target_frame_displacement' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'RSR2History.GapTerminalCoordinates.terminal_route_displacement' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'RSR2History.GapTerminalCoordinates.route_to_target_frame' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.GapTerminalCoordinates.terminal_route' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.ForestTerminalSource.dominating_coordinates_with_cut' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'RSR2History.forestFrameGapProfile_sum' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.forestGapWeight_frame_reindex' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.forestGapOffset_weight_identity' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.forestCutOffset_frame_eq' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.ForestTerminalSource.gapProfile_sum' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.ForestTerminalSource.frame_packetAt' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.ForestTerminalSource.frame_blocks' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.ForestTerminalSource.cut_gap_weight_identity' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.ForestTerminalSource.cut_displacement_gap_balance' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'RSR2History.ForestTerminalSource.cut_displacement_moment_bound' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'RSR2History.ForestTerminalSource.dominating_coordinates_moment' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'RSR2History.forestGapFrame_gap_lt' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.forestGapFrame_gap_eq_of_positions' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.forestGapFrame_profile_eq_of_positions' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.forestGapFrame_moment_eq_of_positions' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.forestRootGapProfile_eq_zero_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.forestRootGapProfile_pos_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.forestRootGapProfile_sum' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.forestRootGapProfile_mass_balance' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.ReservationFrame.root_gap_total' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.ReservationFrame.root_anchor_step' depends on axioms: [propext, Quot.sound]\n'RSR2History.ReservationFrame.root_anchor_prefix' depends on axioms: [propext, Quot.sound]\n'RSR2History.ReservationFrame.root_anchor_last' depends on axioms: [propext, Quot.sound]\n'RSR2History.forestRootGapMoment_eq_zero_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.forestRootGapMoment_pos_of_two_roots' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.ReservationFrame.root_gap_moment_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.forestRootGapMoment_two_binary_roots' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.ReservationFrame.root_anchor_strict' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.ReservationFrame.root_anchor_injective' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.ReservationFrame.root_anchor_zero' depends on axioms: [propext, Quot.sound]\n'RSR2History.ReservationFrame.rootPhysicalGapFrame_profile' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.ReservationFrame.rootPhysicalGapFrame_blocks' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.UpperReservedReplay.rootPhysicalGapFrame_packet_at_position' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'RSR2History.UpperReservedReplay.gapMoment_eq_root' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.ForestTerminalSource.terminal_route_moment' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.ForestTerminalSource.terminal_route_sub_moment' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.UpperReservedReplay.forest_terminal_route_moment' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'RSR2History.UpperReservedReplay.forest_terminal_route_strict_of_two_roots' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'RSR2History.UpperReservedReplay.forest_terminal_route_two_binary_roots' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'RSR2History.forest_terminal_moment_account_of_trace' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+        "stderr": ""
+      },
+      "signatures": {
+        "command": [
+          "C:\\Users\\Admin\\.elan\\toolchains\\leanprover--lean4---v4.33.0\\bin\\lake.exe",
+          "--no-cache",
+          "env",
+          "lean",
+          "RSR2History/ForestGapMomentSignatures.lean"
+        ],
+        "exit_code": 0,
+        "stdout": "RSR2History.forestGapMoment_le_weight {r : \u2115} [NeZero r] (h : Fin r \u2192 \u2115) (q : Fin r) :\n  RSR2History.forestGapMoment h \u2264 RSR2History.forestGapWeight h q\nRSR2History.forestGapMoment_attained {r : \u2115} [NeZero r] (h : Fin r \u2192 \u2115) :\n  \u2203 q, RSR2History.forestGapWeight h q = RSR2History.forestGapMoment h\nRSR2History.forestGapWeight_rotate {r : \u2115} [NeZero r] (h : Fin r \u2192 \u2115) (c q : Fin r) :\n  RSR2History.forestGapWeight (fun i => h (c + i)) q = RSR2History.forestGapWeight h (c + q)\nRSR2History.forestGapMoment_rotate {r : \u2115} [NeZero r] (h : Fin r \u2192 \u2115) (c : Fin r) :\n  (RSR2History.forestGapMoment fun i => h (c + i)) = RSR2History.forestGapMoment h\nRSR2History.forestGapWeight_eq_named_sum {r : \u2115} [NeZero r] (h : Fin r \u2192 \u2115) (q : Fin r) :\n  RSR2History.forestGapWeight h q = \u2211 i, \u2191(i - q) * h i\nRSR2History.forestGapMoment_eq_zero_iff {r : \u2115} [NeZero r] (h : Fin r \u2192 \u2115) :\n  RSR2History.forestGapMoment h = 0 \u2194 \u2203 q, \u2200 (i : Fin r), i \u2260 q \u2192 h i = 0\nRSR2History.forestGapWeight_mass_le {r : \u2115} [NeZero r] (h : Fin r \u2192 \u2115) (q : Fin r) :\n  \u2211 i, h i \u2264 RSR2History.forestGapWeight h q + h q\nRSR2History.forestGapMoment_mass_le {r : \u2115} [NeZero r] (h : Fin r \u2192 \u2115) :\n  \u2211 i, h i \u2264 RSR2History.forestGapMoment h + Finset.univ.sup h\nRSR2History.forestGapMoment_lower_bound {r : \u2115} [NeZero r] (h : Fin r \u2192 \u2115) :\n  \u2211 i, h i - Finset.univ.sup h \u2264 RSR2History.forestGapMoment h\nRSR2History.forestGapWeight_twoCluster {r : \u2115} [NeZero r] (p q : Fin r) (a b : \u2115) :\n  RSR2History.forestGapWeight (RSR2History.twoClusterGapProfile p a b) q = \u2191(-q) * a + \u2191(p - q) * b\nRSR2History.forestGapMoment_twoCluster {r : \u2115} [NeZero r] (p : Fin r) (hp : p \u2260 0) (a b : \u2115) :\n  RSR2History.forestGapMoment (RSR2History.twoClusterGapProfile p a b) = min (\u2191p * b) ((r - \u2191p) * a)\nRSR2History.forestGapMoment_two_unit : (RSR2History.forestGapMoment fun x => 1) = 1\nRSR2History.GapTerminalCoordinates.route_to_target_frame_displacement {n : \u2115} [NeZero n] {g l : \u2115}\n  {P Q : RSR2.Parametric.Placement n} (h : RSR2History.GapTerminalCoordinates n g l P Q) (hn : 1 < n) :\n  \u2203 R cf word,\n    RSR2History.runLogged n hn P word = some (R, []) \u2227\n      RSR2History.phaseShift R true \u2191\u2191cf = RSR2History.combCoordinatePlacement h.root h.target \u2227\n        word.length \u2264 l * (n - 1) + h.displacement\nRSR2History.GapTerminalCoordinates.terminal_route_displacement {n : \u2115} [NeZero n] {g l : \u2115}\n  {P Q : RSR2.Parametric.Placement n} (h : RSR2History.GapTerminalCoordinates n g l P Q) (hn : 1 < n) :\n  \u2203 word, RSR2History.runLogged n hn P word = some (Q, []) \u2227 word.length \u2264 (l + 1) * (n - 1) + h.displacement\nRSR2History.GapTerminalCoordinates.route_to_target_frame {n : \u2115} [NeZero n] {g l : \u2115}\n  {P Q : RSR2.Parametric.Placement n} (h : RSR2History.GapTerminalCoordinates n g l P Q) (hn : 1 < n) :\n  \u2203 R cf word,\n    RSR2History.runLogged n hn P word = some (R, []) \u2227\n      RSR2History.phaseShift R true \u2191\u2191cf = RSR2History.combCoordinatePlacement h.root h.target \u2227\n        word.length \u2264 l * (n + g - 1)\nRSR2History.GapTerminalCoordinates.terminal_route {n : \u2115} [NeZero n] {g l : \u2115} {P Q : RSR2.Parametric.Placement n}\n  (h : RSR2History.GapTerminalCoordinates n g l P Q) (hn : 1 < n) :\n  \u2203 word, RSR2History.runLogged n hn P word = some (Q, []) \u2227 word.length \u2264 l * (n + g - 1) + (n - 1)\nRSR2History.ForestTerminalSource.dominating_coordinates_with_cut {n r : \u2115} [NeZero n] [NeZero r]\n  {P Q : RSR2.Parametric.Placement n} (h : RSR2History.ForestTerminalSource n r P) (hr : 2 \u2264 r)\n  (coordinates : RSR2History.ForestTerminalCoordinates h Q) :\n  \u2203 q cert,\n    (\u2200 (j : \u2115), cert.source j = RSR2History.forestCutOffset h.site q (Fin.ofNat r j)) \u2227\n      \u2200 (j : \u2115), cert.target j = RSR2History.forestCutOffset coordinates.target q (Fin.ofNat r j)\nRSR2History.forestFrameGapProfile_sum {n r : \u2115} [NeZero n] [NeZero r]\n  (frame : RegisteredAbsorptionChains.GapFrame n r (Fin n)) : \u2211 i, RSR2History.forestFrameGapProfile frame i = n - r\nRSR2History.forestGapWeight_frame_reindex {n r : \u2115} [NeZero n] [NeZero r]\n  (frame : RegisteredAbsorptionChains.GapFrame n r (Fin n)) (q : Fin r) :\n  RSR2History.forestGapWeight (RSR2History.forestFrameGapProfile frame) q =\n    \u2211 i \u2208 Finset.range r, i * (RSR2History.reindexGapFrame frame \u2191\u2191q).gap \u2191i\nRSR2History.forestGapOffset_weight_identity {n r : \u2115} [NeZero n] [NeZero r]\n  (frame : RegisteredAbsorptionChains.GapFrame n r (Fin n)) (q : Fin r) :\n  \u2211 j, RSR2History.ForestGapOffsets.offset (RSR2History.reindexGapFrame frame \u2191\u2191q) \u2191j +\n      RSR2History.forestGapWeight (RSR2History.forestFrameGapProfile frame) q =\n    (r - 1) * (n - r) + \u2211 j, \u2191j\nRSR2History.forestCutOffset_frame_eq {n r : \u2115} [NeZero n] [NeZero r] (p : Fin r \u2192 Fin n) (hp : StrictMono p)\n  (blocks : Fin r \u2192 Finset (Fin n)) (q j : Fin r) :\n  RSR2History.forestCutOffset p q j =\n    RSR2History.ForestGapOffsets.offset (RSR2History.reindexGapFrame (RSR2History.increasingGapFrame p hp blocks) \u2191\u2191q)\n      \u2191j\nRSR2History.ForestTerminalSource.gapProfile_sum {n r : \u2115} [NeZero n] [NeZero r] {P : RSR2.Parametric.Placement n}\n  (source : RSR2History.ForestTerminalSource n r P) : \u2211 i, source.gapProfile i = n - r\nRSR2History.ForestTerminalSource.frame_packetAt {n r : \u2115} [NeZero n] [NeZero r] {P : RSR2.Parametric.Placement n}\n  (source : RSR2History.ForestTerminalSource n r P) (j : ZMod r) :\n  RSR2History.packetAt P true (RSR2History.zsite (source.sourceFrame.position j)) = source.sourceFrame.block j\nRSR2History.ForestTerminalSource.frame_blocks {n r : \u2115} [NeZero n] [NeZero r] {P : RSR2.Parametric.Placement n}\n  (source : RSR2History.ForestTerminalSource n r P) :\n  RSR2History.frameBlocks source.sourceFrame = RSR2History.cyclicSignature P true\nRSR2History.ForestTerminalSource.cut_gap_weight_identity {n r : \u2115} [NeZero n] [NeZero r]\n  {P : RSR2.Parametric.Placement n} (source : RSR2History.ForestTerminalSource n r P) (q : Fin r) :\n  \u2211 j, RSR2History.forestCutOffset source.site q j + RSR2History.forestGapWeight source.gapProfile q =\n    (r - 1) * (n - r) + \u2211 j, \u2191j\nRSR2History.ForestTerminalSource.cut_displacement_gap_balance {n r : \u2115} [NeZero n] [NeZero r]\n  {P Q : RSR2.Parametric.Placement n} (source : RSR2History.ForestTerminalSource n r P)\n  (coordinates : RSR2History.ForestTerminalCoordinates source Q) (q : Fin r)\n  (dom :\n    \u2200 (j : Fin r), RSR2History.forestCutOffset coordinates.target q j \u2264 RSR2History.forestCutOffset source.site q j) :\n  \u2211 j, (RSR2History.forestCutOffset source.site q j - RSR2History.forestCutOffset coordinates.target q j) +\n      RSR2History.forestGapWeight source.gapProfile q =\n    RSR2History.forestGapWeight (RSR2History.ForestTerminalSource.targetGapProfile coordinates) q\nRSR2History.ForestTerminalSource.cut_displacement_moment_bound {n r : \u2115} [NeZero n] [NeZero r]\n  {P Q : RSR2.Parametric.Placement n} (source : RSR2History.ForestTerminalSource n r P)\n  (coordinates : RSR2History.ForestTerminalCoordinates source Q) (q : Fin r)\n  (dom :\n    \u2200 (j : Fin r), RSR2History.forestCutOffset coordinates.target q j \u2264 RSR2History.forestCutOffset source.site q j) :\n  \u2211 j, (RSR2History.forestCutOffset source.site q j - RSR2History.forestCutOffset coordinates.target q j) +\n      RSR2History.forestGapMoment source.gapProfile \u2264\n    (r - 1) * (n - r)\nRSR2History.ForestTerminalSource.dominating_coordinates_moment {n r : \u2115} [NeZero n] [NeZero r]\n  {P Q : RSR2.Parametric.Placement n} (source : RSR2History.ForestTerminalSource n r P) (hr : 2 \u2264 r)\n  (coordinates : RSR2History.ForestTerminalCoordinates source Q) :\n  \u2203 cert, cert.displacement + RSR2History.forestGapMoment source.gapProfile \u2264 (r - 1) * (n - r)\nRSR2History.forestGapFrame_gap_lt.{u_1} {n r : \u2115} [NeZero n] [NeZero r] {\u03b1 : Type u_1}\n  (frame : RegisteredAbsorptionChains.GapFrame n r \u03b1) (j : ZMod r) : frame.gap j < n\nRSR2History.forestGapFrame_gap_eq_of_positions.{u_1, u_2} {n r : \u2115} [NeZero n] [NeZero r] {\u03b1 : Type u_1} {\u03b2 : Type u_2}\n  (A : RegisteredAbsorptionChains.GapFrame n r \u03b1) (B : RegisteredAbsorptionChains.GapFrame n r \u03b2) (c : ZMod r)\n  (phase : ZMod n) (positions : \u2200 (j : ZMod r), A.position (j + c) = B.position j + phase) (j : ZMod r) :\n  A.gap (j + c) = B.gap j\nRSR2History.forestGapFrame_profile_eq_of_positions {n r : \u2115} [NeZero n] [NeZero r]\n  (A B : RegisteredAbsorptionChains.GapFrame n r (Fin n)) (c : ZMod r) (phase : ZMod n)\n  (positions : \u2200 (j : ZMod r), A.position (j + c) = B.position j + phase) :\n  (fun i => RSR2History.forestFrameGapProfile A ((ZMod.finEquiv r).symm c + i)) = RSR2History.forestFrameGapProfile B\nRSR2History.forestGapFrame_moment_eq_of_positions {n r : \u2115} [NeZero n] [NeZero r]\n  (A B : RegisteredAbsorptionChains.GapFrame n r (Fin n)) (c : ZMod r) (phase : ZMod n)\n  (positions : \u2200 (j : ZMod r), A.position (j + c) = B.position j + phase) :\n  RSR2History.forestGapMoment (RSR2History.forestFrameGapProfile A) =\n    RSR2History.forestGapMoment (RSR2History.forestFrameGapProfile B)\nRSR2History.forestRootGapProfile_eq_zero_iff {n : \u2115} (terminal : List (RSR2History.UpperFusionTree n))\n  (i : Fin terminal.length) : RSR2History.forestRootGapProfile terminal i = 0 \u2194 terminal[i].leaves.length = 1\nRSR2History.forestRootGapProfile_pos_iff {n : \u2115} (terminal : List (RSR2History.UpperFusionTree n))\n  (i : Fin terminal.length) : 0 < RSR2History.forestRootGapProfile terminal i \u2194 2 \u2264 terminal[i].leaves.length\nRSR2History.forestRootGapProfile_sum {n : \u2115} (terminal : List (RSR2History.UpperFusionTree n)) :\n  \u2211 i, RSR2History.forestRootGapProfile terminal i = RSR2History.forestMergeMass terminal\nRSR2History.forestRootGapProfile_mass_balance {n : \u2115} (terminal : List (RSR2History.UpperFusionTree n)) :\n  terminal.length + \u2211 i, RSR2History.forestRootGapProfile terminal i = (RSR2History.forestLeaves terminal).length\nRSR2History.ReservationFrame.root_gap_total {n : \u2115} {terminal : List (RSR2History.UpperFusionTree n)} {site : \u2115 \u2192 Fin n}\n  (frame : RSR2History.ReservationFrame n terminal terminal (RSR2History.forestLeaves terminal) site) :\n  \u2211 i, RSR2History.forestRootGapProfile terminal i = n - terminal.length\nRSR2History.ReservationFrame.root_anchor_step {n : \u2115} {terminal : List (RSR2History.UpperFusionTree n)}\n  {site : \u2115 \u2192 Fin n} (frame : RSR2History.ReservationFrame n terminal terminal (RSR2History.forestLeaves terminal) site)\n  (i : \u2115) (hi : i + 1 < terminal.length) :\n  \u2191(site terminal[i + 1].firstLeaf) = \u2191(site terminal[i].firstLeaf) + terminal[i].leaves.length\nRSR2History.ReservationFrame.root_anchor_prefix {n : \u2115} {terminal : List (RSR2History.UpperFusionTree n)}\n  {site : \u2115 \u2192 Fin n} (frame : RSR2History.ReservationFrame n terminal terminal (RSR2History.forestLeaves terminal) site)\n  (i : Fin terminal.length) :\n  \u2191(site terminal[i].firstLeaf) = (RSR2History.forestLeaves (List.take (\u2191i) terminal)).length\nRSR2History.ReservationFrame.root_anchor_last {n : \u2115} {terminal : List (RSR2History.UpperFusionTree n)}\n  {site : \u2115 \u2192 Fin n} (frame : RSR2History.ReservationFrame n terminal terminal (RSR2History.forestLeaves terminal) site)\n  (i : Fin terminal.length) (hi : \u2191i + 1 = terminal.length) :\n  \u2191(site terminal[i].firstLeaf) + terminal[i].leaves.length = n\nRSR2History.forestRootGapMoment_eq_zero_iff {n : \u2115} (terminal : List (RSR2History.UpperFusionTree n))\n  [NeZero terminal.length] :\n  RSR2History.forestGapMoment (RSR2History.forestRootGapProfile terminal) = 0 \u2194\n    \u2203 q, \u2200 (i : Fin terminal.length), i \u2260 q \u2192 terminal[i].leaves.length = 1\nRSR2History.forestRootGapMoment_pos_of_two_roots {n : \u2115} (terminal : List (RSR2History.UpperFusionTree n))\n  [NeZero terminal.length] (i j : Fin terminal.length) (hne : i \u2260 j) (hi : 2 \u2264 terminal[i].leaves.length)\n  (hj : 2 \u2264 terminal[j].leaves.length) : 0 < RSR2History.forestGapMoment (RSR2History.forestRootGapProfile terminal)\nRSR2History.ReservationFrame.root_gap_moment_lower_bound {n : \u2115} {terminal : List (RSR2History.UpperFusionTree n)}\n  [NeZero terminal.length] {site : \u2115 \u2192 Fin n}\n  (frame : RSR2History.ReservationFrame n terminal terminal (RSR2History.forestLeaves terminal) site) :\n  n - terminal.length - Finset.univ.sup (RSR2History.forestRootGapProfile terminal) \u2264\n    RSR2History.forestGapMoment (RSR2History.forestRootGapProfile terminal)\nRSR2History.forestRootGapMoment_two_binary_roots {n : \u2115} (A B : RSR2History.UpperFusionTree n)\n  (ha : A.leaves.length = 2) (hb : B.leaves.length = 2) :\n  RSR2History.forestGapMoment (RSR2History.forestRootGapProfile [A, B]) = 1\nRSR2History.ReservationFrame.root_anchor_strict {n : \u2115} [NeZero n] {terminal : List (RSR2History.UpperFusionTree n)}\n  [NeZero terminal.length] {site : \u2115 \u2192 Fin n}\n  (frame : RSR2History.ReservationFrame n terminal terminal (RSR2History.forestLeaves terminal) site) :\n  StrictMono fun i => site terminal[i].firstLeaf\nRSR2History.ReservationFrame.root_anchor_injective {n : \u2115} [NeZero n] {terminal : List (RSR2History.UpperFusionTree n)}\n  [NeZero terminal.length] {site : \u2115 \u2192 Fin n}\n  (frame : RSR2History.ReservationFrame n terminal terminal (RSR2History.forestLeaves terminal) site) :\n  Function.Injective fun i => site terminal[i].firstLeaf\nRSR2History.ReservationFrame.root_anchor_zero {n : \u2115} [NeZero n] {terminal : List (RSR2History.UpperFusionTree n)}\n  [NeZero terminal.length] {site : \u2115 \u2192 Fin n}\n  (frame : RSR2History.ReservationFrame n terminal terminal (RSR2History.forestLeaves terminal) site) :\n  site terminal[0].firstLeaf = 0\nRSR2History.ReservationFrame.rootPhysicalGapFrame_profile {n : \u2115} [NeZero n]\n  {terminal : List (RSR2History.UpperFusionTree n)} [NeZero terminal.length] {site : \u2115 \u2192 Fin n}\n  (frame : RSR2History.ReservationFrame n terminal terminal (RSR2History.forestLeaves terminal) site) (cursor : Fin n) :\n  RSR2History.forestFrameGapProfile (frame.rootPhysicalGapFrame cursor) = RSR2History.forestRootGapProfile terminal\nRSR2History.ReservationFrame.rootPhysicalGapFrame_blocks {n : \u2115} [NeZero n]\n  {terminal : List (RSR2History.UpperFusionTree n)} [NeZero terminal.length] {site : \u2115 \u2192 Fin n}\n  (frame : RSR2History.ReservationFrame n terminal terminal (RSR2History.forestLeaves terminal) site) (cursor : Fin n) :\n  RSR2History.frameBlocks (frame.rootPhysicalGapFrame cursor) = RSR2History.forestPackets terminal\nRSR2History.UpperReservedReplay.rootPhysicalGapFrame_packet_at_position {n : \u2115} [NeZero n]\n  {P : RSR2.Parametric.Placement n} {cursor : Fin n} {terminal : List (RSR2History.UpperFusionTree n)}\n  [NeZero terminal.length] {site : \u2115 \u2192 Fin n}\n  (state : RSR2History.UpperReservedReplay P cursor n terminal terminal (RSR2History.forestLeaves terminal) site)\n  (j : ZMod terminal.length) :\n  RSR2History.packetAt P true (RSR2History.zsite ((\u22ef.rootPhysicalGapFrame cursor).position j)) =\n    (\u22ef.rootPhysicalGapFrame cursor).block j\nRSR2History.UpperReservedReplay.gapMoment_eq_root {n : \u2115} [NeZero n] (hn : 1 < n) {P : RSR2.Parametric.Placement n}\n  {cursor : Fin n} {terminal : List (RSR2History.UpperFusionTree n)} [NeZero terminal.length] {site : \u2115 \u2192 Fin n}\n  (state : RSR2History.UpperReservedReplay P cursor n terminal terminal (RSR2History.forestLeaves terminal) site)\n  (source : RSR2History.ForestTerminalSource n terminal.length P) :\n  RSR2History.forestGapMoment source.gapProfile =\n    RSR2History.forestGapMoment (RSR2History.forestRootGapProfile terminal)\nRSR2History.ForestTerminalSource.terminal_route_moment {n r : \u2115} [NeZero n] [NeZero r] (hn : 1 < n)\n  {P Q : RSR2.Parametric.Placement n} (source : RSR2History.ForestTerminalSource n r P) (hr : 2 \u2264 r)\n  (same : RSR2History.cyclicSignature P true ~r RSR2History.cyclicSignature Q true) :\n  \u2203 finish,\n    RSR2History.runLogged n hn P finish = some (Q, []) \u2227\n      finish.length + RSR2History.forestGapMoment source.gapProfile \u2264 n * (n - 1) - (n - r) ^ 2\nRSR2History.ForestTerminalSource.terminal_route_sub_moment {n r : \u2115} [NeZero n] [NeZero r] (hn : 1 < n)\n  {P Q : RSR2.Parametric.Placement n} (source : RSR2History.ForestTerminalSource n r P) (hr : 2 \u2264 r)\n  (same : RSR2History.cyclicSignature P true ~r RSR2History.cyclicSignature Q true) :\n  \u2203 finish,\n    RSR2History.runLogged n hn P finish = some (Q, []) \u2227\n      finish.length \u2264 n * (n - 1) - (n - r) ^ 2 - RSR2History.forestGapMoment source.gapProfile\nRSR2History.UpperReservedReplay.forest_terminal_route_moment {n : \u2115} [NeZero n] (hn : 1 < n)\n  {P Q : RSR2.Parametric.Placement n} {cursor : Fin n} {terminal : List (RSR2History.UpperFusionTree n)}\n  [NeZero terminal.length] {site : \u2115 \u2192 Fin n}\n  (state : RSR2History.UpperReservedReplay P cursor n terminal terminal (RSR2History.forestLeaves terminal) site)\n  (upper : \u2200 (a : Fin n), (P a).1 = true) (rank : 2 \u2264 terminal.length) {T : RSR2History.UpperFusionTree n}\n  (ht : T \u2208 terminal) (anchor : cursor = site T.firstLeaf)\n  (target : RSR2History.forestPackets terminal ~r RSR2History.cyclicSignature Q true) :\n  \u2203 finish,\n    RSR2History.runLogged n hn P finish = some (Q, []) \u2227\n      finish.length + RSR2History.forestGapMoment (RSR2History.forestRootGapProfile terminal) \u2264\n        n * (n - 1) - (n - terminal.length) ^ 2\nRSR2History.UpperReservedReplay.forest_terminal_route_strict_of_two_roots {n : \u2115} [NeZero n] (hn : 1 < n)\n  {P Q : RSR2.Parametric.Placement n} {cursor : Fin n} {terminal : List (RSR2History.UpperFusionTree n)}\n  [NeZero terminal.length] {site : \u2115 \u2192 Fin n}\n  (state : RSR2History.UpperReservedReplay P cursor n terminal terminal (RSR2History.forestLeaves terminal) site)\n  (upper : \u2200 (a : Fin n), (P a).1 = true) (rank : 2 \u2264 terminal.length) {T : RSR2History.UpperFusionTree n}\n  (ht : T \u2208 terminal) (anchor : cursor = site T.firstLeaf)\n  (target : RSR2History.forestPackets terminal ~r RSR2History.cyclicSignature Q true) (i j : Fin terminal.length)\n  (hne : i \u2260 j) (hi : 2 \u2264 terminal[i].leaves.length) (hj : 2 \u2264 terminal[j].leaves.length) :\n  \u2203 finish, RSR2History.runLogged n hn P finish = some (Q, []) \u2227 finish.length < n * (n - 1) - (n - terminal.length) ^ 2\nRSR2History.UpperReservedReplay.forest_terminal_route_two_binary_roots {P Q : RSR2.Parametric.Placement 4}\n  {cursor : Fin 4} {A B : RSR2History.UpperFusionTree 4} {site : \u2115 \u2192 Fin 4}\n  (state : RSR2History.UpperReservedReplay P cursor 4 [A, B] [A, B] (RSR2History.forestLeaves [A, B]) site)\n  (upper : \u2200 (a : Fin 4), (P a).1 = true) (ha : A.leaves.length = 2) (hb : B.leaves.length = 2)\n  {T : RSR2History.UpperFusionTree 4} (ht : T \u2208 [A, B]) (anchor : cursor = site T.firstLeaf)\n  (target : RSR2History.forestPackets [A, B] ~r RSR2History.cyclicSignature Q true) :\n  \u2203 finish, RSR2History.runLogged 4 \u22ef P finish = some (Q, []) \u2227 finish.length \u2264 7\nRSR2History.forest_terminal_moment_account_of_trace {n : \u2115} [NeZero n] (hn : 1 < n) {Q : RSR2.Parametric.Placement n}\n  {H : List (RSR2History.EffectiveEvent n)} {terminal : List (RSR2History.UpperFusionTree n)} [NeZero terminal.length]\n  (word : List RSR2.Parametric.Letter) (run : RSR2History.runLogged n hn (RSR2.Parametric.seed n) word = some (Q, H))\n  (upper : \u2200 (a : Fin n), (Q a).1 = true)\n  (singletons : \u2200 (B : Finset (Fin n)), RSR2History.EffectiveEvent.transfer B \u2208 H \u2192 B.card = 1)\n  (trace : RSR2History.UpperForestTrace (RSR2.Parametric.seed n) 0 [] H Q n terminal) (rank : 2 \u2264 terminal.length) :\n  \u2203 account,\n    account.terminal = terminal \u2227\n      (\u2200 a \u2208 RSR2History.forestLeaves terminal, \u2191(account.site a) = List.idxOf a (RSR2History.forestLeaves terminal)) \u2227\n        account.finish.length + RSR2History.forestGapMoment (RSR2History.forestRootGapProfile terminal) \u2264\n          n * (n - 1) - (n - terminal.length) ^ 2\n",
+        "stderr": ""
+      }
+    },
+    {
+      "name": "forest_relative",
+      "axiom_audit": [
+        {
+          "declaration": "RSR2History.forestStructuralDefect",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.forestStructuralDefect_congr",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.forestCrossDefect_lower_bound",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.forestStructuralDefect_eq_zero_iff",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.forestStructuralDefect_lower_bound",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.ReservationFrame.structural_defect_lower_bound",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.forestStructuralDefect_ge_two_of_two_roots",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.forestStructuralDefect_two_binary_roots",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.ForestReplayAccount.windingCharge",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.ForestReplayAccount.structural_replay_budget",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.ForestReplayAccount.structural_replay_winding_budget",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.ForestReplayAccount.structural_winding_charge_sufficient",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.forest_structural_replay_account_of_trace",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.UpperCursorSchedule.final_phase_ge_of_all_winding",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.UpperCursorSchedule.forest_windings_add_two_le_events",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.UpperCursorSchedule.forest_final_phase_ge_of_max_windings",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.ForestReplayAccount.partition_block_count",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.ForestReplayAccount.partition_cost_rank_bound",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.ForestReplayAccount.relative_slack_with_winding_margin",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.ForestReplayAccount.premium_le_delayed_of_winding_phase",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.ForestReplayAccount.replay_budget_of_winding_charge",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.ForestReplayAccount.word_budget_of_winding_charge",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.SingletonUpperLog.fusion_mem_of_transfer_lt_length",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.UpperCursorSchedule.forest_winding_phase_payment",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.ForestReplayAccount.rank_le",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.ForestReplayAccount.winding_charge_le_of_canonical_sites",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.allUpper_singleton_fused_forest_delayed_replay_of_trace",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.allUpper_singleton_fused_forest_delayed_replay",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.ForestTerminalSource.full_rank_rotation",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.forest_full_rank_account_of_trace",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.ForestReplayAccount.replay_length_lt_delayed_of_full_rank",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.ForestReplayAccount.premium_le_delayed_of_full_rank",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.allUpper_singleton_multiRoot_delayed_replay",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.allUpper_singleton_extraction_slack",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        }
+      ],
+      "audit_output": {
+        "command": [
+          "C:\\Users\\Admin\\.elan\\toolchains\\leanprover--lean4---v4.33.0\\bin\\lake.exe",
+          "--no-cache",
+          "env",
+          "lean",
+          "RSR2History/ForestRelativeReplayAudit.lean"
+        ],
+        "exit_code": 0,
+        "stdout": "'RSR2History.forestStructuralDefect' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.forestStructuralDefect_congr' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.forestCrossDefect_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.forestStructuralDefect_eq_zero_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.forestStructuralDefect_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.ReservationFrame.structural_defect_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.forestStructuralDefect_ge_two_of_two_roots' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.forestStructuralDefect_two_binary_roots' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.ForestReplayAccount.windingCharge' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.ForestReplayAccount.structural_replay_budget' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.ForestReplayAccount.structural_replay_winding_budget' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'RSR2History.ForestReplayAccount.structural_winding_charge_sufficient' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'RSR2History.forest_structural_replay_account_of_trace' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.UpperCursorSchedule.final_phase_ge_of_all_winding' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'RSR2History.UpperCursorSchedule.forest_windings_add_two_le_events' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'RSR2History.UpperCursorSchedule.forest_final_phase_ge_of_max_windings' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'RSR2History.ForestReplayAccount.partition_block_count' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.ForestReplayAccount.partition_cost_rank_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.ForestReplayAccount.relative_slack_with_winding_margin' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'RSR2History.ForestReplayAccount.premium_le_delayed_of_winding_phase' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'RSR2History.ForestReplayAccount.replay_budget_of_winding_charge' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'RSR2History.ForestReplayAccount.word_budget_of_winding_charge' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'RSR2History.SingletonUpperLog.fusion_mem_of_transfer_lt_length' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'RSR2History.UpperCursorSchedule.forest_winding_phase_payment' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'RSR2History.ForestReplayAccount.rank_le' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.ForestReplayAccount.winding_charge_le_of_canonical_sites' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'RSR2History.allUpper_singleton_fused_forest_delayed_replay_of_trace' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'RSR2History.allUpper_singleton_fused_forest_delayed_replay' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.ForestTerminalSource.full_rank_rotation' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.forest_full_rank_account_of_trace' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.ForestReplayAccount.replay_length_lt_delayed_of_full_rank' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'RSR2History.ForestReplayAccount.premium_le_delayed_of_full_rank' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'RSR2History.allUpper_singleton_multiRoot_delayed_replay' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.allUpper_singleton_extraction_slack' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+        "stderr": ""
+      },
+      "signatures": {
+        "command": [
+          "C:\\Users\\Admin\\.elan\\toolchains\\leanprover--lean4---v4.33.0\\bin\\lake.exe",
+          "--no-cache",
+          "env",
+          "lean",
+          "RSR2History/ForestRelativeReplaySignatures.lean"
+        ],
+        "exit_code": 0,
+        "stdout": "RSR2History.forestStructuralDefect {n : \u2115} (terminal : List (RSR2History.UpperFusionTree n)) [NeZero terminal.length] :\n  \u2115\nRSR2History.forestStructuralDefect_congr {n : \u2115} {A B : List (RSR2History.UpperFusionTree n)} [NeZero A.length]\n  [NeZero B.length] (h : A = B) : RSR2History.forestStructuralDefect A = RSR2History.forestStructuralDefect B\nRSR2History.forestCrossDefect_lower_bound {n : \u2115} (terminal : List (RSR2History.UpperFusionTree n)) :\n  RSR2History.forestMergeMass terminal - Finset.univ.sup (RSR2History.forestRootGapProfile terminal) \u2264\n    RSR2History.forestCrossDefect terminal\nRSR2History.forestStructuralDefect_eq_zero_iff {n : \u2115} (terminal : List (RSR2History.UpperFusionTree n))\n  [NeZero terminal.length] :\n  RSR2History.forestStructuralDefect terminal = 0 \u2194\n    \u2203 q, terminal[q].IsLeftComb \u2227 \u2200 (i : Fin terminal.length), i \u2260 q \u2192 terminal[i].leaves.length = 1\nRSR2History.forestStructuralDefect_lower_bound {n : \u2115} (terminal : List (RSR2History.UpperFusionTree n))\n  [NeZero terminal.length] :\n  2 * (RSR2History.forestMergeMass terminal - Finset.univ.sup (RSR2History.forestRootGapProfile terminal)) \u2264\n    RSR2History.forestStructuralDefect terminal\nRSR2History.ReservationFrame.structural_defect_lower_bound {n : \u2115} {terminal : List (RSR2History.UpperFusionTree n)}\n  [NeZero terminal.length] {site : \u2115 \u2192 Fin n}\n  (frame : RSR2History.ReservationFrame n terminal terminal (RSR2History.forestLeaves terminal) site) :\n  2 * (n - terminal.length - Finset.univ.sup (RSR2History.forestRootGapProfile terminal)) \u2264\n    RSR2History.forestStructuralDefect terminal\nRSR2History.forestStructuralDefect_ge_two_of_two_roots {n : \u2115} (terminal : List (RSR2History.UpperFusionTree n))\n  [NeZero terminal.length] (i j : Fin terminal.length) (hne : i \u2260 j) (hi : 2 \u2264 terminal[i].leaves.length)\n  (hj : 2 \u2264 terminal[j].leaves.length) : 2 \u2264 RSR2History.forestStructuralDefect terminal\nRSR2History.forestStructuralDefect_two_binary_roots {n : \u2115} (A B : RSR2History.UpperFusionTree n)\n  (ha : A.leaves.length = 2) (hb : B.leaves.length = 2) : RSR2History.forestStructuralDefect [A, B] = 2\nRSR2History.ForestReplayAccount.windingCharge {n : \u2115} {hn : 1 < n} {Q : RSR2.Parametric.Placement n}\n  {H : List (RSR2History.EffectiveEvent n)} (r : RSR2History.ForestReplayAccount n hn Q H) : \u2124\nRSR2History.ForestReplayAccount.structural_replay_budget {n : \u2115} {hn : 1 < n} {Q : RSR2.Parametric.Placement n}\n  {H : List (RSR2History.EffectiveEvent n)} (r : RSR2History.ForestReplayAccount n hn Q H) [NeZero r.terminal.length]\n  (hfinish :\n    r.finish.length + RSR2History.forestGapMoment (RSR2History.forestRootGapProfile r.terminal) \u2264\n      n * (n - 1) - (n - r.terminal.length) ^ 2) :\n  r.schedule.cost + r.finish.length + RSR2History.forestStructuralDefect r.terminal + \u2191r.finalCursor +\n      (n - r.terminal.length) * (n - r.terminal.length + 1) / 2 \u2264\n    2 * n - r.terminal.length + n * (n - 1) + n * r.schedule.windings + \u2191(r.site 0)\nRSR2History.ForestReplayAccount.structural_replay_winding_budget {n : \u2115} {hn : 1 < n} {Q : RSR2.Parametric.Placement n}\n  {H : List (RSR2History.EffectiveEvent n)} (r : RSR2History.ForestReplayAccount n hn Q H) [NeZero r.terminal.length]\n  (hfinish :\n    r.finish.length + RSR2History.forestGapMoment (RSR2History.forestRootGapProfile r.terminal) \u2264\n      n * (n - 1) - (n - r.terminal.length) ^ 2) :\n  \u2191r.schedule.cost + \u2191r.finish.length + \u2191(RSR2History.forestStructuralDefect r.terminal) \u2264\n    \u2191(2 * n - r.terminal.length) + \u2191(n * (n - 1)) - \u2191((n - r.terminal.length) * (n - r.terminal.length + 1) / 2) +\n      r.windingCharge\nRSR2History.ForestReplayAccount.structural_winding_charge_sufficient {n : \u2115} {hn : 1 < n}\n  {Q : RSR2.Parametric.Placement n} {H : List (RSR2History.EffectiveEvent n)}\n  (r : RSR2History.ForestReplayAccount n hn Q H) [NeZero r.terminal.length] (hn3 : 3 \u2264 n)\n  (hfinish :\n    r.finish.length + RSR2History.forestGapMoment (RSR2History.forestRootGapProfile r.terminal) \u2264\n      n * (n - 1) - (n - r.terminal.length) ^ 2)\n  (hcharge :\n    r.windingCharge - \u2191(RSR2History.forestStructuralDefect r.terminal) \u2264\n      r.relativeBase - \u2191(RSR2History.maxLowerExtractionCost n hn - r.extractionCost) -\n          \u2191((n - r.terminal.length).choose 2) -\n        \u2191(n * (n - 1) - (n - r.terminal.length) ^ 2)) :\n  r.premium + (RSR2History.maxLowerExtractionCost n hn - r.extractionCost) \u2264\n    RSR2History.delayedChainTotalPremiumMaximum n hn3\nRSR2History.forest_structural_replay_account_of_trace {n : \u2115} [NeZero n] (hn : 1 < n) {Q : RSR2.Parametric.Placement n}\n  {H : List (RSR2History.EffectiveEvent n)} {terminal : List (RSR2History.UpperFusionTree n)} [NeZero terminal.length]\n  (word : List RSR2.Parametric.Letter) (run : RSR2History.runLogged n hn (RSR2.Parametric.seed n) word = some (Q, H))\n  (upper : \u2200 (a : Fin n), (Q a).1 = true)\n  (singletons : \u2200 (B : Finset (Fin n)), RSR2History.EffectiveEvent.transfer B \u2208 H \u2192 B.card = 1)\n  (trace : RSR2History.UpperForestTrace (RSR2.Parametric.seed n) 0 [] H Q n terminal) (rank : 2 \u2264 terminal.length) :\n  \u2203 account,\n    account.terminal = terminal \u2227\n      (\u2200 a \u2208 RSR2History.forestLeaves terminal, \u2191(account.site a) = List.idxOf a (RSR2History.forestLeaves terminal)) \u2227\n        \u2191account.schedule.cost + \u2191account.finish.length + \u2191(RSR2History.forestStructuralDefect terminal) \u2264\n          \u2191(2 * n - terminal.length) + \u2191(n * (n - 1)) - \u2191((n - terminal.length) * (n - terminal.length + 1) / 2) +\n            account.windingCharge\nRSR2History.UpperCursorSchedule.final_phase_ge_of_all_winding {n : \u2115} {site : \u2115 \u2192 Fin n} {k kfinal c : \u2115}\n  {cursor finalCursor : Fin n} {xs terminal : List (RSR2History.UpperFusionTree n)}\n  {H : List (RSR2History.EffectiveEvent n)}\n  (s : RSR2History.UpperCursorSchedule site k xs cursor H kfinal terminal finalCursor) (hwind : s.windings = H.length)\n  (hlow : \u2200 T \u2208 xs, \u2191(site T.firstLeaf) < c \u2192 T.leaves.length = 1 \u2227 \u2191(site T.firstLeaf) \u2264 \u2191cursor)\n  (hphase : c \u2264 \u2191cursor \u2228 \u2203 A B, RSR2History.EffectiveEvent.fusion true A B (A \u222a B) \u2208 H) : c \u2264 \u2191finalCursor\nRSR2History.UpperCursorSchedule.forest_windings_add_two_le_events {n : \u2115} {site : \u2115 \u2192 Fin n} {kfinal : \u2115}\n  {terminal : List (RSR2History.UpperFusionTree n)} {finalCursor : Fin n} {H : List (RSR2History.EffectiveEvent n)}\n  (s : RSR2History.UpperCursorSchedule site 0 [] (site 0) H kfinal terminal finalCursor)\n  (hfusion : \u2203 A B C, RSR2History.EffectiveEvent.fusion true A B C \u2208 H) : s.windings + 2 \u2264 H.length\nRSR2History.UpperCursorSchedule.forest_final_phase_ge_of_max_windings {n : \u2115} {site : \u2115 \u2192 Fin n} {kfinal : \u2115}\n  {terminal : List (RSR2History.UpperFusionTree n)} {finalCursor : Fin n} {H : List (RSR2History.EffectiveEvent n)}\n  (s : RSR2History.UpperCursorSchedule site 0 [] (site 0) H kfinal terminal finalCursor)\n  (hmax : s.windings + 2 = H.length) (hpos : 0 < \u2191(site 0)) (hzero : \u2203 i < kfinal, \u2191(site i) = 0)\n  (hfusion : \u2203 A B, RSR2History.EffectiveEvent.fusion true A B (A \u222a B) \u2208 H) : \u2191(site 0) \u2264 \u2191finalCursor\nRSR2History.ForestReplayAccount.partition_block_count {n : \u2115} {hn : 1 < n} {Q : RSR2.Parametric.Placement n}\n  {H : List (RSR2History.EffectiveEvent n)} (r : RSR2History.ForestReplayAccount n hn Q H) :\n  (RSR2History.unorderedPacketBlocks n Q).card = r.terminal.length\nRSR2History.ForestReplayAccount.partition_cost_rank_bound {n : \u2115} {hn : 1 < n} {Q : RSR2.Parametric.Placement n}\n  {H : List (RSR2History.EffectiveEvent n)} (r : RSR2History.ForestReplayAccount n hn Q H)\n  (hr : 0 < r.terminal.length) : 2 * (n - r.terminal.length) - 1 \u2264 r.partitionCost\nRSR2History.ForestReplayAccount.relative_slack_with_winding_margin {n : \u2115} {hn : 1 < n}\n  {Q : RSR2.Parametric.Placement n} {H : List (RSR2History.EffectiveEvent n)}\n  (r : RSR2History.ForestReplayAccount n hn Q H) [NeZero r.terminal.length] (hn3 : 3 \u2264 n) (hr : 2 \u2264 r.terminal.length)\n  (hfinish :\n    r.finish.length + RSR2History.forestGapMoment (RSR2History.forestRootGapProfile r.terminal) \u2264\n      n * (n - 1) - (n - r.terminal.length) ^ 2) :\n  \u2191(RSR2History.maxLowerExtractionCost n hn - r.extractionCost) + \u2191((r.terminal.length - 1).choose 2) +\n            \u2191(RSR2History.forestStructuralDefect r.terminal) +\n          (\u2191n * (\u2191H.length - 2) - r.windingCharge) +\n        (\u2191r.partitionCost - (2 * (\u2191n - \u2191r.terminal.length) - 1)) +\n      \u2191r.replayExcess \u2264\n    \u2191(RSR2History.delayedChainTotalPremiumMaximum n hn3) - \u2191r.premium\nRSR2History.ForestReplayAccount.premium_le_delayed_of_winding_phase {n : \u2115} {hn : 1 < n}\n  {Q : RSR2.Parametric.Placement n} {H : List (RSR2History.EffectiveEvent n)}\n  (r : RSR2History.ForestReplayAccount n hn Q H) [NeZero r.terminal.length] (hn3 : 3 \u2264 n) (hr : 2 \u2264 r.terminal.length)\n  (hfinish :\n    r.finish.length + RSR2History.forestGapMoment (RSR2History.forestRootGapProfile r.terminal) \u2264\n      n * (n - 1) - (n - r.terminal.length) ^ 2)\n  (hfusion : \u2203 A B C, RSR2History.EffectiveEvent.fusion true A B C \u2208 H)\n  (hphase :\n    \u2191(r.site 0) \u2264 \u2191r.finalCursor + (r.terminal.length - 1).choose 2 + RSR2History.forestStructuralDefect r.terminal) :\n  r.premium + (RSR2History.maxLowerExtractionCost n hn - r.extractionCost) \u2264\n    RSR2History.delayedChainTotalPremiumMaximum n hn3\nRSR2History.ForestReplayAccount.replay_budget_of_winding_charge {n : \u2115} {hn : 1 < n} {Q : RSR2.Parametric.Placement n}\n  {H : List (RSR2History.EffectiveEvent n)} (r : RSR2History.ForestReplayAccount n hn Q H) [NeZero r.terminal.length]\n  (hn3 : 3 \u2264 n) (hr : 2 \u2264 r.terminal.length) (hfused : r.terminal.length < n)\n  (hfinish :\n    r.finish.length + RSR2History.forestGapMoment (RSR2History.forestRootGapProfile r.terminal) \u2264\n      n * (n - 1) - (n - r.terminal.length) ^ 2)\n  (hw : r.windingCharge \u2264 \u2191n * (\u2191H.length - 2)) :\n  r.premium + (RSR2History.maxLowerExtractionCost n hn - r.extractionCost) + (r.terminal.length - 1).choose 2 +\n        RSR2History.forestStructuralDefect r.terminal +\n      r.replayExcess \u2264\n    RSR2History.delayedChainTotalPremiumMaximum n hn3\nRSR2History.ForestReplayAccount.word_budget_of_winding_charge {n : \u2115} {hn : 1 < n} {Q : RSR2.Parametric.Placement n}\n  {H : List (RSR2History.EffectiveEvent n)} (r : RSR2History.ForestReplayAccount n hn Q H) [NeZero r.terminal.length]\n  (hn3 : 3 \u2264 n) (hr : 2 \u2264 r.terminal.length) (hfused : r.terminal.length < n)\n  (hfinish :\n    r.finish.length + RSR2History.forestGapMoment (RSR2History.forestRootGapProfile r.terminal) \u2264\n      n * (n - 1) - (n - r.terminal.length) ^ 2)\n  (hw : r.windingCharge \u2264 \u2191n * (\u2191H.length - 2)) :\n  r.word.length + (RSR2History.maxLowerExtractionCost n hn - r.extractionCost) + (r.terminal.length - 1).choose 2 +\n      RSR2History.forestStructuralDefect r.terminal \u2264\n    r.partitionCost + RSR2History.delayedChainTotalPremiumMaximum n hn3\nRSR2History.SingletonUpperLog.fusion_mem_of_transfer_lt_length {n : \u2115} {H : List (RSR2History.EffectiveEvent n)}\n  {z : List (Fin n)} (grammar : RSR2History.SingletonUpperLog H z) (hcount : z.length < H.length) :\n  \u2203 A B, RSR2History.EffectiveEvent.fusion true A B (A \u222a B) \u2208 H\nRSR2History.UpperCursorSchedule.forest_winding_phase_payment {n kfinal : \u2115} {site : \u2115 \u2192 Fin n}\n  {terminal : List (RSR2History.UpperFusionTree n)} {H : List (RSR2History.EffectiveEvent n)} {cf : Fin n}\n  (s : RSR2History.UpperCursorSchedule site 0 [] (site 0) H kfinal terminal cf) (hzero : \u2203 i < kfinal, \u2191(site i) = 0)\n  (hfusion : \u2203 A B, RSR2History.EffectiveEvent.fusion true A B (A \u222a B) \u2208 H) :\n  n * s.windings + \u2191(site 0) \u2264 n * (H.length - 2) + \u2191cf\nRSR2History.ForestReplayAccount.rank_le {n : \u2115} {hn : 1 < n} {Q : RSR2.Parametric.Placement n}\n  {H : List (RSR2History.EffectiveEvent n)} (r : RSR2History.ForestReplayAccount n hn Q H) : r.terminal.length \u2264 n\nRSR2History.ForestReplayAccount.winding_charge_le_of_canonical_sites {n : \u2115} {hn : 1 < n}\n  {Q : RSR2.Parametric.Placement n} {H : List (RSR2History.EffectiveEvent n)}\n  (r : RSR2History.ForestReplayAccount n hn Q H)\n  (hindex : \u2200 a \u2208 RSR2History.forestLeaves r.terminal, \u2191(r.site a) = List.idxOf a (RSR2History.forestLeaves r.terminal))\n  (hfused : r.terminal.length < n) : r.windingCharge \u2264 \u2191n * (\u2191H.length - 2)\nRSR2History.allUpper_singleton_fused_forest_delayed_replay_of_trace {n : \u2115} [NeZero n] (hn3 : 3 \u2264 n) (hn : 1 < n)\n  {Q : RSR2.Parametric.Placement n} {H : List (RSR2History.EffectiveEvent n)}\n  {terminal : List (RSR2History.UpperFusionTree n)} [NeZero terminal.length] (word : List RSR2.Parametric.Letter)\n  (run : RSR2History.runLogged n hn (RSR2.Parametric.seed n) word = some (Q, H)) (upper : \u2200 (a : Fin n), (Q a).1 = true)\n  (singletons : \u2200 (B : Finset (Fin n)), RSR2History.EffectiveEvent.transfer B \u2208 H \u2192 B.card = 1)\n  (trace : RSR2History.UpperForestTrace (RSR2.Parametric.seed n) 0 [] H Q n terminal) (hr : 2 \u2264 terminal.length)\n  (hfused : terminal.length < n) :\n  \u2203 account,\n    account.terminal = terminal \u2227\n      (\u2200 a \u2208 RSR2History.forestLeaves terminal, \u2191(account.site a) = List.idxOf a (RSR2History.forestLeaves terminal)) \u2227\n        account.word.length + (RSR2History.maxLowerExtractionCost n hn - account.extractionCost) +\n              (terminal.length - 1).choose 2 +\n            RSR2History.forestStructuralDefect terminal \u2264\n          account.partitionCost + RSR2History.delayedChainTotalPremiumMaximum n hn3\nRSR2History.allUpper_singleton_fused_forest_delayed_replay {n : \u2115} [NeZero n] (hn3 : 3 \u2264 n) (hn : 1 < n)\n  {Q : RSR2.Parametric.Placement n} {H : List (RSR2History.EffectiveEvent n)} (word : List RSR2.Parametric.Letter)\n  (run : RSR2History.runLogged n hn (RSR2.Parametric.seed n) word = some (Q, H)) (upper : \u2200 (a : Fin n), (Q a).1 = true)\n  (singletons : \u2200 (B : Finset (Fin n)), RSR2History.EffectiveEvent.transfer B \u2208 H \u2192 B.card = 1)\n  (hr : 2 \u2264 (RSR2History.unorderedPacketBlocks n Q).card) (hfused : (RSR2History.unorderedPacketBlocks n Q).card < n) :\n  \u2203 account,\n    \u2203 (x : NeZero account.terminal.length),\n      account.word.length + (RSR2History.maxLowerExtractionCost n hn - account.extractionCost) +\n            (account.terminal.length - 1).choose 2 +\n          RSR2History.forestStructuralDefect account.terminal \u2264\n        account.partitionCost + RSR2History.delayedChainTotalPremiumMaximum n hn3\nRSR2History.ForestTerminalSource.full_rank_rotation {n : \u2115} [NeZero n] (hn : 1 < n) {P Q : RSR2.Parametric.Placement n}\n  (source : RSR2History.ForestTerminalSource n n P)\n  (same : RSR2History.cyclicSignature P true ~r RSR2History.cyclicSignature Q true) :\n  \u2203 amount,\n    RSR2History.runLogged n hn P (RSR2.Parametric.pWord true amount.val) = some (Q, []) \u2227\n      (RSR2.Parametric.pWord true amount.val).length \u2264 n - 1\nRSR2History.forest_full_rank_account_of_trace {n : \u2115} [NeZero n] (hn : 1 < n) {Q : RSR2.Parametric.Placement n}\n  {H : List (RSR2History.EffectiveEvent n)} {terminal : List (RSR2History.UpperFusionTree n)}\n  (word : List RSR2.Parametric.Letter) (run : RSR2History.runLogged n hn (RSR2.Parametric.seed n) word = some (Q, H))\n  (upper : \u2200 (a : Fin n), (Q a).1 = true)\n  (singletons : \u2200 (B : Finset (Fin n)), RSR2History.EffectiveEvent.transfer B \u2208 H \u2192 B.card = 1)\n  (trace : RSR2History.UpperForestTrace (RSR2.Parametric.seed n) 0 [] H Q n terminal) (rank : terminal.length = n) :\n  \u2203 account,\n    account.terminal = terminal \u2227\n      (\u2200 a \u2208 RSR2History.forestLeaves terminal, \u2191(account.site a) = List.idxOf a (RSR2History.forestLeaves terminal)) \u2227\n        (\u2203 amount, account.finish = RSR2.Parametric.pWord true amount.val) \u2227 account.finish.length \u2264 n - 1\nRSR2History.ForestReplayAccount.replay_length_lt_delayed_of_full_rank {n : \u2115} {hn : 1 < n}\n  {Q : RSR2.Parametric.Placement n} {H : List (RSR2History.EffectiveEvent n)}\n  (r : RSR2History.ForestReplayAccount n hn Q H) (hn3 : 3 \u2264 n) (rank : r.terminal.length = n)\n  (hfinish : r.finish.length \u2264 n - 1) :\n  r.word.length + (RSR2History.maxLowerExtractionCost n hn - r.extractionCost) <\n    RSR2History.delayedChainTotalPremiumMaximum n hn3\nRSR2History.ForestReplayAccount.premium_le_delayed_of_full_rank {n : \u2115} {hn : 1 < n} {Q : RSR2.Parametric.Placement n}\n  {H : List (RSR2History.EffectiveEvent n)} (r : RSR2History.ForestReplayAccount n hn Q H) (hn3 : 3 \u2264 n)\n  (rank : r.terminal.length = n) (hfinish : r.finish.length \u2264 n - 1) :\n  r.premium + (RSR2History.maxLowerExtractionCost n hn - r.extractionCost) \u2264\n    RSR2History.delayedChainTotalPremiumMaximum n hn3\nRSR2History.allUpper_singleton_multiRoot_delayed_replay {n : \u2115} [NeZero n] (hn3 : 3 \u2264 n) (hn : 1 < n)\n  {Q : RSR2.Parametric.Placement n} {H : List (RSR2History.EffectiveEvent n)} (word : List RSR2.Parametric.Letter)\n  (run : RSR2History.runLogged n hn (RSR2.Parametric.seed n) word = some (Q, H)) (upper : \u2200 (a : Fin n), (Q a).1 = true)\n  (singletons : \u2200 (B : Finset (Fin n)), RSR2History.EffectiveEvent.transfer B \u2208 H \u2192 B.card = 1)\n  (hr : 2 \u2264 (RSR2History.unorderedPacketBlocks n Q).card) :\n  \u2203 replay,\n    RSR2History.runLogged n hn (RSR2.Parametric.seed n) replay = some (Q, H) \u2227\n      replay.length +\n          (RSR2History.maxLowerExtractionCost n hn -\n            RSR2History.lowerExtractionCost n hn (RSR2History.singletonTransferOrder H)) \u2264\n        RSR2History.partitionDistance n hn (RSR2History.unorderedPacketBlocks n Q) \u22ef +\n          RSR2History.delayedChainTotalPremiumMaximum n hn3\nRSR2History.allUpper_singleton_extraction_slack {n : \u2115} [NeZero n] (hn3 : 3 \u2264 n) (hn : 1 < n)\n  {Q : RSR2.Parametric.Placement n} {H : List (RSR2History.EffectiveEvent n)} (word : List RSR2.Parametric.Letter)\n  (run : RSR2History.runLogged n hn (RSR2.Parametric.seed n) word = some (Q, H)) (upper : \u2200 (a : Fin n), (Q a).1 = true)\n  (singletons : \u2200 (B : Finset (Fin n)), RSR2History.EffectiveEvent.transfer B \u2208 H \u2192 B.card = 1) :\n  RSR2History.totalObservationPremium n hn \u27e8(Q, H), \u22ef\u27e9 +\n      (RSR2History.maxLowerExtractionCost n hn -\n        RSR2History.lowerExtractionCost n hn (RSR2History.singletonTransferOrder H)) \u2264\n    RSR2History.delayedChainTotalPremiumMaximum n hn3\n",
+        "stderr": ""
+      }
+    },
+    {
+      "name": "all_upper",
+      "axiom_audit": [
+        {
+          "declaration": "RSR2History.IsAllUpperSingleton",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.allUpperSingletonObservations",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.mem_allUpperSingletonObservations",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.allUpperSingletonTotalPremiumMaximum",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.allUpperSingleton_totalPremium_le_delayed",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.delayedUpperChainLog_transfer_card",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.allUpperSingleton_delayed_maximum_attained",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.allUpperSingletonTotalPremiumMaximum_eq_delayed",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.allUpperSingletonTotalPremiumMaximum_eq",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.delayed_counterexample_has_lower_survivor_or_packed_transfer",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.UpperForestPath.packed_forest_cursor_replay",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.UpperReservedReplay.packed_forest_terminal_route",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.allUpper_packed_forest_replay_account",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.PackedForestReplayAccount.lowerCost_fusion_bound",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.allUpper_fullTransfer_singletons",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.PackedCursorSchedule.forest_winding_phase_payment",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.PackedCursorSchedule.forest_initial_winding_phase_payment",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.packedForest_fused_budget",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.packedForest_unfused_budget",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.PackedForestReplayAccount.length_le_partition_add_delayed",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.allUpper_totalPremium_le_delayed",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.mem_allUpperObservations",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.allUpperTotalPremiumMaximum_eq_delayed",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.allUpperTotalPremiumMaximum_eq",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "declaration": "RSR2History.delayed_counterexample_has_lower_survivor",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        }
+      ],
+      "audit_output": {
+        "command": [
+          "C:\\Users\\Admin\\.elan\\toolchains\\leanprover--lean4---v4.33.0\\bin\\lake.exe",
+          "--no-cache",
+          "env",
+          "lean",
+          "RSR2History/AllUpperExtremaAudit.lean"
+        ],
+        "exit_code": 0,
+        "stdout": "'RSR2History.IsAllUpperSingleton' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.allUpperSingletonObservations' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.mem_allUpperSingletonObservations' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.allUpperSingletonTotalPremiumMaximum' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.allUpperSingleton_totalPremium_le_delayed' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.delayedUpperChainLog_transfer_card' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.allUpperSingleton_delayed_maximum_attained' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.allUpperSingletonTotalPremiumMaximum_eq_delayed' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.allUpperSingletonTotalPremiumMaximum_eq' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.delayed_counterexample_has_lower_survivor_or_packed_transfer' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'RSR2History.UpperForestPath.packed_forest_cursor_replay' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.UpperReservedReplay.packed_forest_terminal_route' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'RSR2History.allUpper_packed_forest_replay_account' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.PackedForestReplayAccount.lowerCost_fusion_bound' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'RSR2History.allUpper_fullTransfer_singletons' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.PackedCursorSchedule.forest_winding_phase_payment' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'RSR2History.PackedCursorSchedule.forest_initial_winding_phase_payment' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'RSR2History.packedForest_fused_budget' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.packedForest_unfused_budget' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.PackedForestReplayAccount.length_le_partition_add_delayed' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'RSR2History.allUpper_totalPremium_le_delayed' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.mem_allUpperObservations' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.allUpperTotalPremiumMaximum_eq_delayed' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.allUpperTotalPremiumMaximum_eq' depends on axioms: [propext, Classical.choice, Quot.sound]\n'RSR2History.delayed_counterexample_has_lower_survivor' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+        "stderr": ""
+      },
+      "signatures": {
+        "command": [
+          "C:\\Users\\Admin\\.elan\\toolchains\\leanprover--lean4---v4.33.0\\bin\\lake.exe",
+          "--no-cache",
+          "env",
+          "lean",
+          "RSR2History/AllUpperExtremaSignatures.lean"
+        ],
+        "exit_code": 0,
+        "stdout": "RSR2History.IsAllUpperSingleton {n : \u2115} {hn : 1 < n} (o : RSR2History.AttainableObservation n hn) : Prop\nRSR2History.allUpperSingletonObservations (n : \u2115) (hn : 1 < n) : Finset (RSR2History.AttainableObservation n hn)\nRSR2History.mem_allUpperSingletonObservations {n : \u2115} {hn : 1 < n} (o : RSR2History.AttainableObservation n hn) :\n  o \u2208 RSR2History.allUpperSingletonObservations n hn \u2194 RSR2History.IsAllUpperSingleton o\nRSR2History.allUpperSingletonTotalPremiumMaximum (n : \u2115) (hn : 1 < n) : \u2115\nRSR2History.allUpperSingleton_totalPremium_le_delayed {n : \u2115} [NeZero n] (hn : 3 \u2264 n)\n  (o : RSR2History.AttainableObservation n \u22ef) (h : RSR2History.IsAllUpperSingleton o) :\n  RSR2History.totalObservationPremium n \u22ef o \u2264 RSR2History.delayedChainTotalPremiumMaximum n hn\nRSR2History.delayedUpperChainLog_transfer_card {n : \u2115} (z : List (Fin n)) {B : Finset (Fin n)}\n  (h : RSR2History.EffectiveEvent.transfer B \u2208 RSR2History.delayedUpperChainLog z) : B.card = 1\nRSR2History.allUpperSingleton_delayed_maximum_attained {n : \u2115} [NeZero n] (hn : 3 \u2264 n) :\n  \u2203 o,\n    RSR2History.IsAllUpperSingleton o \u2227\n      RSR2History.totalObservationPremium n \u22ef o = RSR2History.delayedChainTotalPremiumMaximum n hn\nRSR2History.allUpperSingletonTotalPremiumMaximum_eq_delayed {n : \u2115} [NeZero n] (hn : 3 \u2264 n) :\n  RSR2History.allUpperSingletonTotalPremiumMaximum n \u22ef = RSR2History.delayedChainTotalPremiumMaximum n hn\nRSR2History.allUpperSingletonTotalPremiumMaximum_eq {n : \u2115} [NeZero n] (hn : 3 \u2264 n) :\n  RSR2History.allUpperSingletonTotalPremiumMaximum n \u22ef =\n    5 * n * (n - 1) / 2 + RSR2History.maxLowerExtractionCost n \u22ef - n + 2\nRSR2History.delayed_counterexample_has_lower_survivor_or_packed_transfer {n : \u2115} [NeZero n] (hn : 3 \u2264 n)\n  (o : RSR2History.AttainableObservation n \u22ef)\n  (hbad : RSR2History.delayedChainTotalPremiumMaximum n hn < RSR2History.totalObservationPremium n \u22ef o) :\n  2 \u2264 (RSR2History.unorderedPacketBlocks n (\u2191o).1).card \u2227\n    ((\u2203 a, ((\u2191o).1 a).1 = false) \u2228 \u2203 B, RSR2History.EffectiveEvent.transfer B \u2208 (\u2191o).2 \u2227 2 \u2264 B.card)\nRSR2History.UpperForestPath.packed_forest_cursor_replay {n : \u2115} [NeZero n] {hn : 1 < n}\n  {events : List (RSR2History.EffectiveEvent n)} {terminal : List (RSR2History.UpperFusionTree n)} {site : \u2115 \u2192 Fin n}\n  {kfinal : \u2115} {P : RSR2.Parametric.Placement n} {cursor : Fin n} {k : \u2115}\n  {forest : List (RSR2History.UpperFusionTree n)} {c d : RSR2History.LowerConfiguration n} {cost : \u2115}\n  (path : RSR2History.UpperForestPath k forest events kfinal terminal)\n  (state : RSR2History.UpperReservedReplay P cursor k forest terminal (RSR2History.forestLeaves terminal) site)\n  (lower : RSR2History.lowerConfiguration P = c)\n  (extraction : RSR2History.PackedLowerPath n hn c (RSR2History.packedLowerLog events) d cost) :\n  \u2203 Q finalCursor word s,\n    RSR2History.runLogged n hn P word = some (Q, events) \u2227\n      RSR2History.UpperReservedReplay Q finalCursor kfinal terminal terminal (RSR2History.forestLeaves terminal) site \u2227\n        RSR2History.lowerConfiguration Q = d \u2227\n          word.length = cost + s.cost \u2227 List.count RSR2.Parametric.Letter.v word = RSR2History.logTransferCount events\nRSR2History.UpperReservedReplay.packed_forest_terminal_route {n : \u2115} [NeZero n] (hn : 1 < n)\n  {P Q : RSR2.Parametric.Placement n} {cursor : Fin n} {t : \u2115} {terminal : List (RSR2History.UpperFusionTree n)}\n  {site : \u2115 \u2192 Fin n}\n  (state : RSR2History.UpperReservedReplay P cursor t terminal terminal (RSR2History.forestLeaves terminal) site)\n  (lowerP : RSR2History.lowerConfiguration P = RSR2History.lowerExtractionEmpty n)\n  (lowerQ : RSR2History.lowerConfiguration Q = RSR2History.lowerExtractionEmpty n) {T : RSR2History.UpperFusionTree n}\n  (ht : T \u2208 terminal) (anchor : cursor = site T.firstLeaf)\n  (target : RSR2History.forestPackets terminal ~r RSR2History.cyclicSignature Q true) :\n  \u2203 finish, RSR2History.runLogged n hn P finish = some (Q, []) \u2227 finish.length \u2264 n * (n - 1) - (n - terminal.length) ^ 2\nRSR2History.allUpper_packed_forest_replay_account {n : \u2115} [NeZero n] (hn : 1 < n) {Q : RSR2.Parametric.Placement n}\n  {H : List (RSR2History.EffectiveEvent n)} (word : List RSR2.Parametric.Letter)\n  (run : RSR2History.runLogged n hn (RSR2.Parametric.seed n) word = some (Q, H))\n  (upper : \u2200 (a : Fin n), (Q a).1 = true) :\n  \u2203 terminal, Nonempty (RSR2History.PackedForestReplayAccount n hn Q H terminal)\nRSR2History.PackedForestReplayAccount.lowerCost_fusion_bound {n : \u2115} {hn : 1 < n} {Q : RSR2.Parametric.Placement n}\n  {H : List (RSR2History.EffectiveEvent n)} {terminal : List (RSR2History.UpperFusionTree n)}\n  (a : RSR2History.PackedForestReplayAccount n hn Q H terminal) (upper : \u2200 (x : Fin n), (Q x).1 = true) :\n  RSR2History.packedLowerCost n hn (RSR2History.packedLowerLog H) \u2264\n    RSR2History.maxLowerExtractionCost n hn + (2 * n - 1) * (n - RSR2History.logTransferCount H)\nRSR2History.allUpper_fullTransfer_singletons {n : \u2115} (hn : 1 < n) {Q : RSR2.Parametric.Placement n}\n  {H : List (RSR2History.EffectiveEvent n)} (word : List RSR2.Parametric.Letter)\n  (run : RSR2History.runLogged n hn (RSR2.Parametric.seed n) word = some (Q, H)) (upper : \u2200 (x : Fin n), (Q x).1 = true)\n  (full : RSR2History.logTransferCount H = n) (packet : Finset (Fin n)) :\n  RSR2History.EffectiveEvent.transfer packet \u2208 H \u2192 packet.card = 1\nRSR2History.PackedCursorSchedule.forest_winding_phase_payment {n kfinal : \u2115} {site : \u2115 \u2192 Fin n}\n  {terminal : List (RSR2History.UpperFusionTree n)} {H : List (RSR2History.EffectiveEvent n)} {cf : Fin n}\n  (s : RSR2History.PackedCursorSchedule site 0 [] (site 0) H kfinal terminal cf) (hzero : \u2203 i < kfinal, \u2191(site i) = 0)\n  (hfusion : \u2203 A B C, RSR2History.EffectiveEvent.fusion true A B C \u2208 H) :\n  n * s.windings + \u2191(site 0) \u2264 n * (RSR2History.upperCursorEventCount H - 2) + \u2191cf\nRSR2History.PackedCursorSchedule.forest_initial_winding_phase_payment {n kfinal : \u2115} {site : \u2115 \u2192 Fin n}\n  {terminal : List (RSR2History.UpperFusionTree n)} {H : List (RSR2History.EffectiveEvent n)} {cf : Fin n}\n  (s : RSR2History.PackedCursorSchedule site 0 [] (site 0) H kfinal terminal cf) (hpos : 0 < kfinal) :\n  n * s.windings + \u2191(site 0) \u2264 n * (RSR2History.upperCursorEventCount H - 1) + \u2191cf\nRSR2History.packedForest_fused_budget\n  {n t r lowerCost upperCost finishCost lowerMax partitionCost fusionSaving terminalSaving : \u2115} (hr : 2 \u2264 r)\n  (hrt : r < t) (htn : t \u2264 n) (hlower : lowerCost \u2264 lowerMax + (2 * n - 1) * (n - t))\n  (hupper : upperCost + fusionSaving \u2264 2 * t - r + (t - r).choose 2 + n * (2 * t - r - 2))\n  (hfinish : finishCost + terminalSaving \u2264 n * (n - 1) - (n - r) ^ 2) (hpartition : 2 * (n - r) - 1 \u2264 partitionCost) :\n  lowerCost + upperCost + finishCost + fusionSaving + terminalSaving + (r - 1).choose 2 + 3 * (n - t) +\n        ((n - r).choose 2 - (t - r).choose 2) +\n      (2 * n - 3) \u2264\n    partitionCost + lowerMax + RSR2History.packedUpperBudget n n + (n - 1)\nRSR2History.packedForest_unfused_budget {n t lowerCost upperCost finishCost lowerMax partitionCost phaseSaving : \u2115}\n  (ht : 2 \u2264 t) (htn : t < n) (hlower : lowerCost \u2264 lowerMax + (2 * n - 1) * (n - t))\n  (hupper : upperCost + phaseSaving \u2264 t + n * (t - 1)) (hfinish : finishCost \u2264 n * (n - 1) - (n - t) ^ 2)\n  (hpartition : 2 * (n - t) - 1 \u2264 partitionCost) :\n  lowerCost + upperCost + finishCost + phaseSaving + ((t - 2).choose 2 + (n - t).choose 2 + 2 * (n - t) - 2) +\n      (2 * n - 3) \u2264\n    partitionCost + lowerMax + RSR2History.packedUpperBudget n n + (n - 1)\nRSR2History.PackedForestReplayAccount.length_le_partition_add_delayed {n : \u2115} (hn : 3 \u2264 n)\n  {Q : RSR2.Parametric.Placement n} {H : List (RSR2History.EffectiveEvent n)}\n  {terminal : List (RSR2History.UpperFusionTree n)} (a : RSR2History.PackedForestReplayAccount n \u22ef Q H terminal)\n  (upper : \u2200 (x : Fin n), (Q x).1 = true) (hr : 2 \u2264 terminal.length) (ht : RSR2History.logTransferCount H < n) :\n  a.word.length \u2264 a.partitionCost + RSR2History.delayedChainTotalPremiumMaximum n hn\nRSR2History.allUpper_totalPremium_le_delayed {n : \u2115} [NeZero n] (hn : 3 \u2264 n) (o : RSR2History.AttainableObservation n \u22ef)\n  (upper : \u2200 (x : Fin n), ((\u2191o).1 x).1 = true) :\n  RSR2History.totalObservationPremium n \u22ef o \u2264 RSR2History.delayedChainTotalPremiumMaximum n hn\nRSR2History.mem_allUpperObservations {n : \u2115} {hn : 1 < n} (o : RSR2History.AttainableObservation n hn) :\n  o \u2208 RSR2History.allUpperObservations n hn \u2194 \u2200 (x : Fin n), ((\u2191o).1 x).1 = true\nRSR2History.allUpperTotalPremiumMaximum_eq_delayed {n : \u2115} [NeZero n] (hn : 3 \u2264 n) :\n  RSR2History.allUpperTotalPremiumMaximum n \u22ef = RSR2History.delayedChainTotalPremiumMaximum n hn\nRSR2History.allUpperTotalPremiumMaximum_eq {n : \u2115} [NeZero n] (hn : 3 \u2264 n) :\n  RSR2History.allUpperTotalPremiumMaximum n \u22ef = 5 * n * (n - 1) / 2 + RSR2History.maxLowerExtractionCost n \u22ef - n + 2\nRSR2History.delayed_counterexample_has_lower_survivor {n : \u2115} [NeZero n] (hn : 3 \u2264 n)\n  (o : RSR2History.AttainableObservation n \u22ef)\n  (hbad : RSR2History.delayedChainTotalPremiumMaximum n hn < RSR2History.totalObservationPremium n \u22ef o) :\n  2 \u2264 (RSR2History.unorderedPacketBlocks n (\u2191o).1).card \u2227 \u2203 x, ((\u2191o).1 x).1 = false\n",
+        "stderr": ""
+      }
+    }
+  ]
+}

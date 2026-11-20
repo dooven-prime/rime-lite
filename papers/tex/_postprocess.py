@@ -1779,10 +1779,10 @@ def process(input_path, output_path, title, author='WuJun Chen'):
                         out.append(lines[i])
                         i += 1
                         break
-                if list_depth == 0 and end_here(lines[i], stop_at_proof=paper_number in (38, 40)):
+                if list_depth == 0 and end_here(lines[i], stop_at_proof=paper_number in (38, 40, 47)):
                     break
                 if list_depth == 0 and (not lines[i].strip() and i+1 < len(lines) and
-                    (end_here(lines[i+1], stop_at_proof=paper_number in (38, 40)) or match_thm(lines[i+1]))):
+                    (end_here(lines[i+1], stop_at_proof=paper_number in (38, 40, 47)) or match_thm(lines[i+1]))):
                     break
                 out.append(lines[i])
                 i += 1
@@ -1858,10 +1858,10 @@ def process(input_path, output_path, title, author='WuJun Chen'):
                                     out.append(lines[i])
                                     i += 1
                                     break
-                            if list_depth == 0 and end_here(lines[i], stop_at_proof=paper_number in (38, 40)):
+                            if list_depth == 0 and end_here(lines[i], stop_at_proof=paper_number in (38, 40, 47)):
                                 break
                             if list_depth == 0 and (not lines[i].strip() and i+1 < len(lines) and
-                                (end_here(lines[i+1], stop_at_proof=paper_number in (38, 40)) or match_thm(lines[i+1]))):
+                                (end_here(lines[i+1], stop_at_proof=paper_number in (38, 40, 47)) or match_thm(lines[i+1]))):
                                 break
                             out.append(lines[i])
                             i += 1
@@ -1878,6 +1878,8 @@ def process(input_path, output_path, title, author='WuJun Chen'):
         body = split_explicit_proofs(body)
     elif paper_number == 40:
         body = split_explicit_proofs(body, expected_count=9)
+    elif paper_number == 47:
+        body = split_explicit_proofs(body, expected_count=24)
 
     # ── Cross-reference: unnumbered subsections as implicit theorems ──
     # Detect \subsection{N.M Name} and \label{name-slug}, then
@@ -1939,7 +1941,7 @@ def process(input_path, output_path, title, author='WuJun Chen'):
 
     # ── Section numbering restructure (before labels, so stripping is clean) ──
     body = _restructure_sections(body, is_ccs=is_ccs)
-    if paper_number in (38, 40):
+    if paper_number in (38, 40, 47):
         body = body.replace(
             r'\appendix',
             r'\appendix' + '\n' + r'\renewcommand{\thetheorem}{\Alph{section}.\arabic{theorem}}',
