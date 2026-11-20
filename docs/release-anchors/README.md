@@ -31,6 +31,7 @@ not rewrite manifests or receipts that accurately recorded a candidate state.
 | Paper XLIV v1.0 | [paper44-v1.0.json](paper44-v1.0.json) |
 | Paper XLV v1.0 | [paper45-v1.0.json](paper45-v1.0.json) |
 | Paper XLVI v1.0 | [paper46-v1.0.json](paper46-v1.0.json) |
+| Paper XLVII v1.0 | [paper47-v1.0.json](paper47-v1.0.json) |
 
 Paper XLI's anchor binds its tagged candidate manifest and local replay
 receipt to the single reader PDF deposited at Zenodo. The historical HAL
@@ -71,6 +72,10 @@ manifest to the Zenodo record. The manifest's candidate status remains the
 state at content freeze; publication does not turn it into a Lean release
 certificate. The PDF-only DOI does not separately archive the Lean sources
 or bounded controls.
+Paper XLVII's anchor binds its tagged candidate manifest and local Lean replay
+receipt to the exact reader PDF deposited at Zenodo. Their pre-release status
+remains historical; the PDF-only DOI does not separately archive the Lean
+sources or local receipt.
 
 The Paper XL anchor binds a [post-release fixed-controls audit](../../tools/release/verify_paper40_fixed_controls.py)
 as a supplement outside its immutable tag. The audit checks the nine retained
